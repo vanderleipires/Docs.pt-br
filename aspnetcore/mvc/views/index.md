@@ -1,6 +1,6 @@
 ---
-redirect_url: /aspnet/core
-ms.openlocfilehash: 0265822a019bdcb65c3e39cdabb433b63e26ab28
+redirect_url: /aspnet/core/mvc/views/overview
+ms.openlocfilehash: af8b87b335de0f9c00a2310346977d23936aaf81
 ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
 ms.translationtype: HT
 ms.contentlocale: pt-BR
