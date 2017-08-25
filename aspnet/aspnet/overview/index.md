@@ -1,6 +1,7 @@
 ---
-redirect_url: /aspnet/core
-ms.openlocfilehash: 0265822a019bdcb65c3e39cdabb433b63e26ab28
+uid: aspnet/overview/index
+redirect_url: /aspnet/overview
+ms.openlocfilehash: 05bef5573aff745ee96888db232b04ec094fa741
 ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
 ms.translationtype: HT
 ms.contentlocale: pt-BR
