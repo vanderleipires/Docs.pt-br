@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9e5c97ce868e281310aa75c16e73298e2aaa0d9d
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 30e00e2a442225bbe04be0d343f7048efe484477
+ms.sourcegitcommit: 4e84d8bf5f404bb77f3d41665cf7e7374fc39142
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introdução ao registro em log no núcleo do ASP.NET
 
@@ -283,7 +283,7 @@ Os modelos de projeto criam código que chama `CreateDefaultBuilder` para config
 
 Os dados de configuração especificam os níveis de log mínimo pelo provedor e a categoria, como no exemplo a seguir:
 
-[!code-json[](logging/sample2/AppSettings.json)]
+[!code-json[](logging/sample2/appsettings.json)]
 
 Este JSON cria seis regras de filtro, um para o provedor de depuração, quatro para o provedor de Console e que se aplica a todos os provedores. Você verá posteriormente como apenas uma dessas regras é escolhida para cada provedor quando um `ILogger` objeto é criado.
 
