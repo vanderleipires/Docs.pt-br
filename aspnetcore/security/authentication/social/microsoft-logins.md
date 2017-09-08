@@ -11,11 +11,11 @@ ms.assetid: 66DB4B94-C78C-4005-BA03-3D982B87C268
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 25ada568a8629b82eb55ca27a55a9ac0c5fb38b2
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: cc2d119ae2f7cf06ed0ea4b8a91fd8fa15804468
+ms.sourcegitcommit: fb518f856f31fe53c09196a13309eacb85b37a22
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="configuring-microsoft-account-authentication"></a>Configurar a autenticação do Microsoft Account
 
@@ -71,12 +71,12 @@ Vincular as configurações confidenciais como Microsoft `Application ID` e `Pas
 
 ## <a name="configure-microsoft-account-authentication"></a>Configurar a autenticação de conta da Microsoft
 
-O modelo de projeto usado neste tutorial garante que [Microsoft.AspNetCore.Authentication.Microsoft](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Microsoft) pacote já está instalado.
+O modelo de projeto usado neste tutorial garante que [Microsoft.AspNetCore.Authentication.MicrosoftAccount](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.MicrosoftAccount) pacote já está instalado.
 
 * Para instalar este pacote com 2017 do Visual Studio, clique com botão direito no projeto e selecione **gerenciar pacotes NuGet**.
 * Para instalar o .NET Core CLI, execute o seguinte no diretório do projeto:
 
-   `dotnet add package Microsoft.AspNetCore.Authentication.Microsoft`
+   `dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount`
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
 

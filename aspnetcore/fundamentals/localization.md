@@ -1,8 +1,8 @@
 ---
-title: "Globalização e localização"
+title: "Globalização e localização em ASP.NET Core"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core
+description: "Saiba como o ASP.NET Core fornece serviços e middleware para localizar conteúdo em diferentes idiomas e culturas."
+keywords: "ASP.NET Core, localização, cultura, idioma, arquivo de recurso, globalização, internacionalização, localidade"
 ms.author: riande
 manager: wpickett
 ms.date: 01/14/2017
@@ -11,13 +11,13 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 70f11cc9de8e885745e7d08cb98ac68e3cc8ef95
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: c6c9db21a95131a3d7920054e32004791b499c11
+ms.sourcegitcommit: fb518f856f31fe53c09196a13309eacb85b37a22
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/08/2017
 ---
-# <a name="globalization-and-localization"></a>Globalização e localização
+# <a name="globalization-and-localization-in-aspnet-core"></a>Globalização e localização em ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Damien Bowden](https://twitter.com/damien_bod), [Bart Calixto](https://twitter.com/bartmax), [Nadeem Afana](https://twitter.com/NadeemAfana), e [Ateya Hisham Bin](https://twitter.com/hishambinateya)
 
@@ -190,7 +190,7 @@ Cada combinação de idioma e cultura (que não seja o idioma padrão) requer um
 
 Localização é configurada no `ConfigureServices` método:
 
-[!code-csharp[Main](localization/sample/Startup.cs?range=45-49)]
+[!code-csharp[Main](localization/sample/Program.cs?name=snippet1)]
 
 * `AddLocalization`Adiciona os serviços de localização para o contêiner de serviços. O código acima também define o caminho de recursos em "Recursos".
 
@@ -200,9 +200,9 @@ Localização é configurada no `ConfigureServices` método:
 
 ### <a name="localization-middleware"></a>Middleware de localização
 
-A cultura atual em uma solicitação é definida na localização [Middleware](middleware.md). O middleware de localização está habilitado no `Configure` método *Startup.cs* arquivo. Observe que o middleware de localização deve ser configurado antes que qualquer middleware que pode verificar a cultura de solicitação (por exemplo, `app.UseMvc()`).
+A cultura atual em uma solicitação é definida na localização [Middleware](middleware.md). O middleware de localização está habilitado no `Configure` método *Program.cs* arquivo. Observe que o middleware de localização deve ser configurado antes que qualquer middleware que pode verificar a cultura de solicitação (por exemplo, `app.UseMvcWithDefaultRoute()`).
 
-[!code-csharp[Main](localization/sample/Startup.cs?highlight=13-35&range=123-159)]
+[!code-csharp[Main](localization/sample/Program.cs?name=snippet2)]
 
 `UseRequestLocalization`Inicializa uma `RequestLocalizationOptions` objeto. Em cada solicitação, a lista de `RequestCultureProvider` no `RequestLocalizationOptions` é enumerado e o primeiro provedor com êxito pode determinar a cultura de solicitação é usado. Os provedores padrão são provenientes de `RequestLocalizationOptions` classe:
 
@@ -259,25 +259,27 @@ O [cabeçalho Accept-Language](https://www.w3.org/International/questions/qa-acc
 Suponha que você deseja permitir que os clientes armazenam seu idioma e cultura em seus bancos de dados. Você pode escrever um provedor para pesquisar esses valores para o usuário. O código a seguir mostra como adicionar um provedor personalizado:
 
 ```csharp
+private const string enUSCulture = "en-US";
+
 services.Configure<RequestLocalizationOptions>(options =>
-   {
-       var supportedCultures = new[]
-       {
-           new CultureInfo("en-US"),
-           new CultureInfo("fr")
-       };
+{
+    var supportedCultures = new[]
+    {
+        new CultureInfo(enUSCulture),
+        new CultureInfo("fr")
+    };
 
-       options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
-       options.SupportedCultures = supportedCultures;
-       options.SupportedUICultures = supportedCultures;
+    options.DefaultRequestCulture = new RequestCulture(culture: enUSCulture, uiCulture: enUSCulture);
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
 
-       options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context =>
-       {
-         // My custom request culture logic
-         return new ProviderCultureResult("en");
-       }));
-   });
-   ```
+    options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context =>
+    {
+        // My custom request culture logic
+        return new ProviderCultureResult("en");
+    }));
+});
+```
 
 Use `RequestLocalizationOptions` para adicionar ou remover provedores de localização.
 
@@ -289,7 +291,7 @@ Este exemplo **Localization.StarterWeb** projeto [GitHub](https://github.com/asp
 
 O *Views/Shared/_SelectLanguagePartial.cshtml* arquivo é adicionado para o `footer` seção do arquivo de layout para que fique disponível para todos os modos de exibição:
 
-[!code-HTML[Main](localization/sample/Views/Shared/_Layout.cshtml?range=48-61&highlight=10)]
+[!code-HTML[Main](localization/sample/Views/Shared/_Layout.cshtml?range=43-56&highlight=10)]
 
 O `SetLanguage` método define o cookie de cultura.
 
