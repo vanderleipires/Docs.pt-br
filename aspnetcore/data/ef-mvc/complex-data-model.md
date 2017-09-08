@@ -11,11 +11,11 @@ ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: ad34a86c90c06dcddeeba7a0deba95f8057b4513
-ms.sourcegitcommit: def90564eff4adfeed0a8e511e4c201b040e9a5e
+ms.openlocfilehash: 7d216bc07d0a8d739f0cecbc5b571b6144c13e61
+ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Criar um modelo de dados complexos - Core EF com o tutorial do MVC do ASP.NET Core (5 de 10)
 
@@ -73,7 +73,7 @@ Suponha que você deseja garantir que os usuários não insiram mais de 50 carac
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
-O `StringLength` atributo não impedem que um usuário inserir espaços em branco para um nome. Você pode usar o `RegularExpression` atributo aplicar restrições para a entrada. Por exemplo, o código a seguir exige o primeiro caractere a ser maiuscula e os caracteres restantes para estar em ordem alfabética:
+O `StringLength` atributo não impedem que um usuário inserir espaços em branco para um nome. Você pode usar o `RegularExpression` atributo aplicar restrições para a entrada. Por exemplo, o código a seguir exige que o primeiro caractere a ser maiuscula e os caracteres restantes para estar em ordem alfabética:
 
 ```csharp
 [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
@@ -215,7 +215,7 @@ public int InstructorID { get; set; }
 
 Você também pode usar o `Key` atributo se a entidade tem sua própria chave primária, mas você deseja atribuir um nome de propriedade que não seja classnameID ou ID.
 
-Por padrão o EF trata a chave como não gerado pelo banco de dados porque a coluna é uma relação de identificação.
+Por padrão, o EF trata a chave como não gerado pelo banco de dados porque a coluna é uma relação de identificação.
 
 ### <a name="the-instructor-navigation-property"></a>A propriedade de navegação do instrutor
 

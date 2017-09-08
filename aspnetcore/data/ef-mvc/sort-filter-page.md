@@ -10,11 +10,11 @@ ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 1140f4916ca39cb454eaa41fdf6adfe7ad26cc31
-ms.sourcegitcommit: dfd6af48cf66813eaf04b011cb9341339a751254
+ms.openlocfilehash: bc2896d0eeda7e84cef06ee3f235e637bfe04318
+ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>A classificação, filtragem, paginação e agrupando - Core de EF com o tutorial do MVC do ASP.NET Core (3 de 10)
 
@@ -116,7 +116,7 @@ Para adicionar a paginação para a página de índice de alunos, você criará 
 
 ![Os alunos índice página com links de paginação](sort-filter-page/_static/paging.png)
 
-Na pasta do projeto criar `PaginatedList.cs`e, em seguida, substitua o código de modelo com o código a seguir.
+Na pasta do projeto, criar `PaginatedList.cs`e, em seguida, substitua o código de modelo com o código a seguir.
 
 [!code-csharp[Main](intro/samples/cu/PaginatedList.cs)]
 
@@ -213,7 +213,7 @@ Para o site do Contoso University **sobre** página, você exibirá quantas alun
 
 Criar um *SchoolViewModels* pasta o *modelos* pasta.
 
-Na nova pasta, adicione um arquivo de classe EnrollmentDateGroup.cs e substitua o código de modelo com o código a seguir:
+Na nova pasta, adicionar um arquivo de classe *EnrollmentDateGroup.cs* e substitua o código de modelo com o código a seguir:
 
 [!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
@@ -247,7 +247,7 @@ Executar o aplicativo e clique no **sobre** link. A contagem de alunos para cada
 
 ## <a name="summary"></a>Resumo
 
-Neste tutorial, você viu como realizar a classificação, filtragem, paginação e agrupamento. O seguinte tutorial, você aprenderá como lidar com as alterações do modelo de dados por meio de migrações.
+Neste tutorial, você viu como realizar a classificação, filtragem, paginação e agrupamento. O seguinte tutorial, você aprenderá como lidar com as alterações do modelo de dados usando as migrações.
 
 >[!div class="step-by-step"]
 [Anterior](crud.md)

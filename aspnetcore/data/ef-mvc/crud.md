@@ -11,11 +11,11 @@ ms.assetid: 6e1cd570-40f1-4b24-8b6e-7d2d27758f18
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: b99a58d77d4f1751753ae576ade4bd6dd981fbbf
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 855f060a6404dedff310b288ada9738689069ceb
+ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Criar, ler, atualizar e excluir - Core de EF com o tutorial do MVC do ASP.NET Core (2 de 10)
 
@@ -40,7 +40,7 @@ Neste tutorial, você trabalhará com as seguintes páginas da web:
 
 ## <a name="customize-the-details-page"></a>Personalizar a página de detalhes
 
-O código de scaffolding para a página de índice de alunos de lado a `Enrollments` propriedade, porque essa propriedade contém uma coleção. No **detalhes** página você exibirá o conteúdo da coleção em uma tabela HTML.
+O código de scaffolding para a página de índice de alunos de lado a `Enrollments` propriedade, porque essa propriedade contém uma coleção. No **detalhes** página, você poderá exibir o conteúdo da coleção em uma tabela HTML.
 
 Em *Controllers/StudentsController.cs*, o método de ação para os detalhes da exibição usa o `SingleOrDefaultAsync` método para recuperar um único `Student` entidade. Adicione o código que chama `Include`. `ThenInclude`, e `AsNoTracking` métodos, como mostra o seguinte código realçado.
 
@@ -96,7 +96,7 @@ Para obter mais informações sobre os auxiliares de marcação, consulte [auxil
 
 ### <a name="add-enrollments-to-the-details-view"></a>Adicionar registros para o modo de exibição de detalhes
 
-Abra *Views/Students/Details.cshtml*. Cada campo é exibido usando `DisplayNameFor` e `DisplayFor` auxiliar, conforme mostrado no exemplo a seguir:
+Abra *Views/Students/Details.cshtml*. Cada campo é exibido usando `DisplayNameFor` e `DisplayFor` auxiliares, conforme mostrado no exemplo a seguir:
 
 [!code-html[](intro/samples/cu/Views/Students/Details.cshtml?range=13-18&highlight=2,5)]
 
@@ -274,7 +274,7 @@ Clique em **excluir**. A página de índice será exibida sem o aluno excluído.
 
 Para liberar os recursos que contém uma conexão de banco de dados, a instância de contexto deve ser descartada assim que possível quando você tiver terminado com ele. O interno do ASP.NET Core [injeção de dependência](../../fundamentals/dependency-injection.md) cuida dessa tarefa para você.
 
-Em *Startup.cs* você chamar o [o método de extensão AddDbContext](https://github.com/aspnet/EntityFramework/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs) para provisionar o `DbContext` classe no contêiner de injeção de dependência do ASP.NET. Que método define o tempo de vida do serviço `Scoped` por padrão. `Scoped`significa o tempo de vida do objeto de contexto coincide com o tempo de vida de solicitação da web, e o `Dispose` método será chamado automaticamente no final da solicitação da web.
+Em *Startup.cs*, você chamar o [o método de extensão AddDbContext](https://github.com/aspnet/EntityFramework/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs) para provisionar o `DbContext` classe no contêiner de injeção de dependência do ASP.NET. Que método define o tempo de vida do serviço `Scoped` por padrão. `Scoped`significa o tempo de vida do objeto de contexto coincide com o tempo de vida de solicitação da web, e o `Dispose` método será chamado automaticamente no final da solicitação da web.
 
 ## <a name="handling-transactions"></a>Processamento de transações
 
