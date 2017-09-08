@@ -1,0 +1,1 @@
+Este projeto é usado para fornecer os trechos de código para [a série de tutoriais EF MVC Core](https://docs.microsoft.com/aspnet/core/data/ef-mvc/intro). O projeto de exemplo que é criado com os tutoriais a seguir está em https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final.
