@@ -11,11 +11,11 @@ ms.assetid: 531bda08-aa5b-4471-8f08-96add22c8683
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: bf90698bbac850b1917cd93dbf0a5fc5b6792aa0
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 6baeb472770daf1d54b2d9ea894fc710f4f40780
+ms.sourcegitcommit: 4693cb02d845adf2efa00e07ad432c81867bfa12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="filters"></a>Filtros
 
@@ -117,7 +117,7 @@ Um filtro pode ser adicionado para o pipeline em um dos três *escopos*. Você p
 
 Quando há vários filtros para um determinado estágio do pipeline, escopo determina a ordem padrão de execução de filtro.  Filtros globais coloque os filtros de classe, que por sua vez, coloque os filtros de método. Isso é, às vezes, mencionado como aninhamento "Boneca russa", como cada aumento no escopo é encapsulado em torno do escopo anterior, como um [aninhamento boneca](https://en.wikipedia.org/wiki/Matryoshka_doll). Você geralmente pode obter o comportamento de substituição desejado sem precisar determinar explicitamente a ordenação.
 
-Resultado asa este aninhamento, o *depois* código de filtros é executado na ordem inversa do *antes de* código. A sequência tem esta aparência:
+Como resultado dessa aninhamento, o *depois* código de filtros é executado na ordem inversa do *antes de* código. A sequência tem esta aparência:
 
 * O *antes de* código de filtros aplicados globalmente
   * O *antes de* código de filtros aplicados a controladores

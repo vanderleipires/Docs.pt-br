@@ -11,11 +11,11 @@ ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: a93ee8165be52e33c2e7da4d3fee2c8225864db9
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 318d8832dadadd6946c7ffe58f9d89aaf68f54fc
+ms.sourcegitcommit: 4693cb02d845adf2efa00e07ad432c81867bfa12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="rendering-html-with-views-in-aspnet-core-mvc"></a>Renderização HTML com exibições do MVC do ASP.NET Core
 
@@ -39,7 +39,7 @@ Fornecem exibições [separação de preocupações](http://deviq.com/separation
 
 ## <a name="creating-a-view"></a>Criar um modo de exibição
 
-Exibições que são específicas para um controlador são criadas no *modos de exibição / [ControllerName]* pasta. Modos de exibição que são compartilhados entre os controladores são colocados no */exibições/compartilhado* pasta. Nomeie o arquivo de exibição o mesmo que sua ação de controlador associado e adicione o *. cshtml* extensão de arquivo. Por exemplo, para criar uma exibição para o *sobre* ação o *início* controlador, você deve criar o *About.cshtml* do arquivo no   */exibições/inicial*pasta.
+Exibições que são específicas para um controlador são criadas no *modos de exibição / [ControllerName]* pasta. Modos de exibição que são compartilhados entre os controladores são colocados no */exibições/compartilhado* pasta. Nomeie o arquivo de exibição o mesmo que sua ação de controlador associado e adicione o *. cshtml* extensão de arquivo. Por exemplo, para criar uma exibição para o *sobre* ação o *início* controlador, você deve criar o *About.cshtml* do arquivo no  * /exibições/inicial*pasta.
 
 Um exemplo de arquivo de exibição (*About.cshtml*):
 
@@ -69,14 +69,14 @@ Quando uma ação retorna uma exibição, um processo chamado *descoberta do mod
 
 Quando uma ação retorna o `View` método, da seguinte forma `return View();`, o nome da ação é usado como o nome da exibição. Por exemplo, se isso foi chamado de um método de ação denominado "Index", seria equivalente para passar um nome de exibição de "Index". Um nome de exibição pode ser passado explicitamente para o método (`return View("SomeView");`). Em ambos os casos, a descoberta do modo de exibição procura um arquivo de exibição correspondente no:
 
-   1. Modos de exibição /<ControllerName>/<ViewName>. cshtml
+   1. Modos de exibição /\<ControllerName > /\<ViewName >. cshtml
 
-   2. Exibições/compartilhadas/<ViewName>. cshtml
+   2. Exibições/compartilhadas/\<ViewName >. cshtml
 
 >[!TIP]
 > É recomendável seguir a convenção de simplesmente retornar `View()` de ações quando possível, já que resulta em mais flexível e mais fácil para refatorar o código.
 
-Um caminho de arquivo do modo de exibição pode ser fornecido, em vez de um nome de exibição. Nesse caso, o *. cshtml* extensão deve ser especificada como parte do caminho do arquivo. O caminho deve ser relativo à raiz do aplicativo (e, opcionalmente, pode começar com "/" ou "~ /"). Por exemplo: `return View("Views/Home/About.cshtml");`
+Um caminho de arquivo do modo de exibição pode ser fornecido, em vez de um nome de exibição. Se usar um caminho absoluto começando na raiz do aplicativo (se desejar começar com "/" ou "~ /"), o *. cshtml* extensão deve ser especificada como parte do caminho do arquivo. Por exemplo: `return View("Views/Home/About.cshtml");`. Como alternativa, você pode usar um caminho relativo do diretório controlador específico dentro do *exibições* directory para especificar os modos de exibição em diretórios diferentes. Por exemplo: `return View("../Manage/Index");` dentro de *início* controlador. Da mesma forma, você pode percorrer o diretório atual do controlador específico: `return View("./About");`. Observe que os caminhos relativos não usam o *. cshtml* extensão. Como mencionado anteriormente, siga a prática recomendada de organizar a estrutura de arquivos para modos de exibição refletir as relações entre os controladores, ações e modos de exibição para facilidade de manutenção e clareza.
 
 > [!NOTE]
 > [Exibições parciais](partial.md) e [exibir componentes](view-components.md) usar mecanismos de descoberta semelhantes (mas não idêntica).
