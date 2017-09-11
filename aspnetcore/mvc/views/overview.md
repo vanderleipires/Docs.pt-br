@@ -2,7 +2,7 @@
 title: "Visão geral de modos de exibição"
 author: ardalis
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 318d8832dadadd6946c7ffe58f9d89aaf68f54fc
-ms.sourcegitcommit: 4693cb02d845adf2efa00e07ad432c81867bfa12
+ms.openlocfilehash: 7abfa7ef855eb95e1a27ba6a699dd923c9e4d7c0
+ms.sourcegitcommit: 6ece943781d8a56784bb6160f14da85210d3fcea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="rendering-html-with-views-in-aspnet-core-mvc"></a>Renderização HTML com exibições do MVC do ASP.NET Core
 
@@ -76,7 +76,7 @@ Quando uma ação retorna o `View` método, da seguinte forma `return View();`, 
 >[!TIP]
 > É recomendável seguir a convenção de simplesmente retornar `View()` de ações quando possível, já que resulta em mais flexível e mais fácil para refatorar o código.
 
-Um caminho de arquivo do modo de exibição pode ser fornecido, em vez de um nome de exibição. Se usar um caminho absoluto começando na raiz do aplicativo (se desejar começar com "/" ou "~ /"), o *. cshtml* extensão deve ser especificada como parte do caminho do arquivo. Por exemplo: `return View("Views/Home/About.cshtml");`. Como alternativa, você pode usar um caminho relativo do diretório controlador específico dentro do *exibições* directory para especificar os modos de exibição em diretórios diferentes. Por exemplo: `return View("../Manage/Index");` dentro de *início* controlador. Da mesma forma, você pode percorrer o diretório atual do controlador específico: `return View("./About");`. Observe que os caminhos relativos não usam o *. cshtml* extensão. Como mencionado anteriormente, siga a prática recomendada de organizar a estrutura de arquivos para modos de exibição refletir as relações entre os controladores, ações e modos de exibição para facilidade de manutenção e clareza.
+Um caminho de arquivo do modo de exibição pode ser fornecido em vez de um nome de exibição. Se usar um caminho absoluto começando na raiz do aplicativo (se desejar começar com "/" ou "~ /"), o *. cshtml* extensão deve ser especificada como parte do caminho do arquivo (por exemplo, `return View("Views/Home/About.cshtml");`). Como alternativa, você pode usar um caminho relativo do diretório específicos do controlador no *exibições* directory para especificar os modos de exibição em diretórios diferentes (por exemplo, `return View("../Manage/Index");` dentro de `HomeController`). Da mesma forma, você pode percorrer o diretório atual do controlador específico (por exemplo, `return View("./About");`). Observe que os caminhos relativos não usam o *. cshtml* extensão. Como mencionado anteriormente, siga a prática recomendada de organizar a estrutura de arquivos para modos de exibição refletir as relações entre os controladores, ações e modos de exibição para facilidade de manutenção e clareza.
 
 > [!NOTE]
 > [Exibições parciais](partial.md) e [exibir componentes](view-components.md) usar mecanismos de descoberta semelhantes (mas não idêntica).

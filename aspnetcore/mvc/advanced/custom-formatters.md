@@ -11,11 +11,11 @@ ms.assetid: 1fb6fdc2-e199-4469-9012-b909d1913422
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/custom-formatters
-ms.openlocfilehash: af3b2174c73583832868d2062e6c7ab4689a1229
-ms.sourcegitcommit: 9d3f27a1ee5b7014fb40e4f2ec9b2a9cd744751c
+ms.openlocfilehash: 0285b40cfacb79745d3a6488401677130f55a95b
+ms.sourcegitcommit: 6ece943781d8a56784bb6160f14da85210d3fcea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="custom-formatters-in-aspnet-core-mvc-web-apis"></a>APIs da web personalizados formatadores no ASP.NET MVC de núcleo
 
@@ -23,7 +23,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 
 Núcleo do ASP.NET MVC tem suporte interno para troca de dados em APIs da web usando os formatos de texto sem formatação, XML ou JSON. Este artigo mostra como adicionar suporte para formatos adicionais criando formatadores personalizados.
 
-[Exibir ou baixar o exemplo do GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-formatters/Sample).
+[Exibir ou baixar o exemplo do GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-formatters/sample).
 
 ## <a name="when-to-use-custom-formatters"></a>Quando usar formatadores personalizados
 
@@ -100,7 +100,7 @@ Formatadores são avaliadas na ordem em que você inseri-los. O primeiro deles t
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte o [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-formatters/Sample), que implementa vCard simples de entrada e saída formatadores.  O aplicativo lê e grava vCard se parecer com o exemplo a seguir:
+Consulte o [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-formatters/sample), que implementa vCard simples de entrada e saída formatadores.  O aplicativo lê e grava vCard se parecer com o exemplo a seguir:
 
 ```
 BEGIN:VCARD
