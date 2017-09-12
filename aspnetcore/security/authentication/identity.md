@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 5718336868f3ee5ab08162ae2bc885c695d19a1d
-ms.sourcegitcommit: f3366461010da37981cf7fc092b9b9613eb4ca89
+ms.openlocfilehash: 72802830660ddcf479e540de7cfc33a07c49dc23
+ms.sourcegitcommit: b02db6da115e55140da91b67355aaf56aae1703f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade no núcleo do ASP.NET
 
@@ -38,7 +38,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
  
     ![Caixa de diálogo Nova projeto](identity/_static/01-mvc.png)
     
-    # <a name="net-core-clitabnetcore-cli"></a>[.NET core CLI](#tab/netcore-cli)
+    # <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
     Se usar o .NET Core CLI, crie o novo projeto usando ``dotnet new mvc --auth Individual``. Isso criará um novo projeto com o mesmo código de modelo de identidade que Visual Studio cria.
  
     O projeto criado contém o `Microsoft.AspNetCore.Identity.EntityFrameworkCore` pacote, que será mantido os dados de identidade e o esquema para o SQL Server usando [Entity Framework Core](https://docs.efproject.net).
@@ -48,19 +48,33 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 2.  Configurar os serviços de identidade e adicionar middleware em `Startup`.
 
     Os serviços de identidade são adicionados ao aplicativo o `ConfigureServices` método o `Startup` classe:
- 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=configureservices&highlight=7-9,13-34)]
+
+    # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+    
+    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
     
     Esses serviços são disponibilizados para o aplicativo por meio de [injeção de dependência](xref:fundamentals/dependency-injection).
- 
+    
+    Identidade é habilitada para o aplicativo chamando `UseAuthentication` no `Configure` método. `UseAuthentication`Adiciona autenticação [middleware](xref:fundamentals/middleware) para o pipeline de solicitação.
+    
+    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
+    
+    # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+    
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-34)]
+    
+    Esses serviços são disponibilizados para o aplicativo por meio de [injeção de dependência](xref:fundamentals/dependency-injection).
+    
     Identidade é habilitada para o aplicativo chamando `UseIdentity` no `Configure` método. `UseIdentity`Adiciona a autenticação baseada em cookie [middleware](xref:fundamentals/middleware) para o pipeline de solicitação.
- 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=configure&highlight=21)]
- 
+        
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
+    
+    ---
+     
     Para obter mais informações sobre o processo de inicialização do aplicativo, consulte [inicialização do aplicativo](xref:fundamentals/startup).
 
 3.  Crie um usuário.
- 
+
     Iniciar o aplicativo e, em seguida, clique no **registrar** link.
 
     Se esta for a primeira vez em que você estiver executando essa ação, talvez seja necessário para executar migrações. O aplicativo solicita que você **aplicar migrações**:
@@ -76,7 +90,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
     
     Quando o usuário clica o **registrar** link, o ``Register`` ação é invocada no ``AccountController``. O ``Register`` ação cria o usuário chamando `CreateAsync` no `_userManager` objeto (fornecido para ``AccountController`` por injeção de dependência):
  
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=register&highlight=11)]
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
     Se o usuário foi criado com êxito, o usuário é conectado pela chamada para ``_signInManager.SignInAsync``.
 
@@ -86,7 +100,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
  
     Os usuários podem entrar clicando o **login** link na parte superior do site, ou pode ser navegados a página de logon se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de logon, o ``AccountController`` ``Login`` ação é chamada.
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=login&highlight=13-14)]
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  
     O ``Login`` ação chamadas ``PasswordSignInAsync`` no ``_signInManager`` objeto (fornecido para ``AccountController`` por injeção de dependência).
  
@@ -96,15 +110,23 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
  
     Clicando o **logoff** link chamadas a `LogOut` ação.
  
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=logout&highlight=7)]
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
  
     O código anterior acima chama o `_signInManager.SignOutAsync` método. O `SignOutAsync` método limpa declarações do usuário armazenadas em um cookie.
  
 6.  Configuração.
 
     Identidade tem alguns comportamentos padrão que você pode substituir na classe de inicialização do aplicativo. Você não precisa configurar ``IdentityOptions`` se você estiver usando os comportamentos padrão.
- 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=configureservices&highlight=13-34)]
+
+    # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+    
+    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
+    
+    # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+    
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-34)]
+
+    ---
     
     Para obter mais informações sobre como configurar a identidade, consulte [configurar identidade](xref:security/authentication/identity-configuration).
     
@@ -112,7 +134,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
  
 7.  Exiba o banco de dados.
 
-    Se seu aplicativo estiver usando um banco de dados do SQL Server (o padrão no Windows e para usuários do Visual Studio), você pode exibir o aplicativo que criou o banco de dados. Você pode usar **SQL Server Management Studio**. Como alternativa, no Visual Studio, selecione **exibição** -> **Pesquisador de objetos do SQL Server**. Conecte-se ao **(localdb) \MSSQLLocalDB**. O banco de dados com um nome correspondente  **aspnet - <*nome do projeto*>-<*cadeia de caracteres de data*> * * é exibida.
+    Se seu aplicativo estiver usando um banco de dados do SQL Server (o padrão no Windows e para usuários do Visual Studio), você pode exibir o aplicativo que criou o banco de dados. Você pode usar **SQL Server Management Studio**. Como alternativa, no Visual Studio, selecione **exibição** -> **Pesquisador de objetos do SQL Server**. Conecte-se ao **(localdb) \MSSQLLocalDB**. O banco de dados com um nome correspondente * *aspnet - <*nome do projeto*>-<*cadeia de caracteres de data*> * * é exibida.
 
     ![Menu de contexto no AspNetUsers tabela de banco de dados](identity/_static/04-db.png)
     
@@ -136,7 +158,7 @@ Para obter informações adicionais e diretrizes sobre como migrar sua identidad
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Migrando de autenticação e identidade](xref:migration/identity)
-* [Confirmação de conta e senha de recuperação](xref:security/authentication/accconfirm)
-* [Autenticação de dois fatores com o SMS](xref:security/authentication/2fa)
-* [Habilitar a autenticação usando o Facebook, Google e outros provedores externos](xref:security/authentication/social/index)
+* [Migrando autenticação e identidade](xref:migration/identity)
+* [Confirmação de conta e de recuperação de senha](xref:security/authentication/accconfirm)
+* [Autenticação de dois fatores com SMS](xref:security/authentication/2fa)
+* [Habilitar a autenticação usando o Facebook, o Google e outros provedores externos](xref:security/authentication/social/index)

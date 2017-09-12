@@ -2,7 +2,7 @@
 title: "O programa de instalação do Microsoft Account logon externo"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 08/24/2017
@@ -11,11 +11,11 @@ ms.assetid: 66DB4B94-C78C-4005-BA03-3D982B87C268
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: cc2d119ae2f7cf06ed0ea4b8a91fd8fa15804468
-ms.sourcegitcommit: fb518f856f31fe53c09196a13309eacb85b37a22
+ms.openlocfilehash: 70cbeea15199498c592307dccc125e60206dadbf
+ms.sourcegitcommit: b02db6da115e55140da91b67355aaf56aae1703f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="configuring-microsoft-account-authentication"></a>Configurar a autenticação do Microsoft Account
 
@@ -31,7 +31,7 @@ Este tutorial mostra como habilitar os usuários entrar com sua conta da Microso
 
 ![Entrar na caixa de diálogo](index/_static/MicrosoftDevLogin.png)
 
-Se você ainda não tiver uma conta da Microsoft, toque em  **[criar um!](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=13&ct=1478151035&rver=6.7.6643.0&wp=SAPI_LONG&wreply=https%3a%2f%2fapps.dev.microsoft.com%2fLoginPostBack&id=293053&aadredir=1&contextid=D70D4F21246BAB50&bk=1478151036&uiflavor=web&uaid=f0c3de863a914c358b8dc01b1ff49e85&mkt=EN-US&lc=1033&lic=1)** Depois de entrar, você será redirecionado para **meus aplicativos** página:
+Se você ainda não tiver uma conta da Microsoft, toque em ** [criar um!](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=13&ct=1478151035&rver=6.7.6643.0&wp=SAPI_LONG&wreply=https%3a%2f%2fapps.dev.microsoft.com%2fLoginPostBack&id=293053&aadredir=1&contextid=D70D4F21246BAB50&bk=1478151036&uiflavor=web&uaid=f0c3de863a914c358b8dc01b1ff49e85&mkt=EN-US&lc=1033&lic=1)** Depois de entrar, você será redirecionado para **meus aplicativos** página:
 
 ![Portal do desenvolvedor do Microsoft aberto no Microsoft Edge](index/_static/MicrosoftDev.png)
 
@@ -41,7 +41,7 @@ Se você ainda não tiver uma conta da Microsoft, toque em  **[criar um!](https:
 
 * Para os fins deste tutorial, desmarque o **instalação interativa** caixa de seleção.
 
-* Toque em **criar** para continuar a **registro** página:
+* Toque em **criar** para continuar a **registro** página. Forneça um **nome** e observe o valor da **Id do aplicativo**, que você usar como `ClientId` posteriormente no tutorial:
 
 ![Página de registro](index/_static/MicrosoftDevAppReg.png)
 
@@ -78,7 +78,7 @@ O modelo de projeto usado neste tutorial garante que [Microsoft.AspNetCore.Authe
 
    `dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount`
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Adicione o serviço Microsoft Account no `ConfigureServices` método *Startup.cs* arquivo:
 
@@ -92,7 +92,7 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 
 O `AddAuthentication` método só deve ser chamado uma vez ao adicionar vários provedores de autenticação. Chamadas subsequentes para que ele tem o potencial de substituição qualquer configurado anteriormente [AuthenticationOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.authenticationoptions) propriedades.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Adicionar o middleware Account da Microsoft no `Configure` método *Startup.cs* arquivo:
 
