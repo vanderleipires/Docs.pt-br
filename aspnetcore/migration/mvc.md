@@ -11,15 +11,15 @@ ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc
-ms.openlocfilehash: ccdceed927d90a1f3201be9d9f92ebb4f2f66e66
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 2bd689626e867e0ea82fbebdf92447a6029aa35b
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC
 
-Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), [Steve Smith](http://ardalis.com), e [Scott Addie](https://scottaddie.com)
+Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), e [Scott Addie](https://scottaddie.com)
 
 Este artigo mostra como começar a migração de um projeto ASP.NET MVC para [MVC do ASP.NET Core](../mvc/overview.md). O processo, ele destaca muitas coisas que foram alterados desde o ASP.NET MVC. Migrando do ASP.NET MVC é um processo de várias etapas e este artigo aborda a configuração inicial, controladores básico e modos de exibição, conteúdo estático e dependências do lado do cliente. Artigos adicionais abrangem migrando configuração e código de identidade encontrada em muitos projetos do ASP.NET MVC.
 
@@ -138,9 +138,9 @@ Em versões anteriores do ASP.NET MVC, conteúdo estático hospedado da raiz do 
 
 O ASP.NET MVC antigo projeto usa [Bootstrap](http://getbootstrap.com/) para seu estilo e repositórios de arquivos a inicialização a *conteúdo* e *Scripts* pastas. O modelo, que gerou o antigo projeto ASP.NET MVC, referencia o Bootstrap no arquivo de layout (*Views/Shared/_Layout.cshtml*). Você poderá copiar o *bootstrap.js* e *bootstrap.css* projeto de arquivos do ASP.NET MVC para o *wwwroot* pasta no novo projeto, mas essa abordagem não usa o melhor mecanismo para gerenciar o cliente dependências no núcleo do ASP.NET.
 
-No novo projeto, vamos adicionar suporte para inicialização (e outras bibliotecas de cliente) usando [Bower](http://bower.io/):
+No novo projeto, vamos adicionar suporte para inicialização (e outras bibliotecas de cliente) usando [Bower](https://bower.io/):
 
-* Adicionar um [Bower](http://bower.io/) arquivo de configuração chamado *bower. JSON* para a raiz do projeto (com o botão direito no projeto e, em seguida, **Adicionar > Novo Item > arquivo de configuração Bower**). Adicionar [Bootstrap](http://getbootstrap.com/) e [jQuery](https://jquery.com/) para o arquivo (consulte as linhas destacadas abaixo).
+* Adicionar um [Bower](https://bower.io/) arquivo de configuração chamado *bower. JSON* para a raiz do projeto (com o botão direito no projeto e, em seguida, **Adicionar > Novo Item > arquivo de configuração Bower**). Adicionar [Bootstrap](http://getbootstrap.com/) e [jQuery](https://jquery.com/) para o arquivo (consulte as linhas destacadas abaixo).
 
   [!code-json[Main](mvc/sample/bower.json?highlight=5-6)]
 
@@ -166,7 +166,7 @@ Abra *cshtml* de arquivo e faça as alterações a seguir (o código completo é
 
    * Substituir `@Styles.Render("~/Content/css")` com um `<link>` elemento carregar *bootstrap.css* (veja abaixo).
 
-   * Remover `@Scripts.Render("~/bundles/modernizr")`.
+   * Remova `@Scripts.Render("~/bundles/modernizr")`.
 
    * Comente o `@Html.Partial("_LoginPartial")` linha (envolvem a linha com `@*...*@`). Retornaremos a ele um tutorial futuras.
 
@@ -226,6 +226,6 @@ Consulte **usando a página de exceção de desenvolvedor** na [tratamento de er
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Desenvolvimento do lado do cliente](../client-side/index.md)
+* [Desenvolvimento no Lado do Cliente](../client-side/index.md)
 
-* [Auxiliares de marcação](../mvc/views/tag-helpers/index.md)
+* [Auxiliares de Marcas](../mvc/views/tag-helpers/index.md)

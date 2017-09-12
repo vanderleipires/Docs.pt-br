@@ -2,7 +2,7 @@
 title: Criptografia de chave em repouso
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: f2bbbf4e-0945-43ce-be59-8bf19e448798
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: cef7644d29168e9560d1175885ea85a525fec435
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 16a9385630d88c4c9f33954f83fce2bbce5be719
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="key-encryption-at-rest"></a>Criptografia de chave em repouso
 
@@ -74,7 +74,7 @@ Começando com o Windows 8, o sistema operacional oferece suporte a DPAPI-NG (ta
 
    Computação em nuvem, no entanto, geralmente exige que conteúdo criptografado em um computador ser descriptografado em outro. Portanto, começando com o Windows 8, estendido a ideia de usar uma API relativamente simples para abranger os cenários de nuvem da Microsoft. Essa nova API chamada DPAPI-NG, permite que você compartilhe com segurança segredos (chaves, senhas, material de chave) e mensagens protegendo-os para um conjunto de entidades que podem ser usados para desprotegê-los em diferentes computadores após a autorização e autenticação adequada.
 
-   De [https://msdn.microsoft.com/library/windows/desktop/hh706794 (v=vs.85).aspx](https://msdn.microsoft.com/library/windows/desktop/hh706794(v=vs.85).aspx)
+   De [sobre DPAPI CNG](https://msdn.microsoft.com/library/windows/desktop/hh706794(v=vs.85).aspx)
 
 A entidade de segurança é codificada como uma regra de proteção do descritor. Considere o exemplo abaixo, que criptografa material de chave, de modo que somente o usuário associado a um domínio com o SID especificado pode descriptografar o material da chave.
 
@@ -97,7 +97,7 @@ Nesse cenário, o controlador de domínio do AD é responsável por distribuir a
 
 ## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a>Criptografia baseada em certificado com o Windows DPAPI-NG
 
-Se você estiver executando no Windows 8.1 / Windows Server 2012 R2 ou posterior, você pode usar Windows DPAPI-NG para executar a criptografia baseada em certificado, mesmo que o aplicativo está em execução no [.NET Core](https://microsoft.com/net/core). Para tirar proveito disso, use a cadeia de caracteres do descritor de regra "certificado = HashId:thumbprint", onde a impressão digital é codificada em hexadecimal SHA1 impressão digital do certificado a ser usado. Veja abaixo um exemplo.
+Se você estiver executando no Windows 8.1 / Windows Server 2012 R2 ou posterior, você pode usar Windows DPAPI-NG para executar a criptografia baseada em certificado, mesmo que o aplicativo está em execução no [.NET Core](https://www.microsoft.com/net/core). Para tirar proveito disso, use a cadeia de caracteres do descritor de regra "certificado = HashId:thumbprint", onde a impressão digital é codificada em hexadecimal SHA1 impressão digital do certificado a ser usado. Veja abaixo um exemplo.
 
 ```csharp
 sc.AddDataProtection()

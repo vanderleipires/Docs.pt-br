@@ -12,17 +12,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d2e191a7395110cde7ab5b2f19b6154c96fb496e
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 4d0302439fbc777c72f00c37a8c852fc0d46300e
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Introdução a injeção de dependência no núcleo do ASP.NET
 
 <a name=fundamentals-dependency-injection></a>
 
-Por [Steve Smith](http://ardalis.com) e [Scott Addie](https://scottaddie.com)
+Por [Steve Smith](https://ardalis.com/) e [Scott Addie](https://scottaddie.com)
 
 ASP.NET Core foi projetado desde o início para dar suporte e aproveitar a injeção de dependência. Aplicativos do ASP.NET Core podem aproveitar os serviços de estrutura interna, mantendo-as injetada métodos na classe de inicialização e serviços de aplicativo podem ser configurados para a injeção também. O contêiner de serviços padrão fornecido pelo ASP.NET Core fornece um recurso mínimo definido e não se destina a substituir outros contêineres.
 
@@ -39,7 +39,7 @@ Quando um sistema é projetado para usar a DI, com muitas classes solicitando su
 ASP.NET Core inclui um simple contêiner interno (representado pelo `IServiceProvider` interface) que dá suporte a injeção de construtor por padrão, e ASP.NET disponibiliza por meio de DI determinados serviços. AS PÁGINAS ASP. Contêiner do NET refere-se aos tipos que ele gerencia como *serviços*. No restante deste artigo, *serviços* fará referência a tipos que são gerenciados pelo contêiner de IoC do ASP.NET Core. Configurar serviços do contêiner interno no `ConfigureServices` método em seu aplicativo `Startup` classe.
 
 > [!NOTE]
-> Martin Fowler escreveu um artigo abrangente sobre [inversão de contêineres de controle e o padrão de injeção de dependência](http://www.martinfowler.com/articles/injection.html). Microsoft Patterns e práticas recomendadas também tem uma descrição excelente de [injeção de dependência](https://msdn.microsoft.com/library/dn178469(v=pandp.30).aspx).
+> Martin Fowler escreveu um artigo abrangente sobre [inversão de contêineres de controle e o padrão de injeção de dependência](https://www.martinfowler.com/articles/injection.html). Microsoft Patterns e práticas recomendadas também tem uma descrição excelente de [injeção de dependência](https://msdn.microsoft.com/library/hh323705.aspx).
 
 > [!NOTE]
 > Este artigo aborda a injeção de dependência conforme ela se aplica a todos os aplicativos ASP.NET. Injeção de dependência em controladores MVC é abordada em [injeção de dependência e controladores](../mvc/controllers/dependency-injection.md).
@@ -210,7 +210,7 @@ Em geral, você não deve usar essas propriedades diretamente, em vez disso, pre
 
 ## <a name="designing-your-services-for-dependency-injection"></a>Criar serviços para injeção de dependência
 
-Você deve projetar seus serviços para usar injeção de dependência para seus colaboradores. Isso significa evitar o uso de chamadas de método estático com monitoração de estado (que pode resultar em um cheiro código conhecido como [adesivos](http://deviq.com/static-cling/)) e a instanciação direta classes dependentes em seus serviços. Ele pode ajudar a lembrar a frase [novo é liga](http://ardalis.com/new-is-glue), ao escolher se deseja criar uma instância de um tipo ou solicitá-la por meio de injeção de dependência. Seguindo o [sólido princípios de Design orientado a objeto](http://deviq.com/solid/), suas classes naturalmente tendem a ser pequenos, bem fatorada e facilmente testados.
+Você deve projetar seus serviços para usar injeção de dependência para seus colaboradores. Isso significa evitar o uso de chamadas de método estático com monitoração de estado (que pode resultar em um cheiro código conhecido como [adesivos](http://deviq.com/static-cling/)) e a instanciação direta classes dependentes em seus serviços. Ele pode ajudar a lembrar a frase [novo é liga](https://ardalis.com/new-is-glue), ao escolher se deseja criar uma instância de um tipo ou solicitá-la por meio de injeção de dependência. Seguindo o [sólido princípios de Design orientado a objeto](http://deviq.com/solid/), suas classes naturalmente tendem a ser pequenos, bem fatorada e facilmente testados.
 
 Se você acha que suas classes tendem a ter muitas dependências que está sendo inseridas de maneira? Isso geralmente é um sinal de que sua classe está tentando fazer muito e provavelmente está violando SRP - o [princípio da responsabilidade única](http://deviq.com/single-responsibility-principle/). Consulte se refatorar a classe ao mover algumas de suas responsabilidades em uma nova classe. Lembre-se de que seu `Controller` classes devem se concentrar no preocupações de interface do usuário para os detalhes de implementação de acesso de dados e regras de negócios devem ser mantidos em classes apropriadas para esses [separar questões](http://deviq.com/separation-of-concerns/).
 
@@ -245,7 +245,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="replacing-the-default-services-container"></a>Substituindo o contêiner de serviços padrão
 
-O contêiner de serviços internos destina-se para atender às necessidades básicas do framework e a maioria dos aplicativos de consumidor criados nele. No entanto, os desenvolvedores podem substituir o contêiner interno por seu contêiner preferencial. O `ConfigureServices` método normalmente retorna `void`, mas se sua assinatura for alterada para retornar `IServiceProvider`, um contêiner diferente pode ser configurado e retornado. Há vários contêineres IOC disponíveis para .NET. Neste exemplo, o [Autofac](http://autofac.org/) pacote é usado.
+O contêiner de serviços internos destina-se para atender às necessidades básicas do framework e a maioria dos aplicativos de consumidor criados nele. No entanto, os desenvolvedores podem substituir o contêiner interno por seu contêiner preferencial. O `ConfigureServices` método normalmente retorna `void`, mas se sua assinatura for alterada para retornar `IServiceProvider`, um contêiner diferente pode ser configurado e retornado. Há vários contêineres IOC disponíveis para .NET. Neste exemplo, o [Autofac](https://autofac.org/) pacote é usado.
 
 Primeiro, instale o pacote de contêiner apropriado (s):
 
@@ -317,8 +317,8 @@ Lembre-se de que a injeção de dependência é um *alternativo* para padrões d
 
 * [Escrevendo código limpo no núcleo do ASP.NET com a injeção de dependência (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 
-* [Design de aplicativo gerenciado por contêiner, Prelude: Onde é o contêiner pertence?](http://blogs.msdn.com/b/nblumhardt/archive/2008/12/27/container-managed-application-design-prelude-where-does-the-container-belong.aspx)
+* [Design de aplicativo gerenciado por contêiner, Prelude: Onde é o contêiner pertence?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
 
 * [Princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/)
 
-* [Inversão de contêineres de controle e o padrão de injeção de dependência](http://www.martinfowler.com/articles/injection.html) (Fowler)
+* [Inversão de contêineres de controle e o padrão de injeção de dependência](https://www.martinfowler.com/articles/injection.html) (Fowler)

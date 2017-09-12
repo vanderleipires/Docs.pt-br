@@ -2,7 +2,7 @@
 title: "Estrutura Knockout. js MVVM no núcleo do ASP.NET"
 author: ardalis
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: b20e3b23-1c51-47bf-adac-91b5048567e0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/knockout
-ms.openlocfilehash: 87b4fdc86f6bb870ae0a8cc85688a549fd0740ac
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: d1c5cbd430587b757bb550f8f04355e67f04eb54
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="knockoutjs-mvvm-framework-in-aspnet-core"></a>Estrutura Knockout. js MVVM no núcleo do ASP.NET
 
-Por [Steve Smith](http://ardalis.com)
+Por [Steve Smith](https://ardalis.com/)
 
 Separação é uma biblioteca JavaScript popular que simplifica a criação de interfaces de usuário complexas com base em dados. Ele pode ser usado sozinho ou com outras bibliotecas, como jQuery. Sua finalidade principal é associar os elementos de interface do usuário para um modelo de dados definido como um objeto de JavaScript, de modo que quando as alterações são feitas para a interface do usuário, o modelo é atualizado e vice-versa. Knockout facilita o uso de um padrão Model-View-ViewModel (MVVM) no comportamento do cliente de um aplicativo web. Os dois principais conceitos um deve saber ao trabalhar com a implementação do MVVM do Knockout são observáveis e associações.
 

@@ -12,15 +12,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/memory
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f872cd0c355f7961ae8628c28c62d3b51c8db2c5
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 1e2d43d837ba76c6ef8b5136f3751edb44d6606a
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-in-memory-caching-in-aspnet-core"></a>Introdução ao cache na memória no núcleo do ASP.NET
 
-Por [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), e [Steve Smith](http://ardalis.com)
+Por [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), e [Steve Smith](https://ardalis.com/)
 
 [Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample)
 
@@ -28,7 +28,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.
 
 O cache pode melhorar significativamente o desempenho e a escalabilidade de um aplicativo, reduzindo o trabalho necessário para gerar o conteúdo. Armazenamento em cache funciona melhor com dados que raramente são alterados. O cache faz uma cópia dos dados que podem ser retornadas muito mais rápido do que a partir da origem. Você deve escrever e testar seu aplicativo para nunca dependem dos dados armazenados em cache.
 
-ASP.NET Core dá suporte a vários caches diferentes. O cache mais simples se baseia o [IMemoryCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache), que representa um cache armazenado na memória do servidor web. Aplicativos que são executados em um farm de servidores devem garantir que as sessões estão aderência ao usar o cache na memória. Sessões Autoadesivas Certifique-se de que as solicitações subsequentes de um cliente todos os vão para o mesmo servidor. Por exemplo, uso de aplicativos da Web do Azure [Application Request Routing](http://www.iis.net/learn/extensions/planning-for-arr) (ARR) para rotear todas as solicitações subsequentes para o mesmo servidor.
+ASP.NET Core dá suporte a vários caches diferentes. O cache mais simples se baseia o [IMemoryCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache), que representa um cache armazenado na memória do servidor web. Aplicativos que são executados em um farm de servidores devem garantir que as sessões estão aderência ao usar o cache na memória. Sessões Autoadesivas Certifique-se de que as solicitações subsequentes de um cliente todos os vão para o mesmo servidor. Por exemplo, uso de aplicativos da Web do Azure [Application Request Routing](https://www.iis.net/learn/extensions/planning-for-arr) (ARR) para rotear todas as solicitações subsequentes para o mesmo servidor.
 
 Sessões não temporária em um farm da web exigem um [cache distribuído](distributed.md) para evitar problemas de consistência de cache. Para alguns aplicativos, um cache distribuído pode dar suporte a mais alta de expansão de um cache na memória. Usar um cache distribuído libera a memória de cache para um processo externo. 
 
@@ -100,5 +100,5 @@ Usando um `CancellationTokenSource` permite que várias entradas de cache a ser 
 
 ### <a name="other-resources"></a>Outros recursos
 
-* [Trabalhando com um Cache distribuído](distributed.md)
+* [Trabalhando com um cache distribuído](distributed.md)
 * [Middleware de cache de resposta](middleware.md)

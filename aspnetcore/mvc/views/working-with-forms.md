@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bd69e008a81abc4f6785d93b89823c03e1a7df83
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: c3f7792d7458013f837a48ca2caa459f35658f02
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introdução ao uso de auxiliares de marcação em formulários do ASP.NET Core
 
@@ -34,7 +34,7 @@ O [formulário](https://www.w3.org/TR/html401/interact/forms.html) auxiliar de m
 
 * Gera o HTML [ \<formulário >](https://www.w3.org/TR/html401/interact/forms.html) `action` valor de atributo para uma ação do controlador MVC ou uma rota nomeada
 
-* Gera um oculta [solicitação de Token de verificação](http://www.asp.net/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) para evitar a falsificação de solicitação entre sites (quando usado com o `[ValidateAntiForgeryToken]` atributo no método de ação HTTP Post)
+* Gera um oculta [solicitação de Token de verificação](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) para evitar a falsificação de solicitação entre sites (quando usado com o `[ValidateAntiForgeryToken]` atributo no método de ação HTTP Post)
 
 * Fornece o `asp-route-<Parameter Name>` atributo, onde `<Parameter Name>` é adicionado aos valores de rota. O `routeValues` parâmetros para `Html.BeginForm` e `Html.BeginRouteForm` fornecem funcionalidade semelhante.
 
@@ -53,7 +53,7 @@ O auxiliar de marca de formulário acima gera o HTML a seguir:
     </form>
    ```
 
-O tempo de execução do MVC gera o `action` valor do atributo dos atributos do auxiliar de marca de formulário `asp-controller` e `asp-action`. O auxiliar de marca de formulário também gera oculto [solicitação de Token de verificação](http://www.asp.net/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) para evitar a falsificação de solicitação entre sites (quando usado com o `[ValidateAntiForgeryToken]` atributo no método de ação HTTP Post). Proteger um formulário HTML puro contra falsificação de solicitação entre sites é difícil, o auxiliar de marca de formulário fornece este serviço para você.
+O tempo de execução do MVC gera o `action` valor do atributo dos atributos do auxiliar de marca de formulário `asp-controller` e `asp-action`. O auxiliar de marca de formulário também gera oculto [solicitação de Token de verificação](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) para evitar a falsificação de solicitação entre sites (quando usado com o `[ValidateAntiForgeryToken]` atributo no método de ação HTTP Post). Proteger um formulário HTML puro contra falsificação de solicitação entre sites é difícil, o auxiliar de marca de formulário fornece este serviço para você.
 
 ### <a name="using-a-named-route"></a>Usando uma rota nomeada
 
@@ -61,7 +61,7 @@ O `asp-route` atributo do auxiliar de marca também pode gerar a marcação para
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterRoute.cshtml)]
 
-Muitas das exibições no *modos de exibição/conta* pasta (gerado quando você cria um novo aplicativo web com *contas de usuário individuais*) contêm o [asp de rota de returnurl](http://docs.asp.net/en/latest/mvc/views/working-with-forms.html#the-form-tag-helper) atributo:
+Muitas das exibições no *modos de exibição/conta* pasta (gerado quando você cria um novo aplicativo web com *contas de usuário individuais*) contêm o [asp de rota de returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) atributo:
 
 <!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "none", "highlight_args": {"hl_lines": [2]}} -->
 
@@ -88,11 +88,11 @@ O auxiliar de marca de entrada:
 
 * Gera o `id` e `name` atributos HTML para o nome da expressão especificada no `asp-for` atributo. `asp-for="Property1.Property2"` equivale a `m => m.Property1.Property2`. O nome da expressão é o que é usado para o `asp-for` valor do atributo. Consulte o [nomes de expressão](#expression-names) seção para obter informações adicionais.
 
-* Define o HTML `type` com base no tipo de modelo de valor de atributo e [anotação de dados](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) atributos aplicados para a propriedade de modelo
+* Define o HTML `type` com base no tipo de modelo de valor de atributo e [anotação de dados](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributos aplicados para a propriedade de modelo
 
 * Não substituirá o HTML `type` valor de atributo quando um for especificado
 
-* Gera [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) atributos de validação de [anotação de dados](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) atributos aplicados às propriedades de modelo
+* Gera [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) atributos de validação de [anotação de dados](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributos aplicados às propriedades de modelo
 
 * Tem um recurso auxiliar HTML sobrepõe `Html.TextBoxFor` e `Html.EditorFor`. Consulte o **alternativas de auxiliar HTML para auxiliar de marca de entrada** seção para obter detalhes.
 
@@ -121,7 +121,7 @@ O `Input` auxiliar de marca define o HTML `type` atributo com base no tipo de .N
 |Single e Double|tipo = "number"|
 
 
-A tabela a seguir mostra algumas [as anotações de dados](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) atributos que o auxiliar de marca de entrada serão mapeados para tipos específicos de entrada (não todos os atributos de validação é listado):
+A tabela a seguir mostra algumas [as anotações de dados](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributos que o auxiliar de marca de entrada serão mapeados para tipos específicos de entrada (não todos os atributos de validação é listado):
 
 
 |Atributo|Tipo de entrada|
@@ -260,7 +260,7 @@ O *Views/Shared/EditorTemplates/ToDoItem.cshtml* modelo:
 
 O `Textarea Tag Helper` auxiliar de marca é semelhante para o auxiliar de marca de entrada.
 
-* Gera o `id` e `name` atributos e os atributos de validação de dados do modelo para um [ \<textarea >](http://www.w3.org/wiki/HTML/Elements/textarea) elemento.
+* Gera o `id` e `name` atributos e os atributos de validação de dados do modelo para um [ \<textarea >](https://www.w3.org/wiki/HTML/Elements/textarea) elemento.
 
 * Fornece alta segurança de tipos.
 
@@ -324,7 +324,7 @@ Há dois auxiliares de marcação de validação. O `Validation Message Tag Help
 
 ### <a name="the-validation-message-tag-helper"></a>O auxiliar de marca de mensagem de validação
 
-* Adiciona o [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` de atributo para o [abrangem](https://developer.mozilla.org/docs/Web/HTML/Element/span) elemento, que anexa as mensagens de erro de validação no campo de entrada da propriedade do modelo especificado.   Quando ocorre um erro de validação do lado cliente, [jQuery](https://jquery.com/) exibe a mensagem de erro no `<span>` elemento.
+* Adiciona o [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` de atributo para o [abrangem](https://developer.mozilla.org/docs/Web/HTML/Element/span) elemento, que anexa as mensagens de erro de validação no campo de entrada da propriedade do modelo especificado. Quando ocorre um erro de validação do lado cliente, [jQuery](https://jquery.com/) exibe a mensagem de erro no `<span>` elemento.
 
 * Também, a validação é feita no servidor. Os clientes poderão ter JavaScript desabilitado e só pode ser feita alguma validação no lado do servidor.
 
@@ -590,16 +590,16 @@ Corretas `<option>` elemento será selecionado (contêm o `selected="selected"` 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Auxiliares de marcação](tag-helpers/intro.md)
+* [Auxiliares de Marcas](tag-helpers/intro.md)
 
 * [Elemento de formulário HTML](https://www.w3.org/TR/html401/interact/forms.html)
 
-* [Solicitação de Token de verificação](http://www.asp.net/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
+* [Solicitação de Token de verificação](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
 
-* [Associação de modelo](../models/model-binding.md)
+* [Associação de modelos](../models/model-binding.md)
 
 * [Validação de modelo](../models/validation.md)
 
-* [anotações de dados](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)
+* [anotações de dados](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)
 
 * [Trechos de código para este documento de código](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/forms/sample).

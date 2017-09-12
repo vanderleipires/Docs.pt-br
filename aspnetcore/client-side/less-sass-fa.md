@@ -11,17 +11,17 @@ ms.assetid: 94c988f9-95fd-425d-b37e-7f846598c6d4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 4282e992ea80420181f9d7a2e3d6a55d6614c4de
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 128612eb2f7c6c8fdd0cc01f10b8e522df46dcf6
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Introdução aos aplicativos de estilo com menor, Sass e fonte Awesome no núcleo do ASP.NET
 
-Por [Steve Smith](http://ardalis.com)
+Por [Steve Smith](https://ardalis.com/)
 
-Os usuários de aplicativos da web têm expectativas cada vez mais altas quando se trata de estilo e a experiência geral. Aplicativos web modernos frequentemente aproveitam avançadas ferramentas e estruturas para definir e gerenciar sua aparência de uma maneira consistente. Estruturas como [inicialização](http://getbootstrap.com/) pode ir um longo caminho para definir um conjunto comum de opções de layout para sites da web e estilos. No entanto, a maioria dos sites não trivial também se beneficiar de ser capaz de definir e manter estilos e arquivos de folhas de estilo em cascata com eficiência, bem como acesso fácil a imagem não ícones que ajudam a tornar a interface do site mais intuitiva. É onde linguagens e ferramentas que dão suporte a [menos](http://lesscss.org/) e [Sass](http://sass-lang.com/), e bibliotecas, como [fonte Awesome](http://fortawesome.github.io/Font-Awesome/), entrar.
+Os usuários de aplicativos da web têm expectativas cada vez mais altas quando se trata de estilo e a experiência geral. Aplicativos web modernos frequentemente aproveitam avançadas ferramentas e estruturas para definir e gerenciar sua aparência de uma maneira consistente. Estruturas como [inicialização](http://getbootstrap.com/) pode ir um longo caminho para definir um conjunto comum de opções de layout para sites da web e estilos. No entanto, a maioria dos sites não trivial também se beneficiar de ser capaz de definir e manter estilos e arquivos de folhas de estilo em cascata com eficiência, bem como acesso fácil a imagem não ícones que ajudam a tornar a interface do site mais intuitiva. É onde linguagens e ferramentas que dão suporte a [menos](http://lesscss.org/) e [Sass](http://sass-lang.com/), e bibliotecas, como [fonte Awesome](http://fontawesome.io/), entrar.
 
 ## <a name="css-preprocessor-languages"></a>Idiomas de pré-processador de CSS
 

@@ -2,7 +2,7 @@
 title: "Configurar a autenticação do Windows no núcleo do ASP.NET"
 author: ardalis
 description: "Como configurar a autenticação do Windows no núcleo do ASP.NET"
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 7/5/2017
@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-548ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 008a647295334e957c33c6db7f80687645b3b928
-ms.sourcegitcommit: 69b3255f8b6f5db9e7d21f391420602d7ba9f4db
+ms.openlocfilehash: aa401f956d74680efd3964203af3e8866b129887
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>Configurar a autenticação do Windows no núcleo do ASP.NET
 
@@ -27,7 +27,7 @@ Autenticação do Windows pode ser configurada para aplicativos ASP.NET Core hos
 
 Autenticação do Windows se baseia no sistema operacional para autenticar os usuários de aplicativos do ASP.NET Core. Você pode usar a autenticação do Windows quando o servidor é executado em uma rede corporativa usando identidades do domínio do Active Directory ou outras contas do Windows para identificar os usuários. Autenticação do Windows é uma forma segura de autenticação melhor adequada para ambientes de intranet onde os usuários, os aplicativos cliente e servidores web pertencem ao mesmo domínio do Windows.
 
-[Saiba mais sobre a autenticação do Windows e instalá-lo para o IIS](https://www.iis.net/configreference/system.webserver/security/authentication/windowsauthentication).
+[Saiba mais sobre a autenticação do Windows e instalá-lo para o IIS](https://docs.microsoft.com/iis/configuration/system.webServer/security/authentication/windowsAuthentication/).
 
 ## <a name="enabling-windows-authentication-in-an-aspnet-core-application"></a>Habilitar a autenticação do Windows em um aplicativo do ASP.NET Core
 
@@ -36,7 +36,7 @@ O modelo de aplicativo de Web do Visual Studio pode ser configurado para dar sup
 ### <a name="using-the-windows-authentication-app-template"></a>Usando o modelo de aplicativo de autenticação do Windows
 
 No Visual Studio:
-* Crie um novo aplicativo de Web do ASP.NET Core. 
+* Crie um novo Aplicativo Web ASP.NET Core. 
 * Selecione o aplicativo Web da lista de modelos.
 * Selecione o botão Alterar autenticação e selecione **autenticação do Windows**. 
 
@@ -91,7 +91,7 @@ Usando o Visual Studio ou o .NET Core CLI, *publicar* seu aplicativo para a past
 
 ![Caixa de diálogo de publicação do Visual Studio](windowsauth/_static/vs-publish-app.png)
 
-Saiba mais sobre [publicar no IIS](https://docs.microsoft.com/aspnet/core/publishing/iis).
+Saiba mais sobre [publicar no IIS](xref:publishing/iis).
 
 Inicie o aplicativo para verificar a autenticação do Windows está funcionando.
 

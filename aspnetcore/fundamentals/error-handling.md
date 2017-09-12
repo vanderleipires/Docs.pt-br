@@ -12,15 +12,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/error-handling
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5898892c63e978adfabf9939394fef4ea1848d49
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 96a4fed19887a7a9eba08ec70296147f22e41569
+ms.sourcegitcommit: 368aabde4de3728a8e5a8c016a2ec61f9c0854bf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>Introdução ao ASP.NET Core de tratamento de erros
 
-Por [Steve Smith](http://ardalis.com) e [Tom Dykstra](https://github.com/tdykstra/)
+Por [Steve Smith](https://ardalis.com/) e [Tom Dykstra](https://github.com/tdykstra/)
 
 Este artigo aborda appoaches comuns para tratamento de erros em aplicativos do ASP.NET Core.
 
@@ -111,13 +111,13 @@ Além disso, lembre-se que, depois que os cabeçalhos de resposta forem enviados
 
 ## <a name="server-exception-handling"></a>Tratamento de exceção de servidor
 
-Além da lógica em seu aplicativo de tratamento de exceção de [server](servers/index.md) hospedar seu aplicativo irá realizar algumas tratamento de exceção. Se o servidor detecta uma exceção antes dos cabeçalhos enviados, ele enviará uma resposta de erro de servidor interno 500 sem corpo. Se ele captura uma exceção após terem sido enviados os cabeçalhos, ele fecha a conexão. Solicitações que não são manipuladas pelo seu aplicativo serão manipuladas pelo servidor e qualquer exceção que ocorre será tratada por exceção do servidor tratamento. Qualquer páginas de erro personalizadas ou middleware ou filtros que você configurou para seu aplicativo de tratamento de exceções não afetam esse comportamento.
+Além da lógica em seu aplicativo de tratamento de exceção de [server](servers/index.md) hospedar seu aplicativo executa algumas tratamento de exceção. Se o servidor detecta uma exceção antes de serem enviados os cabeçalhos, o servidor envia uma resposta de erro de servidor interno 500 sem corpo. Se o servidor detecta uma exceção após terem sido enviados os cabeçalhos, o servidor fecha a conexão. Solicitações que não são manipuladas pelo seu aplicativo são manipuladas pelo servidor. Qualquer exceção que ocorre é tratada pela exceção do servidor tratamento. Algum configurado páginas de erro personalizadas ou middleware de tratamento de exceção ou filtros não afetam esse comportamento.
 
 ## <a name="startup-exception-handling"></a>Tratamento de exceções de inicialização
 
-Apenas a camada de hospedagem pode lidar com exceções que ocorrem durante a inicialização do aplicativo. Exceções que ocorrem durante a inicialização do aplicativo podem afetar o comportamento do servidor. Por exemplo, se ocorrer uma exceção antes de chamar `KestrelServerOptions.UseHttps`, a camada de hospedagem captura a exceção, o servidor é iniciado e exibe uma página de erro na porta não SSL. Se uma exceção ocorrer após a execução da linha, a página de erro é atendida por HTTPS.
+Apenas a camada de hospedagem pode lidar com exceções que ocorrem durante a inicialização do aplicativo. Você pode [configurar como o host se comporta em resposta a erros durante a inicialização](hosting.md#detailed-errors) usando `captureStartupErrors` e `detailedErrors` chave.
 
-Você pode [configurar como o host se comportará em resposta a erros durante a inicialização](hosting.md#configuring-a-host) usando `CaptureStartupErrors` e `detailedErrors` chave.
+Hospedagem só pode mostrar uma página de erro para um erro de inicialização capturada se o erro ocorrer após o endereço de host/associação de porta. Se qualquer associação falhar por algum motivo, a camada de hospedagem registra uma exceção crítica, o travamento do processo dotnet, e nenhuma página de erro é exibida.
 
 ## <a name="aspnet-mvc-error-handling"></a>Tratamento de erros do ASP.NET MVC
 

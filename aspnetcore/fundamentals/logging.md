@@ -12,23 +12,23 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 15abe93d881aed3b6950a859dc9445ec50ee9bb5
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: b9a4ae6e7d9b2fa998b91e643e63657239d4866b
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introdução ao registro em log no núcleo do ASP.NET
 
-Por [Steve Smith](http://ardalis.com) e [Tom Dykstra](https://github.com/tdykstra)
+Por [Steve Smith](https://ardalis.com/) e [Tom Dykstra](https://github.com/tdykstra)
 
 ASP.NET Core dá suporte a uma API de registro em log que funciona com uma variedade de provedores de log. Provedores internos permitem que você envie logs para um ou mais destinos, e você pode conectar uma estrutura de log de terceiros. Este artigo mostra como usar a API de registro em log internos e provedores em seu código.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample)
 
@@ -50,7 +50,7 @@ ASP.NET Core não fornece async métodos do agente porque o log deve ser tão r�
 
 ## <a name="how-to-add-providers"></a>Como adicionar provedores
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Um provedor de log leva as mensagens que você criar com um `ILogger` do objeto, exibe e armazena-os. Por exemplo, o provedor de Console exibe mensagens no console, e o provedor de serviço de aplicativo do Azure pode armazená-los no armazenamento de BLOBs do Azure.
 
@@ -62,7 +62,7 @@ O modelo de projeto padrão define o registro em log da maneira que você vê-lo
 
 [!code-csharp[](logging/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Um provedor de log leva as mensagens que você criar com um `ILogger` do objeto, exibe e armazena-os. Por exemplo, o provedor de Console exibe mensagens no console, e o provedor de serviço de aplicativo do Azure pode armazená-los no armazenamento de BLOBs do Azure.
 
@@ -244,7 +244,7 @@ A mensagem de log resultante teria esta aparência:
 Parameter values: parm1, parm2
 ```
 
-Estrutura de registros de mensagens formatação dessa maneira para possibilitar que os provedores de log implementar [log semântico, também conhecido como registro em log estruturado](http://programmers.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging). Como os próprios argumentos são passados para o sistema de log, não apenas a mensagem formatada cadeia de caracteres, provedores de log podem armazenar os valores de parâmetro como campos além de cadeia de caracteres de mensagem. Por exemplo, se você estiver direcionando o log de saída para o armazenamento de tabela do Azure e sua chamada de método do agente de log tem esta aparência:
+Estrutura de registros de mensagens formatação dessa maneira para possibilitar que os provedores de log implementar [log semântico, também conhecido como registro em log estruturado](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging). Como os próprios argumentos são passados para o sistema de log, não apenas a mensagem formatada cadeia de caracteres, provedores de log podem armazenar os valores de parâmetro como campos além de cadeia de caracteres de mensagem. Por exemplo, se você estiver direcionando o log de saída para o armazenamento de tabela do Azure e sua chamada de método do agente de log tem esta aparência:
 
 ```csharp
 _logger.LogInformation("Getting item {ID} at {RequestTime}", id, DateTime.Now);
@@ -269,7 +269,7 @@ System.Exception: Item not found exception.
 
 ## <a name="log-filtering"></a>Filtragem de log
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Você pode especificar um nível de log mínimo para um provedor específico e uma categoria ou para todos os provedores ou todas as categorias.  Logs abaixo do nível mínimo não são passados para esse provedor, para que eles não obter exibidos ou armazenados. 
 
@@ -351,7 +351,7 @@ Você pode escrever código em uma função de filtro para aplicar regras de fil
 
 [!code-csharp[](logging/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Alguns provedores de log permitem especificar quando os logs devem ser gravados em uma mídia de armazenamento ou ignorados com base no nível de log e categoria.
 
@@ -381,13 +381,13 @@ Um escopo é um `IDisposable` tipo retornado pelo `ILogger.BeginScope<TState>` m
 
 O código a seguir habilita os escopos para o provedor de console:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Em *Program.cs*:
 
 [!code-csharp[](logging/sample2/Program.cs?name=snippet_Scopes&highlight=4)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Em *Startup.cs*:
 
@@ -422,13 +422,13 @@ ASP.NET Core vem com os seguintes provedores:
 
 O [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) pacote provedor envia a saída de log para o console. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddConsole()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddConsole()
@@ -448,7 +448,7 @@ Esse código se refere a `Logging` seção o *appSettings. JSON* arquivo:
 
 [!code-json[](logging/sample//appsettings.json)]
 
-As configurações mostradas limite framework logs avisos ao mesmo tempo, permitindo que o aplicativo para fazer logon no nível de depuração, conforme explicado no [filtragem de Log](#log-filtering) seção. Para obter mais informações, consulte [configuração](configuration.md).
+As configurações mostradas limite framework logs avisos ao mesmo tempo, permitindo que o aplicativo para fazer logon no nível de depuração, conforme explicado no [filtragem de Log](#log-filtering) seção. Para obter mais informações, consulte [Configuração](configuration.md).
 
 ---
 
@@ -459,13 +459,13 @@ O [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.
 
 No Linux, esse provedor grava logs no *logs /var/log/message*.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddDebug()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddDebug()
@@ -480,13 +480,13 @@ loggerFactory.AddDebug()
 
 Para aplicativos que se destinam a ASP.NET Core 1.1.0 ou superior, o [Microsoft.Extensions.Logging.EventSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource) pacote provedor pode implementar o rastreamento de eventos. No Windows, ele usa [ETW](https://msdn.microsoft.com/library/windows/desktop/bb968803). O provedor é entre plataformas, mas não existem ferramentas de coleta e a exibição para Linux ou macOS em nenhum evento. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddEventSourceLogger()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddEventSourceLogger()
@@ -514,7 +514,7 @@ Capturando eventos em Nano Server requer alguma configuração adicional:
   New-EtwTraceSession -Name "MyAppTrace" -LocalFilePath C:\trace.etl
   ```
 
-* Adicionar provedores do ETW para [CLR](https://msdn.microsoft.com/library/ff357718), ASP.NET Core e outros conforme necessário. O provedor ASP.NET Core GUID é `3ac73b97-af73-50e9-0822-5da4367920d0`. 
+* Adicionar provedores do ETW para [CLR](https://docs.microsoft.com/dotnet/framework/performance/clr-etw-providers), ASP.NET Core e outros conforme necessário. O provedor ASP.NET Core GUID é `3ac73b97-af73-50e9-0822-5da4367920d0`. 
 
   ```powershell
   Add-EtwTraceProvider -Guid "{e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}" -SessionName MyAppTrace
@@ -536,13 +536,13 @@ Resultante *C:\trace.etl* arquivo pode ser analisado com PerfView como em outras
 
 O [Microsoft.Extensions.Logging.EventLog](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog) pacote provedor envia a saída do log no Log de eventos do Windows.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddEventLog()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddEventLog()
@@ -555,15 +555,15 @@ loggerFactory.AddEventLog()
 <a id="tracesource"></a>
 ### <a name="the-tracesource-provider"></a>O provedor de TraceSource
 
-O [Microsoft.Extensions.Logging.TraceSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.TraceSource) provedor pacote usa a [System.Diagnostics.TraceSource](https://msdn.microsoft.com/library/system.diagnostics.tracesource.aspx) bibliotecas e provedores.
+O [Microsoft.Extensions.Logging.TraceSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.TraceSource) provedor pacote usa a [System.Diagnostics.TraceSource](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracesource) bibliotecas e provedores.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddTraceSource(sourceSwitchName);
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddTraceSource(sourceSwitchName);
@@ -573,7 +573,7 @@ loggerFactory.AddTraceSource(sourceSwitchName);
 
 [Sobrecargas de AddTraceSource](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.tracesourcefactoryextensions) permitem que você passa uma alternância de origem e um ouvinte de rastreamento.
 
-Para usar esse provedor, um aplicativo deve ser executado no .NET Framework (em vez de .NET Core). O provedor permite rotear mensagens para uma variedade de [ouvintes](https://msdn.microsoft.com/library/4y5y10s7), como o [TextWriterTraceListener](https://msdn.microsoft.com/library/system.diagnostics.textwritertracelistener) usados no aplicativo de exemplo.
+Para usar esse provedor, um aplicativo deve ser executado no .NET Framework (em vez de .NET Core). O provedor permite rotear mensagens para uma variedade de [ouvintes](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/trace-listeners), como o [TextWriterTraceListener](https://docs.microsoft.com/dotnet/api/system.diagnostics.textwritertracelistenerr) usados no aplicativo de exemplo.
 
 O exemplo a seguir configura um `TraceSource` provedor que registra `Warning` e superior mensagens na janela de console.
 
@@ -584,14 +584,14 @@ O exemplo a seguir configura um `TraceSource` provedor que registra `Warning` e 
 
 O [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) pacote provedor grava logs para arquivos de texto no sistema de arquivos do aplicativo do serviço de aplicativo do Azure e ao [armazenamento de blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage) em uma conta de armazenamento do Azure. O provedor está disponível apenas para aplicativos que se destinam a ASP.NET Core 1.1.0 ou superior. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 > [!NOTE]
 > Núcleo do ASP.NET 2.0 está em visualização.  Os aplicativos criados com a versão de visualização mais recente podem não ser executado quando implantado em um serviço de aplicativo do Azure. Quando o ASP.NET Core 2.0 foi lançado, o serviço de aplicativo do Azure executará 2.0 aplicativos e o serviço de aplicativo do Azure provedor funcionará conforme o indicado aqui.
 
 Você não precisa instalar o pacote de provedor ou a chamada a `AddAzureWebAppDiagnostics` método de extensão.  O provedor está automaticamente disponível para seu aplicativo quando você implanta o aplicativo do serviço de aplicativo do Azure.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddAzureWebAppDiagnostics();
@@ -621,9 +621,9 @@ Aqui estão algumas estruturas de registro em log de terceiros que funcionam com
 
 * [NLog](https://github.com/NLog/NLog.Extensions.Logging) -provedor para a biblioteca de NLog
 
-* [Serilog](https://github.com/serilog/serilog-framework-logging) -provedor para a biblioteca de Serilog
+* [Serilog](https://github.com/serilog/serilog-extensions-logging) -provedor para a biblioteca de Serilog
 
-Algumas estruturas de terceiros podem fazer [log semântico, também conhecido como registro em log estruturado](http://programmers.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
+Algumas estruturas de terceiros podem fazer [log semântico, também conhecido como registro em log estruturado](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
 
 Usando uma estrutura de terceiros é semelhante ao uso de um dos provedores internos: adicionar um pacote NuGet ao seu projeto e chamar um método de extensão em `ILoggerFactory`. Para obter mais informações, consulte a documentação de cada estrutura.
 

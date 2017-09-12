@@ -2,7 +2,7 @@
 title: "Roteamento no núcleo do ASP.NET"
 author: ardalis
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 98756e2c5b336aabcf5155d929160b616baaf2ee
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 431b837dc93abdf305b77615409883fd54b99455
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no núcleo do ASP.NET
 
-Por [Ryan Nowak](https://github.com/rynowak), [Steve Smith](http://ardalis.com), e [Rick Anderson](https://twitter.com/RickAndMSFT)
+Por [Ryan Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.com/), e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Funcionalidade de roteamento é responsável por uma solicitação de entrada de mapeamento para um manipulador de rota. Rotas são definidas no aplicativo do ASP.NET e configuradas quando o aplicativo é iniciado. Uma rota opcionalmente pode extrair os valores da URL contida na solicitação, e esses valores, em seguida, podem ser usados para o processamento da solicitação. Usando informações de rota do aplicativo ASP.NET, a funcionalidade de roteamento também é capaz de gerar URLs que são mapeados para manipuladores de rotas. Portanto, o roteamento pode encontrar um manipulador de rota com base em uma URL ou a URL correspondente a um manipulador de rota em questão com base nas informações do manipulador de rota.
 
@@ -325,9 +325,9 @@ A tabela a seguir demonstra alguns restrições da rota e o comportamento espera
 
 ## <a name="regular-expressions"></a>Expressões regulares 
 
-Adiciona a estrutura do ASP.NET Core `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` para o construtor de expressão regular. Consulte [RegexOptions Enumeration](https://msdn.microsoft.com/library/system.text.regularexpressions.regexoptions(v=vs.110).aspx) para obter uma descrição desses membros.
+Adiciona a estrutura do ASP.NET Core `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` para o construtor de expressão regular. Consulte [RegexOptions Enumeration](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions) para obter uma descrição desses membros.
 
-Expressões regulares usam delimitadores e símbolos semelhantes aos usados pelo roteamento e a linguagem c#. Tokens de expressão regular devem ser de escape. Por exemplo, para usar a expressão regular `^\d{3}-\d{2}-\d{4}$` roteamento, ele precisa ter o `\` caracteres digitados no como `\\` no arquivo de origem c# para escapar o `\` caractere de escape da cadeia de caracteres (a menos que usando [textuais literais de cadeia de caracteres](https://msdn.microsoft.com/library/aa691090(v=vs.71).aspx)). O `{` , `}` , ' [' e ']' caracteres precisam ser substituídas por aspas duplas para escapar os caracteres de delimitador de parâmetro de roteamento.  A tabela a seguir mostra uma expressão regular e a versão de escape.
+Expressões regulares usam delimitadores e símbolos semelhantes aos usados pelo roteamento e a linguagem c#. Tokens de expressão regular devem ser de escape. Por exemplo, para usar a expressão regular `^\d{3}-\d{2}-\d{4}$` roteamento, ele precisa ter o `\` caracteres digitados no como `\\` no arquivo de origem c# para escapar o `\` caractere de escape da cadeia de caracteres (a menos que usando [textuais literais de cadeia de caracteres](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string). O `{` , `}` , ' [' e ']' caracteres precisam ser substituídas por aspas duplas para escapar os caracteres de delimitador de parâmetro de roteamento.  A tabela a seguir mostra uma expressão regular e a versão de escape.
 
 | Expressão               | Observação |
 | ----------------- | ------------ | 
@@ -347,7 +347,7 @@ Expressões regulares usadas em roteamento geralmente começa com o `^` caracter
 | `^[a-z]{2}$` |  hello | no | consulte `^` e `$` acima |
 | `^[a-z]{2}$` |  123abc456 | no | consulte `^` e `$` acima |
 
-Consulte [expressões regulares do .NET Framework](https://msdn.microsoft.com/library/hs600312(v=vs.110).aspx) para obter mais informações sobre a sintaxe de expressão regular.
+Consulte [expressões regulares do .NET Framework](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) para obter mais informações sobre a sintaxe de expressão regular.
 
 Para restringir um parâmetro para um conjunto conhecido de valores possíveis, use uma expressão regular. Por exemplo `{action:regex(^(list|get|create)$)}` corresponde apenas a `action` rotear o valor para `list`, `get`, ou `create`. Se passado para o dicionário de restrições, a cadeia de caracteres "^ (lista | get | criar) $" seria equivalente. Restrições que são passadas no dicionário de restrições (não embutido dentro de um modelo) que não correspondem a uma das restrições conhecidas também são tratadas como expressões regulares.
 

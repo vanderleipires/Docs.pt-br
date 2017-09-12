@@ -2,7 +2,7 @@
 title: "Trabalhando com um Cache distribuído"
 author: ardalis
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
@@ -11,15 +11,15 @@ ms.assetid: 870f082d-6d43-453d-b311-45f3aeb4d2c5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/distributed
-ms.openlocfilehash: 09a1a30de38b9eb40d4fa6a684a7d43ac3e0413c
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: abf680fef9de175082c1e4f4cebc2b9648f18a28
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="working-with-a-distributed-cache"></a>Trabalhando com um cache distribuído
 
-Por [Steve Smith](http://ardalis.com)
+Por [Steve Smith](https://ardalis.com/)
 
 Os caches distribuídos podem melhorar o desempenho e escalabilidade de aplicativos do ASP.NET Core, especialmente quando hospedados em um ambiente de farm de servidor ou de nuvem. Este artigo explica como trabalhar com implementações e abstrações de cache distribuído internos do ASP.NET Core.
 
@@ -88,7 +88,7 @@ O código a seguir de *Startup.cs* mostra o valor que está sendo definido:
 
 ## <a name="using-a-redis-distributed-cache"></a>Usar um Redis Cache distribuído
 
-[Redis](http://redis.io) é um repositório de dados na memória do código-fonte aberto, que geralmente é usado como um cache distribuído. Você pode usá-lo localmente, e você pode configurar um [Cache Redis do Azure](https://azure.microsoft.com/services/cache/) para seus aplicativos hospedados do Azure ASP.NET Core. Seu aplicativo ASP.NET Core configura a implementação de cache usando uma `RedisDistributedCache` instância.
+[Redis](https://redis.io/) é um repositório de dados na memória do código-fonte aberto, que geralmente é usado como um cache distribuído. Você pode usá-lo localmente, e você pode configurar um [Cache Redis do Azure](https://azure.microsoft.com/services/cache/) para seus aplicativos hospedados do Azure ASP.NET Core. Seu aplicativo ASP.NET Core configura a implementação de cache usando uma `RedisDistributedCache` instância.
 
 Configurar a implementação do Redis em `ConfigureServices` e acessá-lo no código do aplicativo solicitando uma instância de `IDistributedCache` (consulte o código acima).
 
@@ -97,7 +97,7 @@ No código de exemplo, um `RedisCache` implementação é usada quando o servido
 [!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
 > [!NOTE]
-> Para instalar o Redis em seu computador local, instale o pacote chocolatey [http://chocolatey.org/packages/redis-64/](http://chocolatey.org/packages/redis-64/) e executar `redis-server` em um prompt de comando.
+> Para instalar o Redis em seu computador local, instale o pacote chocolatey [https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/) e executar `redis-server` em um prompt de comando.
 
 ## <a name="using-a-sql-server-distributed-cache"></a>Usando um SQL Server de Cache distribuído
 

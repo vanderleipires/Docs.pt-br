@@ -11,17 +11,17 @@ ms.assetid: b3a5984d-e172-42eb-8a48-547e4acb6806
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration
-ms.openlocfilehash: 39e76b14af85de34b8443bf4e04d18d13ad2aa90
-ms.sourcegitcommit: fb518f856f31fe53c09196a13309eacb85b37a22
+ms.openlocfilehash: a14bc7fbcdac9acddfdab4fcd6e40385ca48bcc4
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/12/2017
 ---
 <a name=fundamentals-configuration></a>
 
   # <a name="configuration-in-aspnet-core"></a>Configuração no núcleo do ASP.NET
 
-[Rick Anderson](https://twitter.com/RickAndMSFT), [marca Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](http://ardalis.com), e [Daniel Roth](https://github.com/danroth27)
+[Rick Anderson](https://twitter.com/RickAndMSFT), [marca Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), e [Daniel Roth](https://github.com/danroth27)
 
 A API de configuração fornece uma maneira de configurar um aplicativo baseado em uma lista de pares nome-valor. Configuração é lida em tempo de execução de várias fontes. Os pares nome-valor podem ser agrupados em uma hierarquia de vários níveis. Há provedores de configuração para:
 
@@ -33,7 +33,7 @@ A API de configuração fornece uma maneira de configurar um aplicativo baseado 
 * [Cofre de chaves do Azure](xref:security/key-vault-configuration)
 * Provedores personalizados, que você instala ou criar
 
-Cada valor de configuração é mapeado para uma chave de cadeia de caracteres. Não há suporte de ligação interna ao desserializar as configurações em um personalizado [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object) objeto (uma classe .NET simple com propriedades).
+Cada valor de configuração é mapeado para uma chave de cadeia de caracteres. Não há suporte de ligação interna ao desserializar as configurações em um personalizado [POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object) objeto (uma classe .NET simple com propriedades).
 
 [Exibir ou baixar o código de exemplo](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/sample)
 
@@ -65,7 +65,7 @@ O exemplo anterior usa o indexador de configuração para ler valores. A configu
 
 É comum ter configurações diferentes para ambientes diferentes, por exemplo, desenvolvimento, teste e produção. O `CreateDefaultBuilder` método de extensão em um aplicativo do ASP.NET Core 2. x (ou usando `AddJsonFile` e `AddEnvironmentVariables` diretamente em um aplicativo do ASP.NET Core 1. x) adiciona provedores de configuração para ler arquivos JSON e sistema de fontes de configuração:
 
-* *appSettings. JSON*
+* *appsettings.json*
 * * appsettings. \<EnvironmentName >. JSON
 * variáveis de ambiente
 
@@ -356,6 +356,6 @@ Um *Web. config* arquivo é necessário quando você hospeda o aplicativo no IIS
 ### <a name="additional-resources"></a>Recursos adicionais
 
 * [Trabalhando com vários ambientes](environments.md)
-* [Armazenamento seguro de segredos do aplicativo durante o desenvolvimento](../security/app-secrets.md)
+* [Armazenamento seguro dos segredos do aplicativo durante o desenvolvimento](../security/app-secrets.md)
 * [Injeção de dependência](dependency-injection.md)
-* [Provedor de configuração do Cofre de chaves do Azure](xref:security/key-vault-configuration)
+* [Provedor de configuração do Azure Key Vault](xref:security/key-vault-configuration)

@@ -11,11 +11,11 @@ ms.assetid: fda0c2a8-1743-4505-be1a-7f8ceeef8647
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/yeoman
-ms.openlocfilehash: 3a7cd83becc570d2f73014b356977fedb16f29bb
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 61561b55774faf375090c92b574a64f1a12f9647
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-building-projects-with-yeoman-in-aspnet-core"></a>Introdução à criação de projetos com Yeoman no núcleo do ASP.NET
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 08/11/2017
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
-Node. js e npm são necessários para Yeoman. Baixar do [Node.js](https://nodejs.org/en/). O instalador inclui [Node.js](https://nodejs.org/en/) e [npm](https://www.npmjs.com/). Bower também é necessário para instalar estruturas de interface do usuário como a inicialização.
+Node. js e npm são necessários para Yeoman. Baixar do [Node.js](https://nodejs.org/). O instalador inclui [Node.js](https://nodejs.org/) e [npm](https://www.npmjs.com/). Bower também é necessário para instalar estruturas de interface do usuário como a inicialização.
 
 Para instalar Yeoman e Bower, execute o seguinte comando:
 
@@ -135,7 +135,7 @@ Abra um navegador da web e navegue até `http://localhost:5000`.
 
 ## <a name="adding-to-your-project-with-sub-generators"></a>Adicionar ao seu projeto com geradores sub
 
-Usando Yeoman [sub geradores](https://www.github.com/omnisharp/generator-aspnet#sub-generators), você pode adicionar uma `nuget.config` ou um `web.config` depois que o projeto é criado. Por exemplo, execute o seguinte comando do diretório no qual o arquivo deve ser criado:
+Usando Yeoman [sub geradores](https://github.com/omnisharp/generator-aspnet), você pode adicionar uma `nuget.config` ou um `web.config` depois que o projeto é criado. Por exemplo, execute o seguinte comando do diretório no qual o arquivo deve ser criado:
 
 ```console
 yo aspnet:nugetconfig
@@ -156,4 +156,4 @@ O resultado é um arquivo de configuração NuGet chamado `nuget.config` com o s
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Servidores (Kestrel e WebListener)](xref:fundamentals/servers/index)
-* [Conceitos básicos](xref:fundamentals/index)
+* [Princípios básicos](xref:fundamentals/index)

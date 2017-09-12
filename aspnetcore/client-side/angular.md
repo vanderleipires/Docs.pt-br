@@ -12,16 +12,16 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/angular
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 50d2e76c472e67c26238abee4f7b0ed64cd043ab
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 2c7929976f0c9f8284ab397b1a87d576bcdd15b0
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="using-angularjs-for-single-page-applications-spas-with-aspnet-core"></a>Usando AngularJS para aplicativos de página única (SPAs) com o ASP.NET Core
 
 
-Por [Venkata Koppaka](http://blog.falafel.com/author/venkata-koppaka/) e [Scott Addie](https://scottaddie.com)
+Por [Venkata Koppaka](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/) e [Scott Addie](https://scottaddie.com)
 
 Neste artigo, você aprenderá como criar um aplicativo ASP.NET SPA estilo usando AngularJS.
 
@@ -29,9 +29,9 @@ Neste artigo, você aprenderá como criar um aplicativo ASP.NET SPA estilo usand
 
 ## <a name="what-is-angularjs"></a>O que é AngularJS?
 
-[AngularJS](http://angularjs.org/) é uma estrutura moderna de JavaScript do Google comumente usado para trabalhar com aplicativos de página única (SPAs). AngularJS aberta originado sob a licença do MIT, e o progresso de desenvolvimento de AngularJS pode ser seguido [seu repositório GitHub](https://github.com/angular/angular.js). A biblioteca é chamada Angular como HTML usa colchetes angulares formatada.
+[AngularJS](https://angularjs.org/) é uma estrutura moderna de JavaScript do Google comumente usado para trabalhar com aplicativos de página única (SPAs). AngularJS aberta originado sob a licença do MIT, e o progresso de desenvolvimento de AngularJS pode ser seguido [seu repositório GitHub](https://github.com/angular/angular.js). A biblioteca é chamada Angular como HTML usa colchetes angulares formatada.
 
-AngularJS não é uma biblioteca de manipulação de DOM como jQuery, mas ele usa um subconjunto de jQuery chamado jQLite. AngularJS baseia-se principalmente a declarativos atributos HTML que você pode adicionar a suas marcas HTML. Você pode tentar AngularJS em seu navegador usando o [site código escola](https://www.codeschool.com/courses/shaping-up-with-angular-js) ou [W3Schools site](https://www.w3schools.com/angular/).
+AngularJS não é uma biblioteca de manipulação de DOM como jQuery, mas ele usa um subconjunto de jQuery chamado jQLite. AngularJS baseia-se principalmente a declarativos atributos HTML que você pode adicionar a suas marcas HTML. Você pode tentar AngularJS em seu navegador usando o [site código escola](https://www.codeschool.com/courses/shaping-up-with-angularjs) ou [W3Schools site](https://www.w3schools.com/angular/).
 
 Este artigo se concentra em AngularJS com algumas observações sobre onde Angular é título.
 
@@ -63,7 +63,7 @@ Quando você tem uma referência para o *angular.js* arquivo de script, você es
 
 ## <a name="key-components"></a>Componentes principais
 
-AngularJS inclui um número de componentes principais, como *diretivas*, *modelos*, *repetidores*, *módulos*,  *controladores*, *componentes*, *roteador componente* e muito mais. Vamos examinar como esses componentes trabalham juntos para adicionar um comportamento a páginas da web.
+AngularJS inclui um número de componentes principais, como *diretivas*, *modelos*, *repetidores*, *módulos*, * controladores*, *componentes*, *roteador componente* e muito mais. Vamos examinar como esses componentes trabalham juntos para adicionar um comportamento a páginas da web.
 
 ### <a name="directives"></a>Diretivas
 
@@ -393,4 +393,4 @@ Para obter mais detalhes sobre as diretivas de manipulador de eventos internos d
 
 * [Documentos angulares](https://docs.angularjs.org)
 
-* [Info 2 angular](http://angular.io)
+* [Info 2 angular](https://angular.io/)

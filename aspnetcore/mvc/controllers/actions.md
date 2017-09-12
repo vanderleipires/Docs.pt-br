@@ -11,15 +11,15 @@ ms.assetid: 9da9eb52-8583-4069-af91-155ba3529d7f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
-ms.openlocfilehash: b7d6341c0312b3f5f122acfb2ee01210151b33bb
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 5dc6c7dc70027bb79875f389d535119a2543b873
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Tratamento de solicitações com controladores no ASP.NET MVC de núcleo
 
-Por [Steve Smith](http://ardalis.com) e [Scott Addie](https://github.com/scottaddie)
+Por [Steve Smith](https://ardalis.com/) e [Scott Addie](https://github.com/scottaddie)
 
 Resultados da ação, ações e controladores são uma parte fundamental de como os desenvolvedores criar aplicativos usando o ASP.NET MVC de núcleo.
 
@@ -38,7 +38,7 @@ Um controlador é uma classe pode ser instanciada em que pelo menos uma das segu
 
 Uma classe de controlador não deve ter um tipo de `[NonController]` atributo.
 
-Controladores devem seguir o [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle). Há duas abordagens para implementar esse princípio. Se várias ações do controlador requerem o mesmo serviço, considere o uso de [injeção de construtor](xref:mvc/controllers/dependency-injection#constructor-injection) para solicitar essas dependências. Se o serviço é necessário por apenas um método de ação, considere o uso de [injeção de ação](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices) para solicitar a dependência.
+Controladores devem seguir o [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/). Há duas abordagens para implementar esse princípio. Se várias ações do controlador requerem o mesmo serviço, considere o uso de [injeção de construtor](xref:mvc/controllers/dependency-injection#constructor-injection) para solicitar essas dependências. Se o serviço é necessário por apenas um método de ação, considere o uso de [injeção de ação](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices) para solicitar a dependência.
 
 Dentro de **M**odelo -**V**ibir -**C**ontroller padrão, um controlador é responsável pelo processamento da solicitação inicial e instanciação do modelo. Em geral, as decisões de negócios devem ser executadas dentro do modelo.
 
@@ -104,6 +104,6 @@ Filtrar mais atributos, como `[Authorize]`, podem ser aplicadas no nível do con
 
 Tratamento de erros e o cache de resposta são geralmente resolvem preocupações:
    * [Tratamento de erros](xref:mvc/controllers/filters#exception-filters)
-   * [O cache de resposta](xref:performance/caching/response)
+   * [Cache de resposta](xref:performance/caching/response)
 
 Muitos resolvem preocupações podem ser feitas usando filtros ou personalizado [middleware](xref:fundamentals/middleware).

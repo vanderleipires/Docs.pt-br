@@ -10,24 +10,24 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: b9b03dab6446aed7ee875916cd2e64acbb226e8f
-ms.sourcegitcommit: 70089de5bfd8ecd161261aa95faf07a4e1534cf8
+ms.openlocfilehash: 72b6098b2a71957da338ef36beff4808201773f4
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Provedor de configuração do Cofre de chaves do Azure
 
 Por [Luke Latham](https://github.com/GuardRex) e [Andrew Stanton-enfermeiro](https://github.com/anurse)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Exibir ou baixar o código de exemplo para 2. x:
 
 * [Exemplo básico](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x) -lê valores secretos em um aplicativo.
 * [Exemplo de prefixo do nome da chave](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x) - leituras valores secretos usando um prefixo de nome da chave que representa a versão de um aplicativo, que permite que você carregue um conjunto diferente de valores secretos para cada versão do aplicativo.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Exibir ou baixar o exemplo de código 1. x:
 
@@ -161,4 +161,4 @@ Quando o aplicativo falhar ao carregar a configuração usando o provedor, uma m
 * [Microsoft Azure: Cofre de chaves](https://azure.microsoft.com/services/key-vault/)
 * [Do Microsoft Azure: Documentação do Cofre de chaves](https://docs.microsoft.com/azure/key-vault/)
 * [Chaves de como gerar e transferir protegida por HSM do Cofre de chaves do Azure](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys)
-* [Classe KeyVaultClient](https://msdn.microsoft.com/library/microsoft.azure.keyvault.keyvaultclient.aspx)
+* [Classe KeyVaultClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.keyvault.keyvaultclient)

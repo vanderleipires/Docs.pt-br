@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: b2b429ea591809a7a1bc58115c48b8b3ed8e4249
-ms.sourcegitcommit: d7e0df365a6112240b5560212759b1e3525850a2
+ms.openlocfilehash: bf9a5b58d3c0a6a2e90dd4ee9a316de90640c79e
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -72,6 +72,6 @@ Os seguintes guias passo a passo para desenvolvimento de aplicativos ASP.NET Cor
 
 <a name="download"></a> 
 ## <a name="how-to-download-a-sample"></a>Como baixar uma amostra
-1. [Baixe o arquivo zip do repositório ASP.NET](https://github.com/aspnet/docs/archive/master.zip).
+1. [Baixe o arquivo zip do repositório ASP.NET](https://codeload.github.com/aspnet/Docs/zip/master).
 1. Descompacte o arquivo *Docs-master.zip*.
 1. Use a URL no link de exemplo para ajudá-lo a navegar até o diretório de exemplo. 

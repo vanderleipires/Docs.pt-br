@@ -11,11 +11,11 @@ ms.assetid: 016cc836-4c43-45a4-b9a7-9efaf53350df
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/entity-framework-6
-ms.openlocfilehash: e186568e27c067e29985b8a286e26b87c3186ac4
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: fdc24ed9b6b2d412b09871302b5478da4d81ec28
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>Introdução ao ASP.NET Core e o Entity Framework 6
 
@@ -25,7 +25,7 @@ Este artigo mostra como usar o Entity Framework 6 em um aplicativo do ASP.NET Co
 
 ## <a name="overview"></a>Visão Geral
 
-Para usar o Entity Framework 6, seu projeto deve compilar no .NET Framework, como Entity Framework 6 não oferece suporte a .NET Core. Se você precisar de recursos de plataforma cruzada, será necessário atualizar para [Entity Framework Core](https://docs.efproject.net).
+Para usar o Entity Framework 6, seu projeto deve compilar no .NET Framework, como Entity Framework 6 não oferece suporte a .NET Core. Se você precisar de recursos de plataforma cruzada, será necessário atualizar para [Entity Framework Core](https://docs.microsoft.com/ef/).
 
 A maneira recomendada para usar o Entity Framework 6 em um aplicativo do ASP.NET Core é colocar o contexto de EF6 e classes de modelo em uma biblioteca de classes do projeto que tem como destino framework completo. Adicione uma referência para a biblioteca de classes do projeto ASP.NET Core. Consulte o exemplo [solução do Visual Studio com projetos EF6 e ASP.NET Core](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/entity-framework-6/sample/).
 

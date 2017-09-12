@@ -2,7 +2,7 @@
 title: "Migrando de autenticação e identidade"
 author: ardalis
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,17 +11,17 @@ ms.assetid: 0db145cb-41a5-448a-b889-72e2d789ad7f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/identity
-ms.openlocfilehash: c86e9b98bcb43b383ac1077fe2749d0dfcd7392a
-ms.sourcegitcommit: fb518f856f31fe53c09196a13309eacb85b37a22
+ms.openlocfilehash: b5a9bab4399714c481d4f38eeeaeba19d8bdd5b2
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="migrating-authentication-and-identity"></a>Migrando de autenticação e identidade
 
 <a name=migration-identity></a>
 
-Por [Steve Smith](http://ardalis.com)
+Por [Steve Smith](https://ardalis.com/)
 
 No anterior do artigo é [migrados de configuração de um projeto ASP.NET MVC para MVC do ASP.NET Core](configuration.md). Neste artigo, migrar os recursos de gerenciamento de registro, logon e usuário.
 

@@ -11,15 +11,15 @@ ms.assetid: 4eb7e52f-5665-41a4-a3e3-e348d07337f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 18046389becd17135ff831e71e700244d48552d3
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 1a5d461809afeef0f485fd3a665250631d855b36
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="working-with-the-application-model"></a>Trabalhando com o modelo de aplicativo
 
-Por [Steve Smith](http://ardalis.com)
+Por [Steve Smith](https://ardalis.com/)
 
 ASP.NET MVC de núcleo define uma *modelo de aplicativo* que representa os componentes de um aplicativo MVC. Você pode ler e manipular esse modelo para modificar o comportam de elementos MVC. Por padrão, o MVC segue certas convenções para determinar quais classes são considerados controladores, quais métodos essas classes são ações e o comportamento de parâmetros e roteamento. Você pode personalizar esse comportamento para atender às necessidades do seu aplicativo criando suas próprias convenções e aplicá-las globalmente ou como atributos.
 
@@ -70,13 +70,13 @@ O `DefaultApplicationModelProvider` estabelece muitos dos comportamentos padrão
 
 Alguns comportamentos internos são implementados pelo `DefaultApplicationModelProvider`. Esse provedor é responsável pela construção de [ `ControllerModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel), que por sua vez faz referência a [ `ActionModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel), [ `PropertyModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel), e [ `ParameterModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel) instâncias. O `DefaultApplicationModelProvider` classe é um detalhe de implementação de estrutura interna que pode e será alterado no futuro. 
 
-O `AuthorizationApplicationModelProvider` é responsável por aplicar o comportamento associado com o `AuthorizeFilter` e `AllowAnonymousFilter` atributos. [Saiba mais sobre esses atributos](https://docs.microsoft.com/aspnet/core/security/authorization/simple).
+O `AuthorizationApplicationModelProvider` é responsável por aplicar o comportamento associado com o `AuthorizeFilter` e `AllowAnonymousFilter` atributos. [Saiba mais sobre esses atributos](xref:security/authorization/simple).
 
-O `CorsApplicationModelProvider` implementa o comportamento associado com o `IEnableCorsAttribute` e `IDisableCorsAttribute`e o `DisableCorsAuthorizationFilter`. [Saiba mais sobre CORS](https://docs.microsoft.com/aspnet/core/security/cors).
+O `CorsApplicationModelProvider` implementa o comportamento associado com o `IEnableCorsAttribute` e `IDisableCorsAttribute`e o `DisableCorsAuthorizationFilter`. [Saiba mais sobre CORS](xref:security/cors).
 
 ## <a name="conventions"></a>Convenções
 
-O modelo de aplicativo define abstrações de convenção que fornecem uma maneira simples de personalizar o comportamento dos modelos de substituir o modelo inteiro ou provedor. Essas abstrações são a maneira recomendada para modificar o comportamento do seu aplicativo. Convenções fornecem uma maneira para escrever código que se aplicarão dinamicamente as personalizações. Enquanto [filtros](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters) fornecem um meio de modificar o comportamento da estrutura, personalizações permitem que você controle como o aplicativo inteiro está conectado em conjunto.
+O modelo de aplicativo define abstrações de convenção que fornecem uma maneira simples de personalizar o comportamento dos modelos de substituir o modelo inteiro ou provedor. Essas abstrações são a maneira recomendada para modificar o comportamento do seu aplicativo. Convenções fornecem uma maneira para escrever código que se aplicarão dinamicamente as personalizações. Enquanto [filtros](xref:mvc/controllers/filters) fornecem um meio de modificar o comportamento da estrutura, personalizações permitem que você controle como o aplicativo inteiro está conectado em conjunto.
 
 As convenções a seguir estão disponíveis:
 
@@ -85,7 +85,7 @@ As convenções a seguir estão disponíveis:
 * [`IActionModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
 * [`IParameterModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
 
-Convenções são aplicadas ao adicioná-los às opções do MVC ou implementando `Attribute`s e aplicá-las para controladores, ações ou parâmetros de ação (semelhante a [ `Filters` ](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters)). Ao contrário de filtros, convenções são executadas apenas quando o aplicativo é iniciado, não como parte de cada solicitação.
+Convenções são aplicadas ao adicioná-los às opções do MVC ou implementando `Attribute`s e aplicá-las para controladores, ações ou parâmetros de ação (semelhante a [ `Filters` ](xref:mvc/controllers/filters)). Ao contrário de filtros, convenções são executadas apenas quando o aplicativo é iniciado, não como parte de cada solicitação.
 
 ### <a name="sample-modifying-the-applicationmodel"></a>Exemplo: Modificando o ApplicationModel
 
@@ -159,7 +159,7 @@ A convenção é adicionada como uma opção na inicialização.
 [!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
 
 > [!TIP]
-> Você pode adicionar as convenções para sua [middleware](https://docs.microsoft.com/aspnet/core/fundamentals/middleware) acessando `MvcOptions` usando`services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
+> Você pode adicionar as convenções para sua [middleware](xref:fundamentals/middleware) acessando `MvcOptions` usando`services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
 
 Este exemplo se aplica a esta convenção a rotas que não estiver usando o roteamento de atributo em que o controlador tem "Namespace" em seu nome. O controlador a seguir demonstra essa convenção:
 
@@ -170,7 +170,7 @@ Este exemplo se aplica a esta convenção a rotas que não estiver usando o rote
 Núcleo do ASP.NET MVC usa um conjunto diferente de convenções do ASP.NET Web API 2. Usando convenções personalizadas, você pode modificar o comportamento de um aplicativo ASP.NET MVC de núcleo para ser consistente com que um aplicativo de API da Web. É fornecido Microsoft a [WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim/) especificamente para essa finalidade.
 
 > [!NOTE]
-> Saiba mais sobre [Migrando do ASP.NET Web API](https://docs.microsoft.com/aspnet/core/migration/webapi)).
+> Saiba mais sobre [Migrando do ASP.NET Web API](xref:migration/webapi).
 
 Para usar a correção de compatibilidade de API da Web, você precisa adicionar o pacote ao seu projeto e, em seguida, adicione as convenções para MVC chamando `AddWebApiConventions` em `Startup`:
 
@@ -199,7 +199,7 @@ O `UseWebApiParameterConventionsAttribute` é usado para aplicar o `WebApiParame
 
 ### <a name="routes"></a>Rotas
 
-O `UseWebApiRoutesAttribute` controla se o `WebApiApplicationModelConvention` convenção de controlador é aplicada. Quando habilitada, essa convenção é usada para adicionar suporte para [áreas](https://docs.microsoft.com/aspnet/core/mvc/controllers/areas) para a rota.
+O `UseWebApiRoutesAttribute` controla se o `WebApiApplicationModelConvention` convenção de controlador é aplicada. Quando habilitada, essa convenção é usada para adicionar suporte para [áreas](xref:mvc/controllers/areas) para a rota.
 
 Além de um conjunto de convenções, o pacote de compatibilidade inclui um `System.Web.Http.ApiController` classe base que substitui aquela fornecida pela API da Web. Isso permite que os controladores gravados para a API da Web e herança de seu `ApiController` a funcionar como foram criados, durante a execução no ASP.NET MVC de núcleo. Essa classe de base do controlador está decorado com todos os `UseWebApi*` atributos listados acima. O `ApiController` expõe as propriedades, métodos e tipos de resultados que são compatíveis com as que constam na API da Web.
 

@@ -11,11 +11,11 @@ ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 7d216bc07d0a8d739f0cecbc5b571b6144c13e61
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: a9e255040c300bc5ce55a356e17e6912dbaeaf88
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Criar um modelo de dados complexos - Core EF com o tutorial do MVC do ASP.NET Core (5 de 10)
 
@@ -93,7 +93,7 @@ dotnet ef migrations add MaxLengthOnNames
 dotnet ef database update
 ```
 
-O `migrations add` comando avisa que pode ocorrer perda de dados, como a alteração torna o mais curto para duas colunas de comprimento máximo.  Migrações cria um arquivo chamado  *\<timeStamp > _MaxLengthOnNames.cs*. Este arquivo contém o código de `Up` método que atualizará o banco de dados para coincidir com o modelo de dados atual. O `database update` esse código de execução do comando.
+O `migrations add` comando avisa que pode ocorrer perda de dados, como a alteração torna o mais curto para duas colunas de comprimento máximo.  Migrações cria um arquivo chamado * \<timeStamp > _MaxLengthOnNames.cs*. Este arquivo contém o código de `Up` método que atualizará o banco de dados para coincidir com o modelo de dados atual. O `database update` esse código de execução do comando.
 
 O prefixo ao nome do arquivo de migrações de carimbo de hora é usado pelo Entity Framework para ordenar as migrações. Você pode criar várias migrações antes de executar o comando de atualização de banco de dados e, em seguida, todas as migrações são aplicadas na ordem em que eles foram criados.
 
@@ -374,7 +374,7 @@ Uma tabela de junção é necessária no banco de dados para a relação de muit
 
 Como as chaves estrangeiras não são anuláveis e juntos exclusivamente identificar cada linha da tabela, não é necessário para uma chave primária. O *InstructorID* e *CourseID* propriedades devem funcionar como uma chave primária composta. É a única maneira de identificar as chaves primárias compostas ao EF usando o *API fluente* (ele não pode ser feito por meio de atributos). Você verá como configurar a chave primária composta na próxima seção.
 
-A chave composta garante que, embora você possa ter várias linhas para um curso e várias linhas para um instrutor, não pode ter várias linhas para o mesmo instrutor e um curso. O `Enrollment` junção entidade define sua própria chave primária, portanto, duplicatas desse tipo são possíveis. Para evitar essas duplicatas, você pode adicionar um índice exclusivo nos campos de chave estrangeiras ou configurar `Enrollment` com uma chave primária composta semelhante ao `CourseAssignment`. Para obter mais informações, consulte [índices](https://docs.efproject.net/en/latest/modeling/indexes.html).
+A chave composta garante que, embora você possa ter várias linhas para um curso e várias linhas para um instrutor, não pode ter várias linhas para o mesmo instrutor e um curso. O `Enrollment` junção entidade define sua própria chave primária, portanto, duplicatas desse tipo são possíveis. Para evitar essas duplicatas, você pode adicionar um índice exclusivo nos campos de chave estrangeiras ou configurar `Enrollment` com uma chave primária composta semelhante ao `CourseAssignment`. Para obter mais informações, consulte [índices](https://docs.microsoft.com/ef/core/modeling/indexes).
 
 ## <a name="update-the-database-context"></a>Atualizar o contexto do banco de dados
 

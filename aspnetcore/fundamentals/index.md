@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/index
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 99fbe0e02be27a0fbbb7ff65bc15713aab58c003
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: 5d8ca35b0e2e4b6e9b1ec745a3a7cf7c3983c461
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="aspnet-core-fundamentals-overview"></a>Visão geral de conceitos básicos do ASP.NET Core
 
@@ -101,7 +101,7 @@ Para obter mais informações, consulte [Middleware](xref:fundamentals/middlewar
 
 ## <a name="servers"></a>Servidores
 
-O modelo de hospedagem do ASP.NET Core não escuta solicitações diretamente; em vez disso, ele se baseia em uma implementação do servidor HTTP para encaminhar a solicitação para o aplicativo. A solicitação encaminhada é empacotada como um conjunto de objetos de recurso que você pode acessar por meio de interfaces. O aplicativo compõe esse conjunto em um `HttpContext`. O ASP.NET Core inclui um servidor Web gerenciado e de plataforma cruzada chamado [Kestrel](xref:fundamentals/servers/kestrel). O Kestrel normalmente é executado atrás de um servidor Web de produção como [IIS](https://iis.net) ou [nginx](http://nginx.org).
+O modelo de hospedagem do ASP.NET Core não escuta solicitações diretamente; em vez disso, ele se baseia em uma implementação do servidor HTTP para encaminhar a solicitação para o aplicativo. A solicitação encaminhada é empacotada como um conjunto de objetos de recurso que você pode acessar por meio de interfaces. O aplicativo compõe esse conjunto em um `HttpContext`. O ASP.NET Core inclui um servidor Web gerenciado e de plataforma cruzada chamado [Kestrel](xref:fundamentals/servers/kestrel). O Kestrel normalmente é executado atrás de um servidor Web de produção como [IIS](https://www.iis.net/) ou [nginx](http://nginx.org).
 
 Para obter mais informações, consulte [Servidores](xref:fundamentals/servers/index) e [Hospedagem](xref:fundamentals/hosting).
 

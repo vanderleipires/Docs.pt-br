@@ -2,7 +2,7 @@
 title: "Política de largura de máquina"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: 285ae47d-e0bf-4b03-b0a8-2b1fb18bc3a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 513726e209401d158ac98d5874942765751ac07d
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 7ada940acfbb7fb0887fd7c0cd722bf62f211248
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="machine-wide-policy"></a>Política de largura de máquina
 
@@ -77,4 +77,4 @@ Se EncryptionType for "gerenciado", o sistema será configurado para usar um Sym
 Se EncryptionType tiver qualquer outro valor (que não seja nulo / vazio), o sistema de proteção de dados lançará uma exceção durante a inicialização.
 
 >[!WARNING]
-> Ao configurar uma configuração de política padrão que envolve os nomes de tipo (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), os tipos devem estar disponíveis para o aplicativo. Na prática, isso significa que, para aplicativos executados em CLR de área de trabalho, os assemblies que contêm esses tipos devem ser GACed. Para aplicativos do ASP.NET Core em execução em [.NET Core](https://microsoft.com/net/core), os pacotes que contêm esses tipos devem ser instalados.
+> Ao configurar uma configuração de política padrão que envolve os nomes de tipo (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), os tipos devem estar disponíveis para o aplicativo. Na prática, isso significa que, para aplicativos executados em CLR de área de trabalho, os assemblies que contêm esses tipos devem ser GACed. Para aplicativos do ASP.NET Core em execução em [.NET Core](https://www.microsoft.com/net/core), os pacotes que contêm esses tipos devem ser instalados.

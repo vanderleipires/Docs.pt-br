@@ -11,11 +11,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8b1de37d93f5dca2d6b6be24c429b5971692e17e
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 53a31ed8ca6ff24a19a33a56c3a896aa58cbb62a
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introdução ao auxiliares de marcação no núcleo do ASP.NET 
 
@@ -151,7 +151,7 @@ Assim que um atributo do auxiliar de marca é inserido, alterar as fontes de mar
 
 ![imagem](intro/_static/labelaspfor2.png)
 
-Você pode inserir o Visual Studio *Palcompleta* atalho (Ctrl + Barra de espaço é o [padrão](https://msdn.microsoft.com/library/da5kh0wa.aspx)) dentro de aspas duplas (""), e você está agora no c#, exatamente como você deve estar em uma classe c#. O IntelliSense exibe todos os métodos e propriedades no modelo de página. Os métodos e propriedades estão disponíveis porque o tipo de propriedade é `ModelExpression`. Na imagem abaixo, eu estou editando o `Register` exibição, portanto, o `RegisterViewModel` está disponível.
+Você pode inserir o Visual Studio *Palcompleta* atalho (Ctrl + Barra de espaço é o [padrão](https://docs.microsoft.com/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio) dentro de aspas duplas (""), e você está agora no c#, exatamente como você deve estar em uma classe c#. O IntelliSense exibe todos os métodos e propriedades no modelo de página. Os métodos e propriedades estão disponíveis porque o tipo de propriedade é `ModelExpression`. Na imagem abaixo, eu estou editando o `Register` exibição, portanto, o `RegisterViewModel` está disponível.
 
 ![imagem](intro/_static/intellemail.png)
 
@@ -169,7 +169,7 @@ Anexar auxiliares de marcação para elementos HTML em exibições Razor, enquan
 @Html.Label("FirstName", "First Name:", new {@class="caption"})
 ```
 
-O em (`@`) símbolo informa Razor, este é o início do código. Os dois parâmetros ("FirstName" e "nome:") são cadeias de caracteres, portanto [IntelliSense](https://msdn.microsoft.com/library/hcw1s69b.aspx) não pode ajudar. O último argumento:
+O em (`@`) símbolo informa Razor, este é o início do código. Os dois parâmetros ("FirstName" e "nome:") são cadeias de caracteres, portanto [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) não pode ajudar. O último argumento:
 
 ```html
 new {@class="caption"}
@@ -245,7 +245,7 @@ O editor do Visual Studio ajuda você a escrever **todas as** da marcação no m
 
 * Controles de servidor Web usam conversores de tipo para converter cadeias de caracteres em objetos. Com auxiliares de marca, você trabalha nativamente em c#, portanto você não precisa de conversão de tipo.
 
-* Uso de controles de servidor Web [System. ComponentModel](https://msdn.microsoft.com/library/system.componentmodel%28v=vs.110%29.aspx) para implementar o comportamento de tempo de execução e tempo de design de componentes e controles. `System.ComponentModel`inclui as classes e interfaces base para implementar atributos e conversores de tipo, associando a dados de fontes e licenciamento de componentes. Compare isso com a auxiliares de marca, que normalmente derivam `TagHelper`e o `TagHelper` classe base expõe apenas dois métodos, `Process` e `ProcessAsync`.
+* Uso de controles de servidor Web [System. ComponentModel](https://docs.microsoft.com/dotnet/api/system.componentmodel) para implementar o comportamento de tempo de execução e tempo de design de componentes e controles. `System.ComponentModel`inclui as classes e interfaces base para implementar atributos e conversores de tipo, associando a dados de fontes e licenciamento de componentes. Compare isso com a auxiliares de marca, que normalmente derivam `TagHelper`e o `TagHelper` classe base expõe apenas dois métodos, `Process` e `ProcessAsync`.
 
 ## <a name="customizing-the-tag-helper-element-font"></a>Personalizando a fonte de elemento do auxiliar de marca
 
@@ -255,7 +255,7 @@ Você pode personalizar a fonte e a coloração de **ferramentas** > **opções*
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Criação de auxiliares de marcação](authoring.md)
+* [Criando Auxiliares de Marcas](authoring.md)
 * [Trabalhando com formulários](../working-with-forms.md)
 * [TagHelperSamples no GitHub](https://github.com/dpaquette/TagHelperSamples) contém exemplos de auxiliar de marca para trabalhar com [inicialização](http://getbootstrap.com/).
 

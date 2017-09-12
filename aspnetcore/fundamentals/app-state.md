@@ -12,15 +12,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bdc93b2c06b7f0314b5bf49e0e3ea5aa3c1eb3cf
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 8b451bde1e3180d12781d55113638cc1a99182c8
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introdução ao estado de sessão e de aplicativo no núcleo do ASP.NET
 
-Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](http://ardalis.com), e [Diana LaRose](https://github.com/DianaLaRose)
+Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), e [Diana LaRose](https://github.com/DianaLaRose)
 
 HTTP é um protocolo sem monitoração de estado. Um servidor web trata cada solicitação HTTP como uma solicitação independente e não manter valores de usuário de solicitações anteriores. Este artigo aborda diferentes maneiras de preservar o estado da sessão entre as solicitações e aplicativo. 
 
@@ -42,7 +42,7 @@ O restante desta seção descreve as opções para armazenar dados de usuário.
 <a name="temp"></a>
 ### <a name="tempdata"></a>TempData
 
-ASP.NET MVC de núcleo expõe o [TempData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller#Microsoft_AspNetCore_Mvc_Controller_TempData) propriedade em uma [controlador](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller). Essa propriedade armazena dados até que ela seja lida. O `Keep` e `Peek` métodos podem ser usados para examinar os dados sem a exclusão. `TempData`é particularmente útil para redirecionamento, quando dados são necessários para mais de uma única solicitação. `TempData`se baseia no estado de sessão. 
+ASP.NET MVC de núcleo expõe o [TempData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller#Microsoft_AspNetCore_Mvc_Controller_TempData) propriedade em uma [controlador](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller). Essa propriedade armazena dados até eles serem lidos. Os métodos `Keep` e `Peek` podem ser usados para examinar os dados sem exclusão. `TempData`é particularmente útil para redirecionamento, quando dados são necessários para mais de uma única solicitação. `TempData`se baseia no estado de sessão. 
 
 ## <a name="cookie-based-tempdata-provider"></a>Provedor de TempData baseada em cookie 
 
@@ -58,7 +58,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Os dados do cookie são codificados com o [Base64UrlTextEncoder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.authentication.base64urltextencoder). Como o cookie é criptografado e em partes, o limite de tamanho de cookie único não se aplicam. Os dados do cookie não são compactados, pois a compactação de dados encryped pode levar a problemas de segurança, como o [CRIME](https://en.wikipedia.org/wiki/CRIME_(security_exploit)) e [violação](https://en.wikipedia.org/wiki/BREACH_(security_exploit)) ataques. Para obter mais informações sobre o provedor de TempData baseada em cookie, consulte [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
+Os dados do cookie são codificados com o [Base64UrlTextEncoder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.authentication.base64urltextencoder). Como o cookie é criptografado e em partes, o limite de tamanho de cookie único não se aplicam. Os dados do cookie não são compactados, pois a compactação de dados encryped pode levar a problemas de segurança, como o [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) e [violação](https://wikipedia.org/wiki/BREACH_(security_exploit)) ataques. Para obter mais informações sobre o provedor de TempData baseada em cookie, consulte [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
 
 ### <a name="query-strings"></a>Cadeias de caracteres de consulta
 

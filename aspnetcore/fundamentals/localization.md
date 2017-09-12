@@ -11,11 +11,11 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: c6c9db21a95131a3d7920054e32004791b499c11
-ms.sourcegitcommit: fb518f856f31fe53c09196a13309eacb85b37a22
+ms.openlocfilehash: 2a760343566d2c2be591983e20830b5207a2199b
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalização e localização em ASP.NET Core
 
@@ -23,7 +23,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Damien Bowden](https://tw
 
 Criar um site multilíngue com ASP.NET Core permitirá que seu site alcançar um público maior. ASP.NET Core fornece serviços e middleware para localizar em diferentes idiomas e culturas.
 
-Internacionalização envolve [globalização](https://msdn.microsoft.com/library/aa292081(v=vs.71).aspx) e [localização](https://msdn.microsoft.com/library/aa292137(v=vs.71).aspx). Globalização é o processo de criação de aplicativos que dão suporte a diferentes culturas. Globalização adiciona suporte para entrada, exibição e saída de um conjunto definido de scripts de idiomas relacionados a áreas geográficas específicas.
+Internacionalização envolve [globalização](https://docs.microsoft.com/dotnet/api/system.globalization) e [localização](https://docs.microsoft.com/dotnet/standard/globalization-localization/localization). Globalização é o processo de criação de aplicativos que dão suporte a diferentes culturas. Globalização adiciona suporte para entrada, exibição e saída de um conjunto definido de scripts de idiomas relacionados a áreas geográficas específicas.
 
 A localização é o processo de adaptar um aplicativo globalizado, que você já tiver processado para localização, para uma determinada cultura/localidade.  Para obter mais informações, consulte **termos de globalização e localização** perto do final deste documento.
 
@@ -37,7 +37,7 @@ Localização do aplicativo envolve o seguinte:
 
 ## <a name="make-the-apps-content-localizable"></a>Verifique o conteúdo do aplicativo localizável
 
-Introduzido no ASP.NET Core `IStringLocalizer` e `IStringLocalizer<T>` foram projetados para melhorar a produtividade ao desenvolver aplicativos de localizado. `IStringLocalizer`usa o [ResourceManager](https://msdn.microsoft.com/library/system.resources.resourcemanager(v=vs.110).aspx) e [ResourceReader](https://msdn.microsoft.com/library/system.resources.resourcereader(v=vs.110).aspx) para fornecer recursos específicos de cultura em tempo de execução. A interface simple tem um indexador e um `IEnumerable` para retornar cadeias de caracteres localizadas. `IStringLocalizer`não requer que você armazene as cadeias de caracteres de idioma padrão em um arquivo de recurso. Você pode desenvolver um aplicativo direcionado para a localização e não precisa criar arquivos de recurso no início do desenvolvimento. O código a seguir mostra como encapsular a cadeia de caracteres "Sobre o título" para localização.
+Introduzido no ASP.NET Core `IStringLocalizer` e `IStringLocalizer<T>` foram projetados para melhorar a produtividade ao desenvolver aplicativos de localizado. `IStringLocalizer`usa o [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager) e [ResourceReader](https://docs.microsoft.com/dotnet/api/system.resources.resourcereader) para fornecer recursos específicos de cultura em tempo de execução. A interface simple tem um indexador e um `IEnumerable` para retornar cadeias de caracteres localizadas. `IStringLocalizer`não requer que você armazene as cadeias de caracteres de idioma padrão em um arquivo de recurso. Você pode desenvolver um aplicativo direcionado para a localização e não precisa criar arquivos de recurso no início do desenvolvimento. O código a seguir mostra como encapsular a cadeia de caracteres "Sobre o título" para localização.
 
 [!code-csharp[Main](localization/sample/Controllers/AboutController.cs)]
 
@@ -65,7 +65,7 @@ Alguns desenvolvedores usam o `Startup` classe para conter cadeias de caracteres
 
 ## <a name="view-localization"></a>Localização de exibição
 
-O `IViewLocalizer` serviço fornece cadeias de caracteres localizadas para uma [exibição](http://docs.asp.net/projects/mvc/en/latest/views/index.html). O `ViewLocalizer` classe implementa essa interface e encontra o local do recurso do caminho de arquivo do modo de exibição. O código a seguir mostra como usar a implementação padrão de `IViewLocalizer`:
+O `IViewLocalizer` serviço fornece cadeias de caracteres localizadas para uma [exibição](https://docs.microsoft.com/aspnet/core). O `ViewLocalizer` classe implementa essa interface e encontra o local do recurso do caminho de arquivo do modo de exibição. O código a seguir mostra como usar a implementação padrão de `IViewLocalizer`:
 
 [!code-HTML[Main](localization/sample/Views/Home/About.cshtml)]
 
@@ -124,7 +124,7 @@ No código anterior, `SharedResource` é a classe correspondente a resx onde as 
 
 ### <a name="supportedcultures-and-supporteduicultures"></a>SupportedCultures e SupportedUICultures
 
-ASP.NET Core permite que você especifique dois valores de cultura, `SupportedCultures` e `SupportedUICultures`. O [CultureInfo](https://msdn.microsoft.com/library/system.globalization.cultureinfo(v=vs.110).aspx) de objeto para `SupportedCultures` determina os resultados das funções dependentes de cultura, como data, hora, número e formatação de moeda. `SupportedCultures`também determina a ordem de classificação de comparações de cadeia de caracteres de texto e convenções de maiusculas e minúsculas. Consulte [CultureInfo](https://msdn.microsoft.com/library/system.globalization.cultureinfo.currentculture%28v=vs.110%29.aspx) para obter mais informações sobre como o servidor obtém a cultura. O `SupportedUICultures` determina qual converte cadeias de caracteres (de *. resx* arquivos) são pesquisados pelo [ResourceManager](https://msdn.microsoft.com/library/system.resources.resourcemanager(v=vs.110).aspx). O `ResourceManager` simplesmente procura cadeias de caracteres específicas da cultura que é determinado pelo `CurrentUICulture`. Cada thread no .NET tem `CurrentCulture` e `CurrentUICulture` objetos. ASP.NET Core inspeciona esses valores de durante a renderização funções dependentes de cultura. Por exemplo, se a cultura do thread atual está definida como "en-US" (em inglês, Estados Unidos), `DateTime.Now.ToLongDateString()` exibe "Quinta-feira, 18 de fevereiro de 2016", mas se `CurrentCulture` for definido como "es-ES" (espanhol, Espanha) a saída será "jueves, 18 de febrero de 2016".
+ASP.NET Core permite que você especifique dois valores de cultura, `SupportedCultures` e `SupportedUICultures`. O [CultureInfo](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo) de objeto para `SupportedCultures` determina os resultados das funções dependentes de cultura, como data, hora, número e formatação de moeda. `SupportedCultures`também determina a ordem de classificação de comparações de cadeia de caracteres de texto e convenções de maiusculas e minúsculas. Consulte [CultureInfo](https://docs.microsoft.com/dotnet/api/system.stringcomparer.currentculture#System_StringComparer_CurrentCulture) para obter mais informações sobre como o servidor obtém a cultura. O `SupportedUICultures` determina qual converte cadeias de caracteres (de *. resx* arquivos) são pesquisados pelo [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager). O `ResourceManager` simplesmente procura cadeias de caracteres específicas da cultura que é determinado pelo `CurrentUICulture`. Cada thread no .NET tem `CurrentCulture` e `CurrentUICulture` objetos. ASP.NET Core inspeciona esses valores de durante a renderização funções dependentes de cultura. Por exemplo, se a cultura do thread atual está definida como "en-US" (em inglês, Estados Unidos), `DateTime.Now.ToLongDateString()` exibe "Quinta-feira, 18 de fevereiro de 2016", mas se `CurrentCulture` for definido como "es-ES" (espanhol, Espanha) a saída será "jueves, 18 de febrero de 2016".
 
 ## <a name="working-with-resource-files"></a>Trabalhando com arquivos de recurso
 
@@ -182,7 +182,7 @@ Se você criar um arquivo de recurso no Visual Studio sem uma cultura no nome do
 
 ### <a name="adding-other-cultures"></a>Adicionando outras culturas
 
-Cada combinação de idioma e cultura (que não seja o idioma padrão) requer um arquivo de recurso exclusivo. Criar arquivos de recursos para diferentes culturas e localidades criando novos arquivos de recurso nos quais os códigos de idioma ISO fazem parte do nome do arquivo (por exemplo, **en-us**, **fr-ca**, e  **en-gb**). Esses códigos ISO são colocados entre o nome do arquivo e o *. resx* arquivo de extensão de nome, como em *Welcome.es-MX. resx* (espanhol/México). Para especificar uma linguagem culturalmente neutra, remova o código do país (`MX` no exemplo anterior). É o nome do arquivo de recurso espanhol culturalmente neutro *Welcome.es.resx*.
+Cada combinação de idioma e cultura (que não seja o idioma padrão) requer um arquivo de recurso exclusivo. Criar arquivos de recursos para diferentes culturas e localidades criando novos arquivos de recurso nos quais os códigos de idioma ISO fazem parte do nome do arquivo (por exemplo, **en-us**, **fr-ca**, e ** en-gb**). Esses códigos ISO são colocados entre o nome do arquivo e o *. resx* arquivo de extensão de nome, como em *Welcome.es-MX. resx* (espanhol/México). Para especificar uma linguagem culturalmente neutra, remova o código do país (`MX` no exemplo anterior). É o nome do arquivo de recurso espanhol culturalmente neutro *Welcome.es.resx*.
 
 ## <a name="implement-a-strategy-to-select-the-languageculture-for-each-request"></a>Implementar uma estratégia para selecionar a idioma/cultura para cada solicitação  
 
@@ -214,7 +214,7 @@ A lista padrão varia de mais específico ao menos específico. Posteriormente n
 
 ### <a name="querystringrequestcultureprovider"></a>QueryStringRequestCultureProvider
 
-Alguns aplicativos usarão uma cadeia de caracteres de consulta para definir o [culture e UI culture](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx#Current). Para aplicativos que usam a abordagem de cabeçalho Accept-Language ou de cookie, adicionar uma cadeia de caracteres de consulta para a URL é útil para depurar e testar o código. Por padrão, o `QueryStringRequestCultureProvider` é registrado como o primeiro provedor de localização no `RequestCultureProvider` lista. Você passa a consulta, parâmetros de cadeia de caracteres `culture` e `ui-culture`. O exemplo a seguir define a cultura específica (idioma e região) para espanhol, México:
+Alguns aplicativos usarão uma cadeia de caracteres de consulta para definir o [culture e UI culture](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx). Para aplicativos que usam a abordagem de cabeçalho Accept-Language ou de cookie, adicionar uma cadeia de caracteres de consulta para a URL é útil para depurar e testar o código. Por padrão, o `QueryStringRequestCultureProvider` é registrado como o primeiro provedor de localização no `RequestCultureProvider` lista. Você passa a consulta, parâmetros de cadeia de caracteres `culture` e `ui-culture`. O exemplo a seguir define a cultura específica (idioma e região) para espanhol, México:
 
    `http://localhost:5000/?culture=es-MX&ui-culture=es-MX`
 
@@ -303,7 +303,7 @@ Não é possível conectar o *_SelectLanguagePartial.cshtml* para código de exe
 
 O processo de localização de seu aplicativo também requer uma compreensão básica relevantes de conjuntos de caracteres comumente usados em desenvolvimento de software moderno e entender os problemas associados a eles. Embora todos os computadores armazenam texto como números (códigos de), diferentes sistemas armazenam o mesmo texto usando números diferentes. O processo de localização se refere ao transferir a interface do usuário de aplicativo (IU) para uma cultura/localidade específica.
 
-[Localização](https://msdn.microsoft.com/library/aa292135(v=vs.71).aspx) é um processo intermediário para verificar se um aplicativo globalizado está pronto para localização.
+[Localização](https://docs.microsoft.com/dotnet/standard/globalization-localization/localizability-review) é um processo intermediário para verificar se um aplicativo globalizado está pronto para localização.
 
 O [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) de formato para o nome de cultura é "<languagecode2>-< país/regioncode2 >", onde <languagecode2> é o código de idioma e < país/regioncode2 > é o código de subcultura. Por exemplo, `es-CL` para Espanhol (Chile) `en-US` para inglês (Estados Unidos), e `en-AU` para inglês (Austrália). [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) é uma combinação de um código de cultura de duas letras minúsculas associado a um idioma do ISO 639 e um ISO 3166 código subcultura de duas letras maiusculas associado em um país ou região.  Consulte [nome de cultura de idioma](https://msdn.microsoft.com/library/ee825488(v=cs.20).aspx).
 
@@ -322,5 +322,5 @@ Termos de:
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Projeto Localization.StarterWeb](https://github.com/aspnet/entropy) usado no artigo.
-* [Arquivos de recurso no Visual Studio](https://msdn.microsoft.com/library/xbx3z216(v=vs.110).aspx#VSResFiles)
-* [Recursos em arquivos. resx](https://msdn.microsoft.com/library/xbx3z216(v=vs.110).aspx#ResourcesFiles)
+* [Arquivos de recurso no Visual Studio](https://docs.microsoft.com/cpp/windows/resource-files-visual-studio)
+* [Recursos em arquivos. resx](https://docs.microsoft.com/dotnet/framework/resources/working-with-resx-files-programmatically)

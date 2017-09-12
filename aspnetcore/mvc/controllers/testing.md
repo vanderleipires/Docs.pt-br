@@ -11,15 +11,15 @@ ms.assetid: dd4135ec-2b15-410c-b3fb-3d12eed4a1ac
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/testing
-ms.openlocfilehash: d5b2bd0200082000aeaf8015cfff9c8c1ec1bdd9
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: e8a464e75dea3a0ec08c13a11888884e6bb6a4c7
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>Lógica de teste do controlador no núcleo do ASP.NET
 
-Por [Steve Smith](http://ardalis.com)
+Por [Steve Smith](https://ardalis.com/)
 
 Os controladores em aplicativos ASP.NET MVC devem ser pequeno e se concentrem em questões de interface do usuário. Grandes controladores que lidam com preocupações de interface de usuário não são mais difíceis de testar e manter.
 
@@ -47,7 +47,7 @@ Responsabilidades do controlador típico:
 Se você estiver escrevendo filtros personalizados, rotas, etc, faça o teste de unidade-los, mas não como parte de seus testes em uma ação do controlador específico. Eles devem ser testados em isolamento.
 
 > [!TIP]
-> [Criar e executar testes de unidade com o Visual Studio](https://www.visualstudio.com/get-started/code/create-and-run-unit-tests-vs).
+> [Criar e executar testes de unidade com o Visual Studio](https://www.visualstudio.com/docs/code/create-and-run-unit-tests-vs).
 
 Para demonstrar o teste de unidade, examine o seguinte controlador. Ele exibe uma lista de sessões de debate e permite que novas sessões serão criados com uma POSTAGEM de discussão:
 

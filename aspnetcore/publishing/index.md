@@ -11,11 +11,11 @@ ms.assetid: f0930c68-4d17-4748-adbf-801e17601eb6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/index
-ms.openlocfilehash: d030b4f16727080488056c9cde48c31a14a166bf
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: df3c1f0c2768b89c3ea5dc901782170c530a542e
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="hosting-and-deployment-overview-for-aspnet-core-apps"></a>Visão de geral de implantação e hospedagem para aplicativos ASP.NET Core
 
@@ -57,7 +57,7 @@ Se seu aplicativo usa o servidor Web [Kestrel](xref:fundamentals/servers/kestrel
 
 A implantação muitas vezes requer tarefas adicionais além de copiar a saída do `dotnet publish` para um servidor. Por exemplo, você talvez queira incluir arquivos extras na pasta *publish* ou excluir arquivos dela. O Visual Studio usa o MSBuild para implantação da Web e você pode personalizar o MSBuild para fazer muitas outras tarefas durante a implantação. Para obter mais informações, consulte [Perfis de publicação no Visual Studio](xref:publishing/web-publishing-vs) e o livro [Usando MSBuild e o Team Foundation Build](http://msbuildbook.com/).
 
-Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo do Azure usando [o recurso Publicar na Web](xref:tutorials/publish-to-azure-webapp-using-vs) ou usando o [suporte ao Git interno](xref:publishing/azure-continuous-deployment). O Visual Studio Team Services dá suporte à [implantação contínua para o Serviço de Aplicativo do Azure](https://www.visualstudio.com/en-us/docs/build/aspnet/core/quick-to-azure).
+Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo do Azure usando [o recurso Publicar na Web](xref:tutorials/publish-to-azure-webapp-using-vs) ou usando o [suporte ao Git interno](xref:publishing/azure-continuous-deployment). O Visual Studio Team Services dá suporte à [implantação contínua para o Serviço de Aplicativo do Azure](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

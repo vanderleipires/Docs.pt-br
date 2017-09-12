@@ -11,11 +11,11 @@ ms.assetid: 1fb6fdc2-e199-4469-9012-b909d1913422
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/custom-formatters
-ms.openlocfilehash: 0285b40cfacb79745d3a6488401677130f55a95b
-ms.sourcegitcommit: 6ece943781d8a56784bb6160f14da85210d3fcea
+ms.openlocfilehash: 792e007232c751d3db9dc5e50adbedfb2bb1a7ae
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="custom-formatters-in-aspnet-core-mvc-web-apis"></a>APIs da web personalizados formatadores no ASP.NET MVC de núcleo
 
@@ -29,7 +29,7 @@ Núcleo do ASP.NET MVC tem suporte interno para troca de dados em APIs da web us
 
 Use um formatador personalizado quando quiser o [negociação de conteúdo](xref:mvc/models/formatting) processo para dar suporte a um tipo de conteúdo que não é compatível com os formatadores internos (JSON, XML e texto sem formatação).
 
-Por exemplo, se alguns dos clientes para sua API da web puderem manipular o [Protobuf](https://github.com/google/protobuf) formato, você talvez queira usar Protobuf com esses clientes porque é mais eficiente.  Ou talvez você queira sua API da web para enviar entre em contato com os nomes e endereços em [vCard](https://en.wikipedia.org/wiki/VCard) formato, um formato normalmente usado para a troca de dados de contato. O aplicativo de exemplo fornecido com este artigo implementa um formatador vCard simples.
+Por exemplo, se alguns dos clientes para sua API da web puderem manipular o [Protobuf](https://github.com/google/protobuf) formato, você talvez queira usar Protobuf com esses clientes porque é mais eficiente.  Ou talvez você queira sua API da web para enviar entre em contato com os nomes e endereços em [vCard](https://wikipedia.org/wiki/VCard) formato, um formato normalmente usado para a troca de dados de contato. O aplicativo de exemplo fornecido com este artigo implementa um formatador vCard simples.
 
 ## <a name="overview-of-how-to-use-a-custom-formatter"></a>Visão geral de como usar um formatador personalizado
 

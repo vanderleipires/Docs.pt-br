@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 9301b99aed8fcb3bef91abf0fb269c4052cdb7e2
-ms.sourcegitcommit: 87900dffec8ad84a0f74357b23343e215f354dcb
+ms.openlocfilehash: 543399d99af127f943f7e9119fb5d84c8c5bc499
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
@@ -28,7 +28,7 @@ Se você estiver procurando um tutorial que usa a abordagem Modelo-Exibição-Co
 
 ## <a name="aspnet-core-20-prerequisites"></a>Pré-requisitos do ASP.NET Core 2.0
 
-Instale o [.NET Core](https://dot.net/core) 2.0.0 ou posterior.
+Instale o [.NET Core](https://www.microsoft.com/net/core) 2.0.0 ou posterior.
 
 Se você estiver usando o Visual Studio, instale o [Visual Studio](https://www.visualstudio.com/vs/) 15.3 ou posterior com as cargas de trabalho a seguir:
 
@@ -222,7 +222,7 @@ Adicione um arquivo *Pages/_ViewImports.cshtml*:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml)]
 
-`@namespace` é explicado posteriormente no tutorial. A diretiva `@addTagHelper` coloca os [auxiliares de marcas internos](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/) em todas as páginas na pasta *Pages*.
+`@namespace` é explicado posteriormente no tutorial. A diretiva `@addTagHelper` coloca os [auxiliares de marcas internos](xref:mvc/views/tag-helpers/builtin-th/Index) em todas as páginas na pasta *Pages*.
 
 <a name="namespace"></a>
 

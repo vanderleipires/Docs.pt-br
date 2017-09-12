@@ -2,7 +2,7 @@
 title: "Associação de modelo"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/model-binding
-ms.openlocfilehash: 930ea062ffb914cbd4f1500308b813167c1f601b
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 597d4058a410e0b5991b1d5a74c9fc7bfe8171b8
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="model-binding"></a>Associação de modelo
 
-Por [Rachel Appel](http://github.com/rachelappel)
+Por [Rachel Appel](https://github.com/rachelappel)
 
 ## <a name="introduction-to-model-binding"></a>Introdução à associação de modelo
 
@@ -103,7 +103,7 @@ Solicitação de dados podem vir de uma variedade de formatos como JSON, XML e m
 > Pode haver no máximo um parâmetro por ação decorado com `[FromBody]`. Tempo de execução do ASP.NET Core MVC delega a responsabilidade de ler o fluxo da solicitação para o formatador. Depois que o fluxo da solicitação é lido para um parâmetro, geralmente não é possível ler o fluxo da solicitação novamente para associar outros `[FromBody]` parâmetros.
 
 > [!NOTE]
-> O `JsonInputFormatter` é o formatador padrão e é baseada em [Json.NET](http://www.newtonsoft.com/json).
+> O `JsonInputFormatter` é o formatador padrão e é baseada em [Json.NET](https://www.newtonsoft.com/json).
 
 ASP.NET seleciona formatadores de entrada com base no [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) cabeçalho e o tipo do parâmetro, a menos que haja um atributo aplicado a ele especificando caso contrário. Se você gostaria de usar XML ou outro formato você deve configurá-lo no *Startup.cs* arquivo, mas você pode ser necessário que obter uma referência para `Microsoft.AspNetCore.Mvc.Formatters.Xml` usando o NuGet. O código de inicialização deve ter esta aparência:
 

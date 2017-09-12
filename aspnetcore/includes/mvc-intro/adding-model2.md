@@ -10,7 +10,7 @@
   dotnet ef database update
   ```
   
-  [.NET core](http://go.microsoft.com/fwlink/?LinkID=517853) é uma implementação de plataforma cruzada do .NET. Aqui está o que fazem estes comandos:
+  [.NET core](https://docs.microsoft.com/dotnet/core/tools/index) é uma implementação de plataforma cruzada do .NET. Aqui está o que fazem estes comandos:
 
   * `dotnet restore`: Baixa os pacotes do NuGet especificados no *. csproj* arquivo.
   * `dotnet ef migrations add Initial`Executa o comando de migrações de CLI do Entity Framework .NET Core e cria a migração inicial. O parâmetro depois de "Adicionar" é um nome que você atribui para a migração. Aqui você está nomeando a migração "Inicial" porque ele é a migração de banco de dados inicial. Essa operação cria o */migrações de dados/\<data e hora > _Initial.cs* arquivo que contém os comandos de migração para adicionar o *filme* tabela no banco de dados.

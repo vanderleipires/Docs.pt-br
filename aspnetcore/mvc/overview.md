@@ -2,7 +2,7 @@
 title: "Visão geral do núcleo do ASP.NET MVC"
 author: ardalis
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 3e95ccd8aeda54a050cd656ea0c831fd928f53a2
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 67394b066c18a149a97b957d6478ba8301ea8147
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Visão geral do núcleo do ASP.NET MVC
 
-Por [Steve Smith](http://ardalis.com)
+Por [Steve Smith](https://ardalis.com/)
 
 Núcleo do ASP.NET MVC é uma estrutura avançada para a criação de aplicativos web e APIs usando Model-View-Controller design padrão.
 
@@ -77,7 +77,7 @@ Núcleo do ASP.NET MVC inclui o seguinte:
 * [Capacidade de teste](#testability)
 * [Mecanismo de exibição Razor](#razor-view-engine)
 * [Modos de exibição fortemente tipados](#strongly-typed-views)
-* [Auxiliares de marcação](#tag-helpers)
+* [Auxiliares de Marcas](#tag-helpers)
 * [Componentes do modo de exibição](#view-components)
 
 ### <a name="routing"></a>Roteamento
@@ -153,7 +153,7 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
 }
 ```
 
-A estrutura tratará a validação de solicitação de dados no cliente e no servidor. Lógica de validação especificada em tipos de modelo é adicionada aos modos de exibição renderizados como anotações discretas e é imposta no navegador com [jQuery validação](http://jqueryvalidation.org/).
+A estrutura tratará a validação de solicitação de dados no cliente e no servidor. Lógica de validação especificada em tipos de modelo é adicionada aos modos de exibição renderizados como anotações discretas e é imposta no navegador com [jQuery validação](https://jqueryvalidation.org/).
 
 ### <a name="dependency-injection"></a>Injeção de dependência
 

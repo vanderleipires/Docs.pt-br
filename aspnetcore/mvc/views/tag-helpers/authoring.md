@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f16af1184a29b891a9aab0b38ab833836c326c44
-ms.sourcegitcommit: e6a8f171f26fab1b2195a2d7f14e7d258a2e690e
+ms.openlocfilehash: 97013d06273c0993b74cdacfa16cb0d655c73667
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Auxiliares de marcação no núcleo do ASP.NET, um passo a passo com exemplos de criação
 
@@ -98,7 +98,7 @@ Atualização de `EmailTagHelper` classe com o seguinte:
 
 **Observações:**
 
-* Nomes de classe e a propriedade de maiusculas e minúsculas de Pascal para os auxiliares de marca são convertidos em seus [inferior caso kebab](http://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101#12273101). Portanto, para usar o `MailTo` atributo, você usará `<email mail-to="value"/>` equivalente.
+* Nomes de classe e a propriedade de maiusculas e minúsculas de Pascal para os auxiliares de marca são convertidos em seus [inferior caso kebab](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101). Portanto, para usar o `MailTo` atributo, você usará `<email mail-to="value"/>` equivalente.
 
 * A última linha define o conteúdo concluído para nosso auxiliar de marca minimamente funcional.
 
@@ -193,7 +193,7 @@ Você também pode usar o `[HtmlTargetElement]` para alterar o nome do elemento 
     
     **Observações:**
     
-    * Conforme mencionado anteriormente, auxiliares de marcação converte maiusculas e minúsculas de Pascal c# nomes de classes e propriedades para os auxiliares de marca em [inferior caso kebab](http://c2.com/cgi/wiki?KebabCase). Portanto, para usar o `WebsiteInformationTagHelper` Razor, você escreverá `<website-information />`.
+    * Conforme mencionado anteriormente, auxiliares de marcação converte maiusculas e minúsculas de Pascal c# nomes de classes e propriedades para os auxiliares de marca em [inferior caso kebab](http://wiki.c2.com/?KebabCase). Portanto, para usar o `WebsiteInformationTagHelper` Razor, você escreverá `<website-information />`.
     
     * Você não explicitamente identificando o elemento de destino com o `[HtmlTargetElement]` de atributo, isso o padrão de `website-information` será direcionada. Se você aplicou o seguinte atributo (Observação não for o caso de kebab, mas corresponde ao nome de classe):
     
@@ -209,7 +209,7 @@ Você também pode usar o `[HtmlTargetElement]` para alterar o nome do elemento 
     
     * Elementos de fechamento automático não têm nenhum conteúdo. Neste exemplo, a marcação Razor usará uma marca de fechamento automático, mas o auxiliar de marca criará um [seção](http://www.w3.org/TR/html5/sections.html#the-section-element) elemento (que não é fechamento automático e você estiver escrevendo o conteúdo dentro do `section` elemento). Portanto, você precisa definir `TagMode` para `StartTagAndEndTag` para gravar a saída. Como alternativa, você pode comentar a linha que define `TagMode` e escrita de marcação com uma marca de fechamento. (Marcação de exemplo é fornecida posteriormente neste tutorial.)
     
-    * O `$` (cifrão) na linha a seguir usa uma [interpolados cadeia de caracteres](https://msdn.microsoft.com/library/Dn961160.aspx):
+    * O `$` (cifrão) na linha a seguir usa uma [interpolados cadeia de caracteres](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings):
     
     ```cshtml
     $@"<ul><li><strong>Version:</strong> {Info.Version}</li>
@@ -272,11 +272,11 @@ O auxiliar de marca de condição renderiza a saída quando passado um valor tru
 4.  Executar o aplicativo e navegue até a página inicial. A marcação na condicional `div` não será renderizado. Acrescente a cadeia de caracteres de consulta `?approved=true` para a URL (por exemplo, `http://localhost:1235/Home/Index?approved=true`). `approved`é definido como true e a condicional marcação será exibida.
 
 >[!NOTE]
->Use o [nameof](https://msdn.microsoft.com/library/dn986596.aspx) operador para especificar o atributo de destino em vez de especificar uma cadeia de caracteres como você fez com o auxiliar de marca em negrito:
+>Use o [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) operador para especificar o atributo de destino em vez de especificar uma cadeia de caracteres como você fez com o auxiliar de marca em negrito:
 >
 >[!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/zConditionTagHelperCopy.cs?highlight=1,2,5&range=5-18)]
 >
->O [nameof](https://msdn.microsoft.com/library/dn986596.aspx) operador protegerá o código deve ele nunca ser refatorado (queremos alterar o nome para `RedCondition`).
+>O [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) operador protegerá o código deve ele nunca ser refatorado (queremos alterar o nome para `RedCondition`).
 
 ### <a name="avoiding-tag-helper-conflicts"></a>Evitando conflitos de auxiliar de marca
 
@@ -289,7 +289,7 @@ Como esses dois auxiliares estão intimamente relacionados e pode refatorá-los 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?range=7-19)]
 
     >[!NOTE]
-    >O `AutoLinkerHttpTagHelper` classe destinos `p` elementos e usa [Regex](https://msdn.microsoft.com/library/system.text.regularexpressions.regex.aspx) para criar a âncora.
+    >O `AutoLinkerHttpTagHelper` classe destinos `p` elementos e usa [Regex](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) para criar a âncora.
 
 2.  Adicione a seguinte marcação para o fim do *Views/Home/Contact.cshtml* arquivo:
 

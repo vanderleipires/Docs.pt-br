@@ -11,11 +11,11 @@ ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: d1c6ece833672af3ef2003510ef96c4ff0d63fbf
-ms.sourcegitcommit: 418e6aa4ab79474ecc4d0a6af573a3759b113fe4
+ms.openlocfilehash: 210f8e8b91c2487e5c4b73fdeb6ff0d5aa35c0c5
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Tópicos avançados - Core de EF com o tutorial do MVC do ASP.NET Core (10 de 10)
 
@@ -83,7 +83,7 @@ Quando o **atualização** botão é clicado, o método HttpPost é chamado e mu
 
 Em **Gerenciador de soluções**, com o botão direito do *exibições/cursos* pasta e clique **Adicionar > Novo Item**.
 
-No **Adicionar Novo Item** caixa de diálogo, clique em **ASP.NET** em **instalado** no painel esquerdo, clique em **exibir página MVC**e nomeie o novo modo de exibição  *UpdateCourseCredits.cshtml*.
+No **Adicionar Novo Item** caixa de diálogo, clique em **ASP.NET** em **instalado** no painel esquerdo, clique em **exibir página MVC**e nomeie o novo modo de exibição * UpdateCourseCredits.cshtml*.
 
 Em *Views/Courses/UpdateCourseCredits.cshtml*, substitua o código de modelo com o código a seguir:
 
@@ -171,7 +171,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Planos de desenvolvimento e o código de origem de Framework Core do entidade
 
-O código-fonte para Entity Framework Core está disponível em [https://github.com/aspnet/EntityFramework](https://github.com/aspnet/EntityFramework). Além do código-fonte, você pode obter todas as noites compilações, acompanhamento, especificações de recursos, criar anotações de reunião, [o roteiro para desenvolvimento futuro](https://github.com/aspnet/EntityFramework/wiki/Roadmap)e muito mais. Você poderá arquivar bugs e você pode contribuir seus próprios aprimoramentos para o código-fonte EF.
+O código-fonte para Entity Framework Core está disponível em [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). Além do código-fonte, você pode obter todas as noites compilações, acompanhamento, especificações de recursos, criar anotações de reunião, [o roteiro para desenvolvimento futuro](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)e muito mais. Você poderá arquivar bugs e você pode contribuir seus próprios aprimoramentos para o código-fonte EF.
 
 Embora o código-fonte estiver aberto, Entity Framework Core tem suporte completo como um produto da Microsoft. A equipe do Microsoft Entity Framework mantém controle sobre quais contribuições são aceitos e testa todas as alterações de código para assegurar a qualidade de cada versão.
 
@@ -228,7 +228,7 @@ Execute o `migrations remove` de comando, salvar as alterações de código e ex
 
 A abordagem mais simples é renomear o banco de dados em *appSettings. JSON*. Na próxima vez que você executar `database update`, será criado um novo banco de dados.
 
-Para excluir um banco de dados SSOX, o banco de dados, clique **excluir**e, em seguida, o **excluir banco de dados** select da caixa de diálogo **fechar conexões existentes** e clique em  **Okey**.
+Para excluir um banco de dados SSOX, o banco de dados, clique **excluir**e, em seguida, o **excluir banco de dados** select da caixa de diálogo **fechar conexões existentes** e clique em ** Okey**.
 
 Para excluir um banco de dados usando a CLI, execute o `database drop` comando CLI:
 

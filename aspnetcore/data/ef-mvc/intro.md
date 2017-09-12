@@ -11,11 +11,11 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: b8ef101458e0a6e6284624693689181646ced051
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: 949733119b4e3a4b8716f2bcc1f631949d5049bc
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Introdução ao ASP.NET MVC de núcleo e Entity Framework Core usando o Visual Studio (1 a 10)
 
@@ -31,7 +31,7 @@ O aplicativo de exemplo é um site de uma universidade Contoso fictícia. Ele in
 
 > [!NOTE]
 > * Para obter a versão 1.1 do ASP.NET Core deste tutorial, consulte o [versão VS 2017 atualização 2 deste tutorial em formato PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/efmvc/intro/_static/efmvc1.1.pdf).
-> * Para obter a versão do Visual Studio 2015 deste tutorial, consulte o [VS 2015 versão da documentação do ASP.NET Core no formato PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf).
+> * Para obter a versão do Visual Studio 2015 deste tutorial, consulte a [Versão do VS 2015 da documentação do ASP.NET Core no formato PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -39,7 +39,7 @@ O aplicativo de exemplo é um site de uma universidade Contoso fictícia. Ele in
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Se você tiver um problema que não é possível resolver, você pode encontrar a solução geralmente comparando seu código para o [projeto concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final). Para obter uma lista de erros comuns e como resolvê-los, consulte [a seção de solução de problemas do tutorial do último na série](advanced.md#common-errors). Se você não encontrar o que você precisa lá, você pode postar uma pergunta em StackOverflow.com para [ASP.NET Core](http://stackoverflow.com/questions/tagged/asp.net-core) ou [EF Core](http://stackoverflow.com/questions/tagged/entity-framework-core).
+Se você tiver um problema que não é possível resolver, você pode encontrar a solução geralmente comparando seu código para o [projeto concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final). Para obter uma lista de erros comuns e como resolvê-los, consulte [a seção de solução de problemas do tutorial do último na série](advanced.md#common-errors). Se você não encontrar o que você precisa lá, você pode postar uma pergunta em StackOverflow.com para [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) ou [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core).
 
 > [!TIP] 
 > Essa é uma série de tutoriais de 10, cada um dos quais se baseia no qual é feito nos tutoriais anteriores.  Considere a possibilidade de salvar uma cópia do projeto após cada tutorial foi bem-sucedida.  Se você tiver problemas, você pode começar novamente do tutorial anterior em vez de voltar ao início da série inteira.
@@ -168,7 +168,7 @@ Podemos dizer mais sobre o `DatabaseGenerated` atributo em uma [tutorial posteri
 
 ## <a name="create-the-database-context"></a>Criar o contexto de banco de dados
 
-A classe principal que coordena a funcionalidade do Entity Framework para um modelo de dados é a classe de contexto de banco de dados. Crie esta classe derivando de `Microsoft.EntityFrameworkCore.DbContext` classe. No seu código, você especifica quais entidades são incluídas no modelo de dados. Você também pode personalizar o comportamento específico do Entity Framework. Neste projeto, a classe é nomeada `SchoolContext`.
+A classe principal que coordena a funcionalidade do Entity Framework para um modelo de dados é a classe de contexto de banco de dados. Você cria essa classe derivando-a da classe `Microsoft.EntityFrameworkCore.DbContext`. No seu código, você especifica quais entidades são incluídas no modelo de dados. Você também pode personalizar o comportamento específico do Entity Framework. Neste projeto, a classe é nomeada `SchoolContext`.
 
 Na pasta do projeto, crie uma pasta chamada *dados*.
 
@@ -176,7 +176,7 @@ No *dados* pasta criar um novo arquivo de classe chamado *SchoolContext.cs*e sub
 
 [!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
 
-Esse código cria um `DbSet` propriedade para cada conjunto de entidades. Na terminologia do Entity Framework, uma entidade definida normalmente corresponde a uma tabela de banco de dados e uma entidade corresponde a uma linha na tabela.
+Esse código cria um `DbSet` propriedade para cada conjunto de entidades. Na terminologia do Entity Framework, um conjunto de entidades normalmente corresponde a uma tabela de banco de dados, enquanto uma entidade corresponde a uma linha na tabela.
 
 Você poderia omitir o `DbSet<Enrollment>` e `DbSet<Course>` instruções e ele seriam funcionam da mesma. O Entity Framework inclui-los implicitamente porque o `Student` referências de entidade de `Enrollment` entidade e o `Enrollment` referências de entidade o `Course` entidade.
 
@@ -330,7 +330,7 @@ A quantidade de código, que você precisava criar para que o Entity Framework p
 
 * Propriedades de entidade que são nomeadas ID ou classnameID são reconhecidas como propriedades de chave primárias.
 
-* Uma propriedade é interpretada como uma propriedade de chave estrangeira, se ele é nomeado  *<navigation property name> <primary key property name>*  (por exemplo, `StudentID` para o `Student` propriedade de navegação desde o `Student` é de chave primária da entidade `ID`). Propriedades de chave estrangeira também podem ser nomeadas simplesmente  *<primary key property name>*  (por exemplo, `EnrollmentID` desde o `Enrollment` chave primária da entidade é `EnrollmentID`).
+* Uma propriedade é interpretada como uma propriedade de chave estrangeira, se ele é nomeado * <navigation property name> <primary key property name> * (por exemplo, `StudentID` para o `Student` propriedade de navegação desde o `Student` é de chave primária da entidade `ID`). Propriedades de chave estrangeira também podem ser nomeadas simplesmente * <primary key property name> * (por exemplo, `EnrollmentID` desde o `Enrollment` chave primária da entidade é `EnrollmentID`).
 
 Comportamento convencional pode ser substituído. Por exemplo, você pode especificar explicitamente os nomes de tabela, visto anteriormente neste tutorial. E você pode definir os nomes de coluna e definir qualquer propriedade de primary key ou foreign key como você verá em um [tutorial posterior](complex-data-model.md) na série.
 
