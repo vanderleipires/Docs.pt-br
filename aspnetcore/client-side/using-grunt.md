@@ -2,7 +2,7 @@
 title: "Usando o assistente no núcleo do ASP.NET"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 471112e9-2c33-454b-96fc-32916102ce73
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-grunt
-ms.openlocfilehash: df20c3a31fce81ab039ef2f63bf38ed9943c7c6c
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 8ae50514ce24c7f9e3bb1e347d5d860e1de43c5f
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="using-grunt-in-aspnet-core"></a>Usando o assistente no núcleo do ASP.NET 
 
-Por [Noel arroz](http://blog.falafel.com/author/noel-rice/)
+Por [Noel arroz](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)
 
 Pesado é um executor de tarefas do JavaScript que automatiza minimização de script, a compilação TypeScript, ferramentas de "pano" de qualidade do código, pré-processadores de CSS e praticamente qualquer tarefa repetitiva que precisa fazer para dar suporte ao desenvolvimento de cliente. Pesado tem suporte total no Visual Studio, embora os modelos de projeto do ASP.NET usam Gulp por padrão (consulte [usando Gulp](using-gulp.md)).
 
@@ -211,7 +211,7 @@ Pesado estiver configurado para usar um manifesto chamado *Gruntfile.js* que def
 
 10.  Adicionar o `uglify` tarefas usando o código abaixo.
 
-    A tarefa minimiza o *combined.js* arquivo encontrado no diretório temp e cria o arquivo de resultado no wwwroot/lib seguindo a convenção de nomenclatura padrão  *\<nome de arquivo\>. min.js*.
+    A tarefa minimiza o *combined.js* arquivo encontrado no diretório temp e cria o arquivo de resultado no wwwroot/lib seguindo a convenção de nomenclatura padrão * \<nome de arquivo\>. min.js*.
     
     ```javascript
     uglify: {
@@ -280,7 +280,7 @@ Clique na tarefa de inspeção no Explorador do Executador de tarefas e selecion
 
 ## <a name="binding-to-visual-studio-events"></a>Associação a eventos do Visual Studio
 
-A menos que você deseja iniciar manualmente as tarefas toda vez que você trabalha no Visual Studio, você pode associar tarefas a serem **antes de criar**, **depois de criar**, **limpar**, e  **Projeto aberto** eventos.
+A menos que você deseja iniciar manualmente as tarefas toda vez que você trabalha no Visual Studio, você pode associar tarefas a serem **antes de criar**, **depois de criar**, **limpar**, e ** Projeto aberto** eventos.
 
 Vamos associar `watch` para que ele seja executado sempre que o Visual Studio abrirá. No Explorador do Executador de tarefas, a tarefa de inspeção e selecione **associações > Abrir projeto** no menu de contexto.
 
