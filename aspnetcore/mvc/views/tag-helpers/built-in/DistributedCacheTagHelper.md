@@ -11,11 +11,11 @@ ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a022
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/DistributedCacheTagHelper
-ms.openlocfilehash: b6e0beca0833b1dbe0843e8f8848b976726cc7b0
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 2b260624fb2d85ab1a2625511397bcb4a85b6e77
+ms.sourcegitcommit: d022d4b96795ee473fa3847a1d8a8c7430423a86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="distributed-cache-tag-helper"></a>Auxiliar de marca de Cache distribuído
 
@@ -52,14 +52,14 @@ Exemplo de uso:
 ```cshtml
 <distributed-cache name="my-distributed-cache-unique-key-101">
     Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</distributed-cache>
 ```
 
 ## <a name="distributed-cache-tag-helper-idistributedcache-implementations"></a>Distributed implementações de IDistributedCache de auxiliar de marca de Cache
 
 Há duas implementações de `IDistributedCache` interna do ASP.NET Core.  Uma é baseada em **do Sql Server** e a outra é baseada em **Redis**. Os detalhes dessas implementações podem ser encontrados no recurso referenciado abaixo nomeada "Trabalhando com um cache distribuído". Ambas as implementações envolvem a definição de uma instância de `IDistributedCache` no ASP.NET Core **startup.cs**.
 
-Há nenhum atributo de marca especificamente associadas usando qualquer implementação específica de `IDistributedCache`.
+Nenhum atributos de marca especificamente associadas ao uso de qualquer implementação específica de `IDistributedCache`.
 
 
 

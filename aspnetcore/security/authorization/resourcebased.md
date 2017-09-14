@@ -2,7 +2,7 @@
 title: "Autorização com base em recursos"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: 0902ba17-5304-4a12-a2d4-e0904569e988
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 2f799588ba4aca4664e1679e4c34657e7ca121fb
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 7f7df52bf51a81558818836450997281a21b5839
+ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="resource-based-authorization"></a>Autorização com base em recursos
 
@@ -52,7 +52,7 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
 
 <a name=security-authorization-resource-based-imperative></a>
 
-Para chamar a carga do serviço seus recursos em sua ação, em seguida, chame o `AuthorizeAsync` sobrecarga que você precisa. Por exemplo
+Para chamar o serviço, carregar o recurso em sua ação, em seguida, chame o `AuthorizeAsync` sobrecarga que você precisa. Por exemplo:
 
 ```csharp
 public async Task<IActionResult> Edit(Guid documentId)
@@ -77,12 +77,12 @@ public async Task<IActionResult> Edit(Guid documentId)
 
 ## <a name="writing-a-resource-based-handler"></a>Escrevendo um manipulador de recurso com base
 
-Escrevendo um manipulador de autorização de recursos com base não é muito diferente de [escrevendo um manipulador de requisitos simples](policies.md#security-authorization-policies-based-authorization-handler). Criar um requisito e, em seguida, implementar um manipulador para o requisito, especificando o requisito como antes e também o tipo de recurso. Por exemplo, um manipulador que pode aceitar um recurso de documento seria semelhante ao seguinte;
+Escrevendo um manipulador de autorização de recursos com base não é muito diferente de [escrevendo um manipulador de requisitos simples](policies.md#security-authorization-policies-based-authorization-handler). Criar um requisito e, em seguida, implementar um manipulador para o requisito, especificando o requisito como antes e também o tipo de recurso. Por exemplo, um manipulador que pode aceitar um recurso de documento seria semelhante ao seguinte:
 
 ```csharp
 public class DocumentAuthorizationHandler : AuthorizationHandler<MyRequirement, Document>
 {
-    public override Task HandleRequirementAsync(AuthorizationHandlerContext context,
+    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context,
                                                 MyRequirement requirement,
                                                 Document resource)
     {
@@ -93,7 +93,7 @@ public class DocumentAuthorizationHandler : AuthorizationHandler<MyRequirement, 
 }
 ```
 
-Não se esqueça de você também precisa registrar o manipulador no `ConfigureServices` método;
+Não se esqueça de você também precisa registrar o manipulador no `ConfigureServices` método:
 
 ```csharp
 services.AddSingleton<IAuthorizationHandler, DocumentAuthorizationHandler>();
@@ -101,7 +101,7 @@ services.AddSingleton<IAuthorizationHandler, DocumentAuthorizationHandler>();
 
 ### <a name="operational-requirements"></a>Requisitos operacionais
 
-Se você estiver fazendo decisões com base em operações, como leitura, gravação, atualização e exclusão, você pode usar o `OperationAuthorizationRequirement` classe no `Microsoft.AspNetCore.Authorization.Infrastructure` namespace. Essa classe de requisito predefinido permite que você escrever um único manipulador que possui um nome de operação com parâmetros, em vez de criar classes individuais para cada operação. Para usar, ele fornece alguns nomes de operação:
+Se você estiver fazendo decisões com base em operações, como leitura, gravação, atualização e exclusão, você pode usar o `OperationAuthorizationRequirement` classe no `Microsoft.AspNetCore.Authorization.Infrastructure` namespace. Essa classe de requisito predefinido permite que você escrever um único manipulador que possui um nome de operação com parâmetros, em vez de criar classes individuais para cada operação. Para usá-lo, forneça alguns nomes de operação:
 
 ```csharp
 public static class Operations
@@ -117,7 +117,7 @@ public static class Operations
 }
 ```
 
-O manipulador pode, em seguida, ser implementado como a seguir, usando um hipotético `Document` classe como o recurso.
+O manipulador pode, em seguida, ser implementado como a seguir, usando um hipotético `Document` classe do recurso:
 
 ```csharp
 public class DocumentAuthorizationHandler :
@@ -137,7 +137,7 @@ public class DocumentAuthorizationHandler :
 
 Você pode ver a manipulador funciona em `OperationAuthorizationRequirement`. O código dentro do manipulador de deve levar a propriedade de nome do requisito fornecido em conta ao fazer seus avaliações.
 
-Para chamar um manipulador de recurso operacionais que você precisa especificar a operação ao chamar `AuthorizeAsync` em sua ação. Por exemplo
+Para chamar um manipulador de recurso operacionais que você precisa especificar a operação ao chamar `AuthorizeAsync` em sua ação. Por exemplo:
 
 ```csharp
 if (await _authorizationService.AuthorizeAsync(User, document, Operations.Read))

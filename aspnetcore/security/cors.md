@@ -2,7 +2,7 @@
 title: "Habilitar solicitações entre origens (CORS)"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 05/17/2017
@@ -11,11 +11,11 @@ ms.assetid: f9d95e88-4d7e-4d0c-a8e1-47de1128d505
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: 44936c6db8a003a61091ec9a7fd3be5786d89b5b
-ms.sourcegitcommit: 8cafdd1dd409d5070d227100ba0e094c779ac47b
+ms.openlocfilehash: e441ce1c50139a5b33865eec8e8d99764258730d
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Habilitar solicitações entre origens (CORS)
 
@@ -23,7 +23,7 @@ Por [Mike Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter
 
 Segurança do navegador impede que uma página da web fazer solicitações do AJAX para outro domínio. Essa restrição é chamada de *política de mesma origem*e impede que um site mal-intencionado lendo dados confidenciais de outro site. No entanto, às vezes, convém permitir que outros sites fazer solicitações entre origens sua API da web.
 
-[Entre o compartilhamento de recursos de origem](http://www.w3.org/TR/cors/) (CORS) é um padrão de W3C que permite que um servidor atenuar a política de mesma origem. Usando CORS, um servidor pode permitir explicitamente algumas solicitações entre origens durante a rejeição de outras pessoas. CORS é mais segura e mais flexível que técnicas anteriores como [JSONP](http://en.wikipedia.org/wiki/JSONP). Este tópico mostra como habilitar o CORS em um aplicativo do ASP.NET Core.
+[Entre o compartilhamento de recursos de origem](http://www.w3.org/TR/cors/) (CORS) é um padrão de W3C que permite que um servidor atenuar a política de mesma origem. Usando CORS, um servidor pode permitir explicitamente algumas solicitações entre origens durante a rejeição de outras pessoas. CORS é mais segura e mais flexível que técnicas anteriores como [JSONP](https://wikipedia.org/wiki/JSONP). Este tópico mostra como habilitar o CORS em um aplicativo do ASP.NET Core.
 
 ## <a name="what-is-same-origin"></a>O que é "origem mesmo"?
 

@@ -10,11 +10,11 @@ ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: bc2896d0eeda7e84cef06ee3f235e637bfe04318
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: 9de39ce59633036c0dd850a7552bd3f4806c5431
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>A classificação, filtragem, paginação e agrupando - Core de EF com o tutorial do MVC do ASP.NET Core (3 de 10)
 
@@ -94,7 +94,7 @@ Em *Views/Student/Index.cshtml*, adicione o código realçado imediatamente ante
 
 [!code-html[](intro/samples/cu/Views/Students/Index3.cshtml?range=9-23&highlight=5-13)]
 
-Esse código usa o `<form>` [auxiliar de marca](https://docs.asp.net/en/latest/mvc/views/tag-helpers/intro.html) para adicionar a caixa de texto de pesquisa e o botão. Por padrão, o `<form>` auxiliar de marca envia dados de formulário com uma POSTAGEM, o que significa que parâmetros são passados no corpo da mensagem HTTP e não na URL como cadeias de caracteres de consulta. Quando você especificar HTTP GET, os dados do formulário são passados na URL como cadeias de caracteres de consulta, que permite aos usuários indicar a URL. É recomendável o W3C diretrizes que você deve usar obter quando a ação não resulta em uma atualização.
+Esse código usa o `<form>` [auxiliar de marca](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/intro) para adicionar a caixa de texto de pesquisa e o botão. Por padrão, o `<form>` auxiliar de marca envia dados de formulário com uma POSTAGEM, o que significa que parâmetros são passados no corpo da mensagem HTTP e não na URL como cadeias de caracteres de consulta. Quando você especificar HTTP GET, os dados do formulário são passados na URL como cadeias de caracteres de consulta, que permite aos usuários indicar a URL. É recomendável o W3C diretrizes que você deve usar obter quando a ação não resulta em uma atualização.
 
 Execute a página, insira uma cadeia de caracteres de pesquisa e clique em Pesquisar para verificar se a filtragem está funcionando.
 
