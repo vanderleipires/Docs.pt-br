@@ -1,20 +1,20 @@
 ---
 title: "Introdução a Páginas do Razor no ASP.NET Core"
 author: Rick-Anderson
-description: "Visão geral de Páginas do Razor no ASP.NET Core"
-keywords: "ASP.NET Core, Páginas do Razor"
+description: "Este documento fornece uma visão geral do uso das páginas Razor no ASP.NET Core para facilitar o desenvolvimento de cenários focados em página."
+keywords: "ASP.NET Core, Páginas Razor"
 ms.author: riande
 manager: wpickett
-ms.date: 08/15/2017
+ms.date: 09/12/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 543399d99af127f943f7e9119fb5d84c8c5bc499
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: e9678279db85ec03616e693b9772c6ee71c4fef8
+ms.sourcegitcommit: d2f705f7a8ef2c1a940f590e4de188621fd48d2a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
@@ -30,7 +30,7 @@ Se você estiver procurando um tutorial que usa a abordagem Modelo-Exibição-Co
 
 Instale o [.NET Core](https://www.microsoft.com/net/core) 2.0.0 ou posterior.
 
-Se você estiver usando o Visual Studio, instale o [Visual Studio](https://www.visualstudio.com/vs/) 15.3 ou posterior com as cargas de trabalho a seguir:
+Se você estiver usando o Visual Studio, instale o [Visual Studio](https://www.visualstudio.com/vs/) 2017 versão 15.3 ou posterior com as cargas de trabalho a seguir:
 
 * **ASP.NET e desenvolvimento para a Web**
 * **Desenvolvimento entre plataformas do .NET Core**
@@ -63,25 +63,23 @@ Da linha de comando, execute `dotnet new razor`.
 
 O Páginas do Razor está habilitado em *Startup.cs*:
 
-[!code-cs[main](index/sample/RazorPagesIntro/Startup.cs?name=Startup)]
+[!code-cs[main](index/sample/RazorPagesIntro/Startup.cs?name=snippet_Startup)]
 
 Considere uma página básica: <a name="OnGet"></a>
 
 [!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index.cshtml)]
 
-O código anterior é muito parecido com um arquivo de exibição do Razor. O que o torna diferentes é a diretiva `@page`. `@page` transforma o arquivo em uma ação do MVC – o que significa que ele trata solicitações diretamente, sem passar por um controlador. `@page` deve ser a primeira diretiva do Razor em uma página. `@page` afeta o comportamento de outros constructos do Razor. A diretiva [@functions](xref:mvc/views/razor#functions) habilita o conteúdo em nível de função.
+O código anterior é muito parecido com um arquivo de exibição do Razor. O que o torna diferentes é a diretiva `@page`. `@page` transforma o arquivo em uma ação do MVC – o que significa que ele trata solicitações diretamente, sem passar por um controlador. `@page` deve ser a primeira diretiva do Razor em uma página. `@page` afeta o comportamento de outros constructos do Razor.
 
-Uma página semelhante, com o `PageModel` em um arquivo separado, é mostrada nos dois arquivos a seguir. O arquivo *Pages/Index2.cshtml*:
+Uma página semelhante, usando uma classe `PageModel`, é mostrada nos dois arquivos a seguir. O arquivo *Pages/Index2.cshtml*:
 
 [!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml)]
 
-O arquivo code-behind *Pages/Index2.cshtml.cs*:
+O arquivo “code-behind” *Pages/Index2.cshtml.cs*:
 
 [!code-cs[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml.cs)]
 
 Por convenção, o arquivo de classe `PageModel` tem o mesmo nome que o arquivo na Página do Razor com *.cs* acrescentado. Por exemplo, a Página do Razor anterior é *Pages/Index2.cshtml*. O arquivo que contém a classe `PageModel` é chamado *Pages/Index2.cshtml.cs*.
-
-Para páginas simples, não há problemas em mesclar a classe `PageModel` com a marcação do Razor. Para código mais complexo, é uma melhor prática manter o código de modelo de página separado.
 
 As associações de caminhos de URL para páginas são determinadas pelo local da página no sistema de arquivos. A tabela a seguir mostra um caminho de Página do Razor e a URL correspondente:
 
@@ -90,7 +88,7 @@ As associações de caminhos de URL para páginas são determinadas pelo local d
 | */Pages/Index.cshtml* | `/` ou `/Index` |
 | */Pages/Contact.cshtml* | `/Contact` |
 | */Pages/Store/Contact.cshtml* | `/Store/Contact` |
-| */Pages/Store/Index.cshtml* | `/Store` ou `/Store/Index`  |
+| */Pages/Store/Index.cshtml* | `/Store` ou `/Store/Index` |
 
 Notas:
 
@@ -115,9 +113,9 @@ O arquivo de exibição *Pages/Create.cshtml*:
 
 O arquivo code-behind *Pages/Create.cshtml.cs* para a exibição:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=ALL)]
+[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
 
-Por convenção, a classe `PageModel` é chamada de `<PageName>Model` e está no mesmo namespace que a página. Não é necessário fazer muitas alterações para converter de uma página usando `@functions` para definir manipuladores e uma página usando uma classe `PageModel`.
+Por convenção, a classe `PageModel` é chamada de `<PageName>Model` e está no mesmo namespace que a página.
 
 O uso de um arquivo code-behind `PageModel` dá suporte a teste de unidade, mas exige que você grave uma classe e um construtor explícitos. Páginas sem arquivos code-behind `PageModel` dão suporte a compilação de tempo de execução, o que pode ser uma vantagem no desenvolvimento.  <!-- review: advantage because you can make changes and refresh the browser without explicitly compiling the app -->
 
@@ -130,7 +128,7 @@ O sufixo de nomenclatura `Async` é opcional, mas geralmente é usado por conven
 
 O método `OnPostAsync` anterior:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=OnPostAsync)]
+[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_OnPostAsync)]
 
 O fluxo básico de `OnPostAsync`:
 
@@ -145,18 +143,9 @@ Quando o formulário enviado tem erros de validação (que são passados para o 
 
 A propriedade `Customer` usa o atributo `[BindProperty]` para aceitar a associação de modelos.
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=PageModel&highlight=10-11)]
+[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
 
 Páginas do Razor, por padrão, associam as propriedades somente com verbos não GET. A associação de propriedades pode reduzir a quantidade de código que você precisa escrever. A associação reduz o código usando a mesma propriedade para renderizar os campos de formulário (`<input asp-for="Customer.Name" />`) e aceitar a entrada.
-
-O código a seguir mostra a versão combinada da página de criação:
-
-[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/CreateCombined.cshtml)]
-
-Em vez de usar `@model`, estamos usufruindo de um novo recurso para Páginas. Por padrão, a classe derivada de `Page` gerada *é* o modelo. Usar um *modelo de exibição* com exibições do Razor é uma melhor prática. Com Páginas, você obtém um modelo de exibição *automaticamente*.
-
-A principal mudança é substituir a injeção de construtor com propriedades injetadas (`@inject`). Essa página usa [@inject](xref:mvc/views/razor#inject) para [injeção de dependência de construtor](xref:mvc/controllers/dependency-injection#constructor-injection). A instrução `@inject` gera e inicializa a propriedade, `Db` que é usada em `OnPostAsync`. As propriedades injetadas (`@inject`) são definidas antes de métodos de manipulador serem executados.
-
 
 A home page (*Index.cshtml*):
 
@@ -168,7 +157,7 @@ O arquivo code-behind *Index.cshtml.cs*:
 
 O arquivo *cshtml* contém a marcação a seguir para criar um link de edição para cada contato:
 
-```html
+```cshtml
 <a asp-page="./Edit" asp-route-id="@contact.Id">edit</a>
 ```
 
@@ -212,7 +201,7 @@ A propriedade [Layout](xref:mvc/views/layout#specifying-a-layout) é definida em
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
-Observação: o layout está na pasta *Pages*. As páginas buscam outras exibições (layouts, modelos, parciais) hierarquicamente, iniciando na mesma pasta que a página atual. Um layout na pasta *Pages* pode ser usado em qualquer Página do Razor na pasta *Pages*.
+**Observação**: o layout está na pasta *Pages*. As páginas buscam outras exibições (layouts, modelos, parciais) hierarquicamente, iniciando na mesma pasta que a página atual. Um layout na pasta *Pages* pode ser usado em qualquer Página do Razor na pasta *Pages*.
 
 Recomendamos que você **não** coloque o arquivo de layout na pasta *Views/Shared*. *Views/Shared* é um padrão de exibições do MVC. As Páginas do Razor devem confiar na hierarquia de pasta e não nas convenções de caminho.
 
@@ -236,7 +225,7 @@ Quando a diretiva `@namespace` está contida em *_ViewImports.cshtml*, o namespa
 
 Por exemplo, o arquivo code-behind *Pages/Customers/Edit.cshtml.cs* define explicitamente o namespace:
 
-[!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/Edit.cshtml.cs?name=namespace)]
+[!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/Edit.cshtml.cs?name=snippet_namespace)]
 
 O arquivo *Pages/_ViewImports.cshtml* define o namespace a seguir:
 
@@ -244,15 +233,13 @@ O arquivo *Pages/_ViewImports.cshtml* define o namespace a seguir:
 
 O namespace gerado para a Página do Razor *Pages/Customers/Edit.cshtml* é o mesmo que o do arquivo code-behind. A diretiva `@namespace` foi projetada de modo que as classes C# adicionadas a um projeto e o código gerado pelas páginas *funcione* sem a necessidade de adicionar uma diretiva `@using` para o arquivo code-behind.
 
-Observação: `@namespace` também funciona com exibições do Razor convencionais.
+**Observação:** `@namespace` também funciona com exibições do Razor convencionais.
 
 O arquivo de exibição *Pages/Create.cshtml* original:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Create.cshtml?highlight=2)]
 
-A página atualizada:
-
-O arquivo de exibição *Pages/Create.cshtml*:
+O arquivo de exibição *Pages/Create.cshtml* atualizado:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/Create.cshtml?highlight=2)]
 
@@ -264,9 +251,9 @@ O [projeto inicial de Páginas do Razor](#rpvs17) contém o *Pages/_ValidationSc
 
 A página `Create`, exibida anteriormente, usa `RedirectToPage`:
 
-[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=OnPostAsync&highlight=10)]
+[!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_OnPostAsync&highlight=10)]
 
-O aplicativo tem a estrutura de arquivos/pastas a seguir
+O aplicativo tem a estrutura de arquivos/pastas a seguir:
 
 * */Pages*
 
@@ -304,8 +291,9 @@ O ASP.NET Core expõe a propriedade [TempData](https://docs.microsoft.com/aspnet
 
 O atributo `[TempData]` é novo no ASP.NET Core 2.0 e tem suporte em controladores e páginas.
 
-Os conjuntos de código a seguir definem o valor de `Message` usando `TempData`.
-[!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateDot.cshtml.cs?highlight=10-11,27-28&name=snippetTemp)]
+Os conjuntos de código a seguir definem o valor de `Message` usando `TempData`:
+
+[!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateDot.cshtml.cs?highlight=10-11,25&name=snippet_Temp)]
 
 A marcação a seguir no arquivo *Pages/Customers/Index.cshtml* exibe o valor de `Message` usando `TempData`.
 
@@ -349,7 +337,6 @@ Se você não deseja a cadeia de consulta `?handler=JoinList` na URL, você pode
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateRoute.cshtml?highlight=1)]
 
-
 A rota anterior coloca o nome do manipulador no caminho da URL em vez da cadeia de consulta. O `?` após `handler` significa que o parâmetro de rota é opcional.
 
 Você pode usar `@page` para adicionar parâmetros e segmentos adicionais a uma rota de página. Tudo que está lá está **acrescentado** à rota padrão da página. Não há suporte para o uso de um caminho absoluto ou virtual para alterar a rota da página (como `"~/Some/Other/Path"`).
@@ -358,7 +345,7 @@ Você pode usar `@page` para adicionar parâmetros e segmentos adicionais a uma 
 
 Para configurar opções avançadas, use o método de extensão `AddRazorPagesOptions` no construtor de MVC:
 
-[!code-cs[main](index/sample/RazorPagesContacts/StartupAdvanced.cs?name=snippet1)]
+[!code-cs[main](index/sample/RazorPagesContacts/StartupAdvanced.cs?name=snippet_1)]
 
 No momento, você pode usar o `RazorPagesOptions` para definir o diretório raiz para páginas ou adicionar as convenções de modelo de aplicativo para páginas. Esperamos habilitar mais extensibilidade dessa maneira no futuro.
 
