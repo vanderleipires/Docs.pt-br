@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: f9267eab-2762-42ac-1638-4a25d2c9d67c
 ms.prod: asp.net-core
 uid: performance/caching/middleware
-ms.openlocfilehash: 7790f38dda61eabd3cbbc6088ad455c07289b739
-ms.sourcegitcommit: 70089de5bfd8ecd161261aa95faf07a4e1534cf8
+ms.openlocfilehash: 4013619f738b3b8b58e45d9dfd205e7b75e056b4
+ms.sourcegitcommit: 029dd7fbc0793e84b9ed91f2b45624bbc187fb32
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Resposta de cache Middleware no núcleo do ASP.NET
 
@@ -30,11 +30,11 @@ Para incluir o middleware em um projeto, adicione uma referência para o [ `Micr
 ## <a name="configuration"></a>Configuração
 Em `ConfigureServices`, adicione o middleware para a coleção de serviço.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](middleware/samples/2.x/Program.cs?name=snippet1&highlight=4)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](middleware/samples/1.x/Startup.cs?name=snippet1&highlight=3)]
 
@@ -42,11 +42,11 @@ Em `ConfigureServices`, adicione o middleware para a coleção de serviço.
 
 Configurar o aplicativo para usar o middleware com o `UseResponseCaching` método de extensão, o que adiciona o middleware para o pipeline de processamento de solicitação. O aplicativo de exemplo adiciona um [ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2) cabeçalho para a resposta que armazena em cache respostas armazenável em cache por até 10 segundos. O exemplo envia um [ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4) cabeçalho para configurar o middleware para servir uma resposta em cache somente se o [ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4) cabeçalho de solicitações subsequentes corresponde a solicitação original.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](middleware/samples/2.x/Program.cs?name=snippet1&highlight=8)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](middleware/samples/1.x/Startup.cs?name=snippet2&highlight=3)]
 
@@ -113,7 +113,7 @@ Quando testar e solucionar problemas de comportamento de cache, um navegador pod
 
 * [Fiddler](http://www.telerik.com/fiddler)
 * [Firebug](http://getfirebug.com/)
-* [Carteiro](https://www.getpostman.com/)
+* [Postman](https://www.getpostman.com/)
 
 ### <a name="conditions-for-caching"></a>Condições para armazenar em cache
 * A solicitação deve resultar em uma resposta 200 do (Okey) do servidor.
@@ -125,7 +125,7 @@ Quando testar e solucionar problemas de comportamento de cache, um navegador pod
 * O `Set-Cookie` cabeçalho não deve estar presente.
 * `Vary`parâmetros de cabeçalho devem ser válido e não é igual a `*`.
 * O `Content-Length` valor de cabeçalho (se definido) deve corresponder ao tamanho do corpo da resposta.
-* O `HttpSendFileFeature` não será usado.
+* O [IHttpSendFileFeature](/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature) não é usado.
 * A resposta não deve ser atualizada conforme especificado pelo `Expires` cabeçalho e o `max-age` e `s-maxage` diretivas de cache.
 * Buffer de resposta é bem-sucedida e o tamanho da resposta é menor do que o configurado ou padrão `SizeLimit`.
 * A resposta deve ser armazenado em cache de acordo com o [7234 RFC](https://tools.ietf.org/html/rfc7234) especificações. Por exemplo, o `no-store` diretiva não deve existir nos campos de cabeçalho de solicitação ou resposta. Consulte *seção 3: armazenar respostas em Caches* de [7234 RFC](https://tools.ietf.org/html/rfc7234) para obter detalhes.

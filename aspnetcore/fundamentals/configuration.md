@@ -11,15 +11,15 @@ ms.assetid: b3a5984d-e172-42eb-8a48-547e4acb6806
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration
-ms.openlocfilehash: a14bc7fbcdac9acddfdab4fcd6e40385ca48bcc4
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 041bb04a3a3699a166a03338865da154403d8c07
+ms.sourcegitcommit: f535ce61c6a5e615bc6399b5d763c734396231f4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/13/2017
 ---
 <a name=fundamentals-configuration></a>
 
-  # <a name="configuration-in-aspnet-core"></a>Configuração no núcleo do ASP.NET
+# <a name="configuration-in-aspnet-core"></a>Configuração no núcleo do ASP.NET
 
 [Rick Anderson](https://twitter.com/RickAndMSFT), [marca Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), e [Daniel Roth](https://github.com/danroth27)
 
@@ -66,7 +66,7 @@ O exemplo anterior usa o indexador de configuração para ler valores. A configu
 É comum ter configurações diferentes para ambientes diferentes, por exemplo, desenvolvimento, teste e produção. O `CreateDefaultBuilder` método de extensão em um aplicativo do ASP.NET Core 2. x (ou usando `AddJsonFile` e `AddEnvironmentVariables` diretamente em um aplicativo do ASP.NET Core 1. x) adiciona provedores de configuração para ler arquivos JSON e sistema de fontes de configuração:
 
 * *appsettings.json*
-* * appsettings. \<EnvironmentName >. JSON
+* *appSettings. \<EnvironmentName >. JSON*
 * variáveis de ambiente
 
 Consulte [AddJsonFile](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.jsonconfigurationextensions) para obter uma explicação dos parâmetros. `reloadOnChange`só é suportado no ASP.NET Core 1.1 e superior. 

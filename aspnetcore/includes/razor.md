@@ -1,0 +1,1 @@
+Este tutorial ensina a usar o ASP.NET Core MVC com controladores e exibições. As Páginas Razor é uma nova alternativa no ASP.NET Core 2.0, um modelo de programação baseado em página que torna a criação da interface do usuário da Web mais fácil e produtiva. Para obter uma versão do Razor deste tutorial, consulte [Tutorial das Páginas Razor](xref:mvc/razor-pages/index). 
