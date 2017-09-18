@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 2f99a5d3db84c3fd3f7ebcb8bccd9a4b8bc8e2b8
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 8fe21b1a1ccb93c124dbd12a540b195400d45ef6
+ms.sourcegitcommit: f8f6b5934bd071a349f5bc1e389365c52b1c00fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmação de conta e de recuperação de senha no núcleo do ASP.NET
 
@@ -117,7 +117,7 @@ A linha precedente impede que usuários registrados que está sendo conectado at
 
 Neste tutorial, SendGrid é usada para enviar email. Você precisa de uma conta do SendGrid e a chave para enviar email. Você pode usar outros provedores de email. ASP.NET Core 2. x inclui `System.Net.Mail`, que permite enviar email de seu aplicativo. É recomendável que usar o SendGrid ou outro serviço de email para enviar email.
 
-O [padrão de opções](xref:fundamentals/configuration#options-config-objects) é usado para acessar as configurações de conta e a chave de usuário. Para obter mais informações, consulte [configuração](xref:fundamentals/configuration#fundamentals-configuration).
+O [padrão de opções](xref:fundamentals/configuration#options-config-objects) é usado para acessar as configurações de conta e a chave de usuário. Para obter mais informações, consulte [configuração](xref:fundamentals/configuration).
 
 Crie uma classe para obter a chave de email seguro. Para este exemplo, o `AuthMessageSenderOptions` classe é criada no *Services/AuthMessageSenderOptions.cs* arquivo.
 

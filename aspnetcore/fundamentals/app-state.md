@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8b451bde1e3180d12781d55113638cc1a99182c8
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 409444e99cfa49f30812c6130120391a8f477839
+ms.sourcegitcommit: 50608ec8ae49897d8bf11d5f6dc511da30862bfa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introdução ao estado de sessão e de aplicativo no núcleo do ASP.NET
 
@@ -96,7 +96,15 @@ O `Microsoft.AspNetCore.Session` pacote fornece middleware para gerenciar o esta
 
 O código a seguir mostra como configurar o provedor de sessão na memória.
 
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+[!code-csharp[Main](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
 [!code-csharp[Main](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
+
+---
 
 Você pode fazer referência a sessão de `HttpContext` quando ele é instalado e configurado.
 
@@ -116,7 +124,15 @@ Sessão usa um cookie para controlar e identificar as solicitações de um naveg
 
 Para substituir os padrões de sessão, use `SessionOptions`:
 
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+[!code-csharp[Main](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
 [!code-csharp[Main](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
+
+---
 
 O servidor usa o `IdleTimeout` propriedade para determinar quanto tempo uma sessão pode ficar ociosa antes de seu conteúdo está sendo abandonado. Essa propriedade é independente da expiração do cookie. Cada solicitação que passa por meio do middleware de sessão (lida ou gravada para) redefine o tempo limite.
 
@@ -230,4 +246,5 @@ public class MyController : Controller
 ### <a name="additional-resources"></a>Recursos adicionais
 
 
-* [Código de exemplo usado neste documento](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/sample/src/WebAppSession)
+* [ASP.NET Core 1. x: exemplo de código usado neste documento](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/sample/src/WebAppSession)
+* [ASP.NET Core 2. x: exemplo de código usado neste documento](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/sample/src/WebAppSessionDotNetCore2.0App)

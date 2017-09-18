@@ -11,11 +11,11 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 949733119b4e3a4b8716f2bcc1f631949d5049bc
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 6bde59ddbf153ada36034765b390892ec2ed5997
+ms.sourcegitcommit: 98ecb0f1bae4886507b090c84ecd99ff1e5c46ed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/17/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Introdução ao ASP.NET MVC de núcleo e Entity Framework Core usando o Visual Studio (1 a 10)
 
@@ -30,7 +30,7 @@ O aplicativo de exemplo é um site de uma universidade Contoso fictícia. Ele in
 É a versão mais recente do EF EF Core 2.0, mas ainda não tem todos os recursos do EF 6. x. Para obter informações sobre como escolher entre EF 6. x e EF Core, consulte [EF Core vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). Se você escolher EF 6. x, consulte [a versão anterior desta série de tutoriais](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
 > [!NOTE]
-> * Para obter a versão 1.1 do ASP.NET Core deste tutorial, consulte o [versão VS 2017 atualização 2 deste tutorial em formato PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/efmvc/intro/_static/efmvc1.1.pdf).
+> * Para obter a versão 1.1 do ASP.NET Core deste tutorial, consulte o [versão VS 2017 atualização 2 deste tutorial em formato PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf).
 > * Para obter a versão do Visual Studio 2015 deste tutorial, consulte a [Versão do VS 2015 da documentação do ASP.NET Core no formato PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf).
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -68,7 +68,7 @@ Abra o Visual Studio e crie um novo ASP.NET Core c# web chamado "ContosoUniversi
 
 * Digite **ContosoUniversity** como o nome e clique em **Okey**.
 
-  ![Caixa de diálogo Nova projeto](intro/_static/new-project.png)
+  ![Caixa de diálogo Novo Projeto](intro/_static/new-project.png)
 
 * Aguarde até que o **ASP.NET Core aplicações Web (.NET Core)** aparecer caixa de diálogo
 
@@ -80,7 +80,7 @@ Abra o Visual Studio e crie um novo ASP.NET Core c# web chamado "ContosoUniversi
 
 * Clique em **OK**
 
-  ![Caixa de diálogo Nova projeto ASP.NET](intro/_static/new-aspnet.png)
+  ![Caixa de diálogo Novo Projeto ASP.NET](intro/_static/new-aspnet.png)
 
 ## <a name="set-up-the-site-style"></a>Definir o estilo de site
 
@@ -204,7 +204,7 @@ Abra o *appSettings. JSON* de arquivos e adicionar uma cadeia de caracteres de c
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-A cadeia de caracteres de conexão Especifica um banco de dados LocalDB do SQL Server. LocalDB é uma versão leve do mecanismo de banco de dados do SQL Server Express e destina-se ao desenvolvimento de aplicativos, não o uso de produção. LocalDB é iniciado sob demanda e é executado no modo de usuário, portanto, não há nenhuma configuração complexa. Por padrão, o LocalDB cria *. mdf* arquivos de banco de dados de `C:/Users/<user>` directory.
+A cadeia de caracteres de conexão Especifica um banco de dados LocalDB do SQL Server. LocalDB é uma versão leve do mecanismo de banco de dados do SQL Server Express e destina-se ao desenvolvimento de aplicativos, não o uso de produção. O LocalDB é iniciado sob demanda e executado no modo de usuário e, portanto, não há nenhuma configuração complexa. Por padrão, o LocalDB cria *. mdf* arquivos de banco de dados de `C:/Users/<user>` directory.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>Adicione código para inicializar o banco de dados de teste
 
@@ -242,7 +242,7 @@ A criação automática de métodos de ação CRUD e modos de exibição é conh
 
 * Com o botão direito do **controladores** pasta **Solution Explorer** e selecione **Adicionar > Novo Item de Scaffold**.
 
-* No **adicionar dependências de MVC** caixa de diálogo, selecione **mínimo dependências**e selecione **adicionar**.
+* Na caixa de diálogo **Adicionar Dependências do MVC**, selecione **Dependências Mínimas** e **Adicionar**.
 
   ![Adicionar dependências](intro/_static/add-depend.png)
 
