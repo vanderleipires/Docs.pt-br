@@ -11,11 +11,11 @@ ms.assetid: 830b4bf5-dd14-423e-9f59-764a6f13a8f6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: abe088f2c9df94135209ce71540e6b345186ee70
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 17687e38aae066bdab4663268a2af54f20a6ad75
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-code-on-linux-macos-and-windows"></a>Criar uma API Web com o ASP.NET Core MVC e o Visual Studio Code no Linux, macOS e Windows
 
@@ -36,7 +36,7 @@ Há três versões deste tutorial:
 ## <a name="set-up-your-development-environment"></a>Configurar o ambiente de desenvolvimento
 
 Baixe e instale:
-- [.NET Core](https://microsoft.com/net/core)
+- [.NET Core](https://www.microsoft.com/net/core)
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Extensão do C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) do Visual Studio Code
 
@@ -114,9 +114,9 @@ No VS Code, pressione F5 para iniciar o aplicativo. Navegue para http://localhos
 - [Terminal integrado](https://code.visualstudio.com/docs/editor/integrated-terminal)
 - [Atalhos de teclado](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
-  - [Atalhos de teclado do Mac](https://go.microsoft.com/fwlink/?linkid=832143)
-  - [Atalhos de teclado do Linux](https://go.microsoft.com/fwlink/?linkid=832144)
-  - [Atalhos de teclado do Windows](https://go.microsoft.com/fwlink/?linkid=832145)
+  - [Atalhos de teclado do Mac](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+  - [Atalhos de teclado do Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+  - [Atalhos de teclado do Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 [!INCLUDE[next steps](../includes/webApi/next.md)]
 

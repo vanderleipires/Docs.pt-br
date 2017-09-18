@@ -10,17 +10,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-web-api
-ms.openlocfilehash: c57c73c6f9c60874ef88749b838ed1cc1d353ead
-ms.sourcegitcommit: 7fef13045e98d716c589a2982613dad261694a65
+ms.openlocfilehash: 4aab61c7ee4498b33a4ea8bbec6033ce9828e2af
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/12/2017
 ---
 #<a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Criar uma API Web com o ASP.NET Core e o Visual Studio para Windows
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Mike Wasson](https://github.com/mikewasson)
 
-Neste tutorial, você criará uma API Web para gerenciar uma lista de itens "pendentes". Você não criará uma interface do usuário.
+Neste tutorial, você compilará uma API Web para gerenciar uma lista de itens de “tarefas pendentes”. Você não compilará uma interface do usuário.
 
 Há três versões deste tutorial:
 
@@ -36,7 +36,7 @@ Há três versões deste tutorial:
 
 [!INCLUDE[install 2.0](../includes/install2.0.md)]
 
-Consulte [este PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/_static/_webAPI.pdf) para o ASP.NET Core versão 1.1.
+Consulte [este PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-web-api/_static/_webAPI.pdf) para o ASP.NET Core versão 1.1.
 
 ## <a name="create-the-project"></a>Criar o projeto
 
@@ -68,19 +68,19 @@ Observação: as classes de modelo podem ser colocadas em qualquer lugar no seu 
 
 Adicione uma classe `TodoItem`. Clique com o botão direito do mouse na pasta *Modelos* e selecione **Adicionar** > **Classe**. Nomeie a classe `TodoItem` e, em seguida, selecione **Adicionar**.
 
-Substitua o código gerado pelo mostrado a seguir:
+Substitua o código gerado pelo seguinte:
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
 
 O banco de dados gera o `Id` quando um `TodoItem` é criado.
 
-### <a name="create-the-database-context"></a>Criar o contexto do banco de dados
+### <a name="create-the-database-context"></a>Criar o contexto de banco de dados
 
 O *contexto de banco de dados* é a classe principal que coordena a funcionalidade do Entity Framework para um determinado modelo de dados. Essa classe é criada derivando-a da classe `Microsoft.EntityFrameworkCore.DbContext`.
 
 Adicione uma classe `TodoContext`. Clique com o botão direito do mouse na pasta *Modelos* e selecione **Adicionar** > **Classe**. Nomeie a classe `TodoContext` e, em seguida, selecione **Adicionar**.
 
-Substitua o código gerado pelo mostrado a seguir:
+Substitua o código gerado pelo seguinte:
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
 

@@ -3,7 +3,7 @@
 O código anterior:
 
 * Define uma classe de controlador vazia. Nas próximas seções, adicionaremos métodos para implementar a API.
-* O construtor usa a [Injeção de Dependência](xref:fundamentals/dependency-injection) para injetar o contexto de banco de dados (`TodoContext `) no controlador. O contexto de banco de dados é usado em cada um dos métodos [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) no controlador.
+* O construtor usa a [Injeção de Dependência](xref:fundamentals/dependency-injection) para injetar o contexto de banco de dados (`TodoContext `) no controlador. O contexto de banco de dados é usado em cada um dos métodos [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) no controlador.
 * O construtor adiciona um item no banco de dados em memória, caso ele não exista.
 
 ## <a name="getting-to-do-items"></a>Obtendo itens de tarefas pendentes

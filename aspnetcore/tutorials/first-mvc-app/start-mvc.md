@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 9636e0e51e506d294ffb50a21165195c9d04fe20
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 283a3869300b83235197951cbbee92a82532c6e3
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-visual-studio"></a>Introdução ao ASP.NET Core MVC e ao Visual Studio
 
@@ -40,7 +40,7 @@ Para obter a versão do Visual Studio 2015 deste tutorial, consulte a [Versão d
 
 Instale o Visual Studio Community 2017. Selecione o download de comunidade. Ignore esta etapa se você tiver o Visual Studio 2017 instalado.
 
-* [Instalador de home page do Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx)
+* [Instalador de home page do Visual Studio 2017](https://www.visualstudio.com/)
 
 Execute o instalador e selecione as cargas de trabalho a seguir:
 
@@ -98,7 +98,7 @@ Toque em **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5**
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->
 ![aplicativo em execução](start-mvc/_static/1.png)
 
-* O Visual Studio inicia o [IIS Express](http://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) e executa o aplicativo. Observe que a barra de endereços mostra `localhost:port#` e não algo como `example.com`. Isso ocorre porque `localhost` é o nome do host padrão do computador local. Quando o Visual Studio cria um projeto Web, uma porta aleatória é usada para o servidor Web. Na imagem acima, o número da porta é 5000. Quando você executar o aplicativo, você verá um número da porta diferente.
+* O Visual Studio inicia o [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) e executa o aplicativo. Observe que a barra de endereços mostra `localhost:port#` e não algo como `example.com`. Isso ocorre porque `localhost` é o nome do host padrão do computador local. Quando o Visual Studio cria um projeto Web, uma porta aleatória é usada para o servidor Web. Na imagem acima, o número da porta é 5000. Quando você executar o aplicativo, você verá um número da porta diferente.
 * Iniciar o aplicativo com **Ctrl+F5** (modo de não depuração) permite que você faça alterações de código, salve o arquivo, atualize o navegador e veja as alterações de código. Muitos desenvolvedores preferem usar modo de não depuração para iniciar o aplicativo e exibir alterações rapidamente.
 * Você pode iniciar o aplicativo no modo de não depuração ou de depuração por meio do item de menu **Depurar**:
 
@@ -108,13 +108,13 @@ Toque em **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5**
 
 ![IIS Express](start-mvc/_static/iis_express.png)
 
-O modelo padrão lhe fornece os links funcionais **Página Inicial, Sobre** e **Contato**. A imagem de navegador acima não mostra esses links. Dependendo do tamanho do navegador, talvez você precise clicar no ícone de navegação para mostrá-los.
+O modelo padrão fornece os links funcionais **Página Inicial, Sobre** e **Contato**. A imagem do navegador acima não mostra esses links. Dependendo do tamanho do navegador, talvez você precise clicar no ícone de navegação para mostrá-los.
 
 ![ícone de navegação na parte superior direita](start-mvc/_static/2.png)
 
 Se você estava executando no modo de depuração, toque em **Shift-F5** para interromper a depuração.
 
-A próxima parte deste tutorial, saberemos mais sobre o MVC e começaremos a escrever um pouco de código.
+Na próxima parte deste tutorial, saberemos mais sobre o MVC e começaremos a escrever um pouco de código.
 
 >[!div class="step-by-step"]
 [Avançar](adding-controller.md)  

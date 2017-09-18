@@ -6,7 +6,7 @@ Abra o arquivo *Controllers/MoviesController.cs* e examine o construtor:
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_1)] 
 
-O construtor usa a [Injeção de Dependência](xref:fundamentals/dependency-injection) para injetar o contexto de banco de dados (`MvcMovieContext `) no controlador. O contexto de banco de dados é usado em cada um dos métodos [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) no controlador.
+O construtor usa a [Injeção de Dependência](xref:fundamentals/dependency-injection) para injetar o contexto de banco de dados (`MvcMovieContext `) no controlador. O contexto de banco de dados é usado em cada um dos métodos [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) no controlador.
 
 <a name=strongly-typed-models-keyword-label></a>
 

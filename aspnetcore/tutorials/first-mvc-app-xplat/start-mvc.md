@@ -11,11 +11,11 @@ ms.assetid: 1d18b589-1638-4dc6-1638-fb0f41998d78
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: 82ce5bbc695b190759ac2c05cdceebb5f7854eb7
-ms.sourcegitcommit: e6a8f171f26fab1b2195a2d7f14e7d258a2e690e
+ms.openlocfilehash: cfce91271ca21dd800fb68a14389606ce6d835f5
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc--on-mac-linux-or-windows"></a>Introdução ao ASP.NET Core MVC no Mac, Linux ou Windows
 
@@ -31,11 +31,11 @@ Há três versões deste tutorial:
 
 ## <a name="install-vs-code-and-net-core"></a>Instalar o VS Code e o .NET Core
 
-Este tutorial exige o [SDK do .NET Core 2.0.0](https://dot.net/core) ou posterior. Consulte [este pdf](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf) para a versão ASP.NET Core 1.1.
+Este tutorial exige o [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior. Consulte [este pdf](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf) para a versão ASP.NET Core 1.1.
 
 Instale o seguinte:
 
-* [SDK do .NET Core 2.0.0](https://dot.net/core) ou posterior.
+* [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior.
 * [Visual Studio Code](https://code.visualstudio.com)
 * [Extensão C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) do VS Code 
 
@@ -75,9 +75,9 @@ Na próxima parte deste tutorial, saberemos mais sobre o MVC e começaremos a es
 - [Terminal integrado](https://code.visualstudio.com/docs/editor/integrated-terminal)
 - [Atalhos de teclado](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
-  - [Atalhos de teclado do Mac](https://go.microsoft.com/fwlink/?linkid=832143)
-  - [Atalhos de teclado do Linux](https://go.microsoft.com/fwlink/?linkid=832144)
-  - [Atalhos de teclado do Windows](https://go.microsoft.com/fwlink/?linkid=832145)
+  - [Atalhos de teclado do Mac](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+  - [Atalhos de teclado do Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+  - [Atalhos de teclado do Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 >[!div class="step-by-step"]
 [Próximo – Adicionar um controlador](adding-controller.md)

@@ -11,11 +11,11 @@ ms.assetid: 50922cf1-ca58-4006-9236-99b7ff2dd0cf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/nano-server
-ms.openlocfilehash: affd5bb36f33aab5cdff6904016b628794462d97
-ms.sourcegitcommit: 26166785ad181a8519cb008800d71d96499b0499
+ms.openlocfilehash: 39e9dea5b3cbd43f41f8a9bceb5d5f8eb6adb16d
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>ASP.NET Core com IIS no Nano Server
 
@@ -25,7 +25,7 @@ Neste tutorial, você executará um aplicativo ASP.NET Core existente e o implan
 
 ## <a name="introduction"></a>Introdução
 
-O Nano Server é uma opção de instalação no Windows Server 2016, oferecendo um volume pequeno, melhor segurança e melhor manutenção do que o Server Core ou o servidor completo. Consulte a [documentação do Nano Server](https://technet.microsoft.com/library/mt126167.aspx) oficial para obter mais detalhes e links de download para versões de avaliação de 180 dias. 
+O Nano Server é uma opção de instalação no Windows Server 2016, oferecendo um volume pequeno, melhor segurança e melhor manutenção do que o Server Core ou o servidor completo. Consulte a [documentação do Nano Server](https://docs.microsoft.com/windows-server/get-started/getting-started-with-nano-server) oficial para obter mais detalhes e links de download para versões de avaliação de 180 dias. 
 
 Há três maneiras para você experimentar o Nano Server. Quando você entra com sua conta da MS:
 
@@ -106,7 +106,7 @@ Para verificar rapidamente se o IIS está configurado corretamente, você pode v
 
 ## <a name="installing-the-aspnet-core-module-ancm"></a>Instalando o módulo ASP.NET Core (ANCM)
 
-O módulo do ASP.NET Core é um módulo IIS 7.5+ responsável pelo gerenciamento de processos de ouvintes HTTP do ASP.NET Core e solicitações de proxy para processos que ele gerencia. No momento, o processo para instalar o módulo do ASP.NET Core para IIS é manual. Você precisará instalar o [pacote de hospedagem do Windows Server do .NET Core](https://aka.ms/dotnetcore.2.0.0-windowshosting) em um computador normal (não Nano). Depois de instalar o pacote em um computador normal, você precisará copiar os arquivos a seguir para o compartilhamento de arquivos que criamos anteriormente.
+O módulo do ASP.NET Core é um módulo IIS 7.5+ responsável pelo gerenciamento de processos de ouvintes HTTP do ASP.NET Core e solicitações de proxy para processos que ele gerencia. No momento, o processo para instalar o módulo do ASP.NET Core para IIS é manual. Você precisará instalar o [pacote de hospedagem do Windows Server do .NET Core](https://download.microsoft.com/download/B/1/D/B1D7D5BF-3920-47AA-94BD-7A6E48822F18/DotNetCore.2.0.0-WindowsHosting.exe) em um computador normal (não Nano). Depois de instalar o pacote em um computador normal, você precisará copiar os arquivos a seguir para o compartilhamento de arquivos que criamos anteriormente.
 
 Em um servidor normal (não Nano) com o IIS, execute os seguintes comandos de cópia:
 

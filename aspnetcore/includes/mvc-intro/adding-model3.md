@@ -6,7 +6,7 @@
 
   ![Criar exibição com campos para título, gênero, preço e data de lançamento](../../tutorials/first-mvc-app/adding-model/_static/movies.png)
 
-* Talvez você não possa inserir pontos decimais ou vírgulas no campo `Price`. Para dar suporte à [validação jQuery](http://jqueryvalidation.org/) para localidades de idiomas diferentes do inglês que usam uma vírgula (",") para ponto decimal e formatos de data diferentes do inglês dos EUA, você deve tomar medidas para globalizar seu aplicativo. Consulte https://github.com/aspnet/Docs/issues/4076 e [Recursos adicionais](#additional-resources) para obter mais informações. Por enquanto, digite apenas números inteiros como 10.
+* Talvez você não possa inserir pontos decimais ou vírgulas no campo `Price`. Para dar suporte à [validação jQuery](https://jqueryvalidation.org/) para localidades de idiomas diferentes do inglês que usam uma vírgula (",") para ponto decimal e formatos de data diferentes do inglês dos EUA, você deve tomar medidas para globalizar seu aplicativo. Consulte https://github.com/aspnet/Docs/issues/4076 e [Recursos adicionais](#additional-resources) para obter mais informações. Por enquanto, digite apenas números inteiros como 10.
 
 <a name="displayformatdatelocal"></a>
 

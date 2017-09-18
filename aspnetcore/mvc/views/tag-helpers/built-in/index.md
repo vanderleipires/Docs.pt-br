@@ -5,25 +5,25 @@ description: "Auxiliares de marcação internos do ASP.NET Core"
 keywords: "ASP.NET Core, auxiliar de marcação"
 ms.author: riande
 manager: wpickett
-ms.date: 7/11/2017
+ms.date: 09/13/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 3f47cc571eff0c522aaf6543de58f158835384d4
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: e7c8c64283ca3740698300689b10497f984cfd3e
+ms.sourcegitcommit: d022d4b96795ee473fa3847a1d8a8c7430423a86
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
 Por [Peter Kellner](http://peterkellner.net) 
 
-A estrutura do ASP.NET Core inclui muitos Auxiliares de Marcação que podem ajudá-lo a ser mais produtivo ao escrever códigos robustos. Esta seção fornece uma visão geral de todos os Auxiliares de Marcação internos.
+O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar sua produtividade. Esta seção fornece uma visão geral dos auxiliares de marcação internos.
 
 > [!NOTE]
-> Há Auxiliares de Marcação internos que não são abordados, pois são usados internamente pelo mecanismo de exibição do [Razor](xref:mvc/views/razor). Isso inclui um Auxiliar de Marcação para o caractere ~, que se expande para o caminho raiz do site.
+> Há auxiliares de marcação internos que não são abordados, pois eles são usados internamente pelo mecanismo de exibição do [Razor](xref:mvc/views/razor). Isso inclui um auxiliar de marcação para o caractere ~, que se expande para o caminho raiz do site.
 
 ## <a name="built-in-aspnet-core-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
@@ -37,13 +37,13 @@ A estrutura do ASP.NET Core inclui muitos Auxiliares de Marcação que podem aju
 
 [comment]: **[FormActionTagHelper](xref:mvc/views/tag-helpers/builtin-th/FormActionTagHelper)**
 
-[comment]: **[FormTagTagHelper](xref:mvc/views/tag-helpers/builtin-th/FormTagHelper)**
+**[Auxiliar de marcação de formulário](xref:mvc/views/working-with-forms#the-form-tag-helper)**
 
 **[Auxiliar de marcação de imagem](xref:mvc/views/tag-helpers/builtin-th/ImageTagHelper)**
 
-[comment]: **[InputTagHelper](xref:mvc/views/tag-helpers/builtin-th/InputTagHelper)**
+**[Auxiliar de marcação de entrada](xref:mvc/views/working-with-forms#the-input-tag-helper)**
 
-[comment]: **[LabelTagHelper](xref:mvc/views/tag-helpers/builtin-th/LabelTagHelper)**
+**[Auxiliar de marcação de rótulo](xref:mvc/views/working-with-forms#the-label-tag-helper)**
 
 [comment]: **[LinkTagHelper](xref:mvc/views/tag-helpers/builtin-th/LinkTagHelper)**
 
@@ -51,21 +51,15 @@ A estrutura do ASP.NET Core inclui muitos Auxiliares de Marcação que podem aju
 
 [comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/ScriptTagTagHelper)**
 
-[comment]: **[SelectTagHelper](xref:mvc/views/tag-helpers/builtin-th/SelectTagTagHelper)**
+**[Selecionar o auxiliar de marcação](xref:mvc/views/working-with-forms#the-select-tag-helper)**
 
-[comment]: **[TextAreaTagHelper](xref:mvc/views/tag-helpers/builtin-th/TextAreaTagHelper)**
+**[Auxiliar de marcação de área de texto](xref:mvc/views/working-with-forms#the-textarea-tag-helper)**
 
-[comment]: **[ValidationMessageTagHelper](xref:mvc/views/tag-helpers/builtin-th/ValidationMessageTagHelper)**
+**[Auxiliar de marcação de mensagem de validação](xref:mvc/views/working-with-forms#the-validation-message-tag-helper)**
 
-[comment]: **[ValidationSummaryTagHelper](xref:mvc/views/tag-helpers/builtin-th/ValidationSummaryTagHelper)**  
-  
-  
-<!--
+**[Resumo de validação de auxiliar de marcação](xref:mvc/views/working-with-forms#the-validation-summary-tag-helper)**
 
-## Additional Resources
+## <a name="additional-resources"></a>Recursos adicionais
 
-REQUIRED These must be xref links, not relative, that is ../../
-* [Client-Side Development](../../../client-side/index.md)
-
-* [Tag Helpers](xref:mvc/views/tag-helpers/intro)
--->
+* [Desenvolvimento no Lado do Cliente](xref:client-side/index)
+* [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)

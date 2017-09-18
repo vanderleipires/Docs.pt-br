@@ -6,7 +6,7 @@ Adicionaremos os métodos `Create`, `Update` e `Delete` ao controlador. Essas s�
 
 [!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Este é um método HTTP POST, indicado pelo atributo [`[HttpPost]`](https://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Mvc/HttpPostAttribute/index.html). O atributo [`[FromBody]`](https://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Mvc/FromBodyAttribute/index.html) informa ao MVC para obter o valor do item de tarefas pendentes do corpo da solicitação HTTP.
+Este é um método HTTP POST, indicado pelo atributo [`[HttpPost]`](https://docs.microsoft.com/aspnet/core/api). O atributo [`[FromBody]`](https://docs.microsoft.com/aspnet/core/api) informa ao MVC para obter o valor do item de tarefas pendentes do corpo da solicitação HTTP.
 
 O método `CreatedAtRoute` retorna uma resposta 201, que é a resposta padrão para um método HTTP POST que cria um novo recurso no servidor. `CreatedAtRoute` também adiciona um cabeçalho Local à resposta. O cabeçalho Location especifica o URI do item de tarefas pendentes recém-criado. Consulte [10.2.2 201 criado](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 

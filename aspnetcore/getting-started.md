@@ -5,44 +5,49 @@ description: "Um tutorial rápido que cria e executa um aplicativo simples Olá,
 keywords: "ASP.NET Core, tutorial, introdução"
 ms.author: riande
 manager: wpickett
-ms.date: 08/07/2017
+ms.date: 08/30/2017
 ms.topic: get-started-article
 ms.assetid: 73543e9d-d9d5-47d6-9664-17a9beea6cd3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: getting-started
-ms.openlocfilehash: 3399df3958093da9117b013736b1cb370fd6beb2
-ms.sourcegitcommit: 297ee5d2f3b3b24eb8a2c4a25195c9e2973cb91b
+ms.openlocfilehash: c81e1328fda6d1652ab937bd580be2342924d241
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-aspnet-core"></a>Introdução ao ASP.NET Core
 
 > [!NOTE]
 > Essas instruções referem-se à última versão do ASP.NET Core. Deseja começar com uma versão anterior? Consulte [a versão 1.1 deste tutorial](xref:getting-started-1.1).
 
-1. Instale o [.NET Core](https://microsoft.com/net/core/).
+1. Instale o [.NET Core](https://www.microsoft.com/net/core/).
 
 2. Crie um novo projeto .NET Core.
 
    No macOS e no Linux, abra uma janela de terminal. No Windows, abra um prompt de comando.
 
-   ```terminal
-   mkdir aspnetcoreapp
-   cd aspnetcoreapp
-   dotnet new web
-   ```
+    ```terminal
+    dotnet new razor -o aspnetcoreapp
+    ```
     
 4. Execute o aplicativo.
 
-   O comando `dotnet run` compila o aplicativo primeiro, se necessário.
+    Use os seguintes comandos para executar o aplicativo:
 
-   ```terminal
-   dotnet run
-   ```
+    ```terminal
+    cd aspnetcoreapp
+    dotnet run
+    ```
 
-5. Navegue para `http://localhost:5000`
+5. Navegue para [http://localhost:5000](http://localhost:5000)
+
+6. Abra *Pages/About.cshtml* e modifique a página para exibir a mensagem "Olá, mundo! O horário no servidor é @DateTime.Now":
+
+    [!code-html[Main](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
+
+7. Navegue para [http://localhost:5000/About](http://localhost:5000/About) e verifique as alterações.
 
 ### <a name="next-steps"></a>Próximas etapas
 
