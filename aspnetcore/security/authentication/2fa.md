@@ -5,16 +5,16 @@ description: "Mostra como configurar a autenticação de dois fatores (2FA) com 
 keywords: "ASP.NET Core, SMS, autenticação, 2FA, autenticação de dois fatores, autenticação de dois fatores"
 ms.author: riande
 manager: wpickett
-ms.date: 8/15/2017
+ms.date: 08/15/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/2fa
-ms.openlocfilehash: 77404de2f367cb12ba25433899198b69f9e5a7f2
-ms.sourcegitcommit: 9a22c64759a7285ba788a37039bea5fe95f45f21
+ms.openlocfilehash: 05ce53fe9b65f85867a33fdff974b384bb943d37
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="two-factor-authentication-with-sms"></a>Autenticação de dois fatores com o SMS
 

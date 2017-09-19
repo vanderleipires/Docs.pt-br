@@ -5,17 +5,17 @@ description: Usando a identidade com um aplicativo do ASP.NET Core
 keywords: "Autorização de ASP.NET Core, identidade, segurança"
 ms.author: riande
 manager: wpickett
-ms.date: 7/7/2017
+ms.date: 07/07/2017
 ms.topic: article
 ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 5a76cac1d64718b9dece3a3201db06c8192fb6f3
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 0c17daa96bc69dc0b8393811a4dfe0e5dc4a1884
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade no núcleo do ASP.NET
 
@@ -36,7 +36,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
     Observação: Você deve selecionar **contas de usuário individuais**.
  
-    ![Caixa de diálogo Nova projeto](identity/_static/01-mvc.png)
+    ![Caixa de diálogo Novo Projeto](identity/_static/01-mvc.png)
     
     # <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
     Se usar o .NET Core CLI, crie o novo projeto usando ``dotnet new mvc --auth Individual``. Isso criará um novo projeto com o mesmo código de modelo de identidade que Visual Studio cria.
@@ -159,6 +159,6 @@ Para obter informações adicionais e diretrizes sobre como migrar sua identidad
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Migrando autenticação e identidade](xref:migration/identity)
-* [Confirmação de conta e de recuperação de senha](xref:security/authentication/accconfirm)
+* [Confirmação de conta e recuperação de senha](xref:security/authentication/accconfirm)
 * [Autenticação de dois fatores com SMS](xref:security/authentication/2fa)
-* [Habilitar a autenticação usando o Facebook, o Google e outros provedores externos](xref:security/authentication/social/index)
+* [Habilitando a autenticação usando o Facebook, o Google e outros provedores externos](xref:security/authentication/social/index)

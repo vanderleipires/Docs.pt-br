@@ -2,19 +2,19 @@
 title: "Configuração de logon externo do Google no núcleo do ASP.NET"
 author: rick-anderson
 description: "Configuração de logon externo do Google no núcleo do ASP.NET"
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 8/2/2017
+ms.date: 08/02/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/google-logins
-ms.openlocfilehash: c0bf20437dcdffc447dde3e6405cd6bf55bc8cfd
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: 7e37a8af4ae5a957483fa5f4a89ea4e8999a3d1d
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="configuring-google-authentication-in-aspnet-core"></a>Configurando a autenticação do Google no núcleo do ASP.NET
 
@@ -26,7 +26,7 @@ Este tutorial mostra como habilitar os usuários entrar com sua conta Google + u
 
 ## <a name="create-the-app-in-google-api-console"></a>Criar o aplicativo no Console de API do Google
 
-* Navegue até [https://console.developers.google.com/projectselector/apis/library](https://console.developers.google.com/projectselector/apis/library) e entrar. Se você ainda não tiver uma conta do Google, use **mais opções** > **[criar conta](https://accounts.google.com/SignUpWithoutGmail?service=cloudconsole&continue=https%3A%2F%2Fconsole.developers.google.com%2Fprojectselector%2Fapis%2Flibrary&ltmpl=api)**  link para criar um:
+* Navegue até [https://console.developers.google.com/projectselector/apis/library](https://console.developers.google.com/projectselector/apis/library) e entrar. Se você ainda não tiver uma conta do Google, use **mais opções** > **[criar conta](https://accounts.google.com/SignUpWithoutGmail?service=cloudconsole&continue=https%3A%2F%2Fconsole.developers.google.com%2Fprojectselector%2Fapis%2Flibrary&ltmpl=api) ** link para criar um:
 
 ![Console de API do Google](index/_static/GoogleConsoleLogin.png)
 
@@ -36,7 +36,7 @@ Este tutorial mostra como habilitar os usuários entrar com sua conta Google + u
 
 * Toque em **criar** e insira seu **nome do projeto**:
 
-![Caixa de diálogo Nova projeto](index/_static/GoogleConsoleNewProj.png)
+![Caixa de diálogo Novo Projeto](index/_static/GoogleConsoleNewProj.png)
 
 * Após aceitar a caixa de diálogo, você será redirecionado para a página de biblioteca, permitindo que você escolha os recursos para seu novo aplicativo. Localizar **API do Google +** na lista e clique em seu link para adicionar o recurso de API:
 
@@ -96,7 +96,7 @@ O modelo de projeto usado neste tutorial garante que [Microsoft.AspNetCore.Authe
 
    `dotnet add package Microsoft.AspNetCore.Authentication.Google`
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Adicione o serviço do Google no `ConfigureServices` método *Startup.cs* arquivo:
 
@@ -110,7 +110,7 @@ services.AddAuthentication().AddGoogle(googleOptions =>
 
 O `AddAuthentication` método só deve ser chamado uma vez ao adicionar vários provedores de autenticação. Chamadas subsequentes para que ele tem o potencial de substituição qualquer configurado anteriormente [AuthenticationOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.authenticationoptions) propriedades.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Adicionar o middleware do Google no `Configure` método *Startup.cs* arquivo:
 

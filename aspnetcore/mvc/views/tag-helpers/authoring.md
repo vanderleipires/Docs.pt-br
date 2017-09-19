@@ -5,18 +5,18 @@ description: "Saiba como criar auxiliares de marcação no núcleo do ASP.NET."
 keywords: "ASP.NET Core, auxiliares de marcação"
 ms.author: riande
 manager: wpickett
-ms.date: 6/14/2017
+ms.date: 06/14/2017
 ms.topic: article
 ms.assetid: 4f16d978-5695-4abf-a785-fdaabf3bbcb9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 97013d06273c0993b74cdacfa16cb0d655c73667
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 1a5222da1380c2fe768b287bfa1a49b300c02f2b
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Auxiliares de marcação no núcleo do ASP.NET, um passo a passo com exemplos de criação
 
@@ -72,7 +72,7 @@ Ou seja, uma marca de âncora que torna isso um link de email. Você talvez quei
     public class Email : TagHelper
     ```
 
-2.  Para fazer o `EmailTagHelper` classe disponíveis a todos os nossos modos de exibição do Razor, adicione o `addTagHelper` diretiva para o *Views/_ViewImports.cshtml* arquivo: [!code-html [principal](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopyEmail.cshtml?highlight=2,3)]
+2.  Para fazer o `EmailTagHelper` classe disponíveis a todos os nossos modos de exibição do Razor, adicione o `addTagHelper` diretiva para o *Views/_ViewImports.cshtml* arquivo:[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopyEmail.cshtml?highlight=2,3)]
     
     O código anterior usa a sintaxe de curinga para especificar que todos os auxiliares de marca no nosso assembly estarão disponíveis. A primeira cadeia de caracteres após `@addTagHelper` Especifica o auxiliar de marca para carregar (Use "*" para todos os auxiliares de marcação), e a segunda cadeia de caracteres "AuthoringTagHelpers" Especifica o assembly de auxiliar de marca está em. Além disso, observe que a segunda linha coloca nos auxiliares de marca do MVC do ASP.NET Core usando a sintaxe de curinga (os auxiliares são discutidos em [Introdução ao auxiliares de marcação](intro.md).) É o `@addTagHelper` diretiva que disponibiliza o auxiliar de marca para o modo de exibição do Razor. Como alternativa, você pode fornecer o nome totalmente qualificado (FQN) de um auxiliar de marca, conforme mostrado abaixo:
     
@@ -108,7 +108,7 @@ Atualização de `EmailTagHelper` classe com o seguinte:
 
 Essa abordagem funciona para o atributo "href" como no momento, ele não existe na coleção de atributos. Você também pode usar o `output.Attributes.Add` para adicionar um atributo do auxiliar de marca ao final da coleção de atributos de marca.
 
-1.  Atualizar a marcação no *Views/Home/Contact.cshtml* arquivos com essas alterações: [!code-html [principal](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
+1.  Atualizar a marcação no *Views/Home/Contact.cshtml* arquivos com essas alterações:[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
 
 2.  Execute o aplicativo e verificar que ele gera os links corretos.
     
@@ -183,7 +183,7 @@ Você também pode usar o `[HtmlTargetElement]` para alterar o nome do elemento 
 
 1.  Adicionar um *modelos* pasta.
 
-2.  Adicione o seguinte `WebsiteContext` de classe para o *modelos* pasta:
+2.  Adicione a seguinte classe `WebsiteContext` à pasta *Models*:
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Models/WebsiteContext.cs)]
 
