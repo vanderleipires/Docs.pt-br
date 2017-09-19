@@ -5,16 +5,16 @@ description: Uma lista de guias passo a passo para aprender a desenvolver aplica
 keywords: ASP.NET Core,
 ms.author: tdykstra
 manager: wpickett
-ms.date: 7/14/2017
+ms.date: 07/14/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: bf9a5b58d3c0a6a2e90dd4ee9a316de90640c79e
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: b3ea7688eefa69171fd1179de42497c98cf9302e
+ms.sourcegitcommit: 4d9c6d47bded895f3d9a35e9550e31ae213c083c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -58,7 +58,7 @@ Os seguintes guias passo a passo para desenvolvimento de aplicativos ASP.NET Cor
 * [Usando o Gulp](../client-side/using-gulp.md)
 * [Usando o Grunt](../client-side/using-grunt.md)
 * [Gerenciar pacotes do lado do cliente com o Bower](../client-side/bower.md)
-* [Criando sites bonitos e responsivos com o Bootstrap](../client-side/bootstrap.md)
+* [Criando sites atraentes e dinâmicos com o Bootstrap](../client-side/bootstrap.md)
 
 ## <a name="testing"></a>Testes
 * [Teste de unidade no .NET Core usando dotnet test](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
