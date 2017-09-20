@@ -10,11 +10,11 @@ ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 9de39ce59633036c0dd850a7552bd3f4806c5431
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 149af0ce88d55527a42ba3b88d40047a61d510c9
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>A classificação, filtragem, paginação e agrupando - Core de EF com o tutorial do MVC do ASP.NET Core (3 de 10)
 
@@ -67,7 +67,7 @@ Substitua o código em *Views/Students/Index.cshtml*, com o código a seguir par
 
 Esse código usa as informações no `ViewData` valores de cadeia de caracteres de propriedades para configurar hiperlinks com a consulta apropriada.
 
-Execute a página e clique no **Sobrenome** e **data de inscrição** títulos de coluna para verificar essa classificação funciona.
+Executar o aplicativo, selecione o **alunos** guia e, em seguida, clique no **Sobrenome** e **data de inscrição** títulos de coluna para verificar essa classificação funciona.
 
 ![Página de índice de alunos na ordem do nome](sort-filter-page/_static/name-order.png)
 
@@ -94,9 +94,9 @@ Em *Views/Student/Index.cshtml*, adicione o código realçado imediatamente ante
 
 [!code-html[](intro/samples/cu/Views/Students/Index3.cshtml?range=9-23&highlight=5-13)]
 
-Esse código usa o `<form>` [auxiliar de marca](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/intro) para adicionar a caixa de texto de pesquisa e o botão. Por padrão, o `<form>` auxiliar de marca envia dados de formulário com uma POSTAGEM, o que significa que parâmetros são passados no corpo da mensagem HTTP e não na URL como cadeias de caracteres de consulta. Quando você especificar HTTP GET, os dados do formulário são passados na URL como cadeias de caracteres de consulta, que permite aos usuários indicar a URL. É recomendável o W3C diretrizes que você deve usar obter quando a ação não resulta em uma atualização.
+Esse código usa o `<form>` [auxiliar de marca](xref:mvc/views/tag-helpers/intro) para adicionar a caixa de texto de pesquisa e o botão. Por padrão, o `<form>` auxiliar de marca envia dados de formulário com uma POSTAGEM, o que significa que parâmetros são passados no corpo da mensagem HTTP e não na URL como cadeias de caracteres de consulta. Quando você especificar HTTP GET, os dados do formulário são passados na URL como cadeias de caracteres de consulta, que permite aos usuários indicar a URL. É recomendável o W3C diretrizes que você deve usar obter quando a ação não resulta em uma atualização.
 
-Execute a página, insira uma cadeia de caracteres de pesquisa e clique em Pesquisar para verificar se a filtragem está funcionando.
+Executar o aplicativo, selecione o **alunos** guia, insira uma cadeia de caracteres de pesquisa e clique em Pesquisar para verificar se a filtragem está funcionando.
 
 ![Página de índice de alunos com filtragem](sort-filter-page/_static/filtering.png)
 
@@ -193,7 +193,7 @@ Os botões de paginação são exibidos por auxiliares de marca:
 </a>
 ```
 
-Execute a página.
+Execute o aplicativo e vá para a página de alunos.
 
 ![Os alunos índice página com links de paginação](sort-filter-page/_static/paging.png)
 
@@ -241,7 +241,7 @@ Substitua o código no *Views/Home/About.cshtml* arquivo com o código a seguir:
 
 [!code-html[](intro/samples/cu/Views/Home/About.cshtml)]
 
-Executar o aplicativo e clique no **sobre** link. A contagem de alunos para cada data de registro é exibida em uma tabela.
+Execute o aplicativo e vá para a página sobre. A contagem de alunos para cada data de registro é exibida em uma tabela.
 
 ![Sobre a página](sort-filter-page/_static/about.png)
 

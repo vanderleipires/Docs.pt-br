@@ -11,11 +11,11 @@ ms.assetid: a4449ad3-5bad-410c-afa7-dc32d832b552
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/iis
-ms.openlocfilehash: 48e67add785fc1d7e79c659565afb1ec68c1defb
-ms.sourcegitcommit: f531d90646b9d261c5fbbffcecd6ded9185ae292
+ms.openlocfilehash: 8ffadc1dede4053faa129a3b224aace901e70e14
+ms.sourcegitcommit: ad01283f299d346cf757c4f4744c48634dc27e73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="set-up-a-hosting-environment-for-aspnet-core-on-windows-with-iis-and-deploy-to-it"></a>Configurar um ambiente de hospedagem para o ASP.NET Core no Windows com o IIS e implantar nele
 
@@ -99,21 +99,22 @@ Ambos `UseKestrel` e `UseIISIntegration` são necessários. A chamada do código
 
 Para obter mais informações sobre hospedagem, consulte [Hospedagem em ASP.NET Core](xref:fundamentals/hosting).
 
-### <a name="setting-iisoptions-for-the-iisintegration-service"></a>Configurando IISOptions para o serviço IISIntegration
+### <a name="iis-options"></a>Opções do IIS
 
-Para configurar opções do serviço *IISIntegration*, inclua uma configuração de serviço para *IISOptions* em *ConfigureServices*.
+Para configurar opções do serviço *IISIntegration*, inclua uma configuração de serviço para *IISOptions* em *ConfigureServices*:
 
 ```csharp
-services.Configure<IISOptions>(options => {
-  ...
+services.Configure<IISOptions>(options => 
+{
+    ...
 });
 ```
 
-| Opção | Configuração|
-| --- | --- | 
-| AutomaticAuthentication | Se ele for verdadeiro, o middleware de autenticação alterará o usuário de solicitação recebido e responderá a desafios genéricos. Se for falso, o middleware de autenticação apenas fornecerá a identidade e responderá a desafios quando explicitamente indicado por theAuthenticationScheme |
-| ForwardClientCertificate | Se ele for verdadeiro e o cabeçalho da solicitação `MS-ASPNETCORE-CLIENTCERT` estiver presente, o `ITLSConnectionFeature` será populado. |
-| ForwardWindowsAuthentication | Se ele for verdadeiro, o middleware de autenticação tentará se autenticar usando a autenticação do Windows do manipulador da plataforma. Se for falso, o middleware de autenticação não será adicionado. |
+| Opção                         | Padrão | Configuração |
+| ------------------------------ | ------- | ------- |
+| `AutomaticAuthentication`      | `true`  | Se `true`, o middleware de autenticação configurará o `HttpContext.User` e responderá a desafios genéricos. Se `false`, o middleware de autenticação fornecerá apenas uma identidade (`HttpContext.User`) e responderá a desafios quando explicitamente solicitado pelo `AuthenticationScheme`. A autenticação do Windows deve estar habilitada no IIS para que o `AutomaticAuthentication` funcione. |
+| `AuthenticationDisplayName`    | `null`  | Configura o nome de exibição mostrado aos usuários em páginas de logon. |
+| `ForwardClientCertificate`     | `true`  | Se `true` e o cabeçalho da solicitação `MS-ASPNETCORE-CLIENTCERT` estiverem presentes, o `HttpContext.Connection.ClientCertificate` será populado. |
 
 ### <a name="webconfig"></a>web.config
 
@@ -449,7 +450,7 @@ Solução de problemas:
 
 * Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, consulte [Dicas de solução de problemas](#troubleshooting-tips).
 
-* Examine o atributo *arguments* no elemento `<aspNetCore>` de *web.config* para confirmar se ele é (a) *.my_application.dll* de uma implantação dependente de estrutura; ou (b) não está presente, uma cadeia de caracteres vazia (*arguments=""*) ou uma lista de argumentos do aplicativo (*arguments="arg1, arg2, ..."*) para uma implantação independente.
+* Examine o atributo *arguments* no elemento `<aspNetCore>` no *web.config* para confirmar se ele é (a) *.\my_application.dll* de uma implantação dependente de estrutura; ou (b) não está presente, uma cadeia de caracteres vazia (*arguments=""*) ou uma lista de argumentos do aplicativo (*arguments="arg1, arg2, ..."*) para uma implantação independente.
 
 ### <a name="missing-net-framework-version"></a>Versão do .NET Framework ausente
 

@@ -2,7 +2,7 @@
 title: Auxiliar de marca de ancoragem | Microsoft Docs
 author: pkellner
 description: "Mostra como trabalhar com o auxiliar de marca de âncora"
-keywords: ASP.NET Core, o auxiliar de marca
+keywords: "ASP.NET Core, auxiliar de marcação"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
@@ -11,11 +11,11 @@ ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/AnchorTagHelper
-ms.openlocfilehash: f08e6a5288076d56b55843f1872bcfa8104f3923
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: fdb91836699b4dd334499cffa6c4c3961c5c020f
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="anchor-tag-helper"></a>Auxiliar de marca de âncora
 
@@ -211,11 +211,11 @@ Marcas de hash são úteis ao criar aplicativos do lado do cliente. Eles podem s
 
         * *HomeController*
 
-      * *Modos de exibição*
+      * *Exibições*
 
         * *Casa*
 
-          * *Cshtml*
+          * *Index.cshtml*
           
           * *AboutBlog.cshtml*
           

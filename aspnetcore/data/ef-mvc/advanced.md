@@ -11,11 +11,11 @@ ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 210f8e8b91c2487e5c4b73fdeb6ff0d5aa35c0c5
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 70434d1c814af2a96493027c6a2ad87845cd5cae
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Tópicos avançados - Core de EF com o tutorial do MVC do ASP.NET Core (10 de 10)
 
@@ -61,7 +61,7 @@ Adicionar um uso instrução:
 
 [!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
 
-Execute a página sobre. Ele exibe os mesmos dados que antes.
+Execute o aplicativo e vá para a página sobre. Ele exibe os mesmos dados que antes.
 
 ![Sobre a página](advanced/_static/about.png)
 

@@ -11,11 +11,11 @@ ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 655fefc0f9d884300bea670795c39a7a9aa10bb8
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: 981a099630008eaf11599b17c4d4d5d6e86b8b90
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Atualizando dados relacionados - Core de EF com o tutorial do MVC do ASP.NET Core (7 de 10)
 
@@ -71,7 +71,7 @@ Para otimizar o desempenho dos detalhes do curso e excluir páginas, adicionar `
 
 ### <a name="modify-the-course-views"></a>Modificar os modos de curso
 
-Em *Views/Courses/Create.cshtml*, adicione uma opção "Selecione departamento" para o **departamento** suspensa lista, altere a legenda do **DepartmentID** para  **Departamento**e adicionar uma mensagem de validação.
+Em *Views/Courses/Create.cshtml*, adicione uma opção "Selecione departamento" para o **departamento** suspensa lista, altere a legenda do **DepartmentID** para ** Departamento**e adicionar uma mensagem de validação.
 
 [!code-html[Main](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
 
@@ -91,13 +91,13 @@ Em *Views/Courses/Details.cshtml*, fazer a mesma alteração que você acabou de
 
 ### <a name="test-the-course-pages"></a>Testar as páginas de curso
 
-Execute o **criar** página (exibir a página de índice do curso e clique em **criar novo**) e insira os dados para um novo curso:
+Executar o aplicativo, selecione o **cursos** , clique em **criar novo**e inserir dados para um novo curso:
 
 ![Página de criação de curso](update-related-data/_static/course-create.png)
 
 Clique em **Criar**. A página de índice de cursos é exibida com o curso novo adicionado à lista. O nome do departamento na lista de páginas de índice é obtido da propriedade de navegação, mostrando que a relação foi estabelecida corretamente.
 
-Execute o **editar** página (clique **editar** em um curso na página de índice de curso).
+Clique em **editar** em um curso na página de índice de cursos.
 
 ![Página de edição de curso](update-related-data/_static/course-edit.png)
 
@@ -159,7 +159,7 @@ Em *Views/Instructors/Edit.cshtml*, adicionar um novo campo para editar o local 
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=30-34)]
 
-Execute a página (selecione o **instrutores** guia e, em seguida, clique em **editar** em instrutor). Alterar o **escritório** e clique em **salvar**.
+Executar o aplicativo, selecione o **instrutores** guia e, em seguida, clique em **editar** em instrutor. Alterar o **escritório** e clique em **salvar**.
 
 ![Página de edição do instrutor](update-related-data/_static/instructor-edit-office.png)
 
@@ -215,7 +215,7 @@ Se a caixa de seleção para um curso não foi selecionada, mas o curso no `Inst
 
 ### <a name="update-the-instructor-views"></a>Atualizar os modos de exibição do instrutor
 
-Em *Views/Instructors/Edit.cshtml*, adicionar um **cursos** campo com uma matriz de caixas de seleção, adicionando o seguinte código imediatamente após o `div` elementos para o **Office**  campo e antes do `div` elemento para o **salvar** botão.
+Em *Views/Instructors/Edit.cshtml*, adicionar um **cursos** campo com uma matriz de caixas de seleção, adicionando o seguinte código imediatamente após o `div` elementos para o **Office ** campo e antes do `div` elemento para o **salvar** botão.
 
 <a id="notepad"></a>
 > [!NOTE] 
@@ -227,7 +227,7 @@ Esse código cria uma tabela HTML que tem três colunas. Em cada coluna é uma c
 
 Quando as caixas de seleção são inicialmente renderizadas, aqueles que estão atribuídos ao instrutor de cursos verificou atributos, que seleciona-los (exibe-os check).
 
-Execute a página de índice do instrutor e, em seguida, clique em **editar** em instrutor para ver o **editar** página.
+Executar o aplicativo, selecione o **instrutores** guia e, em seguida, clique em **editar** em instrutor para ver o **editar** página.
 
 ![Página Editar instrutor de cursos](update-related-data/_static/instructor-edit-courses.png)
 
@@ -287,7 +287,7 @@ Em *Views/Instructor/Create.cshtml*, adicione uma caixa de texto de local de esc
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
 
-Teste executando o **criar** página e adicionando um instrutor. 
+Testar o aplicativo em execução e criando um instrutor. 
 
 ## <a name="handling-transactions"></a>Processamento de transações
 

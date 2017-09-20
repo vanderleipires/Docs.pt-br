@@ -11,11 +11,11 @@ ms.assetid: 6e1cd570-40f1-4b24-8b6e-7d2d27758f18
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 87aa7e63b1a08e457c5fdcbc052bfa039b8d2175
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 3393bb90d170cfc572d2307ec18f1a8e25bdce59
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Criar, ler, atualizar e excluir - Core de EF com o tutorial do MVC do ASP.NET Core (2 de 10)
 
@@ -156,7 +156,7 @@ Uma maneira alternativa para evitar overposting é preferida por muitos desenvol
 
 O código em *Views/Students/Create.cshtml* usa `label`, `input`, e `span` (para mensagens de validação) auxiliares para cada campo de marca.
 
-Execute a página, selecionando o **alunos** guia e clicando em **criar novo**.
+Executar o aplicativo, selecione o **alunos** guia e, em seguida, clique em **criar novo**.
 
 Digite nomes e uma data. Tente digitar uma data inválida, se seu navegador permite fazer isso. (Alguns navegadores forçá-lo a usar um seletor de data.) Em seguida, clique em **criar** para ver a mensagem de erro.
 
@@ -222,7 +222,7 @@ Se você quiser evitar a abordagem de leitura, mas você deseja que a instruçã
 
 ### <a name="test-the-edit-page"></a>A página de edição de teste
 
-Execute o aplicativo e selecione o **alunos** guia e, em seguida, clique em uma **editar** hiperlink.
+Executar o aplicativo, selecione o **alunos** guia e, em seguida, clique em uma **editar** hiperlink.
 
 ![Página de edição de alunos](crud/_static/student-edit.png)
 
@@ -264,7 +264,7 @@ Em *Views/Student/Delete.cshtml*, adicionar uma mensagem de erro entre o título
 
 [!code-html[](intro/samples/cu/Views/Students/Delete.cshtml?range=7-9&highlight=2)]
 
-Execute a página, selecionando o **alunos** guia e clicando em um **excluir** hiperlink:
+Executar o aplicativo, selecione o **alunos** guia e, em seguida, clique em uma **excluir** hiperlink:
 
 ![Excluir a página de confirmação](crud/_static/student-delete.png)
 

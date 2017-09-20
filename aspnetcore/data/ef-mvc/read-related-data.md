@@ -11,11 +11,11 @@ ms.assetid: 71fec30f-8ea7-4ca8-96e3-d2e26c5be44e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: a3badbfe365a99593b38fc3846a9984824438f16
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: e818411f2cc568afdfd0612a6367dc3e257d0dd7
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Leitura relacionadas a dados - Core de EF com o tutorial do MVC do ASP.NET Core (6 de 10)
 
@@ -85,7 +85,7 @@ Você fez as alterações a seguir para o código de scaffolding:
   @Html.DisplayFor(modelItem => item.Department.Name)
   ```
 
-Execute a página (selecione a guia cursos na home page do Contoso University) para ver a lista com nomes de departamento.
+Execute o aplicativo e selecione o **cursos** guia para ver a lista com nomes de departamento.
 
 ![Página de índice de cursos](read-related-data/_static/courses-index.png)
 
@@ -203,7 +203,7 @@ As seguintes alterações feitas no código existente:
   <a asp-action="Index" asp-route-id="@item.ID">Select</a> |
   ```
 
-Execute o aplicativo e selecione a guia de professores. A página exibe a propriedade Location de entidades relacionadas de OfficeAssignment e uma célula de tabela vazia quando não houver nenhuma entidade OfficeAssignment relacionada.
+Execute o aplicativo e selecione o **instrutores** guia. A página exibe a propriedade Location de entidades relacionadas de OfficeAssignment e uma célula de tabela vazia quando não houver nenhuma entidade OfficeAssignment relacionada.
 
 ![Página de índice instrutores que nada selecionado](read-related-data/_static/instructors-index-no-selection.png)
 
@@ -213,7 +213,7 @@ No *Views/Instructors/Index.cshtml* arquivo, após o fechamento da tabela elemen
 
 Esse código lê o `Courses` propriedade do modelo de exibição para exibir uma lista de cursos. Ele também fornece um **selecione** hiperlink que envia a ID do curso selecionado para o `Index` método de ação.
 
-Execute a página e selecione um instrutor. Agora você verá uma grade que exibe os cursos atribuídos para o instrutor selecionado, e cada curso você ver o nome do departamento atribuído.
+Atualize a página e selecionar um instrutor. Agora você verá uma grade que exibe os cursos atribuídos para o instrutor selecionado, e cada curso você ver o nome do departamento atribuído.
 
 ![Instrutor de página de índice instrutores selecionado](read-related-data/_static/instructors-index-instructor-selected.png)
 
@@ -223,7 +223,7 @@ Após o bloco de código que você acabou de adicionar, adicione o código a seg
 
 Esse código lê a propriedade de registros do modelo de exibição para exibir uma lista dos alunos inscritos no curso.
 
-Execute a página e selecione um instrutor. Em seguida, selecione um curso para ver a lista de estudantes registrados e suas classificações.
+Atualize a página novamente e selecione um instrutor. Em seguida, selecione um curso para ver a lista de estudantes registrados e suas classificações.
 
 ![Instrutor de página de índice professores e curso selecionado](read-related-data/_static/instructors-index.png)
 
@@ -237,7 +237,7 @@ Suponha que o esperado usuários raramente deseja ver registros em um curso e um
 
 O novo código descarta o *ThenInclude* método chama para dados de registro do código que recupera as entidades do instrutor. Se um curso e instrutor for selecionadas, o código realçado recupera entidades de registro para o curso selecionado e entidades de estudante para cada registro.
 
-Execute a página de índice do instrutor agora e você não verá nenhuma diferença no que é exibido na página, embora você alterou a como os dados são recuperados.
+Execute que o aplicativo, vá para a página de índice instrutores agora e você não verá nenhuma diferença no que é exibido na página, embora você alterou a como os dados são recuperados.
 
 ## <a name="summary"></a>Resumo
 

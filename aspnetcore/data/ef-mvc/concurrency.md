@@ -11,11 +11,11 @@ ms.assetid: 15e79e15-bda5-441d-80c7-8032a2628605
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: f44a4f842180b4001eb1428316c24fd9cacc39db
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: fc6b218034183a9153c1ef22c99d920a942d2d09
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>Manipulando conflitos de simultaneidade - Core de EF com o tutorial do MVC do ASP.NET Core (8 de 10)
 
@@ -184,9 +184,7 @@ Em *Views/Departments/Edit.cshtml*, faça as seguintes alterações:
 
 ## <a name="test-concurrency-conflicts-in-the-edit-page"></a>Conflitos de simultaneidade de teste na página de edição
 
-Executar o site e clique em Ir para a página de índice de departamentos os departamentos de TI.
-
-Com o botão direito a **editar** hiperlink do departamento em inglês e selecione **abrir em nova guia**, em seguida, clique no **editar** hiperlink para o departamento em inglês. As guias de dois navegador agora exibem as mesmas informações.
+Executar o aplicativo e vá para a página de índice de departamentos. Com o botão direito a **editar** hiperlink do departamento em inglês e selecione **abrir em nova guia**, em seguida, clique no **editar** hiperlink para o departamento em inglês. As guias de dois navegador agora exibem as mesmas informações.
 
 Alterar um campo na primeira guia do navegador e clique em **salvar**.
 
@@ -255,7 +253,7 @@ Isso faz as seguintes alterações:
 
 * Adiciona um campo oculto para o `RowVersion` propriedade.
 
-Execute a página de índice de departamentos. Clique com botão direito do **excluir** hiperlink do departamento em inglês e selecione **abrir em nova guia**, clique na primeira guia o **editar** hiperlink para o departamento em inglês.
+Executar o aplicativo e vá para a página de índice de departamentos. Com o botão direito do **excluir** hiperlink do departamento em inglês e selecione **abrir em nova guia**, clique na primeira guia o **editar** hiperlink para o departamento em inglês.
 
 Na primeira janela, alterar um dos valores e clique em **salvar**:
 

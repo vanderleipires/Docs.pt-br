@@ -11,11 +11,11 @@ ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: a9e255040c300bc5ce55a356e17e6912dbaeaf88
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: dde50f766dc9842089cbb0561b8bd6e2d8e7c34f
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Criar um modelo de dados complexos - Core EF com o tutorial do MVC do ASP.NET Core (5 de 10)
 
@@ -41,27 +41,27 @@ Em *Models/Student.cs*, adicione um `using` instrução para o `System.Component
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-O `DataType` atributo é usado para especificar um tipo de dados que é mais específico que o tipo de banco de dados intrínseco. Nesse caso, apenas desejamos controlar a data, não a data e hora. O `DataType` enumeração fornece para muitos tipos de dados, como data, hora, PhoneNumber, moeda, endereço de email e muito mais. O `DataType` atributo também pode habilitar o aplicativo fornecer automaticamente os recursos de um tipo específico. Por exemplo, um `mailto:` link pode ser criado para `DataType.EmailAddress`, e um seletor de data pode ser fornecido para `DataType.Date` em navegadores que oferecem suporte a HTML5. O `DataType` atributo emite HTML 5 `data-` atributos (pronunciado dados dash) que podem compreender navegadores HTML 5. O `DataType` atributos não fornecem nenhuma validação.
+O atributo `DataType` é usado para especificar um tipo de dados mais específico do que o tipo intrínseco de banco de dados. Nesse caso, apenas desejamos controlar a data, não a data e hora. O `DataType` enumeração fornece para muitos tipos de dados, como data, hora, PhoneNumber, moeda, endereço de email e muito mais. O atributo `DataType` também pode permitir que o aplicativo forneça automaticamente recursos específicos a um tipo. Por exemplo, um link `mailto:` pode ser criado para `DataType.EmailAddress` e um seletor de data pode ser fornecido para `DataType.Date` em navegadores que dão suporte a HTML5. O `DataType` atributo emite HTML 5 `data-` atributos (pronunciado dados dash) que podem compreender navegadores HTML 5. O `DataType` atributos não fornecem nenhuma validação.
 
-`DataType.Date`não especifique o formato da data que é exibida. Por padrão, o campo de dados é exibido de acordo com os formatos padrão com base em CultureInfo do servidor.
+`DataType.Date` não especifica o formato da data exibida. Por padrão, o campo de dados é exibido de acordo com os formatos padrão com base em CultureInfo do servidor.
 
-O `DisplayFormat` atributo é usado para especificar explicitamente o formato de data:
+O atributo `DisplayFormat` é usado para especificar explicitamente o formato de data:
 
 ```csharp
 [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 ```
 
-O `ApplyFormatInEditMode` configuração especifica que a formatação também deve ser aplicada quando o valor é exibido na caixa de texto para edição. (Você talvez não queira que alguns campos — por exemplo, para valores de moeda, não convém o símbolo de moeda na caixa de texto para edição.)
+A configuração `ApplyFormatInEditMode` especifica que a formatação também deve ser aplicada quando o valor é exibido em uma caixa de texto para edição. (Você talvez não queira que alguns campos — por exemplo, para valores de moeda, não convém o símbolo de moeda na caixa de texto para edição.)
 
 Você pode usar o `DisplayFormat` atributo por si mesmo, mas geralmente é uma boa ideia usar a `DataType` atributo também. O `DataType` atributo transmite a semântica dos dados em vez de como renderizá-lo em uma tela e fornece os seguintes benefícios que você não obtém com `DisplayFormat`:
 
 * O navegador pode habilitar os recursos do HTML5 (por exemplo mostrar um controle de calendário, o símbolo de moeda local apropriado, links de email, alguns cliente entrada validação, etc.).
 
-* Por padrão, o navegador processará os dados usando o formato correto com base na localidade.
+* Por padrão, o navegador renderizará os dados usando o formato correto de acordo com a localidade.
 
 Para obter mais informações, consulte o [ \<entrada > documentação do auxiliar de marca](../../mvc/views/working-with-forms.md#the-input-tag-helper).
 
-Execute novamente a página de índice de alunos e observe que vezes não são exibidos para as datas de registro. O mesmo será verdadeiro para qualquer modo de exibição que usa o modelo de Student.
+Executar o aplicativo, vá para a página de índice de alunos e observe que vezes não são exibidos para as datas de registro. O mesmo será verdadeiro para qualquer modo de exibição que usa o modelo de Student.
 
 ![Página de índice de alunos mostrando datas sem vezes](complex-data-model/_static/dates-no-times.png)
 
@@ -97,7 +97,7 @@ O `migrations add` comando avisa que pode ocorrer perda de dados, como a altera�
 
 O prefixo ao nome do arquivo de migrações de carimbo de hora é usado pelo Entity Framework para ordenar as migrações. Você pode criar várias migrações antes de executar o comando de atualização de banco de dados e, em seguida, todas as migrações são aplicadas na ordem em que eles foram criados.
 
-Execute a página de criação e digitar um nome de mais de 50 caracteres. Quando você clicar em criar, validação do lado do cliente exibe uma mensagem de erro.
+Executar o aplicativo, selecione o **alunos** , clique em **criar novo**e digite um nome com mais de 50 caracteres. Quando você clica em **criar**, validação do lado do cliente mostra uma mensagem de erro.
 
 ![Os alunos mostrando erros de comprimento de cadeia de caracteres de página de índice](complex-data-model/_static/string-length-errors.png)
 
@@ -483,11 +483,11 @@ dotnet ef database update
 
 Executar o aplicativo para fazer com que o `DbInitializer.Initialize` método para executar e popular o novo banco de dados.
 
-Abra o banco de dados em SSOX como você fez anteriormente e expanda o **tabelas** nó para ver se todas as tabelas foram criadas. (Se você ainda tiver SSOX abrir da hora anterior, clique no botão de atualização.)
+Abra o banco de dados em SSOX como você fez anteriormente e expanda o **tabelas** nó para ver se todas as tabelas foram criadas. (Se você ainda tiver SSOX abrir da hora anterior, clique o **atualização** botão.)
 
 ![Tabelas no SSOX](complex-data-model/_static/ssox-tables.png)
 
-Execute o aplicativo para disparar o código de inicializador que propaga o banco de dados.
+Execute o aplicativo para acionar o código de inicializador que propaga o banco de dados.
 
 Clique com botão direito do **CourseAssignment** de tabela e selecione **exibir dados** para verificar se ele tem dados nele.
 
