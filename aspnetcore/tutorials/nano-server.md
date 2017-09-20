@@ -11,11 +11,11 @@ ms.assetid: 50922cf1-ca58-4006-9236-99b7ff2dd0cf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/nano-server
-ms.openlocfilehash: 39e9dea5b3cbd43f41f8a9bceb5d5f8eb6adb16d
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: dd1f2c8de58ea8d3a57e64ecc519184400cb52c8
+ms.sourcegitcommit: ad01283f299d346cf757c4f4744c48634dc27e73
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>ASP.NET Core com IIS no Nano Server
 
@@ -165,12 +165,11 @@ New-IISConfigCollectionElement $modules -ConfigAttribute @{"name"="AspNetCoreMod
 
 ## <a name="installing-net-core-framework"></a>Instalando o .NET Core Framework
 
-Se você publicou um aplicativo dependente do Framework (portátil), o .NET Core deve ser instalado no computador de destino. Execute o script do PowerShell a seguir em uma sessão remota do PowerShell para instalar o .NET Framework em seu Nano Server.
+Se seu aplicativo é publicado como uma [FDD (implantação dependente de estrutura)](/dotnet/core/deploying/#framework-dependent-deployments-fdd), o .NET Core deve ser instalado no servidor. Use o [script do PowerShell dotnet-install.ps1](https://dot.net/v1/dotnet-install.ps1) em uma sessão remota do PowerShell para instalar o .NET Framework em seu Nano Server. Passe a versão do CLI com a opção `-Version`:
 
-> [!NOTE]
-> Para entender as diferenças entre as FDDs (implantações dependentes do Framework) e SCDs (implantações autocontidas), consulte as [opções de implantação](https://docs.microsoft.com/dotnet/articles/core/deploying/).
-
-[!code-powershell[Main](nano-server/Download-Dotnet.ps1)]
+```console
+dotnet-install.ps1 -Version 2.0.0
+```
 
 ## <a name="publishing-the-application"></a>Publicando o aplicativo
 

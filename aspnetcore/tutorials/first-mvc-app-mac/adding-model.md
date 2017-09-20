@@ -1,21 +1,23 @@
 ---
-title: Adicionando um modelo a um aplicativo ASP.NET Core MVC
+title: Adicionar um modelo a um aplicativo ASP.NET Core MVC
 author: rick-anderson
-description: Adicione um modelo para um aplicativo simples do ASP.NET Core.
+description: Adicione um modelo a um aplicativo ASP.NET Core simples.
 keywords: ASP.NET Core, MVC, scaffold, scaffolding
 ms.author: riande
 manager: wpickett
-ms.date: 03/30/2017
+ms.devlang: csharp
+ms.date: 09/15/2017
 ms.topic: get-started-article
 ms.assetid: 8dc28498-eeee-1638-b903-b593059e9f39
 ms.technology: aspnet
-ms.prod: asp.net-core
+ms.prod: .net-core
+helpviewer_keywords: aspnet, csharp, mvc
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: 4a158802a19011cbb45da1b3ca43d67706efe4cd
-ms.sourcegitcommit: d9e2c99c837078fcac0e315025f8fbfbd45ea6e8
+ms.openlocfilehash: 36819284073eb1cb20b19c41512944e34c54c6d3
+ms.sourcegitcommit: 3fece4e2869581df72090ff5e82af1a09d927699
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/15/2017
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
@@ -32,7 +34,7 @@ Adicione as seguintes propriedades à classe `Movie`:
 
 O campo `ID` é necessário para o banco de dados para a chave primária.
 
-Crie o projeto para verificar se você não tem nenhum erro. Agora você tem um **M**odelo no seu aplicativo **M**VC.
+Compile o projeto para verificar se não há erros. Agora você tem um **M**odelo no seu aplicativo **M**VC.
 
 ## <a name="prepare-the-project-for-scaffolding"></a>Preparar o projeto para scaffolding
 
@@ -46,9 +48,9 @@ Crie o projeto para verificar se você não tem nenhum erro. Agora você tem um 
 
 - Salve o arquivo.
 
-- Crie um arquivo *Models/MvcMovieContext.cs* e adicione a seguinte classe `MvcMovieContext`: [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
+- Crie um arquivo *Models/MvcMovieContext.cs* e adicione a seguinte classe `MvcMovieContext`:  [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
    
-- Abra o arquivo *Startup.cs* e adicione dois usings: [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
+- Abra o arquivo *Startup.cs* e adicione dois usings:  [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
 
 - Adicione o contexto do banco de dados para o arquivo *Startup.cs*:
 
@@ -82,7 +84,7 @@ O mecanismo de scaffolding cria o seguinte:
 * Um controlador de filmes (*Controllers/MoviesController.cs*)
 * Arquivos de exibição do Razor para as páginas Criar, Excluir, Detalhes, Editar e Índice (*Views/Movies/\*.cshtml*)
 
-A criação automática das exibições e métodos de ação [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (criar, ler, atualizar e excluir) é conhecida como *scaffolding*. Logo você terá um aplicativo Web totalmente funcional que permitirá que você gerencie um banco de dados de filmes.
+A criação automática das exibições e métodos de ação [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (criar, ler, atualizar e excluir) é conhecida como *scaffolding*. Logo você terá um aplicativo Web totalmente funcional que permitirá que você gerencie um banco de dados de filmes.
 
 ### <a name="add-the-files-to-visual-studio"></a>Adicionar os arquivos ao Visual Studio
 
@@ -105,9 +107,9 @@ Agora você tem um banco de dados e páginas para exibir, editar, atualizar e ex
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Auxiliares de Marcas](xref:mvc/views/tag-helpers/intro)
+* [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
 * [Globalização e localização](xref:fundamentals/localization)
 
 >[!div class="step-by-step"]
-[Anterior – adicionar uma exibição](adding-view.md)
-[Próximo – trabalhando com SQL](working-with-sql.md)  
+[Anterior – Adicionando uma exibição](adding-view.md)
+[Próximo – Trabalhando com o SQL](working-with-sql.md)  

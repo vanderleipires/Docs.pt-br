@@ -10,17 +10,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: bda00f290043251ad308192c5b1a873ae7cd0d85
-ms.sourcegitcommit: e832a9b9f41a8b26a8c88edfd8fc35b8bfd97d5d
+ms.openlocfilehash: 1b5f4297d4812fbbd60fb8b94446da205cd6bb55
+ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Adicionando um novo campo a uma página Razor
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Nesta seção, você usará as Migrações do [Entity Framework](http://docs.efproject.net/en/latest/platforms/aspnetcore/new-db.html) Code First para adicionar um novo campo ao modelo e migrar essa alteração ao banco de dados.
+Nesta seção, você usará as Migrações do [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) Code First para adicionar um novo campo ao modelo e migrar essa alteração ao banco de dados.
 
 Ao usar o EF Code First para criar um banco de dados automaticamente, o Code First adiciona uma tabela ao banco de dados para ajudar a acompanhar se o esquema do banco de dados está sincronizado com as classes de modelo com base nas quais ele foi gerado. Se ele não estiver sincronizado, o EF gerará uma exceção. Isso facilita a descoberta de problemas de código/banco de dados inconsistente.
 
@@ -105,4 +105,4 @@ Execute o aplicativo e verifique se você pode criar/editar/exibir filmes com um
 
 >[!div class="step-by-step"]
 [Anterior: Adicionando uma pesquisa](xref:tutorials/razor-pages/search)
-[Próximo: Adicionando um novo campo](xref:tutorials/razor-pages/new-field)
+[Próximo: Adicionando Validação](xref:tutorials/razor-pages/validation)
