@@ -2,7 +2,7 @@
 title: "Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC"
 author: ardalis
 description: 
-keywords: "Núcleo do ASP.NET MVC, migrando"
+keywords: ASP.NET Core, MVC, migrando
 ms.author: riande
 manager: wpickett
 ms.date: 03/07/2017
@@ -11,11 +11,11 @@ ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc
-ms.openlocfilehash: 2bd689626e867e0ea82fbebdf92447a6029aa35b
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 385ab7dfea5b92687a427bdfe9558462227113b1
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC
 
@@ -40,7 +40,7 @@ Para demonstrar a atualização, vamos começar criando um aplicativo ASP.NET MV
 
 Criar um novo *vazio* aplicativo web do ASP.NET Core com o mesmo nome que o projeto anterior (*WebApp1*) para corresponder os namespaces em dois projetos. Ter o mesmo namespace torna mais fácil copiar código entre os dois projetos. Você precisará criar este projeto em um diretório diferente do projeto anterior para usar o mesmo nome.
 
-![Caixa de diálogo Nova projeto](mvc/_static/new_core.png)
+![Caixa de diálogo Novo Projeto](mvc/_static/new_core.png)
 
 ![Caixa de diálogo nova aplicativo Web do ASP.NET: modelo de projeto vazio selecionado no painel de modelos do ASP.NET Core](mvc/_static/new-project-select-empty-aspnet5-template.png)
 
@@ -72,7 +72,7 @@ Nesta seção, você adicionará um controlador mínimo e o modo de exibição p
 
 * Adicionar uma **classe do controlador MVC** com o nome *HomeController* para o *controladores* pasta.
 
-![Adicionar Novo Item de caixa de diálogo](mvc/_static/add_mvc_ctl.png)
+![Caixa de diálogo Adicionar Novo Item](mvc/_static/add_mvc_ctl.png)
 
 * Adicionar um *exibições* pasta.
 
@@ -80,7 +80,7 @@ Nesta seção, você adicionará um controlador mínimo e o modo de exibição p
 
 * Adicionar uma *cshtml* página de exibição do MVC para o *exibições/inicial* pasta.
 
-![Adicionar Novo Item de caixa de diálogo](mvc/_static/view.png)
+![Caixa de diálogo Adicionar Novo Item](mvc/_static/view.png)
 
 A estrutura do projeto é mostrada abaixo:
 
@@ -228,4 +228,4 @@ Consulte **usando a página de exceção de desenvolvedor** na [tratamento de er
 
 * [Desenvolvimento no Lado do Cliente](../client-side/index.md)
 
-* [Auxiliares de Marcas](../mvc/views/tag-helpers/index.md)
+* [Auxiliares de marcação](../mvc/views/tag-helpers/index.md)

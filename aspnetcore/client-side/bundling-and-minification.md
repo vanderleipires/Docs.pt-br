@@ -11,11 +11,11 @@ ms.assetid: d54230f9-8e5f-4861-a29c-1d3a14e0b0d9
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: d8512bdd49b61019f22a49900bdd65086d821a6b
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 11528cb2067ced79a09845f9ff78d897da033438
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="bundling-and-minification-in-aspnet-core"></a>Empacotamento e minimização no núcleo do ASP.NET
 
@@ -231,4 +231,4 @@ Para habilitar o Gulp quando o projeto é compilado no Visual Studio 2015, adici
 * [Usando o Gulp](using-gulp.md)
 * [Usando o Grunt](using-grunt.md)
 * [Trabalhando com vários ambientes](../fundamentals/environments.md)
-* [Auxiliares de Marcas](../mvc/views/tag-helpers/index.md)
+* [Auxiliares de marcação](../mvc/views/tag-helpers/index.md)

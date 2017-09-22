@@ -2,7 +2,7 @@
 title: "Núcleo do ASP.NET MVC com núcleo EF - Migrations - 4 de 10"
 author: tdykstra
 description: "Neste tutorial, você começar a usar o recurso de migrações EF principal para o gerenciamento de alterações do modelo de dados em um aplicativo MVC do ASP.NET Core."
-keywords: "Migrações do ASP.NET Core, Entity Framework Core,"
+keywords: "ASP.NET Core, Entity Framework Core, migrações"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
@@ -11,11 +11,11 @@ ms.assetid: 81f6c9c2-a819-4f3a-97a4-4b0503b56c26
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 4d81099d1ab97a8a49d96657153a54aa96dd6bf8
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: 638bef0cda14f53a326c66c6a5da3f3c1bb762c6
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>Migrações - Core EF com o tutorial do MVC do ASP.NET Core (4 de 10)
 
@@ -31,11 +31,11 @@ Quando você desenvolve um novo aplicativo, o modelo de dados é alterado com fr
 
 Esse método de manter o banco de dados em sincronia com o modelo de dados funciona bem até que você implantar o aplicativo para produção. Quando o aplicativo é executado em produção que normalmente está armazenando os dados que você deseja manter, e você não quiser perder tudo o que cada vez que você fizer uma alteração, como adicionar uma nova coluna. O recurso de migrações de núcleo EF resolve esse problema, permitindo que o EF atualizar o esquema de banco de dados em vez de criar um novo banco de dados.
 
-## <a name="entity-framework-core-nuget-packages-for-migrations"></a>Pacotes do Entity Framework Core NuGet para migrações
+## <a name="entity-framework-core-nuget-packages-for-migrations"></a>Pacotes NuGet do Entity Framework Core para migrações
 
 Para trabalhar com migrações, você pode usar o **Package Manager Console** (PMC) ou a interface de linha de comando (CLI).  Esses tutoriais mostram como usar comandos CLI. Informações sobre o PMC estão no [o fim deste tutorial](#pmc).
 
-As ferramentas EF para a interface de linha de comando (CLI) são fornecidas em [Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet). Para instalar este pacote, adicione-o para o `DotNetCliToolReference` coleção no *. csproj* de arquivo, como mostrado. **Observação:** é necessário instalar este pacote editando o *. csproj* arquivo; não é possível usar o `install-package` comando ou a GUI do Gerenciador de pacote. Você pode editar o *. csproj* arquivo clicando com o nome do projeto no **Solution Explorer** e selecionando **ContosoUniversity.csproj editar**.
+As ferramentas do EF para a CLI (interface de linha de comando) são fornecidas em [Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet). Para instalar este pacote, adicione-o para o `DotNetCliToolReference` coleção no *. csproj* de arquivo, como mostrado. **Observação:** é necessário instalar este pacote editando o arquivo *.csproj*; não é possível usar o comando `install-package` ou a GUI do Gerenciador de Pacotes. Você pode editar o *. csproj* arquivo clicando com o nome do projeto no **Solution Explorer** e selecionando **ContosoUniversity.csproj editar**.
 
 [!code-xml[](intro/samples/cu/ContosoUniversity.csproj?range=12-15&highlight=2)]
   
@@ -68,7 +68,7 @@ Salve suas alterações e compilar o projeto. Em seguida, abra uma janela de com
 
   ![Abrir janela de comando](migrations/_static/open-command-window.png)
 
-Digite o seguinte comando na janela de comando:
+Insira o seguinte comando na janela de comando:
 
 ```console
 dotnet ef migrations add InitialCreate
@@ -87,11 +87,11 @@ Done. To undo this action, use 'ef migrations remove'
 > [!NOTE]
 > Se você vir uma mensagem de erro *sem executável encontrado correspondente comando "dotnet-ef"*, consulte [esta postagem de blog](http://thedatafarm.com/data-access/no-executable-found-matching-command-dotnet-ef/) para solucionar o problema.
 
-Se você vir uma mensagem de erro "*não é possível acessar o arquivo... ContosoUniversity.dll porque ele está sendo usado por outro processo.* ", localize o ícone do IIS Express na bandeja de sistema do Windows, clique duas vezes e clique em **ContosoUniversity > Parar Site**.
+Se você vir uma mensagem de erro "*não é possível acessar o arquivo... ContosoUniversity.dll porque ele está sendo usado por outro processo. *", localize o ícone do IIS Express na bandeja de sistema do Windows, clique duas vezes e clique em **ContosoUniversity > Parar Site**.
 
 ## <a name="examine-the-up-and-down-methods"></a>Examine cima e para baixo métodos
 
-Quando você executou o `migrations add` comando EF o código gerado que criará o banco de dados do zero. Esse código está no *migrações* pasta, no arquivo nomeado  *\<timestamp > _InitialCreate.cs*. O `Up` método o `InitialCreate` classe cria as tabelas de banco de dados que correspondem aos conjuntos de entidade do modelo de dados, e o `Down` método exclui-los, conforme mostrado no exemplo a seguir.
+Quando você executou o `migrations add` comando EF o código gerado que criará o banco de dados do zero. Esse código está no *migrações* pasta, no arquivo nomeado * \<timestamp > _InitialCreate.cs*. O `Up` método o `InitialCreate` classe cria as tabelas de banco de dados que correspondem aos conjuntos de entidade do modelo de dados, e o `Down` método exclui-los, conforme mostrado no exemplo a seguir.
 
 [!code-csharp[Main](intro/samples/cu/Migrations/20170215220724_InitialCreate.cs?range=92-118)]
 
@@ -109,7 +109,7 @@ Migrações também cria um *instantâneo* do esquema de banco de dados atual em
 
 Porque o esquema de banco de dados atual é representado no código, Core EF não precisa interagir com o banco de dados para criar as migrações. Quando você adiciona uma migração, EF determina o que mudou, comparando o modelo de dados para o arquivo de instantâneo. EF interage com o banco de dados somente quando é necessário atualizar o banco de dados. 
 
-O arquivo de instantâneo deve ser mantido em sincronia com as migrações que criá-la, para que você não pode remover uma migração bastando excluir o arquivo chamado  *\<timestamp > _\<migrationname >. CS*. Se você excluir esse arquivo, as migrações restantes serão fora de sincronia com o arquivo de instantâneo do banco de dados. Para excluir a última migração que você adicionou, use o [remover migrações de ef dotnet](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) comando.
+O arquivo de instantâneo deve ser mantido em sincronia com as migrações que criá-la, para que você não pode remover uma migração bastando excluir o arquivo chamado * \<timestamp > _\<migrationname >. CS*. Se você excluir esse arquivo, as migrações restantes serão fora de sincronia com o arquivo de instantâneo do banco de dados. Para excluir a última migração que você adicionou, use o [remover migrações de ef dotnet](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) comando.
 
 ## <a name="apply-the-migration-to-the-database"></a>Aplicar a migração para o banco de dados
 

@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: 72b6098b2a71957da338ef36beff4808201773f4
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 2c94daafec8d3b4051bd3091478521ab12a434bd
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Provedor de configuração do Cofre de chaves do Azure
 
@@ -41,7 +41,7 @@ Este documento explica como usar o [Microsoft Azure Key Vault](https://azure.mic
 ## <a name="package"></a>Pacote
 Para usar o provedor, adicione uma referência para o [Microsoft.Extensions.Configuration.AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/) pacote.
 
-## <a name="application-configuration"></a>Configuração de aplicativo
+## <a name="application-configuration"></a>Configuração do aplicativo
 Você pode explorar o provedor com o [aplicativos de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples). Depois de estabelecer um cofre de chaves e criar segredos no cofre, os aplicativos de amostra carregar os valores de segredo em suas configurações e exibem-los em páginas da Web com segurança.
 
 O provedor é adicionado para o `ConfigurationBuilder` com o `AddAzureKeyVault` extensão. Os aplicativos de exemplo, a extensão usa três valores de configuração carregados a partir de *appSettings. JSON* arquivo.
@@ -52,7 +52,7 @@ O provedor é adicionado para o `ConfigurationBuilder` com o `AddAzureKeyVault` 
 | `ClientId`     | Id de aplicativo do Active Directory do Azure  | 627e911e-43CC-61d4-992e-12db9c81b413         |
 | `ClientSecret` | Chave de aplicativo do Active Directory do Azure | g58K3dtg59o1Pa + e59v2Tx829w6VxTB2yv9sv/101di = |
 
-[!code-csharp[Programa](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1&highlight=2,7-10)]
+[!code-csharp[Program](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1&highlight=2,7-10)]
 
 ## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>Criando segredos de Cofre de chaves e carregar valores de configuração (exemplo basic)
 1. Criar um cofre de chaves e configurar o Azure Active Directory (AD do Azure) para o aplicativo seguindo as orientações em [Introdução ao Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
@@ -83,7 +83,7 @@ Quando você executa o aplicativo, uma página da Web mostra os valores de segre
 
 Usando o segundo aplicativo de exemplo, criar um segredo no cofre de chaves para `5000-AppSecret` (períodos não são permitidos em nomes de Cofre de chave secreta) que representa um segredo do aplicativo para a versão 5.0.0.0 do seu aplicativo. Para outra versão, 5.1.0.0, você cria um segredo para `5100-AppSecret`. Cada versão do aplicativo carrega seu próprio valor secreto em sua configuração como `AppSecret`, remoção desativar a versão que ele carrega o segredo. Implementação do exemplo é mostrada abaixo:
 
-[!code-csharp[Construtor de configuração](key-vault-configuration/samples/key-name-prefix-sample/2.x/Program.cs?name=snippet1&highlight=12)]
+[!code-csharp[Configuration builder](key-vault-configuration/samples/key-name-prefix-sample/2.x/Program.cs?name=snippet1&highlight=12)]
 
 [!code-csharp[PrefixKeyVaultSecretManager](key-vault-configuration/samples/key-name-prefix-sample/2.x/Startup.cs?name=snippet1)]
 

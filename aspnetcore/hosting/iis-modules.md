@@ -11,11 +11,11 @@ ms.assetid: 492b3a7e-04c5-461b-b96a-38ecee5c64bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: hosting/iis-modules
-ms.openlocfilehash: 353cd4c18cb2708f2dece5ba2b5271f452379d52
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 97c5fb6db6fe2a1dbae5529c11479413fd4814fb
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>Usar módulos do IIS com o ASP.NET Core
 
@@ -38,8 +38,8 @@ Módulo | .NET core ativo | Opção de núcleo do ASP.NET
 **Pesquisa no Diretório**<br>`DirectoryListingModule` | Não | [Middleware de navegação de diretório](xref:fundamentals/static-files#enabling-directory-browsing)
 **Compactação dinâmica**<br>`DynamicCompressionModule` | Sim | [Middleware de compactação de resposta](xref:performance/response-compression)
 **Rastreamento**<br>`FailedRequestsTracingModule` | Sim | [Registro do ASP.NET Core](xref:fundamentals/logging#the-tracesource-provider)
-**Cache de arquivo**<br>`FileCacheModule` | Não | [Middleware de cache de resposta](xref:performance/caching/middleware)
-**Cache de HTTP**<br>`HttpCacheModule` | Não | [Middleware de cache de resposta](xref:performance/caching/middleware)
+**Cache de arquivo**<br>`FileCacheModule` | Não | [Middleware de Cache de Resposta](xref:performance/caching/middleware)
+**Cache de HTTP**<br>`HttpCacheModule` | Não | [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 **Log HTTP**<br>`HttpLoggingModule` | Sim | [Registro do ASP.NET Core](xref:fundamentals/logging)<br>Implementações: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
 **Redirecionamento de HTTP**<br>`HttpRedirectionModule` | Sim | [Middleware de regravação de URL](xref:fundamentals/url-rewriting)
 **Autenticação de mapeamento de certificado de cliente do IIS**<br>`IISCertificateMappingAuthenticationModule` | Sim | 
@@ -67,7 +67,7 @@ AnonymousIdentification | Não |
 DefaultAuthentication | Não | 
 FileAuthorization | Não | 
 FormsAuthentication | Não | [Middleware de autenticação de cookie](xref:security/authentication/cookie)
-OutputCache | Não | [Middleware de cache de resposta](xref:performance/caching/middleware)
+OutputCache | Não | [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 Perfil | Não | 
 RoleManager | Não | 
 ScriptModule 4.0 | Não | 

@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c3f7792d7458013f837a48ca2caa459f35658f02
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 2fe774a1ae02ab5ea168c19045fcc8664c0273a6
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introdução ao uso de auxiliares de marcação em formulários do ASP.NET Core
 
@@ -590,7 +590,7 @@ Corretas `<option>` elemento será selecionado (contêm o `selected="selected"` 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Auxiliares de Marcas](tag-helpers/intro.md)
+* [Auxiliares de marcação](tag-helpers/intro.md)
 
 * [Elemento de formulário HTML](https://www.w3.org/TR/html401/interact/forms.html)
 

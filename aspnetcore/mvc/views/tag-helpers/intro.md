@@ -11,11 +11,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 53a31ed8ca6ff24a19a33a56c3a896aa58cbb62a
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 10471210075dc8a5366b7d5170d6594c2e66ce94
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introdução ao auxiliares de marcação no núcleo do ASP.NET 
 
@@ -255,7 +255,7 @@ Você pode personalizar a fonte e a coloração de **ferramentas** > **opções*
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Criando Auxiliares de Marcas](authoring.md)
+* [Criando auxiliares de marcação](authoring.md)
 * [Trabalhando com formulários](../working-with-forms.md)
 * [TagHelperSamples no GitHub](https://github.com/dpaquette/TagHelperSamples) contém exemplos de auxiliar de marca para trabalhar com [inicialização](http://getbootstrap.com/).
 

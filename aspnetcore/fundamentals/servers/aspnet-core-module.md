@@ -2,7 +2,7 @@
 title: "Módulo principal do ASP.NET"
 author: tdykstra
 description: "Apresenta o ASP.NET Core módulo (ANCM), um módulo do IIS que permite que o servidor de web Kestrel usar o IIS ou IIS Express como um servidor de proxy reverso."
-keywords: "ASP.NET Core, o IIS, o IIS Express, o módulo principal do ASP.NET, UseIISIntegration"
+keywords: "Módulo do núcleo do ASP.NET, IIS, IIS Express,ASP.NET Core, UseIISIntegration"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 08/03/2017
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 50c3085c28be4e6ddc4a732aba489ce871ab9ab1
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 479fc3a389168bb08e278aa3d9da3bf7df1b49f4
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="introduction-to-aspnet-core-module"></a>Introdução ao módulo principal do ASP.NET
 
