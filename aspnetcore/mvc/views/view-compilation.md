@@ -11,11 +11,11 @@ ms.assetid: ab4705b7-1638-1638-bc97-ea7f292fe92a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 0cb61315916d1b38f7cab3339e150c446fb69d98
-ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
+ms.openlocfilehash: bfee2e5e8f71c99465be79589a77f0e173097b23
+ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 09/24/2017
 ---
 # <a name="razor-view-compilation-and-precompilation-in-aspnet-core"></a>Compilação de exibição Razor e pré-compilação no núcleo do ASP.NET
 
@@ -24,7 +24,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 Modos de exibição Razor são compilados em tempo de execução quando o modo de exibição é invocado. ASP.NET Core 1.1.0 e superior pode opcionalmente compilar exibições Razor e implantá-las com o aplicativo &mdash; um processo conhecido como pré-compilação. Os modelos de projeto do ASP.NET Core 2. x habilitam pré-compilação por padrão.
 
 > [!NOTE]
-> A pré-compilação de exibição Razor não está disponível ao fazer uma [Self-Contained implantação](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) em versões do ASP.NET Core 2.0.0 e versões anteriores.
+> Pré-compilação de exibição Razor está indisponível no momento ao executar uma [autossuficiente de implantação (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) no ASP.NET 2.0 de núcleo. O recurso estará disponível para SCDs ao versões 2.1. Para obter mais informações, consulte [compilação exibição falha durante a compilação cruzada para Linux no Windows](https://github.com/aspnet/MvcPrecompilation/issues/102).
 
 Considerações de pré-compilação:
 
