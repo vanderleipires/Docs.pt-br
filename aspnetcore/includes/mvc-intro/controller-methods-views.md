@@ -1,5 +1,5 @@
 
-Abordaremos [DataAnnotations](http://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) no próximo tutorial. O atributo [Display](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayattribute.aspx) especifica o que deve ser exibido no nome de um campo (neste caso, “Release Date” em vez de “ReleaseDate”). O atributo [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) especifica o tipo de dados (Data) e, portanto, as informações de hora armazenadas no campo não são exibidas.
+Abordaremos [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) no próximo tutorial. O atributo [Display](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) especifica o que deve ser exibido no nome de um campo (neste caso, “Release Date” em vez de “ReleaseDate”). O atributo [DataType](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) especifica o tipo de dados (Data) e, portanto, as informações de hora armazenadas no campo não são exibidas.
 
 Procure o controlador `Movies` e mantenha o ponteiro do mouse pressionado sobre um link **Editar** para ver a URL de destino.
 
@@ -35,7 +35,7 @@ O código a seguir mostra o método `HTTP POST Edit`, que processa os valores de
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
 
-O atributo `[Bind]` é uma maneira de proteger contra o [excesso de postagem](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Você somente deve incluir as propriedades do atributo `[Bind]` que deseja alterar. Consulte [Proteger o controlador contra o excesso de postagem](http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost) para obter mais informações. [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) fornece uma abordagem alternativa para prevenir o excesso de postagem.
+O atributo `[Bind]` é uma maneira de proteger contra o [excesso de postagem](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Você somente deve incluir as propriedades do atributo `[Bind]` que deseja alterar. Consulte [Proteger o controlador contra o excesso de postagem](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application) para obter mais informações. [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) fornece uma abordagem alternativa para prevenir o excesso de postagem.
 
 Observe se o segundo método de ação `Edit` é precedido pelo atributo `[HttpPost]`.
 
@@ -89,7 +89,7 @@ Todos os métodos `HttpGet` no controlador de filme seguem um padrão semelhante
 * [Introdução aos auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
 * [Criando auxiliares de marcação](xref:mvc/views/tag-helpers/authoring)
 * [Falsificação anti-solicitação](xref:security/anti-request-forgery)
-* Proteger o controlador contra o [excesso de postagem](http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost)
+* Proteger o controlador contra o [excesso de postagem](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application)
 * [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/)
 * [Auxiliar de marcação de formulário](xref:mvc/views/working-with-forms)
 * [Auxiliar de marcação de entrada](xref:mvc/views/working-with-forms)

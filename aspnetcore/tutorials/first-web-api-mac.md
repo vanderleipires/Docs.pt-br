@@ -6,15 +6,16 @@ ms.author: riande
 ms.date: 09/15/2017
 ms.topic: get-started-article
 ms.prod: asp.net-core
+uid: tutorials/first-web-api-mac
 helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Service, HTTP Service
 ms.technology: aspnet
 keywords: "ASP.NET Core, WebAPI, API Web, REST, mac, macOS, HTTP, Serviço, Serviço HTTP"
 manager: wpickett
-ms.openlocfilehash: 82e5c936ab9c59a6ebac1397c2ca35e4379d94c2
-ms.sourcegitcommit: ddefc78270bd9b5ae0b1bd8de6c45f6977e7dceb
+ms.openlocfilehash: 6835cdefcc001452a3ffc8f4fd6a2f55f7274692
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Criar uma API Web com o ASP.NET Core MVC e o Visual Studio para Mac
 
@@ -132,7 +133,7 @@ Adicionaremos os métodos `Create`, `Update` e `Delete` ao controlador. Essas s�
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Este é um método HTTP POST, indicado pelo atributo [`[HttpPost]`](https://docs.microsoft.com/aspnet/core/api). O atributo [`[FromBody]`](https://docs.microsoft.com/aspnet/core/api) informa ao MVC para obter o valor do item de tarefas pendentes do corpo da solicitação HTTP.
+Este é um método HTTP POST, indicado pelo atributo [`[HttpPost]`](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute). O atributo [`[FromBody]`](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) informa ao MVC para obter o valor do item de tarefas pendentes do corpo da solicitação HTTP.
 
 O método `CreatedAtRoute` retorna uma resposta 201, que é a resposta padrão para um método HTTP POST que cria um novo recurso no servidor. `CreatedAtRoute` também adiciona um cabeçalho Local à resposta. O cabeçalho Location especifica o URI do item de tarefas pendentes recém-criado. Consulte [10.2.2 201 criado](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 

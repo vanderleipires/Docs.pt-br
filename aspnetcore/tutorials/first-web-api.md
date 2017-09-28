@@ -5,16 +5,16 @@ description: Compilar uma API Web com o ASP.NET Core MVC e o Visual Studio para 
 keywords: "ASP.NET Core, WebAPI, API Web, REST, HTTP, Serviço, Serviço HTTP"
 ms.author: riande
 manager: wpickett
-ms.date: 8/15/2017
+ms.date: 08/15/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-web-api
-ms.openlocfilehash: 4aab61c7ee4498b33a4ea8bbec6033ce9828e2af
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 617b11cd7652e393c06446c62138802e4a4e90df
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 #<a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Criar uma API Web com o ASP.NET Core e o Visual Studio para Windows
 
@@ -68,7 +68,7 @@ Observação: as classes de modelo podem ser colocadas em qualquer lugar no seu 
 
 Adicione uma classe `TodoItem`. Clique com o botão direito do mouse na pasta *Modelos* e selecione **Adicionar** > **Classe**. Nomeie a classe `TodoItem` e, em seguida, selecione **Adicionar**.
 
-Substitua o código gerado pelo seguinte:
+Substitua o código gerado pelo mostrado a seguir:
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
 
@@ -80,7 +80,7 @@ O *contexto de banco de dados* é a classe principal que coordena a funcionalida
 
 Adicione uma classe `TodoContext`. Clique com o botão direito do mouse na pasta *Modelos* e selecione **Adicionar** > **Classe**. Nomeie a classe `TodoContext` e, em seguida, selecione **Adicionar**.
 
-Substitua o código gerado pelo seguinte:
+Substitua o código gerado pelo mostrado a seguir:
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
 

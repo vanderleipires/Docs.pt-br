@@ -6,7 +6,7 @@ Cada método `public` em um controlador pode ser chamado como um ponto de extrem
 
 Um ponto de extremidade HTTP é uma URL direcionável no aplicativo Web, como `http://localhost:1234/HelloWorld`, e combina o protocolo usado `HTTP`, o local de rede do servidor Web (incluindo a porta TCP) `localhost:1234` e o URI de destino `HelloWorld`.
 
-O primeiro comentário indica que este é um método [HTTP GET](http://www.w3schools.com/tags/ref_httpmethods.asp) invocado por meio do acréscimo de “/HelloWorld/” à URL base. O segundo comentário especifica um método [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) invocado por meio do acréscimo de “/HelloWorld/Welcome/” à URL. Mais adiante no tutorial, você usará o mecanismo de scaffolding para gerar métodos `HTTP POST`.
+O primeiro comentário indica que este é um método [HTTP GET](https://www.w3schools.com/tags/ref_httpmethods.asp) invocado por meio do acréscimo de “/HelloWorld/” à URL base. O segundo comentário especifica um método [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) invocado por meio do acréscimo de “/HelloWorld/Welcome/” à URL. Mais adiante no tutorial, você usará o mecanismo de scaffolding para gerar métodos `HTTP POST`.
 
 Execute o aplicativo no modo sem depuração e acrescente “HelloWorld” ao caminho na barra de endereços. O método `Index` retorna uma cadeia de caracteres.
 
@@ -46,7 +46,7 @@ Execute o aplicativo e navegue para:
 
 ![Janela do navegador mostrando a resposta do aplicativo Olá, Ricardo, NumTimes é: 4](../../tutorials/first-mvc-app/adding-controller/_static/rick4.png)
 
-Na imagem acima, o segmento de URL (`Parameters`) não é usado e os parâmetros `name` e `numTimes` são passados como [cadeias de consulta](http://en.wikipedia.org/wiki/Query_string). O `?` (ponto de interrogação) na URL acima é um separador seguido pelas cadeias de consulta. O caractere `&` separa as cadeias de consulta.
+Na imagem acima, o segmento de URL (`Parameters`) não é usado e os parâmetros `name` e `numTimes` são passados como [cadeias de consulta](https://wikipedia.org/wiki/Query_string). O `?` (ponto de interrogação) na URL acima é um separador seguido pelas cadeias de consulta. O caractere `&` separa as cadeias de consulta.
 
 Substitua o método `Welcome` pelo seguinte código:
 

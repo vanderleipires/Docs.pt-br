@@ -6,7 +6,7 @@ Nesta seção, você adicionará a lógica de validação ao modelo `Movie` e ga
 
 ## <a name="keeping-things-dry"></a>Mantendo o processo DRY
 
-Um dos princípios de design do MVC é o [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) (“Don't Repeat Yourself”). O ASP.NET MVC incentiva você a especificar a funcionalidade ou o comportamento somente uma vez e, em seguida, refleti-lo em qualquer lugar de um aplicativo. Isso reduz a quantidade de código que você precisa escrever e faz com que o código escrito seja menos propenso a erros e mais fácil de testar e manter.
+Um dos princípios de design do MVC é o [DRY](https://wikipedia.org/wiki/Don%27t_repeat_yourself) (“Don't Repeat Yourself”). O ASP.NET MVC incentiva você a especificar a funcionalidade ou o comportamento somente uma vez e, em seguida, refleti-lo em qualquer lugar de um aplicativo. Isso reduz a quantidade de código que você precisa escrever e faz com que o código escrito seja menos propenso a erros e mais fácil de testar e manter.
 
 O suporte de validação fornecido pelo MVC e pelo Entity Framework Core Code First é um bom exemplo do princípio DRY em ação. Especifique as regras de validação de forma declarativa em um único lugar (na classe de modelo) e as regras são impostas em qualquer lugar no aplicativo.
 
@@ -31,13 +31,13 @@ Toque no link **Criar Novo** para adicionar um novo filme. Preencha o formulári
 ![Formulário da exibição de filmes com vários erros de validação do lado do cliente do jQuery](../../tutorials/first-mvc-app/validation/_static/val.png)
 
 > [!NOTE]
-> Talvez você não consiga inserir pontos decimais ou vírgulas no campo `Price`. Para dar suporte à [validação do jQuery](http://jqueryvalidation.org/) para localidades de idiomas diferentes do inglês que usam uma vírgula (“,”) para um ponto decimal e formatos de data diferentes do inglês dos EUA, você deve tomar medidas para globalizar o aplicativo. Consulte [Recursos adicionais](#additional-resources) para obter mais informações. Por enquanto, insira apenas números inteiros como 10.
+> Talvez você não consiga inserir pontos decimais ou vírgulas no campo `Price`. Para dar suporte à [validação do jQuery](https://jqueryvalidation.org/) para localidades de idiomas diferentes do inglês que usam uma vírgula (“,”) para um ponto decimal e formatos de data diferentes do inglês dos EUA, você deve tomar medidas para globalizar o aplicativo. Consulte [Recursos adicionais](#additional-resources) para obter mais informações. Por enquanto, insira apenas números inteiros como 10.
 
 Observe como o formulário renderizou automaticamente uma mensagem de erro de validação apropriada em cada campo que contém um valor inválido. Os erros são impostos no lado do cliente (usando o JavaScript e o jQuery) e no lado do servidor (caso um usuário tenha o JavaScript desabilitado).
 
 Uma vantagem significativa é que você não precisa alterar uma única linha de código na classe `MoviesController` ou na exibição *Create.cshtml* para habilitar essa interface do usuário de validação. O controlador e as exibições criados anteriormente neste tutorial selecionaram automaticamente as regras de validação especificadas com atributos de validação nas propriedades da classe de modelo `Movie`. Teste a validação usando o método de ação `Edit` e a mesma validação é aplicada.
 
-Os dados de formulário não são enviados no servidor até que não haja erros de validação do lado do cliente. Verifique isso colocando um ponto de interrupção no método `HTTP Post` usando a [ferramenta Fiddler](http://www.telerik.com/fiddler) ou as [ferramentas do Desenvolvedor F12](https://dev.windows.com/microsoft-edge/platform/documentation/f12-devtools-guide/).
+Os dados de formulário não são enviados no servidor até que não haja erros de validação do lado do cliente. Verifique isso colocando um ponto de interrupção no método `HTTP Post` usando a [ferramenta Fiddler](http://www.telerik.com/fiddler) ou as [ferramentas do Desenvolvedor F12](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/).
 
 ## <a name="how-validation-works"></a>Como funciona a validação
 
@@ -65,7 +65,7 @@ Veja abaixo uma parte do modelo de exibição *Create.cshtml* gerada por scaffol
 
 [!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Views/Movies/CreateRatingBrevity.cshtml)]
 
-O [Auxiliar de Marcação de Entrada](xref:mvc/views/working-with-forms) usa os atributos de [DataAnnotations](http://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) e produz os atributos HTML necessários para a Validação do jQuery no lado do cliente. O [Auxiliar de Marcação de Validação](xref:mvc/views/working-with-forms#the-validation-tag-helpers) exibe erros de validação. Consulte [Validação](xref:mvc/models/validation) para obter mais informações.
+O [Auxiliar de Marcação de Entrada](xref:mvc/views/working-with-forms) usa os atributos de [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) e produz os atributos HTML necessários para a Validação do jQuery no lado do cliente. O [Auxiliar de Marcação de Validação](xref:mvc/views/working-with-forms#the-validation-tag-helpers) exibe erros de validação. Consulte [Validação](xref:mvc/models/validation) para obter mais informações.
 
 O que é realmente interessante nessa abordagem é que o controlador nem o modelo de exibição `Create` sabem nada sobre as regras de validação reais que estão sendo impostas ou as mensagens de erro específicas exibidas. As regras de validação e as cadeias de caracteres de erro são especificadas somente na classe `Movie`. Essas mesmas regras de validação são aplicadas automaticamente à exibição `Edit` e a outros modelos de exibição que podem ser criados e que editam o modelo.
 

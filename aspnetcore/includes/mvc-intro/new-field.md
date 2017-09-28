@@ -4,7 +4,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Este tutorial adicionará um novo campo à tabela `Movies`. Removeremos o banco de dados e criaremos um novo ao alterar o esquema (adicionar um novo campo). Este fluxo de trabalho funciona bem no início do desenvolvimento quando não temos nenhum dado de produção para preservar.
 
-Depois que o aplicativo for implantado e você tiver dados que precisa preservar, não poderá remover o BD quando precisar alterar o esquema. As [Migrações do Entity Framework Code First](http://docs.efproject.net/en/latest/platforms/aspnetcore/new-db.html) permitem atualizar o esquema e migrar o banco de dados sem perder dados. As Migrações são um recurso popular ao usar o SQL Server, mas o SQLite não dá suporte a muitas operações de esquema de migração e, portanto, apenas migrações muito simples são possíveis. Consulte [Limitações do SQLite](https://docs.microsoft.com/ef/core/providers/sqlite/limitations) para obter mais informações.
+Depois que o aplicativo for implantado e você tiver dados que precisa preservar, não poderá remover o BD quando precisar alterar o esquema. As [Migrações do Entity Framework Code First](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) permitem atualizar o esquema e migrar o banco de dados sem perder dados. As Migrações são um recurso popular ao usar o SQL Server, mas o SQLite não dá suporte a muitas operações de esquema de migração e, portanto, apenas migrações muito simples são possíveis. Consulte [Limitações do SQLite](https://docs.microsoft.com/ef/core/providers/sqlite/limitations) para obter mais informações.
 
 ## <a name="adding-a-rating-property-to-the-movie-model"></a>Adicionando uma propriedade de classificação ao modelo de filme
 
