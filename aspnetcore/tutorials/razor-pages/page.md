@@ -5,16 +5,16 @@ description: "Explica as Páginas do Razor geradas por scaffolding."
 keywords: "ASP.NET Core, Páginas do Razor, Razor, MVC"
 ms.author: riande
 manager: wpickett
-ms.date: 07/27/2017
+ms.date: 09/27/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/page
-ms.openlocfilehash: 77462ede7b88ed22695b9ea701a7333e1667e548
-ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
+ms.openlocfilehash: 3fd155c5e9a119717243a4bafff776fcbd06fab5
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="scaffolded-razor-pages-in-aspnet-core"></a>Páginas do Razor geradas por scaffolding no ASP.NET Core
 
@@ -26,7 +26,7 @@ Este tutorial examina as Páginas do Razor criadas por scaffolding no [tutorial 
 
 ## <a name="the-create-delete-details-and-edit-pages"></a>As páginas Criar, Excluir, Detalhes e Editar.
 
-Analise o arquivo code-behind *Pages/Movies/Index.cshtml.cs*: [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Index.cshtml.cs)]
+Analise o arquivo code-behind *Pages/Movies/Index.cshtml.cs*: [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs)]
 
 As Páginas do Razor são derivadas de `PageModel`. Por convenção, a classe derivada de `PageModel` é chamada de `<PageName>Model`. O construtor usa [injeção de dependência](xref:fundamentals/dependency-injection) para adicionar o `MovieContext` à página. Todas as páginas geradas por scaffolding seguem esse padrão.
 
@@ -34,7 +34,7 @@ Quando uma solicitação é feita à página, o método `OnGetAsync` retorna uma
 
 Examine a Página do Razor *Pages/Movies/Index.cshtml*:
 
-[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Index.cshtml)]
+[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]
 
 O Razor pode fazer a transição do HTML em C# ou em marcação específica do Razor. Quando um símbolo `@` é seguido por uma [palavra-chave reservada do Razor](xref:mvc/views/razor#razor-reserved-keywords), ele faz a transição para marcação específica do Razor, caso contrário, ele faz a transição para C#.
 
@@ -42,14 +42,16 @@ A diretiva do Razor `@page` transforma o arquivo em uma ação do MVC &mdash;, o
 
 Examine a expressão lambda usada no auxiliar HTML a seguir:
 
-`@Html.DisplayNameFor(model => model.Movie[0].Title))`
+```cshtml
+@Html.DisplayNameFor(model => model.Movies[0].Title))
+```
 
 O auxiliar HTML `DisplayNameFor` inspeciona a propriedade `Title` referenciada na expressão lambda para determinar o nome de exibição. A expressão lambda é inspecionada em vez de avaliada. Isso significa que não há nenhuma violação de acesso quando `model`, `model.Movies` ou `model.Movies[0]` são `null` ou vazios. Quando a expressão lambda é avaliada (por exemplo, com `@Html.DisplayFor(modelItem => item.Title)`), os valores de propriedade do modelo são avaliados.
 
 <a name="md"></a>
 ### <a name="the-model-directive"></a>A diretiva @model
 
-[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Index.cshtml?range=1-2&highlight=2)]
+[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
 
 A diretiva `@model` especifica o tipo de modelo passado para a Página do Razor. No exemplo anterior, a linha `@model` torna a classe derivada de `PageModel` disponível para a Página do Razor. O modelo é usado nos [auxiliares HTML](https://docs.microsoft.com/aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs#understanding-html-helpers) `@Html.DisplayNameFor` e `@Html.DisplayName` na página.
 
@@ -62,11 +64,11 @@ A diretiva `@model` especifica o tipo de modelo passado para a Página do Razor.
 
 Considere o código a seguir:
 
-[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Index.cshtml?range=1-6&highlight=4-)]
+[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-6&highlight=4-)]
 
 O código realçado anterior é um exemplo de transição do Razor para C#. Os caracteres `{` e `}` circunscrevem um bloco de código C#.
 
-A classe base `Controller` tem uma propriedade de dicionário `ViewData` que pode ser usada para adicionar os dados que você deseja passar para uma exibição. Você adiciona objetos ao dicionário `ViewData` usando um padrão de chave/valor. No exemplo anterior, a propriedade "Title" é adicionada ao dicionário `ViewData`. A propriedade "Título" é usada no arquivo *Pages/_Layout.cshtml*. A marcação a seguir mostra as primeiras linhas do arquivo *Pages/_Layout.cshtml*.
+A classe base `PageModel` tem uma propriedade de dicionário `ViewData` que pode ser usada para adicionar os dados que você deseja passar para uma exibição. Você adiciona objetos ao dicionário `ViewData` usando um padrão de chave/valor. No exemplo anterior, a propriedade "Title" é adicionada ao dicionário `ViewData`. A propriedade "Título" é usada no arquivo *Pages/_Layout.cshtml*. A marcação a seguir mostra as primeiras linhas do arquivo *Pages/_Layout.cshtml*.
 
 [!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/NU/_Layout1.cshtml?highlight=6-)]
 
@@ -84,7 +86,7 @@ A marcação anterior define o arquivo de layout *Pages/_Layout.cshtml* para tod
 
 Altere o elemento `<title>` no arquivo *Pages/_Layout.cshtml* para usar uma cadeia de caracteres mais curta.
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=1-6&highlight=6-)]
+[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=1-6&highlight=6)]
 
 Localizar o elemento de âncora a seguir no arquivo *Pages/_Layout.cshtml*.
 
@@ -97,7 +99,7 @@ Substitua o elemento anterior pela marcação a seguir.
 <a asp-page="/Movies/Index" class="navbar-brand">RpMovie</a>
 ```
 
-O elemento de âncora anterior é um [Auxiliar de Marcas](xref:mvc/views/tag-helpers/intro). Nesse caso, ele é o [Auxiliar de Marcas de Âncora](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper). O atributo e valor do auxiliar de marcas `asp-page="/Movies/Index"` cria um link para a Página do Razor `/Movies/Index`.
+O elemento de âncora anterior é um [Auxiliar de Marcas](xref:mvc/views/tag-helpers/intro). Nesse caso, ele é o [Auxiliar de Marcas de Âncora](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper). O atributo e valor do auxiliar de marcas `asp-page="/Movies/Index"` cria um link para a Página do Razor `/Movies/Index`.
 
 Salve suas alterações e teste o aplicativo clicando no link **RpMovie**. Consulte o arquivo [cshtml](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml) no GitHub.
 
@@ -105,7 +107,7 @@ Salve suas alterações e teste o aplicativo clicando no link **RpMovie**. Consu
 
 Examine o arquivo code-behind *Pages/Movies/Create.cshtml.cs*:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Create.cshtml.cs?name=snippetALL)]
+[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
 
 O método `OnGet` inicializa qualquer estado necessário para a página. A página Criar não tem nenhum estado para inicializar. O método `Page` cria um objeto `PageResult` que renderiza a página *Create.cshtml*.
 
@@ -113,7 +115,7 @@ A propriedade `Movie` usa o atributo `[BindProperty]` para aceitar a [associaç�
 
 O método `OnPostAsync` é executado quando a página posta dados de formulário:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Create.cshtml.cs?name=snippetPost)]
+[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetPost)]
 
 Se há algum erro de modelo, o formulário é reexibido juntamente com quaisquer dados de formulário postados. A maioria dos erros de modelo podem ser capturados no lado do cliente antes do formulário ser enviado. Um exemplo de um erro de modelo é postar, para o campo de data, um valor que não pode ser convertido em uma data. Falaremos sobre a validação do lado do cliente e a validação de modelo posteriormente no tutorial.
 
@@ -123,7 +125,7 @@ Se não há nenhum erro de modelo, os dados são salvos e o navegador é redirec
 
 Examine o arquivo na Página do Razor *Pages/Movies/Create.cshtml*:
 
-[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Create.cshtml)]
+[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml)]
 
 O Visual Studio exibe a marca `<form method="post">` em uma fonte diferente usada para os auxiliares de marcas. O elemento `<form method="post">` é um [auxiliar de marcas de formulário](xref:mvc/views/working-with-forms#the-form-tag-helper). O auxiliar de marcas de formulário inclui automaticamente um [token antifalsificação](xref:security/anti-request-forgery).
 
@@ -131,7 +133,7 @@ O Visual Studio exibe a marca `<form method="post">` em uma fonte diferente usad
 
 O mecanismo de scaffolding cria marcação do Razor para cada campo no modelo (exceto a ID) semelhante ao seguinte:
 
-[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Create.cshtml?range=15-20)]
+[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml?range=15-20)]
 
 Os [auxiliares de marcas de validação](xref:mvc/views/working-with-forms#the-validation-tag-helpers) (`<div asp-validation-summary` e ` <span asp-validation-for`) exibem erros de validação. A validação será abordada em mais detalhes posteriormente nesta série.
 

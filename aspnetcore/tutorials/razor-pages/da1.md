@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: 39b65f8af8304fabc6cf8d9a27992043f1e381a0
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 290d752ea5f177348ff3e749cc125e946ae6e763
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="updating-the-generated-pages"></a>Atualizando as páginas geradas
 
@@ -34,7 +34,6 @@ Clique com o botão direito do mouse em uma linha curvada vermelha > ** Ações 
 
   ![Menu contextual mostra **> Ações Rápidas e Refatorações**.](da1/qa.png)
 
-
 Selecione `using System.ComponentModel.DataAnnotations;`
 
   ![usando System.ComponentModel.DataAnnotations na parte superior da lista](da1/da.png)
@@ -47,9 +46,9 @@ Procure Pages/Movies e focalize um link **Editar** para ver a URL de destino.
 
 ![Janela do navegador com o mouse sobre o link Editar e a URL de link http://localhost:1234/Movies/Edit/5 é mostrada](da1/edit7.png)
 
-Os links **Editar**, **Detalhes** e **Excluir** são gerados pelo [Auxiliar de Marcação de Âncora](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper) no arquivo *Pages/Movies/Index.cshtml*.
+Os links **Editar**, **Detalhes** e **Excluir** são gerados pelo [Auxiliar de Marcação de Âncora](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) no arquivo *Pages/Movies/Index.cshtml*.
 
-[!code-cshtml[Main](razor-pages-start\snapshot_sample\RazorPagesMovie\Pages\Movie\Index.cshtml?highlight=16-18&range=32-)]
+[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
 
 Os [Auxiliares de Marcação](xref:mvc/views/tag-helpers/intro) permitem que o código do servidor participe da criação e renderização de elementos HTML em arquivos do Razor. No código anterior, o `AnchorTagHelper` gera dinamicamente o valor do atributo `href` HTML da página Razor (a rota é relativa), o `asp-page` e a ID da rota (`asp-route-id`). Consulte [Geração de URL para Páginas](xref:mvc/razor-pages/index#url-generation-for-pages) para obter mais informações.
 
@@ -61,7 +60,6 @@ Use **Exibir Código-fonte** em seu navegador favorito para examinar a marcaçã
   <a href="/Movies/Details?id=1">Details</a> |
   <a href="/Movies/Delete?id=1">Delete</a>
 </td>
-
 ```
 
 Os links gerados dinamicamente passam a ID de filme com uma cadeia de consulta (por exemplo, `http://localhost:5000/Movies/Details?id=2`). 
@@ -86,7 +84,7 @@ Uma solicitação para a página com o modelo de rota “{id:int}” que **não*
 
 Atualize o método `OnPostAsync` no arquivo *Pages/Movies/Edit.cshtml.cs*. O seguinte código realçado mostra as alterações:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Edit.cshtml.cs?name=snippet1&highlight=17-24)]
+[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet1&highlight=16-23)]
 
 O código anterior apenas detecta as exceções de simultaneidade quando o primeiro cliente simultâneo exclui o filme e o segundo cliente simultâneo posta alterações no filme.
 
@@ -101,7 +99,7 @@ O código de produção geralmente detectará conflitos de simultaneidade quando
 
 ### <a name="posting-and-binding-review"></a>Análise de postagem e associação
 
-Examine o arquivo *Pages/Movies/Edit.cshtml.cs*: [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movie/Edit.cshtml.cs?name=snippet2)]
+Examine o arquivo *Pages/Movies/Edit.cshtml.cs*: [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
 
 Quando uma solicitação HTTP GET é feita para a página Movies/Edit (por exemplo, `http://localhost:5000/Movies/Edit/2`):
 
@@ -113,10 +111,10 @@ Quando a página Movies/Edit é postada:
 
 * Os valores de formulário na página são associados à propriedade `Movie`. O atributo `[BindProperty]` habilita a [Associação de modelos](xref:mvc/models/model-binding).
 
-```csharp
-[BindProperty]
-public Movie Movie { get; set; }
-```
+  ```csharp
+  [BindProperty]
+  public Movie Movie { get; set; }
+  ```
 
 * Se houver erros no estado do modelo (por exemplo, `ReleaseDate` não pode ser convertida em uma data), o formulário será postado novamente com os valores enviados.
 * Se não houver erros do modelo, o filme será salvo.
