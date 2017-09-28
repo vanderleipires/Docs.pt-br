@@ -11,11 +11,11 @@ ms.assetid: 08c9f457-9c24-40f9-a08b-47dc251e4cec
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: f0061fe483bdd5d46e776f9c8b726078cf92ff3b
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: c572315d7a801b9b87d5f4cd14b82c5ed27e7a85
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Novidades do ASP.NET Core 2.0
 
@@ -148,7 +148,6 @@ Para obter informações sobre o status dos recursos do C# 7.1, consulte [o repo
 * [Configurando a autenticação do Twitter](xref:security/authentication/twitter-logins)
 * [Configurando a autenticação do Google](xref:security/authentication/google-logins)
 * [Configurando a autenticação da Conta da Microsoft](xref:security/authentication/microsoft-logins)
-* [Configurando HTTPS para desenvolvimento no ASP.NET Core](xref:security/https)
 
 ## <a name="migration-guidance"></a>Diretrizes de migração
 
