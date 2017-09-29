@@ -10,56 +10,56 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: e7c8c64283ca3740698300689b10497f984cfd3e
-ms.sourcegitcommit: d022d4b96795ee473fa3847a1d8a8c7430423a86
+ms.openlocfilehash: dd732822a715df19c0ee4b6accad3455ad6537da
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 09/28/2017
 ---
-# <a name="aspnet-core-built-in-tag-helpers"></a><span data-ttu-id="711d1-104">Auxiliares de marcação internos do ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="711d1-104">ASP.NET Core built-in Tag Helpers</span></span>
+# <a name="aspnet-core-built-in-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
-<span data-ttu-id="711d1-105">Por [Peter Kellner](http://peterkellner.net)</span><span class="sxs-lookup"><span data-stu-id="711d1-105">By [Peter Kellner](http://peterkellner.net)</span></span> 
+Por [Peter Kellner](http://peterkellner.net) 
 
-<span data-ttu-id="711d1-106">O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar sua produtividade.</span><span class="sxs-lookup"><span data-stu-id="711d1-106">ASP.NET Core includes many built-in Tag Helpers to boost your productivity.</span></span> <span data-ttu-id="711d1-107">Esta seção fornece uma visão geral dos auxiliares de marcação internos.</span><span class="sxs-lookup"><span data-stu-id="711d1-107">This section provides an overview of the built-in Tag Helpers.</span></span>
+O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar sua produtividade. Esta seção fornece uma visão geral dos auxiliares de marcação internos.
 
 > [!NOTE]
-> <span data-ttu-id="711d1-108">Há auxiliares de marcação internos que não são abordados, pois eles são usados internamente pelo mecanismo de exibição do [Razor](xref:mvc/views/razor).</span><span class="sxs-lookup"><span data-stu-id="711d1-108">There are built-in Tag Helpers which aren't discussed, since they're used internally by the [Razor](xref:mvc/views/razor) view engine.</span></span> <span data-ttu-id="711d1-109">Isso inclui um auxiliar de marcação para o caractere ~, que se expande para o caminho raiz do site.</span><span class="sxs-lookup"><span data-stu-id="711d1-109">This includes a Tag Helper for the ~ character, which expands to the root path of the website.</span></span>
+> Há auxiliares de marcação internos que não são abordados, pois eles são usados internamente pelo mecanismo de exibição do [Razor](xref:mvc/views/razor). Isso inclui um auxiliar de marcação para o caractere ~, que se expande para o caminho raiz do site.
 
-## <a name="built-in-aspnet-core-tag-helpers"></a><span data-ttu-id="711d1-110">Auxiliares de marcação internos do ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="711d1-110">Built-in ASP.NET Core Tag Helpers</span></span>
+## <a name="built-in-aspnet-core-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
-<span data-ttu-id="711d1-111">**[Auxiliar de marcação de âncora](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-111">**[Anchor Tag Helper](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper)**</span></span>
+**[Auxiliar de marcação de âncora](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)**
 
-<span data-ttu-id="711d1-112">**[Auxiliar de marcação de cache](xref:mvc/views/tag-helpers/builtin-th/CacheTagHelper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-112">**[Cache Tag Helper](xref:mvc/views/tag-helpers/builtin-th/CacheTagHelper)**</span></span>
+**[Auxiliar de marcação de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)**
 
-<span data-ttu-id="711d1-113">**[Auxiliar de marcação de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/DistributedCacheTagHelper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-113">**[Distributed Cache Tag Helper](xref:mvc/views/tag-helpers/builtin-th/DistributedCacheTagHelper)**</span></span>
+**[Auxiliar de marcação de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)**
 
-<span data-ttu-id="711d1-114">**[Auxiliar de marcação de ambiente](xref:mvc/views/tag-helpers/builtin-th/EnvironmentTagHelper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-114">**[Environment Tag Helper](xref:mvc/views/tag-helpers/builtin-th/EnvironmentTagHelper)**</span></span>
+**[Auxiliar de marcação de ambiente](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)**
 
-[comment]: **[FormActionTagHelper](xref:mvc/views/tag-helpers/builtin-th/FormActionTagHelper)**
+[comment]: **[FormActionTagHelper](xref:mvc/views/tag-helpers/builtin-th/form-action-tag-helper)**
 
-<span data-ttu-id="711d1-115">**[Auxiliar de marcação de formulário](xref:mvc/views/working-with-forms#the-form-tag-helper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-115">**[Form Tag Helper](xref:mvc/views/working-with-forms#the-form-tag-helper)**</span></span>
+**[Auxiliar de marcação de formulário](xref:mvc/views/working-with-forms#the-form-tag-helper)**
 
-<span data-ttu-id="711d1-116">**[Auxiliar de marcação de imagem](xref:mvc/views/tag-helpers/builtin-th/ImageTagHelper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-116">**[Image Tag Helper](xref:mvc/views/tag-helpers/builtin-th/ImageTagHelper)**</span></span>
+**[Auxiliar de marcação de imagem](xref:mvc/views/tag-helpers/builtin-th/image-tag-helper)**
 
-<span data-ttu-id="711d1-117">**[Auxiliar de marcação de entrada](xref:mvc/views/working-with-forms#the-input-tag-helper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-117">**[Input Tag Helper](xref:mvc/views/working-with-forms#the-input-tag-helper)**</span></span>
+**[Auxiliar de marcação de entrada](xref:mvc/views/working-with-forms#the-input-tag-helper)**
 
-<span data-ttu-id="711d1-118">**[Auxiliar de marcação de rótulo](xref:mvc/views/working-with-forms#the-label-tag-helper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-118">**[Label Tag Helper](xref:mvc/views/working-with-forms#the-label-tag-helper)**</span></span>
+**[Auxiliar de marcação de rótulo](xref:mvc/views/working-with-forms#the-label-tag-helper)**
 
-[comment]: **[LinkTagHelper](xref:mvc/views/tag-helpers/builtin-th/LinkTagHelper)**
+[comment]: **[LinkTagHelper](xref:mvc/views/tag-helpers/builtin-th/link-tag-helper)**
 
-[comment]: **[OptionTagHelper](xref:mvc/views/tag-helpers/builtin-th/OptionTagHelper)**
+[comment]: **[OptionTagHelper](xref:mvc/views/tag-helpers/builtin-th/option-tag-helper)**
 
-[comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/ScriptTagTagHelper)**
+[comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/script-tag-helper)**
 
-<span data-ttu-id="711d1-119">**[Selecionar o auxiliar de marcação](xref:mvc/views/working-with-forms#the-select-tag-helper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-119">**[Select Tag Helper](xref:mvc/views/working-with-forms#the-select-tag-helper)**</span></span>
+**[Selecionar o auxiliar de marcação](xref:mvc/views/working-with-forms#the-select-tag-helper)**
 
-<span data-ttu-id="711d1-120">**[Auxiliar de marcação de área de texto](xref:mvc/views/working-with-forms#the-textarea-tag-helper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-120">**[Textarea Tag Helper](xref:mvc/views/working-with-forms#the-textarea-tag-helper)**</span></span>
+**[Auxiliar de marcação de área de texto](xref:mvc/views/working-with-forms#the-textarea-tag-helper)**
 
-<span data-ttu-id="711d1-121">**[Auxiliar de marcação de mensagem de validação](xref:mvc/views/working-with-forms#the-validation-message-tag-helper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-121">**[Validation Message Tag Helper](xref:mvc/views/working-with-forms#the-validation-message-tag-helper)**</span></span>
+**[Auxiliar de marcação de mensagem de validação](xref:mvc/views/working-with-forms#the-validation-message-tag-helper)**
 
-<span data-ttu-id="711d1-122">**[Resumo de validação de auxiliar de marcação](xref:mvc/views/working-with-forms#the-validation-summary-tag-helper)**</span><span class="sxs-lookup"><span data-stu-id="711d1-122">**[Validation Summary Tag Helper](xref:mvc/views/working-with-forms#the-validation-summary-tag-helper)**</span></span>
+**[Resumo de validação de auxiliar de marcação](xref:mvc/views/working-with-forms#the-validation-summary-tag-helper)**
 
-## <a name="additional-resources"></a><span data-ttu-id="711d1-123">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="711d1-123">Additional resources</span></span>
+## <a name="additional-resources"></a>Recursos adicionais
 
-* [<span data-ttu-id="711d1-124">Desenvolvimento no Lado do Cliente</span><span class="sxs-lookup"><span data-stu-id="711d1-124">Client-Side Development</span></span>](xref:client-side/index)
-* [<span data-ttu-id="711d1-125">Auxiliares de marcação</span><span class="sxs-lookup"><span data-stu-id="711d1-125">Tag Helpers</span></span>](xref:mvc/views/tag-helpers/intro)
+* [Desenvolvimento no Lado do Cliente](xref:client-side/index)
+* [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
