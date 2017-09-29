@@ -11,11 +11,11 @@ ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: cb39d74b9293b3ab341beba08d2f0af90261ca5f
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 881cabdbb7814b36d97a977b30389506b99d16b9
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Conceitos básicos de Middleware do ASP.NET Core
 
@@ -44,7 +44,7 @@ O pipeline de solicitação do ASP.NET Core consiste em uma sequência de repres
 
 ![Padrão de processamento de solicitação mostra uma solicitação que chegam, por meio de três middlewares e a resposta sair do aplicativo de processamento. Cada middleware executa sua lógica e transmite a solicitação para o próximo middleware na instrução Next (). Depois que o middleware terceiro processa a solicitação, ele é lado através de duas middlewares anteriores para processamento adicional após as instruções Next () por sua vez antes de sair do aplicativo como uma resposta ao cliente.](middleware/_static/request-delegate-pipeline.png)
 
-Cada representante pode executar operações antes e após o próximo delegado. Um delegado também pode optar por não passar uma solicitação para o próximo delegado, que é chamado de curto-circuito do pipeline de solicitação. Curto-circuito geralmente é desejável, porque ela permite que o trabalho desnecessário ser evitado. Por exemplo, o middleware de arquivo estático pode retornar uma solicitação para um arquivo estático e o restante do pipeline de curto-circuito. Delegados de tratamento de exceção precisam ser chamado no início do pipeline, para que podem detectar exceções que ocorrem em etapas posteriores do pipeline.
+Cada representante pode executar operações antes e após o próximo delegado. Um delegado também pode optar por não passar uma solicitação para o próximo delegado, que é chamado de curto-circuito do pipeline de solicitação. Curto-circuito geralmente é desejável, porque ela evita trabalho desnecessário. Por exemplo, o middleware de arquivo estático pode retornar uma solicitação para um arquivo estático e o restante do pipeline de curto-circuito. Delegados de tratamento de exceção precisam ser chamado no início do pipeline, para que podem detectar exceções que ocorrem em etapas posteriores do pipeline.
 
 O aplicativo do ASP.NET Core possíveis mais simples define um delegado de solicitação única que manipula todas as solicitações. Neste caso, não inclui um pipeline de solicitação real. Em vez disso, uma única função anônima é chamada em resposta a cada solicitação HTTP.
 

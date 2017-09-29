@@ -2,20 +2,20 @@
 title: "Integração de teste no núcleo do ASP.NET"
 author: ardalis
 description: "Como usar a integração do ASP.NET Core testes para garantir que os componentes de um aplicativo funcionem corretamente."
-keywords: "ASP.NET Core, testes de integração"
+keywords: "ASP.NET Core, integração de teste, Razor"
 ms.author: riande
 manager: wpickett
-ms.date: 02/14/2017
+ms.date: 09/25/2017
 ms.topic: article
 ms.assetid: 40d534f2-89b3-4b09-9c2c-3494bf9991c9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: testing/integration-testing
-ms.openlocfilehash: 02018299c9bd1d194c2c70c14f518786e803d572
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: fab1fb0e64debd8488713b3518cb3bc90182616b
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Integração de teste no núcleo do ASP.NET
 
@@ -64,6 +64,23 @@ Observe que não é realmente está tentando testar a exatidão do verificador d
 ![Gerenciador de Testes](integration-testing/_static/test-explorer.png)
 
 Você pode aprender mais sobre os testes de unidade no [testes de unidade](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) artigo.
+
+
+### <a name="integration-testing-mvcrazor"></a>Integração de teste/Razor do Mvc
+
+Projetos de teste que contêm modos de exibição Razor exigem `<PreserveCompilationContext>` ser definido como true no *. csproj* arquivo:
+
+
+```xml
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+```
+
+Este elemento de projetos irá gerar um erro semelhante à seguinte:
+```
+Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: 'One or more compilation failures occurred:
+ooebhccx.1bd(4,62): error CS0012: The type 'Attribute' is defined in an assembly that is not referenced. You must add a reference to assembly 'netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51'.
+```
+
 
 ## <a name="refactoring-to-use-middleware"></a>Para usar o middleware de refatoração
 
@@ -134,6 +151,6 @@ Seguindo essa refatoração estiver certo de que o aplicativo web ainda funciona
 
 ## <a name="resources"></a>Recursos
 
-* [Testes de unidade](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [Teste de unidade](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Middleware](xref:fundamentals/middleware)
-* [Testando controladores](xref:mvc/controllers/testing)
+* [Testando os controladores](xref:mvc/controllers/testing)

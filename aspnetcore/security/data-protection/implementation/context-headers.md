@@ -11,11 +11,11 @@ ms.assetid: d026a58c-67f4-411e-a410-c35f29c2c517
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: 5688ff2c36907231f88d45cef4ae1b1c60ab44ab
-ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
+ms.openlocfilehash: a47d2f91e6764bf6760ea559f1e2753e966753e3
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="context-headers"></a>Cabeçalhos de contexto
 
@@ -63,14 +63,12 @@ Por exemplo, considere o caso em que o algoritmo de criptografia simétrica de b
 
 Primeiro, permitem (K_E | | K_H) = SP800_108_CTR (prf = HMACSHA512, chave = "", rótulo = "", contexto = ""), onde | K_E | = 192 bits e | K_H | = 256 bits por algoritmos especificados. Isso leva a K_E = 5BB6. 21DD e K_H = A04A. 00A9 no exemplo a seguir:
 
-<!-- literal_block {"ids": [], "xml:space": "preserve"} -->
-
 ```
 5B B6 C9 83 13 78 22 1D 8E 10 73 CA CF 65 8E B0
-   61 62 42 71 CB 83 21 DD A0 4A 05 00 5B AB C0 A2
-   49 6F A5 61 E3 E2 49 87 AA 63 55 CD 74 0A DA C4
-   B7 92 3D BF 59 90 00 A9
-   ```
+61 62 42 71 CB 83 21 DD A0 4A 05 00 5B AB C0 A2
+49 6F A5 61 E3 E2 49 87 AA 63 55 CD 74 0A DA C4
+B7 92 3D BF 59 90 00 A9
+```
 
 Em seguida, calcular Enc_CBC (K_E, IV, "") para AES-192-CBC fornecido IV = 0 * e K_E como acima.
 
@@ -82,15 +80,13 @@ resultado: = D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
 
 Isso gera o cabeçalho de contexto completo abaixo:
 
-<!-- literal_block {"ids": [], "xml:space": "preserve"} -->
-
 ```
 00 00 00 00 00 18 00 00 00 10 00 00 00 20 00 00
-   00 20 F4 74 B1 87 2B 3B 53 E4 72 1D E1 9C 08 41
-   DB 6F D4 79 11 84 B9 96 09 2E E1 20 2F 36 E8 60
-   8F A8 FB D9 8A BD FF 54 02 F2 64 B1 D7 21 15 36
-   22 0C
-   ```
+00 20 F4 74 B1 87 2B 3B 53 E4 72 1D E1 9C 08 41
+DB 6F D4 79 11 84 B9 96 09 2E E1 20 2F 36 E8 60
+8F A8 FB D9 8A BD FF 54 02 F2 64 B1 D7 21 15 36
+22 0C
+```
 
 Esse cabeçalho de contexto é a impressão digital do par de algoritmo de criptografia autenticada (criptografia AES de 192 de CBC + HMACSHA256 validação). Os componentes, conforme descrito [acima](xref:security/data-protection/implementation/context-headers#data-protection-implementation-context-headers-cbc-components) são:
 
@@ -115,13 +111,11 @@ Esse cabeçalho de contexto é a impressão digital do par de algoritmo de cript
 
 Primeiro, permitem (K_E | | K_H) = SP800_108_CTR (prf = HMACSHA512, chave = "", rótulo = "", contexto = ""), onde | K_E | = 192 bits e | K_H | = 160 bits por algoritmos especificados. Isso leva a K_E = A219. E2BB e K_H = DC4A. B464 no exemplo a seguir:
 
-<!-- literal_block {"ids": [], "xml:space": "preserve"} -->
-
 ```
 A2 19 60 2F 83 A9 13 EA B0 61 3A 39 B8 A6 7E 22
-   61 D9 F8 6C 10 51 E2 BB DC 4A 00 D7 03 A2 48 3E
-   D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
-   ```
+61 D9 F8 6C 10 51 E2 BB DC 4A 00 D7 03 A2 48 3E
+D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
+```
 
 Em seguida, calcular Enc_CBC (K_E, IV, "") para 3DES-192-CBC fornecido IV = 0 * e K_E como acima.
 
@@ -133,13 +127,11 @@ resultado: = 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
 
 Isso gera o cabeçalho de contexto completo que é uma impressão digital do autenticado par de algoritmo do encryption (criptografia 3DES-192-CBC + HMACSHA1 validação), mostrado abaixo:
 
-<!-- literal_block {"ids": [], "xml:space": "preserve"} -->
-
 ```
 00 00 00 00 00 18 00 00 00 08 00 00 00 14 00 00
-   00 14 AB B1 00 F8 1E 53 E1 0E 76 EB 18 9B 35 CF
-   03 46 1D DF 87 7C D9 F4 B1 B4 D6 3A 75 55
-   ```
+00 14 AB B1 00 F8 1E 53 E1 0E 76 EB 18 9B 35 CF
+03 46 1D DF 87 7C D9 F4 B1 B4 D6 3A 75 55
+```
 
 Os componentes são divididos da seguinte maneira:
 
@@ -189,13 +181,11 @@ resultado: = E7DCCE66DF855A323A6BB7BD7A59BE45
 
 Isso gera o cabeçalho de contexto completo abaixo:
 
-<!-- literal_block {"ids": [], "xml:space": "preserve"} -->
-
 ```
 00 01 00 00 00 20 00 00 00 0C 00 00 00 10 00 00
-   00 10 E7 DC CE 66 DF 85 5A 32 3A 6B B7 BD 7A 59
-   BE 45
-   ```
+00 10 E7 DC CE 66 DF 85 5A 32 3A 6B B7 BD 7A 59
+BE 45
+```
 
 Os componentes são divididos da seguinte maneira:
 

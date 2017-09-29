@@ -11,15 +11,15 @@ ms.assetid: b3a5984d-e172-42eb-8a48-547e4acb6806
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration
-ms.openlocfilehash: 7d591259587766a932a14bb030c76274101d16ac
-ms.sourcegitcommit: f8f6b5934bd071a349f5bc1e389365c52b1c00fa
+ms.openlocfilehash: 379030df4ca91a38fce251aeaab9c5dfaf11e915
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="configuration-in-aspnet-core"></a>Configuração no ASP.NET Core
 
-[Rick Anderson](https://twitter.com/RickAndMSFT), [marca Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), e [Daniel Roth](https://github.com/danroth27)
+[Rick Anderson](https://twitter.com/RickAndMSFT), [marca Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [Daniel Roth](https://github.com/danroth27), e [Luke Latham](https://github.com/guardrex)
 
 A API de configuração fornece uma maneira de configurar um aplicativo baseado em uma lista de pares nome-valor. Configuração é lida em tempo de execução de várias fontes. Os pares nome-valor podem ser agrupados em uma hierarquia de vários níveis. Há provedores de configuração para:
 
@@ -295,55 +295,187 @@ key3=value_from_json_3
 
 ## <a name="commandline-configuration-provider"></a>Provedor de configuração de linha de comando
 
-O exemplo a seguir habilita o provedor de configuração de linha de comando último:
+O [provedor de configuração de linha de comando](/aspnet/core/api/microsoft.extensions.configuration.commandline.commandlineconfigurationprovider) recebe pares de chave-valor do argumento de linha de comando para a configuração em tempo de execução.
 
-[!code-csharp[Main](configuration/sample/CommandLine/Program.cs)]
+[Exibir ou baixar o exemplo de configuração de linha de comando](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/sample/CommandLine)
+
+### <a name="setting-up-the-provider"></a>Configurando o provedor
+
+# <a name="basic-configurationtabbasicconfiguration"></a>[Configuração básica](#tab/basicconfiguration)
+
+Para ativar a configuração de linha de comando, chame o `AddCommandLine` método de extensão em uma instância do [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder):
+
+[!code-csharp[Main](configuration/sample_snapshot/CommandLine/Program.cs?highlight=18,21)]
+
+Executar o código, a seguinte saída é exibida:
+
+```console
+MachineName: MairaPC
+Left: 1980
+```
+
+Passando pares chave-valor do argumento na linha de comando altera os valores de `Profile:MachineName` e `App:MainWindow:Left`:
+
+```console
+dotnet run Profile:MachineName=BartPC App:MainWindow:Left=1979
+```
+
+Exibe a janela do console:
+
+```console
+MachineName: BartPC
+Left: 1979
+```
+
+Para substituir a configuração fornecida por outros provedores de configuração com a configuração de linha de comando, chame `AddCommandLine` último em `ConfigurationBuilder`:
+
+[!code-csharp[Main](configuration/sample_snapshot/CommandLine/Program2.cs?range=11-16&highlight=1,5)]
+
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+Aplicativos típicos de 2. x ASP.NET Core usam o método estático de conveniência `CreateDefaultBuilder` para criar o host:
+
+[!code-csharp[Main](configuration/sample_snapshot/Program.cs?highlight=12)]
+
+`CreateDefaultBuilder`carrega a configuração opcional de *appSettings. JSON*, *appsettings. { . JSON de ambiente}*, [segredos do usuário](xref:security/app-secrets) (no `Development` ambiente), variáveis de ambiente e os argumentos de linha de comando. O provedor de configuração de linha de comando é chamado por último. Chamando o provedor última permite que os argumentos de linha de comando passados em tempo de execução para substituir a configuração definida por outros provedores de configuração chamado anteriormente.
+
+Observe que para *appsettings* arquivos `reloadOnChange` está habilitado. Argumentos de linha de comando são substituídos se o valor de configuração correspondente em uma *appsettings* arquivo for alterado depois que o aplicativo é iniciado.
+
+> [!NOTE]
+> Como uma alternativa ao uso de `CreateDefaultBuilder` método, criando um host usando [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) e criar manualmente a configuração com [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) é suportado no ASP.NET Core 2. x. Consulte a guia de 1. x do ASP.NET Core para obter mais informações.
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+Criar um [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) e chamar o `AddCommandLine` método para usar o provedor de configuração de linha de comando. Chamando o provedor última permite que os argumentos de linha de comando passados em tempo de execução para substituir a configuração definida por outros provedores de configuração chamado anteriormente. Aplicar a configuração de [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) com o `UseConfiguration` método:
+
+[!code-csharp[Main](configuration/sample_snapshot/CommandLine/Program2.cs?highlight=11,15,19)]
+
+---
+
+### <a name="arguments"></a>Arguments
+
+Argumentos passados na linha de comando devem estar de acordo com um dos dois formatos mostrados na tabela a seguir.
+
+| Formato de argumento                                                     | Exemplo        |
+| ------------------------------------------------------------------- | :------------: |
+| Um único argumento: um par chave-valor separados por um sinal de igual (`=`) | `key1=value`   |
+| Sequência de dois argumentos: um par chave-valor separados por um espaço    | `/key1 value1` |
+
+**Argumento único**
+
+O valor deve seguir um sinal de igual (`=`). O valor pode ser nulo (por exemplo, `mykey=`).
+
+A chave pode ter um prefixo.
+
+| Prefixo da chave               | Exemplo         |
+| ------------------------ | :-------------: |
+| Nenhum prefixo                | `key1=value1`   |
+| Um único traço (`-`) &#8224; | `-key2=value2`  |
+| Dois traços (`--`)        | `--key3=value3` |
+| Barra (`/`)      | `/key4=value4`  |
+
+&#8224; Uma chave com um prefixo de traço único (`-`) devem ser fornecidos em [alternar mapeamentos](#switch-mappings), descrito abaixo.
+
+Exemplo de comando:
+
+```console
+dotnet run key1=value1 -key2=value2 --key3=value3 /key4=value4
+```
+
+Observação: Se `-key1` não está presente no [alternar mapeamentos](#switch-mappings) fornecido para o provedor de configuração, um `FormatException` é gerada.
+
+**Sequência de dois argumentos**
+
+O valor não pode ser nulo e deve seguir a chave separada por um espaço.
+
+A chave deve ter um prefixo.
+
+| Prefixo da chave               | Exemplo         |
+| ------------------------ | :-------------: |
+| Um único traço (`-`) &#8224; | `-key1 value1`  |
+| Dois traços (`--`)        | `--key2 value2` |
+| Barra (`/`)      | `/key3 value3`  |
+
+&#8224; Uma chave com um prefixo de traço único (`-`) devem ser fornecidos em [alternar mapeamentos](#switch-mappings), descrito abaixo.
+
+Exemplo de comando:
+
+```console
+dotnet run -key1 value1 --key2 value2 /key3 value3
+```
+
+Observação: Se `-key1` não está presente no [alternar mapeamentos](#switch-mappings) fornecido para o provedor de configuração, um `FormatException` é gerada.
+
+### <a name="duplicate-keys"></a>Chaves duplicadas
+
+Se as chaves duplicadas são fornecidas, o último par chave-valor é usado.
+
+### <a name="switch-mappings"></a>Mapeamentos de comutador
+
+Ao criar manualmente a configuração com `ConfigurationBuilder`, opcionalmente, você pode fornecer um dicionário de mapeamentos de comutador para o `AddCommandLine` método. Mapeamentos de comutador permitem que você forneça a lógica de substituição do nome da chave.
+
+Quando o dicionário de mapeamentos de comutador é usado, o dicionário é verificado para uma chave que corresponde à chave fornecida por um argumento de linha de comando. Se a chave de linha de comando é encontrada no dicionário, o valor do dicionário (de substituição de chave) é passado para definir a configuração. Um mapeamento de comutador é necessário para qualquer chave de linha de comando prefixado com um único traço (`-`).
+
+Regras de chave de dicionário de mapeamentos do comutador:
+
+* Comutadores devem começar com um traço (`-`) ou traço duplo (`--`).
+* O dicionário de mapeamentos de chave não deve conter chaves duplicadas.
+
+No exemplo a seguir, o `GetSwitchMappings` método permite que seus argumentos de linha de comando usar um único traço (`-`) chave prefixo e evitar prefixos subchaves à esquerda.
+
+[!code-csharp[Main](configuration/sample/CommandLine/Program.cs?highlight=10-19,32)]
+
+Sem fornecer argumentos de linha de comando, o dicionário fornecido para `AddInMemoryCollection` define os valores de configuração. Execute o aplicativo com o seguinte comando:
+
+```console
+dotnet run
+```
+
+Exibe a janela do console:
+
+```console
+MachineName: RickPC
+Left: 1980
+```
 
 Use o seguinte para passar parâmetros de configuração:
 
 ```console
-dotnet run /Profile:MachineName=Bob /App:MainWindow:Left=1234
+dotnet run /Profile:MachineName=DahliaPC /App:MainWindow:Left=1984
 ```
 
-Que exibe:
+Exibe a janela do console:
 
 ```console
-Hello Bob
-Left 1234
+MachineName: DahliaPC
+Left: 1984
 ```
 
-O `GetSwitchMappings` método permite que você use `-` em vez de `/` e ele extrai os prefixos de subchave à esquerda. Por exemplo:
+Depois que o dicionário de mapeamentos de chave é criado, ele contém os dados mostrados na tabela a seguir.
+
+| Chave            | Valor                 |
+| -------------- | --------------------- |
+| `-MachineName` | `Profile:MachineName` |
+| `-Left`        | `App:MainWindow:Left` |
+
+Para demonstrar a troca de chaves usando o dicionário, execute o seguinte comando:
 
 ```console
-dotnet run -MachineName=Bob -Left=7734
+dotnet run -MachineName=ChadPC -Left=1988
 ```
 
-Exibe:
+As chaves de linha de comando são trocadas. A janela de console exibe os valores de configuração `Profile:MachineName` e `App:MainWindow:Left`:
 
 ```console
-Hello Bob
-Left 7734
+MachineName: ChadPC
+Left: 1988
 ```
-
-Argumentos de linha de comando devem incluir um valor (pode ser nulo). Por exemplo:
-
-```console
-dotnet run /Profile:MachineName=
-```
-
-É Okey, mas
-
-```console
-dotnet run /Profile:MachineName
-```
-
-resulta em uma exceção. Uma exceção será lançada se você especificar um prefixo de linha de comando de - ou -- para o qual não há nenhum mapeamento correspondente do comutador.
 
 ## <a name="the-webconfig-file"></a>O arquivo Web. config
 
 Um *Web. config* arquivo é necessário quando você hospeda o aplicativo no IIS ou IIS Express. *Web. config* ativa AspNetCoreModule no IIS para iniciar seu aplicativo. As configurações no *Web. config* habilitar AspNetCoreModule no IIS para iniciar seu aplicativo e definir outras configurações do IIS e módulos. Se você estiver usando o Visual Studio e excluir *Web. config*, Visual Studio irá criar um novo.
 
-### <a name="additional-notes"></a>Observações adicionais
+## <a name="additional-notes"></a>Observações adicionais
 
 * Injeção de dependência (DI) não está definido até depois `ConfigureServices` é invocado.
 * O sistema de configuração não está ciente de injeção de dependência.
@@ -351,9 +483,10 @@ Um *Web. config* arquivo é necessário quando você hospeda o aplicativo no IIS
   * `IConfigurationRoot`Usado para o nó raiz. Pode disparar um recarregamento.
   * `IConfigurationSection`Representa uma seção de valores de configuração. O `GetSection` e `GetChildren` métodos retornam um `IConfigurationSection`.
 
-### <a name="additional-resources"></a>Recursos adicionais
+## <a name="additional-resources"></a>Recursos adicionais
 
 * [Trabalhando com vários ambientes](environments.md)
 * [Armazenamento seguro dos segredos do aplicativo durante o desenvolvimento](../security/app-secrets.md)
+* [Hospedagem no núcleo do ASP.NET](xref:fundamentals/hosting)
 * [Injeção de dependência](dependency-injection.md)
 * [Provedor de configuração do Azure Key Vault](xref:security/key-vault-configuration)

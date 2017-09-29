@@ -1,7 +1,7 @@
 ---
 title: "Validação de modelo no ASP.NET MVC de núcleo"
-author: rick-anderson
-description: "Apresenta a validação do modelo no ASP.NET MVC de núcleo."
+author: rachelappel
+description: "Saiba mais sobre a validação do modelo no ASP.NET MVC de núcleo."
 keywords: "Validação de núcleo do ASP.NET MVC,"
 ms.author: riande
 manager: wpickett
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0874d3b677cee2859da9eb85b0573811abbed12a
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: efbc68e898cadd06d61fa69914fe08f3a12ba802
+ms.sourcegitcommit: 8b5733f1cd5d2c2b6d432bf82fcd4be2d2d6b2a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Introdução à validação do modelo no ASP.NET MVC de núcleo
 
@@ -36,7 +36,7 @@ Atributos de validação são uma maneira de configurar a validação do modelo 
 
 Abaixo está um anotado `Movie` modelo de um aplicativo que armazena informações sobre filmes e programas de TV. A maioria das propriedades é necessária e várias propriedades de cadeia de caracteres têm requisitos de comprimento. Além disso, há uma restrição de intervalo numérico em vigor para o `Price` propriedade de 0 a $999,99, juntamente com um atributo de validação personalizada.
 
-[!code-csharp[Main](validation/sample/Movie.cs?range=6-31)]
+[!code-csharp[Main](validation/sample/Movie.cs?range=6-29)]
 
 Simplesmente lê por meio do modelo revela as regras sobre os dados para este aplicativo, facilitando a manutenção do código. Abaixo estão vários atributos de validação interna populares:
 
@@ -61,6 +61,18 @@ Simplesmente lê por meio do modelo revela as regras sobre os dados para este ap
 MVC oferece suporte a qualquer atributo que deriva de `ValidationAttribute` para fins de validação. Muitos atributos de validação útil podem ser encontrados no [DataAnnotations](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations) namespace.
 
 Pode haver ocasiões em que você precisar de mais recursos de atributos internos fornecem. Para ocasiões, é possível criar atributos de validação personalizada derivando de `ValidationAttribute` ou alterar seu modelo para implementar `IValidatableObject`.
+
+## <a name="notes-on-the-use-of-the-required-attribute"></a>Observações sobre o uso do atributo necessário
+
+Não anulável [os tipos de valor](/dotnet/csharp/language-reference/keywords/value-types) (como `decimal`, `int`, `float`, e `DateTime`) são inerentemente necessárias e não é necessário o `Required` atributo. O aplicativo não executa nenhuma verificação de validação do lado do servidor para tipos não anuláveis são marcados `Required`.
+
+Associação de modelo MVC, que não está preocupada com atributos de validação e a validação, rejeita o envio de um campo de formulário que contém um valor ausente ou o espaço em branco para um tipo não anulável. Na ausência de um `BindRequired` atributo na propriedade de destino, a associação de modelo ignora dados ausentes para tipos não anuláveis, onde o campo de formulário está ausente nos dados de formulário de entrada.
+
+O [BindRequired atributo](/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute) (Consulte também [personalizar o comportamento de associação de modelo com atributos](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes)) é útil para garantir que os dados de formulário são concluídos. Quando aplicado a uma propriedade, o sistema de associação de modelo requer um valor para essa propriedade. Quando aplicado a um tipo, o sistema de associação de modelo requer valores para todas as propriedades desse tipo.
+
+Quando você usa um [Nullable\<T > tipo](/dotnet/csharp/programming-guide/nullable-types/) (por exemplo, `decimal?` ou `System.Nullable<decimal>`) e marcá-la `Required`, é realizada uma verificação de validação do lado do servidor, como se a propriedade fosse um tipo anulável padrão (para exemplo, um `string`).
+
+Validação do lado do cliente requer um valor para um campo de formulário que corresponde a uma propriedade de modelo que você marcou `Required` e para uma propriedade de tipo não anulável que ainda não marcado `Required`. `Required`pode ser usado para controlar a mensagem de erro de validação do lado do cliente.
 
 ## <a name="model-state"></a>Estado do modelo
 
@@ -104,15 +116,15 @@ Validação do lado do cliente é uma ótima conveniência para usuários. Ele s
 
 Você deve ter uma exibição com as referências de script JavaScript corretas em vigor para a validação do lado do cliente a funcionar como você vê aqui.
 
-[!code-html[Main](validation/sample/Views/Shared/_Layout.cshtml?range=37)]
+[!code-cshtml[Main](validation/sample/Views/Shared/_Layout.cshtml?range=37)]
 
-[!code-html[Main](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
+[!code-cshtml[Main](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
 Para validar dados e exibe mensagens de erro usando JavaScript, o MVC usa os atributos de validação, além das propriedades do modelo de metadados do tipo. Quando você usa o MVC para renderizar elementos de formulário de um modelo usando [auxiliares de marcação](xref:mvc/views/tag-helpers/intro) ou [auxiliares HTML](xref:mvc/views/overview) ele adicionará HTML 5 [atributos de dados](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) nos elementos de formulário que precisam de validação, como como mostrado abaixo. MVC gera o `data-` atributos para atributos internos e personalizados. Você pode exibir erros de validação no cliente usando os auxiliares de marca relevantes, como mostrado aqui:
 
-[!code-html[Main](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
+[!code-cshtml[Main](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
-Os auxiliares de marca acima renderizam HTML abaixo. Observe que o `data-` atributos no HTML de saída corresponde aos atributos de validação para o `ReleaseDate` propriedade. O `data-val-required` abaixo do atributo contém uma mensagem de erro a ser exibido se o usuário não preencher o campo de data de lançamento, e essa mensagem é exibida em que o acompanha `<span>` elemento.
+Os auxiliares de marca acima renderizam HTML abaixo. Observe que o `data-` atributos no HTML de saída corresponde aos atributos de validação para o `ReleaseDate` propriedade. O `data-val-required` abaixo do atributo contém uma mensagem de erro a ser exibido se o usuário não preencher o campo de data de lançamento, e essa mensagem é exibida em que o acompanha  **\<span >** elemento.
 
 ```html
 <form action="/Movies/Create" method="post">
@@ -147,11 +159,11 @@ Atributos que implementam esta interface podem adicionar atributos HTML para cam
 
 ```html
 <input class="form-control" type="datetime"
-data-val="true"
-data-val-classicmovie="Classic movies must have a release year earlier than 1960."
-data-val-classicmovie-year="1960"
-data-val-required="The ReleaseDate field is required."
-id="ReleaseDate" name="ReleaseDate" value="" />
+    data-val="true"
+    data-val-classicmovie="Classic movies must have a release year earlier than 1960."
+    data-val-classicmovie-year="1960"
+    data-val-required="The ReleaseDate field is required."
+    id="ReleaseDate" name="ReleaseDate" value="" />
 ```
 
 Validação discreta usa os dados a `data-` atributos para exibir mensagens de erro. No entanto, o jQuery não sabe sobre as regras ou mensagens até que você os adiciona do jQuery `validator` objeto. Isso é mostrado no exemplo a seguir que adiciona um método chamado `classicmovie` que contém o código de validação de cliente personalizadas para o jQuery `validator` objeto.

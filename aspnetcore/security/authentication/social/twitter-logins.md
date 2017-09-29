@@ -11,11 +11,11 @@ ms.assetid: E5931607-31C0-4B20-B416-85E3550F5EA8
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: 401836c3782e5d9d31b13d7c94eb2f955045fa0c
-ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
+ms.openlocfilehash: 87be0bdd4637cff609a4908b303a13272656e2a4
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="configuring-twitter-authentication"></a>Configurar a autenticação do Twitter
 
@@ -27,7 +27,7 @@ Este tutorial mostra como habilitar usuários para [entrar com sua conta do Twit
 
 ## <a name="create-the-app-in-twitter"></a>Criar o aplicativo no Twitter
 
-* Navegue até [https://apps.twitter.com/](https://apps.twitter.com/) e entrar. Se você ainda não tiver uma conta do Twitter, use o ** [inscrever-se agora](https://twitter.com/signup) ** link para criar uma. Depois de entrar, o **gerenciamento de aplicativos** página é mostrada:
+* Navegue até [https://apps.twitter.com/](https://apps.twitter.com/) e entrar. Se você ainda não tiver uma conta do Twitter, use o  **[inscrever-se agora](https://twitter.com/signup)**  link para criar uma. Depois de entrar, o **gerenciamento de aplicativos** página é mostrada:
 
 ![Abra o gerenciamento de aplicativos no Microsoft Edge do Twitter](index/_static/TwitterAppManage.png)
 
@@ -65,6 +65,10 @@ O modelo de projeto usado neste tutorial garante que [Microsoft.AspNetCore.Authe
 Adicione o serviço do Twitter no `ConfigureServices` método *Startup.cs* arquivo:
 
 ```csharp
+services.AddIdentity<ApplicationUser, IdentityRole>()
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
+
 services.AddAuthentication().AddTwitter(twitterOptions =>
 {
     twitterOptions.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
@@ -72,7 +76,7 @@ services.AddAuthentication().AddTwitter(twitterOptions =>
 });
 ```
 
-O `AddAuthentication` método só deve ser chamado uma vez ao adicionar vários provedores de autenticação. Chamadas subsequentes para que ele tem o potencial de substituição qualquer configurado anteriormente [AuthenticationOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.authenticationoptions) propriedades.
+[!INCLUDE[default settings configuration](includes/default-settings.md)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

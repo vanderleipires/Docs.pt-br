@@ -2,7 +2,7 @@
 title: "Configurando a proteção de dados"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: 0e4881a3-a94d-4e35-9c1c-f025d65dcff0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 39fab796c24456d61a6a103c4a3f7a8722b4718c
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 9361dcec89a0f35067181523cc56637d629614ff
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="configuring-data-protection"></a>Configurando a proteção de dados
 
@@ -67,8 +67,6 @@ Por padrão o sistema de proteção de dados isola os aplicativos uns dos outros
 
 <a name=data-protection-code-sample-application-name></a>
 
-<!-- literal_block {"ids": ["data-protection-code-sample-application-name"], "linenos": false, "names": ["data-protection-code-sample-application-name"], "xml:space": "preserve", "language": "csharp"} -->
-
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -113,7 +111,7 @@ Se o sistema de proteção de dados não é fornecido por um host do ASP.NET Cor
 
 A pilha de proteção de dados permite alterar o algoritmo padrão usado por chaves geradas recentemente. A maneira mais simples de fazer isso é chamar UseCryptographicAlgorithms de retorno de chamada de configuração, como no exemplo abaixo.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 services.AddDataProtection()
@@ -124,7 +122,7 @@ services.AddDataProtection()
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 services.AddDataProtection()
@@ -150,7 +148,7 @@ O desenvolvedor pode especificar manualmente uma implementação se desejado por
 
 ### <a name="specifying-custom-managed-algorithms"></a>Especificando algoritmos gerenciados personalizados
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Para especificar algoritmos gerenciados personalizados, crie uma instância de ManagedAuthenticatedEncryptorConfiguration que aponta para os tipos de implementação.
 
@@ -169,7 +167,7 @@ serviceCollection.AddDataProtection()
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Para especificar algoritmos gerenciados personalizados, crie uma instância de ManagedAuthenticatedEncryptionSettings que aponta para os tipos de implementação.
 
@@ -199,7 +197,7 @@ Geralmente o \*propriedades de tipo devem apontar para concreto, podem ser insta
 
 ### <a name="specifying-custom-windows-cng-algorithms"></a>Especificação de algoritmos personalizados de Windows CNG
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Para especificar um algoritmo personalizado do Windows CNG usando criptografia de modo CBC + validação HMAC, crie uma instância de CngCbcAuthenticatedEncryptorConfiguration que contém as informações de algoritmos.
 
@@ -220,7 +218,7 @@ services.AddDataProtection()
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Para especificar um algoritmo personalizado do Windows CNG usando criptografia de modo CBC + validação HMAC, crie uma instância de CngCbcAuthenticatedEncryptionSettings que contém as informações de algoritmos.
 
@@ -246,7 +244,7 @@ services.AddDataProtection()
 > [!NOTE]
 > O algoritmo de criptografia simétrica de bloco deve ter um comprimento de chave de ≥ 128 bits e um tamanho de bloco de ≥ 64 bits, e ele deve oferecer suporte à criptografia de modo CBC com preenchimento de PKCS #7. O algoritmo de hash deve ter um tamanho de resumo de > = 128 bits e deve oferecer suporte à que está sendo aberto com o sinalizador BCRYPT_ALG_HANDLE_HMAC_FLAG. O \*propriedades do provedor podem ser definidas para nulo para usar o provedor padrão para o algoritmo especificado. Consulte o [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) documentação para obter mais informações.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Para especificar um algoritmo personalizado do Windows CNG usando criptografia de modo Galois/contador + validação, crie uma instância de CngGcmAuthenticatedEncryptorConfiguration que contém as informações de algoritmos.
 
@@ -263,7 +261,7 @@ services.AddDataProtection()
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Para especificar um algoritmo personalizado do Windows CNG usando criptografia de modo Galois/contador + validação, crie uma instância de CngGcmAuthenticatedEncryptionSettings que contém as informações de algoritmos.
 
@@ -291,5 +289,5 @@ Embora não exposta como uma API de primeira classe, o sistema de proteção de 
 
 ### <a name="see-also"></a>Consulte também
 
-* [Cenários com suporte a DI não](non-di-scenarios.md)
-* [Política de largura de máquina](machine-wide-policy.md)
+* [Cenários sem reconhecimento de DI](non-di-scenarios.md)
+* [Política para todo o computador](machine-wide-policy.md)

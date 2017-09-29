@@ -2,7 +2,7 @@
 title: "Autorização personalizada com base em políticas"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: e422a1b2-dc4a-4bcc-b8d9-7ee62009b6a3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: dd7187f67887bb39a5ff425dcbae0927c7565cb8
-ms.sourcegitcommit: 41e3e007512c175a42910bc69678f3f0403cab04
+ms.openlocfilehash: 5021b5d20f6d9b9a4d8889f25b5e41f2c9306f64
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="custom-policy-based-authorization"></a>Autorização personalizada com base em políticas
 
@@ -24,8 +24,6 @@ ms.lasthandoff: 09/01/2017
 Nos bastidores a [autorização de função](roles.md#security-authorization-role-based) e [declarações de autorização](claims.md#security-authorization-claims-based) fazer uso de um requisito, um manipulador para o requisito e uma política de pré-configurada. Esses blocos de construção que você express avaliações de autorização no código, permitindo uma avançada reutilizável e a estrutura de autorização facilmente testáveis.
 
 Uma política de autorização é composta de um ou mais requisitos e registrada na inicialização do aplicativo como parte da configuração do serviço de autorização no `ConfigureServices` no *Startup.cs* arquivo.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -44,8 +42,6 @@ Aqui você pode ver que uma política de "Over21" é criada com um requisito, qu
 
 As políticas são aplicadas usando o `Authorize` atributo especificando o nome da política, por exemplo,
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 [Authorize(Policy="Over21")]
 public class AlcoholPurchaseRequirementsController : Controller
@@ -63,8 +59,6 @@ public class AlcoholPurchaseRequirementsController : Controller
 ## <a name="requirements"></a>Requisitos
 
 Um requisito de autorização é uma coleção de parâmetros de dados que uma política pode usar para avaliar a entidade de segurança do usuário atual. Em nossa política de idade mínima o requisito que temos é um único parâmetro, a idade mínima. Um requisito deve implementar `IAuthorizationRequirement`. Esta é uma interface de marcador vazio. Um requisito de idade mínima com parâmetros pode ser implementado como se segue;
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 public class MinimumAgeRequirement : IAuthorizationRequirement
@@ -89,8 +83,6 @@ Um manipulador de autorização é responsável pela avaliação de todas as pro
 <a name=security-authorization-handler-example></a>
 
 O manipulador de idade mínima pode ter esta aparência:
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 public class MinimumAgeHandler : AuthorizationHandler<MinimumAgeRequirement>
@@ -128,8 +120,6 @@ No código acima é primeiro verificar se a entidade de usuário atual tem uma d
 
 Manipuladores devem ser registrados na coleção de serviços durante a configuração, por exemplo,
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 
 public void ConfigureServices(IServiceCollection services)
@@ -165,8 +155,6 @@ Todos os manipuladores para um requisito, independentemente de você chamar dent
 ## <a name="why-would-i-want-multiple-handlers-for-a-requirement"></a>Por que eu quero vários manipuladores para um requisito?
 
 Em casos onde você deseja evaluation para estar em um **ou** base implementar vários manipuladores para um requisito. Por exemplo, a Microsoft tem portas que apenas abrir com cartões de chave. Se você deixar o seu cartão de chave em casa ao recepcionista imprime uma etiqueta temporária e abre a porta para você. Nesse cenário, você teria um requisito, *EnterBuilding*, mas vários manipuladores, cada um deles examinando um requisito.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 public class EnterBuildingRequirement : IAuthorizationRequirement
@@ -209,8 +197,6 @@ Pode haver ocasiões em que é simple de expressar em código que atendem a uma 
 
 Por exemplo anterior `BadgeEntryHandler` poderia ser reescrito como se segue;
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 services.AddAuthorization(options =>
     {
@@ -232,8 +218,6 @@ O `Handle` método você deve implementar um manipulador de autorização tem do
 Por exemplo, MVC passa uma instância de `Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext` na propriedade de recurso que é usada para acessar o HttpContext, RouteData e tudo mais MVC fornece.
 
 O uso do `Resource` é de propriedade específicos da estrutura. Usando informações de `Resource` propriedade limitará suas políticas de autorização para estruturas específicas. Você deve converter o `Resource` propriedade usando o `as` palavra-chave e, em seguida, verifique a conversão tenha êxito para garantir que seu código não falha com `InvalidCastExceptions` quando executado em outras estruturas;
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 if (context.Resource is Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext mvcContext)

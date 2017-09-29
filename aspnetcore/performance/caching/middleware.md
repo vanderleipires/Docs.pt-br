@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: f9267eab-2762-42ac-1638-4a25d2c9d67c
 ms.prod: asp.net-core
 uid: performance/caching/middleware
-ms.openlocfilehash: 07626ae7f40dc6f704d69d71cb7f95d318e6f503
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: f07b0cb44542b7da140d519e883c67901d6327e2
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Resposta de cache Middleware no núcleo do ASP.NET
 
@@ -105,6 +105,17 @@ Armazenamento em cache, o middleware de resposta é configurada por meio de cabe
 | Date | Quando atendendo do cache, o `Date` cabeçalho é definido pelo middleware se ele não foi fornecido na resposta original. |
 | Tamanho do conteúdo | Quando atendendo do cache, o `Content-Length` cabeçalho é definido pelo middleware se ele não foi fornecido na resposta original. |
 | Idade | O `Age` cabeçalho enviado na resposta original será ignorado. O middleware calcula um novo valor ao oferecer uma resposta em cache. |
+
+## <a name="caching-respects-request-cache-control-directives"></a>Cache respeita as diretivas de solicitação de controle de Cache
+
+O middleware respeita as regras de [especificação HTTP 1.1 cache](https://tools.ietf.org/html/rfc7234#section-5.2). As regras exigem um cache cumprir válido `Cache-Control` cabeçalho enviado pelo cliente. Sob a especificação de um cliente pode fazer solicitações com uma `no-cache` valor de cabeçalho e forçar um servidor para gerar uma nova resposta para cada solicitação. Atualmente, não há nenhum controle de desenvolvedor sobre o comportamento de cache ao usar o middleware porque o middleware segue a especificação oficial do cache.
+
+[Aperfeiçoamentos futuros para o middleware](https://github.com/aspnet/ResponseCaching/issues/96) permitirá a configurar o middleware para o cache de cenários em que a solicitação `Cache-Control` cabeçalho deve ser ignorado ao decidir servir uma resposta em cache. Se você buscar mais controle sobre o comportamento do cache, explore outros recursos de cache do ASP.NET Core. Consulte os tópicos a seguir:
+
+* [Introdução ao cache na memória no núcleo do ASP.NET](xref:performance/caching/memory)
+* [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
+* [Cache auxiliar de marca no núcleo do ASP.NET MVC](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
 
 ## <a name="troubleshooting"></a>Solução de problemas
 Se o comportamento do cache não está conforme o esperado, confirme se as respostas são armazenável em cache e é capaz de servido do cache, examinando os cabeçalhos de entrada da solicitação e cabeçalhos de saída da resposta. Habilitando [log](xref:fundamentals/logging) pode ajudar durante a depuração. Os logs de middleware de cache comportamento e quando uma resposta é recuperada do cache.

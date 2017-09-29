@@ -2,7 +2,7 @@
 title: "O roteamento para ações do controlador"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 03/14/2017
@@ -11,11 +11,11 @@ ms.assetid: 26250a4d-bf62-4d45-8549-26801cf956e9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/routing
-ms.openlocfilehash: da67124ffc874c4f83fff077c6429e9f3e571587
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 5a0b5399f7441035cb1231a009681ca22b07ab4e
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="routing-to-controller-actions"></a>O roteamento para ações do controlador
 
@@ -103,8 +103,6 @@ app.UseMvc(routes =>
 
 `UseMvc`e `UseMvcWithDefaultRoute` adicionar uma instância de `RouterMiddleware` para o pipeline de middleware. MVC não interage diretamente com middleware e usa o roteamento para tratar as solicitações. MVC está conectado às rotas por meio de uma instância de `MvcRouteHandler`. O código dentro de `UseMvc` é semelhante à seguinte:
 
-<!-- literal_block {"ids": [], "names": [], "backrefs": [], "dupnames": [], "xml:space": "preserve", "classes": []} -->
-
 ```csharp
 var routes = new RouteBuilder(app);
 
@@ -125,8 +123,6 @@ app.UseRouter(routes.Build());
 ## <a name="conventional-routing"></a>Roteamento convencional
 
 O `default` rota:
-
-<!-- literal_block {"ids": [], "names": [], "backrefs": [], "dupnames": [], "xml:space": "preserve", "classes": []} -->
 
 ```csharp
 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
@@ -152,15 +148,13 @@ Usando esse `default` rota, o caminho da URL `/Products/List` mapeia para o `Pro
 
 Você pode adicionar várias rotas dentro `UseMvc` adicionando mais chamadas para `MapRoute`. Isso permite que você definir várias convenções ou adicionar rotas convencionais que são dedicadas a uma ação específica, como:
 
-<!-- literal_block {"ids": [], "names": [], "backrefs": [], "dupnames": [], "xml:space": "preserve", "classes": []} -->
-
 ```csharp
 app.UseMvc(routes =>
 {
    routes.MapRoute("blog", "blog/{*article}",
             defaults: new { controller = "Blog", action = "Article" });
    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-}
+});
 ```
 
 O `blog` rota aqui é um *dedicada rota convencional*, que significa que ele usa o sistema de roteamento convencional, mas é dedicado a uma ação específica. Como `controller` e `action` não aparecem no modelo de rota como parâmetros, eles só podem ter os valores padrão e, portanto, essa rota sempre será mapeado para a ação `BlogController.Article`.
@@ -177,8 +171,6 @@ Como parte do processamento da solicitação, o MVC verificará se os valores de
 ### <a name="disambiguating-actions"></a>Ações desambiguação
 
 Quando duas ações correspondem por meio do roteamento, deve resolver a ambiguidade de MVC para escolher o candidato 'as' ou lançar uma exceção. Por exemplo:
-
-<!-- literal_block {"ids": [], "names": [], "backrefs": [], "dupnames": [], "xml:space": "preserve", "classes": []} -->
 
 ```csharp
 public class ProductsController : Controller
@@ -284,8 +276,6 @@ public class MyDemoController : Controller
 
 Roteamento de atributo também pode fazer uso do `Http[Verb]` atributos como `HttpPostAttribute`. Todos esses atributos podem aceitar um modelo de rota. Este exemplo mostra duas ações que correspondam ao mesmo modelo de rota:
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 [HttpGet("/products")]
 public IActionResult ListProducts()
@@ -339,8 +329,6 @@ Nomes de rota podem ser usados para gerar uma URL com base em uma rota específi
 ### <a name="combining-routes"></a>Rotas de combinação
 
 Para tornar o roteamento de atributo menos repetitivas, atributos de rota do controlador são combinados com atributos de rota as ações individuais. Os modelos de rota definidos no controlador são pré-anexados modelos nas ações de rota. Colocar um atributo da rota no controlador torna **todos os** ações no controlador de usam o roteamento de atributo.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 [Route("products")]
@@ -432,8 +420,6 @@ Para corresponder ao delimitador de literal de substituição de token `[` ou `]
 
 Dá suporte a roteamento definindo várias rotas que atingem a mesma ação de atributo. O uso mais comum é para simular o comportamento do *rota convencional* conforme mostrado no exemplo a seguir:
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 [Route("[controller]")]
 public class ProductsController : Controller
@@ -445,8 +431,6 @@ public class ProductsController : Controller
 ```
 
 Colocar vários atributos de rota no controlador significa que cada um deles serão combinadas com cada um dos atributos de rota sobre os métodos de ação.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 [Route("Store")]
@@ -460,8 +444,6 @@ public class ProductsController : Controller
 ```
 
 Quando vários atributos de rota (que implementam `IActionConstraint`) são colocados em uma ação, em seguida, cada restrição ação combina com o modelo de rota do atributo que definiu.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 [Route("api/[controller]")]
@@ -630,8 +612,6 @@ Os métodos de fábrica de resultados de ação sigam um padrão semelhante aos 
 
 Roteamento convencional pode usar um tipo especial de definição da rota chamado um *dedicada rota convencional*. No exemplo a seguir, a rota chamada `blog` é uma rota convencional dedicada.
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 app.UseMvc(routes =>
 {
@@ -687,8 +667,6 @@ Os primeiros dois controladores são membros das áreas e corresponder somente q
 Ao executar uma ação dentro de uma área, o valor para a rota `area` estarão disponíveis como um *valor ambiente* para roteamento para usar para a geração de URL. Isso significa que, por padrão áreas atuam *Autoadesivas* para geração de URL, como demonstrado pelo exemplo a seguir.
 
 [!code-csharp[Main](routing/sample/AreasRouting/Startup.cs?name=snippet3)]
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {"linenostart": 1}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#", "source": "/Users/shirhatti/src/Docs/aspnet/mvc/controllers/routing/sample/AreasRouting/Areas/Duck/Controllers/UsersController.cs"} -->
 
 [!code-csharp[Main](routing/sample/AreasRouting/Areas/Duck/Controllers/UsersController.cs)]
 

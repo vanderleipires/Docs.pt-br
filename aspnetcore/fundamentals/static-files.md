@@ -1,7 +1,7 @@
 ---
 title: "Trabalhando com arquivos estáticos no núcleo do ASP.NET"
 author: rick-anderson
-description: "Trabalhando com arquivos estáticos"
+description: "Trabalhando com arquivos estáticos no núcleo do ASP.NET"
 keywords: "ASP.NET Core, arquivos estáticos, ativos estáticos, HTML, CSS, JavaScript"
 ms.author: riande
 manager: wpickett
@@ -12,13 +12,13 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/static-files
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 11457cb8684e98147447303ae4653b74414a11fb
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 69a4542c9b2a0d7091d05d42029e68384b760dd7
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
-# <a name="introduction-to-working-with-static-files-in-aspnet-core"></a>Introdução ao trabalho com arquivos estáticos no núcleo do ASP.NET
+# <a name="working-with-static-files-in-aspnet-core"></a>Trabalhando com arquivos estáticos no núcleo do ASP.NET
 
 <a name=fundamentals-static-files></a>
 
@@ -199,7 +199,7 @@ Com o código acima, uma solicitação para um arquivo com um tipo de conteúdo 
 ### <a name="considerations"></a>Considerações
 
 >[!WARNING]
-> `UseDirectoryBrowser`e `UseStaticFiles` podem vazar segredos. É recomendável que você **não** directory Habilitar navegação em produção. Tenha cuidado sobre os diretórios que você habilite com `UseStaticFiles` ou `UseDirectoryBrowser` como o diretório inteiro e todos os subdiretórios estarão acessíveis. É recomendável manter o conteúdo público em seu próprio diretório, como * \<conteúdo raiz > / wwwroot*, longe de modos de exibição do aplicativo, arquivos de configuração, etc.
+> `UseDirectoryBrowser`e `UseStaticFiles` podem vazar segredos. É recomendável que você **não** directory Habilitar navegação em produção. Tenha cuidado sobre os diretórios que você habilite com `UseStaticFiles` ou `UseDirectoryBrowser` como o diretório inteiro e todos os subdiretórios estarão acessíveis. É recomendável manter o conteúdo público em seu próprio diretório, como  *\<conteúdo raiz > / wwwroot*, longe de modos de exibição do aplicativo, arquivos de configuração, etc.
 
 * As URLs para conteúdo exposto com `UseDirectoryBrowser` e `UseStaticFiles` estão sujeitos a diferenciação de maiusculas e minúsculas e restrições de caracteres de seu sistema de arquivos subjacente. Por exemplo, o Windows diferencia maiusculas de minúsculas, mas o Mac e Linux não são.
 

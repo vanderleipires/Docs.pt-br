@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: 066fe3b2486c63bd4de2ccb865ad432a67846d77
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 0e65f0e9f672f9f93256ebc039ea0db2e4ef5ae0
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Sintaxe do Razor para o ASP.NET Core
 
@@ -30,7 +30,7 @@ O idioma do Razor padrão é HTML. Renderização HTML do Razor não é diferent
 
 ```html
 <p>Hello World</p>
-   ```
+```
 
 É renderizado inalterado como `<p>Hello World</p>` pelo servidor.
 
@@ -42,15 +42,15 @@ Razor suporta c# e usa o `@` símbolo para fazer a transição de HTML para c#. 
 
 HTML que contém `@` símbolos talvez precise ser substituídos com um segundo `@` símbolo. Por exemplo:
 
-```html
+```cshtml
 <p>@@Username</p>
-   ```
+```
 
 seria renderizar HTML a seguir:
 
-```html
+```cshtml
 <p>@Username</p>
-   ```
+```
 
 <a name=razor-email-ref></a>
 
@@ -91,16 +91,14 @@ Que renderiza HTML a seguir:
 
 ```html
 <p>Last week: 7/7/2016 4:39:52 PM - TimeSpan.FromDays(7)</p>
-   ```
+```
 
 Você pode usar uma expressão explícita para concatenação de texto com um resultado da expressão:
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "none", "highlight_args": {"hl_lines": [5]}} -->
-
-```none
+```cshtml
 @{
     var joe = new Person("Joe", 33);
- }
+}
 
 <p>Age@(joe.Age)</p>
 ```
@@ -113,15 +111,15 @@ Sem expressão explícita, `<p>Age@joe.Age</p>` seria tratada como um endereço 
 
 Expressões em c# que são avaliadas como uma cadeia de caracteres estão codificada em HTML. Expressões em c# que avaliam `IHtmlContent` são renderizados diretamente por meio *IHtmlContent.WriteTo*. Expressões em c# que não retornam *IHtmlContent* são convertidos em uma cadeia de caracteres (por *ToString*) e codificado antes de serem processadas. Por exemplo, a seguinte marcação Razor:
 
-```html
+```cshtml
 @("<span>Hello World</span>")
-   ```
+```
 
 Renderiza HTML:
 
 ```html
 &lt;span&gt;Hello World&lt;/span&gt;
-   ```
+```
 
 Qual o navegador renderiza como:
 
@@ -134,15 +132,15 @@ Qual o navegador renderiza como:
 
 A seguinte marcação Razor:
 
-```html
+```cshtml
 @Html.Raw("<span>Hello World</span>")
-   ```
+```
 
 Renderiza HTML:
 
 ```html
 <span>Hello World</span>
-   ```
+```
 
 <a name=razor-code-blocks-label></a>
 
@@ -162,7 +160,7 @@ Geraria:
 
 ```html
 <p>The rendered result: Hello World</p>
-   ```
+```
 
 <a name=implicit-transitions-label></a>
 
@@ -170,7 +168,7 @@ Geraria:
 
 É o idioma padrão em um bloco de código c#, mas você pode fazer a transição para HTML. HTML dentro de um bloco de código fará a transição para renderizar HTML:
 
-```none
+```cshtml
 @{
     var inCSharp = true;
     <p>Now in HTML, was in C# @inCSharp</p>
@@ -183,9 +181,7 @@ Geraria:
 
 Para definir uma subseção de um bloco de código que deve renderizar HTML, coloque os caracteres a ser processado com o Razor `<text>` marca:
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "none", "highlight_args": {"hl_lines": [4]}} -->
-
-```none
+```cshtml
 @for (var i = 0; i < people.Length; i++)
 {
     var person = people[i];
@@ -201,9 +197,7 @@ Você geralmente usa essa abordagem quando você deseja renderizar HTML que não
 
 Para processar o restante de uma linha inteira como HTML dentro de um bloco de código, use o `@:` sintaxe:
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "none", "highlight_args": {"hl_lines": [4]}} -->
-
-```none
+```cshtml
 @for (var i = 0; i < people.Length; i++)
 {
     var person = people[i];
@@ -223,7 +217,7 @@ Estruturas de controle são uma extensão dos blocos de código. Todos os aspect
 
 O `@if` família controla quando o código é executado:
 
-```none
+```cshtml
 @if (value % 2 == 0)
 {
     <p>The value was even</p>
@@ -232,7 +226,7 @@ O `@if` família controla quando o código é executado:
 
 `else`e `else if` não exigem o `@` símbolo:
 
-```none
+```cshtml
 @if (value % 2 == 0)
 {
     <p>The value was even</p>
@@ -249,7 +243,7 @@ else
 
 Você pode usar uma instrução switch como esta:
 
-```none
+```cshtml
 @switch (value)
 {
     case 1:
@@ -268,7 +262,7 @@ Você pode usar uma instrução switch como esta:
 
 Você pode renderizar HTML modelado com instruções de controle de loop. Por exemplo, para renderizar uma lista de pessoas:
 
-```none
+```cshtml
 @{
     var people = new Person[]
     {
@@ -282,7 +276,7 @@ Você pode usar qualquer uma das seguintes instruções em loop:
 
 `@for`
 
-```none
+```cshtml
 @for (var i = 0; i < people.Length; i++)
 {
     var person = people[i];
@@ -293,7 +287,7 @@ Você pode usar qualquer uma das seguintes instruções em loop:
 
 `@foreach`
 
-```none
+```cshtml
 @foreach (var person in people)
 {
     <p>Name: @person.Name</p>
@@ -303,7 +297,7 @@ Você pode usar qualquer uma das seguintes instruções em loop:
 
 `@while`
 
-```none
+```cshtml
 @{ var i = 0; }
 @while (i < people.Length)
 {
@@ -317,7 +311,7 @@ Você pode usar qualquer uma das seguintes instruções em loop:
 
 `@do while`
 
-```none
+```cshtml
 @{ var i = 0; }
 @do
 {
@@ -333,7 +327,7 @@ Você pode usar qualquer uma das seguintes instruções em loop:
 
 No c# um usando a instrução é usada para garantir que um objeto é descartado. No Razor o mesmo mecanismo pode ser usado para criar auxiliares HTML que contém o conteúdo adicional. Por exemplo, é possível utilizar auxiliares HTML para renderizar uma marca de formulário com o `@using` instrução:
 
-```none
+```cshtml
 @using (Html.BeginForm())
 {
     <div>
@@ -356,7 +350,7 @@ Tratamento de exceção é semelhante ao c#:
 
 Razor tem a capacidade de proteger seções críticas com instruções de bloqueio:
 
-```none
+```cshtml
 @lock (SomeLock)
 {
     // Do critical section work
@@ -367,7 +361,7 @@ Razor tem a capacidade de proteger seções críticas com instruções de bloque
 
 Razor dá suporte a comentários c# e HTML. A marcação a seguir:
 
-```none
+```cshtml
 @{
     /* C# comment. */
     // Another C# comment.
@@ -377,14 +371,14 @@ Razor dá suporte a comentários c# e HTML. A marcação a seguir:
 
 É processado pelo servidor como:
 
-```none
+```cshtml
 <!-- HTML comment -->
 ```
 
 Comentários de Razor são removidos pelo servidor antes da página é renderizada. Razor usa `@*  *@` para delimitar os comentários. O código a seguir é comentado, para que o servidor não processará qualquer marcação:
 
-```none
- @*
+```cshtml
+@*
  @{
      /* C# comment. */
      // Another C# comment.
@@ -431,33 +425,33 @@ O `@using` diretiva adicionará o c# `using` diretiva para a página de razor ge
 
 O `@model` diretiva especifica o tipo de modelo passado para a página do Razor. Ela usa a seguinte sintaxe:
 
-```none
+```cshtml
 @model TypeNameOfModel
-   ```
+```
 
 Por exemplo, se você criar um aplicativo ASP.NET MVC de núcleo com contas de usuário individuais, o *Views/Account/Login.cshtml* exibição Razor contém a seguinte declaração de modelo:
 
-```csharp
+```cshtml
 @model LoginViewModel
-   ```
+```
 
 No exemplo anterior de classe, a classe gerada herda de `RazorPage<dynamic>`. Adicionando um `@model` você controlar o que é herdado. Por exemplo
 
-```csharp
+```cshtml
 @model LoginViewModel
-   ```
+```
 
 Gera a seguinte classe
 
 ```csharp
 public class _Views_Account_Login_cshtml : RazorPage<LoginViewModel>
-   ```
+```
 
 Páginas Razor expor um `Model` propriedade para acessar o modelo é passada para a página.
 
-```html
+```cshtml
 <div>The Login Email: @Model.Email</div>
-   ```
+```
 
 O `@model` diretiva especificado o tipo desta propriedade (especificando o `T` em `RazorPage<T>` que deriva de classe gerada para a página). Se você não especificar o `@model` diretiva a `Model` propriedade será do tipo `dynamic`. O valor do modelo é passado do controlador para o modo de exibição. Consulte [fortemente tipado modelos e o @model palavra-chave](../../tutorials/first-mvc-app/adding-model.md#strongly-typed-models-keyword-label) para obter mais informações.
 
@@ -465,9 +459,9 @@ O `@model` diretiva especificado o tipo desta propriedade (especificando o `T` e
 
 O `@inherits` diretiva lhe dá controle total sobre a classe que herda de sua página Razor:
 
-```none
+```cshtml
 @inherits TypeNameOfClassToInheritFrom
-   ```
+```
 
 Por exemplo, digamos que tivemos que o seguinte tipo de página Razor personalizado:
 
@@ -487,7 +481,7 @@ A seguinte página Razor fortemente tipada
 
 Gera essa marcação HTML:
 
-```none
+```cshtml
 <div>The Login Email: Rick@contoso.com</div>
 <div>Custom text: Hello World</div>
 ```
@@ -506,9 +500,9 @@ O `@inject` diretiva permite que você inserir um serviço da sua [contêiner de
 
 O `@functions` diretiva permite que você adicione conteúdo de nível de função para a página do Razor. A sintaxe é:
 
-```none
+```cshtml
 @functions { // C# Code }
-   ```
+```
 
 Por exemplo:
 
@@ -516,9 +510,9 @@ Por exemplo:
 
 Gera uma marcação HTML a seguir:
 
-```none
+```cshtml
 <div>From method: Hello</div>
-   ```
+```
 
 Gerado Razor c# é semelhante a:
 
