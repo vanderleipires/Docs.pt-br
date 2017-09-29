@@ -11,11 +11,11 @@ ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: aa22d072a6ef0ff105d67c2bfc5c335511d6c0cd
-ms.sourcegitcommit: aa6951e0c2e62209bf7c25e3b3138f04eb92898d
+ms.openlocfilehash: f173d03f55a1ce52222a75c023f9e8a20d5c60dc
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="security"></a>Segurança
 
@@ -27,10 +27,10 @@ ms.lasthandoff: 08/18/2017
     *   [Autenticação de dois fatores com SMS](authentication/2fa.md) 
     *   [Usando a autenticação de cookie sem o ASP.NET Core Identity](authentication/cookie.md)
     *   [Azure Active Directory](authentication/azure-active-directory/index.md)
-        *   [Integrando o Azure AD em um aplicativo Web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore)
-        *   [Chamando uma API Web ASP.NET Core em um aplicativo do WPF usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore)
+        *   [Integrando o Azure AD em um aplicativo Web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+        *   [Chamando uma API Web ASP.NET Core em um aplicativo do WPF usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
         *   [Chamando uma API Web em um aplicativo Web ASP.NET Core usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
-        *   [Um aplicativo Web ASP.NET Core com o Azure AD B2C](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c/)
+        *   [Um aplicativo Web ASP.NET Core com o Azure AD B2C](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
     *   [Protegendo aplicativos ASP.NET Core com o IdentityServer4](https://identityserver4.readthedocs.io)
 *   [Autorização](authorization/index.md)
     *   [Introdução](authorization/introduction.md)
@@ -79,7 +79,6 @@ ms.lasthandoff: 08/18/2017
 *   [Armazenamento seguro dos segredos do aplicativo durante o desenvolvimento](app-secrets.md)
 *   [Provedor de configuração do Azure Key Vault](key-vault-configuration.md)
 *   [Impondo o SSL](enforcing-ssl.md)
-*   [Configurando HTTPS para o desenvolvimento](https.md)
 *   [Falsificação anti-solicitação](anti-request-forgery.md)
 *   [Prevenindo ataques de redirecionamento abertos](preventing-open-redirects.md)
 *   [Prevenindo scripts entre sites](cross-site-scripting.md)

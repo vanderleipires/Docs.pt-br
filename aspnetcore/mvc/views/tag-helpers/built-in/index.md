@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: e7c8c64283ca3740698300689b10497f984cfd3e
-ms.sourcegitcommit: d022d4b96795ee473fa3847a1d8a8c7430423a86
+ms.openlocfilehash: dd732822a715df19c0ee4b6accad3455ad6537da
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
@@ -27,29 +27,29 @@ O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar s
 
 ## <a name="built-in-aspnet-core-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
-**[Auxiliar de marcação de âncora](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper)**
+**[Auxiliar de marcação de âncora](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)**
 
-**[Auxiliar de marcação de cache](xref:mvc/views/tag-helpers/builtin-th/CacheTagHelper)**
+**[Auxiliar de marcação de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)**
 
-**[Auxiliar de marcação de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/DistributedCacheTagHelper)**
+**[Auxiliar de marcação de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)**
 
-**[Auxiliar de marcação de ambiente](xref:mvc/views/tag-helpers/builtin-th/EnvironmentTagHelper)**
+**[Auxiliar de marcação de ambiente](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)**
 
-[comment]: **[FormActionTagHelper](xref:mvc/views/tag-helpers/builtin-th/FormActionTagHelper)**
+[comment]: **[FormActionTagHelper](xref:mvc/views/tag-helpers/builtin-th/form-action-tag-helper)**
 
 **[Auxiliar de marcação de formulário](xref:mvc/views/working-with-forms#the-form-tag-helper)**
 
-**[Auxiliar de marcação de imagem](xref:mvc/views/tag-helpers/builtin-th/ImageTagHelper)**
+**[Auxiliar de marcação de imagem](xref:mvc/views/tag-helpers/builtin-th/image-tag-helper)**
 
 **[Auxiliar de marcação de entrada](xref:mvc/views/working-with-forms#the-input-tag-helper)**
 
 **[Auxiliar de marcação de rótulo](xref:mvc/views/working-with-forms#the-label-tag-helper)**
 
-[comment]: **[LinkTagHelper](xref:mvc/views/tag-helpers/builtin-th/LinkTagHelper)**
+[comment]: **[LinkTagHelper](xref:mvc/views/tag-helpers/builtin-th/link-tag-helper)**
 
-[comment]: **[OptionTagHelper](xref:mvc/views/tag-helpers/builtin-th/OptionTagHelper)**
+[comment]: **[OptionTagHelper](xref:mvc/views/tag-helpers/builtin-th/option-tag-helper)**
 
-[comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/ScriptTagTagHelper)**
+[comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/script-tag-helper)**
 
 **[Selecionar o auxiliar de marcação](xref:mvc/views/working-with-forms#the-select-tag-helper)**
 
