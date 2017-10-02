@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0dbe5e3567bb4feea7e56cff3dcf75be5df88310
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: a93dae3edec73f1b5254aa60662834ca83de62fd
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>Usando JavaScriptServices para criar aplicativos de única página com o ASP.NET Core
 
@@ -24,7 +24,7 @@ Por [Scott Addie](https://github.com/scottaddie) e [Fiyaz Hasan](http://fiyazhas
 
 Um aplicativo de página única (SPA) é um tipo popular de aplicativo da web devido a sua experiência de usuário avançada inerente. Integração de estruturas SPA ou bibliotecas de cliente, como [Angular](https://angular.io/) ou [reagir](https://facebook.github.io/react/), com as estruturas do lado do servidor como o ASP.NET Core pode ser difícil. [JavaScriptServices](https://github.com/aspnet/JavaScriptServices) foi desenvolvido para reduzir a fricção no processo de integração. Ele permite que uma operação contínua entre o cliente diferentes e pilhas de tecnologia do servidor.
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/spa-services/sample)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/spa-services/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 <a name="what-is-js-services"></a>
 
@@ -264,7 +264,7 @@ Existem dois modos de configuração de tempo de execução principal:
     * Exclui os mapas de origem.
     * Otimiza o código do lado do cliente por meio de empacotamento e minimização.
 
-ASP.NET Core usa uma variável de ambiente denominada `ASPNETCORE_ENVIRONMENT` para armazenar o modo de configuração. Consulte ** [Configurando o ambiente](xref:fundamentals/environments#setting-the-environment) ** para obter mais informações.
+ASP.NET Core usa uma variável de ambiente denominada `ASPNETCORE_ENVIRONMENT` para armazenar o modo de configuração. Consulte  **[Configurando o ambiente](xref:fundamentals/environments#setting-the-environment)**  para obter mais informações.
 
 ### <a name="running-with-net-core-cli"></a>Executando com .NET Core CLI
 

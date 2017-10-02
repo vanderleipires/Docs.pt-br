@@ -1,7 +1,7 @@
 ---
 title: "Middleware no núcleo do ASP.NET de regravação de URL"
 author: guardrex
-description: "Uma introdução ao URL de regravação e redirecionar com instruções sobre como usar o Middleware de regravação de URL em aplicativos do ASP.NET Core."
+description: "Saiba mais sobre a URL de regravação e redirecionar com Middleware de regravação de URL em aplicativos do ASP.NET Core."
 keywords: "ASP.NET Core reescrever, URL de regravação de URL, URL de redirecionamento, redirecionamento de URL, middleware, apache_mod"
 ms.author: riande
 manager: wpickett
@@ -11,17 +11,17 @@ ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 44c78a6304eacc70cdee9bb0d9407376017abcac
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: 0a4024edf13651e2ed7e0f87e554e8ba8d895619
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware no núcleo do ASP.NET de regravação de URL
 
 Por [Luke Latham](https://github.com/guardrex) e [Mikael Mengistu](https://github.com/mikaelm12)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 Regravação de URL é o ato de modificar as URLs com base em uma ou mais regras predefinidas de solicitação. Regravação de URL criará uma abstração entre locais de recursos e seus endereços de forma que os locais e os endereços não estão vinculados firmemente. Há várias situações em que a regravação de URL é útil:
 * Movendo ou substituindo recursos de servidor temporariamente ou permanentemente mantendo localizadores estáveis para esses recursos

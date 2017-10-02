@@ -1,233 +1,341 @@
 ---
-title: "Visão geral de modos de exibição"
+title: "Modos de exibição no núcleo do ASP.NET MVC"
 author: ardalis
-description: 
-keywords: ASP.NET Core,
+description: "Saiba como exibições de lidar com a apresentação de dados do aplicativo e a interação do usuário no ASP.NET MVC de núcleo."
+keywords: ASP.NET Core, exibir, MVC, razor, viewmodel, viewbag, viewdata
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 09/26/2017
 ms.topic: article
 ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 3b33c13f2385d3b07ba9b6f0bc0fd560abc3735c
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: f40feb0466854080cc749a83c546ce857d850902
+ms.sourcegitcommit: e4a1df2a5a85f299322548809e547a79b380bb92
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/29/2017
 ---
-# <a name="rendering-html-with-views-in-aspnet-core-mvc"></a>Renderização HTML com exibições do MVC do ASP.NET Core
+# <a name="views-in-aspnet-core-mvc"></a>Modos de exibição no núcleo do ASP.NET MVC
 
-Por [Steve Smith](https://ardalis.com/)
+Por [Steve Smith](https://ardalis.com/) e [Luke Latham](https://github.com/guardrex)
 
-Controladores do ASP.NET MVC Core podem retornar resultados formatados usando *exibições*.
+No **M**odelo -**V**ibir -**C**ontroller (MVC) padrão, o *exibição* trata a interação de usuário e a apresentação de dados do aplicativo. Uma exibição é um modelo HTML com inseridos [marcação Razor](xref:mvc/views/razor). Marcação Razor é um código que interage com a marcação HTML para produzir uma página da Web que é enviada ao cliente.
 
-## <a name="what-are-views"></a>Quais são os modos de exibição?
+No ASP.NET MVC de núcleo, modos de exibição são *. cshtml* arquivos que usam o [linguagem de programação em c#](/dotnet/csharp/) na marcação Razor. Geralmente, arquivos de exibição são agrupados em pastas denominadas para cada do aplicativo [controladores](xref:mvc/controllers/actions). As pastas são armazenadas em um em um *exibições* pasta na raiz do aplicativo:
 
-O padrão Model-View-Controller (MVC), o *exibição* encapsula os detalhes de apresentação de interação do usuário com o aplicativo. Modos de exibição são modelos HTML com o código inserido que geram conteúdo para enviar ao cliente. Exibições usam [sintaxe Razor](razor.md), que permite que o código interagir com HTML com o mínimo de código ou cerimônia.
+![Pasta de modos de exibição no Gerenciador de soluções do Visual Studio é aberta com a pasta base aberta para mostrar os arquivos cshtml, Contact.cshtml e About.cshtml](overview/_static/views_solution_explorer.png)
 
-Modos de exibição do ASP.NET MVC de núcleo são *. cshtml* arquivos armazenados por padrão em um *exibições* pasta dentro do aplicativo. Normalmente, cada controlador terá sua própria pasta, na qual são modos de exibição para ações do controlador específico.
+O *início* controlador é representado por um *início* pasta dentro de *exibições* pasta. O *início* pasta contém os modos de exibição para o *sobre*, *contato*, e *índice* (home page) páginas da Web. Quando um usuário solicita uma dessas três páginas da Web, ações do controlador no *início* controlador determinar qual dos três modos de exibição é usado para criar e retornar uma página da Web para o usuário.
 
-![Pasta de modos de exibição no Gerenciador de soluções](overview/_static/views_solution_explorer.png)
+Use [layouts](xref:mvc/views/layout) para fornecer seções da página da Web consistente e reduzir as repetições de código. Layouts geralmente contêm o cabeçalho, elementos de navegação e o menu e o rodapé. O cabeçalho e rodapé geralmente contêm marcação boilerplate muitos elementos de metadados e links para recursos de script e estilo. Layouts de ajudam a evitar essa marcação clichê em exibições.
 
-Além dos modos de exibição de ação específica, [exibições parciais](partial.md), [layouts e outros arquivos de modo de exibição especial](layout.md) pode ser usado para ajudar a reduzir a repetição e permitir a reutilização em modos de exibição do aplicativo.
+[Exibições parciais](xref:mvc/views/partial) reduzir a duplicação de código por meio do gerenciamento de componentes reutilizáveis de modos de exibição. Por exemplo, uma exibição parcial é útil para uma biografia do autor em um site de blog que aparece em vários modos de exibição. Uma biografia do autor é comum exibir conteúdo e não requer código a ser executado para produzir o conteúdo da página da Web. Conteúdo de biografia do autor está disponível para o modo de exibição usado sozinho, associação de modelo para que usar uma exibição parcial para este tipo de conteúdo é ideal.
+
+[Exibir componentes](xref:mvc/views/view-components) são modos de exibição semelhantes para parcial em que elas permitem que você reduza código repetitivo, mas eles são apropriados para exibir o conteúdo que requer a execução de código do servidor para renderizar a página da Web. Exiba os componentes são úteis quando o conteúdo renderizado requer interação do banco de dados, como para um site do carrinho de compras. Componentes do modo de exibição não são limitados para associação de modelo para produzir saída de página da Web.
 
 ## <a name="benefits-of-using-views"></a>Benefícios do uso de exibições
 
-Fornecem exibições [separação de preocupações](http://deviq.com/separation-of-concerns/) dentro de um aplicativo MVC, encapsulando a marcação de nível de interface do usuário separadamente de lógica de negócios. ASP.NET MVC exibições usam [sintaxe Razor](razor.md) para alternar entre HTML marcação e o servidor lógica simples. Comuns, repetitivos aspectos da interface de usuário do aplicativo podem ser reutilizados facilmente entre exibições usando [diretivas compartilhadas e layout](layout.md) ou [exibições parciais](partial.md).
+Modos de exibição ajudam a estabelecer um [ **S**eparation **o**f **C**oncerns (SoC) design](http://deviq.com/separation-of-concerns/) dentro de um aplicativo MVC, separando a marcação de interface de usuário do outras partes do aplicativo. SoC design a seguir faz com que seu aplicativo modular, que fornece vários benefícios:
+
+* O aplicativo é mais fácil manter porque ela foi organizada melhor. Modos de exibição geralmente são agrupados pelo recurso de aplicativo. Isso torna mais fácil de localizar os modos de exibição relacionados ao trabalhar em um recurso.
+* As partes do aplicativo não estão estreitamente ligadas. Você pode criar e atualizar modos de exibição do aplicativo separadamente dos componentes de acesso de dados e lógica de negócios. Você pode modificar os modos de exibição do aplicativo sem precisar necessariamente atualizar outras partes do aplicativo.
+* É mais fácil de testar as partes da interface de usuário do aplicativo, como os modos de exibição são unidades separadas.
+* Devido à melhor organização, é menos provável que você vai acidentalmente seções de repetição da interface do usuário.
 
 ## <a name="creating-a-view"></a>Criar um modo de exibição
 
-Exibições que são específicas para um controlador são criadas no *modos de exibição / [ControllerName]* pasta. Modos de exibição que são compartilhados entre os controladores são colocados no */exibições/compartilhado* pasta. Nomeie o arquivo de exibição o mesmo que sua ação de controlador associado e adicione o *. cshtml* extensão de arquivo. Por exemplo, para criar uma exibição para o *sobre* ação o *início* controlador, você deve criar o *About.cshtml* do arquivo no  * /exibições/inicial*pasta.
+Exibições que são específicas para um controlador são criadas no *modos de exibição / [ControllerName]* pasta. Modos de exibição que são compartilhados entre os controladores são colocados no *exibições/compartilhadas* pasta. Para criar um modo de exibição, adicionar um novo arquivo e dê a ele o mesmo nome que sua ação de controlador associado com o *. cshtml* extensão de arquivo. Para criar uma exibição para o *sobre* ação no *início* controlador, crie um *About.cshtml* de arquivos no *exibições/inicial* pasta:
 
-Um exemplo de arquivo de exibição (*About.cshtml*):
+[!code-cshtml[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
+*Razor* marcação começa com o `@` símbolo. Código de execução c# instruções colocando c# em [blocos de código Razor](xref:mvc/views/razor#razor-code-blocks) definir chaves (`{ ... }`). Por exemplo, consulte a atribuição de "Sobre" `ViewData["Title"]` mostrado acima. Você pode exibir valores em HTML, simplesmente referenciando o valor com o `@` símbolo. Consulte o conteúdo de `<h2>` e `<h3>` elementos acima.
 
-*Razor* código é indicado pelo `@` símbolo. C# instruções são executadas dentro de blocos de código definir chaves do Razor (`{` `}`), como a atribuição de "Sobre" para o `ViewData["Title"]` elemento mostrado acima. Razor pode ser usado para exibir valores em HTML, simplesmente referenciando o valor com o `@` símbolo, conforme mostrado no `<h2>` e `<h3>` elementos acima.
+O conteúdo da exibição mostrado acima é apenas parte da página inteira que é renderizada para o usuário. O resto do layout da página e outros aspectos comuns do modo de exibição são especificados em outros arquivos de exibição. Para obter mais informações, consulte o [tópico Layout](xref:mvc/views/layout).
 
-Essa exibição se concentra na parte da saída para os quais é responsável. O resto do layout da página e outros aspectos comuns da exibição, são especificados em outro lugar. Saiba mais sobre [layout e a lógica de modo de exibição compartilhado](layout.md).
+## <a name="how-controllers-specify-views"></a>Como os controladores de especificam os modos de exibição
 
-## <a name="how-do-controllers-specify-views"></a>Como fazer controladores especificar modos de exibição?
-
-Modos de exibição normalmente retornados por ações como um `ViewResult`. O método de ação pode criar e retornar um `ViewResult` diretamente, mas mais comumente se herda seu controlador de `Controller`, você simplesmente usará o `View` método auxiliar, como este exemplo demonstra:
+Modos de exibição normalmente retornados por ações como um [ViewResult](/aspnet/core/api/microsoft.aspnetcore.mvc.viewresult), que é um tipo de [ActionResult](/aspnet/core/api/microsoft.aspnetcore.mvc.actionresult). O método de ação pode criar e retornar um `ViewResult` diretamente, mas que normalmente não é feito. Desde que a maioria dos controladores herdam [controlador](/aspnet/core/api/microsoft.aspnetcore.mvc.controller), basta usar o `View` método auxiliar para retornar o `ViewResult`:
 
 *HomeController*
 
 [!code-csharp[Main](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
 
-O `View` método auxiliar tem várias sobrecargas para facilitar o retorno de modos de exibição para os desenvolvedores de aplicativos. Opcionalmente, você pode especificar um modo de exibição para retornar, bem como um objeto de modelo para passar para o modo de exibição.
+Quando essa ação retorna, o *About.cshtml* exibição mostrada na seção anterior é renderizada como a seguinte página da Web:
 
-Quando essa ação retorna, o *About.cshtml* exibição mostrada acima é renderizada:
+![Sobre a página renderizada no navegador Edge](overview/_static/about-page.png)
 
-![Sobre a página](overview/_static/about-page.png)
+O `View` método auxiliar tem várias sobrecargas. Opcionalmente, você pode especificar:
+
+* Uma exibição explícita para retornar:
+
+  ```csharp
+  return View("Orders");
+  ```
+* Um [modelo](xref:mvc/models/model-binding) para passar para o modo de exibição:
+
+  ```csharp
+  return View(Orders);
+  ```
+* Um modo de exibição e um modelo:
+
+  ```csharp
+  return View("Orders", Orders);
+  ```
 
 ### <a name="view-discovery"></a>Descoberta do modo de exibição
 
-Quando uma ação retorna uma exibição, um processo chamado *descoberta do modo de exibição* ocorra. Esse processo determina qual arquivo de exibição será usado. A menos que um arquivo de modo de exibição específico for especificado, o tempo de execução procura por um modo de exibição específicos do controlador, em seguida, procura primeiro nome de exibição correspondente no *compartilhado* pasta.
+Quando uma ação retorna uma exibição, um processo chamado *descoberta do modo de exibição* ocorra. Esse processo determina qual arquivo de exibição é usado com base no nome do modo de exibição. 
 
-Quando uma ação retorna o `View` método, da seguinte forma `return View();`, o nome da ação é usado como o nome da exibição. Por exemplo, se isso foi chamado de um método de ação denominado "Index", seria equivalente para passar um nome de exibição de "Index". Um nome de exibição pode ser passado explicitamente para o método (`return View("SomeView");`). Em ambos os casos, a descoberta do modo de exibição procura um arquivo de exibição correspondente no:
+Quando uma ação retorna o `View` método (`return View();`) e um modo de exibição não for especificado, o nome da ação é usado como o nome da exibição. Por exemplo, o *sobre* `ActionResult` nome do método do controlador é usado para pesquisar um arquivo de modo de exibição denominado *About.cshtml*. Primeiro, o tempo de execução examina o *modos de exibição / [ControllerName]* pasta para o modo de exibição. Se não encontrar uma exibição de correspondência, ele procura o *compartilhado* pasta para o modo de exibição.
 
-   1. Modos de exibição /\<ControllerName > /\<ViewName >. cshtml
+Não importa se você retornar implicitamente o `ViewResult` com `return View();` ou passar explicitamente o nome de exibição para o `View` método com `return View("<ViewName>");`. Em ambos os casos, a exibição descoberta pesquisa um arquivo de exibição correspondente nesta ordem:
 
-   2. Exibições/compartilhadas/\<ViewName >. cshtml
+   1. *Modos de exibição /\[ControllerName]\[ViewName]. cshtml*
+   1. *Exibições/compartilhadas/\[ViewName]. cshtml*
 
->[!TIP]
-> É recomendável seguir a convenção de simplesmente retornar `View()` de ações quando possível, já que resulta em mais flexível e mais fácil para refatorar o código.
+Um caminho de arquivo do modo de exibição pode ser fornecido em vez de um nome de exibição. Se usar um caminho absoluto começando na raiz do aplicativo (se desejar começar com "/" ou "~ /"), o *. cshtml* extensão deve ser especificada:
 
-Um caminho de arquivo do modo de exibição pode ser fornecido em vez de um nome de exibição. Se usar um caminho absoluto começando na raiz do aplicativo (se desejar começar com "/" ou "~ /"), o *. cshtml* extensão deve ser especificada como parte do caminho do arquivo (por exemplo, `return View("Views/Home/About.cshtml");`). Como alternativa, você pode usar um caminho relativo do diretório específicos do controlador no *exibições* directory para especificar os modos de exibição em diretórios diferentes (por exemplo, `return View("../Manage/Index");` dentro de `HomeController`). Da mesma forma, você pode percorrer o diretório atual do controlador específico (por exemplo, `return View("./About");`). Observe que os caminhos relativos não usam o *. cshtml* extensão. Como mencionado anteriormente, siga a prática recomendada de organizar a estrutura de arquivos para modos de exibição refletir as relações entre os controladores, ações e modos de exibição para facilidade de manutenção e clareza.
+```csharp
+return View("Views/Home/About.cshtml");
+```
 
-> [!NOTE]
-> [Exibições parciais](partial.md) e [exibir componentes](view-components.md) usar mecanismos de descoberta semelhantes (mas não idêntica).
+Você também pode usar um caminho relativo para especificar os modos de exibição em diretórios diferentes sem o *. cshtml* extensão. Dentro de `HomeController`, você pode retornar o *índice* modo de exibição de seu *gerenciar* exibições com um caminho relativo:
 
-> [!NOTE]
-> Você pode personalizar a convenção padrão sobre onde os modos de exibição estão localizados dentro do aplicativo usando um personalizado `IViewLocationExpander`.
+```csharp
+return View("../Manage/Index");
+```
 
->[!TIP]
-> Nomes de exibição podem diferenciar maiusculas de minúsculas dependendo do sistema de arquivos subjacente. Para compatibilidade em sistemas operacionais, sempre corresponde caso entre o controlador e nomes de ação e as pastas de exibição associada e nomes de arquivos.
+Da mesma forma, você pode indicar o diretório atual do controlador específico com o ". /" prefixo:
+
+```csharp
+return View("./About");
+```
+
+[Exibições parciais](xref:mvc/views/partial) e [exibir componentes](xref:mvc/views/view-components) usar mecanismos de descoberta semelhantes (mas não idêntica).
+
+Você pode personalizar a convenção padrão para como os modos de exibição estão localizados dentro do aplicativo usando um personalizado [IViewLocationExpander](/aspnet/core/api/microsoft.aspnetcore.mvc.razor.iviewlocationexpander).
+
+Descoberta do modo de exibição depende Localizando exibir arquivos por nome de arquivo. Se o sistema de arquivos subjacente diferencia maiusculas de minúsculas, nomes de exibição são provavelmente diferencia maiusculas de minúsculas. Para compatibilidade em sistemas operacionais, diferenciar maiusculas de minúsculas entre o controlador e ação nomes e as pastas de exibição associada e arquivos. Se você encontrar um erro que não é possível encontrar um arquivo de exibição ao trabalhar com um sistema de arquivos diferencia maiusculas de minúsculas, confirme se o uso de maiusculas e minúsculas corresponde entre o arquivo de modo de exibição solicitado e o nome do arquivo de exibição atual.
+
+Siga a prática recomendada de organizar a estrutura de arquivos nos modos de exibição refletir as relações entre os controladores, ações e modos de exibição para facilidade de manutenção e clareza.
 
 ## <a name="passing-data-to-views"></a>Transmitindo dados para modos de exibição
 
-Você pode passar dados para modos de exibição usando vários mecanismos. A abordagem mais eficiente é especificar um *modelo* tipo no modo de exibição (conhecido como um *viewmodel*, para diferenciá-lo dos tipos de modelo de domínio de negócios) e, em seguida, passar uma instância deste tipo para o modo de exibição da ação. Recomendamos que você use um modelo ou um modelo de exibição para passar dados para um modo de exibição. Isso permite que o modo de exibição aproveitar a verificação de tipo forte. Você pode especificar um modelo para um modo de exibição usando o `@model` diretiva:
+Você pode passar dados para exibições com várias abordagens. A abordagem mais eficiente é especificar um [modelo](xref:mvc/models/model-binding) tipo na exibição. Esse modelo é conhecido como um *viewmodel*. Você pode passar uma instância do tipo viewmodel para o modo de exibição da ação.
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [1]}} -->
+Usar um viewmodel para passar dados para um modo de exibição permite que o modo de exibição tirar proveito dos *forte* verificação de tipo. *Tipagem forte* (ou *fortemente tipada*) significa que todas as variáveis e constante tem um tipo definido explicitamente (por exemplo, `string`, `int`, ou `DateTime`). A validade dos tipos usados em uma exibição é verificada em tempo de compilação.
 
-```html
+Ferramentas, tais como [Visual Studio](https://www.visualstudio.com/vs/) ou [código do Visual Studio](https://code.visualstudio.com/), também pode listar os membros (Propriedades de um modelo) enquanto você estiver adicionando-os a uma exibição, que ajuda você a escrever código mais rápido com menos erros. Esse recurso é chamado [IntelliSense](/visualstudio/ide/using-intellisense) nas ferramentas de Microsoft.
+
+Especifique um modelo usando o `@model` diretiva. Usar o modelo com `@Model`:
+
+```cshtml
 @model WebApplication1.ViewModels.Address
-   <h2>Contact</h2>
-   <address>
-       @Model.Street<br />
-       @Model.City, @Model.State @Model.PostalCode<br />
-       <abbr title="Phone">P:</abbr>
-       425.555.0100
-   </address>
-   ```
 
-Depois que um modelo tiver sido especificado para um modo de exibição, a instância enviada para o modo de exibição pode ser acessada em uma maneira fortemente tipado usando `@Model` como mostrado acima. Para fornecer uma instância do tipo de modelo para o modo de exibição, o controlador de passá-lo como um parâmetro:
+<h2>Contact</h2>
+<address>
+    @Model.Street<br>
+    @Model.City, @Model.State @Model.PostalCode<br>
+    <abbr title="Phone">P:</abbr> 425.555.0100
+</address>
+```
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [13]}} -->
+Para fornecer o modelo para o modo de exibição, o controlador de passá-lo como um parâmetro:
 
 ```csharp
 public IActionResult Contact()
-   {
-       ViewData["Message"] = "Your contact page.";
+{
+    ViewData["Message"] = "Your contact page.";
 
-       var viewModel = new Address()
-       {
-           Name = "Microsoft",
-           Street = "One Microsoft Way",
-           City = "Redmond",
-           State = "WA",
-           PostalCode = "98052-6399"
-       };
-       return View(viewModel);
-   }
-   ```
+    var viewModel = new Address()
+    {
+        Name = "Microsoft",
+        Street = "One Microsoft Way",
+        City = "Redmond",
+        State = "WA",
+        PostalCode = "98052-6399"
+    };
 
-Não existem restrições sobre os tipos que podem ser fornecidos para um modo de exibição como um modelo. É recomendável passando simples antigo CLR Object (POCO) Exibir modelos com o comportamento de pouca ou nenhuma lógica de negócios pode ser encapsulada em outro lugar no aplicativo. Um exemplo dessa abordagem é o *endereço* viewmodel usado no exemplo acima:
+    return View(viewModel);
+}
+```
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [13]}} -->
+Não existem restrições sobre os tipos de modelo que você pode fornecer a uma exibição. É recomendável usar **P**lain **O**ld **C**LR **O**viewmodels bjeto (POCO) com pouca ou nenhuma comportamento (métodos) definido. Geralmente, classes viewmodel são armazenadas no *modelos* pasta ou um separado *ViewModels* pasta na raiz do aplicativo. O *endereço* viewmodel usado no exemplo acima é um viewmodel POCO armazenado em um arquivo chamado *Address.cs*:
 
 ```csharp
 namespace WebApplication1.ViewModels
-   {
-       public class Address
-       {
-           public string Name { get; set; }
-           public string Street { get; set; }
-           public string City { get; set; }
-           public string State { get; set; }
-           public string PostalCode { get; set; }
-       }
-   }
-   ```
+{
+    public class Address
+    {
+        public string Name { get; set; }
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string PostalCode { get; set; }
+    }
+}
+```
 
 > [!NOTE]
-> Nada impede que você use as mesmas classes como seus tipos de modelo de negócios e seus tipos de modelo de exibição. No entanto, mantê-los separada permite que seus modos de exibição variar independentemente do seu modelo de domínio ou de persistência e pode oferecer alguns benefícios de segurança (para modelos que os usuários enviará para o aplicativo usando [modelo associação](../models/model-binding.md)).
+> Nada impede que você use as mesmas classes para seus tipos de viewmodel e seus tipos de modelo de negócios. No entanto, o uso de modelos separados permite que seus modos de exibição variar independentemente da lógica de negócios e dados de partes de acesso do seu aplicativo. Separação de modelos e viewmodels também oferece benefícios de segurança quando os modelos usam [associação de modelo](xref:mvc/models/model-binding) e [validação](xref:mvc/models/validation) para dados enviados para o aplicativo pelo usuário.
 
-### <a name="loosely-typed-data"></a>Sem rigidez de tipos de dados
+### <a name="weakly-typed-data-viewdata-and-viewbag"></a>Dados de tipo fraco (ViewData e ViewBag)
 
-Além dos modos de exibição fortemente tipados, todas as exibições têm acesso a uma coleção sem rigidez de tipos de dados. Essa mesma coleção pode ser referenciada através de `ViewData` ou `ViewBag` propriedades nos controladores e exibições. O `ViewBag` propriedade é um wrapper em torno de `ViewData` que fornece uma exibição dinâmica nessa coleção. Não é uma coleção separada.
+Além dos modos de exibição fortemente tipada, modos de exibição têm acesso a um *tipo fraco* (também chamado de *tipadas vagamente*) coleta de dados. Diferentemente dos tipos de alta seguras, *tipos fracos* (ou *perder tipos*) significa que você não declarar explicitamente o tipo de dados que você está usando. Você pode usar a coleta de dados de tipo fraco para a passagem de pequenas quantidades de dados dentro e fora de controladores e exibições.
 
-`ViewData`um objeto de dicionário que é acessado por meio de `string` chaves. Você pode armazenar e recuperar objetos nele, e você precisará converta-os para um tipo específico, quando você extraí-los. Você pode usar `ViewData` para passar dados de um controlador para modos de exibição, bem como em exibições (exibições parciais e layouts). Dados de cadeia de caracteres podem ser armazenados e usados diretamente, sem a necessidade de uma conversão.
+| Transmitindo dados entre um...                        | Exemplo                                                                        |
+| ------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Controlador e uma exibição                             | Preencher uma lista suspensa com dados.                                          |
+| Modo de exibição e um [exibição de layout](xref:mvc/views/layout)   | Definindo o  **\<título >** conteúdo de elemento na exibição de layout de um arquivo de modo de exibição.  |
+| [Exibição parcial](xref:mvc/views/partial) e um modo de exibição | Um widget que exibe dados com base na página da Web que o usuário solicitou.      |
 
-Definir alguns valores para `ViewData` em uma ação:
+Essa coleção pode ser referenciada por meio de `ViewData` ou `ViewBag` propriedades nos controladores e exibições. O `ViewData` propriedade é um dicionário de objetos do tipo fraco. O `ViewBag` propriedade é um wrapper em torno de `ViewData` que fornece propriedades dinâmicas para subjacente `ViewData` coleção.
+
+`ViewData`e `ViewBag` são resolvidos dinamicamente em tempo de execução. Já que não oferecem a verificação de tipo de tempo de compilação, ambos são geralmente mais propensas a erros que o uso de um viewmodel. Por esse motivo, alguns desenvolvedores preferem usar minimamente ou nunca `ViewData` e `ViewBag`.
+
+**ViewData**
+
+`ViewData`é um [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) acessado por meio do objeto `string` chaves. Dados de cadeia de caracteres podem ser armazenados e usados diretamente, sem a necessidade de uma conversão, mas você deve converter outros `ViewData` valores para tipos específicos de objeto quando você extraí-los. Você pode usar `ViewData` para passar dados de controladores para modos de exibição e em modos de exibição, incluindo [exibições parciais](xref:mvc/views/partial) e [layouts](xref:mvc/views/layout).
+
+A seguir está um exemplo que define valores para uma saudação e um endereço usando `ViewData` em uma ação:
 
 ```csharp
 public IActionResult SomeAction()
-   {
-       ViewData["Greeting"] = "Hello";
-       ViewData["Address"]  = new Address()
-       {
-           Name = "Steve",
-           Street = "123 Main St",
-           City = "Hudson",
-           State = "OH",
-           PostalCode = "44236"
-       };
+{
+    ViewData["Greeting"] = "Hello";
+    ViewData["Address"]  = new Address()
+    {
+        Name = "Steve",
+        Street = "123 Main St",
+        City = "Hudson",
+        State = "OH",
+        PostalCode = "44236"
+    };
 
-       return View();
-   }
-   ```
+    return View();
+}
+```
 
 Trabalhar com os dados em um modo de exibição:
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [3, 6]}} -->
-
-```html
+```cshtml
 @{
-       // Requires cast
-       var address = ViewData["Address"] as Address;
-   }
+    // Since Address isn't a string, it requires a cast.
+    var address = ViewData["Address"] as Address;
+}
 
-   @ViewData["Greeting"] World!
+@ViewData["Greeting"] World!
 
-   <address>
-       @address.Name<br />
-       @address.Street<br />
-       @address.City, @address.State @address.PostalCode
-   </address>
-   ```
+<address>
+    @address.Name<br>
+    @address.Street<br>
+    @address.City, @address.State @address.PostalCode
+</address>
+```
 
-O `ViewBag` objetos fornece acesso dinâmico para os objetos armazenados em `ViewData`. Isso pode ser mais conveniente trabalhar com, pois ele não requer conversão. O mesmo exemplo acima, usando `ViewBag` em vez de um fortemente tipada `address` instância no modo de exibição:
+**ViewBag**
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [1, 4, 5, 6]}} -->
+`ViewBag`é um [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) objeto que fornece acesso dinâmico para os objetos armazenados em `ViewData`. `ViewBag`pode ser mais conveniente trabalhar com, pois ele não requer conversão. O exemplo a seguir mostra como usar `ViewBag` com o mesmo resultado usando `ViewData` acima:
 
-```html
+```csharp
+public IActionResult SomeAction()
+{
+    ViewBag.Greeting = "Hello";
+    ViewBag.Address  = new Address()
+    {
+        Name = "Steve",
+        Street = "123 Main St",
+        City = "Hudson",
+        State = "OH",
+        PostalCode = "44236"
+    };
+
+    return View();
+}
+```
+
+```cshtml
 @ViewBag.Greeting World!
 
-   <address>
-       @ViewBag.Address.Name<br />
-       @ViewBag.Address.Street<br />
-       @ViewBag.Address.City, @ViewBag.Address.State @ViewBag.Address.PostalCode
-   </address>
-   ```
+<address>
+    @ViewBag.Address.Name<br>
+    @ViewBag.Address.Street<br>
+    @ViewBag.Address.City, @ViewBag.Address.State @ViewBag.Address.PostalCode
+</address>
+```
 
-> [!NOTE]
-> Desde que se referem ao mesmo subjacente `ViewData` coleção, você pode misturar e corresponder entre `ViewData` e `ViewBag` ao ler e gravar valores, se for conveniente.
+**Usando ViewData e ViewBag simultaneamente**
+
+Como `ViewData` e `ViewBag` consulte subjacente mesmo `ViewData` coleção, você pode usar ambos `ViewData` e `ViewBag` e combinação de entre elas ao ler e gravar valores.
+
+Definir o título usando `ViewBag` e a descrição usando `ViewData` na parte superior de um *About.cshtml* exibição:
+
+```cshtml
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "About Contoso";
+    ViewData["Description"] = "Let us tell you about Contoso's philosophy and mission.";
+}
+```
+
+Ler as propriedades, mas reverter o uso de `ViewData` e `ViewBag`. No *cshtml* de arquivos, obtenha o título usando `ViewData` e obter a descrição usando `ViewBag`:
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewBag.Description">
+    ...
+```
+
+Lembre-se de que cadeias de caracteres não exigem uma conversão para `ViewData`. Você pode usar `@ViewData["Title"]` sem conversão.
+
+Usando `ViewData` e `ViewBag` o mesmo Works de tempo, como faz a combinação de ler e gravar as propriedades. A seguinte marcação é processada:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Contoso</title>
+    <meta name="description" content="Let us tell you about Contoso's philosophy and mission.">
+    ...
+```
+
+**Resumo das diferenças entre ViewData e ViewBag**
+
+* `ViewData`
+  * Deriva [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary); portanto, tem as propriedades de dicionário que podem ser útil, por exemplo, `ContainsKey`, `Add`, `Remove`, e `Clear`.
+  * Chaves no dicionário são cadeias de caracteres, por isso é permitido espaço em branco. Exemplo: `ViewData["Some Key With Whitespace"]`
+  * Qualquer tipo diferente de um `string` devem ser convertidos no modo de exibição para usar `ViewData`.
+* `ViewBag`
+  * Deriva [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata), que permite a criação de propriedades dinâmicas usando a notação de ponto (`@ViewBag.SomeKey = <value or object>`), e nenhuma conversão é necessária. A sintaxe de `ViewBag` torna mais rápida adicionar controladores e exibições.
+  * Mais simples verificar se há valores nulos. Exemplo: `@ViewBag.Person?.Name`
+
+**Quando usar ViewData ou ViewBag**
+
+Ambos `ViewData` e `ViewBag` são igualmente abordagens válidas para transmitir pequenas quantidades de dados entre os controladores e exibições. A escolha de um para usar (ou ambos) se reduz a preferência pessoal ou a preferência de sua organização. Em geral, os desenvolvedores estão consistentes em seu uso de um ou outro. Eles usam `ViewData` everywhere ou use `ViewBag` em qualquer lugar, mas você pode misturar e combiná-los. Como ambos são resolvidos dinamicamente em tempo de execução e, portanto, propenso a erros de tempo de execução, use-os cuidadosamente. Alguns desenvolvedores evitá-los completamente.
 
 ### <a name="dynamic-views"></a>Modos de exibição dinâmicos
 
-Modos de exibição que não declare um tipo de modelo, mas tem uma instância de modelo passada para elas podem fazer referência a esta instância dinamicamente. Por exemplo, se uma instância do `Address` é passado para uma exibição que não declara um `@model`, a exibição ainda será capaz de fazer referência às propriedades da instância dinamicamente conforme mostrado:
+Modos de exibição que não declare um modelo de tipo usando `@model` , mas que tem uma instância de modelo passada a eles (por exemplo, `return View(Address);`) pode fazer referência a propriedades da instância dinamicamente:
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [13, 16, 17, 18]}} -->
-
-```html
+```cshtml
 <address>
-       @Model.Street<br />
-       @Model.City, @Model.State @Model.PostalCode<br />
-       <abbr title="Phone">P:</abbr>
-       425.555.0100
-   </address>
-   ```
+    @Model.Street<br>
+    @Model.City, @Model.State @Model.PostalCode<br>
+    <abbr title="Phone">P:</abbr> 425.555.0100
+</address>
+```
 
-Esse recurso pode oferecer alguma flexibilidade, mas não oferece nenhuma proteção de compilação ou o IntelliSense. Se a propriedade não existir, a página falhará em tempo de execução.
+Esse recurso oferece a flexibilidade, mas não oferece proteção de compilação ou o IntelliSense. Se a propriedade não existir, falha na geração de página da Web em tempo de execução.
 
 ## <a name="more-view-features"></a>Mais recursos de exibição
 
-[Auxiliares da marca](tag-helpers/intro.md) mais fácil adicionar o comportamento do lado do servidor para marcas HTML existentes, evitando a necessidade de usar código personalizado ou auxiliares em modos de exibição. Os auxiliares de marca são aplicados como atributos para elementos HTML, que são ignorados por editores que não estão familiarizados com eles, permitindo que a marcação de exibição a ser editado e renderizados em uma variedade de ferramentas. Auxiliares de marcação têm muitos usos e, em particular pode tornar [trabalhar com formulários](working-with-forms.md) muito mais fácil.
+[Auxiliares da marca](xref:mvc/views/tag-helpers/intro) mais fácil adicionar o comportamento do lado do servidor para marcas HTML existentes. O uso de auxiliares de marcação evita a necessidade de escrever código personalizado ou auxiliares em suas exibições. Auxiliares de marca são aplicados como atributos para elementos HTML e são ignorados por editores que não podem processá-los. Isso permite que você edite e renderizar a marcação de exibição em uma variedade de ferramentas.
 
-Gera a marcação HTML personalizada pode ser obtido com muitos auxiliares HTML interno e uma lógica mais complexa da interface do usuário (possivelmente com seus próprios requisitos de dados) pode ser encapsulada em [exibir componentes](view-components.md). Exibir componentes fornecem a mesma separação de preocupações que oferecem controladores e exibições e podem eliminar a necessidade de ações e modos de exibição para lidar com dados usados por elementos de interface de usuário comuns.
+Gera a marcação HTML personalizada pode ser obtido com muitos auxiliares HTML interno. Lógica de interface de usuário mais complexa pode ser tratada por [exibir componentes](xref:mvc/views/view-components). Exibir componentes fornecem o mesmo SoC que controladores e oferecem exibições. Eles podem eliminar a necessidade de ações e modos de exibição que lidam com dados usados por elementos de interface de usuário comuns.
 
-Como muitos outros aspectos do ASP.NET Core, exibições de suporte [injeção de dependência](../../fundamentals/dependency-injection.md), permitindo que os serviços estejam [injetadas nos modos de exibição](dependency-injection.md).
+Como muitos outros aspectos do ASP.NET Core, exibições de suporte [injeção de dependência](xref:fundamentals/dependency-injection), permitindo que os serviços estejam [injetadas nos modos de exibição](xref:mvc/views/dependency-injection).

@@ -5,16 +5,16 @@ description:
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 08/03/2017
+ms.date: 09/03/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: index
-ms.openlocfilehash: 10831719630bc638ce2f7424f53548518868d433
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 748c8c0b9dd0e6eab0d7347bbf89ed80c10bdb54
+ms.sourcegitcommit: e4a1df2a5a85f299322548809e547a79b380bb92
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="introduction-to-aspnet-core"></a>Introdução ao ASP.NET Core
 
@@ -22,7 +22,7 @@ Por [Daniel Roth](https://github.com/danroth27), [Rick Anderson](https://twitter
 
 O ASP.NET Core é uma estrutura de [software livre](https://github.com/aspnet/home), de multiplaforma e alto desempenho para a criação de aplicativos modernos conectados à Internet e baseados em nuvem. Com o ASP.NET Core, você pode:
 
-* Compilar aplicativos e serviços Web, aplicativos IoT e back-ends móveis.
+* Compilar aplicativos e serviços Web, aplicativos [IoT](https://www.microsoft.com/en-us/internet-of-things/) e back-ends móveis.
 * Usar suas ferramentas de desenvolvimento favoritas no Windows, macOS e Linux.
 * Implantar na nuvem ou local
 * Executar no [.NET Core ou no .NET Framework](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server).
@@ -44,7 +44,7 @@ O ASP.NET Core oferece os seguintes benefícios:
 * A capacidade de criar e executar no Windows, macOS e Linux.
 * De software livre e voltado para a comunidade.
 
-O ASP.NET Core é fornecido inteiramente como pacotes [NuGet](https://nuget.org). Isso permite otimizar o aplicativo para incluir apenas os pacotes NuGet necessários. Os benefícios de uma área de superfície menor do aplicativo incluem maior segurança, manutenção reduzida e desempenho aprimorado.
+O ASP.NET Core é fornecido inteiramente como pacotes [NuGet](https://www.nuget.org/). Isso permite otimizar o aplicativo para incluir apenas os pacotes NuGet necessários. Os benefícios de uma área de superfície menor do aplicativo incluem maior segurança, manutenção reduzida e desempenho aprimorado.
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>Compilar APIs Web e uma interface do usuário da Web usando o ASP.NET Core MVC
 

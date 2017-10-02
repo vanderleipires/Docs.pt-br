@@ -1,7 +1,7 @@
 ---
 title: "Registro em log no núcleo do ASP.NET"
 author: ardalis
-description: "Apresenta a estrutura de registro do ASP.NET Core. Inclui uma seção para cada provedor de logs interno e links para alguns provedores de terceiros populares."
+description: Saiba mais sobre a estrutura de registro do ASP.NET Core. Descubra os provedores de registro em log internos e saber mais sobre os provedores de terceiros populares.
 keywords: ASP.NET Core, registro em log, log providers,Microsoft.Extensions.Logging,ILogger,ILoggerFactory,LogLevel,WithFilter,TraceSource,EventLog,EventSource,scopes
 ms.author: tdykstra
 manager: wpickett
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ca81f01fe1c5026514eafedf852b4bc8f3b6fd21
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 9557e9f6915507450de3ffe500582839a28c3f0c
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introdução ao registro em log no núcleo do ASP.NET
 
@@ -26,11 +26,11 @@ ASP.NET Core dá suporte a uma API de registro em log que funciona com uma varie
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ---
 

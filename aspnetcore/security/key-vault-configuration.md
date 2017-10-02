@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: 5122918ff84d87dd9763d454412f83d6f2c60fcb
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: c5d8506c1bc8e6364d01596a0c82e1da41eea4ca
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Provedor de configuração do Cofre de chaves do Azure
 
@@ -24,15 +24,15 @@ Por [Luke Latham](https://github.com/guardrex) e [Andrew Stanton-enfermeiro](htt
 
 Exibir ou baixar o código de exemplo para 2. x:
 
-* [Exemplo básico](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x) -lê valores secretos em um aplicativo.
-* [Exemplo de prefixo do nome da chave](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x) - leituras valores secretos usando um prefixo de nome da chave que representa a versão de um aplicativo, que permite que você carregue um conjunto diferente de valores secretos para cada versão do aplicativo.
+* [Exemplo básico](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x) ([como baixar](xref:tutorials/index#how-to-download-a-sample))-lê valores secretos em um aplicativo.
+* [Exemplo de prefixo do nome da chave](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x) ([como baixar](xref:tutorials/index#how-to-download-a-sample)) - leituras valores secretos usando um prefixo de nome da chave que representa a versão de um aplicativo, que permite que você carregue um conjunto diferente de valores secretos para cada versão do aplicativo.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Exibir ou baixar o exemplo de código 1. x:
 
-* [Exemplo básico](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/1.x) -lê valores secretos em um aplicativo.
-* [Exemplo de prefixo do nome da chave](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/1.x) - leituras valores secretos usando um prefixo de nome da chave que representa a versão de um aplicativo, que permite que você carregue um conjunto diferente de valores secretos para cada versão do aplicativo. 
+* [Exemplo básico](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/1.x) ([como baixar](xref:tutorials/index#how-to-download-a-sample))-lê valores secretos em um aplicativo.
+* [Exemplo de prefixo do nome da chave](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/1.x) ([como baixar](xref:tutorials/index#how-to-download-a-sample)) - leituras valores secretos usando um prefixo de nome da chave que representa a versão de um aplicativo, que permite que você carregue um conjunto diferente de valores secretos para cada versão do aplicativo. 
 
 ---
 

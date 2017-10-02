@@ -1,7 +1,7 @@
 ---
 title: "Inicialização do aplicativo no núcleo do ASP.NET"
 author: ardalis
-description: "Explica a classe de inicialização no núcleo do ASP.NET."
+description: "Descobrir como a classe de inicialização no ASP.NET Core configura serviços e pipeline de solicitação do aplicativo."
 keywords: "ASP.NET Core, inicialização, configurar método, o método ConfigureServices"
 ms.author: tdykstra
 manager: wpickett
@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/startup
-ms.openlocfilehash: 94db2ff530b5de7fe357cfb591d09b984cb248f9
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: bba0eafe3917fa850b3a07df8df6448409f4062d
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="application-startup-in-aspnet-core"></a>Inicialização do aplicativo no núcleo do ASP.NET
 
 Por [Steve Smith](https://ardalis.com/) e [Tom Dykstra](https://github.com/tdykstra/)
 
-O `Startup` classe configura os serviços e pipeline de solicitação do aplicativo. 
+O `Startup` classe configura os serviços e pipeline de solicitação do aplicativo.
 
 ## <a name="the-startup-class"></a>A classe de inicialização
 

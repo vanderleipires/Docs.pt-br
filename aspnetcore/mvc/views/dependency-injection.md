@@ -11,11 +11,11 @@ ms.assetid: 80fb9e43-e4db-4af2-b2a8-e1364a712f69
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: ff3ded36a04fdbba0628dc5f223bfd865d58612a
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 4586f50bc663b7269914dfff28b61342e3991a48
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="dependency-injection-into-views"></a>Injeção de dependência em exibições
 
@@ -23,7 +23,7 @@ Por [Steve Smith](https://ardalis.com/)
 
 Dá suporte ao ASP.NET Core [injeção de dependência](xref:fundamentals/dependency-injection) em modos de exibição. Isso pode ser útil para serviços de exibição específicos, como localização ou os dados necessários apenas para o preenchimento de elementos de exibição. Você deve tentar manter [separação de preocupações](http://deviq.com/separation-of-concerns/) entre seus controladores e exibições. A maioria dos dados que exibem seus modos de exibição deve ser passada do controlador.
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="a-simple-example"></a>Um exemplo simples
 

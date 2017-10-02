@@ -11,17 +11,17 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: ab004c038b82888aa57d5e25fcb69a06deec8411
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: 7aea4db44764d5d8f47520adb6599e651e0e9000
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware de compactação de resposta para o ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 Largura de banda de rede é um recurso limitado. Reduzir o tamanho da resposta geralmente aumenta a capacidade de resposta de um aplicativo com frequência. É uma maneira de reduzir os tamanhos de carga compactar respostas do aplicativo.
 

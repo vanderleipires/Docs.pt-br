@@ -1,7 +1,7 @@
 ---
 title: "Trabalhando com arquivos estáticos no núcleo do ASP.NET"
 author: rick-anderson
-description: "Trabalhando com arquivos estáticos no núcleo do ASP.NET"
+description: "Saiba como trabalhar com arquivos estáticos no núcleo do ASP.NET."
 keywords: "ASP.NET Core, arquivos estáticos, ativos estáticos, HTML, CSS, JavaScript"
 ms.author: riande
 manager: wpickett
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/static-files
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 69a4542c9b2a0d7091d05d42029e68384b760dd7
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: e099c4767958f153134e0fb6b3de8132ab1ead82
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="working-with-static-files-in-aspnet-core"></a>Trabalhando com arquivos estáticos no núcleo do ASP.NET
 
@@ -26,7 +26,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Arquivos estáticos, como HTML, CSS, imagem e JavaScript, estão ativos que pode ser usado por um aplicativo do ASP.NET Core diretamente aos clientes.
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/sample)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="serving-static-files"></a>Servir arquivos estáticos
 

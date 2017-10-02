@@ -1,7 +1,7 @@
 ---
 title: "Roteamento no núcleo do ASP.NET"
 author: ardalis
-description: 
+description: "Descobrir como a funcionalidade de roteamento do ASP.NET Core é responsável para mapear uma solicitação de entrada para um manipulador de rota."
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
@@ -11,11 +11,11 @@ ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 469c30cf66d28e82519d5eff7f2fc82d490827b7
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 8bce642576b6b2f9326425d30ef95168da8f47e5
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no núcleo do ASP.NET
 
@@ -26,7 +26,7 @@ Funcionalidade de roteamento é responsável por uma solicitação de entrada de
 >[!IMPORTANT]
 > Este documento abrange o nível inferior ASP.NET Core roteamento. Para o roteamento MVC do ASP.NET Core, consulte [roteamento para ações do controlador](../mvc/controllers/routing.md)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="routing-basics"></a>Noções básicas sobre roteamento
 

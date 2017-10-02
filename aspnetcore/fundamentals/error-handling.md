@@ -1,7 +1,7 @@
 ---
-title: "Tratamento de erro no núcleo do ASP.NET"
+title: Tratamento de erros em ASP.NET Core
 author: ardalis
-description: Explica como manipular erros em aplicativos do ASP.NET Core
+description: Descobrir como tratar erros em aplicativos do ASP.NET Core.
 keywords: "ASP.NET Core, tratamento de erros, manipulação de exceção"
 ms.author: tdykstra
 manager: wpickett
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/error-handling
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 93f0724dbe98316e2b5a0af0ac1760c3aac2f1d0
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: de2ba0ff9ad17c198c06b510ecfb49f808721bdf
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>Introdução ao ASP.NET Core de tratamento de erros
 
@@ -24,7 +24,7 @@ Por [Steve Smith](https://ardalis.com/) e [Tom Dykstra](https://github.com/tdyks
 
 Este artigo aborda appoaches comuns para tratamento de erros em aplicativos do ASP.NET Core.
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample)
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="the-developer-exception-page"></a>A página de exceção do desenvolvedor
 

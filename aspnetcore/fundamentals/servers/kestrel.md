@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/kestrel
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a961d46d7804b7ac7e570692fe42727feae3d5c9
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 451c36fc9095b6e076e5287c992b6163205c523b
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="introduction-to-kestrel-web-server-implementation-in-aspnet-core"></a>Introdução a implementação do servidor web Kestrel no núcleo do ASP.NET
 
@@ -34,11 +34,11 @@ Kestrel tem suporte em todas as plataformas e versões que dá suporte ao .NET C
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[Exibir ou baixar o código de exemplo para 2. x](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/sample2)
+[Exibir ou baixar o código de exemplo para 2. x](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/sample2) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[Exibir ou baixar o exemplo de código 1. x](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/sample1)
+[Exibir ou baixar o exemplo de código 1. x](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/kestrel/sample1) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ---
 
