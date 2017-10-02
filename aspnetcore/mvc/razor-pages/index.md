@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 72ab979c6c718544955ae5734903ec936fc5afbc
-ms.sourcegitcommit: 195b2b331434f74334c5c5b7dfeba62d744a1e38
+ms.openlocfilehash: 3112faa38bb9702f6856097e315c413f0974010d
+ms.sourcegitcommit: 3ba32b2b6425ed94604cb0f681db0d5bb5f8ad58
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
@@ -157,11 +157,9 @@ O arquivo code-behind *Index.cshtml.cs*:
 
 O arquivo *cshtml* contém a marcação a seguir para criar um link de edição para cada contato:
 
-```cshtml
-<a asp-page="./Edit" asp-route-id="@contact.Id">edit</a>
-```
+[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=21)]
 
-O [auxiliar de marcas de âncora](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper) usou o atributo [asp-route-{valor}](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper#route) para gerar um link para a página Edit. O link contém dados de rota com a ID de contato. Por exemplo, `http://localhost:5000/Edit/1`.
+O [auxiliar de marcas de âncora](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) usou o atributo [asp-route-{valor}](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#route) para gerar um link para a página Edit. O link contém dados de rota com a ID de contato. Por exemplo, `http://localhost:5000/Edit/1`.
 
 O arquivo *Pages/Edit.cshtml*:
 
@@ -172,6 +170,34 @@ A primeira linha contém a diretiva `@page "{id:int}"`. A restrição de roteame
 O arquivo *Pages/Edit.cshtml.cs*:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Edit.cshtml.cs)]
+
+O arquivo *Index.cshtml* também contém a marcação para criar um botão de exclusão para cada contato de cliente:
+
+[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=22-23)]
+
+Quando o botão de exclusão é renderizado em HTML, seu `formaction` inclui parâmetros para:
+
+* A ID de contato do cliente especificada pelo atributo `asp-route-id`.
+* O `handler` especificado pelo atributo `asp-page-handler`.
+
+Este é um exemplo de um botão de exclusão renderizado com uma ID de contato do cliente de `1`:
+
+```html
+<button type="submit" formaction="/?id=1&amp;handler=delete">delete</button>
+```
+
+Quando o botão é selecionado, uma solicitação de formulário `POST` é enviada para o servidor. Por convenção, o nome do método do manipulador é selecionado com base no valor do parâmetro `handler` de acordo com o esquema `OnPost[handler]Async`.
+
+Como o `handler` é `delete` neste exemplo, o método do manipulador `OnPostDeleteAsync` é usado para processar a solicitação `POST`. Se o `asp-page-handler` for definido como um valor diferente, como `remove`, um método de manipulador de página com o nome `OnPostRemoveAsync` será selecionado.
+
+[!code-cs[main](index/sample/RazorPagesContacts/Pages/Index.cshtml.cs?range=26-37)]
+
+O método `OnPostDeleteAsync`:
+
+* Aceita o `id` da cadeia de caracteres de consulta.
+* Consulta o banco de dados para o contato de cliente com `FindAsync`.
+* Se o contato do cliente for encontrado, eles serão removidos da lista de contatos do cliente. O banco de dados é atualizado.
+* Chama `RedirectToPage` para redirecionar para a página de índice de raiz (`/Index`).
 
 <a name="xsrf"></a>
 

@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/modelz
-ms.openlocfilehash: 8e370decfd81e62022478b0ab695ff876e5e0a10
-ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
+ms.openlocfilehash: bd2c3e09366e228fade69f843849e7452196c475
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="adding-a-model-to-a-razor-pages-app"></a>Adicionando um modelo a um aplicativo de Páginas do Razor
 
@@ -22,9 +22,9 @@ ms.lasthandoff: 09/20/2017
 
 ## <a name="add-a-data-model"></a>Adicionar um modelo de dados
 
-No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **RazorPagesMovie** > **Adicionar** > **Nova Pasta**. Nomeie a pasta como *Modelos*.
+No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **RazorPagesMovie** > **Adicionar** > **Nova Pasta**. Nomeie a pasta *Models*.
 
-Clique com o botão direito do mouse na pasta *Models* > **Adicionar** > **Classe**. Nomeie a classe como **Filmes** e adicione as seguintes propriedades:
+Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **Movie** e adicione as seguintes propriedades:
 
 [!INCLUDE[model 2](../../includes/RP/model2.md)]
 
@@ -53,7 +53,7 @@ Nesta seção, você deve usar o PMC (Console de Gerenciador de Pacotes) para:
 * Adicionar uma migração inicial.
 * Atualize o banco de dados com a migração inicial.
 
-No menu **Ferramentas**, selecione **Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes**.
+No menu **Ferramentas**, selecione **Gerenciador de pacotes NuGet** > **Console do Gerenciador de pacotes**.
 
   ![Menu do PMC](../first-mvc-app/adding-model/_static/pmc.png)
 

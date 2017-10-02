@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: b45642e39eb46631bb8034f4747222fb1bc0a83b
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: cab986d0a7b7ac68cdda36a558e9b05c429108d0
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Adicionando um novo campo a uma página Razor
 
@@ -50,7 +50,9 @@ Adicione o campo `Rating` à página Editar.
 
 O aplicativo não funcionará até que o BD seja atualizado para incluir o novo campo. Se for executado agora, o aplicativo gerará uma `SqlException`:
 
-`SqlException: Invalid column name 'Rating'.`
+```
+SqlException: Invalid column name 'Rating'.
+```
 
 Esse erro é causado devido à classe de modelo Movie atualizada ser diferente do esquema da tabela Movie do banco de dados. (Não há nenhuma coluna `Rating` na tabela de banco de dados.)
 
@@ -72,9 +74,7 @@ Consulte o [arquivo SeedData.cs concluído](https://github.com/aspnet/Docs/blob/
 
 Compile a solução.
 
-<a name="pmc"></a>
-
-No menu **Ferramentas**, selecione **Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes**.
+<a name="pmc"></a> No menu **Ferramentas**, selecione **Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes**.
 No PMC, insira os seguintes comandos:
 
 ```PMC
@@ -93,13 +93,13 @@ O nome “Classificação” é arbitrário e é usado para nomear o arquivo de 
 
 * Selecione o banco de dados no SSOX.
 * Clique com o botão direito do mouse no banco de dados e selecione *Excluir*.
-* Marque **Fechar conexões existentes*
-* Selecione **OK**
-* No [PMC](xref:tutorials/razor-pages/new-field#pmc), atualize o banco de dados 
+* Marque **Fechar conexões existentes**.
+* Selecione **OK**.
+* No [PMC](xref:tutorials/razor-pages/new-field#pmc), atualize o banco de dados:
 
-    ```PMC
-    Update-Database
-    ```
+  ```PMC
+  Update-Database
+  ```
 
 Execute o aplicativo e verifique se você pode criar/editar/exibir filmes com um campo `Rating`. Se o banco de dados não for propagado, pare o IIS Express e, em seguida, execute o aplicativo.
 

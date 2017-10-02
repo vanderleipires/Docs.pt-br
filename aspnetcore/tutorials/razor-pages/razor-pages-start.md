@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 8c6e281e761e69908fc742d1f19c14a00de4bd46
-ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
+ms.openlocfilehash: 1d8d7805aafbf28fef044d09369a1dc76108b141
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="getting-started-with-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
@@ -28,11 +28,11 @@ Este tutorial ensina as noções básicas de criação de um aplicativo Web de P
 
 ## <a name="create-a-razor-web-app"></a>Criar um aplicativo Web do Razor
 
-* No menu **Arquivo** do Visual Studio, selecione **Novo > Projeto**.
+* No menu **Arquivo** do Visual Studio, selecione **Novo** > **Projeto**.
 * Crie um novo Aplicativo Web ASP.NET Core. Nomeie o projeto **RazorPagesMovie**. É importante nomear o projeto *RazorPagesMovie* de modo que os namespaces façam a correspondência quando você copiar/colar código.
- ![novo aplicativo Web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
+  ![novo aplicativo Web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
 * Selecione **ASP.NET Core 2.0** na lista suspensa e selecione **Aplicativo Web**.
- ![Aplicativo Web (Páginas do Razor)](../../mvc/razor-pages/index/_static/np2.png)
+  ![Aplicativo Web (Páginas do Razor)](../../mvc/razor-pages/index/_static/np2.png)
 
 O modelo do Visual Studio cria um projeto inicial:
 
@@ -48,4 +48,4 @@ Pressione **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5*
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
 
 >[!div class="step-by-step"]
-[Próximo: adicionando um modelo](xref:tutorials/razor-pages/modelz)  
+[Próximo: adicionando um modelo](xref:tutorials/razor-pages/modelz)

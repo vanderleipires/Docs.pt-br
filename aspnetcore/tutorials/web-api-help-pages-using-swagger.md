@@ -11,11 +11,11 @@ ms.assetid: 54bb961d-29d9-4dee-8e2c-a93fc33c16f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 647ab48fb83c5e2c79b5de371173bc644c65d831
-ms.sourcegitcommit: 98ecb0f1bae4886507b090c84ecd99ff1e5c46ed
+ms.openlocfilehash: 7eeb8f0517b8806cabdd59e7d81f8c2272238615
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="aspnet-web-api-help-pages-using-swagger"></a>Páginas de ajuda da API Web ASP.NET usando o Swagger
 
@@ -343,7 +343,9 @@ Habilite o middleware de arquivos estáticos:
 
 [!code-csharp[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/Startup.cs?name=snippet_Configure&highlight=3)]
 
-Adquira o conteúdo da pasta *dist* do [repositório GitHub da interface do usuário do Swagger](https://github.com/swagger-api/swagger-ui/tree/2.x/dist). Essa pasta contém os ativos necessários para a página da interface do usuário do Swagger. Copie o conteúdo dessa pasta para a pasta *wwwroot/swagger/ui*.
+Adquira o conteúdo da pasta *dist* do [repositório GitHub da interface do usuário do Swagger](https://github.com/swagger-api/swagger-ui/tree/2.x/dist). Essa pasta contém os ativos necessários para a página da interface do usuário do Swagger.
+
+Crie uma pasta *swagger/wwwroot/ui* e copie para ela o conteúdo da pasta *dist*.
 
 Criar um arquivo *wwwroot/swagger/ui/css/custom.css* com o CSS a seguir para personalizar o cabeçalho da página:
 
