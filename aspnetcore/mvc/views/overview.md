@@ -11,11 +11,11 @@ ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: f40feb0466854080cc749a83c546ce857d850902
-ms.sourcegitcommit: e4a1df2a5a85f299322548809e547a79b380bb92
+ms.openlocfilehash: d3fbdecaed87b3432f0532748a0833c833c65129
+ms.sourcegitcommit: a60a99104fe7a29e271667cead6a06b6d8258d03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 10/03/2017
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Modos de exibição no núcleo do ASP.NET MVC
 
@@ -40,13 +40,13 @@ Use [layouts](xref:mvc/views/layout) para fornecer seções da página da Web co
 Modos de exibição ajudam a estabelecer um [ **S**eparation **o**f **C**oncerns (SoC) design](http://deviq.com/separation-of-concerns/) dentro de um aplicativo MVC, separando a marcação de interface de usuário do outras partes do aplicativo. SoC design a seguir faz com que seu aplicativo modular, que fornece vários benefícios:
 
 * O aplicativo é mais fácil manter porque ela foi organizada melhor. Modos de exibição geralmente são agrupados pelo recurso de aplicativo. Isso torna mais fácil de localizar os modos de exibição relacionados ao trabalhar em um recurso.
-* As partes do aplicativo não estão estreitamente ligadas. Você pode criar e atualizar modos de exibição do aplicativo separadamente dos componentes de acesso de dados e lógica de negócios. Você pode modificar os modos de exibição do aplicativo sem precisar necessariamente atualizar outras partes do aplicativo.
+* As partes do aplicativo são acoplados de forma flexível. Você pode criar e atualizar modos de exibição do aplicativo separadamente dos componentes de acesso de dados e lógica de negócios. Você pode modificar os modos de exibição do aplicativo sem precisar necessariamente atualizar outras partes do aplicativo.
 * É mais fácil de testar as partes da interface de usuário do aplicativo, como os modos de exibição são unidades separadas.
 * Devido à melhor organização, é menos provável que você vai acidentalmente seções de repetição da interface do usuário.
 
 ## <a name="creating-a-view"></a>Criar um modo de exibição
 
-Exibições que são específicas para um controlador são criadas no *modos de exibição / [ControllerName]* pasta. Modos de exibição que são compartilhados entre os controladores são colocados no *exibições/compartilhadas* pasta. Para criar um modo de exibição, adicionar um novo arquivo e dê a ele o mesmo nome que sua ação de controlador associado com o *. cshtml* extensão de arquivo. Para criar uma exibição para o *sobre* ação no *início* controlador, crie um *About.cshtml* de arquivos no *exibições/inicial* pasta:
+Exibições que são específicas para um controlador são criadas no *modos de exibição / [ControllerName]* pasta. Modos de exibição que são compartilhados entre os controladores são colocados no *exibições/compartilhadas* pasta. Para criar um modo de exibição, adicionar um novo arquivo e dê a ele o mesmo nome que sua ação de controlador associado com o *. cshtml* extensão de arquivo. Para criar uma exibição que corresponde ao *sobre* ação no *início* controlador, crie um *About.cshtml* de arquivos no *exibições/inicial*pasta:
 
 [!code-cshtml[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
 
@@ -88,7 +88,7 @@ O `View` método auxiliar tem várias sobrecargas. Opcionalmente, você pode esp
 
 Quando uma ação retorna uma exibição, um processo chamado *descoberta do modo de exibição* ocorra. Esse processo determina qual arquivo de exibição é usado com base no nome do modo de exibição. 
 
-Quando uma ação retorna o `View` método (`return View();`) e um modo de exibição não for especificado, o nome da ação é usado como o nome da exibição. Por exemplo, o *sobre* `ActionResult` nome do método do controlador é usado para pesquisar um arquivo de modo de exibição denominado *About.cshtml*. Primeiro, o tempo de execução examina o *modos de exibição / [ControllerName]* pasta para o modo de exibição. Se não encontrar uma exibição de correspondência, ele procura o *compartilhado* pasta para o modo de exibição.
+O comportamento padrão da `View` método (`return View();`) deve retornar uma exibição com o mesmo nome que o método de ação do qual ele é chamado. Por exemplo, o *sobre* `ActionResult` nome do método do controlador é usado para pesquisar um arquivo de modo de exibição denominado *About.cshtml*. Primeiro, o tempo de execução examina o *modos de exibição / [ControllerName]* pasta para o modo de exibição. Se não encontrar uma exibição de correspondência, ele procura o *compartilhado* pasta para o modo de exibição.
 
 Não importa se você retornar implicitamente o `ViewResult` com `return View();` ou passar explicitamente o nome de exibição para o `View` método com `return View("<ViewName>");`. Em ambos os casos, a exibição descoberta pesquisa um arquivo de exibição correspondente nesta ordem:
 
@@ -127,7 +127,7 @@ Você pode passar dados para exibições com várias abordagens. A abordagem mai
 
 Usar um viewmodel para passar dados para um modo de exibição permite que o modo de exibição tirar proveito dos *forte* verificação de tipo. *Tipagem forte* (ou *fortemente tipada*) significa que todas as variáveis e constante tem um tipo definido explicitamente (por exemplo, `string`, `int`, ou `DateTime`). A validade dos tipos usados em uma exibição é verificada em tempo de compilação.
 
-Ferramentas, tais como [Visual Studio](https://www.visualstudio.com/vs/) ou [código do Visual Studio](https://code.visualstudio.com/), também pode listar os membros (Propriedades de um modelo) enquanto você estiver adicionando-os a uma exibição, que ajuda você a escrever código mais rápido com menos erros. Esse recurso é chamado [IntelliSense](/visualstudio/ide/using-intellisense) nas ferramentas de Microsoft.
+[O Visual Studio](https://www.visualstudio.com/vs/) e [código do Visual Studio](https://code.visualstudio.com/) listam os membros de classe fortemente tipada usando um recurso chamado [IntelliSense](/visualstudio/ide/using-intellisense). Quando você deseja ver as propriedades de um viewmodel, digite o nome da variável para o viewmodel seguido por um período (`.`). Isso ajuda você a escrever código mais rápido com menos erros.
 
 Especifique um modelo usando o `@model` diretiva. Usar o modelo com `@Model`:
 
@@ -316,7 +316,7 @@ Usando `ViewData` e `ViewBag` o mesmo Works de tempo, como faz a combinação de
 
 **Quando usar ViewData ou ViewBag**
 
-Ambos `ViewData` e `ViewBag` são igualmente abordagens válidas para transmitir pequenas quantidades de dados entre os controladores e exibições. A escolha de um para usar (ou ambos) se reduz a preferência pessoal ou a preferência de sua organização. Em geral, os desenvolvedores estão consistentes em seu uso de um ou outro. Eles usam `ViewData` everywhere ou use `ViewBag` em qualquer lugar, mas você pode misturar e combiná-los. Como ambos são resolvidos dinamicamente em tempo de execução e, portanto, propenso a erros de tempo de execução, use-os cuidadosamente. Alguns desenvolvedores evitá-los completamente.
+Ambos `ViewData` e `ViewBag` são igualmente abordagens válidas para transmitir pequenas quantidades de dados entre os controladores e exibições. A escolha de um para usar (ou ambos) se reduz a preferência pessoal ou a preferência de sua organização. Embora você pode misturar e combinar `ViewData` e `ViewBag` objetos, o código é mais fácil de ler e manter quando você escolher apenas uma e usá-lo de forma consistente. Como ambos são resolvidos dinamicamente em tempo de execução e, portanto, propenso a erros de tempo de execução, use-os cuidadosamente. Alguns desenvolvedores evitá-los completamente.
 
 ### <a name="dynamic-views"></a>Modos de exibição dinâmicos
 
