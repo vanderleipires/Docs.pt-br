@@ -11,11 +11,11 @@ ms.assetid: 981852c9-78f9-4590-aaee-9d50a2838dfe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: 4edec00ebc82b0217e0db4f6325c3e7cca341e08
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 13aea4439e4aecd5715820b524540a6d8b3d547b
+ms.sourcegitcommit: e987c950caae7af9c4ece8a82228caa364e0a5df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/05/2017
 ---
 # <a name="authentication"></a>Autenticação
 
@@ -44,3 +44,5 @@ ms.lasthandoff: 09/12/2017
   * [Chamando uma API Web em um aplicativo Web ASP.NET Core usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 
 * [Protegendo aplicativos ASP.NET Core com o IdentityServer4](https://identityserver4.readthedocs.io/release/)
+
+* [Protegendo aplicativos ASP.NET Core com a Autenticação do Serviço de Aplicativo do Azure (Autenticação fácil)](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
