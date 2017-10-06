@@ -11,36 +11,38 @@ ms.assetid: 981852c9-78f9-4590-aaee-9d50a2838dfe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: 4edec00ebc82b0217e0db4f6325c3e7cca341e08
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 13aea4439e4aecd5715820b524540a6d8b3d547b
+ms.sourcegitcommit: e987c950caae7af9c4ece8a82228caa364e0a5df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/05/2017
 ---
-# <a name="authentication"></a><span data-ttu-id="b1d63-103">Autenticação</span><span class="sxs-lookup"><span data-stu-id="b1d63-103">Authentication</span></span>
+# <a name="authentication"></a>Autenticação
 
-* [<span data-ttu-id="b1d63-104">Opções de autenticação de OSS da comunidade</span><span class="sxs-lookup"><span data-stu-id="b1d63-104">Community OSS authentication options</span></span>](community.md)
+* [Opções de autenticação de OSS da comunidade](community.md)
 
-* [<span data-ttu-id="b1d63-105">Introdução ao Identity</span><span class="sxs-lookup"><span data-stu-id="b1d63-105">Introduction to Identity</span></span>](identity.md)
+* [Introdução ao Identity](identity.md)
 
-* [<span data-ttu-id="b1d63-106">Habilitando a autenticação usando o Facebook, o Google e outros provedores externos</span><span class="sxs-lookup"><span data-stu-id="b1d63-106">Enabling authentication using Facebook, Google and other external providers</span></span>](social/index.md)
+* [Habilitando a autenticação usando o Facebook, o Google e outros provedores externos](social/index.md)
 
-* [<span data-ttu-id="b1d63-107">Habilitando a geração de código QR no ASP.NET Identity</span><span class="sxs-lookup"><span data-stu-id="b1d63-107">Enabling QR Code generation in ASP.NET identity</span></span>](identity-enable-qrcodes.md)
+* [Habilitando a geração de código QR no ASP.NET Identity](identity-enable-qrcodes.md)
 
-* [<span data-ttu-id="b1d63-108">Configurar a Autenticação do Windows</span><span class="sxs-lookup"><span data-stu-id="b1d63-108">Configure Windows Authentication</span></span>](windowsauth.md)
+* [Configurar a Autenticação do Windows](windowsauth.md)
 
-* [<span data-ttu-id="b1d63-109">Confirmação de conta e recuperação de senha</span><span class="sxs-lookup"><span data-stu-id="b1d63-109">Account Confirmation and Password Recovery</span></span>](accconfirm.md)
+* [Confirmação de conta e recuperação de senha](accconfirm.md)
 
-* [<span data-ttu-id="b1d63-110">Autenticação de dois fatores com SMS</span><span class="sxs-lookup"><span data-stu-id="b1d63-110">Two-factor authentication with SMS</span></span>](2fa.md)
+* [Autenticação de dois fatores com SMS](2fa.md)
 
-* [<span data-ttu-id="b1d63-111">Usando a autenticação de cookie sem o ASP.NET Core Identity</span><span class="sxs-lookup"><span data-stu-id="b1d63-111">Using Cookie Authentication without ASP.NET Core Identity</span></span>](cookie.md)
+* [Usando a autenticação de cookie sem o ASP.NET Core Identity](cookie.md)
 
-* [<span data-ttu-id="b1d63-112">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="b1d63-112">Azure Active Directory</span></span>](azure-active-directory/index.md)
+* [Azure Active Directory](azure-active-directory/index.md)
 
-  * [<span data-ttu-id="b1d63-113">Integrando o Azure AD em um aplicativo Web ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b1d63-113">Integrating Azure AD Into an ASP.NET Core Web App</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+  * [Integrando o Azure AD em um aplicativo Web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 
-  * [<span data-ttu-id="b1d63-114">Chamando uma API Web ASP.NET Core em um aplicativo do WPF usando o Azure AD</span><span class="sxs-lookup"><span data-stu-id="b1d63-114">Calling an ASP.NET Core Web API From a WPF Application Using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
+  * [Chamando uma API Web ASP.NET Core em um aplicativo do WPF usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
-  * [<span data-ttu-id="b1d63-115">Chamando uma API Web em um aplicativo Web ASP.NET Core usando o Azure AD</span><span class="sxs-lookup"><span data-stu-id="b1d63-115">Calling a Web API in an ASP.NET Core Web Application Using Azure AD</span></span>](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
+  * [Chamando uma API Web em um aplicativo Web ASP.NET Core usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 
-* [<span data-ttu-id="b1d63-116">Protegendo aplicativos ASP.NET Core com o IdentityServer4</span><span class="sxs-lookup"><span data-stu-id="b1d63-116">Securing ASP.NET Core apps with IdentityServer4</span></span>](https://identityserver4.readthedocs.io/release/)
+* [Protegendo aplicativos ASP.NET Core com o IdentityServer4](https://identityserver4.readthedocs.io/release/)
+
+* [Protegendo aplicativos ASP.NET Core com a Autenticação do Serviço de Aplicativo do Azure (Autenticação fácil)](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)

@@ -137,7 +137,7 @@
 ## [Teste de integração](testing/integration-testing.md)
 ## [Testando os controladores](mvc/controllers/testing.md)
 ## [Depuração remota](https://docs.microsoft.com/visualstudio/debugger/remote-debugging-azure)
-## [Depuração de Instantâneo](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger)
+## [Depuração de instantâneo](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger)
 
 # [Trabalhando com os Dados](data/index.md)
 ## [Introdução ao ASP.NET Core e Entity Framework Core usando o Visual Studio](data/ef-mvc/index.md)
@@ -209,6 +209,7 @@
 #### [Chamando uma API Web ASP.NET Core em um aplicativo do WPF usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [Chamando uma API Web em um aplicativo Web ASP.NET Core usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [Protegendo aplicativos ASP.NET Core com o IdentityServer4](https://identityserver4.readthedocs.io/)
+### [Protegendo aplicativos ASP.NET Core com a Autenticação do Serviço de Aplicativo do Azure (Autenticação fácil)](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
 ## [Autorização](xref:security/authorization/index)
 ### [Introdução](xref:security/authorization/introduction)
 ### [Criar um aplicativo com os dados do usuário protegidos por autorização](xref:security/authorization/secure-data)
