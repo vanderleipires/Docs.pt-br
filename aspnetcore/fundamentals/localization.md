@@ -11,17 +11,17 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 85a192bf0b2eb245ecdaaa8ffa1c8dd2f43b45b0
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 9ff2fb92c81719c7278d70b5df5387f1244195bf
+ms.sourcegitcommit: e7f01a649f240b6b57118c53314ab82f7f36f2eb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/06/2017
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalização e localização em ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Damien Bowden](https://twitter.com/damien_bod), [Bart Calixto](https://twitter.com/bartmax), [Nadeem Afana](https://twitter.com/NadeemAfana), e [Ateya Hisham Bin](https://twitter.com/hishambinateya)
 
-Criar um site multilíngue com ASP.NET Core permitirá que seu site alcançar um público maior. ASP.NET Core fornece serviços e middleware para localizar em diferentes idiomas e culturas.
+Criar um site multilíngue com ASP.NET Core permitirá que seu site alcançar um público maior. O ASP.NET Core fornece serviços e middleware para localização em diferentes idiomas e culturas.
 
 Internacionalização envolve [globalização](https://docs.microsoft.com/dotnet/api/system.globalization) e [localização](https://docs.microsoft.com/dotnet/standard/globalization-localization/localization). Globalização é o processo de criação de aplicativos que dão suporte a diferentes culturas. Globalização adiciona suporte para entrada, exibição e saída de um conjunto definido de scripts de idiomas relacionados a áreas geográficas específicas.
 
@@ -43,7 +43,7 @@ Introduzido no ASP.NET Core `IStringLocalizer` e `IStringLocalizer<T>` foram pro
 
 No código acima, o `IStringLocalizer<T>` implementação vêm [injeção de dependência](dependency-injection.md). Se o valor localizado do "Sobre o título" não foi encontrado, a chave do indexador for retornada, ou seja, a cadeia de caracteres "Sobre o título". Você pode deixar o padrão de literais de cadeias de caracteres no aplicativo e encapsulá-los no localizador, para que você possa se concentrar no desenvolvimento do aplicativo. Você pode desenvolve seu aplicativo com o idioma padrão e prepará-la para a etapa de localização sem primeiro criar um arquivo de recurso padrão. Como alternativa, você pode usar a abordagem tradicional e fornecer uma chave para recuperar a cadeia de caracteres de idioma padrão. Para muitos desenvolvedores novo fluxo de trabalho de não ter um idioma padrão *. resx* de arquivo e simplesmente encapsulamento os literais de cadeia de caracteres podem reduzir a sobrecarga de localização de um aplicativo. Outros desenvolvedores preferirão o fluxo de trabalho tradicional, como ele pode tornar mais fácil trabalhar com literais de cadeia de caracteres mais longas e torná-lo mais fácil atualizar cadeias de caracteres localizadas.
 
-Use o `IHtmlLocalizer<T>` implementação para recursos que contêm o HTML. `IHtmlLocalizer`HTML codifica os argumentos que são formatados na cadeia de caracteres de recurso, mas não a cadeia de caracteres de recurso. No exemplo realçado abaixo, apenas o valor de `name` parâmetro é codificada em HTML.
+Use o `IHtmlLocalizer<T>` implementação para recursos que contêm o HTML. `IHtmlLocalizer`HTML codifica os argumentos que são formatados na cadeia de caracteres de recurso, mas o HTML não codifica a cadeia de caracteres de recurso em si. No exemplo realçado abaixo, apenas o valor de `name` parâmetro é codificada em HTML.
 
 [!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 
@@ -317,6 +317,7 @@ Termos de:
 * Cultura: É uma linguagem e, opcionalmente, uma região.
 * Cultura neutra: uma cultura que tem um idioma especificado, mas não uma região. (por exemplo "en", "es")
 * Cultura específica: uma cultura que tenha um idioma especificado e uma região. (por exemplo "en-US", "en-GB", "es-CL")
+* Pai cultura: A cultura neutra que contém uma cultura específica. (por exemplo, "en" é a cultura pai de "en-US" e "en-GB")
 * Localidade: Uma localidade é o mesmo que uma cultura.
 
 ## <a name="additional-resources"></a>Recursos adicionais
