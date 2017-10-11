@@ -10,347 +10,377 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 72ab979c6c718544955ae5734903ec936fc5afbc
-ms.sourcegitcommit: 195b2b331434f74334c5c5b7dfeba62d744a1e38
+ms.openlocfilehash: a7c545178f3cdc4bfc095d41ac997d2e46634d30
+ms.sourcegitcommit: 19acf7f85f36ecd5a0271fba0cff5e91b85f46ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/09/2017
 ---
-# <a name="introduction-to-razor-pages-in-aspnet-core"></a><span data-ttu-id="0a81c-104">Introdução a Páginas do Razor no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="0a81c-104">Introduction to Razor Pages in ASP.NET Core</span></span>
+# <a name="introduction-to-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
-<span data-ttu-id="0a81c-105">Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Ryan Nowak](https://github.com/rynowak)</span><span class="sxs-lookup"><span data-stu-id="0a81c-105">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Ryan Nowak](https://github.com/rynowak)</span></span>
+Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Ryan Nowak](https://github.com/rynowak)
 
-<span data-ttu-id="0a81c-106">Páginas do Razor é um novo recurso do ASP.NET Core MVC que torna a codificação de cenários focados em página mais fácil e produtiva.</span><span class="sxs-lookup"><span data-stu-id="0a81c-106">Razor Pages is a new feature of ASP.NET Core MVC that makes coding page-focused scenarios easier and more productive.</span></span>
+Páginas do Razor é um novo recurso do ASP.NET Core MVC que torna a codificação de cenários focados em página mais fácil e produtiva.
 
-<span data-ttu-id="0a81c-107">Se você estiver procurando um tutorial que usa a abordagem Modelo-Exibição-Controlador, consulte a [Introdução ao ASP.NET Core MVC](xref:tutorials/first-mvc-app/start-mvc).</span><span class="sxs-lookup"><span data-stu-id="0a81c-107">If you're looking for a tutorial that uses the Model-View-Controller approach, see [Getting started with ASP.NET Core MVC](xref:tutorials/first-mvc-app/start-mvc).</span></span>
+Se você estiver procurando um tutorial que usa a abordagem Modelo-Exibição-Controlador, consulte a [Introdução ao ASP.NET Core MVC](xref:tutorials/first-mvc-app/start-mvc).
 
 <a name="prerequisites"></a>
 
-## <a name="aspnet-core-20-prerequisites"></a><span data-ttu-id="0a81c-108">Pré-requisitos do ASP.NET Core 2.0</span><span class="sxs-lookup"><span data-stu-id="0a81c-108">ASP.NET Core 2.0 prerequisites</span></span>
+## <a name="aspnet-core-20-prerequisites"></a>Pré-requisitos do ASP.NET Core 2.0
 
-<span data-ttu-id="0a81c-109">Instale o [.NET Core](https://www.microsoft.com/net/core) 2.0.0 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="0a81c-109">Install [.NET Core](https://www.microsoft.com/net/core) 2.0.0 or later.</span></span>
+Instale o [.NET Core](https://www.microsoft.com/net/core) 2.0.0 ou posterior.
 
-<span data-ttu-id="0a81c-110">Se você estiver usando o Visual Studio, instale o [Visual Studio](https://www.visualstudio.com/vs/) 2017 versão 15.3 ou posterior com as cargas de trabalho a seguir:</span><span class="sxs-lookup"><span data-stu-id="0a81c-110">If you're using Visual Studio, install [Visual Studio](https://www.visualstudio.com/vs/) 2017 version 15.3 or later with the following workloads:</span></span>
+Se você estiver usando o Visual Studio, instale o [Visual Studio](https://www.visualstudio.com/vs/) 2017 versão 15.3 ou posterior com as cargas de trabalho a seguir:
 
-* <span data-ttu-id="0a81c-111">**ASP.NET e desenvolvimento para a Web**</span><span class="sxs-lookup"><span data-stu-id="0a81c-111">**ASP.NET and web development**</span></span>
-* <span data-ttu-id="0a81c-112">**Desenvolvimento entre plataformas do .NET Core**</span><span class="sxs-lookup"><span data-stu-id="0a81c-112">**.NET Core cross-platform development**</span></span>
+* **ASP.NET e desenvolvimento para a Web**
+* **Desenvolvimento entre plataformas do .NET Core**
 
 <a name="rpvs17"></a>
 
-## <a name="creating-a-razor-pages-project"></a><span data-ttu-id="0a81c-113">Criando um projeto de Páginas do Razor</span><span class="sxs-lookup"><span data-stu-id="0a81c-113">Creating a Razor Pages project</span></span>
+## <a name="creating-a-razor-pages-project"></a>Criando um projeto de Páginas do Razor
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="0a81c-114">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="0a81c-114">Visual Studio</span></span>](#tab/visual-studio) 
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
-<span data-ttu-id="0a81c-115">Consulte a [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start) para obter instruções detalhadas sobre como criar um projeto de Páginas do Razor usando o Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="0a81c-115">See [Getting started with Razor Pages](xref:tutorials/razor-pages/razor-pages-start) for detailed instructions on how to create a Razor Pages project using Visual Studio.</span></span>
+Consulte a [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start) para obter instruções detalhadas sobre como criar um projeto de Páginas do Razor usando o Visual Studio.
 
-#   <a name="visual-studio-for-mactabvisual-studio-mac"></a>[<span data-ttu-id="0a81c-116">Visual Studio para Mac</span><span class="sxs-lookup"><span data-stu-id="0a81c-116">Visual Studio for Mac</span></span>](#tab/visual-studio-mac)
+#   <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio para Mac](#tab/visual-studio-mac)
 
-<span data-ttu-id="0a81c-117">Da linha de comando, execute `dotnet new razor`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-117">Run `dotnet new razor` from the command line.</span></span>
+Da linha de comando, execute `dotnet new razor`.
 
-<span data-ttu-id="0a81c-118">Abra o arquivo *.csproj* gerado do Visual Studio para Mac.</span><span class="sxs-lookup"><span data-stu-id="0a81c-118">Open the generated *.csproj* file from Visual Studio for Mac.</span></span>
+Abra o arquivo *.csproj* gerado do Visual Studio para Mac.
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="0a81c-119">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="0a81c-119">Visual Studio Code</span></span>](#tab/visual-studio-code) 
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code) 
 
-<span data-ttu-id="0a81c-120">Da linha de comando, execute `dotnet new razor`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-120">Run `dotnet new razor` from the command line.</span></span>
+Da linha de comando, execute `dotnet new razor`.
 
-#   <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="0a81c-121">CLI do .NET Core</span><span class="sxs-lookup"><span data-stu-id="0a81c-121">.NET Core CLI</span></span>](#tab/netcore-cli) 
+#   <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli) 
 
-<span data-ttu-id="0a81c-122">Da linha de comando, execute `dotnet new razor`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-122">Run `dotnet new razor` from the command line.</span></span>
+Da linha de comando, execute `dotnet new razor`.
 
 ---
 
-## <a name="razor-pages"></a><span data-ttu-id="0a81c-123">Páginas do Razor</span><span class="sxs-lookup"><span data-stu-id="0a81c-123">Razor Pages</span></span>
+## <a name="razor-pages"></a>Páginas do Razor
 
-<span data-ttu-id="0a81c-124">O Páginas do Razor está habilitado em *Startup.cs*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-124">Razor Pages is enabled in *Startup.cs*:</span></span>
+O Páginas do Razor está habilitado em *Startup.cs*:
 
 [!code-cs[main](index/sample/RazorPagesIntro/Startup.cs?name=snippet_Startup)]
 
-<span data-ttu-id="0a81c-125">Considere uma página básica: <a name="OnGet"></a></span><span class="sxs-lookup"><span data-stu-id="0a81c-125">Consider a basic page: <a name="OnGet"></a></span></span>
+Considere uma página básica: <a name="OnGet"></a>
 
 [!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index.cshtml)]
 
-<span data-ttu-id="0a81c-126">O código anterior é muito parecido com um arquivo de exibição do Razor.</span><span class="sxs-lookup"><span data-stu-id="0a81c-126">The preceding code looks a lot like a Razor view file.</span></span> <span data-ttu-id="0a81c-127">O que o torna diferentes é a diretiva `@page`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-127">What makes it different is the `@page` directive.</span></span> <span data-ttu-id="0a81c-128">`@page` transforma o arquivo em uma ação do MVC – o que significa que ele trata solicitações diretamente, sem passar por um controlador.</span><span class="sxs-lookup"><span data-stu-id="0a81c-128">`@page` makes the file into an MVC action - which means that it handles requests directly, without going through a controller.</span></span> <span data-ttu-id="0a81c-129">`@page` deve ser a primeira diretiva do Razor em uma página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-129">`@page` must be the first Razor directive on a page.</span></span> <span data-ttu-id="0a81c-130">`@page` afeta o comportamento de outros constructos do Razor.</span><span class="sxs-lookup"><span data-stu-id="0a81c-130">`@page` affects the behavior of other Razor constructs.</span></span>
+O código anterior é muito parecido com um arquivo de exibição do Razor. O que o torna diferentes é a diretiva `@page`. `@page` transforma o arquivo em uma ação do MVC – o que significa que ele trata solicitações diretamente, sem passar por um controlador. `@page` deve ser a primeira diretiva do Razor em uma página. `@page` afeta o comportamento de outros constructos do Razor.
 
-<span data-ttu-id="0a81c-131">Uma página semelhante, usando uma classe `PageModel`, é mostrada nos dois arquivos a seguir.</span><span class="sxs-lookup"><span data-stu-id="0a81c-131">A similar page, using a `PageModel` class, is shown in the following two files.</span></span> <span data-ttu-id="0a81c-132">O arquivo *Pages/Index2.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-132">The *Pages/Index2.cshtml* file:</span></span>
+Uma página semelhante, usando uma classe `PageModel`, é mostrada nos dois arquivos a seguir. O arquivo *Pages/Index2.cshtml*:
 
 [!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml)]
 
-<span data-ttu-id="0a81c-133">O arquivo “code-behind” *Pages/Index2.cshtml.cs*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-133">The *Pages/Index2.cshtml.cs* "code-behind" file:</span></span>
+O arquivo “code-behind” *Pages/Index2.cshtml.cs*:
 
 [!code-cs[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml.cs)]
 
-<span data-ttu-id="0a81c-134">Por convenção, o arquivo de classe `PageModel` tem o mesmo nome que o arquivo na Página do Razor com *.cs* acrescentado.</span><span class="sxs-lookup"><span data-stu-id="0a81c-134">By convention, the `PageModel` class file has the same name as the Razor Page file with *.cs* appended.</span></span> <span data-ttu-id="0a81c-135">Por exemplo, a Página do Razor anterior é *Pages/Index2.cshtml*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-135">For example, the previous Razor Page is *Pages/Index2.cshtml*.</span></span> <span data-ttu-id="0a81c-136">O arquivo que contém a classe `PageModel` é chamado *Pages/Index2.cshtml.cs*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-136">The file containing the `PageModel` class is named *Pages/Index2.cshtml.cs*.</span></span>
+Por convenção, o arquivo de classe `PageModel` tem o mesmo nome que o arquivo na Página do Razor com *.cs* acrescentado. Por exemplo, a Página do Razor anterior é *Pages/Index2.cshtml*. O arquivo que contém a classe `PageModel` é chamado *Pages/Index2.cshtml.cs*.
 
-<span data-ttu-id="0a81c-137">As associações de caminhos de URL para páginas são determinadas pelo local da página no sistema de arquivos.</span><span class="sxs-lookup"><span data-stu-id="0a81c-137">The associations of URL paths to pages are determined by the page's location in the file system.</span></span> <span data-ttu-id="0a81c-138">A tabela a seguir mostra um caminho de Página do Razor e a URL correspondente:</span><span class="sxs-lookup"><span data-stu-id="0a81c-138">The following table shows a Razor Page path and the matching URL:</span></span>
+As associações de caminhos de URL para páginas são determinadas pelo local da página no sistema de arquivos. A tabela a seguir mostra um caminho de Página do Razor e a URL correspondente:
 
-| <span data-ttu-id="0a81c-139">Caminho e nome do arquivo</span><span class="sxs-lookup"><span data-stu-id="0a81c-139">File name and path</span></span>               | <span data-ttu-id="0a81c-140">URL correspondente</span><span class="sxs-lookup"><span data-stu-id="0a81c-140">matching URL</span></span> |
+| Caminho e nome do arquivo               | URL correspondente |
 | ----------------- | ------------ |
-| <span data-ttu-id="0a81c-141">*/Pages/Index.cshtml*</span><span class="sxs-lookup"><span data-stu-id="0a81c-141">*/Pages/Index.cshtml*</span></span> | <span data-ttu-id="0a81c-142">`/` ou `/Index`</span><span class="sxs-lookup"><span data-stu-id="0a81c-142">`/` or `/Index`</span></span> |
-| <span data-ttu-id="0a81c-143">*/Pages/Contact.cshtml*</span><span class="sxs-lookup"><span data-stu-id="0a81c-143">*/Pages/Contact.cshtml*</span></span> | `/Contact` |
-| <span data-ttu-id="0a81c-144">*/Pages/Store/Contact.cshtml*</span><span class="sxs-lookup"><span data-stu-id="0a81c-144">*/Pages/Store/Contact.cshtml*</span></span> | `/Store/Contact` |
-| <span data-ttu-id="0a81c-145">*/Pages/Store/Index.cshtml*</span><span class="sxs-lookup"><span data-stu-id="0a81c-145">*/Pages/Store/Index.cshtml*</span></span> | <span data-ttu-id="0a81c-146">`/Store` ou `/Store/Index`</span><span class="sxs-lookup"><span data-stu-id="0a81c-146">`/Store` or `/Store/Index`</span></span> |
+| */Pages/Index.cshtml* | `/` ou `/Index` |
+| */Pages/Contact.cshtml* | `/Contact` |
+| */Pages/Store/Contact.cshtml* | `/Store/Contact` |
+| */Pages/Store/Index.cshtml* | `/Store` ou `/Store/Index` |
 
-<span data-ttu-id="0a81c-147">Notas:</span><span class="sxs-lookup"><span data-stu-id="0a81c-147">Notes:</span></span>
+Notas:
 
-* <span data-ttu-id="0a81c-148">O tempo de execução procura arquivos de Páginas do Razor na pasta *Pages* por padrão.</span><span class="sxs-lookup"><span data-stu-id="0a81c-148">The runtime looks for Razor Pages files in the *Pages* folder by default.</span></span>
-* <span data-ttu-id="0a81c-149">`Index` é a página padrão quando uma URL não inclui uma página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-149">`Index` is the default page when a URL doesn't include a page.</span></span>
+* O tempo de execução procura arquivos de Páginas do Razor na pasta *Pages* por padrão.
+* `Index` é a página padrão quando uma URL não inclui uma página.
 
-## <a name="writing-a-basic-form"></a><span data-ttu-id="0a81c-150">Escrevendo um formulário básico</span><span class="sxs-lookup"><span data-stu-id="0a81c-150">Writing a basic form</span></span>
+## <a name="writing-a-basic-form"></a>Escrevendo um formulário básico
 
-<span data-ttu-id="0a81c-151">Os recursos de Páginas do Razor são projetados para tornar fáceis os padrões comuns usados com navegadores da Web.</span><span class="sxs-lookup"><span data-stu-id="0a81c-151">Razor Pages features are designed to make common patterns used with web browsers easy.</span></span> <span data-ttu-id="0a81c-152">[Associação de modelos](xref:mvc/models/model-binding), [auxiliares de marcas](xref:mvc/views/tag-helpers/intro) e auxiliares HTML *funcionam todos apenas* com as propriedades definidas em uma classe de Página do Razor.</span><span class="sxs-lookup"><span data-stu-id="0a81c-152">[Model binding](xref:mvc/models/model-binding), [Tag Helpers](xref:mvc/views/tag-helpers/intro), and HTML helpers all *just work* with the properties defined in a Razor Page class.</span></span> <span data-ttu-id="0a81c-153">Considere uma página que implementa um formulário básico "Fale conosco" para o modelo `Contact`:</span><span class="sxs-lookup"><span data-stu-id="0a81c-153">Consider a page that implements a basic "contact us" form for the `Contact` model:</span></span>
+Os recursos de Páginas do Razor são projetados para tornar fáceis os padrões comuns usados com navegadores da Web. [Associação de modelos](xref:mvc/models/model-binding), [auxiliares de marcas](xref:mvc/views/tag-helpers/intro) e auxiliares HTML *funcionam todos apenas* com as propriedades definidas em uma classe de Página do Razor. Considere uma página que implementa um formulário básico "Fale conosco" para o modelo `Contact`:
 
-<span data-ttu-id="0a81c-154">Para as amostras neste documento, o `DbContext` é inicializado no arquivo [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16).</span><span class="sxs-lookup"><span data-stu-id="0a81c-154">For the samples in this document, the `DbContext` is initialized in the [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) file.</span></span>
+Para as amostras neste documento, o `DbContext` é inicializado no arquivo [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16).
 
 [!code-cs[main](index/sample/RazorPagesContacts/Startup.cs?highlight=15-16)]
 
-<span data-ttu-id="0a81c-155">O modelo de dados:</span><span class="sxs-lookup"><span data-stu-id="0a81c-155">The data model:</span></span>
+O modelo de dados:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Data/Customer.cs)]
 
-<span data-ttu-id="0a81c-156">O arquivo de exibição *Pages/Create.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-156">The *Pages/Create.cshtml* view file:</span></span>
+O contexto do banco de dados:
+
+[!code-cs[main](index/sample/RazorPagesContacts/Data/AppDbContext.cs)]
+
+O arquivo de exibição *Pages/Create.cshtml*:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Create.cshtml)]
 
-<span data-ttu-id="0a81c-157">O arquivo code-behind *Pages/Create.cshtml.cs* para a exibição:</span><span class="sxs-lookup"><span data-stu-id="0a81c-157">The *Pages/Create.cshtml.cs* code-behind file for the view:</span></span>
+O arquivo code-behind *Pages/Create.cshtml.cs* para a exibição:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
 
-<span data-ttu-id="0a81c-158">Por convenção, a classe `PageModel` é chamada de `<PageName>Model` e está no mesmo namespace que a página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-158">By convention, the `PageModel` class is called `<PageName>Model` and is in the same namespace as the page.</span></span>
+Por convenção, a classe `PageModel` é chamada de `<PageName>Model` e está no mesmo namespace que a página.
 
-<span data-ttu-id="0a81c-159">O uso de um arquivo code-behind `PageModel` dá suporte a teste de unidade, mas exige que você grave uma classe e um construtor explícitos.</span><span class="sxs-lookup"><span data-stu-id="0a81c-159">Using a `PageModel` code-behind file supports unit testing, but requires you to write an explicit constructor and class.</span></span> <span data-ttu-id="0a81c-160">Páginas sem arquivos code-behind `PageModel` dão suporte a compilação de tempo de execução, o que pode ser uma vantagem no desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="0a81c-160">Pages without `PageModel` code-behind files support runtime compilation, which can be an advantage in development.</span></span>  <!-- review: advantage because you can make changes and refresh the browser without explicitly compiling the app -->
+O uso de um arquivo code-behind `PageModel` dá suporte a teste de unidade, mas exige que você grave uma classe e um construtor explícitos. Páginas sem arquivos code-behind `PageModel` dão suporte a compilação de tempo de execução, o que pode ser uma vantagem no desenvolvimento.  <!-- review: advantage because you can make changes and refresh the browser without explicitly compiling the app -->
 
-<span data-ttu-id="0a81c-161">A página tem um *método de manipulador* `OnPostAsync`, que é executado em solicitações `POST` (quando um usuário posta o formulário).</span><span class="sxs-lookup"><span data-stu-id="0a81c-161">The page has an `OnPostAsync` *handler method*, which runs on `POST` requests (when a user posts the form).</span></span> <span data-ttu-id="0a81c-162">Você pode adicionar métodos de manipulador para qualquer verbo HTTP.</span><span class="sxs-lookup"><span data-stu-id="0a81c-162">You can add handler methods for any HTTP verb.</span></span> <span data-ttu-id="0a81c-163">Os manipuladores mais comuns são:</span><span class="sxs-lookup"><span data-stu-id="0a81c-163">The most common handlers are:</span></span>
+A página tem um *método de manipulador* `OnPostAsync`, que é executado em solicitações `POST` (quando um usuário posta o formulário). Você pode adicionar métodos de manipulador para qualquer verbo HTTP. Os manipuladores mais comuns são:
 
-* <span data-ttu-id="0a81c-164">`OnGet` para inicializar o estado necessário para a página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-164">`OnGet` to initialize state needed for the page.</span></span> <span data-ttu-id="0a81c-165">Amostra de [OnGet](#OnGet).</span><span class="sxs-lookup"><span data-stu-id="0a81c-165">[OnGet](#OnGet) sample.</span></span>
-* <span data-ttu-id="0a81c-166">`OnPost` para manipular envios de formulário.</span><span class="sxs-lookup"><span data-stu-id="0a81c-166">`OnPost` to handle form submissions.</span></span>
+* `OnGet` para inicializar o estado necessário para a página. Amostra de [OnGet](#OnGet).
+* `OnPost` para manipular envios de formulário.
 
-<span data-ttu-id="0a81c-167">O sufixo de nomenclatura `Async` é opcional, mas geralmente é usado por convenção para funções assíncronas.</span><span class="sxs-lookup"><span data-stu-id="0a81c-167">The `Async` naming suffix is optional but is often used by convention for asynchronous functions.</span></span> <span data-ttu-id="0a81c-168">O código `OnPostAsync` no exemplo anterior tem aparência semelhante ao que você normalmente escreve em um controlador.</span><span class="sxs-lookup"><span data-stu-id="0a81c-168">The `OnPostAsync` code in the preceding example looks similar to what you would normally write in a controller.</span></span> <span data-ttu-id="0a81c-169">O código anterior é comum para as Páginas do Razor.</span><span class="sxs-lookup"><span data-stu-id="0a81c-169">The preceding code is typical for Razor Pages.</span></span> <span data-ttu-id="0a81c-170">A maioria dos primitivos MVC como [associação de modelos](xref:mvc/models/model-binding), [validação](xref:mvc/models/validation) e resultados da ação são compartilhados.</span><span class="sxs-lookup"><span data-stu-id="0a81c-170">Most of the MVC primitives like [model binding](xref:mvc/models/model-binding), [validation](xref:mvc/models/validation), and action results are shared.</span></span>  <!-- Review: Ryan, can we get a list of what is shared and what isn't? -->
+O sufixo de nomenclatura `Async` é opcional, mas geralmente é usado por convenção para funções assíncronas. O código `OnPostAsync` no exemplo anterior tem aparência semelhante ao que você normalmente escreve em um controlador. O código anterior é comum para as Páginas do Razor. A maioria dos primitivos MVC como [associação de modelos](xref:mvc/models/model-binding), [validação](xref:mvc/models/validation) e resultados da ação são compartilhados.  <!-- Review: Ryan, can we get a list of what is shared and what isn't? -->
 
-<span data-ttu-id="0a81c-171">O método `OnPostAsync` anterior:</span><span class="sxs-lookup"><span data-stu-id="0a81c-171">The previous `OnPostAsync` method:</span></span>
+O método `OnPostAsync` anterior:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_OnPostAsync)]
 
-<span data-ttu-id="0a81c-172">O fluxo básico de `OnPostAsync`:</span><span class="sxs-lookup"><span data-stu-id="0a81c-172">The basic flow of `OnPostAsync`:</span></span>
+O fluxo básico de `OnPostAsync`:
 
-<span data-ttu-id="0a81c-173">Verifique se há erros de validação.</span><span class="sxs-lookup"><span data-stu-id="0a81c-173">Check for validation errors.</span></span>
+Verifique se há erros de validação.
 
-*  <span data-ttu-id="0a81c-174">Se não houver nenhum erro, salve os dados e redirecione.</span><span class="sxs-lookup"><span data-stu-id="0a81c-174">If there are no errors, save the data and redirect.</span></span>
-*  <span data-ttu-id="0a81c-175">Se houver erros, mostre a página novamente com as mensagens de validação.</span><span class="sxs-lookup"><span data-stu-id="0a81c-175">If there are errors, show the page again with validation messages.</span></span> <span data-ttu-id="0a81c-176">A validação do lado do cliente é idêntica para aplicativos ASP.NET Core MVC tradicionais.</span><span class="sxs-lookup"><span data-stu-id="0a81c-176">Client-side validation is identical to traditional ASP.NET Core MVC applications.</span></span> <span data-ttu-id="0a81c-177">Em muitos casos, erros de validação seriam detectados no cliente e nunca enviados ao servidor.</span><span class="sxs-lookup"><span data-stu-id="0a81c-177">In many cases, validation errors would be detected on the client, and never submitted to the server.</span></span>
+*  Se não houver nenhum erro, salve os dados e redirecione.
+*  Se houver erros, mostre a página novamente com as mensagens de validação. A validação do lado do cliente é idêntica para aplicativos ASP.NET Core MVC tradicionais. Em muitos casos, erros de validação seriam detectados no cliente e nunca enviados ao servidor.
 
-<span data-ttu-id="0a81c-178">Quando os dados são inseridos com êxito, o método de manipulador `OnPostAsync` chama o método auxiliar `RedirectToPage` para retornar uma instância de `RedirectToPageResult`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-178">When the data is entered successfully, the `OnPostAsync` handler method calls the `RedirectToPage` helper method to return an instance of `RedirectToPageResult`.</span></span> <span data-ttu-id="0a81c-179">`RedirectToPage` é um novo resultado de ação, semelhante a `RedirectToAction` ou `RedirectToRoute`, mas personalizado para páginas.</span><span class="sxs-lookup"><span data-stu-id="0a81c-179">`RedirectToPage` is a new action result, similar to `RedirectToAction` or `RedirectToRoute`, but customized for pages.</span></span> <span data-ttu-id="0a81c-180">Na amostra anterior, ele redireciona para a página de Índice raiz (`/Index`).</span><span class="sxs-lookup"><span data-stu-id="0a81c-180">In the preceding sample, it redirects to the root Index page (`/Index`).</span></span> <span data-ttu-id="0a81c-181">`RedirectToPage` é descrito em detalhes na seção [Geração de URLs para páginas](#url_gen).</span><span class="sxs-lookup"><span data-stu-id="0a81c-181">`RedirectToPage` is detailed in the [URL generation for Pages](#url_gen) section.</span></span>
+Quando os dados são inseridos com êxito, o método de manipulador `OnPostAsync` chama o método auxiliar `RedirectToPage` para retornar uma instância de `RedirectToPageResult`. `RedirectToPage` é um novo resultado de ação, semelhante a `RedirectToAction` ou `RedirectToRoute`, mas personalizado para páginas. Na amostra anterior, ele redireciona para a página de Índice raiz (`/Index`). `RedirectToPage` é descrito em detalhes na seção [Geração de URLs para páginas](#url_gen).
 
-<span data-ttu-id="0a81c-182">Quando o formulário enviado tem erros de validação (que são passados para o servidor), o método de manipulador `OnPostAsync` chama o método auxiliar `Page`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-182">When the submitted form has validation errors (that are passed to the server), the`OnPostAsync` handler method calls the `Page` helper method.</span></span> <span data-ttu-id="0a81c-183">`Page` retorna uma instância de `PageResult`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-183">`Page` returns an instance of `PageResult`.</span></span> <span data-ttu-id="0a81c-184">Retornar `Page` é semelhante a como as ações em controladores retornam `View`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-184">Returning `Page` is similar to how actions in controllers return `View`.</span></span> <span data-ttu-id="0a81c-185">`PageResult` é o tipo de retorno <!-- Review  --> padrão para um método de manipulador.</span><span class="sxs-lookup"><span data-stu-id="0a81c-185">`PageResult` is the default <!-- Review  --> return type for a handler method.</span></span> <span data-ttu-id="0a81c-186">Um método de manipulador que retorna `void` renderiza a página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-186">A handler method that returns `void` renders the page.</span></span>
+Quando o formulário enviado tem erros de validação (que são passados para o servidor), o método de manipulador `OnPostAsync` chama o método auxiliar `Page`. `Page` retorna uma instância de `PageResult`. Retornar `Page` é semelhante a como as ações em controladores retornam `View`. `PageResult` é o tipo de retorno <!-- Review  --> padrão para um método de manipulador. Um método de manipulador que retorna `void` renderiza a página.
 
-<span data-ttu-id="0a81c-187">A propriedade `Customer` usa o atributo `[BindProperty]` para aceitar a associação de modelos.</span><span class="sxs-lookup"><span data-stu-id="0a81c-187">The `Customer` property uses `[BindProperty]` attribute to opt in to model binding.</span></span>
+A propriedade `Customer` usa o atributo `[BindProperty]` para aceitar a associação de modelos.
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
 
-<span data-ttu-id="0a81c-188">Páginas do Razor, por padrão, associam as propriedades somente com verbos não GET.</span><span class="sxs-lookup"><span data-stu-id="0a81c-188">Razor Pages, by default, bind properties only with non-GET verbs.</span></span> <span data-ttu-id="0a81c-189">A associação de propriedades pode reduzir a quantidade de código que você precisa escrever.</span><span class="sxs-lookup"><span data-stu-id="0a81c-189">Binding to properties can reduce the amount of code you have to write.</span></span> <span data-ttu-id="0a81c-190">A associação reduz o código usando a mesma propriedade para renderizar os campos de formulário (`<input asp-for="Customer.Name" />`) e aceitar a entrada.</span><span class="sxs-lookup"><span data-stu-id="0a81c-190">Binding reduces code by using the same property to render form fields (`<input asp-for="Customer.Name" />`) and accept the input.</span></span>
+Páginas do Razor, por padrão, associam as propriedades somente com verbos não GET. A associação de propriedades pode reduzir a quantidade de código que você precisa escrever. A associação reduz o código usando a mesma propriedade para renderizar os campos de formulário (`<input asp-for="Customer.Name" />`) e aceitar a entrada.
 
-<span data-ttu-id="0a81c-191">A home page (*Index.cshtml*):</span><span class="sxs-lookup"><span data-stu-id="0a81c-191">The home page (*Index.cshtml*):</span></span>
+A home page (*Index.cshtml*):
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml)]
 
-<span data-ttu-id="0a81c-192">O arquivo code-behind *Index.cshtml.cs*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-192">The code behind *Index.cshtml.cs* file:</span></span>
+O arquivo code-behind *Index.cshtml.cs*:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Index.cshtml.cs)]
 
-<span data-ttu-id="0a81c-193">O arquivo *cshtml* contém a marcação a seguir para criar um link de edição para cada contato:</span><span class="sxs-lookup"><span data-stu-id="0a81c-193">The *Index.cshtml* file contains the following markup to create an edit link for each contact:</span></span>
+O arquivo *cshtml* contém a marcação a seguir para criar um link de edição para cada contato:
 
-```cshtml
-<a asp-page="./Edit" asp-route-id="@contact.Id">edit</a>
-```
+[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=21)]
 
-<span data-ttu-id="0a81c-194">O [auxiliar de marcas de âncora](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper) usou o atributo [asp-route-{valor}](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper#route) para gerar um link para a página Edit.</span><span class="sxs-lookup"><span data-stu-id="0a81c-194">The [Anchor Tag Helper](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper) used the [asp-route-{value}](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper#route) attribute to generate a link to the Edit page.</span></span> <span data-ttu-id="0a81c-195">O link contém dados de rota com a ID de contato.</span><span class="sxs-lookup"><span data-stu-id="0a81c-195">The link contains route data with the contact ID.</span></span> <span data-ttu-id="0a81c-196">Por exemplo, `http://localhost:5000/Edit/1`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-196">For example, `http://localhost:5000/Edit/1`.</span></span>
+O [auxiliar de marcas de âncora](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) usou o atributo [asp-route-{valor}](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#route) para gerar um link para a página Edit. O link contém dados de rota com a ID de contato. Por exemplo, `http://localhost:5000/Edit/1`.
 
-<span data-ttu-id="0a81c-197">O arquivo *Pages/Edit.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-197">The *Pages/Edit.cshtml* file:</span></span>
+O arquivo *Pages/Edit.cshtml*:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Edit.cshtml?highlight=1)]
 
-<span data-ttu-id="0a81c-198">A primeira linha contém a diretiva `@page "{id:int}"`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-198">The first line contains the `@page "{id:int}"` directive.</span></span> <span data-ttu-id="0a81c-199">A restrição de roteamento `"{id:int}"` informa à página para aceitar solicitações para a página que contêm dados da rota `int`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-199">The routing constraint`"{id:int}"` tells the page to accept requests to the page that contain `int` route data.</span></span> <span data-ttu-id="0a81c-200">Se uma solicitação para a página não contém dados de rota que podem ser convertidos em um `int`, o tempo de execução retorna um erro HTTP 404 (não encontrado).</span><span class="sxs-lookup"><span data-stu-id="0a81c-200">If a request to the page doesn't contain route data that can be converted to an `int`, the runtime returns an HTTP 404 (not found) error.</span></span>
+A primeira linha contém a diretiva `@page "{id:int}"`. A restrição de roteamento `"{id:int}"` informa à página para aceitar solicitações para a página que contêm dados da rota `int`. Se uma solicitação para a página não contém dados de rota que podem ser convertidos em um `int`, o tempo de execução retorna um erro HTTP 404 (não encontrado).
 
-<span data-ttu-id="0a81c-201">O arquivo *Pages/Edit.cshtml.cs*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-201">The *Pages/Edit.cshtml.cs* file:</span></span>
+O arquivo *Pages/Edit.cshtml.cs*:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Edit.cshtml.cs)]
 
+O arquivo *Index.cshtml* também contém a marcação para criar um botão de exclusão para cada contato de cliente:
+
+[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=22-23)]
+
+Quando o botão de exclusão é renderizado em HTML, seu `formaction` inclui parâmetros para:
+
+* A ID de contato do cliente especificada pelo atributo `asp-route-id`.
+* O `handler` especificado pelo atributo `asp-page-handler`.
+
+Este é um exemplo de um botão de exclusão renderizado com uma ID de contato do cliente de `1`:
+
+```html
+<button type="submit" formaction="/?id=1&amp;handler=delete">delete</button>
+```
+
+Quando o botão é selecionado, uma solicitação de formulário `POST` é enviada para o servidor. Por convenção, o nome do método do manipulador é selecionado com base no valor do parâmetro `handler` de acordo com o esquema `OnPost[handler]Async`.
+
+Como o `handler` é `delete` neste exemplo, o método do manipulador `OnPostDeleteAsync` é usado para processar a solicitação `POST`. Se o `asp-page-handler` for definido como um valor diferente, como `remove`, um método de manipulador de página com o nome `OnPostRemoveAsync` será selecionado.
+
+[!code-cs[main](index/sample/RazorPagesContacts/Pages/Index.cshtml.cs?range=26-37)]
+
+O método `OnPostDeleteAsync`:
+
+* Aceita o `id` da cadeia de caracteres de consulta.
+* Consulta o banco de dados para o contato de cliente com `FindAsync`.
+* Se o contato do cliente for encontrado, eles serão removidos da lista de contatos do cliente. O banco de dados é atualizado.
+* Chama `RedirectToPage` para redirecionar para a página de índice de raiz (`/Index`).
+
 <a name="xsrf"></a>
 
-## <a name="xsrfcsrf-and-razor-pages"></a><span data-ttu-id="0a81c-202">XSRF/CSRF e Páginas do Razor</span><span class="sxs-lookup"><span data-stu-id="0a81c-202">XSRF/CSRF and Razor Pages</span></span>
+## <a name="xsrfcsrf-and-razor-pages"></a>XSRF/CSRF e Páginas do Razor
 
-<span data-ttu-id="0a81c-203">Você não precisa escrever nenhum código para [validação antifalsificação](xref:security/anti-request-forgery).</span><span class="sxs-lookup"><span data-stu-id="0a81c-203">You don't have to write any code for [antiforgery validation](xref:security/anti-request-forgery).</span></span> <span data-ttu-id="0a81c-204">Validação e geração de token antifalsificação são automaticamente incluídas nas Páginas do Razor.</span><span class="sxs-lookup"><span data-stu-id="0a81c-204">Antiforgery token generation and validation are automatically included in Razor Pages.</span></span>
+Você não precisa escrever nenhum código para [validação antifalsificação](xref:security/anti-request-forgery). Validação e geração de token antifalsificação são automaticamente incluídas nas Páginas do Razor.
 
 <a name="layout"></a>
-## <a name="using-layouts-partials-templates-and-tag-helpers-with-razor-pages"></a><span data-ttu-id="0a81c-205">Usando Layouts, parciais, modelos e auxiliares de marcas com Páginas do Razor</span><span class="sxs-lookup"><span data-stu-id="0a81c-205">Using Layouts, partials, templates, and Tag Helpers with Razor Pages</span></span>
+## <a name="using-layouts-partials-templates-and-tag-helpers-with-razor-pages"></a>Usando Layouts, parciais, modelos e auxiliares de marcas com Páginas do Razor
 
-<span data-ttu-id="0a81c-206">As Páginas funcionam com todos os recursos do mecanismo de exibição do Razor.</span><span class="sxs-lookup"><span data-stu-id="0a81c-206">Pages work with all the features of the Razor view engine.</span></span> <span data-ttu-id="0a81c-207">Layouts, parciais, modelos, auxiliares de marcas, *_ViewStart.cshtml* e *_ViewImports.cshtml* funcionam da mesma forma que funcionam exibições convencionais do Razor.</span><span class="sxs-lookup"><span data-stu-id="0a81c-207">Layouts, partials, templates, Tag Helpers, *_ViewStart.cshtml*, *_ViewImports.cshtml* work in the same way they do for conventional Razor views.</span></span>
+As Páginas funcionam com todos os recursos do mecanismo de exibição do Razor. Layouts, parciais, modelos, auxiliares de marcas, *_ViewStart.cshtml* e *_ViewImports.cshtml* funcionam da mesma forma que funcionam exibições convencionais do Razor.
 
-<span data-ttu-id="0a81c-208">Organizaremos essa página aproveitando alguns desses recursos.</span><span class="sxs-lookup"><span data-stu-id="0a81c-208">Let's declutter this page by taking advantage of some of those features.</span></span>
+Organizaremos essa página aproveitando alguns desses recursos.
 
-<span data-ttu-id="0a81c-209">Adicione uma [página de layout](xref:mvc/views/layout) a *Pages/_Layout.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-209">Add a [layout page](xref:mvc/views/layout) to *Pages/_Layout.cshtml*:</span></span>
+Adicione uma [página de layout](xref:mvc/views/layout) a *Pages/_Layout.cshtml*:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_LayoutSimple.cshtml)]
 
-<span data-ttu-id="0a81c-210">O [Layout](xref:mvc/views/layout):</span><span class="sxs-lookup"><span data-stu-id="0a81c-210">The [Layout](xref:mvc/views/layout):</span></span>
+O [Layout](xref:mvc/views/layout):
 
-* <span data-ttu-id="0a81c-211">Controla o layout de cada página (a menos que a página opte por não usar o layout).</span><span class="sxs-lookup"><span data-stu-id="0a81c-211">Controls the layout of each page (unless the page opts out of layout).</span></span>
-* <span data-ttu-id="0a81c-212">Importa estruturas HTML como JavaScript e folhas de estilo.</span><span class="sxs-lookup"><span data-stu-id="0a81c-212">Imports HTML structures such as JavaScript and stylesheets.</span></span>
+* Controla o layout de cada página (a menos que a página opte por não usar o layout).
+* Importa estruturas HTML como JavaScript e folhas de estilo.
 
-<span data-ttu-id="0a81c-213">Veja [página de layout](xref:mvc/views/layout) para obter mais informações.</span><span class="sxs-lookup"><span data-stu-id="0a81c-213">See [layout page](xref:mvc/views/layout) for more information.</span></span>
+Veja [página de layout](xref:mvc/views/layout) para obter mais informações.
 
-<span data-ttu-id="0a81c-214">A propriedade [Layout](xref:mvc/views/layout#specifying-a-layout) é definida em *Pages/_ViewStart.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-214">The [Layout](xref:mvc/views/layout#specifying-a-layout) property is set in *Pages/_ViewStart.cshtml*:</span></span>
+A propriedade [Layout](xref:mvc/views/layout#specifying-a-layout) é definida em *Pages/_ViewStart.cshtml*:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
-<span data-ttu-id="0a81c-215">**Observação**: o layout está na pasta *Pages*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-215">**Note:** The layout is in the *Pages* folder.</span></span> <span data-ttu-id="0a81c-216">As páginas buscam outras exibições (layouts, modelos, parciais) hierarquicamente, iniciando na mesma pasta que a página atual.</span><span class="sxs-lookup"><span data-stu-id="0a81c-216">Pages look for other views (layouts, templates, partials) hierarchically, starting in the same folder as the current page.</span></span> <span data-ttu-id="0a81c-217">Um layout na pasta *Pages* pode ser usado em qualquer Página do Razor na pasta *Pages*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-217">A layout in the *Pages* folder can be used from any Razor page under the *Pages* folder.</span></span>
+**Observação**: o layout está na pasta *Pages*. As páginas buscam outras exibições (layouts, modelos, parciais) hierarquicamente, iniciando na mesma pasta que a página atual. Um layout na pasta *Pages* pode ser usado em qualquer Página do Razor na pasta *Pages*.
 
-<span data-ttu-id="0a81c-218">Recomendamos que você **não** coloque o arquivo de layout na pasta *Views/Shared*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-218">We recommend you **not** put the layout file in the *Views/Shared* folder.</span></span> <span data-ttu-id="0a81c-219">*Views/Shared* é um padrão de exibições do MVC.</span><span class="sxs-lookup"><span data-stu-id="0a81c-219">*Views/Shared* is an MVC views pattern.</span></span> <span data-ttu-id="0a81c-220">As Páginas do Razor devem confiar na hierarquia de pasta e não nas convenções de caminho.</span><span class="sxs-lookup"><span data-stu-id="0a81c-220">Razor Pages are meant to rely on folder hierarchy, not path conventions.</span></span>
+Recomendamos que você **não** coloque o arquivo de layout na pasta *Views/Shared*. *Views/Shared* é um padrão de exibições do MVC. As Páginas do Razor devem confiar na hierarquia de pasta e não nas convenções de caminho.
 
-<span data-ttu-id="0a81c-221">A pesquisa de modo de exibição de uma Página do Razor inclui a pasta *Pages*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-221">View search from a Razor Page includes the *Pages* folder.</span></span> <span data-ttu-id="0a81c-222">Os layouts, modelos e parciais que você está usando com controladores MVC e exibições do Razor convencionais *apenas funcionam*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-222">The layouts, templates, and partials you're using with MVC controllers and conventional Razor views *just work*.</span></span>
+A pesquisa de modo de exibição de uma Página do Razor inclui a pasta *Pages*. Os layouts, modelos e parciais que você está usando com controladores MVC e exibições do Razor convencionais *apenas funcionam*.
 
-<span data-ttu-id="0a81c-223">Adicione um arquivo *Pages/_ViewImports.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-223">Add a *Pages/_ViewImports.cshtml* file:</span></span>
+Adicione um arquivo *Pages/_ViewImports.cshtml*:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml)]
 
-<span data-ttu-id="0a81c-224">`@namespace` é explicado posteriormente no tutorial.</span><span class="sxs-lookup"><span data-stu-id="0a81c-224">`@namespace` is explained later in the tutorial.</span></span> <span data-ttu-id="0a81c-225">A diretiva `@addTagHelper` coloca os [auxiliares de marcas internos](xref:mvc/views/tag-helpers/builtin-th/Index) em todas as páginas na pasta *Pages*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-225">The `@addTagHelper` directive brings in the [built-in Tag Helpers](xref:mvc/views/tag-helpers/builtin-th/Index) to all the pages in the *Pages* folder.</span></span>
+`@namespace` é explicado posteriormente no tutorial. A diretiva `@addTagHelper` coloca os [auxiliares de marcas internos](xref:mvc/views/tag-helpers/builtin-th/Index) em todas as páginas na pasta *Pages*.
 
 <a name="namespace"></a>
 
-<span data-ttu-id="0a81c-226">Quando a diretiva `@namespace` é usada explicitamente em uma página:</span><span class="sxs-lookup"><span data-stu-id="0a81c-226">When the `@namespace` directive is used explicitly on a page:</span></span>
+Quando a diretiva `@namespace` é usada explicitamente em uma página:
 
 [!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Customers/Namespace2.cshtml?highlight=2)]
 
-<span data-ttu-id="0a81c-227">A diretiva define o namespace da página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-227">The directive sets the namespace for the page.</span></span> <span data-ttu-id="0a81c-228">A diretiva `@model` não precisa incluir o namespace.</span><span class="sxs-lookup"><span data-stu-id="0a81c-228">The `@model` directive doesn't need to include the namespace.</span></span>
+A diretiva define o namespace da página. A diretiva `@model` não precisa incluir o namespace.
 
-<span data-ttu-id="0a81c-229">Quando a diretiva `@namespace` está contida em *_ViewImports.cshtml*, o namespace especificado fornece o prefixo do namespace gerado na página que importa a diretiva `@namespace`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-229">When the `@namespace` directive is contained in *_ViewImports.cshtml*, the specified namespace supplies the prefix for the generated namespace in the Page that imports the `@namespace` directive.</span></span> <span data-ttu-id="0a81c-230">O restante do namespace gerado (a parte do sufixo) é o caminho relativo separado por ponto entre a pasta que contém *_ViewImports.cshtml* e a pasta que contém a página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-230">The rest of the generated namespace (the suffix portion) is the dot-separated relative path between the folder containing *_ViewImports.cshtml* and the folder containing the page.</span></span>
+Quando a diretiva `@namespace` está contida em *_ViewImports.cshtml*, o namespace especificado fornece o prefixo do namespace gerado na página que importa a diretiva `@namespace`. O restante do namespace gerado (a parte do sufixo) é o caminho relativo separado por ponto entre a pasta que contém *_ViewImports.cshtml* e a pasta que contém a página.
 
-<span data-ttu-id="0a81c-231">Por exemplo, o arquivo code-behind *Pages/Customers/Edit.cshtml.cs* define explicitamente o namespace:</span><span class="sxs-lookup"><span data-stu-id="0a81c-231">For example, the code behind file *Pages/Customers/Edit.cshtml.cs* explicitly sets the namespace:</span></span>
+Por exemplo, o arquivo code-behind *Pages/Customers/Edit.cshtml.cs* define explicitamente o namespace:
 
 [!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/Edit.cshtml.cs?name=snippet_namespace)]
 
-<span data-ttu-id="0a81c-232">O arquivo *Pages/_ViewImports.cshtml* define o namespace a seguir:</span><span class="sxs-lookup"><span data-stu-id="0a81c-232">The *Pages/_ViewImports.cshtml* file sets the following namespace:</span></span>
+O arquivo *Pages/_ViewImports.cshtml* define o namespace a seguir:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml?highlight=1)]
 
-<span data-ttu-id="0a81c-233">O namespace gerado para a Página do Razor *Pages/Customers/Edit.cshtml* é o mesmo que o do arquivo code-behind.</span><span class="sxs-lookup"><span data-stu-id="0a81c-233">The generated namespace for the *Pages/Customers/Edit.cshtml* Razor Page is the same as the code behind file.</span></span> <span data-ttu-id="0a81c-234">A diretiva `@namespace` foi projetada de modo que as classes C# adicionadas a um projeto e o código gerado pelas páginas *funcione* sem a necessidade de adicionar uma diretiva `@using` para o arquivo code-behind.</span><span class="sxs-lookup"><span data-stu-id="0a81c-234">The `@namespace` directive was designed so the C# classes added to a project and pages-generated code *just work* without having to add an `@using` directive for the code behind file.</span></span>
+O namespace gerado para a Página do Razor *Pages/Customers/Edit.cshtml* é o mesmo que o do arquivo code-behind. A diretiva `@namespace` foi projetada de modo que as classes C# adicionadas a um projeto e o código gerado pelas páginas *funcione* sem a necessidade de adicionar uma diretiva `@using` para o arquivo code-behind.
 
-<span data-ttu-id="0a81c-235">**Observação:** `@namespace` também funciona com exibições do Razor convencionais.</span><span class="sxs-lookup"><span data-stu-id="0a81c-235">**Note:** `@namespace` also works with conventional Razor views.</span></span>
+**Observação:** `@namespace` também funciona com exibições do Razor convencionais.
 
-<span data-ttu-id="0a81c-236">O arquivo de exibição *Pages/Create.cshtml* original:</span><span class="sxs-lookup"><span data-stu-id="0a81c-236">The original *Pages/Create.cshtml* view file:</span></span>
+O arquivo de exibição *Pages/Create.cshtml* original:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Create.cshtml?highlight=2)]
 
-<span data-ttu-id="0a81c-237">O arquivo de exibição *Pages/Create.cshtml* atualizado:</span><span class="sxs-lookup"><span data-stu-id="0a81c-237">The updated *Pages/Create.cshtml* view file:</span></span>
+O arquivo de exibição *Pages/Create.cshtml* atualizado:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/Create.cshtml?highlight=2)]
 
-<span data-ttu-id="0a81c-238">O [projeto inicial de Páginas do Razor](#rpvs17) contém o *Pages/_ValidationScriptsPartial.cshtml*, que conecta a validação do lado do cliente.</span><span class="sxs-lookup"><span data-stu-id="0a81c-238">The [Razor Pages starter project](#rpvs17) contains the *Pages/_ValidationScriptsPartial.cshtml*, which hooks up client-side validation.</span></span>
+O [projeto inicial de Páginas do Razor](#rpvs17) contém o *Pages/_ValidationScriptsPartial.cshtml*, que conecta a validação do lado do cliente.
 
 <a name="url_gen"></a>
 
-## <a name="url-generation-for-pages"></a><span data-ttu-id="0a81c-239">Geração de URL para Páginas</span><span class="sxs-lookup"><span data-stu-id="0a81c-239">URL generation for Pages</span></span>
+## <a name="url-generation-for-pages"></a>Geração de URL para Páginas
 
-<span data-ttu-id="0a81c-240">A página `Create`, exibida anteriormente, usa `RedirectToPage`:</span><span class="sxs-lookup"><span data-stu-id="0a81c-240">The `Create` page, shown previously, uses `RedirectToPage`:</span></span>
+A página `Create`, exibida anteriormente, usa `RedirectToPage`:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_OnPostAsync&highlight=10)]
 
-<span data-ttu-id="0a81c-241">O aplicativo tem a estrutura de arquivos/pastas a seguir:</span><span class="sxs-lookup"><span data-stu-id="0a81c-241">The app has the following file/folder structure:</span></span>
+O aplicativo tem a estrutura de arquivos/pastas a seguir:
 
-* <span data-ttu-id="0a81c-242">*/Pages*</span><span class="sxs-lookup"><span data-stu-id="0a81c-242">*/Pages*</span></span>
+* */Pages*
 
-  * <span data-ttu-id="0a81c-243">*Index.cshtml*</span><span class="sxs-lookup"><span data-stu-id="0a81c-243">*Index.cshtml*</span></span>
-  * <span data-ttu-id="0a81c-244">*/Customer*</span><span class="sxs-lookup"><span data-stu-id="0a81c-244">*/Customer*</span></span>
+  * *Index.cshtml*
+  * */Customer*
 
-    * <span data-ttu-id="0a81c-245">*Create.cshtml*</span><span class="sxs-lookup"><span data-stu-id="0a81c-245">*Create.cshtml*</span></span>
-    * <span data-ttu-id="0a81c-246">*Edit.cshtml*</span><span class="sxs-lookup"><span data-stu-id="0a81c-246">*Edit.cshtml*</span></span>
-    * <span data-ttu-id="0a81c-247">*Index.cshtml*</span><span class="sxs-lookup"><span data-stu-id="0a81c-247">*Index.cshtml*</span></span>
+    * *Create.cshtml*
+    * *Edit.cshtml*
+    * *Index.cshtml*
 
-<span data-ttu-id="0a81c-248">As páginas *Pages/Customers/Create.cshtml* e *Pages/Customers/Edit.cshtml* redirecionam para o *Pages/Index.cshtml* após êxito.</span><span class="sxs-lookup"><span data-stu-id="0a81c-248">The *Pages/Customers/Create.cshtml* and *Pages/Customers/Edit.cshtml* pages redirect to *Pages/Index.cshtml* after success.</span></span> <span data-ttu-id="0a81c-249">A cadeia de caracteres `/Index` faz parte do URI para acessar a página anterior.</span><span class="sxs-lookup"><span data-stu-id="0a81c-249">The string `/Index` is part of the URI to access the preceding page.</span></span> <span data-ttu-id="0a81c-250">A cadeia de caracteres `/Index` pode ser usada para gerar URIs para a página *Pages/Index.cshtml*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-250">The string `/Index` can be used to generate URIs to the *Pages/Index.cshtml* page.</span></span> <span data-ttu-id="0a81c-251">Por exemplo:</span><span class="sxs-lookup"><span data-stu-id="0a81c-251">For example:</span></span>
+As páginas *Pages/Customers/Create.cshtml* e *Pages/Customers/Edit.cshtml* redirecionam para o *Pages/Index.cshtml* após êxito. A cadeia de caracteres `/Index` faz parte do URI para acessar a página anterior. A cadeia de caracteres `/Index` pode ser usada para gerar URIs para a página *Pages/Index.cshtml*. Por exemplo:
 
 * `Url.Page("/Index", ...)`
 * `<a asp-page="/Index">My Index Page</a>`
 * `RedirectToPage("/Index")`
 
-<span data-ttu-id="0a81c-252">O nome da página é o caminho para a página da pasta raiz */Pages* (incluindo um `/` à direita, por exemplo, `/Index`).</span><span class="sxs-lookup"><span data-stu-id="0a81c-252">The page name is the path to the page from the root */Pages* folder (including a leading `/`, for example `/Index`).</span></span> <span data-ttu-id="0a81c-253">As amostras anteriores de geração de URL são muito mais ricas em recursos do que apenas codificar uma URL.</span><span class="sxs-lookup"><span data-stu-id="0a81c-253">The preceding URL generation samples are much more feature rich than just hardcoding a URL.</span></span> <span data-ttu-id="0a81c-254">A geração de URL usa [roteamento](xref:mvc/controllers/routing) e pode gerar e codificar parâmetros de acordo com o modo como a rota é definida no caminho de destino.</span><span class="sxs-lookup"><span data-stu-id="0a81c-254">URL generation uses [routing](xref:mvc/controllers/routing) and can generate and encode parameters according to how the route is defined in the destination path.</span></span>
+O nome da página é o caminho para a página da pasta raiz */Pages* (incluindo um `/` à direita, por exemplo, `/Index`). As amostras anteriores de geração de URL são muito mais ricas em recursos do que apenas codificar uma URL. A geração de URL usa [roteamento](xref:mvc/controllers/routing) e pode gerar e codificar parâmetros de acordo com o modo como a rota é definida no caminho de destino.
 
-<span data-ttu-id="0a81c-255">A Geração de URL para páginas dá suporte a nomes relativos.</span><span class="sxs-lookup"><span data-stu-id="0a81c-255">URL generation for pages supports relative names.</span></span> <span data-ttu-id="0a81c-256">A tabela a seguir mostra qual página de Índice é selecionada com diferentes parâmetros `RedirectToPage` de *Pages/Customers/Create.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="0a81c-256">The following table shows which Index page is selected with different `RedirectToPage` parameters from *Pages/Customers/Create.cshtml*:</span></span>
+A Geração de URL para páginas dá suporte a nomes relativos. A tabela a seguir mostra qual página de Índice é selecionada com diferentes parâmetros `RedirectToPage` de *Pages/Customers/Create.cshtml*:
 
-| <span data-ttu-id="0a81c-257">RedirectToPage(x)</span><span class="sxs-lookup"><span data-stu-id="0a81c-257">RedirectToPage(x)</span></span>| <span data-ttu-id="0a81c-258">Página</span><span class="sxs-lookup"><span data-stu-id="0a81c-258">Page</span></span> |
+| RedirectToPage(x)| Página |
 | ----------------- | ------------ |
-| <span data-ttu-id="0a81c-259">RedirectToPage("/Index")</span><span class="sxs-lookup"><span data-stu-id="0a81c-259">RedirectToPage("/Index")</span></span> | <span data-ttu-id="0a81c-260">*Pages/Index*</span><span class="sxs-lookup"><span data-stu-id="0a81c-260">*Pages/Index*</span></span> |
-| <span data-ttu-id="0a81c-261">RedirectToPage("./Index");</span><span class="sxs-lookup"><span data-stu-id="0a81c-261">RedirectToPage("./Index");</span></span> | <span data-ttu-id="0a81c-262">*Pages/Customers/Index*</span><span class="sxs-lookup"><span data-stu-id="0a81c-262">*Pages/Customers/Index*</span></span> |
-| <span data-ttu-id="0a81c-263">RedirectToPage("../Index")</span><span class="sxs-lookup"><span data-stu-id="0a81c-263">RedirectToPage("../Index")</span></span> | <span data-ttu-id="0a81c-264">*Pages/Index*</span><span class="sxs-lookup"><span data-stu-id="0a81c-264">*Pages/Index*</span></span> |
-| <span data-ttu-id="0a81c-265">RedirectToPage("Index")</span><span class="sxs-lookup"><span data-stu-id="0a81c-265">RedirectToPage("Index")</span></span>  | <span data-ttu-id="0a81c-266">*Pages/Customers/Index*</span><span class="sxs-lookup"><span data-stu-id="0a81c-266">*Pages/Customers/Index*</span></span> |
+| RedirectToPage("/Index") | *Pages/Index* |
+| RedirectToPage("./Index"); | *Pages/Customers/Index* |
+| RedirectToPage("../Index") | *Pages/Index* |
+| RedirectToPage("Index")  | *Pages/Customers/Index* |
 
-<span data-ttu-id="0a81c-267">`RedirectToPage("Index")`, `RedirectToPage("./Index")` e `RedirectToPage("../Index")` são *nomes relativos*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-267">`RedirectToPage("Index")`, `RedirectToPage("./Index")`, and `RedirectToPage("../Index")`  are *relative names*.</span></span> <span data-ttu-id="0a81c-268">O parâmetro `RedirectToPage` é *combinado* com o caminho da página atual para calcular o nome da página de destino.</span><span class="sxs-lookup"><span data-stu-id="0a81c-268">The `RedirectToPage` parameter is *combined* with the path of the current page to compute the name of the destination page.</span></span>  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page. -- page name, not page path -->
+`RedirectToPage("Index")`, `RedirectToPage("./Index")` e `RedirectToPage("../Index")` são *nomes relativos*. O parâmetro `RedirectToPage` é *combinado* com o caminho da página atual para calcular o nome da página de destino.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page. -- page name, not page path -->
 
-<span data-ttu-id="0a81c-269">Vinculação de nome relativo é útil ao criar sites com uma estrutura complexa.</span><span class="sxs-lookup"><span data-stu-id="0a81c-269">Relative name linking is useful when building sites with a complex structure.</span></span> <span data-ttu-id="0a81c-270">Se você usar nomes relativos para vincular entre páginas em uma pasta, você poderá renomear essa pasta.</span><span class="sxs-lookup"><span data-stu-id="0a81c-270">If you use relative names to link between pages in a folder, you can rename that folder.</span></span> <span data-ttu-id="0a81c-271">Todos os links ainda funcionarão (porque eles não incluirão o nome da pasta).</span><span class="sxs-lookup"><span data-stu-id="0a81c-271">All the links still work (because they didn't include the folder name).</span></span>
+Vinculação de nome relativo é útil ao criar sites com uma estrutura complexa. Se você usar nomes relativos para vincular entre páginas em uma pasta, você poderá renomear essa pasta. Todos os links ainda funcionarão (porque eles não incluirão o nome da pasta).
 
-## <a name="tempdata"></a><span data-ttu-id="0a81c-272">TempData</span><span class="sxs-lookup"><span data-stu-id="0a81c-272">TempData</span></span>
+## <a name="tempdata"></a>TempData
 
-<span data-ttu-id="0a81c-273">O ASP.NET Core expõe a propriedade [TempData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller#Microsoft_AspNetCore_Mvc_Controller_TempData) em um [controlador](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller).</span><span class="sxs-lookup"><span data-stu-id="0a81c-273">ASP.NET Core exposes the [TempData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller#Microsoft_AspNetCore_Mvc_Controller_TempData) property on a [controller](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller).</span></span> <span data-ttu-id="0a81c-274">Essa propriedade armazena dados até eles serem lidos.</span><span class="sxs-lookup"><span data-stu-id="0a81c-274">This property stores data until it is read.</span></span> <span data-ttu-id="0a81c-275">Os métodos `Keep` e `Peek` podem ser usados para examinar os dados sem exclusão.</span><span class="sxs-lookup"><span data-stu-id="0a81c-275">The `Keep` and `Peek` methods can be used to examine the data without deletion.</span></span> <span data-ttu-id="0a81c-276">`TempData` é útil para redirecionamento nos casos em que os dados são necessários para mais de uma única solicitação.</span><span class="sxs-lookup"><span data-stu-id="0a81c-276">`TempData` is  useful for redirection, when data is needed for more than a single request.</span></span>
+O ASP.NET Core expõe a propriedade [TempData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller#Microsoft_AspNetCore_Mvc_Controller_TempData) em um [controlador](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller). Essa propriedade armazena dados até eles serem lidos. Os métodos `Keep` e `Peek` podem ser usados para examinar os dados sem exclusão. `TempData` é útil para redirecionamento nos casos em que os dados são necessários para mais de uma única solicitação.
 
-<span data-ttu-id="0a81c-277">O atributo `[TempData]` é novo no ASP.NET Core 2.0 e tem suporte em controladores e páginas.</span><span class="sxs-lookup"><span data-stu-id="0a81c-277">The `[TempData]` attribute is new in ASP.NET Core 2.0 and is supported on controllers and pages.</span></span>
+O atributo `[TempData]` é novo no ASP.NET Core 2.0 e tem suporte em controladores e páginas.
 
-<span data-ttu-id="0a81c-278">Os conjuntos de código a seguir definem o valor de `Message` usando `TempData`:</span><span class="sxs-lookup"><span data-stu-id="0a81c-278">The following code sets the value of `Message` using `TempData`:</span></span>
+Os conjuntos de código a seguir definem o valor de `Message` usando `TempData`:
 
 [!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateDot.cshtml.cs?highlight=10-11,25&name=snippet_Temp)]
 
-<span data-ttu-id="0a81c-279">A marcação a seguir no arquivo *Pages/Customers/Index.cshtml* exibe o valor de `Message` usando `TempData`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-279">The following markup in the *Pages/Customers/Index.cshtml* file displays the value of `Message` using `TempData`.</span></span>
+A marcação a seguir no arquivo *Pages/Customers/Index.cshtml* exibe o valor de `Message` usando `TempData`.
 
 ```cshtml
 <h3>Msg: @Model.Message</h3>
 ```
 
-<span data-ttu-id="0a81c-280">O arquivo code-behind *Pages/Customers/Index.cshtml.cs* aplica o atributo `[TempData]` à propriedade `Message`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-280">The *Pages/Customers/Index.cshtml.cs* code-behind file applies the `[TempData]` attribute to the `Message` property.</span></span>
+O arquivo code-behind *Pages/Customers/Index.cshtml.cs* aplica o atributo `[TempData]` à propriedade `Message`.
 
 ```cs
 [TempData]
 public string Message { get; set; }
 ```
 
-<span data-ttu-id="0a81c-281">Consulte [TempData](xref:fundamentals/app-state#temp) para obter mais informações.</span><span class="sxs-lookup"><span data-stu-id="0a81c-281">See [TempData](xref:fundamentals/app-state#temp) for more information.</span></span>
+Consulte [TempData](xref:fundamentals/app-state#temp) para obter mais informações.
 
 <a name="mhpp"></a>
-## <a name="multiple-handlers-per-page"></a><span data-ttu-id="0a81c-282">Vários manipuladores por página</span><span class="sxs-lookup"><span data-stu-id="0a81c-282">Multiple handlers per page</span></span>
+## <a name="multiple-handlers-per-page"></a>Vários manipuladores por página
 
-<span data-ttu-id="0a81c-283">A página a seguir gera marcação para dois manipuladores de página usando o auxiliar de marcas `asp-page-handler`:</span><span class="sxs-lookup"><span data-stu-id="0a81c-283">The following page generates markup for two page handlers using the `asp-page-handler` Tag Helper:</span></span>
+A página a seguir gera marcação para dois manipuladores de página usando o auxiliar de marcas `asp-page-handler`:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?highlight=12-13)]
 
 <!-- Review: the FormActionTagHelper applies to all <form /> elements on a Razor page, even when there is no `asp-` attribute   -->
 
-<span data-ttu-id="0a81c-284">O formulário no exemplo anterior tem dois botões de envio, cada um usando o `FormActionTagHelper` para enviar para uma URL diferente.</span><span class="sxs-lookup"><span data-stu-id="0a81c-284">The form in the preceding example has two submit buttons, each using the `FormActionTagHelper` to submit to a different URL.</span></span> <span data-ttu-id="0a81c-285">O atributo `asp-page-handler` é um complemento para `asp-page`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-285">The `asp-page-handler` attribute is a companion to `asp-page`.</span></span> <span data-ttu-id="0a81c-286">`asp-page-handler` gera URLs que enviam para cada um dos métodos de manipulador definidos por uma página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-286">`asp-page-handler` generates URLs that submit to each of the handler methods defined by a page.</span></span> <span data-ttu-id="0a81c-287">`asp-page` não foi especificado porque a amostra está vinculando à página atual.</span><span class="sxs-lookup"><span data-stu-id="0a81c-287">`asp-page` is not specified because the sample is linking to the current page.</span></span>
+O formulário no exemplo anterior tem dois botões de envio, cada um usando o `FormActionTagHelper` para enviar para uma URL diferente. O atributo `asp-page-handler` é um complemento para `asp-page`. `asp-page-handler` gera URLs que enviam para cada um dos métodos de manipulador definidos por uma página. `asp-page` não foi especificado porque a amostra está vinculando à página atual.
 
-<span data-ttu-id="0a81c-288">O arquivo code-behind:</span><span class="sxs-lookup"><span data-stu-id="0a81c-288">The code-behind file:</span></span>
+O arquivo code-behind:
 
 [!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml.cs?highlight=20,32)]
 
-<span data-ttu-id="0a81c-289">O código anterior usa *métodos de manipulador nomeados*.</span><span class="sxs-lookup"><span data-stu-id="0a81c-289">The preceding code uses *named handler methods*.</span></span> <span data-ttu-id="0a81c-290">Métodos de manipulador nomeados são criados colocando o texto no nome após `On<HTTP Verb>` e antes de `Async` (se houver).</span><span class="sxs-lookup"><span data-stu-id="0a81c-290">Named handler methods are created by taking the text in the name after `On<HTTP Verb>` and before `Async` (if present).</span></span> <span data-ttu-id="0a81c-291">No exemplo anterior, os métodos de página são OnPost**JoinList**Async e OnPost**JoinListUC**Async.</span><span class="sxs-lookup"><span data-stu-id="0a81c-291">In the preceding example, the page methods are OnPost**JoinList**Async and OnPost**JoinListUC**Async.</span></span> <span data-ttu-id="0a81c-292">Com *OnPost* e *Async* removidos, os nomes de manipulador são `JoinList` e `JoinListUC`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-292">With *OnPost* and *Async* removed, the handler names are `JoinList` and `JoinListUC`.</span></span>
+O código anterior usa *métodos de manipulador nomeados*. Métodos de manipulador nomeados são criados colocando o texto no nome após `On<HTTP Verb>` e antes de `Async` (se houver). No exemplo anterior, os métodos de página são OnPost**JoinList**Async e OnPost**JoinListUC**Async. Com *OnPost* e *Async* removidos, os nomes de manipulador são `JoinList` e `JoinListUC`.
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?range=12-13)]
 
-<span data-ttu-id="0a81c-293">Usando o código anterior, o caminho da URL que envia a `OnPostJoinListAsync` é `http://localhost:5000/Customers/CreateFATH?handler=JoinList`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-293">Using the preceding code, the URL path that submits to `OnPostJoinListAsync` is `http://localhost:5000/Customers/CreateFATH?handler=JoinList`.</span></span> <span data-ttu-id="0a81c-294">O caminho da URL que envia a `OnPostJoinListUCAsync` é `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-294">The URL path that submits to `OnPostJoinListUCAsync` is `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`.</span></span>
+Usando o código anterior, o caminho da URL que envia a `OnPostJoinListAsync` é `http://localhost:5000/Customers/CreateFATH?handler=JoinList`. O caminho da URL que envia a `OnPostJoinListUCAsync` é `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`.
 
-## <a name="customizing-routing"></a><span data-ttu-id="0a81c-295">Personalizando o roteamento</span><span class="sxs-lookup"><span data-stu-id="0a81c-295">Customizing Routing</span></span>
+## <a name="customizing-routing"></a>Personalizando o roteamento
 
-<span data-ttu-id="0a81c-296">Se você não deseja a cadeia de consulta `?handler=JoinList` na URL, você pode alterar a rota para colocar o nome do manipulador na parte do caminho da URL.</span><span class="sxs-lookup"><span data-stu-id="0a81c-296">If you don't like the query string `?handler=JoinList` in the URL, you can change the route to put the handler name in the path portion of the URL.</span></span> <span data-ttu-id="0a81c-297">Você pode personalizar a rota adicionando um modelo de rota entre aspas duplas após a diretiva `@page`.</span><span class="sxs-lookup"><span data-stu-id="0a81c-297">You can customize the route by adding a route template enclosed in double quotes after the `@page` directive.</span></span>
+Se você não deseja a cadeia de consulta `?handler=JoinList` na URL, você pode alterar a rota para colocar o nome do manipulador na parte do caminho da URL. Você pode personalizar a rota adicionando um modelo de rota entre aspas duplas após a diretiva `@page`.
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateRoute.cshtml?highlight=1)]
 
-<span data-ttu-id="0a81c-298">A rota anterior coloca o nome do manipulador no caminho da URL em vez da cadeia de consulta.</span><span class="sxs-lookup"><span data-stu-id="0a81c-298">The preceding route puts the handler name in the URL path instead of the query string.</span></span> <span data-ttu-id="0a81c-299">O `?` após `handler` significa que o parâmetro de rota é opcional.</span><span class="sxs-lookup"><span data-stu-id="0a81c-299">The `?` following `handler` means the route parameter is optional.</span></span>
+A rota anterior coloca o nome do manipulador no caminho da URL em vez da cadeia de consulta. O `?` após `handler` significa que o parâmetro de rota é opcional.
 
-<span data-ttu-id="0a81c-300">Você pode usar `@page` para adicionar parâmetros e segmentos adicionais a uma rota de página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-300">You can use `@page` to add additional segments and parameters to a page's route.</span></span> <span data-ttu-id="0a81c-301">Tudo que está lá está **acrescentado** à rota padrão da página.</span><span class="sxs-lookup"><span data-stu-id="0a81c-301">Whatever's there is **appended** to the default route of the page.</span></span> <span data-ttu-id="0a81c-302">Não há suporte para o uso de um caminho absoluto ou virtual para alterar a rota da página (como `"~/Some/Other/Path"`).</span><span class="sxs-lookup"><span data-stu-id="0a81c-302">Using an absolute or virtual path to change the page's route (like `"~/Some/Other/Path"`) is not supported.</span></span>
+Você pode usar `@page` para adicionar parâmetros e segmentos adicionais a uma rota de página. Tudo que está lá está **acrescentado** à rota padrão da página. Não há suporte para o uso de um caminho absoluto ou virtual para alterar a rota da página (como `"~/Some/Other/Path"`).
 
-## <a name="configuration-and-settings"></a><span data-ttu-id="0a81c-303">Configuração e definições</span><span class="sxs-lookup"><span data-stu-id="0a81c-303">Configuration and settings</span></span>
+## <a name="configuration-and-settings"></a>Configuração e definições
 
-<span data-ttu-id="0a81c-304">Para configurar opções avançadas, use o método de extensão `AddRazorPagesOptions` no construtor de MVC:</span><span class="sxs-lookup"><span data-stu-id="0a81c-304">To configure advanced options, use the extension method `AddRazorPagesOptions` on the MVC builder:</span></span>
+Para configurar opções avançadas, use o método de extensão `AddRazorPagesOptions` no construtor de MVC:
 
 [!code-cs[main](index/sample/RazorPagesContacts/StartupAdvanced.cs?name=snippet_1)]
 
-<span data-ttu-id="0a81c-305">No momento, você pode usar o `RazorPagesOptions` para definir o diretório raiz para páginas ou adicionar as convenções de modelo de aplicativo para páginas.</span><span class="sxs-lookup"><span data-stu-id="0a81c-305">Currently you can use the `RazorPagesOptions` to set the root directory for pages, or add application model conventions for pages.</span></span> <span data-ttu-id="0a81c-306">Esperamos habilitar mais extensibilidade dessa maneira no futuro.</span><span class="sxs-lookup"><span data-stu-id="0a81c-306">We hope to enable more extensibility this way in the future.</span></span>
+No momento, você pode usar o `RazorPagesOptions` para definir o diretório raiz para páginas ou adicionar as convenções de modelo de aplicativo para páginas. Esperamos habilitar mais extensibilidade dessa maneira no futuro.
 
-<span data-ttu-id="0a81c-307">Para pré-compilar exibições, consulte [Compilação de exibição do Razor](xref:mvc/views/view-compilation).</span><span class="sxs-lookup"><span data-stu-id="0a81c-307">To precompile views, see [Razor view compilation](xref:mvc/views/view-compilation) .</span></span>
+Para pré-compilar exibições, consulte [Compilação de exibição do Razor](xref:mvc/views/view-compilation).
 
-<span data-ttu-id="0a81c-308">[Baixar ou exibir código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/index/sample).</span><span class="sxs-lookup"><span data-stu-id="0a81c-308">[Download or view sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/index/sample).</span></span>
+[Baixar ou exibir código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/index/sample).
 
-<span data-ttu-id="0a81c-309">Consulte [Introdução a Páginas do Razor no ASP.NET Core](xref:tutorials/razor-pages/razor-pages-start), que se baseia nesta introdução.</span><span class="sxs-lookup"><span data-stu-id="0a81c-309">See [Getting started with Razor Pages in ASP.NET Core](xref:tutorials/razor-pages/razor-pages-start), which builds on this introduction.</span></span>
+Consulte [Introdução a Páginas do Razor no ASP.NET Core](xref:tutorials/razor-pages/razor-pages-start), que se baseia nesta introdução.

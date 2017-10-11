@@ -5,161 +5,182 @@ description: "Este artigo descreve os pré-requisitos e as etapas mais comuns pa
 keywords: ASP.NET Core, migrando
 ms.author: scaddie
 manager: wpickett
-ms.date: 08/01/2017
+ms.date: 10/03/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 541774d46bbf570ee860c72fdff5cece364935df
-ms.sourcegitcommit: 55759ae80e7039036a7c6da8e3806f7c88ade325
+ms.openlocfilehash: 9574f1f8e0970e1b64c2910bf46794621583f18d
+ms.sourcegitcommit: 3cf879f6beaaca2d401ad980cd26cfec70c05c24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/06/2017
 ---
-# <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a><span data-ttu-id="5c598-104">Migrando do ASP.NET Core 1.x para o ASP.NET Core 2.0</span><span class="sxs-lookup"><span data-stu-id="5c598-104">Migrating from ASP.NET Core 1.x to ASP.NET Core 2.0</span></span>
+# <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>Migrando do ASP.NET Core 1.x para o ASP.NET Core 2.0
 
-<span data-ttu-id="5c598-105">Por [Scott Addie](https://github.com/scottaddie)</span><span class="sxs-lookup"><span data-stu-id="5c598-105">By [Scott Addie](https://github.com/scottaddie)</span></span>
+Por [Scott Addie](https://github.com/scottaddie)
 
-<span data-ttu-id="5c598-106">Neste artigo, vamos orientá-lo pela atualização de um projeto existente ASP.NET Core 1.x para o ASP.NET Core 2.0.</span><span class="sxs-lookup"><span data-stu-id="5c598-106">In this article, we'll walk you through updating an existing ASP.NET Core 1.x project to ASP.NET Core 2.0.</span></span> <span data-ttu-id="5c598-107">A migração do aplicativo para o ASP.NET Core 2.0 permite que você aproveite [muitos novos recursos e melhorias de desempenho](https://docs.microsoft.com/aspnet/core/aspnetcore-2.0).</span><span class="sxs-lookup"><span data-stu-id="5c598-107">Migrating your application to ASP.NET Core 2.0 enables you to take advantage of [many new features and performance improvements](https://docs.microsoft.com/aspnet/core/aspnetcore-2.0).</span></span> 
+Neste artigo, vamos orientá-lo pela atualização de um projeto existente ASP.NET Core 1.x para o ASP.NET Core 2.0. A migração do aplicativo para o ASP.NET Core 2.0 permite que você aproveite [muitos novos recursos e melhorias de desempenho](https://docs.microsoft.com/aspnet/core/aspnetcore-2.0). 
 
-<span data-ttu-id="5c598-108">Os aplicativos ASP.NET Core 1.x existentes baseiam-se em modelos de projeto específicos à versão.</span><span class="sxs-lookup"><span data-stu-id="5c598-108">Existing ASP.NET Core 1.x applications are based off of version-specific project templates.</span></span> <span data-ttu-id="5c598-109">Conforme a estrutura do ASP.NET Core evolui, os modelos do projeto e o código inicial contido neles também.</span><span class="sxs-lookup"><span data-stu-id="5c598-109">As the ASP.NET Core framework evolves, so do the project templates and the starter code contained within them.</span></span> <span data-ttu-id="5c598-110">Além de atualizar a estrutura ASP.NET Core, você precisa atualizar o código para o aplicativo.</span><span class="sxs-lookup"><span data-stu-id="5c598-110">In addition to updating the ASP.NET Core framework, you need to update the code for your application.</span></span>
+Os aplicativos ASP.NET Core 1.x existentes baseiam-se em modelos de projeto específicos à versão. Conforme a estrutura do ASP.NET Core evolui, os modelos do projeto e o código inicial contido neles também. Além de atualizar a estrutura ASP.NET Core, você precisa atualizar o código para o aplicativo.
 
 <a name="prerequisites"></a>
 
-## <a name="prerequisites"></a><span data-ttu-id="5c598-111">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="5c598-111">Prerequisites</span></span>
-<span data-ttu-id="5c598-112">Consulte [Introdução ao ASP.NET Core](xref:getting-started).</span><span class="sxs-lookup"><span data-stu-id="5c598-112">Please see [Getting Started with ASP.NET Core](xref:getting-started).</span></span>
+## <a name="prerequisites"></a>Pré-requisitos
+Consulte [Introdução ao ASP.NET Core](xref:getting-started).
 
 <a name="tfm"></a>
 
-## <a name="update-target-framework-moniker-tfm"></a><span data-ttu-id="5c598-113">Atualizar TFM (Moniker da Estrutura de Destino)</span><span class="sxs-lookup"><span data-stu-id="5c598-113">Update Target Framework Moniker (TFM)</span></span>
-<span data-ttu-id="5c598-114">Projetos direcionados ao .NET Core devem usar o [TFM](/dotnet/standard/frameworks#referring-to-frameworks) de uma versão maior ou igual ao .NET Core 2.0.</span><span class="sxs-lookup"><span data-stu-id="5c598-114">Projects targeting .NET Core should use the [TFM](/dotnet/standard/frameworks#referring-to-frameworks) of a version greater than or equal to .NET Core 2.0.</span></span> <span data-ttu-id="5c598-115">Pesquise o nó `<TargetFramework>` no arquivo *.csproj* e substitua seu texto interno por `netcoreapp2.0`:</span><span class="sxs-lookup"><span data-stu-id="5c598-115">Search for the `<TargetFramework>` node in the *.csproj* file, and replace its inner text with `netcoreapp2.0`:</span></span>
+## <a name="update-target-framework-moniker-tfm"></a>Atualizar TFM (Moniker da Estrutura de Destino)
+Projetos direcionados ao .NET Core devem usar o [TFM](/dotnet/standard/frameworks#referring-to-frameworks) de uma versão maior ou igual ao .NET Core 2.0. Pesquise o nó `<TargetFramework>` no arquivo *.csproj* e substitua seu texto interno por `netcoreapp2.0`:
 
 [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=3)]
 
-<span data-ttu-id="5c598-116">Projetos direcionados ao .NET Framework devem usar o TFM de uma versão maior ou igual ao .NET Framework 4.6.1.</span><span class="sxs-lookup"><span data-stu-id="5c598-116">Projects targeting .NET Framework should use the TFM of a version greater than or equal to .NET Framework 4.6.1.</span></span> <span data-ttu-id="5c598-117">Pesquise o nó `<TargetFramework>` no arquivo *.csproj* e substitua seu texto interno por `net461`:</span><span class="sxs-lookup"><span data-stu-id="5c598-117">Search for the `<TargetFramework>` node in the *.csproj* file, and replace its inner text with `net461`:</span></span>
+Projetos direcionados ao .NET Framework devem usar o TFM de uma versão maior ou igual ao .NET Framework 4.6.1. Pesquise o nó `<TargetFramework>` no arquivo *.csproj* e substitua seu texto interno por `net461`:
 
 [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=4)]
 
 > [!NOTE]
-> <span data-ttu-id="5c598-118">O .NET Core 2.0 oferece uma área de superfície muito maior do que o .NET Core 1.x.</span><span class="sxs-lookup"><span data-stu-id="5c598-118">.NET Core 2.0 offers a much larger surface area than .NET Core 1.x.</span></span> <span data-ttu-id="5c598-119">Se você estiver direcionando o .NET Framework exclusivamente devido a APIs ausentes no .NET Core 1.x, o direcionamento do .NET Core 2.0 provavelmente funcionará.</span><span class="sxs-lookup"><span data-stu-id="5c598-119">If you're targeting .NET Framework solely because of missing APIs in .NET Core 1.x, targeting .NET Core 2.0 is likely to work.</span></span>
+> O .NET Core 2.0 oferece uma área de superfície muito maior do que o .NET Core 1.x. Se você estiver direcionando o .NET Framework exclusivamente devido a APIs ausentes no .NET Core 1.x, o direcionamento do .NET Core 2.0 provavelmente funcionará.
 
 <a name="global-json"></a>
 
-## <a name="update-net-core-sdk-version-in-globaljson"></a><span data-ttu-id="5c598-120">Atualizar a versão do SDK do .NET Core em global.json</span><span class="sxs-lookup"><span data-stu-id="5c598-120">Update .NET Core SDK version in global.json</span></span>
-<span data-ttu-id="5c598-121">Se a solução depender de um arquivo [*global.json*](https://docs.microsoft.com/dotnet/core/tools/global-json) para direcionar uma versão específica do SDK do .NET Core, atualize sua propriedade `version` para que ela use a versão 2.0 instalada no computador:</span><span class="sxs-lookup"><span data-stu-id="5c598-121">If your solution relies upon a [*global.json*](https://docs.microsoft.com/dotnet/core/tools/global-json) file to target a specific .NET Core SDK version, update its `version` property to use the 2.0 version installed on your machine:</span></span>
+## <a name="update-net-core-sdk-version-in-globaljson"></a>Atualizar a versão do SDK do .NET Core em global.json
+Se a solução depender de um arquivo [*global.json*](https://docs.microsoft.com/dotnet/core/tools/global-json) para direcionar uma versão específica do SDK do .NET Core, atualize sua propriedade `version` para que ela use a versão 2.0 instalada no computador:
 
 [!code-json[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/global.json?highlight=3)]
 
 <a name="package-reference"></a>
 
-## <a name="update-package-references"></a><span data-ttu-id="5c598-122">Referências do pacote de atualização</span><span class="sxs-lookup"><span data-stu-id="5c598-122">Update package references</span></span>
-<span data-ttu-id="5c598-123">O arquivo *.csproj* em um projeto 1.x lista cada pacote NuGet usado pelo projeto.</span><span class="sxs-lookup"><span data-stu-id="5c598-123">The *.csproj* file in a 1.x project lists each NuGet package used by the project.</span></span>
+## <a name="update-package-references"></a>Referências do pacote de atualização
+O arquivo *.csproj* em um projeto 1.x lista cada pacote NuGet usado pelo projeto.
 
-<span data-ttu-id="5c598-124">Em um projeto ASP.NET Core 2.0 direcionado ao .NET Core 2.0, uma única referência de [metapacote](xref:fundamentals/metapackage) no arquivo *.csproj* substitui a coleção de pacotes:</span><span class="sxs-lookup"><span data-stu-id="5c598-124">In an ASP.NET Core 2.0 project targeting .NET Core 2.0, a single [metapackage](xref:fundamentals/metapackage) reference in the *.csproj* file replaces the collection of packages:</span></span>
+Em um projeto ASP.NET Core 2.0 direcionado ao .NET Core 2.0, uma única referência de [metapacote](xref:fundamentals/metapackage) no arquivo *.csproj* substitui a coleção de pacotes:
 
 [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=8-10)]
 
-<span data-ttu-id="5c598-125">Todos os recursos do ASP.NET Core 2.0 e do Entity Framework Core 2.0 são incluídos no metapacote.</span><span class="sxs-lookup"><span data-stu-id="5c598-125">All the features of ASP.NET Core 2.0 and Entity Framework Core 2.0 are included in the metapackage.</span></span>
+Todos os recursos do ASP.NET Core 2.0 e do Entity Framework Core 2.0 são incluídos no metapacote.
 
-<span data-ttu-id="5c598-126">Os projetos do ASP.NET Core 2.0 direcionados ao .NET Framework devem continuar a referenciar pacotes NuGet individuais.</span><span class="sxs-lookup"><span data-stu-id="5c598-126">ASP.NET Core 2.0 projects targeting .NET Framework should continue to reference individual NuGet packages.</span></span> <span data-ttu-id="5c598-127">Atualize o atributo `Version` de cada nó `<PackageReference />` para 2.0.0.</span><span class="sxs-lookup"><span data-stu-id="5c598-127">Update the `Version` attribute of each `<PackageReference />` node to 2.0.0.</span></span>
+Os projetos do ASP.NET Core 2.0 direcionados ao .NET Framework devem continuar a referenciar pacotes NuGet individuais. Atualize o atributo `Version` de cada nó `<PackageReference />` para 2.0.0.
 
-<span data-ttu-id="5c598-128">Por exemplo, esta é a lista de nós `<PackageReference />` usados em um projeto ASP.NET Core 2.0 típico direcionado ao .NET Framework:</span><span class="sxs-lookup"><span data-stu-id="5c598-128">For example, here's the list of `<PackageReference />` nodes used in a typical ASP.NET Core 2.0 project targeting .NET Framework:</span></span>
+Por exemplo, esta é a lista de nós `<PackageReference />` usados em um projeto ASP.NET Core 2.0 típico direcionado ao .NET Framework:
 
 [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=9-22)]
 
 <a name="dot-net-cli-tool-reference"></a>
 
-## <a name="update-net-core-cli-tools"></a><span data-ttu-id="5c598-129">Atualizar ferramentas da CLI do .NET Core</span><span class="sxs-lookup"><span data-stu-id="5c598-129">Update .NET Core CLI tools</span></span>
-<span data-ttu-id="5c598-130">No arquivo *.csproj*, atualize o atributo `Version` de cada nó `<DotNetCliToolReference />` para 2.0.0.</span><span class="sxs-lookup"><span data-stu-id="5c598-130">In the *.csproj* file, update the `Version` attribute of each `<DotNetCliToolReference />` node to 2.0.0.</span></span>
+## <a name="update-net-core-cli-tools"></a>Atualizar ferramentas da CLI do .NET Core
+No arquivo *.csproj*, atualize o atributo `Version` de cada nó `<DotNetCliToolReference />` para 2.0.0.
 
-<span data-ttu-id="5c598-131">Por exemplo, esta é a lista de ferramentas da CLI usadas em um projeto ASP.NET Core 2.0 típico direcionado ao .NET Core 2.0:</span><span class="sxs-lookup"><span data-stu-id="5c598-131">For example, here's the list of CLI tools used in a typical ASP.NET Core 2.0 project targeting .NET Core 2.0:</span></span>
+Por exemplo, esta é a lista de ferramentas da CLI usadas em um projeto ASP.NET Core 2.0 típico direcionado ao .NET Core 2.0:
 
 [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=12-16)]
 
 <a name="package-target-fallback"></a>
 
-## <a name="rename-package-target-fallback-property"></a><span data-ttu-id="5c598-132">Renomear a propriedade de Fallback de Destino do Pacote</span><span class="sxs-lookup"><span data-stu-id="5c598-132">Rename Package Target Fallback property</span></span>
-<span data-ttu-id="5c598-133">O arquivo *.csproj* de um projeto 1.x usou um nó `PackageTargetFallback` e uma variável:</span><span class="sxs-lookup"><span data-stu-id="5c598-133">The *.csproj* file of a 1.x project used a `PackageTargetFallback` node and variable:</span></span>
+## <a name="rename-package-target-fallback-property"></a>Renomear a propriedade de Fallback de Destino do Pacote
+O arquivo *.csproj* de um projeto 1.x usou um nó `PackageTargetFallback` e uma variável:
 
 [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=5)]
 
-<span data-ttu-id="5c598-134">Renomeie o nó e a variável como `AssetTargetFallback`:</span><span class="sxs-lookup"><span data-stu-id="5c598-134">Rename both the node and variable to `AssetTargetFallback`:</span></span>
+Renomeie o nó e a variável como `AssetTargetFallback`:
 
 [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=4)]
 
 <a name="program-cs"></a>
 
-## <a name="update-main-method-in-programcs"></a><span data-ttu-id="5c598-135">Atualizar o método Main em Program.cs</span><span class="sxs-lookup"><span data-stu-id="5c598-135">Update Main method in Program.cs</span></span>
-<span data-ttu-id="5c598-136">Em projetos 1.x, o método `Main` de *Program.cs* era parecido com este:</span><span class="sxs-lookup"><span data-stu-id="5c598-136">In 1.x projects, the `Main` method of *Program.cs* looked like this:</span></span>
+## <a name="update-main-method-in-programcs"></a>Atualizar o método Main em Program.cs
+Em projetos 1.x, o método `Main` de *Program.cs* era parecido com este:
 
 [!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Program.cs?name=snippet_ProgramCs&highlight=8-19)]
 
-<span data-ttu-id="5c598-137">Em projetos 2.0, o método `Main` de *Program.cs* foi simplificado:</span><span class="sxs-lookup"><span data-stu-id="5c598-137">In 2.0 projects, the `Main` method of *Program.cs* has been simplified:</span></span>
+Em projetos 2.0, o método `Main` de *Program.cs* foi simplificado:
 
 [!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Program.cs?highlight=8-11)]
 
-<span data-ttu-id="5c598-138">A adoção desse novo padrão do 2.0 é altamente recomendada e é necessária para que os recursos de produto como as [Migrações do Entity Framework (EF) Core](xref:data/ef-mvc/migrations) funcionem.</span><span class="sxs-lookup"><span data-stu-id="5c598-138">The adoption of this new 2.0 pattern is highly recommended and is required for product features like [Entity Framework (EF) Core Migrations](xref:data/ef-mvc/migrations) to work.</span></span> <span data-ttu-id="5c598-139">Por exemplo, a execução de `Update-Database` na janela do Console do Gerenciador de Pacotes ou de `dotnet ef database update` na linha de comando (em projetos convertidos no ASP.NET Core 2.0) gera o seguinte erro:</span><span class="sxs-lookup"><span data-stu-id="5c598-139">For example, running `Update-Database` from the Package Manager Console window or `dotnet ef database update` from the command line (on projects converted to ASP.NET Core 2.0) generates the following error:</span></span>
+A adoção desse novo padrão do 2.0 é altamente recomendada e é necessária para que os recursos de produto como as [Migrações do Entity Framework (EF) Core](xref:data/ef-mvc/migrations) funcionem. Por exemplo, a execução de `Update-Database` na janela do Console do Gerenciador de Pacotes ou de `dotnet ef database update` na linha de comando (em projetos convertidos no ASP.NET Core 2.0) gera o seguinte erro:
 
 ```
 Unable to create an object of type '<Context>'. Add an implementation of 'IDesignTimeDbContextFactory<Context>' to the project, or see https://go.microsoft.com/fwlink/?linkid=851728 for additional patterns supported at design time.
 ```
 
+<a name="add-modify-configuration"></a>
+
+## <a name="add-configuration-providers"></a>Adicionar provedores de configuração
+Nos projetos 1.x, a adição de provedores de configuração em um aplicativo foi realizada por meio do construtor `Startup`. As etapas incluíram a criação de uma instância de `ConfigurationBuilder`, o carregamento de provedores aplicáveis (variáveis de ambiente, configurações do aplicativo, etc.) e a inicialização de um membro de `IConfigurationRoot`.
+
+[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Startup.cs?name=snippet_1xStartup)]
+
+O exemplo anterior carrega o membro `Configuration` com definições de configuração do *appsettings.json*, bem como qualquer arquivo *appsettings.\<EnvironmentName\>.json* correspondente à propriedade `IHostingEnvironment.EnvironmentName`. Estes arquivos estão localizados no mesmo caminho que *Startup.cs*.
+
+Nos projetos 2.0, o código de configuração clichê inerente aos projetos 1.x é executado de modo oculto. Por exemplo, as variáveis de ambiente e as configurações do aplicativo são carregadas na inicialização. O código *Startup.cs* equivalente é reduzido à inicialização `IConfiguration` com a instância injetada:
+
+[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/Startup.cs?name=snippet_2xStartup)]
+
+Para remover os provedores padrão adicionados por `WebHostBuilder.CreateDefaultBuilder`, invoque o método `Clear` na propriedade `IConfigurationBuilder.Sources` dentro de `ConfigureAppConfiguration`. Para adicionar os provedores de volta, utilize o método `ConfigureAppConfiguration` em *Program.cs*:
+
+[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/Program.cs?name=snippet_ProgramMainConfigProviders&highlight=9-14)]
+
+A configuração usada pelo método `CreateDefaultBuilder` no trecho de código anterior pode ser vista [aqui](https://github.com/aspnet/MetaPackages/blob/rel/2.0.0/src/Microsoft.AspNetCore/WebHost.cs#L152).
+
+Para obter mais informações, consulte [Configuração no ASP.NET Core](xref:fundamentals/configuration).
+
 <a name="db-init-code"></a>
 
-## <a name="move-database-initialization-code"></a><span data-ttu-id="5c598-140">Mover código de inicialização do banco de dados</span><span class="sxs-lookup"><span data-stu-id="5c598-140">Move database initialization code</span></span>
-<span data-ttu-id="5c598-141">Em projetos do 1.x usando o EF Core 1.x, um comando como `dotnet ef migrations add` faz o seguinte:</span><span class="sxs-lookup"><span data-stu-id="5c598-141">In 1.x projects using EF Core 1.x, a command such as `dotnet ef migrations add` does the following:</span></span>
-1. <span data-ttu-id="5c598-142">Cria uma instância `Startup`</span><span class="sxs-lookup"><span data-stu-id="5c598-142">Instantiates a `Startup` instance</span></span>
-2. <span data-ttu-id="5c598-143">Invoca o método `ConfigureServices` para registrar todos os serviços com injeção de dependência (incluindo tipos `DbContext`)</span><span class="sxs-lookup"><span data-stu-id="5c598-143">Invokes the `ConfigureServices` method to register all services with dependency injection (including `DbContext` types)</span></span>
-3. <span data-ttu-id="5c598-144">Executa suas tarefas de requisito</span><span class="sxs-lookup"><span data-stu-id="5c598-144">Performs its requisite tasks</span></span>
+## <a name="move-database-initialization-code"></a>Mover código de inicialização do banco de dados
+Em projetos do 1.x usando o EF Core 1.x, um comando como `dotnet ef migrations add` faz o seguinte:
+1. Cria uma instância `Startup`
+2. Invoca o método `ConfigureServices` para registrar todos os serviços com injeção de dependência (incluindo tipos `DbContext`)
+3. Executa suas tarefas de requisito
 
-<span data-ttu-id="5c598-145">Em projetos do 2.0 usando o EF Core 2.0, o `Program.BuildWebHost` é chamado para obter os serviços do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="5c598-145">In 2.0 projects using EF Core 2.0, `Program.BuildWebHost` is invoked to obtain the application services.</span></span> <span data-ttu-id="5c598-146">Ao contrário do 1.x, isso tem o efeito colateral adicional de chamar o `Startup.Configure`.</span><span class="sxs-lookup"><span data-stu-id="5c598-146">Unlike 1.x, this has the additional side effect of invoking `Startup.Configure`.</span></span> <span data-ttu-id="5c598-147">Caso seu aplicativo do 1.x tenha chamado o código de inicialização do banco de dados no seu método `Configure`, problemas inesperados poderão ocorrer.</span><span class="sxs-lookup"><span data-stu-id="5c598-147">If your 1.x app invoked database initialization code in its `Configure` method, unexpected problems can occur.</span></span> <span data-ttu-id="5c598-148">Por exemplo, se o banco de dados não existir ainda, o código de propagação será executado antes da execução do comando EF Core Migrations.</span><span class="sxs-lookup"><span data-stu-id="5c598-148">For example, if the database doesn't yet exist, the seeding code runs before the EF Core Migrations command execution.</span></span> <span data-ttu-id="5c598-149">Esse problema fará com que um comando `dotnet ef migrations list` falhe se o banco de dados ainda não existir.</span><span class="sxs-lookup"><span data-stu-id="5c598-149">This problem causes a `dotnet ef migrations list` command to fail if the database doesn't yet exist.</span></span>
+Em projetos do 2.0 usando o EF Core 2.0, o `Program.BuildWebHost` é chamado para obter os serviços do aplicativo. Ao contrário do 1.x, isso tem o efeito colateral adicional de chamar o `Startup.Configure`. Caso seu aplicativo do 1.x tenha chamado o código de inicialização do banco de dados no seu método `Configure`, problemas inesperados poderão ocorrer. Por exemplo, se o banco de dados não existir ainda, o código de propagação será executado antes da execução do comando EF Core Migrations. Esse problema fará com que um comando `dotnet ef migrations list` falhe se o banco de dados ainda não existir.
 
-<span data-ttu-id="5c598-150">Considere o seguinte código de inicialização de propagação do 1.x no método `Configure` de *Startup.cs*:</span><span class="sxs-lookup"><span data-stu-id="5c598-150">Consider the following 1.x seed initialization code in the `Configure` method of *Startup.cs*:</span></span>
+Considere o seguinte código de inicialização de propagação do 1.x no método `Configure` de *Startup.cs*:
 
 [!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Startup.cs?name=snippet_ConfigureSeedData&highlight=8)]
 
-<span data-ttu-id="5c598-151">Em projetos do 2.0, mova a chamada `SeedData.Initialize` para o método `Main` do *Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="5c598-151">In 2.0 projects, move the `SeedData.Initialize` call to the `Main` method of *Program.cs*:</span></span>
+Em projetos do 2.0, mova a chamada `SeedData.Initialize` para o método `Main` do *Program.cs*:
 
 [!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Program2.cs?name=snippet_Main2Code&highlight=10)]
 
-<span data-ttu-id="5c598-152">A partir do 2.0, é uma prática inadequada realizar qualquer ação no `BuildWebHost`, exceto compilação e configuração do host da Web.</span><span class="sxs-lookup"><span data-stu-id="5c598-152">As of 2.0, it's bad practice to do anything in `BuildWebHost` except build and configure the web host.</span></span> <span data-ttu-id="5c598-153">Tudo relacionado à execução do aplicativo deve ser tratado fora do `BuildWebHost` &mdash;, normalmente no método `Main` do *Program.cs*.</span><span class="sxs-lookup"><span data-stu-id="5c598-153">Anything that is about running the application should be handled outside of `BuildWebHost` &mdash; typically in the `Main` method of *Program.cs*.</span></span>
+A partir do 2.0, é uma prática inadequada realizar qualquer ação no `BuildWebHost`, exceto compilação e configuração do host da Web. Tudo relacionado à execução do aplicativo deve ser tratado fora do `BuildWebHost` &mdash;, normalmente no método `Main` do *Program.cs*.
 
 <a name="view-compilation"></a>
 
-## <a name="review-your-razor-view-compilation-setting"></a><span data-ttu-id="5c598-154">Examinar a configuração Compilação de Exibição do Razor</span><span class="sxs-lookup"><span data-stu-id="5c598-154">Review your Razor View Compilation setting</span></span>
-<span data-ttu-id="5c598-155">Um tempo de inicialização mais rápido do aplicativo e pacotes publicados menores são de extrema importância para você.</span><span class="sxs-lookup"><span data-stu-id="5c598-155">Faster application startup time and smaller published bundles are of utmost importance to you.</span></span> <span data-ttu-id="5c598-156">Por esses motivos, a opção [Compilação de exibição do Razor](xref:mvc/views/view-compilation) é habilitada por padrão no ASP.NET Core 2.0.</span><span class="sxs-lookup"><span data-stu-id="5c598-156">For these reasons, [Razor view compilation](xref:mvc/views/view-compilation) is enabled by default in ASP.NET Core 2.0.</span></span>
+## <a name="review-your-razor-view-compilation-setting"></a>Examinar a configuração Compilação de Exibição do Razor
+Um tempo de inicialização mais rápido do aplicativo e pacotes publicados menores são de extrema importância para você. Por esses motivos, a opção [Compilação de exibição do Razor](xref:mvc/views/view-compilation) é habilitada por padrão no ASP.NET Core 2.0.
 
-<span data-ttu-id="5c598-157">A configuração da propriedade `MvcRazorCompileOnPublish` como verdadeiro não é mais necessária.</span><span class="sxs-lookup"><span data-stu-id="5c598-157">Setting the `MvcRazorCompileOnPublish` property to true is no longer required.</span></span> <span data-ttu-id="5c598-158">A menos que você esteja desabilitando a compilação de exibição, a propriedade poderá ser removida do arquivo *.csproj*.</span><span class="sxs-lookup"><span data-stu-id="5c598-158">Unless you're disabling view compilation, the property may be removed from the *.csproj* file.</span></span>
+A configuração da propriedade `MvcRazorCompileOnPublish` como verdadeiro não é mais necessária. A menos que você esteja desabilitando a compilação de exibição, a propriedade poderá ser removida do arquivo *.csproj*.
 
-<span data-ttu-id="5c598-159">Ao direcionar o .NET Framework, você ainda precisa referenciar explicitamente o pacote NuGet [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation) no arquivo *.csproj*:</span><span class="sxs-lookup"><span data-stu-id="5c598-159">When targeting .NET Framework, you still need to explicitly reference the [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation) NuGet package in your *.csproj* file:</span></span>
+Ao direcionar o .NET Framework, você ainda precisa referenciar explicitamente o pacote NuGet [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation) no arquivo *.csproj*:
 
 [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=15)]
 
 <a name="app-insights"></a>
 
-## <a name="rely-on-application-insights-light-up-features"></a><span data-ttu-id="5c598-160">Depender dos recursos “Light-Up” do Application Insights</span><span class="sxs-lookup"><span data-stu-id="5c598-160">Rely on Application Insights "Light-Up" features</span></span>
-<span data-ttu-id="5c598-161">A instalação fácil da instrumentação de desempenho do aplicativo é importante.</span><span class="sxs-lookup"><span data-stu-id="5c598-161">Effortless setup of application performance instrumentation is important.</span></span> <span data-ttu-id="5c598-162">Agora, você pode contar com os novos recursos “light-up” do [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) disponíveis nas ferramentas do Visual Studio 2017.</span><span class="sxs-lookup"><span data-stu-id="5c598-162">You can now rely on the new [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) "light-up" features available in the Visual Studio 2017 tooling.</span></span>
+## <a name="rely-on-application-insights-light-up-features"></a>Depender dos recursos “Light-Up” do Application Insights
+A instalação fácil da instrumentação de desempenho do aplicativo é importante. Agora, você pode contar com os novos recursos “light-up” do [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) disponíveis nas ferramentas do Visual Studio 2017.
 
-<span data-ttu-id="5c598-163">Os projetos do ASP.NET Core 1.1 criados no Visual Studio 2017 adicionaram o Application Insights por padrão.</span><span class="sxs-lookup"><span data-stu-id="5c598-163">ASP.NET Core 1.1 projects created in Visual Studio 2017 added Application Insights by default.</span></span> <span data-ttu-id="5c598-164">Se não estiver usando o SDK do Application Insights diretamente, fora de *Program.cs* e *Startup.cs*, siga estas etapas:</span><span class="sxs-lookup"><span data-stu-id="5c598-164">If you're not using the Application Insights SDK directly, outside of *Program.cs* and *Startup.cs*, follow these steps:</span></span>
+Os projetos do ASP.NET Core 1.1 criados no Visual Studio 2017 adicionaram o Application Insights por padrão. Se não estiver usando o SDK do Application Insights diretamente, fora de *Program.cs* e *Startup.cs*, siga estas etapas:
 
-1. <span data-ttu-id="5c598-165">Remova o seguinte nó `<PackageReference />` do arquivo *.csproj*:</span><span class="sxs-lookup"><span data-stu-id="5c598-165">Remove the following `<PackageReference />` node from the *.csproj* file:</span></span>
+1. Se você estiver direcionando ao .NET Core, remova o nó `<PackageReference />` seguinte do arquivo *.csproj*:
     
     [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=10)]
 
-2. <span data-ttu-id="5c598-166">Remova a invocação do método de extensão `UseApplicationInsights` de *Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="5c598-166">Remove the `UseApplicationInsights` extension method invocation from *Program.cs*:</span></span>
+2. Se você estiver direcionando ao .NET Core, remova a invocação do método de extensão `UseApplicationInsights` de *Program.cs*:
 
     [!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Program.cs?name=snippet_ProgramCsMain&highlight=8)]
 
-3. <span data-ttu-id="5c598-167">Remova a chamada à API do lado do cliente do Application Insights de *_Layout.cshtml*.</span><span class="sxs-lookup"><span data-stu-id="5c598-167">Remove the Application Insights client-side API call from *_Layout.cshtml*.</span></span> <span data-ttu-id="5c598-168">Ela inclui as duas seguintes linhas de código:</span><span class="sxs-lookup"><span data-stu-id="5c598-168">It comprises the following two lines of code:</span></span>
+3. Remova a chamada à API do lado do cliente do Application Insights de *_Layout.cshtml*. Ela inclui as duas seguintes linhas de código:
 
     [!code-cshtml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Views/Shared/_Layout.cshtml?range=1,19&dedent=4)]
 
-<span data-ttu-id="5c598-169">Se você estiver usando o SDK do Application Insights diretamente, continue fazendo isso.</span><span class="sxs-lookup"><span data-stu-id="5c598-169">If you are using the Application Insights SDK directly, continue to do so.</span></span> <span data-ttu-id="5c598-170">O [metapacote](xref:fundamentals/metapackage) do 2.0 inclui a última versão do Application Insights. Portanto, um erro de downgrade do pacote será exibido se você estiver referenciando uma versão mais antiga.</span><span class="sxs-lookup"><span data-stu-id="5c598-170">The 2.0 [metapackage](xref:fundamentals/metapackage) includes the latest version of Application Insights, so a package downgrade error appears if you're referencing an older version.</span></span>
+Se você estiver usando o SDK do Application Insights diretamente, continue fazendo isso. O [metapacote](xref:fundamentals/metapackage) do 2.0 inclui a última versão do Application Insights. Portanto, um erro de downgrade do pacote será exibido se você estiver referenciando uma versão mais antiga.
 
 <a name="auth-and-identity"></a>
 
-## <a name="adopt-authentication--identity-improvements"></a><span data-ttu-id="5c598-171">Adotar melhorias de autenticação/identidade</span><span class="sxs-lookup"><span data-stu-id="5c598-171">Adopt Authentication / Identity Improvements</span></span>
-<span data-ttu-id="5c598-172">O ASP.NET Core 2.0 tem um novo modelo de autenticação e uma série de alterações significativas no ASP.NET Core Identity.</span><span class="sxs-lookup"><span data-stu-id="5c598-172">ASP.NET Core 2.0 has a new authentication model and a number of significant changes to ASP.NET Core Identity.</span></span> <span data-ttu-id="5c598-173">Se você criou o projeto com a opção Contas de Usuário Individuais habilitada ou se adicionou manualmente a autenticação ou a identidade, consulte [Migrando a autenticação e a identidade para o ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x).</span><span class="sxs-lookup"><span data-stu-id="5c598-173">If you created your project with Individual User Accounts enabled, or if you have manually added authentication or Identity, see [Migrating Authentication and Identity to ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x).</span></span>
+## <a name="adopt-authentication--identity-improvements"></a>Adotar melhorias de autenticação/identidade
+O ASP.NET Core 2.0 tem um novo modelo de autenticação e uma série de alterações significativas no ASP.NET Core Identity. Se você criou o projeto com a opção Contas de Usuário Individuais habilitada ou se adicionou manualmente a autenticação ou a identidade, consulte [Migrando a autenticação e a identidade para o ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x).
 
-## <a name="additional-resources"></a><span data-ttu-id="5c598-174">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="5c598-174">Additional Resources</span></span>
-- [<span data-ttu-id="5c598-175">Últimas alterações no ASP.NET Core 2.0</span><span class="sxs-lookup"><span data-stu-id="5c598-175">Breaking Changes in ASP.NET Core 2.0</span></span>](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)
+## <a name="additional-resources"></a>Recursos adicionais
+- [Últimas alterações no ASP.NET Core 2.0](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)

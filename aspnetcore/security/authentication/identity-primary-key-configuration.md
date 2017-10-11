@@ -1,28 +1,57 @@
 ---
-title: "Configurar o tipo de dados de chaves primárias de identidade"
+title: "Configurar o tipo de dados de chave primária de identidade"
+author: AdrienTorris
+description: "Este artigo descreve as etapas para configurar o tipo de dados desejado, usado para a chave primária da identidade do ASP.NET Core."
+keywords: "Chave primária do ASP.NET Core, identidade,"
+ms.author: scaddie
+manager: wpickett
+ms.date: 09/28/2017
+ms.topic: article
+ms.technology: aspnet
+ms.prod: asp.net-core
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: 2afcdf89b2a39d82a4ba72dc780be71ac98ab664
-ms.sourcegitcommit: 76d42f09f3e0dd2f2105493eca6b29994aa47706
+ms.openlocfilehash: 5734a9aa86fb2831bd054593ad41c3e3bda4729e
+ms.sourcegitcommit: 13291956ad858d465dfd46caa384df58f08e286b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 09/29/2017
 ---
-# <a name="configure-identity-primary-keys-data-type"></a><span data-ttu-id="aa5cd-102">Configurar o tipo de dados de chaves primárias de identidade</span><span class="sxs-lookup"><span data-stu-id="aa5cd-102">Configure Identity primary keys data type</span></span>
+# <a name="configure-the-aspnet-core-identity-primary-key-data-type"></a><span data-ttu-id="9d73c-104">Configurar o tipo de dados de chave primária de identidade do ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="9d73c-104">Configure the ASP.NET Core Identity primary key data type</span></span>
 
-<span data-ttu-id="aa5cd-103">Identidade do ASP.NET Core permite que você configure facilmente o tipo de dados que você deseja para as chaves primárias.</span><span class="sxs-lookup"><span data-stu-id="aa5cd-103">ASP.NET Core Identity allows you to easily configure the data type you want for the primary keys.</span></span> <span data-ttu-id="aa5cd-104">Por padrão, o tipo de dados de cadeia de caracteres de usos de identidade, mas muito rapidamente, você pode substituir esse comportamento.</span><span class="sxs-lookup"><span data-stu-id="aa5cd-104">By default, Identity uses string data type but you can very quickly override this behavior.</span></span>
+<span data-ttu-id="9d73c-105">Identidade do ASP.NET Core permite que você configure o tipo de dados usado para representar uma chave primária.</span><span class="sxs-lookup"><span data-stu-id="9d73c-105">ASP.NET Core Identity allows you to configure the data type used to represent a primary key.</span></span> <span data-ttu-id="9d73c-106">Identidade usa o `string` tipo de dados por padrão.</span><span class="sxs-lookup"><span data-stu-id="9d73c-106">Identity uses the `string` data type by default.</span></span> <span data-ttu-id="9d73c-107">Você pode substituir esse comportamento.</span><span class="sxs-lookup"><span data-stu-id="9d73c-107">You can override this behavior.</span></span>
 
-## <a name="how-to"></a><span data-ttu-id="aa5cd-105">Como</span><span class="sxs-lookup"><span data-stu-id="aa5cd-105">How to</span></span>
+## <a name="customize-the-primary-key-data-type"></a><span data-ttu-id="9d73c-108">Personalizar o tipo de dados de chave primária</span><span class="sxs-lookup"><span data-stu-id="9d73c-108">Customize the primary key data type</span></span>
 
-1.  <span data-ttu-id="aa5cd-106">A primeira etapa é implementar o modelo de identidade e substituir o tipo de cadeia de caracteres com o tipo de dados que você deseja.</span><span class="sxs-lookup"><span data-stu-id="aa5cd-106">The first step is to implement the Identity's model, and override the string type with the data type you want.</span></span>
+1. <span data-ttu-id="9d73c-109">Criar uma implementação personalizada do [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) classe.</span><span class="sxs-lookup"><span data-stu-id="9d73c-109">Create a custom implementation of the [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) class.</span></span> <span data-ttu-id="9d73c-110">Representa o tipo a ser usado para criar objetos de usuário.</span><span class="sxs-lookup"><span data-stu-id="9d73c-110">It represents the type to be used for creating user objects.</span></span> <span data-ttu-id="9d73c-111">No exemplo a seguir, o padrão `string` tipo é substituído pelo `Guid`.</span><span class="sxs-lookup"><span data-stu-id="9d73c-111">In the following example, the default `string` type is replaced with `Guid`.</span></span>
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4-6&range=7-13)]
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3-5&range=7-12)]
+1. <span data-ttu-id="9d73c-112">Criar uma implementação personalizada do [IdentityRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) classe.</span><span class="sxs-lookup"><span data-stu-id="9d73c-112">Create a custom implementation of the [IdentityRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) class.</span></span> <span data-ttu-id="9d73c-113">Representa o tipo a ser usado para criar objetos de função.</span><span class="sxs-lookup"><span data-stu-id="9d73c-113">It represents the type to be used for creating role objects.</span></span> <span data-ttu-id="9d73c-114">No exemplo a seguir, o padrão `string` tipo é substituído pelo `Guid`.</span><span class="sxs-lookup"><span data-stu-id="9d73c-114">In the following example, the default `string` type is replaced with `Guid`.</span></span>
     
-2.  <span data-ttu-id="aa5cd-107">Implementar o contexto do banco de dados de identidade com seus modelos e o tipo de dados que você deseja para chaves primárias</span><span class="sxs-lookup"><span data-stu-id="aa5cd-107">Implement the database context of Identity with your models and the data type you want for primary keys</span></span>
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
+    
+1. <span data-ttu-id="9d73c-115">Crie uma classe de contexto de banco de dados personalizado.</span><span class="sxs-lookup"><span data-stu-id="9d73c-115">Create a custom database context class.</span></span> <span data-ttu-id="9d73c-116">Ela herda da classe de contexto de banco de dados do Entity Framework usada para identidade.</span><span class="sxs-lookup"><span data-stu-id="9d73c-116">It inherits from the Entity Framework database context class used for Identity.</span></span> <span data-ttu-id="9d73c-117">O `TUser` e `TRole` argumentos referenciar as classes de usuário e a função personalizadas criadas na etapa anterior, respectivamente.</span><span class="sxs-lookup"><span data-stu-id="9d73c-117">The `TUser` and `TRole` arguments reference the custom user and role classes created in the previous step, respectively.</span></span> <span data-ttu-id="9d73c-118">O `Guid` tipo de dados é definido para a chave primária.</span><span class="sxs-lookup"><span data-stu-id="9d73c-118">The `Guid` data type is defined for the primary key.</span></span>
 
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Data/ApplicationDbContext.cs?highlight=3&range=9-26)]
     
-3.  <span data-ttu-id="aa5cd-108">Use os modelos e o tipo de dados que você deseja para chaves primárias quando você declara que o serviço de identidade na classe de inicialização do aplicativo</span><span class="sxs-lookup"><span data-stu-id="aa5cd-108">Use your models and the data type you want for primary keys when you declare the identity service in your application's startup class</span></span>
+1. <span data-ttu-id="9d73c-119">Registre a classe de contexto de banco de dados personalizados ao adicionar o serviço de identidade na classe de inicialização do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="9d73c-119">Register the custom database context class when adding the Identity service in the app's startup class.</span></span>
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-79)]
+    # <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="9d73c-120">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="9d73c-120">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+    
+    <span data-ttu-id="9d73c-121">O `AddEntityFrameworkStores` método não aceita um `TKey` argumento como fazia no ASP.NET Core 1. x.</span><span class="sxs-lookup"><span data-stu-id="9d73c-121">The `AddEntityFrameworkStores` method doesn't accept a `TKey` argument as it did in ASP.NET Core 1.x.</span></span> <span data-ttu-id="9d73c-122">Tipo de dados da chave primária é deduzido analisando a `DbContext` objeto.</span><span class="sxs-lookup"><span data-stu-id="9d73c-122">The primary key's data type is inferred by analyzing the `DbContext` object.</span></span>
+    
+    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
+    
+    # <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="9d73c-123">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="9d73c-123">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+    
+    <span data-ttu-id="9d73c-124">O `AddEntityFrameworkStores` método aceita um `TKey` argumento indicando o tipo de dados da chave primária.</span><span class="sxs-lookup"><span data-stu-id="9d73c-124">The `AddEntityFrameworkStores` method accepts a `TKey` argument indicating the primary key's data type.</span></span>
+    
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
+    
+    ---
+
+## <a name="test-the-changes"></a><span data-ttu-id="9d73c-125">Teste as alterações</span><span class="sxs-lookup"><span data-stu-id="9d73c-125">Test the changes</span></span>
+
+<span data-ttu-id="9d73c-126">Após a conclusão das alterações de configuração, a propriedade que representa a chave primária reflete o novo tipo de dados.</span><span class="sxs-lookup"><span data-stu-id="9d73c-126">Upon completion of the configuration changes, the property representing the primary key reflects the new data type.</span></span> <span data-ttu-id="9d73c-127">O exemplo a seguir demonstra como acessar a propriedade em um controlador MVC.</span><span class="sxs-lookup"><span data-stu-id="9d73c-127">The following example demonstrates accessing the property in an MVC controller.</span></span>
+
+[!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Controllers/AccountController.cs?name=snippet_GetCurrentUserId&highlight=6)]
