@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: b3ea7688eefa69171fd1179de42497c98cf9302e
-ms.sourcegitcommit: 4d9c6d47bded895f3d9a35e9550e31ae213c083c
+ms.openlocfilehash: 4962361aa0fc8a61cfc771ed3123a3bafdbe6100
+ms.sourcegitcommit: fe25b8163e9e4115915b3293936e9da646fff84f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -41,7 +41,7 @@ Os seguintes guias passo a passo para desenvolvimento de aplicativos ASP.NET Cor
 * [Criar uma API Web com o ASP.NET Core e o Visual Studio para Mac](xref:tutorials/first-web-api-mac)
 * [Criar uma API Web com o ASP.NET Core e o Visual Studio para Windows](first-web-api.md)
 * [Criar uma API Web com o ASP.NET Core e o Visual Studio Code](web-api-vsc.md)
-* [Páginas de ajuda da API Web ASP.NET usando o Swagger](web-api-help-pages-using-swagger.md)
+* [Páginas de ajuda da API Web ASP.NET Core usando o Swagger](web-api-help-pages-using-swagger.md)
 * [Criando serviços Web de back-end para aplicativos móveis nativos](../mobile/native-mobile-backend.md)
 
 ## <a name="working-with-data"></a>Trabalhando com os dados

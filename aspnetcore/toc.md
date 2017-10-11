@@ -68,7 +68,7 @@
 ## [Criando serviços de back-end para aplicativos móveis](mobile/native-mobile-backend.md)
 ## [Compilando APIs Web](mvc/web-api/index.md)
 ## [Criar uma API Web](xref:tutorials/first-web-api-mac)
-### [Páginas de ajuda da API Web ASP.NET usando o Swagger](tutorials/web-api-help-pages-using-swagger.md)
+### [Páginas de ajuda da API Web ASP.NET Core usando o Swagger](tutorials/web-api-help-pages-using-swagger.md)
 ### [Criando serviços de back-end para aplicativos móveis nativos](mobile/native-mobile-backend.md)
 
 # [Conceitos básicos](fundamentals/index.md)
@@ -269,7 +269,7 @@
 ### [Middleware de cache de resposta](xref:performance/caching/middleware)
 ## [Middleware de compactação de resposta](xref:performance/response-compression)
 
-# [Migration](xref:migration/index) (Migração)
+# [Migração](xref:migration/index)
 ## [ASP.NET para ASP.NET Core 1.x](xref:migration/mvc)
 ### [Configuração](xref:migration/configuration)
 ### [Autenticação e identidade](xref:migration/identity)
@@ -279,7 +279,7 @@
 ## [ASP.NET Core 1.x para 2.0](xref:migration/1x-to-2x/index)
 ### [Autenticação e identidade](xref:migration/1x-to-2x/identity-2x)
 
-# [Referência de API](/aspnet/core/api/)
+# [Referência de API](https://docs.microsoft.com/dotnet/api/?view=aspnetcore-2.0)
 
 # [Notas de versão 2.0](aspnetcore-2.0.md)
 ## [Notas de versão 1.1](aspnetcore-1.1.md)
