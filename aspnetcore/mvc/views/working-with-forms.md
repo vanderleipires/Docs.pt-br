@@ -174,7 +174,7 @@ As anotações de dados aplicadas para o `Email` e `Password` propriedades geram
 
 ### <a name="expression-names"></a>Nomes de expressão
 
-O `asp-for` valor de atributo é um `ModelExpression` e o lado direito de uma expressão lambda. Portanto, `asp-for="Property1"` se torna `m => m.Property1` no código gerado que é por isso você não precisa com prefixo `Model`. Você pode usar o "@" caractere para iniciar uma expressão embutido e mover antes do `m.`:
+O `asp-for` valor de atributo é um `ModelExpression` e o lado direito de uma expressão lambda. Portanto, `asp-for="Property1"` se torna `m => m.Property1` no código gerado que é por isso você não precisa com prefixo `Model`. Você pode usar o « @ » caractere para iniciar uma expressão embutido e mover antes do `m.`:
 
 ```HTML
 @{

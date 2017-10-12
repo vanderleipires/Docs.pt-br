@@ -43,7 +43,7 @@ ms.lasthandoff: 09/12/2017
 
 5. Navegue para [http://localhost:5000](http://localhost:5000)
 
-6. Abra *Pages/About.cshtml* e modifique a página para exibir a mensagem "Olá, mundo! O horário no servidor é @DateTime.Now":
+6. Abra *Pages/About.cshtml* e modifique a página para exibir a mensagem "Olá, mundo! O horário no servidor é @DateTime.Now" :
 
     [!code-html[Main](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 
