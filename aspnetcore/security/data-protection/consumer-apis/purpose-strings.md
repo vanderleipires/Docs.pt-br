@@ -2,7 +2,7 @@
 title: Cadeias de caracteres de finalidade
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: c96ed361-c382-4980-8933-800e740cfc38
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: cc33bcfab4945e6d6f9ca7e61edeff4d1837661a
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 799c3dc2768e264307783efafee626a346a9362c
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="purpose-strings"></a>Cadeias de caracteres de finalidade
 
-<a name=data-protection-consumer-apis-purposes></a>
+<a name="data-protection-consumer-apis-purposes"></a>
 
 Componentes que consomem IDataProtectionProvider devem passar um exclusivo *fins* parâmetro para o método CreateProtector. A finalidade *parâmetro* é inerente à segurança do sistema de proteção de dados, como ele fornece isolamento entre consumidores de criptografia, mesmo se as chaves de criptografia de raiz são as mesmas.
 
@@ -38,7 +38,7 @@ A cadeia de caracteres de fim não precisa ser segredo. Ele simplesmente deve se
 
 Como o parâmetro fins CreateProtector é uma matriz de cadeia de caracteres, acima podem ter sido em vez disso, especificadas como ["Contoso.Security.BearerToken", "v1"]. Isso permite o estabelecimento de uma hierarquia de propósitos e abre a possibilidade de cenários de multilocação com o sistema de proteção de dados.
 
-<a name=data-protection-contoso-purpose></a>
+<a name="data-protection-contoso-purpose"></a>
 
 >[!WARNING]
 > Componentes não devem permitir a entrada do usuário não confiável ser a única origem de entrada para a cadeia de finalidades.

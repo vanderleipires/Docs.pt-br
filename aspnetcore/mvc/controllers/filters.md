@@ -11,11 +11,11 @@ ms.assetid: 531bda08-aa5b-4471-8f08-96add22c8683
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: 215d165d0029bbf38ef37cdde57b80a15bff9ef9
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 34a5be6e77f8558c9b3c257575272e167ed95ea4
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="filters"></a>Filtros
 
@@ -82,7 +82,7 @@ Você pode implementar `IFilterFactory` em suas próprias implementações de at
 
 O framework inclui filtros internos baseado em atributos que você pode subclasse e personalizar. Por exemplo, o filtro de resultados a seguir adiciona um cabeçalho para a resposta.
 
-<a name=add-header-attribute></a>
+<a name="add-header-attribute"></a>
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/AddHeaderAttribute.cs?highlight=5,16)]
 
@@ -167,7 +167,7 @@ O `Order` propriedade supera o escopo ao determinar a ordem na qual os filtros s
 
 Você pode encurta o pipeline de filtro a qualquer momento, definindo o `Result` propriedade o `context` parâmetro fornecido para o método de filtro. Por exemplo, o filtro de recursos a seguir impede que o resto do pipeline de execução.
 
-<a name=short-circuiting-resource-filter></a>
+<a name="short-circuiting-resource-filter"></a>
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/ShortCircuitingResourceFilterAttribute.cs?highlight=12,13,14,15)]
 

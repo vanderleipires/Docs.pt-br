@@ -11,15 +11,15 @@ ms.assetid: 285ae47d-e0bf-4b03-b0a8-2b1fb18bc3a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 7ada940acfbb7fb0887fd7c0cd722bf62f211248
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: fde8f75422c9dd84311a65b21e1e38b47fbe0306
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="machine-wide-policy"></a>Política de largura de máquina
 
-<a name=data-protection-configuration-machinewidepolicy></a>
+<a name="data-protection-configuration-machinewidepolicy"></a>
 
 Quando em execução no Windows, o sistema de proteção de dados tem suporte limitado para configurar a política de todo o computador padrão para todos os aplicativos que consomem a proteção de dados. A ideia geral é que um administrador pode querer alterar alguma configuração padrão (como os algoritmos usados ou chave tempo de vida) sem a necessidade de atualizar manualmente cada aplicativo na máquina.
 
@@ -42,7 +42,7 @@ Os valores com suporte são:
 
 * KeyEscrowSinks [string] - Especifica os tipos que serão usados para caução de chaves. Esse valor é uma lista separada por ponto-e-vírgula de Coletores de caução de chaves, onde cada elemento na lista é o nome qualificado do assembly de um tipo que implementa IKeyEscrowSink.
 
-<a name=data-protection-encryption-types></a>
+<a name="data-protection-encryption-types"></a>
 
 ### <a name="encryption-types"></a>Tipos de criptografia
 

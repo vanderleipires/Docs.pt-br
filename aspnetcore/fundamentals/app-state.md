@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f9c1d10101d23e105c4a8af41d851f69b1b6a175
-ms.sourcegitcommit: 9c27fa0f0c57ad611aa43f63afb9b9c9571d4a94
+ms.openlocfilehash: d4d10ef45d562f34c3f8b5ce025abaf763c862d3
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introdução ao estado de sessão e de aplicativo no núcleo do ASP.NET
 
@@ -43,6 +43,7 @@ O provedor de sessão na memória armazena dados de sessão no servidor local. S
 
 ASP.NET MVC de núcleo expõe o [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) propriedade em uma [controlador](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0). Essa propriedade armazena dados até eles serem lidos. Os métodos `Keep` e `Peek` podem ser usados para examinar os dados sem exclusão. `TempData`é particularmente útil para redirecionamento, quando dados são necessários para mais de uma única solicitação. `TempData`é implementado por provedores de TempData, por exemplo, usar cookies ou estado de sessão.
 
+<a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>Provedores de TempData
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
@@ -106,7 +107,7 @@ O `Items` coleção é um bom local para armazenar dados que é necessário some
 
 O cache é uma maneira eficiente de armazenar e recuperar dados. Você pode controlar o tempo de vida de itens em cache com base na hora e outras considerações. Saiba mais sobre [cache](../performance/caching/index.md).
 
-<a name=session></a>
+<a name="session"></a>
 ## <a name="working-with-session-state"></a>Trabalhando com o estado de sessão
 
 ### <a name="configuring-session"></a>Configuração de sessão
@@ -167,7 +168,7 @@ Sessão é acessada por meio de `Session` propriedade `HttpContext`. Esta propri
 
 O exemplo a seguir mostra a configuração e a obtenção de um inteiro e uma cadeia de caracteres:
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?name=snippet1)]
+[!code-csharp[Main](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?range=8-27,49)]
 
 Se você adicionar os seguintes métodos de extensão, você pode definir e obter objetos serializáveis a sessão:
 
@@ -232,7 +233,7 @@ public class HomeController : Controller
 
 Essa abordagem também tem a vantagem de eliminar a repetição de "magic cadeias de caracteres" em vários locais no código.
 
-<a name=appstate-errors></a>
+<a name="appstate-errors"></a>
 
 ## <a name="application-state-data"></a>Dados de estado do aplicativo
 

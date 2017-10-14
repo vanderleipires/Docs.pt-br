@@ -11,15 +11,15 @@ ms.assetid: 6c4e6591-45d2-4d25-855e-062ad352d648
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: 5d176515792045545add66ba5aedb0358d8bdc70
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 082fd69769dd0ef000b39ec148c12719d66f7aac
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>Desproteção cargas cujas chaves foram revogados
 
-<a name=data-protection-consumer-apis-dangerous-unprotect></a>
+<a name="data-protection-consumer-apis-dangerous-unprotect"></a>
 
 A proteção de dados do ASP.NET Core APIs não são principalmente para persistência indefinida de cargas confidenciais. Outras tecnologias, como [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) e [Azure Rights Management](https://docs.microsoft.com/rights-management/) são mais adequados para o cenário de armazenamento indefinido, e eles têm recursos de gerenciamento de chave forte de forma correspondente. Dito isso, não há nada proibindo um desenvolvedor usa as APIs de proteção de dados ASP.NET Core para proteção de longo prazo de dados confidenciais. Chaves nunca são removidas do anel de chave, portanto IDataProtector.Unprotect sempre pode recuperar cargas existentes, desde que as chaves estão disponíveis e válido.
 
