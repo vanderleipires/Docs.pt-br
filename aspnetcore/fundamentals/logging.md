@@ -12,25 +12,25 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9557e9f6915507450de3ffe500582839a28c3f0c
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: b2e991ea37b1b726e472d78d839143546ebd559f
+ms.sourcegitcommit: 29da58de11e20c9c60448e36e7075c6b13622624
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introdução ao registro em log no núcleo do ASP.NET
 
 Por [Steve Smith](https://ardalis.com/) e [Tom Dykstra](https://github.com/tdykstra)
 
-ASP.NET Core dá suporte a uma API de registro em log que funciona com uma variedade de provedores de log. Provedores internos permitem que você envie logs para um ou mais destinos, e você pode conectar uma estrutura de log de terceiros. Este artigo mostra como usar a API de registro em log internos e provedores em seu código.
+O ASP.NET Core dá suporte a uma API de registro em log que funciona com uma variedade de provedores de logs. Provedores internos permitem que você envie logs para um ou mais destinos, e você pode conectar uma estrutura de log de terceiros. Este artigo mostra como usar a API de registro em log internos e provedores em seu código.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ---
 
@@ -585,9 +585,6 @@ O exemplo a seguir configura um `TraceSource` provedor que registra `Warning` e 
 O [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) pacote provedor grava logs para arquivos de texto no sistema de arquivos do aplicativo do serviço de aplicativo do Azure e ao [armazenamento de blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage) em uma conta de armazenamento do Azure. O provedor está disponível apenas para aplicativos que se destinam a ASP.NET Core 1.1.0 ou superior. 
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
-> [!NOTE]
-> Núcleo do ASP.NET 2.0 está em visualização.  Os aplicativos criados com a versão de visualização mais recente podem não ser executado quando implantado em um serviço de aplicativo do Azure. Quando o ASP.NET Core 2.0 foi lançado, o serviço de aplicativo do Azure executará 2.0 aplicativos e o serviço de aplicativo do Azure provedor funcionará conforme o indicado aqui.
 
 Você não precisa instalar o pacote de provedor ou a chamada a `AddAzureWebAppDiagnostics` método de extensão.  O provedor está automaticamente disponível para seu aplicativo quando você implanta o aplicativo do serviço de aplicativo do Azure.
 
