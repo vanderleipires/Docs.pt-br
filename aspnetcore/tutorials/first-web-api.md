@@ -98,7 +98,7 @@ Substitua o código gerado pelo mostrado a seguir:
   
 ### <a name="launch-the-app"></a>Iniciar o aplicativo
 
-No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values`, em que *porta* é um número da porta escolhido aleatoriamente. Se você estiver usando o Chrome, o Edge ou o Firefox, os dados serão exibidos. Se você estiver usando o IE, ele solicitará que você abra ou salve o arquivo *values.json*. Navegue até o controlador `Todo` que acabamos de criar em `http://localhost:port/api/todo`.
+No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values`, em que *port* é um número da porta escolhido aleatoriamente. Se você estiver usando o Chrome, o Edge ou o Firefox, os dados serão exibidos. Se você estiver usando o IE, ele solicitará que você abra ou salve o arquivo *values.json*. Navegue até o controlador `Todo` que acabamos de criar em `http://localhost:port/api/todo`.
 
 [!INCLUDE[last part of web API](../includes/webApi/end.md)]
 
