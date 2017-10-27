@@ -17,7 +17,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/22/2017
 ---
-# <a name="custom-formatters-in-aspnet-core-mvc-web-apis"></a>APIs da web personalizados formatadores no ASP.NET MVC de núcleo
+# <a name="custom-formatters-in-aspnet-core-mvc-web-apis"></a>APIs da web personalizados formatadores no ASP.NET MVC Core
 
 Por [Tom Dykstra](https://github.com/tdykstra)
 
