@@ -18,7 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/22/2017
 ---
-# <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introdução ao estado de sessão e de aplicativo no núcleo do ASP.NET
+# <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introdução ao estado de sessão e de aplicativo no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), e [Diana LaRose](https://github.com/DianaLaRose)
 
