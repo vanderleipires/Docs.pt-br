@@ -21,27 +21,27 @@ ms.lasthandoff: 09/28/2017
 
 Por [Steve Smith](https://ardalis.com/)
 
-Aplicativos móveis facilmente podem se comunicar com serviços de back-end do ASP.NET Core.
+Aplicativos móveis podem facilmente se comunicar com serviços de back-end do ASP.NET Core.
 
-[Exibir ou baixar o exemplo de código de serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
+[Exibir ou baixar o código de exemplo dos serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
 
-## <a name="the-sample-native-mobile-app"></a>O aplicativo móvel nativo de exemplo
+## <a name="the-sample-native-mobile-app"></a>O exemplo do aplicativo móvel nativo 
 
-Este tutorial demonstra como criar serviços de back-end usando o ASP.NET MVC de núcleo para dar suporte a aplicativos móveis nativo. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Você pode seguir o tutorial vinculado para criar o aplicativo nativo (e instalar as ferramentas Xamarin livres necessárias), bem como baixar a solução de exemplo Xamarin. O exemplo de Xamarin inclui um projeto de serviços ASP.NET Web API 2, que substitui o aplicativo do ASP.NET Core deste artigo (com nenhuma alteração exigida pelo cliente).
+Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativo. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Você pode seguir o tutorial vinculado para criar o aplicativo nativo (e instalar as ferramentas Xamarin gratuitas necessárias), bem como baixar a solução de exemplo Xamarin. O exemplo do Xamarin inclui um projeto de serviços ASP.NET Web API 2, que substitui o aplicativo do ASP.NET Core deste artigo (com nenhuma alteração exigida pelo cliente).
 
-![Aplicativo Do Rest em execução em um smartphone Android](native-mobile-backend/_static/todo-android.png)
+![Aplicativo ToDoRest em execução em um smartphone Android](native-mobile-backend/_static/todo-android.png)
 
 ### <a name="features"></a>Recursos
 
-O aplicativo ToDoRest dá suporte à lista, adicionar, excluir e atualizar itens de tarefas. Cada item possui uma ID, um nome, anotações e uma propriedade que indica se ele está sendo feito ainda.
+O aplicativo ToDoRest dá suporte à listar, adicionar, excluir e atualizar itens de tarefas. Cada item possui uma ID, um nome, anotações e uma propriedade que indica se ele está sendo feito ainda.
 
-O modo de exibição principal dos itens, como mostrado acima, lista o nome de cada item e indica se isso é feito com uma marca de seleção.
+O modo de exibição principal dos itens, como mostrado acima, lista o nome de cada item e indica se está concluído com uma marca de seleção.
 
-Tocar o `+` ícone abre uma caixa de diálogo Adicionar item:
+Clicar no ícone `+` abre uma caixa de diálogo Adicionar item:
 
 ![Item de caixa de diálogo Adicionar](native-mobile-backend/_static/todo-android-new-item.png)
 
-Ao tocar em um item na tela principal de lista abre uma caixa de diálogo Editar onde o nome do item, observações e configurações concluídas podem ser modificadas, ou o item pode ser excluído:
+Ao tocar em um item na lista da tela principal abrirá uma caixa de diálogo para Editar o nome do item, observações e configurações de concluídas podem ser modificadas, ou o item pode ser excluído:
 
 ![Editar caixa de diálogo de item](native-mobile-backend/_static/todo-android-edit-item.png)
 
