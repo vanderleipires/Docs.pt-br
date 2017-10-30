@@ -45,7 +45,7 @@ Ao tocar em um item na tela principal de lista abre uma caixa de diálogo Editar
 
 ![Editar caixa de diálogo de item](native-mobile-backend/_static/todo-android-edit-item.png)
 
-Este exemplo é configurado por padrão para usar serviços de back-end hospedados em developer.xamarin.com, que permitem operações somente leitura. Para testá-lo por conta própria em relação o aplicativo do ASP.NET Core criado na próxima seção em execução no seu computador, você precisará atualizar o aplicativo `RestUrl` constante. Navegue até o `ToDoREST` do projeto e abra o *Constants.cs* arquivo. Substitua o `RestUrl` com uma URL que inclui o IP do seu computador, endereço (não localhost ou 127.0.0.1, desde que esse endereço é usado do emulador de dispositivo, não em seu computador). Inclua o número da porta (5000). Para testar se os serviços de trabalhar com um dispositivo, verifique se que você não tiver um firewall ativas bloqueando o acesso a essa porta.
+Este exemplo é configurado por padrão para usar serviços de back-end hospedados em developer.xamarin.com, que permitem operações somente leitura. Para testá-lo por conta própria em relação o aplicativo do ASP.NET Core criado na próxima seção em execução no seu computador, você precisará atualizar a constante `RestUrl` no aplicativo. Navegue até o projeto `ToDoREST` e abra o arquivo *Constants.cs* . Substitua o `RestUrl` com uma URL que inclui o IP do seu computador, endereço (não localhost ou 127.0.0.1, desde de que esse endereço seja usado do emulador de dispositivo, não em seu computador). Inclua o número da porta (5000). Para testar se os serviços estão funcionando com um dispositivo, verifique se que você não tem um firewall ativa bloqueando o acesso a essa porta.
 
 ```csharp
 // URL of REST service (Xamarin ReadOnly Service)
@@ -57,9 +57,9 @@ public static string RestUrl = "http://192.168.1.207:5000/api/todoitems/{0}";
 
 ## <a name="creating-the-aspnet-core-project"></a>Criando o projeto do ASP.NET Core
 
-Crie um novo aplicativo de Web do ASP.NET Core no Visual Studio. Escolha o modelo de API da Web e sem autenticação. Nomeie o projeto *ToDoApi*.
+Crie um novo aplicativo de Web do ASP.NET Core no Visual Studio. Escolha o modelo de Web API sem autenticação. Nomeie o projeto *ToDoApi*.
 
-![Caixa de diálogo nova aplicativo Web ASP.NET com modelo de projeto de API da Web selecionado](native-mobile-backend/_static/web-api-template.png)
+![Caixa de diálogo nova aplicativo Web ASP.NET com modelo de projeto de Web API selecionado](native-mobile-backend/_static/web-api-template.png)
 
 O aplicativo deve responder a todas as solicitações feitas para a porta 5000. Atualização *Program.cs* para incluir `.UseUrls("http://*:5000")` para fazer isso:
 
@@ -68,11 +68,11 @@ O aplicativo deve responder a todas as solicitações feitas para a porta 5000. 
 > [!NOTE]
 > Certifique-se de que executar o aplicativo diretamente, em vez de por trás do IIS Express, que ignora solicitações não local por padrão. Executar `dotnet run` em um prompt de comando, ou escolha o perfil de nome do aplicativo no menu suspenso de destino de depuração na barra de ferramentas do Visual Studio.
 
-Adicione uma classe de modelo para representar itens pendentes. Marca necessários campos usando a `[Required]` atributo:
+Adicione uma classe de modelo para representar itens pendentes. Marque os campos obrigatórios usando o atributo `[Required]` :
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
-Os métodos da API exigem alguma maneira de trabalhar com dados. Use a mesma `IToDoRepository` interface os usos de exemplo originais do Xamarin:
+Os métodos da API exigem alguma maneira de trabalhar com dados. Use a mesma interface `IToDoRepository` nos usos de exemplo originais do Xamarin:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
