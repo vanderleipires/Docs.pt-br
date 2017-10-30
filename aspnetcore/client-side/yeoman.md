@@ -17,7 +17,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/22/2017
 ---
-# <a name="introduction-to-building-projects-with-yeoman-in-aspnet-core"></a>Introdução à criação de projetos com Yeoman no núcleo do ASP.NET
+# <a name="introduction-to-building-projects-with-yeoman-in-aspnet-core"></a>Introdução à criação de projetos com Yeoman no ASP.NET Core
 
 [Yeoman](http://yeoman.io/) é um sistema de scaffolding de projeto para a criação de vários tipos de aplicativos. O Yeoman gerador para o ASP.NET Core contém uma variedade de modelos de projeto para iniciar uma nova web, o MVC ou o aplicativo de console.
 
