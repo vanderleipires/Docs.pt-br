@@ -27,7 +27,7 @@ Este artigo explica os benefícios de usar o empacotamento e minimização, incl
 
 Em aplicativos do ASP.NET Core, há várias opções para Empacotando e minimizando os recursos do lado do cliente. Os modelos de núcleo para MVC fornecem uma solução de fora da caixa usando um arquivo de configuração e o pacote BuildBundlerMinifier NuGet. Ferramentas de terceiros, como [Gulp](using-gulp.md) e [Grunt](using-grunt.md) também estão disponíveis para executar as mesmas tarefas devem exigir seus processos de fluxo de trabalho adicional ou complexidades. Usando o empacotamento e minimização tempo de design, os arquivos minimizados são criados antes da implantação do aplicativo. Empacotando e minimizando antes da implantação tem a vantagem de carga do servidor reduzido. No entanto, é importante reconhecer que o agrupamento de tempo de design e minimização aumenta a complexidade de compilação e só funciona com arquivos estáticos.
 
-Empacotamento e minimização principalmente melhoram o tempo de carregamento de solicitação de página primeiro. Depois que uma página da web foi solicitada, o navegador armazena em cache os ativos (JavaScript, CSS e imagens) para o empacotamento e minimização não fornecerá qualquer aumento de desempenho ao solicitar a mesma página ou páginas no mesmo site solicitando os mesmo ativos. Se você não definir o expira cabeçalho corretamente em seus ativos e você não usar o empacotamento e minimização, heurística de atualização do navegador marcará os ativos obsoletos depois de alguns dias e o navegador exigirá uma solicitação de validação para cada ativo. Nesse caso, empacotamento e minimização fornecem um aumento de desempenho mesmo após a primeira solicitação de página.
+Empacotamento e minimização principalmente melhoram o tempo de carregamento de solicitação de página primeiro. Depois que uma página da web foi solicitada, o navegador armazena em cache os ativos (JavaScript, CSS e imagens) para o empacotamento e minimização não fornecerá qualquer aumento de desempenho ao solicitar a mesma página ou páginas no mesmo site solicitando os mesmo ativos. Se você não definir uma expiração para o cabeçalho de uma forma exata em seus ativos e você não usar o empacotamento e minimização, heurística de atualização do navegador marcará os ativos obsoletos depois de alguns dias e o navegador exigirá uma solicitação de validação para cada ativo. Nesse caso, empacotamento e minimização fornecem um aumento de desempenho mesmo após a primeira solicitação de página.
 
 ### <a name="bundling"></a>Agrupamento
 
@@ -156,7 +156,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 ## <a name="adding-files"></a>Adicionando arquivos
 
-Neste exemplo, um arquivo CSS adicional é adicionado chamado `custom.css` e configurado para o empacotamento e minimização com `site.css`, resultando em um único `site.min.css`.
+Neste exemplo, um arquivo adicional CSS é incluído e nomeado como `custom.css`, devidamente configurado para o empacotamento e minimização com `site.css`, resultando em um único `site.min.css`.
 
 Custom.CSS
 
