@@ -17,7 +17,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/22/2017
 ---
-# <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>Herança - Core EF com o tutorial do MVC do ASP.NET Core (9 de 10)
+# <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>Herança - Tutorial EF Core com ASP.NET Core MVC (9 de 10)
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
