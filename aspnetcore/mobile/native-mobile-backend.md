@@ -27,7 +27,8 @@ Aplicativos móveis facilmente podem se comunicar com serviços de back-end do A
 
 ## <a name="the-sample-native-mobile-app"></a>O aplicativo móvel nativo de exemplo
 
-Este tutorial demonstra como criar serviços de back-end usando o ASP.NET MVC de núcleo para dar suporte a aplicativos móveis nativo. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Você pode seguir o tutorial vinculado para criar o aplicativo nativo (e instalar as ferramentas Xamarin livres necessárias), bem como baixar a solução de exemplo Xamarin. O exemplo de Xamarin inclui um projeto de serviços ASP.NET Web API 2, que substitui o aplicativo do ASP.NET Core deste artigo (com nenhuma alteração exigida pelo cliente).
+
+Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativo. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Você pode seguir o tutorial vinculado para criar o aplicativo nativo (e instalar as ferramentas Xamarin livres necessárias), bem como baixar a solução de exemplo Xamarin. O exemplo de Xamarin inclui um projeto de serviços ASP.NET Web API 2, que substitui o aplicativo do ASP.NET Core deste artigo (com nenhuma alteração exigida pelo cliente).
 
 ![Aplicativo Do Rest em execução em um smartphone Android](native-mobile-backend/_static/todo-android.png)
 
@@ -45,7 +46,8 @@ Ao tocar em um item na tela principal de lista abre uma caixa de diálogo Editar
 
 ![Editar caixa de diálogo de item](native-mobile-backend/_static/todo-android-edit-item.png)
 
-Este exemplo é configurado por padrão para usar serviços de back-end hospedados em developer.xamarin.com, que permitem operações somente leitura. Para testá-lo por conta própria em relação o aplicativo do ASP.NET Core criado na próxima seção em execução no seu computador, você precisará atualizar a constante `RestUrl` no aplicativo. Navegue até o projeto `ToDoREST` e abra o arquivo *Constants.cs* . Substitua o `RestUrl` com uma URL que inclui o IP do seu computador, endereço (não localhost ou 127.0.0.1, desde de que esse endereço seja usado do emulador de dispositivo, não em seu computador). Inclua o número da porta (5000). Para testar se os serviços estão funcionando com um dispositivo, verifique se que você não tem um firewall ativa bloqueando o acesso a essa porta.
+
+Este exemplo é configurado por padrão para usar serviços de back-end hospedados em developer.xamarin.com, que permitem operações somente leitura. Para testá-lo por conta própria em relação o aplicativo do ASP.NET Core criado na próxima seção em execução no seu computador, você precisará atualizar o aplicativo `RestUrl` constante. Navegue até o `ToDoREST` do projeto e abra o *Constants.cs* arquivo. Substitua o `RestUrl` com uma URL que inclui o IP do seu computador, endereço (não localhost ou 127.0.0.1, desde que esse endereço é usado do emulador de dispositivo, não em seu computador). Inclua o número da porta (5000). Para testar se os serviços executar em um dispositivo, verifique se que você não dispõe de um firewall ativo bloqueando o acesso a essa porta.
 
 ```csharp
 // URL of REST service (Xamarin ReadOnly Service)
@@ -56,6 +58,7 @@ public static string RestUrl = "http://192.168.1.207:5000/api/todoitems/{0}";
 ```
 
 ## <a name="creating-the-aspnet-core-project"></a>Criando o projeto do ASP.NET Core
+
 
 Crie um novo aplicativo Web do ASP.NET Core no Visual Studio. Escolha o modelo de Web API sem autenticação. Nomeie o projeto como *ToDoApi*.
 
@@ -68,11 +71,13 @@ O aplicativo deve responder a todas as solicitações feitas para a porta 5000. 
 > [!NOTE]
 > Certifique-se de que executar o aplicativo diretamente, em vez de por trás do IIS Express, que ignora solicitações não local por padrão. Executar `dotnet run` em um prompt de comando, ou escolha o perfil de nome do aplicativo no menu suspenso de destino de depuração na barra de ferramentas do Visual Studio.
 
+
 Adicione uma classe de modelo para representar itens pendentes. Marque os campos obrigatórios usando o atributo `[Required]`:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
 Os métodos da API exigem alguma maneira de trabalhar com dados. Use a mesma interface `IToDoRepository` nos usos de exemplo originais do Xamarin:
+
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
@@ -87,7 +92,7 @@ Configurar a implementação em *Startup.cs*:
 Neste ponto, você está pronto para criar o *ToDoItemsController*.
 
 > [!TIP]
-> Saiba mais sobre como criar web APIs em [criando sua primeira API da Web com ASP.NET MVC de núcleos e do Visual Studio](../tutorials/first-web-api.md).
+> Saiba mais sobre como criar APIs Web em [Criando sua primeira API Web com ASP.NET Core MVC e Visual Studio](../tutorials/first-web-api.md).
 
 ## <a name="creating-the-controller"></a>Criando o controlador
 
@@ -107,7 +112,7 @@ Solicitar uma lista de itens é feito com uma solicitação GET para a `List` m�
 
 O `List` método retorna um código de resposta Okey 200 e todos os itens de tarefas, serializados como JSON.
 
-Você pode testar o novo método de API usando uma variedade de ferramentas, como [carteiro](https://www.getpostman.com/docs/), mostrado aqui:
+Você pode testar o novo método de API usando uma variedade de ferramentas, como [Postman](https://www.getpostman.com/docs/). Veja abaixo:
 
 ![Console carteiro mostrando uma solicitação GET para todoitems e o corpo da resposta mostrando o JSON para três itens retornados](native-mobile-backend/_static/postman-get.png)
 
@@ -135,7 +140,7 @@ Modificando registros é feito usando solicitações HTTP PUT. Além desta mudan
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
 
-Para testar com carteiro, altere o verbo para PUT. Especifique os dados do objeto atualizado no corpo da solicitação.
+Para testar com Postman, altere o verbo para PUT. Especifique os dados do objeto atualizado no corpo da solicitação.
 
 ![Console carteiro mostrando um PUT e resposta](native-mobile-backend/_static/postman-put.png)
 
@@ -155,4 +160,4 @@ Observe que ao testar a funcionalidade de exclusão, nada é necessário no corp
 
 À medida que desenvolve os serviços de back-end para seu aplicativo, você desejará criar um conjunto de convenções ou políticas para a manipulação resolvem preocupações consistente. Por exemplo, no serviço mostrado acima, as solicitações de registros específicos que não foram encontrados recebidos um `NotFound` resposta, em vez de `BadRequest` resposta. Da mesma forma, os comandos feitos para este serviço passados em tipos de modelo associado sempre verificados `ModelState.IsValid` e retornado um `BadRequest` para tipos de modelo inválido.
 
-Depois de identificar uma diretiva comum para suas APIs, você geralmente pode encapsulá-lo em uma [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET MVC de núcleo](https://msdn.microsoft.com/magazine/mt767699.aspx).
+Depois de identificar uma diretiva comum para suas APIs, você geralmente pode encapsulá-la em um [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).
