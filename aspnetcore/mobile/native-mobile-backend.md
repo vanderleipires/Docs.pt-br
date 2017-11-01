@@ -25,7 +25,7 @@ Aplicativos móveis podem facilmente se comunicar com serviços de back-end do A
 
 [Exibir ou baixar o código de exemplo dos serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
 
-## <a name="the-sample-native-mobile-app"></a>O exemplo do aplicativo móvel nativo 
+## <a name="the-sample-native-mobile-app"></a>Exemplo do aplicativo móvel nativo
 
 Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativo. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Você pode seguir o tutorial vinculado para criar o aplicativo nativo (e instalar as ferramentas Xamarin gratuitas necessárias), bem como baixar a solução de exemplo Xamarin. O exemplo do Xamarin inclui um projeto de serviços ASP.NET Web API 2, que substitui o aplicativo do ASP.NET Core deste artigo (com nenhuma alteração exigida pelo cliente).
 
@@ -33,15 +33,15 @@ Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core M
 
 ### <a name="features"></a>Recursos
 
-O aplicativo ToDoRest dá suporte à listar, adicionar, excluir e atualizar itens de tarefas. Cada item possui uma ID, um nome, anotações e uma propriedade que indica se ele está sendo feito ainda.
+O aplicativo ToDoRest pode listar, adicionar, excluir e atualizar itens de tarefas. Cada item possui uma ID, um nome, algumas anotações e uma propriedade que indica se ele ainda está em andamento.
 
 O modo de exibição principal dos itens, como mostrado acima, lista o nome de cada item e indica se está concluído com uma marca de seleção.
 
-Clicar no ícone `+` abre uma caixa de diálogo Adicionar item:
+Tocar o `+` ícone abre uma caixa de diálogo Adicionar item:
 
 ![Item de caixa de diálogo Adicionar](native-mobile-backend/_static/todo-android-new-item.png)
 
-Ao tocar em um item na lista da tela principal abrirá uma caixa de diálogo para Editar o nome do item, observações e configurações de concluídas podem ser modificadas, ou o item pode ser excluído:
+Ao tocar em um item na lista da tela principal, uma caixa de diálogo é aberta para que você possa editar o nome, as observações e as configurações do item, ou excluir o item:
 
 ![Editar caixa de diálogo de item](native-mobile-backend/_static/todo-android-edit-item.png)
 
