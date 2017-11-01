@@ -61,9 +61,11 @@ public static string RestUrl = "http://192.168.1.207:5000/api/todoitems/{0}";
 
 ## <a name="creating-the-aspnet-core-project"></a>Criando o projeto do ASP.NET Core
 
+
 Crie um novo aplicativo de Web do ASP.NET Core no Visual Studio. Escolha o modelo de API da Web e sem autenticação. Nomeie o projeto *ToDoApi*.
 
 ![Caixa de diálogo nova aplicativo Web ASP.NET com modelo de projeto de API da Web selecionado](native-mobile-backend/_static/web-api-template.png)
+
 
 O aplicativo deve responder a todas as solicitações feitas para a porta 5000. Atualização *Program.cs* para incluir `.UseUrls("http://*:5000")` para fazer isso:
 
@@ -72,11 +74,13 @@ O aplicativo deve responder a todas as solicitações feitas para a porta 5000. 
 > [!NOTE]
 > Certifique-se de que executar o aplicativo diretamente, em vez de por trás do IIS Express, que ignora solicitações não local por padrão. Executar `dotnet run` em um prompt de comando, ou escolha o perfil de nome do aplicativo no menu suspenso de destino de depuração na barra de ferramentas do Visual Studio.
 
+
 Adicione uma classe de modelo para representar itens pendentes. Marca necessários campos usando a `[Required]` atributo:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
 Os métodos da API exigem alguma maneira de trabalhar com dados. Use a mesma `IToDoRepository` interface os usos de exemplo originais do Xamarin:
+
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
