@@ -16,27 +16,27 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/28/2017
 ---
-# <a name="enforcing-ssl-in-an-aspnet-core-app"></a>Garantindo SSL em uma aplicação ASP.NET Core
+# <a name="enforcing-ssl-in-an-aspnet-core-app"></a>Garantindo SSL em um aplicativo ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Este documento demonstra como:
 
-- Exigir SSL em todas as requisições (através de HTTPS).
-- Redirecionar todas as requisições HTTP para HTTPS.
+- Exigir SSL em todas as solicitações (através de HTTPS).
+- Redirecione todas as solicitações HTTP para HTTPS.
 
-## <a name="require-ssl"></a>Garantindo SSL
+## <a name="require-ssl"></a>Exigir SSL
 
-O [RequireHttpsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) é utilizado para garantir a conexão por SSL. Além de você poder decorar métodos ou controladores com esse atributo, ele também pode ser aplicado globalmente, conforme é demonstrado abaixo:
+O [RequireHttpsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) é usado para garantir a conexão por SSL. Além de usar esse método para decorar métodos ou controladores, você também pode aplicá-lo globalmente, conforme demonstrado abaixo:
 
 Adicione o seguinte código em `ConfigureServices` dentro de `Startup`:
 
 [!code-csharp[Main](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet2&highlight=4-)]
 
-O código acima requere que todas as solicitações utilizem `HTTPS`. Ou seja, solicitações HTTP serão ignoradas. O código abaixo redireciona todas as solicitações HTTP para HTTPS:
+O código acima requer que todas as solicitações utilizem `HTTPS`. Ou seja, as solicitações HTTP serão ignoradas. O código abaixo redireciona todas as solicitações HTTP para HTTPS:
 
 [!code-csharp[Main](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-)]
 
 Consulte [Middleware de regravação de URL](xref:fundamentals/url-rewriting) para obter mais informações.
 
-Exigir HTTPS globalmente (`options.Filters.Add(new RequireHttpsAttribute());`) é uma prática recomendada de segurança. Note que simplesmente aplicar o atributo `[RequireHttps]` em todo controlador não é mais considerada uma prática tão segura quanto exigir HTTPS globalmente, uma vez que você não pode garantir que novos controladores adicionados à sua aplicação utilizarão o atributo `[RequireHttps]`.
+Exigir HTTPS globalmente (`options.Filters.Add(new RequireHttpsAttribute());`) é uma prática recomendada de segurança. Note que simplesmente aplicar o atributo `[RequireHttps]` em todo o controlador não é mais considerada uma prática tão segura quanto exigir HTTPS globalmente, uma vez que você não pode garantir que novos controladores adicionados ao seu aplicativo utilizarão o atributo `[RequireHttps]`.
