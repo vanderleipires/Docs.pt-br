@@ -87,7 +87,7 @@ Configurar a implementação em *Startup.cs*:
 Neste ponto, você está pronto para criar o *ToDoItemsController*.
 
 > [!TIP]
-> Saiba mais sobre como criar web APIs em [criando sua primeira API da Web com ASP.NET Core MVC e do Visual Studio](../tutorials/first-web-api.md).
+> Saiba mais sobre como criar APIs Web em [Criando sua primeira API Web com ASP.NET Core MVC e Visual Studio](../tutorials/first-web-api.md).
 
 ## <a name="creating-the-controller"></a>Criando o controlador
 
@@ -107,7 +107,7 @@ Solicitar uma lista de itens é feito com uma solicitação GET para a `List` m�
 
 O `List` método retorna um código de resposta Okey 200 e todos os itens de tarefas, serializados como JSON.
 
-Você pode testar o novo método de API usando uma variedade de ferramentas, como [Postman](https://www.getpostman.com/docs/), mostrado aqui:
+Você pode testar o novo método de API usando uma variedade de ferramentas, como [Postman](https://www.getpostman.com/docs/). Veja abaixo:
 
 ![Console carteiro mostrando uma solicitação GET para todoitems e o corpo da resposta mostrando o JSON para três itens retornados](native-mobile-backend/_static/postman-get.png)
 
@@ -155,4 +155,4 @@ Observe que ao testar a funcionalidade de exclusão, nada é necessário no corp
 
 À medida que desenvolve os serviços de back-end para seu aplicativo, você desejará criar um conjunto de convenções ou políticas para a manipulação resolvem preocupações consistente. Por exemplo, no serviço mostrado acima, as solicitações de registros específicos que não foram encontrados recebidos um `NotFound` resposta, em vez de `BadRequest` resposta. Da mesma forma, os comandos feitos para este serviço passados em tipos de modelo associado sempre verificados `ModelState.IsValid` e retornado um `BadRequest` para tipos de modelo inválido.
 
-Depois de identificar uma diretiva comum para suas APIs, você geralmente pode encapsulá-lo em uma [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).
+Depois de identificar uma diretiva comum para suas APIs, você geralmente pode encapsulá-la em um [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).
