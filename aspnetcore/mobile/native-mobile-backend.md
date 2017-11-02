@@ -57,22 +57,22 @@ public static string RestUrl = "http://192.168.1.207:5000/api/todoitems/{0}";
 
 ## <a name="creating-the-aspnet-core-project"></a>Criando o projeto do ASP.NET Core
 
-Crie um novo aplicativo Web ASP.NET Core no Visual Studio. Escolha o modelo de Web API e sem autenticação. Nomeie o projeto *ToDoApi*.
+Crie um novo aplicativo Web do ASP.NET Core no Visual Studio. Escolha o modelo de Web API sem autenticação. Nomeie o projeto como *ToDoApi*.
 
-![Caixa de diálogo nova aplicativo Web ASP.NET com modelo de projeto de Web API selecionado](native-mobile-backend/_static/web-api-template.png)
+![Caixa de diálogo nova do aplicativo Web ASP.NET com modelo de projeto de Web API selecionado](native-mobile-backend/_static/web-api-template.png)
 
 O aplicativo deve responder a todas as solicitações feitas através da porta 5000. Atualize o *Program.cs* para incluir `.UseUrls("http://*:5000")` para ficar assim:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
 
 > [!NOTE]
-> Certifique-se de executar o aplicativo diretamente, em vez de por trás do IIS Express, que ignora solicitações não local por padrão. Executar `dotnet run` em um prompt de comando, ou escolha o perfil de nome do aplicativo no menu suspenso de Debug na barra de ferramentas do Visual Studio.
+> Execute o aplicativo diretamente, em vez de por trás do IIS Express, que ignora solicitações não local por padrão. Execute `dotnet run` em um prompt de comando ou escolha o perfil de nome do aplicativo no menu suspenso de destino de depuração na barra de ferramentas do Visual Studio.
 
-Adicione uma classe de modelo para representar itens pendentes. Marque os campos obrigatórios usando o atributo `[Required]` :
+Adicione uma classe de modelo para representar itens pendentes. Marque os campos obrigatórios usando o atributo `[Required]`:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
-Os métodos da API exigem alguma maneira de trabalhar com dados. Use a mesma interface `IToDoRepository` nos usos de exemplo originais do Xamarin:
+Os métodos da API exigem alguma maneira de trabalhar com os dados. Use a mesma interface `IToDoRepository` usada pelo exemplo original do Xamarin:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
@@ -87,13 +87,13 @@ Configurar a implementação em *Startup.cs*:
 Neste ponto, você está pronto para criar o *ToDoItemsController*.
 
 > [!TIP]
-> Saiba mais sobre como criar Web APIs em [criando sua primeira Web API com ASP.NET Core MVC e do Visual Studio](../tutorials/first-web-api.md).
+> Saiba mais sobre como criar APIs da Web em [criando sua primeira API da Web com ASP.NET Core MVC e Visual Studio](../tutorials/first-web-api.md).
 
 ## <a name="creating-the-controller"></a>Criando o controlador
 
 Adicionar um novo controlador para o projeto, *ToDoItemsController*. Ele deve herdar de Microsoft.AspNetCore.Mvc.Controller. Adicionar um `Route` atributo para indicar que o controlador pode manipular as solicitações feitas para caminhos que começam com `api/todoitems`. O `[controller]` token na rota é substituído pelo nome do controlador (omitindo o `Controller` sufixo) e é especialmente útil para rotas globais. Saiba mais sobre [roteamento](../fundamentals/routing.md).
 
-O controlador requer um `IToDoRepository` para a função; solicitar uma instância desse tipo por meio do construtor do controlador. Em tempo de execução, esta instância será fornecida com suporte do framework [injeção de dependência](../fundamentals/dependency-injection.md).
+O controlador requer um `IToDoRepository` para a função; solicite uma instância desse tipo usando o construtor do controlador. No tempo de execução, esta instância será fornecida com suporte do framework para [injeção de dependência](../fundamentals/dependency-injection.md).
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=1-17&highlight=9,14)]
 
@@ -101,19 +101,19 @@ Essa API dá suporte a quatro verbos HTTP diferentes para executar operações C
 
 ### <a name="reading-items"></a>Lendo itens
 
-Solicitar uma lista de itens é feita com uma solicitação GET para o método `List` . O `[HttpGet]` atributo no método `List`  indica que esta ação só deve tratar as solicitações GET. A rota para esta ação é a rota especificada no controlador. Você não precisa necessariamente usar o nome da ação como parte da rota. Você precisa garantir que cada ação tem uma rota exclusiva e não ambígua. Atributos de roteamento podem ser aplicados nos níveis de método para criar rotas específico e controlador.
+A solicitação de uma lista de itens é feita com uma solicitação GET ao método `List`. O atributo `[HttpGet]` no método `List` indica que esta ação só deve lidar com as solicitações GET. A rota para esta ação é a rota especificada no controlador. Você não precisa necessariamente usar o nome da ação como parte da rota. Você precisa garantir que cada ação tem uma rota exclusiva e não ambígua. Os atributos de roteamento podem ser aplicados nos níveis de método e controlador para criar rotas específicas.
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
 
 O método `List` retorna um código de resposta OK 200 e todos os itens de tarefas, serializados como JSON.
 
-Você pode testar o novo método de API usando uma variedade de ferramentas, como [Postman](https://www.getpostman.com/docs/), mostrado aqui:
+Você pode testar o novo método de API usando uma variedade de ferramentas, como [Postman](https://www.getpostman.com/docs/), conforme mostrado aqui:
 
-![Console Postman mostrando uma solicitação GET para todoitems e o corpo da resposta mostrando o JSON para três itens retornados](native-mobile-backend/_static/postman-get.png)
+![Console Postman mostrando uma solicitação GET para todoitems e corpo da resposta mostrando JSON para três itens retornados](native-mobile-backend/_static/postman-get.png)
 
 ### <a name="creating-items"></a>Criando itens
 
-Por convenção, criando novos itens de dados é mapeado para o verbo HTTP POST. O método `Create` tem um `[HttpPost]` atributo aplicado a ele e aceita um `ToDoItem` instância. Como o argumento `item` será passado no corpo da POST, este parâmetro é decorado com o `[FromBody]` atributo.
+Por convenção, a criação de novos itens de dados é mapeada para o verbo HTTP POST. O método `Create` tem um atributo `[HttpPost]` aplicado a ele e aceita uma instância `ToDoItem`. Como o argumento `item` será enviado no corpo de POST, este parâmetro será decorado com o atributo `[FromBody]`.
 
 Dentro do método, o item é verificado para validade e existência anterior no repositório de dados e se nenhum problema ocorrer, ele é adicionado usando o repositório. Verificando `ModelState.IsValid` executa [validação do modelo](../mvc/models/validation.md) e deve ser feito em todos os métodos de API que aceita a entrada do usuário.
 
@@ -131,7 +131,7 @@ O método retorna o item recém-criado na resposta.
 
 ### <a name="updating-items"></a>Atualizando itens
 
-Modificar registros é feito usando solicitações HTTP PUT. Além desta mudança, o método `Edit` é quase idêntico ao `Create`. Observe que, se o registro não for encontrado, a ação `Edit` irá retornar uma resposta `NotFound` (404).
+A modificação de registros é feita com as solicitações HTTP PUT. Além desta mudança, o método `Edit` é quase idêntico ao `Create`. Observe que, se o registro não for encontrado, a ação `Edit` retornará uma resposta `NotFound` (404).
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
 
@@ -139,11 +139,11 @@ Para testar com Postman, altere o verbo para PUT. Especifique os dados do objeto
 
 ![Console Postman mostrando um PUT e resposta](native-mobile-backend/_static/postman-put.png)
 
-Este método retorna uma resposta `NoContent` (204) quando obtiver êxito, para manter a consistência com a API já existente.
+Este método retornará uma resposta `NoContent` (204) quando obtiver êxito, para manter a consistência com a API já existente.
 
 ### <a name="deleting-items"></a>A exclusão de itens
 
-Excluindo registros é feito, fazendo solicitações de exclusão para o serviço e passando o ID do item a ser excluído. Como com as atualizações, solicitações de itens que não existem receberão respostas `NotFound` . Caso contrário, receberá uma solicitação bem-sucedida uma resposta `NoContent` (204).
+A exclusão de registros é feita por meio da criação de solicitações de exclusão para o serviço e por meio do envio do ID do item a ser excluído. Assim como as atualizações, as solicitações de itens que não existem receberão respostas `NotFound`. Caso contrário, uma solicitação bem-sucedida receberá uma resposta `NoContent` (204).
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=71-88)]
 
@@ -155,4 +155,4 @@ Observe que ao testar a funcionalidade de exclusão, nada é necessário no corp
 
 À medida que desenvolve os serviços de back-end para seu aplicativo, você desejará criar um conjunto de convenções ou políticas para a manipulação resolvem preocupações consistente. Por exemplo, no serviço mostrado acima, as solicitações de registros específicos que não foram encontrados recebidos um `NotFound` resposta, em vez de `BadRequest` resposta. Da mesma forma, os comandos feitos para este serviço passados em tipos de modelo associado sempre verificados `ModelState.IsValid` e retornado um `BadRequest` para tipos de modelo inválido.
 
-Depois de identificar uma diretiva comum para suas APIs, você geralmente pode encapsulá-la em um [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).
+Depois de identificar uma política comum para suas APIs, você geralmente pode encapsulá-la em um [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).
