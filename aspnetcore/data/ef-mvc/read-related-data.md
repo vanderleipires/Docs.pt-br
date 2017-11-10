@@ -11,11 +11,11 @@ ms.assetid: 71fec30f-8ea7-4ca8-96e3-d2e26c5be44e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 37613d974fdf1766b187cdd05efc926ecc6a351b
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 778ef976fdbef70684ca26b0c7c548ffcc83ee00
+ms.sourcegitcommit: e45f8912ce32b4071bf7e83b8f8315cd8bba3520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/04/2017
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Leitura relacionadas a dados - Core de EF com o tutorial do MVC do ASP.NET Core (6 de 10)
 
@@ -184,7 +184,7 @@ As seguintes alterações feitas no código existente:
   }
   ```
 
-* Adicionado um **cursos** coluna que exibe os cursos ministrada por cada instrutor. Consulte [explícita transição de linha com `@:` ](xref:mvc/views/razor#explicit-line-transition-with-label) para obter mais informações sobre essa sintaxe do razor.
+* Adicionado um **cursos** coluna que exibe os cursos ministrada por cada instrutor. Consulte [explícita transição de linha com `@:` ](xref:mvc/views/razor#explicit-line-transition-with-) para obter mais informações sobre essa sintaxe do razor.
 
 * Código adicionado dinamicamente adiciona `class="success"` para o `tr` elemento do instrutor selecionado. Isso define uma cor de plano de fundo para a linha selecionada usando uma classe de inicialização.
 
