@@ -16,8 +16,9 @@ ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/22/2017
+
 ---
-# <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Atualizando dados relacionados - Core de EF com o tutorial do MVC do ASP.NET Core (7 de 10)
+# <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Atualizando dados relacionados - Tutorial do EF Core com ASP.NET Core MVC (7 de 10)
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -71,7 +72,7 @@ Para otimizar o desempenho dos detalhes do curso e excluir páginas, adicionar `
 
 ### <a name="modify-the-course-views"></a>Modificar os modos de curso
 
-Em *Views/Courses/Create.cshtml*, adicione uma opção "Selecione departamento" para o **departamento** suspensa lista, altere a legenda do **DepartmentID** para  **Departamento**e adicionar uma mensagem de validação.
+Em *Views/Courses/Create.cshtml*, adicione uma opção "Selecione departamento" para o **departamento** suspensa lista, altere a legenda do **DepartmentID** para ** Departamento**e adicionar uma mensagem de validação.
 
 [!code-html[Main](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
 
@@ -129,7 +130,7 @@ O código faz o seguinte:
 
 -  Obtém a entidade atual do instrutor do banco de dados usando para o carregamento rápido de `OfficeAssignment` propriedade de navegação. Isso é o mesmo que você fez o HttpGet `Edit` método.
 
--  Atualiza a entidade recuperada do instrutor com valores de associador de modelo. O `TryUpdateModel` sobrecarga permite que você adicionar à lista de permissões as propriedades que você deseja incluir. Isso impede o excesso de lançamento, conforme explicado no [segundo tutorial](crud.md).
+-  Atualiza a entidade recuperada do instrutor com valores de associador de modelo. O `TryUpdateModel` sobrecarga permite que você adicionar à lista branca as propriedades que você deseja incluir. Isso impede o excesso de lançamento, conforme explicado no [segundo tutorial](crud.md).
 
     <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
@@ -197,7 +198,7 @@ Em seguida, adicione o código que é executado quando o usuário clica **salvar
 
 A assinatura do método agora é diferente do HttpGet `Edit` método, para que o nome do método é alterado de `EditPost` para `Edit`.
 
-Como o modo de exibição não tem uma coleção de entidades de curso, o associador de modelo não é possível atualizar automaticamente o `CourseAssignments` propriedade de navegação. Em vez de usar o associador de modelo para atualizar o `CourseAssignments` propriedade de navegação, você pode fazer isso no novo `UpdateInstructorCourses` método. Portanto, você precisa excluir o `CourseAssignments` propriedade de associação de modelo. Isso não requer nenhuma alteração ao código que chama `TryUpdateModel` porque você está usando a sobrecarga de lista de permissões e `CourseAssignments` não estiver na lista de inclusão.
+Como o modo de exibição não tem uma coleção de entidades de curso, o associador de modelo não é possível atualizar automaticamente o `CourseAssignments` propriedade de navegação. Em vez de usar o associador de modelo para atualizar o `CourseAssignments` propriedade de navegação, você pode fazer isso no novo `UpdateInstructorCourses` método. Portanto, você precisa excluir o `CourseAssignments` propriedade de associação de modelo. Isso não requer nenhuma alteração ao código que chama `TryUpdateModel` porque você está usando a sobrecarga de lista branca e `CourseAssignments` não estiver na lista de inclusão.
 
 Se nenhuma seleção caixas tiverem sido selecionadas, o código em `UpdateInstructorCourses` inicializa o `CourseAssignments` propriedade de navegação com uma coleção vazia e retorna:
 
@@ -215,7 +216,7 @@ Se a caixa de seleção para um curso não foi selecionada, mas o curso no `Inst
 
 ### <a name="update-the-instructor-views"></a>Atualizar os modos de exibição do instrutor
 
-Em *Views/Instructors/Edit.cshtml*, adicionar um **cursos** campo com uma matriz de caixas de seleção, adicionando o seguinte código imediatamente após o `div` elementos para o **Office**  campo e antes do `div` elemento para o **salvar** botão.
+Em *Views/Instructors/Edit.cshtml*, adicionar um **cursos** campo com uma matriz de caixas de seleção, adicionando o seguinte código imediatamente após o `div` elementos para o **Office ** campo e antes do `div` elemento para o **salvar** botão.
 
 <a id="notepad"></a>
 > [!NOTE] 
