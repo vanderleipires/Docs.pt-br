@@ -11,19 +11,19 @@ ms.assetid: 0e4881a3-a94d-4e35-9c1c-f025d65dcff0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 9361dcec89a0f35067181523cc56637d629614ff
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: d35e0e806999ffd2e0f8f82e0adfc940ea2b503d
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="configuring-data-protection"></a>Configurando a proteção de dados
 
-<a name=data-protection-configuring></a>
+<a name="data-protection-configuring"></a>
 
 Quando o sistema de proteção de dados é inicializado aplica alguns [configurações padrão](default-settings.md#data-protection-default-settings) com base no ambiente operacional. Essas configurações são geralmente bons para aplicativos em execução em um único computador. Há alguns casos em que um desenvolvedor talvez queira alterar essas (talvez porque o aplicativo é distribuído em vários computadores ou por motivos de conformidade), e para esses cenários, o sistema de proteção de dados oferece uma API de configuração avançada.
 
-<a name=data-protection-configuration-callback></a>
+<a name="data-protection-configuration-callback"></a>
 
 Há um método de extensão AddDataProtection que retorna um IDataProtectionBuilder que expõe os métodos de extensão que você pode encadear para configurar a proteção de dados de várias opções. Por exemplo, para armazenar chaves em um compartilhamento UNC, em vez de % LOCALAPPDATA % (o padrão), configure o sistema da seguinte maneira:
 
@@ -38,7 +38,7 @@ public void ConfigureServices(IServiceCollection services)
 >[!WARNING]
 > Se você alterar o local de persistência de chave, o sistema não automaticamente criptografará chaves em repouso desde que ele não sabe se a DPAPI é um mecanismo de criptografia apropriados.
 
-<a name=configuring-x509-certificate></a>
+<a name="configuring-x509-certificate"></a>
 
 Você pode configurar o sistema para proteger as chaves em repouso chamando qualquer o ProtectKeysWith\* APIs de configuração. Considere o exemplo a seguir, que armazena as chaves em um compartilhamento UNC e criptografa essas chaves em repouso com um certificado x. 509 específico.
 
@@ -65,7 +65,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Por padrão o sistema de proteção de dados isola os aplicativos uns dos outros, mesmo que compartilham o mesmo repositório de chave físico. Isso impede que os aplicativos Noções básicas sobre cargas protegidos uns dos outros. Para compartilhar cargas protegidas entre dois aplicativos diferentes, configurar o sistema passando o mesmo nome de aplicativo para aplicativos como no exemplo abaixo:
 
-<a name=data-protection-code-sample-application-name></a>
+<a name="data-protection-code-sample-application-name"></a>
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -75,7 +75,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<a name=data-protection-configuring-disable-automatic-key-generation></a>
+<a name="data-protection-configuring-disable-automatic-key-generation"></a>
 
 Por fim, você pode ter um cenário onde você não desejar uma aplicação para reverter automaticamente chaves como eles se aproximarem expiração. Um exemplo disso pode ser configurados em um relacionamento primário / secundário, em que apenas o aplicativo principal é responsável por questões de gerenciamento de chaves, e todos os aplicativos secundários simplesmente tem uma exibição somente leitura do anel de chave de aplicativos. Os aplicativos secundários podem ser configurados para tratar o anel de chave como somente leitura ao configurar o sistema como abaixo:
 
@@ -87,7 +87,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<a name=data-protection-configuration-per-app-isolation></a>
+<a name="data-protection-configuration-per-app-isolation"></a>
 
 ## <a name="per-application-isolation"></a>Isolamento de aplicativo
 
@@ -105,7 +105,7 @@ Esse mecanismo de isolamento assume que os aplicativos não são mal-intencionad
 
 Se o sistema de proteção de dados não é fornecido por um host do ASP.NET Core (por exemplo, se o desenvolvedor cria-se através do tipo concreto DataProtectionProvider), o isolamento do aplicativo é desabilitado por padrão e todos os aplicativos com o apoio da mesma chave material pode compartilhar cargas desde que eles fornecem as finalidades apropriadas. Para fornecer isolamento de aplicativos nesse ambiente, chame o método SetApplicationName no objeto de configuração, consulte o [exemplo de código](#data-protection-code-sample-application-name) acima.
 
-<a name=data-protection-changing-algorithms></a>
+<a name="data-protection-changing-algorithms"></a>
 
 ## <a name="changing-algorithms"></a>Algoritmos de alteração
 
@@ -144,7 +144,7 @@ O desenvolvedor pode especificar manualmente uma implementação se desejado por
 >[!TIP]
 > Algoritmos de alteração não afetam as chaves existentes do anel de chave. Ela afeta apenas as chaves geradas recentemente.
 
-<a name=data-protection-changing-algorithms-custom-managed></a>
+<a name="data-protection-changing-algorithms-custom-managed"></a>
 
 ### <a name="specifying-custom-managed-algorithms"></a>Especificando algoritmos gerenciados personalizados
 
@@ -193,7 +193,7 @@ Geralmente o \*propriedades de tipo devem apontar para concreto, podem ser insta
 > [!NOTE]
 > O SymmetricAlgorithm deve ter um comprimento de chave de ≥ 128 bits e um tamanho de bloco de ≥ 64 bits e ele deve oferecer suporte à criptografia de modo CBC com preenchimento de PKCS #7. O KeyedHashAlgorithm deve ter um tamanho de resumo de > = 128 bits, e ele deve oferecer suporte a chaves de comprimento igual ao comprimento de resumo do algoritmo de hash. O KeyedHashAlgorithm não é estritamente necessária para ser HMAC.
 
-<a name=data-protection-changing-algorithms-cng></a>
+<a name="data-protection-changing-algorithms-cng"></a>
 
 ### <a name="specifying-custom-windows-cng-algorithms"></a>Especificação de algoritmos personalizados de Windows CNG
 

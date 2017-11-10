@@ -11,11 +11,11 @@ ms.assetid: 29f12d1f-9734-48bd-bf1a-cee53a8ab700
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/layout
-ms.openlocfilehash: 25aa5fc730d9076fdcf9d29cb5d9dfa75a246a1a
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 064621d8756b007c5b8859111bf3a03a0d7dda81
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="layout"></a>Layout
 
@@ -51,7 +51,7 @@ O layout especificado pode usar um caminho completo (exemplo: `/Views/Shared/_La
 
 Por padrão, todo layout deve chamar `RenderBody`. Sempre que a chamada para `RenderBody` é colocada, o conteúdo do modo de exibição será renderizado.
 
-<a name=layout-sections-label></a>
+<a name="layout-sections-label"></a>
 
 ### <a name="sections"></a>Seções
 
@@ -77,7 +77,7 @@ Para instruir o mecanismo de exibição para ignorar o corpo ou seções, chame 
 
 O corpo e cada seção em uma página de Razor devem ser processados ou ignorados.
 
-<a name=viewimports></a>
+<a name="viewimports"></a>
 
 ## <a name="importing-shared-directives"></a>Importar diretivas compartilhadas
 
@@ -121,7 +121,7 @@ Se vários `_ViewImports.cshtml` arquivos sejam executados por um modo de exibi�
 
 * `@inject`: para cada propriedade, aquele mais próximo à exibição substitui quaisquer outros usuários com o mesmo nome de propriedade
 
-<a name=viewstart></a>
+<a name="viewstart"></a>
 
 ## <a name="running-code-before-each-view"></a>Executar código antes de cada modo de exibição
 

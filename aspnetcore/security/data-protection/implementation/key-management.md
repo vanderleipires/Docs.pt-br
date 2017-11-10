@@ -2,7 +2,7 @@
 title: Gerenciamento de chaves
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: fb9b807a-d143-4861-9ddb-005d8796afa3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 507c00edc5bade2427151ecadfed581817e4d088
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 687207cb6a1cea89166fd2b6172cdc0a013de4b3
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="key-management"></a>Gerenciamento de chaves
 
-<a name=data-protection-implementation-key-management></a>
+<a name="data-protection-implementation-key-management"></a>
 
 O sistema de proteção de dados gerencia automaticamente o tempo de vida das chaves mestras usado para proteger e Desproteger cargas. Cada chave pode existir em um dos quatro estágios.
 
@@ -46,7 +46,7 @@ O motivo pelo qual o sistema de proteção de dados gera uma nova chave imediata
 
 Há uma exceção. Se o desenvolvedor do aplicativo tiver [desabilitado a geração automática de chaves](../configuration/overview.md#data-protection-configuring-disable-automatic-key-generation), em seguida, o sistema de proteção de dados deve escolher algo como a chave padrão. Neste cenário de fallback, o sistema escolherá a chave não revogado com a data de ativação mais recente, com preferência para chaves que tem tido tempo para ser propagada para outros computadores no cluster. O sistema de fallback pode acabar escolhendo uma chave padrão expiradas como resultado. O sistema de fallback nunca escolherá uma chave revogada como a chave padrão e se o anel de chave está vazio ou foi revogado cada chave, em seguida, o sistema produzirá um erro na inicialização.
 
-<a name=data-protection-implementation-key-management-expiration></a>
+<a name="data-protection-implementation-key-management-expiration"></a>
 
 ## <a name="key-expiration-and-rolling"></a>Expiração e sem interrupção
 

@@ -11,17 +11,17 @@ ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 0a4024edf13651e2ed7e0f87e554e8ba8d895619
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: dde0b5673c9885db2fecbb24b384752e5ddf70eb
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware no núcleo do ASP.NET de regravação de URL
 
 Por [Luke Latham](https://github.com/guardrex) e [Mikael Mengistu](https://github.com/mikaelm12)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 Regravação de URL é o ato de modificar as URLs com base em uma ou mais regras predefinidas de solicitação. Regravação de URL criará uma abstração entre locais de recursos e seus endereços de forma que os locais e os endereços não estão vinculados firmemente. Há várias situações em que a regravação de URL é útil:
 * Movendo ou substituindo recursos de servidor temporariamente ou permanentemente mantendo localizadores estáveis para esses recursos
@@ -98,7 +98,7 @@ A parte da expressão contida dentro dos parênteses é chamada uma *grupo de ca
 
 Na cadeia de caracteres de substituição, grupos capturados são injetados na cadeia de caracteres com o símbolo de dólar (`$`) seguido pelo número de sequência da captura. O primeiro valor de grupo de captura é obtido com `$1`, a segunda com `$2`, e eles continuam em sequência para os grupos de captura em sua regex. Há apenas um grupo capturado no regex de regra de redirecionamento no aplicativo de exemplo, para que haja apenas um grupo inserido na cadeia de caracteres de substituição, que é `$1`. Quando a regra é aplicada, torna-se a URL `/redirected/1234/5678`.
 
-<a name=url-redirect-to-secure-endpoint></a>
+<a name="url-redirect-to-secure-endpoint"></a>
 ### <a name="url-redirect-to-a-secure-endpoint"></a>Redirecionamento de URL para um ponto de extremidade seguro
 Use `AddRedirectToHttps` para redirecionar solicitações HTTP para o mesmo host e caminho usando HTTPS (`https://`). Se o código de status não for fornecido, o middleware padrão 302 (não encontrado). Se a porta não for fornecida, o middleware padrão `null`, que significa que o protocolo é alterado para `https://` e o cliente acessa o recurso na porta 443. O exemplo mostra como definir o código de status para 301 (movido permanentemente) e altere a porta para 5001.
 ```csharp
