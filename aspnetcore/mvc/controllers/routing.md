@@ -11,11 +11,11 @@ ms.assetid: 26250a4d-bf62-4d45-8549-26801cf956e9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/routing
-ms.openlocfilehash: 5a0b5399f7441035cb1231a009681ca22b07ab4e
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: cc3277400aee956f47c53e5a4f3d4e84d3a3d1a3
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="routing-to-controller-actions"></a>O roteamento para ações do controlador
 
@@ -118,7 +118,7 @@ app.UseRouter(routes.Build());
 
 `UseMvc`não define diretamente todas as rotas, ele adiciona um espaço reservado para a coleção de rotas para o `attribute` rota. A sobrecarga `UseMvc(Action<IRouteBuilder>)` permite que você adicione suas próprias rotas e também dá suporte a roteamento de atributo.  `UseMvc`e todas as variações adiciona um espaço reservado para a rota de atributo - roteamento de atributo está sempre disponível, independentemente de como você configura `UseMvc`. `UseMvcWithDefaultRoute`define uma rota padrão e dá suporte a roteamento de atributo. O [roteamento de atributo](#attribute-routing-ref-label) seção inclui mais detalhes sobre o roteamento de atributo.
 
-<a name=routing-conventional-ref-label></a>
+<a name="routing-conventional-ref-label"></a>
 
 ## <a name="conventional-routing"></a>Roteamento convencional
 
@@ -190,7 +190,7 @@ Você só precisará escrever personalizado `IActionConstraint` implementações
 
 Se correspondem a várias rotas e MVC não é possível encontrar uma rota 'as', ela irá gerar um `AmbiguousActionException`.
 
-<a name=routing-route-name-ref-label></a>
+<a name="routing-route-name-ref-label"></a>
 
 ### <a name="route-names"></a>Nomes de rota
 
@@ -210,7 +210,7 @@ Os nomes de rota dar um nome lógico a rota para que a rota nomeada pode ser usa
 
 Os nomes de rota não têm impacto em URL correspondente ou tratamento de solicitações; eles são usados apenas para geração de URL. [Roteamento](xref:fundamentals/routing) tem informações mais detalhadas sobre geração de URL, incluindo geração de URL em auxiliares MVC específicos.
 
-<a name=attribute-routing-ref-label></a>
+<a name="attribute-routing-ref-label"></a>
 
 ## <a name="attribute-routing"></a>Roteamento de atributo
 
@@ -324,7 +324,7 @@ Nomes de rota podem ser usados para gerar uma URL com base em uma rota específi
 > [!NOTE]
 > Compare isso com o convencional *rota padrão*, que define o `id` parâmetro como opcional (`{id?}`). Essa capacidade de especificar precisamente APIs tem vantagens, como permitindo `/products` e `/products/5` deve ser distribuída para ações diferentes.
 
-<a name=routing-combining-ref-label></a>
+<a name="routing-combining-ref-label"></a>
 
 ### <a name="combining-routes"></a>Rotas de combinação
 
@@ -369,7 +369,7 @@ public class HomeController : Controller
 }
 ```
 
-<a name=routing-ordering-ref-label></a>
+<a name="routing-ordering-ref-label"></a>
 
 ### <a name="ordering-attribute-routes"></a>Rotas de atributo de ordenação
 
@@ -382,7 +382,7 @@ Rotas de atributo podem configurar uma ordem, usando o `Order` propriedade de to
 > [!TIP]
 > Evite dependendo `Order`. Se o seu espaço de URL requer valores de ordem explícita para rotear corretamente, é provavelmente confuso para os clientes. Em geral a roteamento de atributo selecionará a rota correta com URL correspondente. Se a ordem padrão usada para a geração de URL não está funcionando, usando o nome da rota como uma substituição é geralmente mais simples do que a aplicação de `Order` propriedade.
 
-<a name=routing-token-replacement-templates-ref-label></a>
+<a name="routing-token-replacement-templates-ref-label"></a>
 
 ## <a name="token-replacement-in-route-templates-controller-action-area"></a>Token de substituição em modelos de rota ([controller] [ação] [área])
 
@@ -414,7 +414,7 @@ Substituição do token também se aplica a nomes de rotas definidos por rotas d
 
 Para corresponder ao delimitador de literal de substituição de token `[` ou `]`, escape-o pelo caractere de repetição (`[[` ou `]]`).
 
-<a name=routing-multiple-routes-ref-label></a>
+<a name="routing-multiple-routes-ref-label"></a>
 
 ### <a name="multiple-routes"></a>Várias rotas
 
@@ -458,7 +458,7 @@ public class ProductsController : Controller
 > [!TIP]
 > Embora usar várias rotas nas ações pode parecer avançado, é melhor manter o espaço de URL do aplicativo simples e bem definidos. Use várias rotas nas ações somente quando necessário, por exemplo, para dar suporte a clientes existentes.
 
-<a name=routing-attr-options></a>
+<a name="routing-attr-options"></a>
 
 ### <a name="specifying-attribute-route-optional-parameters-default-values-and-constraints"></a>Especificando parâmetros opcionais de rota de atributo, valores padrão e restrições
 
@@ -474,7 +474,7 @@ public IActionResult ShowProduct(int id)
 
 Consulte [referência de modelo de rota](../../fundamentals/routing.md#route-template-reference) para obter uma descrição detalhada da sintaxe de modelo de rota.
 
-<a name=routing-cust-rt-attr-irt-ref-label></a>
+<a name="routing-cust-rt-attr-irt-ref-label"></a>
 
 ### <a name="custom-route-attributes-using-iroutetemplateprovider"></a>Atributos de rota personalizados usando`IRouteTemplateProvider`
 
@@ -495,7 +495,7 @@ public class MyApiControllerAttribute : Attribute, IRouteTemplateProvider
 
 O atributo do exemplo acima configura automaticamente o `Template` para `"api/[controller]"` quando `[MyApiController]` é aplicada.
 
-<a name=routing-app-model-ref-label></a>
+<a name="routing-app-model-ref-label"></a>
 
 ### <a name="using-application-model-to-customize-attribute-routes"></a>Usando o modelo de aplicativo para personalizar as rotas de atributo
 
@@ -503,7 +503,7 @@ O *modelo de aplicativo* é um modelo de objeto criado durante a inicialização
 
 [!code-csharp[Main](routing/sample/main/NamespaceRoutingConvention.cs)]
 
-<a name=routing-mixed-ref-label></a>
+<a name="routing-mixed-ref-label"></a>
 
 ## <a name="mixed-routing-attribute-routing-vs-conventional-routing"></a>Misto roteamento: atributo roteamento roteamento convencional do vs
 
@@ -514,7 +514,7 @@ Ações ou são roteadas convencionalmente ou atributo roteadas. Colocar uma rot
 > [!NOTE]
 > O que distingue os dois tipos de sistemas de roteamentos é o processo aplicado depois que uma URL corresponde a um modelo de rota. No roteamento convencional, os valores de rota de correspondência são usados para escolher a ação e o controlador de uma tabela de pesquisa de todas as ações roteadas convencionais. No roteamento de atributo, cada modelo já está associado uma ação e nenhuma pesquisa adicional é necessária.
 
-<a name=routing-url-gen-ref-label></a>
+<a name="routing-url-gen-ref-label"></a>
 
 ## <a name="url-generation"></a>Geração de URL
 
@@ -567,7 +567,7 @@ Mais sobrecargas de `Url.Action` também levar adicional *valores de rota* objet
 > [!TIP]
 > Para criar uma URL absoluta, use uma sobrecarga que aceita um `protocol`:`Url.Action("Buy", "Products", new { id = 17 }, protocol: Request.Scheme)`
 
-<a name=routing-gen-urls-route-ref-label></a>
+<a name="routing-gen-urls-route-ref-label"></a>
 
 ### <a name="generating-urls-by-route"></a>Gerar URLs pela rota
 
@@ -575,7 +575,7 @@ O código acima demonstrado a geração de uma URL, passando o nome do controlad
 
 [!code-csharp[Main](routing/sample/main/Controllers/UrlGenerationControllerRouting.cs?name=snippet_1)]
 
-<a name=routing-gen-urls-html-ref-label></a>
+<a name="routing-gen-urls-html-ref-label"></a>
 
 ### <a name="generating-urls-in-html"></a>Gerar URLs em HTML
 
@@ -585,7 +585,7 @@ TagHelpers gerar URLs através de `form` TagHelper e `<a>` TagHelper. Ambos usam
 
 Em modos de exibição, o `IUrlHelper` está disponível por meio de `Url` propriedade para a geração de URL qualquer ad hoc não coberta por acima.
 
-<a name=routing-gen-urls-action-ref-label></a>
+<a name="routing-gen-urls-action-ref-label"></a>
 
 ### <a name="generating-urls-in-action-results"></a>Gerar URLS nos resultados da ação
 
@@ -606,7 +606,7 @@ public Task<IActionResult> Edit(int id, Customer customer)
 
 Os métodos de fábrica de resultados de ação sigam um padrão semelhante aos métodos `IUrlHelper`.
 
-<a name=routing-dedicated-ref-label></a>
+<a name="routing-dedicated-ref-label"></a>
 
 ### <a name="special-case-for-dedicated-conventional-routes"></a>Caso especial para rotas convencionais dedicados
 
@@ -625,7 +625,7 @@ Usando essas definições de rota, `Url.Action("Index", "Home")` irá gerar o ca
 
 Rotas convencionais dedicadas dependem de um comportamento especial de valores padrão que não tem um parâmetro de rota correspondente que impede que a rota "muito greedy" com a geração de URL. Nesse caso, os valores padrão são `{ controller = Blog, action = Article }`e nem `controller` nem `action` aparece como um parâmetro de rota. Quando o roteamento executa geração de URL, os valores fornecidos devem corresponder aos valores de padrão. Geração de URL usando `blog` falhará porque os valores `{ controller = Home, action = Index }` não correspondem ao `{ controller = Blog, action = Article }`. Roteamento, em seguida, volte para tentar `default`, que é bem-sucedida.
 
-<a name=routing-areas-ref-label></a>
+<a name="routing-areas-ref-label"></a>
 
 ## <a name="areas"></a>Áreas
 
@@ -670,7 +670,7 @@ Ao executar uma ação dentro de uma área, o valor para a rota `area` estarão 
 
 [!code-csharp[Main](routing/sample/AreasRouting/Areas/Duck/Controllers/UsersController.cs)]
 
-<a name=iactionconstraint-ref-label></a>
+<a name="iactionconstraint-ref-label"></a>
 
 ## <a name="understanding-iactionconstraint"></a>Noções básicas sobre IActionConstraint
 
@@ -695,7 +695,7 @@ Quando o `HttpGetAttribute` é executado, ele indicará que *Edit()* é uma corr
 
 Conceitualmente, `IActionConstraint` é uma forma de *sobrecarga*, mas em vez de métodos com o mesmo nome de sobrecarga, sobrecarga entre ações que correspondam a mesma URL. Roteamento de atributo também usa `IActionConstraint` e pode resultar em ações de controladores diferentes, ambos sendo considerados candidatos.
 
-<a name=iactionconstraint-impl-ref-label></a>
+<a name="iactionconstraint-impl-ref-label"></a>
 
 ### <a name="implementing-iactionconstraint"></a>Implementando IActionConstraint
 

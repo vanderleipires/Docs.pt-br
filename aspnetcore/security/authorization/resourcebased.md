@@ -11,15 +11,15 @@ ms.assetid: 0902ba17-5304-4a12-a2d4-e0904569e988
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 7f7df52bf51a81558818836450997281a21b5839
-ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
+ms.openlocfilehash: d3575619c53e77dadc293ea2bb7dc72501a8a1e3
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="resource-based-authorization"></a>Autorização com base em recursos
 
-<a name=security-authorization-resource-based></a>
+<a name="security-authorization-resource-based"></a>
 
 Autorização geralmente depende do recurso que está sendo acessado. Por exemplo, um documento pode ter uma propriedade de autor. Somente o autor do documento deve ter permissão para atualizá-lo, para que o recurso deve ser carregado do repositório do documento antes de uma avaliação de autorização pode ser feita. Isso não pode ser feito com um atributo de autorização, como avaliação de atributo ocorre antes da associação de dados e antes de executar seu próprio código para carregar um recurso dentro de uma ação. Em vez de autorização declarativa, o método de atributo, podemos deve usar autorização obrigatória, onde um desenvolvedor chama uma função de autorização em seu próprio código.
 
@@ -50,7 +50,7 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
                           string policyName);
 ```
 
-<a name=security-authorization-resource-based-imperative></a>
+<a name="security-authorization-resource-based-imperative"></a>
 
 Para chamar o serviço, carregar o recurso em sua ação, em seguida, chame o `AuthorizeAsync` sobrecarga que você precisa. Por exemplo:
 

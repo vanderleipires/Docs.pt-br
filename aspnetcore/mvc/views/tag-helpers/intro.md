@@ -11,11 +11,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 06644b8359fb5ccc2e61a17a4c6e20e354d5ceef
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 78004aa370cac8b297fd7ede534260c83965ae79
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introdução ao auxiliares de marcação no núcleo do ASP.NET 
 
@@ -51,7 +51,7 @@ O `asp-for` atributo é disponibilizado pelo `For` propriedade o `LabelTagHelper
 
 Escopo de auxiliares de marca é controlado por uma combinação de `@addTagHelper`, `@removeTagHelper`e "!" recusar caractere.
 
-<a name=add-helper-label></a>
+<a name="add-helper-label"></a>
 
 ### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper`disponibiliza auxiliares de marcação
 
@@ -82,7 +82,7 @@ Para adicionar um auxiliar de marca para uma exibição usando um FQN, primeiro 
 
 Conforme mencionado anteriormente, adicionando o `@addTagHelper` diretiva para o *Views/_ViewImports.cshtml* arquivo disponibiliza o auxiliar de marca para todos os arquivos de exibição no *exibições* diretório e subdiretórios. Você pode usar o `@addTagHelper` diretiva nos arquivos de modo de exibição específico se você deseja participar para expor o auxiliar de marca para apenas esses modos de exibição.
 
-<a name=remove-razor-directives-label></a>
+<a name="remove-razor-directives-label"></a>
 
 ### <a name="removetaghelper-removes-tag-helpers"></a>`@removeTagHelper`Remove os auxiliares de marcação
 
@@ -104,7 +104,7 @@ Você pode desabilitar um auxiliar de marca no nível do elemento com o caracter
 
 Você deve aplicar o caractere de recusar auxiliar de marca para a marca de abertura e fechamento. (O editor do Visual Studio adiciona automaticamente o caractere de saída para a marca de fechamento quando você adiciona um para a marca de abertura). Depois de adicionar o caractere de recusa, o elemento e os atributos do auxiliar de marca não são exibidos em uma fonte diferente.
 
-<a name=prefix-razor-directives-label></a>
+<a name="prefix-razor-directives-label"></a>
 
 ### <a name="using-taghelperprefix-to-make-tag-helper-usage-explicit"></a>Usando `@tagHelperPrefix` para fazer uso do auxiliar de marca explícita
 
@@ -127,7 +127,7 @@ Considere a possibilidade de gravar uma marca HTML `<label>` elemento. Assim que
 
 ![imagem](intro/_static/label.png)
 
-Não só você para obter ajuda em HTML, mas o ícone (o "@" símbolo com "<>" sob ele).
+Não só você para obter ajuda em HTML, mas o ícone (o "@" symbol with "<>" sob ele).
 
 ![imagem](intro/_static/tagSym.png)
 

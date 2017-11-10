@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 5a3dc302186c7fd0a5730bc2c7599676fb543ba7
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 3c5841f8c623f09530b60cc9997281dcb8e3c4f6
+ms.sourcegitcommit: 94b7e0f95b92c98b182a93d2b3dc0287e5f97976
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/04/2017
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Carregando arquivos em uma página de Razor no ASP.NET Core
 
@@ -42,11 +42,9 @@ Usa a classe usa os atributos `Display` e `DisplayFormat`, que produzem formata�
 
 ## <a name="update-the-moviecontext"></a>Atualizar o MovieContext
 
-Especifique um `DbSet` no `MovieContext` (*Models/MovieContext.cs*) para os agendamentos e adicione uma linha ao método `OnModelCreating` que define um nome de tabela de banco de dados único (`Schedule`) para a propriedade `DbSet`:
+Especifique um `DbSet` no `MovieContext` (*Models/MovieContext.cs*) para os agendamentos:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13,18)]
-
-Observação: se você não substituir `OnModelCreating` para usar nomes de tabela únicos, o Entity Framework pressupõe que você está usando nomes de tabela de banco de dados no plural (por exemplo, `Movies` e `Schedules`). Os desenvolvedores não concordam sobre se os nomes de tabela devem ser pluralizados ou não. Configure o `MovieContext` e o banco de dados da mesma maneira. Use nomes de tabela de banco de dados únicos ou pluralizados em ambos os locais.
+[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
 
 ## <a name="add-the-schedule-table-to-the-database"></a>Adicione a tabela de Agendamento ao banco de dados
 
@@ -97,7 +95,7 @@ Quando a página for carregada com `OnGetAsync`, `Schedules` é preenchido com o
 
 [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
 
-Quando o formulário é enviado para o servidor, o `ModelState` é verificado. Se for inválido, `Schedules` é recriado e a página é renderizada com uma ou mais mensagens de validação informando por que a validação de página falhou. Se for válido, as propriedades `FileUpload` serão usadas em *OnPostAsync* para concluir o upload do arquivo para as duas versões do agendamento e criar um novo objeto `Schedule` para armazenar os dados. O agendamento, em seguida, é salvo no banco de dados:
+Quando o formulário é enviado para o servidor, o `ModelState` é verificado. Se for inválido, `Schedule` é recriado e a página é renderizada com uma ou mais mensagens de validação informando por que a validação de página falhou. Se for válido, as propriedades `FileUpload` serão usadas em *OnPostAsync* para concluir o upload do arquivo para as duas versões do agendamento e criar um novo objeto `Schedule` para armazenar os dados. O agendamento, em seguida, é salvo no banco de dados:
 
 [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
 

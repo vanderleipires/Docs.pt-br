@@ -1,5 +1,5 @@
 ---
-title: Abra a Interface da Web para .NET (OWIN)
+title: OWIN (Open Web Interface para .NET)
 author: ardalis
 description: "Descobrir como ASP.NET Core dá suporte à Interface da Web aberto para .NET (OWIN), que permite que aplicativos da web para ser separada dos servidores web."
 keywords: "Núcleo do ASP.NET, Interface Web aberta para .NET, OWIN"
@@ -12,17 +12,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/owin
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e111a451bcc741f3e77f7ce756356cc1b57a5b52
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: e2ee970a1c9cd05ebee76b92c3e2c7c6c6cc6ef8
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="introduction-to-open-web-interface-for-net-owin"></a>Introdução ao abrir a Interface da Web para .NET (OWIN)
 
 Por [Steve Smith](https://ardalis.com/) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core ofereça suporte à Interface Web aberta para .NET (OWIN). OWIN permite que os aplicativos da web para ser separada dos servidores web. Define uma maneira padronizada de middleware para ser usada em um pipeline para manipular solicitações e respostas associadas. Middleware e aplicativos do ASP.NET Core podem interoperar com middleware, servidores e aplicativos baseados no OWIN.
+O ASP.NET Core dá suporte para OWIN (Open Web Interface para .NET). O OWIN permite que os aplicativos Web sejam separados dos servidores Web. Define uma maneira padronizada de middleware para ser usada em um pipeline para manipular solicitações e respostas associadas. Middleware e aplicativos do ASP.NET Core podem interoperar com middleware, servidores e aplicativos baseados no OWIN.
 
 OWIN fornece uma camada de dissociação que permite duas estruturas com modelos de objeto diferentes para ser usados juntos. O `Microsoft.AspNetCore.Owin` pacote fornece duas implementações de adaptador:
 - ASP.NET Core para OWIN 
@@ -32,7 +32,7 @@ Isso permite que o ASP.NET Core ser hospedado em um servidor compatível OWIN/ho
 
 Observação: Usar esses adaptadores vem com um custo de desempenho. Aplicativos que usam somente os componentes principais do ASP.NET não devem usar o pacote de Owin ou adaptadores.
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="running-owin-middleware-in-the-aspnet-pipeline"></a>Executando OWIN middleware no pipeline do ASP.NET
 
@@ -91,7 +91,7 @@ app.UseOwin(pipeline =>
 });
 ```
 
-<a name=hosting-on-owin></a>
+<a name="hosting-on-owin"></a>
 
 ## <a name="using-aspnet-hosting-on-an-owin-based-server"></a>Usando o ASP.NET de hospedagem em um servidor baseado em OWIN
 
