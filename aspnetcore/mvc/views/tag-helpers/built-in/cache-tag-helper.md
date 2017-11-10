@@ -84,7 +84,7 @@ Exemplo:
 
 | Tipo de atributo    | Valor de exemplo     |
 |----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(120)"    |
+| TimeSpan    | " @TimeSpan.FromSeconds (120)"    |
 
 
 Define o período de tempo desde a primeira vez de solicitação para armazenar em cache o conteúdo. 
@@ -103,7 +103,7 @@ Exemplo:
 
 | Tipo de atributo    | Valor de exemplo     |
 |----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(60)"     |
+| TimeSpan    | " @TimeSpan.FromSeconds (60)"     |
 
 
 Define a hora em que uma entrada de cache deve ser removida se não tiver sido acessada.
@@ -229,7 +229,7 @@ Usar esse atributo mantém o conteúdo em cache por um ciclo de logon e logoff. 
 
 | Tipo de atributo    | Valores de exemplo                |
 |----------------   |----------------               |
-| Cadeia de caracteres             | "@Model"                 |
+| Cadeia de caracteres             | " @Model "                 |
 
 
 Permite a personalização de dados que é armazenado em cache. Quando o objeto referenciado por alterações de valor de cadeia de caracteres do atributo, o conteúdo do auxiliar de marca de Cache é atualizado. Geralmente uma concatenação de cadeia de caracteres de valores de modelo são atribuídos a este atributo.  Na verdade, isso significa que uma atualização para qualquer um dos valores concatenados invalida o cache.

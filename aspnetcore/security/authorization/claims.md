@@ -2,7 +2,7 @@
 title: "Autorização baseada em declarações"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 737be5cd-3511-4f1c-b0ce-65403fb5eed3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/claims
-ms.openlocfilehash: fca75952429d48b02c2c4350b79e29a1957599dc
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 51d747c3c295164b6c0e00b5bafe63c565d588b4
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="claims-based-authorization"></a>Autorização baseada em declarações
 
-<a name=security-authorization-claims-based></a>
+<a name="security-authorization-claims-based"></a>
 
 Quando uma identidade é criada ele pode ser atribuído uma ou mais declarações emitidas por um terceiro confiável. Uma declaração é o valor de nome é um par que representa que o assunto, não que a entidade pode fazer. Por exemplo, você pode ter uma licença de Drivers, emitido por uma autoridade de licença de um local. Licença do driver tem sua data de nascimento. Nesse caso seria o nome da declaração `DateOfBirth`, o valor da declaração seria sua data de nascimento, por exemplo `8th June 1970` e o emissor de um autoridade de licença. Autorização baseada em declarações, em sua forma mais simples, verifica o valor de uma declaração e permite o acesso a um recurso com base no valor. Por exemplo, se você quiser que o processo de autorização de acesso para uma sociedade noite poderia ser:
 

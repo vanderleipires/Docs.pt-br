@@ -2,7 +2,7 @@
 title: "Impedindo a execução de scripts entre sites"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
+keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 95790927-2bfe-445e-b1fd-429c2c7030ce
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: 1816977837efd82f374a03d9f776db21358e2850
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: d0880fda4ee726bd30a48cce0907a3887f2a4545
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="preventing-cross-site-scripting"></a>Impedindo a execução de scripts entre sites
 
-<a name=security-cross-site-scripting></a>
+<a name="security-cross-site-scripting"></a>
 
 Execução de scripts entre sites (XSS) é uma vulnerabilidade de segurança que permite que um invasor inserir os scripts do lado do cliente (geralmente JavaScript) em páginas da web. Quando outros usuários carregar páginas afetadas, os invasores scripts serão executados, permitindo que o invasor roubar cookies e tokens de sessão, alterar o conteúdo da página da web por meio de manipulação de DOM ou redirecionar o navegador para outra página. Vulnerabilidades XSS geralmente ocorrem quando um aplicativo usa a entrada do usuário e passa em uma página sem validação, codificação ou escape-lo.
 
@@ -183,7 +183,7 @@ Após a codificação de encodedValue variável conterá `%22Quoted%20Value%20wi
 >[!WARNING]
 > Não use a entrada não confiável como parte de um caminho de URL. Sempre passe a entrada não confiável como um valor de cadeia de caracteres de consulta.
 
-<a name=security-cross-site-scripting-customization></a>
+<a name="security-cross-site-scripting-customization"></a>
 
 ## <a name="customizing-the-encoders"></a>Personalizando os codificadores
 

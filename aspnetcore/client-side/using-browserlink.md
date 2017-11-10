@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-browserlink
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 67ddc58e38962bd876050739a2a1447be4f589bb
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 95062961877b8da843ce47fb1719ee85224fa8c8
+ms.sourcegitcommit: 9c27fa0f0c57ad611aa43f63afb9b9c9571d4a94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="browser-link-in-aspnet-core"></a>Link do navegador no núcleo do ASP.NET 
 
@@ -81,7 +81,7 @@ O controle de barra de ferramentas Link do navegador, você pode:
 * Atualize o aplicativo web em vários navegadores de uma vez.
 * Abra o **painel de Link do navegador**.
 * Habilitar ou desabilitar **Link do navegador**. Observação: O Link do navegador está desabilitado por padrão no Visual Studio 2017 (15,3).
-* Habilitar ou desabilitar a sincronização automática de CSS.
+* Habilitar ou desabilitar [sincronização automática de CSS](#enable-or-disable-css-auto-sync).
 
 > [!NOTE]
 > Alguns plug-ins do Visual Studio, mais notoriamente *Web 2015 de pacote de extensão* e *Web 2017 de pacote de extensão*, oferecem funcionalidade estendida para o Link do navegador, mas alguns dos recursos adicionais não funcionam com o ASP. Projetos de rede principal.

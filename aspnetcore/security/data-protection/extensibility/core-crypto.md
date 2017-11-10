@@ -10,20 +10,20 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: 8ee4e380b154db7f1736edc793b56258655ddd52
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 738bf6841b5364f89fa1bcdd11fc71d9be83c23b
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="core-cryptography-extensibility"></a>Extensibilidade da criptografia de núcleo
 
-<a name=data-protection-extensibility-core-crypto></a>
+<a name="data-protection-extensibility-core-crypto"></a>
 
 >[!WARNING]
 > Tipos que implementam qualquer uma das seguintes interfaces devem ser thread-safe para chamadores vários.
 
-<a name=data-protection-extensibility-core-crypto-iauthenticatedencryptor></a>
+<a name="data-protection-extensibility-core-crypto-iauthenticatedencryptor"></a>
 
 ## <a name="iauthenticatedencryptor"></a>IAuthenticatedEncryptor
 
@@ -40,12 +40,12 @@ O método Encrypt retorna um blob que inclui o texto não criptografado encipher
 > [!NOTE]
 > A própria instância IAuthenticatedEncryptor, na verdade, não precisa conter o material da chave. Por exemplo, a implementação pudesse ser delegado a um HSM para todas as operações.
 
-<a name=data-protection-extensibility-core-crypto-iauthenticatedencryptorfactory></a>
-<a name=data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor></a>
+<a name="data-protection-extensibility-core-crypto-iauthenticatedencryptorfactory"></a>
+<a name="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor"></a>
 
 ## <a name="how-to-create-an-iauthenticatedencryptor"></a>Como criar um IAuthenticatedEncryptor
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 O **IAuthenticatedEncryptorFactory** interface representa um tipo que sabe como criar um [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instância. Sua API é o seguinte.
 
@@ -72,7 +72,7 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 // the 'roundTripped' and 'plaintext' buffers should be equivalent
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 O **IAuthenticatedEncryptorDescriptor** interface representa um tipo que sabe como criar um [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instância. Sua API é o seguinte.
 
@@ -102,17 +102,17 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 
 ---
 
-<a name=data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor></a>
+<a name="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor"></a>
 
 ## <a name="iauthenticatedencryptordescriptor-aspnet-core-2x-only"></a>IAuthenticatedEncryptorDescriptor (ASP.NET Core 2. x somente)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 O **IAuthenticatedEncryptorDescriptor** interface representa um tipo que sabe como exportar em si para XML. Sua API é o seguinte.
 
 * ExportToXml(): XmlSerializedDescriptorInfo
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ---
 
@@ -120,7 +120,7 @@ O **IAuthenticatedEncryptorDescriptor** interface representa um tipo que sabe co
 
 A principal diferença entre IAuthenticatedEncryptor e IAuthenticatedEncryptorDescriptor é que o descritor sabe como criar o Criptografador e fornecê-lo com os argumentos válidos. Considere um IAuthenticatedEncryptor cuja implementação depende do SymmetricAlgorithm e KeyedHashAlgorithm. Trabalho do Criptografador é consumir esses tipos, mas não necessariamente souber onde esses tipos de origem, para que ele realmente não é possível gravar uma descrição adequada do como recriar a mesmo se o aplicativo for reiniciado. O descritor de atua como um nível superior sobre isso. Desde que o descritor sabe como criar a instância do Criptografador (por exemplo, sabe como criar os algoritmos necessários), ele pode serializar esse conhecimento em formato XML para que a instância do Criptografador pode ser recriada após a redefinição de um aplicativo.
 
-<a name=data-protection-extensibility-core-crypto-exporttoxml></a>
+<a name="data-protection-extensibility-core-crypto-exporttoxml"></a>
 
 O descritor de pode ser serializado por meio de sua rotina de ExportToXml. Esta rotina retorna um XmlSerializedDescriptorInfo que contém duas propriedades: a representação de XElement do descritor e o tipo que representa um [IAuthenticatedEncryptorDescriptorDeserializer](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer) que pode ser usado para lembrar Esse descritor fornecido o XElement correspondente.
 
@@ -131,7 +131,7 @@ O descritor de serializado pode conter informações confidenciais, como o mater
 
 Também pode haver casos onde o descritor serializado não contêm informações confidenciais. Considere novamente o caso de uma chave de criptografia armazenada em um HSM. Não é possível gravar o descritor de material de chave ao serializar em si, pois o HSM não irá expor o material em forma de texto sem formatação. Em vez disso, o descritor pode gravar a versão de chave de linha de chave (se o HSM permite exportar dessa forma) ou o identificador exclusivo do HSM para a chave.
 
-<a name=data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer></a>
+<a name="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer"></a>
 
 ## <a name="iauthenticatedencryptordescriptordeserializer"></a>IAuthenticatedEncryptorDescriptorDeserializer
 
@@ -152,7 +152,7 @@ Tipos que implementam IAuthenticatedEncryptorDescriptorDeserializer devem ter um
 
 ## <a name="the-top-level-factory"></a>A fábrica de nível superior
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2. x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 O **AlgorithmConfiguration** classe representa um tipo que sabe como criar [IAuthenticatedEncryptorDescriptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor) instâncias. Ela expõe uma única API.
 
@@ -164,7 +164,7 @@ Quando CreateNewDescriptor é chamado, novo material de chave é criada somente 
 
 O tipo de AlgorithmConfiguration serve como ponto de entrada para rotinas de criação da chave como [chave automática](../implementation/key-management.md#data-protection-implementation-key-management). Para alterar a implementação para todas as chaves futuras, defina a propriedade de AuthenticatedEncryptorConfiguration em KeyManagementOptions.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1. x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 O **IAuthenticatedEncryptorConfiguration** interface representa um tipo que sabe como criar [IAuthenticatedEncryptorDescriptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor) instâncias. Ela expõe uma única API.
 

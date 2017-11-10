@@ -11,17 +11,17 @@ ms.assetid: e422a1b2-dc4a-4bcc-b8d9-7ee62009b6a3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: 5021b5d20f6d9b9a4d8889f25b5e41f2c9306f64
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 24585ed5b4c21a357fc0eed4de6ccedf9fa50d3e
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="custom-policy-based-authorization"></a>Autorização personalizada com base em políticas
 
-<a name=security-authorization-policies-based></a>
+<a name="security-authorization-policies-based"></a>
 
-Nos bastidores a [autorização de função](roles.md#security-authorization-role-based) e [declarações de autorização](claims.md#security-authorization-claims-based) fazer uso de um requisito, um manipulador para o requisito e uma política de pré-configurada. Esses blocos de construção que você express avaliações de autorização no código, permitindo uma avançada reutilizável e a estrutura de autorização facilmente testáveis.
+Nos bastidores a [autorização de função](roles.md) e [declarações de autorização](claims.md) fazer uso de um requisito, um manipulador para o requisito e uma política de pré-configurada. Esses blocos de construção que você express avaliações de autorização no código, permitindo uma avançada reutilizável e a estrutura de autorização facilmente testáveis.
 
 Uma política de autorização é composta de um ou mais requisitos e registrada na inicialização do aplicativo como parte da configuração do serviço de autorização no `ConfigureServices` no *Startup.cs* arquivo.
 
@@ -74,13 +74,13 @@ public class MinimumAgeRequirement : IAuthorizationRequirement
 
 Um requisito não precisa ter dados ou propriedades.
 
-<a name=security-authorization-policies-based-authorization-handler></a>
+<a name="security-authorization-policies-based-authorization-handler"></a>
 
 ## <a name="authorization-handlers"></a>Manipuladores de autorização
 
 Um manipulador de autorização é responsável pela avaliação de todas as propriedades de um requisito. O manipulador de autorização deve avaliar em relação a um fornecido `AuthorizationHandlerContext` para decidir se a autorização é permitida. Pode ter um requisito [vários manipuladores](policies.md#security-authorization-policies-based-multiple-handlers). Manipuladores devem herdar `AuthorizationHandler<T>` onde T é o requisito trata.
 
-<a name=security-authorization-handler-example></a>
+<a name="security-authorization-handler-example"></a>
 
 O manipulador de idade mínima pode ter esta aparência:
 
@@ -116,7 +116,7 @@ public class MinimumAgeHandler : AuthorizationHandler<MinimumAgeRequirement>
 
 No código acima é primeiro verificar se a entidade de usuário atual tem uma data de nascimento de declaração que foi emitido por um emissor sabemos e confiança. Se a declaração está ausente, não é possível autorizar para retornamos. Se houver uma declaração, podemos calcular quanto tempo o usuário existe e se eles atenderem a idade mínima passada pela necessidade, em seguida, autorização foi bem-sucedida. Após a autorização bem-sucedida, podemos chamar `context.Succeed()` passando o requisito de que tenha sido bem-sucedida como um parâmetro.
 
-<a name=security-authorization-policies-based-handler-registration></a>
+<a name="security-authorization-policies-based-handler-registration"></a>
 
 Manipuladores devem ser registrados na coleção de serviços durante a configuração, por exemplo,
 
@@ -150,7 +150,7 @@ Você pode ver no nosso [exemplo manipulador](policies.md#security-authorization
 
 Todos os manipuladores para um requisito, independentemente de você chamar dentro de seu manipulador serão chamados quando uma política requer que o requisito. Isso permite que os requisitos para ter efeitos colaterais, como o registro, que sempre ocorrerá mesmo se `context.Fail()` foi chamado no manipulador de outro.
 
-<a name=security-authorization-policies-based-multiple-handlers></a>
+<a name="security-authorization-policies-based-multiple-handlers"></a>
 
 ## <a name="why-would-i-want-multiple-handlers-for-a-requirement"></a>Por que eu quero vários manipuladores para um requisito?
 
