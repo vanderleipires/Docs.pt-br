@@ -11,11 +11,11 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: a4e9ab26fa49720aa2334101ee12916fc797d944
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 379802f644b977563b0b50354feb1fb9a4c8fabb
+ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Introdução ao ASP.NET MVC de núcleo e Entity Framework Core usando o Visual Studio (1 a 10)
 
@@ -94,11 +94,11 @@ Abra *Views/Shared/_Layout.cshtml* e faça as seguintes alterações:
 
 As alterações são realçadas.
 
-[!code-html[](intro/samples/cu/Views/Shared/_Layout.cshtml?highlight=6,30,36-39,48)]
+[!code-cshtml[](intro/samples/cu/Views/Shared/_Layout.cshtml?highlight=6,30,36-39,48)]
 
 Em *Views/Home/Index.cshtml*, substitua o conteúdo do arquivo com o código a seguir para substituir o texto sobre o ASP.NET e MVC com texto sobre este aplicativo:
 
-[!code-html[](intro/samples/cu/Views/Home/Index.cshtml)]
+[!code-cshtml[](intro/samples/cu/Views/Home/Index.cshtml)]
 
 Pressione CTRL + F5 para executar o projeto ou **Depurar > Start Without Debugging** no menu. Você consulte a home page com guias para as páginas que você criará nos tutoriais.
 
@@ -288,7 +288,7 @@ Você aprenderá sobre os elementos de programação assíncronos nesse código 
 
 O *Views/Students/Index.cshtml* exibe essa lista em uma tabela:
 
-[!code-html[](intro/samples/cu/Views/Students/Index1.cshtml)]
+[!code-cshtml[](intro/samples/cu/Views/Students/Index1.cshtml)]
 
 Pressione CTRL + F5 para executar o projeto ou **Depurar > Start Without Debugging** no menu.
 
@@ -330,7 +330,7 @@ A quantidade de código, que você precisava criar para que o Entity Framework p
 
 * Propriedades de entidade que são nomeadas ID ou classnameID são reconhecidas como propriedades de chave primárias.
 
-* Uma propriedade é interpretada como uma propriedade de chave estrangeira, se ele é nomeado * <navigation property name> <primary key property name> * (por exemplo, `StudentID` para o `Student` propriedade de navegação desde o `Student` é de chave primária da entidade `ID`). Propriedades de chave estrangeira também podem ser nomeadas simplesmente * <primary key property name> * (por exemplo, `EnrollmentID` desde o `Enrollment` chave primária da entidade é `EnrollmentID`).
+* Uma propriedade é interpretada como uma propriedade de chave estrangeira, se ele é nomeado  *<navigation property name> <primary key property name>*  (por exemplo, `StudentID` para o `Student` propriedade de navegação desde o `Student` é de chave primária da entidade `ID`). Propriedades de chave estrangeira também podem ser nomeadas simplesmente  *<primary key property name>*  (por exemplo, `EnrollmentID` desde o `Enrollment` chave primária da entidade é `EnrollmentID`).
 
 Comportamento convencional pode ser substituído. Por exemplo, você pode especificar explicitamente os nomes de tabela, visto anteriormente neste tutorial. E você pode definir os nomes de coluna e definir qualquer propriedade de primary key ou foreign key como você verá em um [tutorial posterior](complex-data-model.md) na série.
 
