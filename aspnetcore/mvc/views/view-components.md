@@ -146,7 +146,7 @@ Neste exemplo, o componente de exibição é chamado diretamente do controlador:
 
 ### <a name="add-a-viewcomponent-class"></a>Adicionar uma classe ViewComponent
 
-Criar um *ViewComponents* pasta e adicione o seguinte `PriorityListViewComponent` classe:
+Crie uma pasta *ViewComponents* e adicione a seguinte classe `PriorityListViewComponent`:
 
 [!code-csharp[Main](view-components/sample/ViewCompFinal/ViewComponents/PriorityListViewComponent1.cs?name=snippet1)]
 
