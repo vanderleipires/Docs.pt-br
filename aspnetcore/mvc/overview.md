@@ -17,11 +17,11 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/28/2017
 ---
-# <a name="overview-of-aspnet-core-mvc"></a>Visão geral do núcleo do ASP.NET MVC
+# <a name="overview-of-aspnet-core-mvc"></a>Visão geral do ASP.NET Core MVC
 
 Por [Steve Smith](https://ardalis.com/)
 
-Núcleo do ASP.NET MVC é uma estrutura avançada para a criação de aplicativos web e APIs usando Model-View-Controller design padrão.
+O ASP.NET Core MVC é uma estrutura avançada para a criação de aplicativos web e APIs usando o padrão de design Model-View-Controller.
 
 ## <a name="what-is-the-mvc-pattern"></a>O que é o padrão MVC?
 
@@ -57,15 +57,15 @@ Os controladores são os componentes que lidar com a interação do usuário, tr
 >[!TIP]
 > Se você achar que as ações do controlador com frequência executam os mesmos tipos de ações, você pode seguir o [não repetitivo princípio](http://deviq.com/don-t-repeat-yourself/) movendo essas ações comuns em [filtros](#filters).
 
-## <a name="what-is-aspnet-core-mvc"></a>O que é o núcleo de ASP.NET MVC
+## <a name="what-is-aspnet-core-mvc"></a>O que é ASP.NET Core MVC
 
 A estrutura MVC do ASP.NET Core é uma fonte leve, abra, estrutura de apresentação testável altamente otimizada para uso com o ASP.NET Core.
 
-Núcleo do ASP.NET MVC fornece uma maneira com base em padrões para criar sites dinâmicos que habilitam uma separação limpa de preocupações. Ele lhe dá controle total sobre a marcação, dá suporte ao desenvolvimento amigável a TDD e usa os padrões da web mais recentes.
+ASP.NET Core MVC fornece uma maneira com base em padrões para criar sites dinâmicos que habilitam uma separação limpa de preocupações. Ele lhe dá controle total sobre a marcação, dá suporte ao desenvolvimento amigável a TDD e usa os padrões da web mais recentes.
 
 ## <a name="features"></a>Recursos
 
-Núcleo do ASP.NET MVC inclui o seguinte:
+ASP.NET Core MVC inclui o seguinte:
 
 * [Roteamento](#routing)
 * [Associação de modelo](#model-binding)
@@ -106,7 +106,7 @@ public class ProductsController : Controller
 
 ### <a name="model-binding"></a>Associação de modelo
 
-Núcleo do ASP.NET MVC [associação de modelo](models/model-binding.md) converte dados de solicitação de cliente (valores de formulário, os dados de rota, parâmetros de cadeia de caracteres de consulta, os cabeçalhos HTTP) em objetos que o controlador pode manipular. Como resultado, a lógica de controlador não precisa fazer o trabalho de descobrir os dados de solicitação de entrada; ele simplesmente tem os dados como parâmetros para os métodos de ação.
+ASP.NET Core MVC [associação de modelo](models/model-binding.md) converte dados de solicitação de cliente (valores de formulário, os dados de rota, parâmetros de cadeia de caracteres de consulta, os cabeçalhos HTTP) em objetos que o controlador pode manipular. Como resultado, a lógica de controlador não precisa fazer o trabalho de descobrir os dados de solicitação de entrada; ele simplesmente tem os dados como parâmetros para os métodos de ação.
 
 ```csharp
 public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null) { ... }
@@ -151,7 +151,7 @@ A estrutura tratará a validação de solicitação de dados no cliente e no ser
 
 ### <a name="dependency-injection"></a>Injeção de dependência
 
-ASP.NET Core tem suporte interno para [injeção de dependência (DI)](../fundamentals/dependency-injection.md). No ASP.NET MVC de núcleo, [controladores](controllers/dependency-injection.md) pode solicitação necessários serviços por meio de seus construtores, possibilitando que siga a [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/).
+O ASP.NET Core tem suporte interno para [DI (injeção de dependência)](../fundamentals/dependency-injection.md). No ASP.NET Core MVC, os [controladores](controllers/dependency-injection.md) podem solicitar serviços necessários por meio de seus construtores, possibilitando o acompanhamento do [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/).
 
 O aplicativo também pode usar [arquivos no modo de exibição de injeção de dependência](views/dependency-injection.md), usando o `@inject` diretiva:
 
