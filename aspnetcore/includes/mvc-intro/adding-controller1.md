@@ -8,5 +8,4 @@ O padrão de arquitetura MVC (Model-View-Controller) separa um aplicativo em tr�
 
 O padrão MVC ajuda a criar aplicativos que separam os diferentes aspectos do aplicativo (lógica de entrada, lógica de negócios e lógica da interface do usuário), ao mesmo tempo que fornece um acoplamento flexível entre esses elementos. O padrão especifica o local em que cada tipo de lógica deve estar localizado no aplicativo. A lógica da interface do usuário pertence à exibição. A lógica de entrada pertence ao controlador. A lógica de negócios pertence ao modelo. Essa separação ajuda a gerenciar a complexidade ao criar um aplicativo, porque permite que você trabalhe em um aspecto da implementação por vez, sem afetar o código de outro. Por exemplo, você pode trabalhar no código de exibição sem depender do código da lógica de negócios.
 
-Abrangemos esses conceitos nesta série de tutoriais e mostraremos como usá-los para criar um aplicativo de filme. O projeto MVC contém pastas para os *Controladores* e as *Exibições*. Uma pasta *Models* será adicionada em uma etapa posterior.
-
+Abrangemos esses conceitos nesta série de tutoriais e mostraremos como usá-los para criar um aplicativo de filme. O projeto MVC contém pastas para os *Controladores* e as *Exibições*.

@@ -11,7 +11,7 @@ Atualize o método `Index` pelo seguinte código:
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_1stSearch)]
 
-A primeira linha do método de ação `Index` cria uma consulta [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) para selecionar os filmes:
+A primeira linha do método de ação `Index` cria uma consulta [LINQ](https://docs.microsoft.com/dotnet/standard/using-linq) para selecionar os filmes:
 
 ```csharp
 var movies = from m in _context.Movie
@@ -24,9 +24,9 @@ Se o parâmetro `searchString` contiver uma cadeia de caracteres, a consulta de 
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchNull)]
 
-O código `s => s.Title.Contains()` acima é uma [Expressão Lambda](http://msdn.microsoft.com/library/bb397687.aspx). Lambdas são usados em consultas [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) baseadas em método como argumentos para métodos de operadores de consulta padrão, como o método [Where](http://msdn.microsoft.com/library/system.linq.enumerable.where.aspx) ou `Contains` (usado no código acima). As consultas LINQ não são executadas quando são definidas ou quando são modificadas com uma chamada a um método como `Where`, `Contains` ou `OrderBy`. Em vez disso, a execução da consulta é adiada.  Isso significa que a avaliação de uma expressão é atrasada até que seu valor realizado seja, de fato, iterado ou o método `ToListAsync` seja chamado. Para obter mais informações sobre a execução de consulta adiada, consulte [Execução da consulta](http://msdn.microsoft.com/library/bb738633.aspx).
+O código `s => s.Title.Contains()` acima é uma [Expressão Lambda](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions). Lambdas são usados em consultas [LINQ](https://docs.microsoft.com/dotnet/standard/using-linq) baseadas em método como argumentos para métodos de operadores de consulta padrão, como o método [Where](https://docs.microsoft.com//dotnet/api/system.linq.enumerable.where) ou `Contains` (usado no código acima). As consultas LINQ não são executadas quando são definidas ou quando são modificadas com uma chamada a um método como `Where`, `Contains` ou `OrderBy`. Em vez disso, a execução da consulta é adiada.  Isso significa que a avaliação de uma expressão é atrasada até que seu valor realizado seja, de fato, iterado ou o método `ToListAsync` seja chamado. Para obter mais informações sobre a execução de consulta adiada, consulte [Execução da consulta](https://docs.microsoft.com/dotnet/framework/data/adonet/ef/language-reference/query-execution).
 
-Observação: o método [Contains](http://msdn.microsoft.com/library/bb155125.aspx) é executado no banco de dados, não no código C# mostrado acima. A diferenciação de maiúsculas e minúsculas na consulta depende do banco de dados e do agrupamento. No SQL Server, [Contains](http://msdn.microsoft.com/library/bb155125.aspx) é mapeado para [SQL LIKE](http://msdn.microsoft.com/library/ms179859.aspx), que não diferencia maiúsculas de minúsculas. No SQLite, com o agrupamento padrão, ele diferencia maiúsculas de minúsculas.
+Observação: o método [Contains](https://docs.microsoft.com//dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) é executado no banco de dados, não no código C# mostrado acima. A diferenciação de maiúsculas e minúsculas na consulta depende do banco de dados e do agrupamento. No SQL Server, [Contains](https://docs.microsoft.com//dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) é mapeado para [SQL LIKE](https://docs.microsoft.com/sql/t-sql/language-elements/like-transact-sql), que não diferencia maiúsculas de minúsculas. No SQLite, com o agrupamento padrão, ele diferencia maiúsculas de minúsculas.
 
 Navegue para `/Movies/Index`. Acrescente uma cadeia de consulta, como `?searchString=Ghost`, à URL. Os filmes filtrados são exibidos.
 

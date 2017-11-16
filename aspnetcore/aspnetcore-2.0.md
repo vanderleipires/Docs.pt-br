@@ -11,11 +11,11 @@ ms.assetid: 08c9f457-9c24-40f9-a08b-47dc251e4cec
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: c572315d7a801b9b87d5f4cd14b82c5ed27e7a85
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 98af3788652e87f6222551cb4a8e5427b312660c
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Novidades do ASP.NET Core 2.0
 
@@ -28,7 +28,7 @@ Páginas do Razor é um novo recurso do ASP.NET Core MVC que torna a codificaç�
 Para obter mais informações, consulte a introdução e o tutorial:
 
 * [Introdução a Páginas do Razor](xref:mvc/razor-pages/index)
-* [Começando com Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
+* [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
 
 ## <a name="aspnet-core-metapackage"></a>Metapacote do ASP.NET Core
 
@@ -50,7 +50,7 @@ O metapacote `Microsoft.AspNetCore.All` tem como destino apenas o .NET Core 2.0,
 
 ## <a name="configuration-update"></a>Atualização da configuração
 
-Uma instância de `IConfiguration` é adicionada ao contêiner de serviços por padrão no ASP.NET Core 2.0. O `IConfiguration` no contêiner de serviços torna mais fácil para os aplicativos recuperarem os valores de configuração do contêiner.
+Uma instância de `IConfiguration` é adicionada ao contêiner de serviços por padrão no ASP.NET Core 2.0. `IConfiguration` no contêiner de serviços torna mais fácil para aplicativos recuperarem valores de configuração do contêiner.
 
 Para obter informações sobre o status da documentação planejada, consulte o [problema do GitHub](https://github.com/aspnet/Docs/issues/3387).
 
@@ -58,7 +58,7 @@ Para obter informações sobre o status da documentação planejada, consulte o 
 
 No ASP.NET Core 2.0, o log será incorporado no sistema de DI (injeção de dependência) por padrão. Você adiciona provedores e configura a filtragem no arquivo *Program.cs* em vez de usar o arquivo *Startup.cs*. E o `ILoggerFactory` padrão dá suporte à filtragem de forma que lhe permite usar uma abordagem flexível para filtragem entre provedores e filtragem específica do provedor.
 
-Para obter mais informações, consulte [Introdução ao registro em log](xref:fundamentals/logging).
+Para obter mais informações, consulte [Introdução ao registro em log](xref:fundamentals/logging/index).
 
 ## <a name="authentication-update"></a>Atualização de autenticação
 
@@ -70,12 +70,12 @@ Para obter informações sobre o status da documentação planejada, consulte o 
 
 ## <a name="identity-update"></a>Atualização de identidade
 
-Facilitamos a criação de APIs Web seguras usando a identidade do ASP.NET Core 2.0. Você pode adquirir tokens de acesso para acessar suas APIs Web usando a [MSAL (Biblioteca de Autenticação da Microsoft)](https://www.nuget.org/packages/Microsoft.Identity.Client).
+Tornamos mais fácil criar APIs Web seguras usando a identidade do ASP.NET Core 2.0. Você pode adquirir tokens de acesso para acessar suas APIs Web usando a [MSAL (Biblioteca de Autenticação da Microsoft)](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 Para obter mais informações sobre alterações de autenticação no 2.0, consulte os seguintes recursos:
 
 * [Confirmação de conta e de recuperação de senha no ASP.NET Core](xref:security/authentication/accconfirm)
-* [Habilitar a geração de código QR para aplicativos de autenticação no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes)
+* [Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes)
 * [Migrando Autenticação e Identidade para o ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)
 
 ## <a name="spa-templates"></a>Modelos do SPA
@@ -122,7 +122,7 @@ Para obter informações sobre o status da documentação planejada, consulte o 
 
 ## <a name="automatic-use-of-anti-forgery-tokens"></a>Uso automático de tokens antifalsificação
 
-O ASP.NET Core sempre ajudou a fazer a codificação HTML de seu conteúdo por padrão, mas com a nova versão, estamos dando um passo adicional para ajudar a impedir ataques de XSRF (falsificação de solicitação entre sites). O ASP.NET Core agora emitirá tokens antifalsificação por padrão e os validará em ações de POST do formulário e em páginas sem configuração adicional.
+O ASP.NET Core sempre ajudou a fazer a codificação HTML de seu conteúdo por padrão, mas com a nova versão, estamos dando uma passo adicional para ajudar a impedir ataques de XSRF (falsificação de solicitação entre sites). O ASP.NET Core agora emitirá tokens antifalsificação por padrão e os validará em ações de POST de formulário e em páginas sem configuração adicional.
 
 Para obter mais informações, consulte [Impedindo ataques de falsificação de solicitação entre sites (CSRF/XSRF) no ASP.NET Core](xref:security/anti-request-forgery).
 
