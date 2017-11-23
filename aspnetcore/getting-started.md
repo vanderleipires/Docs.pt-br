@@ -5,19 +5,19 @@ description: "Um tutorial rápido que cria e executa um aplicativo simples Olá,
 keywords: "ASP.NET Core, tutorial, introdução"
 ms.author: riande
 manager: wpickett
-ms.date: 08/30/2017
+ms.date: 10/18/2017
 ms.topic: get-started-article
 ms.assetid: 73543e9d-d9d5-47d6-9664-17a9beea6cd3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: getting-started
-ms.openlocfilehash: c81e1328fda6d1652ab937bd580be2342924d241
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: e944f0f5a3da6d1686ca8a3036666d8dadc9a0f8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="getting-started-with-aspnet-core"></a>Introdução ao ASP.NET Core
+# <a name="get-started-with-aspnet-core"></a>Introdução ao ASP.NET Core
 
 > [!NOTE]
 > Essas instruções referem-se à última versão do ASP.NET Core. Deseja começar com uma versão anterior? Consulte [a versão 1.1 deste tutorial](xref:getting-started-1.1).
@@ -43,7 +43,7 @@ ms.lasthandoff: 09/12/2017
 
 5. Navegue para [http://localhost:5000](http://localhost:5000)
 
-6. Abra *Pages/About.cshtml* e modifique a página para exibir a mensagem "Olá, mundo! O horário no servidor é @DateTime.Now":
+6. Abra *Pages/About.cshtml* e modifique a página para exibir a mensagem "Olá, mundo! O horário no servidor é @DateTime.Now ":
 
     [!code-html[Main](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 

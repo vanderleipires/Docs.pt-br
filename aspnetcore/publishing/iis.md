@@ -11,11 +11,11 @@ ms.assetid: a4449ad3-5bad-410c-afa7-dc32d832b552
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/iis
-ms.openlocfilehash: 75fc1edec9050a4690a39d37307f2f95f5d534a5
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: e9e9019d5b879498e8800bb579c177dd3ad64061
+ms.sourcegitcommit: 96af03c9f44f7c206e68ae3ef8596068e6b4e5fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hospedar o ASP.NET Core no Windows com o IIS
 
@@ -56,7 +56,7 @@ Continue para a etapa **Confirmação** para instalar os serviços e a função 
 
 ## <a name="install-the-net-core-windows-server-hosting-bundle"></a>Instalar o pacote de hospedagem do Windows Server do .NET Core
 
-1. Instale o [pacote de hospedagem do Windows Server do .NET Core](https://aka.ms/dotnetcore.2.0.0-windowshosting) no sistema de hospedagem. O pacote instala o Tempo de Execução .NET Core, a Biblioteca do .NET Core e o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). O módulo cria o proxy reverso entre o IIS e o servidor Kestrel. Se o sistema não tiver uma conexão com a Internet, obtenha e instale os [Pacotes redistribuíveis do Microsoft Visual C++ 2015](https://www.microsoft.com/download/details.aspx?id=53840) antes de instalar o pacote de hospedagem do Windows Server do .NET Core.
+1. Instale o [pacote de hospedagem do Windows Server do .NET Core](https://download.microsoft.com/download/5/C/1/5C190037-632B-443D-842D-39085F02E1E8/DotNetCore.2.0.3-WindowsHosting.exe) no sistema de hospedagem. O pacote instala o Tempo de Execução .NET Core, a Biblioteca do .NET Core e o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). O módulo cria o proxy reverso entre o IIS e o servidor Kestrel. Se o sistema não tiver uma conexão com a Internet, obtenha e instale os [Pacotes redistribuíveis do Microsoft Visual C++ 2015](https://www.microsoft.com/download/details.aspx?id=53840) antes de instalar o pacote de hospedagem do Windows Server do .NET Core.
 
 2. Reinicie o sistema ou execute **net stop was /y** seguido por **net start w3svc** em um prompt de comando para acompanhar uma alteração no PATH do sistema.
 
@@ -117,7 +117,7 @@ services.Configure<IISOptions>(options =>
 
 ### <a name="webconfig"></a>web.config
 
-O arquivo *web.config* configura o Módulo do ASP.NET Core e fornece outras configurações do IIS. A criação, transformação e publicação de *web.config* são manipuladas pelo `Microsoft.NET.Sdk.Web`, que é incluído quando você define o SDK do projeto na parte superior do arquivo (*.csproj*) do projeto, `<Project Sdk="Microsoft.NET.Sdk.Web">`. Para impedir que o destino do MSBuild se transforme no arquivo *web.config*, adicione a propriedade **\<IsTransformWebConfigDisabled>** ao arquivo de projeto com a configuração `true`:
+O arquivo *web.config* configura principalmente o Módulo do ASP.NET Core. Como opção, ele pode fornecer definições de configuração IIS adicionais. A criação, transformação e publicação do *web.config* é gerenciada pelo SDK Web do .NET Core (`Microsoft.NET.Sdk.Web`). O SDK é definido na parte superior do arquivo de projeto (*.csproj*), `<Project Sdk="Microsoft.NET.Sdk.Web">`. Para impedir que o SDK se transforme no arquivo *web.config*, adicione a propriedade **\<IsTransformWebConfigDisabled>** ao arquivo de projeto com a configuração `true`:
 
 ```xml
 <PropertyGroup>
@@ -221,7 +221,7 @@ As chaves de Proteção de Dados usadas pelos aplicativos ASP.NET são armazenad
 
 Para instalações autônomas do IIS, você pode usar o [script Provision-AutoGenKeys.ps1 de Proteção de Dados do PowerShell](https://github.com/aspnet/DataProtection/blob/dev/Provision-AutoGenKeys.ps1) para cada pool de aplicativos usado com um aplicativo ASP.NET Core. Esse script cria uma chave do registro especial no registro HKLM que tem a ACL acessível apenas para a conta do processo de trabalho. As chaves são criptografadas em repouso usando a DPAPI.
 
-Em cenários de web farm, um aplicativo pode ser configurado para usar um caminho UNC para armazenar seu token de autenticação de proteção de dados. Por padrão, as chaves de proteção de dados não são criptografadas. Garanta que as permissões de arquivo de um compartilhamento como esse são limitadas à conta do Windows na qual o aplicativo é executado. Além disso, você pode optar por proteger as chaves em repouso usando um certificado X509. Talvez você deseje considerar um mecanismo para permitir aos usuários carregar certificados: coloque os certificados no repositório de certificados confiáveis do usuário e certifique-se de que eles estejam disponíveis em todos os computadores nos quais o aplicativo do usuário é executado. Consulte [Configurando a Proteção de Dados](xref:security/data-protection/configuration/overview#data-protection-configuring) para obter detalhes.
+Em cenários de web farm, um aplicativo pode ser configurado para usar um caminho UNC para armazenar seu token de autenticação de proteção de dados. Por padrão, as chaves de proteção de dados não são criptografadas. Garanta que as permissões de arquivo de um compartilhamento como esse são limitadas à conta do Windows na qual o aplicativo é executado. Além disso, você pode optar por proteger as chaves em repouso usando um certificado X509. Talvez você deseje considerar um mecanismo para permitir aos usuários carregar certificados: coloque os certificados no repositório de certificados confiáveis do usuário e certifique-se de que eles estejam disponíveis em todos os computadores nos quais o aplicativo do usuário é executado. Consulte [Configurando a Proteção de Dados](xref:security/data-protection/configuration/overview) para obter detalhes.
 
 ### <a name="2-configure-the-iis-application-pool-to-load-the-user-profile"></a>2. Configurar o Pool de Aplicativos do IIS para carregar o perfil do usuário
 
@@ -229,7 +229,7 @@ Essa configuração está na seção **Modelo de processo** nas **Configuraçõe
 
 ### <a name="3-machine-wide-policy-for-data-protection"></a>3. Política de todo o computador para proteção de dados
 
-O sistema de proteção de dados tem suporte limitado para a configuração da [política de todo o computador](xref:security/data-protection/configuration/machine-wide-policy#data-protection-configuration-machinewidepolicy) padrão para todos os aplicativos que consomem as APIs de proteção de dados. Consulte a documentação de [proteção de dados](xref:security/data-protection/index) para obter mais detalhes.
+O sistema de proteção de dados tem suporte limitado para a configuração da [política de todo o computador](xref:security/data-protection/configuration/machine-wide-policy) padrão para todos os aplicativos que consomem as APIs de proteção de dados. Consulte a documentação de [proteção de dados](xref:security/data-protection/index) para obter mais detalhes.
 
 ## <a name="configuration-of-sub-applications"></a>Configuração de subaplicativos
 
@@ -326,7 +326,7 @@ Uma maneira de determinar se o proxy reverso do IIS para o servidor Kestrel est�
 
 Quando o Kestrel é iniciado normalmente com a proteção do IIS, mas o aplicativo não é executado no sistema depois de ser executado com êxito localmente, você pode adicionar temporariamente uma variável de ambiente ao *web.config* para definir o `ASPNETCORE_ENVIRONMENT` como `Development`. Desde que você não substitua o ambiente na inicialização do aplicativo, isso permitirá que a [página de exceção do desenvolvedor](xref:fundamentals/error-handling) seja exibida quando o aplicativo é executado no sistema. A configuração da variável de ambiente como `ASPNETCORE_ENVIRONMENT` dessa maneira só é recomendado para sistemas de preparo/teste que não estejam expostos à Internet. Lembre-se de remover a variável de ambiente do arquivo *web.config* quando terminar. Para obter informações sobre como definir variáveis de ambiente por meio de *web.config* no proxy reverso, consulte [Elemento filho environmentVariables de aspNetCore](xref:hosting/aspnet-core-module#setting-environment-variables).
 
-Na maioria dos casos, a habilitação do log do aplicativo ajudará na solução de problemas com o aplicativo ou o proxy reverso. Consulte [Log](xref:fundamentals/logging) para obter mais informações.
+Na maioria dos casos, a habilitação do log do aplicativo ajudará na solução de problemas com o aplicativo ou o proxy reverso. Consulte [Log](xref:fundamentals/logging/index) para obter mais informações.
 
 Nossa última dica de solução de problemas se refere a aplicativos que não são executados após o upgrade do SDK do .NET Core nas versões de pacote ou de computador de desenvolvimento no aplicativo. Em alguns casos, pacotes incoerentes podem interromper um aplicativo ao executar atualizações principais. Corrija a maioria desses problemas excluindo as pastas `bin` e `obj` do projeto, limpando os caches do pacote em `%UserProfile%\.nuget\packages\` e `%LocalAppData%\Nuget\v3-cache`, restaurando o projeto e confirmando se a implantação anterior no sistema foi completamente excluída antes de reimplantar o aplicativo.
 

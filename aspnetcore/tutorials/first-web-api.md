@@ -10,17 +10,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-web-api
-ms.openlocfilehash: 617b11cd7652e393c06446c62138802e4a4e90df
-ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
+ms.openlocfilehash: 3ef6fb26eab123c9f6f8275ee1d979b090db0413
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 11/10/2017
 ---
 #<a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Criar uma API Web com o ASP.NET Core e o Visual Studio para Windows
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Mike Wasson](https://github.com/mikewasson)
 
-Neste tutorial, você compilará uma API Web para gerenciar uma lista de itens de “tarefas pendentes”. Você não compilará uma interface do usuário.
+Este tutorial compilará uma API Web para gerenciar uma lista de itens de “tarefas pendentes”. Uma interface de usuário (UI) não é criada.
 
 Há três versões deste tutorial:
 
@@ -52,23 +52,23 @@ Na caixa de diálogo **Novo aplicativo Web ASP.NET Core – TodoApi**, selecione
 
 ### <a name="launch-the-app"></a>Iniciar o aplicativo
 
-No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values`, em que *porta* é um número da porta escolhido aleatoriamente. Chrome, Edge e Firefox exibem o seguinte:
+No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values`, em que *porta* é um número da porta escolhido aleatoriamente. O Chrome, Microsoft Edge e Firefox exibem a seguinte saída:
 
 ```
 ["value1","value2"]
-``` 
+```
 
 ### <a name="add-a-model-class"></a>Adicionar uma classe de modelo
 
-Um modelo é um objeto que representa os dados em seu aplicativo. Nesse caso, o único modelo é um item de tarefa pendente.
+Um modelo é um objeto que representa os dados no aplicativo. Nesse caso, o único modelo é um item de tarefas pendentes.
 
-Adicione uma pasta denominada "Modelos". No Gerenciador de Soluções, clique com o botão direito do mouse no projeto. Selecione **Adicionar** > **Nova Pasta**. Nomeie a pasta como *Modelos*.
+Adicione uma pasta denominada "Modelos". No Gerenciador de Soluções, clique com o botão direito do mouse no projeto. Selecione **Adicionar** > **Nova Pasta**. Nomeie a pasta *Models*.
 
-Observação: as classes de modelo podem ser colocadas em qualquer lugar no seu projeto, mas a pasta *Modelos* é usada por convenção.
+Observação: as classes de modelo entram em qualquer lugar no projeto. A pasta *Modelos* é usada por convenção para as classes de modelo.
 
 Adicione uma classe `TodoItem`. Clique com o botão direito do mouse na pasta *Modelos* e selecione **Adicionar** > **Classe**. Nomeie a classe `TodoItem` e, em seguida, selecione **Adicionar**.
 
-Substitua o código gerado pelo mostrado a seguir:
+Atualize a classe `TodoItem` com o código a seguir:
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
 
@@ -80,7 +80,7 @@ O *contexto de banco de dados* é a classe principal que coordena a funcionalida
 
 Adicione uma classe `TodoContext`. Clique com o botão direito do mouse na pasta *Modelos* e selecione **Adicionar** > **Classe**. Nomeie a classe `TodoContext` e, em seguida, selecione **Adicionar**.
 
-Substitua o código gerado pelo mostrado a seguir:
+Substitua a classe pelo código a seguir:
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
 
@@ -92,13 +92,13 @@ No Gerenciador de Soluções, clique com o botão direito do mouse na pasta *Con
 
 ![Caixa de diálogo Adicionar Novo Item com o controlador na caixa de pesquisa e o controlador da API Web selecionados](first-web-api/_static/new_controller.png)
 
-Substitua o código gerado pelo mostrado a seguir:
+Substitua a classe pelo código a seguir:
 
 [!INCLUDE[code and get todo items](../includes/webApi/getTodoItems.md)]
-  
+
 ### <a name="launch-the-app"></a>Iniciar o aplicativo
 
-No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values`, em que *porta* é um número da porta escolhido aleatoriamente. Se você estiver usando o Chrome, o Edge ou o Firefox, os dados serão exibidos. Se você estiver usando o IE, ele solicitará que você abra ou salve o arquivo *values.json*. Navegue até o controlador `Todo` que acabamos de criar em `http://localhost:port/api/todo`.
+No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values`, em que *porta* é um número da porta escolhido aleatoriamente. Navegue até o controlador `Todo` no `http://localhost:port/api/todo`.
 
 [!INCLUDE[last part of web API](../includes/webApi/end.md)]
 

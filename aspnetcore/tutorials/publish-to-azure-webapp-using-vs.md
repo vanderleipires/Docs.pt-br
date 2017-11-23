@@ -5,27 +5,27 @@ description:
 keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
-ms.date: 09/01/2017
+ms.date: 10/05/2017
 ms.topic: get-started-article
 ms.assetid: 78571e4a-a143-452d-9cf2-0860f85972e6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 0c0ec1c7c1408b0460c594a47a3e5738cd170d5f
-ms.sourcegitcommit: d022d4b96795ee473fa3847a1d8a8c7430423a86
+ms.openlocfilehash: 6f697ed4d8876a19cd058533e4f6a5d4f7cdc2fb
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Publicar um aplicativo Web ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs) e [Rachel Appel](https://twitter.com/rachelappel)
 
-## <a name="set-up-the-development-environment"></a>Configurar o ambiente de desenvolvimento
+Confira [Publicar no Azure do Visual Studio para Mac](https://blog.xamarin.com/publish-azure-visual-studio-mac/) se você estiver trabalhando em um Mac.
 
-* Instale a última versão do [SDK do Azure para Visual Studio](https://www.visualstudio.com/vs/azure-tools/). O SDK instala o Visual Studio, caso você ainda não tenha feito isso.
+## <a name="set-up"></a>Configurar
 
-* Confirme sua [conta do Azure](https://portal.azure.com/). [Abra uma conta gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/) ou [ative os benefícios do assinante do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+* Abra uma [conta do Azure gratuita](https://aka.ms/K5y5yh) se você não tiver uma. 
 
 ## <a name="create-a-web-app"></a>Criar um aplicativo Web
 
@@ -186,8 +186,4 @@ Quando você concluir o teste do aplicativo, acesse o [portal do Azure](https://
 
 ### <a name="next-steps"></a>Próximas etapas
 
-* [Introdução ao ASP.NET Core MVC e ao Visual Studio](first-mvc-app/start-mvc.md)
-
-* [Introdução ao ASP.NET Core](../index.md)
-
-* [Conceitos básicos](../fundamentals/index.md)
+* [Implantação contínua no Azure com o Visual Studio e o Git](../publishing/azure-continuous-deployment.md)

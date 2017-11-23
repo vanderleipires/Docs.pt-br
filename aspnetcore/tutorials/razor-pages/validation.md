@@ -1,7 +1,7 @@
 ---
 title: "Adicionando uma Validação"
 author: rick-anderson
-description: "Como adicionar uma validação a uma página Razor"
+description: "Explica como adicionar uma validação a uma Página do Razor."
 keywords: "ASP.NET Core, validação, DataAnnotations, Razor, Páginas Razor"
 ms.author: riande
 manager: wpickett
@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 9a822457d1581a70d59c553eb28133815f395d7d
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: e580ee537190c85e74e40c288af1503f136c83d8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="adding-validation-to-a-razor-page"></a>Adicionando uma validação a uma página Razor
 
@@ -36,7 +36,12 @@ Atualize a classe `Movie` para aproveitar os atributos de validação `Required`
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
 
-Os atributos de validação especificam o comportamento que é imposto nas propriedades do modelo. Os atributos `Required` e `MinimumLength` indicam que uma propriedade deve ter um valor; porém, nada impede que um usuário insira um espaço em branco para atender à restrição de validação. O atributo `RegularExpression` é usado para limitar quais caracteres podem ser inseridos. No código anterior, `Genre` e `Rating` devem usar apenas letras (espaço em branco, números e caracteres especiais não são permitidos). O atributo `Range` restringe um valor a um intervalo especificado. O atributo `StringLength` define o tamanho máximo de uma cadeia de caracteres e, opcionalmente, o tamanho mínimo. Os [tipos de valor](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value-types) (como `decimal`, `int`, `float`, `DateTime`) são inerentemente necessários e não precisam do atributo `[Required]`.
+Os atributos de validação especificam o comportamento que é imposto nas propriedades do modelo:
+
+* Os atributos `Required` e `MinimumLength` indicam que uma propriedade deve ter um valor. No entanto, nada impede que um usuário digite espaços em branco para atender à restrição de validação para um tipo de permite valor nulo. Os [tipos de valor](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value-types) que não permitem valores nulos (como `decimal`, `int`, `float` e `DateTime`) são inerentemente necessários e não precisam do atributo `Required`.
+* O atributo `RegularExpression` limita os caracteres que o usuário pode inserir. No código anterior, `Genre` e `Rating` devem usar apenas letras (espaço em branco, números e caracteres especiais não são permitidos).
+* O atributo `Range` restringe um valor a um intervalo especificado.
+* O atributo `StringLength` define o tamanho máximo de uma cadeia de caracteres e, opcionalmente, o tamanho mínimo. 
 
 Ter as regras de validação automaticamente impostas pelo ASP.NET Core ajuda a tornar um aplicativo mais robusto. A validação automática em modelos ajuda a proteger o aplicativo porque você não precisa se lembrar de aplicá-los quando um novo código é adicionado.
 
@@ -127,6 +132,10 @@ Geralmente, não é uma boa prática compilar datas rígidas nos modelos e, port
 O seguinte código mostra como combinar atributos em uma linha:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+
+### <a name="publish-to-azure"></a>Publicar no Azure
+
+Confira as instruções sobre como publicar este aplicativo no Azure em [Publicar um aplicativo Web ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
