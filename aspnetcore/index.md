@@ -1,7 +1,7 @@
 ---
 title: "Introdução ao ASP.NET Core"
 author: rick-anderson
-description: 
+description: Apresenta o ASP.NET Core.
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: index
-ms.openlocfilehash: 748c8c0b9dd0e6eab0d7347bbf89ed80c10bdb54
-ms.sourcegitcommit: e4a1df2a5a85f299322548809e547a79b380bb92
+ms.openlocfilehash: a075c63fddb9e28a1da37d4ef6647808a0dcb583
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="introduction-to-aspnet-core"></a>Introdução ao ASP.NET Core
 
@@ -29,13 +29,13 @@ O ASP.NET Core é uma estrutura de [software livre](https://github.com/aspnet/ho
 
 ## <a name="why-use-aspnet-core"></a>Por que usar o ASP.NET Core?
 
-Milhões de desenvolvedores já usaram o ASP.NET (e continuando usando-o) para criar aplicativos Web. O ASP.NET Core é uma reformulação do ASP.NET, com alterações de arquitetura que resultam em uma estrutura mais enxuta e modular.
+Milhões de desenvolvedores usaram (e continuam usando) o ASP.NET para criar aplicativos Web. O ASP.NET Core é uma reformulação do ASP.NET, com alterações de arquitetura que resultam em uma estrutura mais enxuta e modular.
 
 O ASP.NET Core oferece os seguintes benefícios:
 
 * Uma história unificada para a criação da interface do usuário da Web e das APIs Web.
 * Integração de [modernas estruturas do lado do cliente](xref:client-side/index) e fluxos de trabalho de desenvolvimento.
-* Um [sistema de configuração](xref:fundamentals/configuration) pronto para a nuvem, baseado no ambiente.
+* Um [sistema de configuração](xref:fundamentals/configuration/index) pronto para a nuvem, baseado no ambiente.
 * [Injeção de dependência](xref:fundamentals/dependency-injection) interna.
 * Um pipeline de solicitação HTTP leve, modular e de alto desempenho.
 * A capacidade de hospedar no IIS ou hospedar automaticamente em seu próprio processo.
