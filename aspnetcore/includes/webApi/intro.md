@@ -18,7 +18,7 @@ O diagrama a seguir mostra o design básico do aplicativo.
 
 * O cliente é tudo o que consome a API Web (aplicativo móvel, navegador, etc.). Não escreveremos um cliente neste tutorial. Usaremos o [Postman](https://www.getpostman.com/) ou o [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html) para testar o aplicativo.
 
-* Um *modelo* é um objeto que representa os dados em seu aplicativo. Nesse caso, o único modelo é um item de tarefas pendentes. Os modelos são representados como classes C#, também conhecidos como POCOs (**Objeto** **C**RL ****# **B**ásico).
+* Um *modelo* é um objeto que representa os dados em seu aplicativo. Nesse caso, o único modelo é um item de tarefas pendentes. Os modelos são representados como classes C#, também conhecidos como POCOs (Objetos CLR Antigos Simples).
 
 * Um *controlador* é um objeto que manipula solicitações HTTP e cria a resposta HTTP. Este aplicativo terá um único controlador.
 
