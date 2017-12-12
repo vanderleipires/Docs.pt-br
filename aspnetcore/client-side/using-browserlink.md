@@ -1,5 +1,5 @@
----
-title: "Link do navegador no núcleo do ASP.NET"
+﻿---
+title: "Link do navegador no ASP.NET Core"
 author: ncarandini
 description: "Saiba como o Link do navegador é um recurso do Visual Studio que vincula o ambiente de desenvolvimento com um ou mais navegadores da web."
 keywords: "ASP.NET Core, o link do navegador, a sincronização de CSS"
@@ -72,14 +72,14 @@ Para obter mais informações, consulte [Trabalhando com vários ambientes](xref
 
 ## <a name="how-to-use-browser-link"></a>Como usar o Link do navegador
 
-Quando você tiver um projeto do ASP.NET Core aberta, o Visual Studio mostra o controle de barra de ferramentas do Link do navegador ao lado de **destino de depuração** controle de barra de ferramentas:
+Quando um projeto do ASP.NET Core estar aberto, o Visual Studio mostra o controle de barra de ferramentas do Link do navegador ao lado de **destino de depuração** controle de barra de ferramentas:
 
 ![Menu de lista suspensa de Link do navegador](using-browserlink/_static/browserLink-dropdown-menu.png)
 
 O controle de barra de ferramentas Link do navegador, você pode:
 
-* Atualize o aplicativo web em vários navegadores de uma vez.
-* Abra o **painel de Link do navegador**.
+* Atualizar o aplicativo web em vários navegadores de uma vez.
+* Abrir o **painel de Link do navegador**.
 * Habilitar ou desabilitar **Link do navegador**. Observação: O Link do navegador está desabilitado por padrão no Visual Studio 2017 (15,3).
 * Habilitar ou desabilitar [sincronização automática de CSS](#enable-or-disable-css-auto-sync).
 
@@ -88,7 +88,7 @@ O controle de barra de ferramentas Link do navegador, você pode:
 
 ## <a name="refresh-the-web-application-in-several-browsers-at-once"></a>Atualizar o aplicativo web em vários navegadores de uma vez
 
-Para escolher um navegador web única para iniciar ao iniciar o projeto, use o menu suspenso no **destino de depuração** controle de barra de ferramentas:
+Para escolher um único navegador web para abrir ao iniciar o projeto, use o menu suspenso no **destino de depuração** controle de barra de ferramentas:
 
 ![Menu suspenso de F5](using-browserlink/_static/debug-target-dropdown-menu.png)
 
@@ -116,7 +116,7 @@ Abra o painel de Link do navegador de menu para gerenciar a conexão com o naveg
 
 ![Painel de browserslink abrir](using-browserlink/_static/open-browserlink-dashboard.png)
 
-Se nenhum navegador estiver conectado, você pode iniciar uma sessão de depuração não, selecionando o *exibir no navegador* link:
+Se nenhum navegador estiver conectado, você pode iniciar uma sessão de não depuração, selecionando o link *exibir no navegador*:
 
 ![painel browserlink-conexões não](using-browserlink/_static/browserlink-dashboard-no-connections.png)
 
