@@ -11,11 +11,11 @@ ms.assetid: f0930c68-4d17-4748-adbf-801e17601eb6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/index
-ms.openlocfilehash: df3c1f0c2768b89c3ea5dc901782170c530a542e
-ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
+ms.openlocfilehash: 0de459128426c4d027606951592b1fe3fdd24fd9
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="hosting-and-deployment-overview-for-aspnet-core-apps"></a>Visão de geral de implantação e hospedagem para aplicativos ASP.NET Core
 
@@ -58,6 +58,10 @@ Se seu aplicativo usa o servidor Web [Kestrel](xref:fundamentals/servers/kestrel
 A implantação muitas vezes requer tarefas adicionais além de copiar a saída do `dotnet publish` para um servidor. Por exemplo, você talvez queira incluir arquivos extras na pasta *publish* ou excluir arquivos dela. O Visual Studio usa o MSBuild para implantação da Web e você pode personalizar o MSBuild para fazer muitas outras tarefas durante a implantação. Para obter mais informações, consulte [Perfis de publicação no Visual Studio](xref:publishing/web-publishing-vs) e o livro [Usando MSBuild e o Team Foundation Build](http://msbuildbook.com/).
 
 Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo do Azure usando [o recurso Publicar na Web](xref:tutorials/publish-to-azure-webapp-using-vs) ou usando o [suporte ao Git interno](xref:publishing/azure-continuous-deployment). O Visual Studio Team Services dá suporte à [implantação contínua para o Serviço de Aplicativo do Azure](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure).
+
+## <a name="publishing-to-azure"></a>Publicação no Azure
+
+Confira as instruções sobre como publicar este aplicativo no Azure usando o Visual Studio em [Publicar um aplicativo Web ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs).  O aplicativo também pode ser publicado no Azure através da [linha de comando](xref:tutorials/publish-to-azure-webapp-using-cli).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -27,7 +27,11 @@ Observação: a versão do ASP.NET Core 2.0 é ligeiramente diferente. Ela não 
 >[!WARNING]
 > Ainda não implementamos o controlador `Movies` e, portanto, se você clicar nesse link, obterá um erro 404 (Não encontrado).
 
-Salve as alterações e toque no link **Sobre**. Observe como o título na guia do navegador agora exibe **Sobre – Aplicativo de Filme**, em vez de **Sobre – Filme Mvc**. Toque no link **Contato** e observe que ele também exibe **Aplicativo de Filme**. Conseguimos fazer a alteração uma vez no modelo de layout e fazer com que todas as páginas no site refletissem o novo texto do link e o novo título.
+Salve as alterações e toque no link **Sobre**. Observe como o título na guia do navegador agora exibe **Sobre – Aplicativo de Filme**, em vez de **Sobre – Filme Mvc**: 
+
+![Sobre a guia](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+
+Toque no link **Contato** e observe que ele também exibe **Aplicativo de Filme**. Conseguimos fazer a alteração uma vez no modelo de layout e fazer com que todas as páginas no site refletissem o novo texto do link e o novo título.
 
 Examine o arquivo *Views/_ViewStart.cshtml*:
 

@@ -2,23 +2,25 @@
 title: Testando e depurando o ASP.NET Core
 author: ardalis
 description: Links para recursos para testar e depurar aplicativos ASP.NET Core.
-keywords: "ASP.NET Core, teste de unidade, teste de integração, controladores, depuração, depuração remota"
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 11/20/2017
 ms.topic: article
-ms.assetid: 2159536c-ebf7-4ebd-ba85-9cc6a335a295
 ms.technology: aspnet
 ms.prod: asp.net-core
-ms.openlocfilehash: dc22f03f7369fc58a6db685d60421198d11b875e
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+uid: testing/index
+ms.openlocfilehash: d9650f3f3a7a7912ad5764f9e603af356c061f13
+ms.sourcegitcommit: 4925a91ef4130ddb333f187ab13defe66f2c6cef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 12/03/2017
 ---
 # <a name="testing-and-debugging-aspnet-core"></a>Testando e depurando o ASP.NET Core
 
-- [Teste de unidade](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-- [Teste de integração](xref:testing/integration-testing)
-- [Testando os controladores](xref:mvc/controllers/testing)
-- [Depuração remota](https://docs.microsoft.com/visualstudio/debugger/remote-debugging-azure)
+* [Teste de unidade](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [Teste de integração](xref:testing/integration-testing)
+* [Testes de integração e unidade de Páginas Razor](xref:testing/razor-pages-testing)
+* [Testando os controladores](xref:mvc/controllers/testing)
+* [Depuração de origem do ASP.NET Core 2.x](https://github.com/aspnet/Docs/issues/4155)
+* [Depuração remota](/visualstudio/debugger/remote-debugging-azure)
+* [Depuração de instantâneo](/azure/application-insights/app-insights-snapshot-debugger)

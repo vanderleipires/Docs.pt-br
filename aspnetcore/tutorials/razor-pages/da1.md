@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: dfe8136dccb0e98a9fc6b1395161ccb442392c76
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c66bb3a9d766e02c7775906cdd547a0e12c15336
+ms.sourcegitcommit: b38796ea3806bf39b89806adfa681b2a33762907
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="updating-the-generated-pages"></a>Atualizando as páginas geradas
 
@@ -95,7 +95,7 @@ Para testar o bloco `catch`:
 * Em outra janela do navegador, selecione o link **Excluir** do mesmo filme e, em seguida, exclua o filme.
 * Na janela do navegador anterior, poste as alterações no filme.
 
-O código de produção geralmente detectará conflitos de simultaneidade quando dois ou mais clientes atualizarem um registro ao mesmo tempo. Consulte [Tratando conflitos de simultaneidade](xref:data/ef-mvc/concurrency) para obter mais informações.
+O código de produção geralmente detectará conflitos de simultaneidade quando dois ou mais clientes atualizarem um registro ao mesmo tempo. Consulte [Tratando conflitos de simultaneidade](xref:data/ef-rp/concurrency) para obter mais informações.
 
 ### <a name="posting-and-binding-review"></a>Análise de postagem e associação
 
@@ -104,7 +104,7 @@ Examine o arquivo *Pages/Movies/Edit.cshtml.cs*: [!code-csharp[Main](razor-pages
 Quando uma solicitação HTTP GET é feita para a página Movies/Edit (por exemplo, `http://localhost:5000/Movies/Edit/2`):
 
 * O método `OnGetAsync` busca o filme do banco de dados e retorna o método `Page`. 
-* O método `Page` renderiza a página Razor *Pages/Movies/Edit.cshtml*. O arquivo *Pages/Movies/Edit.cshtml* contém a diretiva de modelo (`@model RazorPagesMovie.Pages.Movies.EditModel`), que torna o modelo de filme disponível na página.
+* O método `Page` renderiza a página Razor *Pages/Movies/Edit.cshtml*. O arquivo *Pages/Movies/Edit.cshtml* contém a diretiva de modelo (`@model RazorPagesMovie.Pages.Movies.EditModel`), que disponibiliza o modelo de filme na página.
 * O formulário Editar é exibido com os valores do filme.
 
 Quando a página Movies/Edit é postada:
