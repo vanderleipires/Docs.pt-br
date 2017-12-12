@@ -17,7 +17,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/22/2017
 ---
-# <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade no núcleo do ASP.NET
+# <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade no ASP.NET Core
 
 Por [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), e [Steve Smith](https://ardalis.com/)
 
