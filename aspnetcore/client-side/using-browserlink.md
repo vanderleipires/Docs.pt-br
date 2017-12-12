@@ -18,7 +18,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/11/2017
 ---
-# <a name="browser-link-in-aspnet-core"></a>Link do navegador no núcleo do ASP.NET 
+# <a name="browser-link-in-aspnet-core"></a>Link do navegador no ASP.NET Core
 
 Por [Nicolò Carandini](https://github.com/ncarandini), [Mike Wasson](https://github.com/MikeWasson), e [Tom Dykstra](https://github.com/tdykstra)
 
