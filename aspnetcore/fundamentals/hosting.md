@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 455b992dc10129278f8e23366aac9d8bcbf5594c
-ms.sourcegitcommit: ef9784dd7500f22fb98b3591ebd73d57d4f67544
+ms.openlocfilehash: 7deccf135ddd21729206ebed58ddc8aca52c1deb
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/21/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="hosting-in-aspnet-core"></a>Hospedagem no núcleo do ASP.NET
 
 Por [Luke Latham](https://github.com/guardrex)
 
-Aplicativos ASP.NET Core configurar e iniciar um *host*, que é responsável pelo gerenciamento de inicialização e o tempo de vida do aplicativo. No mínimo, o host configura um servidor e um pipeline de processamento de solicitação.
+Os aplicativos ASP.NET Core configuram e iniciam um *host*, que é responsável pelo gerenciamento de inicialização e de tempo de vida do aplicativo. No mínimo, o host configura um servidor e um pipeline de processamento de solicitação.
 
 ## <a name="setting-up-a-host"></a>Configurando um host
 
@@ -40,12 +40,12 @@ Criar um host usando uma instância de [WebHostBuilder](/dotnet/api/microsoft.as
   * [Segredos do usuário](xref:security/app-secrets) quando o aplicativo é executado no `Development` ambiente.
   * Variáveis de ambiente.
   * Argumentos de linha de comando.
-* Configura [log](xref:fundamentals/logging) para a saída do console e de depuração com [filtragem de log](xref:fundamentals/logging#log-filtering) regras especificadas em uma seção de configuração de log de um *appSettings. JSON* ou *appsettings. . JSON de {ambiente}* arquivo.
+* Configura [log](xref:fundamentals/logging/index) para a saída do console e de depuração com [filtragem de log](xref:fundamentals/logging/index#log-filtering) regras especificadas em uma seção de configuração de log de um *appSettings. JSON* ou *appsettings. . JSON de {ambiente}* arquivo.
 * Quando em execução por trás do IIS, permite [integração IIS](xref:publishing/iis) Configurando o caminho base e a porta do servidor deve escutar ao usar o [ASP.NET Core módulo](xref:fundamentals/servers/aspnet-core-module). O módulo cria um proxy reverso entre o IIS e Kestrel. Também configura o aplicativo [capturar erros de inicialização](#capture-startup-errors). Para as opções de padrão do IIS, consulte [o IIS opções seção de Host ASP.NET Core no Windows com o IIS](xref:publishing/iis#iis-options).
 
 O *conteúdo raiz* determina onde o host procura por arquivos de conteúdo, como arquivos de exibição do MVC. A raiz de conteúdo padrão é [GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory). Isso resulta em usando a pasta raiz do projeto da web como a raiz de conteúdo quando o aplicativo é iniciado na pasta raiz (por exemplo, chamar [dotnet executar](/dotnet/core/tools/dotnet-run) da pasta de projeto). Esse é o padrão usado em [Visual Studio](https://www.visualstudio.com/) e [dotnet novos modelos](/dotnet/core/tools/dotnet-new).
 
-Consulte [configuração no ASP.NET Core](xref:fundamentals/configuration) para obter mais informações sobre a configuração do aplicativo.
+Consulte [configuração no ASP.NET Core](xref:fundamentals/configuration/index) para obter mais informações sobre a configuração do aplicativo.
 
 > [!NOTE]
 > Como uma alternativa ao uso estático `CreateDefaultBuilder` método, criando um host de [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) é uma abordagem com suporte com o ASP.NET Core 2. x. Consulte a guia de 1. x do ASP.NET Core para obter mais informações.
@@ -403,7 +403,7 @@ var host = new WebHostBuilder()
 
 ## <a name="overriding-configuration"></a>Configuração de substituição
 
-Use [configuração](configuration.md) para configurar o host. No exemplo a seguir, a configuração do host é especificada, opcionalmente, em um *hosting.json* arquivo. Qualquer configuração carregados a partir de *hosting.json* arquivo pode ser substituído pelos argumentos de linha de comando. A configuração interna (no `config`) é usado para configurar o host com `UseConfiguration`.
+Use [configuração](xref:fundamentals/configuration/index) para configurar o host. No exemplo a seguir, a configuração do host é especificada, opcionalmente, em um *hosting.json* arquivo. Qualquer configuração carregados a partir de *hosting.json* arquivo pode ser substituído pelos argumentos de linha de comando. A configuração interna (no `config`) é usado para configurar o host com `UseConfiguration`.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

@@ -1,8 +1,8 @@
 ---
 title: Gerenciamento de chaves
 author: rick-anderson
-description: 
-keywords: ASP.NET Core
+description: "Este documento descreve os detalhes da implementação do ASP.NET Core dados proteção gerenciamento APIs."
+keywords: "Gerenciamento de chaves do ASP.NET Core, proteção de dados"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,17 +11,17 @@ ms.assetid: fb9b807a-d143-4861-9ddb-005d8796afa3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 507c00edc5bade2427151ecadfed581817e4d088
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: d9e38fd5c8de2b10ad24fe557aa6e3063e40236e
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="key-management"></a>Gerenciamento de chaves
 
-<a name=data-protection-implementation-key-management></a>
+<a name="data-protection-implementation-key-management"></a>
 
-O sistema de proteção de dados gerencia automaticamente o tempo de vida das chaves mestras usado para proteger e Desproteger cargas. Cada chave pode existir em um dos quatro estágios.
+O sistema de proteção de dados gerencia automaticamente o tempo de vida das chaves mestras usado para proteger e Desproteger cargas. Cada chave pode existir em um dos quatro estágios:
 
 * Criado - a chave existe em anel chave, mas ainda não foi ativada. A chave não deve ser usada para novas operações de proteção até que tenha decorrido tempo suficiente que a chave tenha tido a oportunidade de se propague para todos os computadores que estão consumindo anel essa chave.
 
@@ -44,9 +44,9 @@ A heurística geral é que o sistema de proteção de dados escolhe a chave com 
 
 O motivo pelo qual o sistema de proteção de dados gera uma nova chave imediatamente em vez de fazer fallback para uma chave diferente é que a nova geração de chave deve ser tratada como uma expiração implícita de todas as chaves que foram ativados antes da nova chave. A ideia geral é que novas chaves podem ter sido configuradas com algoritmos diferentes ou mecanismos de criptografia em repouso que as chaves antigas, e o sistema deve preferir a configuração atual em vez de fazer o fallback.
 
-Há uma exceção. Se o desenvolvedor do aplicativo tiver [desabilitado a geração automática de chaves](../configuration/overview.md#data-protection-configuring-disable-automatic-key-generation), em seguida, o sistema de proteção de dados deve escolher algo como a chave padrão. Neste cenário de fallback, o sistema escolherá a chave não revogado com a data de ativação mais recente, com preferência para chaves que tem tido tempo para ser propagada para outros computadores no cluster. O sistema de fallback pode acabar escolhendo uma chave padrão expiradas como resultado. O sistema de fallback nunca escolherá uma chave revogada como a chave padrão e se o anel de chave está vazio ou foi revogado cada chave, em seguida, o sistema produzirá um erro na inicialização.
+Há uma exceção. Se o desenvolvedor do aplicativo tiver [desabilitado a geração automática de chaves](xref:security/data-protection/configuration/overview#disableautomatickeygeneration), em seguida, o sistema de proteção de dados deve escolher algo como a chave padrão. Neste cenário de fallback, o sistema escolherá a chave não revogado com a data de ativação mais recente, com preferência para chaves que tem tido tempo para ser propagada para outros computadores no cluster. O sistema de fallback pode acabar escolhendo uma chave padrão expiradas como resultado. O sistema de fallback nunca escolherá uma chave revogada como a chave padrão e se o anel de chave está vazio ou foi revogado cada chave, em seguida, o sistema produzirá um erro na inicialização.
 
-<a name=data-protection-implementation-key-management-expiration></a>
+<a name="data-protection-implementation-key-management-expiration"></a>
 
 ## <a name="key-expiration-and-rolling"></a>Expiração e sem interrupção
 
@@ -62,24 +62,24 @@ O tempo de vida de chave padrão é de 90 dias, embora isso é configurado como 
 services.AddDataProtection()
        // use 14-day lifetime instead of 90-day lifetime
        .SetDefaultKeyLifetime(TimeSpan.FromDays(14));
-   ```
+```
 
-Um administrador também pode alterar o padrão geral do sistema, embora uma chamada explícita para SetDefaultKeyLifetime substituirá qualquer política de todo o sistema. O tempo de vida de chave padrão não pode ser menor do que 7 dias.
+Um administrador também pode alterar o padrão para todo o sistema, embora uma chamada explícita para `SetDefaultKeyLifetime` substituirá qualquer política de todo o sistema. O tempo de vida de chave padrão não pode ser menor do que 7 dias.
 
-## <a name="automatic-keyring-refresh"></a>Atualização automática do token de autenticação
+## <a name="automatic-key-ring-refresh"></a>Atualização automática anel de chave
 
 Quando o sistema de proteção de dados inicializado, ele lê o anel de chave do repositório subjacente e armazena em cache na memória. Esse cache permite proteger e Desproteger operações continuem sem atingir o armazenamento de backup. O sistema verifica automaticamente o repositório de backup para alterações de aproximadamente a cada 24 horas ou quando a chave padrão atual expirar, o que ocorrer primeiro.
 
 >[!WARNING]
 > Os desenvolvedores devem muito raramente (se) precisa usar APIs de gerenciamento de chave diretamente. O sistema de proteção de dados executará gerenciamento automático de chaves, conforme descrito acima.
 
-O sistema de proteção de dados expõe uma interface IKeyManager que pode ser usado para inspecionar e fazer alterações para o anel de chave. O sistema de DI que forneceu a instância do IDataProtectionProvider também pode fornecer uma instância de IKeyManager para seu consumo. Como alternativa, você pode puxe a IKeyManager do IServiceProvider como no exemplo a seguir.
+O sistema de proteção de dados expõe uma interface `IKeyManager` que pode ser usado para inspecionar e fazer alterações para o anel de chave. O sistema de DI que forneceu a instância do `IDataProtectionProvider` também pode fornecer uma instância de `IKeyManager` para seu consumo. Como alternativa, você pode extrair o `IKeyManager` diretamente do `IServiceProvider` como no exemplo a seguir.
 
-Qualquer operação que modifica o anel de chave (Criando uma nova chave explicitamente ou uma revogação) invalida o cache na memória. A próxima chamada para proteger ou desproteger fará com que o sistema de proteção de dados reler o anel de chave e recriar o cache.
+Qualquer operação que modifica o anel de chave (Criando uma nova chave explicitamente ou uma revogação) invalida o cache na memória. A próxima chamada para `Protect` ou `Unprotect` fará com que o sistema de proteção de dados reler o anel de chave e recriar o cache.
 
-O exemplo a seguir demonstra como usar a interface IKeyManager para inspecionar e manipular o anel de chave, incluindo a revogação existente chaves e gerar uma nova chave manualmente.
+O exemplo a seguir demonstra como usar o `IKeyManager` interface para inspecionar e manipular o anel de chave, incluindo a revogação existente chaves e gerar uma nova chave manualmente.
 
-[!code-none[Main](key-management/samples/key-management.cs)]
+[!code-csharp[Main](key-management/samples/key-management.cs)]
 
 ## <a name="key-storage"></a>Armazenamento de chaves
 

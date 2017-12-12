@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: c5d8506c1bc8e6364d01596a0c82e1da41eea4ca
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 352d125b9042c603b59ed9bda0e99b6a49c7ab9f
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Provedor de configuração do Cofre de chaves do Azure
 
@@ -58,7 +58,7 @@ O provedor é adicionado para o `ConfigurationBuilder` com o `AddAzureKeyVault` 
 1. Criar um cofre de chaves e configurar o Azure Active Directory (AD do Azure) para o aplicativo seguindo as orientações em [Introdução ao Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
   * Adicionar segredos no cofre de chaves usando o [AzureRM chave cofre PowerShell módulo](/powershell/module/azurerm.keyvault) disponíveis no [Galeria do PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), o [API de REST do Cofre de chaves do Azure](/rest/api/keyvault/), ou o [Portal do azure](https://portal.azure.com/). Os segredos são criados como *Manual* ou *certificado* segredos. *Certificado* segredos são certificados para uso por aplicativos e serviços, mas não são suportados pelo provedor de configuração. Você deve usar o *Manual* opção para criar os segredos do par nome-valor para uso com o provedor de configuração.
     * Segredos simples são criados como pares nome-valor. Nomes de segredo de Cofre de chaves do Azure são limitados a caracteres alfanuméricos e traços.
-    * Usam valores hierárquicos (seções de configuração) `--` (dois traços) como um separador no exemplo. Dois-pontos, que normalmente são usadas para delimitar uma seção de uma subchave no [configuração do ASP.NET Core](xref:fundamentals/configuration), não são permitidos em nomes de segredo. Portanto, dois traços são usados e trocados para dois-pontos quando os segredos são carregados na configuração do aplicativo.
+    * Usam valores hierárquicos (seções de configuração) `--` (dois traços) como um separador no exemplo. Dois-pontos, que normalmente são usadas para delimitar uma seção de uma subchave no [configuração do ASP.NET Core](xref:fundamentals/configuration/index), não são permitidos em nomes de segredo. Portanto, dois traços são usados e trocados para dois-pontos quando os segredos são carregados na configuração do aplicativo.
     * Criar dois *Manual* segredos com os seguintes pares de nome-valor. O segredo primeiro é um nome simples e um valor e o segredo do segundo cria um valor secreto com uma seção e uma subchave no nome do segredo:
       * `SecretName`: `secret_value_1`
       * `Section--SecretName`: `secret_value_2`
@@ -146,7 +146,7 @@ Configuration.Reload();
 Segredos desabilitados e expirados lançam um `KeyVaultClientException`. Para impedir que seu aplicativo lançando, substitua o seu aplicativo ou atualizar o segredo desabilitado/expirado.
 
 ## <a name="troubleshooting"></a>Solução de problemas
-Quando o aplicativo falhar ao carregar a configuração usando o provedor, uma mensagem de erro é gravada para o [infraestrutura ASP.NET log](xref:fundamentals/logging). As seguintes condições impedirá que a configuração de carregamento:
+Quando o aplicativo falhar ao carregar a configuração usando o provedor, uma mensagem de erro é gravada para o [infraestrutura ASP.NET log](xref:fundamentals/logging/index). As seguintes condições impedirá que a configuração de carregamento:
 * O aplicativo não está configurado corretamente no Active Directory do Azure.
 * O Cofre de chaves não existe no cofre de chaves do Azure.
 * O aplicativo não está autorizado a acessar o Cofre de chaves.
@@ -157,7 +157,7 @@ Quando o aplicativo falhar ao carregar a configuração usando o provedor, uma m
 * A chave de configuração (nome) está incorreta no aplicativo para o valor que você está tentando carregar.
 
 ## <a name="additional-resources"></a>Recursos adicionais
-* <xref:fundamentals/configuration>
+* [Configuração](xref:fundamentals/configuration/index)
 * [Microsoft Azure: Cofre de chaves](https://azure.microsoft.com/services/key-vault/)
 * [Do Microsoft Azure: Documentação do Cofre de chaves](https://docs.microsoft.com/azure/key-vault/)
 * [Chaves de como gerar e transferir protegida por HSM do Cofre de chaves do Azure](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys)

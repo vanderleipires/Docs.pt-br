@@ -1,8 +1,8 @@
 ---
 title: "Cabeçalhos de contexto"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Este documento descreve os detalhes de implementação de cabeçalhos de contexto de proteção de dados do ASP.NET Core."
+keywords: "ASP.NET Core, proteção de dados, os cabeçalhos de contexto"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: d026a58c-67f4-411e-a410-c35f29c2c517
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: a47d2f91e6764bf6760ea559f1e2753e966753e3
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: eb8e4c9ad67d3046648aea1b45f4a675b41b3ec0
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="context-headers"></a>Cabeçalhos de contexto
 
-<a name=data-protection-implementation-context-headers></a>
+<a name="data-protection-implementation-context-headers"></a>
 
 ## <a name="background-and-theory"></a>Plano de fundo e a teoria
 
@@ -33,7 +33,7 @@ Podemos usar esse conceito de alta segurança PRPs e PRFs para criar um cabeçal
 
 ## <a name="cbc-mode-encryption--hmac-authentication"></a>Criptografia de modo CBC + autenticação HMAC
 
-<a name=data-protection-implementation-context-headers-cbc-components></a>
+<a name="data-protection-implementation-context-headers-cbc-components"></a>
 
 O cabeçalho de contexto consiste dos seguintes componentes:
 
@@ -51,7 +51,7 @@ O cabeçalho de contexto consiste dos seguintes componentes:
 
 * MAC (K_H, ""), que é a saída do algoritmo HMAC recebe uma entrada de cadeia de caracteres vazia. A construção de K_H é descrita abaixo.
 
-O ideal é poderíamos passar vetores de zeros para K_E e K_H. No entanto, queremos evitar a situação em que o algoritmo subjacente verifica a existência de baixa segurança chaves antes de executar quaisquer operações (especialmente DES e 3DES), que impede usando um padrão simple ou repeatable como um vetor de zeros.
+Idealmente, poderíamos passar vetores de zeros para K_E e K_H. No entanto, queremos evitar a situação em que o algoritmo subjacente verifica a existência de baixa segurança chaves antes de executar quaisquer operações (especialmente DES e 3DES), que impede usando um padrão simple ou repeatable como um vetor de zeros.
 
 Em vez disso, usamos o NIST SP800-108 KDF no modo de contador (consulte [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), SEC 5.1) com uma chave de comprimento zero, o rótulo e o contexto e a HMACSHA512 como o PRF subjacente. Podemos derivar | K_E | + | K_H | bytes de saída, em seguida, decompor o resultado em K_E e K_H próprios. Matematicamente, isso é representado como a seguir.
 

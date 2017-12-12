@@ -11,11 +11,11 @@ ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/model-binding
-ms.openlocfilehash: 92085829d2a37a2aa6080aeb34a5e14be95e02d8
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 40aa105dcf06b269025d0c44e5cd7bffef271e9d
+ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="model-binding"></a>Associação de modelo
 
@@ -61,9 +61,19 @@ Até agora, o exemplo usa tipos simples. No MVC tipos simples são qualquer tipo
 
 Em ordem de associação para a classe deve ter um construtor padrão público e membro a ser associado deve ser públicas propriedades graváveis. Quando a associação de modelo ocorrer que a classe só será instanciada usando o construtor padrão público, as propriedades podem ser definidas.
 
-Quando um parâmetro é vinculado, associação de modelo para procurar por valores com esse nome e ele prossegue para associar o próximo parâmetro. Se a ligação falha, o MVC não gerará um erro. Você pode consultar os erros de estado de modelo, verificando o `ModelState.IsValid` propriedade.
+Quando um parâmetro é vinculado, associação de modelo para procurar por valores com esse nome e ele prossegue para associar o próximo parâmetro. Caso contrário, o comportamento de associação de modelo padrão define parâmetros para seus valores padrão, dependendo de seu tipo:
 
-Observação: Cada entrada no controlador de `ModelState` propriedade é um `ModelStateEntry` que contém um `Errors property`. Raramente é necessário para esta coleção de consulta por conta própria. Use `ModelState.IsValid` em seu lugar.
+* `T[]`: Com a exceção de matrizes do tipo `byte[]`, associação define parâmetros de tipo `T[]` para `Array.Empty<T>()`. Matrizes do tipo `byte[]` são definidos como `null`.
+
+* Tipos de referência: Associação cria uma instância de uma classe com o construtor padrão sem definir propriedades. No entanto, os conjuntos de associação de modelo `string` parâmetros para `null`.
+
+* Tipos anuláveis: Tipos anuláveis são definidos como `null`. No exemplo acima, os conjuntos de associação de modelo `id` para `null` desde que ela é do tipo `int?`.
+
+* Tipos de valor: Tipos de valor não anuláveis do tipo `T` são definidos como `default(T)`. Por exemplo, a associação de modelo definirá um parâmetro `int id` como 0. Considere usar a validação do modelo ou tipos anuláveis em vez de valores padrão.
+
+Se a ligação falha, o MVC não gerará um erro. Todas as ações que aceita a entrada do usuário devem verificar o `ModelState.IsValid` propriedade.
+
+Observação: Cada entrada no controlador de `ModelState` propriedade é um `ModelStateEntry` que contém um `Errors` propriedade. Raramente é necessário para esta coleção de consulta por conta própria. Use `ModelState.IsValid` em seu lugar.
 
 Além disso, há alguns tipos de dados especiais que MVC deve considerar ao realizar a associação de modelo:
 

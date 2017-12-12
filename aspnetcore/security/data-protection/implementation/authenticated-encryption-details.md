@@ -1,8 +1,8 @@
 ---
-title: Detalhes de criptografia autenticada.
+title: Detalhes de criptografia autenticada
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Este documento de descreve os detalhes de implementação de proteção de dados do ASP.NET Core autenticado criptografia."
+keywords: "Criptografia de autenticação do ASP.NET Core, proteção de dados,"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 826e6d5d-9620-44e6-ad93-3b1d9969b70b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: 4d0e63d7722071ab8806a217e96ee7ad7bf10286
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: dc96412f6578e612a39e86ce00e1dc5a20cf84e9
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="authenticated-encryption-details"></a>Detalhes de criptografia autenticada.
+# <a name="authenticated-encryption-details"></a>Detalhes de criptografia autenticada
 
-<a name=data-protection-implementation-authenticated-encryption-details></a>
+<a name="data-protection-implementation-authenticated-encryption-details"></a>
 
 Chamadas para IDataProtector.Protect são as operações de criptografia autenticada. O método Protect oferece confidencialidade e a autenticidade e ela é vinculada à cadeia finalidade que foi usada para essa instância específica do IDataProtector derivam da sua raiz IDataProtectionProvider.
 

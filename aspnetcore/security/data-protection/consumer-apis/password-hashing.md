@@ -1,8 +1,8 @@
 ---
 title: Hash de senha
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Este documento explica como hash senhas usando as APIs de proteção de dados ASP.NET Core."
+keywords: "ASP.NET Core, proteção de dados, o hash de senha"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: 982a1eb2-1e6f-4909-896f-82784364472d
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/password-hashing
-ms.openlocfilehash: d4b39bf7feba8a29e0b5c9e56d53a85b82977b7e
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: da9f505f58f18f7ab3b93753bae079eb976b3939
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="password-hashing"></a>Hash de senha
 

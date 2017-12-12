@@ -1,26 +1,24 @@
 ---
 title: "O cache de resposta no núcleo do ASP.NET"
 author: rick-anderson
-description: Saiba como usar o cache para reduzir a largura de banda e melhorar o desempenho de resposta.
-keywords: "ASP.NET Core, cache, cabeçalhos HTTP de resposta"
+description: Saiba como usar a resposta em cache para reduzir os requisitos de largura de banda e melhorar o desempenho de aplicativos do ASP.NET Core.
 ms.author: riande
 manager: wpickett
 ms.date: 09/20/2017
 ms.topic: article
-ms.assetid: cb42035a-60b0-472e-a614-cb79f443f654
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 79d9246632aae0fe9c3629fd7202842836828151
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 104cfb2eab706a2ec6278b4d1c461f70b0af5df1
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="response-caching-in-aspnet-core"></a>O cache de resposta no núcleo do ASP.NET
 
 Por [John Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), e [Luke Latham](https://github.com/guardrex)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 O cache de resposta reduz o número de solicitações de que um cliente ou um proxy faz a um servidor web. O cache de resposta também reduz a quantidade de trabalho do servidor web executa para gerar uma resposta. O cache de resposta é controlado por cabeçalhos que especifique como deseja middleware para respostas de cache de cliente e proxy.
 
@@ -179,4 +177,9 @@ Cache-Control: public,max-age=60
 
 * [Armazenamento em cache em HTTP da especificação](https://tools.ietf.org/html/rfc7234#section-3)
 * [Controle de cache](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
+* [O armazenamento em cache na memória](xref:performance/caching/memory)
+* [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
+* [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)
+* [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

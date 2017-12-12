@@ -11,11 +11,11 @@ ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: daf6dd8024863e02e40ad002a0a7da388f5a2ec7
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: b59782bccce00f3940da4ec8bcff768aff8fa4ef
+ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Atualizando dados relacionados - Core de EF com o tutorial do MVC do ASP.NET Core (7 de 10)
 
@@ -129,7 +129,7 @@ O código faz o seguinte:
 
 -  Obtém a entidade atual do instrutor do banco de dados usando para o carregamento rápido de `OfficeAssignment` propriedade de navegação. Isso é o mesmo que você fez o HttpGet `Edit` método.
 
--  Atualiza a entidade recuperada do instrutor com valores de associador de modelo. O `TryUpdateModel` sobrecarga permite que você adicionar à lista de permissões as propriedades que você deseja incluir. Isso impede o excesso de lançamento, conforme explicado no [segundo tutorial](crud.md).
+-  Atualiza a entidade recuperada do instrutor com valores de associador de modelo. O `TryUpdateModel` sobrecarga permite que você adicionar à lista branca as propriedades que você deseja incluir. Isso impede o excesso de lançamento, conforme explicado no [segundo tutorial](crud.md).
 
     <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
@@ -197,7 +197,7 @@ Em seguida, adicione o código que é executado quando o usuário clica **salvar
 
 A assinatura do método agora é diferente do HttpGet `Edit` método, para que o nome do método é alterado de `EditPost` para `Edit`.
 
-Como o modo de exibição não tem uma coleção de entidades de curso, o associador de modelo não é possível atualizar automaticamente o `CourseAssignments` propriedade de navegação. Em vez de usar o associador de modelo para atualizar o `CourseAssignments` propriedade de navegação, você pode fazer isso no novo `UpdateInstructorCourses` método. Portanto, você precisa excluir o `CourseAssignments` propriedade de associação de modelo. Isso não requer nenhuma alteração ao código que chama `TryUpdateModel` porque você está usando a sobrecarga de lista de permissões e `CourseAssignments` não estiver na lista de inclusão.
+Como o modo de exibição não tem uma coleção de entidades de curso, o associador de modelo não é possível atualizar automaticamente o `CourseAssignments` propriedade de navegação. Em vez de usar o associador de modelo para atualizar o `CourseAssignments` propriedade de navegação, você pode fazer isso no novo `UpdateInstructorCourses` método. Portanto, você precisa excluir o `CourseAssignments` propriedade de associação de modelo. Isso não requer nenhuma alteração ao código que chama `TryUpdateModel` porque você está usando a sobrecarga de lista branca e `CourseAssignments` não estiver na lista de inclusão.
 
 Se nenhuma seleção caixas tiverem sido selecionadas, o código em `UpdateInstructorCourses` inicializa o `CourseAssignments` propriedade de navegação com uma coleção vazia e retorna:
 
@@ -219,7 +219,7 @@ Em *Views/Instructors/Edit.cshtml*, adicionar um **cursos** campo com uma matriz
 
 <a id="notepad"></a>
 > [!NOTE] 
-> Quando você colar o código no Visual Studio, quebras de linha serão alteradas de forma que interrompe o código.  Pressione Ctrl + Z uma vez para desfazer a formatação automática.  Isso será corrigido as quebras de linha para que eles se parecer com o que você vê aqui. O recuo não precisa ser perfeito, mas o `@</tr><tr>`, `@:<td>`, `@:</td>`, e `@:</tr>` linhas devem ser em uma única linha conforme mostrado, ou você receberá um erro de tempo de execução. Com o bloco de código novo selecionado, pressione Tab três vezes para alinhar o novo código com o código existente.
+> Quando você colar o código no Visual Studio, quebras de linha serão alteradas de forma que interrompe o código.  Pressione Ctrl + Z uma vez para desfazer a formatação automática.  Isso será corrigido as quebras de linha para que eles se parecer com o que você vê aqui. O recuo não precisa ser perfeito, mas o `@</tr><tr>`, `@:<td>`, `@:</td>`, e `@:</tr>` linhas devem ser em uma única linha conforme mostrado, ou você receberá um erro de tempo de execução. Com o bloco de código novo selecionado, pressione Tab três vezes para alinhar o novo código com o código existente. Você pode verificar o status desse problema [aqui](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html).
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 

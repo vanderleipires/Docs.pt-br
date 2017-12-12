@@ -1,8 +1,8 @@
 ---
 title: "Habilitar solicitações entre origens (CORS)"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Este documento apresenta CORS como um padrão para permitir ou rejeitar solicitações entre origens em um aplicativo do ASP.NET Core."
+keywords: "ASP.NET Core, CORS, distribuição de origem"
 ms.author: riande
 manager: wpickett
 ms.date: 05/17/2017
@@ -11,11 +11,11 @@ ms.assetid: f9d95e88-4d7e-4d0c-a8e1-47de1128d505
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: e441ce1c50139a5b33865eec8e8d99764258730d
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 5398b6ad6531710de2b8000cb368e5fa607ae7ff
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Habilitar solicitações entre origens (CORS)
 
@@ -219,7 +219,7 @@ O cabeçalho de acesso-controle-Max-Age Especifica quanto tempo a resposta à so
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
-<a name=cors-how-cors-works></a>
+<a name="cors-how-cors-works"></a>
 
 ## <a name="how-cors-works"></a>Como funciona o CORS
 
@@ -240,7 +240,7 @@ User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6
 Host: myservice.azurewebsites.net
 ```
 
-Se o servidor permite que a solicitação, ele define o cabeçalho Access-Control-Allow-Origin. O valor desse cabeçalho corresponde o cabeçalho de origem, tanto é o valor de curinga "*", o que significa que qualquer origem é permitida.:
+Se o servidor permite que a solicitação, ele define o cabeçalho Access-Control-Allow-Origin na resposta. O valor desse cabeçalho corresponde o cabeçalho de origem da solicitação tanto é o valor de curinga "*", o que significa que qualquer origem é permitida:
 
 ```
 HTTP/1.1 200 OK

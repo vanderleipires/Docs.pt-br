@@ -1,28 +1,26 @@
 ---
 title: "Cache de memória no núcleo do ASP.NET"
 author: rick-anderson
-description: "Mostra como armazenar em cache os dados na memória no núcleo do ASP.NET."
-keywords: "ASP.NET Core, o desempenho do cache, na memória,"
+description: "Saiba como armazenar em cache os dados na memória no núcleo do ASP.NET."
 ms.author: riande
 manager: wpickett
 ms.date: 12/14/2016
 ms.topic: article
-ms.assetid: 819511cf-d33e-410a-b5a9-bef7fa64d2f3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/memory
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5ce865427b6ca44c76888908fdeea9cd45c881c4
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 23312e73b4530b24b8479e2d379f16315b672ca4
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="introduction-to-in-memory-caching-in-aspnet-core"></a>Introdução ao cache na memória no núcleo do ASP.NET
+# <a name="in-memory-caching-in-aspnet-core"></a>Cache de memória no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), e [Steve Smith](https://ardalis.com/)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="caching-basics"></a>Noções básicas de cache
 
@@ -89,7 +87,7 @@ O exemplo a seguir mostra como expirar uma entrada de cache, se uma entrada depe
 
 Usando um `CancellationTokenSource` permite que várias entradas de cache a ser removido como um grupo. Com o `using` padrão no código acima, as entradas de cache criado dentro de `using` bloco herdará as configurações de expiração e gatilhos.
 
-### <a name="additional-notes"></a>Observações adicionais
+## <a name="additional-notes"></a>Observações adicionais
 
 - Ao usar um retorno de chamada para preencher novamente um item de cache:
 
@@ -98,7 +96,11 @@ Usando um `CancellationTokenSource` permite que várias entradas de cache a ser 
 
 - Quando uma entrada de cache é usada para criar outra, o filho copia a entrada de pai tokens de expiração e as configurações de expiração do tempo. O filho não está expirada pela remoção manual ou atualização da entrada do pai.
 
-### <a name="other-resources"></a>Outros recursos
+## <a name="additional-resources"></a>Recursos adicionais
 
-* [Trabalhando com um cache distribuído](distributed.md)
-* [Middleware de cache de resposta](middleware.md)
+* [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
+* [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
+* [Cache de resposta](xref:performance/caching/response)
+* [Middleware de Cache de Resposta](xref:performance/caching/middleware)
+* [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

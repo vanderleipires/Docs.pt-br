@@ -1,8 +1,8 @@
 ---
 title: "Impedindo a execução de scripts entre sites"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core
+description: "Este documento apresenta a execução de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo do ASP.NET Core."
+keywords: Vulnerabilidade do ASP.NET Core, XSS,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 95790927-2bfe-445e-b1fd-429c2c7030ce
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: 1816977837efd82f374a03d9f776db21358e2850
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: fdb26a8338b98135cfc3f6bce9d87285e9a7eb12
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="preventing-cross-site-scripting"></a>Impedindo a execução de scripts entre sites
 
-<a name=security-cross-site-scripting></a>
+Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Execução de scripts entre sites (XSS) é uma vulnerabilidade de segurança que permite que um invasor inserir os scripts do lado do cliente (geralmente JavaScript) em páginas da web. Quando outros usuários carregar páginas afetadas, os invasores scripts serão executados, permitindo que o invasor roubar cookies e tokens de sessão, alterar o conteúdo da página da web por meio de manipulação de DOM ou redirecionar o navegador para outra página. Vulnerabilidades XSS geralmente ocorrem quando um aplicativo usa a entrada do usuário e passa em uma página sem validação, codificação ou escape-lo.
 
@@ -183,7 +183,7 @@ Após a codificação de encodedValue variável conterá `%22Quoted%20Value%20wi
 >[!WARNING]
 > Não use a entrada não confiável como parte de um caminho de URL. Sempre passe a entrada não confiável como um valor de cadeia de caracteres de consulta.
 
-<a name=security-cross-site-scripting-customization></a>
+<a name="security-cross-site-scripting-customization"></a>
 
 ## <a name="customizing-the-encoders"></a>Personalizando os codificadores
 

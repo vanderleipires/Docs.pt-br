@@ -11,11 +11,11 @@ ms.assetid: 26250a4d-bf62-4d45-8549-26801cf956e9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/routing
-ms.openlocfilehash: cc3277400aee956f47c53e5a4f3d4e84d3a3d1a3
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.openlocfilehash: d6e230351eb2f4c8549b54d75fd8e345718e6109
+ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="routing-to-controller-actions"></a>O roteamento para ações do controlador
 
@@ -206,7 +206,7 @@ app.UseMvc(routes =>
 });
 ```
 
-Os nomes de rota dar um nome lógico a rota para que a rota nomeada pode ser usada para a geração de URL. Isso simplifica a criação de URL quando a ordenação de rotas pode tornar complicada de geração de URL. Nomes de rotas devem ser exclusivos de nível de aplicativo.
+Os nomes de rota dar um nome lógico a rota para que a rota nomeada pode ser usada para a geração de URL. Isso simplifica a criação de URL quando a ordenação de rotas pode tornar complicada de geração de URL. Os nomes de rota devem ser exclusivo do nível de aplicativo.
 
 Os nomes de rota não têm impacto em URL correspondente ou tratamento de solicitações; eles são usados apenas para geração de URL. [Roteamento](xref:fundamentals/routing) tem informações mais detalhadas sobre geração de URL, incluindo geração de URL em auxiliares MVC específicos.
 

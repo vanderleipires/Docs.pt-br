@@ -1,8 +1,8 @@
 ---
-title: "Cenários com suporte a DI não"
+title: "Cenários de reconhecimento não DI para proteção de dados no ASP.NET Core"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core
+description: "Saiba como dar suporte a cenários de proteção de dados em que você não pode ou não quiser usar um serviço fornecido pela injeção de dependência."
+keywords: "ASP.NET Core, proteção de dados, injeção de dependência, DataProtectionProvider"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,30 +11,29 @@ ms.assetid: a7d8a962-80ff-48e3-96f6-8472b7ba2df9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/non-di-scenarios
-ms.openlocfilehash: 54a930c26f9f48ea0e6f7865e2927bcde0f4d6c0
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 375eecf649819dce8f1c2ba30e1cb6451d1c1253
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="non-di-aware-scenarios"></a>Cenários com suporte a DI não
+# <a name="non-di-aware-scenarios-for-data-protection-in-aspnet-core"></a>Cenários de reconhecimento não DI para proteção de dados no ASP.NET Core
 
-O sistema de proteção de dados normalmente é projetado [a ser adicionado a um contêiner de serviço](../consumer-apis/overview.md) e a ser fornecido para os componentes dependentes por meio de um mecanismo de injeção de dependência. No entanto, pode haver alguns casos em que isso não é viável, especialmente ao importar o sistema para um aplicativo existente.
+Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Para dar suporte a esses cenários o pacote Microsoft.AspNetCore.DataProtection.Extensions fornece um tipo concreto DataProtectionProvider que oferece uma maneira simples de usar o sistema de proteção de dados sem passar pelo caminhos de código específico de injeção de dependência. O próprio tipo implementa IDataProtectionProvider e criá-la é tão fácil quanto fornecer um DirectoryInfo onde as chaves de criptografia do provedor devem ser armazenadas.
+O sistema de proteção de dados do ASP.NET Core é normalmente [adicionada a um contêiner de serviço](xref:security/data-protection/consumer-apis/overview) e consumido por componentes dependentes por meio de injeção de dependência (DI). No entanto, há casos em que isso não é possível ou desejado, especialmente ao importar o sistema para um aplicativo existente.
 
-Por exemplo:
+Para dar suporte a esses cenários, o [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) pacote fornece um tipo concreto, [DataProtectionProvider](/dotnet/api/Microsoft.AspNetCore.DataProtection.DataProtectionProvider), que oferece uma maneira simples de usar a proteção de dados sem depender de injeção de dependência. O `DataProtectionProvider` tipo implementa [IDataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionprovider). Construindo `DataProtectionProvider` requer apenas fornecer um [DirectoryInfo](/dotnet/api/system.io.directoryinfo) instância para indicar onde as chaves de criptografia do provedor devem ser armazenadas, como mostrado no exemplo de código a seguir:
 
 [!code-none[Main](non-di-scenarios/_static/nodisample1.cs)]
 
->[!WARNING]
-> Por padrão o DataProtectionProvider tipo concreto não criptografa material de chave bruto persisti-los antes do sistema de arquivos. Isso é para dar suporte a cenários onde os pontos de desenvolvedor para uma rede de compartilham, caso em que o sistema de proteção de dados não é possível deduzir automaticamente um mecanismo de criptografia de chave apropriado em repouso.
->
->Além disso, o tipo concreto DataProtectionProvider não [isolar aplicativos](overview.md#data-protection-configuration-per-app-isolation) por padrão, para que todos os aplicativos apontados para o mesmo diretório chave podem compartilhar cargas como sua finalidade correspondem.
+Por padrão, o `DataProtectionProvider` tipo concreto não criptografa a chave primas persisti-los antes do sistema de arquivos. Isso é para dar suporte a cenários onde os pontos de desenvolvedor para um compartilhamento de rede e o sistema de proteção de dados não é possível deduzir automaticamente um mecanismo de criptografia de chave apropriado em repouso.
 
-O desenvolvedor do aplicativo pode atender a ambas se desejado. O construtor DataProtectionProvider aceita um [retorno de chamada de configuração opcional](overview.md#data-protection-configuration-callback) que pode ser usado para ajustar os comportamentos do sistema. O exemplo a seguir demonstra a restauração isolamento por meio de uma chamada explícita para SetApplicationName e também demonstra como configurar o sistema para criptografar automaticamente chaves persistentes usando Windows DPAPI. Se o diretório aponta para um compartilhamento UNC, você poderá distribuir um certificado compartilhado por todos os computadores relevantes e para configurar o sistema para usar a criptografia baseada em certificado em vez disso, por meio de uma chamada para [ProtectKeysWithCertificate](overview.md#configuring-x509-certificate).
+Além disso, o `DataProtectionProvider` tipo concreto não [isolar os aplicativos](xref:security/data-protection/configuration/overview#per-application-isolation) por padrão. Todos os aplicativos usando o mesmo diretório principal podem compartilhar cargas, contanto que seus [finalidade parâmetros](xref:security/data-protection/consumer-apis/purpose-strings) corresponder.
+
+O [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider) construtor aceita um retorno de chamada de configuração opcional que pode ser usado para ajustar os comportamentos do sistema. O exemplo a seguir demonstra o isolamento de restauração com uma chamada explícita para [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname). O exemplo também demonstra como configurar o sistema para criptografar automaticamente chaves persistentes usando Windows DPAPI. Se o diretório aponta para um compartilhamento UNC, você poderá distribuir um certificado compartilhado por todos os computadores relevantes e para configurar o sistema para usar a criptografia baseada em certificado com uma chamada para [ProtectKeysWithCertificate](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithcertificate).
 
 [!code-none[Main](non-di-scenarios/_static/nodisample2.cs)]
 
->[!TIP]
-> Instâncias do tipo concreto DataProtectionProvider são caras de criar. Se um aplicativo mantém várias instâncias desse tipo e se eles está apontado no mesmo diretório de armazenamento de chaves, o desempenho do aplicativo pode ser degradado. O uso pretendido é que o desenvolvedor do aplicativo instanciar esse tipo de uma vez, em seguida, mantenha a reutilizar essa referência único tanto quanto possível. O tipo de DataProtectionProvider e todas as instâncias de IDataProtector criadas a partir dele são thread-safe para chamadores vários.
+> [!TIP]
+> Instâncias de `DataProtectionProvider` tipo concreto são caros de criar. Se um aplicativo mantém várias instâncias desse tipo e se eles estão usando o mesmo diretório de armazenamento de chaves, pode afetar o desempenho do aplicativo. Se você usar o `DataProtectionProvider` tipo, recomendamos que você cria esse tipo de uma vez e reutilizá-la tanto quanto possível. O `DataProtectionProvider` tipo e todos os [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector) instâncias criadas a partir dela são thread-safe para chamadores vários.

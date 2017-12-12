@@ -1,8 +1,8 @@
 ---
 title: "Autorização personalizada com base em políticas"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Este documento explica como criar e usar manipuladores de diretiva de autorização personalizada em um aplicativo do ASP.NET Core."
+keywords: "ASP.NET Core, autorização, a política personalizada, a política de autorização"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,17 +11,17 @@ ms.assetid: e422a1b2-dc4a-4bcc-b8d9-7ee62009b6a3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: 5021b5d20f6d9b9a4d8889f25b5e41f2c9306f64
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 0281d054204a11acc2cf11cf5fca23a8f70aad8e
+ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="custom-policy-based-authorization"></a>Autorização personalizada com base em políticas
 
-<a name=security-authorization-policies-based></a>
+<a name="security-authorization-policies-based"></a>
 
-Nos bastidores a [autorização de função](roles.md#security-authorization-role-based) e [declarações de autorização](claims.md#security-authorization-claims-based) fazer uso de um requisito, um manipulador para o requisito e uma política de pré-configurada. Esses blocos de construção que você express avaliações de autorização no código, permitindo uma avançada reutilizável e a estrutura de autorização facilmente testáveis.
+Nos bastidores, o [autorização de função](roles.md) e [declarações de autorização](claims.md) fazer uso de um requisito, um manipulador para o requisito e uma política de pré-configurada. Esses blocos de construção que você express avaliações de autorização no código, permitindo uma avançada reutilizável e a estrutura de autorização facilmente testáveis.
 
 Uma política de autorização é composta de um ou mais requisitos e registrada na inicialização do aplicativo como parte da configuração do serviço de autorização no `ConfigureServices` no *Startup.cs* arquivo.
 
@@ -58,7 +58,7 @@ public class AlcoholPurchaseRequirementsController : Controller
 
 ## <a name="requirements"></a>Requisitos
 
-Um requisito de autorização é uma coleção de parâmetros de dados que uma política pode usar para avaliar a entidade de segurança do usuário atual. Em nossa política de idade mínima o requisito que temos é um único parâmetro, a idade mínima. Um requisito deve implementar `IAuthorizationRequirement`. Esta é uma interface de marcador vazio. Um requisito de idade mínima com parâmetros pode ser implementado como se segue;
+Um requisito de autorização é uma coleção de parâmetros de dados que uma política pode usar para avaliar a entidade de segurança do usuário atual. Em nossa política de idade mínima, o requisito que temos é um único parâmetro, a idade mínima. Um requisito deve implementar `IAuthorizationRequirement`. Esta é uma interface de marcador vazio. Um requisito de idade mínima com parâmetros pode ser implementado como se segue;
 
 ```csharp
 public class MinimumAgeRequirement : IAuthorizationRequirement
@@ -74,13 +74,13 @@ public class MinimumAgeRequirement : IAuthorizationRequirement
 
 Um requisito não precisa ter dados ou propriedades.
 
-<a name=security-authorization-policies-based-authorization-handler></a>
+<a name="security-authorization-policies-based-authorization-handler"></a>
 
 ## <a name="authorization-handlers"></a>Manipuladores de autorização
 
 Um manipulador de autorização é responsável pela avaliação de todas as propriedades de um requisito. O manipulador de autorização deve avaliar em relação a um fornecido `AuthorizationHandlerContext` para decidir se a autorização é permitida. Pode ter um requisito [vários manipuladores](policies.md#security-authorization-policies-based-multiple-handlers). Manipuladores devem herdar `AuthorizationHandler<T>` onde T é o requisito trata.
 
-<a name=security-authorization-handler-example></a>
+<a name="security-authorization-handler-example"></a>
 
 O manipulador de idade mínima pode ter esta aparência:
 
@@ -114,10 +114,11 @@ public class MinimumAgeHandler : AuthorizationHandler<MinimumAgeRequirement>
 }
 ```
 
-No código acima é primeiro verificar se a entidade de usuário atual tem uma data de nascimento de declaração que foi emitido por um emissor sabemos e confiança. Se a declaração está ausente, não é possível autorizar para retornamos. Se houver uma declaração, podemos calcular quanto tempo o usuário existe e se eles atenderem a idade mínima passada pela necessidade, em seguida, autorização foi bem-sucedida. Após a autorização bem-sucedida, podemos chamar `context.Succeed()` passando o requisito de que tenha sido bem-sucedida como um parâmetro.
+No código acima, é primeiro verificar se a entidade de usuário atual tem uma data de nascimento de declaração que foi emitido por um emissor sabemos e confiança. Se a declaração está ausente, não é possível autorizar para retornamos. Se houver uma declaração, podemos calcular quanto tempo o usuário existe e se eles atenderem a idade mínima passada pela necessidade, em seguida, autorização foi bem-sucedida. Após a autorização bem-sucedida, podemos chamar `context.Succeed()` passando o requisito de que tenha sido bem-sucedida como um parâmetro.
 
-<a name=security-authorization-policies-based-handler-registration></a>
+<a name="security-authorization-policies-based-handler-registration"></a>
 
+### <a name="handler-registration"></a>Registro do manipulador
 Manipuladores devem ser registrados na coleção de serviços durante a configuração, por exemplo,
 
 ```csharp
@@ -148,9 +149,9 @@ Você pode ver no nosso [exemplo manipulador](policies.md#security-authorization
 
 * Para garantir a falha mesmo se um requisito de outros manipuladores de êxito, chame `context.Fail`.
 
-Todos os manipuladores para um requisito, independentemente de você chamar dentro de seu manipulador serão chamados quando uma política requer que o requisito. Isso permite que os requisitos para ter efeitos colaterais, como o registro, que sempre ocorrerá mesmo se `context.Fail()` foi chamado no manipulador de outro.
+Todos os manipuladores para um requisito, independentemente do que você chamar dentro de seu manipulador, serão chamados quando uma política requer que o requisito. Isso permite que os requisitos para ter efeitos colaterais, como o registro, que sempre ocorrerá mesmo se `context.Fail()` foi chamado no manipulador de outro.
 
-<a name=security-authorization-policies-based-multiple-handlers></a>
+<a name="security-authorization-policies-based-multiple-handlers"></a>
 
 ## <a name="why-would-i-want-multiple-handlers-for-a-requirement"></a>Por que eu quero vários manipuladores para um requisito?
 
@@ -195,7 +196,7 @@ Agora, assumindo que ambos os manipuladores são [registrado](xref:security/auth
 
 Pode haver ocasiões em que é simple de expressar em código que atendem a uma política. É possível simplesmente fornecer um `Func<AuthorizationHandlerContext, bool>` ao configurar a política com o `RequireAssertion` criador de políticas.
 
-Por exemplo anterior `BadgeEntryHandler` poderia ser reescrito como se segue;
+Por exemplo anterior `BadgeEntryHandler` poderia ser reescrito da seguinte maneira:
 
 ```csharp
 services.AddAuthorization(options =>
@@ -215,7 +216,7 @@ services.AddAuthorization(options =>
 
 O `Handle` método você deve implementar um manipulador de autorização tem dois parâmetros, um `AuthorizationContext` e `Requirement` manipulada. Estruturas como MVC ou Jabbr serão livres para adicionar qualquer objeto para o `Resource` propriedade o `AuthorizationContext` para passar informações extras.
 
-Por exemplo, MVC passa uma instância de `Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext` na propriedade de recurso que é usada para acessar o HttpContext, RouteData e tudo mais MVC fornece.
+Por exemplo, o MVC passa uma instância de `Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext` na propriedade de recurso que é usada para acessar o HttpContext, RouteData e tudo mais MVC fornece.
 
 O uso do `Resource` é de propriedade específicos da estrutura. Usando informações de `Resource` propriedade limitará suas políticas de autorização para estruturas específicas. Você deve converter o `Resource` propriedade usando o `as` palavra-chave e, em seguida, verifique a conversão tenha êxito para garantir que seu código não falha com `InvalidCastExceptions` quando executado em outras estruturas;
 

@@ -11,11 +11,11 @@ ms.assetid: 9c826a76-fbd2-46b5-978d-6ca6df53531a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: eb5049d4d63c224ca74fc39072ae2c0d98ba330d
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.openlocfilehash: f217e5264742826f285444dcbaea4b28b97c4d7e
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrando manipuladores HTTP e módulos ASP.NET Core middleware 
 
@@ -169,11 +169,11 @@ Middleware adicionados ao pipeline antes da ramificação será invocada em toda
 
 Alguns módulos e manipuladores têm opções de configuração que são armazenadas em *Web. config*. No entanto, no ASP.NET Core um novo modelo de configuração é usado no lugar de *Web. config*.
 
-O novo [sistema de configuração](../fundamentals/configuration.md) oferece essas opções para resolver isso:
+O novo [sistema de configuração](xref:fundamentals/configuration/index) oferece essas opções para resolver isso:
 
 * Injetar diretamente as opções para o middleware, conforme o [próxima seção](#loading-middleware-options-through-direct-injection).
 
-* Use o [padrão de opções](../fundamentals/configuration.md#options-config-objects):
+* Use o [padrão de opções](xref:fundamentals/configuration/options):
 
 1.  Crie uma classe para manter suas opções de middleware, por exemplo:
 
@@ -384,7 +384,7 @@ O `SetCookies` método de retorno de chamada deve ser semelhante ao seguinte:
 
 * [Visão geral de módulos HTTP e de manipuladores HTTP](https://docs.microsoft.com/iis/configuration/system.webserver/)
 
-* [Configuração](../fundamentals/configuration.md)
+* [Configuração](xref:fundamentals/configuration/index)
 
 * [Inicialização de aplicativos](../fundamentals/startup.md)
 

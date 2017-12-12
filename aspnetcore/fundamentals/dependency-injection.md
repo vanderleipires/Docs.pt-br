@@ -12,21 +12,21 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f5c903a72d004afac55fbcc04ad157442e7a18ee
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 8d12960708f9d9bf2bc7c5997f82096d93087d13
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Introdução a injeção de dependência no núcleo do ASP.NET
 
-<a name=fundamentals-dependency-injection></a>
+<a name="fundamentals-dependency-injection"></a>
 
 Por [Steve Smith](https://ardalis.com/) e [Scott Addie](https://scottaddie.com)
 
 ASP.NET Core foi projetado desde o início para dar suporte e aproveitar a injeção de dependência. Aplicativos do ASP.NET Core podem aproveitar os serviços de estrutura interna, mantendo-as injetada métodos na classe de inicialização e serviços de aplicativo podem ser configurados para a injeção também. O contêiner de serviços padrão fornecido pelo ASP.NET Core fornece um recurso mínimo definido e não se destina a substituir outros contêineres.
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-dependency-injection"></a>O que é a injeção de dependência?
 
@@ -143,7 +143,7 @@ Contextos do Entity Framework devem ser adicionados para o contêiner de serviç
 >[!WARNING]
 > O perigo principal para cuidado está resolvendo um `Scoped` serviço um singleton. É provável, nesse caso o serviço terá estado incorreto durante o processamento de solicitações subsequentes.
 
-Serviços que têm dependências devem registrá-los no contêiner. Se o construtor do serviço requer um primitivo, como um `string`, isso pode ser inserido usando o [opções padrão e a configuração](configuration.md).
+Serviços que têm dependências devem registrá-los no contêiner. Se o construtor do serviço requer um primitivo, como um `string`, isso pode ser inserido usando [configuração](xref:fundamentals/configuration/index) e [padrão de opções](xref:fundamentals/configuration/options).
 
 ## <a name="service-lifetimes-and-registration-options"></a>Tempos de vida do serviço e opções de registro
 
@@ -228,11 +228,16 @@ public class Service1 : IDisposable {}
 public class Service2 : IDisposable {}
 public class Service3 : IDisposable {}
 
+public interface ISomeService {}
+public class SomeServiceImplementation : ISomeService, IDisposable {}
+
+
 public void ConfigureServices(IServiceCollection services)
 {
     // container will create the instance(s) of these types and will dispose them
     services.AddScoped<Service1>();
     services.AddSingleton<Service2>();
+    services.AddSingleton<ISomeService>(sp => new SomeServiceImplementation());
 
     // container did not create instance so it will NOT dispose it
     services.AddSingleton<Service3>(new Service3());
@@ -296,7 +301,7 @@ Ao trabalhar com a injeção de dependência, lembre-se as seguintes recomendaç
 
 * DI está para objetos que têm dependências complexas. Controladores, serviços, adaptadores e repositórios são exemplos de objetos que podem ser adicionados à DI.
 
-* Evite armazenar dados e configuração diretamente na injeção de dependência. Por exemplo, o carrinho de compras do usuário normalmente não deve ser adicionado para o contêiner de serviços. Configuração deve usar o [opções modelo](configuration.md#options-config-objects). Da mesma forma, evite objetos de "proprietário de dados" que existem somente para permitir o acesso a algum outro objeto. É melhor solicitar o item real necessário por meio de injeção de dependência, se possível.
+* Evite armazenar dados e configuração diretamente na injeção de dependência. Por exemplo, o carrinho de compras do usuário normalmente não deve ser adicionado para o contêiner de serviços. Configuração deve usar o [padrão de opções](xref:fundamentals/configuration/options). Da mesma forma, evite objetos de "proprietário de dados" que existem somente para permitir o acesso a algum outro objeto. É melhor solicitar o item real necessário por meio de injeção de dependência, se possível.
 
 * Evite estático acesso aos serviços.
 

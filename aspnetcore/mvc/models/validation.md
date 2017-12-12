@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: efbc68e898cadd06d61fa69914fe08f3a12ba802
-ms.sourcegitcommit: 8b5733f1cd5d2c2b6d432bf82fcd4be2d2d6b2a3
+ms.openlocfilehash: a3f3f7010d7744d59ce2dd88b323418423b3ae08
+ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Introdução à validação do modelo no ASP.NET MVC de núcleo
 
@@ -64,7 +64,7 @@ Pode haver ocasiões em que você precisar de mais recursos de atributos interno
 
 ## <a name="notes-on-the-use-of-the-required-attribute"></a>Observações sobre o uso do atributo necessário
 
-Não anulável [os tipos de valor](/dotnet/csharp/language-reference/keywords/value-types) (como `decimal`, `int`, `float`, e `DateTime`) são inerentemente necessárias e não é necessário o `Required` atributo. O aplicativo não executa nenhuma verificação de validação do lado do servidor para tipos não anuláveis são marcados `Required`.
+Os [tipos de valor](/dotnet/csharp/language-reference/keywords/value-types) que não permitem valores nulos (como `decimal`, `int`, `float` e `DateTime`) são inerentemente necessários e não precisam do atributo `Required`. O aplicativo não executa nenhuma verificação de validação do lado do servidor para tipos não anuláveis são marcados `Required`.
 
 Associação de modelo MVC, que não está preocupada com atributos de validação e a validação, rejeita o envio de um campo de formulário que contém um valor ausente ou o espaço em branco para um tipo não anulável. Na ausência de um `BindRequired` atributo na propriedade de destino, a associação de modelo ignora dados ausentes para tipos não anuláveis, onde o campo de formulário está ausente nos dados de formulário de entrada.
 
@@ -102,13 +102,13 @@ Atributos de validação funcionam para a maioria das necessidades de validaçã
 
 No exemplo a seguir, uma regra de negócio afirma que os usuários não podem definir o gênero para *clássico* de um filme liberado 1960. O `[ClassicMovie]` atributo verifica o gênero primeiro e, se for um clássico, ele verifica a data de lançamento para ver se ele é posterior à 1960. Se ele for liberado 1960, a validação falhará. O atributo aceita um parâmetro de número inteiro que representa o ano que você pode usar para validar dados. Você pode capturar o valor do parâmetro no construtor do atributo, conforme mostrado aqui:
 
-[!code-csharp[Main](validation/sample/ClassicMovieAttribute.cs?range=9-28)]
+[!code-csharp[Main](validation/sample/ClassicMovieAttribute.cs?range=9-29)]
 
 O `movie` variável acima representa um `Movie` objeto que contém os dados de envio do formulário para validar. Nesse caso, o código de validação verifica a data e gênero no `IsValid` método o `ClassicMovieAttribute` classe de acordo com as regras. Após a validação bem-sucedida `IsValid` retorna um `ValidationResult.Success` código, e quando a validação falhar, um `ValidationResult` com uma mensagem de erro. Quando um usuário modifica o `Genre` campo e envia o formulário, o `IsValid` método o `ClassicMovieAttribute` verificará se o filme é uma clássica. Como qualquer atributo interno, se aplicam a `ClassicMovieAttribute` para uma propriedade como `ReleaseDate` para garantir a validação ocorre, conforme mostrado no exemplo de código anterior. Como o exemplo funciona apenas com `Movie` tipos, a melhor opção é usar `IValidatableObject` conforme mostrado no seguinte parágrafo.
 
 Como alternativa, esse mesmo código pode ser colocado no modelo Implementando o `Validate` método sobre o `IValidatableObject` interface. Enquanto os atributos de validação personalizada funcionam bem para validar as propriedades individuais, implementando `IValidatableObject` pode ser usado para implementar a validação de nível de classe como visto aqui.
 
-[!code-csharp[Main](validation/sample/MovieIValidatable.cs?range=33-41)]
+[!code-csharp[Main](validation/sample/MovieIValidatable.cs?range=32-40)]
 
 ## <a name="client-side-validation"></a>Validação do lado do cliente
 
@@ -120,11 +120,11 @@ Você deve ter uma exibição com as referências de script JavaScript corretas 
 
 [!code-cshtml[Main](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
-Para validar dados e exibe mensagens de erro usando JavaScript, o MVC usa os atributos de validação, além das propriedades do modelo de metadados do tipo. Quando você usa o MVC para renderizar elementos de formulário de um modelo usando [auxiliares de marcação](xref:mvc/views/tag-helpers/intro) ou [auxiliares HTML](xref:mvc/views/overview) ele adicionará HTML 5 [atributos de dados](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) nos elementos de formulário que precisam de validação, como como mostrado abaixo. MVC gera o `data-` atributos para atributos internos e personalizados. Você pode exibir erros de validação no cliente usando os auxiliares de marca relevantes, como mostrado aqui:
+O [jQuery validação discreto](https://github.com/aspnet/jquery-validation-unobtrusive) script é uma biblioteca personalizada front-end do Microsoft que se baseia no conhecido [jQuery validar](https://jqueryvalidation.org/) plug-in. Sem jQuery validação discreto, você teria codificar a mesma lógica de validação em dois lugares: uma vez em que os atributos de validação do lado de servidor nas propriedades do modelo e, em seguida, novamente em scripts do lado do cliente (os exemplos para jQuery validar [ `validate()` ](https://jqueryvalidation.org/validate/) método mostra como complexas que isso poderia ser). Em vez disso, do MVC [auxiliares de marcação](xref:mvc/views/tag-helpers/intro) e [auxiliares HTML](xref:mvc/views/overview) podem usar os atributos de validação e digite os metadados das propriedades de modelo para renderizar HTML 5 [atributos de dados](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) em os elementos de formulário que precisam de validação. MVC gera o `data-` atributos para atributos internos e personalizados. jQuery validação discreto, em seguida, analisa thes `data-` atributos e passa a lógica para jQuery validar, "Copiar" efetivamente a lógica de validação do lado de servidor para o cliente. Você pode exibir erros de validação no cliente usando os auxiliares de marca relevantes, como mostrado aqui:
 
 [!code-cshtml[Main](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
-Os auxiliares de marca acima renderizam HTML abaixo. Observe que o `data-` atributos no HTML de saída corresponde aos atributos de validação para o `ReleaseDate` propriedade. O `data-val-required` abaixo do atributo contém uma mensagem de erro a ser exibido se o usuário não preencher o campo de data de lançamento, e essa mensagem é exibida em que o acompanha  **\<span >** elemento.
+Os auxiliares de marca acima renderizam HTML abaixo. Observe que o `data-` atributos no HTML de saída corresponde aos atributos de validação para o `ReleaseDate` propriedade. O `data-val-required` abaixo do atributo contém uma mensagem de erro a ser exibido se o usuário não preencher o campo de data de lançamento. jQuery discreto validação passa esse valor para o jQuery validar [ `required()` ](https://jqueryvalidation.org/required-method/) método, que, em seguida, exibe a mensagem em que o acompanha  **\<span >** elemento.
 
 ```html
 <form action="/Movies/Create" method="post">
@@ -145,9 +145,53 @@ Os auxiliares de marca acima renderizam HTML abaixo. Observe que o `data-` atrib
 </form>
 ```
 
-Validação do lado do cliente evita envio até que o formulário é válido. Botão Enviar executa JavaScript que envia o formulário ou exibe mensagens de erro.
+Assim, a validação do lado do cliente impede envio até que o formulário é válido. Botão Enviar executa JavaScript que envia o formulário ou exibe mensagens de erro.
 
 MVC determina os valores de atributo de tipo com base no tipo de dados .NET de uma propriedade, possivelmente substituído usando `[DataType]` atributos. A base de `[DataType]` atributo não faz nenhuma validação do lado do servidor real. Navegadores escolha suas próprias mensagens de erro e exibem os erros, mas desejar, porém o pacote discreto de validação jQuery pode substituir as mensagens e exibi-los de forma consistente com outras pessoas. Isso acontece mais óbvio é quando os usuários aplicar `[DataType]` subclasses como `[EmailAddress]`.
+
+### <a name="adding-validation-to-dynamic-forms"></a>Adicionando validação a formulários dinâmicos:
+
+Porque jQuery discreto validação passa parâmetros e lógica de validação para jQuery validar quando a página for carregada pela primeira vez, formulários gerados dinamicamente não automaticamente exibirá validação. Em vez disso, você deve informar jQuery discreto validação ao analisar o formulário dinâmico imediatamente depois de criá-lo. Por exemplo, o código a seguir mostra como você pode configurar a validação do lado do cliente em um formulário adicionado por meio de AJAX.
+
+```js
+$.get({
+    url: "https://url/that/returns/a/form",
+    dataType: "html",
+    error: function(jqXHR, textStatus, errorThrown) {
+        alert(textStatus + ": Could not add form. " + errorThrown);
+    },
+    success: function(newFormHTML) {
+        var container = document.getElementById("form-container");
+        container.insertAdjacentHTML("beforeend", newFormHTML);
+        var forms = container.getElementsByTagName("form");
+        var newForm = forms[forms.length - 1];
+        $.validator.unobtrusive.parse(newForm);
+    }
+})
+```
+
+O `$.validator.unobtrusive.parse()` método aceita um seletor de jQuery para um argumento. Esse método informa jQuery discreto validação ao analisar o `data-` atributos de formulários no seletor. Os valores desses atributos são passados para o plug-in do jQuery validar para que o formulário exibe as regras de validação do lado cliente desejado.
+
+### <a name="adding-validation-to-dynamic-controls"></a>Adicionando validação a controles dinâmicos:
+
+Você também pode atualizar as regras de validação em um formulário quando controles individuais, como `<input/>`s e `<select/>`s, são geradas dinamicamente. Você não pode passar seletores para esses elementos para o `parse()` diretamente o método porque o formulário ao redor já foi analisado e não será atualizada.  Em vez disso, você primeiro remova os dados de validação existente e nova análise todo o formulário, conforme mostrado abaixo:
+
+```js
+$.get({
+    url: "https://url/that/returns/a/control",
+    dataType: "html",
+    error: function(jqXHR, textStatus, errorThrown) {
+        alert(textStatus + ": Could not add form. " + errorThrown);
+    },
+    success: function(newInputHTML) {
+        var form = document.getElementById("my-form");
+        form.insertAdjacentHTML("beforeend", newInputHTML);
+        form.removeData("validator")    // Added by the raw jQuery Validate
+            .removeData("unobtrusiveValidation");   // Added by jQuery Unobtrusive Validation
+        $.validator.unobtrusive.parse(form);
+    }
+})
+```
 
 ## <a name="iclientmodelvalidator"></a>IClientModelValidator
 
@@ -176,12 +220,40 @@ Agora o jQuery tem as informações para executar a validação personalizada do
 
 Validação remota é um ótimo recurso para usar quando você precisa validar os dados no cliente em relação aos dados no servidor. Por exemplo, seu aplicativo precisará verificar se um email ou nome de usuário já está em uso, e ele deve consultar uma grande quantidade de dados para fazer isso. Baixando grandes conjuntos de dados para validar um ou alguns campos consome muitos recursos. Ele também pode expor informações confidenciais. Uma alternativa é fazer uma solicitação de ida e volta para validar um campo.
 
-Você pode implementar a validação remota em um processo de duas etapas. Primeiro, você deve anotar o modelo com o `[Remote]` atributo. O `[Remote]` atributo aceita várias sobrecargas que você pode usar para direcionar o JavaScript do lado do cliente para o código apropriado para chamar. O exemplo aponta para o `VerifyEmail` método de ação de `Users` controlador.
+Você pode implementar a validação remota em um processo de duas etapas. Primeiro, você deve anotar o modelo com o `[Remote]` atributo. O `[Remote]` atributo aceita várias sobrecargas que você pode usar para direcionar o JavaScript do lado do cliente para o código apropriado para chamar. O exemplo a seguir aponta para o `VerifyEmail` método de ação de `Users` controlador.
 
-[!code-csharp[Main](validation/sample/User.cs?range=5-9)]
+[!code-csharp[Main](validation/sample/User.cs?range=7-8)]
 
-A segunda etapa é colocar o código de validação no método de ação correspondente, conforme definido no `[Remote]` atributo. Ele retorna um `JsonResult` que do lado do cliente pode usar para continuar ou pausar e exibir um erro, se necessário.
+A segunda etapa é colocar o código de validação no método de ação correspondente, conforme definido no `[Remote]` atributo. Acordo com o jQuery validar [ `remote()` ](https://jqueryvalidation.org/remote-method/) documentação do método:
 
-[!code-none[Main](validation/sample/UsersController.cs?range=19-28)]
+> A resposta de serverside deve ser uma cadeia de caracteres JSON deve ser `"true"` para elementos válidos e pode ser `"false"`, `undefined`, ou `null` para elementos inválidos, usando a mensagem de erro padrão. Se a resposta serverside é uma cadeia de caracteres, por exemplo. `"That name is already taken, try peter123 instead"`, essa cadeia de caracteres será exibida como uma mensagem de erro personalizada em vez do padrão.
 
-Agora, quando os usuários inserem um email, o JavaScript no modo de exibição faz uma chamada remota para ver se o email foi usado e nesse caso, em seguida, exibe a mensagem de erro. Caso contrário, o usuário pode enviar o formulário como de costume.
+A definição do `VerifyEmail()` método segue estas regras, conforme mostrado abaixo. Retorna um erro de validação de mensagem se o email foi obtido, ou `true` se o email é gratuito e encapsula o resultado em uma `JsonResult` objeto. O lado do cliente pode usar o valor retornado para continuar ou exibir o erro, se necessário.
+
+[!code-csharp[Main](validation/sample/UsersController.cs?range=19-28)]
+
+Agora quando os usuários inserem um email, o JavaScript no modo de exibição faz uma chamada remota para ver se o email foi executada e, em caso afirmativo, exibe a mensagem de erro. Caso contrário, o usuário pode enviar o formulário como de costume.
+
+O `AdditionalFields` propriedade o `[Remote]` atributo é útil para validação de combinações de campos em relação aos dados no servidor.  Por exemplo, se o `User` modelo acima tinha duas propriedades adicionais chamadas `FirstName` e `LastName`, talvez você queira verificar que não há usuários existentes já tem esse par de nomes.  Você define as novas propriedades, conforme mostrado no código a seguir:
+
+[!code-csharp[Main](validation/sample/User.cs?range=10-13)]
+
+`AdditionalFields`poderia ser definido explicitamente para as cadeias de caracteres `"FirstName"` e `"LastName"`, mas usando o [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operador como isso simplifica a refatoração mais tarde.  O método de ação para executar a validação, em seguida, deve aceitar os dois argumentos, um para o valor de `FirstName` e outro para o valor de `LastName`.
+
+
+[!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
+
+Agora quando os usuários inserir um nome e sobrenome, JavaScript:
+
+* Faz uma chamada remota para ver se esse par de nomes foi usado.
+* Se o par tiver sido tomado, uma mensagem de erro será exibida. 
+* Se não ocorrer, o usuário pode enviar o formulário.
+
+Se você precisa validar dois ou mais campos adicionais com o `[Remote]` atributo, você fornecê-los como uma lista delimitada por vírgulas.  Por exemplo, para adicionar um `MiddleName` definida no modelo, o `[Remote]` atributo conforme mostrado no código a seguir:
+
+```cs
+[Remote(action: "VerifyName", controller: "Users", AdditionalFields = nameof(FirstName) + "," + nameof(LastName))]
+public string MiddleName { get; set; }
+```
+
+`AdditionalFields`, como todos os argumentos de atributo deve ser uma expressão constante.  Portanto, você não deve usar um [interpolados cadeia de caracteres](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) ou chame [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) inicializar `AdditionalFields`. Para cada campo adicional que você adicionar ao `[Remote]` atributo, você deve adicionar outro argumento para o método de ação do controlador correspondente.

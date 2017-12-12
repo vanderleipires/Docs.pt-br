@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 820836eaf3a29c9941e84458f09ac470f8150ba7
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 0679663b3b3b66f9935d0fb24360be2954fcdee1
+ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade no núcleo do ASP.NET
 
@@ -32,11 +32,11 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 1.  Crie um projeto de aplicativo Web do ASP.NET Core com contas de usuário individuais.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-    No Visual Studio, selecione **arquivo** -> **novo** -> **projeto**. Selecione o **aplicativo Web ASP.NET** do **novo projeto** caixa de diálogo. Selecionando um ASP.NET Core **aplicativo Web** com **contas de usuário individuais** como o método de autenticação.
+    No Visual Studio, selecione **arquivo** -> **novo** -> **projeto**. Selecione o **aplicativo Web ASP.NET** do **novo projeto** caixa de diálogo. Selecionando um ASP.NET Core **Web Application(Model-View-Controller)** para ASP.NET Core 2. x com **contas de usuário individuais** como o método de autenticação.
 
     Observação: Você deve selecionar **contas de usuário individuais**.
  
-    ![Caixa de diálogo Novo Projeto](identity/_static/01-mvc.png)
+    ![Caixa de diálogo Novo Projeto](identity/_static/01-mvc_2.png)
     
     # <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
     Se usar o .NET Core CLI, crie o novo projeto usando ``dotnet new mvc --auth Individual``. Isso criará um novo projeto com o mesmo código de modelo de identidade que Visual Studio cria.
@@ -134,7 +134,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
  
 7.  Exiba o banco de dados.
 
-    Se seu aplicativo estiver usando um banco de dados do SQL Server (o padrão no Windows e para usuários do Visual Studio), você pode exibir o aplicativo que criou o banco de dados. Você pode usar **SQL Server Management Studio**. Como alternativa, no Visual Studio, selecione **exibição** -> **Pesquisador de objetos do SQL Server**. Conecte-se ao **(localdb) \MSSQLLocalDB**. O banco de dados com um nome correspondente * *aspnet - <*nome do projeto*>-<*cadeia de caracteres de data*> * * é exibida.
+    Se seu aplicativo estiver usando um banco de dados do SQL Server (o padrão no Windows e para usuários do Visual Studio), você pode exibir o aplicativo que criou o banco de dados. Você pode usar **SQL Server Management Studio**. Como alternativa, no Visual Studio, selecione **exibição** -> **Pesquisador de objetos do SQL Server**. Conecte-se ao **(localdb) \MSSQLLocalDB**. O banco de dados com um nome correspondente  **aspnet - <*nome do projeto*>-<*cadeia de caracteres de data*> * * é exibida.
 
     ![Menu de contexto no AspNetUsers tabela de banco de dados](identity/_static/04-db.png)
     

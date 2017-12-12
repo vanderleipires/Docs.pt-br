@@ -1,8 +1,8 @@
 ---
 title: "Autorização baseada em função"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Este documento demonstra como restringir o acesso de controlador e ação do ASP.NET Core passando funções para autorizar atributo."
+keywords: "ASP.NET Core, autorização, funções"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,23 +11,23 @@ ms.assetid: 5e014da1-8bc0-409b-951a-88b92c661fdf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/roles
-ms.openlocfilehash: 1dc76f316b70d486febe386cc47cd1f843d8d8e3
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 649b21d99c742843534748b0ba9d7b7b22483a62
+ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="role-based-authorization"></a>Autorização baseada em função
 
-<a name=security-authorization-role-based></a>
+<a name="security-authorization-role-based"></a>
 
-Quando uma identidade é criada ele pode pertencer a uma ou mais funções, por exemplo Tânia pode pertencer a funções de administrador e usuário, embora Scott só pode pertencer à função de usuário. Como essas funções são criadas e gerenciadas dependem do armazenamento de backup do processo de autorização. Funções são expostas para o desenvolvedor por meio de [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) propriedade o [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) classe.
+Quando uma identidade é criada ele pode pertencer a uma ou mais funções. Por exemplo, Tânia pode pertencer a funções de administrador e usuário embora Scott só pode pertencer à função de usuário. Como essas funções são criadas e gerenciadas dependem do armazenamento de backup do processo de autorização. Funções são expostas para o desenvolvedor de [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) método o [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) classe.
 
 ## <a name="adding-role-checks"></a>Adicionando verificações de função
 
-Verificações de autorização baseada em função são declarativas - o desenvolvedor incorpora dentro de seu código, em relação a um controlador ou uma ação dentro de um controlador, especificando funções que o usuário atual deve ser um membro de acessar o recurso solicitado.
+Verificações de autorização baseada em função são declarativas&mdash;o desenvolvedor incorpora dentro de seu código, em relação a um controlador ou uma ação dentro de um controlador, especificando funções que o usuário atual deve ser um membro de acessar o recurso solicitado.
 
-Por exemplo o código a seguir limitaria o acesso a todas as ações no `AdministrationController` para os usuários que são membros do `Administrator` grupo.
+Por exemplo, o código a seguir deve limitar o acesso a todas as ações no `AdministrationController` para os usuários que são membros do `Administrator` grupo.
 
 ```csharp
 [Authorize(Roles = "Administrator")]
@@ -36,7 +36,7 @@ public class AdministrationController : Controller
 }
 ```
 
-Você pode especificar várias funções como uma lista separada por vírgulas;
+Você pode especificar várias funções como uma lista separada por vírgulas:
 
 ```csharp
 [Authorize(Roles = "HRManager,Finance")]
@@ -57,7 +57,7 @@ public class ControlPanelController : Controller
 }
 ```
 
-Você pode limitar acesso mais aplicando atributos de autorização de função adicionais no nível de ação;
+Você pode limitar o acesso mais aplicando atributos de autorização de função adicionais no nível da ação:
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -93,7 +93,7 @@ public class ControlPanelController : Controller
 }
 ```
 
-<a name=security-authorization-role-policy></a>
+<a name="security-authorization-role-policy"></a>
 
 ## <a name="policy-based-role-checks"></a>Verificações de função baseada em política
 
@@ -111,7 +111,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-As políticas são aplicadas usando o `Policy` propriedade o `AuthorizeAttribute` atributo;
+As políticas são aplicadas usando o `Policy` propriedade o `AuthorizeAttribute` atributo:
 
 ```csharp
 [Authorize(Policy = "RequireAdministratorRole")]
@@ -121,7 +121,7 @@ public IActionResult Shutdown()
 }
 ```
 
-Se desejar especificar várias funções permitidas em um requisito, você pode especificá-los como parâmetros para o `RequireRole` método;
+Se desejar especificar várias funções permitidas em um requisito, você pode especificá-los como parâmetros para o `RequireRole` método:
 
 ```csharp
 options.AddPolicy("ElevatedRights", policy =>

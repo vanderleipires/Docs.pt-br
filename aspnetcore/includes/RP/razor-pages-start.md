@@ -12,7 +12,7 @@ A tabela a seguir lista os arquivos e pastas no projeto. Para este tutorial, o a
 | ----------------- | ------------ | 
 | wwwroot | Contém arquivos estáticos. Veja [trabalhando com arquivos estáticos](xref:fundamentals/static-files). |
 | Páginas | Pasta para [Páginas do Razor](xref:mvc/razor-pages/index). | 
-| *appsettings.json* | [Configuração](xref:fundamentals/configuration) |
+| *appsettings.json* | [Configuração](xref:fundamentals/configuration/index) |
 | *bower.json* | Gerenciamento de pacotes do lado do cliente. Consulte [Bower](xref:client-side/bower).|
 | *Program.cs* | [Hospeda](xref:fundamentals/hosting) o aplicativo ASP.NET Core.|
 | *Startup.cs* | Configura os serviços e o pipeline de solicitação. Consulte [Inicialização](xref:fundamentals/startup).|

@@ -7,6 +7,13 @@
   ```console
   dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages\Movies --referenceScriptLibraries
   ```
+  
+Se você obtiver o erro:
+  ```
+No executable found matching command "dotnet-aspnet-codegenerator"
+  ```
+
+Abra uma janela de comando no diretório do projeto (o diretório que contém os arquivos *Program.cs*, *Startup.cs* e *.csproj*).
 
 Se você obtiver o erro:
   ```

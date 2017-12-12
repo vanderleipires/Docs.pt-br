@@ -10,23 +10,23 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: 280819a6a0afb72311f0d50f7d3b83a942e9fcc3
-ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
+ms.openlocfilehash: 897d9b360ceeb5fbb0863ff1c1fcec039e1a8b8f
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo durante o desenvolvimento no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), e [Scott Addie](https://scottaddie.com) 
 
-Este documento mostra como você pode usar a ferramenta Gerenciador de segredo em desenvolvimento para manter os segredos fora do seu código. O ponto mais importante é que você nunca deve armazenar senhas ou outros dados confidenciais no código-fonte, e você não deve usar os segredos de produção no modo de desenvolvimento e teste. Em vez disso, você pode usar o [configuração](../fundamentals/configuration.md) sistema ler esses valores de variáveis de ambiente ou dos valores armazenados usando o Gerenciador de segredo de ferramenta. A ferramenta Gerenciador de segredo ajuda a impedir que os dados confidenciais que está sendo verificado no controle de origem. O [configuração](../fundamentals/configuration.md) sistema pode ler os segredos armazenados com a ferramenta Gerenciador de segredo descrita neste artigo.
+Este documento mostra como você pode usar a ferramenta Gerenciador de segredo em desenvolvimento para manter os segredos fora do seu código. O ponto mais importante é que você nunca deve armazenar senhas ou outros dados confidenciais no código-fonte, e você não deve usar os segredos de produção no modo de desenvolvimento e teste. Em vez disso, você pode usar o [configuração](xref:fundamentals/configuration/index) sistema ler esses valores de variáveis de ambiente ou dos valores armazenados usando o Gerenciador de segredo de ferramenta. A ferramenta Gerenciador de segredo ajuda a impedir que os dados confidenciais que está sendo verificado no controle de origem. O [configuração](xref:fundamentals/configuration/index) sistema pode ler os segredos armazenados com a ferramenta Gerenciador de segredo descrita neste artigo.
 
 A ferramenta Gerenciador de segredo é usada somente em desenvolvimento. Você pode proteger segredos de teste e produção do Azure com o [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) provedor de configuração. Consulte [provedor de configuração do Azure Key Vault](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration) para obter mais informações.
 
 ## <a name="environment-variables"></a>Variáveis de ambiente
 
-Para evitar armazenar segredos do aplicativo no código ou em arquivos de configuração local, você pode armazenar segredos em variáveis de ambiente. Você pode configurar o [configuração](../fundamentals/configuration.md) framework para ler valores de variáveis de ambiente chamando `AddEnvironmentVariables`. Você pode usar variáveis de ambiente para substituir valores de configuração para todas as fontes de configuração especificada anteriormente.
+Para evitar armazenar segredos do aplicativo no código ou em arquivos de configuração local, você pode armazenar segredos em variáveis de ambiente. Você pode configurar o [configuração](xref:fundamentals/configuration/index) framework para ler valores de variáveis de ambiente chamando `AddEnvironmentVariables`. Você pode usar variáveis de ambiente para substituir valores de configuração para todas as fontes de configuração especificada anteriormente.
 
 Por exemplo, se você criar um novo aplicativo web ASP.NET Core com contas de usuário individuais, ele irá adicionar uma cadeia de caracteres de conexão padrão para o *appSettings. JSON* arquivo no projeto com a chave `DefaultConnection`. A cadeia de caracteres de conexão padrão está configurado para usar LocalDB, que é executado no modo de usuário e não requer uma senha. Quando você implanta seu aplicativo em um servidor de teste ou de produção, você pode substituir o `DefaultConnection` valor de chave com uma configuração de variável de ambiente que contém a cadeia de caracteres de conexão (possivelmente com credenciais confidenciais) para um banco de dados de teste ou de produção servidor.
 
@@ -127,4 +127,4 @@ Você não deve gravar o código que depende do local ou o formato dos dados sal
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Configuração](../fundamentals/configuration.md)
+* [Configuração](xref:fundamentals/configuration/index)

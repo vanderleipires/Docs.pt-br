@@ -11,27 +11,32 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 7aea4db44764d5d8f47520adb6599e651e0e9000
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: fdb396d8857dc9c118cc19da1f7d1d498dfaacd5
+ms.sourcegitcommit: 8ab9d0065fad23400757e4e08033787e42c97d41
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware de compactação de resposta para o ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 Largura de banda de rede é um recurso limitado. Reduzir o tamanho da resposta geralmente aumenta a capacidade de resposta de um aplicativo com frequência. É uma maneira de reduzir os tamanhos de carga compactar respostas do aplicativo.
 
 ## <a name="when-to-use-response-compression-middleware"></a>Quando usar o Middleware de compactação de resposta
-Use tecnologias de compactação de resposta com base em servidor no IIS, o Apache ou Nginx em que o desempenho do middleware provavelmente não coincidir com os módulos de servidor. Use o Middleware de compactação de resposta quando não for possível usar:
-* [Módulo de compactação dinâmica do IIS](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
-* [Módulo do Apache mod_deflate](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
-* [NGINX compactação e descompactação](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
-* [Servidor de HTTP. sys](xref:fundamentals/servers/httpsys) (anteriormente chamado [WebListener](xref:fundamentals/servers/weblistener))
-* [Kestrel](xref:fundamentals/servers/kestrel)
+Use tecnologias de compactação de resposta com base em servidor no IIS, o Apache ou Nginx. O desempenho do middleware provavelmente não corresponde dos módulos de servidor. [Servidor de HTTP. sys](xref:fundamentals/servers/httpsys) e [Kestrel](xref:fundamentals/servers/kestrel) atualmente não oferecem suporte à compactação interna.
+
+Use o Middleware de compactação de resposta quando estiver:
+
+* Não é possível usar as seguintes tecnologias de compactação baseada em servidor:
+  * [Módulo de compactação dinâmica do IIS](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
+  * [Módulo do Apache mod_deflate](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
+  * [NGINX compactação e descompactação](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
+* Hospedagem diretamente em:
+  * [Servidor de HTTP. sys](xref:fundamentals/servers/httpsys) (anteriormente chamado [WebListener](xref:fundamentals/servers/weblistener))
+  * [Kestrel](xref:fundamentals/servers/kestrel)
 
 ## <a name="response-compression"></a>Compactação de resposta
 Em geral, qualquer resposta não nativamente compactada pode se beneficiar da compactação de resposta. As respostas que não foi compactadas normalmente incluem: CSS, JavaScript, HTML, XML e JSON. Você não deve compactar ativos nativamente compactados, como arquivos PNG. Se você tentar compactar ainda mais uma resposta compactada nativamente, qualquer redução pequena adicional em tempo de tamanho e a transmissão será provavelmente ser ofuscada pelo tempo necessário para processar a compactação. Não compacte arquivos menores que cerca de 150 e 1000 bytes (dependendo do conteúdo do arquivo e a eficiência da compactação). A sobrecarga de compactação de arquivos pequenos pode produzir um arquivo compactado maior do que o arquivo não compactado.

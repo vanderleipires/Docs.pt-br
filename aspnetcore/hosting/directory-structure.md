@@ -11,11 +11,11 @@ ms.assetid: e55eb131-d42e-4bf6-b130-fd626082243c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/directory-structure
-ms.openlocfilehash: f406d866bb1c8ac2d4371c8ddf669fc08af0fada
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: 60797bff85a44dd10caad4aabc109ee12dedfe61
+ms.sourcegitcommit: 7efdc4b6025ad70c15c26bf7451c3c0411123794
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="directory-structure-of-published-aspnet-core-apps"></a>Estrutura de diretório de aplicativos do ASP.NET Core publicados
 
@@ -32,12 +32,16 @@ No núcleo do ASP.NET, o diretório de aplicativo, *publicar*, é composta de ar
 O conteúdo do *publicar* diretório representa o *caminho raiz de conteúdo*, também chamado de *caminho base do aplicativo*, da implantação. O nome que é fornecido para o *publicar* serve de seu local de diretório na implantação, como a caminho físico do servidor para o aplicativo hospedado. O *wwwroot* diretório, se presente, contém ativos estáticos somente. O *logs* diretório pode ser incluído na implantação ao criá-lo no projeto e adicionar o `<Target>` elemento mostrado abaixo ao seu *. csproj* arquivo ou criando o diretório fisicamente no servidor.
 
 ```xml
-<Target Name="CreateLogsFolder" AfterTargets="AfterPublish">
-  <MakeDir Directories="$(PublishDir)logs" Condition="!Exists('$(PublishDir)logs')" />
-  <MakeDir Directories="$(PublishUrl)Logs" Condition="!Exists('$(PublishUrl)Logs')" />
+<Target Name="CreateLogsFolder" AfterTargets="Publish">
+  <MakeDir Directories="$(PublishDir)Logs" 
+           Condition="!Exists('$(PublishDir)Logs')" />
+  <WriteLinesToFile File="$(PublishDir)Logs\.log" 
+                    Lines="Generated file" 
+                    Overwrite="True" 
+                    Condition="!Exists('$(PublishDir)Logs\.log')" />
 </Target>
 ```
 
-A primeira `<MakeDir>` elemento, que usa o `PublishDir` propriedade, é usado pelo .NET Core CLI para determinar o local de destino para a operação de publicação. A segunda `<MakeDir>` elemento, que usa o `PublishUrl` propriedade, é usado pelo Visual Studio para determinar o local de destino. O Visual Studio usa o `PublishUrl` propriedade para compatibilidade com os projetos não .NET Core.
+O `<MakeDir>` elemento cria vazio *Logs* pasta na saída publicada. O elemento usa o `PublishDir` propriedade para determinar o local de destino para criar a pasta. Vários métodos de implantação, como a implantação da Web, ignore as pastas vazias durante a implantação. O `<WriteLinesToFile>` elemento gera um arquivo no *Logs* pasta, o que garante a implantação da pasta para o servidor. Observe que a criação de pasta ainda pode falhar se o processo do operador não tem acesso de gravação para a pasta de destino.
 
-O diretório de implantação requer permissões de leitura/execução, enquanto o *logs* directory requer permissões de leitura/gravação. Diretórios adicionais onde ativos serão gravados exigem permissões de leitura/gravação.
+O diretório de implantação requer permissões de leitura/execução, enquanto o *Logs* directory requer permissões de leitura/gravação. Diretórios adicionais onde ativos serão gravados exigem permissões de leitura/gravação.

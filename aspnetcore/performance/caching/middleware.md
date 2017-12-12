@@ -1,26 +1,24 @@
 ---
 title: "Resposta de cache Middleware no núcleo do ASP.NET"
 author: guardrex
-description: "Configuração e o uso de Middleware de cache de resposta em aplicativos do ASP.NET Core."
-keywords: ASP.NET Core, o cache de resposta, cache, ResponseCache, ResponseCaching, Cache-Control, VaryByQueryKeys, middleware
+description: Saiba como configurar e usar o Middleware de cache de resposta em aplicativos do ASP.NET Core.
 ms.author: riande
 manager: wpickett
 ms.date: 08/22/2017
 ms.topic: article
-ms.assetid: f9267eab-2762-42ac-1638-4a25d2c9d67c
 ms.prod: asp.net-core
 uid: performance/caching/middleware
-ms.openlocfilehash: bc3350a7ef15c5c38aa072bab15cbddc7d0ee0fa
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: f3312d0c333b47169c71891eea79f03be0abcfa3
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Resposta de cache Middleware no núcleo do ASP.NET
 
 Por [Luke Latham](https://github.com/guardrex) e [John Luo](https://github.com/JunTaoLuo)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 Este documento fornece detalhes sobre como configurar o Middleware de cache de resposta em aplicativos do ASP.NET Core. O middleware determina quando as respostas são armazenável em cache, repositórios de respostas e respostas de serve de cache. Para obter uma introdução ao cache de HTTP e o `ResponseCache` de atributo, consulte [cache de resposta](response.md).
 
@@ -112,13 +110,13 @@ O middleware respeita as regras de [especificação HTTP 1.1 cache](https://tool
 
 [Aperfeiçoamentos futuros para o middleware](https://github.com/aspnet/ResponseCaching/issues/96) permitirá a configurar o middleware para o cache de cenários em que a solicitação `Cache-Control` cabeçalho deve ser ignorado ao decidir servir uma resposta em cache. Se você buscar mais controle sobre o comportamento do cache, explore outros recursos de cache do ASP.NET Core. Consulte os tópicos a seguir:
 
-* [Introdução ao cache na memória no núcleo do ASP.NET](xref:performance/caching/memory)
+* [O armazenamento em cache na memória](xref:performance/caching/memory)
 * [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
 * [Cache auxiliar de marca no núcleo do ASP.NET MVC](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
 
 ## <a name="troubleshooting"></a>Solução de problemas
-Se o comportamento do cache não está conforme o esperado, confirme se as respostas são armazenável em cache e é capaz de servido do cache, examinando os cabeçalhos de entrada da solicitação e cabeçalhos de saída da resposta. Habilitando [log](xref:fundamentals/logging) pode ajudar durante a depuração. Os logs de middleware de cache comportamento e quando uma resposta é recuperada do cache.
+Se o comportamento do cache não está conforme o esperado, confirme se as respostas são armazenável em cache e é capaz de servido do cache, examinando os cabeçalhos de entrada da solicitação e cabeçalhos de saída da resposta. Habilitando [log](xref:fundamentals/logging/index) pode ajudar durante a depuração. Os logs de middleware de cache comportamento e quando uma resposta é recuperada do cache.
 
 Quando testar e solucionar problemas de comportamento de cache, um navegador pode definir cabeçalhos de solicitação que afetam o cache de maneira indesejada. Por exemplo, um navegador pode definir o `Cache-Control` cabeçalho para `no-cache` quando você atualizar a página. As ferramentas a seguir podem definir explicitamente os cabeçalhos de solicitação e são preferenciais para testes de armazenamento em cache:
 
@@ -148,3 +146,9 @@ Quando testar e solucionar problemas de comportamento de cache, um navegador pod
 
 * [Inicialização de aplicativos](xref:fundamentals/startup)
 * [Middleware](xref:fundamentals/middleware)
+* [O armazenamento em cache na memória](xref:performance/caching/memory)
+* [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
+* [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
+* [Cache de resposta](xref:performance/caching/response)
+* [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
