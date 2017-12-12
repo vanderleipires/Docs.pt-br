@@ -1,4 +1,4 @@
----
+﻿---
 title: "Habilitar a geração de código QR para aplicativos de autenticador no núcleo do ASP.NET"
 author: rick-anderson
 description: "Habilitar a geração de código QR para aplicativos de autenticador no núcleo do ASP.NET"
@@ -16,7 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/12/2017
 ---
-# <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Habilitar a geração de código QR para aplicativos de autenticador no núcleo do ASP.NET
+# <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core
 
 Observação: Este tópico se aplica ao ASP.NET Core 2. x
 
@@ -62,7 +62,7 @@ Executar seu aplicativo e certifique-se de que você pode escanear o código QR 
 
 ## <a name="change-the-site-name-in-the-qr-code"></a>Alterar o nome do site no código QR
 
-O nome do site no código QR é obtido do nome do projeto que você escolher ao criar seu projeto. Você pode alterá-lo, procurando o `GenerateQrCodeUri(string email, string unformattedKey)` método o *Pages\Account\Manage\EnableAuthenticator.cshtml.cs* arquivo (páginas Razor) ou o *Controllers\ManageController.cs* arquivo (MVC). 
+O nome do site no código QR é obtido do nome do projeto que você escolher ao criar seu projeto. Você pode alterá-lo, procurando o `GenerateQrCodeUri(string email, string unformattedKey)` método o *EnableAuthenticator.cshtml.cs* arquivo. 
 
 O código padrão do modelo terá a seguinte aparência:
 
