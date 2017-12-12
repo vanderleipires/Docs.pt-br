@@ -1,4 +1,4 @@
----
+﻿---
 title: "Núcleo do ASP.NET MVC com núcleo EF - ler dados relacionados - 6 de 10"
 author: tdykstra
 description: "Neste tutorial você ler e exibir dados relacionados – ou seja, os dados que o Entity Framework carrega em Propriedades de navegação."
@@ -17,7 +17,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/04/2017
 ---
-# <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Leitura relacionadas a dados - Core de EF com o tutorial do MVC do ASP.NET Core (6 de 10)
+# <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Leitura relacionadas a dados - Tutorial EF Core com ASP.NET Core MVC (6 de 10)
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
