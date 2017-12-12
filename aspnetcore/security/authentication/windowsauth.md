@@ -17,7 +17,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/19/2017
 ---
-# <a name="configure-windows-authentication-in-aspnet-core"></a>Configurar a autenticação do Windows no núcleo do ASP.NET
+# <a name="configure-windows-authentication-in-aspnet-core"></a>Configurar a autenticação do Windows no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com)
 
@@ -25,7 +25,7 @@ Autenticação do Windows pode ser configurada para aplicativos ASP.NET Core hos
 
 ## <a name="what-is-windows-authentication"></a>O que é autenticação do Windows
 
-Autenticação do Windows se baseia no sistema operacional para autenticar os usuários de aplicativos do ASP.NET Core. Você pode usar a autenticação do Windows quando o servidor é executado em uma rede corporativa usando identidades do domínio do Active Directory ou outras contas do Windows para identificar os usuários. Autenticação do Windows é uma forma segura de autenticação melhor adequada para ambientes de intranet onde os usuários, os aplicativos cliente e servidores web pertencem ao mesmo domínio do Windows.
+Autenticação do Windows se baseia no sistema operacional para autenticar os usuários de aplicativos do ASP.NET Core. Você pode usar a autenticação do Windows quando o servidor é executado em uma rede corporativa, usando identidades do domínio do Active Directory ou outras contas do Windows para identificar os usuários. Autenticação do Windows é uma forma segura de autenticação mais adequada para ambientes de intranet onde os usuários, os aplicativos cliente e servidores web pertencem ao mesmo domínio do Windows.
 
 [Saiba mais sobre a autenticação do Windows e instalá-lo para o IIS](https://docs.microsoft.com/iis/configuration/system.webServer/security/authentication/windowsAuthentication/).
 
@@ -122,7 +122,7 @@ public class Program
 
 ## <a name="working-with-windows-authentication"></a>Trabalhando com autenticação do Windows
 
-Se seu aplicativo usa autenticação do Windows e acesso anônimo, você pode usar o ``[Authorize]`` e ``[AllowAnonymous]`` atributos. Aplicativos que não têm anônima habilitado não exigem ``[Authorize]``; o aplicativo é tratado como exigir autenticação, solicitações anônimas são rejeitadas. Observe que, se o site do IIS é configurado **não** para permitir acesso anônimo, o ``[AllowAnonymous]`` atributo faz **não** permitir solicitações anônimas. O ``[AllowAnonymous]`` atributo substituições ``[Authorize]`` atributo uso em aplicativos que permitem o acesso anônimo.
+Se seu aplicativo usa autenticação do Windows e acesso anônimo, você pode usar os atributos``[Authorize]`` e ``[AllowAnonymous]``. Aplicativos que não têm anônima habilitado não exigem ``[Authorize]``; o aplicativo é tratado como exigir autenticação, solicitações anônimas são rejeitadas. Observe que, se o site do IIS é configurado **não** para permitir acesso anônimo, o ``[AllowAnonymous]`` atributo faz **não** permitir solicitações anônimas. O ``[AllowAnonymous]`` atributo substituições ``[Authorize]`` atributo uso em aplicativos que permitem o acesso anônimo.
 
 ### <a name="impersonation"></a>Representação
 
