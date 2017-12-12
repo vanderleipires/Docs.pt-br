@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
 ms.openlocfilehash: 5dc6c7dc70027bb79875f389d535119a2543b873
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Tratamento de solicitações com controladores no ASP.NET MVC de núcleo
 
@@ -103,7 +103,7 @@ Aplicativos normalmente compartilhar partes de seu fluxo de trabalho. Exemplos i
 Filtrar mais atributos, como `[Authorize]`, podem ser aplicadas no nível do controlador ou ação de acordo com o nível desejado de granularidade.
 
 Tratamento de erros e o cache de resposta são geralmente resolvem preocupações:
-   * [Tratamento de erros](xref:mvc/controllers/filters#exception-filters)
+   * [Tratamento de erro](xref:mvc/controllers/filters#exception-filters)
    * [Cache de resposta](xref:performance/caching/response)
 
 Muitos resolvem preocupações podem ser feitas usando filtros ou personalizado [middleware](xref:fundamentals/middleware).

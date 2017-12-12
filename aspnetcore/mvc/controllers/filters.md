@@ -11,11 +11,11 @@ ms.assetid: 531bda08-aa5b-4471-8f08-96add22c8683
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: 215d165d0029bbf38ef37cdde57b80a15bff9ef9
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 0a2a374ac77b9fd7c626aa6749cffbd3fb0f08d5
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="filters"></a>Filtros
 
@@ -82,7 +82,7 @@ Você pode implementar `IFilterFactory` em suas próprias implementações de at
 
 O framework inclui filtros internos baseado em atributos que você pode subclasse e personalizar. Por exemplo, o filtro de resultados a seguir adiciona um cabeçalho para a resposta.
 
-<a name=add-header-attribute></a>
+<a name="add-header-attribute"></a>
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/AddHeaderAttribute.cs?highlight=5,16)]
 
@@ -167,7 +167,7 @@ O `Order` propriedade supera o escopo ao determinar a ordem na qual os filtros s
 
 Você pode encurta o pipeline de filtro a qualquer momento, definindo o `Result` propriedade o `context` parâmetro fornecido para o método de filtro. Por exemplo, o filtro de recursos a seguir impede que o resto do pipeline de execução.
 
-<a name=short-circuiting-resource-filter></a>
+<a name="short-circuiting-resource-filter"></a>
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/ShortCircuitingResourceFilterAttribute.cs?highlight=12,13,14,15)]
 
@@ -188,7 +188,7 @@ Se seus filtros têm dependências que você precisa acessar de DI, há várias 
 * `IFilterFactory`implementado em seu atributo
 
 > [!NOTE]
-> Uma dependência, que talvez você queira obter de injeção de dependência é um agente de log. No entanto, evite criar e usar filtros meramente para fins de registro em log, como o [recursos de estrutura interna log](../../fundamentals/logging.md) já pode fornecer o que você precisa. Se você pretende adicionar o registro em log para seus filtros, deve se concentrar em questões de domínio de negócios ou comportamento específico para o filtro, em vez de ações do MVC ou outros eventos do framework.
+> Uma dependência, que talvez você queira obter de injeção de dependência é um agente de log. No entanto, evite criar e usar filtros meramente para fins de registro em log, como o [recursos de estrutura interna log](xref:fundamentals/logging/index) já pode fornecer o que você precisa. Se você pretende adicionar o registro em log para seus filtros, deve se concentrar em questões de domínio de negócios ou comportamento específico para o filtro, em vez de ações do MVC ou outros eventos do framework.
 
 ### <a name="servicefilterattribute"></a>ServiceFilterAttribute
 

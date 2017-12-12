@@ -11,11 +11,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 06644b8359fb5ccc2e61a17a4c6e20e354d5ceef
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 78d9fdbd32eae29d7714507498d5d68b86c6d12e
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introdução ao auxiliares de marcação no núcleo do ASP.NET 
 
@@ -35,13 +35,13 @@ Auxiliares de marcação permitem que o código do lado do servidor participar d
 
 A maioria os auxiliares de marca internos elementos HTML existentes de destino e fornece os atributos do lado do servidor para o elemento. Por exemplo, o `<input>` elemento usado em muitas das exibições no *modos de exibição/conta* pasta contém a `asp-for` atributo, que extrai o nome da propriedade do modelo especificado no HTML renderizado. A seguinte marcação Razor:
 
-```html
+```cshtml
 <label asp-for="Email"></label>
 ```
 
 Gera o HTML a seguir:
 
-```html
+```cshtml
 <label for="Email">Email</label>
 ```
 
@@ -51,19 +51,19 @@ O `asp-for` atributo é disponibilizado pelo `For` propriedade o `LabelTagHelper
 
 Escopo de auxiliares de marca é controlado por uma combinação de `@addTagHelper`, `@removeTagHelper`e "!" recusar caractere.
 
-<a name=add-helper-label></a>
+<a name="add-helper-label"></a>
 
 ### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper`disponibiliza auxiliares de marcação
 
 Se você criar um novo aplicativo de web do ASP.NET Core denominado *AuthoringTagHelpers* (com nenhuma autenticação), o seguinte *Views/_ViewImports.cshtml* arquivo será adicionado ao seu projeto:
 
-[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
+[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
 O `@addTagHelper` diretiva disponibiliza auxiliares de marcação para o modo de exibição. Nesse caso, o arquivo de exibição é *Views/_ViewImports.cshtml*, que por padrão é herdada por todos os arquivos de exibição no *exibições* pasta e seus subdiretórios; disponibilizar auxiliares de marcação. O código anterior usa a sintaxe de curinga ("\*") para especificar que todos os auxiliares de marcação no assembly especificado (*Microsoft.AspNetCore.Mvc.TagHelpers*) estarão disponíveis para todos os arquivos no modo de exibição de *exibições* diretório ou subdiretório. O primeiro parâmetro após `@addTagHelper` Especifica os auxiliares de marca para carregar (estamos usando "\*" para todos os auxiliares de marcação), e o segundo parâmetro "Microsoft.AspNetCore.Mvc.TagHelpers" Especifica o assembly que contém os auxiliares de marca. *Microsoft.AspNetCore.Mvc.TagHelpers* é o assembly para os auxiliares de marca de núcleo ASP.NET interno.
 
 Para expor todos os auxiliares de marca neste projeto (que cria um assembly chamado *AuthoringTagHelpers*), você usaria o seguinte:
 
-[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
+[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
 
 Se o seu projeto contém um `EmailTagHelper` com o namespace padrão (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`), você pode fornecer o nome totalmente qualificado (FQN) do auxiliar de marca:
 
@@ -75,14 +75,14 @@ Se o seu projeto contém um `EmailTagHelper` com o namespace padrão (`Authoring
 
 Para adicionar um auxiliar de marca para uma exibição usando um FQN, primeiro adicione o FQN (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) e, em seguida, o nome do assembly (*AuthoringTagHelpers*). A maioria dos desenvolvedores preferem usar o "\*" sintaxe curingas. A sintaxe de caractere curinga permite que você insira o caractere curinga "\*" como o sufixo de um FQN. Por exemplo, qualquer um dos seguintes diretivas trará o `EmailTagHelper`:
 
-```csharp
+```cshtml
 @addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
 @addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
 ```
 
 Conforme mencionado anteriormente, adicionando o `@addTagHelper` diretiva para o *Views/_ViewImports.cshtml* arquivo disponibiliza o auxiliar de marca para todos os arquivos de exibição no *exibições* diretório e subdiretórios. Você pode usar o `@addTagHelper` diretiva nos arquivos de modo de exibição específico se você deseja participar para expor o auxiliar de marca para apenas esses modos de exibição.
 
-<a name=remove-razor-directives-label></a>
+<a name="remove-razor-directives-label"></a>
 
 ### <a name="removetaghelper-removes-tag-helpers"></a>`@removeTagHelper`Remove os auxiliares de marcação
 
@@ -98,19 +98,19 @@ Você pode adicionar uma *viewimports. cshtml* para qualquer pasta de exibição
 
 Você pode desabilitar um auxiliar de marca no nível do elemento com o caractere de recusar auxiliar de marca ("!"). Por exemplo, `Email` validação está desabilitada no `<span>` com o caractere de recusar auxiliar de marca:
 
-```csharp
+```cshtml
 <!span asp-validation-for="Email" class="text-danger"></!span>
 ```
 
 Você deve aplicar o caractere de recusar auxiliar de marca para a marca de abertura e fechamento. (O editor do Visual Studio adiciona automaticamente o caractere de saída para a marca de fechamento quando você adiciona um para a marca de abertura). Depois de adicionar o caractere de recusa, o elemento e os atributos do auxiliar de marca não são exibidos em uma fonte diferente.
 
-<a name=prefix-razor-directives-label></a>
+<a name="prefix-razor-directives-label"></a>
 
 ### <a name="using-taghelperprefix-to-make-tag-helper-usage-explicit"></a>Usando `@tagHelperPrefix` para fazer uso do auxiliar de marca explícita
 
 O `@tagHelperPrefix` diretiva permite que você especifique uma cadeia de caracteres de prefixo de marca para habilitar o suporte auxiliar de marca e fazer uso do auxiliar de marca explícita. Por exemplo, você pode adicionar a seguinte marcação para o *Views/_ViewImports.cshtml* arquivo:
 
-```html
+```cshtml
 @tagHelperPrefix th:
 ```
 A imagem do código abaixo, o prefixo de marca auxiliar é definido como `th:`, portanto, somente esses elementos usando o prefixo `th:` suporte auxiliares de marcação (elementos de auxiliar de marca tem uma fonte diferente). O `<label>` e `<input>` elementos têm o prefixo de marca auxiliar e são habilitados para auxiliar de marca, enquanto o `<span>` elemento não.
@@ -127,7 +127,7 @@ Considere a possibilidade de gravar uma marca HTML `<label>` elemento. Assim que
 
 ![imagem](intro/_static/label.png)
 
-Não só você para obter ajuda em HTML, mas o ícone (o "@" símbolo com "<>" sob ele).
+Não só você para obter ajuda em HTML, mas o ícone (o "@" symbol with "<>" sob ele).
 
 ![imagem](intro/_static/tagSym.png)
 
@@ -163,13 +163,13 @@ IntelliSense listará as propriedades e métodos disponíveis para o modelo na p
 
 Anexar auxiliares de marcação para elementos HTML em exibições Razor, enquanto [auxiliares HTML](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers) são invocados como métodos Intercalado com HTML nos modos de exibição do Razor. Considere a seguinte marcação Razor, que cria um rótulo HTML com a classe CSS "legenda":
 
-```html
+```cshtml
 @Html.Label("FirstName", "First Name:", new {@class="caption"})
 ```
 
 O em (`@`) símbolo informa Razor, este é o início do código. Os dois parâmetros ("FirstName" e "nome:") são cadeias de caracteres, portanto [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) não pode ajudar. O último argumento:
 
-```html
+```cshtml
 new {@class="caption"}
 ```
 
@@ -189,7 +189,7 @@ IntelliSense ajuda você a escrever a linha inteira. O `LabelTagHelper` também 
 
 gera:
 
-```html
+```cshtml
 <label class="caption" for="FirstName">First Name</label>
 ```
 
@@ -199,7 +199,7 @@ O concatenados para conteúdo de maiusculas e minúsculas frase não será usado
 
 gera:
 
-```html
+```cshtml
 <label class="caption" for="FirstName">Name First</label>
 ```
 
@@ -209,7 +209,7 @@ A imagem a seguir mostra a parte do formato da *Views/Account/Register.cshtml* e
 
 Editor do Visual Studio exibe o código c# com um plano de fundo cinza. Por exemplo, o `AntiForgeryToken` auxiliar HTML:
 
-```html
+```cshtml
 @Html.AntiForgeryToken()
 ```
 

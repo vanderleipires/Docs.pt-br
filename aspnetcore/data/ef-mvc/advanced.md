@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
 ms.openlocfilehash: d63502a32e38eb192b40f21f5cd57d20048154e3
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Tópicos avançados - Core de EF com o tutorial do MVC do ASP.NET Core (10 de 10)
 
@@ -83,7 +83,7 @@ Quando o **atualização** botão é clicado, o método HttpPost é chamado e mu
 
 Em **Gerenciador de soluções**, com o botão direito do *exibições/cursos* pasta e clique **Adicionar > Novo Item**.
 
-No **Adicionar Novo Item** caixa de diálogo, clique em **ASP.NET** em **instalado** no painel esquerdo, clique em **exibir página MVC**e nomeie o novo modo de exibição * UpdateCourseCredits.cshtml*.
+No **Adicionar Novo Item** caixa de diálogo, clique em **ASP.NET** em **instalado** no painel esquerdo, clique em **exibir página MVC**e nomeie o novo modo de exibição  *UpdateCourseCredits.cshtml*.
 
 Em *Views/Courses/UpdateCourseCredits.cshtml*, substitua o código de modelo com o código a seguir:
 
@@ -228,7 +228,7 @@ Execute o `migrations remove` de comando, salvar as alterações de código e ex
 
 A abordagem mais simples é renomear o banco de dados em *appSettings. JSON*. Na próxima vez que você executar `database update`, será criado um novo banco de dados.
 
-Para excluir um banco de dados SSOX, o banco de dados, clique **excluir**e, em seguida, o **excluir banco de dados** select da caixa de diálogo **fechar conexões existentes** e clique em ** Okey**.
+Para excluir um banco de dados SSOX, o banco de dados, clique **excluir**e, em seguida, o **excluir banco de dados** select da caixa de diálogo **fechar conexões existentes** e clique em  **Okey**.
 
 Para excluir um banco de dados usando a CLI, execute o `database drop` comando CLI:
 

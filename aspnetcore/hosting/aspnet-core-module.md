@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/aspnet-core-module
 ms.openlocfilehash: ac52b791e02ce52da35fe8d599465076d251b4da
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Referência de configuração de módulo principal do ASP.NET
 
@@ -106,7 +106,7 @@ Se o módulo do ASP.NET Core falhar ao iniciar o processo de back-end ou o iníc
 
 O módulo do ASP.NET Core redireciona `stdout` e `stderr` logs no disco se você definir o `stdoutLogEnabled` e `stdoutLogFile` atributos do `aspNetCore` elemento. As pastas no `stdoutLogFile` caminho deve existir para que o módulo criar o arquivo de log. Uma extensão de arquivo e o carimbo de hora será adicionada automaticamente quando o arquivo de log é criado. Logs não são girados, a menos que ocorra a reciclagem de processo/reinício. É responsabilidade do hoster para limitar o espaço em disco que consomem os logs. Usando o `stdout` log só é recomendado para solução de problemas de inicialização do aplicativo e não gerais do aplicativo para fins de registro.
 
-O nome do arquivo de log é composto, acrescentando o ID de processo (PID), timestamp (*yyyyMdhms*) e a extensão de arquivo (*. log*) para o último segmento do `stdoutLogFile` caminho (normalmente *stdout *) delimitados por sublinhados. Por exemplo se o `stdoutLogFile` caminho termina com *stdout*, um log para um aplicativo com uma identificação de 10652 criada em 10/8/2017 às 12:05:02 tem o nome de arquivo *stdout_10652_20178101252.log*.
+O nome do arquivo de log é composto, acrescentando o ID de processo (PID), timestamp (*yyyyMdhms*) e a extensão de arquivo (*. log*) para o último segmento do `stdoutLogFile` caminho (normalmente *stdout* ) delimitados por sublinhados. Por exemplo se o `stdoutLogFile` caminho termina com *stdout*, um log para um aplicativo com uma identificação de 10652 criada em 10/8/2017 às 12:05:02 tem o nome de arquivo *stdout_10652_20178101252.log*.
 
 Aqui está um exemplo `aspNetCore` elemento configura `stdout` log. O `stdoutLogFile` mostrado no exemplo de caminho é apropriado para o serviço de aplicativo do Azure. Um caminho local ou um caminho de compartilhamento de rede é aceitável para o registro local. Confirme se a identidade do usuário AppPool tem permissão para gravar o caminho fornecido.
 
@@ -120,7 +120,7 @@ Aqui está um exemplo `aspNetCore` elemento configura `stdout` log. O `stdoutLog
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>Configuração do módulo principal do ASP.NET com um IIS compartilhada
 
-O instalador do módulo de núcleo do ASP.NET é executado com os privilégios do **sistema** conta. Como a conta sistema local não ter modificar permissões para o caminho de compartilhamento que é usado pela configuração compartilhada de IIS, o instalador atingirá um erro de acesso negado ao tentar definir as configurações de módulo em * applicationHost. config* no compartilhamento.
+O instalador do módulo de núcleo do ASP.NET é executado com os privilégios do **sistema** conta. Como a conta sistema local não ter modificar permissões para o caminho de compartilhamento que é usado pela configuração compartilhada de IIS, o instalador atingirá um erro de acesso negado ao tentar definir as configurações de módulo em  *applicationHost. config* no compartilhamento.
 
 A solução sem suporte é desabilitar a configuração compartilhada de IIS, execute o instalador, exportar atualizado *applicationHost. config* para o compartilhamento de arquivos e habilitar novamente a configuração compartilhada de IIS.
 

@@ -11,11 +11,11 @@ ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 8bce642576b6b2f9326425d30ef95168da8f47e5
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 58388f674ed5d353c1c7208a67fb338e49fdb592
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no núcleo do ASP.NET
 
@@ -26,7 +26,7 @@ Funcionalidade de roteamento é responsável por uma solicitação de entrada de
 >[!IMPORTANT]
 > Este documento abrange o nível inferior ASP.NET Core roteamento. Para o roteamento MVC do ASP.NET Core, consulte [roteamento para ações do controlador](../mvc/controllers/routing.md)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="routing-basics"></a>Noções básicas sobre roteamento
 
@@ -40,23 +40,23 @@ Em geral, um aplicativo tem uma única coleção de rotas. Quando uma solicitaç
 
 Roteamento está conectado a [middleware](middleware.md) pipeline pela `RouterMiddleware` classe. [ASP.NET MVC](../mvc/overview.md) adiciona o roteamento para o pipeline de middleware como parte da sua configuração. Para obter informações sobre como usar o roteamento como um componente autônomo, consulte [middleware de roteamento usando](#using-routing-middleware).
 
-<a name=url-matching-ref></a>
+<a name="url-matching-ref"></a>
 
 ### <a name="url-matching"></a>Correspondência de URL
 
 Correspondência de URL é o processo pelo qual expede roteamento uma entrada de solicitação para um *manipulador*. Esse processo geralmente com base nos dados no caminho da URL, mas pode ser estendido para considerar todos os dados na solicitação. A capacidade de enviar solicitações para separar manipuladores é fundamental para dimensionar o tamanho e a complexidade de um aplicativo.
 
-Insira as solicitações de entrada a `RouterMiddleware`, que chama o `RouteAsync` método em cada rota na sequência. O `IRouter` instância escolhe se deseja *tratar* a solicitação, definindo o `RouteContext` `Handler` para não-nulo `RequestDelegate`. Se uma rota define um manipulador para a solicitação, o processamento será interrompido e o manipulador de rota será invocada para processar a solicitação. Se todas as rotas serão tentadas e nenhum manipulador foi encontrado para a solicitação, o middleware chama *próximo* e o próximo middleware no pipeline de solicitação é invocado.
+Insira as solicitações de entrada a `RouterMiddleware`, que chama o `RouteAsync` método em cada rota na sequência. O `IRouter` instância escolhe se deseja *tratar* a solicitação, definindo o `RouteContext.Handler` para não-nulo `RequestDelegate`. Se uma rota define um manipulador para a solicitação, o processamento será interrompido e o manipulador de rota será invocada para processar a solicitação. Se todas as rotas serão tentadas e nenhum manipulador foi encontrado para a solicitação, o middleware chama *próximo* e o próximo middleware no pipeline de solicitação é invocado.
 
-A entrada principal para `RouteAsync` é o `RouteContext` `HttpContext` associado à solicitação atual. O `RouteContext.Handler` e `RouteContext` `RouteData` saídas que serão definidos depois que uma rota corresponde.
+A entrada principal para `RouteAsync` é o `RouteContext.HttpContext` associado à solicitação atual. O `RouteContext.Handler` e `RouteContext.RouteData` são saídas que serão definidas depois que uma rota corresponde.
 
 Uma correspondência durante `RouteAsync` também definirá as propriedades do `RouteContext.RouteData` para os valores apropriados com base no processamento de solicitação concluído até o momento. Se uma rota corresponde a uma solicitação, o `RouteContext.RouteData` conterá informações de estado importantes sobre o *resultado*.
 
-`RouteData``Values` é um dicionário de *valores de rota* produzidos de rota. Esses valores geralmente são determinados pelo gerar tokens para a URL e podem ser usados para aceitar a entrada do usuário ou para tomar decisões mais expedição dentro do aplicativo.
+`RouteData.Values`é um dicionário de *valores de rota* produzidos de rota. Esses valores geralmente são determinados pelo gerar tokens para a URL e podem ser usados para aceitar a entrada do usuário ou para tomar decisões mais expedição dentro do aplicativo.
 
-`RouteData``DataTokens` é um recipiente de propriedades de dados adicionais relacionados à rota correspondente. `DataTokens`são fornecidos para oferecer suporte ao estado associando dados com cada rota para que o aplicativo possa tomar decisões mais tarde com base em qual rota correspondente. Esses valores são definidos pelo desenvolvedor e **não** afetam o comportamento de roteamento de qualquer forma. Além disso, os valores armazenados nos tokens de dados podem ser de qualquer tipo, em contraste com valores de rota, que deve ser conversível em cadeias de caracteres.
+`RouteData.DataTokens`é um recipiente de propriedades de dados adicionais relacionados à rota correspondente. `DataTokens`são fornecidos para oferecer suporte ao estado associando dados com cada rota para que o aplicativo possa tomar decisões mais tarde com base em qual rota correspondente. Esses valores são definidos pelo desenvolvedor e **não** afetam o comportamento de roteamento de qualquer forma. Além disso, os valores armazenados nos tokens de dados podem ser de qualquer tipo, em contraste com valores de rota, que deve ser conversível em cadeias de caracteres.
 
-`RouteData``Routers` é uma lista das rotas que participou na correspondência com êxito a solicitação. Rotas podem ser aninhadas dentro de um do outro e o `Routers` propriedade reflete o caminho até a árvore lógica de rotas que resultou em uma correspondência. Geralmente o primeiro item na `Routers` é a coleção de rotas e deve ser usada para geração de URL. O último item no `Routers` é o manipulador de rota correspondente.
+`RouteData.Routers`é uma lista das rotas que participou na correspondência com êxito a solicitação. Rotas podem ser aninhadas dentro de um do outro e o `Routers` propriedade reflete o caminho até a árvore lógica de rotas que resultou em uma correspondência. Geralmente o primeiro item na `Routers` é a coleção de rotas e deve ser usada para geração de URL. O último item no `Routers` é o manipulador de rota correspondente.
 
 ### <a name="url-generation"></a>Geração de URL
 
@@ -66,11 +66,11 @@ Geração de URL segue um processo iterativo semelhante, mas começa com o códi
 
 O principal entradas para `GetVirtualPath` são:
 
-* `VirtualPathContext` `HttpContext`
+* `VirtualPathContext.HttpContext`
 
-* `VirtualPathContext` `Values`
+* `VirtualPathContext.Values`
 
-* `VirtualPathContext` `AmbientValues`
+* `VirtualPathContext.AmbientValues`
 
 Rotas usem principalmente os valores de rota fornecidos pelo `Values` e `AmbientValues` para decidir onde é possível gerar uma URL e os valores a serem incluídos. O `AmbientValues` são o conjunto de valores de rota que foram produzidas pela correspondência a solicitação atual com o sistema de roteamento. Por outro lado, `Values` são os valores de rota que especificam como gerar a URL desejada para a operação atual. O `HttpContext` é fornecido no caso de uma rota precisa obter serviços ou dados adicionais associados ao contexto atual.
 
@@ -78,11 +78,11 @@ Dica: Pensar `Values` como sendo um conjunto de substituições para o `AmbientV
 
 A saída de `GetVirtualPath` é um `VirtualPathData`. `VirtualPathData`é um paralelo do `RouteData`; ele contém o `VirtualPath` para a URL de saída, bem como algumas propriedades adicionais que devem ser definidas pela rota.
 
-O `VirtualPathData` `VirtualPath` propriedade contém o *caminho virtual* produzido pela rota. Dependendo de suas necessidades, talvez seja necessário processar ainda mais o caminho. Por exemplo, se você deseja processar a URL gerada em HTML, você precisa colocar o caminho base do aplicativo.
+O `VirtualPathData.VirtualPath` propriedade contém o *caminho virtual* produzido pela rota. Dependendo de suas necessidades, talvez seja necessário processar ainda mais o caminho. Por exemplo, se você deseja processar a URL gerada em HTML, você precisa colocar o caminho base do aplicativo.
 
-O `VirtualPathData` `Router` é uma referência para a rota que é gerado com êxito a URL.
+O `VirtualPathData.Router` é uma referência para a rota que é gerado com êxito a URL.
 
-O `VirtualPathData` `DataTokens` propriedades é um dicionário de dados adicionais relacionados à rota que gerou a URL. Isso é paralelo de `RouteData.DataTokens`.
+O `VirtualPathData.DataTokens` propriedades é um dicionário de dados adicionais relacionados à rota que gerou a URL. Isso é paralelo de `RouteData.DataTokens`.
 
 ### <a name="creating-routes"></a>Criar rotas
 
@@ -159,7 +159,7 @@ Este modelo corresponderá a um caminho de URL como `/Products/5` e extrairá os
 
 ![Tokens do Windows locais](routing/_static/tokens.png)
 
-<a name=id1></a>
+<a name="id1"></a>
 
 ### <a name="url-generation"></a>Geração de URL
 
@@ -286,7 +286,7 @@ A tabela a seguir demonstra alguns modelos de rota e seu comportamento.
 
 Usando um modelo geralmente é a abordagem mais simples para roteamento. Restrições e padrões também podem ser especificados fora o modelo de rota.
 
-Dica: Habilitar [log](logging.md) para ver como o integradas em implementações de roteamentos, como `Route`, comparar solicitações.
+Dica: Habilitar [log](xref:fundamentals/logging/index) para ver como o integradas em implementações de roteamentos, como `Route`, comparar solicitações.
 
 ## <a name="route-constraint-reference"></a>Referência de restrição de rota
 

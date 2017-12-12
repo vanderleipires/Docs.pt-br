@@ -12,17 +12,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6861021b3a48a175f1f134f4622e6d43af5f720b
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 6858b6b8ec89a5e5ffa9e5f8dddb905f38e16603
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Auxiliares de marcação no núcleo do ASP.NET, um passo a passo com exemplos de criação
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="getting-started-with-tag-helpers"></a>Guia de Introdução com auxiliares de marcação
 
@@ -253,8 +253,8 @@ O auxiliar de marca de condição renderiza a saída quando passado um valor tru
     
     <div>
         <h3>Information about our website (outdated):</h3>
-        <website-information info=Model />
-        <div condition="Model.Approved">
+        <website-information info=@Model />
+        <div condition="@Model.Approved">
             <p>
                 This website has <strong surround="em"> @Model.Approved </strong> been approved yet.
                 Visit www.contoso.com for more information.

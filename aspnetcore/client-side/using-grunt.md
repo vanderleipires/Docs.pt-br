@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-grunt
 ms.openlocfilehash: 8ae50514ce24c7f9e3bb1e347d5d860e1de43c5f
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="using-grunt-in-aspnet-core"></a>Usando o assistente no núcleo do ASP.NET 
 
@@ -211,7 +211,7 @@ Pesado estiver configurado para usar um manifesto chamado *Gruntfile.js* que def
 
 10.  Adicionar o `uglify` tarefas usando o código abaixo.
 
-    A tarefa minimiza o *combined.js* arquivo encontrado no diretório temp e cria o arquivo de resultado no wwwroot/lib seguindo a convenção de nomenclatura padrão * \<nome de arquivo\>. min.js*.
+    A tarefa minimiza o *combined.js* arquivo encontrado no diretório temp e cria o arquivo de resultado no wwwroot/lib seguindo a convenção de nomenclatura padrão  *\<nome de arquivo\>. min.js*.
     
     ```javascript
     uglify: {
@@ -280,7 +280,7 @@ Clique na tarefa de inspeção no Explorador do Executador de tarefas e selecion
 
 ## <a name="binding-to-visual-studio-events"></a>Associação a eventos do Visual Studio
 
-A menos que você deseja iniciar manualmente as tarefas toda vez que você trabalha no Visual Studio, você pode associar tarefas a serem **antes de criar**, **depois de criar**, **limpar**, e ** Projeto aberto** eventos.
+A menos que você deseja iniciar manualmente as tarefas toda vez que você trabalha no Visual Studio, você pode associar tarefas a serem **antes de criar**, **depois de criar**, **limpar**, e  **Projeto aberto** eventos.
 
 Vamos associar `watch` para que ele seja executado sempre que o Visual Studio abrirá. No Explorador do Executador de tarefas, a tarefa de inspeção e selecione **associações > Abrir projeto** no menu de contexto.
 

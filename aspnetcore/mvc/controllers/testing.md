@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/testing
 ms.openlocfilehash: aa60912e06946bd0df4936d33c88d3bf7b69984c
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>Lógica de teste do controlador no núcleo do ASP.NET
 
@@ -40,7 +40,7 @@ Responsabilidades do controlador típico:
 * Salve a entidade de negócios para persistência.
 * Retornar um apropriado `IActionResult`.
 
-## <a name="unit-testing"></a>Testes de unidade
+## <a name="unit-testing"></a>Teste de unidade
 
 [Teste de unidade](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) envolve uma parte de um aplicativo de teste em isolamento de sua infraestrutura e as dependências. Quando a lógica do controlador, somente o conteúdo de uma única ação de teste de unidade é testada, não o comportamento de suas dependências ou a própria estrutura. Como você unidade suas ações do controlador de teste, verifique se que você se concentrar apenas em seu comportamento. Um teste de unidade do controlador evita coisas como [filtros](filters.md), [roteamento](../../fundamentals/routing.md), ou [associação de modelo](../models/model-binding.md). Focalizar no teste apenas uma coisa, testes de unidade geralmente são simples de escrever e rápido executar. Um conjunto bem escrito de testes de unidade pode ser executado com frequência sem muita sobrecarga. No entanto, os testes de unidade não detectam problemas na interação entre componentes, que é a finalidade de [testes de integração](xref:mvc/controllers/testing#integration-testing).
 

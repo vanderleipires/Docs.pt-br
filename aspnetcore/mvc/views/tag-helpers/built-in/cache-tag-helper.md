@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
 ms.openlocfilehash: da5b7b3bf1aa01ee22edf9bd003d8f79a00a5d0b
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Cache auxiliar de marca no núcleo do ASP.NET MVC
 
@@ -84,7 +84,7 @@ Exemplo:
 
 | Tipo de atributo    | Valor de exemplo     |
 |----------------   |----------------   |
-| TimeSpan    | " @TimeSpan.FromSeconds (120)"    |
+| TimeSpan    | "@TimeSpan.FromSeconds(120)"    |
 
 
 Define o período de tempo desde a primeira vez de solicitação para armazenar em cache o conteúdo. 
@@ -103,7 +103,7 @@ Exemplo:
 
 | Tipo de atributo    | Valor de exemplo     |
 |----------------   |----------------   |
-| TimeSpan    | " @TimeSpan.FromSeconds (60)"     |
+| TimeSpan    | "@TimeSpan.FromSeconds(60)"     |
 
 
 Define a hora em que uma entrada de cache deve ser removida se não tiver sido acessada.
@@ -229,7 +229,7 @@ Usar esse atributo mantém o conteúdo em cache por um ciclo de logon e logoff. 
 
 | Tipo de atributo    | Valores de exemplo                |
 |----------------   |----------------               |
-| Cadeia de caracteres             | " @Model "                 |
+| Cadeia de caracteres             | "@Model"                 |
 
 
 Permite a personalização de dados que é armazenado em cache. Quando o objeto referenciado por alterações de valor de cadeia de caracteres do atributo, o conteúdo do auxiliar de marca de Cache é atualizado. Geralmente uma concatenação de cadeia de caracteres de valores de modelo são atribuídos a este atributo.  Na verdade, isso significa que uma atualização para qualquer um dos valores concatenados invalida o cache.

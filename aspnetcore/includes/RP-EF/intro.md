@@ -1,0 +1,1 @@
+O aplicativo web Contoso University demonstra como criar aplicativos da web de páginas Razor usando EF Core e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial](xref:data/ef-rp/intro).

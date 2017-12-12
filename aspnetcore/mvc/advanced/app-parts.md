@@ -12,14 +12,14 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/extensibility/app-parts
 ms.openlocfilehash: a260675e7461105d4f6a0c61fd13971663c268f2
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="application-parts-in-aspnet-core"></a>Partes do aplicativo no núcleo do ASP.NET
 
-[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 Um *parte do aplicativo* é uma abstração sobre os recursos de um aplicativo, da qual MVC recursos, como controladores, componentes do modo de exibição, ou podem ser descobertos auxiliares de marcação. Um exemplo de uma parte do aplicativo é um AssemblyPart, que encapsula uma referência de assembly e expõe tipos e referências de compilação. *Recurso provedores* funcionam com partes do aplicativo para preencher os recursos de um aplicativo ASP.NET MVC de núcleo. É o caso de uso principal para partes do aplicativo permitir que você configure seu aplicativo para descobrir (ou evitar o carregamento) recursos MVC de um assembly.
 

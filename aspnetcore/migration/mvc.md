@@ -1,5 +1,5 @@
 ---
-title: "Migrando do ASP.NET MVC para o ASP.NET Core MVC"
+title: "Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC"
 author: ardalis
 description: 
 keywords: ASP.NET Core, MVC, migrando
@@ -12,13 +12,12 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc
 ms.openlocfilehash: 7a4357da4cc97d7c60cc7e309add7583ef096597
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o ASP.NET Core MVC
+# <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), e [Scott Addie](https://scottaddie.com)
 
@@ -151,7 +150,7 @@ Após salvar o arquivo, o Bower baixará automaticamente as dependências para o
 
 Consulte [gerenciar pacotes do lado do cliente com Bower](../client-side/bower.md) para obter mais informações.
 
-<a name=migrate-layout-file></a>
+<a name="migrate-layout-file"></a>
 
 ## <a name="migrate-the-layout-file"></a>Migrar o arquivo de layout
 
