@@ -23,7 +23,7 @@ Aqui estão as principais etapas executadas para implantar um aplicativo ASP.NET
 
 * Publique o aplicativo em uma pasta no servidor de hospedagem.
 * Configure um gerenciador de processo que inicia o aplicativo quando a solicitação chega e reinicia-o depois que ele falha ou quando o servidor é reinicializado.
-* Configure um proxy reversa que encaminha solicitações para o aplicativo.
+* Configure um proxy reverso que encaminha solicitações para o aplicativo.
 
 ## <a name="publish-to-a-folder"></a>Publicar em uma pasta 
 
