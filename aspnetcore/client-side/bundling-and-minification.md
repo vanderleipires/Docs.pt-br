@@ -17,7 +17,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/22/2017
 ---
-# <a name="bundling-and-minification-in-aspnet-core"></a>Empacotamento e minimização no núcleo do ASP.NET
+# <a name="bundling-and-minification-in-aspnet-core"></a>Empacotamento e minimização no ASP.NET Core
 
 Empacotamento e minimização são duas técnicas você pode usar para melhorar o desempenho de carregamento de página para seu aplicativo da web em ASP.NET. Agrupando combina vários arquivos em um único arquivo. Minimização executa várias otimizações de código diferente para scripts e CSS, o que resulta em cargas menores. Usados juntos, empacotamento e minimização melhora o desempenho de tempo de carregamento, reduzindo o número de solicitações para o servidor e reduzindo o tamanho dos ativos solicitados (como arquivos CSS e JavaScript).
 
