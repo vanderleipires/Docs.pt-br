@@ -1,4 +1,4 @@
----
+﻿---
 title: "Introdução à identidade no núcleo do ASP.NET"
 author: rick-anderson
 description: Usando a identidade com um aplicativo do ASP.NET Core
@@ -17,17 +17,17 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/22/2017
 ---
-# <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade no ASP.NET Core
+# <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade no núcleo do ASP.NET
 
 Por [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), e [Steve Smith](https://ardalis.com/)
 
-Identidade do ASP.NET Core é um sistema de associação que permite que você adicionar a funcionalidade de logon ao seu aplicativo. Os usuários podem criar uma conta e logon com um nome de usuário e senha ou eles podem usar um provedor de logon externo, como Facebook, Google, Microsoft Account, Twitter ou outras pessoas.
+Identidade do ASP.NET Core é um sistema de associação que permite que você adicionar a funcionalidade de login ao seu aplicativo. Os usuários podem criar uma conta e logon com um nome de usuário e senha ou eles podem usar um provedor de login externo, como Facebook, Google, Microsoft Account, Twitter ou outros.
 
 Você pode configurar a identidade do ASP.NET Core para usar um banco de dados do SQL Server para armazenar os nomes de usuário, senhas e dados de perfil. Como alternativa, você pode usar seu próprio armazenamento persistente, por exemplo o armazenamento de tabela do Azure. Este documento contém instruções para Visual Studio e usando a CLI.
 
 ## <a name="overview-of-identity"></a>Visão geral da identidade
 
-Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adicionar funcionalidade ao se registrar, faça logon no e fazer logoff de um usuário. Para obter instruções mais detalhadas sobre a criação de aplicativos usando a identidade do ASP.NET Core, consulte a seção próximas etapas no final deste artigo.
+Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adicionar funcionalidade ao se registrar, faça login no e fazer logoff de um usuário. Para obter instruções mais detalhadas sobre a criação de aplicativos usando a identidade do ASP.NET Core, consulte a seção próximas etapas no final deste artigo.
 
 1.  Crie um projeto de aplicativo Web do ASP.NET Core com contas de usuário individuais.
 
@@ -75,7 +75,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
 3.  Crie um usuário.
 
-    Iniciar o aplicativo e, em seguida, clique no **registrar** link.
+    Inicie o aplicativo e, em seguida, clique no **registrar** link.
 
     Se esta for a primeira vez em que você estiver executando essa ação, talvez seja necessário para executar migrações. O aplicativo solicita que você **aplicar migrações**:
     
@@ -94,25 +94,25 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
     Se o usuário foi criado com êxito, o usuário é conectado pela chamada para ``_signInManager.SignInAsync``.
 
-    **Observação:** consulte [conta confirmação](xref:security/authentication/accconfirm#prevent-login-at-registration) para obter as etapas impedir que o logon imediata no registro.
+    **Observação:** consulte [conta confirmação](xref:security/authentication/accconfirm#prevent-login-at-registration) para obter as etapas impedir que o login imediata no registro.
  
 4.  Iniciar sessão.
  
-    Os usuários podem entrar clicando o **login** link na parte superior do site, ou pode ser navegados a página de logon se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de logon, o ``AccountController`` ``Login`` ação é chamada.
+    Os usuários podem entrar clicando no **login**, link na parte superior do site, ou pode ser direcionado a página de login se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de login, o ``AccountController`` ``Login`` ação é chamada.
 
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  
-    O ``Login`` ação chamadas ``PasswordSignInAsync`` no ``_signInManager`` objeto (fornecido para ``AccountController`` por injeção de dependência).
+    O ``Login`` faz chamadas ``PasswordSignInAsync`` no objeto ``_signInManager``(fornecido pelo ``AccountController`` por injeção de dependência).
  
     A base de ``Controller`` classe expõe um ``User`` propriedade que você pode acessar de métodos do controlador. Por exemplo, você pode enumerar `User.Claims` e tomar decisões de autorização. Para obter mais informações, consulte [autorização](xref:security/authorization/index).
  
 5.  Faça logoff.
  
-    Clicando o **logoff** link chamadas a `LogOut` ação.
+    Clicando no link **logoff** chama a ação`LogOut`.
  
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
  
-    O código anterior acima chama o `_signInManager.SignOutAsync` método. O `SignOutAsync` método limpa declarações do usuário armazenadas em um cookie.
+    O código anterior acima chama o método `_signInManager.SignOutAsync`. O método `SignOutAsync` limpa as declarações do usuário armazenadas em um cookie.
  
 6.  Configuração.
 
