@@ -1,0 +1,80 @@
+---
+uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
+title: Adicionando um controlador | Microsoft Docs
+author: Rick-Anderson
+description: "Observação: Uma versão atualizada deste tutorial está disponível aqui que usa o ASP.NET MVC 5 e Visual Studio 2013. É mais seguro e muito mais simples de seguir e demonstração..."
+ms.author: aspnetcontent
+manager: wpickett
+ms.date: 08/28/2012
+ms.topic: article
+ms.assetid: 0267d31c-892f-49a1-9e7a-3ae8cc12b2ca
+ms.technology: dotnet-mvc
+ms.prod: .net-framework
+msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
+msc.type: authoredcontent
+ms.openlocfilehash: 69af91401e51470fbc0b67103345325201b06723
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 11/10/2017
+---
+<a name="adding-a-controller"></a><span data-ttu-id="5ce7f-104">Adicionando um controlador</span><span class="sxs-lookup"><span data-stu-id="5ce7f-104">Adding a Controller</span></span>
+====================
+<span data-ttu-id="5ce7f-105">Por [Rick Anderson](https://github.com/Rick-Anderson)</span><span class="sxs-lookup"><span data-stu-id="5ce7f-105">by [Rick Anderson](https://github.com/Rick-Anderson)</span></span>
+
+> > [!NOTE]
+> > <span data-ttu-id="5ce7f-106">Uma versão atualizada deste tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) que usa o ASP.NET MVC 5 e Visual Studio 2013.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-106">An updated version of this tutorial is available [here](../../getting-started/introduction/getting-started.md) that uses ASP.NET MVC 5 and Visual Studio 2013.</span></span> <span data-ttu-id="5ce7f-107">É muito mais simples a seguir, mais segura e demonstra mais recursos.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-107">It's more secure, much simpler to follow and demonstrates more features.</span></span>
+
+
+<span data-ttu-id="5ce7f-108">Representa o MVC *model-view-controller*.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-108">MVC stands for *model-view-controller*.</span></span> <span data-ttu-id="5ce7f-109">MVC é um padrão para o desenvolvimento de aplicativos que são bem projetada, podem ser testados e fácil de manter.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-109">MVC is a pattern for developing applications that are well architected, testable and easy to maintain.</span></span> <span data-ttu-id="5ce7f-110">Aplicativos MVC contêm:</span><span class="sxs-lookup"><span data-stu-id="5ce7f-110">MVC-based applications contain:</span></span>
+
+- <span data-ttu-id="5ce7f-111">**M** odels: Classes que representam os dados do aplicativo e que usam a lógica de validação para impor regras de negócio para os dados.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-111">**M** odels: Classes that represent the data of the application and that use validation logic to enforce business rules for that data.</span></span>
+- <span data-ttu-id="5ce7f-112">**V** iews: arquivos de modelo que seu aplicativo usa para gerar dinamicamente as respostas HTML.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-112">**V** iews: Template files that your application uses to dynamically generate HTML responses.</span></span>
+- <span data-ttu-id="5ce7f-113">**C** ontrollers: Classes que lidam com solicitações recebidas de navegador, recuperar dados de modelo e, em seguida, especificar modelos de exibição que retornam uma resposta para o navegador.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-113">**C** ontrollers: Classes that handle incoming browser requests, retrieve model data, and then specify view templates that return a response to the browser.</span></span>
+
+<span data-ttu-id="5ce7f-114">Vamos ser abrangendo todos esses conceitos nesta série de tutoriais e mostram como usá-las para criar um aplicativo.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-114">We'll be covering all these concepts in this tutorial series and show you how to use them to build an application.</span></span>
+
+<span data-ttu-id="5ce7f-115">Vamos começar criando uma classe de controlador.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-115">Let's begin by creating a controller class.</span></span> <span data-ttu-id="5ce7f-116">Em **Solution Explorer**, com o botão direito do *controladores* pasta e, em seguida, selecione **Adicionar controlador**.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-116">In **Solution Explorer**, right-click the *Controllers* folder and then select **Add Controller**.</span></span>
+
+![](adding-a-controller/_static/image1.png)
+
+<span data-ttu-id="5ce7f-117">Nome do novo controlador &quot;HelloWorldController&quot;.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-117">Name your new controller &quot;HelloWorldController&quot;.</span></span> <span data-ttu-id="5ce7f-118">Deixe o modelo padrão como **controlador MVC vazio** e clique em **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-118">Leave the default template as **Empty MVC controller** and click **Add**.</span></span>
+
+![Adicionar controlador](adding-a-controller/_static/image2.png)
+
+<span data-ttu-id="5ce7f-120">Observe na **Solution Explorer** que um novo arquivo tem foi criado com o nome *HelloWorldController.cs*.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-120">Notice in **Solution Explorer** that a new file has been created named *HelloWorldController.cs*.</span></span> <span data-ttu-id="5ce7f-121">O arquivo é aberto no IDE.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-121">The file is open in the IDE.</span></span>
+
+![](adding-a-controller/_static/image3.png)
+
+<span data-ttu-id="5ce7f-122">Substitua o conteúdo do arquivo com o código a seguir.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-122">Replace the contents of the file with the following code.</span></span>
+
+[!code-csharp[Main](adding-a-controller/samples/sample1.cs)]
+
+<span data-ttu-id="5ce7f-123">Os métodos do controlador retornará uma cadeia de caracteres de HTML como um exemplo.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-123">The controller methods will return a string of HTML as an example.</span></span> <span data-ttu-id="5ce7f-124">O controlador é nomeado `HelloWorldController` e o primeiro método acima é chamado `Index`.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-124">The controller is named `HelloWorldController` and the first method above is named `Index`.</span></span> <span data-ttu-id="5ce7f-125">Vamos chamá-la em um navegador.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-125">Let's invoke it from a browser.</span></span> <span data-ttu-id="5ce7f-126">Execute o aplicativo (pressione F5 ou Ctrl + F5).</span><span class="sxs-lookup"><span data-stu-id="5ce7f-126">Run the application (press F5 or Ctrl+F5).</span></span> <span data-ttu-id="5ce7f-127">No navegador, acrescente &quot;HelloWorld&quot; para o caminho na barra de endereços.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-127">In the browser, append &quot;HelloWorld&quot; to the path in the address bar.</span></span> <span data-ttu-id="5ce7f-128">(Por exemplo, na ilustração abaixo, ele `http://localhost:1234/HelloWorld.`) a página no navegador se parecerá com a captura de tela a seguir.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-128">(For example, in the illustration below, it's `http://localhost:1234/HelloWorld.`) The page in the browser will look like the following screenshot.</span></span> <span data-ttu-id="5ce7f-129">No método, o código retornado diretamente uma cadeia de caracteres.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-129">In the method above, the code returned a string directly.</span></span> <span data-ttu-id="5ce7f-130">Você disse que o sistema retornar apenas alguns HTML e fez isso!</span><span class="sxs-lookup"><span data-stu-id="5ce7f-130">You told the system to just return some HTML, and it did!</span></span>
+
+![](adding-a-controller/_static/image4.png)
+
+<span data-ttu-id="5ce7f-131">ASP.NET MVC chama classes diferentes de controlador (e os métodos de ação diferente dentro delas) dependendo da URL de entrada.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-131">ASP.NET MVC invokes different controller classes (and different action methods within them) depending on the incoming URL.</span></span> <span data-ttu-id="5ce7f-132">A lógica de roteamento URL padrão usada pelo ASP.NET MVC usa um formato como este para determinar o que o código para chamar:</span><span class="sxs-lookup"><span data-stu-id="5ce7f-132">The default URL routing logic used by ASP.NET MVC uses a format like this to determine what code to invoke:</span></span>
+
+`/[Controller]/[ActionName]/[Parameters]`
+
+<span data-ttu-id="5ce7f-133">A primeira parte da URL determina a classe do controlador para executar.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-133">The first part of the URL determines the controller class to execute.</span></span> <span data-ttu-id="5ce7f-134">Portanto */HelloWorld* mapeia para o `HelloWorldController` classe.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-134">So */HelloWorld* maps to the `HelloWorldController` class.</span></span> <span data-ttu-id="5ce7f-135">A segunda parte da URL determina o método de ação na classe para executar.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-135">The second part of the URL determines the action method on the class to execute.</span></span> <span data-ttu-id="5ce7f-136">Portanto *HelloWorld/índice* causaria o `Index` método o `HelloWorldController` classe para executar.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-136">So */HelloWorld/Index* would cause the `Index` method of the `HelloWorldController` class to execute.</span></span> <span data-ttu-id="5ce7f-137">Observe que tivemos somente para navegar até */HelloWorld* e `Index` método foi usado por padrão.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-137">Notice that we only had to browse to */HelloWorld* and the `Index` method was used by default.</span></span> <span data-ttu-id="5ce7f-138">Isso ocorre porque um método chamado `Index` é o método padrão que será chamado em um controlador, se ainda não for explicitamente especificado.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-138">This is because a method named `Index` is the default method that will be called on a controller if one is not explicitly specified.</span></span>
+
+<span data-ttu-id="5ce7f-139">Navegue para `http://localhost:xxxx/HelloWorld/Welcome`.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-139">Browse to `http://localhost:xxxx/HelloWorld/Welcome`.</span></span> <span data-ttu-id="5ce7f-140">O `Welcome` método é executado e retorna a cadeia de caracteres &quot;esse é o método de ação de boas-vindas... &quot;.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-140">The `Welcome` method runs and returns the string &quot;This is the Welcome action method...&quot;.</span></span> <span data-ttu-id="5ce7f-141">O mapeamento de MVC padrão é `/[Controller]/[ActionName]/[Parameters]`.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-141">The default MVC mapping is `/[Controller]/[ActionName]/[Parameters]`.</span></span> <span data-ttu-id="5ce7f-142">Para essa URL, o controlador é `HelloWorld` e `Welcome` é o método de ação.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-142">For this URL, the controller is `HelloWorld` and `Welcome` is the action method.</span></span> <span data-ttu-id="5ce7f-143">Você ainda não usou a parte `[Parameters]` da URL.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-143">You haven't used the `[Parameters]` part of the URL yet.</span></span>
+
+![](adding-a-controller/_static/image5.png)
+
+<span data-ttu-id="5ce7f-144">Vamos modificar o exemplo um pouco para que você pode passar algumas informações de parâmetro da URL para o controlador (por exemplo, *HelloWorld/boas-vindas? name = Scott&amp;numtimes = 4*).</span><span class="sxs-lookup"><span data-stu-id="5ce7f-144">Let's modify the example slightly so that you can pass some parameter information from the URL to the controller (for example, */HelloWorld/Welcome?name=Scott&amp;numtimes=4*).</span></span> <span data-ttu-id="5ce7f-145">Alterar sua `Welcome` método incluir dois parâmetros, conforme mostrado abaixo.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-145">Change your `Welcome` method to include two parameters as shown below.</span></span> <span data-ttu-id="5ce7f-146">Observe que o código usa o recurso de parâmetro opcional do c# para indicar que o `numTimes` parâmetro deve 1 como padrão se nenhum valor é passado para esse parâmetro.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-146">Note that the code uses the C# optional-parameter feature to indicate that the `numTimes` parameter should default to 1 if no value is passed for that parameter.</span></span>
+
+[!code-csharp[Main](adding-a-controller/samples/sample2.cs)]
+
+<span data-ttu-id="5ce7f-147">Execute o aplicativo e navegue até a URL de exemplo (`http://localhost:xxxx/HelloWorld/Welcome?name=Scott&numtimes=4)`.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-147">Run your application and browse to the example URL (`http://localhost:xxxx/HelloWorld/Welcome?name=Scott&numtimes=4)`.</span></span> <span data-ttu-id="5ce7f-148">Você pode tentar valores diferentes para `name` e `numtimes` na URL.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-148">You can try different values for `name` and `numtimes` in the URL.</span></span> <span data-ttu-id="5ce7f-149">O [sistema de associação do ASP.NET MVC modelo](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) mapeia automaticamente os parâmetros nomeados da cadeia de consulta na barra de endereços para parâmetros em seu método.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-149">The [ASP.NET MVC model binding system](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) automatically maps the named parameters from the query string in the address bar to parameters in your method.</span></span>
+
+![](adding-a-controller/_static/image6.png)
+
+<span data-ttu-id="5ce7f-150">Nos dois exemplos do controlador está executando o &quot;VC&quot; parte do MVC — ou seja, o trabalho de exibição e controlador.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-150">In both these examples the controller has been doing the &quot;VC&quot; portion of MVC — that is, the view and controller work.</span></span> <span data-ttu-id="5ce7f-151">O controlador está retornando HTML diretamente.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-151">The controller is returning HTML directly.</span></span> <span data-ttu-id="5ce7f-152">Normalmente, você não deseja controladores retornando HTML diretamente, desde que se torna muito difícil de código.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-152">Ordinarily you don't want controllers returning HTML directly, since that becomes very cumbersome to code.</span></span> <span data-ttu-id="5ce7f-153">Em vez disso, usaremos normalmente um arquivo de modelo de exibição separada para ajudar a gerar a resposta HTML.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-153">Instead we'll typically use a separate view template file to help generate the HTML response.</span></span> <span data-ttu-id="5ce7f-154">Vamos Avançar como podemos fazer isso.</span><span class="sxs-lookup"><span data-stu-id="5ce7f-154">Let's look next at how we can do this.</span></span>
+
+>[!div class="step-by-step"]
+<span data-ttu-id="5ce7f-155">[Anterior](intro-to-aspnet-mvc-4.md)
+[Próximo](adding-a-view.md)</span><span class="sxs-lookup"><span data-stu-id="5ce7f-155">[Previous](intro-to-aspnet-mvc-4.md)
+[Next](adding-a-view.md)</span></span>
