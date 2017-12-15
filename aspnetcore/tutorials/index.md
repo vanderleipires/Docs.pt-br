@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: 44eaac4f3f4ad55cbc9b5ca9fae6e406ceff3d3c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 66f6e4542dd208a986b256acd4bd1d0381aa46c6
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -38,8 +38,7 @@ As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada par
    * [Aplicativo Web MVC ASP.NET Core com o Visual Studio Code no Mac ou Linux ](first-mvc-app-xplat/index.md)
 
 * [Introdução ao ASP.NET Core e ao Entity Framework Core usando o Visual Studio](../data/ef-mvc/index.md)
-* [Compilando projetos com Yeoman](../client-side/yeoman.md)
-* [Criando Auxiliares de Marcas](../mvc/views/tag-helpers/authoring.md)
+* [Criando auxiliares de marcação](../mvc/views/tag-helpers/authoring.md)
 * [Criando um componente de exibição simples](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
 * [Desenvolvendo aplicativos ASP.NET Core usando a inspeção dotnet](dotnet-watch.md)
 

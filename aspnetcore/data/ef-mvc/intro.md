@@ -11,17 +11,17 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 5095def776f79d0bb76d5a8e94a4228ef0abed75
-ms.sourcegitcommit: a80d35647aff66323160b2cb413b65d79d98f7a6
+ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Introdução ao ASP.NET MVC de núcleo e Entity Framework Core usando o Visual Studio (1 a 10)
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Uma versão de páginas Razor deste tutorial está disponível [aqui](xref:data/ef-rp/intro). A versão de páginas Razor é mais fácil de seguir e abrange mais recursos EF. Recomendamos que você siga o [versão páginas Razor deste tutorial](xref:data/ef-rp/intro).
+Uma versão de páginas Razor deste tutorial está disponível [aqui](xref:data/ef-rp/intro). A versão das Páginas Razor é mais fácil de seguir e abrange mais recursos de EF. Recomendamos que você siga o [versão páginas Razor deste tutorial](xref:data/ef-rp/intro).
 
 O aplicativo web de exemplo Contoso University demonstra como criar aplicativos de web MVC do ASP.NET Core 2.0 usando o núcleo do Entity Framework (EF) 2.0 e o Visual Studio de 2017.
 
@@ -244,15 +244,10 @@ A criação automática de métodos de ação CRUD e modos de exibição é conh
 
 * Com o botão direito do **controladores** pasta **Solution Explorer** e selecione **Adicionar > Novo Item de Scaffold**.
 
-* Na caixa de diálogo **Adicionar Dependências do MVC**, selecione **Dependências Mínimas** e **Adicionar**.
+Se o **adicionar dependências de MVC** caixa de diálogo aparece:
 
-  ![Adicionar dependências](intro/_static/add-depend.png)
-
-  O Visual Studio adiciona as dependências necessárias Scaffold um controlador. A única alteração no arquivo de projeto é a adição do `Microsoft.VisualStudio.Web.CodeGeneration.Design` pacote.
-
-  Um *ScaffoldingReadMe.txt* arquivo é criado que podem ser excluídas.
-
-* Novamente, clique o **controladores** pasta **Solution Explorer** e selecione **Adicionar > Novo Item de Scaffold**.
+* [Atualize o Visual Studio para a versão mais recente](https://www.visualstudio.com/downloads/). Versões do Visual Studio antes de 15,5 mostram esta caixa de diálogo.
+* Se você não pode atualizar, selecione **adicionar**e, em seguida, siga as etapas de controlador de adicionar novamente.
 
 * No **adicionar Scaffold** caixa de diálogo:
 

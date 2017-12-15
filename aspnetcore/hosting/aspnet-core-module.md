@@ -11,11 +11,11 @@ ms.assetid: 5de0c8f7-50ce-4e2c-b3d4-a1bd9fdfcff5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/aspnet-core-module
-ms.openlocfilehash: ac52b791e02ce52da35fe8d599465076d251b4da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0759f16ada531774a3945f67495e5f634e6154e
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Referência de configuração de módulo principal do ASP.NET
 
@@ -66,7 +66,7 @@ O *Web. config* exemplo a seguir é para um [implantação autossuficiente](http
 | startupTimeLimit | <p>Atributo inteiro opcional.</p><p>Duração em segundos que o módulo irá aguardar o executável iniciar um processo que escuta na porta. Se esse tempo limite for excedido, o módulo irá interromper o processo. O módulo tentará iniciar o processo novamente quando ele recebe uma nova solicitação e continuará a tentar reiniciar o processo em solicitações subsequentes de entrada, a menos que o aplicativo falhar ao iniciar **rapidFailsPerMinute** número vezes no último minuto sem interrupção.</p><p>O valor padrão é 120.</p> |
 | shutdownTimeLimit | <p>Atributo inteiro opcional.</p><p>Duração em segundos para o qual o módulo irá aguardar o executável para desligar normalmente quando o *app_offline.htm* arquivo é detectado.</p><p>O valor padrão é 10.</p> |
 | rapidFailsPerMinute | <p>Atributo inteiro opcional.</p><p>Especifica o número de vezes que o processo especificado na **processPath** pode falhar por minuto. Se esse limite for excedido, o módulo interromperá a inicialização do processo para o restante do minuto.</p><p>O valor padrão é 10.</p> |
-| requestTimeout | <p>Atributo timespan opcional.</p><p>Especifica a duração para a qual o módulo do ASP.NET Core aguardará por uma resposta do processo que escuta em % ASPNETCORE_PORT %.</p><p>O valor padrão é "00: 02:00".</p> |
+| requestTimeout | <p>Atributo timespan opcional.</p><p>Especifica a duração para a qual o módulo do ASP.NET Core aguardará por uma resposta do processo que escuta em % ASPNETCORE_PORT %.</p><p>O valor padrão é "00: 02:00".</p><p>O `requestTimeout` deve ser especificado em minutos inteiros, caso contrário, o padrão é 2 minutos.</p> |
 | stdoutLogEnabled | <p>Atributo booliano opcional.</p><p>Se true, **stdout** e **stderr** para o processo especificado na **processPath** será redirecionado para o arquivo especificado em **stdoutLogFile**.</p><p>O valor padrão é false.</p> |
 | stdoutLogFile | <p>Atributo de cadeia de caracteres opcional.</p><p>Especifica o caminho relativo ou absoluto para o qual **stdout** e **stderr** do processo especificado na **processPath** será registrado. Caminhos relativos são relativo à raiz do site. Qualquer caminho começando com '.' será relativo à raiz do site e todos os outros caminhos serão tratados como caminhos absolutos. As pastas fornecidas no caminho devem existir para que o módulo criar o arquivo de log. A ID de processo, o carimbo de hora (*yyyyMdhms*) e a extensão de arquivo (*. log*) com sublinhado delimitadores são adicionados para o último segmento do **stdoutLogFile** fornecido.</p><p>O valor padrão é `aspnetcore-stdout`.</p> |
 | forwardWindowsAuthToken | verdadeiro ou falso.</p><p>Se for true, o token será encaminhado para o processo filho escuta em % ASPNETCORE_PORT % como um cabeçalho 'MS-ASPNETCORE-WINAUTHTOKEN' por solicitação. É responsabilidade do processo para chamar CloseHandle neste token por solicitação.</p><p>O valor padrão é true.</p> |

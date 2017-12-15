@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: 352d125b9042c603b59ed9bda0e99b6a49c7ab9f
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 19cab22176c732c5cb8e337d7635bddc54107921
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Provedor de configuração do Cofre de chaves do Azure
 
@@ -63,7 +63,7 @@ O provedor é adicionado para o `ConfigurationBuilder` com o `AddAzureKeyVault` 
       * `SecretName`: `secret_value_1`
       * `Section--SecretName`: `secret_value_2`
   * Registre o aplicativo de exemplo no Active Directory do Azure.
-  * Autorize o aplicativo para acessar o Cofre de chaves. Quando você usa o `Set-AzureRmKeyVaultAccessPolicy` cmdlet do PowerShell para autorizar o aplicativo para acessar o Cofre de chave, fornecer `List` e `Get` acesso para segredos com `-PermissionsToKeys list,get`.
+  * Autorize o aplicativo para acessar o Cofre de chaves. Quando você usa o `Set-AzureRmKeyVaultAccessPolicy` cmdlet do PowerShell para autorizar o aplicativo para acessar o Cofre de chave, fornecer `List` e `Get` acesso para segredos com `-PermissionsToSecrets list,get`.
 2. Atualizar o aplicativo *appSettings. JSON* arquivo com os valores de `Vault`, `ClientId`, e `ClientSecret`.
 3. Executar o aplicativo de exemplo, que obtém seus valores de configuração de `IConfigurationRoot` com o mesmo nome que o nome do segredo.
   * Valores não hierárquicos: O valor de `SecretName` é obtido com `config["SecretName"]`.
@@ -105,7 +105,7 @@ Quando você implementar essa abordagem:
       * `5000-AppSecret`: `5.0.0.0_secret_value`
       * `5100-AppSecret`: `5.1.0.0_secret_value`
   * Registre o aplicativo de exemplo no Active Directory do Azure.
-  * Autorize o aplicativo para acessar o Cofre de chaves. Quando você usa o `Set-AzureRmKeyVaultAccessPolicy` cmdlet do PowerShell para autorizar o aplicativo para acessar o Cofre de chave, fornecer `List` e `Get` acesso para segredos com `-PermissionsToKeys list,get`.
+  * Autorize o aplicativo para acessar o Cofre de chaves. Quando você usa o `Set-AzureRmKeyVaultAccessPolicy` cmdlet do PowerShell para autorizar o aplicativo para acessar o Cofre de chave, fornecer `List` e `Get` acesso para segredos com `-PermissionsToSecrets list,get`.
 2. Atualizar o aplicativo *appSettings. JSON* arquivo com os valores de `Vault`, `ClientId`, e `ClientSecret`.
 3. Executar o aplicativo de exemplo, que obtém seus valores de configuração de `IConfigurationRoot` com o mesmo nome que o nome do segredo prefixado. Neste exemplo, o prefixo é a versão do aplicativo, o que você forneceu para o `PrefixKeyVaultSecretManager` quando você adicionou o provedor de configuração do Cofre de chaves do Azure. O valor de `AppSecret` é obtido com `config["AppSecret"]`. A página da Web gerada pelo aplicativo mostra o valor carregado:
 

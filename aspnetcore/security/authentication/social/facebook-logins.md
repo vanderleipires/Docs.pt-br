@@ -11,11 +11,11 @@ ms.assetid: 8c65179b-688c-4af1-8f5e-1862920cda95
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 826ac826c22dae81e5dbea08a11a62cac0b1068a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 058670b4f699288e1acbe76bae08dcebf69346b8
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="configuring-facebook-authentication"></a>Configurar a autenticação do Facebook
 
@@ -25,9 +25,9 @@ Este tutorial mostra como habilitar os usuários entrar com sua conta do Faceboo
 
 ## <a name="create-the-app-in-facebook"></a>Criar o aplicativo no Facebook
 
-*  Navegue até o [Facebook para desenvolvedores](https://developers.facebook.com) página e entre. Se você ainda não tiver uma conta do Facebook, use o **inscrever-se para o Facebook** link na página de logon para criar uma.
+*  Navegue até o [aplicativo Facebook desenvolvedores](https://developers.facebook.com/apps/) página e entre. Se você ainda não tiver uma conta do Facebook, use o **inscrever-se para o Facebook** link na página de logon para criar uma.
 
-* Toque na **criar aplicativo** botão no canto superior direito para criar uma nova ID de aplicativo.
+* Toque na **adicionar um novo aplicativo** botão no canto superior direito para criar uma nova ID de aplicativo.
 
    ![Abra o Facebook para o portal de desenvolvedores no Microsoft Edge](index/_static/FBMyApps.png)
 
@@ -35,10 +35,10 @@ Este tutorial mostra como habilitar os usuários entrar com sua conta do Faceboo
 
    ![Criar um formulário de nova ID de aplicativo](index/_static/FBNewAppId.png)
 
-* Quando for apresentado **selecionar um produto** prompt, clique em **Set Up** no **logon do Facebook** cartão.
+* No **selecionar um produto** , clique em **Set Up** no **logon do Facebook** cartão.
 
    ![Página de instalação do produto](index/_static/FBProductSetup.png)
-
+  
 * O **Quickstart** assistente iniciará com **escolher uma plataforma** como a primeira página. Ignorar o assistente agora clicando o **configurações** link no menu à esquerda:
 
    ![Início rápido do Skip](index/_static/FBSkipQuickStart.png)
@@ -72,13 +72,6 @@ dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
 
 ## <a name="configure-facebook-authentication"></a>Configurar a autenticação do Facebook
 
-O modelo de projeto usado neste tutorial garante que [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) pacote já está instalado.
-
-* Para instalar este pacote com 2017 do Visual Studio, clique com botão direito no projeto e selecione **gerenciar pacotes NuGet**.
-* Para instalar o .NET Core CLI, execute o seguinte no diretório do projeto:
-
-   `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
-
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Adicione o serviço do Facebook no `ConfigureServices` método o *Startup.cs* arquivo:
@@ -98,6 +91,13 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 [!INCLUDE[default settings configuration](includes/default-settings.md)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+Instalar o [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) pacote.
+
+* Para instalar este pacote com 2017 do Visual Studio, clique com botão direito no projeto e selecione **gerenciar pacotes NuGet**.
+* Para instalar o .NET Core CLI, execute o seguinte no diretório do projeto:
+
+   `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
 
 Adicionar o middleware do Facebook no `Configure` método *Startup.cs* arquivo:
 
