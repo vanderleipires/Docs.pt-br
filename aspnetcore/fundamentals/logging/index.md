@@ -5,16 +5,16 @@ description: Saiba mais sobre a estrutura de registros no ASP.NET Core. Descubra
 keywords: ASP.NET Core, registro em log, provedores de log, Microsoft.Extensions.Logging, ILogger, ILoggerFactory, LogLevel, WithFilter, TraceSource, EventLog, EventSource, escopos
 ms.author: tdykstra
 manager: wpickett
-ms.date: 11/15/2017
+ms.date: 12/15/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: f7f5f08799513aa07223995410f2125407c58c94
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 737de614625ce560df1c3d7cfd9810f9433c153d
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introdução ao registro em log no ASP.NET Core
 
@@ -587,7 +587,13 @@ O pacote de provedor [Microsoft.Extensions.Logging.AzureAppServices](https://www
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Você não precisa instalar o pacote de provedor ou chamar o método de extensão `AddAzureWebAppDiagnostics`. O provedor fica automaticamente disponível para o aplicativo quando você implanta o aplicativo do Serviço de Aplicativo do Azure.
+Se o destino for o .NET Core, você não precisará instalar o pacote de provedor ou chamar explicitamente `AddAzureWebAppDiagnostics`. O provedor fica automaticamente disponível para o aplicativo quando você implanta o aplicativo do Serviço de Aplicativo do Azure.
+
+Se o destino for o .NET Framework, adicione o pacote de provedor ao seu projeto e invoque `AddAzureWebAppDiagnostics`:
+
+```csharp
+logging.AddAzureWebAppDiagnostics();
+```
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
