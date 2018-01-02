@@ -37,6 +37,18 @@
 ### [Atualizando dados relacionados](xref:data/ef-rp/update-related-data)
 ### [Tratando conflitos de simultaneidade](xref:data/ef-rp/concurrency)
 
+## [Acesso a dados – MVC com EF Core](data/ef-mvc/index.md)
+### [Introdução](data/ef-mvc/intro.md)
+### [Operações Create, Read, Update e Delete](data/ef-mvc/crud.md)
+### [Classificação, filtragem, paginação e agrupamento](data/ef-mvc/sort-filter-page.md)
+### [Migrações](data/ef-mvc/migrations.md)
+### [Criando um modelo de dados complexo](data/ef-mvc/complex-data-model.md)
+### [Lendo dados relacionados](data/ef-mvc/read-related-data.md)
+### [Atualizando dados relacionados](data/ef-mvc/update-related-data.md)
+### [Tratando conflitos de simultaneidade](data/ef-mvc/concurrency.md)
+### [Herança](data/ef-mvc/inheritance.md)
+### [Tópicos avançados](data/ef-mvc/advanced.md)
+
 ## [Criando serviços de back-end para aplicativos móveis](mobile/native-mobile-backend.md)
 ## [Compilando APIs Web](mvc/web-api/index.md)
 ## [Criar uma API Web](xref:tutorials/first-web-api-mac)
