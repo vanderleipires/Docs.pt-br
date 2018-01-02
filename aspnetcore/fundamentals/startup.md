@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/startup
-ms.openlocfilehash: 8adb96c7261a2e7b1556f0daddcf6f135862b53a
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: dd2eb3d3996bc0bf277c8d5e772c8568ef9f147e
+ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="application-startup-in-aspnet-core"></a>Inicialização do aplicativo no núcleo do ASP.NET
 
@@ -121,4 +121,4 @@ Ordem de execução de middleware é definida pela ordem de `IStartupFilter` reg
 * [Middleware](xref:fundamentals/middleware)
 * [Registro em log](xref:fundamentals/logging/index)
 * [Configuração](xref:fundamentals/configuration/index)
-* [Classe StartupLoader: método FindStartupType (fonte de referência)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116))
+* [Classe StartupLoader: método FindStartupType (fonte de referência)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116)

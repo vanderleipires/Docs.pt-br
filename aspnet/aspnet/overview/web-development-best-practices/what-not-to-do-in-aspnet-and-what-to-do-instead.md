@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 24c6a35a6b663ebb0f8d0e3e7988322fa5d9018c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6790cd0deb36c9fb297ccd4df371f763dba17844
+ms.sourcegitcommit: 17b025bd33f4474f0deaafc6d0447a4e72bcad87
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/27/2017
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>O que não fazer em ASP.NET e o que fazer em vez disso
 ====================
@@ -29,7 +29,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 
 Este tópico não serve como um guia completo para garantir que seu aplicativo é seguro e eficiente. Você ainda precisa seguir as práticas recomendadas para segurança e desempenho que não são descritas neste tópico. Apenas sugere como evitar erros comuns relacionados a processos e classes do .NET.
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Esse tópico contém as seguintes seções:
 
@@ -49,7 +49,7 @@ Esse tópico contém as seguintes seções:
     - [UrlPathEncode](#urlpathencode)
 - [Confiabilidade e desempenho](#performance)
 
-    - [PreSendRequestHeaders e PreSendRequestContext](#presend)
+    - [PreSendRequestHeaders e PreSendRequestContent](#presend)
     - [Eventos de página assíncrona com formulários da Web](#asyncevents)
     - [Disparar e esquecer de trabalho](#fire)
     - [Corpo da entidade de solicitação](#requestentity)
@@ -200,11 +200,13 @@ O exemplo a seguir mostra como passar uma URL codificada como um parâmetro de c
 
 <a id="presend"></a>
 
-### <a name="presendrequestheaders-and-presendrequestcontext"></a>PreSendRequestHeaders e PreSendRequestContext
+### <a name="presendrequestheaders-and-presendrequestcontent"></a>PreSendRequestHeaders e PreSendRequestContent
 
 Recomendação: Não use esses eventos com os módulos gerenciados. Em vez disso, grave um módulo nativo do IIS para executar as tarefas necessárias. Consulte [criar módulos HTTP de código nativo](https://msdn.microsoft.com/en-us/library/ms693629.aspx).
 
-Você pode usar o [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) e [PreSendRequestContext](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) eventos com os módulos nativos do IIS, mas não usá-las com os módulos gerenciados que implementam IHttpModule. A configuração dessas propriedades pode causar problemas com solicitações assíncronas.
+Você pode usar o [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) e [PreSendRequestContent](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) eventos com os módulos nativos do IIS.
+> [!WARNING]
+> Não use `PreSendRequestHeaders` e `PreSendRequestContent` com módulos gerenciados que implementam `IHttpModule`. A configuração dessas propriedades pode causar problemas com solicitações assíncronas. A combinação de roteamento solicitado aplicativo (ARR) e websockets pode resultar em exceções de violação de acesso que podem causar w3wp falhar. Por exemplo, iiscore! W3_CONTEXT_BASE::GetIsLastNotification + 68 no iiscore.dll causou uma exceção de violação de acesso (0xC0000005).
 
 <a id="asyncevents"></a>
 

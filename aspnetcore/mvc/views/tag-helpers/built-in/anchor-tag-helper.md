@@ -5,17 +5,17 @@ description: "Mostra como trabalhar com o auxiliar de marca de âncora"
 keywords: "ASP.NET Core, auxiliar de marcação"
 ms.author: riande
 manager: wpickett
-ms.date: 02/14/2017
+ms.date: 12/20/2017
 ms.topic: article
 ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: e3754c4313f01bc746ccb8efe11611ae213e3955
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 503ad7c4ce8c4f08b2a06dbe9f985566f54d3ca2
+ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="anchor-tag-helper"></a>Auxiliar de marca de âncora
 
@@ -25,15 +25,12 @@ O auxiliar de marca de âncora aprimora a âncora HTML (`<a ... ></a>`) marca ad
 
 O controlador do apresentador abaixo é usado nos exemplos neste documento.
 
-<br/>
 **SpeakerController.cs** 
 
 [!code-csharp[SpeakerController](sample/TagHelpersBuiltInAspNetCore/src/TagHelpersBuiltInAspNetCore/Controllers/SpeakerController.cs)]
 
 
 ## <a name="anchor-tag-helper-attributes"></a>Atributos de auxiliar de marca de âncora
-
-- - -
 
 ### <a name="asp-controller"></a>controlador de ASP
 
@@ -51,13 +48,10 @@ A marcação gerada será:
 
 Se o `asp-controller` for especificado e `asp-action` não, é o padrão `asp-action` será o método do controlador padrão do modo de exibição atualmente em execução. Que é, no exemplo acima, se `asp-action` é à esquerda, e este auxiliar de marca de âncora é gerado a partir *HomeController*do `Index` exibição (**/home**), a marcação gerada será:
 
-
 ```html
 <a href="/Home">All Speakers</a>
 ```
 
-- - -
-  
 ### <a name="asp-action"></a>ação de ASP
 
 `asp-action`é o nome do método de ação no controlador que serão incluído no gerado `href`. Por exemplo, o código a seguir defina gerado `href` para apontar para a página de detalhes do apresentador:
@@ -76,9 +70,33 @@ Se nenhum `asp-controller` atributo for especificado, o controlador padrão cham
  
 Se o atributo `asp-action` é `Index`, em seguida, nenhuma ação é anexada à URL, à esquerda para o padrão `Index` método ser chamado. A ação especificada (ou padrão), deve existir no controlador referenciado em `asp-controller`.
 
-- - -
-  
-<a name="route"></a>
+### <a name="asp-page"></a>página ASP
+
+Use o `asp-page` atributo em uma marca de âncora para definir a URL para apontar para uma página específica. Prefixando o nome de página com uma barra "/" cria a URL. A URL de exemplo abaixo aponta para a página "Locutor" no diretório atual.
+
+```cshtml
+<a asp-page="/Speakers">All Speakers</a>
+```
+
+O `asp-page` atributo no exemplo de código anterior renderiza a saída HTML no modo de exibição semelhante para o trecho a seguir:
+
+```html
+<a href="/items?page=%2FSpeakers">Speakers</a>
+``
+
+The `asp-page` attribute is mutually exclusive with the `asp-route`, `asp-controller`, and `asp-action` attributes. However, `asp-page` can be used with `asp-route-id` to control routing, as the following code sample demonstrates:
+
+```
+cshtml<a asp-page="/Speaker" asp-route-id="@speaker.Id">alto-falantes do modo de exibição</a>
+```
+
+The `asp-route-id` produces the following output:
+
+```html
+https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
+```
+
+
 ### <a name="asp-route-value"></a>ASP - rota-{value}
 
 `asp-route-`é um prefixo de rota de curinga. Qualquer valor colocado após o traço à direita será interpretado como um parâmetro de rota potencial. Se uma rota padrão não for encontrada, esse prefixo de rota será anexado para o href gerado como um parâmetro de solicitação e um valor. Caso contrário, ele será substituído no modelo de rota.
@@ -91,7 +109,7 @@ public IActionResult AnchorTagHelper(string id)
     var speaker = new SpeakerData()
     {
         SpeakerId = 12
-    };      
+    };
     return View(viewName, speaker);
 }
 ```
@@ -136,22 +154,17 @@ Se o prefixo da rota não é parte do modelo de roteamento encontrado, que é o 
 
 O código HTML gerado será da seguinte maneira porque **speakerid** não foi encontrado na rota correspondida:
 
-
 ```html
 <a href='/Speaker/Detail?speakerid=12'>SpeakerId: 12</a>
 ```
 
 Se qualquer um dos `asp-controller` ou `asp-action` não forem especificados, e o processamento padrão mesmo é seguido porque está sendo o `asp-route` atributo.
 
-- - -
-
 ### <a name="asp-route"></a>rota de ASP
 
 `asp-route`Fornece uma maneira de criar uma URL que vincula-se diretamente a uma rota nomeada. Usando atributos de roteamento, uma rota pode ser nomeada como mostra o `SpeakerController` e usado em seu `Evaluations` método.
 
 `Name = "speakerevals"`informa o auxiliar de marca de âncora para gerar uma rota diretamente para esse método de controlador usando a URL `/Speaker/Evaluations`. Se `asp-controller` ou `asp-action` é especificado além `asp-route`, a rota gerada não pode ser o esperado. `asp-route`não deve ser usada com qualquer um dos atributos `asp-controller` ou `asp-action` para evitar um conflito de rota.
-
-- - -
 
 ### <a name="asp-all-route-data"></a>ASP-all-dados de rota
 
@@ -168,8 +181,8 @@ Como o exemplo a seguir mostra, um dicionário embutido é criado e os dados sã
             {"currentYear", "true"}
         };
 }
-<a asp-route="speakerevalscurrent" 
-   asp-all-route-data="dict">SpeakerEvals</a>
+<a asp-route="speakerevalscurrent"
+asp-all-route-data="dict">SpeakerEvals</a>
 ```
 
 O código anterior gera a seguinte URL: http://localhost/Speaker/EvaluationsCurrent?speakerId=11&currentYear=true
@@ -177,8 +190,6 @@ O código anterior gera a seguinte URL: http://localhost/Speaker/EvaluationsCurr
 Quando o link é clicado, o método do controlador `EvaluationsCurrent` é chamado. Ele é chamado porque esse controlador tem dois parâmetros de cadeia de caracteres que correspondem o que foi criado a partir de `asp-all-route-data` dicionário.
 
 Se todas as chaves na correspondência de dicionário de parâmetros de rota, esses valores são substituídos na rota conforme apropriado e os outros valores não correspondentes serão gerados como parâmetros de solicitação.
-
-- - -
 
 ### <a name="asp-fragment"></a>fragmento de ASP
 
@@ -193,36 +204,22 @@ A URL gerada será: http://localhost/Speaker/Evaluations#SpeakerEvaluations
 
 Marcas de hash são úteis ao criar aplicativos do lado do cliente. Eles podem ser usados para marcar fácil e pesquisa em JavaScript, por exemplo.
 
-- - -
-
 ### <a name="asp-area"></a>área de ASP
 
 `asp-area`Define o nome da área que usa o ASP.NET Core para definir a rota apropriada. A seguir estão exemplos de como o atributo área faz com que um remapeamento de rotas. Configuração `asp-area` blogs prefixos de diretório `Areas/Blogs` para as rotas do associado controladores e exibições para a marca de âncora.
 
 * Nome do projeto
+  * wwwroot
+  * Áreas
+    * Blogs
+      * Controladores
+        * HomeController
+      * Exibições
+        * Home
+          * Cshtml
+          * AboutBlog.cshtml
+  * Controladores
 
-  * *wwwroot*
-
-  * *Áreas*
-
-    * *Blogs*
-
-      * *Controladores*
-
-        * *HomeController*
-
-      * *Exibições*
-
-        * *Casa*
-
-          * *Index.cshtml*
-          
-          * *AboutBlog.cshtml*
-          
-  * *Controladores*
-  
-
-        
 Especificando uma marca de área é válida, como ```area="Blogs"``` ao referenciar o ```AboutBlog.cshtml``` arquivo será semelhante a seguir usando o auxiliar de marca de âncora.
 
 ```cshtml
@@ -238,8 +235,6 @@ O código HTML gerado incluirá o segmento de áreas e será da seguinte maneira
 > [!TIP]
 > Para as áreas do MVC trabalhar em um aplicativo web, o modelo de rota deve incluir uma referência para a área se ele existir. Esse modelo, que é o segundo parâmetro do `routes.MapRoute` chamada de método, será exibida como:`template: '"{area:exists}/{controller=Home}/{action=Index}"'`
 
-- - -
-
 ### <a name="asp-protocol"></a>protocolo de ASP
 
 O `asp-protocol` é para especificar um protocolo (como `https`) em sua URL. Um auxiliar de marca de âncora que contenha o protocolo de exemplo será semelhante ao seguinte:
@@ -251,8 +246,6 @@ e irá gerar o HTML da seguinte maneira:
 ```<a href="https://localhost/Home/About">About</a>```
 
 O domínio no exemplo é localhost, mas o auxiliar de marca de âncora usará o domínio do site público ao gerar a URL.
-
-- - -
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
