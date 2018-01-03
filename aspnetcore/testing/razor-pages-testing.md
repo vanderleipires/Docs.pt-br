@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 7a3f1bfa8bec830216af37d89aa588a921485e6b
-ms.sourcegitcommit: 4925a91ef4130ddb333f187ab13defe66f2c6cef
+ms.openlocfilehash: 1ecdf010f7c283a0a08b224d570a5bc5cdf536df
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Unidade de páginas Razor e integração de teste no núcleo do ASP.NET
 
@@ -57,7 +57,7 @@ O aplicativo de mensagem é um sistema de mensagem páginas Razor simples com as
 * Uma mensagem é descrita pelo `Message` classe (*Data/Message.cs*) com duas propriedades: `Id` (chave) e `Text` (mensagem). O `Text` propriedade é necessária e limitada a 200 caracteres.
 * As mensagens são armazenadas usando [banco de dados do Entity Framework na memória](/ef/core/providers/in-memory/)&#8224;.
 * O aplicativo contém uma camada de acesso de dados (DAL) em sua classe de contexto de banco de dados, `AppDbContext` (*Data/AppDbContext.cs*). Os métodos DAL são marcados como `virtual`, que permite a simulação de métodos para uso em testes.
-* No ambiente de desenvolvimento, o repositório de mensagens foi inicializado com três mensagens. Essas *propagado mensagens* também são usados no teste.
+* Se o banco de dados está vazio na inicialização do aplicativo, o repositório de mensagens foi inicializado com três mensagens. Essas *propagado mensagens* também são usados no teste.
 
 &#8224; O tópico EF [testes com InMemory](/ef/core/miscellaneous/testing/in-memory), explica como usar um banco de dados na memória para testes com MSTest. Este tópico usa o [xUnit](https://xunit.github.io/) estrutura de teste. Conceitos de teste e implementações de teste em estruturas de teste diferentes são semelhantes, mas não idêntica.
 

@@ -5,24 +5,24 @@ author: tfitzmac
 description: "Este tutorial mostra como excluir uma entrada de banco de dados individuais. Ele pressupõe que você tenha concluído a série por meio de atualização de banco de dados no PA da Web do ASP.NET..."
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 05/28/2015
+ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: aef31b6170cc3bba2421eb8c2c41e83aadc129c5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5bc92b5d40e7a55dcd730d552c71031d913b277e
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/03/2018
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Introdução a páginas da Web ASP.NET - excluir dados do banco de dados
 ====================
 por [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Este tutorial mostra como excluir uma entrada de banco de dados individuais. Ele pressupõe que você tenha concluído a série por meio de [atualização do banco de dados em páginas da Web do ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251583).
+> Este tutorial mostra como excluir uma entrada de banco de dados individuais. Ele pressupõe que você tenha concluído a série por meio de [atualização do banco de dados em páginas da Web do ASP.NET](updating-data.md).
 > 
 > O que você aprenderá:
 > 
@@ -76,7 +76,7 @@ A nova coluna mostra um link (`<a>` elemento) cujo texto é "Excluir". O destino
 
 Este link invocará uma página chamada *DeleteMovie* e passe a ID do filme que você selecionou.
 
-Este tutorial não entrarei em detalhes sobre como esse link é construído, porque ele é quase idêntico de **editar** link do tutorial anterior ([atualização do banco de dados em páginas da Web do ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251583)).
+Este tutorial não entrarei em detalhes sobre como esse link é construído, porque ele é quase idêntico de **editar** link do tutorial anterior ([atualização do banco de dados em páginas da Web do ASP.NET](updating-data.md)).
 
 ## <a name="creating-the-delete-page"></a>Criando a página de exclusão
 
@@ -169,7 +169,7 @@ O seguinte tutorial mostra como fornecer todas as páginas em seu site uma apar�
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Introdução à programação da Web do ASP.NET usando a sintaxe do Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Introdução à programação da Web do ASP.NET usando a sintaxe do Razor](../introducing-razor-syntax-c.md)
 - [A instrução DELETE do SQL](http://www.w3schools.com/sql/sql_delete.asp) no site W3Schools
 
 >[!div class="step-by-step"]

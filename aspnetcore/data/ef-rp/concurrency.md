@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 0c49376fd1b602fe03ef2a152d19b58513ae2710
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: 8862c6b9a5eb7ac3b6889071e4ce9ff6f02512c9
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/03/2018
 ---
 en-us /
 
@@ -194,7 +194,7 @@ Atualização *pages\departments\edit.cshtml.cs* com o código a seguir:
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet)]
 
-Para detectar um problema de simultaneidade, o [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) é atualizado com o `rowVersion` o valor da entidade era foi encontrado. Núcleo EF gera um comando de atualização do SQL com uma cláusula WHERE que contém o original `RowVersion` valor. Se nenhuma linha é afetada pelo comando de atualização (linhas não ter original `RowVersion` valor), um `DbUpdateConcurrencyException` exceção será lançada.
+Para detectar um problema de simultaneidade, o [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) é atualizado com o `rowVersion` valor da entidade foi encontrado. Núcleo EF gera um comando de atualização do SQL com uma cláusula WHERE que contém o original `RowVersion` valor. Se nenhuma linha é afetada pelo comando de atualização (linhas não ter original `RowVersion` valor), um `DbUpdateConcurrencyException` exceção será lançada.
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_rv&highlight=24-)]
 
