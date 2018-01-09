@@ -21,21 +21,21 @@ ms.lasthandoff: 12/14/2017
 
 Por [Valeriy Novytskyy](https://github.com/01binary) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Este tutorial mostra como habilitar os usuários entrar com sua conta do Facebook usando um projeto do ASP.NET Core 2.0 de exemplo criado no [página anterior](index.md). Vamos começar criando um Facebook App ID seguindo o [etapas oficiais](https://developers.facebook.com).
+Este tutorial mostra como habilitar os usuários. E a entrar com sua conta do Facebook usando um projeto do ASP.NET Core 2.0. No exemplo criado na [página anterior](index.md). Vamos começar criando um Facebook App ID seguindo as [etapas oficiais](https://developers.facebook.com).
 
 ## <a name="create-the-app-in-facebook"></a>Criar o aplicativo no Facebook
 
 *  Navegue até o [aplicativo Facebook desenvolvedores](https://developers.facebook.com/apps/) página e entre. Se você ainda não tiver uma conta do Facebook, use o **inscrever-se para o Facebook** link na página de logon para criar uma.
 
-* Toque na **adicionar um novo aplicativo** botão no canto superior direito para criar uma nova ID de aplicativo.
+* Clique no botão **adicionar um novo aplicativo** para criar uma nova ID de aplicativo.
 
    ![Abra o Facebook para o portal de desenvolvedores no Microsoft Edge](index/_static/FBMyApps.png)
 
-* Preencha o formulário e toque no **criar ID do aplicativo** botão.
+* Preencha o formulário e clique no botão **criar ID do aplicativo**.
 
    ![Criar um formulário de nova ID de aplicativo](index/_static/FBNewAppId.png)
 
-* No **selecionar um produto** , clique em **Set Up** no **logon do Facebook** cartão.
+* Na sessão **selecionar um produto** , clique em **Set Up** no painel **Facebook Login**.
 
    ![Página de instalação do produto](index/_static/FBProductSetup.png)
   
