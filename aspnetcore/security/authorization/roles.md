@@ -11,11 +11,11 @@ ms.assetid: 5e014da1-8bc0-409b-951a-88b92c661fdf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/roles
-ms.openlocfilehash: 649b21d99c742843534748b0ba9d7b7b22483a62
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 26babef1a296aaa1fa11f36d30c4d911d73808ce
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="role-based-authorization"></a>Autorização baseada em função
 
@@ -27,7 +27,7 @@ Quando uma identidade é criada ele pode pertencer a uma ou mais funções. Por 
 
 Verificações de autorização baseada em função são declarativas&mdash;o desenvolvedor incorpora dentro de seu código, em relação a um controlador ou uma ação dentro de um controlador, especificando funções que o usuário atual deve ser um membro de acessar o recurso solicitado.
 
-Por exemplo, o código a seguir deve limitar o acesso a todas as ações no `AdministrationController` para os usuários que são membros do `Administrator` grupo.
+Por exemplo, o código a seguir limita o acesso a todas as ações no `AdministrationController` para os usuários que são membros do `Administrator` função:
 
 ```csharp
 [Authorize(Roles = "Administrator")]

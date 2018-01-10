@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: aabf572e254de9861719fdc502340353482919b4
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: b016231975bf8d359f4c390b0b478edc383117d4
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/10/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Introdução a páginas da Web ASP.NET - atualização do banco de dados
 ====================
@@ -308,7 +308,7 @@ O seguinte tutorial, você verá como excluir um registro de filme.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Introdução à programação da Web do ASP.NET usando a sintaxe do Razor](introducing-razor-syntax-c.md)
+- [Introdução à programação da Web do ASP.NET usando a sintaxe do Razor](../../getting-started/introducing-razor-syntax-c.md)
 - [Instrução de atualização SQL](http://www.w3schools.com/sql/sql_update.asp) no site W3Schools
 
 >[!div class="step-by-step"]

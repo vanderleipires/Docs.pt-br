@@ -5,17 +5,17 @@ description: "Saiba como o ASP.NET Core MVC é uma estrutura avançada para a cr
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 01/08/2018
 ms.topic: article
 ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 2492b6aa4602dbbf3b9cd3dca00d40690c640cab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 33c293e15c0a7f18bbace9dc564fe11d93a7d509
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Visão geral sobre o ASP.NET Core MVC
 
@@ -38,7 +38,7 @@ Essa descrição das responsabilidades ajuda você a dimensionar o aplicativo em
 
 ### <a name="model-responsibilities"></a>Responsabilidades do modelo
 
-O modelo em um aplicativo MVC representa o estado do aplicativo e qualquer lógica de negócios ou operações que devem ser executadas por ele. Lógica de negócios deve ser encapsulada no modelo, juntamente com qualquer lógica de implementação para persistir o estado do aplicativo. Exibições fortemente tipadas normalmente usará tipos ViewModel especificamente criados para conter os dados para exibir no modo de exibição; o controlador será criar e preencher essas instâncias ViewModel do modelo.
+O modelo em um aplicativo MVC representa o estado do aplicativo e qualquer lógica de negócios ou operações que devem ser executadas por ele. Lógica de negócios deve ser encapsulada no modelo, juntamente com qualquer lógica de implementação para persistir o estado do aplicativo. Exibições fortemente tipadas normalmente usam tipos ViewModel criados para conter os dados para exibir essa exibição. O controlador cria e popula essas instâncias ViewModel do modelo.
 
 > [!NOTE]
 > Há várias maneiras de organizar o modelo em um aplicativo que usa o padrão arquitetônico MVC. Saiba mais sobre alguns [tipos diferentes de tipos de modelo](http://deviq.com/kinds-of-models/).
@@ -112,7 +112,7 @@ Núcleo do ASP.NET MVC [associação de modelo](models/model-binding.md) convert
 public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null) { ... }
    ```
 
-### <a name="model-validation"></a>validação de modelo
+### <a name="model-validation"></a>Validação de modelo
 
 Dá suporte ao MVC do ASP.NET Core [validação](models/validation.md) decorando seu objeto de modelo com atributos de validação de anotação de dados. Os atributos de validação são verificadas no lado do cliente antes que os valores são postados no servidor, bem como no servidor antes da ação de controlador é chamado.
 
@@ -142,12 +142,12 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
     {
       // work with the model
     }
-    // If we got this far, something failed, redisplay form
+    // At this point, something failed, redisplay form
     return View(model);
 }
 ```
 
-A estrutura tratará a validação de solicitação de dados no cliente e no servidor. Lógica de validação especificada em tipos de modelo é adicionada aos modos de exibição renderizados como anotações discretas e é imposta no navegador com [jQuery validação](https://jqueryvalidation.org/).
+O framework controla Validando dados de solicitação no cliente e no servidor. Lógica de validação especificada em tipos de modelo é adicionada aos modos de exibição renderizados como anotações discretas e é imposta no navegador com [jQuery validação](https://jqueryvalidation.org/).
 
 ### <a name="dependency-injection"></a>Injeção de dependência
 
@@ -181,11 +181,11 @@ O aplicativo também pode usar [arquivos no modo de exibição de injeção de d
 
 ### <a name="areas"></a>Áreas
 
-[Áreas](controllers/areas.md) fornecem uma maneira de particionar um aplicativo da Web MVC do ASP.NET Core grande em menores agrupamentos funcionais. Uma área é efetivamente uma estrutura MVC dentro de um aplicativo. Em um projeto MVC, componentes lógicos como modelo, o controlador e o modo de exibição são mantidos em pastas diferentes e MVC usa convenções de nomenclatura para criar a relação entre esses componentes. Para um aplicativo grande, pode ser vantajoso para dividir o aplicativo em áreas separadas de nível alto de funcionalidade. Por exemplo, um aplicativo de comércio eletrônico com várias unidades de negócios, como check-out, cobrança e pesquisa etc. Cada uma dessas unidades têm seus próprios modos de exibição do componente lógico, controladores e modelos.
+[Áreas](controllers/areas.md) fornecem uma maneira de particionar um aplicativo da Web MVC do ASP.NET Core grande em menores agrupamentos funcionais. Uma área é uma estrutura MVC dentro de um aplicativo. Em um projeto MVC, componentes lógicos como modelo, o controlador e o modo de exibição são mantidos em pastas diferentes e MVC usa convenções de nomenclatura para criar a relação entre esses componentes. Para um aplicativo grande, pode ser vantajoso para dividir o aplicativo em áreas separadas de nível alto de funcionalidade. Por exemplo, um aplicativo de comércio eletrônico com várias unidades de negócios, como check-out, cobrança e pesquisa etc. Cada uma dessas unidades têm seus próprios modos de exibição do componente lógico, controladores e modelos.
 
 ### <a name="web-apis"></a>APIs da Web
 
-Além de ser uma excelente plataforma para a criação de sites da web, MVC do ASP.NET Core tem excelente suporte para a criação de APIs da Web. Você pode criar serviços que podem alcançar uma ampla gama de clientes, incluindo navegadores e dispositivos móveis.
+Além de ser uma excelente plataforma para a criação de sites da web, MVC do ASP.NET Core tem excelente suporte para a criação de APIs da Web. Você pode criar serviços que alcançam uma ampla variedade de clientes, incluindo navegadores e dispositivos móveis.
 
 A estrutura inclui suporte para a negociação de conteúdo HTTP com suporte interno para [dados de formatação](models/formatting.md) como JSON ou XML. Gravar [formatadores personalizados](advanced/custom-formatters.md) para adicionar suporte para seus próprios formatos.
 
@@ -213,7 +213,7 @@ Usando o mecanismo de exibição Razor você pode definir [layouts](views/layout
 
 Modos de exibição Razor do MVC podem ser fortemente tipados com base no seu modelo. Controladores podem passar um modelo fortemente tipado para exibições habilitando seus modos de exibição para que a verificação de tipo e suporte do IntelliSense.
 
-Por exemplo, a exibição a seguir define um modelo do tipo `IEnumerable<Product>`:
+Por exemplo, a exibição a seguir apresenta um modelo do tipo `IEnumerable<Product>`:
 
 ```cshtml
 @model IEnumerable<Product>

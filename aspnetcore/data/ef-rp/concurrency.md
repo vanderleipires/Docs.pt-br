@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 8862c6b9a5eb7ac3b6889071e4ce9ff6f02512c9
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 841c638b2cacaab7970f2b173fee488972957b63
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/09/2018
 ---
 en-us /
 
@@ -302,7 +302,7 @@ O navegador mostra a página de índice com o valor alterado e o indicador de ro
 
 Exclua o departamento de teste a partir da segunda guia. Um erro de simultaneidade é a exibição com os valores atuais do banco de dados. Clicando em **excluir** exclui a entidade, a menos que `RowVersion` foi updated.department foi excluído.
 
-Consulte [herança](xref:data/ef-mvc/inheritance) para obter instruções sobre como herança no modelo de dados.
+Consulte [herança](xref:data/ef-mvc/inheritance) sobre como herdar de um modelo de dados.
 
 ### <a name="additional-resources"></a>Recursos adicionais
 

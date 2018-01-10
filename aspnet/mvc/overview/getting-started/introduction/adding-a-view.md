@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: cf0bb7984ad3460f8784193f7bb407c9b0ad50db
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: d273eb5e99da6c6b7678e03b1a8973041113744c
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/09/2018
 ---
 <a name="adding-a-view"></a>Adicionando uma exibição
 ====================
@@ -31,7 +31,7 @@ Atualmente, o método `Index` retorna uma cadeia de caracteres com uma mensagem 
 
 O `Index` método acima usa um modelo de exibição para gerar uma resposta HTML para o navegador. Os métodos do controlador (também conhecido como [métodos de ação](http://rachelappel.com/asp.net-mvc-actionresults-explained)), como o `Index` método acima, normalmente retornam um [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (ou uma classe derivada de [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx)), os tipos primitivos não como cadeia de caracteres.
 
-Clique com botão direito do *Views\HelloWorld* pasta e clique em **adicionar**, em seguida, clique em **exibir página MVC 5 com (Layout do Razor)**.
+Clique com botão direito do *Views\HelloWorld* pasta e clique em **adicionar**, em seguida, clique em **página de exibição MVC 5 com Layout (Razor)**.
   
 ![](adding-a-view/_static/image1.png)   
   
