@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: a7664d16a056424ee51db2208152cb5d35d8e5d9
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 10457d154f5fda875f7d1054d48daeeba3a50b7c
+ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/12/2018
 ---
 <a name="search"></a>Pesquisar
 ====================
@@ -123,7 +123,7 @@ O código a seguir é uma consulta LINQ que recupera todos os gêneros do banco 
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-O código usa o `AddRange` método genérica `List` coleção para adicionar todos os gêneros distintos à lista. (Sem o `Distinct` modificador, gêneros duplicados serão adicionados, por exemplo, comédia poderia ser adicionada duas vezes em nosso exemplo). O código, em seguida, armazena a lista de gêneros no `ViewBag.movieGenre` objeto. Armazenando dados de categoria (do tal um filme gênero) como um [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) do objeto em um `ViewBag`, acessando os dados de categoria em uma caixa de lista suspensa é uma abordagem típica para aplicativos MVC.
+O código usa o `AddRange` método genérica `List` coleção para adicionar todos os gêneros distintos à lista. (Sem o `Distinct` modificador, gêneros duplicados serão adicionados, por exemplo, comédia poderia ser adicionada duas vezes em nosso exemplo). O código, em seguida, armazena a lista de gêneros no `ViewBag.MovieGenre` objeto. Armazenando dados de categoria (do tal um filme gênero) como um [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) do objeto em um `ViewBag`, acessando os dados de categoria em uma caixa de lista suspensa é uma abordagem típica para aplicativos MVC.
 
 O código a seguir mostra como verificar o `movieGenre` parâmetro. Se não estiver vazia, o código adicional restringe a consulta de filmes para limitar os filmes selecionados para o gênero especificado.
 
@@ -141,7 +141,7 @@ No código a seguir:
 
 [!code-cshtml[Main](adding-search/samples/sample15.cshtml)]
 
-O parâmetro "movieGenre" fornece a chave para o `DropDownList` auxiliar para localizar um `IEnumerable<SelectListItem>` no `ViewBag`. O `ViewBag` foi preenchido no método de ação:
+O parâmetro "MovieGenre" fornece a chave para o `DropDownList` auxiliar para localizar um `IEnumerable<SelectListItem>` no `ViewBag`. O `ViewBag` foi preenchido no método de ação:
 
 [!code-csharp[Main](adding-search/samples/sample16.cs?highlight=10)]
 
