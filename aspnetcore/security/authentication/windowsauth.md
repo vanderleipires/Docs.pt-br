@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-548ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 703f924d049a267cb8bee22e63e6669b13099c53
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5ceffe5b7f7e3ef4f6158b6b7b7d571a21ee130
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>Configurar a autenticação do Windows em um aplicativo do ASP.NET Core
 
@@ -80,7 +80,7 @@ Usando o Visual Studio ou o .NET Core CLI, publica o aplicativo para a pasta de 
 
 ![Caixa de diálogo de publicação do Visual Studio](windowsauth/_static/vs-publish-app.png)
 
-Saiba mais sobre [publicar no IIS](xref:publishing/iis).
+Saiba mais sobre [publicar no IIS](xref:host-and-deploy/iis/index).
 
 Inicie o aplicativo para verificar a autenticação do Windows está funcionando.
 

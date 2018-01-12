@@ -5,17 +5,17 @@ description: "Saiba como otimizar recursos estáticos em um aplicativo ASP.NET C
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/01/2017
+ms.date: 01/10/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: c271b7ef386bacedbd45fbe9f62c9c486db55b36
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="bundling-and-minification"></a>Empacotamento e minimização
 
@@ -75,7 +75,7 @@ Os modelos de projeto MVC e páginas Razor fornecem uma *bundleconfig.json* arqu
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig.json)]
 
-Opções do pacote incluem:
+Opções de configuração incluem:
 
 * `outputFileName`: O nome do arquivo de pacote de saída. Pode conter um caminho relativo do *bundleconfig.json* arquivo. **Necessário**
 * `inputFiles`: Uma matriz de arquivos para agrupar em conjunto. Esses são os caminhos relativos ao arquivo de configuração. **opcional**, * um valor vazio resulta em um arquivo de saída vazia. [Globalização](http://www.tldp.org/LDP/abs/html/globbingref.html) padrões são suportados.
@@ -91,6 +91,9 @@ Opções do pacote incluem:
 ## <a name="build-time-execution-of-bundling-and-minification"></a>Execução de tempo de compilação de empacotamento e minimização
 
 O [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) pacote NuGet permite que a execução de empacotamento e minimização no momento da compilação. O pacote injeta [destinos do MSBuild](/visualstudio/msbuild/msbuild-targets) quais executar compilação e tempo limpo. O *bundleconfig.json* arquivo é analisado pelo processo de compilação para produzir os arquivos de saída com base na configuração de definidos.
+
+> [!NOTE]
+> BuildBundlerMinifier pertence a um projeto voltado para a comunidade no GitHub para o qual a Microsoft fornece sem suporte. Problemas que devem ser arquivados [aqui](https://github.com/madskristensen/BundlerMinifier/issues).
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
@@ -176,6 +179,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=10)]
 
+> [!NOTE]
+> BundlerMinifier.Core pertence a um projeto voltado para a comunidade no GitHub para o qual a Microsoft fornece sem suporte. Problemas que devem ser arquivados [aqui](https://github.com/madskristensen/BundlerMinifier/issues).
+
 Este pacote estende a CLI do núcleo do .NET para incluir o *dotnet pacote* ferramenta. O comando a seguir pode ser executado na janela do Console de Gerenciador de pacote (PMC) ou em um shell de comando:
 
 ```console
@@ -243,6 +249,9 @@ Há casos em que o fluxo de trabalho empacotamento e minimização do aplicativo
 ### <a name="use-the-bundler--minifier-extension"></a>Usar a extensão de empacotador & Minificador
 
 O Visual Studio [empacotador & Minificador](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) extensão processa a conversão para Gulp.
+
+> [!NOTE]
+> A extensão de empacotador & Minificador pertence a um projeto voltado para a comunidade no GitHub para o qual a Microsoft fornece sem suporte. Problemas que devem ser arquivados [aqui](https://github.com/madskristensen/BundlerMinifier/issues).
 
 Clique com botão direito do *bundleconfig.json* no Gerenciador de soluções e selecione **empacotador & Minificador** > **converter Gulp...** :
 

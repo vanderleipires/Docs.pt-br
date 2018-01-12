@@ -11,11 +11,11 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 68e8c89f6e5485f25d1a551ab3e524f0e9c53d0d
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 86244179115fe6a7d0f7298495086a96ee9570d9
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware de compactação de resposta para o ASP.NET Core
 
@@ -187,7 +187,7 @@ Ao compactar respostas com base no `Accept-Encoding` cabeçalho, há potencialme
 Quando uma solicitação é delegada por Nginx, o `Accept-Encoding` cabeçalho é removido. Isso impede que o middleware da compactação de resposta. Para obter mais informações, consulte [NGINX: compactação e descompactação de](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Esse problema é acompanhado por [descobrir a compactação de passagem para nginx (BasicMiddleware 123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Trabalhando com compactação dinâmica do IIS
-Se você tiver um active IIS compactação módulo dinâmico configurado no nível do servidor que você deseja desabilitar para um aplicativo, você pode fazer isso com uma adição à sua *Web. config* arquivo. Para obter mais informações, consulte [módulos do IIS desabilitando](xref:hosting/iis-modules#disabling-iis-modules).
+Se você tiver um active IIS compactação módulo dinâmico configurado no nível do servidor que você deseja desabilitar para um aplicativo, você pode fazer isso com uma adição à sua *Web. config* arquivo. Para obter mais informações, consulte [módulos do IIS desabilitando](xref:host-and-deploy/iis/modules#disabling-iis-modules).
 
 ## <a name="troubleshooting"></a>Solução de problemas
 Usar uma ferramenta como [Fiddler](http://www.telerik.com/fiddler), [Firebug](http://getfirebug.com/), ou [carteiro](https://www.getpostman.com/), que permitem que você defina o `Accept-Encoding` cabeçalho de solicitação e analise os cabeçalhos de resposta, o tamanho e o corpo. O Middleware de compactação de resposta compacta respostas que atendem às seguintes condições:

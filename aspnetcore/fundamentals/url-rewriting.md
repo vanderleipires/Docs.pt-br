@@ -11,11 +11,11 @@ ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 754af24f4dcf054dd89eaa5f237ab680bf2d1172
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware no núcleo do ASP.NET de regravação de URL
 
@@ -245,7 +245,7 @@ Solicitação original:`/iis-rules-rewrite/1234`
 
 ![Janela do navegador com as ferramentas de desenvolvedor de rastreamento de solicitação e resposta](url-rewriting/_static/add_iis_url_rewrite.png)
 
-Se você tiver um módulo de reescrita de IIS ativa com as regras de nível de servidor configuradas que poderia afetar seu aplicativo de maneira indesejada, você pode desabilitar o módulo de reescrita de IIS para um aplicativo. Para obter mais informações, consulte [módulos do IIS desabilitando](xref:hosting/iis-modules#disabling-iis-modules).
+Se você tiver um módulo de reescrita de IIS ativa com as regras de nível de servidor configuradas que poderia afetar seu aplicativo de maneira indesejada, você pode desabilitar o módulo de reescrita de IIS para um aplicativo. Para obter mais informações, consulte [módulos do IIS desabilitando](xref:host-and-deploy/iis/modules#disabling-iis-modules).
 
 #### <a name="unsupported-features"></a>Recursos sem suporte
 

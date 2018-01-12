@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2a8b165c149ceacba49a193c25e4a66a701ea0d6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Implantação de Web do ASP.NET usando o Visual Studio: implantação em produção
 ====================
@@ -27,7 +27,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Neste tutorial, você configurar uma conta do Microsoft Azure, cria ambientes de preparo e produção e implanta seu aplicativo web ASP.NET de preparo e ambientes de produção usando o Visual Studio clique publicar o recurso.
 
@@ -42,7 +42,7 @@ Se você ainda não tiver uma conta do Azure, você pode criar uma conta de aval
 ## <a name="create-a-staging-environment"></a>Criar um ambiente de preparo
 
 > [!NOTE]
-> Como este tutorial foi escrito, o serviço de aplicativo do Azure adicionado um novo recurso para automatizar muitos processos em torno de ambientes de preparo e produção. Consulte [configurar ambientes de preparo para aplicativos web no serviço de aplicativo do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-staged-publishing/).
+> Como este tutorial foi escrito, o serviço de aplicativo do Azure adicionado um novo recurso para automatizar muitos processos para a criação de ambientes de preparo e produção. Consulte [configurar ambientes de preparo para aplicativos web no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/).
 
 
 Conforme explicado no [implantar para o tutorial do ambiente de teste](deploying-to-iis.md), mais o ambiente de teste confiável é um site da web no provedor de hospedagem que é exatamente como o site de produção. Muitos provedores de hospedagem de você precisa ponderar os benefícios disso e custo adicional significativo, mas no Azure, você pode criar um aplicativo web gratuita adicionais como seu aplicativo de teste. Você também precisa de um banco de dados, e a despesa adicional para que sobre a despesa de seu banco de dados de produção será nenhum ou mínimo. No Azure, você paga para a quantidade de armazenamento de banco de dados usado em vez de para cada banco de dados e a quantidade de armazenamento adicional que você usará em preparo será mínima.
