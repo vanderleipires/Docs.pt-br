@@ -11,17 +11,17 @@ ms.assetid: 1f402da8-1052-4970-9835-9f9f16a02dbc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/index
-ms.openlocfilehash: 8b42e65bb6121355120a6f4fbe8cd4d1fea153de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cbf18c6ec867fefec22980f3e3493562594ef72d
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a>Proteção de Dados no ASP.NET Core: APIs de consumidor, configuração, APIs de extensibilidade e implementação
 
-* [Introdução à Proteção de Dados](introduction.md)
+* [Introdução à proteção de dados](introduction.md)
 
-* [Introdução às APIs de Proteção de Dados](using-data-protection.md)
+* [Introdução às APIs de proteção de dados](using-data-protection.md)
 
 * [APIs de consumidor](consumer-apis/index.md)
 
@@ -39,11 +39,11 @@ ms.lasthandoff: 11/10/2017
 
 * [Configuração](configuration/index.md)
 
-  * [Configurando a Proteção de Dados](configuration/overview.md)
+  * [Configurar a proteção de dados](configuration/overview.md)
 
   * [Configurações padrão](configuration/default-settings.md)
 
-  * [Política para todo o computador](configuration/machine-wide-policy.md)
+  * [Política ampla de computador](configuration/machine-wide-policy.md)
 
   * [Cenários sem reconhecimento de DI](configuration/non-di-scenarios.md)
 
@@ -77,6 +77,6 @@ ms.lasthandoff: 11/10/2017
 
 * [Compatibilidade](compatibility/index.md)
 
-  * [Compartilhando cookies entre aplicativos](compatibility/cookie-sharing.md)
+  * [Compartilhar cookies entre aplicativos](compatibility/cookie-sharing.md)
 
   * [Substituindo <machineKey> no ASP.NET](compatibility/replacing-machinekey.md)

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/index
-ms.openlocfilehash: bc19cbf0093e8a7f26af82d19f597cc805e04309
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 325f95cf9ecc295f7a1c646e352b9cd496b6268e
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="working-with-data-in-aspnet-core"></a>Trabalhando com os dados no ASP.NET Core 
 
@@ -22,22 +22,22 @@ ms.lasthandoff: 12/14/2017
 
    * [Introdução a Páginas do Razor e ao EF](xref:data/ef-rp/intro)
    * [Operações Create, Read, Update e Delete](xref:data/ef-rp/crud)
-   * [Classificação, filtragem, paginação e agrupamento](xref:data/ef-rp/sort-filter-page)
+   * [Classificar, filtrar, paginar e agrupar](xref:data/ef-rp/sort-filter-page)
    * [Migrações](xref:data/ef-rp/migrations)
-   * [Criando um modelo de dados complexo](xref:data/ef-rp/complex-data-model)
-   * [Lendo dados relacionados](xref:data/ef-rp/read-related-data)
-   * [Atualizando dados relacionados](xref:data/ef-rp/update-related-data)
-   * [Tratando conflitos de simultaneidade](xref:data/ef-rp/concurrency)
+   * [Criar um modelo de dados complexo](xref:data/ef-rp/complex-data-model)
+   * [Ler dados relacionados](xref:data/ef-rp/read-related-data)
+   * [Atualizar dados relacionados](xref:data/ef-rp/update-related-data)
+   * [Tratar conflitos de simultaneidade](xref:data/ef-rp/concurrency)
 
 *   [Introdução ao ASP.NET Core MVC e ao Entity Framework Core usando o Visual Studio](ef-mvc/index.md)
     *   [Introdução](ef-mvc/intro.md)
     *   [Operações Create, Read, Update e Delete](xref:data/ef-mvc/crud)
-    *   [Classificação, filtragem, paginação e agrupamento](xref:data/ef-mvc/sort-filter-page)
+    *   [Classificar, filtrar, paginar e agrupar](xref:data/ef-mvc/sort-filter-page)
     *   [Migrações](xref:data/ef-mvc/migrations)
-    *   [Criando um modelo de dados complexo](ef-mvc/complex-data-model.md)
-    *   [Lendo dados relacionados](ef-mvc/read-related-data.md)
-    *   [Atualizando dados relacionados](ef-mvc/update-related-data.md)
-    *   [Tratando conflitos de simultaneidade](ef-mvc/concurrency.md)
+    *   [Criar um modelo de dados complexo](ef-mvc/complex-data-model.md)
+    *   [Ler dados relacionados](ef-mvc/read-related-data.md)
+    *   [Atualizar dados relacionados](ef-mvc/update-related-data.md)
+    *   [Tratar conflitos de simultaneidade](ef-mvc/concurrency.md)
     *   [Herança](ef-mvc/inheritance.md)
     *   [Tópicos avançados](ef-mvc/advanced.md)
 * [ASP.NET Core com o EF Core – novo banco de dados](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) (site de documentação do Entity Framework Core)

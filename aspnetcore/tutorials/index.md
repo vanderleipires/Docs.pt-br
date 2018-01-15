@@ -10,17 +10,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: 66f6e4542dd208a986b256acd4bd1d0381aa46c6
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: acedebaa9b89a0e00602b497d11d5612fce99a5f
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
 Os seguintes guias passo a passo para desenvolvimento de aplicativos ASP.NET Core estão disponíveis:
 
-## <a name="building-web-applications"></a>Criando aplicativos Web
+## <a name="build-web-apps"></a>Criar aplicativos Web
 
 As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada para criar um novo aplicativo da interface do usuário da Web com o ASP.NET Core 2.0.
 
@@ -38,11 +38,11 @@ As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada par
    * [Aplicativo Web MVC ASP.NET Core com o Visual Studio Code no Mac ou Linux ](first-mvc-app-xplat/index.md)
 
 * [Introdução ao ASP.NET Core e ao Entity Framework Core usando o Visual Studio](../data/ef-mvc/index.md)
-* [Criando auxiliares de marcação](../mvc/views/tag-helpers/authoring.md)
-* [Criando um componente de exibição simples](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
+* [Criar auxiliares de marcação](../mvc/views/tag-helpers/authoring.md)
+* [Criar um componente de exibição simples](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
 * [Desenvolvendo aplicativos ASP.NET Core usando a inspeção dotnet](dotnet-watch.md)
 
-## <a name="building-web-apis"></a>Compilando APIs Web
+## <a name="build-web-apis"></a>Criar APIs da Web
 * Criar uma API Web com o ASP.NET Core
 
   * [API Web com o Visual Studio para Windows](first-web-api.md)
@@ -50,31 +50,31 @@ As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada par
   * [API Web com o Visual Studio Code](web-api-vsc.md)
   
 * [Páginas de ajuda da API Web ASP.NET Core usando o Swagger](web-api-help-pages-using-swagger.md)
-* [Criando serviços Web de back-end para aplicativos móveis nativos](../mobile/native-mobile-backend.md)
+* [Criar serviços Web de back-end para aplicativos móveis nativos](../mobile/native-mobile-backend.md)
 
-## <a name="working-with-data"></a>Trabalhando com os dados
-* [Introdução ao ASP.NET Core e Entity Framework Core usando o Visual Studio](../data/ef-mvc/index.md)
+## <a name="data-access-and-storage"></a>Armazenamento e acesso a dados
+* [Introdução ao ASP.NET Core e ao Entity Framework Core usando o Visual Studio](../data/ef-mvc/index.md)
 * [ASP.NET Core com EF Core – novo banco de dados](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
 * [ASP.NET Core com EF Core – banco de dados existente](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>Autenticação e autorização
 * [Habilitar a autenticação usando o Facebook, o Google e outros provedores externos](../security/authentication/social/index.md)
-* [Confirmação de conta e de recuperação de senha](../security/authentication/accconfirm.md)
+* [Confirmação de conta e recuperação de senha](../security/authentication/accconfirm.md)
 * [Autenticação de dois fatores com SMS](../security/authentication/2fa.md)
 
-## <a name="client-side-development"></a>Desenvolvimento no lado do cliente
-* [Usando o Gulp](../client-side/using-gulp.md)
-* [Usando o Grunt](../client-side/using-grunt.md)
+## <a name="client-side-development"></a>Desenvolvimento do lado do cliente
+* [Usar o Gulp](../client-side/using-gulp.md)
+* [Usar o Grunt](../client-side/using-grunt.md)
 * [Gerenciar pacotes do lado do cliente com o Bower](../client-side/bower.md)
-* [Criando sites atraentes e dinâmicos com o Bootstrap](../client-side/bootstrap.md)
+* [Criar sites responsivos com o Bootstrap](../client-side/bootstrap.md)
 
-## <a name="testing"></a>Testes
+## <a name="test"></a>Teste
 * [Teste de unidade no .NET Core usando dotnet test](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
-## <a name="publishing-and-deployment"></a>Publicação e implantação
+## <a name="publish-and-deploy"></a>Publicar e implantar
 * [Implantar um aplicativo Web ASP.NET Core para o Azure usando o Visual Studio](publish-to-azure-webapp-using-vs.md)
 * [Implantar um aplicativo Web do ASP.NET Core no Azure usando a linha de comando](publish-to-azure-webapp-using-cli.md)
-* [Publicar um aplicativo Web do Azure com implantação contínua](../publishing/azure-continuous-deployment.md)
+* [Publicar um aplicativo Web do Azure com implantação contínua](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 * [Implantar um contêiner ASP.NET em um host remoto do Docker](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 * [ASP.NET Core no Nano Server](nano-server.md)
 * [ASP.NET Core e Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-add-a-web-frontend)

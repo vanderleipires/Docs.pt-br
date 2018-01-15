@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6281d6ba254670b111964715410fc0694ae4d149
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: b662e66ab5b4c46d1a8d10eb7c38bf4064b5b927
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Configurar um aplicativo do ASP.NET Core
 
@@ -375,7 +375,7 @@ Left: 1988
 
 ## <a name="the-webconfig-file"></a>O arquivo Web.config
 
-Um arquivo *Web.config* é necessário quando você hospeda o aplicativo no IIS ou IIS Express. O *Web.config* ativa o AspNetCoreModule no IIS para iniciar seu aplicativo. As configurações no *Web.config* habilitam o AspNetCoreModule no IIS para iniciar seu aplicativo e definir outras configurações e módulos do IIS. Se você estiver usando o Visual Studio e excluir o *Web.config*, o Visual Studio criará um novo.
+Um arquivo *web.config* é necessário quando você hospeda o aplicativo em IIS ou IIS Express. As configurações no *web.config* habilitam o [Módulo ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) para iniciar o aplicativo e definir outras configurações e módulos do IIS. Se o arquivo *web.config* não estiver presente e o arquivo de projeto inclui `<Project Sdk="Microsoft.NET.Sdk.Web">`, a publicação do projeto criará um arquivo *web.config* na saída publicada (a pasta *publish*). Para obter mais informações, consulte [Hospedar o ASP.NET Core no Windows com o IIS](xref:host-and-deploy/iis/index#webconfig).
 
 ## <a name="additional-notes"></a>Observações adicionais
 
