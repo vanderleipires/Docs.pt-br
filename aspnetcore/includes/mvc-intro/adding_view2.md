@@ -18,7 +18,7 @@ Os modelos de [layout](xref:mvc/views/layout) permitem especificar o layout de c
 
 ## <a name="change-the-title-and-menu-link-in-the-layout-file"></a>Alterar o título e o link de menu no arquivo de layout
 
-Altere o conteúdo do elemento de título. Altere o texto de âncora no modelo de layout para “Aplicativo de Filme” e o controlador de `Home` para `Movies`, conforme realçado abaixo:
+No elemento de título, altere `MvcMovie` para `Movie App`. Altere o texto de âncora no modelo de layout de `MvcMovie` para `Mvc Movie` e o controlador de `Home` para `Movies`, conforme realçado abaixo:
 
 Observação: a versão do ASP.NET Core 2.0 é ligeiramente diferente. Ela não contém `@inject ApplicationInsights` nem `@Html.Raw(JavaScriptSnippet.FullScript)`.
 
@@ -29,9 +29,9 @@ Observação: a versão do ASP.NET Core 2.0 é ligeiramente diferente. Ela não 
 
 Salve as alterações e toque no link **Sobre**. Observe como o título na guia do navegador agora exibe **Sobre – Aplicativo de Filme**, em vez de **Sobre – Filme Mvc**: 
 
-![Sobre a guia](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+![Sobre a guia](../../tutorials/first-mvc-app/adding-view/_static/about2.png)
 
-Toque no link **Contato** e observe que ele também exibe **Aplicativo de Filme**. Conseguimos fazer a alteração uma vez no modelo de layout e fazer com que todas as páginas no site refletissem o novo texto do link e o novo título.
+Toque no link **Contato** e observe que o texto do título e de âncora também exibem **Aplicativo de Filme**. Conseguimos fazer a alteração uma vez no modelo de layout e fazer com que todas as páginas no site refletissem o novo texto do link e o novo título.
 
 Examine o arquivo *Views/_ViewStart.cshtml*:
 
@@ -105,7 +105,7 @@ Salve as alterações e navegue para a seguinte URL:
 
 Os dados são obtidos da URL e passados para o controlador usando o [associador de modelo MVC](xref:mvc/models/model-binding). O controlador empacota os dados em um dicionário `ViewData` e passa esse objeto para a exibição. Em seguida, a exibição renderiza os dados como HTML para o navegador.
 
-![Sobre uma exibição que mostra um rótulo Boas-vindas e a frase Olá, Ricardo mostrada quatro vezes](../../tutorials/first-mvc-app/adding-view/_static/rick.png)
+![Sobre uma exibição que mostra um rótulo Boas-vindas e a frase Olá, Ricardo mostrada quatro vezes](../../tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
 Na amostra acima, usamos o dicionário `ViewData` para passar dados do controlador para uma exibição. Mais adiante no tutorial, usaremos um modelo de exibição para passar dados de um controlador para uma exibição. A abordagem de modelo de exibição para passar dados é geralmente a preferida em relação à abordagem do dicionário `ViewData`. Consulte [ViewModel vs. ViewData vs. ViewBag vs. TempData vs. Session no MVC](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc) para obter mais informações.
 
