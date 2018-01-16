@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 4b86eb22e367d2305b7995421aec6f37008c5637
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72852678a296107e6a2a146ed2324335a6e870ee
+ms.sourcegitcommit: 77b8025c30ec2fd46d85ee2a2b497c44435d3009
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-visual-studio"></a>Introdução ao ASP.NET Core MVC e ao Visual Studio
 
@@ -96,7 +96,7 @@ Toque em **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5**
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->
 ![aplicativo em execução](start-mvc/_static/1.png)
 
-* O Visual Studio inicia o [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) e executa o aplicativo. Observe que a barra de endereços mostra `localhost:port#` e não algo como `example.com`. Isso ocorre porque `localhost` é o nome do host padrão do computador local. Quando o Visual Studio cria um projeto Web, uma porta aleatória é usada para o servidor Web. Na imagem acima, o número da porta é 5000. Quando você executar o aplicativo, você verá um número da porta diferente.
+* O Visual Studio inicia o [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) e executa o aplicativo. Observe que a barra de endereços mostra `localhost:port#` e não algo como `example.com`. Isso ocorre porque `localhost` é o nome do host padrão do computador local. Quando o Visual Studio cria um projeto Web, uma porta aleatória é usada para o servidor Web. Na imagem acima, o número da porta é 5000. A URL no navegador mostra `localhost:5000`. Quando você executar o aplicativo, verá um número da porta diferente.
 * Iniciar o aplicativo com **Ctrl+F5** (modo de não depuração) permite que você faça alterações de código, salve o arquivo, atualize o navegador e veja as alterações de código. Muitos desenvolvedores preferem usar modo de não depuração para iniciar o aplicativo e exibir alterações rapidamente.
 * Você pode iniciar o aplicativo no modo de não depuração ou de depuração por meio do item de menu **Depurar**:
 

@@ -11,11 +11,11 @@ helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Serv
 ms.technology: aspnet
 keywords: "ASP.NET Core, WebAPI, API Web, REST, mac, macOS, HTTP, Serviço, Serviço HTTP"
 manager: wpickett
-ms.openlocfilehash: 6bbd5e332e395928d8f79888ecf190f7f59a4bbc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f84fa55baf6d808185a28db290d9e6d3c46bdac
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Criar uma API Web com o ASP.NET Core MVC e o Visual Studio para Mac
 
@@ -79,7 +79,7 @@ Instalar o provedor de banco de dados [Entity Framework Core InMemory](https://d
 
 Um modelo é um objeto que representa os dados em seu aplicativo. Nesse caso, o único modelo é um item de tarefas pendentes.
 
-Adicione uma pasta denominada *Modelos*. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto. Selecione **Adicionar** > **Nova Pasta**. Nomeie a pasta como *Modelos*.
+Adicione uma pasta chamada *Models*. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto. Selecione **Adicionar** > **Nova Pasta**. Nomeie a pasta como *Modelos*.
 
 ![nova pasta](first-web-api-mac/_static/folder.png)
 
@@ -197,7 +197,7 @@ A resposta é [204 (Sem conteúdo)](http://www.w3.org/Protocols/rfc2616/rfc2616-
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Roteamento para ações do controlador](xref:mvc/controllers/routing)
-* Para obter informações sobre como implantar a API, consulte [Publicação e implantação](../publishing/index.md).
+* Para obter informações sobre como implantar a API, consulte [Host e implantação](xref:host-and-deploy/index).
 * [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 * [Postman](https://www.getpostman.com/)
 * [Fiddler](https://www.telerik.com/download/fiddler)
