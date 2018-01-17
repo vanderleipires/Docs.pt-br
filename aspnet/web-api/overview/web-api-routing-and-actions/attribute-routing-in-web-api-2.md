@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: ad44ee525601f308498967159e964aa41a2ce00c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c563f566b8456b63ffe0a3c4876432c60a19e89
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/17/2018
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Roteamento de atributo em ASP.NET Web API 2
 ====================
@@ -130,7 +130,7 @@ Qualquer método de controlador que não tem um atributo da rota usa roteamento 
 
 API da Web também seleciona ações com base no método de HTTP da solicitação (GET, POST, etc.). Por padrão, a API da Web procura uma correspondência de maiusculas e minúsculas com o início do nome do método do controlador. Por exemplo, um método de controlador chamado `PutCustomers` corresponde a uma solicitação HTTP PUT.
 
-Você pode substituir essa convenção, decorando mathod com qualquer os seguintes atributos:
+Você pode substituir essa convenção, decorar o método com qualquer os seguintes atributos:
 
 - **[HttpDelete]**
 - **[HttpGet]**
@@ -180,22 +180,22 @@ A tabela a seguir lista as restrições que são suportadas.
 
 | Restrição | Descrição | Exemplo |
 | --- | --- | --- |
-| Alpha | Correspondências maiusculas ou minúsculas caracteres do alfabeto latino (a-z, A-Z) | {alpha: x} |
-| bool | Corresponde a um valor booliano. | {bool: x} |
-| datetime | Correspondências um **DateTime** valor. | {datetime: x} |
-| decimal | Corresponde a um valor decimal. | {decimal: x} |
-| double | Corresponde a um valor de ponto flutuante de 64 bits. | {duplo: x} |
-| float | Corresponde a um valor de ponto flutuante de 32 bits. | {float: x} |
-| GUID | Corresponde a um valor GUID. | {guid: x} |
-| int | Corresponde a um valor inteiro de 32 bits. | {x: int} |
-| length | Corresponde a uma cadeia de caracteres com o comprimento especificado ou dentro de um intervalo de comprimentos especificado. | {length(6): x} {length(1,20): x} |
-| long | Corresponde a um valor inteiro de 64 bits. | {longa: x} |
-| max | Corresponde a um número inteiro com um valor máximo. | {max(10): x} |
-| MaxLength | Corresponde a uma cadeia de caracteres com um comprimento máximo. | {maxlength(10): x} |
-| min | Corresponde a um número inteiro com um valor mínimo. | {min(10): x} |
-| minLength | Corresponde a uma cadeia de caracteres com um comprimento mínimo. | {minlength(10): x} |
-| range | Corresponde a um número inteiro dentro do intervalo de valores. | {range(10,50): x} |
-| Regex | Corresponde a uma expressão regular. | {regex(^\d{3}-\d{3}-\d{4}$): x} |
+| Alpha | Correspondências maiusculas ou minúsculas caracteres do alfabeto latino (a-z, A-Z) | {x:alpha} |
+| bool | Corresponde a um valor booliano. | {x:bool} |
+| datetime | Correspondências um **DateTime** valor. | {x:datetime} |
+| decimal | Corresponde a um valor decimal. | {x:decimal} |
+| double | Corresponde a um valor de ponto flutuante de 64 bits. | {x:double} |
+| float | Corresponde a um valor de ponto flutuante de 32 bits. | {x:float} |
+| GUID | Corresponde a um valor GUID. | {x:guid} |
+| int | Corresponde a um valor inteiro de 32 bits. | {x:int} |
+| length | Corresponde a uma cadeia de caracteres com o comprimento especificado ou dentro de um intervalo de comprimentos especificado. | {x:length(6)} {x:length(1,20)} |
+| long | Corresponde a um valor inteiro de 64 bits. | {x:long} |
+| max | Corresponde a um número inteiro com um valor máximo. | {x:max(10)} |
+| MaxLength | Corresponde a uma cadeia de caracteres com um comprimento máximo. | {x:maxlength(10)} |
+| min | Corresponde a um número inteiro com um valor mínimo. | {x:min(10)} |
+| minLength | Corresponde a uma cadeia de caracteres com um comprimento mínimo. | {x:minlength(10)} |
+| range | Corresponde a um número inteiro dentro do intervalo de valores. | {x:range(10,50)} |
+| Regex | Corresponde a uma expressão regular. | {x:regex(^\d{3}-\d{3}-\d{4}$)} |
 
 Observe que algumas das restrições, como &quot;min&quot;, obtém argumentos entre parênteses. Você pode aplicar várias restrições a um parâmetro, separado por dois-pontos.
 
@@ -270,8 +270,8 @@ Vejamos um exemplo. Suponha que você definir o controlador a seguir:
 Essas rotas são ordenadas da seguinte maneira.
 
 1. detalhes dos pedidos /
-2. pedidos / {id}
-3. pedidos / {customerName}
+2. orders/{id}
+3. orders/{customerName}
 4. pedidos / {\*data}
 5. pedidos / pendente
 

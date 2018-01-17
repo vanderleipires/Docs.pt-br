@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: 163bc35afed0bf1d9236935d5ce60e6975356594
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 246e6307989f2660d84288ceac6793c422875f93
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Criar, ler, atualizar e excluir - Core EF com páginas Razor (2 de 8)
 
@@ -131,7 +131,7 @@ No exemplo anterior:
 * Os valores de formulário postado são convertidos para tipos no `Student` modelo usando [associação de modelo](xref:mvc/models/model-binding#how-model-binding-works).
 
 <a id="overpost"></a>
-### <a name="overposting"></a>Mais
+### <a name="overposting"></a>Overposting
 
 Usando `TryUpdateModel` atualizar os campos com valores postados é uma prática recomendada de segurança porque evita que overposting. Por exemplo, suponha que a entidade do aluno inclui um `Secret` que esta página da web não deve atualizar ou adicionar:
 
@@ -202,7 +202,7 @@ Em um aplicativo web, o `DbContext` que lê uma entidade e exibe os dados for de
 
 ## <a name="update-the-delete-page"></a>Atualizar a página de exclusão
 
-Nesta seção, o código é adicionado para implementar um erro personalizado de mensagem quando a chamada para `SaveChanges` falhar. Adicione uma cadeia de caracteres para conter as mensagens de erro de possile:
+Nesta seção, o código é adicionado para implementar um erro personalizado de mensagem quando a chamada para `SaveChanges` falhar. Adicione uma cadeia de caracteres para conter as possíveis mensagens de erro:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Delete.cshtml.cs?name=snippet1&highlight=12)]
 

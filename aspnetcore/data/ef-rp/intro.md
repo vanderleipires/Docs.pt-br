@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: 86f9eceb5b8646e371811fa4611a4509ff652231
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 2725960aa8a54c803a141b8d1275e65f245f7082
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Guia de Introdução com páginas Razor e o Entity Framework Core usando o Visual Studio (1 a 8)
 
@@ -34,7 +34,7 @@ Familiaridade com [páginas Razor](xref:mvc/razor-pages/index). Os programadores
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Se você tiver um problema que não é possível resolver, você pode encontrar a solução geralmente comparando seu código para o [concluída estágio](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) ou [projeto concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final). Para obter uma lista de erros comuns e como resolvê-los, consulte [a seção de solução de problemas do tutorial do último na série](xref:data/ef-mvc/advanced#common-errors). Se você não encontrar o que você precisa lá, você pode postar uma pergunta em StackOverflow.com para [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) ou [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core).
+Se você tiver um problema que não é possível resolver, você pode encontrar a solução geralmente comparando seu código para o [concluída estágio](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) ou [projeto concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final). Para obter uma lista de erros comuns e como resolvê-los, consulte [a seção de solução de problemas do tutorial do último na série](xref:data/ef-mvc/advanced#common-errors). Se você não encontrar o que você precisa lá, você poderá postar uma pergunta [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core) para [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) ou [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core).
 
 > [!TIP]
 > Esta série de tutoriais amplia o que é feito nos tutoriais anteriores. Considere a possibilidade de salvar uma cópia do projeto após cada tutorial foi bem-sucedida. Se você tiver problemas, você poderá começar desde o tutorial anterior em vez de voltar ao início. Como alternativa, você pode baixar um [concluída estágio](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) e inicie novamente usando o estágio concluído.
