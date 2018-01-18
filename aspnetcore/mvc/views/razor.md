@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: e3c3149254d602db1fcc6d42360690be026189a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6df769069fce52755a57d8404f88203a652a1ab9
+ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Sintaxe do Razor para o ASP.NET Core
 
@@ -76,7 +76,7 @@ O código anterior gera um erro do compilador semelhante a uma das seguintes op�
  * O elemento "int" não foi fechado.  Todos os elementos devem ser de fechamento automático ou ter uma correspondência de marca de fim.
  *  Não é possível converter o grupo de métodos 'GenericMethod' para 'object' de tipo não delegado. Você pretendia chamar o método?' 
  
-Chamadas de método genérico devem ser encapsuladas em um [expressão Razor explícita](#explicit-razor-expressions) ou um [bloco de código Razor](#razor-code-blocks). Essa restrição não se aplica a *. vbhtml* Razor arquivos porque a sintaxe do Visual Basic coloca os parâmetros de tipo genérico em vez de colchetes entre parênteses.
+Chamadas de método genérico devem ser encapsuladas em um [expressão Razor explícita](#explicit-razor-expressions) ou um [bloco de código Razor](#razor-code-blocks).
 
 ## <a name="explicit-razor-expressions"></a>Expressões explícitas Razor
 
@@ -127,8 +127,6 @@ O código anterior gera um erro do compilador semelhante a uma das seguintes op�
 ```cshtml
 <p>@(GenericMethod<int>())</p>
 ```
-
-Observação: essa restrição não se aplica a *. vbhtml* arquivos do Razor.  Com *. vbhtml* arquivos Razor, sintaxe do Visual Basic coloca os parâmetros de tipo genérico em vez de colchetes entre parênteses.
 
 ## <a name="expression-encoding"></a>Codificação de expressão
 
