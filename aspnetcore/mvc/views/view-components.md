@@ -2,20 +2,18 @@
 title: "Componentes do modo de exibição"
 author: rick-anderson
 description: "Componentes do modo de exibição destinam-se em qualquer lugar que a lógica de processamento reutilizáveis."
-keywords: "ASP.NET Core, componentes do modo de exibição, exibição parcial"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: ab4705b7-59d7-4f31-bc97-ea7f292fe926
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2cf82df78c250cdfdd808d49acfc06dc2ea82f5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2d93dcee102009661af708b9a9066e8af0bdbb17
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="view-components"></a>Componentes do modo de exibição
 
@@ -78,7 +76,7 @@ Um componente de visualização define a lógica em uma `InvokeAsync` método qu
 
 Pesquisa o tempo de execução para o modo de exibição nos seguintes caminhos:
 
-   * Modos de exibição /\<controller_name > /Components/\<view_component_name > /\<view_name >
+   * Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
    * Modos de exibição/Shared/componentes/\<view_component_name > /\<view_name >
 
 O nome de exibição padrão para um componente de visualização é *padrão*, que significa que o arquivo de exibição geralmente será nomeado *cshtml*. Você pode especificar um nome de exibição diferente ao criar o resultado de componente do modo de exibição ou ao chamar o `View` método.

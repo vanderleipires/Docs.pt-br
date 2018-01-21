@@ -2,7 +2,6 @@
 title: "Hospedagem no núcleo do ASP.NET"
 author: guardrex
 description: "Saiba mais sobre o host da web em ASP.NET Core, que é responsável pelo gerenciamento de inicialização e o tempo de vida do aplicativo."
-keywords: Host, IWebHost, WebHostBuilder, IHostingEnvironment, IApplicationLifetime da web do ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 09/21/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 8adc58d67f103e8d1fc8fe197cf392752bdaf660
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 7f6712073002b73ca4ddd7586718c81e62cacbc2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hospedagem no núcleo do ASP.NET
 
@@ -35,8 +34,8 @@ Criar um host usando uma instância de [WebHostBuilder](/dotnet/api/microsoft.as
 * Configura [Kestrel](servers/kestrel.md) como o servidor web. Para as opções padrão Kestrel, consulte [o Kestrel opções de seção de implementação do servidor web Kestrel no ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).
 * Define a raiz de conteúdo para o caminho retornado por [GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).
 * Configuração opcional de cargas de:
-  * *appSettings. JSON*.
-  * *appSettings. . JSON de {ambiente}*.
+  * *appsettings.json*.
+  * *appsettings.{Environment}.json*.
   * [Segredos do usuário](xref:security/app-secrets) quando o aplicativo é executado no `Development` ambiente.
   * Variáveis de ambiente.
   * Argumentos de linha de comando.
@@ -242,7 +241,7 @@ Este recurso está indisponível no núcleo do ASP.NET 1. x.
 
 Indica se o host deve escutar nas URLs configuradas com o `WebHostBuilder` em vez das configuradas com o `IServer` implementação.
 
-**Chave**: preferHostingUrls  
+**Key**: preferHostingUrls  
 **Tipo**: *bool* (`true` ou `1`)  
 **Padrão**: true  
 **Definido usando**:`PreferHostingUrls`  
@@ -268,7 +267,7 @@ Este recurso está indisponível no núcleo do ASP.NET 1. x.
 
 Impede o carregamento automático de hospedagem assemblies de inicialização, incluindo os assemblies de inicialização configurados pelo assembly do aplicativo de hospedagem. Consulte [adicionar recursos de aplicativo de um assembly externo usando IHostingStartup](xref:host-and-deploy/ihostingstartup) para obter mais informações.
 
-**Chave**: preventHostingStartup  
+**Key**: preventHostingStartup  
 **Tipo**: *bool* (`true` ou `1`)  
 **Padrão**: falso  
 **Definido usando**:`UseSetting`  
@@ -296,7 +295,7 @@ Indica os endereços IP ou endereços de host com as portas e protocolos que o s
 
 **Chave**: urls  
 **Tipo**: *cadeia de caracteres*  
-**Padrão**: http://localhost:5000/  
+**Default**: http://localhost:5000  
 **Definido usando**:`UseUrls`  
 **Variável de ambiente**:`ASPNETCORE_URLS`
 
@@ -424,7 +423,7 @@ Use [configuração](xref:fundamentals/configuration/index) para configurar o ho
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-*Hosting.JSON*:
+*hosting.json*:
 
 ```json
 {
@@ -465,7 +464,7 @@ public class Program
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-*Hosting.JSON*:
+*hosting.json*:
 
 ```json
 {

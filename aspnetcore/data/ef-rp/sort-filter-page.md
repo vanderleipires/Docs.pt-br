@@ -2,18 +2,17 @@
 title: "Páginas Razor com núcleo EF - classificação, filtro, paginação - 3 de 8"
 author: rick-anderson
 description: "Neste tutorial, você adicionará a classificação, filtragem e paginação funcionalidade para a página usando o ASP.NET Core e o Entity Framework Core."
-keywords: "ASP.NET Core, Entity Framework Core, classificar, filtrar, paginação, agrupando"
 ms.author: riande
 ms.date: 10/22/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 5e17663b88a622101245228e9372db55e4e874be
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>A classificação, filtragem, paginação e agrupando - Core de EF com páginas Razor (3 de 8)
 
@@ -280,7 +279,7 @@ Se você tiver problemas, você não conseguir resolver, baixe o [aplicativo con
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Depuração de origem do ASP.NET Core 2. x](https://github.com/aspnet/Docs/issues/4155)
+* [Depuração de origem do ASP.NET Core 2.x](https://github.com/aspnet/Docs/issues/4155)
 
 No tutorial próximo, o aplicativo usa as migrações para atualizar o modelo de dados.
 

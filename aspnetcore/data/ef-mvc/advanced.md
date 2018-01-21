@@ -2,20 +2,18 @@
 title: "Núcleo do ASP.NET MVC com núcleo EF - avançado - 10 de 10"
 author: tdykstra
 description: "Este tutorial apresenta vários tópicos que são úteis a serem consideradas quando você vá além do básico do desenvolvimento de aplicativos web ASP.NET que usam o Entity Framework Core."
-keywords: "ASP.NET Core, Entity Framework Core, sql bruto, examine sql, o padrão de repositório, unidade de trabalho padrão, a detecção de alterações automático, banco de dados existente"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 4c20ed37e1e54273929593dddc9fe1180f1492d6
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: ea83e5b17df80e5615dda49335247340d1cfb016
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Tópicos avançados - Core de EF com o tutorial do MVC do ASP.NET Core (10 de 10)
 
@@ -161,7 +159,7 @@ O Entity Framework determina como uma entidade foi alterado (e, portanto, as atu
 
 * DbContext.Entry
 
-* ChangeTracker
+* ChangeTracker.Entries
 
 Se você estiver rastreando um grande número de entidades e chamar um desses métodos muitas vezes em um loop, você pode obter melhorias significativas de desempenho desativar temporariamente detecção de alterações automáticas usando o `ChangeTracker.AutoDetectChangesEnabled` propriedade. Por exemplo:
 

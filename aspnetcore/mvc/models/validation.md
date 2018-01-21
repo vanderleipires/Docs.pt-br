@@ -2,20 +2,18 @@
 title: "Validação de modelo no ASP.NET MVC de núcleo"
 author: rachelappel
 description: "Saiba mais sobre a validação do modelo no ASP.NET MVC de núcleo."
-keywords: "Validação de núcleo do ASP.NET MVC,"
 ms.author: riande
 manager: wpickett
 ms.date: 12/18/2016
 ms.topic: article
-ms.assetid: 3a8676dd-7ed8-4a05-bca2-44e288ab99ee
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 7f641c247cb672934e76fa13bc7b7beb3990dd82
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 91db17e103723ac411a2ad4f3f9549860f250cce
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Introdução à validação do modelo no ASP.NET MVC de núcleo
 
@@ -173,7 +171,7 @@ O `$.validator.unobtrusive.parse()` método aceita um seletor de jQuery para um 
 
 ### <a name="add-validation-to-dynamic-controls"></a>Adicionar validação a controles dinâmicos
 
-Você também pode atualizar as regras de validação em um formulário quando controles individuais, como `<input/>`s e `<select/>`s, são geradas dinamicamente. Você não pode passar seletores para esses elementos para o `parse()` diretamente o método porque o formulário ao redor já foi analisado e não será atualizada.  Em vez disso, você primeiro remova os dados de validação existente e nova análise todo o formulário, conforme mostrado abaixo:
+Você também pode atualizar as regras de validação em um formulário quando controles individuais, como `<input/>`s e `<select/>`s, são geradas dinamicamente. Você não pode passar seletores para esses elementos para o `parse()` diretamente o método porque o formulário ao redor já foi analisado e não será atualizada. Em vez disso, você primeiro remova os dados de validação existente e nova análise todo o formulário, conforme mostrado abaixo:
 
 ```js
 $.get({
@@ -233,11 +231,11 @@ A definição do `VerifyEmail()` método segue estas regras, conforme mostrado a
 
 Agora quando os usuários inserem um email, o JavaScript no modo de exibição faz uma chamada remota para ver se o email foi executada e, em caso afirmativo, exibe a mensagem de erro. Caso contrário, o usuário pode enviar o formulário como de costume.
 
-O `AdditionalFields` propriedade o `[Remote]` atributo é útil para validação de combinações de campos em relação aos dados no servidor.  Por exemplo, se o `User` modelo acima tinha duas propriedades adicionais chamadas `FirstName` e `LastName`, talvez você queira verificar que não há usuários existentes já tem esse par de nomes.  Você define as novas propriedades, conforme mostrado no código a seguir:
+O `AdditionalFields` propriedade o `[Remote]` atributo é útil para validação de combinações de campos em relação aos dados no servidor. Por exemplo, se o `User` modelo acima tinha duas propriedades adicionais chamadas `FirstName` e `LastName`, talvez você queira verificar que não há usuários existentes já tem esse par de nomes. Você define as novas propriedades, conforme mostrado no código a seguir:
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`poderia ser definido explicitamente para as cadeias de caracteres `"FirstName"` e `"LastName"`, mas usando o [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operador como isso simplifica a refatoração mais tarde.  O método de ação para executar a validação, em seguida, deve aceitar os dois argumentos, um para o valor de `FirstName` e outro para o valor de `LastName`.
+`AdditionalFields`poderia ser definido explicitamente para as cadeias de caracteres `"FirstName"` e `"LastName"`, mas usando o [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operador como isso simplifica a refatoração mais tarde. O método de ação para executar a validação, em seguida, deve aceitar os dois argumentos, um para o valor de `FirstName` e outro para o valor de `LastName`.
 
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
@@ -248,11 +246,11 @@ Agora quando os usuários inserir um nome e sobrenome, JavaScript:
 * Se o par tiver sido tomado, uma mensagem de erro será exibida. 
 * Se não ocorrer, o usuário pode enviar o formulário.
 
-Se você precisa validar dois ou mais campos adicionais com o `[Remote]` atributo, você fornecê-los como uma lista delimitada por vírgulas.  Por exemplo, para adicionar um `MiddleName` definida no modelo, o `[Remote]` atributo conforme mostrado no código a seguir:
+Se você precisa validar dois ou mais campos adicionais com o `[Remote]` atributo, você fornecê-los como uma lista delimitada por vírgulas. Por exemplo, para adicionar um `MiddleName` definida no modelo, o `[Remote]` atributo conforme mostrado no código a seguir:
 
 ```cs
 [Remote(action: "VerifyName", controller: "Users", AdditionalFields = nameof(FirstName) + "," + nameof(LastName))]
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`, como todos os argumentos de atributo deve ser uma expressão constante.  Portanto, você não deve usar um [interpolados cadeia de caracteres](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) ou chame [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) inicializar `AdditionalFields`. Para cada campo adicional que você adicionar ao `[Remote]` atributo, você deve adicionar outro argumento para o método de ação do controlador correspondente.
+`AdditionalFields`, como todos os argumentos de atributo deve ser uma expressão constante. Portanto, você não deve usar um [interpolados cadeia de caracteres](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) ou chame [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) inicializar `AdditionalFields`. Para cada campo adicional que você adicionar ao `[Remote]` atributo, você deve adicionar outro argumento para o método de ação do controlador correspondente.

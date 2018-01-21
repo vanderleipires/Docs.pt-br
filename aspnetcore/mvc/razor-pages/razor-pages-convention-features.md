@@ -2,20 +2,18 @@
 title: "Razor páginas rota e aplicativo convenção recursos no ASP.NET Core"
 author: guardrex
 description: "Descubra como você ajudam roteamento de página de controle, descoberta e processamento de rota e aplicativo recursos de convenção de provedor de modelo."
-keywords: "ASP.NET Core, páginas Razor, convenções, AddFolderRouteModelConvention, AddPageRouteModelConvention, AddPageRoute, AddFolderApplicationModelConvention, AddPageApplicationModelConvention, ConfigureFilter, filtros"
 ms.author: riande
 manager: wpickett
 ms.date: 10/23/2017
 ms.topic: article
-ms.assetid: 6b60514c-81ad-485b-bb22-9b71416dff08
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/razor-pages-convention-features
-ms.openlocfilehash: 81fe5198e25c4275f5cf0a123536a9130be8c1d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69475ca9abd4e732dc704ad6a8a2fffe219984f7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-pages-route-and-app-convention-features-in-aspnet-core"></a>Razor páginas rota e aplicativo convenção recursos no ASP.NET Core
 
@@ -47,7 +45,7 @@ O aplicativo de exemplo adiciona um `{globalTemplate?}` modelo de rota para toda
 > [!NOTE]
 > O `Order` propriedade para o `AttributeRouteModel` é definido como `0` (zero). Isso garante que esse modelo tem prioridade para a primeira posição de valor de dados de rota quando é fornecido um valor único de rota. Por exemplo, o exemplo adiciona um `{aboutTemplate?}` modelo de rota posteriormente no tópico. O `{aboutTemplate?}` modelo é fornecido um `Order` de `1`. Quando a página sobre é solicitada no `/About/RouteDataValue`, "RouteDataValue" é carregado no `RouteData.Values["globalTemplate"]` (`Order = 0`) e não `RouteData.Values["aboutTemplate"]` (`Order = 1`) devido à configuração de `Order` propriedade.
 
-*Startup.CS*:
+*Startup.cs*:
 
 [!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet1)]
 
@@ -65,7 +63,7 @@ O aplicativo de exemplo usa o `AddHeaderAttribute` classe para adicionar um cabe
 
 [!code-csharp[Main](razor-pages-convention-features/sample/Conventions/GlobalHeaderPageApplicationModelConvention.cs?name=snippet1)]
 
-*Startup.CS*:
+*Startup.cs*:
 
 [!code-csharp[Main](razor-pages-convention-features/sample/Startup.cs?name=snippet2)]
 
@@ -298,4 +296,4 @@ Solicitar a página Page3 de amostra de aplicativo com em `localhost:5000/OtherP
 
 ## <a name="see-also"></a>Consulte também
 
-* [Convenções de autorização de páginas Razor](xref:security/authorization/razor-pages-authorization)
+* [Convenções de autorização de Páginas Razor](xref:security/authorization/razor-pages-authorization)

@@ -2,20 +2,18 @@
 title: Auxiliar de marca de ancoragem | Microsoft Docs
 author: pkellner
 description: "Mostra como trabalhar com o auxiliar de marca de âncora"
-keywords: "ASP.NET Core, auxiliar de marcação"
 ms.author: riande
 manager: wpickett
 ms.date: 12/20/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 86756a1d09e6e55ca79aed6e5b718088b82b782c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 7923876c792544ac4d559eb8de29475d8a4b37e0
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="anchor-tag-helper"></a>Auxiliar de marca de âncora
 
@@ -32,7 +30,7 @@ O controlador do apresentador abaixo é usado nos exemplos neste documento.
 
 ## <a name="anchor-tag-helper-attributes"></a>Atributos de auxiliar de marca de âncora
 
-### <a name="asp-controller"></a>controlador de ASP
+### <a name="asp-controller"></a>asp-controller
 
 `asp-controller`é usado para associar o controlador será usado para gerar a URL. Os controladores especificados devem existir no projeto atual. O código a seguir lista todos os alto-falantes: 
 
@@ -52,7 +50,7 @@ Se o `asp-controller` for especificado e `asp-action` não, é o padrão `asp-ac
 <a href="/Home">All Speakers</a>
 ```
 
-### <a name="asp-action"></a>ação de ASP
+### <a name="asp-action"></a>asp-action
 
 `asp-action`é o nome do método de ação no controlador que serão incluído no gerado `href`. Por exemplo, o código a seguir defina gerado `href` para apontar para a página de detalhes do apresentador:
 
@@ -70,7 +68,7 @@ Se nenhum `asp-controller` atributo for especificado, o controlador padrão cham
  
 Se o atributo `asp-action` é `Index`, em seguida, nenhuma ação é anexada à URL, à esquerda para o padrão `Index` método ser chamado. A ação especificada (ou padrão), deve existir no controlador referenciado em `asp-controller`.
 
-### <a name="asp-page"></a>página ASP
+### <a name="asp-page"></a>asp-page
 
 Use o `asp-page` atributo em uma marca de âncora para definir a URL para apontar para uma página específica. Prefixando o nome de página com uma barra "/" cria a URL. A URL de exemplo abaixo aponta para a página "Locutor" no diretório atual.
 
@@ -99,7 +97,7 @@ https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 > [!NOTE]
 > Para usar o `asp-page` atributo nas páginas Razor, as URLs deve ser um caminho relativo, por exemplo `"./Speaker"`. Caminhos relativos no `asp-page` atributo não estão disponíveis nos modos de exibição do MVC. Use a sintaxe "/" para exibições do MVC.
 
-### <a name="asp-route-value"></a>ASP - rota-{value}
+### <a name="asp-route-value"></a>asp-route-{value}
 
 `asp-route-`é um prefixo de rota de curinga. Qualquer valor colocado após o traço à direita será interpretado como um parâmetro de rota potencial. Se uma rota padrão não for encontrada, esse prefixo de rota será anexado para o href gerado como um parâmetro de solicitação e um valor. Caso contrário, ele será substituído no modelo de rota.
 
@@ -168,7 +166,7 @@ Se qualquer um dos `asp-controller` ou `asp-action` não forem especificados, e 
 
 `Name = "speakerevals"`informa o auxiliar de marca de âncora para gerar uma rota diretamente para esse método de controlador usando a URL `/Speaker/Evaluations`. Se `asp-controller` ou `asp-action` é especificado além `asp-route`, a rota gerada não pode ser o esperado. `asp-route`não deve ser usada com qualquer um dos atributos `asp-controller` ou `asp-action` para evitar um conflito de rota.
 
-### <a name="asp-all-route-data"></a>ASP-all-dados de rota
+### <a name="asp-all-route-data"></a>asp-all-route-data
 
 `asp-all-route-data`permite a criação de um dicionário de pares chave-valor em que a chave é o nome do parâmetro e o valor é o valor associado a essa chave.
 
@@ -193,7 +191,7 @@ Quando o link é clicado, o método do controlador `EvaluationsCurrent` é chama
 
 Se todas as chaves na correspondência de dicionário de parâmetros de rota, esses valores são substituídos na rota conforme apropriado e os outros valores não correspondentes serão gerados como parâmetros de solicitação.
 
-### <a name="asp-fragment"></a>fragmento de ASP
+### <a name="asp-fragment"></a>asp-fragment
 
 `asp-fragment`define um fragmento de URL para acrescentar à URL. O auxiliar de marca de âncora adicionará o caractere de hash (#). Se você criar uma marca:
 
@@ -206,7 +204,7 @@ A URL gerada será: http://localhost/Speaker/Evaluations#SpeakerEvaluations
 
 Marcas de hash são úteis ao criar aplicativos do lado do cliente. Eles podem ser usados para marcar fácil e pesquisa em JavaScript, por exemplo.
 
-### <a name="asp-area"></a>área de ASP
+### <a name="asp-area"></a>asp-area
 
 `asp-area`Define o nome da área que usa o ASP.NET Core para definir a rota apropriada. A seguir estão exemplos de como o atributo área faz com que um remapeamento de rotas. Configuração `asp-area` blogs prefixos de diretório `Areas/Blogs` para as rotas do associado controladores e exibições para a marca de âncora.
 
@@ -215,10 +213,10 @@ Marcas de hash são úteis ao criar aplicativos do lado do cliente. Eles podem s
   * Áreas
     * Blogs
       * Controladores
-        * HomeController
+        * HomeController.cs
       * Exibições
         * Home
-          * Cshtml
+          * Index.cshtml
           * AboutBlog.cshtml
   * Controladores
 
@@ -237,7 +235,7 @@ O código HTML gerado incluirá o segmento de áreas e será da seguinte maneira
 > [!TIP]
 > Para as áreas do MVC trabalhar em um aplicativo web, o modelo de rota deve incluir uma referência para a área se ele existir. Esse modelo, que é o segundo parâmetro do `routes.MapRoute` chamada de método, será exibida como:`template: '"{area:exists}/{controller=Home}/{action=Index}"'`
 
-### <a name="asp-protocol"></a>protocolo de ASP
+### <a name="asp-protocol"></a>asp-protocol
 
 O `asp-protocol` é para especificar um protocolo (como `https`) em sua URL. Um auxiliar de marca de âncora que contenha o protocolo de exemplo será semelhante ao seguinte:
 

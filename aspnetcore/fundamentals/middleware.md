@@ -2,20 +2,18 @@
 title: Middleware ASP.NET Core
 author: rick-anderson
 description: "Saiba mais sobre o ASP.NET Core middleware e o pipeline de solicitação."
-keywords: ASP.NET Core, Middleware, pipeline, delegado
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2017
 ms.topic: article
-ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ad8d207b1e6de396f16d098fb07ddc89bea2c520
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Conceitos básicos de Middleware do ASP.NET Core
 
@@ -153,9 +151,9 @@ A tabela a seguir mostra as solicitações e respostas de `http://localhost:1234
 | Solicitação | Resposta |
 | --- | --- |
 | localhost:1234 | Saudação de mapa não delegado.  |
-| localhost:1234 / map1 | Teste 1 de mapa |
-| localhost:1234 / map2 | Teste 2 de mapa |
-| localhost:1234 / map3 | Saudação de mapa não delegado.  |
+| localhost:1234/map1 | Teste 1 de mapa |
+| localhost:1234/map2 | Teste 2 de mapa |
+| localhost:1234/map3 | Saudação de mapa não delegado.  |
 
 Quando `Map` é usado, o segmento de caminho correspondente (s) serão removidos do `HttpRequest.Path` e anexado a `HttpRequest.PathBase` para cada solicitação.
 
@@ -168,7 +166,7 @@ A tabela a seguir mostra as solicitações e respostas de `http://localhost:1234
 | Solicitação | Resposta |
 | --- | --- |
 | localhost:1234 | Saudação de mapa não delegado.  |
-| localhost:1234 /? ramificação = mestre | Ramificação usada = mestre|
+| localhost:1234/?branch=master | Ramificação usada = mestre|
 
 `Map`dá suporte a aninhamento, por exemplo:
 

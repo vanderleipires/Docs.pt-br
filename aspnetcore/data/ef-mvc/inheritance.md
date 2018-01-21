@@ -2,20 +2,18 @@
 title: "Núcleo do ASP.NET MVC com núcleo EF - herança - 9 de 10"
 author: tdykstra
 description: "Este tutorial mostrará a implementação de herança no modelo de dados, usando o Entity Framework Core em um aplicativo do ASP.NET Core."
-keywords: "Herança de ASP.NET Core, Entity Framework Core,"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 41dc0db7-6f17-453e-aba6-633430609c74
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 10bde121dac3bdbbf0e55f2d146d91dea0f0210f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 756f1bbba73bd760f780d18c01597642dd1f7216
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>Herança - Core EF com o tutorial do MVC do ASP.NET Core (9 de 10)
 

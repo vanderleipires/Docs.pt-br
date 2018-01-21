@@ -2,7 +2,6 @@
 title: "Armazenamento seguro de segredos do aplicativo durante o desenvolvimento no núcleo do ASP.NET"
 author: rick-anderson
 description: "Mostra como armazenar com segurança os segredos durante o desenvolvimento"
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 09/15/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: 897d9b360ceeb5fbb0863ff1c1fcec039e1a8b8f
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: e2c11b768098b3d92ef702e0daad746963dc3856
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo durante o desenvolvimento no núcleo do ASP.NET
 
@@ -115,11 +114,11 @@ Você pode acessar os segredos do usuário via a API de configuração:
 
 A ferramenta Gerenciador de segredo abstrai os detalhes de implementação, como onde e como os valores são armazenados. Você pode usar a ferramenta sem conhecer esses detalhes de implementação. Na versão atual, os valores são armazenados em um [JSON](http://json.org/) arquivo de configuração no diretório de perfil do usuário:
 
-* Windows:`%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`
+* Windows: `%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`
 
-* Linux:`~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
+* Linux: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
 
-* Mac:`~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
+* Mac: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
 
 O valor de `userSecretsId` vem do valor especificado em *. csproj* arquivo.
 

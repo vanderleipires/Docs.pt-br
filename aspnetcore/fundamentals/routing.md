@@ -2,20 +2,18 @@
 title: "Roteamento no núcleo do ASP.NET"
 author: ardalis
 description: "Descobrir como a funcionalidade de roteamento do ASP.NET Core é responsável para mapear uma solicitação de entrada para um manipulador de rota."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 58388f674ed5d353c1c7208a67fb338e49fdb592
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ffa3178dc4e3aac3ba51c29b7efa3f71eb56bcfe
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no núcleo do ASP.NET
 
@@ -232,7 +230,7 @@ A tabela a seguir mostra as respostas com os URIs determinado.
 
 | URI | Resposta  |
 | ------- | -------- |
-| /Package/Create/3  | Olá! Valores de rota: [operação, criar], [id-3] |
+| /package/create/3  | Olá! Valores de rota: [operação, criar], [id-3] |
 | pacote/faixa /-3  | Olá! Valores de rota: [operação, acompanhar], [id -3] |
 | / pacote/acompanhar/3 / | Olá! Valores de rota: [operação, acompanhar], [id -3]  |
 | /Package./faixa / | \<Passar, nenhuma correspondência > |
@@ -277,12 +275,12 @@ A tabela a seguir demonstra alguns modelos de rota e seu comportamento.
 
 | Modelo de rota | Exemplo de correspondência de URL | Observações |
 | -------- | -------- | ------- |
-| hello  | /Hello  | Somente corresponda ao caminho único`/hello` |
-| {Página = Home} | / | Faz a correspondência e define `Page` para`Home` |
-| {Página = Home}  | / Contato  | Faz a correspondência e define `Page` para`Contact` |
-| {controller} / {action} / {id}? | / / Lista de produtos | Mapeia para `Products` controlador e `List` ação |
-| {controller} / {action} / {id}? | Produtos/123/detalhes  |  Mapeia para `Products` controlador e `Details` ação.  `id`definido como 123 |
-| {controlador = Home} / {ação = índice} / {id}? | /  |  Mapeia para `Home` controlador e `Index` método; `id` será ignorado. |
+| hello  | /hello  | Somente corresponda ao caminho único`/hello` |
+| {Page=Home} | / | Faz a correspondência e define `Page` para`Home` |
+| {Page=Home}  | / Contato  | Faz a correspondência e define `Page` para`Contact` |
+| {controller}/{action}/{id?} | / / Lista de produtos | Mapeia para `Products` controlador e `List` ação |
+| {controller}/{action}/{id?} | /Products/Details/123  |  Mapeia para `Products` controlador e `Details` ação.  `id`definido como 123 |
+| {controller=Home}/{action=Index}/{id?} | /  |  Mapeia para `Home` controlador e `Index` método; `id` será ignorado. |
 
 Usando um modelo geralmente é a abordagem mais simples para roteamento. Restrições e padrões também podem ser especificados fora o modelo de rota.
 
@@ -336,7 +334,7 @@ Expressões regulares usam delimitadores e símbolos semelhantes aos usados pelo
 
 Expressões regulares usadas em roteamento geralmente começa com o `^` caractere (correspondência de início da cadeia de caracteres) e terminam com o `$` caractere (correspondência terminando a posição da cadeia de caracteres). O `^` e `$` caracteres Certifique-se de que o valor do parâmetro de rota toda a correspondência da expressão regular. Sem o `^` e `$` caracteres de expressão regular corresponderá a qualquer subcadeia de caracteres na cadeia de caracteres, que é geralmente não é o desejado. A tabela a seguir mostra alguns exemplos e explica por que eles correspondam ou não corresponde.
 
-| Expressão               | Cadeia de caracteres | Corresponder a | Comentário |
+| Expressão               | Cadeia de Caracteres | Corresponder a | Comentário |
 | ----------------- | ------------ |  ------------ |  ------------ | 
 | `[a-z]{2}` | hello | sim | correspondência de subcadeia de caracteres |
 | `[a-z]{2}` | 123abc456 | sim | correspondência de subcadeia de caracteres |
@@ -365,10 +363,10 @@ Valores que são explicitamente fornecidas, mas que não corresponde a qualquer 
 
 | Valores de ambiente | Valores explícitos | Resultado |
 | -------------   | -------------- | ------ |
-| controlador = "Início" | ação = "Sobre" | `/Home/About` |
-| controlador = "Início" | controlador = "Order", ação = "Sobre" | `/Order/About` |
-| controlador = "Home", color = "Red" | ação = "Sobre" | `/Home/About` |
-| controlador = "Início" | ação = "Sobre" cor = "Red" | `/Home/About?color=Red`
+| controller="Home" | action="About" | `/Home/About` |
+| controller="Home" | controller="Order",action="About" | `/Order/About` |
+| controller="Home",color="Red" | action="About" | `/Home/About` |
+| controller="Home" | action="About",color="Red" | `/Home/About?color=Red`
 
 Se uma rota tem um valor padrão que não corresponde a um parâmetro e esse valor é explicitamente fornecido, ele deve corresponder o valor padrão. Por exemplo:
 

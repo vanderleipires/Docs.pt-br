@@ -2,7 +2,6 @@
 title: "Configurar a localização do objeto portátil"
 author: sebastienros
 description: "Este artigo apresenta arquivos de objeto portátil e descreve as etapas para usá-los em um aplicativo ASP.NET Core com o framework Core Orchard."
-keywords: "ASP.NET Core, localização, cultura, idioma, objeto portátil"
 ms.author: scaddie
 manager: wpickett
 ms.date: 09/26/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: 4fa73ae08b10217de657681a27f6097fc3443737
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dfdd86b4706a1fb8e313c24ba830ec996fe09225
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>Configurar a localização do objeto portátil com Orchard Core
 
@@ -37,7 +36,7 @@ Arquivos de PO são distribuídos como arquivos de texto que contém as cadeias 
 
 Aqui está um arquivo de ordem de compra de exemplo que contém a tradução de duas cadeias de caracteres em francês, incluindo um com sua forma plural:
 
-*FR.po*
+*fr.po*
 
 ```text
 #: Services/EmailService.cs:29

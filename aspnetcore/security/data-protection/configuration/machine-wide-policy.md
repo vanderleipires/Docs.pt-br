@@ -2,20 +2,18 @@
 title: "Suporte a política de máquina de proteção de dados no ASP.NET Core"
 author: rick-anderson
 description: "Saiba mais sobre suporte para definição de uma política de todo o computador padrão para todos os aplicativos que consomem a proteção de dados do ASP.NET Core."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 285ae47d-e0bf-4b03-b0a8-2b1fb18bc3a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 692e120f13882be594afc5fb926b96b82d9609e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c3ae3b628ebe17c7926c71f1fad664d719d1706
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>Suporte a política de máquina de proteção de dados no ASP.NET Core
 
@@ -30,7 +28,7 @@ Quando em execução no Windows, o sistema de proteção de dados tem suporte li
 
 Para definir a política padrão, um administrador pode definir os valores conhecidos no registro do sistema na seguinte chave do registro:
 
-**HKLM\SOFTWARE\Microsoft\DotNetPackages\Microsoft.AspNetCore.dataprotection**
+**HKLM\SOFTWARE\Microsoft\DotNetPackages\Microsoft.AspNetCore.DataProtection**
 
 Se você estiver em um sistema operacional de 64 bits e quiser afetar o comportamento de aplicativos de 32 bits, lembre-se de configurar o equivalente Wow6432Node a chave acima.
 

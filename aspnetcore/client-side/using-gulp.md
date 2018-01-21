@@ -2,7 +2,6 @@
 title: "Usando o Gulp no núcleo do ASP.NET"
 author: rick-anderson
 description: Saiba como usar o Gulp em ASP.NET Core.
-keywords: "Núcleo do ASP.NET, Gulp"
 ms.author: riande
 manager: wpickett
 ms.date: 02/28/2017
@@ -11,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-gulp
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 68f6838889cfb830f2c5a1976b3140ae5d94ac25
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 11f7254a2f3d3d132f2f6af6d5ddab23f896cf63
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>Introdução ao uso de Gulp no núcleo do ASP.NET 
 
@@ -64,8 +63,8 @@ O código acima Especifica quais módulos de nó são necessários. O `require` 
 |---|---|
 |gulp|O sistema de compilação streaming Gulp. Para obter mais informações, consulte [gulp](https://www.npmjs.com/package/gulp).|
 |rimraf|Um módulo de exclusão do nó. Para obter mais informações, consulte [rimraf](https://www.npmjs.com/package/rimraf).|
-|gulp concat|Um módulo que concatena arquivos com base em caractere de nova linha do sistema operacional. Para obter mais informações, consulte [gulp concat](https://www.npmjs.com/package/gulp-concat).|
-|gulp cssmin|Um módulo que minimiza arquivos CSS. Para obter mais informações, consulte [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin).|
+|gulp-concat|Um módulo que concatena arquivos com base em caractere de nova linha do sistema operacional. Para obter mais informações, consulte [gulp concat](https://www.npmjs.com/package/gulp-concat).|
+|gulp-cssmin|Um módulo que minimiza arquivos CSS. Para obter mais informações, consulte [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin).|
 |uglify gulp|Um módulo que minimiza *. js* arquivos. Para obter mais informações, consulte [uglify gulp](https://www.npmjs.com/package/gulp-uglify).|
 
 Depois que os módulos necessários são importados, as tarefas podem ser especificadas. Aqui, há seis tarefas registrado, representado pelo código a seguir:
@@ -102,7 +101,7 @@ A tabela a seguir fornece uma explicação das tarefas especificado no código a
 
 |Nome da Tarefa|Descrição|
 |--- |--- |
-|Limpar: js|Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão minimizada do arquivo site.js.|
+|clean:js|Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão minimizada do arquivo site.js.|
 |Limpar: css|Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão minimizada do arquivo site.css.|
 |Limpar|Uma tarefa que chama o `clean:js` tarefa, seguida de `clean:css` tarefa.|
 |min:js|Uma tarefa que minimiza e concatena todos os arquivos. js na pasta js. A. min.js arquivos serão excluídos.|
@@ -249,7 +248,7 @@ Quando você executa várias tarefas, as tarefas executadas simultaneamente por 
     gulp.task("series", ["series:first", "series:second"], function () {});
     ```
  
-    Agora você tem três tarefas: `series:first`, `series:second`, e `series`. O `series:second` tarefa inclui um segundo parâmetro que especifica uma matriz de tarefas a ser executado e concluído antes do `series:second` tarefa será executada.  Conforme especificado no código acima, somente o `series:first` tarefa deve ser concluída antes do `series:second` tarefa será executada.
+    Agora você tem três tarefas: `series:first`, `series:second`, e `series`. O `series:second` tarefa inclui um segundo parâmetro que especifica uma matriz de tarefas a ser executado e concluído antes do `series:second` tarefa será executada. Conforme especificado no código acima, somente o `series:first` tarefa deve ser concluída antes do `series:second` tarefa será executada.
 
 2.  Salvar *gulpfile.js*.
 
@@ -328,7 +327,7 @@ Para obter mais informações relacionadas a ambientes em ASP.NET Core, consulte
 
 ## <a name="task-and-module-details"></a>Detalhes da tarefa e o módulo
 
-Uma tarefa Gulp está registrada com um nome de função.  É possível especificar dependências se outras tarefas devem ser executadas antes da tarefa atual. Funções adicionais permitem que você execute e observar as tarefas de Gulp, bem como definir a origem (*src*) e de destino (*dest*) dos arquivos que está sendo modificados. Estas são as funções de API Gulp primárias:
+Uma tarefa Gulp está registrada com um nome de função. É possível especificar dependências se outras tarefas devem ser executadas antes da tarefa atual. Funções adicionais permitem que você execute e observar as tarefas de Gulp, bem como definir a origem (*src*) e de destino (*dest*) dos arquivos que está sendo modificados. Estas são as funções de API Gulp primárias:
 
 |Função gulp|Sintaxe|Descrição|
 |---   |--- |--- |

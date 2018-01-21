@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fc21857d5017799536f153dac3ee54ba2f8f5778
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c4710c507f605c539d3e595a6c757f4d5393292b
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application"></a>Criando um modelo de dados mais complexo para um aplicativo ASP.NET MVC
 ====================
@@ -81,7 +81,7 @@ Suponha que você deseja garantir que os usuários não insiram mais de 50 carac
 
 O [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atributo não impedem que um usuário inserir espaços em branco para um nome. Você pode usar o [RegularExpression](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atributo aplicar restrições para a entrada. Por exemplo, o código a seguir exige o primeiro caractere a ser maiuscula e os caracteres restantes para estar em ordem alfabética:
 
-`[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]`
+`[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
 O [MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) atributo fornece funcionalidade semelhante para o [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) de atributo, mas não fornece do lado do cliente a validação.
 
@@ -301,17 +301,17 @@ Há uma relação muitos-para-muitos entre o `Student` e `Course` entidades e o 
 
 A ilustração a seguir mostra a aparência dessas relações em um diagrama de entidade. (Este diagrama foi gerado usando o [Entity Framework Power Tools](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); criar o diagrama não faz parte do tutorial, ele está sendo usado apenas como uma ilustração.)
 
-![Course_many aluno de many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
+![Student-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
 
 Cada linha de relação tem um 1 em uma extremidade e um asterisco (\*) em outro, indicando uma relação um-para-muitos.
 
 Se o `Enrollment` tabela não incluir informações de classificação, ele só precisa conter as duas chaves estrangeiras `CourseID` e `StudentID`. Nesse caso, ela corresponde a uma tabela de junção de muitos-para-muitos *sem carga* (ou um *tabela de junção puro*) no banco de dados, e você não precisa criar uma classe de modelo para ele em todos os. O `Instructor` e `Course` as entidades têm esse tipo de relação muitos-para-muitos, e como você pode ver, não há nenhuma classe de entidade entre eles:
 
-![Instrutor Course_many para many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image13.png)
+![Instructor-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image13.png)
 
 Uma tabela de junção é necessária no banco de dados, no entanto, conforme mostrado no diagrama de banco de dados a seguir:
 
-![Instrutor Course_many para many_relationship_tables](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image14.png)
+![Instructor-Course_many-to-many_relationship_tables](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 
 O Entity Framework cria automaticamente o `CourseInstructor` tabela e ler e atualizá-lo indiretamente por ler e atualizar o `Instructor.Courses` e `Course.Instructors` propriedades de navegação.
 

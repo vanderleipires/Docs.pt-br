@@ -6,15 +6,14 @@ ms.author: riande
 manager: wpickett
 ms.date: 10/27/2017
 ms.topic: article
-ms.assetid: f65ad22d-9472-478a-856c-c59c8681fa71
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: 36acf3c06a462882972c5f389d544d98cadc35f6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72b558816e687c30d0c60f2fd85227d0d803219b
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>Convenções de autorização de páginas Razor do ASP.NET Core
 
@@ -80,5 +79,5 @@ Exigir autorização na página privada não funcionará porque quando tanto o `
 
 ## <a name="see-also"></a>Consulte também
 
-* [Razor páginas rota e página modelo provedores personalizados](xref:mvc/razor-pages/razor-pages-convention-features)
+* [Provedores de modelo personalizado de página e rota de Páginas Razor](xref:mvc/razor-pages/razor-pages-convention-features)
 * [PageConventionCollection](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection) classe

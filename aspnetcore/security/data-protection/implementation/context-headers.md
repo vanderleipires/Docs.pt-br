@@ -2,20 +2,18 @@
 title: "Cabeçalhos de contexto"
 author: rick-anderson
 description: "Este documento descreve os detalhes de implementação de cabeçalhos de contexto de proteção de dados do ASP.NET Core."
-keywords: "ASP.NET Core, proteção de dados, os cabeçalhos de contexto"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: d026a58c-67f4-411e-a410-c35f29c2c517
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: eb8e4c9ad67d3046648aea1b45f4a675b41b3ec0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5ed2e48a55e23d73bccd01a731b35ea68f8944e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="context-headers"></a>Cabeçalhos de contexto
 
@@ -55,7 +53,7 @@ Idealmente, poderíamos passar vetores de zeros para K_E e K_H. No entanto, quer
 
 Em vez disso, usamos o NIST SP800-108 KDF no modo de contador (consulte [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), SEC 5.1) com uma chave de comprimento zero, o rótulo e o contexto e a HMACSHA512 como o PRF subjacente. Podemos derivar | K_E | + | K_H | bytes de saída, em seguida, decompor o resultado em K_E e K_H próprios. Matematicamente, isso é representado como a seguir.
 
-(K_E | | K_H) = SP800_108_CTR (prf = HMACSHA512, chave = "", rótulo = "", contexto = "")
+( K_E || K_H ) = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
 
 ### <a name="example-aes-192-cbc--hmacsha256"></a>Exemplo: AES de 192 de CBC + HMACSHA256
 
@@ -72,11 +70,11 @@ B7 92 3D BF 59 90 00 A9
 
 Em seguida, calcular Enc_CBC (K_E, IV, "") para AES-192-CBC fornecido IV = 0 * e K_E como acima.
 
-resultado: = F474B1872B3B53E4721DE19C0841DB6F
+result := F474B1872B3B53E4721DE19C0841DB6F
 
 Em seguida, o MAC de computação (K_H, "") para HMACSHA256 determinado K_H como acima.
 
-resultado: = D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
+result := D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
 
 Isso gera o cabeçalho de contexto completo abaixo:
 
@@ -119,11 +117,11 @@ D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
 
 Em seguida, calcular Enc_CBC (K_E, IV, "") para 3DES-192-CBC fornecido IV = 0 * e K_E como acima.
 
-resultado: = ABB100F81E53E10E
+result := ABB100F81E53E10E
 
 Em seguida, o MAC de computação (K_H, "") para HMACSHA1 determinado K_H como acima.
 
-resultado: = 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
+result := 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
 
 Isso gera o cabeçalho de contexto completo que é uma impressão digital do autenticado par de algoritmo do encryption (criptografia 3DES-192-CBC + HMACSHA1 validação), mostrado abaixo:
 
@@ -167,17 +165,17 @@ O cabeçalho de contexto consiste dos seguintes componentes:
 
 K_E é obtida usando o mesmo mecanismo como a criptografia CBC + o cenário de autenticação de HMAC. No entanto, já que não há nenhum K_H em jogo aqui, essencialmente temos | K_H | = 0, e o algoritmo recolhe para o formulário abaixo.
 
-K_E = SP800_108_CTR (prf = HMACSHA512, chave = "", rótulo = "", contexto = "")
+K_E = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
 
 ### <a name="example-aes-256-gcm"></a>Exemplo: AES-256-GCM
 
 Primeiramente, vamos K_E = SP800_108_CTR (prf = HMACSHA512, chave = "", rótulo = "", contexto = ""), onde | K_E | = 256 bits.
 
-K_E: = 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
+K_E := 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
 
 Em seguida, calcular a marca de autenticação de Enc_GCM (K_E, nonce, "") para AES-256-GCM fornecido nonce = 096 e K_E como acima.
 
-resultado: = E7DCCE66DF855A323A6BB7BD7A59BE45
+result := E7DCCE66DF855A323A6BB7BD7A59BE45
 
 Isso gera o cabeçalho de contexto completo abaixo:
 

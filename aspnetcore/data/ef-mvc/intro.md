@@ -2,20 +2,18 @@
 title: "Núcleo do ASP.NET MVC com o Entity Framework Core - Tutorial 1 de 10"
 author: tdykstra
 description: 
-keywords: Tutorial do ASP.NET Core, Entity Framework Core,
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: df13726689c430ab19786e104ea7404051107aa9
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Introdução ao ASP.NET MVC de núcleo e Entity Framework Core usando o Visual Studio (1 a 10)
 
@@ -44,7 +42,7 @@ O aplicativo de exemplo é um site de uma universidade Contoso fictícia. Ele in
 Se você tiver um problema que não é possível resolver, você pode encontrar a solução geralmente comparando seu código para o [projeto concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final). Para obter uma lista de erros comuns e como resolvê-los, consulte [a seção de solução de problemas do tutorial do último na série](advanced.md#common-errors). Se você não encontrar o que você precisa lá, você pode postar uma pergunta em StackOverflow.com para [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) ou [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core).
 
 > [!TIP] 
-> Essa é uma série de tutoriais de 10, cada um dos quais se baseia no qual é feito nos tutoriais anteriores.  Considere a possibilidade de salvar uma cópia do projeto após cada tutorial foi bem-sucedida.  Se você tiver problemas, você pode começar novamente do tutorial anterior em vez de voltar ao início da série inteira.
+> Essa é uma série de tutoriais de 10, cada um dos quais se baseia no qual é feito nos tutoriais anteriores. Considere a possibilidade de salvar uma cópia do projeto após cada tutorial foi bem-sucedida. Se você tiver problemas, você pode começar novamente do tutorial anterior em vez de voltar ao início da série inteira.
 
 ## <a name="the-contoso-university-web-application"></a>O aplicativo da Web da Contoso University
 
@@ -136,7 +134,7 @@ O `ID` propriedade tornam-se a coluna de chave primária da tabela de banco de d
 
 O `Enrollments` propriedade é uma propriedade de navegação. Propriedades de navegação mantêm outras entidades que estão relacionadas a esta entidade. Nesse caso, o `Enrollments` propriedade de um `Student entity` conterá todos os `Enrollment` entidades relacionadas ao `Student` entidade. Em outras palavras, se uma determinada linha de Student no banco de dados tem dois registro linhas relacionadas (linhas que contêm o valor de chave primária que student na sua coluna de chave estrangeira StudentID), que `Student` da entidade `Enrollments` propriedade de navegação conterá os dois `Enrollment` entidades.
 
-Se uma propriedade de navegação pode conter várias entidades (como relações muitos-para-muitos ou um-para-muitos), seu tipo deve ser uma lista na qual as entradas podem ser adicionadas, excluídas e atualizadas, como `ICollection<T>`.  Você pode especificar `ICollection<T>` ou um tipo, como `List<T>` ou `HashSet<T>`. Se você especificar `ICollection<T>`, EF cria um `HashSet<T>` coleção por padrão.
+Se uma propriedade de navegação pode conter várias entidades (como relações muitos-para-muitos ou um-para-muitos), seu tipo deve ser uma lista na qual as entradas podem ser adicionadas, excluídas e atualizadas, como `ICollection<T>`. Você pode especificar `ICollection<T>` ou um tipo, como `List<T>` ou `HashSet<T>`. Se você especificar `ICollection<T>`, EF cria um `HashSet<T>` coleção por padrão.
 
 ### <a name="the-enrollment-entity"></a>A entidade de registro
 
@@ -210,7 +208,7 @@ A cadeia de caracteres de conexão Especifica um banco de dados LocalDB do SQL S
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>Adicione código para inicializar o banco de dados de teste
 
-O Entity Framework criará um banco de dados vazio para você.  Nesta seção, você escreve um método que é chamado depois que o banco de dados é criado para preenchê-la com dados de teste.
+O Entity Framework criará um banco de dados vazio para você. Nesta seção, você escreve um método que é chamado depois que o banco de dados é criado para preenchê-la com dados de teste.
 
 Aqui você vai usar o `EnsureCreated` método para criar automaticamente o banco de dados. Em um [tutorial posterior](migrations.md) você verá como lidar com as alterações do modelo usando migrações do Code First para alterar o esquema de banco de dados em vez de descartar e recriar o banco de dados.
 
@@ -218,7 +216,7 @@ No *dados* pasta, crie um novo arquivo de classe chamado *DbInitializer.cs* e su
 
 [!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
-O código verifica se há algum dos alunos no banco de dados, e se não estiver, ele pressupõe que o banco de dados é novo e precisa ser propagada com dados de teste.  Ele carrega os dados de teste em matrizes em vez de `List<T>` coleções para otimizar o desempenho.
+O código verifica se há algum dos alunos no banco de dados, e se não estiver, ele pressupõe que o banco de dados é novo e precisa ser propagada com dados de teste. Ele carrega os dados de teste em matrizes em vez de `List<T>` coleções para otimizar o desempenho.
 
 Em *Program.cs*, modifique o `Main` método para fazer o seguinte na inicialização do aplicativo:
 
@@ -244,10 +242,10 @@ A criação automática de métodos de ação CRUD e modos de exibição é conh
 
 * Com o botão direito do **controladores** pasta **Solution Explorer** e selecione **Adicionar > Novo Item de Scaffold**.
 
-Se o **adicionar dependências de MVC** caixa de diálogo aparece:
+Se a caixa de diálogo **Adicionar Dependências do MVC** for exibida:
 
-* [Atualize o Visual Studio para a versão mais recente](https://www.visualstudio.com/downloads/). Versões do Visual Studio antes de 15,5 mostram esta caixa de diálogo.
-* Se você não pode atualizar, selecione **adicionar**e, em seguida, siga as etapas de controlador de adicionar novamente.
+* [Atualize o Visual Studio para a última versão](https://www.visualstudio.com/downloads/). Versões do Visual Studio anteriores a 15.5 mostram essa caixa de diálogo.
+* Se não puder atualizar, selecione **ADICIONAR** e, em seguida, siga as etapas de adição do controlador novamente.
 
 * No **adicionar Scaffold** caixa de diálogo:
 
@@ -353,7 +351,7 @@ No código a seguir, o `async` palavra-chave, `Task<T>` retornar valor, `await` 
 
 Algumas coisas a serem consideradas quando você está escrevendo código assíncrono que usa o Entity Framework:
 
-* Somente instruções que fazem com consultas ou comandos sejam enviados para o banco de dados que são executadas assincronamente. Por exemplo, que inclui `ToListAsync`, `SingleOrDefaultAsync`, e `SaveChangesAsync`.  Ele não incluir, por exemplo, instruções que apenas alterar uma `IQueryable`, como `var students = context.Students.Where(s => s.LastName == "Davolio")`.
+* Somente instruções que fazem com consultas ou comandos sejam enviados para o banco de dados que são executadas assincronamente. Por exemplo, que inclui `ToListAsync`, `SingleOrDefaultAsync`, e `SaveChangesAsync`. Ele não incluir, por exemplo, instruções que apenas alterar uma `IQueryable`, como `var students = context.Students.Where(s => s.LastName == "Davolio")`.
 
 * Um contexto EF não é thread-safe: não tenta realizar várias operações em paralelo. Quando você chamar qualquer método EF assíncrona, sempre use o `await` palavra-chave.
 
@@ -366,4 +364,4 @@ Para obter mais informações sobre a programação assíncrona em .NET, consult
 Agora você criou um aplicativo simples que usa o Entity Framework Core e o SQL Server Express LocalDB para armazenar e exibir dados. O tutorial a seguir, você aprenderá executar básica CRUD (criar, ler, atualizar e excluir) operações.
 
 >[!div class="step-by-step"]
-[Avançar](crud.md)  
+[Avançar](crud.md)

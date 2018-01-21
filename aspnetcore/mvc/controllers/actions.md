@@ -2,20 +2,18 @@
 title: "Tratamento de solicitações com controladores no ASP.NET MVC de núcleo"
 author: ardalis
 description: 
-keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 07/03/2017
 ms.topic: article
-ms.assetid: 9da9eb52-8583-4069-af91-155ba3529d7f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
-ms.openlocfilehash: 5dc6c7dc70027bb79875f389d535119a2543b873
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cef493fc2010d1c82e5c1dfec85864539252b817
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Tratamento de solicitações com controladores no ASP.NET MVC de núcleo
 
@@ -68,7 +66,7 @@ Há dois tipos de resultado dessa categoria: redirecionamento e código de Statu
 
     Este tipo retorna um código de status HTTP. Alguns métodos auxiliares desse tipo são `BadRequest`, `NotFound`, e `Ok`. Por exemplo, `return BadRequest();` produz um código de 400 status quando executado. Quando métodos como `BadRequest`, `NotFound`, e `Ok` estão sobrecarregados, eles não se qualifica como respondentes de código de Status HTTP, pois a negociação de conteúdo está em andamento.
 
-* **Redirecionamento**
+* **Redirect**
 
     Este tipo retorna um redirecionamento para uma ação ou um destino (usando `Redirect`, `LocalRedirect`, `RedirectToAction`, ou `RedirectToRoute`). Por exemplo, `return RedirectToAction("Complete", new {id = 123});` redireciona para `Complete`, passando um objeto anônimo.
 

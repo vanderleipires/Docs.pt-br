@@ -2,20 +2,18 @@
 title: "Middleware no núcleo do ASP.NET de regravação de URL"
 author: guardrex
 description: "Saiba mais sobre a URL de regravação e redirecionar com Middleware de regravação de URL em aplicativos do ASP.NET Core."
-keywords: "ASP.NET Core reescrever, URL de regravação de URL, URL de redirecionamento, redirecionamento de URL, middleware, apache_mod"
 ms.author: riande
 manager: wpickett
 ms.date: 08/17/2017
 ms.topic: article
-ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 769696931498605bd3cf3459279939afb86a4ee8
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware no núcleo do ASP.NET de regravação de URL
 
@@ -266,7 +264,7 @@ O middleware liberado com o ASP.NET Core 1. x não oferece suporte para os segui
 * Ação de CustomResponse
 * Variáveis de servidor personalizado
 * Curingas
-* Ação: CustomResponse
+* Action:CustomResponse
 * LogRewrittenUrl
 
 ---
@@ -274,7 +272,7 @@ O middleware liberado com o ASP.NET Core 1. x não oferece suporte para os segui
 #### <a name="supported-server-variables"></a>Variáveis de servidor com suporte
 O middleware suporta as seguintes variáveis de servidor IIS URL Rewrite Module:
 * CONTENT_LENGTH
-* TIPO_DE_CONTEÚDO
+* CONTENT_TYPE
 * HTTP_ACCEPT
 * HTTP_CONNECTION
 * HTTP_COOKIE
@@ -299,7 +297,7 @@ O middleware suporta as seguintes variáveis de servidor IIS URL Rewrite Module:
 ### <a name="method-based-rule"></a>Regra com base em método:
 Use `Add(Action<RewriteContext> applyRule)` para implementar sua própria lógica de regra em um método. O `RewriteContext` expõe o `HttpContext` para uso em seu método. O `context.Result` determina o pipeline adicional como o processamento é tratado.
 
-| contexto. Resultado                       | Ação                                                          |
+| context.Result                       | Ação                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules` (padrão) | Continue a aplicar regras                                         |
 | `RuleResult.EndResponse`             | Parar de aplicar regras e enviar a resposta                       |

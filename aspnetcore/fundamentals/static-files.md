@@ -2,7 +2,6 @@
 title: "Trabalhar com arquivos estáticos no núcleo do ASP.NET"
 author: rick-anderson
 description: "Aprenda a atender e proteger arquivos estáticos e configurar arquivos estáticos hospedagem comportamentos de middleware em um aplicativo web do ASP.NET Core."
-keywords: "ASP.NET Core, arquivos estáticos, ativos estáticos, HTML, CSS, JavaScript"
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -12,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/static-files
-ms.openlocfilehash: 912923860939a1d1dd91ccc79862e23f9095d161
-ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
+ms.openlocfilehash: 60b205bf0a45e2965f9dab46f46956947ae513fd
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="work-with-static-files-in-aspnet-core"></a>Trabalhar com arquivos estáticos no núcleo do ASP.NET
 

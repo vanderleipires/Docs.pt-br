@@ -2,21 +2,19 @@
 title: "Link do navegador no núcleo do ASP.NET"
 author: ncarandini
 description: "Explica como o Link do navegador é um recurso do Visual Studio que vincula o ambiente de desenvolvimento com um ou mais navegadores da web."
-keywords: "ASP.NET Core, o link do navegador, a sincronização de CSS"
 ms.author: riande
 manager: wpickett
 ms.date: 09/22/2017
 ms.topic: article
-ms.assetid: 11813d4c-3f8a-445a-b23b-e4a57d001abc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-browserlink
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b69d085e8bee4cdac2dff08b46a95a8869e263b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d5db65c268923e96c45b034639437fc3496ccac1
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>Link do navegador no núcleo do ASP.NET 
 
@@ -106,7 +104,7 @@ Passe o mouse sobre o controle de barra de ferramentas de Link do navegador para
 
 Alterar a exibição do índice, e todos os navegadores conectados são atualizados quando você clicar no botão de atualização de Link do navegador:
 
-![sincronização de navegadores de alterações](using-browserlink/_static/browsers-sync-to-changes.png)
+![browsers-sync-to-changes](using-browserlink/_static/browsers-sync-to-changes.png)
 
 Link do navegador também funciona com navegadores que você inicia a partir de fora do Visual Studio e navegue até a URL do aplicativo.
 
@@ -114,15 +112,15 @@ Link do navegador também funciona com navegadores que você inicia a partir de 
 
 Abra o painel de Link do navegador de menu para gerenciar a conexão com o navegador abertas suspenso Link do navegador:
 
-![Painel de browserslink abrir](using-browserlink/_static/open-browserlink-dashboard.png)
+![open-browserslink-dashboard](using-browserlink/_static/open-browserlink-dashboard.png)
 
 Se nenhum navegador estiver conectado, você pode iniciar uma sessão de depuração não, selecionando o *exibir no navegador* link:
 
-![painel browserlink-conexões não](using-browserlink/_static/browserlink-dashboard-no-connections.png)
+![browserlink-dashboard-no-connections](using-browserlink/_static/browserlink-dashboard-no-connections.png)
 
 Caso contrário, os navegadores conectados são mostrados com o caminho para a página que está mostrando cada navegador:
 
-![browserlink-painel duas conexões](using-browserlink/_static/browserlink-dashboard-two-connections.png)
+![browserlink-dashboard-two-connections](using-browserlink/_static/browserlink-dashboard-two-connections.png)
 
 Se desejar, você pode clicar em um nome de navegador listados para atualizar o navegador único.
 

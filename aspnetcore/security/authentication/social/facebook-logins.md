@@ -2,40 +2,38 @@
 title: "Configuração de logon externo do Facebook no núcleo do ASP.NET"
 author: rick-anderson
 description: "Este tutorial demonstra a integração da autenticação de usuário de conta do Facebook em um aplicativo existente do ASP.NET Core."
-keywords: "ASP.NET Core, Facebook, login, autenticação"
 ms.author: riande
 manager: wpickett
 ms.date: 08/01/2017
 ms.topic: article
-ms.assetid: 8c65179b-688c-4af1-8f5e-1862920cda95
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 058670b4f699288e1acbe76bae08dcebf69346b8
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 2d36aa78f82b4a52a7c6a152bee2c4ca9923409f
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-facebook-authentication"></a>Configurar a autenticação do Facebook
 
 Por [Valeriy Novytskyy](https://github.com/01binary) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Este tutorial mostra como permitir que os usuários entrem com a conta do Facebook deles usando um projeto de amostra do ASP.NET Core 2.0 criado na [página anterior](index.md). Vamos começar criando um Facebook App ID seguindo as [etapas oficiais](https://developers.facebook.com).
+Este tutorial mostra como habilitar os usuários entrar com sua conta do Facebook usando um projeto do ASP.NET Core 2.0 de exemplo criado no [página anterior](index.md). Vamos começar criando um Facebook App ID seguindo o [etapas oficiais](https://developers.facebook.com).
 
 ## <a name="create-the-app-in-facebook"></a>Criar o aplicativo no Facebook
 
 *  Navegue até o [aplicativo Facebook desenvolvedores](https://developers.facebook.com/apps/) página e entre. Se você ainda não tiver uma conta do Facebook, use o **inscrever-se para o Facebook** link na página de logon para criar uma.
 
-* Clique no botão **adicionar um novo aplicativo** no canto superior direito para criar uma nova ID de aplicativo.
+* Toque na **adicionar um novo aplicativo** botão no canto superior direito para criar uma nova ID de aplicativo.
 
    ![Abra o Facebook para o portal de desenvolvedores no Microsoft Edge](index/_static/FBMyApps.png)
 
-* Preencha o formulário e clique no botão **criar ID do aplicativo**.
+* Preencha o formulário e toque no **criar ID do aplicativo** botão.
 
    ![Criar um formulário de nova ID de aplicativo](index/_static/FBNewAppId.png)
 
-* Na página **selecionar um produto** , clique em **Set Up** no painel **Facebook Login**.
+* No **selecionar um produto** , clique em **Set Up** no **logon do Facebook** cartão.
 
    ![Página de instalação do produto](index/_static/FBProductSetup.png)
   

@@ -2,7 +2,6 @@
 title: Configurar a identidade do ASP.NET Core
 author: AdrienTorris
 description: "Entender os valores padrão de identidade do ASP.NET Core e configure as várias propriedades de identidade para usar valores personalizados."
-keywords: "Autenticação do ASP.NET Core, identidade, segurança"
 ms.author: scaddie
 manager: wpickett
 ms.date: 01/11/2018
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: ac204cb89aac1f90adc64c4f0bec4e946cb8c4d9
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: d3a13d1cef3417522460b44c52c1361c3e9d1162
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-identity"></a>Configurar identidade
 
@@ -103,13 +102,13 @@ Em `ConfigureServices` no `Startup` classe, você pode configurar o cookie do ap
 
 | Propriedade                | Descrição                       | Padrão |
 | ----------------------- | --------------------------------- | ------- |
-| `Cookie.Name`  | O nome do cookie.  | . AspNetCore.Cookies.  |
+| `Cookie.Name`  | O nome do cookie.  | .AspNetCore.Cookies.  |
 | `Cookie.HttpOnly`  | Quando for verdadeiro, o cookie não é acessível a partir de scripts do lado do cliente.  |  true |
 | `ExpireTimeSpan`  | Controla o tempo que o tíquete de autenticação é armazenado no cookie permanecerá válido do ponto em que ele é criado.  | 14 dias  |
 | `LoginPath`  | Quando um usuário está autorizado, ele será redirecionado para esse caminho para fazer logon. | / / Logon da conta  |
 | `LogoutPath`  | Quando um usuário é desconectado, ele será redirecionado para esse caminho.  | / Conta/Logout  |
 | `AccessDeniedPath`  | Quando um usuário executar uma verificação de autorização, ele será redirecionado para esse caminho.  |   |
-| `SlidingExpiration`  | Quando for verdadeiro, será emitido um novo cookie com um novo tempo de expiração quando o cookie atual é mais de meio a janela de expiração.  | / Conta/AccessDenied |
+| `SlidingExpiration`  | Quando for verdadeiro, será emitido um novo cookie com um novo tempo de expiração quando o cookie atual é mais de meio a janela de expiração.  | /Account/AccessDenied |
 | `ReturnUrlParameter`  | Determina o nome do parâmetro de cadeia de caracteres de consulta que é acrescentado pelo middleware quando um código de 401 status não autorizado é alterado para um redirecionamento 302 para o caminho de logon.  |  true |
 | `AuthenticationScheme`  | Isso só é relevante para o ASP.NET Core 1. x. O nome lógico para um esquema de autenticação específico. |  |
 | `AutomaticAuthenticate`  | Esse sinalizador só é relevante para o ASP.NET Core 1. x. Quando for verdadeiro, autenticação de cookie deve executar em cada solicitação e tente validar e reconstrua qualquer entidade de segurança serializada criado por ele.  |  |

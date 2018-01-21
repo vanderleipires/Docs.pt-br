@@ -2,20 +2,18 @@
 title: "Habilitar solicitações entre origens (CORS)"
 author: rick-anderson
 description: "Este documento apresenta CORS como um padrão para permitir ou rejeitar solicitações entre origens em um aplicativo do ASP.NET Core."
-keywords: "ASP.NET Core, CORS, distribuição de origem"
 ms.author: riande
 manager: wpickett
 ms.date: 05/17/2017
 ms.topic: article
-ms.assetid: f9d95e88-4d7e-4d0c-a8e1-47de1128d505
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: 5398b6ad6531710de2b8000cb368e5fa607ae7ff
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: e6b49b9dde94cc7d035ea91b992a13df8cb8caf2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Habilitar solicitações entre origens (CORS)
 
@@ -164,15 +162,15 @@ Navegadores não são totalmente consistentes em como eles definidos Access-Cont
 
 Por padrão, o navegador não expõe todos os cabeçalhos de resposta para o aplicativo. (Consulte [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) Os cabeçalhos de resposta que estão disponíveis por padrão são:
 
-* Controle de cache
+* Cache-Control
 
-* Idioma do conteúdo
+* Content-Language
 
 * Tipo de conteúdo
 
 * Expirar
 
-* Última modificação
+* Last-Modified
 
 * Pragma
 
@@ -266,9 +264,9 @@ Para algumas solicitações CORS, o navegador envia uma solicitação de adicion
 
 * O cabeçalho Content-Type (se definido) é um dos seguintes:
 
-  * Application/x-www-form-urlencoded
+  * application/x-www-form-urlencoded
 
-  * com diversas partes/dados de formulário
+  * multipart/form-data
 
   * texto/sem formatação
 

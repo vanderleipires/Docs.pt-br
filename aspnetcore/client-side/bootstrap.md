@@ -2,20 +2,18 @@
 title: "Criando sites lindos, respondendo com inicialização"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bd27832c-2877-4b7b-9337-e009361d845f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: f89ad584600c3f12a936599de27f931aff0cd4b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aee3304515686fc8e45e8e2aafb79d957219f94a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Criando sites lindos, respondendo com inicialização
 
@@ -23,7 +21,7 @@ ms.lasthandoff: 11/10/2017
 
 Por [Steve Smith](https://ardalis.com/)
 
-Bootstrap atualmente é a estrutura da web mais popular de desenvolvimento de aplicativos web responsivo. Ele oferece uma série de recursos e benefícios que podem melhorar a experiência dos usuários ao seu site, se você for um iniciante no front-end design e desenvolvimento ou de um especialista. Bootstrap é implantada como um conjunto de arquivos CSS e JavaScript e foi projetada para ajudar a dimensionar seu site ou aplicativo com eficiência de telefones para tablets para áreas de trabalho.
+Inicialização atualmente é a estrutura da web mais popular de desenvolvimento de aplicativos web responsivo. Ele oferece uma série de recursos e benefícios que podem melhorar a experiência dos usuários ao seu site, se você for um iniciante no front-end design e desenvolvimento ou de um especialista. Inicialização é implantada como um conjunto de arquivos CSS e JavaScript e foi projetada para ajudar a dimensionar seu site ou aplicativo com eficiência de telefones para tablets para áreas de trabalho.
 
 ## <a name="getting-started"></a>Introdução
 
@@ -73,7 +71,7 @@ O modelo de inicialização mais básico é muito parecido com o *cshtml* arquiv
 
 ### <a name="basic-navigation"></a>Navegação básica
 
-O modelo padrão usa um conjunto de `<div>` elementos para processar uma barra de navegação superior e o corpo principal da página. Se você estiver usando HTML5, você pode substituir o primeiro `<div>` marca com um `<nav>` marca para obter o mesmo efeito, mas com semântica mais precisa.  Este primeiro em `<div>` você pode ver, há vários outros. Primeiro, um `<div>` com uma classe de "contêiner" e, em seguida, em que, mais de dois `<div>` elementos: "navbar-cabeçalho" e "navbar-recolher".  Cabeçalho navbar div inclui um botão que será exibido quando a tela estiver abaixo de uma determinada largura mínima, mostrando 3 linhas horizontais (uma chamada "ícone de hambúrguer"). O ícone é renderizado usando puro HTML e CSS; Nenhuma imagem é necessária. Este é o código que exibe o ícone, com cada o <span> marcas de renderização de uma das barras brancas:
+O modelo padrão usa um conjunto de `<div>` elementos para processar uma barra de navegação superior e o corpo principal da página. Se você estiver usando HTML5, você pode substituir o primeiro `<div>` marca com um `<nav>` marca para obter o mesmo efeito, mas com semântica mais precisa. Este primeiro em `<div>` você pode ver, há vários outros. Primeiro, um `<div>` com uma classe de "contêiner" e, em seguida, em que, mais de dois `<div>` elementos: "navbar-cabeçalho" e "navbar-recolher". Cabeçalho navbar div inclui um botão que será exibido quando a tela estiver abaixo de uma determinada largura mínima, mostrando 3 linhas horizontais (uma chamada "ícone de hambúrguer"). O ícone é renderizado usando puro HTML e CSS; Nenhuma imagem é necessária. Este é o código que exibe o ícone, com cada o <span> marcas de renderização de uma das barras brancas:
 
 ```html
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -83,7 +81,7 @@ O modelo padrão usa um conjunto de `<div>` elementos para processar uma barra d
 </button>
 ```
 
-Ele também inclui o nome do aplicativo, que aparece no canto superior esquerdo.  O menu de navegação principal é processado pelo `<ul>` elemento dentro do segundo div e inclui links para casa, aproximadamente e entre em contato com. Links adicionais para o registro e de logon são adicionados pela linha loginpartial em 29 de linha. Abaixo do painel de navegação, o corpo principal de cada página é renderizado em outro `<div>`, marcado com as classes de "contêiner" e "conteúdo do corpo". No arquivo layout simples padrão mostrado aqui, o conteúdo da página é renderizado pela exibição específica associada com a página e, em seguida, um simples `<footer>` é adicionada ao final do `<div>` elemento.  Você pode ver como o interno sobre página aparece usando este modelo:
+Ele também inclui o nome do aplicativo, que aparece no canto superior esquerdo. O menu de navegação principal é processado pelo `<ul>` elemento dentro do segundo div e inclui links para casa, aproximadamente e entre em contato com. Links adicionais para o registro e de logon são adicionados pela linha loginpartial em 29 de linha. Abaixo do painel de navegação, o corpo principal de cada página é renderizado em outro `<div>`, marcado com as classes de "contêiner" e "conteúdo do corpo". No arquivo layout simples padrão mostrado aqui, o conteúdo da página é renderizado pela exibição específica associada com a página e, em seguida, um simples `<footer>` é adicionada ao final do `<div>` elemento. Você pode ver como o interno sobre página aparece usando este modelo:
 
 ![Sobre a página](bootstrap/_static/about-page-wide.png)
 
@@ -117,10 +115,10 @@ Em seguida, adicione adicionais `<div>` elementos para cada coluna e especifique
 
 Prefixo da classe CSS | Camada do dispositivo | Largura
 :---: | :---: | :---:
-col-xs - | Telefones | < 768px
-col-sm - | Tablets | > = 768px
-col-md - | Áreas de trabalho | > = 992px
-col-lg - | Exibe maior de área de trabalho | > = 1200 px
+col-xs- | Telefones | < 768px
+col-sm- | Tablets | >= 768px
+col-md- | Áreas de trabalho | >= 992px
+col-lg - | Exibe maior de área de trabalho | >= 1200px
 
 Ao especificar duas colunas com "col-md-6" layout resultante será duas colunas com resoluções de área de trabalho, mas essas duas colunas serão empilhadas verticalmente quando renderizado em dispositivos menores (ou uma janela de navegador mais estreita em uma área de trabalho), permitindo aos usuários exibir facilmente conteúdo sem precisar rolar horizontalmente.
 
@@ -136,7 +134,7 @@ Neste exemplo, apenas uma única linha `<div>` foi usado, e ainda Bootstrap prin
 
 ### <a name="jumbotron"></a>Jumbotron
 
-Se você usou os modelos do ASP.NET MVC padrão no Visual Studio 2012 ou 2013, você provavelmente já viu Jumbotron em ação. Ela se refere a uma seção grande de largura inteira de uma página que pode ser usada para exibir uma imagem de plano de fundo grandes, uma chamada para ação, um AdRotator ou elementos semelhantes. Para adicionar um jumbotron para uma página, basta adicionar uma `<div>` e dê a ele uma classe de "jumbotron", em seguida, coloque um contêiner `<div>` dentro e adicionar o seu conteúdo.  Podemos facilmente ajustar o padrão de página para usar um jumbotron para os títulos principais exibe:
+Se você usou os modelos do ASP.NET MVC padrão no Visual Studio 2012 ou 2013, você provavelmente já viu Jumbotron em ação. Ela se refere a uma seção grande de largura inteira de uma página que pode ser usada para exibir uma imagem de plano de fundo grandes, uma chamada para ação, um AdRotator ou elementos semelhantes. Para adicionar um jumbotron para uma página, basta adicionar uma `<div>` e dê a ele uma classe de "jumbotron", em seguida, coloque um contêiner `<div>` dentro e adicionar o seu conteúdo. Podemos facilmente ajustar o padrão de página para usar um jumbotron para os títulos principais exibe:
 
 ![exemplo de jumbotron](bootstrap/_static/jumbotron.png)
 
@@ -154,7 +152,7 @@ Selos consultem textos explicativos pequenos, geralmente numéricos ao lado de u
 
 ### <a name="alerts"></a>Alertas
 
-Talvez seja necessário exibir algum tipo de notificação de alerta ou para usuários do seu aplicativo. Que é onde as classes de alerta padrão são úteis.  Há quatro níveis de severidade diferente com esquemas de cores associadas:
+Talvez seja necessário exibir algum tipo de notificação de alerta ou para usuários do seu aplicativo. Que é onde as classes de alerta padrão são úteis. Há quatro níveis de severidade diferente com esquemas de cores associadas:
 
 ![alertas com tema](bootstrap/_static/theme-alerts.png)
 
@@ -164,23 +162,23 @@ Nosso layout já inclui uma barra de navegação padrão, mas o tema de iniciali
 
 ![tabstrips com tema](bootstrap/_static/theme-tabstrips.png)
 
-Barras de navegação são criadas da mesma forma, mas são um pouco mais complexas.  Eles começar com um `<nav>` ou `<div>` com a classe de "barra de navegação", no qual um div de contêiner contém o restante dos elementos. Nossa página inclui uma barra de navegação em seu cabeçalho já – mostrado a seguir expande simplesmente neste, adicionando suporte para um menu suspenso:
+Barras de navegação são criadas da mesma forma, mas são um pouco mais complexas. Eles começar com um `<nav>` ou `<div>` com a classe de "barra de navegação", no qual um div de contêiner contém o restante dos elementos. Nossa página inclui uma barra de navegação em seu cabeçalho já – mostrado a seguir expande simplesmente neste, adicionando suporte para um menu suspenso:
 
 ![barras de navegação com tema](bootstrap/_static/theme-navbars.png)
 
 ### <a name="additional-elements"></a>Elementos adicionais
 
-O tema padrão também pode ser usado para apresentar tabelas HTML em um estilo bem formatado, incluindo suporte para modos de exibição distribuídos. Há rótulos com estilos que são semelhantes dos botões. Você pode criar menus suspensos personalizados que oferecem suporte a opções de estilo adicionais além do HTML padrão `<select>` elemento, junto com as barras de navegação como o nosso site de início padrão já está usando. Se você precisar de uma barra de progresso, há vários estilos para escolha, bem como a lista de grupos e painéis que incluem um título e o conteúdo.  Explore as opções adicionais do tema de inicialização padrão aqui:
+O tema padrão também pode ser usado para apresentar tabelas HTML em um estilo bem formatado, incluindo suporte para modos de exibição distribuídos. Há rótulos com estilos que são semelhantes dos botões. Você pode criar menus suspensos personalizados que oferecem suporte a opções de estilo adicionais além do HTML padrão `<select>` elemento, junto com as barras de navegação como o nosso site de início padrão já está usando. Se você precisar de uma barra de progresso, há vários estilos para escolha, bem como a lista de grupos e painéis que incluem um título e o conteúdo. Explore as opções adicionais do tema de inicialização padrão aqui:
 
-[http://getbootstrap.com/Examples/Theme/](http://getbootstrap.com/examples/theme/)
+[http://getbootstrap.com/examples/theme/](http://getbootstrap.com/examples/theme/)
 
 ## <a name="more-themes"></a>Mais temas
 
-Você pode estender o tema de inicialização padrão, substituindo alguns ou todos os seus CSS, ajustar as cores e estilos para atender às necessidades do seu próprio aplicativo. Se você deseja iniciar a partir de um tema pronto, há vários galerias de tema disponíveis online que especializados em temas de inicialização, como WrapBootstrap.com (que tem uma variedade de temas comerciais) e Bootswatch.com (que oferece temas livres).  Alguns dos modelos disponíveis pagos fornecem uma grande quantidade de funcionalidade sobre o tema de inicialização básica, como suporte avançado para administrativas menus e painéis avançados gráficos e medidores. Um exemplo de um modelo pago popular está Inspinia, para a venda de US $18, que inclui um modelo de ASP.NET MVC5 além AngularJS e versões HTML estáticas. Abaixo está uma captura de tela de exemplo.
+Você pode estender o tema de inicialização padrão, substituindo alguns ou todos os seus CSS, ajustar as cores e estilos para atender às necessidades do seu próprio aplicativo. Se você deseja iniciar a partir de um tema pronto, há vários galerias de tema disponíveis online que especializados em temas de inicialização, como WrapBootstrap.com (que tem uma variedade de temas comerciais) e Bootswatch.com (que oferece temas livres). Alguns dos modelos disponíveis pagos fornecem uma grande quantidade de funcionalidade sobre o tema de inicialização básica, como suporte avançado para administrativas menus e painéis avançados gráficos e medidores. Um exemplo de um modelo pago popular está Inspinia, para a venda de US $18, que inclui um modelo de ASP.NET MVC5 além AngularJS e versões HTML estáticas. Abaixo está uma captura de tela de exemplo.
 
 ![Exemplo tema inspinia](bootstrap/_static/theme-inspinia.png)
 
-Se você quiser alterar o tema de inicialização, coloque o *bootstrap.css* arquivo para o tema que você deseja no **wwwroot/css** pasta e altere as referências no *cshtml* para apontá-lo.  Altere os links para todos os ambientes:
+Se você quiser alterar o tema de inicialização, coloque o *bootstrap.css* arquivo para o tema que você deseja no **wwwroot/css** pasta e altere as referências no *cshtml* para apontá-lo. Altere os links para todos os ambientes:
 
 ```html
 <environment names="Development">

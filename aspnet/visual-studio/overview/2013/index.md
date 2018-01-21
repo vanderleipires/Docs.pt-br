@@ -1,6 +1,6 @@
 ---
 uid: visual-studio/overview/2013/index
-title: Visual Studio 2013 | Microsoft Docs
+title: ASP.NET e Visual Studio 2013 | Microsoft Docs
 author: rick-anderson
 description: Visual Studio 2013
 ms.author: aspnetcontent
@@ -12,28 +12,28 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013
 msc.type: chapter
-ms.openlocfilehash: c45622f8521b2a109a6954bd0ee1b525f4a753c2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fad379374814c794754605a2aab193ec625e2182
+ms.sourcegitcommit: 3625e4f7a667641b058d23126f0d9d1844fee886
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/20/2018
 ---
-<a name="visual-studio-2013"></a>Visual Studio 2013
+<a name="aspnet-and-visual-studio-2013"></a>ASP.NET e Visual Studio 2013
 ====================
-> Visual Studio 2013
+> Desenvolvimento de aplicativos de web do ASP.NET com o Visual Studio 2013
 
 
-- [Criando projetos da Web do ASP.NET no Visual Studio 2013](creating-web-projects-in-visual-studio.md)
-- [Visual Studio 2013 Web recursos do Editor - Link do navegador](visual-studio-2013-web-editor-features-browser-link.md)
-- [Visual Studio 2013 Web recursos do Editor - CSS](visual-studio-2013-web-editor-features-css.md)
-- [Visual Studio 2013 Web recursos do Editor - JavaScript](visual-studio-2013-web-editor-features-javascript.md)
-- [Recursos de Editor de Web do Visual Studio 2013 - publicação](visual-studio-2013-web-editor-features-publishing.md)
-- [Visual Studio 2013 Web recursos do Editor - Inspetor de página](visual-studio-2013-web-editor-features-page-inspector.md)
-- [Visual Studio 2013 Web recursos do Editor - Editor de HTML](visual-studio-2013-web-editor-features-html-editor.md)
-- [Visual Studio 2013 Web recursos do Editor - HTML5](visual-studio-2013-web-editor-features-html5.md)
-- [Estrutura do ASP.NET no Visual Studio 2013](aspnet-scaffolding-overview.md)
+- [Criação de Projetos Web do ASP.NET no Visual Studio 2013](creating-web-projects-in-visual-studio.md)
+- [Recursos do Editor da Web do Visual Studio 2013 – link do navegador](visual-studio-2013-web-editor-features-browser-link.md)
+- [Recursos do Editor da Web do Visual Studio 2013 – CSS](visual-studio-2013-web-editor-features-css.md)
+- [Recursos do Editor da Web do Visual Studio 2013 – JavaScript](visual-studio-2013-web-editor-features-javascript.md)
+- [Recursos do Editor da Web do Visual Studio 2013 – publicação](visual-studio-2013-web-editor-features-publishing.md)
+- [Recursos do Editor da Web do Visual Studio 2013 – Inspetor de Página](visual-studio-2013-web-editor-features-page-inspector.md)
+- [Recursos do Editor da Web do Visual Studio 2013 – editor de HTML](visual-studio-2013-web-editor-features-html-editor.md)
+- [Recursos do Editor da Web do Visual Studio 2013 – HTML5](visual-studio-2013-web-editor-features-html5.md)
+- [Scaffolding do ASP.NET no Visual Studio 2013](aspnet-scaffolding-overview.md)
 - [Link do navegador](using-browser-link.md)
-- [ASP.NET e Web Tools para notas de versão do Visual Studio 2013](release-notes.md)
+- [Notas de versão do ASP.NET and Web Tools para Visual Studio 2013](release-notes.md)
 - [ASP.NET e Web Tools 2013.2 para notas de versão do Visual Studio 2013](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes.md)
-- [Laboratório prático: Ferramentas de Web Visual Studio 2013](visual-studio-2013-web-tools.md)
-- [Laboratório prático: ASP.NET de um: integração de Web Forms do ASP.NET, MVC e API da Web](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api.md)
+- [Laboratório prático: Ferramentas da Web do Visual Studio 2013](visual-studio-2013-web-tools.md)
+- [Laboratório prático: um único ASP.NET: integração do Web Forms, MVC e da API Web do ASP.NET](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api.md)

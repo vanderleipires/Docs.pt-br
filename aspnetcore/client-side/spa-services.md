@@ -2,21 +2,19 @@
 title: "Usando JavaScriptServices para criar aplicativos de única página"
 author: scottaddie
 description: "Saiba mais sobre os benefícios de usar JavaScriptServices para criar um aplicativo de página única (SPA) com o apoio de ASP.NET Core."
-keywords: "Núcleo do ASP.NET, Angular, SPA, JavaScriptServices, SpaServices"
 ms.author: scaddie
 manager: wpickett
 ms.date: 08/02/2017
 ms.topic: article
-ms.assetid: 4b30576b-2718-4c39-9253-a59966747893
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d47910beef9195295c8da6ac81b83b3ffe20124
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>Usando JavaScriptServices para criar aplicativos de única página com o ASP.NET Core
 
@@ -52,7 +50,7 @@ SpaServices foi criado para posicionar o ASP.NET Core como plataforma de lado do
 
 SpaServices fornece a infraestrutura úteis, como:
 * [Pré-processamento do lado do servidor](#server-prerendering)
-* [Middleware de desenvolvimento webpack](#webpack-dev-middleware)
+* [Webpack Dev Middleware](#webpack-dev-middleware)
 * [Substituição do módulo ativa](#hot-module-replacement)
 * [Roteamentos auxiliares](#routing-helpers)
 
@@ -237,14 +235,14 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 Uma lista de modelos disponíveis do SPA é exibida:
 
-| Modelos                                 | Nome curto | Linguagem | Marcas        |
+| Modelos                                 | Nome curto | Idioma | Marcas        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| Núcleo do ASP.NET MVC com Angular             | angular    | [C#]     | MVC/Web/SPA |
-| Núcleo do ASP.NET MVC com Aurelia             | aurelia    | [C#]     | MVC/Web/SPA |
-| Núcleo do ASP.NET MVC com Knockout. js         | separação   | [C#]     | MVC/Web/SPA |
-| Núcleo do ASP.NET MVC com React.js            | react      | [C#]     | MVC/Web/SPA |
-| Núcleo do ASP.NET MVC com React.js e retorno  | reactredux | [C#]     | MVC/Web/SPA |
-| Núcleo do ASP.NET MVC com Vue.js              | VUE        | [C#]     | MVC/Web/SPA | 
+| Núcleo do ASP.NET MVC com Angular             | angular    | [C#]     | Web/MVC/SPA |
+| Núcleo do ASP.NET MVC com Aurelia             | aurelia    | [C#]     | Web/MVC/SPA |
+| Núcleo do ASP.NET MVC com Knockout. js         | knockout   | [C#]     | Web/MVC/SPA |
+| Núcleo do ASP.NET MVC com React.js            | react      | [C#]     | Web/MVC/SPA |
+| Núcleo do ASP.NET MVC com React.js e retorno  | reactredux | [C#]     | Web/MVC/SPA |
+| Núcleo do ASP.NET MVC com Vue.js              | VUE        | [C#]     | Web/MVC/SPA | 
 
 Para criar um novo projeto usando um dos modelos de SPA, inclua o **nome curto** do modelo no `dotnet new` comando. O comando a seguir cria um aplicativo Angular com ASP.NET MVC de núcleo configurado para o lado do servidor:
 

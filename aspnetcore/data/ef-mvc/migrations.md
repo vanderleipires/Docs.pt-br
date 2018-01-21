@@ -2,20 +2,18 @@
 title: "Núcleo do ASP.NET MVC com núcleo EF - Migrations - 4 de 10"
 author: tdykstra
 description: "Neste tutorial, você começar a usar o recurso de migrações EF principal para o gerenciamento de alterações do modelo de dados em um aplicativo MVC do ASP.NET Core."
-keywords: "ASP.NET Core, Entity Framework Core, migrações"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 81f6c9c2-a819-4f3a-97a4-4b0503b56c26
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 20b05801ac666feef29fd05dd3e4738b1bd50b86
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9081ddd14e6ed9192c6bd8ce8b265d14dbca7e23
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>Migrações - Core EF com o tutorial do MVC do ASP.NET Core (4 de 10)
 

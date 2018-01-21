@@ -2,29 +2,27 @@
 title: "Criação de auxiliares de marcação no núcleo do ASP.NET"
 author: rick-anderson
 description: "Saiba como criar auxiliares de marcação no núcleo do ASP.NET."
-keywords: "ASP.NET Core, auxiliares de marcação"
 ms.author: riande
 manager: wpickett
-ms.date: 06/14/2017
+ms.date: 01/19/2018
 ms.topic: article
-ms.assetid: 4f16d978-5695-4abf-a785-fdaabf3bbcb9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cbe46ee1d3cd9f7a30a87d364074f1302f9af7ab
-ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
+ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Auxiliares de marcação no núcleo do ASP.NET, um passo a passo com exemplos de criação
+# <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Auxiliares de marcação de autor no núcleo do ASP.NET, um passo a passo com exemplos
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="getting-started-with-tag-helpers"></a>Guia de Introdução com auxiliares de marcação
+## <a name="get-started-with-tag-helpers"></a>Introdução ao auxiliares de marcação
 
 Este tutorial fornece uma introdução à programação auxiliares de marcação. [Introdução ao auxiliares de marcação](intro.md) descreve os benefícios que fornecem auxiliares de marcação.
 
@@ -46,7 +44,7 @@ O servidor usará nosso auxiliar de marca de email para converter essa marcaçã
 
 ```html
 <a href="mailto:Support@contoso.com">Support@contoso.com</a>
-   ```
+```
 
 Ou seja, uma marca de âncora que torna isso um link de email. Você talvez queira fazer isso se você estiver escrevendo um mecanismo de blog e precisa enviar email de marketing, suporte e outros contatos, todos ao mesmo domínio.
 
@@ -148,7 +146,7 @@ Nesta seção, vamos escrever um auxiliar de email assíncrona.
 
 3.  Execute o aplicativo e verificar que ele gera links de email válido.
 
-### <a name="removeall-precontentsethtmlcontent-and-postcontentsethtmlcontent"></a>RemoveAll, PreContent.SetHtmlContent e PostContent.SetHtmlContent
+### <a name="removeall-precontentsethtmlcontent-and-postcontentsethtmlcontent"></a>RemoveAll, PreContent.SetHtmlContent and PostContent.SetHtmlContent
 
 1.  Adicione o seguinte `BoldTagHelper` de classe para o *TagHelpers* pasta.
 
@@ -188,7 +186,7 @@ Você também pode usar o `[HtmlTargetElement]` para alterar o nome do elemento 
 [HtmlTargetElement("MyBold")]
    ```
 
-## <a name="passing-a-model-to-a-tag-helper"></a>Passando um modelo para um auxiliar de marca
+## <a name="pass-a-model-to-a-tag-helper"></a>Passar um modelo para um auxiliar de marca
 
 1.  Adicionar um *modelos* pasta.
 
@@ -285,7 +283,7 @@ O auxiliar de marca de condição renderiza a saída quando passado um valor tru
 >
 >O [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) operador protegerá o código deve ele nunca ser refatorado (queremos alterar o nome para `RedCondition`).
 
-### <a name="avoiding-tag-helper-conflicts"></a>Evitando conflitos de auxiliar de marca
+### <a name="avoid-tag-helper-conflicts"></a>Evitar conflitos de auxiliar de marca
 
 Nesta seção, você escreve um par de auxiliares de marcação de vinculação automática. O primeiro substituirá a marcação que contém uma URL iniciada por HTTP para um HTML âncora marca que contém a mesma URL (e, portanto, resultando em um link de URL). O segundo fará o mesmo para uma URL começando com WWW.
 
@@ -329,7 +327,7 @@ Como esses dois auxiliares estão intimamente relacionados e pode refatorá-los 
     
     O código acima, será possível garantir que o auxiliar de marca HTTP é executada antes do auxiliar de marca da Web. Alterar `Order` para `MaxValue` e verifique se a marcação gerada para a marca WWW está incorretova.
 
-## <a name="inspecting-and-retrieving-child-content"></a>Inspecionar e recuperando conteúdo filho
+## <a name="inspect-and-retrieve-child-content"></a>Inspecionar e recuperar o conteúdo filho
 
 Os auxiliares de marca fornecem várias propriedades para recuperar o conteúdo.
 

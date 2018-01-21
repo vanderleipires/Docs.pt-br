@@ -2,21 +2,19 @@
 title: "Auxiliares de marcação em formulários do ASP.NET Core"
 author: rick-anderson
 description: "Descreve interno de auxiliares de marcação usados com formulários."
-keywords: "Formulários do ASP.NET Core, o auxiliar de marca, TagHelper, do formulário HTML,"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 25595059-4fac-4785-8152-f88590e3169b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: da36985206521798d3bfe71f6372dc5cc4fca09a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introdução ao uso de auxiliares de marcação em formulários do ASP.NET Core
 
@@ -111,12 +109,12 @@ O `Input` auxiliar de marca define o HTML `type` atributo com base no tipo de .N
 
 |Tipo .NET|Tipo de entrada|
 |---|---|
-|bool|tipo = "caixa de seleção"|
-|Cadeia de caracteres|tipo = "text"|
+|bool|type=”checkbox”|
+|Cadeia de Caracteres|type=”text”|
 |DateTime|tipo = "datetime"|
-|Byte|tipo = "number"|
-|int|tipo = "number"|
-|Single e Double|tipo = "number"|
+|Byte|type=”number”|
+|int|type=”number”|
+|Single e Double|type=”number”|
 
 
 A tabela a seguir mostra algumas [as anotações de dados](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributos que o auxiliar de marca de entrada serão mapeados para tipos específicos de entrada (não todos os atributos de validação é listado):
@@ -124,11 +122,11 @@ A tabela a seguir mostra algumas [as anotações de dados](https://docs.microsof
 
 |Atributo|Tipo de entrada|
 |---|---|
-|[EmailAddress]|tipo = "email"|
-|[Url]|tipo = "url"|
-|[HiddenInput]|tipo = "oculto"|
-|[Phone]|tipo = "telefone"|
-|[DataType(DataType.Password)]| tipo = "senha"|
+|[EmailAddress]|type=”email”|
+|[Url]|type=”url”|
+|[HiddenInput]|type=”hidden”|
+|[Phone]|type=”tel”|
+|[DataType(DataType.Password)]| type=”password”|
 |[DataType(DataType.Date)]| tipo = "Data"|
 |[DataType(DataType.Time)]| tipo = "Hora"|
 
@@ -362,7 +360,7 @@ Quando ocorre um erro de validação de lado de servidor (por exemplo quando voc
 
 O `Validation Summary Tag Helper` é usado para exibir um resumo das mensagens de validação. O `asp-validation-summary` valor de atributo pode ser qualquer um dos seguintes:
 
-|Resumo de validação do ASP|Mensagens de validação|
+|asp-validation-summary|Mensagens de validação|
 |--- |--- |
 |ValidationSummary.All|Nível de propriedade e o modelo|
 |ValidationSummary.ModelOnly|Modelo|

@@ -2,20 +2,18 @@
 title: "Suporte a WebSockets no núcleo do ASP.NET"
 author: tdykstra
 description: "Saiba como começar com WebSockets no núcleo do ASP.NET."
-keywords: "Núcleo do ASP.NET, WebSockets"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/25/2017
 ms.topic: article
-ms.assetid: 0e0fedcd-a7b4-4479-8ae0-36eab0229d7e
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: fundamentals/websockets
-ms.openlocfilehash: 114d52d831668e5facd1142b5f9e5f68e7456f7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46c1f42b925a43df470d7491a1e259ab51ea5f50
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-websockets-in-aspnet-core"></a>Introdução ao WebSockets no núcleo do ASP.NET
 

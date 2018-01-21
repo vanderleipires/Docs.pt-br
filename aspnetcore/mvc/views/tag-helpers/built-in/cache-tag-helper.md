@@ -2,20 +2,18 @@
 title: "Cache auxiliar de marca no núcleo do ASP.NET MVC"
 author: pkellner
 description: Mostra como trabalhar com o auxiliar de marca de Cache
-keywords: "ASP.NET Core, auxiliar de marcação"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a012
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 74080d089dc7a72da96f9f18d613cb313cd930db
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: dfd9c3c0c4e50a99e4f8703b01bd9b384930b87a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Cache auxiliar de marca no núcleo do ASP.NET MVC
 
@@ -39,7 +37,7 @@ Você pode definir a duração do cache com os seguintes atributos:
 
 - - -
 
-### <a name="enabled"></a>Habilitado    
+### <a name="enabled"></a>habilitado    
 
 
 | Tipo de atributo    | Valores válidos      |
@@ -60,7 +58,7 @@ Exemplo:
 
 - - -
 
-### <a name="expires-on"></a>expira em 
+### <a name="expires-on"></a>expires-on 
 
 | Tipo de atributo    | Valor de exemplo     |
 |----------------   |----------------   |
@@ -79,7 +77,7 @@ Exemplo:
 
 - - -
 
-### <a name="expires-after"></a>expira após
+### <a name="expires-after"></a>expires-after
 
 | Tipo de atributo    | Valor de exemplo     |
 |----------------   |----------------   |
@@ -98,7 +96,7 @@ Exemplo:
 
 - - -
 
-### <a name="expires-sliding"></a>expiração deslizante
+### <a name="expires-sliding"></a>expires-sliding
 
 | Tipo de atributo    | Valor de exemplo     |
 |----------------   |----------------   |
@@ -121,8 +119,8 @@ Exemplo:
 
 | Tipo de atributo    | Valores de exemplo                |
 |----------------   |----------------               |
-| Cadeia de caracteres            | "Agente de usuário"                  |
-|                   | "Agente de usuário, codificação de conteúdo" |
+| Cadeia de Caracteres            | "User-Agent"                  |
+|                   | "User-Agent,content-encoding" |
 
 Aceita um valor de cabeçalho único ou uma lista separada por vírgulas de valores de cabeçalho que disparam uma atualização do cache quando elas forem alteradas. O exemplo a seguir monitora o valor do cabeçalho `User-Agent`. O exemplo armazenará em cache o conteúdo para todos os diferentes `User-Agent` apresentado para o servidor web.
 
@@ -136,11 +134,11 @@ Exemplo:
 
 - - -
 
-### <a name="vary-by-query"></a>variar por consulta
+### <a name="vary-by-query"></a>vary-by-query
 
 | Tipo de atributo    | Valores de exemplo                |
 |----------------   |----------------               |
-| Cadeia de caracteres            | "Tornar"                |
+| Cadeia de Caracteres            | "Tornar"                |
 |                   | Modelo de "criar" |
 
 Aceita um valor de cabeçalho único ou uma lista separada por vírgulas de valores de cabeçalho que disparam uma atualização do cache quando o valor do cabeçalho é alterado. O exemplo a seguir examina os valores de `Make` e `Model`.
@@ -159,7 +157,7 @@ Exemplo:
 
 | Tipo de atributo    | Valores de exemplo                |
 |----------------   |----------------               |
-| Cadeia de caracteres            | "Tornar"                |
+| Cadeia de Caracteres            | "Tornar"                |
 |                   | Modelo de "criar" |
 
 Aceita um valor de cabeçalho único ou uma lista separada por vírgulas de valores de cabeçalho que disparam uma atualização de cache quando a alteração de valores de parâmetro de dados de rota. Exemplo:
@@ -186,8 +184,8 @@ routes.MapRoute(
 
 | Tipo de atributo    | Valores de exemplo                |
 |----------------   |----------------               |
-| Cadeia de caracteres            | ". AspNetCore.Identity.Application"                |
-|                   | ". AspNetCore.Identity.Application,HairColor" |
+| Cadeia de Caracteres            | ".AspNetCore.Identity.Application"                |
+|                   | ".AspNetCore.Identity.Application,HairColor" |
 
 Aceita um valor de cabeçalho único ou uma lista separada por vírgulas de valores de cabeçalho que disparam uma atualização do cache quando os valores de alteração (s). O exemplo a seguir examina o cookie associado à identidade do ASP.NET. Quando um usuário é autenticado o cookie de solicitação a ser definido que dispara uma atualização do cache.
 
@@ -224,11 +222,11 @@ Usar esse atributo mantém o conteúdo em cache por um ciclo de logon e logoff. 
 
 - - -
 
-### <a name="vary-by"></a>variar por
+### <a name="vary-by"></a>vary-by
 
 | Tipo de atributo    | Valores de exemplo                |
 |----------------   |----------------               |
-| Cadeia de caracteres             | "@Model"                 |
+| Cadeia de Caracteres             | "@Model"                 |
 
 
 Permite a personalização de dados que é armazenado em cache. Quando o objeto referenciado por alterações de valor de cadeia de caracteres do atributo, o conteúdo do auxiliar de marca de Cache é atualizado. Geralmente uma concatenação de cadeia de caracteres de valores de modelo são atribuídos a este atributo.  Na verdade, isso significa que uma atualização para qualquer um dos valores concatenados invalida o cache.

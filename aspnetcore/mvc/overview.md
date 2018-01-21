@@ -2,20 +2,18 @@
 title: "Visão geral sobre o ASP.NET Core MVC"
 author: ardalis
 description: "Saiba como o ASP.NET Core MVC é uma estrutura avançada para a criação de aplicativos web e APIs usando Model-View-Controller design padrão."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 01/08/2018
 ms.topic: article
-ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 33c293e15c0a7f18bbace9dc564fe11d93a7d509
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: ad8a1dfae89a7ecd5573c16ba70d7d12216b4c57
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Visão geral sobre o ASP.NET Core MVC
 
@@ -29,7 +27,7 @@ O padrão de arquitetura Model-View-Controller (MVC) separa um aplicativo em tr�
 
 O diagrama a seguir mostra os três componentes principais e quais fazem referência a outras pessoas:
 
-![Padrão MVC](overview/_static/mvc.png)
+![MVC Pattern](overview/_static/mvc.png)
 
 Essa descrição das responsabilidades ajuda você a dimensionar o aplicativo em termos de complexidade porque é mais fácil de código, depurar e testar algo (modelo, exibição ou controlador) que tem um único trabalho (e segue o [princípio da responsabilidade única ](http://deviq.com/single-responsibility-principle/)). É mais difícil de atualização, testar e depurar código que tem dependências que abrange dois ou mais dessas três áreas. Por exemplo, a lógica da interface de usuário tende a ser alterado com mais frequência do que a lógica de negócios. Se a lógica de negócios e o código de apresentação é combinada em um único objeto, você precisa modificar um objeto que contém a lógica de negócios sempre que alterar a interface do usuário. Isso é adequado para introduzir erros e exigem o novo teste de toda a lógica de negócios depois de alterar cada interface mínima do usuário.
 
@@ -68,7 +66,7 @@ Núcleo do ASP.NET MVC fornece uma maneira com base em padrões para criar sites
 Núcleo do ASP.NET MVC inclui o seguinte:
 
 * [Roteamento](#routing)
-* [Associação de modelo](#model-binding)
+* [Associação de modelos](#model-binding)
 * [Validação de modelo](#model-validation)
 * [Injeção de dependência](../fundamentals/dependency-injection.md)
 * [Filtros](#filters)

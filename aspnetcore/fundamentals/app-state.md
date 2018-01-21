@@ -2,21 +2,19 @@
 title: "Estado de sessão e de aplicativo no núcleo do ASP.NET"
 author: rick-anderson
 description: "Abordagens para preservar de aplicativo e o estado do usuário (sessão) entre as solicitações."
-keywords: "Postagem do ASP.NET Core, o estado do aplicativo, estado de sessão, querystring,"
 ms.author: riande
 manager: wpickett
 ms.date: 11/27/2017
 ms.topic: article
-ms.assetid: 18cda488-0769-4cb9-82f6-4c6685f2045d
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 35b34f1a40e431e59e6b9c1d9bfb4ce3fced35e6
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 13b4d759ae574cdf9899ca148f0ffd3d9df6f9ae
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introdução ao estado de sessão e de aplicativo no núcleo do ASP.NET
 
@@ -107,7 +105,7 @@ Como os cookies estão sujeitos a falsificações, eles devem ser validados no s
 
 Cookies são usados para personalização, onde o conteúdo é personalizado para um usuário conhecido. Como o usuário é identificado apenas e não autenticado na maioria dos casos, você normalmente pode proteger um cookie ao armazenar o nome de usuário, nome da conta ou uma ID de usuário exclusiva (como um GUID) no cookie. Você pode usar o cookie para acessar a infraestrutura de personalização de usuário de um site.
 
-## <a name="httpcontextitems"></a>HttpContext
+## <a name="httpcontextitems"></a>HttpContext.Items
 
 O `Items` coleção é um bom local para armazenar dados que é necessário somente durante processamento de uma determinada solicitação. O conteúdo da coleção é descartado após cada solicitação. O `Items` coleção melhor é usada como uma maneira de componentes ou middleware para comunicar-se quando eles operam em pontos diferentes durante uma solicitação e não têm nenhuma maneira direta para passar parâmetros. Para obter mais informações, consulte [trabalhando com HttpContext](#working-with-httpcontextitems), mais adiante neste artigo.
 
