@@ -2,7 +2,6 @@
 title: "Adicionando um modelo a um aplicativo de Páginas do Razor no ASP.NET Core"
 author: rick-anderson
 description: "Adicionando um modelo a um aplicativo de Páginas do Razor no ASP.NET Core"
-keywords: "ASP.NET Core, Páginas do Razor, Razor, MVC"
 ms.author: riande
 manager: wpickett
 ms.date: 07/27/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 38f27a1d5ca80cec4b7bc43c3d5473fc829f1b05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 84e5ec27904b564fa6ee29843ceae0bb70754ea7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-a-model-to-a-razor-pages-app"></a>Adicionando um modelo a um aplicativo de Páginas do Razor
 
@@ -40,9 +39,9 @@ Adicione uma cadeia de conexão ao arquivo *appsettings.json*.
 
 Registre o contexto do banco de dados com o contêiner de [injeção de dependência](xref:fundamentals/dependency-injection) no arquivo *Startup.cs*.
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=3-6)]
+[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=3-5,7-9)]
 
-Crie o projeto para verificar se você não tem nenhum erro.
+Compile o projeto para verificar se não há erros.
 
 <a name="pmc"></a>
 ## <a name="add-scaffold-tooling-and-perform-initial-migration"></a>Adicionar ferramentas de scaffold e executar a migração inicial
@@ -60,7 +59,7 @@ No menu **Ferramentas**, selecione **Gerenciador de pacotes NuGet** > **Console 
 No PMC, digite os seguintes comandos:
 
 ```powershell
-Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design -Version 2.0.0
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
 Add-Migration Initial
 Update-Database
 ```

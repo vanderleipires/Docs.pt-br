@@ -2,7 +2,6 @@
 title: "Introdução a Páginas do Razor no ASP.NET Core"
 author: rick-anderson
 description: "Introdução a Páginas do Razor no ASP.NET Core"
-keywords: "ASP.NET Core, Páginas do Razor, Razor, MVC"
 ms.author: riande
 manager: wpickett
 ms.date: 12/22/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 12685d6a391c127d78399408291c26caa0192ee2
-ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
+ms.openlocfilehash: 69a5bc439130ffacf2d267c79b1a6b0347171e49
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>Introdução às Páginas do Razor no ASP.NET Core
 
@@ -41,10 +40,7 @@ Há três versões deste tutorial:
   ![novo aplicativo Web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
 * Selecione **ASP.NET Core 2.0** na lista suspensa e selecione **Aplicativo Web**.
 
-> [!NOTE]
-> Caso deseje usar o ASP.NET Core no .NET Framework, primeiro selecione **.NET Framework** na lista suspensa mais à esquerda na caixa de diálogo e, em seguida, a versão desejada do ASP.NET Core.
-
-  ![Aplicativo Web (Páginas do Razor)](razor-pages-start/_static/np2.png)
+  [!INCLUDE[install 2.0](../../includes/dotnetcore-on-dotnetfx-vs.md)]
 
 O modelo do Visual Studio cria um projeto inicial:
 
@@ -58,6 +54,9 @@ Pressione **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5*
 * Iniciar o aplicativo com **Ctrl+F5** (modo de não depuração) permite que você faça alterações de código, salve o arquivo, atualize o navegador e veja as alterações de código. Muitos desenvolvedores preferem usar modo de não depuração para iniciar o aplicativo e exibir alterações rapidamente.
 
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
+
+>[!div class="step-by-step"]
+[Próximo: adicionando um modelo](xref:tutorials/razor-pages/model)
 
 >[!div class="step-by-step"]
 [Próximo: adicionando um modelo](xref:tutorials/razor-pages/model)

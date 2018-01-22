@@ -2,7 +2,6 @@
 title: "Adicionando um modelo para um aplicativo de Páginas do Razor com o Visual Studio para Mac"
 author: rick-anderson
 description: "Adicionando um modelo para um aplicativo de Páginas do Razor no ASP.NET Core usando o Visual Studio para Mac"
-keywords: "ASP.NET Core, Páginas do Razor, Razor, MVC, modelo"
 ms.author: riande
 manager: wpickett
 ms.date: 08/27/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages-mac/model
-ms.openlocfilehash: 648ecd3a782fa489b727982ce5f7a2087539bf38
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7b1b2d54e9c68b0a6f2b1355726d0d1cb484f69e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-for-mac"></a>Adicionando um modelo para um aplicativo de Páginas do Razor no ASP.NET Core com o Visual Studio para Mac
 
@@ -22,7 +21,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="add-a-data-model"></a>Adicionar um modelo de dados
 
-* No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **RazorPagesMovie** e então selecione **Adicionar** > **Nova Pasta**. Nomeie a pasta como *Modelos*.
+* No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **RazorPagesMovie** e então selecione **Adicionar** > **Nova Pasta**. Nomeie a pasta *Models*.
 * Clique com o botão direito do mouse na pasta *Modelos* e, em seguida, selecione **Adicionar** > **Novo Arquivo**.
 * Na caixa de diálogo **Novo Arquivo**:
 
@@ -37,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 
 Clique com o botão direito do mouse em uma linha curvada vermelha, por exemplo, `MovieContext` na linha `services.AddDbContext<MovieContext>(options =>`. Selecione **Correção Rápida > using RazorPagesMovie.Models;**. O Visual studio adiciona a instrução using.
 
-Crie o projeto para verificar se você não tem nenhum erro.
+Compile o projeto para verificar se não há erros.
 
 ![Criar página](model/red.png)
 

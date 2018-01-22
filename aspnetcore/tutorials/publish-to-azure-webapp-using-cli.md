@@ -2,7 +2,6 @@
 title: Publique um aplicativo ASP.NET Core para o Azure usando as ferramentas de linha de comando | Microsoft Docs
 description: "Saiba como publicar um aplicativo ASP.NET Core no Serviço de Aplicativo do Azure usando o cliente de linha de comando do Git."
 services: multiple
-keywords: "ASP.NET Core, Azure, Serviço de Aplicativo, Git, linha de comando"
 author: camsoper
 ms.author: casoper
 manager: wpickett
@@ -13,11 +12,11 @@ ms.technology: aspnet
 ms.custom: mvc
 ms.devlang: dotnet
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 6af5de584cbf8cd59d86a965592b958061014c95
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 4797260f95443954e86aae1614140c0caa5ca8bd
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>Implante um aplicativo ASP.NET Core para o Serviço de Aplicativo do Azure da linha de comando
 
