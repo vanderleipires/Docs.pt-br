@@ -130,6 +130,7 @@
 ## [Controladores de teste](xref:mvc/controllers/testing)
 ## [Depuração remota](/visualstudio/debugger/remote-debugging-azure)
 ## [Depuração de instantâneo](/azure/application-insights/app-insights-snapshot-debugger)
+## [Depurando de instantâneo no Visual Studio](/visualstudio/debugger/debug-live-azure-applications)
 
 # [Armazenamento e acesso a dados](data/index.md)
 ## [Introdução às Páginas Razor e ao Entity Framework Core usando o Visual Studio](xref:data/ef-rp/intro)

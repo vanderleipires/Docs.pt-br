@@ -16,7 +16,7 @@ O MVC invoca as classes do controlador (e os métodos de ação dentro delas), d
 
 `/[Controller]/[ActionName]/[Parameters]`
 
-Defina o formato do roteamento no arquivo *Startup.cs*.
+Configure o formato de roteamento no método `Configure` do arquivo *Startup.cs*.
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 

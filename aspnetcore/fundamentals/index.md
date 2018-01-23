@@ -2,21 +2,19 @@
 title: "Conceitos básicos do ASP.NET Core"
 author: rick-anderson
 description: "Descubra os conceitos fundamentais para a criação de aplicativos do ASP.NET Core."
-keywords: "ASP.NET Core, conceitos básicos, visão geral"
 ms.author: riande
 manager: wpickett
 ms.date: 09/30/2017
 ms.topic: get-started-article
-ms.assetid: a19b7836-63e4-44e8-8250-50d426dd1070
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/index
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 83bed4676be3ca752442da3fe560f1f2a4d728a1
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 0d977c13eb5f4cbe8bac261733bdc747e6c19b2a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
@@ -163,7 +161,7 @@ Para obter mais informações, consulte [Estado de sessão e aplicativo](xref:fu
 
 ## <a name="servers"></a>Servidores
 
-O modelo de hospedagem do ASP.NET Core não escuta diretamente as solicitações. O modelo de host se baseia em uma implementação do servidor HTTP para encaminhar a solicitação ao aplicativo. A solicitação encaminhada é empacotada como um conjunto de objetos de recurso que podem ser acessados por meio de interfaces. O ASP.NET Core inclui um servidor Web gerenciado e de plataforma cruzada chamado [Kestrel](xref:fundamentals/servers/kestrel). O Kestrel normalmente é executado atrás de um servidor Web de produção, como [IIS](https://www.iis.net/) ou [nginx](http://nginx.org). O Kestrel pode ser executado como um servidor de borda.
+O modelo de hospedagem do ASP.NET Core não escuta diretamente as solicitações. O modelo de host se baseia em uma implementação do servidor HTTP para encaminhar a solicitação ao aplicativo. A solicitação encaminhada é empacotada como um conjunto de objetos de recurso que podem ser acessados por meio de interfaces. O ASP.NET Core inclui um servidor Web gerenciado e de plataforma cruzada chamado [Kestrel](xref:fundamentals/servers/kestrel). O Kestrel normalmente é executado atrás de um servidor Web de produção, como [IIS](https://www.iis.net/) ou [Nginx](http://nginx.org). O Kestrel pode ser executado como um servidor de borda.
 
 Para obter mais informações, consulte [Servidores](xref:fundamentals/servers/index) e os seguintes tópicos:
 
