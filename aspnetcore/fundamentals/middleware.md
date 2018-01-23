@@ -4,16 +4,16 @@ author: rick-anderson
 description: "Saiba mais sobre o ASP.NET Core middleware e o pipeline de solicitação."
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ef130e736e2f32fa134156d979ce5bfbedcae828
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Conceitos básicos de Middleware do ASP.NET Core
 
@@ -23,7 +23,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Steve Smith](https://ard
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-middleware"></a>O que é middleware
+## <a name="what-is-middleware"></a>O que é middleware?
 
 Middleware é um software que é gerado em um pipeline de aplicativo para lidar com solicitações e respostas. Cada componente:
 
@@ -191,18 +191,22 @@ app.Map("/level1/level2", HandleMultiSeg);
 
 ## <a name="built-in-middleware"></a>Middleware interno
 
-ASP.NET Core é fornecido com os seguintes componentes de middleware:
+ASP.NET Core é fornecido com os seguintes componentes de middleware, bem como uma descrição da ordem em que eles devem ser adicionados:
 
-| Middleware | Descrição |
-| ----- | ------- |
-| [Autenticação](xref:security/authentication/identity) | Dá suporte à autenticação. |
-| [CORS](xref:security/cors) | Define o compartilhamento de recursos entre origens. |
-| [Cache de resposta](xref:performance/caching/middleware) | Fornece suporte para as respostas em cache. |
-| [Compactação de resposta](xref:performance/response-compression) | Fornece suporte para a compactação de respostas. |
-| [Roteamento](xref:fundamentals/routing) | Define e restringe as rotas de solicitação. |
-| [Sessão](xref:fundamentals/app-state) | Fornece suporte para gerenciar sessões de usuário. |
-| [Arquivos estáticos](xref:fundamentals/static-files) | Fornece suporte para servir arquivos estáticos e pesquisa no diretório. |
-| [Middleware de regravação de URL](xref:fundamentals/url-rewriting) | Fornece suporte para URLs de regravação e redirecionar solicitações. |
+| Middleware | Descrição | Pedido |
+| ---------- | ----------- | ----- |
+| [Autenticação](xref:security/authentication/identity) | Dá suporte à autenticação. | Antes de `HttpContext.User` é necessária. Terminal para retornos de chamada de OAuth. |
+| [CORS](xref:security/cors) | Define o compartilhamento de recursos entre origens. | Antes de componentes que usam o CORS. |
+| [Diagnóstico](xref:fundamentals/error-handling) | Configura o diagnóstico. | Antes de componentes que geram erros. |
+| [ForwardedHeaders/HttpOverrides](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | Encaminha cabeçalhos como proxy para a solicitação atual. | Antes dos componentes que consomem os campos atualizados (exemplos: esquema, Host, ClientIP, método). |
+| [Cache de resposta](xref:performance/caching/middleware) | Fornece suporte para as respostas em cache. | Antes de componentes que requerem armazenamento em cache. |
+| [Compactação de resposta](xref:performance/response-compression) | Fornece suporte para a compactação de respostas. | Antes de componentes que requerem a compactação. |
+| [RequestLocalization](xref:fundamentals/localization) | Fornece suporte de localização. | Antes de componentes importantes da localização. |
+| [Roteamento](xref:fundamentals/routing) | Define e restringe as rotas de solicitação. | Terminal de rotas correspondentes. |
+| [Sessão](xref:fundamentals/app-state) | Fornece suporte para gerenciar sessões de usuário. | Antes de componentes que requerem a sessão. |
+| [Arquivos estáticos](xref:fundamentals/static-files) | Fornece suporte para servir arquivos estáticos e pesquisa no diretório. | Terminal se corresponder a uma solicitação de arquivos. |
+| [Regravação de URL](xref:fundamentals/url-rewriting) | Fornece suporte para URLs de regravação e redirecionar solicitações. | Antes dos componentes que consomem a URL. |
+| [WebSockets](xref:fundamentals/websockets) | Permite que o protocolo WebSocket. | Antes de componentes que são necessárias para aceitar solicitações de WebSocket. |
 
 <a name="middleware-writing-middleware"></a>
 

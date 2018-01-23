@@ -1,19 +1,20 @@
 ---
 title: "Associação de modelo"
-author: rick-anderson
-description: 
-ms.author: riande
+author: rachelappel
+description: "Informações sobre associação de modelo no ASP.NET MVC de núcleo"
+ms.author: rachelap
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 01/22/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
+ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 uid: mvc/models/model-binding
-ms.openlocfilehash: 84b9c5dc3a87b739affaeaecaa180d1b01f49b8e
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8fc6ff66d05164c1040f8cc77886357a633a0472
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="model-binding"></a>Associação de modelo
 
@@ -41,7 +42,7 @@ MVC tentará associar dados de solicitação para os parâmetros de ação por n
 
 1. `Form values`: Estes são valores de formulário que entram na solicitação HTTP usando o método POST. (incluindo as solicitações POST jQuery).
 
-2. `Route values`: O conjunto de valores de rota fornecida pelo [roteamento](../../fundamentals/routing.md)
+2. `Route values`: O conjunto de valores de rota fornecida pelo [roteamento](xref:fundamentals/routing)
 
 3. `Query strings`: A parte da cadeia de caracteres de consulta do URI.
 
@@ -101,7 +102,7 @@ MVC contém vários atributos que podem ser usados para direcionar seu comportam
 
 Os atributos são ferramentas muito úteis quando você precisa substituir o comportamento padrão de associação de modelo.
 
-## <a name="binding-formatted-data-from-the-request-body"></a>Associação de dados formatados de corpo da solicitação
+## <a name="bind-formatted-data-from-the-request-body"></a>Associar dados formatados do corpo da solicitação
 
 Solicitação de dados podem vir de uma variedade de formatos como JSON, XML e muitos outros. Quando você usa o atributo [FromBody] para indicar que você deseja associar um parâmetro de dados no corpo da solicitação, o MVC usa um conjunto configurado de formatadores de tratar os dados de solicitação com base em seu tipo de conteúdo. Por padrão MVC inclui um `JsonInputFormatter` classe para manipular dados JSON, mas você pode adicionar formatadores adicionais para lidar com XML e outros formatos personalizados.
 

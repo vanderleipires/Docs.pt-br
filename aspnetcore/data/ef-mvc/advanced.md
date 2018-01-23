@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: ea83e5b17df80e5615dda49335247340d1cfb016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c5c06e61239c65cb1ff501a57777363a047a8db5
+ms.sourcegitcommit: f8ecf3d8f5b15f1e84ec86de3835b49ebe89fa1e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Tópicos avançados - Core de EF com o tutorial do MVC do ASP.NET Core (10 de 10)
 
@@ -169,7 +169,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Planos de desenvolvimento e o código de origem de Framework Core do entidade
 
-O código-fonte para Entity Framework Core está disponível em [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). Além do código-fonte, você pode obter todas as noites compilações, acompanhamento, especificações de recursos, criar anotações de reunião, [o roteiro para desenvolvimento futuro](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)e muito mais. Você poderá arquivar bugs e você pode contribuir seus próprios aprimoramentos para o código-fonte EF.
+A fonte do Entity Framework Core está em [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). O repositório de núcleo EF contém compilações noturnas, acompanhamento, especificações de recurso, design de anotações de reuniões e o [o roteiro para desenvolvimento futuro](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap). Arquivo ou localizar bugs e contribuir.
 
 Embora o código-fonte estiver aberto, Entity Framework Core tem suporte completo como um produto da Microsoft. A equipe do Microsoft Entity Framework mantém controle sobre quais contribuições são aceitos e testa todas as alterações de código para assegurar a qualidade de cada versão.
 

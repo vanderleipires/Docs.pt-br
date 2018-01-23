@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 26fbda99b0c1dfa2d09cf387e43f3123c58215f8
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9a0fb52a1d1a62bce3f11c7e0394c00b9d544ab3
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>Migrações - Core EF com tutorial páginas Razor (4 de 8)
 
@@ -127,7 +127,7 @@ O arquivo de instantâneo deve ser sincronizado com as migrações que o criou. 
 
 ## <a name="remove-ensurecreated"></a>Remover EnsureCreated
 
-Para o desenvolvimento inicial, o `EnsureCreated` comando foi usado. Neste tutorial, migrações é usado. `EnsureCreated`tem os seguintes limatitions:
+Para o desenvolvimento inicial, o `EnsureCreated` comando foi usado. Neste tutorial, migrações é usado. `EnsureCreated`tem as seguintes limitações:
 
 * Ignora as migrações e cria o banco de dados e o esquema.
 * Não crie uma tabela de migrações.
