@@ -205,6 +205,7 @@
 ### [Usar a autenticação de cookie sem o Identity](xref:security/authentication/cookie)
 ### [Azure Active Directory](xref:security/authentication/azure-active-directory/index)
 #### [Integrar o Azure AD em um aplicativo Web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+#### [Integrar o Azure AD B2C em um aplicativo Web do ASP.NET Core voltado para o cliente](xref:security/authentication/azure-ad-b2c)
 #### [Chamar uma API Web ASP.NET Core em um aplicativo do WPF usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [Chamar uma API Web em um aplicativo Web ASP.NET Core usando o Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [Proteger aplicativos ASP.NET Core com o IdentityServer4](https://identityserver4.readthedocs.io/)
