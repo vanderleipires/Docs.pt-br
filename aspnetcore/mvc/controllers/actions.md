@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
-ms.openlocfilehash: cef493fc2010d1c82e5c1dfec85864539252b817
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 99dcf1bd4f0dc4fcb6169f48bd398c9e40c21a35
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Tratamento de solicitações com controladores no ASP.NET MVC de núcleo
 
@@ -42,7 +42,7 @@ Dentro de **M**odelo -**V**ibir -**C**ontroller padrão, um controlador é respo
 
 O controlador usa o resultado do modelo de processamento (se houver) e retorna o modo de exibição correta e seus dados associados ou o resultado da chamada de API. Saiba mais em [visão geral do ASP.NET Core MVC](xref:mvc/overview) e [guia de Introdução ao ASP.NET MVC de núcleos e do Visual Studio](xref:tutorials/first-mvc-app/start-mvc).
 
-O controlador é um *nível de interface do usuário* abstração. Suas responsabilidades são para garantir que os dados de solicitação são válidos e escolha o modo de exibição (ou resultado de uma API) deve ser retornado. Em aplicativos bem fatorados, ele não incluir diretamente dados acesso ou a lógica comercial. Em vez disso, o controlador delega para tratar essas responsabilidades de serviços.
+O controlador é um *nível de interface do usuário* abstração. Suas responsabilidades são para garantir que os dados de solicitação são válidos e escolha o modo de exibição (ou resultado de uma API) deve ser retornado. Em aplicativos bem fatorados, diretamente não inclui a lógica comercial ou de acesso de dados. Em vez disso, o controlador delega para tratar essas responsabilidades de serviços.
 
 ## <a name="defining-actions"></a>Definindo ações
 

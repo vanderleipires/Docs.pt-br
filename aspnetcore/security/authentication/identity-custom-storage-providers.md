@@ -9,17 +9,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 6a5feb9039c5b0e9823e5f22f4d55a70830dd3e6
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f0953ad5d9f1bfa92ecc5169d9a211ce6b8cda8f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizado para a identidade do ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
-Identidade do ASP.NET Core é um sistema extensível que permite que você criar um provedor de armazenamento personalizado e conectá-lo ao seu aplicativo. Este tópico descreve como criar um provedor de armazenamento personalizado para a identidade do ASP.NET Core. Ele aborda os conceitos importantes para criar seu próprio provedor de armazenamento, mas não é um passo a passo.
+Identidade do ASP.NET Core é um sistema extensível que permite que você criar um provedor de armazenamento personalizado e conectá-lo ao seu aplicativo. Este tópico descreve como criar um provedor de armazenamento personalizado para a identidade do ASP.NET Core. Ele aborda os conceitos importantes para criar seu próprio provedor de armazenamento, mas não o passo a passo.
 
 [Exibir ou baixar o exemplo do GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample).
 
@@ -78,7 +78,7 @@ Grupos de autorização para seu site. Inclui o nome da função Id e a função
 
 ## <a name="the-data-access-layer"></a>Camada de acesso a dados
 
-Este tópico pressupõe que você esteja familiarizado com o mecanismo de persistência que você pretende usar e como criar entidades para esse mecanismo. Este tópico fornece detalhes sobre como criar os repositórios ou classes de acesso de dados; Ele fornece algumas sugestões sobre decisões de design ao trabalhar com a identidade do ASP.NET Core.
+Este tópico pressupõe que você esteja familiarizado com o mecanismo de persistência que você pretende usar e como criar entidades para esse mecanismo. Este tópico não fornece detalhes sobre como criar os repositórios ou classes de acesso de dados; Ele fornece algumas sugestões sobre decisões de design ao trabalhar com a identidade do ASP.NET Core.
 
 Você tem uma grande liberdade durante a criação de camada de acesso a dados para um provedor de armazenamento personalizado. Você só precisa criar mecanismos de persistência para os recursos que você pretende usar em seu aplicativo. Por exemplo, se você não estiver usando funções em seu aplicativo, você não precisa criar armazenamento para funções ou associações de função de usuário. A tecnologia e a infraestrutura existente podem exigir uma estrutura que é muito diferente da implementação do padrão de identidade do ASP.NET Core. Na camada de acesso a dados, você deve fornecer a lógica para trabalhar com a estrutura de sua implementação de armazenamento.
 

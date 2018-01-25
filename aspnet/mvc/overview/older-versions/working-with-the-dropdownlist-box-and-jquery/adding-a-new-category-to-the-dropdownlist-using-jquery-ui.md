@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 0cc51fbe84124a62f0c1254faab796cbcdc7efd6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de661616ff3ca83052ae74d3ae6810d014aff764
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Adicionando uma nova categoria a DropDownList usando jQuery UI
 ====================
@@ -90,7 +90,7 @@ O `var createGenreForm` é selecionado do `createGenreForm` ID. O `createGenreFo
 
 [!code-cshtml[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample7.cshtml)]
 
-O [Html.BeginForm](https://msdn.microsoft.com/en-us/library/dd492714.aspx) sobrecarga auxiliar usada a *Views\Genre\\_CreateGenre.cshtml* arquivo gera HTML com um atributo de ação que contém a URL para enviar o formulário. Você pode ver isso exibindo a página Criar álbum em um navegador e selecionando Mostrar fonte no navegador. A marcação a seguir mostra o código HTML gerado que contém a marca de formulário.
+O [Html.BeginForm](https://msdn.microsoft.com/library/dd492714.aspx) sobrecarga auxiliar usada a *Views\Genre\\_CreateGenre.cshtml* arquivo gera HTML com um atributo de ação que contém a URL para enviar o formulário. Você pode ver isso exibindo a página Criar álbum em um navegador e selecionando Mostrar fonte no navegador. A marcação a seguir mostra o código HTML gerado que contém a marca de formulário.
 
 [!code-html[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample8.html)]
 
@@ -130,7 +130,7 @@ Rick.Anderson[at]Microsoft.com
 
 ### <a name="contributors"></a>Colaboradores
 
-- [Visão de Radu Enuca](https://weblogs.asp.net/raduenuca/default.aspx)
+- [Radu Enuca](https://weblogs.asp.net/raduenuca/default.aspx)
 - Jean-Sébastien Goupil
 - [Brad Wilson](http://bradwilson.typepad.com/)
 

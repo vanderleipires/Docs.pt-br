@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 5b5645936504333573950b5bd17f5a037ffd984f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d844e2a69e4bbfdf3942f2666ead0047bdf83b7a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Criar um modelo de dados complexos - Core EF com o tutorial do MVC do ASP.NET Core (5 de 10)
 
@@ -39,9 +39,9 @@ Em *Models/Student.cs*, adicione um `using` instrução para o `System.Component
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-O atributo `DataType` é usado para especificar um tipo de dados mais específico do que o tipo intrínseco de banco de dados. Nesse caso, apenas desejamos controlar a data, não a data e hora. O `DataType` enumeração fornece para muitos tipos de dados, como data, hora, PhoneNumber, moeda, endereço de email e muito mais. O atributo `DataType` também pode permitir que o aplicativo forneça automaticamente recursos específicos a um tipo. Por exemplo, um link `mailto:` pode ser criado para `DataType.EmailAddress` e um seletor de data pode ser fornecido para `DataType.Date` em navegadores que dão suporte a HTML5. O `DataType` atributo emite HTML 5 `data-` atributos (pronunciado dados dash) que podem compreender navegadores HTML 5. O `DataType` atributos não fornecem nenhuma validação.
+O `DataType` atributo é usado para especificar um tipo de dados que é mais específico que o tipo de banco de dados intrínseco. Nesse caso, apenas desejamos controlar a data, não a data e hora. O `DataType` enumeração fornece para muitos tipos de dados, como data, hora, PhoneNumber, moeda, endereço de email e muito mais. O atributo `DataType` também pode permitir que o aplicativo forneça automaticamente recursos específicos a um tipo. Por exemplo, um link `mailto:` pode ser criado para `DataType.EmailAddress` e um seletor de data pode ser fornecido para `DataType.Date` em navegadores que dão suporte a HTML5. O `DataType` atributo emite HTML 5 `data-` atributos (pronunciado dados dash) que podem compreender navegadores HTML 5. O `DataType` atributos não fornecem nenhuma validação.
 
-`DataType.Date` não especifica o formato da data exibida. Por padrão, o campo de dados é exibido de acordo com os formatos padrão com base em CultureInfo do servidor.
+`DataType.Date`não especifique o formato da data que é exibida. Por padrão, o campo de dados é exibido de acordo com os formatos padrão com base em CultureInfo do servidor.
 
 O atributo `DisplayFormat` é usado para especificar explicitamente o formato de data:
 
@@ -103,7 +103,7 @@ Executar o aplicativo, selecione o **alunos** , clique em **criar novo**e digite
 
 Você também pode usar atributos para controlar como as classes e propriedades são mapeadas para o banco de dados. Suponha que você tenha usado o nome `FirstMidName` para o nome do primeiro campo porque o campo também pode conter um nome do meio. Mas a coluna do banco de dados seja nomeada como `FirstName`, pois os usuários que serão gravado consultas ad hoc no banco de dados estão acostumados a esse nome. Para tornar esse mapeamento, você pode usar o `Column` atributo.
 
-O `Column` atributo especifica que quando o banco de dados é criado, a coluna do `Student` tabela que mapeia para o `FirstMidName` propriedade será nomeada `FirstName`. Em outras palavras, quando seu código se refere a `Student.FirstMidName`, os dados virão ou atualizados no `FirstName` coluna do `Student` tabela. Se você não especificar nomes de coluna, eles recebem o mesmo nome que o nome da propriedade.
+O `Column` atributo especifica que quando o banco de dados é criado, a coluna do `Student` tabela que mapeia para o `FirstMidName` propriedade será nomeada `FirstName`. Em outras palavras, quando seu código se refere a `Student.FirstMidName`, os dados virão ou atualizados no `FirstName` coluna do `Student` tabela. Se você não especificar nomes de coluna, que eles recebem o mesmo nome que o nome da propriedade.
 
 No *Student.cs* de arquivo, adicione uma `using` instrução para `System.ComponentModel.DataAnnotations.Schema` e adicione o atributo de nome de coluna para o `FirstMidName` propriedade, como mostra o seguinte código:
 
@@ -125,7 +125,7 @@ Em **Pesquisador de objetos do SQL Server**, abra o designer de tabela do aluno 
 
 ![Tabela de alunos em SSOX após a migração](complex-data-model/_static/ssox-after-migration.png)
 
-Antes de você aplicou as duas primeiras migrações, as colunas de nome forem do tipo nvarchar (max). Agora são nvarchar (50) e o nome da coluna foi alterado de FirstMidName para FirstName.
+Antes de você aplicou as duas primeiras migrações, as colunas de nome forem do tipo nvarchar (max). Eles são agora nvarchar (50) e o nome da coluna foi alterado de FirstMidName para FirstName.
 
 > [!Note]
 > Se você tentar compilar antes de concluir a criação de todas as classes de entidade nas seções a seguir, você poderá receber erros de compilador.
@@ -140,7 +140,7 @@ Em *Models/Student.cs*, substitua o código que você adicionou anteriormente co
 
 ### <a name="the-required-attribute"></a>O atributo necessário
 
-O `Required` atributo faz com que os campos obrigatórios de propriedades de nome. O `Required` atributo não é necessária para tipos não anuláveis, como tipos de valor (DateTime, int, clique duas vezes, float, etc.). Tipos que não podem ser nulos automaticamente são tratados como campos obrigatórios.
+O `Required` atributo faz com que os campos obrigatórios de propriedades de nome. O `Required` atributo não é necessária para tipos não anuláveis como tipos de valor (DateTime, int, clique duas vezes, float, etc.). Tipos que não podem ser nulos automaticamente são tratados como campos obrigatórios.
 
 Você pode remover o `Required` de atributos e substituí-lo com um parâmetro de comprimento mínimo para o `StringLength` atributo:
 
@@ -231,7 +231,7 @@ Em *Models/Course.cs*, substitua o código que você adicionou anteriormente com
 
 A entidade de curso tem uma propriedade de chave estrangeira `DepartmentID` que aponta para a entidade relacionada do departamento e ele tem um `Department` propriedade de navegação.
 
-O Entity Framework não exigir que você adicionar uma propriedade de chave estrangeira para o modelo de dados quando você tem uma propriedade de navegação para uma entidade relacionada.  EF cria chaves estrangeiras no banco de dados sempre que eles são necessários e cria automaticamente [propriedades de sombra](https://docs.microsoft.com/ef/core/modeling/shadow-properties) para eles. Mas, com a chave estrangeira no modelo de dados pode fazer atualizações mais simples e mais eficiente. Por exemplo, quando você busca uma entidade de curso para editar, a entidade de departamento é null se não fazê-lo, então quando você atualiza a entidade de curso, você precisaria primeiro obter a entidade de departamento. Quando a propriedade de chave estrangeira `DepartmentID` está incluído no modelo de dados, você não precisa buscar à entidade Department antes de atualizar.
+O Entity Framework não exigir que você adicionar uma propriedade de chave estrangeira para o modelo de dados quando você tem uma propriedade de navegação para uma entidade relacionada.  EF cria chaves estrangeiras no banco de dados sempre que forem necessários e cria automaticamente [propriedades de sombra](https://docs.microsoft.com/ef/core/modeling/shadow-properties) para eles. Mas, com a chave estrangeira no modelo de dados pode fazer atualizações mais simples e mais eficiente. Por exemplo, quando você busca uma entidade de curso para editar, a entidade de departamento é null se não fazê-lo, então quando você atualiza a entidade de curso, você precisaria primeiro obter a entidade de departamento. Quando a propriedade de chave estrangeira `DepartmentID` está incluído no modelo de dados, você não precisa buscar à entidade Department antes de atualizar.
 
 ### <a name="the-databasegenerated-attribute"></a>O atributo DatabaseGenerated
 
@@ -308,7 +308,7 @@ public ICollection<Course> Courses { get; set; }
 ```
 
 > [!NOTE]
-> Por convenção, o Entity Framework permite a exclusão em cascata para chaves estrangeiras não anuláveis em relações muitos-para-muitos. Isso pode resultar em regras de exclusão em cascata circular, que fará com que uma exceção ao tentar adicionar uma migração. Por exemplo, se você não definir a propriedade Department.InstructorID como anuláveis, EF poderia configurar uma regra de exclusão em cascata para excluir o instrutor quando você excluir o departamento, que é não o que você deseja que aconteça. Se as regras de negócio é necessário o `InstructorID` propriedade a ser não anuláveis, você precisa usar a seguinte instrução API fluente para desabilitar a exclusão em cascata na relação:
+> Por convenção, o Entity Framework permite a exclusão em cascata para chaves estrangeiras não anuláveis em relações muitos-para-muitos. Isso pode resultar em regras de exclusão em cascata circular, que fará com que uma exceção ao tentar adicionar uma migração. Por exemplo, se você não definir a propriedade Department.InstructorID como anuláveis, EF poderia configurar uma regra de exclusão em cascata para excluir o instrutor quando você excluir o departamento, que não é o que você deseja que aconteça. Se as regras de negócio é necessário o `InstructorID` propriedade a ser não anuláveis, você precisa usar a seguinte instrução API fluente para desabilitar a exclusão em cascata na relação:
 > ```csharp
 > modelBuilder.Entity<Department>()
 >    .HasOne(d => d.Administrator)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: aef8229f2920bd026e3dbf063afb57cffb9b21d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9b1f9a19c76e33b5d996cb4d562cf0c1a3e2f83b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-database-projects"></a>Implantação de projetos de banco de dados
 ====================
@@ -65,7 +65,7 @@ Há várias abordagens diferentes para implantação de projetos de banco de dad
 Há três abordagens principais que você pode usar para implantar um projeto de banco de dados:
 
 - Você pode usar a funcionalidade de implantação com o tipo de projeto de banco de dados no Visual Studio 2010. Quando você criar e implanta um projeto de banco de dados no Visual Studio 2010, o processo de implantação usa o manifesto de implantação para gerar um arquivo de implantação baseado em SQL específico para a configuração de compilação. Isso criará o banco de dados se ele já não existe ou faça as alterações necessárias para o banco de dados se ele já existe. Você pode usar SQLCMD.exe para executar esse arquivo no servidor de destino, ou você pode definir o Visual Studio para criar e executar o arquivo. A desvantagem dessa abordagem é limitada apenas controle sobre as configurações de implantação. Você também precisará modificar o arquivo de implantação de SQL para fornecer valores de variável de ambiente específicas. Você só pode usar essa abordagem de um computador com Visual Studio 2010 instalado, e o desenvolvedor precisa conhecer e forneça cadeias de caracteres de conexão e credenciais para todos os ambientes de destino.
-- Você pode usar a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web) para [implantar um banco de dados como parte de um projeto de aplicativo web](https://msdn.microsoft.com/en-us/library/dd465343.aspx). No entanto, essa abordagem é muito mais complexa, se desejar implantar um projeto de banco de dados em vez de simplesmente replicar um banco de dados local em um servidor de destino. Você pode configurar a implantação da Web para executar o script de implantação de SQL que gera o projeto de banco de dados, mas para fazer isso, você precisa criar um arquivo de destino WPP personalizado para seu projeto de aplicativo web. Isso adiciona uma quantidade significativa de complexidade ao processo de implantação. Além disso, implantação da Web não oferece suporte direto atualizações incrementais para bancos de dados existentes. Para obter mais informações sobre essa abordagem, consulte [estender o Pipeline de publicação na Web ao projeto de banco de dados do pacote implantado arquivo SQL](https://go.microsoft.com/?linkid=9805121).
+- Você pode usar a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web) para [implantar um banco de dados como parte de um projeto de aplicativo web](https://msdn.microsoft.com/library/dd465343.aspx). No entanto, essa abordagem é muito mais complexa, se desejar implantar um projeto de banco de dados em vez de simplesmente replicar um banco de dados local em um servidor de destino. Você pode configurar a implantação da Web para executar o script de implantação de SQL que gera o projeto de banco de dados, mas para fazer isso, você precisa criar um arquivo de destino WPP personalizado para seu projeto de aplicativo web. Isso adiciona uma quantidade significativa de complexidade ao processo de implantação. Além disso, implantação da Web não oferece suporte direto atualizações incrementais para bancos de dados existentes. Para obter mais informações sobre essa abordagem, consulte [estender o Pipeline de publicação na Web ao projeto de banco de dados do pacote implantado arquivo SQL](https://go.microsoft.com/?linkid=9805121).
 - Você pode usar o utilitário VSDBCMD para implantar o banco de dados, usando o esquema de banco de dados ou o manifesto de implantação. Você pode chamar VSDBCMD.exe de um destino do MSBuild, que lhe permite publicar bancos de dados como parte de um processo de implantação de maiores e com script. Você pode substituir as variáveis no seu arquivo .sqlcmdvars e muitas outras propriedades de banco de dados de um comando VSDBCMD, que permite que você personalize sua implantação para diferentes ambientes sem criar várias configurações de compilação. VSDBCMD fornece a funcionalidade de diferenciação, o que significa fazer somente as alterações necessárias para alinhar um banco de dados de destino com o esquema de banco de dados. VSDBCMD também oferece uma ampla gama de opções de linha de comando, que oferecem um controle refinado sobre o processo de implantação.
 
 Esta visão geral, você pode ver que usar VSDBCMD com o MSBuild é a abordagem mais adequada para um cenário de implantação corporativa típica:
@@ -97,7 +97,7 @@ Nesse caso:
 - O **/dd+** (ou **/DeployToDatabase+**) opção indica que você deseja criar uma implantação e implantá-lo para o ambiente de destino. Se você especificar **/dd-**, ou omitir a opção, VSDBCMD irá gerar um script de implantação, mas não a implantar no ambiente de destino. Essa opção geralmente é a fonte de confusão e é explicada mais detalhadamente na próxima seção.
 - O **/script** (ou **/DeploymentScriptFile**) comutador Especifica onde você deseja gerar o script de implantação. Esse valor não afeta o processo de implantação.
 
-Para obter mais informações sobre VSDBCMD, consulte [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/en-us/library/dd193283.aspx) e [como: preparar um banco de dados para a implantação de um Prompt de comando usando VSDBCMD. EXE](https://msdn.microsoft.com/en-us/library/dd193258.aspx).
+Para obter mais informações sobre VSDBCMD, consulte [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/library/dd193283.aspx) e [como: preparar um banco de dados para a implantação de um Prompt de comando usando VSDBCMD. EXE](https://msdn.microsoft.com/library/dd193258.aspx).
 
 Para obter um exemplo de como você pode usar VSDBCMD de um arquivo de projeto do MSBuild, consulte [Noções básicas sobre o processo de compilação](understanding-the-build-process.md). Para obter exemplos de como definir as configurações de implantação de banco de dados para vários ambientes, consulte [personalizando implantações de banco de dados para vários ambientes](../advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments.md).
 
@@ -145,10 +145,10 @@ Para obter informações sobre como personalizar as implantações de banco de d
 
 Esses tópicos no MSDN fornecem orientação mais ampla e obter informações sobre os projetos de banco de dados do Visual Studio e o processo de implantação de banco de dados:
 
-- [Projetos de banco de dados do Visual Studio 2010 SQL Server](https://msdn.microsoft.com/en-us/library/ff678491.aspx)
-- [Gerenciamento de alterações do banco de dados](https://msdn.microsoft.com/en-us/library/aa833404.aspx)
-- [Como: preparar um banco de dados para a implantação de um Prompt de comando usando VSDBCMD. EXE](https://msdn.microsoft.com/en-us/library/dd193258.aspx)
-- [Uma visão geral do banco de dados de compilação e implantação](https://msdn.microsoft.com/en-us/library/aa833165.aspx)
+- [Projetos de banco de dados do Visual Studio 2010 SQL Server](https://msdn.microsoft.com/library/ff678491.aspx)
+- [Gerenciamento de alterações do banco de dados](https://msdn.microsoft.com/library/aa833404.aspx)
+- [Como: preparar um banco de dados para a implantação de um Prompt de comando usando VSDBCMD. EXE](https://msdn.microsoft.com/library/dd193258.aspx)
+- [Uma visão geral do banco de dados de compilação e implantação](https://msdn.microsoft.com/library/aa833165.aspx)
 
 >[!div class="step-by-step"]
 [Anterior](deploying-web-packages.md)

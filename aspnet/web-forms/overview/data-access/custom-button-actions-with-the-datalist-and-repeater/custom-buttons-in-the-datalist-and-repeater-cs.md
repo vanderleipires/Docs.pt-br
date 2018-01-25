@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa4b3ea69999f0d97d20047663d302277ebdf433
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a072ae18bbb19d086eb825c6e72b68d40b2e429
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>Botões personalizados no DataList e repetidor (c#)
 ====================
@@ -114,17 +114,17 @@ Neste exemplo, defina o s LinkButton `CommandName` propriedade ShowProducts e vi
 
 Quando o botão é clicado, ocorre um postback e os s DataList ou repetidor `ItemCommand` evento ser acionado. O manipulador de eventos é passado no botão s `CommandName` e `CommandArgument` valores.
 
-Criar um manipulador de eventos para repetidor s `ItemCommand` eventos e observe o segundo parâmetro passado para o manipulador de eventos (chamado `e`). Esse segundo parâmetro é do tipo [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) e tem as seguintes quatro propriedades:
+Criar um manipulador de eventos para repetidor s `ItemCommand` eventos e observe o segundo parâmetro passado para o manipulador de eventos (chamado `e`). Esse segundo parâmetro é do tipo [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) e tem as seguintes quatro propriedades:
 
 - `CommandArgument`o valor do botão clicado s `CommandArgument` propriedade
 - `CommandName`o valor do botão s `CommandName` propriedade
 - `CommandSource`uma referência para o controle de botão foi clicado
-- `Item`uma referência para o [ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem.aspx) que contém o botão que foi clicado; cada registro associado a repetidor manifestado como um`RepeaterItem`
+- `Item`uma referência para o [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) que contém o botão que foi clicado; cada registro associado a repetidor manifestado como um`RepeaterItem`
 
 Desde a categoria selecionada s `CategoryID` é passado por meio de `CommandArgument` propriedade, podemos obter o conjunto de produtos associados a categoria selecionada no `ItemCommand` manipulador de eventos. Esses produtos, em seguida, podem ser associados a um controle BulletedList no `ItemTemplate` (que é dicionar ainda). Tudo o que permanece, em seguida, é adicionar BulletedList, fazem referência a ele no `ItemCommand` manipulador de eventos e vinculá-lo ao conjunto de produtos para a categoria selecionada, que abordaremos na etapa 4.
 
 > [!NOTE]
-> DataList s `ItemCommand` manipulador de eventos é passado um objeto do tipo [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx), que oferece as quatro propriedades mesmo como o `RepeaterCommandEventArgs` classe.
+> DataList s `ItemCommand` manipulador de eventos é passado um objeto do tipo [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx), que oferece as quatro propriedades mesmo como o `RepeaterCommandEventArgs` classe.
 
 
 ## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>Etapa 4: Exibindo os produtos a categoria selecionada em uma lista com marcadores

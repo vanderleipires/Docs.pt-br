@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 55128faa3752a43902c17525dde3543a4a8c3997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f2fca1e91720fba0215e12b1a1894a3a31e86b5c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-and-deleting-existing-binary-data-c"></a>Atualizando e excluindo dados binários existentes (c#)
 ====================
@@ -150,7 +150,7 @@ Enquanto o fluxo de trabalho de exclusão removido com êxito o registro da cate
 
 Uma das desvantagens do armazenamento de dados binários externos para o banco de dados é que as etapas adicionais devem ser executadas para limpar esses arquivos quando o registro do banco de dados associado será excluído. O GridView e ObjectDataSource fornecem eventos que acionam antes e depois que o comando de exclusão foi executado. Na verdade, precisamos criar manipuladores de eventos para os eventos de pré e pós-ação. Antes do `Categories` registro é excluído, precisamos determinar seu caminho de arquivo s PDF, mas podemos don t deseja excluir o PDF antes da categoria é excluída caso há uma exceção e a categoria não é excluída.
 
-O GridView s [ `RowDeleting` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx) é acionado antes do comando de exclusão ObjectDataSource s foi chamado, enquanto seu [ `RowDeleted` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx) é acionado depois. Crie manipuladores de eventos para esses dois eventos usando o seguinte código:
+O GridView s [ `RowDeleting` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx) é acionado antes do comando de exclusão ObjectDataSource s foi chamado, enquanto seu [ `RowDeleted` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx) é acionado depois. Crie manipuladores de eventos para esses dois eventos usando o seguinte código:
 
 
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample5.cs)]

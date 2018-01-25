@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c610f84cfb82f38f9c67b757aa341c7a1497369c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>Criando uma camada de acesso a dados (c#)
 ====================
@@ -79,17 +79,17 @@ Todo o código que é específico à fonte de dados subjacente, como a criação
 
 - **GetCategories(),** que retornará informações sobre todas as categorias
 - **GetProducts()**, que retorna informações sobre todos os produtos
-- **GetProductsByCategoryID (*categoryID*) * *, que retorna todos os produtos que pertencem a uma categoria especificada
-- **GetProductByProductID (*productID*) * *, que retorna informações sobre um produto específico
+- **GetProductsByCategoryID (*categoryID*)**, que retorna todos os produtos que pertencem a uma categoria especificada
+- **GetProductByProductID (*productID*)**, que retorna informações sobre um produto específico
 
 Esses métodos, quando chamado, conectar-se ao banco de dados, emita a consulta apropriada e retornar os resultados. É importante como retornamos esses resultados. Esses métodos podem simplesmente retornar um DataSet ou DataReader preenchida pela consulta de banco de dados, mas idealmente esses resultados devem ser retornados usando *objetos fortemente tipados*. Um objeto fortemente tipado é um cujo esquema rigidamente é definida em tempo de compilação, enquanto o oposto, um objeto tipadas vagamente, é uma cujo esquema não é conhecida até o tempo de execução.
 
-Por exemplo, o DataReader e o conjunto de dados (por padrão) são objetos tipadas vagamente porque seu esquema é definido pelas colunas retornadas pela consulta de banco de dados usada para preenchê-los. Para acessar uma coluna específica de um DataTable tipadas vagamente que precisamos usar sintaxe semelhante:   ***DataTable*. Linhas [*índice*] ["*columnName*"]**. Tipagem flexível a DataTable neste exemplo é apresentado pelo fato de que precisamos para acessar o nome da coluna usando uma cadeia de caracteres ou o índice ordinal. Uma DataTable fortemente tipado, por outro lado, terá cada uma de suas colunas implementadas como propriedades, resultando em código que se parece com:   ***DataTable*. Linhas [*índice*].* columnName** *.
+Por exemplo, o DataReader e o conjunto de dados (por padrão) são objetos tipadas vagamente porque seu esquema é definido pelas colunas retornadas pela consulta de banco de dados usada para preenchê-los. Para acessar uma coluna específica de um DataTable tipadas vagamente que precisamos usar sintaxe semelhante: ***DataTable*. Linhas [*índice*] ["*columnName *"]**. Tipagem flexível a DataTable neste exemplo é apresentado pelo fato de que precisamos para acessar o nome da coluna usando uma cadeia de caracteres ou o índice ordinal. Uma DataTable fortemente tipado, por outro lado, terá cada uma de suas colunas implementadas como propriedades, resultando em código que se parece com: ***DataTable*. Linhas [*índice*].* columnName***.
 
 Para retornar objetos fortemente tipados, os desenvolvedores podem criar seus próprios objetos de negócios personalizada ou usar conjuntos de dados digitados. Um objeto de negócios é implementado pelo desenvolvedor como representa uma classe cujas propriedades normalmente refletem as colunas da tabela de banco de dados subjacentes do objeto comercial. Um conjunto de dados tipado é uma classe gerada para você pelo Visual Studio com base em um esquema de banco de dados e cujos membros são fortemente tipada de acordo com esse esquema. O conjunto de dados tipado próprio consiste em classes que estendem as classes de conjunto de dados ADO.NET, DataTable e DataRow. Além das tabelas de dados fortemente tipados, DataSets tipados agora também incluem TableAdapters, que são classes com métodos para popular tabelas de dados do conjunto de dados e propagar as modificações dentro de tabelas de dados no banco de dados.
 
 > [!NOTE]
-> Para obter mais informações sobre as vantagens e desvantagens do uso de DataSets tipados versus objetos comerciais personalizados, consulte [Criando componentes de camada de dados e passando por meio de camadas de dados](https://msdn.microsoft.com/en-us/library/ms978496.aspx).
+> Para obter mais informações sobre as vantagens e desvantagens do uso de DataSets tipados versus objetos comerciais personalizados, consulte [Criando componentes de camada de dados e passando por meio de camadas de dados](https://msdn.microsoft.com/library/ms978496.aspx).
 
 
 Vamos usar conjuntos de dados fortemente tipado para arquitetura esses tutoriais. A Figura 3 ilustra o fluxo de trabalho entre as diferentes camadas de um aplicativo que usa conjuntos de dados digitados.
@@ -114,7 +114,7 @@ Depois de clicar em Adicionar, quando solicitado a adicionar o conjunto de dados
 
 Um conjunto de dados tipado serve como uma coleção fortemente tipada de dados. ele é composto de instâncias de DataTable fortemente tipada, cada um por sua vez é composta de instâncias de DataRow fortemente tipada. Vamos criar uma tabela de dados fortemente tipado para cada uma das tabelas de banco de dados subjacente que precisamos para trabalhar com esta série de tutoriais. Vamos começar com a criação de um DataTable para o **produtos** tabela.
 
-Tenha em mente que DataTables fortemente tipadas não incluem todas as informações sobre como acessar dados da tabela de banco de dados subjacente. Para recuperar os dados para preencher a DataTable, usamos uma classe do TableAdapter, que funciona como nossa camada de acesso a dados. Para nosso **produtos** DataTable, o TableAdapter conterá os métodos **GetProducts()**,  **GetProductByCategoryID (*categoryID*) * *, e assim por diante que vai invocamos da camada de apresentação. Função da DataTable é servir como os usado para passar dados entre as camadas de objetos fortemente tipados.
+Tenha em mente que DataTables fortemente tipadas não incluem todas as informações sobre como acessar dados da tabela de banco de dados subjacente. Para recuperar os dados para preencher a DataTable, usamos uma classe do TableAdapter, que funciona como nossa camada de acesso a dados. Para nosso **produtos** DataTable, o TableAdapter conterá os métodos **GetProducts()**, **GetProductByCategoryID (*categoryID*)**, e assim por diante que vai invocamos da camada de apresentação. Função da DataTable é servir como os usado para passar dados entre as camadas de objetos fortemente tipados.
 
 O Assistente de configuração do TableAdapter começa solicitando que você selecione qual banco de dados para trabalhar com. A lista suspensa mostra esses bancos de dados no Gerenciador de servidores. Se você não adicionou o banco de dados Northwind para o Gerenciador de servidores, você pode clicar no botão Nova Conexão a nesse momento para fazer isso.
 
@@ -217,7 +217,7 @@ Enquanto este exemplo necessário escrevemos três linhas de código em nossa p�
 
 Neste ponto nosso **ProductsTableAdapter** classe tem mas um método, **GetProducts()**, que retorna todos os produtos no banco de dados. Enquanto a capacidade trabalhar com todos os produtos é certamente útil, há tempos quando queremos recuperar informações sobre um produto específico ou todos os produtos que pertencem a uma categoria específica. Para adicionar funcionalidade a nossa camada de acesso a dados, podemos adicionar métodos com parâmetros para o TableAdapter.
 
-Vamos adicionar o  **GetProductsByCategoryID (*categoryID*) * * método. Para adicionar um novo método para a DAL, retorne ao Designer de conjunto de dados, clique com botão direito no **ProductsTableAdapter** seção e escolha Adicionar consulta.
+Vamos adicionar o **GetProductsByCategoryID (*categoryID*)** método. Para adicionar um novo método para a DAL, retorne ao Designer de conjunto de dados, clique com botão direito no **ProductsTableAdapter** seção e escolha Adicionar consulta.
 
 
 ![Clique com botão direito em TableAdapter e escolha Adicionar consulta](creating-a-data-access-layer-cs/_static/image38.png)
@@ -241,7 +241,7 @@ A próxima etapa é definir a consulta SQL usada para acessar os dados. Como que
 **Figura 16**: insira uma consulta para apenas produtos de retorno em uma categoria especificada ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image44.png))
 
 
-Na etapa final que podemos escolher qual padrões para usar, bem como personalizar os nomes dos métodos gerados de acesso a dados. Para o padrão de preenchimento, vamos alterar o nome para **FillByCategoryID** e para retornar uma DataTable retornar padrão (o  **obter*X** * métodos), vamos usar  **GetProductsByCategoryID**.
+Na etapa final que podemos escolher qual padrões para usar, bem como personalizar os nomes dos métodos gerados de acesso a dados. Para o padrão de preenchimento, vamos alterar o nome para **FillByCategoryID** e para retornar uma DataTable retornar padrão (o **obter * X*** métodos), vamos usar **GetProductsByCategoryID**.
 
 
 [![Escolha os nomes para os métodos TableAdapter](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
@@ -257,7 +257,7 @@ Depois de concluir o assistente, o Designer de conjunto de dados inclui os novos
 **Figura 18**: os produtos podem agora ser consultados por categoria
 
 
-Reserve um tempo para adicionar um  **GetProductByProductID (*productID*) * * método usando a mesma técnica.
+Reserve um tempo para adicionar um **GetProductByProductID (*productID*)** método usando a mesma técnica.
 
 Essas consultas com parâmetros podem ser testadas diretamente no Designer de conjunto de dados. Com o botão direito no método em TableAdapter e escolha a visualização de dados. Em seguida, digite os valores para usar para os parâmetros e clique em Visualizar.
 
@@ -267,9 +267,9 @@ Essas consultas com parâmetros podem ser testadas diretamente no Designer de co
 **Figura 19**: os produtos que pertencem à categoria de bebidas são mostrados ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image51.png))
 
 
-Com o  **GetProductsByCategoryID (*categoryID*) * * método nosso DAL, agora podemos criar uma página ASP.NET que exibe apenas os produtos em uma categoria especificada. O exemplo a seguir mostra todos os produtos na categoria de bebidas, que têm um **CategoryID** de 1.
+Com o **GetProductsByCategoryID (*categoryID*)** método nosso DAL, agora podemos criar uma página ASP.NET que exibe apenas os produtos em uma categoria especificada. O exemplo a seguir mostra todos os produtos na categoria de bebidas, que têm um **CategoryID** de 1.
 
-Beverages.ASP
+Beverages.asp
 
 [!code-aspx[Main](creating-a-data-access-layer-cs/samples/sample4.aspx)]
 
@@ -293,7 +293,7 @@ Há dois padrões usados para inserir, atualizar e excluir dados. O padrão prim
 **Figura 21**: cada inserção, atualização e Excluir solicitação é enviada para o banco de dados imediatamente ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image57.png))
 
 
-Padrão que será chamado de como o lote de atualização padrão, é para atualizar um conjunto de dados, DataTable ou coleção de DataRows na chamada de um método inteira. Com esse padrão de um desenvolvedor exclui, insere, modifica DataRows em uma DataTable e, em seguida, passa esses DataRows ou DataTable em um método de atualização. Esse método, em seguida, enumera o DataRows passado, determina se ou não eles já foram modificados, adicionados ou excluídos (por meio de DataRow [propriedade RowState](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) valor) e emite a solicitação de banco de dados apropriado para cada registro.
+Padrão que será chamado de como o lote de atualização padrão, é para atualizar um conjunto de dados, DataTable ou coleção de DataRows na chamada de um método inteira. Com esse padrão de um desenvolvedor exclui, insere, modifica DataRows em uma DataTable e, em seguida, passa esses DataRows ou DataTable em um método de atualização. Esse método, em seguida, enumera o DataRows passado, determina se ou não eles já foram modificados, adicionados ou excluídos (por meio de DataRow [propriedade RowState](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) valor) e emite a solicitação de banco de dados apropriado para cada registro.
 
 
 [![Todas as alterações são sincronizadas com o banco de dados quando o método de atualização é invocado](creating-a-data-access-layer-cs/_static/image59.png)](creating-a-data-access-layer-cs/_static/image58.png)
@@ -339,7 +339,7 @@ Para criar esse método um personalizado, retorne para o Designer de conjunto de
 **Figura 25**: criar um método para adicionar uma nova linha para o **produtos** tabela ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image69.png))
 
 
-Na próxima tela de **InsertCommand**do **CommandText** é exibida. Aumentar essa consulta adicionando **Selecionar escopo\_IDENTITY()** no final da consulta, que retorna o último valor de identidade inserido em uma **identidade** coluna no mesmo escopo. (Consulte o [documentação técnica](https://msdn.microsoft.com/en-us/library/ms190315.aspx) para obter mais informações sobre **escopo\_IDENTITY()** e por quê você provavelmente desejará [usar escopo\_IDENTITY() lieu de @ @IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Certifique-se de que você encerrar o **inserir** instrução com um ponto e vírgula antes de adicionar o **selecione** instrução.
+Na próxima tela de **InsertCommand**do **CommandText** é exibida. Aumentar essa consulta adicionando **Selecionar escopo\_IDENTITY()** no final da consulta, que retorna o último valor de identidade inserido em uma **identidade** coluna no mesmo escopo. (Consulte o [documentação técnica](https://msdn.microsoft.com/library/ms190315.aspx) para obter mais informações sobre **escopo\_IDENTITY()** e por quê você provavelmente desejará [usar escopo\_IDENTITY() lieu de @ @IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Certifique-se de que você encerrar o **inserir** instrução com um ponto e vírgula antes de adicionar o **selecione** instrução.
 
 
 [![Ampliar a consulta para retornar o valor SCOPE_IDENTITY)](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
@@ -391,7 +391,7 @@ Depois de atualizar o **GetProducts()** método para usar essa consulta nova Dat
 **Figura 30**: O **produtos** DataTable tem duas novas colunas
 
 
-Reserve um tempo para atualizar o **selecione** cláusula de  **GetProductsByCategoryID (*categoryID*) * * método também.
+Reserve um tempo para atualizar o **selecione** cláusula de **GetProductsByCategoryID (*categoryID*)** método também.
 
 Se você atualizar o **GetProducts()** **selecione** usando **INGRESSAR** sintaxe o Designer de conjunto de dados não será capaz de gerar automaticamente os métodos para inserir, atualizar e excluir banco de dados usando o padrão de direta do banco de dados. Em vez disso, você precisará criar manualmente-los muito como fizemos com o **InsertProduct** método anteriormente neste tutorial. Além disso, você manualmente precisa fornecer o **InsertCommand**, **UpdateCommand**, e **DeleteCommand** valores de propriedade, se você quiser usar o lote padrão de atualização.
 
@@ -399,7 +399,7 @@ Se você atualizar o **GetProducts()** **selecione** usando **INGRESSAR** sintax
 
 Até agora, vimos apenas trabalhando com um TableAdapter único para uma tabela de banco de dados único. No entanto, o banco de dados Northwind contém várias tabelas relacionadas que vamos precisar trabalhar com nosso aplicativo web. Um conjunto de dados tipado pode conter vários DataTables relacionadas. Portanto, para concluir nosso DAL que precisamos adicionar tabelas de dados para as outras tabelas que usaremos esses tutoriais. Para adicionar um novo TableAdapter a um conjunto de dados tipado, abra o Designer de conjunto de dados, clique com botão direito no Designer e escolha Adicionar / TableAdapter. Isso criará uma nova DataTable e TableAdapter e orientá-lo por meio do assistente examinados anteriormente neste tutorial.
 
-Levar alguns minutos para criar os seguintes TableAdapters e métodos usando as consultas a seguir. Observe que as consultas a **ProductsTableAdapter** incluem subconsultas para obter nomes de categoria e o fornecedor de cada produto. Além disso, se você estiver acompanhando, você já adicionou o **ProductsTableAdapter** da classe **GetProducts()** e  **GetProductsByCategoryID (*categoryID*) * * métodos.
+Levar alguns minutos para criar os seguintes TableAdapters e métodos usando as consultas a seguir. Observe que as consultas a **ProductsTableAdapter** incluem subconsultas para obter nomes de categoria e o fornecedor de cada produto. Além disso, se você estiver acompanhando, você já adicionou o **ProductsTableAdapter** da classe **GetProducts()** e **GetProductsByCategoryID (*categoryID* )** métodos.
 
 - **ProductsTableAdapter**
 
@@ -520,18 +520,18 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [Criando uma DAL usando TableAdapters fortemente tipado e DataTables no VS 2005 e o ASP.NET 2.0](https://weblogs.asp.net/scottgu/435498)
-- [Criando componentes de camada de dados e transmissão de dados por meio de camadas](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [Criando componentes de camada de dados e transmissão de dados por meio de camadas](https://msdn.microsoft.com/library/ms978496.aspx)
 - [Criar uma camada de acesso de dados com o Designer de conjunto de dados do Visual Studio 2005](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [Criptografando informações de configuração no ASP.NET 2.0 aplicativos](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [Visão geral de TableAdapter](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [Trabalhando com um conjunto de dados tipado](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [Visão geral de TableAdapter](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [Trabalhando com um conjunto de dados tipado](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [Acesso a dados fortemente tipado no Visual Studio 2005 e o ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [Como estender os métodos TableAdapter](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [Recuperação de dados escalar de um procedimento armazenado](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Treinamento em vídeo sobre tópicos contidos neste tutorial
 
-- [Camadas de acesso de dados em aplicativos ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
+- [Camadas de Acesso a Dados em aplicativos do ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
 - [Como associar um conjunto de dados manualmente para uma grade de dados](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [Como trabalhar com conjuntos de dados e os filtros de um aplicativo ASP](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 

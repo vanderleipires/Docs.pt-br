@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fd365ca3ae8e832e368fa4c29c33af8a42cf41d2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d5cf45e391a2b32e1d22e160fd2757b754753875
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-and-sorting-report-data-c"></a>Paginação e classificando dados de relatório (c#)
 ====================
@@ -101,7 +101,7 @@ A Figura 6 mostra nosso progresso até o momento quando visualizada através de 
 
 ## <a name="step-3-adding-paging-support"></a>Etapa 3: Adicionando suporte à paginação
 
-Listando *todos os* dos produtos em uma única tela pode levar a sobrecarga de informações para o usuário usando os dados. Para ajudar a tornar os resultados mais gerenciáveis, podemos dividir os dados em páginas menores de dados e permitir que o usuário percorrer os dados em uma página por vez. Para realizar isso basta marcar a caixa de seleção Habilitar paginação de marca inteligente GridView s (Isso define o GridView s [ `AllowPaging` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) para `true`).
+Listando *todos os* dos produtos em uma única tela pode levar a sobrecarga de informações para o usuário usando os dados. Para ajudar a tornar os resultados mais gerenciáveis, podemos dividir os dados em páginas menores de dados e permitir que o usuário percorrer os dados em uma página por vez. Para realizar isso basta marcar a caixa de seleção Habilitar paginação de marca inteligente GridView s (Isso define o GridView s [ `AllowPaging` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) para `true`).
 
 
 [![Marque a caixa de seleção Habilitar paginação para adicionar suporte à paginação](paging-and-sorting-report-data-cs/_static/image10.png)](paging-and-sorting-report-data-cs/_static/image9.png)
@@ -111,12 +111,12 @@ Listando *todos os* dos produtos em uma única tela pode levar a sobrecarga de i
 
 Habilitar paginação limita o número de registros mostrados por página e adiciona um *interface paginação* a GridView. A interface de paginação padrão, mostrada na Figura 7, é uma série de números de página, permitindo que o usuário navegue rapidamente de uma página de dados para outro. Essa interface de paginação deve parecer familiar, como podemos ve assistir ao adicionar o suporte à paginação para os controles de DetailsView e FormView nos tutoriais anteriores.
 
-Controles de DetailsView e FormView mostram apenas um único registro por página. O GridView, no entanto, a consulta seu [ `PageSize` propriedade](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.pagesize.aspx) para determinar quantos registros devem ser mostrados por página (essa propriedade padroniza como um valor de 10).
+Controles de DetailsView e FormView mostram apenas um único registro por página. O GridView, no entanto, a consulta seu [ `PageSize` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.pagesize.aspx) para determinar quantos registros devem ser mostrados por página (essa propriedade padroniza como um valor de 10).
 
 Essa interface de paginação GridView, DetailsView e FormView s pode ser personalizado usando as seguintes propriedades:
 
 - `PagerStyle`indica as informações de estilo para a interface de paginação; pode especificar configurações como `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`e assim por diante.
-- `PagerSettings`contém muitas propriedades que pode personalizar a funcionalidade da interface de paginação; `PageButtonCount` indica o número máximo de números de página numérico exibidos na interface de paginação (o padrão é 10); o [ `Mode` propriedade](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.pagersettings.mode.aspx) indica como a interface de paginação funciona e pode ser definida como: 
+- `PagerSettings`contém muitas propriedades que pode personalizar a funcionalidade da interface de paginação; `PageButtonCount` indica o número máximo de números de página numérico exibidos na interface de paginação (o padrão é 10); o [ `Mode` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) indica como a interface de paginação funciona e pode ser definida como: 
 
     - `NextPrevious`mostra um botões Próximo e anterior, permitindo que o usuário para a etapa frente ou para trás uma página por vez
     - `NextPreviousFirstLast`Além dos botões Próximo e anterior, primeiro e último botões também são incluídos, permitindo que o usuário mover rapidamente para a primeira ou última página de dados
@@ -216,7 +216,7 @@ Como mostra a Figura 11, simplesmente alterando a s GridView `PageIndex` proprie
 
 ## <a name="step-5-adding-bi-directional-sorting-support"></a>Etapa 5: Adicionando suporte à classificação bidirecional
 
-Adicionando suporte à classificação bidirecional é tão simple quanto a adição de suporte à paginação basta marcar a opção de habilitar a classificação de marca inteligente GridView s (que define o GridView s [ `AllowSorting` propriedade](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.allowsorting.aspx) para `true`). Isso renderiza cada um dos cabeçalhos dos campos GridView s como botões de link que, quando clicado, causar um postback e retornar os dados classificados pela coluna clicada em ordem crescente. Clique o mesmo cabeçalho LinkButton novamente novamente para classificar os dados em ordem decrescente.
+Adicionando suporte à classificação bidirecional é tão simple quanto a adição de suporte à paginação basta marcar a opção de habilitar a classificação de marca inteligente GridView s (que define o GridView s [ `AllowSorting` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowsorting.aspx) para `true`). Isso renderiza cada um dos cabeçalhos dos campos GridView s como botões de link que, quando clicado, causar um postback e retornar os dados classificados pela coluna clicada em ordem crescente. Clique o mesmo cabeçalho LinkButton novamente novamente para classificar os dados em ordem decrescente.
 
 > [!NOTE]
 > Se você estiver usando uma camada de acesso a dados personalizados em vez de um conjunto de dados tipado, você não pode ter uma opção de habilitar a classificação da marca inteligente de s GridView. Somente GridViews associados a fontes de dados que dão suporte nativo de classificação têm essa caixa de seleção disponível. O conjunto de dados tipado oferece suporte à classificação de caixa como o DataTable do ADO.NET fornece um `Sort` método que, quando chamado, classifica os s DataTable DataRows usando os critérios especificados.
@@ -243,11 +243,11 @@ Após essa adição de CSS, ao visitar a página por meio de um navegador sua te
 
 GridView todos os campos BoundField CheckBoxField, TemplateField e assim por diante tem um `SortExpression` propriedade que indica a expressão que deve ser usada para classificar os dados quando que s campo link do cabeçalho de classificação é clicado. GridView também tem um `SortExpression` propriedade. Quando um cabeçalho de classificação LinkButton é clicado, o GridView atribui esse campo s `SortExpression` o valor para o seu `SortExpression` propriedade. Em seguida, os dados são recuperados novamente do ObjectDataSource e classificados de acordo com o GridView s `SortExpression` propriedade. A lista a seguir fornece detalhes sobre a sequência de etapas que ocorre quando um usuário final classifica os dados em um controle GridView:
 
-1. O GridView s [evento Sorting](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) é acionado
-2. O GridView s [ `SortExpression` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) é definido como o `SortExpression` do campo cujo cabeçalho classificação LinkButton foi clicado
+1. O GridView s [evento Sorting](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) é acionado
+2. O GridView s [ `SortExpression` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) é definido como o `SortExpression` do campo cujo cabeçalho classificação LinkButton foi clicado
 3. ObjectDataSource recupera todos os dados de BLL novamente e, em seguida, classifica os dados usando o s GridView`SortExpression`
 4. O GridView s `PageIndex` propriedade é redefinida para 0, que significa que quando o usuário a classificação é retornado para a primeira página de dados (supondo que o suporte à paginação foi implementado)
-5. O GridView s [ `Sorted` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) é acionado
+5. O GridView s [ `Sorted` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) é acionado
 
 Como com paginação padrão, a opção de classificação padrão recupera novamente *todos os* os registros de BLL. Ao usar a classificação sem paginação ou ao usar a classificação com não padrão paginação, há s nenhuma maneira de contornar esse problema (no cache do banco de dados) de desempenho. No entanto, como você verá um tutorial futuras, ele possível classificar os dados com eficiência ao usar a paginação personalizada.
 
@@ -274,7 +274,7 @@ Uma vez o `SortExpression` propriedade foi removida para o `UnitPrice` BoundFiel
 
 ## <a name="programmatically-sorting-the-gridview"></a>Classificando programaticamente GridView
 
-Você também pode classificar o conteúdo de GridView programaticamente usando o s GridView [ `Sort` método](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sort.aspx). Basta passar o `SortExpression` valor pelo qual classificar junto com o [ `SortDirection` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending` ou `Descending`), e os dados do GridView s será reclassificados.
+Você também pode classificar o conteúdo de GridView programaticamente usando o s GridView [ `Sort` método](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sort.aspx). Basta passar o `SortExpression` valor pelo qual classificar junto com o [ `SortDirection` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending` ou `Descending`), e os dados do GridView s será reclassificados.
 
 Imagine que o motivo desativamos a classificação pelo `UnitPrice` porque estamos preocupados com a possibilidade que nossos clientes simplesmente compraria apenas os produtos com preços mais baixo. No entanto, queremos recomende comprar os produtos mais caros, portanto gostamos de d-los para poder classificar os produtos por preço, mas apenas de preço mais caro para o menor.
 

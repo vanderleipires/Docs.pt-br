@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 52052ad202958eb5d648ceb64d9f06fb86ef3777
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bad742af28d6c36bb1b66207c2ba09d140332449
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-performance-signalr-1x"></a>Desempenho do SignalR (SignalR 1. x)
 ====================
@@ -70,7 +70,7 @@ Como as mensagens são armazenadas no barramento de mensagem na memória do serv
 
 ### <a name="tuning-your-signalr-server-for-performance"></a>Ajuste de seu servidor do SignalR para desempenho
 
-As definições de configuração a seguir podem ser usadas para ajustar o servidor para melhorar o desempenho em um aplicativo do SignalR. Para obter informações gerais sobre como melhorar o desempenho em um aplicativo ASP.NET, consulte [melhorando o desempenho do ASP.NET](https://msdn.microsoft.com/en-us/library/ff647787.aspx).
+As definições de configuração a seguir podem ser usadas para ajustar o servidor para melhorar o desempenho em um aplicativo do SignalR. Para obter informações gerais sobre como melhorar o desempenho em um aplicativo ASP.NET, consulte [melhorando o desempenho do ASP.NET](https://msdn.microsoft.com/library/ff647787.aspx).
 
 **Definições de configuração de SignalR**
 
@@ -244,6 +244,6 @@ Os seguintes contadores de desempenho também podem ser útil no monitoramento d
 
 Para obter mais informações sobre monitoramento e ajuste de desempenho do ASP.NET, consulte os tópicos a seguir:
 
-- [Visão geral do desempenho do ASP.NET](https://msdn.microsoft.com/en-us/library/cc668225(v=vs.100).aspx)
+- [Visão geral do desempenho do ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [Uso de Thread do ASP.NET no IIS 6.0, IIS 7.5 e IIS 7.0](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt; elemento (configurações da Web)](https://msdn.microsoft.com/en-us/library/dd560842.aspx)
+- [&lt;applicationPool&gt; elemento (configurações da Web)](https://msdn.microsoft.com/library/dd560842.aspx)

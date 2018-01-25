@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 04487614b219f8f6f8f0524c3b5f1aa42480c4d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ebc83098b73902fa3f7a90a38dafc43b413e75fe
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-signalr-security-signalr-1x"></a>Introdução à segurança do SignalR (SignalR 1. x)
 ====================
@@ -25,7 +25,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://g
 > Este artigo descreve os problemas de segurança que você deve considerar ao desenvolver um aplicativo do SignalR.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este documento contém as seguintes seções:
 
@@ -54,7 +54,7 @@ Este documento contém as seguintes seções:
 
 SignalR é projetado para ser integrados a estrutura de autenticação existente para um aplicativo. Ele não fornece recursos para autenticar usuários. Em vez disso, você autenticar os usuários, como você faria normalmente em seu aplicativo e, em seguida, trabalhar com os resultados da autenticação em seu código SignalR. Por exemplo, você pode autenticar os usuários com a autenticação de formulários do ASP.NET e, em seguida, em seu hub, impor a quais usuários ou funções estão autorizadas a chamar um método. Em seu hub, você também pode passar informações de autenticação, como nome de usuário ou se um usuário pertence a uma função, para o cliente.
 
-O SignalR fornece o [autorizar](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) atributo para especificar quais usuários têm acesso a um hub ou método. Você aplicar o atributo de autorizar um hub ou métodos específicos em um hub. Sem o atributo de autorização, todos os métodos públicos no hub estão disponíveis para um cliente que está conectado ao hub. Para obter mais informações sobre hubs, consulte [autenticação e autorização para os Hubs de SignalR](../security/hub-authorization.md).
+O SignalR fornece o [autorizar](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) atributo para especificar quais usuários têm acesso a um hub ou método. Você aplicar o atributo de autorizar um hub ou métodos específicos em um hub. Sem o atributo de autorização, todos os métodos públicos no hub estão disponíveis para um cliente que está conectado ao hub. Para obter mais informações sobre hubs, consulte [autenticação e autorização para os Hubs de SignalR](../security/hub-authorization.md).
 
 O `Authorize` atributo é usado apenas com hubs. Para impor regras de autorização ao usar um `PersistentConnection` você deve substituir o `AuthorizeRequest` método. Para obter mais informações sobre conexões persistentes, consulte [autenticação e autorização para conexões persistentes SignalR](../security/persistent-connection-authorization.md).
 

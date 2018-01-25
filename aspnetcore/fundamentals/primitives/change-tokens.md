@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: a9479e3d676ed4dc880996a4a77de30d82b84cd5
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 94bf356fcbfab3930804485c1b65e4a0f4c52b8e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>Detectar alterações com tokens de alteração no núcleo do ASP.NET
 
@@ -24,7 +24,7 @@ Um *alterar token* é um bloco de construção de finalidade geral de baixo nív
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/primitives/change-tokens/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="ichangetoken-interface"></a>Interface IChangeToken
+## <a name="ichangetoken-interface"></a>IChangeToken interface
 
 [IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken) propaga notificações que ocorreu uma alteração. `IChangeToken`reside no [Microsoft.Extensions.Primitives](/dotnet/api/microsoft.extensions.primitives) namespace. Para aplicativos que não usam o [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage, referência de [Microsoft.Extensions.Primitives](https://www.nuget.org/packages/Microsoft.Extensions.Primitives/) pacote do NuGet no arquivo de projeto.
 
@@ -199,10 +199,10 @@ var compositeChangeToken =
 
 ## <a name="see-also"></a>Consulte também
 
-* [O armazenamento em cache na memória](xref:performance/caching/memory)
+* [Cache in-memory](xref:performance/caching/memory)
 * [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
 * [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
 * [Cache de resposta](xref:performance/caching/response)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 * [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

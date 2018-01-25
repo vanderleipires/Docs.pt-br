@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecde847841eb727a0440f0483c69d1df6757815
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb979333131cc6ac87fd640bf7c96931054a1814
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Guia de Introdução ao Entity Framework 6 Database First usando MVC 5
 ====================
@@ -37,7 +37,7 @@ Este tópico aborda a situação em que você tiver um banco de dados e para ger
 
 Para obter um exemplo de Introdução do desenvolvimento do Code First, consulte [guia de Introdução ao ASP.NET MVC 5](../introduction/getting-started.md). Para obter um exemplo mais avançado, consulte [criando um modelo de dados do Entity Framework para um aplicativo do ASP.NET MVC 4](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
-Para obter orientação sobre como selecionar qual abordagem do Entity Framework para usar, consulte [abordagens de desenvolvimento do Entity Framework](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+Para obter orientação sobre como selecionar qual abordagem do Entity Framework para usar, consulte [abordagens de desenvolvimento do Entity Framework](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -49,7 +49,7 @@ Para simular o ambiente de ter um banco de dados existente, você primeiro crie 
 
 Este tutorial foi desenvolvido usando o LocalDB com o Visual Studio 2013 ou o Visual Studio Express 2013 para Web. Você pode usar um servidor de banco de dados existente em vez do LocalDB, mas dependendo de sua versão do Visual Studio e o tipo de banco de dados, todas as ferramentas de dados no Visual Studio não podem ser suportadas. Se as ferramentas não estão disponíveis para seu banco de dados, você precisará executar algumas etapas específicas do banco de dados no pacote de gerenciamento do banco de dados.
 
-Se você tiver um problema com as ferramentas de banco de dados na sua versão do Visual Studio, verifique se que você instalou a versão mais recente das ferramentas de banco de dados. Para obter informações sobre como atualizar ou instalar as ferramentas de banco de dados, consulte [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/en-us/data/hh297027).
+Se você tiver um problema com as ferramentas de banco de dados na sua versão do Visual Studio, verifique se que você instalou a versão mais recente das ferramentas de banco de dados. Para obter informações sobre como atualizar ou instalar as ferramentas de banco de dados, consulte [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/data/hh297027).
 
 Inicie o Visual Studio e crie um **projeto de banco de dados do SQL Server**. Nomeie o projeto **ContosoUniversityData**.
 

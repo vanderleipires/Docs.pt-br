@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: c61be6f7a64c000c8d9489f35eea520fd0bb32dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ce4953a0abf64af28ef4dbc5a62bb2d989343d99
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x"></a>Tutorial: Introdução ao SignalR 1. x
 ====================
@@ -25,7 +25,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://gith
 > Este tutorial mostra como usar o SignalR para criar um aplicativo de chat em tempo real. Você adicionará o SignalR para um aplicativo de web ASP.NET vazio e criar uma página HTML para enviar e exibir as mensagens.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial apresenta o desenvolvimento de SignalR, mostrando como criar um aplicativo simples baseado em navegador bate-papo. Você adicionar a biblioteca de SignalR para um aplicativo de web ASP.NET vazio, crie uma classe de hub para enviar mensagens para os clientes e criar uma página HTML que permite aos usuários enviar e receber mensagens de chat. Para obter um tutorial semelhante que mostra como criar um aplicativo de chat no MVC 4 usando uma exibição do MVC, consulte [Introdução ao SignalR e MVC 4](index.md).
 
@@ -168,7 +168,7 @@ O código a seguir mostra como abrir uma conexão com o hub. O código começa a
 
 Você aprendeu SignalR é uma estrutura para criar aplicativos web em tempo real. Você também aprendeu diversas tarefas de desenvolvimento SignalR: como adicionar SignalR para um aplicativo ASP.NET, como criar uma classe de hub e como enviar e receber mensagens do hub.
 
-Você pode tornar o aplicativo de exemplo neste tutorial ou outros aplicativos SignalR disponíveis pela Internet por implantá-los para um provedor de hospedagem. A Microsoft oferece gratuito da web de hospedagem para até 10 sites da web em um livre [conta de avaliação do Windows Azure](https://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604). Para obter instruções sobre como implantar o aplicativo de exemplo SignalR, consulte [publicar o SignalR obtendo iniciado exemplo como um Site do Windows Azure](https://blogs.msdn.com/b/timlee/archive/2013/02/27/deploy-the-signalr-getting-started-sample-as-a-windows-azure-web-site.aspx). Para obter informações detalhadas sobre como implantar um projeto da web do Visual Studio para um Site do Windows Azure, consulte [Implantando um aplicativo ASP.NET a um Site do Windows Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet). (Observação: O transporte de WebSocket não tem suporte para o Windows Azure Web Sites. Transporte de WebSocket quando não estiver disponível, o SignalR usa os outros transportes disponíveis conforme descrito na seção de transportes de [Introdução ao tópico SignalR](index.md).)
+Você pode tornar o aplicativo de exemplo neste tutorial ou outros aplicativos SignalR disponíveis pela Internet por implantá-los para um provedor de hospedagem. A Microsoft oferece gratuito da web de hospedagem para até 10 sites da web em um livre [conta de avaliação do Windows Azure](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604). Para obter instruções sobre como implantar o aplicativo de exemplo SignalR, consulte [publicar o SignalR obtendo iniciado exemplo como um Site do Windows Azure](https://blogs.msdn.com/b/timlee/archive/2013/02/27/deploy-the-signalr-getting-started-sample-as-a-windows-azure-web-site.aspx). Para obter informações detalhadas sobre como implantar um projeto da web do Visual Studio para um Site do Windows Azure, consulte [Implantando um aplicativo ASP.NET a um Site do Windows Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet). (Observação: O transporte de WebSocket não tem suporte para o Windows Azure Web Sites. Transporte de WebSocket quando não estiver disponível, o SignalR usa os outros transportes disponíveis conforme descrito na seção de transportes de [Introdução ao tópico SignalR](index.md).)
 
 Para saber mais avançados conceitos de desenvolvimentos SignalR, visite os seguintes sites para SignalR código-fonte e recursos:
 

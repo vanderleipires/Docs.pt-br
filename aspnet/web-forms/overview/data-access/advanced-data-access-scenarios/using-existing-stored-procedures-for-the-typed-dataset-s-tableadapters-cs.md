@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 58b76f0ac07051496c6f34be41dcf20154e34674
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1f95a6868ccce8ce0dfa16a92486e705c42e1db4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>Usar existente procedimentos armazenados para TableAdapters do conjunto de dados tipado (c#)
 ====================
@@ -200,7 +200,7 @@ Esse padrão pode ser implementado na sintaxe do T-SQL usando o modelo a seguir:
 
 O modelo é iniciado, definindo um `TRY...CATCH` bloquear uma construção de nova no SQL Server 2005. Como com `try...catch` blocos em c#, o SQL `TRY...CATCH` as instruções no bloco é executado o `TRY` bloco. Se nenhuma instrução gera um erro, o controle é transferido imediatamente para o `CATCH` bloco.
 
-Se não houver nenhum erro de executar as instruções SQL que a transação de composição de `COMMIT TRANSACTION` instrução confirma as alterações e conclui a transação. Se, no entanto, uma das instruções resulta em um erro, o `ROLLBACK TRANSACTION` no `CATCH` bloco retorna o banco de dados para seu estado anterior ao início da transação. O procedimento armazenado também gera um erro usando o [comando RAISERROR](https://msdn.microsoft.com/en-us/library/ms178592.aspx), que faz com que um `SqlException` a ser gerado no aplicativo.
+Se não houver nenhum erro de executar as instruções SQL que a transação de composição de `COMMIT TRANSACTION` instrução confirma as alterações e conclui a transação. Se, no entanto, uma das instruções resulta em um erro, o `ROLLBACK TRANSACTION` no `CATCH` bloco retorna o banco de dados para seu estado anterior ao início da transação. O procedimento armazenado também gera um erro usando o [comando RAISERROR](https://msdn.microsoft.com/library/ms178592.aspx), que faz com que um `SqlException` a ser gerado no aplicativo.
 
 > [!NOTE]
 > Desde o `TRY...CATCH` bloco é novo no SQL Server 2005, o modelo acima não funcionará se você estiver usando versões anteriores do Microsoft SQL Server. Se você não estiver usando o SQL Server 2005, consulte [gerenciar transações em procedimentos armazenados do SQL Server](http://www.4guysfromrolla.com/webtech/080305-1.shtml) para um modelo que funcione com outras versões do SQL Server.

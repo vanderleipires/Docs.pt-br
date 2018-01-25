@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2668a685389938979fc4b0a1e1701a90cef5dc1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d357ca7bfe364090ff2c8504b2116e0d99d004bc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-additional-datatable-columns-vb"></a>Adicionando colunas adicionais DataTable (VB)
 ====================
@@ -90,12 +90,12 @@ Em seguida, serão solicitados para o `SELECT` consulta. Digite a seguinte consu
 
 [!code-sql[Main](adding-additional-datatable-columns-vb/samples/sample1.sql)]
 
-A consulta acima usa s do SQL Server 2005 novo [ `NTILE` função](https://msdn.microsoft.com/en-us/library/ms175126.aspx) para dividir os resultados em quatro grupos em que os grupos são determinados pelo `UnitPrice` valores classificados em ordem decrescente.
+A consulta acima usa s do SQL Server 2005 novo [ `NTILE` função](https://msdn.microsoft.com/library/ms175126.aspx) para dividir os resultados em quatro grupos em que os grupos são determinados pelo `UnitPrice` valores classificados em ordem decrescente.
 
 Infelizmente, o construtor de consultas não sabe como analisar o `OVER` palavra-chave e exibirá um erro ao analisar a consulta anterior. Portanto, digite a consulta acima diretamente na caixa de texto do assistente sem usar o construtor de consultas.
 
 > [!NOTE]
-> Para obter mais informações sobre o SQL Server 2005 e NTILE s outras funções de classificação, consulte [retornando resultados com o Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml) e [seção funções de classificação](https://msdn.microsoft.com/en-us/library/ms189798.aspx) do [SQL Manuais Online do Server 2005](https://msdn.microsoft.com/en-us/library/ms189798.aspx).
+> Para obter mais informações sobre o SQL Server 2005 e NTILE s outras funções de classificação, consulte [retornando resultados com o Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml) e [seção funções de classificação](https://msdn.microsoft.com/library/ms189798.aspx) do [SQL Manuais Online do Server 2005](https://msdn.microsoft.com/library/ms189798.aspx).
 
 
 Depois de inserir o `SELECT` consulta e clicar em Avançar, o assistente perguntará fornecer um nome para o procedimento armazenado será criado. Nomeie o novo procedimento armazenado `Products_SelectWithPriceQuartile` e clique em Avançar.

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e92bb3d67141ba0ce594fd17c266bc69dda3cb5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fe4c421f248e325b69be7cad6c10bcbedf59ae5f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-vb"></a>Configuração de autenticação de formulários e tópicos avançados (VB)
 ====================
@@ -35,7 +35,7 @@ Neste tutorial, examine as várias configurações de autenticação de formulá
 
 ## <a name="step-1-examining-the-ltformsgt-configuration-settings"></a>Etapa 1: Examinando o &lt;formulários&gt; definições de configuração
 
-O sistema de autenticação de formulários do ASP.NET oferece uma série de configurações que podem ser personalizados em uma base por aplicativo. Isso inclui configurações como: o tempo de vida de autenticação de formulários de tíquete; que tipo de proteção é aplicado a permissão; em qual autenticação cookieless condições, as permissões são usadas; o caminho para a página de logon. e outras informações. Para modificar os valores padrão, adicione um [ &lt;formulários&gt; elemento](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx) como um filho de [ &lt;autenticação&gt; elemento](https://msdn.microsoft.com/en-us/library/532aee0e.aspx), especificando as propriedades valores para personalizar como os atributos XML da seguinte forma:
+O sistema de autenticação de formulários do ASP.NET oferece uma série de configurações que podem ser personalizados em uma base por aplicativo. Isso inclui configurações como: o tempo de vida de autenticação de formulários de tíquete; que tipo de proteção é aplicado a permissão; em qual autenticação cookieless condições, as permissões são usadas; o caminho para a página de logon. e outras informações. Para modificar os valores padrão, adicione um [ &lt;formulários&gt; elemento](https://msdn.microsoft.com/library/1d3t3c61.aspx) como um filho de [ &lt;autenticação&gt; elemento](https://msdn.microsoft.com/library/532aee0e.aspx), especificando as propriedades valores para personalizar como os atributos XML da seguinte forma:
 
 [!code-xml[Main](forms-authentication-configuration-and-advanced-topics-vb/samples/sample1.xml)]
 
@@ -43,7 +43,7 @@ A tabela 1 resume as propriedades que podem ser personalizadas por meio de &lt;f
 
 | **Atributo** | **Descrição** |
 | --- | --- |
-| sem cookies | Esse atributo especifica em quais condições o tíquete de autenticação é armazenado em um cookie versus sendo inserido na URL. Valores permitidos são: UseCookies; UseUri; Detecção automática; e UseDeviceProfile (o padrão). Etapa 2 examina essa configuração em mais detalhes. |
+| cookieless | Esse atributo especifica em quais condições o tíquete de autenticação é armazenado em um cookie versus sendo inserido na URL. Valores permitidos são: UseCookies; UseUri; Detecção automática; e UseDeviceProfile (o padrão). Etapa 2 examina essa configuração em mais detalhes. |
 | defaultUrl | Indica a URL que os usuários são redirecionados para depois de entrar na página de logon, se não houver nenhum valor RedirectUrl especificado na querystring. O valor padrão é default. aspx. |
 | domínio | Ao usar permissões de autenticação baseada em cookie, essa configuração especifica o valor de domínio do cookie s. O valor padrão é uma cadeia de caracteres vazia, o que faz com que o navegador para usar o domínio do qual ele foi emitido (como www.yourdomain.com). Nesse caso, o cookie será **não** ser enviada ao fazer solicitações para sub-domínios, como admin.yourdomain.com. Se você deseja que o cookie a ser passado para todos os subdomínios que você precisará personalizar o atributo de domínio definido como seudomínio. |
 | enableCrossAppRedirects | Um valor booliano que indica se os usuários autenticados serão lembrados quando redirecionado para URLs em outros aplicativos web no mesmo servidor. O padrão é falso. |
@@ -57,7 +57,7 @@ A tabela 1 resume as propriedades que podem ser personalizadas por meio de &lt;f
 
 **Tabela 1**: um resumo do &lt;formulários&gt; atributos do elemento
 
-No ASP.NET 2.0 e posteriores, o padrão valores de autenticação de formulários são codificados na classe FormsAuthenticationConfiguration no .NET Framework. Todas as modificações devem ser aplicadas em uma base por aplicativo no arquivo Web. config. Isso é diferente do ASP.NET 1. x, onde os valores de autenticação de formulários padrão foram armazenados no arquivo Machine. config (e, portanto, podem ser modificados por meio da edição de Machine. config). Enquanto no tópico do ASP.NET 1. x, vale a pena mencionar que um número das configurações de sistema de autenticação de formulários têm valores padrão diferentes no ASP.NET 2.0 e além do que no ASP.NET 1. x. Se você estiver migrando seu aplicativo de um ambiente do ASP.NET 1. x, é importante estar atento essas diferenças. Consulte [o &lt;formulários&gt; documentação técnica do elemento](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx) para obter uma lista das diferenças.
+No ASP.NET 2.0 e posteriores, o padrão valores de autenticação de formulários são codificados na classe FormsAuthenticationConfiguration no .NET Framework. Todas as modificações devem ser aplicadas em uma base por aplicativo no arquivo Web. config. Isso é diferente do ASP.NET 1. x, onde os valores de autenticação de formulários padrão foram armazenados no arquivo Machine. config (e, portanto, podem ser modificados por meio da edição de Machine. config). Enquanto no tópico do ASP.NET 1. x, vale a pena mencionar que um número das configurações de sistema de autenticação de formulários têm valores padrão diferentes no ASP.NET 2.0 e além do que no ASP.NET 1. x. Se você estiver migrando seu aplicativo de um ambiente do ASP.NET 1. x, é importante estar atento essas diferenças. Consulte [o &lt;formulários&gt; documentação técnica do elemento](https://msdn.microsoft.com/library/1d3t3c61.aspx) para obter uma lista das diferenças.
 
 > [!NOTE]
 > Várias configurações de autenticação de formulários, como o tempo limite, o domínio e o caminho, especificam os detalhes para o cookie de tíquete de autenticação de formulários resultante. Para obter mais informações sobre cookies, como elas funcionam e as várias propriedades, leia [este tutorial Cookies](http://www.quirksmode.org/js/cookies.html).
@@ -137,7 +137,7 @@ A política de cookie usada pelo sistema de autenticação de formulários depen
 As configurações de detecção automática e UseDeviceProfile dependem um *perfil do dispositivo* no averiguar se deseja usar tíquetes de autenticação baseada em cookie ou não em cookies. O ASP.NET mantém um banco de dados de vários dispositivos e seus recursos, como se eles dão suporte a cookies, qual versão do JavaScript dão suporte e assim por diante. Cada vez que um dispositivo solicita uma página da web de um servidor da web envia ao longo de um *agente do usuário* cabeçalho HTTP, que identifica o tipo de dispositivo. ASP.NET corresponde automaticamente a cadeia de caracteres de agente do usuário fornecido com o perfil correspondente especificado no banco de dados.
 
 > [!NOTE]
-> Este banco de dados de recursos do dispositivo é armazenado em um número de arquivos XML que seguem o [esquema de arquivo de definição de navegador](https://msdn.microsoft.com/en-us/library/ms228122.aspx). Os arquivos de perfil de dispositivo padrão estão localizados em % WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG\Browsers. Você também pode adicionar arquivos personalizados para o aplicativo do seu aplicativo\_pasta navegadores. Para obter mais informações, consulte [como: detectar tipos de navegador em páginas da Web do ASP.NET](https://msdn.microsoft.com/en-us/library/3yekbd5b.aspx).
+> Este banco de dados de recursos do dispositivo é armazenado em um número de arquivos XML que seguem o [esquema de arquivo de definição de navegador](https://msdn.microsoft.com/library/ms228122.aspx). Os arquivos de perfil de dispositivo padrão estão localizados em % WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG\Browsers. Você também pode adicionar arquivos personalizados para o aplicativo do seu aplicativo\_pasta navegadores. Para obter mais informações, consulte [como: detectar tipos de navegador em páginas da Web do ASP.NET](https://msdn.microsoft.com/library/3yekbd5b.aspx).
 
 
 Como a configuração padrão é UseDeviceProfile, tíquetes de autenticação de formulários cookieless serão usados quando o site for visitado por um dispositivo cujo perfil informa que não dá suporte a cookies.
@@ -199,7 +199,7 @@ A Microsoft recomenda expressamente usando a configuração de todos os.
 
 ### <a name="setting-the-validation-and-decryption-keys"></a>Configurando a validação e chaves de descriptografia
 
-A criptografia e algoritmos usados pelo sistema de autenticação de formulários para criptografar e validar o tíquete de autenticação de hash são personalizáveis por meio de [ &lt;machineKey&gt; elemento](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx) no Web. config. A tabela 2 descreve o &lt;machineKey&gt; atributos do elemento e seus valores possíveis.
+A criptografia e algoritmos usados pelo sistema de autenticação de formulários para criptografar e validar o tíquete de autenticação de hash são personalizáveis por meio de [ &lt;machineKey&gt; elemento](https://msdn.microsoft.com/library/w8h3skw9.aspx) no Web. config. A tabela 2 descreve o &lt;machineKey&gt; atributos do elemento e seus valores possíveis.
 
 | **Atributo** | **Descrição** |
 | --- | --- |
@@ -223,7 +223,7 @@ Enquanto a nenhum dos cenários acima se aplica ao nosso aplicativo de exemplo, 
 
 [!code-xml[Main](forms-authentication-configuration-and-advanced-topics-vb/samples/sample5.xml)]
 
-Para obter mais informações consulte [como: configurar MachineKey no ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998288.aspx).
+Para obter mais informações consulte [como: configurar MachineKey no ASP.NET 2.0](https://msdn.microsoft.com/library/ms998288.aspx).
 
 > [!NOTE]
 > Os valores decryptionKey e validationKey foram tirados da [Steve Gibson](http://www.grc.com/stevegibson.htm)do [página da web de senhas perfeito](https://www.grc.com/passwords.htm), que gera a 64 caracteres hexadecimais aleatórios em cada página visita. Para reduzir a probabilidade de que essas chaves fazer sua maneira em seus aplicativos de produção, você é incentivado a substituir as chaves acima por gerado aleatoriamente da página de senhas perfeita.
@@ -233,7 +233,7 @@ Para obter mais informações consulte [como: configurar MachineKey no ASP.NET 2
 
 Muitos aplicativos web exibem informações sobre ou exibição da página de base no usuário conectado no momento. Por exemplo, uma página da web pode mostrar o nome do usuário e a data em que ela último logon no canto superior de cada página. O tíquete de autenticação de formulários armazena o nome do usuário conectado no momento, mas quando qualquer outra informação é necessária, a página deve ir para o repositório do usuário - normalmente um banco de dados - para pesquisar as informações não são armazenadas no tíquete de autenticação.
 
-Com um pouco de código, pode armazenar informações de usuário adicionais no tíquete de autenticação de formulários. Esses dados podem ser expressos por meio de [classe FormsAuthenticationTicket](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.aspx)do [UserData propriedade](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.userdata.aspx). Isso é um local útil para colocar pequenas quantidades de informações sobre o usuário que normalmente é necessário. O valor especificado em UserData propriedade é incluído como parte do cookie de tíquete de autenticação e, como os outros campos de tíquete, é criptografada e validada com base na configuração do sistema de autenticação de formulários. Por padrão, os dados do usuário é uma cadeia de caracteres vazia.
+Com um pouco de código, pode armazenar informações de usuário adicionais no tíquete de autenticação de formulários. Esses dados podem ser expressos por meio de [classe FormsAuthenticationTicket](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.aspx)do [UserData propriedade](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.userdata.aspx). Isso é um local útil para colocar pequenas quantidades de informações sobre o usuário que normalmente é necessário. O valor especificado em UserData propriedade é incluído como parte do cookie de tíquete de autenticação e, como os outros campos de tíquete, é criptografada e validada com base na configuração do sistema de autenticação de formulários. Por padrão, os dados do usuário é uma cadeia de caracteres vazia.
 
 Para armazenar dados de usuário no tíquete de autenticação, é preciso escrever um pouco de código na página de logon que captura as informações específicas do usuário e a armazena na permissão. Como dados do usuário é uma propriedade do tipo cadeia de caracteres, os dados armazenados nela devem ser serializados corretamente como uma cadeia de caracteres. Por exemplo, imagine que nosso repositório do usuário incluído data de cada usuário de nascimento e o nome do seu empregador, e queríamos armazenar esses dois valores no tíquete de autenticação. Podemos pode serializar esses valores em uma cadeia de caracteres concatenando data do usuário de cadeia de caracteres do aniversário com uma barra vertical (|), seguido do nome do empregador. Para um usuário nascido em 15 de agosto de 1974 que trabalha para a Northwind Traders, atribuiremos a propriedade de dados do usuário a cadeia de caracteres: 1974-08-15 | A Northwind Traders.
 
@@ -269,15 +269,15 @@ Em seguida, FormsAuthentication.GetAuthCookie método é chamado, o que cria o t
 
 Dim authCookie como HttpCookie = FormsAuthentication.GetAuthCookie (UserName.Text, RememberMe.Checked)
 
-Para trabalhar com o FormAuthenticationTicket inserido no cookie, é preciso chamar a classe de FormAuthentication [descriptografar método](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.decrypt.aspx), passando o valor do cookie.
+Para trabalhar com o FormAuthenticationTicket inserido no cookie, é preciso chamar a classe de FormAuthentication [descriptografar método](https://msdn.microsoft.com/library/system.web.security.formsauthentication.decrypt.aspx), passando o valor do cookie.
 
-Dim tíquete como FormsAuthenticationTicket = FormsAuthentication.Decrypt(authCookie.Value)
+Dim ticket As FormsAuthenticationTicket = FormsAuthentication.Decrypt(authCookie.Value)
 
 Em seguida, criamos um *novo* FormsAuthenticationTicket instância com base em valores do FormsAuthenticationTicket existente. No entanto, esse novo tíquete inclui as informações específicas do usuário (userDataString).
 
 Dim newTicket como FormsAuthenticationTicket = FormsAuthenticationTicket(ticket. novo Versão da permissão. Nome da permissão. IssueDate, tíquete. Expiração da permissão. IsPersistent, userDataString)
 
-Nós, em seguida, criptografar (e validar) a nova instância FormsAuthenticationTicket chamando o [criptografar método](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.encrypt.aspx)e coloque esses dados criptografados (e validados) de volta em authCookie.
+Nós, em seguida, criptografar (e validar) a nova instância FormsAuthenticationTicket chamando o [criptografar método](https://msdn.microsoft.com/library/system.web.security.formsauthentication.encrypt.aspx)e coloque esses dados criptografados (e validados) de volta em authCookie.
 
 authCookie.Value = FormsAuthentication.Encrypt(newTicket)
 
@@ -322,7 +322,7 @@ O objeto principal tem duas responsabilidades: para indicar as funções que o u
 A classe GenericPrincipal atende às necessidades para a maioria dos cenários de autenticação baseada em formulários em que as funções não são usadas. Nas situações em que a manipulação de função padrão é insuficiente ou quando você precisa associar a um objeto de IIdentity personalizado com o usuário, você pode criar um objeto IPrincipal personalizado durante o fluxo de trabalho de autenticação e atribuí-la à propriedade HttpContext.
 
 > [!NOTE]
-> Como veremos no futuro tutoriais, quando ASP. Estrutura de funções do NET é habilitada cria um objeto principal personalizado do tipo [RolePrincipal](https://msdn.microsoft.com/en-us/library/system.web.security.roleprincipal.aspx) e substitui o objeto de GenericPrincipal de criado para autenticação de formulários. Ele faz isso para personalizar o IsInRole método principal para interagir com a API da estrutura de funções.
+> Como veremos no futuro tutoriais, quando ASP. Estrutura de funções do NET é habilitada cria um objeto principal personalizado do tipo [RolePrincipal](https://msdn.microsoft.com/library/system.web.security.roleprincipal.aspx) e substitui o objeto de GenericPrincipal de criado para autenticação de formulários. Ele faz isso para personalizar o IsInRole método principal para interagir com a API da estrutura de funções.
 
 
 Como podemos ter não preocupada nós com funções ainda, o único motivo que temos para criar uma entidade de segurança personalizada neste momento seria associar um objeto de IIdentity personalizado para a entidade de segurança. Na etapa 4, analisamos armazenar informações adicionais do usuário na propriedade de dados do usuário do tíquete de autenticação, em particular, o nome do usuário da empresa e seu título. No entanto, as informações de dados do usuário só são acessível por meio do tíquete de autenticação e, em seguida, somente como uma cadeia de caracteres serializada, que significa que sempre que você deseja exibir as informações de usuário armazenadas na permissão é necessário analisar a propriedade de dados do usuário.
@@ -334,7 +334,7 @@ Podemos melhorar a experiência do desenvolvedor, criando uma classe que impleme
 Para este tutorial, vamos criar os objetos principal e identidade personalizados no aplicativo\_pasta de código. Comece adicionando um aplicativo\_pasta ao seu projeto de código - com o botão direito no nome do projeto no Gerenciador de soluções, selecione a opção de adicionar pasta ASP.NET e escolha o aplicativo\_código. O aplicativo\_pasta de código é uma pasta ASP.NET especial que contém a classe arquivos específica para o site.
 
 > [!NOTE]
-> O aplicativo\_pasta de código só deve ser usada ao gerenciar seu projeto por meio do modelo de projeto de site. Se você estiver usando o [modelo de projeto de aplicativo Web](https://msdn.microsoft.com/en-us/asp.net/Aa336618.aspx), crie uma pasta padrão e adicionar as classes para que. Por exemplo, você pode adicionar uma nova pasta chamada Classes e coloque seu código existe.
+> O aplicativo\_pasta de código só deve ser usada ao gerenciar seu projeto por meio do modelo de projeto de site. Se você estiver usando o [modelo de projeto de aplicativo Web](https://msdn.microsoft.com/asp.net/Aa336618.aspx), crie uma pasta padrão e adicionar as classes para que. Por exemplo, você pode adicionar uma nova pasta chamada Classes e coloque seu código existe.
 
 
 Em seguida, adicione dois novos arquivos de classe para o aplicativo\_pasta de código, um CustomIdentity.vb nomeado e outro chamado CustomPrincipal.vb.
@@ -359,9 +359,9 @@ Em seguida, crie a classe CustomPrincipal. Como não estamos preocupados com fun
 
 Agora temos uma classe que estende a especificação de IIdentity padrão para incluir propriedades CompanyName e título, bem como uma classe de entidade de segurança personalizada que usa a identidade personalizada. Estamos prontos para a etapa no pipeline do ASP.NET e atribuir nosso objeto principal personalizado para o contexto de segurança de solicitação de entrada.
 
-O pipeline do ASP.NET leva uma solicitação de entrada e a processa através de várias etapas. Em cada etapa, é gerado um evento específico, tornando possível para os desenvolvedores aproveitar o pipeline do ASP.NET e modificar a solicitação em determinados pontos do ciclo de vida. FormsAuthenticationModule, por exemplo, aguarda até que o ASP.NET gerar o [evento AuthenticateRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx), no ponto em que ele inspeciona a solicitação de entrada para um tíquete de autenticação. Se for encontrado um tíquete de autenticação, um objeto GenericPrincipal é criado e atribuído à propriedade HttpContext.
+O pipeline do ASP.NET leva uma solicitação de entrada e a processa através de várias etapas. Em cada etapa, é gerado um evento específico, tornando possível para os desenvolvedores aproveitar o pipeline do ASP.NET e modificar a solicitação em determinados pontos do ciclo de vida. FormsAuthenticationModule, por exemplo, aguarda até que o ASP.NET gerar o [evento AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx), no ponto em que ele inspeciona a solicitação de entrada para um tíquete de autenticação. Se for encontrado um tíquete de autenticação, um objeto GenericPrincipal é criado e atribuído à propriedade HttpContext.
 
-Após o evento AuthenticateRequest, o pipeline do ASP.NET gera o [PostAuthenticateRequest evento](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.postauthenticaterequest.aspx), que é onde podemos pode substituir o objeto GenericPrincipal criado pelo FormsAuthenticationModule com uma instância do nosso Objeto CustomPrincipal. Figura 7 mostra o fluxo de trabalho.
+Após o evento AuthenticateRequest, o pipeline do ASP.NET gera o [PostAuthenticateRequest evento](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx), que é onde podemos pode substituir o objeto GenericPrincipal criado pelo FormsAuthenticationModule com uma instância do nosso Objeto CustomPrincipal. Figura 7 mostra o fluxo de trabalho.
 
 
 [![O GenericPrincipal é substituído por um CustomPrincipal no evento PostAuthenticationRequest](forms-authentication-configuration-and-advanced-topics-vb/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image19.png)
@@ -377,13 +377,13 @@ Para executar código em resposta a um evento de pipeline do ASP.NET, podemos po
 **Figura 08**: adicionar um arquivo global. asax ao seu site ([clique para exibir a imagem em tamanho normal](forms-authentication-configuration-and-advanced-topics-vb/_static/image24.png))
 
 
-O modelo de global. asax padrão inclui manipuladores de eventos para um número de eventos de pipeline do ASP.NET, incluindo o início, fim e [evento de erro](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx), entre outros. Fique à vontade para remover esses manipuladores de eventos, como não precisamos delas para este aplicativo. O evento que estamos interessados em é PostAuthenticateRequest. Atualize o arquivo global. asax para que sua marcação é semelhante ao seguinte:
+O modelo de global. asax padrão inclui manipuladores de eventos para um número de eventos de pipeline do ASP.NET, incluindo o início, fim e [evento de erro](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx), entre outros. Fique à vontade para remover esses manipuladores de eventos, como não precisamos delas para este aplicativo. O evento que estamos interessados em é PostAuthenticateRequest. Atualize o arquivo global. asax para que sua marcação é semelhante ao seguinte:
 
 [!code-aspx[Main](forms-authentication-configuration-and-advanced-topics-vb/samples/sample11.aspx)]
 
 O aplicativo\_OnPostAuthenticateRequest método executa cada vez que o tempo de execução do ASP.NET gera o evento de PostAuthenticateRequest, o que acontece uma vez em cada solicitação de página de entrada. Inicia o manipulador de eventos para verificar se o usuário é autenticado e foi autenticado através da autenticação de formulários. Nesse caso, um novo objeto CustomIdentity é criado e transmitido tíquete de autenticação da solicitação atual em seu construtor. Um objeto CustomPrincipal é criado e o objeto de CustomIdentity recém-criada passado no construtor. Por fim, o contexto de segurança da solicitação atual é atribuído ao objeto CustomPrincipal recém-criado.
 
-Observe que a última etapa - associando o objeto CustomPrincipal o contexto de segurança da solicitação - atribui a entidade de segurança para duas propriedades: HttpContext e thread. CurrentPrincipal. Essas duas atribuições são necessárias devido ao modo como os contextos de segurança são tratados no ASP.NET. O .NET Framework associa um contexto de segurança a cada thread em execução; Essa informação está disponível como um objeto IPrincipal por meio de [objeto Thread](https://msdn.microsoft.com/en-us/library/system.threading.thread.aspx)do [propriedade CurrentPrincipal](https://msdn.microsoft.com/en-us/library/system.threading.thread.currentcontext.aspx). O que é um confuso é que o ASP.NET tem suas próprias informações de contexto de segurança (HttpContext).
+Observe que a última etapa - associando o objeto CustomPrincipal o contexto de segurança da solicitação - atribui a entidade de segurança para duas propriedades: HttpContext e thread. CurrentPrincipal. Essas duas atribuições são necessárias devido ao modo como os contextos de segurança são tratados no ASP.NET. O .NET Framework associa um contexto de segurança a cada thread em execução; Essa informação está disponível como um objeto IPrincipal por meio de [objeto Thread](https://msdn.microsoft.com/library/system.threading.thread.aspx)do [propriedade CurrentPrincipal](https://msdn.microsoft.com/library/system.threading.thread.currentcontext.aspx). O que é um confuso é que o ASP.NET tem suas próprias informações de contexto de segurança (HttpContext).
 
 Em determinados cenários, a propriedade de thread. CurrentPrincipal é examinada para determinar o contexto de segurança; em outros cenários, HttpContext é usado. Por exemplo, não há recursos de segurança no .NET que permitem aos desenvolvedores declarativamente estado que os usuários ou funções podem instanciar uma classe ou chamar métodos específicos (consulte [adicionando regras de autorização para os negócios e camadas de dados usando PrincipalPermissionAttributes](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)). Nos bastidores, essas técnicas declarativas determinam o contexto de segurança por meio da propriedade de thread. CurrentPrincipal.
 
@@ -412,13 +412,13 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [Autenticação de formulários dissecando](http://aspnet.4guysfromrolla.com/articles/072005-1.aspx)
-- [Explicado: Autenticação de formulários do ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/aa480476.aspx)
-- [Como Proteger a autenticação de formulários do ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998310.aspx)
+- [Explicado: Autenticação de formulários do ASP.NET 2.0](https://msdn.microsoft.com/library/aa480476.aspx)
+- [Como Proteger a autenticação de formulários do ASP.NET 2.0](https://msdn.microsoft.com/library/ms998310.aspx)
 - [Professional ASP.NET 2.0 segurança, associação e gerenciamento de função](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
-- [Protegendo controles de logon](https://msdn.microsoft.com/en-us/library/ms178346.aspx)
-- [O &lt;autenticação&gt; elemento](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)
-- [O &lt;formulários&gt; elemento para &lt;autenticação&gt;](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)
-- [O &lt;machineKey&gt; elemento](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)
+- [Protegendo controles de logon](https://msdn.microsoft.com/library/ms178346.aspx)
+- [O &lt;autenticação&gt; elemento](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [O &lt;formulários&gt; elemento para &lt;autenticação&gt;](https://msdn.microsoft.com/library/1d3t3c61.aspx)
+- [O &lt;machineKey&gt; elemento](https://msdn.microsoft.com/library/w8h3skw9.aspx)
 - [Noções básicas sobre o tíquete de autenticação de formulários e o Cookie](https://support.microsoft.com/kb/910443)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Treinamento em vídeo sobre tópicos contidos neste tutorial
@@ -426,9 +426,9 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Como alterar as propriedades de autenticação de formulários](../../../videos/authentication/how-to-change-the-forms-authentication-properties.md)
 - [A autenticação de Cookie sem configuração e uso em um aplicativo ASP.NET](../../../videos/authentication/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application.md)
 - [Realocação de logon de formulários do ASP](../../../videos/authentication/asp-forms-login-relocation.md)
-- [Configuração de chave personalizada de logon formulários](../../../videos/authentication/forms-login-custom-key-configuration.md)
-- [Adicionar dados personalizados para o método de autenticação](../../../videos/authentication/add-custom-data-to-the-authentication-method.md)
-- [Objetos de entidade personalizada de uso](../../../videos/authentication/use-custom-principal-objects.md)
+- [Configuração de chave personalizada de logon de formulários](../../../videos/authentication/forms-login-custom-key-configuration.md)
+- [Adicionar dados personalizados ao método de autenticação](../../../videos/authentication/add-custom-data-to-the-authentication-method.md)
+- [Usar objetos de entidade de segurança personalizada](../../../videos/authentication/use-custom-principal-objects.md)
 
 ### <a name="about-the-author"></a>Sobre o autor
 

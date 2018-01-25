@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 6790cd0deb36c9fb297ccd4df371f763dba17844
-ms.sourcegitcommit: 17b025bd33f4474f0deaafc6d0447a4e72bcad87
+ms.openlocfilehash: 829f3a024bc15bec8b60b91193ba9bca37b78009
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/27/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>O que não fazer em ASP.NET e o que fazer em vez disso
 ====================
@@ -94,7 +94,7 @@ O exemplo a seguir mostra como aplicar dinamicamente a classe CSS.
 
 Recomendação: Interromper o uso de retornos de chamada de página e controle e, em vez disso, use qualquer um dos seguintes: AJAX, UpdatePanel, métodos de ação MVC, API da Web ou SignalR.
 
-Em versões anteriores do ASP.NET, métodos de retorno de chamada de página e controle habilitado atualizar parte da página da web sem atualizar uma página inteira. Agora você pode fazer atualizações parciais de página por meio de [AJAX](../../../ajax/index.md), [UpdatePanel](https://msdn.microsoft.com/en-US/library/bb386454.aspx), [MVC](../../../mvc/index.md), [API da Web](../../../web-api/index.md) ou [SignalR](../../../signalr/index.md). Você deve interromper usando métodos de retorno de chamada porque eles podem causar problemas com URLs amigáveis e roteamento. Por padrão, os controles não permitem que os métodos de retorno de chamada, mas se você habilitar esse recurso em um controle, você deverá desabilitá-la.
+Em versões anteriores do ASP.NET, métodos de retorno de chamada de página e controle habilitado atualizar parte da página da web sem atualizar uma página inteira. Agora você pode fazer atualizações parciais de página por meio de [AJAX](../../../ajax/index.md), [UpdatePanel](https://msdn.microsoft.com/library/bb386454.aspx), [MVC](../../../mvc/index.md), [API da Web](../../../web-api/index.md) ou [SignalR](../../../signalr/index.md). Você deve interromper usando métodos de retorno de chamada porque eles podem causar problemas com URLs amigáveis e roteamento. Por padrão, os controles não permitem que os métodos de retorno de chamada, mas se você habilitar esse recurso em um controle, você deverá desabilitá-la.
 
 <a id="browsercap"></a>
 
@@ -138,7 +138,7 @@ A exemplo a seguir mostra como HTML codifica um valor no code-behind.
 
 [!code-csharp[Main](what-not-to-do-in-aspnet-and-what-to-do-instead/samples/sample7.cs)]
 
-Para codificar com segurança um valor para comandos SQL, use os parâmetros de comando, como o [SqlParameter](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlparameter.aspx). <a id="cookieless"></a>
+Para codificar com segurança um valor para comandos SQL, use os parâmetros de comando, como o [SqlParameter](https://msdn.microsoft.com/library/system.data.sqlclient.sqlparameter.aspx). <a id="cookieless"></a>
 
 ### <a name="cookieless-forms-authentication-and-session"></a>Sessão e autenticação de formulários cookieless
 
@@ -180,15 +180,15 @@ Recomendação: Não desative as configurações de segurança em &lt;appSetting
 
 O elemento appSettings contém muitos valores que são necessários para atualizações de segurança. Você não deve alterar ou desativar esses valores. Se você precisar desativar esses valores ao implantar uma atualização, imediatamente habilite novamente depois de concluir a implantação.
 
-Para obter detalhes, consulte [ASP.NET appSettings Element](https://msdn.microsoft.com/en-us/library/hh975440.aspx).
+Para obter detalhes, consulte [ASP.NET appSettings Element](https://msdn.microsoft.com/library/hh975440.aspx).
 
 <a id="urlpathencode"></a>
 
 ### <a name="urlpathencode"></a>UrlPathEncode
 
-Recomendação: Use [UrlEncode](https://msdn.microsoft.com/en-us/library/zttxte6w.aspx) em vez disso.
+Recomendação: Use [UrlEncode](https://msdn.microsoft.com/library/zttxte6w.aspx) em vez disso.
 
-O método UrlPathEncode foi adicionado para o .NET Framework para resolver um problema de compatibilidade de navegador muito específicas. Ele não codifica adequadamente uma URL e não protege o aplicativo de script entre sites. Você nunca deve usá-lo em seu aplicativo. Em vez disso, use [UrlEncode](https://msdn.microsoft.com/en-us/library/zttxte6w.aspx).
+O método UrlPathEncode foi adicionado para o .NET Framework para resolver um problema de compatibilidade de navegador muito específicas. Ele não codifica adequadamente uma URL e não protege o aplicativo de script entre sites. Você nunca deve usá-lo em seu aplicativo. Em vez disso, use [UrlEncode](https://msdn.microsoft.com/library/zttxte6w.aspx).
 
 O exemplo a seguir mostra como passar uma URL codificada como um parâmetro de cadeia de caracteres de consulta para um controle de hiperlink.
 
@@ -202,9 +202,9 @@ O exemplo a seguir mostra como passar uma URL codificada como um parâmetro de c
 
 ### <a name="presendrequestheaders-and-presendrequestcontent"></a>PreSendRequestHeaders e PreSendRequestContent
 
-Recomendação: Não use esses eventos com os módulos gerenciados. Em vez disso, grave um módulo nativo do IIS para executar as tarefas necessárias. Consulte [criar módulos HTTP de código nativo](https://msdn.microsoft.com/en-us/library/ms693629.aspx).
+Recomendação: Não use esses eventos com os módulos gerenciados. Em vez disso, grave um módulo nativo do IIS para executar as tarefas necessárias. Consulte [criar módulos HTTP de código nativo](https://msdn.microsoft.com/library/ms693629.aspx).
 
-Você pode usar o [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) e [PreSendRequestContent](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) eventos com os módulos nativos do IIS.
+Você pode usar o [PreSendRequestHeaders](https://msdn.microsoft.com/library/system.web.httpapplication.presendrequestheaders.aspx) e [PreSendRequestContent](https://msdn.microsoft.com/library/system.web.httpapplication.presendrequestcontent.aspx) eventos com os módulos nativos do IIS.
 > [!WARNING]
 > Não use `PreSendRequestHeaders` e `PreSendRequestContent` com módulos gerenciados que implementam `IHttpModule`. A configuração dessas propriedades pode causar problemas com solicitações assíncronas. A combinação de roteamento solicitado aplicativo (ARR) e websockets pode resultar em exceções de violação de acesso que podem causar w3wp falhar. Por exemplo, iiscore! W3_CONTEXT_BASE::GetIsLastNotification + 68 no iiscore.dll causou uma exceção de violação de acesso (0xC0000005).
 
@@ -212,7 +212,7 @@ Você pode usar o [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/libra
 
 ### <a name="asynchronous-page-events-with-web-forms"></a>Eventos de página assíncrona com formulários da Web
 
-Recomendação: Formulários da Web, evite escrever async void métodos para eventos de ciclo de vida da página e, em vez disso, use [RegisterAsyncTask](https://msdn.microsoft.com/en-us/library/system.web.ui.page.registerasynctask.aspx) para código assíncrono.
+Recomendação: Formulários da Web, evite escrever async void métodos para eventos de ciclo de vida da página e, em vez disso, use [RegisterAsyncTask](https://msdn.microsoft.com/library/system.web.ui.page.registerasynctask.aspx) para código assíncrono.
 
 Quando você marca um evento de página com **async** e **void**, você não pode determinar quando o código assíncrono foi concluída. Em vez disso, use RegisterAsyncTask para executar o código assíncrono de uma maneira que permite controlar a sua conclusão.
 
@@ -244,15 +244,15 @@ Recomendação: Evite ler Request. Form ou Request.InputStream antes do manipula
 
 O mais recente que você deve ler de Request. Form ou Request.InputStream é durante o manipulador execute eventos. No MVC, o controlador é o manipulador e evento de execução é quando o método de ação é executada. Formulários da Web, a página é o manipulador e evento de execução é quando o evento Page.Init é acionado. Se você ler o corpo da entidade de solicitação anterior ao evento de execução, você interfere com o processamento da solicitação.
 
-Se você precisar ler o corpo da entidade de solicitação antes do evento de execução, use [Request.GetBufferlessInputStream](https://msdn.microsoft.com/en-us/library/ff406798.aspx) ou [Request.GetBufferedInputStream](https://msdn.microsoft.com/en-us/library/system.web.httprequest.getbufferedinputstream.aspx). Quando você usa GetBufferlessInputStream, obter o fluxo bruto da solicitação e assuma a responsabilidade pelo processamento de toda a solicitação. Depois de chamar GetBufferlessInputStream, Request. Form e Request.InputStream não estão disponíveis porque eles não foram populados pelo ASP.NET. Quando você usa GetBufferedInputStream, você obter uma cópia do fluxo da solicitação. Request e Request.InputStream ainda estão disponíveis mais tarde na solicitação porque o ASP.NET preenche a outra cópia.
+Se você precisar ler o corpo da entidade de solicitação antes do evento de execução, use [Request.GetBufferlessInputStream](https://msdn.microsoft.com/library/ff406798.aspx) ou [Request.GetBufferedInputStream](https://msdn.microsoft.com/library/system.web.httprequest.getbufferedinputstream.aspx). Quando você usa GetBufferlessInputStream, obter o fluxo bruto da solicitação e assuma a responsabilidade pelo processamento de toda a solicitação. Depois de chamar GetBufferlessInputStream, Request. Form e Request.InputStream não estão disponíveis porque eles não foram populados pelo ASP.NET. Quando você usa GetBufferedInputStream, você obter uma cópia do fluxo da solicitação. Request e Request.InputStream ainda estão disponíveis mais tarde na solicitação porque o ASP.NET preenche a outra cópia.
 
 <a id="redirect"></a>
 
 ### <a name="responseredirect-and-responseend"></a>Response. Redirect e Response
 
-Recomendação: Esteja ciente das diferenças em como o thread é manipulado depois de chamar [Response.Redirect(String)](https://msdn.microsoft.com/en-us/library/t9dwyts4.aspx).
+Recomendação: Esteja ciente das diferenças em como o thread é manipulado depois de chamar [Response.Redirect(String)](https://msdn.microsoft.com/library/t9dwyts4.aspx).
 
-O [Response.Redirect(String)](https://msdn.microsoft.com/en-us/library/t9dwyts4.aspx) método chama o método Response. Em um processo síncrono, chamar Request.Redirect faz com que o thread atual anular imediatamente. No entanto, em um processo assíncrono, chamar Response. Redirect não anular o thread atual, para a execução de código continua para a solicitação. Em um processo assíncrono, você deve retornar a tarefa do método para interromper a execução de código.
+O [Response.Redirect(String)](https://msdn.microsoft.com/library/t9dwyts4.aspx) método chama o método Response. Em um processo síncrono, chamar Request.Redirect faz com que o thread atual anular imediatamente. No entanto, em um processo assíncrono, chamar Response. Redirect não anular o thread atual, para a execução de código continua para a solicitação. Em um processo assíncrono, você deve retornar a tarefa do método para interromper a execução de código.
 
 Em um projeto MVC, você não deve chamar Response. Redirect. Em vez disso, retorne um RedirectResult.
 
@@ -286,7 +286,7 @@ Para obter mais informações, consulte [Introdução ao ASP.NET Universal Provi
 
 ### <a name="long-running-requests-110-seconds"></a>Solicitações de execução longa (> 110 segundos)
 
-Recomendação: Use [WebSockets](https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket.aspx) ou [SignalR](../../../signalr/index.md) para clientes conectados e usar operações de e/s assíncronas.
+Recomendação: Use [WebSockets](https://msdn.microsoft.com/library/system.net.websockets.websocket.aspx) ou [SignalR](../../../signalr/index.md) para clientes conectados e usar operações de e/s assíncronas.
 
 Solicitações de execução longa podem causar resultados imprevisíveis e baixo desempenho em seu aplicativo web. A configuração de tempo limite padrão para uma solicitação é 110 segundos. Se você estiver usando o estado de sessão com uma solicitação de longa execução, o ASP.NET irá liberar o bloqueio no objeto de sessão após segundos 110. No entanto, seu aplicativo pode estar no meio de uma operação no objeto de sessão quando o bloqueio for liberado, e a operação não pode ser concluída com êxito. Se uma segunda solicitação do usuário for bloqueada enquanto a primeira solicitação está em execução, a segunda solicitação pode acessar o objeto de sessão em um estado inconsistente.
 

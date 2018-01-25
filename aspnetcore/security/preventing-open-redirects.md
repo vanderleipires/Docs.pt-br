@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/preventing-open-redirects
-ms.openlocfilehash: e57ae429e9af54ade74485361ba591cb75c16752
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6ecf2440ac7073bdad098f6fe48f6c788ba7795a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>Evitando ataques de redirecionamento aberto em um aplicativo do ASP.NET Core
 
@@ -23,7 +23,7 @@ Sempre que a lógica do aplicativo redireciona para uma URL específica, você d
 
 ## <a name="what-is-an-open-redirect-attack"></a>O que é um ataque de redirecionamento aberto?
 
-Aplicativos da Web com frequência redirecionam os usuários para uma página de logon quando acessarem os recursos que exigem autenticação. O redirecionamento typlically inclui um `returnUrl` parâmetro querystring para que o usuário pode ser retornado para a URL solicitada originalmente depois que eles efetuou com êxito. Depois que o usuário é autenticado, ele será redirecionado para a URL que tinha originalmente solicitada.
+Aplicativos da Web com frequência redirecionam os usuários para uma página de logon quando acessarem os recursos que exigem autenticação. O redirecionamento typlically inclui um `returnUrl` parâmetro querystring para que o usuário pode ser retornado para a URL solicitada originalmente depois que eles efetuou com êxito. Depois que o usuário é autenticado, eles serão redirecionados para a URL que tinha originalmente solicitada.
 
 Como a URL de destino é especificada na querystring da solicitação, um usuário mal-intencionado pode violar querystring. Uma querystring violado pode permitir que o site redirecionar o usuário a um site externo, mal-intencionado. Essa técnica é chamada de um ataque de redirecionamento (ou redirecionamento) aberto.
 
@@ -36,7 +36,7 @@ Um usuário mal-intencionado poderá desenvolver um ataque de objetivo de permit
 3. O usuário é redirecionado (pelo site) para ``http://nerddiner.com/Account/LogOn`` (site mal-intencionado que se parece com um site real).
 4. O usuário fizer logon novamente (fornecendo mal-intencionado suas credenciais do site) e é redirecionado para o site real.
 
-O usuário provavelmente vai achar sua primeira tentativa de logon falha, e sua segunda foi bem-sucedida. Eles provavelmente permanecem sem reconhecimento de suas credenciais foram comprometidas.
+O usuário provavelmente vai achar sua primeira tentativa de logon falha, e sua segunda foi bem-sucedida. Provavelmente permanecerá não reconhecem as credenciais foram comprometidas.
 
 ![Processo de ataques de redirecionamento aberto](preventing-open-redirects/_static/open-redirection-attack-process.png)
 

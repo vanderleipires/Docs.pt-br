@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 13211ee4543e17a4bfb2f83495f4041880f37df2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d6102dd81589e41894d8ecd95bf9ddd761a65bd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>ASP.NET Web API 2 de teste de unidade
 ====================
@@ -118,7 +118,7 @@ Substitua o código existente pelo código a seguir. Para simplificar este exemp
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample2.cs)]
 
-O método GetProduct retorna uma instância do **IHttpActionResult** interface. IHttpActionResult é um dos novos recursos no API Web 2, e ele simplifica o desenvolvimento de teste de unidade. Classes que implementam a interface IHttpActionResult são encontradas no [Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx) namespace. Essas classes representam as respostas possíveis de uma solicitação de ação e eles correspondem aos códigos de status HTTP.
+O método GetProduct retorna uma instância do **IHttpActionResult** interface. IHttpActionResult é um dos novos recursos no API Web 2, e ele simplifica o desenvolvimento de teste de unidade. Classes que implementam a interface IHttpActionResult são encontradas no [Results](https://msdn.microsoft.com/library/system.web.http.results.aspx) namespace. Essas classes representam as respostas possíveis de uma solicitação de ação e eles correspondem aos códigos de status HTTP.
 
 Compile a solução.
 

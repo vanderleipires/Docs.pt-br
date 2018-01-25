@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 31d83a11488212ab0ff83494d5e896ffcbeaa8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b97834e3e287645151bf927996fde63d93ae8356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Migrando para o SQL Server - 10 12
 ====================
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial mostra como migrar do SQL Server Compact para o SQL Server. Um motivo, que talvez você queira fazer isso é tirar proveito dos recursos do SQL Server que o SQL Server Compact não dá suporte, como procedimentos armazenados, disparadores, exibições ou replicação. Para obter mais informações sobre as diferenças entre o SQL Server Compact e SQL Server, consulte o [Implantando o SQL Server Compact](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md) tutorial.
 
@@ -37,7 +37,7 @@ Este tutorial mostra como migrar do SQL Server Compact para o SQL Server. Um mot
 
 Depois que você decidir atualizar para SQL Server, você talvez queira usar o SQL Server ou SQL Server Express em seus ambientes de desenvolvimento e teste. Além das diferenças no suporte a ferramentas e nos recursos do mecanismo de banco de dados, há diferenças em implementações do provedor do SQL Server Compact e outras versões do SQL Server. Essas diferenças podem causar o mesmo código gerar resultados diferentes. Portanto, se você optar por manter o SQL Server Compact como seu banco de dados de desenvolvimento, você deve testar completamente seu site no SQL Server ou SQL Server Express em um ambiente de teste antes de cada implantação de produção.
 
-Ao contrário do SQL Server Compact, SQL Server Express é essencialmente o mesmo mecanismo de banco de dados e usa o mesmo provedor de .NET como completo do SQL Server. Quando você testar com o SQL Server Express, você pode ter certeza de obter os mesmos resultados, assim como você com o SQL Server. Você pode usar a maioria das mesmas ferramentas de banco de dados com o SQL Server Express que você pode usar com o SQL Server (uma exceção notável sendo [SQL Server Profiler](https://msdn.microsoft.com/en-us/library/ms181091.aspx)), e oferece suporte a outros recursos do SQL Server, como procedimentos armazenados, exibições, gatilhos, e a replicação. (Você normalmente precisa usar completo do SQL Server em um site de produção, no entanto. SQL Server Express pode ser executado em um ambiente de hospedagem compartilhado, mas não foi projetado para fazer isso e muitos provedores de hospedagem não oferecem suporte a ele.)
+Ao contrário do SQL Server Compact, SQL Server Express é essencialmente o mesmo mecanismo de banco de dados e usa o mesmo provedor de .NET como completo do SQL Server. Quando você testar com o SQL Server Express, você pode ter certeza de obter os mesmos resultados, assim como você com o SQL Server. Você pode usar a maioria das mesmas ferramentas de banco de dados com o SQL Server Express que você pode usar com o SQL Server (uma exceção notável sendo [SQL Server Profiler](https://msdn.microsoft.com/library/ms181091.aspx)), e oferece suporte a outros recursos do SQL Server, como procedimentos armazenados, exibições, gatilhos, e a replicação. (Você normalmente precisa usar completo do SQL Server em um site de produção, no entanto. SQL Server Express pode ser executado em um ambiente de hospedagem compartilhado, mas não foi projetado para fazer isso e muitos provedores de hospedagem não oferecem suporte a ele.)
 
 Se você estiver usando o Visual Studio 2012, você normalmente escolher SQL Server Express LocalDB para seu ambiente de desenvolvimento porque esse é o que é instalado por padrão com o Visual Studio. No entanto, o LocalDB não funciona no IIS, para seu ambiente de teste, você precisará usar o SQL Server ou SQL Server Express.
 
@@ -57,9 +57,9 @@ Lembrete: Se você receber uma mensagem de erro ou algo não funciona ao percorr
 
 SQL Server Express é instalado automaticamente por padrão com o Visual Studio 2010, mas, por padrão ele não é instalado com o Visual Studio 2012. Para instalar o SQL Server 2012 Express, clique no link a seguir
 
-- [O SQL Server Express 2012](https://www.microsoft.com/en-us/download/details.aspx?id=29062)
+- [SQL Server Express 2012](https://www.microsoft.com/download/details.aspx?id=29062)
 
-Escolha *x64/ENU/SQLEXPR\_x64\_ENU.exe* ou *ENU/x86/SQLEXPR\_x86\_ENU.exe*e no Assistente de instalação, aceite o padrão Configurações. Para obter mais informações sobre opções de instalação, consulte [instalar o SQL Server 2012 do Assistente de instalação (instalação)](https://msdn.microsoft.com/en-us/library/ms143219.aspx).
+Escolha *x64/ENU/SQLEXPR\_x64\_ENU.exe* ou *ENU/x86/SQLEXPR\_x86\_ENU.exe*e no Assistente de instalação, aceite o padrão Configurações. Para obter mais informações sobre opções de instalação, consulte [instalar o SQL Server 2012 do Assistente de instalação (instalação)](https://msdn.microsoft.com/library/ms143219.aspx).
 
 ## <a name="creating-sql-server-express-databases-for-the-test-environment"></a>Criando bancos de dados do SQL Server Express para o ambiente de teste
 

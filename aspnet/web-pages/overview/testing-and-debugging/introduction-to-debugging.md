@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 2bc1f096540d17095ef760eed67b458fcd4e1372
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b6b5a886efe515b434948dade1ae840ddaecd42
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>Introdução à depuração da Web do ASP.NET páginas Sites (Razor)
 ====================
@@ -71,7 +71,7 @@ O `ServerInfo` auxiliar é uma ferramenta de diagnóstico que fornece uma visão
     - Informações de tempo de execução HTTP. Esta seção fornece detalhes sobre o que a versão do Microsoft .NET Framework que sua página da web está em execução no, o caminho, detalhes sobre o cache e assim por diante. (Como você aprendeu em [Introdução ao ASP.NET Web programação usando a sintaxe do Razor](https://go.microsoft.com/fwlink/?LinkId=202890), páginas da Web ASP.NET usando o Razor sintaxe baseiam-se na tecnologia ASP.NET da Microsoft web server, que também é criado em uma ampla de software biblioteca de desenvolvimento chamado o .NET Framework.)
     - Variáveis de ambiente. Esta seção fornece uma lista de todas as variáveis de ambiente local e seus valores no servidor web.
 
-    Uma descrição completa de todas as informações de solicitação e o servidor está além do escopo deste artigo, mas você pode ver que o `ServerInfo` auxiliar retorna várias informações de diagnóstico. Para obter mais informações sobre os valores que `ServerInfo` retorna, consulte [variáveis de ambiente reconhecido](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx) no site da Microsoft TechNet e [variáveis de servidor IIS](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx) no site do MSDN.
+    Uma descrição completa de todas as informações de solicitação e o servidor está além do escopo deste artigo, mas você pode ver que o `ServerInfo` auxiliar retorna várias informações de diagnóstico. Para obter mais informações sobre os valores que `ServerInfo` retorna, consulte [variáveis de ambiente reconhecido](https://technet.microsoft.com/library/dd560744(WS.10).aspx) no site da Microsoft TechNet e [variáveis de servidor IIS](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) no site do MSDN.
 
 ## <a name="embedding-output-expressions-to-display-page-values"></a>Expressões de saída inserido para exibir valores de página
 
@@ -93,7 +93,7 @@ O `ServerInfo` auxiliar é uma ferramenta de diagnóstico que fornece uma visão
 
     A página exibe o dia da semana real pela primeira vez, em seguida, atualizado dia da semana que resulta da adição de um dia e, em seguida, a mensagem resultante do `switch` instrução. A saída das duas expressões de variável (`@weekday`) não têm espaços entre os dias porque você não adicionou qualquer HTML `<p>` marcas para a saída; as expressões são apenas para teste.
 
-    ![Depuração-2](introduction-to-debugging/_static/image2.jpg)
+    ![Debugging-2](introduction-to-debugging/_static/image2.jpg)
 
     Agora você pode ver onde está o erro. Quando você exibe primeiro os `weekday` variável no código, ele mostra o dia correto. Quando você exibi-lo na segunda vez, após o `if` bloco no código, o dia é desativada por um. Para que você saiba que algo ocorreu entre o primeiro e segundo o aparecimento da variável de dia da semana. Se esse fosse um bug real, esse tipo de abordagem seria ajudá-lo a restringir o local do código que está causando o problema.
 6. Corrija o código na página removendo as expressões de dois saída adicionado e removendo o código que altera o dia da semana. O restante, concluído o bloco de código parece com o exemplo a seguir:
@@ -139,5 +139,5 @@ Para obter informações sobre como usar o depurador integrado no Visual Studio 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - [Programação de páginas da Web do ASP.NET (Razor) usando o Visual Studio](https://go.microsoft.com/fwlink/?LinkId=205854)
-- [Variáveis de servidor IIS](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx) (MSDN)
-- [Reconhecido variáveis de ambiente](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx) (TechNet)
+- [Variáveis de servidor IIS](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) (MSDN)
+- [Reconhecido variáveis de ambiente](https://technet.microsoft.com/library/dd560744(WS.10).aspx) (TechNet)

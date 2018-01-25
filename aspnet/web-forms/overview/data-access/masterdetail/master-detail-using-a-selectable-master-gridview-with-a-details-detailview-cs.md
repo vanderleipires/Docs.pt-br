@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: badf9da0e9a26d185e7532b02f53a8acea60ea91
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f0d380ee411116844f42a542c12050513721eb1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>Mestre/detalhes usando um GridView mestre selecionável com um Details DetailView (c#)
 ====================
@@ -39,7 +39,7 @@ No [tutorial anterior](master-detail-filtering-across-two-pages-cs.md) vimos com
 
 ## <a name="step-1-creating-a-selectable-gridview"></a>Etapa 1: Criando um controle GridView selecionável
 
-Lembre-se que o mestre/detalhes duas páginas de relatório que cada registro mestre incluído um hyperlink que, quando clicado, enviado ao usuário para a página de detalhes, passando a linha clicada `SupplierID` valor na querystring. Esse tipo de hiperlink foi adicionado a cada linha GridView usando um HyperLinkField. Para o relatório de detalhes/mestre única página, será necessário um botão para cada GridView linha que, quando clicado, mostra os detalhes. O controle GridView pode ser configurado para incluir um botão de seleção para cada linha que causa um postback e marca a linha como o GridView [SelectedRow](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedrow.aspx).
+Lembre-se que o mestre/detalhes duas páginas de relatório que cada registro mestre incluído um hyperlink que, quando clicado, enviado ao usuário para a página de detalhes, passando a linha clicada `SupplierID` valor na querystring. Esse tipo de hiperlink foi adicionado a cada linha GridView usando um HyperLinkField. Para o relatório de detalhes/mestre única página, será necessário um botão para cada GridView linha que, quando clicado, mostra os detalhes. O controle GridView pode ser configurado para incluir um botão de seleção para cada linha que causa um postback e marca a linha como o GridView [SelectedRow](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedrow.aspx).
 
 Comece adicionando um controle GridView para o `DetailsBySelecting.aspx` página o `Filtering` pasta, definindo seu `ID` propriedade `ProductsGrid`. Em seguida, adicione um novo ObjectDataSource denominado `AllProductsDataSource` que invoca o `ProductsBLL` da classe `GetProducts()` método.
 
@@ -85,7 +85,7 @@ A opção Habilitar seleção de verificação adiciona uma CommandField para o 
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/samples/sample2.aspx)]
 
-Quando o botão de seleção de uma linha GridView é clicado um postback tem lugar e a GridView `SelectedRow` propriedade é atualizada. Além de `SelectedRow` propriedade GridView fornece o [SelectedIndex](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), e [SelectedDataKey](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) propriedades. O `SelectedIndex` propriedade retorna o índice da linha selecionada, enquanto o `SelectedValue` e `SelectedDataKey` propriedades retornam valores com base no GridView [propriedade DataKeyNames](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx).
+Quando o botão de seleção de uma linha GridView é clicado um postback tem lugar e a GridView `SelectedRow` propriedade é atualizada. Além de `SelectedRow` propriedade GridView fornece o [SelectedIndex](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), e [SelectedDataKey](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) propriedades. O `SelectedIndex` propriedade retorna o índice da linha selecionada, enquanto o `SelectedValue` e `SelectedDataKey` propriedades retornam valores com base no GridView [propriedade DataKeyNames](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx).
 
 O `DataKeyNames` propriedade é usada para associar um ou mais campos de dados com cada linha de valores e é comumente usado para informações de identificação exclusivo de dados subjacentes com cada linha GridView de atributo. O `SelectedValue` propriedade retorna o valor do primeiro `DataKeyNames` campo de dados para a linha selecionada enquanto o `SelectedDataKey` propriedade retorna a linha selecionada `DataKey` objeto, que contém todos os valores para os campos de chave de dados especificado Essa linha.
 

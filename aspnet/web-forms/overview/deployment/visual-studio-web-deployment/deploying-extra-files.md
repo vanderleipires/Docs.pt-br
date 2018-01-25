@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: a34607b25f6cf502f5fbf2fe51bf1937f470159e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46e18ba81c3db8bb04c5cb997bcc1607e4e38bae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>Implantação de Web do ASP.NET usando o Visual Studio: Implantando arquivos extras
 ====================
@@ -27,7 +27,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial mostra como estender o Visual Studio web publicar pipeline para fazer uma tarefa adicional durante a implantação. A tarefa é copiar os arquivos adicionais que não estão na pasta do projeto para o site de destino.
 
@@ -83,13 +83,13 @@ Isso conclui esta série de tutoriais sobre como implantar um aplicativo da web 
 
 ## <a name="more-information"></a>Mais informações
 
-Se você souber como trabalhar com arquivos do MSBuild, você pode automatizar muitas outras tarefas de implantação, escrevendo código no *. pubxml* arquivos (para tarefas específicas do perfil) ou o projeto *. wpp.targets* arquivo (para as tarefas aplica a todos os perfis). Para obter mais informações sobre *. pubxml* e *. wpp.targets* arquivos, consulte [como: Editar configurações de implantação nos arquivos de perfil de publicação (. pubxml) e o. wpp.targets arquivo da Web do Visual Studio Projetos](https://msdn.microsoft.com/en-us/library/ff398069). Para obter uma introdução básica para o código do MSBuild, consulte **a anatomia de um arquivo de projeto** na [série de implantação corporativa: Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Para saber como trabalhar com arquivos de MSBuild para executar tarefas para seus próprios cenários, consulte este livro: [dentro do Microsoft Build Engine: usando MSBuild e o Team Foundation Build](http://msbuildbook.com) Sayed Hashimi de Ibraham e William Bartholomew.
+Se você souber como trabalhar com arquivos do MSBuild, você pode automatizar muitas outras tarefas de implantação, escrevendo código no *. pubxml* arquivos (para tarefas específicas do perfil) ou o projeto *. wpp.targets* arquivo (para as tarefas aplica a todos os perfis). Para obter mais informações sobre *. pubxml* e *. wpp.targets* arquivos, consulte [como: Editar configurações de implantação nos arquivos de perfil de publicação (. pubxml) e o. wpp.targets arquivo da Web do Visual Studio Projetos](https://msdn.microsoft.com/library/ff398069). Para obter uma introdução básica para o código do MSBuild, consulte **a anatomia de um arquivo de projeto** na [série de implantação corporativa: Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Para saber como trabalhar com arquivos de MSBuild para executar tarefas para seus próprios cenários, consulte este livro: [dentro do Microsoft Build Engine: usando MSBuild e o Team Foundation Build](http://msbuildbook.com) Sayed Hashimi de Ibraham e William Bartholomew.
 
 ## <a name="acknowledgements"></a>Confirmações
 
 Gostaria de agradecer seguintes pessoas que fizeram contribuições significativas para o conteúdo desta série tutorial:
 
-- [Alberto Poblacion, MVP &amp; MCT, Espanha](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion, MVP &amp; MCT, Espanha](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - Jarod Ferguson, MVP de desenvolvimento de plataforma de dados, EUA
 - Adversos Mittal, Microsoft
 - [Jon Galloway](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))

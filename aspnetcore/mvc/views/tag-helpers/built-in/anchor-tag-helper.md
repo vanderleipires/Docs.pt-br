@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 7923876c792544ac4d559eb8de29475d8a4b37e0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 74609b515936ec7da8bfc133c27cb69f51311924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="anchor-tag-helper"></a>Auxiliar de marca de âncora
 
@@ -44,7 +44,7 @@ A marcação gerada será:
 <a href="/Speaker">All Speakers</a>
 ```
 
-Se o `asp-controller` for especificado e `asp-action` não, é o padrão `asp-action` será o método do controlador padrão do modo de exibição atualmente em execução. Que é, no exemplo acima, se `asp-action` é à esquerda, e este auxiliar de marca de âncora é gerado a partir *HomeController*do `Index` exibição (**/home**), a marcação gerada será:
+Se o `asp-controller` for especificado e `asp-action` não estiver, o padrão `asp-action` será o método do controlador padrão do modo de exibição atualmente em execução. Que é, no exemplo acima, se `asp-action` é à esquerda, e este auxiliar de marca de âncora é gerado a partir *HomeController*do `Index` exibição (**/home**), a marcação gerada será:
 
 ```html
 <a href="/Home">All Speakers</a>
@@ -99,7 +99,7 @@ https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 
 ### <a name="asp-route-value"></a>asp-route-{value}
 
-`asp-route-`é um prefixo de rota de curinga. Qualquer valor colocado após o traço à direita será interpretado como um parâmetro de rota potencial. Se uma rota padrão não for encontrada, esse prefixo de rota será anexado para o href gerado como um parâmetro de solicitação e um valor. Caso contrário, ele será substituído no modelo de rota.
+`asp-route-`é um prefixo de rota de curinga. Qualquer valor colocado após o traço à direita será interpretado como um parâmetro de rota potencial. Se não for encontrada uma rota padrão, esse prefixo de rota será anexado para o href gerado como um parâmetro de solicitação e um valor. Caso contrário, ele será substituído no modelo de rota.
 
 Supondo que você tenha um método de controlador definido da seguinte maneira:
 
@@ -142,7 +142,7 @@ O código HTML gerado será da seguinte maneira porque **id** foi encontrado na 
 <a href='/Speaker/Detail/12'>SpeakerId: 12</a>
 ```
 
-Se o prefixo da rota não é parte do modelo de roteamento encontrado, que é o caso com o seguinte **cshtml** arquivo:
+Se o prefixo da rota não faz parte do modelo de roteamento encontrado, que é o caso com o seguinte **cshtml** arquivo:
 
 ```cshtml
 @model SpeakerData
@@ -164,7 +164,7 @@ Se qualquer um dos `asp-controller` ou `asp-action` não forem especificados, e 
 
 `asp-route`Fornece uma maneira de criar uma URL que vincula-se diretamente a uma rota nomeada. Usando atributos de roteamento, uma rota pode ser nomeada como mostra o `SpeakerController` e usado em seu `Evaluations` método.
 
-`Name = "speakerevals"`informa o auxiliar de marca de âncora para gerar uma rota diretamente para esse método de controlador usando a URL `/Speaker/Evaluations`. Se `asp-controller` ou `asp-action` é especificado além `asp-route`, a rota gerada não pode ser o esperado. `asp-route`não deve ser usada com qualquer um dos atributos `asp-controller` ou `asp-action` para evitar um conflito de rota.
+`Name = "speakerevals"`informa o auxiliar de marca de âncora para gerar uma rota diretamente para esse método de controlador usando a URL `/Speaker/Evaluations`. Se `asp-controller` ou `asp-action` é especificado além `asp-route`, a rota gerada não pode ser o esperado. `asp-route`não deve ser usado com qualquer um dos atributos `asp-controller` ou `asp-action` para evitar um conflito de rota.
 
 ### <a name="asp-all-route-data"></a>asp-all-route-data
 

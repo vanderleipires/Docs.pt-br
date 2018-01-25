@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b24297fd6efcb794e7d5a50076ca176689f74845
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9523fe5b241b6ff45927f142eb844a716822336b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="control-id-naming-in-content-pages-vb"></a>ID de controle de nomenclatura em páginas de conteúdo (VB)
 ====================
@@ -34,7 +34,7 @@ Todos os controles de servidor ASP.NET incluem um `ID` propriedade que identific
 Para lidar com esses cenários, o ASP.NET permite que determinados controles para ser marcado como contêiners de nomeação. Um contêiner de nomenclatura serve como um novo `ID` namespace. Os controles de servidor que aparecem no contêiner de nomeação têm seus renderizado `id` valor prefixado com o `ID` do controle no contêiner de nomenclatura. Por exemplo, o `GridView` e `GridViewRow` classes são ambos os contêineres de nomenclatura. Consequentemente, um controle de rótulo definido em um GridView TemplateField com `ID` `ProductName` recebe um renderizado `id` valor `GridViewID_GridViewRowID_ProductName`. Porque *GridViewRowID* é exclusivo para cada linha em GridView, resultante `id` valores sejam exclusivos.
 
 > [!NOTE]
-> O [ `INamingContainer` interface](https://msdn.microsoft.com/en-us/library/system.web.ui.inamingcontainer.aspx) é usado para indicar que um determinado controle de servidor ASP.NET deve funcionar como um contêiner de nomenclatura. O `INamingContainer` interface ortográfica não-out de todos os métodos que o controle de servidor deve implementar; em vez disso, ele é usado como um marcador. Para gerar a marcação renderizada, se um controle implementa esta interface, em seguida, o mecanismo do ASP.NET automaticamente prefixos seu `ID` valor para seus descendentes processado `id` valores de atributo. Esse processo é abordado em mais detalhes na etapa 2.
+> O [ `INamingContainer` interface](https://msdn.microsoft.com/library/system.web.ui.inamingcontainer.aspx) é usado para indicar que um determinado controle de servidor ASP.NET deve funcionar como um contêiner de nomenclatura. O `INamingContainer` interface ortográfica não-out de todos os métodos que o controle de servidor deve implementar; em vez disso, ele é usado como um marcador. Para gerar a marcação renderizada, se um controle implementa esta interface, em seguida, o mecanismo do ASP.NET automaticamente prefixos seu `ID` valor para seus descendentes processado `id` valores de atributo. Esse processo é abordado em mais detalhes na etapa 2.
 
 
 Contêineres de nomenclatura não apenas alterar o renderizado `id` valor de atributo, mas também afeta como o controle pode ser referenciado por meio de programação de classe de code-behind da página ASP.NET. O `FindControl("controlID")` método normalmente é usado para referenciar programaticamente um controle da Web. No entanto, `FindControl` não entrem por meio de contêineres de nomenclatura. Consequentemente, você não pode usar diretamente o `Page.FindControl` método para fazer referência a controles em um controle GridView ou outro contêiner de nomenclatura.
@@ -121,7 +121,7 @@ Observe que o `id` atributo inclui os dois da página mestra `ID` valor (`ctl00`
 
 Cada controle de servidor ASP.NET inclui um `FindControl("controlID")` método que procura os descendentes do controle para um controle chamado *controlID*. Se um controle como for encontrado, ele é retornado; Se nenhum controle correspondente for encontrado, `FindControl` retorna `Nothing`.
 
-`FindControl`é útil em cenários em que é necessário um controle de acesso, mas você não tem uma referência direta a ele. Ao trabalhar com dados de controles da Web como o GridView, por exemplo, os controles dentro dos campos do GridView são definidos uma vez na sintaxe declarativa, mas no tempo de execução de uma instância do controle é criada para cada linha em GridView. Consequentemente, os controles gerados em tempo de execução existem, mas não temos uma referência direta disponível na classe code-behind. Como resultado, precisamos usar `FindControl` para trabalhar programaticamente com um controle específico dentro dos campos do GridView. (Para obter mais informações sobre como usar `FindControl` para acessar os controles nos modelos de um controle da Web de dados, consulte [personalizado formatação com base em dados](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md).) Esse mesmo cenário ocorre ao adicionar dinamicamente controles da Web a um formulário da Web, um tópico discutido em [criação dinâmica dados de entrada de Interfaces de usuário](https://msdn.microsoft.com/en-us/library/aa479330.aspx).
+`FindControl`é útil em cenários em que é necessário um controle de acesso, mas você não tem uma referência direta a ele. Ao trabalhar com dados de controles da Web como o GridView, por exemplo, os controles dentro dos campos do GridView são definidos uma vez na sintaxe declarativa, mas no tempo de execução de uma instância do controle é criada para cada linha em GridView. Consequentemente, os controles gerados em tempo de execução existem, mas não temos uma referência direta disponível na classe code-behind. Como resultado, precisamos usar `FindControl` para trabalhar programaticamente com um controle específico dentro dos campos do GridView. (Para obter mais informações sobre como usar `FindControl` para acessar os controles nos modelos de um controle da Web de dados, consulte [personalizado formatação com base em dados](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md).) Esse mesmo cenário ocorre ao adicionar dinamicamente controles da Web a um formulário da Web, um tópico discutido em [criação dinâmica dados de entrada de Interfaces de usuário](https://msdn.microsoft.com/library/aa479330.aspx).
 
 Para ilustrar o uso de `FindControl` método para procurar controles em uma página de conteúdo, crie um manipulador de eventos para o `SubmitButton`do `Click` evento. No manipulador de eventos, adicione o seguinte código, que faz referência a programaticamente o `Age` caixa de texto e `Results` rótulo usando o `FindControl` método e, em seguida, exibe uma mensagem em `Results` com base na entrada do usuário.
 
@@ -228,7 +228,7 @@ Lembre-se que, no ASP.NET, páginas que não têm um contêiner de nomeação, o
 
 O problema com essa abordagem é que, ao usar páginas mestras (ou outros controles de contêiner de nomenclatura), o HTML renderizado `id` não é sinônimo do controle da Web `ID` propriedade. Sua primeira opção pode ser para visitar a página por meio de um navegador e exibir o código-fonte para determinar o valor real `id` atributo. Depois que você sabe o renderizado `id` valor, você pode colá-lo na chamada a `getElementById` para acessar o elemento HTML que você precisa para trabalhar com por meio de script do lado do cliente. Essa abordagem é inferior ao ideal porque a hierarquia de controle de determinadas alterações para a página ou alterações a `ID` propriedades dos controles de nomenclatura alterará resultante `id` atributo, assim, seu código JavaScript de quebra.
 
-A boa notícia é que o `id` valor de atributo que é renderizado está acessível no código do lado do servidor por meio do controle da Web [ `ClientID` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.control.clientid.aspx). Você deve usar essa propriedade para determinar a `id` usado no script do lado do cliente de valor de atributo. Por exemplo, para adicionar uma função JavaScript para a página que, quando chamado, exibe o valor da `Age` caixa de texto em uma caixa de mensagem modal, adicione o seguinte código para o `Page_Load` manipulador de eventos:
+A boa notícia é que o `id` valor de atributo que é renderizado está acessível no código do lado do servidor por meio do controle da Web [ `ClientID` propriedade](https://msdn.microsoft.com/library/system.web.ui.control.clientid.aspx). Você deve usar essa propriedade para determinar a `id` usado no script do lado do cliente de valor de atributo. Por exemplo, para adicionar uma função JavaScript para a página que, quando chamado, exibe o valor da `Age` caixa de texto em uma caixa de mensagem modal, adicione o seguinte código para o `Page_Load` manipulador de eventos:
 
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample15.vb)]
@@ -241,7 +241,7 @@ O código acima, o valor de injeta o `Age` da caixa de texto `ClientID` propried
 Observe como o correto `id` valor do atributo, `ctl00_MainContent_Age`, é exibido na chamada para `getElementById`. Como esse valor é calculado em tempo de execução, ele funciona independentemente das alterações mais recente para a hierarquia de controle de página.
 
 > [!NOTE]
-> Este exemplo de JavaScript simplesmente mostra como adicionar uma função JavaScript que referencia corretamente o elemento HTML renderizado por um controle de servidor. Para usar essa função, você precisaria criar JavaScript adicional para chamar a função quando o documento for carregado ou quando ocorre uma ação de usuário específico. Para obter mais informações sobre esses tópicos relacionados, ler e [trabalhando com Script do lado do cliente](https://msdn.microsoft.com/en-us/library/aa479302.aspx).
+> Este exemplo de JavaScript simplesmente mostra como adicionar uma função JavaScript que referencia corretamente o elemento HTML renderizado por um controle de servidor. Para usar essa função, você precisaria criar JavaScript adicional para chamar a função quando o documento for carregado ou quando ocorre uma ação de usuário específico. Para obter mais informações sobre esses tópicos relacionados, ler e [trabalhando com Script do lado do cliente](https://msdn.microsoft.com/library/aa479302.aspx).
 
 
 ## <a name="summary"></a>Resumo
@@ -257,11 +257,11 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [Páginas mestras do ASP.NET e`FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
-- [Criando Interfaces de usuário de entrada de dados dinâmicos](https://msdn.microsoft.com/en-us/library/aa479330.aspx)
+- [Criando Interfaces de usuário de entrada de dados dinâmicos](https://msdn.microsoft.com/library/aa479330.aspx)
 - [Estendendo a funcionalidade do tipo Base com métodos de extensão](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
-- [Como: Fazer referência a conteúdo da página mestra ASP.NET](https://msdn.microsoft.com/en-us/library/xxwa0ff0.aspx)
+- [Como: Fazer referência a conteúdo da página mestra ASP.NET](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
 - [De formação páginas: Dicas, truques e interceptações](http://www.odetocode.com/articles/450.aspx)
-- [Trabalhando com Script do lado do cliente](https://msdn.microsoft.com/en-us/library/aa479302.aspx)
+- [Trabalhando com Script do lado do cliente](https://msdn.microsoft.com/library/aa479302.aspx)
 
 ### <a name="about-the-author"></a>Sobre o autor
 

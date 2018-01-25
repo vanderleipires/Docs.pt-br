@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4f49c201c71ca8f98d7e15b29f1df9a6bcd1b12e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eb462a0e8ce88037855ea12d00c1afc0419fa04e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>Incluindo uma opção de carregamento de arquivo ao adicionar um novo registro (VB)
 ====================
@@ -176,7 +176,7 @@ Se um usuário carrega um tipo de arquivo incorreto, é preciso cancelar a inser
 
 ## <a name="step-6-saving-the-uploaded-brochure-to-the-web-server-s-file-system"></a>Etapa 6: Salvar a publicação carregada para o sistema de arquivo do Web Server s
 
-Quando o usuário insere os valores para uma nova categoria e clica no botão de inserção, ocorre um postback e inserindo o fluxo de trabalho é revelado. Primeiro, o s DetailsView [ `ItemInserting` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx) é acionado. Em seguida, o s ObjectDataSource `Insert()` método é chamado, o que resulta em um novo registro que está sendo adicionado para o `Categories` tabela. Depois disso, o s DetailsView [ `ItemInserted` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx) é acionado.
+Quando o usuário insere os valores para uma nova categoria e clica no botão de inserção, ocorre um postback e inserindo o fluxo de trabalho é revelado. Primeiro, o s DetailsView [ `ItemInserting` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx) é acionado. Em seguida, o s ObjectDataSource `Insert()` método é chamado, o que resulta em um novo registro que está sendo adicionado para o `Categories` tabela. Depois disso, o s DetailsView [ `ItemInserted` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx) é acionado.
 
 Antes do s ObjectDataSource `Insert()` método é invocado, deve primeiro, certifique-se de que os tipos de arquivo apropriado foram carregados pelo usuário e, em seguida, salvar a publicação PDF para o sistema de arquivos do servidor s da web. Criar um manipulador de eventos para o s DetailsView `ItemInserting` evento e adicione o seguinte código:
 
@@ -191,7 +191,7 @@ O manipulador de eventos começa consultando o `BrochureUpload` controle de carr
 
 Como discutido o [carregando arquivos](uploading-files-vb.md) tutorial, deve ter cuidado ao salvar arquivos para o sistema de arquivos para esse carregamento de um usuário s não substitua s outro. Para este tutorial, tentará usar o mesmo nome como o arquivo carregado. Se já existe um arquivo de `~/Brochures` diretório com esse mesmo nome de arquivo, no entanto, podemos vai acrescentar um número no final até encontra um nome exclusivo. Por exemplo, se o usuário carrega um arquivo de publicação nomeado `Meats.pdf`, mas já existe um arquivo chamado `Meats.pdf` no `~/Brochures` pasta, vamos alterar o nome do arquivo salvo para `Meats-1.pdf`. Se existente, tentaremos `Meats-2.pdf`, e assim por diante, até encontra um nome de arquivo exclusivo.
 
-O código a seguir usa o [ `File.Exists(path)` método](https://msdn.microsoft.com/en-us/library/system.io.file.exists.aspx) para determinar se um arquivo já existe com o nome de arquivo especificado. Nesse caso, ele continuará a tentar novos nomes de arquivo para a publicação até que nenhum conflito foi encontrado.
+O código a seguir usa o [ `File.Exists(path)` método](https://msdn.microsoft.com/library/system.io.file.exists.aspx) para determinar se um arquivo já existe com o nome de arquivo especificado. Nesse caso, ele continuará a tentar novos nomes de arquivo para a publicação até que nenhum conflito foi encontrado.
 
 
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample7.vb)]

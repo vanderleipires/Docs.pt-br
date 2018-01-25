@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 69ffafc7f92cda75c001fe1098275766063113fb
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: eee84fe0fbec6ed772342d09931986994903906a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>Manipulando conflitos de simultaneidade - Core de EF com o tutorial do MVC do ASP.NET Core (8 de 10)
 
@@ -63,7 +63,7 @@ Algumas das opções incluem o seguinte:
 
 * Você pode deixar a alteração de John substituir a alteração de Jane.
 
-     Na próxima vez que alguém procura o departamento de inglês, ele verá 1/9/2013 e o valor de US $350,000.00 restaurado. Isso é chamado de um *cliente ganha* ou *última no Wins* cenário. (Todos os valores do cliente têm precedência sobre o que está no repositório de dados.) Conforme observado na introdução a esta seção se você não fizer nenhuma codificação para manipulação de simultaneidade, isso acontecerá automaticamente.
+     Na próxima vez que alguém procura o departamento de inglês, eles verão 1/9/2013 e o valor de US $350,000.00 restaurado. Isso é chamado de um *cliente ganha* ou *última no Wins* cenário. (Todos os valores do cliente têm precedência sobre o que está no repositório de dados.) Conforme observado na introdução a esta seção se você não fizer nenhuma codificação para manipulação de simultaneidade, isso acontecerá automaticamente.
 
 * Você pode impedir que alterações de John sendo atualizado no banco de dados.
 

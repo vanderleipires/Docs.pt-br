@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 2d36aa78f82b4a52a7c6a152bee2c4ca9923409f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: cd86e089e4bbe0d4a18e49a9384753f4d2cd0c38
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configuring-facebook-authentication"></a>Configurar a autenticação do Facebook
 
@@ -136,7 +136,7 @@ Agora você está conectado usando suas credenciais do Facebook:
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-* **ASP.NET Core 2. x somente:** identidade se não está configurada por meio da chamada `services.AddIdentity` na `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
+* **ASP.NET Core 2. x somente:** identidade se não estiver configurada, chamando `services.AddIdentity` na `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
 * Se o banco de dados do site não tiver sido criado, aplicando a migração inicial, você obtém *uma operação de banco de dados falhou ao processar a solicitação* erro. Toque em **aplicar migrações** para criar o banco de dados e a atualização para continuar após o erro.
 
 ## <a name="next-steps"></a>Próximas etapas

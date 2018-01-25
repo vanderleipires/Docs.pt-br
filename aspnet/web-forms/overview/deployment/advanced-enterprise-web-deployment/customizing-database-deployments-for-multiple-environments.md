@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 449c448d1be237f3f95a437bb2c0415bd8ed0d99
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Personalizando as implantações de banco de dados para vários ambientes
 ====================
@@ -82,7 +82,7 @@ Esta tabela mostra as configurações de implantação típica para ambientes de
   
 
 > [!NOTE]
-> Para obter mais informações sobre propriedades de implantação de banco de dados e as considerações de ambiente, consulte [uma visão geral do banco de dados de configurações de projeto](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx), [como: configurar as propriedades para obter detalhes de implantação](https://msdn.microsoft.com/en-us/library/dd172125.aspx), [ Criar e implantar o banco de dados em um ambiente de desenvolvimento isolado](https://msdn.microsoft.com/en-us/library/dd193409.aspx), e [compilar e implantar bancos de dados em um ambiente de produção ou preparo](https://msdn.microsoft.com/en-us/library/dd193413.aspx).
+> Para obter mais informações sobre propriedades de implantação de banco de dados e as considerações de ambiente, consulte [uma visão geral do banco de dados de configurações de projeto](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx), [como: configurar as propriedades para obter detalhes de implantação](https://msdn.microsoft.com/library/dd172125.aspx), [ Criar e implantar o banco de dados em um ambiente de desenvolvimento isolado](https://msdn.microsoft.com/library/dd193409.aspx), e [compilar e implantar bancos de dados em um ambiente de produção ou preparo](https://msdn.microsoft.com/library/dd193413.aspx).
 
 
 Para dar suporte à implantação de um projeto de banco de dados para vários destinos, você deve criar um arquivo de configuração de implantação para cada ambiente de destino.
@@ -94,7 +94,7 @@ Para dar suporte à implantação de um projeto de banco de dados para vários d
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. No **novo arquivo de configuração de implantação** caixa de diálogo caixa, dê ao arquivo um nome significativo (por exemplo, **TestEnvironment.sqldeployment**) e, em seguida, clique em **salvar**.
-4. Sobre o *[Filename]***.sqldeployment** página, defina as propriedades de implantação para atender às necessidades do seu ambiente de destino e, em seguida, salve o arquivo.
+4. Sobre o *[Filename] * .sqldeployment** página, defina as propriedades de implantação para atender às necessidades do seu ambiente de destino e, em seguida, salve o arquivo.
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. Observe que o novo arquivo é adicionado à pasta propriedades em seu projeto de banco de dados.
@@ -141,10 +141,10 @@ Para obter mais informações sobre como implantar projetos de banco de dados us
 
 Esses artigos no MSDN fornecem orientação geral sobre a implantação de banco de dados:
 
-- [Uma visão geral das configurações de projeto de banco de dados](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx)
-- [Como: configurar propriedades para obter detalhes de implantação](https://msdn.microsoft.com/en-us/library/dd172125.aspx)
-- [Criar e implantar bancos de dados em um ambiente de desenvolvimento isolado](https://msdn.microsoft.com/en-us/library/dd193409.aspx)
-- [Criar e implantar bancos de dados em um ambiente de produção ou preparo](https://msdn.microsoft.com/en-us/library/dd193413.aspx)
+- [Uma visão geral das configurações de projeto de banco de dados](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
+- [Como: configurar propriedades para obter detalhes de implantação](https://msdn.microsoft.com/library/dd172125.aspx)
+- [Criar e implantar bancos de dados em um ambiente de desenvolvimento isolado](https://msdn.microsoft.com/library/dd193409.aspx)
+- [Criar e implantar bancos de dados em um ambiente de produção ou preparo](https://msdn.microsoft.com/library/dd193413.aspx)
 
 >[!div class="step-by-step"]
 [Anterior](performing-a-what-if-deployment.md)

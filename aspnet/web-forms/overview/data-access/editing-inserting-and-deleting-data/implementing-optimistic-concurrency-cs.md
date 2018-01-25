@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 50d02e8da7b7ab489e662b42d8f08ad3a99e66eb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a19e6c320838849e10d2aa397a23a0ee906bac22
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-c"></a>Implementando a concorrência otimista (c#)
 ====================
@@ -257,7 +257,7 @@ Para esses tutoriais anteriores que envolvidos modificação de dados, removerí
 > O valor de `OldValuesParameterFormatString` propriedade deve mapear para os nomes de parâmetro de entrada na BLL que espera que os valores originais. Desde que esses parâmetros nomeados `original_productName`, `original_supplierID`, e assim por diante, você pode deixar o `OldValuesParameterFormatString` valor da propriedade como `original_{0}`. Se, no entanto, os parâmetros de entrada dos métodos BLL tinham nomes como `old_productName`, `old_supplierID`, e assim por diante, você precisa atualizar o `OldValuesParameterFormatString` propriedade `old_{0}`.
 
 
-Há uma configuração de propriedade final que precisa ser feita em ordem para ObjectDataSource corretamente passar os valores originais para os métodos BLL. ObjectDataSource tem um [propriedade ConflictDetection](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) que podem ser atribuídos a [um de dois valores](https://msdn.microsoft.com/en-US/library/system.web.ui.conflictoptions.aspx):
+Há uma configuração de propriedade final que precisa ser feita em ordem para ObjectDataSource corretamente passar os valores originais para os métodos BLL. ObjectDataSource tem um [propriedade ConflictDetection](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) que podem ser atribuídos a [um de dois valores](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
 - `OverwriteChanges`-o valor padrão. não envia os valores originais para parâmetros de entrada original dos métodos BLL
 - `CompareAllValues`-envia os valores originais para os métodos BLL; Escolha esta opção ao usar a simultaneidade otimista
@@ -342,7 +342,7 @@ Com essas alterações, agora é possível excluir e editar as informações de 
 
 Para verificar se as violações de concorrência estão sendo detectado (em vez de resultando em dados que está sendo substituídos cegamente), precisamos abrir duas janelas de navegador para esta página. Em ambas as instâncias do navegador, clique no botão Editar para Chai. Em seguida, em apenas um dos navegadores, altere o nome para "Chai chá" e clique em Atualizar. A atualização deve ter êxito e retornar GridView para seu estado de edição previamente, com "Chai chá" como o novo nome do produto.
 
-A outra instância de janela do navegador, no entanto, o nome do produto TextBox ainda mostra "Chai". Essa segunda janela do navegador, atualizar o `UnitPrice` para `25.00`. Sem suporte a simultaneidade otimista, clicando em Atualizar na segunda instância de navegador alteraria o nome do produto para "Chai", substituindo as alterações feitas pela primeira instância do navegador. Com simultaneidade otimista empregada, contudo, clicando no botão de atualização na segunda instância de navegador resulta em uma [DBConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.dbconcurrencyexception.aspx).
+A outra instância de janela do navegador, no entanto, o nome do produto TextBox ainda mostra "Chai". Essa segunda janela do navegador, atualizar o `UnitPrice` para `25.00`. Sem suporte a simultaneidade otimista, clicando em Atualizar na segunda instância de navegador alteraria o nome do produto para "Chai", substituindo as alterações feitas pela primeira instância do navegador. Com simultaneidade otimista empregada, contudo, clicando no botão de atualização na segunda instância de navegador resulta em uma [DBConcurrencyException](https://msdn.microsoft.com/library/system.data.dbconcurrencyexception.aspx).
 
 
 [![Quando for detectada uma violação de concorrência, um DBConcurrencyException é gerada](implementing-optimistic-concurrency-cs/_static/image48.png)](implementing-optimistic-concurrency-cs/_static/image47.png)

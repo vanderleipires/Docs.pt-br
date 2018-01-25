@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
-ms.openlocfilehash: 7aafe4823d3a6090fae4a63f1a66fb2670ecb025
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1fcaf70cc38d73da0a454764520197b97f34b26
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="json-and-xml-serialization-in-aspnet-web-api"></a>Serialização de XML na API da Web ASP.NET e JSON
 ====================
@@ -89,7 +89,7 @@ Por padrão, o Json.NET preserva o fuso horário. Você pode substituir isso def
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample5.cs)]
 
-Se você preferir usar [formato de data do Microsoft JSON](https://msdn.microsoft.com/en-us/library/bb299886.aspx#intro_to_json_sidebarb) (`"\/Date(ticks)\/"`) em vez de ISO 8601, definir o **DateFormatHandling** propriedade nas configurações do serializador:
+Se você preferir usar [formato de data do Microsoft JSON](https://msdn.microsoft.com/library/bb299886.aspx#intro_to_json_sidebarb) (`"\/Date(ticks)\/"`) em vez de ISO 8601, definir o **DateFormatHandling** propriedade nas configurações do serializador:
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample6.cs)]
 

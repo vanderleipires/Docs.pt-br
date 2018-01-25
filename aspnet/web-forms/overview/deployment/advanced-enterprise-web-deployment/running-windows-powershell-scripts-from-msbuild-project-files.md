@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ba0655f5dc1d043b905428a3797ed141b0fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: afee7b0621df42a8bc70fc6f7c4a8fd0383fa83a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>Executando Scripts do Windows PowerShell de arquivos de projeto do MSBuild
 ====================
@@ -137,10 +137,10 @@ Quando você executa esse destino como parte do processo de compilação, o Wind
 
 ## <a name="executing-a-windows-powershell-script-on-a-remote-computer"></a>Executar um Script do Windows PowerShell em um computador remoto
 
-O Windows PowerShell é capaz de executar scripts em computadores remotos por meio de [gerenciamento remoto do Windows](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx) (WinRM). Para fazer isso, você precisa usar o [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) cmdlet. Isso permite executar o script em um ou mais computadores remotos, sem copiar o script para os computadores remotos. Todos os resultados são retornados para o computador local do qual você executou o script.
+O Windows PowerShell é capaz de executar scripts em computadores remotos por meio de [gerenciamento remoto do Windows](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx) (WinRM). Para fazer isso, você precisa usar o [Invoke-Command](https://technet.microsoft.com/library/dd347578.aspx) cmdlet. Isso permite executar o script em um ou mais computadores remotos, sem copiar o script para os computadores remotos. Todos os resultados são retornados para o computador local do qual você executou o script.
 
 > [!NOTE]
-> Antes de usar o **Invoke-Command** scripts de cmdlet para executar o Windows PowerShell em um computador remoto, você precisa configurar um ouvinte de WinRM para aceitar mensagens remotas. Você pode fazer isso executando o comando **winrm quickconfig** no computador remoto. Para obter mais informações, consulte [instalação e configuração para gerenciamento remoto do Windows](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384372(v=vs.85).aspx).
+> Antes de usar o **Invoke-Command** scripts de cmdlet para executar o Windows PowerShell em um computador remoto, você precisa configurar um ouvinte de WinRM para aceitar mensagens remotas. Você pode fazer isso executando o comando **winrm quickconfig** no computador remoto. Para obter mais informações, consulte [instalação e configuração para gerenciamento remoto do Windows](https://msdn.microsoft.com/library/windows/desktop/aa384372(v=vs.85).aspx).
 
 
 Em uma janela do Windows PowerShell, você usaria a seguinte sintaxe para executar o **LogDeploy.ps1** script em um computador remoto:
@@ -179,7 +179,7 @@ Este tópico descreveu como executar um script do Windows PowerShell de um arqui
 
 ## <a name="further-reading"></a>Leitura adicional
 
-Para obter orientação sobre como assinar scripts do Windows PowerShell e gerenciar políticas de execução, consulte [executando Scripts do Windows PowerShell](https://technet.microsoft.com/en-us/library/ee176949.aspx). Para obter orientação sobre como executar comandos do Windows PowerShell em um computador remoto, consulte [executando comandos remotos](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+Para obter orientação sobre como assinar scripts do Windows PowerShell e gerenciar políticas de execução, consulte [executando Scripts do Windows PowerShell](https://technet.microsoft.com/library/ee176949.aspx). Para obter orientação sobre como executar comandos do Windows PowerShell em um computador remoto, consulte [executando comandos remotos](https://technet.microsoft.com/library/dd819505.aspx).
 
 Para obter mais informações sobre como usar arquivos de projeto MSBuild personalizados para controlar o processo de implantação, consulte [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md) e [Noções básicas sobre o processo de compilação](../web-deployment-in-the-enterprise/understanding-the-build-process.md).
 

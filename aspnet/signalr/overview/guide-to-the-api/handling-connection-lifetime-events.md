@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 7a0a549f73ea303ec5694bb69d4eac52beb54098
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2fd9cafd8d7706807998793c3c39377fe9604266
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>Compreensão e tratamento de eventos de tempo de vida de Conexão no SignalR
 ====================
@@ -48,7 +48,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gith
 > Deixe comentários em como você gostou neste tutorial e o que podemos melhorar nos comentários na parte inferior da página. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [ASP.NET SignalR fórum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este artigo contém as seguintes seções:
 
@@ -69,7 +69,7 @@ Este artigo contém as seguintes seções:
 - [Como desconectar um cliente no código do servidor](#disconnectclientfromserver)
 - [Detectando o motivo de uma desconexão](#detectingreasonfordisconnection)
 
-Links para tópicos de referência de API são para a versão do .NET 4.5 da API. Se você estiver usando o .NET 4, consulte [a versão do .NET 4 dos tópicos da API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Links para tópicos de referência de API são para a versão do .NET 4.5 da API. Se você estiver usando o .NET 4, consulte [a versão do .NET 4 dos tópicos da API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="terminology"></a>
 

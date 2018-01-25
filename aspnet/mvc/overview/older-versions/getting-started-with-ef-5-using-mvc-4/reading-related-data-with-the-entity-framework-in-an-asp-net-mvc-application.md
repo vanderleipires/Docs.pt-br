@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f455c3656c9120f4d7e6fccdba8f705e0a1c7d35
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9093fb90a52b297f173c5cddb6f332d2d1a25135
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>Leitura relacionadas a dados com o Entity Framework em um aplicativo ASP.NET MVC (5 de 10)
 ====================
@@ -68,7 +68,7 @@ A classe de contexto de banco de dados executa carregamento preguiçoso por padr
 
     [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-Carregamento preguiçoso pode mascarar o código que causa problemas de desempenho. Por exemplo, o código que não especifica o carregamento adiantado ou explícito, mas processa um grande volume de entidades e usa várias propriedades de navegação em cada iteração pode ser muito eficiente (devido a muitos idas e voltas para o banco de dados). Um aplicativo que funciona bem em desenvolvimento usando um servidor SQL local pode ter problemas de desempenho quando movido para o banco de dados do Azure SQL devido ao aumento da latência de carregamento lento. As consultas de banco de dados com uma carga de teste realista de criação de perfil ajudará você a determinar se o carregamento lento é apropriado. Para obter mais informações, consulte [Desmistificando estratégias do Entity Framework: Carregando dados relacionados](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx) e [usando o Entity Framework para reduzir a latência de rede para o SQL Azure](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx).
+Carregamento preguiçoso pode mascarar o código que causa problemas de desempenho. Por exemplo, o código que não especifica o carregamento adiantado ou explícito, mas processa um grande volume de entidades e usa várias propriedades de navegação em cada iteração pode ser muito eficiente (devido a muitos idas e voltas para o banco de dados). Um aplicativo que funciona bem em desenvolvimento usando um servidor SQL local pode ter problemas de desempenho quando movido para o banco de dados do Azure SQL devido ao aumento da latência de carregamento lento. As consultas de banco de dados com uma carga de teste realista de criação de perfil ajudará você a determinar se o carregamento lento é apropriado. Para obter mais informações, consulte [Desmistificando estratégias do Entity Framework: Carregando dados relacionados](https://msdn.microsoft.com/magazine/hh205756.aspx) e [usando o Entity Framework para reduzir a latência de rede para o SQL Azure](https://msdn.microsoft.com/magazine/gg309181.aspx).
 
 ## <a name="create-a-courses-index-page-that-displays-department-name"></a>Criar uma página de índice de cursos esse nome de departamento exibe
 
@@ -155,9 +155,9 @@ O método aceita dados de rota opcional (`id`) e um parâmetro de cadeia de cara
 > 
 > Dados de rota são dados que o associador de modelo encontrado em um segmento de URL especificado na tabela de roteamento. Por exemplo, a rota padrão especifica `controller`, `action`, e `id` segmentos:
 > 
-> rotas. MapRoute (  
+> routes.MapRoute(  
 >  nome: "Padrão"  
->  URL: "{controller} / {action} / {id}",  
+>  url: "{controller}/{action}/{id}",  
 >  padrões: new {controlador = "Home", ação = "Index", id = UrlParameter.Optional}  
 > );
 > 
@@ -194,7 +194,7 @@ Se uma ID de instrutor foi selecionada, o instrutor selecionado é recuperado da
 
 O `Where` método retorna uma coleção, mas nesse caso os critérios são passados para o resultado em um único método `Instructor` entidade que está sendo retornada. O `Single` método converte a coleção em uma única `Instructor` entidade, que fornece acesso a essa entidade `Courses` propriedade.
 
-Você usa o [único](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx) método em uma coleção quando você souber que a coleção terá apenas um item. O `Single` método lançará uma exceção se a coleção passada para ele está vazia ou se houver mais de um item. Uma alternativa é [SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx), que retorna um valor padrão (`null` nesse caso) se a coleção está vazia. No entanto, nesse caso isso ainda resultar em uma exceção (de tentativa de encontrar um `Courses` propriedade em um `null` referência), e a mensagem de exceção menos claramente pode indicar a causa do problema. Quando você chama o `Single` método, você também pode passar do `Where` condição em vez de chamar o `Where` método separadamente:
+Você usa o [único](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx) método em uma coleção quando você souber que a coleção terá apenas um item. O `Single` método lançará uma exceção se a coleção passada para ele está vazia ou se houver mais de um item. Uma alternativa é [SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx), que retorna um valor padrão (`null` nesse caso) se a coleção está vazia. No entanto, nesse caso isso ainda resultar em uma exceção (de tentativa de encontrar um `Courses` propriedade em um `null` referência), e a mensagem de exceção menos claramente pode indicar a causa do problema. Quando você chama o `Single` método, você também pode passar do `Where` condição em vez de chamar o `Where` método separadamente:
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs)]
 

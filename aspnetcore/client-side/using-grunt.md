@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-grunt
-ms.openlocfilehash: 959a3e61af9834b9364e9fe4bf65a04962e28969
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 527373829754757e52ab84b64e04702d649e9062
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-grunt-in-aspnet-core"></a>Usando o assistente no núcleo do ASP.NET 
 
@@ -94,14 +94,14 @@ Em seguida, configure NPM para baixar pesado e tarefas do assistente.
 
 1. No Gerenciador de soluções, clique com o botão direito e selecione **Adicionar > Novo Item** no menu de contexto. Selecione o **arquivo de configuração NPM** item, deixe o nome padrão, *Package. JSON*e clique no **adicionar** botão.
 
-2. No *Package. JSON* arquivo, dentro de `devDependencies` chaves de objeto, digite "pesado". Selecione `grunt` o Intellisense de lista e pressione a tecla Enter. Visual Studio será colocada entre aspas no nome do pacote pesado e adicionar dois-pontos. À direita dos dois pontos, selecione a versão estável mais recente do pacote da parte superior da lista do Intellisense (pressione `Ctrl-Space` se o Intellisense não aparecer).
+2. No *Package. JSON* arquivo, dentro de `devDependencies` chaves de objeto, digite "pesado". Selecione `grunt` o Intellisense de lista e pressione a tecla Enter. Visual Studio será colocada entre aspas no nome do pacote pesado e adicionar dois-pontos. À direita dos dois pontos, selecione a versão estável mais recente do pacote da parte superior da lista do Intellisense (pressione `Ctrl-Space` se o Intellisense não aparece).
 
     ![grun Intellisense](using-grunt/_static/devdependencies-grunt.png)
     
     > [!NOTE]
     > Usa NPM [controle de versão semântico](http://semver.org/) para organizar as dependências. Controle de versão semântico, também conhecido como SemVer, identifica os pacotes com o esquema de numeração <major>.<minor>. <patch>. IntelliSense simplifica o controle de versão semântico, mostrando apenas algumas opções comuns. O item superior na lista do Intellisense (0.4.5 no exemplo acima) é considerado a versão estável mais recente do pacote. O símbolo de acento circunflexo (^) corresponde a mais recente versão principal e o til (~) corresponde a versão secundária mais recente. Consulte o [referência de analisador NPM semver versão](https://www.npmjs.com/package/semver) como um guia para a expressividade completa que fornece SemVer.
 
-3. Adicionar mais dependências carregar pesadom-Contribuidor -\* pacotes para *limpa*, *jshint*, *concat*, *uglify*e *inspecionar* conforme mostrado no exemplo a seguir. As versões não precisa coincidir com o exemplo.
+3. Adicionar mais dependências carregar pesadom-Contribuidor -\* pacotes para *limpa*, *jshint*, *concat*, *uglify*e *inspecionar* conforme mostrado no exemplo a seguir. As versões não precisam coincidir com o exemplo.
 
     ```json
     "devDependencies": {

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: d0b76c06495c51df3ed0f61cd318507a05240392
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5296bc1ca3fd0b24123bd79a550a7e2cffc34a44
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: implantar o SQL Server Compact bancos de dados - 2 de 12
 ====================
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial mostra como configurar dois bancos de dados do SQL Server Compact e o mecanismo de banco de dados para a implantação.
 
@@ -37,7 +37,7 @@ Para acesso ao banco de dados, o aplicativo Contoso University requer o seguinte
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/en/us/editions/compact.aspx) (o mecanismo de banco de dados).
 - [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) (que permitem que o sistema de associação do ASP.NET usar o SQL Server Compact)
-- [Entity Framework 5.0](https://msdn.microsoft.com/en-us/library/gg696172(d=lightweight,v=vs.103).aspx)(Code First com migrações).
+- [Entity Framework 5.0](https://msdn.microsoft.com/library/gg696172(d=lightweight,v=vs.103).aspx)(Code First com migrações).
 
 A estrutura de banco de dados e alguns (não todos) dos dados nas duas do aplicativo também devem ser implantados bancos de dados. Normalmente, à medida que desenvolve um aplicativo, você insere dados de teste em um banco de dados que você não deseja implantar em um site ao vivo. No entanto, você também pode inserir alguns dados de produção que você deseja implantar. Este tutorial, você configurará o projeto University Contoso para que o software necessário e os dados corretos são incluídos quando você implanta.
 
@@ -47,7 +47,7 @@ Lembrete: Se você receber uma mensagem de erro ou algo não funciona ao percorr
 
 O aplicativo de exemplo usa o SQL Server Compact 4.0. Esse mecanismo de banco de dados é uma opção relativamente nova para sites; versões anteriores do SQL Server Compact não funcionam em um ambiente de hospedagem na web. SQL Server Compact oferece alguns benefícios em comparação comparados o cenário mais comum de desenvolvimento com o SQL Server Express e implantação completa do SQL Server. Dependendo do provedor de hospedagem que você escolher, o SQL Server Compact pode ser mais barato de implantar, porque alguns fornecedores cobram extra para oferecer suporte a um banco de dados completo do SQL Server. Não há nenhum custo adicional para o SQL Server Compact porque você pode implantar o mecanismo de banco de dados como parte do seu aplicativo web.
 
-No entanto, você também deve estar atento a suas limitações. SQL Server Compact não suporta procedimentos armazenados, disparadores, exibições ou replicação. (Para obter uma lista completa dos recursos do SQL Server que não são suportados pelo SQL Server Compact, consulte [as diferenças entre o SQL Server Compact e SQL Server](https://msdn.microsoft.com/en-us/library/bb896140.aspx).) Além disso, algumas das ferramentas que você pode usar para manipular esquemas e dados no SQL Server Express e bancos de dados do SQL Server não funcionam com o SQL Server Compact. Por exemplo, você não pode usar o SQL Server Management Studio ou o SQL Server Data Tools no Visual Studio com bancos de dados do SQL Server Compact. Você tem outras opções para trabalhar com bancos de dados do SQL Server Compact:
+No entanto, você também deve estar atento a suas limitações. SQL Server Compact não suporta procedimentos armazenados, disparadores, exibições ou replicação. (Para obter uma lista completa dos recursos do SQL Server que não são suportados pelo SQL Server Compact, consulte [as diferenças entre o SQL Server Compact e SQL Server](https://msdn.microsoft.com/library/bb896140.aspx).) Além disso, algumas das ferramentas que você pode usar para manipular esquemas e dados no SQL Server Express e bancos de dados do SQL Server não funcionam com o SQL Server Compact. Por exemplo, você não pode usar o SQL Server Management Studio ou o SQL Server Data Tools no Visual Studio com bancos de dados do SQL Server Compact. Você tem outras opções para trabalhar com bancos de dados do SQL Server Compact:
 
 - Você pode usar o Gerenciador de servidores no Visual Studio, que oferece funcionalidade de manipulação de banco de dados limitada para o SQL Server Compact.
 - Você pode usar o recurso de manipulação de banco de dados do [WebMatrix](https://www.microsoft.com/web/webmatrix/), que tem mais recursos do que o Gerenciador de servidores.
@@ -77,11 +77,11 @@ Compilar o projeto e, em seguida, em **Solution Explorer** clique **Mostrar todo
 
 Expanda o **bin** pasta para ver o **amd64** e **x86** pastas e, em seguida, selecione as pastas, clique com botão direito e selecione **incluir no projeto**.
 
-![amd64_and_x86_in_Solution_Explorer.PNG](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
+![amd64_and_x86_in_Solution_Explorer.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
 
 Alteram os ícones de pasta para mostrar que a pasta foi incluída no projeto.
 
-![Solution_Explorer_amd64_included.PNG](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
+![Solution_Explorer_amd64_included.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
 
 ## <a name="configuring-code-first-migrations-for-application-database-deployment"></a>Configuração de migrações do Code First para implantação de banco de dados de aplicativo
 
@@ -159,13 +159,13 @@ Clique com botão direito do *School.sdf* de arquivo e clique em **excluir**.
 
 No **Package Manager Console** janela, digite o comando "Adicionar-migração inicial" para criar a migração inicial e nomeie-a como "Initial".
 
-![Adicionar migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
+![add-migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
 
 Migrações do Code First cria outro arquivo de classe no *migrações* pasta e essa classe contém o código que cria o esquema de banco de dados.
 
 No **Package Manager Console**, digite o comando "update-database" para criar o banco de dados e executar o **semente** método.
 
-![atualização database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
+![update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
 
 (Se você receber um erro que indica uma tabela já existe e não pode ser criada, é provável que o aplicativo é executado depois que você excluir o banco de dados e antes da execução `update-database`. Excluir in that case, o *School.sdf* novamente e repita a `update-database` comando.)
 
@@ -190,7 +190,7 @@ Faça logon como "admin" usando a senha "Pas$ w0rd" (Observe o número zero no l
 Quando você implanta um site pela primeira vez, é comum para excluir a maioria ou todas as contas de usuário que você criar para teste. Nesse caso, você implantará uma conta de administrador e não há contas de usuário. Em vez de excluir manualmente as contas de teste, você criará um novo banco de dados membros que tenha somente a conta de usuário de um administrador que você precisa em produção.
 
 > [!NOTE]
-> O banco de dados de associação armazena um hash de senhas de conta. Para implantar as contas de um computador para outro, você deve garantir que as rotinas de hash não geram hashes diferentes no servidor de destino do que no computador de origem. Eles irá gerar os hashes mesmo quando você usa o ASP.NET Universal Providers, desde que você não altere o algoritmo padrão. O algoritmo padrão é HMACSHA256 e é especificado no **validação** atributo o  **[machineKey](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)**  elemento no arquivo Web. config.
+> O banco de dados de associação armazena um hash de senhas de conta. Para implantar as contas de um computador para outro, você deve garantir que as rotinas de hash não geram hashes diferentes no servidor de destino do que no computador de origem. Eles irá gerar os hashes mesmo quando você usa o ASP.NET Universal Providers, desde que você não altere o algoritmo padrão. O algoritmo padrão é HMACSHA256 e é especificado no **validação** atributo o  **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)**  elemento no arquivo Web. config.
 
 
 O banco de dados de associação não é mantido pela migrações do Code First e não há nenhum inicializador automática que propaga o banco de dados com contas de teste (como há para o banco de dados School). Portanto, para manter os dados de teste disponíveis você vai fazer uma cópia do banco de dados de teste antes de criar um novo.
@@ -243,7 +243,7 @@ O mecanismo de banco de dados do SQL Server Compact e bancos de dados agora est�
 
 ## <a name="more-information"></a>Mais informações
 
-Para obter mais informações sobre o NuGet, consulte [gerenciar bibliotecas de projeto com o NuGet](https://msdn.microsoft.com/en-us/magazine/hh547106.aspx) e [NuGet documentação](http://docs.nuget.org/docs/start-here/overview). Se você não quiser usar o NuGet, você precisará saber como analisar um pacote do NuGet para determinar o que fazer quando ele está instalado. (Por exemplo, ele pode configurar *Web. config* transformações, configurar scripts do PowerShell para executar em tempo de compilação, etc.) Para saber mais sobre como funciona o NuGet, consulte especialmente [criar e publicar um pacote](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) e [arquivo de configuração e transformações de código fonte](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
+Para obter mais informações sobre o NuGet, consulte [gerenciar bibliotecas de projeto com o NuGet](https://msdn.microsoft.com/magazine/hh547106.aspx) e [NuGet documentação](http://docs.nuget.org/docs/start-here/overview). Se você não quiser usar o NuGet, você precisará saber como analisar um pacote do NuGet para determinar o que fazer quando ele está instalado. (Por exemplo, ele pode configurar *Web. config* transformações, configurar scripts do PowerShell para executar em tempo de compilação, etc.) Para saber mais sobre como funciona o NuGet, consulte especialmente [criar e publicar um pacote](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) e [arquivo de configuração e transformações de código fonte](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 
 >[!div class="step-by-step"]
 [Anterior](deployment-to-a-hosting-provider-introduction-1-of-12.md)

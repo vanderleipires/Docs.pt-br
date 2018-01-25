@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: db24fbf4a3486a1349ac47e55cfa495fdf1a166c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-web-packages"></a>Pacotes de implantação da Web
 ====================
@@ -67,16 +67,16 @@ Você deve especificar um **/T** sinalizador ou **/Y** sinalizador para indicar 
 | **/Y** | Chama MSDeploy.exe sem o **– whatif** sinalizador. Isso implanta o pacote para o computador local ou o servidor de destino especificado. |
 | **/M** | Especifica o servidor de destino nome ou URL do serviço. Para obter mais informações sobre os valores que você pode fornecer aqui, consulte o **considerações sobre o ponto de extremidade** neste tópico. Se você omitir o **/M** sinalizador, o pacote será implantado no computador local. |
 | **/A** | Especifica o tipo de autenticação que MSDeploy.exe deve usar para executar a implantação. Os valores possíveis são **NTLM** e **básica**. Se você omitir o **/A** sinalizador, o tipo de autenticação padrão é **NTLM** para implantação para o serviço de agente remoto da Web implantar e **básica** para implantação para a implantação da Web Manipulador. |
-| **/ U** | Especifica o nome de usuário. Isso se aplica somente se você estiver usando autenticação básica. |
-| **/ P** | Especifica a senha. Isso se aplica somente se você estiver usando autenticação básica. |
+| **/U** | Especifica o nome de usuário. Isso se aplica somente se você estiver usando autenticação básica. |
+| **/P** | Especifica a senha. Isso se aplica somente se você estiver usando autenticação básica. |
 | **/L** | Indica que o pacote deve ser implantado na instância local do IIS Express. |
-| **/G** | Especifica que o pacote é implantado usando o [configuração do provedor tempAgent](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx). Se você omitir o **/G** sinalizador, o valor padrão de **false**. |
+| **/G** | Especifica que o pacote é implantado usando o [configuração do provedor tempAgent](https://technet.microsoft.com/library/ee517345(WS.10).aspx). Se você omitir o **/G** sinalizador, o valor padrão de **false**. |
 
 > [!NOTE]
 > Toda vez que o processo de compilação cria um pacote da web, ele também cria um arquivo chamado *[nome do projeto] Leiame. txt. Deploy* que explica essas opções de implantação.
 
 
-Além desses sinalizadores, você pode especificar configurações de operação de implantação da Web como adicionais *. Deploy* parâmetros. As configurações adicionais que você especificar simplesmente são passadas para o comando MSDeploy.exe subjacente. Para obter mais informações sobre essas configurações, consulte [Web implantar configurações de operação](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx).
+Além desses sinalizadores, você pode especificar configurações de operação de implantação da Web como adicionais *. Deploy* parâmetros. As configurações adicionais que você especificar simplesmente são passadas para o comando MSDeploy.exe subjacente. Para obter mais informações sobre essas configurações, consulte [Web implantar configurações de operação](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
 Suponha que você deseja implantar o projeto de aplicativo web ContactManager.Mvc em um ambiente de teste executando o *. Deploy* arquivo. Ambiente de teste está configurado para usar o serviço de agente remoto da Web implantar, conforme descrito em [configurar um servidor Web para publicação de implantação do Web (agente remoto)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md). Para implantar o aplicativo web, você precisa concluir as próximas etapas.
 
@@ -101,7 +101,7 @@ Para ilustrar como usar o *. Deploy* arquivo simplifica o processo de implantaç
 [!code-console[Main](deploying-web-packages/samples/sample3.cmd)]
 
 
-Para obter mais informações sobre como usar o *. Deploy* arquivo implantar um pacote da web, consulte [como: instalar uma implantação de pacote usando o arquivo Deploy](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+Para obter mais informações sobre como usar o *. Deploy* arquivo implantar um pacote da web, consulte [como: instalar uma implantação de pacote usando o arquivo Deploy](https://msdn.microsoft.com/library/ff356104.aspx).
 
 ## <a name="using-msdeployexe"></a>Usando MSDeploy.exe
 
@@ -115,21 +115,21 @@ Quando você usa o MSDeploy.exe, você precisa fornecer três partes importantes
 
 - Um **– origem** parâmetro que indica onde seus dados estão vindo.
 - Um **– dest** parâmetro que indica onde vai seus dados.
-- Um **– verbo** parâmetro que indica a [operação](https://technet.microsoft.com/en-us/library/dd568989(WS.10).aspx) você deseja executar.
+- Um **– verbo** parâmetro que indica a [operação](https://technet.microsoft.com/library/dd568989(WS.10).aspx) você deseja executar.
 
-Depende de MSDeploy.exe [provedores de implantação da Web](https://technet.microsoft.com/en-us/library/dd569040(WS.10).aspx) para processar dados de origem e de destino. A implantação da Web inclui muitos provedores que representam o intervalo de aplicativos e fontes de dados pode funcionar com & #x 2014; por exemplo, há provedores para bancos de dados do SQL Server, servidores web IIS, certificados, assemblies do GAC (cache) de assembly global, várias arquivos de configuração diferentes e muitos outros tipos de dados. Ambos os o **– origem** parâmetro e o **– dest** parâmetro deve especificar um provedor, no formato **– origem**: [*providerName*] = [*local*]. Quando você estiver implantando um pacote da web em um site do IIS, você deve usar estes valores:
+Depende de MSDeploy.exe [provedores de implantação da Web](https://technet.microsoft.com/library/dd569040(WS.10).aspx) para processar dados de origem e de destino. A implantação da Web inclui muitos provedores que representam o intervalo de aplicativos e fontes de dados pode funcionar com & #x 2014; por exemplo, há provedores para bancos de dados do SQL Server, servidores web IIS, certificados, assemblies do GAC (cache) de assembly global, várias arquivos de configuração diferentes e muitos outros tipos de dados. Ambos os o **– origem** parâmetro e o **– dest** parâmetro deve especificar um provedor, no formato **– origem**: [*providerName*] = [*local*]. Quando você estiver implantando um pacote da web em um site do IIS, você deve usar estes valores:
 
-- O **– origem** provedor é sempre [pacote](https://technet.microsoft.com/en-us/library/dd569019(WS.10).aspx). Por exemplo:
+- O **– origem** provedor é sempre [pacote](https://technet.microsoft.com/library/dd569019(WS.10).aspx). Por exemplo:
 
     [!code-console[Main](deploying-web-packages/samples/sample4.cmd)]
-- O **– dest** provedor é sempre [automática](https://technet.microsoft.com/en-us/library/dd569016(WS.10).aspx). Por exemplo:
+- O **– dest** provedor é sempre [automática](https://technet.microsoft.com/library/dd569016(WS.10).aspx). Por exemplo:
 
     [!code-console[Main](deploying-web-packages/samples/sample5.cmd)]
 - O **– verbo** é sempre **sincronização**.
 
     [!code-console[Main](deploying-web-packages/samples/sample6.cmd)]
 
-Além disso, você precisará especificar vários outros [configurações específicas do provedor](https://technet.microsoft.com/en-us/library/dd569001(WS.10).aspx) e geral [configurações de operação](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx). Por exemplo, suponha que você deseja implantar o aplicativo da web de ContactManager.Mvc em um ambiente de preparo. A implantação será o manipulador de implantação da Web de destino e deve usar a autenticação básica. Para implantar o aplicativo web, você precisa concluir as próximas etapas.
+Além disso, você precisará especificar vários outros [configurações específicas do provedor](https://technet.microsoft.com/library/dd569001(WS.10).aspx) e geral [configurações de operação](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Por exemplo, suponha que você deseja implantar o aplicativo da web de ContactManager.Mvc em um ambiente de preparo. A implantação será o manipulador de implantação da Web de destino e deve usar a autenticação básica. Para implantar o aplicativo web, você precisa concluir as próximas etapas.
 
 **Para implantar um aplicativo web usando MSDeploy.exe**
 
@@ -145,7 +145,7 @@ Neste exemplo:
 - O **– origem** parâmetro especifica o **pacote** provedor e indica o local do pacote da web.
 - O **– dest** parâmetro especifica o **automática** provedor. O **computerName** configuração fornece a URL do serviço do manipulador de implantação da Web no servidor de destino. O **tipo de autenticação** configuração indica que você deseja usar a autenticação básica, e como tal, você precisa fornecer um **username** e um **senha**. Por fim, o **includeAcls = "False"** configuração indica que você não deseja copiar as listas de controle de acesso (ACLs) dos arquivos em seu aplicativo da web de origem para o servidor de destino.
 - O **– verbo: sincronização** argumento indica que você deseja replicar o conteúdo de origem no servidor de destino.
-- O **– disableLink** argumentos indicam que você não deseja replicar os pools de aplicativos, a configuração de diretório virtual ou certificados de Secure Sockets Layer (SSL) no servidor de destino. Para obter mais informações, consulte [Web implantar extensões de Link](https://technet.microsoft.com/en-us/library/dd569028(WS.10).aspx).
+- O **– disableLink** argumentos indicam que você não deseja replicar os pools de aplicativos, a configuração de diretório virtual ou certificados de Secure Sockets Layer (SSL) no servidor de destino. Para obter mais informações, consulte [Web implantar extensões de Link](https://technet.microsoft.com/library/dd569028(WS.10).aspx).
 - O **– setParamFile** parâmetro fornece o local do *SetParameters.xml* arquivo.
 - O **– allowUntrusted** opção indica que a implantação da Web deve aceitar certificados SSL que não foram emitidos por uma autoridade de certificação confiável. Se você estiver implantando o manipulador de implantação da Web, e você usou um certificado autoassinado para proteger a URL do serviço, você precisa incluir essa opção.
 

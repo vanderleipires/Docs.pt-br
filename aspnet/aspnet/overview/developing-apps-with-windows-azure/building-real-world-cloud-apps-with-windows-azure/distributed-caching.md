@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 923a8257376e98e6cae10d905f1cb18f7fdb28e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 24ede9cb9289c84140f6e2573f9d526f19cac64b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>Cache (Criando nuvem do mundo Real aplicativos distribuídos com o Azure)
 ====================
@@ -79,12 +79,12 @@ Estes são exemplos para ilustrar o código de cache simple. o cache não foi im
 
 ## <a name="azure-caching-services"></a>Serviços de cache do Azure
 
-O Azure oferece os seguintes serviços de cache: [Cache Redis do Azure](https://msdn.microsoft.com/en-us/library/dn690523.aspx) e [Cache gerenciado do Azure](https://msdn.microsoft.com/en-us/library/dn386094.aspx). Cache Redis do Azure baseia-se no conhecido [Abrir fonte de Cache Redis](http://redis.io/) e é a primeira opção para a maioria dos cenários de cache.
+O Azure oferece os seguintes serviços de cache: [Cache Redis do Azure](https://msdn.microsoft.com/library/dn690523.aspx) e [Cache gerenciado do Azure](https://msdn.microsoft.com/library/dn386094.aspx). Cache Redis do Azure baseia-se no conhecido [Abrir fonte de Cache Redis](http://redis.io/) e é a primeira opção para a maioria dos cenários de cache.
 
 <a id="sessionstate"></a>
 ## <a name="aspnet-session-state-using-a-cache-provider"></a>Estado da sessão ASP.NET usando um provedor de cache
 
-Conforme mencionado no [capítulo de práticas recomendado do web desenvolvimento](web-development-best-practices.md), é uma prática recomendada evitar o uso de estado de sessão. Se seu aplicativo requer o estado de sessão, a próxima melhor prática é evitar o provedor de memória padrão porque que não permitem a expansão (várias instâncias do servidor web). O provedor de estado de sessão do SQL Server ASP.NET permite que um site que é executado em vários servidores web para usar o estado de sessão, mas ela incorre em um custo de alta latência, em comparação comparado um provedor na memória. A melhor solução se você tiver que usar o estado de sessão é usar um provedor de cache, como o [provedor de estado de sessão para o Cache do Azure](https://msdn.microsoft.com/en-us/library/windowsazure/gg185668.aspx).
+Conforme mencionado no [capítulo de práticas recomendado do web desenvolvimento](web-development-best-practices.md), é uma prática recomendada evitar o uso de estado de sessão. Se seu aplicativo requer o estado de sessão, a próxima melhor prática é evitar o provedor de memória padrão porque que não permitem a expansão (várias instâncias do servidor web). O provedor de estado de sessão do SQL Server ASP.NET permite que um site que é executado em vários servidores web para usar o estado de sessão, mas ela incorre em um custo de alta latência, em comparação comparado um provedor na memória. A melhor solução se você tiver que usar o estado de sessão é usar um provedor de cache, como o [provedor de estado de sessão para o Cache do Azure](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx).
 
 ## <a name="summary"></a>Resumo
 
@@ -96,11 +96,11 @@ Para obter mais informações sobre armazenamento em cache, consulte os seguinte
 
 Documentação
 
-- [Cache do Azure](https://msdn.microsoft.com/en-us/library/gg278356.aspx). Documentação oficial do MSDN em cache no Azure.
-- [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consulte as diretrizes do cache e padrão Cache-Aside.
-- [À prova de falhas: Orientação para arquiteturas resilientes na nuvem](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). White paper Marc Mercuri, Ulrich Homann e Andrew Townhill. Consulte a seção em cache.
-- [Práticas recomendadas para o Design de serviços em grande escala em serviços de nuvem do Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). W. White paper, Mark Simms e Michael Thomassy. Consulte a seção sobre armazenamento em cache distribuído.
-- [Caching no caminho para escalabilidade distribuído](https://msdn.microsoft.com/en-us/magazine/dd942840.aspx). Um artigo de revista MSDN (2009) mais antigo, mas uma introdução clareza ao cache distribuído em geral; entra em mais detalhes do que o cache seções os white papers à prova de falhas e práticas recomendadas.
+- [Cache do Azure](https://msdn.microsoft.com/library/gg278356.aspx). Documentação oficial do MSDN em cache no Azure.
+- [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/library/dn568099.aspx). Consulte as diretrizes do cache e padrão Cache-Aside.
+- [À prova de falhas: Orientação para arquiteturas resilientes na nuvem](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). White paper Marc Mercuri, Ulrich Homann e Andrew Townhill. Consulte a seção em cache.
+- [Práticas recomendadas para o Design de serviços em grande escala em serviços de nuvem do Azure](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). W. White paper, Mark Simms e Michael Thomassy. Consulte a seção sobre armazenamento em cache distribuído.
+- [Caching no caminho para escalabilidade distribuído](https://msdn.microsoft.com/magazine/dd942840.aspx). Um artigo de revista MSDN (2009) mais antigo, mas uma introdução clareza ao cache distribuído em geral; entra em mais detalhes do que o cache seções os white papers à prova de falhas e práticas recomendadas.
 
 Vídeos
 

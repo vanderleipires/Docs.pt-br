@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: dfd9c3c0c4e50a99e4f8703b01bd9b384930b87a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 10aa1b493dbd0672cac789f6e48ddf2f14ba35dc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Cache auxiliar de marca no núcleo do ASP.NET MVC
 
@@ -277,7 +277,7 @@ Exemplo:
 </cache>
 ```
 
-O `priority` atributo não garante que um nível específico de retenção de cache. `CacheItemPriority`é apenas uma sugestão. A configuração desse atributo `NeverRemove` não garante que o cache sempre será retido. Consulte [recursos adicionais](#additional-resources) para obter mais informações.
+O `priority` atributo não garante um nível específico de retenção de cache. `CacheItemPriority`é apenas uma sugestão. A configuração desse atributo `NeverRemove` não garante que o cache sempre será retido. Consulte [recursos adicionais](#additional-resources) para obter mais informações.
 
 O auxiliar de marca de Cache é dependente de [serviço de cache de memória](xref:performance/caching/memory). O auxiliar de marca de Cache adiciona o serviço se não tiver sido adicionado.
 

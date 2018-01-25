@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17157d595e8283628371ff6ad39fe71879e96a56
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5a0ffde90aa85383d87bd48e16a1c16433465cbf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>Tratamento de exceções de nível BLL e DAL em uma página ASP.NET (c#)
 ====================
@@ -101,9 +101,9 @@ Neste ponto, temos uma lista de todos os produtos `ProductName`, `QuantityPerUni
 
 ## <a name="step-2-gracefully-handling-dal-level-exceptions"></a>Etapa 2: Normalmente tratamento de exceções de nível de DAL
 
-Embora nosso GridView editável muito funcione quando os usuários inserir valores válidos para o nome do produto editado, preço e unidades em estoque, inserir valores inválidos resulta em uma exceção. Por exemplo, omitindo o `ProductName` valor faz com que um [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) seja lançada desde o `ProductName` propriedade no `ProdcutsRow` classe tem seu `AllowDBNull` propriedade definida como `false`; se a banco de dados está inoperante, um `SqlException` será lançada pelo TableAdapter ao tentar se conectar ao banco de dados. Sem realizar nenhuma ação, essas exceções bolhas backup da camada de acesso a dados para a camada de lógica de negócios, em seguida, para a página do ASP.NET e, finalmente, no tempo de execução do ASP.NET.
+Embora nosso GridView editável muito funcione quando os usuários inserir valores válidos para o nome do produto editado, preço e unidades em estoque, inserir valores inválidos resulta em uma exceção. Por exemplo, omitindo o `ProductName` valor faz com que um [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) seja lançada desde o `ProductName` propriedade no `ProdcutsRow` classe tem seu `AllowDBNull` propriedade definida como `false`; se a banco de dados está inoperante, um `SqlException` será lançada pelo TableAdapter ao tentar se conectar ao banco de dados. Sem realizar nenhuma ação, essas exceções bolhas backup da camada de acesso a dados para a camada de lógica de negócios, em seguida, para a página do ASP.NET e, finalmente, no tempo de execução do ASP.NET.
 
-Dependendo de como seu aplicativo web é configurado e se você está visitando o aplicativo de `localhost`, uma exceção não tratada pode resultar em uma página de erro genérico de servidor, um relatório de erro detalhada ou uma página da web fácil de usar. Consulte [Web tratamento de erros do aplicativo no ASP.NET](http://www.15seconds.com/issue/030102.htm) e [elemento customErrors](https://msdn.microsoft.com/en-US/library/h0hfz6fc(VS.80).aspx) para obter mais informações sobre como o tempo de execução do ASP.NET responde a uma exceção não tratada.
+Dependendo de como seu aplicativo web é configurado e se você está visitando o aplicativo de `localhost`, uma exceção não tratada pode resultar em uma página de erro genérico de servidor, um relatório de erro detalhada ou uma página da web fácil de usar. Consulte [Web tratamento de erros do aplicativo no ASP.NET](http://www.15seconds.com/issue/030102.htm) e [elemento customErrors](https://msdn.microsoft.com/library/h0hfz6fc(VS.80).aspx) para obter mais informações sobre como o tempo de execução do ASP.NET responde a uma exceção não tratada.
 
 A Figura 6 mostra a tela encontrada ao tentar atualizar um produto sem especificar o `ProductName` valor. Esse é o padrão de relatório de erro detalhadas exibido quando recebidas por meio de `localhost`.
 
@@ -153,7 +153,7 @@ Criar este manipulador de eventos, você adicionará o código a seguir para a c
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/samples/sample4.cs)]
 
-Segundo parâmetro de entrada do manipulador de eventos é um objeto do tipo [GridViewUpdatedEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), que tem três propriedades de interesse para tratamento de exceções:
+Segundo parâmetro de entrada do manipulador de eventos é um objeto do tipo [GridViewUpdatedEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), que tem três propriedades de interesse para tratamento de exceções:
 
 - `Exception`uma referência para a exceção lançada; Se nenhuma exceção tiver sido lançada, essa propriedade tem um valor de`null`
 - `ExceptionHandled`um valor booliano que indica se a exceção foi tratada no `RowUpdated` manipulador de eventos; se `false` (padrão), a exceção é lançada novamente o percolating até o tempo de execução do ASP.NET

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/google-logins
-ms.openlocfilehash: 30d224061bce3a727fc31d19c194e96559e28310
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 08647e996e148921578a4dd9ae08c164ef362dcb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configuring-google-authentication-in-aspnet-core"></a>Configurando a autenticação do Google no núcleo do ASP.NET
 
@@ -146,7 +146,7 @@ Agora você está conectado usando suas credenciais do Google:
 ## <a name="troubleshooting"></a>Solução de problemas
 
 * Se você receber um `403 (Forbidden)` página de erro do seu próprio aplicativo quando em execução no modo de desenvolvimento (ou interrupção no depurador com o mesmo erro), certifique-se de que **API do Google +** foi habilitada no **API do Gerenciador de biblioteca** seguindo as etapas listadas [anteriores nesta página](#create-the-app-in-google-api-console). Se a entrada não funciona e não estiver obtendo erros, alterne para o modo de desenvolvimento para facilitar o problema depurar.
-* **ASP.NET Core 2. x somente:** identidade se não está configurada por meio da chamada `services.AddIdentity` na `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
+* **ASP.NET Core 2. x somente:** identidade se não estiver configurada, chamando `services.AddIdentity` na `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
 * Se o banco de dados do site não tiver sido criado, aplicando a migração inicial, você obterá *uma operação de banco de dados falhou ao processar a solicitação* erro. Toque em **aplicar migrações** para criar o banco de dados e a atualização para continuar após o erro.
 
 ## <a name="next-steps"></a>Próximas etapas

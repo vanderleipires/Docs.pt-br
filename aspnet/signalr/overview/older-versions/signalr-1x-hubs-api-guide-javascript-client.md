@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 56931827a1a1edf003d2662b2d36964b9b6f3761
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f92470b2022f343cfd6d822abb255dc19947b4d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-1x-hubs-api-guide---javascript-client"></a>Guia de API de Hubs do SignalR 1. x - cliente JavaScript
 ====================
@@ -29,7 +29,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gith
 > O SignalR também oferece uma API de nível inferior chamada conexões persistentes. Para obter uma introdução para o SignalR, Hubs e conexões persistentes, ou para um tutorial que mostra como criar um aplicativo SignalR completo, consulte [SignalR - Introdução](../getting-started/index.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este documento contém as seguintes seções:
 
@@ -61,7 +61,7 @@ Para obter a documentação sobre como programar o servidor ou os clientes .NET,
 - [Guia de API de Hubs de SignalR - servidor](../guide-to-the-api/hubs-api-guide-server.md)
 - [Guia de API de Hubs de SignalR - cliente .NET](../guide-to-the-api/hubs-api-guide-net-client.md)
 
-Links para tópicos de referência de API são para a versão do .NET 4.5 da API. Se você estiver usando o .NET 4, consulte [a versão do .NET 4 dos tópicos da API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Links para tópicos de referência de API são para a versão do .NET 4.5 da API. Se você estiver usando o .NET 4, consulte [a versão do .NET 4 dos tópicos da API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="genproxy"></a>
 
@@ -125,7 +125,7 @@ Em um aplicativo de Web Forms do ASP.NET, use `ResolveClientUrl` para os proxies
 
 [!code-aspx[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample7.aspx)]
 
-Como regra geral, use o mesmo método para especificar a URL "signalr/hubs" que você usa para arquivos CSS ou JavaScript. Se você especificar uma URL sem usar um til, em alguns cenários de seu aplicativo funcionará corretamente quando você testar no Visual Studio usando o IIS Express, mas falhará com um erro 404 quando você implanta para o IIS completo. Para obter mais informações, consulte **resolver referências a recursos de nível raiz** na [servidores Web no Visual Studio para projetos Web ASP.NET](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx) no site do MSDN.
+Como regra geral, use o mesmo método para especificar a URL "signalr/hubs" que você usa para arquivos CSS ou JavaScript. Se você especificar uma URL sem usar um til, em alguns cenários de seu aplicativo funcionará corretamente quando você testar no Visual Studio usando o IIS Express, mas falhará com um erro 404 quando você implanta para o IIS completo. Para obter mais informações, consulte **resolver referências a recursos de nível raiz** na [servidores Web no Visual Studio para projetos Web ASP.NET](https://msdn.microsoft.com/library/58wxa9w5.aspx) no site do MSDN.
 
 Quando você executar um projeto da web no Visual Studio 2012 no modo de depuração e se você usar o Internet Explorer como navegador, você pode ver o arquivo de proxy no **Solution Explorer** em **documentos de Script**, conforme mostrado do ilustração a seguir.
 

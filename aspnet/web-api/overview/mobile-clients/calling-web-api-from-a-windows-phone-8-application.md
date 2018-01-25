@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1637af40613f1384bd4adec707a5b1a8a07c704b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e5a936decb27fd2e3b8cdcea44db8db822c98eb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Chamar a API da Web de um aplicativo do Windows Phone 8 (c#)
 ====================
@@ -24,7 +24,7 @@ por [Robert McMurray](https://github.com/rmcmurray)
 
 Neste tutorial, você aprenderá como criar um cenário de ponta a ponta completo consiste em um aplicativo de API da Web ASP.NET que fornece um catálogo de livros de um aplicativo do Windows Phone 8.
 
-### <a name="overview"></a>Visão Geral
+### <a name="overview"></a>Visão geral
 
 Os serviços rESTful como ASP.NET Web API simplificam a criação de aplicativos baseados em HTTP para os desenvolvedores abstraindo a arquitetura de aplicativos do lado do servidor e do lado do cliente. Em vez de criar um protocolo proprietário em soquete para comunicação, os desenvolvedores de API da Web simplesmente precisam publicar os métodos HTTP necessários para seu aplicativo (por exemplo: GET, POST, PUT, DELETE), e os desenvolvedores de aplicativos de cliente só precisam consumir os métodos HTTP que são necessários para seu aplicativo.
 
@@ -37,7 +37,7 @@ Este tutorial de ponta a ponta, você aprenderá como usar a API da Web para cri
 
 - Visual Studio 2013 com o Windows Phone 8 SDK instalado
 - Windows 8 ou posterior em um sistema de 64 bits com Hyper-V instalado
-- Para obter uma lista de requisitos adicionais, consulte o *requisitos de sistema* seção o [Windows Phone SDK 8.0](https://www.microsoft.com/en-us/download/details.aspx?id=35471) página de download.
+- Para obter uma lista de requisitos adicionais, consulte o *requisitos de sistema* seção o [Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471) página de download.
 
 > [!NOTE]
 > Se você for para testar a conectividade entre a API da Web e projetos do Windows Phone 8 no seu sistema local, você precisará seguir as instruções no  *[conectando o emulador do Windows Phone 8 para aplicativos de API da Web em um Local Computador](https://go.microsoft.com/fwlink/?LinkId=324014)*  artigo para configurar seu ambiente de teste.

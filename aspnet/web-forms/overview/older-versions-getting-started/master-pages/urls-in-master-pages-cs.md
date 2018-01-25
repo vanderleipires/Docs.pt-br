@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 243bd8a30a84d3a57d418da7b2b55cfe132bf0e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b01f0ac780121c4e0941df6016220a1cb1ed2d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="urls-in-master-pages-c"></a>URLs em páginas mestras (c#)
 ====================
@@ -108,7 +108,7 @@ A boa notícia é que o ASP.NET oferece um método para gerar uma URL relativa v
 
 Em vez de codificar uma URL absoluta, ASP.NET permite aos desenvolvedores de página usar o til (`~`) para indicar a raiz do aplicativo web. Por exemplo, anteriormente neste tutorial, usei a notação `~/Admin/Default.aspx` no texto para referir-se a `Default.aspx` página o `Admin` pasta. O `~` indica que o `Admin` pasta é uma subpasta da raiz do aplicativo da web.
 
-O `Control` da classe [ `ResolveClientUrl` método](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveclienturl.aspx) usa uma URL e modifica a uma URL relativa apropriada para a página da web no qual reside o controle. Por exemplo, chamar `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` de `About.aspx` retorna `Images/PoweredByASPNET.gif`. Chamando-o de `~/Admin/Default.aspx`, no entanto, retorna `../Images/PoweredByASPNET.gif`.
+O `Control` da classe [ `ResolveClientUrl` método](https://msdn.microsoft.com/library/system.web.ui.control.resolveclienturl.aspx) usa uma URL e modifica a uma URL relativa apropriada para a página da web no qual reside o controle. Por exemplo, chamar `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` de `About.aspx` retorna `Images/PoweredByASPNET.gif`. Chamando-o de `~/Admin/Default.aspx`, no entanto, retorna `../Images/PoweredByASPNET.gif`.
 
 > [!NOTE]
 > Como todos os controles de servidor ASP.NET derivam do `Control` classe, todos os controles de servidor tem acesso para o `ResolveClientUrl` método. Até mesmo o `Page` classe deriva de `Control` classe, que significa que você pode usar este método diretamente da classe code-behind de suas páginas ASP.NET.

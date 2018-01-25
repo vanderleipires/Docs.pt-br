@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: a6ac34307b7558ad13684448f339ca74ade9e997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 618f8fa23630dcf9821a54415766dc015694e535
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-startup-class-detection"></a>Detecção de classe de inicialização OWIN
 ====================
@@ -79,7 +79,7 @@ por [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson](https:/
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample8.cs?highlight=5,7,15-28,31-34)]
   
- O `app.Use` expressão lambda é usada para registrar o componente de middleware especificado para o pipeline OWIN. Nesse caso estamos configurando registro em log de solicitações de entrada antes de responder à solicitação de entrada. O `next` parâmetro é o delegate ( [Func](https://msdn.microsoft.com/en-us/library/bb534960(v=vs.100).aspx) &lt; [tarefa](https://msdn.microsoft.com/en-us/library/dd321424(v=vs.100).aspx) &gt; ) para o próximo componente no pipeline. O `app.Run` expressão lambda conecta o solicitações de entrada do pipeline e fornece o mecanismo de resposta.
+ O `app.Use` expressão lambda é usada para registrar o componente de middleware especificado para o pipeline OWIN. Nesse caso estamos configurando registro em log de solicitações de entrada antes de responder à solicitação de entrada. O `next` parâmetro é o delegate ( [Func](https://msdn.microsoft.com/library/bb534960(v=vs.100).aspx) &lt; [tarefa](https://msdn.microsoft.com/library/dd321424(v=vs.100).aspx) &gt; ) para o próximo componente no pipeline. O `app.Run` expressão lambda conecta o solicitações de entrada do pipeline e fornece o mecanismo de resposta.
      > [!NOTE]
      > No código acima é ter comentada o `OwinStartup` atributo e nós depende da convenção de executar a classe denominada `Startup` .-pressione ***F5*** para executar o aplicativo. Clique em atualizar algumas vezes.  
   

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8d11bf47f8c43040ef30d7132f0bb756748dbacd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d54c0e133bc2f6f2021821dc16cdf86cc23a5667
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Classificação, filtragem e paginação com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
@@ -60,7 +60,7 @@ Essas são instruções ternários. A primeira delas Especifica que o `sortOrder
 | Data em ordem crescente | ascending | descending |
 | Data em ordem decrescente | ascending | ascending |
 
-Usa o método [LINQ to Entities](https://msdn.microsoft.com/en-us/library/bb386964.aspx) para especificar a coluna para classificar por. O código cria um [IQueryable](https://msdn.microsoft.com/en-us/library/bb351562.aspx) variável antes do `switch` instrução, modifica-lo no `switch` instrução e chama o `ToList` método após o `switch` instrução. Quando você criar e modificar `IQueryable` variáveis, nenhuma consulta é enviada para o banco de dados. A consulta não é executada até que você converta o `IQueryable` objeto em uma coleção, chamando um método como `ToList`. Portanto, esse código resulta em uma única consulta que não é executada até que o `return View` instrução.
+Usa o método [LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx) para especificar a coluna para classificar por. O código cria um [IQueryable](https://msdn.microsoft.com/library/bb351562.aspx) variável antes do `switch` instrução, modifica-lo no `switch` instrução e chama o `ToList` método após o `switch` instrução. Quando você criar e modificar `IQueryable` variáveis, nenhuma consulta é enviada para o banco de dados. A consulta não é executada até que você converta o `IQueryable` objeto em uma coleção, chamando um método como `ToList`. Portanto, esse código resulta em uma única consulta que não é executada até que o `return View` instrução.
 
 Como uma alternativa a escrita de instruções LINQ diferentes para cada ordem de classificação, você pode criar dinamicamente uma instrução LINQ. Para obter informações sobre o LINQ dinâmico, consulte [LINQ dinâmico](https://go.microsoft.com/fwlink/?LinkID=323957).
 
@@ -90,7 +90,7 @@ Em *Controllers\StudentController.cs*, substitua o `Index` método com o código
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-Você adicionou um `searchString` parâmetro para o `Index` método. O valor de cadeia de caracteres de pesquisa é recebido em uma caixa de texto que você adicionará à exibição de índice. Você adicionou à instrução LINQ também um `where` cláusula que seleciona somente os alunos cujo primeiro nome ou sobrenome contém a cadeia de caracteres de pesquisa. A instrução que adiciona o [onde](https://msdn.microsoft.com/en-us/library/bb535040.aspx) cláusula é executada somente se houver um valor de pesquisa.
+Você adicionou um `searchString` parâmetro para o `Index` método. O valor de cadeia de caracteres de pesquisa é recebido em uma caixa de texto que você adicionará à exibição de índice. Você adicionou à instrução LINQ também um `where` cláusula que seleciona somente os alunos cujo primeiro nome ou sobrenome contém a cadeia de caracteres de pesquisa. A instrução que adiciona o [onde](https://msdn.microsoft.com/library/bb535040.aspx) cláusula é executada somente se houver um valor de pesquisa.
 
 > [!NOTE]
 > Em muitos casos, você pode chamar o mesmo método em um conjunto de entidades do Entity Framework ou como um método de extensão em uma coleção de memória. Os resultados são normalmente o mesmo, mas em alguns casos podem ser diferentes.
@@ -160,7 +160,7 @@ No final do método, o `ToPagedList` método de extensão no alunos `IQueryable`
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-O `ToPagedList` método usa um número de página. Os dois pontos de interrogação representam o [operador união null](https://msdn.microsoft.com/en-us/library/ms173224.aspx). O operador de união null define um valor padrão para um tipo anulável. a expressão `(page ?? 1)` significa retorna o valor de `page` se ele tem um valor ou retornará 1 se `page` é nulo.
+O `ToPagedList` método usa um número de página. Os dois pontos de interrogação representam o [operador união null](https://msdn.microsoft.com/library/ms173224.aspx). O operador de união null define um valor padrão para um tipo anulável. a expressão `(page ?? 1)` significa retorna o valor de `page` se ele tem um valor ou retornará 1 se `page` é nulo.
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>Adicionar Links de paginação para o modo de exibição de índice do aluno
 
@@ -172,11 +172,11 @@ O `@model` instrução na parte superior da página especifica o modo de exibiç
 
 O `using` instrução `PagedList.Mvc` fornece acesso para o auxiliar do MVC para os botões de paginação.
 
-O código usa uma sobrecarga [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) que permite especificar [FormMethod.Get](https://msdn.microsoft.com/en-us/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
+O código usa uma sobrecarga [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) que permite especificar [FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-O padrão [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) envia dados de formulário com uma POSTAGEM, o que significa que parâmetros são passados no corpo da mensagem HTTP e não na URL como cadeias de caracteres de consulta. Quando você especificar HTTP GET, os dados do formulário são passados na URL como cadeias de caracteres de consulta, que permite aos usuários indicar a URL. O [diretrizes do W3C para o uso de HTTP GET](http://www.w3.org/2001/tag/doc/whenToUseGet.html) recomendável que você deve usar um GET quando a ação não resulta em uma atualização.
+O padrão [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) envia dados de formulário com uma POSTAGEM, o que significa que parâmetros são passados no corpo da mensagem HTTP e não na URL como cadeias de caracteres de consulta. Quando você especificar HTTP GET, os dados do formulário são passados na URL como cadeias de caracteres de consulta, que permite aos usuários indicar a URL. O [diretrizes do W3C para o uso de HTTP GET](http://www.w3.org/2001/tag/doc/whenToUseGet.html) recomendável que você deve usar um GET quando a ação não resulta em uma atualização.
 
 A caixa de texto é inicializada com a cadeia de caracteres de pesquisa atual para que quando você clica em uma nova página, você pode ver a cadeia de caracteres de pesquisa atual.
 

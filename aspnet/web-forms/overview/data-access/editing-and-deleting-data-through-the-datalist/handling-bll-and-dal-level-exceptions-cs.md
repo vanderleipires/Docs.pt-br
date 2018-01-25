@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 659976d40f6109422f222d794b54d837faeb0764
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 284f3bebcd07c9cc70b3a7d645f353f5797889a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-c"></a>Tratamento de exceções de nível BLL e DAL (c#)
 ====================
@@ -101,7 +101,7 @@ Quando ocorre um erro, só queremos o rótulo a ser exibido uma vez. Isto é, em
 
 Quando uma exceção é gerada, podemos atribuirá os detalhes da exceção para o `ExceptionDetails` rótulo de controle s `Text` propriedade. Uma vez que seu estado de exibição é desabilitado em postagens subsequentes a `Text` alterações de propriedade s programático serão perdidas, reverter para o texto padrão (uma cadeia de caracteres vazia), assim, ocultar a mensagem de aviso.
 
-Para determinar quando um erro foi gerado para exibir uma mensagem útil na página, precisamos adicionar um `Try ... Catch` bloquear o `UpdateCommand` manipulador de eventos. O `Try` parte contém código que pode levar a uma exceção, enquanto o `Catch` bloco contém código que é executado no caso de uma exceção. Check-out de [conceitos básicos de tratamento de exceção](https://msdn.microsoft.com/en-us/library/2w8f0bss.aspx) seção na documentação do .NET Framework para obter mais informações sobre o `Try ... Catch` bloco.
+Para determinar quando um erro foi gerado para exibir uma mensagem útil na página, precisamos adicionar um `Try ... Catch` bloquear o `UpdateCommand` manipulador de eventos. O `Try` parte contém código que pode levar a uma exceção, enquanto o `Catch` bloco contém código que é executado no caso de uma exceção. Check-out de [conceitos básicos de tratamento de exceção](https://msdn.microsoft.com/library/2w8f0bss.aspx) seção na documentação do .NET Framework para obter mais informações sobre o `Try ... Catch` bloco.
 
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample5.cs)]
@@ -142,7 +142,7 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [Diretrizes de design para exceções](https://msdn.microsoft.com/en-us/library/ms298399.aspx)
+- [Diretrizes de design para exceções](https://msdn.microsoft.com/library/ms298399.aspx)
 - [Módulos de log de erros e manipuladores (ELMAH)](http://workspaces.gotdotnet.com/elmah) (uma biblioteca de código-fonte aberto para o log de erros)
 - [Enterprise Library para o .NET Framework 2.0](https://www.microsoft.com/downloads/details.aspx?familyid=5A14E870-406B-4F2A-B723-97BA84AE80B5&amp;displaylang=en) (inclui o bloco de aplicativo de gerenciamento de exceção)
 

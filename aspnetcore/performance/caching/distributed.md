@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/distributed
-ms.openlocfilehash: a00937e8c47e73fa8e29af883f44f6e1f4d4b1b4
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: a0af4887143f6ed37a1af982ec21a2ad5eae9515
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>Trabalhando com um cache distribuído no núcleo do ASP.NET
 
@@ -48,7 +48,7 @@ O `IDistributedCache` interface inclui métodos síncronos e assíncronos. A int
 
 Usa uma chave de cadeia de caracteres e recupera um item em cache como um `byte[]` se encontrado no cache.
 
-**Conjunto de SetAsync**
+**Set, SetAsync**
 
 Adiciona um item (como `byte[]`) para o cache usando uma chave de cadeia de caracteres.
 
@@ -56,7 +56,7 @@ Adiciona um item (como `byte[]`) para o cache usando uma chave de cadeia de cara
 
 Atualiza um item em cache com base em sua chave, redefinir seu tempo limite de expiração deslizante (se houver).
 
-**Remover RemoveAsync**
+**Remove, RemoveAsync**
 
 Remove uma entrada de cache com base em sua chave.
 
@@ -121,7 +121,7 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 A tabela criada tem o esquema a seguir:
 
-![Tabela de Cache do SQL Server](distributed/_static/SqlServerCacheTable.png)
+![SqlServer Cache Table](distributed/_static/SqlServerCacheTable.png)
 
 Como todas as implementações de cache, seu aplicativo deve obter e definir valores de cache usando uma instância de `IDistributedCache`, não um `SqlServerCache`. O exemplo implementa `SqlServerCache` no `Production` ambiente (para que ele é configurado em `ConfigureProductionServices`).
 
@@ -138,9 +138,9 @@ Ao decidir qual implementação de `IDistributedCache` é ideal para seu aplicat
 
 * [Redis Cache no Azure](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Banco de dados do SQL Azure](https://azure.microsoft.com/documentation/services/sql-database/)
-* [O armazenamento em cache na memória](xref:performance/caching/memory)
+* [Cache in-memory](xref:performance/caching/memory)
 * [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
 * [Cache de resposta](xref:performance/caching/response)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 * [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

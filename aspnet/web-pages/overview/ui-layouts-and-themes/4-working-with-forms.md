@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: fcdded3a7e80ee797eae445f347735f0f7b3d7ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Trabalhando com formulários HTML em Sites de páginas (Razor) da Web do ASP.NET
 ====================
@@ -134,12 +134,12 @@ Você pode corrigir isso facilmente, no entanto. Você tem acesso aos valores qu
     O `value` atributo do `<input>` elementos foi definido para ler dinamicamente o valor do campo do `Request.Form` objeto. Na primeira vez que a página é solicitada, os valores de `Request.Form` objeto estejam vazias. Isso é bom, porque assim o formulário está em branco.
 2. Abrir a página no seu navegador, preencha os campos de formulário ou deixá-los em branco e clique em **enviar**. É exibida uma página que mostra os valores enviados.
 
-    ![5 de formulários](4-working-with-forms/_static/image5.jpg)
+    ![forms-5](4-working-with-forms/_static/image5.jpg)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [1.001 maneiras de obter a entrada de usuários da Web](https://msdn.microsoft.com/en-us/library/ms971057.aspx)
-- [Uso de formulários e processamento de entrada do usuário](https://msdn.microsoft.com/en-us/library/ms525182(VS.90).aspx)
-- [Validando a entrada do usuário em Sites de páginas da Web ASP.NET](https://go.microsoft.com/fwlink/?LinkId=253002)
-- [Usando o preenchimento automático em formulários HTML](https://msdn.microsoft.com/en-us/library/ms533032(VS.85).aspx)
+- [1.001 maneiras de obter a entrada de usuários da Web](https://msdn.microsoft.com/library/ms971057.aspx)
+- [Uso de formulários e processamento de entrada do usuário](https://msdn.microsoft.com/library/ms525182(VS.90).aspx)
+- [Validação da entrada do usuário em sites de Páginas da Web do ASP.NET](https://go.microsoft.com/fwlink/?LinkId=253002)
+- [Usando o preenchimento automático em formulários HTML](https://msdn.microsoft.com/library/ms533032(VS.85).aspx)

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 8050d37cfea91701e1cae0413feb41ca9a68baff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb6e378d6b1de7d43bbc4272b64f9029f4e92924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-identity-recommended-resources"></a>Identidade do ASP.NET recomendado recursos
 ====================
@@ -27,7 +27,7 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 > Se você souber que um blog excelente postagem, [stackoverflow](http://stackoverflow.com) outros links que seriam úteis, ou thread [envie-em um email](mailto:aspnetue@microsoft.com?subject=Identity recommended resources) com o link ou simplesmente deixar uma mensagem na parte inferior desta página.
 
 
-- [Guia de Introdução com a identidade do ASP.NET](#gettingstarted)
+- [Introdução à Identidade do ASP.NET](#gettingstarted)
 - [Novos artigos de leitura deve em destaque](#feat)
 - [Intermediário de identidade do ASP.NET](#adv)
 - [Vídeos](#video)
@@ -42,9 +42,9 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 
 - [Aplicativo do MVC 5 com o Facebook, Twitter, LinkedIn e logon do Google OAuth2](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) este tutorial mostra como escrever um aplicativo ASP.NET MVC 5 com autorização Facebook e Google OAuth 2. Ele também mostra como adicionar dados adicionais para o banco de dados de identidade.
 - [Implantar um aplicativo ASP.NET MVC seguro com associação, OAuth e o banco de dados SQL em um Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). Este tutorial adiciona a implantação do Azure, como proteger seu aplicativo com as funções, como usar a API de associação para adicionar usuários e funções e recursos de segurança adicionais.
-- [Introdução a identidade do ASP.NET](introduction-to-aspnet-identity.md)
+- [Introdução à Identidade do ASP.NET](introduction-to-aspnet-identity.md)
 - [Criar um aplicativo web seguro do ASP.NET MVC 5 com logon, redefinição de senha e de confirmação de email](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
-- [Aplicativo ASP.NET MVC 5 com SMS e o email de autenticação de dois fatores](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
+- [Aplicativo do ASP.NET MVC 5 com autenticação de dois fatores por SMS e email](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
 <a id="feat"></a>
 ## <a name="new-featured-must-read-articles"></a>Novos artigos de leitura deve em destaque
@@ -59,11 +59,11 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 ## <a name="intermediate-aspnet-identity"></a>Intermediário de identidade do ASP.NET
 
 - [Confirmação de conta e senha de recuperação com a identidade do ASP.NET](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [Autenticação de dois fatores usando SMS e email com a identidade do ASP.NET](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
-- [Migrando um site existente da associação SQL para a identidade do ASP.NET](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
-- [Projeto de formulários de identidade do ASP.NET adicionando um Web vazio ou existente](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
-- MSDN Magazine [autenticação externa com a identidade do ASP.NET](https://msdn.microsoft.com/en-us/magazine/dn745860.aspx) por Dino Esposito
-- MSDN Magazine[um primeiro olhar identidade ASP.NET](https://msdn.microsoft.com/en-us/magazine/dn605872.aspx) por Dino Esposito
+- [Autenticação de dois fatores usando SMS e email com a Identidade do ASP.NET](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [Migração de um site existente da Associação do SQL para a Identidade do ASP.NET](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [Adição de Identidade do ASP.NET a um projeto vazio ou existente do Web Forms](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
+- MSDN Magazine [autenticação externa com a identidade do ASP.NET](https://msdn.microsoft.com/magazine/dn745860.aspx) por Dino Esposito
+- MSDN Magazine[um primeiro olhar identidade ASP.NET](https://msdn.microsoft.com/magazine/dn605872.aspx) por Dino Esposito
 - [Identidade do ASP.NET – bloqueio do usuário](http://tech.trailmax.info/2014/06/asp-net-identity-user-lockout/)
 
 <a id="samp"></a>
@@ -132,7 +132,7 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 - Channel 9 [segurança do seu site com ASP.NET Identity](https://channel9.msdn.com/Events/TechDays/Techdays-2014-the-Netherlands/Securing-your-website-with-ASP-NET-Identity) por Alex Thissen
 - [Usar a identidade do ASP.NET em um modelo de banco de dados existente](https://www.youtube.com/watch?v=elfqejow5hM) por Alexander Schmidt
 - [Identidade do ASP.NET um](https://www.youtube.com/watch?v=w8GD-QIusKk) por Ivaylo Kenov da Telerik
-- [Tcheco ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY) nessa aula mostramos como implantar a autenticação básica, como adicionar suporte para provedores de identidade externa, como o Facebook ou Twitter ou e como usar senhas de uso único (OTP). [ASP.NET Identity je nástupce associação de um provedor de função &#367; v ASP.NET, tedy knihovna pro zajišt #283; ní autentizace uživatel &#367;. V této p &#345; ednášce si ukážeme, jak nasad]
+- [Tcheco ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY) nessa aula mostramos como implantar a autenticação básica, como adicionar suporte para provedores de identidade externa, como o Facebook ou Twitter ou e como usar senhas de uso único (OTP). [ASP.NET Identity je nástupce associação de um provedor de função &#367; v ASP.NET, tedy knihovna pro zajišt #283; ní autentizace uživatel &#367;. V této p&#345;ednášce si ukážeme, jak nasad]
 
 <a id="cust"></a>
 ## <a name="custom-storage-providers-for-aspnet-identity"></a>Provedores de armazenamento personalizado para a identidade do ASP.NET

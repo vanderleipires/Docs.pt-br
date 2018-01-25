@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: eee4e7accd338262698d127ed08d4182608839ab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c704cc351876b49ec143a49b25cc0ca83876e06
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a>Filtros de autenticação no ASP.NET Web API 2
 ====================
@@ -47,7 +47,7 @@ Para aplicar o filtro para todos os controladores de API da Web, adicione-o a **
 
 ## <a name="implementing-a-web-api-authentication-filter"></a>Implementando um filtro de autenticação de API da Web
 
-Na API da Web, filtros de autenticação é implementam o [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/en-us/library/system.web.http.filters.iauthenticationfilter.aspx) interface. Eles também devem herdar de **Attribute**, para ser aplicado como atributos.
+Na API da Web, filtros de autenticação é implementam o [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx) interface. Eles também devem herdar de **Attribute**, para ser aplicado como atributos.
 
 O **IAuthenticationFilter** interface tem dois métodos:
 
@@ -168,4 +168,4 @@ Para desabilitar a autenticação em nível de host no pipeline da API da Web, c
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-[Os filtros de segurança de API da Web do ASP.NET](https://msdn.microsoft.com/en-us/magazine/dn781361.aspx) (revista MSDN)
+[Os filtros de segurança de API da Web do ASP.NET](https://msdn.microsoft.com/magazine/dn781361.aspx) (revista MSDN)

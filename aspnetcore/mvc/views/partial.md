@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/partial
-ms.openlocfilehash: e5c8aac855a1f4ec4c6f08087dbe77f6820cc506
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5919c273de2a298c3e407f118ac478e6a6031332
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="partial-views"></a>Exibições parciais
 
@@ -37,7 +37,7 @@ Dica: Execute o [não repita por conta própria princípio](http://deviq.com/don
 
 ## <a name="declaring-partial-views"></a>Declarando exibições parciais
 
-Exibições parciais são criadas como qualquer outro modo de exibição: criar um *. cshtml* dentro do arquivo de *exibições* pasta. Não há nenhuma diferença semântica entre uma exibição parcial em uma exibição normal - apenas são renderizados diferente. Você pode ter uma exibição que é retornada diretamente de um controlador `ViewResult`, e o mesmo modo de exibição pode ser usado como uma exibição parcial. A principal diferença entre como um modo de exibição e uma exibição parcial são renderizados é exibições parciais não executem *viewstart* (enquanto exibições - Saiba mais sobre *viewstart* na [Layout ](layout.md)).
+Exibições parciais são criadas como qualquer outro modo de exibição: criar um *. cshtml* dentro do arquivo de *exibições* pasta. Não há nenhuma diferença semântica entre uma exibição parcial e um modo de exibição normal - apenas estiver renderizados diferente. Você pode ter uma exibição que é retornada diretamente de um controlador `ViewResult`, e o mesmo modo de exibição pode ser usado como uma exibição parcial. A principal diferença entre como um modo de exibição e uma exibição parcial são renderizados é que as exibições parciais não executam *viewstart* (enquanto exibições - Saiba mais sobre *viewstart* na [Layout ](layout.md)).
 
 ## <a name="referencing-a-partial-view"></a>Fazendo referência a uma exibição parcial
 

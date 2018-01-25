@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 2ac18799d214777d098cc85ec6c85fd09f84a782
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a388f2e0ca3e1f0ce24a6def2a2b91711a7bf5a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>Mais padrões e diretrizes (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -31,18 +31,18 @@ Você tem agora vistos 13 padrões que fornecem orientação sobre como consegui
 
 - Migrando aplicativos locais existentes para a nuvem. 
 
-    - [Mover aplicativos para a nuvem](https://msdn.microsoft.com/en-us/library/ff728592.aspx). Livro eletrônico pelo Microsoft padrões e práticas recomendadas. Também está disponível como um [cópia impressa Brochura](https://www.amazon.com/dp/1621140202).
+    - [Mover aplicativos para a nuvem](https://msdn.microsoft.com/library/ff728592.aspx). Livro eletrônico pelo Microsoft padrões e práticas recomendadas. Também está disponível como um [cópia impressa Brochura](https://www.amazon.com/dp/1621140202).
     - [Migrando Microsoft ASP.NET e IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656). Estudo de caso por Robert McMurray.
     - [Movendo o 4º &amp; prefeito para Sites do Azure](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/). Postagem do blog por Jeff Wilcox que narra sua experiência de mover um aplicativo web do Amazon Web Services para aplicativos Web no serviço de aplicativo do Azure.
-    - [Mover aplicativos para o Azure: as alterações?](https://azure.microsoft.com/en-us/documentation/videos/web-sites-internals-and-the-file-system/) Breve vídeo de Stefan Schackow, explica o acesso de sistema de arquivos em aplicativos Web no serviço de aplicativo do Azure.
+    - [Mover aplicativos para o Azure: as alterações?](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) Breve vídeo de Stefan Schackow, explica o acesso de sistema de arquivos em aplicativos Web no serviço de aplicativo do Azure.
     - [Nuvem híbrida do Azure](https://www.amazon.com/dp/B00EOP4UQW). Catálogo de cópia impressa ou livro eletrônico Danny Garber, Malik Jamal e Adam Fazio.
 - Problemas de segurança, autenticação e autorização exclusivos para aplicativos em nuvem
 
     - [Diretrizes de segurança do Azure](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
-    - [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consulte Gatekeeper padrão, o padrão de identidade federada.
+    - [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/library/dn568099.aspx). Consulte Gatekeeper padrão, o padrão de identidade federada.
     - [Segurança de rede do Azure](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx). White paper por Ashin Palekar.
 
-Consulte também os padrões de computação de nuvem adicionais e orientações a [Microsoft Patterns and Practices - orientação do Azure](https://msdn.microsoft.com/en-us/library/dn568099.aspx).
+Consulte também os padrões de computação de nuvem adicionais e orientações a [Microsoft Patterns and Practices - orientação do Azure](https://msdn.microsoft.com/library/dn568099.aspx).
 
 <a id="resources"></a>
 ## <a name="resources"></a>Recursos
@@ -51,9 +51,9 @@ Cada um dos capítulos deste livro e fornece links para recursos para obter mais
 
 Documentação
 
-- [Práticas recomendadas para o Design de serviços em grande escala em serviços de nuvem do Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). White paper, Mark Simms e Michael Thomassy.
-- [À prova de falhas: Orientação para arquiteturas resilientes na nuvem](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). White paper Marc Mercuri, Ulrich Homann e Andrew Townhill. Versão de página da Web da série de vídeo à prova de falhas.
-- [Diretrizes do Azure](https://azure.microsoft.com/en-us/develop/net/guidance/) página do Portal de documentação oficial relacionados ao desenvolvimento de aplicativos do Azure.
+- [Práticas recomendadas para o Design de serviços em grande escala em serviços de nuvem do Azure](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). White paper, Mark Simms e Michael Thomassy.
+- [À prova de falhas: Orientação para arquiteturas resilientes na nuvem](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). White paper Marc Mercuri, Ulrich Homann e Andrew Townhill. Versão de página da Web da série de vídeo à prova de falhas.
+- [Diretrizes do Azure](https://azure.microsoft.com/develop/net/guidance/) página do Portal de documentação oficial relacionados ao desenvolvimento de aplicativos do Azure.
 
 Vídeos
 
@@ -71,11 +71,11 @@ Cópia impressa manuais
 - [Bíblia de computação em nuvem](https://www.amazon.com/dp/0470903562). Por Barrie Sosinsky.
 - [Liberá-lo! Criar e implantar o Software pronto para produção](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). Por Michael T. Nygard.
 - [Padrões de arquitetura de nuvem: Usando o Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do). Por Wilder fatura.
-- [Windows Azure plataforma](https://www.amazon.com/dp/1430235632). Por Tejaswi Redkar.
+- [Windows Azure plataforma](https://www.amazon.com/dp/1430235632). By Tejaswi Redkar.
 - [Padrões de programação para novas empresas do Windows Azure](https://www.amazon.com/dp/1849685606). Por Riccardo Becker.
-- [Livro de receitas do Microsoft Windows Azure desenvolvimento](https://www.amazon.com/dp/1849682224). Por Neil Mackenzie.
+- [Livro de receitas do Microsoft Windows Azure desenvolvimento](https://www.amazon.com/dp/1849682224). By Neil Mackenzie.
 
-Finalmente, quando você começar a criar aplicativos do mundo real e executá-los no Azure, mais cedo ou mais tarde você provavelmente precisa assistência de especialistas. Você pode fazer perguntas em sites de comunidade como [fóruns do Azure ou StackOverflow](https://azure.microsoft.com/en-us/support/forums/), ou você pode contatar a Microsoft diretamente para o suporte do Azure. A Microsoft oferece vários níveis de suporte técnico do Azure: um resumo e uma comparação das opções, consulte [suporte do Azure](https://azure.microsoft.com/en-us/support/plans/).
+Finalmente, quando você começar a criar aplicativos do mundo real e executá-los no Azure, mais cedo ou mais tarde você provavelmente precisa assistência de especialistas. Você pode fazer perguntas em sites de comunidade como [fóruns do Azure ou StackOverflow](https://azure.microsoft.com/support/forums/), ou você pode contatar a Microsoft diretamente para o suporte do Azure. A Microsoft oferece vários níveis de suporte técnico do Azure: um resumo e uma comparação das opções, consulte [suporte do Azure](https://azure.microsoft.com/support/plans/).
 
 <a id="acknowledgments"></a>
 ## <a name="acknowledgments"></a>Confirmações
@@ -109,7 +109,7 @@ Membros do [Microsoft Developer orientação Advisory Council](http://aka.ms/DGA
 - Jean-Luc Boucho
 - Catalin Gheorghiu
 - Wouter de Kort
-- Dos Carlos Santos
+- Carlos dos Santos
 - Neil Mackenzie
 - Dennis Persson
 - Sunil Sabat
@@ -128,7 +128,7 @@ Outros membros do DGAC revisado e comentários sobre a estrutura de tópicos pre
 - Jason Oliveira
 - Alberto Poblacion
 - Ryan Riley
-- Tsisah perez Jones
+- Perez Jones Tsisah
 - Roger Whitehead
 - Pawel Wilkosz
 

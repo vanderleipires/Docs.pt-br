@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: b60913cef4b62745cf167e6074834bf7d0c228d1
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>Acessando dados do modelo de um controlador
 ====================
@@ -87,7 +87,7 @@ Uma solicitação para o `Movies` retorna todas as entradas de `Movies` de tabel
 
 Anteriormente neste tutorial, você viu como um controlador pode passar dados ou objetos para um modelo de exibição usando o `ViewBag` objeto. O `ViewBag` é um objeto dinâmico que fornece uma maneira conveniente de associação tardia para passar informações para um modo de exibição.
 
-MVC também fornece a capacidade de passar *fortemente* digitado objetos para um modelo de exibição. Essa abordagem com rigidez de tipos permite melhor tempo de compilação mais rico e verificação do seu código [IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b(v=vs.120).aspx) no editor do Visual Studio. O mecanismo de scaffolding no Visual Studio usado essa abordagem (ou seja, passando um *fortemente* com tipo de modelo) com o `MoviesController` modelos de classe e o modo de exibição quando criado os métodos e as exibições.
+MVC também fornece a capacidade de passar *fortemente* digitado objetos para um modelo de exibição. Essa abordagem com rigidez de tipos permite melhor tempo de compilação mais rico e verificação do seu código [IntelliSense](https://msdn.microsoft.com/library/hcw1s69b(v=vs.120).aspx) no editor do Visual Studio. O mecanismo de scaffolding no Visual Studio usado essa abordagem (ou seja, passando um *fortemente* com tipo de modelo) com o `MoviesController` modelos de classe e o modo de exibição quando criado os métodos e as exibições.
 
 No *Controllers\MoviesController.cs* arquivo examinar gerado `Details` método. O `Details` método é mostrado abaixo.
 
@@ -109,9 +109,9 @@ Incluindo um `@model` instrução na parte superior do arquivo do modelo de exib
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample6.cshtml)]
 
-Esta diretiva `@model` permite acessar o filme que o controlador passou para a exibição usando um objeto `Model` fortemente tipado. Por exemplo, o *Details.cshtml* modelo, o código passa cada campo de filme o `DisplayNameFor` e [DisplayFor](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) auxiliares HTML com rigidez de tipos `Model` objeto. O `Create` e `Edit` métodos e modelos de exibição também passam um objeto de modelo do filme.
+Esta diretiva `@model` permite acessar o filme que o controlador passou para a exibição usando um objeto `Model` fortemente tipado. Por exemplo, o *Details.cshtml* modelo, o código passa cada campo de filme o `DisplayNameFor` e [DisplayFor](https://msdn.microsoft.com/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) auxiliares HTML com rigidez de tipos `Model` objeto. O `Create` e `Edit` métodos e modelos de exibição também passam um objeto de modelo do filme.
 
-Examine o *cshtml* modelo de exibição e o `Index` método o *MoviesController.cs* arquivo. Observe como o código cria um [ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) objeto quando ele chama o `View` método auxiliar a `Index` método de ação. O código, em seguida, passa essa `Movies` lista da `Index` método de ação para o modo de exibição:
+Examine o *cshtml* modelo de exibição e o `Index` método o *MoviesController.cs* arquivo. Observe como o código cria um [ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx) objeto quando ele chama o `View` método auxiliar a `Index` método de ação. O código, em seguida, passa essa `Movies` lista da `Index` método de ação para o modo de exibição:
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample7.cs?highlight=3)]
 

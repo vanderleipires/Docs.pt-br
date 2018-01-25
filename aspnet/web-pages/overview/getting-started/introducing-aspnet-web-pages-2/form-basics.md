@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 97e4a2a1794dbdccf80f0b44c1246c743fa23019
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>Introdução a páginas da Web ASP.NET - Noções básicas do formulário HTML
 ====================
@@ -220,7 +220,7 @@ Se você reunir todos esses elementos, você receberá o código a seguir:
 > 
 > **Importante!** Uso de espaços reservados (como `@0`) passar valores para um comando SQL é *extremamente importante* para segurança. A maneira como você vê-lo aqui, com espaços reservados para dados da variável, é a única maneira de você deve construir comandos SQL.
 > 
-> Nunca construa uma instrução SQL, reunindo texto literal (concatenação) e os valores que você obtém do usuário. Concatenação de entrada do usuário em uma instrução SQL abre o site para um *ataque de injeção de SQL* em que um usuário mal-intencionado envia valores para a página de hack seu banco de dados. (Você pode ler mais no artigo [injeção SQL](https://msdn.microsoft.com/en-us/library/ms161953.aspx) o site do MSDN.)
+> Nunca construa uma instrução SQL, reunindo texto literal (concatenação) e os valores que você obtém do usuário. Concatenação de entrada do usuário em uma instrução SQL abre o site para um *ataque de injeção de SQL* em que um usuário mal-intencionado envia valores para a página de hack seu banco de dados. (Você pode ler mais no artigo [injeção SQL](https://msdn.microsoft.com/library/ms161953.aspx) o site do MSDN.)
 
 
 ## <a name="updating-the-movies-page-with-search-code"></a>Atualizar a página de filmes com código de pesquisa

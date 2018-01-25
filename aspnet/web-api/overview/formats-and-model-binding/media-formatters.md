@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 7d85b995cd577d0ff90fe96bce508c7fbdc6ebbb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>Formatadores de mídia no ASP.NET Web API 2
 ====================
@@ -28,9 +28,9 @@ Este tutorial mostra como suporte a formatos de mídia adicionais na API da Web 
 
 Um tipo de mídia, também chamado de um tipo MIME, identifica o formato de uma parte dos dados. Tipos de mídia HTTP, descrevem o formato do corpo da mensagem. Um tipo de mídia consiste em duas cadeias de caracteres, um tipo e um subtipo. Por exemplo:
 
-- texto/html
-- imagem/png
-- aplicativo/json
+- text/html
+- image/png
+- application/json
 
 Quando uma mensagem HTTP contém um corpo de entidade, o cabeçalho Content-Type especifica o formato do corpo da mensagem. Isso informa o receptor como analisar o conteúdo do corpo da mensagem.
 
@@ -48,8 +48,8 @@ O tipo de mídia determina como a API da Web serializa e desserializa o corpo da
 
 Para criar um formatador de mídia, derivam de uma dessas classes:
 
-- [MediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatter.aspx). Essa classe usa assíncrona leitura e métodos de gravação.
-- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). Essa classe é derivada de **MediaTypeFormatter** , mas usa métodos de leitura/gravação síncrono.
+- [MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx). Essa classe usa assíncrona leitura e métodos de gravação.
+- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). Essa classe é derivada de **MediaTypeFormatter** , mas usa métodos de leitura/gravação síncrono.
 
 Derivando de **BufferedMediaTypeFormatter** é mais simples, porque não há nenhum código assíncrono, mas isso também significa que o thread de chamada pode bloquear durante e/s.
 
@@ -91,10 +91,10 @@ Para adicionar um tipo de mídia formatador para o pipeline de API da Web, use o
 
 Opcionalmente, um formatador de mídia pode dar suporte a várias codificações de caracteres, como UTF-8 ou ISO 8859-1.
 
-No construtor, adicione um ou mais [Encoding](https://msdn.microsoft.com/en-us/library/system.text.encoding.aspx) tipos para o **SupportedEncodings** coleção. Coloque a primeira de codificação padrão.
+No construtor, adicione um ou mais [Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) tipos para o **SupportedEncodings** coleção. Coloque a primeira de codificação padrão.
 
 [!code-csharp[Main](media-formatters/samples/sample10.cs?highlight=6-7)]
 
-No **WriteToStream** e **ReadFromStream** chamar métodos, [MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/en-us/library/hh969054.aspx) para selecionar a codificação de caracteres preferencial. Esse método corresponde os cabeçalhos de solicitação com a lista de codificações com suporte. Use retornado **codificação** ao ler ou gravar no fluxo:
+No **WriteToStream** e **ReadFromStream** chamar métodos, [MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/library/hh969054.aspx) para selecionar a codificação de caracteres preferencial. Esse método corresponde os cabeçalhos de solicitação com a lista de codificações com suporte. Use retornado **codificação** ao ler ou gravar no fluxo:
 
 [!code-csharp[Main](media-formatters/samples/sample11.cs?highlight=3,5)]

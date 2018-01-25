@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 1c93a53ea23ec13ca3d6fc138024ba38ec4883ee
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5f1579b5682b2f0b3f8227f0cf6b4c0361eb1e67
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalização e localização em ASP.NET Core
 
@@ -39,9 +39,9 @@ Introduzido no ASP.NET Core `IStringLocalizer` e `IStringLocalizer<T>` foram pro
 
 [!code-csharp[Main](localization/sample/Localization/Controllers/AboutController.cs)]
 
-No código acima, o `IStringLocalizer<T>` implementação vêm [injeção de dependência](dependency-injection.md). Se o valor localizado do "Sobre o título" não foi encontrado, a chave do indexador for retornada, ou seja, a cadeia de caracteres "Sobre o título". Você pode deixar o padrão de literais de cadeias de caracteres no aplicativo e encapsulá-los no localizador, para que você possa se concentrar no desenvolvimento do aplicativo. Você pode desenvolve seu aplicativo com o idioma padrão e prepará-la para a etapa de localização sem primeiro criar um arquivo de recurso padrão. Como alternativa, você pode usar a abordagem tradicional e fornecer uma chave para recuperar a cadeia de caracteres de idioma padrão. Para muitos desenvolvedores novo fluxo de trabalho de não ter um idioma padrão *. resx* de arquivo e simplesmente encapsulamento os literais de cadeia de caracteres podem reduzir a sobrecarga de localização de um aplicativo. Outros desenvolvedores preferirão o fluxo de trabalho tradicional, como ele pode tornar mais fácil trabalhar com literais de cadeia de caracteres mais longas e torná-lo mais fácil atualizar cadeias de caracteres localizadas.
+No código acima, o `IStringLocalizer<T>` implementação vêm [injeção de dependência](dependency-injection.md). Se o valor localizado do "Sobre o título" não for encontrado, a chave do indexador for retornada, ou seja, a cadeia de caracteres "Sobre o título". Você pode deixar o padrão de literais de cadeias de caracteres no aplicativo e encapsulá-los no localizador, para que você possa se concentrar no desenvolvimento do aplicativo. Você pode desenvolve seu aplicativo com o idioma padrão e prepará-la para a etapa de localização sem primeiro criar um arquivo de recurso padrão. Como alternativa, você pode usar a abordagem tradicional e fornecer uma chave para recuperar a cadeia de caracteres de idioma padrão. Para muitos desenvolvedores novo fluxo de trabalho de não ter um idioma padrão *. resx* de arquivo e simplesmente encapsulamento os literais de cadeia de caracteres podem reduzir a sobrecarga de localização de um aplicativo. Outros desenvolvedores preferirão o fluxo de trabalho tradicional, como ele pode tornar mais fácil trabalhar com literais de cadeia de caracteres mais longas e torná-lo mais fácil atualizar cadeias de caracteres localizadas.
 
-Use o `IHtmlLocalizer<T>` implementação para recursos que contêm o HTML. `IHtmlLocalizer`HTML codifica os argumentos que são formatados na cadeia de caracteres de recurso, mas o HTML não codifica a cadeia de caracteres de recurso em si. No exemplo realçado abaixo, apenas o valor de `name` parâmetro é codificada em HTML.
+Use o `IHtmlLocalizer<T>` implementação para recursos que contêm o HTML. `IHtmlLocalizer`HTML codifica os argumentos que são formatados na cadeia de caracteres de recurso, mas não o HTML codifica a cadeia de caracteres de recurso em si. No exemplo realçado abaixo, apenas o valor de `name` parâmetro é codificada em HTML.
 
 [!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 
@@ -152,7 +152,7 @@ Como alternativa, você pode ignorar esse erro. Esperamos que para corrigir isso
 
 ## <a name="resource-file-naming"></a>Nomes de arquivos de recurso
 
-Recursos são nomeados para o nome completo do tipo de sua classe menos o nome do assembly. Por exemplo, um recurso francês em um projeto cuja assembly principal é `LocalizationWebsite.Web.dll` para a classe `LocalizationWebsite.Web.Startup` seria nomeado *Startup.fr.resx*. Um recurso para a classe `LocalizationWebsite.Web.Controllers.HomeController` seria nomeado *Controllers.HomeController.fr.resx*. Se o namespace da classe de destino não é o mesmo que o nome do assembly, você precisará do nome completo do tipo. Por exemplo, no exemplo de projeto um recurso para o tipo de `ExtraNamespace.Tools` seria nomeado *ExtraNamespace.Tools.fr.resx*.
+Recursos são nomeados para o nome completo do tipo de sua classe menos o nome do assembly. Por exemplo, um recurso francês em um projeto cuja assembly principal é `LocalizationWebsite.Web.dll` para a classe `LocalizationWebsite.Web.Startup` seria nomeado *Startup.fr.resx*. Um recurso para a classe `LocalizationWebsite.Web.Controllers.HomeController` seria nomeado *Controllers.HomeController.fr.resx*. Se o namespace da classe de destino não é o mesmo que o nome do assembly será necessário o nome de tipo completo. Por exemplo, no exemplo de projeto um recurso para o tipo de `ExtraNamespace.Tools` seria nomeado *ExtraNamespace.Tools.fr.resx*.
 
 No projeto de exemplo, o `ConfigureServices` método define o `ResourcesPath` "Recursos", então o caminho relativo do projeto para arquivo de recurso do controlador principal francês é *Resources/Controllers.HomeController.fr.resx*. Como alternativa, você pode usar pastas para organizar arquivos de recurso. Para o controlador principal, o caminho deverá ser *Resources/Controllers/HomeController.fr.resx*. Se você não usar o `ResourcesPath` opção, o *. resx* arquivo entrarão no diretório base do projeto. O arquivo de recurso `HomeController` seria nomeado *Controllers.HomeController.fr.resx*. A opção de usar a convenção de nomenclatura de ponto ou caminho depende de como você deseja organizar seus arquivos de recurso.
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: df13726689c430ab19786e104ea7404051107aa9
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c30556368ba24fb38cf3347dd49f171b5246514c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Introdução ao ASP.NET MVC de núcleo e Entity Framework Core usando o Visual Studio (1 a 10)
 
@@ -178,7 +178,7 @@ No *dados* pasta criar um novo arquivo de classe chamado *SchoolContext.cs*e sub
 
 Esse código cria um `DbSet` propriedade para cada conjunto de entidades. Na terminologia do Entity Framework, um conjunto de entidades normalmente corresponde a uma tabela de banco de dados, enquanto uma entidade corresponde a uma linha na tabela.
 
-Você poderia omitir o `DbSet<Enrollment>` e `DbSet<Course>` instruções e ele seriam funcionam da mesma. O Entity Framework inclui-los implicitamente porque o `Student` referências de entidade de `Enrollment` entidade e o `Enrollment` referências de entidade o `Course` entidade.
+Você pode omiti a `DbSet<Enrollment>` e `DbSet<Course>` instruções e ele seriam funcionam da mesma. O Entity Framework inclui-los implicitamente porque o `Student` referências de entidade de `Enrollment` entidade e o `Enrollment` referências de entidade o `Course` entidade.
 
 Quando o banco de dados é criado, EF cria tabelas com nomes iguais a `DbSet` nomes de propriedade. Nomes de propriedade para coleções são normalmente plural (alunos em vez de estudante), mas os desenvolvedores Concordo sobre se os nomes de tabela devem ser pluralized ou não. Para esses tutoriais, você vai substituir o comportamento padrão especificando nomes de tabela única no DbContext. Para fazer isso, adicione o seguinte código após a última propriedade DbSet.
 
@@ -204,7 +204,7 @@ Abra o *appSettings. JSON* de arquivos e adicionar uma cadeia de caracteres de c
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-A cadeia de caracteres de conexão Especifica um banco de dados LocalDB do SQL Server. LocalDB é uma versão leve do mecanismo de banco de dados do SQL Server Express e destina-se ao desenvolvimento de aplicativos, não o uso de produção. O LocalDB é iniciado sob demanda e executado no modo de usuário e, portanto, não há nenhuma configuração complexa. Por padrão, o LocalDB cria *. mdf* arquivos de banco de dados de `C:/Users/<user>` directory.
+A cadeia de caracteres de conexão Especifica um banco de dados LocalDB do SQL Server. LocalDB é uma versão leve do mecanismo de banco de dados do SQL Server Express e destina-se ao desenvolvimento de aplicativos, não o uso de produção. LocalDB é iniciado sob demanda e é executado no modo de usuário, portanto, não há nenhuma configuração complexa. Por padrão, o LocalDB cria *. mdf* arquivos de banco de dados de `C:/Users/<user>` directory.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>Adicione código para inicializar o banco de dados de teste
 

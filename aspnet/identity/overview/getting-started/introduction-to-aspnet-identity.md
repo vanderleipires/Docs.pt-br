@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: a66e2a80668dbf291b9cc34f205b546b72d92bcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>Introdução a identidade do ASP.NET
 ====================
@@ -31,7 +31,7 @@ por [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://git
 
 ### <a name="aspnet-membership"></a>Associação do ASP.NET
 
-[Associação ASP.NET](https://msdn.microsoft.com/en-us/library/yh26yfzy(v=VS.100).aspx) foi projetado para resolver os requisitos de associação de site que eram comuns em 2005, que envolvia autenticação de formulários e um banco de dados do SQL Server para nomes de usuário, senhas e dados de perfil. Atualmente, há uma matriz muito mais ampla de opções de armazenamento de dados para aplicativos web e a maioria dos desenvolvedores deseja habilitar seus sites usar provedores de identidade de redes sociais para a funcionalidade de autenticação e autorização. As limitações de design da associação ASP.NET dificultam essa transição:
+[Associação ASP.NET](https://msdn.microsoft.com/library/yh26yfzy(v=VS.100).aspx) foi projetado para resolver os requisitos de associação de site que eram comuns em 2005, que envolvia autenticação de formulários e um banco de dados do SQL Server para nomes de usuário, senhas e dados de perfil. Atualmente, há uma matriz muito mais ampla de opções de armazenamento de dados para aplicativos web e a maioria dos desenvolvedores deseja habilitar seus sites usar provedores de identidade de redes sociais para a funcionalidade de autenticação e autorização. As limitações de design da associação ASP.NET dificultam essa transição:
 
 - O esquema de banco de dados foi projetado para o SQL Server e você não pode alterá-lo. Você pode adicionar informações de perfil, mas os dados adicionais são compactados em uma tabela diferente, o que torna difícil para acesso por qualquer meio, exceto por meio da API de provedor de perfil.
 - O sistema do provedor permite que você altere o armazenamento de dados de backup, mas o sistema foi projetado para suposições apropriadas para um banco de dados relacional. Você pode escrever um provedor para armazenar informações de associação em um mecanismo de armazenamento não relacionais, como tabelas de armazenamento do Azure, mas, em seguida, você precisa resolver o design relacional escrevendo muito código e muito `System.NotImplementedException` exceções para métodos que não se aplicam a bancos de dados NoSQL.
@@ -47,7 +47,7 @@ Associação simples facilitam a personalizar as informações de perfil de usu�
 - Você não pode usá-lo com OWIN.
 - Eles não funcionam bem com provedores de associação ASP.NET existente e não é extensível.
 
-### <a name="aspnet-universal-providers"></a>ASP.NET Universal Providers
+### <a name="aspnet-universal-providers"></a>Provedores Universais ASP.NET
 
 [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) foram desenvolvidos para possibilitar manter informações de associação no Microsoft que o banco de dados SQL do Azure e elas também funcionam com o SQL Server Compact. O Universal Providers foi compilado no Entity Framework Code First, que significa que os provedores de Universal pode ser usados para manter dados em qualquer repositório EF com suporte. Com os provedores de Universal, o esquema de banco de dados foi limpo bastante muito bem.
 
@@ -132,7 +132,7 @@ Identidade do ASP.NET é implementada usando o procedimento a seguir. A finalida
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- O código realçado acima no `SignInAsync` método gera uma [ClaimsIdentity](https://msdn.microsoft.com/en-us/library/system.security.claims.claimsidentity.aspx). Como identidade do ASP.NET e autenticação de Cookie OWIN são sistema baseado em declarações, o framework requer o aplicativo para gerar uma ClaimsIdentity para o usuário. ClaimsIdentity tem informações sobre todas as declarações para o usuário, como as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio.  
+ O código realçado acima no `SignInAsync` método gera uma [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Como identidade do ASP.NET e autenticação de Cookie OWIN são sistema baseado em declarações, o framework requer o aplicativo para gerar uma ClaimsIdentity para o usuário. ClaimsIdentity tem informações sobre todas as declarações para o usuário, como as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio.  
   
  O código realçado abaixo no `SignInAsync` método assina o usuário usando o AuthenticationManager do OWIN e chamar `SignIn` e passando o ClaimsIdentity.  
 
@@ -142,7 +142,7 @@ Identidade do ASP.NET é implementada usando o procedimento a seguir. A finalida
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- Código realçada acima mostra o OWIN `AuthenticationManager.SignOut` método. Isso equivale a [FormsAuthentication.SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx) método usado pelo [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) módulo em formulários da Web.
+ Código realçada acima mostra o OWIN `AuthenticationManager.SignOut` método. Isso equivale a [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) método usado pelo [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) módulo em formulários da Web.
 
 ## <a name="components-of-aspnet-identity"></a>Componentes da identidade do ASP.NET
 
@@ -152,7 +152,7 @@ O diagrama a seguir mostra os componentes do sistema de identidade do ASP.NET (c
 
 A seguir está uma breve descrição dos pacotes do NuGet não mencionadas anteriormente:
 
-- [Owin](http://www.nuget.org/packages/Microsoft.Owin.Security.Cookies/)  
+- [Microsoft.Owin.Security.Cookies](http://www.nuget.org/packages/Microsoft.Owin.Security.Cookies/)  
  Middleware que permite que um aplicativo para usar o cookie de autenticação, semelhante ao ASP com base em. Autenticação de formulários do NET.
 - [EntityFramework](http://www.nuget.org/packages/EntityFramework/)  
  Entity Framework é uma tecnologia de acesso a dados recomendada da Microsoft para bancos de dados relacionais.
@@ -171,5 +171,5 @@ Esperamos que em breve fornecem orientação sobre como migrar seus aplicativos 
 - [Contas organizacionais](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauth) na criação de projetos Web ASP.NET no Visual Studio 2013
 - [Personalizando informações de perfil no ASP.NET Identity em modelos do VS 2013](https://blogs.msdn.com/b/webdev/archive/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates.aspx)
 - [Obter mais informações dos provedores sociais usados nos modelos de projeto do VS 2013](https://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx)
-- [https://GitHub.com/rustd/AspnetIdentitySample](https://github.com/rustd/AspnetIdentitySample)  
+- [https://github.com/rustd/AspnetIdentitySample](https://github.com/rustd/AspnetIdentitySample)  
  Aplicativo de exemplo que mostra como adicionar funções básicas e suporte ao usuário e como fazer o gerenciamento de usuário e funções.

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d6a9c6aef42d1f165567d1a1802bffa853a320e1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 416178533f022f2a262799e6f042d6009bb9d999
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>Exibindo vários registros por linha com o controle DataList (VB)
 ====================
@@ -67,7 +67,7 @@ Reserve um momento para visitar a página em um navegador. Como mostra a Figura 
 
 ## <a name="step-2-changing-the-datalist-s-layout-direction"></a>Etapa 2: Alterar a direção do Layout s DataList
 
-Enquanto o comportamento padrão para o DataList é organizar seus itens verticalmente em uma tabela de coluna única, várias linhas, esse comportamento pode ser alterado facilmente por meio do DataList s [ `RepeatDirection` propriedade](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatdirection.aspx). O `RepeatDirection` propriedade pode aceitar um dos dois valores possíveis: `Horizontal` ou `Vertical` (o padrão).
+Enquanto o comportamento padrão para o DataList é organizar seus itens verticalmente em uma tabela de coluna única, várias linhas, esse comportamento pode ser alterado facilmente por meio do DataList s [ `RepeatDirection` propriedade](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx). O `RepeatDirection` propriedade pode aceitar um dos dois valores possíveis: `Horizontal` ou `Vertical` (o padrão).
 
 Alterando o `RepeatDirection` propriedade `Vertical` para `Horizontal`, DataList processa seus registros em uma única linha, a criação de uma coluna por item de fonte de dados. Para ilustrar esse efeito, clique em DataList no Designer e, na janela Propriedades, altere o `RepeatDirection` propriedade `Vertical` para `Horiztonal`. Imediatamente após fazer isso, o Designer ajusta o layout de DataList s, criando uma interface de linha única, várias coluna (consulte a Figura 3).
 
@@ -87,7 +87,7 @@ Quando a exibição de pequenas quantidades de dados, uma única linha, várias 
 
 ## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>Etapa 3: Exibindo dados em uma tabela de várias coluna, várias linhas
 
-Para criar uma DataList várias coluna, várias linhas, precisamos definir o [ `RepeatColumns` propriedade](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) para o número de colunas a serem exibidas. Por padrão, o `RepeatColumns` propriedade é definida como 0, o que fará com que o DataList exibir todos os seus itens em uma única linha ou uma coluna (dependendo do valor da `RepeatDirection` propriedade).
+Para criar uma DataList várias coluna, várias linhas, precisamos definir o [ `RepeatColumns` propriedade](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) para o número de colunas a serem exibidas. Por padrão, o `RepeatColumns` propriedade é definida como 0, o que fará com que o DataList exibir todos os seus itens em uma única linha ou uma coluna (dependendo do valor da `RepeatDirection` propriedade).
 
 Para nosso exemplo, permitem s exibir três produtos por linha da tabela. Portanto, definir o `RepeatColumns` propriedade 3. Depois de fazer essa alteração, dedique alguns momentos para exibir os resultados em um navegador. Como mostra a Figura 5, os produtos agora são listados em uma tabela com três colunas de várias linhas.
 

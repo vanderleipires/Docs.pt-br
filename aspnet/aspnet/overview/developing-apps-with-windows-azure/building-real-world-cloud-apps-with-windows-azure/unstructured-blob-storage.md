@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 6cb77e8ef301c2eeef7df3e391e14f4e2c0364e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 489769533a26c99404c6a5186d66f560385dcffd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>Armazenamento de Blob não estruturados (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -33,7 +33,7 @@ No capítulo anterior, examinamos os esquemas de particionamento e explicou como
 
 O serviço de Blob de armazenamento do Azure fornece uma maneira de armazenar arquivos na nuvem. O serviço Blob tem um número de vantagens em relação ao armazenamento de arquivos em um sistema de arquivos de rede local:
 
-- É altamente dimensionável. Uma única conta de armazenamento pode armazenar [centenas de terabytes](https://msdn.microsoft.com/en-us/library/windowsazure/dn249410.aspx), e você pode ter várias contas de armazenamento. Alguns dos clientes do Azure maiores armazenam centenas de petabytes. Microsoft SkyDrive usa o armazenamento de blob.
+- É altamente dimensionável. Uma única conta de armazenamento pode armazenar [centenas de terabytes](https://msdn.microsoft.com/library/windowsazure/dn249410.aspx), e você pode ter várias contas de armazenamento. Alguns dos clientes do Azure maiores armazenam centenas de petabytes. Microsoft SkyDrive usa o armazenamento de blob.
 - É durável. Todos os arquivos do que repositório no serviço Blob é feito automaticamente.
 - Ele fornece alta disponibilidade. O [SLA para armazenamento](https://go.microsoft.com/fwlink/p/?linkid=159705&amp;clcid=0x409) promessas 99,9% ou 99,99% tempo de atividade, dependendo da opção de redundância geográfica que você escolher.
 - É um recurso (PaaS) de plataforma como serviço do Azure, o que significa que você acabou de armazena e recupera arquivos, pagar apenas para a quantidade real de armazenamento que você usar, e o Azure automaticamente cuidará de configurar e gerenciar todas as VMs e unidades de disco necessárias para o serviço.
@@ -146,7 +146,7 @@ Para obter mais informações, consulte os seguintes recursos:
 - [Uma introdução ao armazenamento de BLOBs do Azure](https://www.simple-talk.com/cloud/cloud-data/an-introduction-to-windows-azure-blob-storage-/). Blog de Mike madeira.
 - [Como usar o serviço de armazenamento de Blob do Azure no .NET](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Documentação oficial sobre o site MicrosoftAzure.com. Uma breve introdução ao blob de armazenamento seguido de exemplos de código mostrando como se conectar ao armazenamento de blob, criar contêineres, carregar e baixar blobs, etc.
 - [À prova de falhas: Criação de serviços de nuvem escalonáveis e resilientes](https://channel9.msdn.com/Series/FailSafe). Série de vídeos de nove partes por Marc Mercuri, Ulrich Homann e Mark Simms. Apresenta os conceitos de alto nível e princípios de arquitetura de uma maneira muito acessível e interessante, com histórias extraídas da experiência do Microsoft Customer Advisory Team (CAT) com clientes reais. Para uma discussão sobre o serviço de armazenamento do Azure e blobs, consulte episódio 5 começando em 35:13.
-- [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consulte manobrista chave padrão.
+- [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/library/dn568099.aspx). Consulte manobrista chave padrão.
 
 >[!div class="step-by-step"]
 [Anterior](data-partitioning-strategies.md)

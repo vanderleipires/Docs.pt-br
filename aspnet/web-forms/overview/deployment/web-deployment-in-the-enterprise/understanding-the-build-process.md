@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
-ms.openlocfilehash: 551e31a7a2d0a4e6259f74977c2f8e21cb694e42
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3efcefc40dc135ff42f55911036f8b38b5aa13b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-the-build-process"></a>Noções básicas sobre o processo de compilação
 ====================
@@ -77,7 +77,7 @@ Para implantar a solução de Gerenciador de contato para um ambiente de teste d
 
 
 > [!NOTE]
-> O **/fl** alternar (abreviação de **/fileLogger**) registra a saída da compilação em um arquivo denominado *msbuild.log* no diretório atual. Para obter mais informações, consulte o [referência de linha de comando do MSBuild](https://msdn.microsoft.com/en-us/library/ms164311.aspx).
+> O **/fl** alternar (abreviação de **/fileLogger**) registra a saída da compilação em um arquivo denominado *msbuild.log* no diretório atual. Para obter mais informações, consulte o [referência de linha de comando do MSBuild](https://msdn.microsoft.com/library/ms164311.aspx).
 
 
 Neste ponto, o MSBuild começa a ser executado, carrega o *Publish.proj* arquivo e começa a processar as instruções dentro dele. A primeira instrução informa MSBuild para importar o projeto de arquivos que o **TargetEnvPropsFile** parâmetro especifica.
@@ -178,7 +178,7 @@ Os itens não são usados dentro deste destino & #x 2014; esse destino simplesme
 O **DbPublishPackages** item conterá um único valor, o caminho para o *ContactManager.Database.deploymanifest* arquivo.
 
 > [!NOTE]
-> Um arquivo .deploymanifest é gerado quando você cria um projeto de banco de dados e usa o mesmo esquema como um arquivo de projeto do MSBuild. Ele contém todas as informações necessárias para implantar um banco de dados, incluindo o local do esquema de banco de dados (.dbschema) e detalhes de todos os scripts pré e pós-implantação. Para obter mais informações, consulte [visão geral de uma de compilação de banco de dados e implantação](https://msdn.microsoft.com/en-us/library/aa833165.aspx).
+> Um arquivo .deploymanifest é gerado quando você cria um projeto de banco de dados e usa o mesmo esquema como um arquivo de projeto do MSBuild. Ele contém todas as informações necessárias para implantar um banco de dados, incluindo o local do esquema de banco de dados (.dbschema) e detalhes de todos os scripts pré e pós-implantação. Para obter mais informações, consulte [visão geral de uma de compilação de banco de dados e implantação](https://msdn.microsoft.com/library/aa833165.aspx).
 
 
 Você aprenderá mais sobre como os pacotes de implantação e manifestos de implantação de banco de dados são criados e usados no [criação e a projetos de aplicativo Web de empacotamento](building-and-packaging-web-application-projects.md) e [implantar projetos de banco de dados](deploying-database-projects.md).
@@ -193,13 +193,13 @@ Primeiro, observe que a marca de abertura inclui um **saídas** atributo.
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
 
-Este é um exemplo de *o envio em lote de destino*. Em arquivos de projeto do MSBuild, o envio em lote é uma técnica para iteração pelas coleções. O valor da **saídas** atributo, **"% (DbPublishPackages.Identity)"**, refere-se ao **identidade** propriedade de metadados a **DbPublishPackages**  lista de itens. Esta notação **saídas = %***(ItemList.ItemMetadataName)*, é traduzido como:
+Este é um exemplo de *o envio em lote de destino*. Em arquivos de projeto do MSBuild, o envio em lote é uma técnica para iteração pelas coleções. O valor da **saídas** atributo, **"% (DbPublishPackages.Identity)"**, refere-se ao **identidade** propriedade de metadados a **DbPublishPackages**  lista de itens. Esta notação **Outputs=%***(ItemList.ItemMetadataName)*, é traduzido como:
 
 - Dividir os itens na **DbPublishPackages** em lotes de itens que contêm o mesmo **identidade** valor de metadados.
 - Execute o destino de uma vez por lote.
 
 > [!NOTE]
-> **Identidade** é uma da [valores de metadados internas](https://msdn.microsoft.com/en-us/library/ms164313.aspx) que é atribuído a cada item na criação. Ele se refere ao valor da **incluir** atributo no **Item** elemento & #x 2014; em outras palavras, o caminho e nome do item.
+> **Identidade** é uma da [valores de metadados internas](https://msdn.microsoft.com/library/ms164313.aspx) que é atribuído a cada item na criação. Ele se refere ao valor da **incluir** atributo no **Item** elemento & #x 2014; em outras palavras, o caminho e nome do item.
 
 
 Nesse caso, porque nunca deverá haver mais de um item com o mesmo caminho e nome de arquivo, estamos essencialmente trabalhando com tamanhos de lote de um. O destino é executado uma vez para cada pacote de banco de dados.
@@ -219,7 +219,7 @@ Nesse caso, **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPack
 Como resultado dessa notação, o **Exec** tarefa criará lotes com base em combinações exclusivas do **DatabaseConnectionString**, **TargetDatabase**e **FullPath** valores de metadados e a tarefa serão executada uma vez para cada lote. Este é um exemplo de *lote de tarefas*. No entanto, porque o lote de nível de destino já foi dividido nossa coleção de itens em lotes com item único, o **Exec** tarefa será executada apenas uma vez para cada iteração do destino. Em outras palavras, essa tarefa invoca o utilitário VSDBCMD uma vez para cada pacote de banco de dados na solução.
 
 > [!NOTE]
-> Para obter mais informações sobre o destino e o lote de tarefas, consulte MSBuild [lote](https://msdn.microsoft.com/en-us/library/ms171473.aspx), [metadados de Item no lote de destino](https://msdn.microsoft.com/en-US/library/ms228229.aspx), e [metadados de Item no lote de tarefas](https://msdn.microsoft.com/en-us/library/ms171474.aspx).
+> Para obter mais informações sobre o destino e o lote de tarefas, consulte MSBuild [lote](https://msdn.microsoft.com/library/ms171473.aspx), [metadados de Item no lote de destino](https://msdn.microsoft.com/library/ms228229.aspx), e [metadados de Item no lote de tarefas](https://msdn.microsoft.com/library/ms171474.aspx).
 
 
 ### <a name="the-publishwebpackages-target"></a>O destino PublishWebPackages

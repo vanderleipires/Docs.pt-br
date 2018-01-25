@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 60301e1e3eb96f51e86ef9f8be61f5fd8a4c009c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6fc356d8ecc1b699269286f244000b493e48a2c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implementação do servidor de web HTTP. sys no núcleo do ASP.NET
 
@@ -140,7 +140,7 @@ No Visual Studio, o perfil de inicialização padrão é para o IIS Express. Par
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>Pré-registrar prefixos de URL e configurar o SSL
 
-O IIS e o HTTP. sys contam com o driver de modo de kernel HTTP. sys subjacente para escutar solicitações e processamento inicial. No IIS, a interface do usuário de gerenciamento fornece uma maneira relativamente fácil de configurar tudo. No entanto, você precisa configurar o HTTP. sys por conta própria. A ferramenta interna para fazer isto é *netsh.exe*. 
+O IIS e o HTTP. sys contam com o driver de modo de kernel HTTP. sys subjacente para escutar solicitações e processamento inicial. No IIS, a interface do usuário de gerenciamento fornece uma maneira relativamente fácil de configurar tudo. No entanto, você precisa configurar o HTTP. sys por conta própria. A ferramenta interna para fazer isso da *netsh.exe*. 
 
 Com *netsh.exe* pode reservar prefixos de URL e atribuir certificados SSL. A ferramenta requer privilégios administrativos.
 

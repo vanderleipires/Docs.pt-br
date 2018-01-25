@@ -8,11 +8,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: 861ac619c7f5fb19a56c59536e20724d96bbddca
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7404b8ec20ed6a00554c8a7ade9a282362b9a186
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Criar um aplicativo do ASP.NET Core com dados de usuário protegidos por autorização
 
@@ -53,7 +53,7 @@ Um `ContactIsOwnerAuthorizationHandler` manipulador de autorização garante que
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Este não é um tutorial de início. Você deve estar familiarizado com:
+Isso não é um tutorial de início. Você deve estar familiarizado com:
 
 * [ASP.NET Core MVC](xref:tutorials/first-mvc-app/start-mvc)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
@@ -163,7 +163,7 @@ Serviços usando o Entity Framework Core devem ser registrados para [injeção d
 
 [!code-csharp[Main](secure-data/samples/final/Startup.cs?name=AuthorizationHandlers)]
 
-`ContactAdministratorsAuthorizationHandler`e `ContactManagerAuthorizationHandler` são adicionados como singletons. São singletons porque eles não usam o EF e todas as informações necessárias no `Context` parâmetro o `HandleRequirementAsync` método.
+`ContactAdministratorsAuthorizationHandler`e `ContactManagerAuthorizationHandler` são adicionados como singletons. Elas são singletons porque eles não usam o EF e todas as informações necessárias no `Context` parâmetro do `HandleRequirementAsync` método.
 
 Completo `ConfigureServices`:
 
@@ -221,11 +221,11 @@ Atualização de *Views/Contacts/Index.cshtml* exibição do Razor para somente 
 
 Adicionar`@using ContactManager.Authorization;`
 
-Atualização de `Edit` e `Delete` links para elas são renderizadas somente para usuários com permissão Editar e excluir o contato.
+Atualização de `Edit` e `Delete` links para elas estão renderizadas somente para usuários com permissão Editar e excluir o contato.
 
 [!code-html[Main](secure-data/samples/final/Views/Contacts/Index.cshtml?range=63-84)]
 
-Aviso: Ocultar links de usuários que não têm permissão para editar ou excluir dados não protege o aplicativo. Ocultar links torna o aplicativo de usuário mais amigável exibindo links só é válidas. Os usuários podem hack as URLs geradas para chamar editar e excluir operações nos dados que não possuem.  O controlador deve repetir que verifica o acesso para ser protegido.
+Aviso: Ocultar links de usuários que não tem permissão para editar ou excluir dados não proteger o aplicativo. Ocultar links torna o aplicativo de usuário mais amigável exibindo links só é válidas. Os usuários podem hack as URLs geradas para chamar editar e excluir operações nos dados que não possuem.  O controlador deve repetir que verifica o acesso para ser protegido.
 
 ### <a name="update-the-details-view"></a>Atualizar a exibição de detalhes
 
@@ -304,7 +304,7 @@ Adicione o código realçado até o final do `Configure` método o *Startup.cs* 
 
 [!code-csharp[Main](secure-data/samples/starter/Startup.cs?name=Configure&highlight=28-)]
 
-Teste o aplicativo propagado o banco de dados. O método de propagação não será executado se há quaisquer linhas no banco de dados de contato.
+Teste o aplicativo propagado o banco de dados. O método de propagação não é executado se houver linhas no banco de dados de contato.
 
 ### <a name="create-a-class-used-in-the-tutorial"></a>Criar uma classe usada no tutorial
 

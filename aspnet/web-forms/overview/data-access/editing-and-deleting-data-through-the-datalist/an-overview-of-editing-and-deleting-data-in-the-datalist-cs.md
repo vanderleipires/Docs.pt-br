@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1c7a1c7a9839f2f56658618958c234e0064cb427
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b3067c5a6bcf81a35f66d43886c9b116a0ef7d8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>Uma visão geral de editar e excluir dados em DataList (c#)
 ====================
@@ -86,11 +86,11 @@ Editar e excluir dados com o GridView são tão fácil porque, nos bastidores, o
 
 Infelizmente, DataList não fornece essa funcionalidade interna. É nossa responsabilidade de garantir que os valores de usuário s são atribuídos para os parâmetros de s ObjectDataSource e que seu `Update()` método é chamado. Para nos ajudar nessa tarefa, DataList fornece as propriedades e os eventos a seguir:
 
-- **O [ `DataKeyField` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**  ao atualizar ou excluir, precisamos poder identificar exclusivamente cada item em DataList. Defina essa propriedade para o campo de chave primária dos dados exibidos. Isso preencherá DataList s [ `DataKeys` coleção](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx) com especificado `DataKeyField` valor para cada item de DataList.
-- **O [ `EditCommand` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**  é acionado quando um botão, LinkButton ou ImageButton cujo `CommandName` está definida como editar é clicado.
-- **O [ `CancelCommand` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**  é acionado quando um botão, LinkButton ou ImageButton cujo `CommandName` está definida como cancelar é clicado.
-- **O [ `UpdateCommand` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**  é acionado quando um botão, LinkButton ou ImageButton cujo `CommandName` está definida como atualização é clicada.
-- **O [ `DeleteCommand` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**  é acionado quando um botão, LinkButton ou ImageButton cujo `CommandName` está definida como Delete é clicado.
+- **O [ `DataKeyField` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**  ao atualizar ou excluir, precisamos poder identificar exclusivamente cada item em DataList. Defina essa propriedade para o campo de chave primária dos dados exibidos. Isso preencherá DataList s [ `DataKeys` coleção](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx) com especificado `DataKeyField` valor para cada item de DataList.
+- **O [ `EditCommand` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**  é acionado quando um botão, LinkButton ou ImageButton cujo `CommandName` está definida como editar é clicado.
+- **O [ `CancelCommand` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**  é acionado quando um botão, LinkButton ou ImageButton cujo `CommandName` está definida como cancelar é clicado.
+- **O [ `UpdateCommand` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**  é acionado quando um botão, LinkButton ou ImageButton cujo `CommandName` está definida como atualização é clicada.
+- **O [ `DeleteCommand` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**  é acionado quando um botão, LinkButton ou ImageButton cujo `CommandName` está definida como Delete é clicado.
 
 Usando essas propriedades e eventos, há quatro abordagens que podemos usar para atualizar e excluir dados de DataList:
 
@@ -153,7 +153,7 @@ Dedicar um tempo para exibir nosso andamento por meio de um navegador. Como most
 >  O leitor um deve se lembrar que foi possível desabilitar o estado de exibição ao criar editável GridViews, DetailsViews e FormViews. Isso ocorre porque os controles da Web ASP.NET 2.0 podem incluir *controlar o estado*, que é o estado persistente em postagens como o estado de exibição, mas considerado essenciais.
 
 
-Desabilitando a exibição de estado em GridView simplesmente omite informações de estado comum, mas mantém o estado de controle (que inclui o estado necessário para editar e excluir). DataList, ter sido criada no período de tempo de 1. x ASP.NET, não utilize o estado de controle e, portanto, deve ter habilitado o estado de exibição. Consulte [vs de estado do controle. Estado de exibição](https://msdn.microsoft.com/en-us/library/1whwt1k7.aspx) para obter mais informações sobre a finalidade do estado de controle e como ela difere do estado de exibição.
+Desabilitando a exibição de estado em GridView simplesmente omite informações de estado comum, mas mantém o estado de controle (que inclui o estado necessário para editar e excluir). DataList, ter sido criada no período de tempo de 1. x ASP.NET, não utilize o estado de controle e, portanto, deve ter habilitado o estado de exibição. Consulte [vs de estado do controle. Estado de exibição](https://msdn.microsoft.com/library/1whwt1k7.aspx) para obter mais informações sobre a finalidade do estado de controle e como ela difere do estado de exibição.
 
 ## <a name="step-4-adding-an-editing-user-interface"></a>Etapa 4: Adicionando uma Interface de usuário de edição
 
@@ -225,7 +225,7 @@ Depois de ter adicionado esse botão de edição, dedique alguns momentos para e
 
 Clicar no botão causa um postback, mas *não* colocar o produto listando em modo de edição. Para tornar o produto editável, é preciso:
 
-1. Definir o DataList s [ `EditItemIndex` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) para o índice do `DataListItem` cujo botão Editar apenas foi clicado.
+1. Definir o DataList s [ `EditItemIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) para o índice do `DataListItem` cujo botão Editar apenas foi clicado.
 2. Associar novamente os dados para o DataList. Quando o DataList é processada novamente, o `DataListItem` cujo `ItemIndex` corresponde à DataList s `EditItemIndex` será renderizado usando seu `EditItemTemplate`.
 
 Desde o DataList s `EditCommand` evento é acionado quando o botão de edição é clicado, crie um `EditCommand` manipulador de eventos com o código a seguir:
@@ -249,7 +249,7 @@ Clicar no produto editado s Update ou Cancelar botões não faz nada neste ponto
 
 Para que o DataList processar todos os seus itens no modo somente leitura, é necessário:
 
-1. Definir o DataList s [ `EditItemIndex` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) para o índice de um inexistente `DataListItem` índice. `-1`é uma opção segura, como o `DataListItem` índices começam em `0`.
+1. Definir o DataList s [ `EditItemIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) para o índice de um inexistente `DataListItem` índice. `-1`é uma opção segura, como o `DataListItem` índices começam em `0`.
 2. Associar novamente os dados para o DataList. Desde não `DataListItem` `ItemIndex` es correspondem à DataList s `EditItemIndex`, DataList inteiro será renderizado em um modo somente leitura.
 
 Essas etapas podem ser realizadas com o código de manipulador de eventos a seguir:
@@ -263,7 +263,7 @@ Com essa adição, clicando na retornar do botão Cancelar DataList estado previ
 
 1. Acessar de forma programática o nome do produto inserido pelo usuário e preços, bem como o produto editado s `ProductID`.
 2. Inicie o processo de atualização chamando apropriada `UpdateProduct` de sobrecarga no `ProductsBLL` classe.
-3. Definir o DataList s [ `EditItemIndex` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) para o índice de um inexistente `DataListItem` índice. `-1`é uma opção segura, como o `DataListItem` índices começam em `0`.
+3. Definir o DataList s [ `EditItemIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) para o índice de um inexistente `DataListItem` índice. `-1`é uma opção segura, como o `DataListItem` índices começam em `0`.
 4. Associar novamente os dados para o DataList. Desde não `DataListItem` `ItemIndex` es correspondem à DataList s `EditItemIndex`, DataList inteiro será renderizado em um modo somente leitura.
 
 As etapas 1 e 2 serão responsáveis por salvar o usuário alterações s; as etapas 3 e 4 retornam DataList estado previamente edição depois que as alterações foram salvas e são idênticas às etapas executadas no `CancelCommand` manipulador de eventos.

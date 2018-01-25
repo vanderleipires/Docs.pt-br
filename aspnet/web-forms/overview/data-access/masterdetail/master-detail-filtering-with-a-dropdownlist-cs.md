@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4632d3939204a954ed4fac88a04b0fea9bb15c83
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cf3058ac095bc2ed728a716e70f962e260eef5a2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Mestre/detalhes filtragem com DropDownList (c#)
 ====================
@@ -31,7 +31,7 @@ por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Um tipo comum de relatório é o *relatório de detalhes/mestre*, em que o relatório começa mostrando um conjunto de registros "mestres". O usuário pode, em seguida, fazer drill down em um dos registros mestres, assim, detalhes do registro mestre "." Detalhes/mestre relatórios é uma opção ideal para visualizar relações um-para-muitos, como um relatório mostrando todas as categorias e, em seguida, permitir que um usuário selecione uma categoria específica e exibir seus produtos associados. Além disso, os relatórios mestre/detalhes são úteis para exibir informações detalhadas de tabelas particularmente "grande" (aqueles que têm muitas colunas). Por exemplo, o nível de "mestre" de um relatório de detalhes/mestre pode mostrar apenas o nome e a unidade de preço do produto de produtos no banco de dados e fazer uma busca detalhada em um determinado produto mostra os campos adicionais do produto (categoria, fornecedor, quantidade por unidade, e assim por diante).
 
-Há muitas maneiras com que um relatório de detalhes/mestre pode ser implementado. Sobre isso e os próximos três tutoriais vamos examinar uma variedade de relatórios mestre/detalhes. Neste tutorial, veremos como exibir os registros mestres em um [controle DropDownList](https://msdn.microsoft.com/en-us/library/dtx91y0z.aspx) e os detalhes do item da lista selecionado em um controle GridView. Em particular, o relatório de detalhes/mestre neste tutorial listará informações de categoria e produto.
+Há muitas maneiras com que um relatório de detalhes/mestre pode ser implementado. Sobre isso e os próximos três tutoriais vamos examinar uma variedade de relatórios mestre/detalhes. Neste tutorial, veremos como exibir os registros mestres em um [controle DropDownList](https://msdn.microsoft.com/library/dtx91y0z.aspx) e os detalhes do item da lista selecionado em um controle GridView. Em particular, o relatório de detalhes/mestre neste tutorial listará informações de categoria e produto.
 
 ## <a name="step-1-displaying-the-categories-in-a-dropdownlist"></a>Etapa 1: Exibindo as categorias em DropDownList
 
@@ -97,7 +97,7 @@ Depois de escolher esse método, o assistente ObjectDataSource solicita a nós p
 
 Responda fazer check-out nosso progresso em um navegador. Ao primeiro visitar a página, os produtos pertencem à categoria selecionada (Bebidas) são exibidas (conforme mostrado na Figura 9), mas alterar DropDownList não atualiza os dados. Isso ocorre porque um postback deve ocorrer para que o GridView atualizar. Para fazer isso, temos duas opções (nenhum deles requer gravar nenhum código):
 
-- **Definir as categorias DropDownList**[propriedade AutoPostBack](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**como True.** (Você pode fazer isso marcando a opção Enable AutoPostBack na marca inteligente do DropDownList.) Isso vai disparar um postback sempre que a DropDownList selecionada item é alterado pelo usuário. Portanto, quando o usuário seleciona uma nova categoria na lista suspensa um postback ocorrerá e GridView será atualizada com os produtos para a categoria selecionada recentemente. (Essa é a abordagem usados neste tutorial.)
+- **Definir as categorias DropDownList**[propriedade AutoPostBack](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**como True.** (Você pode fazer isso marcando a opção Enable AutoPostBack na marca inteligente do DropDownList.) Isso vai disparar um postback sempre que a DropDownList selecionada item é alterado pelo usuário. Portanto, quando o usuário seleciona uma nova categoria na lista suspensa um postback ocorrerá e GridView será atualizada com os produtos para a categoria selecionada recentemente. (Essa é a abordagem usados neste tutorial.)
 - **Adicione um controle de botão Web ao lado de DropDownList.** Definir seu `Text` propriedade para atualização ou algo semelhante. Com essa abordagem, o usuário deverá selecionar uma nova categoria e, em seguida, clique no botão. Clique no botão causar um postback e atualizar o GridView para listar os produtos da categoria selecionada.
 
 Figuras 9 e 10 ilustram o relatório de detalhes/mestre em ação.

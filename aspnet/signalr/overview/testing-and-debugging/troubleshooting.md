@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: d7a1dcc04baaa5ab27aecf95936d943f5a9b3f0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2394ee81f4592417a034e47db6eefd3e4b91a9af
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-troubleshooting"></a>Solução de problemas de SignalR
 ====================
@@ -192,7 +192,7 @@ Há várias causas para esse problema. Verifique se todas as seguintes opções:
 
 - **Referência de endereço de proxy de Hub não está formatada corretamente:** esse erro geralmente é visto se a referência para o endereço de proxy do hub gerado não está formatada corretamente. Verifique se que a referência para o endereço do hub foi feita corretamente. Consulte [como referência ao proxy gerado dinamicamente](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) para obter detalhes.
 - **Adicionar rotas ao aplicativo antes de adicionar a rota do hub:** se seu aplicativo usa a outras rotas, verifique se a primeira rota adicionada é a chamada para `MapSignalR`.
-- **Usando o IIS 7 ou 7.5 sem a atualização para URLs sem extensão:** usando o IIS 7 ou 7.5 requer uma atualização para URLs sem extensão para que o servidor possa fornecer acesso às definições de hub no `/signalr/hubs`. A atualização pode ser encontrada [aqui](https://support.microsoft.com/kb/980368/en-us).
+- **Usando o IIS 7 ou 7.5 sem a atualização para URLs sem extensão:** usando o IIS 7 ou 7.5 requer uma atualização para URLs sem extensão para que o servidor possa fornecer acesso às definições de hub no `/signalr/hubs`. A atualização pode ser encontrada [aqui](https://support.microsoft.com/kb/980368).
 - **IIS cache desatualizado ou corrompido:** para verificar se o conteúdo do cache não está fora da data, digite o seguinte comando em uma janela do PowerShell para limpar o cache:
 
     [!code-powershell[Main](troubleshooting/samples/sample11.ps1)]

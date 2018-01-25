@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 1321cb00a432669b4a97ad20063b6cf9ea75f24c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2333ac70c77847ece1f90c9ff22eec30bc35fea1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Leitura relacionadas a dados - Core de EF com o tutorial do MVC do ASP.NET Core (6 de 10)
 
@@ -75,7 +75,7 @@ Você fez as alterações a seguir para o código de scaffolding:
 
 * Alterado o título do índice para cursos.
 
-* Adicionado um **número** coluna mostra o `CourseID` o valor da propriedade. Por padrão, as chaves primárias não são Scaffold porque normalmente eles não fazem sentidos para os usuários finais. No entanto, nesse caso, a chave primária é significativa e você deseja mostrá-la.
+* Adicionado um **número** coluna mostra o `CourseID` o valor da propriedade. Por padrão, as chaves primárias não são Scaffold porque normalmente eles são sem sentido para os usuários finais. No entanto, nesse caso, a chave primária é significativa e você deseja mostrá-la.
 
 * Alterado o **departamento** coluna para exibir o nome de departamento. Exibe o código de `Name` propriedade da entidade do departamento que é carregada no `Department` propriedade de navegação:
 
@@ -173,7 +173,7 @@ As seguintes alterações feitas no código existente:
 
 * Alterar o título da página de **índice** para **instrutores**.
 
-* Adicionado um **Office** coluna que exibe `item.OfficeAssignment.Location` somente se `item.OfficeAssignment` não for nulo. (Como esta é uma relação um-para-zero-ou-um, pode não haver uma entidade relacionada de OfficeAssignment.)
+* Adicionado um **Office** coluna que exibe `item.OfficeAssignment.Location` somente se `item.OfficeAssignment` não é nulo. (Como esta é uma relação um-para-zero-ou-um, pode não haver uma entidade relacionada de OfficeAssignment.)
 
   ```html
   @if (item.OfficeAssignment != null)

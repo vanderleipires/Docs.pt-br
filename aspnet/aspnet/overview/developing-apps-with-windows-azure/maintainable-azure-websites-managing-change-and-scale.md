@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 1d6d9265d93fbd32e2d9c22e2ac3db9b5ffd9776
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d24c633368abc14efcd9fcf200a4d05c5b182c9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Laboratório prático: sustentáveis sites do Azure: gerenciamento de alteração e escala
 ====================
@@ -40,7 +40,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 
 
 <a id="Overview"></a>
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Objetivos
@@ -251,7 +251,7 @@ Nesta tarefa, você usará **Entity Framework Code First Migrations** para detec
 Neste exercício, você implantará o **nerd teste** aplicativo ao ambiente de preparo do aplicativo web usando o controle do código-fonte Git. Para fazer isso, você irá criar o aplicativo web e provisionar os componentes necessários no portal de gerenciamento, configurar um **Git** repositório e enviar por push o aplicativo de código-fonte do seu computador local para o slot de preparo. Você também atualizará seu banco de dados de produção com o **migrações do Code First** criado no exercício anterior. Em seguida, você executará o aplicativo nesse ambiente de teste para verificar sua operação. Quando estiver satisfeito que ele está funcionando de acordo com suas expectativas, você promoverá o aplicativo para produção.
 
 > [!NOTE]
-> Para habilitar a publicação de preparação, o aplicativo web deve estar em **modo padrão**. Observe que os encargos adicionais serão gerados se você alterar o seu aplicativo web para o modo padrão. Para obter mais informações sobre preços, consulte [preços do serviço de aplicativo](https://azure.microsoft.com/en-us/pricing/details/app-service/).
+> Para habilitar a publicação de preparação, o aplicativo web deve estar em **modo padrão**. Observe que os encargos adicionais serão gerados se você alterar o seu aplicativo web para o modo padrão. Para obter mais informações sobre preços, consulte [preços do serviço de aplicativo](https://azure.microsoft.com/pricing/details/app-service/).
 
 
 <a id="Ex2Task1"></a>
@@ -695,7 +695,7 @@ Nesta tarefa, você configurará o **GeekQuiz** solução consumir a imagem carr
     [!code-xml[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample17.xml)]
 
     > [!NOTE]
-    > Regravação de URL é o processo de interceptação de uma solicitação da Web de entrada e redirecionando a solicitação para um recurso diferente. A regras de regravação de URL informa ao mecanismo de regravação quando uma solicitação precisa ser redirecionado, e onde devem eles redirecionado. Uma regra de regravação é composta de duas cadeias de caracteres: o padrão para procurar na URL solicitada (normalmente, usando expressões regulares), e a cadeia de caracteres para substituir o padrão, se encontrado. Para obter mais informações, consulte [regravação de URL no ASP.NET](https://msdn.microsoft.com/en-us/library/ms972974.aspx).
+    > Regravação de URL é o processo de interceptação de uma solicitação da Web de entrada e redirecionando a solicitação para um recurso diferente. A regras de regravação de URL informa ao mecanismo de regravação quando uma solicitação precisa ser redirecionado, e onde devem eles redirecionado. Uma regra de regravação é composta de duas cadeias de caracteres: o padrão para procurar na URL solicitada (normalmente, usando expressões regulares), e a cadeia de caracteres para substituir o padrão, se encontrado. Para obter mais informações, consulte [regravação de URL no ASP.NET](https://msdn.microsoft.com/library/ms972974.aspx).
 3. Pressione **CTRL + S** para salvar as alterações.
 4. Abra uma nova **Git Bash** console para implantar o aplicativo atualizado para serviço de aplicativo do Azure.
 5. Execute os seguintes comandos para enviar por push as alterações para o Azure. Atualização de *[seu-aplicativo-PATH]* espaço reservado com o caminho para o **GeekQuiz** solução. Você será solicitado a senha de sua implantação.
@@ -910,7 +910,7 @@ Agora você executar o teste de carga que você criou na tarefa anterior e ver c
     > 
     > - Aumente a duração do teste de carga (por exemplo, para **10 minutos**)
     > - Reduzir os valores mínimos e máximo do **CPU de destino** intervalo na configuração de AutoEscala de seu aplicativo web
-    > - Executar o teste de carga na nuvem com **Visual Studio Online**. Obter mais informações [aqui](https://www.visualstudio.com/en-us/get-started/load-test-your-app-vs.aspx)
+    > - Executar o teste de carga na nuvem com **Visual Studio Online**. Obter mais informações [aqui](https://www.visualstudio.com/get-started/load-test-your-app-vs.aspx)
 
 * * *
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: b225d9911246b3e2be1679b73a9f31d9f8577ba5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Configurando um servidor de banco de dados para publicação de implantação da Web
 ====================
@@ -48,7 +48,7 @@ Neste tópico mostram como executar cada um desses procedimentos. As tarefas e i
 Instância do SQL Server só precisa incluir o **serviços de mecanismo de banco de dados** função, que é incluída automaticamente em qualquer instalação do SQL Server. No entanto, para facilitar a configuração e manutenção, é recomendável que você inclua o **ferramentas de gerenciamento – básicas** e **ferramentas de gerenciamento – completas** funções de servidor.
 
 > [!NOTE]
-> Para obter mais informações sobre como adicionar computadores a um domínio, consulte [ingressando computadores no domínio e fazendo logon](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx). Para obter mais informações sobre como configurar endereços IP estáticos, consulte [configurar um endereço IP estático](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx). Para obter mais informações sobre a instalação do SQL Server, consulte [instalando o SQL Server 2008 R2](https://technet.microsoft.com/en-us/library/bb500395.aspx).
+> Para obter mais informações sobre como adicionar computadores a um domínio, consulte [ingressando computadores no domínio e fazendo logon](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Para obter mais informações sobre como configurar endereços IP estáticos, consulte [configurar um endereço IP estático](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx). Para obter mais informações sobre a instalação do SQL Server, consulte [instalando o SQL Server 2008 R2](https://technet.microsoft.com/library/bb500395.aspx).
 
 
 ## <a name="enable-remote-access-to-sql-server"></a>Habilitar o acesso remoto para o SQL Server
@@ -66,7 +66,7 @@ Para habilitar o SQL Server para se comunicar através de TCP/IP, use o SQL Serv
 2. No painel de exibição de árvore, expanda **configuração de rede do SQL Server**e, em seguida, clique em **protocolos para MSSQLSERVER**.
 
     > [!NOTE]
-    > Se você tiver instalado várias instâncias do SQL Server, você verá um **protocolos para***[nome da instância]* item para cada instância. Você precisa configurar as configurações de rede em uma base por instância.
+    > Se você tiver instalado várias instâncias do SQL Server, você verá um **protocolos para * [nome da instância]* item para cada instância. Você precisa configurar as configurações de rede em uma base por instância.
 3. No painel de detalhes, clique com botão direito do **TCP/IP** de linha e, em seguida, clique em **habilitar**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -102,7 +102,7 @@ Supondo que você estiver usando uma instância padrão do SQL Server, você pre
   
 
 > [!NOTE]
-> Tecnicamente, um computador cliente usará uma porta atribuída aleatoriamente de TCP entre 1024 e 5000 para se comunicar com o SQL Server, e você pode restringir as regras de firewall adequadamente. Para obter mais informações sobre firewalls e portas do SQL Server, consulte [números de porta de TCP/IP necessários para se comunicar com o SQL por meio de um firewall](https://go.microsoft.com/?linkid=9805125) e [como: configurar um servidor para escutar em uma porta de TCP específica (configuração do SQL Server Gerenciador de)](https://msdn.microsoft.com/en-us/library/ms177440.aspx).
+> Tecnicamente, um computador cliente usará uma porta atribuída aleatoriamente de TCP entre 1024 e 5000 para se comunicar com o SQL Server, e você pode restringir as regras de firewall adequadamente. Para obter mais informações sobre firewalls e portas do SQL Server, consulte [números de porta de TCP/IP necessários para se comunicar com o SQL por meio de um firewall](https://go.microsoft.com/?linkid=9805125) e [como: configurar um servidor para escutar em uma porta de TCP específica (configuração do SQL Server Gerenciador de)](https://msdn.microsoft.com/library/ms177440.aspx).
 
 
 Na maioria dos ambientes de Windows Server, provavelmente você precisará configurar o Firewall do Windows no servidor de banco de dados. Por padrão, o Firewall do Windows permite que todo o tráfego de saída, a menos que uma regra proíbe especificamente. Para habilitar o servidor web para acessar o banco de dados, você precisa configurar uma regra de entrada que permita o tráfego TCP no número da porta usada pela instância do SQL Server. Se você estiver usando uma instância padrão do SQL Server, você pode usar o procedimento a seguir para configurar esta regra.
@@ -126,11 +126,11 @@ Na maioria dos ambientes de Windows Server, provavelmente você precisará confi
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image9.png)
 8. Sobre o **nome** página, dê um nome descritivo adequadamente para a regra (por exemplo, **instância padrão do SQL Server – acesso à rede**) e, em seguida, clique em **concluir**.
 
-Para obter mais informações sobre como configurar o Firewall do Windows para o SQL Server, particularmente se você precisar se comunicar com o SQL Server através de portas não padrão ou dinâmicas, consulte [como: configurar um Firewall do Windows para acesso ao mecanismo de banco de dados](https://technet.microsoft.com/en-us/library/ms175043.aspx).
+Para obter mais informações sobre como configurar o Firewall do Windows para o SQL Server, particularmente se você precisar se comunicar com o SQL Server através de portas não padrão ou dinâmicas, consulte [como: configurar um Firewall do Windows para acesso ao mecanismo de banco de dados](https://technet.microsoft.com/library/ms175043.aspx).
 
 ## <a name="configure-logins-and-database-permissions"></a>Configurar logons e permissões de banco de dados
 
-Quando você implanta um aplicativo da web para serviços de informações da Internet (IIS), o aplicativo é executado usando a identidade do pool de aplicativos. Em um ambiente de domínio, identidades do pool de aplicativos usam a conta do computador do servidor no qual executar para acessar recursos de rede. Contas de computador assumem a forma *[nome do domínio]***\***[nome do computador] ***$**& #x 2014; por exemplo, **FABRIKAM\ TESTWEB1$**. Para permitir que seu aplicativo da web acessar um banco de dados pela rede, você precisa:
+Quando você implanta um aplicativo da web para serviços de informações da Internet (IIS), o aplicativo é executado usando a identidade do pool de aplicativos. Em um ambiente de domínio, identidades do pool de aplicativos usam a conta do computador do servidor no qual executar para acessar recursos de rede. Contas de computador assumem a forma * [nome de domínio]***\** * [nome do computador]***$ * * & #x 2014; por exemplo, **FABRIKAM\TESTWEB1$**. Para permitir que seu aplicativo da web acessar um banco de dados pela rede, você precisa:
 
 - Adicione um logon para a conta de computador do servidor web para a instância do SQL Server.
 - Mapear o logon da conta da máquina para todas as funções necessárias de banco de dados (normalmente **db\_datareader** e **db\_datawriter**).
@@ -183,7 +183,7 @@ Para obter mais informações sobre como automatizar a criação de logons e os 
 Enquanto o mapeamento manualmente as funções de banco de dados geralmente é mais do que adequado para ambientes de teste, é menos recomendado para implantações automatizadas ou com um clique em ambientes de teste ou produção. Você pode encontrar mais informações sobre como automatizar esse tipo de tarefa usando scripts de pós-implantação em [Implantando associações de função de banco de dados para ambientes de teste](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md).
 
 > [!NOTE]
-> Para obter mais informações sobre projetos de servidor e banco de dados, consulte [projetos de banco de dados do Visual Studio 2010 SQL Server](https://msdn.microsoft.com/en-us/library/ff678491.aspx).
+> Para obter mais informações sobre projetos de servidor e banco de dados, consulte [projetos de banco de dados do Visual Studio 2010 SQL Server](https://msdn.microsoft.com/library/ff678491.aspx).
 
 
 ## <a name="configure-permissions-for-the-deployment-account"></a>Configurar permissões para a conta de implantação

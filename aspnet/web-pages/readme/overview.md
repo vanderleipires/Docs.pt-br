@@ -1,6 +1,6 @@
 ---
 uid: web-pages/readme/overview
-title: Leiame do WebMatrix | Microsoft Docs
+title: WebMatrix Readme | Microsoft Docs
 author: rick-anderson
 description: "O WebMatrix e o Leiame do ASP.NET páginas da Web (Razor) versão 1.0"
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: 90f24550d2bb50147bab6be545be63c1838f312a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8402aa3db1b2566878c4d56212facbbb2925eec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="webmatrix-readme"></a>Leiame do WebMatrix
 ====================
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/10/2017
 
 <a id="Overview"></a>
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 > Microsoft WebMatrix 1.0 é uma pilha de desenvolvimento gratuito da web que é instalado em minutos. Ela integra um servidor web com o banco de dados e estruturas para criar uma única experiência integrada de programação. Você pode usar o WebMatrix para simplificar a maneira de código, testar e publicar o seu próprio site ASP.NET ou PHP, ou você pode usar o WebMatrix para iniciar um novo site usando aplicativos de código aberto populares como DotNetNuke, Umbraco, WordPress ou Joomla. O WebMatrix usa o mesmo servidor de aplicativos web, o mecanismo de banco de dados e o ambiente de estruturas que executará o seu site na internet, o que faz a transição do desenvolvimento para produção simples e direta.
 
@@ -97,8 +97,8 @@ ms.lasthandoff: 11/10/2017
 
 > Os assemblies gerenciados para o SQL Server Compact 4.0 não são colocados no cache de assembly global (GAC) quando você instala o SQL Server Compact 4.0 em um computador de 64 bits e o computador tem apenas o .NET Framework 3.5 SP1 Client Profile instalado. Os módulos gerenciados que não estão instalados no GAC são:
 > 
-> - *SqlServerCe* (provedor ADO.NET)
-> - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework)
+> - *System.Data.SqlServerCe.dll* (ADO.NET provider)
+> - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework )
 > 
 > **Solução alternativa**  
 > Desinstalar o SQL Server Compact 4.0. Baixe e instale a versão completa do .NET Framework 3.5 SP1 no seguinte local:  
@@ -135,7 +135,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > [!code-xml[Main](overview/samples/sample1.xml)]
 
 
-#### <a id="Changes"></a>Alterações
+#### <a id="Changes"></a>  Changes
 
 #### <a name="change-webpagesadminfoldervirtualpath-key-renamed-to-aspadminfoldervirtualpath"></a>Alterar: a chave de "webPages:AdminFolderVirtualPath" renomeada para "asp: AdminFolderVirtualPath"
 
@@ -218,7 +218,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > 
 > [!code-xml[Main](overview/samples/sample2.xml)]
 > 
-> Para obter mais informações sobre como configurar um servidor proxy, consulte [ &lt;proxy&gt; (configurações de rede) do elemento](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) no site do MSDN.
+> Para obter mais informações sobre como configurar um servidor proxy, consulte [ &lt;proxy&gt; (configurações de rede) do elemento](https://msdn.microsoft.com/library/sa91de1e.aspx) no site do MSDN.
 
 
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>Problema: Desinstalar o .NET Framework versão 4 desabilita a ASP.NET Web Pages com sintaxe do Razor
@@ -257,10 +257,10 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > 
 > 1. Copie os assemblies do mecanismo de banco de dados para o *Bin* pasta (e subpastas) do aplicativo no computador de destino:  
 > 
->     - Cópia *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->         **para** *\Bin.*
->     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\* para***\Bin\x86*
->     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **para***\Bin\amd64*
+>     - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>         **to** *\Bin*
+>     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\* * * a * \Bin\x86*
+>     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **para * \Bin\amd64*
 > 2. Na pasta raiz do site, crie ou abra um *Web. config* arquivo. (No WebMatrix 1.0, esse tipo de arquivo está disponível se você clicar em **todos os** no **escolher um tipo de arquivo** caixa de diálogo.)
 > 3. Adicione o seguinte elemento como um filho de `<configuration>` elemento (não dentro a `<system.web>` elemento):
 > 
@@ -400,7 +400,7 @@ Esta seção do documento descreve problemas conhecidos para o ambiente de desen
 
 O IIS Express tem seu próprio arquivo Leiame, que está disponível na seguinte URL:
 
-[https://go.microsoft.com/fwlink/?LinkId=207675&amp;clcid = 0x409](https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409)
+[https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409)
 
 <a id="Known_Issues_SQLServerCompact"></a>
 
@@ -408,7 +408,7 @@ O IIS Express tem seu próprio arquivo Leiame, que está disponível na seguinte
 
 SQL Server Compact tem seu próprio arquivo Leiame, que está disponível na seguinte URL:
 
-[https://go.microsoft.com/fwlink/?LinkId=208545](https://go.microsoft.com/fwlink/?LinkID=208545&amp;clcid=0x409)
+[https://go.microsoft.com/fwlink/?LinkID=208545](https://go.microsoft.com/fwlink/?LinkID=208545&amp;clcid=0x409)
 
 Para obter informações sobre problemas que envolvem a instalação do SQL Server Compact como parte do WebMatrix, consulte [problemas de instalação do WebMatrix](#Known_Issues_Installation) anteriormente neste documento.
 
@@ -561,6 +561,6 @@ Para obter mais informações sobre o WebMatrix 1.0, consulte os seguintes sites
 
 - [IIS.net](http://iis.net/)
 - [ASP.NET](https://asp.net/webmatrix)
-- [Microsoft.com/Web](https://www.microsoft.com/web)
+- [Microsoft.com/web](https://www.microsoft.com/web)
 
-© Microsoft Corporation. de 2011. Todos os direitos reservados. [Termos de uso](https://msdn.microsoft.com/en-us/cc300389.aspx).
+© 2011 Microsoft Corporation. Todos os direitos reservados. [Termos de uso](https://msdn.microsoft.cos/cc300389.aspx).

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 226ef83f289b8fbe9a68f0d0741c7eca0d96ba94
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0224bcd2badc423ba5146feacccc44b8f33a608
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>O ASP.NET 4 e visão geral do desenvolvimento do Visual Studio 2010 Web
 ====================
@@ -199,7 +199,7 @@ O ASP.NET 4 apresenta novas opções para expandir o tamanho de URLs de aplicati
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-Para permitir caminhos maiores ou menores (a parte da URL que não inclua o protocolo, o nome do servidor e a cadeia de caracteres de consulta), modifique o  *[maxUrlLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  atributo. Para permitir que cadeias de caracteres de consulta mais ou menos, modifique o valor da  *[maxQueryStringLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  atributo.
+Para permitir caminhos maiores ou menores (a parte da URL que não inclua o protocolo, o nome do servidor e a cadeia de caracteres de consulta), modifique o  *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  atributo. Para permitir que cadeias de caracteres de consulta mais ou menos, modifique o valor da  *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  atributo.
 
 O ASP.NET 4 também permite que você configure os caracteres que são usados pela verificação de caracteres de URL. Quando o ASP.NET encontra um caractere inválido na parte do caminho de URL, ele rejeita a solicitação e emite um erro HTTP 400. Nas versões anteriores do ASP.NET, as verificações de caracteres de URL eram limitadas a um conjunto fixo de caracteres. No ASP.NET 4, você pode personalizar o conjunto de caracteres válidos usando o novo *requestPathInvalidChars* atributo o *httpRuntime* elemento de configuração, conforme mostrado no exemplo a seguir:
 
@@ -561,7 +561,7 @@ Roteamento foi disponível a partir do ASP.NET 3.5 SP1. (Para obter um exemplo d
 - Os seguintes construtores de expressão novo, que são definidos no *System.Web.Compilation.RouteUrlExpressionBuilder* e *System.Web.Compilation.RouteValueExpressionBuilder*:
 - *RouteUrl*, que fornece uma maneira simple de criar uma URL que corresponde a uma URL de rota em um controle de servidor ASP.NET.
 - *RouteValue*, que fornece uma maneira simples para extrair as informações do *RouteContext* objeto.
-- O *RouteParameter* classe, o que torna mais fácil passar os dados contidos em um *RouteContext* objeto para uma consulta para um controle de fonte de dados (semelhante a [ *FormParameter* ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx)).
+- O *RouteParameter* classe, o que torna mais fácil passar os dados contidos em um *RouteContext* objeto para uma consulta para um controle de fonte de dados (semelhante a [ *FormParameter* ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx)).
 
 #### <a name="routing-for-web-forms-pages"></a>Roteamento para páginas Web Forms
 
@@ -625,7 +625,7 @@ O *RouteValue* expressão torna simples para usar dados de rota na marcação e 
 
 #### <a name="using-route-data-for-data-source-control-parameters"></a>Usando dados de rota para parâmetros de controle de fonte de dados
 
-O *RouteParameter* classe permite que você especifique os dados de rota como um valor de parâmetro para consultas em um controle de fonte de dados. Ele [funciona bem como o](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx) de classe, conforme mostrado no exemplo a seguir:
+O *RouteParameter* classe permite que você especifique os dados de rota como um valor de parâmetro para consultas em um controle de fonte de dados. Ele [funciona bem como o](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx) de classe, conforme mostrado no exemplo a seguir:
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
@@ -1146,7 +1146,7 @@ Dados dinâmicos foi introduzidos na versão .NET Framework 3.5 SP1 em meados de
 - A capacidade de alterar facilmente a marcação que é gerada para campos de *GridView* e *DetailsView* controles usando modelos de campo que fazem parte de seu projeto de dados dinâmicos.
 
 > [!NOTE]
-> Observação: para obter mais informações, consulte o [documentação de dados dinâmicos](https://msdn.microsoft.com/en-us/library/cc488545.aspx) na biblioteca MSDN.
+> Observação: para obter mais informações, consulte o [documentação de dados dinâmicos](https://msdn.microsoft.com/library/cc488545.aspx) na biblioteca MSDN.
 
 
 Para o ASP.NET 4, dados dinâmicos foi aprimorado para dar aos desenvolvedores ainda mais energia para criar rapidamente sites controlados por dados.
@@ -1325,7 +1325,7 @@ Visual Studio 2010 usa a ferramenta de MSDeploy para criar um arquivo compactado
 
 Um pacote da Web pode ser copiado para qualquer servidor e, em seguida, instalado manualmente usando o Gerenciador do IIS. Como alternativa, para a implantação automática, o pacote pode ser instalado usando os comandos de linha de comando ou usando APIs de implantação.
 
-Visual Studio 2010 fornece tarefas do MSBuild e destinos para criar pacotes da Web internos. Para obter mais informações, consulte [visão geral de implantação de projeto de aplicativo Web ASP.NET](https://msdn.microsoft.com/en-us/library/dd394698%28VS.100%29.aspx) no site do MSDN e [10 + 20 razões por que você deve criar um pacote da Web](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html) no blog de Vishal Joshi.
+Visual Studio 2010 fornece tarefas do MSBuild e destinos para criar pacotes da Web internos. Para obter mais informações, consulte [visão geral de implantação de projeto de aplicativo Web ASP.NET](https://msdn.microsoft.com/library/dd394698%28VS.100%29.aspx) no site do MSDN e [10 + 20 razões por que você deve criar um pacote da Web](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html) no blog de Vishal Joshi.
 
 <a id="0.2__Toc224729057"></a><a id="0.2__Toc253429294"></a><a id="0.2__Toc243304665"></a>
 
@@ -1337,7 +1337,7 @@ O exemplo a seguir mostra uma parte de um `web.release.config` arquivo que pode 
 
 [!code-xml[Main](overview/samples/sample102.xml)]
 
-Para obter mais informações, consulte [sintaxe de transformação do Web. config para implantação de projeto de aplicativo Web](https://msdn.microsoft.com/en-us/library/dd465326%28VS.100%29.aspx) no MSDN <a id="0.2_a"> </a> site da Web e[implantação da Web: transformação do Web. config](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)no blog de Vishal Joshi.
+Para obter mais informações, consulte [sintaxe de transformação do Web. config para implantação de projeto de aplicativo Web](https://msdn.microsoft.com/library/dd465326%28VS.100%29.aspx) no MSDN <a id="0.2_a"> </a> site da Web e[implantação da Web: transformação do Web. config](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)no blog de Vishal Joshi.
 
 <a id="0.2__Toc224729058"></a><a id="0.2__Toc253429295"></a><a id="0.2__Toc243304666"></a>
 
@@ -1345,7 +1345,7 @@ Para obter mais informações, consulte [sintaxe de transformação do Web. conf
 
 Um pacote de implantação do Visual Studio 2010 pode incluir dependências nos bancos de dados do SQL Server. Como parte da definição do pacote, você pode fornecer a cadeia de caracteres de conexão para o banco de dados de origem. Quando você cria o pacote da Web, o Visual Studio 2010 cria scripts SQL para o esquema de banco de dados e, opcionalmente, para os dados e, em seguida, adiciona esses ao pacote. Você pode também fornecer scripts SQL personalizados e especifique a sequência na qual ele deve ser executado no servidor. No momento da implantação, você fornecer uma cadeia de caracteres de conexão que é apropriada para o servidor de destino; o processo de implantação, em seguida, usa essa cadeia de caracteres de conexão para executar os scripts que cria o esquema de banco de dados e adicionar os dados.
 
-Além disso, usando um clique, publicar, você pode configurar a implantação para publicar seu banco de dados diretamente quando o aplicativo é publicado em um site remoto de hospedagem compartilhado. Para obter mais informações, consulte [como: implantar um banco de dados com um projeto de aplicativo Web](https://msdn.microsoft.com/en-us/library/dd465343%28VS.100%29.aspx) no site do MSDN e [implantação de banco de dados com o VS 2010](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html) no blog de Vishal Joshi.
+Além disso, usando um clique, publicar, você pode configurar a implantação para publicar seu banco de dados diretamente quando o aplicativo é publicado em um site remoto de hospedagem compartilhado. Para obter mais informações, consulte [como: implantar um banco de dados com um projeto de aplicativo Web](https://msdn.microsoft.com/library/dd465343%28VS.100%29.aspx) no site do MSDN e [implantação de banco de dados com o VS 2010](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html) no blog de Vishal Joshi.
 
 <a id="0.2__Toc224729059"></a><a id="0.2__Toc253429296"></a><a id="0.2__Toc243304667"></a>
 
@@ -1353,7 +1353,7 @@ Além disso, usando um clique, publicar, você pode configurar a implantação p
 
 Visual Studio 2010 também permite usar o serviço de gerenciamento remoto do IIS para publicar um aplicativo Web em um servidor remoto. Você pode criar um perfil de publicação para sua conta de hospedagem ou servidores de teste ou servidores de teste. Cada perfil pode salvar as credenciais apropriadas com segurança. Você pode implantar a qualquer destino servidores com um clique, usando um clique Web publiquem barra de ferramentas. Com o Visual Studio 2010, você também pode publicar por meio da linha de comando do MSBuild. Isso lhe permite configurar seu ambiente de compilação de equipe para incluir a publicação em um modelo de integração contínua.
 
-Para obter mais informações, consulte [como: implantar um aplicativo usando um clique publicação do projeto Web e implantação da Web](https://msdn.microsoft.com/en-us/library/dd465337%28VS.100%29.aspx) no site do MSDN e [Web publicar 1 Clique com o VS 2010](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) no blog de Vishal Joshi. Para exibir apresentações de vídeo sobre implantação de aplicativos Web no Visual Studio 2010, consulte [VS 2010 para visualizações de desenvolvedor da Web](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) no blog de Vishal Joshi.
+Para obter mais informações, consulte [como: implantar um aplicativo usando um clique publicação do projeto Web e implantação da Web](https://msdn.microsoft.com/library/dd465337%28VS.100%29.aspx) no site do MSDN e [Web publicar 1 Clique com o VS 2010](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) no blog de Vishal Joshi. Para exibir apresentações de vídeo sobre implantação de aplicativos Web no Visual Studio 2010, consulte [VS 2010 para visualizações de desenvolvedor da Web](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) no blog de Vishal Joshi.
 
 <a id="0.2__Toc224729060"></a><a id="0.2__Toc253429297"></a><a id="0.2__Toc243304668"></a>
 
@@ -1361,9 +1361,9 @@ Para obter mais informações, consulte [como: implantar um aplicativo usando um
 
 Os sites a seguir fornecem informações adicionais sobre o ASP.NET 4 e Visual Studio 2010.
 
-- [O ASP.NET 4](https://msdn.microsoft.com/en-us/library/ee532866%28VS.100%29.aspx) — a documentação oficial do ASP.NET 4 no site do MSDN.
+- [O ASP.NET 4](https://msdn.microsoft.com/library/ee532866%28VS.100%29.aspx) — a documentação oficial do ASP.NET 4 no site do MSDN.
 - [https://www.ASP.NET/](https://www.asp.net/) — ASP.NET o site da Web da equipe.
-- [https://www.ASP.NET/dynamicdata/](https://msdn.microsoft.com/en-us/library/cc488545.aspx) e [mapa de conteúdo de dados dinâmicos ASP.NET](https://msdn.microsoft.com/en-us/library/cc488545%28VS.100%29.aspx) — recursos Online no site de equipe do ASP.NET e na documentação oficial do Dynamic Data do ASP.NET.
+- [https://www.ASP.NET/dynamicdata/](https://msdn.microsoft.com/library/cc488545.aspx) e [mapa de conteúdo de dados dinâmicos ASP.NET](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx) — recursos Online no site de equipe do ASP.NET e na documentação oficial do Dynamic Data do ASP.NET.
 - [https://www.ASP.NET/AJAX/](../../ajax/index.md) — o recurso da Web principal para o desenvolvimento do ASP.NET Ajax.
 - [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) — blog a equipe Visual de desenvolvedor da Web, que inclui informações sobre recursos no Visual Studio 2010.
 - [ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack) — o recurso da Web principal para as versões de preview do ASP.NET.

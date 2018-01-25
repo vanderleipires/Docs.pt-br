@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecc233e595716a167ad800a0a21a6162b051648
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Criar uma API REST com atributo roteamento ASP.NET Web API 2
 ====================
@@ -29,7 +29,7 @@ Web API 2 dá suporte a um novo tipo de roteamento, chamado *roteamento de atrib
 | Obter uma lista de todos os livros. | api/manuais |
 | Obter um livro por ID. | /API/Books/1 |
 | Obter os detalhes de um livro. | /API/Books/1/Details |
-| Obter uma lista de livros por gênero. | /API/Books/fantasy |
+| Obter uma lista de livros por gênero. | /api/books/fantasy |
 | Obter uma lista de livros por data de publicação. | /API/Books/Date/2013-02-16 /api/books/date/2013/02/16 (formato alternativo) |
 | Obter uma lista de livros publicados por um autor específico. | /API/Authors/1/Books |
 
@@ -141,7 +141,7 @@ Adicione outra classe denominada `BookDetailDto`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample8.cs)]
 
-Em seguida, atualize o `BooksController` classe para retornar `BookDto` instâncias. Usaremos o [Queryable.Select](https://msdn.microsoft.com/en-us/library/system.linq.queryable.select.aspx) método ao projeto `Book` instâncias `BookDto` instâncias. Aqui está o código atualizado para a classe do controlador.
+Em seguida, atualize o `BooksController` classe para retornar `BookDto` instâncias. Usaremos o [Queryable.Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx) método ao projeto `Book` instâncias `BookDto` instâncias. Aqui está o código atualizado para a classe do controlador.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample9.cs)]
 
@@ -168,7 +168,7 @@ O modelo de rota para cada método de controlador é o prefixo e a cadeia de car
 | Método | Modelo de rota | URI de exemplo |
 | --- | --- | --- |
 | `GetBooks` | "api/livros" | `http://localhost/api/books` |
-| `GetBook` | "api/manuais / {id: int}" | `http://localhost/api/books/5` |
+| `GetBook` | "api/books/{id:int}" | `http://localhost/api/books/5` |
 
 ## <a name="get-book-details"></a>Obter detalhes do catálogo
 

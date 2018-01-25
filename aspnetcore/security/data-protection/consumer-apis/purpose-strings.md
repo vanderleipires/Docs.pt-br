@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: b1e95c9d0aa8195aa73fddfb97a4079e67a351bf
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 181d2ae85f38051ea12c7b7ac79198ec05f36bec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="purpose-strings"></a>Cadeias de caracteres de finalidade
 
@@ -34,12 +34,12 @@ A cadeia de caracteres de fim não precisa ser segredo. Ele simplesmente deve se
 >
 >Um componente de autoria do Contoso que é responsável por minting tokens de portador pode usar Contoso.Security.BearerToken como cadeia de caracteres sua finalidade. Ou - ainda melhor - ele pode usar Contoso.Security.BearerToken.v1 como cadeia de caracteres sua finalidade. Anexar o número de versão permite que uma versão futura usar Contoso.Security.BearerToken.v2 como sua finalidade e as versões diferentes seria completamente isoladas uma da outra quanto cargas ir.
 
-Desde o parâmetro fins `CreateProtector` é uma matriz de cadeia de caracteres, acima podem ter sido em vez disso, especificadas como `[ "Contoso.Security.BearerToken", "v1" ]`. Isso permite o estabelecimento de uma hierarquia de propósitos e abre a possibilidade de cenários de multilocação com o sistema de proteção de dados.
+Desde o parâmetro fins `CreateProtector` é uma matriz de cadeia de caracteres, acima poderiam ter sido em vez disso, especificadas como `[ "Contoso.Security.BearerToken", "v1" ]`. Isso permite o estabelecimento de uma hierarquia de propósitos e abre a possibilidade de cenários de multilocação com o sistema de proteção de dados.
 
 <a name="data-protection-contoso-purpose"></a>
 
 >[!WARNING]
-> Componentes não devem permitir a entrada do usuário não confiável ser a única origem de entrada para a cadeia de finalidades.
+> Componentes não devem permitir que a entrada do usuário não confiável ser a única origem de entrada para a cadeia de fins.
 >
 >Por exemplo, considere um componente Contoso.Messaging.SecureMessage que é responsável por armazenar mensagens seguras. Se o componente de mensagens seguro chamar `CreateProtector([ username ])`, em seguida, um usuário mal-intencionado pode criar uma conta com o nome de usuário "Contoso.Security.BearerToken" em uma tentativa de obter o componente para chamar `CreateProtector([ "Contoso.Security.BearerToken" ])`, inadvertidamente provocando mensagens seguras sistema cargas Menta que pode ser considerada como tokens de autenticação.
 >
@@ -53,9 +53,9 @@ O isolamento fornecido pelos e comportamentos de `IDataProtectionProvider`, `IDa
 
 * Argumentos de duas finalidades são equivalentes se e somente se eles contêm as mesmas cadeias de caracteres (usando um comparador ordinal) na mesma ordem. Um argumento de finalidade única é equivalente à matriz de elemento único fins correspondente.
 
-* Dois `IDataProtector` objetos forem equivalentes, se e somente se eles são criados a partir equivalente `IDataProtectionProvider` objetos com parâmetros de fins equivalente.
+* Dois `IDataProtector` objetos são equivalentes e apenas se eles são criados a partir equivalente `IDataProtectionProvider` objetos com parâmetros de fins equivalente.
 
 * Para um determinado `IDataProtector` objeto, uma chamada para `Unprotect(protectedData)` retornará original `unprotectedData` se e somente se `protectedData := Protect(unprotectedData)` para um equivalente `IDataProtector` objeto.
 
 > [!NOTE]
-> Não estamos considerando o caso onde algum componente intencionalmente escolhe uma cadeia de caracteres de finalidade que é conhecida em conflito com outro componente. Esse componente essencialmente seria considerado mal-intencionados e este sistema não serve para fornecer garantias de segurança que um código mal-intencionado já está em execução dentro do processo de trabalho.
+> Não estamos considerando o caso onde algum componente intencionalmente escolhe uma cadeia de caracteres de finalidade que é conhecida em conflito com outro componente. Esse componente essencialmente seria considerado mal-intencionados e este sistema não se destina a fornecer garantias de segurança que um código mal-intencionado já está em execução dentro do processo de trabalho.

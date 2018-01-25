@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b308ee9ec209ba8bbb021827655c83443dd149e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 564f859e73a88ac9c5f27e9b8f7409ec126642f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>Próprio Host ASP.NET Web API 1 (c#)
 ====================
@@ -43,7 +43,7 @@ No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#*
 
 ## <a name="set-the-target-framework-visual-studio-2010"></a>Definir a estrutura de destino (Visual Studio 2010)
 
-Se você estiver usando o Visual Studio 2010, altere a estrutura de destino para o .NET Framework 4.0. (Por padrão, os destinos de modelo de projeto de [perfil do .net Framework Client](https://msdn.microsoft.com/en-us/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile).)
+Se você estiver usando o Visual Studio 2010, altere a estrutura de destino para o .NET Framework 4.0. (Por padrão, os destinos de modelo de projeto de [perfil do .net Framework Client](https://msdn.microsoft.com/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile).)
 
 No Gerenciador de soluções, clique com o botão direito e selecione **propriedades**. No **framework de destino** suspensa lista, altere a estrutura de destino para o .NET Framework 4.0. Quando solicitado para aplicar a alteração, clique em **Sim**.
 
@@ -101,8 +101,8 @@ Para obter mais informações sobre o código neste controlador, consulte o [Int
 | URI | Descrição |
 | --- | --- |
 | produtos/api / | Obter uma lista de todos os produtos. |
-| /API/produtos/*id* | Obter um produto por ID. |
-| /API/produtos /? categoria =*categoria* | Obter uma lista de produtos por categoria. |
+| /api/products/*id* | Obter um produto por ID. |
+| /api/products/?category=*category* | Obter uma lista de produtos por categoria. |
 
 ## <a name="host-the-web-api"></a>Hospedar a API da Web
 
@@ -175,7 +175,7 @@ Adicione os seguintes métodos para listar todos os produtos, um produto por ID 
 Cada um desses métodos segue o mesmo padrão:
 
 1. Chamar **HttpClient.GetAsync** para enviar uma solicitação GET para o URI apropriado.
-2. Chamar **HttpResponseMessage.EnsureSuccessStatusCode**. Este método lança uma exceção se o status de resposta HTTP for um código de erro.
+2. Call **HttpResponseMessage.EnsureSuccessStatusCode**. Este método lança uma exceção se o status de resposta HTTP for um código de erro.
 3. Chamar **ReadAsAsync&lt;T&gt;**  para desserializar um tipo CLR da resposta HTTP. Esse método é um método de extensão, definido em **System.Net.Http.HttpContentExtensions**.
 
 O **GetAsync** e **ReadAsAsync** métodos são assíncronas. Elas retornam **tarefa** objetos que representam a operação assíncrona. Obtendo o **resultados** propriedade bloqueia o thread até que a operação seja concluída.

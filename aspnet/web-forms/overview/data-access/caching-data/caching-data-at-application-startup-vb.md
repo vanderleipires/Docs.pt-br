@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 06370e31d27aeab50e56e0b0b860aca7c3ad683b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b84b797bf0c9670ac65a5384b6d95d5df3827eb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-at-application-startup-vb"></a>Cache de dados na inicialização do aplicativo (VB)
 ====================
@@ -36,7 +36,7 @@ Os tutoriais anteriores dois pesquisados no cache de dados na apresentação e c
 Outro tipo de carregamento proativo e o tipo que vamos explorar neste tutorial, é carregar dados em cache na inicialização do aplicativo. Essa abordagem é especialmente útil para armazenar em cache dados estáticos, como os registros em tabelas de pesquisa do banco de dados.
 
 > [!NOTE]
-> Para obter uma visão mais detalhada as diferenças entre carregamento proativo e reativo, bem como listas de profissionais, contras e recomendações de implementação, consulte o [gerenciar o conteúdo de um Cache](https://msdn.microsoft.com/en-us/library/ms978503.aspx) seção o [ Cache de guia de arquitetura para aplicativos do .NET Framework](https://msdn.microsoft.com/en-us/library/ms978498.aspx).
+> Para obter uma visão mais detalhada as diferenças entre carregamento proativo e reativo, bem como listas de profissionais, contras e recomendações de implementação, consulte o [gerenciar o conteúdo de um Cache](https://msdn.microsoft.com/library/ms978503.aspx) seção o [ Cache de guia de arquitetura para aplicativos do .NET Framework](https://msdn.microsoft.com/library/ms978498.aspx).
 
 
 ## <a name="step-1-determining-what-data-to-cache-at-application-startup"></a>Etapa 1: Determinar quais dados em Cache na inicialização do aplicativo
@@ -68,7 +68,7 @@ Ao trabalhar com uma classe, normalmente a classe deve primeiro ser instanciada 
 
 Antes de nós pode invocar *SomeMethod* ou trabalhar com *SomeProperty*, podemos deve primeiro criar uma instância da classe usando o `New` palavra-chave. *SomeMethod* e *SomeProperty* estão associados uma determinada instância. O tempo de vida desses membros está ligado ao tempo de vida de seu objeto associado. *Membros estáticos*, por outro lado, são variáveis, propriedades e métodos que são compartilhados entre *todos os* instâncias da classe e, consequentemente, têm um tempo de vida, contanto que a classe. Membros estáticos são indicados pela palavra-chave `Shared`.
 
-Além dos membros estáticos, dados podem ser armazenados em cache usando o estado do aplicativo. Cada aplicativo ASP.NET mantém uma coleção de nome/valor que s compartilhada entre todos os usuários e as páginas do aplicativo. Essa coleção pode ser acessada usando o [ `HttpContext` classe](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx) s [ `Application` propriedade](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.application.aspx)e usados em uma classe de code-behind de páginas ASP.NET da seguinte forma:
+Além dos membros estáticos, dados podem ser armazenados em cache usando o estado do aplicativo. Cada aplicativo ASP.NET mantém uma coleção de nome/valor que s compartilhada entre todos os usuários e as páginas do aplicativo. Essa coleção pode ser acessada usando o [ `HttpContext` classe](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) s [ `Application` propriedade](https://msdn.microsoft.com/library/system.web.httpcontext.application.aspx)e usados em uma classe de code-behind de páginas ASP.NET da seguinte forma:
 
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample2.vb)]
@@ -135,7 +135,7 @@ O padrão `Global.asax` arquivo modelo inclui cinco métodos em um servidor- `<s
 - **`Session_Start`**executa quando é criada uma nova sessão
 - **`Session_End`**é executado quando uma sessão expirou ou foi abandonada
 
-O `Application_Start` manipulador de eventos é chamado apenas uma vez durante um ciclo de vida do aplicativo s. O aplicativo inicia na primeira vez um recurso do ASP.NET é solicitado do aplicativo e continuará a ser executado até que o aplicativo é reiniciado, o que pode ocorrer ao modificar o conteúdo do `/Bin` pasta, modificar `Global.asax`, modificando o o conteúdo no `App_Code` pasta ou modificando o `Web.config` arquivo, entre outras causas. Consulte [visão geral do ciclo de vida de aplicativos ASP.NET](https://msdn.microsoft.com/en-us/library/ms178473.aspx) para uma discussão mais detalhada sobre o ciclo de vida do aplicativo.
+O `Application_Start` manipulador de eventos é chamado apenas uma vez durante um ciclo de vida do aplicativo s. O aplicativo inicia na primeira vez um recurso do ASP.NET é solicitado do aplicativo e continuará a ser executado até que o aplicativo é reiniciado, o que pode ocorrer ao modificar o conteúdo do `/Bin` pasta, modificar `Global.asax`, modificando o o conteúdo no `App_Code` pasta ou modificando o `Web.config` arquivo, entre outras causas. Consulte [visão geral do ciclo de vida de aplicativos ASP.NET](https://msdn.microsoft.com/library/ms178473.aspx) para uma discussão mais detalhada sobre o ciclo de vida do aplicativo.
 
 Para esses tutoriais que apenas precisamos adicionar código para o `Application_Start` método, portanto à vontade remover os outros. Em `Application_Start`, simplesmente chamar o `StaticCache` classe s `LoadStaticCache()` método, que irá carregar e armazenar em cache as informações do fornecedor:
 

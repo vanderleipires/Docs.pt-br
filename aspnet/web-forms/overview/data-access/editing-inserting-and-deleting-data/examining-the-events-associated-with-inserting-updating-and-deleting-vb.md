@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5daa9d1fe63e4ad8ec8c667f84de00fadd77fefa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 88f6beb3f3514c6a9784d4cb936a5b779ce75ae1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-vb"></a>Examinando os eventos associados ao inserindo, atualizando e excluindo (VB)
 ====================
@@ -162,12 +162,12 @@ Com essa alteração, o valor da `UnitPrice` exibido no editado linha também é
 
 No entanto, atualizar um produto com o símbolo de moeda na caixa de texto, como $19.00 lança um `FormatException`. Quando tenta atribuir os valores fornecidos pelo usuário para o ObjectDataSource GridView `UpdateParameters` coleção não é possível converter o `UnitPrice` cadeia de caracteres "$19.00" para o `Decimal` exigido pelo parâmetro (consulte a Figura 11). Para corrigir isso podemos criar um manipulador de eventos do GridView `RowUpdating` eventos e colocá-lo a analisar o usuário forneceu `UnitPrice` como um formato de moeda `Decimal`.
 
-O GridView `RowUpdating` evento aceita como seu segundo parâmetro, um objeto do tipo [GridViewUpdateEventArgs](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx), que inclui um `NewValues` dicionário como uma de suas propriedades que contém os valores fornecidos pelo usuário prontos para ser atribuído a ObjectDataSource `UpdateParameters` coleção. Podemos pode substituir a existente `UnitPrice` valor o `NewValues` coleção com um valor decimal analisado usando o formato de moeda com as seguintes linhas de código no `RowUpdating` manipulador de eventos:
+O GridView `RowUpdating` evento aceita como seu segundo parâmetro, um objeto do tipo [GridViewUpdateEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx), que inclui um `NewValues` dicionário como uma de suas propriedades que contém os valores fornecidos pelo usuário prontos para ser atribuído a ObjectDataSource `UpdateParameters` coleção. Podemos pode substituir a existente `UnitPrice` valor o `NewValues` coleção com um valor decimal analisado usando o formato de moeda com as seguintes linhas de código no `RowUpdating` manipulador de eventos:
 
 
 [!code-vb[Main](examining-the-events-associated-with-inserting-updating-and-deleting-vb/samples/sample4.vb)]
 
-Se o usuário forneceu um `UnitPrice` valor (como "$19.00"), esse valor é substituído com o valor decimal calculado pelo [Parse](https://msdn.microsoft.com/en-us/library/system.decimal.parse(VS.80).aspx), ao analisar o valor como uma moeda. Isso irá analisar corretamente o decimal no caso de qualquer símbolos de moeda, vírgulas, pontos decimais e assim por diante e usa o [enumeração NumberStyles](https://msdn.microsoft.com/en-US/library/system.globalization.numberstyles(VS.80).aspx) no [System. Globalization](https://msdn.microsoft.com/en-US/library/abeh092z(VS.80).aspx) namespace.
+Se o usuário forneceu um `UnitPrice` valor (como "$19.00"), esse valor é substituído com o valor decimal calculado pelo [Parse](https://msdn.microsoft.com/library/system.decimal.parse(VS.80).aspx), ao analisar o valor como uma moeda. Isso irá analisar corretamente o decimal no caso de qualquer símbolos de moeda, vírgulas, pontos decimais e assim por diante e usa o [enumeração NumberStyles](https://msdn.microsoft.com/library/system.globalization.numberstyles(VS.80).aspx) no [System. Globalization](https://msdn.microsoft.com/library/abeh092z(VS.80).aspx) namespace.
 
 A Figura 11 mostra ambos o problema causado pelo símbolos de moeda em que o usuário forneceu `UnitPrice`, juntamente com como o GridView `RowUpdating` manipulador de eventos pode ser usado para analisar corretamente essa entrada.
 
@@ -216,10 +216,10 @@ Se um usuário tenta salvar um produto sem especificar um preço, a atualizaçã
 
 Até agora, vimos como usar o GridView `RowUpdating` eventos programaticamente alterar os valores de parâmetro atribuídos a ObjectDataSource `UpdateParameters` coleção, bem como para cancelar a atualização processar completamente. Esses conceitos são transferidas para os controles de DetailsView e FormView e também se aplicam a inserção e exclusão.
 
-Essas tarefas também podem ser feitas no nível de ObjectDataSource por meio de manipuladores de eventos para sua `Inserting`, `Updating`, e `Deleting` eventos. Esses eventos acionam antes do método associado do objeto subjacente é chamado e fornecem uma oportunidade de última chance para modificar a coleção de parâmetros de entrada ou cancelar a operação imediatamente. Manipuladores de eventos para esses três eventos são passados a um objeto do tipo [ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx) que tem duas propriedades de interesse:
+Essas tarefas também podem ser feitas no nível de ObjectDataSource por meio de manipuladores de eventos para sua `Inserting`, `Updating`, e `Deleting` eventos. Esses eventos acionam antes do método associado do objeto subjacente é chamado e fornecem uma oportunidade de última chance para modificar a coleção de parâmetros de entrada ou cancelar a operação imediatamente. Manipuladores de eventos para esses três eventos são passados a um objeto do tipo [ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx) que tem duas propriedades de interesse:
 
-- [Cancelar](https://msdn.microsoft.com/en-US/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx), que, se definido como `True`, cancela a operação que está sendo executada
-- [ParâmetrosDeEntrada](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx), que é a coleção de `InsertParameters`, `UpdateParameters`, ou `DeleteParameters`, dependendo se o manipulador de eventos é para o `Inserting`, `Updating`, ou `Deleting` evento
+- [Cancelar](https://msdn.microsoft.com/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx), que, se definido como `True`, cancela a operação que está sendo executada
+- [ParâmetrosDeEntrada](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx), que é a coleção de `InsertParameters`, `UpdateParameters`, ou `DeleteParameters`, dependendo se o manipulador de eventos é para o `Inserting`, `Updating`, ou `Deleting` evento
 
 Para ilustrar a trabalhar com os valores de parâmetro no nível de ObjectDataSource, vamos incluir um DetailsView em nossa página que permite que os usuários adicionar um novo produto. Este DetailsView será usado para fornecer uma interface para adicionar rapidamente um novo produto no banco de dados. Para manter uma interface de usuário consistente quando adicionar um novo produto vamos permitir que o usuário insira apenas valores para o `ProductName` e `UnitPrice` campos. Por padrão, os valores que não são fornecidos na interface de inserção de DetailsView serão definidos um `NULL` valor de banco de dados. No entanto, podemos usar o ObjectDataSource `Inserting` evento inserir valores padrão diferentes, como você verá em breve.
 

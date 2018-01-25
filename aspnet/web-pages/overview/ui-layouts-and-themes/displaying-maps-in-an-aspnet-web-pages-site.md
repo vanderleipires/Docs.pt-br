@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: a802e4fed81fadca195c8aa83c37c7100ac5cbec
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f3e6a0cfb8c08cd971e88986d0f059dd8237aab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>Exibição de mapas em um Site de páginas (Razor) da Web do ASP.NET
 ====================
@@ -39,7 +39,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > 
 > - Páginas da Web do ASP.NET (Razor) 2
-> - O WebMatrix 2
+> - WebMatrix 2
 >   
 > 
 > Este tutorial também funciona com o WebMatrix 3.
@@ -70,7 +70,7 @@ Finalmente, se você quiser usar o Bing maps, você deve primeiro criar uma cont
     Você pode especificar que você deseja usar a chave para **avaliação e teste**. Se você estiver testando a função de mapeamento no seu computador usando o WebMatrix e o IIS Express, visite o **Site** espaço de trabalho e anote a URL do seu site (por exemplo, `http://localhost:50408`, embora o número de porta provavelmente será diferente). Você pode usar isso *localhost* endereço do site quando você registrar.
 2. Depois que você registrou para uma conta, vá para o Centro de contas do Bing Maps e clique em **criar ou exibir chaves**:
 
-    ![mapeamento de 2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
+    ![mapping-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
 3. Registre a chave que cria Bing.
 
 ## <a name="creating-a-map-based-on-an-address-using-google"></a>Criar um mapa com base em um endereço (usando o Google)
@@ -104,14 +104,14 @@ Este exemplo mostra como criar um mapa com base nas coordenadas. Este exemplo mo
 3. Execute o *MapCoordinates.cshtml* página, insira as coordenadas de latitude e longitude e, em seguida, clique no **mapa ele!** . (Se você não souber qualquer coordenadas, tente o seguinte. Esse é um local no campus da Microsoft Redmond.)
 
     - Latitude: 47.6781005859375
-    - Longitude:-122.158317565918
+    - Longitude: -122.158317565918
 
     A página é exibida usando as coordenadas especificadas.
 
-    ![mapeamento de-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
+    ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Recursos adicionais
 
 
-[Referência da API Microsoft.Maps](https://msdn.microsoft.com/en-us/library/gg427611.aspx)
+[Referência da API Microsoft.Maps](https://msdn.microsoft.com/library/gg427611.aspx)

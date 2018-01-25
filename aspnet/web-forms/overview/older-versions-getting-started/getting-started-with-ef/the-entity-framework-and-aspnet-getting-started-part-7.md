@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 7697763b97e36304d686c77e8cedd060d630c530
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 7
 ====================
@@ -85,7 +85,7 @@ No designer de modelo de dados, clique com botão direito do `Student` entidade 
 
 O **detalhes de mapeamento** janela é exibida, na qual você pode especificar os procedimentos armazenados que o Entity Framework devem usar para inserir, atualizar e excluir entidades desse tipo.
 
-[![Image22](the-entity-framework-and-aspnet-getting-started-part-7/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image9.png)
+[![image22](the-entity-framework-and-aspnet-getting-started-part-7/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image9.png)
 
 Definir o **inserir** função **InsertStudent**. A janela mostra uma lista de parâmetros de procedimento armazenado, cada um deles deve ser mapeada para uma propriedade de entidade. Dois desses são mapeadas automaticamente porque os nomes são os mesmos. Não há nenhuma propriedade de entidade nomeada `FirstName`, portanto, você deve selecionar manualmente `FirstMidName` de uma lista suspensa que mostra as propriedades de entidade disponíveis. (Isso ocorre porque você alterou o nome do `FirstName` propriedade `FirstMidName` no primeiro tutorial.)
 
@@ -93,7 +93,7 @@ Definir o **inserir** função **InsertStudent**. A janela mostra uma lista de p
 
 Na mesma **detalhes de mapeamento** janela, mapeie o `Update` função para o `UpdateStudent` procedimento armazenado (certificar-se de que você especificar `FirstMidName` como o valor de parâmetro para `FirstName`, como você fez o `Insert` procedimento armazenado) e o `Delete` função para o `DeletePerson` procedimento armazenado.
 
-[![para Image01](the-entity-framework-and-aspnet-getting-started-part-7/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image13.png)
+[![image01](the-entity-framework-and-aspnet-getting-started-part-7/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image13.png)
 
 Siga o mesmo procedimento para mapear o insert, update e delete procedimentos armazenados para instrutores para o `Instructor` entidade.
 
@@ -135,7 +135,7 @@ Substitua pelo código a seguir:
 
 A página agora usa o `GetCourses` procedimento armazenado para recuperar a lista de todos os cursos. Execute a página para verificar se ele funciona como antes.
 
-(Propriedades de navegação de entidades recuperadas por um procedimento armazenado não podem ser preenchidas automaticamente com os dados relacionados a essas entidades, dependendo de `ObjectContext` configurações padrão. Para obter mais informações, consulte [objetos relacionados ao carregar](https://msdn.microsoft.com/en-us/library/bb896272.aspx) na biblioteca MSDN.)
+(Propriedades de navegação de entidades recuperadas por um procedimento armazenado não podem ser preenchidas automaticamente com os dados relacionados a essas entidades, dependendo de `ObjectContext` configurações padrão. Para obter mais informações, consulte [objetos relacionados ao carregar](https://msdn.microsoft.com/library/bb896272.aspx) na biblioteca MSDN.)
 
 O seguinte tutorial, você aprenderá como usar a funcionalidade de dados dinâmicos para facilitar o programa e teste regras de formatação e validação de dados. Em vez de especificar cada regras de página da web, como cadeias de caracteres de formato de dados e se um campo é obrigatório, você pode especificar essas regras nos metadados do modelo de dados e são aplicados automaticamente em cada página.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 0e1849fb780908b55520d8108e2227d046759987
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a14659997d86d1b5cf5381e21e997c1a03a3f57c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>A exibição de vídeo em um Site de páginas (Razor) da Web do ASP.NET
 ====================
@@ -39,7 +39,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > 
 > - Páginas da Web do ASP.NET (Razor) 2
-> - O WebMatrix 2
+> - WebMatrix 2
 >   
 > 
 > Este tutorial também funciona com o WebMatrix 3.
@@ -61,7 +61,7 @@ Há vários formatos de arquivos de vídeo, e cada formato normalmente requer um
 O `Video` auxiliar suporta os seguintes players de mídia:
 
 - Adobe Flash
-- Windows Media Player
+- Windows MediaPlayer
 - Microsoft Silverlight
 
 ### <a name="the-flash-player"></a>O Player Flash
@@ -118,7 +118,7 @@ Este procedimento mostra como executar um vídeo Flash denominado *sample.swf*. 
     [!code-cshtml[Main](10-working-with-video/samples/sample2.cshtml)]
 4. Execute a página em um navegador. (Verifique se a página está selecionada no **arquivos** espaço de trabalho antes de você executá-lo.) A página é exibida e o vídeo é reproduzido automaticamente. 
 
-    ![[imagem] ] (10-working-with-video/_static/image1.jpg "ch08_video 1.jpg")
+    ![[image]](10-working-with-video/_static/image1.jpg "ch08_video-1.jpg")
 
 Você pode definir o `quality` parâmetro de um vídeo Flash `low`, `autolow`, `autohigh`, `medium`, `high`, e `best`:
 
@@ -148,7 +148,7 @@ O procedimento a seguir mostra como reproduzir um vídeo de janela mídia denomi
     [!code-cshtml[Main](10-working-with-video/samples/sample5.cshtml)]
 4. Execute a página em um navegador. O vídeo carrega e executa automaticamente. 
 
-    ![[imagem] ] (10-working-with-video/_static/image2.jpg "ch08_video 2.jpg")
+    ![[image]](10-working-with-video/_static/image2.jpg "ch08_video-2.jpg")
 
 Você pode definir `playCount` para um inteiro que indica quantas vezes para reproduzir o vídeo automaticamente:
 
@@ -178,14 +178,14 @@ Este procedimento mostra como reproduzir o vídeo contido em um Silverlight *. x
     [!code-cshtml[Main](10-working-with-video/samples/sample10.cshtml)]
 4. Execute a página em um navegador. 
 
-    ![[imagem] ] (10-working-with-video/_static/image3.jpg "ch08_video 3.jpg")
+    ![[image]](10-working-with-video/_static/image3.jpg "ch08_video-3.jpg")
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Recursos adicionais
 
 
-[Visão geral do Silverlight](https://msdn.microsoft.com/en-us/library/bb404700(VS.95).aspx)
+[Visão geral do Silverlight](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
 
 [Atributos de marca de objeto e a inserção de Flash](http://kb2.adobe.com/cps/127/tn_12701.html)
 
-[Marcas PARAM de SDK do Windows Media Player 11](https://msdn.microsoft.com/en-us/library/aa392321(VS.85).aspx)
+[Marcas PARAM de SDK do Windows Media Player 11](https://msdn.microsoft.com/library/aa392321(VS.85).aspx)

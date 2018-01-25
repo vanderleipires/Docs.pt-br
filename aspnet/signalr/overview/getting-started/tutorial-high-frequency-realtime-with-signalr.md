@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 5af7289392c18d58de11249c75e539c9e08954be
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ab051b2ab85d1aac1e7179f342f22f470b1d1cc7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>Tutorial: Em tempo real de alta frequência com SignalR 2
 ====================
@@ -59,7 +59,7 @@ por [Patrick Fletcher](https://github.com/pfletcher)
 > Deixe comentários em como você gostou neste tutorial e o que podemos melhorar nos comentários na parte inferior da página. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [ASP.NET SignalR fórum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial demonstra como criar um aplicativo que compartilha o estado de um objeto com outros navegadores em tempo real. O aplicativo, criaremos é chamado MoveShape. A página de MoveShape exibirá um elemento HTML Div que o usuário pode arrastar; Quando o usuário arrasta a Div, a nova posição será enviada para o servidor, que informará todos os outros clientes conectados para atualizar a posição da forma a corresponder.
 
@@ -226,4 +226,4 @@ Para saber mais sobre conceitos de desenvolvimento SignalR, visite os seguintes 
 - [SignalR Github e exemplos](https://github.com/SignalR/SignalR)
 - [Wiki do SignalR](https://github.com/SignalR/SignalR/wiki)
 
-Para obter instruções sobre como implantar um aplicativo SignalR no Azure, consulte [usando SignalR com aplicativos Web no serviço de aplicativo do Azure](../deployment/using-signalr-with-azure-web-sites.md). Para obter informações detalhadas sobre como implantar um projeto da web do Visual Studio para um Site do Windows Azure, consulte [criar um aplicativo web ASP.NET no serviço de aplicativo do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/).
+Para obter instruções sobre como implantar um aplicativo SignalR no Azure, consulte [usando SignalR com aplicativos Web no serviço de aplicativo do Azure](../deployment/using-signalr-with-azure-web-sites.md). Para obter informações detalhadas sobre como implantar um projeto da web do Visual Studio para um Site do Windows Azure, consulte [criar um aplicativo web ASP.NET no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).

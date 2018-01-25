@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: f5783287a26174ddf65bb0eae34c347831d02c47
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3ab67b93a32106c0b79f9e8d739d47835391edb5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>Projeto de formulários de identidade do ASP.NET adicionando um Web vazio ou existente
 ====================
@@ -102,7 +102,7 @@ Observe que este pacote irá instalar os pacotes de dependência: EntityFramewor
 
 ## <a name="configuring-the-application-for-owin-authentication"></a>Configurando o aplicativo para autenticação OWIN
 
-Neste ponto, apenas adicionamos suporte para a criação de usuários. Agora, vamos demonstrar como é possível adicionar autenticação de logon de um usuário. Identidade do ASP.NET usa a autenticação do Microsoft OWIN middleware para autenticação de formulários. A autenticação de Cookie OWIN é um cookie e declarações de mecanismo de autenticação com base que pode ser usado por qualquer estrutura hospedada em [OWIN](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx) ou IIS. Com esse modelo, os mesmos pacotes de autenticação podem ser usados em várias estruturas, incluindo ASP.NET MVC e formulários da Web. Para obter mais informações sobre o projeto Katana e a execução de middleware em um consulte independente de host [guia de Introdução ao projeto Katana](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx).
+Neste ponto, apenas adicionamos suporte para a criação de usuários. Agora, vamos demonstrar como é possível adicionar autenticação de logon de um usuário. Identidade do ASP.NET usa a autenticação do Microsoft OWIN middleware para autenticação de formulários. A autenticação de Cookie OWIN é um cookie e declarações de mecanismo de autenticação com base que pode ser usado por qualquer estrutura hospedada em [OWIN](https://msdn.microsoft.com/magazine/dn451439.aspx) ou IIS. Com esse modelo, os mesmos pacotes de autenticação podem ser usados em várias estruturas, incluindo ASP.NET MVC e formulários da Web. Para obter mais informações sobre o projeto Katana e a execução de middleware em um consulte independente de host [guia de Introdução ao projeto Katana](https://msdn.microsoft.com/magazine/dn451439.aspx).
 
 ## <a name="installing-authentication-packages-to-your-application"></a>Instalando os pacotes de autenticação para seu aplicativo
 
@@ -135,8 +135,8 @@ Neste ponto, apenas adicionamos suporte para a criação de usuários. Agora, va
 
     > [!NOTE] 
     > 
-    > - Como identidade do ASP.NET e autenticação de Cookie OWIN são sistema baseada em declarações, o framework requer o desenvolvedor do aplicativo gerar um [ClaimsIdentity](https://msdn.microsoft.com/en-us/library/microsoft.identitymodel.claims.claimsidentity.aspx) para o usuário. ClaimsIdentity tem informações sobre todas as declarações para o usuário, como as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio.
-    > - Você pode entrar o usuário usando o AuthenticationManager do OWIN e chamar `SignIn` e passando o ClaimsIdentity como mostrado acima. Esse código será entre o usuário e gerar um cookie também. Esta chamada é análoga a [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx) usado pelo [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) módulo.
+    > - Como identidade do ASP.NET e autenticação de Cookie OWIN são sistema baseada em declarações, o framework requer o desenvolvedor do aplicativo gerar um [ClaimsIdentity](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.claimsidentity.aspx) para o usuário. ClaimsIdentity tem informações sobre todas as declarações para o usuário, como as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio.
+    > - Você pode entrar o usuário usando o AuthenticationManager do OWIN e chamar `SignIn` e passando o ClaimsIdentity como mostrado acima. Esse código será entre o usuário e gerar um cookie também. Esta chamada é análoga a [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) usado pelo [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) módulo.
 2. Em **Solution Explorer**, clique o projeto, clique **adicionar**e, em seguida, **formulário da Web**. Nomeie o formulário da web **logon**.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image12.png)
@@ -150,16 +150,16 @@ Neste ponto, apenas adicionamos suporte para a criação de usuários. Agora, va
     > [!NOTE] 
     > 
     > - O `Page_Load` agora verifica o status do usuário atual e executará uma ação com base em seu `Context.User.Identity.IsAuthenticated` status.  
-    >     **Exibir o log em nome de usuário** : O Microsoft ASP.NET Identity Framework adicionou os métodos de extensão em [IIdentity](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.aspx) que permite que você obtenha o `UserName` e `UserId` para o Usuário conectado. Esses métodos de extensão são definidos no `Microsoft.AspNet.Identity.Core` assembly. Esses métodos de extensão são a substituição de [HttpContext.User.Identity.Name](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.user.aspx) .
+    >     **Exibir o log em nome de usuário** : O Microsoft ASP.NET Identity Framework adicionou os métodos de extensão em [IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) que permite que você obtenha o `UserName` e `UserId` para o Usuário conectado. Esses métodos de extensão são definidos no `Microsoft.AspNet.Identity.Core` assembly. Esses métodos de extensão são a substituição de [HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) .
     > - Método de entrada:   
     >     `This`método substitui anterior `CreateUser_Click` método neste exemplo e agora conecta o usuário depois de criar com êxito o usuário.   
     >  O Microsoft OWIN Framework adicionou os métodos de extensão em `System.Web.HttpContext` que permite que você obtenha uma referência a um `IOwinContext`. Esses métodos de extensão são definidos no `Microsoft.Owin.Host.SystemWeb` assembly. O `OwinContext` classe expõe um `IAuthenticationManager` propriedade que representa a funcionalidade de middleware de autenticação disponível na solicitação atual.  
     >  Você pode entrar o usuário usando o `AuthenticationManager` do OWIN e chamar `SignIn` e passando o `ClaimsIdentity` como mostrado acima.   
     >  Como identidade do ASP.NET e autenticação de Cookie OWIN são sistema baseado em declarações, o framework requer o aplicativo para gerar um `ClaimsIdentity` para o usuário.   
     >  O `ClaimsIdentity` tem informações sobre todas as declarações para o usuário, como as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio  
-    >  Esse código será entre o usuário e gerar um cookie também. Esta chamada é análoga a [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx) usado pelo [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) módulo.
+    >  Esse código será entre o usuário e gerar um cookie também. Esta chamada é análoga a [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) usado pelo [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) módulo.
     > - `SignOut`método:   
-    >  Obtém uma referência para o `AuthenticationManager` do OWIN e chamadas `SignOut`. Isso equivale a [FormsAuthentication.SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx) método usado pelo [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) módulo.
+    >  Obtém uma referência para o `AuthenticationManager` do OWIN e chamadas `SignOut`. Isso equivale a [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) método usado pelo [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) módulo.
 5. Pressione **Ctrl + F5** para compilar e executar o aplicativo web. Digite um novo nome de usuário e senha e, em seguida, clique em **registrar**.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image13.png)  

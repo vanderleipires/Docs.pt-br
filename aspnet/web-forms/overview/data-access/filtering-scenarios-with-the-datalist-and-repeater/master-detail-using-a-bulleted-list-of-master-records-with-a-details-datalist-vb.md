@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 99d04c95b42402ae2bc72562a652b6edec5e9313
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 613ad1fb101a168c79310c9dc7bf731be264f889
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>Mestre/detalhes usando uma lista com marcadores de registros mestre com detalhes DataList (VB)
 ====================
@@ -243,9 +243,9 @@ Depois de concluir o Assistente Configurar fonte de dados, o Visual Studio gera 
 
 Atualmente, o `CategoryProductsDataSource` ObjectDataSource s  *`categoryID`*  parâmetro nunca é definido para nenhum produto sejam exibido quando a página de exibição. O que precisamos fazer é ter esse valor de parâmetro definido com base no `CategoryID` da categoria clicada no Repetidor. Isso apresenta dois desafios: primeiro, como podemos para determinar quando um LinkButton no repetidor s `ItemTemplate` foi clicado; e o segundo, como podemos determinar a `CategoryID` da categoria correspondente cujo LinkButton foi clicado?
 
-LinkButton com os controles de botão e ImageButton tem um `Click` eventos e uma [ `Command` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.command.aspx). O `Click` evento foi projetado para simplesmente Observe que no LinkButton foi clicado. Às vezes, no entanto, além de observar que o LinkButton clicado também precisamos passar informações extras para o manipulador de eventos. Se esse for o caso, o s LinkButton [ `CommandName` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) e [ `CommandArgument` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) propriedades podem ser atribuídas a essas informações extras. Em seguida, quando você clica no botão LinkButton, seu `Command` evento ser acionado (em vez de seu `Click` eventos) e o manipulador de eventos é passado os valores da `CommandName` e `CommandArgument` propriedades.
+LinkButton com os controles de botão e ImageButton tem um `Click` eventos e uma [ `Command` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx). O `Click` evento foi projetado para simplesmente Observe que no LinkButton foi clicado. Às vezes, no entanto, além de observar que o LinkButton clicado também precisamos passar informações extras para o manipulador de eventos. Se esse for o caso, o s LinkButton [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) e [ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) propriedades podem ser atribuídas a essas informações extras. Em seguida, quando você clica no botão LinkButton, seu `Command` evento ser acionado (em vez de seu `Click` eventos) e o manipulador de eventos é passado os valores da `CommandName` e `CommandArgument` propriedades.
 
-Quando um `Command` é gerado de dentro de um modelo no repetidor, o s repetidor [ `ItemCommand` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeater.itemcommand.aspx) é acionado e é passado a `CommandName` e `CommandArgument` valores no LinkButton clicado (ou botão ou ImageButton). Portanto, para determinar quando uma categoria LinkButton no repetidor foi clicada, é preciso fazer o seguinte:
+Quando um `Command` é gerado de dentro de um modelo no repetidor, o s repetidor [ `ItemCommand` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeater.itemcommand.aspx) é acionado e é passado a `CommandName` e `CommandArgument` valores no LinkButton clicado (ou botão ou ImageButton). Portanto, para determinar quando uma categoria LinkButton no repetidor foi clicada, é preciso fazer o seguinte:
 
 1. Definir o `CommandName` propriedade LinkButton no repetidor s `ItemTemplate` para algum valor (usou o ListProducts). Definindo isso `CommandName` de valor, o s LinkButton `Command` evento é acionado quando o LinkButton é clicado.
 2. Definir o s LinkButton `CommandArgument` propriedade para o valor do item atual s `CategoryID`.

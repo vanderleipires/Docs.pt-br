@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads
-ms.openlocfilehash: 144097cd1551c1d0aece5df20ce01e14146a41d1
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7909f21057f22e78c03b41464a19a18ce0908216
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="limiting-the-lifetime-of-protected-payloads"></a>Limitar o tempo de vida das cargas protegidos
 
@@ -54,7 +54,7 @@ Além das principais `Protect` métodos que levam apenas o texto não criptograf
 O `Unprotect` métodos retornam os dados desprotegidos originais. Se a carga ainda não tiver expirado, a expiração absoluta é retornada como um parâmetro junto com os dados desprotegidos originais out opcional. Se a carga tiver expirada, todas as sobrecargas do método Desproteger lançará CryptographicException.
 
 >[!WARNING]
-> Não é recomendável usar essas APIs para proteger cargas que requerem a persistência de longo prazo ou indefinida. "Pode suportar para as cargas protegidas sejam irrecuperáveis permanentemente após um mês?" pode servir como uma boa regra prática; Se a resposta for nenhum desenvolvedores, em seguida, considere APIs alternativas.
+> Ele não tem recomendável usar essas APIs para proteger cargas que requerem a persistência de longo prazo ou indefinida. "Pode suportar para as cargas protegidas sejam irrecuperáveis permanentemente após um mês?" pode servir como uma boa regra prática; Se a resposta for nenhum desenvolvedores, em seguida, considere APIs alternativas.
 
 O exemplo abaixo usa o [caminhos de código não DI](../configuration/non-di-scenarios.md) para instanciar o sistema de proteção de dados. Para executar este exemplo, certifique-se de que você adicionou uma referência ao pacote Microsoft.AspNetCore.DataProtection.Extensions primeiro.
 

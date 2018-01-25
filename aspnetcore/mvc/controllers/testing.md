@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/testing
-ms.openlocfilehash: 7f34bc7766b41beafb2a1ee09577109bc1402867
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f27e7ec43cd17e249dd646a7dfbce5df69d59664
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>Lógica de teste do controlador no núcleo do ASP.NET
 
@@ -65,7 +65,7 @@ Estado de modelo inválido pode ser testado com a adição de erros usando `AddM
 
 [!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
 
-O primeiro teste confirma quando `ModelState` não é válido, o mesmo `ViewResult` é retornado como um `GET` solicitação. Observe que o teste não tente passar de um modelo inválido. Não funciona mesmo assim como a associação de modelo não está em execução (embora uma [teste de integração](xref:mvc/controllers/testing#integration-testing) usaria exercício associação de modelo). Nesse caso, associação de modelo não está sendo testada. Esses testes de unidade estão testando apenas o que faz o código no método de ação.
+O primeiro teste confirma quando `ModelState` não é válido, o mesmo `ViewResult` é retornado como um `GET` solicitação. Observe que o teste não tente passar de um modelo inválido. Não funciona mesmo assim como a associação de modelo não está em execução (embora uma [teste de integração](xref:mvc/controllers/testing#integration-testing) usaria exercício associação de modelo). Nesse caso, a associação de modelo não está sendo testada. Esses testes de unidade estão testando apenas o que faz o código no método de ação.
 
 O segundo teste verifica que, quando `ModelState` for válido, um novo `BrainstormSession` é adicionada (por meio do repositório), e o método retorna um `RedirectToActionResult` com as propriedades esperadas. Fictícias chamadas que não forem chamadas são normalmente ignorado, mas a chamada `Verifiable` no final da instalação chamada permite que ele seja verificado no teste. Isso é feito com a chamada para `mockRepo.Verify`, que irá falhar no teste se o método esperado não foi chamado.
 
@@ -121,7 +121,7 @@ Você verá o `GetTestSession` método costumam ser usado em testes de integraç
 Cada classe de teste de integração configura o `TestServer` que executará o aplicativo ASP.NET Core. Por padrão, `TestServer` hospeda o aplicativo web na pasta onde ele está em execução - nesse caso, a pasta de projeto de teste. Assim, quando você tentar testar ações do controlador que retornam `ViewResult`, você pode ver este erro:
 
 ```
-The view 'Index' was not found. The following locations were searched:
+The view 'Index' wasn't found. The following locations were searched:
 (list of locations)
 ```
 

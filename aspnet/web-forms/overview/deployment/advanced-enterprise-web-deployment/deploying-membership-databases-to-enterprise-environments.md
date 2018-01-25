@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: f4d898b6e09b5b9df44b62f9cb4b9d367f288efb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27fade9fc5cae917579d4963da7bca12f6a5cda1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a>Implantação de bancos de dados de associação em ambientes corporativos
 ====================
@@ -44,8 +44,8 @@ Infelizmente, bancos de dados de associação ASP.NET apresentam alguns desafios
 
 Use estas diretrizes ao escolher como provisionar um banco de dados de associação em um ambiente de servidor corporativo:
 
-- Sempre que possível, não implante bancos de dados de associação. Em vez disso, crie o banco de dados de associação manualmente no servidor de banco de dados de destino. Se você não personalizou a esquema de banco de dados de associação, você pode simplesmente criar um novo em situ no destino, usando o [ferramenta de registro de servidor de SQL do ASP.NET (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx).
-- Se você não tem opção mas ao implantar um banco de dados de associação & #x 2014; por exemplo, se você tiver feito modificações amplas como o esquema de banco de dados & #x 2014; você deve executar uma implantação somente de esquema do banco de dados de associação, para excluir dados da conta de usuário, e em seguida, execute um script de pós-implantação para adicionar os dados de configuração necessárias. Você pode encontrar diretrizes amplas sobre abordagens de [como: implantar o ASP.NET associação de banco de dados sem incluindo contas de usuário](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx).
+- Sempre que possível, não implante bancos de dados de associação. Em vez disso, crie o banco de dados de associação manualmente no servidor de banco de dados de destino. Se você não personalizou a esquema de banco de dados de associação, você pode simplesmente criar um novo em situ no destino, usando o [ferramenta de registro de servidor de SQL do ASP.NET (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx).
+- Se você não tem opção mas ao implantar um banco de dados de associação & #x 2014; por exemplo, se você tiver feito modificações amplas como o esquema de banco de dados & #x 2014; você deve executar uma implantação somente de esquema do banco de dados de associação, para excluir dados da conta de usuário, e em seguida, execute um script de pós-implantação para adicionar os dados de configuração necessárias. Você pode encontrar diretrizes amplas sobre abordagens de [como: implantar o ASP.NET associação de banco de dados sem incluindo contas de usuário](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx).
 
 É importante lembrar que *o esquema do banco de dados de associação é provavelmente relativamente estáticos*. Mesmo se você personalizou o banco de dados de associação, é improvável que você precisará atualizar o esquema em uma base regular & #x 2014; ele não será alterado com a mesma frequência como o código em um aplicativo web ou um projeto de banco de dados. Como tal, você não deve precisa incluir o banco de dados de associação em qualquer processo de implantação automatizada ou única etapa.
 
@@ -57,8 +57,8 @@ A alternativa é usar o utilitário VSDBCMD para atualizar o esquema de banco de
 
 Você pode usar essas etapas de alto nível para atualizar um esquema de banco de dados de associação:
 
-1. Use o VSDBCMD **importação** ação para gerar um arquivo de .dbschema para seu banco de dados de associação de origem. Este procedimento é descrito em [como: importar um esquema de um Prompt de comando](https://msdn.microsoft.com/en-us/library/dd172135.aspx).
-2. Use o VSDBCMD **implantar** ação para implantar o arquivo .dbschema em seu banco de dados de associação de destino. Este procedimento é descrito em [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/en-us/library/dd193283.aspx).
+1. Use o VSDBCMD **importação** ação para gerar um arquivo de .dbschema para seu banco de dados de associação de origem. Este procedimento é descrito em [como: importar um esquema de um Prompt de comando](https://msdn.microsoft.com/library/dd172135.aspx).
+2. Use o VSDBCMD **implantar** ação para implantar o arquivo .dbschema em seu banco de dados de associação de destino. Este procedimento é descrito em [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/library/dd193283.aspx).
 
 ## <a name="conclusion"></a>Conclusão
 
@@ -66,7 +66,7 @@ Este tópico descritos alguns dos desafios que você pode enfrentar quando você
 
 ## <a name="further-reading"></a>Leitura adicional
 
-Para obter mais diretrizes e exemplos de como usar VSDBCMD, consulte [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/en-us/library/dd193283.aspx) e [como: importar um esquema de um Prompt de comando](https://msdn.microsoft.com/en-us/library/dd172135.aspx). Para obter mais informações sobre como usar aspnet\_regsql.exe para criar bancos de dados de associação, consulte [ferramenta de registro de servidor de SQL do ASP.NET (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx). Para obter orientação geral sobre a implantação de bancos de dados de associação, consulte [como: implantar o ASP.NET associação de banco de dados sem incluindo contas de usuário](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx).
+Para obter mais diretrizes e exemplos de como usar VSDBCMD, consulte [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/library/dd193283.aspx) e [como: importar um esquema de um Prompt de comando](https://msdn.microsoft.com/library/dd172135.aspx). Para obter mais informações sobre como usar aspnet\_regsql.exe para criar bancos de dados de associação, consulte [ferramenta de registro de servidor de SQL do ASP.NET (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx). Para obter orientação geral sobre a implantação de bancos de dados de associação, consulte [como: implantar o ASP.NET associação de banco de dados sem incluindo contas de usuário](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx).
 
 >[!div class="step-by-step"]
 [Anterior](deploying-database-role-memberships-to-test-environments.md)

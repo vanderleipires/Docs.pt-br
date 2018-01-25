@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d4b83d99fcf1247d08ce83364cc00e738b6a16c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63b1266e03041c4261e71fd25e988c63932b503e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>Autenticar usuários com a autenticação do Windows (VB)
 ====================
@@ -51,7 +51,7 @@ Para um aplicativo web de produção, lado, você usa o IIS como seu servidor we
 
 > [!NOTE] 
 > 
-> Para obter uma visão mais detalhada desses tipos diferentes de autenticação, consulte [https://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx).
+> Para obter uma visão mais detalhada desses tipos diferentes de autenticação, consulte [https://msdn.microsoft.com/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
 
 
 Você pode usar o Gerenciador de serviços de informações da Internet para habilitar um determinado tipo de autenticação. Lembre-se de que todos os tipos de autenticação não estão disponíveis no caso de cada sistema operacional. Além disso, se você estiver usando o IIS 7.0 com o Windows Vista, você precisará habilitar os diferentes tipos de autenticação do Windows antes de aparecerem no Gerenciador de serviços de informações da Internet. Abra **painel de controle, programas, programas e recursos, ativar recursos do Windows ou desativar**e expanda o nó Serviços de informações da Internet (consulte a Figura 2).

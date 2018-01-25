@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 965d2e740cc76838b1b4e1c618a2a6d784672fcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0d053cecbf9a59f258470ee370852e3f112908c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>Usando provedores OAuth com MVC 4
 ====================
@@ -45,7 +45,7 @@ Embora os exemplos neste tutorial se concentrar em usando o Facebook como proved
 Ou
 
 - Microsoft Visual Studio 2010 SP1 ou [Visual Web Developer Express 2010 SP1](https://www.microsoft.com/visualstudio/eng/downloads#d-2010-express)
-- [O ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)
+- [ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)
 
 Além disso, este tópico pressupõe que você tenha um conhecimento básico sobre ASP.NET MVC e o Visual Studio. Se você precisar obter uma introdução ao ASP.NET MVC 4, consulte [Introdução ao ASP.NET MVC 4](getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md).
 
@@ -148,7 +148,7 @@ Se você quiser habilitar autenticação externa, você é feita. No entanto, vo
 
 Conforme observado nas seções anteriores, você não precisa recuperar quaisquer informações adicionais para o registro de conta interna trabalhar. No entanto, os provedores externos mais passam informações adicionais sobre o usuário. As seções a seguir mostram como reter essas informações e salvá-lo em um banco de dados. Especificamente, você reterá os valores para o nome completo do usuário, o URI da página de web pessoais do usuário e um valor que indica se o Facebook verificou a conta.
 
-Você usará [migrações do Code First](https://msdn.microsoft.com/en-us/data/jj591621) para adicionar uma tabela para armazenar informações adicionais do usuário. Você está adicionando a tabela para um banco de dados existente, você primeiro precisa criar um instantâneo do banco de dados atual. Criando um instantâneo do banco de dados atual, você pode criar posteriormente uma migração, que contém somente a nova tabela. Para criar um instantâneo do banco de dados atual:
+Você usará [migrações do Code First](https://msdn.microsoft.com/data/jj591621) para adicionar uma tabela para armazenar informações adicionais do usuário. Você está adicionando a tabela para um banco de dados existente, você primeiro precisa criar um instantâneo do banco de dados atual. Criando um instantâneo do banco de dados atual, você pode criar posteriormente uma migração, que contém somente a nova tabela. Para criar um instantâneo do banco de dados atual:
 
 1. Abra o **Package Manager Console**
 2. Execute o comando **enable-migrations**

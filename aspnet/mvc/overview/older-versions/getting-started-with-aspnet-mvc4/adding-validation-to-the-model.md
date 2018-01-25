@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 73332d168e2f22621cb234a6591f3ce0eeed802f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 93b4df5fcbde8d87866d00dffda8a241d0dd596b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-to-the-model"></a>Adicionando validação para o modelo
 ====================
@@ -40,13 +40,13 @@ Vamos ver como você pode tirar proveito desse suporte de validação no aplicat
 
 Você começará com a adição de alguma lógica de validação para o `Movie` classe.
 
-Abra o arquivo *Movie.cs*. Adicionar um `using` instrução na parte superior do arquivo que faz referência a [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) namespace:
+Abra o arquivo *Movie.cs*. Adicionar um `using` instrução na parte superior do arquivo que faz referência a [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) namespace:
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample1.cs)]
 
 Observe que o namespace não contém `System.Web`. DataAnnotations fornece um conjunto interno de atributos de validação que você pode aplicar declarativamente para qualquer classe ou propriedade.
 
-Atualizar agora o `Movie` classe para aproveitar o interno [ `Required` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), e [ `Range` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributos de validação . Use o código a seguir como um exemplo de onde aplicar os atributos.
+Atualizar agora o `Movie` classe para aproveitar o interno [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), e [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributos de validação . Use o código a seguir como um exemplo de onde aplicar os atributos.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample2.cs?highlight=4,10,13,17)]
 
@@ -99,7 +99,7 @@ Você deve ter notado para as propriedades `Title` e `Genre`, o atributo necess�
 5. Remova o texto.
 6. Guia saída.
 
-A sequência acima disparará a validação necessária sem pressionar o botão de envio. Basta pressionar o botão de envio sem inserir qualquer um dos campos disparará a validação do lado do cliente. Os dados de formulário não são enviados no servidor até que não haja erros de validação do lado do cliente. Você pode testar isso colocando um ponto de interrupção no método HTTP Post ou usando o [ferramenta fiddler](http://fiddler2.com/fiddler2/) ou do IE 9 [ferramentas de desenvolvedor F12](https://msdn.microsoft.com/en-us/ie/aa740478).
+A sequência acima disparará a validação necessária sem pressionar o botão de envio. Basta pressionar o botão de envio sem inserir qualquer um dos campos disparará a validação do lado do cliente. Os dados de formulário não são enviados no servidor até que não haja erros de validação do lado do cliente. Você pode testar isso colocando um ponto de interrupção no método HTTP Post ou usando o [ferramenta fiddler](http://fiddler2.com/fiddler2/) ou do IE 9 [ferramentas de desenvolvedor F12](https://msdn.microsoft.com/ie/aa740478).
 
 ![](adding-validation-to-the-model/_static/image2.png)
 
@@ -137,17 +137,17 @@ Se você quiser alterar a lógica de validação mais tarde, você pode fazer is
 
 ## <a name="adding-formatting-to-the-movie-model"></a>Adicionando formatação para o modelo de filme
 
-Abra o arquivo *Movie.cs* e examine a classe `Movie`. O [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) namespace fornece os atributos de formatação além do conjunto interno de atributos de validação. Nós já tiver aplicado uma [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) valor de enumeração para a data de lançamento e os campos de preço. O código a seguir mostra o `ReleaseDate` e `Price` propriedades com apropriada [ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo.
+Abra o arquivo *Movie.cs* e examine a classe `Movie`. O [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) namespace fornece os atributos de formatação além do conjunto interno de atributos de validação. Nós já tiver aplicado uma [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) valor de enumeração para a data de lançamento e os campos de preço. O código a seguir mostra o `ReleaseDate` e `Price` propriedades com apropriada [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample9.cs)]
 
-O [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) atributos não são atributos de validação, eles são usados para informar o mecanismo de exibição como renderizar HTML. No exemplo acima, o `DataType.Date` atributo exibe as datas de filme como datas somente, sem tempo. Por exemplo, a seguinte [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) atributos não validam o formato dos dados:
+O [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atributos não são atributos de validação, eles são usados para informar o mecanismo de exibição como renderizar HTML. No exemplo acima, o `DataType.Date` atributo exibe as datas de filme como datas somente, sem tempo. Por exemplo, a seguinte [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atributos não validam o formato dos dados:
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample10.cs)]
 
-Os atributos listados acima fornecem apenas dicas para o mecanismo de exibição formatar os dados (e fornecer atributos como &lt;um&gt; da URL e &lt;um href =&quot;mailto:EmailAddress.com&quot; &gt; para email. Você pode usar o [RegularExpression](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atributo para validar o formato dos dados.
+Os atributos listados acima fornecem apenas dicas para o mecanismo de exibição formatar os dados (e fornecer atributos como &lt;um&gt; da URL e &lt;um href =&quot;mailto:EmailAddress.com&quot; &gt; para email. Você pode usar o [RegularExpression](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atributo para validar o formato dos dados.
 
-Uma abordagem alternativa para usar o `DataType` atributos, você pode definir explicitamente um [ `DataFormatString` ](https://msdn.microsoft.com/en-us/library/system.string.format.aspx) valor. O código a seguir mostra a propriedade data de liberação com uma cadeia de caracteres de formato de data (ou seja, &quot;d&quot;). Você usaria isso para especificar que você não deseja tempo como parte da data de lançamento.
+Uma abordagem alternativa para usar o `DataType` atributos, você pode definir explicitamente um [ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx) valor. O código a seguir mostra a propriedade data de liberação com uma cadeia de caracteres de formato de data (ou seja, &quot;d&quot;). Você usaria isso para especificar que você não deseja tempo como parte da data de lançamento.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample11.cs)]
 

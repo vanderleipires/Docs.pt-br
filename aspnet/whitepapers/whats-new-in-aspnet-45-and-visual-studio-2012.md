@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 93fdc7ca241198dc1d7c4c1f6be0a61b15790039
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4487eb7436c0b6241505f41621a7f31b89c38b28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>O que há de novo no ASP.NET 4.5 e o Visual Studio 2012
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
     - [Suporte para solicitações invalidadas](#_Toc318097381)
     - [Biblioteca AntiXSS](#_Toc318097382)
     - [Suporte para protocolo WebSockets](#_Toc318097383)
-    - [Empacotamento e minimização](#_Toc318097384)
+    - [Agrupamento e minificação](#_Toc318097384)
     - [Melhorias de desempenho para hospedagem na Web](#_Toc_perf)
 
         - [Fatores de desempenho chave](#_Toc_perf_1)
@@ -56,7 +56,7 @@ ms.lasthandoff: 11/10/2017
     - [Expressões de associação de dados codificado em HTML](#_Toc318097391)
     - [Validação discreta](#_Toc318097392)
     - [Atualizações do HTML5](#_Toc318097393)
-- [O ASP.NET MVC 4](#_Toc318097394)
+- [ASP.NET MVC 4](#_Toc318097394)
 - [Páginas da Web do ASP.NET 2](#_Toc318097395)
 - [Visual Studio 2012 Release Candidate](#_Toc318097396)
 
@@ -80,10 +80,10 @@ ms.lasthandoff: 11/10/2017
         - [Correspondência de chaves](#_Toc318097409)
         - [Ir para Definição](#_Toc318097410)
         - [Suporte da ECMAScript5](#_Toc318097411)
-        - [IntelliSense DOM](#_Toc318097412)
+        - [DOM IntelliSense](#_Toc318097412)
         - [Sobrecargas de assinatura VSDOC](#_Toc318097413)
         - [Referências implícita](#_Toc318097414)
-    - [Editor de CSS](#_Toc318097415)
+    - [CSS Editor](#_Toc318097415)
 
         - [Conclusão de instrução de redução automática](#_Toc318097416)
         - [Recuo hierárquico.](#_Toc318097417)
@@ -266,18 +266,18 @@ Além disso, habilitar ou desabilitar a otimização pode ser definido diretamen
 
 Quando arquivos são incluídos, eles primeiro são classificados em ordem alfabética (o modo de exibição no **Solution Explorer**). Que estão organizadas, em seguida, para que o conhecido bibliotecas e suas extensões personalizadas (como jQuery, MooTools e Dojo) são carregados pela primeira vez. Por exemplo, a ordem final para o agrupamento da pasta de Scripts, como mostrado acima será:
 
-1. 1.6.2.js jQuery
-2. ui.js jQuery
-3. jQuery.Tools.js
+1. jquery-1.6.2.js
+2. jquery-ui.js
+3. jquery.tools.js
 4. a.js
 
 Arquivos CSS são também são classificados em ordem alfabética e, em seguida, reorganizados para que Reset e normalize.css vir antes de qualquer outro arquivo. A classificação final de empacotamento da pasta estilos mostrada acima será:
 
-1. Reset
-2. Content.CSS
-3. Forms.CSS
-4. Globals.CSS
-5. menu.CSS
+1. reset.css
+2. content.css
+3. forms.css
+4. globals.css
+5. menu.css
 6. Styles
 
 <a id="_Toc_perf"></a>
@@ -330,7 +330,7 @@ Para ver todas as opções, execute a ferramenta sem argumentos.
 
 **Requisito**: .NET Framework 4.5
 
-Para um novo site estático, não apenas assemblies precisa ser lidas do disco, mas o site deve ser compilado por JIT. Para um site complexo, isso pode adicionar atrasos significativos. Uma técnica de finalidade geral nova no .NET Framework 4.5 reduz esses atrasos distribuindo compilação JIT entre núcleos de processador disponíveis. Ele faz isso tanta e mais cedo possível usando as informações coletadas durante anterior inicia do site. Essa funcionalidade implementada pelo [System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/en-us/library/system.runtime.profileoptimization.startprofile(VS.110).aspx) método.
+Para um novo site estático, não apenas assemblies precisa ser lidas do disco, mas o site deve ser compilado por JIT. Para um site complexo, isso pode adicionar atrasos significativos. Uma técnica de finalidade geral nova no .NET Framework 4.5 reduz esses atrasos distribuindo compilação JIT entre núcleos de processador disponíveis. Ele faz isso tanta e mais cedo possível usando as informações coletadas durante anterior inicia do site. Essa funcionalidade implementada pelo [System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/library/system.runtime.profileoptimization.startprofile(VS.110).aspx) método.
 
 Usando vários núcleos com compilação JIT é habilitado por padrão no ASP.NET, portanto você não precisa fazer nada para tirar proveito desse recurso. Se você quiser desabilitar esse recurso, verifique a configuração a seguir no arquivo Web. config:
 
@@ -743,7 +743,7 @@ Ir para o comando de definição permite pular para a fonte para uma função ou
 O editor oferece suporte a nova sintaxe e APIs no ECMAScript5, a versão mais recente do padrão que descreve a linguagem JavaScript.
 
 <a id="_Toc318097412"></a>
-#### <a name="dom-intellisense"></a>IntelliSense DOM
+#### <a name="dom-intellisense"></a>DOM IntelliSense
 
 IntelliSense para APIs de DOM foi aprimorado, com suporte para várias APIs de HTML5, novo incluindo *querySelector*, armazenamento de DOM, mensagens entre documentos e *tela*. DOM IntelliSense agora é orientado por um único arquivo simple de JavaScript, em vez de uma definição de biblioteca de tipo nativo. Isso facilita estender ou substituir.
 

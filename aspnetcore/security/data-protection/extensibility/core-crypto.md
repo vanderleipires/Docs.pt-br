@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: b82c30fe40c4badc74645dafa9f0d13f6ffae031
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8a3f4cf267998ddc7f393401059ca9d83ef2d8e7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="core-cryptography-extensibility"></a>Extensibilidade da criptografia de núcleo
 
@@ -128,7 +128,7 @@ O descritor de serializado pode conter informações confidenciais, como o mater
 >[!TIP]
 > Há um auxiliar de API para a configuração deste atributo. Chame o método de extensão que XElement.markasrequiresencryption() localizado no namespace Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.
 
-Também pode haver casos onde o descritor serializado não contêm informações confidenciais. Considere novamente o caso de uma chave de criptografia armazenada em um HSM. Não é possível gravar o descritor de material de chave ao serializar em si, pois o HSM não irá expor o material em forma de texto sem formatação. Em vez disso, o descritor pode gravar a versão de chave de linha de chave (se o HSM permite exportar dessa forma) ou o identificador exclusivo do HSM para a chave.
+Também pode haver casos onde o descritor serializado não contêm informações confidenciais. Considere novamente o caso de uma chave de criptografia armazenada em um HSM. Não é possível gravar o descritor de material de chave ao serializar em si, pois o HSM não expõe o material em forma de texto sem formatação. Em vez disso, o descritor pode gravar a versão de chave de linha de chave (se o HSM permite exportar dessa forma) ou o identificador exclusivo do HSM para a chave.
 
 <a name="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer"></a>
 
@@ -157,7 +157,7 @@ O **AlgorithmConfiguration** classe representa um tipo que sabe como criar [IAut
 
 * CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
 
-Pense AlgorithmConfiguration como a fábrica de nível superior. A configuração funciona como um modelo. Ela inclui informações de algoritmos (por exemplo, essa configuração produz descritores com uma chave mestra de AES-128-GCM), mas ainda não está associado com uma chave específica.
+Pense AlgorithmConfiguration como a fábrica de nível superior. A configuração funciona como um modelo. Ela inclui informações de algoritmos (por exemplo, essa configuração produz descritores com uma chave mestra de AES-128-GCM), mas ela ainda não está associada com uma chave específica.
 
 Quando CreateNewDescriptor é chamado, novo material de chave é criada somente para essa chamada e um novo IAuthenticatedEncryptorDescriptor é produzido que encapsula o material de chave e as informações de algoritmos necessária para consumir o material. O material da chave pode ser criado no software (e mantido na memória), ele pode ser criado e mantido em um HSM e assim por diante. O ponto fundamental é que as duas chamadas para CreateNewDescriptor nunca devem criar instâncias de IAuthenticatedEncryptorDescriptor equivalentes.
 
@@ -169,7 +169,7 @@ O **IAuthenticatedEncryptorConfiguration** interface representa um tipo que sabe
 
 * CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
 
-Pense IAuthenticatedEncryptorConfiguration como a fábrica de nível superior. A configuração funciona como um modelo. Ela inclui informações de algoritmos (por exemplo, essa configuração produz descritores com uma chave mestra de AES-128-GCM), mas ainda não está associado com uma chave específica.
+Pense IAuthenticatedEncryptorConfiguration como a fábrica de nível superior. A configuração funciona como um modelo. Ela inclui informações de algoritmos (por exemplo, essa configuração produz descritores com uma chave mestra de AES-128-GCM), mas ela ainda não está associada com uma chave específica.
 
 Quando CreateNewDescriptor é chamado, novo material de chave é criada somente para essa chamada e um novo IAuthenticatedEncryptorDescriptor é produzido que encapsula o material de chave e as informações de algoritmos necessária para consumir o material. O material da chave pode ser criado no software (e mantido na memória), ele pode ser criado e mantido em um HSM e assim por diante. O ponto fundamental é que as duas chamadas para CreateNewDescriptor nunca devem criar instâncias de IAuthenticatedEncryptorDescriptor equivalentes.
 

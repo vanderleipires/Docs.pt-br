@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: d0cdb5aaa4b1129c3f2404d069e9781ca16260b7
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 532020a8fe4c5a0312cbd89278e61f614b1825f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>Leitura relacionadas a dados - Core de EF com páginas Razor (6 de 8)
 
@@ -54,7 +54,7 @@ Há várias maneiras que o EF Core pode carregar dados relacionados para as prop
 
  ![Exemplo de carregamento explícito](read-related-data/_static/explicit-loading.png)
 
-* [Carregamento preguiçoso](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [Núcleo EF não oferece suporte a carregamento lento](https://github.com/aspnet/EntityFrameworkCore/issues/3797). Quando a entidade é lido pela primeira vez, os dados relacionados não são recuperados. Na primeira vez que uma propriedade de navegação é acessada, os dados necessários para essa propriedade de navegação são recuperados automaticamente. Uma consulta é enviada para o banco de dados sempre que uma propriedade de navegação seja acessada pela primeira vez.
+* [Carregamento preguiçoso](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [EF Core atualmente não dá suporte a carregamento lento](https://github.com/aspnet/EntityFrameworkCore/issues/3797). Quando a entidade é lido pela primeira vez, os dados relacionados não são recuperados. Na primeira vez que uma propriedade de navegação é acessada, os dados necessários para essa propriedade de navegação são recuperados automaticamente. Uma consulta é enviada para o banco de dados sempre que uma propriedade de navegação seja acessada pela primeira vez.
 
 * O `Select` operador carrega somente os dados relacionados necessários.
 
@@ -108,7 +108,7 @@ Atualização *Views/Courses/Index.cshtml* com a seguinte marcação realçada:
 As seguintes alterações foram feitas para o código de scaffolding:
 
 * Alterado o título do índice para cursos.
-* Adicionado um **número** coluna mostra o `CourseID` o valor da propriedade. Por padrão, as chaves primárias não são Scaffold porque normalmente eles não fazem sentidos para os usuários finais. No entanto, nesse caso a chave primária é significativa.
+* Adicionado um **número** coluna mostra o `CourseID` o valor da propriedade. Por padrão, as chaves primárias não são Scaffold porque normalmente eles são sem sentido para os usuários finais. No entanto, nesse caso a chave primária é significativa.
 * Alterado o **departamento** coluna para exibir o nome de departamento. Exibe o código de `Name` propriedade do `Department` entidade que é carregada no `Department` propriedade de navegação:
 
   ```html
@@ -210,7 +210,7 @@ A marcação anterior faz as seguintes alterações:
     `http://localhost:1234/Instructors/2`
 
 * Título da página é **instrutores**.
-* Adicionado um **Office** coluna que exibe `item.OfficeAssignment.Location` somente se `item.OfficeAssignment` não for nulo. Como esta é uma relação um-para-zero-ou-um, pode não haver uma entidade OfficeAssignment relacionada.
+* Adicionado um **Office** coluna que exibe `item.OfficeAssignment.Location` somente se `item.OfficeAssignment` não é nulo. Como esta é uma relação um-para-zero-ou-um, pode não haver uma entidade OfficeAssignment relacionada.
 
   ```html
   @if (item.OfficeAssignment != null)

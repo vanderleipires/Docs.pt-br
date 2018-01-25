@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 7e495ba56958012713836c1dd75ac0c5a8bff942
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 873e4592ba668bbcb22f761c2a547a2a27d7e443
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Criar, ler, atualizar e excluir - Core de EF com o tutorial do MVC do ASP.NET Core (2 de 10)
 
@@ -200,7 +200,7 @@ O contexto do banco de dados mantém o controle de entidades na memória estão 
 
 Uma entidade pode estar em um dos seguintes estados:
 
-* `Added`. A entidade ainda não existir no banco de dados. O `SaveChanges` método emite uma instrução INSERT.
+* `Added`. A entidade ainda não existe no banco de dados. O `SaveChanges` método emite uma instrução INSERT.
 
 * `Unchanged`. Nada precisa ser feito com essa entidade pelo `SaveChanges` método. Ao ler uma entidade do banco de dados, a entidade começa com esse status.
 
@@ -216,7 +216,7 @@ Em um aplicativo web, o `DbContext` que inicialmente lê uma entidade e exibe se
 
 Mas se você não quiser fazer o extra de operação de leitura, você deve usar o objeto de entidade criado pelo associador de modelo.  A maneira mais simples de fazer isso é definir o estado da entidade como modificadas como é feito em alternativo HttpPost editar código mostrado anteriormente. Em seguida, quando você chama `SaveChanges`, o Entity Framework atualiza todas as colunas da linha de banco de dados, porque o contexto não tem como saber quais propriedades é alterada.
 
-Se você quiser evitar a abordagem de leitura, mas você deseja que a instrução SQL UPDATE para atualizar somente os campos que o usuário realmente foram alterado, o código é mais complexo. É necessário salvar os valores originais de alguma forma (como usando campos ocultos) para que eles fiquem disponíveis quando o HttpPost `Edit` método é chamado. Em seguida, você pode criar uma entidade de aluno usando os valores originais, chamada de `Attach` método com que a versão original da entidade, atualizar os valores da entidade para os novos valores e, em seguida, chame `SaveChanges`.
+Se você quiser evitar a abordagem de leitura, mas você deseja que a instrução SQL UPDATE para atualizar somente os campos que o usuário realmente foram alterado, o código é mais complexo. É necessário salvar os valores originais de alguma forma (como usando campos ocultos) para que elas estão disponíveis quando o HttpPost `Edit` método é chamado. Em seguida, você pode criar uma entidade de aluno usando os valores originais, chamada de `Attach` método com que a versão original da entidade, atualizar os valores da entidade para os novos valores e, em seguida, chame `SaveChanges`.
 
 ### <a name="test-the-edit-page"></a>A página de edição de teste
 

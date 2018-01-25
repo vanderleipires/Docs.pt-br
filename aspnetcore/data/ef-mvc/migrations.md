@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 9081ddd14e6ed9192c6bd8ce8b265d14dbca7e23
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a2f8b01e16d1be818b4338455a40605fcbdb3400
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>Migrações - Core EF com o tutorial do MVC do ASP.NET Core (4 de 10)
 
@@ -157,7 +157,7 @@ O EF ferramentas para gerenciar migrações está disponível a partir de comand
 
 Os comandos EF para os comandos PMC estão no [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) pacote. Este pacote já está incluído no [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, portanto não é necessário instalá-lo.
 
-**Importante:** isso não é o mesmo pacote que você instala para CLI editando o *. csproj* arquivo. O nome deste termina `Tools`, ao contrário do nome do pacote CLI que termina em `Tools.DotNet`.
+**Importante:** não é o mesmo pacote que você instala para CLI editando o *. csproj* arquivo. O nome deste termina `Tools`, ao contrário do nome do pacote CLI que termina em `Tools.DotNet`.
 
 Para obter mais informações sobre os comandos CLI, consulte [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet). 
 

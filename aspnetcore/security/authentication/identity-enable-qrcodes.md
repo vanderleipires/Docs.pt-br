@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: 87a6d3f17216625e0f7ce206dddd72cb2f371e9a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d3710e72f3f4f2a5ecc4cfa53f721cca5239aa70
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Habilitar a geração de código QR para aplicativos de autenticador no núcleo do ASP.NET
 
@@ -21,7 +21,7 @@ Observação: Este tópico se aplica ao ASP.NET Core 2. x
 
 ASP.NET Core é fornecido com suporte para aplicativos de autenticador para autenticação individual. Dois aplicativos factor authentication (2FA) autenticador, usando um baseada em tempo de uso único senha algoritmo (TOTP), são o setor abordagem para 2FA recomendado. 2FA usar TOTP é preferível à 2FA do SMS. Um aplicativo autenticador fornece um código de 6 a 8 dígitos que os usuários devem digitar depois de confirmar seu nome de usuário e senha. Normalmente, um aplicativo autenticador é instalado em um Smartphone.
 
-Os modelos de aplicativo web ASP.NET Core autenticadores de suporte, mas não oferecem suporte para a geração de QRCode. Geradores de QRCode facilitam a configuração de 2FA. Este documento o orientará durante a adição de [código QR](https://wikipedia.org/wiki/QR_code) geração para a página de configuração 2FA.
+Os modelos de aplicativo web ASP.NET Core autenticadores de suporte, mas não fornecem suporte para geração de QRCode. Geradores de QRCode facilitam a configuração de 2FA. Este documento o orientará durante a adição de [código QR](https://wikipedia.org/wiki/QR_code) geração para a página de configuração 2FA.
 
 ## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>Adicionar códigos QR para a página de configuração 2FA
 

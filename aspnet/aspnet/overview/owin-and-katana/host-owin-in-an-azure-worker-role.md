@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 647514ae5a92b9d729179327fb97bd8005b0a4b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8c0fdfdf60ff3bde34b6869adf3f8693b4d9615d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Host OWIN em uma função de trabalho do Azure
 ====================
@@ -26,13 +26,13 @@ por [Mike Wasson](https://github.com/MikeWasson)
 > 
 > [Abra a Interface da Web para .NET](http://owin.org/) (OWIN) define uma abstração entre os servidores de web do .NET e aplicativos da web. OWIN separa o aplicativo web do servidor, o que torna OWIN ideal para hospedagem interna de um aplicativo da web em seu próprio processo e fora de IIS – por exemplo, dentro de uma função de trabalho do Azure.
 > 
-> Neste tutorial, você aprenderá como hospedagem interna de um aplicativo OWIN dentro de uma função de trabalho do Microsoft Azure. Para saber mais sobre as funções de trabalho, consulte [modelos de execução do Azure](https://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/#CloudServices).
+> Neste tutorial, você aprenderá como hospedagem interna de um aplicativo OWIN dentro de uma função de trabalho do Microsoft Azure. Para saber mais sobre as funções de trabalho, consulte [modelos de execução do Azure](https://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices).
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
-> - [SDK do Azure para .NET 2.3](https://azure.microsoft.com/en-us/downloads/)
+> - [SDK do Azure para .NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
 
@@ -125,7 +125,7 @@ Localize o endereço IP em implantações de serviços de implantação [id], de
 
 ## <a name="deploy-to-azure"></a>Implantar no Azure
 
-Nesta etapa, você deve ter uma conta do Azure. Se você ainda não tiver um, você pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter detalhes, consulte [avaliação gratuita do Microsoft Azure](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F).
+Nesta etapa, você deve ter uma conta do Azure. Se você ainda não tiver um, você pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter detalhes, consulte [avaliação gratuita do Microsoft Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
 
 No Gerenciador de soluções, clique com botão direito no projeto AzureApp. Selecione **Publicar**.
 

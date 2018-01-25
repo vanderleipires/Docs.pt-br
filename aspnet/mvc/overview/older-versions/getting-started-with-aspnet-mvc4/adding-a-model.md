@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 1d066e4bab866a2195647f43aa886279fee941db
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 304c428b0d787e902f30c1989471c476f54d3b39
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-model"></a>Adicionando um modelo
 ====================
@@ -28,7 +28,7 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 
 Nesta seção, você adicionará algumas classes de gerenciamento de filmes em um banco de dados. Essas classes será o &quot;modelo&quot; parte do aplicativo ASP.NET MVC.
 
-Você usará uma tecnologia de acesso a dados do .NET Framework conhecida como o [do Entity Framework](https://msdn.microsoft.com/en-us/library/bb399572(VS.110).aspx) para definir e trabalhar com essas classes de modelo. O Entity Framework (também conhecido como EF) oferece suporte a um paradigma de desenvolvimento chamado *Code First*. Código primeiro permite que você crie objetos de modelo, escrevendo classes simples. (Eles também são conhecidas como POCO classes, de &quot;objetos CLR simples antigo.&quot;) Em seguida, você pode ter o banco de dados criado dinamicamente de suas classes, que permite que um fluxo de trabalho de desenvolvimento muito claro e rápida.
+Você usará uma tecnologia de acesso a dados do .NET Framework conhecida como o [do Entity Framework](https://msdn.microsoft.com/library/bb399572(VS.110).aspx) para definir e trabalhar com essas classes de modelo. O Entity Framework (também conhecido como EF) oferece suporte a um paradigma de desenvolvimento chamado *Code First*. Código primeiro permite que você crie objetos de modelo, escrevendo classes simples. (Eles também são conhecidas como POCO classes, de &quot;objetos CLR simples antigo.&quot;) Em seguida, você pode ter o banco de dados criado dinamicamente de suas classes, que permite que um fluxo de trabalho de desenvolvimento muito claro e rápida.
 
 ## <a name="adding-model-classes"></a>Adicionando Classes de modelo
 

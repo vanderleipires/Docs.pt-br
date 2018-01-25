@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: 02c2a01ef8ec2b5a49f2c303ee61f02702a3ba54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 997582263bd48590b74434ee0ffc6be928fa1e08
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="routing-and-action-selection-in-aspnet-web-api"></a>Roteamento e seleção de ação na API da Web do ASP.NET
 ====================
@@ -86,7 +86,7 @@ Para "api/produtos/toys/123", no entanto, o dicionário de rota conterá:
 
 - controlador: "produtos"
 - categoria: "toys"
-- ID: "123"
+- id: "123"
 
 Os padrões também podem incluir um valor que não aparecer em qualquer lugar no modelo de rota. Se a rota corresponde, esse valor é armazenado no dicionário. Por exemplo:
 
@@ -95,7 +95,7 @@ Os padrões também podem incluir um valor que não aparecer em qualquer lugar n
 Se o caminho do URI é "raiz/api/8", o dicionário conterá dois valores:
 
 - controlador: "clientes"
-- ID: "8"
+- id: "8"
 
 ## <a name="selecting-a-controller"></a>Selecionar um controlador
 
@@ -121,7 +121,7 @@ A implementação padrão fornecida pelo **ApiControllerActionSelector** classe.
 
 Antes de examinar o algoritmo de seleção, é preciso entender algumas coisas sobre ações do controlador.
 
-**Os métodos do controlador são considerados "ações"?** Ao selecionar uma ação, a estrutura considera apenas em métodos de instância pública no controlador. Além disso, ele exclui ["nome especial"](https://msdn.microsoft.com/en-us/library/system.reflection.methodbase.isspecialname) métodos (construtores, eventos, sobrecargas de operador e assim por diante) e métodos herdados do **ApiController** classe.
+**Os métodos do controlador são considerados "ações"?** Ao selecionar uma ação, a estrutura considera apenas em métodos de instância pública no controlador. Além disso, ele exclui ["nome especial"](https://msdn.microsoft.com/library/system.reflection.methodbase.isspecialname) métodos (construtores, eventos, sobrecargas de operador e assim por diante) e métodos herdados do **ApiController** classe.
 
 **Métodos HTTP.** A estrutura escolhe somente ações que correspondam o método HTTP da solicitação, determinado da seguinte maneira:
 
@@ -134,7 +134,7 @@ Antes de examinar o algoritmo de seleção, é preciso entender algumas coisas s
 - Tipos simples são obtidos de URI.
 - Tipos complexos são obtidos de corpo da solicitação.
 
-Tipos simples incluem todas as [tipos primitivos do .NET Framework](https://msdn.microsoft.com/en-us/library/system.type.isprimitive), além de **DateTime**, **Decimal**, **Guid**, **cadeia de caracteres** , e **TimeSpan**. Para cada ação, no máximo um parâmetro pode ler o corpo da solicitação.
+Tipos simples incluem todas as [tipos primitivos do .NET Framework](https://msdn.microsoft.com/library/system.type.isprimitive), além de **DateTime**, **Decimal**, **Guid**, **cadeia de caracteres** , e **TimeSpan**. Para cada ação, no máximo um parâmetro pode ler o corpo da solicitação.
 
 > [!NOTE]
 > É possível substituir as regras de associação padrão. Consulte [associação de parâmetro WebAPI nos bastidores](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx).
@@ -192,7 +192,7 @@ Solicitação HTTP:
 O URI corresponde a rota chamada "DefaultApi". O dicionário de rota contém as seguintes entradas:
 
 - controlador: "produtos"
-- ID: "1"
+- id: "1"
 
 O dicionário de rota não contêm parâmetros de cadeia de caracteres de consulta, "versão" e "Detalhes", mas eles ainda serão considerados durante a seleção de ação.
 
@@ -218,7 +218,7 @@ O `GetAll` método corresponde facilmente. O `GetById` método também correspon
 
 O `GetById` método wins, porque ele corresponde a um parâmetro, em vez de nenhum parâmetro para `GetAll`. O método é invocado com os seguintes valores de parâmetro:
 
-- *ID* = 1
+- *id* = 1
 - *versão* = 1.5
 
 Observe que, embora *versão* não foi usado o algoritmo de seleção, o valor do parâmetro vêm de cadeia de caracteres de consulta URI.

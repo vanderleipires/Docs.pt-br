@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 008b9cd081152e6a378d0fa2e08497a6771fd9b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23e317c6e0b6daf2d7937b73738e5cb6fa32cde2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>Cenário: Configurar um ambiente de teste para a implantação da Web
 ====================
@@ -49,7 +49,7 @@ O ambiente de teste precisa dar suporte a apenas uma etapa ou automatizado impla
 - Configure o servidor web de teste para dar suporte à implantação usando o manipulador de implantação da Web.
 
 > [!NOTE]
-> Você também pode usar [Web implantar sob demanda](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx) (o "agente temp"). Isso é semelhante à abordagem de agente remoto em termos de requisitos e restrições.
+> Você também pode usar [Web implantar sob demanda](https://technet.microsoft.com/library/ee517345(WS.10).aspx) (o "agente temp"). Isso é semelhante à abordagem de agente remoto em termos de requisitos e restrições.
 
 
 Nesse caso, os desenvolvedores têm privilégios de administrador no servidor de destino e o ambiente de teste não está sujeito a restrições de segurança estrita, a opção lógica configurar o servidor web de teste para dar suporte à implantação usando o agente remoto. Isso é menos complexo e exige a configuração inicial menor que a abordagem de manipulador de implantação da Web. Você também precisará configurar o servidor de banco de dados para dar suporte à implantação e acesso remoto.

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 97910940f9de26ca71b111b945581d2de6650b02
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>Implantação de Web do ASP.NET usando o Visual Studio: implantação de teste
 ====================
@@ -27,7 +27,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial mostra como implantar um aplicativo da web ASP.NET para o IIS no computador local.
 
@@ -40,7 +40,7 @@ Você pode testar seu aplicativo com mais confiança das seguintes maneiras:
 
 Opção 2 é a maneira mais confiável de testar e, se você fizer isso, você não precisa necessariamente opção 1. No entanto, se você estiver implantando em uma opção de provedor de terceiros hospedagem 2 talvez não seja viável ou pode ser cara, portanto, esta série de tutoriais mostra ambos os métodos. Orientação para a opção 2 é fornecida no [implantando no ambiente de produção](deploying-to-production.md) tutorial.
 
-Para obter mais informações sobre como usar os servidores web no Visual Studio, consulte [servidores Web no Visual Studio para projetos Web ASP.NET](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx).
+Para obter mais informações sobre como usar os servidores web no Visual Studio, consulte [servidores Web no Visual Studio para projetos Web ASP.NET](https://msdn.microsoft.com/library/58wxa9w5.aspx).
 
 Lembrete: Se você receber uma mensagem de erro ou algo não funciona ao percorrer o tutorial, certifique-se verificar a [página de solução de problemas](troubleshooting.md).
 
@@ -73,7 +73,7 @@ Depois de instalar o IIS, execute **Gerenciador do IIS** para certificar-se de q
     [![Inetmgr_showing_4.0_app_pools](deploying-to-iis/_static/image3.png)](deploying-to-iis/_static/image2.png)
 4. Se você vir apenas dois pools de aplicativos, e ambos os parâmetros são definidos para o .NET Framework 2.0, você precisa instalar o ASP.NET 4 no IIS.
 
-    Para o Windows 8, consulte as instruções anteriormente na seção para garantir que o ASP.NET 4.5 está instalado, ou consulte [neste artigo da KB](https://support.microsoft.com/kb/2736284). Para o Windows 7, abra uma janela de prompt de comando clicando **Prompt de comando** nas janelas **iniciar** menu e selecionando **executar como administrador**. Em seguida, execute [aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx) para instalar o ASP.NET 4 no IIS, usando os seguintes comandos. (Em sistemas de 32 bits, substitua "Framework64" com "Estrutura").
+    Para o Windows 8, consulte as instruções anteriormente na seção para garantir que o ASP.NET 4.5 está instalado, ou consulte [neste artigo da KB](https://support.microsoft.com/kb/2736284). Para o Windows 7, abra uma janela de prompt de comando clicando **Prompt de comando** nas janelas **iniciar** menu e selecionando **executar como administrador**. Em seguida, execute [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) para instalar o ASP.NET 4 no IIS, usando os seguintes comandos. (Em sistemas de 32 bits, substitua "Framework64" com "Estrutura").
 
     [!code-console[Main](deploying-to-iis/samples/sample1.cmd)]
 
@@ -94,9 +94,9 @@ O IIS agora está pronto para publicar um aplicativo web para ele, mas antes que
 
 LocalDB não foi projetado para funcionar no IIS, dessa forma para o seu ambiente de teste é necessário ter o SQL Server Express instalado. Se você estiver usando o Visual Studio 2010 SQL Server Express já está instalado por padrão. Se você estiver usando o Visual Studio 2012, você precisa instalá-lo.
 
-Para instalar o SQL Server Express, instale-o de [Download Center: Microsoft SQL Server 2012 Express](https://www.microsoft.com/en-us/download/details.aspx?id=29062) clicando [ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe) ou [ ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe). Se você escolher a errado para o seu sistema haverá falha na instalação e tente outro.
+Para instalar o SQL Server Express, instale-o de [Download Center: Microsoft SQL Server 2012 Express](https://www.microsoft.com/download/details.aspx?id=29062) clicando [ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe) ou [ ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe). Se você escolher a errado para o seu sistema haverá falha na instalação e tente outro.
 
-Na primeira página da Central de instalação do SQL Server, clique em **instalação autônoma do novo SQL Server ou adicionar recursos a uma instalação existente**e siga as instruções, aceite as opções padrão. No Assistente de instalação, aceite as configurações padrão. Para obter mais informações sobre opções de instalação, consulte [instalar o SQL Server 2012 do Assistente de instalação (instalação)](https://msdn.microsoft.com/en-us/library/ms143219.aspx).
+Na primeira página da Central de instalação do SQL Server, clique em **instalação autônoma do novo SQL Server ou adicionar recursos a uma instalação existente**e siga as instruções, aceite as opções padrão. No Assistente de instalação, aceite as configurações padrão. Para obter mais informações sobre opções de instalação, consulte [instalar o SQL Server 2012 do Assistente de instalação (instalação)](https://msdn.microsoft.com/library/ms143219.aspx).
 
 ## <a name="create-sql-server-express-databases-for-the-test-environment"></a>Criar bancos de dados SQL Server Express para o ambiente de teste
 
@@ -233,7 +233,7 @@ As etapas a seguir se aplicam ao **DefaultConnection** banco de dados de **banco
 
 Quando o Visual Studio detecta um Entity Framework `DbContext` classe, ele cria uma entrada no **bancos de dados** seção tem um **executar migrações do Code First** caixa de seleção em vez de um  **Atualizar banco de dados** caixa de seleção. Para este tutorial, você usará essa caixa de seleção para especificar a implantação de migrações do Code First.
 
-Em alguns cenários, talvez você esteja usando um `DbContext` banco de dados, mas você deseja usar o provedor dbDacFx em vez de migrações para implantar o banco de dados. Nesse caso, consulte [como implantar a um banco de dados Code First sem migrações?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) nas perguntas frequentes sobre ASP.NET Web implantação no MSDN.
+Em alguns cenários, talvez você esteja usando um `DbContext` banco de dados, mas você deseja usar o provedor dbDacFx em vez de migrações para implantar o banco de dados. Nesse caso, consulte [como implantar a um banco de dados Code First sem migrações?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) nas perguntas frequentes sobre ASP.NET Web implantação no MSDN.
 
 As etapas a seguir se aplicam ao **SchoolContext** banco de dados de **bancos de dados** seção da caixa de diálogo.
 
@@ -332,7 +332,7 @@ Para obter informações sobre como executar o IIS ou IIS Express no Visual Stud
 
 - [Visão geral do IIS Express](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) no site IIS.net.
 - [Introdução ao IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) no blog de Scott Guthrie.
-- [Web servidores no Visual Studio para projetos Web ASP.NET](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx).
+- [Web servidores no Visual Studio para projetos Web ASP.NET](https://msdn.microsoft.com/library/58wxa9w5.aspx).
 - [Principais diferenças entre o IIS e o ASP.NET Development Server](../../older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) no site do ASP.NET.
 
 Para obter informações sobre quais problemas podem surgir quando seu aplicativo é executado em confiança média, consulte [hospedar aplicativos ASP.NET na relação de confiança médio](http://www.4guysfromrolla.com/articles/100307-1.aspx) na equipe de 4 do site Rolla.

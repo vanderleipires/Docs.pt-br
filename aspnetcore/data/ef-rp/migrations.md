@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 9a0fb52a1d1a62bce3f11c7e0394c00b9d544ab3
-ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
+ms.openlocfilehash: 7b0a3f73efd1d30b903b3258bea2082792eb6e8c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>Migrações - Core EF com tutorial páginas Razor (4 de 8)
 
@@ -54,7 +54,7 @@ No *appSettings. JSON* de arquivo, altere o nome do banco de dados na cadeia de 
 
 [!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
 
-Alterar o nome do banco de dados na cadeia de conexão faz com que a migração primeiro criar um novo banco de dados. Um novo banco de dados é criado como uma com esse nome não existe. Alterando a cadeia de conexão não é necessário para começar a trabalhar com migrações.
+Alterar o nome do banco de dados na cadeia de conexão faz com que a migração primeiro criar um novo banco de dados. Um novo banco de dados é criado porque uma com esse nome não existe. Alterando a cadeia de conexão não é necessário para começar a trabalhar com migrações.
 
 Uma alternativa para alterar o nome do banco de dados está excluindo o banco de dados. Use **Pesquisador de objetos do SQL Server** (SSOX) ou o `database drop` comando CLI:
 
@@ -130,7 +130,7 @@ O arquivo de instantâneo deve ser sincronizado com as migrações que o criou. 
 Para o desenvolvimento inicial, o `EnsureCreated` comando foi usado. Neste tutorial, migrações é usado. `EnsureCreated`tem as seguintes limitações:
 
 * Ignora as migrações e cria o banco de dados e o esquema.
-* Não crie uma tabela de migrações.
+* Não cria uma tabela de migrações.
 * Pode *não* ser usado com migrações.
 * Foi projetado para teste ou rápido de protótipos onde o banco de dados é descartado e recriado com frequência.
 
@@ -210,7 +210,7 @@ Este tutorial mostra como usar a CLI, alguns desenvolvedores preferem usando o P
 
 Os comandos de EF principal para o PMC estão no [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) pacote. Este pacote está incluído no [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, portanto não é necessário instalá-lo.
 
-**Importante:** isso não é o mesmo pacote que você instala para CLI editando o *. csproj* arquivo. O nome deste termina `Tools`, ao contrário do nome do pacote CLI que termina em `Tools.DotNet`.
+**Importante:** não é o mesmo pacote que você instala para CLI editando o *. csproj* arquivo. O nome deste termina `Tools`, ao contrário do nome do pacote CLI que termina em `Tools.DotNet`.
 
 Para obter mais informações sobre os comandos CLI, consulte [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet).
 

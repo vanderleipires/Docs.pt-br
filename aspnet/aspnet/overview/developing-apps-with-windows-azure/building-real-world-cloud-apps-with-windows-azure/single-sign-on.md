@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: f0d465b363652c691c203d608f2cb9d139e72fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Logon único (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -31,12 +31,12 @@ Há muitos problemas de segurança de pensar sobre quando você estiver desenvol
 
 ## <a name="introduction-to-azure-ad"></a>Introdução ao AD do Azure
 
-[O AD do Azure](https://docs.microsoft.com/azure/active-directory/) fornece [do Active Directory](https://msdn.microsoft.com/en-us/library/windows/desktop/aa746492.aspx) na nuvem. Os principais recursos incluem o seguinte:
+[O AD do Azure](https://docs.microsoft.com/azure/active-directory/) fornece [do Active Directory](https://msdn.microsoft.com/library/windows/desktop/aa746492.aspx) na nuvem. Os principais recursos incluem o seguinte:
 
 - Ele se integra ao Active Directory no local.
 - Ele permite o logon único com seus aplicativos.
 - Ele oferece suporte a padrões abertos como [SAML](http://en.wikipedia.org/wiki/SAML_2.0), [WS-Fed](http://en.wikipedia.org/wiki/WS-Federation), e [OAuth 2.0](http://oauth.net/2/).
-- Ele dá suporte a Enterprise [Graph REST API](https://msdn.microsoft.com/en-us/library/hh974476.aspx).
+- Ele dá suporte a Enterprise [Graph REST API](https://msdn.microsoft.com/library/hh974476.aspx).
 
 Suponha que você tenha um ambiente do Active Directory do Windows Server no local que você usa para habilitar os funcionários entrar aplicativos de Intranet:
 
@@ -64,7 +64,7 @@ Se sua empresa está usando ou mover para o Office 365, a boa notícia é que vo
 
 ## <a name="set-up-an-azure-ad-tenant"></a>Configurar um locatário do AD do Azure
 
-um diretório do AD do Azure é chamado um AD do Azure [locatário](https://technet.microsoft.com/en-us/library/jj573650.aspx), e é muito fácil configurar um locatário. Vamos mostrar como é feito no Portal de gerenciamento do Azure para ilustrar os conceitos, mas claro como as outras funções portais você também pode fazê-lo usando um script ou uma API de gerenciamento.
+um diretório do AD do Azure é chamado um AD do Azure [locatário](https://technet.microsoft.com/library/jj573650.aspx), e é muito fácil configurar um locatário. Vamos mostrar como é feito no Portal de gerenciamento do Azure para ilustrar os conceitos, mas claro como as outras funções portais você também pode fazê-lo usando um script ou uma API de gerenciamento.
 
 No portal de gerenciamento, clique na guia do Active Directory.
 
@@ -118,7 +118,7 @@ Clique em **próximo**e, em seguida, indique se você deseja armazenar um hash d
 
 ![Assistente de configuração da ferramenta de sincronização de WAAD](single-sign-on/_static/image17.png)
 
-O hash de senha que você pode armazenar na nuvem é um hash unidirecional; as senhas reais nunca são armazenadas no AD do Azure. Se você decidir armazenar hashes na nuvem, você terá que usar [os serviços de Federação do Active Directory](https://technet.microsoft.com/en-us/library/hh831502.aspx) (ADFS). Também há [outros fatores a considerar ao escolher se deseja ou não usar o ADFS](https://technet.microsoft.com/en-us/library/jj573653.aspx). A opção AD FS requer algumas etapas de configuração adicional.
+O hash de senha que você pode armazenar na nuvem é um hash unidirecional; as senhas reais nunca são armazenadas no AD do Azure. Se você decidir armazenar hashes na nuvem, você terá que usar [os serviços de Federação do Active Directory](https://technet.microsoft.com/library/hh831502.aspx) (ADFS). Também há [outros fatores a considerar ao escolher se deseja ou não usar o ADFS](https://technet.microsoft.com/library/jj573653.aspx). A opção AD FS requer algumas etapas de configuração adicional.
 
 Se você optar por armazenar hashes na nuvem, terminar e a ferramenta inicia a sincronização de diretórios quando você clica em **próximo**.
 
@@ -156,7 +156,7 @@ Selecione as contas organizacionais, insira seu nome de domínio e, em seguida, 
 
 ![Configurar a caixa de diálogo de autenticação](single-sign-on/_static/image24.png)
 
-Também pode dar a aplicativo de leitura ou leitura/gravação permissão para dados de diretório. Se você fizer isso, ele pode usar o [Azure Graph REST API](https://msdn.microsoft.com/en-us/library/windowsazure/hh974476.aspx) para consultar o número de telefone dos usuários, descubra se estiverem no escritório, quando o último logon, etc.
+Também pode dar a aplicativo de leitura ou leitura/gravação permissão para dados de diretório. Se você fizer isso, ele pode usar o [Azure Graph REST API](https://msdn.microsoft.com/library/windowsazure/hh974476.aspx) para consultar o número de telefone dos usuários, descubra se estiverem no escritório, quando o último logon, etc.
 
 Isso é tudo o que você precisa fazer - Visual Studio solicitará as credenciais de um administrador para seu locatário do AD do Azure e, em seguida, ele configura seu projeto e o seu locatário do AD do Azure para o novo aplicativo.
 
@@ -186,7 +186,7 @@ Para obter mais informações, consulte os seguintes recursos:
 - [Documentação do Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/). Página do portal para obter a documentação do AD do Azure no site windowsazure.com. Para obter os tutoriais passo a passo, consulte o **desenvolver** seção.
 - [Autenticação multifator do Azure](https://docs.microsoft.com/azure/multi-factor-authentication/). Página do portal para documentação sobre a autenticação multifator no Azure.
 - [Opções de autenticação de conta organizacional](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauthoptions). Explicação das opções de autenticação do AD do Azure, na caixa de diálogo de novo projeto Visual Studio 2013.
-- [Padrões e práticas - Microsoft federada padrão de identidade](https://msdn.microsoft.com/en-us/library/dn589790.aspx).
+- [Padrões e práticas - Microsoft federada padrão de identidade](https://msdn.microsoft.com/library/dn589790.aspx).
 - [Como: Instalar a ferramenta de sincronização do Active Directory do Azure](https://social.technet.microsoft.com/wiki/contents/articles/19098.howto-install-the-windows-azure-active-directory-sync-tool-now-with-pictures.aspx).
 - [Serviços de Federação do Active Directory 2.0 mapa de conteúdo](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx). Links para documentação sobre o AD FS 2.0.
 - [Autorização baseada em função e baseada em ACL em um aplicativo do Windows Azure AD](https://code.msdn.microsoft.com/Role-Based-and-ACL-Based-86ad71a1). Aplicativo de exemplo.

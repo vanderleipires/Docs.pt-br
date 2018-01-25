@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/application-model
-ms.openlocfilehash: c69dd1cfae713036ce0ee95f70acc162b1e82cb0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a0913edaab723656c9be484332e02c551a5c88e1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-the-application-model"></a>Trabalhando com o modelo de aplicativo
 
@@ -53,7 +53,7 @@ Em seguida, (`Order=-990`):
 * [`CorsApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
 
 > [!NOTE]
-> A ordem na qual dois provedores com o mesmo valor para `Order` são chamados não está definida e, portanto, não deve ser considerado.
+> A ordem na qual dois provedores com o mesmo valor para `Order` são chamados não está definida e, portanto, não deve ser usado.
 
 > [!NOTE]
 > `IApplicationModelProvider`é um conceito avançado para os autores do framework estender. Em geral, aplicativos devem usar as convenções e estruturas devem usar provedores. A principal diferença é que provedores sempre sejam executadas antes de convenções.
@@ -185,7 +185,7 @@ As convenções de fornecido pelo shim são aplicadas apenas a partes do aplicat
 
 ### <a name="action-conventions"></a>Convenções de ação
 
-O `UseWebApiActionConventionsAttribute` é usado para mapear o método HTTP para ações com base em seu nome (por exemplo, `Get` seriam mapeados para `HttpGet`). Só se aplica a ações que não usa o roteamento de atributo.
+O `UseWebApiActionConventionsAttribute` é usado para mapear o método HTTP para ações com base em seu nome (por exemplo, `Get` seriam mapeados para `HttpGet`). Só se aplica a ações que não usam o roteamento de atributo.
 
 ### <a name="overloading"></a>Sobrecarga
 

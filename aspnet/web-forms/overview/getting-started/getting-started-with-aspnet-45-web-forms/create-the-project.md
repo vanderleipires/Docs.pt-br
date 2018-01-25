@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 2678342891a87d591476a07e418c118b2ae94d4d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 094733dcbe31486385dda2f8b44ba77a17486c82
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-the-project"></a>Criar o projeto
 ====================
@@ -95,10 +95,10 @@ Visual Studio cria alguns arquivos para o seu projeto e pastas inicias. Os prime
 
 | **Arquivo** | **Finalidade** |
 | --- | --- |
-| *Default. aspx* | Normalmente a primeira página exibida quando o aplicativo é executado em um navegador. |
+| *Default.aspx* | Normalmente a primeira página exibida quando o aplicativo é executado em um navegador. |
 | *Site.Master* | Uma página que permite que você crie um layout e uso padrão um comportamento consistente para as páginas em seu aplicativo. |
-| *Global. asax* | Um arquivo opcional que contém código para responder a eventos de nível de sessão e de nível de aplicativo gerados pelo ASP.NET ou por módulos HTTP. |
-| *Web. config* | Os dados de configuração para um aplicativo. |
+| *Global.asax* | Um arquivo opcional que contém código para responder a eventos de nível de sessão e de nível de aplicativo gerados pelo ASP.NET ou por módulos HTTP. |
+| *Web.config* | Os dados de configuração para um aplicativo. |
 
 ### <a name="running-the-default-web-application"></a>Executando o aplicativo Web padrão
 
@@ -114,7 +114,7 @@ Há três páginas principais neste aplicativo de Web padrão: *Default.aspx* (b
 
 ## <a name="aspnet-web-forms-background"></a>Web Forms do ASP.NET em segundo plano
 
-Web Forms do ASP.NET são páginas que se baseiam na tecnologia do Microsoft ASP.NET, no qual o código que é executado no servidor dinamicamente gera saída de página da Web para o dispositivo cliente ou navegador. Uma página de Web Forms do ASP.NET automaticamente renderiza HTML compatível com o navegador correto para recursos como estilos, layout e assim por diante. Formulários da Web são compatíveis com qualquer linguagem com suporte pelo .NET common language runtime, como Microsoft Visual Basic e Microsoft Visual c#. Além disso, os formulários da Web são criados no [do Microsoft .NET Framework](https://msdn.microsoft.com/en-US/vstudio/aa496123), que fornece benefícios, como um ambiente gerenciado, a segurança de tipo e a herança.
+Web Forms do ASP.NET são páginas que se baseiam na tecnologia do Microsoft ASP.NET, no qual o código que é executado no servidor dinamicamente gera saída de página da Web para o dispositivo cliente ou navegador. Uma página de Web Forms do ASP.NET automaticamente renderiza HTML compatível com o navegador correto para recursos como estilos, layout e assim por diante. Formulários da Web são compatíveis com qualquer linguagem com suporte pelo .NET common language runtime, como Microsoft Visual Basic e Microsoft Visual c#. Além disso, os formulários da Web são criados no [do Microsoft .NET Framework](https://msdn.microsoft.com/vstudio/aa496123), que fornece benefícios, como um ambiente gerenciado, a segurança de tipo e a herança.
 
 Quando uma página de Web Forms do ASP.NET é executado, a página passa por um ciclo de vida em que ela executa uma série de etapas de processamento. Essas etapas incluem a inicialização, criando controles, restaurando e mantendo estado, executando o código de manipulador de eventos e processamento. Como você se familiarizar com o poder do ASP.NET Web Forms, é importante entender o [ciclo de vida de página ASP.NET](https://msdn.microsoft.com/library/ms178472(v=vs.100).aspx) para que você pode escrever o código no estágio do ciclo de vida apropriado para o efeito que pretende.
 
@@ -128,7 +128,7 @@ Quando um servidor Web recebe uma solicitação para uma página, ele encontra a
 > 
 > **Associação**
 > 
-> [ASP.NET](https://msdn.microsoft.com/en-us/library/yh26yfzy.aspx) identidade armazena credenciais dos usuários em um banco de dados criado pelo aplicativo. Quando os usuários fazem logon, o aplicativo valida suas credenciais ao ler o banco de dados. Seu projeto *conta* pasta contém os arquivos que implementam as diversas partes da associação: registrar, logon, alterar uma senha e autorizar o acesso. Além disso, o ASP.NET Web Forms oferece suporte a OpenID e OAuth. Esses aprimoramentos de autenticação permitem que os usuários entrem no seu site usando as credenciais existentes, de tal contas como Facebook, Twitter, Windows Live e Google.
+> [ASP.NET](https://msdn.microsoft.com/library/yh26yfzy.aspx) identidade armazena credenciais dos usuários em um banco de dados criado pelo aplicativo. Quando os usuários fazem logon, o aplicativo valida suas credenciais ao ler o banco de dados. Seu projeto *conta* pasta contém os arquivos que implementam as diversas partes da associação: registrar, logon, alterar uma senha e autorizar o acesso. Além disso, o ASP.NET Web Forms oferece suporte a OpenID e OAuth. Esses aprimoramentos de autenticação permitem que os usuários entrem no seu site usando as credenciais existentes, de tal contas como Facebook, Twitter, Windows Live e Google.
 > 
 > ![Criar o projeto - Gerenciador de soluções (identidade do ASP.NET)](create-the-project/_static/image7.png)
 > 
@@ -140,7 +140,7 @@ Quando um servidor Web recebe uma solicitação para uma página, ele encontra a
 > 
 > **Páginas mestras**
 > 
-> Um [página mestra ASP.NET](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx) define uma aparência e comportamento consistentes para todas as páginas em seu aplicativo. O layout da página mestra mescla com o conteúdo de uma página de conteúdo individual para produzir a página final que o usuário vê. No aplicativo Wingtip Toys, você deve modificar o *Site.master* página mestra para que todas as páginas no site do Wingtip Toys compartilham a mesma barra diferente de logotipo e navegação.
+> Um [página mestra ASP.NET](https://msdn.microsoft.com/library/wtxbf3hh.aspx) define uma aparência e comportamento consistentes para todas as páginas em seu aplicativo. O layout da página mestra mescla com o conteúdo de uma página de conteúdo individual para produzir a página final que o usuário vê. No aplicativo Wingtip Toys, você deve modificar o *Site.master* página mestra para que todas as páginas no site do Wingtip Toys compartilham a mesma barra diferente de logotipo e navegação.
 > 
 > **HTML5**
 > 
@@ -150,7 +150,7 @@ Quando um servidor Web recebe uma solicitação para uma página, ele encontra a
 > 
 > Para navegadores que não oferecem suporte a HTML5, você pode usar [Modernizr](http://www.modernizr.com/). Modernizr é uma biblioteca de JavaScript do código-fonte aberto que pode detectar se um navegador dá suporte a recursos HTML5 e habilitá-los, se não existir. No modelo de aplicativo do ASP.NET Web Forms, Modernizr é instalado como um pacote do NuGet.
 > 
-> **Inicialização**
+> **Bootstrap**
 > 
 > Usam os modelos de projeto do Visual Studio 2013 [Bootstrap](http://getbootstrap.com/), uma estrutura de layout e temas criada pelo Twitter. Inicialização usa CSS3 para fornecer um design responsivo, o que significa layouts dinamicamente podem adaptar a tamanhos de janela de navegador diferente. Você também pode usar o recurso de temas da inicialização facilmente efetuar uma alteração na aparência do aplicativo. Por padrão, o modelo de aplicativo Web ASP.NET no Visual Studio 2013 inclui Bootstrap como um pacote do NuGet.
 > 
@@ -192,8 +192,8 @@ Neste tutorial você criou, examinados e executar o aplicativo de formulários d
 ## <a name="additional-resources"></a>Recursos adicionais
 
 [Escolhendo o direito de modelo de programação](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
-[Projetos de aplicativos Web versus projetos de Site](https://msdn.microsoft.com/en-us/library/dd547590.aspx)   
-[Visão geral de páginas de formulários da Web do ASP.NET](https://msdn.microsoft.com/en-us/library/428509ah.aspx)
+[Projetos de aplicativos Web versus projetos de Site](https://msdn.microsoft.com/library/dd547590.aspx)   
+[Visão geral de páginas de formulários da Web do ASP.NET](https://msdn.microsoft.com/library/428509ah.aspx)
 
 >[!div class="step-by-step"]
 [Anterior](introduction-and-overview.md)

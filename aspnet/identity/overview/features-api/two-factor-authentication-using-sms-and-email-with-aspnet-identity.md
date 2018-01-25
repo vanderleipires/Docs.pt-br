@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: ecb1fc693063995a3a05a7af5db64554c9f595e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0f9ff7cf74048a008b150da1e843ff15333269ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>Autenticação de dois fatores usando SMS e email com a identidade do ASP.NET
 ====================
@@ -168,7 +168,7 @@ O `ChangePhoneNumberAsync` método verifica o código de segurança lançadas. S
 
 O `isPersistent` parâmetro define se a sessão de autenticação é persistente entre várias solicitações.
 
-Quando você altera seu perfil de segurança, um novo carimbo de segurança é gerado e armazenado na `SecurityStamp` campo o *AspNetUsers* tabela. Observe que o `SecurityStamp` campo é diferente do cookie de segurança. O cookie de segurança não é armazenado no `AspNetUsers` tabela (ou em qualquer lugar no banco de dados de identidade). O token de cookie de segurança é autoassinado usando [DPAPI](https://msdn.microsoft.com/en-us/library/system.security.cryptography.protecteddata.aspx) e é criado com o `UserId, SecurityStamp` e informações de tempo de expiração.
+Quando você altera seu perfil de segurança, um novo carimbo de segurança é gerado e armazenado na `SecurityStamp` campo o *AspNetUsers* tabela. Observe que o `SecurityStamp` campo é diferente do cookie de segurança. O cookie de segurança não é armazenado no `AspNetUsers` tabela (ou em qualquer lugar no banco de dados de identidade). O token de cookie de segurança é autoassinado usando [DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx) e é criado com o `UserId, SecurityStamp` e informações de tempo de expiração.
 
 O middleware de cookie verifica o cookie em cada solicitação. O `SecurityStampValidator` método o `Startup` classe atinge o banco de dados e verifica periodicamente, o carimbo de segurança conforme especificado com o `validateInterval`. Isso acontece apenas a cada 30 minutos (em nosso exemplo), a menos que você altere seu perfil de segurança. O intervalo de 30 minutos foi escolhido para minimizar as viagens ao banco de dados.
 
@@ -264,7 +264,7 @@ Logon local e para log social na verificação para ver se 2FA está habilitada.
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample17.cs?highlight=10-11,17-18)]
 
-O código a seguir mostra o `SendCode` método de ação. Um [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) é criado com todos os métodos de 2FA habilitados para o usuário. O [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) é passado para o [DropDownListFor](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.dropdownlist.aspx) auxiliar, que permite ao usuário selecionar a abordagem 2FA (normalmente, email e SMS).
+O código a seguir mostra o `SendCode` método de ação. Um [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) é criado com todos os métodos de 2FA habilitados para o usuário. O [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) é passado para o [DropDownListFor](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist.aspx) auxiliar, que permite ao usuário selecionar a abordagem 2FA (normalmente, email e SMS).
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample18.cs)]
 
@@ -272,7 +272,7 @@ Depois que o usuário envia a abordagem 2FA, o `HTTP POST SendCode` é chamado d
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample19.cs?highlight=3,13-14,18)]
 
-## <a name="2fa-lockout"></a>Bloqueio de 2FA
+## <a name="2fa-lockout"></a>2FA Lockout
 
 Embora você possa definir o bloqueio de conta em falhas de tentativa de senha de logon, essa abordagem torna seu logon suscetíveis a [DOS](http://en.wikipedia.org/wiki/Denial-of-service_attack) bloqueios. Recomendamos que você use o bloqueio de conta apenas com 2FA. Quando o `ApplicationUserManager` é criado, o código de exemplo define 2FA bloqueio e `MaxFailedAccessAttemptsBeforeLockout` a cinco. Depois que um usuário fizer logon (por meio de conta local ou social), cada tentativa falha de 2FA é armazenada e se o número máximo de tentativas for atingido, o usuário é bloqueado por cinco minutos (você pode definir o bloqueio de tempo com `DefaultAccountLockoutTimeSpan`).
 
@@ -284,6 +284,6 @@ Embora você possa definir o bloqueio de conta em falhas de tentativa de senha d
 - [Aplicativo do MVC 5 com o Facebook, Twitter, LinkedIn e logon do Google OAuth2](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) também mostra como adicionar informações de perfil para a tabela de usuários.
 - [ASP.NET MVC e identidade 2.0: Noções básicas](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) por John Atten.
 - [Confirmação de conta e senha de recuperação com a identidade do ASP.NET](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [Introdução a identidade do ASP.NET](../getting-started/introduction-to-aspnet-identity.md)
+- [Introdução à Identidade do ASP.NET](../getting-started/introduction-to-aspnet-identity.md)
 - [Anunciando RTM do ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) por Pranav Rastogi.
 - [Identidade do ASP.NET 2.0: Configurando a validação da conta e a autorização de dois fatores](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) por John Atten.

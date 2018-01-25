@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1ff76d08b6de20be7263ae134b102883fc8d99a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 43edf6745627e92d20c26377404e44f07e649a75
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="security-basics-and-aspnet-support-vb"></a>Noções básicas sobre segurança e suporte do ASP.NET (VB)
 ====================
@@ -102,7 +102,7 @@ Quando o usuário tiver conectado com êxito, as solicitações HTTP subsequente
 **Figura 2**: O fluxo de trabalho de autenticação de formulários
 
 
-Podemos aprofundarão sobre a autenticação de formulários muito mais detalhadamente nos próximos dois tutoriais,[uma visão geral de formulários de autenticação](an-overview-of-forms-authentication-vb.md) e [configuração de autenticação de formulários e tópicos avançados](forms-authentication-configuration-and-advanced-topics-vb.md). Para obter mais informações sobre o ASP. Opções de autenticação do NET, consulte [autenticação ASP.NET](https://msdn.microsoft.com/en-us/library/eeyk640h.aspx).
+Podemos aprofundarão sobre a autenticação de formulários muito mais detalhadamente nos próximos dois tutoriais,[uma visão geral de formulários de autenticação](an-overview-of-forms-authentication-vb.md) e [configuração de autenticação de formulários e tópicos avançados](forms-authentication-configuration-and-advanced-topics-vb.md). Para obter mais informações sobre o ASP. Opções de autenticação do NET, consulte [autenticação ASP.NET](https://msdn.microsoft.com/library/eeyk640h.aspx).
 
 ## <a name="limiting-access-to-web-pages-directories-and-page-functionality"></a>Limitando o acesso a páginas da Web, diretórios e funcionalidade de página
 
@@ -113,9 +113,9 @@ O ASP.NET inclui duas maneiras de determinar se um determinado usuário tem auto
 
 Autorização de arquivo e a autorização de URL definem regras de autorização para acessar uma página específica do ASP.NET ou para todas as páginas ASP.NET em um diretório específico. Usando essas técnicas, pode instruir o ASP.NET para negar as solicitações para uma página específica para um usuário específico, ou permitir o acesso a um conjunto de usuários e negar acesso a todos os outros. E cenários em que todos os usuários podem acessar a página, mas a funcionalidade da página depende do usuário? Por exemplo, muitos sites que dão suporte a contas de usuário têm páginas que exibem conteúdo diferente ou dados para usuários autenticados em relação a usuários anônimos. Um usuário anônimo pode ver um link para fazer logon no site, ao passo que um usuário autenticado em vez disso, verá uma mensagem como, bem-vindo de volta, *Username* juntamente com um link para fazer logoff. Outro exemplo: ao exibir um item em um site de leilões você veja informações diferentes dependendo se você for um ofertante ou um auctioning o item.
 
-Esses ajustes de nível de página podem ser feitos declarativamente ou programaticamente. Para mostrar o conteúdo diferente para anônimo que os usuários autenticados, basta arrastar um [controle LoginView](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) para a página e digite o conteúdo apropriado para seus modelos LoginView e LoggedInTemplate. Como alternativa, você pode programaticamente determinar se a solicitação atual é autenticada, quem é o usuário e as funções que eles pertencem (se houver). Você pode usar essas informações para, em seguida, mostrar ou ocultar colunas em uma grade ou painéis na página.
+Esses ajustes de nível de página podem ser feitos declarativamente ou programaticamente. Para mostrar o conteúdo diferente para anônimo que os usuários autenticados, basta arrastar um [controle LoginView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) para a página e digite o conteúdo apropriado para seus modelos LoginView e LoggedInTemplate. Como alternativa, você pode programaticamente determinar se a solicitação atual é autenticada, quem é o usuário e as funções que eles pertencem (se houver). Você pode usar essas informações para, em seguida, mostrar ou ocultar colunas em uma grade ou painéis na página.
 
-Esta série inclui três tutoriais que se concentrar na autorização. ***Autorização baseada em usuário***examina como limitar o acesso a uma página ou páginas em um diretório para contas de usuário específico. ***Autorização com base no função*** examina fornecendo as regras de autorização na função de nível; por fim, o ***exibindo conteúdo com base no momento conectado no usuário*** tutorial explora modificando um determinado conteúdo e funcionalidade com base no usuário visitar a página da página. Para obter mais informações sobre o ASP. Opções de autorização do NET, consulte [autorização ASP.NET](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx).
+Esta série inclui três tutoriais que se concentrar na autorização. ***Autorização baseada em usuário***examina como limitar o acesso a uma página ou páginas em um diretório para contas de usuário específico. ***Autorização com base no função*** examina fornecendo as regras de autorização na função de nível; por fim, o ***exibindo conteúdo com base no momento conectado no usuário*** tutorial explora modificando um determinado conteúdo e funcionalidade com base no usuário visitar a página da página. Para obter mais informações sobre o ASP. Opções de autorização do NET, consulte [autorização ASP.NET](https://msdn.microsoft.com/library/wce3kxhd.aspx).
 
 ## <a name="user-accounts-and-roles"></a>Contas de usuário e funções
 
@@ -123,7 +123,7 @@ AS PÁGINAS ASP. Autenticação de formulários do NET fornece uma infraestrutur
 
 Antes do ASP.NET 2.0, os desenvolvedores foram responsáveis por criar seus próprios armazenamentos de usuário e a função. Também estivesse em gancho para criação de interfaces do usuário e escrever o código de usuário essencial páginas relacionadas à conta como a página de logon e a página para criar uma nova conta, entre outros. Sem qualquer estrutura de conta de usuário internas no ASP.NET, cada desenvolvedor Implementando contas de usuários tinham para chegar ao seus próprio decisões de design em perguntas, como armazenar senhas ou outras informações confidenciais? e quais as diretrizes impõem relativas a força e o comprimento da senha?
 
-Hoje, a implementação de contas de usuário em um aplicativo ASP.NET é obrigado muito mais simples para o *framework associação* e internos controles da Web de logon. A estrutura de associação é uma série de classes de [namespace System.Web.Security](https://msdn.microsoft.com/en-us/library/system.web.security.aspx) que fornecem funcionalidade para executar tarefas relacionadas à conta de usuário essenciais. A classe de chave na estrutura de associação é o [classe associação](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx), que tem métodos, como:
+Hoje, a implementação de contas de usuário em um aplicativo ASP.NET é obrigado muito mais simples para o *framework associação* e internos controles da Web de logon. A estrutura de associação é uma série de classes de [namespace System.Web.Security](https://msdn.microsoft.com/library/system.web.security.aspx) que fornecem funcionalidade para executar tarefas relacionadas à conta de usuário essenciais. A classe de chave na estrutura de associação é o [classe associação](https://msdn.microsoft.com/library/system.web.security.membership.aspx), que tem métodos, como:
 
 - CreateUser
 - DeleteUser
@@ -136,8 +136,8 @@ A estrutura de associação usa o [modelo de provedor](http://aspnet.4guysfromro
 
 Microsoft fornece duas classes de provedor de associação no .NET Framework:
 
-- [ActiveDirectoryMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.activedirectorymembershipprovider.aspx) -implementa a API de associação em servidores do Active Directory e o aplicativo de modo ADAM (Active Directory).
-- [SqlMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx) -implementa a API de associação em um banco de dados do SQL Server.
+- [ActiveDirectoryMembershipProvider](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx) -implementa a API de associação em servidores do Active Directory e o aplicativo de modo ADAM (Active Directory).
+- [SqlMembershipProvider](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx) -implementa a API de associação em um banco de dados do SQL Server.
 
 Esta série de tutoriais concentra-se exclusivamente no SqlMembershipProvider.
 
@@ -147,17 +147,17 @@ Esta série de tutoriais concentra-se exclusivamente no SqlMembershipProvider.
 **Figura 03**: O modelo permite que diferentes implementações do provedor ser perfeitamente conectado para o Framework ([clique para exibir a imagem em tamanho normal](security-basics-and-asp-net-support-vb/_static/image5.png))
 
 
-O benefício do modelo do provedor é implementações alternativas podem ser desenvolvidas pela Microsoft, fornecedores de terceiros ou desenvolvedores individuais e conectadas diretamente a estrutura de associação. Por exemplo, a Microsoft lançou [um provedor de associação para bancos de dados do Microsoft Access](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi). Para obter mais informações sobre os provedores de associação, consulte o [Kit de ferramentas do provedor](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx), que inclui um passo a passo de provedores de associação, provedores personalizados de exemplo, mais de 100 páginas de documentação sobre o modelo de provedor e o concluir o código-fonte para os provedores de associação internos (ou seja, ActiveDirectoryMembershipProvider e SqlMembershipProvider).
+O benefício do modelo do provedor é implementações alternativas podem ser desenvolvidas pela Microsoft, fornecedores de terceiros ou desenvolvedores individuais e conectadas diretamente a estrutura de associação. Por exemplo, a Microsoft lançou [um provedor de associação para bancos de dados do Microsoft Access](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi). Para obter mais informações sobre os provedores de associação, consulte o [Kit de ferramentas do provedor](https://msdn.microsoft.com/asp.net/aa336558.aspx), que inclui um passo a passo de provedores de associação, provedores personalizados de exemplo, mais de 100 páginas de documentação sobre o modelo de provedor e o concluir o código-fonte para os provedores de associação internos (ou seja, ActiveDirectoryMembershipProvider e SqlMembershipProvider).
 
-O ASP.NET 2.0 também introduziu o framework de funções. Como o framework de associação, estrutura de funções é criada sobre o modelo de provedor. Sua API é exposta por meio de [classe funções](https://msdn.microsoft.com/en-us/library/system.web.security.roles.aspx) e o .NET Framework vem com três classes de provedor:
+O ASP.NET 2.0 também introduziu o framework de funções. Como o framework de associação, estrutura de funções é criada sobre o modelo de provedor. Sua API é exposta por meio de [classe funções](https://msdn.microsoft.com/library/system.web.security.roles.aspx) e o .NET Framework vem com três classes de provedor:
 
-- [AuthorizationStoreRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.authorizationstoreroleprovider.aspx) -gerencia informações de função em um repositório de política do Gerenciador de autorização, como o Active Directory ou ADAM.
-- [SqlRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlroleprovider.aspx) -implementa funções em um banco de dados do SQL Server.
-- [WindowsTokenRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.windowstokenroleprovider.aspx) -associa informações de função com base no grupo do Windows do visitante. Normalmente, esse método é usado com a autenticação do Windows.
+- [AuthorizationStoreRoleProvider](https://msdn.microsoft.com/library/system.web.security.authorizationstoreroleprovider.aspx) -gerencia informações de função em um repositório de política do Gerenciador de autorização, como o Active Directory ou ADAM.
+- [SqlRoleProvider](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx) -implementa funções em um banco de dados do SQL Server.
+- [WindowsTokenRoleProvider](https://msdn.microsoft.com/library/system.web.security.windowstokenroleprovider.aspx) -associa informações de função com base no grupo do Windows do visitante. Normalmente, esse método é usado com a autenticação do Windows.
 
 Esta série de tutorial concentra-se exclusivamente no SqlRoleProvider.
 
-Como o modelo de provedor inclui uma única API voltada para frente (as classes de associação e funções), é possível criar a funcionalidade em torno dessa API sem precisar se preocupar sobre os detalhes de implementação - as são tratadas pelos provedores selecionados por página desenvolvedor. Permite que essa API unificada para a Microsoft e outros fornecedores criar controles da Web que fazem interface com as estruturas de associação e funções. O ASP.NET é fornecido com um número de [controles da Web de logon](https://msdn.microsoft.com/en-us/library/ms178329.aspx) para implementar as interfaces de usuário de conta de usuário comuns. Por exemplo, o [controle de logon](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.aspx) solicita ao usuário as credenciais, valida e, em seguida, registra-los no através da autenticação de formulários. O [controle LoginView](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) oferece modelos de exibição de marcação diferente aos usuários anônimos versus usuários autenticados ou marcação diferente com base na função do usuário. E o [controle CreateUserWizard](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.aspx) fornece uma interface de usuário passo a passo para criar uma nova conta de usuário.
+Como o modelo de provedor inclui uma única API voltada para frente (as classes de associação e funções), é possível criar a funcionalidade em torno dessa API sem precisar se preocupar sobre os detalhes de implementação - as são tratadas pelos provedores selecionados por página desenvolvedor. Permite que essa API unificada para a Microsoft e outros fornecedores criar controles da Web que fazem interface com as estruturas de associação e funções. O ASP.NET é fornecido com um número de [controles da Web de logon](https://msdn.microsoft.com/library/ms178329.aspx) para implementar as interfaces de usuário de conta de usuário comuns. Por exemplo, o [controle de logon](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx) solicita ao usuário as credenciais, valida e, em seguida, registra-los no através da autenticação de formulários. O [controle LoginView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) oferece modelos de exibição de marcação diferente aos usuários anônimos versus usuários autenticados ou marcação diferente com base na função do usuário. E o [controle CreateUserWizard](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.aspx) fornece uma interface de usuário passo a passo para criar uma nova conta de usuário.
 
 Nos bastidores vários controles de logon interagem com as estruturas de associação e funções. A maioria dos controles de logon pode ser implementada sem a necessidade de escrever uma única linha de código. Vamos examinar esses controles mais detalhadamente em tutoriais futuros, incluindo técnicas para estender e personalizar sua funcionalidade.
 
@@ -174,16 +174,16 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [O ASP.NET 2.0 associação, funções, autenticação de formulários e recursos de segurança](https://weblogs.asp.net/scottgu/ASP.NET-2.0-Membership_2C00_-Roles_2C00_-Forms-Authentication_2C00_-and-Security-Resources-)
-- [Diretrizes de segurança 2.0 do ASP.NET](https://msdn.microsoft.com/en-us/library/ms998258.aspx)
-- [Autenticação do ASP.NET](https://msdn.microsoft.com/en-us/library/eeyk640h.aspx)
-- [Autorização de ASP.NET](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx)
-- [Visão geral de controles de logon do ASP.NET](https://msdn.microsoft.com/en-us/library/ms178329.aspx)
+- [Diretrizes de segurança 2.0 do ASP.NET](https://msdn.microsoft.com/library/ms998258.aspx)
+- [Autenticação do ASP.NET](https://msdn.microsoft.com/library/eeyk640h.aspx)
+- [Autorização de ASP.NET](https://msdn.microsoft.com/library/wce3kxhd.aspx)
+- [Visão geral de controles de logon do ASP.NET](https://msdn.microsoft.com/library/ms178329.aspx)
 - [Examinando o ASP.NET de 2.0 associação, funções e perfil](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [Como usar protege Meu Site usando associações e funções?](https://asp.net/learn/videos/video-45.aspx) (Vídeo)
-- [Introdução a associação](https://msdn.microsoft.com/en-us/library/yh26yfzy.aspx)
-- [MSDN Security Developer Center](https://msdn.microsoft.com/en-us/security/default.aspx)
+- [Introdução a associação](https://msdn.microsoft.com/library/yh26yfzy.aspx)
+- [MSDN Security Developer Center](https://msdn.microsoft.com/security/default.aspx)
 - [Professional ASP.NET 2.0 segurança, associação e gerenciamento de função](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
-- [Kit de ferramentas do provedor](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx)
+- [Kit de ferramentas do provedor](https://msdn.microsoft.com/asp.net/aa336558.aspx)
 
 ## <a name="about-the-author"></a>Sobre o autor
 

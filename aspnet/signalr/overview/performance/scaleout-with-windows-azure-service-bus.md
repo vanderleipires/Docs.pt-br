@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: 857fc8baa61549e2fabbb8da012b1fa23950237d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cb68d578fee8d6ee036f8fb096ba45e0c8ef3d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-azure-service-bus"></a>Expansão do SignalR com o barramento de serviço do Azure
 ====================
@@ -32,27 +32,27 @@ Pré-requisitos:
 - O [Windows Azure SDK](https://go.microsoft.com/fwlink/?linkid=254364&amp;clcid=0x409).
 - Visual Studio 2012 ou 2013.
 
-O backplane de barramento de serviço também é compatível com [Service Bus for Windows Server](https://msdn.microsoft.com/en-us/library/windowsazure/dn282144.aspx), versão 1.1. No entanto, não é compatível com a versão 1.0 do Service Bus for Windows Server.
+O backplane de barramento de serviço também é compatível com [Service Bus for Windows Server](https://msdn.microsoft.com/library/windowsazure/dn282144.aspx), versão 1.1. No entanto, não é compatível com a versão 1.0 do Service Bus for Windows Server.
 
 ## <a name="pricing"></a>Preços
 
 O backplane de barramento de serviço usa tópicos para enviar mensagens. Para obter as informações mais recentes sobre preços, consulte [barramento de serviço](https://azure.microsoft.com/pricing/details/service-bus/). No momento da redação deste artigo, você pode enviar 1.000.000 mensagens por mês para menor que US $1. O backplane envia uma mensagem de barramento de serviço para cada invocação de um método de hub SignalR. Também há algumas mensagens de controle para conexões, desconexões, unindo ou deixar grupos e assim por diante. Na maioria dos aplicativos, a maioria do tráfego de mensagem será invocações de método do hub.
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Antes de entrar para o tutorial detalhado, aqui está uma visão geral das tarefas que você executará.
 
 1. Use o portal do Windows Azure para criar um novo namespace de barramento de serviço.
 2. Adicione esses pacotes do NuGet ao seu aplicativo: 
 
-    - [SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
+    - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
     - [Microsoft.AspNet.SignalR.ServiceBus](http://www.nuget.org/packages/SignalR.WindowsAzureServiceBus)
 3. Crie um aplicativo do SignalR.
 4. Adicione o seguinte código ao Startup.cs para configurar o backplane: 
 
     [!code-csharp[Main](scaleout-with-windows-azure-service-bus/samples/sample1.cs)]
 
-Este código configura o backplane com os valores padrão para [TopicCount](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.servicebusscaleoutconfiguration.topiccount(v=vs.118).aspx) e [MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx). Para obter informações sobre como alterar esses valores, consulte [desempenho SignalR: métricas de expansão](signalr-performance.md#scaleout_metrics).
+Este código configura o backplane com os valores padrão para [TopicCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.servicebusscaleoutconfiguration.topiccount(v=vs.118).aspx) e [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx). Para obter informações sobre como alterar esses valores, consulte [desempenho SignalR: métricas de expansão](signalr-performance.md#scaleout_metrics).
 
 Para cada aplicativo, escolha um valor diferente de "Nomedoseuaplicativo". Não use o mesmo valor em vários aplicativos.
 

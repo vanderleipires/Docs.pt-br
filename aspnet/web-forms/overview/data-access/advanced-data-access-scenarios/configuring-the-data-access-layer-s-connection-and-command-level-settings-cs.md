@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5675c1c2a1c8987412ae79707e4c20e29e0e0df6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: be81bde63d66c3a7070f31be830f7d10ba3a5f8e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>Definindo configurações de nível de Conexão e comando da camada de acesso a dados (c#)
 ====================
@@ -37,7 +37,7 @@ Neste tutorial, examinaremos como acessar as configurações de nível de conex�
 
 ## <a name="working-with-data-using-adonet"></a>Trabalhando com dados usando o ADO.NET
 
-O Microsoft .NET Framework contém uma grande quantidade de classes criada especificamente para trabalhar com dados. Essas classes, encontradas na [ `System.Data` namespace](https://msdn.microsoft.com/en-us/library/system.data.aspx), são chamados a *ADO.NET* classes. Algumas das classes sob a proteção do ADO.NET estão vinculadas a um determinado *provedor de dados*. Você pode pensar em um provedor de dados como um canal de comunicação que permite que as informações entre as classes ADO.NET e o armazenamento de dados subjacente. Há provedores generalizadas, como OLE DB e ODBC, bem como provedores são projetados especialmente para um sistema de banco de dados específico. Por exemplo, embora seja possível se conectar a um banco de dados do Microsoft SQL Server usando o provedor OLE DB, o provedor SqlClient é muito mais eficiente, pois ele foi projetado e otimizado especificamente para o SQL Server.
+O Microsoft .NET Framework contém uma grande quantidade de classes criada especificamente para trabalhar com dados. Essas classes, encontradas na [ `System.Data` namespace](https://msdn.microsoft.com/library/system.data.aspx), são chamados a *ADO.NET* classes. Algumas das classes sob a proteção do ADO.NET estão vinculadas a um determinado *provedor de dados*. Você pode pensar em um provedor de dados como um canal de comunicação que permite que as informações entre as classes ADO.NET e o armazenamento de dados subjacente. Há provedores generalizadas, como OLE DB e ODBC, bem como provedores são projetados especialmente para um sistema de banco de dados específico. Por exemplo, embora seja possível se conectar a um banco de dados do Microsoft SQL Server usando o provedor OLE DB, o provedor SqlClient é muito mais eficiente, pois ele foi projetado e otimizado especificamente para o SQL Server.
 
 Quando acessar programaticamente os dados, geralmente é usado o seguinte padrão:
 
@@ -45,7 +45,7 @@ Quando acessar programaticamente os dados, geralmente é usado o seguinte padrã
 - Emita um comando.
 - Para `SELECT` consultas, trabalhar com os registros resultantes.
 
-Existem classes ADO.NET separadas para executar cada uma dessas etapas. Para se conectar a um banco de dados usando o provedor SqlClient, por exemplo, use o [ `SqlConnection` classe](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection(VS.80).aspx). Para emitir um `INSERT`, `UPDATE`, `DELETE`, ou `SELECT` comando no banco de dados, use o [ `SqlCommand` classe](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.aspx).
+Existem classes ADO.NET separadas para executar cada uma dessas etapas. Para se conectar a um banco de dados usando o provedor SqlClient, por exemplo, use o [ `SqlConnection` classe](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx). Para emitir um `INSERT`, `UPDATE`, `DELETE`, ou `SELECT` comando no banco de dados, use o [ `SqlCommand` classe](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx).
 
 Exceto para o [encapsulamento modificações de banco de dados em uma transação](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md) tutorial, não foi necessário gravar qualquer código ADO.NET de baixo nível nos porque o código a TableAdapters gerada automaticamente inclui a funcionalidade necessária para Conecte-se ao banco de dados, execute comandos, recuperar dados e preencher esses dados em tabelas de dados. No entanto, pode haver ocasiões em que precisa para personalizar essas configurações de nível inferior. Sobre as próximas etapas, examinaremos como aproveitar os objetos do ADO.NET usados internamente pelo qual os TableAdapters.
 
@@ -121,7 +121,7 @@ Salvar o conjunto de dados e, em seguida, retornar para o `ProductsBLL` classe. 
 
 ## <a name="step-3-examining-the-command-related-properties"></a>Etapa 3: Examinando as propriedades de comando
 
-Um TableAdapter consiste em uma consulta principal que, por padrão, foi gerado automaticamente `INSERT`, `UPDATE`, e `DELETE` instruções. Esta consulta principal s `INSERT`, `UPDATE`, e `DELETE` instruções são implementadas no código TableAdapter s como um objeto de adaptador de dados do ADO.NET por meio de `Adapter` propriedade. Como com seus `Connection` propriedade, o `Adapter` tipo de dados de propriedade s é determinado pelo provedor de dados usado. Como esses tutoriais usam o provedor SqlClient, o `Adapter` é de propriedade do tipo [ `SqlDataAdapter` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter(VS.80).aspx).
+Um TableAdapter consiste em uma consulta principal que, por padrão, foi gerado automaticamente `INSERT`, `UPDATE`, e `DELETE` instruções. Esta consulta principal s `INSERT`, `UPDATE`, e `DELETE` instruções são implementadas no código TableAdapter s como um objeto de adaptador de dados do ADO.NET por meio de `Adapter` propriedade. Como com seus `Connection` propriedade, o `Adapter` tipo de dados de propriedade s é determinado pelo provedor de dados usado. Como esses tutoriais usam o provedor SqlClient, o `Adapter` é de propriedade do tipo [ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx).
 
 O TableAdapter s `Adapter` propriedade tem três propriedades do tipo `SqlCommand` que ele usa para problema de `INSERT`, `UPDATE`, e `DELETE` instruções:
 
@@ -129,7 +129,7 @@ O TableAdapter s `Adapter` propriedade tem três propriedades do tipo `SqlComman
 - `UpdateCommand`
 - `DeleteCommand`
 
-Um `SqlCommand` objeto é responsável por enviar uma consulta específica ao banco de dados e tem propriedades como: [ `CommandText` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtext.aspx), que contém a instrução de SQL ad hoc ou procedimento armazenado a ser executada; e [ `Parameters` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.parameters.aspx), que é uma coleção de `SqlParameter` objetos. Como vimos no [criando uma camada de acesso a dados](../introduction/creating-a-data-access-layer-cs.md) tutorial, esses comando objetos podem ser personalizados usando a janela Propriedades.
+Um `SqlCommand` objeto é responsável por enviar uma consulta específica ao banco de dados e tem propriedades como: [ `CommandText` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx), que contém a instrução de SQL ad hoc ou procedimento armazenado a ser executada; e [ `Parameters` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx), que é uma coleção de `SqlParameter` objetos. Como vimos no [criando uma camada de acesso a dados](../introduction/creating-a-data-access-layer-cs.md) tutorial, esses comando objetos podem ser personalizados usando a janela Propriedades.
 
 Além de sua consulta principal, o TableAdapter pode incluir um número variável de métodos que, quando chamado, enviar um comando especificado no banco de dados. O objeto de comando de consulta principal s e os objetos de comando para todos os métodos adicionais são armazenados no TableAdapter s `CommandCollection` propriedade.
 
@@ -146,7 +146,7 @@ Idealmente, as informações de nível de comando devem permanecer encapsuladas 
 
 Como o TableAdapter tem apenas um único `Connection` propriedade, o código para expor as configurações de nível de conexão é bastante simples. As coisas são um pouco mais complicadas ao modificar as configurações de nível de comando porque o TableAdapter pode ter vários objetos de comando - um `InsertCommand`, `UpdateCommand`, e `DeleteCommand`, junto com um número variável de objetos de comando na `CommandCollection` propriedade. Ao atualizar configurações de nível de comando, essas configurações precisará ser propagadas para todos os objetos de comando.
 
-Por exemplo, imagine que havia determinadas consultas TableAdapter que levou um tempo longo extraordinário para executar. Ao usar o TableAdapter para executar uma das consultas, queremos aumentar o objeto de comando s [ `CommandTimeout` propriedade](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx). Essa propriedade especifica o número de segundos de espera para executar o comando e o padrão é 30.
+Por exemplo, imagine que havia determinadas consultas TableAdapter que levou um tempo longo extraordinário para executar. Ao usar o TableAdapter para executar uma das consultas, queremos aumentar o objeto de comando s [ `CommandTimeout` propriedade](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx). Essa propriedade especifica o número de segundos de espera para executar o comando e o padrão é 30.
 
 Para permitir que o `CommandTimeout` propriedade deve ser ajustado BLL, adicione o seguinte `public` método para o `ProductsDataTable` usando o arquivo de classe parcial criada na etapa 2 (`ProductsTableAdapter.ConnectionAndCommandSettings.cs`):
 

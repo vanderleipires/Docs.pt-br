@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: d36ce4e2735bdc73e8731eae27346edec47998cf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a58b4a4893fca66800c012bebae4a8bbfedf7a6a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-to-the-model-vb"></a>Adicionando validação para o modelo (VB)
 ====================
@@ -47,13 +47,13 @@ Vamos ver como você pode tirar proveito desse suporte de validação no aplicat
 
 Você começará com a adição de alguma lógica de validação para o `Movie` classe.
 
-Abra o *Movie.vb* arquivo. Adicionar um `Imports` instrução na parte superior do arquivo que faz referência a [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) namespace:
+Abra o *Movie.vb* arquivo. Adicionar um `Imports` instrução na parte superior do arquivo que faz referência a [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) namespace:
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample1.vb)]
 
 O namespace é parte do .NET Framework. Ele fornece um conjunto interno de atributos de validação que você pode aplicar declarativamente para qualquer classe ou propriedade.
 
-Atualizar agora o `Movie` classe para aproveitar o interno [ `Required` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), e [ `Range` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributos de validação . Use o código a seguir como um exemplo de onde aplicar os atributos.
+Atualizar agora o `Movie` classe para aproveitar o interno [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), e [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributos de validação . Use o código a seguir como um exemplo de onde aplicar os atributos.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample2.vb)]
 
@@ -101,11 +101,11 @@ Se você quiser alterar a lógica de validação mais tarde, você pode fazer is
 
 ## <a name="adding-formatting-to-the-movie-model"></a>Adicionando formatação para o modelo de filme
 
-Abra o *Movie.vb* arquivo. O [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) namespace fornece os atributos de formatação além do conjunto interno de atributos de validação. Você aplicará a [ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo e um [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) valor de enumeração para a data de lançamento e os campos de preço. O código a seguir mostra o `ReleaseDate` e `Price` propriedades com apropriada [ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo.
+Abra o *Movie.vb* arquivo. O [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) namespace fornece os atributos de formatação além do conjunto interno de atributos de validação. Você aplicará a [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo e um [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) valor de enumeração para a data de lançamento e os campos de preço. O código a seguir mostra o `ReleaseDate` e `Price` propriedades com apropriada [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample7.vb)]
 
-Como alternativa, você pode definir explicitamente um [ `DataFormatString` ](https://msdn.microsoft.com/en-us/library/system.string.format.aspx) valor. O código a seguir mostra a propriedade data de liberação com uma cadeia de caracteres de formato de data (isto é, "d"). Você usaria isso para especificar que você não deseja tempo como parte da data de lançamento.
+Como alternativa, você pode definir explicitamente um [ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx) valor. O código a seguir mostra a propriedade data de liberação com uma cadeia de caracteres de formato de data (isto é, "d"). Você usaria isso para especificar que você não deseja tempo como parte da data de lançamento.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample8.vb)]
 

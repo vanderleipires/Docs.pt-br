@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 4dd10430778dc51fef1199315ee02eb2cd4970ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 925d659f42496045089ba056e194ac977c37a8de
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>Validação, formulários e auxiliares do ASP.NET MVC 4
 ====================
@@ -36,7 +36,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Este laboratório orienta os aperfeiçoamentos e novos recursos descritos anteriormente, aplicando alterações secundárias a um aplicativo da Web de exemplo fornecido na pasta de origem.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 <a id="Objectives"></a>
@@ -228,7 +228,7 @@ Na figura a seguir, você pode ver como o formato é modificado devido ao tamanh
 Nesta tarefa, você adicionará um novo método **Truncate** para o **HTML** objeto exposto em modos de exibição do ASP.NET MVC. Para fazer isso, você irá implementar um **método de extensão** o interna **System.Web.Mvc.HtmlHelper** classe fornecida pelo ASP.NET MVC.
 
 > [!NOTE]
-> Para saber mais sobre **métodos de extensão**, visite este artigo do msdn. [https://msdn.microsoft.com/en-us/library/bb383977.aspx](https://msdn.microsoft.com/en-us/library/bb383977.aspx).
+> Para saber mais sobre **métodos de extensão**, visite este artigo do msdn. [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx).
 
 
 1. Abra o **começar** solução localizado em **fonte/o Ex2-AddingAnHTMLHelper/Begin/** pasta. Caso contrário, você pode continuar usando o **final** solução obtido executando o exercício anterior.
@@ -749,7 +749,7 @@ Nesta tarefa, você testará que o **StoreManager** criar exibição de modelo e
     > - Intervalo de valor de dados
     > - Data-val-intervalo-min / dados val-intervalo máximo
     > - Dados val necessários
-    > - Comprimento do valor de dados
+    > - Data-val-length
     > - Data-val-tamanho-max / dados val-comprimento mínimo
     > 
     > Todos os valores de dados são preenchidos com modelo **anotação de dados**. Em seguida, toda a lógica que funciona no lado do servidor pode ser executada no lado do cliente. Por exemplo, o atributo preço tem a anotação de dados a seguir no modelo:

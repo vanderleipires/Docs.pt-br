@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/areas
-ms.openlocfilehash: 666be2da6b38ffb538ae3888ea879a4104c8fd12
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 87bf2eaad1c13d21412051be769992411f685e2e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="areas"></a>Áreas
 
@@ -99,7 +99,7 @@ services.Configure<RazorViewEngineOptions>(options =>
    });
    ```
 
-Observe que é a estrutura do *modos de exibição* pasta é a única que é considerada importante aqui e, como o conteúdo do restante das pastas *controladores* e *modelos* does **não** importa. Por exemplo, você não precisa ter um *controladores* e *modelos* pasta todos. Isso funciona porque o conteúdo de *controladores* e *modelos* é apenas o código que é compilado em um. dll, enquanto que o conteúdo do *exibições* não será até que uma solicitação para que modo de exibição foi feito.
+Observe que é a estrutura do *modos de exibição* pasta é a única que é considerada importante aqui e, como o conteúdo do restante das pastas *controladores* e *modelos* does **não** importa. Por exemplo, você não precisa ter um *controladores* e *modelos* pasta todos. Isso funciona porque o conteúdo de *controladores* e *modelos* é apenas o código que é compilado em um. dll, enquanto que o conteúdo do *exibições* não até que uma solicitação para que modo de exibição foi feito.
 
 Depois que você definiu a hierarquia de pastas, você precisa informar ao MVC que cada controlador está associado uma área. Você pode fazer isso, decorando o nome do controlador com o `[Area]` atributo.
 
@@ -153,7 +153,7 @@ Navegando para `http://<yourApp>/products`, o `Index` método de ação a `HomeC
 
   Sintaxe de TagHelper:`<a asp-action="Index">Go to Product's Home Page</a>`
 
-  Observe que não é necessário fornecer os valores de 'área' e 'controller' aqui porque eles já estão disponíveis no contexto da solicitação atual. Esses tipos de valores são chamados `ambient` valores.
+  Observe que não é necessário fornecer os valores de 'área' e 'controller' aqui elas já estão disponíveis no contexto da solicitação atual. Esses tipos de valores são chamados `ambient` valores.
 
 * Geração de links de uma ação dentro de uma área com base no controlador de outra ação em um controlador diferente
 

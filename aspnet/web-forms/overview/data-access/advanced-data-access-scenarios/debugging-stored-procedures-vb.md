@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e74d368b1f9eec2177a528a6b09c599d6a307b74
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad09847d828d02019a72e3022d035a8fbe921568
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="debugging-stored-procedures-vb"></a>Depuração de procedimentos armazenados (VB)
 ====================
@@ -39,7 +39,7 @@ Neste tutorial, examinaremos entrando em procedimentos armazenados do Gerenciado
 
 ## <a name="sql-server-debugging-concepts"></a>Conceitos de depuração do SQL Server
 
-Microsoft SQL Server 2005 foi projetado para fornecer integração com o [Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx), que é o tempo de execução usado por todos os assemblies do .NET. Consequentemente, o SQL Server 2005 dá suporte a objetos de banco de dados gerenciados. Ou seja, você pode criar objetos de banco de dados como procedimentos armazenados e funções definidas pelo usuário (UDFs) como métodos em uma classe do Visual Basic. Isso permite que esses procedimentos armazenados e UDFs para utilizar a funcionalidade do .NET Framework e de suas próprias classes personalizadas. Naturalmente, o SQL Server 2005 também fornece suporte para objetos de banco de dados do T-SQL.
+Microsoft SQL Server 2005 foi projetado para fornecer integração com o [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), que é o tempo de execução usado por todos os assemblies do .NET. Consequentemente, o SQL Server 2005 dá suporte a objetos de banco de dados gerenciados. Ou seja, você pode criar objetos de banco de dados como procedimentos armazenados e funções definidas pelo usuário (UDFs) como métodos em uma classe do Visual Basic. Isso permite que esses procedimentos armazenados e UDFs para utilizar a funcionalidade do .NET Framework e de suas próprias classes personalizadas. Naturalmente, o SQL Server 2005 também fornece suporte para objetos de banco de dados do T-SQL.
 
 SQL Server 2005 oferece suporte à depuração de T-SQL e objetos de banco de dados gerenciados. No entanto, esses objetos podem ser depurados somente por meio de edições do Visual Studio 2005 Professional e sistemas de equipe. Neste tutorial, examinaremos depuração objetos de banco de dados do T-SQL. O tutorial subsequente olha para depurar objetos de banco de dados gerenciados.
 
@@ -53,7 +53,7 @@ O Visual Studio pode depurar procedimentos armazenados em instâncias do SQL Ser
 
 Se você estiver usando uma instância local do SQL Server, você pode começar com a etapa 1 e trabalhar com este tutorial até o final. Se você estiver usando uma instância remota do SQL Server, no entanto, você será necessário primeiro certifique-se de que durante a depuração, você está conectado à sua máquina de desenvolvimento com uma conta de usuário do Windows que tem um logon do SQL Server na instância remota. Moveover, esse logon de banco de dados e o logon de banco de dados usado para se conectar ao banco de dados do aplicativo ASP.NET em execução deve ser membros do `sysadmin` função. Consulte os objetos de banco de dados de depuração T-SQL na seção de instâncias remotas no final deste tutorial para obter mais informações sobre como configurar o Visual Studio e o SQL Server para uma instância remota de depuração.
 
-Por fim, entenda que suporte à depuração para objetos de banco de dados do T-SQL não é como um recurso avançado como o suporte à depuração para aplicativos .NET. Por exemplo, condições de ponto de interrupção e filtros não são suportados, somente um subconjunto das janelas de depuração estão disponíveis, você não pode usar Editar e continuar, a janela imediata é renderizada inútil e assim por diante. Consulte [limitações sobre os recursos e comandos do depurador](https://msdn.microsoft.com/en-us/library/ms165035(VS.80).aspx) para obter mais informações.
+Por fim, entenda que suporte à depuração para objetos de banco de dados do T-SQL não é como um recurso avançado como o suporte à depuração para aplicativos .NET. Por exemplo, condições de ponto de interrupção e filtros não são suportados, somente um subconjunto das janelas de depuração estão disponíveis, você não pode usar Editar e continuar, a janela imediata é renderizada inútil e assim por diante. Consulte [limitações sobre os recursos e comandos do depurador](https://msdn.microsoft.com/library/ms165035(VS.80).aspx) para obter mais informações.
 
 ## <a name="step-1-directly-stepping-into-a-stored-procedure"></a>Etapa 1: Depuração diretamente em um procedimento armazenado
 
@@ -172,10 +172,10 @@ Um exemplo pode ajudar a esclarecer coisas. Imagine que há uma conta do Windows
 
 [!code-console[Main](debugging-stored-procedures-vb/samples/sample2.cmd)]
 
-Para obter uma explicação mais detalhada sobre esse processo, consulte [William R. Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker guia para Visual Studio e SQL Server, edição sétimo* , bem como [como: definir permissões do SQL Server para depuração](https://msdn.microsoft.com/en-us/library/w1bhybwz(VS.80).aspx).
+Para obter uma explicação mais detalhada sobre esse processo, consulte [William R. Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker guia para Visual Studio e SQL Server, edição sétimo* , bem como [como: definir permissões do SQL Server para depuração](https://msdn.microsoft.com/library/w1bhybwz(VS.80).aspx).
 
 > [!NOTE]
-> Se sua máquina de desenvolvimento estiver executando o Windows XP Service Pack 2, você precisará configurar o Firewall de Conexão de Internet para permitir a depuração remota. [Como para: habilitar a depuração do SQL Server 2005](https://msdn.microsoft.com/en-us/library/s0fk6z6e(VS.80).aspx) artigo notas que isso envolve duas etapas: (a) no computador de host do Visual Studio, você deverá adicionar `Devenv.exe` à lista de exceções e abrir a porta TCP 135; e (b) no computador remoto (SQL), você deve abrir o TCP 135 porta e adicionar `sqlservr.exe` à lista de exceções. Se a diretiva de domínio requer comunicação de rede sejam feitas via IPSec, você deve abrir as portas UDP 4500 e UDP 500.
+> Se sua máquina de desenvolvimento estiver executando o Windows XP Service Pack 2, você precisará configurar o Firewall de Conexão de Internet para permitir a depuração remota. [Como para: habilitar a depuração do SQL Server 2005](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx) artigo notas que isso envolve duas etapas: (a) no computador de host do Visual Studio, você deverá adicionar `Devenv.exe` à lista de exceções e abrir a porta TCP 135; e (b) no computador remoto (SQL), você deve abrir o TCP 135 porta e adicionar `sqlservr.exe` à lista de exceções. Se a diretiva de domínio requer comunicação de rede sejam feitas via IPSec, você deve abrir as portas UDP 4500 e UDP 500.
 
 
 ## <a name="summary"></a>Resumo

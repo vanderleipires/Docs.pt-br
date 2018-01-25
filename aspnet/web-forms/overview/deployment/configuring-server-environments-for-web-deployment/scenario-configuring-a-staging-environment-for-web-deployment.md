@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: b5f223f59a8b222f4f01322d228cf7434e3dfc14
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 683a0cf88225fee762e82925afe3785a2defd5bf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-staging-environment-for-web-deployment"></a>Cenário: Configurar um ambiente de preparo para a implantação da Web
 ====================
@@ -35,7 +35,7 @@ Muitas organizações usam ambientes de preparo para visualizar atualizações p
 - Alterações em aplicativos são implantadas com frequência, assim o ambiente precisa dar suporte a apenas uma etapa ou a implantação automatizada.
 
 > [!NOTE]
-> Expansão de uma implantação de banco de dados em vários servidores está além do escopo deste tutorial. Para obter mais informações sobre essa área, consulte [Manuais Online do SQL Server](https://technet.microsoft.com/en-us/library/ms130214.aspx).
+> Expansão de uma implantação de banco de dados em vários servidores está além do escopo deste tutorial. Para obter mais informações sobre essa área, consulte [Manuais Online do SQL Server](https://technet.microsoft.com/library/ms130214.aspx).
 
 
 Por exemplo, em nosso [cenário do tutorial](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), Team Foundation Server (TFS) gerencia a solução do gerente do contato. O administrador do TFS, Rob Walters, criou uma definição de compilação que permite que os desenvolvedores disparar uma implantação no ambiente de preparo conforme necessário.

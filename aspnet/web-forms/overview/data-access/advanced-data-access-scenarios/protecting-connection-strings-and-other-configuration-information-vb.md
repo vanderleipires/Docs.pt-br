@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8eaa9f43a69620862c95194117a026be391e2fb6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1514c4b6d041f6bbd83788e2110a95d3d831ff6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>Protegendo cadeias de caracteres de Conexão e outras informações de configuração (VB)
 ====================
@@ -60,10 +60,10 @@ ASP.NET 2.0 inclui um sistema de configuração protegida para criptografar e de
 
 O .NET Framework vem com dois provedores de configuração protegida:
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/en-us/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-usa assimétrica [algoritmo RSA](http://en.wikipedia.org/wiki/Rsa) para criptografia e descriptografia.
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/en-us/system.configuration.dpapiprotectedconfigurationprovider.aspx)-usa o Windows [API de proteção de dados (DPAPI)](https://msdn.microsoft.com/en-us/library/ms995355.aspx) para criptografia e descriptografia.
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-usa assimétrica [algoritmo RSA](http://en.wikipedia.org/wiki/Rsa) para criptografia e descriptografia.
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-usa o Windows [API de proteção de dados (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) para criptografia e descriptografia.
 
-Como o sistema de configuração protegida implementa o padrão de design de provedor, é possível criar seu próprio provedor de configuração protegida e conectá-lo ao seu aplicativo. Consulte [implementando um provedor de configuração protegida](https://msdn.microsoft.com/en-us/library/wfc2t3az(VS.80).aspx) para obter mais informações sobre esse processo.
+Como o sistema de configuração protegida implementa o padrão de design de provedor, é possível criar seu próprio provedor de configuração protegida e conectá-lo ao seu aplicativo. Consulte [implementando um provedor de configuração protegida](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx) para obter mais informações sobre esse processo.
 
 Os provedores de RSA e DPAPI usam chaves para suas rotinas de criptografia e descriptografia, e essas chaves podem ser armazenadas no computador ou usuário-nível de. Informações criptografadas de chaves de nível de máquina são ideais para cenários em que o aplicativo web é executado em seu próprio servidor dedicado ou se houver vários aplicativos em um servidor que precisam compartilhar. Chaves de nível de usuário são uma opção mais segura em ambientes de hospedagem compartilhados, onde outros aplicativos no mesmo servidor não devem ser capazes de descriptografar seções de configuração de s protegido por seu aplicativo.
 
@@ -96,20 +96,20 @@ Em seguida, é preciso escrever código que carrega e exibe o conteúdo de `Web.
 
 [!code-vb[Main](protecting-connection-strings-and-other-configuration-information-vb/samples/sample1.vb)]
 
-O `DisplayWebConfig` método usa o [ `File` classe](https://msdn.microsoft.com/en-us/library/system.io.file.aspx) para abrir o aplicativo s `Web.config` arquivo, o [ `StreamReader` classe](https://msdn.microsoft.com/en-us/library/system.io.streamreader.aspx) para ler seu conteúdo em uma cadeia de caracteres e o [ `Path` classe](https://msdn.microsoft.com/en-us/library/system.io.path.aspx) para gerar o caminho físico para o `Web.config` arquivo. Todos esses três classes são encontradas no [ `System.IO` namespace](https://msdn.microsoft.com/en-us/library/system.io.aspx). Consequentemente, você precisará adicionar um `Imports``System.IO` à parte superior da classe code-behind ou, Alternativamente, esses nomes de classe de prefixo`System.IO.`
+O `DisplayWebConfig` método usa o [ `File` classe](https://msdn.microsoft.com/library/system.io.file.aspx) para abrir o aplicativo s `Web.config` arquivo, o [ `StreamReader` classe](https://msdn.microsoft.com/library/system.io.streamreader.aspx) para ler seu conteúdo em uma cadeia de caracteres e o [ `Path` classe](https://msdn.microsoft.com/library/system.io.path.aspx) para gerar o caminho físico para o `Web.config` arquivo. Todos esses três classes são encontradas no [ `System.IO` namespace](https://msdn.microsoft.com/library/system.io.aspx). Consequentemente, você precisará adicionar um `Imports``System.IO` à parte superior da classe code-behind ou, Alternativamente, esses nomes de classe de prefixo`System.IO.`
 
 Em seguida, precisamos adicionar manipuladores de eventos para os dois controles de botão `Click` eventos e adicione o código necessário para criptografar e descriptografar o `<connectionStrings>` seção usando uma chave de nível de máquina com o provedor DPAPI. No Designer, clique duas vezes em cada um dos botões para adicionar um `Click` manipulador de eventos no code-behind de classe e, em seguida, adicione o seguinte código:
 
 
 [!code-vb[Main](protecting-connection-strings-and-other-configuration-information-vb/samples/sample2.vb)]
 
-O código usado nos manipuladores de eventos de dois é quase idêntico. Ambos começar Obtendo informações sobre o aplicativo atual `Web.config` de arquivos por meio de [ `WebConfigurationManager` classe](https://msdn.microsoft.com/en-us/library/system.web.configuration.webconfigurationmanager.aspx) s [ `OpenWebConfiguration` método](https://msdn.microsoft.com/en-us/library/system.web.configuration.webconfigurationmanager.openwebconfiguration.aspx). Esse método retorna o arquivo de configuração da web para o caminho virtual especificado. Em seguida, o `Web.config` arquivo s `<connectionStrings>` seção é acessada por meio de [ `Configuration` classe](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.aspx) s [ `GetSection(sectionName)` método](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.getsection.aspx), que retorna um [ `ConfigurationSection` ](https://msdn.microsoft.com/en-us/library/system.configuration.configurationsection.aspx) objeto.
+O código usado nos manipuladores de eventos de dois é quase idêntico. Ambos começar Obtendo informações sobre o aplicativo atual `Web.config` de arquivos por meio de [ `WebConfigurationManager` classe](https://msdn.microsoft.com/library/system.web.configuration.webconfigurationmanager.aspx) s [ `OpenWebConfiguration` método](https://msdn.microsoft.com/library/system.web.configuration.webconfigurationmanager.openwebconfiguration.aspx). Esse método retorna o arquivo de configuração da web para o caminho virtual especificado. Em seguida, o `Web.config` arquivo s `<connectionStrings>` seção é acessada por meio de [ `Configuration` classe](https://msdn.microsoft.com/library/system.configuration.configuration.aspx) s [ `GetSection(sectionName)` método](https://msdn.microsoft.com/library/system.configuration.configuration.getsection.aspx), que retorna um [ `ConfigurationSection` ](https://msdn.microsoft.com/library/system.configuration.configurationsection.aspx) objeto.
 
-O `ConfigurationSection` objeto inclui um [ `SectionInformation` propriedade](https://msdn.microsoft.com/en-us/library/system.configuration.configurationsection.sectioninformation.aspx) que fornece informações adicionais e funcionalidades em relação a seção de configuração. Como o código acima mostra, é possível determinar se a seção de configuração é criptografada, verificando o `SectionInformation` propriedade s `IsProtected` propriedade. Além disso, a seção pode ser criptografada ou descriptografada por meio de `SectionInformation` propriedade s `ProtectSection(provider)` e `UnprotectSection` métodos.
+O `ConfigurationSection` objeto inclui um [ `SectionInformation` propriedade](https://msdn.microsoft.com/library/system.configuration.configurationsection.sectioninformation.aspx) que fornece informações adicionais e funcionalidades em relação a seção de configuração. Como o código acima mostra, é possível determinar se a seção de configuração é criptografada, verificando o `SectionInformation` propriedade s `IsProtected` propriedade. Além disso, a seção pode ser criptografada ou descriptografada por meio de `SectionInformation` propriedade s `ProtectSection(provider)` e `UnprotectSection` métodos.
 
 O `ProtectSection(provider)` método o aceita como entrada uma cadeia de caracteres especificando o nome do provedor de configuração protegida para usar ao criptografar. No `EncryptConnString` manipulador de eventos do botão s passamos DataProtectionConfigurationProvider para o `ProtectSection(provider)` método para que o provedor DPAPI é usado. O `UnprotectSection` método pode determinar o provedor que foi usado para criptografar a seção de configuração e, portanto, não requer parâmetros de entrada.
 
-Depois de chamar o `ProtectSection(provider)` ou `UnprotectSection` método, você deve chamar o `Configuration` objeto s [ `Save` método](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.save.aspx) para manter as alterações. Depois que as informações de configuração foi criptografadas ou descriptografadas e as alterações salvadas, podemos chamar `DisplayWebConfig` para carregar o atualizado `Web.config` conteúdo no controle de caixa de texto.
+Depois de chamar o `ProtectSection(provider)` ou `UnprotectSection` método, você deve chamar o `Configuration` objeto s [ `Save` método](https://msdn.microsoft.com/library/system.configuration.configuration.save.aspx) para manter as alterações. Depois que as informações de configuração foi criptografadas ou descriptografadas e as alterações salvadas, podemos chamar `DisplayWebConfig` para carregar o atualizado `Web.config` conteúdo no controle de caixa de texto.
 
 Depois que você inseriu o código acima, testá-lo visitando o `EncryptingConfigSections.aspx` página através de um navegador. Inicialmente, você verá uma página que lista o conteúdo de `Web.config` com o `<connectionStrings>` seção exibida em texto sem formatação (consulte a Figura 3).
 
@@ -155,7 +155,7 @@ Para reverter o `<connectionStrings>` seção sua representação de texto sem f
 
 ## <a name="step-3-encrypting-configuration-sections-usingaspnetregiisexe"></a>Etapa 3: Criptografar seções de configuração usando`aspnet_regiis.exe`
 
-O .NET Framework inclui uma variedade de ferramentas de linha de comando do `$WINDOWS$\Microsoft.NET\Framework\version\` pasta. No [dependências de Cache de SQL usando](../caching-data/using-sql-cache-dependencies-vb.md) tutorial, por exemplo, analisamos usando o `aspnet_regsql.exe` ferramenta de linha de comando para adicionar a infraestrutura necessária para dependências de cache SQL. Outra ferramenta de linha de comando útil nessa pasta é o [ferramenta de registro de IIS do ASP.NET (`aspnet_regiis.exe`)](https://msdn.microsoft.com/en-us/library/k6h9cz8h(VS.80).aspx). Como o nome sugere, a ferramenta de registro do ASP.NET IIS é usada principalmente para registrar um aplicativo ASP.NET 2.0 no servidor de Web do Microsoft s nível profissional, IIS. Além de seus recursos relacionados ao IIS, a ferramenta de registro do ASP.NET IIS também pode ser usada para criptografar ou descriptografar seções de configuração especificado no `Web.config`.
+O .NET Framework inclui uma variedade de ferramentas de linha de comando do `$WINDOWS$\Microsoft.NET\Framework\version\` pasta. No [dependências de Cache de SQL usando](../caching-data/using-sql-cache-dependencies-vb.md) tutorial, por exemplo, analisamos usando o `aspnet_regsql.exe` ferramenta de linha de comando para adicionar a infraestrutura necessária para dependências de cache SQL. Outra ferramenta de linha de comando útil nessa pasta é o [ferramenta de registro de IIS do ASP.NET (`aspnet_regiis.exe`)](https://msdn.microsoft.com/library/k6h9cz8h(VS.80).aspx). Como o nome sugere, a ferramenta de registro do ASP.NET IIS é usada principalmente para registrar um aplicativo ASP.NET 2.0 no servidor de Web do Microsoft s nível profissional, IIS. Além de seus recursos relacionados ao IIS, a ferramenta de registro do ASP.NET IIS também pode ser usada para criptografar ou descriptografar seções de configuração especificado no `Web.config`.
 
 A instrução a seguir mostra a sintaxe geral usada para criptografar uma seção de configuração com o `aspnet_regiis.exe` ferramenta de linha de comando:
 
@@ -203,7 +203,7 @@ O exemplo a seguir mostra uma cadeia de caracteres de conexão que usa a autenti
 Imagine que um invasor for capaz de exibir o aplicativo s `Web.config` arquivo. Se você usar autenticação do SQL para se conectar a um banco de dados que seja acessível pela Internet, o invasor pode usar essa cadeia de caracteres de conexão para se conectar ao banco de dados SQL Management Studio ou em páginas do ASP.NET em seu próprio site. Para ajudar a reduzir essa ameaça, criptografar as informações de cadeia de caracteres de conexão em `Web.config` usando o sistema de configuração protegida.
 
 > [!NOTE]
-> Para obter mais informações sobre os diferentes tipos de autenticação disponíveis no SQL Server, consulte [Building Secure ASP.NET Applications: autenticação, autorização e comunicação segura](https://msdn.microsoft.com/en-us/library/aa302392.aspx). Para obter conexão cadeia exemplos que ilustram as diferenças entre a sintaxe de autenticação do Windows e do SQL, consulte [ConnectionStrings.com](http://www.connectionstrings.com/).
+> Para obter mais informações sobre os diferentes tipos de autenticação disponíveis no SQL Server, consulte [Building Secure ASP.NET Applications: autenticação, autorização e comunicação segura](https://msdn.microsoft.com/library/aa302392.aspx). Para obter conexão cadeia exemplos que ilustram as diferenças entre a sintaxe de autenticação do Windows e do SQL, consulte [ConnectionStrings.com](http://www.connectionstrings.com/).
 
 
 ## <a name="summary"></a>Resumo
@@ -218,13 +218,13 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [Criando aplicativo do ASP.NET seguros: Autenticação, autorização e comunicação segura](https://msdn.microsoft.com/en-us/library/aa302392.aspx)
+- [Criando aplicativo do ASP.NET seguros: Autenticação, autorização e comunicação segura](https://msdn.microsoft.com/library/aa302392.aspx)
 - [Criptografando informações de configuração no ASP.NET 2.0 aplicativos](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
 - [Criptografar `Web.config` valores no ASP.NET 2.0](https://weblogs.asp.net/scottgu/archive/2006/01/09/434893.aspx)
-- [Como: Criptografar seções de configuração no ASP.NET 2.0 usando DPAPI](https://msdn.microsoft.com/en-us/library/ms998280.aspx)
-- [Como: Criptografar seções de configuração no ASP.NET 2.0 usando o RSA](https://msdn.microsoft.com/en-us/library/ms998283.aspx)
+- [Como: Criptografar seções de configuração no ASP.NET 2.0 usando DPAPI](https://msdn.microsoft.com/library/ms998280.aspx)
+- [Como: Criptografar seções de configuração no ASP.NET 2.0 usando o RSA](https://msdn.microsoft.com/library/ms998283.aspx)
 - [A API de configuração no .NET 2.0](http://www.odetocode.com/Articles/418.aspx)
-- [Proteção de dados do Windows](https://msdn.microsoft.com/en-us/library/ms995355.aspx)
+- [Proteção de dados do Windows](https://msdn.microsoft.com/library/ms995355.aspx)
 
 ## <a name="about-the-author"></a>Sobre o autor
 

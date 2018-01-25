@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a5538744dfaff76f28c5f17d8f5d782ef3f6c118
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a7995844ee6ed19efa130c4f6c019214d6652ea7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Implantando o IIS como um ambiente de teste - 5 de 12
 ====================
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial mostra como implantar um aplicativo da web ASP.NET para o IIS no computador local.
 
@@ -83,7 +83,7 @@ No **conexões** painel, expanda o nó do servidor e selecione **Pools de aplica
 
 Se você vir apenas dois pools de aplicativos, e ambos os parâmetros são definidos para o .NET Framework 2.0, você precisa instalar o ASP.NET 4 no IIS:
 
-- Abra uma janela de prompt de comando clicando **Prompt de comando** nas janelas **iniciar** menu e selecionando **executar como administrador**. Em seguida, execute [aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx) para instalar o ASP.NET 4 no IIS, usando os seguintes comandos. (Em sistemas de 64 bits, substitua "Estrutura" com "Framework64").
+- Abra uma janela de prompt de comando clicando **Prompt de comando** nas janelas **iniciar** menu e selecionando **executar como administrador**. Em seguida, execute [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) para instalar o ASP.NET 4 no IIS, usando os seguintes comandos. (Em sistemas de 64 bits, substitua "Estrutura" com "Framework64").
 
     [!code-console[Main](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/samples/sample2.cmd)]
 
@@ -111,7 +111,7 @@ Há várias maneiras que você pode implantar usando o Visual Studio 2010 e a im
 - Criar um *pacote de implantação* e instalá-lo usando a UI Gerenciador do IIS. O pacote de implantação consiste em uma *. zip* arquivo que contém todos os arquivos e metadados necessários para instalar um site no IIS.
 - Criar um pacote de implantação e instalá-lo usando a linha de comando.
 
-O processo que você seguiu os tutoriais anterior para configurar o Visual Studio para automatizar tarefas de implantação se aplica a todos os três métodos. Esses tutoriais, você usará o primeiro desses métodos. Para obter informações sobre como usar pacotes de implantação, consulte [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/en-us/library/bb386521.aspx).
+O processo que você seguiu os tutoriais anterior para configurar o Visual Studio para automatizar tarefas de implantação se aplica a todos os três métodos. Esses tutoriais, você usará o primeiro desses métodos. Para obter informações sobre como usar pacotes de implantação, consulte [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx).
 
 Antes de publicar, certifique-se de que você está executando o Visual Studio no modo de administrador. (No Windows 7 **iniciar** menu, clique no ícone para a versão do Visual Studio que você está usando e selecione **executar como administrador**.) Modo de administrador é necessária para publicar somente quando você estiver publicando ao IIS no computador local.
 
@@ -244,7 +244,7 @@ Para obter informações sobre como executar o IIS ou IIS Express no Visual Stud
 
 - [Visão geral do IIS Express](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) no site IIS.net.
 - [Introdução ao IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) no blog de Scott Guthrie.
-- [Como: especificar o servidor Web para projetos Web no Visual Studio](https://msdn.microsoft.com/en-us/library/ms178108.aspx).
+- [Como: especificar o servidor Web para projetos Web no Visual Studio](https://msdn.microsoft.com/library/ms178108.aspx).
 - [Principais diferenças entre o IIS e o ASP.NET Development Server](../deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) no site do ASP.NET.
 - [Testar o ASP.NET MVC ou Web Forms aplicativo no IIS 7 em 30 segundos](https://blogs.msdn.com/b/rickandy/archive/2011/04/22/test-you-asp-net-mvc-or-webforms-application-on-iis-7-in-30-seconds.aspx) no blog de Rick Anderson. Essa entrada fornece exemplos de por que teste com o servidor de desenvolvimento do Visual Studio (Cassini) não é tão confiável quanto teste no IIS Express e por que teste no IIS Express não é tão confiável quanto teste no IIS.
 

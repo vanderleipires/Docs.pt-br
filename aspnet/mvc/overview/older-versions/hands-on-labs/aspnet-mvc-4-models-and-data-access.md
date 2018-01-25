@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: bf4bb5c6f9ad8339c3597b0d6666c7077ac476e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 076fa87eff140a3e7ff6855e4876abac40419c57
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-models-and-data-access"></a>Acesso a dados e modelos do ASP.NET MVC 4
 ====================
@@ -27,7 +27,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Este laboratório orienta os aperfeiçoamentos e novos recursos descritos anteriormente, aplicando alterações secundárias a um aplicativo da Web de exemplo fornecido na pasta de origem.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 Em **conceitos básicos do ASP.NET MVC** laboratório prático, você tem foi passando dados embutida dos controladores de para os modelos de exibição. Mas, para criar um aplicativo Web real, você talvez queira usar um banco de dados real.
@@ -235,7 +235,7 @@ Nesta tarefa, você atualizará a classe StoreController para que, em vez de usa
     > [!NOTE]
     > Você está usando um recurso do .NET chamado **LINQ** (consulta integrada à linguagem) para escrever expressões de consulta fortemente tipada em relação a essas coleções - que executará o código no banco de dados e retornar objetos que você pode programar com relação.
     > 
-    > Para obter mais informações sobre o LINQ, visite o [site msdn](https://msdn.microsoft.com/en-us/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
+    > Para obter mais informações sobre o LINQ, visite o [site msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
 3. Atualização **índice** método de ação para recuperar todos os gêneros.
 
     (Código de trecho - *modelos e acesso a dados - índice de repositório Ex1*)
@@ -351,7 +351,7 @@ Agora que você já tiver configurado a conexão ao banco de dados, você vincul
     > [!NOTE]
     > Para trabalhar com as convenções de código primeiro, a classe gênero deve ter uma propriedade de chave primária será detectada automaticamente.
     > 
-    > Você pode ler mais sobre as convenções de código primeiro neste [artigo do msdn](https://msdn.microsoft.com/en-us/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
+    > Você pode ler mais sobre as convenções de código primeiro neste [artigo do msdn](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
 2. Agora, abra a classe de modelo POCO **álbum** de **modelos** pasta do projeto e inclui as chaves estrangeiras, crie propriedades com os nomes **GenreId** e  **ArtistId**. Essa classe já tiver o **GenreId** para a chave primária.
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 código primeiro álbum*)
@@ -385,7 +385,7 @@ Agora que você já tiver configurado a conexão ao banco de dados, você vincul
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
     > [!NOTE]
-    > Com o Entity Framework **DbContext** e **DBSet** você poderá consultar a classe POCO gênero. Estendendo **OnModelCreating** método, você está especificando no **código** como gênero será mapeado para uma tabela de banco de dados. Você pode encontrar mais informações sobre DBContext e DBSet neste artigo do msdn: [link](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx)
+    > Com o Entity Framework **DbContext** e **DBSet** você poderá consultar a classe POCO gênero. Estendendo **OnModelCreating** método, você está especificando no **código** como gênero será mapeado para uma tabela de banco de dados. Você pode encontrar mais informações sobre DBContext e DBSet neste artigo do msdn: [link](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
 
 <a id="Ex2Task4"></a>
 
@@ -416,7 +416,7 @@ Nesta tarefa, você atualizará a classe StoreController para que, em vez de usa
     > [!NOTE]
     > Você está usando um recurso do .NET chamado **LINQ** (consulta integrada à linguagem) para escrever expressões de consulta fortemente tipada em relação a essas coleções - que executará o código no banco de dados e retornar objetos que você pode programar com relação.
     > 
-    > Para obter mais informações sobre o LINQ, visite o [site msdn](https://msdn.microsoft.com/en-us/library/bb397926(v=vs.110).aspx).
+    > Para obter mais informações sobre o LINQ, visite o [site msdn](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
 3. Atualização **índice** método de ação para recuperar todos os gêneros.
 
     (Código de trecho - *modelos e acesso a dados - índice de repositório o Ex2*)
@@ -457,7 +457,7 @@ Nesta tarefa, você verificará que a página de índice de repositório agora e
 Neste exercício, você aprenderá como o banco de dados usando parâmetros de consulta e como usar a formatação de resultados de consulta, um recurso que reduz o banco de dados de número acessa a recuperação de dados de forma mais eficiente.
 
 > [!NOTE]
-> Para obter mais informações sobre formatação de resultados de consulta, visite o [artigo do msdn](https://msdn.microsoft.com/en-us/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
+> Para obter mais informações sobre formatação de resultados de consulta, visite o [artigo do msdn](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
 
 
 <a id="Ex3Task1"></a>

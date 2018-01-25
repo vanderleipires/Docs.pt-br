@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 0af5f7e841bb43fa41fa0daa4ad8d59ee0596404
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4a5433a7dd70e27b59163822ba427b026c3f4ce0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>Integração contínua e fornecimento contínuo (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -37,7 +37,7 @@ Em geral, recomendamos que você faça a entrega contínua para o desenvolviment
 
 O diagrama a seguir de [um Microsoft Patterns and Practices livro eletrônico sobre a entrega contínua](http://aka.ms/ReleasePipeline) ilustra um fluxo de trabalho típico. Clique na imagem para vê-lo em tamanho completo em seu contexto original.
 
-[![Fluxo de trabalho de entrega contínua](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/en-us/library/dn449955.aspx)
+[![Fluxo de trabalho de entrega contínua](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
 ## <a name="how-the-cloud-enables-cost-effective-ci-and-cd"></a>Como a nuvem permite econômico CI e CD
 
@@ -65,13 +65,13 @@ Os padrões de desenvolvimento de três nuvem primeiro tem sido sobre como imple
 
 ## <a name="resources"></a>Recursos
 
-Para obter mais informações, consulte [implantar um aplicativo web no serviço de aplicativo do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/).
+Para obter mais informações, consulte [implantar um aplicativo web no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-deploy/).
 
 Consulte também os seguintes recursos:
 
 - [Criando um Pipeline de versão com o Team Foundation Server 2012](http://aka.ms/ReleasePipeline). Livro eletrônico, laboratórios práticos e código de exemplo Microsoft Patterns e práticas recomendadas, fornece uma introdução detalhada para fornecimento contínuo. Abrange o uso do Visual Studio Lab Management e o gerenciamento de versão do Visual Studio.
 - [ALM Rangers DevOps ferramentas e diretrizes](https://aka.ms/vsarsolutions/). ALM Rangers introduziu o DevOps Workbench exemplo complementares de solução e orientação prática em colaboração com os padrões &amp; catálogo práticas *criando um Pipeline de versão com o TFS 2012*, como uma ótima maneira de iniciar aprender os conceitos de DevOps &amp; Release Management para TFS 2012 e iniciar os pneus. O guia mostra como compilar uma vez e implantar em vários ambientes.
-- [Testando para entrega contínua com o Visual Studio 2012](https://msdn.microsoft.com/en-us/library/jj159345.aspx). Livro eletrônico Microsoft Patterns e práticas recomendadas, explica como integrar o teste automatizado com o fornecimento contínuo.
+- [Testando para entrega contínua com o Visual Studio 2012](https://msdn.microsoft.com/library/jj159345.aspx). Livro eletrônico Microsoft Patterns e práticas recomendadas, explica como integrar o teste automatizado com o fornecimento contínuo.
 - [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker). Código-fonte para uma ferramenta projetada para capturar uma compilação do TFS (com base em um rótulo), compilá-lo, empacotá-lo, permitir que alguém na função DevOps configurar aspectos específicos e enviar por push para o Azure. A ferramenta controla o processo de implantação para permitir operações de "reverter" para uma versão previamente implantada. A ferramenta não tem dependências externas e pode funcionar autônomo usando APIs do TFS e o SDK do Azure.
 - [Entrega contínua: Versões de Software confiável com por meio de compilação, teste e automação de implantação](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1377126361). Catálogo por Jez humilde.
 - [Liberá-lo! Criar e implantar o Software pronto para produção](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). Catálogo por Michael T. Nygard.

@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: a55b0d20-9c90-4bd3-a471-20da6f569f0c
 ms.technology: 
 ms.prod: .net-framework
-ms.openlocfilehash: 3aaef756ee00d7e44aa757062e1ef297312ecf22
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12acae0883c12698a8f9c2150623ba792303e7ef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-webhooks-handlers"></a>Manipuladores do ASP.NET WebHooks
 
@@ -62,7 +62,7 @@ public class MyWebHookHandler : WebHookHandler
 
 A maioria dos remetentes de WebHook reenviaria um WebHook se uma resposta não é gerada dentro de alguns segundos. Isso significa que o manipulador deve concluir o processamento dentro desse período, não para que ele seja chamado novamente.
 
-Se o processamento leva mais tempo, ou melhor é tratado separadamente o [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) pode ser usado para enviar a solicitação de WebHook a uma fila, por exemplo [fila de armazenamento do Azure](https://msdn.microsoft.com/en-us/library/azure/dd179353.aspx).
+Se o processamento leva mais tempo, ou melhor é tratado separadamente o [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) pode ser usado para enviar a solicitação de WebHook a uma fila, por exemplo [fila de armazenamento do Azure](https://msdn.microsoft.com/library/azure/dd179353.aspx).
 
 Uma estrutura de tópicos de um [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) implementação é fornecida aqui:
 

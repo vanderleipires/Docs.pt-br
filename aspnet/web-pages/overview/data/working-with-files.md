@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: b3497ee17809070227115db197093c9cd0ca6c70
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0f119f8fb4873e55292203f21a2efd8f26793ae4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>Trabalhando com arquivos em um Site de páginas (Razor) da Web do ASP.NET
 ====================
@@ -47,7 +47,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > 
 > - Páginas da Web do ASP.NET (Razor) 2
-> - O WebMatrix 2
+> - WebMatrix 2
 >   
 > 
 > Este tutorial também funciona com o WebMatrix 3.
@@ -262,4 +262,4 @@ No exemplo anterior, permitem aos usuários carregar um arquivo. Mas você pode 
 
 [Trabalhando com imagens em um Site de páginas da Web do ASP.NET](https://go.microsoft.com/fwlink/?LinkId=202897)
 
-[Exportando para um arquivo CSV](https://msdn.microsoft.com/en-us/library/ms155919.aspx)
+[Exportando para um arquivo CSV](https://msdn.microsoft.com/library/ms155919.aspx)

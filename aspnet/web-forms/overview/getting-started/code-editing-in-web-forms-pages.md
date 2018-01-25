@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: dfcddb4373fbf17ca29c5ab94c6ab3387ed6b526
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8714f673cb0434189ca23d2dda14035d8652a051
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Código de edição Web Forms do ASP.NET no Visual Studio 2013
 ====================
@@ -38,7 +38,7 @@ Durante este passo a passo, você aprenderá a:
 
 Para concluir este passo a passo, você precisará de:
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) ou [Microsoft Visual Studio Express 2013 para Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). O .NET Framework é instalado automaticamente. 
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) ou [Microsoft Visual Studio Express 2013 para Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). O .NET Framework é instalado automaticamente. 
 
     > [!NOTE] 
     > 
@@ -132,8 +132,8 @@ Nesta parte do passo a passo, você escrever códigos simples e, em seguida, ext
 ### <a name="to-extract-a-method-in-a-c-page"></a>Para extrair um método em uma página c#
 
 1. Alternar para **Design** exibição.
-2. No **caixa de ferramentas**, do **padrão** guia, arraste um [botão](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.aspx) até a página.
-3. Clique duas vezes o **botão** controle para criar um manipulador para seu [clique](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.click.aspx) evento e, em seguida, adicione o seguinte código:
+2. No **caixa de ferramentas**, do **padrão** guia, arraste um [botão](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) até a página.
+3. Clique duas vezes o **botão** controle para criar um manipulador para seu [clique](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) evento e, em seguida, adicione o seguinte código:
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample2.cs?highlight=3-16)]
 
@@ -185,13 +185,13 @@ Ao trabalhar com variáveis, bem como objetos, convém renomeá-los depois que e
 
 Como há muitas tarefas de codificação que os desenvolvedores de Web Forms frequentemente precisam executar, o editor de código fornece uma biblioteca de trechos de código ou blocos de código boa. Você pode inserir trechos de código em sua página.
 
-Cada linguagem que você usa no Visual Studio tem pequenas diferenças na maneira como inserir trechos de código. Para obter informações sobre como inserir trechos de código, consulte [trechos de código do Visual Basic IntelliSense](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx). Para obter informações sobre como inserir trechos de código no Visual c#, consulte [trechos de código do Visual c#](https://msdn.microsoft.com/en-us/library/z41h7fat.aspx).
+Cada linguagem que você usa no Visual Studio tem pequenas diferenças na maneira como inserir trechos de código. Para obter informações sobre como inserir trechos de código, consulte [trechos de código do Visual Basic IntelliSense](https://msdn.microsoft.com/library/18yz4be4.aspx). Para obter informações sobre como inserir trechos de código no Visual c#, consulte [trechos de código do Visual c#](https://msdn.microsoft.com/library/z41h7fat.aspx).
 
 ## <a name="next-steps"></a>Próximas etapas
 
 Este passo a passo ilustra os recursos básicos do editor de códigos do Visual Studio 2010 para corrigir erros em seu código, refatoração de código, renomeando variáveis e inserindo trechos de código em seu código. Recursos adicionais no editor podem tornar o desenvolvimento de aplicativo rápido e fácil. Por exemplo, é possível:
 
-- Saiba mais sobre os recursos do IntelliSense, como modificar opções do IntelliSense, gerenciar trechos de código e a pesquisa de trechos de código online. Para obter mais informações, veja [Usando o IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b.aspx).
-- Aprenda a criar seus próprios trechos de código. Para obter mais informações, consulte [criando e usando trechos de código do IntelliSense](https://msdn.microsoft.com/en-us/library/ms165392.aspx)
-- Saiba mais sobre os recursos específicos do Visual Basic de trechos de código do IntelliSense, como personalizar os trechos de código e solução de problemas. Para obter mais informações, consulte [trechos de código do Visual Basic IntelliSense](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx)
-- Saiba mais sobre o c#-recursos específicos do IntelliSense, como refatoração e trechos de código. Para obter mais informações, consulte [Visual c# IntelliSense](https://msdn.microsoft.com/en-us/library/43f44291.aspx).
+- Saiba mais sobre os recursos do IntelliSense, como modificar opções do IntelliSense, gerenciar trechos de código e a pesquisa de trechos de código online. Para obter mais informações, veja [Usando o IntelliSense](https://msdn.microsoft.com/library/hcw1s69b.aspx).
+- Aprenda a criar seus próprios trechos de código. Para obter mais informações, consulte [criando e usando trechos de código do IntelliSense](https://msdn.microsoft.com/library/ms165392.aspx)
+- Saiba mais sobre os recursos específicos do Visual Basic de trechos de código do IntelliSense, como personalizar os trechos de código e solução de problemas. Para obter mais informações, consulte [trechos de código do Visual Basic IntelliSense](https://msdn.microsoft.com/library/18yz4be4.aspx)
+- Saiba mais sobre o c#-recursos específicos do IntelliSense, como refatoração e trechos de código. Para obter mais informações, consulte [Visual c# IntelliSense](https://msdn.microsoft.com/library/43f44291.aspx).

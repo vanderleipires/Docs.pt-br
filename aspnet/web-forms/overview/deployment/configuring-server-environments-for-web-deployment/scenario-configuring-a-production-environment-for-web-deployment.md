@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: d5574ee353ff41205e9029e4aa5d139a5aa0e959
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cdd13f96ddf08ff86b01ef9de17ea82cf038ab28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>Cenário: Configurar um ambiente de produção para implantação da Web
 ====================
@@ -35,7 +35,7 @@ O ambiente de produção é o destino final para um aplicativo web ou um site. N
 - Alterações em aplicativos são implantadas com menos frequência de teste ou implantações de preparo.
 
 > [!NOTE]
-> Expansão de uma implantação de banco de dados em vários servidores está além do escopo deste tutorial. Para obter mais informações sobre essa área, consulte [Manuais Online do SQL Server](https://technet.microsoft.com/en-us/library/ms130214.aspx).
+> Expansão de uma implantação de banco de dados em vários servidores está além do escopo deste tutorial. Para obter mais informações sobre essa área, consulte [Manuais Online do SQL Server](https://technet.microsoft.com/library/ms130214.aspx).
 
 
 Por exemplo, em nosso [cenário do tutorial](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), um servidor do Team Build inclui definições de compilação que permitem aos usuários criar a solução de Gerenciador de contato e implantá-lo em um ambiente de preparo em uma única etapa. Quando o aplicativo está pronto para ser implantado para produção, devido a restrições impostas por requisitos de segurança e a infraestrutura de rede, o administrador do ambiente de produção deve copiar o pacote da web em um servidor web de produção e importar manualmente ele por meio do Gerenciador de serviços de informações da Internet (IIS).

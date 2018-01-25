@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: 41f1f30d86406580ab9fc7278a94d9c291913f9a
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 25d1c1c9954baaca9ef91eff3dd3c853930a5893
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>Criando uma cadeia de Conexão e trabalhar com LocalDB do SQL Server
 ====================
@@ -36,7 +36,7 @@ SQL Server Express não é recomendado para uso em aplicativos da web de produç
 
 No Visual Studio de 2017, o LocalDB é instalado por padrão com o Visual Studio.
 
-Por padrão, o Entity Framework procura uma cadeia de caracteres de conexão que o mesmo nomeada que a classe de contexto de objeto (`MovieDBContext` para este projeto). Para obter mais informações, consulte [cadeias de Conexão do SQL Server para aplicativos Web ASP.NET](https://msdn.microsoft.com/en-us/library/jj653752.aspx).
+Por padrão, o Entity Framework procura uma cadeia de caracteres de conexão que o mesmo nomeada que a classe de contexto de objeto (`MovieDBContext` para este projeto). Para obter mais informações, consulte [cadeias de Conexão do SQL Server para aplicativos Web ASP.NET](https://msdn.microsoft.com/library/jj653752.aspx).
 
 Abra a raiz do aplicativo *Web. config* arquivo mostrado abaixo. (Não o *Web. config* arquivo o *exibições* pasta.)
 
@@ -56,11 +56,11 @@ O exemplo a seguir mostra uma parte do *Web. config* arquivo com a cadeia de car
 
 As cadeias de caracteres de duas conexão são muito semelhantes. A primeira cadeia de caracteres de conexão é denominada `DefaultConnection` e é usado para o banco de dados de associação para controlar quem pode acessar o aplicativo. A cadeia de caracteres de conexão que você adicionou Especifica um banco de dados LocalDB denominado *Movie.mdf* localizado no *aplicativo\_dados* pasta. Nós não usar o banco de dados de associação neste tutorial, para obter mais informações sobre associação, autenticação e segurança, consulte o tutorial [criar um aplicativo ASP.NET MVC com autenticação e o banco de dados SQL e implantar o serviço de aplicativo do Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data).
 
-O nome da cadeia de caracteres de conexão deve corresponder ao nome do [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx) classe.
+O nome da cadeia de caracteres de conexão deve corresponder ao nome do [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx) classe.
 
 [!code-csharp[Main](creating-a-connection-string/samples/sample3.cs?highlight=15)]
 
-Na verdade, não é necessário adicionar o `MovieDBContext` cadeia de caracteres de conexão. Se você não especificar uma cadeia de caracteres de conexão, o Entity Framework criará um banco de dados LocalDB no diretório de usuários com o nome totalmente qualificado do [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx) classe (neste caso `MvcMovie.Models.MovieDBContext`). Você pode nomear o banco de dados que desejar, desde que ele tenha o *. MDF* sufixo. Por exemplo, podemos pode nomear o banco de dados *MyFilms.mdf*.
+Na verdade, não é necessário adicionar o `MovieDBContext` cadeia de caracteres de conexão. Se você não especificar uma cadeia de caracteres de conexão, o Entity Framework criará um banco de dados LocalDB no diretório de usuários com o nome totalmente qualificado do [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx) classe (neste caso `MvcMovie.Models.MovieDBContext`). Você pode nomear o banco de dados que desejar, desde que ele tenha o *. MDF* sufixo. Por exemplo, podemos pode nomear o banco de dados *MyFilms.mdf*.
 
 Em seguida, você criará um novo `MoviesController` classe que você pode usar para exibir os dados do filme e permitir que os usuários criem novas listagens de filme.
 

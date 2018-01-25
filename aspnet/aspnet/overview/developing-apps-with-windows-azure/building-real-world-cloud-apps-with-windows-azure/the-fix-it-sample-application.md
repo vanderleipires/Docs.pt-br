@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 470b8a5f4a004c85f603c9c5d0766e5826c96e38
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c98e79bf8e9a1fe0899ed6d952c3e411ca472f7e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Apêndice: A correção-aplicativo de exemplo (compilação de aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -62,10 +62,10 @@ Um administrador deve ser capaz de alterar a propriedade de tarefas existentes. 
 
 Mensagem da fila de processamento no aplicativo corrigir foi projetada para ser simples para ilustrar o padrão de trabalho centrado em fila com uma quantidade mínima de código. Esse código simple não seria adequado para um aplicativo de produção real.
 
-- O código não garante que cada mensagem da fila será processada no máximo uma vez. Quando você receber uma mensagem da fila, há um período de tempo limite, durante o qual a mensagem está invisível para outros ouvintes de fila. Se o tempo limite expirar antes que a mensagem é excluída, a mensagem se torna visível novamente. Portanto, se uma instância de função de trabalho gasta muito tempo processando uma mensagem, é teoricamente possível para a mesma mensagem ser processado duas vezes, resultando em uma tarefa duplicada no banco de dados. Para obter mais informações sobre esse problema, consulte [filas de armazenamento do Azure usando](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7).
-- A lógica de sondagem de fila pode ser mais econômica, pela recuperação de mensagens de envio em lote. Toda vez que você chamar [CloudQueue.GetMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx), há um custo de transações. Em vez disso, você pode chamar [CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (Observe o plural'), que obtém várias mensagens em uma única transação. Os custos de transações para filas de armazenamento do Azure são muito baixos, portanto, o impacto sobre os custos não é significativo na maioria dos cenários.
+- O código não garante que cada mensagem da fila será processada no máximo uma vez. Quando você receber uma mensagem da fila, há um período de tempo limite, durante o qual a mensagem está invisível para outros ouvintes de fila. Se o tempo limite expirar antes que a mensagem é excluída, a mensagem se torna visível novamente. Portanto, se uma instância de função de trabalho gasta muito tempo processando uma mensagem, é teoricamente possível para a mesma mensagem ser processado duas vezes, resultando em uma tarefa duplicada no banco de dados. Para obter mais informações sobre esse problema, consulte [filas de armazenamento do Azure usando](https://msdn.microsoft.com/library/ff803365.aspx#sec7).
+- A lógica de sondagem de fila pode ser mais econômica, pela recuperação de mensagens de envio em lote. Toda vez que você chamar [CloudQueue.GetMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx), há um custo de transações. Em vez disso, você pode chamar [CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (Observe o plural'), que obtém várias mensagens em uma única transação. Os custos de transações para filas de armazenamento do Azure são muito baixos, portanto, o impacto sobre os custos não é significativo na maioria dos cenários.
 - O loop estreito no código de processamento de mensagens de fila faz com que a afinidade de CPU, o que não utilizam as VMs de vários núcleos com eficiência. Um melhor design usaria o paralelismo de tarefas para executar várias tarefas assíncronas em paralelo.
-- Processamento de mensagens da fila tem o tratamento de exceção apenas rudimentares. Por exemplo, o código não manipula [mensagens suspeitas](https://msdn.microsoft.com/en-us/library/ms789028.aspx). (Quando o processamento da mensagem faz com que uma exceção, você precisa registrar o erro e excluir a mensagem, ou a função de trabalho tentará processá-la novamente, e o loop continuará indefinidamente.)
+- Processamento de mensagens da fila tem o tratamento de exceção apenas rudimentares. Por exemplo, o código não manipula [mensagens suspeitas](https://msdn.microsoft.com/library/ms789028.aspx). (Quando o processamento da mensagem faz com que uma exceção, você precisa registrar o erro e excluir a mensagem, ou a função de trabalho tentará processá-la novamente, e o loop continuará indefinidamente.)
 
 ### <a name="sql-queries-are-unbounded"></a>Consultas SQL são não associadas
 
@@ -85,7 +85,7 @@ Scripts de automação do PowerShell de exemplo foram desenvolvidos apenas para 
 
 ### <a name="special-handling-for-html-codes-in-user-input"></a>Tratamento especial para os códigos HTML na entrada do usuário
 
-ASP.NET impede automaticamente muitas maneiras em que usuários mal-intencionados podem tentar ataques de script entre sites inserindo o script em caixas de texto de entrada do usuário. E o MVC `DisplayFor` auxiliar usada para exibir tarefas títulos e notas automaticamente valores codifica o HTML que ele envia para o navegador. Mas, em um aplicativo de produção, você talvez queira adotar medidas adicionais. Para obter mais informações, consulte [validação de solicitação no ASP.NET](https://msdn.microsoft.com/en-us/library/hh882339.aspx).
+ASP.NET impede automaticamente muitas maneiras em que usuários mal-intencionados podem tentar ataques de script entre sites inserindo o script em caixas de texto de entrada do usuário. E o MVC `DisplayFor` auxiliar usada para exibir tarefas títulos e notas automaticamente valores codifica o HTML que ele envia para o navegador. Mas, em um aplicativo de produção, você talvez queira adotar medidas adicionais. Para obter mais informações, consulte [validação de solicitação no ASP.NET](https://msdn.microsoft.com/library/hh882339.aspx).
 
 <a id="bestpractices"></a>
 ## <a name="best-practices"></a>Práticas recomendadas
@@ -146,13 +146,13 @@ Para exibir código simples, a versão original do aplicativo corrigir não espe
 
 ### <a name="mark-private-members-as-readonly-when-they-arent-expected-to-change"></a>Marcar membros particulares como somente leitura quando elas não são esperadas para alterar
 
-Por exemplo, o `DashboardController` classe uma instância do `FixItTaskRepository` é criada e não é esperado para alterar, então a definimos como [readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx).
+Por exemplo, o `DashboardController` classe uma instância do `FixItTaskRepository` é criada e não é esperado para alterar, então a definimos como [readonly](https://msdn.microsoft.com/library/acdd6hb7.aspx).
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample9.cs?highlight=3)]
 
 ### <a name="use-listany-instead-of-listcount-gt-0"></a>Use a lista. Any () em vez de lista. Contagem &gt; 0
 
-Se você importante é se um ou mais itens em uma lista de ajustam os critérios especificados, use o [qualquer](https://msdn.microsoft.com/en-us/library/bb534972.aspx) método, porque retorna assim que um ajuste os critérios de item for encontrado, enquanto o `Count` sempre tem método iterar em cada item. O painel *cshtml* arquivo originalmente tinha este código:
+Se você importante é se um ou mais itens em uma lista de ajustam os critérios especificados, use o [qualquer](https://msdn.microsoft.com/library/bb534972.aspx) método, porque retorna assim que um ajuste os critérios de item for encontrado, enquanto o `Count` sempre tem método iterar em cada item. O painel *cshtml* arquivo originalmente tinha este código:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample10.cshtml)]
 
@@ -166,13 +166,13 @@ Para o **criar um Fix It** botão na home page, corrigir aplicativo rígido codi
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample12.cshtml)]
 
-Para links de ação/exibição como isso é melhor usar o [URL](https://msdn.microsoft.com/en-us/library/system.web.mvc.urlhelper.action.aspx) auxiliar HTML, por exemplo:
+Para links de ação/exibição como isso é melhor usar o [URL](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.action.aspx) auxiliar HTML, por exemplo:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample13.cshtml)]
 
 ### <a name="use-taskdelay-instead-of-threadsleep-in-worker-role"></a>Use Task.Delay em vez de thread. Sleep em função de trabalho
 
-O modelo de projeto novo coloca `Thread.Sleep` no exemplo de código para uma função de trabalho, mas fazendo com que o thread em suspensão pode causar o pool de threads gerar mais threads desnecessários. Você pode evitar que usando [Task.Delay](https://msdn.microsoft.com/en-us/library/hh139096.aspx) em vez disso.
+O modelo de projeto novo coloca `Thread.Sleep` no exemplo de código para uma função de trabalho, mas fazendo com que o thread em suspensão pode causar o pool de threads gerar mais threads desnecessários. Você pode evitar que usando [Task.Delay](https://msdn.microsoft.com/library/hh139096.aspx) em vez disso.
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample14.cs?highlight=11)]
 
@@ -184,11 +184,11 @@ Este exemplo é proveniente de `FixItQueueManager` classe:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-Você deve usar `async void` apenas para manipuladores de eventos de nível superior. Se você definir um método como `async void`, o chamador não é possível **await** o método ou capturar qualquer exceção que o método gera. Para obter mais informações, consulte [as práticas recomendadas de programação assíncrona](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx). 
+Você deve usar `async void` apenas para manipuladores de eventos de nível superior. Se você definir um método como `async void`, o chamador não é possível **await** o método ou capturar qualquer exceção que o método gera. Para obter mais informações, consulte [as práticas recomendadas de programação assíncrona](https://msdn.microsoft.com/magazine/jj991977.aspx). 
 
 ### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>Use um token de cancelamento para quebra de loop de função de trabalho
 
-Normalmente, o **executar** método em uma função de trabalho contém um loop infinito. Quando a função de trabalho está sendo interrompido, o [RoleEntryPoint](https://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) método é chamado. Você deve usar esse método para cancelar o trabalho que está sendo feito dentro de **executar** método e sair normalmente. Caso contrário, o processo pode ser finalizado no meio de uma operação.
+Normalmente, o **executar** método em uma função de trabalho contém um loop infinito. Quando a função de trabalho está sendo interrompido, o [RoleEntryPoint](https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) método é chamado. Você deve usar esse método para cancelar o trabalho que está sendo feito dentro de **executar** método e sair normalmente. Caso contrário, o processo pode ser finalizado no meio de uma operação.
 
 ### <a name="opt-out-of-automatic-mime-sniffing-procedure"></a>Recusar o procedimento de detecção automática de MIME
 
@@ -219,7 +219,7 @@ Há duas maneiras de executar o aplicativo corrigir:
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>Executar o aplicativo básico
 
-1. Instalar [Visual Studio 2013 ou o Visual Studio 2013 Express para Web](https://www.visualstudio.com/en-us/downloads).
+1. Instalar [Visual Studio 2013 ou o Visual Studio 2013 Express para Web](https://www.visualstudio.com/downloads).
 2. Instalar o [SDK do Azure para .NET para Visual Studio 2013.](https://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409)
 3. Baixe o arquivo. zip do [Galeria de códigos do MSDN](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4).
 4. No Explorador de arquivos, clique com botão direito no arquivo. zip e clique em propriedades, na janela Propriedades, clique em Desbloquear.
@@ -228,7 +228,7 @@ Há duas maneiras de executar o aplicativo corrigir:
 7. No menu Ferramentas, clique em Gerenciador de biblioteca de pacote e, em seguida, Package Manager Console.
 8. No pacote Manager Console (PMC), clique em Restaurar.
 9. Sair do Visual Studio.
-10. Iniciar o [emulador de armazenamento do Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh403989.aspx).
+10. Iniciar o [emulador de armazenamento do Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx).
 11. Reinicie o Visual Studio, abrir o arquivo de solução que você encerrou na etapa anterior.
 12. Verifique se que o projeto FixIt está definido como o projeto de inicialização e, em seguida, pressione CTRL + F5 para executar o projeto.
 
@@ -240,7 +240,7 @@ Há duas maneiras de executar o aplicativo corrigir:
 3. No aplicativo *Web. config* arquivo o *MyFixIt* (o projeto da web) do projeto, altere o valor de `appSettings/UseQueues` como "true": 
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
-4. Se o [emulador de armazenamento do Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh403989.aspx) não está em execução, inicie-o novamente.
+4. Se o [emulador de armazenamento do Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx) não está em execução, inicie-o novamente.
 5. Execute o projeto web FixIt e o projeto MyFixItCloudService simultaneamente.
 
     Usando o Visual Studio 2013:
@@ -397,7 +397,7 @@ No MyFixItCloudService\ServiceConfiguration.Cloud.cscfg, substitua os mesmos doi
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample34.xml?highlight=3)]
 
-Agora você está pronto para implantar o serviço de nuvem. No Gerenciador de soluções, clique com botão direito no projeto MyFixItCloudService e selecione **publicar**. Para obter mais informações, consulte "[implantar o aplicativo no Azure](https://www.windowsazure.com/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", que está na parte 2 de [este tutorial](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
+Agora você está pronto para implantar o serviço de nuvem. No Gerenciador de soluções, clique com botão direito no projeto MyFixItCloudService e selecione **publicar**. Para obter mais informações, consulte "[implantar o aplicativo no Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", que está na parte 2 de [este tutorial](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
 
 >[!div class="step-by-step"]
 [Anterior](more-patterns-and-guidance.md)

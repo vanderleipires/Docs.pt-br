@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a1f1b2c2e60a1337c15f019185c764d0a9ada1b5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Auxiliares de marcação de autor no núcleo do ASP.NET, um passo a passo com exemplos
 
@@ -208,7 +208,7 @@ Você também pode usar o `[HtmlTargetElement]` para alterar o nome do elemento 
     [HtmlTargetElement("WebsiteInformation")]
     ```
     
-    A marca de caso kebab inferior `<website-information />` não serão compatíveis. Se você deseja usar o `[HtmlTargetElement]` atributo, você usaria caso kebab conforme mostrado abaixo:
+    A marca de caso kebab inferior `<website-information />` não correspondem. Se você deseja usar o `[HtmlTargetElement]` atributo, você usaria caso kebab conforme mostrado abaixo:
     
     ```csharp
     [HtmlTargetElement("Website-Information")]
@@ -306,7 +306,7 @@ Como esses dois auxiliares estão intimamente relacionados e pode refatorá-los 
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?highlight=15-34&range=7-34)]
 
-5.  Execute o aplicativo. Observe o texto www é renderizado como um link, mas o texto HTTP não está. Se você colocar um ponto de interrupção em ambas as classes, você pode ver que a classe do auxiliar de marca HTTP é executado primeira. O problema é que a saída do auxiliar de marca é armazenado em cache e quando o auxiliar de marca da Web é executado, ele substitui a saída do cache do auxiliar de marca HTTP. Posteriormente no tutorial, veremos como controlar a ordem de auxiliares de marcação executados no. Corrigiremos o código com o seguinte:
+5.  Execute o aplicativo. Observe o texto www é renderizado como um link, mas não o texto HTTP. Se você colocar um ponto de interrupção em ambas as classes, você pode ver que a classe do auxiliar de marca HTTP é executado primeira. O problema é que a saída do auxiliar de marca é armazenado em cache e quando o auxiliar de marca da Web é executado, ele substitui a saída do cache do auxiliar de marca HTTP. Posteriormente no tutorial, veremos como controlar a ordem de auxiliares de marcação executados no. Corrigiremos o código com o seguinte:
 
     [!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10,21,22,26&range=8-37)]
 
@@ -333,8 +333,8 @@ Os auxiliares de marca fornecem várias propriedades para recuperar o conteúdo.
 
 -  O resultado de `GetChildContentAsync` pode ser anexada à `output.Content`.
 -  Você pode inspecionar o resultado de `GetChildContentAsync` com `GetContent`.
--  Se você modificar `output.Content`, o corpo da TagHelper não será executado ou renderizado a menos que você chame `GetChildContentAsync` como em nosso exemplo de vinculador automática:
+-  Se você modificar `output.Content`, o corpo da TagHelper não ser executado ou renderizado a menos que você chame `GetChildContentAsync` como em nosso exemplo de vinculador automática:
 
 [!code-csharp[Main](../../views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10&range=8-21)]
 
--  Diversas chamadas para `GetChildContentAsync` retornará o mesmo valor e não será executado novamente o `TagHelper` corpo, a menos que você passar um parâmetro false indicando que não use o resultado em cache.
+-  Diversas chamadas para `GetChildContentAsync` retorna o mesmo valor e não executar novamente o `TagHelper` corpo, a menos que você passe um parâmetro false que indica para não usar o resultado em cache.

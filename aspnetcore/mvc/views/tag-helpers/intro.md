@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 003a22d4b0d9400f3e9effe0892d2d7e03704cde
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3c198ccc3e3e2c11f3e2b9379bc63bd6428dbf69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introdução ao auxiliares de marcação no núcleo do ASP.NET 
 
@@ -22,7 +22,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="what-are-tag-helpers"></a>Quais são os auxiliares de marcação?
 
-Auxiliares de marcação permitem que o código do lado do servidor participar de criação e renderização de elementos HTML em arquivos do Razor. Por exemplo, o interno `ImageTagHelper` pode acrescentar um número de versão para o nome da imagem. Sempre que a imagem é alterada, o servidor gera uma nova versão exclusiva para a imagem, para que os clientes têm garantia de obter a imagem atual (em vez de uma imagem em cache obsoleta). Há muitos auxiliares de marcação interna para tarefas comuns - como a criação de formulários, links, ativos de carregamento e pacotes mais - e ainda mais disponíveis em repositórios GitHub públicos e como NuGet. Auxiliares de marca são criados no c#, e eles se destinam a elementos HTML com base no nome do elemento, o nome do atributo ou marca pai. Por exemplo, o interno `LabelTagHelper` pode direcionar o HTML `<label>` elemento quando o `LabelTagHelper` atributos são aplicados. Se você estiver familiarizado com [auxiliares HTML](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers), auxiliares de marcação reduzir as transições explícitas entre HTML e c# em modos de exibição do Razor. Em muitos casos, auxiliares HTML fornecem uma abordagem alternativa para um auxiliar de marca específica, mas é importante reconhecer que auxiliares de marcação não substituem auxiliares HTML e não é um auxiliar de marca para cada auxiliar HTML. [Em comparação comparados auxiliares HTML de auxiliares de marcação](#tag-helpers-compared-to-html-helpers) explica as diferenças em mais detalhes.
+Auxiliares de marcação permitem que o código do lado do servidor participar de criação e renderização de elementos HTML em arquivos do Razor. Por exemplo, o interno `ImageTagHelper` pode acrescentar um número de versão para o nome da imagem. Sempre que a imagem é alterada, o servidor gera uma nova versão exclusiva para a imagem, para que os clientes têm garantia de obter a imagem atual (em vez de uma imagem em cache obsoleta). Há muitos auxiliares de marcação interna para tarefas comuns - como a criação de formulários, links, ativos de carregamento e pacotes mais - e ainda mais disponíveis em repositórios GitHub públicos e como NuGet. Auxiliares de marca são criados no c#, e eles se destinam a elementos HTML com base no nome do elemento, o nome do atributo ou marca pai. Por exemplo, o interno `LabelTagHelper` pode direcionar o HTML `<label>` elemento quando o `LabelTagHelper` atributos são aplicados. Se você estiver familiarizado com [auxiliares HTML](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers), auxiliares de marcação reduzir as transições explícitas entre HTML e c# em modos de exibição do Razor. Em muitos casos, auxiliares HTML fornecem uma abordagem alternativa para um auxiliar de marca específica, mas é importante reconhecer que auxiliares de marcação não substitua auxiliares HTML e não é um auxiliar de marca para cada auxiliar HTML. [Em comparação comparados auxiliares HTML de auxiliares de marcação](#tag-helpers-compared-to-html-helpers) explica as diferenças em mais detalhes.
 
 ## <a name="what-tag-helpers-provide"></a>O que fornece os auxiliares de marcação
 
@@ -112,7 +112,7 @@ O `@tagHelperPrefix` diretiva permite que você especifique uma cadeia de caract
 ```cshtml
 @tagHelperPrefix th:
 ```
-A imagem do código abaixo, o prefixo de marca auxiliar é definido como `th:`, portanto, somente esses elementos usando o prefixo `th:` suporte auxiliares de marcação (elementos de auxiliar de marca tem uma fonte diferente). O `<label>` e `<input>` elementos têm o prefixo de marca auxiliar e são habilitados para auxiliar de marca, enquanto o `<span>` elemento não.
+A imagem do código abaixo, o prefixo de marca auxiliar é definido como `th:`, portanto, somente esses elementos usando o prefixo `th:` suporte auxiliares de marcação (elementos de auxiliar de marca tem uma fonte diferente). O `<label>` e `<input>` elementos têm o prefixo de marca auxiliar e são habilitados para auxiliar de marca, enquanto o `<span>` não do elemento.
 
 ![imagem](intro/_static/thp.png)
 
@@ -192,7 +192,7 @@ gera:
 <label class="caption" for="FirstName">First Name</label>
 ```
 
-O concatenados para conteúdo de maiusculas e minúsculas frase não será usado se você adicionar conteúdo para o `<label>`. Por exemplo:
+O concatenados para conteúdo de maiusculas e minúsculas frase não não usado se você adicionar conteúdo para o `<label>`. Por exemplo:
 
 ![imagem](intro/_static/1stName.png)
 

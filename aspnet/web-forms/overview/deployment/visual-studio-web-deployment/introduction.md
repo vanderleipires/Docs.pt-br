@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: e14f3bed001592c85bdbba868f51141bc52a9470
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Implantação de Web do ASP.NET usando o Visual Studio: Introdução
 ====================
@@ -35,7 +35,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Este conteúdo também está disponível como um e-book gratuito no [na Galeria do TechNet E-Book](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#ASPNETWebDeploymentusingVisualStudio).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Esses tutoriais orientam você na implantação de um aplicativo web ASP.NET que inclui bancos de dados do SQL Server. Você implantará primeiro para o IIS no computador de desenvolvimento local para teste e, em seguida, para aplicativos Web no serviço de aplicativo do Azure e banco de dados SQL Azure para preparação e produção. Você verá como implantar usando o Visual Studio, um clique para publicar, e você verá como implantar usando a linha de comando.
 
@@ -53,7 +53,7 @@ Os tutoriais são destinados a desenvolvedores do ASP.NET que trabalham em ambie
 Implantação de [controle de origem](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md) usando um [fornecimento contínuo](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) processo não é abordado esses tutoriais, exceto um tutorial que mostra como implantar a partir da linha de comando. Para obter informações sobre a entrega contínua, consulte os seguintes recursos:
 
 - [Integração contínua e fornecimento contínuo (Criando aplicativos de nuvem do mundo Real com o Windows Azure)](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
-- [Implantar um aplicativo web no serviço de aplicativo do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/)
+- [Implantar um aplicativo web no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
 - [Implantando aplicativos da Web em cenários corporativos](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md) (um conjunto mais antigo de tutoriais escritos para o Visual Studio 2010, que ainda tem informações úteis para ambientes corporativos.)
 
 ## <a name="using-a-third-party-hosting-provider"></a>Usando um provedor de hospedagem de terceiros
@@ -130,7 +130,7 @@ Se você estiver usando o Visual Studio 2010 SP1, instale o software a seguir:
 
 - [SDK do Azure para Visual Studio 2010](https://go.microsoft.com/fwlink/?LinkID=254269)
 - [SQL Server Express LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=SQLLocalDBOnly_11_0)
-- [SQL Server Data Tools](https://msdn.microsoft.com/en-us/library/hh500335.aspx).
+- [SQL Server Data Tools](https://msdn.microsoft.com/library/hh500335.aspx).
 
 Dependendo de quantos das dependências do SDK você já tem em seu computador, a instalação do SDK do Azure pode levar muito tempo, de alguns minutos a meia hora ou mais. É necessário o SDK do Azure, mesmo se você pretende publicar em um provedor de hospedagem de terceiros em vez de para o Azure, como o SDK inclui as atualizações mais recentes da web do Visual Studio publicar recursos.
 
@@ -169,7 +169,7 @@ Para preparar o projeto para realizar as etapas do tutoriais, execute as seguint
 
     O aplicativo abre a home page do Contoso University.
 
-    ![Desenvolvimento de página inicial](introduction/_static/image1.png)
+    ![Home Page Dev](introduction/_static/image1.png)
 
     (Pode haver um tempo de espera enquanto o Visual Studio inicia a instância do SQL Server Express LocalDB, e você poderá obter um erro de tempo limite se que o processo leva muito tempo. Nesse caso apenas inicie o projeto novamente.)
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f7ab0df2ebfa24b0928117e683325b158e3aad1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cfd0cdb0afe3bf71686715c0b1891adfbbd5019a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>Classificando dados em um controle de Repetidor (c#) ou DataList
 ====================
@@ -81,7 +81,7 @@ A Figura 3 mostra essa página quando visualizada através de um navegador.
 
 ## <a name="step-3-instructing-the-objectdatasource-to-sort-the-data"></a>Etapa 3: Instruindo ObjectDataSource para classificar os dados
 
-Para classificar os dados exibidos no repetidor, é necessário informar o ObjectDataSource da expressão de classificação pelo qual os dados devem ser classificados. Antes do ObjectDataSource recupera seus dados, primeiro dispara seu [ `Selecting` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), que fornece uma oportunidade especificar uma expressão de classificação. O `Selecting` manipulador de eventos é passado um objeto do tipo [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), que tem uma propriedade chamada [ `Arguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) do tipo [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx). O `DataSourceSelectArguments` classe é projetado para passar solicitações relacionadas a dados de um consumidor de dados para o controle de fonte de dados e inclui uma [ `SortExpression` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.sortexpression.aspx).
+Para classificar os dados exibidos no repetidor, é necessário informar o ObjectDataSource da expressão de classificação pelo qual os dados devem ser classificados. Antes do ObjectDataSource recupera seus dados, primeiro dispara seu [ `Selecting` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), que fornece uma oportunidade especificar uma expressão de classificação. O `Selecting` manipulador de eventos é passado um objeto do tipo [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), que tem uma propriedade chamada [ `Arguments` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) do tipo [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx). O `DataSourceSelectArguments` classe é projetado para passar solicitações relacionadas a dados de um consumidor de dados para o controle de fonte de dados e inclui uma [ `SortExpression` propriedade](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx).
 
 Para transmitir informações de classificação de página ASP.NET para ObjectDataSource, criar um manipulador de eventos para o `Selecting` evento e use o código a seguir:
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a6a90a03674cfe7565da0ed56148186ee9525707
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d46e2697d10ca27f8e08533350a6e7f2354b4a43
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-content-to-source-control"></a>Adicionar conteúdo ao controle de origem
 ====================
@@ -90,7 +90,7 @@ Para adicionar soluções e projetos ao controle de origem, primeiro será neces
 1. Em sua estação de trabalho do desenvolvedor, mova seus projetos e soluções em um local apropriado dentro da estrutura de pasta mapeada para o projeto de equipe.
 
     > [!NOTE]
-    > Muitas organizações terão uma abordagem preferencial como projetos e soluções devem ser organizados em controle de origem. Para obter orientação sobre como pastas de estrutura, consulte [como: controle de pastas de origem sua estrutura no Team Foundation Server](https://msdn.microsoft.com/en-us/library/bb668992.aspx).
+    > Muitas organizações terão uma abordagem preferencial como projetos e soluções devem ser organizados em controle de origem. Para obter orientação sobre como pastas de estrutura, consulte [como: controle de pastas de origem sua estrutura no Team Foundation Server](https://msdn.microsoft.com/library/bb668992.aspx).
 2. Abra a solução no Visual Studio 2010.
 3. No **Solution Explorer** janela, clique com botão direito a solução e, em seguida, clique em **adicionar solução ao controle de origem**.
 
@@ -149,13 +149,13 @@ Neste ponto, você adicionou as dependências externas para sua solução ao con
 
 ## <a name="conclusion"></a>Conclusão
 
-Este tópico descrita como se conectar a um projeto de equipe, mapear uma estrutura de pasta e adicionar conteúdo ao controle de origem. Para obter mais informações sobre como trabalhar com itens sob controle de origem, consulte [usando o controle de versão](https://msdn.microsoft.com/en-us/library/ms181368.aspx).
+Este tópico descrita como se conectar a um projeto de equipe, mapear uma estrutura de pasta e adicionar conteúdo ao controle de origem. Para obter mais informações sobre como trabalhar com itens sob controle de origem, consulte [usando o controle de versão](https://msdn.microsoft.com/library/ms181368.aspx).
 
 O próximo tópico, [Configurando um servidor de compilação do TFS para implantação da Web](configuring-a-tfs-build-server-for-web-deployment.md), descreve como preparar um servidor TFS Team Build para compilar e implantar sua solução.
 
 ## <a name="further-reading"></a>Leitura adicional
 
-Para obter informações mais abrangentes sobre como trabalhar com o controle de origem no TFS, consulte [usando o controle de versão](https://msdn.microsoft.com/en-us/library/ms181368.aspx).
+Para obter informações mais abrangentes sobre como trabalhar com o controle de origem no TFS, consulte [usando o controle de versão](https://msdn.microsoft.com/library/ms181368.aspx).
 
 >[!div class="step-by-step"]
 [Anterior](creating-a-team-project-in-tfs.md)

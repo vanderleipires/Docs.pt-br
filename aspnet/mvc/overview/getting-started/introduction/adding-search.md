@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-search
-title: Pesquisa | Microsoft Docs
+title: Search | Microsoft Docs
 author: Rick-Anderson
 description: 
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: 10457d154f5fda875f7d1054d48daeeba3a50b7c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 116f681e14af0a09a4eb1502ef9f057c5db2f97d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="search"></a>Pesquisar
 ====================
@@ -34,7 +34,7 @@ Inicie atualizando o `Index` método de ação existente `MoviesController` clas
 
 [!code-csharp[Main](adding-search/samples/sample1.cs?highlight=1,6-9)]
 
-A primeira linha do `Index` método cria a seguinte [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) consulta para selecionar os filmes:
+A primeira linha do `Index` método cria a seguinte [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) consulta para selecionar os filmes:
 
 [!code-csharp[Main](adding-search/samples/sample2.cs)]
 
@@ -44,10 +44,10 @@ Se o `searchString` parâmetro contém uma cadeia de caracteres, a consulta de f
 
 [!code-csharp[Main](adding-search/samples/sample3.cs)]
 
-O código `s => s.Title` acima é uma [Expressão Lambda](https://msdn.microsoft.com/en-us/library/bb397687.aspx). Lambdas são usados no método [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) consultas como argumentos para métodos de operadores de consulta padrão, como o [onde](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.where.aspx) método usado no código acima. Consultas LINQ não são executadas quando elas são definidas ou quando eles são modificados chamando um método como `Where` ou `OrderBy`. Em vez disso, a execução da consulta é adiada, o que significa que a avaliação de uma expressão é atrasada até que seu valor realizada na verdade é iterada ou [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) método é chamado. No `Search` exemplo, a consulta é executada no *cshtml* exibição. Para obter mais informações sobre a execução de consulta adiada, consulte [Execução da consulta](https://msdn.microsoft.com/en-us/library/bb738633.aspx).
+O código `s => s.Title` acima é uma [Expressão Lambda](https://msdn.microsoft.com/library/bb397687.aspx). Lambdas são usados no método [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) consultas como argumentos para métodos de operadores de consulta padrão, como o [onde](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx) método usado no código acima. Consultas LINQ não são executadas quando elas são definidas ou quando eles são modificados chamando um método como `Where` ou `OrderBy`. Em vez disso, a execução da consulta é adiada, o que significa que a avaliação de uma expressão é atrasada até que seu valor realizada na verdade é iterada ou [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) método é chamado. No `Search` exemplo, a consulta é executada no *cshtml* exibição. Para obter mais informações sobre a execução de consulta adiada, consulte [Execução da consulta](https://msdn.microsoft.com/library/bb738633.aspx).
 
 > [!NOTE]
-> O [contém](https://msdn.microsoft.com/en-us/library/bb155125.aspx) método é executado no banco de dados, não o código c# acima. No banco de dados, [contém](https://msdn.microsoft.com/en-us/library/bb155125.aspx) mapeia para [SQL como](https://msdn.microsoft.com/en-us/library/ms179859.aspx), que diferencia maiusculas de minúsculas.
+> O [contém](https://msdn.microsoft.com/library/bb155125.aspx) método é executado no banco de dados, não o código c# acima. No banco de dados, [contém](https://msdn.microsoft.com/library/bb155125.aspx) mapeia para [SQL como](https://msdn.microsoft.com/library/ms179859.aspx), que diferencia maiusculas de minúsculas.
 
 Agora você pode atualizar o `Index` modo de exibição que exibirá o formulário para o usuário.
 
@@ -123,7 +123,7 @@ O código a seguir é uma consulta LINQ que recupera todos os gêneros do banco 
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-O código usa o `AddRange` método genérica `List` coleção para adicionar todos os gêneros distintos à lista. (Sem o `Distinct` modificador, gêneros duplicados serão adicionados, por exemplo, comédia poderia ser adicionada duas vezes em nosso exemplo). O código, em seguida, armazena a lista de gêneros no `ViewBag.MovieGenre` objeto. Armazenando dados de categoria (do tal um filme gênero) como um [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) do objeto em um `ViewBag`, acessando os dados de categoria em uma caixa de lista suspensa é uma abordagem típica para aplicativos MVC.
+O código usa o `AddRange` método genérica `List` coleção para adicionar todos os gêneros distintos à lista. (Sem o `Distinct` modificador, gêneros duplicados serão adicionados, por exemplo, comédia poderia ser adicionada duas vezes em nosso exemplo). O código, em seguida, armazena a lista de gêneros no `ViewBag.MovieGenre` objeto. Armazenando dados de categoria (do tal um filme gênero) como um [SelectList](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx) do objeto em um `ViewBag`, acessando os dados de categoria em uma caixa de lista suspensa é uma abordagem típica para aplicativos MVC.
 
 O código a seguir mostra como verificar o `movieGenre` parâmetro. Se não estiver vazia, o código adicional restringe a consulta de filmes para limitar os filmes selecionados para o gênero especificado.
 

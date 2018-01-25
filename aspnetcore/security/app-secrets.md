@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: e2c11b768098b3d92ef702e0daad746963dc3856
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 94356cef7a0333f0faac6420b1b5425920b99deb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo durante o desenvolvimento no núcleo do ASP.NET
 
@@ -37,7 +37,7 @@ Por exemplo, se você criar um novo aplicativo web ASP.NET Core com contas de us
 A ferramenta Gerenciador de segredo armazena dados confidenciais para o trabalho de desenvolvimento fora da árvore do projeto. A ferramenta Gerenciador de segredo é uma ferramenta de projeto que pode ser usada para armazenar segredos para um [.NET Core](https://www.microsoft.com/net/core) projeto durante o desenvolvimento. Com a ferramenta Gerenciador de segredo, você pode associar os segredos do aplicativo um projeto específico e compartilhá-los em vários projetos.
 
 >[!WARNING]
-> A ferramenta Gerenciador de segredo não criptografar os segredos armazenados e não deve ser tratada como um repositório confiável. Ele destina-se apenas para fins de desenvolvimento. As chaves e valores são armazenados em um arquivo de configuração JSON no diretório de perfil do usuário.
+> A ferramenta Gerenciador de segredo não criptografa os segredos armazenados e não deve ser tratada como um repositório confiável. Ele destina-se apenas para fins de desenvolvimento. As chaves e valores são armazenados em um arquivo de configuração JSON no diretório de perfil do usuário.
 
 ## <a name="installing-the-secret-manager-tool"></a>Instalando a ferramenta Gerenciador de segredo
 
@@ -122,7 +122,7 @@ A ferramenta Gerenciador de segredo abstrai os detalhes de implementação, como
 
 O valor de `userSecretsId` vem do valor especificado em *. csproj* arquivo.
 
-Você não deve gravar o código que depende do local ou o formato dos dados salvos com a ferramenta Gerenciador de segredo, como esses detalhes de implementação podem ser alterado. Por exemplo, os valores secretos são atualmente *não* criptografado hoje, mas pode ser um dia.
+Você não deve escrever código que depende do local ou o formato dos dados salvos com a ferramenta Gerenciador de segredo, como esses detalhes de implementação podem ser alterado. Por exemplo, os valores secretos são atualmente *não* criptografado hoje, mas pode ser um dia.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

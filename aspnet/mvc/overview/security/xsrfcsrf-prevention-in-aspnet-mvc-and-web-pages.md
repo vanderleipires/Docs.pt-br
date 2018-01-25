@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 4ff4ed20d0768a48f8afb2deeb7cdb6b4c60b5bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6cf30daa7ed966b11405cec715c5bc803b567249
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>Prevenção de XSRF/CSRF no ASP.NET MVC e páginas da Web
 ====================
@@ -73,9 +73,9 @@ A verificação de solicitação XSRF *o token de sessão* é armazenado como um
 O *token de campo* é armazenado como um `<input type="hidden" />` e contém as seguintes informações na sua carga:
 
 - Nome do usuário conectado (se autenticado).
-- Dados adicionais fornecidos por um [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx).
+- Dados adicionais fornecidos por um [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx).
 
-As cargas dos tokens de anti-XSRF estão criptografadas e assinadas, para que você não pode exibir o nome de usuário ao usar as ferramentas para examinar os tokens. Quando o aplicativo web está direcionando o ASP.NET 4.0, os serviços de criptografia são fornecidos pelo [MachineKey.Encode](https://msdn.microsoft.com/en-us/library/system.web.security.machinekey.encode.aspx) rotina. Quando o aplicativo web está voltado para ASP.NET 4.5 ou superior de serviços criptográficos fornecidos pelo [Protect](https://msdn.microsoft.com/en-us/library/system.web.security.machinekey.protect(v=vs.110)) rotina, que oferece melhor desempenho, segurança e extensibilidade. Consulte que postagens de blog a seguir para obter mais detalhes:
+As cargas dos tokens de anti-XSRF estão criptografadas e assinadas, para que você não pode exibir o nome de usuário ao usar as ferramentas para examinar os tokens. Quando o aplicativo web está direcionando o ASP.NET 4.0, os serviços de criptografia são fornecidos pelo [MachineKey.Encode](https://msdn.microsoft.com/library/system.web.security.machinekey.encode.aspx) rotina. Quando o aplicativo web está voltado para ASP.NET 4.5 ou superior de serviços criptográficos fornecidos pelo [Protect](https://msdn.microsoft.com/library/system.web.security.machinekey.protect(v=vs.110)) rotina, que oferece melhor desempenho, segurança e extensibilidade. Consulte que postagens de blog a seguir para obter mais detalhes:
 
 - [Aprimoramentos de criptografia no ASP.NET 4.5, pt. 1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
 - [Aprimoramentos de criptografia no ASP.NET 4.5, pt. 2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
@@ -83,19 +83,19 @@ As cargas dos tokens de anti-XSRF estão criptografadas e assinadas, para que vo
 
 ## <a name="generating-the-tokens"></a>Geração de tokens
 
-Para gerar tokens de anti-XSRF, chame o [ @Html.AntiForgeryToken ](https://msdn.microsoft.com/en-us/library/dd470175.aspx) método de um modo de exibição do MVC ou @AntiForgery.GetHtml() de uma página do Razor. O tempo de execução, em seguida, executará as seguintes etapas:
+Para gerar tokens de anti-XSRF, chame o [ @Html.AntiForgeryToken ](https://msdn.microsoft.com/library/dd470175.aspx) método de um modo de exibição do MVC ou @AntiForgery.GetHtml() de uma página do Razor. O tempo de execução, em seguida, executará as seguintes etapas:
 
 1. Se a solicitação HTTP atual já contém um token de sessão de anti-XSRF (o cookie de anti-XSRF \_ \_RequestVerificationToken), o token de segurança é extraído dele. Se a solicitação HTTP não contém um token de sessão de anti-XSRF ou se uma falha na extração do token de segurança, um novo token anti-XSRF aleatória será gerado.
-2. Um token de campo de anti-XSRF é gerado usando o token de segurança da etapa (1) acima e a identidade do usuário atual fez logon. (Para obter mais informações sobre como determinar a identidade do usuário, consulte o  **[cenários com suporte especial](#_Scenarios_with_special)**  seção abaixo.) Além disso, se um [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/jj158328(v=vs.111).aspx) é configurado, o tempo de execução chamará o [GetAdditionalData](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx) método e incluir a cadeia de caracteres retornada no token de campo. (Consulte o  **[configuração e extensibilidade](#_Configuration_and_extensibility)**  para obter mais informações.)
+2. Um token de campo de anti-XSRF é gerado usando o token de segurança da etapa (1) acima e a identidade do usuário atual fez logon. (Para obter mais informações sobre como determinar a identidade do usuário, consulte o  **[cenários com suporte especial](#_Scenarios_with_special)**  seção abaixo.) Além disso, se um [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx) é configurado, o tempo de execução chamará o [GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx) método e incluir a cadeia de caracteres retornada no token de campo. (Consulte o  **[configuração e extensibilidade](#_Configuration_and_extensibility)**  para obter mais informações.)
 3. Se um novo token anti-XSRF foi gerado na etapa (1), um token de nova sessão será criado para contê-lo e será adicionado à coleção de cookies HTTP de saída. O token de campo da etapa (2) será encapsulado em um `<input type="hidden" />` elemento e essa marcação HTML será o valor de retorno `Html.AntiForgeryToken()` ou `AntiForgery.GetHtml()`.
 
 ## <a name="validating-the-tokens"></a>Valida os tokens
 
-Para validar os tokens de anti-XSRF a entrada, o desenvolvedor inclui um [ValidateAntiForgeryToken](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute(VS.108).aspx) atributo em sua ação do MVC ou controlador ou chamadas she `@AntiForgery.Validate()` da sua página de Razor. O tempo de execução executará as seguintes etapas:
+Para validar os tokens de anti-XSRF a entrada, o desenvolvedor inclui um [ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(VS.108).aspx) atributo em sua ação do MVC ou controlador ou chamadas she `@AntiForgery.Validate()` da sua página de Razor. O tempo de execução executará as seguintes etapas:
 
 1. O token de sessão de entrada e o token de campo são lidos e o token anti-XSRF extraídos de cada um. Os tokens de anti-XSRF devem ser idênticos por etapa (2) na rotina de geração.
 2. Se o usuário atual é autenticado, seu nome de usuário é comparado com o nome de usuário armazenado no token de campo. Os nomes de usuário devem corresponder.
-3. Se um [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) estiver configurado, o tempo de execução chama seu *ValidateAdditionalData* método. O método deve retornar o valor booliano *true*.
+3. Se um [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) estiver configurado, o tempo de execução chama seu *ValidateAdditionalData* método. O método deve retornar o valor booliano *true*.
 
 Se a validação for bem-sucedida, a solicitação pode continuar. Se a validação falhar, o framework lançará um *HttpAntiForgeryException*.
 
@@ -108,7 +108,7 @@ Começando com o ASP.NET Web pilha Runtime v2, qualquer *HttpAntiForgeryExceptio
 - O token de sessão e o token de campo foram trocadas.
 - O token de sessão e o token de campo contém tokens de segurança incompatível.
 - O nome de usuário inserido dentro do token de campo não coincide com nome de usuário fez logon do usuário atual.
-- O  *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)*  retornados pelo método *false*.
+- O  *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)*  retornados pelo método *false*.
 
 As instalações de anti-XSRF também podem executar a verificação adicional durante a geração de token ou validação e falhas durante essas verificações podem resultar em exceções que está sendo geradas. Consulte o [WIF / ACS / baseada em declarações autenticação](#_WIF_ACS) e  **[configuração e extensibilidade](#_Configuration_and_extensibility)**  seções para obter mais informações.
 
@@ -130,12 +130,12 @@ Normalmente, o *IIdentity* classes internas para o .NET Framework tem a propried
 
 Autenticação baseada em declarações, por outro lado, não necessariamente exigem a identificação de um usuário específico. Em vez disso, o *ClaimsPrincipal* e *ClaimsIdentity* tipos são associados um conjunto de *declaração* instâncias, onde as declarações individuais podem ser "é de 18 anos de idade" ou " é um administrador"para qualquer outra coisa. Como o usuário não necessariamente foi identificado, o tempo de execução não pode usar o *ClaimsIdentity.Name* a propriedade como um identificador exclusivo para esse usuário específico. A equipe viu exemplos do mundo real onde *ClaimsIdentity.Name* retorna *nulo*, retorna um nome amigável (exibição) ou, caso contrário, retorna uma cadeia de caracteres que não é apropriada para uso como um identificador exclusivo para o usuário.
 
-Muitas implantações que usam a autenticação baseada em declarações estão usando [Azure Access Control Service](https://msdn.microsoft.com/en-us/library/windowsazure/gg429786.aspx) (ACS) em particular. ACS permite que o desenvolvedor configure individuais *provedores de identidade* (como o AD FS, o provedor do Microsoft Account, provedores de OpenID como Yahoo!, etc.), e os provedores de identidade retornam *nome identificadores*. Esses identificadores de nome podem conter informações pessoalmente identificáveis (PII) como um endereço de email, ou eles podem ser anônimas como um privada PPID (identificador pessoal). Independentemente, a tupla (provedor de identidade, identificador de nome) suficientemente serve como um token de controle apropriado para um determinado usuário enquanto ela estiver navegando no site, então o tempo de execução de pilha do ASP.NET Web pode usar a tupla no lugar do nome de usuário durante a geração e Validando tokens de campo de anti-XSRF. Os URIs específico para o provedor de identidade e o identificador do nome são:
+Muitas implantações que usam a autenticação baseada em declarações estão usando [Azure Access Control Service](https://msdn.microsoft.com/library/windowsazure/gg429786.aspx) (ACS) em particular. ACS permite que o desenvolvedor configure individuais *provedores de identidade* (como o AD FS, o provedor do Microsoft Account, provedores de OpenID como Yahoo!, etc.), e os provedores de identidade retornam *nome identificadores*. Esses identificadores de nome podem conter informações pessoalmente identificáveis (PII) como um endereço de email, ou eles podem ser anônimas como um privada PPID (identificador pessoal). Independentemente, a tupla (provedor de identidade, identificador de nome) suficientemente serve como um token de controle apropriado para um determinado usuário enquanto ela estiver navegando no site, então o tempo de execução de pilha do ASP.NET Web pode usar a tupla no lugar do nome de usuário durante a geração e Validando tokens de campo de anti-XSRF. Os URIs específico para o provedor de identidade e o identificador do nome são:
 
 - `http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`
 
-(consulte este [página do documento de ACS](https://msdn.microsoft.com/en-us/library/windowsazure/gg185971.aspx) para obter mais informações.)
+(consulte este [página do documento de ACS](https://msdn.microsoft.com/library/windowsazure/gg185971.aspx) para obter mais informações.)
 
 Ao gerar ou validação de um token, o tempo de execução do ASP.NET Web pilha em tempo de execução tentará associação para os tipos:
 
@@ -165,7 +165,7 @@ O desenvolvedor pode configurar o sistema de anti-XSRF do aplicativo\_iniciar. A
 
 | **Property** | **Descrição** |
 | --- | --- |
-| **AdditionalDataProvider** | Um [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) que fornece dados adicionais durante a geração de token e consome dados adicionais durante a validação de token. O valor padrão é *nulo*. Para obter mais informações, consulte o [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) seção. |
+| **AdditionalDataProvider** | Um [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) que fornece dados adicionais durante a geração de token e consome dados adicionais durante a validação de token. O valor padrão é *nulo*. Para obter mais informações, consulte o [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) seção. |
 | **CookieName** | Uma cadeia de caracteres que fornece o nome do cookie HTTP que é usado para armazenar o token de sessão de anti-XSRF. Se esse valor não for definido, um nome será gerado automaticamente com base no caminho virtual implantado do aplicativo. O valor padrão é *nulo*. |
 | **RequireSsl** | Um valor booleano que determina se os tokens de anti-XSRF são necessários para serem enviados por um canal protegido por SSL. Se esse valor for *true*, os cookies automaticamente gerado terá o sinalizador "secure" definida e as APIs de anti-XSRF lançará se chamado de dentro de uma solicitação que não é enviada por meio de SSL. O valor padrão é *false*. |
 | **SuppressIdentityHeuristicChecks** | Um valor booleano que determina se o sistema de anti-XSRF deve desativar o suporte a identidades baseadas em declarações. Se esse valor for *true*, o sistema assumirá que *IIdentity.Name* é adequado para uso como um identificador exclusivo por usuário e não tentará casos especiais *IClaimsIdentity*ou *ClClaimsIdentity* conforme descrito no [WIF / ACS / baseada em declarações autenticação](#_WIF_ACS) seção. O valor padrão é `false`. |
@@ -175,7 +175,7 @@ O desenvolvedor pode configurar o sistema de anti-XSRF do aplicativo\_iniciar. A
 
 ### <a name="iantiforgeryadditionaldataprovider"></a>IAntiForgeryAdditionalDataProvider
 
-O  *[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)*  tipo permite aos desenvolvedores estender o comportamento do sistema anti-XSRF por dados adicionais do ciclo em cada token. O *GetAdditionalData* método é chamado sempre que um token de campo é gerado e o valor de retorno é inserido no token gerado. Um implementador pode retornar um carimbo de hora, um valor de uso único ou qualquer outro valor que ela deseja deste método.
+O  *[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)*  tipo permite aos desenvolvedores estender o comportamento do sistema anti-XSRF por dados adicionais do ciclo em cada token. O *GetAdditionalData* método é chamado sempre que um token de campo é gerado e o valor de retorno é inserido no token gerado. Um implementador pode retornar um carimbo de hora, um valor de uso único ou qualquer outro valor que ela deseja deste método.
 
 Da mesma forma, o *ValidateAdditionalData* método é chamado sempre que um token de campo for validado, e a cadeia de caracteres "dados adicionais" foi incorporada o token é passada para o método. A rotina de validação pode implementar um tempo limite (Verificando a hora atual em relação a hora em que foi armazenada quando o token foi criado), um verificação de rotina ou qualquer outro de nonce desejado lógica.
 

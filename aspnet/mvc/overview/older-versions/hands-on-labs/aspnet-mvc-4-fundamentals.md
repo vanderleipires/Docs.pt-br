@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 086084b63cceca1c2d4e0bd4e5b654aaad6637a9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 468f6d5dabb645b1c005680dc5a1ffc4debd63b6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-fundamentals"></a>Conceitos básicos do ASP.NET MVC 4
 ====================
@@ -32,7 +32,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > > Este laboratório prático pressupõe que o desenvolvedor tenha experiência em tecnologias de desenvolvimento na Web, como HTML e JavaScript.
 > 
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 <a id="The_Music_Store_application"></a>
@@ -319,7 +319,7 @@ Nesta tarefa, você usará o **querystring** para enviar parâmetros para o **pr
     > [!NOTE]
     > Você está usando o **HttpUtility** método utilitário impede os usuários de injeção de Javascript no modo de exibição com um link como   **/repositório/procurar? Gênero =&lt;script&gt;window.location='[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**.
     > 
-    > Para obter mais explicações, visite [este artigo do msdn](https://msdn.microsoft.com/en-us/library/a2a4yykt(v=VS.80).aspx).
+    > Para obter mais explicações, visite [este artigo do msdn](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx).
 
 <a id="Ex3Task2"></a>
 
@@ -964,7 +964,7 @@ Neste exercício, você irá explorar os aprimoramentos nos modelos de projeto A
         *SimpleMembership incluídos na solução*
 
         > [!NOTE]
-        > Para obter mais informações sobre [OAuthWebSecurity](https://msdn.microsoft.com/en-us/library/jj158393(v=vs.111).aspx) no MSDN.
+        > Para obter mais informações sobre [OAuthWebSecurity](https://msdn.microsoft.com/library/jj158393(v=vs.111).aspx) no MSDN.
 
 > [!NOTE]
 > Além disso, você pode implantar esse aplicativo para Windows Azure Web Sites a seguir [apêndice b: publicação um aplicativo ASP.NET MVC 4 usando a implantação da Web](#AppendixB).

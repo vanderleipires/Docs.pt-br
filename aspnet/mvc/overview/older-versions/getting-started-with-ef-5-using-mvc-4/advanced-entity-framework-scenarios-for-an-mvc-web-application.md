@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: d58a745896b29317c1d1049e3bf1a5ec2e628820
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 148a1aa33f6f713ae471ab14c7180f6c08a8679a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>Cenários de estrutura avançada de entidade para um aplicativo MVC (10 de 10)
 ====================
@@ -55,7 +55,7 @@ API de primeiro código do Entity Framework inclui métodos que permitem que voc
 
 - Use o `DbSet.SqlQuery` método para consultas que retornam tipos de entidade. Os objetos retornados devem ser do tipo esperado pelo `DbSet` objeto e eles são controladas automaticamente pelo contexto de banco de dados, a menos que você desativar o rastreamento. (Consulte a seção a seguir o `AsNoTracking` método.)
 - Use o `Database.SqlQuery` método para consultas que retornam tipos que não são entidades. Os dados retornados não são controlados pelo contexto de banco de dados, mesmo se você usar esse método para recuperar tipos de entidade.
-- Use o [Database.ExecuteSqlCommand](https://msdn.microsoft.com/en-us/library/gg679456(v=vs.103).aspx) para comandos sem consulta.
+- Use o [Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456(v=vs.103).aspx) para comandos sem consulta.
 
 Uma das vantagens de usar o Entity Framework é que ela evita vincular seu código muito semelhante a um método específico de armazenamento de dados. Ele faz isso através da geração de consultas SQL e comandos para você, que também libera você da necessidade de gravá-los. Mas há casos excepcionais, quando você precisa executar consultas específicas de SQL que você criou manualmente, e esses métodos tornam possível para tratar essas exceções.
 
@@ -255,17 +255,17 @@ O Entity Framework determina como uma entidade foi alterado (e, portanto, as atu
 - `DbContext.Entry`
 - `DbChangeTracker.Entries`
 
-Se você estiver rastreando um grande número de entidades e chamar um desses métodos muitas vezes em um loop, você pode obter melhorias significativas de desempenho desativar temporariamente detecção de alterações automáticas usando o [AutoDetectChangesEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled(VS.103).aspx) propriedade. Para obter mais informações, consulte [automaticamente detectar alterações](https://blogs.msdn.com/b/adonet/archive/2011/02/06/using-dbcontext-in-ef-feature-ctp5-part-12-automatically-detecting-changes.aspx).
+Se você estiver rastreando um grande número de entidades e chamar um desses métodos muitas vezes em um loop, você pode obter melhorias significativas de desempenho desativar temporariamente detecção de alterações automáticas usando o [AutoDetectChangesEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled(VS.103).aspx) propriedade. Para obter mais informações, consulte [automaticamente detectar alterações](https://blogs.msdn.com/b/adonet/archive/2011/02/06/using-dbcontext-in-ef-feature-ctp5-part-12-automatically-detecting-changes.aspx).
 
 ## <a name="disabling-validation-when-saving-changes"></a>Desabilitar a validação ao salvar alterações
 
-Quando você chama o `SaveChanges` método, por padrão o Entity Framework valida os dados em todas as propriedades de todas as entidades alteradas antes de atualizar o banco de dados. Se você atualizou um grande número de entidades e você já tiver validado os dados, esse trabalho é desnecessário, você pode tornar o processo de salvar as alterações terão menos tempo desativando temporariamente a validação. Você pode fazer essa usando o [ValidateOnSaveEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx) propriedade. Para obter mais informações, consulte [validação](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx).
+Quando você chama o `SaveChanges` método, por padrão o Entity Framework valida os dados em todas as propriedades de todas as entidades alteradas antes de atualizar o banco de dados. Se você atualizou um grande número de entidades e você já tiver validado os dados, esse trabalho é desnecessário, você pode tornar o processo de salvar as alterações terão menos tempo desativando temporariamente a validação. Você pode fazer essa usando o [ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx) propriedade. Para obter mais informações, consulte [validação](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx).
 
 ## <a name="summary"></a>Resumo
 
 Isso conclui esta série de tutoriais sobre como usar o Entity Framework em um aplicativo ASP.NET MVC. Links para outros recursos do Entity Framework podem ser encontradas no [ASP.NET mapa de conteúdo de acesso de dados](../../../../whitepapers/aspnet-data-access-content-map.md).
 
-Para obter mais informações sobre como implantar o aplicativo web depois que você construiu, consulte [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/en-us/library/bb386521.aspx) na biblioteca MSDN.
+Para obter mais informações sobre como implantar o aplicativo web depois que você construiu, consulte [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx) na biblioteca MSDN.
 
 Para obter informações sobre outros tópicos relacionados ao MVC, como autenticação e autorização, consulte o [MVC recomendado recursos](../../getting-started/recommended-resources-for-mvc.md).
 

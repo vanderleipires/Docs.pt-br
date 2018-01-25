@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: dec2602e47fbcb838643a506a7e3feebda9d9c81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4468ee8031afccca847db67bd4b5b263f0a2c5ac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-performance"></a>Desempenho do SignalR
 ====================
@@ -87,7 +87,7 @@ Como as mensagens são armazenadas no barramento de mensagem na memória do serv
 
 ### <a name="tuning-your-signalr-server-for-performance"></a>Ajuste de seu servidor do SignalR para desempenho
 
-As definições de configuração a seguir podem ser usadas para ajustar o servidor para melhorar o desempenho em um aplicativo do SignalR. Para obter informações gerais sobre como melhorar o desempenho em um aplicativo ASP.NET, consulte [melhorando o desempenho do ASP.NET](https://msdn.microsoft.com/en-us/library/ff647787.aspx).
+As definições de configuração a seguir podem ser usadas para ajustar o servidor para melhorar o desempenho em um aplicativo do SignalR. Para obter informações gerais sobre como melhorar o desempenho em um aplicativo ASP.NET, consulte [melhorando o desempenho do ASP.NET](https://msdn.microsoft.com/library/ff647787.aspx).
 
 **Definições de configuração de SignalR**
 
@@ -104,7 +104,7 @@ As definições de configuração a seguir podem ser usadas para ajustar o servi
     [!code-console[Main](signalr-performance/samples/sample4.cmd)]
 - **ApplicationPool QueueLength**: Este é o número máximo de solicitações HTTP. sys filas de pool de aplicativos. Quando a fila está cheia, novas solicitações recebem uma resposta 503 "Serviço indisponível". O valor padrão é 1000.
 
-    Reduzir o comprimento da fila do processo de trabalho no pool de aplicativos hospedando o seu aplicativo para conservar recursos de memória. Para obter mais informações, consulte [Configurando Pools de aplicativos, otimização e gerenciando](https://technet.microsoft.com/en-us/library/cc745955.aspx).
+    Reduzir o comprimento da fila do processo de trabalho no pool de aplicativos hospedando o seu aplicativo para conservar recursos de memória. Para obter mais informações, consulte [Configurando Pools de aplicativos, otimização e gerenciando](https://technet.microsoft.com/library/cc745955.aspx).
 
 **Definições de configuração do ASP.NET**
 
@@ -215,7 +215,7 @@ As seguintes métricas de medem os erros gerados pelo tráfego de mensagens do S
 
 As seguintes métricas medem o tráfego e os erros gerados pelo provedor de expansão. Um **fluxo** neste contexto é uma unidade de escala usada pelo provedor de expansão; essa é uma tabela se o SQL Server é usado, um tópico que se o barramento de serviço é usado e uma assinatura se Redis for usado. Cada fluxo garante ordenada operações de leitura e gravação; um único fluxo é um gargalo potencial na escala, para que o número de fluxos pode ser aumentado para ajudar a reduzir esse afunilamento. Se forem usados vários fluxos, SignalR distribuirá automaticamente mensagens (fragmento) entre esses fluxos de forma que garante que as mensagens enviadas de qualquer conexão determinado estão em ordem.
 
-O [MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) determina o comprimento da fila de envio de expansão mantida pelo SignalR. Defini-la como um valor maior que 0 colocará todas as mensagens em uma fila de envio a ser enviado um de cada vez ao backplane de mensagens configurado. Se o tamanho da fila ficar acima do tamanho configurado, as chamadas subsequentes para enviar será imediatamente falharem com um [InvalidOperationException](https://msdn.microsoft.com/en-us/library/system.invalidoperationexception(v=vs.118).aspx) até que o número de mensagens na fila é menor do que a configuração novamente. Enfileiramento está desabilitado por padrão porque os painéis posteriores implementados geralmente têm seus próprios enfileiramento de mensagens ou o controle de fluxo em vigor. No caso do SQL Server, a pooling de conexão efetivamente limita o número de envios acontecendo a qualquer momento.
+O [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) determina o comprimento da fila de envio de expansão mantida pelo SignalR. Defini-la como um valor maior que 0 colocará todas as mensagens em uma fila de envio a ser enviado um de cada vez ao backplane de mensagens configurado. Se o tamanho da fila ficar acima do tamanho configurado, as chamadas subsequentes para enviar será imediatamente falharem com um [InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception(v=vs.118).aspx) até que o número de mensagens na fila é menor do que a configuração novamente. Enfileiramento está desabilitado por padrão porque os painéis posteriores implementados geralmente têm seus próprios enfileiramento de mensagens ou o controle de fluxo em vigor. No caso do SQL Server, a pooling de conexão efetivamente limita o número de envios acontecendo a qualquer momento.
 
 Por padrão, apenas um fluxo é usado para o SQL Server e do Redis, cinco fluxos são usados para o barramento de serviço e enfileiramento está desabilitado, mas essas configurações podem ser alteradas por meio de configuração no SQL Server e o barramento de serviço:
 
@@ -280,6 +280,6 @@ Os seguintes contadores de desempenho também podem ser útil no monitoramento d
 
 Para obter mais informações sobre monitoramento e ajuste de desempenho do ASP.NET, consulte os tópicos a seguir:
 
-- [Visão geral do desempenho do ASP.NET](https://msdn.microsoft.com/en-us/library/cc668225(v=vs.100).aspx)
+- [Visão geral do desempenho do ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [Uso de Thread do ASP.NET no IIS 6.0, IIS 7.5 e IIS 7.0](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt; elemento (configurações da Web)](https://msdn.microsoft.com/en-us/library/dd560842.aspx)
+- [&lt;applicationPool&gt; elemento (configurações da Web)](https://msdn.microsoft.com/library/dd560842.aspx)

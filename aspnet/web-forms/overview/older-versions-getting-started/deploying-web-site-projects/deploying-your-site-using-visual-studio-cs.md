@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15d3d2c70346abad5addab5c29d4af9f238b39da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c0c32c3dd24be5edfea3e17695753973f3fad30a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>Implantar o Site usando o Visual Studio (c#)
 ====================
@@ -33,7 +33,7 @@ O tutorial anterior analisamos como implantar um aplicativo simples da web ASP.N
 
 
 > [!NOTE]
-> Outras ferramentas relacionadas à implantação oferecidas pelo Visual Studio incluem [projetos de instalação do Web](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx) e [projetos de implantação da Web](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) Add-In. Projetos de instalação da Web empacotar conteúdo de um site e informações de configuração em um único arquivo MSI. Essa opção é mais útil para sites que são implantados em uma intranet ou para as empresas que vendem um aplicativo web predefinidos que os clientes instalem em seus servidores web. O Add-In de projetos de implantação de Web é que um Visual Studio suplemento que facilita a especificação de diferenças de configuração entre compilações para ambientes de desenvolvimento e ambientes de produção. Projetos de configuração da Web não são abordados nesta série tutorial; Projetos de implantação da Web estão resumidos no [ *diferenças de configuração comuns entre o desenvolvimento e produção* ](common-configuration-differences-between-development-and-production-cs.md) tutorial.
+> Outras ferramentas relacionadas à implantação oferecidas pelo Visual Studio incluem [projetos de instalação do Web](https://msdn.microsoft.com/library/wx3b589t.aspx) e [projetos de implantação da Web](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) Add-In. Projetos de instalação da Web empacotar conteúdo de um site e informações de configuração em um único arquivo MSI. Essa opção é mais útil para sites que são implantados em uma intranet ou para as empresas que vendem um aplicativo web predefinidos que os clientes instalem em seus servidores web. O Add-In de projetos de implantação de Web é que um Visual Studio suplemento que facilita a especificação de diferenças de configuração entre compilações para ambientes de desenvolvimento e ambientes de produção. Projetos de configuração da Web não são abordados nesta série tutorial; Projetos de implantação da Web estão resumidos no [ *diferenças de configuração comuns entre o desenvolvimento e produção* ](common-configuration-differences-between-development-and-production-cs.md) tutorial.
 
 
 ## <a name="deploying-your-site-using-the-copy-web-site-tool"></a>Implantar o Site usando a ferramenta Copiar Site
@@ -149,11 +149,11 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [Copiar Site com a ferramenta Copy Web Site](https://msdn.microsoft.com/en-us/library/1cc82atw.aspx)
+- [Copiar Site com a ferramenta Copy Web Site](https://msdn.microsoft.com/library/1cc82atw.aspx)
 - [Como os i: implantar um Site usando a ferramenta Copiar Site](../../../videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool.md) (vídeo)
-- [Como: Publicar projetos de aplicativo Web](https://msdn.microsoft.com/en-us/library/aa983453.aspx)
-- [Como: Publicar Sites da Web](https://msdn.microsoft.com/en-us/library/20yh9f1b.aspx)
-- [Instalação e implantação de projetos no Visual Studio](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx)
+- [Como: Publicar projetos de aplicativo Web](https://msdn.microsoft.com/library/aa983453.aspx)
+- [Como: Publicar Sites da Web](https://msdn.microsoft.com/library/20yh9f1b.aspx)
+- [Instalação e implantação de projetos no Visual Studio](https://msdn.microsoft.com/library/wx3b589t.aspx)
 
 >[!div class="step-by-step"]
 [Anterior](deploying-your-site-using-an-ftp-client-cs.md)

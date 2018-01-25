@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5283da2786d41c0ae06607185dd416aeb7d2b62a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: accb5ddab8df67dfa29038541dc0cd72eaac173c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>Criando um modelo de dados mais complexo para um aplicativo ASP.NET MVC (4 de 10)
 ====================
@@ -49,9 +49,9 @@ Em *Models\Student.cs*, adicione um `using` instrução para o `System.Component
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample1.cs?highlight=3,13-14)]
 
-O [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo é usado para especificar um tipo de dados que é mais específico que o tipo de banco de dados intrínseco. Nesse caso, apenas desejamos controlar a data, não a data e hora. O [enumeração DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) oferece para muitos tipos de dados, tais como *data, hora, PhoneNumber, moeda, EmailAddress* e muito mais. O atributo `DataType` também pode permitir que o aplicativo forneça automaticamente recursos específicos a um tipo. Por exemplo, um `mailto:` link pode ser criado para [DataType.EmailAddress](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx), e um seletor de data pode ser fornecido para [DataType.Date](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) em navegadores que oferecem suporte a [HTML5](http://html5.org/). O [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributos emite HTML 5 [dados -](http://ejohn.org/blog/html-5-data-attributes/) (pronunciado *dash dados*) atributos HTML 5 navegadores podem entender. O [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributos não fornecem nenhuma validação.
+O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo é usado para especificar um tipo de dados que é mais específico que o tipo de banco de dados intrínseco. Nesse caso, apenas desejamos controlar a data, não a data e hora. O [enumeração DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) oferece para muitos tipos de dados, tais como *data, hora, PhoneNumber, moeda, EmailAddress* e muito mais. O atributo `DataType` também pode permitir que o aplicativo forneça automaticamente recursos específicos a um tipo. Por exemplo, um `mailto:` link pode ser criado para [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), e um seletor de data pode ser fornecido para [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) em navegadores que oferecem suporte a [HTML5](http://html5.org/). O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributos emite HTML 5 [dados -](http://ejohn.org/blog/html-5-data-attributes/) (pronunciado *dash dados*) atributos HTML 5 navegadores podem entender. O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributos não fornecem nenhuma validação.
 
-`DataType.Date` não especifica o formato da data exibida. Por padrão, o campo de dados será exibido conforme os formatos padrão com base no servidor de [CultureInfo](https://msdn.microsoft.com/en-us/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
+`DataType.Date` não especifica o formato da data exibida. Por padrão, o campo de dados será exibido conforme os formatos padrão com base no servidor de [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
 
 O atributo `DisplayFormat` é usado para especificar explicitamente o formato de data:
 
@@ -61,11 +61,11 @@ O atributo `DisplayFormat` é usado para especificar explicitamente o formato de
 
 O `ApplyFormatInEditMode` configuração especifica que a formatação especificada também deve ser aplicada quando o valor é exibido na caixa de texto para edição. (Talvez você não queira que alguns campos — por exemplo, para valores de moeda, não convém o símbolo de moeda na caixa de texto para edição.)
 
-Você pode usar o [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo por si mesmo, mas geralmente é uma boa ideia usar a [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo também. O `DataType` atributo transmite o *semântica* dos dados como oposição para renderizá-lo em uma tela de instruções e fornece os seguintes benefícios que você não obtém com `DisplayFormat`:
+Você pode usar o [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo por si mesmo, mas geralmente é uma boa ideia usar a [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo também. O `DataType` atributo transmite o *semântica* dos dados como oposição para renderizá-lo em uma tela de instruções e fornece os seguintes benefícios que você não obtém com `DisplayFormat`:
 
 - O navegador pode habilitar recursos do HTML5 (por exemplo mostrar um controle de calendário, o símbolo de moeda local apropriado, links de email, etc.).
-- Por padrão, o navegador processará os dados usando o formato correto com base em sua [localidade](https://msdn.microsoft.com/en-us/library/vstudio/wyzd2bce.aspx).
-- O [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo pode habilitar MVC escolher o modelo de campo à direita para processar os dados (o [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) se usado pelo próprio usa o modelo de cadeia de caracteres). Para obter mais informações, consulte Brad Wilson [modelos do ASP.NET MVC 2](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (Embora escrito para MVC 2, este artigo ainda se aplica à versão atual do ASP.NET MVC.)
+- Por padrão, o navegador processará os dados usando o formato correto com base em sua [localidade](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx).
+- O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo pode habilitar MVC escolher o modelo de campo à direita para processar os dados (o [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) se usado pelo próprio usa o modelo de cadeia de caracteres). Para obter mais informações, consulte Brad Wilson [modelos do ASP.NET MVC 2](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (Embora escrito para MVC 2, este artigo ainda se aplica à versão atual do ASP.NET MVC.)
 
 Se você usar o `DataType` atributo com um campo de data, você precisa especificar o `DisplayFormat` atributo também para garantir que o campo seja renderizado corretamente em navegadores Chrome. Para obter mais informações, consulte [esse thread StackOverflow](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie).
 
@@ -75,21 +75,21 @@ Execute a página de índice de estudante novamente e observe que vezes não sã
 
 ### <a name="the-stringlengthattribute"></a>O StringLengthAttribute
 
-Você também pode especificar regras de validação de dados e mensagens usando atributos. Suponha que você deseja garantir que os usuários não insiram mais de 50 caracteres para um nome. Para adicionar essa limitação, adicione [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atributos para o `LastName` e `FirstMidName` propriedades, conforme mostrado no exemplo a seguir:
+Você também pode especificar regras de validação de dados e mensagens usando atributos. Suponha que você deseja garantir que os usuários não insiram mais de 50 caracteres para um nome. Para adicionar essa limitação, adicione [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atributos para o `LastName` e `FirstMidName` propriedades, conforme mostrado no exemplo a seguir:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample3.cs?highlight=10,12)]
 
-O [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atributo não impedem que um usuário inserir espaços em branco para um nome. Você pode usar o [RegularExpression](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atributo aplicar restrições para a entrada. Por exemplo, o código a seguir exige o primeiro caractere a ser maiuscula e os caracteres restantes para estar em ordem alfabética:
+O [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atributo não impedem que um usuário inserir espaços em branco para um nome. Você pode usar o [RegularExpression](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atributo aplicar restrições para a entrada. Por exemplo, o código a seguir exige o primeiro caractere a ser maiuscula e os caracteres restantes para estar em ordem alfabética:
 
 `[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
-O [MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) atributo fornece funcionalidade semelhante para o [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) de atributo, mas não fornece do lado do cliente a validação.
+O [MaxLength](https://msdn.microsoft.com/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) atributo fornece funcionalidade semelhante para o [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) de atributo, mas não fornece do lado do cliente a validação.
 
 Execute o aplicativo e clique no **alunos** guia. Você obterá o seguinte erro:
 
 *O modelo fazendo o contexto de 'SchoolContext' foi alterado desde que o banco de dados foi criado. Considere o uso de migrações do Code First para atualizar o banco de dados ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269)).*
 
-O modelo de banco de dados foi alterado de forma que requer uma alteração no esquema de banco de dados e do Entity Framework detectou que. Você usará as migrações para atualizar o esquema sem perda dos dados que você adicionou ao banco de dados usando a interface do usuário. Se você tiver alterado os dados que foi criados com o `Seed` método, que será alterado para seu estado original porque a [AddOrUpdate](https://msdn.microsoft.com/en-us/library/hh846520(v=vs.103).aspx) método que você está usando no `Seed` método. ([AddOrUpdate](https://msdn.microsoft.com/en-us/library/hh846520(v=vs.103).aspx) é equivalente a uma operação "upsert" da terminologia de banco de dados.)
+O modelo de banco de dados foi alterado de forma que requer uma alteração no esquema de banco de dados e do Entity Framework detectou que. Você usará as migrações para atualizar o esquema sem perda dos dados que você adicionou ao banco de dados usando a interface do usuário. Se você tiver alterado os dados que foi criados com o `Seed` método, que será alterado para seu estado original porque a [AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx) método que você está usando no `Seed` método. ([AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx) é equivalente a uma operação "upsert" da terminologia de banco de dados.)
 
 No pacote Manager Console (PMC), digite os seguintes comandos:
 
@@ -107,11 +107,11 @@ Você também pode usar atributos para controlar como as classes e propriedades 
 
 O `Column` atributo especifica que quando o banco de dados é criado, a coluna do `Student` tabela que mapeia para o `FirstMidName` propriedade será nomeada `FirstName`. Em outras palavras, quando seu código se refere a `Student.FirstMidName`, os dados virão ou atualizados no `FirstName` coluna do `Student` tabela. Se você não especificar nomes de coluna, eles recebem o mesmo nome que o nome da propriedade.
 
-Adicionar um usando a instrução para [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.aspx) e o atributo de nome de coluna para o `FirstMidName` propriedade, como mostra o seguinte código:
+Adicionar um usando a instrução para [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.aspx) e o atributo de nome de coluna para o `FirstMidName` propriedade, como mostra o seguinte código:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample5.cs?highlight=4,14)]
 
-A adição do [atributo de coluna](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) altera o modelo fazendo SchoolContext, portanto ele não coincidir com o banco de dados. Digite os seguintes comandos em PMC para criar outra migração:
+A adição do [atributo de coluna](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) altera o modelo fazendo SchoolContext, portanto ele não coincidir com o banco de dados. Digite os seguintes comandos em PMC para criar outra migração:
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample6.cmd)]
 
@@ -123,7 +123,7 @@ A imagem a seguir mostra o nome da coluna original como estava antes de você ap
 
 ![](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image5.png)
 
-Você pode também alterar banco de dados de mapeamento usando o [API fluente](https://msdn.microsoft.com/en-us/data/jj591617), como você verá posteriormente neste tutorial.
+Você pode também alterar banco de dados de mapeamento usando o [API fluente](https://msdn.microsoft.com/data/jj591617), como você verá posteriormente neste tutorial.
 
 > [!NOTE]
 > Se você tentar compilar antes de concluir a criação de todas essas classes de entidade, você poderá receber erros de compilador.
@@ -145,7 +145,7 @@ Os atributos de `LastName` propriedade especificar que ele é um campo obrigató
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample8.cs)]
 
-O [StringLength atributo](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) define o comprimento máximo do banco de dados e fornece do lado do cliente e do lado do servidor validação para o ASP.NET MVC. Você também pode especificar o comprimento mínimo da cadeia de caracteres neste atributo, mas o valor mínimo não tem nenhum impacto sobre o esquema de banco de dados. O [atributo necessário](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) não é necessária para tipos de valor como DateTime, int, double e float. Tipos de valor não podem ser atribuídos um valor nulo, portanto, eles são inerentemente necessários. Você pode remover o [atributo necessário](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) e substituí-lo com um parâmetro de comprimento mínimo para o `StringLength` atributo:
+O [StringLength atributo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) define o comprimento máximo do banco de dados e fornece do lado do cliente e do lado do servidor validação para o ASP.NET MVC. Você também pode especificar o comprimento mínimo da cadeia de caracteres neste atributo, mas o valor mínimo não tem nenhum impacto sobre o esquema de banco de dados. O [atributo necessário](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) não é necessária para tipos de valor como DateTime, int, double e float. Tipos de valor não podem ser atribuídos um valor nulo, portanto, eles são inerentemente necessários. Você pode remover o [atributo necessário](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) e substituí-lo com um parâmetro de comprimento mínimo para o `StringLength` atributo:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample9.cs?highlight=2)]
 
@@ -161,7 +161,7 @@ Você pode colocar vários atributos em uma linha, portanto, você também pode 
 
 ### <a name="the-courses-and-officeassignment-navigation-properties"></a>Os cursos e as propriedades de navegação de OfficeAssignment
 
-O `Courses` e `OfficeAssignment` propriedades são propriedades de navegação. Conforme explicado anteriormente, elas geralmente são definidas como [virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4(v=vs.110).aspx) para que eles podem tirar proveito de um recurso do Entity Framework chamado [carregamento preguiçoso](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx). Além disso, se uma propriedade de navegação pode conter várias entidades, seu tipo deve implementar o [ICollection&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/92t2ye13.aspx) Interface. (Por exemplo [IList&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/5y536ey6.aspx) qualifica mas não [IEnumerable&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/9eekhta0.aspx) porque `IEnumerable<T>` não implementa [adicionar ](https://msdn.microsoft.com/en-us/library/63ywd54z.aspx).
+O `Courses` e `OfficeAssignment` propriedades são propriedades de navegação. Conforme explicado anteriormente, elas geralmente são definidas como [virtual](https://msdn.microsoft.com/library/9fkccyh4(v=vs.110).aspx) para que eles podem tirar proveito de um recurso do Entity Framework chamado [carregamento preguiçoso](https://msdn.microsoft.com/magazine/hh205756.aspx). Além disso, se uma propriedade de navegação pode conter várias entidades, seu tipo deve implementar o [ICollection&lt;T&gt; ](https://msdn.microsoft.com/library/92t2ye13.aspx) Interface. (Por exemplo [IList&lt;T&gt; ](https://msdn.microsoft.com/library/5y536ey6.aspx) qualifica mas não [IEnumerable&lt;T&gt; ](https://msdn.microsoft.com/library/9eekhta0.aspx) porque `IEnumerable<T>` não implementa [adicionar ](https://msdn.microsoft.com/library/63ywd54z.aspx).
 
 Um instrutor pode ensinar a qualquer número de cursos, portanto `Courses` é definido como uma coleção de `Course` entidades. Nosso regras de negócio estado instrutor só pode ter no máximo um escritório, portanto `OfficeAssignment` é definido como um único `OfficeAssignment` entidade (que pode ser `null` se office não estiver atribuído).
 
@@ -187,7 +187,7 @@ Você também pode usar o `Key` atributo se a entidade tem sua própria chave pr
 
 ### <a name="the-foreignkey-attribute"></a>O atributo ForeignKey
 
-Quando há uma relação um-para-zero-ou-um ou um-para-um relacionamento entre duas entidades (tais como entre `OfficeAssignment` e `Instructor`), EF não é possível descobrir qual ponta da relação é a entidade de segurança e quais final é dependente. Relações um para um tem uma propriedade de navegação de referência em cada classe para a outra classe. O [ForeignKey atributo](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx) pode ser aplicado à classe dependente para estabelecer a relação. Se você omitir o [ForeignKey atributo](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx), você obterá o seguinte erro ao tentar criar a migração:
+Quando há uma relação um-para-zero-ou-um ou um-para-um relacionamento entre duas entidades (tais como entre `OfficeAssignment` e `Instructor`), EF não é possível descobrir qual ponta da relação é a entidade de segurança e quais final é dependente. Relações um para um tem uma propriedade de navegação de referência em cada classe para a outra classe. O [ForeignKey atributo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx) pode ser aplicado à classe dependente para estabelecer a relação. Se você omitir o [ForeignKey atributo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx), você obterá o seguinte erro ao tentar criar a migração:
 
 Não é possível determinar a extremidade principal de uma associação entre os tipos 'ContosoUniversity.Models.OfficeAssignment' e 'ContosoUniversity.Models.Instructor'. A extremidade principal dessa associação deve ser configurada explicitamente usando a API fluente de relação ou as anotações de dados.
 
@@ -211,7 +211,7 @@ A entidade de curso tem uma propriedade de chave estrangeira `DepartmentID` que 
 
 ### <a name="the-databasegenerated-attribute"></a>O atributo DatabaseGenerated
 
-O [DatabaseGenerated atributo](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute.aspx) com o [nenhum](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.110).aspx) parâmetro o `CourseID` propriedade especifica se valores de chave primária são fornecidos pelo usuário em vez de gerado pelo banco de dados.
+O [DatabaseGenerated atributo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute.aspx) com o [nenhum](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.110).aspx) parâmetro o `CourseID` propriedade especifica se valores de chave primária são fornecidos pelo usuário em vez de gerado pelo banco de dados.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
 
@@ -241,11 +241,11 @@ Criar *Models\Department.cs* com o código a seguir:
 
 ### <a name="the-column-attribute"></a>O atributo de coluna
 
-Anteriormente, você usou o [atributo de coluna](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) para alterar o mapeamento de nome de coluna. No código para o `Department` entidade, o `Column` atributo está sendo usado para alterar SQL dados mapeamento de tipo para que a coluna será definida usando o SQL Server [money](https://msdn.microsoft.com/en-us/library/ms179882.aspx) tipo no banco de dados:
+Anteriormente, você usou o [atributo de coluna](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) para alterar o mapeamento de nome de coluna. No código para o `Department` entidade, o `Column` atributo está sendo usado para alterar SQL dados mapeamento de tipo para que a coluna será definida usando o SQL Server [money](https://msdn.microsoft.com/library/ms179882.aspx) tipo no banco de dados:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample21.cs)]
 
-Mapeamento de coluna geralmente não é necessário, pois o Entity Framework geralmente escolhe o tipo de dados do SQL Server apropriado com base no tipo CLR que você definir para a propriedade. O CLR `decimal` tipo é mapeado para um SQL Server `decimal` tipo. Mas nesse caso, você sabe que a coluna será mantendo valores de moeda e o [money](https://msdn.microsoft.com/en-us/library/ms179882.aspx) tipo de dados é mais apropriado para fazer isso.
+Mapeamento de coluna geralmente não é necessário, pois o Entity Framework geralmente escolhe o tipo de dados do SQL Server apropriado com base no tipo CLR que você definir para a propriedade. O CLR `decimal` tipo é mapeado para um SQL Server `decimal` tipo. Mas nesse caso, você sabe que a coluna será mantendo valores de moeda e o [money](https://msdn.microsoft.com/library/ms179882.aspx) tipo de dados é mais apropriado para fazer isso.
 
 ### <a name="foreign-key-and-navigation-properties"></a>Chave estrangeira e propriedades de navegação
 
@@ -319,7 +319,7 @@ Além de linhas de relação muitos-para-muitos (\* para \*) e as linhas de rela
 
 ## <a name="customize-the-data-model-by-adding-code-to-the-database-context"></a>Personalizar o modelo de dados, adicionando o código para o contexto do banco de dados
 
-Em seguida, você adicionará novas entidades para o `SchoolContext` classe e personalizar alguns do mapeamento usando [API fluente](https://msdn.microsoft.com/en-us/data/jj591617) chamadas. (A API é "fluente" porque ele geralmente é usado pelo encadeamento uma série de chamadas de método em uma única instrução).
+Em seguida, você adicionará novas entidades para o `SchoolContext` classe e personalizar alguns do mapeamento usando [API fluente](https://msdn.microsoft.com/data/jj591617) chamadas. (A API é "fluente" porque ele geralmente é usado pelo encadeamento uma série de chamadas de método em uma única instrução).
 
 Neste tutorial, você usará a API fluente somente para mapeamento de banco de dados que você não pode fazer com os atributos. No entanto, você também pode usar a API fluente para especificar a maioria da formatação, validação e regras de mapeamento que você pode fazer por meio de atributos. Alguns atributos como `MinimumLength` não pode ser aplicado com a API fluente. Conforme mencionado anteriormente, `MinimumLength` não altera o esquema, ela só se aplica a uma regra de validação do cliente e servidor
 
@@ -329,7 +329,7 @@ Para adicionar novas entidades para os dados de modelo e realize o mapeamento de
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample29.cs)]
 
-A nova instrução no [OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) método configura a tabela de junção de muitos-para-muitos:
+A nova instrução no [OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) método configura a tabela de junção de muitos-para-muitos:
 
 - Para a relação muitos-para-muitos entre o `Instructor` e `Course` entidades, o código especifica os nomes de tabela e coluna para a tabela de junção. Código primeiro pode configurar a relação muitos-para-muitos para você sem esse código, mas se você não chamá-lo, você obterá nomes padrão, como `InstructorInstructorID` para o `InstructorID` coluna.
 

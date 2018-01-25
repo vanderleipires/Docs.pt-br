@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 1e4ee8eb4901305bf6a8c9c5b949dc4ee10290e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c11e2ef9c33b0cae1f196690533094ce1c342da5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>Notas de versão do ASP.NET e Web Tools 2013.1 para Visual Studio 2012
 ====================
@@ -31,7 +31,7 @@ por [Microsoft](https://github.com/microsoft)
 - [Requisitos de software](#requirements)
 - Novos recursos no ASP.NET e Web Tools 2013.1 para Visual Studio 2012
 
-    - [Inicialização](#bootstrap)
+    - [Bootstrap](#bootstrap)
     - [Modelos](#templates)
 
         - [Modelo do ASP.NET MVC 5](#mvc5template)
@@ -40,7 +40,7 @@ por [Microsoft](https://github.com/microsoft)
     - [Entity Framework 6](#ef6)
     - [Estrutura do ASP.NET](#scaffold)
     - [Razor Editor](#razor)
-    - [2.7 NuGet](#nuget)
+    - [NuGet 2.7](#nuget)
 - Problemas conhecidos e as alterações recentes
 
     - [Estrutura do ASP.NET](#issuescaffolding)
@@ -190,7 +190,7 @@ Quando você cria o ASP.NET MVC projetos com o Visual Studio 2012 no Windows 8.1
 
 ![Erro de configuração](aspnet-and-web-tools-20131-for-visual-studio-2012/_static/image2.png)
 
-Você verá esse erro porque o Visual Studio 2012 não habilita o recurso ASP.NET 4.5 quando ele é instalado nessas versões do Windows. Para habilitar o ASP.NET 4.5, execute as etapas descritas em [ou desativar recursos do Windows ativar](https://windows.microsoft.com/en-us/windows-8/turn-windows-features-on-off).
+Você verá esse erro porque o Visual Studio 2012 não habilita o recurso ASP.NET 4.5 quando ele é instalado nessas versões do Windows. Para habilitar o ASP.NET 4.5, execute as etapas descritas em [ou desativar recursos do Windows ativar](https://windows.microsoft.com/windows-8/turn-windows-features-on-off).
 
 ![Ativar ou desativar recursos do Windows](aspnet-and-web-tools-20131-for-visual-studio-2012/_static/image3.png)
 

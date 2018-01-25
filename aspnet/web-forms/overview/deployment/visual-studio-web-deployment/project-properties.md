@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
-ms.openlocfilehash: 68a1892dcf8055d8cc898f471a96d86e8abb64de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 85b6dbcc8d40c168a49513ef6b549f9ec7fa5097
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>Implantação de Web do ASP.NET usando o Visual Studio: propriedades do projeto
 ====================
@@ -27,7 +27,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Algumas opções de implantação são configuradas nas propriedades do projeto que são armazenadas no arquivo de projeto (o *. csproj* ou *. vbproj* arquivo). Na maioria dos casos, os valores padrão dessas configurações são as que você deseja, mas você pode usar o **propriedades do projeto** interface de usuário criado no Visual Studio para trabalhar com essas configurações se você precisa alterá-los. Neste tutorial, você examine as configurações de implantação no **propriedades do projeto**. Você também pode criar um arquivo de espaço reservado que faz com que uma pasta vazia ser implantado.
 
@@ -45,7 +45,7 @@ Quando a janela é exibida, o padrão é mostrando as configurações para qualq
 
 Com **ativo (versão)** ou **versão** selecionada, você vê os valores que entram em vigor quando você implanta usando a configuração de compilação de versão:
 
-- No **itens para implantar** caixa, **apenas os arquivos necessários para executar o aplicativo** está selecionado. Outras opções são **todos os arquivos neste projeto** ou **todos os arquivos nesta pasta**. Mantendo a seleção padrão inalterada, evite implantar arquivos de código fonte, por exemplo. Essa configuração é a razão por que as pastas que contêm os arquivos binários do SQL Server Compact tinham que ser incluído no projeto. Para obter mais informações sobre essa configuração, consulte **por que não todos os arquivos na pasta de projeto implantados?** na [perguntas Frequentes de implantação de projeto de aplicativo Web ASP.NET](https://msdn.microsoft.com/en-us/library/ee942158.aspx).
+- No **itens para implantar** caixa, **apenas os arquivos necessários para executar o aplicativo** está selecionado. Outras opções são **todos os arquivos neste projeto** ou **todos os arquivos nesta pasta**. Mantendo a seleção padrão inalterada, evite implantar arquivos de código fonte, por exemplo. Essa configuração é a razão por que as pastas que contêm os arquivos binários do SQL Server Compact tinham que ser incluído no projeto. Para obter mais informações sobre essa configuração, consulte **por que não todos os arquivos na pasta de projeto implantados?** na [perguntas Frequentes de implantação de projeto de aplicativo Web ASP.NET](https://msdn.microsoft.com/library/ee942158.aspx).
 - **Símbolos de depuração de exclusão gerado** está selecionado. Você não depuração quando você usar essa configuração de compilação.
 - **Incluir todos os bancos de dados configurados na guia empacotar/publicar SQL** está selecionado. Especifica se o Visual Studio irá implantar bancos de dados, bem como arquivos. Embora a caixa de seleção rótulo menções somente o **pacote/publicar SQL** guia, desmarcar essa caixa de seleção também desabilitará implantação de banco de dados que está configurada no perfil de publicação. Você fará que mais tarde, para que a caixa de seleção deve permanecer selecionada. O **pacote/publicar SQL** guia é usada para um banco de dados herdado método que você não irá usar esses tutoriais de publicação.
 - O **configurações de pacote de implantação da Web** seção não se aplica porque você está usando um clique publicar esses tutoriais.
@@ -60,7 +60,7 @@ Como você viu no tutorial anterior, o [pacote Elmah NuGet](http://www.hanselman
 
 Excluindo arquivos ou pastas específicas de implantação é um requisito comum; outro exemplo seria uma pasta que os usuários podem carregar arquivos. Você não deseja que os arquivos de log ou de carregar arquivos que foram criados no seu ambiente de desenvolvimento para ser implantada para produção. E se você estiver implantando uma atualização para a produção, que você não deseja que o processo de implantação para excluir arquivos que existem em produção. (Dependendo de como você define uma opção de implantação, se existir um arquivo no site de destino, mas não no site de origem quando você implanta, Web Deploy excluirá de destino.)
 
-Conforme mencionado anteriormente neste tutorial, o **itens para implantar** opção o **pacote/publicar na Web** for definido como **apenas os arquivos necessários para executar este aplicativo**. Como resultado, os arquivos de log são criados pelo Elmah no desenvolvimento de não serão implantados, que é o que deve acontecer. (Para ser implantado, precisaria ser incluído no projeto e seus **ação de compilação** propriedade precisa ser definido como **conteúdo**. Para obter mais informações, consulte **por que não todos os arquivos na pasta de projeto implantados?** na [perguntas Frequentes de implantação de projeto de aplicativo Web ASP.NET](https://msdn.microsoft.com/en-us/library/ee942158.aspx)). No entanto, Web Deploy não criará uma pasta no site de destino a menos que haja pelo menos um arquivo a ser copiado para ele. Portanto, você adicionará um *. txt* arquivo para a pasta para atuar como um espaço reservado para que a pasta será copiada.
+Conforme mencionado anteriormente neste tutorial, o **itens para implantar** opção o **pacote/publicar na Web** for definido como **apenas os arquivos necessários para executar este aplicativo**. Como resultado, os arquivos de log são criados pelo Elmah no desenvolvimento de não serão implantados, que é o que deve acontecer. (Para ser implantado, precisaria ser incluído no projeto e seus **ação de compilação** propriedade precisa ser definido como **conteúdo**. Para obter mais informações, consulte **por que não todos os arquivos na pasta de projeto implantados?** na [perguntas Frequentes de implantação de projeto de aplicativo Web ASP.NET](https://msdn.microsoft.com/library/ee942158.aspx)). No entanto, Web Deploy não criará uma pasta no site de destino a menos que haja pelo menos um arquivo a ser copiado para ele. Portanto, você adicionará um *. txt* arquivo para a pasta para atuar como um espaço reservado para que a pasta será copiada.
 
 Em **Solution Explorer**, com o botão direito do *Elmah* pasta, selecione **Adicionar Novo Item**e crie um arquivo de texto chamado *Espaço_reservado*. Coloque o seguinte texto nele: "Este é um arquivo de espaço reservado para garantir que a pasta é implantada." E salve o arquivo. Isso é tudo o que você precisa fazer para certificar-se de que o Visual Studio implanta esse arquivo e a pasta, pois o **ação de compilação** propriedade *. txt* arquivos é definido como **conteúdo**por padrão.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: af4967f642ba4615f3392c0c404d2ec62edaaae8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 48a7d7fdb670aebb72450fc4eb12a364ef595c53
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-dependency-injection"></a>Injeção de dependência do ASP.NET MVC 4
 ====================
@@ -25,7 +25,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > [!NOTE]
 > Este laboratório prático supõe que você tenha um conhecimento básico de **ASP.NET MVC** e **filtros ASP.NET MVC 4**. Se você não usou **filtros ASP.NET MVC 4** antes, é recomendável que você passe **filtros de ação do ASP.NET MVC personalizado** laboratório prático.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 Em **programação orientada a objeto** paradigma, objetos trabalham em conjunto em um modelo de colaboração em que há colaboradores e consumidores. Naturalmente, esse modelo de comunicação gera as dependências entre objetos e componentes, tornando-se difíceis de gerenciar ao aumenta a complexidade.
@@ -474,7 +474,7 @@ Nesta tarefa, você executar o aplicativo e que o filtro de ação personalizado
 
     ![Repositório de música](aspnet-mvc-4-dependency-injection/_static/image11.png "repositório de música")
 
-    *Repositório de música*
+    *Loja de Música*
 3. Navegue até **/Trace.axd** para ver o rastreamento de aplicativo de página e, em seguida, clique em **exibir detalhes**.
 
     ![Log de rastreamento de aplicativo](aspnet-mvc-4-dependency-injection/_static/image12.png "Log de rastreamento de aplicativo")

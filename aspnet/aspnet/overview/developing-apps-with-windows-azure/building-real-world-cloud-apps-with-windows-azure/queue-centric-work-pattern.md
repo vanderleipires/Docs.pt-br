@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: 125d555a9e170ef35dd99e0409a2442d5f9ae34a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccfbaa26cbf610f847811e6f3c612458277046ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Padrão de trabalho centrado em fila (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -91,7 +91,7 @@ Para implementar o padrão de fila, precisamos fazer duas alterações para o ap
 - Quando um usuário envia uma nova corrigir tarefa, coloque a tarefa em fila, em vez de gravação no banco de dados.
 - Crie um serviço de back-end que processa as mensagens na fila.
 
-Para a fila, usaremos o [serviço de armazenamento de fila do Azure](https://www.windowsazure.com/en-us/develop/net/how-to-guides/queue-service/). Outra opção é usar [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/).
+Para a fila, usaremos o [serviço de armazenamento de fila do Azure](https://www.windowsazure.com/develop/net/how-to-guides/queue-service/). Outra opção é usar [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/).
 
 Para decidir qual serviço de fila usar, considere como o seu aplicativo precisa para enviar e receber as mensagens na fila:
 
@@ -106,10 +106,10 @@ Outra consideração é a disponibilidade de aplicativos. O serviço de armazena
 
 Para colocar uma tarefa corrigir na fila, o front-end da web executa as seguintes etapas:
 
-1. Criar um [CloudQueueClient](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) instância. O `CloudQueueClient` instância é usada para executar solicitações no serviço de fila.
+1. Criar um [CloudQueueClient](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) instância. O `CloudQueueClient` instância é usada para executar solicitações no serviço de fila.
 2. Crie a fila, se ele ainda não existir.
 3. Serialize a tarefa corrigir.
-4. Chamar [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) para colocar a mensagem na fila.
+4. Chamar [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) para colocar a mensagem na fila.
 
 Vamos fazer esse trabalho no construtor e `SendMessageAsync` método de um novo `FixItQueueManager` classe.
 
@@ -117,7 +117,7 @@ Vamos fazer esse trabalho no construtor e `SendMessageAsync` método de um novo 
 
 Aqui, estamos usando o [Json.NET](https://github.com/JamesNK/Newtonsoft.Json) biblioteca para serializar fixit em formato JSON. Você pode usar qualquer abordagem de serialização que preferir. JSON tem a vantagem de ser legível, enquanto estiver sendo menos detalhada do que o XML.
 
-Código de qualidade de produção seria adicionar lógica de tratamento de erros, pausar se o banco de dados ficou indisponível, lidar com recuperação mais corretamente, criar a fila na inicialização do aplicativo e gerenciar "[suspeita" mensagens](https://msdn.microsoft.com/en-us/library/ms789028(v=vs.110).aspx). (Uma mensagem suspeita é uma mensagem que não pode ser processada por alguma razão. Você não quer mensagens suspeitas para ficar na fila, em que a função de trabalho continuamente tentará processá-las, falhar, tente novamente, falha e assim por diante.)
+Código de qualidade de produção seria adicionar lógica de tratamento de erros, pausar se o banco de dados ficou indisponível, lidar com recuperação mais corretamente, criar a fila na inicialização do aplicativo e gerenciar "[suspeita" mensagens](https://msdn.microsoft.com/library/ms789028(v=vs.110).aspx). (Uma mensagem suspeita é uma mensagem que não pode ser processada por alguma razão. Você não quer mensagens suspeitas para ficar na fila, em que a função de trabalho continuamente tentará processá-las, falhar, tente novamente, falha e assim por diante.)
 
 O aplicativo front-end do MVC, precisamos atualizar o código que cria uma nova tarefa. Em vez de colocar a tarefa para o repositório, chame o `SendMessageAsync` método mostrado acima.
 
@@ -156,7 +156,7 @@ Clique em **Okey** para concluir a caixa de diálogo. Isso adiciona dois projeto
 
 ![](queue-centric-work-pattern/_static/image8.png)
 
-Para obter mais informações, consulte [criando um projeto do Azure com o Visual Studio.](https://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx)
+Para obter mais informações, consulte [criando um projeto do Azure com o Visual Studio.](https://msdn.microsoft.com/library/windowsazure/ee405487.aspx)
 
 Dentro da função de trabalho, podemos pesquisar mensagens chamando o `ProcessMessageAsync` método o `FixItQueueManager` classe que vimos anteriormente.
 
@@ -168,7 +168,7 @@ O `ProcessMessagesAsync` método verifica se há uma espera de mensagem. Se houv
 
 Sondagem de fila de mensagens incorre em uma transação de pequena cobram, portanto, quando nenhuma mensagem aguardando para serem processados, a função de trabalho `RunAsync` método espera um segundo antes de sondar novamente chamando `Task.Delay(1000)`.
 
-Em um projeto da web, adicionar o código assíncrono pode automaticamente melhorar o desempenho porque o IIS gerencia um pool de threads limitado. Esse não for o caso em um projeto de função de trabalho. Para melhorar a escalabilidade da função de trabalho, você pode escrever código ou usar código assíncrono para implementar [programação paralela](https://msdn.microsoft.com/en-us/library/ff963553.aspx). O exemplo não implementa a programação paralela, mas mostra como fazer o código assíncrono para que você possa implementar programação paralela.
+Em um projeto da web, adicionar o código assíncrono pode automaticamente melhorar o desempenho porque o IIS gerencia um pool de threads limitado. Esse não for o caso em um projeto de função de trabalho. Para melhorar a escalabilidade da função de trabalho, você pode escrever código ou usar código assíncrono para implementar [programação paralela](https://msdn.microsoft.com/library/ff963553.aspx). O exemplo não implementa a programação paralela, mas mostra como fazer o código assíncrono para que você possa implementar programação paralela.
 
 ## <a name="summary"></a>Resumo
 
@@ -184,11 +184,11 @@ Para obter mais informações sobre as filas, consulte os seguintes recursos.
 Documentação:
 
 - [Parte de filas de armazenamento do Microsoft Azure 1: Guia de Introdução](http://justazure.com/microsoft-azure-storage-queues-part-1-getting-started/). Artigo de Roman Schacherl.
-- [Executar tarefas em segundo plano](https://msdn.microsoft.com/en-us/library/ff803365.aspx), capítulo 5 do [movendo aplicativos para a nuvem, 3ª edição](https://msdn.microsoft.com/en-us/library/ff728592.aspx) Microsoft Patterns e práticas recomendadas. (Em particular, a seção ["Usando filas de armazenamento do Azure"](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7).)
-- [Práticas recomendadas para maximizar a escalabilidade e a relação custo-benefício de soluções de mensagens baseadas em fila no Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh697709.aspx). White paper, Valery Mizonov.
-- [Comparando as filas do Azure e filas do barramento de serviço](https://msdn.microsoft.com/en-us/magazine/jj159884.aspx). Artigo de revista MSDN fornece informações adicionais que podem ajudá-lo a escolher qual serviço de fila a ser usado. O artigo menciona que o barramento de serviço é dependente de ACS para autenticação, o que significa que as filas do SB seria indisponíveis quando o ACS não está disponível. No entanto, desde que o artigo foi escrito, SB foi alterada para que você possa usar [tokens SAS](https://msdn.microsoft.com/en-us/library/windowsazure/dn170477.aspx) como uma alternativa ao ACS.
-- [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consulte primer mensagens assíncronas, Pipes e filtros padrão, o padrão de transações de compensação, padrão de consumidores concorrentes, padrão CQRS.
-- [Viagem de CQRS](https://msdn.microsoft.com/en-us/library/jj554200). Livro eletrônico sobre CQRS pelo Microsoft padrões e práticas recomendadas.
+- [Executar tarefas em segundo plano](https://msdn.microsoft.com/library/ff803365.aspx), capítulo 5 do [movendo aplicativos para a nuvem, 3ª edição](https://msdn.microsoft.com/library/ff728592.aspx) Microsoft Patterns e práticas recomendadas. (Em particular, a seção ["Usando filas de armazenamento do Azure"](https://msdn.microsoft.com/library/ff803365.aspx#sec7).)
+- [Práticas recomendadas para maximizar a escalabilidade e a relação custo-benefício de soluções de mensagens baseadas em fila no Azure](https://msdn.microsoft.com/library/windowsazure/hh697709.aspx). White paper, Valery Mizonov.
+- [Comparando as filas do Azure e filas do barramento de serviço](https://msdn.microsoft.com/magazine/jj159884.aspx). Artigo de revista MSDN fornece informações adicionais que podem ajudá-lo a escolher qual serviço de fila a ser usado. O artigo menciona que o barramento de serviço é dependente de ACS para autenticação, o que significa que as filas do SB seria indisponíveis quando o ACS não está disponível. No entanto, desde que o artigo foi escrito, SB foi alterada para que você possa usar [tokens SAS](https://msdn.microsoft.com/library/windowsazure/dn170477.aspx) como uma alternativa ao ACS.
+- [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/library/dn568099.aspx). Consulte primer mensagens assíncronas, Pipes e filtros padrão, o padrão de transações de compensação, padrão de consumidores concorrentes, padrão CQRS.
+- [Viagem de CQRS](https://msdn.microsoft.com/library/jj554200). Livro eletrônico sobre CQRS pelo Microsoft padrões e práticas recomendadas.
 
 Vídeo:
 

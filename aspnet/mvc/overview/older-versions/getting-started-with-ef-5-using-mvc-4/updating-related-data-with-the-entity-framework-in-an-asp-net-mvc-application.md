@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f2d480793d02c8bfa25c05fd11fa2e6ef9e54a60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2ca76364a2e9a71dc92644bd579345ae3c304a69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>Atualizando dados relacionados com o Entity Framework em um aplicativo ASP.NET MVC (6 de 10)
 ====================
@@ -110,7 +110,7 @@ Substitua o `HttpPost` `Edit` método com o código a seguir. que trata de atual
 O código faz o seguinte:
 
 - Obtém a atual `Instructor` entidade do banco de dados usando o carregamento rápido para o `OfficeAssignment` propriedade de navegação. Isso é o mesmo que você fez o `HttpGet` `Edit` método.
-- Atualiza recuperada `Instructor` entidade com valores de associador de modelo. O [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.108).aspx) sobrecarga usada permite que você *lista branca* as propriedades que você deseja incluir. Isso impede o excesso de lançamento, conforme explicado em [segundo tutorial](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
+- Atualiza recuperada `Instructor` entidade com valores de associador de modelo. O [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx) sobrecarga usada permite que você *lista branca* as propriedades que você deseja incluir. Isso impede o excesso de lançamento, conforme explicado em [segundo tutorial](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 - Define se o local do escritório estiver em branco, o `Instructor.OfficeAssignment` propriedade como nulo para que a linha relacionada a `OfficeAssignment` tabela será excluída.
@@ -146,13 +146,13 @@ Em *InstructorController.cs*, substitua o `HttpGet` `Edit` método com o código
 
 O código adiciona o carregamento rápido para o `Courses` propriedade de navegação e chama o novo `PopulateAssignedCourseData` método para fornecer informações para a matriz de caixa de seleção usando o `AssignedCourseData` exibir classe de modelo.
 
-O código de `PopulateAssignedCourseData` método lê todas `Course` entidades para carregar uma lista de cursos usando a exibição de classe de modelo. Para cada curso, o código verifica se o curso existe do instrutor `Courses` propriedade de navegação. Para criar pesquisa eficiente ao verificar se um curso é atribuído para o instrutor, os cursos atribuídos para o instrutor são colocados em um [HashSet](https://msdn.microsoft.com/en-us/library/bb359438.aspx) coleção. O `Assigned` está definida como `true` cursos instrutor é atribuído. O modo de exibição usará essa propriedade para determinar qual seleção caixas devem ser exibidas como selecionado. Por fim, a lista é passada para a exibição em um `ViewBag` propriedade.
+O código de `PopulateAssignedCourseData` método lê todas `Course` entidades para carregar uma lista de cursos usando a exibição de classe de modelo. Para cada curso, o código verifica se o curso existe do instrutor `Courses` propriedade de navegação. Para criar pesquisa eficiente ao verificar se um curso é atribuído para o instrutor, os cursos atribuídos para o instrutor são colocados em um [HashSet](https://msdn.microsoft.com/library/bb359438.aspx) coleção. O `Assigned` está definida como `true` cursos instrutor é atribuído. O modo de exibição usará essa propriedade para determinar qual seleção caixas devem ser exibidas como selecionado. Por fim, a lista é passada para a exibição em um `ViewBag` propriedade.
 
 Em seguida, adicione o código que é executado quando o usuário clica **salvar**. Substitua o `HttpPost` `Edit` método com o código a seguir, que chama um novo método que atualiza o `Courses` propriedade de navegação a `Instructor` entidade. As alterações são realçadas.
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs?highlight=3,7,20,33,37-65)]
 
-Como o modo de exibição não tem uma coleção de `Course` entidades, o associador de modelo não é possível atualizar automaticamente o `Courses` propriedade de navegação. Em vez de usar o associador de modelo para atualizar a propriedade de navegação de cursos, você vai fazer isso no novo `UpdateInstructorCourses` método. Portanto, você precisa excluir o `Courses` propriedade de associação de modelo. Isso não requer nenhuma alteração ao código que chama [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.98).aspx) porque você está usando o *lista branca* de sobrecarga e `Courses` não estiver na lista de inclusão.
+Como o modo de exibição não tem uma coleção de `Course` entidades, o associador de modelo não é possível atualizar automaticamente o `Courses` propriedade de navegação. Em vez de usar o associador de modelo para atualizar a propriedade de navegação de cursos, você vai fazer isso no novo `UpdateInstructorCourses` método. Portanto, você precisa excluir o `Courses` propriedade de associação de modelo. Isso não requer nenhuma alteração ao código que chama [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx) porque você está usando o *lista branca* de sobrecarga e `Courses` não estiver na lista de inclusão.
 
 Se nenhuma seleção caixas tiverem sido selecionadas, o código em `UpdateInstructorCourses` inicializa o `Courses` propriedade de navegação com uma coleção vazia:
 

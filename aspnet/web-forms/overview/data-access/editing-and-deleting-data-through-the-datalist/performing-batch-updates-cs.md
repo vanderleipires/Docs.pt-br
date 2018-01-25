@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 989bd80bf2d8b6548fd8e4abd492408a72104070
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46db3c5d733b9c8b6e749a9b8ff1aa9a061c36df
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-batch-updates-c"></a>Executar atualizações em lotes (c#)
 ====================
@@ -116,7 +116,7 @@ Figura 6 mostra a página após os atualização de todos os botões foram adici
 
 Com todos os itens de s DataList exibindo a interface de edição e a adição dos botões Atualizar tudo, tudo o que permanece está gravando o código para executar a atualização em lotes. Especificamente, é necessário percorrer os itens de DataList s e a chamada a `SuppliersBLL` classe s `UpdateSupplierAddress` método para cada um.
 
-A coleção de `DataListItem` instâncias que composição DataList pode ser acessado por meio do DataList s [ `Items` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.items.aspx). Com uma referência a um `DataListItem`, podemos pode obter correspondente `SupplierID` do `DataKeys` referência TextBox Web controles em coleção e programaticamente o `ItemTemplate` como o código a seguir ilustra:
+A coleção de `DataListItem` instâncias que composição DataList pode ser acessado por meio do DataList s [ `Items` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.items.aspx). Com uma referência a um `DataListItem`, podemos pode obter correspondente `SupplierID` do `DataKeys` referência TextBox Web controles em coleção e programaticamente o `ItemTemplate` como o código a seguir ilustra:
 
 
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample4.cs)]
@@ -131,7 +131,7 @@ Quando o usuário clica em um dos botões Atualizar tudo, o `UpdateAllSupplierAd
 
 O algoritmo de atualização do lote usado para este tutorial chamadas a `UpdateSupplierAddress` método *cada* fornecedor em DataList, independentemente se suas informações de endereço foi alteradas. Enquanto esse blind atualiza t são geralmente um problema de desempenho, elas podem gerar registros supérfluos se re auditoria as alterações na tabela de banco de dados. Por exemplo, se você usar gatilhos para registrar todos os `UPDATE` s para o `Suppliers` tabela para uma tabela de auditoria sempre que um usuário clica no botão Atualizar tudo que um novo registro de auditoria será criado para cada fornecedor no sistema, independentemente se o usuário fez qualquer alterações.
 
-As classes de DataTable do ADO.NET e DataAdapter são projetadas para oferecer suporte a atualizações em lote em que os registros novos, excluídos e modificados apenas resulta em qualquer comunicação de banco de dados. Cada linha na DataTable tem um [ `RowState` propriedade](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) que indica se a linha foi adicionada à DataTable, excluído, modificados, ou permanece inalterada. Quando uma tabela de dados é inicialmente preenchida, todas as linhas são marcadas como inalteradas. Alterar o valor de qualquer uma das colunas s linha marca a linha como modificadas.
+As classes de DataTable do ADO.NET e DataAdapter são projetadas para oferecer suporte a atualizações em lote em que os registros novos, excluídos e modificados apenas resulta em qualquer comunicação de banco de dados. Cada linha na DataTable tem um [ `RowState` propriedade](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) que indica se a linha foi adicionada à DataTable, excluído, modificados, ou permanece inalterada. Quando uma tabela de dados é inicialmente preenchida, todas as linhas são marcadas como inalteradas. Alterar o valor de qualquer uma das colunas s linha marca a linha como modificadas.
 
 No `SuppliersBLL` classe podemos atualizar as informações de endereço do fornecedor especificado s lendo primeiro o registro do fornecedor único em uma `SuppliersDataTable` e, em seguida, defina o `Address`, `City`, e `Country` valores de coluna usando o seguinte código:
 

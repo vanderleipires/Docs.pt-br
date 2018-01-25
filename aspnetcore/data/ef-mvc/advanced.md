@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: c5c06e61239c65cb1ff501a57777363a047a8db5
-ms.sourcegitcommit: f8ecf3d8f5b15f1e84ec86de3835b49ebe89fa1e
+ms.openlocfilehash: 4ee12cae0220825c81bd8b178dea3ac777f97bb6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Tópicos avançados - Core de EF com o tutorial do MVC do ASP.NET Core (10 de 10)
 
@@ -27,7 +27,7 @@ No tutorial anterior, você implementou herança de tabela por hierarquia. Este 
 
 Uma das vantagens de usar o Entity Framework é que ela evita vincular seu código muito semelhante a um método específico de armazenamento de dados. Ele faz isso através da geração de consultas SQL e comandos para você, que também libera você da necessidade de gravá-los. Mas há casos excepcionais, quando você precisa executar consultas específicas de SQL que você criou manualmente. Para esses cenários, a API do Entity Framework código primeiro inclui métodos que permitem que você passe comandos SQL diretamente para o banco de dados. Você tem as seguintes opções no EF Core 1.0:
 
-* Use o `DbSet.FromSql` método para consultas que retornam tipos de entidade. Os objetos retornados devem ser do tipo esperado pelo `DbSet` objeto e eles são controladas automaticamente pelo contexto de banco de dados, a menos que você [desativar rastreamento](crud.md#no-tracking-queries).
+* Use o `DbSet.FromSql` método para consultas que retornam tipos de entidade. Os objetos retornados devem ser do tipo esperado pelo `DbSet` objeto e eles automaticamente estiverem controladas pelo contexto de banco de dados, a menos que você [desativar rastreamento](crud.md#no-tracking-queries).
 
 * Use o `Database.ExecuteSqlCommand` para comandos sem consulta.
 
@@ -139,7 +139,7 @@ Observe que você não precisa usar o modo de depuração e parar no ponto de in
 
 ## <a name="repository-and-unit-of-work-patterns"></a>Repositório e unidade de padrões de trabalho
 
-Muitos desenvolvedores escrevem código para implementar o repositório e a unidade de padrões de trabalho como um wrapper em torno de código que funciona com o Entity Framework. Esses padrões destinam-se para criar uma camada de abstração entre a camada de acesso a dados e a camada de lógica comercial de um aplicativo. Implementando esses padrões podem ajudar a isolar seu aplicativo de alterações no repositório de dados e pode facilitar o teste de unidade automatizado ou desenvolvimento controlado por testes (TDD). No entanto, gravar código adicional para implementar esses padrões não é sempre a melhor escolha para aplicativos que usam o EF, por vários motivos:
+Muitos desenvolvedores escrevem código para implementar o repositório e a unidade de padrões de trabalho como um wrapper em torno de código que funciona com o Entity Framework. Esses padrões destinam-se para criar uma camada de abstração entre a camada de acesso a dados e a camada de lógica comercial de um aplicativo. Implementando esses padrões podem ajudar a isolar seu aplicativo de alterações no repositório de dados e pode facilitar o teste de unidade automatizado ou desenvolvimento controlado por testes (TDD). No entanto, gravar código adicional para implementar esses padrões nem sempre é a melhor escolha para aplicativos que usam o EF, por vários motivos:
 
 * A própria classe de contexto EF protege seu código de código específico do repositório de dados.
 

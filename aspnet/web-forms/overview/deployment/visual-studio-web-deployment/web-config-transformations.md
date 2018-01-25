@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: a88d8f35c770b362b74f787fee2c60a7577bccb2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a526275d76618c325a6b00f33cc550f28ab0cc00
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>Implantação de Web do ASP.NET usando o Visual Studio: transformações do arquivo Web. config
 ====================
@@ -27,7 +27,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial mostra como automatizar o processo de alteração de *Web. config* arquivo quando você o implantar em ambientes de destino diferente. A maioria dos aplicativos têm configurações de *Web. config* arquivo deve ser diferente quando o aplicativo é implantado. Automatizando o processo de fazer essas alterações mantém você precise fazê-las manualmente sempre que você implanta, qual seria tedioso e propenso a erros.
 
@@ -35,7 +35,7 @@ Lembrete: Se você receber uma mensagem de erro ou algo não funciona ao percorr
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Transformações de Web. config em vez de parâmetros de implantação da Web
 
-Há duas maneiras de automatizar o processo de alteração *Web. config* configurações de arquivo: [transformações de Web. config](https://msdn.microsoft.com/en-us/library/dd465326.aspx) e [parâmetros de implantação da Web](https://msdn.microsoft.com/en-us/library/ff398068.aspx). Um *Web. config* arquivo de transformação contém marcação XML que especifica como alterar o *Web. config* arquivo quando ele é implantado. Você pode especificar diferentes alterações para determinado configurações de compilação e perfis de publicação para determinado. As configurações de compilação padrão são Debug e Release e você pode criar configurações de compilação personalizada. Um perfil de publicação geralmente corresponde a um ambiente de destino. (Você aprenderá mais sobre como publicar perfis no [implantando para o IIS como um ambiente de teste](deploying-to-iis.md) tutorial.)
+Há duas maneiras de automatizar o processo de alteração *Web. config* configurações de arquivo: [transformações de Web. config](https://msdn.microsoft.com/library/dd465326.aspx) e [parâmetros de implantação da Web](https://msdn.microsoft.com/library/ff398068.aspx). Um *Web. config* arquivo de transformação contém marcação XML que especifica como alterar o *Web. config* arquivo quando ele é implantado. Você pode especificar diferentes alterações para determinado configurações de compilação e perfis de publicação para determinado. As configurações de compilação padrão são Debug e Release e você pode criar configurações de compilação personalizada. Um perfil de publicação geralmente corresponde a um ambiente de destino. (Você aprenderá mais sobre como publicar perfis no [implantando para o IIS como um ambiente de teste](deploying-to-iis.md) tutorial.)
 
 Parâmetros de implantação da Web podem ser usados para especificar vários tipos diferentes de configurações que devem ser configurados durante a implantação, incluindo as configurações que se encontram em *Web. config* arquivos. Quando usado para especificar *Web. config* alterações no arquivo, parâmetros de implantação da Web são mais complexos para configurar, mas eles são úteis quando você não souber o valor a ser definido até que você implante. Por exemplo, em um ambiente corporativo, você pode criar um *pacote de implantação* e dê a ele uma pessoa no departamento de TI para instalar o em produção, e essa pessoa tem que inserir cadeias de caracteres de conexão ou senhas que você não sabe.
 

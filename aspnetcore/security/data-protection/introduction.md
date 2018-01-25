@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/introduction
-ms.openlocfilehash: b98027ee0e7c63bac23054d7623f28294388dede
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b02ef9121e50ab9d9f24032d32f1e65fe73049c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-data-protection"></a>Introdução à proteção de dados
 
@@ -23,7 +23,7 @@ A pilha de proteção de dados do ASP.NET Core foi projetada para servir como a 
 
 ## <a name="problem-statement"></a>Declaração do problema
 
-A declaração do problema geral pode ser declarada em um único sentença sucintamente: necessário manter informações confiáveis para recuperação posterior, mas não confia que o mecanismo de persistência. Em termos de web, isso pode ser escrito como "Preciso ir e voltar estado confiável por meio de um cliente não confiável."
+A declaração do problema geral pode ser declarada em um único sentença sucintamente: necessário manter informações confiáveis para recuperação posterior, mas não confio o mecanismo de persistência. Em termos de web, isso pode ser escrito como "Preciso ir e voltar estado confiável por meio de um cliente não confiável."
 
 O exemplo canônico disso é um cookie de autenticação ou portador token. O servidor gera um "Estou Groot e ter permissões de xyz" token e encaminha-lo ao cliente. No futuro, o cliente apresentará esse token para o servidor, mas o servidor precisa de algum tipo de garantia de que o cliente não foi forjada o token. Portanto, o primeiro requisito: autenticidade (também conhecido como integridade e à prova de adulteração).
 
@@ -31,7 +31,7 @@ Como o estado persistente é confiável pelo servidor, estimamos que esse estado
 
 Finalmente, desde que os aplicativos modernos são componentizados, o que vimos é que componentes individuais queira tirar proveito do sistema sem considerar outros componentes no sistema. Por exemplo, se um componente de token de portador está usando esta pilha, ele deve operar sem interferência de um mecanismo de anti-CSRF que também pode usar a mesma pilha. Portanto, o requisito de final: isolamento.
 
-Podemos fornecer mais restrições para restringir o escopo dos nossos requisitos. Vamos supor que todos os serviços que operam com o criptográfico são igualmente confiáveis e que os dados não precisam ser gerado ou consumido fora os serviços em nosso controle direto. Além disso, é necessário que as operações são tão rápidas quanto possível, desde que cada solicitação ao serviço web pode percorrer o criptográfico uma ou mais vezes. Isso torna a criptografia simétrica ideal para o nosso cenário, e nós pode desconto criptografia assimétrica até como uma hora que é necessário.
+Podemos fornecer mais restrições para restringir o escopo dos nossos requisitos. Vamos supor que todos os serviços que operam com o criptográfico são igualmente confiáveis e que os dados não precisam ser gerado ou consumido fora os serviços em nosso controle direto. Além disso, é necessário que as operações são tão rápidas quanto possível, desde que cada solicitação ao serviço web pode percorrer o criptográfico uma ou mais vezes. Isso torna a criptografia simétrica ideal para o nosso cenário, e nós pode desconto criptografia assimétrica até como uma hora que é necessária.
 
 ## <a name="design-philosophy"></a>Filosofia de design
 
@@ -41,7 +41,7 @@ Começamos identificando problemas com a pilha existente. Depois que tivemos que
 
 * Oferece uma API simples do voltado ao consumidor. As APIs deve ser fácil de usar corretamente e difícil de usar incorretamente.
 
-* Os desenvolvedores não devem conhecer os princípios de gerenciamento de chaves. O sistema deve lidar com a seleção do algoritmo e a vida útil da chave em nome do desenvolvedor. Idealmente o desenvolvedor nunca mesmo deve ter acesso ao material de chave bruto.
+* Os desenvolvedores não devem saber os princípios de gerenciamento de chaves. O sistema deve lidar com a seleção do algoritmo e a vida útil da chave em nome do desenvolvedor. Idealmente o desenvolvedor nunca mesmo deve ter acesso ao material de chave bruto.
 
 * As chaves devem ser protegidas em repouso quando possível. O sistema deve descobrir um mecanismo de proteção padrão apropriado e aplicá-lo automaticamente.
 

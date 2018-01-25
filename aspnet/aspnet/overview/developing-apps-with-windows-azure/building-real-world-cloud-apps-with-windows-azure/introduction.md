@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 5054f932d05fb612a6e18a81274719d7e249b77b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Criando aplicativos de nuvem do mundo Real com o Azure
 ====================
@@ -103,9 +103,9 @@ Este livro eletrônico explica que treze recomendadas padrões de desenvolviment
     - Habilitar a alta disponibilidade e melhorar a escalabilidade acoplamento flexível camadas web e de trabalho.
     - Demonstração: Filas de armazenamento do Azure no aplicativo corrigi-lo.
 - [Mais diretrizes e padrões de aplicativo de nuvem](more-patterns-and-guidance.md).
-- [Apêndice: A correção exemplo de aplicativo](the-fix-it-sample-application.md)
+- [Apêndice: o aplicativo de exemplo Fix It](the-fix-it-sample-application.md)
 
-    - Problemas conhecidos
+    - Problemas Conhecidos
     - Práticas recomendadas
     - Como baixar, criar, executar e implantar.
 
@@ -155,7 +155,7 @@ Se uma máquina falhar, Azure automaticamente extrair da rotação, gira uma nov
 
 Tudo isso ocorre automaticamente. Tudo o que você precisa fazer é criar um site da web e implantar seu aplicativo, usando o Windows PowerShell, o Visual Studio ou o portal de gerenciamento do Azure.
 
-Para obter um tutorial de passo a passo de rápida e fácil que mostra como criar um aplicativo web no Visual Studio e implantá-lo para um Site do Azure, consulte [Introdução ao Azure e ASP.NET](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/).
+Para obter um tutorial de passo a passo de rápida e fácil que mostra como criar um aplicativo web no Visual Studio e implantá-lo para um Site do Azure, consulte [Introdução ao Azure e ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
 
 <a id="summary"></a>
 ## <a name="summary"></a>Resumo
@@ -168,13 +168,13 @@ Para obter mais informações sobre os tópicos abordados neste capítulo, consu
 
 Documentação:
 
-- [Aplicativos no serviço de aplicativo do Azure Web](https://azure.microsoft.com/en-us/services/app-service/web/). Página do portal para obter a documentação sobre os aplicativos Web do Azure.
-- [Web de aplicativos, serviços de nuvem e VMs: quando usar o quê?](https://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, conforme mostrado neste capítulo é apenas uma das três maneiras que você pode executar aplicativos web no Azure. Este artigo explica as diferenças entre as três formas e fornece orientação sobre como escolher qual delas é adequada para seu cenário. Como Sites, serviços de nuvem é um recurso de PaaS do Azure. Máquinas virtuais são um recurso de IaaS. Para obter uma explicação de PaaS e IaaS, consulte o [opções de dados](data-storage-options.md#paasiaas) capítulo.
+- [Aplicativos no serviço de aplicativo do Azure Web](https://azure.microsoft.com/services/app-service/web/). Página do portal para obter a documentação sobre os aplicativos Web do Azure.
+- [Web de aplicativos, serviços de nuvem e VMs: quando usar o quê?](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, conforme mostrado neste capítulo é apenas uma das três maneiras que você pode executar aplicativos web no Azure. Este artigo explica as diferenças entre as três formas e fornece orientação sobre como escolher qual delas é adequada para seu cenário. Como Sites, serviços de nuvem é um recurso de PaaS do Azure. Máquinas virtuais são um recurso de IaaS. Para obter uma explicação de PaaS e IaaS, consulte o [opções de dados](data-storage-options.md#paasiaas) capítulo.
 
 Vídeos:
 
-- [Scott Guthrie começa na etapa 0 - o que é o sistema operacional em nuvem do Azure?](https://azure.microsoft.com/en-us/documentation/videos/what-is-the-cloud-os-scottgu/)
-- [Arquitetura de Sites da Web - com Stefan Schackow](https://azure.microsoft.com/en-us/documentation/videos/why-azure-web-sites-plus-architecture/).
+- [Scott Guthrie começa na etapa 0 - o que é o sistema operacional em nuvem do Azure?](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
+- [Arquitetura de Sites da Web - com Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/).
 - [Recursos internos de Sites do Azure com Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
 >[!div class="step-by-step"]

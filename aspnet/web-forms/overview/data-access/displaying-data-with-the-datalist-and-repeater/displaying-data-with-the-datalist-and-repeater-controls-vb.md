@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b6e71470ae2888ac4332f896c34f666618a425e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 20a092ee2886932664705c22c3aa88d8a2f7f0ef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>Exibindo dados com os controles de Repetidor (VB) e de DataList
 ====================
@@ -163,7 +163,7 @@ Além de `ItemTemplate`, DataList dá suporte a seis outros modelos opcionais:
 
 - `HeaderTemplate`Se fornecido, adiciona uma linha de cabeçalho para a saída e é usado para processar essa linha
 - `AlternatingItemTemplate`usado para processar itens alternados
-- `SelectedItemTemplate`usado para renderizar o item selecionado; o item selecionado é o item cujo índice corresponde à DataList s [ `SelectedIndex` propriedade](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `SelectedItemTemplate`usado para renderizar o item selecionado; o item selecionado é o item cujo índice corresponde à DataList s [ `SelectedIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
 - `EditItemTemplate`usado para renderizar o item que está sendo editado
 - `SeparatorTemplate`Se fornecido, adiciona um separador entre cada item e é usado para processar esse separador
 - `FooterTemplate`-Se fornecido, adiciona uma linha de rodapé para a saída e é usado para processar essa linha
@@ -222,7 +222,7 @@ No ASP.NET 1. x, repetidor controle foi comumente usado para exibir uma lista co
 - Em `SectionLevelTutorialListing.ascx`, um repetidor foi usado para exibir uma lista com marcadores das seções filhos da seção de mapa de site atual
 
 > [!NOTE]
-> O ASP.NET 2.0 apresenta o novo [controle BulletedList](https://msdn.microsoft.com/en-us/library/ms228101.aspx), que pode ser associada a um controle de fonte de dados para exibir uma lista com marcadores simple. Com o controle de BulletedList não precisamos especificar qualquer HTML relacionada à lista; em vez disso, podemos simplesmente indicar o campo de dados a ser exibida como o texto para cada item da lista.
+> O ASP.NET 2.0 apresenta o novo [controle BulletedList](https://msdn.microsoft.com/library/ms228101.aspx), que pode ser associada a um controle de fonte de dados para exibir uma lista com marcadores simple. Com o controle de BulletedList não precisamos especificar qualquer HTML relacionada à lista; em vez disso, podemos simplesmente indicar o campo de dados a ser exibida como o texto para cada item da lista.
 
 
 Repetidor serve como uma captura todos os dados de controle da Web. Se não houver um controle existente que gera a marcação necessária, o controle de Repetidor pode ser usado. Para ilustrar usando repetidor, permitem s tiverem a lista de categorias exibida acima do DataList de informações de produto criado na etapa 2. Em particular, permitem s têm as categorias exibidas em uma única linha HTML `<table>` com cada categoria exibida como uma coluna na tabela.

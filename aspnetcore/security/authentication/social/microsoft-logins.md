@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 6e4586eb681bd230413ace67ca9eddc3fe3e9e60
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 330398dc945fc61e5fc94d55bf651e62e0963072
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configuring-microsoft-account-authentication"></a>Configurar a autenticação do Microsoft Account
 
@@ -131,7 +131,7 @@ Agora você está conectado usando suas credenciais da Microsoft:
 * Se o provedor do Microsoft Account redireciona para uma página de erro de entrada, observe os erro título e descrição de cadeia de caracteres parâmetros de consulta diretamente após o `#` (hashtag) no Uri.
 
   Embora a mensagem de erro parece ser um problema com a autenticação do Microsoft, a causa mais comum é seu aplicativo Uri não corresponde a nenhuma do **URIs de redirecionamento** especificado para o **Web** plataforma .
-* **ASP.NET Core 2. x somente:** identidade se não está configurada por meio da chamada `services.AddIdentity` na `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
+* **ASP.NET Core 2. x somente:** identidade se não estiver configurada, chamando `services.AddIdentity` na `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
 * Se o banco de dados do site não tiver sido criado, aplicando a migração inicial, você obterá *uma operação de banco de dados falhou ao processar a solicitação* erro. Toque em **aplicar migrações** para criar o banco de dados e a atualização para continuar após o erro.
 
 ## <a name="next-steps"></a>Próximas etapas

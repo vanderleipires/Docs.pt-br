@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: c26ba75f6a401d50a6b46bd7ee40500c5736f20f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Criar, ler, atualizar e excluir - Core EF com páginas Razor (2 de 8)
 
@@ -185,7 +185,7 @@ Mantém o controle de contexto de banco de dados se entidades na memória estão
 
 Uma entidade pode estar em um dos seguintes estados:
 
-* `Added`: A entidade ainda não existir no banco de dados. O `SaveChanges` método emite uma instrução INSERT.
+* `Added`: A entidade ainda não existe no banco de dados. O `SaveChanges` método emite uma instrução INSERT.
 
 * `Unchanged`: Nenhuma alteração precisa ser salva com essa entidade. Uma entidade possui esse status quando ele é lido a partir do banco de dados.
 

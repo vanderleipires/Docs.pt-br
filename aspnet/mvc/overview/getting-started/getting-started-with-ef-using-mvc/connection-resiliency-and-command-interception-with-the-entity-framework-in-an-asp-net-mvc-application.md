@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fecdd582918a61f3d01519c75d159f9c601c8223
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a28284e203904cc943e5e46b369e8a58ea5c820
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Resiliência de Conexão e interceptação de comando com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
@@ -49,14 +49,14 @@ O recurso de resiliência de conexão deve ser configurado corretamente para um 
 
 Você pode definir essas configurações manualmente para qualquer ambiente de banco de dados com suporte por um provedor do Entity Framework, mas os valores padrão que geralmente funcionam bem para um aplicativo online que usa o banco de dados SQL do Windows Azure já foram configurados para você, e Essas são as configurações que você implementará para o aplicativo da Contoso University.
 
-Você precisa fazer para habilitar a resiliência de conexão é criar uma classe em seu assembly que deriva de [DbConfiguration](https://msdn.microsoft.com/en-us/data/jj680699.aspx) classe e, na classe, defina o banco de dados do SQL *estratégia de execução*, que EF é outro termo para *política de repetição*.
+Você precisa fazer para habilitar a resiliência de conexão é criar uma classe em seu assembly que deriva de [DbConfiguration](https://msdn.microsoft.com/data/jj680699.aspx) classe e, na classe, defina o banco de dados do SQL *estratégia de execução*, que EF é outro termo para *política de repetição*.
 
 1. Na pasta DAL, adicione um arquivo de classe chamado *SchoolConfiguration.cs*.
 2. Substitua o código de modelo com o código a seguir:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-    O Entity Framework executa automaticamente o código encontrados em uma classe que deriva de `DbConfiguration`. Você pode usar o `DbConfiguration` classe para realizar tarefas de configuração no código que você faria no caso contrário, o *Web. config* arquivo. Para obter mais informações, consulte [EntityFramework configuração baseada em código](https://msdn.microsoft.com/en-us/data/jj680699).
+    O Entity Framework executa automaticamente o código encontrados em uma classe que deriva de `DbConfiguration`. Você pode usar o `DbConfiguration` classe para realizar tarefas de configuração no código que você faria no caso contrário, o *Web. config* arquivo. Para obter mais informações, consulte [EntityFramework configuração baseada em código](https://msdn.microsoft.com/data/jj680699).
 3. Em *StudentController.cs*, adicione um `using` instrução para `System.Data.Entity.Infrastructure`.
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
@@ -66,13 +66,13 @@ Você precisa fazer para habilitar a resiliência de conexão é criar uma class
 
     Você estava usando `DataException` para tentar identificar erros que podem ser transitórios para fornecer uma mensagem amigável "tente novamente". Mas agora que você ativou a uma política de repetição, os únicos erros provavelmente transitório terá já foi tentados e falhou várias vezes e a exceção real retornada será encapsulada no `RetryLimitExceededException` exceção.
 
-Para obter mais informações, consulte [resiliência de Conexão do Entity Framework / lógica de repetição](https://msdn.microsoft.com/en-us/data/dn456835).
+Para obter mais informações, consulte [resiliência de Conexão do Entity Framework / lógica de repetição](https://msdn.microsoft.com/data/dn456835).
 
 ## <a name="enable-command-interception"></a>Habilitar a intercepção de comando
 
 Agora que você ativou a uma política de repetição, como você testar para verificar se ele está funcionando conforme o esperado? Não é tão fácil forçar um erro transitório acontecer, especialmente quando você estiver executando localmente, e poderá ser especialmente difíceis de integrar erros transitórios reais em um teste de unidade automatizado. Para testar o recurso de resiliência de conexão, você precisa de uma maneira para interceptar consultas do Entity Framework envia para o SQL Server e substitua a resposta do SQL Server com um tipo de exceção que é normalmente transitório.
 
-Você também pode usar a interceptação de consulta para implementar uma prática recomendada para aplicativos em nuvem: [efetuar a latência e o êxito ou a falha de todas as chamadas para os serviços externos](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) como os serviços de banco de dados. EF6 fornece um [dedicado a API de registro em log](https://msdn.microsoft.com/en-us/data/dn469464) que pode tornar mais fácil de fazer o registro em log, mas essa seção do tutorial, você aprenderá a usar o Entity Framework [recurso interceptação](https://msdn.microsoft.com/en-us/data/dn469464) diretamente, tanto para log e para simular erros transitórios.
+Você também pode usar a interceptação de consulta para implementar uma prática recomendada para aplicativos em nuvem: [efetuar a latência e o êxito ou a falha de todas as chamadas para os serviços externos](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) como os serviços de banco de dados. EF6 fornece um [dedicado a API de registro em log](https://msdn.microsoft.com/data/dn469464) que pode tornar mais fácil de fazer o registro em log, mas essa seção do tutorial, você aprenderá a usar o Entity Framework [recurso interceptação](https://msdn.microsoft.com/data/dn469464) diretamente, tanto para log e para simular erros transitórios.
 
 ### <a name="create-a-logging-interface-and-class"></a>Criar uma interface de log e uma classe
 

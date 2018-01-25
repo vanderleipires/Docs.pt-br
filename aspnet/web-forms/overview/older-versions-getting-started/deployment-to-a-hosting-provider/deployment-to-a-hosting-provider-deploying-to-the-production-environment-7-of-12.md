@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ad44968975b7929f5b0f70334deabc7238797402
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4aa6766c2c7765f499f5c5380962a5fe443e8c9d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Implantando o ambiente de produção - 7 de 12
 ====================
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Neste tutorial, você pode configurar uma conta com um provedor de hospedagem e implantar seu ASP.NET recurso de publicação do aplicativo web para o ambiente de produção usando o Visual Studio um clique.
 
@@ -190,7 +190,7 @@ No **arquivo**/**permissões da pasta** janela, selecione o **leitura** e **grav
 
 Certifique-se de que Elmah tenha acesso de gravação para o *Elmah* pasta causando um erro e, em seguida, exibindo o relatório de erros do Elmah. Solicitar uma URL inválida como *Studentsxxx.aspx*. Como antes, você pode ver o *GenericErrorPage* página. Clique o **fazer logoff** link e, em seguida, execute *Elmah.axd*. Você obtém o **logon** página pela primeira vez, que valida que o *Web. config* transformação Elmah autorização foi adicionado com êxito. Depois de entrar, você verá o relatório que mostra o erro que é causado apenas.
 
-[![ELMAH.axd_Prod](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image41.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image40.png)
+[![Elmah.axd_Prod](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image41.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image40.png)
 
 ## <a name="testing-in-the-production-environment"></a>Teste no ambiente de produção
 
@@ -246,7 +246,7 @@ O *robots* arquivo fica na pasta do projeto e deve ter o seguinte texto nele:
 
 O `User-agent` linha informa os mecanismos de pesquisa que as regras no arquivo se aplicam a todos os pesquisa mecanismo são (robôs), e o `Disallow` linha especifica que nenhuma página no site deve ser rastreada.
 
-Você provavelmente desejará mecanismos de pesquisa para seu site de produção do catálogo, você precisa excluir este arquivo de implantação de produção. Para fazer isso, consulte **pode, excluir arquivos ou pastas específicas de implantação?** na [perguntas Frequentes de implantação de projeto de aplicativo Web ASP.NET](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment). Certifique-se de que você especificar a exclusão somente para o perfil de publicação de produção.
+Você provavelmente desejará mecanismos de pesquisa para seu site de produção do catálogo, você precisa excluir este arquivo de implantação de produção. Para fazer isso, consulte **pode, excluir arquivos ou pastas específicas de implantação?** na [perguntas Frequentes de implantação de projeto de aplicativo Web ASP.NET](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment). Certifique-se de que você especificar a exclusão somente para o perfil de publicação de produção.
 
 Criar uma segunda conta de hospedagem é uma abordagem para trabalhar com um ambiente de teste que não é necessária, mas que talvez valha a pena a despesa adicional. Os tutoriais a seguir, você continuará a usar o IIS como seu ambiente de teste.
 

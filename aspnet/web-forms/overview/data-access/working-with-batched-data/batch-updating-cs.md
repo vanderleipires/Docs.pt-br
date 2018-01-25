@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 506ecc9fad47cc39a0323e9ed18814c26e28ee47
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1210f9048401ca1b4e29d6dde9bf5dbef987091f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-updating-c"></a>Lote de atualização (c#)
 ====================
@@ -47,7 +47,7 @@ Permitir que o s começar!
 
 ## <a name="examining-the-steps-for-making-all-gridview-rows-editable"></a>Examinando as etapas para fazer todas as linhas de GridView editável
 
-Como discutido o [uma visão geral de inserção de, atualizando e excluindo dados](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md) tutorial, GridView oferece suporte interno para editar seus dados subjacentes em uma base por linha. Internamente, o GridView notas qual linha é editável por meio de seu [ `EditIndex` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx). Como o GridView está sendo associada à sua fonte de dados, ele verifica cada linha para ver se o índice da linha é igual ao valor de `EditIndex`. Nesse caso, essa linha s campos são renderizados usando a edição de suas interfaces. Para BoundFields, a interface de edição é uma caixa de texto cuja `Text` propriedade é atribuída o valor do campo de dados especificado para o s BoundField `DataField` propriedade. Para TemplateFields, o `EditItemTemplate` é usado em vez do `ItemTemplate`.
+Como discutido o [uma visão geral de inserção de, atualizando e excluindo dados](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md) tutorial, GridView oferece suporte interno para editar seus dados subjacentes em uma base por linha. Internamente, o GridView notas qual linha é editável por meio de seu [ `EditIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx). Como o GridView está sendo associada à sua fonte de dados, ele verifica cada linha para ver se o índice da linha é igual ao valor de `EditIndex`. Nesse caso, essa linha s campos são renderizados usando a edição de suas interfaces. Para BoundFields, a interface de edição é uma caixa de texto cuja `Text` propriedade é atribuída o valor do campo de dados especificado para o s BoundField `DataField` propriedade. Para TemplateFields, o `EditItemTemplate` é usado em vez do `ItemTemplate`.
 
 Lembre-se de que o fluxo de trabalho de edição é iniciado quando um usuário clica em um botão de edição de linha s. Isso causa um postback, define o GridView s `EditIndex` propriedade para o índice da linha clicada s e reassociações os dados à grade. Quando um botão de cancelamento de linha s é clicado, em um postback o `EditIndex` é definido como um valor de `-1` antes de associar novamente os dados à grade. Como as linhas de s GridView iniciar indexação em zero, definindo `EditIndex` para `-1` tem o efeito de exibir o GridView no modo somente leitura.
 
@@ -240,7 +240,7 @@ Crie um método chamado `BatchUpdate` em `BatchUpdate.aspx.cs` e adicione o segu
 
 [!code-csharp[Main](batch-updating-cs/samples/sample5.cs)]
 
-Este método começa obtendo todos os produtos em um `ProductsDataTable` por meio de uma chamada para o s BLL `GetProducts` método. Em seguida, enumera o `ProductGrid` GridView s [ `Rows` coleção](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx). O `Rows` coleção contém um [ `GridViewRow` instância](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewrow.aspx) para cada linha exibida em GridView. Já que estamos mostrando no máximo dez linhas por página, o s GridView `Rows` coleção será ter não mais do que 10 itens.
+Este método começa obtendo todos os produtos em um `ProductsDataTable` por meio de uma chamada para o s BLL `GetProducts` método. Em seguida, enumera o `ProductGrid` GridView s [ `Rows` coleção](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx). O `Rows` coleção contém um [ `GridViewRow` instância](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewrow.aspx) para cada linha exibida em GridView. Já que estamos mostrando no máximo dez linhas por página, o s GridView `Rows` coleção será ter não mais do que 10 itens.
 
 Para cada linha de `ProductID` é capturado do `DataKeys` coleta e apropriada `ProductsRow` é selecionado do `ProductsDataTable`. Os controles de entrada TemplateField quatro programaticamente são referenciados e seus valores atribuídos para a `ProductsRow` s propriedades da instância. Depois de cada GridView linha s valores foram usados para atualizar o `ProductsDataTable`, ele s passado para o s BLL `UpdateWithTransaction` método que, conforme vimos no tutorial anterior, simplesmente chama para baixo em s DAL `UpdateWithTransaction` método.
 
@@ -270,7 +270,7 @@ Para esses tipos de situações, considere usar o seguinte `BatchUpdateAlternate
 
 [!code-csharp[Main](batch-updating-cs/samples/sample7.cs)]
 
-`BatchMethodAlternate`inicia criando uma nova vazia `ProductsDataTable` chamado `products`. Em seguida, percorre o GridView s `Rows` coleção e, para cada linha obtém as informações de produto específico usando o s BLL `GetProductByProductID(productID)` método. Recuperada `ProductsRow` instância tem suas propriedades atualizadas da mesma maneira como `BatchUpdate`, mas depois de atualizar a linha será importado para o `products``ProductsDataTable` por meio de DataTable s [ `ImportRow(DataRow)` método](https://msdn.microsoft.com/en-us/library/system.data.datatable.importrow(VS.80).aspx).
+`BatchMethodAlternate`inicia criando uma nova vazia `ProductsDataTable` chamado `products`. Em seguida, percorre o GridView s `Rows` coleção e, para cada linha obtém as informações de produto específico usando o s BLL `GetProductByProductID(productID)` método. Recuperada `ProductsRow` instância tem suas propriedades atualizadas da mesma maneira como `BatchUpdate`, mas depois de atualizar a linha será importado para o `products``ProductsDataTable` por meio de DataTable s [ `ImportRow(DataRow)` método](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
 Após o `foreach` loop estiver concluído, `products` contém um `ProductsRow` instância para cada linha em GridView. Desde que cada um do `ProductsRow` instâncias foram adicionadas para o `products` (em vez de atualizado), se cegamente de passá-lo para o `UpdateWithTransaction` método o `ProductsTableAdatper` tentará inserir cada um dos registros no banco de dados. Em vez disso, é necessário especificar que cada uma dessas linhas foi modificada (não adicionado).
 

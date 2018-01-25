@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4796d5d9fcf1f924e9baa9bc56424a9d719425c9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f238b8ea8dfbde67dbad7a52d6b4851d67402a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-gridview-column-of-checkboxes-c"></a>Adicionando uma coluna de GridView das caixas de seleção (c#)
 ====================
@@ -100,7 +100,7 @@ Com o controle de Web de caixa de seleção e TemplateField adicionado, cada lin
 
 Neste ponto, temos uma coluna de caixas de seleção, mas nenhuma maneira de determinar quais caixas de seleção foram verificadas em um postback. Quando é clicado no botão excluir produtos selecionados, no entanto, precisamos saber quais caixas de seleção foram marcadas para excluir esses produtos.
 
-O GridView s [ `Rows` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows.aspx) fornece acesso às linhas de dados em GridView. É possível iterar por meio dessas linhas, acessar programaticamente o controle de caixa de seleção e, em seguida, consulte seu `Checked` propriedade para determinar se a caixa de seleção foi selecionada.
+O GridView s [ `Rows` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows.aspx) fornece acesso às linhas de dados em GridView. É possível iterar por meio dessas linhas, acessar programaticamente o controle de caixa de seleção e, em seguida, consulte seu `Checked` propriedade para determinar se a caixa de seleção foi selecionada.
 
 Criar um manipulador de eventos para o `DeleteSelectedProducts` controle de botão Web s `Click` evento e adicione o seguinte código:
 

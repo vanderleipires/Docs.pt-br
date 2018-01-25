@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 61e357198ffa4e93d35b7fa4619270da630547c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23195949121cd13ca4b1809b8db91a7320d1fdd2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>Configurando um servidor Web para publicação (agente remoto) de implantação da Web
 ====================
@@ -65,7 +65,7 @@ Neste tópico mostram como executar cada um desses procedimentos. As tarefas e i
 - O servidor tem um endereço IP estático.
 
 > [!NOTE]
-> Para obter mais informações sobre como adicionar computadores a um domínio, consulte [ingressando computadores no domínio e fazendo logon](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx). Para obter mais informações sobre como configurar endereços IP estáticos, consulte [configurar um endereço IP estático](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx). O serviço de agente remoto tem suporte pelo IIS 6 em diante e não exige que você ingresse em um domínio. No entanto, as etapas neste tutorial foram desenvolvidas e testadas no IIS 7.5 e procedimentos para outras versões podem variar.
+> Para obter mais informações sobre como adicionar computadores a um domínio, consulte [ingressando computadores no domínio e fazendo logon](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Para obter mais informações sobre como configurar endereços IP estáticos, consulte [configurar um endereço IP estático](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx). O serviço de agente remoto tem suporte pelo IIS 6 em diante e não exige que você ingresse em um domínio. No entanto, as etapas neste tutorial foram desenvolvidas e testadas no IIS 7.5 e procedimentos para outras versões podem variar.
 
 
 ## <a name="install-products-and-components"></a>Instalar produtos e componentes
@@ -75,9 +75,9 @@ Esta seção o orientará durante a instalação dos produtos necessários e com
 Nesse caso, você precisa instalar essas coisas:
 
 - **Configuração recomendada do IIS 7**. Isso permite que o **servidor Web (IIS)** função em seu servidor web e instala o conjunto de módulos do IIS e os componentes necessários para hospedar um aplicativo ASP.NET.
-- **.NET framework 4.0**. Isso é necessário para executar aplicativos que foram criados com esta versão do .NET Framework.
+- **.NET Framework 4.0**. Isso é necessário para executar aplicativos que foram criados com esta versão do .NET Framework.
 - **Web Deployment Tool 2.1 ou posterior**. Isso instala a implantação da Web (e seu executável subjacente, MSDeploy.exe) em seu servidor. Como parte desse processo, ele instala e inicia o serviço de agente de implantação da Web. Esse serviço permite que você implante pacotes da web de um computador remoto.
-- **O ASP.NET MVC 3**. Isso instala os assemblies que você precisa executar aplicativos MVC 3.
+- **ASP.NET MVC 3**. Isso instala os assemblies que você precisa executar aplicativos MVC 3.
 
 > [!NOTE]
 > Este passo a passo descreve o uso do Web Platform Installer para instalar e configurar os componentes necessários. Embora você não precisa usar o Web Platform Installer, ele simplifica o processo de instalação automaticamente detectando dependências e garantindo que você obtenha sempre as versões mais recentes do produto. Para obter mais informações, consulte [Microsoft Web Platform Installer 3.0](https://go.microsoft.com/?linkid=9805118).
@@ -108,7 +108,7 @@ Nesse caso, você precisa instalar essas coisas:
 11. Leia os termos de licença e se você concordar com os termos, clique em **aceito**.
 12. Quando a instalação for concluída, clique em **concluir**e, em seguida, feche o **Web Platform Installer 3.0** janela.
 
-Se você instalou o .NET Framework 4.0 antes de instalar o IIS, você precisará executar o [ferramenta de registro ASP.NET IIS](https://msdn.microsoft.com/en-us/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe) para registrar a versão mais recente do ASP.NET no IIS. Se você não fizer isso, você descobrirá que o IIS servirá conteúdo estático (como HTML) sem problemas, mas ele retornará **404.0 de erro HTTP – não encontrado** quando você tenta navegar até o conteúdo ASP.NET. Você pode usar este procedimento para verificar se o ASP.NET 4.0 está registrado.
+Se você instalou o .NET Framework 4.0 antes de instalar o IIS, você precisará executar o [ferramenta de registro ASP.NET IIS](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe) para registrar a versão mais recente do ASP.NET no IIS. Se você não fizer isso, você descobrirá que o IIS servirá conteúdo estático (como HTML) sem problemas, mas ele retornará **404.0 de erro HTTP – não encontrado** quando você tenta navegar até o conteúdo ASP.NET. Você pode usar este procedimento para verificar se o ASP.NET 4.0 está registrado.
 
 **Para registrar o ASP.NET 4.0 com IIS**
 
@@ -154,7 +154,7 @@ Embora não haja nada que o impeça de implantação de conteúdo para o site pa
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image4.png)
 
     > [!NOTE]
-    > Em um ambiente de produção, você provavelmente desejará hospedar seu site na porta 80 e configurar um cabeçalho de host, juntamente com os registros DNS correspondentes. Para obter mais informações sobre como configurar os cabeçalhos de host no IIS 7, consulte [configurar um cabeçalho de Host para um Site da Web (IIS 7)](https://technet.microsoft.com/en-us/library/cc753195(WS.10).aspx). Para obter mais informações sobre a função de servidor DNS no Windows Server 2008 R2, consulte [visão geral do servidor DNS](https://technet.microsoft.com/en-gb/library/cc770392.aspx) e [servidor DNS](https://technet.microsoft.com/en-us/windowsserver/dd448607).
+    > Em um ambiente de produção, você provavelmente desejará hospedar seu site na porta 80 e configurar um cabeçalho de host, juntamente com os registros DNS correspondentes. Para obter mais informações sobre como configurar os cabeçalhos de host no IIS 7, consulte [configurar um cabeçalho de Host para um Site da Web (IIS 7)](https://technet.microsoft.com/library/cc753195(WS.10).aspx). Para obter mais informações sobre a função de servidor DNS no Windows Server 2008 R2, consulte [visão geral do servidor DNS](https://technet.microsoft.com/en-gb/library/cc770392.aspx) e [servidor DNS](https://technet.microsoft.com/windowsserver/dd448607).
 9. No painel **Ações** , em **Editar Site**, clique em **Ligações**.
 10. No **ligações de Site** caixa de diálogo, clique em **adicionar**.
 
@@ -198,8 +198,8 @@ A abordagem mais comum é atribuir permissões ao local **IIS\_IUSRS** grupo por
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image8.png)
 5. No **selecionar usuários ou grupos** caixa de diálogo, digite **IIS\_IUSRS**, clique em **verificar nomes**e, em seguida, clique em **Okey**.
-6. No **permissões para***[nome da pasta]*caixa de diálogo, observe que o novo grupo foi atribuído a **leitura &amp; executar**, **Listar pasta conteúdo**, e **leitura** permissões por padrão. Deixe inalterados e clique em **Okey**.
-7. Clique em **Okey** para fechar o *[nome da pasta]***propriedades** caixa de diálogo.
+6. No **permissões para * [nome da pasta]*caixa de diálogo, observe que o novo grupo foi atribuído a **leitura &amp; executar**, **Listar conteúdo da pasta**, e **Leitura** permissões por padrão. Deixe inalterados e clique em **Okey**.
+7. Clique em **Okey** para fechar o *[nome da pasta] * propriedades** caixa de diálogo.
 
 Como uma tarefa final antes de tentar implantar todos os pacotes da web em seu servidor, você deve garantir que o serviço de agente de implantação da Web está em execução. Quando você implanta um pacote de um computador remoto, o serviço de agente de implantação da Web é responsável para extrair e instalar o conteúdo do pacote. O serviço é iniciado por padrão quando você instala a ferramenta de implantação da Web e é executado sob a identidade do serviço de rede.
 

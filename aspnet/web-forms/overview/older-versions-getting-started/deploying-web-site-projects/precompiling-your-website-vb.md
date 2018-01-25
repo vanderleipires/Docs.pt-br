@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e9f2e2d71815a2e8f17d3c505b48b69a23bceb1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cc487aa5276c601fed632e82d7b6d32d1b53b58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="precompiling-your-website-vb"></a>Pré-compilação seu site (VB)
 ====================
@@ -66,12 +66,12 @@ O importante tirar aqui é que, para uma página ASP.NET ser processado pelo tem
 
 ## <a name="precompilation-options"></a>Opções de pré-compilação
 
-O .NET Framework vem com um [ferramenta de compilação do ASP.NET (`aspnet_compiler.exe`)](https://msdn.microsoft.com/en-us/library/ms229863.aspx) que permite que você compilar o código-fonte (e até mesmo o conteúdo) de um aplicativo ASP.NET criado usando o modelo WSP. Essa ferramenta foi lançada com o .NET Framework versão 2.0 e está localizada no `%WINDIR%\Microsoft.NET\Framework\v2.0.50727` pasta; pode ser usado na linha de comando ou iniciado a partir do Visual Studio por meio da opção de publicar Web Site do menu Build.
+O .NET Framework vem com um [ferramenta de compilação do ASP.NET (`aspnet_compiler.exe`)](https://msdn.microsoft.com/library/ms229863.aspx) que permite que você compilar o código-fonte (e até mesmo o conteúdo) de um aplicativo ASP.NET criado usando o modelo WSP. Essa ferramenta foi lançada com o .NET Framework versão 2.0 e está localizada no `%WINDIR%\Microsoft.NET\Framework\v2.0.50727` pasta; pode ser usado na linha de comando ou iniciado a partir do Visual Studio por meio da opção de publicar Web Site do menu Build.
 
 A ferramenta de compilação oferece dois formulários gerais da compilação: in-loco pré-compilação pré-compilação para implantação. Com pré-compilação no local em que você executar o `aspnet_compiler.exe` ferramenta de linha de comando e especifique o caminho para o diretório virtual ou o caminho físico de um site que reside em seu computador. A ferramenta de compilação, em seguida, compila cada página ASP.NET no projeto, armazenar a versão compilada no `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files` pasta como se as páginas de cada um foi visitadas pela primeira vez em um navegador. Pré-compilação in-loco pode acelerar a primeira solicitação feita ao recém-implantados páginas ASP.NET em seu site porque minimiza o tempo de execução da necessidade de executar essa etapa. No entanto, pré-compilação no local não é útil para a maioria dos sites hospedados porque ele requer que você seja capazes de executar programas a partir do servidor web de linha de comando. Esse nível de acesso não é permitida em ambientes de hospedagem compartilhados.
 
 > [!NOTE]
-> Para obter mais informações sobre pré-compilação in-loco, check-out [How To: Precompile ASP.NET Web Sites](https://msdn.microsoft.com/en-us/library/ms227972.aspx) e [pré-compilação do ASP.NET 2.0](http://www.odetocode.com/Articles/417.aspx).
+> Para obter mais informações sobre pré-compilação in-loco, check-out [How To: Precompile ASP.NET Web Sites](https://msdn.microsoft.com/library/ms227972.aspx) e [pré-compilação do ASP.NET 2.0](http://www.odetocode.com/Articles/417.aspx).
 
 
 Em vez de compilar as páginas no site da Web para o `Temporary ASP.NET Files` pasta pré-compilação para implantação compila as páginas em um diretório de sua escolha e em um formato que pode ser implantado no ambiente de produção.
@@ -107,10 +107,10 @@ Após o site de pré-compilação, navegue até o local de destino que você ins
 **Figura 3**: A pasta do local de destino inclui os arquivos de implantação  
  ([Clique para exibir a imagem em tamanho normal](precompiling-your-website-vb/_static/image9.png))
 
-Ao contrário de compilação explícita em WAPs, a pré-compilação para o processo de implantação não cria um assembly para o site inteiro. Em vez disso, ele processa em lotes juntos várias páginas em cada assembly. Ele também compila o `Global.asax` o arquivo (se houver) em seu próprio assembly, bem como todas as classes no `App_Code` pasta. Os arquivos que contêm a marcação declarativa para ASP.NET web páginas mestras, páginas e controles de usuário (`.aspx`, `.ascx`, e `.master` arquivos, respectivamente) são copiados como-é o diretório local de destino. Da mesma forma, o `Web.config` arquivo é copiado diretamente, juntamente com quaisquer arquivos estáticos, como arquivos PDF, imagens e classes CSS. Para obter uma descrição mais formal de como a ferramenta de compilação lida com vários tipos de arquivo, consulte [tratamento de arquivo durante pré-compilação ASP.NET](https://msdn.microsoft.com/en-us/library/e22s60h9.aspx).
+Ao contrário de compilação explícita em WAPs, a pré-compilação para o processo de implantação não cria um assembly para o site inteiro. Em vez disso, ele processa em lotes juntos várias páginas em cada assembly. Ele também compila o `Global.asax` o arquivo (se houver) em seu próprio assembly, bem como todas as classes no `App_Code` pasta. Os arquivos que contêm a marcação declarativa para ASP.NET web páginas mestras, páginas e controles de usuário (`.aspx`, `.ascx`, e `.master` arquivos, respectivamente) são copiados como-é o diretório local de destino. Da mesma forma, o `Web.config` arquivo é copiado diretamente, juntamente com quaisquer arquivos estáticos, como arquivos PDF, imagens e classes CSS. Para obter uma descrição mais formal de como a ferramenta de compilação lida com vários tipos de arquivo, consulte [tratamento de arquivo durante pré-compilação ASP.NET](https://msdn.microsoft.com/library/e22s60h9.aspx).
 
 > [!NOTE]
-> Você pode instruir a ferramenta de compilação para criar um assembly por página ASP.NET, controle de usuário ou página mestra, marcando a caixa de seleção "Usado fixo de nomenclatura e assemblies de única página" na caixa de diálogo Publicar Site. Com cada página do ASP.NET compilada em seu próprio assembly permite um controle mais refinado sobre implantação. Por exemplo, se você atualizou uma única página web ASP.NET e necessárias para implantar essa alteração, você só precisa implantar essa página `.aspx` de arquivo e o assembly associado ao ambiente de produção. Consulte [como: gerar nomes fixos com a ferramenta de compilação do ASP.NET](https://msdn.microsoft.com/en-us/library/ms228040.aspx) para obter mais informações.
+> Você pode instruir a ferramenta de compilação para criar um assembly por página ASP.NET, controle de usuário ou página mestra, marcando a caixa de seleção "Usado fixo de nomenclatura e assemblies de única página" na caixa de diálogo Publicar Site. Com cada página do ASP.NET compilada em seu próprio assembly permite um controle mais refinado sobre implantação. Por exemplo, se você atualizou uma única página web ASP.NET e necessárias para implantar essa alteração, você só precisa implantar essa página `.aspx` de arquivo e o assembly associado ao ambiente de produção. Consulte [como: gerar nomes fixos com a ferramenta de compilação do ASP.NET](https://msdn.microsoft.com/library/ms228040.aspx) para obter mais informações.
 
 
 O diretório de local de destino também contém um arquivo que não fazia parte do projeto da web pré-compilado, ou seja, `PrecompiledApp.config`. Este arquivo informa o tempo de execução do ASP.NET que o aplicativo foi pré-compilado e se ele foi pré-compilado com uma interface do usuário atualizável ou meio-dia atualizável.
@@ -185,8 +185,8 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [Pré-compilação de Site da Web do ASP.NET](https://msdn.microsoft.com/en-us/library/ms228015.aspx)
-- [Code-behind e compilação do ASP.NET 2.0](https://msdn.microsoft.com/en-us/magazine/cc163675.aspx)
+- [Pré-compilação de Site da Web do ASP.NET](https://msdn.microsoft.com/library/ms228015.aspx)
+- [Code-behind e compilação do ASP.NET 2.0](https://msdn.microsoft.com/magazine/cc163675.aspx)
 - [Pré-compilação do ASP.NET](http://www.odetocode.com/Articles/417.aspx)
 - [Opções de Site de pré-compilação do ASP.NET](http://www.dotnetperls.com/precompiled)
 

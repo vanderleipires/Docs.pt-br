@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 78a54fb1b0e4c0ebd5445cca175103471925a065
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 323ee44f43f6d4081bd9ba50791755696bc9128f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 8
 ====================
@@ -35,7 +35,7 @@ No tutorial anterior, você implementou os procedimentos armazenados. Este tutor
 
 Para ver como isso funciona, você alterará os controles usados para exibir e editar os campos existentes no *Students.aspx* página e você adicionará formatação e validação de metadados para os campos nome e a data do `Student` tipo de entidade.
 
-[![Para Image01](the-entity-framework-and-aspnet-getting-started-part-8/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-8/_static/image1.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-8/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-8/_static/image1.png)
 
 ## <a name="using-dynamicfield-and-dynamiccontrol-controls"></a>Usando os controles de DynamicControl e DynamicField
 
@@ -125,11 +125,11 @@ Isso conclui esta série de tutoriais de Introdução com o Entity Framework. Pa
 
 - [Perguntas Frequentes do Entity Framework](http://www.ef-faq.org/introduction.html)
 - [Blog da equipe do Entity Framework](https://blogs.msdn.com/b/adonet/)
-- [Entity Framework na biblioteca MSDN](https://msdn.microsoft.com/en-us/library/bb399572.aspx)
-- [Entity Framework do MSDN Data Developer Center](https://msdn.microsoft.com/en-us/data/ef.aspx)
-- [Visão geral de controle de servidor Web EntityDataSource na biblioteca MSDN](https://msdn.microsoft.com/en-us/library/cc488502.aspx)
-- [Controle de EntityDataSource referência da API na biblioteca MSDN](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.entitydatasource.aspx)
-- [Fóruns do Entity Framework no MSDN](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/)
+- [Entity Framework na biblioteca MSDN](https://msdn.microsoft.com/library/bb399572.aspx)
+- [Entity Framework do MSDN Data Developer Center](https://msdn.microsoft.com/data/ef.aspx)
+- [Visão geral de controle de servidor Web EntityDataSource na biblioteca MSDN](https://msdn.microsoft.com/library/cc488502.aspx)
+- [Controle de EntityDataSource referência da API na biblioteca MSDN](https://msdn.microsoft.com/library/system.web.ui.webcontrols.entitydatasource.aspx)
+- [Fóruns do Entity Framework no MSDN](https://social.msdn.microsoft.com/forums/adodotnetentityframework/)
 - [Blog de Julie Lerman](http://thedatafarm.com/blog/)
 
 >[!div class="step-by-step"]

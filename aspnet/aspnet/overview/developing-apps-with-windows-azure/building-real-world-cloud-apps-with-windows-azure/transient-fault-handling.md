@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3caeeb83e4c074ae0ffc30f035d793a821eb6be2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b743b04789c5e5ebf5ab922cf34a516a16a6d356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>Transient Fault Handling (compilação de aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -39,11 +39,11 @@ Em vez de gerar uma exceção e exibir uma página de erro ou não está dispon�
 
 Há várias maneiras que você pode implementar a lógica de repetição inteligentes.
 
-- A Microsoft Patterns &amp; práticas grupo tem um [Transient Fault Handling Application Block](https://msdn.microsoft.com/en-us/library/dn440719(v=pandp.60).aspx) que faz tudo para você se você estiver usando o ADO.NET para acesso ao banco de dados SQL (não por meio do Entity Framework). Você apenas definir uma política para repetições – quantas vezes para tentar novamente uma consulta ou comando e por quanto tempo a aguardar entre tentativas – e wrap SQL código em um *usando* bloco.
+- A Microsoft Patterns &amp; práticas grupo tem um [Transient Fault Handling Application Block](https://msdn.microsoft.com/library/dn440719(v=pandp.60).aspx) que faz tudo para você se você estiver usando o ADO.NET para acesso ao banco de dados SQL (não por meio do Entity Framework). Você apenas definir uma política para repetições – quantas vezes para tentar novamente uma consulta ou comando e por quanto tempo a aguardar entre tentativas – e wrap SQL código em um *usando* bloco.
 
     [!code-csharp[Main](transient-fault-handling/samples/sample1.cs)]
 
-    Também suporta TFH [Cache na função do Azure](https://msdn.microsoft.com/en-us/library/windowsazure/dn386103.aspx) e [barramento de serviço](https://azure.microsoft.com/services/service-bus/).
+    Também suporta TFH [Cache na função do Azure](https://msdn.microsoft.com/library/windowsazure/dn386103.aspx) e [barramento de serviço](https://azure.microsoft.com/services/service-bus/).
 - Quando você usa o Entity Framework você normalmente não está trabalhando diretamente com conexões de SQL, para que você não pode usar este pacote de padrões e práticas recomendadas, mas o Entity Framework 6 cria esse tipo de lógica de repetição à direita na estrutura de. Da mesma forma que você especificar a estratégia de repetição e, em seguida, EF usa essa estratégia sempre que ele acessa o banco de dados.
 
     Para usar esse recurso no aplicativo corrigir, tudo o que precisamos fazer é adicionar uma classe que deriva de *DbConfiguration* e ativar a lógica de repetição.
@@ -88,11 +88,11 @@ Para obter mais informações, consulte os seguintes recursos:
 
 Documentação
 
-- [Práticas recomendadas para o Design de serviços em grande escala em serviços de nuvem do Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). White paper, Mark Simms e Michael Thomassy. Semelhante ao entrar em mais detalhes instruções mas série à prova de falhas. Consulte a seção de telemetria e diagnóstico.
-- [À prova de falhas: Orientação para arquiteturas resilientes na nuvem](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). White paper Marc Mercuri, Ulrich Homann e Andrew Townhill. Versão de página da Web da série de vídeo à prova de falhas.
-- [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consulte repetição padrão, o padrão do Supervisor de agente do Agendador.
+- [Práticas recomendadas para o Design de serviços em grande escala em serviços de nuvem do Azure](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). White paper, Mark Simms e Michael Thomassy. Semelhante ao entrar em mais detalhes instruções mas série à prova de falhas. Consulte a seção de telemetria e diagnóstico.
+- [À prova de falhas: Orientação para arquiteturas resilientes na nuvem](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). White paper Marc Mercuri, Ulrich Homann e Andrew Townhill. Versão de página da Web da série de vídeo à prova de falhas.
+- [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/library/dn568099.aspx). Consulte repetição padrão, o padrão do Supervisor de agente do Agendador.
 - [Tolerância a falhas no banco de dados SQL do Azure](https://blogs.msdn.com/b/windowsazure/archive/2012/07/30/fault-tolerance-in-windows-azure-sql-database.aspx). Postagem no blog por Tony Petrossian.
-- [Entity Framework - resiliência de Conexão / lógica de repetição](https://msdn.microsoft.com/en-us/data/dn456835). Como usar e personalizar o transient fault handling recurso do Entity Framework 6.
+- [Entity Framework - resiliência de Conexão / lógica de repetição](https://msdn.microsoft.com/data/dn456835). Como usar e personalizar o transient fault handling recurso do Entity Framework 6.
 - [Resiliência de Conexão e interceptação de comando com o Entity Framework em um aplicativo ASP.NET MVC](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md). Quarta etapa em uma série de tutoriais de nove partes, mostra como configurar o recurso de resiliência de conexão EF 6 para o banco de dados SQL.
 
 Vídeos

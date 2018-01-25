@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/memory
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 23312e73b4530b24b8479e2d379f16315b672ca4
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 12d3982ce1abf74a575dae5362b037bd4ecc3d0f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>Cache de memória no núcleo do ASP.NET
 
@@ -46,7 +46,7 @@ Solicitar a `IMemoryCache` instância no construtor:
 
 `IMemoryCache`requer o pacote do NuGet "Microsoft.Extensions.Caching.Memory".
 
-O código a seguir usa [TryGetValue](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) para verificar se a hora atual está no cache. Se o item não é armazenado em cache, uma nova entrada é criada e adicionada ao cache com [definir](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_).
+O código a seguir usa [TryGetValue](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) para verificar se a hora atual está no cache. Se o item não está em cache, uma nova entrada é criada e adicionada ao cache com [definir](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_).
 
 [!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
 
@@ -68,7 +68,7 @@ O código a seguir chama [obter](https://docs.microsoft.com/aspnet/core/api/micr
 
 Consulte [IMemoryCache métodos](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache) e [CacheExtensions métodos](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions) para obter uma descrição dos métodos de cache.
 
-## <a name="using-memorycacheentryoptions"></a>Usando MemoryCacheEntryOptions
+## <a name="using-memorycacheentryoptions"></a>Using MemoryCacheEntryOptions
 
 O exemplo a seguir:
 
@@ -103,4 +103,4 @@ Usando um `CancellationTokenSource` permite que várias entradas de cache a ser 
 * [Cache de resposta](xref:performance/caching/response)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 * [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

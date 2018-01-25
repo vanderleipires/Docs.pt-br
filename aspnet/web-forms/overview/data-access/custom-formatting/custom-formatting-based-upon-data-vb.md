@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4122f55c09f94d41f7caa3f86d1fbd5870417a20
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 43aed94fe5b1095af37abdae2cb4c9e67b7d7f6f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-formatting-based-upon-data-vb"></a>Formatação personalizada baseada em dados (VB)
 ====================
@@ -97,7 +97,7 @@ O código a seguir ilustra como determinar se o `UnitPrice` valor associada ao c
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample3.vb)]
 
 > [!NOTE]
-> Como `UnitPrice` pode ter um `NULL` valor no banco de dados, primeiro, precisamos verificar para certificar-se de não está lidando com um `NULL` valor antes de acessar o `ProductsRow`do `UnitPrice` propriedade. Essa verificação é importante porque se podemos tentar acessar o `UnitPrice` propriedade quando ele tem um `NULL` valor o `ProductsRow` objeto lançará um [StrongTypingException exceção](https://msdn.microsoft.com/en-us/library/system.data.strongtypingexception.aspx).
+> Como `UnitPrice` pode ter um `NULL` valor no banco de dados, primeiro, precisamos verificar para certificar-se de não está lidando com um `NULL` valor antes de acessar o `ProductsRow`do `UnitPrice` propriedade. Essa verificação é importante porque se podemos tentar acessar o `UnitPrice` propriedade quando ele tem um `NULL` valor o `ProductsRow` objeto lançará um [StrongTypingException exceção](https://msdn.microsoft.com/library/system.data.strongtypingexception.aspx).
 
 
 ## <a name="step-3-formatting-the-unitprice-value-in-the-detailsview"></a>Etapa 3: Formatar o valor de UnitPrice em DetailsView
@@ -193,7 +193,7 @@ Assim que tivermos uma referência de programação para o controle da Web, pode
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample12.vb)]
 
 > [!NOTE]
-> A sintaxe de um modelo programaticamente, acessando a Web usando o controle de formatação `FindControl("controlID")` e, em seguida, definir suas propriedades relacionadas a estilo também pode ser usado ao usar [TemplateFields](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) na DetailsView ou GridView controles. Vamos examinar TemplateFields em nosso tutorial Avançar.
+> A sintaxe de um modelo programaticamente, acessando a Web usando o controle de formatação `FindControl("controlID")` e, em seguida, definir suas propriedades relacionadas a estilo também pode ser usado ao usar [TemplateFields](https://msdn.microsoft.com/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) na DetailsView ou GridView controles. Vamos examinar TemplateFields em nosso tutorial Avançar.
 
 
 Figuras 7 mostra FormView ao exibir um produto cujo `UnitsInStock` valor é maior que 10, enquanto o produto na Figura 8 tem seu valor menor que 10.

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: dd1ae266740ea4728c0624b1833a98ac262e0e5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>Configurar parâmetros para a implantação do pacote da Web
 ====================
@@ -88,7 +88,7 @@ Além de parametrização de URL de ponto de extremidade no pacote de implantaç
 
 Se você instalar manualmente o pacote de implantação, o Gerenciador do IIS solicitará o endereço do ponto de extremidade de serviço junto com as propriedades que foram parametrizadas automaticamente. Se você instalar o pacote de implantação, executando o *. Deploy* arquivo, você pode editar o *SetParameters.xml* arquivo para fornecer um valor para o endereço do ponto de extremidade de serviço junto com valores para o propriedades que foram parametrizadas automaticamente.
 
-Para obter detalhes completos sobre como criar um *parameters.xml* de arquivos, consulte [como: Use parâmetros para configurar as configurações quando um pacote de implantação está instalado](https://msdn.microsoft.com/en-us/library/ff398068.aspx). O procedimento chamado **usar parâmetros de implantação para configurações do arquivo Web. config** fornece instruções passo a passo.
+Para obter detalhes completos sobre como criar um *parameters.xml* de arquivos, consulte [como: Use parâmetros para configurar as configurações quando um pacote de implantação está instalado](https://msdn.microsoft.com/library/ff398068.aspx). O procedimento chamado **usar parâmetros de implantação para configurações do arquivo Web. config** fornece instruções passo a passo.
 
 ## <a name="modifying-the-setparametersxml-file"></a>Modificando o arquivo SetParameters.xml
 
@@ -144,7 +144,7 @@ O próximo tópico, [Implantando pacotes de Web](deploying-web-packages.md), des
 
 ## <a name="further-reading"></a>Leitura adicional
 
-Para obter informações sobre como criar pacotes da web, consulte [criação e a projetos de aplicativo Web de empacotamento](building-and-packaging-web-application-projects.md). Para obter orientação sobre como implantar, na verdade, um pacote da web, consulte [Implantando pacotes de Web](deploying-web-packages.md). Para obter uma explicação passo a passo sobre como criar um *parameters.xml* de arquivos, consulte [como: Use parâmetros para configurar as configurações quando um pacote de implantação está instalado](https://msdn.microsoft.com/en-us/library/ff398068.aspx).
+Para obter informações sobre como criar pacotes da web, consulte [criação e a projetos de aplicativo Web de empacotamento](building-and-packaging-web-application-projects.md). Para obter orientação sobre como implantar, na verdade, um pacote da web, consulte [Implantando pacotes de Web](deploying-web-packages.md). Para obter uma explicação passo a passo sobre como criar um *parameters.xml* de arquivos, consulte [como: Use parâmetros para configurar as configurações quando um pacote de implantação está instalado](https://msdn.microsoft.com/library/ff398068.aspx).
 
 Para obter mais informações sobre parametrização na implantação da Web, consulte [Web implantar parametrização na ação](https://go.microsoft.com/?linkid=9805119) (postagem do blog).
 

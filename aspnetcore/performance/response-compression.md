@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 9270287b62f91ddb81d6a347dd583e1cbb32f3c3
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2b39a5105339beb416490db282d4cd8b83d08660
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware de compactação de resposta para o ASP.NET Core
 
@@ -110,7 +110,7 @@ O provedor de compactação gzip como padrão o nível de compactação mais rá
 
 | Nível de compactação                | Descrição                                                                                                   |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `CompressionLevel.Fastest`       | A compactação deve ser concluída assim que possível, mesmo se a saída resultante não é compactada de forma ideal. |
+| `CompressionLevel.Fastest`       | A compactação deve ser concluída assim que possível, mesmo se a saída resultante ideal não é compactada. |
 | `CompressionLevel.NoCompression` | Não há nenhuma compactação deve ser executada.                                                                           |
 | `CompressionLevel.Optimal`       | As respostas devem ser compactadas ideal, mesmo se a compactação leva mais tempo para concluir.                |
 

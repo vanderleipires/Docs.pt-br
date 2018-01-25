@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 9294da7cd5b7a362d4ade9d1bf7e7747e20ee1a8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 58a9dfb621630f23b37247b96ed3a19a661857f1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-entity-relations"></a>Tratamento de relações de entidade
 ====================
@@ -86,7 +86,7 @@ Ainda há ocasiões em que você talvez queira usar o carregamento lento. Carreg
 
 ### <a name="explicit-loading"></a>Carregamento explícito
 
-Carregamento explícito é semelhante ao carregamento lento, exceto que você explicitamente obter os dados relacionados no código; Isso não acontece automaticamente quando você acessa uma propriedade de navegação. Carregamento explícito oferece mais controle sobre quando carregar dados relacionados, mas requer código extra. Para obter mais informações sobre carregamento explícito, consulte [entidades relacionadas ao carregar](https://msdn.microsoft.com/en-us/data/jj574232#explicit).
+Carregamento explícito é semelhante ao carregamento lento, exceto que você explicitamente obter os dados relacionados no código; Isso não acontece automaticamente quando você acessa uma propriedade de navegação. Carregamento explícito oferece mais controle sobre quando carregar dados relacionados, mas requer código extra. Para obter mais informações sobre carregamento explícito, consulte [entidades relacionadas ao carregar](https://msdn.microsoft.com/data/jj574232#explicit).
 
 ## <a name="navigation-properties-and-circular-references"></a>Propriedades de navegação e referências circulares
 

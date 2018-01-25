@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 57ac8052223c1fd00bff8df1c3180db8bea8d38a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 15efb8e2f38b7a405da0c0e12e447e5c3146f025
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="specifying-the-master-page-programmatically-c"></a>Especificando a página mestra programaticamente (c#)
 ====================
@@ -34,7 +34,7 @@ Desde o Exemplo inaugural [ *criar um Layout de todo o Site usando páginas mest
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-cs/samples/sample1.aspx)]
 
-O [ `Page` classe](https://msdn.microsoft.com/en-us/library/system.web.ui.page.aspx) no `System.Web.UI` namespace inclui um [ `MasterPageFile` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.page.masterpagefile.aspx) que retorna o caminho para o conteúdo da página mestra; é esta propriedade definida pelo `@Page` diretiva. Essa propriedade também pode ser usada para especificar de forma programática o conteúdo da página mestra. Essa abordagem é útil se você quiser atribuir dinamicamente a página mestra com base em fatores externos, como o usuário visitar a página.
+O [ `Page` classe](https://msdn.microsoft.com/library/system.web.ui.page.aspx) no `System.Web.UI` namespace inclui um [ `MasterPageFile` propriedade](https://msdn.microsoft.com/library/system.web.ui.page.masterpagefile.aspx) que retorna o caminho para o conteúdo da página mestra; é esta propriedade definida pelo `@Page` diretiva. Essa propriedade também pode ser usada para especificar de forma programática o conteúdo da página mestra. Essa abordagem é útil se você quiser atribuir dinamicamente a página mestra com base em fatores externos, como o usuário visitar a página.
 
 Neste tutorial, adicionar uma segunda página mestra nosso site e dinamicamente decidir qual página mestra para usar em tempo de execução.
 
@@ -54,7 +54,7 @@ A Figura 1 ilustra este fusão. Etapa 1 na Figura 1 mostra o conteúdo inicial e
 
 Qual página mestra partakes nesta fusão depende do valor da `Page` do objeto `MasterPageFile` propriedade. Definindo o `MasterPageFile` atributo no `@Page` diretiva tem o efeito de atribuição a `Page`do `MasterPageFile` propriedade durante a fase de inicialização, que é o primeiro estágio do ciclo de vida da página. Como alternativa, pode definir essa propriedade programaticamente. No entanto, é essencial que esta propriedade seja definida antes que ocorra de fusão na Figura 1.
 
-No início do estágio PreInit o `Page` objeto gera seu [ `PreInit` evento](https://msdn.microsoft.com/en-us/library/system.web.ui.page.preinit.aspx) e chama seu [ `OnPreInit` método](https://msdn.microsoft.com/en-us/library/system.web.ui.page.onpreinit.aspx). Para definir a página mestra programaticamente, em seguida, podemos pode criar um manipulador de eventos para o `PreInit` evento ou substituição de `OnPreInit` método. Vamos examinar as duas abordagens.
+No início do estágio PreInit o `Page` objeto gera seu [ `PreInit` evento](https://msdn.microsoft.com/library/system.web.ui.page.preinit.aspx) e chama seu [ `OnPreInit` método](https://msdn.microsoft.com/library/system.web.ui.page.onpreinit.aspx). Para definir a página mestra programaticamente, em seguida, podemos pode criar um manipulador de eventos para o `PreInit` evento ou substituição de `OnPreInit` método. Vamos examinar as duas abordagens.
 
 Comece abrindo `Default.aspx.cs`, o arquivo de classe code-behind para a home page do nosso site. Adicionar um manipulador de eventos para a página `PreInit` evento digitando o seguinte código:
 
@@ -275,8 +275,8 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [Diagrama de ciclo de vida de página do ASP.NET](http://emanish.googlepages.com/Asp.Net2.0Lifecycle.PNG)
-- [Visão geral do ciclo de vida da página ASP.NET](https://msdn.microsoft.com/en-us/library/ms178472.aspx)
-- [Visão geral sobre capas e temas do ASP.NET](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx)
+- [Visão geral do ciclo de vida da página ASP.NET](https://msdn.microsoft.com/library/ms178472.aspx)
+- [Visão geral sobre capas e temas do ASP.NET](https://msdn.microsoft.com/library/ykzx33wh.aspx)
 - [Páginas mestras: Dicas, truques e interceptações](http://www.odetocode.com/articles/450.aspx)
 - [Temas do ASP.NET](http://www.odetocode.com/articles/423.aspx)
 

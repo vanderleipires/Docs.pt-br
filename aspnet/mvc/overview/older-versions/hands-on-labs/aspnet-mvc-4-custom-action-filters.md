@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 6362f0506934ca3b3cc86e1a927af75e7bc4e1d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 103cd68c576463d87d0077cc149f9b89c6e028e8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-custom-action-filters"></a>Filtros de ação personalizada do ASP.NET MVC 4
 ====================
@@ -96,7 +96,7 @@ O filtro estenderá **ActionFilterAttributeClass** e substituir **OnActionExecut
 > - **Resultado** filtro, que envolve a execução do objeto ActionResult. Esse filtro pode executar processamento adicional dos resultados, como modificar a resposta HTTP.
 > - **Exceção** filtro, que é executado se houver uma exceção sem tratamento em algum lugar lançada no método de ação, começando com os filtros de autorização e terminando com a execução do resultado. Filtros de exceção podem ser usados para tarefas como registrar em log ou exibir uma página de erro.
 > 
-> Para obter mais informações sobre filtros de provedores, visite este link do MSDN: ([https://msdn.microsoft.com/en-us/library/dd410209.aspx](https://msdn.microsoft.com/en-us/library/dd410209.aspx)).
+> Para obter mais informações sobre filtros de provedores, visite este link do MSDN: ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx)).
 
 
 <a id="AboutLoggingFeature"></a>
@@ -164,7 +164,7 @@ Nesta tarefa, você criará uma classe de atributo de filtro personalizado que c
     > [!NOTE]
     > **OnActionExecuting** usando o método **do Entity Framework** para adicionar um novo registro de ActionLog. Ele cria e preenche uma nova instância de entidade com as informações de contexto do **filterContext**.
     > 
-    > Você pode ler mais sobre **ControllerContext** classe em [msdn](https://msdn.microsoft.com/en-us/library/system.web.mvc.controllercontext.aspx).
+    > Você pode ler mais sobre **ControllerContext** classe em [msdn](https://msdn.microsoft.com/library/system.web.mvc.controllercontext.aspx).
 
 <a id="Ex1Task2"></a>
 
@@ -231,7 +231,7 @@ Você pode definir um **escopo** para cada um dos filtros, por exemplo, você po
 
 Além disso, cada filtro de ação tem uma propriedade de ordem que é usada para determinar a ordem de execução no escopo do filtro.
 
-Para obter mais informações sobre a ordem de execução de filtros de ação personalizada, visite este artigo do MSDN: ([https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx)).
+Para obter mais informações sobre a ordem de execução de filtros de ação personalizada, visite este artigo do MSDN: ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx)).
 
 <a id="Ex2Task1"></a>
 

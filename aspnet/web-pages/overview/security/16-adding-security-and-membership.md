@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: f0cee96005416bd9ef8befaf34890f415cf5ff3c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>Adicionando a segurança e a associação a um Site de páginas (Razor) da Web do ASP.NET
 ====================
@@ -43,7 +43,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > 
 > - Páginas da Web do ASP.NET (Razor) 2
-> - O WebMatrix 3
+> - WebMatrix 3
 > - ASP.NET Web Helpers Library
 
 
@@ -100,7 +100,7 @@ O procedimento a seguir descreve como criar um site e configurá-lo.
 7. Salve e feche  *\_AppStart.cshtml*.
 8. Execute o *cshtml* página em um navegador.
 
-    ![2 de associação de segurança](16-adding-security-and-membership/_static/image1.png)
+    ![security-membership-2](16-adding-security-and-membership/_static/image1.png)
 
     > [!NOTE]
     > Se você vir um erro que informa que uma propriedade deve ser uma instância de `ExtendedMembershipProvider`, o site não pode ser configurado para usar o sistema de associação do ASP.NET Web Pages (SimpleMembership). Às vezes, isso pode ocorrer se o servidor de um provedor de hospedagem é configurado de forma diferente ao servidor local. Para corrigir isso, adicione o seguinte elemento para o site *Web. config* arquivo:
@@ -254,20 +254,20 @@ O procedimento neste artigo depende do uso de **Site inicial** modelo como base 
 
 O processo básico é descrito na postagem do blog [a maneira mais simples para implementar a segurança do ASP.NET Razor](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240). A maioria do trabalho é feito usando os seguintes métodos e propriedades do `WebSecurity` auxiliar:
 
-- [WebSecurty.UserExists](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx), [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx). Esses métodos permitem determinar se alguém já está registrado e registrá-los.
-- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx). Essa propriedade permite determinar se o usuário atual está conectado. Isso é útil para redirecionar usuários para uma página de logon, se eles ainda não tenham feito logon.
-- [WebSecurity.Login](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx), [WebSecurity.Logout](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx). Esses métodos de logon de um usuário ou de saída.
-- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx). Esta propriedade é útil para exibir o atual nome do usuário conectado (se o usuário estiver conectado).
-- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/en-us/library/gg569286(v=vs.99).aspx). Esse método é útil se você configurar o email de confirmação para o registro. (Detalhes na postagem do blog [usando o recurso de confirmação para segurança de páginas da Web ASP.NET](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267).)
+- [WebSecurty.UserExists](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx), [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx). Esses métodos permitem determinar se alguém já está registrado e registrá-los.
+- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx). Essa propriedade permite determinar se o usuário atual está conectado. Isso é útil para redirecionar usuários para uma página de logon, se eles ainda não tenham feito logon.
+- [WebSecurity.Login](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx), [WebSecurity.Logout](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx). Esses métodos de logon de um usuário ou de saída.
+- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx). Esta propriedade é útil para exibir o atual nome do usuário conectado (se o usuário estiver conectado).
+- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/library/gg569286(v=vs.99).aspx). Esse método é útil se você configurar o email de confirmação para o registro. (Detalhes na postagem do blog [usando o recurso de confirmação para segurança de páginas da Web ASP.NET](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267).)
 
-Para gerenciar funções, você pode usar o [funções](https://msdn.microsoft.com/en-us/library/gg538398(v=vs.99).aspx) e [associação](https://msdn.microsoft.com/en-us/library/gg569035(v=vs.99).aspx) classes, conforme descrito na entrada de blog.
+Para gerenciar funções, você pode usar o [funções](https://msdn.microsoft.com/library/gg538398(v=vs.99).aspx) e [associação](https://msdn.microsoft.com/library/gg569035(v=vs.99).aspx) classes, conforme descrito na entrada de blog.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Personalizar o comportamento de todo o Site](https://go.microsoft.com/fwlink/?LinkId=202906)
+- [Personalizar o comportamento de todo o site](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [Proteção das comunicações da Web: Certificados SSL e https://](https://go.microsoft.com/fwlink/?LinkId=208660)
 - [A maneira mais simples para implementar a segurança do ASP.NET Razor](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240) e [usando o recurso de confirmação para segurança de páginas da Web ASP.NET](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267). Essas são as postagens de blog que descrevem como implementar recursos de associação do ASP.NET sem usar o **Site inicial** modelo.
-- [Habilitar logon de Sites externos em um Site de páginas da Web do ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251969)
-- [Referência de API de classe WebSecurity](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity(v=vs.99)) (MSDN)
-- [Referência de API de classe SimpleRoleProvider](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simpleroleprovider(v=vs.99)) (MSDN)
-- [Referência de API de classe SimpleMembershipProvider](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simplemembershipprovider(v=vs.99)) (MSDN)
+- [Habilitar logon de sites externos em um site de Páginas da Web do ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251969)
+- [Referência de API de classe WebSecurity](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity(v=vs.99)) (MSDN)
+- [Referência de API de classe SimpleRoleProvider](https://msdn.microsoft.com/library/webmatrix.webdata.simpleroleprovider(v=vs.99)) (MSDN)
+- [Referência de API de classe SimpleMembershipProvider](https://msdn.microsoft.com/library/webmatrix.webdata.simplemembershipprovider(v=vs.99)) (MSDN)

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
 msc.type: content
-ms.openlocfilehash: b9abad56a5a5b9219f92cc5b96efee7250a97c55
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ab1642f1a3de298919aa9c6c1ddbd6bbb0cb99b5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>Notas de versão do ASP.NET e Web Tools 2012.2
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 11/10/2017
     - [Modelos ASP.NET MVC](#_Templates)
     - [API Web ASP.NET](#_ASP.NET_Web_API)
 
-    - [SignalR do ASP.NET](#_ASP.NET_SignalR)
+    - [ASP.NET SignalR](#_ASP.NET_SignalR)
     - [URLs amigáveis do ASP.NET](#_ASP.NET_Friendly_URLs)
 - [Problemas conhecidos e as alterações recentes](#_Known_Issues_and)
 
@@ -152,7 +152,7 @@ Para obter mais informações sobre o ASP.NET Web API OData consulte [https://go
 
 #### <a name="aspnet-web-api-tracing"></a>Rastreamento de API da Web ASP.NET
 
-Rastreamento de API da Web ASP.NET integra dados de rastreamento de suas APIs da web com o rastreamento do .NET. Agora, ele é habilitado por padrão no modelo de projeto de API da Web. APIs de rastreamento de dados para a web é enviada para a janela de saída e é disponibilizado por meio do IntelliTrace. Rastreamento do ASP.NET Web API permite rastrear as informações sobre a API da Web quando hospedado no Windows Azure por meio da integração com [diagnóstico do Windows Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh411529.aspx). Você também pode instalar e habilitar o rastreamento do ASP.NET Web API em qualquer aplicativo usando o pacote NuGet de rastreamento do ASP.NET Web API ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
+Rastreamento de API da Web ASP.NET integra dados de rastreamento de suas APIs da web com o rastreamento do .NET. Agora, ele é habilitado por padrão no modelo de projeto de API da Web. APIs de rastreamento de dados para a web é enviada para a janela de saída e é disponibilizado por meio do IntelliTrace. Rastreamento do ASP.NET Web API permite rastrear as informações sobre a API da Web quando hospedado no Windows Azure por meio da integração com [diagnóstico do Windows Azure](https://msdn.microsoft.com/library/windowsazure/hh411529.aspx). Você também pode instalar e habilitar o rastreamento do ASP.NET Web API em qualquer aplicativo usando o pacote NuGet de rastreamento do ASP.NET Web API ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
 
 Para obter mais informações sobre como configurar e usar o ASP.NET Web API Tracing consulte [https://go.microsoft.com/fwlink/?LinkID=269874](https://go.microsoft.com/fwlink/?LinkID=269874).
 
@@ -240,8 +240,8 @@ O analisador de URI do OData não pode analisar corretamente a literais de data 
 
 OData não dá suporte a nomes de propriedade de maiusculas e minúsculas em consultas de OData e o caminho odata. Consulte itens de trabalho:
 
-- [http://aspnetwebstack.codeplex.com/WorkItem/366](http://aspnetwebstack.codeplex.com/workitem/366)
-- [http://aspnetwebstack.codeplex.com/WorkItem/704](http://aspnetwebstack.codeplex.com/workitem/704)
+- [http://aspnetwebstack.codeplex.com/workitem/366](http://aspnetwebstack.codeplex.com/workitem/366)
+- [http://aspnetwebstack.codeplex.com/workitem/704](http://aspnetwebstack.codeplex.com/workitem/704)
 
 Se os usuários tiverem diferenciam maiusculas de minúsculas em javascript lado do cliente e do lado do servidor, eles provavelmente encontrará esse problema. Esse problema ocorre por design no protocolo odata. Porém, muitos usuários informa esse problema. Para resolvê-lo, os usuários têm que corrigir seus casos na URL.
 
@@ -283,9 +283,9 @@ Arquivo todo.model.js
 
 função todoList.prototype.addTodo, adicione o seguinte texto blacked:  
  **self.isSelected(true);**  
- self.newTodoTitle (&quot;&quot;);
+ self.newTodoTitle(&quot;&quot;);
 
 Arquivos cshtml, adicione o seguinte texto blacked:  
  &lt;formulário de associação de dados =&quot;enviar: addTodo&quot;&gt;  
  &lt;classe de entrada =&quot;addTodo&quot; tipo =&quot;texto&quot; data-bind =&quot;valor: newTodoTitle, espaço reservado: 'Digite aqui para adicionar', blurOnEnter: true, **hasfocus: isSelected**, evento: {desfoque: addTodo}&quot; /&gt;  
- &lt;/Form&gt;
+ &lt;/form&gt;

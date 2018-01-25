@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: 5bf625a1ef8cc8ceab0014fadfab0c8a23dbc8da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 18ce212f5cb7849d522248f9c462b5b48e3487ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-sql-server"></a>Expansão do SignalR com o SQL Server
 ====================
@@ -48,21 +48,21 @@ Neste tutorial, você usará o SQL Server para distribuir mensagens através de 
 
 Microsoft SQL Server 2005 ou posterior. O backplane dá suporte às edições de desktop e servidor do SQL Server. Ele não oferece suporte a SQL Server Compact Edition ou banco de dados do SQL Azure. (Se o aplicativo está hospedado no Azure, considere o backplane de barramento de serviço.)
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Antes de entrar para o tutorial detalhado, aqui está uma visão geral das tarefas que você executará.
 
 1. Crie um novo banco de dados vazio. O backplane criará as tabelas necessárias nesse banco de dados.
 2. Adicione esses pacotes do NuGet ao seu aplicativo: 
 
-    - [SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
+    - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
     - [Microsoft.AspNet.SignalR.SqlServer](http://nuget.org/packages/Microsoft.AspNet.SignalR.SqlServer)
 3. Crie um aplicativo do SignalR.
 4. Adicione o seguinte código ao Startup.cs para configurar o backplane: 
 
     [!code-csharp[Main](scaleout-with-sql-server/samples/sample1.cs)]
 
- Este código configura o backplane com os valores padrão para [TableCount](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx) e [MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx). Para obter informações sobre como alterar esses valores, consulte [desempenho SignalR: métricas de expansão](signalr-performance.md#scaleout_metrics). 
+ Este código configura o backplane com os valores padrão para [TableCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx) e [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx). Para obter informações sobre como alterar esses valores, consulte [desempenho SignalR: métricas de expansão](signalr-performance.md#scaleout_metrics). 
 
 ## <a name="configure-the-database"></a>Configurar o banco de dados
 

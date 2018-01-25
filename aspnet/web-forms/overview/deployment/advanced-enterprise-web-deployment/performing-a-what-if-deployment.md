@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 62be7c9636fb74c40bec812e9ac76b360995da50
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cea805c86f0764c7443ccc5c9f89248860a6a842
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-a-what-if-deployment"></a>Executando uma implantação "E se"
 ====================
@@ -52,7 +52,7 @@ Se você estiver usando o MSDeploy.exe diretamente, você pode executar uma impl
 Quando estiver satisfeito com os resultados da implantação "e se", você pode remover o **– whatif** sinalizador para executar uma implantação em tempo real.
 
 > [!NOTE]
-> Para obter mais informações sobre opções de linha de comando para MSDeploy.exe, consulte [Web implantar configurações de operação](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx).
+> Para obter mais informações sobre opções de linha de comando para MSDeploy.exe, consulte [Web implantar configurações de operação](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
 
 Se você estiver usando o *. Deploy* arquivo, você pode executar uma implantação "e se", incluindo o **/t** sinalizador sinalizador (modo de avaliação) em vez do **/y** sinalizador ("Sim", ou o modo de atualização) em o comando. Por exemplo, para avaliar o que aconteceria se você implantou o pacote ContactManager.Mvc.zip executando o *. Deploy* arquivo, o comando deve ser semelhante a esta:
@@ -68,7 +68,7 @@ Quando estiver satisfeito com os resultados da implantação do "modo de avalia�
 
 
 > [!NOTE]
-> Para obter mais informações sobre opções de linha de comando para *. Deploy* arquivos, consulte [como: instalar uma implantação de pacote usando o arquivo Deploy](https://msdn.microsoft.com/en-us/library/ff356104.aspx). Se você executar o *. Deploy* arquivo sem especificar quaisquer sinalizadores, prompt de comando será exibida uma lista de sinalizadores disponíveis.
+> Para obter mais informações sobre opções de linha de comando para *. Deploy* arquivos, consulte [como: instalar uma implantação de pacote usando o arquivo Deploy](https://msdn.microsoft.com/library/ff356104.aspx). Se você executar o *. Deploy* arquivo sem especificar quaisquer sinalizadores, prompt de comando será exibida uma lista de sinalizadores disponíveis.
 
 
 ## <a name="performing-a-what-if-deployment-for-databases"></a>Executando uma implantação "E se" para bancos de dados
@@ -142,7 +142,7 @@ Este tópico descreveu como executar "what if" implantações usando a implanta�
 
 ## <a name="further-reading"></a>Leitura adicional
 
-Para obter mais informações sobre a sintaxe de linha de comando de implantação da Web, consulte [Web implantar configurações de operação](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx). Para obter diretrizes sobre as opções de linha de comando quando você usa o *. Deploy* de arquivos, consulte [como: instalar uma implantação de pacote usando o arquivo Deploy](https://msdn.microsoft.com/en-us/library/ff356104.aspx). Para obter orientação sobre a sintaxe de linha de comando VSDBCMD, consulte [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/en-us/library/dd193283.aspx).
+Para obter mais informações sobre a sintaxe de linha de comando de implantação da Web, consulte [Web implantar configurações de operação](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Para obter diretrizes sobre as opções de linha de comando quando você usa o *. Deploy* de arquivos, consulte [como: instalar uma implantação de pacote usando o arquivo Deploy](https://msdn.microsoft.com/library/ff356104.aspx). Para obter orientação sobre a sintaxe de linha de comando VSDBCMD, consulte [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/library/dd193283.aspx).
 
 >[!div class="step-by-step"]
 [Anterior](advanced-enterprise-web-deployment.md)

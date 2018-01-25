@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-immutability
-ms.openlocfilehash: 8e46e634266fa5f082c47f3be306009eb54bcbcc
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 425b8ba9769c2b5ac635693b045e52c110f25205
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-immutability-and-changing-settings"></a>A imutabilidade de chave e alterar as configurações
 
@@ -21,7 +21,7 @@ Depois que um objeto é persistido para o armazenamento de backup, sua represent
 
 Uma consequência esse comportamento é que, quando uma chave é gravada para armazenamento de backup, é imutável. As datas de criação, ativação e expiração nunca podem ser alteradas, embora ele pode ser revogada usando `IKeyManager`. Além disso, suas informações algorítmicos subjacentes, material de chave mestre e criptografia propriedades rest também são imutáveis.
 
-Se o desenvolvedor altera qualquer configuração que afeta a persistência de chave, essas alterações não terão efeito até a próxima vez que uma chave é gerada, através de uma chamada explícita para `IKeyManager.CreateNewKey` ou por meio do sistema proteção de dados próprio [chave automática geração](key-management.md#data-protection-implementation-key-management) comportamento. As configurações que afetam a persistência de chave são da seguinte maneira:
+Se o desenvolvedor altera qualquer configuração que afeta a persistência de chave, essas alterações não entram em vigor até a próxima vez que uma chave é gerada, através de uma chamada explícita para `IKeyManager.CreateNewKey` ou por meio do sistema proteção de dados próprio [chave automática geração](key-management.md#data-protection-implementation-key-management) comportamento. As configurações que afetam a persistência de chave são da seguinte maneira:
 
 * [O tempo de vida de chave padrão](key-management.md#data-protection-implementation-key-management)
 

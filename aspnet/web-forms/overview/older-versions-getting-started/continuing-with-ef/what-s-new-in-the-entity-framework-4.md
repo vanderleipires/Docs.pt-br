@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 4c89ca004ad4c9d731868e868cf6723aa4ed625d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c114627388217e892c84d6b76366d0fa96b0b70c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-the-entity-framework-40"></a>O que há de novo no Entity Framework 4.0
 ====================
@@ -40,7 +40,7 @@ Para iniciar o tutorial, inicie o Visual Studio e abra o aplicativo web Contoso 
 
 A versão 3.5 do Entity Framework inclui propriedades de navegação, mas ele não inclui propriedades de chave estrangeira no modelo de dados. Por exemplo, o `CourseID` e `StudentID` colunas do `StudentGrade` tabela deve ser omitida do `StudentGrade` entidade.
 
-[![Para Image01](what-s-new-in-the-entity-framework-4/_static/image2.png)](what-s-new-in-the-entity-framework-4/_static/image1.png)
+[![Image01](what-s-new-in-the-entity-framework-4/_static/image2.png)](what-s-new-in-the-entity-framework-4/_static/image1.png)
 
 A razão para essa abordagem era, estritamente falando, chaves estrangeiras são um detalhe de implementação física e não pertencem a um modelo de dados conceitual. No entanto, como na prática, geralmente é mais fácil trabalhar com entidades no código, quando você tem acesso direto para as chaves estrangeiras.
 
@@ -90,7 +90,7 @@ Execute o *Courses.aspx* novamente para ver os dados alterados.
 
 (Se você deseja definir o número de créditos de volta para seus valores originais, em *UpdateCredits.aspx.cs* alterar `Credits * {0}` para `Credits / {0}` e execute novamente a página, inserindo 10 como o divisor.)
 
-Para obter mais informações sobre a execução de consultas que você definir no código, consulte [como: diretamente executar comandos em relação a fonte de dados](https://msdn.microsoft.com/en-us/library/ee358769.aspx).
+Para obter mais informações sobre a execução de consultas que você definir no código, consulte [como: diretamente executar comandos em relação a fonte de dados](https://msdn.microsoft.com/library/ee358769.aspx).
 
 ## <a name="model-first-development"></a>Primeiro modelo de desenvolvimento
 
@@ -178,7 +178,7 @@ Execute a página.
 
 (Observação: esta página está incluída no projeto que pode ser baixado, mas para que ele funcione, você deve criar o banco de dados na instância do SQL Server Express local; o banco de dados não está incluído como uma *. mdf* arquivo o *aplicativo\_ Dados* pasta.)
 
-Para obter mais informações sobre como usar o recurso de primeiro do modelo do Entity Framework, consulte [Model-First no Entity Framework 4](https://msdn.microsoft.com/en-us/data/ff830362.aspx).
+Para obter mais informações sobre como usar o recurso de primeiro do modelo do Entity Framework, consulte [Model-First no Entity Framework 4](https://msdn.microsoft.com/data/ff830362.aspx).
 
 ## <a name="poco-support"></a>Suporte para POCO
 
@@ -188,7 +188,7 @@ O Entity Framework 4 apresenta a capacidade de usar as classes de entidade que n
 
 Para obter mais informações sobre como usar POCOs no Entity Framework, consulte os seguintes recursos:
 
-- [Trabalhando com entidades POCO](https://msdn.microsoft.com/en-us/library/dd456853.aspx). Este é um documento do MSDN que é uma visão geral de POCOs, com links para outros documentos que possuem informações mais detalhadas.
+- [Trabalhando com entidades POCO](https://msdn.microsoft.com/library/dd456853.aspx). Este é um documento do MSDN que é uma visão geral de POCOs, com links para outros documentos que possuem informações mais detalhadas.
 - [Passo a passo: POCO modelo para o Entity Framework](https://blogs.msdn.com/b/adonet/archive/2010/01/25/walkthrough-poco-template-for-the-entity-framework.aspx) trata de uma postagem de blog da equipe de desenvolvimento do Entity Framework, com links para outras postagens de blog sobre POCOs.
 
 ## <a name="code-first-development"></a>Desenvolvimento do Code First
@@ -209,7 +209,7 @@ Além disso, um novo tutorial MVC primeiro código que cria um aplicativo semelh
 
 Isso conclui a visão geral para o que há de novo no Entity Framework e este continuar com a série de tutoriais do Entity Framework. Para obter mais informações sobre os novos recursos no Entity Framework 4 não são abordadas aqui, consulte os seguintes recursos:
 
-- [O que há de novo no ADO.NET](https://msdn.microsoft.com/en-us/library/ex6y04yf.aspx) tópico do MSDN sobre os novos recursos na versão 4 do Entity Framework.
+- [O que há de novo no ADO.NET](https://msdn.microsoft.com/library/ex6y04yf.aspx) tópico do MSDN sobre os novos recursos na versão 4 do Entity Framework.
 - [Anunciando o lançamento do Entity Framework 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx) postagem no blog da equipe de desenvolvimento o Entity Framework sobre novos recursos na versão 4.
 
 >[!div class="step-by-step"]

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 7c03453e64cfc065d9f424702cc5af373e9bf536
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9c0edb301de85d15b9a3527382b72211f6f3d3ec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio: Introdução - 1 de 12
 ====================
@@ -35,7 +35,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [Fórum de implantação do ASP.NET](https://forums.asp.net/26.aspx/1?Configuration+and+Deployment).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Esses tutoriais orientam você na implantação primeiro ao IIS no computador de desenvolvimento local para teste e, em seguida, em um provedor de hospedagem de terceiros. O aplicativo que você implantará usa um banco de dados do aplicativo e um banco de dados de associação do ASP.NET. Começar usando o SQL Server Compact e implantando o SQL Server Compact e posteriores tutoriais mostram como implantar as alterações do banco de dados e como migrar para o SQL Server.
 
@@ -63,7 +63,7 @@ O provedor de hospedagem usado para este tutorial, Cytanium.com, é um dos diver
 
 ## <a name="deploying-web-site-projects"></a>Implantando projetos de Site
 
-Universidade de Contoso é um projeto de aplicativo de web do Visual Studio. Não se aplicam à maioria dos métodos de implantação e ferramentas demonstradas neste tutorial [projetos de Site](https://msdn.microsoft.com/en-us/library/dd547590.aspx). Para obter informações sobre como implantar projetos de site, consulte [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/en-us/library/bb386521.aspx#deployment_for_web_site_projects).
+Universidade de Contoso é um projeto de aplicativo de web do Visual Studio. Não se aplicam à maioria dos métodos de implantação e ferramentas demonstradas neste tutorial [projetos de Site](https://msdn.microsoft.com/library/dd547590.aspx). Para obter informações sobre como implantar projetos de site, consulte [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx#deployment_for_web_site_projects).
 
 ## <a name="deploying-aspnet-mvc-projects"></a>Implantando projetos do ASP.NET MVC
 
@@ -110,7 +110,7 @@ Para preparar para trabalhar com as etapas do tutoriais, salve ContosoUniversity
 
 Inicie o Visual Studio, abra o projeto e pressione CTRL-F5 para executá-lo.
 
-[![Home_Page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image2.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image1.png)
+[![Home_page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image2.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image1.png)
 
 As páginas podem ser acessadas na barra de menus e permitem que você execute as seguintes funções:
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: e83be2446ef1e3ff1275d06d5b743fb5b9444a6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="bundling-and-minification"></a>Empacotamento e minimização
 ====================
@@ -65,7 +65,7 @@ Além de remover os comentários e espaços em branco desnecessários, os nomes 
 
 A tabela a seguir mostra várias diferenças importantes entre listando todos os ativos individualmente e usar o empacotamento e minimização (B/M) no programa de exemplo.
 
-|  | **Usando o M/B** | **Sem B/M** | **Alteração** |
+|  | **Usando o M/B** | **Sem B/M** | **Change** |
 | --- | --- | --- | --- |
 | **Solicitações de arquivo** | 9 | 34 | 256% |
 | **KB enviada** | 3.26 | 11.92 | 266% |
@@ -76,7 +76,7 @@ Os bytes enviados tinham uma redução significativa com agrupamento como navega
 
 ## <a name="debugging-bundled-and-minified-javascript"></a>Pacote de depuração e minimizada JavaScript
 
-É fácil depurar o JavaScript em um ambiente de desenvolvimento (onde o [elemento compilation](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) no *Web. config* arquivo está definido como `debug="true"` ) porque os arquivos JavaScript não são incluídos ou minimizada. Você também pode depurar um build de versão em que os arquivos JavaScript são agrupados e minimizados. Usando as ferramentas de desenvolvedor F12 do IE, depurar uma função JavaScript incluída em um pacote minimizado usando a abordagem a seguir:
+É fácil depurar o JavaScript em um ambiente de desenvolvimento (onde o [elemento compilation](https://msdn.microsoft.com/library/s10awwz0.aspx) no *Web. config* arquivo está definido como `debug="true"` ) porque os arquivos JavaScript não são incluídos ou minimizada. Você também pode depurar um build de versão em que os arquivos JavaScript são agrupados e minimizados. Usando as ferramentas de desenvolvedor F12 do IE, depurar uma função JavaScript incluída em um pacote minimizado usando a abordagem a seguir:
 
 1. Selecione o **Script** guia e, em seguida, selecione o **iniciar a depuração** botão.
 2. Selecione o pacote que contém a função JavaScript que você deseja depurar usando o botão de ativos.  
@@ -85,11 +85,11 @@ Os bytes enviados tinham uma redução significativa com agrupamento como navega
 4. No **script pesquisa** caixa de entrada de t, selecione o nome da função que você deseja depurar. Na imagem a seguir, **AddAltToImg** foi inserido no **script pesquisa** caixa de entrada de t.  
     ![](bundling-and-minification/_static/image6.png)
 
-Para obter mais informações sobre como depurar com as ferramentas de desenvolvedor F12, consulte o artigo do MSDN [usando as ferramentas de desenvolvedor F12 para depurar erros de JavaScript](https://msdn.microsoft.com/en-us/library/ie/gg699336(v=vs.85).aspx).
+Para obter mais informações sobre como depurar com as ferramentas de desenvolvedor F12, consulte o artigo do MSDN [usando as ferramentas de desenvolvedor F12 para depurar erros de JavaScript](https://msdn.microsoft.com/library/ie/gg699336(v=vs.85).aspx).
 
 ## <a name="controlling-bundling-and-minification"></a>Controle de empacotamento e minimização
 
-Empacotamento e minimização está habilitado ou desabilitado, definindo o valor do atributo em depuração o [elemento compilation](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) no *Web. config* arquivo. No XML a seguir, `debug` é definido como true isso empacotamento e minimização está desabilitada.
+Empacotamento e minimização está habilitado ou desabilitado, definindo o valor do atributo em depuração o [elemento compilation](https://msdn.microsoft.com/library/s10awwz0.aspx) no *Web. config* arquivo. No XML a seguir, `debug` é definido como true isso empacotamento e minimização está desabilitada.
 
 [!code-xml[Main](bundling-and-minification/samples/sample3.xml?highlight=2)]
 
@@ -98,7 +98,7 @@ Para habilitar o empacotamento e minimização, defina o `debug` valor como "fal
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> A menos que `EnableOptimizations` é `true` ou o atributo de depuração no [elemento compilation](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) no *Web. config* arquivo é definido como `false`, arquivos não serão agrupados ou minimizados. Além disso, a versão .min dos arquivos não será usada, as versões de depuração completa serão selecionadas. `EnableOptimizations`substitui o atributo de depuração no [elemento compilation](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) no *Web. config* arquivo
+> A menos que `EnableOptimizations` é `true` ou o atributo de depuração no [elemento compilation](https://msdn.microsoft.com/library/s10awwz0.aspx) no *Web. config* arquivo é definido como `false`, arquivos não serão agrupados ou minimizados. Além disso, a versão .min dos arquivos não será usada, as versões de depuração completa serão selecionadas. `EnableOptimizations`substitui o atributo de depuração no [elemento compilation](https://msdn.microsoft.com/library/s10awwz0.aspx) no *Web. config* arquivo
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>Usando o empacotamento e minimização com Web Forms do ASP.NET e páginas da Web
@@ -137,11 +137,11 @@ No código acima, jQuery será solicitada da CDN enquanto versão modo e a vers�
 
 ## <a name="creating-a-bundle"></a>Criando um pacote
 
-O [pacote](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) classe `Include` método pega uma matriz de cadeias de caracteres, onde cada cadeia de caracteres é um caminho virtual para o recurso. O código a seguir do método no RegisterBundles o *aplicativo\_Start\BundleConfig.cs* arquivo mostra como vários arquivos são adicionados a um pacote:
+O [pacote](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) classe `Include` método pega uma matriz de cadeias de caracteres, onde cada cadeia de caracteres é um caminho virtual para o recurso. O código a seguir do método no RegisterBundles o *aplicativo\_Start\BundleConfig.cs* arquivo mostra como vários arquivos são adicionados a um pacote:
 
 [!code-csharp[Main](bundling-and-minification/samples/sample8.cs)]
 
-O [pacote](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) classe `IncludeDirectory` método é fornecido para adicionar todos os arquivos em um diretório (e, opcionalmente, todos os subdiretórios) que correspondem a um padrão de pesquisa. O [pacote](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) classe `IncludeDirectory` API é mostrada abaixo:
+O [pacote](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) classe `IncludeDirectory` método é fornecido para adicionar todos os arquivos em um diretório (e, opcionalmente, todos os subdiretórios) que correspondem a um padrão de pesquisa. O [pacote](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) classe `IncludeDirectory` API é mostrada abaixo:
 
 [!code-csharp[Main](bundling-and-minification/samples/sample9.cs)]
 
@@ -170,17 +170,17 @@ A tabela a seguir mostra os arquivos adicionados a um pacote usando o caractere 
 
 | **Call** | **Arquivos adicionados ou exceção** |
 | --- | --- |
-| Incluir ("~/Scripts/Common/\*. js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
-| Incluir ("~/Scripts/Common/T\*. js") | Exceção padrão inválido. O caractere curinga é permitido apenas no prefixo ou sufixo. |
-| Incluir ("~/Scripts/Common/\*og.\*") | Exceção padrão inválido. Somente um caractere curinga é permitido. |
-| "Incluem (" ~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
-| "Incluem (" ~/Scripts/Common/\*") | Exceção padrão inválido. Um segmento de curinga puro não é válido. |
-| IncludeDirectory ("~/Scripts/Common", "T\*") | *ToggleDiv.js, ToggleImg.js* |
-| IncludeDirectory ("~/Scripts/Common", "T\*", true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
+| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
+| Include("~/Scripts/Common/T\*.js") | Exceção padrão inválido. O caractere curinga é permitido apenas no prefixo ou sufixo. |
+| Include("~/Scripts/Common/\*og.\*") | Exceção padrão inválido. Somente um caractere curinga é permitido. |
+| "Include("~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
+| "Include("~/Scripts/Common/\*") | Exceção padrão inválido. Um segmento de curinga puro não é válido. |
+| IncludeDirectory("~/Scripts/Common", "T\*") | *ToggleDiv.js, ToggleImg.js* |
+| IncludeDirectory("~/Scripts/Common", "T\*",true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
 
 Adicionar explicitamente cada arquivo para um pacote é geralmente a preferência sobre carregamento de curinga de arquivos pelos seguintes motivos:
 
-- Adicionando scripts por padrões de curinga para carregá-los em ordem alfabética, que é normalmente não o que você deseja. Arquivos CSS e JavaScript frequentemente precisam ser adicionados em uma ordem (não alfabéticos) específica. Você pode reduzir esse risco, adicionando um personalizado [IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx) implementação, mas adicionar explicitamente cada arquivo é menos propenso a erros. Por exemplo, você pode adicionar novos ativos para uma pasta no futuro, que podem exigir a modificação de seu [IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx) implementação.
+- Adicionando scripts por padrões de curinga para carregá-los em ordem alfabética, que é normalmente não o que você deseja. Arquivos CSS e JavaScript frequentemente precisam ser adicionados em uma ordem (não alfabéticos) específica. Você pode reduzir esse risco, adicionando um personalizado [IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx) implementação, mas adicionar explicitamente cada arquivo é menos propenso a erros. Por exemplo, você pode adicionar novos ativos para uma pasta no futuro, que podem exigir a modificação de seu [IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx) implementação.
 - Exibir arquivos específicos adicionados a um diretório usando o curinga de carregamento podem ser incluídos em todas as exibições que referenciam o pacote. Se o script de modo de exibição específico é adicionado a um pacote, você pode receber um erro de JavaScript em outras exibições que referenciam o pacote.
 - Arquivos CSS que importar outros arquivos resultam em arquivos importados carregados duas vezes. Por exemplo, o código a seguir cria um pacote com a maioria dos arquivos CSS do jQuery UI tema carregados duas vezes. 
 
@@ -209,10 +209,10 @@ A estrutura de empacotamento e minimização fornece um mecanismo para processar
 1. Crie uma pasta para o seu conteúdo menor. O exemplo a seguir usa o *Content\MyLess* pasta.
 2. Adicionar o [.less](http://www.dotlesscss.org/) pacote NuGet **sem ponto** ao seu projeto.  
     ![Instalar sem ponto NuGet](bundling-and-minification/_static/image9.png)
-3. Adicionar uma classe que implementa o [IBundleTransform](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundletransform(VS.110).aspx) interface. Para a transformação .less, adicione o seguinte código ao seu projeto.
+3. Adicionar uma classe que implementa o [IBundleTransform](https://msdn.microsoft.com/library/system.web.optimization.ibundletransform(VS.110).aspx) interface. Para a transformação .less, adicione o seguinte código ao seu projeto.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample13.cs)]
-4. Criar um pacote de menos arquivos com o `LessTransform` e [CssMinify](https://msdn.microsoft.com/en-us/library/system.web.optimization.cssminify(VS.110).aspx) transformação. Adicione o seguinte código para o `RegisterBundles` método o *aplicativo\_Start\BundleConfig.cs* arquivo.
+4. Criar um pacote de menos arquivos com o `LessTransform` e [CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx) transformação. Adicione o seguinte código para o `RegisterBundles` método o *aplicativo\_Start\BundleConfig.cs* arquivo.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample14.cs)]
 5. Adicione o seguinte código a qualquer exibição que referencia o pacote menor.

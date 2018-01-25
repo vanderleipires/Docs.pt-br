@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: e6230d4d65adb8c9a064545ad761898ca53562bf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee3384046bf8a0f363aa6801d7a46f68b2bf125a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-scaleout-in-signalr-1x"></a>Introdução à expansão no SignalR 1. x
 ====================
@@ -45,13 +45,13 @@ Se você implantar seu aplicativo no Azure, considere o uso do backplane do barr
 
 Os tópicos a seguir contêm os tutoriais passo a passo para cada backplane:
 
-- [Expansão do SignalR com o barramento de serviço do Azure](scaleout-with-windows-azure-service-bus.md)
+- [Expansão do SignalR com o Barramento de Serviço do Azure](scaleout-with-windows-azure-service-bus.md)
 - [Expansão do SignalR com Redis](scaleout-with-redis.md)
 - [Expansão do SignalR com o SQL Server](scaleout-with-sql-server.md)
 
 ## <a name="implementation"></a>Implementação
 
-No SignalR, cada mensagem é enviada por meio de um barramento de mensagem. Implementa um barramento de mensagem a [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, que fornece uma abstração de publicação/assinatura. Os painéis posteriores trabalham substituindo o padrão **IMessageBus** com barramento projetado para que backplane. Por exemplo, o barramento de mensagem Redis é [RedisMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), e usa o Redis [pub/sub](http://redis.io/topics/pubsub) mecanismo para enviar e receber mensagens.
+No SignalR, cada mensagem é enviada por meio de um barramento de mensagem. Implementa um barramento de mensagem a [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, que fornece uma abstração de publicação/assinatura. Os painéis posteriores trabalham substituindo o padrão **IMessageBus** com barramento projetado para que backplane. Por exemplo, o barramento de mensagem Redis é [RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), e usa o Redis [pub/sub](http://redis.io/topics/pubsub) mecanismo para enviar e receber mensagens.
 
 Cada instância de servidor se conecta ao backplane por meio do barramento. Quando uma mensagem é enviada, ele passa para o backplane e backplane envia para todos os servidores. Quando um servidor recebe uma mensagem do backplane, ele coloca a mensagem em seu cache local. O servidor, em seguida, entrega mensagens para os clientes de seu cache local.
 

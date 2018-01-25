@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: ad052570fb2f168da657cd1263d8342a59d4cab0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5aa532137436922519c86246ebfa834910ac0d86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="parameter-binding-in-aspnet-web-api"></a>Parâmetro de associação no ASP.NET Web API
 ====================
@@ -26,7 +26,7 @@ Quando a API da Web chama um método em um controlador, ele deve definir valores
 
 Por padrão, a API da Web usa as regras a seguir para associar parâmetros:
 
-- Se o parâmetro for um tipo "simples", a API da Web tenta obter o valor do URI. Os tipos simples incluem o .NET [tipos primitivos](https://msdn.microsoft.com/en-us/library/system.type.isprimitive.aspx) (**int**, **bool**, **duplo**, e assim por diante), além de **TimeSpan**, **DateTime**, **Guid**, **decimal**, e **cadeia de caracteres**, *mais* qualquer tipo com um conversor de tipo que possa ser convertido de uma cadeia de caracteres. (Mais informações sobre conversores de tipo posteriormente.)
+- Se o parâmetro for um tipo "simples", a API da Web tenta obter o valor do URI. Os tipos simples incluem o .NET [tipos primitivos](https://msdn.microsoft.com/library/system.type.isprimitive.aspx) (**int**, **bool**, **duplo**, e assim por diante), além de **TimeSpan**, **DateTime**, **Guid**, **decimal**, e **cadeia de caracteres**, *mais* qualquer tipo com um conversor de tipo que possa ser convertido de uma cadeia de caracteres. (Mais informações sobre conversores de tipo posteriormente.)
 - Para tipos complexos, API da Web tenta ler o valor do corpo da mensagem, usando um [formatador do tipo de mídia](media-formatters.md).
 
 Por exemplo, aqui está um método comum de controlador de API da Web:
@@ -102,7 +102,7 @@ Um associador de modelo obtém valores brutos de entrada de um *provedor de valo
 
 O provedor de valor padrão na API da Web obtém valores de dados de rota e a cadeia de caracteres de consulta. Por exemplo, se o URI é `http://localhost/api/values/1?location=48,-122`, o provedor de valor cria os seguintes pares chave-valor:
 
-- ID = &quot;1&quot;
+- id = &quot;1&quot;
 - local = &quot;48,122&quot;
 
 (Estou supondo que o modelo de rota padrão, que é &quot;api / {controller} / {id}&quot;.)
@@ -121,7 +121,7 @@ Você também pode adicionar uma **[ModelBinder]** para o tipo de atributo. API 
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample11.cs)]
 
-Por fim, você pode adicionar um provedor de associador de modelo para o **HttpConfiguration**. Um provedor de associador de modelo é simplesmente uma classe de fábrica que cria um associador de modelo. Você pode criar um provedor derivando de [ModelBinderProvider](https://msdn.microsoft.com/en-us/library/system.web.http.modelbinding.modelbinderprovider.aspx) classe. No entanto, se o associador de modelo manipula um único tipo, é mais fácil de usar interno **SimpleModelBinderProvider**, que é projetado para essa finalidade. O código a seguir mostra como fazer isso.
+Por fim, você pode adicionar um provedor de associador de modelo para o **HttpConfiguration**. Um provedor de associador de modelo é simplesmente uma classe de fábrica que cria um associador de modelo. Você pode criar um provedor derivando de [ModelBinderProvider](https://msdn.microsoft.com/library/system.web.http.modelbinding.modelbinderprovider.aspx) classe. No entanto, se o associador de modelo manipula um único tipo, é mais fácil de usar interno **SimpleModelBinderProvider**, que é projetado para essa finalidade. O código a seguir mostra como fazer isso.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample12.cs)]
 

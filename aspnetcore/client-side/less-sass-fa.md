@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/less-sass-fa
-ms.openlocfilehash: c3a53d6118a72c00d61d9139b05325fd1cbd53da
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 764b11bbd301c0116488265d32f7d46dfc5bce27
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Introdução aos aplicativos de estilo com menor, Sass e fonte Awesome no núcleo do ASP.NET
 
@@ -246,7 +246,7 @@ nav {
 }
 ```
 
-Observe que, nesse caso, todos os elementos subordinados do `nav` estão contidos dentro de seu escopo. Não há nenhuma repetição dos elementos pai (`nav`, `li`, `a`), e a contagem de linha de total caiu também (embora alguns dos que é um resultado de colocar valores nas linhas da mesmas no segundo exemplo). Ele pode ser muito útil, organizacional, para ver todas as regras para um determinado elemento de interface do usuário em um escopo explicitamente associado, nesse caso definido do restante do arquivo de chaves.
+Observe que, nesse caso, todos os elementos subordinados do `nav` estão contidos dentro de seu escopo. Não há nenhuma repetição dos elementos pai (`nav`, `li`, `a`), e a contagem de linha de total caiu também (embora algumas das é um resultado de colocar valores nas linhas da mesmas no segundo exemplo). Ele pode ser muito útil, organizacional, para ver todas as regras para um determinado elemento de interface do usuário em um escopo explicitamente associado, nesse caso definido do restante do arquivo de chaves.
 
 O `&` sintaxe é um recurso menos seletor, com & que representa o pai de seletor atual. Portanto, dentro do {...} bloco, `&` representa um `a` marca e, portanto, `&:link` é equivalente a `a:link`.
 
@@ -321,7 +321,7 @@ Menor fornece uma série de recursos adicionais, mas isso deve dar uma ideia da 
 
 ## <a name="sass"></a>Sass
 
-Sass é semelhante ao menos, fornecendo suporte para muitos dos mesmos recursos, mas com sintaxe ligeiramente diferente. Ele é criado usando o Ruby, em vez de JavaScript, e portanto tem requisitos de instalação diferentes. O idioma Sass original não usou chaves ou ponto e vírgula, mas em vez disso, definida escopo usando o recuo e espaços em branco. Na versão 3 dos Sass, uma nova sintaxe foi introduzida, **SCSS** ("Sassy CSS"). SCSS é semelhante ao CSS que ignora os níveis de recuo e espaços em branco e, em vez disso, usa o ponto e vírgula e chaves.
+Sass é semelhante ao menos, fornecendo suporte para muitos dos mesmos recursos, mas com sintaxe ligeiramente diferente. Ele é criado usando o Ruby, em vez de JavaScript, e portanto tem requisitos de instalação diferentes. O idioma Sass original não usa chaves ou ponto e vírgula, mas em vez disso, definida escopo usando o recuo e espaços em branco. Na versão 3 dos Sass, uma nova sintaxe foi introduzida, **SCSS** ("Sassy CSS"). SCSS é semelhante ao CSS que ignora os níveis de recuo e espaços em branco e, em vez disso, usa o ponto e vírgula e chaves.
 
 Para instalar Sass, normalmente você deve primeiro instalar Ruby (pré-instalado no Mac) e, em seguida, execute:
 

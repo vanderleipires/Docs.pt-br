@@ -2,7 +2,7 @@
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 title: Lendo dados relacionados com o Entity Framework em um aplicativo ASP.NET MVC | Microsoft Docs
 author: tdykstra
-description: /AJAX/Tutorials/Using-AJAX-Control-Toolkit-Controls-and-Control-Extenders-VB
+description: /ajax/tutorials/using-ajax-control-toolkit-controls-and-control-extenders-vb
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1f4912bb3113a8f9cdae4211e055a7e317ab2aff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7a74d01f306abeeac5ac28c942f03001e0fe00f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Ler os dados com o Entity Framework em um aplicativo ASP.NET MVC relacionados
 ====================
@@ -45,7 +45,7 @@ Há várias maneiras que o Entity Framework pode carregar dados relacionados par
 - *Carregamento adiantado*. Quando a entidade é lido, os dados relacionados são recuperados com ela. Normalmente, isso resulta em uma consulta de junção único que recupera todos os dados que é necessário. Especifique o carregamento rápido usando o `Include` método.
 
     ![Eager_loading_example](https://asp.net/media/2577856/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Eager_loading_example_33f907ff-f0b0-4057-8e75-05a8cacac807.png)
-- *Carregamento explícito*. Isso é semelhante ao carregamento lento, exceto que você explicitamente recuperar os dados relacionados no código; Isso não acontece automaticamente quando você acessa uma propriedade de navegação. Carregar dados relacionados manualmente fazendo com que a entrada de Gerenciador de estado do objeto para uma entidade e chamar o [Collection.Load](https://msdn.microsoft.com/en-us/library/gg696220(v=vs.103).aspx) método para coleções ou [Reference.Load](https://msdn.microsoft.com/en-us/library/gg679166(v=vs.103).aspx) método para propriedades que contêm um entidade única. (No exemplo a seguir, se você quiser carregar a propriedade de navegação de administrador, você poderia substituir `Collection(x => x.Courses)` com `Reference(x => x.Administrator)`.) Normalmente, você usaria carregamento explícito somente quando você ativou a fora de carregamento lento.
+- *Carregamento explícito*. Isso é semelhante ao carregamento lento, exceto que você explicitamente recuperar os dados relacionados no código; Isso não acontece automaticamente quando você acessa uma propriedade de navegação. Carregar dados relacionados manualmente fazendo com que a entrada de Gerenciador de estado do objeto para uma entidade e chamar o [Collection.Load](https://msdn.microsoft.com/library/gg696220(v=vs.103).aspx) método para coleções ou [Reference.Load](https://msdn.microsoft.com/library/gg679166(v=vs.103).aspx) método para propriedades que contêm um entidade única. (No exemplo a seguir, se você quiser carregar a propriedade de navegação de administrador, você poderia substituir `Collection(x => x.Courses)` com `Reference(x => x.Administrator)`.) Normalmente, você usaria carregamento explícito somente quando você ativou a fora de carregamento lento.
 
     ![Explicit_loading_example](https://asp.net/media/2577862/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Explicit_loading_example_79d8c368-6d82-426f-be9a-2b443644ab15.png)
 
@@ -57,7 +57,7 @@ Se você souber que você precisa de dados relacionados para cada entidade recup
 
 Por outro lado, em alguns cenários de carregamento lento é mais eficiente. Carregamento adiantado pode causar uma junção muito complexa para ser gerado, que o SQL Server não pode processar com eficiência. Ou, se você precisar acessar as propriedades de navegação de uma entidade somente para um subconjunto de um conjunto de entidades você estiver processando, carregamento preguiçoso pode executar melhor porque mais dados que você precisa recuperar o carregamento rápido. Se o desempenho for crítico, é melhor testar o desempenho das duas maneiras para fazer a melhor escolha.
 
-Carregamento preguiçoso pode mascarar o código que causa problemas de desempenho. Por exemplo, o código que não especifica o carregamento adiantado ou explícito, mas processa um grande volume de entidades e usa várias propriedades de navegação em cada iteração pode ser muito eficiente (devido a muitos idas e voltas para o banco de dados). Um aplicativo que funciona bem em desenvolvimento usando um servidor SQL local pode ter problemas de desempenho quando movido para o banco de dados do Azure SQL devido ao aumento da latência de carregamento lento. As consultas de banco de dados com uma carga de teste realista de criação de perfil ajudará você a determinar se o carregamento lento é apropriado. Para obter mais informações, consulte [Desmistificando estratégias do Entity Framework: Carregando dados relacionados](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx) e [usando o Entity Framework para reduzir a latência de rede para o SQL Azure](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx).
+Carregamento preguiçoso pode mascarar o código que causa problemas de desempenho. Por exemplo, o código que não especifica o carregamento adiantado ou explícito, mas processa um grande volume de entidades e usa várias propriedades de navegação em cada iteração pode ser muito eficiente (devido a muitos idas e voltas para o banco de dados). Um aplicativo que funciona bem em desenvolvimento usando um servidor SQL local pode ter problemas de desempenho quando movido para o banco de dados do Azure SQL devido ao aumento da latência de carregamento lento. As consultas de banco de dados com uma carga de teste realista de criação de perfil ajudará você a determinar se o carregamento lento é apropriado. Para obter mais informações, consulte [Desmistificando estratégias do Entity Framework: Carregando dados relacionados](https://msdn.microsoft.com/magazine/hh205756.aspx) e [usando o Entity Framework para reduzir a latência de rede para o SQL Azure](https://msdn.microsoft.com/magazine/gg309181.aspx).
 
 ### <a name="disable-lazy-loading-before-serialization"></a>Desabilitar o carregamento lento antes de serialização
 
@@ -67,9 +67,9 @@ Serialização também pode ser complicada pelas classes proxy que usa o Entity 
 
 É uma maneira de evitar problemas de serialização serializar objetos de transferência de dados (DTOs) em vez de objetos de entidade, conforme mostrado no [usando API da Web com o Entity Framework](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-5.md) tutorial.
 
-Se você não usar DTOs, você pode desabilitar o carregamento lento e evitar problemas de proxy por [desativar a criação de proxy](https://msdn.microsoft.com/en-US/data/jj592886.aspx).
+Se você não usar DTOs, você pode desabilitar o carregamento lento e evitar problemas de proxy por [desativar a criação de proxy](https://msdn.microsoft.com/data/jj592886.aspx).
 
-Aqui estão algumas outras [maneiras de desabilitar o carregamento lento](https://msdn.microsoft.com/en-US/data/jj574232):
+Aqui estão algumas outras [maneiras de desabilitar o carregamento lento](https://msdn.microsoft.com/data/jj574232):
 
 - Para propriedades de navegação específico, omita o `virtual` palavra-chave quando você declarar a propriedade.
 - Para todas as propriedades de navegação, defina `LazyLoadingEnabled` para `false`, coloque o seguinte código no construtor de sua classe de contexto: 
@@ -164,7 +164,7 @@ Se uma ID de instrutor foi selecionada, o instrutor selecionado é recuperado da
 
 O `Where` método retorna uma coleção, mas nesse caso os critérios são passados para o resultado em um único método `Instructor` entidade que está sendo retornada. O `Single` método converte a coleção em uma única `Instructor` entidade, que fornece acesso a essa entidade `Courses` propriedade.
 
-Você usa o [único](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx) método em uma coleção quando você souber que a coleção terá apenas um item. O `Single` método lançará uma exceção se a coleção passada para ele está vazia ou se houver mais de um item. Uma alternativa é [SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx), que retorna um valor padrão (`null` nesse caso) se a coleção está vazia. No entanto, nesse caso isso ainda resultar em uma exceção (de tentativa de encontrar um `Courses` propriedade em um `null` referência), e a mensagem de exceção menos claramente pode indicar a causa do problema. Quando você chama o `Single` método, você também pode passar do `Where` condição em vez de chamar o `Where` método separadamente:
+Você usa o [único](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx) método em uma coleção quando você souber que a coleção terá apenas um item. O `Single` método lançará uma exceção se a coleção passada para ele está vazia ou se houver mais de um item. Uma alternativa é [SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx), que retorna um valor padrão (`null` nesse caso) se a coleção está vazia. No entanto, nesse caso isso ainda resultar em uma exceção (de tentativa de encontrar um `Courses` propriedade em um `null` referência), e a mensagem de exceção menos claramente pode indicar a causa do problema. Quando você chama o `Single` método, você também pode passar do `Where` condição em vez de chamar o `Where` método separadamente:
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
 

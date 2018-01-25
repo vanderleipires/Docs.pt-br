@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6a1533b80828532b756940d0b08fe4c6dab2d5dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95c0b72e3811dc23f8bdea180be5b20800ab3bd8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>Detalhes de erro de log com o ASP.NET (VB) de monitoramento de integridade
 ====================
@@ -43,13 +43,13 @@ Os eventos de logs de sistema de monitoramento de integridade, juntamente com as
 
 ## <a name="exploring-the-health-monitoring-systems-configuration"></a>Explorando a configuração do sistema de monitoramento de integridade
 
-Comportamento do sistema de monitoramento de integridade é definida por suas informações de configuração, que estão localizadas no [ `<healthMonitoring>` elemento](https://msdn.microsoft.com/en-us/library/2fwh2ss9.aspx) em `Web.config`. Esta seção de configuração define, entre outras coisas, as três partes importantes de informações a seguir:
+Comportamento do sistema de monitoramento de integridade é definida por suas informações de configuração, que estão localizadas no [ `<healthMonitoring>` elemento](https://msdn.microsoft.com/library/2fwh2ss9.aspx) em `Web.config`. Esta seção de configuração define, entre outras coisas, as três partes importantes de informações a seguir:
 
 1. Eventos de monitoramento de integridade que, quando disparado, deve ser registrado
 2. As fontes de log, e
 3. Como cada evento definido no (1) de monitoramento de integridade é mapeada para as fontes de log definido no (2).
 
-Essa informação é especificada por meio de elementos de configuração de três filhos: [ `<eventMappings>` ](https://msdn.microsoft.com/en-us/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/en-us/library/zaa41kz1.aspx), e [ `<rules>` ](https://msdn.microsoft.com/en-us/library/fe5wyxa0.aspx), respectivamente.
+Essa informação é especificada por meio de elementos de configuração de três filhos: [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx), e [ `<rules>` ](https://msdn.microsoft.com/library/fe5wyxa0.aspx), respectivamente.
 
 Informações de configuração do sistema de monitoramento de integridade de padrão pode ser encontrada no `Web.config` arquivo `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` pasta. Essas informações de configuração padrão, com algumas marcações removida por questão de brevidade, são mostradas abaixo:
 
@@ -114,7 +114,7 @@ Vamos atualizar as revisões de catálogo de configuração do site para que rec
 2. Registrar o provedor de origem do log de email no `<providers>` elemento, e
 3. Adicione uma entrada para o `<rules>` elemento que mapeia o evento de "Todos os erros" para o provedor de origem do log adicionado na etapa (2).
 
-Sistema de monitoramento de integridade inclui duas classes de provedor de origem para log email: `SimpleMailWebEventProvider` e `TemplatedMailWebEventProvider`. O [ `SimpleMailWebEventProvider` classe](https://msdn.microsoft.com/en-us/library/system.web.management.simplemailwebeventprovider.aspx) envia uma mensagem de email de texto simples que inclui o evento de detalhes e fornece pouca personalização do corpo do email. Com o [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) você especificar uma página ASP.NET cuja marcação renderizada é usada como o corpo da mensagem de email. O [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) lhe dá muito maior controle sobre o conteúdo e o formato da mensagem de email, mas exige um pouco mais trabalho inicial já que você precisa criar a página ASP.NET que gera o corpo da mensagem de email. Este tutorial se concentra no uso de `SimpleMailWebEventProvider` classe.
+Sistema de monitoramento de integridade inclui duas classes de provedor de origem para log email: `SimpleMailWebEventProvider` e `TemplatedMailWebEventProvider`. O [ `SimpleMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) envia uma mensagem de email de texto simples que inclui o evento de detalhes e fornece pouca personalização do corpo do email. Com o [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) você especificar uma página ASP.NET cuja marcação renderizada é usada como o corpo da mensagem de email. O [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) lhe dá muito maior controle sobre o conteúdo e o formato da mensagem de email, mas exige um pouco mais trabalho inicial já que você precisa criar a página ASP.NET que gera o corpo da mensagem de email. Este tutorial se concentra no uso de `SimpleMailWebEventProvider` classe.
 
 Atualização do sistema de monitoramento de integridade `<providers>` elemento o `Web.config` arquivo para incluir uma fonte de log para o `SimpleMailWebEventProvider` classe:
 
@@ -139,7 +139,7 @@ O `<rules>` seção agora inclui duas regras. O primeiro deles, chamado de "Todo
 
 O sistema de monitoramento de integridade do ASP.NET é projetado para permitir que os administradores a monitorar a integridade de um aplicativo da web implantados. Eventos de monitoramento de integridade são gerados quando Desdobrar determinadas ações, como quando o aplicativo for interrompida, quando um usuário fizer para o site, ou quando ocorre uma exceção sem tratamento. Esses eventos podem ser registrados em qualquer número de fontes de log. Este tutorial mostrou como registrar os detalhes de exceções sem tratamento para um banco de dados e por meio de uma mensagem de email.
 
-Este tutorial voltada para usar para registrar exceções não manipuladas, mas tenha em mente que o monitoramento de integridade é projetado para medir a integridade geral de um aplicativo implantado do ASP.NET e inclui uma grande quantidade de eventos de monitoramento de integridade e fontes de log não de monitoramento de integridade explorados aqui. O que é mais, você pode criar sua próprias fontes de log e eventos de monitoramento de integridade necessidade surgir. Se você estiver interessado em saber mais sobre o monitoramento de integridade, um bom começo é ler [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)do [perguntas Frequentes de monitoramento de integridade](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Depois disso, consulte [como: Use monitoramento de integridade no ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998306.aspx).
+Este tutorial voltada para usar para registrar exceções não manipuladas, mas tenha em mente que o monitoramento de integridade é projetado para medir a integridade geral de um aplicativo implantado do ASP.NET e inclui uma grande quantidade de eventos de monitoramento de integridade e fontes de log não de monitoramento de integridade explorados aqui. O que é mais, você pode criar sua próprias fontes de log e eventos de monitoramento de integridade necessidade surgir. Se você estiver interessado em saber mais sobre o monitoramento de integridade, um bom começo é ler [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)do [perguntas Frequentes de monitoramento de integridade](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Depois disso, consulte [como: Use monitoramento de integridade no ASP.NET 2.0](https://msdn.microsoft.com/library/ms998306.aspx).
 
 Boa programação!
 
@@ -147,11 +147,11 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [Visão geral do monitoramento de integridade do ASP.NET](https://msdn.microsoft.com/en-us/library/bb398933.aspx)
+- [Visão geral do monitoramento de integridade do ASP.NET](https://msdn.microsoft.com/library/bb398933.aspx)
 - [Configurar e personalizar a sistema do ASP.NET de monitoramento de integridade](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
 - [Perguntas Frequentes – no ASP.NET 2.0 de monitoramento de integridade](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [Como: Enviar email para notificações de monitoramento de integridade](https://msdn.microsoft.com/en-us/library/ms227553.aspx)
-- [Como: Usar o monitoramento de integridade no ASP.NET](https://msdn.microsoft.com/en-us/library/ms998306.aspx)
+- [Como: Enviar email para notificações de monitoramento de integridade](https://msdn.microsoft.com/library/ms227553.aspx)
+- [Como: Usar o monitoramento de integridade no ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
 - [Integridade de monitoramento no ASP.NET](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 >[!div class="step-by-step"]

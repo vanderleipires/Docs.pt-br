@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/anti-request-forgery
-ms.openlocfilehash: d7df8f91e88290509c8751a4b69804b60138846e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3831bf737186d10eb1b298f5ec2da1fd33ebedd9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Impedindo ataques CSRF (falsificação XSRF /) de solicitação entre sites no núcleo do ASP.NET
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="what-attack-does-anti-forgery-prevent"></a>O ataque de falsificação contra impedir que?
 
-Falsificação de solicitação entre sites (também conhecido como XSRF ou CSRF, pronunciado *consulte navegação*) é um ataque contra aplicativos web hospedados no qual um site mal-intencionado pode influenciar a interação entre um navegador de cliente e um site da web que relações de confiança esse navegador. Esses ataques são possibilitados como navegadores da web enviam alguns tipos de tokens de autenticação automaticamente com todas as solicitações para um site da web. Essa forma de exploração é também conhecido como um *ataque de um clique* ou como *sessão riding*, pois aproveita o ataque do usuário do anteriormente autenticados sessão.
+Falsificação de solicitação entre sites (também conhecido como XSRF ou CSRF, pronunciado *consulte navegação*) é um ataque contra aplicativos web hospedados no qual um site mal-intencionado pode influenciar a interação entre um navegador de cliente e um site da web que relações de confiança esse navegador. Esses ataques são possibilitados como navegadores da web enviam alguns tipos de tokens de autenticação automaticamente com todas as solicitações para um site da web. Essa forma de exploração do também conhecido como um *ataque de um clique* ou como *sessão riding*, pois aproveita o ataque do usuário do anteriormente autenticados sessão.
 
 Um exemplo de um ataque CSRF:
 
@@ -57,7 +57,7 @@ Pontos de extremidade de site que respondem a de destino a alguns ataques `GET` 
 
 Ataques CSRF são possíveis nos sites da web que usam cookies para autenticação, como navegadores enviam todos os cookies relevantes para o site de destino. No entanto, ataques CSRF não estão limitados a exploração de cookies. Por exemplo, a autenticação básica e resumida também são vulneráveis. Depois que um usuário faz logon com a autenticação básica ou Digest, o navegador envia automaticamente as credenciais, até que a sessão termina.
 
-Observação: nesse contexto, *sessão* refere-se à sessão do lado do cliente durante o qual o usuário é autenticado. Isso não está relacionado a sessões do lado do servidor ou [sessão middleware](xref:fundamentals/app-state).
+Observação: nesse contexto, *sessão* refere-se à sessão do lado do cliente durante o qual o usuário é autenticado. É não relacionados para sessões do lado do servidor ou [sessão middleware](xref:fundamentals/app-state).
 
 Os usuários podem proteger contra vulnerabilidades CSRF por:
 * Log de sites da web quando ele tiver terminado de usá-los.
@@ -171,7 +171,7 @@ O ``ValidateAntiForgeryToken`` atributo requer um token para solicitações para
 
 ### <a name="autovalidateantiforgerytoken"></a>AutoValidateAntiforgeryToken
 
-Aplicativos ASP.NET Core geralmente não gerar tokens de antiforgery para métodos HTTP seguros (GET, HEAD, opções e rastreamento). Em vez de em larga escala aplicar o ``ValidateAntiForgeryToken`` atributo e, em seguida, substituindo-o com ``IgnoreAntiforgeryToken`` atributos, você pode usar o ``AutoValidateAntiforgeryToken`` atributo. Esse atributo funciona de forma idêntica ao ``ValidateAntiForgeryToken`` de atributos, exceto pelo fato de que não exige tokens para solicitações feitas usando os seguintes métodos HTTP:
+Aplicativos ASP.NET Core geralmente não geram tokens de antiforgery para métodos HTTP seguros (GET, HEAD, opções e rastreamento). Em vez de em larga escala aplicar o ``ValidateAntiForgeryToken`` atributo e, em seguida, substituindo-o com ``IgnoreAntiforgeryToken`` atributos, você pode usar o ``AutoValidateAntiforgeryToken`` atributo. Esse atributo funciona de forma idêntica ao ``ValidateAntiForgeryToken`` de atributos, exceto pelo fato de que não exige tokens para solicitações feitas usando os seguintes métodos HTTP:
 
 * OBTER
 * HOME
@@ -353,7 +353,7 @@ Quando um usuário está conectado a um sistema, uma sessão de usuário é cria
 
 ### <a name="user-tokens"></a>Tokens de usuário
 
-Autenticação baseada em token não armazena a sessão no servidor. Em vez disso, quando um usuário está conectado em eles são um token emitidos (não é um token antiforgery). Esse token contém todos os dados que é necessária para validar o token. Ele também contém informações de usuário, na forma de [declarações](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Quando um usuário deseja acessar um recurso de servidor que requer autenticação, o token é enviado para o servidor com um cabeçalho de autorização adicionais na forma de portador {token}. Isso torna o aplicativo sem monitoração de estado como em cada solicitação subsequente o token é passado na solicitação de validação do lado do servidor. Esse token não é *criptografado*; em vez disso, ele é *codificado*. No lado do servidor, o token pode ser decodificado para acessar as informações não processadas dentro do token. Para enviar o token em solicitações subsequentes, você ou pode armazená-lo no armazenamento local do navegador ou em um cookie. Você não precisa se preocupar sobre vulnerabilidade XSRF se o token é armazenado no armazenamento local, mas é um problema se o token é armazenado em um cookie.
+Autenticação baseada em token não armazena a sessão no servidor. Em vez disso, quando um usuário está conectado em eles estiverem um token emitidos (não é um token antiforgery). Esse token contém todos os dados que é necessária para validar o token. Ele também contém informações de usuário, na forma de [declarações](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Quando um usuário deseja acessar um recurso de servidor que requer autenticação, o token é enviado para o servidor com um cabeçalho de autorização adicionais na forma de portador {token}. Isso torna o aplicativo sem monitoração de estado como em cada solicitação subsequente o token é passado na solicitação de validação do lado do servidor. Esse token não *criptografado*; em vez disso, ele é *codificado*. No lado do servidor, o token pode ser decodificado para acessar as informações não processadas dentro do token. Para enviar o token em solicitações subsequentes, você ou pode armazená-lo no armazenamento local do navegador ou em um cookie. Você não precisa se preocupar sobre vulnerabilidade XSRF se o token é armazenado no armazenamento local, mas é um problema se o token é armazenado em um cookie.
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>Vários aplicativos são hospedados em um domínio
 

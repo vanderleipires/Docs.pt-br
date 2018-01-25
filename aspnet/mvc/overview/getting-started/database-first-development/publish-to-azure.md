@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/publish-to-azure
 msc.type: authoredcontent
-ms.openlocfilehash: f75b7192b4d97c88fcbcb4ad7fef88c83157c902
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eadc0f2b08df29f80fe53d03cf88cd3cdcecfb12
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>Publicar o site MVC banco de dados primeiro no Azure
 ====================
@@ -31,8 +31,8 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 
 Você precisa de uma conta do Azure para concluir este tutorial:
 
-- Você pode [abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F) -você obtém créditos você pode usar para experimentar os serviços do Azure pagos e mesmo depois que eles são usados até que você pode manter a conta e livre de usar os serviços do Azure.
-- Você pode [ativar os benefícios de assinante do MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) -assinatura do MSDN fornece créditos de cada mês em que você pode usar para os serviços do Azure pagos.
+- Você pode [abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) -você obtém créditos você pode usar para experimentar os serviços do Azure pagos e mesmo depois que eles são usados até que você pode manter a conta e livre de usar os serviços do Azure.
+- Você pode [ativar os benefícios de assinante do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) -assinatura do MSDN fornece créditos de cada mês em que você pode usar para os serviços do Azure pagos.
 
 Para publicar seu aplicativo web, clique com o botão direito e selecione **publicar**.
 
@@ -134,7 +134,7 @@ Forneça o nome do servidor de banco de dados e suas credenciais de autenticaç�
 
 Clique em OK.
 
-Você provavelmente desejará salvar esse perfil, você pode publicar as atualizações no futuro sem inserir novamente todas as informações de conexão. Selecione **criar perfil**.
+Você provavelmente desejará salvar esse perfil, você pode publicar as atualizações no futuro sem inserir novamente todas as informações de conexão. Selecione **Criar Perfil**.
 
 ![Salvar perfil](publish-to-azure/_static/image19.png)
 

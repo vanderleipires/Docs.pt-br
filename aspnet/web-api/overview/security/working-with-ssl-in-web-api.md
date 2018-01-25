@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 8c631900c8c5ab6097e0cb9fd4a71abbcba1c88b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 127b336cb628e55bd59481ecb1c4df83960dc25b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-ssl-in-web-api"></a>Trabalhando com SSL na API da Web
 ====================
@@ -72,7 +72,7 @@ O **SslNegotiateCert** sinalizador significa IIS aceitará um certificado do cli
 
 ### <a name="creating-a-client-certificate-for-testing"></a>Criar um certificado de cliente para teste
 
-Para fins de teste, você pode usar [MakeCert.exe](https://msdn.microsoft.com/en-US/library/bfsktky3.aspx) para criar um certificado de cliente. Primeiro, crie uma autoridade raiz de teste:
+Para fins de teste, você pode usar [MakeCert.exe](https://msdn.microsoft.com/library/bfsktky3.aspx) para criar um certificado de cliente. Primeiro, crie uma autoridade raiz de teste:
 
 [!code-console[Main](working-with-ssl-in-web-api/samples/sample4.cmd)]
 
@@ -95,6 +95,6 @@ Agora, crie um certificado de cliente que está assinado pelo certificado primei
 
 ### <a name="using-client-certificates-in-web-api"></a>Usando certificados de cliente na API da Web
 
-No lado do servidor, você pode obter o certificado de cliente chamando [GetClientCertificate](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessageextensions.getclientcertificate.aspx) na mensagem de solicitação. O método retornará nulo se não houver nenhum certificado do cliente. Caso contrário, ele retorna um **X509Certificate2** instância. Use esse objeto para obter informações do certificado, como o assunto e emissor. Em seguida, você pode usar essas informações para autenticação ou autorização.
+No lado do servidor, você pode obter o certificado de cliente chamando [GetClientCertificate](https://msdn.microsoft.com/library/system.net.http.httprequestmessageextensions.getclientcertificate.aspx) na mensagem de solicitação. O método retornará nulo se não houver nenhum certificado do cliente. Caso contrário, ele retorna um **X509Certificate2** instância. Use esse objeto para obter informações do certificado, como o assunto e emissor. Em seguida, você pode usar essas informações para autenticação ou autorização.
 
 [!code-csharp[Main](working-with-ssl-in-web-api/samples/sample6.cs)]

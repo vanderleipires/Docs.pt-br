@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: 0440f807c7baa7b92e5f05590eca9cc237b5aef9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df37acd8901b457f7887afe767d42d53e45e4815
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>Usando o Entity Framework 4.0 e o controle ObjectDataSource, parte 2: adicionar uma camada de lógica de negócios e testes de unidade
 ====================
@@ -74,7 +74,7 @@ A variável de classe que contém uma referência para a classe de repositório 
 Os métodos CRUD que chamam a classe do repositório e dois construtores tornam possível usar a classe de lógica de negócios com qualquer repositório de dados de back-end que você escolher. A classe de lógica de negócios não precisa estar ciente de como a classe que está chamando persiste os dados. (Isso é geralmente chamado *ignorância de persistência*.) Isso facilita o teste de unidade, como a classe de lógica de negócios podem se conectar a uma implementação de repositório que use algo como simples como na memória `List` coleções para armazenar dados.
 
 > [!NOTE]
-> Tecnicamente, os objetos de entidade são ainda não persistência desconhecem, porque eles estiverem instanciados a partir de classes que herdam o Entity Framework `EntityObject` classe. Para ignorância de persistência concluída, você pode usar *simples objetos CLR antigos*, ou *POCOs*, em vez de objetos que herdam o `EntityObject` classe. Usar POCOs está além do escopo deste tutorial. Para obter mais informações, consulte [capacidade de teste e o Entity Framework 4.0](https://msdn.microsoft.com/en-us/library/ff714955.aspx) no site do MSDN.)
+> Tecnicamente, os objetos de entidade são ainda não persistência desconhecem, porque eles estiverem instanciados a partir de classes que herdam o Entity Framework `EntityObject` classe. Para ignorância de persistência concluída, você pode usar *simples objetos CLR antigos*, ou *POCOs*, em vez de objetos que herdam o `EntityObject` classe. Usar POCOs está além do escopo deste tutorial. Para obter mais informações, consulte [capacidade de teste e o Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx) no site do MSDN.)
 
 
 Agora você pode se conectar a `ObjectDataSource` controles para a lógica de negócios de classe em vez de para o repositório e verificar se tudo está funcionando como antes.
@@ -83,7 +83,7 @@ Em *Departments.aspx* e *DepartmentsAdd.aspx*, alterar cada ocorrência de `Type
 
 Execute o *Departments.aspx* e *DepartmentsAdd.aspx* páginas para verificar se eles ainda funcionam como antes.
 
-[![Para Image01](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image6.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image5.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image6.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image5.png)
 
 [![Image02](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image8.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image7.png)
 
@@ -221,7 +221,7 @@ Adicione o manipulador de eventos a seguir:
 
 Agora você pode testar o *DepartmentsAdd.aspx.cs* página para verificar que manipula corretamente também tenta fazer uma pessoa que o administrador de mais de um departamento.
 
-Isso conclui a introdução ao implementar o padrão de repositório para usar o `ObjectDataSource` controle com o Entity Framework. Para obter mais informações sobre o repositório padrão e a capacidade de teste, consulte o white paper MSDN [capacidade de teste e o Entity Framework 4.0](https://msdn.microsoft.com/en-us/library/ff714955.aspx).
+Isso conclui a introdução ao implementar o padrão de repositório para usar o `ObjectDataSource` controle com o Entity Framework. Para obter mais informações sobre o repositório padrão e a capacidade de teste, consulte o white paper MSDN [capacidade de teste e o Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx).
 
 O tutorial a seguir, você verá como adicionar classificação e filtragem de funcionalidade para o aplicativo.
 

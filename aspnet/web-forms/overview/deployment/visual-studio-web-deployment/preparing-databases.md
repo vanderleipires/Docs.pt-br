@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 1f19d54a5f2679f790575d520b28472d4ff3233f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: caa79725ede320c4bd3e87ac246966c57175eb8e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Implantação de Web do ASP.NET usando o Visual Studio: Preparando para implantação de banco de dados
 ====================
@@ -27,7 +27,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial mostra como obter o projeto pronto para a implantação de banco de dados. A estrutura de banco de dados e alguns (não todos) dos dados nas duas do aplicativo bancos de dados devem ser implantados para teste, preparação e ambientes de produção.
 
@@ -52,7 +52,7 @@ Para obter mais informações sobre as edições do SQL Server, incluindo LocalD
 Para acesso ao banco de dados, o aplicativo Contoso University requer o seguinte software deve ser implantado com o aplicativo porque ele não está incluído no .NET Framework:
 
 - [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) (permite que o sistema de associação do ASP.NET usar o banco de dados do SQL Azure)
-- [Entity Framework](https://msdn.microsoft.com/en-us/library/gg696172.aspx)
+- [Entity Framework](https://msdn.microsoft.com/library/gg696172.aspx)
 
 Como este software é incluído em pacotes do NuGet, o projeto já está definido para que os assemblies necessários são implantados com o projeto. (Os links apontam para as versões atuais desses pacotes, que pode ser mais recente do que o que é instalado no projeto de starter baixado para este tutorial.)
 
@@ -171,12 +171,12 @@ Aqui, você normalmente não quer os mesmos dados em produção que você tem em
 Você implantará os usuários de desenvolvimento para o ambiente de teste e os usuários de produção para preparação e produção. Para fazer isso você criará dois scripts SQL neste tutorial, um para o desenvolvimento e outro para produção e tutoriais subsequentes, você configurará o processo de publicação para executá-los.
 
 > [!NOTE]
-> O banco de dados de associação armazena um hash de senhas de conta. Para implantar as contas de um computador para outro, você deve garantir que as rotinas de hash não geram hashes diferentes no servidor de destino do que no computador de origem. Eles irá gerar os hashes mesmo quando você usa o ASP.NET Universal Providers, desde que você não altere o algoritmo padrão. O algoritmo padrão é HMACSHA256 e é especificado no **validação** atributo o  **[machineKey](https://msdn.microsoft.com/en-us/library/system.web.configuration.machinekeysection.aspx)**  elemento no arquivo Web. config.
+> O banco de dados de associação armazena um hash de senhas de conta. Para implantar as contas de um computador para outro, você deve garantir que as rotinas de hash não geram hashes diferentes no servidor de destino do que no computador de origem. Eles irá gerar os hashes mesmo quando você usa o ASP.NET Universal Providers, desde que você não altere o algoritmo padrão. O algoritmo padrão é HMACSHA256 e é especificado no **validação** atributo o  **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)**  elemento no arquivo Web. config.
 
 
 Você pode criar scripts de implantação de dados manualmente, usando o SQL Server Management Studio (SSMS), ou usando uma ferramenta de terceiros. Este restante deste tutorial mostrará como fazer isso no SSMS, mas se você não quiser instalar e usar o SSMS, você pode obter os scripts da versão do projeto concluído e ignorar a seção onde você armazená-los na pasta da solução.
 
-Para instalar o SSMS, instale-o de [Download Center: Microsoft SQL Server 2012 Express](https://www.microsoft.com/en-us/download/details.aspx?id=29062) clicando [ENU\x64\SQLManagementStudio\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe) ou [ ENU\x86\SQLManagementStudio\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe). Se você escolher a errado para o seu sistema haverá falha na instalação e tente outro.
+Para instalar o SSMS, instale-o de [Download Center: Microsoft SQL Server 2012 Express](https://www.microsoft.com/download/details.aspx?id=29062) clicando [ENU\x64\SQLManagementStudio\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe) ou [ ENU\x86\SQLManagementStudio\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe). Se você escolher a errado para o seu sistema haverá falha na instalação e tente outro.
 
 (Observe que este é um download de 600 megabytes. Pode levar muito tempo para instalar e exigirá uma reinicialização do computador.)
 
@@ -231,7 +231,7 @@ O tutorial a seguir você define as configurações de projeto que afetam a impl
 
 ## <a name="more-information"></a>Mais informações
 
-Para obter mais informações sobre o NuGet, consulte [gerenciar bibliotecas de projeto com o NuGet](https://msdn.microsoft.com/en-us/magazine/hh547106.aspx) e [NuGet documentação](http://docs.nuget.org/docs/start-here/overview). Se você não quiser usar o NuGet, você precisará saber como analisar um pacote do NuGet para determinar o que fazer quando ele está instalado. (Por exemplo, ele pode configurar *Web. config* transformações, configurar scripts do PowerShell para executar em tempo de compilação, etc.) Para saber mais sobre como funciona o NuGet, consulte [criar e publicar um pacote](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) e [arquivo de configuração e transformações de código fonte](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
+Para obter mais informações sobre o NuGet, consulte [gerenciar bibliotecas de projeto com o NuGet](https://msdn.microsoft.com/magazine/hh547106.aspx) e [NuGet documentação](http://docs.nuget.org/docs/start-here/overview). Se você não quiser usar o NuGet, você precisará saber como analisar um pacote do NuGet para determinar o que fazer quando ele está instalado. (Por exemplo, ele pode configurar *Web. config* transformações, configurar scripts do PowerShell para executar em tempo de compilação, etc.) Para saber mais sobre como funciona o NuGet, consulte [criar e publicar um pacote](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) e [arquivo de configuração e transformações de código fonte](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 
 >[!div class="step-by-step"]
 [Anterior](introduction.md)

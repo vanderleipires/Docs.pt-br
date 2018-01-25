@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4c4564e5f1f71763e7e6a78622d30a25f1a6f640
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 90bcff91d0642e6af66f43fd807b253cc516d277
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>Uma visão geral da autenticação de formulários (VB)
 ====================
@@ -39,12 +39,12 @@ Noções básicas sobre os formulários de fluxo de trabalho de autenticação, 
 
 ## <a name="understanding-the-forms-authentication-workflow"></a>Noções básicas sobre o fluxo de trabalho de autenticação de formulários
 
-Quando o tempo de execução do ASP.NET processa uma solicitação para um recurso do ASP.NET, como uma página ASP.NET ou um serviço Web do ASP.NET, a solicitação eleva um número de eventos durante o ciclo de vida. Há eventos gerados no final muito começando e muito da solicitação, aqueles gerado quando a solicitação está sendo autenticada e autorizado, um evento gerado no caso de uma exceção sem tratamento e assim por diante. Para ver uma lista completa dos eventos, consulte o [eventos do objeto HttpApplication](https://msdn.microsoft.com/en-us/library/system.web.httpapplication_events.aspx).
+Quando o tempo de execução do ASP.NET processa uma solicitação para um recurso do ASP.NET, como uma página ASP.NET ou um serviço Web do ASP.NET, a solicitação eleva um número de eventos durante o ciclo de vida. Há eventos gerados no final muito começando e muito da solicitação, aqueles gerado quando a solicitação está sendo autenticada e autorizado, um evento gerado no caso de uma exceção sem tratamento e assim por diante. Para ver uma lista completa dos eventos, consulte o [eventos do objeto HttpApplication](https://msdn.microsoft.com/library/system.web.httpapplication_events.aspx).
 
 *Módulos HTTP* são classes gerenciadas, cujo código é executado em resposta a um evento específico no ciclo de vida de solicitação. ASP.NET vem com um número de módulos HTTP que realizar tarefas essenciais em segundo plano. Dois módulos HTTP internos que são especialmente relevantes para nossa discussão são:
 
-- **[FormsAuthenticationModule](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx)**  -autentica o usuário inspecionando o tíquete de autenticação de formulários, que normalmente é incluído na coleção de cookies do usuário. Se não houver nenhum tíquete de autenticação de formulários, o usuário é anônimo.
-- **[UrlAuthorizationModule](https://msdn.microsoft.com/en-us/library/system.web.security.urlauthorizationmodule.aspx)**  -determina se o usuário atual está autorizado a acessar a URL solicitada. Esse módulo determina a autoridade consultando as regras de autorização especificadas nos arquivos de configuração do aplicativo. O ASP.NET também inclui o [FileAuthorizationModule](https://msdn.microsoft.com/en-us/library/system.web.security.fileauthorizationmodule.aspx) que determina a autoridade consultando as ACLs de arquivo (s) solicitado.
+- **[FormsAuthenticationModule](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)**  -autentica o usuário inspecionando o tíquete de autenticação de formulários, que normalmente é incluído na coleção de cookies do usuário. Se não houver nenhum tíquete de autenticação de formulários, o usuário é anônimo.
+- **[UrlAuthorizationModule](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)**  -determina se o usuário atual está autorizado a acessar a URL solicitada. Esse módulo determina a autoridade consultando as regras de autorização especificadas nos arquivos de configuração do aplicativo. O ASP.NET também inclui o [FileAuthorizationModule](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) que determina a autoridade consultando as ACLs de arquivo (s) solicitado.
 
 O FormsAuthenticationModule tenta autenticar o usuário antes do UrlAuthorizationModule (e FileAuthorizationModule) em execução. Se o usuário faz a solicitação não está autorizado a acessar o recurso solicitado, o módulo de autorização encerra a solicitação e retorna um [HTTP 401 não autorizado](http://www.checkupdown.com/status/E401.html) status. Em cenários de autenticação do Windows, o status do HTTP 401 é retornado para o navegador. Esse código de status faz com que o navegador solicitar ao usuário as credenciais por meio de uma caixa de diálogo modal. Com a autenticação de formulários, no entanto, o status HTTP 401 não autorizado nunca é enviado para o navegador como o FormsAuthenticationModule detecta esse status e o modifica para redirecionar o usuário para a página de logon, em vez disso, (por meio de um [redirecionamento de HTTP 302](http://www.checkupdown.com/status/E302.html) status).
 
@@ -80,12 +80,12 @@ História, em versões anteriores do IIS 7, você pode usar somente autenticaç�
 
 ## <a name="step-1-creating-an-aspnet-website-for-this-tutorial-series"></a>Etapa 1: Criar um site ASP.NET para esta série de tutoriais
 
-Para alcançar o público mais amplo possível, o site da Web ASP.NET criaríamos toda essa série será criado com a versão gratuita da Microsoft do Visual Studio 2008, [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/). Vamos implementar o armazenamento do usuário SqlMembershipProvider em uma [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/en-us/sql/Aa336346.aspx) banco de dados. Se você estiver usando o Visual Studio 2005 ou uma edição diferente do Visual Studio 2008 ou SQL Server, não se preocupe - as etapas serão quase idênticas e quaisquer diferenças não trivial serão indicadas.
+Para alcançar o público mais amplo possível, o site da Web ASP.NET criaríamos toda essa série será criado com a versão gratuita da Microsoft do Visual Studio 2008, [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/). Vamos implementar o armazenamento do usuário SqlMembershipProvider em uma [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx) banco de dados. Se você estiver usando o Visual Studio 2005 ou uma edição diferente do Visual Studio 2008 ou SQL Server, não se preocupe - as etapas serão quase idênticas e quaisquer diferenças não trivial serão indicadas.
 
 Antes, pode configurar a autenticação de formulários, é preciso primeiro um site ASP.NET. Comece criando um novo arquivo com base em sistema site da Web ASP.NET. Para fazer isso, inicie o Visual Web Developer e vá para o menu Arquivo e escolha o novo Site da Web, exibindo a caixa de diálogo do novo Site da Web. Escolher o modelo de Site da Web ASP.NET, defina a lista suspensa do local do sistema de arquivos, escolha uma pasta para colocar o site da web e definir o idioma para VB. Isso criará um novo site com uma página Default.aspx ASP.NET, um aplicativo\_pasta de dados e um arquivo Web. config.
 
 > [!NOTE]
-> Visual Studio oferece suporte a dois modos de gerenciamento de projeto: os projetos de Site da Web e projetos de aplicativo Web. Projetos de Site não têm um arquivo de projeto, enquanto os projetos de aplicativo Web imitar a arquitetura de projeto no Visual Studio .NET 2002/2003 - eles incluem um arquivo de projeto e compilar o código-fonte do projeto em um único assembly, que é colocado na pasta /bin. O Visual Studio 2005 inicialmente apenas sites da Web com suporte de projetos, embora o modelo de projeto de aplicativo Web foi reintroduzido com Service Pack 1. O Visual Studio 2008 oferece os dois modelos de projeto. O Visual Web Developer 2005 e 2008 edições, no entanto, somente suportam a projetos de Site. Usarei o modelo de projeto de Site. Se você estiver usando uma edição não Express e deseja usar o [modelo de projeto de aplicativo Web](https://msdn.microsoft.com/en-us/library/aa730880(vs.80).aspx) em vez disso, fique à vontade para fazer isso, mas lembre-se de que pode haver algumas discrepâncias entre o que você vê na tela e as etapas que você deve tomar em relação a capturas de tela mostradas e instruções fornecidas nos tutoriais.
+> Visual Studio oferece suporte a dois modos de gerenciamento de projeto: os projetos de Site da Web e projetos de aplicativo Web. Projetos de Site não têm um arquivo de projeto, enquanto os projetos de aplicativo Web imitar a arquitetura de projeto no Visual Studio .NET 2002/2003 - eles incluem um arquivo de projeto e compilar o código-fonte do projeto em um único assembly, que é colocado na pasta /bin. O Visual Studio 2005 inicialmente apenas sites da Web com suporte de projetos, embora o modelo de projeto de aplicativo Web foi reintroduzido com Service Pack 1. O Visual Studio 2008 oferece os dois modelos de projeto. O Visual Web Developer 2005 e 2008 edições, no entanto, somente suportam a projetos de Site. Usarei o modelo de projeto de Site. Se você estiver usando uma edição não Express e deseja usar o [modelo de projeto de aplicativo Web](https://msdn.microsoft.com/library/aa730880(vs.80).aspx) em vez disso, fique à vontade para fazer isso, mas lembre-se de que pode haver algumas discrepâncias entre o que você vê na tela e as etapas que você deve tomar em relação a capturas de tela mostradas e instruções fornecidas nos tutoriais.
 
 
 [![Criar um novo arquivo com base em sistema Site da Web](an-overview-of-forms-authentication-vb/_static/image5.png)](an-overview-of-forms-authentication-vb/_static/image4.png)
@@ -95,7 +95,7 @@ Antes, pode configurar a autenticação de formulários, é preciso primeiro um 
 
 ### <a name="adding-a-master-page"></a>Adicionando uma página mestra
 
-Em seguida, adicione uma nova página mestra para o site no diretório raiz chamado Site.master. [Páginas mestras](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx) permitem um desenvolvedor de página Definir um modelo de todo o site que pode ser aplicado a páginas ASP.NET. O principal benefício de páginas mestras é que a aparência geral do site pode ser definida em um único local, tornando fácil de atualizar ou ajustar o layout do site.
+Em seguida, adicione uma nova página mestra para o site no diretório raiz chamado Site.master. [Páginas mestras](https://msdn.microsoft.com/library/wtxbf3hh.aspx) permitem um desenvolvedor de página Definir um modelo de todo o site que pode ser aplicado a páginas ASP.NET. O principal benefício de páginas mestras é que a aparência geral do site pode ser definida em um único local, tornando fácil de atualizar ou ajustar o layout do site.
 
 
 [![Adicionar uma página mestra chamado Site.master para o site](an-overview-of-forms-authentication-vb/_static/image8.png)](an-overview-of-forms-authentication-vb/_static/image7.png)
@@ -150,7 +150,7 @@ Por enquanto, deixe Default.aspx vazio. Podemos retornará a ele mais tarde nest
 
 ## <a name="step-2-enabling-forms-authentication"></a>Etapa 2: Habilitar a autenticação de formulários
 
-Com o site da Web ASP.NET criado, nossa próxima tarefa é habilitar a autenticação de formulários. Configuração de autenticação do aplicativo é especificada por meio de [ &lt;autenticação&gt; elemento](https://msdn.microsoft.com/en-us/library/532aee0e.aspx) no Web. config. O &lt;autenticação&gt; elemento contém um único atributo chamado de modo que especifica o modelo de autenticação usado pelo aplicativo. Esse atributo pode ter um dos quatro valores a seguir:
+Com o site da Web ASP.NET criado, nossa próxima tarefa é habilitar a autenticação de formulários. Configuração de autenticação do aplicativo é especificada por meio de [ &lt;autenticação&gt; elemento](https://msdn.microsoft.com/library/532aee0e.aspx) no Web. config. O &lt;autenticação&gt; elemento contém um único atributo chamado de modo que especifica o modelo de autenticação usado pelo aplicativo. Esse atributo pode ter um dos quatro valores a seguir:
 
 - **Windows** - conforme discutido no tutorial anterior, quando um aplicativo usa a autenticação do Windows é responsabilidade do servidor web para autenticar o visitante e, geralmente, isso é feito por meio de básica, Digest ou integrada do Windows autenticação.
 - **Formulários**-os usuários são autenticados por meio de um formulário em uma página da web.
@@ -221,7 +221,7 @@ Agora, precisamos implementar tarefa 2 clique do botão manipulador de eventos -
 
 Antes do ASP.NET 2.0, os desenvolvedores foram responsáveis por implementar os seus próprios armazenamentos de usuário e escrever o código para validar as credenciais fornecidas no repositório. A maioria dos desenvolvedores implementaria o armazenamento do usuário em um banco de dados, criando uma tabela chamada usuários com colunas como nome de usuário, senha, Email, LastLoginDate e assim por diante. Esta tabela, em seguida, teria um registro por conta de usuário. Verificação de credenciais fornecido do usuário envolve a consultar o banco de dados para um nome de usuário correspondente e, em seguida, garantindo que a senha no banco de dados correspondia à senha fornecida.
 
-Com o ASP.NET 2.0, os desenvolvedores devem usar um dos provedores de associação para gerenciar o armazenamento do usuário. Este tutorial série usaremos SqlMembershipProvider, que usa um banco de dados do SQL Server para o repositório do usuário. Ao usar o SqlMembershipProvider é necessário para implementar um esquema de banco de dados específico que inclui as tabelas, exibições e procedimentos armazenados esperados pelo provedor. Vamos examinar como implementar esse esquema de  *[criar o esquema de associação no SQL Server](../membership/creating-the-membership-schema-in-sql-server-vb.md)*  tutorial. Com o provedor de associação em vigor, validar as credenciais do usuário é tão simple quanto chamar o [classe associação](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx)do [ValidateUser (*username*, *senha*) método](https://msdn.microsoft.com/en-us/library/system.web.security.membership.validateuser.aspx), que retorna um valor booliano que indica se a validade do *username* e *senha* combinação. Como podemos ainda não implementado repositório do usuário do SqlMembershipProvider, não podemos usar ValidateUser método a classe de associação neste momento.
+Com o ASP.NET 2.0, os desenvolvedores devem usar um dos provedores de associação para gerenciar o armazenamento do usuário. Este tutorial série usaremos SqlMembershipProvider, que usa um banco de dados do SQL Server para o repositório do usuário. Ao usar o SqlMembershipProvider é necessário para implementar um esquema de banco de dados específico que inclui as tabelas, exibições e procedimentos armazenados esperados pelo provedor. Vamos examinar como implementar esse esquema de  *[criar o esquema de associação no SQL Server](../membership/creating-the-membership-schema-in-sql-server-vb.md)*  tutorial. Com o provedor de associação em vigor, validar as credenciais do usuário é tão simple quanto chamar o [classe associação](https://msdn.microsoft.com/library/system.web.security.membership.aspx)do [ValidateUser (*username*, *senha*) método](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx), que retorna um valor booliano que indica se a validade do *username* e *senha* combinação. Como podemos ainda não implementado repositório do usuário do SqlMembershipProvider, não podemos usar ValidateUser método a classe de associação neste momento.
 
 Em vez de levar um tempo para criar nossa própria personalizada tabela de banco de dados de usuários (o que seria obsoleta quando implementamos o SqlMembershipProvider), vamos em vez disso, codificar as credenciais válidas dentro de logon da página em si. No LoginButton manipulador de evento, adicione o seguinte código:
 
@@ -231,23 +231,23 @@ Como você pode ver, há três contas de usuário válidas Scott, Jisun e Sam - 
 
 Quando um usuário insere credenciais válidas, mencionei que eles são redirecionados para a página apropriada. O que é a página apropriada, embora? Lembre-se de que quando um usuário acessa uma página que não estão autorizados a exibir, FormsAuthenticationModule redireciona automaticamente para a página de logon. Dessa forma, ele inclui a URL solicitada na querystring por meio do parâmetro ReturnUrl. Ou seja, se um usuário tentou visitar ProtectedPage.aspx, e eles não foram autorizados a fazer isso, o FormsAuthenticationModule seria redirecioná-los para:
 
-Aspx? ReturnUrl=ProtectedPage.aspx
+Login.aspx?ReturnUrl=ProtectedPage.aspx
 
 Após fazer logon com êxito, o usuário deve ser redirecionado para ProtectedPage.aspx. Como alternativa, os usuários podem visitar a página de logon em seu próprios volition. Nesse caso, após o logon do usuário elas devem ser enviadas para a página de Default.aspx da pasta raiz.
 
 ### <a name="logging-in-the-user"></a>Logon do usuário
 
-Supondo que as credenciais fornecidas são válidas, precisamos criar um tíquete de autenticação de formulários, registro em log, portanto, o usuário para o site. O [classe FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.aspx) no [namespace System.Web.Security](https://msdn.microsoft.com/en-us/library/system.web.security.aspx) fornece diversos métodos para fazer logon no e fazer logoff de usuários por meio de formulários de sistema de autenticação. Existem vários métodos na classe FormsAuthentication, três que estamos interessados em atualmente são:
+Supondo que as credenciais fornecidas são válidas, precisamos criar um tíquete de autenticação de formulários, registro em log, portanto, o usuário para o site. O [classe FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthentication.aspx) no [namespace System.Web.Security](https://msdn.microsoft.com/library/system.web.security.aspx) fornece diversos métodos para fazer logon no e fazer logoff de usuários por meio de formulários de sistema de autenticação. Existem vários métodos na classe FormsAuthentication, três que estamos interessados em atualmente são:
 
-- [GetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.getauthcookie.aspx) -cria um tíquete de autenticação de formulários para o nome fornecido *nome de usuário*. Em seguida, esse método cria e retorna um objeto HttpCookie que contém o conteúdo do tíquete de autenticação. Se *persistCookie* for True, um cookie persistente é criado.
-- [SetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx) -chama o GetAuthCookie (*username*, *persistCookie*) método para gerar o cookie de autenticação de formulários. Este método adiciona o cookie retornado por GetAuthCookie à coleção de Cookies (supondo que a autenticação de formulários baseados em cookies está sendo usado; caso contrário, este método chama uma classe interna que lida com a lógica de tíquete cookieless).
-- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -este método chama SetAuthCookie (*username*, *persistCookie* ) e, em seguida, redireciona o usuário para a página apropriada.
+- [GetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) -cria um tíquete de autenticação de formulários para o nome fornecido *nome de usuário*. Em seguida, esse método cria e retorna um objeto HttpCookie que contém o conteúdo do tíquete de autenticação. Se *persistCookie* for True, um cookie persistente é criado.
+- [SetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) -chama o GetAuthCookie (*username*, *persistCookie*) método para gerar o cookie de autenticação de formulários. Este método adiciona o cookie retornado por GetAuthCookie à coleção de Cookies (supondo que a autenticação de formulários baseados em cookies está sendo usado; caso contrário, este método chama uma classe interna que lida com a lógica de tíquete cookieless).
+- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -este método chama SetAuthCookie (*username*, *persistCookie* ) e, em seguida, redireciona o usuário para a página apropriada.
 
 GetAuthCookie é útil quando você precisa modificar o tíquete de autenticação antes de gravar o cookie de para a coleção de Cookies. SetAuthCookie é útil se você deseja criar formulários de tíquete de autenticação e adicioná-lo à coleção de Cookies, mas não deseja redirecionar o usuário para a página apropriada. Talvez você queira mantê-los na página de logon ou enviá-los para alguma página alternativa.
 
 Como desejamos fazer logon do usuário e redirecioná-los para a página apropriada, vamos usar RedirectFromLoginPage. Atualização clique do LoginButton manipulador de eventos, substituindo as duas linhas TODO comentadas com a seguinte linha de código:
 
-RedirectFromLoginPage (UserName.Text, RememberMe.Checked)
+FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 
 Ao criar tíquete de autenticação de formulários, usamos a propriedade de texto de UserName TextBox para o tíquete de autenticação de formulários *username* parâmetro e o estado de ativação de RememberMe CheckBox para o  *persistCookie* parâmetro.
 
@@ -283,7 +283,7 @@ Vamos ampliar a página Default.aspx existente para ilustrar as técnicas. Em De
 
 Como você provavelmente esperar até o momento, a ideia aqui é exibir apenas o AuthenticatedMessagePanel visitantes autenticados e apenas o AnonymousMessagePanel para visitantes anônimos. Para fazer isso, precisamos definir a propriedade visível esses painéis dependendo se o usuário estiver conectado ou não.
 
-O [Request.IsAuthenticated propriedade](https://msdn.microsoft.com/en-us/library/system.web.httprequest.isauthenticated.aspx) retorna um valor booliano que indica se a solicitação foi autenticada. Insira o código a seguir para a página\_carregar o código de manipulador de eventos:
+O [Request.IsAuthenticated propriedade](https://msdn.microsoft.com/library/system.web.httprequest.isauthenticated.aspx) retorna um valor booliano que indica se a solicitação foi autenticada. Insira o código a seguir para a página\_carregar o código de manipulador de eventos:
 
 [!code-vb[Main](an-overview-of-forms-authentication-vb/samples/sample7.vb)]
 
@@ -300,20 +300,20 @@ Com esse código, visite Default.aspx através de um navegador. Supondo que voc�
 **Figura 12**: usuários autenticados são mostrados o bem-vindo novamente! Mensagem ([clique para exibir a imagem em tamanho normal](an-overview-of-forms-authentication-vb/_static/image36.png))
 
 
-É possível determinar a identidade do usuário conectado no momento por meio de [objeto HttpContext](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx)do [propriedade do usuário](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.user.aspx). O objeto HttpContext representa informações sobre a solicitação atual e é a página inicial para esses objetos comuns do ASP.NET como resposta e solicitação de sessão, entre outros. A propriedade de usuário representa o contexto de segurança da solicitação HTTP atual e implementa o [interface IPrincipal](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.aspx).
+É possível determinar a identidade do usuário conectado no momento por meio de [objeto HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)do [propriedade do usuário](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx). O objeto HttpContext representa informações sobre a solicitação atual e é a página inicial para esses objetos comuns do ASP.NET como resposta e solicitação de sessão, entre outros. A propriedade de usuário representa o contexto de segurança da solicitação HTTP atual e implementa o [interface IPrincipal](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx).
 
 A propriedade do usuário é definida pelo FormsAuthenticationModule. Especificamente, quando o FormsAuthenticationModule encontra um tíquete de autenticação de formulários na solicitação de entrada, ele cria um novo objeto GenericPrincipal e atribui a propriedade do usuário.
 
 Objetos (como GenericPrincipal) fornecem informações sobre a identidade do usuário e as funções às quais eles pertencem. A interface IPrincipal define dois membros:
 
-- [IsInRole (*roleName*)](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole.aspx) -um método que retorna um valor booliano que indica se a entidade de segurança pertence à função especificada.
-- [Identidade](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.identity.aspx) -uma propriedade que retorna um objeto que implementa o [IIdentity interface](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.aspx). A interface de IIdentity define três propriedades: [AuthenticationType](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.authenticationtype.aspx), [IsAuthenticated](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.isauthenticated.aspx), e [nome](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.name.aspx).
+- [IsInRole (*roleName*)](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole.aspx) -um método que retorna um valor booliano que indica se a entidade de segurança pertence à função especificada.
+- [Identidade](https://msdn.microsoft.com/library/system.security.principal.iprincipal.identity.aspx) -uma propriedade que retorna um objeto que implementa o [IIdentity interface](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx). A interface de IIdentity define três propriedades: [AuthenticationType](https://msdn.microsoft.com/library/system.security.principal.iidentity.authenticationtype.aspx), [IsAuthenticated](https://msdn.microsoft.com/library/system.security.principal.iidentity.isauthenticated.aspx), e [nome](https://msdn.microsoft.com/library/system.security.principal.iidentity.name.aspx).
 
 É possível determinar o nome do visitante atual usando o seguinte código:
 
 Dim currentUsersName As String = User.Identity.Name
 
-Quando usar formulários de autenticação, um [FormsIdentity objeto](https://msdn.microsoft.com/en-us/library/system.web.security.formsidentity.aspx) é criado para a propriedade de identidade do GenericPrincipal. A classe FormsIdentity sempre retorna os formulários de cadeia de caracteres de sua propriedade AuthenticationType e True para sua propriedade IsAuthenticated. A propriedade Name retorna o nome de usuário especificado ao criar tíquete de autenticação de formulários. Além dessas três propriedades, FormsIdentity inclui acesso para o tíquete de autenticação subjacente por meio de seu [tíquete propriedade](https://msdn.microsoft.com/en-us/library/system.web.security.formsidentity.ticket.aspx). A propriedade de tíquete retorna um objeto do tipo [FormsAuthenticationTicket](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.aspx), que tem propriedades, como a expiração, IsPersistent, IssueDate, nome e assim por diante.
+Quando usar formulários de autenticação, um [FormsIdentity objeto](https://msdn.microsoft.com/library/system.web.security.formsidentity.aspx) é criado para a propriedade de identidade do GenericPrincipal. A classe FormsIdentity sempre retorna os formulários de cadeia de caracteres de sua propriedade AuthenticationType e True para sua propriedade IsAuthenticated. A propriedade Name retorna o nome de usuário especificado ao criar tíquete de autenticação de formulários. Além dessas três propriedades, FormsIdentity inclui acesso para o tíquete de autenticação subjacente por meio de seu [tíquete propriedade](https://msdn.microsoft.com/library/system.web.security.formsidentity.ticket.aspx). A propriedade de tíquete retorna um objeto do tipo [FormsAuthenticationTicket](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.aspx), que tem propriedades, como a expiração, IsPersistent, IssueDate, nome e assim por diante.
 
 O ponto importante a ser considerado aqui é que o *username* parâmetro especificado no FormsAuthentication.GetAuthCookie (*username*, *persistCookie*), FormsAuthentication.SetAuthCookie (*username*, *persistCookie*) e RedirectFromLoginPage (*nome de usuário*, *persistCookie*) métodos é o mesmo valor retornado por User.Identity.Name. Além disso, o tíquete de autenticação criado por esses métodos está disponível projeção Identity para um objeto FormsIdentity e, em seguida, acessando a propriedade de permissão:
 
@@ -323,7 +323,7 @@ Dim authTicket como FormsAuthenticationTicket = ident. Tíquete
 
 Vamos fornecer uma mensagem mais personalizada em Default.aspx. Atualizar a página\_carregar o manipulador de eventos para que a propriedade Text do rótulo WelcomeBackMessage é atribuída a cadeia de caracteres de boas-vindas, *username*!
 
-WelcomeBackMessage.Text = "Bem-vindo novamente," &amp; User.Identity.Name &amp; "!"
+WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 
 Figura 13 mostra o efeito dessa modificação (efetuar logon como usuário Scott).
 
@@ -337,7 +337,7 @@ Figura 13 mostra o efeito dessa modificação (efetuar logon como usuário Scott
 
 Exibir conteúdo diferente para usuários autenticados e anônimos é um requisito comum; para que está exibindo o nome do usuário conectado no momento. Por esse motivo, o ASP.NET inclui dois controles da Web que fornecem a mesma funcionalidade mostrada na Figura 13, mas sem a necessidade de escrever uma única linha de código.
 
-O [controle LoginView](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) é um controle de Web baseado em modelo que facilita a exibição de dados para usuários anônimos e autenticados. O LoginView inclui dois modelos predefinidos:
+O [controle LoginView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) é um controle de Web baseado em modelo que facilita a exibição de dados para usuários anônimos e autenticados. O LoginView inclui dois modelos predefinidos:
 
 - LoginView - qualquer marcação adicionada a este modelo é exibida apenas para visitantes anônimos.
 - LoggedInTemplate - marcação deste modelo é mostrado somente para usuários autenticados.
@@ -368,7 +368,7 @@ Em seguida, adicione dois &lt;br /&gt; elementos imediatamente após o controle 
 
 Modelos do LoginView podem ser definidos pelo Designer ou a marcação declarativa. No Designer do Visual Studio, expanda marca inteligente do LoginView, que lista os modelos configurados em uma lista suspensa. Digite o texto Hello, estranho em LoginView; em seguida, adicionar um controle de hiperlink e defina suas propriedades de texto e NavigateUrl para logon e ~ / aspx, respectivamente.
 
-Depois de configurar o LoginView, alterne para o LoggedInTemplate e insira o texto, "Bem-vindo de volta,". Em seguida, arraste um controle LoginName da caixa de ferramentas para LoggedInTemplate, colocando-o imediatamente após "Bem-vindo," texto. O [controle LoginName](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginname.aspx), como o nome indica, exibe o nome do usuário conectado no momento. Internamente, o controle LoginName simplesmente gera a propriedade User.Identity.Name
+Depois de configurar o LoginView, alterne para o LoggedInTemplate e insira o texto, "Bem-vindo de volta,". Em seguida, arraste um controle LoginName da caixa de ferramentas para LoggedInTemplate, colocando-o imediatamente após "Bem-vindo," texto. O [controle LoginName](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginname.aspx), como o nome indica, exibe o nome do usuário conectado no momento. Internamente, o controle LoginName simplesmente gera a propriedade User.Identity.Name
 
 Depois de fazer essas adições aos modelos do LoginView, a marcação deve ser semelhante ao seguinte:
 
@@ -406,9 +406,9 @@ A Figura 17 mostra a página de Login.aspx quando visitado em um navegador depoi
 
 ## <a name="step-5-logging-out"></a>Etapa 5: Logout
 
-Na etapa 3, examinamos a criação de uma página de logon para o logon de um usuário para o site, mas ainda precisamos saber como um usuário de logoff. Além dos métodos de registro em log de um usuário, a classe FormsAuthentication também fornece um [método SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx). O método SignOut simplesmente destrói o tíquete de autenticação de formulários, log, portanto, o usuário do site.
+Na etapa 3, examinamos a criação de uma página de logon para o logon de um usuário para o site, mas ainda precisamos saber como um usuário de logoff. Além dos métodos de registro em log de um usuário, a classe FormsAuthentication também fornece um [método SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx). O método SignOut simplesmente destrói o tíquete de autenticação de formulários, log, portanto, o usuário do site.
 
-Oferecendo que um link de logoff é tal recurso comuns que o ASP.NET inclui um controle de especificamente projetado para um usuário de logoff. O [controle de status de logon](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginstatus.aspx) exibe um LinkButton de logon ou Logout LinkButton, dependendo do status de autenticação do usuário. Um LinkButton de logon é renderizado para usuários anônimos, enquanto um Logout LinkButton é exibido aos usuários autenticados. O texto para o logon e Logout LinkButtons pode ser configurado por meio do status de logon propriedades LoginText e LogoutText.
+Oferecendo que um link de logoff é tal recurso comuns que o ASP.NET inclui um controle de especificamente projetado para um usuário de logoff. O [controle de status de logon](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginstatus.aspx) exibe um LinkButton de logon ou Logout LinkButton, dependendo do status de autenticação do usuário. Um LinkButton de logon é renderizado para usuários anônimos, enquanto um Logout LinkButton é exibido aos usuários autenticados. O texto para o logon e Logout LinkButtons pode ser configurado por meio do status de logon propriedades LoginText e LogoutText.
 
 Clicar no LinkButton logon causa um postback, do qual um redirecionamento é emitido para a página de logon. Clicar no Logout LinkButton faz com que o controle de status de logon invocar o método FormsAuthentication.SignOff e, em seguida, redireciona o usuário para uma página. O log de página de logoff de usuário é redirecionado para depende da propriedade LogoutAction, que pode ser atribuída a um destes três valores:
 
@@ -459,14 +459,14 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [Alterações entre IIS6 e segurança do IIS7](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
-- [Controles de logon do ASP.NET](https://msdn.microsoft.com/en-us/library/d51ttbhx.aspx)
+- [Controles de logon do ASP.NET](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [Professional ASP.NET 2.0 segurança, associação e gerenciamento de função](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
-- [O &lt;autenticação&gt; elemento](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)
-- [O &lt;formulários&gt; elemento para &lt;autenticação&gt;](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)
+- [O &lt;autenticação&gt; elemento](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [O &lt;formulários&gt; elemento para &lt;autenticação&gt;](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Treinamento em vídeo sobre tópicos contidos neste tutorial
 
-- [Usando a autenticação de formulários básicos no ASP.NET](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
+- [Uso da autenticação de formulários básica no ASP.NET](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
 
 ### <a name="about-the-author"></a>Sobre o autor
 

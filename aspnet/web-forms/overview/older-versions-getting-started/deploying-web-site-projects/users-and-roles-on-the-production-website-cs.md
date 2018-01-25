@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0825b6bd6ca8d75f90cb7c4079e3af0213c5c4e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68f3a45b6a393f7b6a12b7c296a374536b0d66d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="users-and-roles-on-the-production-website-c"></a>Usuários e funções no site de produção (c#)
 ====================
@@ -37,7 +37,7 @@ Um desafio comum para desenvolvedores que usam os serviços de associação e fu
 
 ## <a name="using-the-aspnet-web-site-administration-tool"></a>Usando a ferramenta de administração de Site da Web do ASP.NET
 
-O ASP.NET inclui um [ferramenta de administração de Site](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx) (WSAT) que torna mais fácil de criar e gerenciar contas de usuário e funções e especificar regras de autorização baseada em função e usuário. Para usar o WSAT, clique no ícone de configuração do ASP.NET no Gerenciador de soluções, ou vá para o menu projeto ou site e escolha a opção de configuração do ASP.NET. Qualquer abordagem inicia um navegador da web e aponta para o WSAT em um endereço como:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+O ASP.NET inclui um [ferramenta de administração de Site](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT) que torna mais fácil de criar e gerenciar contas de usuário e funções e especificar regras de autorização baseada em função e usuário. Para usar o WSAT, clique no ícone de configuração do ASP.NET no Gerenciador de soluções, ou vá para o menu projeto ou site e escolha a opção de configuração do ASP.NET. Qualquer abordagem inicia um navegador da web e aponta para o WSAT em um endereço como:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
 O WSAT é dividido em três seções:
 
@@ -116,7 +116,7 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 - [Examinando ASP. Associação, funções e perfil do NET](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [Implantar sua própria ferramenta de administração de Site da Web](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
-- [Visão geral de ferramenta de administração de Site da Web](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [Visão geral de ferramenta de administração de Site da Web](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 - [Tutoriais de segurança de site](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 >[!div class="step-by-step"]

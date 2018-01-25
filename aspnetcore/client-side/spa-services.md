@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 514efcdd78957f999e46c521d0266f092f742538
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>Usando JavaScriptServices para criar aplicativos de única página com o ASP.NET Core
 
@@ -200,7 +200,7 @@ Depois de carregar o aplicativo no navegador, a guia Console de ferramentas de d
 
 ## <a name="routing-helpers"></a>Roteamentos auxiliares
 
-Na maioria dos SPAs baseado em núcleo do ASP.NET, você vai querer roteamento do lado do cliente além do roteamento do lado do servidor. Os sistemas de roteamento SPA e MVC podem trabalhar de forma independente, sem interferência. No entanto, há um caso de borda apresentando desafios: identificar as respostas HTTP 404.
+Na maioria dos SPAs baseado em núcleo do ASP.NET, você vai querer roteamento do lado do cliente além do roteamento do lado do servidor. Os sistemas de roteamento SPA e MVC podem trabalhar de forma independente, sem interferência. Há, no entanto, uma borda caso apresentando desafios: identificar as respostas HTTP 404.
 
 Considere o cenário no qual uma rota sem extensão de `/some/page` é usado. Suponha que a solicitação não-correspondência de padrão uma rota do lado do servidor, mas o padrão corresponde a uma rota de cliente. Agora, considere uma solicitação de entrada para `/images/user-512.png`, que geralmente espera encontrar um arquivo de imagem no servidor. Se esse caminho de recurso solicitado não corresponde a qualquer rota do lado do servidor ou um arquivo estático, é improvável que o aplicativo cliente deve tratá-la, você geralmente deseja retornar um código de status HTTP 404.
 

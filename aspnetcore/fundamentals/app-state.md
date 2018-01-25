@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 13b4d759ae574cdf9899ca148f0ffd3d9df6f9ae
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: e00960370fbe87ac0f81f8455526221fa992decd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introdução ao estado de sessão e de aplicativo no núcleo do ASP.NET
 
@@ -38,7 +38,7 @@ O provedor de sessão na memória armazena dados de sessão no servidor local. S
 <a name="temp"></a>
 ## <a name="tempdata"></a>TempData
 
-ASP.NET MVC de núcleo expõe o [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) propriedade em uma [controlador](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0). Essa propriedade armazena dados até eles serem lidos. Os métodos `Keep` e `Peek` podem ser usados para examinar os dados sem exclusão. `TempData`é particularmente útil para redirecionamento, quando dados são necessários para mais de uma única solicitação. `TempData`é implementado por provedores de TempData, por exemplo, usar cookies ou estado de sessão.
+ASP.NET MVC de núcleo expõe o [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) propriedade em uma [controlador](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0). Essa propriedade armazena dados até que ela seja lida. Os métodos `Keep` e `Peek` podem ser usados para examinar os dados sem exclusão. `TempData`é particularmente útil para redirecionamento, quando dados são necessários para mais de uma única solicitação. `TempData`é implementado por provedores de TempData, por exemplo, usar cookies ou estado de sessão.
 
 <a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>Provedores de TempData
@@ -47,7 +47,7 @@ ASP.NET MVC de núcleo expõe o [TempData](https://docs.microsoft.com/dotnet/api
 
 No ASP.NET Core 2.0 e posterior, o provedor de TempData baseada em cookie é usado por padrão para armazenar TempData em cookies.
 
-Os dados do cookie são codificados com o [Base64UrlTextEncoder](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0). Porque o cookie é criptografado e em partes, o cookie único tamanho limite encontrado no núcleo do ASP.NET 1. x não se aplica. Os dados do cookie não são compactados porque a compactação de dados criptografados pode levar a problemas de segurança, como o [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) e [violação](https://wikipedia.org/wiki/BREACH_(security_exploit)) ataques. Para obter mais informações sobre o provedor de TempData baseada em cookie, consulte [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
+Os dados do cookie são codificados com o [Base64UrlTextEncoder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0). Porque o cookie é criptografado e em partes, o cookie único tamanho limite encontrado no núcleo do ASP.NET 1. x não se aplica. Os dados do cookie não são compactados porque a compactação de dados criptografados pode levar a problemas de segurança, como o [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) e [violação](https://wikipedia.org/wiki/BREACH_(security_exploit)) ataques. Para obter mais informações sobre o provedor de TempData baseada em cookie, consulte [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -107,7 +107,7 @@ Cookies são usados para personalização, onde o conteúdo é personalizado par
 
 ## <a name="httpcontextitems"></a>HttpContext.Items
 
-O `Items` coleção é um bom local para armazenar dados que é necessário somente durante processamento de uma determinada solicitação. O conteúdo da coleção é descartado após cada solicitação. O `Items` coleção melhor é usada como uma maneira de componentes ou middleware para comunicar-se quando eles operam em pontos diferentes durante uma solicitação e não têm nenhuma maneira direta para passar parâmetros. Para obter mais informações, consulte [trabalhando com HttpContext](#working-with-httpcontextitems), mais adiante neste artigo.
+O `Items` coleção é um bom local para armazenar dados que é necessário somente ao processar uma solicitação específica. O conteúdo da coleção é descartado após cada solicitação. O `Items` coleção melhor é usada como uma maneira de componentes ou middleware para comunicar-se quando eles operam em pontos diferentes durante uma solicitação e não têm nenhuma maneira direta para passar parâmetros. Para obter mais informações, consulte [trabalhando com HttpContext](#working-with-httpcontextitems), mais adiante neste artigo.
 
 ## <a name="cache"></a>Cache
 
@@ -136,7 +136,7 @@ O código a seguir mostra como configurar o provedor de sessão na memória.
 
 ---
 
-Você pode fazer referência a sessão de `HttpContext` quando ele é instalado e configurado.
+Você pode fazer referência a sessão de `HttpContext` depois que ele foi instalado e configurado.
 
 Se você tentar acessar `Session` antes de `UseSession` tiver sido chamado, a exceção `InvalidOperationException: Session has not been configured for this application or request` é lançada.
 
@@ -144,13 +144,13 @@ Se você tentar criar um novo `Session` (ou seja, nenhum cookie de sessão foi c
 
 ### <a name="loading-session-asynchronously"></a>Carregamento de sessão de forma assíncrona 
 
-O provedor de sessão padrão no ASP.NET Core carrega o registro da sessão de subjacente [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) repositório de forma assíncrona somente se o [ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) método for chamado explicitamente antes  o `TryGetValue`, `Set`, ou `Remove` métodos. Se `LoadAsync` não for chamado pela primeira vez, a base de registro de sessão é carregado de forma síncrona, que pode afetar a capacidade de dimensionar do aplicativo.
+O provedor de sessão padrão no ASP.NET Core carrega o registro da sessão de subjacente [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) repositório de forma assíncrona somente se o [ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) método for chamado explicitamente antes  o `TryGetValue`, `Set`, ou `Remove` métodos. Se `LoadAsync` não for chamado pela primeira vez, subjacente registro de sessão é carregado de forma síncrona, que pode afetar a capacidade de dimensionar do aplicativo.
 
-Para que aplicativos impor esse padrão, encapsule o [DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore) e [DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession) implementações com versões que geram uma exceção se o `LoadAsync` método não é chamado antes de `TryGetValue`, `Set`, ou `Remove`. Registre as versões encapsuladas no contêiner de serviços.
+Para que aplicativos impor esse padrão, encapsule o [DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore) e [DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession) implementações com versões que geram uma exceção se o `LoadAsync` método não está chamado antes de `TryGetValue`, `Set`, ou `Remove`. Registre as versões encapsuladas no contêiner de serviços.
 
 ### <a name="implementation-details"></a>Detalhes de implementação
 
-Sessão usa um cookie para controlar e identificar as solicitações de um navegador único. Por padrão, esse cookie é denominado ". AspNet.Session"e usa um caminho de"/". Como o padrão de cookie não especificar um domínio, ele não ficam disponíveis para o script do lado do cliente na página (como `CookieHttpOnly` padrão é `true`).
+Sessão usa um cookie para controlar e identificar as solicitações de um navegador único. Por padrão, esse cookie é denominado ". AspNet.Session"e usa um caminho de"/". Como o padrão de cookie não especifica um domínio, ele não ficam disponíveis para o script do lado do cliente na página (como `CookieHttpOnly` padrão é `true`).
 
 Para substituir os padrões de sessão, use `SessionOptions`:
 

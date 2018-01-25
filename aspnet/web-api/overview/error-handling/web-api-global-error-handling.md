@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d2bdf04b4da2a099f3a2af100b16682c68f946f2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c593c56ba3d0ee8ebf6dc425408d2c3b91c83f93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="global-error-handling-in-aspnet-web-api-2"></a>Global tratamento de erros em ASP.NET Web API 2
 ====================
@@ -46,7 +46,7 @@ Além [filtros de exceção](exception-handling.md), [manipuladores de mensagens
 1. Há suporte para registrar vários agentes de exceção, mas apenas um único manipulador de exceções.
 2. Agentes de exceção sempre seja chamados, mesmo se estiver prestes a anular a conexão. Manipuladores de exceção obtenham chamados apenas quando estamos ainda poderá escolher qual mensagem de resposta para enviar.
 
-Ambos os serviços fornecem acesso a um contexto de exceção que contém informações relevantes do ponto onde a exceção foi detectada, particularmente o [HttpRequestMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessage(v=vs.110).aspx), o [HttpRequestContext](https://msdn.microsoft.com/en-us/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx), o gerada exceção e a origem da exceção (detalhes abaixo).
+Ambos os serviços fornecem acesso a um contexto de exceção que contém informações relevantes do ponto onde a exceção foi detectada, particularmente o [HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage(v=vs.110).aspx), o [HttpRequestContext](https://msdn.microsoft.com/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx), o gerada exceção e a origem da exceção (detalhes abaixo).
 
 ### <a name="design-principles"></a>Princípios de design
 
@@ -97,7 +97,7 @@ Em adicional para o `ExceptionContext`, um manipulador obtém mais uma proprieda
 
 [!code-csharp[Main](web-api-global-error-handling/samples/sample5.cs)]
 
-Um manipulador de exceção indica que tratou uma exceção ao definir o `Result` propriedade como resultado de uma ação (por exemplo, um [ExceptionResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.exceptionresult(v=vs.118).aspx), [InternalServerErrorResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx), [ StatusCodeResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.statuscoderesult(v=vs.118).aspx), ou um resultado personalizado). Se o `Result` propriedade for nula, a exceção é sem tratamento e a exceção original será lançada novamente.
+Um manipulador de exceção indica que tratou uma exceção ao definir o `Result` propriedade como resultado de uma ação (por exemplo, um [ExceptionResult](https://msdn.microsoft.com/library/system.web.http.results.exceptionresult(v=vs.118).aspx), [InternalServerErrorResult](https://msdn.microsoft.com/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx), [ StatusCodeResult](https://msdn.microsoft.com/library/system.web.http.results.statuscoderesult(v=vs.118).aspx), ou um resultado personalizado). Se o `Result` propriedade for nula, a exceção é sem tratamento e a exceção original será lançada novamente.
 
 Para exceções na parte superior da pilha de chamadas, demos uma etapa extra para garantir que a resposta é apropriada para chamadores de API. Se a exceção for propagada até o host, o chamador deve ver a tela amarela de morte ou algum outro host fornecido resposta que normalmente é HTML e geralmente não são uma resposta de erro de API apropriada. Nesses casos, inicia o resultado não nulo e somente se um manipulador de exceções define explicitamente de volta para `null` (sem tratamento) serão a exceção propagadas para o host. Configuração `Result` para `null` nesses casos pode ser útil para dois cenários:
 

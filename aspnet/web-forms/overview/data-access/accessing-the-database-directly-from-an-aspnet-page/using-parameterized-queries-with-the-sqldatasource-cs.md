@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7b32a664975254dcc1d015f2400df30d05346948
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b66c68b8306b905a800465ab0ed720ae6f9d16b9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-c"></a>Usar consultas parametrizadas com SqlDataSource (c#)
 ====================
@@ -209,7 +209,7 @@ Desde que o procedimento armazenado aceita um parâmetro de entrada (`@CategoryI
 **Figura 11**: Use um valor de Hard-Coded de 1 para retornar os produtos na categoria de bebidas ([clique para exibir a imagem em tamanho normal](using-parameterized-queries-with-the-sqldatasource-cs/_static/image22.png))
 
 
-Como a seguir mostra marcação declarativa, ao usar um procedimento armazenado, o s SqlDataSource `SelectCommand` propriedade é definida como o nome do procedimento armazenado e o [ `SelectCommandType` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx) é definido como `StoredProcedure`, indicando que que o `SelectCommand` é o nome de um procedimento armazenado em vez de uma instrução de SQL ad hoc.
+Como a seguir mostra marcação declarativa, ao usar um procedimento armazenado, o s SqlDataSource `SelectCommand` propriedade é definida como o nome do procedimento armazenado e o [ `SelectCommandType` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx) é definido como `StoredProcedure`, indicando que que o `SelectCommand` é o nome de um procedimento armazenado em vez de uma instrução de SQL ad hoc.
 
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-cs/samples/sample9.aspx)]
@@ -237,9 +237,9 @@ Comece adicionando um SqlDataSource para `ParameterizedQueries.aspx` e defina se
 
 `ORDER BY NEWID()`Retorna os registros classificados em ordem aleatória (consulte [usando `NEWID()` aleatoriamente os registros de classificação](http://www.sqlteam.com/item.asp?ItemID=8747)). `SELECT TOP 1`Retorna o primeiro registro do conjunto de resultados. Resumindo, esta consulta retorna o `CategoryID` e `CategoryName` valores de coluna de uma categoria de único, selecionado aleatoriamente.
 
-Para exibir a categoria s `CategoryName` valor, adicione um controle de rótulo à página, defina seu `ID` propriedade `CategoryNameLabel`e limpar sua `Text` propriedade. Para recuperar programaticamente os dados de um controle SqlDataSource, precisamos chamar o `Select()` método. O [ `Select()` método](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.select.aspx) espera um único parâmetro de entrada do tipo [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx), que especifica como os dados devem ser mensagem antes de serem retornados. Isso pode incluir instruções sobre como classificar e filtrar os dados e é usado pelos dados de que controles da Web durante a classificação ou paginação de dados de um controle SqlDataSource. Para nosso exemplo, no entanto, nós don precisa de dados a ser modificado antes de serem retornados e, portanto, passará o `DataSourceSelectArguments.Empty` objeto.
+Para exibir a categoria s `CategoryName` valor, adicione um controle de rótulo à página, defina seu `ID` propriedade `CategoryNameLabel`e limpar sua `Text` propriedade. Para recuperar programaticamente os dados de um controle SqlDataSource, precisamos chamar o `Select()` método. O [ `Select()` método](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx) espera um único parâmetro de entrada do tipo [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx), que especifica como os dados devem ser mensagem antes de serem retornados. Isso pode incluir instruções sobre como classificar e filtrar os dados e é usado pelos dados de que controles da Web durante a classificação ou paginação de dados de um controle SqlDataSource. Para nosso exemplo, no entanto, nós don precisa de dados a ser modificado antes de serem retornados e, portanto, passará o `DataSourceSelectArguments.Empty` objeto.
 
-O `Select()` método retorna um objeto que implementa `IEnumerable`. O tipo exato retornado depende do valor do controle SqlDataSource s [ `DataSourceMode` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx). Como discutido no tutorial anterior, essa propriedade pode ser definida para um valor de `DataSet` ou `DataReader`. Se definido como `DataSet`, o `Select()` método retorna um [DataView](https://msdn.microsoft.com/en-us/library/01s96x0z.aspx) objeto; se definido como `DataReader`, ele retorna um objeto que implementa [ `IDataReader` ](https://msdn.microsoft.com/en-us/library/system.data.idatareader.aspx). Como o `RandomCategoryDataSource` SqlDataSource tem seu `DataSourceMode` propriedade definida como `DataSet` (o padrão), trabalharemos com um objeto de DataView.
+O `Select()` método retorna um objeto que implementa `IEnumerable`. O tipo exato retornado depende do valor do controle SqlDataSource s [ `DataSourceMode` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx). Como discutido no tutorial anterior, essa propriedade pode ser definida para um valor de `DataSet` ou `DataReader`. Se definido como `DataSet`, o `Select()` método retorna um [DataView](https://msdn.microsoft.com/library/01s96x0z.aspx) objeto; se definido como `DataReader`, ele retorna um objeto que implementa [ `IDataReader` ](https://msdn.microsoft.com/library/system.data.idatareader.aspx). Como o `RandomCategoryDataSource` SqlDataSource tem seu `DataSourceMode` propriedade definida como `DataSet` (o padrão), trabalharemos com um objeto de DataView.
 
 O código a seguir demonstra como recuperar os registros da `RandomCategoryDataSource` SqlDataSource como um DataView, bem como a leitura de `CategoryName` valor de coluna da primeira linha da exibição de dados:
 

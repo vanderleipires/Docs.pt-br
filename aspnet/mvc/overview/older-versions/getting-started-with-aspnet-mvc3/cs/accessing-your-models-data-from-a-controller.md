@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: cfae339ff2af1b71f7f46b6fd567456256660f8c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5ee29dbc5b4566273592041d94458104e6e0f65e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller-c"></a>Acessando dados do modelo de um controlador (c#)
 ====================
@@ -92,7 +92,7 @@ Anteriormente neste tutorial, você viu como um controlador pode passar dados ou
 
 ASP.NET MVC também fornece a capacidade de passar fortemente tipado dados ou objetos para um modelo de exibição. Isso fortemente tipado abordagem permite melhor tempo de compilação de seu código e mais rico IntelliSense no editor do Visual Web Developer. Estamos usando essa abordagem com o `MoviesController` classe e *cshtml* modelo de exibição.
 
-Observe como o código cria um [ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) objeto quando ele chama o `View` método auxiliar a `Index` método de ação. O código, em seguida, passa essa `Movies` lista do controlador para o modo de exibição:
+Observe como o código cria um [ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx) objeto quando ele chama o `View` método auxiliar a `Index` método de ação. O código, em seguida, passa essa `Movies` lista do controlador para o modo de exibição:
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample3.cs)]
 

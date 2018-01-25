@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a4685741e0acab7a944e2822a5c43c5cf3e9cf1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4bbe32ae65f71196fc1f939671b9d1a24bee8c34
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="declarative-parameters-c"></a>Parâmetros declarativos (c#)
 ====================
@@ -111,7 +111,7 @@ Desde o `GetSuppliersByCountry(country)` método tem um parâmetro de entrada, o
 **Figura 8**: definir o valor do parâmetro o `CountryName` valor de controle ([clique para exibir a imagem em tamanho normal](declarative-parameters-cs/_static/image24.png))
 
 
-Marcação declarativa do ObjectDataSource difere ligeiramente do nosso primeiro exemplo, usando um [ControlParameter](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.controlparameter.aspx) em vez do padrão `Parameter` objeto. Um `ControlParameter` tem propriedades adicionais para especificar o `ID` do controle da Web e o valor da propriedade a ser usado para o parâmetro (`PropertyName`). O Assistente Configurar fonte de dados foi inteligente para determinar que, para uma caixa de texto, provavelmente desejará usar o `Text` propriedade para o valor do parâmetro. Se, no entanto, você quiser usar um valor de outra propriedade do controle da Web que você pode alterar o `PropertyName` valor aqui ou clicando no link "Mostrar as propriedades avançadas" no assistente.
+Marcação declarativa do ObjectDataSource difere ligeiramente do nosso primeiro exemplo, usando um [ControlParameter](https://msdn.microsoft.com/library/system.web.ui.webcontrols.controlparameter.aspx) em vez do padrão `Parameter` objeto. Um `ControlParameter` tem propriedades adicionais para especificar o `ID` do controle da Web e o valor da propriedade a ser usado para o parâmetro (`PropertyName`). O Assistente Configurar fonte de dados foi inteligente para determinar que, para uma caixa de texto, provavelmente desejará usar o `Text` propriedade para o valor do parâmetro. Se, no entanto, você quiser usar um valor de outra propriedade do controle da Web que você pode alterar o `PropertyName` valor aqui ou clicando no link "Mostrar as propriedades avançadas" no assistente.
 
 [!code-aspx[Main](declarative-parameters-cs/samples/sample2.aspx)]
 

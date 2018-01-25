@@ -1,6 +1,6 @@
 ---
 uid: whitepapers/mvc3-release-notes
-title: O ASP.NET MVC 3 | Microsoft Docs
+title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
 description: 
 ms.author: aspnetcontent
@@ -12,13 +12,13 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: a86fae5698c54a71cb598f508aa91e7d96d1b409
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1fa5d31f68b44bfdfda61c870a6825eeba18647
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
-<a name="aspnet-mvc-3"></a>O ASP.NET MVC 3
+<a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
 - [Visão Geral](#overview)
 - [Notas de instalação](#installation-notes)
@@ -94,7 +94,7 @@ ms.lasthandoff: 11/10/2017
 - [Isenção de responsabilidade](#0.1__Toc274034231)
 
 <a id="overview"></a>
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este documento descreve a versão do ASP.NET MVC 3 RTM para Visual Studio 2010. ASP.NET MVC é uma estrutura para desenvolvimento de aplicativos Web que usa o padrão Model-View-Controller (MVC). O instalador do ASP.NET MVC 3 inclui os seguintes componentes:
 
@@ -107,18 +107,18 @@ Este documento descreve a versão do ASP.NET MVC 3 RTM para Visual Studio 2010. 
 
 O conjunto completo de notas de versão para cada versão de pré-lançamento do ASP.NET MVC 3 pode ser encontrado no site do ASP.NET na seguinte URL:
 
-https://www.ASP.NET/Learn/whitepapers/mvc3-Release-Notes
+https://www.asp.net/learn/whitepapers/mvc3-release-notes
 
 <a id="installation-notes"></a>
 ## <a name="installation-notes"></a>Notas de instalação
 
 Para instalar o ASP.NET MVC 3 RTM usando o Web Platform Installer (Web PI), visite o seguinte:
 
-[https://www.microsoft.com/Web/Gallery/Install.aspx?AppID=MVC3](https://www.microsoft.com/web/gallery/install.aspx?appid=MVC3)
+[https://www.microsoft.com/web/gallery/install.aspx?appid=MVC3](https://www.microsoft.com/web/gallery/install.aspx?appid=MVC3)
 
 Como alternativa, você pode baixar o instalador para o ASP.NET MVC 3 RTM para Visual Studio 2010 da seguinte página:
 
-https://go.microsoft.com/fwlink/?LinkId=208140
+https://go.microsoft.com/fwlink/?LinkID=208140
 
 ASP.NET MVC 3 pode ser instalado e pode executar lado a lado com o ASP.NET MVC 2.
 
@@ -141,7 +141,7 @@ Documentação para o ASP.NET MVC está disponível no site do MSDN na seguinte 
 
 Tutoriais e outras informações sobre o ASP.NET MVC estão disponíveis na página do MVC do site da Web do ASP.NET na seguinte URL:
 
-[https://www.ASP.NET/MVC/](../mvc/index.md)
+[https://www.asp.net/mvc/](../mvc/index.md)
 
 <a id="support"></a>
 ## <a name="support"></a>Suporte
@@ -150,7 +150,7 @@ Esta é uma versão com suporte total. Informações sobre como obter suporte t�
 
 Também fique à vontade para postar dúvidas sobre esta versão para o fórum do ASP.NET MVC, onde os membros da comunidade do ASP.NET são frequentemente pode oferecer suporte informal:
 
-[https://forums.ASP.NET/1146.aspx](https://forums.asp.net/1146.aspx)
+[https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx)
 
 <a id="upgrading"></a>
 ## <a name="upgrading-an-aspnet-mvc-2-project-to-aspnet-mvc-3-tools-update"></a>Atualizando um projeto ASP.NET MVC 2 para o ASP.NET MVC 3 ferramentas de atualização
@@ -163,7 +163,7 @@ Para atualizar manualmente um aplicativo ASP.NET MVC 2 existente para a versão 
 2. Copie os seguintes arquivos do projeto ASP.NET MVC 3 para o local correspondente de seu projeto ASP.NET MVC 2. Você precisará atualizar as referências à biblioteca jQuery para levar em conta o novo nome de arquivo (1.5.1.js jQuery): 
 
     - /Views/Web.config
-    - /Packages.config
+    - /packages.config
     - /scripts/\*. js
     - /Conteúdo/temas/\*.\*
 3. Copie o *pacotes* pasta na raiz da solução de projeto ASP.NET MVC 3 vazia para a raiz de sua solução, que está no diretório onde o arquivo da solução está localizado.
@@ -251,7 +251,7 @@ A caixa de diálogo, que você pode usar para criar novos projetos do ASP.NET MV
 
 A lista de modelos de projeto inclui um novo modelo de aplicativo de Intranet. Este modelo contém configurações para a criação de um aplicativo web usando autenticação do Windows em vez da autenticação de formulários. Como um aplicativo de intranet requer algumas configurações do IIS que não podem ser encapsuladas em um modelo de projeto, o modelo inclui um arquivo Leiame com instruções sobre como tornar o modelo de projeto funcionam no IIS. Documentação para o novo modelo de aplicativo Intranet está disponível no site do MSDN na seguinte URL:
 
-[https://msdn.microsoft.com/en-us/library/gg703322 (VS.98).aspx](https://msdn.microsoft.com/en-us/library/gg703322(VS.98).aspx)
+[https://msdn.microsoft.com/library/gg703322(VS.98).aspx](https://msdn.microsoft.com/library/gg703322(VS.98).aspx)
 
 #### <a name="project-templates-are-now-html5-enabled"></a>Modelos de projeto estão agora HTML5 habilitado
 
@@ -284,7 +284,7 @@ Código primeiro se concentra em definir seu modelo usando classes POCO ("plain 
 
 Documentação para usar o código Firstwith ASP.NET MVC está disponível no site do ASP.NET nas seguintes URLs:
 
-[https://www.ASP.NET/MVC/Tutorials/Getting-Started-with-mvc3-part1-CS](../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) [https://www.asp.net/entity-framework/tutorials/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application](../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
+[https://www.asp.net/mvc/tutorials/getting-started-with-mvc3-part1-cs](../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) [https://www.asp.net/entity-framework/tutorials/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application](../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
 
 <a id="tu-JavaScriptLibsNuget"></a>
 ### <a name="project-templates-include-javascript-libraries-as-pre-installed-nuget-packages"></a>Modelos de projeto incluem bibliotecas JavaScript como previamente instalados pacotes do NuGet
@@ -296,7 +296,7 @@ Por exemplo, dada a frequência de novos lançamentos jQuery, a versão do jQuer
 Como jQuery inclui o número de versão no nome do arquivo, também jQuery para a versão mais recente de atualização requer a atualização do  *&lt;script&gt;*  marca que faz referência ao arquivo jQuery para usar o novo nome de arquivo. Outras bibliotecas de script incluídos não incluem o número de versão no nome do script, para que eles possam ser atualizados mais facilmente suas versões mais recentes.
 
 <a id="tu-KI"></a>
-## <a name="known-issues"></a>Problemas conhecidos
+## <a name="known-issues"></a>Problemas Conhecidos
 
 - Em alguns casos, a instalação pode falhar com o erro mensagem "Falha na instalação com o código de erro (0x80070643)". Para obter informações sobre como solucionar esse problema, consulte [artigo da Base de Conhecimento 2531566](https://support.microsoft.com/kb/2531566).
 - O scaffolding para adicionar um controlador não scaffold entidades que tiram proveito do suporte a herança de entidade dentro do Entity Framework. Por exemplo, dada uma base de *pessoa* classe é herdada por um *aluno* classe, estrutura de *aluno* classe resultará no código gerado não compila.
@@ -344,7 +344,7 @@ Esse problema foi corrigido na versão RTM, para que a expressão corretamente �
 Renomear um arquivo Razor usando o Gerenciador de soluções enquanto o arquivo é aberto na janela do editor faz com que o realce de sintaxe e IntelliSense parem de funcionar para esse arquivo. Esse problema foi corrigido para que o realce e IntelliSense são mantidas após uma renomeação.
 
 <a id="RTM-KI"></a>
-## <a name="known-issues"></a>Problemas conhecidos
+## <a name="known-issues"></a>Problemas Conhecidos
 
 - Se você fechar o Visual Studio 2010 SP1 Beta enquanto o NuGet Package Manager Console está aberto, o Visual Studio falhar e tenta reiniciar. Isso será corrigido na versão RTM do Visual Studio 2010 SP1.
 - O instalador do ASP.NET MVC 3 somente é possível instalar uma versão inicial do Gerenciador de pacotes do NuGet. Depois que você instalou a versão inicial, o NuGet pode ser instalado e atualizados usando o Gerenciador de extensões do Visual Studio. Se você já tiver instalado o NuGet, vá para a Galeria de extensão do Visual Studio para atualizar para a versão mais recente do NuGet.
@@ -465,10 +465,10 @@ Em versões anteriores, os valores explícitos foram passados para o *RenderActi
 - Em versões anteriores do ASP.NET MVC, filtros de ação foram criados por solicitação, exceto em alguns casos. Esse comportamento nunca foi um comportamento garantido, mas apenas um detalhe de implementação e o contrato para filtros era considerá-las sem monitoração de estado. No ASP.NET MVC 3, os filtros são armazenados em cache mais agressiva. Portanto, os filtros de ação personalizada que incorretamente armazenam o estado da instância podem ser interrompidos.
 - A ordem de execução de filtros de exceção foi alterado para filtros de exceção que têm o mesmo *ordem* valor. No ASP.NET MVC 2 e versões anteriores, filtros de exceção no controlador que tinha o mesmo *ordem* valor, como aqueles em um método de ação foram executados antes dos filtros de exceção no método de ação. Isso normalmente seria o caso quando foram aplicados filtros de exceção sem uma especificado *ordem* valor. ASP.NET MVC 3, nesta ordem foi revertida para que o manipulador de exceção mais específico é executado pela primeira vez. Como nas versões anteriores, se o *ordem* propriedade seja explicitamente especificada, os filtros são executados na ordem especificada.
 - Uma nova propriedade chamada *FileExtensions* foi adicionado para o *VirtualPathProviderViewEngine* classe base. Quando o ASP.NET procura uma exibição pelo caminho (e não por nome), somente exibições com uma extensão de arquivo contidos na lista especificada por essa nova propriedade são consideradas. Isso é uma alteração significativa em aplicativos onde um provedor de compilação personalizada é registrado para habilitar uma extensão de arquivo personalizados para modos de exibição de formulário da Web e o provedor faz referência a esses modos de exibição usando um caminho completo em vez de um nome. A solução é modificar o valor da *FileExtensions* propriedade inclua a extensão de arquivo personalizado.
-- Implementações de fábrica do controlador personalizado que implementam diretamente o *IControllerFactory* interface deve fornecer uma implementação do novo *GetControllerSessionBehavior*  *método que foi adicionado à interface nesta versão*. Em geral, é recomendável que você não implementar essa interface diretamente e em vez disso, derive a classe de *DefaultControllerFactory*.
+- Implementações de fábrica do controlador personalizado que implementam diretamente o *IControllerFactory* interface deve fornecer uma implementação do novo *GetControllerSessionBehavior * * método foi adicionado para o interface nesta versão*. Em geral, é recomendável que você não implementar essa interface diretamente e em vez disso, derive a classe de *DefaultControllerFactory*.
 
 <a id="_Toc2_KI"></a>
-## <a name="known-issues"></a>Problemas conhecidos
+## <a name="known-issues"></a>Problemas Conhecidos
 
 - O instalador do ASP.NET MVC 3 somente é possível instalar uma versão inicial do Gerenciador de pacotes do NuGet. Depois que você instalou a versão inicial, o NuGet pode ser instalado e atualizados usando o Gerenciador de extensões do Visual Studio. Se você já tiver instalado o NuGet, vá para a Galeria de extensão do Visual Studio para atualizar para a versão mais recente do NuGet.
 - Criar um novo projeto ASP.NET MVC 3 dentro de uma pasta de solução faz com que um *NullReferenceException* erro. A solução alternativa é criar o projeto ASP.NET MVC 3 na raiz da solução e, em seguida, mova-o para a pasta de solução.
@@ -519,7 +519,7 @@ A lista de modelos de projeto que é exibida na caixa de diálogo é especificad
 <a id="_Toc276711788"></a>
 ### <a name="sessionless-controllers"></a>Sem sessão controladores
 
-O novo *ControllerSessionStateAttribute* oferece mais controle sobre o comportamento do estado de sessão para controladores, especificando um [System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/en-us/library/system.web.sessionstate.sessionstatebehavior.aspx) valor de enumeração.
+O novo *ControllerSessionStateAttribute* oferece mais controle sobre o comportamento do estado de sessão para controladores, especificando um [System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/library/system.web.sessionstate.sessionstatebehavior.aspx) valor de enumeração.
 
 O exemplo a seguir mostra como desativar o estado da sessão para todas as solicitações para um controlador.
 
@@ -581,7 +581,7 @@ Nome da classe (namespace)
 
 Em versões anteriores, isso seria foi exibido como o seguinte:
 
-ClassName
+Namespace.ClassName
 
 <a id="_Toc276711793"></a>
 ### <a name="granular-request-validation"></a>Validação de solicitação granular
@@ -611,7 +611,7 @@ Como alternativa, para desativar a validação de solicitação para todas as pr
 - Adicionar uma nova propriedade chamada *FileExtensions* para o *VirtualPathProviderViewEngine* classe base. Ao procurar uma exibição pelo caminho (e não por nome), somente as exibições com uma extensão de arquivo contidos na lista especificada por essa nova propriedade é considerada. Isso é uma alteração significativa para aqueles que registrar uma personalizada de compilação para permitir uma extensão de arquivo personalizados para modos de exibição de formulário da web e e fazem referência a essas exibições usando um caminho completo em vez de um nome. A solução é modificar o valor da *FileExtensions* propriedade inclua a extensão de arquivo personalizado.
 
 <a id="_Toc276711795"></a>
-## <a name="known-issues"></a>Problemas conhecidos
+## <a name="known-issues"></a>Problemas Conhecidos
 
 - O instalador pode levar mais tempo do que as versões anteriores do ASP.NET MVC para ser concluída porque ele atualiza os componentes do Visual Studio 2010.
 - O scaffolding adicionar modo de exibição ao selecionar astrongly digitado exibir scaffolds propriedades somente gravação. Eles sempre devem ser ignorados por scaffolding. A caixa de diálogo Adicionar modo de exibição também scaffolds propriedades somente leitura ao gerar uma exibição de "Editar" ou "Criar". Propriedades somente leitura devem ser Scaffold apenas para os modos de exibição de lista e de exibição.
@@ -625,7 +625,7 @@ Como alternativa, para desativar a validação de solicitação para todas as pr
 - Quando você estiver editando um modo de exibição do Razor (cshtml arquivo), o item de menu Ir para o controlador no Visual Studio não estará disponível e não há nenhum trechos de código.
 
 <a id="TOC_ASP_NET_3_Beta"></a>
-## <a name="aspnet-mvc-3-beta"></a>Versão Beta do ASP.NET MVC 3
+## <a name="aspnet-mvc-3-beta"></a>ASP.NET MVC 3 Beta
 
 Versão Beta do ASP.NET MVC 3 foi lançado em 6 de outubro de 2010. As observações a seguir são específicas para a versão Beta e estão sujeitas a todas as atualizações ou alterações mencionadas na seção Release Candidate do ASP.NET MVC 3 acima.
 
@@ -672,14 +672,14 @@ A nova tecnologia de páginas da Web ASP.NET inclui um conjunto de métodos auxi
 | **Auxiliar** | **Descrição** |
 | --- | --- |
 | Gráfico | Renderiza um gráfico em uma exibição. Contém métodos como Chart.ToWebImage, Chart.Save e Chart.Write. |
-| Criptografia | Usa para criar corretamente os algoritmos de hash com salt e senhas de hash. |
+| Crypto | Usa para criar corretamente os algoritmos de hash com salt e senhas de hash. |
 | WebGrid | Uma coleção de objetos (normalmente, os dados de um banco de dados) é renderizada como uma grade. Dá suporte à paginação e classificação. |
 | WebImage | Renderiza uma imagem. |
 | WebMail | Envia uma mensagem de email. |
 
 Um tópico de referência rápida que lista os auxiliares e a sintaxe básica está disponível como parte da documentação de sintaxe do Razor ASP.NET na seguinte URL:
 
-[https://www.ASP.NET/WebMatrix/Tutorials/ASP-NET-Web-Pages-API-Reference](../web-pages/overview/api-reference/asp-net-web-pages-api-reference.md)
+[https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-api-reference](../web-pages/overview/api-reference/asp-net-web-pages-api-reference.md)
 
 ### <a id="0.1__Toc274034220"></a>Suporte de injeção de dependência adicional
 
@@ -743,8 +743,8 @@ O ASP.NET MVC inclui métodos auxiliares de Ajax como o seguinte:
 
 Esses métodos usam o JavaScript para invocar um método de ação no servidor, em vez de usar um postback completo. Essa funcionalidade foi atualizada para tirar proveito do jQuery de maneira discreta. Em vez de forma intrusiva emitindo embutido scripts de cliente, esses métodos auxiliares separam o comportamento da marcação pelo emissor HTML5 atributos usando o *dados ajax* prefixo. Comportamento é então aplicado à marcação referenciando os arquivos apropriados do JavaScript. Certifique-se de que os seguintes arquivos JavaScript são referenciados:
 
-- 1.4.1.js jQuery
-- jQuery.unobtrusive.AJAX.js
+- jquery-1.4.1.js
+- jquery.unobtrusive.ajax.js
 
 Este recurso é habilitado por padrão no arquivo Web. config no ASP.NET MVC 3 novos modelos de projeto, mas é desabilitado por padrão para projetos existentes. Para obter mais informações, consulte [adicionado sinalizadores de aplicativo para validação do cliente e o JavaScript discreto](#0.1_AddedApplicationWideFlagsForClientValida) mais adiante neste documento.
 
@@ -760,9 +760,9 @@ Isso requer que a propriedade de ViewContext.UnobtrusiveJavaScriptEnabled é def
 
 Verifique também se que os seguintes arquivos JavaScript são referenciados.
 
-- 1.4.1.js jQuery
-- jQuery.Validate.js
-- jQuery.Validate.unobtrusive.js
+- jquery-1.4.1.js
+- jquery.validate.js
+- jquery.validate.unobtrusive.js
 
 Este recurso está ativado por padrão no arquivo Web. config no ASP.NET MVC 3 novos modelos de projeto, mas é desabilitado por padrão para projetos existentes. Para obter mais informações, consulte [novo aplicativo sinalizadores para a validação do cliente e o JavaScript discreto](#0.1_AddedApplicationWideFlagsForClientValida) mais adiante neste documento.
 
@@ -800,7 +800,7 @@ A visualização anterior do ASP.NET MVC incluído o suporte para modos de exibi
 
 Para obter uma introdução ao uso de sintaxe do Visual Basic em páginas VBHTML, consulte o tutorial na seguinte URL:
 
-[https://www.ASP.NET/WebMatrix/Tutorials/ASP-NET-Web-Pages-Visual-Basic](../web-pages/overview/getting-started/introducing-razor-syntax-vb.md)
+[https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-visual-basic](../web-pages/overview/getting-started/introducing-razor-syntax-vb.md)
 
 ### <a id="0.1__Toc274034226"></a>Controle mais Granular sobre ValidateInputAttribute
 
@@ -862,8 +862,8 @@ Há um problema conhecido que faz com que a autenticação de formulários para 
 
 [!code-xml[Main](mvc3-release-notes/samples/sample43.xml)]
 
-## <a id="0.1__Toc274034231"></a>Isenção de responsabilidade
+## <a id="0.1__Toc274034231"></a>  Disclaimer
 
-© Microsoft Corporation. de 2011. Todos os direitos reservados. Este documento é fornecido "como-é." Informações e opiniões expressadas neste documento, incluindo URLs e outras referências a sites da Internet, podem ser alteradas sem aviso prévio. Você assume o risco de utilizá-las.
+© 2011 Microsoft Corporation. Todos os direitos reservados. Este documento é fornecido "como-é." Informações e opiniões expressadas neste documento, incluindo URLs e outras referências a sites da Internet, podem ser alteradas sem aviso prévio. Você assume o risco de utilizá-las.
 
 Este documento não lhe concede nenhum direito legal à nenhuma propriedade intelectual de nenhum produto da Microsoft. Você pode copiar e usar este documento para fins internos de referência.

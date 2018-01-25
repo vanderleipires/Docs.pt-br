@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ef130e736e2f32fa134156d979ce5bfbedcae828
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: 84f386db4ab96a82011ee2fc0b6c20a1a05b5e4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Conceitos básicos de Middleware do ASP.NET Core
 
@@ -63,7 +63,7 @@ A primeira [aplicativo. Executar](https://docs.microsoft.com/aspnet/core/api/mic
 
 ## <a name="ordering"></a>Ordenando
 
-A ordem em que foram adicionados a componentes de middleware de `Configure` método define a ordem na qual eles são chamados em solicitações e ordem inversa para a resposta. Essa ordem é crítico para segurança, desempenho e funcionalidade.
+A ordem em que foram adicionados a componentes de middleware de `Configure` método define a ordem na qual estão invocados em solicitações e ordem inversa para a resposta. Essa ordem é crítico para segurança, desempenho e funcionalidade.
 
 O método de configurar (mostrado abaixo) adiciona os seguintes componentes de middleware:
 
@@ -116,11 +116,11 @@ O middleware de arquivo estático é chamado no início do pipeline para que pos
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 
-Se a solicitação não é manipulada pelo middleware de arquivo estático, ele é passado para o middleware de identidade (`app.UseAuthentication`), que executa a autenticação. Identidade não curto-circuito solicitações não autenticadas. Embora identidade autentica solicitações, autorização (e rejeição) ocorrem somente após MVC seleciona uma página Razor específico ou controlador e ação.
+Se a solicitação não é tratada pelo middleware de arquivo estático, ele é passado para o middleware de identidade (`app.UseAuthentication`), que executa a autenticação. Identidade não curto-circuito solicitações não autenticadas. Embora identidade autentica solicitações, autorização (e rejeição) ocorrem somente após MVC seleciona uma página Razor específico ou controlador e ação.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-Se a solicitação não é manipulada pelo middleware de arquivo estático, ele é passado para o middleware de identidade (`app.UseIdentity`), que executa a autenticação. Identidade não curto-circuito solicitações não autenticadas. Embora identidade autentica solicitações, autorização (e rejeição) ocorrem somente após MVC seleciona um controlador específico e a ação.
+Se a solicitação não é tratada pelo middleware de arquivo estático, ele é passado para o middleware de identidade (`app.UseIdentity`), que executa a autenticação. Identidade não curto-circuito solicitações não autenticadas. Embora identidade autentica solicitações, autorização (e rejeição) ocorrem somente após MVC seleciona um controlador específico e a ação.
 
 -----------
 

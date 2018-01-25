@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5b4904037838441942ea266ce71d735642d0a717
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7412b32ac29179dfa319544781d4c7165c58196b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Async e procedimentos armazenados com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
@@ -128,11 +128,11 @@ Alguns desenvolvedores e DBAs preferem usar os procedimentos armazenados para ac
 
     ![Departamento Insert SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
-Primeiro, o código cria nomes de procedimento armazenado do padrão. Se você estiver usando um banco de dados existente, talvez seja necessário personalizar os nomes de procedimento armazenado para usar procedimentos armazenados já definidos no banco de dados. Para obter informações sobre como fazer isso, consulte [Entity Framework código primeiro inserir/atualizar/excluir procedimentos armazenados](https://msdn.microsoft.com/en-us/data/dn468673).
+Primeiro, o código cria nomes de procedimento armazenado do padrão. Se você estiver usando um banco de dados existente, talvez seja necessário personalizar os nomes de procedimento armazenado para usar procedimentos armazenados já definidos no banco de dados. Para obter informações sobre como fazer isso, consulte [Entity Framework código primeiro inserir/atualizar/excluir procedimentos armazenados](https://msdn.microsoft.com/data/dn468673).
 
 Se você quiser personalizar quais gerados procedimentos armazenados, você pode editar o código scaffolding para as migrações `Up` método que cria o procedimento armazenado. Assim, suas alterações serão refletidas sempre que a migração é executada e será aplicada ao banco de dados de produção quando migrações é executado automaticamente na produção após a implantação.
 
-Se você quiser alterar um procedimento armazenado existente que foi criado em uma migração anterior, você pode usar o comando Add-Migration para gerar uma migração em branco e escrever manualmente o código que chama o [AlterStoredProcedure](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx) método .
+Se você quiser alterar um procedimento armazenado existente que foi criado em uma migração anterior, você pode usar o comando Add-Migration para gerar uma migração em branco e escrever manualmente o código que chama o [AlterStoredProcedure](https://msdn.microsoft.com/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx) método .
 
 ## <a name="deploy-to-azure"></a>Implantar no Azure
 

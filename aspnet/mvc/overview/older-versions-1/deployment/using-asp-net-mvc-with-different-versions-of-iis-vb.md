@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 57a729501d15ebf9a533716b2a1767766954bb4c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6c9c3bf004b13677728c7c6bf2f5adf6a264dc49
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-vb"></a>Usando o ASP.NET MVC com diferentes versões do IIS (VB)
 ====================
@@ -33,7 +33,7 @@ Aqui está um resumo das versões diferentes do IIS:
 - O IIS 7.0 (modo clássico) – você precisa executar configuração especial para usar o roteamento do ASP.NET.
 - IIS 6.0 ou abaixo - você precisa executar configuração especial para usar o roteamento do ASP.NET.
 
-A versão mais recente do IIS é a versão 7.5 (no Win7). IIS 7 do IIS é incluído com o Windows Server 2008 e VISTA SP1 e superior. Você também pode instalar o IIS 7.0 em qualquer versão do sistema operacional Vista exceto Home Basic (consulte [https://technet.microsoft.com/en-us/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/en-us/library/cc731179%28WS.10%29.aspx)).
+A versão mais recente do IIS é a versão 7.5 (no Win7). IIS 7 do IIS é incluído com o Windows Server 2008 e VISTA SP1 e superior. Você também pode instalar o IIS 7.0 em qualquer versão do sistema operacional Vista exceto Home Basic (consulte [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
 
 O IIS 7.0 oferece suporte a dois modos para processar solicitações. Você pode usar o modo integrado ou modo clássico. Você não precisa executar as etapas de configuração especial ao usar o IIS 7.0 no modo integrado. No entanto, você precisa executar uma configuração adicional ao usar o IIS 7.0 no modo clássico.
 
@@ -129,11 +129,11 @@ Há duas alterações importantes para o arquivo global. asax na listagem 2. Ago
 
 A adição da extensão. MVC altera o tipo de arquivos que intercepta o módulo de roteamento do ASP.NET. Com essa alteração, o aplicativo ASP.NET MVC agora roteia solicitações com o seguinte:
 
-/Home.MVC/index/
+/Home.mvc/Index/
 
-/Product.MVC/Details/3
+/Product.mvc/Details/3
 
-/Product.MVC/
+/Product.mvc/
 
 A segunda rota, a rota de raiz, é nova. Esse padrão de URL para a rota de raiz é uma cadeia de caracteres vazia. Essa rota é necessária para correspondência de solicitações feitas na raiz do seu aplicativo. Por exemplo, a rota de raiz corresponderá a uma solicitação que tem esta aparência:
 

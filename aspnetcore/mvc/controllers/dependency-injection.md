@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 21cffcd285879fdca81cb7d92d0f079d4bf7756c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 946d695c572379c3ebc2eda1569f186f25ab9bfc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="dependency-injection-into-controllers"></a>Injeção de dependência nos controladores
 
@@ -87,7 +87,7 @@ Como a mensagem de erro afirma, você pode corrigir esse problema ter apenas um 
 
 ## <a name="accessing-settings-from-a-controller"></a>Acessando configurações de um controlador
 
-Acessando configurações de aplicativo ou configuração de dentro de um controlador é um padrão comum. Esse acesso deve usar o padrão de opções descrito na [configuração](xref:fundamentals/configuration/index). Em geral não solicite configurações diretamente do seu controlador usando a injeção de dependência. Uma abordagem melhor é a solicitação de um `IOptions<T>` instância, onde `T` é a classe de configuração que você precisa.
+Acessando configurações de aplicativo ou configuração de dentro de um controlador é um padrão comum. Esse acesso deve usar o padrão de opções descrito na [configuração](xref:fundamentals/configuration/index). Geralmente você não deve solicitar configurações diretamente do seu controlador usando a injeção de dependência. Uma abordagem melhor é a solicitação de um `IOptions<T>` instância, onde `T` é a classe de configuração que você precisa.
 
 Para trabalhar com o padrão de opções, você precisa criar uma classe que representa as opções, como este:
 

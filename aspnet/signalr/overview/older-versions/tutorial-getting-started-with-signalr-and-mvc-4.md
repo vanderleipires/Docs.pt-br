@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: e678c85520613fea2a8d00de60aca04d895d6307
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 632e6098a03eae02f2367c6dc1c293dbdb6b6170
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>Tutorial: Introdução ao SignalR 1. x e MVC 4
 ====================
@@ -25,7 +25,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://gith
 > Este tutorial mostra como usar o SignalR do ASP.NET para criar um aplicativo de bate-papo em tempo real. Você adicionará o SignalR para um aplicativo MVC 4 e criar uma exibição de bate-papo para enviar e exibir as mensagens.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial o apresenta ao desenvolvimento de aplicativos web em tempo real com ASP.NET SignalR e ASP.NET MVC 4. O tutorial usa o mesmo código de aplicativo de bate-papo, como o [tutorial de Introdução SignalR](tutorial-getting-started-with-signalr.md), mas mostra como adicioná-lo a um aplicativo MVC 4 com base no modelo de Internet.
 
@@ -53,7 +53,7 @@ Seções:
 Pré-requisitos:
 
 - Visual Studio 2010 SP1, o Visual Studio 2012 ou Visual Studio 2012 Express. Se você não tiver o Visual Studio, consulte [ASP.NET Downloads](https://www.asp.net/downloads) para obter o Visual Studio 2012 Express desenvolvimento ferramenta gratuita.
-- Para o Visual Studio 2010, instale [ASP.NET MVC 4](https://www.microsoft.com/en-us/download/details.aspx?id=30683).
+- Para o Visual Studio 2010, instale [ASP.NET MVC 4](https://www.microsoft.com/download/details.aspx?id=30683).
 
 Esta seção mostra como criar um aplicativo ASP.NET MVC 4, adicione a biblioteca de SignalR e criar o aplicativo de bate-papo.
 

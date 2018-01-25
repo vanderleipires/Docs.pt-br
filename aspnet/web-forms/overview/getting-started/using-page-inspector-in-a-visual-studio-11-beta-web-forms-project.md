@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: a2ac8334e62e6ab7af7042572cfd5950c687001b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ca8a3c194577766e56d0604323fef567d539316c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>Com o Page Inspector para Visual Studio 2012 em Web Forms do ASP.NET
 ====================
@@ -51,7 +51,7 @@ por Tim Ammann
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [O Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us) ou [Visual Studio Express 2012 para Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web).
+- [O Visual Studio 2012](https://www.microsoft.com/visualstudio/11) ou [Visual Studio Express 2012 para Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
 
 > [!NOTE]
 > Para obter a versão mais recente do Page Inspector, use [Web Platform Installer](https://go.microsoft.com/fwlink/?LinkId=255386) para instalar o SDK do Azure para .NET 2.0.
@@ -91,7 +91,7 @@ Se você desencaixar janela Inspetor de página, você pode colocar a ele fora d
 
 ![Desmarque a caixa de seleção de windows ferramenta flutuante para ALT + TAB entre o Visual Studio e a janela do Page Inspector desencaixada](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image5.png)
 
-O painel superior da janela do Page Inspector mostra a página atual em uma janela do navegador. O painel inferior mostra a página na marcação HTML à esquerda, e alguns guias à direita que permitem a você inspecionar diferentes aspectos da página. O painel inferior é semelhante do [ferramentas de desenvolvedor F12](https://msdn.microsoft.com/en-us/ie/aa740478) no Internet Explorer. (No entanto, ao contrário das ferramentas de desenvolvedor, você pode usar o Page Inspector dentro do Visual Studio.)
+O painel superior da janela do Page Inspector mostra a página atual em uma janela do navegador. O painel inferior mostra a página na marcação HTML à esquerda, e alguns guias à direita que permitem a você inspecionar diferentes aspectos da página. O painel inferior é semelhante do [ferramentas de desenvolvedor F12](https://msdn.microsoft.com/ie/aa740478) no Internet Explorer. (No entanto, ao contrário das ferramentas de desenvolvedor, você pode usar o Page Inspector dentro do Visual Studio.)
 
 ![Inspetor de Página](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image6.png)
 

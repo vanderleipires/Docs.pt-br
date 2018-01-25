@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/mapping-users-to-connections
 msc.type: authoredcontent
-ms.openlocfilehash: 561c5739c4e8465efeb4b5d1eaf8a196dab8673f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 896bf4142ce090e39ed5697ff053cd56728318ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>Mapeamento de usuários do SignalR para conexões no SignalR 1. x
 ====================
@@ -98,7 +98,7 @@ Em seguida, do hub, você pode controlar o estado de cada conexão com o código
 
 ### <a name="azure-table-storage"></a>Armazenamento de tabela do Azure
 
-O seguinte exemplo de armazenamento de tabela do Azure é semelhante ao exemplo de banco de dados. Ele não inclui todas as informações que você precisa começar com o serviço de armazenamento de tabela do Azure. Para obter informações, consulte [como usar o armazenamento de tabela do .NET](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/).
+O seguinte exemplo de armazenamento de tabela do Azure é semelhante ao exemplo de banco de dados. Ele não inclui todas as informações que você precisa começar com o serviço de armazenamento de tabela do Azure. Para obter informações, consulte [como usar o armazenamento de tabela do .NET](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/).
 
 O exemplo a seguir mostra uma entidade de tabela para armazenar informações de conexão. Ela particiona os dados por nome de usuário e identifica cada entidade pela id de conexão, para que um usuário pode ter várias conexões a qualquer momento.
 

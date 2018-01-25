@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: e594dd1ea4ae027cf0b82574fc5a3eb061b1f2e1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 96155b1c648e5f6092b3ba67a560197f86a593b9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>Guia de API de Hubs do ASP.NET SignalR - servidor (SignalR 1. x)
 ====================
@@ -29,7 +29,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gith
 > O SignalR também oferece uma API de nível inferior chamada conexões persistentes. Para obter uma introdução para o SignalR, Hubs e conexões persistentes, ou para um tutorial que mostra como criar um aplicativo SignalR completo, consulte [SignalR - Introdução](index.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este documento contém as seguintes seções:
 
@@ -77,13 +77,13 @@ Para obter a documentação sobre como os clientes do programa, consulte os segu
 - [Guia de API de Hubs de SignalR - cliente JavaScript](index.md)
 - [Guia de API de Hubs de SignalR - cliente .NET](index.md)
 
-Links para tópicos de referência de API são para a versão do .NET 4.5 da API. Se você estiver usando o .NET 4, consulte [a versão do .NET 4 dos tópicos da API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Links para tópicos de referência de API são para a versão do .NET 4.5 da API. Se você estiver usando o .NET 4, consulte [a versão do .NET 4 dos tópicos da API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="route"></a>
 
 ## <a name="how-to-register-the-signalr-route-and-configure-signalr-options"></a>Como registrar a rota SignalR e configurar opções de SignalR
 
-Para definir a rota que os clientes usarão para se conectar ao seu Hub, chame o [MapHubs](https://msdn.microsoft.com/en-us/library/system.web.routing.signalrrouteextensions.maphubs(v=vs.111).aspx) método quando o aplicativo for iniciado. `MapHubs`é um [método de extensão](https://msdn.microsoft.com/en-us/library/vstudio/bb383977.aspx) para o `System.Web.Routing.RouteCollection` classe. O exemplo a seguir mostra como definir a rota de Hubs de SignalR no *global. asax* arquivo.
+Para definir a rota que os clientes usarão para se conectar ao seu Hub, chame o [MapHubs](https://msdn.microsoft.com/library/system.web.routing.signalrrouteextensions.maphubs(v=vs.111).aspx) método quando o aplicativo for iniciado. `MapHubs`é um [método de extensão](https://msdn.microsoft.com/library/vstudio/bb383977.aspx) para o `System.Web.Routing.RouteCollection` classe. O exemplo a seguir mostra como definir a rota de Hubs de SignalR no *global. asax* arquivo.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample1.cs)]
 
@@ -139,7 +139,7 @@ O exemplo a seguir mostra como especificar a URL de conexão do SignalR e essas 
 
 ## <a name="how-to-create-and-use-hub-classes"></a>Como criar e usar as classes de Hub
 
-Para criar um Hub, crie uma classe que deriva de [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). O exemplo a seguir mostra uma classe simples do Hub para um aplicativo de bate-papo.
+Para criar um Hub, crie uma classe que deriva de [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). O exemplo a seguir mostra uma classe simples do Hub para um aplicativo de bate-papo.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample8.cs)]
 
@@ -238,7 +238,7 @@ Se você deseja especificar um nome diferente para os clientes usar, adicione o 
 
 ### <a name="when-to-execute-asynchronously"></a>Ao executar de forma assíncrona
 
-Se o método será ser demoradas ou tiver de funcionar seria envolvem espera, como uma pesquisa de banco de dados ou uma chamada de serviço da web, verifique o método de Hub assíncrona, retornando um [tarefa](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) (em vez de `void` retornar) ou [ Tarefa&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/dd321424.aspx) objeto (em vez de `T` tipo de retorno). Ao retornar um `Task` objeto do método, SignalR aguarda o `Task` para ser concluída, e, em seguida, ele envia o resultado desencapsulamento volta ao cliente, portanto, não há nenhuma diferença em como você o código de chamada do método no cliente.
+Se o método será ser demoradas ou tiver de funcionar seria envolvem espera, como uma pesquisa de banco de dados ou uma chamada de serviço da web, verifique o método de Hub assíncrona, retornando um [tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) (em vez de `void` retornar) ou [ Tarefa&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx) objeto (em vez de `T` tipo de retorno). Ao retornar um `Task` objeto do método, SignalR aguarda o `Task` para ser concluída, e, em seguida, ele envia o resultado desencapsulamento volta ao cliente, portanto, não há nenhuma diferença em como você o código de chamada do método no cliente.
 
 Fazer um método de Hub assíncrona evita bloqueando a conexão quando ele usa o transporte de WebSocket. Quando um método de Hub é executado de modo síncrono e o transporte é WebSocket, invocações subsequentes de métodos de Hub do mesmo cliente serão bloqueadas até que o método de Hub é concluído.
 
@@ -248,7 +248,7 @@ A exemplo a seguir mostra o mesmo método codificados para executar de forma sí
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample19.cs)]
 
-**Assíncrono - ASP.NET 4.5**
+**Asynchronous - ASP.NET 4.5**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample20.cs?highlight=1,7-8)]
 
@@ -298,7 +298,7 @@ Você pode especificar os tipos complexos e matrizes de parâmetros. O exemplo a
 
 ### <a name="selecting-which-clients-will-receive-the-rpc"></a>Selecionar quais clientes receberão o RPC
 
-A propriedade retorna clientes um [HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) objeto que fornece várias opções para especificar quais clientes receberão o RPC:
+A propriedade retorna clientes um [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) objeto que fornece várias opções para especificar quais clientes receberão o RPC:
 
 - Todos os clientes conectados.
 
@@ -357,7 +357,7 @@ Se você usar `await` ou `ContinueWith` para esperar até que um método de clie
 
 ### <a name="how-to-use-a-string-variable-as-the-method-name"></a>Como usar uma variável de cadeia de caracteres como o nome do método
 
-Se você deseja invocar um método de cliente usando uma variável de cadeia de caracteres como o nome do método, converter `Clients.All` (ou `Clients.Others`, `Clients.Caller`, etc.) para `IClientProxy` e, em seguida, chame [Invoke (methodName, args...) ](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
+Se você deseja invocar um método de cliente usando uma variável de cadeia de caracteres como o nome do método, converter `Clients.All` (ou `Clients.Others`, `Clients.Caller`, etc.) para `IClientProxy` e, em seguida, chame [Invoke (methodName, args...) ](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample37.cs)]
 
@@ -367,7 +367,7 @@ Se você deseja invocar um método de cliente usando uma variável de cadeia de 
 
 Grupos no SignalR fornecem um método para mensagens de difusão de subconjuntos especificados de clientes conectados. Um grupo pode ter qualquer número de clientes e um cliente pode ser um membro de qualquer número de grupos.
 
-Para gerenciar a associação de grupo, use o [adicionar](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) e [remover](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) métodos fornecidos pelo `Groups` propriedade da classe Hub. A exemplo a seguir mostra o `Groups.Add` e `Groups.Remove` métodos usados em métodos de Hub que são chamados pelo código do cliente, seguido do código de cliente JavaScript que o chama.
+Para gerenciar a associação de grupo, use o [adicionar](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) e [remover](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) métodos fornecidos pelo `Groups` propriedade da classe Hub. A exemplo a seguir mostra o `Groups.Add` e `Groups.Remove` métodos usados em métodos de Hub que são chamados pelo código do cliente, seguido do código de cliente JavaScript que o chama.
 
 **Servidor**
 
@@ -452,7 +452,7 @@ São chamados os métodos de manipulador de eventos de tempo de vida de conexão
 
 ## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>Como obter informações sobre o cliente da propriedade de contexto
 
-Para obter informações sobre o cliente, use o `Context` propriedade da classe Hub. O `Context` propriedade retorna um [HubCallerContext](https://msdn.microsoft.com/en-us/library/jj890883(v=vs.111).aspx) objeto que fornece acesso às seguintes informações:
+Para obter informações sobre o cliente, use o `Context` propriedade da classe Hub. O `Context` propriedade retorna um [HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx) objeto que fornece acesso às seguintes informações:
 
 - A ID de conexão do cliente da chamada.
 
@@ -526,7 +526,7 @@ Em sua classe de Hub, você pode acessar esses dados no `Clients.Caller` proprie
 Para manipular erros que ocorrem em seus métodos de classe de Hub, use um ou ambos dos seguintes métodos:
 
 - Encapsular o código do método em blocos try-catch e registrar o objeto de exceção. Para fins de depuração, você pode enviar a exceção para o cliente, mas para segurança motivos enviando informações detalhadas para clientes de produção não são recomendados.
-- Criar um módulo de pipeline de Hubs que manipula o [OnIncomingError](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) método. O exemplo a seguir mostra um módulo de pipeline que registra erros, seguidos do código em global. asax que insere o módulo no pipeline de Hubs.
+- Criar um módulo de pipeline de Hubs que manipula o [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) método. O exemplo a seguir mostra um módulo de pipeline que registra erros, seguidos do código em global. asax que insere o módulo no pipeline de Hubs.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample55.cs)]
 
@@ -607,4 +607,4 @@ O código a seguir no *global. asax* arquivo registra o módulo para executar o 
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample68.cs?highlight=3)]
 
-Há vários métodos diferentes que você pode substituir. Para obter uma lista completa, consulte [HubPipelineModule métodos](https://msdn.microsoft.com/en-us/library/jj918633(v=vs.111).aspx).
+Há vários métodos diferentes que você pode substituir. Para obter uma lista completa, consulte [HubPipelineModule métodos](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx).

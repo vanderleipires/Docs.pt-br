@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: e3d8ad6e00b7fcb95f1c9bbe556021269c1a0624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5689031015279484cc616090a767a8c25eefa3c1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Criar um aplicativo web seguro do ASP.NET MVC 5 com logon, email de redefinição de senha e de confirmação (c#)
 ====================
@@ -38,9 +38,9 @@ Comece instalando e executando [Visual Studio Express 2013 para Web](https://go.
 
 1. Criar um novo projeto da Web do ASP.NET e selecione o modelo MVC. Formulários da Web também oferece suporte a identidade do ASP.NET, você pode seguir etapas semelhantes em um aplicativo de formulários da web.  
     ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image1.png)
-2. Deixe a autenticação padrão como **contas de usuário individuais**. Se você quiser hospedar o aplicativo no Azure, deixe a caixa de seleção marcada. No tutorial posteriormente, implantará no Azure. Você pode [abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F).
+2. Deixe a autenticação padrão como **contas de usuário individuais**. Se você quiser hospedar o aplicativo no Azure, deixe a caixa de seleção marcada. No tutorial posteriormente, implantará no Azure. Você pode [abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
 3. Definir o [projeto para usar SSL](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
-4. Executar o aplicativo, clique no **registrar** vincular e registrar um usuário. Neste ponto, a validação somente do email é com o [[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) atributo.
+4. Executar o aplicativo, clique no **registrar** vincular e registrar um usuário. Neste ponto, a validação somente do email é com o [[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) atributo.
 5. No Gerenciador de servidores, navegue até **dados Connections\DefaultConnection\Tables\AspNetUsers**, clique com botão direito e selecione **abrir definição de tabela**.
 
     A imagem a seguir mostra o `AspNetUsers` esquema:
@@ -58,7 +58,7 @@ Comece instalando e executando [Visual Studio Express 2013 para Web](https://go.
 Em geral você deseja impedir que novos usuários lançamento todos os dados para seu site da web antes de confirmar por email, uma mensagem de texto SMS ou outro mecanismo. <a id="build"></a>As seções a seguir, vamos habilitar confirmação por email e modifique o código para impedir que usuários recém-registrados logon até que o email foi confirmado.
 
 <a id="SG"></a>
-## <a name="hook-up-sendgrid"></a>Ligar SendGrid
+## <a name="hook-up-sendgrid"></a>Hook up SendGrid
 
 Embora este tutorial mostra apenas como adicionar notificação por email por meio de [SendGrid](http://sendgrid.com/), você pode enviar emails usando SMTP e outros mecanismos (consulte [recursos adicionais](#addRes)).
 
@@ -108,7 +108,7 @@ Criar um `Views\Shared\Info.cshtml` de arquivo e adicione a seguinte marcação 
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample8.cshtml)]
 
-Adicionar o [autorizar atributo](https://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) para o `Contact` método de ação do controlador Home. Você pode usar o clique no **contato** link para verificar se os usuários anônimos não têm acesso e os usuários autenticados têm acesso.
+Adicionar o [autorizar atributo](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) para o `Contact` método de ação do controlador Home. Você pode usar o clique no **contato** link para verificar se os usuários anônimos não têm acesso e os usuários autenticados têm acesso.
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample9.cs?highlight=1)]
 
@@ -129,7 +129,7 @@ Remova os caracteres de comentário do `HttpPost ForgotPassword` método de aç�
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample12.cs?highlight=17-20)]
 
-Remova os caracteres de comentário do `ForgotPassword` [ActionLink](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.linkextensions.actionlink(v=vs.118).aspx) no *Views\Account\Login.cshtml* o arquivo de exibição razor:
+Remova os caracteres de comentário do `ForgotPassword` [ActionLink](https://msdn.microsoft.com/library/system.web.mvc.html.linkextensions.actionlink(v=vs.118).aspx) no *Views\Account\Login.cshtml* o arquivo de exibição razor:
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample13.cshtml?highlight=47-50)]
 

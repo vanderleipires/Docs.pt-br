@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: bea3b12ebe476c4b59abe117393b0ec8bb7f0306
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6d36c0f0cabaf99195470a212091bd5e35c8eb30
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Guia de Introdução com páginas Razor e o Entity Framework Core usando o Visual Studio (1 a 8)
 
@@ -179,7 +179,7 @@ A cadeia de caracteres de conexão anterior usa `ConnectRetryCount=0` para evita
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-A cadeia de caracteres de conexão Especifica um banco de dados do SQL Server LocalDB. LocalDB é uma versão leve do mecanismo de banco de dados do SQL Server Express e destina-se ao desenvolvimento de aplicativos, não o uso de produção. O LocalDB é iniciado sob demanda e executado no modo de usuário e, portanto, não há nenhuma configuração complexa. Por padrão, o LocalDB cria *. mdf* arquivos de banco de dados no `C:/Users/<user>` directory.
+A cadeia de caracteres de conexão Especifica um banco de dados do SQL Server LocalDB. LocalDB é uma versão leve do mecanismo de banco de dados do SQL Server Express e destina-se ao desenvolvimento de aplicativos, não o uso de produção. LocalDB é iniciado sob demanda e é executado no modo de usuário, portanto, não há nenhuma configuração complexa. Por padrão, o LocalDB cria *. mdf* arquivos de banco de dados no `C:/Users/<user>` directory.
 
 ## <a name="add-code-to-initialize-the-db-with-test-data"></a>Adicione código para inicializar o banco de dados com dados de teste
 
@@ -337,9 +337,9 @@ No código a seguir, o `async` palavra-chave, `Task<T>` retornar valor, `await` 
 
 Algumas coisas a serem consideradas ao escrever código assíncrono que usa EF Core:
 
-* Somente instruções que fazem com consultas ou comandos sejam enviados para o banco de dados que são executadas assincronamente. Isso inclui, `ToListAsync`, `SingleOrDefaultAsync`, `FirstOrDefaultAsync`, e `SaveChangesAsync`. Ele não inclui instruções que apenas alterar uma `IQueryable`, como `var students = context.Students.Where(s => s.LastName == "Davolio")`.
+* Somente instruções que fazem com consultas ou comandos sejam enviados para o banco de dados que são executadas assincronamente. Isso inclui, `ToListAsync`, `SingleOrDefaultAsync`, `FirstOrDefaultAsync`, e `SaveChangesAsync`. Não inclui instruções que apenas alterar uma `IQueryable`, como `var students = context.Students.Where(s => s.LastName == "Davolio")`.
 
-* Um contexto de EF Core não é thread safe: não tenta realizar várias operações em paralelo. 
+* Um contexto de EF Core não é thread-safe: não tenta realizar várias operações em paralelo. 
 
 * Para tirar proveito dos benefícios de desempenho do código assíncrono, verifique se pacotes de biblioteca (como paginação) usam async se chamam métodos básicos de EF que enviam consultas ao banco de dados.
 

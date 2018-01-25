@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: b072134043ceda809bfeca98447a132ed407b323
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 87bb08a4d16965a10112a42c4e9318c32f192c04
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>Tratamento de simultaneidade com o Entity Framework em um aplicativo ASP.NET MVC (7 de 10)
 ====================
@@ -67,18 +67,18 @@ José clica em **salvar** primeiro e vê suas alterações quando o navegador re
 
 ### <a name="detecting-concurrency-conflicts"></a>Detectando conflitos de simultaneidade
 
-Você pode resolver conflitos manipulando [OptimisticConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.optimisticconcurrencyexception.aspx) exceções que gera o Entity Framework. Para saber quando gerar essas exceções, o Entity Framework deve ser capaz de detectar conflitos. Portanto, você deve configurar o banco de dados e o modelo de dados adequadamente. Algumas opções para ativar a detecção de conflitos incluem o seguinte:
+Você pode resolver conflitos manipulando [OptimisticConcurrencyException](https://msdn.microsoft.com/library/system.data.optimisticconcurrencyexception.aspx) exceções que gera o Entity Framework. Para saber quando gerar essas exceções, o Entity Framework deve ser capaz de detectar conflitos. Portanto, você deve configurar o banco de dados e o modelo de dados adequadamente. Algumas opções para ativar a detecção de conflitos incluem o seguinte:
 
 - A tabela de banco de dados inclua uma coluna de rastreamento que pode ser usada para determinar quando uma linha foi alterada. Você pode configurar o Entity Framework para incluir essa coluna no `Where` cláusula SQL `Update` ou `Delete` comandos.
 
-    O tipo de dados da coluna de rastreamento é normalmente [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx). O [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) valor é um número sequencial que tem incrementado toda vez que a linha é atualizada. Em um `Update` ou `Delete` comando, o `Where` cláusula inclui o valor original da coluna de rastreamento (a versão de linha original). Se a linha que está sendo atualizada tiver sido alterada por outro usuário, o valor no `rowversion` coluna é diferente do valor original, portanto, o `Update` ou `Delete` instrução não é possível localizar a linha a ser atualizada porque o `Where` cláusula. Quando o Entity Framework localiza nenhuma linha foi atualizada pelo `Update` ou `Delete` de comando (ou seja, quando o número de linhas afetadas será zero), ele interpreta que como um conflito de simultaneidade.
+    O tipo de dados da coluna de rastreamento é normalmente [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx). O [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) valor é um número sequencial que tem incrementado toda vez que a linha é atualizada. Em um `Update` ou `Delete` comando, o `Where` cláusula inclui o valor original da coluna de rastreamento (a versão de linha original). Se a linha que está sendo atualizada tiver sido alterada por outro usuário, o valor no `rowversion` coluna é diferente do valor original, portanto, o `Update` ou `Delete` instrução não é possível localizar a linha a ser atualizada porque o `Where` cláusula. Quando o Entity Framework localiza nenhuma linha foi atualizada pelo `Update` ou `Delete` de comando (ou seja, quando o número de linhas afetadas será zero), ele interpreta que como um conflito de simultaneidade.
 - Configurar o Entity Framework para incluir os valores originais de cada coluna na tabela de `Where` cláusula de `Update` e `Delete` comandos.
 
     Como a primeira opção, se nada na linha foi alterado desde que a linha foi lido pela primeira vez, o `Where` cláusula não retornará uma linha a ser atualizada, que o Entity Framework interpreta como um conflito de simultaneidade. Para tabelas de banco de dados que têm um número de colunas, essa abordagem pode resultar em grandes `Where` cláusulas e pode exigir que você mantenha grandes quantidades de estado. Conforme observado anteriormente, manter grandes quantidades de estado pode afetar o desempenho do aplicativo porque ele requer recursos de servidor ou deve ser incluído na própria página da web. Portanto, essa abordagem geralmente não é recomendado e não é o método usado neste tutorial.
 
-    Se você quiser implementar essa abordagem, você precisa marcar todas as propriedades de chave não primária da entidade que você deseja controlar a simultaneidade para adicionando o [ConcurrencyCheck](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) atributo a eles. Alteração permite que o Entity Framework incluir todas as colunas no SQL `WHERE` cláusula de `UPDATE` instruções.
+    Se você quiser implementar essa abordagem, você precisa marcar todas as propriedades de chave não primária da entidade que você deseja controlar a simultaneidade para adicionando o [ConcurrencyCheck](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) atributo a eles. Alteração permite que o Entity Framework incluir todas as colunas no SQL `WHERE` cláusula de `UPDATE` instruções.
 
-O restante deste tutorial, você adicionará um [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) controle de propriedade para o `Department` entidade, criar um controlador e modos de exibição e de teste para verificar se tudo está funcionando corretamente.
+O restante deste tutorial, você adicionará um [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) controle de propriedade para o `Department` entidade, criar um controlador e modos de exibição e de teste para verificar se tudo está funcionando corretamente.
 
 ## <a name="add-an-optimistic-concurrency-property-to-the-department-entity"></a>Adicionar uma propriedade de simultaneidade otimista para a entidade de departamento
 
@@ -86,7 +86,7 @@ Em *Models\Department.cs*, adicionar uma propriedade de controle chamada `RowVer
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs?highlight=18-19)]
 
-O [Timestamp](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) atributo especifica que esta coluna será incluída no `Where` cláusula de `Update` e `Delete` comandos enviados para o banco de dados. O atributo é chamado [Timestamp](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) porque versões anteriores do SQL Server usaram um SQL [timestamp](https://msdn.microsoft.com/en-us/library/ms182776(v=SQL.90).aspx) tipo de dados antes do SQL [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) substituído. O tipo de .net para `rowversion` é uma matriz de bytes. Se você preferir usar a API fluente, você pode usar o [IsConcurrencyToken](https://msdn.microsoft.com/en-us/library/gg679501(v=VS.103).aspx) método para especificar a propriedade de controle, conforme mostrado no exemplo a seguir:
+O [Timestamp](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) atributo especifica que esta coluna será incluída no `Where` cláusula de `Update` e `Delete` comandos enviados para o banco de dados. O atributo é chamado [Timestamp](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) porque versões anteriores do SQL Server usaram um SQL [timestamp](https://msdn.microsoft.com/library/ms182776(v=SQL.90).aspx) tipo de dados antes do SQL [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) substituído. O tipo de .net para `rowversion` é uma matriz de bytes. Se você preferir usar a API fluente, você pode usar o [IsConcurrencyToken](https://msdn.microsoft.com/library/gg679501(v=VS.103).aspx) método para especificar a propriedade de controle, conforme mostrado no exemplo a seguir:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 

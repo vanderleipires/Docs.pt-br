@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: e6b49b9dde94cc7d035ea91b992a13df8cb8caf2
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Habilitar solicitações entre origens (CORS)
 
@@ -78,7 +78,7 @@ Este exemplo adiciona uma política CORS denominada "AllowSpecificOrigin". Para 
 
 ## <a name="enabling-cors-in-mvc"></a>Habilitando CORS no MVC
 
-Como alternativa, você pode usar MVC para aplicar CORS específicos por ação, por controlador ou globalmente para todos os controladores. Ao usar o MVC para habilitar o CORS os mesmos serviços CORS são usados, mas o middleware CORS não é.
+Como alternativa, você pode usar MVC para aplicar CORS específicos por ação, por controlador ou globalmente para todos os controladores. Ao usar o MVC para habilitar o CORS os mesmos serviços CORS são usados, mas o middleware CORS não estiver.
 
 ### <a name="per-action"></a>Cada ação
 
@@ -207,7 +207,7 @@ Além disso, o servidor deve permitir que as credenciais. Para permitir que as c
 
 Agora, a resposta HTTP incluirá um cabeçalho Access-controle-Allow-Credentials, que informa ao navegador que o servidor permite que as credenciais para uma solicitação entre origens.
 
-Se o navegador envia as credenciais, mas a resposta não incluir um cabeçalho Access-controle-Allow-Credentials válido, o navegador não irá expor a resposta para o aplicativo e haverá falha na solicitação AJAX.
+Se o navegador envia as credenciais, mas a resposta não incluir um cabeçalho Access-controle-Allow-Credentials válido, o navegador não expõe a resposta para o aplicativo e haverá falha na solicitação AJAX.
 
 Tenha muito cuidado sobre a permissão de credenciais entre origens, porque isso significa que um site da Web em outro domínio pode enviar credenciais do usuário conectado ao seu aplicativo em nome do usuário, sem o conhecimento do usuário. Os CORS especificação também estados que origens de configuração para "*" (todas as origens) não é válido se o cabeçalho de acesso-controle-Allow-Credentials estiver presente.
 
@@ -290,7 +290,7 @@ A solicitação de simulação usa o método HTTP OPTIONS. Ele inclui dois cabe�
 
 * Access-Control-Request-Method: O método HTTP que será usado para a solicitação real.
 
-* Access-Control-Request-Headers: Uma lista de cabeçalhos de solicitação que o aplicativo definido na solicitação atual. (Novamente, isso não inclui os cabeçalhos que define o navegador.)
+* Access-Control-Request-Headers: Uma lista de cabeçalhos de solicitação que o aplicativo definido na solicitação atual. (Novamente, isso não inclui os cabeçalhos que define o navegador).
 
 Aqui está um exemplo de resposta, supondo que o servidor permite que a solicitação:
 

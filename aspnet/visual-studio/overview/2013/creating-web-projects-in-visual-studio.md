@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 96960ef56b1206374458dbbba4befffaa83c1624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Criando projetos da Web do ASP.NET no Visual Studio 2013
 ====================
@@ -31,7 +31,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > - O uso de [Bootstrap](#bootstrap) fornece recursos de design e temas responsivos.
 > - Novos recursos para formulários da Web que costumava ser oferecido apenas para MVC, como [criação do projeto de teste automático](#testproj) e um [modelo de site de Intranet](#winauth).
 > 
-> Para obter informações sobre como criar projetos da web para serviços de nuvem do Azure ou serviços móveis do Azure, consulte [Introdução aos serviços de nuvem do Azure e ASP.NET](https://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-get-started/) e [criando um Leaderboard App com .NET de serviços móveis do Azure Back-end](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/).
+> Para obter informações sobre como criar projetos da web para serviços de nuvem do Azure ou serviços móveis do Azure, consulte [Introdução aos serviços de nuvem do Azure e ASP.NET](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/) e [criando um Leaderboard App com .NET de serviços móveis do Azure Back-end](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/).
 
 
 <a id="prerequisites"></a>
@@ -42,7 +42,7 @@ Este artigo se aplica a [Visual Studio 2013](https://go.microsoft.com/fwlink/?Li
 <a id="wap"></a>
 ## <a name="web-application-projects-versus-web-site-projects"></a>Projetos de aplicativos Web versus projetos de site
 
-ASP.NET permite que você escolha entre os dois tipos de projetos web: *projetos de aplicativo web* e *projetos de site*. Recomendamos que os projetos de aplicativo web para novos desenvolvimentos e este artigo se aplica somente a projetos de aplicativo web. Para obter mais informações, consulte [projetos de aplicativo da Web versus projetos de Site da Web no Visual Studio](https://msdn.microsoft.com/en-us/library/dd547590(v=vs.120).aspx) no site do MSDN.
+ASP.NET permite que você escolha entre os dois tipos de projetos web: *projetos de aplicativo web* e *projetos de site*. Recomendamos que os projetos de aplicativo web para novos desenvolvimentos e este artigo se aplica somente a projetos de aplicativo web. Para obter mais informações, consulte [projetos de aplicativo da Web versus projetos de Site da Web no Visual Studio](https://msdn.microsoft.com/library/dd547590(v=vs.120).aspx) no site do MSDN.
 
 <a id="overview"></a>
 ## <a name="overview-of-web-application-project-creation"></a>Visão geral da criação do projeto de aplicativo web
@@ -54,8 +54,8 @@ As etapas a seguir mostram como criar um projeto da web:
 
     ![Caixa de diálogo Novo Projeto](creating-web-projects-in-visual-studio/_static/image1.png)
 
-    Você pode escolher **nuvem** no painel esquerdo para criar um [serviço de nuvem do Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [serviço móvel do Azure](https://msdn.microsoft.com/en-us/library/windows/apps/dn629482.aspx), ou [Azure WebJob](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-webjobs). Este tópico não aborda esses modelos.
-3. No painel direito, clique no **adicionar Application Insights ao projeto** caixa de seleção se desejar que o monitoramento da integridade e uso para seu aplicativo. Para obter mais informações, consulte [monitorar o desempenho em aplicativos da web](https://azure.microsoft.com/en-us/documentation/articles/app-insights-web-monitor-performance/).
+    Você pode escolher **nuvem** no painel esquerdo para criar um [serviço de nuvem do Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [serviço móvel do Azure](https://msdn.microsoft.com/library/windows/apps/dn629482.aspx), ou [Azure WebJob](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-webjobs). Este tópico não aborda esses modelos.
+3. No painel direito, clique no **adicionar Application Insights ao projeto** caixa de seleção se desejar que o monitoramento da integridade e uso para seu aplicativo. Para obter mais informações, consulte [monitorar o desempenho em aplicativos da web](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/).
 4. Especificar o projeto **nome**, **local**e outras opções e, em seguida, clique em **Okey**.
 
     O **novo projeto ASP.NET** caixa de diálogo é exibida.
@@ -86,7 +86,7 @@ O Visual Studio inclui recursos que tornam mais fácil trabalhar com os serviço
 - Execute no modo de depuração remotamente enquanto o aplicativo é executado na nuvem.
 - Viiew e gerenciar outros serviços do Azure, como bancos de dados SQL.
 
-Você pode [criar uma conta do Azure](https://www.windowsazure.com/en-us/pricing/free-trial/) que inclui serviços básicos, como aplicativos web gratuito e se você for assinante do MSDN, você pode [ativar benefícios](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) que lhe créditos mensais com o Azure adicional serviços. 
+Você pode [criar uma conta do Azure](https://www.windowsazure.com/pricing/free-trial/) que inclui serviços básicos, como aplicativos web gratuito e se você for assinante do MSDN, você pode [ativar benefícios](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) que lhe créditos mensais com o Azure adicional serviços. 
 
 Por padrão o **novo projeto ASP.NET** caixa de diálogo permite que você crie um aplicativo web ou a máquina virtual para um novo projeto da web. Se você não deseja criar um novo aplicativo web ou a máquina virtual, desmarque o **Host na nuvem** caixa de seleção.
 
@@ -96,7 +96,7 @@ A legenda da caixa de seleção pode ser **Host na nuvem** ou **criar recursos r
 
 ![Definir configurações de aplicativo do Azure](creating-web-projects-in-visual-studio/_static/image9.png)
 
-Para obter mais informações sobre como usar esse processo para a criação de recursos do Azure, consulte [Introdução ao Azure e ASP.NET](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) e [criando uma máquina virtual para um site da web com o Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/).
+Para obter mais informações sobre como usar esse processo para a criação de recursos do Azure, consulte [Introdução ao Azure e ASP.NET](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) e [criando uma máquina virtual para um site da web com o Visual Studio](https://azure.microsoft.com/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/).
 
 O restante deste artigo fornece mais informações sobre os modelos disponíveis e suas opções. O artigo também apresenta o framework de inicialização, o layout e os temas usado nos modelos.
 
@@ -112,7 +112,7 @@ Visual Studio 2013 fornece as seguintes opções para modelos de projeto da web 
 - [Modelo MVC](#mvc)
 - [Modelo de API da Web](#webapi)
 - [Modelo de aplicativo de página único](#spa)
-- [Modelo de serviço móvel do Azure](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
+- [Modelo de serviço móvel do Azure](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
 - [Modelos do Visual Studio 2012](#vs2012)
 
 Você também pode instalar uma extensão do Visual Studio que fornece um [Facebook modelo](#facebook).
@@ -198,7 +198,7 @@ Para obter mais informações sobre os aplicativos de única página ASP.NET e m
 
 - [Aplicativo de página única do ASP.NET](../../../single-page-application/index.md).
 - [Noções básicas sobre os recursos de segurança no modelo SPA para RC VS2013](https://blogs.msdn.com/b/webdev/archive/2013/09/20/understanding-security-features-in-spa-template.aspx)
-- [Aplicativos de página única: Criar aplicativos Web modernos, capacidade de resposta com o ASP.NET](https://msdn.microsoft.com/en-us/magazine/dn463786.aspx)
+- [Aplicativos de página única: Criar aplicativos Web modernos, capacidade de resposta com o ASP.NET](https://msdn.microsoft.com/magazine/dn463786.aspx)
 
 <a id="facebook"></a>
 ### <a name="facebook-template"></a>Modelo para Facebook
@@ -321,7 +321,7 @@ Identidade do ASP.NET é uma boa opção se você estiver criando um site da Int
 
 Para obter mais informações sobre a opção de contas de usuário individuais, consulte os seguintes recursos:
 
-- [www.ASP.NET/Identity](../../../identity/index.md). Documentação sobre a identidade do ASP.NET no site da web ASP.NET.
+- [www.asp.net/identity](../../../identity/index.md). Documentação sobre a identidade do ASP.NET no site da web ASP.NET.
 - [Criar um aplicativo ASP.NET MVC 5 com o Facebook e Google OAuth2 e logon do OpenID](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md). Também mostra como personalizar dados de perfil de usuário.
 - [API da Web - serviços de autenticação externa](../../../web-api/overview/security/external-authentication-services.md)
 - [Adicionar Logins externos ao seu aplicativo ASP.NET no Visual Studio 2013](https://blogs.msdn.com/b/webdev/archive/2013/06/27/adding-external-logins-to-your-asp-net-application-in-visual-studio-2013.aspx)
@@ -360,7 +360,7 @@ Se você deseja tentar uma das opções do AD do Azure, mas não tiver uma conta
 
 ![Autenticação de organização único](creating-web-projects-in-visual-studio/_static/image24.png)
 
-Escolha esta opção se você deseja habilitar a autenticação de contas de usuário que são definidos no AD do Azure uma [locatário](https://technet.microsoft.com/en-us/library/jj573650.aspx). Por exemplo, o site seja contoso.com e ele será disponibilizado para os funcionários da empresa Contoso que estão no locatário contoso.onmicrosoft.com. Você não poderá configurar o AD do Azure para permitir que os usuários de outros locatários para acessar o aplicativo.
+Escolha esta opção se você deseja habilitar a autenticação de contas de usuário que são definidos no AD do Azure uma [locatário](https://technet.microsoft.com/library/jj573650.aspx). Por exemplo, o site seja contoso.com e ele será disponibilizado para os funcionários da empresa Contoso que estão no locatário contoso.onmicrosoft.com. Você não poderá configurar o AD do Azure para permitir que os usuários de outros locatários para acessar o aplicativo.
 
 #### <a name="domain"></a>Domain
 
@@ -368,7 +368,7 @@ Digite o domínio do AD do Azure que você deseja configurar o aplicativo, por e
 
 #### <a name="access-level"></a>Nível de acesso
 
-Se o aplicativo precisar consultar ou atualizar as informações de diretório usando a API do Graph, escolha **o logon único, ler dados do diretório** ou **o logon único, ler e gravar dados do diretório**. Caso contrário, escolha **Single Sign-On**. Para obter mais informações, consulte [níveis de acesso do aplicativo](https://msdn.microsoft.com/en-us/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels) e [usando a API do Graph para consultar o AD do Azure](https://msdn.microsoft.com/en-US/library/windowsazure/dn151791.aspx).
+Se o aplicativo precisar consultar ou atualizar as informações de diretório usando a API do Graph, escolha **o logon único, ler dados do diretório** ou **o logon único, ler e gravar dados do diretório**. Caso contrário, escolha **Single Sign-On**. Para obter mais informações, consulte [níveis de acesso do aplicativo](https://msdn.microsoft.com/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels) e [usando a API do Graph para consultar o AD do Azure](https://msdn.microsoft.com/library/windowsazure/dn151791.aspx).
 
 #### <a name="application-id-uri"></a>URI da ID do aplicativo
 
@@ -386,8 +386,8 @@ Para obter informações sobre como criar aplicativos que usam **nuvem - única 
 
 - [Autenticação do Azure](../2012/windows-azure-authentication.md)
 - [Adicionar logon ao seu aplicativo Web usando o Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151790.aspx)
-- [Desenvolvimento de aplicativos ASP.NET com o Active Directory do Azure](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-- [Proteger a API da Web ASP.NET com o Azure AD e componentes do Microsoft OWIN](https://msdn.microsoft.com/en-us/magazine/dn463788.aspx)
+- [Desenvolvendo aplicativos do ASP.NET com o Azure Active Directory](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
+- [Proteger a API da Web ASP.NET com o Azure AD e componentes do Microsoft OWIN](https://msdn.microsoft.com/magazine/dn463788.aspx)
 
 Os tutoriais ainda não foram atualizados para o Visual Studio 2013; alguns dos quais os tutoriais direcioná-lo para fazer manualmente é automatizada no Visual Studio 2013.
 
@@ -396,14 +396,14 @@ Os tutoriais ainda não foram atualizados para o Visual Studio 2013; alguns dos 
 
 ![Autenticação de organização múltipla](creating-web-projects-in-visual-studio/_static/image25.png)
 
-Escolha esta opção se você deseja habilitar a autenticação de contas de usuário que são definidos no AD do Azure vários [locatários](https://technet.microsoft.com/en-us/library/jj573650.aspx). Por exemplo, o site seja contoso.com e ele será disponibilizado para os funcionários da empresa Contoso que estão no locatário contoso.onmicrosoft.com e funcionários da empresa Fabrikam no locatário fabrikam.onmicrosoft.com.
+Escolha esta opção se você deseja habilitar a autenticação de contas de usuário que são definidos no AD do Azure vários [locatários](https://technet.microsoft.com/library/jj573650.aspx). Por exemplo, o site seja contoso.com e ele será disponibilizado para os funcionários da empresa Contoso que estão no locatário contoso.onmicrosoft.com e funcionários da empresa Fabrikam no locatário fabrikam.onmicrosoft.com.
 
 As configurações que você inserir e o etapa de provisionamento de aplicativo são semelhantes às [autenticação única organização](#orgauthsingle).
 
 Para obter informações sobre como criar aplicativos que usam **nuvem - organização de várias** autenticação, consulte os seguintes recursos:
 
 - [Integração de aplicativo Web fácil com o Active Directory do Azure, ASP.NET &amp; Visual Studio](https://blogs.msdn.com/b/active_directory_team_blog/archive/2013/06/26/improved-windows-azure-active-directory-integration-with-asp-net-amp-visual-studio.aspx) no blog da equipe do Active Directory.
-- [Desenvolvendo aplicativos da Web de multilocatário com o Azure AD](https://msdn.microsoft.com/en-us/library/windowsazure/dn151789.aspx) tutorial. O tutorial ainda não foi atualizado para Visual Studio 2013; alguns dos quais o tutorial direciona você faça manualmente é automatizada no Visual Studio 2013.
+- [Desenvolvendo aplicativos da Web de multilocatário com o Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151789.aspx) tutorial. O tutorial ainda não foi atualizado para Visual Studio 2013; alguns dos quais o tutorial direciona você faça manualmente é automatizada no Visual Studio 2013.
 - [Você precisa inscrever-se com seu próprio aplicativo de ASP.NET várias organizações para que você possa entrar](http://www.cloudidentity.com/blog/2013/10/26/you-have-to-sign-up-with-your-own-multiple-organizations-asp-net-app-before-you-can-sign-in/). Blog Vittorio Bertocci que explica como resolver uma pessoas problema comum encontrar quando criar um projeto que usa a autenticação de organização vários.
 
 <a id="orgauthonprem"></a>

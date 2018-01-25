@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 014fb9fe5fb9fc1a7fe56441bd70e65cfe05862d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 337765988cc6ec92384bec09a72fd00505d9a039
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-templatefields-in-the-gridview-control-vb"></a>Usando TemplateFields no controle GridView (VB)
 ====================
@@ -158,7 +158,7 @@ Para concluir esta etapa primeiro, remova o `LastName` BoundField e renomear o `
 
 ## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>Etapa 3: Usando o controle de calendário para exibir o`HiredDate`campo
 
-Exibir um valor de campo de dados como texto em um GridView é tão simple quanto usar um BoundField. Para determinados cenários, no entanto, os dados são melhor expressos usando um controle de Web específico em vez de texto apenas. Personalização da exibição de dados é possível com TemplateFields. Por exemplo, em vez disso, que exibe a data de contratação do funcionário como texto, pode mostrar um calendário (usando [o controle de calendário](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) com suas datas de contratação realçado.
+Exibir um valor de campo de dados como texto em um GridView é tão simple quanto usar um BoundField. Para determinados cenários, no entanto, os dados são melhor expressos usando um controle de Web específico em vez de texto apenas. Personalização da exibição de dados é possível com TemplateFields. Por exemplo, em vez disso, que exibe a data de contratação do funcionário como texto, pode mostrar um calendário (usando [o controle de calendário](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) com suas datas de contratação realçado.
 
 Para fazer isso, inicie convertendo o `HiredDate` BoundField em um TemplateField. Basta ir para a marca inteligente do GridView e clique no link de editar colunas, abrir a caixa de diálogo de campos. Selecione o `HiredDate` BoundField e clique em "convertem este campo em um TemplateField."
 
@@ -178,7 +178,7 @@ Para substituir o texto com um controle de calendário, edite o modelo, removend
 **Figura 12**: adicionar um controle de calendário para o `HireDate` do TemplateField `ItemTemplate` ([clique para exibir a imagem em tamanho normal](using-templatefields-in-the-gridview-control-vb/_static/image36.png))
 
 
-Neste ponto, cada linha em GridView conterá um controle de calendário no seu `HiredDate` TemplateField. No entanto, o funcionário real da `HiredDate` valor não está definido em qualquer lugar no controle de calendário, fazendo com que cada controle de calendário padrão para mostrando a data e o mês atual. Para corrigir isso, é preciso atribuir a cada funcionário `HiredDate` para o controle de calendário [SelectedDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) e [VisibleDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) propriedades.
+Neste ponto, cada linha em GridView conterá um controle de calendário no seu `HiredDate` TemplateField. No entanto, o funcionário real da `HiredDate` valor não está definido em qualquer lugar no controle de calendário, fazendo com que cada controle de calendário padrão para mostrando a data e o mês atual. Para corrigir isso, é preciso atribuir a cada funcionário `HiredDate` para o controle de calendário [SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) e [VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) propriedades.
 
 Na marca inteligente do controle de calendário, escolha Editar DataBindings. Em seguida, associe ambas `SelectedDate` e `VisibleDate` propriedades para o `HiredDate` campo de dados.
 

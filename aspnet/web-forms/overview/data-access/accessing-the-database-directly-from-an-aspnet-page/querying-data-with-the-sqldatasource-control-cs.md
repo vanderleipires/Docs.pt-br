@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1e9950619dc9d0c8aa2911eb05911cf008989e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4652e5820e621a7b2ad3b03bb5a1d2cb4968fadd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="querying-data-with-the-sqldatasource-control-c"></a>Consultando dados com o controle SqlDataSource (c#)
 ====================
@@ -33,7 +33,7 @@ Todos os tutoriais usou uma arquitetura em camadas que consiste em camadas de ac
 
 Enquanto todos os tutoriais até tem usado a arquitetura para trabalhar com dados, também é possível acessar, inserir, atualizar e excluir dados de banco de dados diretamente de uma página ASP.NET, ignorando a arquitetura. Isso coloca as consultas de banco de dados específico e a lógica de negócios diretamente na página da web. Para aplicativos suficientemente grandes ou complexos, criar, implementar e usando uma arquitetura em camadas são extremamente importante para o sucesso, a atualização e a facilidade de manutenção do aplicativo. Desenvolvendo uma arquitetura robusta, no entanto, pode ser desnecessário ao criar aplicativos muito simples, únicos.
 
-O ASP.NET 2.0 fornece controles de fonte de dados internos cinco [SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/en-us/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/en-us/library/e8d8587a%28en-US,VS.80%29.aspx), e [SiteMapDataSource](https://msdn.microsoft.com/en-us/library/5ex9t96x%28en-US,VS.80%29.aspx). O SqlDataSource pode ser usado para acessar e modificar dados diretamente de um banco de dados relacional, incluindo o Microsoft SQL Server, Microsoft Access, Oracle, MySQL e outros. Este tutorial e as próximas três, examinaremos como trabalhar com o controle SqlDataSource, explorar como consultar e filtrar dados do banco de dados, bem como usar o SqlDataSource para inserir, atualizar e excluir dados.
+O ASP.NET 2.0 fornece controles de fonte de dados internos cinco [SqlDataSource](https://msdn.microsoft.com/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/library/e8d8587a%28en-US,VS.80%29.aspx), e [SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x%28en-US,VS.80%29.aspx). O SqlDataSource pode ser usado para acessar e modificar dados diretamente de um banco de dados relacional, incluindo o Microsoft SQL Server, Microsoft Access, Oracle, MySQL e outros. Este tutorial e as próximas três, examinaremos como trabalhar com o controle SqlDataSource, explorar como consultar e filtrar dados do banco de dados, bem como usar o SqlDataSource para inserir, atualizar e excluir dados.
 
 
 ![ASP.NET 2.0 inclui cinco controles de fonte de dados internos](querying-data-with-the-sqldatasource-control-cs/_static/image1.gif)
@@ -144,12 +144,12 @@ Depois de configurar o Assistente para retornar o `ProductID`, `ProductName`, e 
 
 Para concluir o assistente, clique em Concluir.
 
-Como com ObjectDataSource, o Assistente de s SqlDataSource simplesmente atribui valores às propriedades do controle s, ou seja, o [ `ConnectionString` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) e [ `SelectCommand` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) propriedades. Depois de concluir o assistente, sua marcação declarativa de s de controle SqlDataSource deve ser semelhante ao seguinte:
+Como com ObjectDataSource, o Assistente de s SqlDataSource simplesmente atribui valores às propriedades do controle s, ou seja, o [ `ConnectionString` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) e [ `SelectCommand` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) propriedades. Depois de concluir o assistente, sua marcação declarativa de s de controle SqlDataSource deve ser semelhante ao seguinte:
 
 
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-cs/samples/sample2.aspx)]
 
-O `ConnectionString` propriedade fornece informações sobre como conectar-se ao banco de dados. Essa propriedade pode ser atribuída um valor de cadeia de caracteres de conexão completa, embutido ou pode apontar para uma cadeia de caracteres de conexão em `Web.config`. Para fazer referência a um valor de cadeia de caracteres de conexão no Web. config, use a sintaxe `<%$ expressionPrefix:expressionValue %>`. Normalmente, *expressionPrefix* é ConnectionStrings e *expressionValue* é o nome da cadeia de conexão no `Web.config` [ `<connectionStrings>` seção](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx). No entanto, a sintaxe pode ser usada para referência `<appSettings>` elementos ou o conteúdo dos arquivos de recursos. Consulte [ASP.NET Expressions Overview](https://msdn.microsoft.com/en-us/library/d5bd1tad.aspx) para obter mais informações sobre essa sintaxe.
+O `ConnectionString` propriedade fornece informações sobre como conectar-se ao banco de dados. Essa propriedade pode ser atribuída um valor de cadeia de caracteres de conexão completa, embutido ou pode apontar para uma cadeia de caracteres de conexão em `Web.config`. Para fazer referência a um valor de cadeia de caracteres de conexão no Web. config, use a sintaxe `<%$ expressionPrefix:expressionValue %>`. Normalmente, *expressionPrefix* é ConnectionStrings e *expressionValue* é o nome da cadeia de conexão no `Web.config` [ `<connectionStrings>` seção](https://msdn.microsoft.com/library/bf7sd233.aspx). No entanto, a sintaxe pode ser usada para referência `<appSettings>` elementos ou o conteúdo dos arquivos de recursos. Consulte [ASP.NET Expressions Overview](https://msdn.microsoft.com/library/d5bd1tad.aspx) para obter mais informações sobre essa sintaxe.
 
 O `SelectCommand` propriedade especifica a instrução de SQL ad hoc ou o procedimento armazenado a ser executada para retornar os dados.
 
@@ -190,7 +190,7 @@ Outro recurso com paginação e classificação surge com SqlDataSource. Por pad
 
 Classificação e paginação funcionam porque o SqlDataSource recupera os dados do banco de dados em um DataSet tipadas vagamente. O número total de registros retornados pela consulta um aspecto essencial para a implementação de paginação pode ser determinado do conjunto de dados. Além disso, os resultados do conjunto de dados s podem ser classificados por meio de uma exibição de dados. Esses recursos serão automaticamente usados pelo SqlDataSource quando as solicitações de GridView paginável ou dados classificados.
 
-O SqlDataSource pode ser configurado para retornar um DataReader em vez de um conjunto de dados alterando sua [ `DataSourceMode` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx) de `DataSet` (o padrão) para `DataReader`. Usando um DataReader pode ser preferencial em situações ao passar os resultados de s SqlDataSource para código existente que espera um DataReader. Além disso, como DataReaders são objetos consideravelmente mais simples de conjuntos de dados, eles oferecem um desempenho melhor. Se você fizer essa alteração, no entanto, o controle da Web de dados não pode classificar nem página desde o SqlDataSource não pode determinar quantos registros são retornados pela consulta, nem o DataReader oferecem qualquer técnicas para classificar os dados retornados.
+O SqlDataSource pode ser configurado para retornar um DataReader em vez de um conjunto de dados alterando sua [ `DataSourceMode` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx) de `DataSet` (o padrão) para `DataReader`. Usando um DataReader pode ser preferencial em situações ao passar os resultados de s SqlDataSource para código existente que espera um DataReader. Além disso, como DataReaders são objetos consideravelmente mais simples de conjuntos de dados, eles oferecem um desempenho melhor. Se você fizer essa alteração, no entanto, o controle da Web de dados não pode classificar nem página desde o SqlDataSource não pode determinar quantos registros são retornados pela consulta, nem o DataReader oferecem qualquer técnicas para classificar os dados retornados.
 
 ## <a name="step-4-using-a-custom-sql-statement-or-stored-procedure"></a>Etapa 4: Usando uma instrução SQL personalizada ou procedimento armazenado
 
@@ -249,9 +249,9 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [Acessando dados do banco de dados relacional](http://aspnet.4guysfromrolla.com/articles/022206-1.aspx)
-- [Visão geral do controle SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w.aspx)
+- [Visão geral do controle SqlDataSource](https://msdn.microsoft.com/library/dz12d98w.aspx)
 - [Tutoriais de início rápido do ASP.NET: O controle SqlDataSource](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/data/sqldatasource.aspx)
-- [O Web. config `<connectionStrings>` elemento](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)
+- [O Web. config `<connectionStrings>` elemento](https://msdn.microsoft.com/library/bf7sd233.aspx)
 - [Referência de cadeia de caracteres de Conexão do banco de dados](http://www.connectionstrings.com/)
 
 ## <a name="about-the-author"></a>Sobre o autor

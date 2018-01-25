@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4e8b4e6a12c010b227ee9a236130cbfd26d75657
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 715f7e3fae89e773b686faa7c49522c587693eec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>Criar novos procedimentos armazenados para TableAdapters do conjunto de dados tipado (c#)
 ====================
@@ -47,7 +47,7 @@ Funções são uma construção comum para todas as linguagens de programação.
 > Procedimentos armazenados são muitas vezes, conhecidos como sprocs ou SPs.
 
 
-Procedimentos armazenados são criados usando o [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/en-us/library/aa258259(SQL.80).aspx) instrução T-SQL. Por exemplo, o script T-SQL a seguir cria um procedimento armazenado denominado `GetProductsByCategoryID` que assume um parâmetro único chamado `@CategoryID` e retorna o `ProductID`, `ProductName`, `UnitPrice`, e `Discontinued` campos dessas colunas do `Products` tabela que tenha uma correspondência `CategoryID` valor:
+Procedimentos armazenados são criados usando o [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/library/aa258259(SQL.80).aspx) instrução T-SQL. Por exemplo, o script T-SQL a seguir cria um procedimento armazenado denominado `GetProductsByCategoryID` que assume um parâmetro único chamado `@CategoryID` e retorna o `ProductID`, `ProductName`, `UnitPrice`, e `Discontinued` campos dessas colunas do `Products` tabela que tenha uma correspondência `CategoryID` valor:
 
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample1.sql)]
@@ -384,7 +384,7 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [Criar e manter procedimentos armazenados](https://msdn.microsoft.com/en-us/library/aa214299(SQL.80).aspx)
+- [Criar e manter procedimentos armazenados](https://msdn.microsoft.com/library/aa214299(SQL.80).aspx)
 - [Recuperação de dados escalar de um procedimento armazenado](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 - [Conceitos básicos de procedimento armazenado do SQL Server](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)
 - [Procedimentos armazenados: Uma visão geral](http://www.sqlteam.com/item.asp?ItemID=563)

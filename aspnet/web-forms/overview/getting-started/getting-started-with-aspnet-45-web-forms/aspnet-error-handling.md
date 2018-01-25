@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d5d89a6a82c91b915d61ddc3c350ea0935511c07
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c5ec43ac78be4a9452ebaa6495a6883506ac162f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-error-handling"></a>Tratamento de erros do ASP.NET
 ====================
@@ -37,7 +37,7 @@ Neste tutorial, você modificará o aplicativo de exemplo Wingtip Toys para incl
 - Como exibir mensagens de erro que não comprometer a segurança.
 - Como implementar manipuladores (ELMAH) e módulos de log de erro de log de erros.
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Aplicativos ASP.NET devem ser capazes de manipular erros que ocorrem durante a execução de uma maneira consistente. O ASP.NET usa o common language runtime (CLR), que fornece uma maneira de notificar aplicativos de erros de maneira uniforme. Quando ocorre um erro, uma exceção será lançada. Uma exceção é qualquer erro, uma condição ou um comportamento inesperado que encontrar um aplicativo.
 
@@ -313,7 +313,7 @@ Neste tutorial, você aprendeu sobre tratamento de erros no nível do aplicativo
 
 ## <a name="tutorial-series-conclusion"></a>Conclusão da série de tutoriais
 
-*Obrigado por acompanhar. Espero que este conjunto de tutoriais ajudou a se familiarizar com o Web Forms do ASP.NET. Se você precisar de mais informações sobre os recursos de Web Forms disponíveis no ASP.NET 4.5 e no Visual Studio 2013, consulte* [ *ASP.NET e Web Tools para notas de versão do Visual Studio 2013* ](../../../../visual-studio/overview/2013/release-notes.md)  *. Além disso, certifique-se de examinar o tutorial mencionado no*   ***próximas etapas * seção e defintely experimentar o* [ *gratuita do Azure* ](https://azure.microsoft.com/pricing/free-trial/)*.*
+*Obrigado por acompanhar. Espero que este conjunto de tutoriais ajudou a se familiarizar com o Web Forms do ASP.NET. Se você precisar de mais informações sobre os recursos de Web Forms disponíveis no ASP.NET 4.5 e no Visual Studio 2013, consulte* [ *ASP.NET e Web Tools para notas de versão do Visual Studio 2013* ](../../../../visual-studio/overview/2013/release-notes.md)  *. Além disso, certifique-se de examinar o tutorial mencionado no* ***próximas etapas * seção e defintely experimentar o* [ *gratuita do Azure* ](https://azure.microsoft.com/pricing/free-trial/)*.*
 
 ![Obrigado - Erik](aspnet-error-handling/_static/image10.png)  
 
@@ -335,13 +335,13 @@ Saiba mais sobre como implantar seu aplicativo web para o Microsoft Azure, consu
 
 Gostaria de agradecer seguintes pessoas que fizeram contribuições significativas para o conteúdo desta série tutorial:
 
-- [Alberto Poblacion, MVP &amp; MCT, Espanha](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion, MVP &amp; MCT, Espanha](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - [Alex Thissen, Holanda](http://blog.alexthissen.nl/) (twitter: [ @alexthissen ](http://twitter.com/alexthissen))
 - [Andre Tournier, EUA](http://andret503.wordpress.com/)
 - Apurva Joshi, Microsoft
-- [Bojan Vrhovnik, Eslovênia](http://twitter.com/bvrhovnik)
+- [Bojan Vrhovnik, Slovenia](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino, Brasil](http://msmvps.com/blogs/bsonnino) (twitter: [ @bsonnino ](http://twitter.com/bsonnino))
-- [Dos Carlos Santos, Brasil](http://www.carloscds.net/)
+- [Carlos dos Santos, Brazil](http://www.carloscds.net/)
 - [Dave Campbell, USA](http://www.wynapse.com/) (twitter: [ @windowsdevnews ](http://twitter.com/windowsdevnews))
 - [Jon Galloway, Microsoft](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))
 - [Michael cerquilha, EUA](http://www.930solutions.com/) (twitter: [ @mrsharps ](http://twitter.com/mrsharps))

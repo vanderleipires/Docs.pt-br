@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: 0ab0b4c24c1771a21c45bac011b5f156cb15d28a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e06d37c01ab66f0723b687f4ed1ee72561099aef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="manually-installing-web-packages"></a>Instalando manualmente os pacotes da Web
 ====================
@@ -131,7 +131,7 @@ Este tópico descreveu como importar um pacote de implantação da web para um s
 
 ## <a name="further-reading"></a>Leitura adicional
 
-Para obter orientação sobre como configurar um servidor de web do IIS para dar suporte à importação manual de um pacote da web, consulte [configurar um servidor Web para publicação de implantação do Web (implantação Offline)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Para obter orientação geral sobre a implantação de pacotes da web, consulte [passo a passo: Implantando um projeto de aplicativo Web usando um pacote de implantação da Web (parte 1 de 4)](https://msdn.microsoft.com/en-us/library/dd483479.aspx).
+Para obter orientação sobre como configurar um servidor de web do IIS para dar suporte à importação manual de um pacote da web, consulte [configurar um servidor Web para publicação de implantação do Web (implantação Offline)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Para obter orientação geral sobre a implantação de pacotes da web, consulte [passo a passo: Implantando um projeto de aplicativo Web usando um pacote de implantação da Web (parte 1 de 4)](https://msdn.microsoft.com/library/dd483479.aspx).
 
 >[!div class="step-by-step"]
 [Anterior](creating-and-running-a-deployment-command-file.md)

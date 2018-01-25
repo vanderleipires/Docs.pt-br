@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: a0f25ed3c996b73e362177b196539c6f2b143739
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98647830125670ee2ed43538d65fb3ce6ac40d0d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>Alterações de quebra 4 do ASP.NET
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 ## <a name="contents"></a>Conteúdo
 
 [Configuração de ControlRenderingCompatibilityVersion no arquivo Web. config](#0.1__Toc256770141 "_Toc256770141")  
-[Alterações de ClientIDMode](#0.1__Toc256770142 "_Toc256770142")  
+[ClientIDMode Changes](#0.1__Toc256770142 "_Toc256770142")  
 [Aspas simples de codificar HtmlEncode e UrlEncode agora](#0.1__Toc256770143 "_Toc256770143")  
 [Página do ASP.NET (. aspx) analisador é Stricter](#0.1__Toc256770144 "_Toc256770144")  
 [Arquivos de definição de navegador atualizados](#0.1__Toc256770145 "_Toc256770145")  
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 [Tipos de System.Web.Security Passport são obsoleto](#0.1__Toc256770158 "_Toc256770158")  
 [A propriedade MenuItem.PopOutImageUrl falhar ao processar uma imagem no ASP.NET 4](#0.1__Toc256770159 "_Toc256770159")  
 [Menu.StaticPopOutImageUrl e Menu.DynamicPopOutImageUrl Falha ao renderizar imagens quando caminhos conter barras invertidas](#0.1__Toc256770160 "_Toc256770160")  
-[Isenção de responsabilidade](#0.1__Toc256770161 "_Toc256770161")
+[Disclaimer](#0.1__Toc256770161 "_Toc256770161")
 
 <a id="0.1__ControlRenderingCompatibilityVersio"></a><a id="0.1__Toc245724853"></a><a id="0.1__Toc255587630"></a><a id="0.1__Toc256770141"></a>
 
@@ -272,15 +272,15 @@ Versões anteriores do ASP.NET incluído um **PathInfo** valor no valor retornad
 
 Em versões anteriores do ASP.NET, **HttpRequest** propriedades têm os seguintes valores:
 
-**HttpRequest.FilePath**:`/testapp/Action.mvc/SomeAction`
+**HttpRequest.FilePath**: `/testapp/Action.mvc/SomeAction`
 
 **HttpRequest.PathInfo**: (vazio)
 
 No ASP.NET 4, **HttpRequest** propriedades em vez disso, tem os seguintes valores:
 
-**HttpRequest.FilePath**:`/testapp/Action.mvc`
+**HttpRequest.FilePath**: `/testapp/Action.mvc`
 
-**HttpRequest.PathInfo**:`SomeAction`
+**HttpRequest.PathInfo**: `SomeAction`
 
 <a id="0.1__Toc252995493"></a><a id="0.1__Toc255587642"></a><a id="0.1__Toc256770153"></a><a id="0.1__Toc245724861"></a>
 
@@ -385,7 +385,7 @@ Este é um resumo de alto nível das alterações na implementação de autorida
 - Assemblies compilados dinamicamente que são criados pelos provedores de compilação do ASP.NET foram atualizados para marcar explicitamente assemblies como transparente.
 - Agora, todos os assemblies do ASP.NET são marcados de forma que o atributo APTCA é respeitado apenas em ambientes de hospedagem na Web. Parcialmente confiáveis ambientes de hospedagem não Web como o ClickOnce não poderá chamar assemblies do ASP.NET.
 
-Para obter mais informações sobre o novo modelo de segurança de acesso de código ASP.NET 4, consulte [usando a segurança do acesso do código em aplicativos ASP.NET](https://msdn.microsoft.com/en-us/library/dd984947%28VS.100%29.aspx) no site do MSDN.
+Para obter mais informações sobre o novo modelo de segurança de acesso de código ASP.NET 4, consulte [usando a segurança do acesso do código em aplicativos ASP.NET](https://msdn.microsoft.com/library/dd984947%28VS.100%29.aspx) no site do MSDN.
 
 <a id="0.1__Toc256770156"></a><a id="0.1__Toc245724863"></a><a id="0.1__Toc252995496"></a><a id="0.1__Toc255587645"></a><a id="0.1__Toc245724864"></a>
 
@@ -420,7 +420,7 @@ A lista a seguir mostra o *System.Web.Security* tipos que foram movidos de `Syst
 - *System.Web.Security.MembershipUserCollection*
 - *System.Web.Security.MembershipValidatePasswordEventHandler*
 - *System.Web.Security.ValidatePasswordEventArgs*
-- *RoleProvider*
+- *System.Web.Security.RoleProvider*
 - <a id="0.1_a"></a>*System.Web.Configuration.MembershipPasswordCompatibilityMode*
 
 <a id="0.1__Toc256770157"></a>

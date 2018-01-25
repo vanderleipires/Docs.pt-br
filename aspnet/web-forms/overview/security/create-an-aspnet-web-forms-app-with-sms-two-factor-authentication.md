@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 92ab5f2d7a9a29089f3d340849e229d015613509
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1f0ec0fdefa12eb7f7b2714dbc224fef735f4bb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>Criar um Web ASP.NET Forms aplicativo com autenticação de dois fatores do SMS (c#)
 ====================
@@ -111,9 +111,9 @@ Neste ponto, você tiver habilitado a autenticação de dois fatores para seu ap
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Autenticação de dois fatores usando SMS e email com a identidade do ASP.NET](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [Autenticação de dois fatores usando SMS e email com a Identidade do ASP.NET](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
 - [Links para a identidade do ASP.NET recomendado recursos](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
-- [Implantar um aplicativo de formulários da Web do ASP.NET seguro com associação, OAuth e o banco de dados SQL em um site do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
+- [Implantar um aplicativo de formulários da Web do ASP.NET seguro com associação, OAuth e o banco de dados SQL em um site do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
 - [Série de tutoriais do Web Forms do ASP.NET - adicionar um provedor do OAuth 2.0](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#OAuthWebForms)
 - [Série de tutoriais de Web Forms do ASP.NET - habilitar SSL para o projeto](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#SSLWebForms)
 - [Confirmação de conta e senha de recuperação com a identidade do ASP.NET](../../../identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)

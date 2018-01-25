@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
-ms.openlocfilehash: 997756ff8d48e41da981491d6154f3107ec7a051
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d38e6fbc3407e4beca6942bbdefcaa8258ebc5ad
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-signalr-self-host"></a>Tutorial: SignalR auto-host
 ====================
@@ -51,7 +51,7 @@ por [Patrick Fletcher](https://github.com/pfletcher)
 > Deixe comentários em como você gostou neste tutorial e o que podemos melhorar nos comentários na parte inferior da página. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [ASP.NET SignalR fórum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Um servidor do SignalR é geralmente hospedado em um aplicativo ASP.NET no IIS, mas também pode ser auto-hospedado (como em um aplicativo de console ou o serviço do Windows) usando a biblioteca de hospedagem interna. Essa biblioteca, como todas SignalR 2, se baseia no OWIN ([Interface Web aberta para .NET](http://owin.org)). OWIN define uma abstração entre os servidores de web do .NET e aplicativos da web. OWIN separa o aplicativo web do servidor, o que torna OWIN ideal para hospedagem interna de um aplicativo da web em seu próprio processo e fora do IIS.
 
@@ -94,7 +94,7 @@ Neste tutorial, você criará um servidor que está hospedado em um aplicativo d
 
     O código acima inclui três classes:
 
-    - **Programa**, incluindo o **principal** definindo o caminho primário da execução do método. Nesse método, um aplicativo web do tipo **inicialização** é iniciado na URL especificada (`http://localhost:8080`). Se segurança for necessária no ponto de extremidade, o SSL pode ser implementado. Consulte [como: configurar uma porta com um certificado SSL](https://msdn.microsoft.com/en-us/library/ms733791.aspx) para obter mais informações.
+    - **Programa**, incluindo o **principal** definindo o caminho primário da execução do método. Nesse método, um aplicativo web do tipo **inicialização** é iniciado na URL especificada (`http://localhost:8080`). Se segurança for necessária no ponto de extremidade, o SSL pode ser implementado. Consulte [como: configurar uma porta com um certificado SSL](https://msdn.microsoft.com/library/ms733791.aspx) para obter mais informações.
     - **Inicialização**, a classe que contém a configuração para o servidor do SignalR (a única configuração este tutorial usa é a chamada ao `UseCors`) e a chamada para `MapSignalR`, que cria rotas para todos os objetos Hub no projeto.
     - **MyHub**, a classe de SignalR Hub que o aplicativo irá fornecer aos clientes. Essa classe tem um único método, **enviar**, que os clientes serão chamada para difundir uma mensagem para todos os outros clientes conectados.
 6. Compile e execute o aplicativo. O endereço que o servidor está executando deve mostrar na janela do console.

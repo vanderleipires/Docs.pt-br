@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 10835c39d3bca752ed3068a23fecaaab56449e41
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f38a0f2693aeb2a4884b9c03719b583423957a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET e Web Tools para notas de versão do Visual Studio 2013
 ====================
@@ -40,11 +40,11 @@ por [Microsoft](https://github.com/microsoft)
 - [Aprimoramentos do Editor do Visual Studio Web](#web-editor)
 - [Suporte a aplicativos da Web do serviço de aplicativo do Azure no Visual Studio](#waws)
 - [Aprimoramentos de publicação da Web](#publish)
-- [2.7 NuGet](#nuget)
+- [NuGet 2.7](#nuget)
 - [Web Forms do ASP.NET](#TOC9)
-- [O ASP.NET MVC 5](#TOC10)
+- [ASP.NET MVC 5](#TOC10)
 - [ASP.NET Web API 2](#TOC11)
-- [SignalR do ASP.NET](#TOC13)
+- [ASP.NET SignalR](#TOC13)
 - [Identidade do ASP.NET](#TOC8)
 - [Componentes do Microsoft OWIN](#TOC7)
 - [Entity Framework 6](#ef6)
@@ -137,8 +137,8 @@ No Visual Studio 2013 com o SDK do Azure para .NET 2.2, você pode usar **Server
 
 Para obter mais informações, consulte os seguintes recursos:
 
-- [Criar um aplicativo web ASP.NET no serviço de aplicativo do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)
-- [Solucionar problemas de um aplicativo web no serviço de aplicativo do Azure usando o Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [Criar um aplicativo web ASP.NET no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
+- [Solucionar problemas de um aplicativo web no serviço de aplicativo do Azure usando o Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Aprimoramentos de publicação da Web
@@ -185,7 +185,7 @@ Para obter informações sobre como atualizar projetos MVC 4 a 5 do MVC, consult
 
 ### <a name="aspnet-identity"></a>ASP.NET Identity
 
-Os modelos de projeto MVC foram atualizados para usar a identidade do ASP.NET para autenticação e gerenciamento de identidade. Um tutorial com a autenticação do Facebook e do Google e a nova API de associação pode ser encontrado em [criar um aplicativo do ASP.NET MVC 5 com o Facebook e Google OAuth2 e Sign-on OpenID](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) e [criar um aplicativo ASP.NET MVC com autenticação e Banco de dados SQL e implantar o serviço de aplicativo do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
+Os modelos de projeto MVC foram atualizados para usar a identidade do ASP.NET para autenticação e gerenciamento de identidade. Um tutorial com a autenticação do Facebook e do Google e a nova API de associação pode ser encontrado em [criar um aplicativo do ASP.NET MVC 5 com o Facebook e Google OAuth2 e Sign-on OpenID](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) e [criar um aplicativo ASP.NET MVC com autenticação e Banco de dados SQL e implantar o serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
 
 ### <a name="bootstrap"></a>inicialização
 
@@ -303,7 +303,7 @@ ASP.NET Web API agora totalmente suporta OWIN e pode ser executada em qualquer h
 Com a integração de OWIN, você pode hospedar automaticamente API da Web em seu próprio processo junto com outros middleware OWIN, como o SignalR. Para obter mais informações, consulte [OWIN de uso Self-Host ASP.NET Web API](../../../signalr/overview/deployment/tutorial-signalr-self-host.md).
 
 <a id="TOC13"></a>
-## <a name="aspnet-signalr-20"></a>SignalR do ASP.NET 2.0
+## <a name="aspnet-signalr-20"></a>ASP.NET SignalR 2.0
 
 As seções a seguir descrevem os recursos do SignalR 2.0.
 
@@ -531,7 +531,7 @@ Para obter mais informações sobre OWIN e Katana, consulte [o que há de novo n
 
 Com esta versão, os novos componentes foram adicionados para habilitar cenários de hospedagem interna. Esses componentes incluem os seguintes pacotes do NuGet:
 
-- **HttpListener**. Fornece um servidor OWIN que usa **HttpListener** para escutar solicitações HTTP e encaminhá-los no pipeline OWIN.
+- **Microsoft.Owin.Host.HttpListener**. Fornece um servidor OWIN que usa **HttpListener** para escutar solicitações HTTP e encaminhá-los no pipeline OWIN.
 - **Hosting** fornece uma biblioteca para desenvolvedores que desejam hospedagem interna de um pipeline OWIN em um processo personalizado, como um aplicativo de console ou o serviço do Windows.
 - **OwinHost**. Fornece um executável autônomo que encapsula `Microsoft.Owin.Hosting` e lhe permite hospedar internamente um pipeline OWIN sem precisar escrever um aplicativo de host personalizado.
 
@@ -553,13 +553,13 @@ Esta versão também inclui o pacote pt, que inclui o middleware para validar um
 
 Os seguintes componentes de autenticação estão disponíveis.
 
-- **ActiveDirectory**. Habilita a autenticação usando os serviços de diretório local ou baseado em nuvem.
+- **Microsoft.Owin.Security.ActiveDirectory**. Habilita a autenticação usando os serviços de diretório local ou baseado em nuvem.
 - **Owin** habilita a autenticação de uso de cookies. Este pacote era denominado `Microsoft.Owin.Security.Forms`.
 - **Owin** habilita a autenticação usando o serviço de com base em OAuth do Facebook.
 - **Owin** habilita a autenticação usando o serviço do Google OpenID.
 - **Owin** habilita a autenticação usando tokens JWT.
 - **MicrosoftAccount** habilita a autenticação usando contas da Microsoft.
-- **Owin**. Fornece um servidor de autorização de OAuth, bem como o middleware de autenticação de tokens de portador.
+- **Microsoft.Owin.Security.OAuth**. Fornece um servidor de autorização de OAuth, bem como o middleware de autenticação de tokens de portador.
 - **Owin** habilita a autenticação usando o serviço do Twitter OAuth.
 
 Esta versão também inclui o `Microsoft.Owin.Cors` pacote, que contém o middleware para processamento de solicitações HTTP entre origens.
@@ -643,7 +643,7 @@ Esta seção descreve problemas conhecidos e alterações significativas no ASP.
     Isso será corrigido para a próxima versão.
 2. Depois de atualizar um aplicativo MVC4 para MVC5, compile a solução e iniciá-lo. Você deve ver o seguinte erro:
 
-    [A] System.Web.WebPages.Razor.Configuration.HostSection não pode ser convertido em [B]System.Web.WebPages.Razor.Configuration.HostSection. Digite uma se origina de ' webpages, versão = 2.0.0.0, cultura = neutral, PublicKeyToken = 31bf3856ad364e35' no contexto 'Default' no local ' C:\windows\Microsoft.Net\assembly\GAC\_MSIL\System.Web.WebPages.Razor\ v 4.0\_2.0.0.0\_\_31bf3856ad364e35\System.Web.WebPages.Razor.dll'. Tipo B se origina de ' webpages, versão = 3.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35' no contexto 'Default' local ' C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\6d05bbd0\ e8b5908e\assembly\dl3\c9cbca63\f8910382\_6273ce01\System.Web.WebPages.Razor.dll'.
+    [A]System.Web.WebPages.Razor.Configuration.HostSection cannot be cast to [B]System.Web.WebPages.Razor.Configuration.HostSection. Digite uma se origina de ' webpages, versão = 2.0.0.0, cultura = neutral, PublicKeyToken = 31bf3856ad364e35' no contexto 'Default' no local ' C:\windows\Microsoft.Net\assembly\GAC\_MSIL\System.Web.WebPages.Razor\ v 4.0\_2.0.0.0\_\_31bf3856ad364e35\System.Web.WebPages.Razor.dll'. Tipo B se origina de ' webpages, versão = 3.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35' no contexto 'Default' local ' C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\6d05bbd0\ e8b5908e\assembly\dl3\c9cbca63\f8910382\_6273ce01\System.Web.WebPages.Razor.dll'.
 
     Para corrigir o erro acima, abra *todos os* arquivos Web. config (incluindo aqueles na pasta modos de exibição) no seu projeto e faça o seguinte:
 
@@ -666,7 +666,7 @@ Esta seção descreve problemas conhecidos e alterações significativas no ASP.
     Para:
 
     `@Html.TextBoxFor(person => person.Age)`
-4. O ASP.NET MVC 5 não dá suporte a confiança parcial. Projetos de vinculação para os binários do MVC ou WebAPI devem remover o [SecurityTransparent](https://msdn.microsoft.com/en-us/library/system.security.securitytransparentattribute.aspx) atributo e o [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/en-us/library/system.security.allowpartiallytrustedcallersattribute.aspx) atributo. Remover esses atributos elimina erros de compilador como a seguir.
+4. O ASP.NET MVC 5 não dá suporte a confiança parcial. Projetos de vinculação para os binários do MVC ou WebAPI devem remover o [SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx) atributo e o [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx) atributo. Remover esses atributos elimina erros de compilador como a seguir.
 
     `Attempt by security transparent method ‘MyComponent' to access security critical type 'System.Web.Mvc.MvcHtmlString' failed. Assembly 'PagedList.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1' is marked with the AllowPartiallyTrustedCallersAttribute, and uses the level 2 security transparency model. Level 2 transparency causes all methods in AllowPartiallyTrustedCallers assemblies to become security transparent by default, which may be the cause of this exception.`
 

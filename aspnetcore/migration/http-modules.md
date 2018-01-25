@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: 44b2b38c284e678344432d4473162404b4bb75a5
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a38ddc64583de05b4088cd31d48fbd7ee949d4e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrando manipuladores HTTP e módulos ASP.NET Core middleware 
 
@@ -51,7 +51,7 @@ Antes de prosseguir para o ASP.NET Core middleware, vejamos primeiro novamente c
 
    1. O [ciclo de vida do aplicativo](https://msdn.microsoft.com/library/ms227673.aspx), que é um eventos série acionado pelo ASP.NET: [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest), etc. Cada módulo pode criar um manipulador de eventos de um ou mais.
 
-   2. Para o mesmo evento, a ordem na qual eles são configurados em *Web. config*.
+   2. Para o mesmo evento, a ordem na qual eles foram configurados no *Web. config*.
 
 Além de módulos, você pode adicionar manipuladores para os eventos de ciclo de vida para o *Global.asax.cs* arquivo. Esses manipuladores executar após os manipuladores nos módulos configurados.
 
@@ -77,7 +77,7 @@ Além de módulos, você pode adicionar manipuladores para os eventos de ciclo d
 
 **Middleware e módulos são processados em uma ordem diferente:**
 
-   * Ordem de middleware é baseada na ordem em que são inseridos no pipeline de solicitação, enquanto a ordem dos módulos baseia-se principalmente em [ciclo de vida do aplicativo](https://msdn.microsoft.com/library/ms227673.aspx) eventos
+   * Ordem de middleware é baseada na ordem em que inserção no pipeline de solicitação, enquanto a ordem dos módulos baseia-se principalmente em [ciclo de vida do aplicativo](https://msdn.microsoft.com/library/ms227673.aspx) eventos
 
    * Ordem de middleware para respostas é o oposto do que para solicitações, enquanto a ordem dos módulos é o mesmo para solicitações e respostas
 
@@ -105,7 +105,7 @@ O *MyMiddlewareExtensions* classe auxiliar torna mais fácil de configurar o mid
 
 <a name="http-modules-shortcircuiting-middleware"></a>
 
-O módulo pode encerrar uma solicitação, por exemplo, se o usuário não está autorizado:
+O módulo pode encerrar uma solicitação, por exemplo, se o usuário não autorizado:
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 

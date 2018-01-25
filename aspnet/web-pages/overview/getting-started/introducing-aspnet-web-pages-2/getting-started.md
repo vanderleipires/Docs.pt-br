@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 615ddc31d0d857e5bf9a7f372b7efcf67d185905
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a6789ee75b4ca6e9443681cc7ec0bd3ab94cedcd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>Introdução a páginas da Web ASP.NET - Introdução
 ====================
@@ -53,7 +53,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > 
 > - Páginas da Web do ASP.NET (Razor) 2
-> - O WebMatrix 3
+> - WebMatrix 3
 
 
 ## <a name="what-should-you-know"></a>O que você deve saber?
@@ -124,8 +124,8 @@ Você gostaria de ver o site concluído em execução como um aplicativo web em 
 
 Você precisa de uma conta do Azure para implantar essa solução no Azure. Se você não tiver uma conta, você tem as seguintes opções:
 
-- [Abra uma conta do Azure gratuitamente](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604) -você obtém créditos você pode usar para experimentar os serviços do Azure pagos e mesmo depois que eles são usados até que você pode manter a conta e livre de usar os serviços do Azure.
-- [Ativar os benefícios de assinante do MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -assinatura do MSDN fornece créditos de cada mês em que você pode usar para os serviços do Azure pagos.
+- [Abra uma conta do Azure gratuitamente](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -você obtém créditos você pode usar para experimentar os serviços do Azure pagos e mesmo depois que eles são usados até que você pode manter a conta e livre de usar os serviços do Azure.
+- [Ativar os benefícios de assinante do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -assinatura do MSDN fornece créditos de cada mês em que você pode usar para os serviços do Azure pagos.
 
 ## <a name="installing-everything"></a>Instalar tudo
 
@@ -151,11 +151,11 @@ O Web Platform Installer é exibido, pronto para instalar o WebMatrix. Clique em
 
 O processo de instalação detecta que ele tem a instalar no computador e inicia o processo. Dependendo exatamente o que deve ser instalado, o processo pode levar de alguns instantes vários minutos. Selecione **aceito** para aceitar os termos de licença.
 
-## <a name="hello-webmatrix"></a>Olá, o WebMatrix
+## <a name="hello-webmatrix"></a>Hello, WebMatrix
 
 Quando estiver pronto, o processo de instalação pode iniciar automaticamente o WebMatrix. Caso contrário, no Windows, do **iniciar** menu, inicie **Microsoft WebMatrix**.
 
-Quando você inicia o WebMatrix pela primeira vez, você terá a oportunidade de entrar no Microsoft Azure com sua conta da Microsoft. Ao entrar, você receberá 10 aplicativos web gratuitos por meio do Azure. Esses aplicativos web gratuitos fornecem uma maneira conveniente para testar seus aplicativos. Se você ainda não tiver uma conta do Azure, mas você tem uma assinatura do MSDN, você pode [ativar os benefícios de assinatura do MSDN](https://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604). Caso contrário, você pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter detalhes, consulte [avaliação gratuita do Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+Quando você inicia o WebMatrix pela primeira vez, você terá a oportunidade de entrar no Microsoft Azure com sua conta da Microsoft. Ao entrar, você receberá 10 aplicativos web gratuitos por meio do Azure. Esses aplicativos web gratuitos fornecem uma maneira conveniente para testar seus aplicativos. Se você ainda não tiver uma conta do Azure, mas você tem uma assinatura do MSDN, você pode [ativar os benefícios de assinatura do MSDN](https://www.windowsazure.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604). Caso contrário, você pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter detalhes, consulte [avaliação gratuita do Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
 
 Você não precisa entrar no momento para continuar este tutorial. Se você não entrar agora, você ainda terá a opção para entrar mais tarde. A última [tópico](publishing.md) neste tutorial série aborda como implantar o site para o Azure; portanto, você precisa entrar para concluir esse tópico.
 

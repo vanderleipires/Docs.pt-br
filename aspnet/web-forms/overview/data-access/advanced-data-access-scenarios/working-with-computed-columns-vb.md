@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a6ff0df27e19d6feecde27a77d4b212d1e9bc45e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 52fc0b89343236b70f8a2e013ad8a33431ae3d2d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-computed-columns-vb"></a>Trabalhando com colunas computadas (VB)
 ====================
@@ -29,7 +29,7 @@ por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 ## <a name="introduction"></a>Introdução
 
-Microsoft SQL Server permite  *[colunas computadas](https://msdn.microsoft.com/en-us/library/ms191250.aspx)*, que são colunas cujos valores são calculados a partir de uma expressão que normalmente faz referência os valores de outras colunas na mesma tabela. Por exemplo, um modelo de dados de controle de tempo pode ter uma tabela chamada `ServiceLog` com colunas incluindo `ServicePerformed`, `EmployeeID`, `Rate`, e `Duration`, entre outros. Enquanto o valor devido por serviço item (sendo a taxa multiplicada pela duração) pode ser calculada por meio de uma página da web ou outro interface de programação, pode ser útil para incluir uma coluna no `ServiceLog` tabela denominada `AmountDue` que relataram isso informações. Esta coluna pode ser criada como uma coluna normal, mas ele precisa ser atualizado a qualquer momento o `Rate` ou `Duration` valores da coluna alterados. Uma abordagem melhor seria tornar o `AmountDue` coluna uma coluna computada usando a expressão `Rate * Duration`. Isso faria com que o SQL Server calcular automaticamente o `AmountDue` o valor da coluna sempre que ele foi mencionado em uma consulta.
+Microsoft SQL Server permite  *[colunas computadas](https://msdn.microsoft.com/library/ms191250.aspx)*, que são colunas cujos valores são calculados a partir de uma expressão que normalmente faz referência os valores de outras colunas na mesma tabela. Por exemplo, um modelo de dados de controle de tempo pode ter uma tabela chamada `ServiceLog` com colunas incluindo `ServicePerformed`, `EmployeeID`, `Rate`, e `Duration`, entre outros. Enquanto o valor devido por serviço item (sendo a taxa multiplicada pela duração) pode ser calculada por meio de uma página da web ou outro interface de programação, pode ser útil para incluir uma coluna no `ServiceLog` tabela denominada `AmountDue` que relataram isso informações. Esta coluna pode ser criada como uma coluna normal, mas ele precisa ser atualizado a qualquer momento o `Rate` ou `Duration` valores da coluna alterados. Uma abordagem melhor seria tornar o `AmountDue` coluna uma coluna computada usando a expressão `Rate * Duration`. Isso faria com que o SQL Server calcular automaticamente o `AmountDue` o valor da coluna sempre que ele foi mencionado em uma consulta.
 
 Como um valor de coluna computada s é determinado por uma expressão, essas colunas são somente leitura e, portanto, não podem ter valores atribuídas a eles no `INSERT` ou `UPDATE` instruções. No entanto, quando as colunas computadas são parte da consulta principal para um TableAdapter que usa instruções SQL ad hoc, eles são incluídos automaticamente no gerado automaticamente `INSERT` e `UPDATE` instruções. Consequentemente, o TableAdapter s `INSERT` e `UPDATE` consultas e `InsertCommand` e `UpdateCommand` propriedades devem ser atualizadas para remover referências a quaisquer colunas computadas.
 
@@ -51,7 +51,7 @@ Comece abrindo o `Suppliers` definição da tabela clicando no `Suppliers` de ta
 Observe que as cadeias de caracteres podem ser concatenadas em SQL usando o `+` operador. O `CASE` instrução pode ser usada como uma condicional em uma linguagem de programação tradicional. Na expressão acima de `CASE` instrução pode ser lido como: se `ContactTitle` não é `NULL` de saída, em seguida, o `ContactTitle` valor concatenado com uma vírgula, caso contrário, emitir nada. Para obter mais informações sobre a utilidade do `CASE` instrução, consulte [Power de SQL `CASE` instruções](http://www.4guysfromrolla.com/webtech/102704-1.shtml).
 
 > [!NOTE]
-> Em vez de usar um `CASE` instrução aqui, poderíamos ter Alternativamente usado `ISNULL(ContactTitle, '')`. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/en-us/library/ms184325.aspx)Retorna *checkExpression* se for não nulo, caso contrário, retornará *replacementValue*. Enquanto o `ISNULL` ou `CASE` funcionará nesta instância, há cenários mais complexos onde a flexibilidade do `CASE` instrução não pode ser correspondida por `ISNULL`.
+> Em vez de usar um `CASE` instrução aqui, poderíamos ter Alternativamente usado `ISNULL(ContactTitle, '')`. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx)Retorna *checkExpression* se for não nulo, caso contrário, retornará *replacementValue*. Enquanto o `ISNULL` ou `CASE` funcionará nesta instância, há cenários mais complexos onde a flexibilidade do `CASE` instrução não pode ser correspondida por `ISNULL`.
 
 
 Depois de adicionar a coluna computada sua tela deve ser semelhante a tela na Figura 1.
@@ -69,10 +69,10 @@ Salvar a tabela deverá atualizar o Gerenciador de servidores, incluindo a colun
 
 [!code-sql[Main](working-with-computed-columns-vb/samples/sample2.sql)]
 
-Para obter mais informações sobre colunas computadas no Microsoft SQL Server, consulte o [documentação técnica](https://msdn.microsoft.com/en-us/library/ms191250.aspx). Verifique também o [como: especificar colunas computadas](https://msdn.microsoft.com/en-us/library/ms188300.aspx) para obter uma explicação passo a passo de criação de colunas computadas.
+Para obter mais informações sobre colunas computadas no Microsoft SQL Server, consulte o [documentação técnica](https://msdn.microsoft.com/library/ms191250.aspx). Verifique também o [como: especificar colunas computadas](https://msdn.microsoft.com/library/ms188300.aspx) para obter uma explicação passo a passo de criação de colunas computadas.
 
 > [!NOTE]
-> Por padrão, as colunas computadas não são fisicamente armazenadas na tabela, mas em vez disso, são recalculadas sempre que eles são referenciados em uma consulta. Ao marcar a caixa de seleção é mantido, no entanto, você pode instruir SQL Server para armazenar fisicamente a coluna computada na tabela. Isso permite que um índice a ser criado na coluna computada, o que pode melhorar o desempenho das consultas que usam o valor de coluna computada em seus `WHERE` cláusulas. Consulte [Criando índices em colunas computadas](https://msdn.microsoft.com/en-us/library/ms189292.aspx) para obter mais informações.
+> Por padrão, as colunas computadas não são fisicamente armazenadas na tabela, mas em vez disso, são recalculadas sempre que eles são referenciados em uma consulta. Ao marcar a caixa de seleção é mantido, no entanto, você pode instruir SQL Server para armazenar fisicamente a coluna computada na tabela. Isso permite que um índice a ser criado na coluna computada, o que pode melhorar o desempenho das consultas que usam o valor de coluna computada em seus `WHERE` cláusulas. Consulte [Criando índices em colunas computadas](https://msdn.microsoft.com/library/ms189292.aspx) para obter mais informações.
 
 
 ## <a name="step-2-viewing-the-computed-column-s-values"></a>Etapa 2: Exibir os s valores de coluna computada

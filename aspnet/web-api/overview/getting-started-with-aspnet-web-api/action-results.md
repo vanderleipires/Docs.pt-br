@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
-ms.openlocfilehash: 68b82661b97434795e1c306b168033dfcde529bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d0db5c6d45020861d7295ab1db989caee525fff9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="action-results-in-web-api-2"></a>Resultados da ação na Web API 2
 ====================
@@ -56,7 +56,7 @@ Resposta HTTP:
 
 ## <a name="httpresponsemessage"></a>HttpResponseMessage
 
-Se a ação retorna um [HttpResponseMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.aspx), API da Web converte o valor de retorno diretamente em uma mensagem de resposta HTTP, usando as propriedades do **HttpResponseMessage** objeto para popular o resposta.
+Se a ação retorna um [HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx), API da Web converte o valor de retorno diretamente em uma mensagem de resposta HTTP, usando as propriedades do **HttpResponseMessage** objeto para popular o resposta.
 
 Essa opção fornece muito controle sobre a mensagem de resposta. Por exemplo, a ação de controlador a seguir define o cabeçalho Cache-Control.
 
@@ -98,9 +98,9 @@ Resposta:
 
 [!code-console[Main](action-results/samples/sample9.cmd)]
 
-Mais frequentemente, você usará o **IHttpActionResult** implementações definidas no  **[Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx)**  namespace. O **ApiController** classe define os métodos auxiliares que retornam esses resultados de ação interna.
+Mais frequentemente, você usará o **IHttpActionResult** implementações definidas no  **[Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)**  namespace. O **ApiController** classe define os métodos auxiliares que retornam esses resultados de ação interna.
 
-No exemplo a seguir, se a solicitação não corresponde a uma ID de produto existente, o controlador chama [ApiController.NotFound](https://msdn.microsoft.com/en-us/library/system.web.http.apicontroller.notfound.aspx) para criar uma resposta de 404 (não encontrado). Caso contrário, o controlador chama [ApiController.OK](https://msdn.microsoft.com/en-us/library/dn314591.aspx), que cria uma resposta de 200 (Okey) que contém o produto.
+No exemplo a seguir, se a solicitação não corresponde a uma ID de produto existente, o controlador chama [ApiController.NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx) para criar uma resposta de 404 (não encontrado). Caso contrário, o controlador chama [ApiController.OK](https://msdn.microsoft.com/library/dn314591.aspx), que cria uma resposta de 200 (Okey) que contém o produto.
 
 [!code-csharp[Main](action-results/samples/sample10.cs)]
 

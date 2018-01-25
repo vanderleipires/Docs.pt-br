@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 8f68a85e44389ed17576436a9210c0ca3f414403
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed78b55d2b0315cf428f137c56ad85b29a95e1c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: transformações do arquivo Web. config - 3 de 12
 ====================
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este tutorial mostra como automatizar o processo de alteração de *Web. config* arquivo quando você o implantar em ambientes de destino diferente. A maioria dos aplicativos têm configurações de *Web. config* arquivo deve ser diferente quando o aplicativo é implantado. Automatizando o processo de fazer essas alterações mantém você precise fazê-las manualmente sempre que você implanta, qual seria tedioso e propenso a erros.
 
@@ -37,7 +37,7 @@ Lembrete: Se você receber uma mensagem de erro ou algo não funciona ao percorr
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Transformações de Web. config e Web implantar parâmetros
 
-Há duas maneiras de automatizar o processo de alteração *Web. config* configurações de arquivo: [transformações de Web. config](https://msdn.microsoft.com/en-us/library/dd465326.aspx) e [parâmetros de implantação da Web](https://msdn.microsoft.com/en-us/library/ff398068.aspx). Um *Web. config* arquivo de transformação contém marcação XML que especifica como alterar o *Web. config* arquivo quando ele é implantado. Você pode especificar diferentes alterações para determinado configurações de compilação e perfis de publicação para determinado. As configurações de compilação padrão são Debug e Release e você pode criar configurações de compilação personalizada. Um perfil de publicação geralmente corresponde a um ambiente de destino. (Você aprenderá mais sobre como publicar perfis no [implantando para o IIS como um ambiente de teste](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) tutorial.)
+Há duas maneiras de automatizar o processo de alteração *Web. config* configurações de arquivo: [transformações de Web. config](https://msdn.microsoft.com/library/dd465326.aspx) e [parâmetros de implantação da Web](https://msdn.microsoft.com/library/ff398068.aspx). Um *Web. config* arquivo de transformação contém marcação XML que especifica como alterar o *Web. config* arquivo quando ele é implantado. Você pode especificar diferentes alterações para determinado configurações de compilação e perfis de publicação para determinado. As configurações de compilação padrão são Debug e Release e você pode criar configurações de compilação personalizada. Um perfil de publicação geralmente corresponde a um ambiente de destino. (Você aprenderá mais sobre como publicar perfis no [implantando para o IIS como um ambiente de teste](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) tutorial.)
 
 Parâmetros de implantação da Web podem ser usados para especificar vários tipos diferentes de configurações que devem ser configurados durante a implantação, incluindo as configurações que se encontram em *Web. config* arquivos. Quando usado para especificar *Web. config* alterações no arquivo, parâmetros de implantação da Web são mais complexos para configurar, mas eles são úteis quando você não souber o valor a ser definido até que você implante. Por exemplo, em um ambiente corporativo, você pode criar um *pacote de implantação* e dê a ele uma pessoa no departamento de TI para instalar o em produção, e essa pessoa tem que inserir cadeias de caracteres de conexão ou senhas que você não sabe.
 
@@ -146,7 +146,7 @@ Você especificou agora todos os *Web. config* transformações que você precis
 
 ## <a name="more-information"></a>Mais informações
 
-Para obter mais informações sobre os tópicos abordados por este tutorial, consulte o cenário de transformação do Web. config em [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/en-us/library/bb386521.aspx).
+Para obter mais informações sobre os tópicos abordados por este tutorial, consulte o cenário de transformação do Web. config em [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx).
 
 >[!div class="step-by-step"]
 [Anterior](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

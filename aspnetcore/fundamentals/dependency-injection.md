@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1da3d557c48921747634b08cedb518184fb5f963
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7a5a0991694b2c7caa79dbc09f6471d614f67dac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Introdução a injeção de dependência no núcleo do ASP.NET
 
@@ -30,7 +30,7 @@ ASP.NET Core foi projetado desde o início para dar suporte e aproveitar a inje�
 
 Injeção de dependência (DI) é uma técnica para a obtenção de um acoplamento fraco entre objetos e seus colaboradores ou dependências. Em vez de diretamente a instanciação de parceiros, ou usando referências estáticas, os objetos que precisa de uma classe para realizar suas ações são fornecidos para a classe de alguma forma. Geralmente, classes irá declarar suas dependências por meio de seu construtor, possibilitando que siga a [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/). Essa abordagem é conhecida como "injeção de construtor".
 
-Quando classes são criadas com DI em mente, eles são mais flexíveis porque eles não têm dependências diretas, codificada em seus colaboradores. Isso segue o [princípio de inversão de dependência](http://deviq.com/dependency-inversion-principle/), indicando que *"módulos de nível alto não devem depender módulos de Nível baixos; ambos devem depender das abstrações."* Em vez de fazer referência a implementações específicas, classes de solicitação abstrações (geralmente `interfaces`) que é fornecido a eles quando a classe é construída. Extração de dependências em interfaces e fornecer implementações dessas interfaces como parâmetros também é um exemplo de como o [padrão de design de estratégia](http://deviq.com/strategy-design-pattern/).
+Quando classes são criadas com DI em mente, eles são mais flexíveis porque eles não têm dependências diretas, codificada em seus colaboradores. Isso segue o [princípio de inversão de dependência](http://deviq.com/dependency-inversion-principle/), indicando que *"módulos de nível alto não pode depender de módulos de Nível baixos; ambos devem depender das abstrações."* Em vez de fazer referência a implementações específicas, classes de solicitação abstrações (geralmente `interfaces`) que é fornecido a eles quando a classe é construída. Extração de dependências em interfaces e fornecer implementações dessas interfaces como parâmetros também é um exemplo de como o [padrão de design de estratégia](http://deviq.com/strategy-design-pattern/).
 
 Quando um sistema é projetado para usar a DI, com muitas classes solicitando suas dependências por meio de seu construtor (ou propriedades), é útil ter uma classe dedicada à criação dessas classes com suas dependências associadas. Essas classes são chamadas de *contêineres*, ou, mais especificamente, [inversão de controle (IoC)](http://deviq.com/inversion-of-control/) contêineres ou contêineres de injeção de dependência (DI). Um contêiner é essencialmente uma fábrica que é responsável por fornecer instâncias dos tipos que são solicitados a partir dele. Se um determinado tipo declarou que ele tem dependências, e o contêiner tiver sido configurado para fornecer os tipos de dependência, ele criará as dependências como parte da criação da instância solicitada. Dessa forma, os gráficos de dependência complexos podem ser fornecidos para classes sem a necessidade de qualquer construção de objeto inserido no código. Além de criar objetos com suas dependências, contêineres normalmente gerenciar tempos de vida de objeto dentro do aplicativo.
 
@@ -112,7 +112,7 @@ Você pode registrar seus próprios serviços de aplicativo da seguinte maneira.
 
 O `AddTransient` método é usado para mapear tipos abstratos concreta serviços que são instanciados separadamente para cada objeto que exija isso. Isso é conhecido como o serviço *tempo de vida*, e opções de tempo de vida adicionais são descritas abaixo. É importante escolher um tempo de vida apropriado para cada um dos serviços que você registrar. Uma nova instância do serviço deve ser fornecida para cada classe de solicitá-lo? Uma instância deve ser usada durante uma solicitação da web especificado? Ou uma única instância deve ser usada para o tempo de vida do aplicativo?
 
-O exemplo deste artigo, há um controlador simple que exibe os nomes de caractere, chamados `CharactersController`. Seu `Index` método exibe a lista atual de caracteres que foram armazenados no aplicativo e inicializa a coleção com uma série de caracteres, se não houver nenhum. Observe que, embora esse aplicativo usa o Entity Framework Core e o `ApplicationDbContext` classe para sua persistência, nada disso é aparente no controlador. Em vez disso, o mecanismo de acesso a dados específicos foram abstraído atrás de uma interface `ICharacterRepository`, que segue o [padrão repositório](http://deviq.com/repository-pattern/). Uma instância de `ICharacterRepository` é solicitado por meio do construtor e atribuído a um campo particular, que é usado para acessar caracteres conforme necessário.
+O exemplo deste artigo, há um controlador simple que exibe os nomes de caractere, chamados `CharactersController`. Seu `Index` método exibe a lista atual de caracteres que foram armazenados no aplicativo e inicializa a coleção com uma série de caracteres, se não houver nenhum. Observe que, embora esse aplicativo usa o Entity Framework Core e o `ApplicationDbContext` classe para sua persistência, nenhum dos que é aparente no controlador. Em vez disso, o mecanismo de acesso a dados específicos foram abstraído atrás de uma interface `ICharacterRepository`, que segue o [padrão repositório](http://deviq.com/repository-pattern/). Uma instância de `ICharacterRepository` é solicitado por meio do construtor e atribuído a um campo particular, que é usado para acessar caracteres conforme necessário.
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
@@ -120,7 +120,7 @@ O `ICharacterRepository` define dois métodos que o controlador precisa trabalha
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
 
-Por sua vez, essa interface é implementada por um tipo concreto, `CharacterRepository`, que é usada em tempo de execução.
+Por sua vez, essa interface é implementada por um tipo concreto, `CharacterRepository`, que é usado em tempo de execução.
 
 > [!NOTE]
 > A maneira DI é usada com o `CharacterRepository` classe é um modelo geral que você pode seguir para todos os serviços do aplicativo, não apenas em "repositórios" ou classes de acesso de dados.
@@ -149,7 +149,7 @@ Serviços ASP.NET podem ser configurados com os tempos de vida do seguintes:
 
 **Transient**
 
-Serviços de tempo de vida transitórias são criados cada vez que forem solicitados. Esse tempo de vida funciona melhor para serviços leves e sem monitoração de estado.
+Serviços de tempo de vida transitório são criados toda vez que são solicitadas. Esse tempo de vida funciona melhor para serviços leves e sem monitoração de estado.
 
 **No escopo**
 
@@ -157,7 +157,7 @@ Serviços de tempo de vida no escopo são criados uma vez por solicitação.
 
 **Singleton**
 
-Serviços de tempo de vida de singleton são criados na primeira vez que forem solicitados (ou quando `ConfigureServices` é executado se você especificar uma instância) e, em seguida, todas as solicitações subsequentes usarão a mesma instância. Se seu aplicativo exigir comportamento singleton, permitindo que o contêiner de serviços gerenciar o tempo de vida do serviço é recomendado em vez de implementar o padrão de design de singleton e gerenciar o tempo de vida do objeto na classe por conta própria.
+Serviços de tempo de vida de singleton são criados na primeira vez em que elas são solicitadas (ou quando `ConfigureServices` é executado se você especificar uma instância) e, em seguida, todas as solicitações subsequentes usarão a mesma instância. Se seu aplicativo exigir comportamento singleton, permitindo que o contêiner de serviços gerenciar o tempo de vida do serviço é recomendado em vez de implementar o padrão de design de singleton e gerenciar o tempo de vida do objeto na classe por conta própria.
 
 Os serviços podem ser registrados com o contêiner de várias maneiras. Já vimos como registrar uma implementação de serviço com um determinado tipo, especificando o tipo concreto para usar. Além disso, uma fábrica pode ser especificada, que será usado para criar a instância sob demanda. A terceira abordagem é especificar diretamente a instância do tipo a ser usado, nesse caso o contêiner não tentará criar uma instância (nem será dispose da instância).
 
@@ -237,14 +237,14 @@ public void ConfigureServices(IServiceCollection services)
     services.AddSingleton<Service2>();
     services.AddSingleton<ISomeService>(sp => new SomeServiceImplementation());
 
-    // container did not create instance so it will NOT dispose it
+    // container didn't create instance so it will NOT dispose it
     services.AddSingleton<Service3>(new Service3());
     services.AddSingleton(new Service3());
 }
 ```
 
 > [!NOTE]
-> Na versão 1.0, o contêiner chamado dispose em *todos os* `IDisposable` objetos, incluindo aqueles não criou.
+> Na versão 1.0, o contêiner chamado dispose em *todos os* `IDisposable` objetos, incluindo aqueles não foi criado.
 
 ## <a name="replacing-the-default-services-container"></a>Substituindo o contêiner de serviços padrão
 

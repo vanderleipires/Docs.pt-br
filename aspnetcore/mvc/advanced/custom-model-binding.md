@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: d8b94f53954c5ab63ccf3aab4eb7a7a7dbea487b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 85d5ca18944e774d1f2577459c6c45acde01e4d9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-model-binding"></a>Associação de modelo personalizado
 
@@ -104,7 +104,7 @@ O `ModelBinder` atributo pode ser usado para aplicar o `AuthorEntityBinder` aos 
 
 [!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
-Neste exemplo, como o nome do argumento não é o padrão `authorId`, ele é especificado no parâmetro usando `ModelBinder` atributo. Observe que o controlador e ação de método são simplificadas comparado ao pesquisar a entidade no método de ação. A lógica para buscar o autor usando o Entity Framework Core é movida para o associador de modelo. Isso pode ser considerável simplificação quando há vários métodos que ligar para o modelo de autor e podem ajudá-lo a seguir o [princípio seco](http://deviq.com/don-t-repeat-yourself/).
+Neste exemplo, desde que o nome do argumento não é o padrão `authorId`, ele é especificado no parâmetro usando `ModelBinder` atributo. Observe que o controlador e ação de método são simplificadas comparado ao pesquisar a entidade no método de ação. A lógica para buscar o autor usando o Entity Framework Core é movida para o associador de modelo. Isso pode ser considerável simplificação quando há vários métodos que ligar para o modelo de autor e podem ajudá-lo a seguir o [princípio seco](http://deviq.com/don-t-repeat-yourself/).
 
 Você pode aplicar o `ModelBinder` às propriedades de modelo individuais de atributos (como em um viewmodel) ou para parâmetros de método de ação para especificar um determinado associador de modelo ou nome de modelo para apenas esse tipo ou a ação.
 
@@ -133,6 +133,6 @@ Adicionar o provedor ao final da coleção pode resultar em um associador de mod
 ## <a name="recommendations-and-best-practices"></a>Recomendações e práticas recomendadas
 
 Associadores de modelo personalizado:
-- Não tente definir códigos de status ou retornar resultados (por exemplo, 404 não encontrado). Se a associação de modelo falhar, um [filtro de ação](xref:mvc/controllers/filters) ou lógica dentro do método de ação deve lidar com falhas.
+- Não deve tentar definir códigos de status ou retornar resultados (por exemplo, 404 não encontrado). Se a associação de modelo falhar, um [filtro de ação](xref:mvc/controllers/filters) ou lógica dentro do método de ação deve lidar com falhas.
 - São mais úteis para eliminar código repetitivo e resolvem preocupações de métodos de ação.
-- Normalmente não deve ser usado para converter uma cadeia de caracteres em um tipo personalizado, uma [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) geralmente é uma opção melhor.
+- Normalmente, não deve ser usado para converter uma cadeia de caracteres em um tipo personalizado, uma [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) geralmente é uma opção melhor.

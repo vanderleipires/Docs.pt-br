@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/mvc-learning-sequence
 msc.type: authoredcontent
-ms.openlocfilehash: b6cc785a5ddaf156f49b15897577e733fb67736a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 538eff2b2b2fdab5b0be879f0a5dfa5c9403b089
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="mvc-recommended-tutorials-and-articles"></a>MVC recomendado artigos e tutoriais
 ====================
@@ -38,21 +38,21 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 <a id="wj"></a>
 ## <a name="security"></a>Segurança
 
-- [Criar um aplicativo ASP.NET MVC com autenticação e o banco de dados SQL e implantar no Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) este tutorial popular orienta você pela criação de um aplicativo simples e adicionar membros e funções.
+- [Criar um aplicativo ASP.NET MVC com autenticação e o banco de dados SQL e implantar no Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) este tutorial popular orienta você pela criação de um aplicativo simples e adicionar membros e funções.
 - [Criar um aplicativo do ASP.NET MVC 5 com o Facebook, Twitter, LinkedIn e logon do Google OAuth2](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) este tutorial mostra como criar um aplicativo web ASP.NET MVC 5 que permite aos usuários fazer logon usando OAuth 2.0 com as credenciais de uma autenticação externa provedor, como Facebook, Twitter, LinkedIn, Microsoft ou Google.
 - [Criar um aplicativo web seguro do ASP.NET MVC 5 com logon, redefinição de senha e de confirmação de email](../security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md) primeiro em uma série de identidade, inclui o código para [reenviar um link de confirmação](../security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md#rsend).
 - [Aplicativo ASP.NET MVC 5 com SMS e o email de autenticação de dois fatores](../security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md) segunda série de identidade.
-- [Práticas recomendadas para implantar as senhas e outros dados confidenciais para ASP.NET e o serviço de aplicativo do Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
+- [Melhores práticas para implantar senhas e outros dados confidenciais no ASP.NET e no Serviço de Aplicativo do Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
 - [Autenticação de dois fatores usando SMS e email com o ASP.NET Identity](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md) `isPersistent` e o cookie de segurança, o código para exigir que um usuário tenha uma conta de email validado antes que eles possam fazer logon, como SignInManager procura 2FA requisito e muito mais.
 - [Conta de confirmação e de recuperação de senha com a identidade do ASP.NET](../../../identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md) fornece detalhes sobre a identidade não foi encontrado no [criar um aplicativo web seguro do ASP.NET MVC 5 com logon, redefinição de senha e de confirmação de email](../security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md) por exemplo, como permitir que os usuários redefinir sua senha.
 
 <a id="da"></a>
 ## <a name="azure"></a>Azure
 
-- [Criar um aplicativo web ASP.NET no Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/) tutorial curto e simple para implantação no Azure.
-- [Criar um aplicativo ASP.NET MVC com autenticação e o banco de dados SQL e implantar no Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+- [Criar um aplicativo web ASP.NET no Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/) tutorial curto e simple para implantação no Azure.
+- [Criar um aplicativo ASP.NET MVC com autenticação e o banco de dados SQL e implantar no Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
 
 <a id="perf"></a>
 ## <a name="performance-and-debugging"></a>Desempenho e depuração
 
-- [Criar o perfil e depurar seu aplicativo ASP.NET MVC com prévia](../performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse.md)
+- [Analisar e depurar seu aplicativo do ASP.NET MVC com Glimpse](../performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse.md)

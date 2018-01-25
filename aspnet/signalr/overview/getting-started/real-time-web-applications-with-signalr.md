@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 96d3b8b82f78d8f6da85012aac8a1411cf297e26
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 22123a9c61e6830f3f9f66a45182e1e923950341
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>Laboratório prático: Aplicativos de Web em tempo real com SignalR
 ====================
@@ -38,7 +38,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 
 
 <a id="Overview"></a>
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Objetivos
@@ -263,7 +263,7 @@ Atualmente, há três tipos de painéis posteriores para SignalR:
 - **SQL Server**. O backplane de SQL Server grava mensagens de tabelas SQL. Plano posterior usa o Service Broker para mensagens eficiente. No entanto, também funciona se o Service Broker não está habilitado.
 - **Redis**. Redis é um repositório de chave-valor na memória. Redis oferece suporte a um padrão de publicação/assinatura ("pub/sub") para enviar mensagens.
 
-Cada mensagem é enviada por meio de um barramento de mensagem. Implementa um barramento de mensagem a [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, que fornece uma abstração de publicação/assinatura. Os painéis posteriores trabalham substituindo o padrão **IMessageBus** com barramento projetado para que backplane.
+Cada mensagem é enviada por meio de um barramento de mensagem. Implementa um barramento de mensagem a [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, que fornece uma abstração de publicação/assinatura. Os painéis posteriores trabalham substituindo o padrão **IMessageBus** com barramento projetado para que backplane.
 
 Cada instância de servidor se conecta ao backplane por meio do barramento. Quando uma mensagem é enviada, ele passa para o backplane e backplane envia para todos os servidores. Quando um servidor recebe uma mensagem do backplane, ele armazena a mensagem em seu cache local. O servidor, em seguida, entrega mensagens para os clientes de seu cache local.
 

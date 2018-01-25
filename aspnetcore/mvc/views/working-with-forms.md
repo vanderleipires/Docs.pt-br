@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9fd51755e1dc9a1dfb9ab5cc4558f7da9475ce32
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introdução ao uso de auxiliares de marcação em formulários do ASP.NET Core
 
@@ -22,7 +22,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Dave Paquette](https://tw
 
 Este documento demonstra trabalhar com formulários e os elementos HTML comumente usados em um formulário. O HTML [formulário](https://www.w3.org/TR/html401/interact/forms.html) elemento fornece o uso de aplicativos web mecanismo principal para enviar dados para o servidor. A maioria deste documento descreve [auxiliares de marcação](tag-helpers/intro.md) e como eles podem ajudar você a criar produtiva robustos formulários HTML. É recomendável que você leia [Introdução ao auxiliares de marcação](tag-helpers/intro.md) antes de ler este documento.
 
-Em muitos casos, auxiliares HTML fornecem uma abordagem alternativa para um auxiliar de marca específica, mas é importante reconhecer que auxiliares de marcação não substituem auxiliares HTML e não é um auxiliar de marca para cada auxiliar HTML. Quando existe uma alternativa de auxiliar HTML, ele é mencionado.
+Em muitos casos, auxiliares HTML fornecem uma abordagem alternativa para um auxiliar de marca específica, mas é importante reconhecer que auxiliares de marcação não substitua auxiliares HTML e não é um auxiliar de marca para cada auxiliar HTML. Quando existe uma alternativa de auxiliar HTML, ele é mencionado.
 
 <a name="my-asp-route-param-ref-label"></a>
 
@@ -86,7 +86,7 @@ O auxiliar de marca de entrada:
 
 * Define o HTML `type` com base no tipo de modelo de valor de atributo e [anotação de dados](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributos aplicados para a propriedade de modelo
 
-* Não substituirá o HTML `type` valor de atributo quando um for especificado
+* Não substitua o HTML `type` valor de atributo quando um for especificado
 
 * Gera [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) atributos de validação de [anotação de dados](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) atributos aplicados às propriedades de modelo
 

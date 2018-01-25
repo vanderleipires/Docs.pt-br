@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: af73a86aa6bcde084ecbe1a3fb5711c7da55871c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3aaab9d4fecd3f0d0da6a0df4d83bee090b329ea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-scripting"></a>Impedindo a execução de scripts entre sites
 
@@ -145,7 +145,7 @@ Isso será renderizado no navegador:
 
 ## <a name="accessing-encoders-in-code"></a>Acessando codificadores no código
 
-Os codificadores HTML, JavaScript e URL estão disponíveis para o código de duas maneiras, você pode colocá-los por meio de [injeção de dependência](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) ou você pode usar os codificadores padrão contidos a `System.Text.Encodings.Web` namespace. Se você usar os codificadores padrão e qualquer aplicada a intervalos de caractere para serem tratados como seguro não entrarão em vigor - os codificadores padrão usem as regras de codificação mais seguras possível.
+Os codificadores HTML, JavaScript e URL estão disponíveis para o código de duas maneiras, você pode colocá-los por meio de [injeção de dependência](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) ou você pode usar os codificadores padrão contidos a `System.Text.Encodings.Web` namespace. Se você usar os codificadores padrão e qualquer aplicada a intervalos de caracteres a serem tratados como seguro não terão efeito - os codificadores padrão usem as regras de codificação mais seguras possível.
 
 Para usar os codificadores configuráveis por meio de DI seus construtores devem levar uma *HtmlEncoder*, *JavaScriptEncoder* e *UrlEncoder* parâmetro conforme apropriado. Por exemplo,
 
@@ -228,4 +228,4 @@ Gerais aceito prática é que a codificação ocorre no ponto de saída e valore
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>Validação como uma técnica de prevenção de XSS
 
-A validação pode ser uma ferramenta útil limitar ataques XSS. Por exemplo, uma cadeia de caracteres numérica simple que contém somente os caracteres 0-9 não vai disparar um ataque XSS. A validação se torna mais complicada que você deseja aceitar HTML na entrada do usuário - análise de entrada HTML é difícil, se não impossível. Redução e outros formatos de texto seria uma opção mais segura para a entrada avançada. Você nunca deve depender somente de validação. Sempre codifica a entrada não confiável antes de saída, não importa o que você executou a validação.
+A validação pode ser uma ferramenta útil limitar ataques XSS. Por exemplo, uma cadeia de caracteres numérica simple que contém somente os caracteres 0-9 não aciona um ataque XSS. A validação se torna mais complicada que você deseja aceitar HTML na entrada do usuário - análise de entrada HTML é difícil, se não impossível. Redução e outros formatos de texto seria uma opção mais segura para a entrada avançada. Você nunca deve depender somente de validação. Sempre codifica a entrada não confiável antes de saída, não importa o que você executou a validação.

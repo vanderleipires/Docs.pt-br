@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: ffa3178dc4e3aac3ba51c29b7efa3f71eb56bcfe
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8f6f4fac89afe14d83d629128fc3e4632ae95510
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no núcleo do ASP.NET
 
@@ -98,9 +98,9 @@ routes.MapRoute(
     template: "{controller=Home}/{action=Index}/{id?}");
 ```
 
-Este modelo corresponderá a um caminho de URL como `/Products/Details/17` e extrair os valores de rota `{ controller = Products, action = Details, id = 17 }`. Os valores de rota são determinados pelo dividir o caminho da URL em segmentos e correspondência de cada segmento com o *parâmetro de rota* nome do modelo de rota. Parâmetros de rota são nomeados. Eles são definidos, colocando o nome do parâmetro chaves `{ }`.
+Este modelo corresponderá a um caminho de URL como `/Products/Details/17` e extrair os valores de rota `{ controller = Products, action = Details, id = 17 }`. Os valores de rota são determinados pelo dividir o caminho da URL em segmentos e correspondência de cada segmento com o *parâmetro de rota* nome do modelo de rota. Parâmetros de rota são nomeados. Eles estão definidos, colocando o nome do parâmetro chaves `{ }`.
 
-O modelo acima também pode corresponder ao caminho da URL `/` e produzir valores `{ controller = Home, action = Index }`. Isso acontece porque o `{controller}` e `{action}` parâmetros de rota têm valores padrão e o `id` parâmetro de rota é opcional. Igual a `=` sinal seguido por um valor após o nome do parâmetro de rota define um valor padrão para o parâmetro. Um ponto de interrogação `?` depois que o nome do parâmetro de rota define o parâmetro como opcional. Parâmetros com um valor padrão de rota *sempre* produzir um valor de rota quando a rota corresponde - parâmetros opcionais não produzir um valor de rota se não houver nenhum segmento de caminho de URL correspondente.
+O modelo acima também pode corresponder ao caminho da URL `/` e produzir valores `{ controller = Home, action = Index }`. Isso acontece porque o `{controller}` e `{action}` parâmetros de rota têm valores padrão e o `id` parâmetro de rota é opcional. Igual a `=` sinal seguido por um valor após o nome do parâmetro de rota define um valor padrão para o parâmetro. Um ponto de interrogação `?` depois que o nome do parâmetro de rota define o parâmetro como opcional. Parâmetros com um valor padrão de rota *sempre* produzir um valor de rota quando a rota corresponde - parâmetros opcionais não produzem um valor de rota se não houver nenhum segmento de caminho de URL correspondente.
 
 Consulte [referência de modelo de rota](#route-template-reference) para obter uma descrição completa dos recursos de modelo de rota e sintaxe.
 

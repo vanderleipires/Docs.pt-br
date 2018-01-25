@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 68870caf1608e596962650cf653e5b455b82382a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>Criando um MVC 3 aplicativo com Razor e o JavaScript discreto
 ====================
@@ -27,7 +27,7 @@ por [Microsoft](https://github.com/microsoft)
 > Este tutorial descreve as etapas que foram usadas para criar o aplicativo do ASP.NET MVC 3 de exemplo lista de usuários. Um projeto do Visual Studio com o código-fonte c# e VB está disponível para acompanhar este tópico: [baixar](https://code.msdn.microsoft.com/aspnetmvcsamples/Release/ProjectReleases.aspx?ReleaseId=5114). Se você tiver dúvidas sobre este tutorial, poste-os para o [Fórum do MVC](https://forums.asp.net/1146.aspx).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O aplicativo que você criará é um site da lista de usuário simples. Os usuários podem inserir, exibir e atualizar informações de usuário.
 
@@ -49,7 +49,7 @@ Neste tutorial você não usará o provedor de associação do ASP.NET, portanto
 
 - *Controllers\AccountController*
 - *Models\AccountModels*
-- *Exibições \ compartilhadas\\_LogOnPartial*
+- *Views\Shared\\_LogOnPartial*
 - *Views\Account* (e todos os arquivos neste diretório)
 
 ![Soln Exp](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image5.png)
@@ -68,7 +68,7 @@ Nomeie a classe `UserModel`. Substitua o conteúdo do *UserModel* arquivo com o 
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample2.cs)]
 
-O `UserModel` classe representa os usuários. Cada membro da classe é anotado com a [necessário](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) de atributo do [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) namespace. Os atributos de [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) namespace fornecem validação automática de lado cliente e servidor para aplicativos da web.
+O `UserModel` classe representa os usuários. Cada membro da classe é anotado com a [necessário](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) de atributo do [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) namespace. Os atributos de [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) namespace fornecem validação automática de lado cliente e servidor para aplicativos da web.
 
 Abra o `HomeController` classe e adicione um `using` diretiva para que você possa acessar o `UserModel` e `Users` classes:
 
@@ -172,7 +172,7 @@ Você também precisa incluir vários arquivos JavaScript no modo de exibição 
 
 Os primeiros dois scripts de jQuery são hospedados do Microsoft Ajax Content Delivery Network (CDN). Aproveitando a CDN do Microsoft Ajax, você pode melhorar significativamente o desempenho de primeira visita de seus aplicativos.
 
-Execute o aplicativo e clique em um link de edição. Exiba código-fonte da página no navegador. A origem do navegador mostra muitos atributos do formulário `data-val` (para validação de dados). Quando a validação do cliente e o JavaScript discreto está habilitado, os campos de entrada com uma regra de validação do cliente contém o `data-val="true"` atributo para disparar a validação do cliente discreto. Por exemplo, o `City` campo no modelo foi decorado com o [necessário](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) atributo, o que resulta em HTML mostrado no exemplo a seguir:
+Execute o aplicativo e clique em um link de edição. Exiba código-fonte da página no navegador. A origem do navegador mostra muitos atributos do formulário `data-val` (para validação de dados). Quando a validação do cliente e o JavaScript discreto está habilitado, os campos de entrada com uma regra de validação do cliente contém o `data-val="true"` atributo para disparar a validação do cliente discreto. Por exemplo, o `City` campo no modelo foi decorado com o [necessário](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) atributo, o que resulta em HTML mostrado no exemplo a seguir:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample15.cshtml)]
 
@@ -180,7 +180,7 @@ Para cada regra de validação do cliente, um atributo é adicionado, que tem a 
 
 ![Cidade necessária](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
 
-Da mesma forma, para cada parâmetro na regra de validação do cliente, um atributo é adicionado que tem o formato `data-val-rulename-paramname=paramvalue`. Por exemplo, o `FirstName` propriedade está anotada com o [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) de atributo e especifica um comprimento mínimo de 3 e um comprimento máximo de 8. A regra de validação de dados denominada `length` tem o nome do parâmetro `max` e o valor do parâmetro 8. A seguir mostra o HTML que é gerado para o `FirstName` campo quando você edita um dos usuários:
+Da mesma forma, para cada parâmetro na regra de validação do cliente, um atributo é adicionado que tem o formato `data-val-rulename-paramname=paramvalue`. Por exemplo, o `FirstName` propriedade está anotada com o [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) de atributo e especifica um comprimento mínimo de 3 e um comprimento máximo de 8. A regra de validação de dados denominada `length` tem o nome do parâmetro `max` e o valor do parâmetro 8. A seguir mostra o HTML que é gerado para o `FirstName` campo quando você edita um dos usuários:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample16.cshtml)]
 

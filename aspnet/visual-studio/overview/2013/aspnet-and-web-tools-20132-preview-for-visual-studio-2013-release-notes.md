@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: d3a8183fecaf830b2ee1211acd56da86454b4437
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0e7ad52662f7ceaa1f087d007d0b14b610f90bee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET e Web Tools 2013.2 para notas de versão do Visual Studio 2013
 ====================
@@ -52,7 +52,7 @@ As seções a seguir descrevem os recursos que foram introduzidos na versão.
 - [ASP.NET Web API 2.1.2](#webapi)
 - [Páginas da Web do ASP.NET 3.1.2](#webpages)
 - [Entity Framework 6.1](#ef)
-- [Identidade do ASP.NET 2.0.0](#identity)
+- [ASP.NET Identity 2.0.0](#identity)
 - [Componentes do Microsoft OWIN](#owin)
 - [ASP.NET SignalR 2.0.2](#signalr)
 
@@ -95,11 +95,11 @@ Firefox usa seu próprio repositório de certificados, portanto ele exibirá um 
 
 - **Novo item de projeto JSON e editor**: adicionamos um item de projeto JSON e o editor para o Visual Studio. Recursos do editor de JSON atuais incluem colorização, validação de sintaxe, preenchimento de chave, estrutura de tópicos, configuração da opção de ferramentas e muito mais.
 
-    ![Editor de JSON](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image6.png)
+    ![JSON Editor](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image6.png)
 
     IntelliSense agora dá suporte a [esquema JSON](http://json-schema.org/) v3 e v4. Há uma caixa de combinação de esquema para escolher esquemas existentes, edite o caminho do local do esquema, ou simplesmente arrastar e soltar um arquivo JSON de projeto-o para obter o caminho relativo.
 
-    ![Intellisense JSON](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image7.png)    ![Editor de esquema JSON](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image8.png)
+    ![JSON Intellisense](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image7.png)    ![Editor de esquema JSON](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image8.png)
 - **Novo editor de Sass (SCSS)**: adicionamos menor no VS2013 RTM, e agora temos um item de projeto Sass e editor. Editor de sass recursos são comparáveis ao menos editor e incluem colorização, variável e Mixins IntelliSense, remova os comentários /, informações rápidas, formatação, validação de sintaxe, estrutura de tópicos, ir para definição, seletor de cores, ferramentas de configuração de opção etc.
 
     ![Adicionar Novo Item: Folha de estilo SCSS](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image9.png)    ![Editor de folha de estilo](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image10.png)
@@ -109,7 +109,7 @@ Firefox usa seu próprio repositório de certificados, portanto ele exibirá um 
 - **Atualizações para o editor LESS com a adição de mais recursos**
 - **Atualização do Intellisense Knockout**: adicionamos uma sintaxe de separação não padrão para VS intelliSense, "ko-vs-editor viewModel:" sintaxe. Ele pode ser usado para associar a vários modelos de exibição em uma página com comentários no formulário:
 
-    ![Intellisense de separação](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image14.png)
+    ![Knockout Intellisense](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image14.png)
 
     Também adicionamos suporte para ViewModel IntelliSense aninhadas, portanto você pode analisar os objetos profundamente aninhados no ViewModel.
 
@@ -232,10 +232,10 @@ NuGet 2.8.1 que RTM será lançado em abril de 2014. Aqui estão os pontos princ
 <a id="ef"></a>
 ### <a name="entity-framework-61"></a>Entity Framework 6.1
 
-Foi atualizado para a versão 6.1 para tempo de execução e ferramentas do Entity Framework. 6.1 Entity Framework (EF) é uma pequena atualização para o Entity Framework 6 e inclui uma série de novos recursos e correções de bug. Para obter informações detalhadas sobre EF6.1, incluindo links para documentação para os novos recursos, consulte [histórico de versão do Entity Framework](https://msdn.microsoft.com/en-US/data/jj574253). Os novos recursos nesta versão incluem:
+Foi atualizado para a versão 6.1 para tempo de execução e ferramentas do Entity Framework. 6.1 Entity Framework (EF) é uma pequena atualização para o Entity Framework 6 e inclui uma série de novos recursos e correções de bug. Para obter informações detalhadas sobre EF6.1, incluindo links para documentação para os novos recursos, consulte [histórico de versão do Entity Framework](https://msdn.microsoft.com/data/jj574253). Os novos recursos nesta versão incluem:
 
 - **Ferramentas de consolidação** fornece uma maneira coerente de criar um novo modelo EF. Esse recurso estende o Assistente de modelo de dados de entidade ADO.NET para dar suporte à criação de modelos Code First, incluindo a engenharia reversa de um banco de dados existente. Esses recursos estavam disponíveis anteriormente na qualidade Beta no EF Power Tools.
-- **Tratamento de falhas de confirmação de transação** fornece as novas [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) que usam a capacidade de recentemente introduzida para interceptar operações de transação. O **CommitFailureHandler** permite a recuperação automática de falhas de conexão durante a confirmação de uma transação.
+- **Tratamento de falhas de confirmação de transação** fornece as novas [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) que usam a capacidade de recentemente introduzida para interceptar operações de transação. O **CommitFailureHandler** permite a recuperação automática de falhas de conexão durante a confirmação de uma transação.
 - **Indexattribute múltiplas** permite que os índices seja especificado, colocando um atributo em uma propriedade (ou propriedades) em seu modelo Code First. Código primeiro, em seguida, criará um índice correspondente no banco de dados.
 - **A API pública do mapeamento** fornece acesso às informações EF tem como propriedades e tipos são mapeados para colunas e tabelas no banco de dados. Em versões anteriores esta API foi interna.
 - **Capacidade de configurar interceptores por meio do arquivo App/Web.config**(permitindo interceptores a ser adicionado sem recompilar o aplicativo).
@@ -244,7 +244,7 @@ Foi atualizado para a versão 6.1 para tempo de execução e ferramentas do Enti
 - **Melhorias de desempenho** incluindo operações de redução de banco de dados durante a inicialização, otimizações para comparação de igualdade nulo em consultas LINQ, mais rápido exibir geração (criação de modelo) em cenários mais e mais eficiente materialização de entidades controladas com várias associações.
 
 <a id="identity"></a>
-### <a name="aspnet-identity-200"></a>Identidade do ASP.NET 2.0.0
+### <a name="aspnet-identity-200"></a>ASP.NET Identity 2.0.0
 
 - **Autenticação de dois fatores**: ASP.NET Identity agora dá suporte a autenticação de dois fatores. Autenticação de dois fatores fornece uma camada extra de segurança para as contas de usuário no caso em que a senha for comprometida. Também há proteção contra ataques de força bruta contra os códigos de dois fatores.
 - **Bloqueio de conta:** fornece uma maneira de bloquear o usuário se o usuário insere sua senha ou códigos de dois fatores incorretamente. O número de tentativas inválidas e o período de tempo para que os usuários estão bloqueados pode ser configurado. Um desenvolvedor pode, opcionalmente, desativar o bloqueio de conta para determinadas contas de usuário caso precisem.

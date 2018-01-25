@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: d273eb5e99da6c6b7678e03b1a8973041113744c
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 86887f0dafa31ff3eb6597284c469c4b3053b6b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-view"></a>Adicionando uma exibição
 ====================
@@ -29,7 +29,7 @@ Atualmente, o método `Index` retorna uma cadeia de caracteres com uma mensagem 
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs?highlight=1,3)]
 
-O `Index` método acima usa um modelo de exibição para gerar uma resposta HTML para o navegador. Os métodos do controlador (também conhecido como [métodos de ação](http://rachelappel.com/asp.net-mvc-actionresults-explained)), como o `Index` método acima, normalmente retornam um [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (ou uma classe derivada de [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx)), os tipos primitivos não como cadeia de caracteres.
+O `Index` método acima usa um modelo de exibição para gerar uma resposta HTML para o navegador. Os métodos do controlador (também conhecido como [métodos de ação](http://rachelappel.com/asp.net-mvc-actionresults-explained)), como o `Index` método acima, normalmente retornam um [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (ou uma classe derivada de [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx)), os tipos primitivos não como cadeia de caracteres.
 
 Clique com botão direito do *Views\HelloWorld* pasta e clique em **adicionar**, em seguida, clique em **página de exibição MVC 5 com Layout (Razor)**.
   
@@ -73,7 +73,7 @@ Primeiro, você deseja alterar o &quot;nome do aplicativo&quot; link na parte su
 
 Modelos de layout permitem que você especifique o layout de contêiner HTML do seu site em um local e, em seguida, aplicá-lo em várias páginas em seu site. Localize a linha `@RenderBody()`. `RenderBody` é um espaço reservado em que todas as páginas específicas à exibição criadas são mostradas, &quot;encapsuladas&quot; na página de layout. Por exemplo, se você selecionar o **sobre** link, o *Views\Home\About.cshtml* exibição é renderizada dentro de `RenderBody` método.
 
-Altere o conteúdo do elemento de título. Alterar o [ActionLink](https://msdn.microsoft.com/en-us/library/dd504972(v=vs.108).aspx) no modelo de layout de &quot;nome do aplicativo&quot; para &quot;MVC filme&quot; e do controlador do `Home` para `Movies`. O arquivo de layout concluída é mostrado abaixo:
+Altere o conteúdo do elemento de título. Alterar o [ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx) no modelo de layout de &quot;nome do aplicativo&quot; para &quot;MVC filme&quot; e do controlador do `Home` para `Movies`. O arquivo de layout concluída é mostrado abaixo:
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml?highlight=6,20)]
 

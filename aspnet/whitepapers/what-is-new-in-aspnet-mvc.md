@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
-ms.openlocfilehash: e7f92dd7a09d1986ad775203effcbce76fb0e6f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29692b380f0ad1673459681042610876d152a76f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-2"></a>O que há de novo no ASP.NET MVC 2
 ====================
@@ -66,7 +66,7 @@ Esta seção descreve os recursos que foram introduzidos na versão 2 do MVC.
 
 Auxiliares modelo lhe permitem associados automaticamente elementos HTML para editar e exibem com tipos de dados. Por exemplo, quando os dados do tipo System. DateTime são exibidos em uma exibição, um elemento de interface do usuário do seletor de data pode ser renderizado automaticamente. Isso é semelhante ao funcionam dos modelos de campo nos dados dinâmicos do ASP.NET. Para obter mais informações, consulte [usando auxiliares modelo para exibir dados](https://go.microsoft.com/fwlink/?LinkId=159062) no site do MSDN.
 
-### <a id="_TOC3_2"></a>Áreas
+### <a id="_TOC3_2"></a>  Areas
 
 Áreas permitem organizar um grande projeto em várias seções menores para gerenciar a complexidade de um aplicativo Web grande. Cada seção ("área") normalmente representa uma seção separada de um site grande e é usada para agrupar conjuntos relacionados de controladores e exibições. Para obter mais informações, consulte [passo a passo: Organizando um aplicativo ASP.NET MVC por áreas](https://go.microsoft.com/fwlink/?LinkId=158978) no site do MSDN.
 
@@ -88,7 +88,7 @@ Se você não especificar o namespace no método RegisterArea chamando o context
 
 ### <a id="_TOC3_3"></a>Suporte para controladores assíncronos
 
-ASP.NET MVC 2 agora permite que os controladores processar solicitações de forma assíncrona. Isso pode levar a ganhos de desempenho, permitindo que os servidores que frequentemente chamar operações de bloqueio (como solicitações de rede) para chamar contrapartes sem bloqueios em vez disso. Para obter mais informações, consulte o [usando um controlador assíncrono no ASP.NET MVC](https://msdn.microsoft.com/en-us/library/ee728598(v=VS.100).aspx) no MSDN.
+ASP.NET MVC 2 agora permite que os controladores processar solicitações de forma assíncrona. Isso pode levar a ganhos de desempenho, permitindo que os servidores que frequentemente chamar operações de bloqueio (como solicitações de rede) para chamar contrapartes sem bloqueios em vez disso. Para obter mais informações, consulte o [usando um controlador assíncrono no ASP.NET MVC](https://msdn.microsoft.com/library/ee728598(v=VS.100).aspx) no MSDN.
 
 ### <a id="_TOC3_4"></a>Suporte para DefaultValueAttribute em parâmetros de método de ação
 
@@ -142,7 +142,7 @@ A classe ModelMetadataProvider fornece uma abstração para obtenção de metada
 
 A classe ViewDataDictionary expõe um objeto ModelMetadata que contém os metadados que é extraído do modelo pela classe ModelMetadataProvider. Isso permite que os auxiliares de modelo para consumir esses metadados e ajustar sua saída adequadamente.
 
-Para obter mais informações, consulte a documentação para o [ModelMetadata](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) e [ModelMetadataProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) classes.
+Para obter mais informações, consulte a documentação para o [ModelMetadata](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) e [ModelMetadataProvider](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) classes.
 
 ### <a id="_TOC3_7"></a>Suporte para atributos de DataAnnotations
 
@@ -152,7 +152,7 @@ Para obter mais informações, consulte [como: validar o modelo de dados usando 
 
 ### <a id="_TOC3_8"></a>Provedores de validador de modelo
 
-A classe de provedor de validação de modelo representa uma abstração que fornece a lógica de validação para o modelo. O ASP.NET MVC inclui um provedor padrão com base em atributos de validação que estão incluídos no namespace DataAnnotations. Você também pode criar seus próprios provedores de validação que definem as regras de validação personalizada e mapeamentos personalizados de regras de validação para o modelo. Para obter mais informações, consulte a documentação para o [ModelValidatorProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) classe.
+A classe de provedor de validação de modelo representa uma abstração que fornece a lógica de validação para o modelo. O ASP.NET MVC inclui um provedor padrão com base em atributos de validação que estão incluídos no namespace DataAnnotations. Você também pode criar seus próprios provedores de validação que definem as regras de validação personalizada e mapeamentos personalizados de regras de validação para o modelo. Para obter mais informações, consulte a documentação para o [ModelValidatorProvider](https://msdn.microsoft.com/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) classe.
 
 ### <a id="_TOC3_9"></a>Validação do lado do cliente
 
@@ -289,7 +289,7 @@ A cadeia de caracteres "área de" em valores de rota agora tem um significado es
 Se você estiver usando o recurso de áreas, certifique-se de não usar {área} como parte de sua URL da rota.
 
 
-## <a id="_TOC6"></a>Isenção de responsabilidade
+## <a id="_TOC6"></a>  Disclaimer
 
 Este é um documento preliminar e pode ser alterado substancialmente antes da versão comercial final do software descrito aqui.
 

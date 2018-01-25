@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: f2425de3f790cd8dab17940ec52a2a7e170cc630
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 08a8ad9b3b3cc2de48751d4149bf39c58954fd90
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>Desproteção cargas cujas chaves foram revogados
 
@@ -44,6 +44,6 @@ Essa API usa a carga protegida (como uma matriz de bytes) e retorna a carga desp
 * `wasRevoked`: será definido como verdadeiro se a chave usada para proteger essa carga foi revogada.
 
 >[!WARNING]
-> Tenha bastante cuidado ao passar `ignoreRevocationErrors: true` para o `DangerousUnprotect` método. Se, depois de chamar esse método de `wasRevoked` valor for true, em seguida, a chave usada para proteger essa carga foi revogada e autenticidade da carga deve ser tratada como suspeito. Nesse caso, apenas continuar a operar na carga de desprotegidos se você tiver alguma garantia separada que é autêntica, por exemplo, que ele do provenientes de um banco de dados seguro em vez de sendo enviada por um cliente da web não confiável.
+> Tenha bastante cuidado ao passar `ignoreRevocationErrors: true` para o `DangerousUnprotect` método. Se, depois de chamar esse método de `wasRevoked` valor for true, em seguida, a chave usada para proteger essa carga foi revogada e autenticidade da carga deve ser tratada como suspeito. Nesse caso, apenas continue a operar na carga de desprotegidos se você tiver alguma garantia separada que é autêntica, por exemplo, se ele é proveniente de um banco de dados seguro em vez de sendo enviada por um cliente da web não confiável.
 
 [!code-csharp[Main](dangerous-unprotect/samples/dangerous-unprotect.cs)]

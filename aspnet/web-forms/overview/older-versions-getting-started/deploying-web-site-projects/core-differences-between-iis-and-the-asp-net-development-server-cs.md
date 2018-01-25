@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d4d1a5795f5edabc51b578ecc45676490711c1a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 79f06707cadf027baa03652dc722cab31f494b09
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>Principais diferenças entre o IIS e o ASP.NET Development Server (c#)
 ====================
@@ -47,7 +47,7 @@ Para mostrar esse tipo de erro na ação que criei uma página no site revisões
 [!code-csharp[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample1.cs)]
 
 > [!NOTE]
-> O [ `File.WriteAllText` método](https://msdn.microsoft.com/en-us/library/system.io.file.writealltext.aspx) cria um novo arquivo se ele não existe e, em seguida, grava o conteúdo especificado. Se o arquivo já existir, seu conteúdo existente será substituído.
+> O [ `File.WriteAllText` método](https://msdn.microsoft.com/library/system.io.file.writealltext.aspx) cria um novo arquivo se ele não existe e, em seguida, grava o conteúdo especificado. Se o arquivo já existir, seu conteúdo existente será substituído.
 
 
 Em seguida, visite o *ensinar por conta própria ASP.NET 3.5 nas 24 horas* página de revisão de catálogo no ambiente de desenvolvimento usando o ASP.NET Development Server. Supondo que você está conectado em seu computador com uma conta que tenha as permissões adequadas para criar e modificar um arquivo de texto na web o diretório de raiz do aplicativo a revisão de catálogo aparece o mesmo de antes, mas toda vez que a página for visitada a data e hora e do usuário  Endereço IP é armazenado no `LastTYASP35Access.txt` arquivo. Aponte seu navegador para este arquivo. Você deve ver uma mensagem semelhante à mostrada na Figura 1.
@@ -58,7 +58,7 @@ Em seguida, visite o *ensinar por conta própria ASP.NET 3.5 nas 24 horas* pági
 **Figura 1**: O arquivo de texto contém a última data e hora a revisão de catálogo foi visitada ([clique para exibir a imagem em tamanho normal](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image3.png))
 
 
-Implantar o aplicativo web para a produção e, em seguida, visite hospedado *ensinar por conta própria ASP.NET 3.5 nas 24 horas* página de revisão de catálogo. Neste ponto você deve ver a página de revisão do catálogo como normal ou a mensagem de erro mostrado na Figura 2. Alguns provedores de host web conceder permissões de gravação para a conta da máquina ASP.NET anônima, nesse caso a página funcionará sem erro. Se, no entanto, o provedor de host web proíbe o acesso de gravação para a conta anônima então um [ `UnauthorizedAccessException` exceção](https://msdn.microsoft.com/en-us/library/system.unauthorizedaccessexception.aspx) é gerado quando o `TYASP35.aspx` página tenta gravar a data e hora atuais para o `LastTYASP35Access.txt` arquivo.
+Implantar o aplicativo web para a produção e, em seguida, visite hospedado *ensinar por conta própria ASP.NET 3.5 nas 24 horas* página de revisão de catálogo. Neste ponto você deve ver a página de revisão do catálogo como normal ou a mensagem de erro mostrado na Figura 2. Alguns provedores de host web conceder permissões de gravação para a conta da máquina ASP.NET anônima, nesse caso a página funcionará sem erro. Se, no entanto, o provedor de host web proíbe o acesso de gravação para a conta anônima então um [ `UnauthorizedAccessException` exceção](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx) é gerado quando o `TYASP35.aspx` página tenta gravar a data e hora atuais para o `LastTYASP35Access.txt` arquivo.
 
 
 [![A conta de computador padrão usada pelo IIS não tem permissões para gravar no sistema de arquivos](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image4.png)
@@ -123,7 +123,7 @@ Depois que o IIS foi configurado para usar o pipeline integrado adicione a segui
 Essa marcação instrui o IIS 7 para usar os módulos de autenticação e autorização baseada em ASP.NET. Reimplante o aplicativo e, em seguida, visite novamente o arquivo PDF. Desta vez, quando o IIS trata a solicitação-lógica de autenticação e autorização do tempo de execução ASP.NET uma oportunidade para inspecionar a solicitação. Porque somente usuários autenticados tem autorização para exibir o conteúdo de `PrivateDocs` pasta, o visitante anônimo é automaticamente redirecionada para a página de logon (consulte novamente a Figura 3).
 
 > [!NOTE]
-> Se seu provedor de host da web ainda estiver usando o IIS 6, em seguida, você não pode usar o recurso de pipeline integrado. Uma solução alternativa é colocar seus documentos particulares em uma pasta que proíbe o acesso HTTP (como `App_Data`) e, em seguida, crie uma página para atender a esses documentos. Esta página pode ser chamada `GetPDF.aspx`e o nome do PDF por meio de um parâmetro querystring transmitido. O `GetPDF.aspx` página pela primeira vez, verificaria que o usuário tem permissão para exibir o arquivo e, nesse caso, use o [ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/en-us/library/system.web.httpresponse.writefile.aspx) método para enviar o conteúdo do arquivo PDF solicitado para o cliente solicitante. Essa técnica também funcionaria para o IIS 7, se você habilitar o pipeline integrado.
+> Se seu provedor de host da web ainda estiver usando o IIS 6, em seguida, você não pode usar o recurso de pipeline integrado. Uma solução alternativa é colocar seus documentos particulares em uma pasta que proíbe o acesso HTTP (como `App_Data`) e, em seguida, crie uma página para atender a esses documentos. Esta página pode ser chamada `GetPDF.aspx`e o nome do PDF por meio de um parâmetro querystring transmitido. O `GetPDF.aspx` página pela primeira vez, verificaria que o usuário tem permissão para exibir o arquivo e, nesse caso, use o [ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx) método para enviar o conteúdo do arquivo PDF solicitado para o cliente solicitante. Essa técnica também funcionaria para o IIS 7, se você habilitar o pipeline integrado.
 
 
 ## <a name="summary"></a>Resumo
@@ -138,7 +138,7 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 - [Integração do ASP.NET com o IIS 7.0](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 - [Usando a autenticação de fóruns do ASP.NET com todos os tipos de conteúdo no IIS 7](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx) (vídeo)
-- [Servidores Web no Visual Web Developer](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)
+- [Servidores Web no Visual Web Developer](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
 >[!div class="step-by-step"]
 [Anterior](common-configuration-differences-between-development-and-production-cs.md)

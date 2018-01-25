@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: db57b8fe44f41d65d27964f45e0884138629f92b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d6bc92f3cbe6b61332e33e8a507b4516bf5c15a5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>Aplicativo ASP.NET MVC 5 com SMS e o email de autenticação de dois fatores
 ====================
@@ -43,7 +43,7 @@ Comece instalando e executando [Visual Studio Express 2013 para Web](https://go.
 
 1. Criar um novo projeto da Web do ASP.NET e selecione o modelo MVC. Formulários da Web também oferece suporte a identidade do ASP.NET, você pode seguir etapas semelhantes em um aplicativo de formulários da web.  
     ![](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/_static/image1.png)
-2. Deixe a autenticação padrão como **contas de usuário individuais**. Se você quiser hospedar o aplicativo no Azure, deixe a caixa de seleção marcada. No tutorial posteriormente, implantará no Azure. Você pode [abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F).
+2. Deixe a autenticação padrão como **contas de usuário individuais**. Se você quiser hospedar o aplicativo no Azure, deixe a caixa de seleção marcada. No tutorial posteriormente, implantará no Azure. Você pode [abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
 3. Definir o [projeto para usar SSL](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
 
 <a id="SMS"></a>
@@ -106,7 +106,7 @@ Este tutorial fornece instruções sobre como usar o Twilio ou ASPSMS, mas você
 7. Atualização de *Views\Manage\Index.cshtml* exibição Razor: (Observação: apenas não remova os comentários no código existente, use o código abaixo.)  
 
     [!code-cshtml[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample3.cshtml?highlight=29-66)]
-8. Verifique se o `EnableTwoFactorAuthentication` e `DisableTwoFactorAuthentication` métodos de ação no `ManageController` tem o[[ValidateAntiForgeryToken]](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.118).aspx) atributo:  
+8. Verifique se o `EnableTwoFactorAuthentication` e `DisableTwoFactorAuthentication` métodos de ação no `ManageController` tem o[[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.118).aspx) atributo:  
 
     [!code-csharp[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample4.cs?highlight=3,16)]
 9. Executar o aplicativo e faça logon usando a conta que você registrou anteriormente.

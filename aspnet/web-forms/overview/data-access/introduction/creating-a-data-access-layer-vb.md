@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 556b90f5e29f30756a4bd3b16be9608011558c4d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad578d5d5fb1ef0ac63d3cbde3f307535ea3d98c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-vb"></a>Criando uma camada de acesso a dados (VB)
 ====================
@@ -89,7 +89,7 @@ Por exemplo, o DataReader e o conjunto de dados (por padrão) são objetos tipad
 Para retornar objetos fortemente tipados, os desenvolvedores podem criar seus próprios objetos de negócios personalizada ou usar conjuntos de dados digitados. Um objeto de negócios é implementado pelo desenvolvedor como representa uma classe cujas propriedades normalmente refletem as colunas da tabela de banco de dados subjacentes do objeto comercial. Um conjunto de dados tipado é uma classe gerada para você pelo Visual Studio com base em um esquema de banco de dados e cujos membros são fortemente tipada de acordo com esse esquema. O conjunto de dados tipado próprio consiste em classes que estendem as classes de conjunto de dados ADO.NET, DataTable e DataRow. Além das tabelas de dados fortemente tipados, DataSets tipados agora também incluem TableAdapters, que são classes com métodos para popular tabelas de dados do conjunto de dados e propagar as modificações dentro de tabelas de dados no banco de dados.
 
 > [!NOTE]
-> Para obter mais informações sobre as vantagens e desvantagens do uso de DataSets tipados versus objetos comerciais personalizados, consulte [Criando componentes de camada de dados e passando por meio de camadas de dados](https://msdn.microsoft.com/en-us/library/ms978496.aspx).
+> Para obter mais informações sobre as vantagens e desvantagens do uso de DataSets tipados versus objetos comerciais personalizados, consulte [Criando componentes de camada de dados e passando por meio de camadas de dados](https://msdn.microsoft.com/library/ms978496.aspx).
 
 
 Vamos usar conjuntos de dados fortemente tipado para arquitetura esses tutoriais. A Figura 3 ilustra o fluxo de trabalho entre as diferentes camadas de um aplicativo que usa conjuntos de dados digitados.
@@ -293,7 +293,7 @@ Há dois padrões usados para inserir, atualizar e excluir dados. O padrão prim
 **Figura 21**: cada inserção, atualização e Excluir solicitação é enviada para o banco de dados imediatamente ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-vb/_static/image57.png))
 
 
-Padrão que será chamado de como o lote de atualização padrão, é para atualizar um conjunto de dados, DataTable ou coleção de DataRows na chamada de um método inteira. Com esse padrão de um desenvolvedor exclui, insere, modifica DataRows em uma DataTable e, em seguida, passa esses DataRows ou DataTable em um método de atualização. Esse método, em seguida, enumera o DataRows passado, determina se ou não eles já foram modificados, adicionados ou excluídos (por meio de DataRow [propriedade RowState](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) valor) e emite a solicitação de banco de dados apropriado para cada registro.
+Padrão que será chamado de como o lote de atualização padrão, é para atualizar um conjunto de dados, DataTable ou coleção de DataRows na chamada de um método inteira. Com esse padrão de um desenvolvedor exclui, insere, modifica DataRows em uma DataTable e, em seguida, passa esses DataRows ou DataTable em um método de atualização. Esse método, em seguida, enumera o DataRows passado, determina se ou não eles já foram modificados, adicionados ou excluídos (por meio de DataRow [propriedade RowState](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) valor) e emite a solicitação de banco de dados apropriado para cada registro.
 
 
 [![Todas as alterações são sincronizadas com o banco de dados quando o método de atualização é invocado](creating-a-data-access-layer-vb/_static/image59.png)](creating-a-data-access-layer-vb/_static/image58.png)
@@ -339,7 +339,7 @@ Para criar esse método um personalizado, retorne para o Designer de conjunto de
 **Figura 25**: criar um método para adicionar uma nova linha para o `Products` tabela ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-vb/_static/image69.png))
 
 
-Na próxima tela de `InsertCommand`do `CommandText` é exibida. Aumentar essa consulta adicionando `SELECT SCOPE_IDENTITY()` no final da consulta, que retorna o último valor de identidade inserido em um `IDENTITY` coluna no mesmo escopo. (Consulte o [documentação técnica](https://msdn.microsoft.com/en-us/library/ms190315.aspx) para obter mais informações sobre `SCOPE_IDENTITY()` e por quê você provavelmente desejará [usar escopo\_IDENTITY() lieu de @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Certifique-se de que você encerrar o `INSERT` instrução com um ponto e vírgula antes de adicionar o `SELECT` instrução.
+Na próxima tela de `InsertCommand`do `CommandText` é exibida. Aumentar essa consulta adicionando `SELECT SCOPE_IDENTITY()` no final da consulta, que retorna o último valor de identidade inserido em um `IDENTITY` coluna no mesmo escopo. (Consulte o [documentação técnica](https://msdn.microsoft.com/library/ms190315.aspx) para obter mais informações sobre `SCOPE_IDENTITY()` e por quê você provavelmente desejará [usar escopo\_IDENTITY() lieu de @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Certifique-se de que você encerrar o `INSERT` instrução com um ponto e vírgula antes de adicionar o `SELECT` instrução.
 
 
 [![Ampliar a consulta para retornar o valor SCOPE_IDENTITY)](creating-a-data-access-layer-vb/_static/image71.png)](creating-a-data-access-layer-vb/_static/image70.png)
@@ -520,18 +520,18 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [Criando uma DAL usando TableAdapters fortemente tipado e DataTables no VS 2005 e o ASP.NET 2.0](https://weblogs.asp.net/scottgu/435498)
-- [Criando componentes de camada de dados e transmissão de dados por meio de camadas](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [Criando componentes de camada de dados e transmissão de dados por meio de camadas](https://msdn.microsoft.com/library/ms978496.aspx)
 - [Criar uma camada de acesso de dados com o Designer de conjunto de dados do Visual Studio 2005](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [Criptografando informações de configuração no ASP.NET 2.0 aplicativos](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [Visão geral de TableAdapter](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [Trabalhando com um conjunto de dados tipado](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [Visão geral de TableAdapter](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [Trabalhando com um conjunto de dados tipado](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [Acesso a dados fortemente tipado no Visual Studio 2005 e o ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [Como estender os métodos TableAdapter](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [Recuperação de dados escalar de um procedimento armazenado](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Treinamento em vídeo sobre tópicos contidos neste tutorial
 
-- [Camadas de acesso de dados em aplicativos ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
+- [Camadas de Acesso a Dados em aplicativos do ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
 - [Como associar um conjunto de dados manualmente para uma grade de dados](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [Como trabalhar com conjuntos de dados e os filtros de um aplicativo ASP](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 

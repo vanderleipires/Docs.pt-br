@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Implantação de Web do ASP.NET usando o Visual Studio: implantação em produção
 ====================
@@ -150,7 +150,7 @@ Agora que você criou um aplicativo web e o banco de dados para o ambiente de pr
     5. Fechar o **configurar atualizações de banco de dados** caixa de diálogo.
 10. Em **SchoolContext** no **bancos de dados** seção, selecione **executar migrações do Code First (executado na inicialização do aplicativo)**.
 
-    O Visual Studio exibe **executar migrações do Code First** em vez de **Atualizar banco de dados** para `DbContext` classes. Se você deseja usar o provedor dbDacFx em vez de migrações para implantar um banco de dados que você acessa usando um `DbContext` de classe, consulte [como implantar a um banco de dados Code First sem migrações?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) nas perguntas Frequentes de implantação da Web para o Visual Studio e o ASP.NET no MSDN.
+    O Visual Studio exibe **executar migrações do Code First** em vez de **Atualizar banco de dados** para `DbContext` classes. Se você deseja usar o provedor dbDacFx em vez de migrações para implantar um banco de dados que você acessa usando um `DbContext` de classe, consulte [como implantar a um banco de dados Code First sem migrações?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) nas perguntas Frequentes de implantação da Web para o Visual Studio e o ASP.NET no MSDN.
 
     O **configurações** guia agora é semelhante ao exemplo a seguir:
 
@@ -193,7 +193,7 @@ Uma consideração importante para o aplicativo de preparo é que ela será ao v
 - Use uma URL ofuscada que seja impossível adivinhar.
 - Criar um *robots* arquivo para garantir que os mecanismos de pesquisa não rastreará o os links de relatório e o aplicativo de teste para ele nos resultados da pesquisa.
 
-O primeiro desses métodos é mais eficiente, mas não é abordado neste tutorial, porque ela requer que você implanta um serviço de nuvem do Azure em vez do serviço de aplicativo do Azure. Para obter mais informações sobre serviços de nuvem e as restrições de IP no Azure, consulte [de computação hospedagem opções fornecidas pelo Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) e [blocos de endereços IP específicos de acessar uma função Web](https://msdn.microsoft.com/en-us/library/windowsazure/jj154098.aspx). Se você estiver implantando em um provedor de hospedagem de terceiros, entre em contato com o provedor para saber como implementar restrições de IP.
+O primeiro desses métodos é mais eficiente, mas não é abordado neste tutorial, porque ela requer que você implanta um serviço de nuvem do Azure em vez do serviço de aplicativo do Azure. Para obter mais informações sobre serviços de nuvem e as restrições de IP no Azure, consulte [de computação hospedagem opções fornecidas pelo Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) e [blocos de endereços IP específicos de acessar uma função Web](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx). Se você estiver implantando em um provedor de hospedagem de terceiros, entre em contato com o provedor para saber como implementar restrições de IP.
 
 Para este tutorial, você criará uma *robots* arquivo.
 
@@ -256,7 +256,7 @@ Por padrão, *. pubxml* arquivos são incluídos no projeto quando você criar u
 
 Para cada *. pubxml* arquivo há um *. pubxml.user* arquivo. O *. pubxml.user* arquivo contém a senha criptografada se você tiver selecionado o **salvar senha** opção e, por padrão, ele é excluído do projeto.
 
-Um *. pubxml* arquivo contém as configurações que pertencem a um perfil de publicação específica. Se você quiser definir as configurações que se aplicam a todos os perfis, você pode criar um *. wpp.targets* arquivo. O processo de compilação importa esses arquivos para o *. csproj* ou *. vbproj* arquivo de projeto, portanto, a maioria das configurações que você pode configurar o arquivo de projeto pode ser configurada nesses arquivos. Para obter mais informações sobre *. pubxml* arquivos e *. wpp.targets* arquivos, consulte [como: Editar configurações de implantação nos arquivos de perfil de publicação (. pubxml) e o. wpp.targets arquivo no Visual Studio Projetos da Web](https://msdn.microsoft.com/en-us/library/ff398069.aspx).
+Um *. pubxml* arquivo contém as configurações que pertencem a um perfil de publicação específica. Se você quiser definir as configurações que se aplicam a todos os perfis, você pode criar um *. wpp.targets* arquivo. O processo de compilação importa esses arquivos para o *. csproj* ou *. vbproj* arquivo de projeto, portanto, a maioria das configurações que você pode configurar o arquivo de projeto pode ser configurada nesses arquivos. Para obter mais informações sobre *. pubxml* arquivos e *. wpp.targets* arquivos, consulte [como: Editar configurações de implantação nos arquivos de perfil de publicação (. pubxml) e o. wpp.targets arquivo no Visual Studio Projetos da Web](https://msdn.microsoft.com/library/ff398069.aspx).
 
 1. Em **Solution Explorer**, expanda **propriedades** e expanda **PublishProfiles**.
 2. Clique com botão direito *Production.pubxml* e clique em **abrir**.
@@ -271,7 +271,7 @@ Um *. pubxml* arquivo contém as configurações que pertencem a um perfil de pu
 
     [!code-xml[Main](deploying-to-production/samples/sample4.xml?highlight=18-20)]
 
-    Para obter mais informações sobre como excluir arquivos e pastas, consulte [pode, excluir arquivos ou pastas específicas de implantação?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) no **perguntas frequentes sobre a implantação da Web do Visual Studio e ASP.NET** no MSDN.
+    Para obter mais informações sobre como excluir arquivos e pastas, consulte [pode, excluir arquivos ou pastas específicas de implantação?](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) no **perguntas frequentes sobre a implantação da Web do Visual Studio e ASP.NET** no MSDN.
 
 ### <a name="deploy-to-production"></a>Implantar na produção
 
@@ -295,7 +295,7 @@ Você tem agora implantados e testados com êxito seu aplicativo web e está dis
 O seguinte tutorial, você atualizar o código do aplicativo e implante a alteração para os ambientes de teste, preparação e produção.
 
 > [!NOTE]
-> Enquanto seu aplicativo estiver em uso no ambiente de produção deve implementar um plano de recuperação. Ou seja, você deve ser periodicamente backup de seus bancos de dados do aplicativo de produção para um local de armazenamento seguro, e você deve manter várias gerações de backups desse tipo. Quando você atualizar o banco de dados, você deve fazer uma cópia de backup de imediatamente antes da alteração. Em seguida, se você comete um erro e não Descubra até depois de implantá-lo em produção, você ainda poderá recuperar o banco de dados para o estado em que estava antes que ele se tornou corrompido. Para obter mais informações, consulte [Backup de banco de dados do SQL Azure e restauração](https://msdn.microsoft.com/en-us/library/windowsazure/jj650016.aspx).
+> Enquanto seu aplicativo estiver em uso no ambiente de produção deve implementar um plano de recuperação. Ou seja, você deve ser periodicamente backup de seus bancos de dados do aplicativo de produção para um local de armazenamento seguro, e você deve manter várias gerações de backups desse tipo. Quando você atualizar o banco de dados, você deve fazer uma cópia de backup de imediatamente antes da alteração. Em seguida, se você comete um erro e não Descubra até depois de implantá-lo em produção, você ainda poderá recuperar o banco de dados para o estado em que estava antes que ele se tornou corrompido. Para obter mais informações, consulte [Backup de banco de dados do SQL Azure e restauração](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
 
 
 > [!NOTE]

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 84ca4bbaebe401d14233131bcaa027debf7ea0f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46f53279e2e6daa4266c06feb4ba544e14b68a03
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a>Introdução ao Entity Framework 6 Code First usando o MVC 5
 ====================
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > > Uma versão mais recente desta série tutorial está disponível: [Introdução ao ASP.NET Core e o Entity Framework Core usando o Visual Studio 2015](https://docs.asp.net/en/latest/data/ef-mvc/intro.html).
 > 
 > 
-> O aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 e o Visual Studio 2013. Este tutorial usa o fluxo de trabalho Code First. Para obter informações sobre como escolher entre Code First, Database First e Model First, consulte [fluxos de trabalho de desenvolvimento do Entity Framework](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+> O aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 e o Visual Studio 2013. Este tutorial usa o fluxo de trabalho Code First. Para obter informações sobre como escolher entre Code First, Database First e Model First, consulte [fluxos de trabalho de desenvolvimento do Entity Framework](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 > 
 > O aplicativo de exemplo é um site de uma universidade Contoso fictícia. Ele inclui a funcionalidade como admissão do aluno, criação de curso e atribuições do instrutor. Esta série de tutorial explica como construir o aplicativo de exemplo Contoso University. Você pode [Baixe o aplicativo concluído](https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8).
 > 
@@ -53,7 +53,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
 > 
-> Deixe comentários em como você gostou neste tutorial e o que podemos melhorar nos comentários na parte inferior da página. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), o [do Entity Framework e LINQ to Fórum de entidades](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
+> Deixe comentários em como você gostou neste tutorial e o que podemos melhorar nos comentários na parte inferior da página. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), o [do Entity Framework e LINQ to Fórum de entidades](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
 > 
 > Se você tiver um problema que não é possível resolver, você geralmente pode encontrar a solução do problema comparando seu código para o projeto completo que você pode baixar. Para alguns erros comuns e como resolvê-los, consulte [os erros comuns e soluções ou soluções alternativas para eles.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
 
@@ -169,7 +169,7 @@ No *modelos* pasta, criar *Enrollment.cs* e substitua o código existente pelo s
 
 O `EnrollmentID` propriedade será a chave primária; esta entidade usa o *classname* `ID` padrão em vez de `ID` por si só, como você viu no `Student` entidade. Normalmente você deve escolher um padrão e usá-lo em todo o modelo de dados. Aqui, a variação ilustra que você pode usar o padrão. Um tutorial posterior, você verá como usar `ID` sem `classname` torna mais fácil de implementar a herança no modelo de dados.
 
-O `Grade` propriedade é um [enum](https://msdn.microsoft.com/en-us/data/hh859576.aspx). O ponto de interrogação após o `Grade` declaração de tipo indica que o `Grade` é de propriedade [anulável](https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx). Uma classificação que é null é diferente de uma classificação zero — null significa que um nível não é conhecida ou ainda não foi atribuído.
+O `Grade` propriedade é um [enum](https://msdn.microsoft.com/data/hh859576.aspx). O ponto de interrogação após o `Grade` declaração de tipo indica que o `Grade` é de propriedade [anulável](https://msdn.microsoft.com/library/2cf62fcy.aspx). Uma classificação que é null é diferente de uma classificação zero — null significa que um nível não é conhecida ou ainda não foi atribuído.
 
 O `StudentID` propriedade é uma chave estrangeira e a propriedade de navegação correspondente é `Student`. Um `Enrollment` entidade está associada um `Student` entidade, para a propriedade pode conter apenas um único `Student` entidade (ao contrário de `Student.Enrollments` propriedade de navegação que vimos anteriormente, que pode conter vários `Enrollment` entidades).
 
@@ -187,11 +187,11 @@ No *modelos* pasta, criar *Course.cs*, substituindo o código de modelo com o c�
 
 O `Enrollments` propriedade é uma propriedade de navegação. Um `Course` entidade pode estar relacionada a qualquer número de `Enrollment` entidades.
 
-Podemos dizer mais sobre o [DatabaseGenerated](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx) atributo em um tutorial posterior nesta série. Basicamente, este atributo permite que você insira a chave primária para o curso, em vez de fazer com que o banco de dados gerá-lo.
+Podemos dizer mais sobre o [DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx) atributo em um tutorial posterior nesta série. Basicamente, este atributo permite que você insira a chave primária para o curso, em vez de fazer com que o banco de dados gerá-lo.
 
 ## <a name="create-the-database-context"></a>Criar o contexto de banco de dados
 
-A classe principal que coordena a funcionalidade do Entity Framework para um modelo de dados é o *contexto de banco de dados* classe. Crie esta classe derivando de [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx) classe. No seu código, você especifica quais entidades são incluídas no modelo de dados. Você também pode personalizar o comportamento específico do Entity Framework. Neste projeto, a classe é nomeada `SchoolContext`.
+A classe principal que coordena a funcionalidade do Entity Framework para um modelo de dados é o *contexto de banco de dados* classe. Crie esta classe derivando de [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) classe. No seu código, você especifica quais entidades são incluídas no modelo de dados. Você também pode personalizar o comportamento específico do Entity Framework. Neste projeto, a classe é nomeada `SchoolContext`.
 
 Para criar uma pasta no projeto ContosoUniversity, com o botão direito no projeto no **Solution Explorer** e clique em **adicionar**e, em seguida, clique em **nova pasta**. Nomeie a nova pasta *DAL* (para a camada de acesso a dados). Nessa pasta, crie um novo arquivo de classe chamado *SchoolContext.cs*e substitua o código de modelo com o código a seguir:
 
@@ -199,7 +199,7 @@ Para criar uma pasta no projeto ContosoUniversity, com o botão direito no proje
 
 ### <a name="specifying-entity-sets"></a>Especificando conjuntos de entidade
 
-Esse código cria um [DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=VS.103).aspx) propriedade para cada conjunto de entidades. Na terminologia do Entity Framework, um *conjunto de entidades* normalmente corresponde a uma tabela de banco de dados e um *entidade* corresponde a uma linha na tabela.
+Esse código cria um [DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=VS.103).aspx) propriedade para cada conjunto de entidades. Na terminologia do Entity Framework, um *conjunto de entidades* normalmente corresponde a uma tabela de banco de dados e um *entidade* corresponde a uma linha na tabela.
 
 > [!NOTE] 
 > 
@@ -212,13 +212,13 @@ O nome da cadeia de conexão (que você adicionará ao arquivo Web. config poste
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample7.cs?highlight=1)]
 
-Você também pode passar na cadeia de conexão em si em vez do nome de um que é armazenado no arquivo Web. config. Para obter mais informações sobre as opções para especificar o banco de dados para usar, consulte [Entity Framework - conexões e modelos](https://msdn.microsoft.com/en-us/data/jj592674).
+Você também pode passar na cadeia de conexão em si em vez do nome de um que é armazenado no arquivo Web. config. Para obter mais informações sobre as opções para especificar o banco de dados para usar, consulte [Entity Framework - conexões e modelos](https://msdn.microsoft.com/data/jj592674).
 
 Se você não especificar uma cadeia de caracteres de conexão ou o nome de um explicitamente, o Entity Framework pressupõe que o nome da cadeia de caracteres de conexão é o mesmo que o nome da classe. O nome de cadeia de caracteres de conexão padrão neste exemplo, em seguida, seria `SchoolContext`, o mesmo que o que você especificar explicitamente.
 
 ### <a name="specifying-singular-table-names"></a>Especificando nomes de tabela única
 
-O `modelBuilder.Conventions.Remove` instrução o [OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) método impede que os nomes de tabela que está sendo pluralized. Se você não tiver feito isso, as tabelas geradas no banco de dados serão chamadas `Students`, `Courses`, e `Enrollments`. Em vez disso, os nomes de tabela serão `Student`, `Course`, e `Enrollment`. Os desenvolvedores não concordam sobre se os nomes de tabela devem ser pluralizados ou não. Este tutorial usa a forma singular, mas o ponto importante é que você pode selecionar qualquer formato que preferir, incluindo ou omitir esta linha de código.
+O `modelBuilder.Conventions.Remove` instrução o [OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) método impede que os nomes de tabela que está sendo pluralized. Se você não tiver feito isso, as tabelas geradas no banco de dados serão chamadas `Students`, `Courses`, e `Enrollments`. Em vez disso, os nomes de tabela serão `Student`, `Course`, e `Enrollment`. Os desenvolvedores não concordam sobre se os nomes de tabela devem ser pluralizados ou não. Este tutorial usa a forma singular, mas o ponto importante é que você pode selecionar qualquer formato que preferir, incluindo ou omitir esta linha de código.
 
 ## <a name="set-up-ef-to-initialize-the-database-with-test-data"></a>Configurar o EF para inicializar o banco de dados de teste
 
@@ -241,7 +241,7 @@ Para informar o Entity Framework para usar seu inicializador de classe, adicione
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample9.xml?highlight=2-6)]
 
-O `context type` Especifica o nome totalmente qualificado do contexto da classe e o assembly é, e o `databaseinitializer type` Especifica o nome totalmente qualificado da classe de inicializador e o assembly está em. (Quando você não quiser EF para usar o inicializador, você pode definir um atributo no `context` elemento: `disableDatabaseInitialization="true"`.) Para obter mais informações, consulte [Entity Framework - configurações do arquivo de configuração](https://msdn.microsoft.com/en-us/data/jj556606).
+O `context type` Especifica o nome totalmente qualificado do contexto da classe e o assembly é, e o `databaseinitializer type` Especifica o nome totalmente qualificado da classe de inicializador e o assembly está em. (Quando você não quiser EF para usar o inicializador, você pode definir um atributo no `context` elemento: `disableDatabaseInitialization="true"`.) Para obter mais informações, consulte [Entity Framework - configurações do arquivo de configuração](https://msdn.microsoft.com/data/jj556606).
 
 Como uma alternativa para definir o inicializador *Web. config* arquivo é fazer isso no código adicionando um `Database.SetInitializer` instrução para o `Application_Start` método no *Global.asax.cs* arquivo. Para obter mais informações, consulte [inicializadores de banco de dados de Conhecimento no Entity Framework Code First](http://www.codeguru.com/csharp/article.php/c19999/Understanding-Database-Initializers-in-Entity-Framework-Code-First.htm).
 
@@ -264,9 +264,9 @@ Se você estiver usando o Visual Studio 2015, substitua "v 11.0" na cadeia de co
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample10.xml?highlight=1-3)]
 
-A cadeia de caracteres de conexão que você adicionou Especifica que o Entity Framework usará um banco de dados LocalDB denominado *ContosoUniversity1.mdf*. (O banco de dados ainda não existe; EF vai criá-lo.) Se desejar que o banco de dados a serem criados no seu *aplicativo\_dados* pasta, você pode adicionar `AttachDBFilename=|DataDirectory|\ContosoUniversity1.mdf` à cadeia de conexão. Para obter mais informações sobre cadeias de caracteres de conexão, consulte [cadeias de Conexão do SQL Server para aplicativos Web ASP.NET](https://msdn.microsoft.com/en-us/library/jj653752.aspx).
+A cadeia de caracteres de conexão que você adicionou Especifica que o Entity Framework usará um banco de dados LocalDB denominado *ContosoUniversity1.mdf*. (O banco de dados ainda não existe; EF vai criá-lo.) Se desejar que o banco de dados a serem criados no seu *aplicativo\_dados* pasta, você pode adicionar `AttachDBFilename=|DataDirectory|\ContosoUniversity1.mdf` à cadeia de conexão. Para obter mais informações sobre cadeias de caracteres de conexão, consulte [cadeias de Conexão do SQL Server para aplicativos Web ASP.NET](https://msdn.microsoft.com/library/jj653752.aspx).
 
-Na verdade, não é necessário ter uma cadeia de caracteres de conexão no *Web. config* arquivo. Se você não fornecer uma cadeia de caracteres de conexão, o Entity Framework usará um padrão de um com base em sua classe de contexto. Para obter mais informações, consulte [Code First para um novo banco de dados](https://msdn.microsoft.com/en-us/data/jj193542).
+Na verdade, não é necessário ter uma cadeia de caracteres de conexão no *Web. config* arquivo. Se você não fornecer uma cadeia de caracteres de conexão, o Entity Framework usará um padrão de um com base em sua classe de contexto. Para obter mais informações, consulte [Code First para um novo banco de dados](https://msdn.microsoft.com/data/jj193542).
 
 ## <a name="creating-a-student-controller-and-views"></a>Criando um controlador de estudante e exibições
 
@@ -334,7 +334,7 @@ A quantidade de código, você precisava criar para que o Entity Framework para 
 - Propriedades de entidade que são nomeadas `ID` ou *classname* `ID` são reconhecidos como propriedades de chave primárias.
 - Uma propriedade é interpretada como uma propriedade de chave estrangeira, se ele é nomeado  *&lt;nome da propriedade de navegação&gt;&lt;nome de propriedade de chave primária&gt;*  (por exemplo, `StudentID` para o `Student` propriedade de navegação desde o `Student` chave primária da entidade é `ID`). Propriedades de chave estrangeira podem também ser o mesmo nome simplesmente &lt;nome de propriedade de chave primária&gt; (por exemplo, `EnrollmentID` desde o `Enrollment` chave primária da entidade é `EnrollmentID`).
 
-Você viu que as convenções podem ser substituídas. Por exemplo, você especificou que os nomes de tabela não devem ser pluralized, e você verá posteriormente como marcar explicitamente uma propriedade como uma propriedade de chave estrangeira. Você aprenderá mais sobre as convenções e como substituí-las no [criando um modelo de dados mais complexo](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) tutorial posteriormente na série. Para obter mais informações sobre convenções, consulte [convenções de código primeiro](https://msdn.microsoft.com/en-us/data/jj679962).
+Você viu que as convenções podem ser substituídas. Por exemplo, você especificou que os nomes de tabela não devem ser pluralized, e você verá posteriormente como marcar explicitamente uma propriedade como uma propriedade de chave estrangeira. Você aprenderá mais sobre as convenções e como substituí-las no [criando um modelo de dados mais complexo](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) tutorial posteriormente na série. Para obter mais informações sobre convenções, consulte [convenções de código primeiro](https://msdn.microsoft.com/data/jj679962).
 
 ## <a name="summary"></a>Resumo
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: aee3304515686fc8e45e8e2aafb79d957219f94a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4332dce4c341cb8e5c241a67547048301ae9a8b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Criando sites lindos, respondendo com inicialização
 
@@ -218,4 +218,4 @@ Biblioteca de JavaScript do Bootstrap inclui suporte a API para os componentes i
 
 ## <a name="summary"></a>Resumo
 
-Inicialização fornece uma estrutura de web que pode ser usada para formatar e uma ampla variedade de sites e aplicativos de estilo de forma rápida e produtiva. Seu tipografia básica e estilos fornecem uma agradável aparência que podem ser manipulada facilmente por meio do suporte de tema personalizado, que pode ser criado manualmente ou adquirido comercialmente. Ele dá suporte a um host de componentes da web que exigiria caros controles de terceiros para realizar e dar suporte a padrões da web modernos e abertos no passado.
+Inicialização fornece uma estrutura de web que pode ser usada para formatar e uma ampla variedade de sites e aplicativos de estilo de forma rápida e produtiva. Seu tipografia básica e estilos fornecem uma agradável aparência que podem ser manipulada facilmente por meio do suporte de tema personalizado, que pode ser criado manualmente ou adquirido comercialmente. Ele dá suporte a um host de componentes da web que seria tiver solicitado caros controles de terceiros para realizar e dar suporte a padrões da web modernos e abertos no passado.

@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 7d89416626433bf737b63eda4b17e65b089ae142
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: aab96b5313a8632950e51f5586612c1d0d3d176e
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Padrão de opções no núcleo do ASP.NET
 
 Por [Luke Latham](https://github.com/guardrex)
 
-O padrão de opções usa as classes de opções para representar grupos de configurações relacionadas. Quando as definições de configuração são isoladas pelo recurso em classes de opções separadas, o aplicativo cumpre dois princípios de engenharia de software importantes:
+O padrão de opções usa classes de opções para representar grupos de configurações relacionadas. Quando as definições de configuração são isoladas pelo recurso em classes de opções separadas, o aplicativo cumpre dois princípios de engenharia de software importantes:
 
 * O [princípio de diferenciação de Interface (ISP)](http://deviq.com/interface-segregation-principle/): recursos (classes) que dependem de definições de configuração dependem apenas as definições de configuração que eles usam.
 * [Separação de preocupações](http://deviq.com/separation-of-concerns/): as configurações diferentes partes do aplicativo não são dependentes ou acoplado um ao outro.
@@ -69,7 +69,7 @@ No código a seguir, um segundo `IConfigureOptions<TOptions>` serviço é adicio
 
 [!code-csharp[Main](options/sample/Startup.cs?name=snippet_Example2)]
 
-*Index.cshtml.CS*:
+*Index.cshtml.cs*:
 
 [!code-csharp[Main](options/sample/Pages/Index.cshtml.cs?range=10)]
 
@@ -258,6 +258,12 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 [IOptionsFactory&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1) (núcleo ASP.NET 2.0 ou posterior) é responsável por criar novas instâncias de opções. Ele tem um único [criar](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1.create) método. A implementação padrão usa todos os `IConfigureOptions` e `IPostConfigureOptions` e executa todos os o configura o primeiro, seguido de pós-configura. Ele faz distinção entre `IConfigureNamedOptions` e `IConfigureOptions` e só chama a interface apropriada.
 
 [IOptionsMonitorCache&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1) (núcleo ASP.NET 2.0 ou posterior) é usado por `IOptionsMonitor` cache `TOptions` instâncias. O `IOptionsMonitorCache` invalida as instâncias de opções no monitor de forma que o valor é recalculado ([TryRemove](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryremove)). Os valores podem ser manualmente introduzidos bem com [TryAdd](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryadd). O [limpar](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.clear) método é usado quando todas as instâncias nomeadas devem ser recriadas sob demanda.
+
+## <a name="accessing-options-during-startup"></a>Acessando opções durante a inicialização
+
+`IOptions`pode ser usado em `Configure`, uma vez que os serviços são criados antes do `Configure` método é executado. Se um provedor de serviço é criado `ConfigureServices` para acessar as opções, não conter nenhum opções configurações fornecidas após o provedor de serviço é criado. Portanto, um estado inconsistente opções pode existir devido a ordenação dos registros de serviço.
+
+Como opções geralmente são carregadas de configuração, a configuração pode ser usada na inicialização no `Configure` e `ConfigureServices`. Para obter exemplos do uso da configuração durante a inicialização, consulte o [inicialização do aplicativo](xref:fundamentals/startup) tópico.
 
 ## <a name="see-also"></a>Consulte também
 

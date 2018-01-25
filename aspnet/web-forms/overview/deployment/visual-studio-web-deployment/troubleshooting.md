@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: 2d416432aad9d5654aefd8c63b84b6ae18967515
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a7a66e7e67539e4b075da6fc054a7b53984b6ce1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>Implantação de Web do ASP.NET usando o Visual Studio: solução de problemas
 ====================
@@ -31,8 +31,8 @@ Esta página descreve alguns problemas comuns que podem surgir quando você impl
 
 Os cenários mostrados se aplicam ao Azure e provedores de hospedagem de terceiros. Para obter mais informações sobre como solucionar problemas de aplicativos web no serviço de aplicativo do Azure, consulte os seguintes recursos:
 
-- [Solucionar problemas de um aplicativo web no serviço de aplicativo do Azure usando o Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
-- [Monitorar aplicativos da Web no serviço de aplicativo do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-monitor//)
+- [Solucionar problemas de um aplicativo web no serviço de aplicativo do Azure usando o Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [Monitorar aplicativos da Web no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
 - [Anunciando o lançamento do Windows Azure SDK 2.0 para .NET](http://https://weblogs.asp.net/scottgu/announcing-the-release-of-windows-azure-sdk-2-0-for-net) (blog do ScottGu, mostra como obter logs de diagnóstico no Visual Studio)
 
 ## <a name="server-error-in--application---current-custom-error-settings-prevent-details-of-the-error-from-being-viewed-remotely"></a>Erro de servidor no aplicativo - '/' erro personalizado configurações atuais impedem que detalhes do erro que está sendo exibido remotamente
@@ -142,7 +142,7 @@ Se as cadeias de caracteres de conexão é parecido com este exemplo, edite o ar
 
 Em seguida, reimplante o aplicativo.
 
-## <a name="http-500-internal-server-error"></a>Erro de servidor interno 500 HTTP
+## <a name="http-500-internal-server-error"></a>HTTP 500 Internal Server Error
 
 ### <a name="scenario"></a>Cenário
 
@@ -180,7 +180,7 @@ System.Data.SqlClient.SqlException: Não é possível abrir o banco de dados "Da
 
 ### <a name="possible-cause-and-solution"></a>Possível causa e solução
 
-O nome do *. mdf* arquivo não pode corresponder ao nome de qualquer banco de dados SQL Server Express que já existe em seu computador, mesmo se você tiver excluído o *. mdf* arquivo do banco de dados já existente. Alterar o nome do *. mdf* arquivo para um nome que nunca foi usado como um nome de banco de dados e altere o *Web. config* arquivo para usar o novo nome. Como alternativa, você pode usar [SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593) excluir preexistentes SQL Server Express bancos de dados.
+O nome do *. mdf* arquivo não pode corresponder ao nome de qualquer banco de dados SQL Server Express que já existe em seu computador, mesmo se você tiver excluído o *. mdf* arquivo do banco de dados já existente. Alterar o nome do *. mdf* arquivo para um nome que nunca foi usado como um nome de banco de dados e altere o *Web. config* arquivo para usar o novo nome. Como alternativa, você pode usar [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) excluir preexistentes SQL Server Express bancos de dados.
 
 ## <a name="model-compatibility-cannot-be-checked"></a>Compatibilidade de modelo não pode ser verificada
 
@@ -192,7 +192,7 @@ Compatibilidade de modelo não pode ser verificada porque o banco de dados não 
 
 ### <a name="possible-cause-and-solution"></a>Possível causa e solução
 
-Se o nome do banco de dados é colocado no arquivo Web. config já foi usado antes em seu computador, um banco de dados pode já existir com algumas tabelas. Selecione um novo nome não foi usado em seu computador antes e alterar o *Web. config* arquivo para apontar para usar esse novo nome de banco de dados. Como alternativa, você pode usar [SQL Server Express Utility](https://www.microsoft.com/en-us/download/details.aspx?DisplayLang=en&amp;id=3990) ou [SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593) para excluir o banco de dados existente.
+Se o nome do banco de dados é colocado no arquivo Web. config já foi usado antes em seu computador, um banco de dados pode já existir com algumas tabelas. Selecione um novo nome não foi usado em seu computador antes e alterar o *Web. config* arquivo para apontar para usar esse novo nome de banco de dados. Como alternativa, você pode usar [SQL Server Express Utility](https://www.microsoft.com/download/details.aspx?DisplayLang=en&amp;id=3990) ou [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) para excluir o banco de dados existente.
 
 ## <a name="sql-error-when-a-script-attempts-to-create-users-or-roles"></a>Quando um Script tenta criar usuários ou funções de erro do SQL
 
@@ -210,7 +210,7 @@ A conta de usuário que você está usando para executar a implantação não te
 
 [!code-console[Main](troubleshooting/samples/sample9.cmd)]
 
-Para obter informações sobre como editar o elemento PreSource no arquivo de projeto, consulte [como: Editar configurações de implantação no arquivo de projeto](https://msdn.microsoft.com/en-us/library/ff398069(v=vs.100).aspx). Se os usuários ou funções em seu banco de dados de desenvolvimento precisam ser no banco de dados de destino, entre em contato com seu provedor de hospedagem para obter assistência.
+Para obter informações sobre como editar o elemento PreSource no arquivo de projeto, consulte [como: Editar configurações de implantação no arquivo de projeto](https://msdn.microsoft.com/library/ff398069(v=vs.100).aspx). Se os usuários ou funções em seu banco de dados de desenvolvimento precisam ser no banco de dados de destino, entre em contato com seu provedor de hospedagem para obter assistência.
 
 ## <a name="sql-server-timeout-error-when-running-custom-scripts-during-deployment"></a>Erro de tempo limite do SQL Server durante a execução de Scripts personalizados durante a implantação
 
@@ -220,7 +220,7 @@ Você especificou os scripts SQL personalizados para ser executado durante a imp
 
 ### <a name="possible-cause-and-solution"></a>Possível causa e solução
 
-Executar vários scripts que têm transações diferentes modos pode causar erros de tempo limite. Por padrão, executar scripts gerados automaticamente em uma transação, mas não scripts personalizados. Se você selecionar o **extrair dados e/ou esquema de banco de dados existente** opção o **pacote/publicar SQL** guia, e se você adicionar um script SQL personalizado, você deve alterar as configurações de transação em alguns scripts para que todos os scripts usam as mesmas configurações de transação. Para obter mais informações, consulte [como: implantar um banco de dados com um projeto de aplicativo Web](https://msdn.microsoft.com/en-us/library/dd465343.aspx).
+Executar vários scripts que têm transações diferentes modos pode causar erros de tempo limite. Por padrão, executar scripts gerados automaticamente em uma transação, mas não scripts personalizados. Se você selecionar o **extrair dados e/ou esquema de banco de dados existente** opção o **pacote/publicar SQL** guia, e se você adicionar um script SQL personalizado, você deve alterar as configurações de transação em alguns scripts para que todos os scripts usam as mesmas configurações de transação. Para obter mais informações, consulte [como: implantar um banco de dados com um projeto de aplicativo Web](https://msdn.microsoft.com/library/dd465343.aspx).
 
 Se você configurou as configurações de transação para que todos são os mesmos, mas ainda receber esse erro, uma solução alternativa é executar os scripts separadamente. No **Scripts de banco de dados** grade no **pacote/publicar** guia SQL, desmarque o **incluir** caixa de seleção para o script que faz com que o erro de tempo limite, em seguida, publicar o projeto. Em seguida, vá para o **Scripts de banco de dados** grade, selecione esse script **incluir** caixa de seleção e, em seguida, desmarque o **incluir** caixas de seleção para os outros scripts. Em seguida, publica o projeto novamente. Neste momento, quando você publica, o script selecionado personalizado é executado.
 
@@ -280,7 +280,7 @@ O site implantado não tem *amd64* e *x86* subpastas com os assemblies nativo ne
 
 Implantar um aplicativo que usa o Entity Framework Code First Migrations e um DBMS, como o SQL Server Compact que armazena seu banco de dados em um arquivo no aplicativo\_pasta de dados. Você tem as migrações do Code First configurado para criar o banco de dados após a primeira implantação. Quando você executar o aplicativo você receberá uma mensagem de erro semelhante ao seguinte exemplo:
 
-O caminho não é válido. Verifique o diretório para o banco de dados. [Caminho = c:\inetpub\wwwroot\App\_Data\DatabaseName.sdf]
+O caminho não é válido. Verifique o diretório para o banco de dados. [Path = c:\inetpub\wwwroot\App\_Data\DatabaseName.sdf ]
 
 ### <a name="possible-cause-and-solution"></a>Possível causa e solução
 
@@ -309,7 +309,7 @@ Publicação falhará com um erro indicando que você não tem autoridade para d
 
 ### <a name="possible-cause-and-solution"></a>Possível causa e solução
 
-Por padrão, o Visual Studio define permissões de leitura na pasta raiz do site e permissões de gravação no aplicativo\_pasta de dados. Se você souber que as permissões padrão em pastas do site estão corretas e não precisam ser definidas, você desabilitar esse comportamento adicionando  **&lt;IncludeSetACLProviderOn destino&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  para o arquivo de perfil de publicação (para afetar um único perfil) ou para o arquivo wpp.targets (para afetar todos os perfis). Para obter informações sobre como editar esses arquivos, consulte [como: Editar configurações de implantação no arquivo de perfil (. pubxml)](https://msdn.microsoft.com/en-us/library/ff398069.aspx).
+Por padrão, o Visual Studio define permissões de leitura na pasta raiz do site e permissões de gravação no aplicativo\_pasta de dados. Se você souber que as permissões padrão em pastas do site estão corretas e não precisam ser definidas, você desabilitar esse comportamento adicionando  **&lt;IncludeSetACLProviderOn destino&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  para o arquivo de perfil de publicação (para afetar um único perfil) ou para o arquivo wpp.targets (para afetar todos os perfis). Para obter informações sobre como editar esses arquivos, consulte [como: Editar configurações de implantação no arquivo de perfil (. pubxml)](https://msdn.microsoft.com/library/ff398069.aspx).
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>Erros de acesso negado quando o aplicativo tenta gravar em uma pasta de aplicativo
 
@@ -319,7 +319,7 @@ Os erros de aplicativo quando ele tenta criar ou editar um arquivo em uma das pa
 
 ### <a name="possible-cause-and-solution"></a>Possível causa e solução
 
-Por padrão, o Visual Studio define permissões de leitura na pasta raiz do site e permissões de gravação no aplicativo\_pasta de dados. Se seu aplicativo precisa de acesso de gravação para uma subpasta, você pode definir permissões para essa pasta como mostrado na definição de permissões de pasta e implantar para os tutoriais do ambiente de produção da série. Se seu aplicativo precisa de acesso de gravação para a pasta raiz do site, você precisa impedir que a configuração de acesso somente leitura na pasta raiz, adicionando  **&lt;IncludeSetACLProviderOn destino&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  para o arquivo de perfil de publicação (para afetar um único perfil) ou para o arquivo wpp.targets (para afetar todos os perfis). Para obter informações sobre como editar esses arquivos, consulte [como: Editar configurações de implantação no arquivo de perfil (. pubxml)](https://msdn.microsoft.com/en-us/library/ff398069.aspx).
+Por padrão, o Visual Studio define permissões de leitura na pasta raiz do site e permissões de gravação no aplicativo\_pasta de dados. Se seu aplicativo precisa de acesso de gravação para uma subpasta, você pode definir permissões para essa pasta como mostrado na definição de permissões de pasta e implantar para os tutoriais do ambiente de produção da série. Se seu aplicativo precisa de acesso de gravação para a pasta raiz do site, você precisa impedir que a configuração de acesso somente leitura na pasta raiz, adicionando  **&lt;IncludeSetACLProviderOn destino&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  para o arquivo de perfil de publicação (para afetar um único perfil) ou para o arquivo wpp.targets (para afetar todos os perfis). Para obter informações sobre como editar esses arquivos, consulte [como: Editar configurações de implantação no arquivo de perfil (. pubxml)](https://msdn.microsoft.com/library/ff398069.aspx).
 
 <a id="aspnet45error"></a>
 
@@ -341,7 +341,7 @@ O servidor não suporta o ASP.NET 4.5. Entre em contato com o provedor de hosped
 
 Se você implantar um ASP.NET 4 ou anterior web para o mesmo destino, selecione o **remover arquivos adicionais no destino** caixa de seleção de **configurações** guia do **Publicar Web**assistente. Se você não selecionar **remover arquivos adicionais no destino**, você continuará para a página de erro de configuração.
 
-O projeto **propriedades** windows inclui uma lista de lista suspensa do framework de destino, mas você não pode resolver esse problema alterando apenas do **.NET Framework 4.5** para **do.NETFramework4**. Se você alterar a estrutura de destino para uma versão anterior do framework, o projeto ainda terão referências aos assemblies da versão posterior do framework e não será executado. Você precisa alterar essas referências manualmente ou criar um novo projeto que tem como alvo o .NET Framework 4 ou anterior. Para obter mais informações, consulte [.NET Framework direcionamento para Sites da Web](https://msdn.microsoft.com/en-us/library/bb398791(v=vs.100).aspx).
+O projeto **propriedades** windows inclui uma lista de lista suspensa do framework de destino, mas você não pode resolver esse problema alterando apenas do **.NET Framework 4.5** para **do.NETFramework4**. Se você alterar a estrutura de destino para uma versão anterior do framework, o projeto ainda terão referências aos assemblies da versão posterior do framework e não será executado. Você precisa alterar essas referências manualmente ou criar um novo projeto que tem como alvo o .NET Framework 4 ou anterior. Para obter mais informações, consulte [.NET Framework direcionamento para Sites da Web](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx).
 
 ## <a name="medium-trust-errors"></a>Erros de confiança média
 

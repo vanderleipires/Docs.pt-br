@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: db5d6a98d5e6702842e8b036c378ed96aef61b70
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 32bfddde48f5e5de9c06cb159493eb9ba6ede8be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="filters"></a>Filtros
 
@@ -177,7 +177,7 @@ No código a seguir, tanto o `ShortCircuitingResourceFilter` e `AddHeader` desti
 
 Filtros podem ser adicionados por tipo ou instância. Se você adicionar uma instância, essa instância será usada para cada solicitação. Se você adicionar um tipo, ele será ativado pelo tipo, que significa que uma instância será criada para cada solicitação e as dependências de construtor serão populadas pelo [injeção de dependência](../../fundamentals/dependency-injection.md) (DI). Adicionar um filtro por tipo é equivalente a `filters.Add(new TypeFilterAttribute(typeof(MyFilter)))`.
 
-Os filtros são implementados como atributos e adicionados diretamente às classes de controlador ou métodos de ação não podem ter dependências de construtor fornecidas pelo [injeção de dependência](../../fundamentals/dependency-injection.md) (DI). Isso ocorre porque os atributos devem ter os parâmetros do construtor fornecidos em que elas são aplicadas. Essa é uma limitação de como funcionam os atributos.
+Os filtros são implementados como atributos e adicionados diretamente às classes de controlador ou métodos de ação não podem ter dependências de construtor fornecidas pelo [injeção de dependência](../../fundamentals/dependency-injection.md) (DI). Isso ocorre porque os atributos devem ter os parâmetros do construtor fornecidos em que são aplicados. Essa é uma limitação de como funcionam os atributos.
 
 Se seus filtros têm dependências que você precisa acessar de DI, há várias abordagens com suporte. Você pode aplicar o filtro a um classe ou método de ação usando um dos seguintes:
 
@@ -207,9 +207,9 @@ System.InvalidOperationException: No service for type
 
 ### <a name="typefilterattribute"></a>TypeFilterAttribute
 
-`TypeFilterAttribute`é muito semelhante ao `ServiceFilterAttribute` (e também implementa `IFilterFactory`), mas seu tipo não for resolvido diretamente do contêiner de injeção de dependência. Em vez disso, ele cria uma instância do tipo usando `Microsoft.Extensions.DependencyInjection.ObjectFactory`.
+`TypeFilterAttribute`é muito semelhante ao `ServiceFilterAttribute` (e também implementa `IFilterFactory`), mas seu tipo não resolvido diretamente do contêiner de injeção de dependência. Em vez disso, ele cria uma instância do tipo usando `Microsoft.Extensions.DependencyInjection.ObjectFactory`.
 
-Devido a essa diferença, os tipos que são referenciados usando a `TypeFilterAttribute` não precisam ser registrados com o contêiner primeiro (mas ainda terão suas dependências atendidas pelo contêiner). Além disso, `TypeFilterAttribute` opcionalmente pode aceitar argumentos de construtor para o tipo em questão. O exemplo a seguir demonstra como passar argumentos para um tipo usando `TypeFilterAttribute`:
+Devido a essa diferença, os tipos que são referenciados usando a `TypeFilterAttribute` não precisa ser registrado com o contêiner primeiro (mas ainda terão suas dependências atendidas pelo contêiner). Além disso, `TypeFilterAttribute` opcionalmente pode aceitar argumentos de construtor para o tipo em questão. O exemplo a seguir demonstra como passar argumentos para um tipo usando `TypeFilterAttribute`:
 
 [!code-csharp[Main](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_TypeFilter&highlight=1,2)]
 
@@ -277,7 +277,7 @@ Filtros de exceção lidar com exceções não tratadas que ocorrem na criação
 Para manipular uma exceção, defina o `ExceptionContext.ExceptionHandled` propriedade como true ou gravar uma resposta. Isso interrompe a propagação da exceção. Observe que um filtro de exceção não é possível ativar uma exceção em um "sucesso". Um filtro de ação pode fazer isso.
 
 > [!NOTE]
-> No ASP.NET 1.1, a resposta não é enviada se você definir `ExceptionHandled` como true **e** gravar uma resposta. Nesse cenário, ASP.NET Core 1.0 enviar a resposta e ASP.NET Core 1.1.2 retornará ao 1.0 comportamento. Para obter mais informações, consulte [emitir #5594](https://github.com/aspnet/Mvc/issues/5594) no repositório do GitHub. 
+> No ASP.NET 1.1, a resposta não será enviada se você definir `ExceptionHandled` como true **e** gravar uma resposta. Nesse cenário, ASP.NET Core 1.0 enviar a resposta e ASP.NET Core 1.1.2 retornará ao 1.0 comportamento. Para obter mais informações, consulte [emitir #5594](https://github.com/aspnet/Mvc/issues/5594) no repositório do GitHub. 
 
 Filtros de exceção são bons para interceptar exceções que ocorrem em ações do MVC, mas eles não são mais flexíveis middleware de tratamento de erros. Preferir middleware para o caso geral e usar filtros apenas em que você precisa fazer o tratamento de erros *diferentemente* com base em qual ação MVC foi escolhida. Por exemplo, seu aplicativo pode ter métodos de ação para os pontos de extremidade de API e modos de exibição/HTML. Os pontos de extremidade de API podem retornar informações de erro como JSON, enquanto as ações com base em modo de exibição podem retornar uma página de erro como HTML.
 
@@ -307,7 +307,7 @@ O framework fornece um resumo `ResultFilterAttribute` que você pode subclasse. 
 
 ## <a name="using-middleware-in-the-filter-pipeline"></a>Usando middleware no pipeline de filtro
 
-Filtros de recursos de trabalho como [middleware](../../fundamentals/middleware.md) em que eles envolvem a execução de tudo o que é fornecida posteriormente no pipeline. Mas filtros são diferentes de middleware eles fazem parte do MVC, o que significa que eles têm acesso ao contexto do MVC e construtores.
+Filtros de recursos de trabalho como [middleware](../../fundamentals/middleware.md) em que eles envolvem a execução de tudo o que é fornecida posteriormente no pipeline. Mas filtros diferem de middleware em que eles fazem parte do MVC, o que significa que eles têm acesso ao contexto do MVC e construtores.
 
 No ASP.NET Core 1.1, você pode usar o middleware no pipeline de filtro. Você talvez queira fazer isso, se você tiver um componente de middleware que precisa de acesso a dados de rota do MVC ou que deve ser executado somente para determinados controladores ou ações.
 

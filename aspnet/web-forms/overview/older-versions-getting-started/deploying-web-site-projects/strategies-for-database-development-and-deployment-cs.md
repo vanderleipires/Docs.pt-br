@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 21d63b175eb52838ac9a12e33efc59fded4ed87d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 551a04296ff92e174a14bd9d2636714e823397e1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="strategies-for-database-development-and-deployment-c"></a>Estratégias de desenvolvimento de banco de dados e implantação (c#)
 ====================
@@ -79,7 +79,7 @@ Manter o log de alterações em um texto é, de fato, não funcionam muito sofis
 
 A principal desvantagem de manter o log de alterações em um texto é a falta de automação. Idealmente, implementar as alterações do banco de dados para o banco de dados de produção em tempo de implantação seria tão fácil quanto clicar em um botão para executar um script em vez de ter que executar manualmente uma lista de instruções. Essa automação é possível, mantendo um log de alteração que contém os comandos SQL usados para alterar o modelo de dados.
 
-A sintaxe SQL inclui um número de instruções para criar e modificar vários objetos de banco de dados. Por exemplo, o [ *instrução CREATE TABLE*](https://msdn.microsoft.com/en-us/library/ms174979.aspx), quando executado, cria uma nova tabela com as restrições e colunas especificadas. O [ *instrução ALTER TABLE* ](https://msdn.microsoft.com/en-us/library/ms190273.aspx) modifica uma tabela existente, adicionando, removendo ou modificando suas colunas ou restrições. Também há instruções para criar, modificar e remover índices, exibições, funções definidas pelo usuário, procedimentos armazenados, disparadores e outros objetos de banco de dados.
+A sintaxe SQL inclui um número de instruções para criar e modificar vários objetos de banco de dados. Por exemplo, o [ *instrução CREATE TABLE*](https://msdn.microsoft.com/library/ms174979.aspx), quando executado, cria uma nova tabela com as restrições e colunas especificadas. O [ *instrução ALTER TABLE* ](https://msdn.microsoft.com/library/ms190273.aspx) modifica uma tabela existente, adicionando, removendo ou modificando suas colunas ou restrições. Também há instruções para criar, modificar e remover índices, exibições, funções definidas pelo usuário, procedimentos armazenados, disparadores e outros objetos de banco de dados.
 
 Retornar ao nosso exemplo anterior, a imagem que durante o desenvolvimento de um aplicativo já implantado, você adicionar uma nova coluna para o `Employees` da tabela, remover uma coluna do `Orders` de tabela e adicionar uma nova tabela (`ProductCategories`). Essas ações pode resultar em um arquivo de log de alteração com os comandos SQL a seguir:
 

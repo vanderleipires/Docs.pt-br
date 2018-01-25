@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f7ba21116c2f5f976ffa95955247a49dc5f81e6c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee02915a5c69d824c6450157b0c734a2e2ab5c11
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-custom-paged-data-vb"></a>Classificação personalizada paginável (VB) de dados
 ====================
@@ -51,7 +51,7 @@ Infelizmente, com parâmetros `ORDER BY` cláusulas não são permitidas. Em vez
 
 - Escrever consultas embutida para cada uma das expressões de classificação que podem ser usadas; em seguida, use `IF/ELSE` instruções T-SQL para determinar qual consulta a ser executada.
 - Use um `CASE` instrução para fornecer dinâmico `ORDER BY` expressões com base no `@sortExpressio` n parâmetro de entrada; consulte usado para seção classificar resultados de consulta dinamicamente [Power de SQL `CASE` instruções](http://www.4guysfromrolla.com/webtech/102704-1.shtml) Para obter mais informações.
-- Criar a consulta apropriada, como uma cadeia de caracteres no procedimento armazenado e, em seguida, usar [o `sp_executesql` procedimento armazenado do sistema](https://msdn.microsoft.com/en-us/library/ms188001.aspx) para executar a consulta dinâmica.
+- Criar a consulta apropriada, como uma cadeia de caracteres no procedimento armazenado e, em seguida, usar [o `sp_executesql` procedimento armazenado do sistema](https://msdn.microsoft.com/library/ms188001.aspx) para executar a consulta dinâmica.
 
 Cada uma dessas soluções alternativas apresenta algumas desvantagens. A primeira opção não é como sustentável as outras duas, pois ela requer que você crie uma consulta para cada expressão de classificação possíveis. Portanto, se você decidir posteriormente adicionar campos novos e classificáveis a GridView você também precisará voltar e atualize o procedimento armazenado. A segunda abordagem tem algumas sutilezas que apresentam problemas de desempenho ao classificar por colunas de banco de dados de cadeia de caracteres não e também é prejudicada os mesmos problemas de facilidade de manutenção, como o primeiro. E a terceira opção, que usa SQL dinâmico, apresenta o risco de um ataque de injeção SQL se um invasor for capaz de executar o procedimento armazenado, passando os valores de parâmetro de entrada de sua escolha.
 
@@ -126,7 +126,7 @@ Agora que possamos ve estendido a DAL, podemos re pronto para ativar a BLL. Abra
 
 Tendo aumentada a DAL e BLL para incluir os métodos que utilizam o `GetProductsPagedAndSorted` procedimento armazenado, todos os que permanece é configurar o ObjectDataSource no `SortParameter.aspx` página para usar o novo método BLL e passar o `SortExpression` parâmetro baseado no coluna em que o usuário solicitou para classificar os resultados por.
 
-Inicie alterando a s ObjectDataSource `SelectMethod` de `GetProductsPaged` para `GetProductsPagedAndSorted`. Isso pode ser feito por meio do Assistente Configurar fonte de dados, na janela Propriedades, ou diretamente por meio de sintaxe declarativa. Em seguida, é preciso fornecer um valor para o s ObjectDataSource [ `SortParameterName` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx). Se essa propriedade for definida, o ObjectDataSource tenta passar em GridView s `SortExpression` propriedade para o `SelectMethod`. Em particular, o ObjectDataSource procura por um parâmetro de entrada cujo nome é igual ao valor da `SortParameterName` propriedade. Desde o s BLL `GetProductsPagedAndSorted` método tem o parâmetro de entrada expressão classificação denominado `sortExpression`, defina o s ObjectDataSource `SortExpression` propriedade sortExpression.
+Inicie alterando a s ObjectDataSource `SelectMethod` de `GetProductsPaged` para `GetProductsPagedAndSorted`. Isso pode ser feito por meio do Assistente Configurar fonte de dados, na janela Propriedades, ou diretamente por meio de sintaxe declarativa. Em seguida, é preciso fornecer um valor para o s ObjectDataSource [ `SortParameterName` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx). Se essa propriedade for definida, o ObjectDataSource tenta passar em GridView s `SortExpression` propriedade para o `SelectMethod`. Em particular, o ObjectDataSource procura por um parâmetro de entrada cujo nome é igual ao valor da `SortParameterName` propriedade. Desde o s BLL `GetProductsPagedAndSorted` método tem o parâmetro de entrada expressão classificação denominado `sortExpression`, defina o s ObjectDataSource `SortExpression` propriedade sortExpression.
 
 Depois de fazer essas alterações de dois, a sintaxe declarativa de s ObjectDataSource deve ser semelhante ao seguinte:
 
@@ -139,7 +139,7 @@ Depois de fazer essas alterações de dois, a sintaxe declarativa de s ObjectDat
 
 Para habilitar a classificação em GridView, basta marcar a caixa de seleção Habilitar classificação da GridView s marca inteligente, que define o GridView s `AllowSorting` propriedade `true` e fazendo com que o texto do cabeçalho para cada coluna a ser renderizado como um LinkButton. Quando o usuário final clicar em um dos botões de link do cabeçalho, um postback tem lugar e as etapas a seguir ocorrer:
 
-1. As atualizações de GridView seu [ `SortExpression` propriedade](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) para o valor da `SortExpression` do campo link cujo cabeçalho foi clicado
+1. As atualizações de GridView seu [ `SortExpression` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) para o valor da `SortExpression` do campo link cujo cabeçalho foi clicado
 2. O ObjectDataSource invoca o s BLL `GetProductsPagedAndSorted` método, passando o GridView s `SortExpression` propriedade como o valor para o método s `sortExpression` parâmetro de entrada (junto com as `startRowIndex` e `maximumRows` valores de parâmetro de entrada)
 3. BLL invoca o s DAL `GetProductsPagedAndSorted` método
 4. A DAL executa o `GetProductsPagedAndSorted` procedimento armazenado, passando no `@sortExpression` parâmetro (juntamente com o `@startRowIndex` e `@maximumRows` valores de parâmetro de entrada)

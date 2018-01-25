@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 24320b9f0262fba0aa5ac77f6c1294541c42267a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e483c37cc773a7255f18c26bc3609d68f71dff7d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>Uma visão geral de inserir, atualizar e excluir dados (c#)
 ====================
@@ -140,7 +140,7 @@ Depois de configurar o ObjectDataSource por meio de seu assistente, vá para o m
 
 ObjectDataSource inclui um parâmetro para cada um dos parâmetros de entrada para seus métodos associados, como uma lista de `SelectParameter` s está presente quando o ObjectDataSource está configurado para chamar um método select que espera um parâmetro de entrada (como `GetProductsByCategoryID(categoryID)`). Como você verá em breve, valores para essas `DeleteParameters`, `UpdateParameters`, e `InsertParameters` são definidas automaticamente o GridView, DetailsView e FormView antes de invocar o ObjectDataSource `Insert()`, `Update()`, ou `Delete()` método. Esses valores também podem ser definidos programaticamente, conforme necessário, como abordaremos em um tutorial futuras.
 
-Um efeito colateral de usar o Assistente para configurar o ObjectDataSource é que o Visual Studio define o [propriedade OldValuesParameterFormatString](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx) para `original_{0}`. O valor da propriedade é usado para incluir os valores originais dos dados que está sendo editados e é útil em dois cenários:
+Um efeito colateral de usar o Assistente para configurar o ObjectDataSource é que o Visual Studio define o [propriedade OldValuesParameterFormatString](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx) para `original_{0}`. O valor da propriedade é usado para incluir os valores originais dos dados que está sendo editados e é útil em dois cenários:
 
 - Se, ao editar um registro, os usuários são capazes de alterar o valor de chave primária. Nesse caso, o novo valor de chave primária e o valor de chave primária original devem ser fornecidos para que o registro com o valor de chave primária original pode ser encontrado e ter seu valor atualizado adequadamente.
 - Ao usar a simultaneidade otimista. Otimista de simultaneidade é uma técnica para garantir que dois usuários simultâneos não substitua as alterações uma da outra e é o tópico para obter um tutorial futuras.
@@ -168,8 +168,8 @@ Iniciar arrastando um GridView da caixa de ferramentas para o Designer. Em segui
 
 Associação de GridView para ObjectDataSource por meio de sua marca inteligente tem dois benefícios:
 
-- BoundFields e CheckBoxFields são criados automaticamente para cada um dos campos retornados por ObjectDataSource. Além disso, as propriedades de BoundField e do CheckBoxField são definidas com base nos metadados do campo subjacente. Por exemplo, o `ProductID`, `CategoryName`, e `SupplierName` campos são marcados como somente leitura no `ProductsDataTable` e, portanto, não deve ser atualizável ao editar. Para acomodar essa, essas BoundFields [propriedades ReadOnly](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx) são definidos como `true`.
-- O [propriedade DataKeyNames](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx) é atribuído para o campo de chave primário do objeto subjacente. Isso é essencial quando usando GridView para edição ou exclusão de dados, já que essa propriedade indica que o campo (ou conjunto de campos) exclusivo que identifica cada registro. Para obter mais informações sobre o `DataKeyNames` propriedade, consulte o [mestre/detalhes usando um GridView mestre selecionável com um Details DetailView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) tutorial.
+- BoundFields e CheckBoxFields são criados automaticamente para cada um dos campos retornados por ObjectDataSource. Além disso, as propriedades de BoundField e do CheckBoxField são definidas com base nos metadados do campo subjacente. Por exemplo, o `ProductID`, `CategoryName`, e `SupplierName` campos são marcados como somente leitura no `ProductsDataTable` e, portanto, não deve ser atualizável ao editar. Para acomodar essa, essas BoundFields [propriedades ReadOnly](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx) são definidos como `true`.
+- O [propriedade DataKeyNames](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx) é atribuído para o campo de chave primário do objeto subjacente. Isso é essencial quando usando GridView para edição ou exclusão de dados, já que essa propriedade indica que o campo (ou conjunto de campos) exclusivo que identifica cada registro. Para obter mais informações sobre o `DataKeyNames` propriedade, consulte o [mestre/detalhes usando um GridView mestre selecionável com um Details DetailView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) tutorial.
 
 Enquanto o GridView pode ser vinculado a ObjectDataSource através da janela Propriedades ou sintaxe declarativa, isso exige que você adicione manualmente o BoundField apropriado e `DataKeyNames` marcação.
 
@@ -327,7 +327,7 @@ Observe que para o CommandField DetailsView aparece no final da coleção de col
 
 Clicando no botão Excluir inicia a mesma sequência de eventos como em GridView: um postback; seguido de DetailsView preencher seu ObjectDataSource `DeleteParameters` com base no `DataKeyNames` valores; e concluído com uma chamada seu ObjectDataSource `Delete()` método, que, na verdade, remove o produto do banco de dados. Edição em DetailsView também funciona de modo idêntico de GridView.
 
-Para inserir, o usuário final é apresentado com um novo botão que, quando clicado, renderiza o DetailsView no "modo de inserção". Com o "modo de inserção" no novo botão é substituído por botões Insert e Cancelar e apenas esses BoundFields cujo `InsertVisible` está definida como `true` (o padrão) são exibidos. Esses campos de dados identificados como campos de incremento automático, como `ProductID`, têm seus [propriedade InsertVisible](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx) definida como `false` ao associar o DetailsView à fonte de dados por meio da marca inteligente.
+Para inserir, o usuário final é apresentado com um novo botão que, quando clicado, renderiza o DetailsView no "modo de inserção". Com o "modo de inserção" no novo botão é substituído por botões Insert e Cancelar e apenas esses BoundFields cujo `InsertVisible` está definida como `true` (o padrão) são exibidos. Esses campos de dados identificados como campos de incremento automático, como `ProductID`, têm seus [propriedade InsertVisible](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx) definida como `false` ao associar o DetailsView à fonte de dados por meio da marca inteligente.
 
 Ao associar a uma fonte de dados a um DetailsView por meio de marca inteligente, o Visual Studio define o `InsertVisible` propriedade `false` apenas para campos de incremento automático. Como campos somente leitura, `CategoryName` e `SupplierName`, será exibido na interface do usuário "modo de inserção", a menos que seus `InsertVisible` propriedade é definida explicitamente como `false`. Reserve um tempo para definir esses dois campos `InsertVisible` propriedades `false`, por meio da sintaxe declarativa de DetailsView ou por meio de editar campos link na marca inteligente. Figura 19 mostra a configuração de `InsertVisible` propriedades `false` clicando em Editar campos link.
 
@@ -354,7 +354,7 @@ Depois de inserir os detalhes de chá Acme e clicar no botão de inserção, um 
 
 
 > [!NOTE]
-> O DetailsView [CurrentMode propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx) indica que a interface que está sendo exibida, e pode ser um dos seguintes valores: `Edit`, `Insert`, ou `ReadOnly`. O [DefaultMode propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx) indica o modo de DetailsView retorna para depois de uma edição ou inserir foi concluído e é útil para exibir um DetailsView permanentemente em edição ou modo de inserção.
+> O DetailsView [CurrentMode propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx) indica que a interface que está sendo exibida, e pode ser um dos seguintes valores: `Edit`, `Insert`, ou `ReadOnly`. O [DefaultMode propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx) indica o modo de DetailsView retorna para depois de uma edição ou inserir foi concluído e é útil para exibir um DetailsView permanentemente em edição ou modo de inserção.
 
 
 O ponto e clique em Inserir e editar recursos de DetailsView tem as mesmas limitações que o GridView: o usuário deve inserir existente `CategoryID` e `SupplierID` valores por meio de uma caixa de texto; a falta de interface qualquer lógica de validação; tudo campos de produto que não permitem `NULL` valores ou não tem um padrão especificado no nível de banco de dados de valor deve ser incluído na interface de inserção e assim por diante.

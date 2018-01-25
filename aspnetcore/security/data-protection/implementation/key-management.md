@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 53adb067751917a9539a310bb7d91e599696f213
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9c4d293355e26d8bf5ba1360b070a7b9809bfe56
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-management"></a>Gerenciamento de chaves
 
@@ -48,7 +48,7 @@ Há uma exceção. Se o desenvolvedor do aplicativo tiver [desabilitado a geraç
 
 ## <a name="key-expiration-and-rolling"></a>Expiração e sem interrupção
 
-Quando uma chave é criada, ele recebe automaticamente uma data de ativação de {agora + 2 dias} e uma data de expiração de {agora + 90 dias}. O atraso de 2 dias antes da ativação fornece o momento chave se propague através do sistema. Ou seja, permite que outros aplicativos apontando para o armazenamento de backup observar a chave em seu próximo período de atualização automática, portanto, maximizando a probabilidade de que quando a chave de anel faz se tornar ativo foi propagado para todos os aplicativos que talvez precisem usá-la.
+Quando uma chave é criada, ela automaticamente concedeu uma data de ativação de {agora + 2 dias} e uma data de expiração de {agora + 90 dias}. O atraso de 2 dias antes da ativação fornece o momento chave se propague através do sistema. Ou seja, permite que outros aplicativos apontando para o armazenamento de backup observar a chave em seu próximo período de atualização automática, portanto, maximizando a probabilidade de que quando a chave de anel faz se tornar ativo foi propagado para todos os aplicativos que talvez precisem usá-la.
 
 Se a chave padrão expirará dentro de 2 dias e o anel de chave ainda não tiver uma chave que ficará ativa após a expiração da chave padrão, o sistema de proteção de dados persistirá automaticamente uma nova chave para o anel de chave. Essa nova chave tem uma data de ativação de {data de validade da chave padrão} e a data de expiração de {agora + 90 dias}. Isso permite que o sistema automaticamente reverter chaves regularmente sem interrupção do serviço.
 

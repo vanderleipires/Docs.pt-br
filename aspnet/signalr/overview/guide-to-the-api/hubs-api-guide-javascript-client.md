@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 65e369a393a8c5d2d1bba11b5c71347df8f9c69d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 794ab576d3c6600911f331bab7c335476e45a0c9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>Guia de API de Hubs de SignalR do ASP.NET - cliente JavaScript
 ====================
@@ -46,7 +46,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gith
 > Deixe comentários em como você gostou neste tutorial e o que podemos melhorar nos comentários na parte inferior da página. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [ASP.NET SignalR fórum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este documento contém as seguintes seções:
 
@@ -142,7 +142,7 @@ Em um aplicativo de Web Forms do ASP.NET, use `ResolveClientUrl` para os proxies
 
 [!code-aspx[Main](hubs-api-guide-javascript-client/samples/sample7.aspx)]
 
-Como regra geral, use o mesmo método para especificar a URL "signalr/hubs" que você usa para arquivos CSS ou JavaScript. Se você especificar uma URL sem usar um til, em alguns cenários de seu aplicativo funcionará corretamente quando você testar no Visual Studio usando o IIS Express, mas falhará com um erro 404 quando você implanta para o IIS completo. Para obter mais informações, consulte **resolver referências a recursos de nível raiz** na [servidores Web no Visual Studio para projetos Web ASP.NET](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx) no site do MSDN.
+Como regra geral, use o mesmo método para especificar a URL "signalr/hubs" que você usa para arquivos CSS ou JavaScript. Se você especificar uma URL sem usar um til, em alguns cenários de seu aplicativo funcionará corretamente quando você testar no Visual Studio usando o IIS Express, mas falhará com um erro 404 quando você implanta para o IIS completo. Para obter mais informações, consulte **resolver referências a recursos de nível raiz** na [servidores Web no Visual Studio para projetos Web ASP.NET](https://msdn.microsoft.com/library/58wxa9w5.aspx) no site do MSDN.
 
 Quando você executar um projeto da web no Visual Studio 2013 no modo de depuração e se você usar o Internet Explorer como navegador, você pode ver o arquivo de proxy no **Solution Explorer** em **documentos de Script**, conforme mostrado do ilustração a seguir.
 

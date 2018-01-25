@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
-ms.openlocfilehash: a1fe1844e582f402a1eed9ddf10ee249e856b083
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c3ddd4e341511f520927e924b25d890088adb69e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-mvc-template"></a>Modelo MVC personalizado
 ====================
@@ -26,7 +26,7 @@ A versão do MVC 3 ferramentas de atualização para o Visual Studio 2010 introd
 
 Adicionar modelos personalizados: um processo árduo que dependiam usando o registro para que os novos modelos visíveis para o Assistente de projeto MVC. O autor de um novo modelo tinha encapsulá-lo dentro de um MSI para garantir que as entradas de registro necessárias seriam criadas no momento da instalação. A alternativa era fazer um arquivo ZIP que contém o modelo disponível e fazer com que o usuário final criar as entradas de registro manualmente.
 
-Nenhuma das abordagens mencionados acima é ideal para decidimos aproveitar a infraestrutura fornecida por alguns [VSIX](https://msdn.microsoft.com/en-us/library/ff363239.aspx) extensões para tornar mais fácil criar, distribuir e instalar modelos personalizados de MVC, começando com MVC 4 para o Visual Studio 2012. Estes são alguns dos benefícios fornecidos por essa abordagem:
+Nenhuma das abordagens mencionados acima é ideal para decidimos aproveitar a infraestrutura fornecida por alguns [VSIX](https://msdn.microsoft.com/library/ff363239.aspx) extensões para tornar mais fácil criar, distribuir e instalar modelos personalizados de MVC, começando com MVC 4 para o Visual Studio 2012. Estes são alguns dos benefícios fornecidos por essa abordagem:
 
 - Uma extensão do VSIX pode conter vários modelos que oferecem suporte a idiomas diferentes (c# e Visual Basic) e vários mecanismos de exibição (ASPX e Razor).
 - Uma extensão do VSIX pode direcionar várias SKUs do Visual Studio, incluindo Express SKUs.
@@ -63,15 +63,15 @@ Se você pretende dar suporte a todos os profissionais e superior SKUs (Professi
 
 O **ativos** guia é usada para adicionar todos os arquivos de conteúdo para o VSIX. Como o MVC requer metadados personalizados, você alterará o XML bruto do arquivo de manifesto do VSIX em vez de usar o **ativos** guia para adicionar conteúdo. Comece adicionando o conteúdo do modelo para o projeto do VSIX. É importante que a estrutura da pasta e o conteúdo espelha o layout do projeto. O exemplo a seguir contém quatro modelos de projeto que foram derivados do modelo de projeto MVC básico. Certifique-se de que todos os arquivos que compõem o modelo de projeto (tudo sob a pasta ProjectTemplates) são adicionados para o **conteúdo** itemgroup no VSIX arquivo e que contém cada item de projeto de  **CopyToOutputDirectory** e **IncludeInVsix** metadados definidas conforme mostrado no exemplo a seguir.
 
-&lt;Incluir conteúdo =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
+&lt;Content Include=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
 
-&lt;CopyToOutputDirectory&gt;sempre&lt;/CopyToOutputDirectory&gt;
+&lt;CopyToOutputDirectory&gt;Always&lt;/CopyToOutputDirectory&gt;
 
 &lt;IncludeInVSIX&gt;true&lt;/IncludeInVSIX&gt;
 
-&lt;/ Conteúdo&gt;
+&lt;/Content&gt;
 
-Caso contrário, o IDE tentará compilar o conteúdo do modelo quando você compila o VSIX e você provavelmente verá um erro. Arquivos de código em modelos geralmente contêm especial [parâmetros de modelo](https://msdn.microsoft.com/en-us/library/eehb4faa(v=vs.110).aspx) usado pelo Visual Studio quando o modelo de projeto é instanciado e, portanto, não pode ser compilado no IDE.
+Caso contrário, o IDE tentará compilar o conteúdo do modelo quando você compila o VSIX e você provavelmente verá um erro. Arquivos de código em modelos geralmente contêm especial [parâmetros de modelo](https://msdn.microsoft.com/library/eehb4faa(v=vs.110).aspx) usado pelo Visual Studio quando o modelo de projeto é instanciado e, portanto, não pode ser compilado no IDE.
 
 ![Gerenciador de Soluções](custom-mvc-templates/_static/image6.jpg)
 
@@ -83,27 +83,27 @@ Criar um  **&lt;ativos&gt;**  elemento e adicione um  **&lt;ativos&gt;**  elemen
 
 Não é suficiente para registrar os modelos com o assistente MVC apenas adicionar arquivos ao VSIX. Você precisa fornecer informações como o nome do modelo, a descrição, a mecanismos de exibição com suporte e a linguagem de programação para o assistente MVC. Essa informação é executada em atributos personalizados associados a  **&lt;ativos&gt;**  elemento para cada **vstemplate** arquivo.
 
-&lt;Ativo d:VsixSubPath =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
+&lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
-Tipo =&quot;Microsoft.VisualStudio.Mvc.Template&quot;
+Type=&quot;Microsoft.VisualStudio.Mvc.Template&quot;
 
-d:Source =&quot;arquivo&quot;
+d:Source=&quot;File&quot;
 
-Caminho =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
+Path=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
 
-ProjectType =&quot;MVC&quot;
+ProjectType=&quot;MVC&quot;
 
-Language =&quot;c#&quot;
+Language=&quot;C#&quot;
 
-ViewEngine =&quot;Aspx&quot;
+ViewEngine=&quot;Aspx&quot;
 
-TemplateId =&quot;MyMvcApplication&quot;
+TemplateId=&quot;MyMvcApplication&quot;
 
 Título =&quot;aplicativo Web básico personalizado&quot;
 
 Descrição =&quot;um modelo personalizado derivado de um aplicativo web do MVC básica (Razor)&quot;
 
-Versão =&quot;4.0&quot;/&gt;
+Version=&quot;4.0&quot;/&gt;
 
 Abaixo está uma explicação dos atributos personalizados devem estar presentes:
 
@@ -122,7 +122,7 @@ Tudo o que resta agora é compilar o projeto do VSIX e instalá-lo.
 
 Certifique-se de que todas as instâncias do Visual Studio estão fechadas no computador onde você pretende testar a extensão do VSIX. O Visual Studio procura novas extensões durante a inicialização, portanto, se o IDE estiver aberto durante a instalação de um VSIX será necessário reiniciar o Visual Studio. No Pesquisador de objetos, clique duas vezes no arquivo VSIX para iniciar o **instalador VSIX**, clique em **instalar** e, em seguida, inicie o Visual Studio.
 
-![Instalador do VSIX](custom-mvc-templates/_static/image9.jpg)
+![VSIX Installer](custom-mvc-templates/_static/image9.jpg)
 
 No menu, selecione **Ferramentas > extensões e atualizações** para confirmar se a sua extensão foi instalada. Se o instalador do VSIX relatou erros durante a instalação da extensão, você pode exibir o log do instalador do VSIX para obter mais informações. O log é geralmente criado na **% temp %** pasta do usuário que instalou a extensão, por exemplo **C:\Users\Bob\AppData\Local\Temp**.
 

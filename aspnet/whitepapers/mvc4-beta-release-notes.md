@@ -1,6 +1,6 @@
 ---
 uid: whitepapers/mvc4-beta-release-notes
-title: O ASP.NET MVC 4 | Microsoft Docs
+title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
 description: "Este documento descreve a versão do ASP.NET MVC 4 Beta para Visual Studio 2010."
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: 4af2df61ab4507b1f100d6bb75777da1168c5a75
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 58ae178a0e6578d8353e1a4e9d67fc1026e99f55
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -60,7 +60,7 @@ ASP.NET MVC 4 pode ser instalado e pode executar lado a lado com o ASP.NET MVC 3
 
 Documentação do ASP.NET MVC está disponível no site do MSDN na seguinte URL:
 
-[https://go.microsoft.com/fwlink/?LinkId=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
+[https://go.microsoft.com/fwlink/?LinkID=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
 
 Tutoriais e outras informações sobre o ASP.NET MVC estão disponíveis na página do site da Web do ASP.NET MVC 4 ([https://www.asp.net/mvc/mvc4](../mvc/mvc4.md)).
 
@@ -98,17 +98,17 @@ Para atualizar manualmente um aplicativo ASP.NET MVC 3 existente para a versão 
     1. No Gerenciador de soluções, exclua as referências para os seguintes assemblies: 
 
         - *System.Web.Mvc*(v3.0.0.0)
-        - *System.Web.WebPages*(v 1.0.0.0)
-        - *System.Web.Razor*(v 1.0.0.0)
-        - *System.Web.WebPages.Deployment*(v 1.0.0.0)
-        - *Webpages*(v 1.0.0.0)
+        - *System.Web.WebPages*(v1.0.0.0)
+        - *System.Web.Razor*(v1.0.0.0)
+        - *System.Web.WebPages.Deployment*(v1.0.0.0)
+        - *System.Web.WebPages.Razor*(v1.0.0.0)
     2. Adicione um referências para os seguintes assemblies: 
 
         - *System.Web.Mvc*(v4.0.0.0)
         - *System.Web.WebPages*(v2.0.0.0)
         - *System.Web.Razor*(v2.0.0.0)
         - *System.Web.WebPages.Deployment*(v2.0.0.0)
-        - *Webpages*(v2.0.0.0)
+        - *System.Web.WebPages.Razor*(v2.0.0.0)
 4. No Gerenciador de soluções, clique no nome do projeto e selecione Unload Project. Em seguida, clique no nome novamente e selecione Editar *ProjectName*. csproj.
 5. Localize o *ProjectTypeGuids* elemento e substitua {E53F8FEA-EAE0-44A6-8774-FFD645390401} por {E3E379DF-F4C6-4180-9B81-6769533ABE47}.
 6. Salvar as alterações, feche o arquivo de projeto (. csproj) que você estava editando, clique com o botão direito e, em seguida, selecione Recarregar projeto.
@@ -245,7 +245,7 @@ O novo recurso de receitas permite que o Visual Studio gerar o código de soluç
 
 Agora você pode escrever os métodos de ação assíncrono como uma única métodos que retornam um objeto do tipo *tarefa* ou *tarefa&lt;ActionResult&gt;*.
 
-Por exemplo, se você estiver usando o Visual c# 5 (ou usando o [Async CTP](https://msdn.microsoft.com/en-us/vstudio/async.aspx)), você pode criar um método de ação assíncrono é semelhante ao seguinte:
+Por exemplo, se você estiver usando o Visual c# 5 (ou usando o [Async CTP](https://msdn.microsoft.com/vstudio/async.aspx)), você pode criar um método de ação assíncrono é semelhante ao seguinte:
 
 [!code-csharp[Main](mvc4-beta-release-notes/samples/sample8.cs)]
 

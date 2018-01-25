@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 4e2a3176aaedccd40ef6b619efa3c4052dd8470b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a549bd62bd78573c368784fd1529a830e009b0d4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 2
 ====================
@@ -35,7 +35,7 @@ No tutorial anterior, você criou um site da web, um banco de dados e um modelo 
 
 [![Image18](the-entity-framework-and-aspnet-getting-started-part-2/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image5.png)
 
-Observe que neste aplicativo você não adicionar o validação de entrada para páginas que atualizam o banco de dados, e alguns o tratamento de erros não serão tão robustas quanto seria necessário em um aplicativo de produção. Que mantém o tutorial se concentra no Entity Framework e os mantém obtenham muito longo. Para obter detalhes sobre como adicionar esses recursos ao seu aplicativo, consulte [Validando a entrada do usuário em páginas da Web do ASP.NET](https://msdn.microsoft.com/en-us/library/7kh55542.aspx) e [tratamento de erros em páginas ASP.NET e aplicativos](https://msdn.microsoft.com/en-us/library/w16865z6.aspx).
+Observe que neste aplicativo você não adicionar o validação de entrada para páginas que atualizam o banco de dados, e alguns o tratamento de erros não serão tão robustas quanto seria necessário em um aplicativo de produção. Que mantém o tutorial se concentra no Entity Framework e os mantém obtenham muito longo. Para obter detalhes sobre como adicionar esses recursos ao seu aplicativo, consulte [Validando a entrada do usuário em páginas da Web do ASP.NET](https://msdn.microsoft.com/library/7kh55542.aspx) e [tratamento de erros em páginas ASP.NET e aplicativos](https://msdn.microsoft.com/library/w16865z6.aspx).
 
 ## <a name="adding-and-configuring-the-entitydatasource-control"></a>Adicionando e configurando o controle de EntityDataSource
 
@@ -61,7 +61,7 @@ Do **dados** guia do **caixa de ferramentas**, arraste um `EntityDataSource` con
 
 Alternar para **Design** exibir, clique em marca inteligente do controle de fonte de dados e, em seguida, clique em **configurar fonte de dados** para iniciar o **configurar fonte de dados** assistente.
 
-[![Para Image01](the-entity-framework-and-aspnet-getting-started-part-2/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image11.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-2/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image11.png)
 
 No **configurar ObjectContext** etapa do assistente, selecione **SchoolEntities** como o valor para **Conexão denominada**e selecione **SchoolEntities**como o **DefaultContainerName** valor. Clique em **Avançar**.
 
@@ -157,13 +157,13 @@ Na marcação para o `EntityDataSource` controlar, remova o `ConnectionString` e
 
 - Melhor desempenho. Quando o `EntityDataSource` controle inicializa o modelo de dados usando o `ConnectionString` e `DefaultContainerName` atributos, ele executa trabalho adicional para carregar os metadados em cada solicitação. Isso não é necessário se você especificar o `ContextTypeName` atributo.
 - Carregamento lento é ativado por padrão em classes de contexto de objeto gerado (como `SchoolEntities` neste tutorial) no Entity Framework 4.0. Isso significa que as propriedades de navegação são carregadas com dados relacionados automaticamente à direita quando precisar dele. Carregamento preguiçoso é explicado em mais detalhes posteriormente neste tutorial.
-- Todas as personalizações que você aplicou a classe de contexto de objeto (nesse caso, o `SchoolEntities` classe) estarão disponíveis para controles que usem o `EntityDataSource` controle. Personalizando a classe de contexto de objeto é um tópico avançado que não é abordado nesta série tutorial. Para obter mais informações, consulte [estendendo Entity Framework gerado tipos](https://msdn.microsoft.com/en-us/library/dd456844.aspx).
+- Todas as personalizações que você aplicou a classe de contexto de objeto (nesse caso, o `SchoolEntities` classe) estarão disponíveis para controles que usem o `EntityDataSource` controle. Personalizando a classe de contexto de objeto é um tópico avançado que não é abordado nesta série tutorial. Para obter mais informações, consulte [estendendo Entity Framework gerado tipos](https://msdn.microsoft.com/library/dd456844.aspx).
 
 A marcação agora será parecida com o exemplo a seguir (a ordem das propriedades pode ser diferente):
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample6.aspx)]
 
-O `EnableFlattening` atributo refere-se a um recurso que foi necessário em versões anteriores do Entity Framework, porque as colunas de chave estrangeira não foram expostas como propriedades de entidade. A versão atual, é possível usar *associações de chave estrangeiras*, que significa que as propriedades de chave estrangeiras são expostos para associações de tudo, exceto muitos-para-muitos. Se as entidades têm propriedades de chave estrangeira e não [tipos complexos](https://msdn.microsoft.com/en-us/library/bb738472.aspx), você pode deixar esse atributo definido como `False`. Não remova o atributo da marcação, como o valor padrão é `True`. Para obter mais informações, consulte [objetos nivelamento (EntityDataSource)](https://msdn.microsoft.com/en-us/library/ee404746.aspx).
+O `EnableFlattening` atributo refere-se a um recurso que foi necessário em versões anteriores do Entity Framework, porque as colunas de chave estrangeira não foram expostas como propriedades de entidade. A versão atual, é possível usar *associações de chave estrangeiras*, que significa que as propriedades de chave estrangeiras são expostos para associações de tudo, exceto muitos-para-muitos. Se as entidades têm propriedades de chave estrangeira e não [tipos complexos](https://msdn.microsoft.com/library/bb738472.aspx), você pode deixar esse atributo definido como `False`. Não remova o atributo da marcação, como o valor padrão é `True`. Para obter mais informações, consulte [objetos nivelamento (EntityDataSource)](https://msdn.microsoft.com/library/ee404746.aspx).
 
 Execute a página e ver uma lista de alunos e os funcionários (filtrará os alunos apenas no tutorial próximo). O nome e sobrenome são exibidos juntos.
 

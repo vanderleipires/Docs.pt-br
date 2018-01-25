@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: 8842f57df84d841df77b34e9645dbf4909f82d85
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5968f8d19191c3f44e9bd58f8e22a39d8d8faff
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-oauth-20-authorization-server"></a>Servidor de autorização do OAuth 2.0 OWIN
 ====================
@@ -57,17 +57,17 @@ Este tutorial aborda:
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-editions) ou livre [Visual Studio Express 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-express), conforme indicado na **versões de Software** na parte superior da página.
-- Familiaridade com o OWIN. Consulte [guia de Introdução ao projeto Katana](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx) e [o que há de novo no OWIN e Katana](index.md).
+- Familiaridade com o OWIN. Consulte [guia de Introdução ao projeto Katana](https://msdn.microsoft.com/magazine/dn451439.aspx) e [o que há de novo no OWIN e Katana](index.md).
 - Familiaridade com [OAuth](http://tools.ietf.org/html/rfc6749) terminologia, incluindo [funções](http://tools.ietf.org/html/rfc6749#section-1.1), [fluxo do protocolo](http://tools.ietf.org/html/rfc6749#section-1.2), e [concessão de autorização](http://tools.ietf.org/html/rfc6749#section-1.3). [Introdução do OAuth 2.0](http://tools.ietf.org/html/rfc6749#section-1) fornece uma boa introdução.
 
 ## <a name="create-an-authorization-server"></a>Criar um servidor de autorização
 
-Neste tutorial, estamos será aproximadamente esboço como usar [OWIN](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx) e ASP.NET MVC para criar um servidor de autorização. Esperamos dar um download em breve para o exemplo completo, como este tutorial não incluem a cada etapa. Primeiro, crie um aplicativo web vazio chamado *AuthorizationServer* e instalar os seguintes pacotes:
+Neste tutorial, estamos será aproximadamente esboço como usar [OWIN](https://msdn.microsoft.com/magazine/dn451439.aspx) e ASP.NET MVC para criar um servidor de autorização. Esperamos dar um download em breve para o exemplo completo, como este tutorial não incluem a cada etapa. Primeiro, crie um aplicativo web vazio chamado *AuthorizationServer* e instalar os seguintes pacotes:
 
 - Microsoft.AspNet.Mvc
-- Systemweb
-- Owin
-- Owin
+- Microsoft.Owin.Host.SystemWeb
+- Microsoft.Owin.Security.OAuth
+- Microsoft.Owin.Security.Cookies
 - Owin (ou qualquer outro logon social do pacote como owin)
 
 Adicionar uma [classe de inicialização OWIN](owin-startup-class-detection.md) sob a pasta raiz do projeto chamada *inicialização*.
@@ -112,7 +112,7 @@ A página de logon é mostrada abaixo:
 
 Examine a IETF OAuth 2 [concessão de código de autorização](http://tools.ietf.org/html/rfc6749#section-4.1) seção agora. 
 
-**Provedor** (na tabela a seguir) é [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx). Provedor, que é do tipo `OAuthAuthorizationServerProvider`, que contém todos os eventos de servidor OAuth. 
+**Provedor** (na tabela a seguir) é [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx). Provedor, que é do tipo `OAuthAuthorizationServerProvider`, que contém todos os eventos de servidor OAuth. 
 
 | Fluxo de etapas da seção de concessão de código de autorização | Download de exemplo executa essas etapas com: |
 | --- | --- |
@@ -226,8 +226,8 @@ Aqui está a implementação de exemplo para `Provider.GrantRefreshToken`:
 Criar um projeto de aplicativo web vazio e instalar pacotes do projeto a seguir:
 
 - Microsoft.AspNet.WebApi.Owin
-- Systemweb
-- Owin
+- Microsoft.Owin.Host.SystemWeb
+- Microsoft.Owin.Security.OAuth
 
 Criar uma classe de inicialização e configurar a autenticação e a API da Web. Consulte *AuthorizationServer\ResourceServer\Startup.cs* no download do exemplo.
 

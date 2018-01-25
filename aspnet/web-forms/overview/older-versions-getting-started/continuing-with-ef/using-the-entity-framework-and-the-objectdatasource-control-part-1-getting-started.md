@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 6f93d6033b68773507d624125936f0a69777e2b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 83fe815af9030aee10a5204718b00c79925e9126
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>Usando o Entity Framework 4.0 e o controle ObjectDataSource, parte 1: guia de Introdução
 ====================
@@ -30,7 +30,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="database-first"></a>Primeiro banco de dados
 > 
-> Há três maneiras que você pode trabalhar com dados no Entity Framework: *Database First*, *Model First*, e *Code First*. Este tutorial destina-se primeiro banco de dados. Para obter informações sobre as diferenças entre esses fluxos de trabalho e orientação sobre como escolher a melhor para seu cenário, consulte [fluxos de trabalho de desenvolvimento do Entity Framework](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+> Há três maneiras que você pode trabalhar com dados no Entity Framework: *Database First*, *Model First*, e *Code First*. Este tutorial destina-se primeiro banco de dados. Para obter informações sobre as diferenças entre esses fluxos de trabalho e orientação sobre como escolher a melhor para seu cenário, consulte [fluxos de trabalho de desenvolvimento do Entity Framework](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 > 
 > ## <a name="web-forms"></a>Web Forms
 > 
@@ -47,7 +47,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="questions"></a>Perguntas
 > 
-> Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), o [do Entity Framework e LINQ to Fórum de entidades](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
+> Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), o [do Entity Framework e LINQ to Fórum de entidades](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
 
 
 O `EntityDataSource` controle permite que você crie um aplicativo muito rapidamente, mas normalmente requer que você mantenha uma quantidade significativa de lógica de negócios e lógica de acesso a dados no seu *. aspx* páginas. Se você espera que seu aplicativo para crescer em complexidade e exigir a manutenção, você pode investir mais tempo de desenvolvimento com antecedência para criar um *de n camadas* ou *em camadas* estrutura de aplicativo Isso é mais fácil manutenção. Para implementar essa arquitetura, você pode separar a camada de apresentação da camada de lógica de negócios (BLL) e a camada de acesso a dados (DAL). Uma maneira de implementar essa estrutura é usar o `ObjectDataSource` de controle, em vez do `EntityDataSource` controle. Quando você usa o `ObjectDataSource` controle, você implementa seu próprio código de acesso a dados e, em seguida, invoque-o no *. aspx* páginas usando um controle que tem os mesmos recursos que os outros controles de fonte de dados. Isso lhe permite combinar as vantagens de uma abordagem de n camadas com os benefícios de usar um controle de formulários da Web para acesso a dados.
@@ -60,7 +60,7 @@ Um `ObjectDataSource` controles funciona com a invocação de uma classe que voc
 
 Além de operações CRUD básicas, a classe que você cria para usar com o `ObjectDataSource` controle talvez seja necessário executar a lógica de negócios quando o `ObjectDataSource` lê ou atualiza dados. Por exemplo, quando você atualiza um departamento, você precisa validar que sem outros departamentos têm a mesma do administrador porque uma pessoa não pode ser um administrador de mais de um departamento.
 
-Em alguns `ObjectDataSource` documentação, como o [visão geral da classe ObjectDataSource](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.aspx), o controle chama uma classe conhecida como uma *objeto comercial* que inclui a lógica de negócios e lógica de acesso a dados . Neste tutorial, você criará classes separadas para lógica de negócios e lógica de acesso a dados. A classe que encapsula a lógica de acesso a dados é chamada uma *repositório*. A classe de lógica de negócios inclui métodos de lógica de negócios e os métodos de acesso a dados, mas os métodos de acesso a dados chamam o repositório para executar tarefas de acesso a dados.
+Em alguns `ObjectDataSource` documentação, como o [visão geral da classe ObjectDataSource](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.aspx), o controle chama uma classe conhecida como uma *objeto comercial* que inclui a lógica de negócios e lógica de acesso a dados . Neste tutorial, você criará classes separadas para lógica de negócios e lógica de acesso a dados. A classe que encapsula a lógica de acesso a dados é chamada uma *repositório*. A classe de lógica de negócios inclui métodos de lógica de negócios e os métodos de acesso a dados, mas os métodos de acesso a dados chamam o repositório para executar tarefas de acesso a dados.
 
 Você também criará uma camada de abstração entre o BLL e DAL que facilita a unidade automatizada de teste de BLL. Essa camada de abstração é implementada, criando uma interface e usando a interface ao instanciar o repositório na classe de lógica de negócios. Isso possibilita que você forneça a classe de lógica de negócios com uma referência a qualquer objeto que implementa a interface do repositório. Para uma operação normal, você deve fornecer um objeto de repositório que funciona com o Entity Framework. Para teste, você deve fornecer um objeto de repositório que funciona com dados armazenados em uma forma que você pode manipular facilmente, como definidas como coleções de variáveis de classe.
 
@@ -72,7 +72,7 @@ Você começará criando páginas da web no qual o `ObjectDataSource` controle e
 
 As páginas criadas por você neste tutorial trabalhar com o `Departments` o modelo de dados que você criou no conjunto de entidades de [série de tutoriais de Introdução](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md).
 
-[![Para Image01](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image4.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image3.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image4.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image3.png)
 
 [![Image02](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image6.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image5.png)
 
@@ -192,7 +192,7 @@ Esse código adiciona metadados para o modelo de dados. Especifica que o `Budget
 
 Execute o *Departments.aspx* página.
 
-[![Para Image01](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image26.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image25.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image26.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image25.png)
 
 Observe que, embora você não especificar uma cadeia de caracteres no formato de *Departments.aspx* marcação da página para o **orçamento** ou **data de início** padrão de colunas, moeda e data formatação foi aplicada a eles, o `DynamicField` controla, usando os metadados que você forneceu no *Department.cs* arquivo.
 

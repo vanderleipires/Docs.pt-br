@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 6e84dcc16345e33fcd3a3f83c4b35bc993c03ca6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>Aplicativo de página única: Modelo de KnockoutJS
 ====================
@@ -92,7 +92,7 @@ No projeto do Visual Studio, na pasta Modelos contém os modelos que são usados
 
 ![](knockoutjs-template/_static/image9.png)
 
-**TodoItem, lista de tarefas**
+**TodoItem, TodoList**
 
 Esses são os modelos de banco de dados para o Entity Framework Code First. Observe que esses modelos têm propriedades que apontem para outro. `ToDoList`contém uma coleção de ToDoItems e cada `ToDoItem` tem uma referência à sua lista de tarefas do pai. Essas propriedades são chamadas de propriedades de navegação, e eles representam a relação um-para-muitos, uma lista de tarefas e seus itens de tarefas pendentes.
 
@@ -117,7 +117,7 @@ Este arquivo contém modelos para associação de site. O `UserProfile` classe d
 
 ## <a name="entity-framework"></a>Entity Framework
 
-O modelo do SPA usa EF Code First. No desenvolvimento de Code First, você define os modelos de primeiro no código e EF usa o modelo para criar o banco de dados. Você também pode usar o EF com um banco de dados existente ([Database First](https://msdn.microsoft.com/en-us/data/jj206878.aspx)).
+O modelo do SPA usa EF Code First. No desenvolvimento de Code First, você define os modelos de primeiro no código e EF usa o modelo para criar o banco de dados. Você também pode usar o EF com um banco de dados existente ([Database First](https://msdn.microsoft.com/data/jj206878.aspx)).
 
 O `TodoItemContext` deriva de classe na pasta modelos **DbContext**. Essa classe fornece a "cola" entre os modelos e EF. O `TodoItemContext` mantém um `ToDoItem` coleção e um `TodoList` coleção. Para consultar o banco de dados, você simplesmente escrever uma consulta LINQ em relação a essas coleções. Por exemplo, aqui está como você pode selecionar todas as listas de tarefas do usuário "Alice":
 
@@ -229,7 +229,7 @@ Falsificação de solicitação entre sites (CSRF) é um ataque em que um site m
 
 Tokens antifalsificação funciona porque a página mal-intencionado não é possível ler os tokens do usuário, devido às diretivas de mesma origem. (Políticas de mesma origem impedir que os documentos hospedados em dois locais diferentes de acessar o conteúdo do outro.)
 
-ASP.NET MVC fornece suporte interno para tokens antifalsificação, por meio de [AntiForgery](https://msdn.microsoft.com/en-us/library/system.web.helpers.antiforgery.aspx) classe e o [[ValidateAntiForgeryToken]](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute.aspx) atributo. No momento, essa funcionalidade não é interno ao API da Web. No entanto, o modelo SPA inclui uma implementação personalizada de API da Web. Esse código é definido no `ValidateHttpAntiForgeryTokenAttribute` classe, que está localizado na pasta de filtros da solução. Para saber mais sobre anti-CSRF na API da Web, consulte [ataques impedindo intersite solicitações forjadas (CSRF)](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md).
+ASP.NET MVC fornece suporte interno para tokens antifalsificação, por meio de [AntiForgery](https://msdn.microsoft.com/library/system.web.helpers.antiforgery.aspx) classe e o [[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute.aspx) atributo. No momento, essa funcionalidade não é interno ao API da Web. No entanto, o modelo SPA inclui uma implementação personalizada de API da Web. Esse código é definido no `ValidateHttpAntiForgeryTokenAttribute` classe, que está localizado na pasta de filtros da solução. Para saber mais sobre anti-CSRF na API da Web, consulte [ataques impedindo intersite solicitações forjadas (CSRF)](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md).
 
 ## <a name="conclusion"></a>Conclusão
 

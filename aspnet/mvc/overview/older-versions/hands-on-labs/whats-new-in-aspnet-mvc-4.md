@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 3de952224e23eed29f90ed0e8c662e4ee3f531ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b1bdae048afc78399ccc7b0eac7125d9b983c13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-4"></a>O que há de novo no ASP.NET MVC 4
 ====================
 por [Web Camps Team](https://twitter.com/webcamps)
 
-[Baixar o Kit de treinamento de Camps de Web](http://www.microsoft.com/en-us/download/29843)
+[Baixar o Kit de treinamento de Camps de Web](http://www.microsoft.com/download/29843)
 
 > ASP.NET MVC 4 é uma estrutura para criar aplicativos web escalonável, baseado em padrões usando padrões de design bem estabelecidos e o poder do ASP.NET e o .NET framework. Essa nova quarta versão do framework enfoca facilita o desenvolvimento de aplicativos web móvel.
 > 
@@ -30,7 +30,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Este laboratório prático, você iniciará com o ASP.NET MVC 4 &quot;aplicativo de Internet&quot; modelo de projeto para criar um aplicativo da Galeria de fotos. Você aprimorará progressivamente o aplicativo usando o jQuery Mobile e recursos novos do ASP.NET MVC 4 para torná-lo compatível com navegadores da web da área de trabalho e de dispositivos móveis diferentes. Você também aprenderá sobre novo receitas de código para geração de código e como o ASP.NET MVC 4 torna mais fácil para gravar os métodos de ação assíncrono com o suporte à tarefa&lt;ActionResult&gt; tipos de retorno.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 <a id="Objectives"></a>
@@ -56,7 +56,7 @@ Você deve ter os seguintes itens para concluir este laboratório:
 
 - [Microsoft Visual Studio Express 2012 para Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) ou superior (leitura [Apêndice B](#AppendixB) para obter instruções sobre como instalá-lo).
 - [ASP.NET MVC 4](../../../mvc4.md) (incluído na instalação do Microsoft Visual Studio 2012)
-- Emulador do Windows Phone (incluído no [Windows Phone 7.1.1 SDK](https://www.microsoft.com/en-us/download/details.aspx?id=29233))
+- Emulador do Windows Phone (incluído no [Windows Phone 7.1.1 SDK](https://www.microsoft.com/download/details.aspx?id=29233))
 - Opcional - [o WebMatrix 2](https://www.microsoft.com/web/webmatrix/) com **Electric Plum iPhone simulador** extensão (somente para o Exercício 3 usada para procurar o aplicativo web com um simulador de iPhone)
 
 <a id="Setup"></a>
@@ -345,7 +345,7 @@ Nesta tarefa, você atualizará a página inicial para mostrar a Galeria de foto
 
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
-4. Abra o **HomeController** arquivo o **controladores** pasta.
+4. Abra o arquivo **HomeController.cs** da pasta **Controladores**.
 5. Adicione o seguinte usando instruções.
 
     (Código de trecho - *usos do ASP.NET MVC 4 laboratório - Ex02 - HomeController*)
@@ -611,7 +611,7 @@ Nesta tarefa, você criará um layout personalizado para os dispositivos iPhone 
 7. Pressione **F5** para executar o aplicativo e navegue até o site no **emulador do Windows Phone**.
 8. Abra um **simulador de iPhone** (consulte [Apêndice C](#AppendixC) para obter instruções sobre como instalar e configurar um simulador de iPhone) e navegue até o site muito. Observe que cada telefone está usando o modelo específico.
 
-    ![Using-different-Views-for-each-Mobile-device2](whats-new-in-aspnet-mvc-4/_static/image35.png)
+    ![Using-different-views-for-each-mobile-device2](whats-new-in-aspnet-mvc-4/_static/image35.png)
 
     *Usando modos de exibição diferentes para cada dispositivo móvel*
 
@@ -622,7 +622,7 @@ Nesta tarefa, você criará um layout personalizado para os dispositivos iPhone 
 
 Microsoft .NET Framework 4.5 apresenta novos recursos de idioma em c# e Visual Basic para fornecer uma nova base de assincronia na programação .NET. Essa nova base torna programação assíncrona semelhantes e sobre tão simples quanto - programação síncrona. Agora é possível gravar os métodos de ação assíncrono no ASP.NET MVC 4 usando o **AsyncController** classe. Você pode usar métodos de ação assíncrono de longa duração, CPU não associado a solicitações. Isso evita que o servidor Web da execução de trabalho enquanto a solicitação está sendo processada de bloqueio. A classe AsyncController normalmente é usada para chamadas de serviço Web de longa execução.
 
-Este exercício explica os conceitos básicos de uma operação assíncrona no ASP.NET MVC 4. Se você quiser se aprofundar mais, confira o seguinte artigo: [ [https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)
+Este exercício explica os conceitos básicos de uma operação assíncrona no ASP.NET MVC 4. Se você quiser se aprofundar mais, confira o seguinte artigo: [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
 <a id="Task_1_-_Implementing_an_Asynchronous_Controller"></a>
 #### <a name="task-1---implementing-an-asynchronous-controller"></a>Tarefa 1: Implementando um controlador assíncrono

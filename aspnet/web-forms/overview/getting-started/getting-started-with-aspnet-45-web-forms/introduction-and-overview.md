@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ee3e244c4ed29384d11c7acc1440692d3f9b23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>Guia de Introdução ao 4.5 Web Forms do ASP.NET e Visual Studio 2013
 ====================
@@ -101,7 +101,7 @@ Tarefas demonstradas nesta série:
 - Registrando as rotas para o aplicativo web
 - Implementando o tratamento de erros e log de erros
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Se você for novo no Web Forms do ASP.NET mas tem familiaridade com conceitos de programação, você tem o direito tutorial. Se você já estiver familiarizado com o Web Forms do ASP.NET, você pode aproveitar essa série de tutoriais pelos novos recursos disponíveis no ASP.NET 4.5. Se você estiver familiarizado com conceitos de programação e Web Forms do ASP.NET, consulte os tutoriais adicionais fornecidos no Web Forms [Introdução](../../../index.md) seção no site da Web do ASP.NET.
 
@@ -150,7 +150,7 @@ Após o retorno do PayPal, você pode revisar e concluir o pedido.
 
 Antes de começar, certifique-se de que você tenha o seguinte software instalado em seu computador:
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) ou [Microsoft Visual Studio Express 2013 para Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). O .NET Framework é instalado automaticamente.
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) ou [Microsoft Visual Studio Express 2013 para Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). O .NET Framework é instalado automaticamente.
 
 Esta série de tutoriais usa o Microsoft Visual Studio Express 2013 para Web. Você pode usar o Microsoft Visual Studio Express 2013 para Web ou Microsoft Visual Studio 2013 para concluir este tutorial série.
 
@@ -163,7 +163,7 @@ Se você já tiver uma versão do Visual Studio instalada, o processo de instala
 
 > [!NOTE] 
 > 
-> Este passo a passo pressupõe que você selecionou o *desenvolvimento Web* conjunto de configurações na primeira vez que você iniciar o Visual Studio. Para obter mais informações, consulte [como: selecionar configurações de ambiente de desenvolvimento da Web](https://msdn.microsoft.com/en-us/library/ff521558.aspx).
+> Este passo a passo pressupõe que você selecionou o *desenvolvimento Web* conjunto de configurações na primeira vez que você iniciar o Visual Studio. Para obter mais informações, consulte [como: selecionar configurações de ambiente de desenvolvimento da Web](https://msdn.microsoft.com/library/ff521558.aspx).
 
 
 ## <a name="download-the-sample-application"></a>Baixe o aplicativo de exemplo

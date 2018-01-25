@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 7e0ddc15fac9af40a0a20a99979a80517eb1b6a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>Noções básicas sobre a autenticação do ASP.NET AJAX e serviços de aplicativos de perfil
 ====================
@@ -43,7 +43,7 @@ O serviço de autenticação permite que os usuários forneçam credenciais para
 
 O serviço de perfil permite a integração automática e o armazenamento de dados de usuário com base na associação, conforme fornecido pelo serviço de autenticação. Os dados armazenados são especificados pelo arquivo Web. config, e os vários provedores de serviços de criação de perfil lidar com o gerenciamento de dados. Assim como acontece com o serviço de autenticação, o serviço de perfil de AJAX é compatível com o serviço de perfil do ASP.NET padrão, para que as páginas atualmente a incorporação de recursos do serviço de perfil do ASP.NET não devem ser interrompidas, incluindo suporte a AJAX.
 
-Incorporando a autenticação do ASP.NET e serviços de criação de perfil em um aplicativo está fora do escopo deste white paper. Para obter mais informações sobre o tópico, consulte o MSDN Library referência artigo Gerenciando usuários com o uso de associações em [https://msdn.microsoft.com/en-us/library/tw292whz.aspx](https://msdn.microsoft.com/en-us/library/tw292whz.aspx). ASP.NET também inclui um utilitário para configurar automaticamente a associação com o SQL Server, que é o provedor de serviços de autenticação padrão para a associação do ASP.NET. Para obter mais informações, consulte o artigo ferramenta de registro de servidor de SQL do ASP.NET (Aspnet\_regsql.exe) em [https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx).
+Incorporando a autenticação do ASP.NET e serviços de criação de perfil em um aplicativo está fora do escopo deste white paper. Para obter mais informações sobre o tópico, consulte o MSDN Library referência artigo Gerenciando usuários com o uso de associações em [https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET também inclui um utilitário para configurar automaticamente a associação com o SQL Server, que é o provedor de serviços de autenticação padrão para a associação do ASP.NET. Para obter mais informações, consulte o artigo ferramenta de registro de servidor de SQL do ASP.NET (Aspnet\_regsql.exe) em [https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*Usando o serviço de autenticação do ASP.NET AJAX*
 
@@ -65,8 +65,8 @@ O método de login () começa uma solicitação para autenticar as credenciais d
 
 | **Nome do parâmetro** | **Significado** |
 | --- | --- |
-| Nome de usuário | Necessário. O nome de usuário para autenticar. |
-| Senha | Opcional (o padrão é nulo). A senha do usuário. |
+| userName | Necessário. O nome de usuário para autenticar. |
+| password | Opcional (o padrão é nulo). A senha do usuário. |
 | isPersistent | Opcional (o padrão é falso). Se o cookie de autenticação do usuário deve persistir entre sessões. Se for false, o usuário será fazer logoff quando o navegador for fechado ou a sessão expira. |
 | redirectUrl | Opcional (o padrão é nulo). A URL para redirecionar o navegador após a autenticação bem-sucedida. Se esse parâmetro for nulo ou uma cadeia de caracteres vazia, nenhum redirecionamento ocorre. |
 | customInfo | Opcional (o padrão é nulo). Esse parâmetro é usado atualmente e está reservado para uso futuro. |
@@ -117,7 +117,7 @@ A referência de função especificada por essa propriedade deve ter a seguinte 
 | --- | --- |
 | erro | Especifica as informações de erro. |
 | userContext | Especifica as informações de contexto de usuário fornecidas quando a função de logon ou logout foi chamada. |
-| MethodName | O nome do método de chamada. |
+| methodName | O nome do método de chamada. |
 
 *propriedade defaultLoginCompletedCallback (get, set):*
 
@@ -133,7 +133,7 @@ A referência de função especificada por essa propriedade deve ter a seguinte 
 | --- | --- |
 | validCredentials | Especifica se o usuário forneceu credenciais válidas. `true`Se o usuário fez logon com êxito. Caso contrário, `false`. |
 | userContext | Especifica as informações de contexto de usuário fornecidas quando a função de logon foi chamada. |
-| MethodName | O nome do método de chamada. |
+| methodName | O nome do método de chamada. |
 
 *propriedade defaultLogoutCompletedCallback (get, set):*
 
@@ -149,7 +149,7 @@ A referência de função especificada por essa propriedade deve ter a seguinte 
 | --- | --- |
 | Resultado | Esse parâmetro será sempre `null`; ele é reservado para uso futuro. |
 | userContext | Especifica as informações de contexto de usuário fornecidas quando a função de logon foi chamada. |
-| MethodName | O nome do método de chamada. |
+| methodName | O nome do método de chamada. |
 
 *Propriedade isLoggedIn (get):*
 
@@ -251,7 +251,7 @@ A referência de função especificada por essa propriedade deve ter a seguinte 
 | --- | --- |
 | Erro | Especifica as informações de erro. |
 | userContext | Especifica as informações de contexto de usuário fornecidas quando a carga ou salvar a função foi chamada. |
-| MethodName | O nome do método de chamada. |
+| methodName | O nome do método de chamada. |
 
 *propriedade defaultSaveCompleted (get, set):*
 
@@ -267,7 +267,7 @@ A referência de função especificada por essa propriedade deve ter a seguinte 
 | --- | --- |
 | numPropsSaved | Especifica o número de propriedades que foram salvos. |
 | userContext | Especifica as informações de contexto de usuário fornecidas quando a carga ou salvar a função foi chamada. |
-| MethodName | O nome do método de chamada. |
+| methodName | O nome do método de chamada. |
 
 *propriedade defaultLoadCompleted (get, set):*
 
@@ -283,7 +283,7 @@ A referência de função especificada por essa propriedade deve ter a seguinte 
 | --- | --- |
 | numPropsLoaded | Especifica o número de propriedades carregado. |
 | userContext | Especifica as informações de contexto de usuário fornecidas quando a carga ou salvar a função foi chamada. |
-| MethodName | O nome do método de chamada. |
+| methodName | O nome do método de chamada. |
 
 *propriedade Path (get, set):*
 
@@ -341,7 +341,7 @@ Serviços ASP.NET - especificamente os serviços de criação de perfil, associa
 
 Além disso, ao criar implementações do serviço web simplificada com assinaturas de método equivalente, os desenvolvedores podem criar provedores de script personalizado para esses serviços ASP.NET intrínsecos. Suporte para essas técnicas simplifica o desenvolvimento de aplicativos de cliente, além de fornecer aos desenvolvedores uma ampla gama de flexibilidade para atender às necessidades específicas.
 
-## <a name="bio"></a>*Biografia do*
+## <a name="bio"></a>*Bio*
 
 Scott Cate trabalha com tecnologias Microsoft Web desde 1997 e é presidente da myKB.com ([www.myKB.com](http://www.myKB.com)) onde ele é especializada em escrever ASP.NET com base em aplicativos voltados para soluções de Software da Base de dados de Conhecimento. Scott pode ser contatado via email em [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) ou em seu blog [ScottCate.com](http://ScottCate.com)
 

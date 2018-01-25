@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: cd800062e87c07a0ef1d8d3d32c910aaf3e683cc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98a7ce4991d58181177cf56976888e9fd1526987
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>Tutorial: Servidor de transmissão com SignalR 2
 ====================
@@ -57,7 +57,7 @@ por [Tom Dykstra](https://github.com/tdykstra), [Tom FitzMacken](https://github.
 > Deixe comentários em como você gostou neste tutorial e o que podemos melhorar nos comentários na parte inferior da página. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [ASP.NET SignalR fórum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Neste tutorial, você vai criar um aplicativo de cotações da bolsa é representativo de aplicativos em tempo real no qual você deseja periodicamente "push" ou difusão, notificações do servidor para todos os clientes conectados. A primeira parte deste tutorial, você criará uma versão simplificada do aplicativo do zero. No restante do tutorial, você vai instalar um pacote do NuGet que contém recursos adicionais e examine o código para esses recursos.
 
@@ -133,7 +133,7 @@ Deseja apenas uma instância da classe StockTicker para executados no servidor, 
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample2.cs)]
 
-    O [Hub](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) classe é usada para definir métodos que os clientes podem chamar no servidor. Você está definindo um método: `GetAllStocks()`. Quando um cliente se conecta inicialmente ao servidor, ele chamará esse método para obter uma lista de todas as ações com os preços atuais. O método pode executar de forma síncrona e retornar `IEnumerable<Stock>` porque ele está retornando dados de memória. Se o método teve que obter os dados fazendo algo que envolve a espera, como uma pesquisa de banco de dados ou uma chamada de serviço web, você deve especificar `Task<IEnumerable<Stock>>` como o valor de retorno para habilitar o processamento assíncrono. Para obter mais informações, consulte [guia de API de Hubs do ASP.NET SignalR - Server - quando executadas de forma assíncrona](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods).
+    O [Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) classe é usada para definir métodos que os clientes podem chamar no servidor. Você está definindo um método: `GetAllStocks()`. Quando um cliente se conecta inicialmente ao servidor, ele chamará esse método para obter uma lista de todas as ações com os preços atuais. O método pode executar de forma síncrona e retornar `IEnumerable<Stock>` porque ele está retornando dados de memória. Se o método teve que obter os dados fazendo algo que envolve a espera, como uma pesquisa de banco de dados ou uma chamada de serviço web, você deve especificar `Task<IEnumerable<Stock>>` como o valor de retorno para habilitar o processamento assíncrono. Para obter mais informações, consulte [guia de API de Hubs do ASP.NET SignalR - Server - quando executadas de forma assíncrona](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods).
 
     O atributo HubName Especifica como o Hub será referenciado no código JavaScript no cliente. O nome padrão do cliente se você não usar esse atributo é uma versão concatenados de nome de classe, que nesse caso, seria stockTickerHub.
 
@@ -146,7 +146,7 @@ Deseja apenas uma instância da classe StockTicker para executados no servidor, 
 
     ### <a name="storing-the-singleton-instance-in-a-static-field"></a>Armazenar a instância singleton em um campo estático
 
-    O código inicializa estático \_campo de instância que faz a propriedade de instância com uma instância da classe e isso é a única instância da classe que pode ser criada porque o construtor está marcado como privado. [Inicialização lenta](https://msdn.microsoft.com/en-us/library/dd997286.aspx) é usado para o \_campo de instância, não por motivos de desempenho mas para assegurar que a criação de instância é threadsafe.
+    O código inicializa estático \_campo de instância que faz a propriedade de instância com uma instância da classe e isso é a única instância da classe que pode ser criada porque o construtor está marcado como privado. [Inicialização lenta](https://msdn.microsoft.com/library/dd997286.aspx) é usado para o \_campo de instância, não por motivos de desempenho mas para assegurar que a criação de instância é threadsafe.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample4.cs)]
 
@@ -160,7 +160,7 @@ Deseja apenas uma instância da classe StockTicker para executados no servidor, 
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample6.cs)]
 
-    A coleção de ações está definida como um [ConcurrentDictionary](https://msdn.microsoft.com/en-us/library/dd287191.aspx) tipo de acesso thread-safe. Como alternativa, você pode usar um [dicionário](https://msdn.microsoft.com/en-us/library/xfhwa508.aspx) do objeto e o dicionário de bloqueio explicitamente, quando você fizer alterações.
+    A coleção de ações está definida como um [ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx) tipo de acesso thread-safe. Como alternativa, você pode usar um [dicionário](https://msdn.microsoft.com/library/xfhwa508.aspx) do objeto e o dicionário de bloqueio explicitamente, quando você fizer alterações.
 
     Para este aplicativo de exemplo, Okey é armazenar dados de aplicativo na memória e os dados perdidos quando a instância de StockTicker é descartada. Em um aplicativo real, você trabalhará com um repositório de dados de back-end como um banco de dados.
 
@@ -172,7 +172,7 @@ Deseja apenas uma instância da classe StockTicker para executados no servidor, 
 
     UpdateStockPrices é chamado pelo temporizador, que passa nulo no parâmetro state. Antes de atualizar os preços, um bloqueio é ativado a \_updateStockPricesLock objeto. O código verifica se outro thread já está atualizando os preços e, em seguida, ele chama TryUpdateStockPrice em cada ação na lista. O método TryUpdateStockPrice decide se alterar o preço de estoque e quanto para alterá-lo. Se o preço de estoque for alterado, BroadcastStockPrice é chamado para transmitir a alteração de preço de estoque para todos os clientes conectados.
 
-    O \_updatingStockPrices sinalizador está marcado como [volátil](https://msdn.microsoft.com/en-us/library/x13ttww7.aspx) para garantir que o acesso a ele é threadsafe.
+    O \_updatingStockPrices sinalizador está marcado como [volátil](https://msdn.microsoft.com/library/x13ttww7.aspx) para garantir que o acesso a ele é threadsafe.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample8.cs)]
 
@@ -192,7 +192,7 @@ Deseja apenas uma instância da classe StockTicker para executados no servidor, 
 
     O método updateStockPrice da chamada em BroadcastStockPrice ainda; não existe você adicioná-lo mais tarde quando você escreve o código que é executado no cliente. Você pode consultar updateStockPrice aqui porque Clients.All é dinâmico, o que significa que a expressão será avaliada em tempo de execução. Quando esta chamada de método é executado, SignalR enviará o nome do método e o valor do parâmetro para o cliente e se o cliente tiver um método chamado updateStockPrice, esse método será chamado e o valor do parâmetro será passado para ele.
 
-    Clients.All significa enviar a todos os clientes. O SignalR fornece outras opções para especificar quais clientes ou grupos de clientes para enviar para. Para obter mais informações, consulte [HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx).
+    Clients.All significa enviar a todos os clientes. O SignalR fornece outras opções para especificar quais clientes ou grupos de clientes para enviar para. Para obter mais informações, consulte [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx).
 
 ### <a name="register-the-signalr-route"></a>Registrar a rota de SignalR
 
@@ -407,9 +407,9 @@ Para tutoriais que mostram os cenários de comunicação ponto a ponto, consulte
 
 Para saber mais avançados conceitos de desenvolvimento SignalR, visite os seguintes sites para SignalR código-fonte e recursos:
 
-- [SignalR do ASP.NET](../../index.md)
+- [ASP.NET SignalR](../../index.md)
 - [Projeto de SignalR](http://signalr.net/)
 - [SignalR Github e exemplos](https://github.com/SignalR/SignalR)
 - [Wiki do SignalR](https://github.com/SignalR/SignalR/wiki)
 
-Para obter instruções sobre como implantar um aplicativo SignalR no Azure, consulte [usando SignalR com aplicativos Web no serviço de aplicativo do Azure](../deployment/using-signalr-with-azure-web-sites.md). Para obter informações detalhadas sobre como implantar um projeto da web do Visual Studio para um Site do Windows Azure, consulte [criar um aplicativo web ASP.NET no serviço de aplicativo do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/).
+Para obter instruções sobre como implantar um aplicativo SignalR no Azure, consulte [usando SignalR com aplicativos Web no serviço de aplicativo do Azure](../deployment/using-signalr-with-azure-web-sites.md). Para obter informações detalhadas sobre como implantar um projeto da web do Visual Studio para um Site do Windows Azure, consulte [criar um aplicativo web ASP.NET no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).

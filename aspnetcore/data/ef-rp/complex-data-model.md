@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: c375fe6ea98c621012eb55589c8b174c2a95b697
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2446f4734e9bb1ab6829001f6e7888c4c14ee1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>Criar um modelo de dados complexos - Core EF com tutorial páginas Razor (5 de 8)
 
@@ -49,9 +49,9 @@ O [DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataann
 * O `mailto:` link é criado automaticamente para `DataType.EmailAddress`.
 * O seletor de data é fornecido para `DataType.Date` na maioria dos navegadores.
 
-O `DataType` atributo emite HTML 5 `data-` atributos (pronunciado dados dash) que consomem os navegadores HTML 5. O `DataType` atributos não fornecem validação.
+O `DataType` atributo emite HTML 5 `data-` atributos (pronunciado dados dash) que consomem os navegadores HTML 5. O `DataType` atributos não fornecerem validação.
 
-`DataType.Date` não especifica o formato da data exibida. Por padrão, o campo de data será exibido conforme os formatos padrão com base no servidor de [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
+`DataType.Date`não especifique o formato da data que é exibida. Por padrão, o campo de data será exibido conforme os formatos padrão com base no servidor de [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
 
 O atributo `DisplayFormat` é usado para especificar explicitamente o formato de data:
 
@@ -159,7 +159,7 @@ Atualização *Models/Student.cs* com o código a seguir:
 
 ### <a name="the-required-attribute"></a>O atributo necessário
 
-O `Required` atributo faz com que os campos obrigatórios de propriedades de nome. O `Required` atributo não é necessária para tipos não anuláveis, como tipos de valor (`DateTime`, `int`, `double`, etc.). Tipos que não podem ser nulos automaticamente são tratados como campos obrigatórios.
+O `Required` atributo faz com que os campos obrigatórios de propriedades de nome. O `Required` atributo não é necessária para tipos não anuláveis como tipos de valor (`DateTime`, `int`, `double`, etc.). Tipos que não podem ser nulos automaticamente são tratados como campos obrigatórios.
 
 O `Required` atributo pode ser substituído com um parâmetro de comprimento mínimo de `StringLength` atributo:
 
@@ -284,7 +284,7 @@ O `Course` entidade tem uma propriedade de chave estrangeira (FK) `DepartmentID`
 
 Núcleo EF não requer uma propriedade FK para um modelo de dados quando o modelo tem uma propriedade de navegação para uma entidade relacionada.
 
-EF Core cria automaticamente FKs no banco de dados sempre que forem necessários. Cria Core EF [propriedades de sombra](https://docs.microsoft.com/ef/core/modeling/shadow-properties) para FKs criados automaticamente. Ter FK no modelo de dados pode fazer atualizações mais simples e mais eficiente. Por exemplo, considere um modelo em que a propriedade FK `DepartmentID` é *não* incluídos. Quando uma entidade de curso é buscada para editar:
+Núcleo EF cria automaticamente FKs no banco de dados sempre que forem necessários. Cria Core EF [propriedades de sombra](https://docs.microsoft.com/ef/core/modeling/shadow-properties) para FKs criados automaticamente. Ter FK no modelo de dados pode fazer atualizações mais simples e mais eficiente. Por exemplo, considere um modelo em que a propriedade FK `DepartmentID` é *não* incluídos. Quando uma entidade de curso é buscada para editar:
 
 * O `Department` entidade será null se ele não foi explicitamente é carregado.
 * Para atualizar a entidade de curso, o `Department` primeiro deve ser buscada de entidade.
@@ -638,7 +638,7 @@ Com as alterações anteriores, existente `Course` linhas estão relacionadas ao
 Um aplicativo de produção seria:
 
 * Incluir código ou scripts para adicionar `Department` linhas e relacionadas `Course` linhas para o novo `Department` linhas.
-* Não use o departamento de "Temp" ou o valor padrão para `Course.DepartmentID `.
+* Não use o departamento de "Temp" ou o valor padrão para `Course.DepartmentID`.
 
 O seguinte tutorial abrange os dados relacionados.
 

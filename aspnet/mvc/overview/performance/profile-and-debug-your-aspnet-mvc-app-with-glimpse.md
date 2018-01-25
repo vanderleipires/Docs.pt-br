@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 98b21a54ba00a8c82c3be7ba4e39d44041ed42c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Criar o perfil e depurar seu aplicativo ASP.NET MVC com prévia
 ====================
 Por [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Visão rápida é um prosperando e aumentando a família de pacotes do NuGet código-fonte aberto que fornece desempenho detalhada, depuração e informações de diagnóstico para aplicativos ASP.NET. Ele é simples de instalar, leve, ultrarrápido e exibe as principais métricas de desempenho na parte inferior de cada página. Ele permite que você fazer drill down em seu aplicativo quando você precisa saber o que está acontecendo no servidor. Visão rápida fornece muito valiosas informações, que recomendamos que você pode usá-lo durante o ciclo de desenvolvimento, incluindo o seu ambiente de teste do Azure. Enquanto [Fiddler](http://www.telerik.com/fiddler) e [ferramentas de desenvolvimento F-12](https://msdn.microsoft.com/en-us/library/ie/gg589512(v=vs.85).aspx) fornecem um lado do cliente exibição, a visão rápida fornece uma exibição detalhada do servidor. Este tutorial se concentrará em usando o ASP.NET MVC de amostra e pacotes EF, mas muitos outros pacotes estão disponíveis. Sempre que possível, será vinculado ao apropriado [vislumbrar documentos](http://getglimpse.com/Docs/) que ajudam a manter. Visão rápida é um projeto, você também pode contribuir com o código-fonte e os documentos.
+> Visão rápida é um prosperando e aumentando a família de pacotes do NuGet código-fonte aberto que fornece desempenho detalhada, depuração e informações de diagnóstico para aplicativos ASP.NET. Ele é simples de instalar, leve, ultrarrápido e exibe as principais métricas de desempenho na parte inferior de cada página. Ele permite que você fazer drill down em seu aplicativo quando você precisa saber o que está acontecendo no servidor. Visão rápida fornece muito valiosas informações, que recomendamos que você pode usá-lo durante o ciclo de desenvolvimento, incluindo o seu ambiente de teste do Azure. Enquanto [Fiddler](http://www.telerik.com/fiddler) e [ferramentas de desenvolvimento F-12](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) fornecem um lado do cliente exibição, a visão rápida fornece uma exibição detalhada do servidor. Este tutorial se concentrará em usando o ASP.NET MVC de amostra e pacotes EF, mas muitos outros pacotes estão disponíveis. Sempre que possível, será vinculado ao apropriado [vislumbrar documentos](http://getglimpse.com/Docs/) que ajudam a manter. Visão rápida é um projeto, você também pode contribuir com o código-fonte e os documentos.
 
 
 - [Instalação prévia](#ig)
@@ -113,7 +113,7 @@ A política de segurança padrão prévia apenas permite que os dados de amostra
 
 Com essa alteração sozinha, qualquer usuário pode ver os dados de amostra em um local remoto. Considere adicionar a marcação acima para um perfil de publicação para que ele tem apenas implantado um aplicada quando você usar esse perfil de publicação (por exemplo, proifle o teste do Azure.) Para restringir os dados de amostra, adicionaremos o `canViewGlimpseData` função e só permitir que os usuários nesta função para exibir dados de amostra.
 
-Remova os comentários do *GlimpseSecurityPolicy.cs* de arquivo e altere o [IsInRole](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) chamar de `Administrator` para o `canViewGlimpseData` função:
+Remova os comentários do *GlimpseSecurityPolicy.cs* de arquivo e altere o [IsInRole](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) chamar de `Administrator` para o `canViewGlimpseData` função:
 
 [!code-csharp[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample4.cs?highlight=6)]
 
@@ -121,10 +121,10 @@ Remova os comentários do *GlimpseSecurityPolicy.cs* de arquivo e altere o [IsIn
 > Segurança - os dados ricos fornecidos pelo prévia podem expor a segurança do seu aplicativo. Microsoft não realizou uma auditoria de segurança de amostra para uso em aplicativos de produção.
 
 
-Para obter informações sobre a adição de funções, consulte Meus [implantar um aplicativo da web seguro ASP.NET MVC 5 com associação, OAuth e o banco de dados do SQL Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) tutorial.
+Para obter informações sobre a adição de funções, consulte Meus [implantar um aplicativo da web seguro ASP.NET MVC 5 com associação, OAuth e o banco de dados do SQL Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) tutorial.
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [Implantar um aplicativo de seguro ASP.NET MVC 5 com associação, OAuth e o banco de dados SQL do Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+- [Implantar um aplicativo de seguro ASP.NET MVC 5 com associação, OAuth e o banco de dados SQL do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
 - [Mostra a configuração](http://getglimpse.com/Docs/Configuration) -página de documento sobre como configurar guias, diretiva de tempo de execução, registro em log e muito mais.

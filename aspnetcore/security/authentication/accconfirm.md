@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/accconfirm
-ms.openlocfilehash: b004a8e7680b203416552e5a7a2809799e657759
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bc9febc41d0637be9f83a02799d360489f257849
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmação de conta e de recuperação de senha no núcleo do ASP.NET
 
@@ -89,7 +89,7 @@ Consulte [impondo SSL](xref:security/enforcing-ssl).
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>Solicitar confirmação de email
 
-É uma prática recomendada para confirmar o email de um novo registro de usuário para verificar se eles não são representando outra pessoa (ou seja, eles ainda não registrados com outra pessoa email). Suponha que você tivesse um fórum de discussão, e quiser impedir "yli@example.com"do registro como"nolivetto@contoso.com." Sem confirmação por email, "nolivetto@contoso.com" poderia obter indesejadas de seu aplicativo. Suponha que o usuário registrado acidentalmente como "ylo@example.com" e ainda não tenha notado o erro de "yli", elas não serão capazes de usar a recuperação de senha porque o aplicativo não tiver seu email correto. Email de confirmação oferece apenas proteção limitada de robôs e não oferece proteção contra spam determinado que têm muitos aliases de email de trabalho, que eles podem usar para registrar.
+É uma prática recomendada para confirmar o email de um novo registro de usuário para verificar se eles não estiver representando outra pessoa (ou seja, eles ainda não registrados com outra pessoa email). Suponha que você tivesse um fórum de discussão, e quiser impedir "yli@example.com"do registro como"nolivetto@contoso.com." Sem confirmação por email, "nolivetto@contoso.com" poderia obter indesejadas de seu aplicativo. Suponha que o usuário registrado acidentalmente como "ylo@example.com" e ainda não tenha notado o erro de "yli", elas não serão capazes de usar a recuperação de senha porque o aplicativo não tiver seu email correto. Email de confirmação oferece apenas proteção limitada de robôs e não oferece proteção contra spam determinado que têm muitos aliases de email de trabalho, que eles podem usar para registrar.
 
 Em geral você deseja impedir que novos usuários lançamento todos os dados para seu site da web para que eles tenham um email confirmado. 
 
@@ -277,7 +277,7 @@ Se você não pode receber email de trabalho:
 
 ## <a name="prevent-login-at-registration"></a>Impedir que o logon no momento do registro
 
-Com os modelos atuais, depois que o usuário concluir o formulário de registro, são registradas no (autenticados). Você geralmente deseja confirmar seu email antes de registrá-los. A seção a seguir, vamos modificar o código para exigir que novos usuários possuem um email confirmado antes que eles estejam conectados. Atualização de `[HttpPost] Login` ação no *AccountController.cs* arquivo com as seguintes alterações realçados.
+Com os modelos atuais, depois que o usuário concluir o formulário de registro, estão conectados (autenticados). Você geralmente deseja confirmar seu email antes de registrá-los. A seção a seguir, vamos modificar o código para exigir que novos usuários possuem um email confirmado antes que ele estão conectados. Atualização de `[HttpPost] Login` ação no *AccountController.cs* arquivo com as seguintes alterações realçados.
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=11-21&name=snippet_Login)]
 
@@ -302,4 +302,4 @@ Clique no link para outro serviço de logon e aceitar as solicitações do aplic
 
 ![Gerenciar o modo de exibição de logons externos listando Facebook](accconfirm/_static/fb.png)
 
-As duas contas foram combinadas. Você poderá fazer logon com a conta. Convém que os usuários adicionem contas locais no caso de seu log social no serviço de autenticação está inoperante ou mais provável que perdeu o acesso à sua conta social.
+As duas contas foram combinadas. Você poderá fazer logon com a conta. Convém que os usuários adicionem contas locais no caso de seu log social no serviço de autenticação está inoperante ou mais provável perdeu o acesso à sua conta social.

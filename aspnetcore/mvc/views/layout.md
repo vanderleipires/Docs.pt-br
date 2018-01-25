@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/layout
-ms.openlocfilehash: f225e2a93edfc552961f9f16294bc0ace6eb0002
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: e268f045e39188e9cc1e759ff7e6c553662dd669
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="layout"></a>Layout
 
@@ -33,7 +33,7 @@ Por convenção, o layout padrão para um aplicativo ASP.NET é denominado `_Lay
 
 ![pasta de modos de exibição no Gerenciador de soluções](layout/_static/web-project-views.png)
 
-Este layout define um modelo de nível superior para modos de exibição no aplicativo. Aplicativos não requerem um layout e aplicativos podem definir mais de um layout, com diferentes modos de exibição especificando layouts diferentes.
+Este layout define um modelo de nível superior para modos de exibição no aplicativo. Aplicativos não exigem um layout e aplicativos podem definir mais de um layout, com diferentes modos de exibição especificando layouts diferentes.
 
 Um exemplo `_Layout.cshtml`:
 
@@ -95,7 +95,7 @@ Modos de exibição podem usar diretivas do Razor para muitas coisas, como impor
 
 * `@inject`
 
-O arquivo não oferece suporte a outros recursos do Razor, como funções e definições de seção.
+O arquivo não dá suporte a outros recursos do Razor, como funções e definições de seção.
 
 Um exemplo de `_ViewImports.cshtml` arquivo:
 

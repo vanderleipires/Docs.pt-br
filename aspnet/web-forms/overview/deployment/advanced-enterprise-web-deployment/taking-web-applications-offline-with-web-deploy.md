@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: a0c59245eedbf53f367949e12dd83e2611f44fc4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1c262ec7b834107524a18c6552b171f731452c91
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="taking-web-applications-offline-with-web-deploy"></a>Implantar aplicativos de Web do colocando Offline com o Web
 ====================
@@ -74,7 +74,7 @@ A próxima etapa é modificar sua lógica de implantação para copiar o arquivo
 > O procedimento a seguir supõe que você estiver usando um arquivo de projeto MSBuild personalizado para controlar o processo de implantação, conforme descrito em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Se você estiver implantando direta do Visual Studio, você precisará usar uma abordagem diferente. Sayed Ibrahim Hashimi descreve uma dessas abordagens em [como levar sua publicação na Web aplicativo Offline durante](http://sedodream.com/2012/01/08/HowToTakeYourWebAppOfflineDuringPublishing.aspx).
 
 
-Para implantar um *aplicativo\_offline* arquivo para um site do IIS de destino, é necessário chamar MSDeploy.exe usando o [implantação da Web **contentPath** provedor](https://technet.microsoft.com/en-us/library/dd569034(WS.10).aspx). O **contentPath** provedor oferece suporte a caminhos de diretório físico e caminhos de site ou aplicativo do IIS, que é a opção ideal para a sincronização de um arquivo entre uma pasta de projeto do Visual Studio e um aplicativo web do IIS. Para implantar o arquivo, o comando MSDeploy deve ser semelhante a esta:
+Para implantar um *aplicativo\_offline* arquivo para um site do IIS de destino, é necessário chamar MSDeploy.exe usando o [implantação da Web **contentPath** provedor](https://technet.microsoft.com/library/dd569034(WS.10).aspx). O **contentPath** provedor oferece suporte a caminhos de diretório físico e caminhos de site ou aplicativo do IIS, que é a opção ideal para a sincronização de um arquivo entre uma pasta de projeto do Visual Studio e um aplicativo web do IIS. Para implantar o arquivo, o comando MSDeploy deve ser semelhante a esta:
 
 
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample1.cmd)]
@@ -95,7 +95,7 @@ Para automatizar esses comandos como parte de um processo de compilação e impl
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample3.xml)]
 3. O **SourceRoot** propriedade está definida em outro lugar no *Publish.proj* arquivo. Indica o local da pasta raiz para o conteúdo de origem em relação ao caminho atual do #x 2014; em outras palavras, relativo ao local do *Publish.proj* arquivo.
-4. O **contentPath** provedor não aceitará caminhos de arquivo, portanto você precisa obter um caminho absoluto para o arquivo de origem antes de implantá-lo. Você pode usar o [ConvertToAbsolutePath](https://msdn.microsoft.com/en-us/library/bb882668.aspx) tarefas para fazer isso.
+4. O **contentPath** provedor não aceitará caminhos de arquivo, portanto você precisa obter um caminho absoluto para o arquivo de origem antes de implantá-lo. Você pode usar o [ConvertToAbsolutePath](https://msdn.microsoft.com/library/bb882668.aspx) tarefas para fazer isso.
 5. Adicionar um novo **destino** elemento chamado **GetAppOfflineAbsolutePath**. Dentro desse destino, use o **ConvertToAbsolutePath** tarefa para obter um caminho absoluto para o *aplicativo\_modelo off-line* arquivo na pasta do projeto.
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample4.xml)]
@@ -148,7 +148,7 @@ O procedimento a seguir mostra como adicionar isso *. wpp.targets* arquivo em um
 1. Abra sua solução no Visual Studio 2010.
 2. No **Solution Explorer** janela, clique o nó do projeto de aplicativo web (por exemplo, **ContactManager.Mvc**), aponte para **adicionar**e, em seguida, clique em **Novo Item**.
 3. No **Adicionar Novo Item** caixa de diálogo, selecione o **arquivo XML** modelo.
-4. No **nome** , digite *[nome do projeto]***. wpp.targets** (por exemplo, **ContactManager.Mvc.wpp.targets**) e, em seguida, clique em  **Adicionar**.
+4. No **nome** , digite *[nome do projeto] *.wpp.targets** (por exemplo, **ContactManager.Mvc.wpp.targets**) e, em seguida, clique em **adicionar**.
 
     ![](taking-web-applications-offline-with-web-deploy/_static/image4.png)
 

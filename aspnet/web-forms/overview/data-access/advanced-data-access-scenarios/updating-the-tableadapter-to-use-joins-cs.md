@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 30bc92c5c5a54e8c43092c69d0b0707a96d6b331
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a24245a3c846d061a528d520f915b8eac3ff475
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-the-tableadapter-to-use-joins-c"></a>Atualizar o TableAdapter usar junções (c#)
 ====================
@@ -54,7 +54,7 @@ Como alternativa, um `JOIN` pode ser usado para retornar cada nome de fornecedor
 Um `JOIN` mescla os registros de uma tabela com registros de outra tabela com base em alguns critérios. Na consulta anterior, por exemplo, o `LEFT JOIN Categories ON Categories.CategoryID = Products.CategoryID` instrui o SQL Server para mesclar cada registro de produto com a categoria de registro cujo `CategoryID` valor corresponde ao produto s `CategoryID` valor. O resultado mesclado permite trabalhar com os campos de categoria correspondente para cada produto (como `CategoryName`).
 
 > [!NOTE]
-> `JOIN`s são usadas ao consultar dados de bancos de dados relacionais. Se você estiver familiarizado com o `JOIN` sintaxe ou necessidade de rever um pouco sobre seu uso, d recomendo o [SQL Join tutorial](http://www.w3schools.com/sql/sql_join.asp) em [W3 escolas](http://www.w3schools.com/). Também vale a pena leitura são o [ `JOIN` fundamentos](https://msdn.microsoft.com/en-us/library/ms191517.aspx) e [conceitos básicos de subconsulta](https://msdn.microsoft.com/en-us/library/ms189575.aspx) seções o [Manuais Online do SQL](https://msdn.microsoft.com/en-us/library/ms130214.aspx).
+> `JOIN`s são usadas ao consultar dados de bancos de dados relacionais. Se você estiver familiarizado com o `JOIN` sintaxe ou necessidade de rever um pouco sobre seu uso, d recomendo o [SQL Join tutorial](http://www.w3schools.com/sql/sql_join.asp) em [W3 escolas](http://www.w3schools.com/). Também vale a pena leitura são o [ `JOIN` fundamentos](https://msdn.microsoft.com/library/ms191517.aspx) e [conceitos básicos de subconsulta](https://msdn.microsoft.com/library/ms189575.aspx) seções o [Manuais Online do SQL](https://msdn.microsoft.com/library/ms130214.aspx).
 
 
 Como `JOIN` s e subconsultas correlacionadas podem ser usadas para recuperar dados relacionados de outras tabelas, muitos desenvolvedores são deixados pequena a cabeça e se perguntando qual abordagem usar. Todos as especialistas em SQL, var falou para disseram aproximadamente a mesma coisa, que ele t importa em termos de desempenho como o SQL Server irá gerar planos de execução praticamente idêntico. Seu conselho, em seguida, é usar a técnica que você e sua equipe estiverem mais familiarizados com o. Ele merece observar que após dar esse aviso esses especialistas imediatamente expressam suas preferências de `JOIN` s sobre subconsultas correlacionadas.

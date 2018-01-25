@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 7427b4f7c6b7a00fe795053aac0f612471a163cd
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 7339f6658ede16e79d19762bd6636917fe4de85f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-new-field"></a>Adicionando um Novo Campo
 ====================
@@ -42,7 +42,7 @@ Do **ferramentas** menu, clique em **NuGet Package Manager** e **Package Manager
 
 No **Package Manager Console** janela o `PM>` insira prompt
 
-Enable-Migrations - ContextTypeName MvcMovie.Models.MovieDBContext
+Enable-Migrations -ContextTypeName MvcMovie.Models.MovieDBContext
 
 ![](adding-a-new-field/_static/image3.png)
 
@@ -66,13 +66,13 @@ Isso adiciona a seguinte instrução using:
 > 
 > Code First Migrations chamadas a `Seed` método após a migração de todos (ou seja, chamando **Atualizar banco de dados** no Console do Gerenciador de pacotes), e este método atualiza linhas que já foram inseridas ou insere-los se eles não existem ainda.
 > 
-> O [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) método no código a seguir executa uma operação "upsert":
+> O [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) método no código a seguir executa uma operação "upsert":
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample3.cs)]
 > 
-> Porque o [semente](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) método é executado com cada migração, você não pode inserir apenas os dados, porque as linhas que você está tentando adicionar já estará lá após a migração primeiro que cria o banco de dados. O "[upsert](http://en.wikipedia.org/wiki/Upsert)" operação evita erros que acontecem se você tentar inserir uma linha que já existe, mas ela substitui quaisquer alterações nos dados que você fez ao testar o aplicativo. Com dados de teste em algumas tabelas talvez você não queira que isso aconteça: em alguns casos quando você altera dados ao testar deseja suas alterações para permanecer após as atualizações do banco de dados. Nesse caso você deseja fazer uma operação de inserção condicional: inserir uma linha apenas se ele ainda não existir.   
+> Porque o [semente](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) método é executado com cada migração, você não pode inserir apenas os dados, porque as linhas que você está tentando adicionar já estará lá após a migração primeiro que cria o banco de dados. O "[upsert](http://en.wikipedia.org/wiki/Upsert)" operação evita erros que acontecem se você tentar inserir uma linha que já existe, mas ela substitui quaisquer alterações nos dados que você fez ao testar o aplicativo. Com dados de teste em algumas tabelas talvez você não queira que isso aconteça: em alguns casos quando você altera dados ao testar deseja suas alterações para permanecer após as atualizações do banco de dados. Nesse caso você deseja fazer uma operação de inserção condicional: inserir uma linha apenas se ele ainda não existir.   
 >   
-> O primeiro parâmetro passado para o [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) método Especifica a propriedade a ser usado para verificar se uma linha já existe. Para os dados do filme de teste que você fornecer, o `Title` propriedade pode ser usada para essa finalidade, pois cada título na lista é exclusivo:
+> O primeiro parâmetro passado para o [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) método Especifica a propriedade a ser usado para verificar se uma linha já existe. Para os dados do filme de teste que você fornecer, o `Title` propriedade pode ser usada para essa finalidade, pois cada título na lista é exclusivo:
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
@@ -80,7 +80,7 @@ Isso adiciona a seguinte instrução using:
 >   
 >  *A sequência contém mais de um elemento*  
 >   
-> Para obter mais informações sobre o [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) método, consulte [tome cuidado com EF 4.3 AddOrUpdate método](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/).
+> Para obter mais informações sobre o [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) método, consulte [tome cuidado com EF 4.3 AddOrUpdate método](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/).
 
 
 **Pressione CTRL-SHIFT-B para compilar o projeto.** (As etapas a seguir falhará se você não criar neste momento.)

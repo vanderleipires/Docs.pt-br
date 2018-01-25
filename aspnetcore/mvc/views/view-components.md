@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2d93dcee102009661af708b9a9066e8af0bdbb17
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="view-components"></a>Componentes do modo de exibição
 
@@ -23,7 +23,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="introducing-view-components"></a>Introdução ao exibir componentes
 
-Novo para ASP.NET MVC de núcleo, exiba os componentes são semelhantes às exibições parciais, mas eles são muito mais eficientes. Componentes do modo de exibição não usar a associação de modelo e apenas dependem dos dados que você fornecer ao chamar nela. Um componente do modo de exibição:
+Novo para o ASP.NET MVC de núcleo, componentes de exibição são semelhantes às exibições parciais, mas eles são muito mais eficientes. Componentes do modo de exibição não usar a associação de modelo e apenas dependem dos dados que você fornecer ao chamar nela. Um componente do modo de exibição:
 
 * Renderiza um bloco em vez de uma resposta inteira
 * Inclui as mesmas separação de preocupações e os benefícios de capacidade de teste encontrados entre um controlador e o modo de exibição
@@ -60,7 +60,7 @@ Uma classe de componente do modo de exibição:
 
 * Dá suporte total ao construtor [injeção de dependência](../../fundamentals/dependency-injection.md)
 
-* Não faz parte do ciclo de vida de controlador, o que significa que você não pode usar [filtros](../controllers/filters.md) em um componente do modo de exibição
+* Não fazem parte do ciclo de vida de controlador, o que significa que você não pode usar [filtros](../controllers/filters.md) em um componente do modo de exibição
 
 ### <a name="view-component-methods"></a>Métodos de componente do modo de exibição
 
@@ -69,7 +69,7 @@ Um componente de visualização define a lógica em uma `InvokeAsync` método qu
 * Definir um `InvokeAsync` método que retorna um`IViewComponentResult`
 * Inicializa um modelo normalmente e passá-lo para um modo de exibição, chamando o `ViewComponent` `View` método
 * Parâmetros são provenientes do método de chamada, não HTTP, não há nenhuma associação de modelo
-* São não pode ser acessado diretamente como um ponto de extremidade HTTP, eles são chamados de seu código (normalmente em um modo de exibição). Um componente de visualização nunca manipula uma solicitação
+* São não pode ser acessado diretamente como um ponto de extremidade HTTP, eles estão invocados no seu código (normalmente em um modo de exibição). Um componente de visualização nunca manipula uma solicitação
 * Estão sobrecarregados a assinatura em vez de todos os detalhes da solicitação HTTP atual
 
 ### <a name="view-search-path"></a>Caminho de pesquisa de modo de exibição
@@ -130,7 +130,7 @@ No exemplo acima, o `PriorityList` torna-se o componente de exibição `priority
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>Invocar um componente de visualização diretamente de um controlador
 
-Componentes do modo de exibição normalmente são invocados em uma exibição, mas você pode invocá-los diretamente a partir de um método do controlador. Enquanto os componentes do modo de exibição não definir pontos de extremidade como controladores, você pode implementar facilmente uma ação do controlador que retorna o conteúdo de um `ViewComponentResult`.
+Componentes do modo de exibição normalmente são invocados em uma exibição, mas você pode invocá-los diretamente a partir de um método do controlador. Enquanto os componentes do modo de exibição não definem pontos de extremidade como controladores, você pode implementar facilmente uma ação do controlador que retorna o conteúdo de um `ViewComponentResult`.
 
 Neste exemplo, o componente de exibição é chamado diretamente do controlador:
 
@@ -152,7 +152,7 @@ Observações sobre o código:
 
 * Classes de componente do modo de exibição podem ser contidos em **qualquer** pasta do projeto.
 * Porque o nome da classe PriorityList**ViewComponent** termina com o sufixo **ViewComponent**, o tempo de execução usará a cadeia de caracteres "PriorityList" ao referenciar o componente de classe de um modo de exibição. Explicarei que em mais detalhes posteriormente.
-* O `[ViewComponent]` atributo pode alterar o nome usado para fazer referência a um componente de visualização. Por exemplo, pode ter dado a classe `XYZ` e aplicadas a `ViewComponent` atributo:
+* O `[ViewComponent]` atributo pode alterar o nome usado para fazer referência a um componente de visualização. Por exemplo, poderia chamamos a classe `XYZ` e aplicadas a `ViewComponent` atributo:
 
   ```csharp
   [ViewComponent(Name = "PriorityList")]
@@ -222,7 +222,7 @@ Se o modo de exibição de PVC não é processado, verifique se que você estive
 
    ```
    An unhandled exception occurred while processing the request.
-   InvalidOperationException: The view 'Components/PriorityList/Default' was not found. The following locations were searched:
+   InvalidOperationException: The view 'Components/PriorityList/Default' wasn't found. The following locations were searched:
    /Views/ToDo/Components/PriorityList/Default.cshtml
    /Views/Shared/Components/PriorityList/Default.cshtml
    EnsureSuccessful

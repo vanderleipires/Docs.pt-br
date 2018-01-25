@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 5fad4b659dafe5470aeb84d320ff711b8840d1e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix e da Web do ASP.NET (Razor) de páginas Beta 3 versão Leiame
 ====================
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/10/2017
 
 <a id="Overview"></a>
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 > Microsoft WebMatrix Beta é uma pilha de desenvolvimento gratuito da web que é instalado em minutos. Ela integra um servidor web com o banco de dados e estruturas para criar uma única experiência integrada de programação. Você pode usar a versão Beta do WebMatrix para simplificar a maneira de código, testar e publicar o seu próprio site ASP.NET ou PHP, ou você pode usar a versão Beta do WebMatrix para iniciar um novo site usando aplicativos de código aberto populares como DotNetNuke, Umbraco, WordPress ou Joomla. O WebMatrix Beta usa o mesmo servidor de aplicativos web, o mecanismo de banco de dados e o ambiente de estruturas que executará o seu site na internet, o que faz a transição do desenvolvimento para produção simples e direta.
 
@@ -94,8 +94,8 @@ ms.lasthandoff: 11/10/2017
 
 > Os assemblies gerenciados para o SQL Server Compact 4.0 não são colocados no cache de assembly global (GAC) quando você instala o SQL Server Compact 4.0 em um computador de 64 bits e o computador tem apenas o .NET Framework 3.5 SP1 Client Profile instalado. Os módulos gerenciados que não estão instalados no GAC são:
 > 
-> - *SqlServerCe* (provedor ADO.NET)
-> - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework)
+> - *System.Data.SqlServerCe.dll* (ADO.NET provider)
+> - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework )
 > 
 > **Solução alternativa**  
 > Desinstalar o SQL Server Compact 4.0. Baixe e instale a versão completa do .NET Framework 3.5 SP1 no seguinte local:  
@@ -162,7 +162,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > Observe que o `@{ }` caracteres no código inicial no auxiliar de não é mais usado. Isso ocorre porque o conteúdo dos auxiliares é tratado como um bloco de código por padrão. O auxiliar renderiza marcações, que inicia com a abertura `<a>` marca. Se o auxiliar deve renderizar texto sem formatação ou marcas que não incluem uma marca de fechamento (por exemplo, `<meta>` marcas), o conteúdo a ser renderizado deve estar no `<text></text>` marcas.
 
 
-#### <a name="change-webpagecontexthttpcontext-removed"></a>Alteração: Removido de "WebPageContext.HttpContext"
+#### <a name="change-webpagecontexthttpcontext-removed"></a>Change: "WebPageContext.HttpContext" removed
 
 > O `WebPageContext.HttpContext` propriedade foi removida. Use `HttpContext.Current` em seu lugar. (O `WebPageContext.HttpContext` propriedade simplesmente encapsulado isso.)
 
@@ -265,7 +265,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > 
 > [!code-xml[Main](beta3/samples/sample5.xml)]
 > 
-> Para obter mais informações sobre como configurar um servidor proxy, consulte [ &lt;proxy&gt; (configurações de rede) do elemento](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) no site do MSDN.
+> Para obter mais informações sobre como configurar um servidor proxy, consulte [ &lt;proxy&gt; (configurações de rede) do elemento](https://msdn.microsoft.com/library/sa91de1e.aspx) no site do MSDN.
 
 
 #### <a name="issue-microsoftwebinfrastructuredll-cannot-be-loaded-error"></a>Problema: Erro "Não é possível carregar Microsoft.Web.Infrastructure.dll"
@@ -340,9 +340,9 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > 
 > 1. Copie os assemblies do mecanismo de banco de dados para o *Bin* pasta (e subpastas) do aplicativo no computador de destino: 
 > 
->     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **para** *\Bin.*
->     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **para** *\Bin\x86*
->     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **para** *\Bin\amd64*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **to** *\Bin*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **to** *\Bin\x86*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to** *\Bin\amd64*
 > 2. Na pasta raiz do site, crie ou abra um *Web. config* arquivo. (Na versão Beta 3 do WebMatrix, esse tipo de arquivo está disponível se você clicar em **todos os** no **escolher um tipo de arquivo** caixa de diálogo.)
 > 3. Adicione o seguinte elemento como um filho do  **&lt;configuração&gt;**  elemento (não dentro de  **&lt;System. Web&gt;**  elemento):
 > 
@@ -549,8 +549,8 @@ Para obter mais informações sobre o WebMatrix Beta 3, consulte os seguintes si
 
 - [IIS.net](http://iis.net/)
 - [ASP.NET](https://asp.net/webmatrix)
-- [Microsoft.com/Web](https://www.microsoft.com/web)
+- [Microsoft.com/web](https://www.microsoft.com/web)
 
 * * *
 
-© 2010 Microsoft Corporation. Todos os direitos reservados. [Termos de uso](https://msdn.microsoft.com/en-us/cc300389.aspx).
+© 2010 Microsoft Corporation. Todos os direitos reservados. [Termos de uso](https://msdn.microsoft.cos/cc300389.aspx).

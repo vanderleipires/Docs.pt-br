@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 030b0bb218ca05ec270b8fb0a9321e31d9ab5180
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f2b8e395505c1d13b914399b8de2196f0ba230a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a>Configurando um site que usa serviços de aplicativos (c#)
 ====================
@@ -35,7 +35,7 @@ O ASP.NET versão 2.0 introduziu uma série de *serviços de aplicativo*, que fa
 - **Funções** - uma API para categorizar os usuários em grupos.
 - **Perfil** - uma API para armazenar o conteúdo personalizado, especificada pelo usuário.
 - **Mapa de site** - uma API para definir uma estrutura lógica do site s na forma de uma hierarquia, que pode ser exibida por meio de controles de navegação, como menus e trilhas.
-- **Personalização** - uma API para manter as preferências de personalização, usadas com mais frequência [ *WebParts*](https://msdn.microsoft.com/en-us/library/e0s9t4ck.aspx).
+- **Personalização** - uma API para manter as preferências de personalização, usadas com mais frequência [ *WebParts*](https://msdn.microsoft.com/library/e0s9t4ck.aspx).
 - **Monitoramento de integridade** - uma API para o monitoramento de desempenho, segurança, erros e outras métricas de integridade do sistema para um aplicativo web em execução.
   
 
@@ -71,7 +71,7 @@ Para usar os serviços de aplicativo com um banco de dados do SQL Server, você 
 
 É possível, e serviços do aplicativo geralmente ideal para criar objetos de banco de dados no mesmo banco de dados onde os dados do site s específica do aplicativo são armazenados. O .NET Framework vem com uma ferramenta chamada `aspnet_regsql.exe` que instala os objetos de banco de dados em um banco de dados especificado. Posso ter passado em frente e usada essa ferramenta para adicionar esses objetos para o `Reviews.mdf` banco de dados a `App_Data` pasta (o banco de dados de desenvolvimento). Veremos como usar essa ferramenta neste breve tutorial quando podemos adicionar esses objetos no banco de dados de produção.
 
-Se você adicionar o aplicativo de serviços de objetos de banco de dados para um banco de dados diferente de `ASPNETDB` você precisará personalizar o `SqlMembershipProvider` e `SqlRoleProvider` classes de provedor de configurações para que eles usam o banco de dados apropriado. Para personalizar o provedor de associação, adicione um [  *&lt;associação&gt; elemento* ](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx) dentro de `<system.web>` seção `Web.config`; use o [  *&lt;roleManager&gt; elemento* ](https://msdn.microsoft.com/en-us/library/ms164660.aspx) para configurar o provedor de funções. O trecho a seguir é obtido de revisões de livros aplicativo s `Web.config` e mostra as configurações de configurar para as APIs de funções e associação. Observe que ambos registrar um novo provedor - `ReviewMembership` e `ReviewRole` -que usam o `SqlMembershipProvider` e `SqlRoleProvider` provedores, respectivamente.
+Se você adicionar o aplicativo de serviços de objetos de banco de dados para um banco de dados diferente de `ASPNETDB` você precisará personalizar o `SqlMembershipProvider` e `SqlRoleProvider` classes de provedor de configurações para que eles usam o banco de dados apropriado. Para personalizar o provedor de associação, adicione um [  *&lt;associação&gt; elemento* ](https://msdn.microsoft.com/library/1b9hw62f.aspx) dentro de `<system.web>` seção `Web.config`; use o [  *&lt;roleManager&gt; elemento* ](https://msdn.microsoft.com/library/ms164660.aspx) para configurar o provedor de funções. O trecho a seguir é obtido de revisões de livros aplicativo s `Web.config` e mostra as configurações de configurar para as APIs de funções e associação. Observe que ambos registrar um novo provedor - `ReviewMembership` e `ReviewRole` -que usam o `SqlMembershipProvider` e `SqlRoleProvider` provedores, respectivamente.
 
 [!code-xml[Main](configuring-a-website-that-uses-application-services-cs/samples/sample1.xml)]
 
@@ -94,7 +94,7 @@ Ao implantar um site que usa serviços de aplicativo e um provedor que armazena 
 
 Outro desafio pode surgir durante a implantação de um site que usa serviços de aplicativo, se você pretende replicar as contas de usuário criadas no ambiente de desenvolvimento para o ambiente de produção. Dependendo da configuração de associação e funções, é possível que, mesmo se você copiar com êxito as contas de usuário que foram criadas no ambiente de desenvolvimento para o banco de dados de produção, esses usuários não podem entrar no aplicativo web em produção. Vamos examinar a causa desse problema e discutir como impedir que isso aconteça.
 
-O ASP.NET é fornecido com um bom [ *ferramenta de administração de Site da Web (WSAT)* ](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx) que pode ser iniciado no Visual Studio e permite que o usuário conta, funções e regras de autorização a ser gerenciado por meio de um baseado na web interface. Infelizmente, o WSAT funciona somente para sites locais, que significa que ele não pode ser usado para gerenciar remotamente as contas de usuário, funções e regras de autorização para o aplicativo web no ambiente de produção. Vamos examinar diferentes maneiras de implementar o comportamento semelhante WSAT do seu site de produção.
+O ASP.NET é fornecido com um bom [ *ferramenta de administração de Site da Web (WSAT)* ](https://msdn.microsoft.com/library/yy40ytx0.aspx) que pode ser iniciado no Visual Studio e permite que o usuário conta, funções e regras de autorização a ser gerenciado por meio de um baseado na web interface. Infelizmente, o WSAT funciona somente para sites locais, que significa que ele não pode ser usado para gerenciar remotamente as contas de usuário, funções e regras de autorização para o aplicativo web no ambiente de produção. Vamos examinar diferentes maneiras de implementar o comportamento semelhante WSAT do seu site de produção.
 
 ### <a name="adding-the-database-objects-using-aspnetregsqlexe"></a>Adicionando a objetos de banco de dados usando aspnet\_regsql.exe
 
@@ -192,13 +192,13 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [*Ferramenta de registro do servidor SQL do ASP.NET (aspnet_regsql.exe)*](https://msdn.microsoft.com/en-us/library/ms229862.aspx)
-- [*Criando o banco de dados de serviços de aplicativo para o SQL Server*](https://msdn.microsoft.com/en-us/library/x28wfk74.aspx)
+- [*ASP.NET SQL Server Registration Tool (aspnet_regsql.exe)*](https://msdn.microsoft.com/library/ms229862.aspx)
+- [*Criando o banco de dados de serviços de aplicativo para o SQL Server*](https://msdn.microsoft.com/library/x28wfk74.aspx)
 - [*Criando o esquema de associação no SQL Server*](../../older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs.md)
 - [*Examinando a associação do ASP.NET s, funções e perfil*](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [*Implantar sua própria ferramenta de administração de Site da Web*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 - [*Tutoriais de segurança de site*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
-- [*Visão geral de ferramenta de administração de Site da Web*](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [*Visão geral de ferramenta de administração de Site da Web*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
 >[!div class="step-by-step"]
 [Anterior](configuring-the-production-web-application-to-use-the-production-database-cs.md)

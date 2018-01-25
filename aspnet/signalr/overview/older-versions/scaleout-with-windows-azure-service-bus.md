@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: 0dd245b597ebd4b58b60a53276d7808b6e2377e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b48a7b04701b69f68a492c0f7e08da4a37a92a48
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-azure-service-bus-signalr-1x"></a>Expansão do SignalR com o barramento de serviço do Azure (SignalR 1. x)
 ====================
@@ -30,22 +30,22 @@ Pré-requisitos:
 
 - Uma conta do Windows Azure.
 - O [Windows Azure SDK](https://go.microsoft.com/fwlink/?linkid=254364&amp;clcid=0x409).
-- O Visual Studio 2012.
+- Visual Studio 2012.
 
-O backplane de barramento de serviço também é compatível com [Service Bus for Windows Server](https://msdn.microsoft.com/en-us/library/windowsazure/dn282144.aspx), versão 1.1. No entanto, não é compatível com a versão 1.0 do Service Bus for Windows Server.
+O backplane de barramento de serviço também é compatível com [Service Bus for Windows Server](https://msdn.microsoft.com/library/windowsazure/dn282144.aspx), versão 1.1. No entanto, não é compatível com a versão 1.0 do Service Bus for Windows Server.
 
 ## <a name="pricing"></a>Preços
 
 O backplane de barramento de serviço usa tópicos para enviar mensagens. Para obter as informações mais recentes sobre preços, consulte [barramento de serviço](https://azure.microsoft.com/pricing/details/service-bus/). No momento da redação deste artigo, você pode enviar 1.000.000 mensagens por mês para menor que US $1. O backplane envia uma mensagem de barramento de serviço para cada invocação de um método de hub SignalR. Também há algumas mensagens de controle para conexões, desconexões, unindo ou deixar grupos e assim por diante. Na maioria dos aplicativos, a maioria do tráfego de mensagem será invocações de método do hub.
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Antes de entrar para o tutorial detalhado, aqui está uma visão geral das tarefas que você executará.
 
 1. Use o portal do Windows Azure para criar um novo namespace de barramento de serviço.
 2. Adicione esses pacotes do NuGet ao seu aplicativo: 
 
-    - [SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
+    - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
     - [Microsoft.AspNet.SignalR.ServiceBus](http://www.nuget.org/packages/SignalR.WindowsAzureServiceBus)
 3. Crie um aplicativo do SignalR.
 4. Adicione o seguinte código para global. asax para configurar o backplane: 

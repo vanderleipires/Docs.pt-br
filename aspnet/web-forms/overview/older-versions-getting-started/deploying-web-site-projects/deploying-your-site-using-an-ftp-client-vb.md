@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 56b73820f8b770a5332cb39029ae25df4d5753dc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 862f07defafb2d2613fef9f76f13aab0b11c5440
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-vb"></a>Implantar o Site usando um cliente de FTP (VB)
 ====================
@@ -144,7 +144,7 @@ Como esperado, ao reimplantar em um aplicativo web que você só precisará copi
 > Uma coisa para ter em mente ao usar a compilação explícita é a que sempre que você adicionar uma nova página ASP.NET para o projeto ou fazer alterações relacionadas ao código, você precisa recriar seu projeto, o que atualiza o assembly no `Bin` pasta. Consequentemente, você precisará copiar esse assembly atualizado para a produção, ao atualizar um aplicativo web em produção (juntamente com o outros novo e atualizado conteúdo).
 
 
-Também entender que todas as alterações para o `Web.config` ou os arquivos a `Bin` directory para e reinicia o Pool de aplicativos do site. Se o estado da sessão é armazenado usando o `InProc` modo (o padrão), em seguida, visitantes do site perderá seu estado de sessão sempre que esses arquivos de chave são modificados. Para evitar esse problema, considere o armazenamento de sessão usando o `StateServer` ou `SQLServer` modos. Para obter mais informações sobre este tópico [modos de estado de sessão](https://msdn.microsoft.com/en-us/library/ms178586.aspx).
+Também entender que todas as alterações para o `Web.config` ou os arquivos a `Bin` directory para e reinicia o Pool de aplicativos do site. Se o estado da sessão é armazenado usando o `InProc` modo (o padrão), em seguida, visitantes do site perderá seu estado de sessão sempre que esses arquivos de chave são modificados. Para evitar esse problema, considere o armazenamento de sessão usando o `StateServer` ou `SQLServer` modos. Para obter mais informações sobre este tópico [modos de estado de sessão](https://msdn.microsoft.com/library/ms178586.aspx).
 
 Finalmente, tenha em mente que reimplantar um aplicativo pode levar de alguns segundos-vários minutos, dependendo do número e tamanho dos arquivos que precisam ser copiados para o ambiente de produção. Durante esse tempo, os usuários que visitam seu site podem enfrentar erros ou comportamento estranho. Você pode "desligar" todo o seu aplicativo com a adição de uma página chamada `App_Offline.htm` para o diretório raiz do aplicativo que explica aos usuários que o site está desativado para manutenção (ou qualquer outro) e será ser fazer backup em breve. Quando o `App_Offline.htm` arquivo estiver presente, o tempo de execução do ASP.NET redireciona todas as solicitações de entrada para a página.
 
@@ -159,7 +159,7 @@ Boa programação!
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
 - [Aplicativo\_Offline.htm e resolver o recurso de "Erros amigável do IE"](https://weblogs.asp.net/scottgu/App_5F00_Offline.htm-and-working-around-the-_2200_IE-Friendly-Errors_2200_-feature)
-- [Modos de estado de sessão](https://msdn.microsoft.com/en-us/library/ms178586.aspx)
+- [Modos de estado de sessão](https://msdn.microsoft.com/library/ms178586.aspx)
 
 >[!div class="step-by-step"]
 [Anterior](determining-what-files-need-to-be-deployed-vb.md)

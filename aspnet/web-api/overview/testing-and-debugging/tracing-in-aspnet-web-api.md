@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f35c8a10018ce796e2d905d6ee839ff09bb380a1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7392ae5d9bc4c3aab45a9373099a0ee18e873a4f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>Rastreamento no ASP.NET Web API 2
 ====================
@@ -58,7 +58,7 @@ Abra o arquivo WebApiConfig.cs no aplicativo\_pasta inicial. Adicione o seguinte
 
 [!code-csharp[Main](tracing-in-aspnet-web-api/samples/sample2.cs?highlight=6)]
 
-Esse código adiciona a [SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx) classe para o pipeline de API da Web. O **SystemDiagnosticsTraceWriter** classe grava rastreamentos para [Trace](https://msdn.microsoft.com/en-us/library/system.diagnostics.trace).
+Esse código adiciona a [SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx) classe para o pipeline de API da Web. O **SystemDiagnosticsTraceWriter** classe grava rastreamentos para [Trace](https://msdn.microsoft.com/library/system.diagnostics.trace).
 
 Para ver os rastreamentos, execute o aplicativo no depurador. No navegador, navegue até `/api/values`.
 
@@ -68,7 +68,7 @@ As instruções de rastreamento são gravadas na janela de saída no Visual Stud
 
 [![](tracing-in-aspnet-web-api/_static/image7.png)](tracing-in-aspnet-web-api/_static/image6.png)
 
-Porque **SystemDiagnosticsTraceWriter** grava rastreamentos para **Trace**, você pode registrar os ouvintes de rastreamento adicionais; por exemplo gravar rastreamentos em um arquivo de log. Para obter mais informações sobre os gravadores de rastreamento, consulte o [ouvintes de rastreamento](https://msdn.microsoft.com/en-us/library/4y5y10s7.aspx) no MSDN.
+Porque **SystemDiagnosticsTraceWriter** grava rastreamentos para **Trace**, você pode registrar os ouvintes de rastreamento adicionais; por exemplo gravar rastreamentos em um arquivo de log. Para obter mais informações sobre os gravadores de rastreamento, consulte o [ouvintes de rastreamento](https://msdn.microsoft.com/library/4y5y10s7.aspx) no MSDN.
 
 ### <a name="configuring-systemdiagnosticstracewriter"></a>Configurando o SystemDiagnosticsTraceWriter
 
@@ -89,7 +89,7 @@ Adicionar um gravador de rastreamento oferece acesso imediato para rastreamentos
 
 Para obter o gravador de rastreamento, chame **HttpConfiguration.Services.GetTraceWriter**. De um controlador, esse método é acessível por meio de **ApiController.Configuration** propriedade.
 
-Para gravar um rastreamento, você pode chamar o **ITraceWriter.Trace** método diretamente, mas o [ITraceWriterExtensions](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.itracewriterextensions.aspx) classe define alguns métodos de extensão que são mais amigáveis. Por exemplo, o **informações** método mostrado acima cria um rastreamento com o nível de rastreamento **informações**.
+Para gravar um rastreamento, você pode chamar o **ITraceWriter.Trace** método diretamente, mas o [ITraceWriterExtensions](https://msdn.microsoft.com/library/system.web.http.tracing.itracewriterextensions.aspx) classe define alguns métodos de extensão que são mais amigáveis. Por exemplo, o **informações** método mostrado acima cria um rastreamento com o nível de rastreamento **informações**.
 
 ## <a name="web-api-tracing-infrastructure"></a>Infraestrutura de rastreamento de API da Web
 

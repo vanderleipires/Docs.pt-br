@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a5855d5624360e955d5bcbcdd44e745fa54f8bd8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8b05705629b5e8a9acfc5d23517ef1b3cfa7cd6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-c"></a>Adicionando controles de validação para a edição e a inserção de Interfaces (c#)
 ====================
@@ -103,11 +103,11 @@ Clicando em "Converter este campo em um TemplateField", o Visual Studio criou um
 
 Quando estiver criando formulários de entrada de dados, é importante que os usuários insiram os campos necessários e todas as entradas fornecidas são valores válidos, formatado corretamente. Para ajudar a garantir que as entradas do usuário são válidas, o ASP.NET fornece cinco controles de validação interna que são projetados para ser usado para validar o valor de um controle de entrada único:
 
-- [RequiredFieldValidator](https://msdn.microsoft.com/en-us/library/5hbw267h(VS.80).aspx) garante que um valor foi fornecido
-- [CompareValidator](https://msdn.microsoft.com/en-us/library/db330ayw(VS.80).aspx) valida um valor contra outro valor de controle de Web ou um valor constante ou garante que o formato do valor é válido para um tipo de dados especificado
-- [RangeValidator](https://msdn.microsoft.com/en-us/library/f70d09xt.aspx) garante que um valor está dentro do intervalo de valores
-- [RegularExpressionValidator](https://msdn.microsoft.com/en-US/library/eahwtc9e.aspx) valida um valor em relação a um [expressão regular](http://en.wikipedia.org/wiki/Regular_expression)
-- [CustomValidator](https://msdn.microsoft.com/en-us/library/9eee01cx(VS.80).aspx) valida um valor em relação a um método personalizado definido pelo usuário
+- [RequiredFieldValidator](https://msdn.microsoft.com/library/5hbw267h(VS.80).aspx) garante que um valor foi fornecido
+- [CompareValidator](https://msdn.microsoft.com/library/db330ayw(VS.80).aspx) valida um valor contra outro valor de controle de Web ou um valor constante ou garante que o formato do valor é válido para um tipo de dados especificado
+- [RangeValidator](https://msdn.microsoft.com/library/f70d09xt.aspx) garante que um valor está dentro do intervalo de valores
+- [RegularExpressionValidator](https://msdn.microsoft.com/library/eahwtc9e.aspx) valida um valor em relação a um [expressão regular](http://en.wikipedia.org/wiki/Regular_expression)
+- [CustomValidator](https://msdn.microsoft.com/library/9eee01cx(VS.80).aspx) valida um valor em relação a um método personalizado definido pelo usuário
 
 Para obter mais informações sobre esses controles de cinco, confira o [seção controles de validação](https://quickstarts.asp.net/quickstartv20/aspnet/doc/ctrlref/validation/default.aspx) do [ASP.NET tutoriais](https://asp.net/QuickStart/aspnet/).
 
@@ -133,7 +133,7 @@ No `ProductName` `EditItemTemplate`, adicionar um RequiredFieldValidator arrasta
 **Figura 5**: adicionar um RequiredFieldValidator para o `ProductName` `EditItemTemplate` ([clique para exibir a imagem em tamanho normal](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image15.png))
 
 
-Todos os controles de validação funcionam, validando a entrada de um único controle da Web do ASP.NET. Portanto, é necessário indicar que o RequiredFieldValidator que acabamos de adicionar deve validar em relação a caixa de texto no `EditItemTemplate`; isso é feito definindo o controle de validação [propriedade ControlToValidate](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) para o `ID` do controle da Web apropriado. A caixa de texto tem atualmente em vez disso, nondescript `ID` de `TextBox1`, mas vamos alterá-lo para algo mais apropriado. Clique na caixa de texto no modelo e, em seguida, na janela Propriedades, altere o `ID` de `TextBox1` para `EditProductName`.
+Todos os controles de validação funcionam, validando a entrada de um único controle da Web do ASP.NET. Portanto, é necessário indicar que o RequiredFieldValidator que acabamos de adicionar deve validar em relação a caixa de texto no `EditItemTemplate`; isso é feito definindo o controle de validação [propriedade ControlToValidate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) para o `ID` do controle da Web apropriado. A caixa de texto tem atualmente em vez disso, nondescript `ID` de `TextBox1`, mas vamos alterá-lo para algo mais apropriado. Clique na caixa de texto no modelo e, em seguida, na janela Propriedades, altere o `ID` de `TextBox1` para `EditProductName`.
 
 
 [![Alterar a ID da caixa de texto para EditProductName](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image16.png)
@@ -141,7 +141,7 @@ Todos os controles de validação funcionam, validando a entrada de um único co
 **Figura 6**: alterar a caixa de texto `ID` para `EditProductName` ([clique para exibir a imagem em tamanho normal](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image18.png))
 
 
-Em seguida, defina o RequiredFieldValidator `ControlToValidate` propriedade `EditProductName`. Finalmente, defina o [propriedade ErrorMessage](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) "Você deve fornecer o nome do produto" e o [propriedade Text](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) para "\*". O `Text` valor da propriedade, se fornecido, será o texto que é exibido pelo controle de validação se a validação falhar. O `ErrorMessage` valor da propriedade, que é necessário, é usado pelo controle ValidationSummary; se o `Text` o valor da propriedade for omitido, o `ErrorMessage` o valor da propriedade também é o texto exibido pelo controle de validação em uma entrada inválida.
+Em seguida, defina o RequiredFieldValidator `ControlToValidate` propriedade `EditProductName`. Finalmente, defina o [propriedade ErrorMessage](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) "Você deve fornecer o nome do produto" e o [propriedade Text](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) para "\*". O `Text` valor da propriedade, se fornecido, será o texto que é exibido pelo controle de validação se a validação falhar. O `ErrorMessage` valor da propriedade, que é necessário, é usado pelo controle ValidationSummary; se o `Text` o valor da propriedade for omitido, o `ErrorMessage` o valor da propriedade também é o texto exibido pelo controle de validação em uma entrada inválida.
 
 Depois de definir essas três propriedades o RequiredFieldValidator, sua tela deve ser semelhante a Figura 7.
 
@@ -155,7 +155,7 @@ Com o RequiredFieldValidator adicionado para o `ProductName` `EditItemTemplate`,
 
 Antes de adicionar o CompareValidator para o `UnitPrice` `EditItemTemplate`, vamos primeiro alterar a ID do controle TextBox Web de `TextBox2` para `EditUnitPrice`. Depois de fazer essa alteração, adicionar CompareValidator, definindo seu `ControlToValidate` propriedade `EditUnitPrice`, sua `ErrorMessage` propriedade como "o preço deve ser maior que ou igual a zero e não pode incluir o símbolo de moeda" e sua `Text` propriedade "\*".
 
-Para indicar que o `UnitPrice` valor deve ser maior que ou igual a 0, defina o CompareValidator [propriedade Operator](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) para `GreaterThanEqual`, sua [ValueToCompare propriedade](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) "0" e seu [ A propriedade Type](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) para `Currency`. A seguir mostra a sintaxe declarativa de `UnitPrice` do TemplateField `EditItemTemplate` depois que essas alterações foram feitas:
+Para indicar que o `UnitPrice` valor deve ser maior que ou igual a 0, defina o CompareValidator [propriedade Operator](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) para `GreaterThanEqual`, sua [ValueToCompare propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) "0" e seu [ A propriedade Type](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) para `Currency`. A seguir mostra a sintaxe declarativa de `UnitPrice` do TemplateField `EditItemTemplate` depois que essas alterações foram feitas:
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/samples/sample3.aspx)]
 
@@ -197,9 +197,9 @@ Com essa alteração, o preço formatado na interface de edição inclui vírgul
 
 ## <a name="step-4-summarizing-data-entry-problems"></a>Etapa 4: Resumo de problemas de entrada de dados
 
-Além dos controles de validação de cinco, ASP.NET inclui o [controle ValidationSummary](https://msdn.microsoft.com/en-US/library/f9h59855(VS.80).aspx), que exibe o `ErrorMessage` s desses controles de validação que detectou dados inválidos. Estes resumos dados podem ser exibidos como texto na página da web ou por meio de uma caixa de mensagem modal, no lado do cliente. Vamos melhorar este tutorial para incluir uma messagebox cliente resumindo os problemas de validação.
+Além dos controles de validação de cinco, ASP.NET inclui o [controle ValidationSummary](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx), que exibe o `ErrorMessage` s desses controles de validação que detectou dados inválidos. Estes resumos dados podem ser exibidos como texto na página da web ou por meio de uma caixa de mensagem modal, no lado do cliente. Vamos melhorar este tutorial para incluir uma messagebox cliente resumindo os problemas de validação.
 
-Para fazer isso, arraste um controle ValidationSummary da caixa de ferramentas para o Designer. O local do controle de validação não importa, desde que vamos configurá-lo para exibir somente o resumo de como uma caixa de mensagem. Depois de adicionar o controle, defina seu [propriedade ShowSummary](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) para `false` e sua [propriedade ShowMessageBox](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) para `true`. Com essa adição, erros de validação são resumidos em uma caixa de mensagem do lado do cliente.
+Para fazer isso, arraste um controle ValidationSummary da caixa de ferramentas para o Designer. O local do controle de validação não importa, desde que vamos configurá-lo para exibir somente o resumo de como uma caixa de mensagem. Depois de adicionar o controle, defina seu [propriedade ShowSummary](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) para `false` e sua [propriedade ShowMessageBox](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) para `true`. Com essa adição, erros de validação são resumidos em uma caixa de mensagem do lado do cliente.
 
 
 [![Os erros de validação são resumidos em uma caixa de mensagem do lado do cliente](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image31.png)

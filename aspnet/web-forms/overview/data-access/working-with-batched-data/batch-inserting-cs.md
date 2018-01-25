@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9eb65b99a955770c72b28713d8daa66bcd1d5344
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9dc18e259da24d71464a156a70a85cfc9a1745ce
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-inserting-c"></a>Lote de inserção (c#)
 ====================
@@ -96,7 +96,7 @@ Comece a arrastar um painel da caixa de ferramentas para o Designer, colocando-o
 Em seguida, é preciso criar a interface de inserção que foi exibida novamente na Figura 1. Essa interface pode ser criada por meio de uma variedade de técnicas HTML, mas vamos usar um bastante simples: uma tabela de quatro colunas, linhas de sete.
 
 > [!NOTE]
-> Ao inserir a marcação HTML `<table>` elementos, prefiro usar a exibição da fonte. Enquanto o Visual Studio tem ferramentas para adicionar `<table>` elementos por meio do Designer, o Designer parece todos os demais disposto injetar não solicitado para `style` configurações na marcação. Depois de ter criado o `<table>` marcação, geralmente retornar para o Designer para adicionar os controles da Web e definir suas propriedades. Ao criar tabelas com linhas e colunas predeterminadas prefiro usando HTML estático em vez de [controle Table Web](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.table.aspx) porque os controles da Web colocados dentro de um controle de tabela da Web só podem ser acessados usando o `FindControl("controlID")` padrão. , No entanto, uso controles da Web de tabela para tamanho dinamicamente tabelas (aqueles cujo linhas ou colunas se baseiam em algum banco de dados ou os critérios especificados pelo usuário), desde a Web da tabela de controle pode ser construído por meio de programação.
+> Ao inserir a marcação HTML `<table>` elementos, prefiro usar a exibição da fonte. Enquanto o Visual Studio tem ferramentas para adicionar `<table>` elementos por meio do Designer, o Designer parece todos os demais disposto injetar não solicitado para `style` configurações na marcação. Depois de ter criado o `<table>` marcação, geralmente retornar para o Designer para adicionar os controles da Web e definir suas propriedades. Ao criar tabelas com linhas e colunas predeterminadas prefiro usando HTML estático em vez de [controle Table Web](https://msdn.microsoft.com/library/system.web.ui.webcontrols.table.aspx) porque os controles da Web colocados dentro de um controle de tabela da Web só podem ser acessados usando o `FindControl("controlID")` padrão. , No entanto, uso controles da Web de tabela para tamanho dinamicamente tabelas (aqueles cujo linhas ou colunas se baseiam em algum banco de dados ou os critérios especificados pelo usuário), desde a Web da tabela de controle pode ser construído por meio de programação.
 
 
 Insira a seguinte marcação dentro de `<asp:Panel>` marcas do `InsertingInterface` painel:

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: b80332487e52930f3a75973f714d2532068ed012
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d588ff6ed03178ac8dc6934162252c1749cc9124
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a>Examinando os métodos de edição e exibição de edição (c#)
 ====================
@@ -47,7 +47,7 @@ O **editar** link foi gerado pelo `Html.ActionLink` método o *Views\Movies\Inde
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample1.cshtml)]
 
-[![ActionLink](examining-the-edit-methods-and-edit-view/_static/image4.png)](examining-the-edit-methods-and-edit-view/_static/image3.png)
+[![Html.ActionLink](examining-the-edit-methods-and-edit-view/_static/image4.png)](examining-the-edit-methods-and-edit-view/_static/image3.png)
 
 O `Html` objeto é um auxiliar que é exposto usando uma propriedade no `WebViewPage` classe base. O `ActionLink` método do auxiliar facilita gerar dinamicamente os hiperlinks HTML com links para os métodos de ação em controladores. O primeiro argumento para o `ActionLink` método é o texto do link para renderizar (por exemplo, `<a>Edit Me</a>`). O segundo argumento é o nome do método de ação ser invocado. O argumento final é um [objeto anônimo](https://weblogs.asp.net/scottgu/archive/2007/05/15/new-orcas-language-feature-anonymous-types.aspx) que gera os dados de rota (nesse caso, a ID de 4).
 
@@ -69,7 +69,7 @@ O `HttpGet` `Edit` método usa o parâmetro de ID de filme, pesquise o filme usa
 
 Observe como o modelo de exibição tem um `@model MvcMovie.Models.Movie` instrução na parte superior do arquivo – Especifica que o modo de exibição espera que o modelo para o modelo de exibição ser do tipo `Movie`.
 
-O código de scaffolding usa várias *métodos auxiliares* para simplificar a marcação HTML. O [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx) auxiliar exibe o nome do campo ("Title", "ReleaseDate", "Gênero" ou "Price"). O [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) auxiliar exibe um HTML `<input>` elemento. O [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) auxiliar exibe quaisquer mensagens de validação associadas a essa propriedade.
+O código de scaffolding usa várias *métodos auxiliares* para simplificar a marcação HTML. O [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx) auxiliar exibe o nome do campo ("Title", "ReleaseDate", "Gênero" ou "Price"). O [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) auxiliar exibe um HTML `<input>` elemento. O [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) auxiliar exibe quaisquer mensagens de validação associadas a essa propriedade.
 
 Execute o aplicativo e navegue até o */Movies* URL. Clique em um link **Editar**. No navegador, exiba a origem da página. O HTML na página se parece com o exemplo a seguir. (A marcação de menu foi excluída para maior clareza).
 
@@ -89,7 +89,7 @@ Se os valores postados não são válidos, eles são reexibidos no formulário. 
 
 [![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image8.png)](examining-the-edit-methods-and-edit-view/_static/image7.png)
 
-> **Observação sobre localidades** se você normalmente trabalha com uma localidade diferente do inglês, consulte [suporte validação ASP.NET MVC 3 com Non-English localidades.](https://msdn.microsoft.com/en-us/library/gg674880(VS.98).aspx)
+> **Observação sobre localidades** se você normalmente trabalha com uma localidade diferente do inglês, consulte [suporte validação ASP.NET MVC 3 com Non-English localidades.](https://msdn.microsoft.com/library/gg674880(VS.98).aspx)
 
 
 ## <a name="making-the-edit-method-more-robust"></a>Tornando o método de edição mais robusta
@@ -116,7 +116,7 @@ Comece adicionando um `SearchIndex` método de ação existente `MoviesControlle
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample7.cs)]
 
-A primeira linha do `SearchIndex` método cria a seguinte [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) consulta para selecionar os filmes:
+A primeira linha do `SearchIndex` método cria a seguinte [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) consulta para selecionar os filmes:
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample8.cs)]
 
@@ -126,7 +126,7 @@ Se o `searchString` parâmetro contém uma cadeia de caracteres, a consulta de f
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample9.cs)]
 
-Consultas LINQ não são executadas quando elas são definidas ou quando eles são modificados chamando um método como `Where` ou `OrderBy`. Em vez disso, a execução da consulta é adiada, o que significa que a avaliação de uma expressão é atrasada até que seu valor realizada na verdade é iterada ou [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) método é chamado. No `SearchIndex` exemplo, a consulta é executada no modo de exibição SearchIndex. Para obter mais informações sobre a execução de consulta adiada, consulte [Execução da consulta](https://msdn.microsoft.com/en-us/library/bb738633.aspx).
+Consultas LINQ não são executadas quando elas são definidas ou quando eles são modificados chamando um método como `Where` ou `OrderBy`. Em vez disso, a execução da consulta é adiada, o que significa que a avaliação de uma expressão é atrasada até que seu valor realizada na verdade é iterada ou [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) método é chamado. No `SearchIndex` exemplo, a consulta é executada no modo de exibição SearchIndex. Para obter mais informações sobre a execução de consulta adiada, consulte [Execução da consulta](https://msdn.microsoft.com/library/bb738633.aspx).
 
 Agora você pode implementar o `SearchIndex` modo de exibição que exibirá o formulário para o usuário. Clique dentro do `SearchIndex` método e depois clique em **adicionar exibição**. No **adicionar exibição** caixa de diálogo, especifique que você pretende passar um `Movie` objeto para o modelo de exibição como sua classe de modelo. No **modelo Scaffold** , escolha **lista**, em seguida, clique em **adicionar**.
 

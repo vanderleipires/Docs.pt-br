@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: 10da2b5013ae1348b69ea4f456d81bb4c4b73df6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f6861c702c1ccb19e5a4eee484a622079e205f86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>Implantação de Web do ASP.NET usando o Visual Studio: Implantando uma atualização de código
 ====================
@@ -27,7 +27,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Após a implantação inicial, o trabalho de manutenção e desenvolvimento de seu site continua e pouco tempo você deseja implantar uma atualização. Este tutorial leva você através do processo de implantação de uma atualização para o código do aplicativo. A atualização que você implementa e implantar este tutorial não envolve uma alteração de banco de dados; Você verá qual é a diferença sobre a implantação de uma alteração de banco de dados do tutorial Avançar.
 
@@ -79,7 +79,7 @@ A implantação no ambiente de teste é agora uma simples questão de executar u
 
 Normalmente também fazer o teste de regressão (ou seja, teste o restante do site para certificar-se de que a nova alteração não violam nenhuma funcionalidade existente). Mas, para este tutorial você vai ignorar essa etapa e vá para implantar a atualização em preparação e produção.
 
-Quando você reimplanta, Web Deploy determina automaticamente quais arquivos foram alterados e somente cópias de arquivos alterados para o servidor. Por padrão, implantação da Web usa datas alterada por último em arquivos para determinar quais foram alterados. Alguns sistemas de controle de origem alterar arquivo datas mesmo quando você não alterar o conteúdo do arquivo. Nesse caso, você poderá configurar a implantação da Web para usar as somas de verificação para determinar quais arquivos foram alterados. Para obter mais informações, consulte [por que todos os meus arquivos obter reimplantados embora eu não alterá-los?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#use_checksum) nas perguntas Frequentes de implantação de ASP.NET.
+Quando você reimplanta, Web Deploy determina automaticamente quais arquivos foram alterados e somente cópias de arquivos alterados para o servidor. Por padrão, implantação da Web usa datas alterada por último em arquivos para determinar quais foram alterados. Alguns sistemas de controle de origem alterar arquivo datas mesmo quando você não alterar o conteúdo do arquivo. Nesse caso, você poderá configurar a implantação da Web para usar as somas de verificação para determinar quais arquivos foram alterados. Para obter mais informações, consulte [por que todos os meus arquivos obter reimplantados embora eu não alterá-los?](https://msdn.microsoft.com/library/ee942158.aspx#use_checksum) nas perguntas Frequentes de implantação de ASP.NET.
 
 ## <a name="take-the-application-offline-during-deployment"></a>Colocar o aplicativo offline durante a implantação
 

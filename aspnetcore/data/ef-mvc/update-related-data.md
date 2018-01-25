@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3cdd36ae03824645e09f97cae85cc55956679390
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Atualizando dados relacionados - Core de EF com o tutorial do MVC do ASP.NET Core (7 de 10)
 
@@ -49,7 +49,7 @@ Após o `Edit` método HttpPost, criar um novo método que carrega informações
 
 O `PopulateDepartmentsDropDownList` método obtém uma lista de todos os departamentos classificados por nome, cria um `SelectList` coleção para uma lista suspensa e passa a coleção para o modo de exibição `ViewBag`. O método aceita opcional `selectedDepartment` parâmetro que permite que o código de chamada especificar o item que será selecionado quando a lista suspensa é renderizada. O modo de exibição passará o nome "DepartmentID" para o `<select>` auxiliar de marca e o auxiliar sabe para examinar o `ViewBag` de objeto para um `SelectList` denominado "DepartmentID".
 
-O HttpGet `Create` chamadas de método de `PopulateDepartmentsDropDownList` método sem definir o item selecionado, como para um novo curso o departamento não for estabelecido ainda:
+O HttpGet `Create` chamadas de método de `PopulateDepartmentsDropDownList` método sem definir o item selecionado, porque um novo curso o departamento não está estabelecido ainda:
 
 [!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
 
@@ -129,7 +129,7 @@ O código faz o seguinte:
 
 -  Atualiza a entidade recuperada do instrutor com valores de associador de modelo. O `TryUpdateModel` sobrecarga permite que você adicionar à lista branca as propriedades que você deseja incluir. Isso impede o excesso de lançamento, conforme explicado no [segundo tutorial](crud.md).
 
-    <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
+    <!-- Snippets don't play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
     ```csharp
     if (await TryUpdateModelAsync<Instructor>(
@@ -140,7 +140,7 @@ O código faz o seguinte:
     
 -   Se o local do escritório estiver em branco, define a propriedade de Instructor.OfficeAssignment como nulo para que a linha na tabela OfficeAssignment será excluída.
 
-    <!-- Snippets do not play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
+    <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
     ```csharp
     if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment?.Location))
@@ -221,7 +221,7 @@ Em *Views/Instructors/Edit.cshtml*, adicionar um **cursos** campo com uma matriz
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
-Esse código cria uma tabela HTML que tem três colunas. Em cada coluna é uma caixa de seleção, seguida de uma legenda que consiste em número e o título. Todas as caixas de seleção tem o mesmo nome ("selectedCourses"), que informa o associador de modelo devem ser tratados como um grupo. O atributo de valor de cada caixa de seleção é definido como o valor de `CourseID`. Quando a página é enviada, o associador de modelo passa uma matriz para o controlador que consiste o `CourseID` valores para apenas as caixas de seleção que estão selecionados.
+Esse código cria uma tabela HTML que tem três colunas. Em cada coluna é uma caixa de seleção, seguida de uma legenda que consiste em número e o título. As caixas de seleção que todos têm o mesmo nome ("selectedCourses"), que informa o associador de modelo que estão para ser tratado como um grupo. O atributo de valor de cada caixa de seleção é definido como o valor de `CourseID`. Quando a página é enviada, o associador de modelo passa uma matriz para o controlador que consiste o `CourseID` valores para apenas as caixas de seleção que estão selecionados.
 
 Quando as caixas de seleção são inicialmente renderizadas, aqueles que estão atribuídos ao instrutor de cursos verificou atributos, que seleciona-los (exibe-os check).
 

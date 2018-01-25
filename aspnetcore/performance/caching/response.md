@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.topic: article
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 104cfb2eab706a2ec6278b4d1c461f70b0af5df1
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>O cache de resposta no núcleo do ASP.NET
 
@@ -34,9 +34,9 @@ Comuns `Cache-Control` diretivas são mostradas na tabela a seguir.
 | --------------------------------------------------------------- | ------ |
 | [public](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | Um cache pode armazenar a resposta. |
 | [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | A resposta não deve ser armazenada por um cache compartilhado. Um cache privado pode armazenar e reutilizar a resposta. |
-| [idade máxima](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | O cliente não aceitará uma resposta cuja idade seja maior que o número especificado de segundos. Exemplos: `max-age=60` (60 segundos), `max-age=2592000` (mês) |
-| [sem cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **Em solicitações**: um cache não deve usar uma resposta armazenada para satisfazer a solicitação. Observação: O servidor de origem gera novamente a resposta para o cliente e o middleware atualiza a resposta armazenada em seu cache.<br><br>**As respostas**: A resposta não deve ser usada para uma solicitação subsequente sem validação no servidor de origem. |
-| [Nenhum repositório](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **Em solicitações**: um cache não deve armazenar a solicitação.<br><br>**As respostas**: um cache não deve armazenar qualquer parte da resposta. |
+| [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | O cliente não aceitará uma resposta cuja idade seja maior que o número especificado de segundos. Exemplos: `max-age=60` (60 segundos), `max-age=2592000` (mês) |
+| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **Em solicitações**: um cache não deve usar uma resposta armazenada para satisfazer a solicitação. Observação: O servidor de origem gera novamente a resposta para o cliente e o middleware atualiza a resposta armazenada em seu cache.<br><br>**As respostas**: A resposta não deve ser usada para uma solicitação subsequente sem validação no servidor de origem. |
+| [no-store](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **Em solicitações**: um cache não deve armazenar a solicitação.<br><br>**As respostas**: um cache não deve armazenar qualquer parte da resposta. |
 
 Outros cabeçalhos de cache que desempenham uma função no cache são mostrados na tabela a seguir.
 
@@ -65,7 +65,7 @@ Para obter mais informações, consulte [Introdução ao cache na memória no AS
 
 ### <a name="distributed-cache"></a>Cache distribuído
 
-Use um cache distribuído para armazenar dados na memória quando o aplicativo é hospedado em um farm de servidor ou de nuvem. O cache é compartilhado entre os servidores que processam solicitações. Um cliente pode enviar uma solicitação que é tratada por qualquer servidor no grupo e os dados armazenados em cache para o cliente estão disponíveis. ASP.NET Core oferece o SQL Server e os caches Redis distribuído.
+Use um cache distribuído para armazenar dados na memória quando o aplicativo é hospedado em um farm de servidor ou de nuvem. O cache é compartilhado entre os servidores que processam solicitações. Um cliente pode enviar uma solicitação que foi tratada por qualquer servidor no grupo e dados armazenados em cache para o cliente está disponível. ASP.NET Core oferece o SQL Server e os caches Redis distribuído.
 
 Para obter mais informações, consulte [trabalhando com um cache distribuído](xref:performance/caching/distributed).
 
@@ -176,10 +176,10 @@ Cache-Control: public,max-age=60
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Armazenamento em cache em HTTP da especificação](https://tools.ietf.org/html/rfc7234#section-3)
-* [Controle de cache](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [O armazenamento em cache na memória](xref:performance/caching/memory)
+* [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
+* [Cache in-memory](xref:performance/caching/memory)
 * [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
 * [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 * [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Auxiliar de marca de Cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

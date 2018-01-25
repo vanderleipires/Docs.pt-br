@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 5a852ec2301e63bde9a5ce99db80224dad7fb258
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ae2fddc81f6f4da866ec0719a0e74516bdd2a4d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 formulários da Web
 ====================
@@ -28,7 +28,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="database-first"></a>Primeiro banco de dados
 > 
-> Há três maneiras que você pode trabalhar com dados no Entity Framework: *Database First*, *Model First*, e *Code First*. Este tutorial destina-se primeiro banco de dados. Para obter informações sobre as diferenças entre esses fluxos de trabalho e orientação sobre como escolher a melhor para seu cenário, consulte [fluxos de trabalho de desenvolvimento do Entity Framework](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+> Há três maneiras que você pode trabalhar com dados no Entity Framework: *Database First*, *Model First*, e *Code First*. Este tutorial destina-se primeiro banco de dados. Para obter informações sobre as diferenças entre esses fluxos de trabalho e orientação sobre como escolher a melhor para seu cenário, consulte [fluxos de trabalho de desenvolvimento do Entity Framework](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 > 
 > ## <a name="web-forms"></a>Web Forms
 > 
@@ -45,10 +45,10 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="questions"></a>Perguntas
 > 
-> Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), o [do Entity Framework e LINQ to Fórum de entidades](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
+> Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), o [do Entity Framework e LINQ to Fórum de entidades](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O aplicativo que você criará nos tutoriais é um site de university simples.
 
@@ -68,7 +68,7 @@ Os usuários podem exibir e atualizar aluno, curso e informações do instrutor.
 
 Para iniciar o tutorial, abra o Visual Studio e, em seguida, crie um novo projeto de aplicativo Web ASP.NET usando o **aplicativo Web ASP.NET** modelo:
 
-[![Para Image01](the-entity-framework-and-aspnet-getting-started-part-1/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image11.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-1/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image11.png)
 
 Este modelo cria um projeto de aplicativo web que já inclui uma folha de estilos e páginas mestras:
 
@@ -96,7 +96,7 @@ Para esses tutoriais, você usará o designer de modelo de dados do Entity Frame
 
 Para o método primeiro banco de dados usado neste tutorial, a próxima etapa é adicionar um banco de dados para o site. A maneira mais fácil é fazer o download do projeto que acompanha este tutorial. Em seguida, clique o *aplicativo\_dados* pasta, selecione **Add Existing Item**e selecione o *School.mdf* arquivo de banco de dados do projeto baixado.
 
-Uma alternativa é siga as instruções em [criando o banco de dados de exemplo School](https://msdn.microsoft.com/en-us/library/bb399731.aspx). Se você baixar o banco de dados ou criá-la, copie o *School.mdf* arquivo da pasta a seguir para seu aplicativo *aplicativo\_dados* pasta:
+Uma alternativa é siga as instruções em [criando o banco de dados de exemplo School](https://msdn.microsoft.com/library/bb399731.aspx). Se você baixar o banco de dados ou criá-la, copie o *School.mdf* arquivo da pasta a seguir para seu aplicativo *aplicativo\_dados* pasta:
 
 `%PROGRAMFILES%\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA`
 

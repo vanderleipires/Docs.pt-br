@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: 85468949ee61504d6076a191b70a96e8018c67aa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8176b3b8622e21187a91647323322e55582373c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="setting-up-the-contact-manager-solution"></a>Configurar a solução de Gerenciador de contato
 ====================
@@ -36,7 +36,7 @@ Para executar a solução de Contact Manager localmente e executar outras tarefa
 - SQL Server Express 2008 R2
 - IIS Web ferramenta de implantação (implantação da Web) 2.1 ou posterior
 - ASP.NET 4.0
-- O ASP.NET MVC 3
+- ASP.NET MVC 3
 - .NET Framework 4
 - .NET Framework 3,5 SP1
 
@@ -71,7 +71,7 @@ O restante desta seção fornece mais orientações sobre como concluir cada uma
     ![](setting-up-the-contact-manager-solution/_static/image1.png)
 
 > [!NOTE]
-> Para obter mais informações sobre o aspnet\_regsql utilitário, consulte [ferramenta de registro de servidor de SQL do ASP.NET (Aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx).
+> Para obter mais informações sobre o aspnet\_regsql utilitário, consulte [ferramenta de registro de servidor de SQL do ASP.NET (Aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx).
 
 
 A próxima etapa é certificar-se de que as cadeias de caracteres de conexão na solução entre em contato com o Gerenciador de ponto para sua instância local do SQL Server Express.

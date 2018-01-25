@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: db29c3382895ef4d7efc3a686fa558189c8788de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4fe77769c27dd46967da2e1d68791d7142021d99
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>Compreensão e tratamento de eventos de tempo de vida de Conexão no SignalR 1. x
 ====================
@@ -31,7 +31,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gith
 > - [Como manipular eventos de tempo de vida de conexão de clientes .NET](index.md)
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este artigo contém as seguintes seções:
 
@@ -51,7 +51,7 @@ Este artigo contém as seguintes seções:
 - [Como reconectar continuamente](#continuousreconnect)
 - [Como desconectar um cliente no código do servidor](#disconnectclientfromserver)
 
-Links para tópicos de referência de API são para a versão do .NET 4.5 da API. Se você estiver usando o .NET 4, consulte [a versão do .NET 4 dos tópicos da API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Links para tópicos de referência de API são para a versão do .NET 4.5 da API. Se você estiver usando o .NET 4, consulte [a versão do .NET 4 dos tópicos da API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="terminology"></a>
 

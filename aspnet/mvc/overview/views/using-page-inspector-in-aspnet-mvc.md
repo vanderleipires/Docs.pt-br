@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 6aa9f16f166ecf5529ae33a17951eb5ea425e7af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b443963a089f96a9dab11b7db4a25451075d6be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>Usando o Inspetor de Página no ASP.NET MVC
 ====================
@@ -46,7 +46,7 @@ por Tim Ammann
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- [O Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us) ou [Visual Studio Express 2012 para Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web).
+- [O Visual Studio 2012](https://www.microsoft.com/visualstudio/11) ou [Visual Studio Express 2012 para Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
 
 > [!NOTE]
 > Para obter a versão mais recente do Page Inspector, use [Web Platform Installer](https://go.microsoft.com/fwlink/?LinkId=255386) para instalar o SDK do Windows Azure para .NET 2.0.
@@ -84,9 +84,9 @@ Em **Solution Explorer**, expanda o **exibições** pasta e, em seguida, o **in�
 
 ![Exibir cshtml no Inspetor de página](using-page-inspector-in-aspnet-mvc/_static/image8.png)
 
-Por padrão, o Page Inspector é encaixado como uma janela no lado esquerdo do ambiente do Visual Studio. Se preferir, você pode encaixá-la em outro lugar ou desencaixar a janela. Consulte [como: organizar e encaixar janelas](https://msdn.microsoft.com/en-us/library/z4y0hsax.aspx).
+Por padrão, o Page Inspector é encaixado como uma janela no lado esquerdo do ambiente do Visual Studio. Se preferir, você pode encaixá-la em outro lugar ou desencaixar a janela. Consulte [como: organizar e encaixar janelas](https://msdn.microsoft.com/library/z4y0hsax.aspx).
 
-O painel superior da janela do Page Inspector mostra a página atual em uma janela do navegador. O painel inferior mostra a página na marcação HTML, juntamente com alguns guias que permitem que você inspecione os diferentes aspectos da página. O painel inferior é semelhante do [ferramentas de desenvolvedor F12](https://msdn.microsoft.com/en-us/ie/aa740478) no Internet Explorer.
+O painel superior da janela do Page Inspector mostra a página atual em uma janela do navegador. O painel inferior mostra a página na marcação HTML, juntamente com alguns guias que permitem que você inspecione os diferentes aspectos da página. O painel inferior é semelhante do [ferramentas de desenvolvedor F12](https://msdn.microsoft.com/ie/aa740478) no Internet Explorer.
 
 ![Aplicativo ASP.NET MVC no Inspetor de página](using-page-inspector-in-aspnet-mvc/_static/image10.png)
 

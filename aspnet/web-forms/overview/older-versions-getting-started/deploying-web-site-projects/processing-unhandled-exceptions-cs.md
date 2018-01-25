@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4c7f15053ca035a1df1222f88752b8243808bef0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95102e5e6b3e8b78e2757a2bdee39976003011e3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>Processamento de exceções sem tratamento (c#)
 ====================
@@ -41,9 +41,9 @@ Este tutorial mostra como acessar os detalhes de uma exceção sem tratamento pa
 
 ## <a name="executing-code-when-theerrorevent-is-raised"></a>Executar código quando o`Error`é gerado
 
-Eventos fornecem um mecanismo para sinalizar que algo interessante ocorreu e para outro objeto executar código em resposta de um objeto. Como desenvolvedor ASP.NET, você está acostumado a pensar em termos de eventos. Se você deseja executar um código quando o visitante clica em um botão específico, você criar um manipulador de eventos para esse botão `Click` eventos e coloque seu código existe. Considerando que o tempo de execução do ASP.NET gera seu [ `Error` evento](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx) sempre que uma exceção não tratada ocorre, ele segue o código para registrar os detalhes do erro entrarão em um manipulador de eventos. Mas como você cria um manipulador de eventos para o `Error` evento?
+Eventos fornecem um mecanismo para sinalizar que algo interessante ocorreu e para outro objeto executar código em resposta de um objeto. Como desenvolvedor ASP.NET, você está acostumado a pensar em termos de eventos. Se você deseja executar um código quando o visitante clica em um botão específico, você criar um manipulador de eventos para esse botão `Click` eventos e coloque seu código existe. Considerando que o tempo de execução do ASP.NET gera seu [ `Error` evento](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx) sempre que uma exceção não tratada ocorre, ele segue o código para registrar os detalhes do erro entrarão em um manipulador de eventos. Mas como você cria um manipulador de eventos para o `Error` evento?
 
-O `Error` evento é um dos muitos eventos no [ `HttpApplication` classe](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.aspx) que são gerados em determinados estágios no pipeline HTTP durante o tempo de vida de uma solicitação. Por exemplo, o `HttpApplication` da classe [ `BeginRequest` evento](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.beginrequest.aspx) é gerado no início de cada solicitação; seu [ `AuthenticateRequest` evento](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx) é gerado quando um módulo de segurança identificou o solicitante. Essas `HttpApplication` eventos oferecem ao desenvolvedor de página um meio para executar lógica personalizada em vários pontos no tempo de vida de uma solicitação.
+O `Error` evento é um dos muitos eventos no [ `HttpApplication` classe](https://msdn.microsoft.com/library/system.web.httpapplication.aspx) que são gerados em determinados estágios no pipeline HTTP durante o tempo de vida de uma solicitação. Por exemplo, o `HttpApplication` da classe [ `BeginRequest` evento](https://msdn.microsoft.com/library/system.web.httpapplication.beginrequest.aspx) é gerado no início de cada solicitação; seu [ `AuthenticateRequest` evento](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx) é gerado quando um módulo de segurança identificou o solicitante. Essas `HttpApplication` eventos oferecem ao desenvolvedor de página um meio para executar lógica personalizada em vários pontos no tempo de vida de uma solicitação.
 
 Manipuladores de eventos para o `HttpApplication` eventos podem ser colocados em um arquivo especial chamado `Global.asax`. Para criar esse arquivo no seu site, adicionar um novo item para a raiz do seu site usando o modelo de classe de aplicativo Global com o nome `Global.asax`.
 
@@ -60,19 +60,19 @@ O `Global.asax` arquivo criado em um WAP pelo modelo de classe de aplicativo Glo
 > Ao implantar o aplicativo ASP.NET, você precisará copiar o `Global.asax` arquivo para o ambiente de produção. O `Global.asax.cs` arquivo, que é criado no WAP, não precisa ser copiada para produção porque esse código é compilado no assembly do projeto.
 
 
-Os manipuladores de eventos criados pelo modelo de classe de aplicativo Global do Visual Studio não são exaustivos. Você pode adicionar um manipulador de eventos para qualquer `HttpApplication` evento nomeando o manipulador de eventos `Application_EventName`. Por exemplo, você pode adicionar o código a seguir para o `Global.asax` para criar um manipulador de eventos para o [ `AuthorizeRequest` evento](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authorizerequest.aspx):
+Os manipuladores de eventos criados pelo modelo de classe de aplicativo Global do Visual Studio não são exaustivos. Você pode adicionar um manipulador de eventos para qualquer `HttpApplication` evento nomeando o manipulador de eventos `Application_EventName`. Por exemplo, você pode adicionar o código a seguir para o `Global.asax` para criar um manipulador de eventos para o [ `AuthorizeRequest` evento](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
 [!code-vb[Main](processing-unhandled-exceptions-cs/samples/sample1.vb)]
 
 Da mesma forma, você pode remover qualquer manipuladores de eventos criados pelo modelo de classe de aplicativo Global que não são necessários. Para este tutorial é necessário apenas um manipulador de eventos para o `Error` evento; fique à vontade para remover outros manipuladores de evento do `Global.asax` arquivo.
 
 > [!NOTE]
-> *Módulos HTTP* oferecem outra maneira de definir manipuladores de eventos para `HttpApplication` eventos. Módulos HTTP são criados como um arquivo de classe que pode ser colocado diretamente dentro do projeto de aplicativo web ou separado em uma biblioteca de classe separada. Porque eles podem ser separados em uma biblioteca de classes, módulos HTTP oferecem um modelo mais flexível e reutilizável para criar `HttpApplication` manipuladores de eventos. Enquanto o `Global.asax` arquivo é específico ao aplicativo da web onde ele reside, módulos HTTP podem ser compilados em assemblies, no ponto em que adicionar o módulo HTTP a um site é tão simple quanto soltando o assembly no `Bin` pasta e registrando o Módulo do `Web.config`. Este tutorial não examinar criando e usando módulos de HTTP, mas as bibliotecas de log de erros de dois usadas em dois tutoriais a seguir são implementadas como módulos HTTP. Para obter mais informações sobre os benefícios de módulos HTTP consulte [usando módulos e manipuladores HTTP para criar componentes de ASP.NET conectáveis](https://msdn.microsoft.com/en-us/library/aa479332.aspx).
+> *Módulos HTTP* oferecem outra maneira de definir manipuladores de eventos para `HttpApplication` eventos. Módulos HTTP são criados como um arquivo de classe que pode ser colocado diretamente dentro do projeto de aplicativo web ou separado em uma biblioteca de classe separada. Porque eles podem ser separados em uma biblioteca de classes, módulos HTTP oferecem um modelo mais flexível e reutilizável para criar `HttpApplication` manipuladores de eventos. Enquanto o `Global.asax` arquivo é específico ao aplicativo da web onde ele reside, módulos HTTP podem ser compilados em assemblies, no ponto em que adicionar o módulo HTTP a um site é tão simple quanto soltando o assembly no `Bin` pasta e registrando o Módulo do `Web.config`. Este tutorial não examinar criando e usando módulos de HTTP, mas as bibliotecas de log de erros de dois usadas em dois tutoriais a seguir são implementadas como módulos HTTP. Para obter mais informações sobre os benefícios de módulos HTTP consulte [usando módulos e manipuladores HTTP para criar componentes de ASP.NET conectáveis](https://msdn.microsoft.com/library/aa479332.aspx).
 
 
 ## <a name="retrieving-information-about-the-unhandled-exception"></a>Recuperando informações sobre a exceção não tratada
 
-Neste ponto, temos um arquivo global. asax com um `Application_Error` manipulador de eventos. Quando executa este manipulador de eventos que precisamos notificar um desenvolvedor do erro e seus detalhes de log. Para realizar essas tarefas, que primeiro é preciso determinar os detalhes da exceção que foi gerado. Usar o objeto de servidor [ `GetLastError` método](https://msdn.microsoft.com/en-us/library/system.web.httpserverutility.getlasterror.aspx) para recuperar os detalhes da exceção sem tratamento que causou o `Error` evento seja acionado.
+Neste ponto, temos um arquivo global. asax com um `Application_Error` manipulador de eventos. Quando executa este manipulador de eventos que precisamos notificar um desenvolvedor do erro e seus detalhes de log. Para realizar essas tarefas, que primeiro é preciso determinar os detalhes da exceção que foi gerado. Usar o objeto de servidor [ `GetLastError` método](https://msdn.microsoft.com/library/system.web.httpserverutility.getlasterror.aspx) para recuperar os detalhes da exceção sem tratamento que causou o `Error` evento seja acionado.
 
 [!code-csharp[Main](processing-unhandled-exceptions-cs/samples/sample2.cs)]
 
@@ -90,7 +90,7 @@ As bibliotecas de log de erro examinadas nos próximos dois tutoriais fornecem f
 
 Quando ocorre uma exceção sem tratamento no ambiente de produção é importante alertar a equipe de desenvolvimento para que eles possam avaliar o erro e determinar quais ações precisam ser tomadas. Por exemplo, se houver um erro ao conectar-se ao banco de dados, você precisará duplo Verifique sua cadeia de caracteres de conexão e, talvez, abra um tíquete de suporte com a empresa de hospedagem. Se a exceção ocorreu devido a um erro de programação, talvez seja código adicional ou lógica de validação a ser adicionado para evitar esses erros no futuro.
 
-Classes do .NET Framework a [ `System.Net.Mail` namespace](https://msdn.microsoft.com/en-us/library/system.net.mail.aspx) facilitam enviar um email. O [ `MailMessage` classe](https://msdn.microsoft.com/en-us/library/system.net.mail.mailmessage.aspx) representa uma mensagem de email e tem propriedades como `To`, `From`, `Subject`, `Body`, e `Attachments`. O `SmtpClass` é usada para enviar um `MailMessage` objeto usando um servidor SMTP especificado; as configurações do servidor SMTP podem ser especificadas de forma programática ou declarativamente no [ `<system.net>` elemento](https://msdn.microsoft.com/en-us/library/6484zdc1.aspx) no `Web.config file`. Para obter mais informações sobre o envio de email mensagens em um aplicativo ASP.NET Confira o artigo [enviar o Email no ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)e o [mail perguntas frequentes sobre](http://systemnetmail.com/).
+Classes do .NET Framework a [ `System.Net.Mail` namespace](https://msdn.microsoft.com/library/system.net.mail.aspx) facilitam enviar um email. O [ `MailMessage` classe](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) representa uma mensagem de email e tem propriedades como `To`, `From`, `Subject`, `Body`, e `Attachments`. O `SmtpClass` é usada para enviar um `MailMessage` objeto usando um servidor SMTP especificado; as configurações do servidor SMTP podem ser especificadas de forma programática ou declarativamente no [ `<system.net>` elemento](https://msdn.microsoft.com/library/6484zdc1.aspx) no `Web.config file`. Para obter mais informações sobre o envio de email mensagens em um aplicativo ASP.NET Confira o artigo [enviar o Email no ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)e o [mail perguntas frequentes sobre](http://systemnetmail.com/).
 
 > [!NOTE]
 > O `<system.net>` elemento contém as configurações do servidor SMTP usadas pelo `SmtpClient` classe ao enviar um email. Hospedagem da empresa provavelmente tem um servidor SMTP que você pode usar para enviar email do seu aplicativo. Consulte a seção de suporte do host da web para obter informações sobre configurações do servidor SMTP, que você deve usar em seu aplicativo da web.
@@ -102,7 +102,7 @@ Adicione o seguinte código para o `Application_Error` manipulador de eventos pa
 
 Enquanto o código acima é muito longo, a maior parte do mesmo cria o HTML que aparece no email enviado para o desenvolvedor. O código começa consultando o `HttpException` retornado pelo `GetLastError` método (`lastErrorWrapper`). A exceção que foi gerada pela solicitação realmente é recuperada por meio de `lastErrorWrapper.InnerException` e é atribuído à variável `lastError`. O tipo, a mensagem e a pilha de informações de rastreamento são recuperadas do `lastError` e armazenados em três variáveis de cadeia de caracteres.
 
-Em seguida, um `MailMessage` objeto chamado `mm` é criado. O corpo do email é formatado em HTML e exibe a URL da página solicitada, o nome do usuário conectado no momento e informações sobre a exceção (o tipo de mensagem e rastreamento de pilha). Uma das coisas legais sobre o `HttpException` classe é que você pode gerar o HTML usado para criar a exceção detalhes amarelo tela de morte (YSOD) ao chamar o [GetHtmlErrorMessage método](https://msdn.microsoft.com/en-us/library/system.web.httpexception.gethtmlerrormessage.aspx). Esse método é usado aqui para recuperar a marcação de YSOD de detalhes da exceção e adicione-o como um anexo de email. Cuidado: se a exceção que disparou o `Error` evento foi uma exceção com base em HTTP (como uma solicitação para uma página inexistente) o `GetHtmlErrorMessage` método retornará `null`.
+Em seguida, um `MailMessage` objeto chamado `mm` é criado. O corpo do email é formatado em HTML e exibe a URL da página solicitada, o nome do usuário conectado no momento e informações sobre a exceção (o tipo de mensagem e rastreamento de pilha). Uma das coisas legais sobre o `HttpException` classe é que você pode gerar o HTML usado para criar a exceção detalhes amarelo tela de morte (YSOD) ao chamar o [GetHtmlErrorMessage método](https://msdn.microsoft.com/library/system.web.httpexception.gethtmlerrormessage.aspx). Esse método é usado aqui para recuperar a marcação de YSOD de detalhes da exceção e adicione-o como um anexo de email. Cuidado: se a exceção que disparou o `Error` evento foi uma exceção com base em HTTP (como uma solicitação para uma página inexistente) o `GetHtmlErrorMessage` método retornará `null`.
 
 A etapa final é enviar o `MailMessage`. Isso é feito criando um novo `SmtpClient` método e chamar sua `Send` método.
 
@@ -139,7 +139,7 @@ O motivo para esse comportamento é porque a página de erro personalizada é at
 
 O efeito líquido é que a solicitação onde ocorreu a exceção sem tratamento termina quando o servidor responde com o redirecionamento HTTP 302. A solicitação subsequente para a página de erro personalizada é uma nova solicitação; Neste ponto, o ASP.NET mecanismo rejeitou as informações de erro e, além disso, não tem como associar a exceção não tratada na solicitação anterior com a nova solicitação para a página de erro personalizada. É por isso que `GetLastError` retorna `null` quando chamado a partir da página de erro personalizada.
 
-No entanto, é possível fazer com que a página de erro personalizado executada durante a mesma solicitação que causou o erro. O [ `Server.Transfer(url)` ](https://msdn.microsoft.com/en-us/library/system.web.httpserverutility.transfer.aspx) método transfere a execução para a URL especificada e o processa na mesma solicitação. Você pode mover o código `Application_Error` manipulador de eventos para classe de code-behind da página de erro personalizada, substituí-lo no `Global.asax` com o código a seguir:
+No entanto, é possível fazer com que a página de erro personalizado executada durante a mesma solicitação que causou o erro. O [ `Server.Transfer(url)` ](https://msdn.microsoft.com/library/system.web.httpserverutility.transfer.aspx) método transfere a execução para a URL especificada e o processa na mesma solicitação. Você pode mover o código `Application_Error` manipulador de eventos para classe de code-behind da página de erro personalizada, substituí-lo no `Global.asax` com o código a seguir:
 
 [!code-csharp[Main](processing-unhandled-exceptions-cs/samples/sample5.cs)]
 
@@ -163,9 +163,9 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Manipuladores HTTP e módulos HTTP no ASP.NET](http://www.15seconds.com/Issue/020417.htm)
 - [Enviar o Email no ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
 - [Noções básicas sobre o `Global.asax` arquivo](http://aspalliance.com/1114_Understanding_the_Globalasax_file.all)
-- [Usando módulos HTTP e manipuladores para criar componentes ASP.NET conectáveis](https://msdn.microsoft.com/en-us/library/aa479332.aspx)
+- [Usando módulos HTTP e manipuladores para criar componentes ASP.NET conectáveis](https://msdn.microsoft.com/library/aa479332.aspx)
 - [Trabalhando com o ASP.NET `Global.asax` arquivo](http://articles.techrepublic.com.com/5100-10878_11-5771721.html)
-- [Trabalhando com `HttpApplication` instâncias](https://msdn.microsoft.com/en-us/library/a0xez8f2.aspx)
+- [Trabalhando com `HttpApplication` instâncias](https://msdn.microsoft.com/library/a0xez8f2.aspx)
 
 >[!div class="step-by-step"]
 [Anterior](displaying-a-custom-error-page-cs.md)

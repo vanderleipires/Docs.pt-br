@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bc009272df3626402ee4c52578f9b364f70a4e78
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dbd2f6c8f1e21529da8a0fbffab212a29f615cc1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>Criando uma Interface de usuário personalizadas de classificação (c#)
 ====================
@@ -187,7 +187,7 @@ Com a adição de código acima, os cabeçalhos do grupo de classificação agor
 
 
 > [!NOTE]
-> Se você tiver produtos com `NULL` valores para o banco de dados de `CategoryID`, `SupplierID`, ou `UnitPrice` campos, esses valores serão exibidos como cadeias de caracteres vazias em GridView por padrão, o que significa que o texto da linha s separador para esses produtos com `NULL`valores serão lidas como categoria: (ou seja, não há s sem nome após a categoria: como com categoria: Bebidas). Se você desejar um valor exibido aqui você pode definir o BoundFields [ `NullDisplayText` propriedade](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) para o texto que deseja exibir ou você pode adicionar uma instrução condicional no método de renderização ao atribuir a `currentValue` para o separador linha s `Text` propriedade.
+> Se você tiver produtos com `NULL` valores para o banco de dados de `CategoryID`, `SupplierID`, ou `UnitPrice` campos, esses valores serão exibidos como cadeias de caracteres vazias em GridView por padrão, o que significa que o texto da linha s separador para esses produtos com `NULL`valores serão lidas como categoria: (ou seja, não há s sem nome após a categoria: como com categoria: Bebidas). Se você desejar um valor exibido aqui você pode definir o BoundFields [ `NullDisplayText` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) para o texto que deseja exibir ou você pode adicionar uma instrução condicional no método de renderização ao atribuir a `currentValue` para o separador linha s `Text` propriedade.
 
 
 ## <a name="summary"></a>Resumo
