@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: f244e6bd1cd8abd23b64d07ccafcef5c4db1029b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Controle de origem (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -137,9 +137,9 @@ Você pode usar qualquer ambiente de controle de origem para implementar a estru
 
 [Git](http://git-scm.com/) é um DVCS que se tornou muito popular. Quando você usar Git para controle de origem, você tem uma cópia completa do repositório com todo seu histórico no computador local. Muitas pessoas preferem que porque é mais fácil continuar a trabalhar quando não estiver conectado à rede – você pode continuar a fazer é confirmada e reversões, criar e mudar as ramificações e assim por diante. Mesmo quando você estiver conectado à rede, é mais fácil e rápido criar ramificações e mudar as ramificações quando tudo o que é local. Você também pode fazer reversões e confirmações locais sem causar impacto em outros desenvolvedores. E você pode processar em lotes confirmações antes de enviá-los para o servidor.
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), anteriormente conhecido como Team Foundation Service, oferece dois Git e [controle de versão do Team Foundation](https://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx) (TFVC; centralizado de controle de origem). Aqui na Microsoft, no grupo do Azure algumas equipes usam controle de origem centralizado, alguns use distribuído, e alguns usam uma mistura (centralizado para alguns projetos e distribuído para outros projetos). O serviço do VSO está livre para até 5 usuários. Você pode se inscrever para um plano gratuito [aqui](https://go.microsoft.com/fwlink/?LinkId=307137).
+[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), anteriormente conhecido como Team Foundation Service, oferece dois Git e [controle de versão do Team Foundation](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC; centralizado de controle de origem). Aqui na Microsoft, no grupo do Azure algumas equipes usam controle de origem centralizado, alguns use distribuído, e alguns usam uma mistura (centralizado para alguns projetos e distribuído para outros projetos). O serviço do VSO está livre para até 5 usuários. Você pode se inscrever para um plano gratuito [aqui](https://go.microsoft.com/fwlink/?LinkId=307137).
 
-Visual Studio 2013 inclui interno de primeira classe [Git suporte](https://msdn.microsoft.com/en-us/library/hh850437.aspx); aqui está uma rápida demonstração de como isso funciona.
+Visual Studio 2013 inclui interno de primeira classe [Git suporte](https://msdn.microsoft.com/library/hh850437.aspx); aqui está uma rápida demonstração de como isso funciona.
 
 Com um projeto aberto no Visual Studio 2013, clique com botão direito a solução em **Solution Explorer**e escolha **adicionar solução ao controle de origem**.
 
@@ -179,7 +179,7 @@ Digite o nome de uma ramificação, clique em **criar ramificação**, e se voc�
 
 Agora você pode fazer alterações nos arquivos e check-in para a ramificação. E você pode facilmente alternar entre as ramificações e o Visual Studio automaticamente os arquivos que ramificar você fez check-out de sincronizações. Neste exemplo de página da web título em  *\_cshtml* foi alterado para "Hot Fix 1" no HotFix1 ramificação.
 
-![Ramificação Hotfix1](source-control/_static/image18.png)
+![Hotfix1 branch](source-control/_static/image18.png)
 
 Se você alternar de volta para o mestre de filiais, o conteúdo do  *\_cshtml* arquivo revertida automaticamente para o que são a ramificação mestre.
 
@@ -187,7 +187,7 @@ Se você alternar de volta para o mestre de filiais, o conteúdo do  *\_cshtml* 
 
 Este um exemplo simples de como você pode criar rapidamente uma ramificação e alternar entre ramificações. Esse recurso permite que um fluxo de trabalho altamente agile usando a estrutura de ramificação e scripts de automação apresentadas a [automatizar tudo](automate-everything.md) capítulo. Por exemplo, você pode estar trabalhando no branch de desenvolvimento, criar uma ramificação de hotfix do mestre, alterne para o novo branch, fazer as alterações e confirmá-las e alterne de volta para a ramificação de desenvolvimento e continuar o que estava fazendo.
 
-O que é visto aqui é como você trabalha com um repositório Git local no Visual Studio. Em um ambiente de equipe você normalmente também enviar alterações por push um repositório comum. As ferramentas do Visual Studio também permitem que você apontar para um repositório Git remoto. Você pode usar GitHub.com para essa finalidade, ou você pode usar [Git no Visual Studio Online](https://msdn.microsoft.com/en-us/library/hh850437.aspx) integrado com todos os outros recursos Online do Visual Studio, como o item de trabalho e de monitoramento de erros.
+O que é visto aqui é como você trabalha com um repositório Git local no Visual Studio. Em um ambiente de equipe você normalmente também enviar alterações por push um repositório comum. As ferramentas do Visual Studio também permitem que você apontar para um repositório Git remoto. Você pode usar GitHub.com para essa finalidade, ou você pode usar [Git no Visual Studio Online](https://msdn.microsoft.com/library/hh850437.aspx) integrado com todos os outros recursos Online do Visual Studio, como o item de trabalho e de monitoramento de erros.
 
 Não é a única maneira que você pode implementar uma estratégia de ramificação agile, claro. Você pode habilitar o mesmo fluxo de trabalho agile usando um repositório de controle de origem centralizado.
 
@@ -202,14 +202,14 @@ O [Visual Studio Online](https://www.visualstudio.com/) portal fornece serviços
 
 Para obter mais informações sobre TFVC (controle de versão centralizado) e o Git (controle de versão distribuídos), consulte os seguintes recursos:
 
-- [Qual sistema de controle de versão devo usar: TFVC ou Git?](https://msdn.microsoft.com/en-us/library/vstudio/ms181368.aspx#tfvc_or_git_summary) Documentação do MSDN, inclui uma tabela que resume as diferenças entre TFVC e Git.
+- [Qual sistema de controle de versão devo usar: TFVC ou Git?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) Documentação do MSDN, inclui uma tabela que resume as diferenças entre TFVC e Git.
 - [Bem, como o Team Foundation Server e como o Git, mas que é melhor?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Comparação de TFVC e Git.
 
 Para obter mais informações sobre estratégias de expansão, consulte os seguintes recursos:
 
-- [Criando um Pipeline de versão com o Team Foundation Server 2012](https://msdn.microsoft.com/en-us/library/dn449957.aspx). Documentação do Microsoft Patterns e práticas recomendadas. Consulte o capítulo 6 para obter uma discussão sobre estratégias de expansão. O recurso defensores alterna sobre ramificações de recurso e se ramificações para recursos forem usadas, advogados mantê-los curta duração (em horas ou dias, no máximo).
+- [Criando um Pipeline de versão com o Team Foundation Server 2012](https://msdn.microsoft.com/library/dn449957.aspx). Documentação do Microsoft Patterns e práticas recomendadas. Consulte o capítulo 6 para obter uma discussão sobre estratégias de expansão. O recurso defensores alterna sobre ramificações de recurso e se ramificações para recursos forem usadas, advogados mantê-los curta duração (em horas ou dias, no máximo).
 - [Guia de controle de versão](https://aka.ms/vsarsolutions). Guia para estratégias de expansão por ALM Rangers. Consulte Strategies.pdf ramificação na guia Downloads.
-- [Desenvolvimento de software com o recurso alterna](https://msdn.microsoft.com/en-us/magazine/dn683796.aspx). Artigo da MSDN Magazine.
+- [Desenvolvimento de software com o recurso alterna](https://msdn.microsoft.com/magazine/dn683796.aspx). Artigo da MSDN Magazine.
 - [Alternância de recurso](http://martinfowler.com/bliki/FeatureToggle.html). Introdução ao recurso alterna / recurso sinalizadores no blog de Martin Fowler.
 - [Recurso vs alternâncias ramificações de recurso](http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx). Outro postagem de blog sobre alternâncias de recurso, por Dylan Smith.
 
