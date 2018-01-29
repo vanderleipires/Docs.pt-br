@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: efec52c4085c24b1d6227a86f7c435ca657e493c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e30df9ddc094d0390d9e5985ec676713b57feaf4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>Criando procedimentos armazenados e funções definidas pelo usuário com código gerenciado (VB)
 ====================
@@ -33,12 +33,12 @@ Bancos de dados como s do Microsoft SQL Server 2005 usam o [Transact-Structured 
 
 Essencialmente, o SQL foi projetado para trabalhar com conjuntos de dados. O `SELECT`, `UPDATE`, e `DELETE` instruções inerentemente se aplicam a todos os registros na tabela correspondente e são limitadas somente por seus `WHERE` cláusulas. Ainda há muitos recursos de linguagem projetados para trabalhar com um registro de cada vez e para a manipulação de dados escalares. [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553) permitem que um conjunto de registros em loop por meio de um de cada vez. Funções de manipulação de como cadeia de caracteres `LEFT`, `CHARINDEX`, e `PATINDEX` funcionam com dados escalares. SQL também inclui instruções de fluxo de controle como `IF` e `WHILE`.
 
-Antes do Microsoft SQL Server 2005, procedimentos armazenados e UDFs só podem ser definidos como uma coleção de instruções T-SQL. No entanto, o SQL Server 2005, foi projetado para fornecer integração com o [Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx), que é o tempo de execução usado por todos os assemblies do .NET. Consequentemente, os procedimentos armazenados e UDFs em um banco de dados do SQL Server 2005 podem ser criados usando código gerenciado. Ou seja, você pode criar um procedimento armazenado ou UDF como um método em uma classe do Visual Basic. Isso permite que esses procedimentos armazenados e UDFs para utilizar a funcionalidade do .NET Framework e de suas próprias classes personalizadas.
+Antes do Microsoft SQL Server 2005, procedimentos armazenados e UDFs só podem ser definidos como uma coleção de instruções T-SQL. No entanto, o SQL Server 2005, foi projetado para fornecer integração com o [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), que é o tempo de execução usado por todos os assemblies do .NET. Consequentemente, os procedimentos armazenados e UDFs em um banco de dados do SQL Server 2005 podem ser criados usando código gerenciado. Ou seja, você pode criar um procedimento armazenado ou UDF como um método em uma classe do Visual Basic. Isso permite que esses procedimentos armazenados e UDFs para utilizar a funcionalidade do .NET Framework e de suas próprias classes personalizadas.
 
 Neste tutorial, examinaremos como criar gerenciado procedimentos armazenados e funções definidas pelo usuário e como integrá-las em nosso banco de dados Northwind. Permitir que o s começar!
 
 > [!NOTE]
-> Objetos de banco de dados gerenciado oferecem algumas vantagens sobre suas contrapartes SQL. Riqueza de linguagem e familiaridade e a capacidade de reutilizar a lógica e o código existente são as principais vantagens. Mas os objetos de banco de dados gerenciados poderão ser menos eficiente, ao trabalhar com conjuntos de dados que não envolvem muita lógica de procedimento. Para obter uma discussão mais completa sobre as vantagens de usar código gerenciado em vez de T-SQL, confira o [vantagens de usar código gerenciado para criar objetos de banco de dados](https://msdn.microsoft.com/en-us/library/k2e1fb36(VS.80).aspx).
+> Objetos de banco de dados gerenciado oferecem algumas vantagens sobre suas contrapartes SQL. Riqueza de linguagem e familiaridade e a capacidade de reutilizar a lógica e o código existente são as principais vantagens. Mas os objetos de banco de dados gerenciados poderão ser menos eficiente, ao trabalhar com conjuntos de dados que não envolvem muita lógica de procedimento. Para obter uma discussão mais completa sobre as vantagens de usar código gerenciado em vez de T-SQL, confira o [vantagens de usar código gerenciado para criar objetos de banco de dados](https://msdn.microsoft.com/library/k2e1fb36(VS.80).aspx).
 
 
 ## <a name="step-1-moving-the-northwind-database-out-ofappdata"></a>Etapa 1: Mover o banco de dados Northwind de`App_Data`
@@ -81,7 +81,7 @@ Clique no botão Okey para anexar o banco de dados. A caixa de diálogo anexar b
 
 ## <a name="step-2-creating-a-new-solution-and-sql-server-project-in-visual-studio"></a>Etapa 2: Criar uma nova solução e projeto do SQL Server no Visual Studio
 
-Para criar procedimentos armazenados gerenciados ou UDFs no SQL Server 2005 é gravará o procedimento armazenado e a lógica UDF como o código do Visual Basic em uma classe. Depois que o código foi escrito, será necessário compilar essa classe em um assembly (um `.dll` arquivo), registre o assembly com o banco de dados do SQL Server e, em seguida, criar um procedimento armazenado ou UDF no banco de dados que aponta para o método correspondente em o assembly. Essas etapas podem ser executadas manualmente. Isso pode criar o código em qualquer texto editor, compilá-lo na linha de comando usando o compilador do Visual Basic (`vbc.exe`), registre-o com o banco de dados usando o [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/en-us/library/ms189524.aspx) comando ou no Management Studio e adicione o armazenado procedimento ou objeto UDF através de meios semelhantes. Felizmente, as versões Professional e sistemas de equipe do Visual Studio incluem um tipo de projeto do SQL Server que automatiza a essas tarefas. Neste tutorial percorreremos usando o tipo de projeto do SQL Server para criar um procedimento armazenado gerenciado e o UDF.
+Para criar procedimentos armazenados gerenciados ou UDFs no SQL Server 2005 é gravará o procedimento armazenado e a lógica UDF como o código do Visual Basic em uma classe. Depois que o código foi escrito, será necessário compilar essa classe em um assembly (um `.dll` arquivo), registre o assembly com o banco de dados do SQL Server e, em seguida, criar um procedimento armazenado ou UDF no banco de dados que aponta para o método correspondente em o assembly. Essas etapas podem ser executadas manualmente. Isso pode criar o código em qualquer texto editor, compilá-lo na linha de comando usando o compilador do Visual Basic (`vbc.exe`), registre-o com o banco de dados usando o [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/library/ms189524.aspx) comando ou no Management Studio e adicione o armazenado procedimento ou objeto UDF através de meios semelhantes. Felizmente, as versões Professional e sistemas de equipe do Visual Studio incluem um tipo de projeto do SQL Server que automatiza a essas tarefas. Neste tutorial percorreremos usando o tipo de projeto do SQL Server para criar um procedimento armazenado gerenciado e o UDF.
 
 > [!NOTE]
 > Se você estiver usando o Visual Web Developer ou Standard edition do Visual Studio, você precisará usar a abordagem manual em vez disso. Etapa 13 fornece instruções detalhadas para executar essas etapas manualmente. Recomendo que você leia as etapas 2 a 12 antes de ler a etapa 13 desde que essas etapas incluem instruções de configuração do SQL Server importantes que devem ser aplicadas, independentemente de qual versão do Visual Studio que você está usando.
@@ -149,14 +149,14 @@ Isso criará um novo arquivo de classe do Visual Basic com o seguinte conteúdo:
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample2.vb)]
 
-Observe que o procedimento armazenado é implementado como um `Shared` método dentro de um `Partial` arquivo de classe chamado `StoredProcedures`. Além disso, o `GetDiscontinuedProducts` método é decorado com o [ `SqlProcedure` atributo](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), que marca o método como um procedimento armazenado.
+Observe que o procedimento armazenado é implementado como um `Shared` método dentro de um `Partial` arquivo de classe chamado `StoredProcedures`. Além disso, o `GetDiscontinuedProducts` método é decorado com o [ `SqlProcedure` atributo](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), que marca o método como um procedimento armazenado.
 
 O código a seguir cria um `SqlCommand` objeto e define seu `CommandText` para um `SELECT` consulta que retorna todas as colunas da `Products` tabela de produtos cujos `Discontinued` campo é igual a 1. Em seguida, ele executa o comando e envia os resultados para o aplicativo cliente. Adicione este código para o `GetDiscontinuedProducts` método.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample3.vb)]
 
-Todos os objetos de banco de dados gerenciado tem acesso a um [ `SqlContext` objeto](https://msdn.microsoft.com/en-us/library/ms131108.aspx) que representa o contexto do chamador. O `SqlContext` fornece acesso a um [ `SqlPipe` objeto](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.aspx) por meio de seu [ `Pipe` propriedade](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx). Isso `SqlPipe` objeto é usado para ferry informações entre o banco de dados do SQL Server e o aplicativo de chamada. Como o nome sugere, o [ `ExecuteAndSend` método](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) executa um passado-in `SqlCommand` objeto e enviam os resultados de volta para o aplicativo cliente.
+Todos os objetos de banco de dados gerenciado tem acesso a um [ `SqlContext` objeto](https://msdn.microsoft.com/library/ms131108.aspx) que representa o contexto do chamador. O `SqlContext` fornece acesso a um [ `SqlPipe` objeto](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx) por meio de seu [ `Pipe` propriedade](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx). Isso `SqlPipe` objeto é usado para ferry informações entre o banco de dados do SQL Server e o aplicativo de chamada. Como o nome sugere, o [ `ExecuteAndSend` método](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) executa um passado-in `SqlCommand` objeto e enviam os resultados de volta para o aplicativo cliente.
 
 > [!NOTE]
 > Objetos de banco de dados gerenciados são mais adequados para procedimentos armazenados e UDFs que usam a lógica de procedimento em vez de lógica baseada em conjunto. Lógica de procedimento envolve trabalhar com conjuntos de dados em uma base linha por linha ou trabalhando com dados escalares. O `GetDiscontinuedProducts` não envolve o método que acabamos de criar, no entanto, nenhuma lógica de procedimento. Portanto, ele idealmente poderia ser implementado como um procedimento armazenado T-SQL. Ele é implementado como um procedimento armazenado gerenciado para demonstrar as etapas necessárias para criar e implantar gerenciado procedimentos armazenados.
@@ -214,7 +214,7 @@ Observe que cada configuração na Figura 12 tem quatro valores listados com ele
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample5.sql)]
 
-Se você executar novamente o `exec sp_configure` você verá que a instrução acima atualizado o valor de configuração de configuração do clr habilitado s como 1, mas o valor de execução ainda está definido como 0. Para que essa alteração de configuração tenha efeito, é preciso executar o [ `RECONFIGURE` comando](https://msdn.microsoft.com/en-us/library/ms176069.aspx), que definirá o valor de execução para o valor da configuração atual. Basta digitar `RECONFIGURE` na janela de consulta e clique no ícone executar na barra de ferramentas. Se você executar `exec sp_configure` agora você deve ver um valor de 1 para a configuração de configuração do clr habilitado s e executar os valores.
+Se você executar novamente o `exec sp_configure` você verá que a instrução acima atualizado o valor de configuração de configuração do clr habilitado s como 1, mas o valor de execução ainda está definido como 0. Para que essa alteração de configuração tenha efeito, é preciso executar o [ `RECONFIGURE` comando](https://msdn.microsoft.com/library/ms176069.aspx), que definirá o valor de execução para o valor da configuração atual. Basta digitar `RECONFIGURE` na janela de consulta e clique no ícone executar na barra de ferramentas. Se você executar `exec sp_configure` agora você deve ver um valor de 1 para a configuração de configuração do clr habilitado s e executar os valores.
 
 Com a configuração de clr habilitado concluída, você está pronto para executar o gerenciado `GetDiscontinuedProducts` procedimento armazenado. Na janela de consulta, digite e execute o comando `exec` `GetDiscontinuedProducts`. Chamar o procedimento armazenado faz com que o código gerenciado correspondente no `GetDiscontinuedProducts` método a ser executado. Esse código emite um `SELECT` consulta para retornar todos os produtos que são interrompidos e retorna dados para o aplicativo de chamada, que é o SQL Server Management Studio nesta instância. Management Studio recebe esses resultados e os exibe na janela de resultados.
 
@@ -232,7 +232,7 @@ Para criar um procedimento armazenado gerenciado que aceita parâmetros de entra
 
 Para adicionar um novo procedimento armazenado ao projeto, clique duas vezes no `ManagedDatabaseConstructs` nome do projeto e escolha Adicionar um novo procedimento armazenado. Dê o nome `GetProductsWithPriceLessThan.vb` para o arquivo. Como vimos na etapa 3, isso criará um novo arquivo de classe do Visual Basic com um método denominado `GetProductsWithPriceLessThan` colocado dentro de `Partial` classe `StoredProcedures`.
 
-Atualização de `GetProductsWithPriceLessThan` definição de método s para que ele aceite um [ `SqlMoney` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.aspx) parâmetro de entrada denominado `price` e escrever o código para executar e retorna os resultados da consulta:
+Atualização de `GetProductsWithPriceLessThan` definição de método s para que ele aceite um [ `SqlMoney` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx) parâmetro de entrada denominado `price` e escrever o código para executar e retorna os resultados da consulta:
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample6.vb)]
@@ -400,19 +400,19 @@ Para adicionar uma UDF gerenciada para o `ManagedDatabaseConstructs` de projeto,
 **Figura 25**: adicionar um novo UDF gerenciados para o `ManagedDatabaseConstructs` projeto ([clique para exibir a imagem em tamanho normal](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image61.png))
 
 
-O modelo de função definida pelo usuário cria um `Partial` classe denominada `UserDefinedFunctions` com um método cujo nome é igual ao nome de arquivo s de classe (`udf_ComputeInventoryValue_Managed`, nesta instância). Esse método é decorado usando o [ `SqlFunction` atributo](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), que indica o método como uma UDF gerenciada.
+O modelo de função definida pelo usuário cria um `Partial` classe denominada `UserDefinedFunctions` com um método cujo nome é igual ao nome de arquivo s de classe (`udf_ComputeInventoryValue_Managed`, nesta instância). Esse método é decorado usando o [ `SqlFunction` atributo](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), que indica o método como uma UDF gerenciada.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample13.vb)]
 
-O `udf_ComputeInventoryValue` método atualmente retorna um [ `SqlString` objeto](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlstring.aspx) e não aceita parâmetros de entrada. É necessário atualizar a definição de método para que ela aceita três parâmetros de entrada de - `UnitPrice`, `UnitsInStock`, e `Discontinued` - e retorna um `SqlMoney` objeto. A lógica para calcular o valor do estoque é idêntica de T-SQL `udf_ComputeInventoryValue` UDF.
+O `udf_ComputeInventoryValue` método atualmente retorna um [ `SqlString` objeto](https://msdn.microsoft.com/library/system.data.sqltypes.sqlstring.aspx) e não aceita parâmetros de entrada. É necessário atualizar a definição de método para que ela aceita três parâmetros de entrada de - `UnitPrice`, `UnitsInStock`, e `Discontinued` - e retorna um `SqlMoney` objeto. A lógica para calcular o valor do estoque é idêntica de T-SQL `udf_ComputeInventoryValue` UDF.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample14.vb)]
 
-Observe que os parâmetros de entrada do método s UDF dos seus tipos de SQL correspondente: `SqlMoney` para o `UnitPrice` campo, [ `SqlInt16` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlint16.aspx) para `UnitsInStock`, e [ `SqlBoolean` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlboolean.aspx) para `Discontinued`. Esses tipos de dados refletem os tipos definidos no `Products` tabela: o `UnitPrice` coluna é do tipo `money`, o `UnitsInStock` coluna do tipo `smallint`e o `Discontinued` coluna do tipo `bit`.
+Observe que os parâmetros de entrada do método s UDF dos seus tipos de SQL correspondente: `SqlMoney` para o `UnitPrice` campo, [ `SqlInt16` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlint16.aspx) para `UnitsInStock`, e [ `SqlBoolean` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlboolean.aspx) para `Discontinued`. Esses tipos de dados refletem os tipos definidos no `Products` tabela: o `UnitPrice` coluna é do tipo `money`, o `UnitsInStock` coluna do tipo `smallint`e o `Discontinued` coluna do tipo `bit`.
 
-O código começa criando um `SqlMoney` instância denominada `inventoryValue` que é atribuído um valor de 0. O `Products` permite a tabela de banco de dados `NULL` valores no `UnitsInPrice` e `UnitsInStock` colunas. Portanto, é preciso primeiro verificar para ver se esses valores contêm `NULL` s, o que fazemos por meio de `SqlMoney` objeto s [ `IsNull` propriedade](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.isnull.aspx). Se ambos os `UnitPrice` e `UnitsInStock` contêm não`NULL` valores, em seguida, nós de computação de `inventoryValue` para ser o produto dos dois. Em seguida, se `Discontinued` for true, é dividir o valor.
+O código começa criando um `SqlMoney` instância denominada `inventoryValue` que é atribuído um valor de 0. O `Products` permite a tabela de banco de dados `NULL` valores no `UnitsInPrice` e `UnitsInStock` colunas. Portanto, é preciso primeiro verificar para ver se esses valores contêm `NULL` s, o que fazemos por meio de `SqlMoney` objeto s [ `IsNull` propriedade](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.isnull.aspx). Se ambos os `UnitPrice` e `UnitsInStock` contêm não`NULL` valores, em seguida, nós de computação de `inventoryValue` para ser o produto dos dois. Em seguida, se `Discontinued` for true, é dividir o valor.
 
 > [!NOTE]
 > O `SqlMoney` objeto só permite que dois `SqlMoney` instâncias para ser multiplicados juntos. Ele não permite uma `SqlMoney` instância seja multiplicado pelo número de ponto flutuante literal. Portanto, para dividir `inventoryValue` , multiplique-o por um novo `SqlMoney` instância que tem o valor 0,5.
@@ -559,13 +559,13 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Vantagens e desvantagens de funções definidas pelo usuário](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1)
 - [Criando objetos do SQL Server 2005 em código gerenciado](https://channel9.msdn.com/Showpost.aspx?postid=142413)
 - [Criando gatilhos usando código gerenciado no SQL Server 2005](http://www.15seconds.com/issue/041006.htm)
-- [Como: Criar e executar um SQL CLR procedimento armazenado de servidor](https://msdn.microsoft.com/en-us/library/5czye81z(VS.80).aspx)
-- [Como: Criar e executar uma função definida pelo usuário do CLR SQL Server](https://msdn.microsoft.com/en-us/library/w2kae45k(VS.80).aspx)
-- [Como: Editar o `Test.sql` Script para executar objetos SQL](https://msdn.microsoft.com/en-us/library/ms233682(VS.80).aspx)
+- [Como: Criar e executar um SQL CLR procedimento armazenado de servidor](https://msdn.microsoft.com/library/5czye81z(VS.80).aspx)
+- [Como: Criar e executar uma função definida pelo usuário do CLR SQL Server](https://msdn.microsoft.com/library/w2kae45k(VS.80).aspx)
+- [Como: Editar o `Test.sql` Script para executar objetos SQL](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
 - [Funções definidas pelo gratuito para usuário](http://www.sqlteam.com/item.asp?ItemID=1955)
 - [Código gerenciado e o SQL Server 2005 (vídeo)](https://channel9.msdn.com/Showpost.aspx?postid=142413)
-- [Referência do Transact-SQL](https://msdn.microsoft.com/en-us/library/aa299742(SQL.80).aspx)
-- [Passo a passo: Criando um procedimento armazenado no código gerenciado](https://msdn.microsoft.com/en-us/library/zxsa8hkf(VS.80).aspx)
+- [Referência do Transact-SQL](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
+- [Passo a passo: Criando um procedimento armazenado no código gerenciado](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
 ## <a name="about-the-author"></a>Sobre o autor
 

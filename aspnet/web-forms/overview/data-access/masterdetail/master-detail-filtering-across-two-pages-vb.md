@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c34476f89677fb51abc17bd64602c41dfea8f9c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d8d43475ae2f05d83d51c53d76de4f07db70ca7a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>Filtragem em duas páginas (VB) mestre/detalhes
 ====================
@@ -71,7 +71,7 @@ Com o `SupplierListMaster.aspx` e `ProductsForSupplierDetails.aspx` páginas cri
 
 É preciso incluir um link chamado exibir produtos em cada linha GridView que, quando clicado, leva o usuário para `ProductsForSupplierDetails.aspx` passando a linha selecionada `SupplierID` valor por meio de querystring. Por exemplo, se o usuário clica no link Exibir produtos para o fornecedor de Tokyo Traders (que tem um `SupplierID` valor de 4), eles devem ser enviados para `ProductsForSupplierDetails.aspx?SupplierID=4`.
 
-Para fazer isso, adicione um [HyperLinkField](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.hyperlinkfield.aspx) GridView, que adiciona um hiperlink para cada linha em GridView. Iniciar clicando no link Editar colunas de marcas inteligentes do GridView. Em seguida, selecione o HyperLinkField da lista na parte superior esquerda e clique em Adicionar para incluir o HyperLinkField na lista de campos do GridView.
+Para fazer isso, adicione um [HyperLinkField](https://msdn.microsoft.com/library/system.web.ui.webcontrols.hyperlinkfield.aspx) GridView, que adiciona um hiperlink para cada linha em GridView. Iniciar clicando no link Editar colunas de marcas inteligentes do GridView. Em seguida, selecione o HyperLinkField da lista na parte superior esquerda e clique em Adicionar para incluir o HyperLinkField na lista de campos do GridView.
 
 
 [![Adicionar um HyperLinkField a GridView](master-detail-filtering-across-two-pages-vb/_static/image9.png)](master-detail-filtering-across-two-pages-vb/_static/image8.png)
