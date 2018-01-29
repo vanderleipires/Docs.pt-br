@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: 387d19af9165d4b54ce3cb1a9b04412271da6fb0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: af8364c584b686fd5c0fe30a89e241d9d08a30c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introdução ao registro em log no ASP.NET Core
 
@@ -147,7 +147,7 @@ O ASP.NET Core define os seguintes [níveis de log](https://docs.microsoft.com/a
 
 * Trace = 0
 
-  Para informações valiosas somente para um desenvolvedor que esteja depurando um problema. Essas mensagens podem conter dados confidenciais de aplicativos e, portanto, não devem ser habilitadas em um ambiente de produção. *Desabilitado por padrão.* Exemplo: `Credentials: {"User":"someuser", "Password":"P@ssword"}`
+  Para obter informações valiosas somente para um desenvolvedor que esteja depurando um problema. Essas mensagens podem conter dados confidenciais de aplicativos e, portanto, não devem ser habilitadas em um ambiente de produção. *Desabilitado por padrão.* Exemplo: `Credentials: {"User":"someuser", "Password":"P@ssword"}`
 
 * Debug = 1
 
