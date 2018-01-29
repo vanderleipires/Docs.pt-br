@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: ee9bdc66d0bfa6433736fbc55126bdd37ba9d080
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1afb32fb6c5fffd38b7028741bfd8199e2e23d21
+ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/26/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Configurar um aplicativo do ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Mark Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [Daniel Roth](https://github.com/danroth27) e [Luke Latham](https://github.com/guardrex)
 
-A API de configuração fornece uma maneira de configurar um aplicativo Web do ASP.NET Core com base em uma lista de pares nome-valor. A configuração é lida em tempo de execução por meio de várias fontes. Você pode agrupar esses pares de nome-valor em uma hierarquia de vários níveis.
+A API de configuração fornece uma maneira de configurar um aplicativo Web do ASP.NET Core com base em uma lista de pares nome-valor. A configuração é lida em tempo de execução por meio de várias fontes. Os pares de nome-valor podem ser agrupados em uma hierarquia de vários níveis.
 
 Há provedores de configuração para:
 
@@ -59,7 +59,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 // Output: Gandalf
 ```
 
-Os pares nome-valor gravados nos provedores de [Configuração](/dotnet/api/microsoft.extensions.configuration) internos **não** são mantidos. No entanto, você pode criar um provedor personalizado que salva valores. Consulte [provedor de configuração personalizado](xref:fundamentals/configuration/index#custom-config-providers).
+Os pares nome-valor gravados nos provedores de [Configuração](/dotnet/api/microsoft.extensions.configuration) internos **não** são mantidos. No entanto, um provedor personalizado que salva valores pode ser criado. Consulte [provedor de configuração personalizado](xref:fundamentals/configuration/index#custom-config-providers).
 
 O exemplo anterior usa o indexador de configuração para ler valores. Para acessar a configuração fora de `Startup`, use o *padrão de opções*. Para obter mais informações, consulte o tópico [Opções](xref:fundamentals/configuration/options).
 
@@ -93,8 +93,8 @@ Considerações de configuração:
 
 * `IOptionsSnapshot` pode recarregar dados de configuração quando é alterado. Consulte [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot) para obter mais informações.
 * Chaves de configuração **não** diferenciam maiúsculas de minúsculas.
-* **Nunca** armazene senhas ou outros dados confidenciais no código do provedor de configuração ou nos arquivos de configuração de texto sem formatação. Não use segredos de produção em seus ambientes de teste ou de desenvolvimento. Especifique segredos fora do projeto para que eles não sejam acidentalmente comprometidos com seu repositório. Saiba mais sobre [trabalhando com vários ambientes](xref:fundamentals/environments) e gerenciamento de [armazenamento seguro de segredos de aplicativo durante o desenvolvimento](xref:security/app-secrets).
-* Se dois pontos (`:`) não puder ser usado em variáveis de ambiente em seu sistema, substitua os dois pontos (`:`) por um sublinhado duplo (`__`).
+* **Nunca** armazene senhas ou outros dados confidenciais no código do provedor de configuração ou nos arquivos de configuração de texto sem formatação. Não use segredos de produção em ambientes de teste ou de desenvolvimento. Especifique segredos fora do projeto para que eles não sejam acidentalmente comprometidos com um repositório de código-fonte. Saiba mais sobre [trabalhando com vários ambientes](xref:fundamentals/environments) e gerenciamento de [armazenamento seguro de segredos de aplicativo durante o desenvolvimento](xref:security/app-secrets).
+* Se não for possível usar dois-pontos (`:`) em variáveis de ambiente em um sistema, substitua os dois-pontos (`:`) por um sublinhado duplo (`__`).
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>Provedor na memória e associação a uma classe POCO
 
@@ -102,7 +102,7 @@ O exemplo a seguir mostra como usar o provedor na memória e associar a uma clas
 
 [!code-csharp[Main](index/sample/InMemory/Program.cs)]
 
-Os valores de configuração são retornados como cadeias de caracteres, mas a associação permite a construção de objetos. A associação permite que você recupere objetos POCO ou até mesmo gráficos de objetos inteiros.
+Os valores de configuração são retornados como cadeias de caracteres, mas a associação permite a construção de objetos. A associação permite recuperar objetos POCO ou até mesmo gráficos de objetos inteiros.
 
 ### <a name="getvalue"></a>GetValue
 
@@ -110,11 +110,11 @@ O exemplo a seguir demonstra o método de extensão [GetValue&lt;T&gt;](/dotnet/
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
-O método `GetValue<T>` do ConfigurationBinder permite que você especifique um valor padrão (80 no exemplo). `GetValue<T>` é para cenários simples e não se associa a seções inteiras. `GetValue<T>` obtém valores escalares de `GetSection(key).Value` convertidos em um tipo específico.
+O método `GetValue<T>` do ConfigurationBinder permite especificar um valor padrão (80 no exemplo). `GetValue<T>` é para cenários simples e não se associa a seções inteiras. `GetValue<T>` obtém valores escalares de `GetSection(key).Value` convertidos em um tipo específico.
 
 ## <a name="bind-to-an-object-graph"></a>Associar a um gráfico de objeto
 
-Você pode associar recursivamente a cada objeto em uma classe. Considere a classe `AppSettings` a seguir:
+Cada objeto em uma classe pode ser associado recursivamente. Considere a classe `AppSettings` a seguir:
 
 [!code-csharp[Main](index/sample/ObjectGraph/AppSettings.cs)]
 
@@ -185,7 +185,7 @@ Crie o provedor de configuração personalizado através da herança do [Configu
 
 Os valores realçados do banco de dados ("value_from_ef_1" e "value_from_ef_2") são exibidos quando o exemplo é executado.
 
-Você pode adicionar um método de extensão `EFConfigSource` para adicionar a fonte de configuração:
+Um método de extensão `EFConfigSource` para adicionar a fonte de configuração pode ser usado:
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
 
@@ -261,7 +261,7 @@ Para arquivos *appsettings* em que:
 
 Se todas as condições acima forem verdadeiras, os argumentos de linha de comando serão substituídos.
 
-O aplicativo do ASP.NET Core 2.x pode usar WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) em vez de ``CreateDefaultBuilder`. When using `WebHostBuilder`, defina a configuração manualmente com [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder). Consulte a guia do ASP.NET Core 1.x para obter mais informações.
+O aplicativo do ASP.NET Core 2.x pode usar [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) em vez de `CreateDefaultBuilder`. Ao usar `WebHostBuilder`, defina manualmente a configuração com [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder). Consulte a guia do ASP.NET Core 1.x para obter mais informações.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -331,7 +331,7 @@ Se chaves duplicadas forem fornecidas, o último par chave-valor será usado.
 
 ### <a name="switch-mappings"></a>Mapeamentos de comutador
 
-Ao criar manualmente a configuração com `ConfigurationBuilder`, você pode fornecer opcionalmente um dicionário de mapeamentos de comutador para o método `AddCommandLine`. Os mapeamentos de comutador permitem que você forneça a lógica de substituição do nome da chave.
+Ao criar manualmente a configuração com `ConfigurationBuilder`, um dicionário de mapeamentos de comutador pode ser adicionado ao método `AddCommandLine`. Os mapeamentos de comutador permitem fornecer a lógica de substituição do nome da chave.
 
 Ao ser usado, o dicionário de mapeamentos de comutador é verificado para oferecer uma chave que corresponda à chave fornecida por um argumento de linha de comando. Se a chave de linha de comando for encontrada no dicionário, o valor do dicionário (a substituição da chave) será passado de volta para definir a configuração. Um mapeamento de comutador é necessário para qualquer chave de linha de comando prefixada com um traço único (`-`).
 
@@ -340,7 +340,7 @@ Regras de chave do dicionário de mapeamentos de comutador:
 * Os comutadores devem começar com um traço (`-`) ou traço duplo (`--`).
 * O dicionário de mapeamentos de comutador chave não deve conter chaves duplicadas.
 
-No exemplo a seguir, o método `GetSwitchMappings` permite que seus argumentos de linha de comando usem um prefixo de chave de traço único (`-`) e evitem prefixos de subchaves à esquerda.
+No exemplo a seguir, o método `GetSwitchMappings` permite que os argumentos de linha de comando usem um prefixo de chave de traço único (`-`) e evitem prefixos de subchaves à esquerda.
 
 [!code-csharp[Main](index/sample/CommandLine/Program.cs?highlight=10-19,32)]
 
@@ -372,7 +372,7 @@ Left: 1984
 
 Depois que o dicionário de mapeamentos de comutador for criado, ele conterá os dados mostrados na tabela a seguir:
 
-| Chave            | Valor                 |
+| Key            | Valor                 |
 | -------------- | --------------------- |
 | `-MachineName` | `Profile:MachineName` |
 | `-Left`        | `App:MainWindow:Left` |
@@ -394,6 +394,10 @@ Left: 1988
 
 Um arquivo *web.config* é necessário quando você hospeda o aplicativo em IIS ou IIS Express. As configurações no *web.config* habilitam o [Módulo ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) para iniciar o aplicativo e definir outras configurações e módulos do IIS. Se o arquivo *web.config* não estiver presente e o arquivo de projeto inclui `<Project Sdk="Microsoft.NET.Sdk.Web">`, a publicação do projeto criará um arquivo *web.config* na saída publicada (a pasta *publish*). Para obter mais informações, consulte [Hospedar o ASP.NET Core no Windows com o IIS](xref:host-and-deploy/iis/index#webconfig).
 
+## <a name="accessing-configuration-during-startup"></a>Acessando a configuração durante a inicialização
+
+Para acessar a configuração em `ConfigureServices` ou `Configure` durante a inicialização, consulte os exemplos no tópico [Inicialização do aplicativo](xref:fundamentals/startup).
+
 ## <a name="additional-notes"></a>Observações adicionais
 
 * A DI (injeção de dependência) não é configurada até que `ConfigureServices` seja invocado.
@@ -401,7 +405,7 @@ Um arquivo *web.config* é necessário quando você hospeda o aplicativo em IIS 
 * O `IConfiguration` tem duas especializações:
   * `IConfigurationRoot` Usado para o nó raiz. Pode disparar um recarregamento.
   * `IConfigurationSection` Representa uma seção de valores de configuração. O métodos `GetSection` e `GetChildren` retornam um `IConfigurationSection`.
-  * Use [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) ao recarregar a configuração ou se precisar de acesso para cada provedor. Nenhuma dessas situações são comuns.
+  * Use [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) ao recarregar a configuração ou para ter acesso a cada provedor. Nenhuma dessas situações são comuns.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
