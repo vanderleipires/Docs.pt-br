@@ -9,11 +9,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 manager: wpickett
 uid: tutorials/first-mvc-app-xplat/adding-model
-ms.openlocfilehash: 4c09225c925c326da7e815b39f176325a04fc17b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 32677b8232e907e8431e05a3727fe7a2e5717ec4
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/25/2018
 ---
 [!INCLUDE[adding-model1](../../includes/mvc-intro/adding-model1.md)]
 
@@ -57,10 +57,6 @@ Abra uma janela de terminal na pasta do projeto e execute os seguintes comandos:
 dotnet restore
 dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries 
 ```
-
-> [!NOTE]
-> Se você receber um erro quando executar o comando de scaffolding, consulte [problema 444 no repositório de scaffolding](https://github.com/aspnet/scaffolding/issues/444) para uma solução alternativa.
-
 O mecanismo de scaffolding cria o seguinte:
 
 * Um controlador de filmes (*Controllers/MoviesController.cs*)
