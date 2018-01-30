@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: f40189796d3e25e9c337768cf04fdbfa293cdc2f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1ac7fb62767d61c97fe00338bc0f5087f4863b5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="data-source-controls"></a>Controles de fonte de dados
 ====================
@@ -65,11 +65,11 @@ EnableCaching é uma propriedade booleana que determina se o armazenamento em ca
 
 A propriedade CacheDuration define o número de segundos que o cache permanece válido. Definir essa propriedade como **0** faz com que o cache permaneça válido até explicitamente invalidados.
 
-## <a name="cacheexpirationpolicy-property"></a>Propriedade CacheExpirationPolicy
+## <a name="cacheexpirationpolicy-property"></a>CacheExpirationPolicy Property
 
 A propriedade CacheExpirationPolicy pode ser definida como **absoluto** ou **deslizante**. Definindo-a como absoluta significa que a quantidade máxima de tempo que os dados serão armazenados em cache é o número de segundos especificado pela propriedade CacheDuration. Definindo-a como deslizante, o tempo de expiração é redefinido quando cada operação é executada.
 
-## <a name="cachekeydependency-property"></a>Propriedade CacheKeyDependency
+## <a name="cachekeydependency-property"></a>CacheKeyDependency Property
 
 Se for especificado um valor de cadeia de caracteres para a propriedade CacheKeyDependency, ASP.NET irá configurar uma nova dependência de cache com base na cadeia de caracteres. Isso permite que você explicitamente invalidar o cache simplesmente alterando ou removendo o CacheKeyDependency.
 

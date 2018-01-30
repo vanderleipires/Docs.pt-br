@@ -2,18 +2,18 @@
 title: "Migrando de autenticação e identidade principal do ASP.NET 2.0"
 author: scottaddie
 description: "Este artigo descreve as etapas mais comuns de identidade e autenticação de 1. x ASP.NET Core migrando para o ASP.NET 2.0 de núcleo."
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 10/26/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 72ad31438a344fb5fa2b357c709b923b8077e742
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dd48b2b027d22b570aa182e748ca91738e935f49
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>Migrando de autenticação e identidade do núcleo do ASP.NET 2.0
 
@@ -136,7 +136,7 @@ Faça as seguintes alterações em *Startup.cs*:
 
     Este trecho de código não usa a identidade, portanto o esquema padrão deve ser definido passando `JwtBearerDefaults.AuthenticationScheme` para o `AddAuthentication` método.
 
-### <a name="openid-connect-oidc-authentication"></a>OpenID Connect (OIDC) autenticação
+### <a name="openid-connect-oidc-authentication"></a>Autenticação do OpenID conectar (OIDC)
 Faça as seguintes alterações em *Startup.cs*:
 
 - Substitua o `UseOpenIdConnectAuthentication` chamada do método de `Configure` método com `UseAuthentication`:
@@ -161,7 +161,7 @@ Faça as seguintes alterações em *Startup.cs*:
     });
     ```
 
-### <a name="facebook-authentication"></a>Autenticação do Facebook
+### <a name="facebook-authentication"></a>autenticação do Facebook
 Faça as seguintes alterações em *Startup.cs*:
 - Substitua o `UseFacebookAuthentication` chamada do método de `Configure` método com `UseAuthentication`:
  
@@ -180,7 +180,7 @@ Faça as seguintes alterações em *Startup.cs*:
             });
     ```
 
-### <a name="google-authentication"></a>Google Authentication
+### <a name="google-authentication"></a>Autenticação do Google
 Faça as seguintes alterações em *Startup.cs*:
 - Substitua o `UseGoogleAuthentication` chamada do método de `Configure` método com `UseAuthentication`:
  
@@ -199,7 +199,7 @@ Faça as seguintes alterações em *Startup.cs*:
             });    
     ```
 
-### <a name="microsoft-account-authentication"></a>Microsoft Account Authentication
+### <a name="microsoft-account-authentication"></a>Autenticação de Account da Microsoft
 Faça as seguintes alterações em *Startup.cs*:
 - Substitua o `UseMicrosoftAccountAuthentication` chamada do método de `Configure` método com `UseAuthentication`:
 
@@ -296,7 +296,7 @@ Falha ao definir o esquema padrão adequadamente impede que a solicitação de a
 
 <a name="identity-cookie-options"></a>
 
-## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions Instances
+## <a name="identitycookieoptions-instances"></a>Instâncias de IdentityCookieOptions
 Um efeito colateral das 2.0 alterações é o switch usando nomeados opções em vez de instâncias de opções do cookie. A capacidade de personalizar os nomes de esquema de cookie de identidade é removida.
 
 Por exemplo, 1. x projetos usam [injeção de construtor](xref:mvc/controllers/dependency-injection#constructor-injection) para passar um `IdentityCookieOptions` parâmetro em *AccountController.cs*. O esquema de autenticação de cookie externa é acessado da instância fornecida:

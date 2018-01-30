@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41e1f8673b42571a9dcbdae668a30426fe90f42f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b4bba02449debff17422f6b7008247fdf61856c8
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-elmah-vb"></a>Detalhes de erro de log com ELMAH (VB)
 ====================
@@ -29,7 +29,7 @@ por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 ## <a name="introduction"></a>Introdução
 
-O [tutorial anterior](logging-error-details-with-asp-net-health-monitoring-vb.md) examinado ASP. Sistema, que oferece um fora da biblioteca de caixa para registrar uma ampla variedade de eventos da Web de monitoramento da integridade da rede. Muitos desenvolvedores usam para fazer logon e os detalhes de exceções sem tratamento de email de monitoramento de integridade. No entanto, há alguns pontos problemáticos com este sistema. Primeiramente, é a falta qualquer tipo de interface do usuário para exibir informações sobre os eventos registrados. Se você quiser ver um resumo das últimos 10 erros ou exibir os detalhes de erro que ocorreu a última semana, você deve ou enviar por meio do banco de dados, examinar a sua caixa de entrada ou criar uma página da web que exibe informações do `aspnet_WebEvent_Events` tabela.
+O [tutorial anterior](logging-error-details-with-asp-net-health-monitoring-vb.md) examinado ASP. Sistema, que oferece um fora da biblioteca de caixa para registrar uma ampla variedade de eventos da Web de monitoramento da integridade da rede. Muitos desenvolvedores usam para fazer logon e email com os detalhes de exceções sem tratamento de monitoramento de integridade. No entanto, há alguns pontos problemáticos com este sistema. Primeiramente, é a falta qualquer tipo de interface do usuário para exibir informações sobre os eventos registrados. Se você quiser ver um resumo das últimos 10 erros ou exibir os detalhes de erro que ocorreu a última semana, você deve ou enviar por meio do banco de dados, examinar a sua caixa de entrada de email ou criar uma página da web que exibe informações do `aspnet_WebEvent_Events` tabela.
 
 Outro ponto problemático gira em torno de complexidade do monitoramento de integridade. Como monitoramento de integridade pode ser usado para gravar uma grande quantidade de eventos diferentes, e há uma variedade de opções para instruções de como e quando os eventos são registrados, configurar corretamente a sistema de monitoramento de integridade pode ser uma tarefa onerosa. Por fim, existem problemas de compatibilidade. Porque o monitoramento de integridade foi adicionado para o .NET Framework versão 2.0, não está disponível para aplicativos da web mais antigos, criados usando a versão do ASP.NET 1. x. Além disso, a `SqlWebEventProvider` classe, que são usados no tutorial anterior logs detalhes do erro para um banco de dados, só funciona com bancos de dados do Microsoft SQL Server. Você precisará criar uma classe de provedor de log personalizado se você precisar registrar erros em um repositório de dados alternativos, como um arquivo XML ou banco de dados Oracle.
 
@@ -199,17 +199,17 @@ O log de erros no ambiente de produção agora pode ser exibido por usuários re
 
 Do ELMAH `ErrorLogModule` módulo HTTP registra automaticamente exceções sem tratamento para a fonte de log especificado. Como alternativa, você pode registrar um erro sem precisar gerar uma exceção sem tratamento usando o `ErrorSignal` classe e seu `Raise` método. O `Raise` método é passado um `Exception` do objeto e o registra como se essa exceção tive sido lançada e atingiu o tempo de execução do ASP.NET sem que estão sendo tratados. No entanto, a diferença é que a solicitação continuará normalmente depois de executar o `Raise` método foi chamado, enquanto que uma exceção sem tratamento, lançada interrompe a execução normal da solicitação e faz com que o tempo de execução do ASP.NET exibir configurado página de erro.
 
-O `ErrorSignal` classe é útil em situações em que há alguma ação que pode falhar, mas não é sua falha catastrófica para a operação geral que está sendo executada. Por exemplo, um site pode conter um formulário que usa a entrada do usuário, armazena em um banco de dados e envia um email informando-o usuário que as informações foram processadas. O que deve acontecer se as informações são salvas no banco de dados com êxito, mas há um erro ao enviar a mensagem de email? Uma opção seria lançar uma exceção e enviar o usuário para a página de erro. No entanto, isso pode confundir o usuário a pensar que não foi salva as informações inseridos por eles. Outra abordagem seria log o erro relacionado a email, mas não alteram a experiência do usuário de qualquer maneira. Isso é onde o `ErrorSignal` classe é útil.
+O `ErrorSignal` classe é útil em situações em que há alguma ação que pode falhar, mas não é sua falha catastrófica para a operação geral que está sendo executada. Por exemplo, um site pode conter um formulário que leva a entrada do usuário, armazena em um banco de dados e, em seguida, envia o usuário de um email informando que as informações foram processadas. O que deve acontecer se as informações são salvas no banco de dados com êxito, mas não há um erro ao enviar a mensagem de email? Uma opção seria lançar uma exceção e enviar o usuário para a página de erro. No entanto, isso pode confundir o usuário a pensar que não foi salva as informações inseridos por eles. Outra abordagem seria log o erro relacionado a email, mas não alteram a experiência do usuário de qualquer maneira. Isso é onde o `ErrorSignal` classe é útil.
 
 [!code-vb[Main](logging-error-details-with-elmah-vb/samples/sample6.vb)]
 
-## <a name="error-notification-via-e-mail"></a>Erro de notificação por email
+## <a name="error-notification-via-email"></a>Erro de notificação por Email
 
 Junto com o log de erros para um banco de dados, ELMAH também pode ser configurado para enviar email detalhes do erro para um destinatário especificado. Essa funcionalidade é fornecida pelo `ErrorMailModule` módulo HTTP; portanto, você deve registrar este módulo HTTP em `Web.config` para o envio de detalhes de erro via email.
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample7.xml)]
 
-Em seguida, especifique as informações sobre o email de erro no `<elmah>` do elemento `<errorMail>` seção, indicando que o email de remetente e destinatário, assunto, e se o email é enviado assincronamente.
+Em seguida, especifique informações sobre o erro de email no `<elmah>` do elemento `<errorMail>` seção, indicando que do email remetente e destinatário, assunto, e se o email é enviado assincronamente.
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample8.xml)]
 
@@ -219,7 +219,7 @@ Com as configurações acima em vigor, sempre que um erro de tempo de execução
 
 [![](logging-error-details-with-elmah-vb/_static/image21.png)](logging-error-details-with-elmah-vb/_static/image20.png)
 
-**Figura 8**: você pode configurar ELMAH para enviar detalhes de erro por email  
+**Figura 8**: você pode configurar ELMAH para enviar detalhes de erro por Email  
 ([Clique para exibir a imagem em tamanho normal](logging-error-details-with-elmah-vb/_static/image22.png))
 
 ## <a name="only-logging-errors-of-interest"></a>Somente log de erros de interesse

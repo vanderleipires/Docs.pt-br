@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 95c0b72e3811dc23f8bdea180be5b20800ab3bd8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 83f7504e3aeb02ed222712e7e51f612f7ffd5744
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>Detalhes de erro de log com o ASP.NET (VB) de monitoramento de integridade
 ====================
@@ -104,7 +104,7 @@ Se você criar esse tipo de página, verifique se que você adotar medidas para 
 > O tutorial subsequente explora um sistema de notificação e registro em log de erro alternativas denominado ELMAH. ELMAH inclui um mecanismo interno para exibir o log de erros de ambos os uma página da web e um RSS feed.
 
 
-## <a name="logging-events-to-e-mail"></a>Log de eventos para email
+## <a name="logging-events-to-email"></a>Log de eventos para Email
 
 A integridade do sistema de monitoramento inclui um provedor de origem de log que "registra" um evento para uma mensagem de email. A fonte de log inclui as mesmas informações que estão conectadas ao banco de dados no corpo da mensagem de email. Você pode usar esta fonte de log para notificar um desenvolvedor quando ocorre um determinado evento de monitoramento de integridade.
 
@@ -114,25 +114,25 @@ Vamos atualizar as revisões de catálogo de configuração do site para que rec
 2. Registrar o provedor de origem do log de email no `<providers>` elemento, e
 3. Adicione uma entrada para o `<rules>` elemento que mapeia o evento de "Todos os erros" para o provedor de origem do log adicionado na etapa (2).
 
-Sistema de monitoramento de integridade inclui duas classes de provedor de origem para log email: `SimpleMailWebEventProvider` e `TemplatedMailWebEventProvider`. O [ `SimpleMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) envia uma mensagem de email de texto simples que inclui o evento de detalhes e fornece pouca personalização do corpo do email. Com o [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) você especificar uma página ASP.NET cuja marcação renderizada é usada como o corpo da mensagem de email. O [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) lhe dá muito maior controle sobre o conteúdo e o formato da mensagem de email, mas exige um pouco mais trabalho inicial já que você precisa criar a página ASP.NET que gera o corpo da mensagem de email. Este tutorial se concentra no uso de `SimpleMailWebEventProvider` classe.
+Sistema de monitoramento de integridade inclui duas classes de provedor de fonte para log email: `SimpleMailWebEventProvider` e `TemplatedMailWebEventProvider`. O [ `SimpleMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) envia uma mensagem de email de texto sem formatação que inclui o evento de detalhes e fornece pouca personalização do corpo do email. Com o [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) você especificar uma página ASP.NET cuja marcação renderizada é usada como o corpo da mensagem de email. O [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) lhe dá muito maior controle sobre o conteúdo e o formato da mensagem de email, mas exige um pouco mais trabalho inicial já que você precisa criar a página ASP.NET que gera o corpo da mensagem de email. Este tutorial se concentra no uso de `SimpleMailWebEventProvider` classe.
 
 Atualização do sistema de monitoramento de integridade `<providers>` elemento o `Web.config` arquivo para incluir uma fonte de log para o `SimpleMailWebEventProvider` classe:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-vb/samples/sample3.xml)]
 
-A marcação acima usa o `SimpleMailWebEventProvider` classe como o provedor de origem do log e atribui o nome amigável "EmailWebEventProvider". Além disso, o `<add>` atributo inclui opções de configuração adicionais, como para e de endereços de email.
+A marcação acima usa o `SimpleMailWebEventProvider` classe como o provedor de origem do log e atribui o nome amigável "EmailWebEventProvider". Além disso, o `<add>` atributo inclui opções de configuração adicionais, como para e de endereços da mensagem de email.
 
 Com a fonte de log de email definida, tudo o que falta é instruir a sistema para usar essa fonte para "Registrar" exceções sem tratamento de monitoramento de integridade. Isso é feito adicionando uma nova regra no `<rules>` seção:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-vb/samples/sample4.xml)]
 
-O `<rules>` seção agora inclui duas regras. O primeiro deles, chamado de "Todos os erros de email", envia todas as exceções sem tratamento para a fonte de log "EmailWebEventProvider". Essa regra tem o efeito de enviar detalhes sobre erros no site especificado para o endereço. A regra "Todos os erros no banco de dados" registra os detalhes do erro para o banco de dados do site. Consequentemente, sempre que ocorre uma exceção sem tratamento no site de seus detalhes são ambos conectadas ao banco de dados e enviadas ao endereço de email especificado.
+O `<rules>` seção agora inclui duas regras. O primeiro deles, chamado de "Todos os erros de Email", envia todas as exceções sem tratamento para a fonte de log "EmailWebEventProvider". Essa regra tem o efeito de enviar detalhes sobre erros no site especificado para o endereço. A regra "Todos os erros no banco de dados" registra os detalhes do erro para o banco de dados do site. Consequentemente, sempre que ocorre uma exceção sem tratamento no site de seus detalhes são ambos conectadas ao banco de dados e enviadas ao endereço de email especificado.
 
 **Figura 2** mostra o email gerado pelo `SimpleMailWebEventProvider` classe ao visitar `Genre.aspx?ID=foo`.
 
 [![](logging-error-details-with-asp-net-health-monitoring-vb/_static/image5.png)](logging-error-details-with-asp-net-health-monitoring-vb/_static/image4.png)
 
-**Figura 2**: os detalhes do erro são enviadas em uma mensagem de email  
+**Figura 2**: os detalhes do erro são enviadas em uma mensagem de Email  
 ([Clique para exibir a imagem em tamanho normal](logging-error-details-with-asp-net-health-monitoring-vb/_static/image6.png))
 
 ## <a name="summary"></a>Resumo

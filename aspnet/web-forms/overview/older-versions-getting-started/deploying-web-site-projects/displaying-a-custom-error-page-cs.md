@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e2fcaa615415b6f61e96e12dc77866d00110a33e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8d68dedfc1f606cc6f0381bcbdb3f65c1ea3b2e5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="displaying-a-custom-error-page-c"></a>Exibindo uma página de erro personalizada (c#)
 ====================
@@ -29,7 +29,7 @@ por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 ## <a name="introduction"></a>Introdução
 
-Em um mundo perfeito, não deve haver nenhum erro de tempo de execução. Programadores deve escrever o código ao fim sem nenhum um bug e com a validação de entrada do usuário robusto e externos recursos, como servidores de banco de dados e servidores de email nunca deve ir offline. É claro que, na realidade, erros são inevitáveis. As classes do .NET Framework sinalizam um erro ao gerar uma exceção. Por exemplo, o método Open do objeto chamando uma SqlConnection estabelece uma conexão ao banco de dados especificado por uma cadeia de caracteres de conexão. No entanto, se o banco de dados está inativo ou se as credenciais na cadeia de conexão são inválidas, em seguida, o método Open lança um `SqlException`. Exceções podem ser manipuladas pelo uso de `try/catch/finally` blocos. Se código dentro de um `try` bloco lançar uma exceção, o controle é transferido para o bloco catch apropriado em que o desenvolvedor pode tentar recuperar do erro. Se não há nenhum bloco catch correspondente, ou se o código que lançou a exceção não estiver em um bloco try, a exceção percolates a pilha de chamadas search de `try/catch/finally` blocos.
+Em um mundo perfeito, não deve haver nenhum erro de tempo de execução. Programadores deve escrever o código ao fim sem nenhum um bug e com a validação de entrada do usuário robusto e externos recursos, como servidores de email e servidores de banco de dados nunca deve ir offline. É claro que, na realidade, erros são inevitáveis. As classes do .NET Framework sinalizam um erro ao gerar uma exceção. Por exemplo, o método Open do objeto chamando uma SqlConnection estabelece uma conexão ao banco de dados especificado por uma cadeia de caracteres de conexão. No entanto, se o banco de dados está inativo ou se as credenciais na cadeia de conexão são inválidas, em seguida, o método Open lança um `SqlException`. Exceções podem ser manipuladas pelo uso de `try/catch/finally` blocos. Se código dentro de um `try` bloco lançar uma exceção, o controle é transferido para o bloco catch apropriado em que o desenvolvedor pode tentar recuperar do erro. Se não há nenhum bloco catch correspondente, ou se o código que lançou a exceção não estiver em um bloco try, a exceção percolates a pilha de chamadas search de `try/catch/finally` blocos.
 
 Se a exceção bolhas todo o caminho até o tempo de execução do ASP.NET sem que está sendo tratado, o [ `HttpApplication` classe](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)do [ `Error` evento](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx) é gerado e configurado *página de erro*  é exibido. Por padrão, o ASP.NET exibe uma página de erro que normalmente é referida como o [amarelo tela de morte](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). Há duas versões do YSOD: um mostra os detalhes da exceção, um rastreamento de pilha e outras informações úteis para os desenvolvedores a depurar o aplicativo (consulte **Figura 1**); o outro simplesmente informando que houve um erro de tempo de execução (consulte  **Figura 2**).
 

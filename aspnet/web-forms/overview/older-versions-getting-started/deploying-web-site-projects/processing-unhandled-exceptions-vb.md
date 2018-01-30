@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f2c7b1324e75584a80530620eea94d4ecd7a7044
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5a4d2e3468c9b7db5d3acf9f59fc13a6b791497
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="processing-unhandled-exceptions-vb"></a>Processamento de exceções sem tratamento (VB)
 ====================
@@ -93,7 +93,7 @@ Quando ocorre uma exceção sem tratamento no ambiente de produção é importan
 Classes do .NET Framework a [ `System.Net.Mail` namespace](https://msdn.microsoft.com/library/system.net.mail.aspx) facilitam enviar um email. O [ `MailMessage` classe](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) representa uma mensagem de email e tem propriedades como `To`, `From`, `Subject`, `Body`, e `Attachments`. O `SmtpClass` é usada para enviar um `MailMessage` objeto usando um servidor SMTP especificado; as configurações do servidor SMTP podem ser especificadas de forma programática ou declarativamente no [ `<system.net>` elemento](https://msdn.microsoft.com/library/6484zdc1.aspx) no `Web.config file`. Para obter mais informações sobre o envio de email mensagens em um aplicativo ASP.NET Confira o artigo [enviar o Email no ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)e o [mail perguntas frequentes sobre](http://systemnetmail.com/).
 
 > [!NOTE]
-> O `<system.net>` elemento contém as configurações do servidor SMTP usadas pelo `SmtpClient` classe ao enviar um email. Hospedagem da empresa provavelmente tem um servidor SMTP que você pode usar para enviar email do seu aplicativo. Consulte a seção de suporte do host da web para obter informações sobre configurações do servidor SMTP, que você deve usar em seu aplicativo da web.
+> O `<system.net>` elemento contém as configurações do servidor SMTP usadas pelo `SmtpClient` classe ao enviar um email. Hospedagem da empresa provavelmente tem um servidor SMTP que você pode usar para enviar email de seu aplicativo. Consulte a seção de suporte do host da web para obter informações sobre configurações do servidor SMTP, que você deve usar em seu aplicativo da web.
 
 
 Adicione o seguinte código para o `Application_Error` manipulador de eventos para enviar um email de um desenvolvedor quando ocorre um erro:
@@ -107,21 +107,21 @@ Em seguida, um `MailMessage` objeto chamado `mm` é criado. O corpo do email é 
 A etapa final é enviar o `MailMessage`. Isso é feito criando um novo `SmtpClient` método e chamar sua `Send` método.
 
 > [!NOTE]
-> Antes de usar esse código em seu aplicativo web você vai querer alterar os valores no `ToAddress` e `FromAddress` constantes de support@example.com para qualquer endereço de email o email de notificação de erro devem ser enviadas para e originam. Você também precisará especificar configurações do servidor SMTP no `<system.net>` seção `Web.config`. Consulte seu provedor de host da web para determinar as configurações do servidor SMTP a ser usado.
+> Antes de usar esse código em seu aplicativo web você vai querer alterar os valores no `ToAddress` e `FromAddress` constantes de support@example.com para qualquer email endereço de email de notificação de erro devem ser enviadas para e originam. Você também precisará especificar configurações do servidor SMTP no `<system.net>` seção `Web.config`. Consulte seu provedor de host da web para determinar as configurações do servidor SMTP a ser usado.
 
 
 Com esse código no local a qualquer momento, há um erro ao desenvolvedor é enviado uma mensagem de email que resume o erro e inclui o YSOD. No tutorial anterior demonstramos um erro de tempo de execução visitando Genre.aspx e passando inválido `ID` valor por meio de querystring, como `Genre.aspx?ID=foo`. Visitar a página com o `Global.asax` arquivo no local produz a mesma experiência de usuário, como no tutorial anterior - no ambiente de desenvolvimento você continuará a ver a exceção detalhes amarelo tela de morte, enquanto no ambiente de produção, você vai Consulte a página de erro personalizada. Além desse comportamento existente, o desenvolvedor é enviado um email.
 
-**Figura 2** mostra o email recebido ao visitar `Genre.aspx?ID=foo`. O corpo do email resume as informações de exceção, enquanto o `YSOD.htm` anexo exibe o conteúdo que é mostrado na YSOD de detalhes de exceção (consulte **Figura 3**).
+**Figura 2** mostra as mensagens de email recebidas quando visitar `Genre.aspx?ID=foo`. O corpo do email resume as informações de exceção, enquanto o `YSOD.htm` anexo exibe o conteúdo que é mostrado na YSOD de detalhes de exceção (consulte **Figura 3**).
 
 [![](processing-unhandled-exceptions-vb/_static/image5.png)](processing-unhandled-exceptions-vb/_static/image4.png)
 
-**Figura 2**: O desenvolvedor é enviado uma notificação por email sempre que houver uma exceção sem tratamento  
+**Figura 2**: O desenvolvedor é enviado uma notificação por Email sempre que houver uma exceção sem tratamento  
  ([Clique para exibir a imagem em tamanho normal](processing-unhandled-exceptions-vb/_static/image6.png))
 
 [![](processing-unhandled-exceptions-vb/_static/image8.png)](processing-unhandled-exceptions-vb/_static/image7.png)
 
-**Figura 3**: A notificação de email inclui os detalhes da exceção YSOD como um anexo  
+**Figura 3**: A notificação de Email inclui os detalhes da exceção YSOD como um anexo  
  ([Clique para exibir a imagem em tamanho normal](processing-unhandled-exceptions-vb/_static/image9.png))
 
 ## <a name="what-about-using-the-custom-error-page"></a>E sobre como usar a página de erro personalizado?

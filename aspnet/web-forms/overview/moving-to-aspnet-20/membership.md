@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6bff33e9ec1de03c591de6eee2e632c7b7509d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a5a495845b60f9aac51c9776311af67f5dc8767
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="membership"></a>Associação
 ====================
@@ -120,7 +120,7 @@ O controle LoginView é um controle de modelo que fornece dois modelos padrão. 
 
 ## <a name="passwordrecovery-control"></a>Controle PasswordRecovery
 
-O controle PasswordRecovery permite aos usuários receber um email com sua senha atual ou redefinir sua senha. Texto não criptografado e senhas criptografadas podem ser recuperadas e enviados por email para os usuários. Se a senha terá hash, ele não pode ser recuperado. Em vez disso, o usuário será necessário para executar uma redefinição de senha.
+O controle PasswordRecovery permite que os usuários recebem um email com sua senha atual ou redefinir sua senha. Texto não criptografado e senhas criptografadas podem ser recuperadas e enviado por email para os usuários. Se a senha terá hash, ele não pode ser recuperado. Em vez disso, o usuário será necessário para executar uma redefinição de senha.
 
 ## <a name="loginstatus-control"></a>Controle de status de logon
 

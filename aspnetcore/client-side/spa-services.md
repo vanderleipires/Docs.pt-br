@@ -2,19 +2,19 @@
 title: "Usando JavaScriptServices para criar aplicativos de única página"
 author: scottaddie
 description: "Saiba mais sobre os benefícios de usar JavaScriptServices para criar um aplicativo de página única (SPA) com o apoio de ASP.NET Core."
-ms.author: scaddie
 manager: wpickett
-ms.date: 08/02/2017
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/spa-services
+ms.author: scaddie
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 514efcdd78957f999e46c521d0266f092f742538
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 08/02/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/spa-services
+ms.openlocfilehash: bd18d342de7c147e3588bd6daa3aebd68aa81c36
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>Usando JavaScriptServices para criar aplicativos de única página com o ASP.NET Core
 
@@ -288,7 +288,7 @@ Abra o *. csproj* arquivo gerado pelo `dotnet new` comando. Os pacotes NuGet e n
 
 ## <a name="testing-the-app"></a>O aplicativo de teste
 
-Modelos de SpaServices são pré-configurados para executar testes de cliente usando [Karma](https://karma-runner.github.io/1.0/index.html) e [Jasmine](https://jasmine.github.io/). Jasmine é uma unidade popular de estrutura de teste para JavaScript, enquanto Karma é um executor de teste para os testes. Karma está configurado para funcionar com o [Webpack desenvolvimento Middleware](#webpack-dev-middleware) , de modo que você não precisa parar e o teste seja executado sempre que forem feitas alterações. Se o código em execução no caso de teste ou o caso de teste, o teste será executado automaticamente.
+Modelos de SpaServices são pré-configurados para executar testes de cliente usando [Karma](https://karma-runner.github.io/1.0/index.html) e [Jasmine](https://jasmine.github.io/). Jasmine é uma unidade popular de estrutura de teste para JavaScript, enquanto Karma é um executor de teste para os testes. Karma está configurado para funcionar com o [Webpack desenvolvimento Middleware](#webpack-dev-middleware) , de modo que o desenvolvedor não é necessário parar e o teste seja executado sempre que forem feitas alterações. Se o código em execução no caso de teste ou o caso de teste, o teste será executado automaticamente.
 
 Usando o aplicativo Angular como exemplo, dois casos de teste Jasmine já são fornecidos para o `CounterComponent` no *counter.component.spec.ts* arquivo:
 

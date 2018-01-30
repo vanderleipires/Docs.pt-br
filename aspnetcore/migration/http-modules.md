@@ -2,18 +2,18 @@
 title: "Migrando manipuladores HTTP e módulos ASP.NET Core middleware"
 author: rick-anderson
 description: 
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 12/07/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: a38ddc64583de05b4088cd31d48fbd7ee949d4e5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrando manipuladores HTTP e módulos ASP.NET Core middleware 
 
@@ -380,10 +380,7 @@ O `SetCookies` método de retorno de chamada deve ser semelhante ao seguinte:
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Visão geral de módulos HTTP e de manipuladores HTTP](https://docs.microsoft.com/iis/configuration/system.webserver/)
-
+* [Visão geral de módulos HTTP e de manipuladores HTTP](/iis/configuration/system.webserver/)
 * [Configuração](xref:fundamentals/configuration/index)
-
-* [Inicialização de aplicativos](../fundamentals/startup.md)
-
-* [Middleware](../fundamentals/middleware.md)
+* [Inicialização de aplicativos](xref:fundamentals/startup)
+* [Middleware](xref:fundamentals/middleware)

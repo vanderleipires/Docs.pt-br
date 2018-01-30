@@ -1,20 +1,20 @@
 ---
 title: Host ASP.NET Core no Linux com Nginx
-description: "Descreve como configurar Nginx como um proxy reverso no Ubuntu 16.04 para encaminhar o tráfego HTTP para um aplicativo web do ASP.NET Core em execução no Kestrel."
 author: rick-anderson
-ms.author: riande
+description: "Descreve como configurar Nginx como um proxy reverso no Ubuntu 16.04 para encaminhar o tráfego HTTP para um aplicativo web do ASP.NET Core em execução no Kestrel."
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 08/21/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 465f1391ef4ff9492d9aed48cb32da0659ceda41
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9939e420fee41b11e709da911d4051a048e789b3
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Host ASP.NET Core no Linux com Nginx
 
@@ -51,7 +51,7 @@ Um proxy reverso é uma instalação comum para que serve a aplicativos web din�
 
 ### <a name="why-use-a-reverse-proxy-server"></a>Por que usar um servidor proxy reverso?
 
-O Kestrel é ótimo para servir conteúdo dinâmico do ASP.NET Core; no entanto, as partes de atendimento à Web não são tão ricas em recursos quanto servidores como IIS, Apache ou Nginx. Um servidor proxy reverso pode descarregar trabalho como servir conteúdo estático, armazenar solicitações em cache, compactar solicitações e terminar SSL do servidor HTTP. Um servidor proxy reverso pode residir em um computador dedicado ou pode ser implantado junto com um servidor HTTP.
+Kestrel é excelente para servir conteúdo dinâmico do ASP.NET Core. No entanto, os recursos de servidor web não são como muitos recursos como servidores, como o IIS, o Apache ou Nginx. Um servidor proxy reverso pode descarregar o trabalho, como que serve o conteúdo estático, solicitações de cache, a compactação de solicitações e a terminação de SSL do servidor HTTP. Um servidor proxy reverso pode residir em um computador dedicado ou pode ser implantado junto com um servidor HTTP.
 
 Para os fins deste guia, uma única instância de Nginx é usada. Ela é executada no mesmo servidor, junto com o servidor HTTP. Com base nos requisitos, uma configuração diferente pode ser escolhida.
 

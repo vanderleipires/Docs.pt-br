@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 09f1a2e4de024e5778e69fdd691d9cb0040459f3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72e9cac7cf9a01791c30783fa56ad7ea205a5a11
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="server-controls"></a>Controles de servidor
 ====================
@@ -196,7 +196,7 @@ No ASP.NET 2.0, o atributo requestLengthDiskThreshold de um elemento httpRuntime
 
 É bastante comum encontrar dificuldades com tentando coletar informações em uma série de "páginas" usando painéis ou pela transferência de uma página de desenvolvedores do ASP.NET. Mais frequentemente que não, o desafio é um frustrante e demorado. O novo controle Wizard resolve os problemas, permitindo não linear e etapas em uma interface de assistente que usuários estão familiarizados com. O controle Wizard apresenta formulários de entrada em uma série de etapas. Cada etapa é de um determinado tipo especificado pela propriedade StepType do controle. Os tipos de etapa disponíveis são os seguintes:
 
-| **Tipo de etapa** | **Explicação** |
+| **Tipo de etapa** | **Explanation** |
 | --- | --- |
 | Auto | O assistente determina automaticamente o tipo de etapa com base em sua posição dentro da hierarquia de etapa. |
 | Início | A primeira etapa, geralmente usada para apresentar uma instrução de Introdução. |
@@ -221,10 +221,10 @@ Este vídeo é um passo a passo do controle Wizard.
 
 O controle Localize é semelhante a um controle Literal. No entanto, o controle Localize tem um **modo** propriedade que controla como a marcação que é adicionada a ele é renderizada. A propriedade Mode suporta os seguintes valores:
 
-| **Modo** | **Explicação** |
+| **Modo** | **Explanation** |
 | --- | --- |
 | Transformar | Marcação é transformada de acordo com o protocolo do navegador que está fazendo a solicitação. |
-| Passagem | Marcação é renderizada como-é. |
+| PassThrough | Marcação é renderizada como-é. |
 | Codificar | Marcação que é adicionada ao controle é codificada usando HtmlEncode. |
 
 ## <a name="multiview-and-view-controls"></a>MultiView e controles de exibição
@@ -295,7 +295,7 @@ O controle LoginView permite a exibição de modelos diferentes com base no stat
 
 O controle PasswordRecovery é usado para recuperar senhas esquecidas por usuários de um aplicativo ASP.NET. Ele é abordado em mais detalhes em um módulo posterior.
 
-## <a name="loginstatus"></a>Status de logon
+## <a name="loginstatus"></a>LoginStatus
 
 O controle de status de logon exibe o status de logon do usuário. Ele é abordado em mais detalhes em um módulo posterior.
 

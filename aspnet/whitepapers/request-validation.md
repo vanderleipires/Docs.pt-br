@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 61a96b75fdc29bdd1510ed689ee0356ef30e03fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b24fe2193d2c7a858667505bad9ed0b1d70a328
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="request-validation---preventing-script-attacks"></a>Validação - impedindo ataques de Script de solicitação
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 
 Validação de solicitação, um recurso do ASP.NET desde a versão 1.1, impede que o servidor aceite conteúdo HTML não codificado recipiente. Esse recurso é criado para ajudar a impedir que alguns ataques de injeção de script no qual o código de script do cliente ou HTML pode ser inadvertidamente enviada para um servidor, armazenado e apresentado a outros usuários. Ainda recomendamos que você validar a entrada de todos os dados e codificação HTML, quando apropriado.
 
-Por exemplo, você pode criar uma página da Web que solicita o endereço de email do usuário e, em seguida, armazena esse endereço de email em um banco de dados. Se o usuário insere &lt;SCRIPT&gt;alerta ("Olá do script")&lt;/SCRIPT&gt; em vez de um endereço de email válido quando dados são apresentados, esse script pode ser executado se o conteúdo não foi devidamente codificado. O recurso de validação de solicitação do ASP.NET impede que isso aconteça.
+Por exemplo, você pode criar uma página da Web que solicita o endereço de email do usuário e, em seguida, armazenamentos de endereços de email em um banco de dados. Se o usuário insere &lt;SCRIPT&gt;alerta ("Olá do script")&lt;/SCRIPT&gt; em vez de um endereço de email válido quando dados são apresentados, esse script pode ser executado se o conteúdo não foi devidamente codificado. O recurso de validação de solicitação do ASP.NET impede que isso aconteça.
 
 ## <a name="why-this-feature-is-useful"></a>Por que esse recurso é útil
 

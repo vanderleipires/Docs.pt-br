@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 66431cadac6011bbf247b24a08b3aacec928a715
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 34e1f9c7ee1ae22bceb614eeeaa1ebe286c1ccad
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-hosting-options-c"></a>Opções de hospedagem ASP.NET (c#)
 ====================
@@ -56,7 +56,7 @@ Em resumo, implantar um aplicativo ASP.NET envolve três etapas a seguir:
 2. Sincronizar as páginas ASP.NET, arquivos de código, os assemblies no `Bin` pastas e arquivos de suporte de HTML como arquivos CSS e JavaScript.
 3. Sincronize o esquema de banco de dados e/ou dados.
 
-As informações de configuração para um aplicativo da web geralmente estão localizadas no `Web.config` de arquivo e inclui cadeias de conexão de banco de dados, manipulação critérios, regras de regravação de URL, de erro e informações do servidor de email. Muitas vezes, essa informação é diferente de um aplicativo em desenvolvimento em comparação com o mesmo aplicativo em produção. Por exemplo, ao desenvolver um aplicativo é melhor usar um banco de dados de desenvolvimento, de forma que você está testando não no banco de dados de produção. Como resultado, as cadeias de caracteres de conexão do banco de dados geralmente são diferentes entre os aplicativos de desenvolvimento e produção. Devido a essas diferenças, parte da implantação envolve alterações às informações de configuração do aplicativo da web.
+As informações de configuração para um aplicativo da web geralmente estão localizadas no `Web.config` de arquivo e inclui cadeias de caracteres de conexão de banco de dados, critérios de tratamento de erros, regras e informações do servidor de email de regravação de URL. Muitas vezes, essa informação é diferente de um aplicativo em desenvolvimento em comparação com o mesmo aplicativo em produção. Por exemplo, ao desenvolver um aplicativo é melhor usar um banco de dados de desenvolvimento, de forma que você está testando não no banco de dados de produção. Como resultado, as cadeias de caracteres de conexão do banco de dados geralmente são diferentes entre os aplicativos de desenvolvimento e produção. Devido a essas diferenças, parte da implantação envolve alterações às informações de configuração do aplicativo da web.
 
 Além das alterações de configuração do aplicativo web, etapa 1 também pode envolver a configuração para o servidor web e o banco de dados. Por exemplo, se uma página ASP.NET cria ou exclui arquivos de um diretório no servidor web, em seguida, o servidor web precisa ser configurado para permitir que essas modificações no sistema de arquivos. Da mesma forma, pode haver configurações de permissão ou de autenticação que precisam ser feitas no banco de dados.
 
@@ -77,7 +77,7 @@ Antes de implantar seu site em um provedor de host da web, você deve primeiro d
 
 Empresas de hospedagem da Web geralmente oferecem planos de hospedagem compartilhados e dedicado planos de hospedagem. Com compartilhado hospeda um host de servidor única web dezenas se não centenas de sites diferentes. Com hospedagem dedicado você concessão de um computador da empresa que atende seu site e o site autônomo. Um plano de hospedagem compartilhado pode incluir suporte para as páginas do ASP.NET, a capacidade de trabalhar com bancos de dados do Microsoft Access, 5 GB de espaço em disco e 100 GB de tráfego mensal de largura de banda para $9,95 por mês. Outro plano de hospedagem compartilhado pode incluir suporte para as páginas do ASP.NET, acesso ao servidor de banco de dados Microsoft SQL Server 2008, 10 GB de espaço em disco e 250 GB de tráfego mensal de largura de banda de US $19,95 por mês. Dedicado planos de hospedagem são geralmente muito mais caros, custos centenas de dólares por mês, mas oferecem um desempenho melhor e mais controle que compartilhado opções de hospedagem. O plano escolhido depende de seu orçamento, a quantidade de tráfego recebe seu site e os recursos que você antecipar que você precisará.
 
-Duas considerações importantes ao escolher um provedor de host da web são qualidade de serviço e atendimento ao cliente. Se você tiver uma pergunta ou um problema de configuração, quanto tempo leva enviar seu problema ao helpdesk do host da web até que você obtenha uma resposta? Os serviços da empresa são confiáveis? Com frequência têm interrupções de banco de dados? Quantas vezes o servidor de email ficar offline? Você sempre pode pedir uma empresa para fornecer detalhes sobre o tempo de atividade e saber mais sobre a política de serviço do cliente, mas uma maneira mais certeiro é solicitar comentários dos clientes atuais e anteriores, o que pode ser feito por meio de email, grupos de notícias e fóruns online listservs.
+Duas considerações importantes ao escolher um provedor de host da web são qualidade de serviço e atendimento ao cliente. Se você tiver uma pergunta ou um problema de configuração, quanto tempo leva enviar seu problema ao helpdesk do host da web até que você obtenha uma resposta? Os serviços da empresa são confiáveis? Com frequência têm interrupções de banco de dados? Quantas vezes o servidor de email ficar offline? Você sempre pode pedir uma empresa para fornecer detalhes sobre o tempo de atividade e saber mais sobre a política de serviço do cliente, mas uma maneira mais certeiro é solicitar comentários dos clientes atuais e anteriores, o que pode ser feito por meio de email listservs, grupos de notícias e fóruns online .
 
 > [!NOTE]
 > Algumas empresas de hospedagem da web se concentrar seus negócios em uma pilha de tecnologia específica, como .NET ou [LÂMPADA](http://en.wikipedia.org/wiki/LAMP_stack) (**L** inux, **um** pache, **M** ySQL, e **P** HP), então certifique-se de que a empresa selecionar hospeda aplicativos ASP.NET. Também verifique para garantir que eles oferecem suporte a versão do ASP.NET que você está usando para criar seu aplicativo. E se você estiver criando um aplicativo orientado a dados, certifique-se de que o host da web oferece o mesmo servidor de banco de dados e a mesma versão que você está usando.

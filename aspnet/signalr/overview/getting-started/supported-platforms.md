@@ -12,13 +12,13 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 7f41017a2a8c058c01fe6f89a2503eb5fa77048e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1379b9fb638f67896d88d7aa4312d95280ef7318
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
-<a name="supported-platforms"></a>Plataformas com suporte
+<a name="supported-platforms"></a>Plataformas compatíveis
 ====================
 por [Patrick Fletcher](https://github.com/pfletcher)
 
@@ -41,6 +41,7 @@ O componente de servidor do SignalR pode ser hospedado no servidor ou cliente de
 
 - Windows Server 2012
 - Windows Server 2008 r2
+- Windows 10
 - Windows 8
 - Windows 7
 - Microsoft Azure
@@ -113,8 +114,8 @@ Além de sistema operacional e requisitos do .NET framework, os transportes disp
 | --- | --- | --- |
 | Soquetes da Web | Windows 8 e posteriores e o .NET 4.5 + | N/D |
 | Quadro para sempre | N/D | N/D |
-| Eventos enviados pelo servidor | .NET 4 + | 5+ |
-| Sondagem longa | .NET 4 + | 5+ |
+| Eventos enviados pelo servidor | .NET 4+ | 5+ |
+| Sondagem longa | .NET 4+ | 5+ |
 
 <a id="android"></a>
 

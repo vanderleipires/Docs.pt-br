@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 title: "Adicionando uma exibição | Microsoft Docs"
 author: shanselman
-description: "Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Você criará um aplicativo web simples que leituras e gravações de banco de dados."
+description: "Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 509dd301eef7c00431eae194a0df69d70e6d80f8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8725d054861c857ceac10a42b0cc3f2afe056aea
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="adding-a-view"></a>Adicionando uma exibição
 ====================
@@ -112,7 +112,7 @@ Adicione este código sob o &lt;h2&gt; no seu novo Welcome.aspx. Vamos fazer um 
 
 Além disso, observe enquanto você estiver digitando que porque disse este modo de exibição sobre o WelcomeViewModel (são casados, lembre-se?) que obtemos Intellisense útil sempre que referenciar nosso objeto de modelo, como visto na captura de tela abaixo:
 
-[![Código-fonte NumTime](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
+[![NumTime Source Code](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
 
 Execute o aplicativo e visite `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4` novamente. Agora estamos dando dados da URL, ele é passado para o nosso controlador automaticamente, nosso controlador empacota os dados em um ViewModel e passa esse objeto para nossa visão. O modo de exibição que exibe os dados como HTML para o usuário.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: 5780bfde928011f46c3f504aec927f2127f10d0d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16dfe3c899dfa028d8a52b4b5f9c2868887e8fa9
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="configuration-and-instrumentation"></a>Configuração e instrumentação
 ====================
@@ -138,7 +138,7 @@ Os tipos de provedores disponíveis permitem que você enviar a saída de evento
 
 O ASP.NET 2.0 usa o Log de eventos provedor-do-prontos para registrar eventos com base em domínios de aplicativo, iniciando e parando, bem como registro em log todas as exceções sem tratamento. Isso ajuda a abordar alguns dos cenários básicos. Por exemplo, digamos que seu aplicativo lançará uma exceção, mas o usuário não salvar o erro e não é possível reproduzi-lo. Com a regra de Log de eventos padrão, você poderá coletar as informações de exceção e a pilha para obter uma ideia melhor do que tipo de erro ocorreu. Aplica-se outro exemplo, se seu aplicativo está perdendo estado da sessão. Nesse caso, você pode examinar o Log de eventos para determinar se a reciclagem de domínio do aplicativo, e por que o domínio de aplicativo foi interrompido em primeiro lugar.
 
-Além disso, o sistema de monitoramento de integridade é extensível. Por exemplo, definir os eventos da Web personalizados, acioná-los dentro de seu aplicativo e, em seguida, definir uma regra para enviar as informações de evento para um provedor, como o email. Isso permite que você facilmente vincular sua instrumentação para provedores de monitoramento de integridade. Como outro exemplo, você pode disparar um evento sempre que um pedido é processado e configurar uma regra que envia cada evento no banco de dados do SQL Server. Você também pode disparar um evento quando um usuário não conseguir fazer logon várias vezes em uma linha e configurar o evento para usar os provedores baseados em email.
+Além disso, o sistema de monitoramento de integridade é extensível. Por exemplo, definir os eventos da Web personalizados, acioná-los dentro de seu aplicativo e, em seguida, definir uma regra para enviar as informações de evento para um provedor, como o email. Isso permite que você facilmente vincular sua instrumentação para provedores de monitoramento de integridade. Como outro exemplo, você pode disparar um evento sempre que um pedido é processado e configurar uma regra que envia cada evento no banco de dados do SQL Server. Você também pode disparar um evento quando um usuário não conseguir fazer logon várias vezes em uma linha e configurar o evento para usar os provedores de email.
 
 A configuração para os eventos e os provedores padrão é armazenada no arquivo Web. config global. O arquivo Web. config global armazena todas as baseado na Web configurações que foram armazenadas no arquivo Machine. config no ASP.NET 1 x. O arquivo global de Web. config está localizado no seguinte diretório:
 
@@ -150,9 +150,9 @@ O &lt;healthMonitoring&gt; seção do arquivo Web. config global contém os segu
 
 | **provedores** | Contém os provedores configurado para o Visualizador de eventos, o WMI e o SQL Server. |
 | --- | --- |
-| **eventMappings** | Contém mapeamentos para várias classes de WebBase. Você pode estender esta lista se você gerar sua própria classe de evento. Gerar sua própria classe de evento oferece granularidade mais fina sobre os provedores de para que enviar informações. Por exemplo, você pode configurar exceções sem tratamento a ser enviada ao SQL Server, ao enviar seus próprios eventos personalizados para enviar por email. |
+| **eventMappings** | Contém mapeamentos para várias classes de WebBase. Você pode estender esta lista se você gerar sua própria classe de evento. Gerar sua própria classe de evento oferece granularidade mais fina sobre os provedores de para que enviar informações. Por exemplo, você pode configurar exceções sem tratamento a ser enviada ao SQL Server, ao enviar seus próprios eventos personalizados para email. |
 | **regras** | Links eventMappings ao provedor. |
-| **armazenamento em buffer** | Usada com provedores de email e o SQL Server para determinar a frequência de eventos de liberação para o provedor. |
+| **armazenamento em buffer** | Usado com os provedores SQL Server e o email para determinar a frequência de eventos de liberação para o provedor. |
 
 Abaixo está um exemplo de código do arquivo Web. config global.
 
@@ -196,9 +196,9 @@ Você precisará adicionar uma regra para associar um eventMapping para o proved
 
 [!code-xml[Main](configuration-and-instrumentation/samples/sample10.xml)]
 
-## <a name="how-to-forward-events-to-e-mail"></a>Como encaminhar eventos para enviar por email
+## <a name="how-to-forward-events-to-email"></a>Como encaminhar eventos para email
 
-Você também pode encaminhar eventos para enviar por email. Tenha cuidado ao quais regras de evento que você mapear para o provedor de email, como você pode acidentalmente enviar por conta própria muitas informações que podem ser mais adequados para o SQL Server ou o Log de eventos. Há dois provedores de email; SimpleMailWebEventProvider e TemplatedMailWebEventProvider. Cada um tem os mesmos atributos de configuração, com exceção dos atributos "template" e "detailedTemplateErrors", que só estão disponíveis no TemplatedMailWebEventProvider.
+Você também pode encaminhar eventos para email. Tenha cuidado ao quais regras de evento que você mapear para seu provedor de email, como você pode acidentalmente enviar por conta própria muitas informações que podem ser mais adequados para o SQL Server ou o Log de eventos. Há dois provedores de email; SimpleMailWebEventProvider e TemplatedMailWebEventProvider. Cada um tem os mesmos atributos de configuração, com exceção dos atributos "template" e "detailedTemplateErrors", que só estão disponíveis no TemplatedMailWebEventProvider.
 
 > [!NOTE]
 > Nenhum dos provedores de email é configurado por você. Você precisará adicioná-los ao seu arquivo Web. config.

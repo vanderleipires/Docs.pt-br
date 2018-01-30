@@ -1,19 +1,19 @@
 ---
 title: "Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC"
 author: ardalis
-description: 
-ms.author: riande
+description: "Saiba como começar a migração de um projeto ASP.NET MVC ao MVC do ASP.NET Core."
 manager: wpickett
+ms.author: riande
 ms.date: 03/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: e3220fb32900aac42cf96497964936ad5b375a86
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC
 
@@ -94,7 +94,7 @@ Execute o aplicativo.
 
 ![Aplicativo Web aberto no Microsoft Edge](mvc/_static/hello-world.png)
 
-Consulte [controladores](../mvc/controllers/index.md) e [exibições](../mvc/views/index.md) para obter mais informações.
+Consulte [controladores](xref:mvc/controllers/actions) e [exibições](xref:mvc/views/overview) para obter mais informações.
 
 Agora que temos um projeto do ASP.NET Core trabalho mínimo, podemos começar a migrar a funcionalidade do projeto ASP.NET MVC. Será necessário mover o seguinte:
 
@@ -156,7 +156,7 @@ Consulte [gerenciar pacotes do lado do cliente com Bower](../client-side/bower.m
 
 * Criar um *exibições/compartilhadas* pasta.
 
-* *Opcional:* cópia *viewimports. cshtml* do *FullAspNetCore* do projeto MVC *exibições* pasta para o projeto de ASP.NET Core *Exibições* pasta. Remover qualquer declaração de namespace no *viewimports. cshtml* arquivo. O *viewimports. cshtml* arquivo fornece namespaces para todos os arquivos de exibição e coloca [auxiliares de marcação](../mvc/views/tag-helpers/index.md). Os auxiliares de marca são usados no novo arquivo de layout. O *viewimports. cshtml* arquivo é novo para o ASP.NET Core.
+* *Opcional:* cópia *viewimports. cshtml* do *FullAspNetCore* do projeto MVC *exibições* pasta para o projeto de ASP.NET Core *Exibições* pasta. Remover qualquer declaração de namespace no *viewimports. cshtml* arquivo. O *viewimports. cshtml* arquivo fornece namespaces para todos os arquivos de exibição e coloca [auxiliares de marcação](xref:mvc/views/tag-helpers/intro). Os auxiliares de marca são usados no novo arquivo de layout. O *viewimports. cshtml* arquivo é novo para o ASP.NET Core.
 
 * Copie o *cshtml* arquivo a partir do projeto ASP.NET MVC antigo *exibições/compartilhadas* pasta para do projeto ASP.NET Core *exibições/compartilhadas* pasta.
 
@@ -191,9 +191,9 @@ A atualização *cshtml* arquivo é mostrado abaixo:
 
 Exiba o site no navegador. Ele agora deve carregar corretamente, com os estilos esperados em vigor.
 
-* *Opcional:* você talvez queira usar o novo arquivo de layout. Para este projeto, você pode copiar o arquivo de layout do *FullAspNetCore* projeto. O novo arquivo de layout usa [auxiliares de marcação](../mvc/views/tag-helpers/index.md) e tiver outros aprimoramentos.
+* *Opcional:* você talvez queira usar o novo arquivo de layout. Para este projeto, você pode copiar o arquivo de layout do *FullAspNetCore* projeto. O novo arquivo de layout usa [auxiliares de marcação](xref:mvc/views/tag-helpers/intro) e tiver outros aprimoramentos.
 
-## <a name="configure-bundling--minification"></a>Configurar o agrupamento de & minimização
+## <a name="configure-bundling-and-minification"></a>Configurar o empacotamento e minimização
 
 Para obter informações sobre como configurar o empacotamento e minimização, consulte [empacotamento e minimização](../client-side/bundling-and-minification.md).
 
@@ -224,6 +224,5 @@ Consulte **usando a página de exceção de desenvolvedor** na [tratamento de er
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Desenvolvimento no Lado do Cliente](../client-side/index.md)
-
-* [Auxiliares de marcação](../mvc/views/tag-helpers/index.md)
+* [Desenvolvimento no Lado do Cliente](xref:client-side/index)
+* [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)

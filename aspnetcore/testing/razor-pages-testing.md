@@ -2,19 +2,19 @@
 title: "Unidade de páginas Razor e integração de teste no núcleo do ASP.NET"
 author: guardrex
 description: "Saiba como criar testes de unidade e a integração de aplicativos de páginas Razor."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 1ecdf010f7c283a0a08b224d570a5bc5cdf536df
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 5891b236306cd3790cbba14919796d6aa894ad53
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Unidade de páginas Razor e integração de teste no núcleo do ASP.NET
 
@@ -212,7 +212,7 @@ O `Post_AddMessageHandler_ReturnsRedirectToRoot` método de teste:
 * Faz uma solicitação POST para o aplicativo.
 * Verifica que a resposta é um redirecionamento para a página de índice.
 
-`Post_AddMessageHandler_ReturnsRedirectToRoot `método (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
+`Post_AddMessageHandler_ReturnsRedirectToRoot ` method (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet2)]
 

@@ -2,22 +2,25 @@
 title: "O cache de resposta no núcleo do ASP.NET"
 author: rick-anderson
 description: Saiba como usar a resposta em cache para reduzir os requisitos de largura de banda e melhorar o desempenho de aplicativos do ASP.NET Core.
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/20/2017
-ms.topic: article
 ms.prod: asp.net-core
+ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>O cache de resposta no núcleo do ASP.NET
 
 Por [John Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), e [Luke Latham](https://github.com/guardrex)
 
+> [!NOTE]
+> O cache de resposta [não tem suporte em páginas Razor com o ASP.NET 2.0 de núcleo](https://github.com/aspnet/Mvc/issues/6437). Esse recurso terá suporte no [versão 2.1 do ASP.NET Core](https://github.com/aspnet/Home/wiki/Roadmap).
+  
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 O cache de resposta reduz o número de solicitações de que um cliente ou um proxy faz a um servidor web. O cache de resposta também reduz a quantidade de trabalho do servidor web executa para gerar uma resposta. O cache de resposta é controlado por cabeçalhos que especifique como deseja middleware para respostas de cache de cliente e proxy.

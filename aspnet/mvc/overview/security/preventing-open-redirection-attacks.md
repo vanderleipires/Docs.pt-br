@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 97e0aacbf21914bf95f01019cf4dcc9e7ca1c4be
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 17944c0600a174176e3e9940f414b34f0835b800
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="preventing-open-redirection-attacks-c"></a>Evitando ataques de redirecionamento aberto (c#)
 ====================
@@ -47,7 +47,7 @@ Ataques de redirecionamento aberto são especialmente perigosos porque um invaso
 
 Primeiro, um invasor envia em um link para a página de logon NerdDinner que inclui um redirecionamento para suas páginas forjadas:
 
-[http://NerdDinner.com/Account/logon?returnUrl=http://nerddiner.com/Account/logon](http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn)
+[http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn](http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn)
 
 Observe que a URL de retorno aponta nerddiner.com, que está faltando um "n" de uma refeição o word. Neste exemplo, este é um domínio que o invasor controla. Quando podemos acessar no link acima, são levados para a página de logon NerdDinner.com legítima.
 

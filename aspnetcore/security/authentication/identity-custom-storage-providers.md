@@ -1,19 +1,19 @@
 ---
-title: Provedores de armazenamento personalizado para a identidade do ASP.NET Core | Microsoft Docs
+title: Provedores de armazenamento personalizado para a identidade do ASP.NET Core
 author: ardalis
-description: Como configurar provedores de armazenamento personalizado para a identidade do ASP.NET Core.
-ms.author: riande
+description: Saiba como configurar provedores de armazenamento personalizado para a identidade do ASP.NET Core.
 manager: wpickett
+ms.author: riande
 ms.date: 05/24/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: f0953ad5d9f1bfa92ecc5169d9a211ce6b8cda8f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8541fe47207c0af232ca81ae45da6af201d94799
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizado para a identidade do ASP.NET Core
 

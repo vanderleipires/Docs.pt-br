@@ -2,18 +2,18 @@
 title: "Páginas Razor com núcleo EF - CRUD - 2 de 8"
 author: rick-anderson
 description: "Mostra como criar, ler, atualizar, excluir com núcleo de EF"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/crud
-ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 757aeb713b645cea0fe633b150784184d2d3571e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Criar, ler, atualizar e excluir - Core EF com páginas Razor (2 de 8)
 
@@ -23,7 +23,7 @@ Por [Tom Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.co
 
 Neste tutorial, o scaffolding CRUD (criar, ler, atualizar e excluir) código é revisado e personalizado.
 
-Observação: Para minimizar a complexidade e manter esses tutoriais que voltadas EF Core, código de EF principal é usado nos arquivos code-behind páginas Razor. Alguns desenvolvedores usam um padrão de repositório ou camada de serviço em para criar uma camada de abstração entre a interface do usuário (páginas Razor) e a camada de acesso a dados.
+Observação: Para minimizar a complexidade e manter esses tutoriais que voltadas EF Core, código EF principal é usado nos modelos de página de páginas Razor. Alguns desenvolvedores usam um padrão de repositório ou camada de serviço em para criar uma camada de abstração entre a interface do usuário (páginas Razor) e a camada de acesso a dados.
 
 Neste tutorial, criar, editar, excluir e páginas Razor detalhes de *aluno* pasta são modificadas.
 
@@ -147,7 +147,7 @@ O valor "OverPost" foi adicionado com êxito para o `Secret` propriedade da linh
 <a name="vm"></a>
 ### <a name="view-model"></a>Modelo de exibição
 
-Um modelo de exibição normalmente contém um subconjunto das propriedades incluídas no modelo usado pelo aplicativo. O modelo de aplicativo é geralmente chamado de modelo de domínio. O modelo de domínio normalmente contém todas as propriedades necessárias pela entidade correspondente no banco de dados. O modelo de exibição contém apenas as propriedades necessárias para a camada de interface do usuário (por exemplo, a página Criar). Além do modelo de exibição, alguns aplicativos usam um modelo de associação ou o modelo de entrada para passar dados entre a classe code-behind páginas Razor e o navegador. Considere o seguinte `Student` modelo de exibição:
+Um modelo de exibição normalmente contém um subconjunto das propriedades incluídas no modelo usado pelo aplicativo. O modelo de aplicativo é geralmente chamado de modelo de domínio. O modelo de domínio normalmente contém todas as propriedades necessárias pela entidade correspondente no banco de dados. O modelo de exibição contém apenas as propriedades necessárias para a camada de interface do usuário (por exemplo, a página Criar). Além do modelo de exibição, alguns aplicativos usam um modelo de associação ou o modelo de entrada para passar dados entre a classe de modelo de página de páginas Razor e o navegador. Considere o seguinte `Student` modelo de exibição:
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentVM.cs)]
 
@@ -165,7 +165,7 @@ Nas páginas Razor, o `PageModel` classe derivada é o modelo de exibição.
 
 ## <a name="update-the-edit-page"></a>Atualizar a página de edição
 
-Atualize o arquivo de code-behind de página de edição:
+Atualize o modelo de página para a página Editar:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Edit.cshtml.cs?name=snippet_OnPostAsync&highlight=20,36)]
 

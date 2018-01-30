@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: f0224bcd2badc423ba5146feacccc44b8f33a608
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 29d5b2f4c04b899b900427ac202c0a4f57f8076f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>O ASP.NET 4 e visão geral do desenvolvimento do Visual Studio 2010 Web
 ====================
@@ -1218,7 +1218,7 @@ Os novos modelos de entidade são exibidos em uma página usando a nova *Dynamic
 
 <a id="0.2__Toc224729045"></a><a id="0.2__Toc253429282"></a><a id="0.2__Toc243304653"></a>
 
-### <a name="new-field-templates-for-urls-and-e-mail-addresses"></a>Novos modelos de campo para URLs e endereços de email
+### <a name="new-field-templates-for-urls-and-email-addresses"></a>Novos modelos de campo para URLs e endereços de Email
 
 O ASP.NET 4 apresenta dois novos modelos de campo interno, `EmailAddress.ascx` e `Url.ascx`. Esses modelos são usados para os campos que são marcados como *EmailAddress* ou *Url* com o *DataType* atributo. Para *EmailAddress* objetos, o campo é exibido como um hiperlink que é criado usando o *mailto:* protocolo. Quando os usuários clicarem no link, ele abre o cliente de email do usuário e cria uma mensagem de esqueleto. Objetos digitados como *Url* são exibidos como hiperlinks comuns.
 
@@ -1382,7 +1382,7 @@ Estar em conformidade com todas as leis de direitos autorais aplicáveis é resp
 
 A Microsoft pode ter patentes, solicitações de patente, marcas comerciais, direitos autorais ou outros direitos de propriedade intelectual que abrangem o conteúdo deste documento. A não ser que especificado expressamente em um contrato de licença da Microsoft, o fornecimento deste documento não confere a você nenhum direito sobre as supracitadas patentes, marcas comerciais, direitos autorais ou outra propriedade intelectual.
 
-Salvo indicação em contrário, os exemplos de empresas, organizações, produtos, nomes de domínio, endereços de email, logotipos, pessoas, locais e eventos descritos no presente documento são fictícios, e qualquer ligação com qualquer empresa, organização, produto, nome de domínio, endereço de email, logotipo, pessoa, local ou eventos reais é intencional ou deve ser inferida.
+Salvo indicação em contrário, os exemplos de empresas organizações, produtos, nomes de domínio, endereços de email, logotipos, pessoas, lugares e eventos aqui descritos são fictícios e nenhuma associação com qualquer empresa, organização, produto, nome de domínio, email endereço, logotipo, pessoa, lugar ou evento é intencional ou deve ser inferido.
 
 © 2009 Microsoft Corporation. Todos os direitos reservados.
 

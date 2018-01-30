@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="bundling-and-minification"></a>Empacotamento e minimização
 
@@ -27,7 +27,7 @@ Este artigo explica os benefícios da aplicação de empacotamento e minimizaç�
 
 Empacotamento e minimização são duas otimizações de desempenho distintos que você pode aplicar em um aplicativo web. Usados juntos, empacotamento e minimização melhoram o desempenho reduzindo o número de solicitações do servidor e reduzindo o tamanho dos ativos estáticos solicitados.
 
-Empacotamento e minimização principalmente melhoram o tempo de carregamento de solicitação de página primeiro. Depois que uma página da web foi solicitada, o navegador armazena em cache os ativos estáticos (JavaScript, CSS e imagens). Consequentemente, empacotamento e minimização não melhoram o desempenho ao solicitar a mesma página ou páginas, no mesmo site que está solicitando os mesmos ativos. Se você não definir o cabeçalho corretamente em seus ativos de expiração e se você não usar o empacotamento e minimização, heurística de atualização do navegador marca os ativos obsoletos depois de alguns dias. Além disso, o navegador requer uma solicitação de validação para cada ativo. Nesse caso, empacotamento e minimização fornecem uma melhoria de desempenho mesmo após a primeira solicitação de página.
+Empacotamento e minimização principalmente melhoram o tempo de carregamento de solicitação de página primeiro. Depois que uma página da web foi solicitada, o navegador armazena em cache os ativos estáticos (JavaScript, CSS e imagens). Consequentemente, empacotamento e minimização não melhoram o desempenho ao solicitar a mesma página ou páginas, no mesmo site que está solicitando os mesmos ativos. Se o vencimento cabeçalho não está definido corretamente nos ativos e se não for usado o empacotamento e minimização, heurística de atualização do navegador marca os ativos obsoletos depois de alguns dias. Além disso, o navegador requer uma solicitação de validação para cada ativo. Nesse caso, empacotamento e minimização fornecem uma melhoria de desempenho mesmo após a primeira solicitação de página.
 
 ### <a name="bundling"></a>Agrupamento
 
@@ -77,15 +77,15 @@ Os modelos de projeto MVC e páginas Razor fornecem uma *bundleconfig.json* arqu
 
 Opções de configuração incluem:
 
-* `outputFileName`: O nome do arquivo de pacote de saída. Pode conter um caminho relativo do *bundleconfig.json* arquivo. **Necessário**
+* `outputFileName`: O nome do arquivo de pacote de saída. Pode conter um caminho relativo do *bundleconfig.json* arquivo. **required**
 * `inputFiles`: Uma matriz de arquivos para agrupar em conjunto. Esses são os caminhos relativos ao arquivo de configuração. **opcional**, * um valor vazio resulta em um arquivo de saída vazia. [Globalização](http://www.tldp.org/LDP/abs/html/globbingref.html) padrões são suportados.
-* `minify`: As opções de minimização para o tipo de saída. **opcional**, *padrão:`minify: { enabled: true }`*
+* `minify`: As opções de minimização para o tipo de saída. **optional**, *default - `minify: { enabled: true }`*
   * Opções de configuração estão disponíveis por tipo de arquivo de saída.
     * [Minificador CSS](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [Minificador de JavaScript](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
     * [Minificador de HTML](https://github.com/madskristensen/BundlerMinifier/wiki)
-* `includeInProject`: O sinalizador que indica se é para adicionar arquivos gerados ao arquivo de projeto. **opcional**, *default - false*
-* `sourceMap`: O sinalizador que indica se deve gerar um mapa de origem para o arquivo de pacote. **opcional**, *default - false*
+* `includeInProject`: O sinalizador que indica se é para adicionar arquivos gerados ao arquivo de projeto. **optional**, *default - false*
+* `sourceMap`: O sinalizador que indica se deve gerar um mapa de origem para o arquivo de pacote. **optional**, *default - false*
 * `sourceMapRootPath`: O caminho raiz para armazenar o arquivo de mapa de código-fonte gerado.
 
 ## <a name="build-time-execution-of-bundling-and-minification"></a>Execução de tempo de compilação de empacotamento e minimização

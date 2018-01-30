@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 862f07defafb2d2613fef9f76f13aab0b11c5440
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7792891aed6f0c5e952018dacb36a1d267cb6ae0
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-vb"></a>Implantar o Site usando um cliente de FTP (VB)
 ====================
@@ -48,7 +48,7 @@ Lembre-se de que há duas versões do aplicativo da web de análise de livro: um
 
 Inicie o projeto BookReviewsWAP navegando até o `BookReviewsWAP` pasta e clique duas vezes o `BookReviewsWAP.sln` arquivo. Antes de implantar o projeto é importante para compilá-lo para garantir que as alterações ao código-fonte são incluídas no assembly compilado. Para compilar o projeto, acesse o menu Build e escolha a opção de menu Build BookReviewsWAP. Esse procedimento compila o código-fonte no projeto em um único assembly, `BookReviewsWAP.dll`, que é colocado no `Bin` pasta.
 
-Agora você está pronto para implantar os arquivos necessários! Inicie o cliente FTP e conecte-se ao servidor da web no seu provedor de host da web. (Quando você se inscreve em uma empresa de hospedagem na web enviará um e-mail obter informações sobre como se conectar ao servidor FTP; isso inclui o endereço para o servidor FTP, bem como um nome de usuário e senha).
+Agora você está pronto para implantar os arquivos necessários! Inicie o cliente FTP e conecte-se ao servidor da web no seu provedor de host da web. (Quando você se inscreve em uma empresa de hospedagem na web enviará um email para você obter informações sobre como conectar-se ao servidor FTP; isso inclui o endereço para o servidor FTP, bem como um nome de usuário e senha).
 
 Copie os seguintes arquivos da área de trabalho para a pasta raiz do site no seu provedor de host da web. Quando o FTP para o servidor web na web provedor são provavelmente o diretório raiz do site. No entanto, alguns provedores de host da web tem uma subpasta chamada `www` ou `wwwroot` que serve como a pasta raiz de arquivos de seu site. Finalmente, quando FTPing os arquivos você precisará criar a estrutura de pasta correspondente no ambiente de produção - o `Bin` pasta, o `Fiction` pasta, o `Images` pasta e assim por diante.
 

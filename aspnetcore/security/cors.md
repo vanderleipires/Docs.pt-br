@@ -2,18 +2,18 @@
 title: "Habilitar solicitações entre origens (CORS)"
 author: rick-anderson
 description: "Este documento apresenta CORS como um padrão para permitir ou rejeitar solicitações entre origens em um aplicativo do ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 05/17/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Habilitar solicitações entre origens (CORS)
 
@@ -209,7 +209,7 @@ Agora, a resposta HTTP incluirá um cabeçalho Access-controle-Allow-Credentials
 
 Se o navegador envia as credenciais, mas a resposta não incluir um cabeçalho Access-controle-Allow-Credentials válido, o navegador não expõe a resposta para o aplicativo e haverá falha na solicitação AJAX.
 
-Tenha muito cuidado sobre a permissão de credenciais entre origens, porque isso significa que um site da Web em outro domínio pode enviar credenciais do usuário conectado ao seu aplicativo em nome do usuário, sem o conhecimento do usuário. Os CORS especificação também estados que origens de configuração para "*" (todas as origens) não é válido se o cabeçalho de acesso-controle-Allow-Credentials estiver presente.
+Tenha cuidado ao permitir que as credenciais de entre origens. Um site da Web em outro domínio pode enviar credenciais do usuário conectado para o aplicativo em nome do usuário sem o conhecimento do usuário. A especificação de CORS também define essa configuração origens para "*" (todas as origens) não é válido se o `Access-Control-Allow-Credentials` cabeçalho estiver presente.
 
 ### <a name="set-the-preflight-expiration-time"></a>Definir o tempo de expiração de simulação
 
@@ -221,11 +221,11 @@ O cabeçalho de acesso-controle-Max-Age Especifica quanto tempo a resposta à so
 
 ## <a name="how-cors-works"></a>Como funciona o CORS
 
-Esta seção descreve o que acontece em uma solicitação CORS, o nível das mensagens HTTP. É importante entender como CORS funciona, para que você pode configurar a política CORS corretamente e solucionar problemas se as coisas não funcionam conforme o esperado.
+Esta seção descreve o que acontece em uma solicitação CORS no nível das mensagens HTTP. É importante entender o funcionamento de CORS para que a política CORS possa ser configurada corretamente e troubleshooted quando ocorrerem comportamentos inesperados.
 
-A especificação CORS apresenta vários novos cabeçalhos HTTP que habilitam solicitações entre origens. Se um navegador dá suporte a CORS, ele define esses cabeçalhos automaticamente para solicitações entre origens; Você não precisa fazer nada especial em seu código JavaScript.
+A especificação CORS apresenta vários novos cabeçalhos HTTP que habilitam solicitações entre origens. Se um navegador dá suporte a CORS, ele define esses cabeçalhos automaticamente para solicitações entre origens. Código JavaScript personalizado não é necessário habilitar o CORS.
 
-Aqui está um exemplo de uma solicitação entre origens. O cabeçalho de "Origem" fornece o domínio do site que está fazendo a solicitação:
+Aqui está um exemplo de uma solicitação entre origens. O `Origin` cabeçalho fornece o domínio do site que está fazendo a solicitação:
 
 ```
 GET http://myservice.azurewebsites.net/api/test HTTP/1.1
