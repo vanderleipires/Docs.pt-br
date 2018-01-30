@@ -16,8 +16,8 @@ Abra um Shell de Comando no diretório do projeto (o diretório que contém os a
 
 Se você obtiver o erro:
   ```
-  The process cannot access the file
- 'RazorPagesMovie/bin/Debug/netcoreapp2.0/RazorPagesMovie.dll'
+  The process cannot access the file 
+ 'RazorPagesMovie/bin/Debug/netcoreapp2.0/RazorPagesMovie.dll' 
   because it is being used by another process.
   ```
 
