@@ -1,53 +1,12 @@
----
-title: "Atualizando as páginas geradas"
-author: rick-anderson
-description: "Atualizando as páginas geradas com melhor exibição."
-ms.author: riande
-manager: wpickett
-ms.date: 08/07/2017
-ms.topic: get-started-article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: tutorials/razor-pages/da1
-ms.openlocfilehash: abf6839536150f29eaa2d07dafbe0d0c1a08e280
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: HT
-ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
----
-# <a name="updating-the-generated-pages"></a>Atualizando as páginas geradas
-
-Por [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-Temos um bom começo para o aplicativo de filme, mas a apresentação não é ideal. Você não deseja ver a hora (12:00:00 AM na imagem abaixo) e **ReleaseDate** deve ser **Release Date** (duas palavras).
-
-![Aplicativo de filme aberto no Chrome mostrando os dados do filme](sql/_static/m55.png)
-
-## <a name="update-the-generated-code"></a>Atualize o código gerado
-
-Abra o arquivo *Models/Movie.cs* e adicione as linhas realçadas mostradas no seguinte código:
-
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDate.cs?name=snippet_1&highlight=10-11)]
-
-Clique com o botão direito do mouse em uma linha curvada vermelha > ** Ações Rápidas e Refatorações**.
-
-  ![Menu contextual mostra **> Ações Rápidas e Refatorações**.](da1/qa.png)
-
-Selecione `using System.ComponentModel.DataAnnotations;`
-
-  ![usando System.ComponentModel.DataAnnotations na parte superior da lista](da1/da.png)
-
-  O Visual Studio adiciona `using System.ComponentModel.DataAnnotations;`.
-
 Abordaremos [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) no próximo tutorial. O atributo [Display](https://docs.microsoft.com//aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) especifica o que deve ser exibido no nome de um campo (neste caso, “Release Date” em vez de “ReleaseDate”). O atributo [DataType](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) especifica o tipo de dados (Data) e, portanto, as informações de hora armazenadas no campo não são exibidas.
 
 Procure Pages/Movies e focalize um link **Editar** para ver a URL de destino.
 
-![Janela do navegador com o mouse sobre o link Editar e a URL de link http://localhost:1234/Movies/Edit/5 é mostrada](da1/edit7.png)
+![Janela do navegador com o mouse sobre o link Editar e a URL de link http://localhost:1234/Movies/Edit/5 é mostrada](../../tutorials/razor-pages/da1/edit7.png)
 
 Os links **Editar**, **Detalhes** e **Excluir** são gerados pelo [Auxiliar de Marcação de Âncora](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) no arquivo *Pages/Movies/Index.cshtml*.
 
-[!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
+[!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
 
 Os [Auxiliares de Marcação](xref:mvc/views/tag-helpers/intro) permitem que o código do servidor participe da criação e renderização de elementos HTML em arquivos do Razor. No código anterior, o `AnchorTagHelper` gera dinamicamente o valor do atributo `href` HTML da página Razor (a rota é relativa), o `asp-page` e a ID da rota (`asp-route-id`). Consulte [Geração de URL para Páginas](xref:mvc/razor-pages/index#url-generation-for-pages) para obter mais informações.
 
@@ -83,7 +42,7 @@ Uma solicitação para a página com o modelo de rota “{id:int}” que **não*
 
 Atualize o método `OnPostAsync` no arquivo *Pages/Movies/Edit.cshtml.cs*. O seguinte código realçado mostra as alterações:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet1&highlight=16-23)]
+[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet1&highlight=16-23)]
 
 O código anterior apenas detecta as exceções de simultaneidade quando o primeiro cliente simultâneo exclui o filme e o segundo cliente simultâneo posta alterações no filme.
 
@@ -98,7 +57,7 @@ O código de produção geralmente detectará conflitos de simultaneidade quando
 
 ### <a name="posting-and-binding-review"></a>Análise de postagem e associação
 
-Examine o arquivo *Pages/Movies/Edit.cshtml.cs*: [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
+Examine o arquivo *Pages/Movies/Edit.cshtml.cs*: [!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
 
 Quando uma solicitação HTTP GET é feita para a página Movies/Edit (por exemplo, `http://localhost:5000/Movies/Edit/2`):
 
@@ -121,7 +80,3 @@ Quando a página Movies/Edit é postada:
 Os métodos HTTP GET nas páginas Índice, Criar e Excluir do Razor seguem um padrão semelhante. O método `OnPostAsync` HTTP POST na página Criar do Razor segue um padrão semelhante ao método `OnPostAsync` na página Editar do Razor.
 
 A pesquisa é adicionada no próximo tutorial.
-
->[!div class="step-by-step"]
-[Anterior: Trabalhando com o SQL Server LocalDB](xref:tutorials/razor-pages/sql)
-[Adicionando uma pesquisa](xref:tutorials/razor-pages/search)

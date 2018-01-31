@@ -46,7 +46,7 @@ Execute o aplicativo e navegue para:
 
 ![Janela do navegador mostrando a resposta do aplicativo Olá, Ricardo, NumTimes é: 4](../../tutorials/first-mvc-app/adding-controller/_static/rick4.png)
 
-Na imagem acima, o segmento de URL (`Parameters`) não é usado e os parâmetros `name` e `numTimes` são passados como [cadeias de consulta](https://wikipedia.org/wiki/Query_string). O `?` (ponto de interrogação) na URL acima é um separador seguido pelas cadeias de consulta. O caractere `&` separa as cadeias de consulta.
+Na imagem acima, o segmento de URL (`Parameters`) não é usado e os parâmetros `name` e `numTimes` são transmitidos como [cadeias de consulta](https://wikipedia.org/wiki/Query_string). O `?` (ponto de interrogação) na URL acima é um separador seguido pelas cadeias de consulta. O caractere `&` separa as cadeias de consulta.
 
 Substitua o método `Welcome` pelo seguinte código:
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: 992afc2766e817ef007e20ade44e3ddd1d404f90
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ca02de7954002dcbc125898c9f570438f88db818
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Novidades do ASP.NET Core 2.0
 
@@ -44,7 +44,7 @@ Para obter mais informações, consulte [Repositório de tempo de execução](ht
 
 Os pacotes do ASP.NET Core 2.0 são direcionados ao .NET Standard 2.0. Os pacotes podem ser referenciados por outras bibliotecas do .NET Standard 2.0 e podem ser executados em implementações em conformidade com o .NET Standard 2.0, incluindo o .NET Core 2.0 e o .NET Framework 4.6.1. 
 
-O metapacote `Microsoft.AspNetCore.All` tem como destino apenas o .NET Core 2.0, porque ele se destina a ser usado com o repositório de tempo de execução do .NET Core 2.0.
+O metapacote `Microsoft.AspNetCore.All` aborda apenas o .Net Core 2.0 porque ele foi projetado para ser utilizado com o repositório de tempo de execução do .Net Core 2.0.
 
 ## <a name="configuration-update"></a>Atualização da configuração
 
@@ -108,7 +108,7 @@ return File(data, "text/plain", "downloadName.txt", lastModified: DateTime.UtcNo
 
 O arquivo retornado para os visitantes será decorado com os cabeçalhos HTTP apropriados para os valores `ETag` e `LastModified`.
 
-Se um visitante de aplicativo solicita o conteúdo com um cabeçalho de solicitação de intervalo, o ASP.NET reconhece isso e manipula esse cabeçalho. Se o conteúdo solicitado puder ser parcialmente entregue, o ASP.NET ignorará adequadamente e retornará apenas o conjunto de bytes solicitado.  Você não precisa escrever nenhum manipulador especial em seus métodos para adaptar ou manipular esse recurso; ele é manipulado automaticamente para você.
+Se um visitante de aplicativo solicita o conteúdo com um cabeçalho de solicitação de intervalo, o ASP.NET reconhece isso e manipula esse cabeçalho. Se o conteúdo solicitado puder ser parcialmente entregue, o ASP.NET ignorará adequadamente e retornará apenas o conjunto de bytes solicitado.  Você não precisa gravar nenhum manipulador especial em seus métodos para adaptar ou manipular esse recurso; ele é manipulado automaticamente para você.
 
 ## <a name="hosting-startup-and-application-insights"></a>Inicialização de hospedagem e o Application Insights
 
