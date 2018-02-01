@@ -1,19 +1,19 @@
 ---
 title: Migrando do ASP.NET para o ASP.NET Core 2.0
 author: isaac2004
-description: "Este documento de referência fornece diretrizes para migrar aplicativos de API Web ou ASP.NET MVC existentes para o ASP.NET Core 2.0."
-ms.author: scaddie
+description: "Receba orientações para migrar os aplicativos existentes do ASP.NET MVC ou da API Web para o ASP.NET Core 2.0."
 manager: wpickett
+ms.author: scaddie
 ms.date: 08/27/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 2263f8e9936389cf8cf18ff0c6d1d07018650e14
-ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
+ms.openlocfilehash: d6050c7946aa45b4c1b878b96baa1b082d0c8f71
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>Migrando do ASP.NET para o ASP.NET Core 2.0
 
@@ -132,7 +132,7 @@ O repositório pode ser injetado em qualquer lugar, como ocorria com a Unity.
 
 **Observação:** para uma referência detalhada sobre a injeção de dependência no ASP.NET Core, consulte [Injeção de dependência no ASP.NET Core](xref:fundamentals/dependency-injection#replacing-the-default-services-container)
 
-## <a name="serving-static-files"></a>Servir arquivos estáticos
+## <a name="serving-static-files"></a>Servindo arquivos estáticos
 Uma parte importante do desenvolvimento da Web é a capacidade de servir ativos estáticos, do lado do cliente. Os exemplos mais comuns de arquivos estáticos são HTML, CSS, Javascript e imagens. Esses arquivos precisam ser salvos no local de publicação do aplicativo (ou CDN) e referenciados para que eles possam ser carregados por uma solicitação. Esse processo foi alterado no ASP.NET Core.
 
 No ASP.NET, arquivos estáticos são armazenados em vários diretórios e referenciados nas exibições.
@@ -148,4 +148,5 @@ Por exemplo, um ativo de imagem na pasta *wwwroot/imagens* está acessível para
 **Observação:** para obter uma referência mais aprofundada sobre como servir arquivos estáticos no ASP.NET Core, consulte [Introdução ao trabalho com arquivos estáticos no ASP.NET Core](xref:fundamentals/static-files).
 
 ## <a name="additional-resources"></a>Recursos adicionais
-* [Fazendo a portabilidade de Bibliotecas para o .NET Core](https://docs.microsoft.com/dotnet/core/porting/libraries)
+
+* [Fazendo a portabilidade de Bibliotecas para o .NET Core](/dotnet/core/porting/libraries)
