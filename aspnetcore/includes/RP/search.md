@@ -90,7 +90,3 @@ Atualize *Index.cshtml* da seguinte maneira:
 [!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/Movies/IndexFormGenreNoRating.cshtml?highlight=16-18&range=1-26)]
 
 Teste o aplicativo pesquisando por gênero, título do filme e por ambos.
-
->[!div class="step-by-step"]
-[Anterior: Atualizando as páginas](xref:tutorials/razor-pages/da1)
-[Próximo: Adicionando um novo campo](xref:tutorials/razor-pages/new-field)

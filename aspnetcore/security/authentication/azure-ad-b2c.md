@@ -9,11 +9,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: d60698b5798e837a5946dbe158a647aae9e149d4
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4815155ad238c31316e00471cf87beb3dd262613
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c"></a>Autenticação de nuvem com o Azure Active Directory B2C
 
@@ -139,5 +139,5 @@ O aplicativo do ASP.NET Core já está configurado para usar o Azure AD B2C para
 * [Habilitar a autenticação multifator](/azure/active-directory-b2c/active-directory-b2c-reference-mfa).
 * Configurar provedores de identidade adicional, como [Microsoft](/azure/active-directory-b2c/active-directory-b2c-setup-msa-app), [Facebook](/azure/active-directory-b2c/active-directory-b2c-setup-fb-app), [Google](/azure/active-directory-b2c/active-directory-b2c-setup-goog-app), [Amazon](/azure/active-directory-b2c/active-directory-b2c-setup-amzn-app), [do Twitter ](/azure/active-directory-b2c/active-directory-b2c-setup-twitter-app)e outros.
 * [Use a API do Azure AD Graph](/azure/active-directory-b2c/active-directory-b2c-devquickstarts-graph-dotnet) para recuperar informações de usuário adicionais, como membros do grupo, do locatário do Azure AD B2C.
-* [Proteger um ASP.NET Core API da web usando o Azure AD B2C](xref:security/authentication/azure-ad-b2c-api).
+* [Proteger um ASP.NET Core API da web usando o Azure AD B2C](xref:security/authentication/azure-ad-b2c-webapi).
 * [Chamar uma API da web do .NET a partir de um aplicativo web do .NET usando o Azure AD B2C](/azure/active-directory-b2c/active-directory-b2c-devquickstarts-web-api-dotnet).

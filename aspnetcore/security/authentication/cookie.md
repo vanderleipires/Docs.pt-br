@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 5b2f70b1f1fc9805025d6fa2256fcfcecf808b9a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1f20a2f7cab123e5a41ee1d232271da9de4c9058
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>Usando a autenticação de Cookie sem identidade do ASP.NET Core
 
@@ -80,7 +80,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-ASP.NET Core 1. x usa cookie [middleware](xref:fundamentals/middleware) que serializa um objeto de usuário em um cookie criptografado. Em solicitações subsequentes, o cookie é validado, e a entidade de segurança é recriada e atribuída ao `HttpContext.User` propriedade.
+ASP.NET Core 1. x usa cookie [middleware](xref:fundamentals/middleware/index) que serializa um objeto de usuário em um cookie criptografado. Em solicitações subsequentes, o cookie é validado, e a entidade de segurança é recriada e atribuída ao `HttpContext.User` propriedade.
 
 Instalar o [Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) pacote NuGet em seu projeto. Este pacote contém o middleware de cookie.
 
@@ -169,13 +169,9 @@ Para criar um cookie contendo informações de usuário, você precisa construir
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Chamar [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0) para assinar o usuário:
+Criar um [ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity) com quaisquer [declaração](/dotnet/api/system.security.claims.claim)s e chame [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0) para assinar o usuário:
 
-```csharp
-await HttpContext.SignInAsync(
-    CookieAuthenticationDefaults.AuthenticationScheme, 
-    new ClaimsPrincipal(claimsIdentity));
-```
+[!code-csharp[Main](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -199,10 +195,7 @@ Nos bastidores, a criptografia é ASP.NET Core [proteção de dados](xref:securi
 
 Para desconectar o usuário atual e exclua seus cookies, chame [SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signoutasync?view=aspnetcore-2.0):
 
-```csharp
-await HttpContext.SignOutAsync(
-    CookieAuthenticationDefaults.AuthenticationScheme);
-```
+[!code-csharp[Main](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

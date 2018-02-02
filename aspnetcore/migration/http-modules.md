@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8aac6c649b22dc8f6cfc916aa78d56efad7821a0
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrando manipuladores HTTP e módulos ASP.NET Core middleware 
 
 Por [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-Este artigo mostra como migrar ASP.NET existente [módulos HTTP e manipuladores de System. webServer](https://docs.microsoft.com/iis/configuration/system.webserver/) para ASP.NET Core [middleware](../fundamentals/middleware.md).
+Este artigo mostra como migrar ASP.NET existente [módulos HTTP e manipuladores de System. webServer](https://docs.microsoft.com/iis/configuration/system.webserver/) para ASP.NET Core [middleware](xref:fundamentals/middleware/index).
 
 ## <a name="modules-and-handlers-revisited"></a>Manipuladores revisitados e módulos
 
@@ -65,7 +65,7 @@ Além de módulos, você pode adicionar manipuladores para os eventos de ciclo d
 
    * Middleware são configurados usando o código em vez de em *Web. config*
 
-   * [Ramificação de pipeline](../fundamentals/middleware.md#middleware-run-map-use) permite que você envia solicitações ao middleware específico, com base na URL não só mas também em cabeçalhos de solicitação, cadeias de caracteres de consulta, etc.
+   * [Ramificação de pipeline](xref:fundamentals/middleware/index#middleware-run-map-use) permite que você envia solicitações ao middleware específico, com base na URL não só mas também em cabeçalhos de solicitação, cadeias de caracteres de consulta, etc.
 
 **Middleware são muito semelhantes aos módulos:**
 
@@ -81,7 +81,7 @@ Além de módulos, você pode adicionar manipuladores para os eventos de ciclo d
 
    * Ordem de middleware para respostas é o oposto do que para solicitações, enquanto a ordem dos módulos é o mesmo para solicitações e respostas
 
-   * Consulte [criando um pipeline de middleware com IApplicationBuilder](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder)
+   * Consulte [criando um pipeline de middleware com IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)
 
 ![Middleware](http-modules/_static/middleware.png)
 
@@ -93,13 +93,13 @@ Um módulo HTTP existente será semelhante a este:
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
 
-Conforme mostrado no [Middleware](../fundamentals/middleware.md) página, um middleware ASP.NET Core é uma classe que expõe um `Invoke` colocando método um `HttpContext` e retornar um `Task`. Seu novo middleware será assim:
+Conforme mostrado no [Middleware](xref:fundamentals/middleware/index) página, um middleware ASP.NET Core é uma classe que expõe um `Invoke` colocando método um `HttpContext` e retornar um `Task`. Seu novo middleware será assim:
 
 <a name="http-modules-usemiddleware"></a>
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
-O modelo de middleware acima foi obtido da seção de [gravar middleware](../fundamentals/middleware.md#middleware-writing-middleware).
+O modelo de middleware anterior foi obtido da seção de [gravar middleware](xref:fundamentals/middleware/index#middleware-writing-middleware).
 
 O *MyMiddlewareExtensions* classe auxiliar torna mais fácil de configurar o middleware em seu `Startup` classe. O `UseMyMiddleware` método adiciona sua classe de middleware no pipeline de solicitação. Serviços necessários para o middleware são injetados no construtor do middleware.
 
@@ -121,7 +121,7 @@ Módulos HTTP normalmente são adicionados ao pipeline de solicitação usando *
 
 [!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
 
-Converter isso por [adicionando seu novo middleware](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder) para o pipeline de solicitação no seu `Startup` classe:
+Converter isso por [adicionando seu novo middleware](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder) para o pipeline de solicitação no seu `Startup` classe:
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
 
@@ -383,4 +383,4 @@ O `SetCookies` método de retorno de chamada deve ser semelhante ao seguinte:
 * [Visão geral de módulos HTTP e de manipuladores HTTP](/iis/configuration/system.webserver/)
 * [Configuração](xref:fundamentals/configuration/index)
 * [Inicialização de aplicativos](xref:fundamentals/startup)
-* [Middleware](xref:fundamentals/middleware)
+* [Middleware](xref:fundamentals/middleware/index)

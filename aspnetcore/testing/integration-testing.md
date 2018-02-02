@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: ebae76da01e1b24466174179a9d4bbe826202cc3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Integração de teste no núcleo do ASP.NET
 
@@ -127,7 +127,7 @@ Esse código funciona, mas está longe de como você deseja implementar esse tip
 
 Adição de uma opção a ser considerada [MVC](xref:mvc/overview) para o aplicativo e criando um controlador para lidar com a verificação principal. No entanto, supondo que você atualmente não precisa de qualquer outra MVC funcionalidade, que é um bit exageros.
 
-No entanto, você pode tirar proveito do ASP.NET Core [middleware](xref:fundamentals/middleware), que nos ajudarão a encapsular o primo verificação lógica em sua própria classe e obter melhor [separação de preocupações](http://deviq.com/separation-of-concerns/) no `Configure` método.
+No entanto, você pode tirar proveito do ASP.NET Core [middleware](xref:fundamentals/middleware/index), que nos ajudarão a encapsular o primo verificação lógica em sua própria classe e obter melhor [separação de preocupações](http://deviq.com/separation-of-concerns/) no `Configure` método.
 
 Para permitir que o caminho do middleware usa a ser especificado como um parâmetro para a classe de middleware espera um `RequestDelegate` e um `PrimeCheckerOptions` instância em seu construtor. Se o caminho da solicitação não corresponde ao que este middleware configurado para esperar, basta chamar o próximo middleware da cadeia e não fazer nada. O restante do código de implementação que estava no `Configure` está agora no `Invoke` método.
 
@@ -150,5 +150,5 @@ Seguindo essa refatoração estiver certo de que o aplicativo web ainda funciona
 ## <a name="resources"></a>Recursos
 
 * [Teste de unidade](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Middleware](xref:fundamentals/middleware)
+* [Middleware](xref:fundamentals/middleware/index)
 * [Testando os controladores](xref:mvc/controllers/testing)
