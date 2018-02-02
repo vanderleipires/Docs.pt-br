@@ -1,5 +1,5 @@
 ---
-title: "Usando o Bower no núcleo do ASP.NET"
+title: "Usando o Bower no ASP.NET Core"
 author: rick-anderson
 description: Gerenciar pacotes do lado do cliente com Bower.
 manager: wpickett
@@ -16,7 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gerenciar pacotes do lado do cliente com Bower no núcleo do ASP.NET
+# <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gerenciar pacotes do lado do cliente com Bower no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel arroz](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), e [Scott Addie](https://scottaddie.com) 
 
