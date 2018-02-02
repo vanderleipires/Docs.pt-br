@@ -1,7 +1,7 @@
 ---
-title: "Menor, Sass e fonte Awesome no núcleo do ASP.NET"
+title: "Less, Sass e fonte Awesome no ASP.NET Core"
 author: ardalis
-description: "Saiba como usar menos, Sass e fonte incrível em aplicativos do ASP.NET Core."
+description: "Saiba como usar Less, Sass e fonte Awesome em aplicativos ASP.NET Core."
 manager: wpickett
 ms.author: tdykstra
 ms.date: 10/14/2016
@@ -15,15 +15,15 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Introdução aos aplicativos de estilo com menor, Sass e fonte Awesome no núcleo do ASP.NET
+# <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Introdução aos aplicativos de estilo com Less, Sass e fonte Awesome no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
-Os usuários de aplicativos da web têm expectativas cada vez mais altas quando se trata de estilo e a experiência geral. Aplicativos web modernos frequentemente aproveitam avançadas ferramentas e estruturas para definir e gerenciar sua aparência de uma maneira consistente. Estruturas como [inicialização](http://getbootstrap.com/) pode ir um longo caminho para definir um conjunto comum de opções de layout para sites da web e estilos. No entanto, a maioria dos sites não trivial também se beneficiar de ser capaz de definir e manter estilos e arquivos de folhas de estilo em cascata com eficiência, bem como acesso fácil a imagem não ícones que ajudam a tornar a interface do site mais intuitiva. É onde linguagens e ferramentas que dão suporte a [menos](http://lesscss.org/) e [Sass](http://sass-lang.com/), e bibliotecas, como [fonte Awesome](http://fontawesome.io/), entrar.
+Os usuários de aplicativos da web têm expectativas cada vez mais altas quando se trata de estilo e a experiência geral. Aplicativos web modernos frequentemente aproveitam ferramentas e estruturas avançadas para definir e gerenciar sua aparência de uma maneira consistente. Estruturas como [inicialização](http://getbootstrap.com/) podem ir um longo caminho para definir um conjunto comum de opções de layout para sites da web e estilos. No entanto, a maioria dos sites não triviais também se beneficiar de ser capaz de definir e manter estilos e arquivos de folhas de estilo em cascata com eficiência, bem como acesso fácil a imagem não ícones que ajudam a tornar a interface do site mais intuitiva. É onde linguagens e ferramentas que dão suporte a [Less](http://lesscss.org/) e [Sass](http://sass-lang.com/), e bibliotecas, como [Fonte Awesome](http://fontawesome.io/), entrar.
 
 ## <a name="css-preprocessor-languages"></a>Idiomas de pré-processador de CSS
 
-Idiomas que são compilados em outros idiomas, para melhorar a experiência de trabalhar com o idioma base são chamados de pré-processador. Há dois pré-processadores populares de CSS: menor e Sass.  Esses pré-processadores adicionar recursos a CSS, como suporte para variáveis e regras aninhadas que melhorar a facilidade de manutenção de folhas de estilo grandes e complexas. CSS como uma linguagem é muito básica, sem suporte a até mesmo algo simples, como variáveis e isso tende a fazer arquivos CSS repetitivas e inchada. Adicionando recursos de idioma real de programação via pré-processadores pode ajudar a reduzir a duplicação e fornecer melhor organização de regras de estilo. Visual Studio fornece suporte interno para ambos os menor e Sass, bem como as extensões que podem melhorar ainda mais a experiência de desenvolvimento ao trabalhar com esses idiomas.
+Idiomas que são compilados em outros idiomas, para melhorar a experiência de trabalhar com o idioma base são chamados de pré-processador. Há dois pré-processadores populares de CSS: less e Sass.  Esses pré-processadores adicionar recursos a CSS, como suporte para variáveis e regras aninhadas que melhorar a facilidade de manutenção de folhas de estilo grandes e complexas. CSS como uma linguagem é muito básica, sem suporte a até mesmo algo simples, como variáveis e isso tende a fazer arquivos CSS repetitivas e inchada. Adicionando recursos de idioma real de programação via pré-processadores pode ajudar a reduzir a duplicação e fornecer melhor organização de regras de estilo. Visual Studio fornece suporte interno para ambos os less e Sass, bem como as extensões que podem melhorar ainda mais a experiência de desenvolvimento ao trabalhar com esses idiomas.
 
 Como um exemplo rápido de como pré-processadores podem melhorar a leitura e a manutenção de informações de estilo, considere este CSS:
 
@@ -43,7 +43,7 @@ Como um exemplo rápido de como pré-processadores podem melhorar a leitura e a 
 }
 ```
 
-Usando o menor, isso pode ser reescrito para eliminar a duplicação, usando um *mesclado* (chamada assim porque ele permite que você "mix" propriedades de uma classe ou conjunto de regras em outro):
+Usando Less, isso pode ser reescrito para eliminar a duplicação, usando um *mixin* (chamada assim porque ele permite que você "misture" propriedades de uma classe ou conjunto de regras em outra):
 
 ```less
 .header {
@@ -59,15 +59,15 @@ Usando o menor, isso pode ser reescrito para eliminar a duplicação, usando um 
 }
 ```
 
-## <a name="less"></a>Menos
+## <a name="less"></a>Less
 
-O CSS menos pré-processador é executado usando o Node. js. Para instalar menor, use o Gerenciador de pacotes de nó (npm) em um prompt de comando (-g significa "global"):
+O pré-processador CSS less é executado usando o Node. js. Para instalar less, use o Gerenciador de pacotes de nó (npm) em um prompt de comando (-g significa "global"):
 
 ```console
 npm install -g less
 ```
 
-Se você estiver usando o Visual Studio, você pode começar com menos adicionando um ou mais arquivos menos ao seu projeto e, em seguida, configurando Gulp (ou Grunt) para processá-los em tempo de compilação. Adicionar um *estilos* pasta ao seu projeto e, em seguida, adicione um novo menos um arquivo chamado *main.less* nesta pasta.
+Se você estiver usando o Visual Studio, você pode começar com less adicionando um ou mais arquivos less ao seu projeto e, em seguida, configurando Gulp (ou Grunt) para processá-los em tempo de compilação. Adicionar um *estilos* pasta ao seu projeto e, em seguida, adicione um novo arquivo less chamado *main.less* nesta pasta.
 
 ![Adicionar arquivo less](less-sass-fa/_static/add-less-file.png)
 
@@ -97,7 +97,7 @@ body {
 .bgDark2    {color:@darker2}
 ```
 
-`@base`e o outro @-prefixed itens são variáveis. Cada um deles representa uma cor. Exceto para `@base`, eles são definidos usando funções de cor: mais claro, mais escuro e rotação. Mais claro e escureça fazer muito bem o que você esperaria; rotação ajusta o matiz da cor por um número de graus (ao redor do círculo de cores). O processador de menos é inteligente ignore variáveis que não são usados, por isso, para demonstrar como funcionam essas variáveis, precisamos usá-los em algum lugar. As classes `.baseColor`, etc. demonstrará os valores calculados de cada uma das variáveis no arquivo CSS que é produzida.
+`@base`e o outro @-prefixed itens são variáveis. Cada um deles representa uma cor. Exceto para `@base`, eles são definidos usando funções de cor: mais claro, mais escuro e rotação. Mais claro e escureça fazer muito bem o que você esperaria; rotação ajusta o matiz da cor por um número de graus (ao redor do círculo de cores). O processador de less é inteligente ignore variáveis que não são usados, por isso, para demonstrar como funcionam essas variáveis, precisamos usá-los em algum lugar. As classes `.baseColor`, etc. demonstrará os valores calculados de cada uma das variáveis no arquivo CSS que é produzida.
 
 ### <a name="getting-started"></a>Introdução
 
@@ -123,7 +123,7 @@ npm install
 
 ![Restaurar os pacotes do VS](less-sass-fa/_static/restore-packages.png)
 
-Na pasta do projeto, criar um **Gulp arquivo de configuração** (*gulpfile.js*) para definir o processo automatizado.  Adicione uma variável na parte superior do arquivo para representar menor e uma tarefa para execução menor:
+Na pasta do projeto, criar um **Gulp arquivo de configuração** (*gulpfile.js*) para definir o processo automatizado.  Adicione uma variável na parte superior do arquivo para representar less e uma tarefa para execução less:
 
 ```javascript
 var gulp = require("gulp"),
@@ -141,7 +141,7 @@ Abra o **Explorador do Executador de tarefas** (**exibição > outras janelas > 
 
 Execute o `less` tarefa e você verá uma saída semelhante ao que é mostrado aqui:
 
-![menos executor de tarefas](less-sass-fa/_static/less-task-runner.png)
+![less executor de tarefas](less-sass-fa/_static/less-task-runner.png)
 
 O *wwwroot/css* pasta agora contém um novo arquivo, *Main*:
 
@@ -194,9 +194,9 @@ Adicionar uma página HTML simples para o *wwwroot* pasta e referência *Main* p
 
 Você pode ver que o grau de 180 girar na `@base` usada para produzir `@background` resultou no disco de cores opostas cor de `@base`:
 
-![menos de teste de exemplo](less-sass-fa/_static/less-test-screenshot.png)
+![exemplo de teste de less](less-sass-fa/_static/less-test-screenshot.png)
 
-Menor também oferece suporte para regras aninhadas, bem como as consultas de mídia aninhada. Por exemplo, definindo hierarquias aninhadas como menus podem resultar em regras de CSS detalhadas como estes:
+Less também oferece suporte para regras aninhadas, bem como as consultas de mídia aninhada. Por exemplo, definindo hierarquias aninhadas como menus podem resultar em regras de CSS detalhadas como estes:
 
 ```css
 nav {
@@ -226,7 +226,7 @@ nav li a:active {
 
 O ideal é todas as regras de estilo relacionados serão colocadas juntos dentro do arquivo CSS, mas na prática, não há nada impor essa regra exceto convenção e talvez os comentários do bloco.
 
-Definir essas mesmas regras usando menos tem esta aparência:
+Definir essas mesmas regras usando less tem esta aparência:
 
 ```less
 nav {
@@ -248,9 +248,9 @@ nav {
 
 Observe que, nesse caso, todos os elementos subordinados do `nav` estão contidos dentro de seu escopo. Não há nenhuma repetição dos elementos pai (`nav`, `li`, `a`), e a contagem de linha de total caiu também (embora algumas das é um resultado de colocar valores nas linhas da mesmas no segundo exemplo). Ele pode ser muito útil, organizacional, para ver todas as regras para um determinado elemento de interface do usuário em um escopo explicitamente associado, nesse caso definido do restante do arquivo de chaves.
 
-O `&` sintaxe é um recurso menos seletor, com & que representa o pai de seletor atual. Portanto, dentro do {...} bloco, `&` representa um `a` marca e, portanto, `&:link` é equivalente a `a:link`.
+O `&` sintaxe é um recurso seletor less, com & que representa o pai de seletor atual. Portanto, dentro do {...} bloco, `&` representa um `a` marca e, portanto, `&:link` é equivalente a `a:link`.
 
-Consultas de mídia, extremamente úteis na criação de designs de resposta também podem contribuir muito para repetição e a complexidade em CSS. Menor permite que as consultas de mídia a ser aninhada dentro de classes, para que a definição de classe inteira não precisa ser repetido em diferentes nível superior `@media` elementos. Por exemplo, aqui está o CSS para um menu de resposta:
+Consultas de mídia, extremamente úteis na criação de designs de resposta também podem contribuir muito para repetição e a complexidade em CSS. Less permite que as consultas de mídia a ser aninhada dentro de classes, para que a definição de classe inteira não precisa ser repetido em diferentes nível superior `@media` elementos. Por exemplo, aqui está o CSS para um menu de resposta:
 
 ```css
 .navigation {
@@ -270,7 +270,7 @@ Consultas de mídia, extremamente úteis na criação de designs de resposta tam
 }
 ```
 
-Isso pode ser melhor definido em menos como:
+Isso pode ser melhor definido em less como:
 
 ```less
 .navigation {
@@ -286,11 +286,11 @@ Isso pode ser melhor definido em menos como:
 }
 ```
 
-Outro recurso de menor que já vimos é seu suporte para operações matemáticas, permitindo que os atributos de estilo a ser construído de variáveis predefinidas. Isso facilita a atualização estilos relacionados muito mais fácil, já que a variável de base pode ser modificada e todos os valores dependentes alterar automaticamente.
+Outro recurso de less que já vimos é seu suporte para operações matemáticas, permitindo que os atributos de estilo a ser construído de variáveis predefinidas. Isso facilita a atualização estilos relacionados muito mais fácil, já que a variável de base pode ser modificada e todos os valores dependentes alterar automaticamente.
 
-Arquivos CSS, especialmente para grandes sites (e especialmente se as consultas de mídia estão sendo usadas), tendem a ter muito grandes ao longo do tempo, tornando a trabalhar com elas complicada. Menos arquivos podem ser definidos separadamente, obtidas usando `@import` diretivas. Menor também pode ser usado para importar CSS arquivos individuais, também, se desejado.
+Arquivos CSS, especialmente para grandes sites (e especialmente se as consultas de mídia estão sendo usadas), tendem a ter muito grandes ao longo do tempo, tornando a trabalhar com elas complicada. Arquivos less podem ser definidos separadamente, obtidas usando `@import` diretivas. Less também pode ser usado para importar arquivos CSS individuais, se desejado.
 
-*Mixins* pode aceitar parâmetros e menor oferece suporte à lógica condicional na forma de protege mesclado, que fornecem uma maneira declarativa para definir quando determinados mixins entra em vigor. Um uso comum para protege mesclado ajustar as cores com base em como a luz ou escuro a cor da fonte. Dado um mesclado que aceita um parâmetro para a cor, um protetor mesclado pode ser usado para modificar o mesclado com base na cor:
+*Mixins* pode aceitar parâmetros e less oferece suporte à lógica condicional na forma de protege mesclado, que fornecem uma maneira declarativa para definir quando determinados mixins entra em vigor. Um uso comum para protege mesclado ajustar as cores com base em como a luz ou escuro a cor da fonte. Dado um mesclado que aceita um parâmetro para a cor, um protetor mesclado pode ser usado para modificar o mesclado com base na cor:
 
 ```less
 .box (@color) when (lightness(@color) >= 50%) {
@@ -308,7 +308,7 @@ Arquivos CSS, especialmente para grandes sites (e especialmente se as consultas 
 }
 ```
 
-Considerando nossa atual `@base` valor `#663333`, esse script menor produzirá o seguinte CSS:
+Considerando nossa atual `@base` valor `#663333`, esse script less produzirá o seguinte CSS:
 
 ```css
 .feature {
@@ -317,11 +317,11 @@ Considerando nossa atual `@base` valor `#663333`, esse script menor produzirá o
 }
 ```
 
-Menor fornece uma série de recursos adicionais, mas isso deve dar uma ideia da energia desse idioma de pré-processamento.
+Less fornece uma série de recursos adicionais, mas isso deve dar uma ideia da energia desse idioma de pré-processamento.
 
 ## <a name="sass"></a>Sass
 
-Sass é semelhante ao menos, fornecendo suporte para muitos dos mesmos recursos, mas com sintaxe ligeiramente diferente. Ele é criado usando o Ruby, em vez de JavaScript, e portanto tem requisitos de instalação diferentes. O idioma Sass original não usa chaves ou ponto e vírgula, mas em vez disso, definida escopo usando o recuo e espaços em branco. Na versão 3 dos Sass, uma nova sintaxe foi introduzida, **SCSS** ("Sassy CSS"). SCSS é semelhante ao CSS que ignora os níveis de recuo e espaços em branco e, em vez disso, usa o ponto e vírgula e chaves.
+Sass é semelhante ao less, fornecendo suporte para muitos dos mesmos recursos, mas com sintaxe ligeiramente diferente. Ele é criado usando o Ruby, em vez de JavaScript, e portanto tem requisitos de instalação diferentes. O idioma Sass original não usa chaves ou ponto e vírgula, mas em vez disso, definida escopo usando o recuo e espaços em branco. Na versão 3 dos Sass, uma nova sintaxe foi introduzida, **SCSS** ("Sassy CSS"). SCSS é semelhante ao CSS que ignora os níveis de recuo e espaços em branco e, em vez disso, usa o ponto e vírgula e chaves.
 
 Para instalar Sass, normalmente você deve primeiro instalar Ruby (pré-instalado no Mac) e, em seguida, execute:
 
@@ -329,7 +329,7 @@ Para instalar Sass, normalmente você deve primeiro instalar Ruby (pré-instalad
 gem install sass
 ```
 
-No entanto, se você estiver executando o Visual Studio, você pode começar com Sass em grande parte da mesma maneira como você faria com menos. Abra *Package. JSON* e adicionar o pacote "gulp sass" `devDependencies`:
+No entanto, se você estiver executando o Visual Studio, você pode começar com Sass em grande parte da mesma maneira como você faria com less. Abra *Package. JSON* e adicionar o pacote "gulp sass" `devDependencies`:
 
 ```json
 "devDependencies": {
@@ -377,7 +377,7 @@ body {
 }
 ```
 
-Sass oferece suporte a aninhamento praticamente o mesmo foi que menor não, fornecer benefícios semelhantes. Os arquivos podem ser divididos por função e incluídos usando a `@import` diretiva:
+Sass oferece suporte a aninhamento praticamente o mesmo foi que less não, fornecer benefícios semelhantes. Os arquivos podem ser divididos por função e incluídos usando a `@import` diretiva:
 
 ```sass
 @import 'anotherfile';
@@ -484,13 +484,13 @@ Execute Sass mais uma vez e examine o CSS resultante:
 
 Agora as propriedades são definidas apenas como quantas vezes forem necessárias, e melhor CSS é gerado.
 
-Sass também inclui funções e operações de lógica condicional, semelhantes ao menor. Na verdade, os recursos de dois idiomas são muito semelhantes.
+Sass também inclui funções e operações de lógica condicional, semelhantes ao less. Na verdade, os recursos de dois idiomas são muito semelhantes.
 
-## <a name="less-or-sass"></a>Menor ou Sass?
+## <a name="less-or-sass"></a>Less ou Sass?
 
-Ainda há consenso se geralmente é melhor usar menor ou Sass (ou até mesmo se preferir o Sass original ou a sintaxe SCSS mais recente em Sass). Provavelmente, a decisão mais importante é **usar uma dessas ferramentas**, em vez de apenas mão-coding seus arquivos CSS. Depois que você fez que de decisão, ambos sem e Sass são boas opções.
+Ainda há consenso se geralmente é melhor usar less ou Sass (ou até mesmo se preferir o Sass original ou a sintaxe SCSS mais recente em Sass). Provavelmente, a decisão mais importante é **usar uma dessas ferramentas**, em vez de apenas mão-coding seus arquivos CSS. Depois que você fez que de decisão, ambos sem e Sass são boas opções.
 
-## <a name="font-awesome"></a>Fonte incrível
+## <a name="font-awesome"></a>Fonte Awesome
 
 Além de pré-processadores CSS, outro excelente recurso para aplicativos web modernos de estilo é incrível de fonte. Lista de fonte é um kit de ferramentas fornece mais de 500 ícones de SVG que podem ser usados livremente em seus aplicativos web. Ela foi originalmente projetada para trabalhar com inicialização, mas ele não tem nenhuma dependência no framework ou em qualquer biblioteca de JavaScript.
 
@@ -547,4 +547,4 @@ http://fontawesome.io/icons/
 
 ## <a name="summary"></a>Resumo
 
-Aplicativos web modernos exigem cada vez mais responsivos, fluidos designs que são normal, intuitiva e fácil de usar de uma variedade de dispositivos. Gerenciar a complexidade das folhas de estilo CSS necessárias para atingir essas metas, melhor é feito usando um tipo de pré-processador menos ou Sass. Além disso, kits de ferramentas como o incríveis fonte rapidamente fornecem ícones conhecidos a menus de navegação textual e experiência de botões, melhorando o usuário do seu aplicativo.
+Aplicativos web modernos exigem cada vez mais responsivos, fluidos designs que são normal, intuitiva e fácil de usar de uma variedade de dispositivos. Gerenciar a complexidade das folhas de estilo CSS necessárias para atingir essas metas, melhor é feito usando um tipo de pré-processador less ou Sass. Além disso, kits de ferramentas como o incríveis fonte rapidamente fornecem ícones conhecidos a menus de navegação textual e experiência de botões, melhorando o usuário do seu aplicativo.
