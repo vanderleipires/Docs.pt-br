@@ -2,18 +2,18 @@
 title: Novidades do ASP.NET Core 2.0
 author: rick-anderson
 description: Novidades do ASP.NET Core 2.0
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/10/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: ca02de7954002dcbc125898c9f570438f88db818
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 35d57abd07e83cd5b190572962fbf43aef03a534
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Novidades do ASP.NET Core 2.0
 
@@ -82,7 +82,7 @@ Modelos de projeto de SPA (aplicativo de página único) para Angular, Aurelia, 
 
 ## <a name="kestrel-improvements"></a>Melhorias do Kestrel
 
-O servidor Web Kestrel tem novos recursos que o tornam mais adequado como um servidor voltado para a Internet. Adicionamos um número de opções de configuração de restrição de servidor na nova propriedade `Limits` da classe `KestrelServerOptions`. Agora você pode adicionar limites para o seguinte:
+O servidor Web Kestrel tem novos recursos que o tornam mais adequado como um servidor voltado para a Internet. Uma série de opções de configuração de restrição de servidor serão adicionadas na nova propriedade `Limits` da classe `KestrelServerOptions`. Adicione limites para o seguinte:
 
 - Número máximo de conexões de cliente
 - Tamanho máximo do corpo da solicitação
@@ -120,7 +120,7 @@ Para obter informações sobre o status da documentação planejada, consulte o 
 
 ## <a name="automatic-use-of-anti-forgery-tokens"></a>Uso automático de tokens antifalsificação
 
-O ASP.NET Core sempre ajudou a fazer a codificação HTML de seu conteúdo por padrão, mas com a nova versão, estamos dando uma passo adicional para ajudar a impedir ataques de XSRF (falsificação de solicitação entre sites). O ASP.NET Core agora emitirá tokens antifalsificação por padrão e os validará em ações de POST de formulário e em páginas sem configuração adicional.
+O ASP.NET Core sempre ajudou a fazer a codificação HTML do conteúdo por padrão, mas com a nova versão é necessário um passo adicional para ajudar a impedir ataques de XSRF (falsificação de solicitação entre sites). O ASP.NET Core agora emitirá tokens antifalsificação por padrão e os validará em ações de POST de formulário e em páginas sem configuração adicional.
 
 Para obter mais informações, consulte [Impedindo ataques de falsificação de solicitação entre sites (CSRF/XSRF) no ASP.NET Core](xref:security/anti-request-forgery).
 
@@ -158,4 +158,4 @@ Para obter diretrizes sobre como migrar aplicativos ASP.NET Core 1.x para o ASP.
 
 Para obter uma lista de alterações, consulte as [Notas de versão do ASP.NET Core 2.0](https://github.com/aspnet/Home/releases/tag/2.0.0).
 
-Se você deseja ficar conectado com o progresso e os planos da equipe de desenvolvimento do ASP.NET Core, prepare-se para a [palestra semanal da comunidade do ASP.NET](https://live.asp.net/).
+Para se conectar ao progresso e aos planos da equipe de desenvolvimento do ASP.NET Core, fique ligado no [ASP.NET Community Standup](https://live.asp.net/).

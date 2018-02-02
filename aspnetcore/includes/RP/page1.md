@@ -105,9 +105,9 @@ O elemento de âncora anterior é um [Auxiliar de Marcas](xref:mvc/views/tag-hel
 
 Salve suas alterações e teste o aplicativo clicando no link **RpMovie**. Consulte o arquivo [cshtml](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml) no GitHub.
 
-### <a name="the-create-code-behind-page"></a>Página code-behind Criar
+### <a name="the-create-page-model"></a>O modelo Criar página
 
-Examine o arquivo code-behind *Pages/Movies/Create.cshtml.cs*:
+Examine o modelo de página *Pages/Movies/Create.cshtml.cs*:
 
 [!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
 
