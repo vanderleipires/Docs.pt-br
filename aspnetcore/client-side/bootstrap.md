@@ -1,5 +1,5 @@
 ---
-title: "Criando sites lindos, respondendo com inicialização"
+title: "Criando sites lindos, responsivos com bootstrap"
 author: ardalis
 description: 
 manager: wpickett
@@ -15,27 +15,27 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Criando sites lindos, respondendo com inicialização
+# <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Criando sites lindos, responsivos com bootstrap
 
 <a name="bootstrap-index"></a>
 
 Por [Steve Smith](https://ardalis.com/)
 
-Inicialização atualmente é a estrutura da web mais popular de desenvolvimento de aplicativos web responsivo. Ele oferece uma série de recursos e benefícios que podem melhorar a experiência dos usuários ao seu site, se você for um iniciante no front-end design e desenvolvimento ou de um especialista. Inicialização é implantada como um conjunto de arquivos CSS e JavaScript e foi projetada para ajudar a dimensionar seu site ou aplicativo com eficiência de telefones para tablets para áreas de trabalho.
+Bootstrap atualmente é a estrutura da web mais popular de desenvolvimento de aplicativos web responsivo. Ele oferece uma série de recursos e benefícios que podem melhorar a experiência dos usuários ao seu site, se você for um iniciante no front-end design e desenvolvimento ou de um especialista. Bootstrap é implantado como um conjunto de arquivos CSS e JavaScript e foi projetada para ajudar a dimensionar seu site ou aplicativo com eficiência de telefones para tablets para áreas de trabalho.
 
 ## <a name="getting-started"></a>Introdução
 
-Há várias maneiras para começar a inicialização. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, no qual caso Bootstrap virão pré-instalados:
+Há várias maneiras para começar o bootstrap. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, no qual caso Bootstrap virão pré-instalados:
 
 ![Inicializar no modo de exibição de solução de modelo starter](bootstrap/_static/bootstrap-in-starter-template.png)
 
-A adição de inicialização para um ASP.NET Core projeto é simplesmente uma questão de adicioná-la à *bower. JSON* como uma dependência:
+A adição do bootstrap para um projeto ASP.NET Core é simplesmente uma questão de adicioná-la no *bower. JSON* como uma dependência:
 
 [!code-json[Main](../common/samples/WebApplication1/bower.json?highlight=5)]
 
-Essa é a maneira recomendada para adicionar a inicialização para um projeto do ASP.NET Core.
+Essa é a maneira recomendada para adicionar o bootstrap para um projeto do ASP.NET Core.
 
-Você também pode instalar bootstrap usando um dos vários gerenciadores de pacotes, como Bower, npm ou NuGet. Em cada caso, o processo é essencialmente o mesmo:
+Você também pode instalar o bootstrap usando um dos vários gerenciadores de pacotes, como Bower, npm ou NuGet. Em cada caso, o processo é essencialmente o mesmo:
 
 ### <a name="bower"></a>Bower
 
@@ -56,9 +56,9 @@ Install-Package bootstrap
 ```
 
 > [!NOTE]
-> A maneira recomendada para instalar dependências de cliente como a inicialização no núcleo do ASP.NET é por meio de Bower (usando *bower. JSON*, conforme mostrado acima). O uso do npm/NuGet são mostrados para demonstrar como inicialização pode ser facilmente adicionada a outros tipos de aplicativos web, incluindo versões anteriores do ASP.NET.
+> A maneira recomendada para instalar dependências de cliente como o bootstrap no ASP.NET Core é por meio do Bower (usando *bower. JSON*, conforme mostrado acima). O uso do npm/NuGet são mostrados para demonstrar como bootstrap pode ser facilmente adicionado a outros tipos de aplicativos web, incluindo versões anteriores do ASP.NET.
 
-Se você estiver fazendo referência a suas próprias versões locais de inicialização, você precisará fazer referência a eles em todas as páginas que irá usá-la. Em produção, você deve fazer referência bootstrap usando uma CDN. No modelo de site ASP.NET padrão, o *cshtml* arquivo assim como este:
+Se você estiver fazendo referência a suas próprias versões locais do bootstrap, você precisará fazer referência a eles em todas as páginas que irá usá-lo. Em produção, você deve fazer referência bootstrap usando uma CDN. No modelo de site ASP.NET padrão, o *cshtml* arquivo assim como este:
 
 [!code-html[Main](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
 
@@ -67,7 +67,7 @@ Se você estiver fazendo referência a suas próprias versões locais de inicial
 
 ## <a name="basic-templates-and-features"></a>Recursos e modelos básicos
 
-O modelo de inicialização mais básico é muito parecido com o *cshtml* arquivo mostrado acima e simplesmente inclui um menu básico para navegação e um local para renderizar o restante da página.
+O modelo do bootstrap mais básico é muito parecido com o *cshtml* arquivo mostrado acima e simplesmente inclui um menu básico para navegação e um local para renderizar o restante da página.
 
 ### <a name="basic-navigation"></a>Navegação básica
 
@@ -95,13 +95,13 @@ Clicando no ícone revela os itens de menu em uma gaveta vertical que slides par
 
 ### <a name="typography-and-links"></a>Tipografia e links
 
-Inicialização configura tipografia básico, cores e formatação em seu arquivo CSS de link do site. Esse arquivo CSS inclui estilos de padrão para tabelas, botões, elementos de formulário, imagens e muito mais ([mais](http://getbootstrap.com/css/)). Um recurso útil é o sistema de layout de grade, abordado em seguida.
+Bootstrap configura tipografia básica, cores e formatação em seu arquivo CSS de link do site. Esse arquivo CSS inclui estilos de padrão para tabelas, botões, elementos de formulário, imagens e muito mais ([mais](http://getbootstrap.com/css/)). Um recurso útil é o sistema de layout de grade, abordado em seguida.
 
 ### <a name="grids"></a>Grades
 
-Um dos recursos mais populares de inicialização é o sistema de layout de grade. Aplicativos web modernos devem evitar usar o `<table>` marca de layout, em vez disso, restringir o uso desse elemento para dados de tabela reais. Em vez disso, colunas e linhas podem ser dispostas usando uma série de `<div>` elementos e as classes CSS apropriadas. Há várias vantagens dessa abordagem, incluindo a capacidade de ajustar o layout de grade para exibir verticalmente em estreitas telas, como em telefones.
+Um dos recursos mais populares do bootstrap é o sistema de layout de grade. Aplicativos web modernos devem evitar usar o `<table>` marca de layout, em vez disso, restringir o uso desse elemento para dados de tabela reais. Em vez disso, colunas e linhas podem ser dispostas usando uma série de `<div>` elementos e as classes CSS apropriadas. Há várias vantagens dessa abordagem, incluindo a capacidade de ajustar o layout de grade para exibir verticalmente em estreitas telas, como em telefones.
 
-[Sistema de layout de grade da inicialização](http://getbootstrap.com/css/#grid) é baseado em doze colunas. Esse número foi escolhido porque podem ser dividido uniformemente em 1, 2, 3 ou 4 colunas e larguras de coluna podem variar para dentro de 1/12 da largura da tela vertical. Para começar a usar o sistema de layout de grade, você deve começar com um contêiner `<div>` e, em seguida, adicione uma linha `<div>`, conforme mostrado aqui:
+[Sistema de layout de grade do bootstrap](http://getbootstrap.com/css/#grid) é baseado em doze colunas. Esse número foi escolhido porque podem ser dividido uniformemente em 1, 2, 3 ou 4 colunas e larguras de coluna podem variar para dentro de 1/12 da largura da tela vertical. Para começar a usar o sistema de layout de grade, você deve começar com um contêiner `<div>` e, em seguida, adicione uma linha `<div>`, conforme mostrado aqui:
 
 ```html
 <div class="container">
@@ -122,7 +122,7 @@ col-lg - | Exibe maior de área de trabalho | >= 1200px
 
 Ao especificar duas colunas com "col-md-6" layout resultante será duas colunas com resoluções de área de trabalho, mas essas duas colunas serão empilhadas verticalmente quando renderizado em dispositivos menores (ou uma janela de navegador mais estreita em uma área de trabalho), permitindo aos usuários exibir facilmente conteúdo sem precisar rolar horizontalmente.
 
-Inicialização padrão será sempre um layout de coluna única, portanto você precisa apenas especificar colunas quando você quiser mais de uma coluna. A única vez em que você deseja especificar explicitamente que um `<div>` ocupem todas as 12 colunas seria substituir o comportamento de um maior nível de dispositivo. Ao especificar várias classes de camada do dispositivo, talvez seja necessário redefinir o processamento de coluna em determinados pontos. Adicionar um div clearfix que só é visível dentro de um visor de determinados conseguir isso, conforme mostrado aqui:
+O padrão do bootstrap será sempre um layout de coluna única, portanto você precisa apenas especificar colunas quando você quiser mais de uma coluna. A única vez em que você deseja especificar explicitamente que um `<div>` ocupem todas as 12 colunas seria substituir o comportamento de um maior nível de dispositivo. Ao especificar várias classes de camada do dispositivo, talvez seja necessário redefinir o processamento de coluna em determinados pontos. Adicionar um div clearfix que só é visível dentro de um visor de determinados conseguir isso, conforme mostrado aqui:
 
 ![grade de visor largos e estreitos](bootstrap/_static/narrow-and-wide-viewport-grid.png)
 
@@ -158,7 +158,7 @@ Talvez seja necessário exibir algum tipo de notificação de alerta ou para usu
 
 ### <a name="navbars-and-menus"></a>Menus e barras de navegação
 
-Nosso layout já inclui uma barra de navegação padrão, mas o tema de inicialização dá suporte a opções de estilo adicionais. Podemos facilmente pode optar por exibir a barra de navegação verticalmente em vez de horizontalmente se que tem preferencial, bem como a adição de subnavegação itens nos menus de atalho. Menus de navegação simples, como as faixas guia baseiam-se na parte superior do <ul> elementos. Eles podem ser criados muito simples, apenas fornecendo a eles com as classes CSS "nav" e "nav-guias":
+Nosso layout já inclui uma barra de navegação padrão, mas o tema do bootstrap dá suporte a opções de estilo adicionais. Podemos facilmente pode optar por exibir a barra de navegação verticalmente em vez de horizontalmente se que tem preferencial, bem como a adição de subnavegação itens nos menus de atalho. Menus de navegação simples, como as faixas guia baseiam-se na parte superior do <ul> elementos. Eles podem ser criados muito simples, apenas fornecendo a eles com as classes CSS "nav" e "nav-guias":
 
 ![tabstrips com tema](bootstrap/_static/theme-tabstrips.png)
 
@@ -168,17 +168,17 @@ Barras de navegação são criadas da mesma forma, mas são um pouco mais comple
 
 ### <a name="additional-elements"></a>Elementos adicionais
 
-O tema padrão também pode ser usado para apresentar tabelas HTML em um estilo bem formatado, incluindo suporte para modos de exibição distribuídos. Há rótulos com estilos que são semelhantes dos botões. Você pode criar menus suspensos personalizados que oferecem suporte a opções de estilo adicionais além do HTML padrão `<select>` elemento, junto com as barras de navegação como o nosso site de início padrão já está usando. Se você precisar de uma barra de progresso, há vários estilos para escolha, bem como a lista de grupos e painéis que incluem um título e o conteúdo. Explore as opções adicionais do tema de inicialização padrão aqui:
+O tema padrão também pode ser usado para apresentar tabelas HTML em um estilo bem formatado, incluindo suporte para modos de exibição distribuídos. Há rótulos com estilos que são semelhantes dos botões. Você pode criar menus suspensos personalizados que oferecem suporte a opções de estilo adicionais além do HTML padrão `<select>` elemento, junto com as barras de navegação como o nosso site de início padrão já está usando. Se você precisar de uma barra de progresso, há vários estilos para escolha, bem como a lista de grupos e painéis que incluem um título e o conteúdo. Explore as opções adicionais do tema do bootstrap padrão aqui:
 
 [http://getbootstrap.com/examples/theme/](http://getbootstrap.com/examples/theme/)
 
 ## <a name="more-themes"></a>Mais temas
 
-Você pode estender o tema de inicialização padrão, substituindo alguns ou todos os seus CSS, ajustar as cores e estilos para atender às necessidades do seu próprio aplicativo. Se você deseja iniciar a partir de um tema pronto, há vários galerias de tema disponíveis online que especializados em temas de inicialização, como WrapBootstrap.com (que tem uma variedade de temas comerciais) e Bootswatch.com (que oferece temas livres). Alguns dos modelos disponíveis pagos fornecem uma grande quantidade de funcionalidade sobre o tema de inicialização básica, como suporte avançado para administrativas menus e painéis avançados gráficos e medidores. Um exemplo de um modelo pago popular está Inspinia, para a venda de US $18, que inclui um modelo de ASP.NET MVC5 além AngularJS e versões HTML estáticas. Abaixo está uma captura de tela de exemplo.
+Você pode estender o tema padrão do bootstrap, substituindo alguns ou todos os seus CSS, ajustar as cores e estilos para atender às necessidades do seu próprio aplicativo. Se você deseja iniciar a partir de um tema pronto, há vários galerias de tema disponíveis online que especializados em temas do bootstrap, como WrapBootstrap.com (que tem uma variedade de temas comerciais) e Bootswatch.com (que oferece temas livres). Alguns dos modelos disponíveis pagos fornecem uma grande quantidade de funcionalidade sobre o tema básico do bootstrap, como suporte avançado para administrativas menus e painéis avançados gráficos e medidores. Um exemplo de um modelo pago popular está Inspinia, para a venda de US $18, que inclui um modelo de ASP.NET MVC5 além AngularJS e versões HTML estáticas. Abaixo está uma captura de tela de exemplo.
 
 ![Exemplo tema inspinia](bootstrap/_static/theme-inspinia.png)
 
-Se você quiser alterar o tema de inicialização, coloque o *bootstrap.css* arquivo para o tema que você deseja no **wwwroot/css** pasta e altere as referências no *cshtml* para apontá-lo. Altere os links para todos os ambientes:
+Se você quiser alterar o tema do bootstrap, coloque o *bootstrap.css* arquivo para o tema que você deseja no **wwwroot/css** pasta e altere as referências no *cshtml* para apontá-lo. Altere os links para todos os ambientes:
 
 ```html
 <environment names="Development">
@@ -194,11 +194,11 @@ Se você deseja criar seu próprio painel, você pode iniciar do exemplo livre d
 
 ## <a name="components"></a>Componentes
 
-Além desses elementos já discutidos, inicialização inclui suporte para uma variedade de [componentes internos de interface do usuário](http://getbootstrap.com/components/).
+Além desses elementos já discutidos, bootstrap inclui suporte para uma variedade de [componentes internos de interface do usuário](http://getbootstrap.com/components/).
 
 ### <a name="glyphicons"></a>Glyphicons
 
-Inicialização inclui conjuntos de ícones de Glyphicons ([http://glyphicons.com](http://glyphicons.com)), com mais de 200 ícones disponíveis gratuitamente para uso dentro de seu aplicativo da web habilitado para inicialização. Aqui está a apenas uma pequena amostra:
+Bootstrap inclui conjuntos de ícones de Glyphicons ([http://glyphicons.com](http://glyphicons.com)), com mais de 200 ícones disponíveis gratuitamente para uso dentro de seu aplicativo da web habilitado para o bootstrap. Aqui está a apenas uma pequena amostra:
 
 ![Glyphicons](bootstrap/_static/theme-glyphicons.png)
 
@@ -210,7 +210,7 @@ Grupos de entrada permitem agrupamento de texto adicional ou botões com um elem
 
 ### <a name="breadcrumbs"></a>Trilha
 
-Navegação estrutural é um componente de interface do usuário comum usado para mostrar ao usuário seu histórico recente ou a profundidade da hierarquia de navegação do site. Adicioná-los facilmente aplicando a classe "trilha" a qualquer `<ol>` elemento da lista. Inclui suporte interno para paginação usando a classe "paginação" em um `<ul>` elemento dentro de um `<nav>`. Adicionar apresentações de slides inseridas responsivos e vídeo usando `<iframe>`, `<embed>`, `<video>`, ou `<object>` elementos, que inicialização será estilo automaticamente. Especifique uma taxa de proporção específica usando classes específicas, como "Inserir-responsivo-16by9".
+Navegação estrutural é um componente de interface do usuário comum usado para mostrar ao usuário seu histórico recente ou a profundidade da hierarquia de navegação do site. Adicioná-los facilmente aplicando a classe "trilha" a qualquer `<ol>` elemento da lista. Inclui suporte interno para paginação usando a classe "paginação" em um `<ul>` elemento dentro de um `<nav>`. Adicionar apresentações de slides inseridas responsivos e vídeo usando `<iframe>`, `<embed>`, `<video>`, ou elementos `<object>`, que o bootstrap será estilo automaticamente. Especifique uma taxa de proporção específica usando classes específicas, como "Inserir-responsivo-16by9".
 
 ## <a name="javascript-support"></a>Suporte a JavaScript
 
@@ -218,4 +218,4 @@ Biblioteca de JavaScript do Bootstrap inclui suporte a API para os componentes i
 
 ## <a name="summary"></a>Resumo
 
-Inicialização fornece uma estrutura de web que pode ser usada para formatar e uma ampla variedade de sites e aplicativos de estilo de forma rápida e produtiva. Seu tipografia básica e estilos fornecem uma agradável aparência que podem ser manipulada facilmente por meio do suporte de tema personalizado, que pode ser criado manualmente ou adquirido comercialmente. Ele dá suporte a um host de componentes da web que seria tiver solicitado caros controles de terceiros para realizar e dar suporte a padrões da web modernos e abertos no passado.
+Bootstrap fornece uma estrutura de web que pode ser usada para formatar e uma ampla variedade de sites e aplicativos de estilo de forma rápida e produtiva. Seu tipografia básica e estilos fornecem uma agradável aparência que podem ser manipulada facilmente por meio do suporte de tema personalizado, que pode ser criado manualmente ou adquirido comercialmente. Ele dá suporte a um host de componentes da web que seria tiver solicitado caros controles de terceiros para realizar e dar suporte a padrões da web modernos e abertos no passado.
