@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: 76b6566df4a427836eb5060f7d80e1039e479884
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="claims-based-authorization"></a>Autorização baseada em declarações
 
 <a name="security-authorization-claims-based"></a>
 
-Quando uma identidade é criada ele pode ser atribuído uma ou mais declarações emitidas por um terceiro confiável. Uma declaração é o valor de nome é um par que representa que o assunto, não que a entidade pode fazer. Por exemplo, você pode ter de motorista uma carteira, emitida por uma autoridade de licença de um local. Licença do driver tem sua data de nascimento. Nesse caso seria o nome da declaração `DateOfBirth`, o valor da declaração seria sua data de nascimento, por exemplo `8th June 1970` e o emissor de um autoridade de licença. Autorização baseada em declarações, em sua forma mais simples, verifica o valor de uma declaração e permite o acesso a um recurso com base no valor. Por exemplo, se você quiser que o processo de autorização de acesso para uma sociedade noite poderia ser:
+Quando uma identidade é criada ele pode ser atribuído uma ou mais declarações emitidas por um terceiro confiável. Uma declaração é um par nome-valor que representa o assunto, não que a entidade pode fazer. Por exemplo, você pode ter de motorista uma carteira, emitida por uma autoridade de licença de um local. Licença do driver tem sua data de nascimento. Nesse caso seria o nome da declaração `DateOfBirth`, o valor da declaração seria sua data de nascimento, por exemplo `8th June 1970` e o emissor de um autoridade de licença. Autorização baseada em declarações, em sua forma mais simples, verifica o valor de uma declaração e permite o acesso a um recurso com base no valor. Por exemplo, se você quiser que o processo de autorização de acesso para uma sociedade noite poderia ser:
 
 A analista de segurança de porta deve avaliar o valor da sua data de nascimento declaração e se elas têm confiança do emissor (de um autoridade de licença) antes de conceder a que você acessar.
 
