@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: c1fa5d31f68b44bfdfda61c870a6825eeba18647
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 92a6dee24b8942d721e3537a712be141155e61df
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/05/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -232,7 +232,7 @@ Este modelo permite que você crie rapidamente uma interface de usuário de entr
 
 Para *classe de contexto de dados*, você pode fazer essas opções:
 
-- Se você quiser usar o Code First e não têm nenhum contexto de dados existente de classe, escolha  *&lt;novo contexto de dados... &gt;*". Uma classe de contexto de dados, em seguida, será gerada para você.
+- Se você quiser usar o Code First e não têm nenhum contexto de dados existente de classe, escolha * * novo contexto de dados * *. Uma classe de contexto de dados, em seguida, será gerada para você.
 - Se você quiser usar o Code First e ter uma classe de contexto de dados existente, escolha-o aqui. Ele será atualizado para manter a classe de modelo que você selecionou.
 - Se você estiver usando o Database First ou Model First, escolha sua classe de contexto de objeto aqui.
 
@@ -255,7 +255,7 @@ A lista de modelos de projeto inclui um novo modelo de aplicativo de Intranet. E
 
 #### <a name="project-templates-are-now-html5-enabled"></a>Modelos de projeto estão agora HTML5 habilitado
 
-Agora, a caixa de diálogo Novo projeto contém uma opção para adicionar recursos específicos do HTML5 para os modelos de projeto. Selecionando a opção faz com que os modos de exibição a ser gerado que contêm o HTML5 novo  *&lt;cabeçalho&gt;*,  *&lt;rodapé&gt;*, e  *&lt;navegação&gt;*  elementos.
+Agora, a caixa de diálogo Novo projeto contém uma opção para adicionar recursos específicos do HTML5 para os modelos de projeto. Selecionando a opção faz com que os modos de exibição a ser gerado que contêm o HTML5 novo `<header>`, `<footer>`, e `<navigation>` elementos. elementos.
 
 Observe que as versões anteriores dos navegadores não dão suporte a marcas específicas do HTML5. Para resolver essa limitação, os modelos de projeto do HTML5 incluem uma referência para a biblioteca Modernizr. (Consulte a próxima seção).
 
@@ -293,7 +293,7 @@ Quando você cria um novo projeto ASP.NET MVC 3, o projeto inclui os arquivos do
 
 Por exemplo, dada a frequência de novos lançamentos jQuery, a versão do jQuery incluída no modelo de projeto em algum momento será desatualizada. No entanto, como jQuery é incluído como um pacote do NuGet instalado, você será notificado na caixa de diálogo NuGet quando versões mais recentes do jQuery estão disponíveis.
 
-Como jQuery inclui o número de versão no nome do arquivo, também jQuery para a versão mais recente de atualização requer a atualização do  *&lt;script&gt;*  marca que faz referência ao arquivo jQuery para usar o novo nome de arquivo. Outras bibliotecas de script incluídos não incluem o número de versão no nome do script, para que eles possam ser atualizados mais facilmente suas versões mais recentes.
+Como jQuery inclui o número de versão no nome do arquivo, também jQuery para a versão mais recente de atualização requer a atualização de `<script>` marca que faz referência ao arquivo jQuery para usar o novo nome de arquivo. Outras bibliotecas de script incluídos não incluem o número de versão no nome do script, para que eles possam ser atualizados mais facilmente suas versões mais recentes.
 
 <a id="tu-KI"></a>
 ## <a name="known-issues"></a>Problemas Conhecidos
@@ -353,7 +353,7 @@ Renomear um arquivo Razor usando o Gerenciador de soluções enquanto o arquivo 
 - IntelliSense para a sintaxe do Razor não funciona quando ReSharper está instalado. Se você tiver ReSharper instalado e quiser aproveitar o suporte do IntelliSense Razor em ASP.NET MVC 3, consulte a entrada [Razor Intellisense e ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) no blog de Hadi Hariri, que descreve maneiras de usá-los juntos hoje.
 - CCSHTML e VBHTML exibições criadas com a versão Beta do ASP.NET MVC 3 têm suas ações de compilação definida corretamente, sabendo que essas exibir tipos são omitidos quando o projeto é publicado. O valor de ação de compilação para esses arquivos deve ser definido como "Conteúdo". RTM do ASP.NET MVC 3 corrige esse problema para novos arquivos, mas não corrigir a configuração de arquivos existentes para um projeto criado com as versões de pré-lançamento.
 - ![](mvc3-release-notes/_static/image3.png)
-- Durante a instalação, a caixa de diálogo de aceitação de EULA exibe os termos de licença em uma janela que é menor do que pretendido. / li&gt;
+- Durante a instalação, a caixa de diálogo de aceitação de EULA exibe os termos de licença em uma janela que é menor do que se destina.
 - Quando você estiver editando um modo de exibição do Razor (cshtml arquivo), o item de menu Ir para o controlador no Visual Studio não estará disponível e não há nenhum trechos de código.
 - Se você instala o ASP.NET MVC 3 do Visual Web Developer Express em um computador onde o Visual Studio não está instalado e depois instala o Visual Studio, você deverá reinstalar o ASP.NET MVC 3. O Visual Studio e o Visual Web Developer Express compartilham componentes que são atualizados pelo instalador do ASP.NET MVC 3. O mesmo problema se aplica se você instalar o ASP.NET MVC 3 para o Visual Studio em um computador que não tenha o Visual Web Developer Express e, em seguida, instalar posteriormente Visual Web Developer Express.
 
@@ -398,7 +398,7 @@ O padrão de editar e criar modelos de incluem referências a scripts jQuery nec
 <a id="_Toc2_4"></a>
 ### <a name="added-htmlraw-method"></a>Método de Html.Raw adicionado
 
-Por padrão, o Razor de mecanismo de exibição HTML codifica todos os valores. Por exemplo, o trecho de código a seguir codifica o HTML dentro a variável de saudação para que ele seja exibido na página como &amp;lt; forte&amp;gt; Olá, mundo! &amp;lt; / forte&amp;gt;.
+Por padrão, o Razor de mecanismo de exibição HTML codifica todos os valores. Por exemplo, o trecho de código a seguir codifica o HTML dentro a variável de saudação para que ele seja exibido na página como `<strong>Hello World!</strong>`.
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample10.cshtml)]
 
@@ -621,7 +621,7 @@ Como alternativa, para desativar a validação de solicitação para todas as pr
 - O instalador pode levar mais tempo do que as versões anteriores do ASP.NET MVC para ser concluída porque ele atualiza os componentes do Visual Studio 2010.
 - O scaffolding adicionar modo de exibição ao selecionar "Editar" fortemente tipado scaffolds exibição propriedades somente leitura. Da mesma forma, as propriedades somente gravação são Scaffold para modos de exibição de "Exibir".
 - Durante a instalação, a caixa de diálogo de aceitação de EULA exibe os termos de licença em uma janela que é menor do que se destina.
-- Instalando o [CTP do Visual Studio Async](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=18712f38-fcd2-4e9f-9028-8373dc5732b2&amp;displaylang=en) causa um conflito com a versão do Razor que é incluída como parte da instalação de ferramentas do ASP.NET MVC 3. Certifique-se de que você não tente instalar o CTP do Visual Studio Async e a versão do Razor na mesma máquina.
+- Instalar o CTP do Visual Studio Async causa um conflito com a versão do Razor que é incluída como parte da instalação de ferramentas do ASP.NET MVC 3. Certifique-se de que você não tente instalar o CTP do Visual Studio Async e a versão do Razor na mesma máquina.
 - Quando você estiver editando um modo de exibição do Razor (cshtml arquivo), o item de menu Ir para o controlador no Visual Studio não estará disponível e não há nenhum trechos de código.
 
 <a id="TOC_ASP_NET_3_Beta"></a>
@@ -852,7 +852,7 @@ Quando você estiver editando uma exibição de Razor (CSHTML arquivo), o <a id=
 
 Ao usar o @model exibir a sintaxe para especificar um CSHTML fortemente tipada, atalhos específicos do idioma para tipos não são reconhecidos. Por exemplo, @model int não funcionará, mas @model Int32 funcionará. A solução alternativa para esse erro é usar o nome do tipo real quando você especificar o tipo de modelo.
 
-Ao usar o @model sintaxe para especificar um modo de exibição fortemente tipado CSHTML (ou @ModelType para especificar um modo de exibição fortemente tipado VBHTML), não há suporte para tipos anuláveis e declarações de matriz. Por exemplo, @model int? não tem suporte. Em vez disso, use @model Nullable&lt;Int32&gt;. A sintaxe @model string [] também não tem suporte; em vez disso, use @model IList&lt;cadeia de caracteres&gt;.
+Ao usar o @model sintaxe para especificar um modo de exibição fortemente tipado CSHTML (ou @ModelType para especificar um modo de exibição fortemente tipado VBHTML), não há suporte para tipos anuláveis e declarações de matriz. Por exemplo, @model int? não tem suporte. Em vez disso, use `@model Nullable<Int32>`. A sintaxe @model string [] também não tem suporte; em vez disso, use `@model IList<string>`.
 
 Ao atualizar um projeto ASP.NET MVC 2 para o ASP.NET MVC 3, certifique-se de adicionar o seguinte à seção appSettings do arquivo Web. config:
 

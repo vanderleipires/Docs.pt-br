@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: c9fe97dbd5fe10cbde25b9daf5ddd35b2d7eaab5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c6ba11799a5a9be3d8c0037fad5d79d8177c0e8
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="profiles-themes-and-web-parts"></a>Perfis, temas e Web Parts
 ====================
@@ -139,14 +139,14 @@ O local de armazenamento de temas varia com base em seu escopo. Temas que podem 
 
 `C:\WINDOWS\Microsoft.NET\Framework\v2.x.xxxxx\ASP.NETClientFiles\Themes\<Theme_Name>`
 
-Um tema que é específico para um aplicativo específico é armazenado em um aplicativo\_temas\&lt; Tema\_nome&gt; diretório na raiz do site da Web.
+Um tema que é específico para um determinado aplicativo é armazenado em um `App\_Themes\<Theme\_Name>` diretório na raiz do site da Web.
 
 > [!NOTE]
 > Um arquivo de capa só deve modificar as propriedades de controle de servidor que afetam a aparência.
 
 Um tema global é um tema que pode ser aplicado a qualquer aplicativo ou site da Web em execução no servidor Web. Esses temas são armazenados por padrão no diretório ASP.NETClientfiles\Themes dentro do diretório v2.x.xxxxx. Como alternativa, você pode mover os arquivos de tema para o aspnet\_sistema do cliente\_web / /Themes/ [versão] [tema\_nome] pasta na raiz do seu site da Web.
 
-Temas específicos do aplicativo só podem ser aplicados para o aplicativo no qual residem os arquivos. Esses arquivos são armazenados no aplicativo\_temas /&lt;tema\_nome&gt; diretório na raiz do site da Web.
+Temas específicos do aplicativo só podem ser aplicados para o aplicativo no qual residem os arquivos. Esses arquivos são armazenados no `App\_Themes/<theme\_name>` diretório na raiz do site da Web.
 
 ## <a name="the-components-of-a-theme"></a>Os componentes de um tema
 
@@ -258,7 +258,7 @@ Até agora, falamos apenas sobre como aplicar temas usando a propriedade de tema
 
 Se você deseja ser capaz de substituir as propriedades definidas no arquivo de capa do tema com propriedades especificadas no designer, você pode usar o **StyleSheetTheme** propriedade em vez da propriedade de tema. A propriedade StyleSheetTheme é o mesmo que a propriedade de tema, exceto que não substitui todas as configurações de propriedade explícita como propriedade do tema.
 
-Para ver isso em ação, abra o arquivo Web. config do projeto no Exercício 1 e altere o &lt;páginas&gt; elemento para o seguinte:
+Para ver isso em ação, abra o arquivo Web. config do projeto no Exercício 1 e altere o `<pages>` elemento para o seguinte:
 
 [!code-xml[Main](profiles-themes-and-web-parts/samples/sample19.xml)]
 
@@ -315,7 +315,7 @@ O conjunto de controles de Web Parts é abrangente, mas alguns controles são es
 | EditorZone | Contém os controles de EditorPart. Use esta zona para permitir que os usuários editem e personalizem controles de Web Parts em uma página. |
 | WebPartZone | Contém e fornece o layout geral para os controles de Web Part que compõem a interface do usuário principal de uma página. Use esta zona sempre que você criar páginas com controles de Web Parts. Páginas podem conter uma ou mais zonas. |
 | ConnectionsZone | Contém controles WebPartConnection e fornece uma interface do usuário para gerenciar as conexões. |
-| Web Part (GenericWebPart) | Renderiza a interface do usuário principal; a maioria dos controles de Web Parts de UI entram nessa categoria. Para máximo controle programático, você pode criar controles personalizados de Web Parts que derivam da base de **WebPart** controle. Você também pode usar controles de servidor existentes, controles de usuário ou controles personalizados, como controles Web Parts. Sempre que qualquer desses controles são colocados em uma zona, o **WebPartManager** controle automaticamente quebra-o com **GenericWebPart** controles em tempo de execução para que você pode usá-los com a funcionalidade de Web Parts. |
+| WebPart (GenericWebPart) | Renderiza a interface do usuário principal; a maioria dos controles de Web Parts de UI entram nessa categoria. Para máximo controle programático, você pode criar controles personalizados de Web Parts que derivam da base de **WebPart** controle. Você também pode usar controles de servidor existentes, controles de usuário ou controles personalizados, como controles Web Parts. Sempre que qualquer desses controles são colocados em uma zona, o **WebPartManager** controle automaticamente quebra-o com **GenericWebPart** controles em tempo de execução para que você pode usá-los com a funcionalidade de Web Parts. |
 | CatalogPart | Contém uma lista de controles de Web Parts disponíveis que os usuários podem adicionar à página. |
 | WebPartConnection | Cria uma conexão entre dois controles de Web Parts em uma página. A conexão define um dos controles de Web Parts como um provedor (de dados) e o outro como um consumidor. |
 | EditorPart | Serve como a classe base para os controles de editor especializados. |
@@ -338,11 +338,11 @@ Nesta parte do passo a passo, você deve criar uma página que usa os controles 
 1. Feche a página padrão e adicione uma nova página ao site, chamada WebPartsDemo.
 2. Alternar para **Design** exibição.
 3. Do **exibição** menu, verifique se o **controles não visuais** e **detalhes** opções são selecionadas para que você possa ver marcas de layout e controles que não têm uma interface do usuário.
-4. Coloque o ponto de inserção antes do  **&lt;div&gt;**  marcas na superfície de design e pressione ENTER para adicionar uma nova linha. Posicione o ponto de inserção antes do caractere de nova linha, clique no **formato de bloco** lista suspensa menu de controle e selecione o **título 1** opção. No título, adicione o texto **página de Web Parts demonstração**.
-5. Do **WebParts** guia da caixa de ferramentas, arraste um **WebPartManager** até a página, posicionando-o logo após o caractere de nova linha e antes do  **&lt;div&gt;**  marcas.   
+4. Coloque o ponto de inserção antes do `<div>` marcas na superfície de design e pressione ENTER para adicionar uma nova linha. Posicione o ponto de inserção antes do caractere de nova linha, clique no **formato de bloco** lista suspensa menu de controle e selecione o **título 1** opção. No título, adicione o texto **página de Web Parts demonstração**.
+5. Do **WebParts** guia da caixa de ferramentas, arraste um **WebPartManager** até a página, posicionando-o logo após o caractere de nova linha e antes do `<div>`marcas.   
   
  O **WebPartManager** controle não gera nenhuma saída, então ele aparece como uma caixa cinza na superfície do designer.
-6. Posicione o ponto de inserção dentro de  **&lt;div&gt;**  marcas.
+6. Posicione o ponto de inserção dentro de `<div>` marcas.
 7. No **Layout** menu, clique em **Inserir tabela**e criar uma nova tabela que tenha uma linha e três colunas. Clique o **propriedades de célula** botão, selecione **superior** do **Alinhamento Vertical** lista suspensa, clique em **Okey**e clique em **Okey** novamente para criar a tabela.
 8. Arraste um controle WebPartZone para a coluna de tabela esquerda. Clique com botão direito do **WebPartZone** de controle, escolha **propriedades**e defina as seguintes propriedades:   
   
@@ -358,13 +358,13 @@ Nesta parte do passo a passo, você deve criar uma página que usa os controles 
 
 Sua página agora tem duas zonas diferentes que você pode controlar separadamente. No entanto, nenhuma zona tem qualquer conteúdo, para que criar conteúdo é a próxima etapa. Para este passo a passo, você trabalha com controles de Web Parts que exibem somente conteúdo estático.
 
-O layout de uma zona de Web Parts é especificado por uma  **&lt;zonetemplate&gt;**  elemento. Dentro do modelo de zona, você pode adicionar qualquer controle ASP.NET, se ele é um controle de Web Parts personalizado, um controle de usuário ou um controle de servidor existente. Observe que aqui você está usando o controle de rótulo e ao qual você está simplesmente adicionando texto estático. Quando você coloca um controle de servidor em um **WebPartZone** zona, ASP.NET trata o controle como um controle de Web Parts em tempo de execução, o que habilita recursos de Web Parts no controle.
+O layout de uma zona de Web Parts é especificado por uma &lt;zonetemplate&gt; elemento. Dentro do modelo de zona, você pode adicionar qualquer controle ASP.NET, se ele é um controle de Web Parts personalizado, um controle de usuário ou um controle de servidor existente. Observe que aqui você está usando o controle de rótulo e ao qual você está simplesmente adicionando texto estático. Quando você coloca um controle de servidor em um **WebPartZone** zona, ASP.NET trata o controle como um controle de Web Parts em tempo de execução, o que habilita recursos de Web Parts no controle.
 
 **Para criar conteúdo para a zona principal**
 
 1. Em **Design** exibir, arraste um **rótulo** controlar do **padrão** guia da caixa de ferramentas para a área de conteúdo da zona cuja **ID** propriedade é definido como MainZone.
-2. Alternar para **fonte** exibição. Observe que uma  **&lt;zonetemplate&gt;**  elemento foi adicionado para ajustar o **rótulo** controle na MainZone.
-3. Adicione um atributo chamado **título** para o  **&lt;asp: label&gt;**  elemento e defina seu valor para o conteúdo. Remova o texto = atributo "Rótulo" do  **&lt;asp: label&gt;**  elemento. Entre as marcas de abertura e fechamento do  **&lt;asp: label&gt;**  elemento, adicione um texto como **bem-vindo à minha Home Page** dentro de um par de  **&lt;h2 &gt;**  marcas de elemento. O código deve ser da seguinte maneira. 
+2. Alternar para **fonte** exibição. Observe que uma &lt;zonetemplate&gt; elemento foi adicionado para ajustar o **rótulo** controle na MainZone.
+3. Adicione um atributo chamado **título** para o &lt;asp: label&gt; elemento e defina seu valor para o conteúdo. Remova o texto = atributo "Rótulo" do &lt;asp: label&gt; elemento. Entre as marcas de abertura e fechamento do &lt;asp: label&gt; elemento, adicione um texto como **bem-vindo à minha Home Page** dentro de um par de &lt;h2&gt; marcas de elemento. O código deve ser da seguinte maneira. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample21.aspx)]
 4. Salve o arquivo.
@@ -396,7 +396,7 @@ Em tempo de execução, o conjunto de controles de Web Parts envolve ambos os co
 3. Arraste a usuário controle página você criou, SearchUserControl, de **Solution Explorer** na zona cujo **ID** propriedade é definida como SidebarZone e soltá-lo lá.
 4. Salve a página WebPartsDemo.
 5. Alternar para **fonte** exibição.
-6. Dentro de  **&lt;asp: webpartzone&gt;**  elemento para SidebarZone, logo acima de referência para o controle de usuário, adicione um  **&lt;asp: label&gt;**  elemento com links contidos, conforme mostrado no exemplo a seguir. Além disso, adicionar um **título** a marca de controle de usuário, com um valor de atributo **pesquisa**, conforme mostrado. 
+6. Dentro de &lt;asp: webpartzone&gt; elemento para SidebarZone, logo acima de referência para o controle de usuário, adicione um &lt;asp: label&gt; elemento contido links, conforme mostrado no exemplo a seguir. Além disso, adicionar um **título** a marca de controle de usuário, com um valor de atributo **pesquisa**, conforme mostrado. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample23.aspx)]
 7. Salve e feche o arquivo.
@@ -417,7 +417,7 @@ No título da barra de cada controle é uma seta para baixo que fornece acesso a
 
 Web Parts fornece a capacidade dos usuários podem alterar o layout dos controles de Web Parts, arrastando-os de uma zona para outro. Além de permitir que os usuários movam **WebPart** controles de uma zona para outro, você pode permitir que usuários editem várias características dos controles, inclusive sua aparência, o layout e o comportamento. O conjunto de controles de Web Parts fornece a funcionalidade básica para a edição **WebPart** controles. Embora você não faça isso neste passo a passo, você também pode criar controles de edição personalizados que permitem aos usuários editar os recursos de **WebPart** controles. Como alterar a localidade de um **WebPart** controle, editar propriedades de um controle depende da personalização do ASP.NET para salvar as alterações feitas pelos usuários.
 
-Nesta parte do passo a passo, você adicionar a capacidade dos usuários editar as características básicas de qualquer **WebPart** controle na página. Para habilitar esses recursos, você adiciona outro controle de usuário personalizado para a página, junto com um  **&lt;asp: editorzone&gt;**  elemento e dois controles de edição.
+Nesta parte do passo a passo, você adicionar a capacidade dos usuários editar as características básicas de qualquer **WebPart** controle na página. Para habilitar esses recursos, você adiciona outro controle de usuário personalizado para a página, junto com um &lt;asp: editorzone&gt; elemento e dois controles de edição.
 
 ### <a name="to-create-a-user-control-that-enables-changing-page-layout"></a>Para criar um controle de usuário que permite alterar layout da página
 
@@ -501,7 +501,7 @@ Você também pode permitir que os usuários a adicionar controles de Web Parts 
 4. Do **WebParts** seção da caixa de ferramentas, arraste um controle DeclarativeCatalogPart para a área de conteúdo do **CatalogZone** controle.
 5. Clique na seta no canto superior direito do **DeclarativeCatalogPart** controle para expor seu menu de tarefas e, em seguida, selecione **editar modelos**.
 6. Do **padrão** seção da caixa de ferramentas, arraste um **FileUpload** controle e um **calendário** controle para o **WebPartsTemplate** seção de **DeclarativeCatalogPart** controle.
-7. Alternar para **fonte** exibição. Inspecione o código-fonte do  **&lt;asp: catalogzone&gt;**  elemento. Observe que o **DeclarativeCatalogPart** controle contém um  **&lt;webpartstemplate&gt;**  elemento com os dois controles de servidor incluídos que você poderá adicionar à sua página do catálogo.
+7. Alternar para **fonte** exibição. Inspecione o código-fonte do &lt;asp: catalogzone&gt; elemento. Observe que o **DeclarativeCatalogPart** controle contém um &lt;webpartstemplate&gt; elemento com os dois controles de servidor incluídos que você poderá adicionar à sua página do catálogo.
 8. Adicionar um **título** propriedade para cada um dos controles adicionados ao catálogo, usando o valor de cadeia de caracteres mostrado para cada título no exemplo de código abaixo. Embora o título não é uma propriedade você normalmente possa definir esses dois controles de servidor em tempo de design, quando um usuário adiciona esses controles a uma **WebPartZone** zona do catálogo de tempo de execução, eles são empacotados com um  **GenericWebPart** controle. Isso permite que ele atue como controles de Web Parts, portanto eles poderão exibir títulos de.   
   
  O código para os dois controles contidos no **DeclarativeCatalogPart** controle se assemelhar ao seguinte. 

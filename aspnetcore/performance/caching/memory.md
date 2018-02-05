@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 8256240b46873d53bf1a6f6616ea5b520cfadf2e
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 7c6d629ea94dd7c79a2f4e24fd4d0ff797f7e516
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>Cache de memória no núcleo do ASP.NET
 
@@ -30,7 +30,7 @@ ASP.NET Core dá suporte a vários caches diferentes. O cache mais simples se ba
 
 Sessões não temporária em um farm da web exigem um [cache distribuído](distributed.md) para evitar problemas de consistência de cache. Para alguns aplicativos, um cache distribuído pode dar suporte a mais alta de expansão de um cache na memória. Usar um cache distribuído libera a memória de cache para um processo externo. 
 
-O `IMemoryCache` cache irá remover entradas de cache sob pressão de memória, a menos que o [cache prioridade](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority) é definido como `CacheItemPriority.NeverRemove`. Você pode definir o `CacheItemPriority` para ajustar a prioridade de cache remove itens sob pressão de memória.
+O `IMemoryCache` cache irá remover entradas de cache sob pressão de memória, a menos que o [cache prioridade](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority) é definido como `CacheItemPriority.NeverRemove`. Você pode definir o `CacheItemPriority` para ajustar a prioridade com que o cache remove itens sob pressão de memória.
 
 O cache de memória pode armazenar qualquer objeto. a interface de cache distribuído é limitada a `byte[]`.
 

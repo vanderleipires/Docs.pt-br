@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: 2c1f9a7291d8eab675bac3e1c37d6922131e3761
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aafc59980e807677d6023110d324365ce92bb5fc
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="improvements-in-visual-studio-2005"></a>Melhorias no Visual Studio 2005
 ====================
@@ -79,10 +79,10 @@ Clique aqui para exibir um vídeo passo a passo de criação de projetos Web no 
 Como você viu no passo a passo de vídeo, você pode escolher criar sites da Web no sistema de arquivos no computador local ou em um local remoto por meio de um compartilhamento de arquivos. Sites da Web que são criadas no sistema de arquivos são acessados e depurado usando o ASP.NET Development Server.
 
 > [!NOTE]
-> O ASP.NET Development Server pode causar alguma confusão para os clientes. Se um projeto da Web é criado no sistema de arquivos na estrutura de diretório IISs (ou seja, c:\inetpub\wwwroot), o site ainda será ser navegado por meio do servidor de desenvolvimento ASP.NET quando iniciado a partir do Visual Studio 2005. Portanto, qualquer configuração de IIS (ou seja, métodos de autenticação) não é aplicável.
+> O ASP.NET Development Server pode causar alguma confusão para os clientes. Se um projeto da Web é criado no sistema de arquivos na estrutura de diretório IISs (por exemplo, c: inetpub/wwwroot), o site ainda será ser navegado por meio do servidor de desenvolvimento ASP.NET quando iniciado a partir do Visual Studio 2005. Portanto, qualquer configuração de IIS (ou seja, métodos de autenticação) não é aplicável.
 
 
-O projeto da web padrão também remove muito da sobrecarga por inclui apenas uma página Default.aspx, arquivo default.cs e um aplicativo\_pasta de dados. O Web. config e pastas especiais (isto é, o aplicativo\_código) são adicionados à medida que eles são necessários. O projeto da web inclui apenas os arquivos e pastas que você precisa.
+O projeto da web padrão também remove muito da sobrecarga por inclui apenas uma página Default.aspx, arquivo default.cs e uma pasta de Data. O Web. config e pastas especiais (por exemplo, Code) são adicionadas como eles são necessários. O projeto da web inclui apenas os arquivos e pastas que você precisa.
 
 ### <a name="http-projects"></a>Projetos HTTP
 
@@ -91,7 +91,7 @@ Projetos HTTP podem ser projetos que são criados em um site da Web do IIS local
 A opção de Local IIS lê as informações do site da metabase no computador local e os arquivos são copiados usando o sistema de arquivos. A opção de Site remoto usa as extensões de servidor do FrontPage e as informações do site e os arquivos são copiados usando HTTP e chamadas de RPC de extensões de servidor do FrontPage.
 
 > [!NOTE]
-> O vs # # #\_arquivo tmp e get\_aspx\_ver.aspx não são mais usados para determinar as informações de versão.
+> O arquivo de vs###/_tmp.htm e get/_aspx/_ver.aspx não são usados para determinar as informações de versão.
 
 
 A opção de HTTP padrão é o Local do IIS. Essa opção lê a Metabase do IIS para determinar quais sites estão disponíveis e o local no qual criar o conteúdo. Você pode selecionar uma pasta diferente ou um diretório virtual, selecionando-o na exibição de árvore. Você pode também criar um novo diretório virtual, marcar pastas como aplicativos, bem como excluir diretórios virtuais existentes nessa caixa de diálogo.
@@ -137,7 +137,7 @@ Ao criar um aplicativo em um local remoto por meio de SSL, se o certificado SSL 
 O Visual Studio 2005 apresenta a opção para criar sites da Web por meio de FTP. Quando você usar essa opção, o IDE cria os arquivos localmente na pasta temp de usuários e, em seguida, usa o FTP para mover os arquivos para o local de FTP.
 
 > [!NOTE]
-> O local da pasta temporária é c:\Documents and Settings\&lt; Usuário&gt;\Local Settings\Temp\VWDWebCache\&lt; Servidor&gt;\_&lt;nome do aplicativo&gt;
+> O local da pasta temporária é c: / Documents and Settings /&lt;usuário&gt;/Local Temp/configurações/VWDWebCache/&lt;servidor&gt;/_&lt;nome do aplicativo&gt;
 
 
 Ao usar a opção de FTP, você verá uma caixa de diálogo Escolher local. Você pode inserir as informações de conexão de FTP necessárias nesta caixa de diálogo, conforme mostrado abaixo.
@@ -161,7 +161,7 @@ As etapas a seguir configuram o site FTP para que um usuário tem um local que s
 
 ### <a name="create-a-new-folder-for-content"></a>Crie uma nova pasta de conteúdo
 
-1. No Windows Explorer, crie uma nova pasta chamada **User1** dentro c:\inetpub\wwwroot.
+1. No Windows Explorer, crie uma nova pasta chamada **User1** dentro de c: inetpub/wwwroot.
 
 #### <a name="configure-folders-and-permissions-on-folders"></a>Configure as pastas e permissões nas pastas.
 
@@ -169,7 +169,7 @@ As etapas a seguir configuram o site FTP para que um usuário tem um local que s
 2. Expanda **Sites FTP**.
 3. Com o botão direito o **Site FTP padrão**, selecione **novo**, em seguida, **Diretório Virtual**, em seguida, clique em **próximo**.
 4. Digite **User1** para o nome do diretório virtual e clique **próximo**.
-5. Digite **c:\inetpub\wwwroot\User1** para o caminho e clique **próximo**.
+5. Digite **c: / inetpub/wwwroot/User1** para o caminho e clique **próximo**.
 6. Clique em **próximo** e **concluir** para concluir o assistente.
 7. Clique com botão direito do **User1** diretório virtual no Site FTP padrão e selecione **propriedades**.
 8. Verifique o **gravar** caixa de seleção e clique em **Okey** para fechar a caixa de diálogo.
@@ -200,7 +200,7 @@ As etapas a seguir configuram o site FTP para que um usuário tem um local que s
 13. Na caixa de diálogo necessário URL do Site da Web, digite `http://localhost/user1` para a URL e clique em **Okey**.
 
 > [!NOTE]
-> Se você receber uma mensagem de erro indicando uma incapacidade de carregar o tipo \_padrão, certifique-se de que você está executando o ASP.NET 2.0 no seu site da Web e não uma versão anterior. Você pode fazer isso na guia ASP.NET nos serviços de informações da Internet.
+> Se você receber um erro indicando a impossibilidade de carregar o tipo /_Default, certifique-se de que você está executando o ASP.NET 2.0 no seu site da Web e não uma versão anterior. Você pode fazer isso na guia ASP.NET nos serviços de informações da Internet.
 
 
 ## <a name="opening-web-projects"></a>Abrindo projetos da Web
@@ -223,11 +223,11 @@ Como indicado anteriormente neste módulo, o Visual Studio não usa um arquivo d
 
 Porque somente o Visual Studio cria outros arquivos e pastas, quando necessário, sem arquivos ou pastas adicionais são adicionadas para o local em que você abrir. Um efeito colateral dessa arquitetura é que ela impede que você o aninhamento de sites da Web no sistema de arquivos. Por exemplo, considere a seguinte estrutura de diretório.
 
-Projeto da Web em C:\MyWebSite
+Projeto da Web em c: / Meuwebsite
 
-Outro projeto da web em C:\MyWebSite\Nested
+Outro projeto da web em c: / Meuwebsite/aninhadas
 
-Quando você abrir o site em c:\MyWebSite, a pasta aninhadas aparecerá como uma subpasta do aplicativo.
+Quando você abrir o site da Web no c/Meuwebsite, a pasta aninhadas aparecerá como uma subpasta do aplicativo.
 
 <a id="_Toc116100246"></a>
 
@@ -249,7 +249,7 @@ Embora o Visual Studio exibirá um ícone para aplicativos que estão aninhadas 
 
 Quando você abre um site por meio de FTP, os arquivos são todos copiados localmente para a pasta temp. O caminho completo para o local de armazenamento local é exibido no painel de propriedades do projeto e é criado usando o formato a seguir.
 
-C:\Documents and Settings\&lt; Usuário&gt;\Local Settings\Temp\VWDWebCache\&lt; Servidor&gt;\_&lt;nome do aplicativo&gt;
+C: / Documents and Settings /&lt;usuário&gt;/Local Temp/configurações/VWDWebCache/&lt;servidor&gt;/_&lt;nome do aplicativo&gt;
 
 Ao usar o FTP, Visual Studio precisará especificar a URL base para o seu projeto para que você pode procurar conforme mostrado abaixo. Se você não especificar uma URL base, Visual Studio solicitará para ele na primeira vez que você tentar navegar em uma página no site da Web.
 
@@ -263,7 +263,7 @@ Ao usar o FTP, Visual Studio precisará especificar a URL base para o seu projet
 
 Trabalhar com aplicativos Web no Visual Studio 2005 é consideravelmente mais rápido do que as versões anteriores. Isso é nenhuma parte pequena devido às alterações na arquitetura de compilação.
 
-No Visual Studio 2002 e 2003, os aplicativos da Web foram compilados em um assembly principal que reside na pasta /bin. No Visual Studio 2005, um aplicativo\_pasta de código foi adicionada. Classes e outro código de interface de usuário não são adicionados ao aplicativo\_pasta de código. Quando o Visual Studio compila o projeto, todos os arquivos no aplicativo\_pasta de código são compilados em um único aplicativo\_Code.dll arquivo. O resultado dessa alteração é que as compilações subsequentes são muito mais rápidas do que nas versões anteriores.
+No Visual Studio 2002 e 2003, os aplicativos da Web foram compilados em um assembly principal que reside na pasta /bin. No Visual Studio 2005, foi adicionada a uma pasta de Code. Classes e outro código de interface de usuário não são adicionadas à pasta de Code. Quando o Visual Studio compila o projeto, todos os arquivos na pasta do Code são compilados em um único arquivo App/_Code.dll. O resultado dessa alteração é que as compilações subsequentes são muito mais rápidas do que nas versões anteriores.
 
 > [!NOTE]
 > O utilitário de linha de comando do MSBuild também pode ser usado para criar aplicativos do ASP.NET. Essa ferramenta será abordada no módulo 9.
@@ -307,7 +307,7 @@ Clique aqui para ver um vídeo passo a passo de suporte de designer para control
 > Quando um controle de usuário é removido de uma página, o @Register diretiva permanece na marcação e deve ser removida manualmente para evitar erros de analisador se o controle de usuário é excluído do site.
 
 
-Outro aprimoramento no modelo de compilação do Visual Studio é o recurso Publicar Site. Porque o recurso de publicação pré-compila o site da Web, os desenvolvedores podem aproveitar o desempenho de não precisar compilar tudo sob demanda. Ele também pré-compila todo o código fonte no aplicativo\_pasta de código em uma DLL para que nenhum código-fonte deve ser implantado.
+Outro aprimoramento no modelo de compilação do Visual Studio é o recurso Publicar Site. Porque o recurso de publicação pré-compila o site da Web, os desenvolvedores podem aproveitar o desempenho de não precisar compilar tudo sob demanda. Ele também pré-compila todo o código fonte na pasta do Code em uma DLL para que nenhum código-fonte deve ser implantado.
 
 
 ![A caixa de diálogo Publicar Web Site](improvements-in-visual-studio-2005/_static/image7.jpg)
@@ -316,10 +316,10 @@ Outro aprimoramento no modelo de compilação do Visual Studio é o recurso Publ
 
 
 > [!NOTE]
-> O aspnet\_compile.exe utilitário também pode ser usado para pré-compilar um aplicativo Web ASP.NET. Essa ferramenta será abordada no módulo 9.
+> O utilitário aspnet/_compile.exe também pode ser usado para pré-compilar um aplicativo Web ASP.NET. Essa ferramenta será abordada no módulo 9.
 
 
-Quando você publicar um site da Web, os arquivos pré-compilado é armazenados na pasta arquivos temporários do ASP.NET, conforme mostrado abaixo. Arquivos com um *. Compiled* extensão de arquivo são arquivos XML que definem as dependências para DLLs específicos. Os controles de formulário da Web ou de usuário são compilados para DLLs aleatórios que começam com *aplicativo\_Web\_*.
+Quando você publicar um site da Web, os arquivos pré-compilado é armazenados na pasta arquivos temporários do ASP.NET, conforme mostrado abaixo. Arquivos com um *. Compiled* extensão de arquivo são arquivos XML que definem as dependências para DLLs específicos. Os controles de formulário da Web ou de usuário são compilados para DLLs aleatórios que começam com *aplicativo /_Web /_*.
 
 Se você deixar o *permitir que este site pré-compilado seja atualizado* caixa de seleção marcada, a marcação dentro de seus controles de formulários da Web e o usuário não será pré-compilado em uma DLL que permitem fazer alterações após a implantação. Se você preferir bloquear a marcação para que não são permitidas alterações ao conteúdo implantado, desmarque essa caixa.
 
@@ -432,9 +432,9 @@ Este laboratório requer que você tenha duas máquinas, uma execução Visual S
 
 
 1. Do servidor Web remoto, localize o msvsmon.exe no computador de desenvolvimento usando um caminho UNC e executá-lo.  
- É o local padrão para o msvsmon.exe \\server\c$ \Program Files\Microsoft Debugger\x86 de 8\Common7\IDE\Remote do Visual Studio.
+ O local padrão para msvsmon.exe é //server/c$/Program arquivos para o Microsoft Visual Studio 8/Common7/IDE/Remote Debugger/x86.
 2. Se você precisará desbloquear portas para depuração remota, faça isso.
-3. Da máquina de desenvolvimento, abra o code-behind para default. aspx e defina um ponto de interrupção na página\_método de carga.
+3. Da máquina de desenvolvimento, abra o code-behind para default. aspx e defina um ponto de interrupção no método de carga.
 4. Inicie a depuração da máquina de desenvolvimento.
 
 Você deve atingir o ponto de interrupção conforme o esperado.
@@ -445,7 +445,7 @@ Como weve já discutido, Visual Studio 2005 vem com um servidor Web chamado de s
 
 O servidor de desenvolvimento ASP.NET é um servidor da Web restrito. Ele não permite conexões remotas, ele não permite todas as solicitações de qualquer usuário que não seja o usuário que iniciou o servidor Web. Ele também não tem a capacidade de servir páginas ASP. Somente os recursos ASP.NET e recursos HTML (incluindo imagens, arquivos CSS, etc.) são atendidos.
 
-O ASP.NET Development Server pode ser iniciado por meio da linha de comando executando o arquivo WebDev.WebServer.exe localizado em c:\Windows\Microsoft.NET\Framework\v2.0. \*\*\*\*\*. A caixa de diálogo a seguir exibe os parâmetros que estão disponíveis.
+O ASP.NET Development Server pode ser iniciado por meio da linha de comando executando o arquivo WebDev.WebServer.exe localizado em c:/Windows/Microsoft.NET/Framework/v2.0./ */*  /  */*/*. A caixa de diálogo a seguir exibe os parâmetros que estão disponíveis.
 
 
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)
