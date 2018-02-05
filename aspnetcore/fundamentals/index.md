@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 946ccc80915c5de60976a98cbbb253cb8dfacaca
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7f0e30b3ac7f9cc3a32bd96f45d83ba13505a475
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
@@ -71,7 +71,7 @@ public class Startup
 }
 ```
 
-`ConfigureServices` define os [Serviços](#dependency-injection-services) usados pelo seu aplicativo (por exemplo, ASP.NET Core MVC, Entity Framework Core, Identity etc.). `Configure` define o [middleware](xref:fundamentals/middleware) para o pipeline de solicitação.
+`ConfigureServices` define os [Serviços](#dependency-injection-services) usados pelo seu aplicativo (por exemplo, ASP.NET Core MVC, Entity Framework Core, Identity etc.). `Configure` define o [middleware](xref:fundamentals/middleware/index) para o pipeline de solicitação.
 
 Para obter mais informações, veja [Inicialização do aplicativo](xref:fundamentals/startup).
 
@@ -91,9 +91,9 @@ Para obter mais informações, consulte [Injeção de dependência](xref:fundame
 
 ## <a name="middleware"></a>Middleware
 
-No ASP.NET Core, você compõe o pipeline de solicitação usando o [middleware](xref:fundamentals/middleware). O middleware do ASP.NET Core executa lógica assíncrona em um `HttpContext` e então invoca o próximo middleware na sequência ou encerra a solicitação diretamente. Um componente de middleware chamado "XYZ" é adicionado ao invocar um `UseXYZ` método de extensão no método `Configure`.
+No ASP.NET Core, você compõe o pipeline de solicitação usando o [middleware](xref:fundamentals/middleware/index). O middleware do ASP.NET Core executa lógica assíncrona em um `HttpContext` e então invoca o próximo middleware na sequência ou encerra a solicitação diretamente. Um componente de middleware chamado "XYZ" é adicionado ao invocar um `UseXYZ` método de extensão no método `Configure`.
 
-O ASP.NET Core vem com um conjunto avançado de middleware interno:
+O ASP.NET Core inclui um conjunto avançado de middleware interno:
 
 * [Arquivos estáticos](xref:fundamentals/static-files)
 * [Roteamento](xref:fundamentals/routing)
@@ -103,7 +103,7 @@ O ASP.NET Core vem com um conjunto avançado de middleware interno:
 
 O middleware com base em [OWIN](http://owin.org) está disponível para aplicativos do ASP.NET Core e é possível escrever seu próprio middleware personalizado.
 
-Para obter mais informações, consulte [Middleware](xref:fundamentals/middleware) e [OWIN (Interface da Web Aberta para .NET)](xref:fundamentals/owin).
+Para obter mais informações, consulte [Middleware](xref:fundamentals/middleware/index) e [OWIN (Interface da Web Aberta para .NET)](xref:fundamentals/owin).
 
 ## <a name="environments"></a>Ambientes
 
