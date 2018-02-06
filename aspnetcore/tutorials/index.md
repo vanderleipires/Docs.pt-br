@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 01a804151ad813dbf47ab4b2415076a4e01bf1d9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -52,9 +52,10 @@ As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada par
 * [Criar serviços Web de back-end para aplicativos móveis nativos](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>Armazenamento e acesso a dados
-* [Introdução ao ASP.NET Core e ao Entity Framework Core usando o Visual Studio](../data/ef-mvc/index.md)
-* [ASP.NET Core com EF Core – novo banco de dados](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
-* [ASP.NET Core com EF Core – banco de dados existente](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
+* [Introdução às Páginas Razor e ao EF Core usando o Visual Studio](xref:data/ef-rp/intro)
+* [Introdução ao ASP.NET Core MVC e ao EF Core usando o Visual Studio](../data/ef-mvc/index.md)
+* [ASP.NET Core MCV com EF Core – novo banco de dados](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
+* [ASP.NET Core MCV com EF Core – banco de dados existente](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>Autenticação e autorização
 * [Habilitar a autenticação usando o Facebook, o Google e outros provedores externos](../security/authentication/social/index.md)
