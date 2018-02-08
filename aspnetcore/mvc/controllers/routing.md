@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/routing
-ms.openlocfilehash: ca4f40766b4ec3d59587109ec9d5a412e834e3ce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d87cb50871b956c51045558d2e4f076de4211f81
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="routing-to-controller-actions"></a>Ações de roteamento para o controlador
 
 Por [Ryan Nowak](https://github.com/rynowak) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-O ASP.NET Core MVC usa o [middleware](../../fundamentals/middleware.md) de Roteamento para fazer as correspondências das URLs de solicitações de entrada e mapeá-las para ações. As rotas são definidas em atributos ou no código de inicialização. Elas descrevem como deve ser feita a correspondência entre caminhos de URL e ações. As rotas também são usadas para gerar URLs (para links) enviados em resposta. 
+O ASP.NET Core MVC usa o [middleware](xref:fundamentals/middleware/index) de Roteamento para fazer as correspondências das URLs de solicitações de entrada e mapeá-las para ações. As rotas são definidas em atributos ou no código de inicialização. Elas descrevem como deve ser feita a correspondência entre caminhos de URL e ações. As rotas também são usadas para gerar URLs (para links) enviados em resposta. 
 
 As ações são roteadas convencionalmente ou segundo os atributos. Colocar uma rota no controlador ou na ação faz com que ela seja roteada segundo o atributo. Para obter mais informações, consulte [Roteamento misto](#routing-mixed-ref-label).
 

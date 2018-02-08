@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 08f67b517b2d7ee1186666a4eb5c6c925eb3bd5d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6e5f290c48cfe58ae3efe5ce0208c72e8ffb1daf
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="working-with-the-application-model"></a>Trabalhando com o modelo de aplicativo
 
@@ -157,7 +157,7 @@ A convenção é adicionada como uma opção na classe Startup.
 [!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
 
 > [!TIP]
-> Adicione convenções ao [middleware](xref:fundamentals/middleware) acessando `MvcOptions` com `services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
+> Adicione convenções ao [middleware](xref:fundamentals/middleware/index) acessando `MvcOptions` com `services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
 
 Esta amostra aplica essa convenção às rotas que não estão usando o roteamento de atributo, nas quais o controlador tem "Namespace" em seu nome. O seguinte controlador demonstra essa convenção:
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: cf9e6a25f5b9cc8395c803a11c15622349620a07
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c324918b33af82b619bb2251f32308e4a57c27e5
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Inicialização do aplicativo no ASP.NET Core
 
@@ -70,7 +70,7 @@ O host da Web fornece alguns serviços que estão disponíveis para o construtor
 
 ## <a name="the-configure-method"></a>O método Configure
 
-O método [Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) é usado para especificar como o aplicativo responde as solicitações HTTP. O pipeline de solicitação é configurado adicionando componentes de [middleware](xref:fundamentals/middleware) a uma instância de [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder). `IApplicationBuilder` está disponível para o método `Configure`, mas não é registrado no contêiner de serviço. A hospedagem cria um `IApplicationBuilder` e o passa diretamente para `Configure` ([fonte de referência](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
+O método [Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) é usado para especificar como o aplicativo responde as solicitações HTTP. O pipeline de solicitação é configurado adicionando componentes de [middleware](xref:fundamentals/middleware/index) a uma instância de [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder). `IApplicationBuilder` está disponível para o método `Configure`, mas não é registrado no contêiner de serviço. A hospedagem cria um `IApplicationBuilder` e o passa diretamente para `Configure` ([fonte de referência](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
 
 Os [modelos do ASP.NET Core](/dotnet/core/tools/dotnet-new) configuram o pipeline com suporte para uma página de exceção de desenvolvedor, [BrowserLink](http://vswebessentials.com/features/browserlink), páginas de erro, arquivos estáticos e o ASP.NET MVC:
 
@@ -80,7 +80,7 @@ Cada método de extensão `Use` adiciona um componente de middleware ao pipeline
 
 Serviços adicionais, como `IHostingEnvironment` e `ILoggerFactory`, também podem ser especificados na assinatura do método. Quando especificados, serviços adicionais são injetados quando estão disponíveis.
 
-Para obter mais informações sobre como usar o `IApplicationBuilder`, consulte [Middleware](xref:fundamentals/middleware).
+Para obter mais informações sobre como usar o `IApplicationBuilder`, consulte [Middleware](xref:fundamentals/middleware/index).
 
 ## <a name="convenience-methods"></a>Métodos de conveniência
 
@@ -92,7 +92,7 @@ Os métodos de conveniência [ConfigureServices](/dotnet/api/microsoft.aspnetcor
 
 Use [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) para configurar o middleware no início ou no final do pipeline do middleware [Configure](#the-configure-method) de um aplicativo. `IStartupFilter` é útil para garantir que um middleware seja executado antes ou depois do middleware adicionado pelas bibliotecas no início ou no final do pipeline de processamento de solicitação do aplicativo.
 
-`IStartupFilter` implementa um único método, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure), que recebe e retorna um `Action<IApplicationBuilder>`. Um [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) define uma classe para configurar o pipeline de solicitação do aplicativo. Para obter mais informações, consulte [Criando um pipeline do middleware com o IApplicationBuilder](xref:fundamentals/middleware#creating-a-middleware-pipeline-with-iapplicationbuilder).
+`IStartupFilter` implementa um único método, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure), que recebe e retorna um `Action<IApplicationBuilder>`. Um [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) define uma classe para configurar o pipeline de solicitação do aplicativo. Para obter mais informações, consulte [Criando um pipeline do middleware com o IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder).
 
 Cada `IStartupFilter` implementa uma ou mais middlewares no pipeline de solicitação. Os filtros são invocados na ordem em que foram adicionados ao contêiner de serviço. Filtros podem adicionar middleware antes ou depois de passar o controle para o filtro seguinte, de modo que eles são acrescentados ao início ou no final do pipeline de aplicativo.
 
@@ -121,7 +121,7 @@ A ordem de execução do middleware é definida pela ordem dos registros `IStart
 
 * [Hospedagem](xref:fundamentals/hosting)
 * [Trabalhando com vários ambientes](xref:fundamentals/environments)
-* [Middleware](xref:fundamentals/middleware)
+* [Middleware](xref:fundamentals/middleware/index)
 * [Registro em log](xref:fundamentals/logging/index)
 * [Configuração](xref:fundamentals/configuration/index)
 * [Classe StartupLoader: método FindStartupType (fonte de referência)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116)

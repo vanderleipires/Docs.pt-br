@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: ba4a360f2c8d6dfa45a4a7980d719b2b2cf3547a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ca1f2f366bcf12cd3df83c3cdefa460cb9a68e2a
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware de Reconfiguração de URL no ASP.NET Core
 
@@ -377,7 +377,7 @@ Solicitação original: `/image.jpg`
 
 ## <a name="additional-resources"></a>Recursos adicionais
 * [Inicialização de aplicativos](startup.md)
-* [Middleware](middleware.md)
+* [Middleware](xref:fundamentals/middleware/index)
 * [Expressões regulares no .NET](/dotnet/articles/standard/base-types/regular-expressions)
 * [Linguagem de expressão regular – referência rápida](/dotnet/articles/standard/base-types/quick-ref)
 * [mod_rewrite do Apache](https://httpd.apache.org/docs/2.4/rewrite/)

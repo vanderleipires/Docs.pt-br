@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: 8549083ad42f3b81f850c0572b36dd99c4f50350
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2ba3c226cc57f8a3fb26b4119ae9e575eff522f9
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="filters"></a>Filtros
 
@@ -307,7 +307,7 @@ A estrutura fornece um `ResultFilterAttribute` abstrato que você pode colocar e
 
 ## <a name="using-middleware-in-the-filter-pipeline"></a>Usando middleware no pipeline de filtros
 
-Filtros de recursos funcionam como [middleware](../../fundamentals/middleware.md), no sentido em que envolvem a execução de tudo o que vem depois no pipeline. Mas os filtros diferem do middleware porque fazem parte do MVC, o que significa que eles têm acesso ao contexto e a constructos do MVC.
+Filtros de recursos funcionam como [middleware](xref:fundamentals/middleware/index), no sentido em que envolvem a execução de tudo o que vem depois no pipeline. Mas os filtros diferem do middleware porque fazem parte do MVC, o que significa que eles têm acesso ao contexto e a constructos do MVC.
 
 No ASP.NET Core 1.1, você pode usar o middleware no pipeline de filtros. Talvez você queira fazer isso se tiver um componente de middleware que precisa acessar dados de rota do MVC ou que precisa ser executado somente para determinados controladores ou ações.
 
