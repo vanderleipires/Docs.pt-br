@@ -1,50 +1,50 @@
 ---
-title: "Associação de modelo"
+title: "Associação de modelos"
 author: rachelappel
-description: "Informações sobre associação de modelo no ASP.NET MVC de núcleo"
-ms.author: rachelap
+description: "Informações sobre a associação de modelos no ASP.NET Core MVC"
 manager: wpickett
-ms.date: 01/22/2018
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
+ms.author: rachelap
+ms.date: 01/22/2018
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/models/model-binding
-ms.openlocfilehash: 26c4c016548cc3e465991c5ebf16893d4022145d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: d64d2792d7c682f9112133be1b9d129b2fc8a048
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="model-binding"></a>Associação de modelo
+# <a name="model-binding"></a>Associação de modelos
 
 Por [Rachel Appel](https://github.com/rachelappel)
 
-## <a name="introduction-to-model-binding"></a>Introdução à associação de modelo
+## <a name="introduction-to-model-binding"></a>Introdução à associação de modelos
 
-Associação de modelo no MVC do ASP.NET Core mapeia dados de solicitações HTTP para os parâmetros de método de ação. Os parâmetros podem ser tipos simples, como cadeias de caracteres, inteiros ou flutuações, ou eles podem ser tipos complexos. Isso é um ótimo recurso do MVC como mapear os dados de entrada para um representante é um cenário repetido com frequência, independentemente do tamanho ou a complexidade dos dados. MVC resolve esse problema removendo associação para que os desenvolvedores não precisam manter reconfiguração de uma versão ligeiramente diferente desse mesmo código em todos os aplicativos. Escrevendo seu próprio texto para o código de conversor de tipo é entediante e propenso a erros.
+A associação de modelos do ASP.NET Core MVC mapeia dados de solicitações HTTP para parâmetros de método de ação. Os parâmetros podem ser tipos simples, como cadeias de caracteres, inteiros ou floats, ou podem ser tipos complexos. Esse é um ótimo recurso do MVC, pois o mapeamento dos dados de entrada para um equivalente é um cenário repetido com frequência, independentemente do tamanho ou da complexidade dos dados. O MVC resolve esse problema com a abstração da associação, de modo que os desenvolvedores não precisem continuar reconfigurando uma versão ligeiramente diferente desse mesmo código em cada aplicativo. A escrita de seu próprio texto para tipar o código de conversor é entediante e propensa a erros.
 
-## <a name="how-model-binding-works"></a>Como funciona a associação de modelo
+## <a name="how-model-binding-works"></a>Como funciona a associação de modelos
 
-Quando MVC recebe uma solicitação HTTP, ele encaminha a um método de ação específica de um controlador. Determina qual método de ação para executar com base no que é nos dados de rota e, em seguida, ele associa valores da solicitação de HTTP para os parâmetros do método de ação. Por exemplo, considere a seguinte URL:
+Quando o MVC recebe uma solicitação HTTP, ele encaminha-a a um método de ação específico de um controlador. Ele determina qual método de ação será executado com base no que está nos dados de rota e, em seguida, ele associa valores da solicitação HTTP aos parâmetros desse método de ação. Por exemplo, considere a seguinte URL:
 
 `http://contoso.com/movies/edit/2`
 
-Como o modelo de rota se parece com isso, `{controller=Home}/{action=Index}/{id?}`, `movies/edit/2` encaminha para o `Movies` controlador e sua `Edit` método de ação. Ele também aceita um parâmetro opcional chamado `id`. O código para o método de ação deve ter esta aparência:
+Como o modelo de rota é semelhante a isto, `{controller=Home}/{action=Index}/{id?}`, `movies/edit/2` encaminha para o controlador `Movies` e seu método de ação `Edit`. Ele também aceita um parâmetro opcional chamado `id`. O código para o método de ação deve ter esta aparência:
 
 ```csharp
 public IActionResult Edit(int? id)
    ```
 
-Observação: As cadeias de caracteres na rota de URL não diferenciam maiusculas de minúsculas.
+Observação: as cadeias de caracteres na rota de URL não diferenciam maiúsculas de minúsculas.
 
-MVC tentará associar dados de solicitação para os parâmetros de ação por nome. MVC procurará valores para cada parâmetro usando o nome do parâmetro e os nomes de suas propriedades configuráveis públicas. No exemplo acima, o parâmetro de ação só é chamado `id`, que associa MVC para o valor com o mesmo nome nos valores de rota. Além dos valores de rota MVC associar dados de várias partes da solicitação e isso é feito em uma determinada ordem. Abaixo está uma lista das fontes de dados na ordem em que a associação de modelo examina-los:
+O MVC tentará associar os dados de solicitação aos parâmetros de ação por nome. O MVC procurará valores para cada parâmetro usando o nome do parâmetro e os nomes de suas propriedades configuráveis públicas. No exemplo acima, o único parâmetro de ação é chamado `id`, que o MVC associa ao valor com o mesmo nome nos valores de rota. Além dos valores de rota, o MVC associará dados de várias partes da solicitação e faz isso em uma ordem específica. Veja abaixo uma lista das fontes de dados na ordem em que a associação de modelos examina-as:
 
-1. `Form values`: Estes são valores de formulário que entram na solicitação HTTP usando o método POST. (incluindo as solicitações POST jQuery).
+1. `Form values`: esses são valores de formulário que entram na solicitação HTTP usando o método POST. (incluindo as solicitações POST jQuery).
 
-2. `Route values`: O conjunto de valores de rota fornecida pelo [roteamento](xref:fundamentals/routing)
+2. `Route values`: o conjunto de valores de rota fornecido pelo [Roteamento](xref:fundamentals/routing)
 
-3. `Query strings`: A parte da cadeia de caracteres de consulta do URI.
+3. `Query strings`: a parte da cadeia de caracteres de consulta do URI.
 
 <!-- DocFX BUG
 The link works but generates an error when building with DocFX
@@ -52,67 +52,67 @@ The link works but generates an error when building with DocFX
 [Routing](xref:fundamentals/routing)
 -->
 
-Observação: Formulário valores, dados de rota e consulta cadeias de caracteres são armazenadas como pares nome-valor.
+Observação: valores de formulário, dados de rota e cadeias de consulta são todos armazenados como pares nome-valor.
 
-Como uma chave chamada solicitou a associação de modelo `id` e não há nada chamado `id` nos valores de formulário, ele movido para os valores de rota procurando essa chave. Em nosso exemplo, é uma correspondência. Associação ocorre, e o valor é convertido para o inteiro de 2. A mesma solicitação usando Editar (id da cadeia de caracteres) seria converter a cadeia de caracteres "2".
+Como a associação de modelos solicitou uma chave chamada `id` e não há nada chamado `id` nos valores de formulário, ela passou para os valores de rota procurando essa chave. Em nosso exemplo, isso é uma correspondência. A associação ocorre e o valor é convertido no inteiro 2. A mesma solicitação que usa Edit(string id) converterá na cadeia de caracteres "2".
 
-Até agora, o exemplo usa tipos simples. No MVC tipos simples são qualquer tipo primitivo .NET ou com um conversor de tipo de cadeia de caracteres. Se o parâmetro do método de ação fosse uma classe, como o `Movie` tipo, que contém tipos simples e complexos, como propriedades, será de associação de modelo do MVC ainda tratá-la perfeitamente. Ele usa reflexão e recursão para percorrer as propriedades de tipos complexos procurando correspondências. Associação de modelo procura o padrão de *parameter_name.property_name* para associar valores a propriedades. Se ele não encontrar os valores correspondentes deste formulário, ele tentará estabelecer uma ligação usando apenas o nome da propriedade. Para esses tipos como `Collection` tipos de associação de modelo procura correspondências para *parameter_name [index]* ou apenas *[index]*. Trata da associação de modelo `Dictionary` tipos da mesma forma, pedindo *parameter_name [chave]* ou apenas *[chave]*, contanto que as chaves são tipos simples. As chaves que há suporte para correspondem os nomes de campo HTML e os auxiliares de marcação gerados para o mesmo tipo de modelo. Isso permite que os valores de ciclo para que os campos do formulário permaneçam preenchidos com a entrada do usuário para sua conveniência, por exemplo, quando os dados associados de criar ou editar não passam na validação.
+Até agora, o exemplo usa tipos simples. No MVC, os tipos simples são qualquer tipo primitivo do .NET ou um tipo com um conversor de tipo de cadeia de caracteres. Se o parâmetro do método de ação for uma classe, como o tipo `Movie`, que contém tipos simples e complexos como propriedades, a associação de modelos do MVC ainda o manipulará perfeitamente. Ele usa a reflexão e recursão para percorrer as propriedades de tipos complexos procurando correspondências. A associação de modelos procura o padrão *nome_do_parâmetro.nome_da_propriedade* para associar valores a propriedades. Se ela não encontrar os valores correspondentes desse formulário, ela tentará associar usando apenas o nome da propriedade. Para esses tipos como tipos `Collection`, a associação de modelos procura correspondências para *parameter_name [index]* ou apenas *[index]*. A associação de modelos trata tipos `Dictionary` da mesma forma, solicitando *parameter_name[key]* ou apenas *[key]*, desde que as chaves sejam tipos simples. As chaves compatíveis correspondem o HTML dos nomes de campo e os auxiliares de marca gerados para o mesmo tipo de modelo. Isso permite a ida e vinda dos valores, de modo que os campos de formulário permaneçam preenchidos com a entrada do usuário para sua conveniência, por exemplo, quando os dados associados de uma criação ou edição não são aprovados na validação.
 
-Em ordem de associação para a classe deve ter um construtor padrão público e membro a ser associado deve ser públicas propriedades graváveis. Quando a associação de modelo ocorrer que a classe só será instanciada usando o construtor padrão público, as propriedades podem ser definidas.
+Para que a associação ocorra, a classe precisa ter um construtor padrão público e o membro a ser associado precisa ser propriedades graváveis públicas. Quando a associação de modelos ocorrer, só será criada uma instância da classe com o construtor padrão público e, em seguida, as propriedades poderão ser definidas.
 
-Quando um parâmetro é vinculado, associação de modelo para procurar por valores com esse nome e ele prossegue para associar o próximo parâmetro. Caso contrário, o comportamento de associação de modelo padrão define parâmetros para seus valores padrão, dependendo de seu tipo:
+Quando um parâmetro é associado, a associação de modelos para de procurar valores com esse nome e ela passa para associar o próximo parâmetro. Caso contrário, o comportamento padrão da associação de modelos define parâmetros com seus valores padrão, dependendo de seu tipo:
 
-* `T[]`: Com a exceção de matrizes do tipo `byte[]`, associação define parâmetros de tipo `T[]` para `Array.Empty<T>()`. Matrizes do tipo `byte[]` são definidos como `null`.
+* `T[]`: com a exceção de matrizes do tipo `byte[]`, a associação define parâmetros do tipo `T[]` como `Array.Empty<T>()`. Matrizes do tipo `byte[]` são definidas como `null`.
 
-* Tipos de referência: Associação cria uma instância de uma classe com o construtor padrão sem definir propriedades. No entanto, os conjuntos de associação de modelo `string` parâmetros para `null`.
+* Tipos de referência: a associação cria uma instância de uma classe com o construtor padrão sem configurar propriedades. No entanto, a associação de modelos define parâmetros `string` como `null`.
 
-* Tipos anuláveis: Tipos anuláveis são definidos como `null`. No exemplo acima, os conjuntos de associação de modelo `id` para `null` desde que ela é do tipo `int?`.
+* Tipos que permitem valor nulo: os tipos que permitem valor nulo são definidos como `null`. No exemplo acima, a associação de modelos define `id` como `null`, pois ele é do tipo `int?`.
 
-* Tipos de valor: Tipos de valor não anuláveis do tipo `T` são definidos como `default(T)`. Por exemplo, a associação de modelo definirá um parâmetro `int id` como 0. Considere usar a validação do modelo ou tipos anuláveis em vez de valores padrão.
+* Tipos de valor: os tipos de valor que não permitem valor nulo do tipo `T` são definidos como `default(T)`. Por exemplo, a associação de modelos definirá um parâmetro `int id` como 0. Considere o uso da validação de modelo ou de tipos que permitem valor nulo, em vez de depender de valores padrão.
 
-Se a ligação falha, o MVC não gera um erro. Todas as ações que aceita a entrada do usuário devem verificar o `ModelState.IsValid` propriedade.
+Se a associação falhar, o MVC não gerará um erro. Todas as ações que aceitam a entrada do usuário devem verificar a propriedade `ModelState.IsValid`.
 
-Observação: Cada entrada no controlador de `ModelState` propriedade é um `ModelStateEntry` que contém um `Errors` propriedade. Raramente é necessário para esta coleção de consulta por conta própria. Use `ModelState.IsValid` em seu lugar.
+Observação: cada entrada na propriedade `ModelState` do controlador é uma `ModelStateEntry` que contém uma propriedade `Errors`. Raramente é necessário consultar essa coleção por conta própria. Use `ModelState.IsValid` em seu lugar.
 
-Além disso, há alguns tipos de dados especiais que MVC deve considerar ao realizar a associação de modelo:
+Além disso, há alguns tipos de dados especiais que o MVC precisa considerar ao realizar a associação de modelos:
 
-* `IFormFile`, `IEnumerable<IFormFile>`: Um ou mais arquivos carregados que fazem parte da solicitação HTTP.
+* `IFormFile`, `IEnumerable<IFormFile>`: um ou mais arquivos carregados que fazem parte da solicitação HTTP.
 
-* `CancellationToken`: Usado para cancelar a atividade em controladores de assíncronas.
+* `CancellationToken`: usado para cancelar a atividade em controladores assíncronos.
 
-Esses tipos podem estar vinculados aos parâmetros de ação ou propriedades em um tipo de classe.
+Esses tipos podem ser associados a parâmetros de ação ou a propriedades em um tipo de classe.
 
-Após a conclusão, associação de modelo [validação](validation.md) ocorre. Associação de modelo padrão funciona bem para a maioria dos cenários de desenvolvimento. Também é extensível e se você tiver necessidades exclusivas, você pode personalizar o comportamento interno.
+Após a conclusão da associação de modelos, a [Validação](validation.md) ocorrerá. A associação de modelos padrão funciona bem para a maioria dos cenários de desenvolvimento. Também é extensível e, portanto, se você tiver necessidades exclusivas, poderá personalizar o comportamento interno.
 
-## <a name="customize-model-binding-behavior-with-attributes"></a>Personalizar o comportamento de associação de modelo com atributos
+## <a name="customize-model-binding-behavior-with-attributes"></a>Personalizar o comportamento da associação de modelos com atributos
 
-MVC contém vários atributos que podem ser usados para direcionar seu comportamento de associação de modelo padrão para uma fonte diferente. Por exemplo, você pode especificar se a associação é exigida para uma propriedade, ou se ele nunca deve acontecer em todos os usando o `[BindRequired]` ou `[BindNever]` atributos. Como alternativa, você pode substituir a fonte de dados padrão e especificar a fonte de dados do associador de modelo. Abaixo está uma lista dos atributos de associação de modelo:
+O MVC contém vários atributos que podem ser usados para direcionar seu comportamento de associação de modelos padrão para outra fonte. Por exemplo, você pode especificar se a associação é obrigatória para uma propriedade ou se ela nunca deve ocorrer usando os atributos `[BindRequired]` ou `[BindNever]`. Como alternativa, você pode substituir a fonte de dados padrão e especificar a fonte de dados do associador de modelos. Veja abaixo uma lista dos atributos de associação de modelos:
 
-* `[BindRequired]`: Este atributo adiciona um erro de estado de modelo se a associação não pode ocorrer.
+* `[BindRequired]`: esse atributo adiciona um erro de estado do modelo se a associação não pode ocorrer.
 
-* `[BindNever]`: Informa o associador de modelo nunca vincular a esse parâmetro.
+* `[BindNever]`: instrui o associador de modelos a nunca associar a esse parâmetro.
 
-* `[FromHeader]`, `[FromQuery]`, `[FromRoute]`, `[FromForm]`: Usá-los para especificar a origem de associação exata que deseja aplicar.
+* `[FromHeader]`, `[FromQuery]`, `[FromRoute]`, `[FromForm]`: use-os para especificar a origem da associação exata que deseja aplicar.
 
-* `[FromServices]`: Este atributo utiliza [injeção de dependência](../../fundamentals/dependency-injection.md) para associar parâmetros de serviços.
+* `[FromServices]`: esse atributo usa a [injeção de dependência](../../fundamentals/dependency-injection.md) para associar parâmetros de serviços.
 
-* `[FromBody]`: Use os formatadores configurados para associar dados do corpo da solicitação. O formatador é selecionado com base no tipo de conteúdo da solicitação.
+* `[FromBody]`: use os formatadores configurados para associar dados do corpo da solicitação. O formatador é selecionado de acordo com o tipo de conteúdo da solicitação.
 
-* `[ModelBinder]`: Usado para substituir o associador de modelo padrão, a origem de associação e o nome.
+* `[ModelBinder]`: usado para substituir o associador de modelos padrão, a origem da associação e o nome.
 
-Os atributos são ferramentas muito úteis quando você precisa substituir o comportamento padrão de associação de modelo.
+Os atributos são ferramentas muito úteis quando você precisa substituir o comportamento padrão da associação de modelos.
 
 ## <a name="bind-formatted-data-from-the-request-body"></a>Associar dados formatados do corpo da solicitação
 
-Solicitação de dados podem vir de uma variedade de formatos como JSON, XML e muitos outros. Quando você usa o atributo [FromBody] para indicar que você deseja associar um parâmetro de dados no corpo da solicitação, o MVC usa um conjunto configurado de formatadores de tratar os dados de solicitação com base em seu tipo de conteúdo. Por padrão MVC inclui um `JsonInputFormatter` classe para manipular dados JSON, mas você pode adicionar formatadores adicionais para lidar com XML e outros formatos personalizados.
+Os dados de solicitação podem ser recebidos em uma variedade de formatos, incluindo JSON, XML e muitos outros. Quando você usa o atributo [FromBody] para indicar que deseja associar um parâmetro a dados no corpo da solicitação, o MVC usa um conjunto configurado de formatadores para manipular os dados de solicitação de acordo com seu tipo de conteúdo. Por padrão, o MVC inclui uma classe `JsonInputFormatter` para manipular dados JSON, mas você pode adicionar outros formatadores para manipular XML e outros formatos personalizados.
 
 > [!NOTE]
-> Pode haver no máximo um parâmetro por ação decorado com `[FromBody]`. Tempo de execução do ASP.NET Core MVC delega a responsabilidade de ler o fluxo da solicitação para o formatador. Depois que o fluxo da solicitação é lido para um parâmetro, geralmente não é possível ler o fluxo da solicitação novamente para associar outros `[FromBody]` parâmetros.
+> Pode haver, no máximo, um parâmetro por ação decorado com `[FromBody]`. O tempo de execução do ASP.NET Core MVC delega a responsabilidade de ler o fluxo da solicitação ao formatador. Depois que o fluxo da solicitação é lido para um parâmetro, geralmente, não é possível ler o fluxo da solicitação novamente para associar outros parâmetros `[FromBody]`.
 
 > [!NOTE]
-> O `JsonInputFormatter` é o formatador padrão e é baseada em [Json.NET](https://www.newtonsoft.com/json).
+> O `JsonInputFormatter` é o formatador padrão e se baseia no [Json.NET](https://www.newtonsoft.com/json).
 
-ASP.NET seleciona formatadores de entrada com base no [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) cabeçalho e o tipo do parâmetro, a menos que haja um atributo aplicado a ele especificando caso contrário. Se você gostaria de usar XML ou outro formato você deve configurá-lo no *Startup.cs* arquivo, mas você pode ser necessário que obter uma referência para `Microsoft.AspNetCore.Mvc.Formatters.Xml` usando o NuGet. O código de inicialização deve ter esta aparência:
+O ASP.NET seleciona formatadores de entrada de acordo com o cabeçalho [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) e o tipo do parâmetro, a menos que haja um atributo aplicado a ele especificando o contrário. Se deseja usar XML ou outro formato, configure-o no arquivo *Startup.cs*, mas talvez você precise obter primeiro uma referência a `Microsoft.AspNetCore.Mvc.Formatters.Xml` usando o NuGet. O código de inicialização deverá ter uma aparência semelhante a esta:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -122,8 +122,8 @@ public void ConfigureServices(IServiceCollection services)
    }
 ```
 
-O código no *Startup.cs* arquivo contém um `ConfigureServices` método com um `services` argumento que você pode usar para criar serviços para seu aplicativo ASP.NET. No exemplo, estamos adicionando um formatador XML como um serviço que forneça MVC para este aplicativo. O `options` argumento passado para o `AddMvc` método permite que você adicionar e gerenciar filtros, formatadores e outras opções de sistema do MVC após a inicialização do aplicativo. Em seguida, aplique a `Consumes` de atributo para classes do controlador ou métodos de ação para trabalhar com o formato desejado.
+O código do arquivo *Startup.cs* contém um método `ConfigureServices` com um argumento `services` que você pode usar para criar serviços para o aplicativo ASP.NET. No exemplo, estamos adicionando um formatador XML como um serviço que o MVC fornecerá para este aplicativo. O argumento `options` passado para o método `AddMvc` permite que você adicione e gerencie filtros, formatadores e outras opções do sistema no MVC após a inicialização do aplicativo. Em seguida, aplique o atributo `Consumes` a classes do controlador ou métodos de ação para trabalhar com o formato desejado.
 
-### <a name="custom-model-binding"></a>Associação de modelo personalizado
+### <a name="custom-model-binding"></a>Associação de modelos personalizada
 
-Você pode estender a associação de modelo, escrevendo seus próprio associadores de modelo personalizado. Saiba mais sobre [associação de modelo personalizado](../advanced/custom-model-binding.md).
+Estenda a associação de modelos escrevendo seus próprios associadores de modelos personalizados. Saiba mais sobre a [associação de modelos personalizada](../advanced/custom-model-binding.md).

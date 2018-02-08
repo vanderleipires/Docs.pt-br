@@ -2,60 +2,60 @@
 title: Layout
 author: ardalis
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/layout
-ms.openlocfilehash: e268f045e39188e9cc1e759ff7e6c553662dd669
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 3e9e5949d8940a33508e24f0da015b49b7ba468c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="layout"></a>Layout
 
 Por [Steve Smith](https://ardalis.com/)
 
-Modos de exibição frequentemente compartilham elementos visuais e através de programação. Neste artigo, você aprenderá a usar layouts comuns, compartilhar diretivas e executar o código comum antes de modos de exibição de renderização em seu aplicativo ASP.NET.
+Com frequência, as exibições compartilham elementos visuais e programáticos. Neste artigo, você aprenderá a usar layouts comuns, compartilhar diretivas e executar o código comum antes de renderizar exibições no aplicativo ASP.NET.
 
-## <a name="what-is-a-layout"></a>O que é um Layout
+## <a name="what-is-a-layout"></a>O que é um layout
 
-A maioria dos aplicativos web têm um layout comum que fornece aos usuários uma experiência consistente conforme eles navegam de uma página. O layout normalmente inclui elementos de interface do usuário comum, como o cabeçalho de aplicativo, navegação ou elementos de menu e rodapé.
+A maioria dos aplicativos Web tem um layout comum que fornece aos usuários uma experiência consistente durante sua navegação de uma página a outra. O layout normalmente inclui elementos comuns de interface do usuário, como o cabeçalho do aplicativo, elementos de menu ou de navegação e rodapé.
 
-![Exemplo de Layout de página](layout/_static/page-layout.png)
+![Exemplo de layout da página](layout/_static/page-layout.png)
 
-Estruturas HTML comuns, como scripts e folhas de estilo são também usadas pelo número de páginas dentro de um aplicativo. Todos esses elementos compartilhados podem ser definidos em uma *layout* arquivo, que pode ser referenciado por qualquer exibição usada dentro do aplicativo. Layouts de reduzem código duplicado em exibições, ajudando a seguir o [princípio não repita por conta própria (teste)](http://deviq.com/don-t-repeat-yourself/).
+Estruturas HTML comuns, como scripts e folhas de estilo, também são usadas com frequência por muitas páginas em um aplicativo. Todos esses elementos compartilhados podem ser definidos em um arquivo de *layout*, que pode então ser referenciado por qualquer exibição usada no aplicativo. Os layouts reduzem o código duplicado em exibições, ajudando-os a seguir o [princípio DRY (Don't Repeat Yourself)](http://deviq.com/don-t-repeat-yourself/).
 
-Por convenção, o layout padrão para um aplicativo ASP.NET é denominado `_Layout.cshtml`. O modelo de projeto do Visual Studio ASP.NET Core MVC inclui o arquivo de layout no `Views/Shared` pasta:
+Por convenção, o layout padrão de um aplicativo ASP.NET é chamado `_Layout.cshtml`. O modelo de projeto do ASP.NET Core MVC no Visual Studio inclui o arquivo de layout na pasta `Views/Shared`:
 
-![pasta de modos de exibição no Gerenciador de soluções](layout/_static/web-project-views.png)
+![pasta de exibições no gerenciador de soluções](layout/_static/web-project-views.png)
 
-Este layout define um modelo de nível superior para modos de exibição no aplicativo. Aplicativos não exigem um layout e aplicativos podem definir mais de um layout, com diferentes modos de exibição especificando layouts diferentes.
+Esse layout define um modelo de nível superior para exibições no aplicativo. Os aplicativos não exigem um layout e podem definir mais de um layout, com diferentes exibições especificando diferentes layouts.
 
-Um exemplo `_Layout.cshtml`:
+Um `_Layout.cshtml` de exemplo:
 
 [!code-html[Main](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
 
-## <a name="specifying-a-layout"></a>Especificando um Layout
+## <a name="specifying-a-layout"></a>Especificando um layout
 
-Modos de exibição Razor têm um `Layout` propriedade. Modos de exibição individuais Especifica um layout definindo essa propriedade:
+As exibições do Razor têm uma propriedade `Layout`. As exibições individuais especificam um layout com a configuração dessa propriedade:
 
 [!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
 
-O layout especificado pode usar um caminho completo (exemplo: `/Views/Shared/_Layout.cshtml`) ou um nome parcial (exemplo: `_Layout`). Quando é fornecido um nome parcial, o mecanismo de exibição Razor procurará o arquivo de layout usando seu processo de descoberta padrão. A pasta associada de controlador é pesquisada primeiro, seguido de `Shared` pasta. Esse processo de descoberta é idêntico àquele usado para descobrir [exibições parciais](partial.md).
+O layout especificado pode usar um caminho completo (exemplo: `/Views/Shared/_Layout.cshtml`) ou um nome parcial (exemplo: `_Layout`). Quando um nome parcial for fornecido, o mecanismo de exibição do Razor pesquisará o arquivo de layout usando seu processo de descoberta padrão. A pasta associada ao controlador é pesquisada primeiro, seguida da pasta `Shared`. Esse processo de descoberta é idêntico àquele usado para descobrir [exibições parciais](partial.md).
 
-Por padrão, todo layout deve chamar `RenderBody`. Sempre que a chamada para `RenderBody` é colocada, o conteúdo do modo de exibição será renderizado.
+Por padrão, todo layout precisa chamar `RenderBody`. Sempre que a chamada a `RenderBody` for feita, o conteúdo da exibição será renderizado.
 
 <a name="layout-sections-label"></a>
 
 ### <a name="sections"></a>Seções
 
-Um layout, opcionalmente, pode fazer referência a um ou mais *seções*, chamando `RenderSection`. Seções fornecem uma maneira de organizar onde determinados elementos da página devem ser colocados. Cada chamada para `RenderSection` pode especificar se essa seção é obrigatória ou opcional. Se uma seção obrigatória não for encontrada, uma exceção será lançada. Modos de exibição individuais especificam o conteúdo a ser renderizados dentro de uma seção usando o `@section` a sintaxe do Razor. Se uma exibição define uma seção, deve ser processado ou ocorrerá um erro.
+Um layout, opcionalmente, pode referenciar uma ou mais *seções*, chamando `RenderSection`. As seções fornecem uma maneira de organizar o local em que determinados elementos da página devem ser colocados. Cada chamada a `RenderSection` pode especificar se essa seção é obrigatória ou opcional. Se uma seção obrigatória não for encontrada, uma exceção será gerada. As exibições individuais especificam o conteúdo a ser renderizado em uma seção usando a sintaxe Razor `@section`. Se uma exibição definir uma seção, ela precisará ser renderizada (ou ocorrerá um erro).
 
-Um exemplo `@section` definição em um modo de exibição:
+Uma definição `@section` de exemplo em uma exibição:
 
 ```html
 @section Scripts {
@@ -63,23 +63,23 @@ Um exemplo `@section` definição em um modo de exibição:
    }
    ```
 
-No código acima, os scripts de validação são adicionados para o `scripts` seção em uma exibição que inclui um formulário. Outros modos de exibição no mesmo aplicativo podem não exigir qualquer script adicional e portanto não precisam definir uma seção de scripts.
+No código acima, os scripts de validação são adicionados à seção `scripts` em uma exibição que inclui um formulário. Outras exibições no mesmo aplicativo podem não exigir scripts adicionais e, portanto, não precisam definir uma seção de scripts.
 
-Seções definidas em um modo de exibição estão disponíveis apenas em sua página de layout imediata. Eles não podem ser referenciados de existe meio-termo, componentes do modo de exibição ou outras partes do sistema de exibição.
+As seções definidas em uma exibição estão disponíveis apenas em sua página de layout imediata. Elas não podem ser referenciadas em parciais, componentes de exibição ou outras partes do sistema de exibição.
 
 ### <a name="ignoring-sections"></a>Ignorando seções
 
-Por padrão, o corpo e todas as seções de uma página de conteúdo devem todas ser renderizadas por página de layout. O mecanismo de exibição Razor impõe esse controle se o corpo e cada seção foi renderizados.
+Por padrão, o corpo e todas as seções de uma página de conteúdo precisam ser renderizados pela página de layout. O mecanismo de exibição do Razor impõe isso acompanhando se o corpo e cada seção foram renderizados.
 
-Para instruir o mecanismo de exibição para ignorar o corpo ou seções, chame o `IgnoreBody` e `IgnoreSection` métodos.
+Para instruir o mecanismo de exibição a ignorar o corpo ou as seções, chame os métodos `IgnoreBody` e `IgnoreSection`.
 
-O corpo e cada seção em uma página de Razor devem ser processados ou ignorados.
+O corpo e cada seção em uma página do Razor precisam ser renderizados ou ignorados.
 
 <a name="viewimports"></a>
 
-## <a name="importing-shared-directives"></a>Importar diretivas compartilhadas
+## <a name="importing-shared-directives"></a>Importando diretivas compartilhadas
 
-Modos de exibição podem usar diretivas do Razor para muitas coisas, como importar namespaces ou executar [injeção de dependência](dependency-injection.md). Diretivas compartilhadas por vários modos de exibição podem ser especificadas em um comum `_ViewImports.cshtml` arquivo. O `_ViewImports` arquivo suporta as seguintes diretivas:
+As exibições podem usar diretivas do Razor para fazer muitas coisas, como importar namespaces ou executar a [injeção de dependência](dependency-injection.md). Diretivas compartilhadas por muitas exibições podem ser especificadas em um arquivo `_ViewImports.cshtml` comum. O arquivo `_ViewImports` dá suporte às seguintes diretivas:
 
 * `@addTagHelper`
 
@@ -97,39 +97,39 @@ Modos de exibição podem usar diretivas do Razor para muitas coisas, como impor
 
 O arquivo não dá suporte a outros recursos do Razor, como funções e definições de seção.
 
-Um exemplo de `_ViewImports.cshtml` arquivo:
+Um arquivo `_ViewImports.cshtml` de exemplo:
 
 [!code-html[Main](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
 
-O `_ViewImports.cshtml` de arquivos para um aplicativo MVC do ASP.NET Core normalmente é colocado no `Views` pasta. Um `_ViewImports.cshtml` arquivo pode ser colocado em qualquer pasta na qual o caso só serão aplicada a exibições dentro dessa pasta e suas subpastas. `_ViewImports`os arquivos são processados, iniciando no nível raiz, e, em seguida, para cada pasta à esquerda até o local da exibição em si, para que as configurações especificadas no nível raiz pode ser substituído no nível da pasta.
+O arquivo `_ViewImports.cshtml` para um aplicativo ASP.NET Core MVC normalmente é colocado na pasta `Views`. Um arquivo `_ViewImports.cshtml` pode ser colocado em qualquer pasta, caso em que só será aplicado a exibições nessa pasta e em suas subpastas. Os arquivos `_ViewImports` são processados, começando no nível raiz e, em seguida, para cada pasta até o local da exibição em si. Portanto, as configurações especificadas no nível raiz podem ser substituídas no nível da pasta.
 
-Por exemplo, se um nível de raiz `_ViewImports.cshtml` arquivo especifica `@model` e `@addTagHelper`e outro `_ViewImports.cshtml` arquivo na pasta do modo de exibição associado a controlador Especifica outro `@model` e adiciona outro `@addTagHelper`, o modo de exibição terão acesso a ambos os auxiliares de marcação e usará o último `@model`.
+Por exemplo, se um arquivo `_ViewImports.cshtml` no nível raiz especificar `@model` e `@addTagHelper` e outro arquivo `_ViewImports.cshtml` na pasta associada ao controlador da exibição especificar um `@model` diferente e adicionar outro `@addTagHelper`, a exibição terá acesso aos dois auxiliares de marca e usará o último `@model`.
 
-Se vários `_ViewImports.cshtml` arquivos sejam executados por um modo de exibição, combinados comportamento das diretivas incluídas no `ViewImports.cshtml` arquivos será da seguinte maneira:
+Se vários arquivos `_ViewImports.cshtml` forem executados para uma exibição, o comportamento combinado das diretivas incluídas nos arquivos `ViewImports.cshtml` será o seguinte:
 
-* `@addTagHelper`, `@removeTagHelper`: execução, em ordem
+* `@addTagHelper`, `@removeTagHelper`: todos são executados, em ordem
 
-* `@tagHelperPrefix`: o mais próximo um para o modo de exibição substitui quaisquer outras
+* `@tagHelperPrefix`: o mais próximo à exibição substitui todos os outros
 
-* `@model`: o mais próximo um para o modo de exibição substitui quaisquer outras
+* `@model`: o mais próximo à exibição substitui todos os outros
 
-* `@inherits`: o mais próximo um para o modo de exibição substitui quaisquer outras
+* `@inherits`: o mais próximo à exibição substitui todos os outros
 
-* `@using`: todos são incluídos. duplicatas serão ignoradas
+* `@using`: todos são incluídos; duplicatas são ignoradas
 
-* `@inject`: para cada propriedade, aquele mais próximo à exibição substitui quaisquer outros usuários com o mesmo nome de propriedade
+* `@inject`: para cada propriedade, o mais próximo à exibição substitui todos os outros com o mesmo nome de propriedade
 
 <a name="viewstart"></a>
 
-## <a name="running-code-before-each-view"></a>Executar código antes de cada modo de exibição
+## <a name="running-code-before-each-view"></a>Executando o código antes de cada exibição
 
-Se você tiver o código necessário executar antes de cada exibição, isso deve ser colocado no `_ViewStart.cshtml` arquivo. Por convenção, o `_ViewStart.cshtml` arquivo está localizado no `Views` pasta. As instruções listadas no `_ViewStart.cshtml` são executados antes de cada exibição completa (não layouts e exibições parciais não). Como [ViewImports.cshtml](xref:mvc/views/layout#viewimports), `_ViewStart.cshtml` são hierárquicos. Se um `_ViewStart.cshtml` arquivo é definido na pasta de exibição associada por controlador, ele será executado depois de definido na raiz do `Views` pasta (se houver).
+Se você tiver o código necessário a ser executado antes de cada exibição, isso deverá ser colocado no arquivo `_ViewStart.cshtml`. Por convenção, o arquivo `_ViewStart.cshtml` está localizado na pasta `Views`. As instruções listadas em `_ViewStart.cshtml` são executadas antes de cada exibição completa (não layouts nem exibições parciais). Como [ViewImports.cshtml](xref:mvc/views/layout#viewimports), `_ViewStart.cshtml` é hierárquico. Se um arquivo `_ViewStart.cshtml` for definido na pasta de exibição associada ao controlador, ele será executado depois daquele definido na raiz da pasta `Views` (se houver).
 
-Um exemplo de `_ViewStart.cshtml` arquivo:
+Um arquivo `_ViewStart.cshtml` de exemplo:
 
 [!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
 
-O arquivo acima Especifica que todas as exibições usarão o `_Layout.cshtml` layout.
+O arquivo acima especifica que todas as exibições usarão o layout `_Layout.cshtml`.
 
 > [!NOTE]
-> Nem `_ViewStart.cshtml` nem `_ViewImports.cshtml` geralmente são colocadas as `/Views/Shared` pasta. As versões de nível de aplicativo desses arquivos devem ser colocadas diretamente no `/Views` pasta.
+> `_ViewStart.cshtml` nem `_ViewImports.cshtml` geralmente são colocados na pasta `/Views/Shared`. As versões no nível do aplicativo desses arquivos devem ser colocadas diretamente na pasta `/Views`.

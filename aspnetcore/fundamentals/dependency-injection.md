@@ -1,59 +1,59 @@
 ---
-title: "Injeção de dependência no núcleo do ASP.NET"
+title: "Injeção de dependência no ASP.NET Core"
 author: ardalis
-description: "Saiba como o ASP.NET Core implementa injeção de dependência e como usá-lo."
-ms.author: riande
+description: "Saiba como o ASP.NET Core implementa a injeção de dependência e como usá-la."
 manager: wpickett
-ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: fundamentals/dependency-injection
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7a5a0991694b2c7caa79dbc09f6471d614f67dac
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.date: 10/14/2016
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: fundamentals/dependency-injection
+ms.openlocfilehash: acbce5d139da0acc0870a9cf23a779bf27699a61
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Introdução a injeção de dependência no núcleo do ASP.NET
+# <a name="dependency-injection-in-aspnet-core"></a>Injeção de dependência no ASP.NET Core
 
 <a name="fundamentals-dependency-injection"></a>
 
 Por [Steve Smith](https://ardalis.com/) e [Scott Addie](https://scottaddie.com)
 
-ASP.NET Core foi projetado desde o início para dar suporte e aproveitar a injeção de dependência. Aplicativos do ASP.NET Core podem aproveitar os serviços de estrutura interna, mantendo-as injetada métodos na classe de inicialização e serviços de aplicativo podem ser configurados para a injeção também. O contêiner de serviços padrão fornecido pelo ASP.NET Core fornece um recurso mínimo definido e não se destina a substituir outros contêineres.
+O ASP.NET Core foi projetado desde o início para dar suporte e utilizar a injeção de dependência. Os aplicativos ASP.NET Core podem utilizar os serviços de estrutura interna mantendo-os injetados em métodos na classe Startup e os Serviços de Aplicativos também podem ser configurados para injeção. O contêiner de serviços padrão fornecido pelo ASP.NET Core fornece um conjunto de recursos mínimos e não se destina a substituir outros contêineres.
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-dependency-injection"></a>O que é a injeção de dependência?
+## <a name="what-is-dependency-injection"></a>O que é injeção de dependência?
 
-Injeção de dependência (DI) é uma técnica para a obtenção de um acoplamento fraco entre objetos e seus colaboradores ou dependências. Em vez de diretamente a instanciação de parceiros, ou usando referências estáticas, os objetos que precisa de uma classe para realizar suas ações são fornecidos para a classe de alguma forma. Geralmente, classes irá declarar suas dependências por meio de seu construtor, possibilitando que siga a [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/). Essa abordagem é conhecida como "injeção de construtor".
+A DI (injeção de dependência) é uma técnica para obter um acoplamento flexível entre objetos e seus colaboradores, ou dependências. Em vez de criar uma instância de colaboradores diretamente, ou usar referências estáticas, os objetos de que uma classe precisa para realizar suas ações são fornecidos para a classe de alguma forma. Geralmente, as classes declararão suas dependências por meio de seu construtor, possibilitando que elas sigam o [Princípio de Dependências Explícitas](http://deviq.com/explicit-dependencies-principle/). Essa abordagem é conhecida como "injeção de construtor".
 
-Quando classes são criadas com DI em mente, eles são mais flexíveis porque eles não têm dependências diretas, codificada em seus colaboradores. Isso segue o [princípio de inversão de dependência](http://deviq.com/dependency-inversion-principle/), indicando que *"módulos de nível alto não pode depender de módulos de Nível baixos; ambos devem depender das abstrações."* Em vez de fazer referência a implementações específicas, classes de solicitação abstrações (geralmente `interfaces`) que é fornecido a eles quando a classe é construída. Extração de dependências em interfaces e fornecer implementações dessas interfaces como parâmetros também é um exemplo de como o [padrão de design de estratégia](http://deviq.com/strategy-design-pattern/).
+Quando as classes são criadas com a DI em mente, elas têm um acoplamento mais flexível porque não têm dependências diretas e embutidas em código em seus colaboradores. Isso segue o [Princípio de Inversão de Dependência](http://deviq.com/dependency-inversion-principle/), que indica que *"módulos de nível alto não devem depender de módulos de nível baixo; ambos devem depender de abstrações".* Em vez de referenciar implementações específicas, as classes solicitam abstrações (geralmente, `interfaces`) que são fornecidas a elas quando a classe é construída. A extração de dependências em interfaces e fornecimento de implementações dessas interfaces como parâmetros também é um exemplo do [Padrão de design de estratégia](http://deviq.com/strategy-design-pattern/).
 
-Quando um sistema é projetado para usar a DI, com muitas classes solicitando suas dependências por meio de seu construtor (ou propriedades), é útil ter uma classe dedicada à criação dessas classes com suas dependências associadas. Essas classes são chamadas de *contêineres*, ou, mais especificamente, [inversão de controle (IoC)](http://deviq.com/inversion-of-control/) contêineres ou contêineres de injeção de dependência (DI). Um contêiner é essencialmente uma fábrica que é responsável por fornecer instâncias dos tipos que são solicitados a partir dele. Se um determinado tipo declarou que ele tem dependências, e o contêiner tiver sido configurado para fornecer os tipos de dependência, ele criará as dependências como parte da criação da instância solicitada. Dessa forma, os gráficos de dependência complexos podem ser fornecidos para classes sem a necessidade de qualquer construção de objeto inserido no código. Além de criar objetos com suas dependências, contêineres normalmente gerenciar tempos de vida de objeto dentro do aplicativo.
+Quando um sistema é projetado para usar a DI, com muitas classes solicitando suas dependências por meio de seu construtor (ou propriedades), é útil ter uma classe dedicada à criação dessas classes com suas dependências associadas. Essas classes são chamadas de *contêineres* ou mais especificamente, contêineres [IoC (Inversão de Controle)](http://deviq.com/inversion-of-control/) ou contêineres DI (Injeção de Dependência). Basicamente, um contêiner é um alocador responsável por fornecer instâncias dos tipos solicitados dele. Se determinado tipo declarou que tem dependências e o contêiner foi configurado para fornecer os tipos de dependência, ele criará as dependências como parte da criação da instância solicitada. Dessa forma, grafos de dependência complexos podem ser fornecidos para classes sem a necessidade de uma construção de objeto embutida em código. Além de criar objetos com suas dependências, os contêineres normalmente gerenciam tempos de vida de objeto no aplicativo.
 
-ASP.NET Core inclui um simple contêiner interno (representado pelo `IServiceProvider` interface) que dá suporte a injeção de construtor por padrão, e ASP.NET disponibiliza por meio de DI determinados serviços. AS PÁGINAS ASP. Contêiner do NET refere-se aos tipos que ele gerencia como *serviços*. No restante deste artigo, *serviços* fará referência a tipos que são gerenciados pelo contêiner de IoC do ASP.NET Core. Configurar serviços do contêiner interno no `ConfigureServices` método em seu aplicativo `Startup` classe.
-
-> [!NOTE]
-> Martin Fowler escreveu um artigo abrangente sobre [inversão de contêineres de controle e o padrão de injeção de dependência](https://www.martinfowler.com/articles/injection.html). Microsoft Patterns e práticas recomendadas também tem uma descrição excelente de [injeção de dependência](https://msdn.microsoft.com/library/hh323705.aspx).
+O ASP.NET Core inclui um contêiner interno simples (representado pela interface `IServiceProvider`) que dá suporte à injeção de construtor por padrão e o ASP.NET disponibiliza alguns serviços por meio da DI. O contêiner do ASP.NET refere-se aos tipos que ele gerencia como *serviços*. No restante deste artigo, *serviços* se referirão aos tipos que são gerenciados pelo contêiner IoC do ASP.NET Core. Configure os serviços do contêiner interno no método `ConfigureServices` na classe `Startup` do aplicativo.
 
 > [!NOTE]
-> Este artigo aborda a injeção de dependência conforme ela se aplica a todos os aplicativos ASP.NET. Injeção de dependência em controladores MVC é abordada em [injeção de dependência e controladores](../mvc/controllers/dependency-injection.md).
+> Martin Fowler escreveu um artigo abrangente sobre [Contêineres de Inversão de Controle e o padrão de injeção de dependência](https://www.martinfowler.com/articles/injection.html). O grupo Padrões e Práticas Microsoft também tem uma ótima descrição sobre a [Injeção de Dependência](https://msdn.microsoft.com/library/hh323705.aspx).
 
-### <a name="constructor-injection-behavior"></a>Comportamento de injeção de construtor
+> [!NOTE]
+> Este artigo aborda a Injeção de Dependência aplicável a todos os aplicativos ASP.NET. A Injeção de Dependência em controladores MVC é abordada em [Injeção de Dependência e controladores](../mvc/controllers/dependency-injection.md).
 
-Injeção de construtor requer que o construtor em questão esteja *público*. Caso contrário, seu aplicativo lançará um `InvalidOperationException`:
+### <a name="constructor-injection-behavior"></a>Comportamento da injeção de construtor
 
-> Um construtor adequado para o tipo 'YourType' não pôde ser localizado. Verifique se o tipo é concreto e serviços são registrados para todos os parâmetros de um construtor público.
+A injeção de construtor exige que o construtor em questão seja *público*. Caso contrário, o aplicativo gerará uma `InvalidOperationException`:
+
+> Um construtor adequado para o tipo 'YourType' não pôde ser localizado. Verifique se o tipo é concreto e se os serviços estão registrados para todos os parâmetros de um construtor público.
 
 
-Injeção de construtor exige que apenas um construtor aplicável existe. Sobrecargas de construtor têm suporte, mas somente uma sobrecarga pode existir cujos argumentos podem ser executados por injeção de dependência. Se houver mais de um, seu aplicativo lançará um `InvalidOperationException`:
+A injeção de construtor exige apenas a existência de um construtor aplicável. Há suporte para sobrecargas de construtor, mas somente uma sobrecarga pode existir, cujos argumentos podem ser todos atendidos pela injeção de dependência. Se houver mais de um, o aplicativo gerará uma `InvalidOperationException`:
 
-> Foram encontrados vários construtores aceitar todos os tipos de argumento fornecido no tipo 'YourType'. Deve haver apenas um construtor aplicável.
+> Vários construtores que aceitam todos os tipos de argumento fornecidos foram encontrados no tipo 'YourType'. Deve haver apenas um construtor aplicável.
 
-Construtores podem aceitar argumentos que não são fornecidos pela injeção de dependência, mas eles devem oferecer suporte a valores padrão. Por exemplo:
+Os construtores podem aceitar argumentos que não são fornecidos pela injeção de dependência, mas precisam dar suporte a valores padrão. Por exemplo:
 
 ```csharp
 // throws InvalidOperationException: Unable to resolve service for type 'System.String'...
@@ -71,9 +71,9 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 }
 ```
 
-## <a name="using-framework-provided-services"></a>Usando os serviços fornecidos pelo Framework
+## <a name="using-framework-provided-services"></a>Usando serviços fornecidos pela estrutura
 
-O `ConfigureServices` método o `Startup` classe é responsável por definir os serviços que o aplicativo irá usar, incluindo recursos de plataforma como o Entity Framework Core e ASP.NET MVC de núcleo. Inicialmente, o `IServiceCollection` fornecido para `ConfigureServices` tem os seguintes serviços definidos (dependendo da [como o host foi configurado](xref:fundamentals/hosting)):
+O método `ConfigureServices` na classe `Startup` é responsável por definir os serviços que serão usados pelo aplicativo, incluindo recursos de plataforma como o Entity Framework Core e ASP.NET Core MVC. Inicialmente, a `IServiceCollection` fornecida ao `ConfigureServices` tem os seguintes serviços definidos (dependendo de [como o host foi configurado](xref:fundamentals/hosting)):
 
 | Tipo de serviço | Tempo de vida |
 | ----- | ------- |
@@ -92,131 +92,131 @@ O `ConfigureServices` método o `Startup` classe é responsável por definir os 
 | [Microsoft.AspNetCore.Hosting.IStartup](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.istartup) | Singleton |
 | [Microsoft.AspNetCore.Hosting.IApplicationLifetime](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) | Singleton |
 
-Abaixo está um exemplo de como adicionar serviços adicionais ao contêiner usando um número de métodos de extensão como `AddDbContext`, `AddIdentity`, e `AddMvc`.
+Veja abaixo um exemplo de como adicionar outros serviços ao contêiner usando vários métodos de extensão como `AddDbContext`, `AddIdentity` e `AddMvc`.
 
 [!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?highlight=5-6,8-10,12&range=39-56)]
 
-Os recursos e o middleware fornecido pelo ASP.NET, como MVC, siga uma convenção de usar um único adicionar*ServiceName* método de extensão para registrar todos os serviços exigidos pelo recurso.
+Os recursos e o middleware fornecidos pelo ASP.NET, como o MVC, seguem uma convenção de uso de um único método de extensão Add*ServiceName* para registrar todos os serviços exigidos pelo recurso.
 
 >[!TIP]
-> Você pode solicitar determinados serviços fornecidos pelo framework em `Startup` métodos por meio de suas listas de parâmetro - consulte [inicialização do aplicativo](startup.md) para obter mais detalhes.
+> Você pode solicitar alguns serviços fornecidos pela estrutura em métodos `Startup` por meio de suas listas de parâmetros – consulte [Inicialização do aplicativo](startup.md) para obter mais detalhes.
 
-## <a name="registering-your-own-services"></a>Registrar seus próprios serviços
+## <a name="registering-services"></a>Registrando serviços
 
-Você pode registrar seus próprios serviços de aplicativo da seguinte maneira. O primeiro tipo genérico representa o tipo (normalmente uma interface) que será solicitado do contêiner. O segundo tipo genérico representa o tipo concreto ser instanciado pelo contêiner e usado para atender a essas solicitações.
+Você pode registrar seus próprios Serviços de Aplicativos conforme mostrado a seguir. O primeiro tipo genérico representa o tipo (normalmente uma interface) que será solicitado do contêiner. O segundo tipo genérico representa o tipo concreto do qual será criada uma instância pelo contêiner e que será usado para atender a essas solicitações.
 
 [!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?range=53-54)]
 
 > [!NOTE]
-> Cada `services.Add<ServiceName>` método de extensão adiciona (e possivelmente configura) serviços. Por exemplo, `services.AddMvc()` adiciona os MVC requer os serviços. É recomendável que você siga essa convenção, colocando os métodos de extensão no `Microsoft.Extensions.DependencyInjection` namespace para encapsular a grupos de registros de serviço.
+> Cada método de extensão `services.Add<ServiceName>` adiciona (e possivelmente configura) serviços. Por exemplo, o `services.AddMvc()` adiciona os serviços exigidos pelo MVC. É recomendável que você siga essa convenção, colocando os métodos de extensão no namespace `Microsoft.Extensions.DependencyInjection`, para encapsular grupos de registros de serviço.
 
-O `AddTransient` método é usado para mapear tipos abstratos concreta serviços que são instanciados separadamente para cada objeto que exija isso. Isso é conhecido como o serviço *tempo de vida*, e opções de tempo de vida adicionais são descritas abaixo. É importante escolher um tempo de vida apropriado para cada um dos serviços que você registrar. Uma nova instância do serviço deve ser fornecida para cada classe de solicitá-lo? Uma instância deve ser usada durante uma solicitação da web especificado? Ou uma única instância deve ser usada para o tempo de vida do aplicativo?
+O método `AddTransient` é usado para mapear tipos abstratos para serviços concretos dos quais são criadas instâncias separadamente para cada objeto que exigir isso. Isso é conhecido como o *tempo de vida* do serviço e opções de tempo de vida adicionais são descritas abaixo. É importante escolher um tempo de vida apropriado para cada um dos serviços registrados. Uma nova instância do serviço deve ser fornecida para cada classe que a solicitar? Uma instância deve ser usada durante uma solicitação da Web especificada? Ou uma única instância deve ser usada para o tempo de vida do aplicativo?
 
-O exemplo deste artigo, há um controlador simple que exibe os nomes de caractere, chamados `CharactersController`. Seu `Index` método exibe a lista atual de caracteres que foram armazenados no aplicativo e inicializa a coleção com uma série de caracteres, se não houver nenhum. Observe que, embora esse aplicativo usa o Entity Framework Core e o `ApplicationDbContext` classe para sua persistência, nenhum dos que é aparente no controlador. Em vez disso, o mecanismo de acesso a dados específicos foram abstraído atrás de uma interface `ICharacterRepository`, que segue o [padrão repositório](http://deviq.com/repository-pattern/). Uma instância de `ICharacterRepository` é solicitado por meio do construtor e atribuído a um campo particular, que é usado para acessar caracteres conforme necessário.
+Na amostra deste artigo, há um controlador simples que exibe os nomes de caracteres, chamado `CharactersController`. Seu método `Index` exibe a lista atual de caracteres que foram armazenados no aplicativo e inicializa a coleção com uma série de caracteres, se não houver nenhum. Observe que, embora esse aplicativo use o Entity Framework Core e a classe `ApplicationDbContext` para sua persistência, nada disso é aparente no controlador. Em vez disso, o mecanismo de acesso a dados específico foi abstraído por trás de uma interface `ICharacterRepository`, que segue o [padrão do repositório](http://deviq.com/repository-pattern/). Uma instância de `ICharacterRepository` é solicitada por meio do construtor e atribuída a um campo particular, que é então usado para acessar caracteres, conforme necessário.
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
-O `ICharacterRepository` define dois métodos que o controlador precisa trabalhar com `Character` instâncias.
+O `ICharacterRepository` define os dois métodos que o controlador precisa para trabalhar com instâncias `Character`.
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
 
 Por sua vez, essa interface é implementada por um tipo concreto, `CharacterRepository`, que é usado em tempo de execução.
 
 > [!NOTE]
-> A maneira DI é usada com o `CharacterRepository` classe é um modelo geral que você pode seguir para todos os serviços do aplicativo, não apenas em "repositórios" ou classes de acesso de dados.
+> A maneira como a DI é usada com a classe `CharacterRepository` é um modelo geral que você pode seguir para todos os Serviços de Aplicativos, não apenas em "repositórios" ou classes de acesso a dados.
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Models/CharacterRepository.cs?highlight=9,11,12,13,14)]
 
-Observe que `CharacterRepository` solicitações um `ApplicationDbContext` em seu construtor. Não é incomum para a injeção de dependência a ser usado de maneira encadeada como este, com cada vez solicitando suas próprias dependências de dependências solicitados. O contêiner é responsável por resolver todas as dependências no gráfico e retornando o serviço totalmente resolvido.
+Observe que `CharacterRepository` solicita um `ApplicationDbContext` em seu construtor. Não é incomum que a injeção de dependência seja usada de maneira encadeada dessa forma, com cada dependência solicitada solicitando, por sua vez, suas próprias dependências. O contêiner é responsável por resolver todas as dependências no grafo e retornar o serviço totalmente resolvido.
 
 > [!NOTE]
-> Criando o objeto solicitado e todos os objetos que ele requer e todos os objetos que os exigem, é, às vezes, conhecido como um *gráfico do objeto*. Da mesma forma, o conjunto de dependências que devem ser resolvidos é normalmente referido como um *árvore de dependência* ou *gráfico de dependência*.
+> A criação do objeto solicitado e todos os objetos exigidos por ele, além de todos os objetos que esses outros exigem, é, às vezes, chamado de um *grafo de objeto*. Da mesma forma, o conjunto de dependências que precisa ser resolvido normalmente é chamado de uma *árvore de dependência* ou um *grafo de dependência*.
 
-Nesse caso, ambos `ICharacterRepository` e, em seguida `ApplicationDbContext` deve ser registrado com o contêiner de serviços em `ConfigureServices` em `Startup`. `ApplicationDbContext`é configurado com a chamada para o método de extensão `AddDbContext<T>`. O código a seguir mostra o registro da `CharacterRepository` tipo.
+Nesse caso, `ICharacterRepository` e, por sua vez, `ApplicationDbContext` precisam ser registrados no contêiner de serviços em `ConfigureServices` em `Startup`. `ApplicationDbContext` é configurado com a chamada ao método de extensão `AddDbContext<T>`. O código a seguir mostra o registro do tipo `CharacterRepository`.
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?highlight=3-5,11&range=16-32)]
 
-Contextos do Entity Framework devem ser adicionados para o contêiner de serviços usando o `Scoped` tempo de vida. Isso é resolvido automaticamente se você usar os métodos auxiliares, como mostrado acima. Os repositórios que fará o uso do Entity Framework devem usar a mesma duração.
+Os contextos do Entity Framework devem ser adicionados ao contêiner de serviços com o tempo de vida `Scoped`. Isso será resolvido automaticamente se você usar os métodos auxiliares, conforme mostrado acima. Os repositórios que farão uso do Entity Framework devem usar o mesmo tempo de vida.
 
 >[!WARNING]
-> O perigo principal para cuidado está resolvendo um `Scoped` serviço um singleton. É provável, nesse caso o serviço terá estado incorreto durante o processamento de solicitações subsequentes.
+> O principal perigo com o qual é necessário ter cautela é resolver um serviço `Scoped` em um singleton. É provável que, nesse caso, o serviço terá um estado incorreto durante o processamento das solicitações seguintes.
 
-Serviços que têm dependências devem registrá-los no contêiner. Se o construtor do serviço requer um primitivo, como um `string`, isso pode ser inserido usando [configuração](xref:fundamentals/configuration/index) e [padrão de opções](xref:fundamentals/configuration/options).
+Serviços que têm dependências devem registrá-las no contêiner. Se o construtor de um serviço exigir um primitivo, como uma `string`, isso poderá ser injetado com o uso da [configuração](xref:fundamentals/configuration/index) e do [padrão de opções](xref:fundamentals/configuration/options).
 
 ## <a name="service-lifetimes-and-registration-options"></a>Tempos de vida do serviço e opções de registro
 
-Serviços ASP.NET podem ser configurados com os tempos de vida do seguintes:
+Os serviços do ASP.NET podem ser configurados com os seguintes tempos de vida:
 
-**Transient**
+**Transitório**
 
-Serviços de tempo de vida transitório são criados toda vez que são solicitadas. Esse tempo de vida funciona melhor para serviços leves e sem monitoração de estado.
+Os serviços com tempo de vida transitório são criados sempre que são solicitados. Esse tempo de vida funciona melhor para serviços leves e sem estado.
 
-**No escopo**
+**Com escopo**
 
-Serviços de tempo de vida no escopo são criados uma vez por solicitação.
+Os serviços com tempo de vida com escopo são criados uma vez por solicitação.
 
 **Singleton**
 
-Serviços de tempo de vida de singleton são criados na primeira vez em que elas são solicitadas (ou quando `ConfigureServices` é executado se você especificar uma instância) e, em seguida, todas as solicitações subsequentes usarão a mesma instância. Se seu aplicativo exigir comportamento singleton, permitindo que o contêiner de serviços gerenciar o tempo de vida do serviço é recomendado em vez de implementar o padrão de design de singleton e gerenciar o tempo de vida do objeto na classe por conta própria.
+Os serviços com tempo de vida singleton são criados na primeira vez em que são solicitados (ou quando `ConfigureServices` for executado se você especificar uma instância nele) e, em seguida, todas as solicitações seguintes usarão a mesma instância. Se o aplicativo exigir o comportamento singleton, é recomendado permitir que o contêiner de serviços gerencie o tempo de vida do serviço, em vez de implementar o padrão de design singleton e gerenciar o tempo de vida do objeto na classe por conta própria.
 
-Os serviços podem ser registrados com o contêiner de várias maneiras. Já vimos como registrar uma implementação de serviço com um determinado tipo, especificando o tipo concreto para usar. Além disso, uma fábrica pode ser especificada, que será usado para criar a instância sob demanda. A terceira abordagem é especificar diretamente a instância do tipo a ser usado, nesse caso o contêiner não tentará criar uma instância (nem será dispose da instância).
+Os serviços podem ser registrados no contêiner de várias maneiras. Já vimos como registrar uma implementação de serviço com um tipo fornecido, especificando o tipo concreto a ser usado. Além disso, um alocador pode ser especificado, que, em seguida, será usado para criar a instância sob demanda. A terceira abordagem é especificar diretamente a instância do tipo a ser usada, nesse caso, o contêiner nunca tentará criar uma instância (nem descartará a instância).
 
-Para demonstrar a diferença entre essas opções de tempo de vida e o registro, considere a possibilidade de uma interface simples que representa uma ou mais tarefas como um *operação* com um identificador exclusivo, `OperationId`. Dependendo de como é configurar o tempo de vida para este serviço, o contêiner fornecem as instâncias igual ou diferentes do serviço para a classe solicitante. Para tornar claro qual tempo de vida está sendo solicitado, vamos criar um tipo por opção de tempo de vida:
+Para demonstrar a diferença entre essas opções de tempo de vida e registro, considere uma interface simples que representa uma ou mais tarefas como uma *operação* com um identificador exclusivo, `OperationId`. Dependendo de como configurarmos o tempo de vida para esse serviço, o contêiner fornecerá as mesmas instâncias ou instâncias diferentes do serviço para a classe solicitante. Para tornar claro qual tempo de vida está sendo solicitado, criaremos um tipo por opção de tempo de vida:
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/IOperation.cs?highlight=5-8)]
 
-É implementam essas interfaces usando uma única classe, `Operation`, que aceita um `Guid` em seu construtor, ou usa um novo `Guid` se nenhum for fornecido.
+Implementamos essas interfaces usando uma única classe, `Operation`, que aceita um `Guid` em seu construtor, ou usa um novo `Guid`, se nenhum é fornecido.
 
-Em seguida, na `ConfigureServices`, cada tipo é adicionado ao contêiner de acordo com seu tempo de vida nomeado:
+Em seguida, em `ConfigureServices`, cada tipo é adicionado ao contêiner de acordo com seu tempo de vida nomeado:
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?range=26-32)]
 
-Observe que o `IOperationSingletonInstance` serviço está usando uma instância específica com um ID conhecida de `Guid.Empty` para que seja clara quando esse tipo está em uso (seu Guid será todos os zeros). Também registramos um `OperationService` que depende de cada uma das outras `Operation` tipos, para que ela será desmarque dentro de uma solicitação se esse serviço está obtendo a mesma instância que o controlador ou um novo, para cada tipo de operação. Tudo o que esse serviço é expor suas dependências como propriedades, para que possam ser exibidos no modo de exibição.
+Observe que o serviço `IOperationSingletonInstance` usa uma instância específica com uma ID conhecida `Guid.Empty`, para que fique claro quando esse tipo está em uso (seu Guid serão todos zeros). Também registramos um `OperationService` que depende de cada um dos outros tipos `Operation`, de modo que fique claro em uma solicitação se esse serviço está obtendo a mesma instância do controlador ou uma nova, para cada tipo de operação. Tudo o que esse serviço faz é expor suas dependências como propriedades, para que possam ser mostradas no exibição.
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Services/OperationService.cs)]
 
-Para demonstrar os tempos de vida de objeto dentro e entre as solicitações individuais separadas para o aplicativo, o exemplo inclui um `OperationsController` que solicitações de cada tipo de `IOperation` tipo, bem como um `OperationService`. O `Index` ação, em seguida, exibe todos do controlador e do serviço `OperationId` valores.
+Para demonstrar os tempos de vida de objeto dentro e entre solicitações individuais separadas para o aplicativo, a amostra inclui um `OperationsController` que solicita cada tipo do tipo `IOperation`, bem como um `OperationService`. A ação `Index` então exibe todos os valores `OperationId` do controlador e do serviço.
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Controllers/OperationsController.cs)]
 
-Agora, duas solicitações separadas são feitas para esta ação de controlador:
+Agora, duas solicitações separadas são feitas para esta ação do controlador:
 
-![A exibição de operações do aplicativo da web de exemplo de injeção de dependência em execução no Microsoft Edge mostrando valores de ID da operação (GUID) para transitório, escopo, Singleton e instância de controlador e operações de serviço de operação na primeira solicitação.](dependency-injection/_static/lifetimes_request1.png)
+![A exibição Operações do aplicativo Web da Amostra de Injeção de Dependência em execução no Microsoft Edge mostrando valores de ID da Operação (GUIDs) para Transitório, Com Escopo, Singleton e Controlador da Instância e Operações de Serviço de Operação na primeira solicitação.](dependency-injection/_static/lifetimes_request1.png)
 
-![As operações de exibição mostrando os valores de ID de operação para uma segunda solicitação.](dependency-injection/_static/lifetimes_request2.png)
+![A exibição de operações mostrando os valores de ID da Operação para uma segunda solicitação.](dependency-injection/_static/lifetimes_request2.png)
 
-Observe qual o `OperationId` variam de valores dentro de uma solicitação e entre as solicitações.
+Observe qual dos valores `OperationId` varia em uma solicitação e entre as solicitações.
 
-* *Transitório* objetos sempre são diferentes; uma nova instância é fornecida para cada serviço e cada controlador.
+* Objetos *transitórios* são sempre diferentes; uma nova instância é fornecida para cada controlador e serviço.
 
-* *Escopo* objetos forem os mesmos em uma solicitação, mas diferente em diferentes solicitações
+* Objetos *com escopo* são os mesmos em uma solicitação, mas diferentes em diferentes solicitações
 
-* *Singleton* objetos são os mesmos para todos os objetos e todas as solicitações (independentemente de se uma instância é fornecida em `ConfigureServices`)
+* Objetos *singleton* são os mesmos para cada objeto e solicitação (independentemente de uma instância ser fornecida em `ConfigureServices`)
 
 ## <a name="request-services"></a>Serviços de solicitação
 
-Os serviços disponíveis dentro de uma ASP.NET de solicitação de `HttpContext` são expostas por meio de `RequestServices` coleção.
+Os serviços disponíveis em uma solicitação do ASP.NET de `HttpContext` são expostos por meio da coleção `RequestServices`.
 
-![HttpContext solicitação serviços Intellisense contextual caixa de diálogo informando que os serviços de solicitação obtém ou define o IServiceProvider que fornece acesso ao contêiner de serviço da solicitação.](dependency-injection/_static/request-services.png)
+![Caixa de diálogo contextual Serviços de Solicitação HttpContext do IntelliSense informando que os Serviços de Solicitação obtêm ou definem o IServiceProvider que fornece acesso ao contêiner de serviço da solicitação.](dependency-injection/_static/request-services.png)
 
-Serviços de solicitação representam os serviços que você configure e solicitação como parte do seu aplicativo. Quando os objetos especificam dependências, eles são certificados pelos tipos encontrados em `RequestServices`, não `ApplicationServices`.
+Os Serviços de Solicitação representam os serviços configurados e solicitados como parte do aplicativo. Quando os objetos especificam dependências, elas são atendidas pelos tipos encontrados em `RequestServices`, não `ApplicationServices`.
 
-Em geral, você não deve usar essas propriedades diretamente, em vez disso, preferindo solicitar os tipos de suas classes que você precisa por meio do construtor da classe e permitindo que a estrutura de injetar essas dependências. Isso resulta em classes que são mais fáceis de teste (consulte [teste](../testing/index.md)) e são mais flexíveis e.
+Em geral, você não deve usar essas propriedades diretamente, preferindo solicitar os tipos exigidos pelas classes por meio do construtor da classe e permitindo que a estrutura injete essas dependências. Isso produz classes que são mais fáceis de serem testadas (consulte [Teste](../testing/index.md)) e que têm acoplamento mais flexível.
 
 > [!NOTE]
-> Preferir solicitando dependências como parâmetros de construtor para acessar o `RequestServices` coleção.
+> Prefira solicitar dependências como parâmetros de construtor para acessar a coleção `RequestServices`.
 
-## <a name="designing-your-services-for-dependency-injection"></a>Criar serviços para injeção de dependência
+## <a name="designing-services-for-dependency-injection"></a>Criando serviços para injeção de dependência
 
-Você deve projetar seus serviços para usar injeção de dependência para seus colaboradores. Isso significa evitar o uso de chamadas de método estático com monitoração de estado (que pode resultar em um cheiro código conhecido como [adesivos](http://deviq.com/static-cling/)) e a instanciação direta classes dependentes em seus serviços. Ele pode ajudar a lembrar a frase [novo é liga](https://ardalis.com/new-is-glue), ao escolher se deseja criar uma instância de um tipo ou solicitá-la por meio de injeção de dependência. Seguindo o [sólido princípios de Design orientado a objeto](http://deviq.com/solid/), suas classes naturalmente tendem a ser pequenos, bem fatorada e facilmente testados.
+Você deve criar seus serviços para que usem a injeção de dependência para obter seus colaboradores. Isso significa evitar o uso de chamadas de método estático com estado (que resultam em um "code smell" conhecido como [static cling](http://deviq.com/static-cling/)) e a criação direta de instâncias de classes dependentes em seus serviços. Isso pode ajudar a lembrar a frase [New is Glue](https://ardalis.com/new-is-glue), ao escolher se deseja criar uma instância de um tipo ou solicitá-lo por meio da injeção de dependência. Seguindo os [Princípios SOLID de Design Orientado a Objeto](http://deviq.com/solid/), as classes naturalmente tendem a ser pequenas, bem fatoradas e facilmente testadas.
 
-Se você acha que suas classes tendem a ter muitas dependências que está sendo inseridas de maneira? Isso geralmente é um sinal de que sua classe está tentando fazer muito e provavelmente está violando SRP - o [princípio da responsabilidade única](http://deviq.com/single-responsibility-principle/). Consulte se refatorar a classe ao mover algumas de suas responsabilidades em uma nova classe. Lembre-se de que seu `Controller` classes devem se concentrar no preocupações de interface do usuário para os detalhes de implementação de acesso de dados e regras de negócios devem ser mantidos em classes apropriadas para esses [separar questões](http://deviq.com/separation-of-concerns/).
+E se você descobrir que as classes tendem a ter muitas dependências injetadas? Isso geralmente é um sinal de que a classe está tentando fazer muito e, provavelmente, está violando o SRP – o [Princípio da Responsabilidade Única](http://deviq.com/single-responsibility-principle/). Veja se você pode refatorar a classe movendo algumas de suas responsabilidades para uma nova classe. Lembre-se de que as classes `Controller` devem se concentrar nos interesses da interface do usuário, de modo que os detalhes de implementação de acesso a dados e as regras de negócios devem ser mantidos em classes apropriadas a esses [interesses separados](http://deviq.com/separation-of-concerns/).
 
-Com relação a acesso a dados especificamente, você pode injetar o `DbContext` em seus controladores (supondo que você adicionou o EF no contêiner de serviços no `ConfigureServices`). Alguns desenvolvedores preferem usar uma interface de repositório para o banco de dados em vez de injetar o `DbContext` diretamente. Usando uma interface para encapsular os dados de lógica de acesso em um único local pode minimizar quantas casas você terá que alterar quando seu banco de dados é alterado.
+Especificamente, com relação ao acesso a dados, você pode injetar o `DbContext` nos controladores (supondo que você adicionou o EF ao contêiner de serviços em `ConfigureServices`). Alguns desenvolvedores preferem usar uma interface de repositório para o banco de dados, em vez de injetar o `DbContext` diretamente. O uso de uma interface para encapsular a lógica de acesso a dados em um único local pode minimizar o número de locais que você precisará alterar quando o banco de dados for alterado.
 
-### <a name="disposing-of-services"></a>Descarte de serviços
+### <a name="disposing-of-services"></a>Descartando serviços
 
-O contêiner chamará `Dispose` para `IDisposable` tipos que ele cria. No entanto, se você adicionar uma instância para o contêiner, ele não será descartado.
+O contêiner chamará `Dispose` para os tipos `IDisposable` criados por ele. No entanto, se você adicionar uma instância ao contêiner por conta própria, ele não será descartado.
 
 Exemplo:
 
@@ -244,18 +244,18 @@ public void ConfigureServices(IServiceCollection services)
 ```
 
 > [!NOTE]
-> Na versão 1.0, o contêiner chamado dispose em *todos os* `IDisposable` objetos, incluindo aqueles não foi criado.
+> Na versão 1.0, o contêiner chamado descarta *todos* os objetos `IDisposable`, incluindo aqueles que ele não criou.
 
 ## <a name="replacing-the-default-services-container"></a>Substituindo o contêiner de serviços padrão
 
-O contêiner de serviços internos destina-se para atender às necessidades básicas do framework e a maioria dos aplicativos de consumidor criados nele. No entanto, os desenvolvedores podem substituir o contêiner interno por seu contêiner preferencial. O `ConfigureServices` método normalmente retorna `void`, mas se sua assinatura for alterada para retornar `IServiceProvider`, um contêiner diferente pode ser configurado e retornado. Há vários contêineres IOC disponíveis para .NET. Neste exemplo, o [Autofac](https://autofac.org/) pacote é usado.
+O contêiner de serviços interno destina-se a atender às necessidades básicas da estrutura e a maioria dos aplicativos de consumidor criada nele. No entanto, os desenvolvedores podem substituir o contêiner interno por seu contêiner preferencial. O método `ConfigureServices` normalmente retorna `void`, mas se sua assinatura for alterada para retornar `IServiceProvider`, um contêiner diferente poderá ser configurado e retornado. Há vários contêineres IOC disponíveis para o .NET. Neste exemplo, o pacote [Autofac](https://autofac.org/) é usado.
 
-Primeiro, instale o pacote de contêiner apropriado (s):
+Primeiro, instale os pacotes de contêiner apropriados:
 
 * `Autofac`
 * `Autofac.Extensions.DependencyInjection`
 
-Em seguida, configure o contêiner no `ConfigureServices` e retornar um `IServiceProvider`:
+Em seguida, configure o contêiner no `ConfigureServices` e retorne um `IServiceProvider`:
 
 ```csharp
 public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -273,9 +273,9 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 ```
 
 > [!NOTE]
-> Ao usar um contêiner de injeção de dependência de terceiros, você deve alterar `ConfigureServices` para que ele retorna `IServiceProvider` em vez de `void`.
+> Ao usar um contêiner de DI de terceiros, é necessário alterar `ConfigureServices` para que ele retorne `IServiceProvider` em vez de `void`.
 
-Finalmente, configure Autofac normalmente em `DefaultModule`:
+Finalmente, configure o Autofac normalmente em `DefaultModule`:
 
 ```csharp
 public class DefaultModule : Module
@@ -287,41 +287,36 @@ public class DefaultModule : Module
 }
 ```
 
-Em tempo de execução, Autofac será usado para resolver tipos e injetar dependências. [Saiba mais sobre como usar Autofac e ASP.NET Core](http://docs.autofac.org/en/latest/integration/aspnetcore.html).
+Em tempo de execução, o Autofac será usado para resolver tipos e injetar dependências. [Saiba mais sobre como usar o Autofac e o ASP.NET Core](http://docs.autofac.org/en/latest/integration/aspnetcore.html).
 
 ### <a name="thread-safety"></a>Acesso thread-safe
 
-Serviços de singleton precisam ser thread-safe. Se um serviço singleton tem uma dependência em um serviço transitória, o serviço transitória também precisará ser thread-safe, dependendo de como ele é usado por um singleton.
+Os serviços Singleton precisam ser thread-safe. Se um serviço singleton tiver uma dependência em um serviço transitório, o serviço transitório também precisará ser thread-safe, dependendo de como ele é usado pelo singleton.
 
 ## <a name="recommendations"></a>Recomendações
 
-Ao trabalhar com a injeção de dependência, lembre-se as seguintes recomendações:
+Ao trabalhar com a injeção de dependência, lembre-se das seguintes recomendações:
 
-* DI está para objetos que têm dependências complexas. Controladores, serviços, adaptadores e repositórios são exemplos de objetos que podem ser adicionados à DI.
+* A DI destina-se a objetos que têm dependências complexas. Controladores, serviços, adaptadores e repositórios são exemplos de objetos que podem ser adicionados à DI.
 
-* Evite armazenar dados e configuração diretamente na injeção de dependência. Por exemplo, o carrinho de compras do usuário normalmente não deve ser adicionado para o contêiner de serviços. Configuração deve usar o [padrão de opções](xref:fundamentals/configuration/options). Da mesma forma, evite objetos de "proprietário de dados" que existem somente para permitir o acesso a algum outro objeto. É melhor solicitar o item real necessário por meio de injeção de dependência, se possível.
+* Evite armazenar dados e a configuração diretamente na DI. Por exemplo, o carrinho de compras de um usuário normalmente não deve ser adicionado ao contêiner de serviços. A configuração deve usar o [padrão de opções](xref:fundamentals/configuration/options). Da mesma forma, evite objetos de "suporte de dados" que existem somente para permitir o acesso a outro objeto. É melhor solicitar o item real necessário por meio da DI, se possível.
 
-* Evite estático acesso aos serviços.
+* Evite o acesso estático aos serviços.
 
 * Evite o local do serviço no código do aplicativo.
 
-* Evitar acessem estático `HttpContext`.
+* Evite o acesso estático a `HttpContext`.
 
 > [!NOTE]
-> Como todos os conjuntos de recomendações, você poderá encontrar situações em que é necessário ignorar um. Encontramos exceções ser raros – casos principalmente muito especiais dentro a própria estrutura.
+> Como todos os conjuntos de recomendações, talvez você encontre situações em que é necessário ignorar um. Descobrimos que exceções são raras – a maioria, casos muito especiais dentro da própria estrutura.
 
-Lembre-se de que a injeção de dependência é um *alternativo* para padrões de acesso a objeto static/globais. Você não poderá obter os benefícios de DI se você a combinar com acesso ao objeto estático.
+Lembre-se de que a injeção de dependência é uma *alternativa* aos padrões de acesso a objeto estático/global. Você não poderá obter os benefícios da DI se combiná-lo com o acesso a objeto estático.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Inicialização de aplicativos](startup.md)
-
-* [Teste](../testing/index.md)
-
-* [Escrevendo código limpo no núcleo do ASP.NET com a injeção de dependência (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
-
-* [Design de aplicativo gerenciado por contêiner, Prelude: Onde é o contêiner pertence?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
-
-* [Princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/)
-
-* [Inversão de contêineres de controle e o padrão de injeção de dependência](https://www.martinfowler.com/articles/injection.html) (Fowler)
+* [Inicialização de aplicativos](xref:fundamentals/startup)
+* [Teste](xref:testing/index)
+* [Como escrever um código limpo no ASP.NET Core com injeção de dependência (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
+* [Design de aplicativo gerenciado por contêiner, prelúdio: a que local o contêiner pertence?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
+* [Princípio de Dependências Explícitas](http://deviq.com/explicit-dependencies-principle/)
+* [Contêineres de Inversão de Controle e o padrão de Injeção de Dependência](https://www.martinfowler.com/articles/injection.html) (Fowler)

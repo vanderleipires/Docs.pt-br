@@ -1,74 +1,74 @@
 ---
-title: "Registro em log de alto desempenho com LoggerMessage no núcleo do ASP.NET"
+title: Registro em log de alto desempenho com o LoggerMessage no ASP.NET Core
 author: guardrex
-description: "Saiba como usar recursos de LoggerMessage para criar representantes armazenável em cache que exigem menos alocações de objeto que os métodos de extensão do agente de log para cenários de registro em log de alto desempenho."
-ms.author: riande
+description: "Saiba como usar recursos do LoggerMessage para criar delegados armazenáveis em cache que exigem menos alocações de objeto que os métodos de extensão do agente para cenários de registro em log de alto desempenho."
 manager: wpickett
+ms.author: riande
 ms.date: 11/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: defba75c6c9ea13d24af4cd8515d82d9e7cf9853
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.openlocfilehash: b155826b5047e88a79d9e339d7bca8885a79006d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>Registro em log de alto desempenho com LoggerMessage no núcleo do ASP.NET
+# <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>Registro em log de alto desempenho com o LoggerMessage no ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex)
 
-[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) recursos criam armazenável delegados que exigem menos alocações de objeto e reduziu a sobrecarga de computação que [métodos de extensão do agente de log](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), como `LogInformation`, `LogDebug`e `LogError`. Para cenários de registro em log de alto desempenho, use o `LoggerMessage` padrão.
+Os recursos do [LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) criam delegados armazenáveis em cache que exigem menos alocações de objeto e sobrecarga de computação reduzida comparado aos [métodos de extensão do agente](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), como `LogInformation`, `LogDebug` e `LogError`. Para cenários de registro em log de alto desempenho, use o padrão `LoggerMessage`.
 
-`LoggerMessage`Fornece as seguintes vantagens de desempenho sobre métodos de extensão do agente de log:
+`LoggerMessage` fornece as seguintes vantagens de desempenho em relação aos métodos de extensão do Agente:
 
-* Métodos de extensão do agente de log exigem tipos de valor de "boxing" (converter), como `int`, em `object`. O `LoggerMessage` padrão evita conversão boxing usando estático `Action` campos e métodos de extensão com parâmetros fortemente tipados.
-* Métodos de extensão do agente devem analisar o modelo de mensagem (cadeia de caracteres de formato nomeado) toda vez que uma mensagem de log é gravada. `LoggerMessage`exige apenas analisar um modelo uma vez quando a mensagem é definida.
+* Métodos de extensão do agente exigem tipos de valor de conversão boxing, como `int`, em `object`. O padrão `LoggerMessage` evita a conversão boxing usando campos `Action` estáticos e métodos de extensão com parâmetros fortemente tipados.
+* Os métodos de extensão do agente precisam analisar o modelo de mensagem (cadeia de caracteres de formato nomeada) sempre que uma mensagem de log é gravada. `LoggerMessage` exige apenas a análise de um modelo uma vez quando a mensagem é definida.
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/loggermessage/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-O aplicativo de exemplo demonstra `LoggerMessage` recursos com aspas básica sistema de controle. O aplicativo adiciona e exclui aspas usando um banco de dados na memória. Como essas operações, mensagens de log são geradas usando o `LoggerMessage` padrão.
+O aplicativo de exemplo demonstra recursos do `LoggerMessage` com um sistema básico de acompanhamento de aspas. O aplicativo adiciona e exclui aspas usando um banco de dados em memória. Conforme ocorrem essas operações, são geradas mensagens de log usando o padrão `LoggerMessage`.
 
 ## <a name="loggermessagedefine"></a>LoggerMessage.Define
 
-[Definir (LogLevel, EventId, String)](/dotnet/api/microsoft.extensions.logging.loggermessage.define) cria um `Action` delegar para registrar uma mensagem. `Define`sobrecargas permitem passar até seis parâmetros de tipo para uma cadeia de caracteres de formato nomeado (modelo).
+[Define(LogLevel, EventId, String)](/dotnet/api/microsoft.extensions.logging.loggermessage.define) cria um delegado `Action` para registrar uma mensagem em log. Sobrecargas de `Define` permitem passar até seis parâmetros de tipo para uma cadeia de caracteres de formato nomeada (modelo).
 
 ## <a name="loggermessagedefinescope"></a>LoggerMessage.DefineScope
 
-[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) cria um `Func` delegar para definir um [escopo de log](xref:fundamentals/logging/index#log-scopes). `DefineScope`sobrecargas permitem passar até três parâmetros de tipo para uma cadeia de caracteres de formato nomeado (modelo).
+[DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) cria um delegado `Func` para definir um [escopo de log](xref:fundamentals/logging/index#log-scopes). Sobrecargas de `DefineScope` permitem passar até três parâmetros de tipo para uma cadeia de caracteres de formato nomeada (modelo).
 
-## <a name="message-template-named-format-string"></a>Modelo de mensagem (chamado de cadeia de caracteres de formato)
+## <a name="message-template-named-format-string"></a>Modelo de mensagem (cadeia de caracteres de formato nomeada)
 
-A cadeia de caracteres fornecida para o `Define` e `DefineScope` métodos é um modelo e não uma cadeia de caracteres interpolada. Espaços reservados são preenchidos na ordem em que os tipos são especificados. Nomes de espaço reservado no modelo devem ser descritivo e consistente em modelos. Eles servem como nomes de propriedade em dados estruturados de log. É recomendável [Pascal maiusculas e minúsculas](/dotnet/standard/design-guidelines/capitalization-conventions) para nomes de espaço reservado. Por exemplo, `{Count}`, `{FirstName}`.
+A cadeia de caracteres fornecida para os métodos `Define` e `DefineScope` é um modelo e não uma cadeia de caracteres interpolada. Os espaços reservados são preenchidos na ordem em que os tipos são especificados. Os nomes do espaço reservado no modelo devem ser descritivos e consistentes em todos os modelos. Eles servem como nomes de propriedade em dados de log estruturado. Recomendamos o uso da [formatação Pascal Case](/dotnet/standard/design-guidelines/capitalization-conventions) para nomes de espaço reservado. Por exemplo, `{Count}`, `{FirstName}`.
 
 ## <a name="implementing-loggermessagedefine"></a>Implementando LoggerMessage.Define
 
-Cada mensagem de log é um `Action` mantido em um campo estático criado por `LoggerMessage.Define`. Por exemplo, o aplicativo de exemplo cria um campo para descrever uma mensagem de log para uma solicitação GET para a página de índice (*Internal/LoggerExtensions.cs*):
+Cada mensagem de log é uma `Action` mantida em um campo estático criado por `LoggerMessage.Define`. Por exemplo, o aplicativo de exemplo cria um campo para descrever uma mensagem de log para uma solicitação GET para a página de Índice (*Internal/LoggerExtensions.cs*):
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet1)]
 
-Para o `Action`, especifique:
+Para a `Action`, especifique:
 
 * O nível de log.
-* Um identificador exclusivo do evento ([EventId](/dotnet/api/microsoft.extensions.logging.eventid)) com o nome do método de extensão estático.
-* O modelo de mensagem (chamado de cadeia de caracteres de formato). 
+* Um identificador de evento exclusivo ([EventId](/dotnet/api/microsoft.extensions.logging.eventid)) com o nome do método de extensão estático.
+* O modelo de mensagem (cadeia de caracteres de formato nomeada). 
 
-Uma solicitação para a página de índice dos conjuntos de aplicativo de exemplo a:
+Uma solicitação para a página de Índice do aplicativo de exemplo define:
 
-* Nível de log `Information`.
-* Id do evento para `1` com o nome do `IndexPageRequested` método.
-* Modelo de mensagem (chamado de cadeia de caracteres de formato) para uma cadeia de caracteres.
+* O nível de log como `Information`.
+* A ID do evento como `1` com o nome do método `IndexPageRequested`.
+* Modelo de mensagem (cadeia de caracteres de formato nomeada) como uma cadeia de caracteres.
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet5)]
 
-Repositórios de log estruturado podem usar o nome do evento quando ele é fornecido com a id de evento para enriquecer o registro em log. Por exemplo, [Serilog](https://github.com/serilog/serilog-extensions-logging) usa o nome do evento.
+Repositórios de log estruturado podem usar o nome do evento quando recebem a ID do evento para enriquecer o log. Por exemplo, [Serilog](https://github.com/serilog/serilog-extensions-logging) usa o nome do evento.
 
-O `Action` é invocado por meio de um método de extensão fortemente tipada. O `IndexPageRequested` método registra uma mensagem para uma solicitação de obtenção de página de índice no aplicativo de exemplo:
+A `Action` é invocada por meio de um método de extensão fortemente tipado. O método `IndexPageRequested` registra uma mensagem para uma solicitação GET da página de Índice no aplicativo de exemplo:
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet9)]
 
-`IndexPageRequested`é chamado no agente de log no `OnGetAsync` método *Pages/Index.cshtml.cs*:
+`IndexPageRequested` é chamado no agente no método `OnGetAsync` em *Pages/Index.cshtml.cs*:
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet2&highlight=3)]
 
@@ -80,19 +80,19 @@ info: LoggerMessageSample.Pages.IndexModel[1]
       GET request for Index page
 ```
 
-Para passar parâmetros para uma mensagem de log, defina até seis tipos ao criar o campo estático. O aplicativo de exemplo registra uma cadeia de caracteres ao adicionar uma cotação definindo um `string` de tipo para o `Action` campo:
+Para passar parâmetros para uma mensagem de log, defina até seis tipos ao criar o campo estático. O aplicativo de exemplo registra uma cadeia de caracteres em log ao adicionar aspas definindo um tipo `string` para o campo `Action`:
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet2)]
 
-Modelo de mensagem de log do representante recebe seus valores de espaço reservado de tipos fornecidos. O aplicativo de exemplo define um delegado para adicionar uma cotação onde o parâmetro de cotação é um `string`:
+O modelo de mensagem de log do delegado recebe seus valores de espaço reservado dos tipos fornecidos. O aplicativo de exemplo define um delegado para adicionar aspas quando o parâmetro de aspas é uma `string`:
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet6)]
 
-O método de extensão estático para adicionar uma cotação, `QuoteAdded`, recebe o valor do argumento aspas e passa para o `Action` delegar:
+O método de extensão estático para adicionar aspas, `QuoteAdded`, recebe o valor do argumento de aspas e passa-o para o delegado `Action`:
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet10)]
 
-No arquivo de code-behind da página de índice (*Pages/Index.cshtml.cs*), `QuoteAdded` é chamado para registrar a mensagem:
+No modelo da página de Índice (*Pages/Index.cshtml.cs*), `QuoteAdded` é chamado para registrar a mensagem em log:
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet3&highlight=6)]
 
@@ -104,21 +104,21 @@ info: LoggerMessageSample.Pages.IndexModel[2]
       Quote added (Quote = 'You can avoid reality, but you cannot avoid the consequences of avoiding reality. - Ayn Rand')
 ```
 
-A exemplo aplicativo implementa uma `try` &ndash; `catch` padrão para exclusão de aspas. Uma mensagem informativa é registrada para uma operação de exclusão com êxito. Uma mensagem de erro é registrada para uma operação de exclusão quando uma exceção será lançada. A mensagem de log para a operação de exclusão de êxito inclui o rastreamento de pilha de exceção (*Internal/LoggerExtensions.cs*):
+O aplicativo de exemplo implementa um padrão `try`&ndash;`catch` para a exclusão de aspas. Uma mensagem informativa é registrada em log para uma operação de exclusão bem-sucedida. Uma mensagem de erro é registrada em log para uma operação de exclusão quando uma exceção é gerada. A mensagem de log para a operação de exclusão sem êxito inclui o rastreamento de pilha da exceção (*Internal/LoggerExtensions.cs*):
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet3)]
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet7)]
 
-Observe como a exceção é passada para o representante em `QuoteDeleteFailed`:
+Observe como a exceção é passada para o delegado em `QuoteDeleteFailed`:
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet11)]
 
-No índice página code-behind, a exclusão bem-sucedida de cotação chama o `QuoteDeleted` método no agente de log. Quando uma cotação não foi encontrada para exclusão, um `ArgumentNullException` é gerada. A exceção é interceptada pelo `try` &ndash; `catch` instrução e conectado ao chamar o `QuoteDeleteFailed` método no agente de log no `catch` bloco (*Pages/Index.cshtml.cs*):
+No modelo da página de Índice, uma exclusão de aspas bem-sucedida chama o método `QuoteDeleted` no agente. Quando as aspas não são encontradas para exclusão, uma `ArgumentNullException` é gerada. A exceção é interceptada pela instrução `try`&ndash;`catch` e registrada em log com uma chamada ao método `QuoteDeleteFailed` no agente no bloco `catch` (*Pages/Index.cshtml.cs*):
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet5&highlight=14,18)]
 
-Quando uma cotação é excluída com êxito, verifique a saída do console do aplicativo:
+Quando as aspas forem excluídas com êxito, inspecione a saída do console do aplicativo:
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[4]
@@ -126,7 +126,7 @@ info: LoggerMessageSample.Pages.IndexModel[4]
       Quote deleted (Quote = 'You can avoid reality, but you cannot avoid the consequences of avoiding reality. - Ayn Rand' Id = 1)
 ```
 
-Quando ocorre falha na exclusão de cotação, inspecione a saída do console do aplicativo. Observe que a exceção é incluída na mensagem de log:
+Quando a exclusão de aspas falha, inspecione a saída do console do aplicativo. Observe que a exceção é incluída na mensagem de log:
 
 ```console
 fail: LoggerMessageSample.Pages.IndexModel[5]
@@ -143,35 +143,35 @@ Parameter name: entity
 
 ## <a name="implementing-loggermessagedefinescope"></a>Implementando LoggerMessage.DefineScope
 
-Definir um [escopo de log](xref:fundamentals/logging/index#log-scopes) para aplicar a uma série de mensagens de log usando o [DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope) método.
+Defina um [escopo de log](xref:fundamentals/logging/index#log-scopes) a ser aplicado a uma série de mensagens de log usando o método [DefineScope(String)](/dotnet/api/microsoft.extensions.logging.loggermessage.definescope).
 
-O aplicativo de exemplo tem uma **Limpar tudo** botão para excluir todas as aspas no banco de dados. As aspas são excluídas, removendo-os um por vez. Cada vez que uma cotação é excluída, o `QuoteDeleted` método é chamado no agente de log. Um escopo de log é adicionado a essas mensagens de log.
+O aplicativo de exemplo tem um botão **Limpar Tudo** para excluir todas as aspas no banco de dados. As aspas são excluídas com a remoção das aspas individualmente, uma por vez. Sempre que aspas são excluídas, o método `QuoteDeleted` é chamado no agente. Um escopo de log é adicionado a essas mensagens de log.
 
-Habilitar `IncludeScopes` nas opções de agente de log de console:
+Habilite `IncludeScopes` nas opções do agente do console:
 
 [!code-csharp[Main](loggermessage/sample/Program.cs?name=snippet1&highlight=22)]
 
-Configuração `IncludeScopes` é necessária em aplicativos do ASP.NET Core 2.0 para habilitar o log escopos. Configuração `IncludeScopes` via *appsettings* arquivos de configuração é um recurso que foi planejado para a versão 2.1 do ASP.NET Core.
+A configuração de `IncludeScopes` é necessária em aplicativos ASP.NET Core 2.0 para habilitar os escopos de log. A configuração de `IncludeScopes` por meio dos arquivos de configuração *appsettings* é um recurso que foi planejado para a versão ASP.NET Core 2.1.
 
-O aplicativo de exemplo limpa outros provedores e adiciona filtros para reduzir a saída de log. Isso torna mais fácil ver mensagens de log de exemplo que demonstram `LoggerMessage` recursos.
+O aplicativo de exemplo limpa outros provedores e adiciona filtros para reduzir a saída de log. Isso facilita a visualização das mensagens de log da amostra que demonstram os recursos de `LoggerMessage`.
 
-Para criar um escopo de log, adicione um campo para manter um `Func` delegar para o escopo. O aplicativo de exemplo cria um campo chamado `_allQuotesDeletedScope` (*Internal/LoggerExtensions.cs*):
+Para criar um escopo de log, adicione um campo para conter um delegado `Func` para o escopo. O aplicativo de exemplo cria um campo chamado `_allQuotesDeletedScope` (*Internal/LoggerExtensions.cs*):
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet4)]
 
-Use `DefineScope` para criar o delegado. Até três tipos podem ser especificados para uso como argumentos de modelo quando o delegado é invocado. O aplicativo de exemplo usa um modelo de mensagem que inclui o número de aspas excluídas (uma `int` tipo):
+Use `DefineScope` para criar o delegado. Até três tipos podem ser especificados para uso como argumentos de modelo quando o delegado é invocado. O aplicativo de exemplo usa um modelo de mensagem que inclui o número de aspas excluídas (um tipo `int`):
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet8)]
 
-Fornece um método de extensão estático para a mensagem de log. Inclui quaisquer parâmetros de tipo para propriedades nomeadas aparecem no modelo de mensagem. O aplicativo de exemplo usa um `count` de aspas para excluir e retorna `_allQuotesDeletedScope`:
+Forneça um método de extensão estático para a mensagem de log. Inclua os parâmetros de tipo para propriedades nomeadas exibidos no modelo de mensagem. O aplicativo de exemplo usa uma `count` de aspas a ser excluída e retorna `_allQuotesDeletedScope`:
 
 [!code-csharp[Main](loggermessage/sample/Internal/LoggerExtensions.cs?name=snippet12)]
 
-A disposição de escopo chama a extensão de log em um `using` bloco:
+O escopo encapsula as chamadas de extensão de log em um bloco `using`:
 
 [!code-csharp[Main](loggermessage/sample/Pages/Index.cshtml.cs?name=snippet4&highlight=5-6,14)]
 
-Inspecione as mensagens de log de saída do console do aplicativo. O resultado a seguir mostra três aspas excluídas com a mensagem de escopo de log incluída:
+Inspecione as mensagens de log na saída do console do aplicativo. O seguinte resultado mostra três aspas excluídas com a mensagem de escopo de log incluída:
 
 ```console
 info: LoggerMessageSample.Pages.IndexModel[4]

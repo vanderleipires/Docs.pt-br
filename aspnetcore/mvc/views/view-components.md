@@ -1,107 +1,107 @@
 ---
-title: "Componentes do modo de exibição"
+title: "Componentes da exibição"
 author: rick-anderson
-description: "Componentes do modo de exibição destinam-se em qualquer lugar que a lógica de processamento reutilizáveis."
-ms.author: riande
+description: "Os Componentes de Exibição destinam-se a qualquer momento em que há uma lógica de renderização reutilizável."
 manager: wpickett
+ms.author: riande
 ms.date: 02/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/view-components
-ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 27e77b8fa032c2b5be753a27db748b7499e27105
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="view-components"></a>Componentes do modo de exibição
+# <a name="view-components"></a>Componentes da exibição
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="introducing-view-components"></a>Introdução ao exibir componentes
+## <a name="introducing-view-components"></a>Introdução aos componentes de exibição
 
-Novo para o ASP.NET MVC de núcleo, componentes de exibição são semelhantes às exibições parciais, mas eles são muito mais eficientes. Componentes do modo de exibição não usar a associação de modelo e apenas dependem dos dados que você fornecer ao chamar nela. Um componente do modo de exibição:
+Uma novidade no ASP.NET Core MVC, os componentes de exibição são semelhantes às exibições parciais, mas são muito mais eficientes. Os componentes de exibição não usam a associação de modelos e dependem apenas dos dados fornecidos durante uma chamada a eles. Um componente de exibição:
 
-* Renderiza um bloco em vez de uma resposta inteira
-* Inclui as mesmas separação de preocupações e os benefícios de capacidade de teste encontrados entre um controlador e o modo de exibição
-* Pode ter parâmetros e lógica de negócios
-* É geralmente chamado de uma página de layout
+* Renderiza uma parte em vez de uma resposta inteira.
+* Inclui os mesmos benefícios de capacidade de teste e separação de interesses e encontrados entre um controlador e uma exibição.
+* Pode ter parâmetros e uma lógica de negócios.
+* É geralmente invocado em uma página de layout.
 
-Componentes de exibição destinam-se em qualquer lugar que a lógica de processamento reutilizável que é muito complexa para uma exibição parcial, como:
+Os componentes de exibição destinam-se a qualquer momento em que há uma lógica de renderização reutilizável muito complexa para uma exibição parcial, como:
 
 * Menus de navegação dinâmica
-* Nuvem de marcas (onde ele consulta o banco de dados)
+* Nuvem de marcas (na qual ela consulta o banco de dados)
 * Painel de logon
 * Carrinho de compras
-* Recentemente artigos publicados
+* Artigos publicados recentemente
 * Conteúdo da barra lateral em um blog típico
-* Um painel de logon que deve ser renderizado em cada página e mostra links para fazer logoff ou de log, dependendo do estado do usuário de login
+* Um painel de logon que é renderizado em cada página e mostra os links para logoff ou logon, dependendo do estado de logon do usuário
 
-Um componente do modo de exibição consiste em duas partes: a classe (normalmente é derivado de [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)) e o resultado retorna (normalmente um modo de exibição). Controladores, um componente do modo de exibição pode ser um POCO, mas a maioria dos desenvolvedores deseja aproveitar os métodos e propriedades disponíveis derivando de `ViewComponent`.
+Um componente de exibição consiste em duas partes: a classe (normalmente derivada de [ViewComponent](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponent)) e o resultado que ele retorna (normalmente, uma exibição). Assim como os controladores, um componente de exibição pode ser um POCO, mas a maioria dos desenvolvedores desejará aproveitar os métodos e as propriedades disponíveis com a derivação de `ViewComponent`.
 
 ## <a name="creating-a-view-component"></a>Criando um componente de exibição
 
-Esta seção contém os requisitos de alto nível para criar um componente de visualização. Posteriormente neste artigo, vamos examinar cada etapa e criar um componente de visualização.
+Esta seção contém os requisitos de alto nível para a criação de um componente de exibição. Mais adiante neste artigo, examinaremos cada etapa em detalhes e criaremos um componente de exibição.
 
-### <a name="the-view-component-class"></a>A classe de componente do modo de exibição
+### <a name="the-view-component-class"></a>A classe de componente de exibição
 
-Uma classe de componente do modo de exibição pode ser criada por qualquer um dos seguintes:
+Uma classe de componente de exibição pode ser criada por um dos seguintes:
 
-* Derivando de *ViewComponent*
-* Decoração de uma classe com o `[ViewComponent]` atributo ou derivado de uma classe com o `[ViewComponent]` atributo
-* Criando uma classe em que o nome termina com o sufixo *ViewComponent*
+* Derivação de *ViewComponent*
+* Decoração de uma classe com o atributo `[ViewComponent]` ou derivação de uma classe com o atributo `[ViewComponent]`
+* Criação de uma classe em que o nome termina com o sufixo *ViewComponent*
 
-Como controladores, componentes de exibição devem ser públicos não aninhados, classes e não-abstrato. O nome do componente de exibição é o nome da classe com o sufixo "ViewComponent" removido. Ele também pode ser explicitamente especificado usando o `ViewComponentAttribute.Name` propriedade.
+Assim como os controladores, os componentes de exibição precisam ser classes públicas, não aninhadas e não abstratas. O nome do componente de exibição é o nome da classe com o sufixo "ViewComponent" removido. Também pode ser especificado de forma explícita com a propriedade `ViewComponentAttribute.Name`.
 
-Uma classe de componente do modo de exibição:
+Uma classe de componente de exibição:
 
-* Dá suporte total ao construtor [injeção de dependência](../../fundamentals/dependency-injection.md)
+* Dá suporte total à [injeção de dependência do construtor](../../fundamentals/dependency-injection.md)
 
-* Não fazem parte do ciclo de vida de controlador, o que significa que você não pode usar [filtros](../controllers/filters.md) em um componente do modo de exibição
+* Não participa do ciclo de vida do controlador, o que significa que não é possível usar [filtros](../controllers/filters.md) em um componente de exibição
 
-### <a name="view-component-methods"></a>Métodos de componente do modo de exibição
+### <a name="view-component-methods"></a>Métodos de componente de exibição
 
-Um componente de visualização define a lógica em uma `InvokeAsync` método que retorna um `IViewComponentResult`. Parâmetros vir diretamente da invocação do componente de exibição, não da associação de modelo. Um componente de visualização nunca diretamente manipula uma solicitação. Normalmente, um componente de visualização inicializa um modelo e passá-lo para um modo de exibição, chamando o `View` método. Em resumo, exiba os métodos de componente:
+Um componente de exibição define sua lógica em um método `InvokeAsync` que retorna um `IViewComponentResult`. Os parâmetros são recebidos diretamente da invocação do componente de exibição, não da associação de modelos. Um componente de exibição nunca manipula uma solicitação diretamente. Normalmente, um componente de exibição inicializa um modelo e passa-o para uma exibição chamando o método `View`. Em resumo, os métodos de componente de exibição:
 
-* Definir um `InvokeAsync` método que retorna um`IViewComponentResult`
-* Inicializa um modelo normalmente e passá-lo para um modo de exibição, chamando o `ViewComponent` `View` método
-* Parâmetros são provenientes do método de chamada, não HTTP, não há nenhuma associação de modelo
-* São não pode ser acessado diretamente como um ponto de extremidade HTTP, eles estão invocados no seu código (normalmente em um modo de exibição). Um componente de visualização nunca manipula uma solicitação
-* Estão sobrecarregados a assinatura em vez de todos os detalhes da solicitação HTTP atual
+* Definem um método `InvokeAsync` que retorna um `IViewComponentResult`
+* Normalmente, inicializam um modelo e passam-o para uma exibição chamando o método `ViewComponent` `View`
+* Os parâmetros são recebidos do método de chamada, não do HTTP e não há nenhuma associação de modelos
+* Não podem ser acessados diretamente como um ponto de extremidade HTTP e são invocados no código (normalmente em uma exibição). Um componente de exibição nunca manipula uma solicitação
+* São sobrecarregados na assinatura, em vez de nos detalhes da solicitação HTTP atual
 
-### <a name="view-search-path"></a>Caminho de pesquisa de modo de exibição
+### <a name="view-search-path"></a>Caminho de pesquisa de exibição
 
-Pesquisa o tempo de execução para o modo de exibição nos seguintes caminhos:
+O tempo de execução pesquisa a exibição nos seguintes caminhos:
 
-   * Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
-   * Modos de exibição/Shared/componentes/\<view_component_name > /\<view_name >
+   * Views/\<nome_do_controlador>/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>
+   * Views/Shared/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>
 
-O nome de exibição padrão para um componente de visualização é *padrão*, que significa que o arquivo de exibição geralmente será nomeado *cshtml*. Você pode especificar um nome de exibição diferente ao criar o resultado de componente do modo de exibição ou ao chamar o `View` método.
+O nome de exibição padrão de um componente de exibição é *Default*, o que significa que o arquivo de exibição geralmente será nomeado *Default.cshtml*. Especifique outro nome de exibição ao criar o resultado do componente de exibição ou ao chamar o método `View`.
 
-Recomendamos que você nomear o arquivo de exibição *cshtml* e usar o *compartilhado/exibições/componentes/\<view_component_name > /\<view_name >* caminho. O `PriorityList` usa o componente de exibição usado neste exemplo *Views/Shared/Components/PriorityList/Default.cshtml* para o modo de exibição de componente de exibição.
+Recomendamos que você nomeie o arquivo de exibição *Default.cshtml* e use o caminho *Views/Shared/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>*. O componente de exibição `PriorityList` usado nesta amostra usa *Views/Shared/Components/PriorityList/Default.cshtml* como a exibição do componente de exibição.
 
-## <a name="invoking-a-view-component"></a>Invocar um componente de visualização
+## <a name="invoking-a-view-component"></a>Invocando um componente de exibição
 
-Para usar o componente de exibição, chame o seguinte em um modo de exibição:
+Para usar o componente de exibição, chame o seguinte em uma exibição:
 
 ```cshtml
 @Component.InvokeAsync("Name of view component", <anonymous type containing parameters>)
 ```
 
-Os parâmetros serão passados para o `InvokeAsync` método. O `PriorityList` exibição desenvolvidos no artigo é chamado da *Views/Todo/Index.cshtml* o arquivo de exibição. A seguir, o `InvokeAsync` método for chamado com dois parâmetros:
+Os parâmetros serão passados para o método `InvokeAsync`. O componente de exibição `PriorityList` desenvolvido no artigo é invocado por meio do arquivo de exibição *Views/Todo/Index.cshtml*. A seguir, o método `InvokeAsync` é chamado com dois parâmetros:
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
-## <a name="invoking-a-view-component-as-a-tag-helper"></a>Invocar um componente do modo de exibição como um auxiliar de marca
+## <a name="invoking-a-view-component-as-a-tag-helper"></a>Invocando um componente de exibição como um Auxiliar de Marca
 
-Para o ASP.NET Core 1.1 e superior, você pode invocar um componente do modo de exibição como uma [auxiliar de marca](xref:mvc/views/tag-helpers/intro):
+Para o ASP.NET Core 1.1 e superior, invoque um componente de exibição como um [Auxiliar de Marca](xref:mvc/views/tag-helpers/intro):
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
-Parâmetros de classe e método de maiusculas e minúsculas de Pascal para os auxiliares de marca são convertidos em seus [inferior caso kebab](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101). O auxiliar de marca para invocar um componente de exibição usa o `<vc></vc>` elemento. O componente de exibição é especificado da seguinte maneira:
+Os parâmetros de classe e de método na formatação Pascal Case para Auxiliares de Marca são convertidos em seu [kebab case em minúsculas](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101). Para invocar um componente de exibição, o Auxiliar de Marca usa o elemento `<vc></vc>`. O componente de exibição é especificado da seguinte maneira:
 
 ```cshtml
 <vc:[view-component-name]
@@ -110,83 +110,83 @@ Parâmetros de classe e método de maiusculas e minúsculas de Pascal para os au
 </vc:[view-component-name]>
 ```
 
-Observação: Para usar um componente do modo de exibição como um auxiliar de marca, você deve registrar o assembly que contém o componente de exibição usando o `@addTagHelper` diretiva. Por exemplo, se o seu componente de exibição está em um assembly chamado "MyWebApp", adicione a seguinte diretiva para o `_ViewImports.cshtml` arquivo:
+Observação: para usar um Componente de Exibição como um Auxiliar de Marca, é necessário registrar o assembly que contém o Componente de Exibição usando a diretiva `@addTagHelper`. Por exemplo, se o Componente de Exibição está em um assembly chamado "MyWebApp", adicione a seguinte diretiva ao arquivo `_ViewImports.cshtml`:
 
 ```cshtml
 @addTagHelper *, MyWebApp
 ```
 
-Você pode registrar um componente de visualização como um auxiliar de marca para qualquer arquivo que referencia o componente de exibição. Consulte [gerenciamento de escopo do auxiliar de marca](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope) para obter mais informações sobre como registrar os auxiliares de marcação.
+Registre um Componente de Exibição como um Auxiliar de Marca em qualquer arquivo que referencia o Componente de Exibição. Consulte [Gerenciando o escopo do Auxiliar de Marca](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope) para obter mais informações sobre como registrar Auxiliares de Marca.
 
-O `InvokeAsync` método usado neste tutorial:
+O método `InvokeAsync` usado neste tutorial:
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
-Na marcação do auxiliar de marca:
+Na marcação do Auxiliar de Marca:
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
-No exemplo acima, o `PriorityList` torna-se o componente de exibição `priority-list`. Os parâmetros para o componente de exibição são passados como atributos em letras minúsculas kebab.
+Na amostra acima, o componente de exibição `PriorityList` torna-se `priority-list`. Os parâmetros para o componente de exibição são passados como atributos em kebab case em minúsculas.
 
-### <a name="invoking-a-view-component-directly-from-a-controller"></a>Invocar um componente de visualização diretamente de um controlador
+### <a name="invoking-a-view-component-directly-from-a-controller"></a>Invocando um componente de exibição diretamente em um controlador
 
-Componentes do modo de exibição normalmente são invocados em uma exibição, mas você pode invocá-los diretamente a partir de um método do controlador. Enquanto os componentes do modo de exibição não definem pontos de extremidade como controladores, você pode implementar facilmente uma ação do controlador que retorna o conteúdo de um `ViewComponentResult`.
+Os componentes de exibição normalmente são invocados em uma exibição, mas você pode invocá-los diretamente em um método do controlador. Embora os componentes de exibição não definam pontos de extremidade como controladores, você pode implementar com facilidade uma ação do controlador que retorna o conteúdo de um `ViewComponentResult`.
 
-Neste exemplo, o componente de exibição é chamado diretamente do controlador:
+Neste exemplo, o componente de exibição é chamado diretamente no controlador:
 
 [!code-csharp[Main](view-components/sample/ViewCompFinal/Controllers/ToDoController.cs?name=snippet_IndexVC)]
 
-## <a name="walkthrough-creating-a-simple-view-component"></a>Passo a passo: Criando um componente de exibição simples
+## <a name="walkthrough-creating-a-simple-view-component"></a>Passo a passo: criando um componente de exibição simples
 
-[Baixar](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample), compilar e testar o código inicial. É um projeto simple com um `Todo` controlador que exibe uma lista de *Todo* itens.
+[Baixe](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample), compile e teste o código inicial. É um projeto simples com um controlador `Todo` que exibe uma lista de itens *Todo*.
 
 ![Lista de ToDos](view-components/_static/2dos.png)
 
 ### <a name="add-a-viewcomponent-class"></a>Adicionar uma classe ViewComponent
 
-Criar um *ViewComponents* pasta e adicione o seguinte `PriorityListViewComponent` classe:
+Crie uma pasta *ViewComponents* e adicione a seguinte classe `PriorityListViewComponent`:
 
 [!code-csharp[Main](view-components/sample/ViewCompFinal/ViewComponents/PriorityListViewComponent1.cs?name=snippet1)]
 
 Observações sobre o código:
 
-* Classes de componente do modo de exibição podem ser contidos em **qualquer** pasta do projeto.
-* Porque o nome da classe PriorityList**ViewComponent** termina com o sufixo **ViewComponent**, o tempo de execução usará a cadeia de caracteres "PriorityList" ao referenciar o componente de classe de um modo de exibição. Explicarei que em mais detalhes posteriormente.
-* O `[ViewComponent]` atributo pode alterar o nome usado para fazer referência a um componente de visualização. Por exemplo, poderia chamamos a classe `XYZ` e aplicadas a `ViewComponent` atributo:
+* As classes de componente de exibição podem ser contidas em **qualquer** pasta do projeto.
+* Como o nome da classe PriorityList**ViewComponent** termina com o sufixo **ViewComponent**, o tempo de execução usará a cadeia de caracteres "PriorityList" ao referenciar o componente de classe em uma exibição. Explicarei isso mais detalhadamente mais adiante.
+* O atributo `[ViewComponent]` pode alterar o nome usado para referenciar um componente de exibição. Por exemplo, poderíamos nomear a classe `XYZ` e aplicar o atributo `ViewComponent`:
 
   ```csharp
   [ViewComponent(Name = "PriorityList")]
      public class XYZ : ViewComponent
      ```
 
-* O `[ViewComponent]` atributo acima informa o seletor de componente do modo de exibição para usar o nome `PriorityList` ao procurar os modos de exibição associados com o componente e como usar a cadeia de caracteres "PriorityList" ao referenciar o componente de classe de um modo de exibição. Explicarei que em mais detalhes posteriormente.
-* O componente usa [injeção de dependência](../../fundamentals/dependency-injection.md) para disponibilizar o contexto de dados.
-* `InvokeAsync`expõe um método que pode ser chamado de um modo de exibição e pode levar um número arbitrário de argumentos.
-* O `InvokeAsync` método retorna o conjunto de `ToDo` itens que atendem a `isDone` e `maxPriority` parâmetros.
+* O atributo `[ViewComponent]` acima instrui o seletor de componente de exibição a usar o nome `PriorityList` ao procurar as exibições associadas ao componente e a usar a cadeia de caracteres "PriorityList" ao referenciar o componente de classe em uma exibição. Explicarei isso mais detalhadamente mais adiante.
+* O componente usa a [injeção de dependência](../../fundamentals/dependency-injection.md) para disponibilizar o contexto de dados.
+* `InvokeAsync` expõe um método que pode ser chamado em uma exibição e pode usar um número arbitrário de argumentos.
+* O método `InvokeAsync` retorna o conjunto de itens `ToDo` que atendem aos parâmetros `isDone` e `maxPriority`.
 
-### <a name="create-the-view-component-razor-view"></a>Criar o modo de exibição do Razor de componente do modo de exibição
+### <a name="create-the-view-component-razor-view"></a>Criar a exibição do Razor do componente de exibição
 
-* Criar o *compartilhado/exibições/componentes* pasta. Essa pasta **deve** nomeado *componentes*.
+* Crie a pasta *Views/Shared/Components*. Essa pasta **deve** nomeada *Components*.
 
-* Criar o *exibições/compartilhado/componentes/PriorityList* pasta. Esse nome de pasta deve corresponder o nome da classe de componente do modo de exibição ou o nome da classe menos o sufixo (se seguido convenção e usado o *ViewComponent* sufixo no nome de classe). Se você usou o `ViewComponent` atributo, o nome da classe precisa corresponder a designação de atributo.
+* Crie a pasta *Views/Shared/Components/PriorityList*. Esse nome de pasta deve corresponder ao nome da classe do componente de exibição ou ao nome da classe menos o sufixo (se seguimos a convenção e usamos o sufixo *ViewComponent* no nome da classe). Se você usou o atributo `ViewComponent`, o nome da classe precisa corresponder à designação de atributo.
 
-* Criar um *Views/Shared/Components/PriorityList/Default.cshtml* exibição Razor:[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]
+* Crie uma exibição do Razor *Views/Shared/Components/PriorityList/Default.cshtml*: [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]
     
-   O modo de exibição Razor usa uma lista de `TodoItem` e os exibe. Se o componente de exibição `InvokeAsync` método não passa o nome do modo de exibição (como em nosso exemplo), *padrão* é usado para o nome de exibição por convenção. Posteriormente no tutorial, mostrarei como passar o nome da exibição. Para substituir o estilo padrão para um controlador específico, adicionar um modo de exibição para a pasta de exibição do controlador específico (por exemplo *Views/Todo/Components/PriorityList/Default.cshtml)*.
+   A exibição do Razor usa uma lista de `TodoItem` e exibe-os. Se o método `InvokeAsync` do componente de exibição não passar o nome da exibição (como em nossa amostra), *Default* será usado como o nome da exibição, por convenção. Mais adiante no tutorial, mostrarei como passar o nome da exibição. Para substituir o estilo padrão de um controlador específico, adicione uma exibição à pasta de exibição específica ao controlador (por exemplo, *Views/Todo/Components/PriorityList/Default.cshtml)*.
     
-    Se o componente de exibição é específico de controlador, você pode adicioná-lo para a pasta do controlador específico (*Views/Todo/Components/PriorityList/Default.cshtml*).
+    Se o componente de exibição é específico ao controlador, adicione-o à pasta específica ao controlador (*Views/Todo/Components/PriorityList/Default.cshtml*).
 
-* Adicionar um `div` que contém uma chamada para o componente de lista de prioridade para a parte inferior da *Views/Todo/index.cshtml* arquivo:
+* Adicione um `div` que contém uma chamada ao componente da lista de prioridades à parte inferior do arquivo *Views/Todo/index.cshtml*:
 
     [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFirst.cshtml?range=34-38)]
 
-A marcação `@await Component.InvokeAsync` mostra a sintaxe para chamar componentes do modo de exibição. O primeiro argumento é o nome do componente que você deseja invocar ou chamar. Os parâmetros subsequentes são passados para o componente. `InvokeAsync`pode levar a um número arbitrário de argumentos.
+A marcação `@await Component.InvokeAsync` mostra a sintaxe para chamar componentes de exibição. O primeiro argumento é o nome do componente que queremos invocar ou chamar. Os parâmetros seguintes são passados para o componente. `InvokeAsync` pode usar um número arbitrário de argumentos.
 
-Teste o aplicativo. A imagem a seguir mostra a lista de tarefas e os itens de prioridade:
+Teste o aplicativo. A seguinte imagem mostra a lista ToDo e os itens de prioridade:
 
-![itens de lista e prioridade de tarefas](view-components/_static/pi.png)
+![lista de tarefas pendentes e itens de prioridade](view-components/_static/pi.png)
 
-Você também pode chamar o componente Exibir diretamente do controlador:
+Também chame o componente de exibição diretamente no controlador:
 
 [!code-csharp[Main](view-components/sample/ViewCompFinal/Controllers/ToDoController.cs?name=snippet_IndexVC)]
 
@@ -194,31 +194,31 @@ Você também pode chamar o componente Exibir diretamente do controlador:
 
 ### <a name="specifying-a-view-name"></a>Especificando um nome de exibição
 
-Um componente de visualização complexo talvez seja necessário especificar um modo de exibição não padrão em algumas condições. O código a seguir mostra como especificar o modo de exibição de "PVC" o `InvokeAsync` método. Atualização de `InvokeAsync` método o `PriorityListViewComponent` classe.
+Um componente de exibição complexo pode precisar especificar uma exibição não padrão em algumas condições. O código a seguir mostra como especificar a exibição "PVC" no método `InvokeAsync`. Atualize o método `InvokeAsync` na classe `PriorityListViewComponent`.
 
 [!code-csharp[Main](../../mvc/views/view-components/sample/ViewCompFinal/ViewComponents/PriorityListViewComponentFinal.cs?highlight=4,5,6,7,8,9&range=28-39)]
 
-Copie o *Views/Shared/Components/PriorityList/Default.cshtml* arquivo para uma exibição nomeada *Views/Shared/Components/PriorityList/PVC.cshtml*. Adicione um título para indicar que o modo de exibição de PVC está sendo usado.
+Copie o arquivo *Views/Shared/Components/PriorityList/Default.cshtml* para uma exibição nomeada *Views/Shared/Components/PriorityList/PVC.cshtml*. Adicione um cabeçalho para indicar que a exibição PVC está sendo usada.
 
 [!code-cshtml[Main](../../mvc/views/view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/PVC.cshtml?highlight=3)]
 
-Atualização *Views/TodoList/Index.cshtml*:
+Atualize *Views/TodoList/Index.cshtml*:
 
 <!-- Views/TodoList/Index.cshtml is never imported, so change to test tutorial -->
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
-Executar o aplicativo e verifique se o modo de exibição de PVC.
+Execute o aplicativo e verifique a exibição PVC.
 
-![Componente de visualização de prioridade](view-components/_static/pvc.png)
+![Componente de exibição de prioridade](view-components/_static/pvc.png)
 
-Se o modo de exibição de PVC não é processado, verifique se que você estiver chamando o componente de exibição com uma prioridade de 4 ou superior.
+Se a exibição PVC não é renderizada, verifique se você está chamando o componente de exibição com uma prioridade igual a 4 ou superior.
 
-### <a name="examine-the-view-path"></a>Examine o caminho de exibição
+### <a name="examine-the-view-path"></a>Examinar o caminho de exibição
 
-* Altere o parâmetro de prioridade para três ou menos para que o modo de exibição de prioridade não é retornado.
-* Renomeie temporariamente o *Views/Todo/Components/PriorityList/Default.cshtml* para *1Default.cshtml*.
-* Teste o aplicativo, você obterá o seguinte erro:
+* Altere o parâmetro de prioridade para três ou menos para que a exibição de prioridade não seja retornada.
+* Renomeie temporariamente o *Views/Todo/Components/PriorityList/Default.cshtml* como *1Default.cshtml*.
+* Teste o aplicativo. Você obterá o seguinte erro:
 
    ```
    An unhandled exception occurred while processing the request.
@@ -228,22 +228,22 @@ Se o modo de exibição de PVC não é processado, verifique se que você estive
    EnsureSuccessful
    ```
 
-* Cópia *Views/Todo/Components/PriorityList/1Default.cshtml* para *Views/Shared/Components/PriorityList/Default.cshtml*.
-* Adicionar algumas marcações para o *compartilhado* exibição de componente de exibição de tarefas para indicar o modo de exibição é do *compartilhado* pasta.
-* Teste o **compartilhado** exibição do componente.
+* Copie *Views/Todo/Components/PriorityList/1Default.cshtml* para *Views/Shared/Components/PriorityList/Default.cshtml*.
+* Adicione uma marcação ao componente de exibição Todo *Shared* para indicar que a exibição foi obtida da pasta *Shared*.
+* Teste o componente de exibição **Shared**.
 
-![Saída de tarefas com a exibição do componente compartilhado](view-components/_static/shared.png)
+![Saída de ToDo com o componente de exibição Shared](view-components/_static/shared.png)
 
-### <a name="avoiding-magic-strings"></a>Evitando magic cadeias de caracteres
+### <a name="avoiding-magic-strings"></a>Evitando cadeias de caracteres mágicas
 
-Se você quiser que a segurança de tempo de compilação, você pode substituir o nome do componente de exibição embutida com o nome da classe. Crie o componente de exibição sem o sufixo "ViewComponent":
+Se deseja obter segurança em tempo de compilação, substitua o nome do componente de exibição embutido em código pelo nome da classe. Crie o componente de exibição sem o sufixo "ViewComponent":
 
 [!code-csharp[Main](../../mvc/views/view-components/sample/ViewCompFinal/ViewComponents/PriorityList.cs?highlight=10&range=5-35)]
 
-Adicionar um `using` instrução para o Razor Exibir arquivo e use o `nameof` operador:
+Adicione uma instrução `using` ao arquivo de exibição do Razor e use o operador `nameof`:
 
 [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,33-)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Injeção de dependência em exibições](dependency-injection.md)
+* [Injeção de dependência em exibições](xref:mvc/views/dependency-injection)

@@ -1,66 +1,66 @@
 ---
 title: "Exibições parciais"
 author: ardalis
-description: "Usando exibições parciais no ASP.NET MVC de núcleo"
-ms.author: riande
+description: "Usando exibições parciais no ASP.NET Core MVC"
 manager: wpickett
+ms.author: riande
 ms.date: 03/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/partial
-ms.openlocfilehash: 5919c273de2a298c3e407f118ac478e6a6031332
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 169948e5d7dc8068463ed61114666148b785b217
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="partial-views"></a>Exibições parciais
 
-Por [Steve Smith](https://ardalis.com/), [Maher JENDOUBI](https://twitter.com/maherjend), e [Rick Anderson](https://twitter.com/RickAndMSFT)
+Por [Steve Smith](https://ardalis.com/), [Maher JENDOUBI](https://twitter.com/maherjend) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Núcleo do ASP.NET MVC oferece suporte a modos de exibição parciais, que são úteis quando você tem componentes reutilizáveis de páginas da web que você deseja compartilhar entre diferentes modos de exibição.
+O ASP.NET Core MVC dá suporte a exibições parciais, que são úteis quando você tem partes reutilizáveis de páginas da Web que deseja compartilhar entre diferentes exibições.
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/partial/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-are-partial-views"></a>Quais são os modos de exibição parcial?
+## <a name="what-are-partial-views"></a>O que são Exibições Parciais?
 
-Uma exibição parcial é uma exibição que é renderizada dentro de outro modo de exibição. A saída HTML gerada por executar a exibição parcial é renderizada no modo de exibição de chamada (ou pai). Como exibições, exibições parciais usam o *. cshtml* extensão de arquivo.
+Uma exibição parcial é uma exibição renderizada dentro de outra exibição. A saída HTML gerada pela execução da exibição parcial é renderizada na exibição de chamada (ou pai). Assim como exibições, as exibições parciais usam a extensão de arquivo *.cshtml*.
 
-## <a name="when-should-i-use-partial-views"></a>Quando devo usar exibições parciais?
+## <a name="when-should-i-use-partial-views"></a>Quando é necessário usar Exibições Parciais?
 
-Exibições parciais são uma maneira eficiente de separação de modos de exibição grandes em componentes menores. Podem reduzir a duplicação de exibir conteúdo e permitir que os elementos de exibição ser reutilizado. Elementos de layout comuns devem ser especificados no [cshtml](layout.md). Conteúdo reutilizável de layout não pode ser encapsulado em modos de exibição parciais.
+As exibições parciais são uma maneira eficiente de dividir exibições grandes em componentes menores. Elas podem reduzir a duplicação do conteúdo de exibição e permitir que os elementos de exibição sejam reutilizados. Os elementos de layout comuns devem ser especificados em [_Layout.cshtml](layout.md). O conteúdo reutilizável que não pertence ao layout pode ser encapsulado em exibições parciais.
 
-Se você tiver uma página complexa composta por várias partes lógicas, ele pode ser útil trabalhar com cada parte como seu próprio modo de exibição parcial. Cada parte da página pode ser exibido no isolamento do restante da página e o modo de exibição para a página propriamente dita se torna muito mais simples porque ele contém apenas a estrutura da página geral e a chamadas para renderizar os modos de exibição parciais.
+Se você tem uma página complexa composta por várias partes lógicas, pode ser útil trabalhar com cada parte como sua própria exibição parcial. Cada parte da página pode ser exibida em isolamento do restante da página e a exibição para a página propriamente dita fica muito mais simples, porque contém apenas a estrutura da página geral e chamadas para renderizar as exibições parciais.
 
-Dica: Execute o [não repita por conta própria princípio](http://deviq.com/don-t-repeat-yourself/) em exibições.
+Dica: siga o [Princípio Don't Repeat Yourself](http://deviq.com/don-t-repeat-yourself/) nas exibições.
 
 ## <a name="declaring-partial-views"></a>Declarando exibições parciais
 
-Exibições parciais são criadas como qualquer outro modo de exibição: criar um *. cshtml* dentro do arquivo de *exibições* pasta. Não há nenhuma diferença semântica entre uma exibição parcial e um modo de exibição normal - apenas estiver renderizados diferente. Você pode ter uma exibição que é retornada diretamente de um controlador `ViewResult`, e o mesmo modo de exibição pode ser usado como uma exibição parcial. A principal diferença entre como um modo de exibição e uma exibição parcial são renderizados é que as exibições parciais não executam *viewstart* (enquanto exibições - Saiba mais sobre *viewstart* na [Layout ](layout.md)).
+As exibições parciais são criadas como qualquer outra exibição: crie um arquivo *.cshtml* dentro da pasta *Views* . Não há nenhuma diferença semântica entre uma exibição parcial e uma exibição normal – apenas que são renderizadas de maneira diferente. Você pode ter uma exibição que é retornada diretamente do `ViewResult` de um controlador e a mesma exibição pode ser usada como uma exibição parcial. A principal diferença entre como uma exibição e uma exibição parcial é renderizada é que as exibições parciais não executam *_ViewStart.cshtml* (ao contrário das exibições – saiba mais sobre *_ViewStart.cshtml* em [Layout](layout.md)).
 
-## <a name="referencing-a-partial-view"></a>Fazendo referência a uma exibição parcial
+## <a name="referencing-a-partial-view"></a>Referenciando uma exibição parcial
 
-De dentro de uma página de exibição, há várias maneiras em que você pode renderizar uma exibição parcial. É mais simples usar `Html.Partial`, que retorna um `IHtmlString` e pode ser referenciado, prefixando a chamada com `@`:
+Em uma página de exibição, há várias maneiras de renderizar uma exibição parcial. É mais simples usar `Html.Partial`, que retorna uma `IHtmlString` e pode ser referenciada com a colocação de prefixo na chamada com `@`:
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=9)]
 
-O `PartialAsync` método está disponível para parcial exibições contendo código assíncrono (embora o código nos modos de exibição não é geralmente recomendado):
+O método `PartialAsync` está disponível para exibições parciais que contêm um código assíncrono (embora, em geral, não seja recomendado que as exibições contenham um código):
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=8)]
 
-Você pode renderizar uma exibição parcial com `RenderPartial`. Esse método não retorna um resultado; Ela transmite a saída renderizada diretamente para a resposta. Porque ele não retorna um resultado, ele deve ser chamado dentro de um bloco de código Razor (você também pode chamar `RenderPartialAsync` se necessário):
+Renderize uma exibição parcial com `RenderPartial`. Esse método não retorna um resultado; ele transmite a saída renderizada diretamente para a resposta. Como ele não retorna um resultado, ele precisa ser chamado dentro de um bloco de código Razor (também chame `RenderPartialAsync`, se necessário):
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Home/About.cshtml?range=10-12)]
 
-Porque ele transmite o resultado diretamente, `RenderPartial` e `RenderPartialAsync` podem executar melhor em alguns cenários. No entanto, na maioria dos casos, recomenda-se você usar `Partial` e `PartialAsync`.
+Já que ele transmite o resultado diretamente, `RenderPartial` e `RenderPartialAsync` podem ter um melhor desempenho em alguns cenários. No entanto, na maioria dos casos, é recomendável o uso de `Partial` e `PartialAsync`.
 
 > [!NOTE]
-> Se precisam de seus modos de exibição executar o código, o padrão recomendado é usar um [componentes da exibição](view-components.md) em vez de uma exibição parcial.
+> Se as exibições precisam executar o código, o padrão recomendado é usar um [componente de exibição](view-components.md), em vez de uma exibição parcial.
 
-### <a name="partial-view-discovery"></a>Descoberta do modo de exibição parcial
+### <a name="partial-view-discovery"></a>Descoberta de exibição parcial
 
-Ao fazer referência a uma exibição parcial, você pode consultar para seu local de várias maneiras:
+Ao referenciar uma exibição parcial, você pode se referir ao seu local de várias maneiras:
 
 ```text
 // Uses a view in current folder with this name
@@ -79,45 +79,45 @@ Ao fazer referência a uma exibição parcial, você pode consultar para seu loc
 @Html.Partial("../Account/LoginPartial.cshtml")
 ```
 
-Você pode ter diferentes modos de exibição parciais com o mesmo nome em pastas de exibição diferente. Ao fazer referência as exibições por nome (sem a extensão de arquivo), modos de exibição em cada pasta usará o modo de exibição parcial na mesma pasta com eles. Você também pode especificar um modo de exibição parcial padrão a ser usado, colocá-lo no *compartilhado* pasta. O modo de exibição parcial compartilhado será usado por todas as exibições que não têm sua própria versão do modo de exibição parcial. Você pode ter uma exibição parcial padrão (em *compartilhado*), que é substituído por uma exibição parcial com o mesmo nome na mesma pasta que o modo de exibição do pai.
+Você pode ter diferentes exibições parciais com o mesmo nome em pastas de exibição diferentes. Ao referenciar as exibições por nome (sem a extensão de arquivo), as exibições em cada pasta usarão a exibição parcial na mesma pasta com elas. Também especifique uma exibição parcial padrão a ser usada, colocando-a na pasta *Shared*. A exibição parcial compartilhada será usada pelas exibições que não têm sua própria versão da exibição parcial. Você pode ter uma exibição parcial padrão (em *Shared*), que é substituída por uma exibição parcial com o mesmo nome na mesma pasta da exibição pai.
 
-Exibições parciais podem ser *encadeados*. Isto é, uma exibição parcial pode chamar outro modo de exibição parcial (desde que você não criar um loop). Dentro de cada exibição ou uma exibição parcial, os caminhos relativos são sempre em relação a esse modo de exibição do modo de exibição, e não a raiz ou pai.
+As exibições parciais podem ser *encadeadas*. Ou seja, uma exibição parcial pode chamar outra exibição parcial (desde que você não crie um loop). Dentro de cada exibição ou exibição parcial, os caminhos relativos são sempre relativos a essa exibição, não à exibição raiz ou pai.
 
 > [!NOTE]
-> Se você declarar um [Razor](razor.md) `section` em uma exibição parcial, não será visível para seus pais; ele será limitado a exibição parcial.
+> Se você declarar uma `section` do [Razor](razor.md) em uma exibição parcial, ela não será visível para seus pais; será limitada à exibição parcial.
 
 ## <a name="accessing-data-from-partial-views"></a>Acessando dados em exibições parciais
 
-Quando uma exibição parcial é instanciada, ela recebe uma cópia do modo de exibição pai `ViewData` dicionário. Atualizações feitas nos dados no modo de exibição parcial não são mantidas para a exibição pai. `ViewData`alterado em um parcial exibição é perdida quando a exibição parcial retorna.
+Quando é criada uma instância de uma exibição parcial, ela recebe uma cópia do dicionário `ViewData` da exibição pai. As atualizações feitas nos dados dentro da exibição parcial não são persistidas na exibição pai. Os `ViewData` alterados em um parcial exibição são perdidos quando a exibição parcial é retornada.
 
-Você pode passar uma instância de `ViewDataDictionary` para a exibição parcial:
+Passe uma instância de `ViewDataDictionary` para a exibição parcial:
 
 ```csharp
 @Html.Partial("PartialName", customViewData)
    ```
 
-Você também pode passar um modelo em uma exibição parcial. Isso pode ser o modelo de exibição da página, ou uma parte dele ou um objeto personalizado. Você pode passar um modelo para `Partial`,`PartialAsync`, `RenderPartial`, ou `RenderPartialAsync`:
+Também passe um modelo para uma exibição parcial. Isso pode ser o modelo de exibição da página, ou uma parte dele, ou um objeto personalizado. Passe um modelo para `Partial`, `PartialAsync`, `RenderPartial` ou `RenderPartialAsync`:
 
 ```csharp
 @Html.Partial("PartialName", viewModel)
    ```
 
-Você pode passar uma instância de `ViewDataDictionary` e um modelo de exibição para uma exibição parcial:
+Passe uma instância de `ViewDataDictionary` e um modelo de exibição para uma exibição parcial:
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Articles/Read.cshtml?range=15-16)]
 
-A marcação abaixo mostra o *Views/Articles/Read.cshtml* exibição que contém dois modos de exibição parciais. O segundo modo de exibição parcial passa em um modelo e `ViewData` para a exibição parcial. Você pode passar novos `ViewData` dicionário mantendo existente `ViewData` se você usar a sobrecarga de construtor do `ViewDataDictionary` destacado abaixo:
+A marcação abaixo mostra a exibição *Views/Articles/Read.cshtml* que contém duas exibições parciais. A segunda exibição parcial passa um modelo e `ViewData` para a exibição parcial. Passe um novo dicionário `ViewData` mantendo os `ViewData` existentes se você usar a sobrecarga de construtor do `ViewDataDictionary` realçado abaixo:
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Articles/Read.cshtml)]
 
-*Exibições/compartilhadas/AuthorPartial*:
+*Views/Shared/AuthorPartial*:
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Shared/AuthorPartial.cshtml)]
 
-O *ArticleSection* parcial:
+A parcial *ArticleSection*:
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Articles/ArticleSection.cshtml)]
 
-Em tempo de execução, existe o meio-termo é renderizado no modo de exibição pai, que por si só é renderizado dentro compartilhado *layout. cshtml*
+Em tempo de execução, as parciais são renderizadas para a exibição pai, que, por sua vez, é renderizada na saída da exibição parcial *_Layout.cshtml*
 
-![saída de exibição parcial](partial/_static/output.png)
+![compartilhada](partial/_static/output.png)

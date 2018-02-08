@@ -1,31 +1,31 @@
 ---
-title: "Carregamentos de arquivos no núcleo do ASP.NET"
+title: Uploads de arquivos no ASP.NET Core
 author: ardalis
-description: "Como usar o modelo de associação e streaming para carregar arquivos no ASP.NET MVC de núcleo."
-ms.author: riande
+description: "Como usar a associação de modelos e o streaming para carregar arquivos no ASP.NET Core MVC."
 manager: wpickett
+ms.author: riande
 ms.date: 07/05/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/models/file-uploads
-ms.openlocfilehash: bc1cfe0d6ee88a0af49cdff9ce77ad42f57b95f7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 314d585c7bf7f8c95f763babe6cdf93e514ff656
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="file-uploads-in-aspnet-core"></a>Carregamentos de arquivos no núcleo do ASP.NET
+# <a name="file-uploads-in-aspnet-core"></a>Uploads de arquivos no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
-Ações do ASP.NET MVC suportam a carregamento de um ou mais arquivos usando o modelo simples de associação para os arquivos menores ou streaming para arquivos maiores.
+Ações do ASP.NET MVC dão suporte ao upload de um ou mais arquivos usando associação de modelos simples para arquivos menores ou streaming para arquivos maiores.
 
-[Exibir ou baixar o exemplo do GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/models/file-uploads/sample/FileUploadSample)
+[Exibir ou baixar a amostra do GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/models/file-uploads/sample/FileUploadSample)
 
-## <a name="uploading-small-files-with-model-binding"></a>Carregando arquivos pequenos com associação de modelo
+## <a name="uploading-small-files-with-model-binding"></a>Upload de arquivos pequenos com a associação de modelos
 
-Para carregar arquivos pequenos, você pode usar um formulário HTML várias parte ou construir uma solicitação POST usando JavaScript. Um formulário de exemplo usando o Razor, que dá suporte a vários arquivos carregados, é mostrado abaixo:
+Para carregar arquivos pequenos, você pode usar um formulário HTML com várias partes ou construir uma solicitação POST usando JavaScript. Um formulário de exemplo usando Razor, que dá suporte a vários arquivos carregados, é mostrado abaixo:
 
 ```html
 <form method="post" enctype="multipart/form-data" asp-controller="UploadFiles" asp-action="Index">
@@ -43,11 +43,11 @@ Para carregar arquivos pequenos, você pode usar um formulário HTML várias par
 </form>
 ```
 
-Para dar suporte a carregamentos de arquivos, formulários HTML devem especificar um `enctype` de `multipart/form-data`. O `files` mostrado acima do elemento de entrada dá suporte ao carregamento de vários arquivos. Omitir a `multiple` atributo neste elemento de entrada para permitir que apenas um arquivo a ser carregado. Renderiza a marcação acima em um navegador, como:
+Para dar suporte a uploads de arquivos, os formulários HTML devem especificar um `enctype` igual a `multipart/form-data`. O elemento de entrada `files` mostrado acima dá suporte ao upload de vários arquivos. Omita o atributo `multiple` neste elemento de entrada para permitir o upload de apenas um arquivo. A marcação acima é renderizada em um navegador como:
 
-![Formulário de carregamento de arquivo](file-uploads/_static/upload-form.png)
+![Formulário de upload de arquivo](file-uploads/_static/upload-form.png)
 
-O carregados no servidor de arquivos individuais podem ser acessados por meio de [associação de modelo](xref:mvc/models/model-binding) usando o [IFormFile](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.iformfile) interface. `IFormFile`tem a seguinte estrutura:
+Os arquivos individuais carregados no servidor podem ser acessados por meio da [Associação de modelos](xref:mvc/models/model-binding) usando a interface [IFormFile](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.iformfile). `IFormFile` tem esta estrutura:
 
 ```csharp
 public interface IFormFile
@@ -65,17 +65,17 @@ public interface IFormFile
 ```
 
 > [!WARNING]
-> Não dependa ou relação de confiança de `FileName` propriedade sem validação. O `FileName` propriedade deve ser usada somente para fins de exibição.
+> Não dependa ou confie na propriedade `FileName` sem validação. A propriedade `FileName` deve ser usada somente para fins de exibição.
 
-Ao carregar arquivos usando a associação de modelo e o `IFormFile` interface, o método de ação pode aceitar um único `IFormFile` ou um `IEnumerable<IFormFile>` (ou `List<IFormFile>`) que representa vários arquivos. O exemplo a seguir executa um loop em um ou mais arquivos carregados, salva-os para o sistema de arquivos local e retorna o número total e o tamanho dos arquivos carregados.
+Ao fazer upload de arquivos usando associação de modelos e a interface `IFormFile`, o método de ação pode aceitar um único `IFormFile` ou um `IEnumerable<IFormFile>` (ou `List<IFormFile>`) que representa vários arquivos. O exemplo a seguir executa um loop em um ou mais arquivos carregados, salva-os no sistema de arquivos local e retorna o número total e o tamanho dos arquivos carregados.
 
 [!INCLUDE [GetTempFileName](../../includes/GetTempFileName.md)]
 
 [!code-csharp[Main](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
 
-Os arquivos carregados usando o `IFormFile` técnica são armazenados em buffer na memória ou no disco no servidor web antes de ser processada. Dentro do método de ação, o `IFormFile` conteúdo podem ser acessado como um fluxo. O sistema de arquivos local, além de arquivos podem ser transmitidos para [armazenamento de BLOBs do Azure](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/) ou [do Entity Framework](https://docs.microsoft.com/ef/core/index).
+Arquivos carregados usando a técnica `IFormFile` são armazenados em buffer na memória ou no disco no servidor Web antes de serem processados. Dentro do método de ação, o conteúdo de `IFormFile` podem ser acessado como um fluxo. Além do sistema de arquivos local, os arquivos podem ser transmitidos para o [Armazenamento de Blobs do Azure](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/) ou para o [Entity Framework](https://docs.microsoft.com/ef/core/index).
 
-Para armazenar dados de arquivo binário em um banco de dados usando o Entity Framework, definir uma propriedade do tipo `byte[]` na entidade:
+Para armazenar dados de arquivo binário em um banco de dados usando o Entity Framework, defina uma propriedade do tipo `byte[]` na entidade:
 
 ```csharp
 public class ApplicationUser : IdentityUser
@@ -96,9 +96,9 @@ public class RegisterViewModel
 ```
 
 > [!NOTE]
-> `IFormFile`pode ser usado diretamente como um parâmetro de método de ação ou como uma propriedade de viewmodel, como mostrado acima.
+> `IFormFile` pode ser usado diretamente como um parâmetro de método de ação ou como uma propriedade de viewmodel, como mostrado acima.
 
-Copie o `IFormFile` em um fluxo e salvá-lo para a matriz de bytes:
+Copie o `IFormFile` para um fluxo e salve-o na matriz de bytes:
 
 ```csharp
 // POST: /Account/Register
@@ -127,18 +127,18 @@ public async Task<IActionResult> Register(RegisterViewModel model)
 ```
 
 > [!NOTE]
-> Tenha cuidado ao armazenar dados binários em bancos de dados relacionais, como ele pode afetar negativamente o desempenho.
+> Tenha cuidado ao armazenar dados binários em bancos de dados relacionais, pois isso pode afetar negativamente o desempenho.
 
-## <a name="uploading-large-files-with-streaming"></a>Carregamento de arquivos grandes de streaming
+## <a name="uploading-large-files-with-streaming"></a>Upload de arquivos grandes usando streaming
 
-Se o tamanho ou a frequência de carregamentos de arquivos está causando problemas de recurso para o aplicativo, considere o carregamento do arquivo de streaming em vez de armazenamento em buffer em sua totalidade, assim como a abordagem de associação de modelo mostrada acima. Ao usar `IFormFile` e associação de modelo é uma quantidade solução mais simples, transmissão exige um número de etapas para implementar corretamente.
+Se o tamanho ou a frequência dos uploads de arquivos estiver causando problemas de recursos para o aplicativo, considere transmitir o upload dos arquivos por streaming em vez de armazená-los completamente em buffer, como na abordagem de associação de modelos mostrada acima. Embora o uso de `IFormFile` e da associação de modelos seja uma solução muito mais simples, o streaming requer a execução de algumas etapas para ser implementado corretamente.
 
 > [!NOTE]
-> Qualquer arquivo armazenado em buffer único exceder 64KB será movido de RAM para um arquivo temporário em disco no servidor. Os recursos (disco RAM) usados pelo carregamentos de arquivos dependem do número e tamanho dos carregamentos de arquivo simultâneas. Fluxo não é muito sobre o desempenho, trata-se de escala. Se você tentar carregamentos de excesso de buffer, seu site falhará quando ele ficar sem memória ou espaço em disco.
+> Qualquer arquivo armazenado em buffer que exceder 64KB será movido do RAM para um arquivo temporário em disco no servidor. Os recursos (disco, RAM) usados pelos uploads de arquivos dependem do número e do tamanho dos uploads de arquivos simultâneos. Streaming não é tanto uma questão de desempenho, e sim de escala. Se você tentar armazenar muitos uploads em buffer, seu site falhará quando ficar sem memória ou sem espaço em disco.
 
-O exemplo a seguir demonstra como usar JavaScript/Angular para transmitir para uma ação do controlador. Token antiforgery do arquivo é gerado com um atributo de filtro personalizado e passada nos cabeçalhos HTTP em vez de no corpo da solicitação. Como o método de ação processa os dados carregados diretamente, a associação de modelo é desabilitada por outro filtro. Em ação, o conteúdo do formulário é lidos usando um `MultipartReader`, que lê cada indivíduo `MultipartSection`, processar o arquivo ou armazenar o conteúdo conforme apropriado. Depois que todas as seções foram lidos, a ação executa sua própria associação de modelo.
+O exemplo a seguir demonstra como usar JavaScript/Angular para fazer o streaming para uma ação do controlador. O token antifalsificação do arquivo é gerado usando um atributo de filtro personalizado e passada nos cabeçalhos HTTP em vez do corpo da solicitação. Como um método de ação processa os dados carregados diretamente, a associação de modelos é desabilitada por outro filtro. Dentro da ação, o conteúdo do formulário é lido usando um `MultipartReader`, que lê cada `MultipartSection` individual, processando o arquivo ou armazenando o conteúdo conforme apropriado. Após todas as seções serem lidas, a ação executa sua própria associação de modelos.
 
-A ação inicial carrega o formulário e salva um token antiforgery em um cookie (por meio de `GenerateAntiforgeryTokenCookieForAjax` atributo):
+A ação inicial carrega o formulário e salva um token antifalsificação em um cookie (por meio do atributo `GenerateAntiforgeryTokenCookieForAjax`):
 
 ```csharp
 [HttpGet]
@@ -149,21 +149,21 @@ public IActionResult Index()
 }
 ```
 
-O atributo usa internas do ASP.NET Core [Antiforgery](xref:security/anti-request-forgery) suporte para definir um cookie com um token de solicitação:
+O atributo usa o suporte interno [Antifalsificação](xref:security/anti-request-forgery) do ASP.NET Core para definir um cookie com um token de solicitação:
 
 [!code-csharp[Main](file-uploads/sample/FileUploadSample/Filters/GenerateAntiforgeryTokenCookieForAjaxAttribute.cs?name=snippet1)]
 
-Angular automaticamente passa um token antiforgery em um cabeçalho de solicitação chamado `X-XSRF-TOKEN`. O aplicativo ASP.NET MVC de núcleo é configurado para se referir a esse cabeçalho em sua configuração no *Startup.cs*:
+O Angular passa automaticamente um token antifalsificação em um cabeçalho de solicitação chamado `X-XSRF-TOKEN`. O aplicativo ASP.NET Core MVC é configurado para se referir a esse cabeçalho em sua configuração em *Startup.cs*:
 
 [!code-csharp[Main](file-uploads/sample/FileUploadSample/Startup.cs?name=snippet1)]
 
-O `DisableFormValueModelBinding` atributo, mostrado abaixo, é usado para desabilitar a associação de modelo para o `Upload` método de ação.
+O atributo `DisableFormValueModelBinding`, mostrado abaixo, é usado para desabilitar a associação de modelos para o método de ação `Upload`.
 
 [!code-csharp[Main](file-uploads/sample/FileUploadSample/Filters/DisableFormValueModelBindingAttribute.cs?name=snippet1)]
 
-Desde que a associação de modelo é desabilitada, o `Upload` método de ação não aceita parâmetros. Ele trabalha diretamente com o `Request` propriedade `ControllerBase`. Um `MultipartReader` é usado para ler cada seção. O arquivo é salvo com um nome de arquivo GUID e os dados de chave/valor são armazenados em um `KeyValueAccumulator`. Depois que todas as seções tenham sido lidos, o conteúdo do `KeyValueAccumulator` são usados para associar os dados de formulário para um tipo de modelo.
+Como a associação de modelos é desabilitada, o método de ação `Upload` não aceita parâmetros. Ele trabalha diretamente com a propriedade `Request` de `ControllerBase`. Um `MultipartReader` é usado para ler cada seção. O arquivo é salvo com um nome de arquivo GUID e os dados de chave/valor são armazenados em um `KeyValueAccumulator`. Após todas as seções terem sido lidas, o conteúdo do `KeyValueAccumulator` é usado para associar os dados do formulário a um tipo de modelo.
 
-Completo `Upload` método é mostrado abaixo:
+O método `Upload` completo é mostrado abaixo:
 
 [!INCLUDE [GetTempFileName](../../includes/GetTempFileName.md)]
 
@@ -171,18 +171,18 @@ Completo `Upload` método é mostrado abaixo:
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Abaixo estão alguns problemas comuns encontrados ao trabalhar com o carregamento de arquivos e suas soluções possíveis.
+Abaixo, são listados alguns problemas comuns encontrados ao trabalhar com o upload de arquivos e suas possíveis soluções.
 
-### <a name="unexpected-not-found-error-with-iis"></a>Erro inesperado não encontrado com o IIS
+### <a name="unexpected-not-found-error-with-iis"></a>Erro não encontrado inesperado com o IIS
 
-O erro a seguir indica que o carregamento do arquivo excede o servidor configurado `maxAllowedContentLength`:
+O erro a seguir indica que o upload do arquivo excede o `maxAllowedContentLength` configurado do servidor:
 
 ```
 HTTP 404.13 - Not Found
 The request filtering module is configured to deny a request that exceeds the request content length.
 ```
 
-A configuração padrão é `30000000`, que é aproximadamente 28.6 MB. O valor pode ser personalizado por meio da edição *Web. config*:
+A configuração padrão é `30000000`, que é aproximadamente 28,6 MB. O valor pode ser personalizado editando *web.config*:
 
 ```xml
 <system.webServer>
@@ -195,8 +195,8 @@ A configuração padrão é `30000000`, que é aproximadamente 28.6 MB. O valor 
 </system.webServer>
 ```
 
-Essa configuração só se aplica ao IIS. O comportamento não ocorre por padrão quando Kestrel de hospedagem. Para obter mais informações, consulte [limites de solicitações \<requestLimits\>](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/).
+Essa configuração só se aplica ao IIS. Esse comportamento não ocorre por padrão quando a hospedagem é feita no Kestrel. Para obter mais informações, consulte [Limites de solicitação \<requestLimits\>](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/).
 
 ### <a name="null-reference-exception-with-iformfile"></a>Exceção de referência nula com IFormFile
 
-Se o controlador está aceitando carregar arquivos usando `IFormFile` , mas você achar que o valor é sempre nulo, confirme que o formulário HTML é especificando um `enctype` valor `multipart/form-data`. Se esse atributo não está definido no `<form>` elemento, o carregamento de arquivo não ocorrerá e nenhum limite `IFormFile` argumentos será nulos.
+Se o controlador estiver aceitando arquivos carregados usando `IFormFile`, mas você observar que o valor sempre é nulo, confirme que seu formulário HTML está especificando um valor de `enctype` igual a `multipart/form-data`. Se esse atributo não estiver definido no elemento `<form>`, o upload do arquivo não ocorrerá e os argumentos `IFormFile` associados serão nulos.

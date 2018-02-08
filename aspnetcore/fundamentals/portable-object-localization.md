@@ -1,40 +1,40 @@
 ---
 title: "Configurar a localização do objeto portátil"
 author: sebastienros
-description: "Este artigo apresenta arquivos de objeto portátil e descreve as etapas para usá-los em um aplicativo ASP.NET Core com o framework Core Orchard."
-ms.author: scaddie
+description: "Este artigo apresenta arquivos de Objeto Portátil e descreve as etapas para usá-los em um aplicativo ASP.NET Core com a estrutura Orchard Core."
 manager: wpickett
+ms.author: scaddie
 ms.date: 09/26/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: ad68c8a7df5a8ea0f7ef42137c29cd3b37657052
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 6fefbd9b28d481184e358e7d66af68d112c63696
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="configure-portable-object-localization-with-orchard-core"></a>Configurar a localização do objeto portátil com Orchard Core
+# <a name="configure-portable-object-localization-with-orchard-core"></a>Configurar a localização do objeto portátil com o Orchard Core
 
 Por [Sébastien Ros](https://github.com/sebastienros) e [Scott Addie](https://twitter.com/Scott_Addie)
 
-Este artigo explica as etapas para usar arquivos de objeto portátil (PO) em um aplicativo ASP.NET Core com o [Orchard Core](https://github.com/OrchardCMS/OrchardCore) framework.
+Este artigo explica as etapas para usar arquivos PO (Objeto Portátil) em um aplicativo ASP.NET Core com a estrutura [Orchard Core](https://github.com/OrchardCMS/OrchardCore).
 
-**Observação:** Orchard principal não é um produto da Microsoft. Consequentemente, Microsoft não fornece suporte para esse recurso.
+**Observação:** o Orchard Core não é um produto da Microsoft. Consequentemente, a Microsoft não fornece suporte para esse recurso.
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-a-po-file"></a>O que é um arquivo de ordem de compra?
+## <a name="what-is-a-po-file"></a>O que é um arquivo PO?
 
-Arquivos de PO são distribuídos como arquivos de texto que contém as cadeias de caracteres traduzidas para um determinado idioma. Algumas vantagens de usar os arquivos de PO em vez disso, *. resx* arquivos incluem:
-- Arquivos de PO oferecem suporte a pluralização; *. resx* arquivos não dão suporte a pluralização.
-- PO arquivos não são compilados como *. resx* arquivos. Como tal, especializadas etapas de compilação e de ferramentas não são necessárias.
-- Os arquivos de PO funcionam bem com ferramentas de colaboração para edição online.
+Os arquivos PO são distribuídos como arquivos de texto que contém cadeias de caracteres traduzidas em determinado idioma. Algumas vantagens do uso de arquivos PO em vez de arquivos *.resx* incluem:
+- Os arquivos PO dão suporte à pluralização, ao contrário dos arquivos *.resx*.
+- Os arquivos PO não são compilados como os arquivos *.resx*. Dessa forma, não são necessárias ferramentas especializadas nem etapas de build.
+- Os arquivos PO funcionam bem com ferramentas de colaboração de edição online.
 
 ### <a name="example"></a>Exemplo
 
-Aqui está um arquivo de ordem de compra de exemplo que contém a tradução de duas cadeias de caracteres em francês, incluindo um com sua forma plural:
+Este é um arquivo PO de exemplo que contém a tradução de duas cadeias de caracteres em francês, incluindo uma com sua forma plural:
 
 *fr.po*
 
@@ -52,69 +52,69 @@ msgstr[1] "Les adresses email sont \"{0}\""
 
 Este exemplo usa a seguinte sintaxe:
 
-- `#:`: Um comentário que indica o contexto da cadeia de caracteres a ser convertido. A mesma cadeia de caracteres pode ser convertida diferente dependendo de onde ele está sendo usado.
-- `msgid`: A cadeia de caracteres não traduzida.
-- `msgstr`: A cadeia de caracteres traduzida.
+- `#:`: um comentário que indica o contexto da cadeia de caracteres a ser traduzida. A mesma cadeia de caracteres pode ser traduzida de modo diferente, dependendo do local em que ela está sendo usada.
+- `msgid`: a cadeia de caracteres não traduzida.
+- `msgstr`: a cadeia de caracteres traduzida.
 
-No caso de suporte a pluralização, mais entradas podem ser definidas.
+No caso de suporte à pluralização, entradas adicionais podem ser definidas.
 
-- `msgid_plural`: A cadeia de caracteres no plural não traduzida.
-- `msgstr[0]`: A cadeia de caracteres traduzida para o caso de 0.
-- `msgstr[N]`: A cadeia de caracteres traduzida para o n maiusculas
+- `msgid_plural`: a cadeia de caracteres no plural não traduzida.
+- `msgstr[0]`: a cadeia de caracteres traduzida para o caso 0.
+- `msgstr[N]`: a cadeia de caracteres traduzida para o caso N.
 
-A especificação de arquivo de ordem de compra pode ser encontrada [aqui](https://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/PO-Files.html).
+A especificação de arquivo PO pode ser encontrada [aqui](https://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/PO-Files.html).
 
-## <a name="configuring-po-file-support-in-aspnet-core"></a>Configurando o suporte a arquivo PO no núcleo do ASP.NET
+## <a name="configuring-po-file-support-in-aspnet-core"></a>Configurando o suporte a arquivos PO no ASP.NET Core
 
-Este exemplo é baseado em um aplicativo MVC do ASP.NET Core gerado a partir de um modelo de projeto do Visual Studio de 2017.
+Este exemplo se baseia em um aplicativo ASP.NET Core MVC gerado com base em um modelo de projeto do Visual Studio 2017.
 
-### <a name="referencing-the-package"></a>Referência do pacote
+### <a name="referencing-the-package"></a>Referenciando o pacote
 
-Adicione uma referência para o `OrchardCore.Localization.Core` pacote NuGet. Ele está disponível em [MyGet](https://www.myget.org/) na origem do pacote a seguir: https://www.myget.org/F/orchardcore-preview/api/v3/index.json
+Adicione uma referência ao pacote NuGet `OrchardCore.Localization.Core`. Ela está disponível em [MyGet](https://www.myget.org/) na seguinte origem do pacote: https://www.myget.org/F/orchardcore-preview/api/v3/index.json
 
-O *. csproj* arquivo agora contém uma linha semelhante à seguinte (o número de versão pode variar):
+O arquivo *.csproj* agora contém uma linha semelhante à seguinte (o número de versão pode variar):
 
 [!code-xml[Main](localization/sample/POLocalization/POLocalization.csproj?range=9)]
 
-### <a name="registering-the-service"></a>Registrar o serviço
+### <a name="registering-the-service"></a>Registrando o serviço
 
-Adicionar os serviços necessários para o `ConfigureServices` método *Startup.cs*:
+Adicione os serviços necessários ao método `ConfigureServices` de *Startup.cs*:
 
 [!code-csharp[Main](localization/sample/POLocalization/Startup.cs?name=snippet_ConfigureServices&highlight=4-21)]
 
-Adicionar o middleware necessário para o `Configure` método *Startup.cs*:
+Adicione o middleware necessário ao método `Configure` de *Startup.cs*:
 
 [!code-csharp[Main](localization/sample/POLocalization/Startup.cs?name=snippet_Configure&highlight=15)]
 
-Adicione o seguinte código ao modo de exibição Razor de escolha. *About.cshtml* é usado neste exemplo.
+Adicione o código a seguir à exibição do Razor de sua escolha. *About.cshtml* é usado neste exemplo.
 
 [!code-cshtml[Main](localization/sample/POLocalization/Views/Home/About.cshtml)]
 
-Um `IViewLocalizer` instância é injetada e usada para converter o texto "Olá, mundo!".
+Uma instância `IViewLocalizer` é injetada e usada para traduzir o texto “Olá, Mundo!”.
 
-### <a name="creating-a-po-file"></a>Criando um arquivo de ordem de compra
+### <a name="creating-a-po-file"></a>Criando um arquivo PO
 
-Crie um arquivo chamado  *<culture code>. po* na pasta raiz do aplicativo. Neste exemplo, o nome do arquivo é *fr.po* porque o idioma francês é usado:
+Crie um arquivo chamado *<culture code>.po* na pasta raiz do aplicativo. Neste exemplo, o nome do arquivo é *fr.po* porque o idioma francês é usado:
 
 [!code-text[Main](localization/sample/POLocalization/fr.po)]
 
-Esse arquivo armazena a cadeia de caracteres para converter e a cadeia de caracteres convertida em francês. Traduções reverter para a cultura pai, se necessário. Neste exemplo, o *fr.po* arquivo é usado se a cultura solicitada é `fr-FR` ou `fr-CA`.
+Esse arquivo armazena a cadeia de caracteres a ser traduzida e a cadeia de caracteres traduzida do francês. As traduções são revertidas para a cultura pai, se necessário. Neste exemplo, o arquivo *fr.po* é usado se a cultura solicitada é `fr-FR` ou `fr-CA`.
 
 ### <a name="testing-the-application"></a>Testando o aplicativo
 
-Execute o aplicativo e navegue até a URL `/Home/About`. O texto **Olá, mundo!** é exibida.
+Execute o aplicativo e navegue para a URL `/Home/About`. O texto **Olá, Mundo!** é exibido.
 
-Navegue até a URL `/Home/About?culture=fr-FR`. O texto **Bon jour le monde!** é exibida.
+Navegue para a URL `/Home/About?culture=fr-FR`. O texto **Bonjour le monde!** é exibido.
 
 ## <a name="pluralization"></a>Pluralização
 
-Arquivos de PO dão suporte a pluralização formas, que é útil quando a mesma cadeia de caracteres precisa ser traduzido variam de acordo com uma cardinalidade. Essa tarefa é feita complicada pelo fato de que cada linguagem define regras personalizadas para selecionar a cadeia de caracteres que para usar com base na cardinalidade.
+Os arquivos PO dão suporte a formas de pluralização, que são úteis quando a mesma cadeia de caracteres precisa ser traduzida de modo diferente de acordo com uma cardinalidade. Essa tarefa torna-se complicada pelo fato de que cada idioma define regras personalizadas para selecionar qual cadeia de caracteres será usada de acordo com a cardinalidade.
 
-O pacote de localização Orchard fornece uma API para invocar esses diferentes formas plurais automaticamente.
+O pacote de Localização do Orchard fornece uma API para invocar essas diferentes formas plurais automaticamente.
 
-### <a name="creating-pluralization-po-files"></a>Criando a pluralização arquivos PO
+### <a name="creating-pluralization-po-files"></a>Criando arquivos PO de pluralização
 
-Adicione o seguinte conteúdo para mencionadas anteriormente *fr.po* arquivo:
+Adicione o seguinte conteúdo ao arquivo *fr.po* mencionado anteriormente:
 
 ```text
 msgid "There is one item."
@@ -123,19 +123,19 @@ msgstr[0] "Il y a un élément."
 msgstr[1] "Il y a {0} éléments."
 ```
 
-Consulte [o que é um arquivo de PO?](#what-is-a-po-file) para obter uma explicação do que representa cada entrada neste exemplo.
+Consulte [O que é um arquivo PO?](#what-is-a-po-file) para obter uma explicação do que representa cada entrada neste exemplo.
 
-### <a name="adding-a-language-using-different-pluralization-forms"></a>Adicionar um idioma usando formulários pluralização diferentes
+### <a name="adding-a-language-using-different-pluralization-forms"></a>Adicionando um idioma usando diferentes formas de pluralização
 
-Cadeias de caracteres em inglês e francês foram usadas no exemplo anterior. Inglês e francês tem apenas dois formulários de pluralização e compartilham as mesmas regras de formulário, que é que uma cardinalidade de um é mapeada para a primeira forma plural. Qualquer outra cardinalidade é mapeada para a segunda forma plural.
+Cadeias de caracteres em inglês e francês foram usadas no exemplo anterior. O inglês e o francês têm apenas duas formas de pluralização e compartilham as mesmas regras de forma, o que significa que uma cardinalidade de um é mapeada para a primeira forma plural. Qualquer outra cardinalidade é mapeada para a segunda forma plural.
 
-Nem todos os idiomas compartilham as mesmas regras. Isso é ilustrado com o idioma tcheco, que tem três formas no plural.
+Nem todos os idiomas compartilham as mesmas regras. Isso é ilustrado com o idioma tcheco, que tem três formas plurais.
 
-Criar o `cs.po` arquivos da seguinte maneira e observe como a pluralização precisa três traduções diferentes:
+Crie o arquivo `cs.po` da seguinte maneira e observe como a pluralização precisa de três traduções diferentes:
 
 [!code-text[Main](localization/sample/POLocalization/cs.po)]
 
-Para aceitar as localizações Tcheca, adicionar `"cs"` à lista de culturas com suporte a `ConfigureServices` método:
+Para aceitar localizações para o tcheco, adicione `"cs"` à lista de culturas com suporte no método `ConfigureServices`:
 
 ```csharp
 var supportedCultures = new List<CultureInfo>
@@ -148,7 +148,7 @@ var supportedCultures = new List<CultureInfo>
 };
 ```
 
-Editar o *Views/Home/About.cshtml* arquivo renderizar localizadas no plural cadeias de caracteres para várias cardinalidades:
+Edite o arquivo *Views/Home/About.cshtml* para renderizar cadeias de caracteres localizadas no plural para várias cardinalidades:
 
 ```cshtml
 <p>@Localizer.Plural(1, "There is one item.", "There are {0} items.")</p>
@@ -156,9 +156,9 @@ Editar o *Views/Home/About.cshtml* arquivo renderizar localizadas no plural cade
 <p>@Localizer.Plural(5, "There is one item.", "There are {0} items.")</p>
 ```
 
-**Observação:** em um cenário do mundo real, uma variável deve ser usada para representar a contagem. Aqui, podemos Repita o mesmo código com três valores diferentes para expor um caso muito específico.
+**Observação:** em um cenário do mundo real, uma variável é usada para representar a contagem. Aqui, repetimos o mesmo código com três valores diferentes para expor um caso muito específico.
 
-Ao alternar culturas, consulte o seguinte:
+Ao mudar as culturas, o seguinte é observado:
 
 Para `/Home/About`:
 
@@ -184,17 +184,17 @@ Existují 2 položky.
 Existuje 5 položek.
 ```
 
-Observe que, para a cultura Tcheca, as três traduções são diferentes. Culturas francês e inglês compartilham a mesma construção para as cadeias de caracteres traduzidas últimas duas.
+Observe que, para a cultura do tcheco, as três traduções são diferentes. As culturas do francês e do inglês compartilham a mesma construção para as duas últimas cadeias de caracteres traduzidas.
 
 ## <a name="advanced-tasks"></a>Tarefas avançadas
 
-### <a name="contextualizing-strings"></a>Cadeias de caracteres de contexto
+### <a name="contextualizing-strings"></a>Contextualizando cadeias de caracteres
 
-Os aplicativos geralmente contêm cadeias de caracteres a ser convertido em vários locais. A mesma cadeia de caracteres pode ter uma tradução diferente em determinados locais dentro de um aplicativo (exibições Razor ou arquivos de classe). Um arquivo de PO oferece suporte a noção de um contexto de arquivo, que pode ser usado para categorizar a cadeia de caracteres que está sendo representada. Usando um contexto de arquivo, uma cadeia de caracteres pode ser convertida de forma diferente, dependendo do contexto do arquivo (ou falta de um contexto de arquivo).
+Os aplicativos costumam conter as cadeias de caracteres a serem traduzidas em vários locais. A mesma cadeia de caracteres pode ter uma tradução diferente em determinados locais em um aplicativo (exibições do Razor ou arquivos de classe). Um arquivo PO dá suporte à noção de um contexto de arquivo, que pode ser usado para categorizar a cadeia de caracteres que está sendo representada. Usando um contexto de arquivo, uma cadeia de caracteres pode ser traduzida de forma diferente, dependendo do contexto de arquivo (ou de sua ausência).
 
-Os serviços de localização de PO usam o nome da classe completa ou o modo de exibição que é usado ao converter uma cadeia de caracteres. Isso é feito definindo o valor sobre o `msgctxt` entrada.
+Os serviços de localização de PO usam o nome da classe completa ou da exibição que é usado ao traduzir uma cadeia de caracteres. Isso é feito definindo o valor na entrada `msgctxt`.
 
-Considere uma adição secundária para a versão anterior *fr.po* exemplo. Um modo de exibição Razor localizado em *Views/Home/About.cshtml* pode ser definida como o contexto do arquivo definindo reservado `msgctxt` valor da entrada:
+Considere uma adição mínima ao exemplo anterior de *fr.po*. Uma exibição do Razor localizada em *Views/Home/About.cshtml* pode ser definida com o contexto de arquivo definindo o valor da entrada `msgctxt` reservada:
 
 ```text
 msgctxt "Views.Home.About"
@@ -202,28 +202,28 @@ msgid "Hello world!"
 msgstr "Bonjour le monde!"
 ```
 
-Com o `msgctxt` definido como tal, a conversão de texto ocorre ao navegar para `/Home/About?culture=fr-FR`. A conversão não ocorre ao navegar para `/Home/Contact?culture=fr-FR`.
+Com o `msgctxt` definido assim, a tradução de texto ocorre durante a navegação para `/Home/About?culture=fr-FR`. A tradução não ocorre durante a navegação para `/Home/Contact?culture=fr-FR`.
 
-Quando nenhuma entrada específica é correspondida com um contexto de arquivo fornecido, o mecanismo de fallback do núcleo Orchard procura um arquivo de PO apropriado sem contexto. Supondo que não há não é definido para nenhum contexto de arquivo específico *Views/Home/Contact.cshtml*, navegando para `/Home/Contact?culture=fr-FR` carrega um arquivo de ordem de compra, como:
+Quando não é encontrada a correspondência de nenhuma entrada específica com um contexto de arquivo fornecido, o mecanismo de fallback do Orchard Core procura um arquivo PO apropriado sem contexto. Supondo que não haja nenhum contexto de arquivo específico definido para *Views/Home/Contact.cshtml*, a navegação para `/Home/Contact?culture=fr-FR` carrega um arquivo PO, como:
 
 [!code-text[Main](localization/sample/POLocalization/fr.po)]
 
-### <a name="changing-the-location-of-po-files"></a>Alterar o local dos arquivos de PO
+### <a name="changing-the-location-of-po-files"></a>Alterando o local dos arquivos PO
 
-O local padrão dos arquivos de ordem de compra pode ser alterado em `ConfigureServices`:
+A localização padrão dos arquivos PO pode ser alterada em `ConfigureServices`:
 
 ```csharp
 services.AddPortableObjectLocalization(options => options.ResourcesPath = "Localization");
 ```
 
-Neste exemplo, os arquivos de PO são carregados do *localização* pasta.
+Neste exemplo, os arquivos PO são carregados da pasta *Localization*.
 
-### <a name="implementing-a-custom-logic-for-finding-localization-files"></a>Implementar uma lógica personalizada para localizar arquivos de localização
+### <a name="implementing-a-custom-logic-for-finding-localization-files"></a>Implementando uma lógica personalizada para encontrar arquivos de localização
 
-Quando uma lógica mais complexa é necessária para localizar arquivos de ordem de compra, o `OrchardCore.Localization.PortableObject.ILocalizationFileLocationProvider` interface pode ser implementada e registrada como um serviço. Isso é útil quando PO arquivos podem ser armazenados em variáveis locais ou quando os arquivos precisam ser encontrada dentro de uma hierarquia de pastas.
+Quando uma lógica mais complexa é necessária para localizar arquivos PO, a interface `OrchardCore.Localization.PortableObject.ILocalizationFileLocationProvider` pode ser implementada e registrada como um serviço. Isso é útil quando arquivos PO podem ser armazenados em locais variáveis ou quando os arquivos precisam ser encontrados em uma hierarquia de pastas.
 
-### <a name="using-a-different-default-pluralized-language"></a>Usando um idioma padrão diferente pluralized
+### <a name="using-a-different-default-pluralized-language"></a>Usando um idioma pluralizado padrão diferente
 
-O pacote inclui um `Plural` método de extensão que é específico para duas formas no plural. Para idiomas que exigem mais formulários plural, crie um método de extensão. Com um método de extensão, você não precisa fornecer qualquer arquivo de localização para o idioma padrão &mdash; as cadeias de caracteres originais já estão disponíveis diretamente no código.
+O pacote inclui um método de extensão `Plural` específico a duas formas plurais. Para idiomas que exigem mais formas plurais, crie um método de extensão. Com um método de extensão, você não precisará fornecer nenhum arquivo de localização para o idioma padrão – as cadeias de caracteres originais já estão disponíveis diretamente no código.
 
-Você pode usar mais genérica `Plural(int count, string[] pluralForms, params object[] arguments)` sobrecarga que aceita uma matriz de cadeia de caracteres de traduções.
+Use a sobrecarga `Plural(int count, string[] pluralForms, params object[] arguments)` mais genérica que aceita uma matriz de cadeia de caracteres de traduções.

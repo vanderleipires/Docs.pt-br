@@ -1,35 +1,35 @@
 ---
-title: "Auxiliar de marca de ambiente no núcleo do ASP.NET"
+title: Auxiliar de Marca de Ambiente no ASP.NET Core
 author: pkellner
-description: Auxiliar de marca de ambiente do ASP.NET Core definidos incluindo todas as propriedades
-ms.author: riande
+description: "Definição de Auxiliar de Marca de Ambiente do ASP.NET Core, incluindo todas as propriedades"
 manager: wpickett
+ms.author: riande
 ms.date: 07/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/environment-tag-helper
-ms.openlocfilehash: 32646f1fdaf840f796da1ec573459157a41a86d1
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
-ms.translationtype: MT
+ms.openlocfilehash: 7a99ee0e59c7f49a3208d2c86c11cabce4294889
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="environment-tag-helper-in-aspnet-core"></a>Auxiliar de marca de ambiente no núcleo do ASP.NET
+# <a name="environment-tag-helper-in-aspnet-core"></a>Auxiliar de Marca de Ambiente no ASP.NET Core
 
-Por [Peter Kellner](http://peterkellner.net) e [Ateya Hisham Bin](https://twitter.com/hishambinateya)
+Por [Peter Kellner](http://peterkellner.net) e [Hisham Bin Ateya](https://twitter.com/hishambinateya)
 
-O auxiliar de marca de ambiente condicionalmente renderiza o conteúdo incluído com base no ambiente de hospedagem atual. O único atributo `names` é uma lista separada por vírgulas de ambiente nomes, que se qualquer correspondência com o ambiente atual, irá disparar o conteúdo entre a ser renderizado.
+O Auxiliar de Marca de Ambiente renderiza condicionalmente seu conteúdo contido com base no ambiente de hospedagem atual. Seu único atributo `names` é uma lista separada por vírgula de nomes de ambiente. Se houver uma correspondência de um nome ao ambiente atual, ele disparará o conteúdo contido a ser renderizado.
 
-## <a name="environment-tag-helper-attributes"></a>Atributos de auxiliar de marca de ambiente
+## <a name="environment-tag-helper-attributes"></a>Atributos do Auxiliar de Marca de Ambiente
 
 ### <a name="names"></a>nomes
 
-Aceita um único nome de ambiente de hospedagem ou uma lista separada por vírgulas de nomes de ambiente que disparam o processamento do conteúdo do anexo de hospedagem.
+Aceita um único nome de ambiente de hospedagem ou uma lista separada por vírgula de nomes de ambiente de hospedagem que disparam a renderização do conteúdo contido.
 
-Esses valores são comparados com o valor retornado da propriedade estática ASP.NET Core `HostingEnvironment.EnvironmentName`.  Esse valor é um dos seguintes: **preparo**; **Desenvolvimento** ou **produção**. A comparação diferencia maiusculas de minúsculas.
+Esses valores são comparados com o valor atual retornado da propriedade estática `HostingEnvironment.EnvironmentName` do ASP.NET Core.  Esse valor é um dos seguintes: **Preparo**, **Desenvolvimento** ou **Produção**. A comparação ignora o uso de maiúsculas.
 
-Um exemplo de uma opção válida `environment` auxiliar de marca é:
+Um exemplo de um auxiliar de marca `environment` válido é:
 
 ```cshtml
 <environment names="Staging,Production">
@@ -39,11 +39,11 @@ Um exemplo de uma opção válida `environment` auxiliar de marca é:
 
 ## <a name="include-and-exclude-attributes"></a>incluir e excluir atributos
 
-ASP.NET Core 2. x adiciona o `include`  &  `exclude` atributos. Esses atributos controlam a processar o conteúdo incluído com base nos nomes de ambiente hospedagem incluído ou excluído.
+O ASP.NET Core 2.x adiciona os atributos `include` & `exclude`. Esses atributos controlam a renderização do conteúdo contido com base nos nomes de ambiente de hospedagem incluídos ou excluídos.
 
-### <a name="include-aspnet-core-20-and-later"></a>incluir Core ASP.NET 2.0 e posterior
+### <a name="include-aspnet-core-20-and-later"></a>incluir o Core ASP.NET Core 2.0 e posterior
 
-O `include` propriedade tem um comportamento semelhante do `names` atributo no ASP.NET Core 1.0.
+A propriedade `include` tem um comportamento semelhante do atributo `names` no ASP.NET Core 1.0.
 
 ```cshtml
 <environment include="Staging,Production">
@@ -51,9 +51,9 @@ O `include` propriedade tem um comportamento semelhante do `names` atributo no A
 </environment>
 ```
 
-### <a name="exclude-aspnet-core-20-and-later"></a>excluir o núcleo do ASP.NET 2.0 e posterior
+### <a name="exclude-aspnet-core-20-and-later"></a>excluir o ASP.NET Core 2.0 e posterior
 
-Em contraste, o `exclude` permite que a propriedade de `EnvironmentTagHelper` renderizar o conteúdo entre todos os nomes de ambiente de hospedagem exceto a (s) que você especificou.
+Por outro lado, a propriedade `exclude` permite que `EnvironmentTagHelper` renderize o conteúdo contido para todos os nomes de ambiente de hospedagem, exceto aqueles especificados.
 
 ```cshtml
 <environment exclude="Development">

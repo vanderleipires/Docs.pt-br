@@ -1,59 +1,59 @@
 ---
-title: Tratamento de erros em ASP.NET Core
+title: Tratamento de erro no ASP.NET Core
 author: ardalis
-description: Descobrir como tratar erros em aplicativos do ASP.NET Core.
-ms.author: tdykstra
+description: Descubra como tratar erros em aplicativos ASP.NET Core.
 manager: wpickett
-ms.date: 11/30/2016
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: fundamentals/error-handling
+ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 019e31fa749a950db48575e1f4e8d4d26d1cde75
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.date: 11/30/2016
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: fundamentals/error-handling
+ms.openlocfilehash: 5b0cda7b79b8a9523d1ba6a9b321d22d3ccc753a
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="introduction-to-error-handling-in-aspnet-core"></a>Introdução ao ASP.NET Core de tratamento de erros
+# <a name="introduction-to-error-handling-in-aspnet-core"></a>Introdução ao tratamento de erro no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/) e [Tom Dykstra](https://github.com/tdykstra/)
 
-Este artigo aborda appoaches comuns para tratamento de erros em aplicativos do ASP.NET Core.
+Este artigo apresenta abordagens comuns para o tratamento de erros em aplicativos ASP.NET Core.
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="the-developer-exception-page"></a>A página de exceção do desenvolvedor
 
-Para configurar um aplicativo para exibir uma página que mostra informações detalhadas sobre exceções, instale o `Microsoft.AspNetCore.Diagnostics` NuGet do pacote e adicione uma linha para o [configurar método na classe de inicialização](startup.md):
+Para configurar um aplicativo para exibir uma página que mostra informações detalhadas sobre exceções, instale o pacote NuGet `Microsoft.AspNetCore.Diagnostics` e adicione uma linha ao [método Configure na classe Startup](startup.md):
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
-Colocar `UseDeveloperExceptionPage` antes que qualquer middleware que você deseja capturar exceções, como `app.UseMvc`.
+Coloque `UseDeveloperExceptionPage` antes de qualquer middleware no qual você deseja capturar exceções, como `app.UseMvc`.
 
 >[!WARNING]
-> Habilitar a página de exceção de desenvolvedor **somente quando o aplicativo estiver em execução no ambiente de desenvolvimento**. Você não deseja compartilhar informações de exceção detalhadas publicamente quando o aplicativo for executado em produção. [Saiba mais sobre como configurar ambientes](environments.md).
+> Habilite a página de exceção do desenvolvedor **somente quando o aplicativo estiver em execução no ambiente de Desenvolvimento**. Não é recomendável compartilhar informações de exceção detalhadas publicamente quando o aplicativo é executado em produção. [Saiba mais sobre como configurar ambientes](environments.md).
 
-Para ver a página de exceção de desenvolvedor, execute o aplicativo de exemplo com o ambiente definido como `Development`e adicione `?throw=true` para a URL base do aplicativo. A página inclui várias guias com informações sobre a exceção e a solicitação. A primeira guia inclui um rastreamento de pilha. 
+Para ver a página de exceção do desenvolvedor, execute o aplicativo de exemplo com o ambiente definido como `Development` e adicione `?throw=true` à URL base do aplicativo. A página inclui várias guias com informações sobre a exceção e a solicitação. A primeira guia inclui um rastreamento de pilha. 
 
 ![Rastreamento de pilha](error-handling/_static/developer-exception-page.png)
 
-A próxima guia mostra a consulta parâmetros de cadeia de caracteres, se houver.
+A próxima guia mostra os parâmetros da cadeia de caracteres de consulta, se houver.
 
 ![Parâmetros de cadeia de caracteres de consulta](error-handling/_static/developer-exception-page-query.png)
 
-Esta solicitação não tinha os cookies, mas se tivesse, apareceriam no **Cookies** guia. Você pode ver os cabeçalhos que foram passados a última guia.
+Essa solicitação não tinha nenhum cookie, mas se tivesse, eles seriam exibidos na guia **Cookies**. Veja os cabeçalhos que foram passados na última guia.
 
-![cabeçalhos](error-handling/_static/developer-exception-page-headers.png)
+![Cabeçalhos](error-handling/_static/developer-exception-page-headers.png)
 
-## <a name="configuring-a-custom-exception-handling-page"></a>Configurando uma página de tratamento de exceções personalizadas
+## <a name="configuring-a-custom-exception-handling-page"></a>Configurando uma página de tratamento de exceção personalizada
 
-É uma boa ideia para configurar uma página de manipulador de exceção a ser usado quando o aplicativo não está executando o `Development` ambiente.
+É uma boa ideia configurar uma página de manipulador de exceção a ser usada quando o aplicativo não está sendo executado no ambiente `Development`.
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-Em um aplicativo MVC, não explicitamente decorar o método de ação do manipulador de erro com os atributos de método HTTP, como `HttpGet`. Usando verbos explícitos pode impedir que algumas solicitações atinjam o método.
+Em um aplicativo MVC, não decore o método de ação do manipulador de erro de forma explícita com atributos de método HTTP, como `HttpGet`. O uso de verbos explícitos pode impedir que algumas solicitações sejam recebidas pelo método.
 
 ```csharp
 [Route("/Error")]
@@ -63,19 +63,19 @@ public IActionResult Index()
 }
 ```
 
-## <a name="configuring-status-code-pages"></a>Configurar páginas de código de status
+## <a name="configuring-status-code-pages"></a>Configurando páginas de código de status
 
-Por padrão, o aplicativo não fornece uma página de código de status detalhadas para códigos de status HTTP como 500 (erro interno do servidor) ou 404 (não encontrado). Você pode configurar o `StatusCodePagesMiddleware` , adicionando uma linha para o `Configure` método:
+Por padrão, o aplicativo não fornecerá uma página de código de status detalhada para códigos de status HTTP como 500 (Erro Interno do Servidor) ou 404 (Não Encontrado). Configure o `StatusCodePagesMiddleware` adicionando uma linha ao método `Configure`:
 
 ```csharp
 app.UseStatusCodePages();
 ```
 
-Por padrão, este middleware adiciona manipuladores simples, somente de texto para os códigos de status comuns, como 404:
+Por padrão, esse middleware adiciona manipuladores simples e somente texto a códigos de status comuns, como 404:
 
-![página 404](error-handling/_static/default-404-status-code.png)
+![Página 404](error-handling/_static/default-404-status-code.png)
 
-O middleware oferece suporte a vários métodos de extensão diferente. Um usa uma expressão lambda, outra usa uma cadeia de caracteres de formato e de tipo de conteúdo.
+O middleware dá suporte a vários métodos de extensão diferentes. Um usa uma expressão lambda e o outro usa uma cadeia de caracteres de formato e um tipo de conteúdo.
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
 
@@ -83,7 +83,7 @@ O middleware oferece suporte a vários métodos de extensão diferente. Um usa u
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-Também há métodos de extensão de redirecionamento. Um envia um código de 302 status para o cliente e um retorna o código de status original para o cliente, mas também executa o manipulador para a URL de redirecionamento.
+Também há métodos de extensão de redirecionamento. Um envia um código de status 302 para o cliente e o outro retorna o código de status original para o cliente, mas também executa o manipulador para a URL de redirecionamento.
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
@@ -91,7 +91,7 @@ Também há métodos de extensão de redirecionamento. Um envia um código de 30
 app.UseStatusCodePagesWithReExecute("/error/{0}");
 ```
 
-Se você precisar desativar páginas de código de status para determinadas solicitações, você pode fazer isso:
+Se precisar desabilitar páginas de código de status para determinadas solicitações, faça isso:
 
 ```csharp
 var statusCodePagesFeature = context.Features.Get<IStatusCodePagesFeature>();
@@ -103,36 +103,36 @@ if (statusCodePagesFeature != null)
 
 ## <a name="exception-handling-code"></a>Código de tratamento de exceção
 
-Código em páginas de tratamento de exceção pode gerar exceções. Geralmente é uma boa ideia de páginas de erro de produção para consistem em conteúdo puramente estático.
+Código em páginas de tratamento de exceção pode gerar exceções. Geralmente, é uma boa ideia que páginas de erro de produção sejam compostas por conteúdo puramente estático.
 
-Além disso, lembre-se que, depois que os cabeçalhos de resposta forem enviados, não é possível alterar o código de status da resposta, nem podem executar de nenhuma página de exceção ou manipuladores. A resposta deve ser concluída ou a conexão anulada.
+Além disso, esteja ciente de que, depois que os cabeçalhos de uma resposta forem enviados, você não poderá alterar o código de status da resposta e nenhuma página de exceção ou manipulador poderá ser executado. A resposta deve ser concluída ou a conexão será anulada.
 
-## <a name="server-exception-handling"></a>Tratamento de exceção de servidor
+## <a name="server-exception-handling"></a>Tratamento de exceções do servidor
 
-Além da lógica em seu aplicativo de tratamento de exceção de [server](servers/index.md) hospedar seu aplicativo executa algumas tratamento de exceção. Se o servidor detecta uma exceção antes de serem enviados os cabeçalhos, o servidor envia uma resposta de erro de servidor interno 500 sem corpo. Se o servidor detecta uma exceção após terem sido enviados os cabeçalhos, o servidor fecha a conexão. Solicitações que não são manipuladas pelo seu aplicativo são manipuladas pelo servidor. Qualquer exceção que ocorre é tratada pela exceção do servidor tratamento. Algum configurado páginas de erro personalizadas ou middleware de tratamento de exceção ou filtros não afetam esse comportamento.
+Além da lógica de tratamento de exceção no aplicativo, o [servidor](servers/index.md) que hospeda o aplicativo executa uma parte do tratamento de exceção. Se o servidor capturar uma exceção antes de os cabeçalhos serem enviados, o servidor enviará uma resposta 500 Erro Interno do Servidor sem corpo. Se o servidor capturar uma exceção depois que os cabeçalhos forem enviados, o servidor fechará a conexão. As solicitações que não são manipuladas pelo aplicativo são manipuladas pelo servidor. Qualquer exceção ocorrida é tratada pelo tratamento de exceção do servidor. As páginas de erro personalizadas, o middleware de tratamento de exceção ou os filtros configurados não afetam esse comportamento.
 
-## <a name="startup-exception-handling"></a>Tratamento de exceções de inicialização
+## <a name="startup-exception-handling"></a>Tratamento de exceção na inicialização
 
-Apenas a camada de hospedagem pode lidar com exceções que ocorrem durante a inicialização do aplicativo. Você pode [configurar como o host se comporta em resposta a erros durante a inicialização](hosting.md#detailed-errors) usando `captureStartupErrors` e `detailedErrors` chave.
+Apenas a camada de hospedagem pode tratar exceções que ocorrem durante a inicialização do aplicativo. [Configure como o host se comporta em resposta a erros durante a inicialização](hosting.md#detailed-errors) usando `captureStartupErrors` e a chave `detailedErrors`.
 
-Hospedagem só pode mostrar uma página de erro para um erro de inicialização capturada se o erro ocorrer após o endereço de host/associação de porta. Se qualquer associação falhar por algum motivo, a camada de hospedagem registra uma exceção crítica, o travamento do processo dotnet, e nenhuma página de erro é exibida.
+A hospedagem apenas poderá mostrar uma página de erro para um erro de inicialização capturado se o erro ocorrer após a associação de endereço do host/porta. Se uma associação falha por algum motivo, a camada de hospedagem registra uma exceção crítica em log, o processo dotnet falha e nenhuma página de erro é exibida.
 
-## <a name="aspnet-mvc-error-handling"></a>Tratamento de erros do ASP.NET MVC
+## <a name="aspnet-mvc-error-handling"></a>Tratamento de erro do ASP.NET MVC
 
-[MVC](../mvc/index.md) aplicativos tem algumas opções adicionais de manipulação de erros, como configurar filtros de exceção e executar a validação de modelo.
+Os aplicativos [MVC](xref:mvc/overview) contêm algumas opções adicionais para o tratamento de erros, como configurar filtros de exceção e executar a validação do modelo.
 
 ### <a name="exception-filters"></a>Filtros de exceção
 
-Filtros de exceção podem ser configurados globalmente ou em uma base por controlador ou por ação em um aplicativo MVC. Esses filtros lidar com qualquer exceção não tratada ocorre durante a execução de uma ação do controlador ou outro filtro e não são chamados caso contrário. Saiba mais sobre filtros de exceção do [filtros](../mvc/controllers/filters.md).
+Os filtros de exceção podem ser configurados globalmente ou por controlador ou por ação em um aplicativo MVC. Esses filtros tratam qualquer exceção sem tratamento ocorrida durante a execução de uma ação do controlador ou de outro filtro e, caso contrário, não são chamadas. Saiba mais sobre filtros de exceção em [Filtros](../mvc/controllers/filters.md).
 
 >[!TIP]
-> Filtros de exceção são bons para interceptar exceções que ocorrem em ações do MVC, mas eles não são mais flexíveis middleware de tratamento de erros. Preferir middleware para o caso geral e usar filtros apenas em que você precisa fazer o tratamento de erros *diferentemente* com base em qual ação MVC foi escolhida.
+> Filtros de exceção são bons para interceptar exceções que ocorrem em ações do MVC, mas não são tão flexíveis quanto o middleware de tratamento de erro. Dê preferência ao uso de middleware para o caso geral e use filtros apenas quando precisar fazer o tratamento de erro de modo *diferente*, dependendo da ação do MVC escolhida.
 
-### <a name="handling-model-state-errors"></a>Estado do modelo de tratamento de erros
+### <a name="handling-model-state-errors"></a>Tratando erros do estado do modelo
 
-[Validação de modelo](../mvc/models/validation.md) ocorre antes de cada ação de controlador que está sendo invocada, e é responsabilidade do método de ação para inspecionar `ModelState.IsValid` e reagir de forma adequada.
+A [validação do modelo](../mvc/models/validation.md) ocorre antes da invocação de cada ação do controlador e é responsabilidade do método de ação inspecionar `ModelState.IsValid` e responder de forma adequada.
 
-Alguns aplicativos escolherá a seguir uma convenção padrão para lidar com erros de validação de modelo, caso em que um [filtro](../mvc/controllers/filters.md) pode ser um local adequado para implementar essa política. Você deve testar o comportam de suas ações com os estados de modelo inválido. Saiba mais em [lógica do controlador de teste](../mvc/controllers/testing.md).
+Alguns aplicativos optarão por seguir uma convenção padrão para lidar com erros de validação do modelo, caso em que um [filtro](../mvc/controllers/filters.md) pode ser um local adequado para implementar uma política como essa. É necessário testar o comportamento das ações com estados de modelo inválidos. Saiba mais em [Testando a lógica do controlador](../mvc/controllers/testing.md).
 
 
 

@@ -2,46 +2,46 @@
 title: "Áreas"
 author: rick-anderson
 description: "Mostra como trabalhar com áreas."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 02/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: 87bf2eaad1c13d21412051be769992411f685e2e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 1ade49de3f6c58edc4ea7b06bc593b3db797081c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="areas"></a>Áreas
 
 Por [Dhananjay Kumar](https://twitter.com/debug_mode) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Áreas são um recurso do ASP.NET MVC usado para organizar as funcionalidades relacionadas em um grupo como um namespace separado (para o roteamento) e a estrutura de pasta (para modos de exibição). Usando áreas cria uma hierarquia com a finalidade de roteamento, adicionando outro parâmetro de rota, `area`, `controller` e `action`.
+Áreas são um recurso do ASP.NET MVC usado para organizar funcionalidades relacionadas em um grupo como um namespace separado (para roteamento) e uma estrutura de pastas (para exibições). O uso de áreas cria uma hierarquia para fins de roteamento, adicionando outro parâmetro de rota, `area`, a `controller` e `action`.
 
-Áreas fornecem uma forma de particionar um aplicativo da Web MVC do ASP.NET Core grande em menores agrupamentos funcionais. Uma área é efetivamente uma estrutura MVC dentro de um aplicativo. Em um projeto MVC, componentes lógicos como modelo, o controlador e o modo de exibição são mantidos em pastas diferentes e MVC usa convenções de nomenclatura para criar a relação entre esses componentes. Para um aplicativo grande, pode ser vantajoso para dividir o aplicativo em áreas separadas de nível alto de funcionalidade. Por exemplo, um aplicativo de comércio eletrônico com várias unidades de negócios, como check-out, cobrança e pesquisa etc. Cada uma dessas unidades têm seus próprios modos de exibição do componente lógico, controladores e modelos. Nesse cenário, você pode usar áreas para particionar fisicamente os componentes comerciais no mesmo projeto.
+As áreas fornecem uma maneira de particionar um aplicativo Web ASP.NET Core MVC grande em agrupamentos funcionais menores. Uma área é efetivamente uma estrutura MVC dentro de um aplicativo. Em um projeto MVC, componentes lógicos como Modelo, Controlador e Exibição são mantidos em pastas diferentes e o MVC usa convenções de nomenclatura para criar a relação entre esses componentes. Para um aplicativo grande, pode ser vantajoso particionar o aplicativo em áreas de nível alto separadas de funcionalidade. Por exemplo, um aplicativo de comércio eletrônico com várias unidades de negócios, como check-out, cobrança e pesquisa, etc. Cada uma dessas unidades têm suas próprias exibições de componente lógico, controladores e modelos. Nesse cenário, você pode usar Áreas para particionar fisicamente os componentes de negócios no mesmo projeto.
 
-Uma área pode ser definida como menores unidades funcionais em um projeto MVC do ASP.NET Core com seu próprio conjunto de controladores, modos de exibição e modelos.
+Uma área pode ser definida como as menores unidades funcionais em um projeto do ASP.NET Core MVC com seu próprio conjunto de controladores, exibições e modelos.
 
-Considere o uso de áreas em um MVC projeto quando:
+Considere o uso de Áreas em um projeto MVC quando:
 
-* Seu aplicativo é composto de vários componentes funcionais alto nível que devem ser separados logicamente
+* O aplicativo é composto por vários componentes funcionais de alto nível que devem ser separados logicamente
 
-* Você deseja particionar seu projeto MVC para que cada área funcional pode ser trabalhada independentemente
+* Você deseja particionar o projeto MVC para que cada área funcional possa ser trabalhada de forma independente
 
 Recursos de área:
 
-* Um aplicativo MVC do ASP.NET Core pode ter qualquer número de áreas
+* Um aplicativo ASP.NET Core MVC pode ter qualquer quantidade de áreas
 
-* Cada área tem seus próprios controladores, modelos e modos de exibição
+* Cada área tem seus próprios controladores, modelos e exibições
 
-* Permite organizar projetos MVC grandes em vários componentes de alto nível que podem ser executados independentemente
+* Permite organizar projetos MVC grandes em vários componentes de alto nível que podem ser trabalhados de forma independente
 
-* Oferece suporte a vários controladores com o mesmo nome - desde que eles têm diferentes *áreas*
+* Dá suporte a vários controladores com o mesmo nome – desde que eles tenham *áreas* diferentes
 
-Vamos dar uma olhada em um exemplo para ilustrar como áreas são criadas e usadas. Digamos que você tenha um aplicativo de armazenamento que tem dois grupos distintos de controladores e exibições: produtos e serviços. Uma pasta comum estrutura que usando áreas do MVC aparência abaixo:
+Vamos dar uma olhada em um exemplo para ilustrar como as Áreas são criadas e usadas. Digamos que você tenha um aplicativo de loja que tem dois agrupamentos distintos de controladores e exibições: Produtos e Serviços. Uma estrutura de pastas comum para isso usando áreas do MVC tem a aparência mostrada abaixo:
 
 * Nome do projeto
 
@@ -77,7 +77,7 @@ Vamos dar uma olhada em um exemplo para ilustrar como áreas são criadas e usad
 
           * Index.cshtml
 
-Quando tenta MVC renderizar uma exibição em uma área, por padrão, ele tenta pesquisar nos seguintes locais:
+Quando o MVC tenta renderizar uma exibição em uma Área, por padrão, ele tenta procurar nos seguintes locais:
 
 ```text
 /Areas/<Area-Name>/Views/<Controller-Name>/<Action-Name>.cshtml
@@ -85,9 +85,9 @@ Quando tenta MVC renderizar uma exibição em uma área, por padrão, ele tenta 
    /Views/Shared/<Action-Name>.cshtml
    ```
 
-Estes são os locais padrão que podem ser alterados por meio de `AreaViewLocationFormats` no `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions`.
+Esses são os locais padrão que podem ser alterados por meio do `AreaViewLocationFormats` no `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions`.
 
-Por exemplo, o código em vez de ter o nome da pasta como 'Áreas', abaixo foi alterado para 'Categorias'.
+Por exemplo, no código abaixo, em vez de ter o nome da pasta como 'Areas', ele foi alterado para 'Categories'.
 
 ```csharp
 services.Configure<RazorViewEngineOptions>(options =>
@@ -99,9 +99,9 @@ services.Configure<RazorViewEngineOptions>(options =>
    });
    ```
 
-Observe que é a estrutura do *modos de exibição* pasta é a única que é considerada importante aqui e, como o conteúdo do restante das pastas *controladores* e *modelos* does **não** importa. Por exemplo, você não precisa ter um *controladores* e *modelos* pasta todos. Isso funciona porque o conteúdo de *controladores* e *modelos* é apenas o código que é compilado em um. dll, enquanto que o conteúdo do *exibições* não até que uma solicitação para que modo de exibição foi feito.
+Uma coisa importante a ser observada é que a estrutura da pasta *Views* é a única que é considerada importante aqui e, o conteúdo do restante das pastas como *Controllers* e *Models* **não** importa. Por exemplo, você não precisa ter uma pasta *Controllers* e *Models*. Isso funciona porque o conteúdo de *Controllers* e *Models* é apenas um código que é compilado em uma .dll, enquanto o conteúdo de *Views* não é, até que uma solicitação para essa exibição seja feita.
 
-Depois que você definiu a hierarquia de pastas, você precisa informar ao MVC que cada controlador está associado uma área. Você pode fazer isso, decorando o nome do controlador com o `[Area]` atributo.
+Depois de definir a hierarquia de pastas, você precisa informar ao MVC que cada controlador está associado a uma área. Faça isso decorando o nome do controlador com o atributo `[Area]`.
 
 ```csharp
 ...
@@ -125,7 +125,7 @@ Depois que você definiu a hierarquia de pastas, você precisa informar ao MVC q
    }
    ```
 
-Configure uma definição de rota que funciona com as áreas recém-criado. O [roteamento para ações do controlador](routing.md) artigo apresenta detalhes sobre como criar definições de rota, incluindo o uso convencionais rotas versus rotas de atributo. Neste exemplo, vamos usar uma rota convencional. Para fazer isso, abra o *Startup.cs* de arquivo e modificá-lo adicionando o `areaRoute` chamado de definição da rota abaixo.
+Configure uma definição de rota que funciona com as áreas recém-criadas. O artigo [Roteamento para ações do controlador](routing.md) apresenta detalhes sobre como criar definições de rota, incluindo o uso de rotas convencionais versus rotas de atributo. Neste exemplo, usaremos uma rota convencional. Para fazer isso, abra o arquivo *Startup.cs* e modifique-o adicionando a definição de rota nomeada `areaRoute` abaixo.
 
 ```csharp
 ...
@@ -141,48 +141,48 @@ Configure uma definição de rota que funciona com as áreas recém-criado. O [r
    });
    ```
 
-Navegando para `http://<yourApp>/products`, o `Index` método de ação a `HomeController` no `Products` área será invocada.
+Navegando para `http://<yourApp>/products`, o método de ação `Index` do `HomeController` na área `Products` será invocado.
 
 ## <a name="link-generation"></a>Geração de link
 
-* Geração de links de uma ação dentro de uma área com base em controlador de outra ação dentro do mesmo controlador.
+* Geração de links em uma ação dentro de um controlador baseado em área para outra ação no mesmo controlador.
 
-  Digamos que o caminho da solicitação atual é como`/Products/Home/Create`
+  Digamos que o caminho da solicitação atual seja semelhante a `/Products/Home/Create`
 
-  Sintaxe de HtmlHelper:`@Html.ActionLink("Go to Product's Home Page", "Index")`
+  Sintaxe de HtmlHelper: `@Html.ActionLink("Go to Product's Home Page", "Index")`
 
-  Sintaxe de TagHelper:`<a asp-action="Index">Go to Product's Home Page</a>`
+  Sintaxe de TagHelper: `<a asp-action="Index">Go to Product's Home Page</a>`
 
-  Observe que não é necessário fornecer os valores de 'área' e 'controller' aqui elas já estão disponíveis no contexto da solicitação atual. Esses tipos de valores são chamados `ambient` valores.
+  Observe que não é necessário fornecer os valores 'area' e 'controller' aqui, pois já estão disponíveis no contexto da solicitação atual. Esses tipos de valores são chamados valores `ambient`.
 
-* Geração de links de uma ação dentro de uma área com base no controlador de outra ação em um controlador diferente
+* Geração de links em uma ação dentro de um controlador baseado em área para outra ação em outro controlador
 
-  Digamos que o caminho da solicitação atual é como`/Products/Home/Create`
+  Digamos que o caminho da solicitação atual seja semelhante a `/Products/Home/Create`
 
-  Sintaxe de HtmlHelper:`@Html.ActionLink("Go to Manage Products’  Home Page", "Index", "Manage")`
+  Sintaxe de HtmlHelper: `@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`
 
-  Sintaxe de TagHelper:`<a asp-controller="Manage" asp-action="Index">Go to Manage Products’  Home Page</a>`
+  Sintaxe de TagHelper: `<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
 
-  Observe que o valor de ambiente de uma área é usado aqui, mas o valor de 'controller' é especificado explicitamente acima.
+  Observe que aqui o valor de ambiente de uma "area" é usado, mas o valor de 'controller' é especificado de forma explícita acima.
 
-* Geração de links de uma ação dentro de uma área, controlador para outra ação com base em um controlador diferente e uma área diferente.
+* Geração de links em uma ação dentro de um controlador baseado em área para outra ação em outro controlador e outra área.
 
-  Digamos que o caminho da solicitação atual é como`/Products/Home/Create`
+  Digamos que o caminho da solicitação atual seja semelhante a `/Products/Home/Create`
 
-  Sintaxe de HtmlHelper:`@Html.ActionLink("Go to Services’ Home Page", "Index", "Home", new { area = "Services" })`
+  Sintaxe de HtmlHelper: `@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`
 
-  Sintaxe de TagHelper:`<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services’ Home Page</a>`
+  Sintaxe de TagHelper: `<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`
 
-  Observe que aqui sem valores de ambiente são usados.
+  Observe que aqui nenhum valor de ambiente é usado.
 
-* Geração de links de uma ação dentro de um controlador de área com base em outra ação em um controlador diferente e **não** em uma área.
+* Geração de links em uma ação dentro de um controlador baseado em área para outra ação em outro controlador e **não** em uma área.
 
-  Sintaxe de HtmlHelper:`@Html.ActionLink("Go to Manage Products’  Home Page", "Index", "Home", new { area = "" })`
+  Sintaxe de HtmlHelper: `@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`
 
-  Sintaxe de TagHelper:`<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products’  Home Page</a>`
+  Sintaxe de TagHelper: `<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
 
-  Desde que você deseja gerar links para uma área não-com base em ação do controlador, vazio é o valor de ambiente para 'área' aqui.
+  Como queremos gerar links para uma ação do controlador não baseada em área, esvaziamos o valor de ambiente para 'area' aqui.
 
-## <a name="publishing-areas"></a>Áreas de publicação
+## <a name="publishing-areas"></a>Publicando áreas
 
-Todos os `*.cshtml` e `wwwroot/**` para dar saída quando os arquivos são publicados `<Project Sdk="Microsoft.NET.Sdk.Web">` está incluído no *. csproj* arquivo.
+Todos os arquivos `*.cshtml` e `wwwroot/**` são publicados na saída quando `<Project Sdk="Microsoft.NET.Sdk.Web">` é incluído no arquivo *.csproj*.

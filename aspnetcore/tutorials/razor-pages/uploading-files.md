@@ -2,18 +2,18 @@
 title: "Carregando arquivos em uma página de Razor no ASP.NET Core"
 author: guardrex
 description: "Saiba como carregar arquivos em uma página do Razor."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/12/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: a29043ac5d28ae8efcbbd6919e73e3774ba22699
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 24eaa0dd9293cc932c51d280300308e835a0840e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Carregando arquivos em uma página de Razor no ASP.NET Core
 
@@ -76,9 +76,9 @@ Cada grupo de formulário inclui um **\<rótulo>** que exibe o nome de cada prop
 
 Cada grupo de formulário inclui uma validação **\<span>**. Se a entrada do usuário não atender aos atributos de propriedade definidos na classe `FileUpload` ou se qualquer uma das verificações de validação do arquivo de método `ProcessFormFile` falhar, o modelo não será validado. Quando a validação do modelo falha, uma mensagem de validação útil é renderizada para o usuário. Por exemplo, a propriedade `Title` é anotada com `[Required]` e `[StringLength(60, MinimumLength = 3)]`. Se o usuário não fornecer um título, ele receberá uma mensagem indicando que um valor é necessário. Se o usuário inserir um valor com menos de três caracteres ou mais de sessenta, ele receberá uma mensagem indicando que o valor tem um comprimento incorreto. Se um arquivo que não tem nenhum conteúdo for fornecido, uma mensagem aparecerá indicando que o arquivo está vazio.
 
-## <a name="add-the-code-behind-file"></a>Adicionar o arquivo code-behind
+## <a name="add-the-page-model"></a>Adicionar o modelo de página
 
-Adicione o arquivo code-behind (*Index.cshtml.cs*) à pasta *Agendamentos*:
+Adicione o modelo de página (*Index.cshtml.cs*) à pasta *Schedules*:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
 
@@ -110,7 +110,7 @@ Quando o usuário clica para excluir um agendamento, você deseja que ele tenha 
 
 [!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
-O arquivo code-behind (*Delete.cshtml.cs*) carrega um único agendamento identificado por `id` nos dados da rota da solicitação. Adicione o arquivo *Delete.cshtml.cs* à pasta *Agendamentos*:
+O modelo de página (*Delete.cshtml.cs*) carrega um único agendamento identificado por `id` nos dados de rota da solicitação. Adicione o arquivo *Delete.cshtml.cs* à pasta *Agendamentos*:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
 

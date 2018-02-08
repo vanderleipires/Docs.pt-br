@@ -1,107 +1,107 @@
 ---
-title: "Tratamento de solicitações com controladores no ASP.NET MVC de núcleo"
+title: "Manipulando solicitações com controladores no ASP.NET Core MVC"
 author: ardalis
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/controllers/actions
-ms.openlocfilehash: 99dcf1bd4f0dc4fcb6169f48bd398c9e40c21a35
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 1c6bf5ad92a43274af351652d240e2fa8873a956
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Tratamento de solicitações com controladores no ASP.NET MVC de núcleo
+# <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>Manipulando solicitações com controladores no ASP.NET Core MVC
 
 Por [Steve Smith](https://ardalis.com/) e [Scott Addie](https://github.com/scottaddie)
 
-Resultados da ação, ações e controladores são uma parte fundamental de como os desenvolvedores criar aplicativos usando o ASP.NET MVC de núcleo.
+Controladores, ações e resultados da ação são uma parte fundamental de como os desenvolvedores criam aplicativos usando o ASP.NET Core MVC.
 
 ## <a name="what-is-a-controller"></a>O que é um controlador?
 
-Um controlador é usado para definir e agrupar um conjunto de ações. Uma ação (ou *método de ação*) é um método em um controlador que trata as solicitações. Controladores de agrupam logicamente ações semelhantes. Essa agregação de ações permite comuns conjuntos de regras, como roteamento, cache e autorização, seja aplicado coletivamente. Solicitações são mapeadas para ações por meio de [roteamento](xref:mvc/controllers/routing).
+Um controlador é usado para definir e agrupar um conjunto de ações. Uma ação (ou *método de ação*) é um método em um controlador que manipula solicitações. Os controladores agrupam ações semelhantes de forma lógica. Essa agregação de ações permite que conjuntos de regras comuns, como roteamento, cache e autorização, sejam aplicados em conjunto. As solicitações são mapeadas para ações por meio de [roteamento](xref:mvc/controllers/routing).
 
 Por convenção, as classes do controlador:
-* Residem no nível raiz do projeto *controladores* pasta
-* Herdar de`Microsoft.AspNetCore.Mvc.Controller`
+* Residem na pasta *Controllers* no nível raiz do projeto
+* Herdam de `Microsoft.AspNetCore.Mvc.Controller`
 
-Um controlador é uma classe pode ser instanciada em que pelo menos uma das seguintes condições é verdadeira:
-* O nome da classe é o sufixo "Controller"
-* A classe herda de uma classe cujo nome é o sufixo "Controller"
-* A classe está decorada com o `[Controller]` atributo
+Um controlador é uma classe que pode ser instanciada, em que, pelo menos, uma das seguintes condições é verdadeira:
+* O nome da classe tem "Controller" como sufixo
+* A classe herda de uma classe cujo nome tem "Controller" como sufixo
+* A classe está decorada com o atributo `[Controller]`
 
-Uma classe de controlador não deve ter um tipo de `[NonController]` atributo.
+Uma classe de controlador não deve ter um atributo `[NonController]` associado.
 
-Controladores devem seguir o [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/). Há duas abordagens para implementar esse princípio. Se várias ações do controlador requerem o mesmo serviço, considere o uso de [injeção de construtor](xref:mvc/controllers/dependency-injection#constructor-injection) para solicitar essas dependências. Se o serviço é necessário por apenas um método de ação, considere o uso de [injeção de ação](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices) para solicitar a dependência.
+Os controladores devem seguir o [Princípio de Dependências Explícitas](http://deviq.com/explicit-dependencies-principle/). Há algumas abordagens para implementar esse princípio. Se várias ações do controlador exigem o mesmo serviço, considere o uso da [injeção de construtor](xref:mvc/controllers/dependency-injection#constructor-injection) para solicitar essas dependências. Se o serviço é necessário para um único método de ação, considere o uso da [Injeção de Ação](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices) para solicitar a dependência.
 
-Dentro de **M**odelo -**V**ibir -**C**ontroller padrão, um controlador é responsável pelo processamento da solicitação inicial e instanciação do modelo. Em geral, as decisões de negócios devem ser executadas dentro do modelo.
+Dentro do padrão **M**odel-**V**iew-**C**ontroller, um controlador é responsável pelo processamento inicial da solicitação e criação de uma instância do modelo. Em geral, as decisões de negócios devem ser tomadas dentro do modelo.
 
-O controlador usa o resultado do modelo de processamento (se houver) e retorna o modo de exibição correta e seus dados associados ou o resultado da chamada de API. Saiba mais em [visão geral do ASP.NET Core MVC](xref:mvc/overview) e [guia de Introdução ao ASP.NET MVC de núcleos e do Visual Studio](xref:tutorials/first-mvc-app/start-mvc).
+O controlador usa o resultado do processamento do modelo (se houver) e retorna a exibição correta e seus dados da exibição associada ou o resultado da chamada à API. Saiba mais em [Visão geral do ASP.NET Core MVC](xref:mvc/overview) e [Introdução ao ASP.NET Core MVC e ao Visual Studio](xref:tutorials/first-mvc-app/start-mvc).
 
-O controlador é um *nível de interface do usuário* abstração. Suas responsabilidades são para garantir que os dados de solicitação são válidos e escolha o modo de exibição (ou resultado de uma API) deve ser retornado. Em aplicativos bem fatorados, diretamente não inclui a lógica comercial ou de acesso de dados. Em vez disso, o controlador delega para tratar essas responsabilidades de serviços.
+O controlador é uma abstração no *nível da interface do usuário*. Suas responsabilidades são garantir que os dados de solicitação sejam válidos e escolher qual exibição (ou resultado de uma API) deve ser retornada. Em aplicativos bem fatorados, ele não inclui diretamente o acesso a dados ou a lógica de negócios. Em vez disso, o controlador delega essas responsabilidades a serviços.
 
 ## <a name="defining-actions"></a>Definindo ações
 
-Métodos públicos em um controlador, exceto aqueles decorados com o `[NonAction]` atributo, são ações. Parâmetros em ações são associados a dados de solicitação e são validados usando [associação de modelo](xref:mvc/models/model-binding). Ocorre a validação de modelo para tudo o que é ligada ao modelo. O `ModelState.IsValid` o valor da propriedade indica se a associação de modelo e a validação foi bem-sucedida.
+Métodos públicos em um controlador, exceto aqueles decorados com o atributo `[NonAction]`, são ações. Parâmetros em ações são associados aos dados de solicitação e validados usando a [associação de modelos](xref:mvc/models/model-binding). A validação de modelo ocorre em tudo o que é associado ao modelo. O valor da propriedade `ModelState.IsValid` indica se a associação de modelos e a validação foram bem-sucedidas.
 
-Métodos de ação devem conter lógica para mapear uma solicitação para um problema de negócios. Questões de negócios normalmente devem ser representados como serviços que acessa o controlador por meio de [injeção de dependência](xref:mvc/controllers/dependency-injection). Ações, em seguida, mapeiam o resultado da ação de negócios para um estado de aplicativo.
+Métodos de ação devem conter uma lógica para mapear uma solicitação para um interesse de negócios. Normalmente, interesses de negócios devem ser representados como serviços acessados pelo controlador por meio da [injeção de dependência](xref:mvc/controllers/dependency-injection). Em seguida, as ações mapeiam o resultado da ação de negócios para um estado do aplicativo.
 
-Ações podem retornar qualquer coisa, mas frequentemente retornar uma instância de `IActionResult` (ou `Task<IActionResult>` para métodos assíncronos) que produz uma resposta. O método de ação é responsável por escolher *o tipo de resposta*. O resultado da ação *a responder*.
+As ações podem retornar qualquer coisa, mas frequentemente retornam uma instância de `IActionResult` (ou `Task<IActionResult>` para métodos assíncronos) que produz uma resposta. O método de ação é responsável por escolher *o tipo de resposta*. O resultado da ação *é responsável pela resposta*.
 
 ### <a name="controller-helper-methods"></a>Métodos auxiliares do controlador
 
-Controladores geralmente herdam [controlador](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller), embora isso não é necessário. Derivando de `Controller` fornece acesso a três categorias de métodos auxiliares:
+Os controladores geralmente herdam de [Controller](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller), embora isso não seja necessário. A derivação de `Controller` fornece acesso a três categorias de métodos auxiliares:
 
-#### <a name="1-methods-resulting-in-an-empty-response-body"></a>1. Métodos, resultando em um corpo de resposta vazia
+#### <a name="1-methods-resulting-in-an-empty-response-body"></a>1. Métodos que resultam em um corpo de resposta vazio
 
-Não `Content-Type` cabeçalho de resposta HTTP é incluído, desde que o corpo da resposta não tem conteúdo para descrever.
+Nenhum cabeçalho de resposta HTTP `Content-Type` é incluído, pois o corpo da resposta não tem nenhum conteúdo a ser descrito.
 
-Há dois tipos de resultado dessa categoria: redirecionamento e código de Status HTTP.
+Há dois tipos de resultado nessa categoria: Redirecionamento e Código de Status HTTP.
 
 * **Código de Status HTTP**
 
-    Este tipo retorna um código de status HTTP. Alguns métodos auxiliares desse tipo são `BadRequest`, `NotFound`, e `Ok`. Por exemplo, `return BadRequest();` produz um código de 400 status quando executado. Quando métodos como `BadRequest`, `NotFound`, e `Ok` estão sobrecarregados, eles não se qualifica como respondentes de código de Status HTTP, pois a negociação de conteúdo está em andamento.
+    Esse tipo retorna um código de status HTTP. Alguns métodos auxiliares desse tipo são `BadRequest`, `NotFound` e `Ok`. Por exemplo, `return BadRequest();` produz um código de status 400 quando executado. Quando métodos como `BadRequest`, `NotFound` e `Ok` estão sobrecarregados, eles deixam de se qualificar como respondentes do Código de Status HTTP, pois a negociação de conteúdo está em andamento.
 
-* **Redirect**
+* **Redirecionamento**
 
-    Este tipo retorna um redirecionamento para uma ação ou um destino (usando `Redirect`, `LocalRedirect`, `RedirectToAction`, ou `RedirectToRoute`). Por exemplo, `return RedirectToAction("Complete", new {id = 123});` redireciona para `Complete`, passando um objeto anônimo.
+    Esse tipo retorna um redirecionamento para uma ação ou um destino (usando `Redirect`, `LocalRedirect`, `RedirectToAction` ou `RedirectToRoute`). Por exemplo, `return RedirectToAction("Complete", new {id = 123});` redireciona para `Complete`, passando um objeto anônimo.
 
-    O tipo de resultado de redirecionamento é diferente do tipo de código de Status HTTP principalmente na adição de um `Location` cabeçalho de resposta HTTP.
+    O tipo de resultado do Redirecionamento é diferente do tipo do Código de Status HTTP, principalmente na adição de um cabeçalho de resposta HTTP `Location`.
 
-#### <a name="2-methods-resulting-in-a-non-empty-response-body-with-a-predefined-content-type"></a>2. Métodos, resultando em um corpo de resposta não vazia com um tipo de conteúdo predefinido
+#### <a name="2-methods-resulting-in-a-non-empty-response-body-with-a-predefined-content-type"></a>2. Métodos que resultam em um corpo de resposta não vazio com um tipo de conteúdo predefinido
 
-A maioria dos métodos auxiliares nesta categoria incluem um `ContentType` propriedade, permitindo que você defina o `Content-Type` cabeçalho de resposta para descrever o corpo da resposta.
+A maioria dos métodos auxiliares desta categoria inclui uma propriedade `ContentType`, permitindo que você defina o cabeçalho de resposta `Content-Type` para descrever o corpo da resposta.
 
-Há dois tipos de resultado dessa categoria: [exibição](xref:mvc/views/overview) e [resposta formatada](xref:mvc/models/formatting).
+Há dois tipos de resultado nessa categoria: [Exibição](xref:mvc/views/overview) e [Resposta Formatada](xref:mvc/models/formatting).
 
 * **Exibir**
 
-    Esse tipo retorna uma exibição que usa um modelo para renderizar HTML. Por exemplo, `return View(customer);` passa a um modelo para o modo de exibição para associação de dados.
+    Esse tipo retorna uma exibição que usa um modelo para renderizar HTML. Por exemplo, `return View(customer);` passa um modelo para a exibição para associação de dados.
 
-* **Resposta formatada**
+* **Resposta Formatada**
 
-    Esse tipo retorna um formato de troca de dados semelhantes ou JSON para representar um objeto de uma maneira específica. Por exemplo, `return Json(customer);` serializa o objeto fornecido no formato JSON.
+    Esse tipo retorna JSON ou um formato de troca de dados semelhante para representar um objeto de uma maneira específica. Por exemplo, `return Json(customer);` serializa o objeto fornecido no formato JSON.
     
-    Outros métodos comuns desse tipo incluem `File`, `PhysicalFile`, e `VirtualFile`. Por exemplo, `return PhysicalFile(customerFilePath, "text/xml");` retorna um arquivo XML descrito por um `Content-Type` valor de cabeçalho de resposta de "text/xml".
+    Outros métodos comuns desse tipo incluem `File`, `PhysicalFile` e `VirtualFile`. Por exemplo, `return PhysicalFile(customerFilePath, "text/xml");` retorna um arquivo XML descrito por um valor do cabeçalho de resposta `Content-Type` igual a "text/xml".
 
-#### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3. Métodos, resultando em um corpo de resposta não vazio formatado em um tipo de conteúdo negociado com o cliente
+#### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3. Métodos que resultam em um corpo de resposta não vazio formatado em um tipo de conteúdo negociado com o cliente
 
-Esta categoria é conhecido como **negociação de conteúdo**. [Negociação de conteúdo](xref:mvc/models/formatting#content-negotiation) aplica-se sempre que uma ação retorna um [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) tipo ou algo diferente de um [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) implementação. Uma ação que retorna uma não -`IActionResult` implementação (por exemplo, `object`) também retorna uma resposta formatada.
+Essa categoria é mais conhecida como **Negociação de Conteúdo**. A [Negociação de conteúdo](xref:mvc/models/formatting#content-negotiation) aplica-se sempre que uma ação retorna um tipo [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) ou algo diferente de uma implementação [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult). Uma ação que retorna uma implementação não `IActionResult` (por exemplo, `object`) também retorna uma Resposta Formatada.
 
-Alguns métodos auxiliares desse tipo incluem `BadRequest`, `CreatedAtRoute`, e `Ok`. Exemplos desses métodos `return BadRequest(modelState);`, `return CreatedAtRoute("routename", values, newobject);`, e `return Ok(value);`, respectivamente. Observe que `BadRequest` e `Ok` realizar a negociação de conteúdo apenas quando um valor transmitido; sem serem passados a um valor, em vez disso, servem como tipos de resultado do código de Status HTTP. O `CreatedAtRoute` método, por outro lado, sempre executa negociação de conteúdo desde seus sobrecargas exigem que um valor passado.
+Alguns métodos auxiliares desse tipo incluem `BadRequest`, `CreatedAtRoute` e `Ok`. Exemplos desses métodos incluem `return BadRequest(modelState);`, `return CreatedAtRoute("routename", values, newobject);` e `return Ok(value);`, respectivamente. Observe que `BadRequest` e `Ok` fazem a negociação de conteúdo apenas quando um valor é passado; sem que um valor seja passado, eles atuam como tipos de resultado do Código de Status HTTP. Por outro lado, o método `CreatedAtRoute` sempre faz a negociação de conteúdo, pois todas as suas sobrecargas exigem que um valor seja passado.
 
-### <a name="cross-cutting-concerns"></a>Resolvem preocupações
+### <a name="cross-cutting-concerns"></a>Interesses paralelos
 
-Aplicativos normalmente compartilhar partes de seu fluxo de trabalho. Exemplos incluem um aplicativo que requer autenticação para acessar o carrinho de compras, ou um aplicativo que armazena dados em algumas páginas em cache. Para executar lógica antes ou depois de um método de ação, use um *filtro*. Usando [filtros](xref:mvc/controllers/filters) em resolvem preocupações pode reduzir duplicação, possibilitando que siga a [princípio não repita por conta própria (teste)](http://deviq.com/don-t-repeat-yourself/).
+Normalmente, os aplicativos compartilham partes de seu fluxo de trabalho. Exemplos incluem um aplicativo que exige autenticação para acessar o carrinho de compras ou um aplicativo que armazena dados em cache em algumas páginas. Para executar a lógica antes ou depois de um método de ação, use um *filtro*. O uso de [Filtros](xref:mvc/controllers/filters) em interesses paralelos pode reduzir a duplicação, possibilitando que elas sigam o [princípio DRY (Don't Repeat Yourself)](http://deviq.com/don-t-repeat-yourself/).
 
-Filtrar mais atributos, como `[Authorize]`, podem ser aplicadas no nível do controlador ou ação de acordo com o nível desejado de granularidade.
+A maioria dos atributos de filtro, como `[Authorize]`, pode ser aplicada no nível do controlador ou da ação, dependendo do nível desejado de granularidade.
 
-Tratamento de erros e o cache de resposta são geralmente resolvem preocupações:
+O tratamento de erro e o cache de resposta costumam ser interesses paralelos:
    * [Tratamento de erro](xref:mvc/controllers/filters#exception-filters)
    * [Cache de resposta](xref:performance/caching/response)
 
-Muitos resolvem preocupações podem ser feitas usando filtros ou personalizado [middleware](xref:fundamentals/middleware).
+Muitos interesses paralelos podem ser abordados com filtros ou um [middleware](xref:fundamentals/middleware) personalizado.
