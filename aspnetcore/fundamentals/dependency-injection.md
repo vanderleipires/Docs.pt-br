@@ -171,7 +171,7 @@ Em seguida, em `ConfigureServices`, cada tipo é adicionado ao contêiner de aco
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?range=26-32)]
 
-Observe que o serviço `IOperationSingletonInstance` usa uma instância específica com uma ID conhecida `Guid.Empty`, para que fique claro quando esse tipo está em uso (seu Guid serão todos zeros). Também registramos um `OperationService` que depende de cada um dos outros tipos `Operation`, de modo que fique claro em uma solicitação se esse serviço está obtendo a mesma instância do controlador ou uma nova, para cada tipo de operação. Tudo o que esse serviço faz é expor suas dependências como propriedades, para que possam ser mostradas no exibição.
+Observe que o serviço `IOperationSingletonInstance` usa uma instância específica com uma ID conhecida `Guid.Empty`, para que fique claro quando esse tipo está em uso (seu Guid serão todos zeros). Também registramos um `OperationService` que depende de cada um dos outros tipos `Operation`, de modo que fique claro em uma solicitação se esse serviço está obtendo a mesma instância do controlador ou uma nova, para cada tipo de operação. Tudo o que esse serviço faz é expor suas dependências como propriedades, para que possam ser mostradas na exibição.
 
 [!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Services/OperationService.cs)]
 
