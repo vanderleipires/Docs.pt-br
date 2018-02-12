@@ -1,5 +1,5 @@
 ---
-title: "Usando o Bower no ASP.NET Core"
+title: "Usando o Bower no núcleo do ASP.NET"
 author: rick-anderson
 description: Gerenciar pacotes do lado do cliente com Bower.
 manager: wpickett
@@ -10,18 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 0205eb34ac7f8b10720b0aa3a19bbdc3a74b545b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ee628ee14aa38969cdb4443718c378fd36192596
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
-# <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gerenciar pacotes do lado do cliente com Bower no ASP.NET Core
+# <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gerenciar pacotes do lado do cliente com Bower no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel arroz](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), e [Scott Addie](https://scottaddie.com) 
 
 > [!IMPORTANT]
-> Enquanto Bower é mantido, eles recomendam usar uma solução diferente. Yarn com Webpack é uma alternativa popular para a qual [instruções de migração](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) estão disponíveis.
+> Enquanto Bower é mantida, seus mantenedores recomendam usando uma solução diferente. Yarn com Webpack é uma alternativa popular para a qual [instruções de migração](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) estão disponíveis.
 
 [Bower](https://bower.io/) chama a mesmo "Um Gerenciador de pacotes para a web". No ecossistema do .NET, ele preenche essa lacuna deixado pela incapacidade do NuGet para entregar os arquivos de conteúdo estáticos. Para projetos do ASP.NET Core, esses arquivos estáticos são inerentes a bibliotecas de cliente como [jQuery](http://jquery.com/) e [inicialização](http://getbootstrap.com/). Para bibliotecas .NET, você usar [NuGet](https://www.nuget.org/) Gerenciador de pacotes.
 
