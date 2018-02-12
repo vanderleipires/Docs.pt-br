@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 8541fe47207c0af232ca81ae45da6af201d94799
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8cadb550eaa2dbc4541f945dc8d8d49fa757d4d3
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizado para a identidade do ASP.NET Core
 
@@ -21,7 +21,7 @@ Por [Steve Smith](https://ardalis.com/)
 
 Identidade do ASP.NET Core é um sistema extensível que permite que você criar um provedor de armazenamento personalizado e conectá-lo ao seu aplicativo. Este tópico descreve como criar um provedor de armazenamento personalizado para a identidade do ASP.NET Core. Ele aborda os conceitos importantes para criar seu próprio provedor de armazenamento, mas não o passo a passo.
 
-[Exibir ou baixar o exemplo do GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample).
+[Exibir ou baixar amostra do GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample).
 
 ## <a name="introduction"></a>Introdução
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 7200899d54585cd09e0a648e3aaaf839db2649e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5efc5ff367d5da5df060eba0028399af898a69fa
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 5
 ====================
@@ -35,7 +35,7 @@ Você criará uma página que adiciona cursos que são atribuídos para departam
 
 Você também criará uma página que funciona com uma relação muitos-para-muitos, atribuindo um instrutor a um curso (Adicionar uma relação entre duas entidades que você selecionar) ou removendo um instrutor de um curso (para remover uma relação entre duas entidades que você Selecione). No banco de dados, adicionar uma relação entre um instrutor e um curso resulta em uma nova linha que está sendo adicionada para o `CourseInstructor` tabela de associação; remover uma relação envolve a exclusão de uma linha do `CourseInstructor` tabela de associação. No entanto, você fazer isso no Entity Framework definindo propriedades de navegação, sem fazer referência ao `CourseInstructor` tabela explicitamente.
 
-[![Para Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image3.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image3.png)
 
 ## <a name="adding-an-entity-with-a-relationship-to-an-existing-entity"></a>Adicionar uma entidade com uma relação a uma entidade existente
 
@@ -77,7 +77,7 @@ Execute o *Courses.aspx* página e, em seguida, selecione o mesmo departamento p
 
 ## <a name="working-with-many-to-many-relationships"></a>Trabalhando com relações muitos-para-muitos
 
-A relação entre o `Courses` conjunto de entidades e a `People` conjunto de entidades é uma relação muitos-para-muitos. Um `Course` entidade tem uma propriedade de navegação nomeada `People` que pode conter zero, um ou mais relacionadas `Person` entidades (representando instrutores atribuídos ensinar curso). E um `Person` entidade tem uma propriedade de navegação nomeada `Courses` que pode conter zero, um ou mais relacionadas `Course` entidades (representando cursos que é atribuído pelo instrutor que ensinar). Um instrutor pode ensinar vários cursos e um curso pode ser ensinado por vários instrutores. Nesta seção do passo a passo, você irá adicionar e remover relações entre `Person` e `Course` entidades Atualizando as propriedades de navegação das entidades relacionadas.
+A relação entre o `Courses` conjunto de entidades e a `People` conjunto de entidades é uma relação muitos-para-muitos. Um `Course` entidade tem uma propriedade de navegação nomeada `People` que pode conter zero, um ou mais relacionadas `Person` entidades (representando instrutores atribuídos ensinar curso). E um `Person` entidade tem uma propriedade de navegação nomeada `Courses` que pode conter zero, um ou mais relacionadas `Course` entidades (representando cursos é atribuído pelo instrutor que ensinar). Um instrutor pode ensinar vários cursos e um curso pode ser ensinado por vários instrutores. Nesta seção do passo a passo, você irá adicionar e remover relações entre `Person` e `Course` entidades Atualizando as propriedades de navegação das entidades relacionadas.
 
 Criar uma nova página da web denominado *InstructorsCourses.aspx* que usa o *Site.Master* página mestra e adicione a seguinte marcação para o `Content` controle chamado `Content2`:
 
@@ -121,9 +121,9 @@ Adicione código para o `Page_Load` método que garante que as mensagens de erro
 
 Execute a página.
 
-[![Para Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-Selecione um instrutor. O **atribuir um curso** lista suspensa exibe os cursos instrutor não ensina, e o **remover um curso** lista suspensa exibe os cursos instrutor já está atribuído a. No **atribuir um curso** seção, selecione um curso e, em seguida, clique em **atribuir**. O curso move para o **remover um curso** lista suspensa. Selecione um curso no **remover um curso** seção e clique em **remover***.* O curso move para o **atribuir um curso** lista suspensa.
+Selecione um instrutor. O **atribuir um curso** lista suspensa exibe os cursos instrutor não ensina, e o **remover um curso** lista suspensa exibe os cursos instrutor já está atribuído a. No **atribuir um curso** seção, selecione um curso e, em seguida, clique em **atribuir**. O curso move para o **remover um curso** lista suspensa. Selecione um curso no **remover um curso** seção e clique em **remover *.* O curso move para o **atribuir um curso** lista suspensa.
 
 Agora você já viu alguns mais maneiras de trabalhar com dados relacionados. O tutorial a seguir, você aprenderá como usar herança no modelo de dados para melhorar a facilidade de manutenção de seu aplicativo.
 

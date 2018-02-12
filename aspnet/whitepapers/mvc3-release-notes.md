@@ -12,15 +12,15 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 92a6dee24b8942d721e3537a712be141155e61df
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: 058b7c6fe6eeeea4403e7e5fdc05bb44d2ba1300
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
-- [Visão Geral](#overview)
+- [Visão geral](#overview)
 - [Notas de instalação](#installation-notes)
 - [Requisitos de software](#software-requirements)
 - [Documentação](#documentation)
@@ -255,7 +255,7 @@ A lista de modelos de projeto inclui um novo modelo de aplicativo de Intranet. E
 
 #### <a name="project-templates-are-now-html5-enabled"></a>Modelos de projeto estão agora HTML5 habilitado
 
-Agora, a caixa de diálogo Novo projeto contém uma opção para adicionar recursos específicos do HTML5 para os modelos de projeto. Selecionando a opção faz com que os modos de exibição a ser gerado que contêm o HTML5 novo `<header>`, `<footer>`, e `<navigation>` elementos. elementos.
+Agora, a caixa de diálogo Novo projeto contém uma opção para adicionar recursos específicos do HTML5 para os modelos de projeto. Selecionando a opção faz com que os modos de exibição a ser gerado que contêm o HTML5 novo `<header>`, `<footer>`, e `<navigation>` elementos.
 
 Observe que as versões anteriores dos navegadores não dão suporte a marcas específicas do HTML5. Para resolver essa limitação, os modelos de projeto do HTML5 incluem uma referência para a biblioteca Modernizr. (Consulte a próxima seção).
 
@@ -608,7 +608,7 @@ Como alternativa, para desativar a validação de solicitação para todas as pr
 ## <a name="breaking-changes"></a>Alterações significativas
 
 - A ordem de execução de filtros de exceção foi alterado para filtros de exceção que têm o mesmo *ordem* valor. No ASP.NET MVC 2 e versões anteriores, filtros de exceção no controlador que tinha o mesmo *ordem* como aqueles em um método de ação foram executados antes dos filtros de exceção no método de ação. Isso normalmente seria o caso quando foram aplicados filtros de exceção sem uma especificado *ordem* valor. ASP.NET MVC 3, nesta ordem foi revertida para que o manipulador de exceção mais específico é executado pela primeira vez. Como nas versões anteriores, se o *ordem* propriedade seja explicitamente especificada, os filtros são executados na ordem especificada.
-- Adicionar uma nova propriedade chamada *FileExtensions* para o *VirtualPathProviderViewEngine* classe base. Ao procurar uma exibição pelo caminho (e não por nome), somente as exibições com uma extensão de arquivo contidos na lista especificada por essa nova propriedade é considerada. Isso é uma alteração significativa para aqueles que registrar uma personalizada de compilação para permitir uma extensão de arquivo personalizados para modos de exibição de formulário da web e e fazem referência a essas exibições usando um caminho completo em vez de um nome. A solução é modificar o valor da *FileExtensions* propriedade inclua a extensão de arquivo personalizado.
+- Adicionar uma nova propriedade chamada *FileExtensions* para o *VirtualPathProviderViewEngine* classe base. Ao procurar uma exibição pelo caminho (e não por nome), somente as exibições com uma extensão de arquivo contidos na lista especificada por essa nova propriedade é considerada. Isso é uma alteração significativa para aqueles que registrar um provedor de compilação personalizada para habilitar uma extensão de arquivo personalizados para modos de exibição de formulário da web e fazem referência a essas exibições usando um caminho completo em vez de um nome. A solução é modificar o valor da *FileExtensions* propriedade inclua a extensão de arquivo personalizado.
 
 <a id="_Toc276711795"></a>
 ## <a name="known-issues"></a>Problemas Conhecidos

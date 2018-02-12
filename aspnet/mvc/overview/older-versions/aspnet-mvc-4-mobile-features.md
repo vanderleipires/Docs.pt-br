@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: d47d8f61dc7af6e1dc5887338be862ea81d7bb17
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f4e0e4eb558e0c7b9e94fc83ede986fa4c666739
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Recursos móveis do ASP.NET MVC 4
 ====================
@@ -308,7 +308,7 @@ Conforme você digita cada letra na caixa de pesquisa, o jQuery Mobile filtra a 
 
 Como o padrão *alto-falantes* exibição, o *marcas* modo de exibição pode ser lido, mas os links são pequenos e difíceis de toque em um dispositivo móvel. Nesta seção, você corrigirá a *marcas* exibir da mesma maneira que você fixa o *alto-falantes* exibição.
 
-Remover o &quot;ocultar&quot; sufixo para o o *Views\Home\AllTags.Mobile.cshtml.hide* é o nome de arquivo *Views\Home\AllTags.Mobile.cshtml*. Abra o arquivo renomeado e remova o `<h2>` elemento.
+Remover o &quot;ocultar&quot; sufixo para o *Views\Home\AllTags.Mobile.cshtml.hide* é o nome de arquivo *Views\Home\AllTags.Mobile.cshtml*. Abra o arquivo renomeado e remova o `<h2>` elemento.
 
 Adicionar o `data-role` e `data-filter` atributos para o `<ul>` marca, conforme mostrado aqui:
 

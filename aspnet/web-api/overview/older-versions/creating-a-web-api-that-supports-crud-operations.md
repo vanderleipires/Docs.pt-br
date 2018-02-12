@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: a91bf065c9ce0fc5bd9b7115340edabea975a7e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69b7d5453b6ff36d6e28a69428b016cb8cfd06e9
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Habilitar operações CRUD de ASP.NET Web API 1
 ====================
@@ -42,11 +42,11 @@ Os produtos de API expõe métodos a seguir.
 | Ação | Método HTTP | URI relativo |
 | --- | --- | --- |
 | Obter uma lista de todos os produtos | OBTER | produtos/api / |
-| Obter um produto por ID | OBTER | /API/produtos/*id* |
-| Obter um produto por categoria | OBTER | produtos/api /? categoria =*categoria* |
+| Obter um produto por ID | OBTER | /api/products/*id* |
+| Obter um produto por categoria | OBTER | /api/products?category=*category* |
 | Criar um novo produto | POSTAR | produtos/api / |
-| Atualização de um produto | PUT | /API/produtos/*id* |
-| Excluir um produto | DELETE | /API/produtos/*id* |
+| Atualização de um produto | PUT | /api/products/*id* |
+| Excluir um produto | DELETE | /api/products/*id* |
 
 Observe que alguns dos URIs incluem a identificação do produto no caminho. Por exemplo, para obter o produto cuja ID é 28, o cliente envia uma solicitação GET `http://hostname/api/products/28`.
 
@@ -57,7 +57,7 @@ Os produtos API define URIs para os dois tipos de recursos:
 | Recurso | URI |
 | --- | --- |
 | A lista de todos os produtos. | produtos/api / |
-| Um produto individual. | /API/produtos/*id* |
+| Um produto individual. | /api/products/*id* |
 
 ### <a name="methods"></a>Métodos
 
@@ -127,7 +127,7 @@ Se você trabalhou com o ASP.NET MVC, em seguida, você já está familiarizado 
 
 Vá em frente e excluir ValuesController, clicando duas vezes o arquivo no Gerenciador de soluções e selecionando **excluir.** Agora adicione um novo controlador, da seguinte maneira:
 
-Em **Solution Explorer**, clique a pasta controladores. Selecione **adicionar** e, em seguida, selecione **controlador**.
+Em **Solution Explorer**, clique na pasta controladores. Selecione **adicionar** e, em seguida, selecione **controlador**.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image6.png)
 
@@ -158,8 +158,8 @@ A API ProductStore irá expor vários &quot;ler&quot; ações como métodos HTTP
 | Ação | Método HTTP | URI relativo |
 | --- | --- | --- |
 | Obter uma lista de todos os produtos | OBTER | produtos/api / |
-| Obter um produto por ID | OBTER | /API/produtos/*id* |
-| Obter um produto por categoria | OBTER | produtos/api /? categoria =*categoria* |
+| Obter um produto por ID | OBTER | /api/products/*id* |
+| Obter um produto por categoria | OBTER | /api/products?category=*category* |
 
 Para obter a lista de todos os produtos, adicione este método para o `ProductsController` classe:
 

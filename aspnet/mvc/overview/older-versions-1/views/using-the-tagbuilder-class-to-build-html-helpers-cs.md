@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ddc4e91bb14082c7c5e889d064d29d2bf91f7329
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63f07c3f95c520dbc74f3568aa65dc6a6f34a901
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>Usando a classe TagBuilder para compilar auxiliares HTML (c#)
 ====================
@@ -59,11 +59,11 @@ Por exemplo, a listagem 1 contém um auxiliar de imagem HTML. O auxiliar de imag
 
 A classe na listagem 1 contém dois métodos sobrecarregados estáticos chamados Image. Quando você chama o método Image(), você pode passar um objeto que representa um conjunto de atributos HTML ou não.
 
-Observe como o método TagBuilder.MergeAttribute() é usado para adicionar atributos individuais, como o atributo src para o TagBuilder. Observe, além disso, como o método TagBuilder.MergeAttributes() é usado para adicionar uma coleção de atributos para o TagBuilder. O método MergeAttributes() aceita um dicionário&lt;de cadeia de caracteres, objeto&gt; parâmetro. A classe RouteValueDictionary o é usada para converter o objeto que representa a coleção de atributos em um dicionário&lt;de cadeia de caracteres, objeto&gt;.
+Observe como o método TagBuilder.MergeAttribute() é usado para adicionar atributos individuais, como o atributo src para o TagBuilder. Observe, além disso, como o método TagBuilder.MergeAttributes() é usado para adicionar uma coleção de atributos para o TagBuilder. O método MergeAttributes() aceita um dicionário&lt;de cadeia de caracteres, objeto&gt; parâmetro. A classe RouteValueDictionary é usada para converter o objeto que representa a coleção de atributos em um dicionário&lt;de cadeia de caracteres, objeto&gt;.
 
 Depois de criar o auxiliar de imagem, você pode usar o auxiliar em exibições ASP.NET MVC assim como qualquer um dos outros auxiliares HTML padrão. O modo de exibição na lista 2 usa o auxiliar de imagem para exibir a mesma imagem de um Xbox duas vezes (consulte a Figura 1). O auxiliar Image() é chamado com e sem uma coleção de atributos HTML.
 
-**A listagem 2 - Home\Index.aspx**
+**Listing 2 - Home\Index.aspx**
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-cs/samples/sample2.aspx)]
 

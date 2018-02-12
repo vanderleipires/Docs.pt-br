@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: c2d7454534ff0e9e0a80365793800ab7c45d3b6e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fe67b9a11a82b55d5f3e0e5f1b0cee10a58833d2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>Abrir tipos no v4 do OData com a API da Web do ASP.NET
 ====================
@@ -100,11 +100,11 @@ O documento de metadados, você pode ver que:
 
 - Para o `Book` e `Press` tipos, o valor de `OpenType` atributo é true. O `Customer` e `Address` tipos não têm esse atributo.
 - O `Book` tipo de entidade tem três propriedades declaradas: ISBN, título e pressione. Os metadados do OData não incluir o `Book.Properties` propriedade da classe CLR.
-- Da mesma forma, o `Press` tem apenas duas propriedades declaradas: nome e categoria. Os metadados não tem o `Press.DynamicProperties` propriedade da classe CLR.
+- Da mesma forma, o `Press` tem apenas duas propriedades declaradas: nome e categoria. Os metadados não incluir o `Press.DynamicProperties` propriedade da classe CLR.
 
 ## <a name="query-an-entity"></a>Consultar uma entidade
 
-Para obter o catálogo com ISBN igual a "978-0-7356-7942-9", o envio envie uma solicitação GET para `~/Books('978-0-7356-7942-9')`. O corpo da resposta deve ser semelhante ao seguinte. (Recuado para torná-lo mais legível).
+Para obter o catálogo com ISBN igual a "978-0-7356-7942-9", envie uma solicitação GET para `~/Books('978-0-7356-7942-9')`. O corpo da resposta deve ser semelhante ao seguinte. (Recuado para torná-lo mais legível).
 
 [!code-console[Main](use-open-types-in-odata-v4/samples/sample7.cmd?highlight=8-13,15-23)]
 

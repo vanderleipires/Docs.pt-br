@@ -9,17 +9,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: 4815155ad238c31316e00471cf87beb3dd262613
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 65372020ef6554476fb95549f13d110a748b5863
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c"></a>Autenticação de nuvem com o Azure Active Directory B2C
 
 Por [Cam Soper](https://twitter.com/camsoper)
 
-[B2C de diretório ativo do Azure](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C) é uma solução de gerenciamento de identidade de nuvem para aplicativos web e móveis. O serviço fornece autenticação para aplicativos hospedados na nuvem e local. Tipos de autenticação incluem incluem contas individuais, contas de rede social e federados contas corporativas. Além disso, o Azure AD B2C pode fornecer autenticação multifator com configuração mínima.
+[B2C de diretório ativo do Azure](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C) é uma solução de gerenciamento de identidade de nuvem para aplicativos web e móveis. O serviço fornece autenticação para aplicativos hospedados na nuvem e local. Tipos de autenticação incluem contas individuais, contas de rede social e federados contas corporativas. Além disso, o Azure AD B2C pode fornecer autenticação multifator com configuração mínima.
 
 > [!TIP]
 > Azure Active Directory (AD do Azure) do Azure AD B2C são ofertas de produtos separados. Um locatário do AD do Azure representa uma organização, enquanto um locatário Azure AD B2C representa uma coleção de identidades a serem usadas com aplicativos de terceira parte confiável. Para obter mais informações, consulte [do Azure AD B2C: perguntas frequentes (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs).

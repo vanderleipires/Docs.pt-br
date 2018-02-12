@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 8aeb04f772fa687706bd8080b4306ff0040a159f
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 14c7fdfc1ed8b87aac8ca937298c7da6373bf06d
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmação de conta e de recuperação de senha no núcleo do ASP.NET
 
@@ -114,7 +114,7 @@ A linha precedente impede que usuários registrados que está sendo conectado at
 
 ### <a name="configure-email-provider"></a>Configurar o provedor de email
 
-Neste tutorial, SendGrid é usada para enviar email. Você precisa de uma conta do SendGrid e a chave para enviar email. Você pode usar outros provedores de email. ASP.NET Core 2. x inclui `System.Net.Mail`, que permite enviar email de seu aplicativo. É recomendável que usar o SendGrid ou outro serviço de email para enviar email. O SMTP é difícil para proteger e configurado corretamente.
+Neste tutorial, SendGrid é usada para enviar email. Você precisa de uma conta do SendGrid e a chave para enviar email. Você pode usar outros provedores de email. ASP.NET Core 2. x inclui `System.Net.Mail`, que permite enviar email de seu aplicativo. É recomendável que usar o SendGrid ou outro serviço de email para enviar email. O SMTP é difícil proteger e configurado corretamente.
 
 O [padrão de opções](xref:fundamentals/configuration/options) é usado para acessar as configurações de conta e a chave de usuário. Para obter mais informações, consulte [configuração](xref:fundamentals/configuration/index).
 

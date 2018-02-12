@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
-ms.openlocfilehash: 3fd29a5b26c564d88e4128d1904fab00b57a3b7c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8e875a4282df78ec647579e74c3fbeabd2495fc2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>Implantação de Web do ASP.NET usando o Visual Studio: Implantando uma atualização de banco de dados
 ====================
@@ -27,7 +27,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Neste tutorial, você fazer uma alteração de banco de dados e alterações de código relacionadas, teste as alterações no Visual Studio, em seguida, implante a atualização para os ambientes de teste, preparação e produção.
 
@@ -90,7 +90,7 @@ Nesta seção, você adiciona uma coluna de data de nascimento para o `Person` a
 6. No **Web um clique em publicar** barra de ferramentas, clique no **produção** perfil de publicação e, em seguida, clique em **Publicar Web**.
 7. Execute o **instrutores** página em produção para verificar se a atualização foi implantada com êxito.
 
-    Para um uma atualização do aplicativo real de produção que inclui uma alteração de banco de dados é normalmente também levaria o aplicativo offline durante a implantação usando *aplicativo\_offline.htm*, como você viu no tutorial anterior.
+    Para uma atualização do aplicativo real de produção que inclui uma banco de dados alteração levaria normalmente também o aplicativo offline durante a implantação usando *aplicativo\_offline.htm*, como você viu no tutorial anterior.
 
 ## <a name="deploy-a-database-update-by-using-the-dbdacfx-provider"></a>Implantar uma atualização de banco de dados usando o provedor dbDacFx
 

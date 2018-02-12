@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 93b4df5fcbde8d87866d00dffda8a241d0dd596b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6de7d279677c7bbf220b956767a97aaaff8da9a1
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="adding-validation-to-the-model"></a>Adicionando validação para o modelo
 ====================
@@ -26,7 +26,7 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 > > Uma versão atualizada deste tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) que usa o ASP.NET MVC 5 e Visual Studio 2013. É muito mais simples a seguir, mais segura e demonstra mais recursos.
 
 
-Isso nesta seção você adicionará a lógica de validação de `Movie` modelo e você garantirá que as regras de validação são aplicadas a qualquer momento em que um usuário tenta criar ou editar um filme usando o aplicativo.
+Nesta seção, você adicionará a lógica de validação de `Movie` modelo e você garantirá que as regras de validação são aplicadas a qualquer momento em que um usuário tenta criar ou editar um filme usando o aplicativo.
 
 ## <a name="keeping-things-dry"></a>Manter as coisas SECA
 
@@ -133,7 +133,7 @@ Observe como o código usa um `Html.EditorFor` auxiliar para gerar o `<input>` e
 
 O que é realmente interessante sobre essa abordagem é que o controlador, nem o modelo de exibição criar sabe nada sobre as regras de validação real que está sendo impostas ou as mensagens de erro específico. As regras de validação e as cadeias de caracteres de erro são especificadas somente na classe `Movie`. Essas mesmas regras de validação são aplicadas automaticamente para o modo de exibição de edição e outros modos de exibição modelos você pode criar que editar seu modelo.
 
-Se você quiser alterar a lógica de validação mais tarde, você pode fazer isso em exatamente um local adicionando atributos de validação para o modelo (neste exemplo, a `movie` classe). Você não precisa se preocupar se diferentes partes do aplicativo estão inconsistentes com a forma como as regras são impostas – toda a lógica de validação será definida em um lugar e usada em todos os lugares. Isso mantém o código muito limpo e torna-o mais fácil de manter e desenvolver. E significa que você estará totalmente para respeitar o princípio seco.
+Se você quiser alterar a lógica de validação mais tarde, você pode fazer isso em exatamente um local adicionando atributos de validação para o modelo (neste exemplo, a `movie` classe). Você não precisa se preocupar se diferentes partes do aplicativo estão inconsistentes com a forma como as regras são impostas – toda a lógica de validação será definida em um lugar e usada em todos os lugares. Isso mantém o código muito limpo e torna-o mais fácil de manter e desenvolver. Além disso, isso significa que você respeitará totalmente o princípio DRY.
 
 ## <a name="adding-formatting-to-the-movie-model"></a>Adicionando formatação para o modelo de filme
 

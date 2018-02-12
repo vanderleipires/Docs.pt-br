@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 0dd1717ff1051f18a78fe77402c7603008b9b486
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fce1a20f9d1093b6c60542d8a786ddf54fdc922c
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>Parte 8: Páginas finais, tratamento de exceção e conclusão
 ====================
@@ -77,7 +77,7 @@ Agora, na página\_carregar extração do manipulador de eventos mensagens de er
 
 ## <a id="_Toc260221683"></a>Conclusão
 
-Já vimos que esse ASP.NET WebForms torna mais fácil para criar um site sofisticado com acesso de banco de dados, associação, AJAX, etc. muito rapidamente.
+Já vimos que ASP.NET WebForms torna mais fácil para criar um site sofisticado com acesso de banco de dados, associação, AJAX, etc. muito rapidamente.
 
 Esperamos que este tutorial lhe forneceu as ferramentas que você precisa para começar a criar seus próprios formulários da Web do ASP.NET em aplicativos!
 

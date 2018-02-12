@@ -10,17 +10,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: a63bfc26bb6b0f5ea1c64641d6f57a3555d7f401
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: d768e2daf2464b282b097e935ef6c5f85e8705f5
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c"></a>Autenticação de nuvem em APIs com o Azure Active Directory B2C da web
 
 Por [Cam Soper](https://twitter.com/camsoper)
 
-[B2C de diretório ativo do Azure](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C) é uma solução de gerenciamento de identidade de nuvem para aplicativos web e móveis. O serviço fornece autenticação para aplicativos hospedados na nuvem e local. Tipos de autenticação incluem incluem contas individuais, contas de rede social e federados contas corporativas. Além disso, o Azure AD B2C pode fornecer autenticação multifator com configuração mínima.
+[B2C de diretório ativo do Azure](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C) é uma solução de gerenciamento de identidade de nuvem para aplicativos web e móveis. O serviço fornece autenticação para aplicativos hospedados na nuvem e local. Tipos de autenticação incluem contas individuais, contas de rede social e federados contas corporativas. Além disso, o Azure AD B2C pode fornecer autenticação multifator com configuração mínima.
 
 > [!TIP]
 > Azure Active Directory (AD do Azure) do Azure AD B2C são ofertas de produtos separados. Um locatário do AD do Azure representa uma organização, enquanto um locatário Azure AD B2C representa uma coleção de identidades a serem usadas com aplicativos de terceira parte confiável. Para obter mais informações, consulte [do Azure AD B2C: perguntas frequentes (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs).

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 8f28116f88f3cf5143d3d5c9821519d62c4e5452
-ms.sourcegitcommit: 6541c8b11001dd617adf5eb04c814cda165070b9
+ms.openlocfilehash: ceb7d3a7d1cb1685c0f1e62698f508c9a73e77c2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="an-overview-of-project-katana"></a>Uma visão geral do projeto Katana
 ====================

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6e5a936decb27fd2e3b8cdcea44db8db822c98eb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2025f31f369153b93cd293884880c97635fc8ab8
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Chamar a API da Web de um aplicativo do Windows Phone 8 (c#)
 ====================
@@ -122,14 +122,14 @@ Este tutorial de ponta a ponta, você aprenderá como usar a API da Web para cri
 6. Atualização de **MainViewModel.cs** classe para incluir a funcionalidade para se comunicar com o aplicativo de API da Web de livraria:
 
     1. Expanda o **ViewModels** pasta no Gerenciador de soluções e, em seguida, clique duas vezes o **MainViewModel.cs** arquivo.
-    2. Quando o a **MainViewModel.cs** arquivo é aberto, substitua o código no arquivo pelo seguinte; Observe que você precisa atualizar o valor da `apiUrl` constante com a URL real da sua API da Web: 
+    2. Quando o **MainViewModel.cs** arquivo é aberto, substitua o código no arquivo pelo seguinte; Observe que você precisa atualizar o valor da `apiUrl` constante com a URL real da sua API da Web: 
 
         [!code-csharp[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample5.cs)]
     3. Salve e feche o **MainViewModel.cs** arquivo.
 7. Atualização de **MainPage. XAML** arquivo para personalizar o nome do aplicativo:
 
     1. Clique duas vezes o **MainPage. XAML** arquivo no Gerenciador de soluções.
-    2. Quando o a **MainPage. XAML** arquivo é aberto, localize as seguintes linhas de código: 
+    2. Quando o **MainPage. XAML** arquivo é aberto, localize as seguintes linhas de código: 
 
         [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample6.xml)]
     3. Substitua as linhas com o seguinte: 
@@ -139,7 +139,7 @@ Este tutorial de ponta a ponta, você aprenderá como usar a API da Web para cri
 8. Atualização de **DetailsPage.xaml** arquivo para personalizar itens exibidos:
 
     1. Clique duas vezes o **DetailsPage.xaml** arquivo no Gerenciador de soluções.
-    2. Quando o a **DetailsPage.xaml** arquivo é aberto, localize as seguintes linhas de código: 
+    2. Quando o **DetailsPage.xaml** arquivo é aberto, localize as seguintes linhas de código: 
 
         [!code-xml[Main](calling-web-api-from-a-windows-phone-8-application/samples/sample8.xml)]
     3. Substitua as linhas com o seguinte: 

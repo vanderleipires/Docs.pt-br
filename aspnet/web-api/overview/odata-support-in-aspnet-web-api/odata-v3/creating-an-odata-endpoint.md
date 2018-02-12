@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: cb466124aacf6b13c1ade22ad8b865b83e6351e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 33fe4d764bf9bf64c852f1269255925b5cc42536
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Criar um ponto de extremidade OData v3 com Web API 2
 ====================
@@ -95,7 +95,7 @@ Compile o projeto agora. Na próxima etapa, vamos usar alguns scaffolding do Vis
 
 Um *controlador* é uma classe que trata as solicitações HTTP. Você definir um controlador separado para cada entidade definida no serviço OData. Neste tutorial, vamos criar um único controlador.
 
-No Gerenciador de soluções, clique a pasta controladores. Selecione **adicionar** e, em seguida, selecione **controlador**.
+No Gerenciador de soluções, clique na pasta de controladores. Selecione **adicionar** e, em seguida, selecione **controlador**.
 
 ![](creating-an-odata-endpoint/_static/image5.png)
 
@@ -241,7 +241,7 @@ OData oferece suporte a vários formatos de serialização:
 
 - Publicação do Atom (XML)
 - JSON "claro" (introduzido no OData v3)
-- JSON "detalhado" (OData v2)
+- JSON "verbose" (OData v2)
 
 Por padrão, a API da Web usa formato de "light" AtomPubJSON. 
 

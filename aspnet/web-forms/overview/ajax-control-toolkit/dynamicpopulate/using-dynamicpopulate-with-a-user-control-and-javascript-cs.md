@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3f78da3898d44cc2cf1db6623ebcaf6a73ebbf3e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0d98177561b72ffbe05455f785e156f91e450d36
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>Usando DynamicPopulate com um controle de usuário e o JavaScript (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle DynamicPopulate no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino na página, sem uma atualização de página. Também é possível disparar a população usando código personalizado de JavaScript do lado do cliente. No entanto, um cuidado especial tem a ser tomada quando o extensor reside em um controle de usuário.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O `DynamicPopulate` controle no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino na página, sem uma atualização de página. Também é possível disparar a população usando código personalizado de JavaScript do lado do cliente. No entanto, um cuidado especial tem a ser tomada quando o extensor reside em um controle de usuário.
 
@@ -67,7 +67,7 @@ Finalmente, adicione o controle de usuário para a página. Você só precisa de
 
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-cs/samples/sample8.aspx)]
 
-E pronto. A página se comporta como esperado: um usuário clica em dos botões de opção, o controle no Kit de ferramentas chama o serviço web e exibe a data atual no formato desejado.
+E pronto. A página se comporta como esperado: um usuário clica em um dos botões de opção, o controle no Kit de ferramentas chama o serviço web e exibe a data atual no formato desejado.
 
 
 [![Os botões de opção residem em um controle de usuário](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image1.png)

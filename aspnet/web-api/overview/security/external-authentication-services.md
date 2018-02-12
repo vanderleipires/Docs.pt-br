@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: 5d6e6727f387d047e7b41a6efa0d2dadf467558e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 744396cb0c95d1887f259b1e2e890bd06ef7d049
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a>Serviços de autenticação externa com a API da Web do ASP.NET (c#)
 ====================
@@ -49,7 +49,7 @@ Para acompanhar os exemplos neste passo a passo, você precisa ter o seguinte:
     - Uma conta de usuário do Google
     - Uma conta de desenvolvedor com o identificador do aplicativo e a chave secreta para um dos seguintes serviços de autenticação de mídia social:
 
-        - Contas da Microsoft ([https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070))
+        - Microsoft Accounts ([https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070))
         - Twitter ([https://dev.twitter.com/](https://dev.twitter.com/))
         - Facebook ([https://developers.facebook.com/](https://developers.facebook.com/))
 
@@ -243,8 +243,8 @@ Uma vez que obteve a chave do consumidor e o segredo do consumidor, use as etapa
 
 Para obter informações adicionais sobre como criar aplicativos que usam OpenID e OAuth, consulte as seguintes URLs:
 
-- [https://go.microsoft.com/fwlink/?LinkId=252166](https://go.microsoft.com/fwlink/?LinkID=252166)
-- [https://go.microsoft.com/fwlink/?LinkId=243995](https://go.microsoft.com/fwlink/?LinkID=243995)
+- [https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166)
+- [https://go.microsoft.com/fwlink/?LinkID=243995](https://go.microsoft.com/fwlink/?LinkID=243995)
 
 <a id="COMBINE"></a>
 ### <a name="combining-external-authentication-services"></a>A combinação de serviços de autenticação externa
@@ -263,7 +263,7 @@ Alguns provedores de autenticação externa não dão suporte a testar seu aplic
     1. Abra um prompt de comando com privilégios elevados no Windows.
     2. Digite o seguinte comando:
 
-        <kbd>o bloco de notas %WinDir%\system32\drivers\etc\hosts</kbd>
+        <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
     3. Adicione uma entrada semelhante à seguinte ao arquivo HOSTS:
 
         <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
@@ -281,7 +281,7 @@ Alguns provedores de autenticação externa não dão suporte a testar seu aplic
         <kbd>CD /d &quot;%ProgramFiles%\IIS Express&quot;</kbd>
     3. Digite o seguinte comando para adicionar o FQDN para o seu aplicativo:
 
-        <kbd>definir a configuração de appcmd.exe-section:system.applicationHost/sites / +&quot;[nome = 'WebApplication1'] .bindings. [ protocolo = 'http', bindingInformation ='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
+        <kbd>appcmd.exe set config -section:system.applicationHost/sites /+&quot;[name='WebApplication1'].bindings.[protocol='http',bindingInformation='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
 
  Onde **WebApplication1** é o nome do seu projeto e **bindingInformation** contém o número da porta e o FQDN que você deseja usar para seus testes.
 
@@ -303,7 +303,7 @@ A vinculação de um aplicativo do Windows Live para Microsoft Authentication é
 <a id="DISABLE"></a>
 ### <a name="optional-disable-local-registration"></a>Opcional: Desabilitar o registro Local
 
-A funcionalidade de registro do local atual do ASP.NET não impede que programas automatizados (bots) criar membro contas; Por exemplo, usando uma tecnologia de validação e prevenção de bot como [CAPTCHA](../../../web-pages/overview/security/16-adding-security-and-membership.md). Por isso, você deve remover o link de formulário e registro de logon local na página de logon. Para fazer isso, abra o  *\_cshtml* página em seu projeto e, em seguida, comentar as linhas para o painel de logon local e o link de registro. A página resultante deve estar como como o exemplo de código a seguir:
+A funcionalidade de registro do local atual do ASP.NET não impede que programas automatizados (bots) criar membro contas; Por exemplo, usando uma tecnologia de validação e prevenção de bot como [CAPTCHA](../../../web-pages/overview/security/16-adding-security-and-membership.md). Por isso, você deve remover o link de formulário e registro de logon local na página de logon. Para fazer isso, abra o  *\_cshtml* página em seu projeto e, em seguida, comentar as linhas para o painel de logon local e o link de registro. A página resultante deve parecer com o exemplo de código a seguir:
 
 [!code-html[Main](external-authentication-services/samples/sample10.html)]
 

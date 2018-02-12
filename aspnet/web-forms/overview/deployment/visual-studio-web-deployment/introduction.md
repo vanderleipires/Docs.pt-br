@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a7c5b348e44a88a56680237b0cac75c999901ec3
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Implantação de Web do ASP.NET usando o Visual Studio: Introdução
 ====================
@@ -195,7 +195,7 @@ Os seguintes recursos do aplicativo afetam como implantar ou o que você precisa
 - O aplicativo usa o sistema de associação do ASP.NET, que armazena informações de conta de usuário em um banco de dados do SQL Server. O aplicativo define um usuário de administrador que tem acesso a algumas informações restritas. Você precisa implantar o banco de dados de associação sem contas de teste, mas com uma conta de administrador.
 - O aplicativo usa um utilitário de relatório e log de erros do terceiro. Esse utilitário é fornecido em um assembly que deve ser implantado com o aplicativo.
 - O utilitário de log de erro grava informações de erro em arquivos XML para uma pasta de arquivos. Você precisa certificar-se de que a conta que o ASP.NET é executado no site implantado tem permissão de gravação nessa pasta, e você precisa excluir esta pasta de implantação. (Caso contrário, os dados de log de erros do ambiente de teste podem ser implantados para produção e/ou arquivos de log de erros de produção podem ser excluídos.)
-- O aplicativo inclui algumas configurações que devem ser alteradas em implantado *Web. config* arquivo dependendo do ambiente de destino (teste, preparo ou produção) e outras configurações que devem ser alteradas dependendo da compilação configuração (Debug ou Release).
+- O aplicativo inclui algumas configurações que devem ser alteradas no implantado *Web. config* arquivo dependendo do ambiente de destino (teste, preparo ou produção) e outras configurações que devem ser alteradas dependendo da compilação configuração (Debug ou Release).
 - A solução do Visual Studio inclui um projeto de biblioteca de classe. Somente o assembly que gera este projeto deve ser implantado, não o próprio projeto.
 
 ## <a name="summary"></a>Resumo

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7b9acc02a1280446b9826c3f8f0022b4726139c7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a40238605e8fb3e26d80264af9156eec634affbe
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="storing-additional-user-information-vb"></a>Armazenando informações de usuário adicionais (VB)
 ====================
@@ -353,7 +353,7 @@ Acabei usando o seguinte `LayoutTemplate`, `ItemTemplate`, e `ItemSeparatorTempl
 
 O `LayoutTemplate` define a marcação emitidos pelo controle, enquanto o `ItemTemplate` renderiza cada item retornado por SqlDataSource. O `ItemTemplate`da marcação resultante será colocada no `LayoutTemplate`do `itemPlaceholder` controle. Além de `itemPlaceholder`, o `LayoutTemplate` inclui um controle DataPager, o que limita a ListView para mostrar apenas 10 comentários do livro de visitas por página (o padrão) e apresenta uma interface de paginação.
 
-Meu `ItemTemplate` exibe o assunto do comentário de cada livro de convidados em um `<h4>` elemento com o corpo situado abaixo o assunto. Observe que essa sintaxe usada para exibir o corpo usa os dados retornados pelo `Eval("Body")` instrução de associação de dados, converte-o em uma cadeia de caracteres e as quebras de linha substitui com o `<br />` elemento. Essa conversão é necessária para mostrar as quebras de linha inseridas ao enviar o comentário, desde que o espaço em branco é ignorado por HTML. Assinatura do usuário é exibida sob o corpo em itálico, seguido cidade do usuário, um link para sua home page, a data e hora em que o comentário foi feito e o nome de usuário da pessoa que saiu do comentário.
+Meu `ItemTemplate` exibe o assunto do comentário de cada livro de convidados em um `<h4>` elemento com o corpo situado abaixo o assunto. Observe que a sintaxe usada para exibir o corpo leva os dados retornados pelo `Eval("Body")` instrução de associação de dados, converte-o em uma cadeia de caracteres e as quebras de linha substitui com o `<br />` elemento. Essa conversão é necessária para mostrar as quebras de linha inseridas ao enviar o comentário, desde que o espaço em branco é ignorado por HTML. Assinatura do usuário é exibida sob o corpo em itálico, seguido cidade do usuário, um link para sua home page, a data e hora em que o comentário foi feito e o nome de usuário da pessoa que saiu do comentário.
 
 Dedicar um tempo para exibir a página por meio de um navegador. Você deve ver os comentários que você adicionou ao livro de convidados na etapa 5 exibidos aqui.
 
