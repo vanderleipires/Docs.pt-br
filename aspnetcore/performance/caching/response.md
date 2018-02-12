@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 37592c3b2099c2cb74dc42ad4a7937b32c281f65
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>O cache de resposta no núcleo do ASP.NET
 
@@ -68,7 +68,7 @@ Para obter mais informações, consulte [Introdução ao cache na memória no AS
 
 ### <a name="distributed-cache"></a>Cache distribuído
 
-Use um cache distribuído para armazenar dados na memória quando o aplicativo é hospedado em um farm de servidor ou de nuvem. O cache é compartilhado entre os servidores que processam solicitações. Um cliente pode enviar uma solicitação que foi tratada por qualquer servidor no grupo e dados armazenados em cache para o cliente está disponível. ASP.NET Core oferece o SQL Server e os caches Redis distribuído.
+Use um cache distribuído para armazenar dados na memória quando o aplicativo é hospedado em um farm de servidor ou de nuvem. O cache é compartilhado entre os servidores que processam solicitações. Um cliente pode enviar uma solicitação que é tratada por qualquer servidor no grupo, se os dados armazenados em cache para o cliente estão disponíveis. ASP.NET Core oferece o SQL Server e os caches Redis distribuído.
 
 Para obter mais informações, consulte [trabalhando com um cache distribuído](xref:performance/caching/distributed).
 
@@ -78,7 +78,7 @@ Você pode armazenar em cache o conteúdo de um modo de exibição do MVC ou Raz
 
 Para obter mais informações, consulte [auxiliar de marca de Cache no ASP.NET MVC de núcleo](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper).
 
-### <a name="distributed-cache-tag-helper"></a>Auxiliar de marca de Cache distribuído
+### <a name="distributed-cache-tag-helper"></a>Auxiliar de Marca de Cache Distribuído
 
 Você pode armazenar em cache o conteúdo de um modo de exibição do MVC ou página de Razor em nuvem distribuído ou cenários de farm da web com o auxiliar de marca de Cache distribuído. O auxiliar de marca de Cache distribuído usa o SQL Server ou Redis para armazenar dados.
 
@@ -86,12 +86,14 @@ Para obter mais informações, consulte [auxiliar de marca de Cache distribuído
 
 ## <a name="responsecache-attribute"></a>Atributo ResponseCache
 
-O `ResponseCacheAttribute` Especifica os parâmetros necessários para definir os cabeçalhos apropriados no cache de resposta. Consulte [ResponseCacheAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.responsecacheattribute) para obter uma descrição dos parâmetros.
+O [ResponseCacheAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.ResponseCacheAttribute) Especifica os parâmetros necessários para definir os cabeçalhos apropriados no cache de resposta.
 
 > [!WARNING]
-> Desabilite o cache de conteúdo que contém informações para clientes autenticados. O cache deve ser habilitado apenas para o conteúdo que não são alterados com base na identidade do usuário ou se um usuário estiver conectado.
+> Desabilite o cache de conteúdo que contém informações para clientes autenticados. O cache deve ser habilitado apenas para o conteúdo que não são alterados com base na identidade do usuário ou se um usuário está conectado.
 
-`VaryByQueryKeys string[]`(requer o ASP.NET Core 1.1 e posteriores): quando definido, o Middleware de cache de resposta a resposta armazenada varia de acordo com os valores de determinada lista de chaves de consulta. O Middleware de cache de resposta deve ser habilitado para definir o `VaryByQueryKeys` propriedade; caso contrário, uma exceção de tempo de execução é gerada. Não há nenhum cabeçalho HTTP correspondente para o `VaryByQueryKeys` propriedade. Essa propriedade é um recurso HTTP manipulado pelo Middleware de armazenamento em cache a resposta. Para o middleware servir uma resposta em cache, a cadeia de caracteres de consulta e o valor de cadeia de caracteres de consulta devem corresponder uma solicitação anterior. Por exemplo, considere a sequência de solicitações e resultados mostrados na tabela a seguir.
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) a resposta armazenada varia de acordo com os valores de determinada lista de chaves de consulta. Quando um único valor de `*` é fornecido, o middleware varia respostas por todos os parâmetros de cadeia de caracteres de consulta de solicitação. `VaryByQueryKeys`exige o ASP.NET Core 1.1 ou posterior.
+
+O Middleware de cache de resposta deve ser habilitado para definir o `VaryByQueryKeys` propriedade; caso contrário, uma exceção de tempo de execução é gerada. Não existe um cabeçalho HTTP correspondente para o `VaryByQueryKeys` propriedade. A propriedade é um recurso HTTP manipulado pelo Middleware de armazenamento em cache a resposta. Para o middleware servir uma resposta em cache, a cadeia de caracteres de consulta e o valor de cadeia de caracteres de consulta devem corresponder uma solicitação anterior. Por exemplo, considere a sequência de solicitações e resultados mostrados na tabela a seguir.
 
 | Solicitação                          | Resultado                   |
 | -------------------------------- | ------------------------ |
@@ -101,7 +103,7 @@ O `ResponseCacheAttribute` Especifica os parâmetros necessários para definir o
 
 A primeira solicitação é retornada pelo servidor e armazenados em cache no middleware. A segunda solicitação é retornada pelo middleware porque a cadeia de caracteres de consulta corresponde a solicitação anterior. A terceira solicitação não está no cache de middleware porque o valor de cadeia de caracteres de consulta não corresponde a uma solicitação anterior. 
 
-O `ResponseCacheAttribute` é usado para configurar e criar (por meio de `IFilterFactory`) um `ResponseCacheFilter`. O `ResponseCacheFilter` realiza o trabalho de atualização de cabeçalhos HTTP apropriados e os recursos da resposta. O filtro:
+O `ResponseCacheAttribute` é usado para configurar e criar (por meio de `IFilterFactory`) um [ResponseCacheFilter](/dotnet/api/microsoft.aspnetcore.mvc.internal.responsecachefilter). O `ResponseCacheFilter` realiza o trabalho de atualização de cabeçalhos HTTP apropriados e os recursos da resposta. O filtro:
 
 * Remove qualquer cabeçalho existente para `Vary`, `Cache-Control`, e `Pragma`. 
 * Grava os cabeçalhos apropriados com base nas propriedades definidas no `ResponseCacheAttribute`. 

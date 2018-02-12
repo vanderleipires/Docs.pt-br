@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 27150d314b6861f1098e6ef4a7de94e7b371a78e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 64ac4e3575f69c164ba053943984ef25f906d7f4
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/11/2018
 ---
 <a name="introduction-to-signalr"></a>Introdução ao SignalR
 ====================
@@ -35,7 +35,7 @@ O SignalR do ASP.NET é uma biblioteca para desenvolvedores do ASP.NET que simpl
 
 SignalR pode ser usado para adicionar qualquer tipo de funcionalidade da web "em tempo real" em seu aplicativo ASP.NET. Enquanto bate-papo geralmente é usada como um exemplo, você pode fazer muito mais. Sempre que um usuário atualiza uma página da web para ver os novos dados ou a página implementa [pesquisa longa](http://en.wikipedia.org/wiki/Push_technology#Long_polling) para recuperar novos dados, é um candidato ao uso do SignalR. Os exemplos incluem painéis e monitoramento de aplicativos, aplicativos de colaboração (como simultâneas de edição de documentos), atualizações de andamento e trabalho formulários em tempo real.
 
-O SignalR também permite completamente novos tipos de aplicativos web que exigem atualizações de alta frequência do servidor, por exemplo, jogos em tempo real. Para um ótimo exemplo disso, consulte o [ShootR jogo.](http://shootr.signalr.net/)
+O SignalR também permite completamente novos tipos de aplicativos web que exigem atualizações de alta frequência do servidor, por exemplo, jogos em tempo real.
 
 O SignalR fornece uma API simples para a criação de chamadas de procedimento remoto do servidor-para-cliente (RPC) que chamam funções JavaScript no cliente de navegadores (e outras plataformas de cliente) do código do .NET do servidor. O SignalR também inclui API para gerenciamento de conexão (por exemplo, se conectar e desconectar eventos) e o agrupamento de conexões.
 

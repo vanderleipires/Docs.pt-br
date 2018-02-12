@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: eae51e74c7f2b2f038638c765d4e833a1d9b1232
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: c10f94b40fec00e7533cc3a6e88daa3f3da614ed
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware de compactação de resposta para o ASP.NET Core
 
@@ -76,10 +76,10 @@ Você pode explorar os recursos do Middleware de compactação de resposta com o
 * Como adicionar um tipo de MIME para a lista padrão de tipos de MIME para compactação.
 
 ## <a name="package"></a>Pacote
-Para incluir o middleware em seu projeto, adicione uma referência para o [ `Microsoft.AspNetCore.ResponseCompression` ](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) pacote ou use o [ `Microsoft.AspNetCore.All` ](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) pacote. Este recurso está disponível para aplicativos que se destinam a ASP.NET Core 1.1 ou posterior.
+Para incluir o middleware em seu projeto, adicione uma referência para o [ `Microsoft.AspNetCore.ResponseCompression` ](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) pacote ou use o [ `Microsoft.AspNetCore.All` ](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) pacote. Esse recurso está disponível para aplicativos direcionados ao ASP.NET Core 1.1 ou posterior.
 
 ## <a name="configuration"></a>Configuração
-O código a seguir mostra como habilitar o Middleware de compactação de resposta com o com a compactação gzip padrão e para tipos MIME padrão.
+O código a seguir mostra como habilitar o Middleware de compactação de resposta com a compactação gzip padrão e para tipos MIME padrão.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -185,7 +185,7 @@ Ao compactar respostas com base no `Accept-Encoding` cabeçalho, há potencialme
 Quando uma solicitação é delegada por Nginx, o `Accept-Encoding` cabeçalho é removido. Isso impede que o middleware da compactação de resposta. Para obter mais informações, consulte [NGINX: compactação e descompactação de](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Esse problema é acompanhado por [descobrir a compactação de passagem para Nginx (BasicMiddleware 123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Trabalhando com compactação dinâmica do IIS
-Se você tiver um active IIS compactação módulo dinâmico configurado no nível do servidor que você deseja desabilitar para um aplicativo, você pode fazer isso com uma adição à sua *Web. config* arquivo. Para obter mais informações, consulte [módulos do IIS desabilitando](xref:host-and-deploy/iis/modules#disabling-iis-modules).
+Se você tiver um active IIS compactação módulo dinâmico configurado no nível do servidor que você deseja desabilitar para um aplicativo, você pode fazer isso com uma adição à sua *Web. config* arquivo. Para obter mais informações, consulte [Desabilitando módulos do IIS](xref:host-and-deploy/iis/modules#disabling-iis-modules).
 
 ## <a name="troubleshooting"></a>Solução de problemas
 Usar uma ferramenta como [Fiddler](http://www.telerik.com/fiddler), [Firebug](http://getfirebug.com/), ou [carteiro](https://www.getpostman.com/), que permitem que você defina o `Accept-Encoding` cabeçalho de solicitação e analise os cabeçalhos de resposta, o tamanho e o corpo. O Middleware de compactação de resposta compacta respostas que atendem às seguintes condições:

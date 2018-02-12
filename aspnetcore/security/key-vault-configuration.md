@@ -8,11 +8,11 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 1318ae855154dd8fc91ff0c19b0ab111d86c71e6
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1a91a87fb90d4d4651e07f32415e4364c8e2d993
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Provedor de configuração do Cofre de chaves do Azure
 
@@ -77,7 +77,7 @@ Quando você executa o aplicativo, uma página da Web mostra os valores de segre
 `AddAzureKeyVault`também fornece uma sobrecarga que aceita uma implementação de `IKeyVaultSecretManager`, que permite que você controle como chave segredos do cofre são convertidos em chaves de configuração. Por exemplo, você pode implementar a interface para carregar valores secretos com base em um valor de prefixo que você fornece durante a inicialização do aplicativo. Isso permite que você, por exemplo, para carregar os segredos com base na versão do aplicativo.
 
 > [!WARNING]
-> Não use prefixos em segredos de Cofre de chaves para colocar os segredos para vários aplicativos no mesmo Cofre de chaves ou colocar segredos ambientais (por exemplo, *desenvolvimento* verus *produção* segredos) no mesmo cofre. É recomendável que diferentes aplicativos e ambientes de desenvolvimento/produção usam cofres chave separados para isolar os ambientes de aplicativo para o nível mais alto de segurança.
+> Não use prefixos em segredos de Cofre de chaves para colocar os segredos para vários aplicativos no mesmo Cofre de chaves ou colocar segredos ambientais (por exemplo, *desenvolvimento* versus *produção* segredos) no mesmo cofre. É recomendável que diferentes aplicativos e ambientes de desenvolvimento/produção usam cofres chave separados para isolar os ambientes de aplicativo para o nível mais alto de segurança.
 
 Usando o segundo aplicativo de exemplo, criar um segredo no cofre de chaves para `5000-AppSecret` (períodos não são permitidos em nomes de Cofre de chave secreta) que representa um segredo do aplicativo para a versão 5.0.0.0 do seu aplicativo. Para outra versão, 5.1.0.0, você cria um segredo para `5100-AppSecret`. Cada versão do aplicativo carrega seu próprio valor secreto em sua configuração como `AppSecret`, remoção desativar a versão que ele carrega o segredo. Implementação do exemplo é mostrada abaixo:
 
