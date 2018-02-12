@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: 7aa200d3612f766ab633ccab807421b9c5393975
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f4ed38f7395e3f4fe939584c1f3f5b0dba93724c
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introdução ao estado da sessão e do aplicativo no ASP.NET Core
 
@@ -84,7 +84,7 @@ O código da classe `Startup` a seguir configura o provedor de TempData baseado 
 
 ---
 
-A ordenação é crítica para componentes de middleware. No exemplo anterior, uma exceção do tipo `InvalidOperationException` ocorre quando `UseSession` é invocado após `UseMvcWithDefaultRoute`. Consulte [Ordenação de Middleware](xref:fundamentals/middleware#ordering) para obter mais detalhes.
+A ordenação é crítica para componentes de middleware. No exemplo anterior, uma exceção do tipo `InvalidOperationException` ocorre quando `UseSession` é invocado após `UseMvcWithDefaultRoute`. Consulte [Ordenação de Middleware](xref:fundamentals/middleware/index#ordering) para obter mais detalhes.
 
 > [!IMPORTANT]
 > Se o alvo for o .NET Framework e o provedor baseado em sessão for usado, adicione o pacote NuGet [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session) ao seu projeto.
@@ -189,7 +189,7 @@ O exemplo a seguir mostra como definir e obter um objeto serializável:
 
 A abstração `HttpContext` dá suporte a uma coleção de dicionário do tipo `IDictionary<object, object>`, chamada `Items`. Essa coleção está disponível desde o início de um *HttpRequest* e é descartada no final de cada solicitação. Você pode acessá-la atribuindo um valor a uma entrada com chave ou solicitando o valor de uma determinada chave.
 
-No exemplo abaixo, [Middleware](middleware.md) adiciona `isVerified` à coleção `Items`.
+No exemplo a seguir, [Middleware](xref:fundamentals/middleware/index) adiciona `isVerified` à coleção `Items`.
 
 ```csharp
 app.Use(async (context, next) =>

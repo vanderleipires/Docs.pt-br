@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 24eaa0dd9293cc932c51d280300308e835a0840e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a2c6da6ed698d1a65ee51bd00a557e607f012da
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Carregando arquivos em uma página de Razor no ASP.NET Core
 
@@ -23,11 +23,29 @@ Nesta seção, o carregamento de arquivos com uma página do Razor é demonstrad
 
 O [aplicativo de exemplo Filme da páginas do Razor](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) nesse tutorial usa a associação de modelos simples para carregar arquivos, o que funciona bem para carregar arquivos pequenos. Para obter informações sobre a transmissão de arquivos grandes, consulte [Carregando arquivos grandes com streaming](xref:mvc/models/file-uploads#uploading-large-files-with-streaming).
 
-Nas etapas a seguir, você adicionará um recurso de upload de arquivo da agenda de filmes ao aplicativo de exemplo. Um agendamento de filmes é representado por uma classe `Schedule`. A classe inclui duas versões do agendamento. Uma versão é fornecida aos clientes, `PublicSchedule`. A outra versão é usada para os funcionários da empresa, `PrivateSchedule`. Cada versão é carregada como um arquivo separado. O tutorial demonstra como executar dois carregamentos de arquivos de uma página com um único POST para o servidor.
+Nas etapas a seguir, um recurso de upload de arquivo da agenda de filmes será adicionado ao aplicativo de exemplo. Um agendamento de filmes é representado por uma classe `Schedule`. A classe inclui duas versões do agendamento. Uma versão é fornecida aos clientes, `PublicSchedule`. A outra versão é usada para os funcionários da empresa, `PrivateSchedule`. Cada versão é carregada como um arquivo separado. O tutorial demonstra como executar dois carregamentos de arquivos de uma página com um único POST para o servidor.
+
+## <a name="security-considerations"></a>Considerações sobre segurança
+
+É preciso ter cuidado ao fornecer aos usuários a possibilidade de carregar arquivos em um servidor. Os invasores podem executar uma [negação de serviço](/windows-hardware/drivers/ifs/denial-of-service) e outros ataques em um sistema. Algumas etapas de segurança que reduzem a probabilidade de um ataque bem-sucedido são:
+
+* Fazer o upload de arquivos para uma área de upload de arquivos dedicada no sistema, o que facilita a aplicação de medidas de segurança sobre o conteúdo carregado. Ao permitir os uploads de arquivos, certifique-se de que as permissões de execução estejam desabilitadas no local do upload.
+* Use um nome de arquivo seguro determinado pelo aplicativo, não da entrada do usuário ou o nome do arquivo carregado.
+* Permitir somente um conjunto específico de extensões de arquivo aprovadas.
+* Certifique-se de que as verificações do lado do cliente sejam realizadas no servidor. As verificações do lado do cliente são fáceis de contornar.
+* Verifique o tamanho do upload e evite uploads maiores do que o esperado.
+* Execute um verificador de vírus/malware no conteúdo carregado.
+
+> [!WARNING]
+> Carregar códigos mal-intencionados em um sistema é frequentemente a primeira etapa para executar o código que pode:
+> * Tomar o controle total de um sistema.
+> * Sobrecarregar um sistema, fazendo com que ele falhe completamente.
+> * Comprometer dados do sistema ou de usuários.
+> * Aplicar pichações a uma interface pública.
 
 ## <a name="add-a-fileupload-class"></a>Adicionar uma classe FileUpload
 
-Abaixo, crie uma página do Razor para lidar com um par de carregamentos de arquivos. Adicione uma classe `FileUpload`, que é vinculada à página para obter os dados do agendamento. Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **FileUpload** e adicione as seguintes propriedades:
+Criar uma Página Razor para lidar com um par de carregamentos de arquivos. Adicione uma classe `FileUpload`, que é vinculada à página para obter os dados do agendamento. Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **FileUpload** e adicione as seguintes propriedades:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
 
@@ -38,6 +56,23 @@ A classe tem uma propriedade para o título do agendamento e uma propriedade par
 Para evitar duplicação de código para processar arquivos do agendamento carregados, primeiro, adicione um método auxiliar estático. Crie uma pasta de *Utilitários* no aplicativo e adicione um arquivo *FileHelpers.cs* com o seguinte conteúdo. O método auxiliar, `ProcessFormFile`, usa um [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) e [ModelStateDictionary](/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary) e retorna uma cadeia de caracteres que contém o tamanho e o conteúdo do arquivo. O comprimento e o tipo de conteúdo são verificados. Se o arquivo não passar em uma verificação de validação, um erro será adicionado ao `ModelState`.
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
+
+### <a name="save-the-file-to-disk"></a>Salvar o arquivo no disco
+
+O aplicativo de exemplo salva o conteúdo do arquivo em um campo de banco de dados. Para salvar o conteúdo do arquivo no disco, use um [FileStream](/dotnet/api/system.io.filestream):
+
+```csharp
+using (var fileStream = new FileStream(filePath, FileMode.Create))
+{
+    await formFile.CopyToAsync(fileStream);
+}
+```
+
+O processo de trabalho deve ter permissões de gravação para o local especificado por `filePath`.
+
+### <a name="save-the-file-to-azure-blob-storage"></a>Salvar o arquivo no Armazenamento de Blobs do Azure
+
+Para carregar o conteúdo do arquivo para o Armazenamento de Blobs do Azure, confira [Introdução ao Armazenamento de Blobs do Azure usando o .NET](/azure/storage/blobs/storage-dotnet-how-to-use-blobs). O tópico demonstra como usar [UploadFromStream](/dotnet/api/microsoft.windowsazure.storage.file.cloudfile.uploadfromstreamasync) para salvar um [FileStream](/dotnet/api/system.io.filestream) para armazenamento de blobs.
 
 ## <a name="add-the-schedule-class"></a>Adicionar a classe de Agendamento
 
@@ -106,7 +141,7 @@ Abra *_Layout.cshtml* e adicione um link para a barra de navegação para acessa
 
 ## <a name="add-a-page-to-confirm-schedule-deletion"></a>Adicionar uma página para confirmar a exclusão de agendamento
 
-Quando o usuário clica para excluir um agendamento, você deseja que ele tenha a oportunidade de cancelar a operação. Adicione uma página de confirmação de exclusão (*Delete.cshtml*) à pasta *Agendamentos*:
+Quando o usuário clica para excluir um agendamento, é oferecida uma oportunidade de cancelar a operação. Adicione uma página de confirmação de exclusão (*Delete.cshtml*) à pasta *Agendamentos*:
 
 [!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
@@ -144,7 +179,7 @@ O usuário pode clicar no link **Excluir** para chegar à exibição de confirma
 
 Para solucionar problemas de informações com o carregamento de `IFormFile`, consulte [Carregamentos de arquivos no ASP.NET Core: solução de problemas](xref:mvc/models/file-uploads#troubleshooting).
 
-Obrigado por concluir esta introdução às Páginas Razor. Agradecemos todos os comentários deixados. [Introdução ao MVC e ao EF Core](xref:data/ef-mvc/intro) é um excelente acompanhamento para este tutorial.
+Obrigado por concluir esta introdução às Páginas Razor. Agradecemos os comentários. [Introdução ao MVC e ao EF Core](xref:data/ef-mvc/intro) é um excelente acompanhamento para este tutorial.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

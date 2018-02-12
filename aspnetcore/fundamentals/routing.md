@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: 2897eb3a756654c61e38e847f5a8e1f8ca4f0b7c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d35c24347e8e06ed85e2af8addcc1f8cf28dc47a
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
@@ -36,7 +36,7 @@ O roteamento usa *rotas* (implementações de [IRouter](https://docs.microsoft.c
 
 Em geral, um aplicativo tem uma única coleção de rotas. Quando uma solicitação é recebida, a coleção de rotas é processada na ordem. A solicitação de entrada procura uma rota que corresponde à URL de solicitação chamando o método `RouteAsync` em cada rota disponível na coleção de rotas. Por outro lado, uma resposta pode usar o roteamento para gerar URLs (por exemplo, para redirecionamento ou links) com base nas informações de rotas e evitar a necessidade de embutir as URLs em código, o que ajuda a facilidade de manutenção.
 
-O roteamento está conectado ao pipeline do [middleware](middleware.md) pela classe `RouterMiddleware`. O [ASP.NET MVC](../mvc/overview.md) adiciona o roteamento ao pipeline do middleware como parte de sua configuração. Para saber mais sobre como usar o roteamento como um componente autônomo, consulte [using-routing-middleware](#using-routing-middleware).
+O roteamento está conectado ao pipeline do [middleware](xref:fundamentals/middleware/index) pela classe `RouterMiddleware`. O [ASP.NET Core MVC](xref:mvc/overview) adiciona o roteamento ao pipeline do middleware como parte de sua configuração. Para saber mais sobre como usar o roteamento como um componente autônomo, confira [Usando o middleware de roteamento](#using-routing-middleware).
 
 <a name="url-matching-ref"></a>
 
