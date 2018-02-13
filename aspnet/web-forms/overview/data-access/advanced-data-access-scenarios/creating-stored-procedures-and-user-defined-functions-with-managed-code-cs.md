@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: be3e3d61a6567da3c2cd696c01661146f2da7131
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6daa0dec764e2e9248cac97ba7d7b6df0da3208f
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>Criando procedimentos armazenados e funções definidas pelo usuário com código gerenciado (c#)
 ====================
@@ -420,7 +420,7 @@ O código começa criando um `SqlMoney` instância denominada `inventoryValue` q
 
 ## <a name="step-11-deploying-the-managed-udf"></a>Etapa 11: Implantando o UDF gerenciado
 
-Agora que que o UDF gerenciada foi criado, você está pronto para implantá-lo no banco de dados Northwind. Como vimos na etapa 4, os objetos gerenciados em um projeto do SQL Server são implantados clicando duas vezes no nome do projeto no Gerenciador de soluções e escolhendo a opção de implantar no menu de contexto.
+Agora que o UDF gerenciado tiver sido criado, você está pronto para implantá-lo no banco de dados Northwind. Como vimos na etapa 4, os objetos gerenciados em um projeto do SQL Server são implantados clicando duas vezes no nome do projeto no Gerenciador de soluções e escolhendo a opção de implantar no menu de contexto.
 
 Depois de ter implantado o projeto, retorne ao SQL Server Management Studio e atualize a pasta de funções com valor escalar. Agora você deve ver duas entradas:
 
