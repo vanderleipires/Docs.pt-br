@@ -1115,7 +1115,7 @@
 ##### [Examinar como o ASP.NET MVC faz scaffold do auxiliar DropDownList](mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
 ##### [Adicionando uma nova categoria ao DropDownList usando o jQuery UI](mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui.md)
 ### [Versões mais antigas – MVC 1 e 2](mvc/overview/older-versions-1/index.md)
-#### [Visão Geral](mvc/overview/older-versions-1/overview/index.md)
+#### [Visão geral](mvc/overview/older-versions-1/overview/index.md)
 ##### [Visão geral do ASP.NET MVC](mvc/overview/older-versions-1/overview/asp-net-mvc-overview.md)
 ##### [Noções básicas sobre o processo de execução do ASP.NET MVC](mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process.md)
 ##### [Noções básicas sobre modelos, exibições e controladores (C#)](mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs.md)
@@ -1289,7 +1289,7 @@
 ##### [Vitrine do ASP.NET MVC parte 16: refazer associação com OpenID](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
 ##### [Vitrine do ASP.NET MVC parte 17: check-out com Jeff Atwood](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
 ##### [Vitrine do ASP.NET MVC parte 18: criação de experiência](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-##### [Vitrine do ASP.NET MVC parte 19: processamento de pedidos com o fluxo de trabalho do Windows](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+##### [Vitrine do ASP.NET MVC parte 19: processamento de pedidos com o fluxo de trabalho do Windows](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
 ##### [Vitrine do ASP.NET MVC parte 19a: acompanhamento do fluxo de trabalho do Windows](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
 ##### [Vitrine do ASP.NET MVC parte 20: registro em log](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
 ##### [Vitrine do ASP.NET MVC parte 21: Gerenciador de Pedidos e personalização](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)
@@ -1611,7 +1611,7 @@
 
 
 # [Aplicativo de página única](single-page-application/index.md)
-## [Visão Geral](single-page-application/overview/index.md)
+## [Visão geral](single-page-application/overview/index.md)
 ### [Introdução](single-page-application/overview/introduction/index.md)
 #### [Aplicativo de página única: modelo KnockoutJS](single-page-application/overview/introduction/knockoutjs-template.md)
 #### [Conhece uma biblioteca diferente do Knockout?](single-page-application/overview/introduction/other-libraries.md)
@@ -1685,7 +1685,7 @@
 
 
 # [Identidade](identity/index.md)
-## [Visão Geral](identity/overview/index.md)
+## [Visão geral](identity/overview/index.md)
 ### [Introdução à Identidade do ASP.NET](identity/overview/getting-started/index.md)
 #### [Introdução à Identidade do ASP.NET](identity/overview/getting-started/introduction-to-aspnet-identity.md)
 #### [Recursos recomendados da Identidade do ASP.NET](identity/overview/getting-started/aspnet-identity-recommended-resources.md)
