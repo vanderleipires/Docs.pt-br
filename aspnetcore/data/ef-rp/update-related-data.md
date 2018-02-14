@@ -1,7 +1,7 @@
 ---
-title: "Páginas Razor com núcleo EF - atualizar dados relacionados - 7 de 8"
+title: "Páginas do Razor com o EF Core – atualizar dados relacionados – 7 de 8"
 author: rick-anderson
-description: "Neste tutorial atualizará os dados relacionados ao atualizar os campos de chave estrangeira e propriedades de navegação."
+description: "Neste tutorial, você atualizará dados relacionados pela atualização dos campos de chave estrangeira e das propriedades de navegação."
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -10,225 +10,225 @@ ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
 ms.openlocfilehash: 5c91c91ab938f3aa4abc55049c54f399469f6163
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: MT
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 01/31/2018
 ---
-# <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>Atualizando dados relacionados - EF Core Razor páginas (7, 8)
+# <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>Atualizando dados relacionados – Páginas do Razor do EF Core (7 de 8)
 
-Por [Tom Dykstra](https://github.com/tdykstra), e [Rick Anderson](https://twitter.com/RickAndMSFT)
+Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
 
-Este tutorial demonstra como atualizar dados relacionados. Se você tiver problemas, você não conseguir resolver, baixe o [aplicativo concluído para este estágio](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part7).
+Este tutorial demonstra como atualizar dados relacionados. Caso tenha problemas que não consiga resolver, baixe o [aplicativo concluído para este estágio](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part7).
 
-As ilustrações a seguir mostra algumas das páginas concluídas.
+As ilustrações a seguir mostram algumas das páginas concluídas.
 
-![Página de edição de curso](update-related-data/_static/course-edit.png)
-![instrutor Editar página](update-related-data/_static/instructor-edit-courses.png)
+![Página Editar Curso](update-related-data/_static/course-edit.png)
+![Página Editar Instrutor](update-related-data/_static/instructor-edit-courses.png)
 
-Examine e testar as páginas de curso criar e editar. Crie um novo curso. O departamento é selecionado por sua chave primária (um inteiro), não seu nome. Edite o curso de novo. Quando você concluir o teste, exclua o curso de novo.
+Examine e teste as páginas de cursos Criar e Editar. Crie um novo curso. O departamento é selecionado por sua chave primária (um inteiro), não pelo nome. Edite o novo curso. Quando concluir o teste, exclua o novo curso.
 
-## <a name="create-a-base-class-to-share-common-code"></a>Criar uma classe base para compartilhar código comum
+## <a name="create-a-base-class-to-share-common-code"></a>Criar uma classe base para compartilhar um código comum
 
-As páginas criar/cursos e cursos/editar cada precisam de uma lista de nomes de departamento. Criar o *Pages/Courses/DepartmentNamePageModel.cshtml.cs* a classe base para criar e editar páginas:
+As páginas Cursos/Criar e Cursos/Editar precisam de uma lista de nomes de departamentos. Crie a classe base *Pages/Courses/DepartmentNamePageModel.cshtml.cs* para as páginas Criar e Editar:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/DepartmentNamePageModel.cshtml.cs?highlight=9,11,20-21)]
 
-O código anterior cria um [SelectList](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.rendering.selectlist?view=aspnetcore-2.0) para conter a lista de nomes de departamento. Se `selectedDepartment` for especificado, esse departamento for selecionado no `SelectList`.
+O código anterior cria uma [SelectList](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.rendering.selectlist?view=aspnetcore-2.0) para conter a lista de nomes de departamentos. Se `selectedDepartment` for especificado, esse departamento estará selecionado na `SelectList`.
 
-As classes de modelo de página de criar e editar serão derivado `DepartmentNamePageModel`.
+As classes de modelo da página Criar e Editar serão derivadas de `DepartmentNamePageModel`.
 
-## <a name="customize-the-courses-pages"></a>Personalizar as páginas de cursos
+## <a name="customize-the-courses-pages"></a>Personalizar as páginas Courses
 
-Quando uma nova entidade de curso é criada, ele deve ter uma relação de um departamento existente. Para adicionar um departamento durante a criação de um curso, a classe base para criar e editar contém uma lista suspensa para selecionar o departamento. Define a lista suspensa de `Course.DepartmentID` propriedade de chave estrangeira (FK). Núcleo EF usa o `Course.DepartmentID` FK ao carregar o `Department` propriedade de navegação.
+Quando uma nova entidade de curso é criada, ela precisa ter uma relação com um departamento existente. Para adicionar um departamento durante a criação de um curso, a classe base para Create e Edit contém uma lista suspensa para seleção do departamento. A lista suspensa define a propriedade `Course.DepartmentID` de FK (chave estrangeira). O EF Core usa a `Course.DepartmentID` FK para carregar a propriedade de navegação `Department`.
 
 ![Criar curso](update-related-data/_static/ddl.png)
 
-Atualize o modelo de página de criação com o código a seguir:
+Atualize o modelo da página Criar com o seguinte código:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Create.cshtml.cs?highlight=7,18,32-)]
 
 O código anterior:
 
 * Deriva de `DepartmentNamePageModel`.
-* Usa `TryUpdateModelAsync` para evitar [mais](xref:data/ef-rp/crud#overposting).
-* Substitui `ViewData["DepartmentID"]` com `DepartmentNameSL` (da classe base).
+* Usa `TryUpdateModelAsync` para impedir o [excesso de postagem](xref:data/ef-rp/crud#overposting).
+* Substitui `ViewData["DepartmentID"]` por `DepartmentNameSL` (da classe base).
 
-`ViewData["DepartmentID"]`é substituído com rigidez de tipos `DepartmentNameSL`. Modelos com rigidez de tipos são preferenciais em digitado sem rigidez. Para obter mais informações, consulte [digitado sem rigidez dados (ViewData e ViewBag)](xref:mvc/views/overview#VD_VB).
+`ViewData["DepartmentID"]` é substituído pelo `DepartmentNameSL` fortemente tipado. Modelos fortemente tipados são preferíveis aos fracamente tipados. Para obter mais informações, consulte [Dados fracamente tipados (ViewData e ViewBag)](xref:mvc/views/overview#VD_VB).
 
-### <a name="update-the-courses-create-page"></a>Atualize a página Criar cursos
+### <a name="update-the-courses-create-page"></a>Atualizar a página Criar Cursos
 
-Atualização *Pages/Courses/Create.cshtml* com a seguinte marcação:
+Atualize *Pages/Courses/Create.cshtml* com a seguinte marcação:
 
 [!code-cshtml[Main](intro/samples/cu/Pages/Courses/Create.cshtml?highlight=29-34)]
 
 A marcação anterior faz as seguintes alterações:
 
-* Altera a legenda do **DepartmentID** para **departamento**.
-* Substitui `"ViewBag.DepartmentID"` com `DepartmentNameSL` (da classe base).
-* Adiciona a opção "Selecione departamento". Essa alteração renderiza "Selecione departamento" em vez do departamento primeiro.
+* Altera a legenda de **DepartmentID** para **Departamento**.
+* Substitui `"ViewBag.DepartmentID"` por `DepartmentNameSL` (da classe base).
+* Adiciona a opção "Selecionar Departamento". Essa alteração renderiza "Selecionar Departamento", em vez do departamento primeiro.
 * Adiciona uma mensagem de validação quando o departamento não está selecionado.
 
-A página Razor usa o [selecione auxiliar de marca](xref:mvc/views/working-with-forms#the-select-tag-helper):
+A Página do Razor usa a opção [Selecionar Auxiliar de Marcação](xref:mvc/views/working-with-forms#the-select-tag-helper):
 
 [!code-cshtml[Main](intro/samples/cu/Pages/Courses/Create.cshtml?range=28-35&highlight=3-6)]
 
-Criar página de teste. A página Criar exibe o nome do departamento em vez da ID do departamento.
+Teste a página Criar. A página Criar exibe o nome do departamento em vez de a ID do departamento.
 
-### <a name="update-the-courses-edit-page"></a>Atualize a página Editar cursos.
+### <a name="update-the-courses-edit-page"></a>Atualize a página Editar Cursos.
 
-Atualize o modelo de página de edição com o código a seguir:
+Atualize o modelo de página de edição com o seguinte código:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Edit.cshtml.cs?highlight=8,28,35,36,40,47-)]
 
-As alterações são semelhantes às feitas no modelo de página de criação. No código anterior, `PopulateDepartmentsDropDownList` aprovado na ID de departamento, que selecione o departamento especificado na lista suspensa.
+As alterações são semelhantes às feitas no modelo da página Criar. No código anterior, `PopulateDepartmentsDropDownList` passa a ID do departamento, que seleciona o departamento especificado na lista suspensa.
 
-Atualização *Pages/Courses/Edit.cshtml* com a seguinte marcação:
+Atualize *Pages/Courses/Edit.cshtml* com a seguinte marcação:
 
 [!code-cshtml[Main](intro/samples/cu/Pages/Courses/Edit.cshtml?highlight=17-20,32-35)]
 
 A marcação anterior faz as seguintes alterações:
 
-* Exibe a ID do curso. Geralmente a chave primária (PK) de uma entidade não é exibida. PKs são geralmente muito sentidos para os usuários. Nesse caso, a CP é o número de curso.
-* Altera a legenda do **DepartmentID** para **departamento**.
-* Substitui `"ViewBag.DepartmentID"` com `DepartmentNameSL` (da classe base).
-* Adiciona a opção "Selecione departamento". Essa alteração renderiza "Selecione departamento" em vez do departamento primeiro.
+* Exibe a ID do curso. Geralmente, a PK (chave primária) de uma entidade não é exibida. Em geral, PKs não têm sentido para os usuários. Nesse caso, o PK é o número do curso.
+* Altera a legenda de **DepartmentID** para **Departamento**.
+* Substitui `"ViewBag.DepartmentID"` por `DepartmentNameSL` (da classe base).
+* Adiciona a opção "Selecionar Departamento". Essa alteração renderiza "Selecionar Departamento", em vez do departamento primeiro.
 * Adiciona uma mensagem de validação quando o departamento não está selecionado.
 
-A página contém um campo oculto (`<input type="hidden">`) para o número de curso. Adicionando um `<label>` marca auxiliar com `asp-for="Course.CourseID"` não elimina a necessidade para o campo oculto. `<input type="hidden">`é necessário para o número a ser incluído nos dados de postagem quando o usuário clica **salvar**.
+A página contém um campo oculto (`<input type="hidden">`) para o número do curso. A adição de um auxiliar de marcação `<label>` com `asp-for="Course.CourseID"` não elimina a necessidade do campo oculto. `<input type="hidden">` é necessário para que o número seja incluído nos dados postados quando o usuário clicar em **Salvar**.
 
-Teste o código atualizado. Criar, editar e excluir um curso.
+Teste o código atualizado. Crie, edite e exclua um curso.
 
-## <a name="add-asnotracking-to-the-details-and-delete-page-models"></a>Adicionar AsNoTracking os detalhes e excluir modelos de página
+## <a name="add-asnotracking-to-the-details-and-delete-page-models"></a>Adicionar AsNoTracking aos modelos de página Detalhes e Excluir
 
-[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) pode melhorar o desempenho quando o controle não é necessário. Adicionar `AsNoTracking` para o modelo de página de detalhes e excluir. O código a seguir mostra o modelo de página Excluir atualizado:
+[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) pode melhorar o desempenho quando o acompanhamento não é necessário. Adicione `AsNoTracking` ao modelo de página Excluir e Detalhes. O seguinte código mostra o modelo de página Excluir atualizado:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
 
-Atualização de `OnGetAsync` método o *Pages/Courses/Details.cshtml.cs* arquivo:
+Atualize o método `OnGetAsync` no arquivo *Pages/Courses/Details.cshtml.cs*:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Details.cshtml.cs?name=snippet)]
 
-### <a name="modify-the-delete-and-details-pages"></a>Modifique as páginas de exclusão e detalhes
+### <a name="modify-the-delete-and-details-pages"></a>Modificar as páginas Excluir e Detalhes
 
-Atualize a página Excluir Razor com a seguinte marcação:
+Atualize a página Excluir do Razor com a seguinte marcação:
 
 [!code-cshtml[Main](intro/samples/cu/Pages/Courses/Delete.cshtml?highlight=15-20)]
 
-Fazer as mesmas alterações para a página de detalhes.
+Faça as mesmas alterações na página Detalhes.
 
-### <a name="test-the-course-pages"></a>Testar as páginas de curso
+### <a name="test-the-course-pages"></a>Testar as páginas Curso
 
-Teste de criar, editar, detalhes e excluir.
+Teste as páginas Criar, Editar, Detalhes e Excluir.
 
 ## <a name="update-the-instructor-pages"></a>Atualizar as páginas do instrutor
 
-As seções a seguir atualiza as páginas do instrutor.
+As seções a seguir atualizam as páginas do instrutor.
 
 ### <a name="add-office-location"></a>Adicionar local do escritório
 
-Ao editar um registro de instrutor, convém atualizar a atribuição do office do instrutor. O `Instructor` entidade tem uma relação um-para-zero-ou-um com o `OfficeAssignment` entidade. O código do instrutor deve tratar:
+Ao editar um registro de instrutor, é recomendável atualizar a atribuição de escritório do instrutor. A entidade `Instructor` tem uma relação um para zero ou um com a entidade `OfficeAssignment`. O código do instrutor precisa manipular:
 
-* Se o usuário limpar a atribuição do office, exclua o `OfficeAssignment` entidade.
-* Se o usuário insere uma atribuição de escritório e estava vazio, crie um novo `OfficeAssignment` entidade.
-* Se o usuário altera a atribuição do office, atualize o `OfficeAssignment` entidade.
+* Se o usuário limpar a atribuição de escritório, exclua a entidade `OfficeAssignment`.
+* Se o usuário inserir uma atribuição de escritório e ela estava vazia, crie uma nova entidade `OfficeAssignment`.
+* Se o usuário alterar a atribuição de escritório, atualize a entidade `OfficeAssignment`.
 
-Atualize o modelo de página de edição de instrutores com o código a seguir:
+Atualize o modelo de página Editar Instrutores com o seguinte código:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Instructors/Edit1.cshtml.cs?name=snippet&highlight=20-23,32,39-)]
 
 O código anterior:
 
-- Obtém a atual `Instructor` entidade do banco de dados usando o carregamento rápido para o `OfficeAssignment` propriedade de navegação.
-- Atualiza recuperada `Instructor` entidade com valores de associador de modelo. `TryUpdateModel`impede que [mais](xref:data/ef-rp/crud#overposting).
-- Define se o local do escritório estiver em branco, `Instructor.OfficeAssignment` como null. Quando `Instructor.OfficeAssignment` é null, a linha relacionada a `OfficeAssignment` tabela for excluída.
+- Obtém a entidade `Instructor` atual do banco de dados usando o carregamento adiantado para a propriedade de navegação `OfficeAssignment`.
+- Atualiza a entidade `Instructor` recuperada com valores do associador de modelos. `TryUpdateModel` impede o [excesso de postagem](xref:data/ef-rp/crud#overposting).
+- Se o local do escritório estiver em branco, `Instructor.OfficeAssignment` será definido como nulo. Quando `Instructor.OfficeAssignment` é nulo, a linha relacionada na tabela `OfficeAssignment` é excluída.
 
-### <a name="update-the-instructor-edit-page"></a>Atualizar a página de edição do instrutor
+### <a name="update-the-instructor-edit-page"></a>Atualizar a página Editar Instrutor
 
-Atualização *Pages/Instructors/Edit.cshtml* com o local do escritório:
+Atualize *Pages/Instructors/Edit.cshtml* com o local do escritório:
 
 [!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Edit1.cshtml?highlight=29-33)]
 
-Verifique se que você pode alterar um escritório de professores.
+Verifique se você pode alterar o local do escritório de um instrutor.
 
-## <a name="add-course-assignments-to-the-instructor-edit-page"></a>Adicionar atribuições de curso para a página de edição do instrutor
+## <a name="add-course-assignments-to-the-instructor-edit-page"></a>Adicionar atribuições de Curso à página Editar Instrutor
 
-Instrutores podem ensinar qualquer número de cursos. Nesta seção, você adiciona a capacidade de alterar as atribuições de curso. A imagem a seguir mostra o instrutor atualizado Editar página:
+Os instrutores podem ministrar a quantidade de cursos que desejarem. Nesta seção, você adiciona a capacidade de alterar as atribuições de curso. A seguinte imagem mostra a página Editar Instrutor atualizada:
 
-![Página Editar instrutor de cursos](update-related-data/_static/instructor-edit-courses.png)
+![Página Editar Instrutor com cursos](update-related-data/_static/instructor-edit-courses.png)
 
-`Course`e `Instructor` tem uma relação muitos-para-muitos. Para adicionar e remover relações, você pode adicionar e remover entidades de `CourseAssignments` unir o conjunto de entidades.
+`Course` e `Instructor` têm uma relação muitos para muitos. Para adicionar e remover relações, adicione e remova entidades do conjunto de entidades de junção `CourseAssignments`.
 
-Caixas de seleção Permitir alterações para cursos a que instrutor é atribuído. É exibida uma caixa de seleção para cada curso no banco de dados. Cursos atribuído para o instrutor são verificados. O usuário pode selecionar ou desmarcar as caixas de seleção para alterar as atribuições de curso. Se o número de cursos eram muito maior:
+As caixas de seleção permitem alterações em cursos aos quais um instrutor é atribuído. Uma caixa de seleção é exibida para cada curso no banco de dados. Os cursos aos quais o instrutor é atribuído estão marcados. O usuário pode marcar ou desmarcar as caixas de seleção para alterar as atribuições de curso. Se a quantidade de cursos for muito maior:
 
-* Você provavelmente usa uma interface de usuário diferente para exibir os cursos.
-* Não altere o método de manipulação de uma entidade de associação para criar ou excluir relações.
+* Provavelmente, você usará outra interface do usuário para exibir os cursos.
+* O método de manipulação de uma entidade de junção para criar ou excluir relações não será alterado.
 
-### <a name="add-classes-to-support-create-and-edit-instructor-pages"></a>Adicionar classes para dar suporte a criar e editar páginas instrutor
+### <a name="add-classes-to-support-create-and-edit-instructor-pages"></a>Adicionar classes para dar suporte às páginas Criar e Editar Instrutor
 
-Criar *SchoolViewModels/AssignedCourseData.cs* com o código a seguir:
+Crie *SchoolViewModels/AssignedCourseData.cs* com o seguinte código:
 
 [!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
 
-O `AssignedCourseData` classe contém dados para criar as caixas de seleção para cursos atribuídos pelo instrutor.
+A classe `AssignedCourseData` contém dados para criar as caixas de seleção para os cursos atribuídos por um instrutor.
 
-Criar o *Pages/Instructors/InstructorCoursesPageModel.cshtml.cs* classe base:
+Crie a classe base *Pages/Instructors/InstructorCoursesPageModel.cshtml.cs*:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Instructors/InstructorCoursesPageModel.cshtml.cs)]
 
-O `InstructorCoursesPageModel` é a classe base que será usado para editar e criar modelos de página. `PopulateAssignedCourseData`lê todos `Course` entidades para preencher `AssignedCourseDataList`. Para cada curso, o código define o `CourseID`, título e se deve ou não o instrutor é atribuído ao curso. Um [HashSet](https://docs.microsoft.com/dotnet/api/system.collections.generic.hashset-1) é usado para criar pesquisas eficientes.
+A `InstructorCoursesPageModel` é a classe base que será usada para os modelos de página Editar e Criar. `PopulateAssignedCourseData` lê todas as entidades `Course` para popular `AssignedCourseDataList`. Para cada curso, o código define a `CourseID`, o título e se o instrutor está ou não atribuído ao curso. Um [HashSet](https://docs.microsoft.com/dotnet/api/system.collections.generic.hashset-1) é usado para criar pesquisas eficientes.
 
-### <a name="instructors-edit-page-model"></a>Modelo de página de edição de instrutores
+### <a name="instructors-edit-page-model"></a>Modelo de página Editar Instrutor
 
-Atualize o modelo de página de edição do instrutor com o código a seguir:
+Atualize o modelo de página Editar Instrutor com o seguinte código:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Instructors/Edit.cshtml.cs?name=snippet&highlight=1,20-24,30,34,41-)]
 
-O código anterior gerencia alterações de atribuição do office.
+O código anterior manipula as alterações de atribuição de escritório.
 
-Atualize o modo de exibição Razor instrutor:
+Atualize a Exibição do Razor do instrutor:
 
 [!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Edit.cshtml?highlight=34-59)]
 
 <a id="notepad"></a>
 > [!NOTE]
-> Quando você colar o código no Visual Studio, quebras de linha são alteradas de maneira que quebre o código. Pressione Ctrl + Z uma vez para desfazer a formatação automática. CTRL + Z corrige as quebras de linha, de modo que eles se parecer com o que você vê aqui. O recuo não precisa ser perfeito, mas o `@</tr><tr>`, `@:<td>`, `@:</td>`, e `@:</tr>` linhas devem ser em uma única linha conforme mostrado. Com o bloco de código novo selecionado, pressione Tab três vezes para alinhar o novo código com o código existente. Vote em ou examinar o status do bug [com este link](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html).
+> Quando você cola o código no Visual Studio, as quebras de linha são alteradas de uma forma que divide o código. Pressione Ctrl+Z uma vez para desfazer a formatação automática. A tecla de atalho Ctrl+Z corrige as quebras de linha para que elas se pareçam com o que você vê aqui. O recuo não precisa ser perfeito, mas cada uma das linhas `@</tr><tr>`, `@:<td>`, `@:</td>` e `@:</tr>` precisa estar em uma única linha, conforme mostrado. Com o bloco de novo código selecionado, pressione Tab três vezes para alinhar o novo código com o código existente. Vote ou examine o status deste bug [com este link](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html).
 
-O código anterior cria uma tabela HTML que tem três colunas. Cada coluna tem uma caixa de seleção e uma legenda que contém o número e título. Todas as caixas de seleção tem o mesmo nome ("selectedCourses"). Usando o mesmo nome informa o associador de modelo para tratá-los como um grupo. O atributo de valor de cada caixa de seleção é definido como `CourseID`. Quando a página é enviada, o associador de modelo passa uma matriz que consiste o `CourseID` valores para apenas as caixas de seleção estão selecionadas.
+Esse código anterior cria uma tabela HTML que contém três colunas. Cada coluna tem uma caixa de seleção e uma legenda que contém o número e o título do curso. Todas as caixas de seleção têm o mesmo nome ("selectedCourses"). O uso do mesmo nome instrui o associador de modelos a tratá-las como um grupo. O atributo de valor de cada caixa de seleção é definido como `CourseID`. Quando a página é postada, o associador de modelos passa uma matriz que consiste nos valores `CourseID` para apenas as caixas de seleção marcadas.
 
-Quando as caixas de seleção são inicialmente renderizadas, cursos atribuídos para o instrutor verificou atributos.
+Quando as caixas de seleção são inicialmente renderizadas, os cursos atribuídos ao instrutor têm atributos marcados.
 
-Execute o aplicativo e testar a página de edição instrutores atualizado. Altere algumas atribuições de curso. As alterações são refletidas na página de índice.
+Execute o aplicativo e teste a página Editar Instrutor atualizada. Altere algumas atribuições de curso. As alterações são refletidas na página Índice.
 
-Observação: A abordagem usada aqui para editar dados de curso instrutor funciona bem quando há um número limitado de cursos. Para coleções que são muito maiores, uma interface de usuário diferente e um método de atualização diferente pode ser mais útil e eficiente.
+Observação: a abordagem usada aqui para editar os dados de curso do instrutor funciona bem quando há uma quantidade limitada de cursos. Para coleções muito maiores, uma interface do usuário e um método de atualização diferentes são mais utilizáveis e eficientes.
 
-### <a name="update-the-instructors-create-page"></a>Atualizar a página de criação de instrutores
+### <a name="update-the-instructors-create-page"></a>Atualizar a página Criar Instrutor
 
-Atualize o modelo de página de criação de instrutor com o código a seguir:
+Atualize o modelo de página Criar instrutor com o seguinte código:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Instructors/Create.cshtml.cs)]
 
-O código anterior é semelhante do *Pages/Instructors/Edit.cshtml.cs* código.
+O código anterior é semelhante ao código de *Pages/Instructors/Edit.cshtml.cs*.
 
-Atualize a página de criar Razor do instrutor com a seguinte marcação:
+Atualize a página Criar instrutor do Razor com a seguinte marcação:
 
 [!code-cshtml[Main](intro/samples/cu/Pages/Instructors/Create.cshtml?highlight=32-62)]
 
-Teste a página de criação do instrutor.
+Teste a página Criar Instrutor.
 
-## <a name="update-the-delete-page"></a>Atualizar a página de exclusão
+## <a name="update-the-delete-page"></a>Atualizar a página Excluir
 
-Atualize o modelo de página de exclusão com o código a seguir:
+Atualize o modelo da página Excluir com o seguinte código:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Instructors/Delete.cshtml.cs?highlight=5,40-)]
 
 O código anterior faz as seguintes alterações:
 
-* Usa o carregamento rápido para o `CourseAssignments` propriedade de navegação. `CourseAssignments`deve ser incluído ou eles não são excluídos quando o instrutor é excluído. Para evitar a necessidade de lê-los, configure a exclusão em cascata no banco de dados.
+* Usa o carregamento adiantado para a propriedade de navegação `CourseAssignments`. `CourseAssignments` deve ser incluído ou eles não são excluídos quando o instrutor é excluído. Para evitar a necessidade de lê-las, configure a exclusão em cascata no banco de dados.
 
-* Se o instrutor a ser excluído é atribuído como administrador de todos os departamentos, remove a atribuição de instrutor dos departamentos.
+* Se o instrutor a ser excluído é atribuído como administrador de qualquer departamento, remove a atribuição de instrutor desse departamento.
 
 >[!div class="step-by-step"]
 [Anterior](xref:data/ef-rp/read-related-data)

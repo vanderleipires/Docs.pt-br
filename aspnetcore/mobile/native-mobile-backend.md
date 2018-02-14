@@ -10,40 +10,40 @@ ms.technology: aspnet
 ms.topic: article
 uid: mobile/native-mobile-backend
 ms.openlocfilehash: ff09f331cff5cca7b42fa89bff55c0ed5c7d82f4
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: MT
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 01/31/2018
 ---
 # <a name="creating-backend-services-for-native-mobile-applications"></a>Criando serviços de back-end para aplicativos móveis nativos
 
 Por [Steve Smith](https://ardalis.com/)
 
-Aplicativos móveis facilmente podem se comunicar com serviços de back-end do ASP.NET Core.
+Os aplicativos móveis podem se comunicar com facilidade com os serviços de back-end do ASP.NET Core.
 
-[Exibir ou baixar o exemplo de código de serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
+[Exibir ou baixar o código de exemplo de serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
 
 ## <a name="the-sample-native-mobile-app"></a>O aplicativo móvel nativo de exemplo
 
-Este tutorial demonstra como criar serviços de back-end usando o ASP.NET MVC de núcleo para dar suporte a aplicativos móveis nativo. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Você pode seguir o tutorial vinculado para criar o aplicativo nativo (e instalar as ferramentas Xamarin livres necessárias), bem como baixar a solução de exemplo Xamarin. O exemplo de Xamarin inclui um projeto de serviços ASP.NET Web API 2, que substitui o aplicativo do ASP.NET Core deste artigo (com nenhuma alteração exigida pelo cliente).
+Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativos. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Siga o tutorial com links para criar o aplicativo nativo (e instale as ferramentas do Xamarin gratuitas necessárias), além de baixar a solução de exemplo do Xamarin. A amostra do Xamarin inclui um projeto de serviços da API Web ASP.NET 2, que substitui o aplicativo ASP.NET Core deste artigo (sem nenhuma alteração exigida pelo cliente).
 
-![Aplicativo Do Rest em execução em um smartphone Android](native-mobile-backend/_static/todo-android.png)
+![Aplicativo To Do Rest em execução em um smartphone Android](native-mobile-backend/_static/todo-android.png)
 
 ### <a name="features"></a>Recursos
 
-O aplicativo ToDoRest dá suporte à lista, adicionar, excluir e atualizar itens de tarefas. Cada item possui uma ID, um nome, anotações e uma propriedade que indica se ele está sendo feito ainda.
+O aplicativo ToDoRest é compatível com listagem, adição, exclusão e atualização de itens de tarefas pendentes. Cada item tem uma ID, um Nome, Observações e uma propriedade que indica se ele já foi Concluído.
 
-O modo de exibição principal dos itens, como mostrado acima, lista o nome de cada item e indica se isso é feito com uma marca de seleção.
+A exibição principal dos itens, conforme mostrado acima, lista o nome de cada item e indica se ele foi concluído com uma marca de seleção.
 
-Tocar o `+` ícone abre uma caixa de diálogo Adicionar item:
+Tocar no ícone `+` abre uma caixa de diálogo de adição de itens:
 
-![Item de caixa de diálogo Adicionar](native-mobile-backend/_static/todo-android-new-item.png)
+![Caixa de diálogo de adição de itens](native-mobile-backend/_static/todo-android-new-item.png)
 
-Ao tocar em um item na tela principal de lista abre uma caixa de diálogo Editar onde o nome do item, observações e configurações concluídas podem ser modificadas, ou o item pode ser excluído:
+Tocar em um item na tela da lista principal abre uma caixa de diálogo de edição, na qual o Nome do item, Observações e configurações de Concluído podem ser modificados, ou o item pode ser excluído:
 
-![Editar caixa de diálogo de item](native-mobile-backend/_static/todo-android-edit-item.png)
+![Caixa de diálogo de edição de itens](native-mobile-backend/_static/todo-android-edit-item.png)
 
-Este exemplo é configurado por padrão para usar serviços de back-end hospedados em developer.xamarin.com, que permitem operações somente leitura. Para testá-lo por conta própria em relação o aplicativo do ASP.NET Core criado na próxima seção em execução no seu computador, você precisará atualizar o aplicativo `RestUrl` constante. Navegue até o `ToDoREST` do projeto e abra o *Constants.cs* arquivo. Substitua o `RestUrl` com uma URL que inclui o IP do seu computador, endereço (não localhost ou 127.0.0.1, desde que esse endereço é usado do emulador de dispositivo, não em seu computador). Inclua o número da porta (5000). Para testar se os serviços de trabalhar com um dispositivo, verifique se que você não tiver um firewall ativas bloqueando o acesso a essa porta.
+Esta amostra é configurada por padrão para usar os serviços de back-end hospedados em developer.xamarin.com, que permitem operações somente leitura. Para testá-la por conta própria no aplicativo ASP.NET Core criado na próxima seção em execução no computador, você precisará atualizar a constante `RestUrl` do aplicativo. Navegue para o projeto `ToDoREST` e abra o arquivo *Constants.cs*. Substitua o `RestUrl` por uma URL que inclui o endereço IP do computador (não localhost ou 127.0.0.1, pois esse endereço é usado no emulador do dispositivo, não no computador). Inclua o número da porta também (5000). Para testar se os serviços funcionam com um dispositivo, verifique se você não tem um firewall ativo bloqueando o acesso a essa porta.
 
 ```csharp
 // URL of REST service (Xamarin ReadOnly Service)
@@ -53,104 +53,104 @@ Este exemplo é configurado por padrão para usar serviços de back-end hospedad
 public static string RestUrl = "http://192.168.1.207:5000/api/todoitems/{0}";
 ```
 
-## <a name="creating-the-aspnet-core-project"></a>Criando o projeto do ASP.NET Core
+## <a name="creating-the-aspnet-core-project"></a>Criando o projeto ASP.NET Core
 
-Crie um novo aplicativo de Web do ASP.NET Core no Visual Studio. Escolha o modelo de API da Web e sem autenticação. Nomeie o projeto *ToDoApi*.
+Crie um novo aplicativo Web ASP.NET Core no Visual Studio. Escolha o modelo de API Web e a opção Sem Autenticação. Nomeie o projeto *ToDoApi*.
 
-![Caixa de diálogo nova aplicativo Web ASP.NET com modelo de projeto de API da Web selecionado](native-mobile-backend/_static/web-api-template.png)
+![Caixa de diálogo Novo Aplicativo Web ASP.NET com modelo de projeto de API Web selecionado](native-mobile-backend/_static/web-api-template.png)
 
-O aplicativo deve responder a todas as solicitações feitas para a porta 5000. Atualização *Program.cs* para incluir `.UseUrls("http://*:5000")` para fazer isso:
+O aplicativo deve responder a todas as solicitações feitas para a porta 5000. Atualize *Program.cs* para que ele inclua `.UseUrls("http://*:5000")` para fazer isso:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
 
 > [!NOTE]
-> Certifique-se de que executar o aplicativo diretamente, em vez de por trás do IIS Express, que ignora solicitações não local por padrão. Executar `dotnet run` em um prompt de comando, ou escolha o perfil de nome do aplicativo no menu suspenso de destino de depuração na barra de ferramentas do Visual Studio.
+> Verifique se você está executando o aplicativo diretamente, em vez de com a proteção do IIS Express, que ignora as solicitações não locais por padrão. Execute `dotnet run` em um prompt de comando ou escolha o perfil de nome do aplicativo na lista suspensa Destino de Depuração na barra de ferramentas do Visual Studio.
 
-Adicione uma classe de modelo para representar itens pendentes. Marca necessários campos usando a `[Required]` atributo:
+Adicione uma classe de modelo para representar itens de tarefas pendentes. Marque os campos obrigatórios usando o atributo `[Required]`:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
-Os métodos da API exigem alguma maneira de trabalhar com dados. Use a mesma `IToDoRepository` interface os usos de exemplo originais do Xamarin:
+Os métodos de API exigem alguma maneira para trabalhar com os dados. Use a mesma interface `IToDoRepository` usada pela amostra original do Xamarin:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
-Para este exemplo, a implementação apenas usa um conjunto particular de itens:
+Para esta amostra, a implementação apenas usa uma coleção particular de itens:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Services/ToDoRepository.cs)]
 
-Configurar a implementação em *Startup.cs*:
+Configure a implementação em *Startup.cs*:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Startup.cs?highlight=6&range=29-35)]
 
 Neste ponto, você está pronto para criar o *ToDoItemsController*.
 
 > [!TIP]
-> Saiba mais sobre como criar web APIs em [criando sua primeira API da Web com ASP.NET MVC de núcleos e do Visual Studio](../tutorials/first-web-api.md).
+> Saiba mais sobre como criar APIs Web em [Criando sua primeira API Web com o ASP.NET Core MVC e o Visual Studio](../tutorials/first-web-api.md).
 
 ## <a name="creating-the-controller"></a>Criando o controlador
 
-Adicionar um novo controlador para o projeto, *ToDoItemsController*. Ele deve herdar de Microsoft.AspNetCore.Mvc.Controller. Adicionar um `Route` atributo para indicar que o controlador de manipular as solicitações feitas para caminhos que começam com `api/todoitems`. O `[controller]` token na rota é substituído pelo nome do controlador (omitindo o `Controller` sufixo) e é especialmente útil para rotas global. Saiba mais sobre [roteamento](../fundamentals/routing.md).
+Adicione um novo controlador ao projeto, *ToDoItemsController*. Ele deve herdar de Microsoft.AspNetCore.Mvc.Controller. Adicione um atributo `Route` para indicar que o controlador manipulará as solicitações feitas para caminhos que começam com `api/todoitems`. O token `[controller]` na rota é substituído pelo nome do controlador (com a omissão do sufixo `Controller`) e é especialmente útil para rotas globais. Saiba mais sobre o [roteamento](../fundamentals/routing.md).
 
-O controlador requer um `IToDoRepository` a função; solicitar uma instância desse tipo por meio do construtor do controlador. Em tempo de execução, esta instância será fornecida com suporte do framework [injeção de dependência](../fundamentals/dependency-injection.md).
+O controlador exige um `IToDoRepository` para funcionar; solicite uma instância desse tipo por meio do construtor do controlador. Em tempo de execução, essa instância receberá o suporte da estrutura para [injeção de dependência](../fundamentals/dependency-injection.md).
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=1-17&highlight=9,14)]
 
-Essa API dá suporte a quatro verbos HTTP diferentes para executar operações CRUD (criação, leitura, atualização, exclusão) na fonte de dados. A mais simples delas é a operação de leitura, que corresponde a uma solicitação HTTP GET.
+Essa API é compatível com quatro verbos HTTP diferentes para executar operações CRUD (Criar, Ler, Atualizar, Excluir) na fonte de dados. A mais simples delas é a operação Read, que corresponde a uma solicitação HTTP GET.
 
 ### <a name="reading-items"></a>Lendo itens
 
-Solicitar uma lista de itens é feito com uma solicitação GET para a `List` método. O `[HttpGet]` atributo no `List` método indica que esta ação só deve tratar as solicitações GET. A rota para esta ação é a rota especificada no controlador. Você não precisa necessariamente usar o nome da ação como parte da rota. Você precisa garantir que cada ação tem uma rota exclusiva e não ambígua. Atributos de roteamento podem ser aplicados nos níveis de método para criar rotas específico e controlador.
+A solicitação de uma lista de itens é feita com uma solicitação GET para o método `List`. O atributo `[HttpGet]` no método `List` indica que essa ação apenas deve manipular solicitações GET. A rota para essa ação é a rota especificada no controlador. Você não precisa necessariamente usar o nome da ação como parte da rota. Basta garantir que cada ação tenha uma rota exclusiva e não ambígua. Os atributos de roteamento podem ser aplicados nos níveis do método e do controlador para criar rotas específicas.
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
 
-O `List` método retorna um código de resposta Okey 200 e todos os itens de tarefas, serializados como JSON.
+O método `List` retorna um código de resposta 200 OK e todos os itens de tarefas pendentes serializados como JSON.
 
-Você pode testar o novo método de API usando uma variedade de ferramentas, como [carteiro](https://www.getpostman.com/docs/), mostrado aqui:
+Teste o novo método de API usando uma variedade de ferramentas, como o [Postman](https://www.getpostman.com/docs/), mostrado aqui:
 
-![Console carteiro mostrando uma solicitação GET para todoitems e o corpo da resposta mostrando o JSON para três itens retornados](native-mobile-backend/_static/postman-get.png)
+![Console do Postman mostrando uma solicitação GET para itens de tarefas pendentes e o corpo da resposta mostrando o JSON para três itens retornados](native-mobile-backend/_static/postman-get.png)
 
 ### <a name="creating-items"></a>Criando itens
 
-Por convenção, criando novos itens de dados é mapeado para o verbo HTTP POST. O `Create` método tem um `[HttpPost]` atributo aplicado a ele e aceita um `ToDoItem` instância. Como o `item` argumento será passado no corpo da POSTAGEM, este parâmetro é decorado com o `[FromBody]` atributo.
+Por convenção, a criação de novos itens de dados é mapeada para o verbo HTTP POST. O método `Create` tem um atributo `[HttpPost]` aplicado a ele e aceita uma instância `ToDoItem`. Como o argumento `item` será passado no corpo do POST, esse parâmetro é decorado com o atributo `[FromBody]`.
 
-Dentro do método, o item é verificado para validade e existência anterior no repositório de dados e se nenhum problema ocorrer, ele é adicionado usando o repositório. Verificando `ModelState.IsValid` executa [validação do modelo](../mvc/models/validation.md)e deve ser feito em todos os métodos de API que aceita a entrada do usuário.
+Dentro do método, o item é verificado quanto à validade e existência anterior no armazenamento de dados e, se nenhum problema ocorrer, ele será adicionado usando o repositório. A verificação de `ModelState.IsValid` executa a [validação do modelo](../mvc/models/validation.md) e deve ser feita em todos os métodos de API que aceitam a entrada do usuário.
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=25-46)]
 
-O exemplo usa uma enumeração que contém códigos de erro que são passados para o cliente móvel:
+A amostra usa uma enumeração que contém códigos de erro que são passados para o cliente móvel:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
 
-Teste a adição de novos itens usando carteiro escolhendo o verbo POST fornecendo o novo objeto no formato JSON no corpo da solicitação. Você também deve adicionar um cabeçalho de solicitação que especifica um `Content-Type` de `application/json`.
+Teste a adição de novos itens usando o Postman escolhendo o verbo POST com o fornecimento do novo objeto no formato JSON no Corpo da solicitação. Você também deve adicionar um cabeçalho de solicitação que especifica um `Content-Type` de `application/json`.
 
-![Console carteiro mostrando um POST e resposta](native-mobile-backend/_static/postman-post.png)
+![Console do Postman mostrando um POST e uma resposta](native-mobile-backend/_static/postman-post.png)
 
 O método retorna o item recém-criado na resposta.
 
 ### <a name="updating-items"></a>Atualizando itens
 
-Modificando registros é feito usando solicitações HTTP PUT. Além desta mudança, o `Edit` método é quase idêntico ao `Create`. Observe que, se o registro não for encontrado, o `Edit` ação irá retornar um `NotFound` resposta (404).
+A modificação de registros é feita com solicitações HTTP PUT. Além dessa alteração, o método `Edit` é quase idêntico ao `Create`. Observe que, se o registro não for encontrado, a ação `Edit` retornará uma resposta `NotFound` (404).
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
 
-Para testar com carteiro, altere o verbo para PUT. Especifique os dados do objeto atualizado no corpo da solicitação.
+Para testar com o Postman, altere o verbo para PUT. Especifique os dados do objeto atualizado no Corpo da solicitação.
 
-![Console carteiro mostrando um PUT e resposta](native-mobile-backend/_static/postman-put.png)
+![Console do Postman mostrando um PUT e uma resposta](native-mobile-backend/_static/postman-put.png)
 
-Este método retorna um `NoContent` resposta (204) quando obtiver êxito, para manter a consistência com a API já existente.
+Esse método retorna uma resposta `NoContent` (204) quando obtém êxito, para consistência com a API pré-existente.
 
-### <a name="deleting-items"></a>A exclusão de itens
+### <a name="deleting-items"></a>Excluindo itens
 
-Excluindo registros é feito, fazendo solicitações de exclusão para o serviço e passar a ID do item a ser excluído. Como com as atualizações, solicitações de itens que não existem receberão `NotFound` respostas. Caso contrário, receberá uma solicitação bem-sucedida um `NoContent` resposta (204).
+A exclusão de registros é feita com solicitações DELETE para o serviço e a passagem da ID do item a ser excluído. Assim como ocorre com as atualizações, as solicitações de itens que não existem receberão respostas `NotFound`. Caso contrário, uma solicitação bem-sucedida receberá uma resposta `NoContent` (204).
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=71-88)]
 
-Observe que ao testar a funcionalidade de exclusão, nada é necessário no corpo da solicitação.
+Observe que, ao testar a funcionalidade de exclusão, nada é necessário no Corpo da solicitação.
 
-![Console carteiro mostrando uma exclusão e resposta](native-mobile-backend/_static/postman-delete.png)
+![Console do Postman mostrando um DELETE e uma resposta](native-mobile-backend/_static/postman-delete.png)
 
-## <a name="common-web-api-conventions"></a>Convenções de API da Web comuns
+## <a name="common-web-api-conventions"></a>Convenções comuns de API Web
 
-À medida que desenvolve os serviços de back-end para seu aplicativo, você desejará criar um conjunto de convenções ou políticas para a manipulação resolvem preocupações consistente. Por exemplo, no serviço mostrado acima, as solicitações de registros específicos que não foram encontrados recebidos um `NotFound` resposta, em vez de `BadRequest` resposta. Da mesma forma, os comandos feitos para este serviço passados em tipos de modelo associado sempre verificados `ModelState.IsValid` e retornado um `BadRequest` para tipos de modelo inválido.
+À medida que você desenvolve serviços de back-end para seu aplicativo, desejará criar um conjunto consistente de convenções ou políticas para lidar com preocupações paralelas. Por exemplo, no serviço mostrado acima, as solicitações de registros específicos que não foram encontrados receberam uma resposta `NotFound`, em vez de uma resposta `BadRequest`. Da mesma forma, os comandos feitos para esse serviço que passaram tipos associados a um modelo sempre verificaram `ModelState.IsValid` e retornaram um `BadRequest` para tipos de modelo inválidos.
 
-Depois de identificar uma diretiva comum para suas APIs, você geralmente pode encapsulá-lo em uma [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET MVC de núcleo](https://msdn.microsoft.com/magazine/mt767699.aspx).
+Depois de identificar uma política comum para as APIs, geralmente, você pode encapsulá-la em um [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns de API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).

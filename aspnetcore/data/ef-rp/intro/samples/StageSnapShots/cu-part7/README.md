@@ -1,5 +1,5 @@
-A versão final. /CU e... /cuFinal contêm mais código concluído.
+A versão final ../cu e ../cuFinal contêm mais códigos concluídos.
 
-Copiar wwwroot do... /CU/ ou um novo projeto de páginas Razor.
+Copie wwwroot do ../cu/ ou de um novo projeto das Páginas do Razor.
 
 Execute `dotnet ef database update`

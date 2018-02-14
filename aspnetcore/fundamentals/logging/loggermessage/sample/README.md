@@ -1,3 +1,3 @@
-# <a name="aspnet-core-loggermessage-sample"></a>Exemplo do ASP.NET Core LoggerMessage
+# <a name="aspnet-core-loggermessage-sample"></a>Amostra de LoggerMessage do ASP.NET Core
 
-Este exemplo ilustra o uso de [LoggerMessage](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggermessage). Este exemplo demonstra os recursos descritos a [alto desempenho em log com LoggerMessage](https://docs.microsoft.com/aspnet/core/fundamentals/logging/loggermessage) tópico.
+Esta amostra ilustra o uso de [LoggerMessage](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggermessage). Esta amostra apresenta os recursos descritos no tópico [Log de alto desempenho com LoggerMessage](https://docs.microsoft.com/aspnet/core/fundamentals/logging/loggermessage).

@@ -1,3 +1,3 @@
-Copiar wwwroot do... /CU/ ou um novo projeto de páginas Razor.
+Copie wwwroot do ../cu/ ou de um novo projeto das Páginas do Razor.
 
 Execute `dotnet ef database update`

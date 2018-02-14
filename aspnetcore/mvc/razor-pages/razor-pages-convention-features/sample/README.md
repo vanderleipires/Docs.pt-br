@@ -1,12 +1,12 @@
-# <a name="aspnet-core-model-providers-sample"></a>Exemplo de provedores de modelo do ASP.NET Core
+# <a name="aspnet-core-model-providers-sample"></a>Amostra de provedores de modelo do ASP.NET Core
 
-Este exemplo ilustra o uso de páginas Razor rota e página modelo provedores personalizados. Este exemplo demonstra os recursos descritos a [recursos de convenção de rota e o aplicativo de páginas Razor](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features) tópico.
+Esta amostra ilustra o uso de provedores personalizados de modelo de rota e página das Páginas do Razor. Esta amostra apresenta os recursos descritos no tópico [Recursos de convenção de rota e aplicativo das Páginas do Razor](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features).
 
-## <a name="examples-in-this-sample"></a>Exemplos neste exemplo
+## <a name="examples-in-this-sample"></a>Exemplos desta amostra
 
 | Recursos | Demonstração de exemplo |
 | -------- | ----------- |
-| [Adicionar as convenções de modelo de rota e de aplicativo](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features#add-route-and-app-model-conventions) | Adicione um atributo da rota e o cabeçalho para páginas do aplicativo. |
-| [Use AddPageRoute para adicionar uma rota de página](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features#configure-a-page-route) | Adiciona a rota especificada para a página em que a página especificada. |
-| [Convenções de ação do modelo de página](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features#page-model-action-conventions) | Adicionar um cabeçalho de páginas em uma pasta, adicione um cabeçalho para uma única página e configure uma fábrica de filtro para adicionar um cabeçalho para páginas do aplicativo. |
-| [Substitua o provedor de modelo de aplicativo de página padrão](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features#replace-the-default-page-app-model-provider) | Altere as convenções de nomenclatura do manipulador. |
+| [Adicionar convenções de modelo de aplicativo e rota](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features#add-route-and-app-model-conventions) | Adicione um atributo de rota e um cabeçalho às páginas do aplicativo. |
+| [Usar AddPageRoute para adicionar uma rota de página](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features#configure-a-page-route) | Adiciona a rota especificada à página na página especificada. |
+| [Convenções de ação do modelo de página](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features#page-model-action-conventions) | Adicione um cabeçalho às páginas de uma pasta, adicione um cabeçalho a uma única página e configure um alocador de filtro para adicionar um cabeçalho às páginas do aplicativo. |
+| [Substituir o provedor de modelo de aplicativo de página padrão](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/razor-pages-convention-features#replace-the-default-page-app-model-provider) | Altere as convenções de nomenclatura do manipulador. |

@@ -1,7 +1,7 @@
 ---
-title: "Introdução ao ASP.NET Core e o Entity Framework 6"
+title: "Introdução ao ASP.NET Core e ao Entity Framework 6"
 author: tdykstra
-description: Este artigo mostra como usar o Entity Framework 6 em um aplicativo do ASP.NET Core.
+description: Este artigo mostra como usar o Entity Framework 6 em um aplicativo ASP.NET Core.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 02/24/2017
@@ -10,87 +10,87 @@ ms.technology: aspnet
 ms.topic: article
 uid: data/entity-framework-6
 ms.openlocfilehash: 7407fe8a976978d7d5077d5e5ac6cc264565621d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: MT
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 01/31/2018
 ---
-# <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>Introdução ao ASP.NET Core e o Entity Framework 6
+# <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>Introdução ao ASP.NET Core e ao Entity Framework 6
 
-Por [Paweł Grudzień](https://github.com/pgrudzien12), [Damien Pontifex](https://github.com/DamienPontifex), e [Tom Dykstra](https://github.com/tdykstra)
+Por [Paweł Grudzień](https://github.com/pgrudzien12), [Damien Pontifex](https://github.com/DamienPontifex) e [Tom Dykstra](https://github.com/tdykstra)
 
-Este artigo mostra como usar o Entity Framework 6 em um aplicativo do ASP.NET Core.
+Este artigo mostra como usar o Entity Framework 6 em um aplicativo ASP.NET Core.
 
 ## <a name="overview"></a>Visão geral
 
-Para usar o Entity Framework 6, seu projeto deve compilar no .NET Framework, como Entity Framework 6 não dá suporte ao .NET Core. Se você precisar de recursos de plataforma cruzada, será necessário atualizar para [Entity Framework Core](https://docs.microsoft.com/ef/).
+Para usar o Entity Framework 6, o projeto precisa ser compilado no .NET Framework, pois o Entity Framework 6 não dá suporte ao .NET Core. Caso precise de recursos de multiplataforma, faça upgrade para o [Entity Framework Core](https://docs.microsoft.com/ef/).
 
-A maneira recomendada para usar o Entity Framework 6 em um aplicativo do ASP.NET Core é colocar o contexto de EF6 e classes de modelo em uma biblioteca de classes do projeto que tem como destino framework completo. Adicione uma referência para a biblioteca de classes do projeto ASP.NET Core. Consulte o exemplo [solução do Visual Studio com projetos EF6 e ASP.NET Core](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/entity-framework-6/sample/).
+A maneira recomendada de usar o Entity Framework 6 em um aplicativo ASP.NET Core é colocar o contexto e as classes de modelo do EF6 em um projeto de biblioteca de classes direcionado à estrutura completa. Adicione uma referência à biblioteca de classes do projeto ASP.NET Core. Consulte a [solução de exemplo do Visual Studio com projetos EF6 e ASP.NET Core](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/entity-framework-6/sample/).
 
-Não é possível colocar um contexto EF6 em um projeto do ASP.NET Core porque projetos .NET Core não dão suporte a todas as funcionalidades que EF6 comandos como *Enable-Migrations* exigem.
+Não é possível colocar um contexto do EF6 em um projeto ASP.NET Core, pois projetos .NET Core não dão suporte a todas as funcionalidades exigidas pelo EF6, como *Enable-Migrations*, que é obrigatória.
 
-Independentemente do tipo de projeto em que você localize seu contexto EF6, somente ferramentas de linha de comando EF6 trabalhar com um contexto de EF6. Por exemplo, `Scaffold-DbContext` só está disponível no Entity Framework Core. Se você precisar a engenharia reversa de um banco de dados em um modelo de EF6, consulte [Code First para um banco de dados](https://msdn.microsoft.com/jj200620).
+Seja qual for o tipo de projeto em que você localize o contexto do EF6, somente ferramentas de linha de comando do EF6 funcionam com um contexto do EF6. Por exemplo, `Scaffold-DbContext` está disponível apenas no Entity Framework Core. Caso precise fazer engenharia reversa de um banco de dados para um modelo do EF6, consulte [Usar o Code First para um banco de dados existente](https://msdn.microsoft.com/jj200620).
 
-## <a name="reference-full-framework-and-ef6-in-the-aspnet-core-project"></a>Estrutura completa de referência e EF6 no projeto do ASP.NET Core
+## <a name="reference-full-framework-and-ef6-in-the-aspnet-core-project"></a>Referenciar a estrutura completa e o EF6 no projeto ASP.NET Core
 
-Seu projeto do ASP.NET Core precisa referenciar EF6 e do .NET framework. Por exemplo, o *. csproj* arquivo do projeto ASP.NET Core será semelhante ao exemplo a seguir (somente as partes relevantes do arquivo são mostradas).
+O projeto ASP.NET Core precisa referenciar a estrutura .NET e o EF6. Por exemplo, o arquivo *.csproj* do projeto ASP.NET Core será semelhante ao exemplo a seguir (somente as partes relevantes do arquivo são mostradas).
 
 [!code-xml[](entity-framework-6/sample/MVCCore/MVCCore.csproj?range=3-9&highlight=2)]
 
-Ao criar um novo projeto, use o **aplicativo Web do ASP.NET Core (.NET Framework)** modelo.
+Ao criar um novo projeto, use o modelo **Aplicativo Web ASP.NET Core (.NET Framework)**.
 
-## <a name="handle-connection-strings"></a>Cadeias de caracteres do identificador de conexão
+## <a name="handle-connection-strings"></a>Manipular as cadeias de conexão
 
-As ferramentas de linha de comando EF6 que você usará no projeto de biblioteca de classe EF6 requerem um construtor padrão para que possam instanciar o contexto. Mas, você provavelmente desejará especificar a cadeia de caracteres de conexão para usar no projeto ASP.NET Core, caso em que o construtor de contexto deve ter um parâmetro que permite que você passe a cadeia de caracteres de conexão. Aqui está um exemplo.
+As ferramentas de linha de comando do EF6 que você usará no projeto de biblioteca de classes do EF6 exigem um construtor padrão para que possam criar uma instância do contexto. No entanto, provavelmente, você desejará especificar a cadeia de conexão a ser usada no projeto ASP.NET Core, caso em que o construtor de contexto deve ter um parâmetro que permita passar a cadeia de conexão. Veja um exemplo.
 
 [!code-csharp[](entity-framework-6/sample/EF6/SchoolContext.cs?name=snippet_Constructor)]
 
-Como seu contexto EF6 não tem um construtor sem parâmetros, seu projeto EF6 precisa fornecer uma implementação de [IDbContextFactory](https://msdn.microsoft.com/library/hh506876). As ferramentas de linha de comando EF6 encontrará e usar essa implementação, portanto, pode criar uma instância do contexto. Aqui está um exemplo.
+Como o contexto do EF6 não tem um construtor sem parâmetros, o projeto do EF6 precisa fornecer uma implementação de [IDbContextFactory](https://msdn.microsoft.com/library/hh506876). As ferramentas de linha de comando do EF6 encontrarão e usarão essa implementação para que possam criar uma instância do contexto. Veja um exemplo.
 
 [!code-csharp[](entity-framework-6/sample/EF6/SchoolContextFactory.cs?name=snippet_IDbContextFactory)]
 
-Nesse código de exemplo, o `IDbContextFactory` implementação passa em uma cadeia de caracteres de conexão embutidas. Esta é a cadeia de conexão que irá usar as ferramentas de linha de comando. Você vai querer implementar uma estratégia para garantir que a biblioteca de classe usa a mesma cadeia de conexão que usa o aplicativo de chamada. Por exemplo, você pode obter o valor de uma variável de ambiente em ambos os projetos.
+Nesse código de exemplo, a implementação `IDbContextFactory` passa uma cadeia de conexão embutida em código. Essa é a cadeia de conexão que será usada pelas ferramentas de linha de comando. Recomendamos implementar uma estratégia para garantir que a biblioteca de classes use a mesma cadeia de conexão usada pelo aplicativo de chamada. Por exemplo, você pode obter o valor de uma variável de ambiente em ambos os projetos.
 
-## <a name="set-up-dependency-injection-in-the-aspnet-core-project"></a>Configurar a injeção de dependência no projeto do ASP.NET Core
+## <a name="set-up-dependency-injection-in-the-aspnet-core-project"></a>Configurar a injeção de dependência no projeto ASP.NET Core
 
-O projeto de núcleo *Startup.cs* arquivo, configurar o contexto de EF6 para injeção de dependência (DI) `ConfigureServices`. Os objetos de contexto EF devem ser delimitados para um tempo de vida de cada solicitação.
+No arquivo *Startup.cs* do projeto Core, configure o contexto do EF6 para DI (injeção de dependência) em `ConfigureServices`. Os objetos de contexto do EF devem ser delimitados em escopo a um tempo de vida por solicitação.
 
 [!code-csharp[](entity-framework-6/sample/MVCCore/Startup.cs?name=snippet_ConfigureServices&highlight=5)]
 
-Em seguida, você pode obter uma instância do contexto em seus controladores de usando a injeção de dependência. O código é semelhante ao que você escreve para um contexto de EF principais:
+Em seguida, você pode obter uma instância do contexto nos controladores usando a DI. O código é semelhante ao que você escreverá para um contexto do EF Core:
 
 [!code-csharp[](entity-framework-6/sample/MVCCore/Controllers/StudentsController.cs?name=snippet_ContextInController)]
 
 ## <a name="sample-application"></a>Aplicativo de exemplo
 
-Para um aplicativo de exemplo de funcionamento, consulte o [solução do Visual Studio de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/entity-framework-6/sample/) que acompanha este artigo.
+Para obter um aplicativo de exemplo funcional, consulte a [solução de exemplo do Visual Studio](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/entity-framework-6/sample/) que acompanha este artigo.
 
-Este exemplo pode ser criado do zero pelas seguintes etapas no Visual Studio:
+Esta amostra pode ser criada do zero pelas seguintes etapas no Visual Studio:
 
 * Crie uma solução.
 
-* **Adicionar novo projeto > Web > aplicativo Web do ASP.NET Core (.NET Framework)**
+* **Adicionar Novo Projeto > Web > Aplicativo Web ASP.NET Core (.NET Framework)**
 
-* **Adicionar novo projeto > área de trabalho clássica do Windows > (.NET Framework) da biblioteca de classe**
+* **Adicionar Novo Projeto > Área de Trabalho Clássica do Windows > Biblioteca de Classes (.NET Framework)**
 
-* Em **Package Manager Console** (PMC) para ambos os projetos, execute o comando `Install-Package Entityframework`.
+* No **PMC** (Console do Gerenciador de Pacotes) dos dois projetos, execute o comando `Install-Package Entityframework`.
 
-* No projeto de biblioteca de classe, crie classes de modelo de dados e uma classe de contexto e uma implementação de `IDbContextFactory`.
+* No projeto de biblioteca de classes, crie classes de modelo de dados e uma classe de contexto, bem como uma implementação de `IDbContextFactory`.
 
-* Em PMC para o projeto de biblioteca de classe, execute os comandos `Enable-Migrations` e `Add-Migration Initial`. Se você tiver definido o projeto do ASP.NET Core como projeto de inicialização, adicionar `-StartupProjectName EF6` a esses comandos.
+* No PMC do projeto de biblioteca de classes, execute os comandos `Enable-Migrations` e `Add-Migration Initial`. Caso tenha definido o projeto ASP.NET Core como o projeto de inicialização, adicione `-StartupProjectName EF6` a esses comandos.
 
-* No projeto principal, adicione uma referência ao projeto de biblioteca de classe.
+* No projeto Core, adicione uma referência de projeto ao projeto de biblioteca de classes.
 
-* No projeto principal, em *Startup.cs*, registrar o contexto para injeção de dependência.
+* No projeto Core, em *Startup.cs*, registre o contexto para DI.
 
-* No projeto principal, em *appSettings. JSON*, adicione a cadeia de caracteres de conexão.
+* No projeto Core, em *appsettings.json*, adicione a cadeia de conexão.
 
-* No projeto principal, adicione um controlador e as exibições para verificar que você pode ler e gravar dados. (Observe que a estrutura MVC do ASP.NET Core não funcionará com o contexto de EF6 referenciado da biblioteca de classe.)
+* No projeto Core, adicione um controlador e exibições para verificar se é possível ler e gravar dados. (Observe que o scaffolding do ASP.NET Core MVC não funcionará com o contexto do EF6 referenciado da biblioteca de classes.)
 
 ## <a name="summary"></a>Resumo
 
-Este artigo fornece orientações básicas para usar o Entity Framework 6 em um aplicativo do ASP.NET Core.
+Este artigo forneceu diretrizes básicas para usar o Entity Framework 6 em um aplicativo ASP.NET Core.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Entity Framework - configuração baseada em código](https://msdn.microsoft.com/data/jj680699.aspx)
+* [Entity Framework – configuração baseada em código](https://msdn.microsoft.com/data/jj680699.aspx)
