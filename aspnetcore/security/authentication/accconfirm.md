@@ -1,305 +1,298 @@
 ---
 title: "Confirmação de conta e senha de recuperação no núcleo do ASP.NET"
 author: rick-anderson
-description: "Mostra como criar um aplicativo do ASP.NET Core com redefinição de senha e de confirmação de email."
+description: "Saiba como criar um aplicativo do ASP.NET Core com redefinição de senha e de confirmação de email."
 manager: wpickett
 ms.author: riande
-ms.date: 12/1/2017
+ms.date: 2/11/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 14c7fdfc1ed8b87aac8ca937298c7da6373bf06d
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: e8f73d58bdf626910b2101ef310385f588315e26
+ms.sourcegitcommit: 725cb18ad23013e15d3dbb527958481dee79f9f8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 02/13/2018
 ---
-# <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a><span data-ttu-id="a2fd7-103">Confirmação de conta e de recuperação de senha no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="a2fd7-103">Account confirmation and password recovery in ASP.NET Core</span></span>
+# <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a><span data-ttu-id="85d68-103">Confirmação de conta e de recuperação de senha no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="85d68-103">Account confirmation and password recovery in ASP.NET Core</span></span>
 
-<span data-ttu-id="a2fd7-104">Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Joe Audette](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="a2fd7-104">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span> 
+<span data-ttu-id="85d68-104">Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Joe Audette](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="85d68-104">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span>
 
-<span data-ttu-id="a2fd7-105">Este tutorial mostra como criar um aplicativo do ASP.NET Core com redefinição de senha e de confirmação de email.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-105">This tutorial shows you how to build an ASP.NET Core app with email confirmation and password reset.</span></span>
+<span data-ttu-id="85d68-105">Este tutorial mostra como criar um aplicativo do ASP.NET Core com redefinição de senha e de confirmação de email.</span><span class="sxs-lookup"><span data-stu-id="85d68-105">This tutorial shows you how to build an ASP.NET Core app with email confirmation and password reset.</span></span> <span data-ttu-id="85d68-106">Este tutorial é **não** um tópico de início.</span><span class="sxs-lookup"><span data-stu-id="85d68-106">This tutorial is **not** a beginning topic.</span></span> <span data-ttu-id="85d68-107">Você deve estar familiarizado com:</span><span class="sxs-lookup"><span data-stu-id="85d68-107">You should be familiar with:</span></span>
 
-## <a name="create-a-new-aspnet-core-project"></a><span data-ttu-id="a2fd7-106">Criar um novo projeto ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="a2fd7-106">Create a New ASP.NET Core Project</span></span>
+* [<span data-ttu-id="85d68-108">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="85d68-108">ASP.NET Core</span></span>](xref:tutorials/first-mvc-app/start-mvc)
+* [<span data-ttu-id="85d68-109">Autenticação</span><span class="sxs-lookup"><span data-stu-id="85d68-109">Authentication</span></span>](xref:security/authentication/index)
+* [<span data-ttu-id="85d68-110">Confirmação de conta e recuperação de senha</span><span class="sxs-lookup"><span data-stu-id="85d68-110">Account Confirmation and Password Recovery</span></span>](xref:security/authentication/accconfirm)
+* [<span data-ttu-id="85d68-111">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="85d68-111">Entity Framework Core</span></span>](xref:data/ef-mvc/intro)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a2fd7-107">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-107">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+<span data-ttu-id="85d68-112">Consulte [este arquivo PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) para as versões do ASP.NET Core MVC 1.1 e 2. x.</span><span class="sxs-lookup"><span data-stu-id="85d68-112">See [this PDF file](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) for the ASP.NET Core MVC 1.1 and 2.x versions.</span></span>
 
-<span data-ttu-id="a2fd7-108">Essa etapa se aplica ao Visual Studio no Windows.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-108">This step applies to Visual Studio on Windows.</span></span> <span data-ttu-id="a2fd7-109">Consulte a próxima seção para obter instruções de CLI.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-109">See the next section for CLI instructions.</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="85d68-113">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="85d68-113">Prerequisites</span></span>
 
-<span data-ttu-id="a2fd7-110">O tutorial requer o Visual Studio 2017 Preview 2 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-110">The tutorial requires Visual Studio 2017 Preview 2 or later.</span></span>
+<span data-ttu-id="85d68-114">[.NET core 2.1.4 SDK](https://www.microsoft.com/net/core) ou posterior.</span><span class="sxs-lookup"><span data-stu-id="85d68-114">[.NET Core 2.1.4 SDK](https://www.microsoft.com/net/core) or later.</span></span>
 
-* <span data-ttu-id="a2fd7-111">No Visual Studio, crie um novo projeto de aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-111">In Visual Studio, create a New Web Application Project.</span></span>
-* <span data-ttu-id="a2fd7-112">Selecione **Core ASP.NET 2.0**.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-112">Select **ASP.NET Core 2.0**.</span></span> <span data-ttu-id="a2fd7-113">A imagem a seguir mostram **.NET Core** selecionado, mas você pode selecionar **do .NET Framework**.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-113">The following image show **.NET Core** selected, but you can select **.NET Framework**.</span></span>
-* <span data-ttu-id="a2fd7-114">Selecione **alterar autenticação** e definido como **contas de usuário individuais**.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-114">Select **Change Authentication** and set to **Individual User Accounts**.</span></span>
-* <span data-ttu-id="a2fd7-115">Mantenha o padrão **no aplicativo de contas de usuário do repositório**.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-115">Keep the default **Store user accounts in-app**.</span></span>
+## <a name="create-a-new-aspnet-core-project-with-the-net-core-cli"></a><span data-ttu-id="85d68-115">Criar um novo projeto do ASP.NET Core com o .NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="85d68-115">Create a new ASP.NET Core project with the .NET Core CLI</span></span>
 
-![Nova caixa de diálogo do projeto mostrando "Opção de contas de usuário individuais" selecionada](accconfirm/_static/2.png)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="85d68-116">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="85d68-116">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a2fd7-117">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-117">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+```console
+dotnet new razor --auth Individual -o WebPWrecover
+cd WebPWrecover
+```
 
-<span data-ttu-id="a2fd7-118">O tutorial requer o Visual Studio 2017 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-118">The tutorial requires Visual Studio 2017 or later.</span></span>
+* <span data-ttu-id="85d68-117">`--auth Individual` Especifica o modelo de projeto de contas de usuário individuais.</span><span class="sxs-lookup"><span data-stu-id="85d68-117">`--auth Individual` specifies the Individual User Accounts project template.</span></span>
+* <span data-ttu-id="85d68-118">No Windows, adicione o `-uld` opção.</span><span class="sxs-lookup"><span data-stu-id="85d68-118">On Windows, add the `-uld` option.</span></span> <span data-ttu-id="85d68-119">Especifica que o LocalDB deve ser usado em vez do SQLite.</span><span class="sxs-lookup"><span data-stu-id="85d68-119">It specifies LocalDB should be used instead of SQLite.</span></span>
+* <span data-ttu-id="85d68-120">Execute `new mvc --help` para obter ajuda sobre este comando.</span><span class="sxs-lookup"><span data-stu-id="85d68-120">Run `new mvc --help` to get help on this command.</span></span>
 
-* <span data-ttu-id="a2fd7-119">No Visual Studio, crie um novo projeto de aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-119">In Visual Studio, create a New Web Application Project.</span></span>
-* <span data-ttu-id="a2fd7-120">Selecione **alterar autenticação** e definido como **contas de usuário individuais**.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-120">Select **Change Authentication** and set to **Individual User Accounts**.</span></span>
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="85d68-121">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="85d68-121">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-![Nova caixa de diálogo do projeto mostrando "Opção de contas de usuário individuais" selecionada](accconfirm/_static/indiv.png)
-
----
-
-### <a name="net-core-cli-project-creation-for-macos-and-linux"></a><span data-ttu-id="a2fd7-122">Criação do projeto .NET core CLI para macOS e Linux</span><span class="sxs-lookup"><span data-stu-id="a2fd7-122">.NET Core CLI project creation for macOS and Linux</span></span>
-
-<span data-ttu-id="a2fd7-123">Se você estiver usando a CLI ou SQLite, execute o seguinte em uma janela de comando:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-123">If you're using the CLI or SQLite, run the following in a command window:</span></span>
+<span data-ttu-id="85d68-122">Se você estiver usando a CLI ou SQLite, execute o seguinte em uma janela de comando:</span><span class="sxs-lookup"><span data-stu-id="85d68-122">If you're using the CLI or SQLite, run the following in a command window:</span></span>
 
 ```console
 dotnet new mvc --auth Individual
 ```
 
-* <span data-ttu-id="a2fd7-124">`--auth Individual`Especifica o modelo de contas de usuário individuais.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-124">`--auth Individual` specifies the Individual User Accounts template.</span></span>
-* <span data-ttu-id="a2fd7-125">No Windows, adicione o `-uld` opção.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-125">On Windows, add the `-uld` option.</span></span> <span data-ttu-id="a2fd7-126">O `-uld` opção cria uma cadeia de caracteres de conexão do LocalDB em vez de um banco de dados SQLite.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-126">The `-uld` option creates a LocalDB connection string rather than a SQLite DB.</span></span>
-* <span data-ttu-id="a2fd7-127">Execute `new mvc --help` para obter ajuda sobre este comando.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-127">Run `new mvc --help` to get help on this command.</span></span>
+* <span data-ttu-id="85d68-123">`--auth Individual` Especifica o modelo de projeto de contas de usuário individuais.</span><span class="sxs-lookup"><span data-stu-id="85d68-123">`--auth Individual` specifies the Individual User Accounts project template.</span></span>
+* <span data-ttu-id="85d68-124">No Windows, adicione o `-uld` opção.</span><span class="sxs-lookup"><span data-stu-id="85d68-124">On Windows, add the `-uld` option.</span></span> <span data-ttu-id="85d68-125">Especifica que o LocalDB deve ser usado em vez do SQLite.</span><span class="sxs-lookup"><span data-stu-id="85d68-125">It specifies LocalDB should be used instead of SQLite.</span></span>
+* <span data-ttu-id="85d68-126">Execute `new mvc --help` para obter ajuda sobre este comando.</span><span class="sxs-lookup"><span data-stu-id="85d68-126">Run `new mvc --help` to get help on this command.</span></span>
 
-## <a name="test-new-user-registration"></a><span data-ttu-id="a2fd7-128">Testar o novo registro de usuário</span><span class="sxs-lookup"><span data-stu-id="a2fd7-128">Test new user registration</span></span>
+---
 
-<span data-ttu-id="a2fd7-129">Executar o aplicativo, selecione o **registrar** vincular e registrar um usuário.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-129">Run the app, select the **Register** link, and register a user.</span></span> <span data-ttu-id="a2fd7-130">Siga as instruções para executar migrações de Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-130">Follow the instructions to run Entity Framework Core migrations.</span></span> <span data-ttu-id="a2fd7-131">Neste ponto, a validação somente do email é com o [[EmailAddress]](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) atributo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-131">At this  point, the only validation on the email is with the [[EmailAddress]](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) attribute.</span></span> <span data-ttu-id="a2fd7-132">Depois de enviar o registro, você está conectado no aplicativo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-132">After you submit the registration, you are logged into the app.</span></span> <span data-ttu-id="a2fd7-133">Posteriormente no tutorial, vamos alterar isso para que novos usuários não podem fazer logon até que o email foi validado.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-133">Later in the tutorial, we'll change this so new users cannot log in until their email has been validated.</span></span>
+<span data-ttu-id="85d68-127">Como alternativa, você pode criar um novo projeto ASP.NET Core com o Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="85d68-127">Alternatively, you can create a new ASP.NET Core project with Visual Studio:</span></span>
 
-## <a name="view-the-identity-database"></a><span data-ttu-id="a2fd7-134">Exibir o banco de dados de identidade</span><span class="sxs-lookup"><span data-stu-id="a2fd7-134">View the Identity database</span></span>
+* <span data-ttu-id="85d68-128">No Visual Studio, crie um novo **aplicativo Web** projeto.</span><span class="sxs-lookup"><span data-stu-id="85d68-128">In Visual Studio, create a new **Web Application** project.</span></span>
+* <span data-ttu-id="85d68-129">Selecione **Core ASP.NET 2.0**.</span><span class="sxs-lookup"><span data-stu-id="85d68-129">Select **ASP.NET Core 2.0**.</span></span> <span data-ttu-id="85d68-130">**.NET core** está selecionado na imagem a seguir, mas você pode selecionar **do .NET Framework**.</span><span class="sxs-lookup"><span data-stu-id="85d68-130">**.NET Core** is selected in the following image, but you can select **.NET Framework**.</span></span>
+* <span data-ttu-id="85d68-131">Selecione **alterar autenticação** e definido como **contas de usuário individuais**.</span><span class="sxs-lookup"><span data-stu-id="85d68-131">Select **Change Authentication** and set to **Individual User Accounts**.</span></span>
+* <span data-ttu-id="85d68-132">Mantenha o padrão **no aplicativo de contas de usuário do repositório**.</span><span class="sxs-lookup"><span data-stu-id="85d68-132">Keep the default **Store user accounts in-app**.</span></span>
 
-# <a name="sql-servertabsql-server"></a>[<span data-ttu-id="a2fd7-135">SQL Server</span><span class="sxs-lookup"><span data-stu-id="a2fd7-135">SQL Server</span></span>](#tab/sql-server)
+![Nova caixa de diálogo do projeto mostrando "Opção de contas de usuário individuais" selecionada](accconfirm/_static/2.png)
 
-* <span data-ttu-id="a2fd7-136">Do **exibição** menu, selecione **Pesquisador de objetos do SQL Server** (SSOX).</span><span class="sxs-lookup"><span data-stu-id="a2fd7-136">From the **View** menu, select **SQL Server Object Explorer** (SSOX).</span></span> 
-* <span data-ttu-id="a2fd7-137">Navegue até **(localdb) MSSQLLocalDB (SQL Server 13)**.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-137">Navigate to **(localdb)MSSQLLocalDB(SQL Server 13)**.</span></span> <span data-ttu-id="a2fd7-138">Clique duas vezes em **dbo. AspNetUsers** > **exibir dados**:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-138">Right-click on **dbo.AspNetUsers** > **View Data**:</span></span>
+## <a name="test-new-user-registration"></a><span data-ttu-id="85d68-134">Testar o novo registro de usuário</span><span class="sxs-lookup"><span data-stu-id="85d68-134">Test new user registration</span></span>
+
+<span data-ttu-id="85d68-135">Executar o aplicativo, selecione o **registrar** vincular e registrar um usuário.</span><span class="sxs-lookup"><span data-stu-id="85d68-135">Run the app, select the **Register** link, and register a user.</span></span> <span data-ttu-id="85d68-136">Siga as instruções para executar migrações de Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="85d68-136">Follow the instructions to run Entity Framework Core migrations.</span></span> <span data-ttu-id="85d68-137">Neste ponto, a validação somente do email é com o [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) atributo.</span><span class="sxs-lookup"><span data-stu-id="85d68-137">At this point, the only validation on the email is with the [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) attribute.</span></span> <span data-ttu-id="85d68-138">Depois de enviar o registro, você está conectado no aplicativo.</span><span class="sxs-lookup"><span data-stu-id="85d68-138">After submitting the registration, you are logged into the app.</span></span> <span data-ttu-id="85d68-139">Posteriormente no tutorial, o código foi atualizado para que novos usuários não podem fazer logon até que o email foi validado.</span><span class="sxs-lookup"><span data-stu-id="85d68-139">Later in the tutorial, the code is updated so new users can't log in until their email has been validated.</span></span>
+
+## <a name="view-the-identity-database"></a><span data-ttu-id="85d68-140">Exibir o banco de dados de identidade</span><span class="sxs-lookup"><span data-stu-id="85d68-140">View the Identity database</span></span>
+
+<span data-ttu-id="85d68-141">Consulte [trabalhando com SQLite em um projeto MVC do ASP.NET Core](xref:tutorials/first-mvc-app-xplat/working-with-sql) para obter instruções sobre como exibir o banco de dados SQLite.</span><span class="sxs-lookup"><span data-stu-id="85d68-141">See [Working with SQLite in an ASP.NET Core MVC project](xref:tutorials/first-mvc-app-xplat/working-with-sql) for instructions on how to view the SQLite database.</span></span>
+
+<span data-ttu-id="85d68-142">Para o Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="85d68-142">For Visual Studio:</span></span>
+
+* <span data-ttu-id="85d68-143">Do **exibição** menu, selecione **Pesquisador de objetos do SQL Server** (SSOX).</span><span class="sxs-lookup"><span data-stu-id="85d68-143">From the **View** menu, select **SQL Server Object Explorer** (SSOX).</span></span>
+* <span data-ttu-id="85d68-144">Navegue até **(localdb) MSSQLLocalDB (SQL Server 13)**.</span><span class="sxs-lookup"><span data-stu-id="85d68-144">Navigate to **(localdb)MSSQLLocalDB(SQL Server 13)**.</span></span> <span data-ttu-id="85d68-145">Clique duas vezes em **dbo. AspNetUsers** > **exibir dados**:</span><span class="sxs-lookup"><span data-stu-id="85d68-145">Right-click on **dbo.AspNetUsers** > **View Data**:</span></span>
 
 ![Menu de contexto no AspNetUsers tabela no Pesquisador de objetos do SQL Server](accconfirm/_static/ssox.png)
 
-<span data-ttu-id="a2fd7-140">Observe o `EmailConfirmed` campo é `False`.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-140">Note the `EmailConfirmed` field is `False`.</span></span>
+<span data-ttu-id="85d68-147">Observe a tabela `EmailConfirmed` campo é `False`.</span><span class="sxs-lookup"><span data-stu-id="85d68-147">Note the table's `EmailConfirmed` field is `False`.</span></span>
 
-<span data-ttu-id="a2fd7-141">Você talvez queira usar o email novamente na próxima etapa, quando o aplicativo envia um email de confirmação.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-141">You might want to use this email again in the next step when the app sends a confirmation email.</span></span> <span data-ttu-id="a2fd7-142">Clique na linha e selecione **excluir**.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-142">Right-click on the row and select **Delete**.</span></span> <span data-ttu-id="a2fd7-143">Excluir o email alias agora facilitará nas etapas a seguir.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-143">Deleting the email alias now will make it easier in the following steps.</span></span>
-
-# <a name="sqlitetabsqlite"></a>[<span data-ttu-id="a2fd7-144">SQLite</span><span class="sxs-lookup"><span data-stu-id="a2fd7-144">SQLite</span></span>](#tab/sqlite)
-
-<span data-ttu-id="a2fd7-145">Consulte [trabalhando com SQLite em um projeto MVC do ASP.NET Core](xref:tutorials/first-mvc-app-xplat/working-with-sql) para obter instruções sobre como exibir o banco de dados SQLite.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-145">See [Working with SQLite in an ASP.NET Core MVC project](xref:tutorials/first-mvc-app-xplat/working-with-sql) for instructions on how to view the SQLite DB.</span></span> 
+<span data-ttu-id="85d68-148">Você talvez queira usar o email novamente na próxima etapa, quando o aplicativo envia um email de confirmação.</span><span class="sxs-lookup"><span data-stu-id="85d68-148">You might want to use this email again in the next step when the app sends a confirmation email.</span></span> <span data-ttu-id="85d68-149">Clique na linha e selecione **excluir**.</span><span class="sxs-lookup"><span data-stu-id="85d68-149">Right-click on the row and select **Delete**.</span></span> <span data-ttu-id="85d68-150">Excluir o alias de email torna mais fácil nas etapas a seguir.</span><span class="sxs-lookup"><span data-stu-id="85d68-150">Deleting the email alias makes it easier in the following steps.</span></span>
 
 ---
 
-## <a name="require-ssl-and-setup-iis-express-for-ssl"></a><span data-ttu-id="a2fd7-146">Exigir SSL e configurar o IIS Express para SSL</span><span class="sxs-lookup"><span data-stu-id="a2fd7-146">Require SSL and setup IIS Express for SSL</span></span>
+## <a name="require-https"></a><span data-ttu-id="85d68-151">Exigir HTTPS</span><span class="sxs-lookup"><span data-stu-id="85d68-151">Require HTTPS</span></span>
 
-<span data-ttu-id="a2fd7-147">Consulte [impondo SSL](xref:security/enforcing-ssl).</span><span class="sxs-lookup"><span data-stu-id="a2fd7-147">See [Enforcing SSL](xref:security/enforcing-ssl).</span></span>
+<span data-ttu-id="85d68-152">Consulte [exigir HTTPS](xref:security/enforcing-ssl).</span><span class="sxs-lookup"><span data-stu-id="85d68-152">See [Require HTTPS](xref:security/enforcing-ssl).</span></span>
 
 <a name="prevent-login-at-registration"></a>
-## <a name="require-email-confirmation"></a><span data-ttu-id="a2fd7-148">Solicitar confirmação de email</span><span class="sxs-lookup"><span data-stu-id="a2fd7-148">Require email confirmation</span></span>
+## <a name="require-email-confirmation"></a><span data-ttu-id="85d68-153">Solicitar confirmação de email</span><span class="sxs-lookup"><span data-stu-id="85d68-153">Require email confirmation</span></span>
 
-<span data-ttu-id="a2fd7-149">É uma prática recomendada para confirmar o email de um novo registro de usuário para verificar se eles não estiver representando outra pessoa (ou seja, eles ainda não registrados com outra pessoa email).</span><span class="sxs-lookup"><span data-stu-id="a2fd7-149">It's a best practice to confirm the email of a new user registration to verify they're not impersonating someone else (that is, they haven't registered with someone else's email).</span></span> <span data-ttu-id="a2fd7-150">Suponha que você tivesse um fórum de discussão, e quiser impedir "yli@example.com"do registro como"nolivetto@contoso.com."</span><span class="sxs-lookup"><span data-stu-id="a2fd7-150">Suppose you had a discussion forum, and you wanted to prevent "yli@example.com" from registering as "nolivetto@contoso.com."</span></span> <span data-ttu-id="a2fd7-151">Sem confirmação por email, "nolivetto@contoso.com" poderia obter indesejadas de seu aplicativo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-151">Without email confirmation, "nolivetto@contoso.com" could get unwanted email from your app.</span></span> <span data-ttu-id="a2fd7-152">Suponha que o usuário registrado acidentalmente como "ylo@example.com" e ainda não tenha notado o erro de "yli", elas não serão capazes de usar a recuperação de senha porque o aplicativo não tiver seu email correto.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-152">Suppose the user accidentally registered as "ylo@example.com" and hadn't noticed the misspelling of "yli," they wouldn't be able to use password recovery because the app doesn't have their correct email.</span></span> <span data-ttu-id="a2fd7-153">Email de confirmação oferece apenas proteção limitada de robôs e não oferece proteção contra spam determinado que têm muitos aliases de email de trabalho, que eles podem usar para registrar.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-153">Email confirmation provides only limited protection from bots and doesn't provide protection from determined spammers who have many working email aliases they can use to register.</span></span>
+<span data-ttu-id="85d68-154">É uma prática recomendada para confirmar o email de um novo registro de usuário.</span><span class="sxs-lookup"><span data-stu-id="85d68-154">It's a best practice to confirm the email of a new user registration.</span></span> <span data-ttu-id="85d68-155">Ajuda de confirmação para verificar se eles não estiver representando alguém de email (ou seja, eles ainda não registrados com outra pessoa email).</span><span class="sxs-lookup"><span data-stu-id="85d68-155">Email confirmation helps to verify they're not impersonating someone else (that is, they haven't registered with someone else's email).</span></span> <span data-ttu-id="85d68-156">Suponha que você tivesse um fórum de discussão, e quiser impedir "yli@example.com"do registro como"nolivetto@contoso.com."</span><span class="sxs-lookup"><span data-stu-id="85d68-156">Suppose you had a discussion forum, and you wanted to prevent "yli@example.com" from registering as "nolivetto@contoso.com."</span></span> <span data-ttu-id="85d68-157">Sem confirmação por email, "nolivetto@contoso.com" pode receber email indesejado de seu aplicativo.</span><span class="sxs-lookup"><span data-stu-id="85d68-157">Without email confirmation, "nolivetto@contoso.com" could receive unwanted email from your app.</span></span> <span data-ttu-id="85d68-158">Suponha que o usuário registrado acidentalmente como "ylo@example.com" e ainda não tenha percebido a digitação incorreta da "yli".</span><span class="sxs-lookup"><span data-stu-id="85d68-158">Suppose the user accidentally registered as "ylo@example.com" and hadn't noticed the misspelling of "yli".</span></span> <span data-ttu-id="85d68-159">Elas não serão capazes de usar a recuperação de senha porque o aplicativo não tiver seu email correto.</span><span class="sxs-lookup"><span data-stu-id="85d68-159">They wouldn't be able to use password recovery because the app doesn't have their correct email.</span></span> <span data-ttu-id="85d68-160">Email de confirmação oferece apenas proteção limitada de robôs.</span><span class="sxs-lookup"><span data-stu-id="85d68-160">Email confirmation provides only limited protection from bots.</span></span> <span data-ttu-id="85d68-161">Email de confirmação não fornece proteção contra usuários mal-intencionados com várias contas de email.</span><span class="sxs-lookup"><span data-stu-id="85d68-161">Email confirmation doesn't provide protection from malicious users with many email accounts.</span></span>
 
-<span data-ttu-id="a2fd7-154">Em geral você deseja impedir que novos usuários lançamento todos os dados para seu site da web para que eles tenham um email confirmado.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-154">You generally want to prevent new users from posting any data to your web site before they have a confirmed email.</span></span> 
+<span data-ttu-id="85d68-162">Em geral você deseja impedir que novos usuários lançamento todos os dados para seu site da web para que eles tenham um email confirmado.</span><span class="sxs-lookup"><span data-stu-id="85d68-162">You generally want to prevent new users from posting any data to your web site before they have a confirmed email.</span></span>
 
-<span data-ttu-id="a2fd7-155">Atualização `ConfigureServices` para exigir um email confirmado:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-155">Update `ConfigureServices` to require a confirmed email:</span></span>
+<span data-ttu-id="85d68-163">Atualização `ConfigureServices` para exigir um email confirmado:</span><span class="sxs-lookup"><span data-stu-id="85d68-163">Update `ConfigureServices` to require a confirmed email:</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a2fd7-156">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-156">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+[!code-csharp[Main](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet1&highlight=12-17)]
 
-[!code-csharp[Main](accconfirm/sample/WebPW/Startup.cs?name=snippet1&highlight=6-9)]
+<span data-ttu-id="85d68-164">`config.SignIn.RequireConfirmedEmail = true;` impede que usuários registrados fazer logon até que o email foi confirmado.</span><span class="sxs-lookup"><span data-stu-id="85d68-164">`config.SignIn.RequireConfirmedEmail = true;` prevents registered users from logging in until their email is confirmed.</span></span>
 
+### <a name="configure-email-provider"></a><span data-ttu-id="85d68-165">Configurar o provedor de email</span><span class="sxs-lookup"><span data-stu-id="85d68-165">Configure email provider</span></span>
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a2fd7-157">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-157">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+<span data-ttu-id="85d68-166">Neste tutorial, SendGrid é usada para enviar email.</span><span class="sxs-lookup"><span data-stu-id="85d68-166">In this tutorial, SendGrid is used to send email.</span></span> <span data-ttu-id="85d68-167">Você precisa de uma conta do SendGrid e a chave para enviar email.</span><span class="sxs-lookup"><span data-stu-id="85d68-167">You need a SendGrid account and key to send email.</span></span> <span data-ttu-id="85d68-168">Você pode usar outros provedores de email.</span><span class="sxs-lookup"><span data-stu-id="85d68-168">You can use other email providers.</span></span> <span data-ttu-id="85d68-169">ASP.NET Core 2. x inclui `System.Net.Mail`, que permite enviar email de seu aplicativo.</span><span class="sxs-lookup"><span data-stu-id="85d68-169">ASP.NET Core 2.x includes `System.Net.Mail`, which allows you to send email from your app.</span></span> <span data-ttu-id="85d68-170">É recomendável que usar o SendGrid ou outro serviço de email para enviar email.</span><span class="sxs-lookup"><span data-stu-id="85d68-170">We recommend you use SendGrid or another email service to send email.</span></span> <span data-ttu-id="85d68-171">O SMTP é difícil proteger e configurado corretamente.</span><span class="sxs-lookup"><span data-stu-id="85d68-171">SMTP is difficult to secure and set up correctly.</span></span>
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=13-16)]
+<span data-ttu-id="85d68-172">O [padrão de opções](xref:fundamentals/configuration/options) é usado para acessar as configurações de conta e a chave de usuário.</span><span class="sxs-lookup"><span data-stu-id="85d68-172">The [Options pattern](xref:fundamentals/configuration/options) is used to access the user account and key settings.</span></span> <span data-ttu-id="85d68-173">Para obter mais informações, consulte [configuração](xref:fundamentals/configuration/index).</span><span class="sxs-lookup"><span data-stu-id="85d68-173">For more information, see [configuration](xref:fundamentals/configuration/index).</span></span>
 
----
+<span data-ttu-id="85d68-174">Crie uma classe para obter a chave de email seguro.</span><span class="sxs-lookup"><span data-stu-id="85d68-174">Create a class to fetch the secure email key.</span></span> <span data-ttu-id="85d68-175">Para este exemplo, o `AuthMessageSenderOptions` classe é criada no *Services/AuthMessageSenderOptions.cs* arquivo:</span><span class="sxs-lookup"><span data-stu-id="85d68-175">For this sample, the `AuthMessageSenderOptions` class is created in the *Services/AuthMessageSenderOptions.cs* file:</span></span>
 
- 
-```csharp
-config.SignIn.RequireConfirmedEmail = true;
-```
-<span data-ttu-id="a2fd7-158">A linha precedente impede que usuários registrados que está sendo conectado até que o email foi confirmado.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-158">The preceding line prevents registered users from being logged in until their email is confirmed.</span></span> <span data-ttu-id="a2fd7-159">No entanto, essa linha não impede que novos usuários que está sendo conectado depois que eles se registrar.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-159">However, that line doesn't prevent new users from being logged in after they register.</span></span> <span data-ttu-id="a2fd7-160">O código padrão registra em um usuário depois que eles se registrar.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-160">The default code logs in a user after they register.</span></span> <span data-ttu-id="a2fd7-161">Depois que eles fazer logoff, eles não será capazes de fazer logon novamente até que eles se registrar.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-161">Once they log out, they won't be able to log in again until they register.</span></span> <span data-ttu-id="a2fd7-162">Posteriormente no tutorial, vamos alterar o usuário de código registrado para recentemente são **não** conectado.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-162">Later in the tutorial we'll change the code so newly registered user are **not** logged in.</span></span>
+[!code-csharp[Main](accconfirm/sample/WebPWrecover/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
-### <a name="configure-email-provider"></a><span data-ttu-id="a2fd7-163">Configurar o provedor de email</span><span class="sxs-lookup"><span data-stu-id="a2fd7-163">Configure email provider</span></span>
+<span data-ttu-id="85d68-176">Definir o `SendGridUser` e `SendGridKey` com o [ferramenta Gerenciador de segredo](xref:security/app-secrets).</span><span class="sxs-lookup"><span data-stu-id="85d68-176">Set the `SendGridUser` and `SendGridKey` with the [secret-manager tool](xref:security/app-secrets).</span></span> <span data-ttu-id="85d68-177">Por exemplo:</span><span class="sxs-lookup"><span data-stu-id="85d68-177">For example:</span></span>
 
-<span data-ttu-id="a2fd7-164">Neste tutorial, SendGrid é usada para enviar email.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-164">In this tutorial, SendGrid is used to send email.</span></span> <span data-ttu-id="a2fd7-165">Você precisa de uma conta do SendGrid e a chave para enviar email.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-165">You need a SendGrid account and key to send email.</span></span> <span data-ttu-id="a2fd7-166">Você pode usar outros provedores de email.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-166">You can use other email providers.</span></span> <span data-ttu-id="a2fd7-167">ASP.NET Core 2. x inclui `System.Net.Mail`, que permite enviar email de seu aplicativo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-167">ASP.NET Core 2.x includes `System.Net.Mail`, which allows you to send email from your app.</span></span> <span data-ttu-id="a2fd7-168">É recomendável que usar o SendGrid ou outro serviço de email para enviar email.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-168">We recommend you use SendGrid or another email service to send email.</span></span> <span data-ttu-id="a2fd7-169">O SMTP é difícil proteger e configurado corretamente.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-169">SMTP is difficult to secure and set up correctly.</span></span>
-
-<span data-ttu-id="a2fd7-170">O [padrão de opções](xref:fundamentals/configuration/options) é usado para acessar as configurações de conta e a chave de usuário.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-170">The [Options pattern](xref:fundamentals/configuration/options) is used to access the user account and key settings.</span></span> <span data-ttu-id="a2fd7-171">Para obter mais informações, consulte [configuração](xref:fundamentals/configuration/index).</span><span class="sxs-lookup"><span data-stu-id="a2fd7-171">For more information, see [configuration](xref:fundamentals/configuration/index).</span></span>
-
-<span data-ttu-id="a2fd7-172">Crie uma classe para obter a chave de email seguro.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-172">Create a class to fetch the secure email key.</span></span> <span data-ttu-id="a2fd7-173">Para este exemplo, o `AuthMessageSenderOptions` classe é criada no *Services/AuthMessageSenderOptions.cs* arquivo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-173">For this sample, the `AuthMessageSenderOptions` class is created in the *Services/AuthMessageSenderOptions.cs* file.</span></span>
-
-[!code-csharp[Main](accconfirm/sample/WebApp1/Services/AuthMessageSenderOptions.cs?name=snippet1)]
-
-<span data-ttu-id="a2fd7-174">Definir o `SendGridUser` e `SendGridKey` com o [ferramenta Gerenciador de segredo](../app-secrets.md).</span><span class="sxs-lookup"><span data-stu-id="a2fd7-174">Set the `SendGridUser` and `SendGridKey` with the [secret-manager tool](../app-secrets.md).</span></span> <span data-ttu-id="a2fd7-175">Por exemplo:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-175">For example:</span></span>
-
-```none
+```console
 C:\WebAppl\src\WebApp1>dotnet user-secrets set SendGridUser RickAndMSFT
 info: Successfully saved SendGridUser = RickAndMSFT to the secret store.
 ```
 
-<span data-ttu-id="a2fd7-176">No Windows, o segredo Manager armazena seus pares de chaves/valor em uma *secrets.json* arquivo no diretório %APPDATA%/Microsoft/UserSecrets/ < WebAppName userSecretsId >.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-176">On Windows, Secret Manager stores your keys/value pairs in a *secrets.json* file in the %APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId> directory.</span></span>
+<span data-ttu-id="85d68-178">No Windows, o segredo Manager armazena pares de chaves/valor em uma *secrets.json* arquivo o `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` directory.</span><span class="sxs-lookup"><span data-stu-id="85d68-178">On Windows, Secret Manager stores keys/value pairs in a *secrets.json* file in the `%APPDATA%/Microsoft/UserSecrets/<WebAppName-userSecretsId>` directory.</span></span>
 
-<span data-ttu-id="a2fd7-177">O conteúdo do *secrets.json* arquivo não são criptografados.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-177">The contents of the *secrets.json* file are not encrypted.</span></span> <span data-ttu-id="a2fd7-178">O *secrets.json* arquivo é mostrado a seguir (o `SendGridKey` valor foi removido.)</span><span class="sxs-lookup"><span data-stu-id="a2fd7-178">The *secrets.json* file is shown below (the `SendGridKey` value has been removed.)</span></span>
+<span data-ttu-id="85d68-179">O conteúdo do *secrets.json* arquivo não são criptografados.</span><span class="sxs-lookup"><span data-stu-id="85d68-179">The contents of the *secrets.json* file aren't encrypted.</span></span> <span data-ttu-id="85d68-180">O *secrets.json* arquivo é mostrado a seguir (o `SendGridKey` valor foi removido.)</span><span class="sxs-lookup"><span data-stu-id="85d68-180">The *secrets.json* file is shown below (the `SendGridKey` value has been removed.)</span></span>
 
-  ```json
+ ```json
   {
     "SendGridUser": "RickAndMSFT",
     "SendGridKey": "<key removed>"
   }
   ```
 
-### <a name="configure-startup-to-use-authmessagesenderoptions"></a><span data-ttu-id="a2fd7-179">Configurar a inicialização para usar AuthMessageSenderOptions</span><span class="sxs-lookup"><span data-stu-id="a2fd7-179">Configure startup to use AuthMessageSenderOptions</span></span>
+### <a name="configure-startup-to-use-authmessagesenderoptions"></a><span data-ttu-id="85d68-181">Configurar a inicialização para usar AuthMessageSenderOptions</span><span class="sxs-lookup"><span data-stu-id="85d68-181">Configure startup to use AuthMessageSenderOptions</span></span>
 
-<span data-ttu-id="a2fd7-180">Adicionar `AuthMessageSenderOptions` ao contêiner de serviço no final o `ConfigureServices` método o *Startup.cs* arquivo:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-180">Add `AuthMessageSenderOptions` to the service container at the end of the `ConfigureServices` method in the *Startup.cs* file:</span></span>
+<span data-ttu-id="85d68-182">Adicionar `AuthMessageSenderOptions` ao contêiner de serviço no final o `ConfigureServices` método o *Startup.cs* arquivo:</span><span class="sxs-lookup"><span data-stu-id="85d68-182">Add `AuthMessageSenderOptions` to the service container at the end of the `ConfigureServices` method in the *Startup.cs* file:</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a2fd7-181">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-181">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="85d68-183">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="85d68-183">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-[!code-csharp[Main](accconfirm/sample/WebPW/Startup.cs?name=snippet1&highlight=18)]
+[!code-csharp[Main](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a2fd7-182">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-182">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="85d68-184">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="85d68-184">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+
 [!code-csharp[Main](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
 ---
 
-### <a name="configure-the-authmessagesender-class"></a><span data-ttu-id="a2fd7-183">Configurar a classe AuthMessageSender</span><span class="sxs-lookup"><span data-stu-id="a2fd7-183">Configure the AuthMessageSender class</span></span>
+### <a name="configure-the-authmessagesender-class"></a><span data-ttu-id="85d68-185">Configurar a classe AuthMessageSender</span><span class="sxs-lookup"><span data-stu-id="85d68-185">Configure the AuthMessageSender class</span></span>
 
-<span data-ttu-id="a2fd7-184">Este tutorial mostra como adicionar notificações de email por meio de [SendGrid](https://sendgrid.com/), mas você pode enviar emails usando SMTP e outros mecanismos.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-184">This tutorial shows how to add email notifications through [SendGrid](https://sendgrid.com/), but you can send email using SMTP and other mechanisms.</span></span>
+<span data-ttu-id="85d68-186">Este tutorial mostra como adicionar notificações de email por meio de [SendGrid](https://sendgrid.com/), mas você pode enviar emails usando SMTP e outros mecanismos.</span><span class="sxs-lookup"><span data-stu-id="85d68-186">This tutorial shows how to add email notifications through [SendGrid](https://sendgrid.com/), but you can send email using SMTP and other mechanisms.</span></span>
 
-* <span data-ttu-id="a2fd7-185">Instalar o `SendGrid` pacote NuGet.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-185">Install the `SendGrid` NuGet package.</span></span> <span data-ttu-id="a2fd7-186">No Console do Gerenciador de pacotes, digite o seguinte comando a seguir:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-186">From the Package Manager Console,  enter the following the following command:</span></span>
+<span data-ttu-id="85d68-187">Instalar o `SendGrid` pacote do NuGet:</span><span class="sxs-lookup"><span data-stu-id="85d68-187">Install the `SendGrid` NuGet package:</span></span>
 
-  `Install-Package SendGrid`
+* <span data-ttu-id="85d68-188">Na linha de comando:</span><span class="sxs-lookup"><span data-stu-id="85d68-188">From the command line:</span></span>
 
-* <span data-ttu-id="a2fd7-187">Consulte [comece com SendGrid gratuitamente](https://sendgrid.com/free/) para registrar-se para uma conta gratuita do SendGrid.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-187">See [Get Started with SendGrid for Free](https://sendgrid.com/free/) to register for a free SendGrid account.</span></span>
+    `dotnet add package SendGrid`
 
-#### <a name="configure-sendgrid"></a><span data-ttu-id="a2fd7-188">Configurar o SendGrid</span><span class="sxs-lookup"><span data-stu-id="a2fd7-188">Configure SendGrid</span></span>
+* <span data-ttu-id="85d68-189">No Console do Gerenciador de pacotes, digite o seguinte comando:</span><span class="sxs-lookup"><span data-stu-id="85d68-189">From the Package Manager Console, enter the following command:</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a2fd7-189">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-189">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+ `Install-Package SendGrid`
 
-* <span data-ttu-id="a2fd7-190">Adicione código *Services/EmailSender.cs* semelhante à seguinte para configurar o SendGrid:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-190">Add code in *Services/EmailSender.cs* similar to the following to configure SendGrid:</span></span>
+<span data-ttu-id="85d68-190">Consulte [comece com SendGrid gratuitamente](https://sendgrid.com/free/) para registrar-se para uma conta gratuita do SendGrid.</span><span class="sxs-lookup"><span data-stu-id="85d68-190">See [Get Started with SendGrid for Free](https://sendgrid.com/free/) to register for a free SendGrid account.</span></span>
 
-[!code-csharp[Main](accconfirm/sample/WebPW/Services/EmailSender.cs)]
+#### <a name="configure-sendgrid"></a><span data-ttu-id="85d68-191">Configurar o SendGrid</span><span class="sxs-lookup"><span data-stu-id="85d68-191">Configure SendGrid</span></span>
 
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="85d68-192">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="85d68-192">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a2fd7-191">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-191">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
-* <span data-ttu-id="a2fd7-192">Adicione código *Services/MessageServices.cs* semelhante à seguinte para configurar o SendGrid:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-192">Add code in *Services/MessageServices.cs* similar to the following to configure SendGrid:</span></span>
+<span data-ttu-id="85d68-193">Para configurar o SendGrid, adicione o código semelhante ao seguinte no *Services/EmailSender.cs*:</span><span class="sxs-lookup"><span data-stu-id="85d68-193">To configure SendGrid, add code similar to the following in *Services/EmailSender.cs*:</span></span>
+
+[!code-csharp[Main](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="85d68-194">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="85d68-194">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+* <span data-ttu-id="85d68-195">Adicione código *Services/MessageServices.cs* semelhante à seguinte para configurar o SendGrid:</span><span class="sxs-lookup"><span data-stu-id="85d68-195">Add code in *Services/MessageServices.cs* similar to the following to configure SendGrid:</span></span>
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
 
 ---
 
-## <a name="enable-account-confirmation-and-password-recovery"></a><span data-ttu-id="a2fd7-193">Habilitar a recuperação de confirmação e a senha da conta</span><span class="sxs-lookup"><span data-stu-id="a2fd7-193">Enable account confirmation and password recovery</span></span>
+## <a name="enable-account-confirmation-and-password-recovery"></a><span data-ttu-id="85d68-196">Habilitar a recuperação de confirmação e a senha da conta</span><span class="sxs-lookup"><span data-stu-id="85d68-196">Enable account confirmation and password recovery</span></span>
 
-<span data-ttu-id="a2fd7-194">O modelo tem o código de recuperação de confirmação e a senha da conta.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-194">The template has the code for account confirmation and password recovery.</span></span> <span data-ttu-id="a2fd7-195">Localizar o `[HttpPost] Register` método o *AccountController.cs* arquivo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-195">Find the `[HttpPost] Register` method in the  *AccountController.cs* file.</span></span>
+<span data-ttu-id="85d68-197">O modelo tem o código de recuperação de confirmação e a senha da conta.</span><span class="sxs-lookup"><span data-stu-id="85d68-197">The template has the code for account confirmation and password recovery.</span></span> <span data-ttu-id="85d68-198">Localizar o `OnPostAsync` método *Pages/Account/Register.cshtml.cs*.</span><span class="sxs-lookup"><span data-stu-id="85d68-198">Find the `OnPostAsync` method in *Pages/Account/Register.cshtml.cs*.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a2fd7-196">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-196">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="85d68-199">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="85d68-199">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="a2fd7-197">Impedi que usuários recém-registrados sendo registrados automaticamente pelo comentar a seguinte linha:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-197">Prevent newly registered users from being automatically logged on by commenting out the following line:</span></span>
+<span data-ttu-id="85d68-200">Impedi que usuários recém-registrados sendo registrados automaticamente pelo comentar a seguinte linha:</span><span class="sxs-lookup"><span data-stu-id="85d68-200">Prevent newly registered users from being automatically logged on by commenting out the following line:</span></span>
 
-```csharp 
+```csharp
 await _signInManager.SignInAsync(user, isPersistent: false);
 ```
 
-<span data-ttu-id="a2fd7-198">O método complete é mostrado com a linha alterada realçada:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-198">The complete method is shown with the changed line highlighted:</span></span>
+<span data-ttu-id="85d68-201">O método complete é mostrado com a linha alterada realçada:</span><span class="sxs-lookup"><span data-stu-id="85d68-201">The complete method is shown with the changed line highlighted:</span></span>
 
-[!code-csharp[Main](accconfirm/sample/WebPW/Controllers/AccountController.cs?highlight=19&name=snippet_Register)]
+[!code-csharp[Main](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
 
-<span data-ttu-id="a2fd7-199">Observação: O código anterior falhará se você implementar `IEmailSender` e enviar um email de texto sem formatação.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-199">Note: The previous code will fail if you implement `IEmailSender` and send a plain text email.</span></span> <span data-ttu-id="a2fd7-200">Consulte [esse problema](https://github.com/aspnet/Home/issues/2152) para obter mais informações e uma solução alternativa.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-200">See [this issue](https://github.com/aspnet/Home/issues/2152) for more information and a workaround.</span></span>
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="85d68-202">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="85d68-202">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a2fd7-201">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-201">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
-
-<span data-ttu-id="a2fd7-202">Descomente o código para habilitar a confirmação da conta.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-202">Uncomment the code to enable account confirmation.</span></span>
+<span data-ttu-id="85d68-203">Para habilitar a confirmação de conta, descomente o código a seguir:</span><span class="sxs-lookup"><span data-stu-id="85d68-203">To enable account confirmation, uncomment the following code:</span></span>
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
 
-<span data-ttu-id="a2fd7-203">Observação: É estiver também impedindo que um usuário registrado recentemente sendo registrados automaticamente pelo comentar a seguinte linha:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-203">Note: We're also preventing a newly-registered user from being automatically logged on by commenting out the following line:</span></span>
+<span data-ttu-id="85d68-204">**Observação:** o código está impedindo que um usuário registrado recentemente que estão sendo registrados automaticamente pelo comentar a seguinte linha:</span><span class="sxs-lookup"><span data-stu-id="85d68-204">**Note:** The code is preventing a newly registered user from being automatically logged on by commenting out the following line:</span></span>
 
-```csharp 
+```csharp
 //await _signInManager.SignInAsync(user, isPersistent: false);
 ```
 
-<span data-ttu-id="a2fd7-204">Habilitar a recuperação de senha por uncommenting o código de `ForgotPassword` ação no *Controllers/AccountController.cs* arquivo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-204">Enable password recovery by uncommenting the code in the `ForgotPassword` action in the *Controllers/AccountController.cs* file.</span></span>
+<span data-ttu-id="85d68-205">Habilitar a recuperação de senha por uncommenting o código de `ForgotPassword` ação de *Controllers/AccountController.cs*:</span><span class="sxs-lookup"><span data-stu-id="85d68-205">Enable password recovery by uncommenting the code in the `ForgotPassword` action of *Controllers/AccountController.cs*:</span></span>
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=17-23&name=snippet_ForgotPassword)]
 
-<span data-ttu-id="a2fd7-205">Remova o elemento de formulário em *Views/Account/ForgotPassword.cshtml*.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-205">Uncomment the form element in *Views/Account/ForgotPassword.cshtml*.</span></span> <span data-ttu-id="a2fd7-206">Talvez você queira remover o `<p> For more information on how to enable reset password ... </p>` elemento que contém um link para este artigo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-206">You might want to remove the `<p> For more information on how to enable reset password ... </p>` element which contains a link to this article.</span></span>
+<span data-ttu-id="85d68-206">Remova o elemento de formulário em *Views/Account/ForgotPassword.cshtml*.</span><span class="sxs-lookup"><span data-stu-id="85d68-206">Uncomment the form element in *Views/Account/ForgotPassword.cshtml*.</span></span> <span data-ttu-id="85d68-207">Talvez você queira remover o `<p> For more information on how to enable reset password ... </p>` elemento, que contém um link para este artigo.</span><span class="sxs-lookup"><span data-stu-id="85d68-207">You might want to remove the `<p> For more information on how to enable reset password ... </p>` element, which contains a link to this article.</span></span>
 
-[!code-html[Main](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
+[!code-cshtml[Main](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
 
 ---
 
-## <a name="register-confirm-email-and-reset-password"></a><span data-ttu-id="a2fd7-207">Registrar, confirme o email e redefinição de senha</span><span class="sxs-lookup"><span data-stu-id="a2fd7-207">Register, confirm email, and reset password</span></span>
+## <a name="register-confirm-email-and-reset-password"></a><span data-ttu-id="85d68-208">Registrar, confirme o email e redefinição de senha</span><span class="sxs-lookup"><span data-stu-id="85d68-208">Register, confirm email, and reset password</span></span>
 
-<span data-ttu-id="a2fd7-208">Executar o aplicativo web e testar o fluxo de recuperação de senha e confirmação de conta.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-208">Run the web app, and test the account confirmation and password recovery flow.</span></span>
+<span data-ttu-id="85d68-209">Executar o aplicativo web e testar o fluxo de recuperação de senha e confirmação de conta.</span><span class="sxs-lookup"><span data-stu-id="85d68-209">Run the web app, and test the account confirmation and password recovery flow.</span></span>
 
-* <span data-ttu-id="a2fd7-209">Execute o aplicativo e registrar um novo usuário</span><span class="sxs-lookup"><span data-stu-id="a2fd7-209">Run the app and register a new user</span></span>
+* <span data-ttu-id="85d68-210">Execute o aplicativo e registrar um novo usuário</span><span class="sxs-lookup"><span data-stu-id="85d68-210">Run the app and register a new user</span></span>
 
  ![Registrar conta exibição do aplicativo Web](accconfirm/_static/loginaccconfirm1.png)
 
-* <span data-ttu-id="a2fd7-211">Verifique seu email para o link de confirmação de conta.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-211">Check your email for the account confirmation link.</span></span> <span data-ttu-id="a2fd7-212">Consulte [depurar email](#debug) se você não receber o email.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-212">See [Debug email](#debug) if you don't get the email.</span></span>
-* <span data-ttu-id="a2fd7-213">Clique no link para confirmar seu email.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-213">Click the link to confirm your email.</span></span>
-* <span data-ttu-id="a2fd7-214">Faça logon com seu email e senha.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-214">Log in with your email and password.</span></span>
-* <span data-ttu-id="a2fd7-215">Fazer logoff.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-215">Log off.</span></span>
+* <span data-ttu-id="85d68-212">Verifique seu email para o link de confirmação de conta.</span><span class="sxs-lookup"><span data-stu-id="85d68-212">Check your email for the account confirmation link.</span></span> <span data-ttu-id="85d68-213">Consulte [depurar email](#debug) se você não receber o email.</span><span class="sxs-lookup"><span data-stu-id="85d68-213">See [Debug email](#debug) if you don't get the email.</span></span>
+* <span data-ttu-id="85d68-214">Clique no link para confirmar seu email.</span><span class="sxs-lookup"><span data-stu-id="85d68-214">Click the link to confirm your email.</span></span>
+* <span data-ttu-id="85d68-215">Faça logon com seu email e senha.</span><span class="sxs-lookup"><span data-stu-id="85d68-215">Log in with your email and password.</span></span>
+* <span data-ttu-id="85d68-216">Fazer logoff.</span><span class="sxs-lookup"><span data-stu-id="85d68-216">Log off.</span></span>
 
-### <a name="view-the-manage-page"></a><span data-ttu-id="a2fd7-216">Exibir a página de gerenciamento</span><span class="sxs-lookup"><span data-stu-id="a2fd7-216">View the manage page</span></span>
+### <a name="view-the-manage-page"></a><span data-ttu-id="85d68-217">Exibir a página de gerenciamento</span><span class="sxs-lookup"><span data-stu-id="85d68-217">View the manage page</span></span>
 
-<span data-ttu-id="a2fd7-217">Selecione o nome de usuário no navegador: ![janela do navegador com o nome de usuário](accconfirm/_static/un.png)</span><span class="sxs-lookup"><span data-stu-id="a2fd7-217">Select your user name in the browser: ![browser window with user name](accconfirm/_static/un.png)</span></span>
+<span data-ttu-id="85d68-218">Selecione o nome de usuário no navegador: ![janela do navegador com o nome de usuário](accconfirm/_static/un.png)</span><span class="sxs-lookup"><span data-stu-id="85d68-218">Select your user name in the browser: ![browser window with user name](accconfirm/_static/un.png)</span></span>
 
-<span data-ttu-id="a2fd7-218">Talvez seja necessário expandir a barra de navegação para ver o nome de usuário.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-218">You might need to expand the navbar to see user name.</span></span>
+<span data-ttu-id="85d68-219">Talvez seja necessário expandir a barra de navegação para ver o nome de usuário.</span><span class="sxs-lookup"><span data-stu-id="85d68-219">You might need to expand the navbar to see user name.</span></span>
 
 ![navbar](accconfirm/_static/x.png)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a2fd7-220">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-220">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="85d68-221">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="85d68-221">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="a2fd7-221">A página de gerenciamento é exibida com o **perfil** guia selecionada.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-221">The manage page is displayed with the **Profile** tab selected.</span></span> <span data-ttu-id="a2fd7-222">O **Email** mostra uma caixa de seleção que indica o email foi confirmada.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-222">The **Email** shows a check box indicating the email has been confirmed.</span></span> 
+<span data-ttu-id="85d68-222">A página de gerenciamento é exibida com o **perfil** guia selecionada.</span><span class="sxs-lookup"><span data-stu-id="85d68-222">The manage page is displayed with the **Profile** tab selected.</span></span> <span data-ttu-id="85d68-223">O **Email** mostra uma caixa de seleção que indica o email foi confirmada.</span><span class="sxs-lookup"><span data-stu-id="85d68-223">The **Email** shows a check box indicating the email has been confirmed.</span></span>
 
 ![página Gerenciar](accconfirm/_static/rick2.png)
 
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="85d68-225">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="85d68-225">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a2fd7-224">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a2fd7-224">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
-
-<span data-ttu-id="a2fd7-225">Falaremos sobre esta página no tutorial posteriormente.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-225">We'll talk about this page later in the tutorial.</span></span>
-<span data-ttu-id="a2fd7-226">![página Gerenciar](accconfirm/_static/rick2.png)</span><span class="sxs-lookup"><span data-stu-id="a2fd7-226">![manage page](accconfirm/_static/rick2.png)</span></span>
+<span data-ttu-id="85d68-226">Isto é mencionado no tutorial posteriormente.</span><span class="sxs-lookup"><span data-stu-id="85d68-226">This is mentioned later in the tutorial.</span></span>
+<span data-ttu-id="85d68-227">![página Gerenciar](accconfirm/_static/rick2.png)</span><span class="sxs-lookup"><span data-stu-id="85d68-227">![manage page](accconfirm/_static/rick2.png)</span></span>
 
 ---
 
-### <a name="test-password-reset"></a><span data-ttu-id="a2fd7-227">Redefinição de senha do teste</span><span class="sxs-lookup"><span data-stu-id="a2fd7-227">Test password reset</span></span>
+### <a name="test-password-reset"></a><span data-ttu-id="85d68-228">Redefinição de senha do teste</span><span class="sxs-lookup"><span data-stu-id="85d68-228">Test password reset</span></span>
 
-* <span data-ttu-id="a2fd7-228">Se você estiver conectado, selecione **Logout**.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-228">If you're logged in, select **Logout**.</span></span>  
-* <span data-ttu-id="a2fd7-229">Selecione o **login** link e selecione o **esqueceu sua senha?** link.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-229">Select the **Log in** link and select the **Forgot your password?** link.</span></span>
-* <span data-ttu-id="a2fd7-230">Insira o email que é usado para registrar a conta.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-230">Enter the email you used to register the account.</span></span>
-* <span data-ttu-id="a2fd7-231">Será enviado um email com um link para redefinir sua senha.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-231">An email with a link to reset your password will be sent.</span></span> <span data-ttu-id="a2fd7-232">Verifique seu email e clique no link para redefinir sua senha.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-232">Check your email and click the link to reset your password.</span></span>  <span data-ttu-id="a2fd7-233">Depois que sua senha foi redefinida com êxito, você pode fazer logon com seu email e a nova senha.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-233">After your password has been successfully reset, you can login with your email and new password.</span></span>
+* <span data-ttu-id="85d68-229">Se você estiver conectado, selecione **Logout**.</span><span class="sxs-lookup"><span data-stu-id="85d68-229">If you're logged in, select **Logout**.</span></span>
+* <span data-ttu-id="85d68-230">Selecione o **login** link e selecione o **esqueceu sua senha?** link.</span><span class="sxs-lookup"><span data-stu-id="85d68-230">Select the **Log in** link and select the **Forgot your password?** link.</span></span>
+* <span data-ttu-id="85d68-231">Insira o email que é usado para registrar a conta.</span><span class="sxs-lookup"><span data-stu-id="85d68-231">Enter the email you used to register the account.</span></span>
+* <span data-ttu-id="85d68-232">É enviado um email com um link para redefinir sua senha.</span><span class="sxs-lookup"><span data-stu-id="85d68-232">An email with a link to reset your password is sent.</span></span> <span data-ttu-id="85d68-233">Verifique seu email e clique no link para redefinir sua senha.</span><span class="sxs-lookup"><span data-stu-id="85d68-233">Check your email and click the link to reset your password.</span></span> <span data-ttu-id="85d68-234">Depois que sua senha foi redefinida com êxito, você pode fazer logon com seu email e a nova senha.</span><span class="sxs-lookup"><span data-stu-id="85d68-234">After your password has been successfully reset, you can log in with your email and new password.</span></span>
 
 <a name="debug"></a>
 
-### <a name="debug-email"></a><span data-ttu-id="a2fd7-234">Depurar email</span><span class="sxs-lookup"><span data-stu-id="a2fd7-234">Debug email</span></span>
+### <a name="debug-email"></a><span data-ttu-id="85d68-235">Depurar email</span><span class="sxs-lookup"><span data-stu-id="85d68-235">Debug email</span></span>
 
-<span data-ttu-id="a2fd7-235">Se você não pode receber email de trabalho:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-235">If you can't get email working:</span></span>
+<span data-ttu-id="85d68-236">Se você não pode receber email de trabalho:</span><span class="sxs-lookup"><span data-stu-id="85d68-236">If you can't get email working:</span></span>
 
-* <span data-ttu-id="a2fd7-236">Examine o [atividade Email](https://sendgrid.com/docs/User_Guide/email_activity.html) página.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-236">Review the [Email Activity](https://sendgrid.com/docs/User_Guide/email_activity.html) page.</span></span>
-* <span data-ttu-id="a2fd7-237">Verifique a pasta de spam.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-237">Check your spam folder.</span></span>
-* <span data-ttu-id="a2fd7-238">Tente outro alias de email em um provedor de email diferente (Microsoft, Yahoo, Gmail, etc.)</span><span class="sxs-lookup"><span data-stu-id="a2fd7-238">Try another email alias on a different email provider (Microsoft, Yahoo, Gmail, etc.)</span></span>
-* <span data-ttu-id="a2fd7-239">Criar um [aplicativo de console para enviar email](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html).</span><span class="sxs-lookup"><span data-stu-id="a2fd7-239">Create a [console app to send email](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html).</span></span>
-* <span data-ttu-id="a2fd7-240">Tente enviar para contas de email diferente.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-240">Try sending to different email accounts.</span></span>
+* <span data-ttu-id="85d68-237">Criar um [aplicativo de console para enviar email](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html).</span><span class="sxs-lookup"><span data-stu-id="85d68-237">Create a [console app to send email](https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html).</span></span>
+* <span data-ttu-id="85d68-238">Examine o [atividade Email](https://sendgrid.com/docs/User_Guide/email_activity.html) página.</span><span class="sxs-lookup"><span data-stu-id="85d68-238">Review the [Email Activity](https://sendgrid.com/docs/User_Guide/email_activity.html) page.</span></span>
+* <span data-ttu-id="85d68-239">Verifique a pasta de spam.</span><span class="sxs-lookup"><span data-stu-id="85d68-239">Check your spam folder.</span></span>
+* <span data-ttu-id="85d68-240">Tente outro alias de email em um provedor de email diferente (Microsoft, Yahoo, Gmail, etc.)</span><span class="sxs-lookup"><span data-stu-id="85d68-240">Try another email alias on a different email provider (Microsoft, Yahoo, Gmail, etc.)</span></span>
+* <span data-ttu-id="85d68-241">Tente enviar para contas de email diferente.</span><span class="sxs-lookup"><span data-stu-id="85d68-241">Try sending to different email accounts.</span></span>
 
-<span data-ttu-id="a2fd7-241">**Observação:** uma prática recomendada é não usar segredos de produção no desenvolvimento e teste.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-241">**Note:** A security best practice is to not use production secrets in test and development.</span></span> <span data-ttu-id="a2fd7-242">Se você publicar o aplicativo no Azure, você pode definir os segredos do SendGrid como configurações de aplicativo no portal do aplicativo Web do Azure.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-242">If you publish the app to Azure, you can set the SendGrid secrets as application settings in the Azure Web App portal.</span></span> <span data-ttu-id="a2fd7-243">O sistema de configuração está configurado para ler as chaves de variáveis de ambiente.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-243">The configuration system is setup to read keys from environment variables.</span></span>
+<span data-ttu-id="85d68-242">**Uma prática recomendada de segurança** é **não** use segredos de produção no desenvolvimento e teste.</span><span class="sxs-lookup"><span data-stu-id="85d68-242">**A security best practice** is to **not** use production secrets in test and development.</span></span> <span data-ttu-id="85d68-243">Se você publicar o aplicativo no Azure, você pode definir os segredos do SendGrid como configurações de aplicativo no portal do aplicativo Web do Azure.</span><span class="sxs-lookup"><span data-stu-id="85d68-243">If you publish the app to Azure, you can set the SendGrid secrets as application settings in the Azure Web App portal.</span></span> <span data-ttu-id="85d68-244">O sistema de configuração é configurado para ler as chaves de variáveis de ambiente.</span><span class="sxs-lookup"><span data-stu-id="85d68-244">The configuration system is set up to read keys from environment variables.</span></span>
 
-## <a name="prevent-login-at-registration"></a><span data-ttu-id="a2fd7-244">Impedir que o logon no momento do registro</span><span class="sxs-lookup"><span data-stu-id="a2fd7-244">Prevent login at registration</span></span>
+## <a name="combine-social-and-local-login-accounts"></a><span data-ttu-id="85d68-245">Combinar as contas de logon local e social</span><span class="sxs-lookup"><span data-stu-id="85d68-245">Combine social and local login accounts</span></span>
 
-<span data-ttu-id="a2fd7-245">Com os modelos atuais, depois que o usuário concluir o formulário de registro, estão conectados (autenticados).</span><span class="sxs-lookup"><span data-stu-id="a2fd7-245">With the current templates, once a user completes the registration form, they're logged in (authenticated).</span></span> <span data-ttu-id="a2fd7-246">Você geralmente deseja confirmar seu email antes de registrá-los.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-246">You generally want to confirm their email before logging them in.</span></span> <span data-ttu-id="a2fd7-247">A seção a seguir, vamos modificar o código para exigir que novos usuários possuem um email confirmado antes que ele estão conectados.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-247">In the section below, we will modify the code to require new users have a confirmed email before they're logged in.</span></span> <span data-ttu-id="a2fd7-248">Atualização de `[HttpPost] Login` ação no *AccountController.cs* arquivo com as seguintes alterações realçados.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-248">Update the `[HttpPost] Login` action in the *AccountController.cs* file with the following highlighted changes.</span></span>
+<span data-ttu-id="85d68-246">Para concluir esta seção, você deve primeiro habilitar um provedor de autenticação externa.</span><span class="sxs-lookup"><span data-stu-id="85d68-246">To complete this section, you must first enable an external authentication provider.</span></span> <span data-ttu-id="85d68-247">Consulte [habilitando a autenticação usando o Facebook, Google e outros provedores externos](social/index.md).</span><span class="sxs-lookup"><span data-stu-id="85d68-247">See [Enabling authentication using Facebook, Google, and other external providers](social/index.md).</span></span>
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=11-21&name=snippet_Login)]
-
-<span data-ttu-id="a2fd7-249">**Observação:** uma prática recomendada é não usar segredos de produção no desenvolvimento e teste.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-249">**Note:** A security best practice is to not use production secrets in test and development.</span></span> <span data-ttu-id="a2fd7-250">Se você publicar o aplicativo no Azure, você pode definir os segredos do SendGrid como configurações de aplicativo no portal do aplicativo Web do Azure.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-250">If you publish the app to Azure, you can set the SendGrid secrets as application settings in the Azure Web App portal.</span></span> <span data-ttu-id="a2fd7-251">O sistema de configuração está configurado para ler as chaves de variáveis de ambiente.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-251">The configuration system is setup to read keys from environment variables.</span></span>
-
-
-## <a name="combine-social-and-local-login-accounts"></a><span data-ttu-id="a2fd7-252">Combinar as contas de logon local e social</span><span class="sxs-lookup"><span data-stu-id="a2fd7-252">Combine social and local login accounts</span></span>
-
-<span data-ttu-id="a2fd7-253">Observação: Esta seção se aplica apenas ao ASP.NET Core 1. x.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-253">Note: This section applies only to ASP.NET Core 1.x.</span></span> <span data-ttu-id="a2fd7-254">Para o ASP.NET Core 2. x, consulte [isso](https://github.com/aspnet/Docs/issues/3753) problema.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-254">For ASP.NET Core 2.x, see [this](https://github.com/aspnet/Docs/issues/3753) issue.</span></span>
-
-<span data-ttu-id="a2fd7-255">Para concluir esta seção, você deve primeiro habilitar um provedor de autenticação externa.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-255">To complete this section, you must first enable an external authentication provider.</span></span> <span data-ttu-id="a2fd7-256">Consulte [habilitando a autenticação usando o Facebook, Google e outros provedores externos](social/index.md).</span><span class="sxs-lookup"><span data-stu-id="a2fd7-256">See [Enabling authentication using Facebook, Google and other external providers](social/index.md).</span></span>
-
-<span data-ttu-id="a2fd7-257">Você pode combinar as contas locais e sociais clicando no link seu email.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-257">You can combine local and social accounts by clicking on your email link.</span></span> <span data-ttu-id="a2fd7-258">Na sequência a seguir, "RickAndMSFT@gmail.com" é criado como um logon local; no entanto, você pode criar a conta como um logon social primeiro, depois de adicionar um logon local.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-258">In the following sequence, "RickAndMSFT@gmail.com" is first created as a local login; however, you can create the account as a social login first, then add a local login.</span></span>
+<span data-ttu-id="85d68-248">Você pode combinar as contas locais e sociais clicando no link seu email.</span><span class="sxs-lookup"><span data-stu-id="85d68-248">You can combine local and social accounts by clicking on your email link.</span></span> <span data-ttu-id="85d68-249">Na sequência a seguir, "RickAndMSFT@gmail.com" é criado como um logon local; no entanto, você pode criar a conta como um logon social primeiro, depois de adicionar um logon local.</span><span class="sxs-lookup"><span data-stu-id="85d68-249">In the following sequence, "RickAndMSFT@gmail.com" is first created as a local login; however, you can create the account as a social login first, then add a local login.</span></span>
 
 ![Aplicativo Web: RickAndMSFT@gmail.com usuário autenticado](accconfirm/_static/rick.png)
 
-<span data-ttu-id="a2fd7-260">Clique no **gerenciar** link.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-260">Click on the **Manage** link.</span></span> <span data-ttu-id="a2fd7-261">Observe externo 0 (logons sociais) associada à conta.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-261">Note the 0 external (social logins) associated with this account.</span></span>
+<span data-ttu-id="85d68-251">Clique no **gerenciar** link.</span><span class="sxs-lookup"><span data-stu-id="85d68-251">Click on the **Manage** link.</span></span> <span data-ttu-id="85d68-252">Observe externo 0 (logons sociais) associada à conta.</span><span class="sxs-lookup"><span data-stu-id="85d68-252">Note the 0 external (social logins) associated with this account.</span></span>
 
 ![Gerenciar o modo de exibição](accconfirm/_static/manage.png)
 
-<span data-ttu-id="a2fd7-263">Clique no link para outro serviço de logon e aceitar as solicitações do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-263">Click the link to another login service and accept the app requests.</span></span> <span data-ttu-id="a2fd7-264">Na imagem abaixo, o Facebook é o provedor de autenticação externa:</span><span class="sxs-lookup"><span data-stu-id="a2fd7-264">In the image below, Facebook is the external authentication provider:</span></span>
+<span data-ttu-id="85d68-254">Clique no link para outro serviço de logon e aceitar as solicitações do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="85d68-254">Click the link to another login service and accept the app requests.</span></span> <span data-ttu-id="85d68-255">Na imagem a seguir, o Facebook é o provedor de autenticação externa:</span><span class="sxs-lookup"><span data-stu-id="85d68-255">In the following image, Facebook is the external authentication provider:</span></span>
 
 ![Gerenciar o modo de exibição de logons externos listando Facebook](accconfirm/_static/fb.png)
 
-<span data-ttu-id="a2fd7-266">As duas contas foram combinadas.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-266">The two accounts have been combined.</span></span> <span data-ttu-id="a2fd7-267">Você poderá fazer logon com a conta.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-267">You will be able to log on with either account.</span></span> <span data-ttu-id="a2fd7-268">Convém que os usuários adicionem contas locais no caso de seu log social no serviço de autenticação está inoperante ou mais provável perdeu o acesso à sua conta social.</span><span class="sxs-lookup"><span data-stu-id="a2fd7-268">You might want your users to add local accounts in case their social log in authentication service is down, or more likely they've lost access to their social account.</span></span>
+<span data-ttu-id="85d68-257">As duas contas foram combinadas.</span><span class="sxs-lookup"><span data-stu-id="85d68-257">The two accounts have been combined.</span></span> <span data-ttu-id="85d68-258">É possível fazer logon com a conta.</span><span class="sxs-lookup"><span data-stu-id="85d68-258">You are able to log on with either account.</span></span> <span data-ttu-id="85d68-259">Convém que os usuários adicionem contas locais, caso seu serviço de autenticação de logon social está inoperante ou mais provável perdeu o acesso à sua conta social.</span><span class="sxs-lookup"><span data-stu-id="85d68-259">You might want your users to add local accounts in case their social login authentication service is down, or more likely they've lost access to their social account.</span></span>
+
+## <a name="enable-account-confirmation-after-a-site-has-users"></a><span data-ttu-id="85d68-260">Habilitar confirmação de conta após um site tem usuários</span><span class="sxs-lookup"><span data-stu-id="85d68-260">Enable account confirmation after a site has users</span></span>
+
+<span data-ttu-id="85d68-261">Habilitar confirmação de conta em um site com usuários bloqueia todos os usuários existentes.</span><span class="sxs-lookup"><span data-stu-id="85d68-261">Enabling account confirmation on a site with users locks out all the existing users.</span></span> <span data-ttu-id="85d68-262">Os usuários estão bloqueados porque suas contas não são confirmadas.</span><span class="sxs-lookup"><span data-stu-id="85d68-262">Existing users are locked out because their accounts aren't confirmed.</span></span> <span data-ttu-id="85d68-263">Solução alternativa para sair do bloqueio do usuário, use uma das seguintes abordagens:</span><span class="sxs-lookup"><span data-stu-id="85d68-263">To work around exiting user lockout, use one of the following approaches:</span></span>
+
+* <span data-ttu-id="85d68-264">Atualizar o banco de dados para marcar todos os usuários existentes como sendo confirmada</span><span class="sxs-lookup"><span data-stu-id="85d68-264">Update the database to mark all existing users as being confirmed</span></span>
+* <span data-ttu-id="85d68-265">Confirme se os usuários existentes.</span><span class="sxs-lookup"><span data-stu-id="85d68-265">Confirm exiting users.</span></span> <span data-ttu-id="85d68-266">Por exemplo, envio em lote-emails com links de confirmação.</span><span class="sxs-lookup"><span data-stu-id="85d68-266">For example, batch-send emails with confirmation links.</span></span>
