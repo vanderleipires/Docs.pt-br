@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 887ba1a4742821226a7ebecfd238c97627d6c5f7
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 158f11875f22f8f9dba6f7f109123717b9da8d18
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="aspnet-core-middleware"></a>Middleware do ASP.NET Core
 
@@ -21,16 +21,16 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Steve Smith](https://ard
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/index/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-middleware"></a>O que é o middleware?
+## <a name="what-is-middleware"></a>O que é um middleware?
 
-O Middleware é um software montado em um pipeline de aplicativo para controlar solicitações e respostas. Cada componente:
+O middleware é um software montado em um pipeline de aplicativo para manipular solicitações e respostas. Cada componente:
 
-* Escolhe se deseja transmitir a solicitação para o próximo componente no pipeline.
-* Pode executar o trabalho antes e depois de o próximo componente de pipeline ter sido invocado. 
+* Escolhe se deseja passar a solicitação para o próximo componente no pipeline.
+* Pode executar o trabalho antes e depois de o próximo componente no pipeline ser invocado. 
 
-Os delegados de solicitação são usados para compilar o pipeline de solicitação. Os delegados de solicitação controlam cada solicitação HTTP.
+Os delegados de solicitação são usados para criar o pipeline de solicitação. Os delegados de solicitação manipulam cada solicitação HTTP.
 
-Os delegados de solicitação são configurados usando os métodos de extensão [Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) e [Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions). Um delegado de solicitação individual pode ser especificado em linha como um método anônimo (chamado de middleware em linha) ou pode ser definido em uma classe reutilizável. Essas classes reutilizáveis e os métodos anônimos em linha são do *middleware* ou *componentes do middleware*. Cada componente do middleware no pipeline de solicitação é responsável por invocar o próximo componente no pipeline ou por ligar a cadeia em curto-circuito, se apropriado.
+Os delegados de solicitação são configurados usando os métodos de extensão [Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) e [Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions). Um delegado de solicitação individual pode ser especificado em linha como um método anônimo (chamado do middleware em linha) ou pode ser definido em uma classe reutilizável. Essas classes reutilizáveis e os métodos anônimos em linha são o *middleware* ou *componentes do middleware*. Cada componente do middleware no pipeline de solicitação é responsável por invocar o próximo componente no pipeline ou por ligar a cadeia em curto-circuito, se apropriado.
 
 A seção [Migrating HTTP Modules to Middleware](xref:migration/http-modules) (Migrando módulos HTTP para o Middleware) explica a diferença entre pipelines de solicitação no ASP.NET Core e no ASP.NET 4.x e fornece mais exemplos do middleware.
 
@@ -38,7 +38,7 @@ A seção [Migrating HTTP Modules to Middleware](xref:migration/http-modules) (M
 
 O pipeline de solicitação do ASP.NET Core consiste em uma sequência de delegados de solicitação, chamados um após o outro, como mostrado neste diagrama (o thread de execução segue as setas pretas):
 
-![Padrão de processamento de solicitação mostrando a chegada de uma solicitação, processada por meio de três middlewares, e a resposta que sai do aplicativo. Cada middleware executa sua lógica e transmite a solicitação para o próximo middleware na instrução next(). Depois que o terceiro middleware processa a solicitação, ela é transmitida por meio dos dois middlewares anteriores na ordem inversa para processamento adicional após suas instruções next(), antes de deixar o aplicativo como uma resposta ao cliente.](index/_static/request-delegate-pipeline.png)
+![Padrão de processamento de solicitação mostrando a chegada de uma solicitação, processada por meio de três middlewares e a resposta que sai do aplicativo. Cada middleware executa sua lógica e transmite a solicitação para o próximo middleware na instrução next(). Depois que o terceiro middleware processa a solicitação, ela é transmitida por meio dos dois middlewares anteriores na ordem inversa para processamento adicional após suas instruções next(), antes de deixar o aplicativo como uma resposta ao cliente.](index/_static/request-delegate-pipeline.png)
 
 Cada delegado pode executar operações antes e depois do próximo delegado. Um delegado também pode optar por não transmitir uma solicitação ao próximo delegado, o que também é chamado de ligar o pipeline de solicitação em curto-circuito. O curto-circuito geralmente é desejável porque ele evita trabalho desnecessário. Por exemplo, o middleware de arquivo estático pode retornar uma solicitação para um arquivo estático e ligar o restante do pipeline em curto-circuito. Os delegados de tratamento de exceção precisam ser chamados no início do pipeline, para que possam detectar exceções que ocorrem em etapas posteriores do pipeline.
 
@@ -153,7 +153,7 @@ A tabela a seguir mostra as solicitações e as respostas de `http://localhost:1
 | localhost:1234/map2 | Teste de Map 2 |
 | localhost:1234/map3 | Saudação do delegado diferente de Map.  |
 
-Quando `Map` é usado, os segmentos de linha correspondentes são removidos do `HttpRequest.Path` e anexados em `HttpRequest.PathBase` para cada solicitação.
+Quando `Map` é usado, os segmentos de caminho correspondentes são removidos do `HttpRequest.Path` e anexados em `HttpRequest.PathBase` para cada solicitação.
 
 [MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions) ramifica o pipeline de solicitação com base no resultado do predicado em questão. Qualquer predicado do tipo `Func<HttpContext, bool>` pode ser usado para mapear as solicitações para um novo branch do pipeline. No exemplo a seguir, um predicado é usado para detectar a presença de uma variável de cadeia de caracteres de consulta `branch`:
 
@@ -166,7 +166,7 @@ A tabela a seguir mostra as solicitações e as respostas de `http://localhost:1
 | localhost:1234 | Saudação do delegado diferente de Map.  |
 | localhost:1234/?branch=master | Branch usado = mestre|
 
-`Map` compatível com aninhamento, por exemplo:
+`Map` é compatível com aninhamento, por exemplo:
 
 ```csharp
 app.Map("/level1", level1App => {
@@ -210,7 +210,7 @@ O ASP.NET Core é fornecido com os componentes de middleware a seguir, bem como 
 
 ## <a name="writing-middleware"></a>Middleware de gravação
 
-O middleware geralmente é encapsulado em uma classe e exposto com um método de extensão. Considere o middleware a seguir, que define a cultura para a solicitação atual da cadeia de consulta:
+O middleware geralmente é encapsulado em uma classe e exposto com um método de extensão. Considere o middleware a seguir, que define a cultura para a solicitação atual da cadeia de caracteres de consulta:
 
 [!code-csharp[Main](index/sample/Culture/StartupCulture.cs?name=snippet1)]
 
@@ -262,3 +262,4 @@ public class MyMiddleware
 * [Inicialização de aplicativos](xref:fundamentals/startup)
 * [Recursos de solicitação](xref:fundamentals/request-features)
 * [Ativação de middleware de fábrica](xref:fundamentals/middleware/extensibility)
+* [Ativação de middleware baseada em fábrica com um contêiner de terceiros](xref:fundamentals/middleware/extensibility-third-party-container)
