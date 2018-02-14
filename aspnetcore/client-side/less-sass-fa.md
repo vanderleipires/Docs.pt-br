@@ -67,7 +67,7 @@ O pré-processador CSS less é executado usando o Node. js. Para instalar less, 
 npm install -g less
 ```
 
-Se você estiver usando o Visual Studio, você pode começar com less adicionando um ou mais arquivos less ao seu projeto e, em seguida, configurando Gulp (ou Grunt) para processá-los em tempo de compilação. Adicionar um *estilos* pasta ao seu projeto e, em seguida, adicione um novo arquivo less chamado *main.less* nesta pasta.
+Se você estiver usando o Visual Studio, você pode começar com less adicionando um ou mais arquivos less ao seu projeto e, em seguida, configurando Gulp (ou Grunt) para processá-los em tempo de compilação. Adicione uma pasta *estilos* ao seu projeto e, em seguida, adicione um novo arquivo less chamado *main.less* nesta pasta.
 
 ![Adicionar arquivo less](less-sass-fa/_static/add-less-file.png)
 
@@ -488,7 +488,7 @@ Sass também inclui funções e operações de lógica condicional, semelhantes 
 
 ## <a name="less-or-sass"></a>Less ou Sass?
 
-Ainda há consenso se geralmente é melhor usar less ou Sass (ou até mesmo se preferir o Sass original ou a sintaxe SCSS mais recente em Sass). Provavelmente, a decisão mais importante é **usar uma dessas ferramentas**, em vez de apenas mão-coding seus arquivos CSS. Depois que você fez que de decisão, ambos sem e Sass são boas opções.
+Ainda não há consenso se geralmente é melhor usar less ou Sass (ou até mesmo se preferir o Sass original ou a sintaxe SCSS mais recente em Sass). Provavelmente, a decisão mais importante é **usar uma dessas ferramentas**, em vez de apenas codificação manual em seus arquivos CSS. Depois que você fez essa decisão, ambos Less e Sass são boas opções.
 
 ## <a name="font-awesome"></a>Fonte Awesome
 
@@ -547,4 +547,4 @@ http://fontawesome.io/icons/
 
 ## <a name="summary"></a>Resumo
 
-Aplicativos web modernos exigem cada vez mais responsivos, fluidos designs que são normal, intuitiva e fácil de usar de uma variedade de dispositivos. Gerenciar a complexidade das folhas de estilo CSS necessárias para atingir essas metas, melhor é feito usando um tipo de pré-processador less ou Sass. Além disso, kits de ferramentas como o incríveis fonte rapidamente fornecem ícones conhecidos a menus de navegação textual e experiência de botões, melhorando o usuário do seu aplicativo.
+Aplicativos web modernos exigem designs cada vez mais responsivos e fluidos que são normais, intuitivos e fáceis de usar em uma variedade de dispositivos. Gerenciar a complexidade das folhas de estilo CSS necessárias para atingir essas metas é melhor usando um tipo de pré-processador less ou Sass. Além disso, kits de ferramentas como a Awesome fonte rapidamente fornecem ícones conhecidos a menus de navegação textual e experiência de botões, melhorando o usuário do seu aplicativo.
