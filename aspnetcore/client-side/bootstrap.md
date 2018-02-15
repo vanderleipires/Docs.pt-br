@@ -1,5 +1,5 @@
 ---
-title: "Criando sites lindos, responsivos com bootstrap"
+title: "Criando sites lindos e responsivos com bootstrap"
 author: ardalis
 description: 
 manager: wpickett
@@ -15,7 +15,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Criando sites lindos, responsivos com bootstrap
+# <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Criando sites lindos e responsivos com bootstrap
 
 <a name="bootstrap-index"></a>
 
@@ -25,7 +25,7 @@ Bootstrap atualmente é a estrutura da web mais popular de desenvolvimento de ap
 
 ## <a name="getting-started"></a>Introdução
 
-Há várias maneiras para começar o bootstrap. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, no qual caso Bootstrap virão pré-instalados:
+Há várias maneiras para começar o bootstrap. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, em cujo caso o Bootstrap virá pré-instalados:
 
 ![Inicializar no modo de exibição de solução de modelo starter](bootstrap/_static/bootstrap-in-starter-template.png)
 
@@ -67,7 +67,7 @@ Se você estiver fazendo referência a suas próprias versões locais do bootstr
 
 ## <a name="basic-templates-and-features"></a>Recursos e modelos básicos
 
-O modelo do bootstrap mais básico é muito parecido com o *cshtml* arquivo mostrado acima e simplesmente inclui um menu básico para navegação e um local para renderizar o restante da página.
+O modelo do bootstrap mais básico é muito parecido com o arquivo *cshtml* mostrado acima e simplesmente inclui um menu básico para navegação e um local para renderizar o restante da página.
 
 ### <a name="basic-navigation"></a>Navegação básica
 
@@ -101,7 +101,7 @@ Bootstrap configura tipografia básica, cores e formatação em seu arquivo CSS 
 
 Um dos recursos mais populares do bootstrap é o sistema de layout de grade. Aplicativos web modernos devem evitar usar o `<table>` marca de layout, em vez disso, restringir o uso desse elemento para dados de tabela reais. Em vez disso, colunas e linhas podem ser dispostas usando uma série de `<div>` elementos e as classes CSS apropriadas. Há várias vantagens dessa abordagem, incluindo a capacidade de ajustar o layout de grade para exibir verticalmente em estreitas telas, como em telefones.
 
-[Sistema de layout de grade do bootstrap](http://getbootstrap.com/css/#grid) é baseado em doze colunas. Esse número foi escolhido porque podem ser dividido uniformemente em 1, 2, 3 ou 4 colunas e larguras de coluna podem variar para dentro de 1/12 da largura da tela vertical. Para começar a usar o sistema de layout de grade, você deve começar com um contêiner `<div>` e, em seguida, adicione uma linha `<div>`, conforme mostrado aqui:
+[Sistema de layout de grade do bootstrap](http://getbootstrap.com/css/#grid) é baseado em doze colunas. Esse número foi escolhido porque pode ser dividido uniformemente em 1, 2, 3 ou 4 colunas e a largura das colunas pode variar de 1/12 da largura da tela vertical. Para começar a usar o sistema de layout de grade, você deve começar com um contêiner `<div>` e, em seguida, adicione uma linha `<div>`, conforme mostrado aqui:
 
 ```html
 <div class="container">
@@ -158,7 +158,7 @@ Talvez seja necessário exibir algum tipo de notificação de alerta ou para usu
 
 ### <a name="navbars-and-menus"></a>Menus e barras de navegação
 
-Nosso layout já inclui uma barra de navegação padrão, mas o tema do bootstrap dá suporte a opções de estilo adicionais. Podemos facilmente pode optar por exibir a barra de navegação verticalmente em vez de horizontalmente se que tem preferencial, bem como a adição de subnavegação itens nos menus de atalho. Menus de navegação simples, como as faixas guia baseiam-se na parte superior do <ul> elementos. Eles podem ser criados muito simples, apenas fornecendo a eles com as classes CSS "nav" e "nav-guias":
+Nosso layout já inclui uma barra de navegação padrão, mas o tema do bootstrap dá suporte a opções de estilo adicionais. Podemos facilmente optar por exibir a barra de navegação verticalmente em vez de horizontalmente se preferirmos, bem como adicionar itens de subnavegação aos menus de atalho. Menus de navegação simples, como as faixas guia, baseiam-se na parte superior dos <ul> elementos. Eles podem ser facilmente criados, apenas fornecendo-os com as classes CSS "nav" e "nav-guias":
 
 ![tabstrips com tema](bootstrap/_static/theme-tabstrips.png)
 
@@ -178,7 +178,7 @@ Você pode estender o tema padrão do bootstrap, substituindo alguns ou todos os
 
 ![Exemplo tema inspinia](bootstrap/_static/theme-inspinia.png)
 
-Se você quiser alterar o tema do bootstrap, coloque o *bootstrap.css* arquivo para o tema que você deseja no **wwwroot/css** pasta e altere as referências no *cshtml* para apontá-lo. Altere os links para todos os ambientes:
+Se você quiser alterar o tema do bootstrap, coloque o arquivo *bootstrap.css* para o tema que você deseja na pasta **wwwroot/css** e altere as referências no *cshtml* para apontá-lo. Altere os links para todos os ambientes:
 
 ```html
 <environment names="Development">
@@ -198,7 +198,7 @@ Além desses elementos já discutidos, bootstrap inclui suporte para uma varieda
 
 ### <a name="glyphicons"></a>Glyphicons
 
-Bootstrap inclui conjuntos de ícones de Glyphicons ([http://glyphicons.com](http://glyphicons.com)), com mais de 200 ícones disponíveis gratuitamente para uso dentro de seu aplicativo da web habilitado para o bootstrap. Aqui está a apenas uma pequena amostra:
+Bootstrap inclui conjuntos de ícones de Glyphicons ([http://glyphicons.com](http://glyphicons.com)), com mais de 200 ícones disponíveis gratuitamente para uso dentro de seu aplicativo da web habilitado para o bootstrap. Aqui está apenas uma pequena amostra:
 
 ![Glyphicons](bootstrap/_static/theme-glyphicons.png)
 
