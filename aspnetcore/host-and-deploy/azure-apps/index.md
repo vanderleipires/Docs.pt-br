@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 34b009d3a298803256c9a06debe6e5026418429a
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: fe44581829d53b1633347762df0a72f62e6e5760
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 
@@ -48,7 +48,7 @@ Configurar um build de CI para um aplicativo ASP.NET Core e, em seguida, criar u
 
 Com o ASP.NET Core 2.0 e posterior, três pacotes no metapacote [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) fornecem recursos de registro em log automático para aplicativos implantados no Serviço de Aplicativo do Azure:
 
-* [Microsoft.AspNetCore.AzureAppServices.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServices.HostingStartup/) usa [IHostingStartup](xref:host-and-deploy/ihostingstartup) para fornecer integração leve do ASP.NET Core com o Serviço de Aplicativo do Azure. Os recursos de registro em log adicionais são fornecidos pelo pacote `Microsoft.AspNetCore.AzureAppServicesIntegration`.
+* [Microsoft.AspNetCore.AzureAppServices.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServices.HostingStartup/) usa [IHostingStartup](xref:host-and-deploy/platform-specific-configuration) para fornecer integração leve do ASP.NET Core com o Serviço de Aplicativo do Azure. Os recursos de registro em log adicionais são fornecidos pelo pacote `Microsoft.AspNetCore.AzureAppServicesIntegration`.
 * [Microsoft.AspNetCore.AzureAppServicesIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServicesIntegration/) executa [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) para adicionar provedores de log de diagnósticos do Serviço de Aplicativo do Azure no pacote `Microsoft.Extensions.Logging.AzureAppServices`.
 * [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices/) fornece implementações de agente para dar suporte a recursos de streaming de log e logs de diagnóstico do Serviço de Aplicativo do Azure.
 

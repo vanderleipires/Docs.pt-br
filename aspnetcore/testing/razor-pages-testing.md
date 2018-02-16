@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 5891b236306cd3790cbba14919796d6aa894ad53
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f9e986c34f41fe96beb492680106f725bc1e2f9
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Unidade de páginas Razor e integração de teste no núcleo do ASP.NET
 
@@ -71,7 +71,7 @@ O aplicativo de teste é um aplicativo de console dentro de *tests/RazorPagesTes
 | ------------------ | ----------- |
 | *IntegrationTests* | <ul><li>*IndexPageTest.cs* contém os testes de integração para a página de índice.</li><li>*TestFixture.cs* cria o host de teste para testar o aplicativo de mensagem.</li></ul> |
 | *UnitTests*        | <ul><li>*DataAccessLayerTest.cs* contém testes de unidade para a DAL.</li><li>*IndexPageTest.cs* contém testes de unidade para o modelo de página de índice.</li></ul> |
-| *Utilitários*        | *Utilities.CS* contém o:<ul><li>`TestingDbContextOptions`método usado para criar o novo banco de dados opções de contexto para cada teste de unidade da DAL, para que o banco de dados é redefinido para sua condição de linha de base para cada teste.</li><li>`GetRequestContentAsync`método usado para preparar o `HttpClient` e o conteúdo para solicitações que são enviadas para o aplicativo de mensagem durante o teste de integração.</li></ul>
+| *Utilitários*        | *Utilities.CS* contém o:<ul><li>`TestingDbContextOptions` método usado para criar o novo banco de dados opções de contexto para cada teste de unidade da DAL, para que o banco de dados é redefinido para sua condição de linha de base para cada teste.</li><li>`GetRequestContentAsync` método usado para preparar o `HttpClient` e o conteúdo para solicitações que são enviadas para o aplicativo de mensagem durante o teste de integração.</li></ul>
 
 A estrutura de teste é [xUnit](https://xunit.github.io/). O objeto do framework de simulação é [Moq](https://github.com/moq/moq4). Testes de integração são realizadas usando o [Host de teste do ASP.NET Core](xref:testing/integration-testing#the-test-host).
 
@@ -102,7 +102,7 @@ O problema com essa abordagem é que cada teste recebe o banco de dados no estad
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet1)]
 
-Usando o `DbContextOptions` na unidade de DAL testes permite que cada teste ser executada atomicamente com um uma instância de banco de dados atualizado:
+Usando o `DbContextOptions` na unidade de DAL testes permite que cada teste executado atomicamente com uma instância de banco de dados atualizado:
 
 ```csharp
 using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
@@ -176,7 +176,7 @@ Etapa de ação de teste de unidade (*tests/RazorPagesTestingSample.Tests/UnitTe
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet2)]
 
-`IndexPage`modelo de página `OnGetAsync` método (*src/RazorPagesTestingSample/Pages/Index.cshtml.cs*):
+`IndexPage` modelo de página `OnGetAsync` método (*src/RazorPagesTestingSample/Pages/Index.cshtml.cs*):
 
 [!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Pages/Index.cshtml.cs?name=snippet1&highlight=3)]
 
