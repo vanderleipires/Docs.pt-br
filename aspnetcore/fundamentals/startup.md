@@ -54,7 +54,7 @@ O método [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupba
 
 * Opcional.
 * Chamado pelo host da Web antes do `Configure` método para configurar os serviços do aplicativo.
-* Quando as [opções de configuração](xref:fundamentals/configuration/index) são definidas por convenção.
+* Onde as [opções de configuração](xref:fundamentals/configuration/index) são definidas por convenção.
 
 Adicionar serviços ao contêiner de serviços os torna disponíveis dentro do aplicativo e no método `Configure`. Os serviços são resolvidos via [injeção de dependência](xref:fundamentals/dependency-injection) ou [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
