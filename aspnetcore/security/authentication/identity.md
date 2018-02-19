@@ -1,5 +1,5 @@
 ---
-title: "Introdução à identidade no núcleo do ASP.NET"
+title: "Introdução à identidade do ASP.NET Core"
 author: rick-anderson
 description: "Use identidade com um aplicativo do ASP.NET Core. Inclui a configuração de senha (RequireDigit, RequiredLength, RequiredUniqueChars e muito mais)."
 manager: wpickett
