@@ -25,7 +25,7 @@ por [Mike Wasson](https://github.com/MikeWasson)
 
 HTTP não é apenas para serviços de páginas da web. HTTP também é uma plataforma poderosa para a criação de APIs que expõem os dados e serviços. O HTTP é simples, flexível e de todos os lugares. Praticamente qualquer plataforma que você pode pensar tem uma biblioteca HTTP para que serviços HTTP podem atingir uma ampla gama de clientes, incluindo navegadores, dispositivos móveis e aplicativos de área de trabalho tradicionais.
  
-API da Web do ASP.NET é uma estrutura para a criação de APIs na parte superior do .NET Framework da web. Neste tutorial, você usará a API da Web do ASP.NET para criar uma web API que retorna uma lista de produtos.
+A API Web ASP.NET é uma estrutura para a criação de APIs Web sobre o .NET Framework. Neste tutorial, você usará a API Web ASP.NET para criar uma API Web que retorna uma lista de produtos.
 
  
  ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
@@ -33,58 +33,58 @@ API da Web do ASP.NET é uma estrutura para a criação de APIs na parte superio
  - [Visual Studio 2017](https://www.visualstudio.com/downloads/)
  - Web API 2
 
-Consulte [criar uma API da web com o Visual Studio para Windows e o ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) para uma versão mais recente deste tutorial.
+Consulte [criar uma API Web com o Visual Studio para Windows e o ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) para ver uma versão mais recente deste tutorial.
 
 ## <a name="create-a-web-api-project"></a>Criar um projeto de API da Web
 
-Neste tutorial, você usará a API da Web do ASP.NET para criar uma web API que retorna uma lista de produtos. A página da web front-end usa jQuery para exibir os resultados.
+Neste tutorial, você usará a API Web ASP.NET para criar uma API Web que retorna uma lista de produtos. A página da Web front-end usa jQuery para exibir os resultados.
 
 ![](tutorial-your-first-web-api/_static/image1.png)
 
-Inicie o Visual Studio e selecione **novo projeto** do **iniciar** página. Ou, do **arquivo** menu, selecione **novo** e **projeto**.
+Inicie o Visual Studio e selecione **Novo projeto** na página **Iniciar**. Ou, no menu **Arquivo**, selecione **Novo** e, em seguida, **Projeto**.
 
-No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#** nó. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web ASP.NET**. Nomeie o projeto "ProductsApp" e clique em **Okey**.
+No painel **Modelos**, selecione **Modelos Instalados** e expanda o nó **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **Aplicativo Web ASP.NET**. Dê ao projeto o nome de "ProductsApp" e clique em **OK**.
 
 ![](tutorial-your-first-web-api/_static/image2.png)
 
-No **novo projeto ASP.NET** caixa de diálogo, selecione o **vazio** modelo. Em &quot;adicionar pastas e referências de núcleo&quot;, verifique **API da Web**. Clique em **OK**.
+Na caixa de diálogo **Novo Aplicativo Web ASP.NET**, selecione o modelo **Vazio**. Em &quot;adicionar pastas e referências de núcleo&quot;, verifique **Web API**. Clique em **OK**.
 
 ![](tutorial-your-first-web-api/_static/image3.png)
 
 > [!NOTE]
-> Você também pode criar um projeto de API da Web usando o &quot;API da Web&quot; modelo. O modelo de API da Web usa o ASP.NET MVC para fornecer páginas de Ajuda da API. Estou usando o modelo vazio para este tutorial porque Mostrar API da Web sem MVC. Em geral, você não precisa saber o ASP.NET MVC para usar a API da Web.
+> Você também pode criar um projeto de Web API usando o modelo &quot;Web API&quot;. O modelo de Web API usa o ASP.NET MVC para fornecer páginas de Ajuda da API. Estou usando o modelo vazio para este tutorial porque Mostrar Web API sem MVC. Em geral, você não precisa saber o ASP.NET MVC para usar a Web API.
 
 
 ## <a name="adding-a-model"></a>Adicionando um modelo
 
-Um *modelo* é um objeto que representa os dados em seu aplicativo. ASP.NET Web API pode serializar automaticamente seu modelo para outro formato, XML ou JSON e, em seguida, gravar os dados serializados no corpo da mensagem de resposta HTTP. Como um cliente pode ler o formato de serialização, ele pode desserializar o objeto. A maioria dos clientes pode analisar XML ou JSON. Além disso, o cliente pode indicar que ele deseja definindo o cabeçalho Accept na mensagem de solicitação HTTP de formato.
+Um *modelo (model)* é um objeto que representa os dados em seu aplicativo. ASP.NET Web API pode serializar automaticamente seu modelo para outro formato, XML ou JSON, e, em seguida, gravar os dados serializados no corpo da mensagem de resposta HTTP. Como um cliente pode ler o formato de serialização, ele pode desserializar o objeto. A maioria dos clientes pode analisar XML ou JSON. Além disso, o cliente pode indicar qual formato ele deseja definindo o cabeçalho Accept na mensagem de solicitação HTTP.
 
 Vamos começar criando um modelo simples que representa um produto.
 
-Se o Gerenciador de soluções não estiver visível, clique no **exibição** menu e selecione **Gerenciador de soluções**. No Gerenciador de soluções, clique na pasta de modelos. No menu de contexto, selecione **adicionar** , em seguida, selecione **classe**.
+Se o Gerenciador de Soluções não estiver visível, clique no menu **Exibir** e selecione **Gerenciador de Soluções**. No Gerenciador de Soluções, clique com o botão direito na pasta de modelos (Models). No menu de contexto, selecione **Adicionar** , em seguida, selecione **Classe**.
 
 ![](tutorial-your-first-web-api/_static/image4.png)
 
-Nomeie a classe &quot;produto&quot;. Adicione as seguintes propriedades para o `Product` classe.
+Nomeie a classe &quot;Produt&quot; (produto). Adicione as seguintes propriedades para a classe `Product`.
 
 [!code-csharp[Main](tutorial-your-first-web-api/samples/sample1.cs)]
 
 ## <a name="adding-a-controller"></a>Adicionando um controlador
 
-Na API da Web, um *controlador* é um objeto que manipula as solicitações HTTP. Vamos adicionar um controlador que pode retornar uma lista de produtos ou um único produto especificado por ID.
+Na Web API, um *controlador* (controller) é um objeto que manipula as solicitações HTTP. Vamos adicionar um controlador que pode retornar uma lista de produtos ou um único produto especificado por ID.
 
 > [!NOTE]
-> Se você tiver usado o ASP.NET MVC, você já está familiarizados com os controladores. Controladores de API da Web são semelhantes aos controladores MVC, mas herdam o **ApiController** classe o **controlador** classe.
+> Se você tiver usado o ASP.NET MVC, você já está familiarizados com os controladores. Controladores de API da Web são semelhantes aos controladores MVC, mas herdam a classe **ApiController** em vez da classe **Controller**.
 
-Em **Solution Explorer**, clique na pasta controladores. Selecione **adicionar** e, em seguida, selecione **controlador**.
+Em **Gerenciador de Soluções**, clique com o botão direito na pasta controllers (controladores).  Selecione **Adicionar** e, em seguida, selecione **Controlador**.
 
 ![](tutorial-your-first-web-api/_static/image5.png)
 
-No **adicionar Scaffold** caixa de diálogo, selecione **controlador de API da Web - vazio**. Clique em **Adicionar**.
+Na caixa de diálogo **Adicionar scaffold**, selecione **Controlador de Web API - Vazio**. Clique em **Adicionar**.
 
 ![](tutorial-your-first-web-api/_static/image6.png)
 
-No **Adicionar controlador** caixa de diálogo, o nome do controlador &quot;ProductsController&quot;. Clique em **Adicionar**.
+Na caixa de diálogo **Adicionar controlador**, nomeie o controlador como &quot;ProductsController&quot;. Clique em **Adicionar**.
 
 ![](tutorial-your-first-web-api/_static/image7.png)
 
@@ -104,29 +104,29 @@ Para manter o exemplo simples, os produtos são armazenados em uma matriz fixa d
 
 O controlador define dois métodos que retornam produtos:
 
-- O `GetAllProducts` método retorna a lista completa de produtos como um **IEnumerable&lt;produto&gt;**  tipo.
-- O `GetProduct` método procura um único produto por sua ID.
+- O método `GetAllProducts` retorna a lista completa de produtos como um tipo **IEnumerable&lt;produto&gt;**.
+- O método `GetProduct` procura um único produto por sua ID.
 
-É só isso! Você tem uma API da web do trabalho. Cada método do controlador corresponde a um ou mais URIs:
+É só isso! Você está trabalhando em uma API Web. Cada método do controlador corresponde a um ou mais URIs:
 
 | Método do controlador | URI |
 | --- | --- |
 | GetAllProducts | produtos/api / |
 | GetProduct | /api/products/*id* |
 
-Para o `GetProduct` método, o *id* no URI é um espaço reservado. Por exemplo, para obter o produto com ID 5, o URI é `api/products/5`.
+Para o método `GetProduct`, o *id* no URI é um espaço reservado. Por exemplo, para obter o produto com ID 5, o URI é `api/products/5`.
 
-Para obter mais informações sobre como a API da Web encaminha solicitações HTTP para os métodos do controlador, consulte [roteamento na API da Web ASP.NET](../web-api-routing-and-actions/routing-in-aspnet-web-api.md).
+Para obter mais informações sobre como a API Web encaminha solicitações HTTP para os métodos do controlador, consulte [roteamento na API Web ASP.NET](../web-api-routing-and-actions/routing-in-aspnet-web-api.md).
 
-## <a name="calling-the-web-api-with-javascript-and-jquery"></a>Chamar a API da Web com Javascript e jQuery
+## <a name="calling-the-web-api-with-javascript-and-jquery"></a>Chamar a API Web com Javascript e jQuery
 
-Nesta seção, vamos adicionar uma página HTML que usa AJAX para chamar a API da web. Vamos usar jQuery para fazer chamadas AJAX e também para atualizar a página com os resultados.
+Nesta seção, vamos adicionar uma página HTML que usa AJAX para chamar a API Web. Vamos usar jQuery para fazer chamadas AJAX e também para atualizar a página com os resultados.
 
-No Gerenciador de soluções, clique com o botão direito e selecione **adicionar**, em seguida, selecione **Novo Item**.
+No Gerenciador de Soluções, clique com o botão direito e selecione **adicionar**, em seguida, selecione **Novo Item**.
 
 ![](tutorial-your-first-web-api/_static/image9.png)
 
-No **Adicionar Novo Item** caixa de diálogo, selecione o **Web** nó **Visual C#**e, em seguida, selecione o **página HTML** item. Nomeie a página &quot;index.html&quot;.
+Na caixa de diálogo **Adicionar Novo Item**, selecione o nó **Web** no **Visual C#** e, em seguida, selecione o item **Página HTML**. Nomeie a página &quot;index.html&quot;.
 
 ![](tutorial-your-first-web-api/_static/image10.png)
 
@@ -134,13 +134,13 @@ Substitua tudo neste arquivo com o seguinte:
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample3.html)]
 
-Há várias maneiras de obter jQuery. Neste exemplo, usei a [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Você também pode baixá-lo do [http://jquery.com/](http://jquery.com/)e o ASP.NET "API Web" jQuery também inclui o modelo de projeto.
+Há várias maneiras de obter jQuery. Neste exemplo, usei o [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Você também pode baixá-lo do [http://jquery.com/](http://jquery.com/), e o modelo de projeto ASP.NET "API Web" também inclui jQuery.
 
 ### <a name="getting-a-list-of-products"></a>Obtendo uma lista de produtos
 
 Para obter uma lista de produtos, envie uma solicitação HTTP GET para &quot;/api/produtos&quot;.
 
-O jQuery [getJSON](http://api.jquery.com/jQuery.getJSON/) função envia uma solicitação AJAX. Para a resposta contém uma matriz de objetos JSON. O `done` função especifica um retorno de chamada que é chamado quando a solicitação for bem-sucedida. O retorno de chamada, atualizamos o DOM com as informações de produto.
+A função jQuery [getJSON](http://api.jquery.com/jQuery.getJSON/) envia uma solicitação AJAX. A resposta contém uma matriz de objetos JSON. A função `done` especifica um retorno de chamada que é chamado quando a solicitação for bem-sucedida. No retorno de chamada, atualizamos o DOM com as informações de produto.
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample4.html)]
 
@@ -172,7 +172,7 @@ Quando você estiver trabalhando com um serviço HTTP, ele pode ser muito útil 
 
 ![](tutorial-your-first-web-api/_static/image14.png)
 
-Localize a entrada para o URI relativo "api/produtos /". Selecione esta opção e clique em **acesse a exibição detalhada**. Na exibição detalhes, há guias para exibir os corpos e cabeçalhos de solicitação e resposta. Por exemplo, se você clicar no **cabeçalhos de solicitação** guia, você pode ver que o cliente solicitou &quot;aplicativo/json&quot; no cabeçalho Accept.
+Localize a entrada para o URI relativo "api/produtos /". Selecione esta opção e clique em **Acessar a exibição detalhada**. Na exibição detalhada, há guias para exibir os corpos e cabeçalhos de solicitação e resposta. Por exemplo, se você clicar na guia **Cabeçalhos de solicitação**, você pode ver que o cliente solicitou &quot;aplicativo/json&quot; no cabeçalho Aceitar.
 
 ![](tutorial-your-first-web-api/_static/image15.png)
 
