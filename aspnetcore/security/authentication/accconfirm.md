@@ -96,9 +96,9 @@ Consulte [exigir HTTPS](xref:security/enforcing-ssl).
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>Solicitar confirmação de email
 
-É uma prática recomendada para confirmar o email de um novo registro de usuário. Ajuda de confirmação para verificar se eles não estiver representando alguém de email (ou seja, eles ainda não registrados com outra pessoa email). Suponha que você tivesse um fórum de discussão, e quiser impedir "yli@example.com"do registro como"nolivetto@contoso.com." Sem confirmação por email, "nolivetto@contoso.com" pode receber email indesejado de seu aplicativo. Suponha que o usuário registrado acidentalmente como "ylo@example.com" e ainda não tenha percebido a digitação incorreta da "yli". Elas não serão capazes de usar a recuperação de senha porque o aplicativo não tiver seu email correto. Email de confirmação oferece apenas proteção limitada de robôs. Email de confirmação não fornece proteção contra usuários mal-intencionados com várias contas de email.
+Confirmar o email de um novo usuário registrado é uma prática recomendada. A Confirmação de email ajuda a verificar se eles não estão se passando por outra pessoa (ou seja, se eles não registraram-se usando o email de outra pessoa). Suponha que você tivesse um fórum de discussão,e quiser impedir que "yli@example.com" se registre como "nolivetto@contoso.com." Sem a confirmação por email, "nolivetto@contoso.com" poderá receber emails indesejados de seu aplicativo. Suponha que o usuário tenha se registrado acidentalmente como "ylo@example.com" e ainda não tenha percebido a digitação incorreta de "yli". Ele não será capaz de usar a recuperação de senha porque o seu aplicativo não terá o email correto. A confirmação de email oferece apenas proteção limitada a robôs e não fornece proteção contra usuários mal-intencionados com várias contas de email.
 
-Em geral você deseja impedir que novos usuários lançamento todos os dados para seu site da web para que eles tenham um email confirmado.
+Geralmente você deseja impedir que novos usuários incluam dados em seu site até que eles tenham um email confirmado.
 
 Atualização `ConfigureServices` para exigir um email confirmado:
 
