@@ -27,7 +27,7 @@ Você pode configurar a identidade do ASP.NET Core para usar um banco de dados d
 
 ## <a name="overview-of-identity"></a>Visão geral da identidade
 
-Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adicionar funcionalidade ao se registrar, faça logon no e fazer logoff de um usuário. Para obter instruções mais detalhadas sobre a criação de aplicativos usando a identidade do ASP.NET Core, consulte a seção próximas etapas no final deste artigo.
+Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adicionar funcionalidades para se registrar, fazer logon e logoff de um usuário. Para obter instruções mais detalhadas sobre a criação de aplicativos usando a identidade do ASP.NET Core, consulte a seção próximas etapas no final deste artigo.
 
 1.  Crie um projeto de aplicativo Web do ASP.NET Core com contas de usuário individuais.
 
@@ -108,9 +108,9 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
  
 4.  Iniciar sessão.
  
-    Os usuários podem entrar clicando o **login** link na parte superior do site, ou pode ser navegados a página de logon se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de logon, o ``AccountController`` ``Login`` ação é chamada.
+    Os usuários podem entrar clicando no link **login** na parte superior do site, ou podem ser direcionados a página de logon se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de logon, a ação ``AccountController`` ``Login`` é chamada.
 
-    O ``Login`` ação chamadas ``PasswordSignInAsync`` no ``_signInManager`` objeto (fornecido para ``AccountController`` por injeção de dependência).
+    A ação ``Login`` chama ``PasswordSignInAsync`` no objeto ``_signInManager`` (fornecido para ``AccountController`` por injeção de dependência).
 
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  
@@ -145,15 +145,15 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
  
 7.  Exiba o banco de dados.
 
-    Se seu aplicativo estiver usando um banco de dados do SQL Server (o padrão no Windows e para usuários do Visual Studio), você pode exibir o aplicativo que criou o banco de dados. Você pode usar **SQL Server Management Studio**. Como alternativa, no Visual Studio, selecione **exibição** > **Pesquisador de objetos do SQL Server**. Conecte-se ao **(localdb) \MSSQLLocalDB**. O banco de dados com um nome correspondente **aspnet - <*nome do projeto*>-<*cadeia de caracteres de data* >**  é exibido.
+    Se o seu aplicativo estiver usando um banco de dados do SQL Server (o padrão no Windows e para usuários do Visual Studio), você poderá exibir o banco de dados criado pelo aplicativo. Você pode usar **SQL Server Management Studio**. Como alternativa, no Visual Studio, selecione **exibição** > **Pesquisador de objetos do SQL Server**. Conecte-se ao **(localdb) \MSSQLLocalDB**. O banco de dados com um nome correspondente **aspnet - <*nome do projeto*>-<*cadeia de caracteres de data* >**  é exibido.
 
     ![Menu de contexto no AspNetUsers tabela de banco de dados](identity/_static/04-db.png)
     
     Expanda o banco de dados e sua **tabelas**, clique com o **dbo. AspNetUsers** de tabela e selecione **exibir dados**.
 
-8. Verifique se funciona de identidade
+8. Verifique se a identidade está funcionando
 
-    O padrão *aplicativo Web do ASP.NET Core* modelo de projeto permite que os usuários acessem qualquer ação no aplicativo sem precisar para fazer logon. Para verificar se a identidade do ASP.NET funciona, adicione um`[Authorize]` de atributo para o `About` ação do `Home` controlador.
+    O modelo de projeto padrão *aplicativo Web do ASP.NET Core* permite que os usuários acessem qualquer ação no aplicativo sem precisar fazer logon. Para verificar se a identidade do ASP.NET funciona, adicione um`[Authorize]` como atributo para a ação `About` do controlador `Home`.
  
     ```cs
     [Authorize]
@@ -198,7 +198,7 @@ Para obter informações adicionais e diretrizes sobre como migrar sua identidad
 
 ## <a name="setting-password-strength"></a>Definindo o nível de senha
 
-Consulte [configuração](#pw) para obter um exemplo que define os requisitos de senha mínimo.
+Consulte [configuração](#pw) para obter um exemplo que defina os requisitos mínimos de senha.
 
 ## <a name="next-steps"></a>Próximas etapas
 
