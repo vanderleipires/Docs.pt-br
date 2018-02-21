@@ -1,7 +1,7 @@
 ---
 title: Suporte ao IIS no tempo de desenvolvimento no Visual Studio para ASP.NET Core
 author: shirhatti
-description: "Descubra o suporte para depuração de aplicativos do ASP.NET Core quando executado por trás do IIS no Windows Server."
+description: "Descobrir o suporte para depuração de aplicativos do ASP.NET Core quando executado por trás do IIS no Windows Server."
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: a5f727dd21ac0c6702691df2215c42f4adc0ec27
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a8bdf4c0c0399c62666e6e61e70c0298a42c2c12
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Suporte ao IIS no tempo de desenvolvimento no Visual Studio para ASP.NET Core
 
 Por: [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-Este artigo descreve o suporte do [Visual Studio](https://www.visualstudio.com/vs/) a depuração de aplicativos do ASP.NET Core em execução por trás do IIS no Windows Server. Este tópico explica como habilitar esse recurso e configuração de um projeto.
+Este artigo descreve [Visual Studio](https://www.visualstudio.com/vs/) suporte para depuração de aplicativos do ASP.NET Core em execução por trás do IIS no Windows Server. Este tópico explica como habilitar esse recurso e configuração de um projeto.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -37,7 +37,7 @@ Se a instalação do IIS requer uma reinicialização, reinicie o sistema.
 
 ## <a name="enable-development-time-iis-support"></a>Habilitar suporte ao IIS no tempo de desenvolvimento
 
-Depois que o IIS estiver instalado, inicie o instalador do Visual Studio para modificar a instalação existente do Visual Studio. No instalador, selecione o componente **Suporte ao IIS no tempo de desenvolvimento**. O componente está listado como um componente opcional do painel **Resumo** para a carga de trabalho **Desenvolvimento Web e ASP.NET**. Isso instala o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module), que é um módulo nativo do IIS necessário para executar aplicativos do ASP.NET Core.
+Inicie o instalador do Visual Studio. Selecione o **IIS suporte de tempo de desenvolvimento** componente. O componente está listado como opcionais no **resumo** painel para o **desenvolvimento ASP.NET e web** carga de trabalho. Isso instala o [ASP.NET Core módulo](xref:fundamentals/servers/aspnet-core-module), que é um módulo nativo do IIS necessário para executar o ASP.NET Core aplicativos.
 
 ![Modificando os recursos do Visual Studio: a guia Cargas de Trabalho é selecionada. Na seção Web e Nuvem, o painel ASP.NET e desenvolvimento Web é selecionado. À direita na área do painel de resumo opcional, há uma caixa de seleção para IIS suporte de tempo de desenvolvimento.](development-time-iis-support/_static/development_time_support.png)
 
@@ -73,8 +73,6 @@ Como alternativa, um perfil de lançamento para adicionar manualmente o [launchS
 ```
 
 O Visual Studio pode solicitar uma reinicialização se não executar como administrador. Se solicitado, reinicie o Visual Studio.
-
-Parabéns! Neste ponto, o projeto está configurado para suporte de tempo de desenvolvimento do IIS. 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
