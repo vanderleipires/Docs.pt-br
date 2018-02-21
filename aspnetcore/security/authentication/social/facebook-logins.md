@@ -23,7 +23,7 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
 ## <a name="create-the-app-in-facebook"></a>Criar o aplicativo no Facebook
 
-*  Navegue até o [aplicativo Facebook desenvolvedores](https://developers.facebook.com/apps/) página e entre. Se você ainda não tiver uma conta do Facebook, use o **inscrever-se para o Facebook** link na página de logon para criar uma.
+*  Navegue até a página [aplicativos no site para desenvolvedores do Facebook](https://developers.facebook.com/apps/). Se você ainda não tiver uma conta do Facebook, use o **inscrever-se para o Facebook** link na página de logon para criar uma.
 
 * Clique no botão **adicionar um novo aplicativo** no canto superior direito para criar uma nova ID de aplicativo.
 
@@ -37,7 +37,7 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
    ![Página de instalação do produto](index/_static/FBProductSetup.png)
   
-* O **Quickstart** assistente iniciará com **escolher uma plataforma** como a primeira página. Ignorar o assistente agora clicando o **configurações** link no menu à esquerda:
+* O assistente **Quickstart** iniciará com **escolher uma plataforma** como a primeira página. Ignorare o assistente clicando no link **configurações** no menu à esquerda:
 
    ![Início rápido do Skip](index/_static/FBSkipQuickStart.png)
 
@@ -55,7 +55,7 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
    ![Painel do desenvolvedor do Facebook](index/_static/FBDashboard.png)
 
-* Ao implantar o site que você precise revisá o **logon do Facebook** página de instalação e registrar um novo URI público.
+* Ao implantar o site que você precisará revisitar a página de configurações do **logon do Facebook** e registrar um novo URI público.
 
 ## <a name="store-facebook-app-id-and-app-secret"></a>Armazenar a ID do aplicativo Facebook e o segredo do aplicativo
 
@@ -72,7 +72,7 @@ dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Adicione o serviço do Facebook no `ConfigureServices` método o *Startup.cs* arquivo:
+Adicione o serviço do Facebook no método `ConfigureServices`  do arquivo *Startup.cs* :
 
 ```csharp
 services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -90,14 +90,14 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-Instalar o [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) pacote.
+Instalar o pacote [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook).
 
-* Para instalar este pacote com 2017 do Visual Studio, clique com botão direito no projeto e selecione **gerenciar pacotes NuGet**.
-* Para instalar o .NET Core CLI, execute o seguinte no diretório do projeto:
+* Para instalar este pacote com o Visual Studio 2017, clique com botão direito no projeto e selecione **gerenciar pacotes NuGet**.
+* Para instalar o .NET Core CLI, execute o seguinte comando no diretório do projeto:
 
    `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
 
-Adicionar o middleware do Facebook no `Configure` método *Startup.cs* arquivo:
+Adicione o middleware do Facebook no método `Configure` do arquivo *Startup.cs*:
 
 ```csharp
 app.UseFacebookAuthentication(new FacebookOptions()
@@ -109,10 +109,10 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ---
 
-Consulte o [FacebookOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.facebookoptions) referência de API para obter mais informações sobre opções de configuração com suporte a autenticação do Facebook. Opções de configuração podem ser usadas para:
+Consulte as referências de API do [FacebookOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.facebookoptions) para obter mais informações sobre opções de configuração com suporte a autenticação do Facebook. As opções de configuração podem ser usadas para:
 
-* Solicite informações diferentes sobre o usuário.
-* Adicione argumentos de cadeia de caracteres de consulta para personalizar a experiência de logon.
+* Solicitar informações diferentes sobre o usuário.
+* Adicionar argumentos de cadeia de caracteres de consulta para personalizar a experiência de logon.
 
 ## <a name="sign-in-with-facebook"></a>Entrar com o Facebook
 
@@ -136,7 +136,7 @@ Agora você está conectado usando suas credenciais do Facebook:
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-* **ASP.NET Core 2. x somente:** identidade se não estiver configurada, chamando `services.AddIdentity` na `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
+* **ASP.NET Core 2. x somente:** se a identidade não estiver configurada chamando `services.AddIdentity` no `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
 * Se o banco de dados do site não tiver sido criado, aplicando a migração inicial, você obtém *uma operação de banco de dados falhou ao processar a solicitação* erro. Toque em **aplicar migrações** para criar o banco de dados e a atualização para continuar após o erro.
 
 ## <a name="next-steps"></a>Próximas etapas
