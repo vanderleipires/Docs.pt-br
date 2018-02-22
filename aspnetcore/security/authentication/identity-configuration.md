@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: cf7dcdb80f5edf9e10960cb08957793c36829a69
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0ec223ce06ff116c36182b8de507138e96a277a4
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="configure-identity"></a>Configurar identidade
 
@@ -35,7 +35,7 @@ ASP.NET Core 2.0 adicionado o `RequiredUniqueChars` propriedade. Caso contrário
 
 ---
 
-`IdentityOptions.Password`tem as seguintes propriedades:
+`IdentityOptions.Password` tem as seguintes propriedades:
 
 | Propriedade                | Descrição                       | Padrão |
 | ----------------------- | --------------------------------- | ------- |
@@ -51,7 +51,7 @@ ASP.NET Core 2.0 adicionado o `RequiredUniqueChars` propriedade. Caso contrário
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,39-42,50-52)]
 
-`IdentityOptions.Lockout`tem as seguintes propriedades:
+`IdentityOptions.Lockout` tem as seguintes propriedades:
 
 | Propriedade                | Descrição                       | Padrão |
 | ----------------------- | --------------------------------- | ------- |
@@ -63,7 +63,7 @@ ASP.NET Core 2.0 adicionado o `RequiredUniqueChars` propriedade. Caso contrário
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,44-46,50-52)]
 
-`IdentityOptions.SignIn`tem as seguintes propriedades:
+`IdentityOptions.SignIn` tem as seguintes propriedades:
 
 | Propriedade                | Descrição                       | Padrão |
 | ----------------------- | --------------------------------- | ------- |
@@ -74,7 +74,7 @@ ASP.NET Core 2.0 adicionado o `RequiredUniqueChars` propriedade. Caso contrário
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,48-52)]
 
-`IdentityOptions.User`tem as seguintes propriedades:
+`IdentityOptions.User` tem as seguintes propriedades:
 
 | Propriedade                | Descrição                       | Padrão |
 | ----------------------- | --------------------------------- | ------- |
@@ -98,7 +98,7 @@ Em `ConfigureServices` no `Startup` classe, você pode configurar o cookie do ap
 
 ---
 
-`CookieAuthenticationOptions`tem as seguintes propriedades:
+`CookieAuthenticationOptions` tem as seguintes propriedades:
 
 | Propriedade                | Descrição                       | Padrão |
 | ----------------------- | --------------------------------- | ------- |
@@ -107,8 +107,8 @@ Em `ConfigureServices` no `Startup` classe, você pode configurar o cookie do ap
 | `ExpireTimeSpan`  | Controla o tempo que o tíquete de autenticação é armazenado no cookie permanecerá válido do ponto em que ele é criado.  | 14 dias  |
 | `LoginPath`  | Quando um usuário está autorizado, ele será redirecionado para esse caminho para fazer logon. | / / Logon da conta  |
 | `LogoutPath`  | Quando um usuário é desconectado, ele será redirecionado para esse caminho.  | / Conta/Logout  |
-| `AccessDeniedPath`  | Quando um usuário executar uma verificação de autorização, ele será redirecionado para esse caminho.  |   |
-| `SlidingExpiration`  | Quando for verdadeiro, será emitido um novo cookie com um novo tempo de expiração quando o cookie atual é mais de meio a janela de expiração.  | /Account/AccessDenied |
-| `ReturnUrlParameter`  | Determina o nome do parâmetro de cadeia de caracteres de consulta que é acrescentado pelo middleware quando um código de 401 status não autorizado é alterado para um redirecionamento 302 para o caminho de logon.  |  true |
+| `AccessDeniedPath`  | Quando um usuário executar uma verificação de autorização, ele será redirecionado para esse caminho.  |  /Account/AccessDenied |
+| `SlidingExpiration`  | Quando for verdadeiro, será emitido um novo cookie com um novo tempo de expiração quando o cookie atual é mais de meio a janela de expiração.  | true |
+| `ReturnUrlParameter`  | Determina o nome do parâmetro de cadeia de caracteres de consulta que é acrescentado pelo middleware quando um código de 401 status não autorizado é alterado para um redirecionamento 302 para o caminho de logon.  | ReturnUrl |
 | `AuthenticationScheme`  | Isso só é relevante para o ASP.NET Core 1. x. O nome lógico para um esquema de autenticação específico. |  |
 | `AutomaticAuthenticate`  | Esse sinalizador só é relevante para o ASP.NET Core 1. x. Quando for verdadeiro, autenticação de cookie deve executar em cada solicitação e tente validar e reconstrua qualquer entidade de segurança serializada criado por ele.  |  |

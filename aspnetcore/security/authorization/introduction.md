@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/introduction
-ms.openlocfilehash: a6bd81a4e5796c1d0a0033c2b8d5a6ba9282564c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3fef6d38672af8871c04b65834789a39a7df8487
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="introduction"></a>Introdução
 
@@ -25,8 +25,10 @@ A autorização é ortogonal e independente de autenticação, que é o processo
 
 ## <a name="authorization-types"></a>Tipos de autorização
 
-Autorização de ASP.NET Core fornece um simples declarativo [função](roles.md) e um [política avançada com base em](policies.md) modelo. Autorização é expresso em requisitos e manipuladores de avaliar as declarações de um usuário em relação aos requisitos. Verificações imperativas podem ser baseadas em políticas simples ou políticas que avalie a identidade do usuário e propriedades do recurso que o usuário está tentando acessar.
+Autorização de ASP.NET Core fornece um simples, declarativo [função](roles.md) e uma rica [baseado em políticas](policies.md) modelo. Autorização é expresso em requisitos e manipuladores de avaliar as declarações de um usuário em relação aos requisitos. Verificações imperativas podem ser baseadas em políticas simples ou políticas que avalie a identidade do usuário e propriedades do recurso que o usuário está tentando acessar.
 
 ## <a name="namespaces"></a>Namespaces
 
-Componentes de autorização, incluindo o `AuthorizeAttribute` e `AllowAnonymousAttribute` atributos encontrados no `Microsoft.AspNetCore.Authorization` namespace.
+Componentes de autorização, incluindo o `AuthorizeAttribute` e `AllowAnonymousAttribute` atributos, são encontrados no `Microsoft.AspNetCore.Authorization` namespace.
+
+Consulte a documentação em [simples de autorização](xref:security/authorization/simple).

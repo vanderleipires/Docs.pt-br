@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 5689031015279484cc616090a767a8c25eefa3c1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d55b34135d5bab98ab8de31cc4b12dcc272cbc0a
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/20/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Criar um aplicativo web seguro do ASP.NET MVC 5 com logon, email de redefinição de senha e de confirmação (c#)
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Este tutorial mostra como criar um aplicativo da web ASP.NET MVC 5 com o email de confirmação e redefinição de senha usando o sistema de associação do ASP.NET Identity. Você pode baixar o aplicativo concluído [aqui](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952). O download contém os auxiliares de depuração que permitem que você teste confirmação por email e SMS sem configurar um email ou o provedor de SMS.
 > 
@@ -65,7 +65,7 @@ Embora este tutorial mostra apenas como adicionar notificação por email por me
 1. No Console do Gerenciador de pacotes, digite o seguinte comando a seguir: 
 
     [!code-console[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample1.cmd)]
-2. Vá para o [página de inscrição do Azure SendGrid](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409) e registre-se gratuitamente conta do SendGrid. Adicione código semelhante à seguinte para configurar o SendGrid:
+2. Vá para o [página de inscrição do Azure SendGrid](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409) e registre-se para uma conta gratuita do SendGrid. Configurar o SendGrid, adicionando o código semelhante ao seguinte no *App_Start/IdentityConfig.cs*:
 
     [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample2.cs?highlight=3,5)]
 
@@ -102,7 +102,7 @@ Atualmente, depois que o usuário concluir o formulário de registro, elas são 
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample7.cs?highlight=14-15,23-30)]
 
-Comentando o `SignInAsync` método, o usuário não será assinado pelo registro. O `TempData["ViewBagLink"] = callbackUrl;` linha pode ser usada para [depurar o aplicativo](#dbg) e testar o registro sem enviar email. `ViewBag.Message`é usado para exibir as instruções de confirmação. O [baixar exemplo](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952) contém código para testar a confirmação de email sem configurar o email e também pode ser usado para depurar o aplicativo.
+Comentando o `SignInAsync` método, o usuário não será assinado pelo registro. O `TempData["ViewBagLink"] = callbackUrl;` linha pode ser usada para [depurar o aplicativo](#dbg) e testar o registro sem enviar email. `ViewBag.Message` é usado para exibir as instruções de confirmação. O [baixar exemplo](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952) contém código para testar a confirmação de email sem configurar o email e também pode ser usado para depurar o aplicativo.
 
 Criar um `Views\Shared\Info.cshtml` de arquivo e adicione a seguinte marcação razor:
 
