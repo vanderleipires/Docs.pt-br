@@ -48,7 +48,7 @@ O metapacote `Microsoft.AspNetCore.All` aborda apenas o .Net Core 2.0 porque ele
 
 ## <a name="configuration-update"></a>Atualização da configuração
 
-Uma instância de `IConfiguration` é adicionada ao contêiner de serviços por padrão no ASP.NET Core 2.0. `IConfiguration` no contêiner de serviços torna mais fácil para aplicativos recuperarem valores de configuração do contêiner.
+Uma instância de `IConfiguration` é adicionada ao contêiner de serviços por padrão no ASP.NET Core 2.0. O `IConfiguration` no contêiner de serviços torna mais fácil para os aplicativos recuperarem os valores de configuração do contêiner.
 
 Para obter informações sobre o status da documentação planejada, consulte o [problema do GitHub](https://github.com/aspnet/Docs/issues/3387).
 
@@ -68,12 +68,12 @@ Para obter informações sobre o status da documentação planejada, consulte o 
 
 ## <a name="identity-update"></a>Atualização de identidade
 
-Tornamos mais fácil criar APIs Web seguras usando a identidade do ASP.NET Core 2.0. Você pode adquirir tokens de acesso para acessar suas APIs Web usando a [MSAL (Biblioteca de Autenticação da Microsoft)](https://www.nuget.org/packages/Microsoft.Identity.Client).
+Facilitamos a criação de APIs Web seguras usando a identidade do ASP.NET Core 2.0. Você pode adquirir tokens de acesso para acessar suas APIs Web usando a [MSAL (Biblioteca de Autenticação da Microsoft)](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 Para obter mais informações sobre alterações de autenticação no 2.0, consulte os seguintes recursos:
 
 * [Confirmação de conta e de recuperação de senha no ASP.NET Core](xref:security/authentication/accconfirm)
-* [Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes)
+* [Habilitar a geração de código QR para aplicativos de autenticação no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes)
 * [Migrando Autenticação e Identidade para o ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)
 
 ## <a name="spa-templates"></a>Modelos do SPA
@@ -120,7 +120,7 @@ Para obter informações sobre o status da documentação planejada, consulte o 
 
 ## <a name="automatic-use-of-anti-forgery-tokens"></a>Uso automático de tokens antifalsificação
 
-O ASP.NET Core sempre ajudou a fazer a codificação HTML do conteúdo por padrão, mas com a nova versão é necessário um passo adicional para ajudar a impedir ataques de XSRF (falsificação de solicitação entre sites). O ASP.NET Core agora emitirá tokens antifalsificação por padrão e os validará em ações de POST de formulário e em páginas sem configuração adicional.
+O ASP.NET Core sempre ajudou a fazer a codificação HTML de seu conteúdo por padrão, mas com a nova versão, estamos dando um passo adicional para ajudar a impedir ataques de XSRF (falsificação de solicitação entre sites). O ASP.NET Core agora emitirá tokens antifalsificação por padrão e os validará em ações de POST do formulário e em páginas sem configuração adicional.
 
 Para obter mais informações, consulte [Impedindo ataques de falsificação de solicitação entre sites (CSRF/XSRF) no ASP.NET Core](xref:security/anti-request-forgery).
 

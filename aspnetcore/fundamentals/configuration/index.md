@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6b9dcfcc2fa380b601eee56095f2e6a6dbe07732
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5acae4de56e3f714f0cda2c00d5446d2dcddaf36
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Configurar um aplicativo do ASP.NET Core
 
@@ -390,9 +390,9 @@ MachineName: ChadPC
 Left: 1988
 ```
 
-## <a name="the-webconfig-file"></a>O arquivo Web.config
+## <a name="webconfig-file"></a>Arquivo web.config
 
-Um arquivo *web.config* é necessário quando você hospeda o aplicativo em IIS ou IIS Express. As configurações no *web.config* habilitam o [Módulo ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) para iniciar o aplicativo e definir outras configurações e módulos do IIS. Se o arquivo *web.config* não estiver presente e o arquivo de projeto inclui `<Project Sdk="Microsoft.NET.Sdk.Web">`, a publicação do projeto criará um arquivo *web.config* na saída publicada (a pasta *publish*). Para obter mais informações, consulte [Hospedar o ASP.NET Core no Windows com o IIS](xref:host-and-deploy/iis/index#webconfig).
+Um arquivo *web.config* é necessário quando você hospeda o aplicativo em IIS ou IIS Express. As configurações no *web.config* habilitam o [Módulo ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) para iniciar o aplicativo e definir outras configurações e módulos do IIS. Se o arquivo *web.config* não estiver presente e o arquivo de projeto inclui `<Project Sdk="Microsoft.NET.Sdk.Web">`, a publicação do projeto criará um arquivo *web.config* na saída publicada (a pasta *publish*). Para obter mais informações, consulte [Hospedar o ASP.NET Core no Windows com o IIS](xref:host-and-deploy/iis/index#webconfig-file).
 
 ## <a name="accessing-configuration-during-startup"></a>Acessando a configuração durante a inicialização
 

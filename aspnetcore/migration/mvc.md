@@ -1,5 +1,5 @@
 ---
-title: "Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC"
+title: Migrando do ASP.NET MVC para o ASP.NET Core MVC
 author: ardalis
 description: "Saiba como começar a migração de um projeto ASP.NET MVC ao MVC do ASP.NET Core."
 manager: wpickett
@@ -15,7 +15,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o núcleo do ASP.NET MVC
+# <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o ASP.NET Core MVC
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), e [Scott Addie](https://scottaddie.com)
 

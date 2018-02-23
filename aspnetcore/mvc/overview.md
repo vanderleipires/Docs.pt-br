@@ -1,5 +1,5 @@
 ---
-title: "Visão geral sobre o ASP.NET Core MVC"
+title: "Visão geral do ASP.NET Core MVC"
 author: ardalis
 description: "Saiba como o ASP.NET Core MVC é uma estrutura avançada para a criação de aplicativos Web e APIs usando o padrão de design Model-View-Controller."
 manager: wpickett
@@ -15,7 +15,7 @@ ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="overview-of-aspnet-core-mvc"></a>Visão geral sobre o ASP.NET Core MVC
+# <a name="overview-of-aspnet-core-mvc"></a>Visão geral do ASP.NET Core MVC
 
 Por [Steve Smith](https://ardalis.com/)
 
@@ -55,15 +55,15 @@ Os controladores são os componentes que cuidam da interação do usuário, trab
 >[!TIP]
 > Se você achar que as ações do controlador executam com frequência os mesmos tipos de ações, siga o [Princípio Don't Repeat Yourself](http://deviq.com/don-t-repeat-yourself/) movendo essas ações comuns para [filtros](#filters).
 
-## <a name="what-is-aspnet-core-mvc"></a>O que é o ASP.NET Core MVC
+## <a name="what-is-aspnet-core-mvc"></a>O que é ASP.NET Core MVC
 
 A estrutura do ASP.NET Core MVC é uma estrutura de apresentação leve, de software livre e altamente testável, otimizada para uso com o ASP.NET Core.
 
-O ASP.NET Core MVC fornece uma maneira baseada em padrões de criar sites dinâmicos que permitem uma separação limpa de interesses. Ela proporciona a você o controle total sobre a marcação, dá suporte ao desenvolvimento amigável a TDD e usa os últimos padrões da Web.
+ASP.NET Core MVC fornece uma maneira com base em padrões para criar sites dinâmicos que habilitam uma separação limpa de preocupações. Ele lhe dá controle total sobre a marcação, dá suporte ao desenvolvimento amigável a TDD e usa os padrões da web mais recentes.
 
 ## <a name="features"></a>Recursos
 
-O ASP.NET Core MVC inclui o seguinte:
+ASP.NET Core MVC inclui o seguinte:
 
 * [Roteamento](#routing)
 * [Associação de modelos](#model-binding)
@@ -104,7 +104,7 @@ public class ProductsController : Controller
 
 ### <a name="model-binding"></a>Associação de modelos
 
-A [associação de modelos](models/model-binding.md) do ASP.NET Core MVC converte dados de solicitação do cliente (valores de formulário, dados de rota, parâmetros de cadeia de caracteres de consulta, cabeçalhos HTTP) em objetos que podem ser manipulados pelo controlador. Como resultado, a lógica do controlador não precisa ter o trabalho de descobrir os dados de solicitação de entrada; ele simplesmente tem os dados como parâmetros para seus métodos de ação.
+ASP.NET Core MVC [associação de modelo](models/model-binding.md) converte dados de solicitação de cliente (valores de formulário, os dados de rota, parâmetros de cadeia de caracteres de consulta, os cabeçalhos HTTP) em objetos que o controlador pode manipular. Como resultado, a lógica de controlador não precisa fazer o trabalho de descobrir os dados de solicitação de entrada; ele simplesmente tem os dados como parâmetros para os métodos de ação.
 
 ```csharp
 public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null) { ... }
@@ -149,7 +149,7 @@ A estrutura manipula a validação dos dados de solicitação no cliente e no se
 
 ### <a name="dependency-injection"></a>Injeção de dependência
 
-O ASP.NET Core tem suporte interno para [DI (injeção de dependência)](../fundamentals/dependency-injection.md). No ASP.NET Core MVC, os [controladores](controllers/dependency-injection.md) podem solicitar os serviços necessários por meio de seus construtores, possibilitando que eles sigam o [Princípio de Dependências Explícitas](http://deviq.com/explicit-dependencies-principle/).
+O ASP.NET Core tem suporte interno para [DI (injeção de dependência)](../fundamentals/dependency-injection.md). No ASP.NET Core MVC, os [controladores](controllers/dependency-injection.md) podem solicitar serviços necessários por meio de seus construtores, possibilitando o acompanhamento do [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/).
 
 O aplicativo também pode usar a [injeção de dependência em arquivos no exibição](views/dependency-injection.md), usando a diretiva `@inject`:
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 7f0e30b3ac7f9cc3a32bd96f45d83ba13505a475
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 85d3eaf033eafbd24c71110ccd7f21ffcc8b0c82
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
@@ -180,6 +180,12 @@ Para obter mais informações, consulte [Globalização e localização](xref:fu
 Os detalhes de implementação de servidor Web relacionados a solicitações HTTP e respostas são definidos em interfaces. Essas interfaces são usadas pelas implementações de servidor e pelo middleware para criar e modificar o pipeline de hospedagem do aplicativo.
 
 Para obter mais informações, consulte [Solicitar Recursos](xref:fundamentals/request-features).
+
+## <a name="background-tasks"></a>Tarefas em segundo plano
+
+As tarefas em segundo plano são implementadas como *serviços hospedados*. Um serviço hospedado é uma classe com lógica de tarefa em segundo plano que implementa a interface [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice).
+
+Saiba mais em [Tarefas em segundo plano com serviços hospedados](xref:fundamentals/hosted-services).
 
 ## <a name="open-web-interface-for-net-owin"></a>OWIN (Open Web Interface para .NET)
 
