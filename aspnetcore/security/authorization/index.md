@@ -1,38 +1,41 @@
 ---
 title: "Autorização no ASP.NET Core"
 author: rick-anderson
-description: "Este documento serve como um sumário para os diversos tópicos sobre autorização do ASP.NET Core."
+description: "Descubra os tópicos de autorização do ASP.NET Core que explicam como fornecer direitos e privilégios aos usuários do aplicativo."
 manager: wpickett
 ms.author: riande
-ms.date: 10/14/2016
+ms.custom: mvc
+ms.date: 02/19/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/index
-ms.openlocfilehash: ee408afab55a80d28291a3a44e0fd1513ff34e45
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 652a01d58f7a7d19faa8531b61ea780bc379c428
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/20/2018
 ---
-# <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a><span data-ttu-id="e670f-103">Autorização no ASP.NET Core: simples, função, baseada em declarações e personalizada</span><span class="sxs-lookup"><span data-stu-id="e670f-103">Authorization in ASP.NET Core: Simple, role, claims-based, and custom</span></span>
+# <a name="authorization-in-aspnet-core"></a><span data-ttu-id="950af-103">Autorização no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="950af-103">Authorization in ASP.NET Core</span></span>
 
-* [<span data-ttu-id="e670f-104">Introdução</span><span class="sxs-lookup"><span data-stu-id="e670f-104">Introduction</span></span>](introduction.md)
+* [<span data-ttu-id="950af-104">Introdução</span><span class="sxs-lookup"><span data-stu-id="950af-104">Introduction</span></span>](xref:security/authorization/introduction)
 
-* [<span data-ttu-id="e670f-105">Autorização de páginas Razor</span><span class="sxs-lookup"><span data-stu-id="e670f-105">Razor Pages authorization</span></span>](xref:security/authorization/razor-pages-authorization)
+* [<span data-ttu-id="950af-105">Criar um aplicativo com os dados do usuário protegidos por autorização</span><span class="sxs-lookup"><span data-stu-id="950af-105">Create an app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
 
-* [<span data-ttu-id="e670f-106">Autorização simples</span><span class="sxs-lookup"><span data-stu-id="e670f-106">Simple authorization</span></span>](simple.md)
+* [<span data-ttu-id="950af-106">Autorização de páginas Razor</span><span class="sxs-lookup"><span data-stu-id="950af-106">Razor Pages authorization</span></span>](xref:security/authorization/razor-pages-authorization)
 
-* [<span data-ttu-id="e670f-107">Autorização baseada em função</span><span class="sxs-lookup"><span data-stu-id="e670f-107">Role-based authorization</span></span>](roles.md)
+* [<span data-ttu-id="950af-107">Autorização simples</span><span class="sxs-lookup"><span data-stu-id="950af-107">Simple authorization</span></span>](xref:security/authorization/simple)
 
-* [<span data-ttu-id="e670f-108">Autorização baseada em declarações</span><span class="sxs-lookup"><span data-stu-id="e670f-108">Claims-based authorization</span></span>](claims.md)
+* [<span data-ttu-id="950af-108">Autorização baseada em função</span><span class="sxs-lookup"><span data-stu-id="950af-108">Role-based authorization</span></span>](xref:security/authorization/roles)
 
-* [<span data-ttu-id="e670f-109">Autorização baseada em política</span><span class="sxs-lookup"><span data-stu-id="e670f-109">Policy-based authorization</span></span>](policies.md)
+* [<span data-ttu-id="950af-109">Autorização baseada em declarações</span><span class="sxs-lookup"><span data-stu-id="950af-109">Claims-based authorization</span></span>](xref:security/authorization/claims)
 
-* [<span data-ttu-id="e670f-110">Injeção de dependência em manipuladores de requisitos</span><span class="sxs-lookup"><span data-stu-id="e670f-110">Dependency injection in requirement handlers</span></span>](dependencyinjection.md)
+* [<span data-ttu-id="950af-110">Autorização baseada em política</span><span class="sxs-lookup"><span data-stu-id="950af-110">Policy-based authorization</span></span>](xref:security/authorization/policies)
 
-* [<span data-ttu-id="e670f-111">Autorização baseada em recursos</span><span class="sxs-lookup"><span data-stu-id="e670f-111">Resource-based authorization</span></span>](resourcebased.md)
+* [<span data-ttu-id="950af-111">Injeção de dependência em manipuladores de requisitos</span><span class="sxs-lookup"><span data-stu-id="950af-111">Dependency injection in requirement handlers</span></span>](xref:security/authorization/dependencyinjection)
 
-* [<span data-ttu-id="e670f-112">Autorização baseada em exibição</span><span class="sxs-lookup"><span data-stu-id="e670f-112">View-based authorization</span></span>](views.md)
+* [<span data-ttu-id="950af-112">Autorização baseada em recursos</span><span class="sxs-lookup"><span data-stu-id="950af-112">Resource-based authorization</span></span>](xref:security/authorization/resourcebased)
 
-* [<span data-ttu-id="e670f-113">Limitando a identidade por esquema</span><span class="sxs-lookup"><span data-stu-id="e670f-113">Limiting identity by scheme</span></span>](limitingidentitybyscheme.md)
+* [<span data-ttu-id="950af-113">Autorização baseada em exibição</span><span class="sxs-lookup"><span data-stu-id="950af-113">View-based authorization</span></span>](xref:security/authorization/views)
+
+* [<span data-ttu-id="950af-114">Autorizar com um esquema específico</span><span class="sxs-lookup"><span data-stu-id="950af-114">Authorize with a specific scheme</span></span>](xref:security/authorization/limitingidentitybyscheme)
