@@ -1,34 +1,34 @@
 ---
 title: Use o modelo de projeto Angular
 author: SteveSandersonMS
-description: "Saiba como começar a usar o modelo de projeto do ASP.NET Core única página aplicativo (SPA) release candidate para Angular e a CLI Angular."
+description: "Saiba como começar a usar o modelo de projeto de aplicativo de página única (SPA) do ASP.NET Core para Angular e a CLI Angular."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: 4162b1c26e9d278c811f691c4277d4de25adb204
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f81130b67d61ee063b697f19862449c3054d547d
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-angular-project-template-release-candidate"></a>Use o modelo de projeto Angular (versão release candidate)
+# <a name="use-the-angular-project-template"></a>Use o modelo de projeto Angular
 
 > [!NOTE]
-> Esta documentação não é sobre o modelo de projeto Angular lançada. **Esta documentação é sobre a versão release candidate do modelo Angular.** Esperamos que acompanham a versão de lançamento antecipado 2018.
+> Esta documentação não está sobre o modelo de projeto Angular incluída no ASP.NET 2.0 de núcleo. Trata-se o modelo Angular mais recente para o qual você pode atualizar manualmente. O modelo é incluído no ASP.NET Core 2.1 por padrão.
 
-O modelo de projeto Angular atualizado fornece um ponto inicial conveniente para ASP.NET Core aplicativos Angular 5 e a CLI Angular para implementar uma interface de usuário do lado do cliente avançado (IU).
+O modelo de projeto Angular atualizado fornece um ponto inicial conveniente para ASP.NET Core aplicativos Angular e a CLI Angular para implementar uma interface de usuário do lado do cliente avançado (IU).
 
 O modelo é equivalente à criação de um projeto do ASP.NET Core para atuar como um back-end de API e um projeto de CLI Angular para atuar como uma interface do usuário. O modelo oferece a conveniência de hospedagem de ambos os tipos de projeto em um projeto de aplicativo único. Consequentemente, o projeto de aplicativo pode ser criado e publicado como uma única unidade.
 
 ## <a name="create-a-new-app"></a>Criar um novo aplicativo
 
-Para começar, certifique-se de que você [o modelo de projeto Angular atualizado instalado](xref:spa/index#installation). Estas instruções não se aplicam ao modelo de projeto Angular anterior incluído no núcleo do .NET 2.0. x SDK.
+Se usar o ASP.NET 2.0 de núcleo, certifique-se de que você [o modelo de projeto Angular atualizado instalado](xref:spa/index#installation). Se você tiver o ASP.NET Core 2.1, não é necessário instalá-lo.
 
 Criar um novo projeto a partir de um prompt de comando usando o comando `dotnet new angular` em um diretório vazio. Por exemplo, os seguintes comandos criam o aplicativo em um *aplicativo my-novo* diretório e alterne para o diretório:
 

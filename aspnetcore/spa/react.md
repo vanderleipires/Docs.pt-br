@@ -1,26 +1,26 @@
 ---
 title: Use o modelo de projeto reagir
 author: SteveSandersonMS
-description: "Saiba como começar a usar o modelo de projeto do ASP.NET Core única página aplicativo (SPA) release candidate para reagir e criar reagir-aplicativo."
+description: "Saiba como começar a usar o modelo de projeto de aplicativo de página única (SPA) do ASP.NET Core para reagir e criar reagir-aplicativo."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: 5978094083a098a771f5dca103434ea8fcce7777
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e093a47159fd8278ff3705bb2c53571a8e27fab8
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-react-project-template-release-candidate"></a>Use o modelo de projeto reagir (versão release candidate)
+# <a name="use-the-react-project-template"></a>Use o modelo de projeto reagir
 
 > [!NOTE]
-> Esta documentação não é sobre o modelo de projeto reagir lançado. **Esta documentação é sobre a versão release candidate do modelo reagir.** Esperamos que acompanham a versão de lançamento antecipado 2018.
+> Esta documentação não está sobre o modelo de projeto reagir incluída no ASP.NET 2.0 de núcleo. Trata-se o modelo de reagir mais recente para o qual você pode atualizar manualmente. O modelo é incluído no ASP.NET Core 2.1 por padrão.
 
 O modelo de projeto reagir atualizado fornece um ponto inicial conveniente para ASP.NET Core aplicativos usando reagir e [criar reagir-aplicativo](https://github.com/facebookincubator/create-react-app) convenções (CRA) para implementar uma interface de usuário do lado do cliente avançado (IU).
 
@@ -28,7 +28,7 @@ O modelo é equivalente à criação de um projeto do ASP.NET Core para atuar co
 
 ## <a name="create-a-new-app"></a>Criar um novo aplicativo
 
-Para começar, certifique-se de que você [instalado o modelo de projeto reagir atualizado](xref:spa/index#installation). Estas instruções não se aplicam ao modelo de projeto de reagir anterior incluído no núcleo do .NET 2.0. x SDK.
+Se usar o ASP.NET 2.0 de núcleo, certifique-se de que você [instalado o modelo de projeto reagir atualizado](xref:spa/index#installation). Se você tiver o ASP.NET Core 2.1, não é necessário instalá-lo.
 
 Criar um novo projeto a partir de um prompt de comando usando o comando `dotnet new react` em um diretório vazio. Por exemplo, os seguintes comandos criam o aplicativo em um *aplicativo my-novo* diretório e alterne para o diretório:
 
