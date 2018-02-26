@@ -23,7 +23,7 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
 ## <a name="create-the-app-in-facebook"></a>Criar o aplicativo no Facebook
 
-*  Navegue até a página [aplicativos no site para desenvolvedores do Facebook](https://developers.facebook.com/apps/). Se você ainda não tiver uma conta do Facebook, use o **inscrever-se para o Facebook** link na página de logon para criar uma.
+*  Navegue até a página [aplicativos no site para desenvolvedores do Facebook](https://developers.facebook.com/apps/). Se você ainda não tiver uma conta do Facebook, use o link **inscrever-se para o Facebook** na página de logon para criar uma.
 
 * Clique no botão **adicionar um novo aplicativo** no canto superior direito para criar uma nova ID de aplicativo.
 
@@ -37,7 +37,7 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
    ![Página de instalação do produto](index/_static/FBProductSetup.png)
   
-* O assistente **Quickstart** iniciará com **escolher uma plataforma** como a primeira página. Ignorare o assistente clicando no link **configurações** no menu à esquerda:
+* O assistente **Quickstart** iniciará com **escolher uma plataforma** como a primeira página. Ignore o assistente clicando no link **configurações** no menu à esquerda:
 
    ![Início rápido do Skip](index/_static/FBSkipQuickStart.png)
 
@@ -55,7 +55,7 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
    ![Painel do desenvolvedor do Facebook](index/_static/FBDashboard.png)
 
-* Ao implantar o site que você precisará revisitar a página de configurações do **logon do Facebook** e registrar um novo URI público.
+* Ao implantar o site, você precisará voltar para a página de configurações **Logon do Facebook** e registrar um novo URI público.
 
 ## <a name="store-facebook-app-id-and-app-secret"></a>Armazenar a ID do aplicativo Facebook e o segredo do aplicativo
 
@@ -109,7 +109,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ---
 
-Consulte as referências de API do [FacebookOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.facebookoptions) para obter mais informações sobre opções de configuração com suporte a autenticação do Facebook. As opções de configuração podem ser usadas para:
+Consulte as referências de API do [FacebookOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.facebookoptions) para obter mais informações sobre as opções de configuração compatíveis com a autenticação do Facebook. As opções de configuração podem ser usadas para:
 
 * Solicitar informações diferentes sobre o usuário.
 * Adicionar argumentos de cadeia de caracteres de consulta para personalizar a experiência de logon.
@@ -136,7 +136,7 @@ Agora você está conectado usando suas credenciais do Facebook:
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-* **ASP.NET Core 2. x somente:** se a identidade não estiver configurada chamando `services.AddIdentity` no `ConfigureServices`, tentar autenticar resultará em *ArgumentException: A opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
+* Apenas **ASP.NET Core 2.x:** se a identidade não for configurada chamando `services.AddIdentity` no `ConfigureServices`, a autenticação resultará em *ArgumentException: a opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
 * Se o banco de dados do site não tiver sido criado, aplicando a migração inicial, você obtém *uma operação de banco de dados falhou ao processar a solicitação* erro. Toque em **aplicar migrações** para criar o banco de dados e a atualização para continuar após o erro.
 
 ## <a name="next-steps"></a>Próximas etapas
