@@ -19,16 +19,16 @@ ms.lasthandoff: 02/20/2018
 
 <a name="security-authorization-introduction"></a>
 
-Autorização é o processo que determina o que um usuário é capaz de fazer. Por exemplo, um usuário administrativo tem permissão para criar uma biblioteca de documentos, documentos de adicionar, editar documentos e excluí-los. Um usuário não administrativo trabalhando com a biblioteca só está autorizado a ler os documentos.
+Autorização é o processo que determina o que um usuário é capaz de fazer. Por exemplo, um usuário administrativo tem permissão para criar uma biblioteca de documentos, adiciona-los, edita-los e excluí-los. Um usuário não administrativo trabalhando com esta biblioteca só está autorizado a ler os documentos.
 
-A autorização é ortogonal e independente de autenticação, que é o processo de verificação de quem é um usuário. A autenticação pode criar um ou mais identidades para o usuário atual.
+A autorização é ortogonal e independente de autenticação, que é o processo de verificação de quem é o usuário. A autenticação pode criar uma ou mais identidades para o usuário atual.
 
 ## <a name="authorization-types"></a>Tipos de autorização
 
-Autorização de ASP.NET Core fornece um simples, declarativo [função](roles.md) e uma rica [baseado em políticas](policies.md) modelo. Autorização é expresso em requisitos e manipuladores de avaliar as declarações de um usuário em relação aos requisitos. Verificações imperativas podem ser baseadas em políticas simples ou políticas que avalie a identidade do usuário e propriedades do recurso que o usuário está tentando acessar.
+A autorização do ASP.NET Core fornece um modelo simples de [funções](roles.md) declarativas [baseado em políticas](policies.md). Ela é expressa em requisitos e os manipuladores avaliam as reivindicações de um usuário em relação aos requisitos. Verificações imperativas podem ser baseadas em políticas simples ou políticas que avaliem a identidade do usuário e propriedades do recurso que o usuário está tentando acessar.
 
 ## <a name="namespaces"></a>Namespaces
 
-Componentes de autorização, incluindo o `AuthorizeAttribute` e `AllowAnonymousAttribute` atributos, são encontrados no `Microsoft.AspNetCore.Authorization` namespace.
+Componentes de autorização, incluindo os atributos `AuthorizeAttribute` e `AllowAnonymousAttribute`, são encontrados no namespace `Microsoft.AspNetCore.Authorization`.
 
-Consulte a documentação em [simples de autorização](xref:security/authorization/simple).
+Consulte a documentação em [autorização simples](xref:security/authorization/simple).
