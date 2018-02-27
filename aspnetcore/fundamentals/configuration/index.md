@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 5acae4de56e3f714f0cda2c00d5446d2dcddaf36
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: 12635c66bacdeed7360a9d6c689212bba81439e3
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Configurar um aplicativo do ASP.NET Core
 
@@ -63,6 +63,25 @@ Os pares nome-valor gravados nos provedores de [Configuração](/dotnet/api/micr
 
 O exemplo anterior usa o indexador de configuração para ler valores. Para acessar a configuração fora de `Startup`, use o *padrão de opções*. Para obter mais informações, consulte o tópico [Opções](xref:fundamentals/configuration/options).
 
+## <a name="xml-configuration"></a>Configuração XML
+
+Para trabalhar com matrizes em fontes de configuração formatadas em XML, forneça um índice `name` para cada elemento. Use o índice para acessar os valores:
+
+```xml
+<wizards>
+  <wizard name="Gandalf">
+    <age>1000</age>
+  </wizard>
+  <wizard name="Harry">
+    <age>17</age>
+  </wizard>
+</wizards>
+```
+
+```csharp
+Console.Write($"{Configuration["wizard:Harry:age"]}");
+// Output: 17
+```
 
 ## <a name="configuration-by-environment"></a>Configuração por ambiente
 
