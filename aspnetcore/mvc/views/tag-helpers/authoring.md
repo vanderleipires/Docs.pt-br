@@ -242,7 +242,7 @@ Também use o `[HtmlTargetElement]` para alterar o nome do elemento de destino. 
 
 ## <a name="condition-tag-helper"></a>Tag helper condicional
 
-O tag helper de condição renderiza a saída quando passado um valor true.
+O auxiliar de marca de condição renderiza a saída quando passado um valor true.
 
 1.  Adicione a classe `ConditionTagHelper` a seguir à pasta *TagHelpers*.
 
