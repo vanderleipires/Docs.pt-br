@@ -1,7 +1,7 @@
----
-title: Criando Auxiliares de Marca no ASP.NET Core
+﻿---
+title: "Criação de auxiliares de marcação no ASP.NET Core"
 author: rick-anderson
-description: Saiba como criar Auxiliares de Marca no ASP.NET Core.
+description: "Saiba como criar auxiliares de marcação no ASP.NET Core"
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -16,7 +16,7 @@ ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Criar Auxiliares de Marca no ASP.NET Core, um passo a passo com amostras
+# <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Criação de auxiliares de marcação no ASP.NET Core, um passo a passo com exemplos
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -24,15 +24,15 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="get-started-with-tag-helpers"></a>Introdução aos Auxiliares de Marca
 
-Este tutorial fornece uma introdução à programação de Auxiliares de Marca. [Introdução aos Auxiliares de Marca](intro.md) descreve os benefícios oferecidos pelos Auxiliares de Marca.
+Este tutorial fornece uma introdução à programação de auxiliares de marcação. [Introdução aos auxiliares de marcação](intro.md) descreve os benefícios que os auxiliares de marcação fornecem.
 
-Um auxiliar de marca é qualquer classe que implementa a interface `ITagHelper`. No entanto, quando você cria um auxiliar de marca, geralmente você deriva de `TagHelper`, fornecendo acesso ao método `Process`.
+Um auxiliar de marca é qualquer classe que implementa a interface `ITagHelper`. No entanto, quando cria um auxiliar de marca, você geralmente deriva de `TagHelper`, o que fornece acesso ao método `Process`.
 
 1. Crie um novo projeto do ASP.NET Core chamado **AuthoringTagHelpers**. Você não precisará de autenticação para esse projeto.
 
-2. Crie uma pasta para armazenar os Auxiliares de Marca chamada *TagHelpers*. A pasta *TagHelpers* *não* é necessária, mas é uma convenção razoável. Agora vamos começar a escrever alguns auxiliares de marca simples.
+2. Criar uma pasta para armazenar os auxiliares de marca chamados *TagHelpers*. A pasta *TagHelpers* pasta *não* é necessária, mas é uma convenção comum. Agora vamos começar a escrever alguns auxiliares de marca simples.
 
-## <a name="a-minimal-tag-helper"></a>Um Auxiliar de Marca mínimo
+## <a name="a-minimal-tag-helper"></a>Um auxiliar de marca mínimo
 
 Nesta seção, você escreve um auxiliar de marca que atualiza uma marca de email. Por exemplo:
 
@@ -54,11 +54,11 @@ Ou seja, uma marca de âncora que torna isso um link de email. Talvez você dese
     
     **Observações:**
     
-    * Os auxiliares de marca usam uma convenção de nomenclatura direcionada aos elementos do nome da classe raiz (menos a parte *TagHelper* do nome da classe). Neste exemplo, o nome raiz de **Email**TagHelper é *email* e, portanto, a marca `<email>` será o destino. Essa convenção de nomenclatura deve funcionar para a maioria dos auxiliares de marca. Mais adiante, mostrarei como substituí-la.
+    * Auxiliares de marcação usam uma convenção de nomenclatura que tem como alvo os elementos do nome da classe raiz (menos o *TagHelper* parte do nome de classe). Neste exemplo, o nome da raiz **Email**TagHelper é *email*, portanto, a marca `<email>` será direcionada. Essa convenção de nomenclatura deve funcionar para a maioria dos auxiliares de marcação, posteriormente, mostrarei como substituí-la.
     
-    * A classe `EmailTagHelper` é derivada de `TagHelper`. A classe `TagHelper` fornece métodos e propriedades para a escrita de Auxiliares de Marca.
+    * O `EmailTagHelper` classe deriva de `TagHelper`. O `TagHelper` classe fornece métodos e propriedades para gravar tag helpers.
     
-    * O método `Process` substituído controla o que o auxiliar de marca faz quando é executado. A classe `TagHelper` também fornece uma versão assíncrona (`ProcessAsync`) com os mesmos parâmetros.
+    * O método 'Process' substituído controla o que o auxiliar de marca faz quando é executado. A classe 'TagHelper' também fornece uma versão assíncrona ('ProcessAsync') com os mesmos parâmetros.
     
     * O parâmetro de contexto para `Process` (e `ProcessAsync`) contém informações associadas à execução da marca HTML atual.
     
@@ -72,7 +72,7 @@ Ou seja, uma marca de âncora que torna isso um link de email. Talvez você dese
 
 2.  Para disponibilizar a classe `EmailTagHelper` para todas as nossas exibições do Razor, adicione a diretiva `addTagHelper` ao arquivo *Views/_ViewImports.cshtml*: [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopyEmail.cshtml?highlight=2,3)]
     
-    O código acima usa a sintaxe de curinga para especificar que todos os auxiliares de marca em nosso assembly estarão disponíveis. A primeira cadeia de caracteres após `@addTagHelper` especifica o auxiliar de marca a ser carregado (use "*" para todos os auxiliares de marca) e a segunda cadeia de caracteres "AuthoringTagHelpers" especifica o assembly no qual o auxiliar de marca se encontra. Além disso, observe que a segunda linha insere os auxiliares de marca do ASP.NET Core MVC usando a sintaxe de curinga (esses auxiliares são abordados em [Introdução aos Auxiliares de Marca](intro.md)). É a diretiva `@addTagHelper` que disponibiliza o auxiliar de marca para a exibição do Razor. Como alternativa, você pode fornecer o FQN (nome totalmente qualificado) de um auxiliar de marca, conforme mostrado abaixo:
+    O código anterior usa a sintaxe de curinga para especificar que todos os tag helpers no nosso assembly estarão disponíveis. A primeira cadeia de caracteres após `@addTagHelper` Especifica o tag helper para carregar (Use "*" para todos os tag helpers), e a segunda cadeia de caracteres "AuthoringTagHelpers" Especifica o assembly de tag helper está em. Além disso, observe que a segunda linha coloca nos tag helpers do MVC do ASP.NET Core usando a sintaxe de curinga (os auxiliares são discutidos em [Introdução ao tag helpers](intro.md).) É o `@addTagHelper` diretiva que disponibiliza o tag helper para o modo de exibição do Razor. Como alternativa, você pode fornecer o nome totalmente qualificado (FQN) de um tag helper, conforme mostrado abaixo:
     
 ```csharp
 @using AuthoringTagHelpers
@@ -85,7 +85,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
     [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
 -->
     
-Para adicionar um auxiliar de marca a uma exibição usando um FQN, primeiro adicione o FQN (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) e, em seguida, o nome do assembly (*AuthoringTagHelpers*). A maioria dos desenvolvedores preferirá usar a sintaxe de curinga. [Introdução aos Auxiliares de Marca](intro.md) apresenta detalhes sobre a adição, remoção e hierarquia de auxiliares de marca, bem como a sintaxe de curinga.
+Para adicionar um tag helper para uma exibição usando um FQN, primeiro adicione o FQN (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) e, em seguida, o nome do assembly (*AuthoringTagHelpers*). A maioria dos desenvolvedores vão preferir usar a sintaxe de curinga. [Introdução ao tag helpers](intro.md) apresenta detalhes sobre a sintaxe de adição, remoção, hierarquia e curinga do tag helper.
     
 3.  Atualize a marcação no arquivo *Views/Home/Contact.cshtml* com essas alterações:
 
@@ -105,15 +105,15 @@ Atualize a classe `EmailTagHelper` com o seguinte:
 
 **Observações:**
 
-* Nomes de classe e de propriedade na formatação Pascal Case para auxiliares de marca são convertidos em seu [kebab case em minúsculas](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101). Portanto, para usar o atributo `MailTo`, você usará o equivalente de `<email mail-to="value"/>`.
+* Nomes de classe e de propriedade na formatação Pascal Case para auxiliares de marca são convertidos em seu [kebab case em minúsculas]](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101). Portanto, para usar o atributo 'MailTo', você usará o equivalente de '<email mail-to="value"/>'.
 
-* A última linha define o conteúdo completo para nosso auxiliar de marca minimamente funcional.
+* A última linha define o conteúdo concluído para nosso tag helper minimamente funcional.
 
 * A linha realçada mostra a sintaxe para adicionar atributos:
 
 [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailTo.cs?highlight=6&range=14-21)]
 
-Essa abordagem funciona para o atributo "href", desde que ele não exista atualmente na coleção de atributos. Também use o método `output.Attributes.Add` para adicionar um atributo de auxiliar de marca ao final da coleção de atributos de marca.
+Essa abordagem funciona para o atributo "href" como no momento, ele não existe na coleção de atributos. Você também pode usar o `output.Attributes.Add` para adicionar um atributo do tag helper ao final da coleção de atributos de marca.
 
 1.  Atualize a marcação no arquivo *Views/Home/Contact.cshtml* com essas alterações: [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
 
@@ -124,7 +124,7 @@ Essa abordagem funciona para o atributo "href", desde que ele não exista atualm
     >
     > [!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailVoid.cs?highlight=1&range=6-10)]
     
-    Com um auxiliar de marca da marca de email com autofechamento, a saída será `<a href="mailto:Rick@contoso.com" />`. As marcas de âncora com autofechamento são um HTML inválido. Portanto, não é recomendável criá-las, mas talvez criar um auxiliar de marca com autofechamento. Auxiliares de marca definem o tipo da propriedade `TagMode` após a leitura de uma marca.
+    Com um auxiliar de marca da marca de email com autofechamento, a saída será '<a href="mailto:Rick@contoso.com" />'. As marcas de âncora com autofechamento são um HTML inválido. Portanto, não é recomendável criá-las, mas talvez criar um auxiliar de marca com autofechamento. Auxiliares de marca definem o tipo da propriedade 'TagMode' após a leitura de uma marca.
     
 ### <a name="processasync"></a>ProcessAsync
 
@@ -140,7 +140,7 @@ Nesta seção, escreveremos um auxiliar de email assíncrono.
 
     * Use o parâmetro `output` para obter o conteúdo do elemento HTML.
 
-2.  Faça a alteração a seguir no arquivo *Views/Home/Contact.cshtml* para que o auxiliar de marca possa obter o email de destino.
+2.  Faça a alteração a seguir no arquivo Views/Home/Contact.cshtml para que o auxiliar de marca possa obter o email de destino.
 
     [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=15,16&range=1-17)]
 
@@ -164,11 +164,11 @@ Nesta seção, escreveremos um auxiliar de email assíncrono.
 
 3.  Execute o aplicativo. Use seu navegador favorito para inspecionar a origem e verificar a marcação.
 
-    O atributo `[HtmlTargetElement]` acima é direcionado somente à marcação HTML que fornece um nome de atributo igual a "bold". O elemento `<bold>` não foi modificado pelo auxiliar de marca.
+    O `[HtmlTargetElement]` atributo acima se destina somente a marcação HTML que fornece um nome de atributo de "bold". O `<bold>` elemento não foi modificado pelo tag helper.
 
 4. Comente a linha de atributo `[HtmlTargetElement]` e ela usará como padrão as marcações `<bold>` de direcionamento, ou seja, a marcação HTML do formato `<bold>`. Lembre-se de que a convenção de nomenclatura padrão fará a correspondência do nome da classe **Bold**TagHelper com as marcações `<bold>`.
 
-5. Execute o aplicativo e verifique se a marca `<bold>` é processada pelo auxiliar de marca.
+5. Execute o aplicativo e verifique se a marca '<bold>' é processada pelo auxiliar de marca.
 
 A decoração de uma classe com vários atributos `[HtmlTargetElement]` resulta em um OR lógico dos destinos. Por exemplo, o uso do código a seguir, uma marca de negrito ou um atributo de negrito terá uma correspondência.
 
@@ -186,9 +186,9 @@ Também use o `[HtmlTargetElement]` para alterar o nome do elemento de destino. 
 [HtmlTargetElement("MyBold")]
    ```
 
-## <a name="pass-a-model-to-a-tag-helper"></a>Passar um modelo para um Auxiliar de Marca
+## <a name="pass-a-model-to-a-tag-helper"></a>Passe um model para um tag helper
 
-1.  Adicione uma pasta *Models*.
+1.  Adicionar uma pasta *models*.
 
 2.  Adicione a seguinte classe `WebsiteContext` à pasta *Models*:
 
@@ -200,7 +200,7 @@ Também use o `[HtmlTargetElement]` para alterar o nome do elemento de destino. 
     
     **Observações:**
     
-    * Conforme mencionado anteriormente, os auxiliares de marca convertem nomes de classes e propriedades dos auxiliares de marca do C# na formatação Pascal Case em [kebab case em minúsculas](http://wiki.c2.com/?KebabCase). Portanto, para usar o `WebsiteInformationTagHelper` no Razor, você escreverá `<website-information />`.
+    * Conforme mencionado anteriormente, os auxiliares de marca convertem nomes de classes e propriedades dos auxiliares de marca do C# na formatação Pascal Case em [kebab case em minúsculas](http://wiki.c2.com/?KebabCase). Portanto, para usar o 'WebsiteInformationTagHelper' no Razor, você escreverá '<website-information />'.
     
     * Você não identifica de forma explícita o elemento de destino com o atributo `[HtmlTargetElement]`. Portanto, o padrão de `website-information` será o destino. Se você aplicou o seguinte atributo (observe que não está em kebab case, mas corresponde ao nome da classe):
     
@@ -214,7 +214,7 @@ Também use o `[HtmlTargetElement]` para alterar o nome do elemento de destino. 
     [HtmlTargetElement("Website-Information")]
     ```
     
-    * Os elementos com autofechamento não têm nenhum conteúdo. Para este exemplo, a marcação do Razor usará uma marca com autofechamento, mas o auxiliar de marca criará um elemento [section](http://www.w3.org/TR/html5/sections.html#the-section-element) (que não tem autofechamento e você escreve o conteúdo dentro do elemento `section`). Portanto, você precisa definir `TagMode` como `StartTagAndEndTag` para escrever a saída. Como alternativa, você pode comentar a linha definindo `TagMode` e escrever a marcação com uma marca de fechamento. (A marcação de exemplo é fornecida mais adiante neste tutorial.)
+    * Elementos de fechamento automático não têm nenhum conteúdo. Neste exemplo, a marcação Razor usará uma marca de fechamento automático, mas o tag helper criará um [seção](http://www.w3.org/TR/html5/sections.html#the-section-element) elemento (que não é fechamento automático e você estiver escrevendo o conteúdo dentro do `section` elemento). Portanto, você precisa definir `TagMode` para `StartTagAndEndTag` para gravar a saída. Como alternativa, você pode comentar a linha que define `TagMode` e escrita de marcação com uma marca de fechamento. (Marcação de exemplo é fornecida posteriormente neste tutorial.)
     
     * O `$` (cifrão) na seguinte linha usa uma [cadeia de caracteres interpolada](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings):
     
@@ -231,18 +231,18 @@ Também use o `[HtmlTargetElement]` para alterar o nome do elemento de destino. 
     >
     >[!code-html[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?range=13-17)]
     > 
-    >O Razor reconhece que o atributo `info` é uma classe, e não uma cadeia de caracteres, bem como que você deseja escrever o código C#. Qualquer atributo do auxiliar de marca que não seja uma cadeia de caracteres deve ser escrito sem o caractere `@`.
+    >O Razor reconhece que o atributo 'info' é uma classe, e não uma cadeia de caracteres, bem como que você deseja escrever o código C#. Qualquer atributo do auxiliar de marca que não seja uma cadeia de caracteres deve ser escrito sem o caractere '@'.
     
 5.  Execute o aplicativo e navegue para a exibição About sobre para ver as informações do site.
 
     >[!NOTE]
-    >Use a seguinte marcação com uma marca de fechamento e remova a linha com `TagMode.StartTagAndEndTag` no auxiliar de marca:
+    >Você pode usar a seguinte marcação com uma marca de fechamento e remova a linha com `TagMode.StartTagAndEndTag` no tag helper:
     >
     >[!code-html[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutNotSelfClosing.cshtml?range=13-18)]
 
-## <a name="condition-tag-helper"></a>Auxiliar de marca de condição
+## <a name="condition-tag-helper"></a>Tag helper condicional
 
-O auxiliar de marca de condição renderiza a saída quando recebe um valor true.
+O tag helper de condição renderiza a saída quando passado um valor true.
 
 1.  Adicione a classe `ConditionTagHelper` a seguir à pasta *TagHelpers*.
 
@@ -277,15 +277,15 @@ O auxiliar de marca de condição renderiza a saída quando recebe um valor true
 4.  Execute o aplicativo e navegue para a home page. A marcação no `div` condicional não será renderizada. Acrescente a cadeia de caracteres de consulta `?approved=true` à URL (por exemplo, `http://localhost:1235/Home/Index?approved=true`). `approved` é definido como verdadeiro e a marcação condicional será exibida.
 
 >[!NOTE]
->Use o operador [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) para especificar o atributo a ser direcionado, em vez de especificar uma cadeia de caracteres como você fez com o auxiliar de marca de negrito:
+>Use o [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) operador para especificar o atributo de destino em vez de especificar uma cadeia de caracteres como você fez com o tag helper em negrito:
 >
 >[!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/zConditionTagHelperCopy.cs?highlight=1,2,5&range=5-18)]
 >
 >O operador [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) protegerá o código, caso ele seja refatorado (recomendamos alterar o nome para `RedCondition`).
 
-### <a name="avoid-tag-helper-conflicts"></a>Evitar conflitos do Auxiliar de Marca
+### <a name="avoid-tag-helper-conflicts"></a>Evitar conflitos de tag helper
 
-Nesta seção, você escreve um par de auxiliares de marca de vinculação automática. O primeiro substituirá a marcação que contém uma URL que começa com HTTP por uma marca de âncora HTML que contém a mesma URL (e resulta em um link para a URL). O segundo fará o mesmo para uma URL que começa com WWW.
+Nesta seção, você escreve um par de tag helpers de vinculação automática. O primeiro substituirá a marcação que contém uma URL iniciada por HTTP para um HTML âncora marca que contém a mesma URL (e, portanto, resultando em um link de URL). O segundo fará o mesmo para uma URL começando com WWW.
 
 Como esses dois auxiliares estão intimamente relacionados e você poderá refatorá-los no futuro, vamos mantê-los no mesmo arquivo.
 
@@ -300,18 +300,18 @@ Como esses dois auxiliares estão intimamente relacionados e você poderá refat
 
     [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=19)]
 
-3.  Execute o aplicativo e verifique se o auxiliar de marca renderiza a âncora corretamente.
+3.  Execute o aplicativo e verifique se o tag helper renderiza a âncora corretamente.
 
 4.  Atualize a classe `AutoLinker` para incluir o `AutoLinkerWwwTagHelper` que converterá o texto www em uma marca de âncora que também contém o texto www original. O código atualizado é realçado abaixo:
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?highlight=15-34&range=7-34)]
 
-5.  Execute o aplicativo. Observe que o texto www é renderizado como um link, ao contrário do texto HTTP. Se você colocar um ponto de interrupção em ambas as classes, poderá ver que a classe do auxiliar de marca HTTP é executada primeiro. O problema é que a saída do auxiliar de marca é armazenada em cache e quando o auxiliar de marca WWW é executado, ele substitui a saída armazenada em cache do auxiliar de marca HTTP. Mais adiante no tutorial, veremos como controlar a ordem na qual os auxiliares de marca são executados. Corrigiremos o código com o seguinte:
+5.  Execute o aplicativo. Observe o texto www é renderizado como um link, mas não o texto HTTP. Se você colocar um ponto de interrupção em ambas as classes, você pode ver que a classe do tag helper HTTP é executado primeira. O problema é que a saída do tag helper é armazenado em cache e quando o tag helper da Web é executado, ele substitui a saída do cache do tag helper HTTP. Posteriormente no tutorial, veremos como controlar a ordem de tag helpers executados no. Corrigiremos o código com o seguinte:
 
     [!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10,21,22,26&range=8-37)]
 
     >[!NOTE]
-    >Na primeira edição dos auxiliares de marca de vinculação automática, você obteve o conteúdo do destino com o seguinte código:
+    >Na primeira edição os tag helpers de vinculação automática, você obteve o conteúdo do destino com o código a seguir:
     >
     >[!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?range=12)]
     >
@@ -321,15 +321,15 @@ Como esses dois auxiliares estão intimamente relacionados e você poderá refat
     >
     >O código acima verifica se o conteúdo foi modificado e, em caso afirmativo, ele obtém o conteúdo do buffer de saída.
 
-6.  Execute o aplicativo e verifique se os dois links funcionam conforme esperado. Embora possa parecer que nosso auxiliar de marca de vinculador automático está correto e completo, ele tem um problema sutil. Se o auxiliar de marca WWW for executado primeiro, os links www não estarão corretos. Atualize o código adicionando a sobrecarga `Order` para controlar a ordem em que a marca é executada. A propriedade `Order` determina a ordem de execução em relação aos outros auxiliares de marca direcionados ao mesmo elemento. O valor de ordem padrão é zero e as instâncias com valores mais baixos são executadas primeiro.
+6.  Execute o aplicativo e verifique se os dois links funcionam como esperado. Enquanto pode aparecer que nosso tag helper de vinculador automática está correto e completa, ela tem um problema sutil. Se o tag helper da Web é executado primeiro, os links da Web não estarão corretos. Atualize o código adicionando o `Order` sobrecarga para controlar a ordem em que a marca é executado no. O `Order` propriedade determina a ordem de execução em relação a outros tag helpers direcionando o mesmo elemento. O valor de ordem padrão é zero e instâncias com valores mais baixos são executadas primeiro.
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z2AutoLinkerCopy.cs?highlight=5,6,7,8&range=8-15)]
     
-    O código acima assegurará que o auxiliar de marca HTTP seja executado antes do auxiliar de marca WWW. Altere `Order` para `MaxValue` e verifique se a marcação gerada para a marcação WWW está incorreta.
+    O código acima assegurará que o tag helper HTTP seja executado antes do tag helper WWW. Altere 'Order' para 'MaxValue' e verifique se a marcação gerada para a marcação WWW está incorreta.
 
 ## <a name="inspect-and-retrieve-child-content"></a>Inspecionar e recuperar o conteúdo filho
 
-Os auxiliares de marca fornecem várias propriedades para recuperar o conteúdo.
+Os tag helpers fornecem várias propriedades para recuperar o conteúdo.
 
 -  O resultado de `GetChildContentAsync` pode ser acrescentado ao `output.Content`.
 -  Inspecione o resultado de `GetChildContentAsync` com `GetContent`.
