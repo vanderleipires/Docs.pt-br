@@ -15,7 +15,7 @@ ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/31/2018
 ---
-# <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Tópicos avançados – tutorial do EF Core com o ASP.NET Core MVC (10 de 10)
+# <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Tópicos avançados - Tutorial do EF Core com ASP.NET Core MVC (10 de 10)
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 

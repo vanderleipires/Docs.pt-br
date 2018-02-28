@@ -19,9 +19,9 @@ ms.lasthandoff: 02/11/2018
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Este documento mostra como:
+Este documento demonstra como:
 
-- Exigir HTTPS para todas as solicitações.
+- Exigir HTTPS em todas as solicitações.
 - Redirecione todas as solicitações HTTP para HTTPS.
 
 > [!WARNING]
@@ -36,7 +36,7 @@ O [RequireHttpsAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.RequireHttpsAttri
 
 [!code-csharp[Main](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet2&highlight=4-999)]
 
-O código realçado anterior requer todas as solicitações usar `HTTPS`; portanto, as solicitações HTTP são ignoradas. O seguinte código realçado redireciona todas as solicitações HTTP para HTTPS:
+O código acima requer que todas as solicitações utilizem `HTTPS`. Ou seja, as solicitações HTTP serão ignoradas. O código abaixo redireciona todas as solicitações HTTP para HTTPS:
 
 [!code-csharp[Main](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-999)]
 

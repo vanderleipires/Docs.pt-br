@@ -1,5 +1,5 @@
 ---
-title: "Link do navegador no núcleo do ASP.NET"
+title: 'title: "Link do navegador no ASP.NET Core"'
 author: ncarandini
 description: "Explica como o Link do navegador é um recurso do Visual Studio que vincula o ambiente de desenvolvimento com um ou mais navegadores da web."
 manager: wpickett
@@ -16,7 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="browser-link-in-aspnet-core"></a>Link do navegador no núcleo do ASP.NET 
+# <a name="browser-link-in-aspnet-core"></a>title: "Link do navegador no ASP.NET Core" 
 
 Por [Nicolò Carandini](https://github.com/ncarandini), [Mike Wasson](https://github.com/MikeWasson), e [Tom Dykstra](https://github.com/tdykstra)
 
@@ -70,7 +70,7 @@ Para obter mais informações, consulte [Trabalhando com vários ambientes](xref
 
 ## <a name="how-to-use-browser-link"></a>Como usar o Link do navegador
 
-Quando você tiver um projeto do ASP.NET Core aberta, o Visual Studio mostra o controle de barra de ferramentas do Link do navegador ao lado de **destino de depuração** controle de barra de ferramentas:
+Quando um projeto do ASP.NET Core está aberto, o Visual Studio mostra o controle de barra de ferramentas do Link do navegador ao lado do controle de barra de ferramentas do **Destino de Depuração**:
 
 ![Menu de lista suspensa de Link do navegador](using-browserlink/_static/browserLink-dropdown-menu.png)
 

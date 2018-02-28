@@ -51,7 +51,7 @@ Na caixa de diálogo **Novo aplicativo Web ASP.NET Core – TodoApi**, selecione
 
 ### <a name="launch-the-app"></a>Iniciar o aplicativo
 
-No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values`, em que *porta* é um número da porta escolhido aleatoriamente. O Chrome, Microsoft Edge e Firefox exibem a seguinte saída:
+No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values``http://localhost:port/api/values`, em que *port* é um número da porta escolhido aleatoriamente. O Chrome, Microsoft Edge e Firefox exibem a seguinte saída:
 
 ```
 ["value1","value2"]
@@ -97,7 +97,7 @@ Substitua a classe pelo código a seguir:
 
 ### <a name="launch-the-app"></a>Iniciar o aplicativo
 
-No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values`, em que *porta* é um número da porta escolhido aleatoriamente. Navegue até o controlador `Todo` no `http://localhost:port/api/todo`.
+No Visual Studio, pressione CTRL + F5 para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port/api/values``http://localhost:port/api/values`, em que *port* é um número da porta escolhido aleatoriamente. Navegue até o controlador `Todo` no `http://localhost:port/api/todo`.
 
 [!INCLUDE[last part of web API](../includes/webApi/end.md)]
 
