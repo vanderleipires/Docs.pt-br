@@ -19,7 +19,7 @@ ms.lasthandoff: 02/01/2018
 
 Por [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), e [Steve Smith](https://ardalis.com/)
 
-Identidade do ASP.NET Core é um sistema de associação que permite que você adicionar a funcionalidade de logon ao seu aplicativo. Os usuários podem criar uma conta e logon com um nome de usuário e senha ou eles podem usar um provedor de logon externo, como Facebook, Google, Microsoft Account, Twitter ou outras pessoas.
+A identidade do ASP.NET Core é um sistema de associação que permite que você adicione a funcionalidade de login ao seu aplicativo. Os usuários podem criar uma conta e um logon com nome de usuário e senha ou usar um provedor de logon externo, como Facebook, Google, Microsoft Account, Twitter ou outros.
 
 Você pode configurar a identidade do ASP.NET Core para usar um banco de dados do SQL Server para armazenar os nomes de usuário, senhas e dados de perfil. Como alternativa, você pode usar seu próprio armazenamento persistente, por exemplo, um armazenamento de tabela do Azure. Este documento contém instruções para Visual Studio e usando a CLI.
 
@@ -27,7 +27,7 @@ Você pode configurar a identidade do ASP.NET Core para usar um banco de dados d
 
 ## <a name="overview-of-identity"></a>Visão geral da identidade
 
-Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adicionar funcionalidades para se registrar, fazer logon e logoff de um usuário. Para obter instruções mais detalhadas sobre a criação de aplicativos usando a identidade do ASP.NET Core, consulte a seção próximas etapas no final deste artigo.
+Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adicionar a funcionalidade para se registrar, fazer logon e fazer logoff de um usuário. Para obter instruções mais detalhadas sobre a criação de aplicativos usando a identidade do ASP.NET Core, consulte a seção Próximas etapas no final deste artigo.
 
 1.  Crie um projeto de aplicativo Web do ASP.NET Core com contas de usuário individuais.
 

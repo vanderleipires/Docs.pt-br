@@ -1,5 +1,5 @@
 ---
-title: 'title: "Link do navegador no ASP.NET Core"'
+title: Link do navegador no ASP.NET Core
 author: ncarandini
 description: "Explica como o Link do navegador é um recurso do Visual Studio que vincula o ambiente de desenvolvimento com um ou mais navegadores da web."
 manager: wpickett
@@ -16,7 +16,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="browser-link-in-aspnet-core"></a>title: "Link do navegador no ASP.NET Core" 
+# <a name="browser-link-in-aspnet-core"></a>Link do navegador no ASP.NET Core 
 
 Por [Nicolò Carandini](https://github.com/ncarandini), [Mike Wasson](https://github.com/MikeWasson), e [Tom Dykstra](https://github.com/tdykstra)
 

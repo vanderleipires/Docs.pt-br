@@ -1,7 +1,7 @@
 ---
-title: "Habilitar a geração de código QR para aplicativos de autenticador no núcleo do ASP.NET"
+title: "Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core"
 author: rick-anderson
-description: "Habilitar a geração de código QR para aplicativos de autenticador no núcleo do ASP.NET"
+description: "Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core"
 manager: wpickett
 ms.author: riande
 ms.date: 09/24/2017
@@ -15,7 +15,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 02/03/2018
 ---
-# <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Habilitar a geração de código QR para aplicativos de autenticador no núcleo do ASP.NET
+# <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core
 
 Observação: Este tópico se aplica ao ASP.NET Core 2. x
 

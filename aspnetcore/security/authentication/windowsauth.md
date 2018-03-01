@@ -1,5 +1,5 @@
 ---
-title: "Configurar a autenticação do Windows no núcleo do ASP.NET"
+title: "Configurar a autenticação do Windows no ASP.NET Core"
 author: ardalis
 description: "Este artigo descreve como configurar a autenticação do Windows no ASP.NET Core, usando o IIS, IIS Express, o HTTP. sys e WebListener."
 manager: wpickett

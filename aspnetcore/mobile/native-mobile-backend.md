@@ -23,7 +23,7 @@ Os aplicativos móveis podem se comunicar com facilidade com os serviços de bac
 
 [Exibir ou baixar o código de exemplo de serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
 
-## <a name="the-sample-native-mobile-app"></a>O aplicativo móvel nativo de exemplo
+## <a name="the-sample-native-mobile-app"></a>Exemplo do aplicativo móvel nativo 
 
 Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativos. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Siga o tutorial com links para criar o aplicativo nativo (e instale as ferramentas do Xamarin gratuitas necessárias), além de baixar a solução de exemplo do Xamarin. A amostra do Xamarin inclui um projeto de serviços da API Web ASP.NET 2, que substitui o aplicativo ASP.NET Core deste artigo (sem nenhuma alteração exigida pelo cliente).
 
@@ -55,7 +55,7 @@ public static string RestUrl = "http://192.168.1.207:5000/api/todoitems/{0}";
 
 ## <a name="creating-the-aspnet-core-project"></a>Criando o projeto ASP.NET Core
 
-Crie um novo aplicativo Web ASP.NET Core no Visual Studio. Escolha o modelo de API Web e a opção Sem Autenticação. Nomeie o projeto *ToDoApi*.
+Crie um novo aplicativo Web ASP.NET Core no Visual Studio. Escolha o modelo de API Web e a opção Sem Autenticação. Nomeie o projeto como *ToDoApi*.
 
 ![Caixa de diálogo Novo Aplicativo Web ASP.NET com modelo de projeto de API Web selecionado](native-mobile-backend/_static/web-api-template.png)
 
@@ -105,7 +105,7 @@ A solicitação de uma lista de itens é feita com uma solicitação GET para o 
 
 O método `List` retorna um código de resposta 200 OK e todos os itens de tarefas pendentes serializados como JSON.
 
-Teste o novo método de API usando uma variedade de ferramentas, como o [Postman](https://www.getpostman.com/docs/), mostrado aqui:
+Você pode testar o novo método de API usando uma variedade de ferramentas, como [Postman](https://www.getpostman.com/docs/), exibidas aqui:
 
 ![Console do Postman mostrando uma solicitação GET para itens de tarefas pendentes e o corpo da resposta mostrando o JSON para três itens retornados](native-mobile-backend/_static/postman-get.png)
 
@@ -121,9 +121,9 @@ A amostra usa uma enumeração que contém códigos de erro que são passados pa
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
 
-Teste a adição de novos itens usando o Postman escolhendo o verbo POST com o fornecimento do novo objeto no formato JSON no Corpo da solicitação. Você também deve adicionar um cabeçalho de solicitação que especifica um `Content-Type` de `application/json`.
+Teste a adição de novos itens usando Postman. Escolha o verbo POST, fornecendo o novo objeto no formato JSON no corpo da solicitação. Você também deve adicionar um cabeçalho de solicitação que especifica um `Content-Type` de `application/json`.
 
-![Console do Postman mostrando um POST e uma resposta](native-mobile-backend/_static/postman-post.png)
+![Console Postman mostrando um POST e resposta](native-mobile-backend/_static/postman-post.png)
 
 O método retorna o item recém-criado na resposta.
 
@@ -153,4 +153,4 @@ Observe que, ao testar a funcionalidade de exclusão, nada é necessário no Cor
 
 À medida que você desenvolve serviços de back-end para seu aplicativo, desejará criar um conjunto consistente de convenções ou políticas para lidar com preocupações paralelas. Por exemplo, no serviço mostrado acima, as solicitações de registros específicos que não foram encontrados receberam uma resposta `NotFound`, em vez de uma resposta `BadRequest`. Da mesma forma, os comandos feitos para esse serviço que passaram tipos associados a um modelo sempre verificaram `ModelState.IsValid` e retornaram um `BadRequest` para tipos de modelo inválidos.
 
-Depois de identificar uma política comum para as APIs, geralmente, você pode encapsulá-la em um [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns de API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).
+Depois de identificar uma política comum para suas APIs, você geralmente pode encapsulá-la em um [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).

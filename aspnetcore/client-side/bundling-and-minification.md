@@ -1,5 +1,5 @@
 ---
-title: "Empacotamento e minimização no núcleo do ASP.NET"
+title: "Empacotamento e minimização no ASP.NET Core"
 author: scottaddie
 description: "Saiba como otimizar recursos estáticos em um aplicativo ASP.NET Core aplicando técnicas de empacotamento e minimização."
 manager: wpickett
