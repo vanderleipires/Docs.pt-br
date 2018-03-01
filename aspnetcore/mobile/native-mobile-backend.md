@@ -21,13 +21,13 @@ Por [Steve Smith](https://ardalis.com/)
 
 Os aplicativos móveis podem se comunicar com facilidade com os serviços de back-end do ASP.NET Core.
 
-[Exibir ou baixar o código de exemplo de serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
+[Exibir ou baixar o código de exemplo dos serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
 
 ## <a name="the-sample-native-mobile-app"></a>Exemplo do aplicativo móvel nativo 
 
 Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativos. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Siga o tutorial com links para criar o aplicativo nativo (e instale as ferramentas do Xamarin gratuitas necessárias), além de baixar a solução de exemplo do Xamarin. A amostra do Xamarin inclui um projeto de serviços da API Web ASP.NET 2, que substitui o aplicativo ASP.NET Core deste artigo (sem nenhuma alteração exigida pelo cliente).
 
-![Aplicativo To Do Rest em execução em um smartphone Android](native-mobile-backend/_static/todo-android.png)
+![Aplicativo ToDoRest em execução em um smartphone Android](native-mobile-backend/_static/todo-android.png)
 
 ### <a name="features"></a>Recursos
 
@@ -66,11 +66,11 @@ O aplicativo deve responder a todas as solicitações feitas através da porta 5
 > [!NOTE]
 > Execute o aplicativo diretamente, em vez de por trás do IIS Express, que ignora solicitações não local por padrão. Execute `dotnet run` em um prompt de comando ou escolha o perfil de nome do aplicativo no menu suspenso de destino de depuração na barra de ferramentas do Visual Studio.
 
-Adicione uma classe de modelo para representar itens pendentes Marque os campos obrigatórios usando o atributo `[Required]`:
+Adicione uma classe de modelo para representar itens pendentes. Marque os campos obrigatórios usando o atributo `[Required]`:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
-Os métodos da API exigem alguma maneira de trabalhar com os dados. Use a mesma interface `IToDoRepository` usada pelo exemplo original do Xamarin:
+Os métodos da API exigem alguma maneira de trabalhar com dados. Use a mesma interface `IToDoRepository` nos usos de exemplo originais do Xamarin:
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
