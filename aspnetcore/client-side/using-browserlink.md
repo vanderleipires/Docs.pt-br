@@ -76,8 +76,8 @@ Quando um projeto do ASP.NET Core está aberto, o Visual Studio mostra o control
 
 O controle de barra de ferramentas Link do navegador, você pode:
 
-* Atualize o aplicativo web em vários navegadores de uma vez.
-* Abra o **painel de Link do navegador**.
+* Atualizar o aplicativo Web em vários navegadores de uma vez.
+* Abrir o **Painel de link do navegador**.
 * Habilitar ou desabilitar **Link do navegador**. Observação: O Link do navegador está desabilitado por padrão no Visual Studio 2017 (15,3).
 * Habilitar ou desabilitar [sincronização automática de CSS](#enable-or-disable-css-auto-sync).
 
@@ -86,7 +86,7 @@ O controle de barra de ferramentas Link do navegador, você pode:
 
 ## <a name="refresh-the-web-application-in-several-browsers-at-once"></a>Atualizar o aplicativo web em vários navegadores de uma vez
 
-Para escolher um navegador web única para iniciar ao iniciar o projeto, use o menu suspenso no **destino de depuração** controle de barra de ferramentas:
+Para escolher um único navegador Web para abrir ao iniciar o projeto, use o menu suspenso do controle de barra de ferramentas do **Destino de depuração**:
 
 ![Menu suspenso de F5](using-browserlink/_static/debug-target-dropdown-menu.png)
 
@@ -114,7 +114,7 @@ Abra o painel de Link do navegador de menu para gerenciar a conexão com o naveg
 
 ![open-browserslink-dashboard](using-browserlink/_static/open-browserlink-dashboard.png)
 
-Se nenhum navegador estiver conectado, você pode iniciar uma sessão de depuração não, selecionando o *exibir no navegador* link:
+Se nenhum navegador estiver conectado, você pode iniciar uma sessão de depuração não, selecionando Se nenhum navegador estiver conectado, você poderá iniciar uma sessão de não depuração selecionando o link *exibir no navegador*:
 
 ![browserlink-dashboard-no-connections](using-browserlink/_static/browserlink-dashboard-no-connections.png)
 

@@ -11,7 +11,7 @@ ms.topic: article
 uid: security/authentication/identity
 ms.openlocfilehash: 0c05c636a991371b1a1feec88b5393724a6dc629
 ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 02/01/2018
 ---
@@ -85,7 +85,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
 3.  Crie um usuário.
 
-    Iniciar o aplicativo e, em seguida, clique no **registrar** link.
+    Inicie o aplicativo e, em seguida, clique no link **Registrar**.
 
     Se esta for a primeira vez em que você estiver executando essa ação, talvez seja necessário para executar migrações. O aplicativo solicita que você **migrações aplicar**. Se necessário, atualize a página.
     
@@ -104,13 +104,13 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
     Se o usuário foi criado com êxito, o usuário é conectado pela chamada para ``_signInManager.SignInAsync``.
 
-    **Observação:** consulte [conta confirmação](xref:security/authentication/accconfirm#prevent-login-at-registration) para obter as etapas impedir que o logon imediata no registro.
+    **Observação:** consulte a [confirmação de conta](xref:security/authentication/accconfirm#prevent-login-at-registration) para verificar as etapas para impedir o logon imediato no registro.
  
 4.  Iniciar sessão.
  
-    Os usuários podem entrar clicando no link **login** na parte superior do site, ou podem ser direcionados a página de logon se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de logon, a ação ``AccountController`` ``Login`` é chamada.
+    Os usuários podem entrar clicando no **login**, no link na parte superior do site, ou podem ser direcionados para a página de login se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de login, a ação``AccountController`` ``Login`` é chamada.
 
-    A ação ``Login`` chama ``PasswordSignInAsync`` no objeto ``_signInManager`` (fornecido para ``AccountController`` por injeção de dependência).
+    O ``Login`` faz chamadas ``PasswordSignInAsync`` no objeto ``_signInManager`` (fornecido pelo ``AccountController`` por injeção de dependência).
 
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  

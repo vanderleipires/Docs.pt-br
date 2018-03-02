@@ -14,7 +14,7 @@ ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/31/2018
 ---
-# <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Classificação, filtragem, paginação e agrupamento – tutorial do EF Core com o ASP.NET Core MVC (3 de 10)
+# <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>A classificação, filtragem, paginação e agrupando - Tutorial EF Core com o ASP.NET Core MVC (3 de 10)
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 

@@ -15,7 +15,7 @@ ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/31/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Introdução ao ASP.NET Core MVC e ao Entity Framework Core usando o Visual Studio (1 de 10)
+# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Introdução ao ASP.NET MVC Core e Entity Framework Core usando o Visual Studio (1 a 10)
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
