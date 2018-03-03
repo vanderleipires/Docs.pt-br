@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: c9c9f63cd635f364d9b2e081dc051a46a44d3e4f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o ASP.NET Core MVC
 
@@ -48,17 +48,17 @@ Criar um novo *vazio* aplicativo web do ASP.NET Core com o mesmo nome que o proj
 
 * Instalar o `Microsoft.AspNetCore.Mvc` e `Microsoft.AspNetCore.StaticFiles` pacotes do NuGet.
 
-  `Microsoft.AspNetCore.Mvc`é a estrutura MVC do ASP.NET Core. `Microsoft.AspNetCore.StaticFiles`é o manipulador de arquivo estático. O tempo de execução do ASP.NET é modular, e você deve optar explicitamente para servir arquivos estáticos (consulte [trabalhando com arquivos estáticos](../fundamentals/static-files.md)).
+  `Microsoft.AspNetCore.Mvc` é a estrutura MVC do ASP.NET Core. `Microsoft.AspNetCore.StaticFiles` é o manipulador de arquivo estático. O tempo de execução do ASP.NET é modular, e você deve optar explicitamente para servir arquivos estáticos (consulte [trabalhando com arquivos estáticos](../fundamentals/static-files.md)).
 
 * Abra o *. csproj* arquivo (com o botão direito no projeto no **Solution Explorer** e selecione **Editar WebApp1.csproj**) e adicione um `PrepareForPublish` destino:
 
-  [!code-xml[Main](mvc/sample/WebApp1.csproj?range=21-23)]
+  [!code-xml[](mvc/sample/WebApp1.csproj?range=21-23)]
 
   O `PrepareForPublish` destino é necessária para adquirir as bibliotecas de cliente via Bower. Falaremos sobre isso mais tarde.
 
 * Abra o *Startup.cs* de arquivo e altere o código para coincidir com o seguinte:
 
-  [!code-csharp[Main](mvc/sample/Startup.cs?highlight=14,27-34)]
+  [!code-csharp[](mvc/sample/Startup.cs?highlight=14,27-34)]
 
   O `UseStaticFiles` método de extensão adiciona o manipulador de arquivo estático. Conforme mencionado anteriormente, o tempo de execução do ASP.NET é modular, e você deve optar explicitamente para servir arquivos estáticos. O `UseMvc` método de extensão adiciona o roteamento. Para obter mais informações, consulte [inicialização do aplicativo](../fundamentals/startup.md) e [roteamento](../fundamentals/routing.md).
 
@@ -114,7 +114,7 @@ Agora que temos um projeto do ASP.NET Core trabalho mínimo, podemos começar a 
 
 ## <a name="controllers-and-views"></a>Controladores e exibições
 
-* Copiar cada um dos métodos do ASP.NET MVC `HomeController` para o novo `HomeController`. Observe que, no ASP.NET MVC, tipo de método de ação retorno controlador do modelo interno é [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); no ASP.NET MVC de núcleo, os métodos de ação retorno `IActionResult` em vez disso. `ActionResult`implementa `IActionResult`, portanto, não é necessário alterar o tipo de retorno de métodos de ação.
+* Copiar cada um dos métodos do ASP.NET MVC `HomeController` para o novo `HomeController`. Observe que, no ASP.NET MVC, tipo de método de ação retorno controlador do modelo interno é [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); no ASP.NET MVC de núcleo, os métodos de ação retorno `IActionResult` em vez disso. `ActionResult` implementa `IActionResult`, portanto, não é necessário alterar o tipo de retorno de métodos de ação.
 
 * Copie o *About.cshtml*, *Contact.cshtml*, e *cshtml* arquivos de exibição Razor do projeto ASP.NET MVC para o projeto do ASP.NET Core.
 
@@ -126,7 +126,7 @@ Agora que temos um projeto do ASP.NET Core trabalho mínimo, podemos começar a 
 
 ![Página de contato](mvc/_static/contact-page.png)
 
-Observe que a falta de estilo e itens de menu. Corrigiremos que na próxima seção.
+Observe que a falta de estilo e itens de menu. Corrigiremos isso na próxima seção.
 
 ## <a name="static-content"></a>Conteúdo estático
 
@@ -140,7 +140,7 @@ No novo projeto, vamos adicionar suporte para inicialização (e outras bibliote
 
 * Adicionar um [Bower](https://bower.io/) arquivo de configuração chamado *bower. JSON* para a raiz do projeto (com o botão direito no projeto e, em seguida, **Adicionar > Novo Item > arquivo de configuração Bower**). Adicionar [Bootstrap](http://getbootstrap.com/) e [jQuery](https://jquery.com/) para o arquivo (consulte as linhas destacadas abaixo).
 
-  [!code-json[Main](mvc/sample/bower.json?highlight=5-6)]
+  [!code-json[](mvc/sample/bower.json?highlight=5-6)]
 
 Após salvar o arquivo, o Bower baixará automaticamente as dependências para o *wwwroot/lib* pasta. Você pode usar o **pesquisar Gerenciador de soluções** para localizar o caminho dos ativos:
 
@@ -156,7 +156,7 @@ Consulte [gerenciar pacotes do lado do cliente com Bower](../client-side/bower.m
 
 * Criar um *exibições/compartilhadas* pasta.
 
-* *Opcional:* cópia *viewimports. cshtml* do *FullAspNetCore* do projeto MVC *exibições* pasta para o projeto de ASP.NET Core *Exibições* pasta. Remover qualquer declaração de namespace no *viewimports. cshtml* arquivo. O *viewimports. cshtml* arquivo fornece namespaces para todos os arquivos de exibição e coloca [auxiliares de marcação](xref:mvc/views/tag-helpers/intro). Os auxiliares de marca são usados no novo arquivo de layout. O *viewimports. cshtml* arquivo é novo para o ASP.NET Core.
+* *Opcional:* cópia *viewimports. cshtml* do *FullAspNetCore* do projeto MVC *exibições* pasta para do projeto ASP.NET Core  *Modos de exibição* pasta. Remover qualquer declaração de namespace no *viewimports. cshtml* arquivo. O *viewimports. cshtml* arquivo fornece namespaces para todos os arquivos de exibição e coloca [auxiliares de marcação](xref:mvc/views/tag-helpers/intro). Os auxiliares de marca são usados no novo arquivo de layout. O *viewimports. cshtml* arquivo é novo para o ASP.NET Core.
 
 * Copie o *cshtml* arquivo a partir do projeto ASP.NET MVC antigo *exibições/compartilhadas* pasta para do projeto ASP.NET Core *exibições/compartilhadas* pasta.
 
@@ -187,7 +187,7 @@ As marcas de script de substituição:
 
 A atualização *cshtml* arquivo é mostrado abaixo:
 
-[!code-html[Main](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7,27,39-40)]
+[!code-html[](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7,27,39-40)]
 
 Exiba o site no navegador. Ele agora deve carregar corretamente, com os estilos esperados em vigor.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: f258e12a95770909bff24fd5dd3611324179596f
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e1ee582072c88542565c5cb860e157afe137f9f0
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-configuration"></a>Migrando configuração
 
@@ -31,7 +31,7 @@ O *Web. config* arquivo também foi substituído no núcleo do ASP.NET. Configur
 
 Neste artigo, estamos começando com o projeto do ASP.NET Core parcialmente migrados de [artigo anterior](mvc.md). Para configurar a configuração, adicione o seguinte construtor e propriedade para o *Startup.cs* arquivo localizado na raiz do projeto:
 
-[!code-csharp[Main](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
+[!code-csharp[](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
 
 Observe que neste ponto, o *Startup.cs* arquivo não será compilado, pois precisamos adicionar o seguinte `using` instrução:
 
@@ -47,7 +47,7 @@ Adicionar uma *appSettings. JSON* arquivo para a raiz do projeto usando o modelo
 
 Nosso projeto ASP.NET MVC incluído a cadeia de caracteres de conexão de banco de dados necessários no *Web. config*, além de `<connectionStrings>` elemento. Em nosso projeto do ASP.NET Core, vamos armazenar essas informações no *appSettings. JSON* arquivo. Abra *appSettings. JSON*e observe que ele já inclui o seguinte:
 
-[!code-json[Main](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
+[!code-json[](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
 
 
 Na linha realçada descrita acima, altere o nome do banco de dados **_CHANGE_ME** para o nome do banco de dados.

@@ -12,21 +12,20 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs
 msc.type: chapter
-ms.openlocfilehash: 378c44d625a6eb0d7139473a2e444384f60504f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bfdab4cfd3945401213bcc0b6f282dd5ffbedc5d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-hands-on-labs"></a>O ASP.NET MVC 4 prático Labs
-====================
-> Aprender a desenvolver com o ASP.NET MVC com esses ponteiros em laboratórios
+# <a name="aspnet-mvc-4-hands-on-labs"></a>O ASP.NET MVC 4 prático Labs
 
+Aprender a desenvolver com o ASP.NET MVC com esses ponteiros em laboratórios
 
-- [O que há de novo no ASP.NET MVC 4](whats-new-in-aspnet-mvc-4.md)
+- [Novidades no ASP.NET MVC 4](whats-new-in-aspnet-mvc-4.md)
 - [Conceitos básicos do ASP.NET MVC 4](aspnet-mvc-4-fundamentals.md)
-- [Acesso a dados e modelos do ASP.NET MVC 4](aspnet-mvc-4-models-and-data-access.md)
+- [Acesso a Dados e modelos do ASP.NET MVC 4](aspnet-mvc-4-models-and-data-access.md)
 - [Filtros de ação personalizada do ASP.NET MVC 4](aspnet-mvc-4-custom-action-filters.md)
-- [As migrações e estrutura do ASP.NET MVC 4 Entity Framework](aspnet-mvc-4-entity-framework-scaffolding-and-migrations.md)
+- [Migrações e scaffolding do Entity Framework do ASP.NET MVC 4](aspnet-mvc-4-entity-framework-scaffolding-and-migrations.md)
 - [Injeção de dependência do ASP.NET MVC 4](aspnet-mvc-4-dependency-injection.md)
 - [Validação, formulários e auxiliares do ASP.NET MVC 4](aspnet-mvc-4-helpers-forms-and-validation.md)

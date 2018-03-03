@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/platform-specific-configuration
-ms.openlocfilehash: 2663cd1e05be9e8695966df959082e6e574d0b4a
-ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
+ms.openlocfilehash: c36b8acd6f7fcb4e4d11e43013ccaf5ca6d1b0ab
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="add-app-features-using-a-platform-specific-configuration-in-aspnet-core"></a>Adicionar recursos do aplicativo usando uma configuração específica de plataforma no núcleo do ASP.NET
 
@@ -30,7 +30,7 @@ Para descobrir a hospedagem assemblies de inicialização carregados pelo aplica
 
 As leituras de aplicativo de exemplo do [HostingStartupAssembliesKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.hostingstartupassemblieskey) em um `string` de matriz e exibe o resultado na página de índice do aplicativo:
 
-[!code-csharp[Main](platform-specific-configuration/sample/HostingStartupSample/Pages/Index.cshtml.cs?name=snippet1&highlight=14-16)]
+[!code-csharp[](platform-specific-configuration/sample/HostingStartupSample/Pages/Index.cshtml.cs?name=snippet1&highlight=14-16)]
 
 ## <a name="disable-automatic-loading-of-hosting-startup-assemblies"></a>Desabilitar o carregamento automático de hospedagem assemblies de inicialização
 
@@ -49,19 +49,19 @@ Desabilitando hospedagem assemblies de inicialização usando a variável de amb
 
 Um `IHostingStartup` recurso é implantado como um assembly com base em um aplicativo de console sem um ponto de entrada. As referências de assembly a [Microsoft.AspNetCore.Hosting.Abstractions](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.Abstractions/) pacote:
 
-[!code-xml[Main](platform-specific-configuration/snapshot_sample/StartupFeature.csproj)]
+[!code-xml[](platform-specific-configuration/snapshot_sample/StartupFeature.csproj)]
 
 Um [HostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.hostingstartupattribute) atributo identifica uma classe como uma implementação de `IHostingStartup` para carregamento e execução ao compilar o [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost). O exemplo a seguir, o namespace é `StartupFeature`, e a classe é `StartupFeatureHostingStartup`:
 
-[!code-csharp[Main](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet1)]
+[!code-csharp[](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet1)]
 
 Uma classe implementa `IHostingStartup`. A classe [configurar](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) método usa um [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) para adicionar recursos a um aplicativo:
 
-[!code-csharp[Main](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet2&highlight=3,5)]
+[!code-csharp[](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet2&highlight=3,5)]
 
 Ao criar um `IHostingStartup` do projeto, o arquivo de dependências (*\*. deps.json*) define o `runtime` localização do assembly para o *bin* pasta:
 
-[!code-json[Main](platform-specific-configuration/snapshot_sample/StartupFeature1.deps.json?range=2-13&highlight=8)]
+[!code-json[](platform-specific-configuration/snapshot_sample/StartupFeature1.deps.json?range=2-13&highlight=8)]
 
 Apenas uma parte do arquivo é mostrada. É o nome do assembly no exemplo `StartupFeature`.
 
@@ -69,7 +69,7 @@ Apenas uma parte do arquivo é mostrada. É o nome do assembly no exemplo `Start
 
 O local de tempo de execução é especificado no  *\*. deps.json* arquivo. Ativa o recurso de `runtime` elemento deve especificar o local do assembly de tempo de execução do recurso. Prefixo de `runtime` local com `lib/netcoreapp2.0/`:
 
-[!code-json[Main](platform-specific-configuration/snapshot_sample/StartupFeature2.deps.json?range=2-13&highlight=8)]
+[!code-json[](platform-specific-configuration/snapshot_sample/StartupFeature2.deps.json?range=2-13&highlight=8)]
 
 No aplicativo de exemplo, a modificação do  *\*. deps.json* arquivo é executado por um [PowerShell](/powershell/scripting/powershell-scripting) script. O script do PowerShell é acionado automaticamente por um destino de compilação no arquivo de projeto.
 

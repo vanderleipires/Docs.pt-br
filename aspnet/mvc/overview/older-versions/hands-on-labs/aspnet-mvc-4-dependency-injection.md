@@ -12,21 +12,22 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 48a7d7fdb670aebb72450fc4eb12a364ef595c53
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c735bbdafe4b8f0423abb6bacd076f173a1be9d8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-dependency-injection"></a>Injeção de dependência do ASP.NET MVC 4
-====================
-por [Web Camps Team](https://twitter.com/webcamps)
+# <a name="aspnet-mvc-4-dependency-injection"></a>Injeção de dependência do ASP.NET MVC 4
+
+Por [Web Camps Team](https://twitter.com/webcamps)
+
+[Baixar o Kit de treinamento de Camps de Web](https://aka.ms/webcamps-training-kit)
+
+Este laboratório prático supõe que você tenha um conhecimento básico de **ASP.NET MVC** e **filtros ASP.NET MVC 4**. Se você não usou **filtros ASP.NET MVC 4** antes, é recomendável que você passe **filtros de ação do ASP.NET MVC personalizado** laboratório prático.
 
 > [!NOTE]
-> Este laboratório prático supõe que você tenha um conhecimento básico de **ASP.NET MVC** e **filtros ASP.NET MVC 4**. Se você não usou **filtros ASP.NET MVC 4** antes, é recomendável que você passe **filtros de ação do ASP.NET MVC personalizado** laboratório prático.
-> 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
-
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponível no site da [versões Microsoft-Web/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). O projeto específico para este laboratório está disponível em [injeção de dependência do ASP.NET MVC 4](https://github.com/Microsoft-Web/HOL-MVC4DependencyInjection).
 
 Em **programação orientada a objeto** paradigma, objetos trabalham em conjunto em um modelo de colaboração em que há colaboradores e consumidores. Naturalmente, esse modelo de comunicação gera as dependências entre objetos e componentes, tornando-se difíceis de gerenciar ao aumenta a complexidade.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: 584dbb545c15add4401086b9160d4bf30caf41b5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 37332dda794f898fb866424b38394f5d4441e166
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>Desproteção cargas cujas chaves foram revogados
 
@@ -30,7 +30,7 @@ Para suportar o cenário de permitir que conteúdos a ser desprotegido mesmo em 
 > [!NOTE]
 > Nem todos os `IDataProtector` instâncias podem ser convertidas em `IPersistedDataProtector`. Os desenvolvedores devem usar o c# como operador ou semelhante evitar exceções de tempo de execução causado por conversões inválidos e devem estar preparados para tratar o caso de falha de maneira adequada.
 
-`IPersistedDataProtector`expõe a superfície de API a seguir:
+`IPersistedDataProtector` expõe a superfície de API a seguir:
 
 ```csharp
 DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
@@ -46,4 +46,4 @@ Essa API usa a carga protegida (como uma matriz de bytes) e retorna a carga desp
 >[!WARNING]
 > Tenha bastante cuidado ao passar `ignoreRevocationErrors: true` para o `DangerousUnprotect` método. Se, depois de chamar esse método de `wasRevoked` valor for true, em seguida, a chave usada para proteger essa carga foi revogada e autenticidade da carga deve ser tratada como suspeito. Nesse caso, apenas continue a operar na carga de desprotegidos se você tiver alguma garantia separada que é autêntica, por exemplo, se ele é proveniente de um banco de dados seguro em vez de sendo enviada por um cliente da web não confiável.
 
-[!code-csharp[Main](dangerous-unprotect/samples/dangerous-unprotect.cs)]
+[!code-csharp[](dangerous-unprotect/samples/dangerous-unprotect.cs)]

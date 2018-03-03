@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: 37592c3b2099c2cb74dc42ad4a7937b32c281f65
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: c654cfd7c2d291849067bfd3297f940018ccb3d8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>O cache de resposta no núcleo do ASP.NET
 
@@ -91,7 +91,7 @@ O [ResponseCacheAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.ResponseCacheAtt
 > [!WARNING]
 > Desabilite o cache de conteúdo que contém informações para clientes autenticados. O cache deve ser habilitado apenas para o conteúdo que não são alterados com base na identidade do usuário ou se um usuário está conectado.
 
-[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) a resposta armazenada varia de acordo com os valores de determinada lista de chaves de consulta. Quando um único valor de `*` é fornecido, o middleware varia respostas por todos os parâmetros de cadeia de caracteres de consulta de solicitação. `VaryByQueryKeys`exige o ASP.NET Core 1.1 ou posterior.
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) a resposta armazenada varia de acordo com os valores de determinada lista de chaves de consulta. Quando um único valor de `*` é fornecido, o middleware varia respostas por todos os parâmetros de cadeia de caracteres de consulta de solicitação. `VaryByQueryKeys` exige o ASP.NET Core 1.1 ou posterior.
 
 O Middleware de cache de resposta deve ser habilitado para definir o `VaryByQueryKeys` propriedade; caso contrário, uma exceção de tempo de execução é gerada. Não existe um cabeçalho HTTP correspondente para o `VaryByQueryKeys` propriedade. A propriedade é um recurso HTTP manipulado pelo Middleware de armazenamento em cache a resposta. Para o middleware servir uma resposta em cache, a cadeia de caracteres de consulta e o valor de cadeia de caracteres de consulta devem corresponder uma solicitação anterior. Por exemplo, considere a sequência de solicitações e resultados mostrados na tabela a seguir.
 
@@ -113,7 +113,7 @@ O `ResponseCacheAttribute` é usado para configurar e criar (por meio de `IFilte
 
 Esse cabeçalho é apenas gravado quando o `VaryByHeader` está definida. Ele é definido como o `Vary` valor da propriedade. O exemplo a seguir usa o `VaryByHeader` propriedade:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
 
 Você pode exibir os cabeçalhos de resposta com as ferramentas de rede do seu navegador. A imagem a seguir mostra o F12 borda que saída o **rede** guia quando o `About2` método de ação é atualizado:
 
@@ -121,7 +121,7 @@ Você pode exibir os cabeçalhos de resposta com as ferramentas de rede do seu n
 
 ### <a name="nostore-and-locationnone"></a>NoStore e Location.None
 
-`NoStore`substitui a maioria das outras propriedades. Quando essa propriedade é definida como `true`, o `Cache-Control` cabeçalho é definido como `no-store`. Se `Location` é definido como `None`:
+`NoStore` substitui a maioria das outras propriedades. Quando essa propriedade é definida como `true`, o `Cache-Control` cabeçalho é definido como `no-store`. Se `Location` é definido como `None`:
 
 * `Cache-Control` é definido como `no-store,no-cache`.
 * `Pragma` é definido como `no-cache`.
@@ -130,7 +130,7 @@ Se `NoStore` é `false` e `Location` é `None`, `Cache-Control` e `Pragma` são 
 
 Você normalmente define `NoStore` para `true` nas páginas de erro. Por exemplo:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
 
 Isso resulta nos seguintes cabeçalhos:
 
@@ -148,7 +148,7 @@ Para habilitar o cache, `Duration` deve ser definido como um valor positivo e `L
 
 Abaixo está um exemplo que mostra os cabeçalhos produzido definindo `Duration` e deixar o padrão `Location` valor:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
 
 Isso gera o cabeçalho a seguir:
 
@@ -162,11 +162,11 @@ Em vez de duplicar `ResponseCache` configurações em muitos atributos de ação
 
 Configurando um perfil de cache:
 
-[!code-csharp[Main](response/sample/Startup.cs?name=snippet1)] 
+[!code-csharp[](response/sample/Startup.cs?name=snippet1)] 
 
 Um perfil de cache de referência:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
 
 O `ResponseCache` atributo pode ser aplicado a ações (métodos) e controladores (classes). Atributos de nível de método substituem as configurações especificadas em atributos de nível de classe.
 

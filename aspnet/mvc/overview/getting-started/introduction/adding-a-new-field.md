@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 7339f6658ede16e79d19762bd6636917fe4de85f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 453fbf68aa2f3a1d9ea708355c06c53d4f1eabd0
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="adding-a-new-field"></a>Adicionando um Novo Campo
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 [!INCLUDE[Tutorial Note](sample/code-location.md)]
 
@@ -76,7 +76,7 @@ Isso adiciona a seguinte instrução using:
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
-> Esse código supõe que titiles sejam exclusivos. Se você adicionar manualmente um título duplicado, você receberá a seguinte exceção na próxima vez que você executar uma migração.   
+> Esse código supõe que os títulos sejam exclusivos. Se você adicionar manualmente um título duplicado, você receberá a seguinte exceção na próxima vez que você executar uma migração.   
 >   
 >  *A sequência contém mais de um elemento*  
 >   
@@ -144,7 +144,7 @@ Você está vendo este erro, porque a atualização `Movie` classe de modelo no 
 
 Existem algumas abordagens para resolver o erro:
 
-1. Faça com que o Entity Framework remova automaticamente e recrie o banco de dados com base no novo esquema de classe de modelo. Essa abordagem é muito conveniente no início do ciclo de desenvolvimento, quando você está fazendo o desenvolvimento ativo em um banco de dados de teste; ela permite que você desenvolva rapidamente o modelo e o esquema de banco de dados juntos. No entanto, a desvantagem é que você perca os dados existentes no banco de dados — para que você *não* para usar essa abordagem em um banco de dados de produção! Usando um inicializador para um banco de dados com dados de teste de propagação automaticamente geralmente é uma maneira produtiva ao desenvolver um aplicativo. Para obter mais informações sobre os inicializadores de banco de dados do Entity Framework, consulte [tutorial do ASP.NET MVC/Entity Framework](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+1. Faça com que o Entity Framework remova automaticamente e recrie o banco de dados com base no novo esquema de classe de modelo. Essa abordagem é muito conveniente no início do ciclo de desenvolvimento, quando você está fazendo o desenvolvimento ativo em um banco de dados de teste; ela permite que você desenvolva rapidamente o modelo e o esquema de banco de dados juntos. No entanto, a desvantagem é que você perca os dados existentes no banco de dados — para que você *não* para usar essa abordagem em um banco de dados de produção! Muitas vezes, o uso de um inicializador para propagar um banco de dados com os dados de teste automaticamente é uma maneira produtiva de desenvolver um aplicativo. Para obter mais informações sobre os inicializadores de banco de dados do Entity Framework, consulte [tutorial do ASP.NET MVC/Entity Framework](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 2. Modifique explicitamente o esquema do banco de dados existente para que ele corresponda às classes de modelo. A vantagem dessa abordagem é que você mantém os dados. Faça essa alteração manualmente ou criando um script de alteração de banco de dados.
 3. Use as Migrações do Code First para atualizar o esquema de banco de dados.
 

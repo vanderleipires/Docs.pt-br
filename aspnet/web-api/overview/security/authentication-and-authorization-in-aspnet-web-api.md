@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 2a4b5ed8a712b061b4afdf5a3adc9378dd72b37f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9d7cbb9505afb6461ba4c2087d57e9ea0da38ede
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>Autenticação e autorização na API da Web ASP.NET
 ====================
@@ -80,7 +80,7 @@ Autorização ocorre posteriormente no pipeline, mais próximo do controlador. Q
 
 API da Web fornece um filtro de autorização interno, [AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx). Esse filtro verifica se o usuário é autenticado. Caso contrário, ele retorna o código de status HTTP 401 (não autorizado), sem chamar a ação.
 
-Você pode aplicar o filtro globalmente, no nível do controlador ou o nível de inidivual ações.
+Você pode aplicar o filtro globalmente, no nível do controlador ou o nível de ações individuais.
 
 **Globalmente**: para restringir o acesso para cada controlador de API da Web, adicione o **AuthorizeAttribute** filtro à lista de filtros globais:
 

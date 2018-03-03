@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: dfed5c7a8e103973048295b7607008ecc7e90eeb
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e2ade6223cdc56a4f0f00ff0b985ceda4ab5484a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Criando sites lindos, respondendo com Bootstrap
 
@@ -31,7 +31,7 @@ Há várias maneiras para começar a Bootstrap. Se você estiver iniciando um no
 
 A adição de Bootstrap para um ASP.NET Core projeto é simplesmente uma questão de adicioná-la à *bower. JSON* como uma dependência:
 
-[!code-json[Main](../common/samples/WebApplication1/bower.json?highlight=5)]
+[!code-json[](../common/samples/WebApplication1/bower.json?highlight=5)]
 
 Essa é a maneira recomendada para adicionar a Bootstrap para um projeto do ASP.NET Core.
 
@@ -60,7 +60,7 @@ Install-Package bootstrap
 
 Se você estiver fazendo referência a suas próprias versões locais de Bootstrap, você precisará fazer referência a eles em todas as páginas que irá usá-la. Em produção, você deve fazer referência bootstrap usando uma CDN. No modelo de site ASP.NET padrão, o *cshtml* arquivo assim como este:
 
-[!code-html[Main](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
+[!code-html[](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
 
 > [!NOTE]
 > Se você estiver usando qualquer um dos plug-ins do Bootstrap jQuery, você também precisará fazer referência a jQuery.

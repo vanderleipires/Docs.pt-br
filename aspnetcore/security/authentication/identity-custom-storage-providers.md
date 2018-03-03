@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 8cadb550eaa2dbc4541f945dc8d8d49fa757d4d3
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 559c5c58b416912b1caef1964ff8d7532bd98439
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizado para a identidade do ASP.NET Core
 
@@ -112,7 +112,7 @@ Armazena e recupera a quais funções são atribuídas a quais usuários. [Exemp
 
 Em classes de acesso a dados, forneça o código para executar operações de dados para o mecanismo de persistência. Por exemplo, dentro de um provedor personalizado, você pode ter o código a seguir para criar um novo usuário o *armazenar* classe:
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/CustomUserStore.cs?name=createuser&highlight=7)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/CustomUserStore.cs?name=createuser&highlight=7)]
 
 A lógica de implementação para criar o usuário está no ``_usersTable.CreateAsync`` método, como mostrado abaixo.
 
@@ -133,7 +133,7 @@ Criar um `UserStore` classe que fornece os métodos para todas as operações de
 - IUserRoleStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserrolestore-1
 - Https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserclaimstore-1 IUserClaimStore
 - IUserPasswordStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserpasswordstore-1
-- IUserSecurityStampStore<!-- make these all links and remove / -->
+- IUserSecurityStampStore <!-- make these all links and remove / -->
 - IUserEmailStore
 - IPhoneNumberStore
 - IQueryableUserStore
@@ -145,7 +145,7 @@ As interfaces opcionais herdam de `IUserStore`. Você pode ver um usuário de ex
 
 Dentro de `UserStore` classe, que você usar as classes de acesso de dados que você criou para executar operações. Eles são passados usando a injeção de dependência. Por exemplo, no SQL Server com a implementação do Dapper, o `UserStore` classe tem o `CreateAsync` método que usa uma instância de `DapperUsersTable` para inserir um novo registro:
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/DapperUsersTable.cs?name=createuser&highlight=7)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/DapperUsersTable.cs?name=createuser&highlight=7)]
 
 ### <a name="interfaces-to-implement-when-customizing-user-store"></a>Interfaces a serem implementadas ao personalizar o repositório do usuário
 
@@ -196,7 +196,7 @@ Ao implementar um provedor de armazenamento de função, você pode criar um tip
 
 A seguir está um exemplo de classe de função:
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/ApplicationRole.cs)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/ApplicationRole.cs)]
 
 ## <a name="customize-the-role-store"></a>Personalizar o repositório de função
 

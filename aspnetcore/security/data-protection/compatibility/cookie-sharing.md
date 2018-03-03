@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/compatibility/cookie-sharing
-ms.openlocfilehash: e87caa5ba78c6b4c365facc0dea07d747e7c9589
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f026a287601a51e544482b95c5283e8ee960d656
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="sharing-cookies-among-apps"></a>Compartilhamento de cookies entre aplicativos
 
@@ -35,7 +35,7 @@ Nos exemplos a seguirem:
 * O nome do cookie de autenticação é definido como um valor comum de `.AspNet.SharedCookie`.
 * O `AuthenticationType` é definido como `Identity.Application` explicitamente ou por padrão.
 * [CookieAuthenticationDefaults.AuthenticationScheme](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationdefaults.authenticationscheme) é usado como o esquema de autenticação. A constante resolve para um valor de `Cookies`.
-* O middleware de autenticação de cookie usa uma implementação de [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider). `DataProtectionProvider`fornece serviços de proteção de dados para a criptografia e descriptografia de dados de carga do cookie de autenticação. O `DataProtectionProvider` instância é isolada do sistema de proteção de dados usado por outras partes do aplicativo.
+* O middleware de autenticação de cookie usa uma implementação de [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider). `DataProtectionProvider` fornece serviços de proteção de dados para a criptografia e descriptografia de dados de carga do cookie de autenticação. O `DataProtectionProvider` instância é isolada do sistema de proteção de dados usado por outras partes do aplicativo.
   * Um comum [chave de proteção de dados](xref:security/data-protection/implementation/key-management) armazenamento local é usado. O aplicativo de exemplo usa uma pasta chamada *token de autenticação* na raiz da solução para armazenar as chaves de proteção de dados.
   * [DataProtectionProvider.Create(System.IO.DirectoryInfo)](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider.create?view=aspnetcore-2.0#Microsoft_AspNetCore_DataProtection_DataProtectionProvider_Create_System_IO_DirectoryInfo_) aceita um [DirectoryInfo](/dotnet/api/system.io.directoryinfo) para uso com os cookies de autenticação. O aplicativo de exemplo fornece o caminho do *token de autenticação* pasta `DirectoryInfo`.
   * [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider) requer o [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) pacote NuGet. Para obter esse pacote para o ASP.NET Core 2.0 e posteriores aplicativos, fazer referência a [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage. Durante o direcionamento do .NET Framework, adicione uma referência de pacote para `Microsoft.AspNetCore.DataProtection.Extensions`.
@@ -48,7 +48,7 @@ Ao usar a identidade do ASP.NET Core:
 
 No `ConfigureServices` método, use o [ConfigureApplicationCookie](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.configureapplicationcookie) método de extensão para configurar o serviço de proteção de dados para cookies.
 
-[!code-csharp[Main](cookie-sharing/sample/CookieAuthWithIdentity.Core/Startup.cs?name=snippet1)]
+[!code-csharp[](cookie-sharing/sample/CookieAuthWithIdentity.Core/Startup.cs?name=snippet1)]
 
 Consulte o *CookieAuthWithIdentity.Core* project no [código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/data-protection/compatibility/cookie-sharing/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample)).
 
@@ -86,7 +86,7 @@ Ao usar cookies diretamente:
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](cookie-sharing/sample/CookieAuth.Core/Startup.cs?name=snippet1)]
+[!code-csharp[](cookie-sharing/sample/CookieAuth.Core/Startup.cs?name=snippet1)]
 
 Consulte o *CookieAuth.Core* project no [código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/data-protection/compatibility/cookie-sharing/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample)).
 
@@ -148,7 +148,7 @@ Para compartilhar os cookies de autenticação entre aplicativos do ASP.NET 4. x
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/App_Start/Startup.Auth.cs?name=snippet1)]
+[!code-csharp[](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/App_Start/Startup.Auth.cs?name=snippet1)]
 
 Consulte o *CookieAuthWithIdentity.NETFramework* project no [código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/data-protection/compatibility/cookie-sharing/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample)).
 
@@ -156,7 +156,7 @@ Ao gerar uma identidade de usuário, o tipo de autenticação deve corresponder 
 
 *Models/IdentityModels.cs*:
 
-[!code-csharp[Main](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/Models/IdentityModels.cs?name=snippet1)]
+[!code-csharp[](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/Models/IdentityModels.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

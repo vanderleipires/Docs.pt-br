@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 1044a87a4dcc7636413078b0fc09ade206c97d0a
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 5e85cf909c1a360f245bcc83233ccc1347735b26
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Host ASP.NET Core no Linux com Nginx
 
@@ -38,7 +38,7 @@ Este guia:
 
 ## <a name="copy-over-the-app"></a>Copie o aplicativo
 
-Executar `dotnet publish` do ambiente de desenvolvimento para empacotar um aplicativo em um diretório autocontido que pode ser executado no servidor.
+Executar [dotnet publicar](/dotnet/core/tools/dotnet-publish) do ambiente de desenvolvimento para empacotar um aplicativo em um diretório independente que pode ser executados no servidor.
 
 O aplicativo ASP.NET Core para o servidor usando qualquer ferramenta de cópia se integra ao fluxo de trabalho da organização (por exemplo, "SCP", "FTP"). Teste o aplicativo, por exemplo:
 
@@ -283,11 +283,11 @@ Considere o uso de um firewall de aplicativo da web como *ModSecurity* para prot
 
 Adicione o arquivo de configuração */etc/nginx/proxy.conf*:
 
-[!code-nginx[Main](linux-nginx/proxy.conf)]
+[!code-nginx[](linux-nginx/proxy.conf)]
 
 Edite o arquivo de configuração */etc/nginx/nginx.conf*. O exemplo contém ambas as seções `http` e `server` em um arquivo de configuração.
 
-[!code-nginx[Main](linux-nginx/nginx.conf?highlight=2)]
+[!code-nginx[](linux-nginx/nginx.conf?highlight=2)]
 
 #### <a name="secure-nginx-from-clickjacking"></a>Proteger o Nginx de clickjacking
 Clickjacking é uma técnica mal-intencionada para coletar cliques de um usuário infectado. O clickjacking engana a vítima (visitante) fazendo-a clicar em um site infectado. Use X-FRAME-OPTIONS para proteger o site.

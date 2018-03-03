@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: c10f94b40fec00e7533cc3a6e88daa3f3da614ed
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: d05256af4e62834b8d43689786a7b8bb3a5e58fb
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Middleware de compactação de resposta para o ASP.NET Core
 
@@ -41,7 +41,7 @@ Em geral, qualquer resposta não nativamente compactada pode se beneficiar da co
 
 Quando um cliente pode processar conteúdo compactado, o cliente deve informar o servidor de seus recursos, enviando o `Accept-Encoding` cabeçalho com a solicitação. Quando um servidor envia conteúdo compactado, ele deve incluir informações de `Content-Encoding` cabeçalho em como a resposta compactada é codificada. Conteúdo designações de codificação com suporte pelo middleware são mostradas na tabela a seguir.
 
-| `Accept-Encoding`valores de cabeçalho | Middleware com suporte | Descrição                                                 |
+| `Accept-Encoding` valores de cabeçalho | Middleware com suporte | Descrição                                                 |
 | :-----------------------------: | :------------------: | ----------------------------------------------------------- |
 | `br`                            | Não                   | Formato de dados compactados Brotli                               |
 | `compress`                      | Não                   | Formato de dados de "compactar" UNIX                                 |
@@ -83,11 +83,11 @@ O código a seguir mostra como habilitar o Middleware de compactação de respos
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](response-compression/samples/2.x/StartupBasic.cs?name=snippet1&highlight=4,8)]
+[!code-csharp[](response-compression/samples/2.x/StartupBasic.cs?name=snippet1&highlight=4,8)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](response-compression/samples/1.x/StartupBasic.cs?name=snippet1&highlight=3,8)]
+[!code-csharp[](response-compression/samples/1.x/StartupBasic.cs?name=snippet1&highlight=3,8)]
 
 ---
 
@@ -117,11 +117,11 @@ O provedor de compactação gzip como padrão o nível de compactação mais rá
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=3,8-11)]
+[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=3,8-11)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,10-13)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,10-13)]
 
 ---
 
@@ -140,11 +140,11 @@ Você pode substituir ou acrescentar tipos MIME com as opções de Middleware de
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=5)]
+[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=5)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7)]
 
 ---
 
@@ -155,15 +155,15 @@ Usando o aplicativo de exemplo, o cliente envia uma solicitação com o `Accept-
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=4)]
+[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=4)]
 
-[!code-csharp[Main](response-compression/samples/2.x/CustomCompressionProvider.cs?name=snippet1)]
+[!code-csharp[](response-compression/samples/2.x/CustomCompressionProvider.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6)]
 
-[!code-csharp[Main](response-compression/samples/1.x/CustomCompressionProvider.cs?name=snippet1)]
+[!code-csharp[](response-compression/samples/1.x/CustomCompressionProvider.cs?name=snippet1)]
 
 ---
 
@@ -179,7 +179,7 @@ Ao compactar respostas com base no `Accept-Encoding` cabeçalho, há potencialme
 
 **ASP.NET Core apenas 1. x**
 
-[!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet1)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet1)]
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Problema de middleware quando atrás de um proxy reverso Nginx
 Quando uma solicitação é delegada por Nginx, o `Accept-Encoding` cabeçalho é removido. Isso impede que o middleware da compactação de resposta. Para obter mais informações, consulte [NGINX: compactação e descompactação de](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Esse problema é acompanhado por [descobrir a compactação de passagem para Nginx (BasicMiddleware 123)](https://github.com/aspnet/BasicMiddleware/issues/123).

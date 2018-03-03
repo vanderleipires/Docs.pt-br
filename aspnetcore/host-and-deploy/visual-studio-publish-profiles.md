@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 138b60d0e7c2a3d8848d534ffed854feaf0f5661
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d2c4ec317f235c6d042bd130dbf79f6cb5e2d47d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Perfis para a implantação de aplicativo do ASP.NET Core de publicação do Visual Studio
 
@@ -109,7 +109,7 @@ Quando faz referência a um projeto do ASP.NET Core `Microsoft.NET.Sdk.Web` no a
 
 ## <a name="basic-command-line-publishing"></a>Publicação de linha de comando básica
 
-Publicação de linha de comando funciona em todas as plataformas com suporte do .NET Core e não requer o Visual Studio. Nas amostras abaixo, o comando `dotnet publish` é executado no diretório do projeto (que contém o arquivo *.csproj*). Se não estiver na pasta do projeto, passar explicitamente no caminho do arquivo de projeto. Por exemplo:
+Publicação de linha de comando funciona em todas as plataformas com suporte do .NET Core e não requer o Visual Studio. No exemplo abaixo, o [dotnet publicar](/dotnet/core/tools/dotnet-publish) comando é executado no diretório do projeto (que contém o *. csproj* arquivo). Se não estiver na pasta do projeto, passar explicitamente no caminho do arquivo de projeto. Por exemplo:
 
 ```console
 dotnet publish c:/webs/web1
@@ -134,7 +134,7 @@ dotnet publish
 
 ---
 
-O `dotnet publish` produz uma saída semelhante à seguinte:
+O [dotnet publicar](/dotnet/core/tools/dotnet-publish) comando produz saída semelhante à seguinte:
 
 ```console
 C:\Webs\Web1>dotnet publish
@@ -155,7 +155,7 @@ O comando a seguir especifica um build de `Release` e o diretório de publicaç�
 dotnet publish -c Release -o C:/MyWebs/test
 ```
 
-O `dotnet publish` comando chama o MSBuild que invoca o `Publish` destino. Todos os parâmetros passados para `dotnet publish` são passados para o MSBuild. O parâmetro `-c` é mapeado para a propriedade do MSBuild `Configuration`. O parâmetro `-o` é mapeado para `OutputPath`.
+O [dotnet publicar](/dotnet/core/tools/dotnet-publish) comando chama o MSBuild que invoca o `Publish` destino. Todos os parâmetros passados para `dotnet publish` são passados para o MSBuild. O parâmetro `-c` é mapeado para a propriedade do MSBuild `Configuration`. O parâmetro `-o` é mapeado para `OutputPath`.
 
 Propriedades MSBuild podem ser passadas usando qualquer um dos seguintes formatos:
 
@@ -196,20 +196,20 @@ O Assistente de publicação dá suporte aos destinos de publicação a seguir:
 
 Para obter mais informações, consulte [Quais opções de publicação são adequadas para mim?](https://docs.microsoft.com/visualstudio/ide/not-in-toc/web-publish-options).
 
-Ao criar um perfil de publicação com o Visual Studio, um *propriedades/PublishProfiles/\<nome da publicação >. pubxml* arquivo MSBuild é criado. Esse arquivo *.pubxml* é um arquivo do MSBuild e contém definições de configuração de publicação. Esse arquivo pode ser alterado para personalizar a compilação e o processo de publicação. Esse arquivo é lido pelo processo de publicação. `<LastUsedBuildConfiguration>`é especial porque é uma propriedade global e não deve estar em qualquer arquivo que será importado no build. Para obter mais informações, consulte [MSBuild: como definir a propriedade de configuração](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx).
+Ao criar um perfil de publicação com o Visual Studio, um *propriedades/PublishProfiles/\<nome da publicação >. pubxml* arquivo MSBuild é criado. Esse arquivo *.pubxml* é um arquivo do MSBuild e contém definições de configuração de publicação. Esse arquivo pode ser alterado para personalizar a compilação e o processo de publicação. Esse arquivo é lido pelo processo de publicação. `<LastUsedBuildConfiguration>` é especial porque é uma propriedade global e não deve estar em qualquer arquivo que será importado no build. Para obter mais informações, consulte [MSBuild: como definir a propriedade de configuração](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx).
 O *. pubxml* arquivo não deve ser verificado no controle de origem porque ele depende do *. User* arquivo. O check-in do arquivo *.user* nunca deve ser feito no controle do código-fonte porque ele pode conter informações confidenciais e só é válido para um usuário e computador.
 
 Informações confidenciais (como a senha de publicação) são criptografadas em um nível por usuário/computador e armazenadas no arquivo *Properties/PublishProfiles/\<nome da publicação>.pubxml.user*. Como esse arquivo pode conter informações confidenciais, o check-in dele **não** deve ser realizado no controle do código-fonte.
 
 Para obter uma visão geral de como publicar um aplicativo web do ASP.NET Core consulte [Host e implantar](index.md). [Hospedar e implantar](index.md) é um projeto de código-fonte aberto no https://github.com/aspnet/websdk.
 
-`dotnet publish`pode usar a pasta, MSDeploy, e [KUDU](https://github.com/projectkudu/kudu/wiki) perfis de publicação:
+`dotnet publish` pode usar a pasta, MSDeploy, e [KUDU](https://github.com/projectkudu/kudu/wiki) perfis de publicação:
  
-Pasta (funciona entre plataformas):`dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>`
+Pasta (funciona entre plataformas): `dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>`
 
-MSDeploy (atualmente isso só funciona no windows como MSDeploy não plataforma cruzada):`dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>`
+MSDeploy (atualmente isso só funciona no windows como MSDeploy não plataforma cruzada): `dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>`
 
-Pacote MSDeploy (atualmente isso só funciona no windows como MSDeploy não plataforma cruzada):`dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>`
+Pacote MSDeploy (atualmente isso só funciona no windows como MSDeploy não plataforma cruzada): `dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>`
 
 Nos exemplos anteriores, **não** passar `deployonbuild` para `dotnet publish`.
 
@@ -244,7 +244,7 @@ Durante a publicação com um perfil chamado *FolderProfile*, qualquer um dos co
 * `dotnet build /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 * `msbuild      /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 
-Ao invocar `dotnet build`, ele chama `msbuild` para executar a compilação e o processo de publicação. Chamando `dotnet build` ou `msbuild` é essencialmente equivalente ao passar em um perfil de pasta. Ao chamar o MSBuild diretamente no Windows, a versão do .NET Framework do MSBuild é usada. O MSDeploy é atualmente limitado a computadores Windows para a publicação. Chamar `dotnet build` em um perfil não de pasta invoca o MSBuild que, por sua vez, usa MSDeploy em perfis não de pasta. Chamar `dotnet build` em um perfil não de pasta invoca o MSBuild (usando MSDeploy) e resulta em uma falha (mesmo quando em execução em uma plataforma do Windows). Para publicar com um perfil não de pasta, chame o MSBuild diretamente.
+Ao invocar [dotnet compilação](/dotnet/core/tools/dotnet-build), ele chama `msbuild` para executar a compilação e o processo de publicação. Chamando `dotnet build` ou `msbuild` é essencialmente equivalente ao passar em um perfil de pasta. Ao chamar o MSBuild diretamente no Windows, a versão do .NET Framework do MSBuild é usada. O MSDeploy é atualmente limitado a computadores Windows para a publicação. Chamar `dotnet build` em um perfil não de pasta invoca o MSBuild que, por sua vez, usa MSDeploy em perfis não de pasta. Chamar `dotnet build` em um perfil não de pasta invoca o MSBuild (usando MSDeploy) e resulta em uma falha (mesmo quando em execução em uma plataforma do Windows). Para publicar com um perfil não de pasta, chame o MSBuild diretamente.
 
 A pasta de perfil de publicação a seguir foi criada com o Visual Studio e publica em um compartilhamento de rede:
 
@@ -332,7 +332,7 @@ A marcação do elemento `<MsDeploySkipRules>` a seguir exclui todos os arquivos
 </ItemGroup>
 ```
 
-`<MsDeploySkipRules>`Não exclua o *ignorar* destinos do site de implantação. `<Content>`pastas e arquivos de destino são excluídas do site de implantação. Por exemplo, suponha que um aplicativo da web implantados tinha os seguintes arquivos:
+`<MsDeploySkipRules>` Não exclua o *ignorar* destinos do site de implantação. `<Content>` pastas e arquivos de destino são excluídas do site de implantação. Por exemplo, suponha que um aplicativo da web implantados tinha os seguintes arquivos:
 
 * *Views/Home/About1.cshtml*
 * *Views/Home/About2.cshtml*

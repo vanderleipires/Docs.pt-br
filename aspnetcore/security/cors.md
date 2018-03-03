@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ee61798fc1bde89ca3712eae9b7c4413e58cf70d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>Habilitar solicitações entre origens (CORS)
 
@@ -35,13 +35,13 @@ Essas duas URLs têm a mesma origem:
 
 Essas URLs têm diferentes origens que anterior dois:
 
-* `http://example.net`-Domínio diferente
+* `http://example.net` -Domínio diferente
 
-* `http://www.example.com/foo.html`-Subdomínio diferente
+* `http://www.example.com/foo.html` -Subdomínio diferente
 
-* `https://example.com/foo.html`-Esquema diferente
+* `https://example.com/foo.html` -Esquema diferente
 
-* `http://example.com:9000/foo.html`-Porta diferente
+* `http://example.com:9000/foo.html` -Porta diferente
 
 > [!NOTE]
 > Internet Explorer não considera a porta ao comparar as origens.
@@ -52,7 +52,7 @@ Para configurar CORS para o seu aplicativo, adicione o `Microsoft.AspNetCore.Cor
 
 Adicione os serviços CORS em Startup.cs:
 
-[!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
+[!code-csharp[](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
 
 ## <a name="enabling-cors-with-middleware"></a>Habilitar o CORS com middleware
 
@@ -60,7 +60,7 @@ Para habilitar o CORS para todo o seu aplicativo adicionar o middleware CORS ao 
 
 Você pode especificar uma política entre origens ao adicionar o uso de middleware CORS a `CorsPolicyBuilder` classe. Há duas formas de fazer isso. A primeira é chamar UseCors com uma expressão lambda:
 
-[!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
+[!code-csharp[](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
 
 **Observação:** a URL deve ser especificada sem uma barra à direita (`/`). Se a URL termina com `/`, a comparação retornará `false` e nenhum cabeçalho será retornado.
 
@@ -68,11 +68,11 @@ O lambda leva um `CorsPolicyBuilder` objeto. Você encontrará uma lista da [op�
 
 Observe que CorsPolicyBuilder tem uma API fluente, portanto, é possível encadear chamadas de método:
 
-[!code-csharp[Main](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
+[!code-csharp[](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
 
 A segunda abordagem é definir uma ou mais políticas CORS nomeadas e, em seguida, selecione a política por nome em tempo de execução.
 
-[!code-csharp[Main](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
+[!code-csharp[](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
 
 Este exemplo adiciona uma política CORS denominada "AllowSpecificOrigin". Para selecionar a política, passe o nome para `UseCors`.
 
@@ -84,19 +84,19 @@ Como alternativa, você pode usar MVC para aplicar CORS específicos por ação,
 
 Para especificar uma política CORS para uma ação específica, adicione o `[EnableCors]` de atributo para a ação. Especifique o nome da política.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
 
 ### <a name="per-controller"></a>Por controlador
 
 Para especificar a política CORS para um controlador específico, adicione o `[EnableCors]` de atributo para a classe do controlador. Especifique o nome da política.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
 
 ### <a name="globally"></a>Globalmente
 
 Você pode habilitar o CORS globalmente para todos os controladores, adicionando o `CorsAuthorizationFilterFactory` filtro para a coleção de filtros globais:
 
-[!code-csharp[Main](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
+[!code-csharp[](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
 
 A ordem de precedência é: ação, controlador, global. Políticas de nível de ação têm precedência sobre políticas de nível de controlador e políticas no nível do controlador têm precedência sobre as políticas globais.
 
@@ -104,7 +104,7 @@ A ordem de precedência é: ação, controlador, global. Políticas de nível de
 
 Para desabilitar CORS para um controlador ou ação, use o `[DisableCors]` atributo.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
 
 ## <a name="cors-policy-options"></a>Opções de política CORS
 
@@ -128,11 +128,11 @@ Para algumas opções pode ser útil ler [funciona como CORS](#how-cors-works) p
 
 Para permitir que um ou mais origens específicas:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=19-23)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=19-23)]
 
 Para permitir que todas as origens:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs??range=27-31)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs??range=27-31)]
 
 Considere cuidadosamente antes de permitir solicitações de qualquer origem. Isso significa que literalmente qualquer site pode fazer chamadas AJAX para sua API.
 
@@ -140,7 +140,7 @@ Considere cuidadosamente antes de permitir solicitações de qualquer origem. Is
 
 Para permitir que todos os métodos HTTP:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=44-49)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=44-49)]
 
 Isso afeta a solicitações preliminares e cabeçalho Access-controle-Allow-Methods.
 
@@ -150,11 +150,11 @@ Uma solicitação de simulação de CORS pode incluir um cabeçalho Access-Contr
 
 Para cabeçalhos de específico de lista de permissões:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=53-58)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=53-58)]
 
 Para permitir que todos os cabeçalhos de solicitação do autor:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=62-67)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=62-67)]
 
 Navegadores não são totalmente consistentes em como eles definidos Access-Control-Request-Headers. Se você definir cabeçalhos para algo diferente de "*", você deve incluir pelo menos "aceitar", "content-type" e "origem", além de quaisquer cabeçalhos personalizados que você deseja dar suporte.
 
@@ -176,7 +176,7 @@ Por padrão, o navegador não expõe todos os cabeçalhos de resposta para o apl
 
 A especificação CORS chama esses *cabeçalhos de resposta simples*. Para disponibilizar outros cabeçalhos para o aplicativo:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=71-76)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=71-76)]
 
 ### <a name="credentials-in-cross-origin-requests"></a>Credenciais nas solicitações entre origens
 
@@ -203,7 +203,7 @@ $.ajax({
 
 Além disso, o servidor deve permitir que as credenciais. Para permitir que as credenciais de cross-origin:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=80-85)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=80-85)]
 
 Agora, a resposta HTTP incluirá um cabeçalho Access-controle-Allow-Credentials, que informa ao navegador que o servidor permite que as credenciais para uma solicitação entre origens.
 
@@ -215,7 +215,7 @@ Tenha cuidado ao permitir que as credenciais de entre origens. Um site da Web em
 
 O cabeçalho de acesso-controle-Max-Age Especifica quanto tempo a resposta à solicitação de simulação pode ser armazenados em cache. Para definir esse cabeçalho:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=89-94)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
 <a name="cors-how-cors-works"></a>
 

@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8c28f1b4f66433eaebd9e474e784ecf3f1ac271b
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Integração de teste no núcleo do ASP.NET
 
 Por [Steve Smith](https://ardalis.com/)
 
-Testes de integração garantem que componentes de um aplicativo funcionam corretamente quando montado juntos. ASP.NET Core dá suporte a teste de integração usando estruturas de teste de unidade e um host da web internos de teste que pode ser usado para tratar as solicitações sem sobrecarga de rede.
+Testes de integração garantem que componentes de um aplicativo funcionam corretamente quando montado juntos. O ASP.NET Core é compatível com testes de integração por meio de estruturas de teste de unidade e um host Web de testes interno que pode ser utilizado para lidar com solicitações sem sobrecarga de rede.
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/integration-testing/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
@@ -47,7 +47,7 @@ ASP.NET Core inclui um host de teste que pode ser adicionado a projetos de teste
 
 Uma vez o `Microsoft.AspNetCore.TestHost` pacote está incluído no projeto, você poderá criar e configurar um `TestServer` em seus testes. O teste a seguir mostra como verificar uma solicitação feita para a raiz de um site retorna "Hello World!" e deve ser executado com êxito em relação ao padrão modelo de Web do ASP.NET Core vazio criado pelo Visual Studio.
 
-[!code-csharp[Main](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs?name=snippet_WebDefault&highlight=7,16,22)]
+[!code-csharp[](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs?name=snippet_WebDefault&highlight=7,16,22)]
 
 Este teste é usando o padrão de organizar Act declaração. A etapa de organizar é feita no construtor, que cria uma instância de `TestServer`. Configurado `WebHostBuilder` será usado para criar um `TestHost`; neste exemplo, o `Configure` método do sistema em teste (SUT) `Startup` classe é passada para o `WebHostBuilder`. Esse método será usado para configurar o pipeline de solicitação do `TestServer` identicamente a como o servidor SUT deve ser configurado.
 
@@ -55,7 +55,7 @@ Na parte do Act do teste, é feita uma solicitação para a `TestServer` instân
 
 Agora você pode adicionar alguns testes de integração adicionais para confirmar que o primo verificando funcionalidade funciona por meio do aplicativo web:
 
-[!code-csharp[Main](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs?name=snippet_CheckPrime)]
+[!code-csharp[](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs?name=snippet_CheckPrime)]
 
 Observe que não é realmente está tentando testar a exatidão do verificador de número primo com esses testes, mas em vez disso, que o aplicativo web está fazendo o que você espera. Você já tem cobertura de teste de unidade que proporciona confiança em `PrimeService`, como você pode ver aqui:
 
@@ -134,13 +134,13 @@ Para permitir que o caminho do middleware usa a ser especificado como um parâme
 > [!NOTE]
 > Desde que o middleware depende do `PrimeService` serviço, você também está solicitando uma instância do serviço com o construtor. A estrutura oferecer esse serviço por meio de [injeção de dependência](xref:fundamentals/dependency-injection), supondo que ele tiver sido configurado, por exemplo, em `ConfigureServices`.
 
-[!code-csharp[Main](../testing/integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs?highlight=39-63)]
+[!code-csharp[](../testing/integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs?highlight=39-63)]
 
 Como este middleware atua como um ponto de extremidade da cadeia de delegado solicitação quando o caminho corresponde, não há nenhuma chamada para `_next.Invoke` quando este middleware manipula a solicitação.
 
 Com este middleware em vigor e alguns útil métodos de extensão criados para facilitar a configuração, o refatorado `Configure` método tem esta aparência:
 
-[!code-csharp[Main](../testing/integration-testing/sample/src/PrimeWeb/Startup.cs?highlight=9&range=19-33)]
+[!code-csharp[](../testing/integration-testing/sample/src/PrimeWeb/Startup.cs?highlight=9&range=19-33)]
 
 Seguindo essa refatoração estiver certo de que o aplicativo web ainda funciona como antes, desde que os testes de integração estão passando.
 

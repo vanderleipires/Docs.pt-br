@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: f091370bc85a37eeaac1291a2fdc6ea85164f148
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0a3443e8187d46992f55dc537d0f400c6771c50c
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>Introdução ao uso de Gulp no núcleo do ASP.NET 
 
@@ -204,7 +204,7 @@ As associações que você configurar o com **Explorador do Executador de tarefa
 </Target>
 ```
 
-Agora que a tarefa de limpeza é executada quando você executar o projeto no Visual Studio ou de um prompt de comando usando o `dotnet run` comando (execute `npm install` primeiro).
+Agora que a tarefa de limpeza é executada quando você executar o projeto no Visual Studio ou de um prompt de comando usando o [dotnet executar](/dotnet/core/tools/dotnet-run) comando (execute `npm install` primeiro).
 
 ## <a name="defining-and-running-a-new-task"></a>Definir e executar uma nova tarefa
 

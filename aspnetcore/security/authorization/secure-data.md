@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: e186adef2e72f852543a92ddce0e82be2a3bcd12
-ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
+ms.openlocfilehash: 5acb65be078fd39b9e7a17ce2d8167b8f7b7db22
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Criar um aplicativo do ASP.NET Core com dados de usuário protegidos por autorização
 
@@ -47,7 +47,7 @@ O administrador tem todos os privilégios. Ela pode ler/editar/excluir qualquer 
 
 O aplicativo foi criado por [scaffolding](xref:tutorials/first-mvc-app-xplat/adding-model#scaffold-the-moviecontroller) o seguinte `Contact` modelo:
 
-[!code-csharp[Main](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
+[!code-csharp[](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
 
 O exemplo contém os seguintes manipuladores de autorização:
 
@@ -85,7 +85,7 @@ As seções a seguir têm todas as principais etapas para criar o aplicativo de 
 
 Usar o ASP.NET [identidade](xref:security/authentication/identity) ID de usuário para garantir que os usuários pode editar seus dados, mas não de outros dados de usuários. Adicionar `OwnerID` e `ContactStatus` para o `Contact` modelo:
 
-[!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
+[!code-csharp[](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
 
 `OwnerID` é a ID do usuário da `AspNetUser` tabela o [identidade](xref:security/authentication/identity) banco de dados. O `Status` campo determina se um contato é exibido por usuários gerais.
 
@@ -100,11 +100,11 @@ dotnet ef database update
 
 Adicionar [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) para `Startup`:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_env)]
+[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_env)]
 
 No `ConfigureServices` método o *Startup.cs* de arquivo, adicione o [RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) filtro de autorização:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
+[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
 
 Se você estiver usando o Visual Studio, habilite o HTTPS.
 
@@ -123,11 +123,11 @@ Atualização `ConfigureServices` com as seguintes alterações:
 * Comente `AuthorizeFolder` e `AuthorizePage`.
 * Defina a política de autenticação padrão para exigir que os usuários sejam autenticados.
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
+[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
 
 Adicionar [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) ao índice, sobre e contatos páginas para usuários anônimos podem obter informações sobre o site antes de eles se registrar. 
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Index.cshtml.cs?name=snippet&highlight=2)]
+[!code-csharp[](secure-data/samples/final2/Pages/Index.cshtml.cs?name=snippet&highlight=2)]
 
 Adicionar `[AllowAnonymous]` para o [LoginModel e RegisterModel](https://github.com/aspnet/templating/issues/238).
 
@@ -141,23 +141,23 @@ dotnet user-secrets set SeedUserPW <PW>
 
 Atualização `Main` para usar a senha de teste:
 
-[!code-csharp[Main](secure-data/samples/final2/Program.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Program.cs?name=snippet)]
 
 ### <a name="create-the-test-accounts-and-update-the-contacts"></a>Criar as contas de teste e atualizar os contatos
 
 Atualização de `Initialize` método o `SeedData` classe para criar as contas de teste:
 
-[!code-csharp[Main](secure-data/samples/final2/Data/SeedData.cs?name=snippet_Initialize)]
+[!code-csharp[](secure-data/samples/final2/Data/SeedData.cs?name=snippet_Initialize)]
 
 Adicione a ID de usuário de administrador e `ContactStatus` para os contatos. Tornar um dos contatos "Enviada" e um "rejeitado". Adicione a ID de usuário e o status para todos os contatos. Somente um contato é exibido:
 
-[!code-csharp[Main](secure-data/samples/final2/Data/SeedData.cs?name=snippet1&highlight=17,18)]
+[!code-csharp[](secure-data/samples/final2/Data/SeedData.cs?name=snippet1&highlight=17,18)]
 
 ## <a name="create-owner-manager-and-administrator-authorization-handlers"></a>Criar proprietário, Gerenciador e manipuladores de autorização do administrador
 
 Criar um `ContactIsOwnerAuthorizationHandler` classe no *autorização* pasta. O `ContactIsOwnerAuthorizationHandler` verifica que o usuário atuando em um recurso possui o recurso.
 
-[!code-csharp[Main](secure-data/samples/final2/Authorization/ContactIsOwnerAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2/Authorization/ContactIsOwnerAuthorizationHandler.cs)]
 
 O `ContactIsOwnerAuthorizationHandler` chamadas [contexto. Êxito](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_) se o usuário autenticado atual é o proprietário do contato. Manipuladores de autorização geralmente:
 
@@ -172,19 +172,19 @@ O aplicativo permite que proprietários de contato para editar/excluir/criar seu
 
 Criar um `ContactManagerAuthorizationHandler` classe no *autorização* pasta. O `ContactManagerAuthorizationHandler` verifica se o usuário atuando no recurso é um Gerenciador de. Somente os gerentes podem aprovar ou rejeitar alterações de conteúdo (nova ou alteradas).
 
-[!code-csharp[Main](secure-data/samples/final2/Authorization/ContactManagerAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2/Authorization/ContactManagerAuthorizationHandler.cs)]
 
 ### <a name="create-an-administrator-authorization-handler"></a>Criar um manipulador de autorização do administrador
 
 Criar um `ContactAdministratorsAuthorizationHandler` classe no *autorização* pasta. O `ContactAdministratorsAuthorizationHandler` verifica se o usuário atuando no recurso é um administrador. Administrador pode fazer todas as operações.
 
-[!code-csharp[Main](secure-data/samples/final2/Authorization/ContactAdministratorsAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2/Authorization/ContactAdministratorsAuthorizationHandler.cs)]
 
 ## <a name="register-the-authorization-handlers"></a>Registrar os manipuladores de autorização
 
 Serviços usando o Entity Framework Core devem ser registrados para [injeção de dependência](xref:fundamentals/dependency-injection) usando [AddScoped](/aspnet/core/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions). O `ContactIsOwnerAuthorizationHandler` usa o ASP.NET Core [identidade](xref:security/authentication/identity), que está incluído no Entity Framework Core. Registrar os manipuladores com a coleção de serviço para que eles estejam disponíveis para o `ContactsController` por meio de [injeção de dependência](xref:fundamentals/dependency-injection). Adicione o seguinte código ao final da `ConfigureServices`:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
+[!code-csharp[](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
 `ContactAdministratorsAuthorizationHandler` e `ContactManagerAuthorizationHandler` são adicionados como singletons. Elas são singletons porque eles não usam o EF e todas as informações necessárias no `Context` parâmetro do `HandleRequirementAsync` método.
 
@@ -196,13 +196,13 @@ Nesta seção, você atualize as páginas Razor e adicionar uma classe de requis
 
 Examine o `ContactOperations` classe. Essa classe contém os requisitos de aplicativo suporta:
 
-[!code-csharp[Main](secure-data/samples/final2/Authorization/ContactOperations.cs)]
+[!code-csharp[](secure-data/samples/final2/Authorization/ContactOperations.cs)]
 
 ### <a name="create-a-base-class-for-the-razor-pages"></a>Criar uma classe base para as páginas Razor
 
 Crie uma classe base que contém os serviços usados em contatos páginas Razor. A classe base coloca esse código de inicialização em um local:
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/DI_BasePageModel.cs)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/DI_BasePageModel.cs)]
 
 O código anterior:
 
@@ -214,32 +214,32 @@ O código anterior:
 
 Atualizar o construtor de modelo de página criar para usar o `DI_BasePageModel` classe base:
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippetCtor)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippetCtor)]
 
 Atualização de `CreateModel.OnPostAsync` método:
 
 * Adicione a ID de usuário para o `Contact` modelo.
 * Chama o manipulador de autorização para verificar se que o usuário tem permissão para criar contatos.
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippet_Create)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippet_Create)]
 
 ### <a name="update-the-indexmodel"></a>Atualizar o IndexModel
 
 Atualização de `OnGetAsync` método apenas os contatos aprovados são mostradas a usuários gerais:
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Index.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Index.cshtml.cs?name=snippet)]
 
 ### <a name="update-the-editmodel"></a>Atualizar o EditModel
 
 Adicione um manipulador de autorização para verificar se que o usuário possui o contato. Como a autorização de recursos está sendo validada, o `[Authorize]` atributo não é suficiente. O aplicativo não tiver acesso ao recurso quando atributos são avaliados. Autorização baseada em recursos deve ser obrigatória. Verificações de devem ser executadas depois que o aplicativo tenha acesso ao recurso, carregá-lo no modelo de página ou carregá-lo dentro do manipulador de si mesmo. Frequentemente, você acessar o recurso, passando a chave de recurso.
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Edit.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Edit.cshtml.cs?name=snippet)]
 
 ### <a name="update-the-deletemodel"></a>Atualizar o DeleteModel
 
 Atualize o modelo de página de exclusão para usar o manipulador de autorização para verificar se que o usuário tem permissão para excluir no contato.
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Delete.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Delete.cshtml.cs?name=snippet)]
 
 ## <a name="inject-the-authorization-service-into-the-views"></a>Injetar o serviço de autorização para os modos de exibição
 
@@ -247,13 +247,13 @@ No momento, a interface do usuário mostra editar e excluir links de dados que o
 
 Injetar o serviço de autorização no *Views/_ViewImports.cshtml* arquivo para que ele esteja disponível para todos os modos de exibição:
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/_ViewImports.cshtml?highlight=6-9)]
+[!code-cshtml[](secure-data/samples/final2/Pages/_ViewImports.cshtml?highlight=6-9)]
 
 A marcação anterior adiciona várias `using` instruções.
 
 Atualização de **editar** e **excluir** links em *Pages/Contacts/Index.cshtml* para elas estão renderizadas somente para usuários com as permissões apropriadas:
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-999)]
+[!code-cshtml[](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-999)]
 
 > [!WARNING]
 > Ocultar links de usuários que não tem permissão para alterar os dados, o aplicativo não seguro. Ocultar links torna o aplicativo mais amigável exibindo links só é válidas. Os usuários podem hack as URLs geradas para chamar editar e excluir operações nos dados que não possuem. O Razor de página ou o controlador deve impor verificações de acesso para proteger os dados.
@@ -262,11 +262,11 @@ Atualização de **editar** e **excluir** links em *Pages/Contacts/Index.cshtml*
 
 Atualize a exibição de detalhes para que os gerentes podem aprovar ou rejeitar contatos:
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-999)]
+[!code-cshtml[](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-999)]
 
 Atualize o modelo de página de detalhes:
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Details.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Details.cshtml.cs?name=snippet)]
 
 ## <a name="test-the-completed-app"></a>Testar o aplicativo concluído
 
@@ -311,7 +311,7 @@ Crie um contato no navegador do administrador. Copie a URL para excluir e editar
 
 * Adicione o seguinte `Contact` modelo:
 
-  [!code-csharp[Main](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
+  [!code-csharp[](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
 
 * Scaffold o `Contact` modelo:
 
@@ -340,7 +340,7 @@ Adicionar o `SeedData` de classe para o *dados* pasta. Se você baixou o exemplo
 
 Chamar `SeedData.Initialize` de `Main`:
 
-[!code-csharp[Main](secure-data/samples/starter2/Program.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/starter2/Program.cs?name=snippet)]
 
 Teste o aplicativo propagado o banco de dados. Se houver linhas no banco de dados de contato, o método de propagação não é executado.
 

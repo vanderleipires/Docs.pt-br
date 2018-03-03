@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 00f48718ad8b9cc9070b7adc54b26ecd89eb320f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a1fd7c55ec94d5def569bb407c064f4fd2fe9695
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="key-management"></a>Gerenciamento de chaves
 
@@ -77,7 +77,7 @@ Qualquer operação que modifica o anel de chave (Criando uma nova chave explici
 
 O exemplo a seguir demonstra como usar o `IKeyManager` interface para inspecionar e manipular o anel de chave, incluindo a revogação existente chaves e gerar uma nova chave manualmente.
 
-[!code-csharp[Main](key-management/samples/key-management.cs)]
+[!code-csharp[](key-management/samples/key-management.cs)]
 
 ## <a name="key-storage"></a>Armazenamento de chaves
 

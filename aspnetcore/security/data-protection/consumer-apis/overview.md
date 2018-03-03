@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/overview
-ms.openlocfilehash: 7f335681581b73e36e5b4deaf513255770900965
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3aa0c4bc8d009147dd15571da4d7d63402e4c512
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="consumer-apis-overview"></a>Visão geral APIs do consumidor
 
@@ -48,11 +48,11 @@ O exemplo a seguir demonstra três conceitos:
 
 3. Criando um `IDataProtector` de um `IDataProtectionProvider` e usá-lo para proteger e Desproteger dados.
 
-[!code-csharp[Main](../using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
+[!code-csharp[](../using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
 
 O pacote Microsoft.AspNetCore.DataProtection.Abstractions contém um método de extensão `IServiceProvider.GetDataProtector` como uma conveniência de desenvolvedor. Ele encapsula como uma única operação ambos recuperando uma `IDataProtectionProvider` do provedor de serviços e chamar `IDataProtectionProvider.CreateProtector`. O exemplo a seguir demonstra o uso.
 
-[!code-csharp[Main](./overview/samples/getdataprotector.cs?highlight=15)]
+[!code-csharp[](./overview/samples/getdataprotector.cs?highlight=15)]
 
 >[!TIP]
 > Instâncias do `IDataProtectionProvider` e `IDataProtector` são thread-safe para chamadores vários. Ele foi desenvolvido que depois que um componente obtém uma referência a um `IDataProtector` por meio de uma chamada para `CreateProtector`, ele usará essa referência para várias chamadas para `Protect` e `Unprotect`. Uma chamada para `Unprotect` lançará CryptographicException se a carga protegida não pode ser verificada ou decifrada. Alguns componentes poderá ignorar erros durante Desproteger operações; um componente que lê os cookies de autenticação pode manipular esse erro e tratar a solicitação, como não se tivesse nenhum cookie de em vez de falhar a solicitação. Componentes que deseja que esse comportamento especificamente devem capturar CryptographicException em vez de assimilação todas as exceções.

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 337782a0530a37916b04aa562174b5921ddbc46b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 489c53c066af87e02e43ab0b42b0712d80d5ee5a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo durante o desenvolvimento no núcleo do ASP.NET
 
@@ -45,11 +45,11 @@ A ferramenta Gerenciador de segredo armazena dados confidenciais para o trabalho
 
 Clique com botão direito no projeto no Gerenciador de soluções e selecione **editar \<project_name\>. csproj** no menu de contexto. Adicione a linha realçada para o *. csproj* de arquivo e salvar para restaurar o pacote NuGet associado:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
 Clique com botão direito no projeto no Gerenciador de soluções novamente e selecione **gerenciar segredos do usuário** no menu de contexto. Esse gesto adiciona um novo `UserSecretsId` nó dentro de um `PropertyGroup` do *. csproj* arquivo, como destacado no exemplo a seguir:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
 Salvando o *. csproj* arquivo também abre uma `secrets.json` arquivo no editor de texto. Substitua o conteúdo do `secrets.json` arquivo com o código a seguir:
 
@@ -61,9 +61,9 @@ Salvando o *. csproj* arquivo também abre uma `secrets.json` arquivo no editor 
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-Adicionar `Microsoft.Extensions.SecretManager.Tools` para o *. csproj* e execute o `dotnet restore`. Você pode usar as mesmas etapas para instalar a ferramenta Gerenciador de segredo usando a linha de comando.
+Adicionar `Microsoft.Extensions.SecretManager.Tools` para o *. csproj* e execute o [restauração dotnet](/dotnet/core/tools/dotnet-restore). Você pode usar as mesmas etapas para instalar a ferramenta Gerenciador de segredo usando a linha de comando.
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
 Teste a ferramenta Gerenciador de segredo executando o seguinte comando:
 
@@ -80,7 +80,7 @@ A ferramenta Gerenciador de segredo opera em definições de configuração espe
 
 Adicionar um `UserSecretsId` para seu projeto no *. csproj* arquivo:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
 Use a ferramenta Gerenciador de segredo para definir um segredo. Por exemplo, em uma janela de comando do diretório do projeto, digite o seguinte:
 
@@ -100,15 +100,15 @@ Você também pode usar a ferramenta Gerenciador de segredo de lista, remover e 
 
 ## <a name="accessing-user-secrets-via-configuration"></a>Acessando os segredos do usuário por meio da configuração
 
-Acessar o Gerenciador de segredo segredos através do sistema de configuração. Adicionar o `Microsoft.Extensions.Configuration.UserSecrets` empacotar e executar `dotnet restore`.
+Acessar o Gerenciador de segredo segredos através do sistema de configuração. Adicionar o `Microsoft.Extensions.Configuration.UserSecrets` empacotar e executar [restauração dotnet](/dotnet/core/tools/dotnet-restore).
 
 Adicione a fonte de configuração de segredos do usuário para o `Startup` método:
 
-[!code-csharp[Main](app-secrets/sample/UserSecrets/Startup.cs?highlight=16-19)]
+[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=16-19)]
 
 Você pode acessar os segredos do usuário via a API de configuração:
 
-[!code-csharp[Main](app-secrets/sample/UserSecrets/Startup.cs?highlight=26-29)]
+[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=26-29)]
 
 ## <a name="how-the-secret-manager-tool-works"></a>Como funciona a ferramenta Gerenciador de segredo
 

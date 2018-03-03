@@ -10,15 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 150603d17f3bed983f9871fe7665748a70177f89
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: 27a46446e9bf63e96eecc392e6d6863e27b34730
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Solucionar problemas de ASP.NET Core no serviço de aplicativo do Azure
 
 Por [Luke Latham](https://github.com/guardrex)
+
+[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 Este artigo fornece instruções sobre como diagnosticar uma ASP.NET Core problema de inicialização do aplicativo usando ferramentas de diagnóstico do serviço de aplicativo do Azure. Para avisos de solução de problemas adicionais, consulte [visão geral do serviço de aplicativo do Azure diagnostics](/azure/app-service/app-service-diagnostics) e [como: monitorar aplicativos no serviço de aplicativo do Azure](/azure/app-service/web-sites-monitor) na documentação do Azure.
 
@@ -103,7 +105,7 @@ O módulo do ASP.NET Core stdout geralmente registra mensagens de erro úteis n�
 1. Selecione **salvar** para salvar o arquivo.
 
 > [!WARNING]
-> Falha ao desabilitar o log de stdout pode levar a falhas de aplicativo ou servidor. Não há nenhum limite no tamanho do arquivo de log ou o número de arquivos de log criados.
+> Falha ao desabilitar o log de stdout pode levar a falhas de aplicativo ou servidor. Não há limites para o tamanho do arquivo de log ou para o número de arquivos de log criados.
 >
 > Para log de rotina no aplicativo do ASP.NET Core, use uma biblioteca de registro em log que limita o tamanho do arquivo de log e gira logs. Para obter mais informações, consulte [provedores de log de terceiros](xref:fundamentals/logging/index#third-party-logging-providers).
 
@@ -170,7 +172,7 @@ Consulte [seção o habilite o log de diagnóstico para aplicativos web no tópi
 Para obter mais informações, consulte [habilitar o log de diagnóstico para aplicativos web no serviço de aplicativo do Azure](/azure/app-service/web-sites-enable-diagnostic-log).
 
 > [!WARNING]
-> Falha ao desabilitar o log de stdout pode levar a falhas de aplicativo ou servidor. Não há nenhum limite no tamanho do arquivo de log ou o número de arquivos de log criados.
+> Falha ao desabilitar o log de stdout pode levar a falhas de aplicativo ou servidor. Não há limites para o tamanho do arquivo de log ou para o número de arquivos de log criados.
 >
 > Para log de rotina no aplicativo do ASP.NET Core, use uma biblioteca de registro em log que limita o tamanho do arquivo de log e gira logs. Para obter mais informações, consulte [provedores de log de terceiros](xref:fundamentals/logging/index#third-party-logging-providers).
 

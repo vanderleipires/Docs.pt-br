@@ -12,23 +12,24 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 076fa87eff140a3e7ff6855e4876abac40419c57
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 353419077422516761df56f730352b19b5db5ff2
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-models-and-data-access"></a>Acesso a dados e modelos do ASP.NET MVC 4
-====================
-por [Web Camps Team](https://twitter.com/webcamps)
+# <a name="aspnet-mvc-4-models-and-data-access"></a>Acesso a dados e modelos do ASP.NET MVC 4
+
+Por [Web Camps Team](https://twitter.com/webcamps)
+
+[Baixar o Kit de treinamento de Camps de Web](https://aka.ms/webcamps-training-kit)
+
+Este laboratório prático supõe que você tenha um conhecimento básico de **ASP.NET MVC**. Se você não usou **ASP.NET MVC** antes, é recomendável que você passe **conceitos básicos do ASP.NET MVC 4** laboratório prático.
+
+Este laboratório orienta os aperfeiçoamentos e novos recursos descritos anteriormente, aplicando alterações secundárias a um aplicativo da Web de exemplo fornecido na pasta de origem.
 
 > [!NOTE]
-> Este laboratório prático supõe que você tenha um conhecimento básico de **ASP.NET MVC**. Se você não usou **ASP.NET MVC** antes, é recomendável que você passe **conceitos básicos do ASP.NET MVC 4** laboratório prático.
-> 
-> Este laboratório orienta os aperfeiçoamentos e novos recursos descritos anteriormente, aplicando alterações secundárias a um aplicativo da Web de exemplo fornecido na pasta de origem.
-> 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
-
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [versões Microsoft-Web/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). O projeto específico para este laboratório está disponível em [acesso a dados e modelos do ASP.NET MVC 4](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess).
 
 Em **conceitos básicos do ASP.NET MVC** laboratório prático, você tem foi passando dados embutida dos controladores de para os modelos de exibição. Mas, para criar um aplicativo Web real, você talvez queira usar um banco de dados real.
 
@@ -38,7 +39,7 @@ No entanto, você também pode usar o **Model First** abordagem, criar o mesmo m
 
 ![Vs primeiro do banco de dados. Modelo primeiro](aspnet-mvc-4-models-and-data-access/_static/image1.png "vs primeiro banco de dados. Modelo pela primeira vez")
 
-*Vs primeiro do banco de dados. Modelo pela primeira vez*
+*Vs primeiro do banco de dados. Modelo pela primeira vez
 
 Depois de gerar o modelo, você fará os ajustes adequados no StoreController para fornecer os modos de exibição do repositório com os dados obtidos do banco de dados, em vez de usar dados embutidos. Você não precisará fazer qualquer alteração nos modelos de exibição porque o StoreController será retornada mesmo ViewModels para os modelos de exibição, embora esse tempo os dados virão do banco de dados.
 
@@ -325,7 +326,7 @@ Agora que você já adicionou um banco de dados ao nosso projeto, você escrever
 
     ![Local do arquivo Web. config](aspnet-mvc-4-models-and-data-access/_static/image19.png "local do arquivo Web. config")
 
-    *Local do arquivo Web. config*
+    *local do arquivo Web. config*
 
 
     [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]

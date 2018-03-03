@@ -12,28 +12,26 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 8b1bdae048afc78399ccc7b0eac7125d9b983c13
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 35f9402ad6090c0441425a23b2b8063350892210
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="whats-new-in-aspnet-mvc-4"></a>O que há de novo no ASP.NET MVC 4
-====================
-por [Web Camps Team](https://twitter.com/webcamps)
+# <a name="whats-new-in-aspnet-mvc-4"></a>O que há de novo no ASP.NET MVC 4
 
-[Baixar o Kit de treinamento de Camps de Web](http://www.microsoft.com/download/29843)
+Por [Web Camps Team](https://twitter.com/webcamps)
 
-> ASP.NET MVC 4 é uma estrutura para criar aplicativos web escalonável, baseado em padrões usando padrões de design bem estabelecidos e o poder do ASP.NET e o .NET framework. Essa nova quarta versão do framework enfoca facilita o desenvolvimento de aplicativos web móvel.
-> 
-> Em primeiro lugar, quando você cria um novo projeto ASP.NET MVC 4 é agora um modelo de projeto de aplicativo móvel que você pode usar para compilar um aplicativo autônomo especificamente para dispositivos móveis. Além disso, ASP.NET MVC 4 integra-se com o jQuery Mobile por meio de um pacote jQuery.Mobile.MVC NuGet. o jQuery Mobile é uma estrutura baseada em HTML5 para o desenvolvimento de aplicativos web que são compatíveis com todas as plataformas de dispositivo móvel popular, incluindo Windows Phone, iPhone, Android e assim por diante. No entanto, se você precisar de especialização, ASP.NET MVC 4 também permite que você atender a diferentes modos de exibição para diferentes dispositivos e fornecer otimizações específicas do dispositivo.
-> 
-> Este laboratório prático, você iniciará com o ASP.NET MVC 4 &quot;aplicativo de Internet&quot; modelo de projeto para criar um aplicativo da Galeria de fotos. Você aprimorará progressivamente o aplicativo usando o jQuery Mobile e recursos novos do ASP.NET MVC 4 para torná-lo compatível com navegadores da web da área de trabalho e de dispositivos móveis diferentes. Você também aprenderá sobre novo receitas de código para geração de código e como o ASP.NET MVC 4 torna mais fácil para gravar os métodos de ação assíncrono com o suporte à tarefa&lt;ActionResult&gt; tipos de retorno.
-> 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
+[Baixar o Kit de treinamento de Camps de Web](https://aka.ms/webcamps-training-kit)
 
+ASP.NET MVC 4 é uma estrutura para criar aplicativos web escalonável, baseado em padrões usando padrões de design bem estabelecidos e o poder do ASP.NET e o .NET framework. Essa nova quarta versão do framework enfoca facilita o desenvolvimento de aplicativos web móvel.
 
-<a id="Objectives"></a>
+Em primeiro lugar, quando você cria um novo projeto ASP.NET MVC 4 é agora um modelo de projeto de aplicativo móvel que você pode usar para compilar um aplicativo autônomo especificamente para dispositivos móveis. Além disso, ASP.NET MVC 4 integra-se com o jQuery Mobile por meio de um pacote jQuery.Mobile.MVC NuGet. o jQuery Mobile é uma estrutura baseada em HTML5 para o desenvolvimento de aplicativos web que são compatíveis com todas as plataformas de dispositivo móvel popular, incluindo Windows Phone, iPhone, Android e assim por diante. No entanto, se você precisar de especialização, ASP.NET MVC 4 também permite que você atender a diferentes modos de exibição para diferentes dispositivos e fornecer otimizações específicas do dispositivo.
+
+Este laboratório prático, você iniciará com o ASP.NET MVC 4 &quot;aplicativo de Internet&quot; modelo de projeto para criar um aplicativo da Galeria de fotos. Você aprimorará progressivamente o aplicativo usando o jQuery Mobile e recursos novos do ASP.NET MVC 4 para torná-lo compatível com navegadores da web da área de trabalho e de dispositivos móveis diferentes. Você também aprenderá sobre novo receitas de código para geração de código e como o ASP.NET MVC 4 torna mais fácil para gravar os métodos de ação assíncrono com o suporte à tarefa&lt;ActionResult&gt; tipos de retorno.
+
+> [!NOTE]
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [versões Microsoft-Web/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). O projeto específico para este laboratório está disponível em [o que há de novo no Web Forms no ASP.NET 4.5](https://github.com/Microsoft-Web/HOL-ASPNETWebForms).
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Objetivos
@@ -146,7 +144,7 @@ Neste exercício, você irá explorar os aprimoramentos nos modelos de projeto d
 
     ![jQuery validação](whats-new-in-aspnet-mvc-4/_static/image6.png)
 
-    *jQuery validação*
+    jQuery validação
 
     > [!NOTE]
     > Observe que os dois logon nas seções, a primeira seção você pode fazer logon usando uma conta de marca do site e a segunda seção que pode altenativelly logon usando outro serviço de autenticação com o google (desabilitado por padrão).
@@ -164,7 +162,7 @@ Neste exercício, você irá explorar os aprimoramentos nos modelos de projeto d
 
     ![Selecionar o log no serviço](whats-new-in-aspnet-mvc-4/_static/image7.png)
 
-    *Selecionar o log no serviço*
+    Selecionar o log no serviço
 10. Faça logon usando a conta do Google.
 11. Permitir que o site (localhost) recuperar informações de conta do Google.
 12. Por fim, você terá que registrar no site para associar a conta do Google.
@@ -258,9 +256,9 @@ Usando a técnica de renderização adaptável, o site será **exibido corretame
 
 Exemplos de consultas de mídia: &gt;  **@media todas as e (largura máxima: 1000px) e (largura mínima: 700px) {}:** para todas as resoluções entre 700px e 1000px.
 
-> **@mediatela e (largura mínima: 400px) e (largura máxima: 700px) {...}:** somente para telas. A resolução deve ficar entre 400 e 700px.
+> **@media tela e (largura mínima: 400px) e (largura máxima: 700px) {...}:** somente para telas. A resolução deve ficar entre 400 e 700px.
 > 
-> **@mediaportáteis e (largura mínima: 20em), tela e (largura mínima: 20em) {...}:** para telas e portáteis (móvel e dispositivos). A largura mínima deve ser maior que 20em.
+> **@media portáteis e (largura mínima: 20em), tela e (largura mínima: 20em) {...}:** para telas e portáteis (móvel e dispositivos). A largura mínima deve ser maior que 20em.
 > 
 > Você pode encontrar mais informações sobre isso no [site do W3C](http://www.w3.org/TR/css3-mediaqueries/).
 

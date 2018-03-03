@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: 8aac6c649b22dc8f6cfc916aa78d56efad7821a0
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 7f08e155491b56933ae183818e9b9ee562ad8286
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrando manipuladores HTTP e módulos ASP.NET Core middleware 
 
@@ -91,13 +91,13 @@ Observe como na imagem acima, o middleware de autenticação curto-circuito a so
 
 Um módulo HTTP existente será semelhante a este:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
 
 Conforme mostrado no [Middleware](xref:fundamentals/middleware/index) página, um middleware ASP.NET Core é uma classe que expõe um `Invoke` colocando método um `HttpContext` e retornar um `Task`. Seu novo middleware será assim:
 
 <a name="http-modules-usemiddleware"></a>
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
 O modelo de middleware anterior foi obtido da seção de [gravar middleware](xref:fundamentals/middleware/index#middleware-writing-middleware).
 
@@ -107,11 +107,11 @@ O *MyMiddlewareExtensions* classe auxiliar torna mais fácil de configurar o mid
 
 O módulo pode encerrar uma solicitação, por exemplo, se o usuário não autorizado:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 
 Um middleware lida com isso chamando não `Invoke` no próximo middleware no pipeline. Tenha em mente que isso não totalmente encerra a solicitação, pois middlewares anterior ainda será invocado quando a resposta torna sua maneira novamente por meio do pipeline.
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
 Ao migrar a funcionalidade do módulo para o seu middleware de novo, você pode achar que seu código não compilado porque o `HttpContext` classe tiverem sido alterados significativamente no núcleo do ASP.NET. [Mais tarde](#migrating-to-the-new-httpcontext), você verá como migrar para o ASP.NET Core HttpContext novo.
 
@@ -119,11 +119,11 @@ Ao migrar a funcionalidade do módulo para o seu middleware de novo, você pode 
 
 Módulos HTTP normalmente são adicionados ao pipeline de solicitação usando *Web. config*:
 
-[!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
+[!code-xml[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
 
 Converter isso por [adicionando seu novo middleware](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder) para o pipeline de solicitação no seu `Startup` classe:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
 
 Ponto no pipeline, em que você insere seu novo middleware exato depende do evento que ela tratada como um módulo (`BeginRequest`, `EndRequest`, etc.) e sua ordem na lista de módulos em *Web. config*.
 
@@ -135,11 +135,11 @@ Se ordenação se torna um problema, você pode dividir seu módulo em vários c
 
 Um manipulador HTTP parecida com esta:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/HttpHandlers/ReportHandler.cs?highlight=5,7,13,14,15,16)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/HttpHandlers/ReportHandler.cs?highlight=5,7,13,14,15,16)]
 
 No seu projeto do ASP.NET Core, isso pode ser traduzido para um middleware semelhante a este:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/ReportHandlerMiddleware.cs?highlight=7,9,13,20,21,22,23,40,42,44)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/ReportHandlerMiddleware.cs?highlight=7,9,13,20,21,22,23,40,42,44)]
 
 Este middleware é muito semelhante para o middleware correspondente a módulos. A única diferença é que não há aqui nenhuma chamada para `_next.Invoke(context)`. Isso faz sentido, porque o manipulador não é no final do pipeline de solicitação, que será a nenhum próximo middleware para invocar.
 
@@ -147,15 +147,15 @@ Este middleware é muito semelhante para o middleware correspondente a módulos.
 
 Configurar um manipulador HTTP é feita em *Web. config* e tem a seguinte aparência:
 
-[!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32,46-48,50,101)]
+[!code-xml[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32,46-48,50,101)]
 
 Você pode convertê-lo adicionando seu novo middleware de manipulador para o pipeline de solicitação no seu `Startup` classe, semelhante ao middleware convertido de módulos. O problema com essa abordagem é que ele poderia enviar todas as solicitações para seu novo middleware de manipulador. No entanto, você precisará apenas solicitações com uma determinada extensão para alcançar seu middleware. Essa seria a mesma funcionalidade que tinha com o manipulador HTTP.
 
 Uma solução é ramificar o pipeline de solicitações com uma determinada extensão, usando o `MapWhen` método de extensão. Você pode fazer isso no mesmo `Configure` método em que você adiciona o middleware outros:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=27-34)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=27-34)]
 
-`MapWhen`usa esses parâmetros:
+`MapWhen` usa esses parâmetros:
 
 1. Uma expressão lambda que usa o `HttpContext` e retorna `true` se a solicitação deve ir para a ramificação. Isso significa que você pode se ramificar solicitações não apenas com base em sua extensão, mas também em cabeçalhos de solicitação, parâmetros de cadeia de caracteres de consulta, etc.
 
@@ -175,13 +175,13 @@ O novo [sistema de configuração](xref:fundamentals/configuration/index) oferec
 
 1.  Crie uma classe para manter suas opções de middleware, por exemplo:
 
-    [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
+    [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
 
 2.  Armazenar os valores de opção
 
     O sistema de configuração permite que você armazene valores de opção em qualquer local desejado. No entanto, a maioria dos locais use *appSettings. JSON*, portanto, vamos essa abordagem:
 
-    [!code-json[Main](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
+    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
 
     *MyMiddlewareOptionsSection* aqui é um nome de seção. Ele não precisa ser igual ao nome da sua classe de opções.
 
@@ -193,19 +193,19 @@ O novo [sistema de configuração](xref:fundamentals/configuration/index) oferec
 
     1.  Se você estiver usando *appSettings. JSON*, adicioná-lo para o construtor de configuração no `Startup` construtor:
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
 
     2.  Configure o serviço de opções:
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
 
     3.  Associe as opções de sua classe de opções:
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
 
 4.  Inserir as opções para o construtor de middleware. Isso é semelhante a injeção de opções em um controlador.
 
-  [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
+  [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
 
   O [UseMiddleware](#http-modules-usemiddleware) método de extensão que adiciona o middleware para o `IApplicationBuilder` cuida de injeção de dependência.
 
@@ -223,15 +223,15 @@ A solução é obter os objetos de opções com os valores de opções reais no 
 
     Para adicionar um segundo conjunto de opções para o *appSettings. JSON* de arquivo, use uma nova chave para identificá-lo exclusivamente:
 
-    [!code-json[Main](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
+    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
 
 2.  Recuperar valores de opções e os transmite para o middleware. O `Use...` método de extensão (o que adiciona o middleware no pipeline) é um local lógico para transmitir os valores de opção: 
 
-    [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
+    [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
 
 4.  Habilite middleware para utilizar um parâmetro de opções. Forneça uma sobrecarga do `Use...` método de extensão (que usa o parâmetro options e passá-lo para `UseMiddleware`). Quando `UseMiddleware` é chamado com parâmetros, ele passa os parâmetros para o construtor de middleware quando ele cria uma instância do objeto de middleware.
 
-    [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
+    [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
 
     Observe como isso encapsula o objeto de opções em um `OptionsWrapper` objeto. Isso implementa `IOptions`, conforme o esperado pelo construtor de middleware.
 
@@ -243,76 +243,76 @@ Anteriormente, você viu que o `Invoke` método no seu middleware usa um parâme
 public async Task Invoke(HttpContext context)
 ```
 
-`HttpContext`foi alterado significativamente no núcleo do ASP.NET. Esta seção mostra como converter as propriedades mais usadas de [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) para o novo `Microsoft.AspNetCore.Http.HttpContext`.
+`HttpContext` foi alterado significativamente no núcleo do ASP.NET. Esta seção mostra como converter as propriedades mais usadas de [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) para o novo `Microsoft.AspNetCore.Http.HttpContext`.
 
 ### <a name="httpcontext"></a>HttpContext
 
 **HttpContext** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Items)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Items)]
 
 **ID da solicitação exclusiva (nenhum equivalente System.Web.HttpContext)**
 
 Fornece uma id exclusiva para cada solicitação. Muito útil para incluir nos logs.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Trace)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Trace)]
 
 ### <a name="httpcontextrequest"></a>HttpContext.Request
 
 **HttpContext.Request.HttpMethod** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Method)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Method)]
 
 **HttpContext.Request.QueryString** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Query)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Query)]
 
 **HttpContext.Request.Url** e **HttpContext.Request.RawUrl** traduzir para:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Url)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Url)]
 
 **HttpContext.Request.IsSecureConnection** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Secure)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Secure)]
 
 **HttpContext.Request.UserHostAddress** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Host)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Host)]
 
 **HttpContext.Request.Cookies** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
 
 **HttpContext.Request.RequestContext.RouteData** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
 
 **HttpContext.Request.Headers** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Headers)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Headers)]
 
 **HttpContext.Request.UserAgent** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
 
 **HttpContext.Request.UrlReferrer** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
 
 **HttpContext.Request.ContentType** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Type)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Type)]
 
 **HttpContext.Request.Form** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Form)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Form)]
 
 > [!WARNING]
 > Valores de formulário de leitura somente se o tipo de conteúdo sub é *x-www-form-urlencoded* ou *dados do formulário*.
 
 **HttpContext.Request.InputStream** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Input)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Input)]
 
 > [!WARNING]
 > Use esse código somente em um middleware de tipo de manipulador, no final de um pipeline.
@@ -325,19 +325,19 @@ Fornece uma id exclusiva para cada solicitação. Muito útil para incluir nos l
 
 **HttpContext.Response.Status** e **HttpContext.Response.StatusDescription** traduzir para:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Status)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Status)]
 
 **HttpContext.Response.ContentEncoding** e **HttpContext.Response.ContentType** traduzir para:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespType)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespType)]
 
 **HttpContext.Response.ContentType** em seu próprio também se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespTypeOnly)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespTypeOnly)]
 
 **HttpContext.Response.Output** se traduz em:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Output)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Output)]
 
 **HttpContext.Response.TransmitFile**
 
@@ -360,7 +360,7 @@ public async Task Invoke(HttpContext httpContext)
 
 O `SetHeaders` método de retorno de chamada terá esta aparência:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetHeaders)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetHeaders)]
 
 **HttpContext.Response.Cookies**
 
@@ -376,7 +376,7 @@ public async Task Invoke(HttpContext httpContext)
 
 O `SetCookies` método de retorno de chamada deve ser semelhante ao seguinte:
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetCookies)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetCookies)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
