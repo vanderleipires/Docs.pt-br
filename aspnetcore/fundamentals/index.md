@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 85d3eaf033eafbd24c71110ccd7f21ffcc8b0c82
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: be37df7789354ac4ce8e373a1560366be157ffa5
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
@@ -22,7 +22,7 @@ Um aplicativo ASP.NET Core é um aplicativo de console que cria um servidor Web 
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](../getting-started/sample/aspnetcoreapp/Program2x.cs)]
+[!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs)]
 
 O método `Main` invoca `WebHost.CreateDefaultBuilder`, que segue o padrão de construtor para criar um host de aplicativo Web. O construtor tem métodos que definem o servidor Web (por exemplo, `UseKestrel`) e a classe de inicialização (`UseStartup`). No exemplo anterior, o servidor Web [Kestrel](xref:fundamentals/servers/kestrel) é alocado automaticamente. O host Web do ASP.NET Core tenta executar no IIS, se disponível. Outros servidores Web como [HTTP.sys](xref:fundamentals/servers/httpsys) podem ser usados ao chamar o método de extensão apropriado. `UseStartup` é explicado em mais detalhes na próxima seção.
 
@@ -30,7 +30,7 @@ O método `Main` invoca `WebHost.CreateDefaultBuilder`, que segue o padrão de c
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](../getting-started/sample/aspnetcoreapp/Program.cs)]
+[!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs)]
 
 O método `Main` usa `WebHostBuilder`, que segue o padrão de construtor para criar um host de aplicativo Web. O construtor tem métodos que definem o servidor Web (por exemplo, `UseKestrel`) e a classe de inicialização (`UseStartup`). No exemplo anterior, o servidor Web [Kestrel](xref:fundamentals/servers/kestrel) é usado. Outros servidores Web como [WebListener](xref:fundamentals/servers/weblistener) podem ser usados ao chamar o método de extensão apropriado. `UseStartup` é explicado em mais detalhes na próxima seção.
 
@@ -44,11 +44,11 @@ O método `UseStartup` em `WebHostBuilder` especifica a classe `Startup` para se
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](../getting-started/sample/aspnetcoreapp/Program2x.cs?highlight=10&range=6-17)]
+[!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs?highlight=10&range=6-17)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](../getting-started/sample/aspnetcoreapp/Program.cs?highlight=7&range=6-17)]
+[!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs?highlight=7&range=6-17)]
 
 ---
 
