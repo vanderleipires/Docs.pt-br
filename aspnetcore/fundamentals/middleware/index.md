@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 158f11875f22f8f9dba6f7f109123717b9da8d18
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 5d236c79120d79195c1970cc87d164002b56d0f1
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-middleware"></a>Middleware do ASP.NET Core
 
@@ -44,13 +44,13 @@ Cada delegado pode executar operações antes e depois do próximo delegado. Um 
 
 O aplicativo ASP.NET Core mais simples possível define um delegado de solicitação única que controla todas as solicitações. Este caso não inclui um pipeline de solicitação real. Em vez disso, uma única função anônima é chamada em resposta a cada solicitação HTTP.
 
-[!code-csharp[Main](index/sample/Middleware/Startup.cs)]
+[!code-csharp[](index/sample/Middleware/Startup.cs)]
 
 O primeiro delegado [app.Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) encerra o pipeline.
 
 É possível encadear vários delegados de solicitação junto com o [app.Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions). O parâmetro `next` representa o próximo delegado no pipeline. (Lembre-se de que você pode ligar o pipeline em curto-circuito ao *não* chamar o *próximo* parâmetro.) Normalmente, você pode executar ações antes e depois do próximo delegado, conforme este exemplo demonstra:
 
-[!code-csharp[Main](index/sample/Chain/Startup.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/Startup.cs?name=snippet1)]
 
 >[!WARNING]
 > Não chame `next.Invoke` depois que a resposta tiver sido enviada ao cliente. Altera para `HttpResponse` depois que a resposta foi iniciada e lançará uma exceção. Por exemplo, mudanças como a configuração de cabeçalhos, o código de status, etc., lançarão uma exceção. Gravar no corpo da resposta após a chamada `next`:
@@ -142,7 +142,7 @@ Você pode configurar o pipeline de HTTP usando `Use`, `Run` e `Map`. O método 
 
 As extensões `Map*` são usadas como uma convenção de ramificação do pipeline. [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) ramifica o pipeline de solicitação com base na correspondência do caminho da solicitação em questão. Se o caminho da solicitação iniciar com o caminho especificado, o branch será executado.
 
-[!code-csharp[Main](index/sample/Chain/StartupMap.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/StartupMap.cs?name=snippet1)]
 
 A tabela a seguir mostra as solicitações e as respostas de `http://localhost:1234` usando o código anterior:
 
@@ -157,7 +157,7 @@ Quando `Map` é usado, os segmentos de caminho correspondentes são removidos do
 
 [MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions) ramifica o pipeline de solicitação com base no resultado do predicado em questão. Qualquer predicado do tipo `Func<HttpContext, bool>` pode ser usado para mapear as solicitações para um novo branch do pipeline. No exemplo a seguir, um predicado é usado para detectar a presença de uma variável de cadeia de caracteres de consulta `branch`:
 
-[!code-csharp[Main](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
 A tabela a seguir mostra as solicitações e as respostas de `http://localhost:1234` usando o código anterior:
 
@@ -212,7 +212,7 @@ O ASP.NET Core é fornecido com os componentes de middleware a seguir, bem como 
 
 O middleware geralmente é encapsulado em uma classe e exposto com um método de extensão. Considere o middleware a seguir, que define a cultura para a solicitação atual da cadeia de caracteres de consulta:
 
-[!code-csharp[Main](index/sample/Culture/StartupCulture.cs?name=snippet1)]
+[!code-csharp[](index/sample/Culture/StartupCulture.cs?name=snippet1)]
 
 Observação: o código de exemplo acima é usado para demonstrar a criação de um componente de middleware. Consulte [ Globalização e localização](xref:fundamentals/localization) para obter suporte de localização interna do ASP.NET Core.
 
@@ -220,15 +220,15 @@ Você pode testar o middleware ao transmitir a cultura, por exemplo `http://loca
 
 O código a seguir move o delegado de middleware para uma classe:
 
-[!code-csharp[Main](index/sample/Culture/RequestCultureMiddleware.cs)]
+[!code-csharp[](index/sample/Culture/RequestCultureMiddleware.cs)]
 
 O seguinte método de extensão expõe o middleware por meio do [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder):
 
-[!code-csharp[Main](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
+[!code-csharp[](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
 O código a seguir chama o middleware de `Configure`:
 
-[!code-csharp[Main](index/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
+[!code-csharp[](index/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
 
 O middleware deve seguir o [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/) ao expor suas dependências em seu construtor. O middleware é construído uma vez por *tempo de vida do aplicativo*. Consulte a seção *Dependências por solicitação* abaixo se você precisar compartilhar serviços com middleware dentro de uma solicitação.
 
@@ -262,4 +262,4 @@ public class MyMiddleware
 * [Inicialização de aplicativos](xref:fundamentals/startup)
 * [Recursos de solicitação](xref:fundamentals/request-features)
 * [Ativação de middleware de fábrica](xref:fundamentals/middleware/extensibility)
-* [Ativação de middleware baseada em fábrica com um contêiner de terceiros](xref:fundamentals/middleware/extensibility-third-party-container)
+* [Ativação de middleware com um contêiner de terceiros](xref:fundamentals/middleware/extensibility-third-party-container)

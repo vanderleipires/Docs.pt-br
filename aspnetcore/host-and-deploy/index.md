@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/index
-ms.openlocfilehash: 7d8ba912da4c0e543bd4dd56632cdc41706814d1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: baa77eba837ff8b86ad543a74ebeee51ace4c25d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-and-deploy-aspnet-core"></a>Hospedar e implantar o ASP.NET Core
 
@@ -26,7 +26,7 @@ Em geral, implantar um aplicativo ASP.NET Core em um ambiente de hospedagem:
 
 ## <a name="publish-to-a-folder"></a>Publicar em uma pasta 
 
-O comando [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) da CLI compila o código do aplicativo e copia os arquivos necessários para executar o aplicativo em uma pasta *publish*. Ao implantar do Visual Studio, a etapa `dotnet publish` é executada automaticamente antes de os arquivos serem copiados para o destino da implantação.
+O comando [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) da CLI compila o código do aplicativo e copia os arquivos necessários para executar o aplicativo em uma pasta *publish*. Ao implantar usando o Visual Studio, a etapa [dotnet publish](/dotnet/core/tools/dotnet-publish) é executada automaticamente antes de os arquivos serem copiados para o destino da implantação.
 
 ### <a name="folder-contents"></a>Conteúdo da pasta
 
@@ -61,7 +61,7 @@ Se o aplicativo usar o servidor Web [Kestrel](xref:fundamentals/servers/kestrel)
 
 ## <a name="using-visual-studio-and-msbuild-to-automate-deployment"></a>Usando o Visual Studio e o MSBuild para automatizar a implantação
 
-A implantação muitas vezes requer tarefas adicionais além de copiar a saída do `dotnet publish` para um servidor. Por exemplo, arquivos extras podem ser necessários ou excluídos da pasta *publish*. O MSBuild, que é usado pelo Visual Studio para implantação da Web, pode ser personalizado para fazer muitas outras tarefas durante a implantação. Para obter mais informações, consulte [Perfis de publicação no Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) e o livro [Usando MSBuild e o Team Foundation Build](http://msbuildbook.com/).
+A implantação muitas vezes requer tarefas adicionais além de copiar a saída da [dotnet publish](/dotnet/core/tools/dotnet-publish) para um servidor. Por exemplo, arquivos extras podem ser necessários ou excluídos da pasta *publish*. O MSBuild, que é usado pelo Visual Studio para implantação da Web, pode ser personalizado para fazer muitas outras tarefas durante a implantação. Para obter mais informações, consulte [Perfis de publicação no Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) e o livro [Usando MSBuild e o Team Foundation Build](http://msbuildbook.com/).
 
 Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo do Azure usando [o recurso Publicar na Web](xref:tutorials/publish-to-azure-webapp-using-vs) ou usando o [suporte ao Git interno](xref:host-and-deploy/azure-apps/azure-continuous-deployment). O Visual Studio Team Services dá suporte à [implantação contínua para o Serviço de Aplicativo do Azure](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts).
 

@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/index
-ms.openlocfilehash: e1aaae09fe69e6b65a917785b436f927fac5345d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7e5f6bc44241dc6fc11569a145a04340f1b3ee7f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-security-overview"></a>Visão geral sobre segurança do ASP.NET Core
 
-O ASP.NET Core permite que desenvolvedores configurem e gerenciem facilmente a segurança de seus aplicativos. O ASP.NET Core contém recursos para gerenciamento de autenticação, autorização, proteção de dados, imposição de SSL, segredos de aplicativo, proteção contra falsificação de solicitação e gerenciamento de CORS. Esses recursos de segurança permitem que você crie aplicativos de ASP.NET Core robustos e seguros ao mesmo tempo. 
+O ASP.NET Core permite que desenvolvedores configurem e gerenciem facilmente a segurança de seus aplicativos. O ASP.NET Core contém recursos para gerenciamento de autenticação, autorização, proteção de dados, imposição de SSL, segredos de aplicativo, proteção contra falsificação de solicitação e gerenciamento de CORS. Esses recursos de segurança permitem que você crie aplicativos de ASP.NET Core robustos e seguros ao mesmo tempo.
 
 ## <a name="aspnet-core-security-features"></a>Recursos de segurança do ASP.NET Core
 
-O ASP.NET Core fornece várias ferramentas e bibliotecas para proteger seus aplicativos, incluindo provedores de identidade internos, mas você pode usar serviços de identidade de terceiros, como Facebook, Twitter e LinkedIn. Com o ASP.NET Core, você pode gerenciar facilmente os segredos do aplicativo, que são uma maneira de armazenar e usar informações confidenciais sem a necessidade de expô-los no código. 
+O ASP.NET Core fornece várias ferramentas e bibliotecas para proteger seus aplicativos, incluindo provedores de identidade internos, mas você pode usar serviços de identidade de terceiros, como Facebook, Twitter e LinkedIn. Com o ASP.NET Core, você pode gerenciar facilmente os segredos do aplicativo, que são uma maneira de armazenar e usar informações confidenciais sem a necessidade de expô-los no código.
 
 ## <a name="authentication-vs-authorization"></a>Autenticação versus Autorização
 
-A autenticação é um processo em que um usuário fornece credenciais que são comparadas àquelas armazenadas em um sistema operacional, num banco de dados, no aplicativo ou no recurso. Se elas corresponderem, os usuários se autenticarão com êxito e, assim, poderão realizar ações para as quais são autorizados, durante um processo de autorização. A autorização é o processo que determina o que um usuário pode fazer. 
+A autenticação é um processo em que um usuário fornece credenciais que são comparadas àquelas armazenadas em um sistema operacional, num banco de dados, no aplicativo ou no recurso. Se elas corresponderem, os usuários se autenticarão com êxito e, assim, poderão realizar ações para as quais são autorizados, durante um processo de autorização. A autorização é o processo que determina o que um usuário pode fazer.
 
 Outra forma de pensar na autenticação é considerá-la como uma maneira de entrar em um espaço, como um servidor, um banco de dados, um aplicativo ou um recurso, ao passo que a autorização refere-se a quais ações o usuário poderá executar em que objetos dentro desse espaço (servidor, banco de dados ou aplicativo).
 
@@ -38,16 +38,17 @@ O ASP.NET Core e o EF contêm recursos que ajudam a proteger seus aplicativos e 
 * [CSRF (solicitação intersite forjada)](https://docs.microsoft.com/aspnet/core/security/anti-request-forgery)
 * [Ataques de redirecionamento aberto](https://docs.microsoft.com/aspnet/core/security/preventing-open-redirects)
 
-Há mais vulnerabilidades sobre as quais você deve estar atento. Para obter mais informações, consulte a seção neste documento em *Documentação de segurança do ASP.NET*. 
+Há mais vulnerabilidades sobre as quais você deve estar atento. Para obter mais informações, consulte a seção neste documento em *Documentação de segurança do ASP.NET*.
 
 ## <a name="aspnet-security-documentation"></a>Documentação de segurança do ASP.NET
 
 *   [Autenticação](authentication/index.md)
     *   [Introdução ao Identity](authentication/identity.md)
     *   [Habilitar a autenticação usando o Facebook, o Google e outros provedores externos](authentication/social/index.md)
+    *   [Habilitar a autenticação com o Web Services Federation](authentication/ws-federation.md)
     * [Configurar a Autenticação do Windows](authentication/windowsauth.md)
     *   [Confirmação de conta e recuperação de senha](authentication/accconfirm.md)
-    *   [Autenticação de dois fatores com SMS](authentication/2fa.md) 
+    *   [Autenticação de dois fatores com SMS](authentication/2fa.md)
     *   [Usar a autenticação de cookie sem o Identity](authentication/cookie.md)
     *   [Azure Active Directory](authentication/azure-active-directory/index.md)
         *   [Integrar o Azure AD em um aplicativo Web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)

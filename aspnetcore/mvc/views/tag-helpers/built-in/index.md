@@ -9,15 +9,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 09024bf0d6c87fce9eba9b70bebefa11d2ff0a44
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1d086bc0bc210fe19dda34d13008a49d48801607
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
-Por [Peter Kellner](http://peterkellner.net) 
+Por [Peter Kellner](http://peterkellner.net)
 
 O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar sua produtividade. Esta seção fornece uma visão geral dos auxiliares de marcação internos.
 
@@ -50,6 +50,8 @@ O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar s
 
 [comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/script-tag-helper)**
 
+**[Auxiliar de marcação parcial](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)**
+
 **[Selecionar o auxiliar de marcação](xref:mvc/views/working-with-forms#the-select-tag-helper)**
 
 **[Auxiliar de marcação de área de texto](xref:mvc/views/working-with-forms#the-textarea-tag-helper)**
@@ -60,5 +62,5 @@ O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar s
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Desenvolvimento no Lado do Cliente](xref:client-side/index)
+* [Desenvolvimento do lado do cliente](xref:client-side/index)
 * [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
