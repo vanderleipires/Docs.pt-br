@@ -58,7 +58,7 @@
 
 ## [Tutoriais de plataforma cruzada](xref:tutorials/xplat)
 ### [Aplicativo Web de Páginas Razor em um Mac](xref:tutorials/razor-pages-mac/index)
-#### [Introdução a Páginas do Razor](xref:tutorials/razor-pages-mac/razor-pages-start)
+#### [Começando com Páginas do Razor](xref:tutorials/razor-pages-mac/razor-pages-start)
 #### [Adicionando um modelo](xref:tutorials/razor-pages-mac/model)
 #### [Páginas do Razor geradas por scaffolding](xref:tutorials/razor-pages-mac/page)
 #### [Trabalhando com o SQLite](xref:tutorials/razor-pages-mac/sql)
@@ -66,7 +66,7 @@
 #### [Adicionar pesquisa](xref:tutorials/razor-pages-mac/search)
 
 ### [Aplicativo Web de Páginas Razor com o VSCode](xref:tutorials/razor-pages-vsc/index)
-#### [Introdução a Páginas do Razor](xref:tutorials/razor-pages-vsc/razor-pages-start)
+#### [Começando com Páginas do Razor](xref:tutorials/razor-pages-vsc/razor-pages-start)
 #### [Adicionando um modelo](xref:tutorials/razor-pages-vsc/model)
 #### [Páginas do Razor geradas por scaffolding](xref:tutorials/razor-pages-vsc/page)
 #### [Trabalhando com o SQLite](xref:tutorials/razor-pages-vsc/sql)
@@ -157,6 +157,7 @@
 ##### [Auxiliar de marca de cache distribuído](mvc/views/tag-helpers/built-in/distributed-cache-tag-helper.md)
 ##### [Auxiliar de marcação de ambiente](mvc/views/tag-helpers/built-in/environment-tag-helper.md)
 ##### [Auxiliar de marcação de imagem](mvc/views/tag-helpers/built-in/image-tag-helper.md)
+##### [Auxiliar de marcação parcial](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)
 ### [Exibições parciais](mvc/views/partial.md)
 ### [Injeção de dependência em exibições](mvc/views/dependency-injection.md)
 ### [Exibir componentes](mvc/views/view-components.md)
@@ -250,6 +251,7 @@
 #### [Autenticação do Google](xref:security/authentication/google-logins)
 #### [Autenticação da Microsoft](xref:security/authentication/microsoft-logins)
 #### [Outros provedores de autenticação](xref:security/authentication/otherlogins)
+### [Autenticação de Web Services Federation](xref:security/authentication/ws-federation)
 ### [Confirmação de conta e recuperação de senha](xref:security/authentication/accconfirm)
 ### [Habilitar a geração de código QR no Identity](xref:security/authentication/identity-enable-qrcodes)
 ### [Autenticação de dois fatores com SMS](xref:security/authentication/2fa)
