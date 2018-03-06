@@ -19,7 +19,7 @@ ms.lasthandoff: 02/20/2018
 
 <a name="security-authorization-introduction"></a>
 
-Autorização é o processo que determina o que um usuário é capaz de fazer. Por exemplo, um usuário administrativo tem permissão para criar uma biblioteca de documentos, adiciona-los, edita-los e excluí-los. Um usuário não administrativo trabalhando com esta biblioteca só está autorizado a ler os documentos.
+Autorização é o processo que determina o que um usuário pode fazer. Por exemplo, um usuário administrativo tem permissão para criar uma biblioteca de documentos e adicionar, editar e excluir documentos. Um usuário não administrativo trabalhando com esta biblioteca só está autorizado a ler os documentos.
 
 A autorização é ortogonal e independente de autenticação, que é o processo de verificação de quem é o usuário. A autenticação pode criar uma ou mais identidades para o usuário atual.
 
