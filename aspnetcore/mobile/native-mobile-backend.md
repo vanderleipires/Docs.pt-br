@@ -23,7 +23,7 @@ Os aplicativos móveis podem se comunicar com facilidade com os serviços de bac
 
 [Exibir ou baixar o código de exemplo dos serviços de back-end](https://github.com/aspnet/Docs/tree/master/aspnetcore/mobile/native-mobile-backend/sample)
 
-## <a name="the-sample-native-mobile-app"></a>Exemplo do aplicativo móvel nativo 
+## <a name="the-sample-native-mobile-app"></a>Exemplo do aplicativo móvel nativo
 
 Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativos. Ele usa o [aplicativo Xamarin Forms ToDoRest](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Siga o tutorial com links para criar o aplicativo nativo (e instale as ferramentas do Xamarin gratuitas necessárias), além de baixar a solução de exemplo do Xamarin. A amostra do Xamarin inclui um projeto de serviços da API Web ASP.NET 2, que substitui o aplicativo ASP.NET Core deste artigo (sem nenhuma alteração exigida pelo cliente).
 
@@ -85,7 +85,7 @@ Configure a implementação em *Startup.cs*:
 Neste ponto, você está pronto para criar o *ToDoItemsController*.
 
 > [!TIP]
-> Saiba mais sobre como criar APIs da Web em [criando sua primeira API da Web com ASP.NET Core MVC e Visual Studio](../tutorials/first-web-api.md).
+> Saiba mais sobre como criar APIs Web em [Criando sua primeira API Web com ASP.NET Core MVC e Visual Studio](../tutorials/first-web-api.md).
 
 ## <a name="creating-the-controller"></a>Criando o controlador
 
@@ -99,13 +99,13 @@ Essa API é compatível com quatro verbos HTTP diferentes para executar operaç�
 
 ### <a name="reading-items"></a>Lendo itens
 
-A solicitação de uma lista de itens é feita com uma solicitação GET ao método `List`. O atributo `[HttpGet]` no método `List` indica que esta ação só deve lidar com as solicitações GET A rota para esta ação é a rota especificada no controlador. Você não precisa necessariamente usar o nome da ação como parte da rota. Você precisa garantir que cada ação tem uma rota exclusiva e não ambígua. Os atributos de roteamento podem ser aplicados nos níveis de método e controlador para criar rotas específicas.
+A solicitação de uma lista de itens é feita com uma solicitação GET ao método `List`. O atributo `[HttpGet]` no método `List` indica que esta ação só deve lidar com as solicitações GET. A rota para esta ação é a rota especificada no controlador. Você não precisa necessariamente usar o nome da ação como parte da rota. Você precisa garantir que cada ação tem uma rota exclusiva e não ambígua. Os atributos de roteamento podem ser aplicados nos níveis de método e controlador para criar rotas específicas.
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
 
 O método `List` retorna um código de resposta OK 200 e todos os itens de tarefas, serializados como JSON.
 
-Você pode testar o novo método de API usando uma variedade de ferramentas, como [Postman](https://www.getpostman.com/docs/), conforme mostrado aqui:
+Você pode testar o novo método de API usando uma variedade de ferramentas, como [Postman](https://www.getpostman.com/docs/). Veja abaixo:
 
 ![Console Postman mostrando uma solicitação GET para todoitems e corpo da resposta mostrando JSON para três itens retornados](native-mobile-backend/_static/postman-get.png)
 
@@ -121,7 +121,7 @@ A amostra usa uma enumeração que contém códigos de erro que são passados pa
 
 [!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
 
-Teste a adição de novos itens usando Postman escolhendo o verbo POST fornecendo o novo objeto no formato JSON no corpo da solicitação Você também deve adicionar um cabeçalho de solicitação que especifica um `Content-Type` de `application/json`.
+Teste a adição de novos itens usando Postman escolhendo o verbo POST fornecendo o novo objeto no formato JSON no corpo da solicitação. Você também deve adicionar um cabeçalho de solicitação que especifica um `Content-Type` de `application/json`.
 
 ![Console Postman mostrando um POST e resposta](native-mobile-backend/_static/postman-post.png)
 
