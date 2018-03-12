@@ -210,6 +210,9 @@
 ### [Modelo de projeto React](xref:spa/react)
 ### [Modelo de projeto React with Redux](xref:spa/react-with-redux)
 
+# [SignalR](xref:signalr/introduction-signalr-core)
+## [Introdução](xref:signalr/introduction-signalr-core)
+
 # [Dispositivo móvel](xref:mobile/index)
 ## [Criar serviços de back-end para aplicativos móveis nativos](xref:mobile/native-mobile-backend)
 
