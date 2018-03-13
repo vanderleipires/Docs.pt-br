@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7be257faa350476bef9f6d372ea4f140fff8d136
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: dda73ca1878396e04b8ff04a255c25bf26ed4eff
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/12/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>Processamento de exceções sem tratamento (c#)
 ====================
 por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Baixar o código](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_12_CS.zip) ou [baixar PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial12_ErrorHandling_cs.pdf)
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs/samples) ([como baixar](/aspnet/core/tutorials/index#how-to-download-a-sample))
 
 > Quando ocorre um erro de tempo de execução em um aplicativo web na produção é importante para notificar um desenvolvedor e registrar o erro para que ele pode ser diagnosticado posteriormente no tempo. Este tutorial fornece uma visão geral de como o ASP.NET processa os erros de tempo de execução e examina uma maneira de código personalizado executado sempre que um bolhas de exceção sem tratamento até o tempo de execução do ASP.NET.
 
@@ -62,7 +62,7 @@ O `Global.asax` arquivo criado em um WAP pelo modelo de classe de aplicativo Glo
 
 Os manipuladores de eventos criados pelo modelo de classe de aplicativo Global do Visual Studio não são exaustivos. Você pode adicionar um manipulador de eventos para qualquer `HttpApplication` evento nomeando o manipulador de eventos `Application_EventName`. Por exemplo, você pode adicionar o código a seguir para o `Global.asax` para criar um manipulador de eventos para o [ `AuthorizeRequest` evento](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
-[!code-vb[Main](processing-unhandled-exceptions-cs/samples/sample1.vb)]
+[!code-cs[Main](processing-unhandled-exceptions-cs/samples/sample1.cs)]
 
 Da mesma forma, você pode remover qualquer manipuladores de eventos criados pelo modelo de classe de aplicativo Global que não são necessários. Para este tutorial é necessário apenas um manipulador de eventos para o `Error` evento; fique à vontade para remover outros manipuladores de evento do `Global.asax` arquivo.
 
@@ -159,7 +159,7 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 - [Módulos HTTP do ASP.NET e visão geral de manipuladores HTTP](https://support.microsoft.com/kb/307985)
 - [Respondendo normalmente para exceções não tratadas - processar exceções não tratadas](http://aspnet.4guysfromrolla.com/articles/091306-1.aspx)
-- [`HttpApplication`Classe e o objeto de aplicativo do ASP.NET](http://www.eggheadcafe.com/articles/20030211.asp)
+- [`HttpApplication` Classe e o objeto de aplicativo do ASP.NET](http://www.eggheadcafe.com/articles/20030211.asp)
 - [Manipuladores HTTP e módulos HTTP no ASP.NET](http://www.15seconds.com/Issue/020417.htm)
 - [Enviar o Email no ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
 - [Noções básicas sobre o `Global.asax` arquivo](http://aspalliance.com/1114_Understanding_the_Globalasax_file.all)
