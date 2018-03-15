@@ -326,7 +326,7 @@ Nomes de rota podem ser usados para gerar uma URL com base em uma rota específi
 
 ### <a name="combining-routes"></a>Combinando rotas
 
-Para tornar o roteamento de atributo menos repetitivo, os atributos de rota no controlador são combinados com atributos de rota nas ações individuais. Modelos de rota definidos no controlador precedem modelos de rota nas ações. Colocar um atributo de rota no controlador foz com que **todas** as ações no controlador usem o roteamento de atributo.
+Para tornar o roteamento de atributo menos repetitivo, os atributos de rota no controlador são combinados com atributos de rota nas ações individuais. Modelos de rota definidos no controlador precedem modelos de rota nas ações. Colocar um atributo de rota no controlador faz com que **todas** as ações no controlador usem o roteamento de atributo.
 
 ```csharp
 [Route("products")]
