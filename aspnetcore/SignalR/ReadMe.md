@@ -1,1 +1,0 @@
-Essa pasta se para o conteúdo do SignalR. Exclua esse arquivo quando o primeiro arquivo é adicionado a esse diretório.
