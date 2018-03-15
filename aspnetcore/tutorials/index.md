@@ -9,78 +9,81 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="aspnet-core-tutorials"></a><span data-ttu-id="321b5-103">Tutoriais do ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="321b5-103">ASP.NET Core tutorials</span></span>
+# <a name="aspnet-core-tutorials"></a><span data-ttu-id="bc246-103">Tutoriais do ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="bc246-103">ASP.NET Core tutorials</span></span>
 
-<span data-ttu-id="321b5-104">Os seguintes guias passo a passo para desenvolvimento de aplicativos ASP.NET Core estão disponíveis:</span><span class="sxs-lookup"><span data-stu-id="321b5-104">The following step-by-step guides for developing ASP.NET Core applications are available:</span></span>
+<span data-ttu-id="bc246-104">Os seguintes guias passo a passo para desenvolvimento de aplicativos ASP.NET Core estão disponíveis:</span><span class="sxs-lookup"><span data-stu-id="bc246-104">The following step-by-step guides for developing ASP.NET Core applications are available:</span></span>
 
-## <a name="build-web-apps"></a><span data-ttu-id="321b5-105">Criar aplicativos Web</span><span class="sxs-lookup"><span data-stu-id="321b5-105">Build web apps</span></span>
+## <a name="build-web-apps"></a><span data-ttu-id="bc246-105">Criar aplicativos Web</span><span class="sxs-lookup"><span data-stu-id="bc246-105">Build web apps</span></span>
 
-<span data-ttu-id="321b5-106">As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada para criar um novo aplicativo da interface do usuário da Web com o ASP.NET Core 2.0.</span><span class="sxs-lookup"><span data-stu-id="321b5-106">[Razor Pages](xref:mvc/razor-pages/index) is the recommended approach to create a new Web UI app with ASP.NET Core 2.0.</span></span>
+<span data-ttu-id="bc246-106">As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada para criar um novo aplicativo da interface do usuário da Web com o ASP.NET Core 2.0.</span><span class="sxs-lookup"><span data-stu-id="bc246-106">[Razor Pages](xref:mvc/razor-pages/index) is the recommended approach to create a new Web UI app with ASP.NET Core 2.0.</span></span>
 
-* [<span data-ttu-id="321b5-107">Introdução a Páginas do Razor no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="321b5-107">Introduction to Razor Pages in ASP.NET Core</span></span>](xref:mvc/razor-pages/index)
-* <span data-ttu-id="321b5-108">Criar um aplicativo Web de Páginas do Razor com o ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="321b5-108">Create a Razor Pages web app with ASP.NET Core</span></span>
+* [<span data-ttu-id="bc246-107">Introdução a Páginas do Razor no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="bc246-107">Introduction to Razor Pages in ASP.NET Core</span></span>](xref:mvc/razor-pages/index)
+* <span data-ttu-id="bc246-108">Criar um aplicativo Web de Páginas do Razor com o ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="bc246-108">Create a Razor Pages web app with ASP.NET Core</span></span>
 
-   * [<span data-ttu-id="321b5-109">Páginas do Razor no Windows</span><span class="sxs-lookup"><span data-stu-id="321b5-109">Razor Pages on Windows</span></span>](xref:tutorials/razor-pages/index)
-   * [<span data-ttu-id="321b5-110">Páginas do Razor no Mac</span><span class="sxs-lookup"><span data-stu-id="321b5-110">Razor Pages on Mac</span></span>](xref:tutorials/razor-pages-mac/index)
-   * [<span data-ttu-id="321b5-111">Páginas do Razor com o VS Code</span><span class="sxs-lookup"><span data-stu-id="321b5-111">Razor Pages with VS Code</span></span>](xref:tutorials/razor-pages-vsc/index)  
+   * [<span data-ttu-id="bc246-109">Páginas do Razor no Windows</span><span class="sxs-lookup"><span data-stu-id="bc246-109">Razor Pages on Windows</span></span>](xref:tutorials/razor-pages/index)
+   * [<span data-ttu-id="bc246-110">Páginas do Razor no Mac</span><span class="sxs-lookup"><span data-stu-id="bc246-110">Razor Pages on Mac</span></span>](xref:tutorials/razor-pages-mac/index)
+   * [<span data-ttu-id="bc246-111">Páginas do Razor com o VS Code</span><span class="sxs-lookup"><span data-stu-id="bc246-111">Razor Pages with VS Code</span></span>](xref:tutorials/razor-pages-vsc/index)  
 
-* <span data-ttu-id="321b5-112">Criar um aplicativo Web MVC ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="321b5-112">Create an ASP.NET Core MVC web app</span></span>
+* <span data-ttu-id="bc246-112">Criar um aplicativo Web MVC ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="bc246-112">Create an ASP.NET Core MVC web app</span></span>
 
-   * [<span data-ttu-id="321b5-113">Aplicativo Web com o Visual Studio para Windows</span><span class="sxs-lookup"><span data-stu-id="321b5-113">Web app with Visual Studio for Windows</span></span>](first-mvc-app/index.md)
-   * [<span data-ttu-id="321b5-114">Aplicativo Web com o Visual Studio para Mac</span><span class="sxs-lookup"><span data-stu-id="321b5-114">Web app with Visual Studio for Mac</span></span>](first-mvc-app-mac/index.md)
-   * [<span data-ttu-id="321b5-115">Aplicativo Web MVC ASP.NET Core com o Visual Studio Code no Mac ou Linux </span><span class="sxs-lookup"><span data-stu-id="321b5-115">Web app with Visual Studio Code on Mac or Linux</span></span>](first-mvc-app-xplat/index.md)
+   * [<span data-ttu-id="bc246-113">Aplicativo Web com o Visual Studio para Windows</span><span class="sxs-lookup"><span data-stu-id="bc246-113">Web app with Visual Studio for Windows</span></span>](first-mvc-app/index.md)
+   * [<span data-ttu-id="bc246-114">Aplicativo Web com o Visual Studio para Mac</span><span class="sxs-lookup"><span data-stu-id="bc246-114">Web app with Visual Studio for Mac</span></span>](first-mvc-app-mac/index.md)
+   * [<span data-ttu-id="bc246-115">Aplicativo Web MVC ASP.NET Core com o Visual Studio Code no Mac ou Linux </span><span class="sxs-lookup"><span data-stu-id="bc246-115">Web app with Visual Studio Code on Mac or Linux</span></span>](first-mvc-app-xplat/index.md)
 
-* [<span data-ttu-id="321b5-116">Introdução ao ASP.NET Core e ao Entity Framework Core usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="321b5-116">Get started with ASP.NET Core and Entity Framework Core using Visual Studio</span></span>](../data/ef-mvc/index.md)
-* [<span data-ttu-id="321b5-117">Criar auxiliares de marcação</span><span class="sxs-lookup"><span data-stu-id="321b5-117">Create Tag Helpers</span></span>](../mvc/views/tag-helpers/authoring.md)
-* [<span data-ttu-id="321b5-118">Criar um componente de exibição simples</span><span class="sxs-lookup"><span data-stu-id="321b5-118">Create a simple view component</span></span>](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
-* [<span data-ttu-id="321b5-119">Desenvolvendo aplicativos ASP.NET Core usando a inspeção dotnet</span><span class="sxs-lookup"><span data-stu-id="321b5-119">Develop ASP.NET Core apps using dotnet watch</span></span>](dotnet-watch.md)
+* [<span data-ttu-id="bc246-116">Introdução ao ASP.NET Core e ao Entity Framework Core usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="bc246-116">Get started with ASP.NET Core and Entity Framework Core using Visual Studio</span></span>](../data/ef-mvc/index.md)
+* [<span data-ttu-id="bc246-117">Criar auxiliares de marcação</span><span class="sxs-lookup"><span data-stu-id="bc246-117">Create Tag Helpers</span></span>](../mvc/views/tag-helpers/authoring.md)
+* [<span data-ttu-id="bc246-118">Criar um componente de exibição simples</span><span class="sxs-lookup"><span data-stu-id="bc246-118">Create a simple view component</span></span>](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
+* [<span data-ttu-id="bc246-119">Desenvolvendo aplicativos ASP.NET Core usando a inspeção dotnet</span><span class="sxs-lookup"><span data-stu-id="bc246-119">Develop ASP.NET Core apps using dotnet watch</span></span>](dotnet-watch.md)
 
-## <a name="build-web-apis"></a><span data-ttu-id="321b5-120">Criar APIs da Web</span><span class="sxs-lookup"><span data-stu-id="321b5-120">Build Web APIs</span></span>
-* <span data-ttu-id="321b5-121">Criar uma API Web com o ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="321b5-121">Create a Web API with ASP.NET Core</span></span>
+## <a name="build-web-apis"></a><span data-ttu-id="bc246-120">Criar APIs da Web</span><span class="sxs-lookup"><span data-stu-id="bc246-120">Build Web APIs</span></span>
+* <span data-ttu-id="bc246-121">Criar uma API Web com o ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="bc246-121">Create a Web API with ASP.NET Core</span></span>
 
-  * [<span data-ttu-id="321b5-122">API Web com o Visual Studio para Windows</span><span class="sxs-lookup"><span data-stu-id="321b5-122">Web API with Visual Studio for Windows</span></span>](first-web-api.md)
-  * [<span data-ttu-id="321b5-123">API Web com o Visual Studio para Mac</span><span class="sxs-lookup"><span data-stu-id="321b5-123">Web API with Visual Studio for Mac</span></span>](xref:tutorials/first-web-api-mac)
-  * [<span data-ttu-id="321b5-124">API Web com o Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="321b5-124">Web API with Visual Studio Code</span></span>](web-api-vsc.md)
-  
-* [<span data-ttu-id="321b5-125">Páginas de ajuda da API Web ASP.NET Core usando o Swagger</span><span class="sxs-lookup"><span data-stu-id="321b5-125">ASP.NET Core Web API help pages using Swagger</span></span>](web-api-help-pages-using-swagger.md)
-* [<span data-ttu-id="321b5-126">Criar serviços Web de back-end para aplicativos móveis nativos</span><span class="sxs-lookup"><span data-stu-id="321b5-126">Create backend web services for native mobile apps</span></span>](../mobile/native-mobile-backend.md)
+  * [<span data-ttu-id="bc246-122">API Web com o Visual Studio para Windows</span><span class="sxs-lookup"><span data-stu-id="bc246-122">Web API with Visual Studio for Windows</span></span>](first-web-api.md)
+  * [<span data-ttu-id="bc246-123">API Web com o Visual Studio para Mac</span><span class="sxs-lookup"><span data-stu-id="bc246-123">Web API with Visual Studio for Mac</span></span>](xref:tutorials/first-web-api-mac)
+  * [<span data-ttu-id="bc246-124">API Web com o Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="bc246-124">Web API with Visual Studio Code</span></span>](web-api-vsc.md)
 
-## <a name="data-access-and-storage"></a><span data-ttu-id="321b5-127">Armazenamento e acesso a dados</span><span class="sxs-lookup"><span data-stu-id="321b5-127">Data access and storage</span></span>
-* [<span data-ttu-id="321b5-128">Introdução às Páginas Razor e ao EF Core usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="321b5-128">Get started with Razor Pages and EF Core using Visual Studio</span></span>](xref:data/ef-rp/intro)
-* [<span data-ttu-id="321b5-129">Introdução ao ASP.NET Core MVC e ao EF Core usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="321b5-129">Get started with ASP.NET Core MVC and EF Core using Visual Studio</span></span>](../data/ef-mvc/index.md)
-* [<span data-ttu-id="321b5-130">ASP.NET Core MCV com EF Core – novo banco de dados</span><span class="sxs-lookup"><span data-stu-id="321b5-130">ASP.NET Core MVC with EF Core - new database</span></span>](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
-* [<span data-ttu-id="321b5-131">ASP.NET Core MCV com EF Core – banco de dados existente</span><span class="sxs-lookup"><span data-stu-id="321b5-131">ASP.NET Core MVC with EF Core - existing database</span></span>](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
+* [<span data-ttu-id="bc246-125">Páginas de ajuda da API Web ASP.NET Core usando o Swagger</span><span class="sxs-lookup"><span data-stu-id="bc246-125">ASP.NET Core Web API help pages using Swagger</span></span>](xref:tutorials/web-api-help-pages-using-swagger)
+  * [<span data-ttu-id="bc246-126">Introdução ao NSwag</span><span class="sxs-lookup"><span data-stu-id="bc246-126">Get started with NSwag</span></span>](xref:tutorials/get-started-with-nswag)
+  * [<span data-ttu-id="bc246-127">Introdução ao Swashbuckle</span><span class="sxs-lookup"><span data-stu-id="bc246-127">Get started with Swashbuckle</span></span>](xref:tutorials/get-started-with-swashbuckle)
 
-## <a name="authentication-and-authorization"></a><span data-ttu-id="321b5-132">Autenticação e autorização</span><span class="sxs-lookup"><span data-stu-id="321b5-132">Authentication and authorization</span></span>
-* [<span data-ttu-id="321b5-133">Habilitar a autenticação usando o Facebook, o Google e outros provedores externos</span><span class="sxs-lookup"><span data-stu-id="321b5-133">Enable authentication using Facebook, Google, and other external providers</span></span>](../security/authentication/social/index.md)
-* [<span data-ttu-id="321b5-134">Confirmação de conta e recuperação de senha</span><span class="sxs-lookup"><span data-stu-id="321b5-134">Account confirmation and password recovery</span></span>](../security/authentication/accconfirm.md)
-* [<span data-ttu-id="321b5-135">Autenticação de dois fatores com SMS</span><span class="sxs-lookup"><span data-stu-id="321b5-135">Two-factor authentication with SMS</span></span>](../security/authentication/2fa.md)
+* [<span data-ttu-id="bc246-128">Criar serviços Web de back-end para aplicativos móveis nativos</span><span class="sxs-lookup"><span data-stu-id="bc246-128">Create backend web services for native mobile apps</span></span>](../mobile/native-mobile-backend.md)
 
-## <a name="client-side-development"></a><span data-ttu-id="321b5-136">Desenvolvimento do lado do cliente</span><span class="sxs-lookup"><span data-stu-id="321b5-136">Client-side development</span></span>
-* [<span data-ttu-id="321b5-137">Usar o Gulp</span><span class="sxs-lookup"><span data-stu-id="321b5-137">Use Gulp</span></span>](../client-side/using-gulp.md)
-* [<span data-ttu-id="321b5-138">Usar o Grunt</span><span class="sxs-lookup"><span data-stu-id="321b5-138">Use Grunt</span></span>](../client-side/using-grunt.md)
-* [<span data-ttu-id="321b5-139">Gerenciar pacotes do lado do cliente com o Bower</span><span class="sxs-lookup"><span data-stu-id="321b5-139">Manage client-side packages with Bower</span></span>](../client-side/bower.md)
-* [<span data-ttu-id="321b5-140">Criar sites responsivos com o Bootstrap</span><span class="sxs-lookup"><span data-stu-id="321b5-140">Build responsive sites with Bootstrap</span></span>](../client-side/bootstrap.md)
+## <a name="data-access-and-storage"></a><span data-ttu-id="bc246-129">Armazenamento e acesso a dados</span><span class="sxs-lookup"><span data-stu-id="bc246-129">Data access and storage</span></span>
+* [<span data-ttu-id="bc246-130">Introdução às páginas do Razor e ao EF Core usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="bc246-130">Get started with Razor Pages and EF Core using Visual Studio</span></span>](xref:data/ef-rp/intro)
+* [<span data-ttu-id="bc246-131">Introdução ao ASP.NET Core MVC e ao EF Core usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="bc246-131">Get started with ASP.NET Core MVC and EF Core using Visual Studio</span></span>](../data/ef-mvc/index.md)
+* [<span data-ttu-id="bc246-132">ASP.NET Core MCV com EF Core – novo banco de dados</span><span class="sxs-lookup"><span data-stu-id="bc246-132">ASP.NET Core MVC with EF Core - new database</span></span>](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
+* [<span data-ttu-id="bc246-133">ASP.NET Core MCV com EF Core – banco de dados existente</span><span class="sxs-lookup"><span data-stu-id="bc246-133">ASP.NET Core MVC with EF Core - existing database</span></span>](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
 
-## <a name="test"></a><span data-ttu-id="321b5-141">Teste</span><span class="sxs-lookup"><span data-stu-id="321b5-141">Test</span></span>
-* [<span data-ttu-id="321b5-142">Teste de unidade no .NET Core usando dotnet test</span><span class="sxs-lookup"><span data-stu-id="321b5-142">Unit testing in .NET Core using dotnet test</span></span>](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+## <a name="authentication-and-authorization"></a><span data-ttu-id="bc246-134">Autenticação e autorização</span><span class="sxs-lookup"><span data-stu-id="bc246-134">Authentication and authorization</span></span>
+* [<span data-ttu-id="bc246-135">Habilitar a autenticação usando o Facebook, o Google e outros provedores externos</span><span class="sxs-lookup"><span data-stu-id="bc246-135">Enable authentication using Facebook, Google, and other external providers</span></span>](../security/authentication/social/index.md)
+* [<span data-ttu-id="bc246-136">Confirmação de conta e recuperação de senha</span><span class="sxs-lookup"><span data-stu-id="bc246-136">Account confirmation and password recovery</span></span>](../security/authentication/accconfirm.md)
+* [<span data-ttu-id="bc246-137">Autenticação de dois fatores com SMS</span><span class="sxs-lookup"><span data-stu-id="bc246-137">Two-factor authentication with SMS</span></span>](../security/authentication/2fa.md)
 
-## <a name="publish-and-deploy"></a><span data-ttu-id="321b5-143">Publicar e implantar</span><span class="sxs-lookup"><span data-stu-id="321b5-143">Publish and deploy</span></span>
-* [<span data-ttu-id="321b5-144">Implantar um aplicativo Web ASP.NET Core para o Azure usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="321b5-144">Deploy an ASP.NET Core web app to Azure using Visual Studio</span></span>](publish-to-azure-webapp-using-vs.md)
-* [<span data-ttu-id="321b5-145">Implantar um aplicativo Web do ASP.NET Core no Azure usando a linha de comando</span><span class="sxs-lookup"><span data-stu-id="321b5-145">Deploy an ASP.NET Core web app to Azure using the command line</span></span>](publish-to-azure-webapp-using-cli.md)
-* [<span data-ttu-id="321b5-146">Publicar um aplicativo Web do Azure com implantação contínua</span><span class="sxs-lookup"><span data-stu-id="321b5-146">Publish to an Azure Web App with continuous deployment</span></span>](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
-* [<span data-ttu-id="321b5-147">Implantar um contêiner ASP.NET em um host remoto do Docker</span><span class="sxs-lookup"><span data-stu-id="321b5-147">Deploy an ASP.NET container to a remote Docker host</span></span>](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
-* [<span data-ttu-id="321b5-148">ASP.NET Core no Nano Server</span><span class="sxs-lookup"><span data-stu-id="321b5-148">ASP.NET Core on Nano Server</span></span>](nano-server.md)
-* [<span data-ttu-id="321b5-149">ASP.NET Core e Azure Service Fabric</span><span class="sxs-lookup"><span data-stu-id="321b5-149">ASP.NET Core and Azure Service Fabric</span></span>](https://docs.microsoft.com/azure/service-fabric/service-fabric-add-a-web-frontend)
+## <a name="client-side-development"></a><span data-ttu-id="bc246-138">Desenvolvimento do lado do cliente</span><span class="sxs-lookup"><span data-stu-id="bc246-138">Client-side development</span></span>
+* [<span data-ttu-id="bc246-139">Usar o Gulp</span><span class="sxs-lookup"><span data-stu-id="bc246-139">Use Gulp</span></span>](../client-side/using-gulp.md)
+* [<span data-ttu-id="bc246-140">Usar o Grunt</span><span class="sxs-lookup"><span data-stu-id="bc246-140">Use Grunt</span></span>](../client-side/using-grunt.md)
+* [<span data-ttu-id="bc246-141">Gerenciar pacotes do lado do cliente com o Bower</span><span class="sxs-lookup"><span data-stu-id="bc246-141">Manage client-side packages with Bower</span></span>](../client-side/bower.md)
+* [<span data-ttu-id="bc246-142">Criar sites responsivos com o Bootstrap</span><span class="sxs-lookup"><span data-stu-id="bc246-142">Build responsive sites with Bootstrap</span></span>](../client-side/bootstrap.md)
+
+## <a name="test"></a><span data-ttu-id="bc246-143">Teste</span><span class="sxs-lookup"><span data-stu-id="bc246-143">Test</span></span>
+* [<span data-ttu-id="bc246-144">Teste de unidade no .NET Core usando dotnet test</span><span class="sxs-lookup"><span data-stu-id="bc246-144">Unit testing in .NET Core using dotnet test</span></span>](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+
+## <a name="publish-and-deploy"></a><span data-ttu-id="bc246-145">Publicar e implantar</span><span class="sxs-lookup"><span data-stu-id="bc246-145">Publish and deploy</span></span>
+* [<span data-ttu-id="bc246-146">Implantar um aplicativo Web ASP.NET Core para o Azure usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="bc246-146">Deploy an ASP.NET Core web app to Azure using Visual Studio</span></span>](publish-to-azure-webapp-using-vs.md)
+* [<span data-ttu-id="bc246-147">Implantar um aplicativo Web do ASP.NET Core no Azure usando a linha de comando</span><span class="sxs-lookup"><span data-stu-id="bc246-147">Deploy an ASP.NET Core web app to Azure using the command line</span></span>](publish-to-azure-webapp-using-cli.md)
+* [<span data-ttu-id="bc246-148">Publicar um aplicativo Web do Azure com implantação contínua</span><span class="sxs-lookup"><span data-stu-id="bc246-148">Publish to an Azure Web App with continuous deployment</span></span>](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
+* [<span data-ttu-id="bc246-149">Implantar um contêiner ASP.NET em um host remoto do Docker</span><span class="sxs-lookup"><span data-stu-id="bc246-149">Deploy an ASP.NET container to a remote Docker host</span></span>](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
+* [<span data-ttu-id="bc246-150">ASP.NET Core no Nano Server</span><span class="sxs-lookup"><span data-stu-id="bc246-150">ASP.NET Core on Nano Server</span></span>](nano-server.md)
+* [<span data-ttu-id="bc246-151">ASP.NET Core e Azure Service Fabric</span><span class="sxs-lookup"><span data-stu-id="bc246-151">ASP.NET Core and Azure Service Fabric</span></span>](https://docs.microsoft.com/azure/service-fabric/service-fabric-add-a-web-frontend)
 
 <a name="download"></a> 
-## <a name="how-to-download-a-sample"></a><span data-ttu-id="321b5-150">Como baixar uma amostra</span><span class="sxs-lookup"><span data-stu-id="321b5-150">How to download a sample</span></span>
-1. <span data-ttu-id="321b5-151">[Baixe o arquivo zip do repositório ASP.NET](https://codeload.github.com/aspnet/Docs/zip/master).</span><span class="sxs-lookup"><span data-stu-id="321b5-151">[Download the ASP.NET repository zip file](https://codeload.github.com/aspnet/Docs/zip/master).</span></span>
-1. <span data-ttu-id="321b5-152">Descompacte o arquivo *Docs-master.zip*.</span><span class="sxs-lookup"><span data-stu-id="321b5-152">Unzip the *Docs-master.zip* file.</span></span>
-1. <span data-ttu-id="321b5-153">Use a URL no link de exemplo para ajudá-lo a navegar até o diretório de exemplo.</span><span class="sxs-lookup"><span data-stu-id="321b5-153">Use the URL in the sample link to help you navigate to the sample directory.</span></span> 
+## <a name="how-to-download-a-sample"></a><span data-ttu-id="bc246-152">Como baixar uma amostra</span><span class="sxs-lookup"><span data-stu-id="bc246-152">How to download a sample</span></span>
+1. <span data-ttu-id="bc246-153">[Baixe o arquivo zip do repositório ASP.NET](https://codeload.github.com/aspnet/Docs/zip/master).</span><span class="sxs-lookup"><span data-stu-id="bc246-153">[Download the ASP.NET repository zip file](https://codeload.github.com/aspnet/Docs/zip/master).</span></span>
+1. <span data-ttu-id="bc246-154">Descompacte o arquivo *Docs-master.zip*.</span><span class="sxs-lookup"><span data-stu-id="bc246-154">Unzip the *Docs-master.zip* file.</span></span>
+1. <span data-ttu-id="bc246-155">Use a URL no link de exemplo para ajudá-lo a navegar até o diretório de exemplo.</span><span class="sxs-lookup"><span data-stu-id="bc246-155">Use the URL in the sample link to help you navigate to the sample directory.</span></span> 
