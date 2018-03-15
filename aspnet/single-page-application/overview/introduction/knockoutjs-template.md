@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>Aplicativo de página única: Modelo de KnockoutJS
 ====================
@@ -44,9 +44,9 @@ Requisitos:
 - O Visual Studio 2012 ou Visual Studio Express 2012 para Web
 - Atualização de ferramentas da Web do ASP.NET 2012.2. Você pode instalar a atualização [aqui](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=ASPDOTNETandWebTools2012_2).
 
-Inicie o Visual Studio e selecione **novo projeto** na página de início. Ou, do **arquivo** menu, selecione **novo** e **projeto**.
+Inicie o Visual Studio e selecione **novo projeto** na página de início. Ou, no menu **Arquivo**, selecione **Novo** e, em seguida, **Projeto**.
 
-No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#** nó. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
+No painel **Modelos**, selecione **Modelos Instalados** e expanda o nó **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
 
 ![](knockoutjs-template/_static/image2.png)
 
@@ -94,7 +94,7 @@ No projeto do Visual Studio, na pasta Modelos contém os modelos que são usados
 
 **TodoItem, TodoList**
 
-Esses são os modelos de banco de dados para o Entity Framework Code First. Observe que esses modelos têm propriedades que apontem para outro. `ToDoList`contém uma coleção de ToDoItems e cada `ToDoItem` tem uma referência à sua lista de tarefas do pai. Essas propriedades são chamadas de propriedades de navegação, e eles representam a relação um-para-muitos, uma lista de tarefas e seus itens de tarefas pendentes.
+Esses são os modelos de banco de dados para o Entity Framework Code First. Observe que esses modelos têm propriedades que apontem para outro. `ToDoList` contém uma coleção de ToDoItems e cada `ToDoItem` tem uma referência à sua lista de tarefas do pai. Essas propriedades são chamadas de propriedades de navegação, e eles representam a relação um-para-muitos, uma lista de tarefas e seus itens de tarefas pendentes.
 
 O `ToDoItem` classe também usa o **[ForeignKey]** atributo para especificar que `ToDoListId` é uma chave estrangeira para a `ToDoList` tabela. Isso informa ao EF para adicionar uma restrição de chave estrangeira no banco de dados.
 
@@ -162,7 +162,7 @@ O `TodoController` classe é muito semelhante ao `TodoListController`. A maior d
 
 ## <a name="mvc-controllers-and-views"></a>Modos de exibição e controladores MVC
 
-Os controladores MVC também estão localizados na pasta controladores da solução. `HomeController`renderiza o HTML principal para o aplicativo. O modo de exibição para o controlador inicial é definido em Views/Home/Index.cshtml. O modo de exibição de Home renderiza conteúdo diferente dependendo se o usuário estiver conectado:
+Os controladores MVC também estão localizados na pasta controladores da solução. `HomeController` renderiza o HTML principal para o aplicativo. O modo de exibição para o controlador inicial é definido em Views/Home/Index.cshtml. O modo de exibição de Home renderiza conteúdo diferente dependendo se o usuário estiver conectado:
 
 [!code-cshtml[Main](knockoutjs-template/samples/sample4.cshtml)]
 

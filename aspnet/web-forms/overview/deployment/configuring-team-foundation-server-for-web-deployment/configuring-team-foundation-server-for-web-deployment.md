@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 72f60841a1381380c0ea6167077420f960180dc7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-team-foundation-server-for-web-deployment"></a>Configurando o Team Foundation Server para a implantação da Web
 ====================
@@ -32,7 +32,7 @@ por [Jason Lee](https://github.com/jrjlee)
 > - Como criar uma definição de compilação que inclui a lógica de implantação.
 > - Como configurar permissões para a implantação automática.
 > 
-> Para obter uma tradução italiana destes tutoriais, visite [http://www.lucamorelli.it](http://www.lucamorelli.it).
+> Para obter uma tradução italiana destes tutoriais, visite [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
 Este tutorial presume que você instalou o TFS 2010 e criou uma coleção de projeto de equipe como parte do processo de configuração inicial. O [guia de instalação do Team Foundation para Visual Studio 2010](https://go.microsoft.com/?linkid=9805132) fornece uma orientação abrangente sobre essas tarefas.

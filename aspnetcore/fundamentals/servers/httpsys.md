@@ -5,16 +5,16 @@ description: "Conheça o HTTP.sys, um servidor Web para o ASP.NET Core executado
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/28/2018
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 730ecf12f718f6bbbdefb7cdc561481b126c995b
-ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
+ms.openlocfilehash: d7ae6c070c7eecfd714086e15f32eff96c0943d9
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implementação do servidor Web HTTP.sys no ASP.NET Core
 
@@ -136,6 +136,9 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
    As configurações de `UrlPrefixes` substituem as configurações `UseUrls`/`urls`/`ASPNETCORE_URLS`. Portanto, uma vantagem de usar `UseUrls`, `urls` e a variável de ambiente `ASPNETCORE_URLS` é que fica mais fácil alternar entre o Kestrel e o HTTP.sys. Para saber mais sobre `UseUrls`, `urls` e `ASPNETCORE_URLS`, confira o tópico [Hospedagem](xref:fundamentals/hosting).
 
    O HTTP.sys usa os [formatos de cadeia de caracteres UrlPrefix da API do Servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx).
+
+   > [!WARNING]
+   > Associações de curinga de nível superior (`http://*:80/` e `http://+:80`) **não** devem ser usadas. Associações de curinga de nível superior podem abrir o aplicativo para vulnerabilidades de segurança. Isso se aplica a curingas fortes e fracos. Use nomes de host explícitos em vez de curingas. Associações de curinga de subdomínio (por exemplo, `*.mysub.com`) não têm esse risco de segurança se você controlar o domínio pai completo (em vez de `*.com`, o qual é vulnerável). Veja [rfc7230 section-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) para obter mais informações.
 
 1. Faça o pré-registro dos prefixos de URL para associá-los ao HTTP.sys e configurar certificados X.509.
 

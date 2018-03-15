@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
 ms.openlocfilehash: f252b74bc42d0ea65b8b1150973c4f3c50cc9cf4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>Exibindo dados em um gráfico com páginas da Web do ASP.NET (Razor)
 ====================
@@ -41,7 +41,7 @@ por [Microsoft](https://github.com/microsoft)
 <a id="The_Chart_Helper"></a>
 ## <a name="the-chart-helper"></a>O auxiliar de gráfico
 
-Quando você deseja exibir seus dados de formulário gráfico, você pode usar `Chart` auxiliar. O `Chart` auxiliar pode processar uma imagem que exibe dados em uma variedade de tipos de gráfico. Ele dá suporte a várias opções para formatação e rotulagem. O `Chart` auxiliar pode processar mais de 30 tipos de gráficos, incluindo todos os tipos de gráficos que você pode estar familiarizado com o Microsoft Excel ou outras ferramentas &#8212; gráficos de área, barra gráficos, gráficos de coluna, linha gráficos e gráficos de pizza, juntamente com mais gráficos especializados, como gráficos de ações.
+Quando você deseja exibir seus dados de formulário gráfico, você pode usar `Chart` auxiliar. O `Chart` auxiliar pode processar uma imagem que exibe dados em uma variedade de tipos de gráfico. Ele dá suporte a várias opções para formatação e rotulagem. O `Chart` auxiliar pode processar mais de 30 tipos de gráficos, incluindo todos os tipos de gráficos que você pode estar familiarizado do Microsoft Excel ou outras ferramentas &#8212; gráficos de área, gráficos de barras, gráficos de colunas, gráficos de linha e gráficos de pizza, juntamente com mais gráficos especializados, como gráficos de ações.
 
 | **Gráfico de área** ![Descrição: a imagem do tipo de gráfico de área](7-displaying-data-in-a-chart/_static/image1.jpg) | **Gráfico de barras** ![Descrição: a imagem do tipo de gráfico de barras](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
@@ -122,7 +122,7 @@ A terceira opção para criar gráficos é usar um arquivo XML como os dados do 
 
     O código cria primeiro um `DataSet` objeto. Esse objeto é usado para gerenciar os dados que são lidos a partir do arquivo XML e organizá-los de acordo com as informações no arquivo de esquema. (Observe que a parte superior do código inclui a instrução `using SystemData`. Isso é necessário para trabalhar com o `DataSet` objeto. Para obter mais informações, consulte [ &quot;usando&quot; instruções e nomes totalmente qualificados](#SB_UsingStatements) posteriormente neste artigo.)
 
-    Em seguida, o código cria um `DataView` objeto com base no conjunto de dados. A exibição de dados fornece um objeto que o gráfico pode vincular a &#8212; ou seja, leitura e plotar. Associa o gráfico para os dados usando o `AddSeries` método, como você viu anteriormente quando representando os dados de matriz, exceto que desta vez o `xValue` e `yValues` parâmetros são definidos para o `DataView` objeto.
+    Em seguida, o código cria um `DataView` objeto com base no conjunto de dados. O modo de exibição de dados fornece um objeto que o gráfico pode vincular a &#8212; ou seja, leitura e plotar. Associa o gráfico para os dados usando o `AddSeries` método, como você viu anteriormente quando representando os dados de matriz, exceto que desta vez o `xValue` e `yValues` parâmetros são definidos para o `DataView` objeto.
 
     Este exemplo mostra como especificar um determinado tipo de gráfico. Quando os dados são adicionados no `AddSeries` método, o `chartType` parâmetro também é configurado para exibir um gráfico de pizza.
 7. Execute a página em um navegador. 
@@ -239,7 +239,7 @@ Gráficos salvos em cache podem ser removidos se o servidor ficar com pouco mem�
 
     Por fim, o código usa o `WriteFromCache` método para buscar e renderizar o gráfico do cache. Observe que esse método está fora do `if` bloco que verifica o cache, pois ele receberá o gráfico do cache se o gráfico houve inicial ou teve de ser gerado e salvo no cache.
 
-    Observe que no exemplo, o `AddTitle` método inclui um carimbo de hora. (Ele adiciona a data atual e hora &#8212; `DateTime.Now` &#8212; para o título.)
+    Observe que no exemplo, o `AddTitle` método inclui um carimbo de hora. (Ele adiciona a data e hora atuais &#8212; `DateTime.Now` &#8212; ao título.)
 5. Criar uma nova página chamada *ClearCache.cshtml* e substituir seu conteúdo com o seguinte:
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample14.cshtml)]

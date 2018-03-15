@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
 ms.openlocfilehash: 6210d01f65bcadf8ae4209e372d5aac68861bd7a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="web-deployment-in-the-enterprise"></a>Implantação da Web da empresa
 ====================
@@ -26,7 +26,7 @@ por [Jason Lee](https://github.com/jrjlee)
 
 > Este tutorial descreve como atender muitos dos desafios encontrados ao gerenciar a implantação de aplicativos da web de nível corporativo para ambientes de desenvolvimento, teste, preparação e produção. O tutorial inclui uma solução de referência junto com uma mistura de conteúdo conceitual e orientada a tarefas para guiá-lo por meio de várias tarefas comuns e procedimentos.
 > 
-> Para obter uma tradução italiana destes tutoriais, visite [http://www.lucamorelli.it](http://www.lucamorelli.it).
+> Para obter uma tradução italiana destes tutoriais, visite [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
 ## <a name="enterprise-deployment-challenges"></a>Desafios de implantação do Enterprise
@@ -68,19 +68,19 @@ Este tutorial inclui tópicos que se enquadram em quatro áreas principais.
 
 Estes tópicos apresentam a solução de referência #x 2014; a solução de Gerenciador de contato & #x 2014; e descrevem como baixá-lo e configurá-lo em seu computador local:
 
-- [A solução de Gerenciador de contato](the-contact-manager-solution.md)
-- [Configurar a solução de Gerenciador de contato](setting-up-the-contact-manager-solution.md)
+- [A solução Gerenciador de Contatos](the-contact-manager-solution.md)
+- [Configuração da solução Gerenciador de Contatos](setting-up-the-contact-manager-solution.md)
 
 Estes tópicos apresentam os arquivos de projeto do MSBuild, descrevem como você pode criar e usar arquivos de projeto personalizados e percorrer o processo de implantação para a solução do gerente do contato:
 
 - [Noções básicas sobre o arquivo de projeto](understanding-the-project-file.md)
-- [Noções básicas sobre o processo de compilação](understanding-the-build-process.md)
+- [Noções básicas sobre o processo de build](understanding-the-build-process.md)
 
 Estes tópicos descrevem a implantação do aplicativo da web, incluindo como a compilação e empacotamento o processo funciona, como o processo de compilação se integra com o Pipeline de publicação na Web, como modificar parâmetros de implantação e como implantar pacotes da web para o destino ambientes:
 
-- [Criação e a embalagem de projetos de aplicativo Web](building-and-packaging-web-application-projects.md)
-- [Configurar parâmetros para a implantação do pacote da Web](configuring-parameters-for-web-package-deployment.md)
-- [Pacotes de implantação da Web](deploying-web-packages.md)
+- [Criação e a empacotamento de projetos de aplicativos Web](building-and-packaging-web-application-projects.md)
+- [Configuração de parâmetros para a implantação de pacote da Web](configuring-parameters-for-web-package-deployment.md)
+- [Implantando pacotes da Web](deploying-web-packages.md)
 
 - [Implantação de projetos de banco de dados](deploying-database-projects.md) descreve as técnicas diferentes que você pode usar para implantar projetos de banco de dados do Visual Studio, junto com as vantagens e desvantagens de cada abordagem. [Criando e executando um arquivo de comando de implantação](creating-and-running-a-deployment-command-file.md) descreve como criar um arquivo de comando simples que encapsula a lógica de implantação e permite que você implante soluções complexas, como um processo de um única etapa.
 - Por fim, [instalar pacotes de Web manualmente](manually-installing-web-packages.md) conclui o tutorial mostrando para importar pacotes da web no IIS.

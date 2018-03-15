@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 80810415bac473a58f60110fb9d08772e0627bd5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>Excluindo arquivos e pastas de implantação
 ====================
@@ -31,7 +31,7 @@ Este tópico faz parte de uma série de tutoriais com base em torno de requisito
 
 O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos & #x 2014; projeto contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Quando você compila um projeto de aplicativo web no Visual Studio 2010, o Pipeline de publicação de Web (WPP) permite que você estenda esse processo de compilação ao empacotar seu aplicativo web compilado em um pacote de implantação web. Você pode usar a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web) para implantar este pacote da web em um servidor de web IIS remoto, ou importar pacote da web manualmente pelo Gerenciador do IIS. Esse processo de empacotamento é explicado em [criação e a projetos de aplicativo Web de empacotamento](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md).
 
@@ -50,7 +50,7 @@ Quando você escolhe **apenas os arquivos necessários para executar este aplica
 
 > [!NOTE]
 > A lógica que determina quais arquivos a serem incluídos está contida no arquivo:   
-> *%ProgramFiles%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
+> *%PROGRAMFILES%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
 
 
 ## <a name="excluding-specific-files-and-folders"></a>Excluindo arquivos e pastas específicas
@@ -95,7 +95,7 @@ O procedimento a seguir mostra como adicionar um *. wpp.targets* arquivo para um
 1. Abra sua solução no Visual Studio 2010.
 2. No **Solution Explorer** janela, clique o nó do projeto de aplicativo web (por exemplo, **ContactManager.Mvc**), aponte para **adicionar**e, em seguida, clique em **Novo Item**.
 3. No **Adicionar Novo Item** caixa de diálogo, selecione o **arquivo XML** modelo.
-4. No **nome** , digite *[nome do projeto]***. wpp.targets** (por exemplo, **ContactManager.Mvc.wpp.targets**) e, em seguida, clique em  **Adicionar**.
+4. No **nome** , digite *[nome do projeto] *.wpp.targets** (por exemplo, **ContactManager.Mvc.wpp.targets**) e, em seguida, clique em **adicionar**.
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 

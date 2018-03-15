@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
 ms.openlocfilehash: 460af471a1b0650f8d782d582ce6cd9a06664d5c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Introdução ao trabalho com um banco de dados da Web do ASP.NET páginas Sites (Razor)
 ====================
@@ -42,7 +42,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > 
 > - Páginas da Web do ASP.NET (Razor) 2
-> - O WebMatrix 2
+> - WebMatrix 2
 >   
 > 
 > Este tutorial também funciona com o WebMatrix 3. Você pode usar o ASP.NET Web Pages 3 e o Visual Studio 2013 (ou o Visual Studio Express 2013 para Web); No entanto, a interface do usuário será diferente.
@@ -54,7 +54,7 @@ Imagine um catálogo de endereços típico. Para cada entrada no catálogo de en
 
 Uma forma comum de dados de imagem como isso é como uma tabela com linhas e colunas. Em termos de banco de dados, cada linha é conhecida como um registro. Cada coluna (também conhecida como campos) contém um valor para cada tipo de dados: nome, sobrenome e assim por diante.
 
-| **ID** | **FirstName** | **Sobrenome** | **Endereço** | **Email** | **Telefone** |
+| **ID** | **FirstName** | **LastName** | **Endereço** | **Email** | **Telefone** |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Jim | Abrus | 210 100th St SE Orcas WA 98031 | jim@contoso.com | 555 0100 |
 | 2 | Diogo | Adams | 1234 Main St. Seattle WA 99011 | terry@cohowinery.com | 555 0101 |
@@ -91,7 +91,7 @@ Este procedimento mostra como criar um banco de dados denominado SmallBakery usa
     Como o nome sugere, **chave primária é** informa que o banco de dados que isso será a chave primária da tabela. **É identidade** informa o banco de dados para criar automaticamente um número de identificação para cada novo registro e atribua-o próximo número sequencial (começando em 1).
 10. Clique na próxima linha. O editor inicia uma nova definição de coluna.
 11. Para o valor de nome, digite &quot;nome&quot;.
-12. Para **tipo de dados**, escolha &quot;nvarchar&quot; e defina o comprimento de 50. O *var* parte do `nvarchar` informa que o banco de dados que os dados para essa coluna será uma cadeia de caracteres cujo tamanho pode variar de um registro para outro. (O  *n*  prefixo representa *national*, indicando que o campo pode conter dados de caracteres que representa qualquer alfabeto ou gravação de sistema &#8212; ou seja, o campo contém Unicode dados).
+12. Para **tipo de dados**, escolha &quot;nvarchar&quot; e defina o comprimento de 50. O *var* parte do `nvarchar` informa que o banco de dados que os dados para essa coluna será uma cadeia de caracteres cujo tamanho pode variar de um registro para outro. (O *n* prefixo representa *national*, indicando que o campo pode conter dados de caracteres que representa qualquer alfabeto ou gravar sistema &#8212; ou seja, o campo contém dados Unicode.)
 13. Definir o **permitir nulos** opção para **não**. Isso irá impor que o *nome* coluna não é deixada em branco.
 14. Usando esse mesmo processo, crie uma coluna denominada *descrição*. Definir **tipo de dados** para "nvarchar" e o tamanho e o conjunto de 50 **permitir nulos** como false.
 15. Criar uma coluna denominada *preço*. Definir **tipo de dados "money"** e defina **permitir nulos** como false.
@@ -258,7 +258,7 @@ Depois que dados foram inseridos em uma tabela, você precisará atualizá-lo. E
 
     [!code-html[Main](5-working-with-data/samples/sample12.html)]
 
-    Observe que o `href` atributo é definido como `UpdateProducts/n`, onde  *n*  é um número de produto. Quando um usuário clica em um desses links, a URL resultante será parecida com isto:
+    Observe que o `href` atributo é definido como `UpdateProducts/n`, onde *n* é um número de produto. Quando um usuário clica em um desses links, a URL resultante será parecida com isto:
 
     `http://localhost:18816/UpdateProducts/6`
 
@@ -384,7 +384,7 @@ Esta seção mostra como permitir que os usuários excluir um produto de *produt
 > 
 > [!code-cshtml[Main](5-working-with-data/samples/sample28.cshtml)]
 > 
-> Conforme observado, o `Database.Open` método permite que você passar um nome de banco de dados ou uma cadeia de caracteres de conexão, e ele vai descobrir que deve ser usada. Isso é muito útil quando você implanta (publicar) seu site. Você pode usar um *. sdf* arquivo o *aplicativo\_dados* pasta quando você estiver desenvolvendo e testando o seu site. Quando você mover seu site para um servidor de produção, você pode usar uma cadeia de caracteres de conexão no *Web. config* arquivo que tem o mesmo nome que sua *. sdf* arquivo, mas que aponta para do provedor de hospedagem banco de dados & # 8212; tudo isso sem precisar alterar o seu código.
+> Conforme observado, o `Database.Open` método permite que você passar um nome de banco de dados ou uma cadeia de caracteres de conexão, e ele vai descobrir que deve ser usada. Isso é muito útil quando você implanta (publicar) seu site. Você pode usar um *. sdf* arquivo o *aplicativo\_dados* pasta quando você estiver desenvolvendo e testando o seu site. Quando você mover seu site para um servidor de produção, você pode usar uma cadeia de caracteres de conexão no *Web. config* arquivo que tem o mesmo nome que sua *. sdf* de arquivos, mas que aponta para o provedor de hospedagem de banco de dados &#8212;sem precisar alterar o seu código.
 > 
 > Por fim, se você quiser trabalhar diretamente com uma cadeia de caracteres de conexão, você pode chamar o `Database.OpenConnectionString` método e passe-a conexão real da cadeia de caracteres em vez de apenas o nome de um a *Web. config* arquivo. Isso pode ser útil em situações em que, por algum motivo, você não tem acesso à cadeia de conexão (ou valores, como o *. sdf* nome de arquivo) até que a página está em execução. No entanto, na maioria dos cenários, você pode usar `Database.Open` conforme descrito neste artigo.
 
@@ -393,4 +393,4 @@ Esta seção mostra como permitir que os usuários excluir um produto de *produt
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/2008/en/us/compact.aspx)
 - [Conectar-se ao SQL Server ou do banco de dados MySQL no WebMatrix](https://go.microsoft.com/fwlink/?LinkId=208661)
-- [Validando a entrada do usuário em Sites de páginas da Web ASP.NET](https://go.microsoft.com/fwlink/?LinkId=253002)
+- [Validação da entrada do usuário em sites de Páginas da Web do ASP.NET](https://go.microsoft.com/fwlink/?LinkId=253002)

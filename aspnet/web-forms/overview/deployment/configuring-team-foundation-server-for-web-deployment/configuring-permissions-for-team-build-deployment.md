@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: cb3d013d69e36f97335ea31dd6e4997772ba2d8e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>Configurar permissões para a equipe de implantação da compilação
 ====================
@@ -38,7 +38,7 @@ Quando você instala o serviço de compilação de 2010 do Team Foundation Serve
 As tarefas de implantação que exigem a autenticação do Windows e que você pretende automatizar usando o Team Build, serão executado usando a identidade de serviço de compilação. Como tal, você precisará conceder a identidade de serviço de compilação quaisquer permissões necessárias nos servidores web e os servidores de banco de dados.
 
 > [!NOTE]
-> A conta de serviço de rede usa a conta do computador para autenticar em outros computadores. Contas de computador assumem a forma *[nome do domínio]\[nome do computador]***$**& #x 2014; por exemplo, **FABRIKAM\TFSBUILD$**. Dessa forma, se seu serviço de compilação é executado usando a identidade do serviço de rede, você deverá conceder todas as permissões necessárias para a identidade da conta de máquina para o servidor de compilação.
+> A conta de serviço de rede usa a conta do computador para autenticar em outros computadores. Contas de computador assumem a forma * [nome de domínio]\[nome do computador] ***$**& #x 2014; por exemplo, **FABRIKAM\TFSBUILD$**. Dessa forma, se seu serviço de compilação é executado usando a identidade do serviço de rede, você deverá conceder todas as permissões necessárias para a identidade da conta de máquina para o servidor de compilação.
 
 
 ## <a name="configuring-web-server-permissions"></a>Configurando permissões do servidor Web
