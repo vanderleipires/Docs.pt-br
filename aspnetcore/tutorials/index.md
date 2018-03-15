@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -47,12 +47,15 @@ As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada par
   * [API Web com o Visual Studio para Windows](first-web-api.md)
   * [API Web com o Visual Studio para Mac](xref:tutorials/first-web-api-mac)
   * [API Web com o Visual Studio Code](web-api-vsc.md)
-  
-* [Páginas de ajuda da API Web ASP.NET Core usando o Swagger](web-api-help-pages-using-swagger.md)
+
+* [Páginas de ajuda da API Web ASP.NET Core usando o Swagger](xref:tutorials/web-api-help-pages-using-swagger)
+  * [Introdução ao NSwag](xref:tutorials/get-started-with-nswag)
+  * [Introdução ao Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
+
 * [Criar serviços Web de back-end para aplicativos móveis nativos](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>Armazenamento e acesso a dados
-* [Introdução às Páginas Razor e ao EF Core usando o Visual Studio](xref:data/ef-rp/intro)
+* [Introdução às páginas do Razor e ao EF Core usando o Visual Studio](xref:data/ef-rp/intro)
 * [Introdução ao ASP.NET Core MVC e ao EF Core usando o Visual Studio](../data/ef-mvc/index.md)
 * [ASP.NET Core MCV com EF Core – novo banco de dados](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
 * [ASP.NET Core MCV com EF Core – banco de dados existente](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
