@@ -13,14 +13,14 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="aspnet-error-handling"></a>Tratamento de erros do ASP.NET
 ====================
-Por [Erik Reitan](https://github.com/Erikre)
+por [Erik Reitan](https://github.com/Erikre)
 
 [Baixe o projeto de exemplo do Wingtip Toys (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ou [baixar livro eletrônico (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
@@ -301,7 +301,7 @@ Exibindo o log do ELMAH é fácil, mas primeiro você criará uma exceção sem 
 
 1. Pressione **CTRL + F5** para executar o aplicativo de exemplo Wingtip Toys.
 2. Para gravar uma exceção sem tratamento no log ELMAH, navegue em seu navegador para a URL a seguir (usando o seu número de porta):  
-    `https://localhost:44300/NoPage.aspx`A página de erro será exibida.
+    `https://localhost:44300/NoPage.aspx` A página de erro será exibida.
 3. Para exibir o log ELMAH, navegue em seu navegador para a URL a seguir (usando o seu número de porta):  
     `https://localhost:44300/elmah.axd`
 

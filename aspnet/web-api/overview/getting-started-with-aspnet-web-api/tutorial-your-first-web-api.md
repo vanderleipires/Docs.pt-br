@@ -11,13 +11,13 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 6ff9fd279a03197f761454bba3f180d7428b1b1f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d881563cdb6449aada444ef0528061581113a925
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
-<a name="getting-started-with-aspnet-web-api-2-c"></a>Introdução ao ASP.NET Web API 2 (c#)
+<a name="get-started-with-aspnet-web-api-2-c"></a>Introdução ao ASP.NET Web API 2 (c#)
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
@@ -57,7 +57,7 @@ Na caixa de diálogo **Novo Aplicativo Web ASP.NET**, selecione o modelo **Vazio
 
 ## <a name="adding-a-model"></a>Adicionando um modelo
 
-Um *modelo (model)* é um objeto que representa os dados em seu aplicativo. ASP.NET Web API pode serializar automaticamente seu modelo para outro formato, XML ou JSON, e, em seguida, gravar os dados serializados no corpo da mensagem de resposta HTTP. Como um cliente pode ler o formato de serialização, ele pode desserializar o objeto. A maioria dos clientes pode analisar XML ou JSON. Além disso, o cliente pode indicar qual formato ele deseja definindo o cabeçalho Accept na mensagem de solicitação HTTP.
+Um *modelo* é um objeto que representa os dados em seu aplicativo. ASP.NET Web API pode serializar automaticamente seu modelo para outro formato, XML ou JSON, e, em seguida, gravar os dados serializados no corpo da mensagem de resposta HTTP. Como um cliente pode ler o formato de serialização, ele pode desserializar o objeto. A maioria dos clientes pode analisar XML ou JSON. Além disso, o cliente pode indicar qual formato ele deseja definindo o cabeçalho Accept na mensagem de solicitação HTTP.
 
 Vamos começar criando um modelo simples que representa um produto.
 
@@ -134,7 +134,7 @@ Substitua tudo neste arquivo com o seguinte:
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample3.html)]
 
-Há várias maneiras de obter jQuery. Neste exemplo, usei o [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Você também pode baixá-lo do [http://jquery.com/](http://jquery.com/), e o modelo de projeto ASP.NET "API Web" também inclui jQuery.
+Há várias maneiras de obter jQuery. Neste exemplo, usei o [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Você também pode baixá-lo do [ http://jquery.com/ ](http://jquery.com/)e o ASP.NET "API Web" jQuery também inclui o modelo de projeto.
 
 ### <a name="getting-a-list-of-products"></a>Obtendo uma lista de produtos
 

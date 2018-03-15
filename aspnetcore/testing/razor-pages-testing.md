@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 3f53924e0b36b7924d82f97a8702aa461d9ebd78
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e4f87a8151e378717aa9198e4629711c4ea6ef77
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Unidade de páginas Razor e integração de teste no núcleo do ASP.NET
 
@@ -30,7 +30,7 @@ ASP.NET Core dá suporte à unidade e testes de integração de aplicativos de p
 Este tópico pressupõe que você tenha uma compreensão básica do Razor páginas de aplicativos, teste de unidade e a integração de teste. Se você não estiver familiarizado com conceitos de teste ou de páginas Razor aplicativos, consulte os tópicos a seguir:
 
 * [Introdução a Páginas do Razor](xref:mvc/razor-pages/index)
-* [Começando com Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
+* [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Teste de unidade c# no .NET Core usando xUnit e teste dotnet](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Teste de integração](xref:testing/integration-testing)
 
@@ -59,7 +59,7 @@ O aplicativo de mensagem é um sistema de mensagem páginas Razor simples com as
 * O aplicativo contém uma camada de acesso de dados (DAL) em sua classe de contexto de banco de dados, `AppDbContext` (*Data/AppDbContext.cs*). Os métodos DAL são marcados como `virtual`, que permite a simulação de métodos para uso em testes.
 * Se o banco de dados está vazio na inicialização do aplicativo, o repositório de mensagens foi inicializado com três mensagens. Essas *propagado mensagens* também são usados no teste.
 
-&#8224; O tópico EF [testes com InMemory](/ef/core/miscellaneous/testing/in-memory), explica como usar um banco de dados na memória para testes com MSTest. Este tópico usa o [xUnit](https://xunit.github.io/) estrutura de teste. Conceitos de teste e implementações de teste em estruturas de teste diferentes são semelhantes, mas não idêntica.
+&#8224;O tópico EF [testes com InMemory](/ef/core/miscellaneous/testing/in-memory), explica como usar um banco de dados na memória para testes com MSTest. Este tópico usa o [xUnit](https://xunit.github.io/) estrutura de teste. Conceitos de teste e implementações de teste em estruturas de teste diferentes são semelhantes, mas não idêntica.
 
 Embora o aplicativo não usa o [padrão repositório](http://martinfowler.com/eaaCatalog/repository.html) e não é um exemplo efetivação do [padrão de unidade de trabalho (UoW)](https://martinfowler.com/eaaCatalog/unitOfWork.html), páginas Razor dá suporte a esses padrões de desenvolvimento. Para obter mais informações, consulte [criar a camada de persistência de infraestrutura](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design), [Implementando o repositório e padrões de unidade de trabalho em um aplicativo ASP.NET MVC](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application), e [teste lógica do controlador](/aspnet/core/mvc/controllers/testing) (o exemplo implementa o padrão de repositório).
 

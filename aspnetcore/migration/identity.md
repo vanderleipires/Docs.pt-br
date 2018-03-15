@@ -1,7 +1,7 @@
 ---
-title: "Migrando de autenticação e identidade"
+title: "Migrando de autenticação e identidade do ASP.NET Core"
 author: ardalis
-description: 
+description: "Saiba como migrar de autenticação e identidade de um projeto ASP.NET MVC para um projeto MVC do ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/identity
-ms.openlocfilehash: f02d9472ea0aa1dceae3f53c812776aab85ab54e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bf452ad3969863f8f058b29a31f19af13cb2fc6b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="migrating-authentication-and-identity"></a>Migrando de autenticação e identidade
+# <a name="migrating-authentication-and-identity-to-aspnet-core"></a>Migrando de autenticação e identidade do ASP.NET Core
 
 <a name="migration-identity"></a>
 

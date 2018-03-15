@@ -1,7 +1,7 @@
 ---
-title: "Impedindo a execução de scripts entre sites"
+title: "Impedindo Cross Site Scripting (XSS) no núcleo do ASP.NET"
 author: rick-anderson
-description: "Este documento apresenta a execução de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo do ASP.NET Core."
+description: "Saiba mais sobre a criação de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo do ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: 679d9689fbc2679d9ba20bf9c6dba5c95d76dbce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9e54ee0b1169c01629c3cd91a378509a73c53904
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="preventing-cross-site-scripting"></a>Impedindo a execução de scripts entre sites
+# <a name="preventing-cross-site-scripting-xss-in-aspnet-core"></a>Impedindo Cross Site Scripting (XSS) no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 

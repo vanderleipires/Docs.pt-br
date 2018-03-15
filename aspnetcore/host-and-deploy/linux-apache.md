@@ -5,16 +5,16 @@ author: spboyer
 manager: wpickett
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 10/19/2016
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: b11bc811b6aefce22b60a28afd72c2a2d0b26955
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 033adddc586b60c9f7453df5434617aa838737f8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Hospedar o ASP.NET Core no Linux com o Apache
 
@@ -112,27 +112,32 @@ Complete!
 ```
 
 > [!NOTE]
-> Neste exemplo, a saída reflete httpd.86_64 desde a versão CentOS 7 é de 64 bits. Para verificar o local em que o Apache está instalado, execute `whereis httpd` em um prompt de comando. 
+> Neste exemplo, a saída reflete httpd.86_64 desde a versão CentOS 7 é de 64 bits. Para verificar o local em que o Apache está instalado, execute `whereis httpd` em um prompt de comando.
 
 ### <a name="configure-apache-for-reverse-proxy"></a>Configurar o Apache para proxy reverso
 
 Os arquivos de configuração do Apache estão localizados no diretório `/etc/httpd/conf.d/`. Qualquer arquivo com o *.conf* extensão é processada em ordem alfabética, além dos arquivos de configuração do módulo em `/etc/httpd/conf.modules.d/`, que contém todas as configurações de arquivos necessário para carregar módulos.
 
-Criar um arquivo de configuração para o aplicativo chamado `hellomvc.conf`:
+Crie um arquivo de configuração, chamado *hellomvc.conf*, para o aplicativo:
 
 ```
 <VirtualHost *:80>
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ServerName www.example.com
+    ServerAlias *.example.com
+    ErrorLog ${APACHE_LOG_DIR}hellomvc-error.log
+    CustomLog ${APACHE_LOG_DIR}hellomvc-access.log common
 </VirtualHost>
 ```
 
-O **VirtualHost** nó pode aparecer várias vezes em um ou mais arquivos em um servidor. **VirtualHost** está definido para escutar em qualquer endereço IP usando a porta 80. As duas linhas são definidas para solicitações de proxy na raiz do servidor no 127.0.0.1 na porta 5000. Para a comunicação bidirecional, *ProxyPass* e *ProxyPassReverse* são necessários.
+O `VirtualHost` bloco pode aparecer várias vezes, em um ou mais arquivos em um servidor. No arquivo de configuração anterior, Apache aceita tráfego público na porta 80. O domínio `www.example.com` é mantido e o `*.example.com` alias resolve para o mesmo site. Consulte [suporte baseado em nome de host virtual](https://httpd.apache.org/docs/current/vhosts/name-based.html) para obter mais informações. As solicitações são delegadas na raiz para a porta 5000 do servidor no 127.0.0.1. Para a comunicação bidirecional, `ProxyPass` e `ProxyPassReverse` são necessários.
 
-Registro em log pode ser configurado por **VirtualHost** usando **ErrorLog** e **CustomLog** diretivas. **Log de erros** é o local onde o servidor registra erros, e **CustomLog** define o nome de arquivo e o formato do arquivo de log. Nesse caso, isso é onde as informações de solicitação são registradas. Há uma linha para cada solicitação.
+> [!WARNING]
+> Falha ao especificar apropriadas [diretiva ServerName](https://httpd.apache.org/docs/current/mod/core.html#servername) no **VirtualHost** bloco expõe seu aplicativo para vulnerabilidades de segurança. Associação de curinga de subdomínio (por exemplo, `*.example.com`) não apresenta esse risco de segurança se você controlar o domínio pai inteira (em vez de `*.com`, que é vulnerável). Veja [rfc7230 section-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) para obter mais informações.
+
+Registro em log pode ser configurado por `VirtualHost` usando `ErrorLog` e `CustomLog` diretivas. `ErrorLog` é o local onde o servidor registra erros, e `CustomLog` define o nome de arquivo e o formato do arquivo de log. Nesse caso, isso é onde as informações de solicitação são registradas. Há uma linha para cada solicitação.
 
 Salve o arquivo e testar a configuração. Se tudo passar, a resposta deverá ser `Syntax [OK]`.
 

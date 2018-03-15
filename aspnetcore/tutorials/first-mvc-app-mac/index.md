@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/first-mvc-app-mac/index
-ms.openlocfilehash: b69eb67cedbc90c319e5bd07556001daed43c005
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 554dda7ad7f20f90fd0a73b51eac508f99877683
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-using-visual-studio-for-mac"></a>Criar um aplicativo Web com o ASP.NET Core MVC usando o Visual Studio para Mac
 
@@ -21,13 +21,13 @@ Esta série de tutoriais ensina os conceitos básicos da criação de um aplicat
 
 [!INCLUDE[consider RP](../../includes/razor.md)]
 
-1. [Introdução](start-mvc.md)
-1. [Adicionando um controlador](adding-controller.md)
-1. [Adicionando uma exibição](adding-view.md)
-1. [Adicionando um modelo](adding-model.md)
-1. [SQLite](working-with-sql.md)
-1. [Exibições e métodos do controlador](controller-methods-views.md)
-1. [Adicionando uma pesquisa](search.md)
-1. [Adicionando um Novo Campo](new-field.md)
-1. [Adicionando uma Validação](validation.md)
+1. [Introdução](xref:tutorials/first-mvc-app-mac/start-mvc)
+1. [Adicionando um controlador](xref:tutorials/first-mvc-app-mac/adding-controller)
+1. [Adicionando uma exibição](xref:tutorials/first-mvc-app-mac/adding-view)
+1. [Adicionando um modelo](xref:tutorials/first-mvc-app-mac/adding-model)
+1. [SQLite](xref:tutorials/first-mvc-app-mac/working-with-sql)
+1. [Exibições e métodos do controlador](xref:tutorials/first-mvc-app-mac/controller-methods-views)
+1. [Adicionando uma pesquisa](xref:tutorials/first-mvc-app-mac/search)
+1. [Adicionando um Novo Campo](xref:tutorials/first-mvc-app-mac/new-field)
+1. [Adicionando uma Validação](xref:tutorials/first-mvc-app-mac/validation)
 1. [Examinando os métodos Details e Delete](xref:tutorials/first-mvc-app/details)

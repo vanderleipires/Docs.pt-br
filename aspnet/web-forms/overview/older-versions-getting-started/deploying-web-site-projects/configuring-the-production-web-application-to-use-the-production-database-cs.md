@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 21eac6a4d829795f02eeeca5f9870b1ab8132d08
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>Configurando o aplicativo da Web de produção para usar o banco de dados de produção (c#)
 ====================
@@ -37,16 +37,16 @@ Não é incomum para obter informações de configuração será diferente entre
 
 ## <a name="examining-the-connection-string-information"></a>Examinar as informações de cadeia de caracteres de Conexão
 
-A cadeia de conexão usada pelo aplicativo web do catálogo revisões é armazenada no arquivo de configuração do aplicativo s, `Web.config`. `Web.config`inclui uma seção especial para armazenar cadeias de caracteres de conexão, adequadamente chamadas [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx). O `Web.config` arquivo para o site do catálogo revisões possui uma cadeia de caracteres de conexão definida nesta seção denominada `ReviewsConnectionString`:
+A cadeia de conexão usada pelo aplicativo web do catálogo revisões é armazenada no arquivo de configuração do aplicativo s, `Web.config`. `Web.config` inclui uma seção especial para armazenar cadeias de caracteres de conexão, adequadamente chamadas [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx). O `Web.config` arquivo para o site do catálogo revisões possui uma cadeia de caracteres de conexão definida nesta seção denominada `ReviewsConnectionString`:
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-cs/samples/sample1.xml)]
 
 A cadeia de caracteres de conexão - fonte de dados =. \SQLEXPRESS; AttachDbFilename = | Segurança DataDirectory|\Reviews.mdf;Integrated = True; User Instance = True - é composto de um número de opções e os valores com pares de valor da opção/delimitadas por ponto e vírgula e cada opção e valor delimitadas por um sinal de igual. As quatro opções usadas nesta cadeia de caracteres de conexão são:
 
-- `Data Source`-Especifica o local do servidor de banco de dados e o nome de instância do servidor de banco de dados (se houver). O valor `.\SQLEXPRESS`, é um exemplo onde há um servidor de banco de dados e um nome de instância. O período de Especifica que o servidor de banco de dados está no mesmo computador que o aplicativo. o nome da instância é `SQLEXPRESS`.
-- `AttachDbFilename`-Especifica o local do arquivo de banco de dados. O valor contém o espaço reservado `|DataDirectory|`, que é resolvido para o caminho completo da s aplicativo `App_Data` pasta em tempo de execução.
-- `Integrated Security`-um valor booliano que indica se deve usar uma nome de usuário/senha especificada durante a conexão com o banco de dados (false) ou o Windows atual credenciais da conta (true).
-- `User Instance`-uma opção de configuração específica para o SQL Server Express Edition que indica se deve permitir que usuários não administrativos no computador local anexam e se conectar a um banco de dados do SQL Server Express Edition. Consulte [instâncias do SQL Server Express usuário](https://msdn.microsoft.com/library/ms254504.aspx) para obter mais informações sobre essa configuração.
+- `Data Source` -Especifica o local do servidor de banco de dados e o nome de instância do servidor de banco de dados (se houver). O valor `.\SQLEXPRESS`, é um exemplo onde há um servidor de banco de dados e um nome de instância. O período de Especifica que o servidor de banco de dados está no mesmo computador que o aplicativo. o nome da instância é `SQLEXPRESS`.
+- `AttachDbFilename` -Especifica o local do arquivo de banco de dados. O valor contém o espaço reservado `|DataDirectory|`, que é resolvido para o caminho completo da s aplicativo `App_Data` pasta em tempo de execução.
+- `Integrated Security` -um valor booliano que indica se deve usar uma nome de usuário/senha especificada durante a conexão com o banco de dados (false) ou o Windows atual credenciais da conta (true).
+- `User Instance` -uma opção de configuração específica para o SQL Server Express Edition que indica se deve permitir que usuários não administrativos no computador local anexam e se conectar a um banco de dados do SQL Server Express Edition. Consulte [instâncias do SQL Server Express usuário](https://msdn.microsoft.com/library/ms254504.aspx) para obter mais informações sobre essa configuração.
   
 
 As opções de cadeia de caracteres de conexão permitidos dependem do banco de dados que você está se conectando e o provedor de banco de dados do ADO.NET que está sendo usado. Por exemplo, a cadeia de conexão para se conectar a um Microsoft SQL Server difere do banco de dados que é usado para se conectar ao banco de dados Oracle. Da mesma forma, se conectar a um banco de dados do Microsoft SQL Server usando o provedor SqlClient usa uma cadeia de caracteres de conexão diferentes que ao usar o provedor OLE DB.
@@ -125,7 +125,7 @@ Neste ponto o `ConfigSections` pasta deve conter três arquivos (consulte a Figu
 **Figura 4**: ConfigSections ([clique para exibir a imagem em tamanho normal](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image12.jpg))
 
 
-Agora, precisamos instruir `Web.config` para usar o arquivo databaseConnectionStrings.config para seu armazenamento de cadeia de caracteres de conexão. Abra `Web.config` e substituir o `<connectionStrings>` elemento com o seguinte:
+Agora, precisamos instruir `Web.config` para usar o arquivo databaseConnectionStrings.config para seu armazenamento de cadeia de caracteres de conexão. Abra `Web.config` e substitua o elemento `<connectionStrings>` existente pelo seguinte:
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-cs/samples/sample4.xml)]
 

@@ -1,7 +1,7 @@
 ---
-title: Criando sites lindos, respondendo com Bootstrap
+title: "Criando sites lindos, respondendo com inicialização e ASP.NET Core"
 author: ardalis
-description: 
+description: "Saiba como usar a inicialização para o desenvolvimento de aplicativos web responsivo com ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: e2ade6223cdc56a4f0f00ff0b985ceda4ab5484a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c3dfaa53e9e3277d025d014f65004e4c24a5acc4
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Criando sites lindos, respondendo com Bootstrap
+# <a name="building-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>Criando sites lindos, respondendo com inicialização e ASP.NET Core
 
 <a name="bootstrap-index"></a>
 
@@ -23,7 +23,7 @@ Por [Steve Smith](https://ardalis.com/)
 
 Bootstrap atualmente é a estrutura da web mais popular de desenvolvimento de aplicativos web responsivo. Ele oferece uma série de recursos e benefícios que podem melhorar a experiência dos usuários ao seu site, se você for um iniciante no front-end design e desenvolvimento ou de um especialista. Bootstrap é implantada como um conjunto de arquivos CSS e JavaScript e foi projetada para ajudar a dimensionar seu site ou aplicativo com eficiência de telefones para tablets para áreas de trabalho.
 
-## <a name="getting-started"></a>Introdução
+## <a name="get-started"></a>Introdução
 
 Há várias maneiras para começar a Bootstrap. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, no qual caso Bootstrap virão pré-instalados:
 
@@ -190,7 +190,7 @@ Se você quiser alterar o tema de Bootstrap, coloque o *bootstrap.css* arquivo p
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
 ```
 
-Se você deseja criar seu próprio painel, você pode iniciar do exemplo livre disponível aqui: [http://getbootstrap.com/examples/dashboard/](http://getbootstrap.com/examples/dashboard/).
+Se você deseja criar seu próprio painel, você pode iniciar do exemplo livre disponível aqui: [ http://getbootstrap.com/examples/dashboard/ ](http://getbootstrap.com/examples/dashboard/).
 
 ## <a name="components"></a>Componentes
 
@@ -198,7 +198,7 @@ Além desses elementos já discutidos, Bootstrap inclui suporte para uma varieda
 
 ### <a name="glyphicons"></a>Glyphicons
 
-Bootstrap inclui conjuntos de ícones de Glyphicons ([http://glyphicons.com](http://glyphicons.com)), com mais de 200 ícones disponíveis gratuitamente para uso dentro de seu aplicativo da web habilitado para Bootstrap. Aqui está a apenas uma pequena amostra:
+Inicialização inclui conjuntos de ícones de Glyphicons ([http://glyphicons.com](http://glyphicons.com)), com mais de 200 ícones disponíveis gratuitamente para uso dentro de seu aplicativo da web habilitado para inicialização. Aqui está a apenas uma pequena amostra:
 
 ![Glyphicons](bootstrap/_static/theme-glyphicons.png)
 
@@ -214,7 +214,7 @@ Navegação estrutural é um componente de interface do usuário comum usado par
 
 ## <a name="javascript-support"></a>Suporte a JavaScript
 
-Biblioteca de JavaScript do Bootstrap inclui suporte a API para os componentes incluídos, permitindo que você controle de seu comportamento programaticamente dentro de seu aplicativo. Além disso, *bootstrap.js* inclui uma dúzia jQuery personalizado plug-ins, fornecer recursos adicionais como transições, caixas de diálogo modais rolagem detecção (Atualizando estilos com base no qual o usuário tem rolado no documento), comportamento de recolher, carrosséis e fixar menus para a janela para que eles não aparecem na tela. Não há espaço suficiente para abranger todos os complementos JavaScript incorporados Bootstrap – para saber mais, visite [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/).
+Biblioteca de JavaScript do Bootstrap inclui suporte a API para os componentes incluídos, permitindo que você controle de seu comportamento programaticamente dentro de seu aplicativo. Além disso, *bootstrap.js* inclui uma dúzia jQuery personalizado plug-ins, fornecer recursos adicionais como transições, caixas de diálogo modais rolagem detecção (Atualizando estilos com base no qual o usuário tem rolado no documento), comportamento de recolher, carrosséis e fixar menus para a janela para que eles não aparecem na tela. Não há espaço suficiente para abranger todos os complementos JavaScript incorporados Bootstrap – para saber mais, visite [ http://getbootstrap.com/javascript/ ](http://getbootstrap.com/javascript/).
 
 ## <a name="summary"></a>Resumo
 

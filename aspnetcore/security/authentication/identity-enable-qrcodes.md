@@ -1,7 +1,7 @@
 ---
 title: "Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core"
 author: rick-anderson
-description: "Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core"
+description: "Saiba como habilitar a geração de código QR para aplicativos de autenticador que funcionam com a autenticação de dois fatores de núcleo do ASP.NET."
 manager: wpickett
 ms.author: riande
 ms.date: 09/24/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: cf941314d54aa4a7bd1724805dc62c763ca71dfb
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: dd326bb32565b743d21e196bcb616a716d7994bf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core
 
@@ -25,7 +25,7 @@ Os modelos de aplicativo web ASP.NET Core autenticadores de suporte, mas não fo
 
 ## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>Adicionar códigos QR para a página de configuração 2FA
 
-Essas instruções usam *qrcode.js* do repositório https://davidshimjs.github.io/qrcodejs/.
+Essas instruções usam *qrcode.js* do https://davidshimjs.github.io/qrcodejs/ repositório.
 
 * Baixe o [biblioteca de javascript qrcode.js](https://davidshimjs.github.io/qrcodejs/) para o `wwwroot\lib` pasta em seu projeto.
 
@@ -84,8 +84,8 @@ Você pode substituir a biblioteca de código QR por sua biblioteca preferencial
 
 A URL formatada corretamente para o código QR está disponível na:
 
-* `AuthenticatorUri`propriedade do modelo.
-* `data-url`propriedade no `qrCodeData` elemento. 
+* `AuthenticatorUri` propriedade do modelo.
+* `data-url` propriedade no `qrCodeData` elemento. 
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP cliente e servidor diferença de horário
 

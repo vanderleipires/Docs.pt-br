@@ -1,7 +1,7 @@
 ---
-title: "Configurar o tipo de dados de chave primária de identidade"
+title: "Configurar o tipo de dados de chave primária de identidade no núcleo do ASP.NET"
 author: AdrienTorris
-description: "Este artigo descreve as etapas para configurar o tipo de dados desejado, usado para a chave primária da identidade do ASP.NET Core."
+description: "Saiba mais sobre as etapas para configurar o tipo de dados desejado, usado para a chave primária da identidade do ASP.NET Core."
 manager: wpickett
 ms.author: scaddie
 ms.date: 09/28/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: ff1c3aff3ea833081a25ea5fc4f2c2b65823f536
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 02482b81faa64b01765a90c2c6ffe9cf92b1a7e7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="configure-the-aspnet-core-identity-primary-key-data-type"></a>Configurar o tipo de dados de chave primária de identidade do ASP.NET Core
+# <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>Configurar o tipo de dados de chave primária de identidade no núcleo do ASP.NET
 
 Identidade do ASP.NET Core permite que você configure o tipo de dados usado para representar uma chave primária. Identidade usa o `string` tipo de dados por padrão. Você pode substituir esse comportamento.
 

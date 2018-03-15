@@ -1,5 +1,5 @@
 ---
-title: "Implantação contínua no Azure com o Visual Studio e o Git"
+title: "Implantação contínua para o Azure com o Visual Studio e o Git com ASP.NET Core"
 author: rick-anderson
 description: "Saiba como criar um aplicativo Web ASP.NET Core usando o Visual Studio e implantá-lo no Serviço de Aplicativo do Azure, usando o Git para implantação contínua."
 manager: wpickett
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: ea4788b5daead9e355e13b963c025dd110eb2bff
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 7302de1ace62dba53b317039aac7f4763314aa19
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="continuous-deployment-to-azure-for-aspnet-core-with-visual-studio-and-git"></a>Implantação contínua para o Azure para o ASP.NET Core com o Visual Studio e Git
+# <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>Implantação contínua para o Azure com o Visual Studio e o Git com ASP.NET Core
 
 Por [Erik Reitan](https://github.com/Erikre)
 
@@ -43,7 +43,7 @@ Este tutorial pressupõe que o seguinte software está instalado:
 
 1. No menu **Arquivo**, selecione **Novo** > **Projeto**.
 
-1. Selecione o modelo de projeto **Aplicativo Web ASP.NET Core**. Ele será exibido em **Instalado** > **Modelos** > **Visual C#** > **.NET Core**. Nomeie o projeto `SampleWebAppDemo`. Selecione a opção **Criar novo repositório Git** e clique em **OK**.
+1. Selecione o modelo de projeto **Aplicativo Web ASP.NET Core**. Ele será exibido em **Instalado** > **Modelos** > **Visual C#** > **.NET Core**. Nomeie o projeto `SampleWebAppDemo`. Selecione o **criar novo repositório do Git** opção e clique em **Okey**.
 
    ![Caixa de diálogo Novo Projeto](azure-continuous-deployment/_static/01-new-project.png)
 

@@ -1,7 +1,7 @@
 ---
-title: "Autenticação de dois fatores com o SMS"
+title: "Autenticação de dois fatores com SMS no núcleo do ASP.NET"
 author: rick-anderson
-description: "Mostra como configurar a autenticação de dois fatores (2FA) com o ASP.NET Core"
+description: "Saiba como configurar a autenticação de dois fatores (2FA) com um aplicativo do ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 08/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: 721c4c20234c7232b509a0cff444538c2cfeb166
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c328c6f4b674695dd1f2db8145a7ac1b8f12d36d
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="two-factor-authentication-with-sms"></a>Autenticação de dois fatores com o SMS
+# <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>Autenticação de dois fatores com SMS no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [desenvolvedores Suíça](https://github.com/Swiss-Devs)
 
@@ -142,6 +142,13 @@ Se você não receber uma mensagem de texto, consulte a página de registro do t
 
 ## <a name="account-lockout-for-protecting-against-brute-force-attacks"></a>Bloqueio de conta para proteger contra ataques de força bruta
 
-Recomendamos que você use o bloqueio de conta com 2FA. Depois que um usuário fizer logon (por meio de uma conta local ou social), cada tentativa falha de 2FA é armazenada e se o máximo de tentativas (o padrão é 5) for atingido, o usuário é bloqueado por cinco minutos (você pode definir o bloqueio de tempo com `DefaultAccountLockoutTimeSpan`). A seguir configura a conta seja bloqueada por 10 minutos após 10 tentativas com falha.
+Bloqueio de conta é recomendado com 2FA. Depois que um usuário faz logon por meio de uma conta local ou sociais, cada tentativa falha de 2FA é armazenada. Se as tentativas de acesso com falha máximo for atingido, o usuário está bloqueado (padrão: bloqueio de 5 minutos após 5 tentativas de acesso). Uma autenticação bem-sucedida redefine a contagem de tentativas de acesso com falha e redefine o relógio. O máximo de tentativas de acesso com falha e tempo de bloqueio pode ser definido com [MaxFailedAccessAttempts](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.maxfailedaccessattempts) e [DefaultLockoutTimeSpan](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.defaultlockouttimespan). A seguir configura o bloqueio de conta para 10 minutos após 10 tentativas de acesso:
 
-[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)] 
+[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)]
+
+Confirme se [PasswordSignInAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.passwordsigninasync) define `lockoutOnFailure` para `true`:
+
+```csharp
+var result = await _signInManager.PasswordSignInAsync(
+                 Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+```

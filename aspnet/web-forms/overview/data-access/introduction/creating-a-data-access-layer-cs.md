@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>Criando uma camada de acesso a dados (c#)
 ====================
@@ -75,7 +75,7 @@ Uma vez que o banco de dados instalado, vá para o Gerenciador de servidores no 
 
 Ao trabalhar com dados de uma opção é inserir a lógica de específicos de dados diretamente para a camada de apresentação (em um aplicativo web, o ASP.NET páginas, compõem a camada de apresentação). Isso pode assumir a forma de escrever código ADO.NET na parte do código da página ASP.NET ou usando o controle SqlDataSource da parte de marcação. Em ambos os casos, essa abordagem acoplada rigidamente a lógica de acesso a dados com a camada de apresentação. No entanto, é a abordagem recomendada separar a lógica de acesso a dados da camada de apresentação. Essa camada separada é chamada de camada de acesso a dados, a DAL de forma abreviada e geralmente é implementada como um projeto de biblioteca de classes separado. Os benefícios dessa arquitetura em camadas são bem documentados (consulte a seção "Leituras adicionais" no final deste tutorial para obter informações sobre estas vantagens) e é a abordagem obtemos nesta série.
 
-Todo o código que é específico à fonte de dados subjacente, como a criação de uma conexão ao banco de dados, emitir **selecione**, **inserir**, **atualização**, e  **Excluir** comandos e assim por diante devem estar localizado em DAL. A camada de apresentação não deve conter todas as referências a esse código de acesso de dados, mas em vez disso, deve fazer chamadas para a DAL para solicitações de todos os dados. Camadas de acesso de dados normalmente contêm métodos para acessar o banco de dados subjacente. Por exemplo, tem um banco de dados Northwind, **produtos** e **categorias** tabelas que registram os produtos de venda e as categorias às quais eles pertencem. Em nosso DAL teremos métodos, como:
+Todo o código que é específico à fonte de dados subjacente, como a criação de uma conexão ao banco de dados, emitir **selecione**, **inserir**, **atualização**, e ** Excluir** comandos e assim por diante devem estar localizado em DAL. A camada de apresentação não deve conter todas as referências a esse código de acesso de dados, mas em vez disso, deve fazer chamadas para a DAL para solicitações de todos os dados. Camadas de acesso de dados normalmente contêm métodos para acessar o banco de dados subjacente. Por exemplo, tem um banco de dados Northwind, **produtos** e **categorias** tabelas que registram os produtos de venda e as categorias às quais eles pertencem. Em nosso DAL teremos métodos, como:
 
 - **GetCategories(),** que retornará informações sobre todas as categorias
 - **GetProducts()**, que retorna informações sobre todos os produtos
@@ -124,7 +124,7 @@ O Assistente de configuração do TableAdapter começa solicitando que você sel
 **Figura 5**: escolha o banco de dados Northwind na lista suspensa ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image13.png))
 
 
-Após selecionar o banco de dados e clicar em Avançar, será perguntado se você deseja salvar a cadeia de conexão do **Web. config** arquivo. Salvando a cadeia de caracteres de conexão, você evitará tendo rígido codificados em classes de TableAdapter, que simplifica as coisas se as informações de cadeia de caracteres de conexão é alterado no futuro. Se você optar por salvar a cadeia de caracteres de conexão no arquivo de configuração é colocado no  **&lt;connectionStrings&gt;**  seção, que pode ser [opcionalmente criptografado](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx) para aprimorado segurança ou modificados depois dela usando a nova página de propriedade do ASP.NET 2.0 dentro da ferramenta de administração de GUI IIS, que é mais ideal para administradores.
+Após selecionar o banco de dados e clicar em Avançar, será perguntado se você deseja salvar a cadeia de conexão do **Web. config** arquivo. Salvando a cadeia de caracteres de conexão, você evitará tendo rígido codificados em classes de TableAdapter, que simplifica as coisas se as informações de cadeia de caracteres de conexão é alterado no futuro. Se você optar por salvar a cadeia de caracteres de conexão no arquivo de configuração é colocado no ** &lt;connectionStrings&gt; ** seção, que pode ser [opcionalmente criptografado](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx) para aprimorado segurança ou modificados depois dela usando a nova página de propriedade do ASP.NET 2.0 dentro da ferramenta de administração de GUI IIS, que é mais ideal para administradores.
 
 
 [![Salvar a cadeia de caracteres de Conexão em Web. config](creating-a-data-access-layer-cs/_static/image15.png)](creating-a-data-access-layer-cs/_static/image14.png)
@@ -181,7 +181,7 @@ Se marcada, a caixa de seleção final, "GenerateDBDirectMethods" cria **Insert 
 **Figura 11**: alterar o nome do método de **GetData** para **GetProducts** ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image31.png))
 
 
-Conclua o assistente clicando em Concluir. Depois de fechar o assistente, são retornados para o Designer de conjunto de dados que mostra a DataTable que acabamos de criar. Você pode ver a lista de colunas no **produtos** DataTable (**ProductID**, **ProductName**, e assim por diante), bem como os métodos do  **ProductsTableAdapter** (**Fill ()** e **GetProducts()**).
+Conclua o assistente clicando em Concluir. Depois de fechar o assistente, são retornados para o Designer de conjunto de dados que mostra a DataTable que acabamos de criar. Você pode ver a lista de colunas no **produtos** DataTable (**ProductID**, **ProductName**, e assim por diante), bem como os métodos do ** ProductsTableAdapter** (**Fill ()** e **GetProducts()**).
 
 
 [![A DataTable de produtos e ProductsTableAdapter foram adicionados ao conjunto de dados tipado](creating-a-data-access-layer-cs/_static/image33.png)](creating-a-data-access-layer-cs/_static/image32.png)
@@ -189,7 +189,7 @@ Conclua o assistente clicando em Concluir. Depois de fechar o assistente, são r
 **Figura 12**: O **produtos** DataTable e **ProductsTableAdapter** foram adicionados ao conjunto de dados tipado ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image34.png))
 
 
-Neste ponto, temos um conjunto de dados tipado com uma única tabela de dados (**Northwind.Products**) e uma classe de DataAdapter fortemente tipado (**NorthwindTableAdapters.ProductsTableAdapter**) com um  **GetProducts()** método. Esses objetos podem ser usados para acessar uma lista de todos os produtos de código como:
+Neste ponto, temos um conjunto de dados tipado com uma única tabela de dados (**Northwind.Products**) e uma classe de DataAdapter fortemente tipado (**NorthwindTableAdapters.ProductsTableAdapter**) com um ** GetProducts()** método. Esses objetos podem ser usados para acessar uma lista de todos os produtos de código como:
 
 [!code-html[Main](creating-a-data-access-layer-cs/samples/sample1.html)]
 
@@ -233,7 +233,7 @@ Vamos primeiro serão perguntados se queremos acessar o banco de dados usando um
 **Figura 15**: optar por criar um **selecione** instrução que retorna linhas ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-A próxima etapa é definir a consulta SQL usada para acessar os dados. Como queremos retornar somente os produtos que pertencem a uma determinada categoria, posso usar o mesmo **selecione** instrução do **GetProducts()**, mas adicione o seguinte **onde** cláusula: **onde CategoryID = @CategoryID** . O  **@CategoryID**  parâmetro indica ao Assistente do TableAdapter que o método que estamos criando exigirá um parâmetro de entrada do tipo correspondente (ou seja, um inteiro anulável).
+A próxima etapa é definir a consulta SQL usada para acessar os dados. Como queremos retornar somente os produtos que pertencem a uma determinada categoria, posso usar o mesmo **selecione** instrução do **GetProducts()**, mas adicione o seguinte **onde** cláusula: **onde CategoryID = @CategoryID **. O ** @CategoryID ** parâmetro indica ao Assistente do TableAdapter que o método que estamos criando exigirá um parâmetro de entrada do tipo correspondente (ou seja, um inteiro anulável).
 
 
 [![Insira uma consulta para retornar somente os produtos em uma categoria especificada](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -301,14 +301,14 @@ Padrão que será chamado de como o lote de atualização padrão, é para atual
 **A Figura 22**: todas as alterações são sincronizadas com o banco de dados quando o método de atualização é invocado ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image60.png))
 
 
-O TableAdapter usa o padrão de atualização em lotes por padrão, mas também suporta o padrão de direta do banco de dados. Já que é selecionado a opção "Gerar Insert, Update e Delete instruções" das propriedades avançadas ao criar nossa TableAdapter o **ProductsTableAdapter** contém um **Update ()** método, que implementa o padrão de atualização em lotes. Especificamente, o TableAdapter contém um **Update ()** método que pode ser passado do conjunto de dados tipado, uma DataTable fortemente tipado ou DataRows um ou mais. Se você deixar a caixa de seleção "GenerateDBDirectMethods" check ao criar pela primeira vez o TableAdapter o padrão direto do banco de dados será também implementada por meio de **Insert ()**, **Update ()**, e **Delete)**  métodos.
+O TableAdapter usa o padrão de atualização em lotes por padrão, mas também suporta o padrão de direta do banco de dados. Já que é selecionado a opção "Gerar Insert, Update e Delete instruções" das propriedades avançadas ao criar nossa TableAdapter o **ProductsTableAdapter** contém um **Update ()** método, que implementa o padrão de atualização em lotes. Especificamente, o TableAdapter contém um **Update ()** método que pode ser passado do conjunto de dados tipado, uma DataTable fortemente tipado ou DataRows um ou mais. Se você deixar a caixa de seleção "GenerateDBDirectMethods" check ao criar pela primeira vez o TableAdapter o padrão direto do banco de dados será também implementada por meio de **Insert ()**, **Update ()**, e **Delete) ** métodos.
 
-Ambos os padrões de modificação de dados usam o TableAdapter **InsertCommand**, **UpdateCommand**, e **DeleteCommand** propriedades para emitir seus **inserir** , **Atualização**, e **excluir** comandos no banco de dados. Você pode inspecionar e modificar o **InsertCommand**, **UpdateCommand**, e **DeleteCommand** propriedades clicando no TableAdapter no Designer de conjunto de dados e, em seguida, vai Na janela Propriedades. (Verifique se você selecionou o TableAdapter e que o **ProductsTableAdapter** objeto é selecionado na lista suspensa na janela Propriedades.)
+Ambos os padrões de modificação de dados usam o TableAdapter **InsertCommand**, **UpdateCommand**, e **DeleteCommand** propriedades para emitir seus **inserir **, **Atualização**, e **excluir** comandos no banco de dados. Você pode inspecionar e modificar o **InsertCommand**, **UpdateCommand**, e **DeleteCommand** propriedades clicando no TableAdapter no Designer de conjunto de dados e, em seguida, vai Na janela Propriedades. (Verifique se você selecionou o TableAdapter e que o **ProductsTableAdapter** objeto é selecionado na lista suspensa na janela Propriedades.)
 
 
 [![O TableAdapter tem InsertCommand, UpdateCommand e DeleteCommand propriedades](creating-a-data-access-layer-cs/_static/image62.png)](creating-a-data-access-layer-cs/_static/image61.png)
 
-**Figura 23**: tem o TableAdapter **InsertCommand**, **UpdateCommand**, e **DeleteCommand** propriedades ([clique para exibir imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image63.png))
+**Figura 23**: tem o TableAdapter **InsertCommand**, **UpdateCommand**, e **DeleteCommand** propriedades ([clique para exibir em tamanho normal imagem](creating-a-data-access-layer-cs/_static/image63.png))
 
 
 Para examinar ou modificar qualquer uma dessas propriedades de comando de banco de dados, clique no **CommandText** subpropriedade, o que abrirá o construtor de consultas.
@@ -316,7 +316,7 @@ Para examinar ou modificar qualquer uma dessas propriedades de comando de banco 
 
 [![Configurar instruções DELETE, INSERT e UPDATE no construtor de consultas](creating-a-data-access-layer-cs/_static/image65.png)](creating-a-data-access-layer-cs/_static/image64.png)
 
-**Figura 24**: configurar o **inserir**, **atualização**, e **excluir** instruções no construtor de consultas ([clique para exibir a imagem em tamanho normal ](creating-a-data-access-layer-cs/_static/image66.png))
+**Figura 24**: configurar o **inserir**, **atualização**, e **excluir** instruções no construtor de consultas ([clique para exibir a imagem em tamanho normal](creating-a-data-access-layer-cs/_static/image66.png))
 
 
 O exemplo de código a seguir mostra como usar o padrão de atualização em lotes para dobrar o preço de todos os produtos que não são interrompidas e que tem 25 unidades em estoque ou menos:
@@ -329,7 +329,7 @@ O código a seguir ilustra como usar o padrão de direta do banco de dados para 
 
 ## <a name="creating-custom-insert-update-and-delete-methods"></a>Criando personalizado inserir, atualizar e excluir métodos
 
-O **Insert ()**, **Update ()**, e **Delete ()** métodos criados pelo método direto de banco de dados podem ser um pouco complexo, especialmente para tabelas com muitas colunas. Olhando para o exemplo de código anterior, sem IntelliSense ajuda não está particularmente claro qual **produtos** mapeia a coluna de tabela para cada parâmetro de entrada para o **Update ()** e **Insert)**  métodos. Pode haver momentos em que estamos apenas deseja atualizar uma única coluna ou dois, se preferir, um personalizado **Insert ()** método que será, talvez, retornar o valor do registro recém-inserido **identidade** (incremento automático) campo.
+O **Insert ()**, **Update ()**, e **Delete ()** métodos criados pelo método direto de banco de dados podem ser um pouco complexo, especialmente para tabelas com muitas colunas. Olhando para o exemplo de código anterior, sem IntelliSense ajuda não está particularmente claro qual **produtos** mapeia a coluna de tabela para cada parâmetro de entrada para o **Update ()** e **Insert) ** métodos. Pode haver momentos em que estamos apenas deseja atualizar uma única coluna ou dois, se preferir, um personalizado **Insert ()** método que será, talvez, retornar o valor do registro recém-inserido **identidade** (incremento automático) campo.
 
 Para criar esse método um personalizado, retorne para o Designer de conjunto de dados. Com o botão direito em TableAdapter e escolha Adicionar consulta, retornando ao Assistente do TableAdapter. Na segunda tela, pode indicar o tipo de consulta para criar. Vamos criar um método que adiciona um novo produto e, em seguida, retorna o valor do registro recém-adicionado **ProductID**. Portanto, optar por criar um **inserir** consulta.
 
@@ -399,7 +399,7 @@ Se você atualizar o **GetProducts()** **selecione** usando **INGRESSAR** sintax
 
 Até agora, vimos apenas trabalhando com um TableAdapter único para uma tabela de banco de dados único. No entanto, o banco de dados Northwind contém várias tabelas relacionadas que vamos precisar trabalhar com nosso aplicativo web. Um conjunto de dados tipado pode conter vários DataTables relacionadas. Portanto, para concluir nosso DAL que precisamos adicionar tabelas de dados para as outras tabelas que usaremos esses tutoriais. Para adicionar um novo TableAdapter a um conjunto de dados tipado, abra o Designer de conjunto de dados, clique com botão direito no Designer e escolha Adicionar / TableAdapter. Isso criará uma nova DataTable e TableAdapter e orientá-lo por meio do assistente examinados anteriormente neste tutorial.
 
-Levar alguns minutos para criar os seguintes TableAdapters e métodos usando as consultas a seguir. Observe que as consultas a **ProductsTableAdapter** incluem subconsultas para obter nomes de categoria e o fornecedor de cada produto. Além disso, se você estiver acompanhando, você já adicionou o **ProductsTableAdapter** da classe **GetProducts()** e **GetProductsByCategoryID (*categoryID* )** métodos.
+Levar alguns minutos para criar os seguintes TableAdapters e métodos usando as consultas a seguir. Observe que as consultas a **ProductsTableAdapter** incluem subconsultas para obter nomes de categoria e o fornecedor de cada produto. Além disso, se você estiver acompanhando, você já adicionou o **ProductsTableAdapter** da classe **GetProducts()** e **GetProductsByCategoryID (*categoryID *)** métodos.
 
 - **ProductsTableAdapter**
 
@@ -537,7 +537,7 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 

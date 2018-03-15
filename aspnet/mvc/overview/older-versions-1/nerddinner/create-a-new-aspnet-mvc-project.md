@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
 msc.type: authoredcontent
 ms.openlocfilehash: 4d30a6803b1478014a2afb814ac317df27394446
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="create-a-new-aspnet-mvc-project"></a>Criar um novo projeto ASP.NET MVC
 ====================
@@ -65,12 +65,12 @@ Projetos do ASP.NET MVC por padrão tem seis diretórios de alto nível:
 
 | **Diretório** | **Finalidade** |
 | --- | --- |
-| **/ Controladores** | Onde você colocou classes do controlador que manipulam solicitações de URL |
-| **Ou os modelos** | Onde você colocou classes que representam e manipulam dados |
-| **/ Modos de exibição** | Em que você pode colocar arquivos de modelo de interface do usuário que são responsáveis pela saída de renderização |
-| **/ Scripts** | Onde colocar os arquivos de biblioteca de JavaScript e scripts (. js) |
-| **/ Conteúdo** | Onde você colocou o CSS e arquivos de imagem e outros tipos de conteúdo não dinâmico/não JavaScript |
-| **/ Aplicativo\_dados** | Onde armazenar arquivos de dados ser leitura/gravação. |
+| **/Controllers** | Onde você colocou classes do controlador que manipulam solicitações de URL |
+| **/Models** | Onde você colocou classes que representam e manipulam dados |
+| **/Views** | Em que você pode colocar arquivos de modelo de interface do usuário que são responsáveis pela saída de renderização |
+| **/Scripts** | Onde colocar os arquivos de biblioteca de JavaScript e scripts (. js) |
+| **/Content** | Onde você colocou o CSS e arquivos de imagem e outros tipos de conteúdo não dinâmico/não JavaScript |
+| **/App\_Data** | Onde armazenar arquivos de dados ser leitura/gravação. |
 
 ASP.NET MVC não requer essa estrutura. Na verdade, desenvolvedores que trabalham em aplicativos grandes normalmente particionará o aplicativo de backup em vários projetos para tornar mais fácil de gerenciar (por exemplo: classes de modelo de dados geralmente vão em um projeto de biblioteca de classe separada do aplicativo web). No entanto, a estrutura de projeto padrão, fornecer uma convenção de diretório padrão adequado que podemos usar para manter nossos preocupações de aplicativo normal.
 
