@@ -1,5 +1,5 @@
 ---
-title: "Criando sites lindos, respondendo com inicialização e ASP.NET Core"
+title: Criando sites lindos, responsivos com bootstrap e ASP.NET Core
 author: ardalis
 description: "Saiba como usar a inicialização para o desenvolvimento de aplicativos web responsivo com ASP.NET Core."
 manager: wpickett
@@ -15,27 +15,27 @@ ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/15/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>Criando sites lindos, respondendo com inicialização e ASP.NET Core
+# <a name="building-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>Criando sites lindos, responsivos com bootstrap e ASP.NET Core
 
 <a name="bootstrap-index"></a>
 
 Por [Steve Smith](https://ardalis.com/)
 
-Bootstrap atualmente é a estrutura da web mais popular de desenvolvimento de aplicativos web responsivo. Ele oferece uma série de recursos e benefícios que podem melhorar a experiência dos usuários ao seu site, se você for um iniciante no front-end design e desenvolvimento ou de um especialista. Bootstrap é implantada como um conjunto de arquivos CSS e JavaScript e foi projetada para ajudar a dimensionar seu site ou aplicativo com eficiência de telefones para tablets para áreas de trabalho.
+Bootstrap atualmente é a estrutura da web mais popular de desenvolvimento de aplicativos web responsivo. Ele oferece uma série de recursos e benefícios que podem melhorar a experiência dos usuários ao seu site, se você for um iniciante no front-end design e desenvolvimento ou de um especialista. Bootstrap é implantado como um conjunto de arquivos CSS e JavaScript e foi projetada para ajudar a dimensionar seu site ou aplicativo com eficiência de telefones para tablets para áreas de trabalho.
 
 ## <a name="get-started"></a>Introdução
 
-Há várias maneiras para começar a Bootstrap. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, no qual caso Bootstrap virão pré-instalados:
+Há várias maneiras para começar a Bootstrap. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, em cujo caso o Bootstrap virá pré-instalados:
 
 ![Bootstrap no modo de exibição de solução de modelo starter](bootstrap/_static/bootstrap-in-starter-template.png)
 
-A adição de Bootstrap para um ASP.NET Core projeto é simplesmente uma questão de adicioná-la à *bower. JSON* como uma dependência:
+A adição do bootstrap para um projeto ASP.NET Core é simplesmente uma questão de adicioná-la no *bower. JSON* como uma dependência:
 
 [!code-json[](../common/samples/WebApplication1/bower.json?highlight=5)]
 
-Essa é a maneira recomendada para adicionar a Bootstrap para um projeto do ASP.NET Core.
+Essa é a maneira recomendada para adicionar o bootstrap para um projeto do ASP.NET Core.
 
-Você também pode instalar bootstrap usando um dos vários gerenciadores de pacotes, como Bower, npm ou NuGet. Em cada caso, o processo é essencialmente o mesmo:
+Você também pode instalar o bootstrap usando um dos vários gerenciadores de pacotes, como Bower, npm ou NuGet. Em cada caso, o processo é essencialmente o mesmo:
 
 ### <a name="bower"></a>Bower
 
@@ -56,9 +56,9 @@ Install-Package bootstrap
 ```
 
 > [!NOTE]
-> A maneira recomendada para instalar dependências de cliente como a Bootstrap no núcleo do ASP.NET é por meio de Bower (usando *bower. JSON*, conforme mostrado acima). O uso do npm/NuGet são mostrados para demonstrar como Bootstrap pode ser facilmente adicionada a outros tipos de aplicativos web, incluindo versões anteriores do ASP.NET.
+> A maneira recomendada para instalar dependências de cliente como o bootstrap no ASP.NET Core é por meio do Bower (usando *bower. JSON*, conforme mostrado acima). O uso do npm/NuGet são mostrados para demonstrar como Bootstrap pode ser facilmente adicionada a outros tipos de aplicativos web, incluindo versões anteriores do ASP.NET.
 
-Se você estiver fazendo referência a suas próprias versões locais de Bootstrap, você precisará fazer referência a eles em todas as páginas que irá usá-la. Em produção, você deve fazer referência bootstrap usando uma CDN. No modelo de site ASP.NET padrão, o *cshtml* arquivo assim como este:
+Se você estiver fazendo referência a suas próprias versões locais do bootstrap, você precisará fazer referência a eles em todas as páginas que irá usá-lo. Em produção, você deve fazer referência bootstrap usando uma CDN. No modelo de site ASP.NET padrão, o *cshtml* arquivo assim como este:
 
 [!code-html[](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
 
@@ -67,7 +67,7 @@ Se você estiver fazendo referência a suas próprias versões locais de Bootstr
 
 ## <a name="basic-templates-and-features"></a>Recursos e modelos básicos
 
-O modelo de Bootstrap mais básico é muito parecido com o *cshtml* arquivo mostrado acima e simplesmente inclui um menu básico para navegação e um local para renderizar o restante da página.
+O modelo do bootstrap mais básico é muito parecido com o arquivo *cshtml* mostrado acima e simplesmente inclui um menu básico para navegação e um local para renderizar o restante da página.
 
 ### <a name="basic-navigation"></a>Navegação básica
 
@@ -95,13 +95,13 @@ Clicando no ícone revela os itens de menu em uma gaveta vertical que slides par
 
 ### <a name="typography-and-links"></a>Tipografia e links
 
-Bootstrap configura tipografia básico, cores e formatação em seu arquivo CSS de link do site. Esse arquivo CSS inclui estilos de padrão para tabelas, botões, elementos de formulário, imagens e muito mais ([mais](http://getbootstrap.com/css/)). Um recurso útil é o sistema de layout de grade, abordado em seguida.
+Bootstrap configura tipografia básica, cores e formatação em seu arquivo CSS de link do site. Esse arquivo CSS inclui estilos de padrão para tabelas, botões, elementos de formulário, imagens e muito mais ([mais](http://getbootstrap.com/css/)). Um recurso útil é o sistema de layout de grade, abordado em seguida. Um recurso útil é o sistema de layout de grade, abordado em seguida.
 
 ### <a name="grids"></a>Grades
 
 Um dos recursos mais populares de Bootstrap é o sistema de layout de grade. Aplicativos web modernos devem evitar usar o `<table>` marca de layout, em vez disso, restringir o uso desse elemento para dados de tabela reais. Em vez disso, colunas e linhas podem ser dispostas usando uma série de `<div>` elementos e as classes CSS apropriadas. Há várias vantagens dessa abordagem, incluindo a capacidade de ajustar o layout de grade para exibir verticalmente em estreitas telas, como em telefones.
 
-[Sistema de layout de grade da Bootstrap](http://getbootstrap.com/css/#grid) é baseado em doze colunas. Esse número foi escolhido porque podem ser dividido uniformemente em 1, 2, 3 ou 4 colunas e larguras de coluna podem variar para dentro de 1/12 da largura da tela vertical. Para começar a usar o sistema de layout de grade, você deve começar com um contêiner `<div>` e, em seguida, adicione uma linha `<div>`, conforme mostrado aqui:
+[Sistema de layout de grade do bootstrap](http://getbootstrap.com/css/#grid) é baseado em doze colunas. Esse número foi escolhido porque pode ser dividido uniformemente em 1, 2, 3 ou 4 colunas e a largura das colunas pode variar de 1/12 da largura da tela vertical. Para começar a usar o sistema de layout de grade, você deve começar com um contêiner `<div>` e, em seguida, adicione uma linha `<div>`, conforme mostrado aqui:
 
 ```html
 <div class="container">
@@ -158,7 +158,7 @@ Talvez seja necessário exibir algum tipo de notificação de alerta ou para usu
 
 ### <a name="navbars-and-menus"></a>Menus e barras de navegação
 
-Nosso layout já inclui uma barra de navegação padrão, mas o tema de Bootstrap dá suporte a opções de estilo adicionais. Podemos facilmente pode optar por exibir a barra de navegação verticalmente em vez de horizontalmente se que tem preferencial, bem como a adição de subnavegação itens nos menus de atalho. Menus de navegação simples, como as faixas guia baseiam-se na parte superior do <ul> elementos. Eles podem ser criados muito simples, apenas fornecendo a eles com as classes CSS "nav" e "nav-guias":
+Nosso layout já inclui uma barra de navegação padrão, mas o tema do bootstrap dá suporte a opções de estilo adicionais. Podemos facilmente optar por exibir a barra de navegação verticalmente em vez de horizontalmente se preferirmos, bem como adicionar itens de subnavegação aos menus de atalho. Menus de navegação simples, como as faixas guia, baseiam-se na parte superior dos  <ul> elementos. Eles podem ser facilmente criados, apenas fornecendo-os com as classes CSS "nav" e "nav-guias":
 
 ![tabstrips com tema](bootstrap/_static/theme-tabstrips.png)
 
@@ -178,7 +178,7 @@ Você pode estender o tema de Bootstrap padrão, substituindo alguns ou todos os
 
 ![Exemplo tema inspinia](bootstrap/_static/theme-inspinia.png)
 
-Se você quiser alterar o tema de Bootstrap, coloque o *bootstrap.css* arquivo para o tema que você deseja no **wwwroot/css** pasta e altere as referências no *cshtml* para apontá-lo. Altere os links para todos os ambientes:
+Se você quiser alterar o tema do bootstrap, coloque o arquivo *bootstrap.css* para o tema que você deseja na pasta **wwwroot/css** e altere as referências no *cshtml* para apontá-lo. Altere os links para todos os ambientes:
 
 ```html
 <environment names="Development">
@@ -194,11 +194,11 @@ Se você deseja criar seu próprio painel, você pode iniciar do exemplo livre d
 
 ## <a name="components"></a>Componentes
 
-Além desses elementos já discutidos, Bootstrap inclui suporte para uma variedade de [componentes internos de interface do usuário](http://getbootstrap.com/components/).
+Além desses elementos já discutidos, bootstrap inclui suporte para uma variedade de [componentes internos de interface do usuário](http://getbootstrap.com/components/).
 
 ### <a name="glyphicons"></a>Glyphicons
 
-Inicialização inclui conjuntos de ícones de Glyphicons ([http://glyphicons.com](http://glyphicons.com)), com mais de 200 ícones disponíveis gratuitamente para uso dentro de seu aplicativo da web habilitado para inicialização. Aqui está a apenas uma pequena amostra:
+Bootstrap inclui conjuntos de ícones de Glyphicons ([http://glyphicons.com](http://glyphicons.com)), com mais de 200 ícones disponíveis gratuitamente para uso dentro de seu aplicativo da web habilitado para o bootstrap. Aqui está apenas uma pequena amostra: Aqui está a apenas uma pequena amostra:
 
 ![Glyphicons](bootstrap/_static/theme-glyphicons.png)
 
