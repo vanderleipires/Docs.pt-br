@@ -1,7 +1,7 @@
 ---
-title: Desempenho
+title: Desempenho no ASP.NET Core
 author: ardalis
-description: 
+description: "Descubra tópicos referentes ao desempenho do aplicativo ASP.NET Core."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,16 +9,16 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/index
-ms.openlocfilehash: ac8b1002ad30b53cd14ac4be3a65d36a83fedf50
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: df69d608bc8bd802a9bbba7616807c6c8e794b26
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="performance"></a><span data-ttu-id="00304-102">Desempenho</span><span class="sxs-lookup"><span data-stu-id="00304-102">Performance</span></span>
+# <a name="performance-in-aspnet-core"></a><span data-ttu-id="22330-103">Desempenho no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="22330-103">Performance in ASP.NET Core</span></span>
 
-*   [<span data-ttu-id="00304-103">Cache</span><span class="sxs-lookup"><span data-stu-id="00304-103">Caching</span></span>](caching/index.md)
-    *   [<span data-ttu-id="00304-104">Cache in-memory</span><span class="sxs-lookup"><span data-stu-id="00304-104">In-memory caching</span></span>](caching/memory.md)
-    *   [<span data-ttu-id="00304-105">Trabalhar com um cache distribuído</span><span class="sxs-lookup"><span data-stu-id="00304-105">Work with a distributed cache</span></span>](caching/distributed.md)
-    *   [<span data-ttu-id="00304-106">Cache de resposta</span><span class="sxs-lookup"><span data-stu-id="00304-106">Response caching</span></span>](caching/response.md)
-*   [<span data-ttu-id="00304-107">Middleware de compactação de resposta</span><span class="sxs-lookup"><span data-stu-id="00304-107">Response compression middleware</span></span>](response-compression.md)
+*   [<span data-ttu-id="22330-104">Cache</span><span class="sxs-lookup"><span data-stu-id="22330-104">Caching</span></span>](caching/index.md)
+    *   [<span data-ttu-id="22330-105">Cache in-memory</span><span class="sxs-lookup"><span data-stu-id="22330-105">In-memory caching</span></span>](caching/memory.md)
+    *   [<span data-ttu-id="22330-106">Trabalhar com um cache distribuído</span><span class="sxs-lookup"><span data-stu-id="22330-106">Work with a distributed cache</span></span>](caching/distributed.md)
+    *   [<span data-ttu-id="22330-107">Cache de resposta</span><span class="sxs-lookup"><span data-stu-id="22330-107">Response caching</span></span>](caching/response.md)
+*   [<span data-ttu-id="22330-108">Middleware de compactação de resposta</span><span class="sxs-lookup"><span data-stu-id="22330-108">Response compression middleware</span></span>](response-compression.md)
