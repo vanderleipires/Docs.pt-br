@@ -28,7 +28,7 @@
 ### [Examinar os métodos Details e Delete](tutorials/first-mvc-app/details.md)
 
 ## [Criar APIs da Web](mvc/web-api/index.md)
-### [Criar uma API Web no Mac](xref:tutorials/first-web-api-mac)
+### [Criar uma API Web no macOS](xref:tutorials/first-web-api-mac)
 ### [Páginas de ajuda da API Web ASP.NET Core usando o Swagger](xref:tutorials/web-api-help-pages-using-swagger)
 #### [Introdução ao NSwag](xref:tutorials/get-started-with-nswag)
 #### [Introdução ao Swashbuckle](xref:tutorials/get-started-with-swashbuckle)
@@ -59,7 +59,7 @@
 #### [Tópicos avançados](data/ef-mvc/advanced.md)
 
 ## [Tutoriais de plataforma cruzada](xref:tutorials/xplat)
-### [Aplicativo Web de Páginas Razor em um Mac](xref:tutorials/razor-pages-mac/index)
+### [Aplicativo Web de Páginas do Razor no macOS](xref:tutorials/razor-pages-mac/index)
 #### [Introdução a Páginas do Razor](xref:tutorials/razor-pages-mac/razor-pages-start)
 #### [Adicionando um modelo](xref:tutorials/razor-pages-mac/model)
 #### [Páginas do Razor geradas por scaffolding](xref:tutorials/razor-pages-mac/page)
@@ -87,7 +87,7 @@
 #### [Adicionando uma Validação](xref:tutorials/first-mvc-app-mac/validation)
 #### [Examinando os métodos Details e Delete](xref:tutorials/first-mvc-app/details)
 
-### [Aplicativo Web do MVC com o Visual Studio Code no Mac ou no Linux](xref:tutorials/first-mvc-app-xplat/index)
+### [Aplicativo Web MVC com o Visual Studio Code no macOS ou no Linux](xref:tutorials/first-mvc-app-xplat/index)
 #### [Introdução](tutorials/first-mvc-app-xplat/start-mvc.md)
 #### [Adicionando um controlador](tutorials/first-mvc-app-xplat/adding-controller.md)
 #### [Adicionando uma exibição](tutorials/first-mvc-app-xplat/adding-view.md)

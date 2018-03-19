@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: fd58a6a3e35a706d503603790fa1c726e6c865d6
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -27,14 +27,14 @@ As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada par
 * Criar um aplicativo Web de Páginas do Razor com o ASP.NET Core
 
    * [Páginas do Razor no Windows](xref:tutorials/razor-pages/index)
-   * [Páginas do Razor no Mac](xref:tutorials/razor-pages-mac/index)
+   * [Páginas do Razor no macOS](xref:tutorials/razor-pages-mac/index)
    * [Páginas do Razor com o VS Code](xref:tutorials/razor-pages-vsc/index)  
 
 * Criar um aplicativo Web MVC ASP.NET Core
 
    * [Aplicativo Web com o Visual Studio para Windows](first-mvc-app/index.md)
    * [Aplicativo Web com o Visual Studio para Mac](first-mvc-app-mac/index.md)
-   * [Aplicativo Web MVC ASP.NET Core com o Visual Studio Code no Mac ou Linux ](first-mvc-app-xplat/index.md)
+   * [Aplicativo Web com o Visual Studio Code no macOS ou no Linux](first-mvc-app-xplat/index.md)
 
 * [Introdução ao ASP.NET Core e ao Entity Framework Core usando o Visual Studio](../data/ef-mvc/index.md)
 * [Criar auxiliares de marcação](../mvc/views/tag-helpers/authoring.md)
