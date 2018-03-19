@@ -98,7 +98,7 @@ Consulte [exigir HTTPS](xref:security/enforcing-ssl).
 
 É uma prática recomendada para confirmar o email de um novo registro de usuário. Ajuda de confirmação para verificar se eles não estiver representando alguém de email (ou seja, eles ainda não registrados com outra pessoa email). Suponha que você tivesse um fórum de discussão, e quiser impedir "yli@example.com"do registro como"nolivetto@contoso.com." Sem confirmação por email, "nolivetto@contoso.com" pode receber email indesejado de seu aplicativo. Suponha que o usuário registrado acidentalmente como "ylo@example.com" e ainda não tenha percebido a digitação incorreta da "yli". Elas não serão capazes de usar a recuperação de senha porque o aplicativo não tiver seu email correto. Email de confirmação oferece apenas proteção limitada de robôs. Email de confirmação não fornece proteção contra usuários mal-intencionados com várias contas de email.
 
-Em geral você deseja impedir que novos usuários lançamento todos os dados para seu site da web para que eles tenham um email confirmado.
+Geralmente você deseja impedir que novos usuários incluam dados em seu site até que eles tenham um email confirmado.
 
 Atualização `ConfigureServices` para exigir um email confirmado:
 
