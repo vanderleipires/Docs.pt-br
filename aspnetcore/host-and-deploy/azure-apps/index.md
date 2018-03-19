@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 8da97b2148c0a784e3b1fdfe210db35e3fcceade
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cefbc27c8091a2ed1441663e3779d67aae2c64dd
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 
@@ -45,6 +45,9 @@ Saiba como criar um aplicativo Web ASP.NET Core usando o Visual Studio e implant
 
 [Implantação contínua no Azure com o VSTS](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)  
 Configurar um build de CI para um aplicativo ASP.NET Core e, em seguida, criar uma versão de implantação contínua para o Serviço de Aplicativo do Azure.
+
+[Área restrita de aplicativo Web do Azure](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  
+Descubra as limitações de tempo de execução do Serviço de Aplicativo do Azure impostas pela plataforma de Aplicativos do Azure.
 
 ## <a name="application-configuration"></a>Configuração do aplicativo
 
@@ -99,4 +102,4 @@ O Serviço de Aplicativo do Azure no Windows Server usa o [IIS (Serviços de Inf
 * [Introdução ao Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
 * [Referência de configuração do Módulo do ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
 * [Usando Módulos do IIS com o ASP.NET Core](xref:host-and-deploy/iis/modules)
-* [Biblioteca Microsoft TechNet: Windows Server](https://docs.microsoft.com/windows-server/windows-server-versions)
+* [Biblioteca Microsoft TechNet: Windows Server](/windows-server/windows-server-versions)

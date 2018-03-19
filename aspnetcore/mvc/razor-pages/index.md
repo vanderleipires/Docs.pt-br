@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: f24de7ab12a3bbd7915ce6c3c93a107eb47fe864
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cb80c38fd0284d5153aebfe7bb515722623a4a34
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
@@ -21,9 +21,9 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Ryan Nowak](https://gith
 
 Páginas do Razor é um novo recurso do ASP.NET Core MVC que torna a codificação de cenários focados em página mais fácil e produtiva.
 
-Se você estiver procurando um tutorial que usa a abordagem Modelo-Exibição-Controlador, consulte a [Introdução ao ASP.NET Core MVC](xref:tutorials/first-mvc-app/start-mvc).
+Se você estiver procurando um tutorial que utiliza a abordagem Modelo-Exibição-Controlador, consulte a [Introdução ao ASP.NET Core MVC](xref:tutorials/first-mvc-app/start-mvc).
 
-Este documento proporciona uma introdução a páginas do Razor. Este não é um tutorial passo a passo. Se você achar que algumas das seções são difíceis de entender, consulte [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start).
+Este documento proporciona uma introdução a páginas do Razor. Este não é um tutorial passo a passo. Se você achar que algumas das seções são muito avançadas, consulte a [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start). Para obter uma visão geral do ASP.NET Core, consulte a [Introdução ao ASP.NET Core](xref:index).
 
 <a name="prerequisites"></a>
 
@@ -151,6 +151,11 @@ A propriedade `Customer` usa o atributo `[BindProperty]` para aceitar a associa�
 [!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
 
 Páginas do Razor, por padrão, associam as propriedades somente com verbos não GET. A associação de propriedades pode reduzir a quantidade de código que você precisa escrever. A associação reduz o código usando a mesma propriedade para renderizar os campos de formulário (`<input asp-for="Customer.Name" />`) e aceitar a entrada.
+
+> [!NOTE]
+> Por motivos de segurança, você deve optar por associar os dados da solicitação GET às propriedades do modelo de página. Verifique a entrada do usuário antes de mapeá-la para as propriedades. Aceitar esse comportamento é útil quando você cria recursos que contam com a cadeia de caracteres de consulta ou com os valores de rota.
+>
+> Para associar uma propriedade às solicitações GET, defina a propriedade `SupportsGet` do atributo `[BindProperty]` como `true`: `[BindProperty(SupportsGet = true)]`
 
 A home page (*Index.cshtml*):
 
@@ -384,7 +389,7 @@ Para pré-compilar exibições, consulte [Compilação de exibição do Razor](x
 
 [Baixar ou exibir código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/index/sample).
 
-Consulte [Introdução a Páginas do Razor no ASP.NET Core](xref:tutorials/razor-pages/razor-pages-start), que se baseia nesta introdução.
+Consulte a [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start), que se baseia nesta introdução.
 
 ### <a name="specify-that-razor-pages-are-at-the-content-root"></a>Especificar que as Páginas Razor estão na raiz do conteúdo
 
@@ -414,7 +419,8 @@ services.AddMvc()
 
 ## <a name="see-also"></a>Consulte também
 
-* [Começando com Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
+* [Introdução ao ASP.NET Core](xref:index)
+* [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Convenções de autorização de Páginas Razor](xref:security/authorization/razor-pages-authorization)
 * [Provedores de modelo personalizado de página e rota de Páginas Razor](xref:mvc/razor-pages/razor-pages-convention-features)
 * [Testes de integração e unidade de Páginas Razor](xref:testing/razor-pages-testing)
