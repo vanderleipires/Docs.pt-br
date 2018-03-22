@@ -11,7 +11,7 @@ ms.topic: article
 uid: security/authentication/facebook-logins
 ms.openlocfilehash: 283de1df68c45fa1b41ed75710fe9eb7925f815f
 ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
 ---
@@ -23,7 +23,7 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
 ## <a name="create-the-app-in-facebook"></a>Criar o aplicativo no Facebook
 
-*  Navegue até a página [aplicativos no site para desenvolvedores do Facebook](https://developers.facebook.com/apps/). Se você ainda não tiver uma conta do Facebook, use o link **inscrever-se para o Facebook** na página de logon para criar uma.
+*  Navegue até a página [aplicativos no site para desenvolvedores do Facebook](https://developers.facebook.com/apps/). Se você ainda não tiver uma conta do Facebook, use o link **Sign up foinscrever-se para o Facebook** na página de logon para criar uma.
 
 * Clique no botão **adicionar um novo aplicativo** no canto superior direito para criar uma nova ID de aplicativo.
 
@@ -72,7 +72,7 @@ dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Adicione o serviço do Facebook no método `ConfigureServices`  do arquivo *Startup.cs* :
+Adicione o serviço do Facebook no método `ConfigureServices` do arquivo *Startup.cs* :
 
 ```csharp
 services.AddIdentity<ApplicationUser, IdentityRole>()
