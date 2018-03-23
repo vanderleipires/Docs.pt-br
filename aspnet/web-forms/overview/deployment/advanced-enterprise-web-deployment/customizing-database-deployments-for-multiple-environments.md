@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
-title: "Personalizando as implantações de banco de dados para vários ambientes | Microsoft Docs"
+title: Personalizando as implantações de banco de dados para vários ambientes | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como personalizar as propriedades de um banco de dados para ambientes de destino específico como parte do processo de implantação. Observação: O tópico supõe th..."
+description: 'Este tópico descreve como personalizar as propriedades de um banco de dados para ambientes de destino específico como parte do processo de implantação. Observação: O tópico supõe th...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -94,7 +94,7 @@ Para dar suporte à implantação de um projeto de banco de dados para vários d
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. No **novo arquivo de configuração de implantação** caixa de diálogo caixa, dê ao arquivo um nome significativo (por exemplo, **TestEnvironment.sqldeployment**) e, em seguida, clique em **salvar**.
-4. Sobre o *[Filename] * .sqldeployment** página, defina as propriedades de implantação para atender às necessidades do seu ambiente de destino e, em seguida, salve o arquivo.
+4. Sobre o *[Filename]***.sqldeployment** página, defina as propriedades de implantação para atender às necessidades do seu ambiente de destino e, em seguida, salve o arquivo.
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. Observe que o novo arquivo é adicionado à pasta propriedades em seu projeto de banco de dados.
