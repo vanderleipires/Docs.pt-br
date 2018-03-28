@@ -25,7 +25,7 @@ Este tutorial mostra como criar um aplicativo web do ASP.NET Core com dados de u
 * **Gerenciadores de** podem aprovar ou rejeitar dados de um contato. Apenas os contatos aprovados são visíveis aos usuários.
 * **Os administradores** podem rejeitar/aprovar e editar/excluir todos os dados.
 
-Na imagem a seguir, o usuário Rick (`rick@example.com`) está conectado. Rick só pode exibir contatos aprovados e **editar**/**excluir**/**criar novo** links para seus contatos. Somente o último registro criado pelo Rick, exibe **editar** e **excluir** links. Outros usuários não verão o último registro até que um gerente ou administrador altera o status como "Aprovada".
+Na imagem a seguir, o usuário Rick (`rick@example.com`) está conectado. Rick só pode ver os contatos aprovados e os links **editar**/**excluir**/**criar novo** de seus contatos. Somente o último registro criado por Rick exibe os links **editar** e **excluir**. Outros usuários não verão o último registro até que um gerente ou administrador altere o status para "Aprovado".
 
 ![imagem descrita anterior](secure-data/_static/rick.png)
 
@@ -65,7 +65,7 @@ Este tutorial é avançado. Você deve estar familiarizado com:
 * [Autorização](xref:security/authorization/index)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
-Consulte [este arquivo PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) para a versão do MVC do ASP.NET Core. A versão 1.1 do ASP.NET Core deste tutorial está no [isso](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) pasta. O 1.1 exemplo do ASP.NET Core está no [exemplos](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2).
+Consulte [este arquivo PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) para a versão do MVC do ASP.NET Core. A versão 1.1 do ASP.NET Core deste tutorial está [nesta](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) pasta. O exemplo do ASP.NET Core 1.1 está em [exemplos](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2).
 
 ## <a name="the-starter-and-completed-app"></a>O aplicativo inicial e o concluído
 
@@ -73,7 +73,7 @@ Consulte [este arquivo PDF](https://github.com/aspnet/Docs/tree/master/aspnetcor
 
 ### <a name="the-starter-app"></a>O aplicativo inicial
 
-[Baixar](xref:tutorials/index#how-to-download-a-sample) o [starter](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2) aplicativo.
+[Baixe](xref:tutorials/index#how-to-download-a-sample) o aplicativo [inicial](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2).
 
 Executar o aplicativo, toque o **ContactManager** vincular e verifique se você pode criar, editar e excluir um contato.
 
@@ -110,7 +110,7 @@ Se você estiver usando o Visual Studio, habilite o HTTPS.
 
 Para redirecionar solicitações HTTP para HTTPS, consulte [Middleware de regravação de URL](xref:fundamentals/url-rewriting). Se você estiver usando o Visual Studio Code ou testando em uma plataforma local que não inclui um certificado de teste para HTTPS:
 
-  Definir `"LocalTest:skipSSL": true` no *appsettings. Developement.JSON* arquivo.
+  Definir `"LocalTest:skipSSL": true` no arquivo *appsettings. Developement.JSON*.
 
 ### <a name="require-authenticated-users"></a>Exigir usuários autenticados
 
@@ -125,7 +125,7 @@ Atualize `ConfigureServices` com as seguintes alterações:
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
 
-Adicionar [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) ao índice, sobre e contatos páginas para usuários anônimos podem obter informações sobre o site antes de eles se registrar. 
+Adicionar [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute)às páginas Índice, Sobre e Contatos para que usuários anônimos possam obter informações sobre o site antes de eles se registrarem. 
 
 [!code-csharp[](secure-data/samples/final2/Pages/Index.cshtml.cs?name=snippet&highlight=2)]
 
@@ -145,11 +145,11 @@ Atualização `Main` para usar a senha de teste:
 
 ### <a name="create-the-test-accounts-and-update-the-contacts"></a>Criar as contas de teste e atualizar os contatos
 
-Atualização de `Initialize` método o `SeedData` classe para criar as contas de teste:
+Atualize o método `Initialize` na classe `SeedData` para criar as contas de teste:
 
 [!code-csharp[](secure-data/samples/final2/Data/SeedData.cs?name=snippet_Initialize)]
 
-Adicione a ID de usuário de administrador e `ContactStatus` para os contatos. Tornar um dos contatos "Enviada" e um "rejeitado". Adicione a ID de usuário e o status para todos os contatos. Somente um contato é exibido:
+Adicione a ID de usuário de administrador e `ContactStatus` aos contatos. Torne um dos contatos "Enviado" e um "Rejeitado". Adicione a ID de usuário e o status para todos os contatos. Somente um contato é exibido:
 
 [!code-csharp[](secure-data/samples/final2/Data/SeedData.cs?name=snippet1&highlight=17,18)]
 
@@ -212,20 +212,20 @@ O código anterior:
 
 ### <a name="update-the-createmodel"></a>Atualizar o CreateModel
 
-Atualizar o construtor de modelo de página criar para usar o `DI_BasePageModel` classe base:
+Atualize o construtor de criar modelo de página para usar a classe base `DI_BasePageModel`:
 
 [!code-csharp[](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippetCtor)]
 
-Atualização de `CreateModel.OnPostAsync` método:
+Atualize o método `CreateModel.OnPostAsync` para:
 
-* Adicione a ID de usuário para o `Contact` modelo.
+* Adicione a ID de usuário ao modelo `Contact`.
 * Chama o manipulador de autorização para verificar se que o usuário tem permissão para criar contatos.
 
 [!code-csharp[](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippet_Create)]
 
 ### <a name="update-the-indexmodel"></a>Atualizar o IndexModel
 
-Atualização de `OnGetAsync` método apenas os contatos aprovados são mostradas a usuários gerais:
+Atualize o método `OnGetAsync` para que apenas os contatos aprovados sejam mostrados aos usuários gerais:
 
 [!code-csharp[](secure-data/samples/final2/Pages/Contacts/Index.cshtml.cs?name=snippet)]
 
@@ -272,7 +272,7 @@ Atualize o modelo de página de detalhes:
 
 Se você estiver usando o Visual Studio Code ou testando em uma plataforma local que não inclui um certificado de teste para HTTPS:
 
-* Defina `"LocalTest:skipSSL": true` no arquivo *appsettings. Developement.JSON*. Skip HTTPS somente em um computador de desenvolvimento.
+* Defina `"LocalTest:skipSSL": true` no arquivo *appsettings. Developement.JSON*. Use Skip HTTPS somente em um computador de desenvolvimento.
 
 Se o aplicativo tiver contatos:
 
@@ -301,7 +301,7 @@ Crie um contato no navegador do administrador. Copie a URL para excluir e editar
 * Criar um aplicativo de páginas Razor denominado "ContactManager"
 
   * Criar o aplicativo com **contas de usuário individuais**.
-  * O nome "ContactManager" para o espaço para nome coincida com o namespace usado no exemplo.
+  * Coloque o nome de "ContactManager" para que o namespace coincida com o namespace usado no exemplo.
 
   ```console
   dotnet new razor -o ContactManager -au Individual -uld

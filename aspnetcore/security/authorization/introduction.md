@@ -1,7 +1,7 @@
 ---
-title: "Introdução à autorização"
+title: Introdução à autorização
 author: rick-anderson
-description: "Este documento fornece uma explicação básica de autorização e explica como autorização se relaciona com ASP.NET Core."
+description: Este documento fornece uma explicação básica de autorização e explica como autorização se relaciona com ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -11,7 +11,7 @@ ms.topic: article
 uid: security/authorization/introduction
 ms.openlocfilehash: 3fef6d38672af8871c04b65834789a39a7df8487
 ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 02/20/2018
 ---
@@ -29,6 +29,6 @@ A autorização do ASP.NET Core fornece um modelo simples de [funções](roles.m
 
 ## <a name="namespaces"></a>Namespaces
 
-Componentes de autorização, incluindo os atributos `AuthorizeAttribute` e `AllowAnonymousAttribute`, são encontrados no namespace `Microsoft.AspNetCore.Authorization`.
+Componentes de autorização, incluindo os atributo `AuthorizeAttribute` e `AllowAnonymousAttribute` , são encontrados no namespace `Microsoft.AspNetCore.Authorization`.
 
 Consulte a documentação em [autorização simples](xref:security/authorization/simple).

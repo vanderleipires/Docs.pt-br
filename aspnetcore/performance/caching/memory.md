@@ -1,7 +1,7 @@
-﻿---
-title: "Cache de memória no ASP.NET Core"
+---
+title: Cache de memória no ASP.NET Core
 author: rick-anderson
-description: "Saiba como armazenar em cache os dados na memória do ASP.NET Core."
+description: Saiba como armazenar em cache os dados na memória do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -12,7 +12,7 @@ ms.topic: article
 uid: performance/caching/memory
 ms.openlocfilehash: 64635235c11b55818da02d63d044334f4b2cdb08
 ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/08/2018
 ---
@@ -32,7 +32,7 @@ Sessões não temporária em um farm da web exigem um [cache distribuído](distr
 
 O cache `IMemoryCache` removerá entradas de cache sob pressão de memória, a menos que a [prioridade de cache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority) seja definida como `CacheItemPriority.NeverRemove`. Você pode definir o `CacheItemPriority` para ajustar a prioridade com que o cache remove itens sob pressão de memória.
 
-O cache de memória pode armazenar qualquer objeto, enquanto a interface de cache distribuída é limitada a `byte[]`.
+O cache de memória pode armazenar qualquer objeto, enquanto a interface de cache distribuída é limitada a`byte[]`.
 
 ## <a name="using-imemorycache"></a>Usando IMemoryCache
 
@@ -54,11 +54,11 @@ A hora atual e o tempo em cache são exibidos:
 
 [!code-cshtml[](memory/sample/WebCache/Views/Home/Cache.cshtml)]
 
-Cache `DateTime` valor permanece no cache enquanto houver solicitações dentro do tempo limite (e nenhuma remoção devido à pressão de memória). A imagem a seguir mostra a hora atual e uma hora mais antiga recuperados do cache:
+O valor `DateTime` em cache permanecerá no cache enquanto houver solicitações dentro do tempo limite (e nenhuma remoção devido à pressão de memória). A imagem abaixo mostra a hora atual e uma hora mais antiga recuperada do cache:
 
 ![Exibição de índice com duas vezes diferentes exibido](memory/_static/time.png)
 
-O código a seguir usa [GetOrCreate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) e [GetOrCreateAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) para fazer o cache dos dados. 
+O código a seguir usa [GetOrCreate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) e [GetOrCreateAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) para fazer o cache dos dados.  
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
 
