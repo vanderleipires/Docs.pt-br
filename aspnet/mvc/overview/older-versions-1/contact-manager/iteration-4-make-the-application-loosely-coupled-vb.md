@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
-title: "Iteração #4 – tornar o aplicativo flexível (VB) | Microsoft Docs"
+title: 'Iteração #4 – tornar o aplicativo flexível (VB) | Microsoft Docs'
 author: microsoft
-description: "Essa terceira iteração, podemos aproveitar vários padrões de design de software para facilitar a manutenção e modificar o aplicativo Gerenciador de contato. Para..."
+description: Essa terceira iteração, podemos aproveitar vários padrões de design de software para facilitar a manutenção e modificar o aplicativo Gerenciador de contato. Para...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9c11c89710723c133a306aaf56cc8797cc036475
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d953a1b786c802c070619e553e27d88f2ded149c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>Iteração #4 – tornar o aplicativo flexível (VB)
 ====================
@@ -88,7 +88,7 @@ Primeiro, precisamos criar uma interface que descreve todos os métodos de acess
 
 Em seguida, é preciso criar uma classe concreta que implementa a interface IContactManagerRepository. Como estamos usando o Entity Framework da Microsoft para acessar o banco de dados, vamos criar uma nova classe chamada EntityContactManagerRepository. Essa classe está contida na listagem 2.
 
-**A listagem 2 - Models\EntityContactManagerRepository.vb**
+**Listing 2 - Models\EntityContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample2.vb)]
 
@@ -176,7 +176,7 @@ O padrão de decorador permite encapsular uma classe existente em uma nova class
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample7.vb)]
 
-**Listando 8 - Models\Validation\IValidationDictionary.vb**
+**Listing 8 - Models\Validation\IValidationDictionary.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample8.vb)]
 
@@ -196,6 +196,6 @@ Quando criamos a camada de serviço, aproveitamos o padrão de decorador para is
 
 Por fim, aproveitamos um padrão de design de software denominado o padrão de injeção de dependência. Esse padrão permite programar em interfaces (abstrações) em vez de classes concretas. Implementando o padrão de design de injeção de dependência também torna nosso código mais testável. A próxima iteração, adicionamos testes de unidade ao nosso projeto.
 
->[!div class="step-by-step"]
-[Anterior](iteration-3-add-form-validation-vb.md)
-[Próximo](iteration-5-create-unit-tests-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](iteration-3-add-form-validation-vb.md)
+> [Próximo](iteration-5-create-unit-tests-vb.md)

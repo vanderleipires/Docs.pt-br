@@ -2,7 +2,7 @@
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 title: 'Parte 3: Criar um controlador de Admin | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 6fadfb6e96ae287fc5f81516b7535e03853c7e6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 588d9d1b5d27759692cd840faabf2c3549c309d6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-creating-an-admin-controller"></a>Parte 3: Criar um controlador de Admin
 ====================
@@ -71,10 +71,10 @@ O `AdminController` classe define cinco métodos que implementam a funcionalidad
 | Método do controlador | Descrição | URI | Método HTTP |
 | --- | --- | --- | --- |
 | GetProducts | Obtém todos os produtos. | API e produtos | OBTER |
-| GetProduct | Localiza um produto por ID. | API/produtos/*id* | OBTER |
-| PutProduct | Atualiza um produto. | API/produtos/*id* | PUT |
+| GetProduct | Localiza um produto por ID. | api/products/*id* | OBTER |
+| PutProduct | Atualiza um produto. | api/products/*id* | PUT |
 | PostProduct | Cria um novo produto. | API e produtos | POSTAR |
-| DeleteProduct | Exclui um produto. | API/produtos/*id* | DELETE |
+| DeleteProduct | Exclui um produto. | api/products/*id* | DELETE |
 
 Cada método chama `OrdersContext` para consultar o banco de dados. Chamam os métodos que modificam a coleção (PUT, POST e DELETE) `db.SaveChanges` para manter as alterações no banco de dados. Os controladores são criados por solicitação HTTP e, em seguida, descartados, portanto, é necessário manter as alterações antes de retorna de um método.
 
@@ -102,6 +102,6 @@ Enviar uma solicitação HTTP para "`http://localhost:*portnum*/api/admin`. A pr
 
 [!code-console[Main](using-web-api-with-entity-framework-part-3/samples/sample6.cmd)]
 
->[!div class="step-by-step"]
-[Anterior](using-web-api-with-entity-framework-part-2.md)
-[Próximo](using-web-api-with-entity-framework-part-4.md)
+> [!div class="step-by-step"]
+> [Anterior](using-web-api-with-entity-framework-part-2.md)
+> [Próximo](using-web-api-with-entity-framework-part-4.md)

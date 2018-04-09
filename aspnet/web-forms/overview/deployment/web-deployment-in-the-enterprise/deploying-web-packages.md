@@ -2,7 +2,7 @@
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 title: Implantando pacotes da Web | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como você pode publicar pacotes de implantação da web para um servidor remoto usando a ferramenta de implantação dos serviços de informações da Internet (IIS) da Web (Web..."
+description: Este tópico descreve como você pode publicar pacotes de implantação da web para um servidor remoto usando a ferramenta de implantação dos serviços de informações da Internet (IIS) da Web (Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5d3af0fdcc6e7ae20194ba658e0cf72ad22c1234
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-web-packages"></a>Pacotes de implantação da Web
 ====================
@@ -43,10 +43,10 @@ por [Jason Lee](https://github.com/jrjlee)
 
 Executando o [*nome do projeto*]*. Deploy* arquivo é a maneira mais simples para implantar um pacote da web. Em particular, usando o *. Deploy* arquivo oferece essas vantagens usando MSDeploy.exe diretamente:
 
-- Você não precisa especificar o local do pacote de implantação da web & #x 2014; o *. Deploy* arquivo já sabe onde ele está.
-- Você não precisa especificar o local do *SetParameters.xml* arquivo & #x 2014; o *. Deploy* arquivo já sabe onde ele está.
-- Você não precisa especificar origem e provedores de MSDeploy destino & #x 2014; o *. Deploy* arquivo já sabe quais valores a serem usados.
-- Você não precisa especificar as configurações de operação MSDeploy & #x 2014; o *. Deploy* arquivo adiciona os valores comuns para o comando MSDeploy.exe automaticamente.
+- Você não precisa especificar o local do pacote de implantação da web&#x2014;o *. Deploy* arquivo já sabe onde ele está.
+- Você não precisa especificar o local do *SetParameters.xml* arquivo&#x2014;o *. Deploy* arquivo já sabe onde ele está.
+- Você não precisa especificar os provedores de origem e destino MSDeploy&#x2014;o *. Deploy* arquivo já sabe quais valores a serem usados.
+- Você não precisa especificar as configurações de operação MSDeploy&#x2014;o *. Deploy* arquivo adiciona os valores comuns para o comando MSDeploy.exe automaticamente.
 
 Antes de usar o *. Deploy* arquivo para implantar um pacote da web, você deve garantir que:
 
@@ -117,7 +117,7 @@ Quando você usa o MSDeploy.exe, você precisa fornecer três partes importantes
 - Um **– dest** parâmetro que indica onde vai seus dados.
 - Um **– verbo** parâmetro que indica a [operação](https://technet.microsoft.com/library/dd568989(WS.10).aspx) você deseja executar.
 
-Depende de MSDeploy.exe [provedores de implantação da Web](https://technet.microsoft.com/library/dd569040(WS.10).aspx) para processar dados de origem e de destino. A implantação da Web inclui muitos provedores que representam o intervalo de aplicativos e fontes de dados pode funcionar com & #x 2014; por exemplo, há provedores para bancos de dados do SQL Server, servidores web IIS, certificados, assemblies do GAC (cache) de assembly global, várias arquivos de configuração diferentes e muitos outros tipos de dados. Ambos os o **– origem** parâmetro e o **– dest** parâmetro deve especificar um provedor, no formato **– origem**: [*providerName*] = [*local*]. Quando você estiver implantando um pacote da web em um site do IIS, você deve usar estes valores:
+Depende de MSDeploy.exe [provedores de implantação da Web](https://technet.microsoft.com/library/dd569040(WS.10).aspx) para processar dados de origem e de destino. A implantação da Web inclui muitos provedores que representam o intervalo de aplicativos e fontes de dados pode funcionar com&#x2014;há provedores de bancos de dados do SQL Server, servidores web IIS, certificados, assemblies do GAC (cache) de assembly global, por exemplo, várias arquivos de configuração diferentes e muitos outros tipos de dados. Ambos os o **– origem** parâmetro e o **– dest** parâmetro deve especificar um provedor, no formato **– origem**: [*providerName*] = [*local*]. Quando você estiver implantando um pacote da web em um site do IIS, você deve usar estes valores:
 
 - O **– origem** provedor é sempre [pacote](https://technet.microsoft.com/library/dd569019(WS.10).aspx). Por exemplo:
 
@@ -213,6 +213,6 @@ Este tópico descreveu como você pode implantar um pacote da web executando o *
 
 Para obter orientação sobre como criar e parametrizar um pacote de implantação da web, consulte [criação e a projetos de aplicativo Web de empacotamento](building-and-packaging-web-application-projects.md) e [parâmetros de configuração para implantação do pacote da Web](configuring-parameters-for-web-package-deployment.md). Para obter orientação sobre como criar e implantar pacotes de web de uma instância do Team Foundation Server (TFS), consulte [Configurando o Team Foundation Server para a implantação automatizada do Web](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Para obter informações sobre como personalizar e solucionar problemas do processo de implantação, consulte [excluindo arquivos e pastas de implantação](../advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment.md).
 
->[!div class="step-by-step"]
-[Anterior](configuring-parameters-for-web-package-deployment.md)
-[Próximo](deploying-database-projects.md)
+> [!div class="step-by-step"]
+> [Anterior](configuring-parameters-for-web-package-deployment.md)
+> [Próximo](deploying-database-projects.md)

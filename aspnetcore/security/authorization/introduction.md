@@ -1,7 +1,7 @@
 ---
-title: Introdução à autorização
+title: Introdução à autorização no núcleo do ASP.NET
 author: rick-anderson
-description: Este documento fornece uma explicação básica de autorização e explica como autorização se relaciona com ASP.NET Core.
+description: Conheça os fundamentos da autorização e como funciona a autorização em aplicativos do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/introduction
-ms.openlocfilehash: 3fef6d38672af8871c04b65834789a39a7df8487
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
-ms.translationtype: HT
+ms.openlocfilehash: 7ba1966dcaf1ce0510f489cfe0ff11501faffa56
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="introduction"></a>Introdução
+# <a name="introduction-to-authorization-in-aspnet-core"></a>Introdução à autorização no núcleo do ASP.NET
 
 <a name="security-authorization-introduction"></a>
 
@@ -25,7 +25,7 @@ A autorização é ortogonal e independente de autenticação, que é o processo
 
 ## <a name="authorization-types"></a>Tipos de autorização
 
-A autorização do ASP.NET Core fornece um modelo simples de [funções](roles.md) declarativas [baseado em políticas](policies.md). Ela é expressa em requisitos e os manipuladores avaliam as reivindicações de um usuário em relação aos requisitos. Verificações imperativas podem ser baseadas em políticas simples ou políticas que avaliem a identidade do usuário e propriedades do recurso que o usuário está tentando acessar.
+A autorização do ASP.NET Core fornece um modelo simples de [funções](xref:security/authorization/roles) declarativas [baseado em políticas](xref:security/authorization/policies). Ela é expressa em requisitos e os manipuladores avaliam as reivindicações de um usuário em relação aos requisitos. Verificações imperativas podem ser baseadas em políticas simples ou políticas que avaliem a identidade do usuário e propriedades do recurso que o usuário está tentando acessar.
 
 ## <a name="namespaces"></a>Namespaces
 

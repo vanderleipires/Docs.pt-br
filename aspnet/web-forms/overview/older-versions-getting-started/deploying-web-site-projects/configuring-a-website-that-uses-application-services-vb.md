@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
-title: "Configurando um site que usa serviços de aplicativo (VB) | Microsoft Docs"
+title: Configurando um site que usa serviços de aplicativo (VB) | Microsoft Docs
 author: rick-anderson
-description: "O ASP.NET versão 2.0 introduziu uma série de serviços de aplicativo, que fazem parte do .NET Framework e servir como um conjunto de blocos de construção de serviços que de..."
+description: O ASP.NET versão 2.0 introduziu uma série de serviços de aplicativo, que fazem parte do .NET Framework e servir como um conjunto de blocos de construção de serviços que de...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5f908eb6c6b2d18c6c41870a38bb618737949b0a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 416cc5b3b6ac3c8e7a6c1a99a8b4f8d94b5b3428
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>Configurando um site que usa serviços de aplicativo (VB)
 ====================
@@ -200,6 +200,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [*Tutoriais de segurança de site*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 - [*Visão geral de ferramenta de administração de Site da Web*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
->[!div class="step-by-step"]
-[Anterior](configuring-the-production-web-application-to-use-the-production-database-vb.md)
-[Próximo](strategies-for-database-development-and-deployment-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](configuring-the-production-web-application-to-use-the-production-database-vb.md)
+> [Próximo](strategies-for-database-development-and-deployment-vb.md)

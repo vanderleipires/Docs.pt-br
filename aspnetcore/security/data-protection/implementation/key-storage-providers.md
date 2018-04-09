@@ -1,5 +1,5 @@
 ---
-title: Provedores de armazenamento de chaves
+title: Provedores de armazenamento de chaves no núcleo do ASP.NET
 author: rick-anderson
 description: Saiba mais sobre os provedores de armazenamento de chaves no ASP.NET Core e como configurar locais de armazenamento de chaves.
 manager: wpickett
@@ -9,20 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: 83e02a19e465b3ff81a0c0c62c2c8b090bfab052
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e8b7804e93b812c2e710ab15510c2fbaa7c4866d
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-storage-providers"></a>Provedores de armazenamento de chaves
+# <a name="key-storage-providers-in-aspnet-core"></a>Provedores de armazenamento de chaves no núcleo do ASP.NET
 
 <a name="data-protection-implementation-key-storage-providers"></a>
 
 Por padrão, o sistema de proteção de dados [emprega uma heurística](xref:security/data-protection/configuration/default-settings) para determinar onde o material de chave de criptografia deve ser persistente. O desenvolvedor pode substituir a heurística e especificar manualmente o local.
 
 > [!NOTE]
-> Se você especificar um local de persistência de chave explícita, o sistema de proteção de dados irá cancelar o registro a criptografia de chave padrão no mecanismo de rest que a heurística fornecida, para que as chaves não serão criptografadas em repouso. É recomendável que você adicionalmente [especificar um mecanismo de criptografia de chave explícita](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers) para aplicativos de produção.
+> Se você especificar um local de persistência de chave explícita, o sistema de proteção de dados irá cancelar o registro a criptografia de chave padrão no mecanismo de rest que a heurística fornecida, para que as chaves não serão criptografadas em repouso. É recomendável que você adicionalmente [especificar um mecanismo de criptografia de chave explícita](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers) para aplicativos de produção.
 
 O sistema de proteção de dados é fornecido com vários provedores de armazenamento de chaves da caixa de entrada.
 
@@ -36,7 +36,7 @@ sc.AddDataProtection()
        .PersistKeysToFileSystem(new DirectoryInfo(@"c:\temp-keys\"));
    ```
 
-O `DirectoryInfo` pode apontar para um diretório no computador local ou ela pode apontar para uma pasta em um compartilhamento de rede. Se apontando para um diretório no computador local (e o cenário é que apenas os aplicativos no computador local precisa usar esse repositório), considere o uso de [Windows DPAPI](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) para criptografar as chaves em repouso. Caso contrário, considere o uso de um [certificado x. 509](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) para criptografar as chaves em repouso.
+O `DirectoryInfo` pode apontar para um diretório no computador local ou ela pode apontar para uma pasta em um compartilhamento de rede. Se apontando para um diretório no computador local (e o cenário é que apenas os aplicativos no computador local precisa usar esse repositório), considere o uso de [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) para criptografar as chaves em repouso. Caso contrário, considere o uso de um [certificado x. 509](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) para criptografar as chaves em repouso.
 
 ## <a name="azure-and-redis"></a>Azure e Redis
 
@@ -84,7 +84,7 @@ Para obter mais informações, consulte o seguinte:
        .PersistKeysToRegistry(Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Sample\keys"));
    ```
 
-Se você usar o registro do sistema como um mecanismo de persistência, considere o uso de [Windows DPAPI](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) para criptografar as chaves em repouso.
+Se você usar o registro do sistema como um mecanismo de persistência, considere o uso de [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) para criptografar as chaves em repouso.
 
 ## <a name="custom-key-repository"></a>Repositório de chave personalizado
 

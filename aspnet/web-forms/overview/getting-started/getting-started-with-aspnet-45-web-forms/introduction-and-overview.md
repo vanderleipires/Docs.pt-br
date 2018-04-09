@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
-title: "Guia de Introdução ao 4.5 Web Forms do ASP.NET e Visual Studio 2013 | Microsoft Docs"
+title: Guia de Introdução ao 4.5 Web Forms do ASP.NET e Visual Studio 2013 | Microsoft Docs
 author: Erikre
-description: "Esta série de tutoriais passo a passo ensinam os fundamentos da compilação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express..."
+description: Esta série de tutoriais passo a passo ensinam os fundamentos da compilação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 572b263a5f968b473457771a1dd4075910218c01
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>Guia de Introdução ao 4.5 Web Forms do ASP.NET e Visual Studio 2013
 ====================
@@ -101,7 +101,7 @@ Tarefas demonstradas nesta série:
 - Registrando as rotas para o aplicativo web
 - Implementando o tratamento de erros e log de erros
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Se você for novo no Web Forms do ASP.NET mas tem familiaridade com conceitos de programação, você tem o direito tutorial. Se você já estiver familiarizado com o Web Forms do ASP.NET, você pode aproveitar essa série de tutoriais pelos novos recursos disponíveis no ASP.NET 4.5. Se você estiver familiarizado com conceitos de programação e Web Forms do ASP.NET, consulte os tutoriais adicionais fornecidos no Web Forms [Introdução](../../../index.md) seção no site da Web do ASP.NET.
 
@@ -177,9 +177,9 @@ Depois de instalar os pré-requisitos, você está pronto para começar a criar 
 
 [Introdução ao 4.5 Web Forms do ASP.NET e Visual Studio 2013 – Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (c#) 
 
-O download é um *. zip* arquivo. Para ver o projeto completo que cria esta série de tutoriais, encontre e selecione o *c#*pasta o *. zip* arquivo. Salve o *c#* folderto a pasta que você pode usar para trabalhar com projetos do Visual Studio 2013. Por padrão, a pasta de projetos do Visual Studio 2013 é o seguinte:
+O download é um <em>. zip</em> arquivo. Para ver o projeto completo que cria esta série de tutoriais, encontre e selecione o <em>c#</em>pasta o <em>. zip</em> arquivo. Salve o <em>c#</em> folderto a pasta que você pode usar para trabalhar com projetos do Visual Studio 2013. Por padrão, a pasta de projetos do Visual Studio 2013 é o seguinte:
 
-**C:\Users\*****&lt;username&gt;* \Documents\Visual 2013\Projects Studio**
+<strong>C:\Users\</ strong ><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual 2013\Projects Studio</strong>
 
 Renomear o ***c#*** pasta ***WingtipToys***.
 
@@ -197,5 +197,5 @@ Comentários sobre esta série de tutoriais são bem-vindos e quando esta série
 
 Quando ocorrer um erro durante o desenvolvimento, ou se o site da Web não funcionar corretamente, as mensagens de erro podem fornecer pistas complexas para a origem do problema ou não podem explicar como corrigi-lo. Para ajudá-lo com alguns cenários comuns de problema, você também pode usar o [ASP.NET fóruns](https://forums.asp.net/) ou na seção de p e r incluídas com o [Introdução ao Web Forms do ASP.NET 4.5 e o Visual Studio 2013 - Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ( C#) exemplo. Se você receber uma mensagem de erro ou algo não funciona ao percorrer os tutoriais, certifique-se de verificar os locais acima.
 
->[!div class="step-by-step"]
-[Avançar](create-the-project.md)
+> [!div class="step-by-step"]
+> [Avançar](create-the-project.md)

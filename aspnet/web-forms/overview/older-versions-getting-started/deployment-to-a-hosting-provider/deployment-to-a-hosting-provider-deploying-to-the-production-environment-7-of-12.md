@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
-title: "Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Implantando o ambiente de produção - 7 de 12 | Microsoft Docs"
+title: 'Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Implantando o ambiente de produção - 7 de 12 | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutoriais mostra como implantar um ASP.NET (publicar) projeto de aplicativo web que inclui um banco de dados do SQL Server Compact usando Visual Stu..."
+description: Esta série de tutoriais mostra como implantar um ASP.NET (publicar) projeto de aplicativo web que inclui um banco de dados do SQL Server Compact usando Visual Stu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 4aa6766c2c7765f499f5c5380962a5fe443e8c9d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ab3b7ba332deddae7d04fc37c7aabc72bdb2d17e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Implantando o ambiente de produção - 7 de 12
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Neste tutorial, você pode configurar uma conta com um provedor de hospedagem e implantar seu ASP.NET recurso de publicação do aplicativo web para o ambiente de produção usando o Visual Studio um clique.
 
@@ -125,7 +125,7 @@ No **configurações de publicação de importação** caixa de diálogo, seleci
 
 ![Guia de Conexão do Assistente da Web de publicação](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image26.png)
 
-O arquivo. publishsettings coloca a URL permanente planejada para o site na caixa URL de destino, mas se você ainda não adquiriu esse domínio, substitua o valor com a URL temporária. Neste exemplo, a URL é  *[http://contosouniversity.com.vserver01.cytanium.com](http://contosouniversity.com.vserver01.cytanium.com).* É o único propósito dessa caixa especificar qual URL do navegador abrirá automaticamente após com êxito após a implantação. Se você deixar em branco, a única consequência é que o navegador não serão iniciados automaticamente após a implantação.
+O arquivo. publishsettings coloca a URL permanente planejada para o site na caixa URL de destino, mas se você ainda não adquiriu esse domínio, substitua o valor com a URL temporária. Neste exemplo, a URL é  *[ http://contosouniversity.com.vserver01.cytanium.com ](http://contosouniversity.com.vserver01.cytanium.com).* É o único propósito dessa caixa especificar qual URL do navegador abrirá automaticamente após com êxito após a implantação. Se você deixar em branco, a única consequência é que o navegador não serão iniciados automaticamente após a implantação.
 
 Clique em **Conexão validar** para verificar se as configurações estão corretas e você pode se conectar ao servidor. Como você viu anteriormente, uma marca de seleção verde verifica se a conexão foi bem-sucedida.
 
@@ -137,9 +137,9 @@ Clique em **Avançar**.
 
 No **bancos de dados** seção o **configurações** , insira o mesmo perfil de publicação de valores que você inseriu para o teste. Você encontrará as cadeias de caracteres de conexão que é necessário nas listas suspensas.
 
-- Na caixa de cadeia de caracteres de conexão do **SchoolContext,** selecione`Data Source=|DataDirectory|School-Prod.sdf`
+- Na caixa de cadeia de caracteres de conexão do **SchoolContext,** selecione `Data Source=|DataDirectory|School-Prod.sdf`
 - Em **SchoolContext**, selecione **aplicar migrações do Code First**.
-- Na caixa de cadeia de caracteres de conexão do **DefaultConnection**, selecione`Data Source=|DataDirectory|aspnet-Prod.sdf`
+- Na caixa de cadeia de caracteres de conexão do **DefaultConnection**, selecione `Data Source=|DataDirectory|aspnet-Prod.sdf`
 - Em **DefaultConnection**, deixe **Atualizar banco de dados** desmarcada.
 
 ![Guia de configurações do Assistente da Web de publicação](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image28.png)
@@ -252,6 +252,6 @@ Criar uma segunda conta de hospedagem é uma abordagem para trabalhar com um amb
 
 O seguinte tutorial, você atualizar o código do aplicativo e implantar a alteração em ambientes de teste e produção.
 
->[!div class="step-by-step"]
-[Anterior](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
-[Próximo](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
+> [!div class="step-by-step"]
+> [Anterior](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
+> [Próximo](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)

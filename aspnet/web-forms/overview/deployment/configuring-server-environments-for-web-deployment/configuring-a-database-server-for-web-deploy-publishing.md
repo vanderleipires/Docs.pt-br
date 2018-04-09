@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
-title: "Configurando um servidor de banco de dados para Web publicação da implantação | Microsoft Docs"
+title: Configurando um servidor de banco de dados para Web publicação da implantação | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como configurar um servidor de banco de dados do SQL Server 2008 R2 para dar suporte à publicação e implantação da web. As tarefas descritas neste tópico são co..."
+description: Este tópico descreve como configurar um servidor de banco de dados do SQL Server 2008 R2 para dar suporte à publicação e implantação da web. As tarefas descritas neste tópico são co...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a2340c0d561ed274e281b5f6d942af0a2027315a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Configurando um servidor de banco de dados para publicação de implantação da Web
 ====================
@@ -26,7 +26,7 @@ por [Jason Lee](https://github.com/jrjlee)
 
 > Este tópico descreve como configurar um servidor de banco de dados do SQL Server 2008 R2 para dar suporte à publicação e implantação da web.
 > 
-> As tarefas descritas neste tópico são comuns como cada cenário de implantação & #x 2014; não importa se os servidores web são configurados para usar o serviço de agente remoto de ferramenta de implantação da Web de IIS (implantação da Web), o manipulador de implantação da Web ou implantação offline ou o aplicativo é executado em um único servidor web ou um farm de servidores. A maneira de implantar o banco de dados pode alterar de acordo com requisitos de segurança e outras considerações. Por exemplo, você pode implantar o banco de dados com ou sem dados de exemplo, e você pode implantar os mapeamentos de função de usuário ou configurá-los manualmente após a implantação. No entanto, a maneira como você configura o servidor de banco de dados permanece o mesmo.
+> As tarefas descritas neste tópico são comuns a todos os cenários de implantação&#x2014;não importa se os servidores web são configurados para usar o serviço de agente remoto de ferramenta de implantação da Web de IIS (implantação da Web), o manipulador de implantação da Web ou implantação offline ou o aplicativo está em execução em um único servidor web ou um farm de servidores. A maneira de implantar o banco de dados pode alterar de acordo com requisitos de segurança e outras considerações. Por exemplo, você pode implantar o banco de dados com ou sem dados de exemplo, e você pode implantar os mapeamentos de função de usuário ou configurá-los manualmente após a implantação. No entanto, a maneira como você configura o servidor de banco de dados permanece o mesmo.
 
 
 Você não precisa instalar produtos adicionais ou ferramentas para configurar um servidor de banco de dados para dar suporte à implantação da web. Supondo que seu servidor de banco de dados e seu servidor web são executados em computadores diferentes, você só precisa:
@@ -65,8 +65,8 @@ Para habilitar o SQL Server para se comunicar através de TCP/IP, use o SQL Serv
 1. Sobre o **iniciar** , aponte para **todos os programas**, clique em **Microsoft SQL Server 2008 R2**, clique em **ferramentas de configuração**e, em seguida, clique em **SQL Server Configuration Manager**.
 2. No painel de exibição de árvore, expanda **configuração de rede do SQL Server**e, em seguida, clique em **protocolos para MSSQLSERVER**.
 
-    > [!NOTE]
-    > Se você tiver instalado várias instâncias do SQL Server, você verá um **protocolos para * [nome da instância]* item para cada instância. Você precisa configurar as configurações de rede em uma base por instância.
+   > [!NOTE]
+   > Se você tiver instalado várias instâncias do SQL Server, você verá um <strong>protocolos para</strong><em>[nome da instância]</em> item para cada instância. Você precisa configurar as configurações de rede em uma base por instância.
 3. No painel de detalhes, clique com botão direito do **TCP/IP** de linha e, em seguida, clique em **habilitar**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -130,7 +130,7 @@ Para obter mais informações sobre como configurar o Firewall do Windows para o
 
 ## <a name="configure-logins-and-database-permissions"></a>Configurar logons e permissões de banco de dados
 
-Quando você implanta um aplicativo da web para serviços de informações da Internet (IIS), o aplicativo é executado usando a identidade do pool de aplicativos. Em um ambiente de domínio, identidades do pool de aplicativos usam a conta do computador do servidor no qual executar para acessar recursos de rede. Contas de computador assumem a forma * [nome de domínio]***\** * [nome do computador]***$ * * & #x 2014; por exemplo, **FABRIKAM\TESTWEB1$**. Para permitir que seu aplicativo da web acessar um banco de dados pela rede, você precisa:
+Quando você implanta um aplicativo da web para serviços de informações da Internet (IIS), o aplicativo é executado usando a identidade do pool de aplicativos. Em um ambiente de domínio, identidades do pool de aplicativos usam a conta do computador do servidor no qual executar para acessar recursos de rede. Contas de computador assumem a forma <em>[nome do domínio]</em><strong>\</ strong ><em>[nome do computador]</em><strong>$</strong>&#x2014;por exemplo, <strong>FABRIKAM\TESTWEB1$</strong>. Para permitir que seu aplicativo da web acessar um banco de dados pela rede, você precisa:
 
 - Adicione um logon para a conta de computador do servidor web para a instância do SQL Server.
 - Mapear o logon da conta da máquina para todas as funções necessárias de banco de dados (normalmente **db\_datareader** e **db\_datawriter**).
@@ -231,6 +231,6 @@ O servidor de banco de dados agora deve estar pronto para aceitar as implantaç�
 
 Para obter orientação sobre como implantar projetos de banco de dados, consulte [implantar projetos de banco de dados](../web-deployment-in-the-enterprise/deploying-database-projects.md). Para obter orientação sobre como criar associações de função de banco de dados executando um script pós-implantação, consulte [Implantando associações de função de banco de dados para ambientes de teste](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md). Para obter orientação sobre como enfrentar os desafios de implantação exclusivas que representam bancos de dados de associação, consulte [implantando bancos de dados de associação para ambientes corporativos](../advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments.md).
 
->[!div class="step-by-step"]
-[Anterior](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
-[Próximo](creating-a-server-farm-with-the-web-farm-framework.md)
+> [!div class="step-by-step"]
+> [Anterior](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
+> [Próximo](creating-a-server-farm-with-the-web-farm-framework.md)

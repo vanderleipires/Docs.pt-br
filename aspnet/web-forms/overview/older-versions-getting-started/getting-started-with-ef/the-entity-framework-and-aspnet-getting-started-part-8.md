@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
-title: "Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 8 | Microsoft Docs"
+title: Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 8 | Microsoft Docs
 author: tdykstra
-description: "O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é..."
+description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 323ee44f43f6d4081bd9ba50791755696bc9128f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 035cce022d1b3697b825a96487529dbc9675d90e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 8
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 > O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework 4.0 e o Visual Studio 2010. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial da série](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
@@ -101,7 +101,7 @@ Esse código cria uma classe parcial para a `Student` entidade. O `MetadataType`
 
 Os atributos aplicados às propriedades de classe de metadados que especificam a formatação, validação, regras e mensagens de erro. Os atributos mostrados aqui terá os seguintes resultados:
 
-- `EnrollmentDate`será exibido como uma data (sem uma hora).
+- `EnrollmentDate` será exibido como uma data (sem uma hora).
 - Os campos de nome devem ser 25 caracteres ou menos em tamanho e uma mensagem de erro personalizada é fornecido.
 - Ambos os campos de nome são necessários, e uma mensagem de erro personalizada é fornecida.
 
@@ -119,7 +119,7 @@ Tente digitar os nomes de mais de 25 caracteres, clique em **atualização**, e 
 
 Agora que você configurar essas regras de formatação e validação de metadados do modelo de dados, as regras serão aplicadas automaticamente em cada página que exibe ou permite que as alterações nesses campos, desde que você use `DynamicControl` ou `DynamicField` controles. Isso reduz a quantidade de código redundante você precisa escrever, que torna a programação e testes, e garante que a validação e formatação de dados são consistentes ao longo de um aplicativo.
 
-## <a name="more-information"></a>Mais informações
+## <a name="more-information"></a>Mais Informações
 
 Isso conclui esta série de tutoriais de Introdução com o Entity Framework. Para obter mais recursos para ajudá-lo a aprender a usar o Entity Framework, continue com [primeiro tutorial na próxima série de tutoriais do Entity Framework](../continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md) ou visite os seguintes sites:
 
@@ -132,5 +132,5 @@ Isso conclui esta série de tutoriais de Introdução com o Entity Framework. Pa
 - [Fóruns do Entity Framework no MSDN](https://social.msdn.microsoft.com/forums/adodotnetentityframework/)
 - [Blog de Julie Lerman](http://thedatafarm.com/blog/)
 
->[!div class="step-by-step"]
-[Anterior](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [!div class="step-by-step"]
+> [Anterior](the-entity-framework-and-aspnet-getting-started-part-7.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
-title: "Exibindo vários registros por linha com o controle DataList (c#) | Microsoft Docs"
+title: Exibindo vários registros por linha com o controle DataList (c#) | Microsoft Docs
 author: rick-anderson
-description: "Este breve tutorial exploraremos como personalizar o layout do DataList através de suas propriedades RepeatColumns e RepeatDirection."
+description: Este breve tutorial exploraremos como personalizar o layout do DataList através de suas propriedades RepeatColumns e RepeatDirection.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e9f04089afdbeb1b13725536c9fe97951ee8ca5c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 308427836c1fef05e66d1f5348c6bd9e80290f9b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>Exibindo vários registros por linha com o controle DataList (c#)
 ====================
@@ -55,7 +55,7 @@ Depois de criar e associar o novo ObjectDataSource para DataList, Visual Studio 
 
 [!code-aspx[Main](showing-multiple-records-per-row-with-the-datalist-control-cs/samples/sample2.aspx)]
 
-Observe que, var incluídos em um especificador de formato o `Eval` sintaxe de associação de dados para o `UnitPrice`, formatar o valor retornado como uma moeda -`Eval("UnitPrice", "{0:C}").`
+Observe que, var incluídos em um especificador de formato o `Eval` sintaxe de associação de dados para o `UnitPrice`, formatar o valor retornado como uma moeda - `Eval("UnitPrice", "{0:C}").`
 
 Reserve um momento para visitar a página em um navegador. Como mostra a Figura 2, DataList processado como uma tabela de coluna única, várias linhas de produtos.
 
@@ -113,12 +113,12 @@ DataList, por padrão, lista seus itens em uma tabela de coluna única, várias 
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi John Suru. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
-[Próximo](nested-data-web-controls-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
+> [Próximo](nested-data-web-controls-cs.md)

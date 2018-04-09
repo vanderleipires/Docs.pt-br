@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5d1be6c30cda5a06087516210a77f48b6a3fe45b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ac319b67c9215c5dde8e7507076ed45a1f7825c6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>Usar existente procedimentos armazenados para TableAdapters do conjunto de dados tipado (VB)
 ====================
@@ -56,7 +56,7 @@ Insira o seguinte script:
 
 Este script, quando executado, adicionará um novo procedimento armazenado ao banco de dados Northwind denominado `Products_SelectByCategoryID`. Esse procedimento armazenado aceita um único parâmetro de entrada (`@CategoryID`, do tipo `int`) e retorna todos os campos para os produtos com uma correspondência `CategoryID` valor.
 
-Para executar esta `CREATE PROCEDURE` script e adicione o procedimento armazenado no banco de dados, clique no ícone Salvar na barra de ferramentas ou Ctrl + S de ocorrências. Depois de fazer isso, as atualizações de pasta de procedimentos armazenados, mostrar o recém-criado procedimento armazenado. Além disso, o script na janela mudará sutilmente de `CREATE PROCEDURE dbo.Products_SelectProductByCategoryID` para `ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`. `CREATE PROCEDURE`Adiciona um novo procedimento armazenado no banco de dados, enquanto `ALTER PROCEDURE` atualiza uma existente. Desde o início do script foi alterado para `ALTER PROCEDURE`, alterar os procedimentos armazenados de entrada parâmetros ou instruções SQL e clicando no ícone Salvar atualizará o procedimento armazenado com essas alterações.
+Para executar esta `CREATE PROCEDURE` script e adicione o procedimento armazenado no banco de dados, clique no ícone Salvar na barra de ferramentas ou Ctrl + S de ocorrências. Depois de fazer isso, as atualizações de pasta de procedimentos armazenados, mostrar o recém-criado procedimento armazenado. Além disso, o script na janela mudará sutilmente de `CREATE PROCEDURE dbo.Products_SelectProductByCategoryID` para `ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`. `CREATE PROCEDURE` Adiciona um novo procedimento armazenado no banco de dados, enquanto `ALTER PROCEDURE` atualiza uma existente. Desde o início do script foi alterado para `ALTER PROCEDURE`, alterar os procedimentos armazenados de entrada parâmetros ou instruções SQL e clicando no ícone Salvar atualizará o procedimento armazenado com essas alterações.
 
 A Figura 2 mostra o Visual Studio após o `Products_SelectByCategoryID` procedimento armazenado foi salvo.
 
@@ -273,12 +273,12 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Hilton Geisenow, S ren Lauritsen Jacó e Teresa Murphy. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
-[Próximo](updating-the-tableadapter-to-use-joins-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
+> [Próximo](updating-the-tableadapter-to-use-joins-vb.md)

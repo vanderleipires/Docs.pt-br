@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb
 title: Arrastar e soltar via ReorderList (VB) | Microsoft Docs
 author: wenz
-description: /Data-Access/Tutorials/Master-Detail-Using-a-bulleted-List-of-Master-Records-with-a-Details-DataList-VB
+description: /data-access/tutorials/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e193a31fc86b7e8733d0b2fba371d99c62783d6c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 99f47b969dc75efeec8485254d311c93dc0b5d35
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="drag-and-drop-via-reorderlist-vb"></a>Arrastar e soltar via ReorderList (VB)
 ====================
@@ -35,16 +35,16 @@ O `ReorderList` controle no AJAX Control Toolkit fornece uma lista que pode ser 
 
 O `ReorderList` controle oferece suporte a dados de associação de um banco de dados à lista. O melhor de tudo, ele também suporta gravando alterações ordem do elemento de lista para o repositório de dados.
 
-Este exemplo usa o Microsoft SQL Server 2005 Express Edition como armazenamento de dados. O banco de dados é uma parte opcional (e livre) de uma instalação do Visual Studio, incluindo o express edition. Ele também está disponível como um download separado em [https://go.microsoft.com/fwlink/?LinkId=64064](https://go.microsoft.com/fwlink/?LinkId=64064). Para este exemplo, vamos supor que a instância do SQL Server 2005 Express Edition é chamada `SQLEXPRESS` e reside no mesmo computador que o servidor web; isso também é a configuração padrão. Se sua configuração for diferente, você precisa se adaptar as informações de conexão para o banco de dados.
+Este exemplo usa o Microsoft SQL Server 2005 Express Edition como armazenamento de dados. O banco de dados é uma parte opcional (e livre) de uma instalação do Visual Studio, incluindo o express edition. Ele também está disponível como um download separado em [ https://go.microsoft.com/fwlink/?LinkId=64064 ](https://go.microsoft.com/fwlink/?LinkId=64064). Para este exemplo, vamos supor que a instância do SQL Server 2005 Express Edition é chamada `SQLEXPRESS` e reside no mesmo computador que o servidor web; isso também é a configuração padrão. Se sua configuração for diferente, você precisa se adaptar as informações de conexão para o banco de dados.
 
 A maneira mais fácil de configurar o banco de dados é usar o Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en) ). Conectar-se ao servidor, clique duas vezes em `Databases` e criar um novo banco de dados (com o botão direito e escolha `New Database`) chamado `Tutorials`.
 
 Este banco de dados, criar uma nova tabela chamada `AJAX` com as seguintes quatro colunas:
 
-- `id`(inteiro chave primário, identidade, não NULL)
-- `char`(char (1), NULL)
-- `description`(varchar (50), NULL)
-- `position`(int, NULL)
+- `id` (inteiro chave primário, identidade, não NULL)
+- `char` (char(1), NULL)
+- `description` (varchar(50), NULL)
+- `position` (int, NULL)
 
 
 [![O layout da tabela AJAX](drag-and-drop-via-reorderlist-vb/_static/image2.png)](drag-and-drop-via-reorderlist-vb/_static/image1.png)
@@ -90,5 +90,5 @@ Executar este exemplo no navegador e reorganizar os itens da lista um pouco. Em 
 
 Os dados nas alterações do banco de dados de acordo com a nova lista de ordem de item ([clique para exibir a imagem em tamanho normal](drag-and-drop-via-reorderlist-vb/_static/image9.png))
 
->[!div class="step-by-step"]
-[Anterior](using-postbacks-with-reorderlist-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](using-postbacks-with-reorderlist-vb.md)

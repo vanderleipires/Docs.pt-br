@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
-title: "Como: Adicionar páginas móveis aos formulários da Web do ASP.NET / aplicativo MVC | Microsoft Docs"
+title: 'Como: Adicionar páginas móveis aos formulários da Web do ASP.NET / aplicativo MVC | Microsoft Docs'
 author: rick-anderson
-description: "Esse manual descreve várias maneiras de fornecer páginas otimizadas para dispositivos móveis de sua Web Forms do ASP.NET / aplicativo MVC e sugere arquitetura e..."
+description: Esse manual descreve várias maneiras de fornecer páginas otimizadas para dispositivos móveis de sua Web Forms do ASP.NET / aplicativo MVC e sugere arquitetura e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2011
 ms.topic: article
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: aac359b26c508784793a67260dc2e65c30db687a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a8358b91ca424f4f3e576057ab43d850081dda60
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Como: Adicionar páginas móveis aos formulários da Web do ASP.NET / aplicativo MVC
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="contents"></a>Conteúdo
 
-- Visão geral
+- Visão Geral
 - Opções de arquitetura
 - Detecção de navegadores e dispositivos
 - Como os aplicativos ASP.NET Web Forms podem apresentar páginas específicas para dispositivos móveis
@@ -41,7 +41,7 @@ ms.lasthandoff: 01/24/2018
 
 Para obter exemplos de código para download demonstram técnicas deste white paper Web Forms do ASP.NET e MVC, consulte [Sites com o ASP.NET & aplicativos móveis](https://docs.microsoft.com/aspnet/mobile/overview).
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Dispositivos móveis – smartphones, telefones de recurso e tablets – continuam crescendo em popularidade como um meio para acessar a Web. Para muitas empresas para a web e os desenvolvedores da web, isso significa que é cada vez mais importante fornecer uma ótima experiência de navegação para os visitantes que usam esses dispositivos.
 
@@ -185,7 +185,7 @@ Observe que a autenticação de formulários faz algumas suposições sobre onde
 
     [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample4.cs)]
   
- Esse código supõe que a página tem um controle de servidor de logon chamado LoginUser, como o modelo de projeto padrão.
+  Esse código supõe que a página tem um controle de servidor de logon chamado LoginUser, como o modelo de projeto padrão.
 
 ### <a name="working-with-output-caching"></a>Trabalhando com o cache de saída
 
@@ -243,7 +243,7 @@ Em seguida, observe que, adicionando um segundo HomeController para seu aplicati
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample9.cs)]
 
-Agora o erro irá ausente e a URL http://*yoursite*/ atingirá a home page da área de trabalho e http://*yoursite*/mobile/ atingirá a home page móvel.
+Agora o erro irá ausente e a URL http://<em>yoursite</em>/ atingirá a home page da área de trabalho e http://<em>yoursite</em>/mobile/ atingirá a home page móvel.
 
 ### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>Redirecionando visitantes móveis na sua área de móvel
 

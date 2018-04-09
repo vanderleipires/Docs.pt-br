@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 title: 'Parte 7: Adicionando recursos | Microsoft Docs'
 author: JoeStagner
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 7 adiciona recursos adicionais, como a conta revie..."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 7 adiciona recursos adicionais, como a conta revie...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 5280de44b3e75f9d1ae85e0248bc3ef6d5444f6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 17f068155f6726047901e2f7d580d375a4e07c87
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-adding-features"></a>Parte 7: Adicionar recursos
 ====================
@@ -27,7 +27,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 > Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 7 adiciona recursos adicionais, como análise de conta, análises de produtos e "itens populares" e controles de usuário "também comprado".
 
 
-## <a id="_Toc260221673"></a>Adicionando recursos
+## <a id="_Toc260221673"></a>  Adicionando recursos
 
 Embora os usuários podem procurar nosso catálogo, colocar itens no carrinho de compras e concluir o processo de check-out, há que um número de dar suporte a recursos que serão incluídos para melhorar o nosso site.
 
@@ -40,7 +40,7 @@ Embora os usuários podem procurar nosso catálogo, colocar itens no carrinho de
 7. Adicionar um sobre a página.
 8. Erro global
 
-## <a id="_Toc260221674"></a>Revisão de conta
+## <a id="_Toc260221674"></a>  Revisão de conta
 
 Na pasta "Conta", crie duas páginas. aspx um OrderList.aspx nomeado e a outros OrderDetails.aspx nomeado
 
@@ -56,7 +56,7 @@ Observe também esses parâmetros no HyperlinkField de GridView:
 
 Elas especificam o link para a exibição de detalhes do pedido para cada produto especificando o campo OrderID como um parâmetro QueryString para a página OrderDetails.aspx.
 
-## <a id="_Toc260221675"></a>OrderDetails.aspx
+## <a id="_Toc260221675"></a>  OrderDetails.aspx
 
 Usaremos um controle EntityDataSource para acessar os pedidos e um FormView para exibir os dados de pedidos e outro EntityDataSource com um controle GridView para exibir os itens de linha de todos os da ordem.
 
@@ -72,7 +72,7 @@ Também precisamos calcular e exibir o total de itens de linha do pedido.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample5.cs)]
 
-## <a id="_Toc260221676"></a>A Home Page
+## <a id="_Toc260221676"></a>  A Home Page
 
 Vamos adicionar alguns conteúdo estático para a página Default.aspx.
 
@@ -82,7 +82,7 @@ Para o espaço reservado de parte inferior da página Default.aspx, adicione a s
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample6.aspx)]
 
-## <a id="_Toc260221677"></a>Análises de produtos
+## <a id="_Toc260221677"></a>  Análises de produtos
 
 Primeiro, adicionaremos um botão com um link para um formulário que podemos usar para inserir uma revisão do produto.
 
@@ -94,7 +94,7 @@ Observe que, passa o ProductID na cadeia de caracteres de consulta
 
 Avançar vamos adicionar página chamada ReviewAdd.aspx
 
-Essa página usará o Kit de ferramentas de controle do ASP.NET AJAX. Se você ainda não tiver feito para você pode baixá-lo do [DevExpress](http://devexpress.com/act) e há diretrizes sobre como configurar o Kit de ferramentas para uso com o Visual Studio aqui [https://www.asp.net/learn/ajax-videos/video-76.aspx](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
+Essa página usará o Kit de ferramentas de controle do ASP.NET AJAX. Se você ainda não tiver feito para você pode baixá-lo do [DevExpress](http://devexpress.com/act) e há diretrizes sobre como configurar o Kit de ferramentas para uso com o Visual Studio aqui [ https://www.asp.net/learn/ajax-videos/video-76.aspx ](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
 
 No modo design, arraste validadores e controles da caixa de ferramentas e criar um formulário como a mostrada abaixo.
 
@@ -114,7 +114,7 @@ Executando o nosso aplicativo agora e navegar para um produto mostram as informa
 
 ![](tailspin-spyworks-part-7/_static/image3.jpg)
 
-## <a id="_Toc260221678"></a>Controle de itens populares (criação de controles de usuário)
+## <a id="_Toc260221678"></a>  Controle de itens populares (criação de controles de usuário)
 
 Para aumentar as vendas em seu site da web vamos adicionar alguns recursos para produtos de "venda que sugere" populares ou relacionados.
 
@@ -156,7 +156,7 @@ Agora, quando executamos nosso aplicativo home page exibe os itens mais populare
 
 ![](tailspin-spyworks-part-7/_static/image6.jpg)
 
-## <a id="_Toc260221679"></a>"Também adquirido" controla (controles de usuário com parâmetros)
+## <a id="_Toc260221679"></a>  "Também adquirido" controla (controles de usuário com parâmetros)
 
 O segundo controle de usuário que vamos criar terão que sugere de vendas para o próximo nível com a adição de especificidade de contexto.
 
@@ -236,6 +236,6 @@ Quando podemos criar e executar agora e navegue até um produto, podemos ver os 
 
 ![](tailspin-spyworks-part-7/_static/image7.jpg)
 
->[!div class="step-by-step"]
-[Anterior](tailspin-spyworks-part-6.md)
-[Próximo](tailspin-spyworks-part-8.md)
+> [!div class="step-by-step"]
+> [Anterior](tailspin-spyworks-part-6.md)
+> [Próximo](tailspin-spyworks-part-8.md)

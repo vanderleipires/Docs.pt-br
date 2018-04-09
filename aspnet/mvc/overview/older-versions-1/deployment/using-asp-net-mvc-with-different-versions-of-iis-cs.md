@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
-title: "Usando o ASP.NET MVC com diferentes versões do IIS (c#) | Microsoft Docs"
+title: Usando o ASP.NET MVC com diferentes versões do IIS (c#) | Microsoft Docs
 author: microsoft
-description: "Neste tutorial, você aprenderá como usar o ASP.NET MVC e roteamento de URL, com diferentes versões do Internet Information Services. Você aprenderá estratégias diferentes..."
+description: Neste tutorial, você aprenderá como usar o ASP.NET MVC e roteamento de URL, com diferentes versões do Internet Information Services. Você aprenderá estratégias diferentes...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f2b98d5e5ae677fdac32336d542202a40290e21
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 73c129c1eaf85cb5b110248fe2a2c0faed0157bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>Usando o ASP.NET MVC com diferentes versões do IIS (c#)
 ====================
@@ -33,7 +33,7 @@ Aqui está um resumo das versões diferentes do IIS:
 - O IIS 7.0 (modo clássico) – você precisa executar configuração especial para usar o roteamento do ASP.NET.
 - IIS 6.0 ou abaixo - você precisa executar configuração especial para usar o roteamento do ASP.NET.
 
-A versão mais recente do IIS é a versão 7.5 (no Win7). IIS 7 do IIS é incluído com o Windows Server 2008 e VISTA SP1 e superior. Você também pode instalar o IIS 7.0 em qualquer versão do sistema operacional Vista exceto Home Basic (consulte [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
+A versão mais recente do IIS é a versão 7.5 (no Win7). IIS 7 do IIS é incluído com o Windows Server 2008 e VISTA SP1 e superior. Você também pode instalar o IIS 7.0 em qualquer versão do sistema operacional Vista exceto Home Basic (consulte [ https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx ](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
 
 O IIS 7.0 oferece suporte a dois modos para processar solicitações. Você pode usar o modo integrado ou modo clássico. Você não precisa executar as etapas de configuração especial ao usar o IIS 7.0 no modo integrado. No entanto, você precisa executar uma configuração adicional ao usar o IIS 7.0 no modo clássico.
 
@@ -63,7 +63,7 @@ Por padrão, o IIS é configurado para dar suporte a dois pools de aplicativos: 
 Observe que você pode modificar o modo de processamento de solicitação dentro da caixa de diálogo Editar aplicativo. Clique no botão Selecionar e alterar o pool de aplicativos associado ao aplicativo. Observe que há problemas de compatibilidade ao alterar um aplicativo ASP.NET de clássico para modo integrado. Para obter mais informações, consulte os seguintes artigos:
 
 - Atualizando o ASP.NET 1.1 para o IIS 7.0 no Windows Vista e Windows Server 2008 – [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008)
-- Integração do ASP.NET com o IIS 7.0 - [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
+- Integração do ASP.NET com o IIS 7.0- [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 
 Se um aplicativo ASP.NET é usando o DefaultAppPool, em seguida, você não precisa executar etapas adicionais para obter o roteamento do ASP.NET (e, portanto, o ASP.NET MVC) para trabalhar. No entanto, se o aplicativo ASP.NET está configurado para usar o .NET AppPool clássico, em seguida, continue lendo, você terá mais trabalho a fazer.
 
@@ -103,7 +103,7 @@ Versões anteriores do IIS só mapeiam determinadas solicitações para a estrut
 
 Portanto, para obter o roteamento do ASP.NET para trabalhar, é necessário modificar a rota padrão para que inclui uma extensão de arquivo que é mapeada para a estrutura do ASP.NET.
 
-Isso é feito usando um script chamado `registermvc.wsf`. Foi fornecido com a versão do ASP.NET MVC 1 em `C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`, mas a partir do ASP.NET 2 esse script foi movido para o ASP.NET Futures, disponível em [http://aspnet.codeplex.com/releases/view/39978](http://aspnet.codeplex.com/releases/view/39978).
+Isso é feito usando um script chamado `registermvc.wsf`. Foi fornecido com a versão do ASP.NET MVC 1 em `C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`, mas a partir do ASP.NET 2 esse script foi movido para o ASP.NET Futures, disponível em [ http://aspnet.codeplex.com/releases/view/39978 ](http://aspnet.codeplex.com/releases/view/39978).
 
 Executando esse script registra uma nova extensão. MVC com o IIS. Depois de registrar a extensão. MVC, você pode modificar suas rotas no arquivo global. asax para que as rotas de usam a extensão. MVC.
 
@@ -212,5 +212,5 @@ A primeira opção exige que você modifique as URLs usadas no seu aplicativo AS
 
 A segunda opção é criar um mapa de script de caractere curinga. A vantagem dessa opção é que você não precisa modificar URLs. A desvantagem dessa opção é que ele pode afetar o desempenho do seu aplicativo ASP.NET MVC.
 
->[!div class="step-by-step"]
-[Avançar](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
+> [!div class="step-by-step"]
+> [Avançar](using-asp-net-mvc-with-different-versions-of-iis-vb.md)

@@ -1,7 +1,7 @@
 ---
-title: "Integração de teste no núcleo do ASP.NET"
+title: Testes de integração no núcleo do ASP.NET
 author: ardalis
-description: "Como usar a integração do ASP.NET Core testes para garantir que os componentes de um aplicativo funcionem corretamente."
+description: Como usar a integração do ASP.NET Core testes para garantir que os componentes de um aplicativo funcionem corretamente.
 manager: wpickett
 ms.author: riande
 ms.date: 09/25/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 8c28f1b4f66433eaebd9e474e784ecf3f1ac271b
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 3c618b2bd5919f6536601631eb4d21359a6bc03a
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="integration-testing-in-aspnet-core"></a>Integração de teste no núcleo do ASP.NET
+# <a name="integration-tests-in-aspnet-core"></a>Testes de integração no núcleo do ASP.NET
 
 Por [Steve Smith](https://ardalis.com/)
 
@@ -151,4 +151,4 @@ Seguindo essa refatoração estiver certo de que o aplicativo web ainda funciona
 
 * [Teste de unidade](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Middleware](xref:fundamentals/middleware/index)
-* [Testando os controladores](xref:mvc/controllers/testing)
+* [Controladores de teste](xref:mvc/controllers/testing)

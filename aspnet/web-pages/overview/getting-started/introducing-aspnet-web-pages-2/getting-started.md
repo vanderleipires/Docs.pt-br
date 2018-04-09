@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
-title: "Introdução a páginas da Web do ASP.NET - Introdução | Microsoft Docs"
+title: Introdução a páginas da Web do ASP.NET - Introdução | Microsoft Docs
 author: tfitzmac
-description: "O WebMatrix não é recomendado como um ambiente de desenvolvimento integrado para páginas da Web do ASP.NET. Use o Visual Studio ou o código do Visual Studio. Este guia um..."
+description: O WebMatrix não é recomendado como um ambiente de desenvolvimento integrado para páginas da Web do ASP.NET. Use o Visual Studio ou o código do Visual Studio. Este guia um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: a6789ee75b4ca6e9443681cc7ec0bd3ab94cedcd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5fd67a230f76774e102094f42426b8bb126c0cc6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>Introdução a páginas da Web ASP.NET - Introdução
 ====================
@@ -289,5 +289,5 @@ O seguinte tutorial nesta série, você explorar um pouco mais de programação 
 
 [Criar um site ASP.NET do zero](https://www.microsoft.com/web/post/create-an-aspnet-website-from-scratch). Este é um tutorial que seja especificamente sobre usando o WebMatrix (não o ASP.NET Web Pages). Entra em um pouco mais detalhes sobre alguns dos recursos adicionais do WebMatrix não serão abordadas neste tutorial conjunto.
 
->[!div class="step-by-step"]
-[Avançar](intro-to-web-pages-programming.md)
+> [!div class="step-by-step"]
+> [Avançar](intro-to-web-pages-programming.md)

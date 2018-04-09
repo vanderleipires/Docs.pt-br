@@ -1,6 +1,6 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
-title: "Introdução a páginas da Web ASP.NET - Noções básicas de programação | Microsoft Docs"
+title: Introdução a páginas da Web ASP.NET - Noções básicas de programação | Microsoft Docs
 author: tfitzmac
 description: "Este tutorial fornece uma visão geral de como programa em páginas da Web do ASP.NET com sintaxe do Razor. Você aprenderá: A sintaxe 'Razor' básica que você usa para pr..."
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: eed07f4f8a13ea9082ab3aad3e3db24febff8ef6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3e2c990a6451c13e03baafa343df156b2d46d219
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>Introdução a páginas da Web ASP.NET - Noções básicas de programação
 ====================
@@ -103,7 +103,7 @@ Você não está limitado a variáveis, embora. Em alguns casos aqui, o caracter
 
 - @(um\*b) renderiza o produto de tudo o que é nas variáveis de um e b. (O \* significa de operador de multiplicação.)
 - @(tecnologia + "" + produto) renderiza os valores na tecnologia de variáveis e produto depois concatená-las e adicionar um espaço entre. O operador (+) para concatenar cadeias de caracteres é o mesmo que o operador para adicionar números. ASP.NET geralmente pode informar se você estiver trabalhando com números ou cadeias de caracteres e faz o certo com o operador +.
-- @Request.Urlrenderiza a propriedade Url do objeto de solicitação. O objeto de solicitação contém informações sobre a solicitação atual do navegador e, claro, a propriedade Url contém a URL da solicitação atual.
+- @Request.Url renderiza a propriedade Url do objeto de solicitação. O objeto de solicitação contém informações sobre a solicitação atual do navegador e, claro, a propriedade Url contém a URL da solicitação atual.
 
 O exemplo também foi projetado para mostrar que você pode trabalhar de maneiras diferentes. Você pode fazer cálculos no bloco de código na parte superior, colocar os resultados em uma variável e processará a variável na marcação. Ou você pode fazer cálculos em um direito de expressão na marcação. A abordagem usada depende que você está fazendo e, até certo ponto, de sua preferência.
 
@@ -165,7 +165,7 @@ Aqui estão alguns exemplos de condições que você pode testar um se instruç�
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample7.cs)]
 
-Você pode testar variáveis com base nos valores ou em expressões, usando um *operador lógico* ou *operador de comparação*: igual a (= =), maior que (&gt;), menor que (&lt;), maior que ou igual a (&gt;=) e menor ou igual a (&lt;=). O! = operador significa não é igual a — por exemplo, se (um! = 0) significa *se* *um**não é igual a 0*.
+Você pode testar variáveis com base nos valores ou em expressões, usando um <em>operador lógico</em> ou <em>operador de comparação</em>: igual a (= =), maior que (&gt;), menor que (&lt;), maior que ou igual a (&gt;=) e menor ou igual a (&lt;=). O! = operador significa não é igual a — por exemplo, se (um! = 0) significa <em>se</em> <em>um</em><em>não é igual a 0</em>.
 
 > [!NOTE]
 > Verifique se que você notar que o operador de comparação igual a (= =) não é o mesmo =. O = operador é usado apenas para atribuir valores (var um = 2). Se você combinar esses operadores de, ou você receberá um erro ou você terá alguns resultados estranhos.
@@ -207,7 +207,7 @@ Execute a página e clique em **enviar**. Desta vez não verá apenas uma mensag
 
 ### <a name="testing-the-value-of-a-query-string"></a>Testar o valor de uma cadeia de caracteres de consulta
 
-Um teste mais. Neste momento, você adicionará um se bloco que testa um valor denominado show que pode ser passado na cadeia de caracteres de consulta. (Esta aparência: ' http://localhost:43097/TestRazorPart2.cshtml`?show=true`) você alterará a página para que a mensagem você tiver sido exibindo ("Esta é a primeira vez...", etc.) é exibida somente se o valor de mostrar é true.
+Um teste mais. Neste momento, você adicionará um se bloco que testa um valor denominado show que pode ser passado na cadeia de caracteres de consulta. (Esta aparência: 'http://localhost:43097/TestRazorPart2.cshtml`?show=true`) você alterará a página para que a mensagem você tiver sido exibindo ("Esta é a primeira vez...", etc.) é exibida somente se o valor de mostrar é true.
 
 Na parte inferior (mas interna), o bloco de código na parte superior da página, adicione o seguinte:
 
@@ -223,7 +223,7 @@ O novo código no bloco inicializa uma variável chamada showMessage como false.
 
 O código determina se a URL contém uma variável chamada show na cadeia de consulta, como a esta versão da URL:
 
-`http://localhost:43097/TestRazorPart2.cshtml`? Mostrar = true
+`http://localhost:43097/TestRazorPart2.cshtml`?show=true
 
 O próprio teste examina a propriedade QueryString do objeto de solicitação. Se a cadeia de caracteres de consulta contém um item denominado show, e se esse item é definido como true, o se bloco é executado e define a variável showMessage como true.
 
@@ -281,7 +281,7 @@ Páginas da Web do ASP.NET tem alguns auxiliares internos. No entanto, muitos au
 
 Nesta parte do tutorial, você instalará um auxiliar que permite que você exiba uma imagem Gravatar ("avatar globalmente reconhecida"). Você aprenderá duas coisas. Uma é como localizar e instalar um auxiliar. Você também aprenderá como um auxiliar torna mais fácil de fazer algo que seriam necessários para fazer usando muito código que você teria de escrever por conta própria.
 
-Você pode registrar seu próprio Gravatar no site Gravatar no [http://www.gravatar.com/](http://www.gravatar.com/), mas não é essencial para criar uma conta de Gravatar para executar esta parte do tutorial.
+Você pode registrar seu próprio Gravatar no site Gravatar no [ http://www.gravatar.com/ ](http://www.gravatar.com/), mas não é essencial para criar uma conta de Gravatar para executar esta parte do tutorial.
 
 No WebMatrix, clique o **NuGet** botão.
 
@@ -360,6 +360,6 @@ O seguinte tutorial apresenta a trabalhar com um banco de dados. Neste tutorial,
 - [Introdução à programação da Web do ASP.NET usando a sintaxe do Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Auxiliar do Twitter](../../ui-layouts-and-themes/twitter-helper.md)
 
->[!div class="step-by-step"]
-[Anterior](getting-started.md)
-[Próximo](displaying-data.md)
+> [!div class="step-by-step"]
+> [Anterior](getting-started.md)
+> [Próximo](displaying-data.md)

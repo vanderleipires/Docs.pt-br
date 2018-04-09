@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
-title: "Armazenamento de Blob não estruturados (Criando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs"
+title: Armazenamento de Blob não estruturados (Criando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/30/2015
 ms.topic: article
 ms.assetid: 9f05ccb1-2004-4661-ad8b-c370e6c09c8e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 489769533a26c99404c6a5186d66f560385dcffd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c2c82a579feb586287c40bb82eba53c5f84afaba
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>Armazenamento de Blob não estruturados (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -148,6 +148,6 @@ Para obter mais informações, consulte os seguintes recursos:
 - [À prova de falhas: Criação de serviços de nuvem escalonáveis e resilientes](https://channel9.msdn.com/Series/FailSafe). Série de vídeos de nove partes por Marc Mercuri, Ulrich Homann e Mark Simms. Apresenta os conceitos de alto nível e princípios de arquitetura de uma maneira muito acessível e interessante, com histórias extraídas da experiência do Microsoft Customer Advisory Team (CAT) com clientes reais. Para uma discussão sobre o serviço de armazenamento do Azure e blobs, consulte episódio 5 começando em 35:13.
 - [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/library/dn568099.aspx). Consulte manobrista chave padrão.
 
->[!div class="step-by-step"]
-[Anterior](data-partitioning-strategies.md)
-[Próximo](design-to-survive-failures.md)
+> [!div class="step-by-step"]
+> [Anterior](data-partitioning-strategies.md)
+> [Próximo](design-to-survive-failures.md)

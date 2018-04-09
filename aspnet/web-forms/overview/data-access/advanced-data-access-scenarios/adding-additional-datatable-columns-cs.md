@@ -2,7 +2,7 @@
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 title: Adicionando colunas da DataTable adicionais (c#) | Microsoft Docs
 author: rick-anderson
-description: "Ao usar o Assistente de TableAdapter para criar um conjunto de dados tipado, DataTable correspondente contém as colunas retornadas pela consulta de banco de dados principal. Não há mas..."
+description: Ao usar o Assistente de TableAdapter para criar um conjunto de dados tipado, DataTable correspondente contém as colunas retornadas pela consulta de banco de dados principal. Não há mas...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2982af897b433706889cb4eda79dcb4e76baea62
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9c2232c9867fc605a5b5d3973d4dbe31895841ca
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-additional-datatable-columns-c"></a>Adicionando colunas da DataTable adicionais (c#)
 ====================
@@ -41,9 +41,9 @@ Este tutorial examinaremos como estender o esquema de s uma DataTable para inclu
 
 No *criando novos procedimentos armazenados para o conjunto de dados tipado de s TableAdapters* tutorial criamos um conjunto de dados tipado chamado `NorthwindWithSprocs`. Atualmente, esse conjunto de dados contém duas tabelas de dados: `ProductsDataTable` e `EmployeesDataTable`. O `ProductsTableAdapter` tem três métodos a seguir:
 
-- `GetProducts`-a consulta principal, que retorna todos os registros da `Products` tabela
-- `GetProductsByCategoryID(categoryID)`-Retorna todos os produtos com especificado *categoryID*.
-- `GetProductByProductID(productID)`-Retorna o produto específico com especificado *productID*.
+- `GetProducts` -a consulta principal, que retorna todos os registros da `Products` tabela
+- `GetProductsByCategoryID(categoryID)` -Retorna todos os produtos com especificado *categoryID*.
+- `GetProductByProductID(productID)` -Retorna o produto específico com especificado *productID*.
 
 A consulta principal e os dois métodos adicionais retornam o mesmo conjunto de campos de dados, ou seja, todas as colunas da `Products` tabela. Não há nenhum subconsultas correlacionadas ou `JOIN` s dados relacionados entre o `Categories` ou `Suppliers` tabelas. Portanto, o `ProductsDataTable` tem uma coluna correspondente para cada campo de `Products` tabela.
 
@@ -209,12 +209,12 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Randy Schmidt, Goor Jacky, Bernadette Leigh e Giesenow Hilton. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](updating-the-tableadapter-to-use-joins-cs.md)
-[Próximo](working-with-computed-columns-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](updating-the-tableadapter-to-use-joins-cs.md)
+> [Próximo](working-with-computed-columns-cs.md)

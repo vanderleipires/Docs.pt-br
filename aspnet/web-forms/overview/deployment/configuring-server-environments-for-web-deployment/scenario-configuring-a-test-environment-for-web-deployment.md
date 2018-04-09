@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
-title: "Cenário: Configurar um ambiente de teste para a implantação da Web | Microsoft Docs"
+title: 'Cenário: Configurar um ambiente de teste para a implantação da Web | Microsoft Docs'
 author: jrjlee
-description: "Este tópico descreve um cenário de implantação da web típico para desenvolvedores ou ambientes de teste e explica as tarefas que precisam ser concluídas para configurar um si..."
+description: Este tópico descreve um cenário de implantação da web típico para desenvolvedores ou ambientes de teste e explica as tarefas que precisam ser concluídas para configurar um si...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 23e317c6e0b6daf2d7937b73738e5cb6fa32cde2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2976be642815e715ac19bd9db34485cf5474cb32
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>Cenário: Configurar um ambiente de teste para a implantação da Web
 ====================
@@ -63,6 +63,6 @@ Esses tópicos fornecem todas as informações necessárias para concluir essas 
 
 Para obter orientação sobre como configurar um ambiente típico de preparo, consulte [cenário: configurar um ambiente de preparo para a implantação da Web](scenario-configuring-a-staging-environment-for-web-deployment.md). Para obter orientação sobre como configurar um ambiente de produção típicos, consulte [cenário: configurar um ambiente de produção para implantação de Web](scenario-configuring-a-production-environment-for-web-deployment.md).
 
->[!div class="step-by-step"]
-[Anterior](choosing-the-right-approach-to-web-deployment.md)
-[Próximo](scenario-configuring-a-staging-environment-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [Anterior](choosing-the-right-approach-to-web-deployment.md)
+> [Próximo](scenario-configuring-a-staging-environment-for-web-deployment.md)

@@ -2,7 +2,7 @@
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-6
 title: Criar um cliente JavaScript | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-6
 msc.type: authoredcontent
-ms.openlocfilehash: b397c5a413ae213c9b79da1c0e0626efe21c7e21
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29d50e448e6d282c7db06b9d1946ac221347e1ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-javascript-client"></a>Criar um cliente JavaScript
 ====================
@@ -58,8 +58,8 @@ Adicione um arquivo JavaScript chamado app.js para a pasta Scripts. (No Gerencia
 
 Na separação, a `observable` classe permite que a associação de dados. Quando altera o conteúdo do observável, o observável notifica todos os controles de associação de dados, para que possa atualizar a mesmos. (O `observableArray` classe é a versão de matriz de *observável*.) Para iniciar com nosso modelo de exibição tem dois observáveis:
 
-- `books`contém a lista de livros.
-- `error`contém uma mensagem de erro se uma chamada AJAX falhar.
+- `books` contém a lista de livros.
+- `error` contém uma mensagem de erro se uma chamada AJAX falhar.
 
 O `getAllBooks` método faz uma chamada AJAX para obter a lista de livros. Em seguida, ele envia o resultado para o `books` matriz.
 
@@ -73,6 +73,6 @@ Abra o arquivo de aplicativo\_Start/BundleConfig.cs. Adicione o seguinte código
 
 [!code-csharp[Main](part-6/samples/sample3.cs)]
 
->[!div class="step-by-step"]
-[Anterior](part-5.md)
-[Próximo](part-7.md)
+> [!div class="step-by-step"]
+> [Anterior](part-5.md)
+> [Próximo](part-7.md)

@@ -2,7 +2,7 @@
 uid: web-api/overview/advanced/calling-a-web-api-from-a-net-client
 title: Chamar uma API da Web de um cliente .NET (c#) | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/24/2017
@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 44e02888b53ee372ab93db5f90acb691f26b7519
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: a243eeb982ba581e237263c4e31e130d634aff0e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>Chamar uma API da Web de um cliente .NET (c#)
 ====================
@@ -48,7 +48,7 @@ No Visual Studio, crie um novo aplicativo de console do Windows chamado **HttpCl
 
 O código anterior é o aplicativo cliente completa.
 
-`RunAsync`é executado e bloqueia até que ela seja concluída. A maioria dos **HttpClient** métodos são assíncronas, porque eles realizam e/s de rede. Todas as tarefas assíncronas são feitas em `RunAsync`. Normalmente um aplicativo não bloqueia o thread principal, mas este aplicativo não permite que qualquer interação.
+`RunAsync` é executado e bloqueia até que ela seja concluída. A maioria dos **HttpClient** métodos são assíncronas, porque eles realizam e/s de rede. Todas as tarefas assíncronas são feitas em `RunAsync`. Normalmente um aplicativo não bloqueia o thread principal, mas este aplicativo não permite que qualquer interação.
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_run)]
 
@@ -109,7 +109,7 @@ O código a seguir envia uma solicitação GET para um produto:
 
 O **GetAsync** método envia a solicitação HTTP GET. Quando o método é concluído, ele retorna um **HttpResponseMessage** que contém a resposta HTTP. Se o código de status na resposta é um código de êxito, o corpo da resposta contém a representação JSON de um produto. Chamar **ReadAsAsync** para desserializar a carga de JSON para um `Product` instância. O **ReadAsAsync** método é assíncrono, como o corpo da resposta pode ser arbitrariamente grande.
 
-**HttpClient** não lança uma exceção quando a resposta HTTP contém um código de erro. Em vez disso, o **IsSuccessStatusCode** é de propriedade **false** se o status é um código de erro. Se você preferir tratar os códigos de erro HTTP como exceções, chame [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) no objeto de resposta. `EnsureSuccessStatusCode`gera uma exceção se o código de status está fora do intervalo de 200&ndash;299. Observe que **HttpClient** pode lançar exceções para outros motivos &mdash; por exemplo, se a solicitação expire.
+**HttpClient** não lança uma exceção quando a resposta HTTP contém um código de erro. Em vez disso, o **IsSuccessStatusCode** é de propriedade **false** se o status é um código de erro. Se você preferir tratar os códigos de erro HTTP como exceções, chame [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) no objeto de resposta. `EnsureSuccessStatusCode` gera uma exceção se o código de status está fora do intervalo de 200&ndash;299. Observe que **HttpClient** pode lançar exceções para outros motivos &mdash; por exemplo, se a solicitação expire.
 
 <a id="MediaTypeFormatters"></a>
 ### <a name="media-type-formatters-to-deserialize"></a>Formatadores de tipo de mídia a ser desserializado
@@ -173,10 +173,10 @@ Para testar o aplicativo cliente:
 
 3. Execute o aplicativo cliente. A saída a seguir será produzida:
 
- ```console
- Created at http://localhost:64195/api/products/4
-Name: Gizmo     Price: 100.0    Category: Widgets
-Updating price...
-Name: Gizmo     Price: 80.0     Category: Widgets
-Deleted (HTTP Status = 204)
-```
+   ```console
+   Created at http://localhost:64195/api/products/4
+   Name: Gizmo     Price: 100.0    Category: Widgets
+   Updating price...
+   Name: Gizmo     Price: 80.0     Category: Widgets
+   Deleted (HTTP Status = 204)
+   ```

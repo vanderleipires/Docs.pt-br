@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
-title: "Examinando os métodos de edição e exibição de edição (VB) | Microsoft Docs"
+title: Examinando os métodos de edição e exibição de edição (VB) | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é..."
+description: Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 25ba5887a9fd179e75a45d4e140592d0ea66184a
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: ab55de16baea3010f95c8f23a093544fb1fd7aa3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>Examinando os métodos de edição e exibição de edição (VB)
 ====================
@@ -200,6 +200,6 @@ Execute o aplicativo e navegue até *filmes/SearchIndex*. Tente fazer uma pesqui
 
 Nesta seção você examinou os métodos de ação de CRUD e gerados pela estrutura de modos de exibição. Você criou um método de ação de pesquisa e o modo de exibição que permitem aos usuários a pesquisar por título do filme e gênero. Na próxima seção, você verá como adicionar uma propriedade para o `Movie` modelo e como adicionar um inicializador que criará automaticamente um banco de dados de teste.
 
->[!div class="step-by-step"]
-[Anterior](accessing-your-models-data-from-a-controller.md)
-[Próximo](adding-a-new-field.md)
+> [!div class="step-by-step"]
+> [Anterior](accessing-your-models-data-from-a-controller.md)
+> [Próximo](adding-a-new-field.md)

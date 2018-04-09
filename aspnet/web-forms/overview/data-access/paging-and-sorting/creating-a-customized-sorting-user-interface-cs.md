@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
-title: "Criando uma Interface de usuário personalizadas de classificação (c#) | Microsoft Docs"
+title: Criando uma Interface de usuário personalizadas de classificação (c#) | Microsoft Docs
 author: rick-anderson
-description: "Ao exibir uma lista extensa de dados classificados, ele pode ser muito útil para agrupar os dados relacionados com a introdução de linhas de separador. Este tutorial, você verá como cre..."
+description: Ao exibir uma lista extensa de dados classificados, ele pode ser muito útil para agrupar os dados relacionados com a introdução de linhas de separador. Este tutorial, você verá como cre...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dbd2f6c8f1e21529da8a0fbffab212a29f615cc1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c2680f5e47883c9d5fa874a36eb666270c5e406a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>Criando uma Interface de usuário personalizadas de classificação (c#)
 ====================
@@ -141,7 +141,7 @@ Com o índice da coluna pela qual os dados são classificados, a etapa final é 
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample4.cs)]
 
-Esse código inicia referenciando programaticamente o `Table` objeto encontrado na raiz da hierarquia do controle GridView s e criando uma variável de cadeia de caracteres denominada `lastValue`. `lastValue`é usado para comparar o valor da coluna de s classificados de linha atual com o valor de linha s anterior. Em seguida, o s GridView `Rows` coleção é enumerada e para cada linha, o valor da coluna classificada é armazenado no `currentValue` variável.
+Esse código inicia referenciando programaticamente o `Table` objeto encontrado na raiz da hierarquia do controle GridView s e criando uma variável de cadeia de caracteres denominada `lastValue`. `lastValue` é usado para comparar o valor da coluna de s classificados de linha atual com o valor de linha s anterior. Em seguida, o s GridView `Rows` coleção é enumerada e para cada linha, o valor da coluna classificada é armazenado no `currentValue` variável.
 
 > [!NOTE]
 > Para determinar o valor da coluna s classificados linha específica, use a célula s `Text` propriedade. Isso funciona bem para BoundFields, mas não funcionam conforme desejado para TemplateFields, CheckBoxFields e assim por diante. Vamos examinar como a conta para campos de GridView alternativos em breve.
@@ -198,8 +198,8 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Anterior](sorting-custom-paged-data-cs.md)
-[Próximo](paging-and-sorting-report-data-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](sorting-custom-paged-data-cs.md)
+> [Próximo](paging-and-sorting-report-data-vb.md)

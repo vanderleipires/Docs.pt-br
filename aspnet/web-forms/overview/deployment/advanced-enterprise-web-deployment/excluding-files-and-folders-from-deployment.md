@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
-title: "Excluindo arquivos e pastas de implantação | Microsoft Docs"
+title: Excluindo arquivos e pastas de implantação | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como você pode excluir arquivos e pastas de um pacote de implantação da web quando você criar e empacotar um projeto de aplicativo web."
+description: Este tópico descreve como você pode excluir arquivos e pastas de um pacote de implantação da web quando você criar e empacotar um projeto de aplicativo web.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 80810415bac473a58f60110fb9d08772e0627bd5
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c435448bf057bbef9127d66ffda24a07729f2322
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>Excluindo arquivos e pastas de implantação
 ====================
@@ -27,11 +27,11 @@ por [Jason Lee](https://github.com/jrjlee)
 > Este tópico descreve como você pode excluir arquivos e pastas de um pacote de implantação da web quando você criar e empacotar um projeto de aplicativo web.
 
 
-Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo & #x 2014; o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, Windows Serviço do Communication Foundation (WCF) e um projeto de banco de dados.
+Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo&#x2014;o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, uma comunicação do Windows Serviço Foundation (WCF) e um projeto de banco de dados.
 
-O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos & #x 2014; projeto contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
+O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos de projeto&#x2014;contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Quando você compila um projeto de aplicativo web no Visual Studio 2010, o Pipeline de publicação de Web (WPP) permite que você estenda esse processo de compilação ao empacotar seu aplicativo web compilado em um pacote de implantação web. Você pode usar a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web) para implantar este pacote da web em um servidor de web IIS remoto, ou importar pacote da web manualmente pelo Gerenciador do IIS. Esse processo de empacotamento é explicado em [criação e a projetos de aplicativo Web de empacotamento](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md).
 
@@ -74,7 +74,7 @@ Embora você pode manipular os arquivos de projeto para excluir arquivos e pasta
 1. Crie um arquivo de projeto personalizado chamado *.wpp.targets [nome do projeto]* na mesma pasta que o arquivo de projeto.
 
     > [!NOTE]
-    > O *. wpp.targets* arquivos precisam estar na mesma pasta que o arquivo de projeto de aplicativo web & #x 2014; por exemplo, *ContactManager.Mvc.csproj*& #x 2014; em vez de na mesma pasta qualquer arquivos de projeto personalizados que você usa para a compilação de controle e o processo de implantação.
+    > O *. wpp.targets* arquivos precisam estar na mesma pasta que o arquivo de projeto de aplicativo web&#x2014;por exemplo, *ContactManager.Mvc.csproj*&#x2014;em vez de na mesma pasta que qualquer personalizado arquivos de projeto usados para controlar o processo de compilação e implantação.
 2. No *. wpp.targets* de arquivo, adicione uma **ItemGroup** elemento.
 3. No **ItemGroup** elemento, adicionar **ExcludeFromPackageFolders** e **ExcludeFromPackageFiles** itens para excluir arquivos específicos e pastas conforme necessário.
 
@@ -106,16 +106,16 @@ O procedimento a seguir mostra como adicionar um *. wpp.targets* arquivo para um
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample2.xml)]
 6. Se você quiser excluir pastas do pacote da web, adicione um **ExcludeFromPackageFolders** elemento para o **ItemGroup** elemento:
 
-    1. No **incluir** de atributo, forneça uma lista separada por vírgulas das pastas que você deseja excluir.
-    2. No **FromTarget** elemento de metadados, forneça um valor significativo para indicar por que as pastas estão sendo excluídas, como o nome do *. wpp.targets* arquivo.
+   1. No **incluir** de atributo, forneça uma lista separada por vírgulas das pastas que você deseja excluir.
+   2. No **FromTarget** elemento de metadados, forneça um valor significativo para indicar por que as pastas estão sendo excluídas, como o nome do *. wpp.targets* arquivo.
 
-    [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
+      [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
 7. Se você quiser excluir arquivos de pacote da web, adicione um **ExcludeFromPackageFiles** elemento para o **ItemGroup** elemento:
 
-    1. No **incluir** de atributo, forneça uma lista separada por vírgulas dos arquivos que você deseja excluir.
-    2. No **FromTarget** elemento de metadados, forneça um valor significativo para indicar por que os arquivos estão sendo excluídos, como o nome do *. wpp.targets* arquivo.
+   1. No **incluir** de atributo, forneça uma lista separada por vírgulas dos arquivos que você deseja excluir.
+   2. No **FromTarget** elemento de metadados, forneça um valor significativo para indicar por que os arquivos estão sendo excluídos, como o nome do *. wpp.targets* arquivo.
 
-    [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
+      [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
 8. O *[nome do projeto].wpp.targets* arquivo deve agora ser semelhante a esta:
 
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample5.xml)]
@@ -131,6 +131,6 @@ Este tópico descreveu como excluir arquivos e pastas específicos quando você 
 
 Para obter mais informações sobre como usar arquivos de projeto Microsoft Build Engine (MSBuild) personalizados para controlar o processo de implantação, consulte [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md) e [Noções básicas sobre o processo de compilação](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Para obter mais informações sobre o empacotamento e o processo de implantação, consulte [criação e a projetos de aplicativo Web de empacotamento](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md), [parâmetros de configuração para implantação do pacote da Web](../web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment.md), e [ Implantando pacotes da Web](../web-deployment-in-the-enterprise/deploying-web-packages.md).
 
->[!div class="step-by-step"]
-[Anterior](deploying-membership-databases-to-enterprise-environments.md)
-[Próximo](taking-web-applications-offline-with-web-deploy.md)
+> [!div class="step-by-step"]
+> [Anterior](deploying-membership-databases-to-enterprise-environments.md)
+> [Próximo](taking-web-applications-offline-with-web-deploy.md)

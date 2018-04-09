@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/ms03-32-issue
-title: "Correção de erro 'Aplicativo de servidor não disponível' depois de aplicar a atualização de segurança do IE | Microsoft Docs"
+title: Correção de erro 'Aplicativo de servidor não disponível' depois de aplicar a atualização de segurança do IE | Microsoft Docs
 author: rick-anderson
-description: "Este documento descreve o patch que corrige um problema com a atualização de segurança MS03-32 para o Internet Explorer que afeta os aplicativos ASP.NET 1.0 em execução no Wi..."
+description: Este documento descreve o patch que corrige um problema com a atualização de segurança MS03-32 para o Internet Explorer que afeta os aplicativos ASP.NET 1.0 em execução no Wi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: 8658e387aeb4ea0340080666906b2b89db49a31a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dd1a564cd347364abc3ca5ac0a9ffda448bcede8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>Corrigir para 'Aplicativo de servidor indisponível' erro depois de aplicar a atualização de segurança do IE
 ====================
@@ -41,20 +41,20 @@ Estamos trabalhando duro em uma solução permanente para este problema. Enquant
 4. Registra novamente o ASP.NET. Isso cria uma nova senha aleatória para a conta e aplica as configurações de controle de acesso padrão ASP.NET para ele
 5. Reinicia o serviço IIS
 
-O arquivo de lote contém uma senha temporária codificado de "**1pass@word**" que você será solicitado a inserir para o comando executar quando o arquivo em lotes é executado. Depois de concluir o comando runas, a senha da conta ASPNET é recriada com um valor aleatório. Observe que o arquivo em lote pode falhar se a senha codificada não atende aos requisitos de complexidade de senha em seu ambiente. Se esse for o caso, você pode alterá-lo para outro valor que seja apropriado para seu ambiente.
+O arquivo de lote contém uma senha temporária codificado de "<strong>1pass@word</strong>" que você será solicitado a inserir para o comando executar quando o arquivo em lotes é executado. Depois de concluir o comando runas, a senha da conta ASPNET é recriada com um valor aleatório. Observe que o arquivo em lote pode falhar se a senha codificada não atende aos requisitos de complexidade de senha em seu ambiente. Se esse for o caso, você pode alterá-lo para outro valor que seja apropriado para seu ambiente.
 
-*> [!IMPORTANT]*Se você tiver adicionado as configurações de controle de acesso personalizadas ou as permissões de conta do banco de dados para a conta ASPNET, precisam ser recriados após esse arquivo em lotes. Isso ocorre porque quando a conta for recriada, ele receberá um novo identificador de segurança (SID).
+*> [!IMPORTANT]* Se você tiver adicionado as configurações de controle de acesso personalizadas ou as permissões de conta do banco de dados para a conta ASPNET, precisam ser recriados após esse arquivo em lotes. Isso ocorre porque quando a conta for recriada, ele receberá um novo identificador de segurança (SID).
 
-*> [!IMPORTANT]*Se você estiver executando o processo de trabalho do ASP.NET com uma conta personalizada diferente da conta ASPNET, em seguida, você não deve executar esse arquivo em lotes. Em vez disso, você deve fazer logon interativamente no ou usar o comando Executar como com uma conta que criará um perfil de usuário para essa conta.
+*> [!IMPORTANT]* Se você estiver executando o processo de trabalho do ASP.NET com uma conta personalizada diferente da conta ASPNET, em seguida, você não deve executar esse arquivo em lotes. Em vez disso, você deve fazer logon interativamente no ou usar o comando Executar como com uma conta que criará um perfil de usuário para essa conta.
 
 O arquivo em lotes está incluído no arquivo de extração automática abaixo. Para usá-lo:
 
 1. Você deve estar executando como uma conta com privilégios de administrador
 2. [Baixe e abra o arquivo executável auto-extraível](ms03-32-issue/_static/fixup1.exe)
 3. Extraia o conteúdo para c:\
-4. Selecione Executar... no menu Iniciar e digite`cmd.exe`
+4. Selecione Executar... no menu Iniciar e digite `cmd.exe`
 5. Na janela comando Abrir, digite `c:\fixup.cmd`.
-6. Quando solicitado, insira  **1pass@word**  como a senha.
+6. Quando solicitado, insira <strong>1pass@word</strong> como a senha.
 7. Se você tiver permissões de conta do banco de dados para a conta ASPNET ou de configurações de controle de acesso personalizado anteriormente, você precisará aplicar novamente essas configurações agora.
 
 Muitas desculpas pelo inconveniente que isso causou. Publicaremos informações adicionais quando estiver disponível.

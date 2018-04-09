@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 title: Criando um controlador (c#) | Microsoft Docs
 author: StephenWalther
-description: "Neste tutorial, Stephen Walther demonstra como você pode adicionar um controlador para um aplicativo ASP.NET MVC."
+description: Neste tutorial, Stephen Walther demonstra como você pode adicionar um controlador para um aplicativo ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9faaff1e00998ef9a77c4928a9eb36fc93ab97f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 86966f1064d09419e2102542c6d14c4162d153e4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-controller-c"></a>Criando um controlador (c#)
 ====================
@@ -92,10 +92,10 @@ O controlador na listagem 3 expõe uma ação chamada index () que retorna a cad
 
 `http://localhost:40071/Person`
 
-> [!NOTE] 
+> [!NOTE]
 > 
 > O servidor de desenvolvimento ASP.NET usa um número de porta aleatória (por exemplo, 40071). Ao inserir uma URL para invocar um controlador, você precisará fornecer o número de porta correto. Você pode determinar o número da porta passando o mouse sobre o ícone para o servidor de desenvolvimento ASP.NET na área de notificação do Windows (inferior direito da tela).
-
->[!div class="step-by-step"]
-[Anterior](adding-dynamic-content-to-a-cached-page-cs.md)
-[Próximo](creating-an-action-cs.md)
+> 
+> [!div class="step-by-step"]
+> [Anterior](adding-dynamic-content-to-a-cached-page-cs.md)
+> [Próximo](creating-an-action-cs.md)

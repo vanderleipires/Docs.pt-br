@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
-title: "Implantando uma determinada compilação | Microsoft Docs"
+title: Implantando uma determinada compilação | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como implantar pacotes da web e scripts de banco de dados de um build anterior específico para um novo destino, como um enviro de produção ou preparo..."
+description: Este tópico descreve como implantar pacotes da web e scripts de banco de dados de um build anterior específico para um novo destino, como um enviro de produção ou preparo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: be1000f0cbc2f509f5014789c2bc47ce2b12fb2f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 271d084b3c69016df5be28ada032973bf7fd5a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-a-specific-build"></a>Implantando uma compilação específica
 ====================
@@ -27,9 +27,9 @@ por [Jason Lee](https://github.com/jrjlee)
 > Este tópico descreve como implantar pacotes da web e scripts de banco de dados de um build anterior específico para um novo destino, como um ambiente de preparo ou produção.
 
 
-Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo & #x 2014; o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, Windows Serviço do Communication Foundation (WCF) e um projeto de banco de dados.
+Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo&#x2014;o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, uma comunicação do Windows Serviço Foundation (WCF) e um projeto de banco de dados.
 
-O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), no qual o processo de compilação e implantação é controlado por meio de dois arquivos de projeto & #x 2014; o ne contendo instruções de compilação que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
+O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação e implantação é controlado por dois arquivos de projeto&#x2014;um que contém instruções de compilação que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
 ## <a name="task-overview"></a>Visão geral da tarefa
 
@@ -54,13 +54,13 @@ No [solução de exemplo](../web-deployment-in-the-enterprise/the-contact-manage
 [!code-xml[Main](deploying-a-specific-build/samples/sample1.xml)]
 
 
-Se você quiser que o arquivo de projeto para implantar pacotes da web e scripts de banco de dados de um local diferente & #x 2014; como as saídas de um build do TFS de anterior & #x 2014; basta substituir a **OutputRoot** propriedade. Você deve definir o valor da propriedade para a pasta de compilação relevantes no servidor do Team Build. Se você estivesse executando o MSBuild da linha de comando, você pode especificar um valor para **OutputRoot** como um argumento de linha de comando:
+Se você quiser que o arquivo de projeto para implantar pacotes da web e scripts de um local diferente do banco de dados&#x2014;as saídas de uma versão anterior do TFS, como&#x2014;basta substituir a **OutputRoot** propriedade. Você deve definir o valor da propriedade para a pasta de compilação relevantes no servidor do Team Build. Se você estivesse executando o MSBuild da linha de comando, você pode especificar um valor para **OutputRoot** como um argumento de linha de comando:
 
 
 [!code-console[Main](deploying-a-specific-build/samples/sample2.cmd)]
 
 
-Na prática, no entanto, você também deseja ignorar o **criar** destino & #x 2014; não há nenhum ponto na criação de sua solução se você não planeja usar as saídas de compilação. Você pode fazer isso especificando os destinos que você deseja executar na linha de comando:
+Na prática, no entanto, você também deseja ignorar o **criar** destino&#x2014;não há nenhum ponto na criação de sua solução se você não planeja usar as saídas de compilação. Você pode fazer isso especificando os destinos que você deseja executar na linha de comando:
 
 
 [!code-console[Main](deploying-a-specific-build/samples/sample3.cmd)]
@@ -72,7 +72,7 @@ No entanto, na maioria dos casos, você desejará criar sua lógica de implanta�
 
 O procedimento a seguir descreve como criar uma definição de compilação que permite aos usuários para implantações de gatilho em um ambiente de preparo com um único comando.
 
-Nesse caso, você não deseja que a definição de compilação para realmente criar tudo & #x 2014; você apenas deseja executar a lógica de implantação em seu arquivo de projeto personalizados. O *Publish.proj* arquivo inclui a lógica condicional que ignora o **criar** se o arquivo estiver em execução no Team Build de destino. Ele faz isso avaliando interno **BuildingInTeamBuild** propriedade, que é definida automaticamente como **true** se você executar o arquivo de projeto no Team Build. Como resultado, você pode ignorar o processo de compilação e simplesmente executar o arquivo de projeto para implantar uma compilação.
+Nesse caso, você não deseja que a definição de compilação para realmente criar tudo&#x2014;apenas deseja executar a lógica de implantação em seu arquivo de projeto personalizados. O *Publish.proj* arquivo inclui a lógica condicional que ignora o **criar** se o arquivo estiver em execução no Team Build de destino. Ele faz isso avaliando interno **BuildingInTeamBuild** propriedade, que é definida automaticamente como **true** se você executar o arquivo de projeto no Team Build. Como resultado, você pode ignorar o processo de compilação e simplesmente executar o arquivo de projeto para implantar uma compilação.
 
 **Para criar uma definição de compilação para disparar a implantação manualmente**
 
@@ -133,6 +133,6 @@ Este tópico descreveu como publicar recursos de implantação, como pacotes da 
 
 Para obter mais informações sobre como criar definições de compilação, consulte [criar uma definição básica de compilação](https://msdn.microsoft.com/library/ms181716.aspx) e [definir seu processo de criação](https://msdn.microsoft.com/library/ms181715.aspx). Para obter mais diretrizes em compilações de enfileiramento de mensagens, consulte [enfileirar uma compilação](https://msdn.microsoft.com/library/ms181722.aspx).
 
->[!div class="step-by-step"]
-[Anterior](creating-a-build-definition-that-supports-deployment.md)
-[Próximo](configuring-permissions-for-team-build-deployment.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-a-build-definition-that-supports-deployment.md)
+> [Próximo](configuring-permissions-for-team-build-deployment.md)

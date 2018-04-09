@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
-title: "Implementando o repositório e a unidade de trabalho padrões em um aplicativo ASP.NET MVC (9 de 10) | Microsoft Docs"
+title: Implementando o repositório e a unidade de trabalho padrões em um aplicativo ASP.NET MVC (9 de 10) | Microsoft Docs
 author: tdykstra
 description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 4 usando o Entity Framework 5 Code First e o Visual Studio...
 ms.author: aspnetcontent
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 02b1de31b9513247facc92bc6b72247865d176f9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f870b61658686769304a7809bde62e66da3bd0c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>Implementando o repositório e a unidade de trabalho padrões em um aplicativo ASP.NET MVC (9 de 10)
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -35,7 +35,7 @@ No tutorial anterior, você usou herança para reduzir o código redundante no `
 
 ## <a name="the-repository-and-unit-of-work-patterns"></a>O repositório e a unidade de trabalho padrões
 
-O repositório e a unidade de trabalho padrões destinam-se para criar uma camada de abstração entre a camada de acesso a dados e a camada de lógica comercial de um aplicativo. Implementando esses padrões podem ajudar a isolar seu aplicativo de alterações no repositório de dados e pode facilitar o teste de unidade automatizado ou desenvolvimento controlado por testes (TDD).
+O repositório e a unidade de trabalho padrões destinam-se para criar uma camada de abstração entre a camada de acesso a dados e a camada de lógica comercial de um aplicativo. A implementação desses padrões pode ajudar a isolar o aplicativo de alterações no armazenamento de dados e pode facilitar o teste de unidade automatizado ou TDD (desenvolvimento orientado por testes).
 
 Neste tutorial, você poderá implementar uma classe de repositório para cada tipo de entidade. Para o `Student` tipo de entidade, você criará uma interface do repositório e uma classe de repositório. Quando você cria uma instância do repositório em seu controlador, você usará a interface para que o controlador aceitará uma referência a qualquer objeto que implementa a interface do repositório. Quando o controlador é executado em um servidor web, ele recebe um repositório que funciona com o Entity Framework. Quando o controlador é executado em uma classe de teste de unidade, ele recebe um repositório que funciona com dados armazenados em uma forma que você pode manipular facilmente para teste, como uma coleção de memória.
 
@@ -124,7 +124,7 @@ Somente o código foi alterado.
 
 Na versão original do código, `students` é digitada como um `IQueryable` objeto. A consulta não será enviada para o banco de dados até que ele é convertido em uma coleção usando um método como `ToList`, que não ocorre até que a exibição índice acessa o modelo de student. O `Where` método no código acima original torna-se um `WHERE` cláusula na consulta SQL que é enviada para o banco de dados. Por sua vez, isso significa que apenas as entidades selecionadas são retornadas pelo banco de dados. No entanto, como resultado da alteração `context.Students` para `studentRepository.GetStudents()`, o `students` variável depois que essa instrução é um `IEnumerable` coleção que inclui todos os alunos no banco de dados. O resultado final da aplicação de `Where` método é o mesmo, mas agora o trabalho é feito na memória no servidor web e não pelo banco de dados. Para consultas que retornam grandes volumes de dados, isso pode ser ineficiente.
 
-> [!TIP] 
+> [!TIP]
 > 
 > **IQueryable vs. IEnumerable**
 > 
@@ -249,6 +249,6 @@ Você implementou o repositório e a unidade de padrões de trabalho. Você usou
 
 Links para outros recursos do Entity Framework podem ser encontradas no [ASP.NET mapa de conteúdo de acesso de dados](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Anterior](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[Próximo](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [!div class="step-by-step"]
+> [Anterior](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [Próximo](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

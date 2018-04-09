@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
-title: "Parte 6: Associação do ASP.NET | Microsoft Docs"
+title: 'Parte 6: Associação do ASP.NET | Microsoft Docs'
 author: JoeStagner
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 6 adiciona a associação do ASP.NET."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 6 adiciona a associação do ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: efb0e2bed1172f42c7f1539f016fba305c47e3eb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 83e9bc780ea8face3e0f55fdf8c00e13b60f80a7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-6-aspnet-membership"></a>Parte 6: Associação do ASP.NET
 ====================
@@ -27,7 +27,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 > Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 6 adiciona a associação do ASP.NET.
 
 
-## <a id="_Toc260221672"></a>Trabalhando com a associação do ASP.NET
+## <a id="_Toc260221672"></a>  Trabalhando com a associação do ASP.NET
 
 ![](tailspin-spyworks-part-6/_static/image1.png)
 
@@ -112,6 +112,6 @@ Para os fins desse aplicativo de exemplo irá calcular uma data de remessa simpl
 
 Executando o aplicativo agora também permite que nós para testar o processo de compra do início ao fim.
 
->[!div class="step-by-step"]
-[Anterior](tailspin-spyworks-part-5.md)
-[Próximo](tailspin-spyworks-part-7.md)
+> [!div class="step-by-step"]
+> [Anterior](tailspin-spyworks-part-5.md)
+> [Próximo](tailspin-spyworks-part-7.md)

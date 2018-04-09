@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
-title: "Tutorial: Introdução ao SignalR 1. x e MVC 4 | Microsoft Docs"
+title: 'Tutorial: Introdução ao SignalR 1. x e MVC 4 | Microsoft Docs'
 author: pfletcher
 description: Use o SignalR do ASP.NET e ASP.NET MVC 4 para criar um aplicativo de bate-papo em tempo real.
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 632e6098a03eae02f2367c6dc1c293dbdb6b6170
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1ae330be5caf00c3cac7451f326398c0958538af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>Tutorial: Introdução ao SignalR 1. x e MVC 4
 ====================
@@ -63,17 +63,17 @@ Esta seção mostra como criar um aplicativo ASP.NET MVC 4, adicione a bibliotec
         > No VS 2010, selecione **.NET Framework 4** no controle de lista suspensa de versão do Framework. Código de SignalR é executado em versões do .NET Framework 4 e 4.5.
 
         ![Criar web mvc](tutorial-getting-started-with-signalr-and-mvc-4/_static/image3.png)
-    2. Selecione o modelo de aplicativo de Internet, desmarque a opção de **criar um projeto de teste de unidade**e clique em Okey.
+      2. Selecione o modelo de aplicativo de Internet, desmarque a opção de **criar um projeto de teste de unidade**e clique em Okey.
 
-        ![Criar um site da internet mvc](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
-    3. Abra o **ferramentas | Gerenciador de biblioteca de pacote | Package Manager Console** e execute o comando a seguir. Esta etapa adiciona ao projeto um conjunto de arquivos de script e referências de assembly que habilitar a funcionalidade do SignalR.
+         ![Criar um site da internet mvc](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
+      3. Abra o **ferramentas | Gerenciador de biblioteca de pacote | Package Manager Console** e execute o comando a seguir. Esta etapa adiciona ao projeto um conjunto de arquivos de script e referências de assembly que habilitar a funcionalidade do SignalR.
 
-        `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
-    4. Em **Solution Explorer** expanda a pasta de Scripts. Observe que as bibliotecas de scripts para o SignalR foram adicionadas ao projeto.
+         `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
+      4. Em **Solution Explorer** expanda a pasta de Scripts. Observe que as bibliotecas de scripts para o SignalR foram adicionadas ao projeto.
 
-        ![Referências de biblioteca](tutorial-getting-started-with-signalr-and-mvc-4/_static/image6.png)
-    5. Em **Solution Explorer**, clique com o botão direito, selecione **adicionar | Nova pasta**, e adicione uma nova pasta chamada **Hubs**.
-    6. Clique com botão direito do **Hubs** pasta, clique em **adicionar | Classe**e crie uma nova classe c# chamada **ChatHub.cs**. Você usará essa classe como um hub de servidor do SignalR que envia mensagens para todos os clientes.
+         ![Referências de biblioteca](tutorial-getting-started-with-signalr-and-mvc-4/_static/image6.png)
+      5. Em **Solution Explorer**, clique com o botão direito, selecione **adicionar | Nova pasta**, e adicione uma nova pasta chamada **Hubs**.
+      6. Clique com botão direito do **Hubs** pasta, clique em **adicionar | Classe**e crie uma nova classe c# chamada **ChatHub.cs**. Você usará essa classe como um hub de servidor do SignalR que envia mensagens para todos os clientes.
 
 > [!NOTE]
 > Se você usar o Visual Studio 2012 e tiver instalado o [atualização ASP.NET e Web Tools 2012.2](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation), você pode usar o novo modelo de item de SignalR para criar a classe de hub. Para fazer isso, clique com botão direito do **Hubs** pasta, clique em **adicionar | Novo Item**, selecione **classe de Hub SignalR (v1)**e nomeie a classe **ChatHub.cs**.

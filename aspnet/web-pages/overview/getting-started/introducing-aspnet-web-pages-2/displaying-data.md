@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
-title: "Introdução a páginas da Web ASP.NET - exibindo dados | Microsoft Docs"
+title: Introdução a páginas da Web ASP.NET - exibindo dados | Microsoft Docs
 author: tfitzmac
-description: "Este tutorial mostra como criar um banco de dados no WebMatrix e como exibir dados de banco de dados em uma página quando você usa páginas da Web do ASP.NET (Razor). Ele assume y..."
+description: Este tutorial mostra como criar um banco de dados no WebMatrix e como exibir dados de banco de dados em uma página quando você usa páginas da Web do ASP.NET (Razor). Ele assume y...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 msc.type: authoredcontent
-ms.openlocfilehash: fdb9af0ba87c7802c63451ac7aa422e0020b5719
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6c66e5fb0a1a49da411286e19c7954f83055c3fd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---displaying-data"></a>Introdução a páginas da Web ASP.NET - exibindo dados
 ====================
@@ -36,7 +36,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > Recursos/tecnologias abordadas:
 > 
 > - Ferramentas de banco de dados do WebMatrix.
-> - `WebGrid`auxiliar.
+> - `WebGrid` auxiliar.
 
 
 ## <a name="what-youll-build"></a>O que você vai criar
@@ -338,6 +338,6 @@ O seguinte tutorial, você aprenderá como usar código Razor e c# para obter a 
 
 - [Introdução à programação da Web do ASP.NET usando a sintaxe do Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
 
->[!div class="step-by-step"]
-[Anterior](intro-to-web-pages-programming.md)
-[Próximo](form-basics.md)
+> [!div class="step-by-step"]
+> [Anterior](intro-to-web-pages-programming.md)
+> [Próximo](form-basics.md)

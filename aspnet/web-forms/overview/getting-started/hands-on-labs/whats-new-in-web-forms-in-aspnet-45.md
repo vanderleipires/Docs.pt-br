@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
-title: "O que há de novo no Web Forms do ASP.NET 4.5 | Microsoft Docs"
+title: O que há de novo no Web Forms do ASP.NET 4.5 | Microsoft Docs
 author: rick-anderson
-description: "A nova versão do ASP.NET Web Forms apresenta uma série de melhorias que se concentrou em melhorar a experiência do usuário ao trabalhar com dados. Em versões anteriores do..."
+description: A nova versão do ASP.NET Web Forms apresenta uma série de melhorias que se concentrou em melhorar a experiência do usuário ao trabalhar com dados. Em versões anteriores do...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 560f949f79be8ba4936e4a6f8ee8ee32ef15acbf
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: db2658ff1feae1d4c20e4cfd19c36cfdf9492761
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>O que há de novo no Web Forms no ASP.NET 4.5
 ====================
-por [Web Camps Team](https://twitter.com/webcamps)
+Por [Web Camps Team](https://twitter.com/webcamps)
 
 > A nova versão do ASP.NET Web Forms apresenta uma série de melhorias que se concentrou em melhorar a experiência do usuário ao trabalhar com dados.
 > 
@@ -42,7 +42,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > No portal oficial do ASP.NET, você pode encontrar mais exemplos dos novos recursos no ASP.NET WebForms 4.5: [o que há de novo no ASP.NET 4.5 e o Visual Studio 2012](../../../../whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012.md#_Toc318097385)
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
 
 
 <a id="Objectives"></a>
@@ -103,12 +103,12 @@ Nesta tarefa, você descobrirá que as novas associações fortemente tipada dis
 
 1. Abra o **começar** solução localizado em **fonte/Ex1-ModelBinding/Begin/** pasta.
 
-    1. Você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
-    2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
-    3. Por fim, compile a solução clicando **criar** | **compilar solução**.
+   1. Você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
+   2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
+   3. Por fim, compile a solução clicando **criar** | **compilar solução**.
 
-    > [!NOTE]
-    > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
+      > [!NOTE]
+      > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
 2. Abra o **Customers.aspx** página. Colocar uma lista não numerada no controle principal e incluir um controle repetidor dentro para listar cada cliente. Defina o nome do repetidor para **customersRepeater** conforme mostrado no código a seguir.
 
     Em versões anteriores do Web Forms, ao usar a associação de dados para emitir o valor de um membro em um objeto estiver associação de dados, você usaria uma expressão de associação de dados, juntamente com uma chamada para o método de avaliação, passando no nome do membro como uma cadeia de caracteres.
@@ -212,7 +212,7 @@ Associação de modelo não só permite que você especifique métodos personali
 - Controles na página
 - Valores de cadeia de caracteres de consulta
 - Exibir dados
-- Estado da sessão
+- Estado de sessão
 - Cookies
 - Dados de postagem de formulário
 - Estado de exibição
@@ -341,12 +341,12 @@ Nesta seção, você permitirá a validação discreta no ASP.NET para comparar 
 
 1. Abra **Visual Studio 2012** e abra o **começar** solução localizada no **Source\Ex2 Validation\Begin** pasta deste laboratório. Como alternativa, você pode continuar trabalhando em sua solução existente do exercício anterior.
 
-    1. Se você abriu fornecido **começar** solução, você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, no Gerenciador de soluções, clique o **WebFormsLab** projeto **gerenciar pacotes NuGet**.
-    2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
-    3. Por fim, compile a solução clicando **criar** | **compilar solução**.
+   1. Se você abriu fornecido **começar** solução, você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, no Gerenciador de soluções, clique o **WebFormsLab** projeto **gerenciar pacotes NuGet**.
+   2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
+   3. Por fim, compile a solução clicando **criar** | **compilar solução**.
 
-    > [!NOTE]
-    > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
+      > [!NOTE]
+      > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
 2. Pressione **F5** para iniciar o aplicativo web. Vá para os clientes de página e clique no **adicionar um novo cliente** link.
 3. Na página do navegador e selecione **Exibir código-fonte** opção para abrir o código HTML gerado pelo aplicativo.
 
@@ -535,12 +535,12 @@ Nesta tarefa, você atualizará a página de detalhes do produto para permitir q
 
 1. Abra **Visual Studio 2012** e carregar o **começar** solução localizada no **Source\Ex3 Async\Begin** da pasta neste laboratório. Como alternativa, você pode continuar trabalhando em sua solução existente de exercícios anteriores.
 
-    1. Se você abriu fornecido **começar** solução, você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, no Gerenciador de soluções, clique o **WebFormsLab** do projeto e selecione **gerenciar pacotes NuGet**.
-    2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
-    3. Por fim, compile a solução clicando **criar** | **compilar solução**.
+   1. Se você abriu fornecido **começar** solução, você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, no Gerenciador de soluções, clique o **WebFormsLab** do projeto e selecione **gerenciar pacotes NuGet**.
+   2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
+   3. Por fim, compile a solução clicando **criar** | **compilar solução**.
 
-    > [!NOTE]
-    > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
+      > [!NOTE]
+      > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
 2. Abra o **ProductDetails.aspx** página fonte e adicione um campo ItemTemplate de FormView para mostrar a imagem do produto.
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample30.aspx)]
@@ -562,7 +562,7 @@ Nesta tarefa, você atualizará a página de detalhes do produto para permitir q
     (Código de trecho - *Web Forms laboratório - Ex03 - UpdateProductImage chamada*)
 
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample34.cs)]
-7. Execute o aplicativo e tente carregar uma imagem de um produto. Por exemplo, você pode usar a seguinte URL de imagem do Office Clip Artes: [ [http://officeimg.vo.msecnd.net/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)
+7. Execute o aplicativo e tente carregar uma imagem de um produto. Por exemplo, você pode usar a seguinte URL de imagem de arte de clipe do Office: [[http://officeimg.vo.msecnd.net/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)
 
     ![Definindo uma imagem de um produto](whats-new-in-web-forms-in-aspnet-45/_static/image23.png "definindo uma imagem de um produto")
 
@@ -580,7 +580,9 @@ Operações demoradas em seu site da web são ótimos candidatos para programaç
 1. Abra o **ProductDetails.aspx** página. Adicionar o **Async** atributo o **página** elemento e defina-a como **true**. Esse atributo diz ao ASP.NET para implementar a interface IHttpAsyncHandler.
 
 
-    [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample35.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample35.aspx)]
+~~~
 2. Adicione um rótulo na parte inferior da página para mostrar os detalhes dos threads de execução da página.
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample36.aspx)]
@@ -636,9 +638,9 @@ Neste laboratório prático, os conceitos a seguir foram resolvidos e demonstrad
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Apêndice a: instalar o Visual Studio Express 2012 para Web
 
-Você pode instalar **Microsoft Visual Studio Express 2012 para Web** ou outro &quot;Express&quot; versão usando o  **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . As instruções a seguir guiá-lo pelas etapas necessárias para instalar o *Visual studio Express 2012 para Web* usando *Microsoft Web Platform Installer*.
+Você pode instalar **Microsoft Visual Studio Express 2012 para Web** ou outro &quot;Express&quot; versão usando o **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. As instruções a seguir guiá-lo pelas etapas necessárias para instalar o *Visual studio Express 2012 para Web* usando *Microsoft Web Platform Installer*.
 
-1. Vá para [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Como alternativa, se você já tiver instalado o Web Platform Installer, você pode abri-la e procure o produto &quot; *Visual Studio Express 2012 para Web com SDK do Azure*&quot;.
+1. Vá para [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Como alternativa, se você já tiver instalado o Web Platform Installer, você pode abri-la e procure o produto &quot; <em>Visual Studio Express 2012 para Web com SDK do Azure</em>&quot;.
 2. Clique em **instalar agora**. Se você não tem **Web Platform Installer** você será redirecionado para baixar e instalá-lo primeiro.
 3. Uma vez **Web Platform Installer** é aberto, clique em **instalar** para iniciar a instalação.
 
@@ -782,14 +784,14 @@ Se seu aplicativo utiliza o SQL Server bancos de dados que você precisará cria
     *Configuração de implantação da Web*
 5. Configure a conexão de banco de dados da seguinte maneira:
 
-    - No **nome do servidor** digite sua URL de servidor de banco de dados SQL usando o *tcp:* prefixo.
-    - Em **nome de usuário** digite seu nome de logon de administrador do servidor.
-    - Em **senha** digite sua senha de logon de administrador do servidor.
-    - Digite um novo nome de banco de dados.
+   - No **nome do servidor** digite sua URL de servidor de banco de dados SQL usando o *tcp:* prefixo.
+   - Em **nome de usuário** digite seu nome de logon de administrador do servidor.
+   - Em **senha** digite sua senha de logon de administrador do servidor.
+   - Digite um novo nome de banco de dados.
 
-    ![Configurando a cadeia de caracteres de conexão de destino](whats-new-in-web-forms-in-aspnet-45/_static/image46.png "Configurando a cadeia de caracteres de conexão de destino")
+     ![Configurando a cadeia de caracteres de conexão de destino](whats-new-in-web-forms-in-aspnet-45/_static/image46.png "Configurando a cadeia de caracteres de conexão de destino")
 
-    *Configurando a cadeia de caracteres de conexão de destino*
+     *Configurando a cadeia de caracteres de conexão de destino*
 6. Clique em **OK**. Quando solicitado a criar o banco de dados, clique em **Sim**.
 
     ![Criando o banco de dados](whats-new-in-web-forms-in-aspnet-45/_static/image47.png "criar a cadeia de caracteres do banco de dados")

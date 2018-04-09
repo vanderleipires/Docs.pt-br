@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
-title: "Entity Framework 6 cenários avançados de para um aplicativo Web 5 do MVC (12 de 12) | Microsoft Docs"
+title: Entity Framework 6 cenários avançados de para um aplicativo Web 5 do MVC (12 de 12) | Microsoft Docs
 author: tdykstra
 description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio...
 ms.author: aspnetcontent
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 85276377671b96e65406639c8584d9ebf8d77ff7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 50987b30a49173605e7aeb8eb65ff1fe5d5e5753
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>Avançadas Entity Framework 6 cenários para um aplicativo Web 5 do MVC (12 de 12)
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
@@ -59,12 +59,12 @@ Para a maioria desses tópicos, você trabalhará com páginas que você já ten
 API de primeiro código do Entity Framework inclui métodos que permitem que você passar comandos SQL diretamente para o banco de dados. Você tem as seguintes opções:
 
 - Use o [DbSet.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.dbset.sqlquery.aspx) método para consultas que retornam tipos de entidade. Os objetos retornados devem ser do tipo esperado pelo `DbSet` objeto e eles são controladas automaticamente pelo contexto de banco de dados, a menos que você desativar o rastreamento. (Consulte a seção a seguir o [AsNoTracking](https://msdn.microsoft.com/library/system.data.entity.dbextensions.asnotracking.aspx) método.)
-- Use o [Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery.aspx) método para consultas que retornam tipos que não são entidades. Os dados retornados não são controlados pelo contexto de banco de dados, mesmo se você usar esse método para recuperar tipos de entidade.
+- Use o [Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery.aspx) método para consultas que retornam tipos que não são entidades. Os dados retornados não são controlados pelo contexto de banco de dados, mesmo se esse método é usado para recuperar tipos de entidade.
 - Use o [Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456.aspx) para comandos sem consulta.
 
-Uma das vantagens de usar o Entity Framework é que ela evita vincular seu código muito semelhante a um método específico de armazenamento de dados. Ele faz isso através da geração de consultas SQL e comandos para você, que também libera você da necessidade de gravá-los. Mas há casos excepcionais, quando você precisa executar consultas específicas de SQL que você criou manualmente, e esses métodos tornam possível para tratar essas exceções.
+Uma das vantagens de usar o Entity Framework é que ele evita vincular o código de forma muito próxima a um método específico de armazenamento de dados. Ele faz isso pela geração de consultas SQL e comandos para você, que também libera você da necessidade de escrevê-los. Mas há casos excepcionais, quando você precisa executar consultas específicas de SQL que você criou manualmente, e esses métodos tornam possível para tratar essas exceções.
 
-Como sempre é verdadeiro quando você executa comandos SQL em um aplicativo web, você deve tomar precauções para proteger o site contra ataques de injeção de SQL. Uma maneira de fazer isso é usar consultas parametrizadas para certificar-se de que as cadeias de caracteres enviadas por uma página da web não podem ser interpretadas como comandos SQL. Neste tutorial você usará consultas parametrizadas ao integrar a entrada do usuário em uma consulta.
+Como é sempre verdadeiro quando você executa comandos SQL em um aplicativo Web, é necessário tomar precauções para proteger o site contra ataques de injeção de SQL. Uma maneira de fazer isso é usar consultas parametrizadas para garantir que as cadeias de caracteres enviadas por uma página da Web não possam ser interpretadas como comandos SQL. Neste tutorial, você usará consultas parametrizadas ao integrar a entrada do usuário a uma consulta.
 
 ### <a name="calling-a-query-that-returns-entities"></a>Chamando uma consulta que retorna entidades
 
@@ -74,13 +74,13 @@ Em *DepartmentController.cs*, no `Details` método, substitua o `db.Departments.
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample1.cs?highlight=8-14)]
 
-Para verificar se o novo código funciona corretamente, selecione o **departamentos** guia e, em seguida, **detalhes** para um dos departamentos.
+Para verificar se o novo código funciona corretamente, selecione a guia **Departamentos** e, em seguida, **Detalhes** de um dos departamentos.
 
 ![Detalhes do departamento](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image2.png)
 
 ### <a name="calling-a-query-that-returns-other-types-of-objects"></a>Chamando uma consulta que retorna a outros tipos de objetos
 
-Anteriormente, você criou uma grade de estatísticas de estudante para a página sobre que mostrou o número de alunos para cada data de registro. O código que faz isso em *HomeController* usa LINQ:
+Anteriormente, você criou uma grade de estatísticas de alunos para a página Sobre que mostrava o número de alunos para cada data de registro. O código que faz isso em *HomeController* usa LINQ:
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample2.cs)]
 
@@ -90,13 +90,13 @@ Em *HomeController*, substitua a instrução LINQ no `About` método com uma ins
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample3.cs?highlight=3-18)]
 
-Execute a página sobre. Ele exibe os mesmos dados que antes.
+Execute a página sobre. Ela exibe os mesmos dados que antes.
 
 ![About_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image3.png)
 
 ### <a name="calling-an-update-query"></a>Chamando uma consulta Update
 
-Suponha que os administradores University Contoso desejam ser capaz de executar alterações em massa no banco de dados, como alterar o número de créditos para cada curso. Se a university tiver um grande número de cursos, poderá ser ineficiente para recuperá-las como entidades e alterá-los individualmente. Nesta seção, você implementará uma página da web que permite que o usuário especifique um fator alterar o número de créditos para todos os cursos e fará a alteração executando um SQL `UPDATE` instrução. A página da web será semelhante a ilustração a seguir:
+Suponha que os administradores University Contoso desejam ser capaz de executar alterações em massa no banco de dados, como alterar o número de créditos para cada curso. Se a universidade tiver uma grande quantidade de cursos, poderá ser ineficiente recuperá-los como entidades e alterá-los individualmente. Nesta seção, você implementará uma página da web que permite que o usuário especifique um fator alterar o número de créditos para todos os cursos e fará a alteração executando um SQL `UPDATE` instrução. A página da Web será semelhante à seguinte ilustração:
 
 ![Update_Course_Credits_initial_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image4.png)
 
@@ -118,15 +118,15 @@ Em *Views\Course\UpdateCourseCredits.cshtml*, substitua o código de modelo com 
 
 [!code-cshtml[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample5.cshtml)]
 
-Execute o `UpdateCourseCredits` método selecionando o **cursos** guia, em seguida, adicionando "/ UpdateCourseCredits" ao final da URL na barra de endereços do navegador (por exemplo: `http://localhost:50205/Course/UpdateCourseCredits`). Insira um número na caixa de texto:
+Execute o método `UpdateCourseCredits` selecionando a guia **Cursos**, adicionando, em seguida, "/UpdateCourseCredits" ao final da URL na barra de endereços do navegador (por exemplo: `http://localhost:50205/Course/UpdateCourseCredits`). Insira um número na caixa de texto:
 
 ![Update_Course_Credits_initial_page_with_2_entered](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image7.png)
 
-Clique em **Atualizar**. Você ver o número de linhas afetadas:
+Clique em **Atualizar**. O número de linhas afetadas é exibido:
 
 ![Update_Course_Credits_rows_affected_page](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image8.png)
 
-Clique em **voltar para a lista** para ver a lista de cursos com o número de créditos de revisado.
+Clique em **Voltar para a Lista** para ver a lista de cursos com o número revisado de créditos.
 
 ![Courses_Index_page_showing_revised_credits](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image9.png)
 
@@ -135,19 +135,19 @@ Para obter mais informações sobre consultas SQL brutas, consulte [bruto consul
 <a id="notracking"></a>
 ## <a name="no-tracking-queries"></a>Consultas de acompanhamento não
 
-Quando um contexto de banco de dados recupera linhas da tabela e cria objetos de entidade que representam-los, por padrão ele mantém o controle de se as entidades na memória estão em sincronia com o que está no banco de dados. Os dados na memória atua como um cache e são usados quando você atualizar uma entidade. Esse cache geralmente é desnecessário em um aplicativo web porque as instâncias de contexto são normalmente curta duração (uma nova é criada e descartado para cada solicitação) e o contexto que lê uma entidade normalmente é descartada antes que essa entidade é usada novamente.
+Quando um contexto de banco de dados recupera linhas de tabela e cria objetos de entidade que as representam, por padrão, ele controla se as entidades em memória estão em sincronia com o que está no banco de dados. Os dados em memória atuam como um cache e são usados quando uma entidade é atualizada. Esse cache costuma ser desnecessário em um aplicativo Web porque as instâncias de contexto são normalmente de curta duração (uma nova é criada e descartada para cada solicitação) e o contexto que lê uma entidade normalmente é descartado antes que essa entidade seja usada novamente.
 
-Você pode desabilitar o controle de objetos de entidade na memória usando o [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) método. Os cenários típicos em que você talvez queira fazer isso incluem o seguinte:
+Você pode desabilitar o controle de objetos de entidade na memória usando o [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) método. Os cenários típicos em que talvez você deseje fazer isso incluem os seguintes:
 
 - Uma consulta recupera um grande volume de dados que podem melhorar o desempenho visivelmente desativar o rastreamento.
-- Para anexar uma entidade para atualizá-lo, mas você recuperou anteriormente a mesma entidade para uma finalidade diferente. Porque a entidade já está sendo controlada pelo contexto de banco de dados, não é possível anexar a entidade que você deseja alterar. Uma maneira de lidar com essa situação é usar o `AsNoTracking` opção com a consulta anterior.
+- Para anexar uma entidade para atualizá-lo, mas você recuperou anteriormente a mesma entidade para uma finalidade diferente. Como a entidade já está sendo controlada pelo contexto de banco de dados, não é possível anexar a entidade que você deseja alterar. Uma maneira de lidar com essa situação é usar o `AsNoTracking` opção com a consulta anterior.
 
 Para obter um exemplo que demonstra como usar o [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) método, consulte [a versão anterior deste tutorial](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md). Esta versão do tutorial não defina o sinalizador de modificados em uma entidade de associador de modelo criado no método de edição, portanto ele não precisa `AsNoTracking`.
 
 <a id="sql"></a>
 ## <a name="examining-sql-sent-to-the-database"></a>Examinar SQL enviadas ao banco de dados
 
-Às vezes é útil ser capaz de ver as consultas SQL reais que são enviadas para o banco de dados. Um tutorial anterior, você viu como fazer isso no código interceptador; Agora, você verá algumas maneiras de fazer isso sem escrever código interceptador. Para testar isso, você observar uma consulta simples e, em seguida, examinar o que acontece a ela conforme você adiciona opções tal eager carregar, filtragem e classificação.
+Às vezes, é útil poder ver as consultas SQL reais que são enviadas ao banco de dados. Um tutorial anterior, você viu como fazer isso no código interceptador; Agora, você verá algumas maneiras de fazer isso sem escrever código interceptador. Para testar isso, você observar uma consulta simples e, em seguida, examinar o que acontece a ela conforme você adiciona opções tal eager carregar, filtragem e classificação.
 
 Em *controladores/CourseController*, substitua o `Index` método com o código a seguir, para interromper temporariamente o carregamento rápido:
 
@@ -193,12 +193,12 @@ Remover o `var sql = courses.ToString()` linha.
 
 <a id="repo"></a>
 
-## <a name="repository-and-unit-of-work-patterns"></a>Repositório e unidade de padrões de trabalho
+## <a name="repository-and-unit-of-work-patterns"></a>Padrões de repositório e unidade de trabalho
 
-Muitos desenvolvedores escrevem código para implementar o repositório e a unidade de padrões de trabalho como um wrapper em torno de código que funciona com o Entity Framework. Esses padrões destinam-se para criar uma camada de abstração entre a camada de acesso a dados e a camada de lógica comercial de um aplicativo. Implementando esses padrões podem ajudar a isolar seu aplicativo de alterações no repositório de dados e pode facilitar o teste de unidade automatizado ou desenvolvimento controlado por testes (TDD). No entanto, gravar código adicional para implementar esses padrões não é sempre a melhor escolha para aplicativos que usam o EF, por vários motivos:
+Muitos desenvolvedores escrevem um código para implementar padrões de repositório e unidade de trabalho como um wrapper em torno do código que funciona com o Entity Framework. Esses padrões destinam-se a criar uma camada de abstração entre a camada de acesso a dados e a camada da lógica de negócios de um aplicativo. A implementação desses padrões pode ajudar a isolar o aplicativo de alterações no armazenamento de dados e pode facilitar o teste de unidade automatizado ou TDD (desenvolvimento orientado por testes). No entanto, gravar código adicional para implementar esses padrões não é sempre a melhor escolha para aplicativos que usam o EF, por vários motivos:
 
-- A própria classe de contexto EF protege seu código de código específico do repositório de dados.
-- A classe de contexto EF pode agir como uma classe de unidade de trabalho para o banco de dados de atualizações que você faça usando EF.
+- A própria classe de contexto do EF isola o código de código específico a um armazenamento de dados.
+- A classe de contexto do EF pode atuar como uma classe de unidade de trabalho para as atualizações de banco de dados feitas com o EF.
 - Recursos introduzidos no Entity Framework 6 tornam mais fácil implementar TDD sem escrever código de repositório.
 
 Para obter mais informações sobre como implementar o repositório e a unidade de padrões de trabalho, consulte [a versão do Entity Framework 5 desta série de tutoriais](../../older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md). Para obter informações sobre maneiras de implementar TDD no Entity Framework 6, consulte os seguintes recursos:
@@ -227,9 +227,9 @@ Na maioria das vezes você não precisa estar ciente deste uso de proxies, mas h
 Para obter mais informações, consulte [trabalhando com Proxies](https://msdn.microsoft.com/data/JJ592886.aspx) no MSDN.
 
 <a id="changedetection"></a>
-## <a name="automatic-change-detection"></a>Detecção de alterações automáticas
+## <a name="automatic-change-detection"></a>Detecção automática de alterações
 
-O Entity Framework determina como uma entidade foi alterado (e, portanto, as atualizações que precisam ser enviados para o banco de dados), comparando os valores atuais de uma entidade com os valores originais. Os valores originais são armazenados quando a entidade é consultada ou anexada. Alguns dos métodos que causam a detecção de alterações automáticas são os seguintes:
+O Entity Framework determina como uma entidade foi alterada (e, portanto, quais atualizações precisam ser enviadas ao banco de dados), comparando os valores atuais de uma entidade com os valores originais. Os valores originais são armazenados quando a entidade é consultada ou anexada. Alguns dos métodos que causam a detecção automática de alterações são os seguintes:
 
 - `DbSet.Find`
 - `DbSet.Local`
@@ -262,7 +262,7 @@ Quando você chama o `SaveChanges` método, por padrão o Entity Framework valid
 
 O código-fonte para Entity Framework 6 está disponível em [GitHub](https://github.com/aspnet/EntityFramework6). Você poderá arquivar bugs e você pode contribuir seus próprios aprimoramentos para o código-fonte EF.
 
-Embora o código-fonte estiver aberto, Entity Framework tem suporte completo como um produto da Microsoft. A equipe do Microsoft Entity Framework mantém controle sobre quais contribuições são aceitos e testa todas as alterações de código para assegurar a qualidade de cada versão.
+Embora o código-fonte estiver aberto, Entity Framework tem suporte completo como um produto da Microsoft. A equipe do Microsoft Entity Framework mantém controle sobre quais contribuições são aceitas e testa todas as alterações de código para garantir a qualidade de cada versão.
 
 <a id="summary"></a>
 ## <a name="summary"></a>Resumo
@@ -274,7 +274,7 @@ Para obter mais informações sobre como implantar o aplicativo web depois que v
 Para obter informações sobre outros tópicos relacionados ao MVC, como autenticação e autorização, consulte o [ASP.NET MVC - recomendado recursos](../recommended-resources-for-mvc.md).
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>Confirmações
+## <a name="acknowledgments"></a>Agradecimentos
 
 - Tom Dykstra gravou a versão original deste tutorial, criados junto a atualização do EF 5 e gravou a atualização 6 EF. Tom é escritor técnico de programação no Microsoft Web Platform e ferramentas de equipe de conteúdo.
 - [Rick Anderson](https://blogs.msdn.com/b/rickandy/) (twitter [ @RickAndMSFT ](http://twitter.com/RickAndMSFT)) foi a maioria do trabalho de atualização do tutorial de EF 5 e MVC 4 e criados junto a atualização 6 EF. Rick é escritor técnico de programação para a Microsoft se concentra no Azure e MVC.
@@ -308,7 +308,7 @@ Mensagem de erro (da `Update-Database` do PMC):
 
 Solução
 
-Sair do Visual Studio. Reabra o projeto e tente novamente.
+Saia do Visual Studio. Reabra o projeto e tente novamente.
 
 ### <a name="validation-failed"></a>Falha na validação
 
@@ -333,16 +333,16 @@ Solução
 
 Uma forma que você pode obter esse erro é de várias cópias da solução, cada um deles usando o mesmo número de porta. Normalmente, você pode resolver esse problema saindo todas as instâncias do Visual Studio, em seguida, reiniciar o projeto que você está trabalhando. Se isso não funcionar, tente alterar o número da porta. Clique com o botão direito no arquivo de projeto e, em seguida, clique em Propriedades. Selecione o **Web** guia e, em seguida, alterar o número da porta de **Url do projeto** caixa de texto.
 
-### <a name="error-locating-sql-server-instance"></a>Instância do SQL Server localização de erro
+### <a name="error-locating-sql-server-instance"></a>Erro ao localizar a instância do SQL Server
 
 Mensagem de erro:
 
-> Ocorreu um erro relacionado à rede ou específico da instância ao estabelecer uma conexão com o SQL Server. O servidor não foi encontrado ou não estava acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. (provedor: Interfaces de rede do SQL, erro: 26 - erro ao localizar servidor/instância especificada)
+> Ocorreu um erro relacionado à rede ou específico a uma instância ao estabelecer uma conexão com o SQL Server. O servidor não foi encontrado ou não estava acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. (provedor: Adaptadores de Rede do SQL, erro: 26 – Erro ao Localizar Servidor/Instância Especificada)
 
 
 Solução
 
-Verifique a cadeia de caracteres de conexão. Se você excluiu manualmente o banco de dados, altere o nome do banco de dados na cadeia de caracteres de construção.
+Verifique a cadeia de conexão. Se você excluiu manualmente o banco de dados, altere o nome do banco de dados na cadeia de caracteres de construção.
 
->[!div class="step-by-step"]
-[Anterior](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Anterior](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)

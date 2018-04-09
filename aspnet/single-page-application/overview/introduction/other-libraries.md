@@ -1,22 +1,22 @@
 ---
 uid: single-page-application/overview/introduction/other-libraries
-title: "Saber a uma biblioteca que não seja Knockout? | Microsoft Docs"
+title: Saber a uma biblioteca que não seja Knockout? | Microsoft Docs
 author: madskristensen
-description: "Saber a uma biblioteca que não seja Knockout?"
+description: Saber a uma biblioteca que não seja Knockout?
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/05/2013
 ms.topic: article
 ms.assetid: a8367c6d-ef94-4dff-a010-5eff9e6eea96
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/other-libraries
 msc.type: authoredcontent
-ms.openlocfilehash: 5a863f50401a4e2bab3f772374b7fd178f6c6cdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ac260e88fd156bad4b414e93325d5a04c490c88
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="know-a-library-other-than-knockout"></a>Saber a uma biblioteca que não seja Knockout?
 ====================
@@ -57,15 +57,17 @@ Em comparação com os outros modelos listados aqui, o Hot toalhas teample forne
 
 Aqui estão os recursos fornecidos por cada modelo SPA:
 
-|  | ASP.NET SPA | Estrutura | Muito fácil/Angular | Muito fácil/KO | Ember | Toalhas ativa |
-| --- | --- | --- | --- | --- | --- | --- |
-| Exemplo de tarefas | &#10003; |  | &#10003; | &#10003; | &#10003; |  |
-| Sem modelo |  | &#10003; |  |  |  | &#10003; |
-| Navegação e histórico |  | &#10003; | &#10003; |  | &#10003; | &#10003; |
-| Bibliotecas |  |  |  |  |  |  |
-| angular |  |  | &#10003; |  |  |  |
-| &#8195; Estrutura |  | &#10003; |  |  |  |  |
-| Muito fácil |  |  | &#10003; | &#10003; |  | &#10003; |
-| Durandal |  |  |  |  |  | &#10003; |
-| Ember |  |  |  |  | &#10003; |  |
-| separação | &#10003; |  |  | &#10003; |  | &#10003; |
+
+|                        | ASP.NET SPA | Estrutura | Breeze/Angular | Muito fácil/KO |  Ember   | Toalhas ativa |
+|------------------------|-------------|----------|----------------|-----------|----------|-----------|
+|      Exemplo de tarefas       |  &#10003;   |          |    &#10003;    | &#10003;  | &#10003; |           |
+|     Sem modelo      |             | &#10003; |                |           |          | &#10003;  |
+| Navegação e histórico |             | &#10003; |    &#10003;    |           | &#10003; | &#10003;  |
+|        Bibliotecas        |             |          |                |           |          |           |
+|        Angular         |             |          |    &#10003;    |           |          |           |
+|    &#8195;Backbone     |             | &#10003; |                |           |          |           |
+|         Muito fácil         |             |          |    &#10003;    | &#10003;  |          | &#10003;  |
+|        Durandal        |             |          |                |           |          | &#10003;  |
+|         Ember          |             |          |                |           | &#10003; |           |
+|        Knockout        |  &#10003;   |          |                | &#10003;  |          | &#10003;  |
+

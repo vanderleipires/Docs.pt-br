@@ -2,7 +2,7 @@
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 title: Instalando manualmente os pacotes da Web | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como importar manualmente um pacote de implantação da web no Internet Information Services (IIS). A construção do tópico e o aplicativo da Web de empacotamento..."
+description: Este tópico descreve como importar manualmente um pacote de implantação da web no Internet Information Services (IIS). A construção do tópico e o aplicativo da Web de empacotamento...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: e06d37c01ab66f0723b687f4ed1ee72561099aef
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4a28ea92b22e4928e41a39a8a91b62bfa4f08175
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="manually-installing-web-packages"></a>Instalando manualmente os pacotes da Web
 ====================
@@ -30,10 +30,10 @@ por [Jason Lee](https://github.com/jrjlee)
 > 
 > Depois de criar um pacote de implantação da web, você pode publicá-lo em um servidor IIS de várias maneiras. Em muitos cenários, convém tirar proveito dos pontos de integração entre o MSBuild, WPP e implantação da Web para criar e instalar pacotes da web remotamente como parte de um processo de compilação e implantação automatizado ou única etapa. Esse processo é descrito em [Implantando pacotes de Web](deploying-web-packages.md). No entanto, isso nem sempre é possível. Suponha que você deseja implantar um aplicativo web em um ambiente de produção para a Internet. Por motivos de segurança, tal ambiente de produção é em muito menos provável estar por trás de um firewall em uma sub-rede que é separado do servidor de compilação, em uma rede de perímetro (também conhecida como DMZ, zona desmilitarizada e sub-rede filtrada). Em muitos casos, o ambiente de produção estará em um domínio separado ou em uma rede fisicamente isolada.
 > 
-> Nesses cenários, a única opção pode ser o pacote da web no servidor de destino da porta e importá-lo manualmente no IIS. Embora essa abordagem impede a implantação automatizada, ainda é uma técnica altamente eficaz para publicar um aplicativo web & #x 2014, você simplesmente copia um único arquivo zip em seu servidor web e usa um Assistente para orientar você durante o processo de importação.
+> Nesses cenários, a única opção pode ser o pacote da web no servidor de destino da porta e importá-lo manualmente no IIS. Embora essa abordagem impede a implantação automatizada, ainda é uma técnica altamente eficaz para publicar um aplicativo web&#x2014;simplesmente copiar um único arquivo zip em seu servidor web e usar um Assistente para orientar você durante o processo de importação.
 
 
-Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo & #x 2014; o [solução Contact Manager](the-contact-manager-solution.md)& #x 2014; para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, Windows Serviço do Communication Foundation (WCF) e um projeto de banco de dados.
+Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo&#x2014;o [solução Contact Manager](the-contact-manager-solution.md)&#x2014;para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, uma comunicação do Windows Serviço Foundation (WCF) e um projeto de banco de dados.
 
 ## <a name="task-overview"></a>Visão geral da tarefa
 
@@ -133,5 +133,5 @@ Este tópico descreveu como importar um pacote de implantação da web para um s
 
 Para obter orientação sobre como configurar um servidor de web do IIS para dar suporte à importação manual de um pacote da web, consulte [configurar um servidor Web para publicação de implantação do Web (implantação Offline)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Para obter orientação geral sobre a implantação de pacotes da web, consulte [passo a passo: Implantando um projeto de aplicativo Web usando um pacote de implantação da Web (parte 1 de 4)](https://msdn.microsoft.com/library/dd483479.aspx).
 
->[!div class="step-by-step"]
-[Anterior](creating-and-running-a-deployment-command-file.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-and-running-a-deployment-command-file.md)

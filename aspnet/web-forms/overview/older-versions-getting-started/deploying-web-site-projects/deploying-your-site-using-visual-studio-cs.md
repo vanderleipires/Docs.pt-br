@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c0c32c3dd24be5edfea3e17695753973f3fad30a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f06e2fe1fdfb03b106466a1792f6381495f76096
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>Implantar o Site usando o Visual Studio (c#)
 ====================
@@ -155,6 +155,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Como: Publicar Sites da Web](https://msdn.microsoft.com/library/20yh9f1b.aspx)
 - [Instalação e implantação de projetos no Visual Studio](https://msdn.microsoft.com/library/wx3b589t.aspx)
 
->[!div class="step-by-step"]
-[Anterior](deploying-your-site-using-an-ftp-client-cs.md)
-[Próximo](common-configuration-differences-between-development-and-production-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](deploying-your-site-using-an-ftp-client-cs.md)
+> [Próximo](common-configuration-differences-between-development-and-production-cs.md)

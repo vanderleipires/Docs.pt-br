@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 title: Adicionando um controlador | Microsoft Docs
 author: shanselman
-description: "Uma versão atualizada se este tutorial está disponível aqui usando o Visual Studio 2013. O novo tutorial usa o ASP.NET MVC 5, que fornece muitas melhorias em t..."
+description: Uma versão atualizada se este tutorial está disponível aqui usando o Visual Studio 2013. O novo tutorial usa o ASP.NET MVC 5, que fornece muitas melhorias em t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 93a362cf83d39b29fcba3f2dee0c28257805a89e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c6ecd1ffdd53a629d0079d57b85c7f6db2f316ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>Adicionando um controlador
 ====================
@@ -57,7 +57,7 @@ O controlador é denominado HelloWorldController e o novo método é chamado de 
 
 ASP.NET MVC invoca diferentes classes de controlador (e diferentes métodos de ação dentro delas) dependendo da URL de entrada. A lógica de mapeamento padrão usada pelo ASP.NET MVC usa um formato como isso para controlar o que o código é executado:
 
-/ [Controller] / [ActionName] / [parâmetros]
+/[Controller]/[ActionName]/[Parameters]
 
 A primeira parte da URL determina a classe do controlador para executar. Portanto /HelloWorld mapeia para a classe HelloWorldController. A segunda parte da URL determina o método de ação na classe para executar. Portanto /HelloWorld/Index faria com que o método Index () da classe HelloWorldcontroller para executar. Observe que apenas precisamos visitar /HelloWorld acima e o método de que índice foi indicado. Isso ocorre porque um método denominado "Index" é o padrão que será chamado em um controlador, se ainda não for explicitamente especificado.
 
@@ -77,6 +77,6 @@ Execute o aplicativo e visite `http://localhost:xx/HelloWorld/Welcome?name=Scott
 
 Nos dois exemplos do controlador foi fazer todo o trabalho e tem sido HTML serão retornando diretamente. Em geral não queremos que nossa controladores retornando HTML diretamente - desde que acaba sendo muito difícil de código. Em vez disso, usaremos normalmente um arquivo de modelo separado do modo de exibição para ajudar a gerar a resposta HTML. Vamos ver como podemos fazer isso. Feche seu navegador e retornar para o IDE.
 
->[!div class="step-by-step"]
-[Anterior](getting-started-with-mvc-part1.md)
-[Próximo](getting-started-with-mvc-part3.md)
+> [!div class="step-by-step"]
+> [Anterior](getting-started-with-mvc-part1.md)
+> [Próximo](getting-started-with-mvc-part3.md)

@@ -8,15 +8,15 @@ manager: wpickett
 ms.date: 02/09/2013
 ms.topic: article
 ms.assetid: 75af2e17-6ed3-4d24-8ea1-bc340027c318
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/hottowel-template
 msc.type: authoredcontent
-ms.openlocfilehash: bfc6e2c884c422f44e8be5f4f29554ae86f7ecb6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dbd037c2469d326a3d3248ca07492ed9eb93e225
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hot-towel-template"></a>Modelo de toalhas ativo
 ====================
@@ -29,8 +29,8 @@ por [Mads Kristensen](https://github.com/madskristensen)
 > [Modelo MVC toalhas ativa para o Visual Studio 2012](https://visualstudiogallery.msdn.microsoft.com/1f68fbe8-b4e9-4968-9fd3-ddc7cbc52dca)
 > 
 > [Modelo MVC toalhas ativa para Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/1eb8780d-d522-4dcf-bf56-56f0eab305c2)
-
-
+> 
+> 
 > Hot toalhas: Porque você não deseja ir para o SPA sem um!
 
 
@@ -95,7 +95,7 @@ Basta começar a adicionar código!
 2. Adicionar modos de exibição para o `App/views` pasta
 3. Adicionar viewmodels para o `App/viewmodels` pasta
 4. Adicionar associações de dados HTML e Knockout a novos modos de exibição
-5. Atualizar as rotas de navegação`shell.js`
+5. Atualizar as rotas de navegação `shell.js`
 
 ## <a name="walkthrough-of-the-htmljavascript"></a>Instruções passo a passo do HTML/JavaScript
 
@@ -117,7 +117,7 @@ O `main.js` arquivo define vários dos módulos do durandal para iniciar o aplic
 
 Modos de exibição são encontrados no `App/views` pasta.
 
-### <a name="shellhtml"></a>Shell.HTML
+### <a name="shellhtml"></a>shell.html
 
 O `shell.html` contém o layout mestre para HTML. Todos os outros modos de exibição serão compostos em algum lugar no lado do seu `shell` exibição. Toalhas hot fornece um `shell` com três regiões: um cabeçalho, uma área de conteúdo e um rodapé. Cada uma dessas regiões é carregada com conteúdo formam a outros modos de exibição quando solicitado.
 
@@ -125,7 +125,7 @@ O `compose` associações para o cabeçalho e rodapé são codificados em um toa
 
 [!code-html[Main](hottowel-template/samples/sample4.html)]
 
-### <a name="navhtml"></a>NAV.HTML
+### <a name="navhtml"></a>nav.html
 
 O `nav.html` contém os links de navegação para o SPA. Isso é onde a estrutura de menu pode ser colocada, por exemplo. Geralmente é associados (usando Knockout) de dados para o `router` módulo para exibir a navegação definido no `shell.js`. Knockout procura a associação de dados de atributos e associa-os para o `shell` viewmodel para exibir as rotas de navegação e mostrar uma progressbar (usando a inicialização do Twitter) se o `router` módulo está no meio de navegação de um modo de exibição para outra (consulte `router.isNavigating`).
 
@@ -135,7 +135,7 @@ O `nav.html` contém os links de navegação para o SPA. Isso é onde a estrutur
 
 Essas exibições contêm HTML para exibições personalizadas. Quando o `home` link no `nav` menu do modo de exibição é clicado, o `home` exibição será colocada na área de conteúdo do `shell` exibição. Esses modos de exibição podem ser aumentados ou substituídos por suas próprias exibições personalizadas.
 
-### <a name="footerhtml"></a>footer.HTML
+### <a name="footerhtml"></a>footer.html
 
 O `footer.html` contém HTML que aparece no rodapé, na parte inferior do `shell` exibição.
 

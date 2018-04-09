@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
-title: "Usuários e funções no site de produção (VB) | Microsoft Docs"
+title: Usuários e funções no site de produção (VB) | Microsoft Docs
 author: rick-anderson
-description: "A ferramenta de administração de site do ASP.NET (WSAT) fornece uma interface de usuário baseada na web para definir as configurações de associação e funções e para a criação, edição, um..."
+description: A ferramenta de administração de site do ASP.NET (WSAT) fornece uma interface de usuário baseada na web para definir as configurações de associação e funções e para a criação, edição, um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f3bfaa0e14e3e04a7faae1a78b566d7c2067785a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 611a54b9dd5f188fd64c7020bfbf8171fea27a71
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="users-and-roles-on-the-production-website-vb"></a>Usuários e funções no site de produção (VB)
 ====================
@@ -37,7 +37,7 @@ Um desafio comum para desenvolvedores que usam os serviços de associação e fu
 
 ## <a name="using-the-aspnet-web-site-administration-tool"></a>Usando a ferramenta de administração de Site da Web do ASP.NET
 
-O ASP.NET inclui um [ferramenta de administração de Site](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT) que torna mais fácil de criar e gerenciar contas de usuário e funções e especificar regras de autorização baseada em função e usuário. Para usar o WSAT, clique no ícone de configuração do ASP.NET no Gerenciador de soluções, ou vá para o menu projeto ou site e escolha a opção de configuração do ASP.NET. Qualquer abordagem inicia um navegador da web e aponta para o WSAT em um endereço como:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+O ASP.NET inclui um [ferramenta de administração de Site](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT) que torna mais fácil de criar e gerenciar contas de usuário e funções e especificar regras de autorização baseada em função e usuário. Para usar o WSAT, clique no ícone de configuração do ASP.NET no Gerenciador de soluções, ou vá para o menu projeto ou site e escolha a opção de configuração do ASP.NET. Qualquer abordagem inicia um navegador da web e aponta para o WSAT em um endereço como: `http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
 O WSAT é dividido em três seções:
 
@@ -119,5 +119,5 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Visão geral de ferramenta de administração de Site da Web](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 - [Tutoriais de segurança de site](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
->[!div class="step-by-step"]
-[Anterior](precompiling-your-website-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](precompiling-your-website-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
-title: "Implantação da Web corporativa: Visão geral do cenário | Microsoft Docs"
+title: 'Implantação da Web corporativa: Visão geral do cenário | Microsoft Docs'
 author: jrjlee
-description: "Esse conjunto de tutoriais usa uma solução de exemplo com um nível realista de complexidade, junto com um cenário de implantação da empresa fictícia, para fornecer uma ref..."
+description: Esse conjunto de tutoriais usa uma solução de exemplo com um nível realista de complexidade, junto com um cenário de implantação da empresa fictícia, para fornecer uma ref...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
 msc.type: authoredcontent
-ms.openlocfilehash: f90db22bf98456661c530e728e854ce109aec6fd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 20f6e206d6aa4bebb4936246468f5ada0e213236
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="enterprise-web-deployment-scenario-overview"></a>Implantação da Web de empresa: Visão geral do cenário
 ====================
@@ -122,6 +122,6 @@ Além disso, gerenciamento de implantação quando as atualizações estiverem c
 - Você deseja registrar atividades de implantação. O processo de implantação deve enviar notificações por email de implantações com êxito ou falhas para os destinatários.
 - Se uma implantação automatizada falhar, o processo de implantação deve repetir a implantação atual ou implantar o pacote da web anterior em vez disso.
 
->[!div class="step-by-step"]
-[Anterior](deploying-web-applications-in-enterprise-scenarios.md)
-[Próximo](application-lifecycle-management-from-development-to-production.md)
+> [!div class="step-by-step"]
+> [Anterior](deploying-web-applications-in-enterprise-scenarios.md)
+> [Próximo](application-lifecycle-management-from-development-to-production.md)

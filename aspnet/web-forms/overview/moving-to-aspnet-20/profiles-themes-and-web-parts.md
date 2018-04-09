@@ -2,7 +2,7 @@
 uid: web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 title: Perfis, temas e Web Parts | Microsoft Docs
 author: microsoft
-description: "Há grandes alterações na configuração e instrumentação no ASP.NET 2.0. A nova API de configuração do ASP.NET permite alterações de configuração a serem feitas pr..."
+description: Há grandes alterações na configuração e instrumentação no ASP.NET 2.0. A nova API de configuração do ASP.NET permite alterações de configuração a serem feitas pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 2c6ba11799a5a9be3d8c0037fad5d79d8177c0e8
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: b749ed093fbaacf45b60f2826a2c20bac219a5c7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="profiles-themes-and-web-parts"></a>Perfis, temas e Web Parts
 ====================
@@ -341,19 +341,19 @@ Nesta parte do passo a passo, você deve criar uma página que usa os controles 
 4. Coloque o ponto de inserção antes do `<div>` marcas na superfície de design e pressione ENTER para adicionar uma nova linha. Posicione o ponto de inserção antes do caractere de nova linha, clique no **formato de bloco** lista suspensa menu de controle e selecione o **título 1** opção. No título, adicione o texto **página de Web Parts demonstração**.
 5. Do **WebParts** guia da caixa de ferramentas, arraste um **WebPartManager** até a página, posicionando-o logo após o caractere de nova linha e antes do `<div>`marcas.   
   
- O **WebPartManager** controle não gera nenhuma saída, então ele aparece como uma caixa cinza na superfície do designer.
+   O **WebPartManager** controle não gera nenhuma saída, então ele aparece como uma caixa cinza na superfície do designer.
 6. Posicione o ponto de inserção dentro de `<div>` marcas.
 7. No **Layout** menu, clique em **Inserir tabela**e criar uma nova tabela que tenha uma linha e três colunas. Clique o **propriedades de célula** botão, selecione **superior** do **Alinhamento Vertical** lista suspensa, clique em **Okey**e clique em **Okey** novamente para criar a tabela.
 8. Arraste um controle WebPartZone para a coluna de tabela esquerda. Clique com botão direito do **WebPartZone** de controle, escolha **propriedades**e defina as seguintes propriedades:   
   
- ID: SidebarZone   
+   ID: SidebarZone   
   
- HeaderText: barra lateral
+   HeaderText: barra lateral
 9. Arraste uma segunda **WebPartZone** controlar para a coluna do meio da tabela e defina as seguintes propriedades:   
   
- ID: MainZone   
+   ID: MainZone   
   
- HeaderText: principal
+   HeaderText: principal
 10. Salve o arquivo.
 
 Sua página agora tem duas zonas diferentes que você pode controlar separadamente. No entanto, nenhuma zona tem qualquer conteúdo, para que criar conteúdo é a próxima etapa. Para este passo a passo, você trabalha com controles de Web Parts que exibem somente conteúdo estático.
@@ -462,10 +462,10 @@ Agora você pode testar a capacidade de editar páginas e alterar o layout.
 2. Para demonstrar que a personalização está funcionando, feche o navegador e, em seguida, carregue a página novamente. As alterações feitas são salvas para sessões futuras do navegador.
 3. Do **modo de exibição** menu, selecione **editar**.   
   
- Agora, cada controle na página é exibido com uma seta para baixo na sua barra de título, que contém o menu suspenso de verbos.
+   Agora, cada controle na página é exibido com uma seta para baixo na sua barra de título, que contém o menu suspenso de verbos.
 4. Clique na seta para exibir o menu de verbos sobre o **Meus Links** controle. Clique o **editar** verbo.   
   
- O **EditorZone** controle aparece, exibindo os controles EditorPart adicionados.
+   O **EditorZone** controle aparece, exibindo os controles EditorPart adicionados.
 5. No **aparência** seção do controle de edição, altere o **título** em Meus Favoritos, use o **tipo de Cromado** lista suspensa para selecionar **somente título**e, em seguida, clique em **aplicar**. A captura de tela a seguir mostra a página no modo de edição.
 
 ### <a name="web-parts-demo-page-in-edit-mode"></a>Página de demonstração de partes da Web no modo de edição
@@ -496,7 +496,7 @@ Você também pode permitir que os usuários a adicionar controles de Web Parts 
 1. Abra a página WebPartsDemo e alternar para **Design** exibição.
 2. Do **WebParts** guia da caixa de ferramentas, arraste um controle CatalogZone para a coluna direita da tabela, abaixo de **EditorZone** controle.   
   
- Ambos os controles podem ser na mesma célula da tabela porque eles não serão exibidos ao mesmo tempo.
+   Ambos os controles podem ser na mesma célula da tabela porque eles não serão exibidos ao mesmo tempo.
 3. No painel Propriedades, atribua a cadeia de caracteres **adicionar Web Parts** para a propriedade HeaderText do **CatalogZone** controle.
 4. Do **WebParts** seção da caixa de ferramentas, arraste um controle DeclarativeCatalogPart para a área de conteúdo do **CatalogZone** controle.
 5. Clique na seta no canto superior direito do **DeclarativeCatalogPart** controle para expor seu menu de tarefas e, em seguida, selecione **editar modelos**.
@@ -504,7 +504,7 @@ Você também pode permitir que os usuários a adicionar controles de Web Parts 
 7. Alternar para **fonte** exibição. Inspecione o código-fonte do &lt;asp: catalogzone&gt; elemento. Observe que o **DeclarativeCatalogPart** controle contém um &lt;webpartstemplate&gt; elemento com os dois controles de servidor incluídos que você poderá adicionar à sua página do catálogo.
 8. Adicionar um **título** propriedade para cada um dos controles adicionados ao catálogo, usando o valor de cadeia de caracteres mostrado para cada título no exemplo de código abaixo. Embora o título não é uma propriedade você normalmente possa definir esses dois controles de servidor em tempo de design, quando um usuário adiciona esses controles a uma **WebPartZone** zona do catálogo de tempo de execução, eles são empacotados com um  **GenericWebPart** controle. Isso permite que ele atue como controles de Web Parts, portanto eles poderão exibir títulos de.   
   
- O código para os dois controles contidos no **DeclarativeCatalogPart** controle se assemelhar ao seguinte. 
+   O código para os dois controles contidos no **DeclarativeCatalogPart** controle se assemelhar ao seguinte. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample26.aspx)]
 9. Salve a página.
@@ -516,12 +516,12 @@ Agora você pode testar o catálogo.
 1. Carregar a página em um navegador.
 2. Clique o **modo de exibição** menu suspenso e selecione **catálogo**.   
   
- O catálogo intitulado **adicionar Web Parts** é exibido.
+   O catálogo intitulado **adicionar Web Parts** é exibido.
 3. Arraste o **Meus Favoritos** controlar da zona Main voltar ao início da zona Sidebar e soltá-lo lá.
 4. No **adicionar Web Parts** do catálogo, selecione ambas as caixas de seleção e, em seguida, selecione **principal** na lista suspensa que contém as zonas disponíveis.
 5. Clique em **adicionar** no catálogo. Os controles são adicionados à zona Main. Se desejar, você pode adicionar várias instâncias de controles do catálogo para a página.   
   
- A captura de tela a seguir mostra a página com o controle de carregamento de arquivo e o calendário na zona Main. 
+   A captura de tela a seguir mostra a página com o controle de carregamento de arquivo e o calendário na zona Main. 
 
 ![Controles adicionados à zona Main do catálogo](profiles-themes-and-web-parts/_static/image7.gif)
 

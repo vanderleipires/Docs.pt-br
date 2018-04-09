@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/integrating-jquery-ui
-title: "Integrando o JQuery UI Datepicker com o modelo de associação e formulários da web | Microsoft Docs"
+title: Integrando o JQuery UI Datepicker com o modelo de associação e formulários da web | Microsoft Docs
 author: tfitzmac
-description: "Esta série de tutoriais demonstra aspectos básicos do uso de associação de modelo com um projeto Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais estreita-..."
+description: Esta série de tutoriais demonstra aspectos básicos do uso de associação de modelo com um projeto Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais estreita-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/integrating-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: da3c8f347a709a4c9a47fd0ecce5201d9b0cd1b1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 126262b440f3e914a7fac3f0b7eeadb4f648d2bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="integrating-jquery-ui-datepicker-with-model-binding-and-web-forms"></a>Integrando o JQuery UI Datepicker com o modelo de associação e formulários da web
 ====================
@@ -115,6 +115,6 @@ Neste tutorial, você aprendeu como incorporar um widget JQuery em um formulári
 
 Na próxima [tutorial](using-query-string-values-to-retrieve-data.md), você usará um valor de cadeia de caracteres de consulta ao selecionar os dados.
 
->[!div class="step-by-step"]
-[Anterior](sorting-paging-and-filtering-data.md)
-[Próximo](using-query-string-values-to-retrieve-data.md)
+> [!div class="step-by-step"]
+> [Anterior](sorting-paging-and-filtering-data.md)
+> [Próximo](using-query-string-values-to-retrieve-data.md)

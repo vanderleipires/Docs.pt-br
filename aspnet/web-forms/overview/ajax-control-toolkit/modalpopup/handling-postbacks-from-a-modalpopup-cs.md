@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 096c32d6004474d3d5952ce12d7349b9ebda6003
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 183725db62ba8b4037f368ed9d87d5059e3f1bcb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-postbacks-from-a-modalpopup-c"></a>Postagens de tratamento de um ModalPopup (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. Cuidado cuidado especial quando um postback é criado de dentro do popup.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. Cuidado cuidado especial quando um postback é criado de dentro do popup.
 
@@ -62,6 +62,6 @@ Além disso, os controles de caixa de texto dentro do popup modal devem ser pree
 
 O pop-up modal causa um postback ([clique para exibir a imagem em tamanho normal](handling-postbacks-from-a-modalpopup-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](using-modalpopup-with-a-repeater-control-cs.md)
-[Próximo](positioning-a-modalpopup-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](using-modalpopup-with-a-repeater-control-cs.md)
+> [Próximo](positioning-a-modalpopup-cs.md)

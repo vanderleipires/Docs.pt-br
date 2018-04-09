@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-cs
-title: "Criar uma restrição de rota personalizados (c#) | Microsoft Docs"
+title: Criar uma restrição de rota personalizados (c#) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther demonstra como você pode criar uma restrição de rota personalizados. Implementamos um simples personalizada restrição que impede que uma rota correspondente w..."
+description: Stephen Walther demonstra como você pode criar uma restrição de rota personalizados. Implementamos um simples personalizada restrição que impede que uma rota correspondente w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c31ba3382b9dbe22a6826b9f858944c223efdd9d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c120a102b117433b6774f2ea7800f1c4a609f8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-custom-route-constraint-c"></a>Criar uma restrição de rota personalizados (c#)
 ====================
@@ -45,7 +45,7 @@ A restrição na listagem 1 tira proveito da propriedade IsLocal exposto pela cl
 
 Você usar uma restrição personalizada dentro de uma rota definida no arquivo global. asax. O arquivo global. asax na listagem 2 usa a restrição Localhost para impedir que qualquer pessoa que solicita uma página de administração, a menos que eles fazer a solicitação do servidor local. Por exemplo, uma solicitação para /Admin/DeleteAll falhará quando feita de um servidor remoto.
 
-**A listagem 2 - global. asax**
+**Listing 2 - Global.asax**
 
 [!code-csharp[Main](creating-a-custom-route-constraint-cs/samples/sample3.cs)]
 
@@ -53,6 +53,6 @@ A restrição de Localhost é usada na definição da rota Admin. Essa rota não
 
 Observe que a rota padrão foi comentada do arquivo global. asax na listagem 2. Se você incluir a rota padrão, a rota padrão corresponderia solicitações para o controlador de administrador. Nesse caso, os usuários remotos ainda podem invocar ações do controlador Admin, embora suas solicitações não correspondem à rota de administrador.
 
->[!div class="step-by-step"]
-[Anterior](creating-a-route-constraint-cs.md)
-[Próximo](asp-net-mvc-controller-overview-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-a-route-constraint-cs.md)
+> [Próximo](asp-net-mvc-controller-overview-vb.md)

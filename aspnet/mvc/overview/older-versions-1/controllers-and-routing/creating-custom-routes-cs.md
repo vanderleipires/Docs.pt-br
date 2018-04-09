@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-cs
 title: Criando as rotas personalizadas (c#) | Microsoft Docs
 author: microsoft
-description: "Saiba como adicionar as rotas personalizadas para um aplicativo ASP.NET MVC. Neste tutorial, você aprenderá como modificar a tabela de rota padrão no arquivo global. asax."
+description: Saiba como adicionar as rotas personalizadas para um aplicativo ASP.NET MVC. Neste tutorial, você aprenderá como modificar a tabela de rota padrão no arquivo global. asax.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d1542103298f2fa09dc71706284afb18d8381403
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 573b6a3360124feea92788ff7a3de363840fa1ef
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-custom-routes-c"></a>Criando as rotas personalizadas (c#)
 ====================
@@ -73,6 +73,6 @@ Observe que o método Entry() na listagem 2 aceita um parâmetro do tipo DateTim
 
 O objetivo deste tutorial era demonstrar como você pode criar uma rota personalizada. Você aprendeu como adicionar uma rota personalizada para a tabela de rota no arquivo global asax que representa as entradas do blog. Discutimos como mapear solicitações de entradas do blog para um controlador chamado ArchiveController e uma ação de controlador chamada Entry().
 
->[!div class="step-by-step"]
-[Anterior](aspnet-mvc-controllers-overview-cs.md)
-[Próximo](creating-a-route-constraint-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](aspnet-mvc-controllers-overview-cs.md)
+> [Próximo](creating-a-route-constraint-cs.md)

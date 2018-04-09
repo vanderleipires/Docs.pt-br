@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
-title: "Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 3 | Microsoft Docs"
+title: Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 3 | Microsoft Docs
 author: tdykstra
-description: "O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é..."
+description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 1ec8891c4ccf71494389ba562fdfb4b88055d12f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 654f3556af5d05ec186e1811421966bbaffd2e21
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-3"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 3
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 > O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework 4.0 e o Visual Studio 2010. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial da série](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
@@ -45,7 +45,7 @@ Abra o *Students.aspx* página que você criou no tutorial anterior. Como config
 
 Alternar para **Design** exibir e selecionar o `EntityDataSource` controle. No **propriedades** janela, defina o `Where` propriedade `it.EnrollmentDate is not null`.
 
-[![Para Image01](the-entity-framework-and-aspnet-getting-started-part-3/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image9.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-3/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image9.png)
 
 A sintaxe que você use o `Where` propriedade do `EntityDataSource` controle é Entity SQL. Entidade SQL é semelhante ao Transact-SQL, mas ele é personalizado para uso com entidades em vez de objetos de banco de dados. Na expressão `it.EnrollmentDate is not null`, a palavra `it` representa uma referência à entidade retornada pela consulta. Portanto, `it.EnrollmentDate` refere-se ao `EnrollmentDate` propriedade o `Person` entidade que o `EntityDataSource` controlar retorna.
 
@@ -184,6 +184,6 @@ Digite a letra "g" na caixa de texto e clique em **pesquisa**. Você verá uma l
 
 Você agora exibido, atualizado, filtrados, ordenados e dados de tabelas individuais agrupados. O seguinte tutorial, você começará a trabalhar com dados relacionados (cenários de detalhes mestre).
 
->[!div class="step-by-step"]
-[Anterior](the-entity-framework-and-aspnet-getting-started-part-2.md)
-[Próximo](the-entity-framework-and-aspnet-getting-started-part-4.md)
+> [!div class="step-by-step"]
+> [Anterior](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [Próximo](the-entity-framework-and-aspnet-getting-started-part-4.md)

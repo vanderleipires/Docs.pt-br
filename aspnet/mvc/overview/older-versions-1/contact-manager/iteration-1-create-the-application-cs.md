@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
-title: "Iteração #1 – criar o aplicativo (c#) | Microsoft Docs"
+title: 'Iteração #1 – criar o aplicativo (c#) | Microsoft Docs'
 author: microsoft
-description: "A primeira iteração, criamos o gerente do contato da maneira mais simples possível. Adicionamos suporte para operações de banco de dados básicos: criar, ler, atualizar e D..."
+description: 'A primeira iteração, criamos o gerente do contato da maneira mais simples possível. Adicionamos suporte para operações de banco de dados básicos: criar, ler, atualizar e D...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 12927250595a8f3130328d2fe219280a13349787
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 30f626511164363fea2195a05e73aeee5764933b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-1--create-the-application-c"></a>Iteração #1 – criar o aplicativo (c#)
 ====================
@@ -67,7 +67,7 @@ Essa iteração, execute as seguintes etapas:
 
 Em aplicativos ASP.NET MVC, você deve ter o Visual Studio 2008 ou o Visual Web Developer 2008 instalado em seu computador (Visual Web Developer é uma versão gratuita do Visual Studio que não inclui todos os recursos avançados do Visual Studio). Você pode baixar a versão de avaliação do Visual Studio 2008 ou o Visual Web Developer do seguinte endereço:
 
-[https://www.ASP.NET/downloads/Essential/](https://www.asp.net/downloads/essential)
+[https://www.asp.net/downloads/essential/](https://www.asp.net/downloads/essential)
 
 > [!NOTE] 
 > 
@@ -76,17 +76,17 @@ Em aplicativos ASP.NET MVC, você deve ter o Visual Studio 2008 ou o Visual Web 
 
 Estrutura do ASP.NET MVC. Você pode baixar a estrutura ASP.NET MVC do seguinte endereço:
 
-[https://www.ASP.NET/MVC](../../../index.md)
+[https://www.asp.net/mvc](../../../index.md)
 
 Neste tutorial, usamos o Entity Framework da Microsoft para acessar um banco de dados. O Entity Framework está incluído no .NET Framework 3.5 Service Pack 1. Você pode baixar esse service pack do seguinte local:
 
-[https://www.microsoft.com/downloads/details.aspx?FamilyId=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang = en](https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en](https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en)
 
 Como uma alternativa para executar cada uma downloads, você pode aproveitar o Web Platform Installer (Web PI). Você pode baixar o Web PI do seguinte endereço:
 
-[https://www.ASP.NET/downloads/Essential/](https://www.asp.net/downloads/essential)
+[https://www.asp.net/downloads/essential/](https://www.asp.net/downloads/essential)
 
-## <a name="aspnet-mvc-project"></a>Projeto ASP.NET MVC
+## <a name="aspnet-mvc-project"></a>ASP.NET MVC Project
 
 Projeto de aplicativo Web ASP.NET MVC. Inicie o Visual Studio e selecione a opção de menu **arquivo, novo projeto**. O **novo projeto** caixa de diálogo é exibida (consulte a Figura 1). Selecione o **Web** tipo de projeto e o **aplicativo Web ASP.NET MVC** modelo. Nomeie seu novo projeto *ContactManager* e clique no botão Okey.
 
@@ -172,10 +172,10 @@ Você pode usar a janela Gerenciador de servidores para criar novos objetos de b
 | **Nome da coluna** | **Tipo de dados** | **Permitir nulos** |
 | --- | --- | --- |
 | Id | int | false |
-| FirstName | nvarchar (50) | false |
-| LastName | nvarchar (50) | false |
-| Telefone | nvarchar (50) | false |
-| Email | nvarchar (255) | false |
+| FirstName | nvarchar(50) | false |
+| LastName | nvarchar(50) | false |
+| Telefone | nvarchar(50) | false |
+| Email | nvarchar(255) | false |
 
 
 A primeira coluna, a coluna de Id é especial. Você precisa marcar a coluna Id como uma coluna de identidade e uma coluna de chave primária. Você indicar que uma coluna é uma coluna de identidade, expandindo propriedades de coluna (procure na parte inferior da Figura 6) e rolar para baixo para a propriedade de especificação de identidade. Definir o **(é identidade)** propriedade para o valor **Sim**.
@@ -419,7 +419,7 @@ O primeiro método Delete () retorna um formulário de confirmação para exclui
 
 É preciso modificar a exibição do índice para que ele contém um link para a exclusão de registros de contato (consulte a Figura 21). Você precisa adicionar o código a seguir a mesma célula da tabela que contém o link de edição:
 
-ActionLink ({id = item. % De ID})&gt;
+Html.ActionLink( { id=item.Id }) %&gt;
 
 
 [![A caixa de diálogo Novo projeto](iteration-1-create-the-application-cs/_static/image21.jpg)](iteration-1-create-the-application-cs/_static/image41.png)
@@ -490,5 +490,5 @@ Em segundo lugar, não implementamos qualquer validação do formulário. Por ex
 
 Por fim e mais importante, a iteração atual do aplicativo Gerenciador de contato não pode ser facilmente modificada ou mantida. Por exemplo, a lógica de acesso de banco de dados é implantada direita nas ações do controlador. Isso significa que podemos não é possível modificar o nosso código de acesso de dados sem modificar os controladores. Últimas iterações, exploraremos padrões de design de software que podemos implementar para tornar o gerente do contato mais resiliente a alterar.
 
->[!div class="step-by-step"]
-[Avançar](iteration-2-make-the-application-look-nice-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](iteration-2-make-the-application-look-nice-cs.md)

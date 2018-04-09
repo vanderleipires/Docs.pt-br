@@ -2,7 +2,7 @@
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
 title: Exibindo dados com os controles de Repetidor (c#) e DataList | Microsoft Docs
 author: rick-anderson
-description: "Nos tutoriais anteriores usamos o controle GridView para exibir dados. A partir deste tutorial, vamos examinar a criação de padrões comuns de relatório com..."
+description: Nos tutoriais anteriores usamos o controle GridView para exibir dados. A partir deste tutorial, vamos examinar a criação de padrões comuns de relatório com...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 42203bdd7c22f3885eecab36dbd710d371107285
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a329ff5d598156e613e3b5ef370d9d1147e4ea61
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-c"></a>Exibindo dados com o DataList e controles de Repetidor (c#)
 ====================
@@ -161,12 +161,12 @@ Com a adição deste arquivo de capa, a aparência de s DataList é atualizada n
 
 Além de `ItemTemplate`, DataList dá suporte a seis outros modelos opcionais:
 
-- `HeaderTemplate`Se fornecido, adiciona uma linha de cabeçalho para a saída e é usado para processar essa linha
-- `AlternatingItemTemplate`usado para processar itens alternados
-- `SelectedItemTemplate`usado para renderizar o item selecionado; o item selecionado é o item cujo índice corresponde à DataList s [ `SelectedIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
-- `EditItemTemplate`usado para renderizar o item que está sendo editado
-- `SeparatorTemplate`Se fornecido, adiciona um separador entre cada item e é usado para processar esse separador
-- `FooterTemplate`-Se fornecido, adiciona uma linha de rodapé para a saída e é usado para processar essa linha
+- `HeaderTemplate` Se fornecido, adiciona uma linha de cabeçalho para a saída e é usado para processar essa linha
+- `AlternatingItemTemplate` usado para processar itens alternados
+- `SelectedItemTemplate` usado para renderizar o item selecionado; o item selecionado é o item cujo índice corresponde à DataList s [ `SelectedIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `EditItemTemplate` usado para renderizar o item que está sendo editado
+- `SeparatorTemplate` Se fornecido, adiciona um separador entre cada item e é usado para processar esse separador
+- `FooterTemplate` -Se fornecido, adiciona uma linha de rodapé para a saída e é usado para processar essa linha
 
 Ao especificar o `HeaderTemplate` ou `FooterTemplate`, DataList adiciona uma linha de cabeçalho ou rodapé de página adicional para a saída renderizada. Como com o GridView s cabeçalho e rodapé linhas, o cabeçalho e rodapé em DataList não estão associados aos dados. Portanto, qualquer sintaxe de associação de dados no `HeaderTemplate` ou `FooterTemplate` que tenta acessar os dados associados retornará uma cadeia de caracteres em branco.
 
@@ -210,11 +210,11 @@ Se você fizer uma fonte de exibição/do seu navegador ao visitar o exemplo de 
 
 Se você não quiser t para emitir um HTML `<table>`, embora? Para controle total e completa sobre a marcação gerada por um controle de Web de dados, podemos deve usar o controle Repetidor. Como o DataList repetidor é construído com base em modelos. Repetidor, no entanto, apenas oferece os seguintes cinco modelos:
 
-- `HeaderTemplate`Se fornecido, adiciona a marcação especificada antes dos itens
-- `ItemTemplate`usado para processar itens
-- `AlternatingItemTemplate`Se fornecido, usado para processar itens alternados
-- `SeparatorTemplate`Se fornecido, adiciona a marcação especificada entre cada item
-- `FooterTemplate`-Se fornecido, adiciona a marcação especificada após os itens
+- `HeaderTemplate` Se fornecido, adiciona a marcação especificada antes dos itens
+- `ItemTemplate` usado para processar itens
+- `AlternatingItemTemplate` Se fornecido, usado para processar itens alternados
+- `SeparatorTemplate` Se fornecido, adiciona a marcação especificada entre cada item
+- `FooterTemplate` -Se fornecido, adiciona a marcação especificada após os itens
 
 No ASP.NET 1. x, repetidor controle foi comumente usado para exibir uma lista com marcadores cujos dados veio algumas fontes de dados. Nesse caso, o `HeaderTemplate` e `FooterTemplates` conteria a abertura e fechamento `<ul>` marcas, respectivamente, enquanto o `ItemTemplate` conteria `<li>` elementos com a sintaxe de associação de dados. Essa abordagem ainda pode ser usada no ASP.NET 2.0 como vimos nos dois exemplos de [páginas mestras e navegação de Site](../introduction/master-pages-and-site-navigation-cs.md) tutorial:
 
@@ -312,11 +312,11 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Yaakov Ellis, Liz Shulok, Randy Schmidt e Stacy Park. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Avançar](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](formatting-the-datalist-and-repeater-based-upon-data-cs.md)

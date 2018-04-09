@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
-title: "Implantação de Web do ASP.NET usando o Visual Studio: Implantando arquivos extras | Microsoft Docs"
+title: 'Implantação de Web do ASP.NET usando o Visual Studio: Implantando arquivos extras | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin..."
+description: Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/23/2015
@@ -12,22 +12,22 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: 46e18ba81c3db8bb04c5cb997bcc1607e4e38bae
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5cefcedde7715844a7d7a9db1455193564ef9805
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>Implantação de Web do ASP.NET usando o Visual Studio: Implantando arquivos extras
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Este tutorial mostra como estender o Visual Studio web publicar pipeline para fazer uma tarefa adicional durante a implantação. A tarefa é copiar os arquivos adicionais que não estão na pasta do projeto para o site de destino.
 
@@ -104,6 +104,6 @@ Gostaria de agradecer seguintes pessoas que fizeram contribuições significativ
 - [Srđan Božović, Sérvia](http://msforge.net/blogs/zmajcek/)
 - [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (twitter: [ @vishalrjoshi ](http://twitter.com/vishalrjoshi))
 
->[!div class="step-by-step"]
-[Anterior](command-line-deployment.md)
-[Próximo](troubleshooting.md)
+> [!div class="step-by-step"]
+> [Anterior](command-line-deployment.md)
+> [Próximo](troubleshooting.md)

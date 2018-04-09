@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-cs
-title: "Pré-compilação seu site (c#) | Microsoft Docs"
+title: Pré-compilação seu site (c#) | Microsoft Docs
 author: rick-anderson
-description: "O Visual Studio oferece aos desenvolvedores do ASP.NET dois tipos de projetos: projetos de aplicativo da Web (WAPs) e projetos de Site (WSPs). Um dos betwe principais diferenças..."
+description: 'O Visual Studio oferece aos desenvolvedores do ASP.NET dois tipos de projetos: projetos de aplicativo da Web (WAPs) e projetos de Site (WSPs). Um dos betwe principais diferenças...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f31f470b4d2b6736b98c0b7d88ea7a53ad1438b9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fe49029d09db99735a181b90e781396929f22d8d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="precompiling-your-website-c"></a>Pré-compilação seu site (c#)
 ====================
@@ -97,7 +97,7 @@ Após o site de pré-compilação, navegue até o local de destino que você ins
 
 [![](precompiling-your-website-cs/_static/image5.png)](precompiling-your-website-cs/_static/image4.png)
 
-**Figura 2**: O diretório do projeto contém `.aspx` e `.aspx.cs` arquivos; o `Bin` pasta inclui apenas`Elmah.dll`  
+**Figura 2**: O diretório do projeto contém `.aspx` e `.aspx.cs` arquivos; o `Bin` pasta inclui apenas `Elmah.dll`  
  ([Clique para exibir a imagem em tamanho normal](precompiling-your-website-cs/_static/image6.png))
 
 **Figura 3** mostra a pasta do local de destino cujo conteúdo foram criado pela ferramenta de compilação do ASP.NET. Esta pasta não contém quaisquer arquivos code-behind. Além disso, essa pasta `Bin` diretório inclui vários assemblies e dois `.compiled` arquivos além do `Elmah.dll` assembly.
@@ -190,6 +190,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Pré-compilação do ASP.NET](http://www.odetocode.com/Articles/417.aspx)
 - [Opções de Site de pré-compilação do ASP.NET](http://www.dotnetperls.com/precompiled)
 
->[!div class="step-by-step"]
-[Anterior](logging-error-details-with-elmah-cs.md)
-[Próximo](users-and-roles-on-the-production-website-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](logging-error-details-with-elmah-cs.md)
+> [Próximo](users-and-roles-on-the-production-website-cs.md)

@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7412b32ac29179dfa319544781d4c7165c58196b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 84cf427c7da7905444568ac34534e9ed98a7d8c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Async e procedimentos armazenados com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
@@ -33,7 +33,7 @@ Neste tutorial você também verá como usar procedimentos armazenados para inse
 
 Por fim, você deverá reimplantar o aplicativo no Azure, juntamente com todas as alterações do banco de dados que você implementou desde a primeira vez que você implantou.
 
-As ilustrações a seguir mostram algumas das páginas que você trabalhará com.
+As ilustrações a seguir mostram algumas das páginas com as quais você trabalhará.
 
 ![Página de departamentos](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
@@ -41,7 +41,7 @@ As ilustrações a seguir mostram algumas das páginas que você trabalhará com
 
 ## <a name="why-bother-with-asynchronous-code"></a>Por que se preocupar com código assíncrono
 
-Um servidor web tem um número limitado de threads disponíveis e, em situações de alta carga de todos os threads disponíveis podem estar em uso. Quando isso acontece, o servidor não pode processar novas solicitações até que os threads são liberados. Com código síncrono, muitos threads podem ser vinculados ao enquanto eles não são realmente fazendo qualquer trabalho porque está aguardando para e/s concluir. Com um código assíncrono, quando um processo está aguardando e/s ser concluída, o thread é liberado para o servidor a ser usado para processar outras solicitações. Como resultado, o código assíncrono permite que recursos de servidor usar com mais eficiência e o servidor está habilitado para manipular mais tráfego sem atrasos.
+Um servidor Web tem um número limitado de threads disponíveis e, em situações de alta carga, todos os threads disponíveis podem estar em uso. Quando isso acontece, o servidor não pode processar novas solicitações até que os threads são liberados. Com um código síncrono, muitos threads podem ser vinculados enquanto realmente não são fazendo nenhum trabalho porque estão aguardando a conclusão da E/S. Com um código assíncrono, quando um processo está aguardando a conclusão da E/S, seu thread é liberado para o servidor para ser usado para processar outras solicitações. Como resultado, o código assíncrono permite que recursos de servidor usar com mais eficiência e o servidor está habilitado para manipular mais tráfego sem atrasos.
 
 Em versões anteriores do .NET, escrever e testar o código assíncrono eram complexo, propenso a erros e difíceis de depurar. No .NET 4.5, gravar, teste e depuração de código assíncrono são muito mais fácil que você geralmente deve gravar código assíncrono, a menos que você tenha um motivo para não. Código assíncrono apresente uma pequena quantidade de sobrecarga, mas para situações de pouco tráfego o impacto no desempenho é insignificante, durante situações de alto tráfego, a melhoria de desempenho potencial é significativa.
 
@@ -99,7 +99,7 @@ Tudo funciona da mesma forma como os outros controladores, mas neste controlador
 Algumas coisas a serem consideradas quando você estiver usando a programação assíncrona com o Entity Framework:
 
 - O código assíncrono não é thread-safe. Em outras palavras, em outras palavras, não tente executar várias operações em paralelo usando a mesma instância de contexto.
-- Se você quiser tirar proveito dos benefícios de desempenho do código assíncrono, certifique-se de que qualquer biblioteca de pacotes que você está usando (por exemplo, para paginação), use também assíncrona se ele chamam qualquer método de Entity Framework que causam consultas sejam enviadas para o banco de dados.
+- Se desejar aproveitar os benefícios de desempenho do código assíncrono, verifique se os pacotes de biblioteca que você está usando (por exemplo, para paginação) também usam o código assíncrono se eles chamam métodos do Entity Framework que fazem com que consultas sejam enviadas ao banco de dados.
 
 ## <a name="use-stored-procedures-for-inserting-updating-and-deleting"></a>Use os procedimentos armazenados para inserir, atualizar e excluir
 
@@ -117,16 +117,16 @@ Alguns desenvolvedores e DBAs preferem usar os procedimentos armazenados para ac
     Abra *migrações\&lt; timestamp&gt;\_DepartmentSP.cs* para ver o código de `Up` método que cria inserção, atualização e exclusão de procedimentos armazenados:
 
     [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs?highlight=3-4,26-27,42-43)]
-- No Console de gerenciamento de pacote, digite o seguinte comando:
+3. No Console de gerenciamento de pacote, digite o seguinte comando:
 
-    `update-database`
-- Executar o aplicativo no modo de depuração, clique no **departamentos** guia e, em seguida, clique em **criar novo**.
-- Insira dados para um novo departamento e, em seguida, clique em **criar**.
+     `update-database`
+4. Executar o aplicativo no modo de depuração, clique no **departamentos** guia e, em seguida, clique em **criar novo**.
+5. Insira dados para um novo departamento e, em seguida, clique em **criar**.
 
-    ![Criar departamento](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
-- No Visual Studio, examine os logs de **saída** janela para ver se um procedimento armazenado foi usado para inserir a nova linha de departamento.
+     ![Criar departamento](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
+6. No Visual Studio, examine os logs de **saída** janela para ver se um procedimento armazenado foi usado para inserir a nova linha de departamento.
 
-    ![Departamento Insert SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
+     ![Departamento Insert SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
 Primeiro, o código cria nomes de procedimento armazenado do padrão. Se você estiver usando um banco de dados existente, talvez seja necessário personalizar os nomes de procedimento armazenado para usar procedimentos armazenados já definidos no banco de dados. Para obter informações sobre como fazer isso, consulte [Entity Framework código primeiro inserir/atualizar/excluir procedimentos armazenados](https://msdn.microsoft.com/data/dn468673).
 
@@ -152,6 +152,6 @@ Neste tutorial você viu como melhorar a eficiência do servidor, escrevendo có
 
 Links para outros recursos do Entity Framework podem ser encontradas no [acesso a dados ASP.NET - recomendado recursos](../../../../whitepapers/aspnet-data-access-content-map.md).
 
->[!div class="step-by-step"]
-[Anterior](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[Próximo](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [Anterior](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [Próximo](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)

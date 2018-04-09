@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
 title: Criar um aplicativo de banco de dados do filme em 15 minutos com o ASP.NET MVC (VB) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther cria um inteiro para banco de dados ASP.NET MVC aplicativo a partir do início ao fim. Este tutorial é uma introdução excelente para pessoas t novo..."
+description: Stephen Walther cria um inteiro para banco de dados ASP.NET MVC aplicativo a partir do início ao fim. Este tutorial é uma introdução excelente para pessoas t novo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b87a69df24a410161dfaf055519eb6137fa76c06
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ecd5892457af5bc14a939672c64eed85fc05ec22
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-vb"></a>Criar um aplicativo de banco de dados do filme em 15 minutos com o ASP.NET MVC (VB)
 ====================
@@ -366,5 +366,5 @@ O objetivo deste tutorial era dar uma ideia da experiência de criação de um a
 
 Neste tutorial, examinamos somente os recursos mais básicos da estrutura ASP.NET MVC. Em tutoriais futuros, podemos mergulhar mais profundamente em tópicos como controladores, ações do controlador, modos de exibição, dados de exibição e auxiliares HTML.
 
->[!div class="step-by-step"]
-[Anterior](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)

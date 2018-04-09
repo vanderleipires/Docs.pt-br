@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
-title: "Use novamente a interface do usuário usando páginas mestras e existe meio-termo | Microsoft Docs"
+title: Use novamente a interface do usuário usando páginas mestras e existe meio-termo | Microsoft Docs
 author: microsoft
-description: "Etapa 7 analisa modos, que é possível aplicar 'Princípio SECA' em nossos modelos de exibição para eliminar a duplicação de código, usando modelos de exibição parcial e páginas mestras."
+description: Etapa 7 analisa modos, que é possível aplicar 'Princípio SECA' em nossos modelos de exibição para eliminar a duplicação de código, usando modelos de exibição parcial e páginas mestras.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: c42cd6aca40b08a9f8461532fbfd0589901b64ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ade655f3a4a429360b678d02fb564ac9cf255d42
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>Reutilizar usando páginas mestras e existe meio-termo de interface do usuário
 ====================
@@ -137,6 +137,6 @@ Existe meio-termo e páginas mestras fornecem opções muito flexíveis que perm
 
 Vamos agora revisitar o cenário de listagem que criamos anteriormente e habilitar o suporte escalável de paginação.
 
->[!div class="step-by-step"]
-[Anterior](use-viewdata-and-implement-viewmodel-classes.md)
-[Próximo](implement-efficient-data-paging.md)
+> [!div class="step-by-step"]
+> [Anterior](use-viewdata-and-implement-viewmodel-classes.md)
+> [Próximo](implement-efficient-data-paging.md)

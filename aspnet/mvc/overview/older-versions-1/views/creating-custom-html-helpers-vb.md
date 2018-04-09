@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 title: Criando auxiliares HTML personalizado (VB) | Microsoft Docs
 author: microsoft
-description: "O objetivo deste tutorial é demonstrar como você pode criar auxiliares HTML personalizado que você pode usar em suas exibições MVC. Ao aproveitar o auxiliar HTML..."
+description: O objetivo deste tutorial é demonstrar como você pode criar auxiliares HTML personalizado que você pode usar em suas exibições MVC. Ao aproveitar o auxiliar HTML...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e389a03228995ce0a6926a53af38f26ad51372d5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6980026e2653eacb71697f9b34def9bc38638726
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-custom-html-helpers-vb"></a>Criando auxiliares HTML personalizado (VB)
 ====================
@@ -57,7 +57,7 @@ Por exemplo, considere o formulário na listagem 1. Este formulário é renderiz
 **Figura 01**: página renderizada com auxiliares HTML ([clique para exibir a imagem em tamanho normal](creating-custom-html-helpers-vb/_static/image3.png))
 
 
-**Listando 1 –`Views\Home\Index.aspx`**
+**Listando 1 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample1.aspx)]
 
@@ -72,7 +72,7 @@ O `Html.TextBox()` métodos auxiliares usados na listagem 1 para renderizar HTML
 
 A estrutura ASP.NET MVC contém um conjunto pequeno de auxiliares. Provavelmente, você precisará estender a estrutura do MVC com auxiliares HTML personalizados. O restante deste tutorial, você aprenderá dois métodos de criação de auxiliares HTML personalizados.
 
-**A listagem 2 –`Index.aspx Source`**
+**A listagem 2 – `Index.aspx Source`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample2.aspx)]
 
@@ -80,7 +80,7 @@ A estrutura ASP.NET MVC contém um conjunto pequeno de auxiliares. Provavelmente
 
 A maneira mais fácil de criar um novo auxiliar HTML é criar um método compartilhado que retorna uma cadeia de caracteres. Por exemplo, imagine que você optar por criar um novo auxiliar HTML que renderiza uma marca HTML `<label>` marca. Você pode usar a classe na lista 2 para renderizar um `<label>`.
 
-**A listagem 2 –`Helpers\LabelHelper.vb`**
+**A listagem 2 – `Helpers\LabelHelper.vb`**
 
 [!code-vb[Main](creating-custom-html-helpers-vb/samples/sample3.vb)]
 
@@ -88,7 +88,7 @@ Não há nada de especial sobre a classe na listagem 2. O `Label()` método simp
 
 Usa o modo de exibição do índice modificado na listagem 3 o `LabelHelper` para renderizar HTML `<label>` marcas. Observe que o modo de exibição inclui um `<%@ imports %>` diretiva que importa o namespace Application1.Helpers.
 
-**A listagem 2 –`Views\Home\Index2.aspx`**
+**A listagem 2 – `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample4.aspx)]
 
@@ -100,7 +100,7 @@ O módulo do Visual Basic na listagem 3 adiciona um método de extensão denomin
 
 Segundo, observe que o primeiro parâmetro do `Label()` método representa o `HtmlHelper` classe. O primeiro parâmetro de um método de extensão indica a classe que estende o método de extensão.
 
-**A listagem 3 –`Helpers\LabelExtensions.vb`**
+**A listagem 3 – `Helpers\LabelExtensions.vb`**
 
 [!code-vb[Main](creating-custom-html-helpers-vb/samples/sample5.vb)]
 
@@ -114,7 +114,7 @@ Depois de criar um método de extensão e crie seu aplicativo com êxito, o mét
 
 O modo de exibição do índice modificado na listagem 4 usa o método de extensão Html.Label() para processar todos os seus &lt;rótulo&gt; marcas.
 
-**A listagem 4 –`Views\Home\Index3.aspx`**
+**A listagem 4 – `Views\Home\Index3.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample6.aspx)]
 
@@ -124,6 +124,6 @@ Neste tutorial, você aprendeu dois métodos de criação de auxiliares HTML per
 
 Neste tutorial, eu se concentra na criação de um método auxiliar HTML extremamente simple. Observe que um auxiliar HTML pode ser mais complicado do que você desejar. Você pode criar auxiliares HTML que processam conteúdo formatado como modos de exibição de árvore, menus ou tabelas de banco de dados.
 
->[!div class="step-by-step"]
-[Anterior](asp-net-mvc-views-overview-vb.md)
-[Próximo](using-the-tagbuilder-class-to-build-html-helpers-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](asp-net-mvc-views-overview-vb.md)
+> [Próximo](using-the-tagbuilder-class-to-build-html-helpers-vb.md)

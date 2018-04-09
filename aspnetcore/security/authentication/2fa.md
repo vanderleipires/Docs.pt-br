@@ -1,7 +1,7 @@
 ---
-title: "Autenticação de dois fatores com SMS no núcleo do ASP.NET"
+title: Autenticação de dois fatores com SMS no núcleo do ASP.NET
 author: rick-anderson
-description: "Saiba como configurar a autenticação de dois fatores (2FA) com um aplicativo do ASP.NET Core."
+description: Saiba como configurar a autenticação de dois fatores (2FA) com um aplicativo do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 08/15/2017
@@ -9,25 +9,25 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: c328c6f4b674695dd1f2db8145a7ac1b8f12d36d
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 1c4acc4e4be593051d30793b7f73ad90ce727283
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>Autenticação de dois fatores com SMS no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [desenvolvedores Suíça](https://github.com/Swiss-Devs)
 
-Este tutorial aplica-se ao ASP.NET Core apenas 1. x. Consulte [geração de código de QR habilitando para aplicativos de autenticador no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes) para ASP.NET Core 2.0 e posterior.
+Este tutorial aplica-se ao ASP.NET Core apenas 1. x. Consulte [geração de código de QR habilitar para aplicativos de autenticador no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes) para ASP.NET Core 2.0 e posterior.
 
-Este tutorial mostra como configurar a autenticação de dois fatores (2FA) usando o SMS. As instruções são fornecidas para [twilio](https://www.twilio.com/) e [ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/), mas você pode usar qualquer outro provedor SMS. Recomendamos que você realize [confirmação de conta e senha de recuperação](accconfirm.md) antes de iniciar este tutorial.
+Este tutorial mostra como configurar a autenticação de dois fatores (2FA) usando o SMS. As instruções são fornecidas para [twilio](https://www.twilio.com/) e [ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/), mas você pode usar qualquer outro provedor SMS. Recomendamos que você realize [confirmação de conta e senha de recuperação](xref:security/authentication/accconfirm) antes de iniciar este tutorial.
 
 Exibição de [exemplo concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/2fa/sample/Web2FA). [Como baixar](xref:tutorials/index#how-to-download-a-sample).
 
 ## <a name="create-a-new-aspnet-core-project"></a>Criar um novo projeto ASP.NET Core
 
-Criar um novo aplicativo web de ASP.NET Core denominado `Web2FA` com contas de usuário individuais. Siga as instruções em [impondo SSL em um aplicativo do ASP.NET Core](xref:security/enforcing-ssl) para configurar e exigir SSL.
+Criar um novo aplicativo web de ASP.NET Core denominado `Web2FA` com contas de usuário individuais. Siga as instruções em [impor SSL em um aplicativo do ASP.NET Core](xref:security/enforcing-ssl) para configurar e exigir SSL.
 
 ### <a name="create-an-sms-account"></a>Criar uma conta do SMS
 

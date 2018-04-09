@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
 title: Animar um controle UpdatePanel (VB) | Microsoft Docs
 author: wenz
-description: "O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Para o conteúdo de um..."
+description: O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Para o conteúdo de um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0d1056fc798e22254e94e5cad54436576a297f7d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c1114b74fd152a4ea85aa10850860f75573adee
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animating-an-updatepanel-control-vb"></a>Animar um controle UpdatePanel (VB)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Para o conteúdo do UpdatePanel, existe um extensor especial que baseia-se na estrutura da animação: UpdatePanelAnimation. Este tutorial mostra como configurar esse uma animação para UpdatePanel.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Para o conteúdo de um `UpdatePanel`, existe um extensor especial baseia-se na estrutura da animação: `UpdatePanelAnimation`. Este tutorial mostra como configurar esse uma animação para um `UpdatePanel`.
 
@@ -43,8 +43,8 @@ A animação neste cenário será aplicada a um ASP.NET `Wizard` controle da web
 
 A marcação necessária para o `UpdatePanelAnimationExtender` controle é bastante semelhante à marcação usada para o `AnimationExtender`. No `TargetControlID` atributo fornecemos o `ID` do `UpdatePanel` para animar; dentro a `UpdatePanelAnimationExtender` controle, o `<Animations>` elemento contém marcação XML para a animação. No entanto, há uma diferença: A quantidade de eventos e manipuladores de eventos é limitada em comparação aos `AnimationExtender`. Para `UpdatePanels`, apenas duas delas existir:
 
-- `<OnUpdated>`Quando o UpdatePanel foi atualizado
-- `<OnUpdating>`Quando o UpdatePanel inicia a atualização
+- `<OnUpdated>` Quando o UpdatePanel foi atualizado
+- `<OnUpdating>` Quando o UpdatePanel inicia a atualização
 
 Nesse cenário, o novo conteúdo do `UpdatePanel` (após o postback) deverá desaparecer. Esta é a marcação necessário para que:
 
@@ -57,6 +57,6 @@ Agora, sempre que um postback ocorre dentro do UpdatePanel, o novo conteúdo do 
 
 A próxima etapa do assistente é fade in ([clique para exibir a imagem em tamanho normal](animating-an-updatepanel-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](changing-an-animation-using-client-side-code-vb.md)
-[Próximo](dynamically-controlling-updatepanel-animations-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](changing-an-animation-using-client-side-code-vb.md)
+> [Próximo](dynamically-controlling-updatepanel-animations-vb.md)

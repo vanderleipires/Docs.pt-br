@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
-title: "Implantação de Web do ASP.NET usando o Visual Studio: implantação de teste | Microsoft Docs"
+title: 'Implantação de Web do ASP.NET usando o Visual Studio: implantação de teste | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin..."
+description: Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/23/2015
@@ -12,22 +12,22 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dc11072e053cbddd089e5df4bcea6d2a7af864fc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>Implantação de Web do ASP.NET usando o Visual Studio: implantação de teste
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Este tutorial mostra como implantar um aplicativo da web ASP.NET para o IIS no computador local.
 
@@ -52,15 +52,15 @@ Para implantar o IIS no computador de desenvolvimento, você deve ter o IIS e a 
 
     Para executar o Web Platform Installer para instalar o IIS e a implantação da Web, use o link a seguir. Se você já tiver instalado o IIS, implantação da Web ou qualquer um de seus componentes necessários, o Web Platform Installer instala apenas o que está faltando.
 
-    - [Instalar o IIS e a implantação da Web usando WebPI](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
+   - [Instalar o IIS e a implantação da Web usando WebPI](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
 
-    Você verá mensagens indicando que o IIS 7 será instalado. Links funciona para o IIS 8 no Windows 8, mas para o Windows 8 Certifique-se de que o ASP.NET 4.5 está instalado, executando as seguintes etapas:
+     Você verá mensagens indicando que o IIS 7 será instalado. Links funciona para o IIS 8 no Windows 8, mas para o Windows 8 Certifique-se de que o ASP.NET 4.5 está instalado, executando as seguintes etapas:
 
-    1. Abra **painel de controle**, **programas e recursos**, **ou desativar recursos do Windows ativar**.
-    2. Expanda **serviços de informações da Internet**, **serviços da World Wide Web**, e **recursos de desenvolvimento de aplicativo**.
-    3. Verifique se **ASP.NET 4.5** está selecionado.
+   - Abra **painel de controle**, **programas e recursos**, **ou desativar recursos do Windows ativar**.
+   - Expanda **serviços de informações da Internet**, **serviços da World Wide Web**, e **recursos de desenvolvimento de aplicativo**.
+   - Verifique se **ASP.NET 4.5** está selecionado.
 
-        ![Selecionar ASP.NET 4.5](deploying-to-iis/_static/image1.png)
+      ![Selecionar ASP.NET 4.5](deploying-to-iis/_static/image1.png)
 
 Depois de instalar o IIS, execute **Gerenciador do IIS** para certificar-se de que o .NET Framework versão 4 é atribuído ao pool de aplicativos padrão.
 
@@ -178,7 +178,7 @@ Antes de publicar, certifique-se de que você está executando o Visual Studio n
     O assistente avançará automaticamente para o **Conexão** guia.
 4. No **URL do serviço** , digite *localhost*.
 5. No **Site/aplicativo** , digite *Default Web Site/ContosoUniversity*
-6. No **URL de destino** , digite`http://localhost/ContosoUniversity`
+6. No **URL de destino** , digite `http://localhost/ContosoUniversity`
 
     O **URL de destino** configuração não é necessária. Quando o Visual Studio terminar de implantar o aplicativo, ele abre automaticamente o navegador padrão para essa URL. Se você não deseja que o navegador para abrir automaticamente após a implantação, deixe essa caixa em branco.
 7. Clique em **Conexão validar** para verificar se as configurações estão corretas e você pode se conectar ao IIS no computador local.
@@ -337,6 +337,6 @@ Para obter informações sobre como executar o IIS ou IIS Express no Visual Stud
 
 Para obter informações sobre quais problemas podem surgir quando seu aplicativo é executado em confiança média, consulte [hospedar aplicativos ASP.NET na relação de confiança médio](http://www.4guysfromrolla.com/articles/100307-1.aspx) na equipe de 4 do site Rolla.
 
->[!div class="step-by-step"]
-[Anterior](project-properties.md)
-[Próximo](setting-folder-permissions.md)
+> [!div class="step-by-step"]
+> [Anterior](project-properties.md)
+> [Próximo](setting-folder-permissions.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
-title: "Executar que se implantação | Microsoft Docs"
+title: Executar que se implantação | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como executar 'e se' (ou simulada) implantações usando a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web) e V..."
+description: Este tópico descreve como executar 'e se' (ou simulada) implantações usando a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web) e V...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: cea805c86f0764c7443ccc5c9f89248860a6a842
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c1a13f38c8e629bcd615190b00104109e25fb289
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-a-what-if-deployment"></a>Executando uma implantação "E se"
 ====================
@@ -27,9 +27,9 @@ por [Jason Lee](https://github.com/jrjlee)
 > Este tópico descreve como executar "what if" (ou simulada) implantações usando a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web) e VSDBCMD. Isso lhe permite determinar os efeitos de sua lógica de implantação em um ambiente de destino em particular antes de realmente implantar seu aplicativo.
 
 
-Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo & #x 2014; o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, Windows Serviço do Communication Foundation (WCF) e um projeto de banco de dados.
+Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo&#x2014;o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, uma comunicação do Windows Serviço Foundation (WCF) e um projeto de banco de dados.
 
-O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), no qual o processo de compilação e implantação é controlado por meio de dois arquivos de projeto & #x 2014; o ne contendo instruções de compilação que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
+O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação e implantação é controlado por dois arquivos de projeto&#x2014;um que contém instruções de compilação que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
 ## <a name="performing-a-what-if-deployment-for-web-packages"></a>Executando uma implantação "E se" para pacotes da Web
 
@@ -41,7 +41,7 @@ A implantação da Web inclui a funcionalidade que permite que você realize imp
 
 Como uma implantação "e se", na verdade, não altera nada no servidor de destino, o que ele sempre não pode fazer é prever se uma implantação será bem-sucedida.
 
-Conforme descrito em [Implantando pacotes de Web](../web-deployment-in-the-enterprise/deploying-web-packages.md), você pode implantar pacotes da web usando a implantação da Web em dois modos & #x 2014; usando o utilitário de linha de comando MSDeploy.exe diretamente ou executando o *. Deploy* arquivo que gera o processo de compilação.
+Conforme descrito em [Implantando pacotes de Web](../web-deployment-in-the-enterprise/deploying-web-packages.md), você pode implantar pacotes da web usando a implantação da Web de duas maneiras&#x2014;usando o utilitário de linha de comando MSDeploy.exe diretamente ou executando o *. Deploy* arquivo que gera o processo de compilação.
 
 Se você estiver usando o MSDeploy.exe diretamente, você pode executar uma implantação "e se" Adicionando o **– whatif** sinalizador ao seu comando. Por exemplo, para avaliar o que aconteceria se você implantou o pacote de ContactManager.Mvc.zip para um ambiente de preparo, o comando MSDeploy deve ser semelhante a esta:
 
@@ -122,7 +122,7 @@ A próxima fase é parametrizar qualquer implantação da Web e VSDBCMD comandos
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample6.xml)]
 
 
-Da mesma forma, o próximo destino usa o utilitário VSDBCMD para implantar um banco de dados. Por padrão, um **/dd** comutador não está incluído. Isso significa que VSDBCMD irá gerar um script de implantação, mas não implantará o banco de dados & #x 2014; em outras palavras, um "what if" cenário. Se o **WhatIf** propriedade não está definida como **true**, um **/dd** opção é adicionada e VSDBCMD implantará o banco de dados.
+Da mesma forma, o próximo destino usa o utilitário VSDBCMD para implantar um banco de dados. Por padrão, um **/dd** comutador não está incluído. Isso significa que VSDBCMD irá gerar um script de implantação, mas não implantará o banco de dados&#x2014;em outras palavras, um "what if" cenário. Se o **WhatIf** propriedade não está definida como **true**, um **/dd** opção é adicionada e VSDBCMD implantará o banco de dados.
 
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample7.xml)]
@@ -144,6 +144,6 @@ Este tópico descreveu como executar "what if" implantações usando a implanta�
 
 Para obter mais informações sobre a sintaxe de linha de comando de implantação da Web, consulte [Web implantar configurações de operação](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Para obter diretrizes sobre as opções de linha de comando quando você usa o *. Deploy* de arquivos, consulte [como: instalar uma implantação de pacote usando o arquivo Deploy](https://msdn.microsoft.com/library/ff356104.aspx). Para obter orientação sobre a sintaxe de linha de comando VSDBCMD, consulte [referência de linha de comando para VSDBCMD. EXE (implantação e importação de esquema)](https://msdn.microsoft.com/library/dd193283.aspx).
 
->[!div class="step-by-step"]
-[Anterior](advanced-enterprise-web-deployment.md)
-[Próximo](customizing-database-deployments-for-multiple-environments.md)
+> [!div class="step-by-step"]
+> [Anterior](advanced-enterprise-web-deployment.md)
+> [Próximo](customizing-database-deployments-for-multiple-environments.md)

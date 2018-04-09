@@ -2,7 +2,7 @@
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 title: Criar camada de acesso a dados | Microsoft Docs
 author: Erikre
-description: "Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express 2013 para nós..."
+description: Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express 2013 para nós...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: 809609155b06c4632bd4f450082d84c432c7a46f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 671d1bbf661dfb3e56c6ccd67ce0d383990918d6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-data-access-layer"></a>Criar camada de acesso a dados
 ====================
-Por [Erik Reitan](https://github.com/Erikre)
+por [Erik Reitan](https://github.com/Erikre)
 
 [Baixe o projeto de exemplo do Wingtip Toys (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ou [baixar livro eletrônico (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
@@ -68,13 +68,13 @@ Neste tutorial, você começará com a adição de classes de entidade simples q
 
     ![Criar camada de acesso a dados - novo de Item de Menu](create_the_data_access_layer/_static/image1.png)
 
- A caixa de diálogo **Adicionar Novo Item** é exibida.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
 2. Em **Visual C#** do **instalado** painel à esquerda, selecione **código**. 
 
     ![Criar camada de acesso a dados - novo de Item de Menu](create_the_data_access_layer/_static/image2.png)
 3. Selecione **classe** do painel do meio e nomeie essa nova classe *Product.cs*.
 4. Clique em **Adicionar**.  
- O novo arquivo de classe é exibido no editor.
+   O novo arquivo de classe é exibido no editor.
 5. Substitua o código padrão pelo seguinte código:   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample1.cs)]
@@ -95,7 +95,7 @@ Para começar a usar as classes de acesso a dados, você deve definir uma classe
 Este procedimento adiciona uma novo contexto classe c# para o *modelos* pasta.
 
 1. Clique com botão direito do *modelos* pasta e, em seguida, selecione **adicionar**  - &gt; **Novo Item**.   
- A caixa de diálogo **Adicionar Novo Item** é exibida.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
 2. Selecione **classe** do painel do meio, nomeie- *ProductContext.cs* e clique em **adicionar**.
 3. Substitua o código padrão contido na classe com o código a seguir:   
 
@@ -188,6 +188,6 @@ O seguinte tutorial, você atualizar a interface do usuário, adicionar navegaç
 [Anotações de dados primeiro código](https://msdn.microsoft.com/data/gg193958)  
 [Melhorias de produtividade para o Entity Framework](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
->[!div class="step-by-step"]
-[Anterior](create-the-project.md)
-[Próximo](ui_and_navigation.md)
+> [!div class="step-by-step"]
+> [Anterior](create-the-project.md)
+> [Próximo](ui_and_navigation.md)

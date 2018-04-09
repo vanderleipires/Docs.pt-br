@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
-title: "Host OWIN em uma função de trabalho do Azure | Microsoft Docs"
+title: Host OWIN em uma função de trabalho do Azure | Microsoft Docs
 author: MikeWasson
-description: "Este tutorial mostra como hospedar OWIN internamente em uma função de trabalho do Microsoft Azure. Interface da Web aberta para .NET (OWIN) define uma abstração entre o servidor da web .NET..."
+description: Este tutorial mostra como hospedar OWIN internamente em uma função de trabalho do Microsoft Azure. Interface da Web aberta para .NET (OWIN) define uma abstração entre o servidor da web .NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/11/2014
 ms.topic: article
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 8c0fdfdf60ff3bde34b6869adf3f8693b4d9615d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 13bccc4b2d6f1b22c94446deaf6795dab766275b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Host OWIN em uma função de trabalho do Azure
 ====================
@@ -119,7 +119,7 @@ O emulador de computação atribui um endereço IP local para o ponto de extremi
 
 [![](host-owin-in-an-azure-worker-role/_static/image10.png)](host-owin-in-an-azure-worker-role/_static/image9.png)
 
-Localize o endereço IP em implantações de serviços de implantação [id], detalhes do serviço. Abra um navegador da web e navegue até http://*endereço*, onde *endereço* é o endereço IP atribuído pelo emulador de computação; por exemplo, `http://127.0.0.1:80`. Você deve ver a página de boas-vinda do OWIN:
+Localize o endereço IP em implantações de serviços de implantação [id], detalhes do serviço. Abra um navegador da web e navegue até http://<em>endereço</em>, onde <em>endereço</em> é o endereço IP atribuído pelo emulador de computação; por exemplo, `http://127.0.0.1:80`. Você deve ver a página de boas-vinda do OWIN:
 
 ![](host-owin-in-an-azure-worker-role/_static/image11.png)
 

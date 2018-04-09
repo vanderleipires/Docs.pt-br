@@ -2,7 +2,7 @@
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 title: Implantar aplicativos de Web do colocando Offline com o Web | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como executar um aplicativo da web offline para a duração de uma implantação automatizada usando o alerta de i do Internet Information Services (IIS) da Web..."
+description: Este tópico descreve como executar um aplicativo da web offline para a duração de uma implantação automatizada usando o alerta de i do Internet Information Services (IIS) da Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: 1c262ec7b834107524a18c6552b171f731452c91
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 511201dc5646340b21023430fa319417f2b53ae2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="taking-web-applications-offline-with-web-deploy"></a>Implantar aplicativos de Web do colocando Offline com o Web
 ====================
@@ -27,9 +27,9 @@ por [Jason Lee](https://github.com/jrjlee)
 > Este tópico descreve como executar um aplicativo da web offline para a duração de uma implantação automatizada usando a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web). Os usuários que navegam para o aplicativo da web são redirecionados para um *aplicativo\_offline.htm* arquivo até que a implantação for concluída.
 
 
-Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo & #x 2014; o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, Windows Serviço do Communication Foundation (WCF) e um projeto de banco de dados.
+Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo&#x2014;o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, uma comunicação do Windows Serviço Foundation (WCF) e um projeto de banco de dados.
 
-O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos & #x 2014; projeto contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
+O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos de projeto&#x2014;contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
 ## <a name="task-overview"></a>Visão geral da tarefa
 
@@ -94,7 +94,7 @@ Para automatizar esses comandos como parte de um processo de compilação e impl
 2. Na raiz **projeto** elemento, crie um novo **PropertyGroup** elemento armazenar variáveis para o *aplicativo\_offline* implantação:
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample3.xml)]
-3. O **SourceRoot** propriedade está definida em outro lugar no *Publish.proj* arquivo. Indica o local da pasta raiz para o conteúdo de origem em relação ao caminho atual do #x 2014; em outras palavras, relativo ao local do *Publish.proj* arquivo.
+3. O **SourceRoot** propriedade está definida em outro lugar no *Publish.proj* arquivo. Indica o local da pasta raiz para o conteúdo de origem em relação ao caminho atual&#x2014;em outras palavras, relativo ao local do *Publish.proj* arquivo.
 4. O **contentPath** provedor não aceitará caminhos de arquivo, portanto você precisa obter um caminho absoluto para o arquivo de origem antes de implantá-lo. Você pode usar o [ConvertToAbsolutePath](https://msdn.microsoft.com/library/bb882668.aspx) tarefas para fazer isso.
 5. Adicionar um novo **destino** elemento chamado **GetAppOfflineAbsolutePath**. Dentro desse destino, use o **ConvertToAbsolutePath** tarefa para obter um caminho absoluto para o *aplicativo\_modelo off-line* arquivo na pasta do projeto.
 
@@ -116,7 +116,7 @@ Quando você executar o arquivo de projeto MSBuild personalizado, o *aplicativo\
 
 ## <a name="adding-an-appoffline-file-to-deployment-packages"></a>Adicionar um aplicativo\_arquivos off-line para pacotes de implantação
 
-Dependendo de como você pode configurar sua implantação, todo o conteúdo existente no aplicativo de web do IIS de destino do #x 2014; como o *aplicativo\_offline.htm* arquivo & #x 2014; podem ser excluídos automaticamente quando você implanta uma web pacote para o destino. Para garantir que o *aplicativo\_offline.htm* arquivo permanece em vigor durante a implantação, você precisa incluir o arquivo dentro do próprio pacote de implantação da web Além disso, para implantar o arquivo diretamente no início de o processo de implantação.
+Dependendo de como você configura sua implantação, o aplicativo qualquer existente conteúdo no destino IIS web&#x2014;como o *aplicativo\_offline.htm* arquivo&#x2014;podem ser excluídos automaticamente quando você implanta uma web pacote para o destino. Para garantir que o *aplicativo\_offline.htm* arquivo permanece em vigor durante a implantação, você precisa incluir o arquivo dentro do próprio pacote de implantação da web Além disso, para implantar o arquivo diretamente no início de o processo de implantação.
 
 - Se você seguiu as tarefas anteriores neste tópico, você deverá adicionar o *aplicativo\_offline.htm* ao seu projeto de aplicativo web com um nome de arquivo diferente (usamos *aplicativo\_ offline-. htm*) e você tiver definirá a ação de compilação **nenhum**. Essas alterações são necessárias para impedir que o arquivo de interferir com o desenvolvimento e depuração. Como resultado, você precisa personalizar o processo de empacotamento para garantir que o *aplicativo\_offline.htm* arquivo está incluído no pacote de implantação da web.
 
@@ -125,7 +125,7 @@ O Pipeline de publicação de Web (WPP) usa uma lista de itens denominada **File
 1. Crie um arquivo de projeto personalizado chamado *.wpp.targets [nome do projeto]* na mesma pasta que o arquivo de projeto.
 
     > [!NOTE]
-    > O *. wpp.targets* arquivos precisam estar na mesma pasta que o arquivo de projeto de aplicativo web & #x 2014; por exemplo, *ContactManager.Mvc.csproj*& #x 2014; em vez de na mesma pasta qualquer arquivos de projeto personalizados que você usa para a compilação de controle e o processo de implantação.
+    > O *. wpp.targets* arquivos precisam estar na mesma pasta que o arquivo de projeto de aplicativo web&#x2014;por exemplo, *ContactManager.Mvc.csproj*&#x2014;em vez de na mesma pasta que qualquer personalizado arquivos de projeto usados para controlar o processo de compilação e implantação.
 2. No *. wpp.targets* de arquivo, crie um novo destino do MSBuild que executa *antes de* o **CopyAllFilesToSingleFolderForPackage** destino. Este é o destino WPP que cria uma lista de itens para incluir no pacote.
 3. No novo destino, crie uma **ItemGroup** elemento.
 4. No **ItemGroup** elemento, adicionar um **FilesForPackagingFromProject** item e especifique o *aplicativo\_offline.htm* arquivo.
@@ -175,6 +175,6 @@ Para obter mais informações sobre o empacotamento e o processo de implantaçã
 
 Se você publicar seus aplicativos web diretamente do Visual Studio, em vez de usar a abordagem de arquivo de projeto MSBuild personalizada descrita nesses tutoriais, você precisará usar uma abordagem ligeiramente diferente para colocar o aplicativo offline durante a publicação processo. Para obter mais informações, consulte [como se o seu aplicativo web offline durante a publicação](https://go.microsoft.com/?linkid=9805135) (postagem do blog).
 
->[!div class="step-by-step"]
-[Anterior](excluding-files-and-folders-from-deployment.md)
-[Próximo](running-windows-powershell-scripts-from-msbuild-project-files.md)
+> [!div class="step-by-step"]
+> [Anterior](excluding-files-and-folders-from-deployment.md)
+> [Próximo](running-windows-powershell-scripts-from-msbuild-project-files.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
-title: "Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 6 | Microsoft Docs"
+title: Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 6 | Microsoft Docs
 author: tdykstra
-description: "O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é..."
+description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,22 +12,22 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 164c2002a119420555d2c7065c5a79a5f433a725
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b76be25501275ba676c9a9acca8e73333439ee70
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-6"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 6
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 > O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework 4.0 e o Visual Studio 2010. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial da série](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
 
 ## <a name="implementing-table-per-hierarchy-inheritance"></a>Implementando a herança de tabela por hierarquia
 
-O tutorial anterior você trabalhou com dados relacionados, adicionando e excluindo relações e adicionando uma nova entidade que tenha uma relação com uma entidade existente. Este tutorial mostra como implementar a herança no modelo de dados.
+O tutorial anterior você trabalhou com dados relacionados, adicionando e excluindo relações e adicionando uma nova entidade que tenha uma relação com uma entidade existente. Este tutorial mostrará como implementar a herança no modelo de dados.
 
 Em programação orientada a objeto, você pode usar a herança para tornar mais fácil trabalhar com classes relacionadas. Por exemplo, você pode criar `Instructor` e `Student` classes que derivam de um `Person` classe base. Você pode criar os mesmos tipos de estruturas de herança entre as entidades no Entity Framework.
 
@@ -57,9 +57,9 @@ Padrões de herança TPH geralmente fornecem melhor desempenho no Entity Framewo
 
 ## <a name="adding-instructor-and-student-entities"></a>Adicionando instrutor e entidades de Student
 
-Abra o *SchoolModel.edmx* de arquivos, clique em designer, selecione uma área desocupada **adicionar**, em seguida, selecione **entidade***.*
+Abra o <em>SchoolModel.edmx</em> de arquivos, clique em designer, selecione uma área desocupada <strong>adicionar</strong>, em seguida, selecione <strong>entidade</strong><em>.</em>
 
-[![para Image01](the-entity-framework-and-aspnet-getting-started-part-6/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image5.png)
+[![image01](the-entity-framework-and-aspnet-getting-started-part-6/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image5.png)
 
 No **Adicionar entidade** caixa de diálogo, o nome da entidade `Instructor` e defina seu **tipo Base** opção para `Person`.
 
@@ -161,6 +161,6 @@ Como resultado dessas alterações, você já aprimorado facilidade de manutenç
 
 Você viu uma maneira de implementar um padrão de herança no Entity Framework. O tutorial a seguir, você aprenderá como usar procedimentos armazenados para ter mais controle sobre como o Entity Framework acessa o banco de dados.
 
->[!div class="step-by-step"]
-[Anterior](the-entity-framework-and-aspnet-getting-started-part-5.md)
-[Próximo](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [!div class="step-by-step"]
+> [Anterior](the-entity-framework-and-aspnet-getting-started-part-5.md)
+> [Próximo](the-entity-framework-and-aspnet-getting-started-part-7.md)

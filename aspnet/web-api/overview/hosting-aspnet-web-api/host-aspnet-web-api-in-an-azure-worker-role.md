@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
-title: "Host ASP.NET Web API 2 em uma função de trabalho do Azure | Microsoft Docs"
+title: Host ASP.NET Web API 2 em uma função de trabalho do Azure | Microsoft Docs
 author: MikeWasson
-description: "Este tutorial mostra como hospedar API Web do ASP.NET em uma função de trabalho do Azure, usando OWIN para a estrutura da API Web de hospedagem interna. Abra a Interface da Web para de .NET (OWIN)..."
+description: Este tutorial mostra como hospedar API Web do ASP.NET em uma função de trabalho do Azure, usando OWIN para a estrutura da API Web de hospedagem interna. Abra a Interface da Web para de .NET (OWIN)...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/02/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 9a7f8242bf482e81513accfe05e10a64ae0ca0b2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7ba1dc850e2f9d9c88e6ddf263a796e1867a98be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>Host ASP.NET Web API 2 em uma função de trabalho do Azure
 ====================
@@ -131,7 +131,7 @@ O emulador de computação atribui um endereço IP local para o ponto de extremi
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image11.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image10.png)
 
-Localize o endereço IP em implantações de serviços de implantação [id], detalhes do serviço. Abra um navegador da web e navegue até http://*endereço*/teste/1, onde *endereço* é o endereço IP atribuído pelo emulador de computação; por exemplo, `http://127.0.0.1:80/test/1`. Você deve ver a resposta do controlador de API da Web:
+Localize o endereço IP em implantações de serviços de implantação [id], detalhes do serviço. Abra um navegador da web e navegue até http://<em>endereço</em>/teste/1, onde <em>endereço</em> é o endereço IP atribuído pelo emulador de computação; por exemplo, `http://127.0.0.1:80/test/1`. Você deve ver a resposta do controlador de API da Web:
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image12.png)
 

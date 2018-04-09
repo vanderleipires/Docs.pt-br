@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/external-authentication-services
-title: "Serviços de autenticação externa com a API da Web do ASP.NET (c#) | Microsoft Docs"
+title: Serviços de autenticação externa com a API da Web do ASP.NET (c#) | Microsoft Docs
 author: rmcmurray
-description: "Descreve como usar os serviços de autenticação externos na API da Web do ASP.NET."
+description: Descreve como usar os serviços de autenticação externos na API da Web do ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: 744396cb0c95d1887f259b1e2e890bd06ef7d049
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 406a85db7055910cb7a4e15fec8ef68dff5a19dc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a>Serviços de autenticação externa com a API da Web do ASP.NET (c#)
 ====================
@@ -86,11 +86,11 @@ Os exemplos neste passo a passo demonstrará como configurar cada um dos serviç
 
 As etapas a seguir vai guiá-lo na criação de um aplicativo de exemplo usando o modelo de aplicativo Web ASP.NET, e você usará este aplicativo de exemplo para cada um dos serviços de autenticação externa posteriormente neste passo a passo.
 
-Iniciar o Visual Studio 2013 selecione **novo projeto** na página de início. Ou, do **arquivo** menu, selecione **novo** e **projeto**.
+Iniciar o Visual Studio 2013 selecione **novo projeto** na página de início. Ou, no menu **Arquivo**, selecione **Novo** e, em seguida, **Projeto**.
 
 [![](external-authentication-services/_static/image6.png "Clique para expandir a imagem")](external-authentication-services/_static/image5.png)
 
-Quando o **novo projeto** caixa de diálogo for exibida, selecione **instalado** **modelos** e expanda **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web ASP.NET**. Insira um nome para seu projeto e clique em **Okey**.
+Quando o **novo projeto** caixa de diálogo for exibida, selecione **instalado** **modelos** e expanda **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **Aplicativo Web ASP.NET**. Insira um nome para seu projeto e clique em **Okey**.
 
 [![](external-authentication-services/_static/image8.png "Clique para expandir a imagem")](external-authentication-services/_static/image7.png)
 
@@ -119,7 +119,7 @@ As seções a seguir, você aprenderá como habilitar cada um dos serviços de a
 <a id="FACEBOOK"></a>
 ## <a name="enabling-facebook-authentication"></a>Habilitar a autenticação do Facebook
 
-Usando o Facebook autenticação exige que você criar uma conta de desenvolvedor do Facebook e seu projeto exige uma ID de aplicativo e a chave secreta do Facebook para funcionar. Para obter informações sobre como criar uma conta de desenvolvedor do Facebook e obter a ID do aplicativo e a chave secreta, consulte [https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166).
+Usando o Facebook autenticação exige que você criar uma conta de desenvolvedor do Facebook e seu projeto exige uma ID de aplicativo e a chave secreta do Facebook para funcionar. Para obter informações sobre como criar uma conta de desenvolvedor do Facebook e obter a ID do aplicativo e a chave secreta, consulte [ https://go.microsoft.com/fwlink/?LinkID=252166 ](https://go.microsoft.com/fwlink/?LinkID=252166).
 
 Uma vez que obteve a ID do aplicativo e a chave secreta, use as etapas a seguir para habilitar a autenticação do Facebook para o aplicativo web:
 
@@ -180,7 +180,7 @@ Para habilitar a autenticação do Google para seu aplicativo da web, use as seg
 <a id="MICROSOFT"></a>
 ## <a name="enabling-microsoft-authentication"></a>Habilitar a autenticação da Microsoft
 
-Autenticação da Microsoft requer que você criar uma conta de desenvolvedor e requer uma ID de cliente e o segredo do cliente para funcionar. Para obter informações sobre como criar uma conta de desenvolvedor da Microsoft e obter sua ID do cliente e o segredo do cliente, consulte [https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070).
+Autenticação da Microsoft requer que você criar uma conta de desenvolvedor e requer uma ID de cliente e o segredo do cliente para funcionar. Para obter informações sobre como criar uma conta de desenvolvedor da Microsoft e obter sua ID do cliente e o segredo do cliente, consulte [ https://go.microsoft.com/fwlink/?LinkID=144070 ](https://go.microsoft.com/fwlink/?LinkID=144070).
 
 Uma vez que obteve a chave do consumidor e o segredo do consumidor, use as etapas a seguir para habilitar a autenticação da Microsoft para o aplicativo web:
 
@@ -212,7 +212,7 @@ Uma vez que obteve a chave do consumidor e o segredo do consumidor, use as etapa
 <a id="TWITTER"></a>
 ## <a name="enabling-twitter-authentication"></a>Habilitar a autenticação do Twitter
 
-A autenticação requer que você crie uma conta de desenvolvedor e requer uma chave do consumidor e o segredo do consumidor para que funcionem do Twitter. Para obter informações sobre como criar uma conta de desenvolvedor do Twitter e obter sua chave do consumidor e o segredo do consumidor, consulte [https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166).
+A autenticação requer que você crie uma conta de desenvolvedor e requer uma chave do consumidor e o segredo do consumidor para que funcionem do Twitter. Para obter informações sobre como criar uma conta de desenvolvedor do Twitter e obter sua chave do consumidor e o segredo do consumidor, consulte [ https://go.microsoft.com/fwlink/?LinkID=252166 ](https://go.microsoft.com/fwlink/?LinkID=252166).
 
 Uma vez que obteve a chave do consumidor e o segredo do consumidor, use as etapas a seguir para habilitar a autenticação do Twitter para o aplicativo web:
 
@@ -260,19 +260,21 @@ Alguns provedores de autenticação externa não dão suporte a testar seu aplic
 
 - Adicione um FQDN estático seu arquivo de HOSTS de mapeamento:
 
-    1. Abra um prompt de comando com privilégios elevados no Windows.
-    2. Digite o seguinte comando:
+  1. Abra um prompt de comando com privilégios elevados no Windows.
+  2. Digite o seguinte comando:
 
-        <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
-    3. Adicione uma entrada semelhante à seguinte ao arquivo HOSTS:
+      <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
+  3. Adicione uma entrada semelhante à seguinte ao arquivo HOSTS:
 
-        <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
-    4. Salve e feche o arquivo de HOSTS.
+      <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
+  4. Salve e feche o arquivo de HOSTS.
+
 - Configure seu projeto do Visual Studio para usar o FQDN:
 
-    1. Quando o projeto for aberto no Visual Studio 2013, clique o **projeto** menu e, em seguida, selecione Propriedades do projeto. Por exemplo, você pode selecionar **WebApplication1 propriedades**.
-    2. Selecione o **Web** guia.
-    3. Insira o FQDN para o **Url do projeto**. Por exemplo, você digitaria <kbd>http://www.wingtiptoys.com</kbd> se esse era o mapeamento de FQDN que você adicionou ao seu arquivo de HOSTS.
+  1. Quando o projeto for aberto no Visual Studio 2013, clique o **projeto** menu e, em seguida, selecione Propriedades do projeto. Por exemplo, você pode selecionar **WebApplication1 propriedades**.
+  2. Selecione o **Web** guia.
+  3. Insira o FQDN para o <strong>Url do projeto</strong>. Por exemplo, você digitaria <kbd> <http://www.wingtiptoys.com> </kbd> se esse era o mapeamento de FQDN que você adicionou ao seu arquivo de HOSTS.
+
 - Configure o IIS Express para usar o FQDN para o seu aplicativo:
 
     1. Abra um prompt de comando com privilégios elevados no Windows.
@@ -283,14 +285,14 @@ Alguns provedores de autenticação externa não dão suporte a testar seu aplic
 
         <kbd>appcmd.exe set config -section:system.applicationHost/sites /+&quot;[name='WebApplication1'].bindings.[protocol='http',bindingInformation='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
 
- Onde **WebApplication1** é o nome do seu projeto e **bindingInformation** contém o número da porta e o FQDN que você deseja usar para seus testes.
+  Onde **WebApplication1** é o nome do seu projeto e **bindingInformation** contém o número da porta e o FQDN que você deseja usar para seus testes.
 
 <a id="OBTAIN"></a>
 ### <a name="how-to-obtain-your-application-settings-for-microsoft-authentication"></a>Como obter as configurações do aplicativo para autenticação da Microsoft
 
 A vinculação de um aplicativo do Windows Live para Microsoft Authentication é um processo simples. Se você já não tiver vinculado um aplicativo para Windows Live, você pode usar as seguintes etapas:
 
-1. Navegue até [https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070) e inserir seu nome de conta da Microsoft e a senha quando solicitado, clique em **entrar**:
+1. Navegue até [ https://go.microsoft.com/fwlink/?LinkID=144070 ](https://go.microsoft.com/fwlink/?LinkID=144070) e inserir seu nome de conta da Microsoft e a senha quando solicitado, clique em **entrar**:
 
     [![](external-authentication-services/_static/image64.png "Clique para expandir a imagem")](external-authentication-services/_static/image63.png)
 2. Insira o nome e o idioma do seu aplicativo quando solicitado e, em seguida, clique em **aceito**:

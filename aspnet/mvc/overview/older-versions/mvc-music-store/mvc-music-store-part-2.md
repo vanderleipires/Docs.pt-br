@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 title: 'Parte 2: Controladores | Microsoft Docs'
 author: jongalloway
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 2 abrange controladores."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 2 abrange controladores.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: bdafd751e996e759d516d0fa25b09eff21241ed7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 680cdea388d9b01961bd626643c0fd91c9205ed7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-controllers"></a>Parte 2: controladores
 ====================
@@ -63,7 +63,7 @@ Agora, o método deve ser assim:
 Agora vamos executar o site. Podemos começar nosso servidor web e experimentar o site usando qualquer um dos seguintes:
 
 - Escolha o item de menu Iniciar depuração de depuração ⇨
-- Clique no botão de seta verde na barra de ferramentas![](mvc-music-store-part-2/_static/image2.jpg)
+- Clique no botão de seta verde na barra de ferramentas ![](mvc-music-store-part-2/_static/image2.jpg)
 - Use o atalho de teclado F5.
 
 Usar qualquer uma das etapas acima compilar nosso projeto e, em seguida, fazer com que o ASP.NET Development Server é integrado ao Visual Web Developer para iniciar. Uma notificação será exibida no canto inferior da tela para indicar que o servidor de desenvolvimento do ASP.NET foi iniciado e mostrará o número da porta que está sendo executado em.
@@ -116,7 +116,7 @@ Primeiro, vamos alterar o método de ação de navegação para recuperar um val
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*Observação: Estamos usando o método de utilitário HttpUtility para limpar a entrada do usuário. Isso impede que os usuários de injeção de Javascript em nosso exibição com um link como /Store/Browse? Gênero =&lt;script&gt;window.location= 'http://hackersite.com'&lt;/script&gt;.*
+*Observação: Estamos usando o método de utilitário HttpUtility para limpar a entrada do usuário. Isso impede que os usuários de injeção de Javascript em nosso exibição com um link como /Store/Browse? Gênero =&lt;script&gt;window.location='http://hackersite.com'&lt;/script&gt;.*
 
 Agora vamos procure/repositório/procurar? Gênero = Disco
 
@@ -141,6 +141,6 @@ Vamos recapitular o que fizemos até agora:
 - Adicionamos os métodos de ação ao nosso controladores que respondem às solicitações de URL e retornam o texto para o navegador
 
 
->[!div class="step-by-step"]
-[Anterior](mvc-music-store-part-1.md)
-[Próximo](mvc-music-store-part-3.md)
+> [!div class="step-by-step"]
+> [Anterior](mvc-music-store-part-1.md)
+> [Próximo](mvc-music-store-part-3.md)

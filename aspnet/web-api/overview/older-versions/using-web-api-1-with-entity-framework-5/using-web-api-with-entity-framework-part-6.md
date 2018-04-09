@@ -2,7 +2,7 @@
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6
 title: 'Parte 6: Criando o produto e controladores de ordem | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 3b33543f02479b97112a63eb3879967ae31ccfb3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6bd485d29821af12b9ebe31b2d04a2d9ab826731
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-6-creating-product-and-order-controllers"></a>Parte 6: Criação de produto e os controladores de ordem
 ====================
@@ -38,7 +38,7 @@ Adicione uma classe denominada `ProductDTO` para a pasta de modelos.
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample2.cs)]
 
-Agora adicione o controlador. No Gerenciador de soluções, clique na pasta de controladores. Selecione **adicionar**, em seguida, selecione **controlador**. No **Adicionar controlador** caixa de diálogo, o nome do controlador &quot;ProductsController&quot;. Em **modelo**, selecione **controlador API vazio**.
+Agora adicione o controlador. No Gerenciador de soluções, clique na pasta de controladores. Selecione **adicionar**, em seguida, selecione **controlador**. Na caixa de diálogo **Adicionar controlador**, nomeie o controlador como &quot;ProductsController&quot;. Em **modelo**, selecione **controlador API vazio**.
 
 ![](using-web-api-with-entity-framework-part-6/_static/image1.png)
 
@@ -117,6 +117,6 @@ Finalmente, adicione o **autorizar** de atributo para o controlador:
 
 Agora, somente usuários registrados podem criar ou exibir ordens.
 
->[!div class="step-by-step"]
-[Anterior](using-web-api-with-entity-framework-part-5.md)
-[Próximo](using-web-api-with-entity-framework-part-7.md)
+> [!div class="step-by-step"]
+> [Anterior](using-web-api-with-entity-framework-part-5.md)
+> [Próximo](using-web-api-with-entity-framework-part-7.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
-title: "Configurando um servidor Web para Web (agente remoto) de publicação da implantação | Microsoft Docs"
+title: Configurando um servidor Web para Web (agente remoto) de publicação da implantação | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como configurar um servidor web de serviços de informações da Internet (IIS) para dar suporte à implantação usando a implantação de Web do IIS e publicação na web..."
+description: Este tópico descreve como configurar um servidor web de serviços de informações da Internet (IIS) para dar suporte à implantação usando a implantação de Web do IIS e publicação na web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 23195949121cd13ca4b1809b8db91a7320d1fdd2
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 8cad6ee45a8331513c72c4079f300fbb06c1ed77
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>Configurando um servidor Web para publicação (agente remoto) de implantação da Web
 ====================
@@ -102,7 +102,7 @@ Nesse caso, você precisa instalar essas coisas:
 7. No painel de navegação, clique em **Server**.
 8. No **configuração recomendada do IIS 7** de linha, clique em **adicionar**.
 9. No **ferramenta de implantação da Web 2.1** de linha, clique em **adicionar**.
-10. Clique em **Instalar**. O Web Platform Installer mostrará uma lista de produtos & #x 2014; juntamente com quaisquer dependências associadas & #x 2014; a serem instalados e solicitará que você aceite os termos de licença.
+10. Clique em **Instalar**. O Web Platform Installer mostrará uma lista de produtos&#x2014;juntamente com quaisquer dependências associadas&#x2014;a serem instalados e solicitará que você aceite os termos de licença.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image2.png)
 11. Leia os termos de licença e se você concordar com os termos, clique em **aceito**.
@@ -165,7 +165,7 @@ Embora não haja nada que o impeça de implantação de conteúdo para o site pa
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image6.png)
 
     > [!NOTE]
-    > A primeira associação do site permite que você acesse o site localmente usando o endereço IP e a porta ou `http://localhost:85`. A segunda associação de site permite que você acessar o site de outros computadores no domínio usando o nome do computador (por exemplo, http://testweb1:85).
+    > A primeira associação do site permite que você acesse o site localmente usando o endereço IP e a porta ou `http://localhost:85`. A segunda associação de site permite que você acesse o site de outros computadores no domínio usando o nome do computador (por exemplo, http://testweb1:85).
 13. No **ligações de Site** caixa de diálogo, clique em **fechar**.
 14. No **conexões** painel, clique em **Pools de aplicativos**.
 15. No **Pools de aplicativos** painel, clique no nome de seu pool de aplicativos e, em seguida, clique em **configurações básicas**. Por padrão, o nome do seu pool de aplicativos irão corresponder ao nome do seu site (por exemplo, **DemoSite**).
@@ -176,11 +176,11 @@ Embora não haja nada que o impeça de implantação de conteúdo para o site pa
     > [!NOTE]
     > A solução de exemplo requer o .NET Framework 4.0. Isso não é um requisito para a implantação da Web em geral.
 
-Em ordem para seu site para atender ao conteúdo, a identidade do pool de aplicativos deve ter permissões de leitura na pasta local que armazena o conteúdo. No IIS 7.5, pools de aplicativos são executados com uma identidade de pool de aplicativos exclusivo por padrão (em contraste com versões anteriores do IIS, em pools de aplicativos será executado normalmente usando a conta de serviço de rede). A identidade do pool de aplicativos não é uma conta de usuário e não aparece em qualquer lista de usuários ou grupos de & #x 2014; em vez disso, ele é criado dinamicamente quando o pool de aplicativos foi iniciado. Cada identidade de pool de aplicativos é adicionada ao local **IIS\_IUSRS** o grupo de segurança como itens ocultos.
+Em ordem para seu site para atender ao conteúdo, a identidade do pool de aplicativos deve ter permissões de leitura na pasta local que armazena o conteúdo. No IIS 7.5, pools de aplicativos são executados com uma identidade de pool de aplicativos exclusivo por padrão (em contraste com versões anteriores do IIS, em pools de aplicativos será executado normalmente usando a conta de serviço de rede). A identidade do pool de aplicativos não é uma conta de usuário e não aparecer em qualquer lista de usuários ou grupos&#x2014;em vez disso, ele é criado dinamicamente quando o pool de aplicativos foi iniciado. Cada identidade de pool de aplicativos é adicionada ao local **IIS\_IUSRS** o grupo de segurança como itens ocultos.
 
 Para conceder permissões para uma identidade de pool de aplicativos em um arquivo ou pasta, que você tem duas opções:
 
-- Atribuir permissões para a identidade do pool de aplicativos diretamente, usando o formato **IIS AppPool\***[nome do pool de aplicativos] * (por exemplo, **IIS AppPool\DemoSite**).
+- Atribuir permissões para a identidade do pool de aplicativos diretamente, usando o formato <strong>IIS AppPool\</ strong ><em>[nome do pool de aplicativos]</em>(por exemplo, <strong>IIS AppPool\DemoSite</strong>).
 - Atribuir permissões para o **IIS\_IUSRS** grupo.
 
 A abordagem mais comum é atribuir permissões ao local **IIS\_IUSRS** grupo porque essa abordagem permite que você altere os pools de aplicativos sem precisar reconfigurar permissões do sistema de arquivos. O procedimento a seguir usa essa abordagem baseada em grupo.
@@ -198,8 +198,8 @@ A abordagem mais comum é atribuir permissões ao local **IIS\_IUSRS** grupo por
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image8.png)
 5. No **selecionar usuários ou grupos** caixa de diálogo, digite **IIS\_IUSRS**, clique em **verificar nomes**e, em seguida, clique em **Okey**.
-6. No **permissões para * [nome da pasta]*caixa de diálogo, observe que o novo grupo foi atribuído a **leitura &amp; executar**, **Listar conteúdo da pasta**, e **Leitura** permissões por padrão. Deixe inalterados e clique em **Okey**.
-7. Clique em **Okey** para fechar o *[nome da pasta] * propriedades** caixa de diálogo.
+6. No <strong>permissões para</strong><em>[nome da pasta]</em>caixa de diálogo, observe que o novo grupo foi atribuído a <strong>leitura &amp; executar</strong>, <strong>Listar pasta conteúdo</strong>, e <strong>leitura</strong> permissões por padrão. Deixe inalterados e clique em <strong>Okey</strong>.
+7. Clique em <strong>Okey</strong> para fechar o <em>[nome da pasta]</em><strong>propriedades</strong> caixa de diálogo.
 
 Como uma tarefa final antes de tentar implantar todos os pacotes da web em seu servidor, você deve garantir que o serviço de agente de implantação da Web está em execução. Quando você implanta um pacote de um computador remoto, o serviço de agente de implantação da Web é responsável para extrair e instalar o conteúdo do pacote. O serviço é iniciado por padrão quando você instala a ferramenta de implantação da Web e é executado sob a identidade do serviço de rede.
 
@@ -217,7 +217,7 @@ Você pode verificar se um serviço está em execução de várias maneiras dife
 
 Por padrão, o serviço de agente remoto escuta na porta TCP 80, nesta URL:
 
-http:// [*nome do servidor*] / MSDEPLOYAGENTSERVICE
+http:// [<em>nome do servidor</em>] / MSDEPLOYAGENTSERVICE
 
 Na maioria dos casos, você não precisará configurar as regras de firewall adicionais para o serviço de agente remoto, como servidores web geralmente escutam solicitações HTTP na porta 80. Se você personalizou a instalação para escutar em uma porta não padrão, você precisará configurar as exceções de firewall, conforme necessário.
 
@@ -233,6 +233,6 @@ Neste ponto, seu servidor web está pronto para aceitar e instalar pacotes da we
 
 Para obter orientação sobre como configurar arquivos de projeto Microsoft Build Engine (MSBuild) personalizados para implantar pacotes da web para o serviço de agente remoto, consulte [configurando propriedades de implantação de um ambiente de destino](configuring-deployment-properties-for-a-target-environment.md).
 
->[!div class="step-by-step"]
-[Anterior](scenario-configuring-a-production-environment-for-web-deployment.md)
-[Próximo](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
+> [!div class="step-by-step"]
+> [Anterior](scenario-configuring-a-production-environment-for-web-deployment.md)
+> [Próximo](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)

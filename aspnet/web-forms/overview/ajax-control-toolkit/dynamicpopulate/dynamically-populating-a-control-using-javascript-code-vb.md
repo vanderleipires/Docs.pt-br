@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
-title: "Preenchendo dinamicamente um controle com o código JavaScript (VB) | Microsoft Docs"
+title: Preenchendo dinamicamente um controle com o código JavaScript (VB) | Microsoft Docs
 author: wenz
-description: "O controle DynamicPopulate no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino em t..."
+description: O controle DynamicPopulate no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino em t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b4090b3a785059c8f09de266df79eba0914e9f13
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04bbc6fca839c2b1ed5cafd3a4411604b98e187d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-vb"></a>Preenchendo dinamicamente um controle com o código JavaScript (VB)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle DynamicPopulate no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino na página, sem uma atualização de página. Também é possível disparar a população usando código personalizado de JavaScript do lado do cliente.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O `DynamicPopulate` controle no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino na página, sem uma atualização de página. Também é possível disparar a população usando código personalizado de JavaScript do lado do cliente.
 
@@ -62,6 +62,6 @@ Observe que dentro do contexto de um botão de opção, a expressão JavaScript 
 
 Um clique no botão recupera a data do servidor, no formato especificado ([clique para exibir a imagem em tamanho normal](dynamically-populating-a-control-using-javascript-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](dynamically-populating-a-control-vb.md)
-[Próximo](using-dynamicpopulate-with-a-user-control-and-javascript-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](dynamically-populating-a-control-vb.md)
+> [Próximo](using-dynamicpopulate-with-a-user-control-and-javascript-vb.md)

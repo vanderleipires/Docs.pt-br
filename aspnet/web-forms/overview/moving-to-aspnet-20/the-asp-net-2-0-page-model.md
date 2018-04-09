@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
-title: "O modelo do ASP.NET 2.0 página | Microsoft Docs"
+title: O modelo do ASP.NET 2.0 página | Microsoft Docs
 author: microsoft
-description: "No ASP.NET 1. x, os desenvolvedores precisavam escolher entre um modelo de código em linha e um modelo de código code-behind. Por trás do código podem ser implementado usando ambos os attr Src..."
+description: No ASP.NET 1. x, os desenvolvedores precisavam escolher entre um modelo de código em linha e um modelo de código code-behind. Por trás do código podem ser implementado usando ambos os attr Src...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: e008f197cf08bec81c560018f2d42306598f9e6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fda85ec03f845cafa7720382bf85652937932c44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-aspnet-20-page-model"></a>O modelo do ASP.NET 2.0 de página
 ====================
@@ -77,7 +77,7 @@ O atributo CodeFile é a substituição para o atributo CodeBehind no Visual Stu
 
 O atributo CodeFileBaseClass é usado em casos onde você deseja várias páginas para derivar de uma única classe base. Devido a implementação de classes parciais no ASP.NET, sem esse atributo, de uma classe base que usa campos comuns compartilhados para fazer referência a controles declarados em uma página ASPX não funcionará corretamente porque ASP. Mecanismo de compilação de redes criará automaticamente os novos membros com base nos controles na página. Portanto, se você quiser uma classe base comum para duas ou mais páginas no ASP.NET, você precisará definir especifique sua classe base no atributo ' CodeFileBaseClass e, em seguida, derive cada classe de páginas de classe base. O atributo CodeFile também é necessário quando este atributo é usado.
 
-## <a name="compilationmode"></a>compilationMode
+## <a name="compilationmode"></a>CompilationMode
 
 Este atributo permite que você defina a propriedade CompilationMode da página ASPX. A propriedade CompilationMode é uma enumeração que contém os valores **sempre**, **automática**, e **nunca**. O padrão é **sempre**. O **automática** configuração impedirá ASP.NET dinamicamente a página de compilação se possível. Excluindo páginas de compilação dinâmica aumenta o desempenho. No entanto, se uma página que foi excluída contém código que deve ser compilado, um erro será gerado quando a página é acessada.
 
@@ -148,7 +148,7 @@ Retorna o caminho relativo de aplicativo para a página ou controle. Por exemplo
 
 ## <a name="apprelativevirtualpath"></a>AppRelativeVirtualPath
 
-Retorna o caminho relativo para a página ou controle. Por exemplo para uma página localizada em http://app/folder/page.aspx, a propriedade retorna ~ / folder/page.aspx.
+Retorna o caminho relativo para a página ou controle. Por exemplo, para uma página localizada em http://app/folder/page.aspx, a propriedade retorna ~ / folder/page.aspx.
 
 ## <a name="asynctimeout"></a>AsyncTimeout
 
@@ -182,7 +182,7 @@ Essa propriedade retorna uma referência a um objeto de HtmlHead que contém o c
 
 Essa propriedade somente leitura obtém o caractere que é usado para separar os identificadores de controle quando o ASP.NET está construindo uma ID exclusiva para controles em uma página. Ele não se destina a ser usado diretamente no seu código.
 
-## <a name="isasync"></a>É assíncrono
+## <a name="isasync"></a>IsAsync
 
 Essa propriedade permite páginas assíncronas. Páginas assíncronas são discutidas neste módulo.
 
@@ -600,11 +600,13 @@ Use o método IsStartupScriptRegistered para determinar se um script já foi reg
 
 Aqui estão alguns dos outros métodos úteis da classe ClientScriptManager.
 
-| **GetCallbackEventReference** | Consulte os retornos de chamada de script neste módulo. |
-| --- | --- |
-| **GetPostBackClientHyperlink** | Obtém uma referência de JavaScript (javascript:&lt;chamar&gt;) que pode ser usado para lançar novamente de um evento no lado do cliente. |
-| **GetPostBackEventReference** | Obtém uma cadeia de caracteres que pode ser usada para iniciar uma postagem de volta do cliente. |
-| **GetWebResourceUrl** | Retorna uma URL para um recurso que é inserido em um assembly. Deve ser usado em conjunto com **RegisterClientScriptResource**. |
-| **RegisterClientScriptResource** | Registra um recurso da Web com a página. Estes são os recursos incorporados em um assembly e manipuladas pelo novo manipulador WebResource. |
-| **RegisterHiddenField** | Registra um campo de formulário oculto com a página. |
-| **RegisterOnSubmitStatement** | Registra o código do lado do cliente que é executado quando o formulário HTML é enviado. |
+
+|  <strong>GetCallbackEventReference</strong>   |                                                 Consulte os retornos de chamada de script neste módulo.                                                 |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+|  <strong>GetPostBackClientHyperlink</strong>  |                Obtém uma referência de JavaScript (javascript:&lt;chamar&gt;) que pode ser usado para lançar novamente de um evento no lado do cliente.                 |
+|  <strong>GetPostBackEventReference</strong>   |                                   Obtém uma cadeia de caracteres que pode ser usada para iniciar uma postagem de volta do cliente.                                    |
+|      <strong>GetWebResourceUrl</strong>       | Retorna uma URL para um recurso que é inserido em um assembly. Deve ser usado em conjunto com <strong>RegisterClientScriptResource</strong>. |
+| <strong>RegisterClientScriptResource</strong> |     Registra um recurso da Web com a página. Estes são os recursos incorporados em um assembly e manipuladas pelo novo manipulador WebResource.      |
+|     <strong>RegisterHiddenField</strong>      |                                                 Registra um campo de formulário oculto com a página.                                                 |
+|  <strong>RegisterOnSubmitStatement</strong>   |                                  Registra o código do lado do cliente que é executado quando o formulário HTML é enviado.                                   |
+

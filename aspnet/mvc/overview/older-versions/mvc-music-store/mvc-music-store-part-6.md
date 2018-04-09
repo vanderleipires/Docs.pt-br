@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
-title: "Parte 6: Usando as anotações de dados para validação de modelo | Microsoft Docs"
+title: 'Parte 6: Usando as anotações de dados para validação de modelo | Microsoft Docs'
 author: jongalloway
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 6 abrange usando as anotações de dados modelo V..."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 6 abrange usando as anotações de dados modelo V...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: b2083d5604741a0142f504f92779c9f931d0d6d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 328eccb4324bb10a7e8dec819a70129fc14c42c4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-6-using-data-annotations-for-model-validation"></a>Parte 6: Usando as anotações de dados para a validação de modelo
 ====================
@@ -81,6 +81,6 @@ Digitar uma única letra no campo título satisfaz os requisitos de validação,
 ![](mvc-music-store-part-6/_static/image3.png)
 
 
->[!div class="step-by-step"]
-[Anterior](mvc-music-store-part-5.md)
-[Próximo](mvc-music-store-part-7.md)
+> [!div class="step-by-step"]
+> [Anterior](mvc-music-store-part-5.md)
+> [Próximo](mvc-music-store-part-7.md)

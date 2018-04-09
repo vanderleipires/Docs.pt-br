@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 title: Permitir que somente determinados caracteres em uma caixa de texto (VB) | Microsoft Docs
 author: wenz
-description: "Controles de validação ASP.NET podem garantir que somente determinados caracteres são permitidos em entrada do usuário. No entanto isso ainda não impede que os usuários digitem inválidos..."
+description: Controles de validação ASP.NET podem garantir que somente determinados caracteres são permitidos em entrada do usuário. No entanto isso ainda não impede que os usuários digitem inválidos...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b41ec1dfda5d85c625026e1f1e1ecd7e190ee3ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2b63a3582c09e08310c97d4adfc7b8273458a723
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>Permitir que somente determinados caracteres em uma caixa de texto (VB)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > Controles de validação ASP.NET podem garantir que somente determinados caracteres são permitidos em entrada do usuário. No entanto isso ainda não impedir que os usuários digitem caracteres inválidos e tentar enviar o formulário.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Controles de validação ASP.NET podem garantir que somente determinados caracteres são permitidos em entrada do usuário. No entanto isso ainda não impedir que os usuários digitem caracteres inválidos e tentar enviar o formulário.
 
@@ -45,10 +45,10 @@ Em seguida, precisamos de uma caixa de texto:
 
 Por fim, o `FilteredTextBoxExtender` controle cuida de restringir os caracteres que o usuário tem permissão para o tipo. Primeiro, defina o `TargetControlID` de atributo para o `ID` do `TextBox` controle. Em seguida, escolha uma das disponíveis `FilterType` valores:
 
-- `Custom`padrão. Você deve fornecer uma lista de caracteres válidos
-- `LowercaseLetters`apenas letras minúsculas
-- `Numbers`apenas dígitos
-- `UppercaseLetters`somente as letras maiusculas
+- `Custom` padrão. Você deve fornecer uma lista de caracteres válidos
+- `LowercaseLetters` apenas letras minúsculas
+- `Numbers` apenas dígitos
+- `UppercaseLetters` somente as letras maiusculas
 
 Se o `Custom FilterType` for usado, o `ValidChars` propriedade deve ser definido e fornecer uma lista de caracteres que podem ser digitados. Aliás: se você tentar colar o texto na caixa de texto, todos os caracteres inválidos são removidos.
 
@@ -63,5 +63,5 @@ Execute a página e tente inserir uma letra se JavaScript estiver habilitado, el
 
 Podem ser inseridos apenas dígitos ([clique para exibir a imagem em tamanho normal](allowing-only-certain-characters-in-a-text-box-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](allowing-only-certain-characters-in-a-text-box-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](allowing-only-certain-characters-in-a-text-box-cs.md)

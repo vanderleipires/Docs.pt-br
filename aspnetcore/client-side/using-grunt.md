@@ -1,7 +1,7 @@
 ---
-title: "Usando o assistente no núcleo do ASP.NET"
+title: Use o assistente no núcleo do ASP.NET
 author: rick-anderson
-description: 
+description: ''
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-grunt
-ms.openlocfilehash: c23f170b36ac1b9623835337020f2b5ac9514971
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 169552e9b5dd811884ce1c65952677ba83626b58
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-grunt-in-aspnet-core"></a>Usando o assistente no núcleo do ASP.NET 
+# <a name="use-grunt-in-aspnet-core"></a>Use o assistente no núcleo do ASP.NET
 
 Por [Noel arroz](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)
 
-Pesado é um executor de tarefas do JavaScript que automatiza minimização de script, a compilação TypeScript, ferramentas de "pano" de qualidade do código, pré-processadores de CSS e praticamente qualquer tarefa repetitiva que precisa fazer para dar suporte ao desenvolvimento de cliente. Pesado tem suporte total no Visual Studio, embora os modelos de projeto do ASP.NET usam Gulp por padrão (consulte [usando Gulp](using-gulp.md)).
+Pesado é um executor de tarefas do JavaScript que automatiza minimização de script, a compilação TypeScript, ferramentas de "pano" de qualidade do código, pré-processadores de CSS e praticamente qualquer tarefa repetitiva que precisa fazer para dar suporte ao desenvolvimento de cliente. Pesado tem suporte total no Visual Studio, embora os modelos de projeto do ASP.NET usam Gulp por padrão (consulte [usar Gulp](using-gulp.md)).
 
 Este exemplo usa um projeto vazio do ASP.NET Core como ponto de partida, para mostrar como automatizar o processo de compilação do cliente desde o início.
 
@@ -129,16 +129,16 @@ Baixarão os pacotes para cada item devDependencies, juntamente com todos os arq
 
 Pesado estiver configurado para usar um manifesto chamado *Gruntfile.js* que define, carrega e registra as tarefas que podem ser executadas manualmente ou configuradas para ser executado automaticamente com base em eventos no Visual Studio.
 
-1.  Clique com o botão direito e selecione **Adicionar > Novo Item**. Selecione o **arquivo de configuração Grunt** opção, deixe o nome padrão, *Gruntfile.js*e clique no **adicionar** botão.
+1. Clique com o botão direito e selecione **Adicionar > Novo Item**. Selecione o **arquivo de configuração Grunt** opção, deixe o nome padrão, *Gruntfile.js*e clique no **adicionar** botão.
 
-    O código inicial inclui uma definição de módulo e o `grunt.initConfig()` método. O `initConfig()` é usado para definir opções para cada pacote, e o restante do módulo serão carregadas e registrar tarefas.
+   O código inicial inclui uma definição de módulo e o `grunt.initConfig()` método. O `initConfig()` é usado para definir opções para cada pacote, e o restante do módulo serão carregadas e registrar tarefas.
     
-    ```javascript
-    module.exports = function (grunt) {
-      grunt.initConfig({
-      });
-    };
-    ```
+   ```javascript
+   module.exports = function (grunt) {
+     grunt.initConfig({
+     });
+   };
+   ```
 
 2. Dentro de `initConfig()` método, adicionar opções para o `clean` conforme mostrado no exemplo de tarefa *Gruntfile.js* abaixo. A tarefa de limpeza aceita uma matriz de cadeias de caracteres de diretório. Essa tarefa remove arquivos de wwwroot/lib e o diretório temp/inteiro.
 
@@ -207,16 +207,16 @@ Pesado estiver configurado para usar um manifesto chamado *Gruntfile.js* que def
     > [!NOTE]
     > A opção "-W069" é um erro gerado pelo jshint quando colchete de JavaScript usa a sintaxe para atribuir uma propriedade em vez da notação de ponto, ou seja, `Tastes["Sweet"]` em vez de `Tastes.Sweet`. A opção desativa o aviso para permitir que o restante do processo para continuar.
 
-10.  Adicionar o `uglify` tarefas usando o código abaixo.
+10. Adicionar o `uglify` tarefas usando o código abaixo.
 
     A tarefa minimiza o *combined.js* arquivo encontrado no diretório temp e cria o arquivo de resultado no wwwroot/lib seguindo a convenção de nomenclatura padrão  *\<nome de arquivo\>. min.js*.
     
     ```javascript
     uglify: {
-      all: {
-        src: ['temp/combined.js'],
-        dest: 'wwwroot/lib/combined.min.js'
-      }
+     all: {
+       src: ['temp/combined.js'],
+       dest: 'wwwroot/lib/combined.min.js'
+     }
     },
     ```
 
@@ -241,7 +241,7 @@ Pesado estiver configurado para usar um manifesto chamado *Gruntfile.js* que def
     ![Depois que todas as tarefas de Gerenciador de soluções](using-grunt/_static/solution-explorer-after-all-tasks.png)
     
     > [!NOTE]
-    > Para obter mais informações sobre as opções para cada pacote, visite [https://www.npmjs.com/](https://www.npmjs.com/) e o nome do pacote na caixa de pesquisa na página principal de pesquisa. Por exemplo, você pode pesquisar o pacote limpeza de Contribuidor pesado para obter um link de documentação que explica a todos os seus parâmetros.
+    > Para obter mais informações sobre as opções para cada pacote, visite [ https://www.npmjs.com/ ](https://www.npmjs.com/) e o nome do pacote na caixa de pesquisa na página principal de pesquisa. Por exemplo, você pode pesquisar o pacote limpeza de Contribuidor pesado para obter um link de documentação que explica a todos os seus parâmetros.
 
 ### <a name="all-together-now"></a>Todos juntos agora
 
@@ -255,7 +255,7 @@ A nova tarefa aparece no Explorador do Executador de tarefas em tarefas de Alias
 
 ![tarefas do Assistente de alias](using-grunt/_static/alias-tasks.png)
 
-## <a name="watching-for-changes"></a>Monitorar alterações
+## <a name="watching-for-changes"></a>Monitorando alterações
 
 Um `watch` tarefa fica de olho em arquivos e diretórios. O relógio dispara tarefas automaticamente se detectar alterações. Adicione o código abaixo para initConfig para observar as alterações \*no diretório TypeScript. js. Se um arquivo JavaScript for alterado, `watch` executará o `all` tarefa.
 
@@ -292,4 +292,4 @@ Pesado é um executor de tarefa avançada que pode ser usado para automatizar a 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-   * [Usando o Gulp](using-gulp.md)
+   * [Usar o Gulp](using-gulp.md)

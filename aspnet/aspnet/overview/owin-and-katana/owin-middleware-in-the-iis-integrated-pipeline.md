@@ -2,21 +2,21 @@
 uid: aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 title: Middleware OWIN no IIS integrado pipeline | Microsoft Docs
 author: Praburaj
-description: "Este artigo mostra como executar componentes de middleware OWIN (OMCs) no pipeline integrado do IIS, e como definir o evento de pipeline um OMC executa em. Você deve..."
+description: Este artigo mostra como executar componentes de middleware OWIN (OMCs) no pipeline integrado do IIS, e como definir o evento de pipeline um OMC executa em. Você deve...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2013
 ms.topic: article
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ed1ae0309e9bdd3ca4ae229195835f20bc729
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5df70c80084a32c5f61ac9288c8cdbfaaa47f124
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>Middleware OWIN no pipeline integrado do IIS
 ====================
@@ -83,13 +83,13 @@ Componentes de middleware Owin (OMC) podem ser configurados para serem executado
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample9.cmd)]
 
- chamadas para `app.UseStageMarker` passando `Authenticate` ou `PostAuthenticate` não será respeitada e nenhuma exceção será lançada. OMCs executados no estágio mais recente, que, por padrão, é `PreHandlerExecute`. Os marcadores de estágio são usados para torná-los para executar anteriormente. Se você especificar os marcadores de estágio fora de ordem, é arredondado para o marcador anterior. Em outras palavras, a adição de um marcador de estágio diz "Executar não mais tarde do que o estágio X". Execução do OMC no marcador de estágio mais antigo adicionado depois no pipeline OWIN.
+   chamadas para `app.UseStageMarker` passando `Authenticate` ou `PostAuthenticate` não será respeitada e nenhuma exceção será lançada. OMCs executados no estágio mais recente, que, por padrão, é `PreHandlerExecute`. Os marcadores de estágio são usados para torná-los para executar anteriormente. Se você especificar os marcadores de estágio fora de ordem, é arredondado para o marcador anterior. Em outras palavras, a adição de um marcador de estágio diz "Executar não mais tarde do que o estágio X". Execução do OMC no marcador de estágio mais antigo adicionado depois no pipeline OWIN.
 4. O estágio mais antigo de chamadas para `app.UseStageMarker` wins. Por exemplo, se você alternar a ordem de `app.UseStageMarker` chamadas do nosso exemplo anterior:
 
     [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample10.cs?highlight=13,19)]
 
- A janela de saída será exibida: 
+   A janela de saída será exibida: 
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample11.cmd)]
 
- Os OMCs executados no `AuthenticateRequest` estágio, porque o último OMC registrado com o `Authenticate` evento e o `Authenticate` evento precede todos os outros eventos.
+   Os OMCs executados no `AuthenticateRequest` estágio, porque o último OMC registrado com o `Authenticate` evento e o `Authenticate` evento precede todos os outros eventos.

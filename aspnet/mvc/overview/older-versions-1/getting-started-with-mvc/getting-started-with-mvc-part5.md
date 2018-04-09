@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 title: Acessando dados do modelo de um controlador | Microsoft Docs
 author: shanselman
-description: "Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados."
+description: Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
-ms.openlocfilehash: cf81d351aef45af3640f5d113eb3619911e03606
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2ba1b73f40a920e27e4a03d9f703e62054d3f25c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>Acessando dados do modelo de um controlador
 ====================
@@ -63,6 +63,6 @@ Criar links que não precisamos, portanto iremos exclui-los para este exemplo. M
 
 Agora temos uma lista simples de nossos dados do filme. No entanto, se clicarmos no link "Criar novo", podemos obterá um erro como ele está conectado não! Vamos implementar um método de ação de criar e habilitar um usuário para inserir novos filmes em nosso banco de dados.
 
->[!div class="step-by-step"]
-[Anterior](getting-started-with-mvc-part4.md)
-[Próximo](getting-started-with-mvc-part6.md)
+> [!div class="step-by-step"]
+> [Anterior](getting-started-with-mvc-part4.md)
+> [Próximo](getting-started-with-mvc-part6.md)

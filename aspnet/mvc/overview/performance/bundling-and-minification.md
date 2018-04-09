@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/bundling-and-minification
-title: "Empacotamento e minimização | Microsoft Docs"
+title: Empacotamento e minimização | Microsoft Docs
 author: Rick-Anderson
-description: "Empacotamento e minimização são duas técnicas você pode usar no ASP.NET 4.5 para melhorar o tempo de carga de solicitação. Empacotamento e minimização melhora o tempo de carregamento por reducin..."
+description: Empacotamento e minimização são duas técnicas você pode usar no ASP.NET 4.5 para melhorar o tempo de carga de solicitação. Empacotamento e minimização melhora o tempo de carregamento por reducin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/23/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 001ebf89cda66a50cddcd7e4944f27b9396d4450
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="bundling-and-minification"></a>Empacotamento e minimização
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Empacotamento e minimização são duas técnicas você pode usar no ASP.NET 4.5 para melhorar o tempo de carga de solicitação. Empacotamento e minimização melhora o tempo de carregamento, reduzindo o número de solicitações para o servidor e reduzindo o tamanho dos ativos solicitados (por exemplo, CSS e JavaScript)
 
@@ -98,7 +98,7 @@ Para habilitar o empacotamento e minimização, defina o `debug` valor como "fal
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> A menos que `EnableOptimizations` é `true` ou o atributo de depuração no [elemento compilation](https://msdn.microsoft.com/library/s10awwz0.aspx) no *Web. config* arquivo é definido como `false`, arquivos não serão agrupados ou minimizados. Além disso, a versão .min dos arquivos não será usada, as versões de depuração completa serão selecionadas. `EnableOptimizations`substitui o atributo de depuração no [elemento compilation](https://msdn.microsoft.com/library/s10awwz0.aspx) no *Web. config* arquivo
+> A menos que `EnableOptimizations` é `true` ou o atributo de depuração no [elemento compilation](https://msdn.microsoft.com/library/s10awwz0.aspx) no *Web. config* arquivo é definido como `false`, arquivos não serão agrupados ou minimizados. Além disso, a versão .min dos arquivos não será usada, as versões de depuração completa serão selecionadas. `EnableOptimizations` substitui o atributo de depuração no [elemento compilation](https://msdn.microsoft.com/library/s10awwz0.aspx) no *Web. config* arquivo
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>Usando o empacotamento e minimização com Web Forms do ASP.NET e páginas da Web
@@ -186,7 +186,7 @@ Adicionar explicitamente cada arquivo para um pacote é geralmente a preferênci
 
     [!code-csharp[Main](bundling-and-minification/samples/sample12.cs)]
 
- O seletor de curinga "\*. css" coloca em cada arquivo CSS na pasta, incluindo o *Content\themes\base\jquery.ui.all.css* arquivo. O *jquery.ui.all.css* arquivo importa outros arquivos CSS.
+  O seletor de curinga "\*. css" coloca em cada arquivo CSS na pasta, incluindo o *Content\themes\base\jquery.ui.all.css* arquivo. O *jquery.ui.all.css* arquivo importa outros arquivos CSS.
 
 ## <a name="bundle-caching"></a>Pacote de cache
 
@@ -233,15 +233,15 @@ Pacotes devem ser particionados por páginas que precisam delas. Por exemplo, o 
 
 O `System.Web.Optimization` namespace é implementado em System.Web.Optimization.DLL. Ele utiliza a biblioteca de WebGrease (WebGrease.dll) para recursos de minimização, que por sua vez, usa Antlr3.Runtime.dll.
 
-*Uso Twitter tornar postagens rápidas e compartilhar links. É o identificador do Twitter*:[@RickAndMSFT](http://twitter.com/RickAndMSFT)
+*Uso Twitter tornar postagens rápidas e compartilhar links. É o identificador do Twitter*: [@RickAndMSFT](http://twitter.com/RickAndMSFT)
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 - Vídeo:[empacotamento e otimizando](https://channel9.msdn.com/Events/aspConf/aspConf/Bundling-and-Optimizing) por [Howard Dierking](https://twitter.com/#!/howard_dierking)
 - [Adicionando a otimização da Web a um Site de páginas da Web](https://blogs.msdn.com/b/rickandy/archive/2012/08/15/adding-web-optimization-to-a-web-pages-site.aspx).
 - [A adição de empacotamento e minimização de formulários da Web](https://blogs.msdn.com/b/rickandy/archive/2012/08/14/adding-bundling-and-minification-to-web-forms.aspx).
-- [Implicações de desempenho de empacotamento e minimização na navegação na Web](https://blogs.msdn.com/b/henrikn/archive/2012/06/17/performance-implications-of-bundling-and-minification-on-http.aspx) por [Henrik F Nielsen](http://en.wikipedia.org/wiki/Henrik_Frystyk_Nielsen)[@frystyk](https://twitter.com/frystyk)
-- [Usando CDNs e expirar para melhorar o desempenho do Site da Web](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx) de Rick Anderson[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
+- [Implicações de desempenho de empacotamento e minimização na navegação na Web](https://blogs.msdn.com/b/henrikn/archive/2012/06/17/performance-implications-of-bundling-and-minification-on-http.aspx) por [Henrik F Nielsen](http://en.wikipedia.org/wiki/Henrik_Frystyk_Nielsen) [@frystyk](https://twitter.com/frystyk)
+- [Usando CDNs e expirar para melhorar o desempenho do Site da Web](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx) de Rick Anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 - [Minimizar o tempo de resposta (horários de ida e volta)](https://developers.google.com/speed/docs/best-practices/rtt)
 
 ## <a name="contributors"></a>Colaboradores

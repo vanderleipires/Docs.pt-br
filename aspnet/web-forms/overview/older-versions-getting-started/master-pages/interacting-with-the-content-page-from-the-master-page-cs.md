@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs
-title: "Interagir com a página de conteúdo da página mestra (c#) | Microsoft Docs"
+title: Interagir com a página de conteúdo da página mestra (c#) | Microsoft Docs
 author: rick-anderson
-description: "Examina como chamar métodos, definir propriedades, etc. da página de conteúdo no código da página mestra."
+description: Examina como chamar métodos, definir propriedades, etc. da página de conteúdo no código da página mestra.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4d7f6eeac084f3516ab470adf8973351cf08a7f1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7c845c7b0077e6d3fb5ce770029b4f9f48609b17
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-c"></a>Interagir com a página de conteúdo da página mestra (c#)
 ====================
@@ -153,7 +153,7 @@ Conforme discutido anteriormente neste tutorial, é preciso gerar um evento na p
 Uma classe assina um evento, criando uma *manipulador de eventos*, que é um método que é executado em resposta ao evento que está sendo gerado. O publicador define os eventos que ele gera definindo um *delegado do evento*. O delegado do evento especifica que o manipulador de eventos deve aceitar parâmetros de entrada. O .NET Framework, delegados de eventos não retornar qualquer valor em aceita dois parâmetros de entrada:
 
 - Um `Object`, que identifica a origem do evento, e
-- Uma classe derivada de`System.EventArgs`
+- Uma classe derivada de `System.EventArgs`
 
 O segundo parâmetro passado para um manipulador de eventos pode incluir informações adicionais sobre o evento. Enquanto a base de `EventArgs` classe não transmitir qualquer informação, o .NET Framework inclui um número de classes que estendem `EventArgs` e abrangem propriedades adicionais. Por exemplo, um `CommandEventArgs` instância é passada para manipuladores de eventos que respondem ao `Command` evento e inclui duas propriedades informativas: `CommandArgument` e `CommandName`.
 
@@ -199,7 +199,7 @@ O código de manipulador de eventos é concluído, mas ainda temos a transmissã
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample11.cs)]
 
-*publicador* é uma referência ao objeto que oferece o evento *eventName*, e *methodName* é o nome do manipulador de eventos definido no assinante que tem uma assinatura correspondente para o *eventDelegate*. Em outras palavras, se o evento delegar é `EventHandler`, em seguida, *methodName* deve ser o nome de um método no assinante que não retorna um valor e aceita dois parâmetros de tipos de entrada `Object` e `EventArgs`, respectivamente.
+*publicador* é uma referência ao objeto que oferece o evento *eventName*, e *methodName* é o nome do manipulador de eventos definido no assinante que tem uma assinatura correspondente o *eventDelegate*. Em outras palavras, se o evento delegar é `EventHandler`, em seguida, *methodName* deve ser o nome de um método no assinante que não retorna um valor e aceita dois parâmetros de tipos de entrada `Object` e `EventArgs`, respectivamente.
 
 Esse código de cabeamento de evento deve ser executado na primeira visita de página e postagens subsequentes e deve ocorrer em um ponto do ciclo de vida de página anterior quando o evento pode ser gerado. É um bom momento para adicionar o código de evento fiação no estágio de PreInit ocorre logo no início do ciclo de vida da página.
 
@@ -257,12 +257,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
-Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](interacting-with-the-master-page-from-the-content-page-cs.md)
-[Próximo](master-pages-and-asp-net-ajax-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](interacting-with-the-master-page-from-the-content-page-cs.md)
+> [Próximo](master-pages-and-asp-net-ajax-cs.md)

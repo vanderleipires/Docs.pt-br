@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
-title: "Adicionar animação a um controle (VB) | Microsoft Docs"
+title: Adicionar animação a um controle (VB) | Microsoft Docs
 author: wenz
-description: "O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Este tutorial mostra como..."
+description: O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Este tutorial mostra como...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c2d6971ade89405245c8d23cafb6fd8bb9468639
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3da98e478c45213875b3829e51351d03571a05b8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-animation-to-a-control-vb"></a>Adicionar animação a um controle (VB)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Este tutorial mostra como configurar esse uma animação.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Este tutorial mostra como configurar esse uma animação.
 
@@ -51,22 +51,22 @@ Em seguida, nós precisamos de `AnimationExtender`. Depois de fornecer um `ID` e
 
 A animação inteira é aplicada declarativamente, usando uma sintaxe XML, infelizmente atualmente não têm suportada completo do Visual Studio IntelliSense. O nó raiz é `<Animations>;` dentro desse nó, vários eventos são permitidos que determinam quando as animações take(s) local:
 
-- `OnClick`(clique do mouse)
-- `OnHoverOut`(quando o mouse sai um controle)
-- `OnHoverOver`(quando o mouse passa sobre um controle, interrompendo o `OnHoverOut` animação)
-- `OnLoad`(quando a página foi carregada)
-- `OnMouseOut`(quando o mouse sai um controle)
-- `OnMouseOver`(quando o mouse passa sobre um controle, não interrompendo a `OnMouseOut` animação)
+- `OnClick` (clique do mouse)
+- `OnHoverOut` (quando o mouse sai um controle)
+- `OnHoverOver` (quando o mouse passa sobre um controle, interrompendo o `OnHoverOut` animação)
+- `OnLoad` (quando a página foi carregada)
+- `OnMouseOut` (quando o mouse sai um controle)
+- `OnMouseOver` (quando o mouse passa sobre um controle, não interrompendo a `OnMouseOut` animação)
 
 O framework vem com um conjunto de animações, cada um representado por seu próprio elemento XML. Aqui está uma seleção:
 
-- `<Color>`(uma cor de alteração)
-- `<FadeIn>`(fade in)
-- `<FadeOut>`(desaparecimento)
-- `<Property>`(a propriedade do controle de alteração)
-- `<Pulse>`(pulsating)
-- `<Resize>`(o tamanho de alteração)
-- `<Scale>`(proporcionalmente alterando o tamanho)
+- `<Color>` (uma cor de alteração)
+- `<FadeIn>` (fade in)
+- `<FadeOut>` (desaparecimento)
+- `<Property>` (a propriedade do controle de alteração)
+- `<Pulse>` (pulsating)
+- `<Resize>` (o tamanho de alteração)
+- `<Scale>` (proporcionalmente alterando o tamanho)
 
 Neste exemplo, o painel deve desaparecer. A animação terão 1,5 segundos (`Duration` atributo), exibindo 24 (etapas de animação) de quadros por segundo (`Fps` attributs). Aqui está a marcação concluída para o `AnimationExtender` controle:
 
@@ -79,6 +79,6 @@ Quando você executar esse script, o painel é exibido e desaparece em um e meio
 
 O painel é desaparecimento ([clique para exibir a imagem em tamanho normal](adding-animation-to-a-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](dynamically-controlling-updatepanel-animations-cs.md)
-[Próximo](executing-several-animations-at-the-same-time-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](dynamically-controlling-updatepanel-animations-cs.md)
+> [Próximo](executing-several-animations-at-the-same-time-vb.md)

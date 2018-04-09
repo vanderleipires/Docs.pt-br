@@ -1,7 +1,7 @@
 ---
-title: Use o modelo de projeto reagir
+title: Use o modelo de projeto de reagir com ASP.NET Core
 author: SteveSandersonMS
-description: "Saiba como começar a usar o modelo de projeto de aplicativo de página única (SPA) do ASP.NET Core para reagir e criar reagir-aplicativo."
+description: Saiba como começar a usar o modelo de projeto de aplicativo de página única (SPA) do ASP.NET Core para reagir e criar reagir-aplicativo.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: cda9f52d1f5fa1d240e210488bf1bd5c76e49be7
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 4dcfef2bbb99873a9d716a4942f39123944f495c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="use-the-react-project-template"></a>Use o modelo de projeto reagir
+# <a name="use-the-react-project-template-with-aspnet-core"></a>Use o modelo de projeto de reagir com ASP.NET Core
 
 > [!NOTE]
 > Esta documentação não está sobre o modelo de projeto reagir incluída no ASP.NET 2.0 de núcleo. Trata-se o modelo de reagir mais recente para o qual você pode atualizar manualmente. O modelo é incluído no ASP.NET Core 2.1 por padrão.
@@ -63,7 +63,7 @@ O *ClientApp* diretório é um aplicativo de reagir CRA padrão. Consulte o ofic
 
 Há pequenas diferenças entre o aplicativo reagir criado por este modelo e um criado por CRA em si; No entanto, os recursos do aplicativo são inalterados. O aplicativo criado pelo modelo contém um [Bootstrap](https://getbootstrap.com/)-com base em layout e um exemplo básico de roteamento.
 
-## <a name="install-npm-packages"></a>Instalar pacotes de npm
+## <a name="install-npm-packages"></a>Instalar pacotes npm
 
 Para instalar pacotes de terceiros npm, use um prompt de comando no *ClientApp* subdiretório. Por exemplo:
 

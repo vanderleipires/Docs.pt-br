@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/master-pages
-title: "Páginas mestras | Microsoft Docs"
+title: Páginas mestras | Microsoft Docs
 author: microsoft
-description: "Um dos principais componentes para um site da Web com êxito é uma aparência consistente. No ASP.NET 1. x, os desenvolvedores usado controles de usuário para replicar elem. de página comuns."
+description: Um dos principais componentes para um site da Web com êxito é uma aparência consistente. No ASP.NET 1. x, os desenvolvedores usado controles de usuário para replicar elem. de página comuns.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: bd9effd4b73a014d4d7bb825b382b8db34d636f1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f45dd9704f665244d2a48ec000326f6e98984e4f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="master-pages"></a>Páginas mestras
 ====================
@@ -74,7 +74,7 @@ Para criar uma nova página mestra:
 **Figura 2**: Criando uma nova página mestra
 
 
-Observe que a extensão de arquivo para uma página mestra é *. master*. Essa é uma das maneiras em que uma página mestra difere de uma página comum. A principal diferença é que lieu de um @Page diretiva, a página mestra contém um @Master diretiva. Alternar a exibição da fonte para o mestre de página que você acabou de criar e revisar o código.
+Observe que a extensão de arquivo para uma página mestra é <em>. master</em>. Essa é uma das maneiras em que uma página mestra difere de uma página comum. A principal diferença é que lieu de um @Page diretiva, a página mestra contém um @Master diretiva. Alternar a exibição da fonte para o mestre de página que você acabou de criar e revisar o código.
 
 Uma nova página mestra terá um controle ContentPlaceHolder por padrão. Na maioria dos casos, faz mais sentido para criar os elementos de página comuns primeiro e, em seguida, inserir controles ContentPlaceHolder onde o conteúdo personalizado é desejado. Nesses casos, os desenvolvedores vai querer excluir o controle padrão ContentPlaceHolder e inserir novos registros, como a página é desenvolvida. Controles ContentPlaceHolder não são redimensionáveis apesar do fato de que elas exibem as alças de dimensionamento. Os tamanhos de controle ContentPlaceHolder automaticamente com base no conteúdo que ele contém, com uma exceção; Se você colocar um controle ContentPlaceHolder dentro de um elemento de bloco, como uma célula de tabela, ele será dimensionado de acordo com o tamanho do elemento.
 
@@ -142,10 +142,10 @@ Nova página de conteúdo é exibido no Visual Studio com um controle de conteú
 
 A associação entre uma página mestra e uma página de conteúdo pode ser configurada em uma das quatro maneiras diferentes:
 
-- O **MasterPageFile** atributo da @Page diretiva
+- O <strong>MasterPageFile</strong> atributo da @Page diretiva
 - Definindo o **Page.MasterPageFile** propriedade no código.
-- O  **&lt;páginas&gt;**  elemento no arquivo de configuração do aplicativo (Web. config na pasta raiz do aplicativo)
-- O  **&lt;páginas&gt;**  elemento em um arquivo de configuração de subpastas (Web. config em uma subpasta)
+- O **&lt;páginas&gt;** elemento no arquivo de configuração do aplicativo (Web. config na pasta raiz do aplicativo)
+- O **&lt;páginas&gt;** elemento em um arquivo de configuração de subpastas (Web. config em uma subpasta)
 
 ## <a name="masterpagefile-attribute"></a>Atributo MasterPageFile
 
@@ -157,7 +157,7 @@ Definindo a propriedade MasterPageFile no código, você pode aplicar uma págin
 
 ## <a name="using-the-ltpagesgt-element"></a>Usando o &lt;páginas&gt; elemento
 
-Você pode configurar uma página mestra para as páginas, definindo o atributo masterPageFile no &lt;páginas&gt; elemento do arquivo Web. config. Ao usar esse método, tenha em mente que os arquivos Web. config inferiores na estrutura de aplicativo podem substituir essa configuração. Qualquer atributo MasterPageFile definido um @Page diretiva também ignorará esta configuração. Usando o &lt;páginas&gt; elemento torna simples para criar um *mestre* página mestra que pode ser substituída se necessário em determinadas pastas ou arquivos.
+Você pode configurar uma página mestra para as páginas, definindo o atributo masterPageFile no &lt;páginas&gt; elemento do arquivo Web. config. Ao usar esse método, tenha em mente que os arquivos Web. config inferiores na estrutura de aplicativo podem substituir essa configuração. Qualquer atributo MasterPageFile definido um @Page diretiva também ignorará esta configuração. Usando o &lt;páginas&gt; elemento torna simples para criar um <em>mestre</em> página mestra que pode ser substituída se necessário em determinadas pastas ou arquivos.
 
 ## <a name="properties-in-master-pages"></a>Propriedades em páginas mestras
 

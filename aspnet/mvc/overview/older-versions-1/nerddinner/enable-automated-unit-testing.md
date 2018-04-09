@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 title: Habilitar automatizada de teste de unidade | Microsoft Docs
 author: microsoft
-description: "Etapa 12 mostra como desenvolver um conjunto de testes de unidade automatizados que verifique nossa funcionalidade NerdDinner e que fornece a confiança para fazer alterações..."
+description: Etapa 12 mostra como desenvolver um conjunto de testes de unidade automatizados que verifique nossa funcionalidade NerdDinner e que fornece a confiança para fazer alterações...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: 1a4258054d90b2d5bcc06a63fb6f3b4673a4837d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fede08be7e06327c6d04fa5d36f7dd818d79b380
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="enable-automated-unit-testing"></a>Habilitar o teste de unidade automatizado
 ====================
@@ -45,7 +45,7 @@ Testes de unidade automatizados podem fornecer uma rede de segurança que permit
 
 A estrutura do ASP.NET MVC torna fácil e natural para a funcionalidade do aplicativo de teste de unidade. Ele também permite que um fluxo de trabalho de teste controlado por TDD (desenvolvimento) que permite o desenvolvimento baseado em teste primeiro.
 
-### <a name="nerddinnertests-project"></a>Projeto NerdDinner.Tests
+### <a name="nerddinnertests-project"></a>NerdDinner.Tests Project
 
 Quando criamos o nosso aplicativo NerdDinner no início deste tutorial, vamos solicitados com uma caixa de diálogo perguntando se quiséssemos criar um projeto de teste de unidade para ir junto com o projeto de aplicativo:
 
@@ -234,7 +234,7 @@ O objeto de usuário na classe base do controlador encapsula os detalhes sobre o
 
 Estruturas fictícias facilitar os testes, permitindo a criação dinamicamente falsas versões dos objetos dependentes que dão suporte a nossos testes. Por exemplo, podemos usar uma estrutura fictícia em nosso teste da ação de edição para criar dinamicamente um objeto de usuário que nosso DinnersController pode usar para pesquisar um nome de usuário simulada. Isso evitará uma referência nula de ser lançada quando executamos nosso teste.
 
-Há muitos .NET que podem ser usadas com o ASP.NET MVC estruturas fictícias (você pode ver uma lista deles: [http://www.mockframeworks.com/](http://www.mockframeworks.com/)). Para testar o nosso aplicativo NerdDinner, usaremos um código-fonte aberto fictícias framework chamado "Moq", que pode ser baixado gratuitamente do [http://www.mockframeworks.com/moq](http://www.mockframeworks.com/moq).
+Há muitos .NET que podem ser usadas com o ASP.NET MVC estruturas fictícias (você pode ver uma lista deles: [ http://www.mockframeworks.com/ ](http://www.mockframeworks.com/)). Para testar o nosso aplicativo NerdDinner, usaremos um código-fonte aberto fictícias framework chamado "Moq", que pode ser baixado gratuitamente do [ http://www.mockframeworks.com/moq ](http://www.mockframeworks.com/moq).
 
 Após o download, vamos adicionar uma referência em nosso projeto NerdDinner.Tests ao assembly Moq.dll:
 
@@ -285,6 +285,6 @@ Um capítulo posterior no catálogo de discutir desenvolvimento controlado por t
 
 Alguns conclusão final comentários.
 
->[!div class="step-by-step"]
-[Anterior](use-ajax-to-implement-mapping-scenarios.md)
-[Próximo](nerddinner-wrap-up.md)
+> [!div class="step-by-step"]
+> [Anterior](use-ajax-to-implement-mapping-scenarios.md)
+> [Próximo](nerddinner-wrap-up.md)

@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
-title: "Opções de armazenamento de dados (Criando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs"
+title: Opções de armazenamento de dados (Criando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 88f57244bfbfdf33df3bb265d8aa2c93689b2f24
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d638dca331cb24c340a4471e5964a00b75bb608a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>Opções de armazenamento de dados (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -250,7 +250,7 @@ Aqui estão algumas diretrizes sobre como escolher entre os dois modelos.
 | Banco de dados do SQL Azure (PaaS) | SQL Server em uma máquina Virtual (IaaS) |
 | --- | --- |
 | **Os profissionais de** -você não precisa criar ou gerenciar VMs, atualizar ou corrigir o sistema operacional ou do SQL; Azure faz isso para você. -Alta disponibilidade interna, com um SLA de nível de banco de dados. -Baixo custo total de propriedade (TCO) porque você paga apenas pelo que usa (não é necessária uma licença). -BOM para tratar de grandes números de bancos de dados menores (&lt;= 500 GB). -Fácil de criar dinamicamente novos bancos de dados para permitir expansão. | ***Os profissionais de*** - recurso compatível com SQL Server no local. -Pode implementar o SQL Server [alta disponibilidade por meio do AlwaysOn](https://www.microsoft.com/sqlserver/solutions-technologies/mission-critical-operations/high-availability.aspx) em 2 + máquinas virtuais, com um SLA de nível de VM. -Você tem controle total sobre a forma de gerenciamento do SQL. -Pode reutilizar licenças SQL, você já possui ou de pagamento por hora para um. -BOM para lidar com menos mas maior (1 TB) bancos de dados. |
-| **Contras** -algumas lacunas em comparação com o SQL Server no local de recursos (falta de [integração CLR](https://technet.microsoft.com/library/ms131102.aspx), [TDE](https://technet.microsoft.com/library/bb934049.aspx), [suporte à compactação](https://technet.microsoft.com/library/cc280449.aspx), [SQL Servidor de relatório](https://technet.microsoft.com/library/ms159106.aspx), etc.)-limite de tamanho do banco de dados de 500 GB. | ***Contras*** - atualizações/patches (SO e SQL) são de sua responsabilidade - criação e gerenciamento de bancos de dados são de sua responsabilidade - disco de IOPS (operações de entrada/saída por segundo) limitada a aproximadamente 8.000 (por meio de unidades de dados de 16). |
+| **Contras** -algumas lacunas em comparação com o SQL Server no local de recursos (falta de [integração CLR](https://technet.microsoft.com/library/ms131102.aspx), [TDE](https://technet.microsoft.com/library/bb934049.aspx), [suporte à compactação](https://technet.microsoft.com/library/cc280449.aspx), [do SQL Server Reporting Services](https://technet.microsoft.com/library/ms159106.aspx), etc.)-limite de tamanho do banco de dados de 500 GB. | ***Contras*** - atualizações/patches (SO e SQL) são de sua responsabilidade - criação e gerenciamento de bancos de dados são de sua responsabilidade - disco de IOPS (operações de entrada/saída por segundo) limitada a aproximadamente 8.000 (por meio de unidades de dados de 16). |
 
 Se você quiser usar o SQL Server em uma VM, você pode usar sua própria licença do SQL Server, ou você pode pagar por um por hora. Por exemplo, no portal ou por meio da API REST, você pode criar uma nova VM usando uma imagem do SQL Server.
 
@@ -301,6 +301,6 @@ HDInsight (Hadoop no Azure):
 - [Hadoop e HDInsight: grandes de dados no Azure](https://msdn.microsoft.com/magazine/dn385705.aspx). Artigo da MSDN Magazine, Bruno Terkaly e Ricardo Villalobos, apresentando Hadoop no Azure.
 - [Padrões e práticas - diretrizes do Azure Microsoft](https://msdn.microsoft.com/library/dn568099.aspx). Consulte MapReduce padrão.
 
->[!div class="step-by-step"]
-[Anterior](single-sign-on.md)
-[Próximo](data-partitioning-strategies.md)
+> [!div class="step-by-step"]
+> [Anterior](single-sign-on.md)
+> [Próximo](data-partitioning-strategies.md)

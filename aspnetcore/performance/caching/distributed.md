@@ -1,7 +1,7 @@
 ---
-title: "Trabalhando com um cache distribuído no núcleo do ASP.NET"
+title: Trabalhar com um cache distribuído no núcleo do ASP.NET
 author: ardalis
-description: "Saiba como usar o ASP.NET Core distribuída cache para melhorar o desempenho do aplicativo e a escalabilidade, especialmente em um ambiente de farm de servidor ou de nuvem."
+description: Saiba como usar o ASP.NET Core distribuída cache para melhorar o desempenho do aplicativo e a escalabilidade, especialmente em um ambiente de farm de servidor ou de nuvem.
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 635c61cbb72a6a9eb822307bbc80936ee73bedc8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d9c7c1c3b2c052ba11f9ea5eaaa424d69bc43eb2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="working-with-a-distributed-cache-in-aspnet-core"></a>Trabalhando com um cache distribuído no núcleo do ASP.NET
+# <a name="work-with-a-distributed-cache-in-aspnet-core"></a>Trabalhar com um cache distribuído no núcleo do ASP.NET
 
 Por [Steve Smith](https://ardalis.com/)
 
@@ -25,7 +25,7 @@ Os caches distribuídos podem melhorar o desempenho e escalabilidade de aplicati
 
 ## <a name="what-is-a-distributed-cache"></a>O que é um cache distribuído
 
-Um cache distribuído é compartilhado por vários servidores de aplicativo (consulte [Noções básicas de cache](memory.md#caching-basics)). As informações em cache não são armazenadas na memória dos servidores web individuais, e os dados armazenados em cache estão disponíveis para todos os servidores do aplicativo. Isso oferece várias vantagens:
+Um cache distribuído é compartilhado por vários servidores de aplicativo (consulte [Noções básicas de Cache](memory.md#caching-basics)). As informações em cache não são armazenadas na memória dos servidores web individuais, e os dados armazenados em cache estão disponíveis para todos os servidores do aplicativo. Isso oferece várias vantagens:
 
 1. Dados armazenados em cache são coerentes em todos os servidores web. Os usuários não ver resultados diferentes dependendo de qual web server manipula a solicitação
 
@@ -95,7 +95,7 @@ No código de exemplo, um `RedisCache` implementação é usada quando o servido
 [!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
 > [!NOTE]
-> Para instalar o Redis em seu computador local, instale o pacote chocolatey [https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/) e executar `redis-server` em um prompt de comando.
+> Para instalar o Redis em seu computador local, instale o pacote chocolatey [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) e executar `redis-server` em um prompt de comando.
 
 ## <a name="using-a-sql-server-distributed-cache"></a>Usando um SQL Server de cache distribuído
 
@@ -138,7 +138,7 @@ Ao decidir qual implementação de `IDistributedCache` é ideal para seu aplicat
 
 * [Redis Cache no Azure](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Banco de dados do SQL Azure](https://azure.microsoft.com/documentation/services/sql-database/)
-* [Cache in-memory](xref:performance/caching/memory)
+* [Cache na memória](xref:performance/caching/memory)
 * [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
 * [Cache de resposta](xref:performance/caching/response)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)

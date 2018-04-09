@@ -2,21 +2,21 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 title: Design sobreviver a falhas (Criando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: 62a16e9a99cd1298b0db5f8099092212f9f6850b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 01883cb0be3e7c7b5dc8d32b784ccb3a28652f1e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>Design sobreviver a falhas (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -131,6 +131,6 @@ Vídeos:
 - [À prova de falhas: Criação de serviços de nuvem escalonáveis e resilientes](https://channel9.msdn.com/Series/FailSafe). Série de nove partes por Marc Mercuri, Ulrich Homann e Mark Simms. Apresenta os conceitos de alto nível e princípios de arquitetura de uma maneira muito acessível e interessante, com histórias extraídas da experiência do Microsoft Customer Advisory Team (CAT) com clientes reais. Episódios 1 e 8 entram em profundidade os motivos para criar aplicativos de nuvem para sobreviver a falhas. Consulte também a discussão de acompanhamento de limitação no episódio 2 começando em 49:57, a discussão de pontos de falha e modos de falha no episódio 2 começando em 56:05 e a discussão de disjuntores no episódio 3 começando em 40:55.
 - [Criando Big: Lições aprendidas de clientes do Azure - parte II](https://channel9.msdn.com/Events/Build/2012/3-030). Mark Simms fala sobre a criação da falha e instrumentação tudo. Semelhante ao entrar em mais detalhes instruções mas série à prova de falhas.
 
->[!div class="step-by-step"]
-[Anterior](unstructured-blob-storage.md)
-[Próximo](monitoring-and-telemetry.md)
+> [!div class="step-by-step"]
+> [Anterior](unstructured-blob-storage.md)
+> [Próximo](monitoring-and-telemetry.md)

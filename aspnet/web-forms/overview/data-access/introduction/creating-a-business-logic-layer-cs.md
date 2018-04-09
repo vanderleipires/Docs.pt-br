@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
-title: "Criando uma camada de lógica de negócios (c#) | Microsoft Docs"
+title: Criando uma camada de lógica de negócios (c#) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, veremos como centralizar as regras de negócio em um negócio lógica BLL (camada) que serve como um intermediário para troca de dados entre t..."
+description: Neste tutorial, veremos como centralizar as regras de negócio em um negócio lógica BLL (camada) que serve como um intermediário para troca de dados entre t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7518ddd11a05a9e3d5df85e3cf6ceffa09a25060
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6e73e9e68e4abb0d382baa7da925c167809e417a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-business-logic-layer-c"></a>Criando uma camada de lógica de negócios (c#)
 ====================
@@ -61,13 +61,13 @@ Em seguida, vamos adicionar métodos para cada uma das classes para incluir apen
 
 Para o `ProductsBLL` que precisamos adicionar um total de sete métodos de classe:
 
-- `GetProducts()`Retorna todos os produtos
-- `GetProductByProductID(productID)`Retorna o produto com a identificação de produto especificada
-- `GetProductsByCategoryID(categoryID)`Retorna todos os produtos na categoria especificada
-- `GetProductsBySupplier(supplierID)`Retorna todos os produtos do fornecedor especificado
-- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)`Insere um novo produto no banco de dados usando os valores passados-in; Retorna o `ProductID` valor do registro recém-inserido
-- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)`atualiza um produto existente no banco de dados usando os valores passados. Retorna `true` se exatamente uma linha foi atualizada, `false` contrário
-- `DeleteProduct(productID)`Exclui o produto especificado do banco de dados
+- `GetProducts()` Retorna todos os produtos
+- `GetProductByProductID(productID)` Retorna o produto com a identificação de produto especificada
+- `GetProductsByCategoryID(categoryID)` Retorna todos os produtos na categoria especificada
+- `GetProductsBySupplier(supplierID)` Retorna todos os produtos do fornecedor especificado
+- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)` Insere um novo produto no banco de dados usando os valores passados-in; Retorna o `ProductID` valor do registro recém-inserido
+- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)` atualiza um produto existente no banco de dados usando os valores passados. Retorna `true` se exatamente uma linha foi atualizada, `false` contrário
+- `DeleteProduct(productID)` Exclui o produto especificado do banco de dados
 
 ProductsBLL.cs
 
@@ -205,12 +205,12 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Liz Shulok, Dennis Patterson, Carlos Santos e Giesenow Hilton. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](creating-a-data-access-layer-cs.md)
-[Próximo](master-pages-and-site-navigation-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-a-data-access-layer-cs.md)
+> [Próximo](master-pages-and-site-navigation-cs.md)

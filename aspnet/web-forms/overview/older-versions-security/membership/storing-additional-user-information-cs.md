@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
-title: "Armazenando informações de usuário adicionais (c#) | Microsoft Docs"
+title: Armazenando informações de usuário adicionais (c#) | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial é responderá essa pergunta criando um aplicativo muito rudimentares convidados. Dessa forma, examinaremos diferentes opções para modeli..."
+description: Este tutorial é responderá essa pergunta criando um aplicativo muito rudimentares convidados. Dessa forma, examinaremos diferentes opções para modeli...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 38dfdab395b6b3559d293c5b1488ede2e88bfe91
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: e484f63a82ad9ecf1f376143bdc1924e231e0801
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="storing-additional-user-information-c"></a>Armazenando informações de usuário adicionais (c#)
 ====================
@@ -107,13 +107,13 @@ O `GuestbookComments` tabela ilustra como armazenar informações que compartilh
 
 Agora é preciso associar três colunas a cada conta de usuário para armazenar a assinatura, que será exibido nos seus comentários de convidados, home page e cidade do usuário. Não há número de diferentes maneiras de fazer isso:
 
-- **Adicionar novas colunas a *`aspnet_Users`* ou *`aspnet_Membership`* tabelas.** Eu não recomendamos essa abordagem porque ela modifica o esquema usado pelo `SqlMembershipProvider`. Essa decisão pode voltar contra você no futuro. Por exemplo, se uma versão futura do ASP.NET usa outro `SqlMembershipProvider` esquema. Microsoft pode incluir uma ferramenta para migrar o ASP.NET 2.0 `SqlMembershipProvider` dados para o novo esquema, mas se você tiver modificado o ASP.NET 2.0 `SqlMembershipProvider` esquema, tal conversão pode não ser possível.
+- <strong>Adicionar novas colunas a</strong><strong>`aspnet_Users`</strong><strong>ou</strong><strong>`aspnet_Membership`</strong><strong>tabelas.</strong> Eu não recomendamos essa abordagem porque ela modifica o esquema usado pelo `SqlMembershipProvider`. Essa decisão pode voltar contra você no futuro. Por exemplo, se uma versão futura do ASP.NET usa outro `SqlMembershipProvider` esquema. Microsoft pode incluir uma ferramenta para migrar o ASP.NET 2.0 `SqlMembershipProvider` dados para o novo esquema, mas se você tiver modificado o ASP.NET 2.0 `SqlMembershipProvider` esquema, tal conversão pode não ser possível.
 
 - **Use o ASP. Estrutura de perfil da rede, definindo uma propriedade de perfil para a cidade, a home page e a assinatura.** O ASP.NET inclui uma estrutura de perfil que foi projetada para armazenar dados específicos de usuário adicionais. Como o framework de associação, estrutura de perfil é criada sobre o modelo de provedor. O .NET Framework vem com um `SqlProfileProvider` seja armazena dados de perfil em um banco de dados do SQL Server. Na verdade, nosso banco de dados já tem a tabela usada pelo `SqlProfileProvider` (`aspnet_Profile`), como ele foi adicionado ao adicionamos os serviços do aplicativo de volta a <a id="_msoanchor_2"> </a> [ *criar o esquema de associação no SQL Servidor* ](creating-the-membership-schema-in-sql-server-cs.md) tutorial.   
- O principal benefício do framework perfil é que ele permite para desenvolvedores definir as propriedades de perfil no `Web.config` – nenhum código precisa ser gravada para serializar os dados de perfil de e para o armazenamento de dados subjacente. Em resumo, é extremamente fácil para definir um conjunto de propriedades de perfil e trabalhar com eles no código. No entanto, o sistema de perfil deixa muito a desejar quando se trata de controle de versão, portanto, se você tiver um aplicativo em que você espera que novas propriedades específicas do usuário a ser adicionado em um momento posterior, ou arquivos existentes sejam removidas ou modificadas, em seguida, a estrutura de perfil não pode ser o  melhor opção. Além disso, o `SqlProfileProvider` armazena as propriedades do perfil de maneira altamente desnormalizada, facilitando praticamente impossível executar consultas diretamente os dados de perfil (por exemplo, quantos usuários têm uma cidade de Nova York inicial).   
- Para obter mais informações sobre a estrutura de perfil, consulte a seção "Leituras adicionais" no final deste tutorial.
+  O principal benefício do framework perfil é que ele permite para desenvolvedores definir as propriedades de perfil no `Web.config` – nenhum código precisa ser gravada para serializar os dados de perfil de e para o armazenamento de dados subjacente. Em resumo, é extremamente fácil para definir um conjunto de propriedades de perfil e trabalhar com eles no código. No entanto, o sistema de perfil deixa muito a desejar quando se trata de controle de versão, portanto, se você tiver um aplicativo em que você espera que novas propriedades específicas do usuário a ser adicionado em um momento posterior, ou arquivos existentes sejam removidas ou modificadas, em seguida, a estrutura de perfil não pode ser o  melhor opção. Além disso, o `SqlProfileProvider` armazena as propriedades do perfil de maneira altamente desnormalizada, facilitando praticamente impossível executar consultas diretamente os dados de perfil (por exemplo, quantos usuários têm uma cidade de Nova York inicial).   
+  Para obter mais informações sobre a estrutura de perfil, consulte a seção "Leituras adicionais" no final deste tutorial.
 
-- **Adicione essas três colunas em uma nova tabela no banco de dados e estabelecer uma relação um para um entre essa tabela e *`aspnet_Users`*.** Essa abordagem envolve um pouco mais trabalho do que com a estrutura de perfil, mas oferece a máxima flexibilidade em como as propriedades de usuário adicionais são modeladas no banco de dados. Essa é a opção que vamos usar neste tutorial.
+- <strong>Adicione essas três colunas em uma nova tabela no banco de dados e estabelecer uma relação um para um entre essa tabela e</strong><strong>`aspnet_Users`</strong><strong>.</strong> Essa abordagem envolve um pouco mais trabalho do que com a estrutura de perfil, mas oferece a máxima flexibilidade em como as propriedades de usuário adicionais são modeladas no banco de dados. Essa é a opção que vamos usar neste tutorial.
 
 Vamos criar uma nova tabela chamada `UserProfiles` para salvar a cidade, a home page e a assinatura para cada usuário. Com o botão direito na pasta de tabelas na janela do Gerenciador de banco de dados e optar por criar uma nova tabela. Nome da primeira coluna `UserId` e defina seu tipo como `uniqueidentifier`. Não permitir `NULL` valores e marque a coluna como uma chave primária. Em seguida, adicione colunas nomeadas: `HomeTown` do tipo `nvarchar(50)`; `HomepageUrl` do tipo `nvarchar(100)`; e assinatura do tipo `nvarchar(500)`. Cada uma dessas três colunas pode aceitar um `NULL` valor.
 
@@ -131,7 +131,7 @@ Agora que temos o modelo de dados criado, você está pronto para usá-lo. Nas e
 
 Há várias maneiras para permitir que o usuário conectado no momento exibir e editar suas informações de cidade, a home page e a assinatura principal. Foi possível criar manualmente a interface do usuário com a caixa de texto e controles de rótulo ou use um dos dados de controles da Web, como o controle DetailsView. Para executar o banco de dados `SELECT` e `UPDATE` instruções poderíamos escrever ADO.NET na classe de code-behind da nossa página de código ou, Alternativamente, empregam uma abordagem declarativa com SqlDataSource. O ideal é nosso aplicativo conteria uma arquitetura em camadas, que podemos ou pode invocar por meio de programação de classe de code-behind da página ou declarativamente por meio do controle ObjectDataSource.
 
-Desde que esta série de tutorial concentra-se na autenticação de formulários, autorização, contas de usuário e funções, não haverá uma discussão completa sobre essas opções de acesso de dados diferente ou por uma arquitetura hierárquica é preferível executar instruções SQL diretamente Na página ASP.NET. Vou percorrer usando um DetailsView e SqlDataSource – a opção mais rápida e fácil – mas os conceitos abordados certamente podem ser aplicados a alternativa lógica de acesso dados e controles da Web. Para obter mais informações sobre como trabalhar com dados no ASP.NET, consulte o meu  *[trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)*  série de tutoriais.
+Desde que esta série de tutorial concentra-se na autenticação de formulários, autorização, contas de usuário e funções, não haverá uma discussão completa sobre essas opções de acesso de dados diferente ou por uma arquitetura hierárquica é preferível executar instruções SQL diretamente Na página ASP.NET. Vou percorrer usando um DetailsView e SqlDataSource – a opção mais rápida e fácil – mas os conceitos abordados certamente podem ser aplicados a alternativa lógica de acesso dados e controles da Web. Para obter mais informações sobre como trabalhar com dados no ASP.NET, consulte o meu *[trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)* série de tutoriais.
 
 Abrir o `AdditionalUserInfo.aspx` página o `Membership` pasta e adicionar um controle DetailsView para a página configuração seu `ID` propriedade `UserProfile` e limpar seu `Width` e `Height` propriedades. Expanda a marca inteligente de DetailsView e escolha para associá-lo a um novo controle de fonte de dados. Isso iniciará o Assistente de configuração de fonte de dados (consulte a Figura 7). A primeira etapa solicitará que você especifique o tipo de fonte de dados. Já que vamos se conectar diretamente ao `SecurityTutorials` banco de dados, escolha o ícone de banco de dados, especificando o `ID` como `UserProfileDataSource`.
 
@@ -428,9 +428,9 @@ A primeira `WizardStep`, `CreateUserWizardStep`, renderiza a interface que solic
 
 Para personalizar a interface do controle CreateUserWizard para incluir campos adicionais, podemos:
 
-- **Criar um ou mais novos *`WizardStep`* s para conter os elementos da interface de usuário adicionais**. Para adicionar uma nova `WizardStep` CreateUserWizard, clique o "Adicionar ou remover `WizardSteps`" link de marca inteligente para iniciar o `WizardStep` Editor de coleção. Lá você pode adicionar, remover ou reordenar as etapas no assistente. Essa é a abordagem que usaremos para este tutorial.
+- <strong>Criar um ou mais novos</strong><strong>`WizardStep`</strong><strong>s para conter os elementos da interface de usuário adicionais</strong>. Para adicionar uma nova `WizardStep` CreateUserWizard, clique o "Adicionar ou remover `WizardSteps`" link de marca inteligente para iniciar o `WizardStep` Editor de coleção. Lá você pode adicionar, remover ou reordenar as etapas no assistente. Essa é a abordagem que usaremos para este tutorial.
 
-- **Converter o *`CreateUserWizardStep`* em um editável *`WizardStep`*.** Isso substitui o `CreateUserWizardStep` com um equivalente `WizardStep` cuja marcação define uma interface de usuário que corresponda a `CreateUserWizardStep`' s. Convertendo o `CreateUserWizardStep` em um `WizardStep` podemos reposicionar os controles ou adicionar elementos de interface de usuário adicionais para esta etapa. Para converter o `CreateUserWizardStep` ou `CompleteWizardStep` em um editável `WizardStep`, clique o "Personalizar criar usuário etapa" ou "Personalizar concluir a etapa" vincular de marca inteligente do controle.
+- <strong>Converter o</strong><strong>`CreateUserWizardStep`</strong><strong>em um editável</strong><strong>`WizardStep`</strong><strong>.</strong> Isso substitui o `CreateUserWizardStep` com um equivalente `WizardStep` cuja marcação define uma interface de usuário que corresponda a `CreateUserWizardStep`' s. Convertendo o `CreateUserWizardStep` em um `WizardStep` podemos reposicionar os controles ou adicionar elementos de interface de usuário adicionais para esta etapa. Para converter o `CreateUserWizardStep` ou `CompleteWizardStep` em um editável `WizardStep`, clique o "Personalizar criar usuário etapa" ou "Personalizar concluir a etapa" vincular de marca inteligente do controle.
 
 - **Use uma combinação das duas opções acima.**
 
@@ -527,12 +527,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a...
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Anterior](user-based-authorization-cs.md)
-[Próximo](creating-the-membership-schema-in-sql-server-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](user-based-authorization-cs.md)
+> [Próximo](creating-the-membership-schema-in-sql-server-vb.md)

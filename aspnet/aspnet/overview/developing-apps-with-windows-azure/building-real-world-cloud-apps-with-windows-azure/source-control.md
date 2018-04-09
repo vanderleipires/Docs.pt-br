@@ -2,21 +2,21 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 title: Fonte de controle (Criando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/23/2015
 ms.topic: article
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0022458fa89a3be7ee8303750ad0e072df3b1bab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Controle de origem (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -66,7 +66,7 @@ A ramificação mestre sempre corresponde código na produção. Ramificações 
 
 Para grandes equipes pode haver ramificações separadas para cada novo recurso; para uma equipe menor, você pode ter todos check-in para a ramificação de desenvolvimento.
 
-Se você tiver uma ramificação para cada recurso, quando o recurso A está pronto você mesclar suas alterações de código fonte backup para o desenvolvimento branch e para baixo em outras ramificações de recurso. Esse código de origem no processo de mesclagem pode ser demorado e para evitar que funcionam mantendo recursos separados, algumas equipes implementam uma alternativa chamada  *[recurso alterna](http://en.wikipedia.org/wiki/Feature_toggle)*  (também conhecido como *recurso sinalizadores*). Isso significa que todo o código para todos os recursos é da mesma ramificação, mas você habilitar ou desabilitar cada recurso usando opções no código. Por exemplo, suponha que A do recurso é um novo campo para tarefas do aplicativo de corrigir e recurso B adiciona a funcionalidade de cache. O código para os dois recursos pode ser no branch de desenvolvimento, mas a exibição do aplicativo será somente o novo campo quando uma variável é definida como true e ele usará apenas o cache quando uma variável diferente é definida como true. Se um do recurso não está pronto para ser promovido, mas o recurso B está pronto, você pode promover todo o código de produção com a chave de recurso A desativar e alternar o recurso B em. Você pode concluir um recurso e promovê-la mais tarde, tudo com mesclagem não código fonte.
+Se você tiver uma ramificação para cada recurso, quando o recurso A está pronto você mesclar suas alterações de código fonte backup para o desenvolvimento branch e para baixo em outras ramificações de recurso. Esse código de origem no processo de mesclagem pode ser demorado e para evitar que funcionam mantendo recursos separados, algumas equipes implementam uma alternativa chamada *[recurso alterna](http://en.wikipedia.org/wiki/Feature_toggle)* (também conhecido como *recurso sinalizadores*). Isso significa que todo o código para todos os recursos é da mesma ramificação, mas você habilitar ou desabilitar cada recurso usando opções no código. Por exemplo, suponha que A do recurso é um novo campo para tarefas do aplicativo de corrigir e recurso B adiciona a funcionalidade de cache. O código para os dois recursos pode ser no branch de desenvolvimento, mas a exibição do aplicativo será somente o novo campo quando uma variável é definida como true e ele usará apenas o cache quando uma variável diferente é definida como true. Se um do recurso não está pronto para ser promovido, mas o recurso B está pronto, você pode promover todo o código de produção com a chave de recurso A desativar e alternar o recurso B em. Você pode concluir um recurso e promovê-la mais tarde, tudo com mesclagem não código fonte.
 
 Se ou não usar ramificações ou alterna para recursos, uma estrutura de ramificação como isso permite que você fluxo seu código de desenvolvimento para a produção de uma maneira ágil e reproduzível.
 
@@ -221,6 +221,6 @@ Para obter mais informações sobre como lidar com informações confidenciais q
 
 Para obter informações sobre outros métodos de informações confidenciais de manutenção do controle de origem, consulte [ASP.NET MVC: manter privada configurações de controle de origem](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx).
 
->[!div class="step-by-step"]
-[Anterior](automate-everything.md)
-[Próximo](continuous-integration-and-continuous-delivery.md)
+> [!div class="step-by-step"]
+> [Anterior](automate-everything.md)
+> [Próximo](continuous-integration-and-continuous-delivery.md)

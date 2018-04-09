@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
 title: Recolher e expandir um painel de JavaScript (VB) | Microsoft Docs
 author: wenz
-description: "O controle de CollapsiblePanel no ASP.NET AJAX Control Toolkit estende um painel e fornece a capacidade de seu conteúdo de recolher e expandi-lo um..."
+description: O controle de CollapsiblePanel no ASP.NET AJAX Control Toolkit estende um painel e fornece a capacidade de seu conteúdo de recolher e expandi-lo um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6adca6771042cad71139977496f985cb8dac63aa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5cf61cd0d8204a5405ba62cd3884d66ccb21968b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>Recolher e expandir um painel de JavaScript (VB)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle CollapsiblePanel no ASP.NET AJAX Control Toolkit estende um painel e fornece a capacidade de seu conteúdo de recolher e expandi-lo novamente. Essas duas ações também podem ser disparadas de código JavaScript personalizado.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle CollapsiblePanel no ASP.NET AJAX Control Toolkit estende um painel e fornece a capacidade de seu conteúdo de recolher e expandi-lo novamente. Essas duas ações também podem ser disparadas de código JavaScript personalizado.
 
@@ -53,7 +53,7 @@ Infelizmente, o extensor atualmente não expõe uma API específica para recolhe
 
 [!code-aspx[Main](collapsing-and-expanding-a-panel-from-javascript-vb/samples/sample5.aspx)]
 
-No código JavaScript do lado do cliente (Introdução ao `<script type="text/javascript">`), o `$find()` método precisa ser usada para acessar o `CollapsiblePanelExtender`. `$find("cpe")`Retorna uma referência a ele. A partir daí, os métodos específicos resolverá a tarefa em questão.
+No código JavaScript do lado do cliente (Introdução ao `<script type="text/javascript">`), o `$find()` método precisa ser usada para acessar o `CollapsiblePanelExtender`. `$find("cpe")` Retorna uma referência a ele. A partir daí, os métodos específicos resolverá a tarefa em questão.
 
 O método de abertura (expandir) o painel é chamado `_doOpen()`; o código a seguir implementa a `doOpen()` função é chamada quando o primeiro botão é clicado:
 
@@ -72,5 +72,5 @@ O terceiro botão alterna o estado do painel: de recolhido expandida e vice-vers
 
 O terceiro botão altera o estado do painel: de recolhido expandido e ([clique para exibir a imagem em tamanho normal](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](collapsing-and-expanding-a-panel-from-javascript-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](collapsing-and-expanding-a-panel-from-javascript-cs.md)

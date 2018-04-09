@@ -1,8 +1,8 @@
 ---
 uid: aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
-title: "Programação ASP.NET Web Pages (Razor) com o Visual Studio | Microsoft Docs"
+title: Programação ASP.NET Web Pages (Razor) com o Visual Studio | Microsoft Docs
 author: tfitzmac
-description: "Este apêndice explica como você pode usar o Visual Studio 2010 ou Visual Web Developer 2010 Express para programa páginas da Web ASP.NET com a sintaxe do Razor."
+description: Este apêndice explica como você pode usar o Visual Studio 2010 ou Visual Web Developer 2010 Express para programa páginas da Web ASP.NET com a sintaxe do Razor.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 5cfeda206eda8fb3fd769d34fb40bae2c3b65093
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eb17c8cc1fab5b552c8495e74bb86ae9dbc5b972
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>Programação de páginas da Web do ASP.NET (Razor) usando o Visual Studio
 ====================
@@ -36,7 +36,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > - Páginas da Web do ASP.NET (Razor) 3
 > - Visual Studio 2013
-> - O WebMatrix 3
+> - WebMatrix 3
 >   
 > 
 > Este tutorial também funciona com 2 de páginas da Web do ASP.NET, o Visual Studio 2012, o Visual Studio 2010 e o WebMatrix 2.
@@ -95,9 +95,9 @@ Agora que você criou um site, você pode ver como IntelliSense funciona no Visu
 1. No site que você acabou de criar, abrir o *cshtml* página.
 2. Após o `<h3>` marcas da página, digite `@ServerInfo.` (incluindo o ponto final). Observe como IntelliSense exibe os métodos disponíveis para o `ServerInfo` auxiliar em uma lista suspensa. 
 
-    ![IntelliSense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
+    ![intellisense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
 3. Selecione o `GetHtml` método na lista e pressione Enter. IntelliSense preenche automaticamente o método. (Como com qualquer método em c#, você deve adicionar `()` caracteres após o método.)  
- O código completo para o `GetHtml` método é semelhante ao exemplo a seguir:  
+   O código completo para o `GetHtml` método é semelhante ao exemplo a seguir:  
 
     [!code-cshtml[Main](program-asp-net-web-pages-in-visual-studio/samples/sample1.cshtml)]
 4. Pressione Ctrl + F5 para executar a página. Esta é a página de aparência quando exibido em um navegador: 
@@ -138,7 +138,7 @@ Esta seção mostra como instalar o Visual Web Developer Express 2010 e as ferra
 
 1. Se você ainda não tiver o Web Platform Installer, baixe-o da URL a seguir:
 
-    [https://www.microsoft.com/Web/downloads/Platform.aspx](https://www.microsoft.com/web/downloads/platform.aspx)
+    [https://www.microsoft.com/web/downloads/platform.aspx](https://www.microsoft.com/web/downloads/platform.aspx)
 2. Execute o Web Platform Installer.
 3. Clique o **produtos** guia.
 

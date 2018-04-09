@@ -1,5 +1,5 @@
 ---
-title: Cache de memória no ASP.NET Core
+title: Cache de memória no núcleo do ASP.NET
 author: rick-anderson
 description: Saiba como armazenar em cache os dados na memória do ASP.NET Core.
 manager: wpickett
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 64635235c11b55818da02d63d044334f4b2cdb08
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
-ms.translationtype: HT
+ms.openlocfilehash: c2eae83219e8995a614b2933b1290d061f1b7869
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="in-memory-caching-in-aspnet-core"></a>Cache de memória no ASP.NET Core
+# <a name="cache-in-memory-in-aspnet-core"></a>Cache de memória no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), e [Steve Smith](https://ardalis.com/)
 
@@ -98,7 +98,7 @@ Usando um `CancellationTokenSource` permite que várias entradas de cache a ser 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
+* [Trabalhar com um cache distribuído](xref:performance/caching/distributed)
 * [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
 * [Cache de resposta](xref:performance/caching/response)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)

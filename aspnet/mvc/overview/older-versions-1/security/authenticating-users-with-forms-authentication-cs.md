@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
-title: "Autenticar usuários com a forma de autenticação (c#) | Microsoft Docs"
+title: Autenticar usuários com a forma de autenticação (c#) | Microsoft Docs
 author: microsoft
-description: "Saiba como usar o atributo [autorizar] senha proteger páginas específicas em seu aplicativo MVC. Você aprenderá a usar a administração de Site da Web também..."
+description: Saiba como usar o atributo [autorizar] senha proteger páginas específicas em seu aplicativo MVC. Você aprenderá a usar a administração de Site da Web também...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17bcf02e1351587d64b72ee2b40393e0f748f23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e1def84bbf48847339e89b239b026d053640b935
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-forms-authentication-c"></a>Autenticar usuários com a autenticação de formulários (c#)
 ====================
@@ -107,7 +107,7 @@ Usar o banco de dados SQL Express padrão é bom ao desenvolver um aplicativo. M
 
 A primeira etapa é adicionar todos os objetos de banco de dados necessários (tabelas e procedimentos armazenados) para seu banco de dados de produção. É a maneira mais fácil para adicionar esses objetos para um novo banco de dados aproveitar o Assistente de instalação do ASP.NET SQL Server (consulte a Figura 8). Você pode iniciar essa ferramenta, abra o Prompt de comando do Visual Studio 2008 no grupo de programas do Microsoft Visual Studio 2008 e executando o seguinte comando no prompt de comando:
 
-ASPNET\_regsql
+aspnet\_regsql
 
 **Figura 8 – o Assistente de instalação do servidor SQL do ASP.NET**
 
@@ -152,5 +152,5 @@ Depois de criar o logon necessário, é necessário mapear o logon para um usuá
 
 Neste tutorial, você aprendeu a usar a autenticação de formulários ao compilar um aplicativo ASP.NET MVC. Primeiro, você aprendeu a criar novos usuários e funções, tirando proveito da ferramenta de administração de Site da Web. Em seguida, você aprendeu a usar o atributo [autorizar] para impedir que usuários não autorizados invocar ações do controlador. Por fim, você aprendeu como configurar seu aplicativo MVC para armazenar informações de usuário e funções em um banco de dados de produção.
 
->[!div class="step-by-step"]
-[Avançar](authenticating-users-with-windows-authentication-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](authenticating-users-with-windows-authentication-cs.md)

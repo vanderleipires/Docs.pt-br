@@ -1,7 +1,7 @@
 ---
-title: Detalhes de criptografia autenticada
+title: Detalhes de criptografia autenticada no núcleo do ASP.NET
 author: rick-anderson
-description: "Este documento de descreve os detalhes de implementação de proteção de dados do ASP.NET Core autenticado criptografia."
+description: Saiba os detalhes de implementação de criptografia de proteção de dados do ASP.NET Core autenticado.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: b58f36a5f0353da69d6f1ef4db542aba8267027a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3ca5231e84156ede59793825e1a3e3bea0313055
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="authenticated-encryption-details"></a>Detalhes de criptografia autenticada
+# <a name="authenticated-encryption-details-in-aspnet-core"></a>Detalhes de criptografia autenticada no núcleo do ASP.NET
 
 <a name="data-protection-implementation-authenticated-encryption-details"></a>
 
@@ -31,7 +31,7 @@ O formato de carga protegido consiste em três componentes principais:
 
 * Uma id de 128 bits chave que identifica a chave usada para proteger essa carga específica.
 
-* O restante da carga protegido é [específico para o Criptografador encapsulado por esta chave](subkeyderivation.md#data-protection-implementation-subkey-derivation). No exemplo a seguir a chave representa um AES-256-CBC + Criptografador HMACSHA256 e a carga é mais subdividida da seguinte maneira: * modificador chave A 128 bits. * Um vetor de inicialização de 128 bits. * 48 bytes de saída de AES-256-CBC. * Uma marca de autenticação HMACSHA256.
+* O restante da carga protegido é [específico para o Criptografador encapsulado por esta chave](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation). No exemplo a seguir a chave representa um AES-256-CBC + Criptografador HMACSHA256 e a carga é mais subdividida da seguinte maneira: * modificador chave A 128 bits. * Um vetor de inicialização de 128 bits. * 48 bytes de saída de AES-256-CBC. * Uma marca de autenticação HMACSHA256.
 
 Uma carga protegido exemplo ilustrada abaixo.
 

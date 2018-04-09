@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/11-adding-email-to-your-web-site
-title: "Enviar Email de um Web ASP.NET páginas Site (Razor) | Microsoft Docs"
+title: Enviar Email de um Web ASP.NET páginas Site (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Este capítulo explica como enviar uma mensagem de email automatizada de um site."
+description: Este capítulo explica como enviar uma mensagem de email automatizada de um site.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/11-adding-email-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: c5878c3bc468daef050dcebee99f64441066409a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9be242d238c627a9557fe7ff7e596974e5b7d1c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>Enviar Email de um Site ASP.NET da páginas (Razor)
 ====================
@@ -48,7 +48,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 
 Há inúmeras razões por que você talvez precise enviar email de seu site. Você pode enviar mensagens de confirmação para os usuários, ou você pode enviar notificações a você mesmo (por exemplo, um novo usuário registrado.) O `WebMail` auxiliar torna mais fácil de enviar email.
 
-Para usar o `WebMail` auxiliar, que você precisa ter acesso a um servidor SMTP. (SMTP significa *Simple Mail Transfer Protocol*.) Um servidor SMTP é um servidor de email que só encaminha mensagens para o destinatário server &#8212; é o lado de saída de emails. Se você usar um provedor de hospedagem para o seu site, eles provavelmente configurá-las com email e elas podem dizer o que é o nome do servidor SMTP. Se você estiver trabalhando em uma rede corporativa, um administrador ou o departamento de TI pode geralmente fornecer as informações sobre um servidor SMTP que você pode usar. Se você estiver trabalhando em casa, você ainda poderá testar usando seu provedor de email comum, que pode informar o nome de seu servidor SMTP. Normalmente são necessários:
+Para usar o `WebMail` auxiliar, que você precisa ter acesso a um servidor SMTP. (SMTP significa *Simple Mail Transfer Protocol*.) Um servidor SMTP é um servidor de email que só encaminha mensagens para o servidor do destinatário &#8212; é o lado de saída de emails. Se você usar um provedor de hospedagem para o seu site, eles provavelmente configurá-las com email e elas podem dizer o que é o nome do servidor SMTP. Se você estiver trabalhando em uma rede corporativa, um administrador ou o departamento de TI pode geralmente fornecer as informações sobre um servidor SMTP que você pode usar. Se você estiver trabalhando em casa, você ainda poderá testar usando seu provedor de email comum, que pode informar o nome de seu servidor SMTP. Normalmente são necessários:
 
 - O nome do servidor SMTP.
 - O número da porta. Isso é quase sempre 25. No entanto, seu provedor pode exigir que você usar a porta 587. Se você estiver usando o protocolo SSL (SSL) para email, talvez seja necessário uma porta diferente. Verifique com seu provedor de email.
@@ -86,23 +86,23 @@ Neste procedimento, você criará duas páginas. A primeira página tem um formu
 
     Modificar configurações relacionadas no código de email a seguir:
 
-    - Defina `your-SMTP-host` para o nome do servidor SMTP que você tem acesso ao.
-    - Defina `your-user-name-here` para o nome de usuário para sua conta do servidor SMTP.
-    - Definir `your-account-password` para a senha de sua conta do servidor SMTP.
-    - Definir `your-email-address-here` para seu próprio endereço de email. Este é o endereço de email que a mensagem é enviada. (Alguns provedores de email não permitem que você especifique outro `From` endereço e usará o nome de usuário como o `From` endereço.)
+   - Defina `your-SMTP-host` para o nome do servidor SMTP que você tem acesso ao.
+   - Defina `your-user-name-here` para o nome de usuário para sua conta do servidor SMTP.
+   - Definir `your-account-password` para a senha de sua conta do servidor SMTP.
+   - Definir `your-email-address-here` para seu próprio endereço de email. Este é o endereço de email que a mensagem é enviada. (Alguns provedores de email não permitem que você especifique outro `From` endereço e usará o nome de usuário como o `From` endereço.)
 
-    > [!TIP] 
-    > 
-    > <a id="configuring_email_settings"></a>
-    > ### <a name="configuring-email-settings"></a>Configurar as configurações de Email
-    > 
-    > Ele pode ser um desafio, às vezes, verifique se que você tem as configurações corretas para o servidor SMTP, número da porta e assim por diante. Veja a seguir algumas dicas:
-    > 
-    > - O nome do servidor SMTP costuma ser algo como `smtp.provider.com` ou `smtp.provider.net`. No entanto, se você publicar seu site em um provedor de hospedagem, o nome do servidor SMTP nesse momento pode ser `localhost`. Isso ocorre porque, após ter publicado seu site estiver sendo executado no servidor do provedor, o servidor de email pode ser local da perspectiva do seu aplicativo. Essa alteração nos nomes de servidor pode significar que você precisa alterar o nome do servidor SMTP como parte do processo de publicação.
-    > - O número da porta normalmente é 25. No entanto, alguns provedores exigem que você usar a porta 587 ou alguma outra porta.
-    > - Certifique-se de que você use as credenciais corretas. Se você tiver publicado seu site para um provedor de hospedagem, use as credenciais que o provedor indicou especificamente são para email. Eles podem ser diferentes das credenciais que você usa para publicar.
-    > - Às vezes, você não precisará de credenciais em todos os. Se você estiver enviando um email usando o provedor pessoal, seu provedor de email já saberá suas credenciais. Depois de publicar, você precisará usar credenciais diferentes quando você testar no computador local.
-    > - Se seu provedor de email usa criptografia, você deve definir `WebMail.EnableSsl` para `true`.
+     > [!TIP] 
+     > 
+     > <a id="configuring_email_settings"></a>
+     > ### <a name="configuring-email-settings"></a>Configurar as configurações de Email
+     > 
+     > Ele pode ser um desafio, às vezes, verifique se que você tem as configurações corretas para o servidor SMTP, número da porta e assim por diante. Veja a seguir algumas dicas:
+     > 
+     > - O nome do servidor SMTP costuma ser algo como `smtp.provider.com` ou `smtp.provider.net`. No entanto, se você publicar seu site em um provedor de hospedagem, o nome do servidor SMTP nesse momento pode ser `localhost`. Isso ocorre porque, após ter publicado seu site estiver sendo executado no servidor do provedor, o servidor de email pode ser local da perspectiva do seu aplicativo. Essa alteração nos nomes de servidor pode significar que você precisa alterar o nome do servidor SMTP como parte do processo de publicação.
+     > - O número da porta normalmente é 25. No entanto, alguns provedores exigem que você usar a porta 587 ou alguma outra porta.
+     > - Certifique-se de que você use as credenciais corretas. Se você tiver publicado seu site para um provedor de hospedagem, use as credenciais que o provedor indicou especificamente são para email. Eles podem ser diferentes das credenciais que você usa para publicar.
+     > - Às vezes, você não precisará de credenciais em todos os. Se você estiver enviando um email usando o provedor pessoal, seu provedor de email já saberá suas credenciais. Depois de publicar, você precisará usar credenciais diferentes quando você testar no computador local.
+     > - Se seu provedor de email usa criptografia, você deve definir `WebMail.EnableSsl` para `true`.
 4. Execute o *EmailRequest.cshtml* página em um navegador. (Verifique se a página está selecionada no **arquivos** espaço de trabalho antes de você executá-lo.)
 5. Insira seu nome e uma descrição do problema e, em seguida, clique no **enviar** botão. Você será redirecionado para a *ProcessRequest.cshtml* página, que confirma a mensagem e que envia uma mensagem de email. 
 

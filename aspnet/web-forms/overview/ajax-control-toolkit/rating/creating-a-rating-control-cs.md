@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
-title: "Criando um controle de classificação (c#) | Microsoft Docs"
+title: Criando um controle de classificação (c#) | Microsoft Docs
 author: wenz
-description: "Muitos sites, de comércio eletrônico para sites de comunidades, oferecem seus usuários para artigos de taxa ou itens. Isso geralmente exige algum esforço de codificação, mas é necessário o..."
+description: Muitos sites, de comércio eletrônico para sites de comunidades, oferecem seus usuários para artigos de taxa ou itens. Isso geralmente exige algum esforço de codificação, mas é necessário o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7c004522ac72b848e42320862d77bced0c11ca15
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a48cf0ed9402e2875e87ba7bdb76afc5f501a670
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-rating-control-c"></a>Criando um controle de classificação (c#)
 ====================
@@ -41,12 +41,12 @@ Em seguida, crie um novo arquivo do ASP.NET e comece a adicionar um `ScriptManag
 
 Em seguida, adicione o `Rating` controle do Kit de ferramentas de controle AJAX ASP.NET. Os atributos a seguir precisam ser definidas para este exemplo:
 
-- `CurrentRating`a classificação inicial a ser usado
-- `MaxRating`a classificação máxima
-- `EmptyStarCssClass`a classe CSS a ser usado quando um item de classificação (estrela) está vazio
-- `FilledStarCssClass`a classe CSS a ser usado quando um item de classificação (estrela) é preenchido
-- `StarCssClass`a classe CSS a ser usado para um estado visível
-- `WaitingStarCssClass`a classe CSS usar enquanto uma classificação por estrelas é enviada de volta ao servidor
+- `CurrentRating` a classificação inicial a ser usado
+- `MaxRating` a classificação máxima
+- `EmptyStarCssClass` a classe CSS a ser usado quando um item de classificação (estrela) está vazio
+- `FilledStarCssClass` a classe CSS a ser usado quando um item de classificação (estrela) é preenchido
+- `StarCssClass` a classe CSS a ser usado para um estado visível
+- `WaitingStarCssClass` a classe CSS usar enquanto uma classificação por estrelas é enviada de volta ao servidor
 
 E aqui está a marcação que cria um controle de classificação com cinco itens (smileys) do qual nenhum é preenchido inicialmente:
 
@@ -73,5 +73,5 @@ Salve a página e carregá-lo em seu navegador. Quando você focaliza os itens d
 
 Criando um sistema de classificação com o mínimo de código ([clique para exibir a imagem em tamanho normal](creating-a-rating-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Avançar](creating-a-rating-control-vb.md)
+> [!div class="step-by-step"]
+> [Avançar](creating-a-rating-control-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs
-title: "Configurando programaticamente os valores do parâmetro ObjectDataSource (c#) | Microsoft Docs"
+title: Configurando programaticamente os valores do parâmetro ObjectDataSource (c#) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, examinaremos adicionando um método para nossos DAL e BLL que aceita um único parâmetro de entrada e retorna dados. O exemplo definirá esse parâmetro..."
+description: Neste tutorial, examinaremos adicionando um método para nossos DAL e BLL que aceita um único parâmetro de entrada e retorna dados. O exemplo definirá esse parâmetro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7694c56fa5c50ff75db931e88c2334f560631d74
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1bd1fd63e5aae74459675d45dd399e449d7897b8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-c"></a>Configurando programaticamente os valores do parâmetro ObjectDataSource (c#)
 ====================
@@ -124,7 +124,7 @@ Para definir esse valor por meio de programação, é preciso criar um manipulad
 **Figura 9**: clique no ícone de raio na janela Propriedades à lista de eventos do controle de Web
 
 
-Ambas as abordagens de adicionar um novo manipulador de eventos para o ObjectDataSource `Selecting` evento para a classe de code-behind da página. Nesse manipulador de eventos pode ler e gravar os valores de parâmetro usando `e.InputParameters[parameterName]`, onde  *`parameterName`*  é o valor da `Name` atributo no `<asp:Parameter>` marca (o `InputParameters` coleção também pode ser indexada ordinalmente, como em `e.InputParameters[index]`). Para definir o `month` parâmetro para o mês atual, adicione o seguinte para o `Selecting` manipulador de eventos:
+Ambas as abordagens de adicionar um novo manipulador de eventos para o ObjectDataSource `Selecting` evento para a classe de code-behind da página. Nesse manipulador de eventos pode ler e gravar os valores de parâmetro usando `e.InputParameters[parameterName]`, onde *`parameterName`* é o valor da `Name` atributo no `<asp:Parameter>` marca (o `InputParameters` coleção também pode ser indexada ordinalmente, como em `e.InputParameters[index]`). Para definir o `month` parâmetro para o mês atual, adicione o seguinte para o `Selecting` manipulador de eventos:
 
 
 [!code-csharp[Main](programmatically-setting-the-objectdatasource-s-parameter-values-cs/samples/sample3.cs)]
@@ -147,12 +147,12 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Giesenow Hilton. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](declarative-parameters-cs.md)
-[Próximo](displaying-data-with-the-objectdatasource-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](declarative-parameters-cs.md)
+> [Próximo](displaying-data-with-the-objectdatasource-vb.md)

@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
-title: "Migrando um site existente da associação SQL para a identidade do ASP.NET | Microsoft Docs"
+title: Migrando um site existente da associação SQL para a identidade do ASP.NET | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial ilustra as etapas para migrar um aplicativo web existente com o usuário e os dados de função criados usando a associação de SQL para a nova identidade do ASP.NET s..."
+description: Este tutorial ilustra as etapas para migrar um aplicativo web existente com o usuário e os dados de função criados usando a associação de SQL para a nova identidade do ASP.NET s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/19/2014
 ms.topic: article
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 3638c6779a0fcedaaa49623126b28ecf09a4954f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2790f32bc74cecf450f5a258fc1ff5b280a63923
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrando um site existente da associação SQL para a identidade do ASP.NET
 ====================
@@ -67,14 +67,14 @@ Neste tutorial, obtemos um modelo de aplicativo da web (Web Forms) criado usando
 
 1. No Gerenciador de soluções, clique com botão direito no projeto &gt; **gerenciar pacotes NuGet**. Na caixa de pesquisa, digite "Asp.net Identity". Selecione o pacote na lista de resultados e clique em instalar. Aceite o contrato de licença clicando no botão "Aceito". Observe que este pacote irá instalar os pacotes de dependência: EntityFramework e Microsoft ASP.NET Identity Core. Da mesma forma, instale os pacotes a seguir (ignorar os últimos 4 pacotes OWIN se você não quiser habilitar o log no OAuth):
 
-    - Microsoft.AspNet.Identity.Owin
-    - Microsoft.Owin.Host.SystemWeb
-    - Microsoft.Owin.Security.Facebook
-    - Microsoft.Owin.Security.Google
-    - Microsoft.Owin.Security.MicrosoftAccount
-    - Microsoft.Owin.Security.Twitter
+   - Microsoft.AspNet.Identity.Owin
+   - Microsoft.Owin.Host.SystemWeb
+   - Microsoft.Owin.Security.Facebook
+   - Microsoft.Owin.Security.Google
+   - Microsoft.Owin.Security.MicrosoftAccount
+   - Microsoft.Owin.Security.Twitter
 
-    ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image6.png)
+     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image6.png)
 
 ### <a name="migrate-database-to-the-new-identity-system"></a>Migrar o banco de dados para o novo sistema de identidade
 
@@ -102,7 +102,7 @@ Para classes de identidade do ASP.NET trabalhar fora da caixa com os dados de us
 
 É preciso ter tabelas para cada um desses modelos com colunas que correspondem às propriedades. O mapeamento entre classes e tabelas é definido no `OnModelCreating` método o `IdentityDBContext`. Isso é conhecido como o método de API fluente de configuração e mais informações podem ser encontradas [aqui](https://msdn.microsoft.com/data/jj591617.aspx). A configuração das classes é mencionado abaixo
 
-| **Class** | **Tabela** | **Chave primária** | **Chave estrangeira** |
+| **Class** | **Tabela** | **chave primária** | **chave estrangeira** |
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | Id |  |
 | IdentityRole | AspnetRoles | Id |  |
@@ -193,7 +193,7 @@ Em nosso exemplo, as tabelas de AspNetRoles, AspNetUserClaims, AspNetLogins e As
 
 ### <a name="create-new-account-management-pages"></a>Criar nova conta de páginas de gerenciamento
 
-A próxima etapa da migração é adicionar a páginas de gerenciamento de conta que permitirá que um usuário registrar e entrar. As páginas de conta antiga da associação SQL usam controles que não funcionam com o novo sistema de identidade. Para adicionar o novo usuário páginas de gerenciamento siga o tutorial neste link [https://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project](../getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md) desde a etapa ' Adição de Web Forms para registrar usuários para o aplicativo ' porque já criou o projeto e adicionar os pacotes do NuGet.
+A próxima etapa da migração é adicionar a páginas de gerenciamento de conta que permitirá que um usuário registrar e entrar. As páginas de conta antiga da associação SQL usam controles que não funcionam com o novo sistema de identidade. Para adicionar o novo usuário páginas de gerenciamento siga o tutorial neste link [ https://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project ](../getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md) desde a etapa 'Adicionar formulários da Web para registrar usuários para o aplicativo' desde que nós já criou o projeto e adicionou o NuGet pacotes.
 
 Precisamos fazer algumas alterações para o exemplo trabalhar com o projeto que temos aqui.
 

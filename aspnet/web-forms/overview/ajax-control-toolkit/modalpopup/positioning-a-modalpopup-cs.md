@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-cs
 title: Posicionando um ModalPopup (c#) | Microsoft Docs
 author: wenz
-description: "O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. No entanto o controle não tem um..."
+description: O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. No entanto o controle não tem um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8dcc4e20ac98cbbad1ea3e86b7f895d32c853d4a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bee5be84259231d8cd5efde74b610d72f5e250cc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="positioning-a-modalpopup-c"></a>Posicionando um ModalPopup (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. No entanto o controle não oferece uma funcionalidade interna para posicionar o pop-up.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. No entanto o controle não oferece uma funcionalidade interna para posicionar o pop-up.
 
@@ -62,6 +62,6 @@ E o `stopMoving()` função entra em jogo quando o pop-up é fechado isso pode s
 
 O pop-up modal aparece na posição designada ([clique para exibir a imagem em tamanho normal](positioning-a-modalpopup-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](handling-postbacks-from-a-modalpopup-cs.md)
-[Próximo](launching-a-modal-popup-window-from-server-code-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](handling-postbacks-from-a-modalpopup-cs.md)
+> [Próximo](launching-a-modal-popup-window-from-server-code-vb.md)

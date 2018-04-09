@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
 title: Combate Bots (c#) | Microsoft Docs
 author: wenz
-description: "Bots automatizados Estuque weblogs e outros sites com spam, envio de formulários de comentário sem qualquer interação do usuário. O controle de NoBot no ASP.NET AJAX Con..."
+description: Bots automatizados Estuque weblogs e outros sites com spam, envio de formulários de comentário sem qualquer interação do usuário. O controle de NoBot no ASP.NET AJAX Con...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b8eedff4691c1115e242be884f9e74663dc0b4f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1ea3aaa5461c2f58a927ae975568f18a34a4729b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="fighting-bots-c"></a>Combate Bots (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > Bots automatizados Estuque weblogs e outros sites com spam, envio de formulários de comentário sem qualquer interação do usuário. O controle NoBot no ASP.NET AJAX Control Toolkit pode ajudar a combater os bots.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Bots automatizados Estuque weblogs e outros sites com spam, envio de formulários de comentário sem qualquer interação do usuário. O controle NoBot no ASP.NET AJAX Control Toolkit pode ajudar a combater os bots.
 
@@ -37,7 +37,7 @@ Uma abordagem comum para anular bots é usar o teste CAPTCHAs completamente auto
 
 Há várias vantagens e desvantagens dessa abordagem, mas uma abordagem sobre isso está além do escopo deste tutorial. No entanto há um controle no ASP.NET AJAX Control Toolkit, que fornece uma abordagem semelhante: `NoBot`. Ele é mais fácil superar que um CAPTCHA, mas é muito fácil de usar e é muito bem em sites como blogs, onde ela é considerada um sucesso se mais tentativas de spam é desfeito, que o `NoBot` pode fazer.
 
-`NoBot`intercepta a postagem de formulário da web ASP.NET atual se pelo menos uma das seguintes condições for atendida:
+`NoBot` intercepta a postagem de formulário da web ASP.NET atual se pelo menos uma das seguintes condições for atendida:
 
 - O navegador não consegue resolver um problema de JavaScript (por exemplo quando JavaScript está desativado)
 - O usuário enviou o formulário rápido
@@ -45,9 +45,9 @@ Há várias vantagens e desvantagens dessa abordagem, mas uma abordagem sobre is
 
 Para verificar essas condições, o `NoBot` controle requer esses atributos (todos eles opcional):
 
-- `ResponseMinimumDelaySeconds`valor mínimo de segundos entre postbacks
-- `CutoffWindowSeconds`duração do intervalo de tempo no qual postagens de um IP são medidas
-- `CutoffMaximumInstances`máximo de segundos por intervalo de tempo
+- `ResponseMinimumDelaySeconds` valor mínimo de segundos entre postbacks
+- `CutoffWindowSeconds` duração do intervalo de tempo no qual postagens de um IP são medidas
+- `CutoffMaximumInstances` máximo de segundos por intervalo de tempo
 
 As seguintes exigências de marcação que pelo menos dois segundos decorrerem entre postbacks e há postbacks apenas cinco ou menos dentro de um intervalo de 30 segundos:
 
@@ -72,5 +72,5 @@ Quando você executa esse script e desativar JavaScript ou enviar o formulário 
 
 Essa mensagem de erro pode ter sido causada por um bot ([clique para exibir a imagem em tamanho normal](fighting-bots-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Avançar](fighting-bots-vb.md)
+> [!div class="step-by-step"]
+> [Avançar](fighting-bots-vb.md)

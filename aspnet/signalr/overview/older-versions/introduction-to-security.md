@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/introduction-to-security
-title: "Introdução à segurança do SignalR (SignalR 1. x) | Microsoft Docs"
+title: Introdução à segurança do SignalR (SignalR 1. x) | Microsoft Docs
 author: pfletcher
-description: "Descreve os problemas de segurança que você deve considerar ao desenvolver um aplicativo do SignalR."
+description: Descreve os problemas de segurança que você deve considerar ao desenvolver um aplicativo do SignalR.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: ebc83098b73902fa3f7a90a38dafc43b413e75fe
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b756d3e71d89b6c826bd497f73d052c4c8f634e8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-signalr-security-signalr-1x"></a>Introdução à segurança do SignalR (SignalR 1. x)
 ====================
@@ -98,7 +98,7 @@ Aqui está um exemplo de um ataque CSRF:
 
     [!code-html[Main](introduction-to-security/samples/sample1.html)]
 
- Observe que a ação de formulário envia para o site vulnerável, não para o site mal-intencionado. Esta é a parte de "sites" de CSRF.
+   Observe que a ação de formulário envia para o site vulnerável, não para o site mal-intencionado. Esta é a parte de "sites" de CSRF.
 4. O usuário clica no botão Enviar. O navegador inclui o cookie de autenticação com a solicitação.
 5. A solicitação é executado no servidor e com o contexto de autenticação do usuário e pode fazer tudo o que um usuário autenticado tem permissão para fazer.
 

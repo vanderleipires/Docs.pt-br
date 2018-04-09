@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
-title: "Introdução a páginas da Web ASP.NET - criar um Layout consistente | Microsoft Docs"
+title: Introdução a páginas da Web ASP.NET - criar um Layout consistente | Microsoft Docs
 author: tfitzmac
-description: "Este tutorial mostra como usar layouts para criar uma aparência consistente para as páginas em um site que usa as páginas da Web ASP.NET. Ele pressupõe que você tenha concluído o..."
+description: Este tutorial mostra como usar layouts para criar uma aparência consistente para as páginas em um site que usa as páginas da Web ASP.NET. Ele pressupõe que você tenha concluído o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 692adc5a03892f27c91fe8868c8eab6ce08f49cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c2d5c4d8ed8a71979c16d484ab90d283a45de537
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>Introdução a páginas da Web ASP.NET - criar um Layout consistente
 ====================
@@ -149,7 +149,7 @@ Abra o *Movies.cshtml* página novamente. No código na parte superior, adicione
 
 O `Page` o objeto está disponível em todos os *. cshtml* páginas e é para essa finalidade, ou seja, para compartilhar informações entre uma página e seu layout.
 
-Abra o*\_cshtml* página. Alterar o `<title>` para que ela se pareça com essa marcação de elemento:
+Abra o<em>\_cshtml</em> página. Alterar o `<title>` para que ela se pareça com essa marcação de elemento:
 
 [!code-html[Main](layouts/samples/sample9.html)]
 
@@ -237,6 +237,6 @@ O seguinte tutorial, você aprenderá como publicar seu site da Internet para qu
 - [Criando uma aparência consistente](https://go.microsoft.com/fwlink/?LinkID=202891) — um artigo que fornece mais detalhes sobre como trabalhar com layouts. Ele também descreve como passar um valor para uma página de layout que mostra ou oculta o conteúdo.
 - [Páginas de Layout com Razor aninhadas](http://www.mikesdotnetting.com/Article/164/Nested-Layout-Pages-with-Razor) — blogs Mike Brind um exemplo de como aninhar páginas de layout. (Inclui um download das páginas.)
 
->[!div class="step-by-step"]
-[Anterior](deleting-data.md)
-[Próximo](publishing.md)
+> [!div class="step-by-step"]
+> [Anterior](deleting-data.md)
+> [Próximo](publishing.md)

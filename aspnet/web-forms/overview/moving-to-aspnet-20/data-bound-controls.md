@@ -2,7 +2,7 @@
 uid: web-forms/overview/moving-to-aspnet-20/data-bound-controls
 title: Controles de limite de dados | Microsoft Docs
 author: microsoft
-description: "A maioria dos aplicativos ASP.NET dependem de um certo grau de apresentação de dados de uma fonte de dados back-end. Controles associados a dados tem sido uma parte essencial da interação w..."
+description: A maioria dos aplicativos ASP.NET dependem de um certo grau de apresentação de dados de uma fonte de dados back-end. Controles associados a dados tem sido uma parte essencial da interação w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-bound-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 3ebb0f9a7a2f071b7bf7aa3855920f1a5784a61f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5c3f6aad4b87450149189352e86106f46c765fb8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="data-bound-controls"></a>Controles de dados associados
 ====================
@@ -92,10 +92,10 @@ Se você optar por usar uma tabela de banco de dados como a fonte de dados para 
 | **Nome da coluna** | **Tipo de dados** | **Descrição** |
 | --- | --- | --- |
 | ID | int | Chave primária. Esta coluna pode ter qualquer nome. |
-| ImageUrl | nvarchar (*comprimento*) | A URL relativa ou absoluta da imagem a ser exibida para o ad. |
-| NavigateUrl | nvarchar (*comprimento*) | A URL de destino para o ad. Se você não fornecer um valor, o anúncio não é um hiperlink. |
-| AlternateText | nvarchar (*comprimento*) | O texto exibido se a imagem não pode ser encontrada. Em alguns navegadores, o texto é exibido como uma dica de ferramenta. Texto alternativo também é usado para acessibilidade para que os usuários que não podem ver o gráfico podem ler sua descrição em voz alta. |
-| Palavra-chave | nvarchar (*comprimento*) | Uma categoria para o anúncio no qual a página pode filtrar. |
+| ImageUrl | nvarchar(*length*) | A URL relativa ou absoluta da imagem a ser exibida para o ad. |
+| NavigateUrl | nvarchar(*length*) | A URL de destino para o ad. Se você não fornecer um valor, o anúncio não é um hiperlink. |
+| AlternateText | nvarchar(*length*) | O texto exibido se a imagem não pode ser encontrada. Em alguns navegadores, o texto é exibido como uma dica de ferramenta. Texto alternativo também é usado para acessibilidade para que os usuários que não podem ver o gráfico podem ler sua descrição em voz alta. |
+| Palavra-chave | nvarchar(*length*) | Uma categoria para o anúncio no qual a página pode filtrar. |
 | Impressões | Int (4) | Um número que indica a probabilidade da frequência com que o anúncio é exibido. Quanto maior o número, mais frequentemente o anúncio será exibido. O total de todos os valores de impressões no arquivo XML não pode exceder 2.048.000.000-1. |
 | Largura | Int (4) | A largura da imagem em pixels. |
 | Altura | Int (4) | A altura da imagem em pixels. |
@@ -152,7 +152,7 @@ A tabela a seguir lista os tipos de campo de coluna diferente que podem ser usad
 | ImageField | Exibe uma imagem para cada item no controle GridView. |
 | TemplateField | Exibe conteúdo definido pelo usuário para cada item no controle GridView acordo com um modelo especificado. Esse tipo de campo de coluna permite que você crie um campo de coluna personalizada. |
 
-Para definir uma coleção de campos de coluna declarativamente, primeiro adicione abrindo e fechando  **&lt;colunas&gt;**  marcas entre as marcas de abertura e fechamento do controle GridView. Em seguida, lista os campos de coluna que você deseja incluir entre a abertura e fechamento  **&lt;colunas&gt;**  marcas. As colunas especificadas são adicionadas à coleção de colunas na ordem listada. O **colunas** collection armazena todos os campos no controle da coluna e permite gerenciar programaticamente os campos de coluna no controle GridView.
+Para definir uma coleção de campos de coluna declarativamente, primeiro adicione abrindo e fechando **&lt;colunas&gt;** marcas entre as marcas de abertura e fechamento do controle GridView. Em seguida, lista os campos de coluna que você deseja incluir entre a abertura e fechamento **&lt;colunas&gt;** marcas. As colunas especificadas são adicionadas à coleção de colunas na ordem listada. O **colunas** collection armazena todos os campos no controle da coluna e permite gerenciar programaticamente os campos de coluna no controle GridView.
 
 Campos de coluna explicitamente declarado podem ser exibidos em combinação com os campos de coluna gerada automaticamente. Quando ambos são usados, os campos de coluna explicitamente declarado são renderizados primeiro, seguido pelos campos de coluna gerada automaticamente.
 
@@ -273,7 +273,7 @@ Como o controle FormView usa modelos, não fornece uma maneira de gerar automati
 | Inserir | "Inserir" | Usada em operações de inserção para a tentativa de inserir um novo registro na fonte de dados usando os valores fornecidos pelo usuário. Gera os eventos ItemInserting e ItemInserted. |
 | Novo | "Novo" | Usado em operações de inserção para colocar o controle de FormView no modo de inserção. O conteúdo especificado no **InsertItemTemplate** propriedade é exibida para a linha de dados. |
 | Página | "Página" | Usada em operações de paginação para representar um botão na linha de pager que realiza a paginação. Para especificar a operação de paginação, defina a **CommandArgument** propriedade do botão "Avançar", "Anterior", "First", "Último" ou o índice da página para o qual navegar. Gera os eventos PageIndexChanging e PageIndexChanged. |
-| Atualização | "Atualização" | Usado em operações de atualização para tentar atualizar o registro exibido na fonte de dados com os valores fornecidos pelo usuário. Gera os eventos ItemUpdating e ItemUpdated. |
+| Atualizar | "Atualização" | Usado em operações de atualização para tentar atualizar o registro exibido na fonte de dados com os valores fornecidos pelo usuário. Gera os eventos ItemUpdating e ItemUpdated. |
 
 Diferentemente de quando a exclusão de botão (que exclui o registro exibido imediatamente), quando o botão de edição ou novo é clicado, o FormView controle entra em Editar ou modo de inserção respectivamente. No modo de edição, o conteúdo dentro do **EditItemTemplate** propriedade é exibida para o item de dados atual. Normalmente, o modelo de item de edição é definido, de modo que o botão de edição é substituído por uma atualização e um botão de cancelamento. Controles de entrada que são apropriados para o tipo de dados do campo (como uma caixa de texto ou um controle de caixa de seleção) também geralmente são exibidos com um valor de campo para o usuário modificar. Clique no botão de atualização atualiza o registro na fonte de dados, ao clicar no botão Cancelar abandona quaisquer alterações.
 
@@ -341,7 +341,7 @@ Cada linha de dados no controle DetailsView é criada ao declarar um controle de
 
 Por padrão, a propriedade AutoGenerateRows é definida como **true**, que automaticamente gera um objeto de campo de limite de linha para cada campo de um tipo associável na fonte de dados. Tipos de associáveis válidos são String, DateTime, Decimal, Guid e o conjunto de tipos primitivos. Cada campo é exibido em uma linha como texto, na ordem em que cada campo aparece na fonte de dados.
 
-Gerar automaticamente as linhas fornece uma maneira rápida e fácil de exibir todos os campos no registro. No entanto, para fazer uso de DetailsView controle de recursos avançados de que você deve declarar explicitamente os campos de linha para incluir no controle DetailsView. Para declarar os campos de linha, primeiro defina a **AutoGenerateRows** propriedade **false**. Em seguida, adicione a abertura e fechamento  **&lt;campos&gt;**  marcas entre as marcas de abertura e fechamento do controle DetailsView. Por fim, lista os campos de linha que você deseja incluir entre a abertura e fechamento  **&lt;campos&gt;**  marcas. Os campos de linha especificados são adicionados à coleção de campos, na ordem listada. O **campos** coleção permite a você gerenciar programaticamente os campos de linha no controle DetailsView.
+Gerar automaticamente as linhas fornece uma maneira rápida e fácil de exibir todos os campos no registro. No entanto, para fazer uso de DetailsView controle de recursos avançados de que você deve declarar explicitamente os campos de linha para incluir no controle DetailsView. Para declarar os campos de linha, primeiro defina a **AutoGenerateRows** propriedade **false**. Em seguida, adicione a abertura e fechamento **&lt;campos&gt;** marcas entre as marcas de abertura e fechamento do controle DetailsView. Por fim, lista os campos de linha que você deseja incluir entre a abertura e fechamento **&lt;campos&gt;** marcas. Os campos de linha especificados são adicionados à coleção de campos, na ordem listada. O **campos** coleção permite a você gerenciar programaticamente os campos de linha no controle DetailsView.
 
 > [!NOTE]
 > Gerado automaticamente os campos não são adicionados à coleção de campos de linha.
@@ -511,7 +511,7 @@ O controle TreeView tem várias propriedades que afetam a operação do controle
 
 O **ShowCheckBoxes** propriedade afeta se nós exibem uma caixa de seleção quando processada ou não. Os valores válidos para essa propriedade são **nenhum**, **raiz**, **pai**, **folha**, e **todos os**. Eles afetam o controle TreeView da seguinte maneira:
 
-| **Valor da propriedade** | **Efeito** |
+| **Valor da propriedade** | **Effect** |
 | --- | --- |
 | Nenhum | Caixas de seleção não são exibidas em todos os nós. Essa é a configuração padrão. |
 | Raiz | Uma caixa de seleção só será exibida no nó raiz. |
@@ -562,7 +562,7 @@ O controle TreeView fornece muitas propriedades para controlar a aparência do c
 | HoverNodeStyle | Controla o estilo de nós quando o mouse passa sobre eles. |
 | LeafNodeStyle | Controla o estilo de nós folha. |
 | NodeStyle | Controla o estilo de todos os nós. Estilos de nó específico (como LeafNodeStyle) substituem esse estilo. |
-| Propriedades ParentNodeStyle | Controla o estilo de todos os nós pai. |
+| ParentNodeStyle | Controla o estilo de todos os nós pai. |
 | RootNodeStyle | Controla o estilo para o nó raiz. |
 | SelectedNodeStyle | Controla o estilo para o nó selecionado. |
 
@@ -701,16 +701,16 @@ Este exercício pressupõe que você tenha o SQL Server em execução localmente
 16. Clique o **Editar colunas** link e verifique se **gerar automaticamente campos** é verificada.
 17. Clique em **OK**.
 18. Com o controle GridView selecionado, clique no botão ao lado de **DataKeyNames** propriedade no painel Propriedades.
-19. Selecione **ProductID** do **campos de dados disponíveis** lista e clique no  **&gt;**  botão para adicioná-lo.
+19. Selecione **ProductID** do **campos de dados disponíveis** lista e clique no **&gt;** botão para adicioná-lo.
 20. Clique em OK.
 21. Adicione um novo controle SqlDataSource para a página.
 22. Alterar a ID do controle SqlDataSource para **detalhes**.
 23. No menu tarefas SqlDataSource, escolha **configurar fonte de dados**.
 24. Escolha **Northwind** from a lista suspensa e clique em **próximo**.
-25. Selecione **produtos** do **nome** suspenso e verifique o  **\***  caixa de seleção a **colunas** listbox.
+25. Selecione <strong>produtos</strong> do <strong>nome</strong> suspenso e verifique o <strong> \</ strong > * caixa de seleção a <strong>colunas</strong> listbox.
 26. Clique o **onde** botão.
 27. Selecione **ProductID** do **coluna** lista suspensa.
-28. Selecione  **=**  na lista suspensa do operador.
+28. Selecione **=** na lista suspensa do operador.
 29. Selecione **controle** do **fonte** lista suspensa.
 30. Selecione **GridView1** do **ID de controle** lista suspensa.
 31. Clique o **adicionar** botão para adicionar a cláusula WHERE.

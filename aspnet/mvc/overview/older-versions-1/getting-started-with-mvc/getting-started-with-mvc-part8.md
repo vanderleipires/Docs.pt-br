@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 title: Adicionando uma coluna para o modelo | Microsoft Docs
 author: shanselman
-description: "Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados."
+description: Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: 17ee105f596319423ac83cf718683ed293f952f3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7a0b64ce00fc5ee6d49990f1d4d93a154c467bf5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-column-to-the-model"></a>Adicionando uma coluna para o modelo
 ====================
@@ -77,11 +77,11 @@ Depois que você clicar em criar, é enviadas para a página de índice onde voc
 
 Este tutorial básico temos começar a fazer controladores, associá-los a modos de exibição e à passagem de dados embutidos. Em seguida, é criado e criado um banco de dados e colocar alguns dados nele. Podemos recuperou os dados do banco de dados e exibição em uma tabela HTML. Em seguida, adicionamos um formulário de criação que permitem que o usuário adicionar dados ao banco de dados-se de dentro do aplicativo Web. Adicionada a validação, então feita a validação usar JavaScript do lado do cliente. Por fim, podemos alterou o banco de dados para incluir uma nova coluna de dados e atualizado nossas duas páginas para criar e exibir esses dados novos.
 
-Agora recomendo que você para passar para nosso tutorial de nível intermediário "[repositório de música MVC](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)", bem como os vários vídeos e recursos em [https://asp.net/mvc](https://asp.net/mvc) para saber mais sobre o ASP.NET MVC!
+Agora recomendo que você para passar para nosso tutorial de nível intermediário "[repositório de música MVC](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)", bem como os vários vídeos e recursos em [ https://asp.net/mvc ](https://asp.net/mvc) para saber mais sobre o ASP.NET MVC!
 
 Aproveite!
 
-- Scott Hanselman - [http://hanselman.com](http://hanselman.com) e [ @shanselman ](http://twitter.com/shanselman) no Twitter.
+- Scott Hanselman - [ http://hanselman.com ](http://hanselman.com) e [ @shanselman ](http://twitter.com/shanselman) no Twitter.
 
->[!div class="step-by-step"]
-[Anterior](getting-started-with-mvc-part7.md)
+> [!div class="step-by-step"]
+> [Anterior](getting-started-with-mvc-part7.md)

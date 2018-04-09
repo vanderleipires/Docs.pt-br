@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
-title: "Iteração #6 – Use o desenvolvimento controlado por testes (VB) | Microsoft Docs"
+title: 'Iteração #6 – Use o desenvolvimento controlado por testes (VB) | Microsoft Docs'
 author: microsoft
-description: "Essa iteração do sexto, adicionamos novas funcionalidades para nosso aplicativo escrevendo testes de unidade primeiro e escrever código os testes de unidade. Essa iteração,..."
+description: Essa iteração do sexto, adicionamos novas funcionalidades para nosso aplicativo escrevendo testes de unidade primeiro e escrever código os testes de unidade. Essa iteração,...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9b558df9c0b44f5f76115270d361b6022658f9f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 71b3425c5ca8cbfc1b89493c7afb26681f8bdc9d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-6--use-test-driven-development-vb"></a>Iteração #6 – Use o desenvolvimento controlado por testes (VB)
 ====================
@@ -211,7 +211,7 @@ Listagem 11 contém uma nova classe FakeContactManagerRepository que implementa 
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample9.vb)]
 
-**Listando 10 - Controllers\ContactManagerService.vb**
+**Listing 10 - Controllers\ContactManagerService.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample10.vb)]
 
@@ -250,7 +250,7 @@ Infelizmente, mesmo que nós foram satisfeitos todos os requisitos expressados p
 | **Nome da coluna** | **Tipo de dados** | **Permitir nulos** |
 | --- | --- | --- |
 | Id | int | False |
-| Nome | nvarchar (50) | False |
+| Nome | nvarchar(50) | False |
 
 
 Em seguida, é preciso excluir todos os dados da tabela Contacts (caso contrário, podemos ganha não poderá criar uma relação entre as tabelas de contatos e grupos). Siga estas etapas:
@@ -360,6 +360,6 @@ Depois de concluída escrevendo código suficiente para atender os requisitos ex
 
 Na próxima iteração – a iteração final – estamos reescreva nosso aplicativo para tirar proveito do Ajax. Aproveitando Ajax, podemos vai melhorar a capacidade de resposta e o desempenho do aplicativo Gerenciador de contato.
 
->[!div class="step-by-step"]
-[Anterior](iteration-5-create-unit-tests-vb.md)
-[Próximo](iteration-7-add-ajax-functionality-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](iteration-5-create-unit-tests-vb.md)
+> [Próximo](iteration-7-add-ajax-functionality-vb.md)

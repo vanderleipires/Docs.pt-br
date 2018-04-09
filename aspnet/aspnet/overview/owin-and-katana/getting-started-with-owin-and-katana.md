@@ -1,28 +1,28 @@
 ---
 uid: aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
-title: "Introdução ao OWIN e Katana | Microsoft Docs"
+title: Introdução ao OWIN e Katana | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/27/2013
 ms.topic: article
 ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 8922aada723da9b149ec111902fcd883c8241dfb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac0302ef1a786f6b1eef8119b3134a965f01c533
+ms.sourcegitcommit: 5ab5c5f4bfdb0150f42ba84c2770eadf540cae48
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/28/2018
 ---
 <a name="getting-started-with-owin-and-katana"></a>Introdução ao OWIN e Katana
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
-[Abra a Interface da Web para .NET (OWIN)](http://owin.org/) define uma abstração entre os servidores de web do .NET e aplicativos da web. Separando o servidor web do aplicativo, OWIN torna mais fácil criar middleware para o desenvolvimento de web .NET. Além disso, o OWIN torna mais fácil a aplicativos da web de porta para outros hosts &#8212; por exemplo, hospedagem interna em um serviço do Windows ou outro processo.
+[Abra a Interface da Web para .NET (OWIN)](http://owin.org/) define uma abstração entre os servidores de web do .NET e aplicativos da web. Separando o servidor web do aplicativo, OWIN torna mais fácil criar middleware para o desenvolvimento de web .NET. Além disso, o OWIN torna mais fácil a aplicativos da web de porta para outros hosts&#8212;por exemplo, hospedagem interna em um serviço do Windows ou outro processo.
 
 OWIN é uma especificação de propriedade da comunidade, não uma implementação. O projeto Katana é um conjunto de componentes do código-fonte aberto OWIN desenvolvida pela Microsoft. Para obter uma visão geral do OWIN e Katana, consulte [uma visão geral de projeto Katana](an-overview-of-project-katana.md). Neste artigo, eu será ir diretamente no código para começar.
 
@@ -36,7 +36,7 @@ Primeiro, crie um novo projeto de aplicativo Web ASP.NET. (No Visual Studio 2012
 
 ![](getting-started-with-owin-and-katana/_static/image1.png)
 
-No **novo projeto ASP.NET** caixa de diálogo, selecione o **vazio** modelo.
+Na caixa de diálogo **Novo Aplicativo Web ASP.NET**, selecione o modelo **Vazio**.
 
 ![](getting-started-with-owin-and-katana/_static/image2.png)
 
@@ -50,7 +50,7 @@ Em seguida, adicione os pacotes do NuGet necessários. Do **ferramentas** menu, 
 
 ### <a name="add-a-startup-class"></a>Adicionar uma classe de inicialização
 
-Em seguida, adicione uma classe de inicialização OWIN. No Gerenciador de soluções, clique com o botão direito e selecione **adicionar**, em seguida, selecione **Novo Item**. No **Adicionar Novo Item** caixa de diálogo, selecione **classe de inicialização Owin**. Para obter mais informações sobre como configurar a classe de inicialização, consulte [detecção de classe de inicialização OWIN](owin-startup-class-detection.md).
+Em seguida, adicione uma classe de inicialização OWIN. No Gerenciador de Soluções, clique com o botão direito e selecione **adicionar**, em seguida, selecione **Novo Item**. No **Adicionar Novo Item** caixa de diálogo, selecione **classe de inicialização Owin**. Para obter mais informações sobre como configurar a classe de inicialização, consulte [detecção de classe de inicialização OWIN](owin-startup-class-detection.md).
 
 ![](getting-started-with-owin-and-katana/_static/image4.png)
 
@@ -74,7 +74,7 @@ Pressione F5 para iniciar a depuração. O Visual Studio abrirá uma janela do n
 
 ## <a name="self-host-owin-in-a-console-application"></a>OWIN auto-host em um aplicativo de Console
 
-É fácil converter este aplicativo de hospedagem do IIS para hospedagem interna em um processo personalizado. Com hospedagem do IIS, IIS atua como o servidor HTTP e o processo de host do servidor. Com hospedagem própria, seu aplicativo cria o processo e usa o **HttpListener** classe como o servidor HTTP.
+É fácil converter este aplicativo de hospedagem do IIS para hospedagem interna em um processo personalizado. Com a hospedagem do IIS, IIS atua como o servidor HTTP e o processo que hospeda o serviço. Com hospedagem própria, seu aplicativo cria o processo e usa o **HttpListener** classe como o servidor HTTP.
 
 No Visual Studio, crie um novo aplicativo de console. Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
 

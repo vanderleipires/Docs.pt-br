@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
-title: "Uma visão geral de inserir, atualizar e excluir dados (c#) | Microsoft Docs"
+title: Uma visão geral de inserir, atualizar e excluir dados (c#) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, veremos como mapear Insert () de um ObjectDataSource, Update (), e métodos de Delete () para os métodos de BLL classes, bem como a configu..."
+description: Neste tutorial, veremos como mapear Insert () de um ObjectDataSource, Update (), e métodos de Delete () para os métodos de BLL classes, bem como a configu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e483c37cc773a7255f18c26bc3609d68f71dff7d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dbd111f79eda6006cb9aed59d8fd0b0342415833
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>Uma visão geral de inserir, atualizar e excluir dados (c#)
 ====================
@@ -238,7 +238,7 @@ Para nosso tutorial, vamos apenas exclua todos os registros da `Order Details` t
 - Aumentar o `DeleteProduct` método para incluir a lógica para excluir detalhes do pedido do produto especificado
 - Modificar a consulta SQL usada pelo TableAdapter para incluir a exclusão de detalhes do pedido do produto especificado
 
-Vamos apenas exclua todos os registros da `Order Details` tabela contornar a restrição de chave estrangeira. Vá para o Gerenciador de servidores no Visual Studio, clique com botão direito no `NORTHWND.MDF` nó e escolha nova consulta. Em seguida, na janela de consulta, execute a seguinte instrução SQL:`DELETE FROM [Order Details]`
+Vamos apenas exclua todos os registros da `Order Details` tabela contornar a restrição de chave estrangeira. Vá para o Gerenciador de servidores no Visual Studio, clique com botão direito no `NORTHWND.MDF` nó e escolha nova consulta. Em seguida, na janela de consulta, execute a seguinte instrução SQL: `DELETE FROM [Order Details]`
 
 
 [![Excluir todos os registros da tabela de detalhes do pedido](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image34.png)
@@ -440,7 +440,7 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Avançar](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)

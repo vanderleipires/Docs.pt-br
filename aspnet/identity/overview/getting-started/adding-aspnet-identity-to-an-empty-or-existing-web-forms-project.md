@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
-title: "Adicionar projeto de formulários do ASP.NET Identity para uma Web vazio ou já existente | Microsoft Docs"
+title: Adicionar projeto de formulários do ASP.NET Identity para uma Web vazio ou já existente | Microsoft Docs
 author: raquelsa
-description: "Este tutorial mostra como adicionar a identidade do ASP.NET (o novo sistema de associação do ASP.NET) para um aplicativo ASP.NET. Quando você cria uma nova Web Forms ou MVC..."
+description: Este tutorial mostra como adicionar a identidade do ASP.NET (o novo sistema de associação do ASP.NET) para um aplicativo ASP.NET. Quando você cria uma nova Web Forms ou MVC...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2013
 ms.topic: article
 ms.assetid: 1cbc0ed2-5bd6-4b62-8d34-4c193dcd8b25
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: 3ab67b93a32106c0b79f9e8d739d47835391edb5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8961e596f0d6cc4810e2439be1ec2915bddb8c78
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>Projeto de formulários de identidade do ASP.NET adicionando um Web vazio ou existente
 ====================
@@ -36,11 +36,11 @@ por [Raquel Soares De Almeida](https://github.com/raquelsa)
 3. Selecione **Visual C# i** n painel esquerdo, em seguida, **Web** e, em seguida, selecione **aplicativo Web ASP.NET**. Nomeie o projeto "WebFormsIdentity" e, em seguida, clique em **Okey**.   
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image1.png)
-4. No **novo projeto ASP.NET** caixa de diálogo, selecione o **vazio** modelo.  
+4. Na caixa de diálogo **Novo Aplicativo Web ASP.NET**, selecione o modelo **Vazio**.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image2.png)  
   
- Observe o **alterar autenticação** botão será desabilitado e não há suporte de autenticação é fornecida nesse modelo. Os modelos de Web Forms, MVC e API da Web permitem que você selecione o método de autenticação. Para obter mais informações, consulte [visão geral de autenticação](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth) .
+   Observe o **alterar autenticação** botão será desabilitado e não há suporte de autenticação é fornecida nesse modelo. Os modelos de Web Forms, MVC e API da Web permitem que você selecione o método de autenticação. Para obter mais informações, consulte [visão geral de autenticação](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth) .
 
 ## <a name="adding-identity-packages-to-your-app"></a>Adicionando pacotes de identidade para seu aplicativo
 
@@ -152,20 +152,20 @@ Neste ponto, apenas adicionamos suporte para a criação de usuários. Agora, va
     > - O `Page_Load` agora verifica o status do usuário atual e executará uma ação com base em seu `Context.User.Identity.IsAuthenticated` status.  
     >     **Exibir o log em nome de usuário** : O Microsoft ASP.NET Identity Framework adicionou os métodos de extensão em [IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) que permite que você obtenha o `UserName` e `UserId` para o Usuário conectado. Esses métodos de extensão são definidos no `Microsoft.AspNet.Identity.Core` assembly. Esses métodos de extensão são a substituição de [HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) .
     > - Método de entrada:   
-    >     `This`método substitui anterior `CreateUser_Click` método neste exemplo e agora conecta o usuário depois de criar com êxito o usuário.   
+    >     `This` método substitui anterior `CreateUser_Click` método neste exemplo e agora conecta o usuário depois de criar com êxito o usuário.   
     >  O Microsoft OWIN Framework adicionou os métodos de extensão em `System.Web.HttpContext` que permite que você obtenha uma referência a um `IOwinContext`. Esses métodos de extensão são definidos no `Microsoft.Owin.Host.SystemWeb` assembly. O `OwinContext` classe expõe um `IAuthenticationManager` propriedade que representa a funcionalidade de middleware de autenticação disponível na solicitação atual.  
     >  Você pode entrar o usuário usando o `AuthenticationManager` do OWIN e chamar `SignIn` e passando o `ClaimsIdentity` como mostrado acima.   
     >  Como identidade do ASP.NET e autenticação de Cookie OWIN são sistema baseado em declarações, o framework requer o aplicativo para gerar um `ClaimsIdentity` para o usuário.   
     >  O `ClaimsIdentity` tem informações sobre todas as declarações para o usuário, como as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio  
     >  Esse código será entre o usuário e gerar um cookie também. Esta chamada é análoga a [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) usado pelo [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) módulo.
-    > - `SignOut`método:   
+    > - `SignOut` método:   
     >  Obtém uma referência para o `AuthenticationManager` do OWIN e chamadas `SignOut`. Isso equivale a [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) método usado pelo [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) módulo.
 5. Pressione **Ctrl + F5** para compilar e executar o aplicativo web. Digite um novo nome de usuário e senha e, em seguida, clique em **registrar**.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image13.png)  
- Observação: neste ponto, o novo usuário é criado e conectado.
+   Observação: neste ponto, o novo usuário é criado e conectado.
 6. Clique em **logoff** botão. Você será redirecionado para o formulário de login.
 7. Insira um nome de usuário inválido ou a senha e clique **login** botão.   
- O `UserManager.Find` método retornará null e a mensagem de erro: " *nome inválido de usuário ou senha* " será exibida.  
+   O `UserManager.Find` método retornará null e a mensagem de erro: " *nome inválido de usuário ou senha* " será exibida.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image14.png)

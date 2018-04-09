@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
-title: "Adicionando uma exibição | Microsoft Docs"
+title: Adicionando uma exibição | Microsoft Docs
 author: shanselman
-description: "Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados."
+description: Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 8725d054861c857ceac10a42b0cc3f2afe056aea
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 978d7980274c072ed559b54ed69ab86245b6c5a7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view"></a>Adicionando uma exibição
 ====================
@@ -120,6 +120,6 @@ Execute o aplicativo e visite `http://localhost:xx/HelloWorld/Welcome?name=Scott
 
 Bem, isso é um tipo de um "M" para o modelo, mas não o tipo de banco de dados. Vejamos o que podemos aprendeu e criar um banco de dados de filmes.
 
->[!div class="step-by-step"]
-[Anterior](getting-started-with-mvc-part2.md)
-[Próximo](getting-started-with-mvc-part4.md)
+> [!div class="step-by-step"]
+> [Anterior](getting-started-with-mvc-part2.md)
+> [Próximo](getting-started-with-mvc-part4.md)

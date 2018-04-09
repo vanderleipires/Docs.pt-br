@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
-title: "Uma visão geral da autenticação de formulários (VB) | Microsoft Docs"
+title: Uma visão geral da autenticação de formulários (VB) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, ativa de discussão simples para implementação; Especificamente, examinaremos a implementação da autenticação de formulários. W o aplicativo da web..."
+description: Neste tutorial, ativa de discussão simples para implementação; Especificamente, examinaremos a implementação da autenticação de formulários. W o aplicativo da web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 90bcff91d0642e6af66f43fd807b253cc516d277
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6482b10a470b50a1fc6f163ee2d59682e83f5a2b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>Uma visão geral da autenticação de formulários (VB)
 ====================
@@ -103,7 +103,7 @@ Em seguida, adicione uma nova página mestra para o site no diretório raiz cham
 **Figura 03**: adicionar um Site.master de chamada de página mestra para o site ([clique para exibir a imagem em tamanho normal](an-overview-of-forms-authentication-vb/_static/image9.png))
 
 
-Defina o layout de página de todo o site aqui na página mestra. Você pode usar o modo de exibição de Design e adicionar qualquer controles de Layout ou Web necessários, ou você pode adicionar manualmente a marcação manualmente na exibição da fonte. Estruturado de layout da página Meu mestre para imitar o layout usado no meu  *[trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)*  série de tutoriais (consulte a Figura 4). Usa a página mestra [folhas de estilo em cascata](http://www.w3schools.com/css/default.asp) para posicionamento e estilos com as configurações de CSS definidas no arquivo Style.css (que está incluído no download de associados neste tutorial). Enquanto você não pode dizer sobre a marcação mostrada abaixo, as regras de CSS são definidas, de modo que a navegação &lt;div&gt;do conteúdo é posicionado absolutamente para que ele é exibido à esquerda e tem uma largura fixa de 200 pixels.
+Defina o layout de página de todo o site aqui na página mestra. Você pode usar o modo de exibição de Design e adicionar qualquer controles de Layout ou Web necessários, ou você pode adicionar manualmente a marcação manualmente na exibição da fonte. Estruturado de layout da página Meu mestre para imitar o layout usado no meu *[trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)* série de tutoriais (consulte a Figura 4). Usa a página mestra [folhas de estilo em cascata](http://www.w3schools.com/css/default.asp) para posicionamento e estilos com as configurações de CSS definidas no arquivo Style.css (que está incluído no download de associados neste tutorial). Enquanto você não pode dizer sobre a marcação mostrada abaixo, as regras de CSS são definidas, de modo que a navegação &lt;div&gt;do conteúdo é posicionado absolutamente para que ele é exibido à esquerda e tem uma largura fixa de 200 pixels.
 
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample1.aspx)]
 
@@ -221,7 +221,7 @@ Agora, precisamos implementar tarefa 2 clique do botão manipulador de eventos -
 
 Antes do ASP.NET 2.0, os desenvolvedores foram responsáveis por implementar os seus próprios armazenamentos de usuário e escrever o código para validar as credenciais fornecidas no repositório. A maioria dos desenvolvedores implementaria o armazenamento do usuário em um banco de dados, criando uma tabela chamada usuários com colunas como nome de usuário, senha, Email, LastLoginDate e assim por diante. Esta tabela, em seguida, teria um registro por conta de usuário. Verificação de credenciais fornecido do usuário envolve a consultar o banco de dados para um nome de usuário correspondente e, em seguida, garantindo que a senha no banco de dados correspondia à senha fornecida.
 
-Com o ASP.NET 2.0, os desenvolvedores devem usar um dos provedores de associação para gerenciar o armazenamento do usuário. Este tutorial série usaremos SqlMembershipProvider, que usa um banco de dados do SQL Server para o repositório do usuário. Ao usar o SqlMembershipProvider é necessário para implementar um esquema de banco de dados específico que inclui as tabelas, exibições e procedimentos armazenados esperados pelo provedor. Vamos examinar como implementar esse esquema de  *[criar o esquema de associação no SQL Server](../membership/creating-the-membership-schema-in-sql-server-vb.md)*  tutorial. Com o provedor de associação em vigor, validar as credenciais do usuário é tão simple quanto chamar o [classe associação](https://msdn.microsoft.com/library/system.web.security.membership.aspx)do [ValidateUser (*username*, *senha*) método](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx), que retorna um valor booliano que indica se a validade do *username* e *senha* combinação. Como podemos ainda não implementado repositório do usuário do SqlMembershipProvider, não podemos usar ValidateUser método a classe de associação neste momento.
+Com o ASP.NET 2.0, os desenvolvedores devem usar um dos provedores de associação para gerenciar o armazenamento do usuário. Este tutorial série usaremos SqlMembershipProvider, que usa um banco de dados do SQL Server para o repositório do usuário. Ao usar o SqlMembershipProvider é necessário para implementar um esquema de banco de dados específico que inclui as tabelas, exibições e procedimentos armazenados esperados pelo provedor. Vamos examinar como implementar esse esquema de *[criar o esquema de associação no SQL Server](../membership/creating-the-membership-schema-in-sql-server-vb.md)* tutorial. Com o provedor de associação em vigor, validar as credenciais do usuário é tão simple quanto chamar o [classe associação](https://msdn.microsoft.com/library/system.web.security.membership.aspx)do [ValidateUser (*username*, *senha*) método](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx), que retorna um valor booliano que indica se a validade do *username* e *senha* combinação. Como podemos ainda não implementado repositório do usuário do SqlMembershipProvider, não podemos usar ValidateUser método a classe de associação neste momento.
 
 Em vez de levar um tempo para criar nossa própria personalizada tabela de banco de dados de usuários (o que seria obsoleta quando implementamos o SqlMembershipProvider), vamos em vez disso, codificar as credenciais válidas dentro de logon da página em si. No LoginButton manipulador de evento, adicione o seguinte código:
 
@@ -241,7 +241,7 @@ Supondo que as credenciais fornecidas são válidas, precisamos criar um tíquet
 
 - [GetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) -cria um tíquete de autenticação de formulários para o nome fornecido *nome de usuário*. Em seguida, esse método cria e retorna um objeto HttpCookie que contém o conteúdo do tíquete de autenticação. Se *persistCookie* for True, um cookie persistente é criado.
 - [SetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) -chama o GetAuthCookie (*username*, *persistCookie*) método para gerar o cookie de autenticação de formulários. Este método adiciona o cookie retornado por GetAuthCookie à coleção de Cookies (supondo que a autenticação de formulários baseados em cookies está sendo usado; caso contrário, este método chama uma classe interna que lida com a lógica de tíquete cookieless).
-- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -este método chama SetAuthCookie (*username*, *persistCookie* ) e, em seguida, redireciona o usuário para a página apropriada.
+- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -este método chama SetAuthCookie (*username*, *persistCookie*) e, em seguida, redireciona o usuário para a página apropriada.
 
 GetAuthCookie é útil quando você precisa modificar o tíquete de autenticação antes de gravar o cookie de para a coleção de Cookies. SetAuthCookie é útil se você deseja criar formulários de tíquete de autenticação e adicioná-lo à coleção de Cookies, mas não deseja redirecionar o usuário para a página apropriada. Talvez você queira mantê-los na página de logon ou enviá-los para alguma página alternativa.
 
@@ -470,12 +470,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial incluem Alicja Maziarz, John Suru e Teresa Murphy. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com).
 
->[!div class="step-by-step"]
-[Anterior](security-basics-and-asp-net-support-vb.md)
-[Próximo](forms-authentication-configuration-and-advanced-topics-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](security-basics-and-asp-net-support-vb.md)
+> [Próximo](forms-authentication-configuration-and-advanced-topics-vb.md)

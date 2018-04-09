@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/top-features-in-web-pages-2
 msc.type: authoredcontent
-ms.openlocfilehash: e8fc758936953970ff3e9ba289516925dee9ef45
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: f0d32edd3ab54c55aa06c803cd91e01cbbb8f08a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a>Os principais recursos em páginas da Web do ASP.NET 2
 ====================
@@ -62,9 +62,9 @@ Para instalar as páginas da Web, você pode usar o Microsoft Web Platform Insta
     Se você usar o Internet Explorer, vá para a próxima etapa. Se você usar um navegador diferente como o Google Chrome ou o Mozilla Firefox, você será solicitado para salvar o *Webmatrix.exe* para o computador. Salve o arquivo e, em seguida, clique em para iniciar o instalador.
 3. Execute o instalador e escolha o **instalar** botão. Isso instala o WebMatrix e páginas da Web.
 
-## <a id="New_and_Enhanced_Features"></a>Recursos novos e aprimorados
+## <a id="New_and_Enhanced_Features"></a>  Recursos novos e aprimorados
 
-### <a id="Changes_for_the_RC_Version"></a>Alterações para a versão RC (junho de 2012)
+### <a id="Changes_for_the_RC_Version"></a>  Alterações para a versão RC (junho de 2012)
 
 A versão RC em junho de 2012 tem algumas alterações da atualização de versão Beta que foi lançado em março de 2012. Essas alterações são:
 
@@ -94,8 +94,8 @@ A versão Beta lançada em fevereiro de 2012 tem apenas algumas alterações da 
     `<a href="~/Default.cshtml">Home</a>`
 - O `Scripts` auxiliar para gerenciamento de ativos (recurso) foi substituído com o `Assets` auxiliar, que tem métodos ligeiramente diferentes, como o seguinte:
 
-    - Para `Scripts.Add`, use`Assets.AddScript`
-    - Para `Scripts.GetScriptTags`, use`Assets.GetScripts`
+  - Para `Scripts.Add`, use `Assets.AddScript`
+  - Para `Scripts.GetScriptTags`, use `Assets.GetScripts`
 
     Isso é uma alteração significativa; o `Scripts` classe não está disponível na versão Beta. Os exemplos de código neste documento que usam o gerenciamento de ativos foram atualizados com essa alteração.
 
@@ -149,13 +149,13 @@ Para exibir um resumo (`<ul>` lista) de todos os erros na página, `Html.Validat
 
 Essas etapas são suficientes para implementar a validação do lado do servidor. Se você quiser adicionar validação do lado do cliente, além disso, faça o seguinte.
 
-Adicione as seguintes referências de arquivo de script dentro do `<head>` seção de uma página da web. As primeiras duas referências de script apontam para arquivos remotos em um servidor de entrega de conteúdo (CDN). A terceira referência aponta para um arquivo de script de local.
+Adicione as seguintes referências de arquivo de script dentro do `<head>` seção de uma página da web. As primeiras duas referências de script apontam para arquivos remotos em um servidor de entrega de conteúdo (CDN). A terceira referência aponta para um arquivo de script de local. Aplicativos de produção devem implementar um fallback quando o CDN não estiver disponível. Teste o fallback.
 
 [!code-html[Main](top-features-in-web-pages-2/samples/sample5.html)]
 
 A maneira mais fácil de obter uma cópia local do *jquery.validate.unobtrusive.min.js* biblioteca é criar um novo site de páginas da Web com base em um dos modelos de site (por exemplo, o Site inicial). O site criado pelo modelo inclui *jquery.validate.unobtrusive.js* arquivo em sua pasta de Scripts, do qual você pode copiá-lo para seu site.
 
-Se seu site usa um*\_SiteLayout* página para controlar o layout de página, você pode incluir essas referências de script na página para que a validação está disponível para todas as páginas de conteúdo. Se você deseja executar a validação apenas em páginas em particular, você pode usar o Gerenciador de ativos para registrar os scripts apenas nessas páginas. Para fazer isso, chame `Assets.AddScript(path)` na página que você deseja validar e fazer referência a cada um dos arquivos de script. Em seguida, adicione uma chamada para `Assets.GetScripts` no  *\_SiteLayout* página para renderizar registrado `<script>` marcas. Para obter mais informações, consulte a seção [registrar Scripts com o Gerenciador de ativos](#resmanagement).
+Se seu site usa um<em>\_SiteLayout</em> página para controlar o layout de página, você pode incluir essas referências de script na página para que a validação está disponível para todas as páginas de conteúdo. Se você deseja executar a validação apenas em páginas em particular, você pode usar o Gerenciador de ativos para registrar os scripts apenas nessas páginas. Para fazer isso, chame `Assets.AddScript(path)` na página que você deseja validar e fazer referência a cada um dos arquivos de script. Em seguida, adicione uma chamada para `Assets.GetScripts` no  <em>\_SiteLayout</em> página para renderizar registrado `<script>` marcas. Para obter mais informações, consulte a seção [registrar Scripts com o Gerenciador de ativos](#resmanagement).
 
 A marcação para um elemento individual, chamar o `Validation.For` método. Esse método emite atributos que jQuery pode conectar-se para fornecer a validação do lado do cliente. Por exemplo:
 
@@ -172,15 +172,15 @@ O exemplo a seguir mostra uma página que valida a entrada do usuário em um for
 
 Aqui está a página quando um usuário envia uma entrada válida:
 
-[![topSeven válido 1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
+[![topSeven-valid-1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
 
 Aqui está a página quando um usuário envia-lo com um campo obrigatório deixado em branco:
 
-[![topSeven válido 2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
+[![topSeven-valid-2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
 
 Aqui está a página quando um usuário envia-la com algo diferente de um número inteiro no **créditos** campo:
 
-[![topSeven válido 3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
+[![topSeven-valid-3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
 
 Para obter mais informações, consulte as postagens de blog a seguir:
 
@@ -207,7 +207,7 @@ O exemplo a seguir mostra como funciona o Gerenciador de ativos. O código cont�
 
 - Um auxiliar personalizado chamado `MakeNote`. Este auxiliar renderiza uma cadeia de caracteres dentro de uma caixa encapsulando uma `div` elemento que tem o estilo com uma borda e adicionando &quot;Observação:&quot; a ele. O auxiliar também chama um arquivo JavaScript que adiciona o comportamento de tempo de execução para a anotação. Em vez de fazer referência o script com um `<script>` marca, o auxiliar registra o script chamando `Assets.AddScript` .
 - Um arquivo JavaScript. Esse é o arquivo que é chamado pelo auxiliar e aumentar temporariamente o tamanho da fonte de itens de anotação durante um `mouseover` eventos.
-- Uma página de conteúdo, que faz referência a*\_SiteLayout* processa algum conteúdo no corpo da página e, em seguida, chama o `MakeNote` auxiliar.
+- Uma página de conteúdo, que faz referência a<em>\_SiteLayout</em> processa algum conteúdo no corpo da página e, em seguida, chama o `MakeNote` auxiliar.
 - Um  *\_SiteLayout* página. Esta página fornece um cabeçalho comuns e uma estrutura de layout de página. Ele também inclui uma chamada para `Assets.GetScripts`, que é como o Gerenciador de ativos processa o script chama em uma página.
 
 Para executar o exemplo:
@@ -447,7 +447,7 @@ Aqui estão alguns itens a lembrar quando você instala a versão Beta 2 de pág
 - Se você desejar executar um site usando a versão de páginas da Web 1 (em vez do padrão, como o ponto anterior), você pode configurar o site para fazer isso. Se seu site ainda não tiver um *Web. config* arquivo na raiz do site, crie um novo e copie o XML a seguir, substituindo o conteúdo existente. Se o site já contém um *Web. config* de arquivo, adicione uma `<appSettings>` elemento como a seguir para o `<configuration>` seção.
 
     [!code-xml[Main](top-features-in-web-pages-2/samples/sample22.xml)]
-'-Se você não especificar uma versão de *Web. config* arquivo, um site é implantado como um site de versão 2. (Os assemblies da versão 2 são copiados para o *bin* pasta no site implantado.)
+  '-Se você não especificar uma versão de *Web. config* arquivo, um site é implantado como um site de versão 2. (Os assemblies da versão 2 são copiados para o *bin* pasta no site implantado.)
 - Novos aplicativos que você cria usando os modelos de site na versão Web Matrix Beta 2 incluem os assemblies da versão 2 páginas da Web do site de *bin* pasta.
 
 Em geral, você pode controlar qual versão de páginas da Web para usar com seu site usando o NuGet para instalar os assemblies apropriados para o site sempre *bin* pasta. Para localizar pacotes, visite [NuGet.org](http://NuGet.org).
@@ -459,7 +459,7 @@ Em geral, você pode controlar qual versão de páginas da Web para usar com seu
 
 O `System.Web.WebPages` namespace contém as seguintes classes que permitem que você trabalhe com modos de exibição: `DefaultDisplayMode`, `DisplayInfo`, e `DisplayModes`. Você pode usar essas classes diretamente e gravar o código que processa a saída direita para dispositivos específicos.
 
-Como alternativa, você pode criar páginas específicas de dispositivo usando um padrão de nomenclatura de arquivo como este: *FileName.* *Mobile**. cshtml*. Por exemplo, você pode criar duas versões de uma página, um denominado *MyFile.cshtml* e um chamado *MyFile.Mobile.cshtml*. No tempo de execução, quando um dispositivo móvel solicita *MyFile.cshtml*, páginas da Web processa o conteúdo de *MyFile.Mobile.cshtml*. Caso contrário, *MyFile.cshtml* é renderizado.
+Como alternativa, você pode criar páginas específicas de dispositivo usando um padrão de nomenclatura de arquivo como este: <em>FileName.</em> <em>Mobile</em><em>. cshtml</em>. Por exemplo, você pode criar duas versões de uma página, um denominado <em>MyFile.cshtml</em> e um chamado <em>MyFile.Mobile.cshtml</em>. No tempo de execução, quando um dispositivo móvel solicita <em>MyFile.cshtml</em>, páginas da Web processa o conteúdo de <em>MyFile.Mobile.cshtml</em>. Caso contrário, <em>MyFile.cshtml</em> é renderizado.
 
 O exemplo a seguir mostra como habilitar renderização móvel com a adição de uma página de conteúdo para dispositivos móveis. *Page1.cshtml* contém conteúdo mais de uma barra lateral de navegação. *Page1.Mobile.cshtml* contém o mesmo conteúdo, mas omite a barra lateral.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
-title: "Exibindo informações de resumo no rodapé do GridView (VB) | Microsoft Docs"
+title: Exibindo informações de resumo no rodapé do GridView (VB) | Microsoft Docs
 author: rick-anderson
-description: "Informações de resumo geralmente são exibidas na parte inferior do relatório em uma linha de resumo. O controle GridView pode incluir uma linha de rodapé em cujas células podemos pr..."
+description: Informações de resumo geralmente são exibidas na parte inferior do relatório em uma linha de resumo. O controle GridView pode incluir uma linha de rodapé em cujas células podemos pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e5b7e39a44d43a857c62842ea3e1dddcacf05c9b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d9a1a3f3c680f367395f984254da6cdcdd3c08d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>Exibindo informações de resumo no rodapé do GridView (VB)
 ====================
@@ -101,7 +101,7 @@ Desde o `GetProductsByCategoryID(categoryID)` método assume um parâmetro de en
 
 [![Obter o valor do parâmetro categoryID na lista suspensa de categorias selecionadas](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
 
-**Figura 8**: obter o  *`categoryID`*  valor do parâmetro na lista suspensa de categorias selecionadas ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
+**Figura 8**: obter o *`categoryID`* valor do parâmetro na lista suspensa de categorias selecionadas ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
 
 
 Depois de concluir o Assistente de GridView terá um BoundField para cada uma das propriedades do produto. Vamos limpar esses BoundFields para que somente o `ProductName`, `UnitPrice`, `UnitsInStock`, e `UnitsOnOrder` BoundFields são exibidos. Fique à vontade para adicionar as configurações de nível de campo para o restante BoundFields (como a formatação de `UnitPrice` como uma moeda). Depois de fazer essas alterações, declarativo do GridView deve ser semelhante ao seguinte:
@@ -114,7 +114,7 @@ Neste ponto, temos um relatório de detalhes/mestre totalmente funcional que mos
 
 [![Obter o valor do parâmetro categoryID na lista suspensa de categorias selecionadas](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
 
-**Figura 9**: obter o  *`categoryID`*  valor do parâmetro na lista suspensa de categorias selecionadas ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
+**Figura 9**: obter o *`categoryID`* valor do parâmetro na lista suspensa de categorias selecionadas ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
 
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>Etapa 2: Exibir um rodapé em GridView
@@ -177,10 +177,10 @@ Criar um `RowDataBound` GridView selecionando o GridView no Designer, clicando n
 
 Para manter um total contínuo, precisamos definir variáveis de fora do escopo do manipulador de eventos. Crie as seguintes quatro variáveis de nível de página:
 
-- `_totalUnitPrice`, do tipo`Decimal`
-- `_totalNonNullUnitPriceCount`, do tipo`Integer`
-- `_totalUnitsInStock`, do tipo`Integer`
-- `_totalUnitsOnOrder`, do tipo`Integer`
+- `_totalUnitPrice`, do tipo `Decimal`
+- `_totalNonNullUnitPriceCount`, do tipo `Integer`
+- `_totalUnitsInStock`, do tipo `Integer`
+- `_totalUnitsOnOrder`, do tipo `Integer`
 
 Em seguida, escrever o código para incrementar esses três variáveis para cada linha de dados encontrados no `RowDataBound` manipulador de eventos.
 
@@ -221,7 +221,7 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Anterior](using-the-formview-s-templates-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](using-the-formview-s-templates-vb.md)

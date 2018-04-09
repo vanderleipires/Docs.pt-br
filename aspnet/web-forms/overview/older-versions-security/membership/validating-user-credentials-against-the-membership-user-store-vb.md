@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
-title: "Validando credenciais de usuário no repositório de usuário de associação (VB) | Microsoft Docs"
+title: Validando credenciais de usuário no repositório de usuário de associação (VB) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, examinaremos como validar as credenciais do usuário em relação ao armazenamento de usuário de associação usando meios programáticos e o controle de logon..."
+description: Neste tutorial, examinaremos como validar as credenciais do usuário em relação ao armazenamento de usuário de associação usando meios programáticos e o controle de logon...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f57bc8c32757c1ea25bf6bbb34539570e4c09aad
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f8d3de9736d901e02096d20345650b47c47897ae
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-vb"></a>Validando credenciais de usuário no repositório de usuário de associação (VB)
 ====================
@@ -71,8 +71,8 @@ Quando um visitante chega à página de logon e envia suas credenciais, o navega
 
 Para evitar tais ataques de força bruta, a estrutura de associação bloqueia um usuário se houver um determinado número de tentativas de logon sem êxito dentro de um determinado período de tempo. Os parâmetros exatos são configuráveis por meio de dois parâmetros de configuração de provedor de associação:
 
-- `maxInvalidPasswordAttempts`-Especifica a senha inválida quantas tentativas são permitidas para o usuário dentro do período de tempo antes que a conta está bloqueada. O valor padrão é 5.
-- `passwordAttemptWindow`-indica o período de tempo em minutos durante o qual o número especificado de tentativas de logon inválidas fará com que a conta seja bloqueada. O valor padrão é 10.
+- `maxInvalidPasswordAttempts` -Especifica a senha inválida quantas tentativas são permitidas para o usuário dentro do período de tempo antes que a conta está bloqueada. O valor padrão é 5.
+- `passwordAttemptWindow` -indica o período de tempo em minutos durante o qual o número especificado de tentativas de logon inválidas fará com que a conta seja bloqueada. O valor padrão é 10.
 
 Se um usuário estiver bloqueado, ela não é possível fazer logon até que um administrador a desbloqueie sua conta. Quando um usuário está bloqueado, o `ValidateUser` método será *sempre* retornar `False`, mesmo se as credenciais válidas são fornecidas. Embora esse comportamento reduz a probabilidade de que um hacker invadir o seu site por meio de métodos de força bruta, ele pode acabar bloquear um usuário válido que simplesmente esqueceu sua senha ou acidentalmente tem a tecla Caps Lock no ou está tendo um dia de digitação incorreto.
 
@@ -110,7 +110,7 @@ E pronto! Quando Log no botão do controle de logon é clicado, ocorrerá um pos
 
 O controle de logon usa quatro fatores para determinar a página apropriada para redirecionar o usuário após um logon bem-sucedido:
 
-- Se o controle de logon está na página de logon conforme definido pelo `loginUrl` configuração na configuração de autenticação de formulários; o valor dessa configuração padrão é`Login.aspx`
+- Se o controle de logon está na página de logon conforme definido pelo `loginUrl` configuração na configuração de autenticação de formulários; o valor dessa configuração padrão é `Login.aspx`
 - A presença de um `ReturnUrl` parâmetro querystring
 - O valor do controle do logon [ `DestinationUrl` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
 - O `defaultUrl` valor especificado em formulários de definições de configuração de autenticação; o valor dessa configuração padrão é default. aspx
@@ -230,7 +230,7 @@ Como você pode ver, o `Authenticate` manipulador de eventos é passado um objet
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>Determinando e validar as credenciais fornecidas
 
-Use o controle de logon [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) e [ `Password` propriedades](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) para determinar as credenciais de usuário e senha inseridas pelo usuário. Para determinar os valores inseridos em todos os controles da Web adicionais (como o `Email` caixa de texto são adicionados na etapa anterior), use `LoginControlID.FindControl`("*`controlID`*") para obter uma referência de programação para a Web controle no modelo cuja `ID` propriedade é igual a  *`controlID`* . Por exemplo, para obter uma referência para o `Email` caixa de texto, use o seguinte código:
+Use o controle de logon [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) e [ `Password` propriedades](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) para determinar as credenciais de usuário e senha inseridas pelo usuário. Para determinar os valores inseridos em todos os controles da Web adicionais (como o `Email` caixa de texto são adicionados na etapa anterior), use `LoginControlID.FindControl`("*`controlID`*") para obter uma referência de programação para a Web controle no modelo cuja `ID` propriedade é igual a *`controlID`*. Por exemplo, para obter uma referência para o `Email` caixa de texto, use o seguinte código:
 
 `Dim EmailTextBox As TextBox = CType(myLogin.FindControl("Email"), TextBox)`
 
@@ -310,12 +310,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Teresa Murphy e Michael Olivero. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Anterior](creating-user-accounts-vb.md)
-[Próximo](user-based-authorization-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-user-accounts-vb.md)
+> [Próximo](user-based-authorization-vb.md)

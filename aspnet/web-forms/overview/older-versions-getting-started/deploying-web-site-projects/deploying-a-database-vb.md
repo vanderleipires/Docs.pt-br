@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-vb
 title: Implantando um banco de dados (VB) | Microsoft Docs
 author: rick-anderson
-description: "Implantar um aplicativo web ASP.NET envolve obtendo os arquivos necessários e os recursos do ambiente de desenvolvimento para o ambiente de produção. Para da..."
+description: Implantar um aplicativo web ASP.NET envolve obtendo os arquivos necessários e os recursos do ambiente de desenvolvimento para o ambiente de produção. Para da...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b0890d50f21eb790d81d54261a67fcf487b1c95e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 024a34c1b2e37e60e6777dd54dcbd9aa845ec749
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-a-database-vb"></a>Implantando um banco de dados (VB)
 ====================
@@ -41,10 +41,10 @@ As revisões de catálogo atualizado web aplicativo usa um [SQL Server 2008 Expr
 
 O `Reviews.mdf` banco de dados contém quatro tabelas:
 
-- `Genres`-inclui um registro para cada gênero, como a tecnologia, ficção e negócios.
-- `Books`-inclui um registro para cada revisão, com colunas como `Title`, `GenreId`, `ReviewDate`, e `Review`, entre outros.
-- `Authors`-inclui informações sobre cada autor que contribuiu para um livro revisado.
-- `BooksAuthors`-uma tabela de junção de muitos-para-muitos que especifica que os autores de tem gravado que manuais.
+- `Genres` -inclui um registro para cada gênero, como a tecnologia, ficção e negócios.
+- `Books` -inclui um registro para cada revisão, com colunas como `Title`, `GenreId`, `ReviewDate`, e `Review`, entre outros.
+- `Authors` -inclui informações sobre cada autor que contribuiu para um livro revisado.
+- `BooksAuthors` -uma tabela de junção de muitos-para-muitos que especifica que os autores de tem gravado que manuais.
   
 
 A Figura 1 mostra um diagrama ER dessas quatro tabelas.
@@ -57,7 +57,7 @@ A Figura 1 mostra um diagrama ER dessas quatro tabelas.
 
 A versão anterior do site revisões de livros tinha uma página ASP.NET separada para cada livro. Por exemplo, houve uma página chamada `~/Tech/TYASP35.aspx` que continha a revisão *ensinar por conta própria ASP.NET 3.5 nas 24 horas*. Essa nova versão controlada por dados do site tem as revisões armazenadas no banco de dados e uma única página do ASP.NET, Review.aspx?ID=*bookId*, que exibe a revisão para o catálogo especificado. Da mesma forma, há um Genre.aspx?ID=*genreId* página que lista os livros revisados no gênero especificado.
 
-Figuras 2 e 3 mostrar o `Genre.aspx` e `Review.aspx` páginas em ação. Anote a URL na barra de endereços para cada página. Na Figura 2 it s Genre.aspx? ID = 85d164ba-1123-4 c 47-82a0-c8ec75de7e0e. Porque é 85d164ba-1123-4c47-82a0-c8ec75de7e0e a `GenreId` valor para o gênero de tecnologia, as leituras de cabeçalho de página s "Tecnologia revisa" e a lista com marcadores enumera as revisões no site que se enquadram nesse gênero.
+Figuras 2 e 3 mostrar o `Genre.aspx` e `Review.aspx` páginas em ação. Anote a URL na barra de endereços para cada página. In Figure 2 it s Genre.aspx?ID=85d164ba-1123-4c47-82a0-c8ec75de7e0e. Porque é 85d164ba-1123-4c47-82a0-c8ec75de7e0e a `GenreId` valor para o gênero de tecnologia, as leituras de cabeçalho de página s "Tecnologia revisa" e a lista com marcadores enumera as revisões no site que se enquadram nesse gênero.
 
 
 [![A página de Gênero da tecnologia](deploying-a-database-vb/_static/image5.jpg)](deploying-a-database-vb/_static/image4.jpg) 
@@ -195,6 +195,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Baixar o banco de dados do Microsoft SQL Server 1.1 do Assistente de publicação](https://www.microsoft.com/downloads/details.aspx?familyid=56E5B1C5-BF17-42E0-A410-371A838E570A&amp;displaylang=en)
 - [Baixar o Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)
 
->[!div class="step-by-step"]
-[Anterior](core-differences-between-iis-and-the-asp-net-development-server-vb.md)
-[Próximo](configuring-the-production-web-application-to-use-the-production-database-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](core-differences-between-iis-and-the-asp-net-development-server-vb.md)
+> [Próximo](configuring-the-production-web-application-to-use-the-production-database-vb.md)

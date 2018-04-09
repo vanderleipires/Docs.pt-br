@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 title: 'Parte 3: Layout e Menu categoria | Microsoft Docs'
 author: JoeStagner
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 3 aborda a adição de layout e um menu de categoria."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 3 aborda a adição de layout e um menu de categoria.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 57c0342efb67b94a0d8c8b06dc13a727e7184db8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27a493173b03f813ee3dcbbfafd8bc52fb0b9771
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-layout-and-category-menu"></a>Parte 3: Layout e Menu de categoria
 ====================
@@ -27,7 +27,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 > Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 3 aborda a adição de layout e um menu de categoria.
 
 
-## <a id="_Toc260221669"></a>Adicionando alguns Layout e um Menu de categoria
+## <a id="_Toc260221669"></a>  Adicionando alguns Layout e um Menu de categoria
 
 Em nossa página mestra vamos adicionar um div para a coluna do lado esquerdo que conterá o nosso menu de categoria de produto.
 
@@ -77,6 +77,6 @@ Permite executar o aplicativo agora.
 
 Observe que nosso menu de categoria de produto agora é exibido e quando, passe o mouse sobre um dos itens de menu categoria, podemos ver os pontos de link de item de menu para uma página que temos para implementar denominado ProductsList.aspx e que criamos um argumento de cadeia de caracteres de consulta dinâmica que contém o  id da categoria.
 
->[!div class="step-by-step"]
-[Anterior](tailspin-spyworks-part-2.md)
-[Próximo](tailspin-spyworks-part-4.md)
+> [!div class="step-by-step"]
+> [Anterior](tailspin-spyworks-part-2.md)
+> [Próximo](tailspin-spyworks-part-4.md)

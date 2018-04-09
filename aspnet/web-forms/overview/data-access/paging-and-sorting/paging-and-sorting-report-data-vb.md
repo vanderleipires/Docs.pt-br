@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
-title: "Paginação e classificação relatam dados (VB) | Microsoft Docs"
+title: Paginação e classificação relatam dados (VB) | Microsoft Docs
 author: rick-anderson
-description: "Paginação e a classificação são dois recursos muito comuns ao exibir dados em um aplicativo online. Neste tutorial vamos dar uma olhada primeiro adicionar a classificação e..."
+description: Paginação e a classificação são dois recursos muito comuns ao exibir dados em um aplicativo online. Neste tutorial vamos dar uma olhada primeiro adicionar a classificação e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 23dbd63110092b2e91b7f3f9f6b602ef917c5527
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5e7e110d436caa7b7526eae105fde601367007a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="paging-and-sorting-report-data-vb"></a>Paginação e classificando dados de relatório (VB)
 ====================
@@ -115,13 +115,13 @@ Controles de DetailsView e FormView mostram apenas um único registro por págin
 
 Essa interface de paginação GridView, DetailsView e FormView s pode ser personalizado usando as seguintes propriedades:
 
-- `PagerStyle`indica as informações de estilo para a interface de paginação; pode especificar configurações como `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`e assim por diante.
-- `PagerSettings`contém muitas propriedades que pode personalizar a funcionalidade da interface de paginação; `PageButtonCount` indica o número máximo de números de página numérico exibidos na interface de paginação (o padrão é 10); o [ `Mode` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) indica como a interface de paginação funciona e pode ser definida como: 
+- `PagerStyle` indica as informações de estilo para a interface de paginação; pode especificar configurações como `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`e assim por diante.
+- `PagerSettings` contém muitas propriedades que pode personalizar a funcionalidade da interface de paginação; `PageButtonCount` indica o número máximo de números de página numérico exibidos na interface de paginação (o padrão é 10); o [ `Mode` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) indica como a interface de paginação funciona e pode ser definida como: 
 
-    - `NextPrevious`mostra um botões Próximo e anterior, permitindo que o usuário para a etapa frente ou para trás uma página por vez
-    - `NextPreviousFirstLast`Além dos botões Próximo e anterior, primeiro e último botões também são incluídos, permitindo que o usuário mover rapidamente para a primeira ou última página de dados
-    - `Numeric`mostra uma série de números de página, permitindo que o usuário imediatamente saltar para qualquer página
-    - `NumericFirstLast`Além dos números de página inclui botões primeiro e último, permitindo que o usuário mover rapidamente para a primeira ou última página de dados. os botões de primeira/última são exibidos apenas se todos os números de páginas numéricas de não podem ser ajustado
+    - `NextPrevious` mostra um botões Próximo e anterior, permitindo que o usuário para a etapa frente ou para trás uma página por vez
+    - `NextPreviousFirstLast` Além dos botões Próximo e anterior, primeiro e último botões também são incluídos, permitindo que o usuário mover rapidamente para a primeira ou última página de dados
+    - `Numeric` mostra uma série de números de página, permitindo que o usuário imediatamente saltar para qualquer página
+    - `NumericFirstLast` Além dos números de página inclui botões primeiro e último, permitindo que o usuário mover rapidamente para a primeira ou última página de dados. os botões de primeira/última são exibidos apenas se todos os números de páginas numéricas de não podem ser ajustado
 
 Além disso, o GridView, DetailsView e FormView oferecem o `PageIndex` e `PageCount` propriedades, que indicam a página atual que está sendo exibido e o número total de páginas de dados, respectivamente. O `PageIndex` propriedade é indexada começando com 0, que significa que, ao exibir a primeira página de dados `PageIndex` será igual a 0. `PageCount`, por outro lado, inicia a contagem em 1, o que significa que `PageIndex` é limitado aos valores entre 0 e `PageCount - 1`.
 
@@ -245,7 +245,7 @@ GridView todos os campos BoundField CheckBoxField, TemplateField e assim por dia
 
 1. O GridView s [evento Sorting](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) é acionado
 2. O GridView s [ `SortExpression` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) é definido como o `SortExpression` do campo cujo cabeçalho classificação LinkButton foi clicado
-3. ObjectDataSource recupera todos os dados de BLL novamente e, em seguida, classifica os dados usando o s GridView`SortExpression`
+3. ObjectDataSource recupera todos os dados de BLL novamente e, em seguida, classifica os dados usando o s GridView `SortExpression`
 4. O GridView s `PageIndex` propriedade é redefinida para 0, que significa que quando o usuário a classificação é retornado para a primeira página de dados (supondo que o suporte à paginação foi implementado)
 5. O GridView s [ `Sorted` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) é acionado
 
@@ -306,8 +306,8 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Anterior](creating-a-customized-sorting-user-interface-cs.md)
-[Próximo](efficiently-paging-through-large-amounts-of-data-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-a-customized-sorting-user-interface-cs.md)
+> [Próximo](efficiently-paging-through-large-amounts-of-data-vb.md)

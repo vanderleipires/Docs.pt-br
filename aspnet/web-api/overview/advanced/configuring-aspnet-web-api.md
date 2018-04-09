@@ -2,7 +2,7 @@
 uid: web-api/overview/advanced/configuring-aspnet-web-api
 title: Configurando o ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f9b471fe2afdce278869a2e4d9b693a78030324b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: de2396710fb9434c84bf14a2faa37b98154f34d8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-aspnet-web-api-2"></a>Configurando o ASP.NET Web API 2
 ====================
@@ -120,13 +120,13 @@ Serviços de instância única
 Serviços de várias instâncias
 
 
-| Serviço | Descrição |
-| --- | --- |
-| **IFilterProvider** | Retorna uma lista de filtros para uma ação do controlador. |
-| **ModelBinderProvider** | Retorna um associador de modelo para um determinado tipo. |
-| **ModelMetadataProvider** | Fornece metadados para um modelo. |
-| **ModelValidatorProvider** | Fornece um validador para um modelo. |
-| **ValueProviderFactory** | Cria um provedor de valor. Para obter mais informações, consulte Mike Stall postagem de blog [como criar um provedor de valor personalizado no WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |.
+|                 Serviço                 |                                                                                                              Descrição                                                                                                               |
+|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    <strong>IFilterProvider</strong>     |                                                                                           Retorna uma lista de filtros para uma ação do controlador.                                                                                           |
+|  <strong>ModelBinderProvider</strong>   |                                                                                                Retorna um associador de modelo para um determinado tipo.                                                                                                |
+| <strong>ModelMetadataProvider</strong>  |                                                                                                     Fornece metadados para um modelo.                                                                                                     |
+| <strong>ModelValidatorProvider</strong> |                                                                                                   Fornece um validador para um modelo.                                                                                                    |
+|  <strong>ValueProviderFactory</strong>  | Cria um provedor de valor. Para obter mais informações, consulte Mike Stall postagem de blog [como criar um provedor de valor personalizado no WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |
 
 Para adicionar uma implementação personalizada para um serviço de várias instâncias, chame **adicionar** ou **inserir** no **serviços** coleção:
 

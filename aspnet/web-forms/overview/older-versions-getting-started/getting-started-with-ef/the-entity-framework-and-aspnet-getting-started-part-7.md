@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
-title: "Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 7 | Microsoft Docs"
+title: Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 7 | Microsoft Docs
 author: tdykstra
-description: "O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é..."
+description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cb84f4f3e130fedb3e2f1a17d630767ff65bfa05
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 7
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 > O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework 4.0 e o Visual Studio 2010. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial da série](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
@@ -51,7 +51,7 @@ Copie as seguintes instruções SQL e colá-las na janela do procedimento armaze
 
 [![image14](the-entity-framework-and-aspnet-getting-started-part-7/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image3.png)
 
-`Student`as entidades têm quatro propriedades: `PersonID`, `LastName`, `FirstName`, e `EnrollmentDate`. O banco de dados gera o valor da ID automaticamente e o procedimento armazenado aceita parâmetros para os outros três. O procedimento armazenado retorna o valor da chave de registro da nova linha para que o Entity Framework pode manter o controle de que a versão da entidade mantém na memória.
+`Student` as entidades têm quatro propriedades: `PersonID`, `LastName`, `FirstName`, e `EnrollmentDate`. O banco de dados gera o valor da ID automaticamente e o procedimento armazenado aceita parâmetros para os outros três. O procedimento armazenado retorna o valor da chave de registro da nova linha para que o Entity Framework pode manter o controle de que a versão da entidade mantém na memória.
 
 Salve e feche a janela de procedimento armazenado.
 
@@ -139,6 +139,6 @@ A página agora usa o `GetCourses` procedimento armazenado para recuperar a list
 
 O seguinte tutorial, você aprenderá como usar a funcionalidade de dados dinâmicos para facilitar o programa e teste regras de formatação e validação de dados. Em vez de especificar cada regras de página da web, como cadeias de caracteres de formato de dados e se um campo é obrigatório, você pode especificar essas regras nos metadados do modelo de dados e são aplicados automaticamente em cada página.
 
->[!div class="step-by-step"]
-[Anterior](the-entity-framework-and-aspnet-getting-started-part-6.md)
-[Próximo](the-entity-framework-and-aspnet-getting-started-part-8.md)
+> [!div class="step-by-step"]
+> [Anterior](the-entity-framework-and-aspnet-getting-started-part-6.md)
+> [Próximo](the-entity-framework-and-aspnet-getting-started-part-8.md)

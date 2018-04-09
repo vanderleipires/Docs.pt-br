@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
-title: "Associação e administração | Microsoft Docs"
+title: Associação e administração | Microsoft Docs
 author: Erikre
-description: "Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express 2013 para nós..."
+description: Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express 2013 para nós...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: a10dbfe1ca49baee1604aac8dd9a1f93ccfcb7f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 166bc642ea2083f455be0648e424f0b0ae3b082c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="membership-and-administration"></a>Associação e administração
 ====================
-Por [Erik Reitan](https://github.com/Erikre)
+por [Erik Reitan](https://github.com/Erikre)
 
 [Baixe o projeto de exemplo do Wingtip Toys (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ou [baixar livro eletrônico (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
@@ -47,7 +47,7 @@ Este tutorial se baseia no tutorial anterior intitulado "Check-out e pagamento c
 
 - ASP.NET Identity
 - Configuração e autorização
-- Associação de modelo
+- Associação de modelos
 - Validação discreta
 
 ASP.NET Web Forms fornece recursos de associação. Usando o modelo padrão, você tem a funcionalidade de associação interna que você pode usar imediatamente quando o aplicativo é executado. Este tutorial mostra como usar a identidade do ASP.NET para adicionar uma função personalizada e atribuir um usuário a essa função. Você aprenderá a restringir o acesso à pasta de administração. Você adicionará uma página para a pasta de administração que permite que um usuário com uma função personalizada para adicionar e remover produtos e visualizar um produto depois que ele foi adicionado.
@@ -66,14 +66,14 @@ Usando a identidade do ASP.NET, você pode adicionar uma função personalizada 
 
     [!code-csharp[Main](membership-and-administration/samples/sample2.cs?highlight=11,26-28)]
 6. Observe que `AddUserAndRole` está sublinhado em vermelho. Clique duas vezes o código AddUserAndRole.  
- A letra "A" no início do método realçado será sublinhada.
+   A letra "A" no início do método realçado será sublinhada.
 7. Passe o mouse sobre a letra "A" e clique em interface do usuário que permite que você gere um stub de método para o `AddUserAndRole` método. 
 
     ![Associação e Advministration - Gerar Stub do método](membership-and-administration/_static/image1.png)
 8. Clique na opção de chamada:  
     `Generate method stub for "AddUserAndRole" in "WingtipToys.Logic.RoleActions"`
 9. Abra o *RoleActions.cs* arquivo o *lógica* pasta.  
- O `AddUserAndRole` método foi adicionado ao arquivo de classe.
+   O `AddUserAndRole` método foi adicionado ao arquivo de classe.
 10. Modificar o *RoleActions.cs* arquivo removendo o `NotImplementedeException` e adicionando o código realçado em amarelo, para que ela aparece da seguinte maneira:  
 
     [!code-csharp[Main](membership-and-administration/samples/sample3.cs?highlight=5-7,15-51)]
@@ -120,8 +120,8 @@ Em seguida, você criará uma pasta chamada *Admin* aplicativo de exemplo para o
 1. Clique no nome do projeto (**Wingtip Toys**) em **Solution Explorer** e selecione **adicionar**  - &gt; **nova pasta**.
 2. Nomeie a nova pasta *Admin*.
 3. Clique com botão direito do *Admin* pasta e, em seguida, selecione **adicionar**  - &gt; **Novo Item**.   
- A caixa de diálogo **Adicionar Novo Item** é exibida.
-4. Selecione o **Visual C#** - &gt; **Web** grupo de modelos, à esquerda. Na lista intermediária, selecione **Web Form com página mestra**, nomeie-o *AdminPage.aspx***,** e, em seguida, selecione **adicionar**.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
+4. Selecione o <strong>Visual C#</strong> - &gt; <strong>Web</strong> grupo de modelos, à esquerda. Na lista intermediária, selecione <strong>Web Form com página mestra</strong>, nomeie-o <em>AdminPage.aspx</em><strong>,</strong> e, em seguida, selecione <strong>adicionar</strong>.
 5. Selecione o *Site.Master* de arquivos como a página mestra e, em seguida, escolha **Okey**.
 
 #### <a name="add-a-webconfig-file"></a>Adicionar um arquivo Web. config
@@ -129,8 +129,8 @@ Em seguida, você criará uma pasta chamada *Admin* aplicativo de exemplo para o
 Adicionando um *Web. config* o arquivo para o *Admin* pasta, você pode restringir o acesso à página contida na pasta.
 
 1. Clique com botão direito do *Admin* pasta e selecione **adicionar**  - &gt; **Novo Item**.  
- A caixa de diálogo **Adicionar Novo Item** é exibida.
-2. Na lista de modelos de web do Visual c#, selecione **arquivo de configuração Web**na lista intermediária, aceite o nome padrão do *Web. config***,** e, em seguida, selecione **Adicionar**.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
+2. Na lista de modelos de web do Visual c#, selecione <strong>arquivo de configuração Web</strong>na lista intermediária, aceite o nome padrão do <em>Web. config</em><strong>,</strong> e, em seguida, selecione <strong>Adicionar</strong>.
 3. Substitua o conteúdo existente do XML de *Web. config* arquivo com o seguinte:  
 
     [!code-xml[Main](membership-and-administration/samples/sample4.xml)]
@@ -167,9 +167,9 @@ Até agora, você criou a função "canEdit" e adicionou um usuário "canEditUse
 No código que você inseriu para o *AdminPage.aspx.cs* arquivo code-behind, uma classe chamada `AddProducts` faz o trabalho real de adição de produtos no banco de dados. Essa classe ainda não existe, portanto, você vai criar agora.
 
 1. Em **Solution Explorer**, com o botão direito do *lógica* pasta e, em seguida, selecione **adicionar**  - &gt; **Novo Item**.   
- A caixa de diálogo **Adicionar Novo Item** é exibida.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
 2. Selecione o **Visual C#**  - &gt; **código** grupo de modelos, à esquerda. Em seguida, selecione **classe**do meio lista e nomeie-o *AddProducts.cs*.   
- O novo arquivo de classe é exibido.
+   O novo arquivo de classe é exibido.
 3. Substitua o código existente pelo seguinte:  
 
     [!code-csharp[Main](membership-and-administration/samples/sample9.cs)]
@@ -192,7 +192,7 @@ O preço do produto sobre o *AdminPage.aspx* página é validada usando um **Reg
 
 Além dos controles de entrada e a validação, você adicionou o **FileUpload** o controle para o *AdminPage.aspx* página. Esse controle fornece a capacidade de carregar arquivos. Nesse caso, você está permitindo somente arquivos de imagem a ser carregada. No arquivo code-behind (*AdminPage.aspx.cs*), quando o `AddProductButton` é clicado, o código verifica o `HasFile` propriedade o **FileUpload** controle. Se o controle tiver um arquivo e se é permitido o tipo de arquivo (com base na extensão de arquivo), a imagem será salvo o *imagens* pasta e o *imagens/miniaturas* pasta do aplicativo.
 
-#### <a name="model-binding"></a>Associação de modelo
+#### <a name="model-binding"></a>Associação de modelos
 
 Anteriormente na série tutorial associação de modelo é usado para popular um **ListView** controle, uma **FormsView** controle, uma **GridView** controle e um  **DetailView** controle. Neste tutorial, você usa associação de modelo para popular um **DropDownList** controle com uma lista de categorias de produto.
 
@@ -235,15 +235,15 @@ O `Page_Load` manipulador de eventos verifica o valor de cadeia de caracteres de
 Você pode executar o aplicativo agora para ver como você pode adicionar, exclusão e atualização de itens no carrinho de compras. O total de carrinho de compras refletirá o custo total de todos os itens no carrinho de compras.
 
 1. No Solution Explorer, pressione **F5** para executar o aplicativo de exemplo Wingtip Toys.  
- O navegador é aberto e mostra o *Default.aspx* página.
+   O navegador é aberto e mostra o *Default.aspx* página.
 2. Clique o **login** link na parte superior da página. 
 
     ![Associação e administração - Log no Link](membership-and-administration/_static/image2.png)
 
- O *Login.aspx* página é exibida.
+   O *Login.aspx* página é exibida.
 3. Use o seguinte nome de usuário e senha:  
- Nome de usuário:canEditUser@wingtiptoys.com  
- Senha: Pa$ $word1 
+   Nome de usuário: canEditUser@wingtiptoys.com  
+   Senha: Pa$ $word1 
 
     ![Associação e administração - página de logon](membership-and-administration/_static/image3.png)
 4. Clique o **login** botão na parte inferior da página.
@@ -254,7 +254,7 @@ Você pode executar o aplicativo agora para ver como você pode adicionar, exclu
 
     ![Associação e administração - página de administrador](membership-and-administration/_static/image5.png)
 
- Observe que as mensagens de campo obrigatório são exibidas.
+   Observe que as mensagens de campo obrigatório são exibidas.
 7. Adicione os detalhes de um novo produto e, em seguida, clique no **adicionar produto** botão. 
 
     ![Associação e administração - adicionar produto](membership-and-administration/_static/image6.png)
@@ -268,7 +268,7 @@ Você pode executar o aplicativo agora para ver como você pode adicionar, exclu
     ![Associação e administração - Remover produto](membership-and-administration/_static/image8.png)
 12. Selecione **produtos** no menu de navegação superior para confirmar que o produto foi removido.
 13. Clique em **logoff** existir de modo de administração.   
- Observe que não mostra o painel de navegação superior a **Admin** item de menu.
+    Observe que não mostra o painel de navegação superior a **Admin** item de menu.
 
 ## <a name="summary"></a>Resumo
 
@@ -281,6 +281,6 @@ Neste tutorial, você adicionado a uma função personalizada e um usuário que 
 [Implantar um aplicativo de formulários da Web do ASP.NET seguro com associação, OAuth e o banco de dados SQL em um Site do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure - versão de avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/)
 
->[!div class="step-by-step"]
-[Anterior](checkout-and-payment-with-paypal.md)
-[Próximo](url-routing.md)
+> [!div class="step-by-step"]
+> [Anterior](checkout-and-payment-with-paypal.md)
+> [Próximo](url-routing.md)

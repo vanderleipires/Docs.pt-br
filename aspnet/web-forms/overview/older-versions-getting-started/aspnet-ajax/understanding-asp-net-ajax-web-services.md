@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
-title: "Noções básicas sobre os serviços Web do ASP.NET AJAX | Microsoft Docs"
+title: Noções básicas sobre os serviços Web do ASP.NET AJAX | Microsoft Docs
 author: scottcate
-description: "Serviços Web são uma parte integrante do .NET framework que fornecem uma solução de plataforma cruzada para trocar dados entre sistemas distribuídos. Embora o Web..."
+description: Serviços Web são uma parte integrante do .NET framework que fornecem uma solução de plataforma cruzada para trocar dados entre sistemas distribuídos. Embora o Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: 8eb3486c9b3f4ddb6a8bc2c1cdcac774a6852574
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b9f61f895fea1960ebd25780454b86d5c3ba1bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-web-services"></a>Noções básicas sobre os serviços Web do ASP.NET AJAX
 ====================
@@ -51,7 +51,7 @@ Essa substituição HttpHandler é feita para permitir chamadas de notação JSO
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample2.json)]
 
-> *>[!NOTE] o nome da operação é definido como parte da URL para o serviço web; Além disso, as mensagens de solicitação não são sempre enviadas por meio de JSON. Serviços Web podem utilizar o atributo ScriptMethod com o parâmetro UseHttpGet definido como true, o que faz com que os parâmetros a serem passados por meio de um os parâmetros de cadeia de caracteres de consulta.*
+> *> [!NOTE] o nome da operação é definido como parte da URL para o serviço web. Além disso, as mensagens de solicitação não são sempre enviadas via JSON. Serviços Web podem utilizar o atributo ScriptMethod com o parâmetro UseHttpGet definido como true, o que faz com que os parâmetros a serem passados por meio de um os parâmetros de cadeia de caracteres de consulta.*
 
 
 **A listagem 3. Mensagem de resposta do serviço Web serializada para JSON**
@@ -160,7 +160,7 @@ Adicionar uma referência a CustomersService.asmx por meio do controle ScriptMan
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample14.html)]
 
-> *>[!NOTE] Se você gostaria de ver o código de proxy JavaScript real que é gerado pode digitar a URL para o serviço da Web .NET desejado na caixa de endereços do Internet Explorer e acrescentar /js ao final dele.*
+> *> [!NOTE] Se você gostaria de ver o código de proxy JavaScript real que é gerado pode digitar a URL para o serviço da Web .NET desejado na caixa de endereços do Internet Explorer e acrescentar /js ao final dele.*
 
 
 Se a depuração é ativada em Web. config, que uma versão de depuração de proxy JavaScript será inserida na página, como mostrado a seguir:
@@ -263,7 +263,7 @@ Usando o objeto PageMethods é muito semelhante ao uso de um objeto de proxy Jav
 
 ## <a name="the-autocompleteextender-and-the-aspnet-ajax-toolkit"></a>O AutoCompleteExtender e o Kit de ferramentas do ASP.NET AJAX
 
-O Kit de ferramentas do ASP.NET AJAX (disponível em [http://ajax.asp.net](http://ajax.asp.net)) oferece vários controles que podem ser usados para acessar os serviços Web. Especificamente, o Kit de ferramentas contém um controle útil chamado `AutoCompleteExtender` que pode ser usado para chamar serviços da Web e exibir dados em páginas sem gravar qualquer código JavaScript em todos os.
+O Kit de ferramentas do ASP.NET AJAX (disponível em [ http://ajax.asp.net ](http://ajax.asp.net)) oferece vários controles que podem ser usados para acessar os serviços Web. Especificamente, o Kit de ferramentas contém um controle útil chamado `AutoCompleteExtender` que pode ser usado para chamar serviços da Web e exibir dados em páginas sem gravar qualquer código JavaScript em todos os.
 
 O controle AutoCompleteExtender pode ser usado para estender a funcionalidade existente de uma caixa de texto e ajudar os usuários mais facilmente localizar dados que estão procurando. Como eles digitam em uma caixa de texto o controle pode ser usado para consultar um serviço Web e mostra os resultados abaixo da caixa de texto dinamicamente. A Figura 4 mostra um exemplo de como usar o controle AutoCompleteExtender para exibir as ids de cliente para um aplicativo de suporte. Como o usuário digita caracteres diferentes na caixa de texto, itens diferentes serão mostradas abaixo com base na sua entrada. Os usuários podem selecionar a id do cliente desejado.
 
@@ -303,12 +303,12 @@ O serviço Web que está sendo chamada deve ter o atributo ScriptService aplicad
 
 ASP.NET AJAX fornece excelente suporte para chamar serviços Web sem escrever tanto código JavaScript personalizado para lidar com as mensagens de solicitação e resposta. Neste artigo, você viu como habilitar AJAX .NET Web Services para habilitá-los para processar mensagens JSON e como definir os proxies JavaScript usando o controle ScriptManager. Também vimos como JavaScript proxies podem ser usados para chamar serviços da Web, lidar com tipos simples e complexos e lidar com falhas. Por fim, você viu como métodos de página podem ser usados para simplificar o processo de criação e fazer chamadas de serviço Web e como o controle AutoCompleteExtender pode fornecer ajuda para os usuários finais conforme eles digitar. Embora o UpdatePanel disponível no ASP.NET AJAX será o controle ideal para muitos programadores AJAX devido à sua simplicidade, saber como chamar serviços da Web por meio de proxies JavaScript pode ser útil em muitos aplicativos.
 
-## <a name="bio"></a>Biografia do
+## <a name="bio"></a>Bio
 
 Dan Wahlin (Microsoft Most Valuable Professional para ASP.NET e XML Web Services) é um consultor .NET de instrutor e arquitetura de desenvolvimento no treinamento de Interface ([http://www.interfacett.com](http://www.interfacett.com)). Dan fundada o XML para o site da Web de desenvolvedores do ASP.NET ([www.XMLforASP.NET](http://www.XMLforASP.NET)), está em agência no apresentador INETA e participa de várias conferências. Dan autoria conjunta Professional Windows DNA (Wrox), ASP.NET: dicas, tutoriais e código (Sams), ASP.NET 1.1 Insider soluções, Professional ASP.NET 2.0 AJAX (Wrox), ASP.NET 2.0 MVP experimenta e XML criado para desenvolvedores do ASP.NET (Sams). Quando ele não está escrevendo código, artigos ou manuais, Dan gosta de escrever e música de gravação e execução Golfe e basquete com sua mulher e filhos.
 
 Scott Cate trabalha com tecnologias Microsoft Web desde 1997 e é presidente da myKB.com ([www.myKB.com](http://www.myKB.com)) onde ele é especializada em escrever ASP.NET com base em aplicativos voltados para soluções de Software da Base de dados de Conhecimento. Scott pode ser contatado via email em [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) ou em seu blog [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Anterior](understanding-asp-net-ajax-localization.md)
-[Próximo](understanding-asp-net-ajax-debugging-capabilities.md)
+> [!div class="step-by-step"]
+> [Anterior](understanding-asp-net-ajax-localization.md)
+> [Próximo](understanding-asp-net-ajax-debugging-capabilities.md)

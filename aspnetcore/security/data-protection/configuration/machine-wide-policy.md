@@ -1,7 +1,7 @@
 ---
-title: "Suporte a política de máquina de proteção de dados no ASP.NET Core"
+title: Suporte a política de máquina de proteção de dados no ASP.NET Core
 author: rick-anderson
-description: "Saiba mais sobre suporte para definição de uma política de todo o computador padrão para todos os aplicativos que consomem a proteção de dados do ASP.NET Core."
+description: Saiba mais sobre suporte para definição de uma política de todo o computador padrão para todos os aplicativos que consomem a proteção de dados do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 53ded37e9fd5f1a2eaa37935d1c52efb1e9231ac
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c2d5760cd18f4e3ecaf0261f36414c9298e3f4c5
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>Suporte a política de máquina de proteção de dados no ASP.NET Core
 
@@ -71,4 +71,4 @@ Se EncryptionType for gerenciado, o sistema está configurado para usar um Symme
 Se EncryptionType tiver qualquer valor diferente de nulo ou vazio, o sistema de proteção de dados gera uma exceção durante a inicialização.
 
 > [!WARNING]
-> Ao configurar uma configuração de política padrão que envolve os nomes de tipo (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), os tipos devem estar disponíveis para o aplicativo. Isso significa que para aplicativos em execução no CLR de área de trabalho, os assemblies que contêm esses tipos devem estar presentes no Cache de Assembly Global (GAC). Para aplicativos do ASP.NET Core em execução no [.NET Core](https://www.microsoft.com/net/core), os pacotes que contêm esses tipos devem ser instalados.
+> Ao configurar uma configuração de política padrão que envolve os nomes de tipo (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), os tipos devem estar disponíveis para o aplicativo. Isso significa que para aplicativos em execução no CLR de área de trabalho, os assemblies que contêm esses tipos devem estar presentes no Cache de Assembly Global (GAC). Para aplicativos do ASP.NET Core em execução no .NET Core, os pacotes que contêm esses tipos devem ser instalados.

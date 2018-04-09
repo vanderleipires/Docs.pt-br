@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
-title: "Implantação na empresa Web | Microsoft Docs"
+title: Implantação na empresa Web | Microsoft Docs
 author: jrjlee
-description: "Este tutorial descreve como atender muitos dos desafios encontrados ao gerenciar a implantação de aplicativos da web de nível corporativo para devel..."
+description: Este tutorial descreve como atender muitos dos desafios encontrados ao gerenciar a implantação de aplicativos da web de nível corporativo para devel...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 6210d01f65bcadf8ae4209e372d5aac68861bd7a
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: fc463cb689f4f63a12788b80958c9fc8fe20119d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-deployment-in-the-enterprise"></a>Implantação da Web da empresa
 ====================
@@ -66,7 +66,7 @@ Neste tutorial, junto com os outros tutoriais nesta série, usa essa abordagem d
 
 Este tutorial inclui tópicos que se enquadram em quatro áreas principais.
 
-Estes tópicos apresentam a solução de referência #x 2014; a solução de Gerenciador de contato & #x 2014; e descrevem como baixá-lo e configurá-lo em seu computador local:
+Estes tópicos apresentam a solução de referência&#x2014;a solução Contact Manager&#x2014;e descrevem como baixá-lo e configurá-lo em seu computador local:
 
 - [A solução Gerenciador de Contatos](the-contact-manager-solution.md)
 - [Configuração da solução Gerenciador de Contatos](setting-up-the-contact-manager-solution.md)
@@ -104,5 +104,5 @@ Isso faz parte de uma série de cinco tutoriais na implantação da web de grand
 - [Configurando o Team Foundation Server para a implantação da Web](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Este tutorial descreve como configurar o TFS para dar suporte a vários cenários de implantação, incluindo a implantação automatizada como parte de um processo de CI e disparada manualmente as implantações de compilações específicas.
 - [Enterprise Web implantação avançada](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Este tutorial descreve como realizar várias tarefas de implantação mais avançadas, como personalizar as implantações de banco de dados para vários ambientes, excluindo arquivos e pastas de implantação e que os aplicativos de web offline durante o processo de implantação .
 
->[!div class="step-by-step"]
-[Avançar](the-contact-manager-solution.md)
+> [!div class="step-by-step"]
+> [Avançar](the-contact-manager-solution.md)

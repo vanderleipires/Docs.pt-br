@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
-title: "Executar a validação Simple (VB) | Microsoft Docs"
+title: Executar a validação Simple (VB) | Microsoft Docs
 author: StephenWalther
-description: "Saiba como executar a validação em um aplicativo ASP.NET MVC. Neste tutorial, Stephen Walther apresenta a você para o estado de modelo e o auxiliar de validação HTML..."
+description: Saiba como executar a validação em um aplicativo ASP.NET MVC. Neste tutorial, Stephen Walther apresenta a você para o estado de modelo e o auxiliar de validação HTML...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2bc4cdbcd267bcdd3e71abc4c52664ae62c5c02e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: efb98d87106e332fffb158e5f382d57fea778957
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-simple-validation-vb"></a>Executar a validação Simple (VB)
 ====================
@@ -130,6 +130,6 @@ Se você quiser personalizar a aparência desses prebinding mensagens de erro, e
 
 O objetivo deste tutorial era descrever os mecanismos básicos de validação na estrutura do ASP.NET MVC. Você aprendeu a usar o estado de modelo e os auxiliares HTML de validação. Também discutimos a distinção entre prebinding e postbinding a validação. Outros tutoriais, discutiremos várias estratégias para mover seu código de validação de seus controladores e em suas classes de modelo.
 
->[!div class="step-by-step"]
-[Anterior](displaying-a-table-of-database-data-vb.md)
-[Próximo](validating-with-the-idataerrorinfo-interface-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](displaying-a-table-of-database-data-vb.md)
+> [Próximo](validating-with-the-idataerrorinfo-interface-vb.md)

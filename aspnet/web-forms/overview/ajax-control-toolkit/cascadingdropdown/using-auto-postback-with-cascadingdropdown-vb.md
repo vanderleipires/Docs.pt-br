@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
-title: "Usando Postback automático com CascadingDropDown (VB) | Microsoft Docs"
+title: Usando Postback automático com CascadingDropDown (VB) | Microsoft Docs
 author: wenz
-description: "O controle CascadingDropDown AJAX Control Toolkit estende um controle DropDownList para que as alterações em uma carga de DropDownList associados valores em anoth..."
+description: O controle CascadingDropDown AJAX Control Toolkit estende um controle DropDownList para que as alterações em uma carga de DropDownList associados valores em anoth...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f8059f44b4efbf59ebe7b3d2fd5400e886642a90
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e8a48692dd96ee6a647bfb57ce2915b4e85544fe
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-auto-postback-with-cascadingdropdown-vb"></a>Usando Postback automático com CascadingDropDown (VB)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle CascadingDropDown AJAX Control Toolkit estende um controle DropDownList para que as alterações em uma carga de DropDownList associados valores em outra DropDownList. No entanto ao usar o controle CascadingDropDown, ASP. Recurso de AutoPostBack do controle de DropDownList do NET não funcionará, pois assincronamente carregar dados para a lista gera um postback (desnecessário) em si. Com um código JavaScript, esse efeito pode ser evitado.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle CascadingDropDown AJAX Control Toolkit estende um controle DropDownList para que as alterações em uma carga de DropDownList associados valores em outra DropDownList. (Por exemplo, uma lista fornece uma lista de nós estados e lista seguinte é então preenchida com cidades nesse estado.) No entanto ao usar o controle CascadingDropDown, ASP. Recurso de AutoPostBack do controle de DropDownList do NET não funcionará, pois assincronamente carregar dados para a lista gera um postback (desnecessário) em si. Com um código JavaScript, esse efeito pode ser evitado.
 
@@ -64,5 +64,5 @@ Dessa forma, um postback é executado apenas quando há realmente elementos na l
 
 Selecionar um elemento da lista causa um postback ([clique para exibir a imagem em tamanho normal](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](presetting-list-entries-with-cascadingdropdown-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](presetting-list-entries-with-cascadingdropdown-vb.md)

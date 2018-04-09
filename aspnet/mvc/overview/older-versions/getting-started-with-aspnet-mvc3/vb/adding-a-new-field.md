@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 title: Adicionar um novo campo para o modelo de filme e a tabela de banco de dados (VB) | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é..."
+description: Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 377c667a56bb5c0d58ecef5c3550ca510ec52546
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5927b7d977e375881fe618b4b844cbd708023ba1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>Adicionar um novo campo para o modelo de filme e a tabela de banco de dados (VB)
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é uma versão gratuita do Microsoft Visual Studio. Antes de começar, verifique se que você instalou os pré-requisitos listados abaixo. Você pode instalar todos eles clicando no link a seguir: [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Como alternativa, você pode instalar individualmente os pré-requisitos usando os links a seguir:
 > 
@@ -49,7 +49,7 @@ Recompilar o aplicativo usando o **depurar** &gt; **criar filme** comando de men
 
 Agora que você atualizou o `Model` classe, você também precisa atualizar o *\Views\Movies\Index.vbhtml* e *\Views\Movies\Create.vbhtml* exibir modelos para oferecer suporte a novos `Rating`propriedade.
 
-Abra o*\Views\Movies\Index.vbhtml* e adicione um `<th>Rating</th>` cabeçalho da coluna logo após o **preço** coluna. Em seguida, adicione um `<td>` coluna próximo ao final do modelo para renderizar o `@item.Rating` valor. Abaixo está o que a atualização *Index.vbhtml* aparência do modelo de exibição:
+Abra o<em>\Views\Movies\Index.vbhtml</em> e adicione um `<th>Rating</th>` cabeçalho da coluna logo após o <strong>preço</strong> coluna. Em seguida, adicione um `<td>` coluna próximo ao final do modelo para renderizar o `@item.Rating` valor. Abaixo está o que a atualização <em>Index.vbhtml</em> aparência do modelo de exibição:
 
 [!code-vbhtml[Main](adding-a-new-field/samples/sample3.vbhtml)]
 
@@ -123,6 +123,6 @@ Clique em **Criar**. Novo filme, incluindo classificação, agora é exibido nos
 
 Nesta seção, você viu como você pode modificar objetos de modelo e manter o banco de dados em sincronia com as alterações. Você também aprendeu uma maneira para popular um banco de dados recém-criado com dados de exemplo para que você pode experimentar os cenários. Em seguida, vamos dar uma olhada em como você pode adicionar lógica de validação mais rica para as classes de modelo e habilitar algumas regras de negócio a serem aplicadas.
 
->[!div class="step-by-step"]
-[Anterior](examining-the-edit-methods-and-edit-view.md)
-[Próximo](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [Anterior](examining-the-edit-methods-and-edit-view.md)
+> [Próximo](adding-validation-to-the-model.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/user-based-authorization-vb
-title: "Autorização baseada em usuário (VB) | Microsoft Docs"
+title: Autorização baseada em usuário (VB) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial examinaremos limitando o acesso a páginas e restringindo a funcionalidade de nível de página por meio de uma variedade de técnicas."
+description: Neste tutorial examinaremos limitando o acesso a páginas e restringindo a funcionalidade de nível de página por meio de uma variedade de técnicas.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5579292930da97b142ff6db5d34d33be77aeea4b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4073f349c7965a89b39a4b1b672f0e84fc96f287
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="user-based-authorization-vb"></a>Autorização baseada em usuário (VB)
 ====================
@@ -168,7 +168,7 @@ Para testar essa alteração de autorização, inicie visitando o site como um u
 
 ### <a name="a-look-at-how-theurlauthorizationmoduleuses-the-authorization-rules-to-grant-or-deny-access"></a>Uma olhada em como o`UrlAuthorizationModule`usa as regras de autorização para conceder ou negar acesso
 
-O `UrlAuthorizationModule` determina se autorizar uma identidade específica de uma URL específica, analisando a autorização de URL regras para um de cada vez, começando da primeira e trabalhar sua forma para baixo. Assim que uma correspondência for encontrada, o usuário é concedido ou negado o acesso, dependendo se a correspondência foi encontrada em um `<allow>` ou `<deny>` elemento. **Se nenhuma correspondência for encontrada, é concedido acesso ao usuário.** Consequentemente, se você quiser restringir o acesso, é essencial que você use um `<deny>` como o último elemento na configuração de autorização de URL. **Se você omitir um *`<deny>`* elemento, todos os usuários terão acesso.**
+O `UrlAuthorizationModule` determina se autorizar uma identidade específica de uma URL específica, analisando a autorização de URL regras para um de cada vez, começando da primeira e trabalhar sua forma para baixo. Assim que uma correspondência for encontrada, o usuário é concedido ou negado o acesso, dependendo se a correspondência foi encontrada em um `<allow>` ou `<deny>` elemento. <strong>Se nenhuma correspondência for encontrada, é concedido acesso ao usuário.</strong> Consequentemente, se você quiser restringir o acesso, é essencial que você use um `<deny>` como o último elemento na configuração de autorização de URL. <strong>Se você omitir um</strong><strong>`<deny>`</strong><strong>elemento, todos os usuários terão acesso.</strong>
 
 Para entender melhor o processo usado pelo `UrlAuthorizationModule` para determinar a autoridade, considere o exemplo observamos anteriormente nessa etapa de regras de autorização de URL. A primeira regra é um `<allow>` elemento que permite o acesso a Tito e Scott. As regras de segundo é um `<deny>` elemento que nega o acesso a todos os usuários. Se um usuário anônimo acessa, o `UrlAuthorizationModule` começa por solicitar, é anônimo Scott ou Tito? A resposta, obviamente, é não, portanto ele prossegue para a segunda regra. É anônimo no conjunto de todas as pessoas? Desde que a resposta Sim, aqui está o `<deny>` regra é colocada em vigor e o visitante é redirecionado para a página de logon. Da mesma forma, se está visitando Jisun, o `UrlAuthorizationModule` começa perguntando é Jisun Scott ou Tito? Desde que ela não for, o `UrlAuthorizationModule` continua para a segunda pergunta, Jisun está no conjunto de todas as pessoas? Ela é, portanto ela, também terá o acesso negada. Por fim, se Tito visita, a primeira pergunta representado pelo `UrlAuthorizationModule` é uma resposta afirmativa, portanto, Tito tem acesso.
 
@@ -217,7 +217,7 @@ Essas regras de autorização refinadas podem ser implementadas declarativamente
 Vamos criar uma página que lista os arquivos em um diretório específico dentro de um controle GridView. Junto com cada nome de arquivo, tamanho e outras informações de listagem, GridView inclui duas colunas de botões de link: um modo de exibição e exclua intitulada, denominado. Se o modo de exibição LinkButton é clicado, o conteúdo do arquivo selecionado será exibido; Se você clicar no botão Excluir LinkButton, o arquivo será excluído. Vamos criar inicialmente nessa página, de modo que sua funcionalidade de exibição e delete está disponível para todos os usuários. No usando as seções de controle LoginView e limitar funcionalidade por meio de programação, veremos como habilitar ou desabilitar esses recursos com base no usuário visitar a página.
 
 > [!NOTE]
-> A página do ASP.NET que está prestes a criar usa um controle GridView para exibir uma lista de arquivos. Desde que este tutorial série se concentra em formulários de autenticação, autorização, contas de usuário e funções, não desejo gastar muito tempo discutindo o funcionamento interno do controle GridView. Enquanto este tutorial fornece instruções passo a passo específicas para a configuração nesta página, ele não entre em detalhes sobre por que certas escolhas feitas ou o que tem propriedades específicas do efeito na saída renderizada. Para obter um exame completo do controle GridView, consulte Meus  *[trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)*  série de tutoriais.
+> A página do ASP.NET que está prestes a criar usa um controle GridView para exibir uma lista de arquivos. Desde que este tutorial série se concentra em formulários de autenticação, autorização, contas de usuário e funções, não desejo gastar muito tempo discutindo o funcionamento interno do controle GridView. Enquanto este tutorial fornece instruções passo a passo específicas para a configuração nesta página, ele não entre em detalhes sobre por que certas escolhas feitas ou o que tem propriedades específicas do efeito na saída renderizada. Para obter um exame completo do controle GridView, consulte Meus *[trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)* série de tutoriais.
 
 
 Comece abrindo o `UserBasedAuthorization.aspx` arquivo o `Membership` pasta e adicionando um controle GridView para a página chamada `FilesGrid`. Marca inteligente do GridView, clique no link de editar colunas para abrir a caixa de diálogo de campos. Aqui, desmarque a caixa de campos de geração automática de seleção no canto inferior esquerdo. Em seguida, adicione um botão de seleção, um botão de exclusão e dois BoundFields do canto superior esquerdo (os botões de seleção e Delete podem ser encontrados no tipo CommandField). Definir o botão de seleção `SelectText` propriedade para exibição e o BoundField primeiro `HeaderText` e `DataField` propriedades de nome. Definir o BoundField segundo `HeaderText` propriedade para o tamanho em Bytes, seu `DataField` propriedade de comprimento, seu `DataFormatString` propriedade {0: n0} e sua `HtmlEncode` a propriedade como False.
@@ -400,24 +400,24 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [Adicionando regras de autorização para os negócios e camadas de dados usando`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
+- [Adicionando regras de autorização para os negócios e camadas de dados usando `PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
 - [Autorização de ASP.NET](https://msdn.microsoft.com/library/wce3kxhd.aspx)
 - [Alterações entre IIS6 e segurança do IIS7](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
 - [Configurando arquivos específicos e subpastas](https://msdn.microsoft.com/library/6hbkh9s7.aspx)
 - [Limitar a funcionalidade de modificação de dados com base no usuário](../../data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb.md)
 - [Início rápido do controle LoginView](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/loginview.aspx)
 - [Noções básicas de autorização de URL de IIS7](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/URL-Authorization/Understanding-IIS7-URL-Authorization)
-- [`UrlAuthorizationModule`Documentação técnica](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
+- [`UrlAuthorizationModule` Documentação técnica](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
 - [Trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Anterior](validating-user-credentials-against-the-membership-user-store-vb.md)
-[Próximo](storing-additional-user-information-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](validating-user-credentials-against-the-membership-user-store-vb.md)
+> [Próximo](storing-additional-user-information-vb.md)

@@ -2,21 +2,21 @@
 uid: whitepapers/mvc3-release-notes
 title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/06/2010
 ms.topic: article
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 058b7c6fe6eeeea4403e7e5fdc05bb44d2ba1300
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 0bfe9cdc215226457ccfafff2b85ace87325b91b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -94,7 +94,7 @@ ms.lasthandoff: 02/12/2018
 - [Isenção de responsabilidade](#0.1__Toc274034231)
 
 <a id="overview"></a>
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Este documento descreve a versão do ASP.NET MVC 3 RTM para Visual Studio 2010. ASP.NET MVC é uma estrutura para desenvolvimento de aplicativos Web que usa o padrão Model-View-Controller (MVC). O instalador do ASP.NET MVC 3 inclui os seguintes componentes:
 
@@ -262,7 +262,7 @@ Observe que as versões anteriores dos navegadores não dão suporte a marcas es
 <a id="tu-Modernizr"></a>
 ### <a name="project-templates-now-include-modernizr-17"></a>Modelos de projeto agora incluem Modernizr 1.7
 
-Modernizr é uma biblioteca de JavaScript que habilita o suporte para CSS 3 e HTML5 em navegadores que ainda não dão suporte a esses recursos. Essa biblioteca é incluída como um pacote do NuGet pré-instalados nos modelos de projetos do ASP.NET MVC 3. Para obter mais informações sobre Modernizr, consulte [http://www.modernizr.com/](http://www.modernizr.com/).
+Modernizr é uma biblioteca de JavaScript que habilita o suporte para CSS 3 e HTML5 em navegadores que ainda não dão suporte a esses recursos. Essa biblioteca é incluída como um pacote do NuGet pré-instalados nos modelos de projetos do ASP.NET MVC 3. Para obter mais informações sobre Modernizr, consulte [ http://www.modernizr.com/ ](http://www.modernizr.com/).
 
 <a id="tu-UpdatedJQuery"></a>
 ### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>Modelos de projeto incluem versões atualizadas do jQuery, jQuery e jQuery UI validação
@@ -373,7 +373,7 @@ Esta seção descreve alterações (novos recursos e correções de bugs) feitas
 <a id="_Toc2_1"></a>
 ### <a name="project-templates-changed-to-include-jquery-144-jquery-validation-17-and-jquery-ui-186"></a>Modelos de projeto alterado para incluir jQuery 1.4.4, 1.7 de validação do jQuery e jQuery UI 1.8.6
 
-Os modelos de projeto do ASP.NET MVC 3 agora incluem as versões mais recentes do jQuery e jQuery validação jQuery UI. jQuery UI é uma novidade para os modelos de projeto e fornece widgets de interface do usuário útil. Para obter mais informações sobre o jQuery UI, visite sua home page: [http://jqueryui.com/](http://jqueryui.com/).
+Os modelos de projeto do ASP.NET MVC 3 agora incluem as versões mais recentes do jQuery e jQuery validação jQuery UI. jQuery UI é uma novidade para os modelos de projeto e fornece widgets de interface do usuário útil. Para obter mais informações sobre o jQuery UI, visite sua home page: [ http://jqueryui.com/ ](http://jqueryui.com/).
 
 <a id="_Toc2_2"></a>
 ### <a name="added-additionalmetadataattribute-class"></a>Classe de "AdditionalMetadataAttribute" adicionado
@@ -438,7 +438,7 @@ Quando o *Html.ValidationMessage* método exibe uma mensagem de validação, ele
 <a id="_Toc2_10"></a>
 ### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>Fixa @model declaração não adicionar espaço em branco ao documento
 
-Em versões anteriores, o  *@model*  declaração na parte superior de uma exibição adicionada uma linha em branco para a saída HTML renderizada. Esse problema foi corrigido para que a declaração não apresenta um espaço em branco.
+Em versões anteriores, o <em>@model</em> declaração na parte superior de uma exibição adicionada uma linha em branco para a saída HTML renderizada. Esse problema foi corrigido para que a declaração não apresenta um espaço em branco.
 
 <a id="_Toc2_11"></a>
 ### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>Propriedade "FileExtensions" adicionado para mecanismos de exibição para dar suporte a nomes de arquivo específicas do mecanismo
@@ -465,7 +465,7 @@ Em versões anteriores, os valores explícitos foram passados para o *RenderActi
 - Em versões anteriores do ASP.NET MVC, filtros de ação foram criados por solicitação, exceto em alguns casos. Esse comportamento nunca foi um comportamento garantido, mas apenas um detalhe de implementação e o contrato para filtros era considerá-las sem monitoração de estado. No ASP.NET MVC 3, os filtros são armazenados em cache mais agressiva. Portanto, os filtros de ação personalizada que incorretamente armazenam o estado da instância podem ser interrompidos.
 - A ordem de execução de filtros de exceção foi alterado para filtros de exceção que têm o mesmo *ordem* valor. No ASP.NET MVC 2 e versões anteriores, filtros de exceção no controlador que tinha o mesmo *ordem* valor, como aqueles em um método de ação foram executados antes dos filtros de exceção no método de ação. Isso normalmente seria o caso quando foram aplicados filtros de exceção sem uma especificado *ordem* valor. ASP.NET MVC 3, nesta ordem foi revertida para que o manipulador de exceção mais específico é executado pela primeira vez. Como nas versões anteriores, se o *ordem* propriedade seja explicitamente especificada, os filtros são executados na ordem especificada.
 - Uma nova propriedade chamada *FileExtensions* foi adicionado para o *VirtualPathProviderViewEngine* classe base. Quando o ASP.NET procura uma exibição pelo caminho (e não por nome), somente exibições com uma extensão de arquivo contidos na lista especificada por essa nova propriedade são consideradas. Isso é uma alteração significativa em aplicativos onde um provedor de compilação personalizada é registrado para habilitar uma extensão de arquivo personalizados para modos de exibição de formulário da Web e o provedor faz referência a esses modos de exibição usando um caminho completo em vez de um nome. A solução é modificar o valor da *FileExtensions* propriedade inclua a extensão de arquivo personalizado.
-- Implementações de fábrica do controlador personalizado que implementam diretamente o *IControllerFactory* interface deve fornecer uma implementação do novo *GetControllerSessionBehavior * * método foi adicionado para o interface nesta versão*. Em geral, é recomendável que você não implementar essa interface diretamente e em vez disso, derive a classe de *DefaultControllerFactory*.
+- Implementações de fábrica do controlador personalizado que implementam diretamente o <em>IControllerFactory</em> interface deve fornecer uma implementação do novo <em>GetControllerSessionBehavior</em>  <em>método que foi adicionado à interface nesta versão</em>. Em geral, é recomendável que você não implementar essa interface diretamente e em vez disso, derive a classe de <em>DefaultControllerFactory</em>.
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>Problemas Conhecidos
@@ -629,11 +629,11 @@ Como alternativa, para desativar a validação de solicitação para todas as pr
 
 Versão Beta do ASP.NET MVC 3 foi lançado em 6 de outubro de 2010. As observações a seguir são específicas para a versão Beta e estão sujeitas a todas as atualizações ou alterações mencionadas na seção Release Candidate do ASP.NET MVC 3 acima.
 
-## <a id="0.1__Toc274034215"></a>Versão Beta do novo Featuresin ASP.NET MVC 3
+## <a id="0.1__Toc274034215"></a>  Versão Beta do novo Featuresin ASP.NET MVC 3
 
 <a id="0.1__Default_validation_system"></a>Esta seção descreve os recursos que foram introduzidos na versão Beta do ASP.NET MVC 3.
 
-### <a id="0.1__Toc274034216"></a>Gerenciador de pacotes do NuGet
+### <a id="0.1__Toc274034216"></a>  Gerenciador de pacotes do NuGet
 
 O ASP.NET MVC 3 inclui o NuGet Package Manager, que é uma ferramenta de gerenciamento de pacote integrado para a adição de bibliotecas e ferramentas para projetos do Visual Studio. A maior parte do tempo, ele automatiza as etapas que os desenvolvedores usam hoje para obter uma biblioteca em sua árvore de origem.
 
@@ -641,7 +641,7 @@ Você pode trabalhar com o NuGet como uma ferramenta de linha de comando, como u
 
 Para obter mais informações sobre o NuGet, leia o [NuGet documentação](https://docs.microsoft.com/nuget/).
 
-### <a id="0.1__Toc274034217"></a>Caixa de diálogo Novo projeto de aprimorado
+### <a id="0.1__Toc274034217"></a>  Caixa de diálogo Novo projeto de aprimorado
 
 Quando você cria um novo projeto, a caixa de diálogo Novo projeto agora permite especificar o mecanismo de exibição, bem como um tipo de projeto do ASP.NET MVC.
 
@@ -655,7 +655,7 @@ Vazio. Contém um conjunto mínimo de arquivos de um projeto ASP.NET MVC, inclui
 
 Aplicativo de Internet. Contém a funcionalidade de exemplo que demonstra como usar o provedor de associação no ASP.NET MVC.
 
-### <a id="0.1__Toc274034218"></a>Maneira simplificada para especificar fortemente tipado modelos nos modos de exibição do Razor
+### <a id="0.1__Toc274034218"></a>  Maneira simplificada para especificar fortemente tipado modelos nos modos de exibição do Razor
 
 A maneira de especificar o tipo de modelo para modos de exibição Razor fortemente tipados foi simplificada usando o novo @model diretiva para exibições CSHTML e @ModelType diretiva para exibições VBHTML. Em versões anteriores do ASP.NET MVC, você deve especificar que um modelo fortemente tipado para Razor exibições desta forma:
 
@@ -665,7 +665,7 @@ Nesta versão, você pode usar a seguinte sintaxe:
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample26.cshtml)]
 
-### <a id="0.1__Toc274034219"></a>Suporte a métodos auxiliares para novas páginas da Web do ASP.NET
+### <a id="0.1__Toc274034219"></a>  Suporte a métodos auxiliares para novas páginas da Web do ASP.NET
 
 A nova tecnologia de páginas da Web ASP.NET inclui um conjunto de métodos auxiliares que são úteis para adicionar funcionalidades mais comumente usadas para controladores e exibições. ASP.NET MVC 3 oferece suporte a esses métodos auxiliares dentro de controladores e exibições (onde apropriado). Esses métodos estão contidos no assembly Helpers. A tabela a seguir lista alguns dos métodos auxiliares páginas da Web ASP.NET.
 
@@ -681,7 +681,7 @@ Um tópico de referência rápida que lista os auxiliares e a sintaxe básica es
 
 [https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-api-reference](../web-pages/overview/api-reference/asp-net-web-pages-api-reference.md)
 
-### <a id="0.1__Toc274034220"></a>Suporte de injeção de dependência adicional
+### <a id="0.1__Toc274034220"></a>  Suporte de injeção de dependência adicional
 
 Aproveitando a versão do ASP.NET MVC 3 Preview 1, a versão atual que inclui o suporte adicionado para dois novos serviços e quatro serviços existentes e suporte aprimorado para o localizador de serviço comum e resolução de dependência.
 
@@ -732,7 +732,7 @@ A nova versão inclui suporte à resolução de dependências para os seguintes 
 - Provedores de valor. Classes que implementam ValueProviderFactory podem ser registradas no resolvedor de dependência e o sistema usará para criar provedores de valor que são consumidos pelo controlador e durante a associação de modelo.
 - Associadores de modelo. Classes que implementam IModelBinderProvider podem ser registradas no resolvedor de dependência e o sistema usará para criar associadores de modelo que são consumidos pelo sistema de associação de modelo.
 
-### <a id="0.1__Toc274034221"></a>Novo suporte para discreto Ajax com base em jQuery
+### <a id="0.1__Toc274034221"></a>  Novo suporte para discreto Ajax com base em jQuery
 
 O ASP.NET MVC inclui métodos auxiliares de Ajax como o seguinte:
 
@@ -748,7 +748,7 @@ Esses métodos usam o JavaScript para invocar um método de ação no servidor, 
 
 Este recurso é habilitado por padrão no arquivo Web. config no ASP.NET MVC 3 novos modelos de projeto, mas é desabilitado por padrão para projetos existentes. Para obter mais informações, consulte [adicionado sinalizadores de aplicativo para validação do cliente e o JavaScript discreto](#0.1_AddedApplicationWideFlagsForClientValida) mais adiante neste documento.
 
-### <a id="0.1__Toc274034222"></a>Novo suporte para jQuery discreto validação
+### <a id="0.1__Toc274034222"></a>  Novo suporte para jQuery discreto validação
 
 Por padrão, o ASP.NET MVC 3 Beta usa validação jQuery de maneira discreta para realizar a validação do lado do cliente. Para habilitar a validação do cliente discreto, fazer uma chamada com o seguinte de dentro de um modo de exibição:
 
@@ -768,7 +768,7 @@ Este recurso está ativado por padrão no arquivo Web. config no ASP.NET MVC 3 n
 
 <a id="0.1__Toc274034223"></a>
 
-### <a id="0.1_AddedApplicationWideFlagsForClientValida"></a>Novo aplicativo sinalizadores para a validação do cliente e o JavaScript discreto
+### <a id="0.1_AddedApplicationWideFlagsForClientValida"></a>  Novo aplicativo sinalizadores para a validação do cliente e o JavaScript discreto
 
 Você pode habilitar ou desabilitar a validação do cliente e o JavaScript discreto usando globalmente membros estáticos da classe HtmlHelper, como no exemplo a seguir:
 
@@ -784,7 +784,7 @@ Como você pode habilitar esses recursos por padrão, novas sobrecargas foram in
 
 Para compatibilidade com versões anteriores, esses dois recursos estão desabilitadas por padrão.
 
-### <a id="0.1__Toc274034224"></a>Novo suporte para o código que é executado antes da execução de modos de exibição
+### <a id="0.1__Toc274034224"></a>  Novo suporte para o código que é executado antes da execução de modos de exibição
 
 Agora você pode colocar um arquivo chamado \_viewstart.cshtml (ou \_viewstart.vbhtml) no diretório visualizações e adicione o código que será compartilhada entre várias exibições no diretório e seus subdiretórios. Por exemplo, você pode colocar o seguinte código para o \_viewstart.cshtml página na pasta ~/Views:
 
@@ -794,7 +794,7 @@ Isso define a página de layout para cada modo de exibição dentro da pasta de 
 
 Por padrão, o código de \_viewstart.cshtml arquivo também se aplica a exibições em qualquer subpasta. No entanto, as subpastas individuais podem ter sua própria versão do \_viewstart.cshtml arquivo; nesse caso, a versão local tem precedência. Por exemplo, para executar o código que é comum a todos os modos de exibição para HomeController, coloque um \_viewstart.cshtml arquivo na pasta ~/Views/Home.
 
-### <a id="0.1__Toc274034225"></a>Novo suporte para a sintaxe do Razor VBHTML
+### <a id="0.1__Toc274034225"></a>  Novo suporte para a sintaxe do Razor VBHTML
 
 A visualização anterior do ASP.NET MVC incluído o suporte para modos de exibição usando a sintaxe Razor com base em c#. Esses modos de exibição usam a extensão de arquivo. cshtml. Como parte de um trabalho contínuo para dar suporte a Razor, o ASP.NET MVC 3 Beta introduz suporte para a sintaxe do Razor no Visual Basic, que usa a extensão de arquivo. vbhtml.
 
@@ -802,7 +802,7 @@ Para obter uma introdução ao uso de sintaxe do Visual Basic em páginas VBHTML
 
 [https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-visual-basic](../web-pages/overview/getting-started/introducing-razor-syntax-vb.md)
 
-### <a id="0.1__Toc274034226"></a>Controle mais Granular sobre ValidateInputAttribute
+### <a id="0.1__Toc274034226"></a>  Controle mais Granular sobre ValidateInputAttribute
 
 ASP.NET MVC sempre inclui a classe ValidateInputAttribute, que chama a infraestrutura de validação de solicitação ASP.NET principal para certificar-se de que a solicitação de entrada não contém entrada potencialmente mal-intencionada. Por padrão, a validação de entrada está habilitada. É possível desabilitar a validação de solicitação usando o atributo ValidateInputAttribute, como no exemplo a seguir:
 
@@ -814,7 +814,7 @@ Por exemplo, se você estiver desenvolvendo um mecanismo de blog, convém permit
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample38.cs)]
 
-### <a id="0.1__Toc274034227"></a>Auxiliares converter sublinhados hifens para nomes de atributo HTML especificados usando objetos anônimos
+### <a id="0.1__Toc274034227"></a>  Auxiliares converter sublinhados hifens para nomes de atributo HTML especificados usando objetos anônimos
 
 Métodos auxiliares permitem que você especifique pares de nome/valor de atributo usando um objeto anônimo, como no exemplo a seguir:
 
@@ -830,7 +830,7 @@ O exemplo anterior processa a seguinte marcação quando o auxiliar é executado
 
 [!code-html[Main](mvc3-release-notes/samples/sample41.html)]
 
-## <a id="0.1__Toc274034228"></a>Correções de bugs
+## <a id="0.1__Toc274034228"></a>  Correções de bugs
 
 O modelo de objeto padrão para os auxiliares de modelo EditorFor e DisplayFor agora dá suporte a ordenação especificado na propriedade DisplayAttribute.Order. (Nas versões anteriores, a configuração de ordem não foi usada.)
 
@@ -838,11 +838,11 @@ Validação do cliente agora oferece suporte à validação de propriedades subs
 
 JsonValueProviderFactory agora é registrado por padrão.
 
-## <a id="0.1__Toc274034229"></a>Alterações mais recentes
+## <a id="0.1__Toc274034229"></a>  Alterações mais recentes
 
 A ordem de execução de filtros de exceção foi alterado para filtros de exceção que têm o mesmo valor de ordem. No ASP.NET MVC 2 e versões anteriores, exceção filtros no controlador com a mesma ordem, como aqueles em um método de ação foram executados antes dos filtros de exceção no método de ação. Isso normalmente seria o caso quando filtros de exceção foram aplicados sem um valor de ordem especificado. ASP.NET MVC 3, nesta ordem foi revertida para que o manipulador de exceção mais específico é executado pela primeira vez. Como nas versões anteriores, se a propriedade de ordem for especificada explicitamente, os filtros são executados na ordem especificada.
 
-## <a id="0.1__Toc274034230"></a>Problemas conhecidos
+## <a id="0.1__Toc274034230"></a>  Problemas conhecidos
 
 Durante a instalação, a caixa de diálogo de aceitação de EULA exibe os termos de licença em uma janela que é menor do que se destina.
 

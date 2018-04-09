@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/creating-a-basic-web-forms-page
-title: "Criando um básico ASP.NET 4.5 formulários da Web página no Visual Studio 2013 | Microsoft Docs"
+title: Criando um básico ASP.NET 4.5 formulários da Web página no Visual Studio 2013 | Microsoft Docs
 author: Erikre
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/03/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 6b699cc939292b7ab0167dba7cfa6a00b681ef3a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0dbd3063c9be3564637fad34e60f62c1662dcc07
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>Criando um básico ASP.NET 4.5 formulários da Web página no Visual Studio 2013
 ====================
-Por [Erik Reitan](https://github.com/Erikre)
+por [Erik Reitan](https://github.com/Erikre)
 
 Este passo a passo fornece uma introdução para o ambiente de desenvolvimento da Web em [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) e em [Microsoft Visual Studio Express 2013 para Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Este passo a passo orienta você na criação de uma página de Web Forms do ASP.NET simples e ilustra as técnicas básicas de criação de uma nova página, adicionando controles e escrever código.
 
@@ -201,8 +201,8 @@ O Visual Studio oferece várias maneiras de definir as propriedades de controles
 
     > [!NOTE] 
     > 
-    > Todos os controles estão dentro de um **formulário** elemento, que também tem o atributo **runat =&quot;servidor&quot;**. O **runat =&quot;servidor&quot;**  atributo e o **asp:** prefixo para controle de marcas marcam os controles para que eles sejam processados pelo ASP.NET no servidor quando a página é executada. Código fora dos  **&lt;formulário runat =&quot;servidor&quot; &gt;**  e  **&lt;script runat =&quot;servidor&quot; &gt;**  elementos são enviados sem alterações para o navegador, o motivo pelo qual o código ASP.NET deve estar dentro de um elemento cuja marca de abertura contém o **runat =&quot;servidor&quot;**  atributo.
-4. Em seguida, você irá adicionar uma propriedade adicional para o [rótulo](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) controle. Coloque o ponto de inserção diretamente após **asp: Label** no  **&lt;asp: Label&gt;**  marca e, em seguida, pressione **SPACEBAR**.
+    > Todos os controles estão dentro de um **formulário** elemento, que também tem o atributo **runat =&quot;servidor&quot;**. O **runat =&quot;servidor&quot;**  atributo e o **asp:** prefixo para controle de marcas marcam os controles para que eles sejam processados pelo ASP.NET no servidor quando a página é executada. Código fora dos **&lt;formulário runat =&quot;servidor&quot; &gt;** e **&lt;script runat =&quot;servidor&quot; &gt;** elementos são enviados sem alterações para o navegador, o motivo pelo qual o código ASP.NET deve estar dentro de um elemento cuja marca de abertura contém o **runat =&quot;servidor&quot;**  atributo.
+4. Em seguida, você irá adicionar uma propriedade adicional para o [rótulo](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) controle. Coloque o ponto de inserção diretamente após **asp: Label** no **&lt;asp: Label&gt;** marca e, em seguida, pressione **SPACEBAR**.
 
     É exibida uma lista suspensa que exibe a lista de propriedades disponíveis, você pode definir para um [rótulo](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) controle. Esse recurso, conhecido como **IntelliSense**, ajuda você na **fonte** exibição com a sintaxe de controles de servidor, elementos HTML e outros itens na página. A ilustração a seguir mostra o **IntelliSense** lista suspensa para o [rótulo](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) controle.
 
@@ -214,7 +214,7 @@ O Visual Studio oferece várias maneiras de definir as propriedades de controles
     > [!NOTE] 
     > 
     > Você pode exibir um **IntelliSense** lista suspensa a qualquer momento pressionando **CTRL + J** durante a exibição de código.
-6. Selecione uma cor para o  **[rótulo](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)**  texto do controle. Certifique-se de que selecionar uma cor escura o suficiente para ler em um plano de fundo branco.
+6. Selecione uma cor para o **[rótulo](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)** texto do controle. Certifique-se de que selecionar uma cor escura o suficiente para ler em um plano de fundo branco.
 
     O **ForeColor** atributo é concluído com a cor que você selecionou, incluindo as aspas de fechamento.
 
@@ -231,7 +231,7 @@ Para este passo a passo, você escreverá código que lê o nome que o usuário 
 2. Clique duas vezes o [botão](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) controle.
 
     Por padrão, o Visual Studio alterna para um arquivo code-behind e cria um manipulador de eventos de esqueleto para o [botão](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) evento padrão do controle, o [clique](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) eventos. O arquivo code-behind separa a marcação da interface do usuário (como HTML) no seu código de servidor (como c#).   
-O cursor é posicionado para adicionar código para este manipulador de eventos.
+   O cursor é posicionado para adicionar código para este manipulador de eventos.
 
     > [!NOTE] 
     > 
@@ -247,7 +247,7 @@ O cursor é posicionado para adicionar código para este manipulador de eventos.
 
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample2.vb?highlight=2)]
 5. Volte para a exibição a **fonte** exibição de sua marcação HTML clicando *FirstWebPage* no **Gerenciador de soluções** e selecionando **exibição Marcação**.
-6. Role até a  **&lt;asp: Button&gt;**  elemento. Observe que o  **&lt;asp: Button&gt;**  elemento agora tem o atributo **onclick =&quot;Button1\_clique&quot;**.
+6. Role até a **&lt;asp: Button&gt;** elemento. Observe que o **&lt;asp: Button&gt;** elemento agora tem o atributo **onclick =&quot;Button1\_clique&quot;**.
 
     Este atributo vincula o botão [clique](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) eventos para o método do manipulador que você codificou na etapa anterior.
 
@@ -268,7 +268,7 @@ Agora você pode testar os controles do servidor na página.
     O nome inserido é exibido no [rótulo](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) controle. Observe que, quando você clica no botão, a página é postada para o servidor Web. ASP.NET, em seguida, recria a página, executa o seu código (nesse caso, o [botão](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) do controle [clique](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) execuções de manipulador de eventos) e, em seguida, envia a nova página para o navegador. Se você observar a barra de status no navegador, você pode ver que a página está fazendo uma viagem de ida e para o servidor Web cada vez que você clicar no botão.
 3. No navegador, exiba a origem da página que você estiver executando o botão direito do mouse na página e selecionando **Exibir código-fonte**.
 
-    Na página de código fonte, você vê HTML sem qualquer código de servidor. Especificamente, você não vir o  **&lt;asp:&gt;**  elementos que você estava trabalhando no **fonte** exibição. Quando a página é executada, o ASP.NET processa os controles de servidor e processa os elementos HTML para a página que executam as funções que representam o controle. Por exemplo, o  **&lt;asp: Button&gt;**  controle é renderizado como HTML  **&lt;tipo de entrada =&quot;enviar&quot; &gt;**  elemento.
+    Na página de código fonte, você vê HTML sem qualquer código de servidor. Especificamente, você não vir o **&lt;asp:&gt;** elementos que você estava trabalhando no **fonte** exibição. Quando a página é executada, o ASP.NET processa os controles de servidor e processa os elementos HTML para a página que executam as funções que representam o controle. Por exemplo, o **&lt;asp: Button&gt;** controle é renderizado como HTML **&lt;tipo de entrada =&quot;enviar&quot; &gt;** elemento.
 4. Feche o navegador.
 
 
@@ -297,7 +297,7 @@ Nesta seção, você adicionará um [System.Web.UI.WebControls.Calendar](https:/
 4. Do **selecionar um esquema** , selecione **simples** e, em seguida, clique em **Okey**.
 5. Alternar para **fonte** exibição.
 
-    Você pode ver o  **&lt;asp: Calendar&gt;**  elemento. Esse elemento é muito maior que os elementos para os controles simples que você criou anteriormente. Ele também inclui subelementos, como  **&lt;WeekEndDayStyle&gt;**, que representam várias configurações de formatação. A ilustração a seguir mostra o [calendário](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) controle **fonte** exibição. (A marcação exata que você vê no **fonte** modo de exibição pode ser ligeiramente diferente da ilustração.)
+    Você pode ver o **&lt;asp: Calendar&gt;** elemento. Esse elemento é muito maior que os elementos para os controles simples que você criou anteriormente. Ele também inclui subelementos, como  **&lt;WeekEndDayStyle&gt;**, que representam várias configurações de formatação. A ilustração a seguir mostra o [calendário](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) controle **fonte** exibição. (A marcação exata que você vê no **fonte** modo de exibição pode ser ligeiramente diferente da ilustração.)
 
     ![Controle de exibição da fonte de calendário](creating-a-basic-web-forms-page/_static/image15.png "controle na exibição da fonte de calendário")
 
@@ -316,10 +316,12 @@ Nesta seção, você programará o [calendário](https://msdn.microsoft.com/libr
 2. Concluir o [SelectionChanged](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selectionchanged.aspx) manipulador de eventos com o código a seguir.
 
 
-    [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
+~~~
+[!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
 
-    [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
+[!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
+~~~
 
  O código acima define o texto do controle de rótulo para a data selecionada do controle de calendário.
 

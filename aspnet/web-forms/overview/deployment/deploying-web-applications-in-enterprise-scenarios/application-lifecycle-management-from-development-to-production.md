@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
-title: "Gerenciamento de ciclo de vida do aplicativo: De desenvolvimento para produção | Microsoft Docs"
+title: 'Gerenciamento de ciclo de vida do aplicativo: De desenvolvimento para produção | Microsoft Docs'
 author: jrjlee
-description: "Este tópico ilustra como uma empresa fictícia gerencia a implantação de um aplicativo da web ASP.NET por meio de ambientes de teste, preparação e produção como par..."
+description: Este tópico ilustra como uma empresa fictícia gerencia a implantação de um aplicativo da web ASP.NET por meio de ambientes de teste, preparação e produção como par...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: f7ffff1c3434ce98c70265e4bf64047fd44252d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8beeffb374df09c6695a1845199d30006ddcc1b7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a>Gerenciamento de ciclo de vida do aplicativo: De desenvolvimento para produção
 ====================
@@ -26,7 +26,7 @@ por [Jason Lee](https://github.com/jrjlee)
 
 > Este tópico ilustra como uma empresa fictícia gerencia a implantação de um aplicativo da web ASP.NET por meio de ambientes de teste, preparação e produção como parte de um processo de desenvolvimento contínuo. Ao longo do tópico, são fornecidos links para obter mais informações e instruções passo a passo sobre como executar tarefas específicas.
 > 
-> O tópico foi criado para fornecer uma visão geral de alto nível para um [série de tutoriais](deploying-web-applications-in-enterprise-scenarios.md) na implantação da web da empresa. Não se preocupe se você não estiver familiarizado com alguns dos conceitos descritos aqui & #x 2014; os tutoriais a seguir fornecem informações detalhadas sobre todas essas tarefas e técnicas.
+> O tópico foi criado para fornecer uma visão geral de alto nível para um [série de tutoriais](deploying-web-applications-in-enterprise-scenarios.md) na implantação da web da empresa. Não se preocupe se você não estiver familiarizado com alguns dos conceitos descritos aqui&#x2014;os tutoriais a seguir fornecem informações detalhadas sobre todas essas tarefas e técnicas.
 > 
 > > [!NOTE]
 > > ComentárioscomentáriospesquisandoO bem de simplicidade, este tópico não aborda Atualizando bancos de dados como parte do processo de implantação. No entanto, atualizações incrementais para recursos de bancos de dados é um requisito de muitos cenários de implantação corporativa, e você pode encontrar diretrizes sobre como fazer isso mais tarde na série tutorial. Para obter mais informações, consulte [implantar projetos de banco de dados](../web-deployment-in-the-enterprise/deploying-database-projects.md).
@@ -95,7 +95,7 @@ Para executar a implantação, um usuário executa o *Publish.proj* arquivo usan
 
 > [!NOTE]
 > A maneira como esses arquivos de projeto personalizados trabalham é independente do mecanismo de que você usar para chamar o MSBuild. Por exemplo, você pode usar a linha de comando do MSBuild diretamente, conforme descrito em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Você pode executar os arquivos de projeto de um arquivo de comando, conforme descrito em [criar e executar um arquivo de comando de implantação](../web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md). Como alternativa, você pode executar os arquivos de projeto de uma definição de compilação no TFS, conforme descrito em [criando uma definição de compilação que dá suporte à implantação](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).  
-> Em cada caso o resultado final é o mesmo & #x 2014; MSBuild executa o arquivo de projeto mesclada e implanta a solução para o ambiente de destino. Isso proporciona muita flexibilidade em como você pode disparar o processo de publicação.
+> Em cada caso, o resultado final é o mesmo&#x2014;MSBuild executa o arquivo de projeto mesclada e implanta a solução para o ambiente de destino. Isso proporciona muita flexibilidade em como você pode disparar o processo de publicação.
 
 
 Depois que ele criou os arquivos de projeto personalizados, Matt adiciona a uma pasta de solução e verifica-los no controle de origem.
@@ -185,7 +185,7 @@ O **DeployToStaging-WhatIf** definição de compilação contém a mesma lógica
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample3.cmd)]
 
 
-Dentro de *Publish.proj* arquivo, o **WhatIf** propriedade indica que todos os recursos de implantação devem ser publicados no modo "what if". Em outras palavras, os arquivos de log são gerados como se a implantação ficassem em frente, mas na verdade, nada será alterado no ambiente de destino. Isso lhe permite avaliar o impacto de uma implantação proposto & #x 2014; em particular, o que será são adicionados, o que será atualizado e o que será excluído & #x 2014; antes de realmente fazer as alterações.
+Dentro de *Publish.proj* arquivo, o **WhatIf** propriedade indica que todos os recursos de implantação devem ser publicados no modo "what if". Em outras palavras, os arquivos de log são gerados como se a implantação ficassem em frente, mas na verdade, nada será alterado no ambiente de destino. Isso lhe permite avaliar o impacto de uma implantação proposto&#x2014;em particular, o que será é adicionado, o que será atualizado e o que será excluído&#x2014;antes de realmente fazer as alterações.
 
 > [!NOTE]
 > Para obter mais informações sobre como configurar implantações "what if", consulte [executando uma implantação "E se"](../advanced-enterprise-web-deployment/performing-a-what-if-deployment.md).
@@ -227,5 +227,5 @@ Este tópico faz parte de uma série de tutoriais que fornecem orientação sobr
 - [Configurar o Team Foundation Server para a implantação de Web automatizada](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). Este tutorial fornece orientação sobre como integrar a lógica de implantação em processos de compilação do TFS.
 - [Enterprise Web implantação avançada](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Este tutorial fornece orientação sobre como preencher os desafios de implantação mais complexos que as organizações enfrentam.
 
->[!div class="step-by-step"]
-[Anterior](enterprise-web-deployment-scenario-overview.md)
+> [!div class="step-by-step"]
+> [Anterior](enterprise-web-deployment-scenario-overview.md)

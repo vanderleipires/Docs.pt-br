@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 title: 'Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Migrando para o SQL Server - 10 12 | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutoriais mostra como implantar um ASP.NET (publicar) projeto de aplicativo web que inclui um banco de dados do SQL Server Compact usando Visual Stu..."
+description: Esta série de tutoriais mostra como implantar um ASP.NET (publicar) projeto de aplicativo web que inclui um banco de dados do SQL Server Compact usando Visual Stu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: b97834e3e287645151bf927996fde63d93ae8356
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 25a829f1d3c730c7bb3b174f075ce8163999e482
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Migrando para o SQL Server - 10 12
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Este tutorial mostra como migrar do SQL Server Compact para o SQL Server. Um motivo, que talvez você queira fazer isso é tirar proveito dos recursos do SQL Server que o SQL Server Compact não dá suporte, como procedimentos armazenados, disparadores, exibições ou replicação. Para obter mais informações sobre as diferenças entre o SQL Server Compact e SQL Server, consulte o [Implantando o SQL Server Compact](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md) tutorial.
 
@@ -242,7 +242,7 @@ Em **Solution Explorer**, com o botão direito no projeto ContosoUniversity e cl
 
 Selecione o **perfil** guia.
 
-Selecione  **&lt;novo... &gt;**  na lista suspensa lista e digite "Test" como o nome do perfil.
+Selecione **&lt;novo... &gt;** na lista suspensa lista e digite "Test" como o nome do perfil.
 
 No **URL do serviço** , digite *localhost*.
 
@@ -268,7 +268,7 @@ Visual Studio implanta o aplicativo e abre o navegador para a home page do site 
 
 Agora que você implantou o ambiente de teste, você está pronto para configurar a implantação na produção. Começar como você fez para o ambiente de teste, criando um banco de dados para implantar. Como você se lembra da visão geral, o plano de hospedagem Cytanium Lite permite apenas um único banco de dados de SQL Server, para que você irá configurar somente um banco de dados, não dois. Todas as tabelas e os dados da associação e os bancos de dados School SQL Server Compact serão implantadas em um banco de dados do SQL Server em produção.
 
-Vá até o painel de controle de Cytanium em [http://panel.cytanium.com](http://panel.cytanium.com). Mantenha o mouse sobre **bancos de dados** e, em seguida, clique em **SQL Server 2008**.
+Vá até o painel de controle de Cytanium em [ http://panel.cytanium.com ](http://panel.cytanium.com). Mantenha o mouse sobre **bancos de dados** e, em seguida, clique em **SQL Server 2008**.
 
 [![Selecting_Databases_in_Control_Panel](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image22.png)](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image21.png)
 
@@ -380,7 +380,7 @@ Em um aplicativo real em que o banco de dados estava sendo atualizado em produç
 
 No **Web um clique em publicar** barra de ferramentas, certifique-se de que o **produção** perfil está selecionado e, em seguida, clique em **publicar**.
 
-Se você carregou *aplicativo\_offline.htm* antes de publicar, você deve usar o **Gerenciador de arquivos** utilitário no painel de controle Cytanium excluir *aplicativo\_off-line.* htm antes de testar. Você também pode ao mesmo tempo excluir o *. sdf* arquivos do *aplicativo\_dados* pasta.
+Se você carregou <em>aplicativo\_offline.htm</em> antes de publicar, você deve usar o <strong>Gerenciador de arquivos</strong> utilitário no painel de controle Cytanium excluir <em>aplicativo\_off-line.</em> htm antes de testar. Você também pode ao mesmo tempo excluir o <em>. sdf</em> arquivos do <em>aplicativo\_dados</em> pasta.
 
 Agora você pode abrir um navegador e vá para a URL do seu site público para testar o aplicativo da mesma maneira que você fez após a implantação para o ambiente de teste.
 
@@ -450,6 +450,6 @@ Siga o mesmo procedimento para desinstalar o **SqlServerCompact** pacote. (Os pa
 
 Agora foi migrado com êxito para o SQL Server Express e o SQL Server completo. A próxima tutorial, você criará outra alteração de banco de dados e você verá como implantar as alterações do banco de dados quando os bancos de dados de teste e produção usam o SQL Server Express e o SQL Server completo.
 
->[!div class="step-by-step"]
-[Anterior](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
-[Próximo](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
+> [!div class="step-by-step"]
+> [Anterior](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
+> [Próximo](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: d767e1a9d27670387133e5a48a8f92f5bdd39d9e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cff866716cb1179e02b930f33cb0f8c33d4a6cf0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unit-testing-signalr-applications"></a>Teste de unidade e os aplicativos SignalR
 ====================
@@ -72,11 +72,11 @@ Nesta seção, você adicionará um teste de unidade para o aplicativo criado no
     ![Adicionar referência de projeto](unit-testing-signalr-applications/_static/image3.png)
 6. Adicionar os pacotes SignalR, Moq e XUnit o **TestLibrary** projeto. No **Package Manager Console**, defina o **projeto padrão** lista suspensa para **TestLibrary**. Execute os comandos a seguir na janela do console:
 
-    - `Install-Package Microsoft.AspNet.SignalR`
-    - `Install-Package Moq`
-    - `Install-Package XUnit`
+   - `Install-Package Microsoft.AspNet.SignalR`
+   - `Install-Package Moq`
+   - `Install-Package XUnit`
 
-    ![Instalar pacotes](unit-testing-signalr-applications/_static/image4.png)
+     ![Instalar pacotes](unit-testing-signalr-applications/_static/image4.png)
 7. Crie o arquivo de teste. Clique com botão direito do **TestLibrary** do projeto e clique em **adicionar...** , **Classe**. Nomeie a nova classe **Tests.cs**.
 8. Substitua o conteúdo de Tests.cs com o código a seguir.
 

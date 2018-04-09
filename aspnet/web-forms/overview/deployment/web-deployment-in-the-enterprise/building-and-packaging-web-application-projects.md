@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
-title: "Criação e a embalagem de projetos de aplicativo Web | Microsoft Docs"
+title: Criação e a embalagem de projetos de aplicativo Web | Microsoft Docs
 author: jrjlee
-description: "Quando você deseja implantar um projeto de aplicativo web em um ambiente de servidor remoto, sua primeira tarefa é compilar o projeto e gerar um ote de implantação da web..."
+description: Quando você deseja implantar um projeto de aplicativo web em um ambiente de servidor remoto, sua primeira tarefa é compilar o projeto e gerar um ote de implantação da web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
 msc.type: authoredcontent
-ms.openlocfilehash: c05f725c9e6b493a6af8f5b5d20dbc9ff73a1ef8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d630e1776607bd0bd7c61e1f0f7234ef58c7533b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-and-packaging-web-application-projects"></a>Criação e a embalagem de projetos de aplicativo Web
 ====================
@@ -59,8 +59,8 @@ Esse destino usa o **MSBuild** tarefas para criar vários projetos. Observe o **
 O **pacote** destino é definido no *Microsoft.Web.Publishing.targets* arquivo. Essencialmente, esse destino usa a saída de compilação do seu projeto de aplicativo web e o transforma em um pacote de implantação da web que pode ser publicado em um servidor web IIS.
 
 > [!NOTE]
-> Para exibir um arquivo de projeto (por exemplo, *ContactManager.Mvc.csproj*) no Visual Studio 2010, primeiro é necessário descarregar o projeto de sua solução. No **Solution Explorer** janela, clique com botão direito no nó do projeto e, em seguida, clique em **descarregar projeto**. Clique com botão direito no nó do projeto novamente e, em seguida, clique em **editar***[arquivo de projeto]*). O arquivo de projeto será aberto na forma de XML bruta. Lembre-se de recarregar o projeto quando terminar.  
-> Para obter mais informações sobre destinos do MSBuild, tarefas, e **importação** instruções, consulte [Noções básicas sobre o arquivo de projeto](understanding-the-project-file.md). Para obter uma introdução mais detalhada dos arquivos de projeto e o WPP, consulte [dentro do Microsoft Build Engine: usando MSBuild e o Team Foundation Build](http://amzn.com/0735645248) Sayed Hashimi de Ibrahim e William Bartholomew, ISBN: 978-0-7356-4524-0.
+> Para exibir um arquivo de projeto (por exemplo, <em>ContactManager.Mvc.csproj</em>) no Visual Studio 2010, primeiro é necessário descarregar o projeto de sua solução. No <strong>Solution Explorer</strong> janela, clique com botão direito no nó do projeto e, em seguida, clique em <strong>descarregar projeto</strong>. Clique com botão direito no nó do projeto novamente e, em seguida, clique em <strong>editar</strong><em>[arquivo de projeto]</em>). O arquivo de projeto será aberto na forma de XML bruta. Lembre-se de recarregar o projeto quando terminar.  
+> Para obter mais informações sobre destinos do MSBuild, tarefas, e <strong>importação</strong> instruções, consulte [Noções básicas sobre o arquivo de projeto](understanding-the-project-file.md). Para obter uma introdução mais detalhada dos arquivos de projeto e o WPP, consulte [dentro do Microsoft Build Engine: usando MSBuild e o Team Foundation Build](http://amzn.com/0735645248) Sayed Hashimi de Ibrahim e William Bartholomew, ISBN: 978-0-7356-4524-0.
 
 
 ## <a name="what-is-a-web-deployment-package"></a>O que é um pacote de implantação da Web?
@@ -104,6 +104,6 @@ Os tópicos neste tutorial, a próximos [parâmetros de configuração para impl
 
 Para obter uma introdução mais detalhada dos arquivos de projeto e o WPP, consulte [dentro do Microsoft Build Engine: usando MSBuild e o Team Foundation Build](http://amzn.com/0735645248) Sayed Hashimi de Ibrahim e William Bartholomew, ISBN: 978-0-7356-4524-0.
 
->[!div class="step-by-step"]
-[Anterior](understanding-the-build-process.md)
-[Próximo](configuring-parameters-for-web-package-deployment.md)
+> [!div class="step-by-step"]
+> [Anterior](understanding-the-build-process.md)
+> [Próximo](configuring-parameters-for-web-package-deployment.md)

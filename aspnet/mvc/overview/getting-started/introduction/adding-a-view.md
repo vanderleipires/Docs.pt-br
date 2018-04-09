@@ -1,7 +1,7 @@
 ---
-title: "Adicionar uma exibição em um aplicativo MVC"
+title: Adicionar uma exibição em um aplicativo MVC
 author: Rick-Anderson
-description: "Adicionar uma exibição em um aplicativo MVC"
+description: Adicionar uma exibição em um aplicativo MVC
 ms.author: riande
 manager: wpickett
 ms.date: 09/1721/2017
@@ -9,17 +9,17 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: 86887f0dafa31ff3eb6597284c469c4b3053b6b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 21db97e635b5db580df31f46ca7f8b60a80d6f94
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view"></a>Adicionando uma exibição
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 Nesta seção você irá modificar o `HelloWorldController` classe para usar a exibição de arquivos de modelo para corretamente encapsulam o processo de geração de respostas HTML para um cliente. 
 
@@ -85,7 +85,7 @@ Quando é criado pela primeira vez o *Views\HelloWorld\Index.cshtml* arquivo con
 
 [!code-cshtml[Main](adding-a-view/samples/sample4.cshtml)]
 
-O código do Razor acima é definir explicitamente a página de layout. Examine o *exibições\\viewstart* arquivo, ele contém a mesma marcação Razor exata. O  *[exibições\\viewstart](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)*  arquivo define o layout comuns que todas as exibições usarão, portanto você pode comentar ou remova esse código da *Views\HelloWorld\ Cshtml* arquivo.
+O código do Razor acima é definir explicitamente a página de layout. Examine o *exibições\\viewstart* arquivo, ele contém a mesma marcação Razor exata. O *[exibições\\viewstart](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)* arquivo define o layout comuns que todas as exibições usarão, portanto você pode comentar ou remova esse código da *Views\HelloWorld\ Cshtml* arquivo.
 
 [!code-cshtml[Main](adding-a-view/samples/sample5.cshtml?highlight=1-3)]
 
@@ -119,7 +119,7 @@ Controladores serão responsáveis por fornecer quaisquer dados ou objetos neces
 
 Atualmente, o `Welcome` método de ação de `HelloWorldController` classe leva um `name` e um `numTimes` parâmetro e, em seguida, os valores diretamente para o navegador de saídas. Em vez de fazer com que o controlador processar a resposta como uma cadeia de caracteres, vamos alterar o controlador para usar um modelo de exibição em vez disso. O modelo de exibição gerará uma resposta dinâmica, o que significa que você precisa passar bits de dados apropriados do controlador para a exibição para gerar a resposta. Você pode fazer isso fazendo com que o controlador de colocar os dados dinâmicos (parâmetros) que o modelo de exibição precisa um `ViewBag` objeto que pode acessar o modelo de exibição.
 
-Retorne ao *HelloWorldController.cs* de arquivo e altere o `Welcome` método para adicionar um `Message` e `NumTimes` o valor para o `ViewBag` objeto. `ViewBag`é um objeto dinâmico, o que significa que você pode colocar tudo o que você deseja o `ViewBag` objeto não tem nenhuma propriedade definida até que você insira algo dentro dele. O [sistema de associação do ASP.NET MVC modelo](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) mapeia automaticamente os parâmetros nomeados (`name` e `numTimes`) da cadeia de consulta na barra de endereços para parâmetros em seu método. O arquivo *HelloWorldController.cs* completo tem esta aparência:
+Retorne ao *HelloWorldController.cs* de arquivo e altere o `Welcome` método para adicionar um `Message` e `NumTimes` o valor para o `ViewBag` objeto. `ViewBag` é um objeto dinâmico, o que significa que você pode colocar tudo o que você deseja o `ViewBag` objeto não tem nenhuma propriedade definida até que você insira algo dentro dele. O [sistema de associação do ASP.NET MVC modelo](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) mapeia automaticamente os parâmetros nomeados (`name` e `numTimes`) da cadeia de consulta na barra de endereços para parâmetros em seu método. O arquivo *HelloWorldController.cs* completo tem esta aparência:
 
 [!code-csharp[Main](adding-a-view/samples/sample8.cs)]
 
@@ -151,6 +151,6 @@ No exemplo acima, usamos um `ViewBag` objeto para passar dados do controlador pa
 
 Bem, isso foi um tipo de um &quot;M&quot; para modelo, mas não o tipo de banco de dados. Vamos ver o que aprendemos e criar um banco de dados de filmes.
 
->[!div class="step-by-step"]
-[Anterior](adding-a-controller.md)
-[Próximo](adding-a-model.md)
+> [!div class="step-by-step"]
+> [Anterior](adding-a-controller.md)
+> [Próximo](adding-a-model.md)

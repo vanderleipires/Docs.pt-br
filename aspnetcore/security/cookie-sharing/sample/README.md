@@ -16,4 +16,4 @@ Instruções:
 1. Faça logon do usuário para qualquer um dos três aplicativos. O cookie de autenticação é compartilhado entre os aplicativos. Observe que o usuário é conectado automaticamente ao dois aplicativos.
 1. Desconecte o usuário de qualquer um dos aplicativos. Observe que o usuário é automaticamente desconectado de dois aplicativos.
 
-Este exemplo demonstra os recursos descritos a [cookies entre aplicativos de compartilhamento](https://docs.microsoft.com/aspnet/core/security/cookie-sharing) tópico.
+Este exemplo demonstra os recursos descritos a [compartilhar cookies entre aplicativos](https://docs.microsoft.com/aspnet/core/security/cookie-sharing) tópico.

@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 title: Adicionando uma nova categoria a DropDownList usando jQuery UI | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: de661616ff3ca83052ae74d3ae6810d014aff764
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16f7af1d679aace24fff86abb19740beebafe785
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Adicionando uma nova categoria a DropDownList usando jQuery UI
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 O HTML `Select` marca é ideal para apresentar uma lista de dados de categoria fixo, mas muitas vezes você precisa adicionar uma nova categoria. Vamos supor que queremos adicionar o gênero "Opera" às categorias em nosso banco de dados? Nesta seção, usaremos o jQuery UI para adicionar uma caixa de diálogo que podemos usar para adicionar uma nova categoria. A imagem abaixo mostra como a interface do usuário será apresentado no navegador.
 
@@ -36,7 +36,7 @@ Quando um novo nome de gênero é inserido e o **salvar** botão é pressionado,
 2. JavaScript adiciona os novos dados de gênero à lista de seleção.
 3. JavaScript torna o novo gênero o item selecionado.
 
- Na imagem abaixo, **Opera** foi adicionada ao banco de dados e selecionado no **gênero** lista suspensa. 
+   Na imagem abaixo, **Opera** foi adicionada ao banco de dados e selecionado no **gênero** lista suspensa. 
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image3.png)
 
@@ -60,7 +60,7 @@ Execute o aplicativo e clique no **adicionar novo gênero** botão. No **Adicion
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image4.png)
 
-Clique o **salvar** botão. Uma chamada AJAX cria a categoria Opera e, em seguida, popula a lista suspensa com Opera e define Opera como o gênero selecionado.
+Clique no botão **Salvar**. Uma chamada AJAX cria a categoria Opera e, em seguida, popula a lista suspensa com Opera e define Opera como o gênero selecionado.
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image5.png)
 
@@ -102,7 +102,7 @@ O jQuery `$.post` linha faz uma chamada AJAX para o atributo de ação (`/StoreM
 3. Na caixa de pesquisa, digite GenreID.
 4. Usando o ícone próximo   
     ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image9.png)  
- Navegue até a marca de seleção a seguir:
+   Navegue até a marca de seleção a seguir:
 
     [!code-html[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample9.html)]
 5. Expanda o último valor de opção.
@@ -141,5 +141,5 @@ Rick.Anderson[at]Microsoft.com
 - Mike Pope
 - Tom Dykstra
 
->[!div class="step-by-step"]
-[Anterior](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [!div class="step-by-step"]
+> [Anterior](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

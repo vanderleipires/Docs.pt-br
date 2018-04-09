@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/introduction-to-aspnet-identity
-title: "Introdução ao ASP.NET identidade | Microsoft Docs"
+title: Introdução ao ASP.NET identidade | Microsoft Docs
 author: jongalloway
-description: "O sistema de associação do ASP.NET foi introduzido com o ASP.NET 2.0 novamente em 2005 e desde então ter havido muitas alterações de typicall de aplicativos web maneiras..."
+description: O sistema de associação do ASP.NET foi introduzido com o ASP.NET 2.0 novamente em 2005 e desde então ter havido muitas alterações de typicall de aplicativos web maneiras...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 59272f4659256e108ee99b22eb3bd3e2583a617c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>Introdução a identidade do ASP.NET
 ====================
@@ -112,37 +112,37 @@ Identidade do ASP.NET é implementada usando o procedimento a seguir. A finalida
 2. O projeto criado contém os seguintes três pacotes para a identidade do ASP.NET.
 
     - [`Microsoft.AspNet.Identity.EntityFramework`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.EntityFramework/)  
- Este pacote tem a implementação do Entity Framework da identidade do ASP.NET que persistirá os dados de identidade do ASP.NET e o esquema para o SQL Server.
+   Este pacote tem a implementação do Entity Framework da identidade do ASP.NET que persistirá os dados de identidade do ASP.NET e o esquema para o SQL Server.
     - [`Microsoft.AspNet.Identity.Core`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Core/)  
- Este pacote tem interfaces principais para a identidade do ASP.NET. Esse pacote pode ser usado para gravar uma implementação para a identidade do ASP.NET que persistência diferentes destinos armazena como armazenamento de tabela do Azure, NoSQL bancos de dados etc.
+   Este pacote tem interfaces principais para a identidade do ASP.NET. Esse pacote pode ser usado para gravar uma implementação para a identidade do ASP.NET que persistência diferentes destinos armazena como armazenamento de tabela do Azure, NoSQL bancos de dados etc.
     - [`Microsoft.AspNet.Identity.OWIN`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Owin/)  
- Este pacote contém a funcionalidade que é usada para o plug-in de autenticação OWIN com a identidade do ASP.NET em aplicativos ASP.NET. Isso é usado quando você adicionar log na funcionalidade ao seu aplicativo e as chamadas no middleware de autenticação de Cookie OWIN para gerar um cookie.
+   Este pacote contém a funcionalidade que é usada para o plug-in de autenticação OWIN com a identidade do ASP.NET em aplicativos ASP.NET. Isso é usado quando você adicionar log na funcionalidade ao seu aplicativo e as chamadas no middleware de autenticação de Cookie OWIN para gerar um cookie.
 3. Criar um usuário.  
- Iniciar o aplicativo e, em seguida, clique no **registrar** link para criar um usuário. A imagem a seguir mostra a página de registro que coleta o nome de usuário e senha.  
+   Iniciar o aplicativo e, em seguida, clique no **registrar** link para criar um usuário. A imagem a seguir mostra a página de registro que coleta o nome de usuário e senha.  
   
     ![](introduction-to-aspnet-identity/_static/image2.png)  
   
- Quando o usuário clica o **registrar** botão, o `Register` ação do controlador de conta cria o usuário chamando a API de identidade do ASP.NET, como destacado abaixo:
+   Quando o usuário clica o **registrar** botão, o `Register` ação do controlador de conta cria o usuário chamando a API de identidade do ASP.NET, como destacado abaixo:
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample1.cs?highlight=8-9)]
 4. Iniciar sessão.  
- Se o usuário foi criado com êxito, ela é registrada pelo `SignInAsync` método.  
+   Se o usuário foi criado com êxito, ela é registrada pelo `SignInAsync` método.  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample2.cs?highlight=12)]
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- O código realçado acima no `SignInAsync` método gera uma [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Como identidade do ASP.NET e autenticação de Cookie OWIN são sistema baseado em declarações, o framework requer o aplicativo para gerar uma ClaimsIdentity para o usuário. ClaimsIdentity tem informações sobre todas as declarações para o usuário, como as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio.  
+   O código realçado acima no `SignInAsync` método gera uma [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Como identidade do ASP.NET e autenticação de Cookie OWIN são sistema baseado em declarações, o framework requer o aplicativo para gerar uma ClaimsIdentity para o usuário. ClaimsIdentity tem informações sobre todas as declarações para o usuário, como as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio.  
   
- O código realçado abaixo no `SignInAsync` método assina o usuário usando o AuthenticationManager do OWIN e chamar `SignIn` e passando o ClaimsIdentity.  
+   O código realçado abaixo no `SignInAsync` método assina o usuário usando o AuthenticationManager do OWIN e chamar `SignIn` e passando o ClaimsIdentity.  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample4.cs?highlight=8-11)]
 5. Fazer logoff.  
- Clique o **logoff** link chama a ação de LogOff no controlador de conta. 
+   Clique o **logoff** link chama a ação de LogOff no controlador de conta. 
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- Código realçada acima mostra o OWIN `AuthenticationManager.SignOut` método. Isso equivale a [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) método usado pelo [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) módulo em formulários da Web.
+   Código realçada acima mostra o OWIN `AuthenticationManager.SignOut` método. Isso equivale a [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) método usado pelo [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) módulo em formulários da Web.
 
 ## <a name="components-of-aspnet-identity"></a>Componentes da identidade do ASP.NET
 

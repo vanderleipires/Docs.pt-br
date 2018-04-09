@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: ac5508334bf6d471471a719b98618bdcd3214fb5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-error-handling"></a>Tratamento de erros do ASP.NET
 ====================
@@ -37,7 +37,7 @@ Neste tutorial, você modificará o aplicativo de exemplo Wingtip Toys para incl
 - Como exibir mensagens de erro que não comprometer a segurança.
 - Como implementar manipuladores (ELMAH) e módulos de log de erro de log de erros.
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Aplicativos ASP.NET devem ser capazes de manipular erros que ocorrem durante a execução de uma maneira consistente. O ASP.NET usa o common language runtime (CLR), que fornece uma maneira de notificar aplicativos de erros de maneira uniforme. Quando ocorre um erro, uma exceção será lançada. Uma exceção é qualquer erro, uma condição ou um comportamento inesperado que encontrar um aplicativo.
 
@@ -104,7 +104,7 @@ No código acima, o bloco try contém o código que precisam ser protegidos cont
 Antes de adicionar ao aplicativo de exemplo Wingtip Toys de tratamento de erros, você adicionará o suporte de log de erros, adicionando um `ExceptionUtility` de classe para o *lógica* pasta. Ao fazer isso, cada vez que o aplicativo trata um erro, os detalhes do erro serão adicionados ao arquivo de log de erro.
 
 1. Clique com botão direito do *lógica* pasta e, em seguida, selecione **adicionar**  - &gt; **Novo Item**.   
- A caixa de diálogo **Adicionar Novo Item** é exibida.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
 2. Selecione o **Visual C#**  - &gt; **código** grupo de modelos, à esquerda. Em seguida, selecione **classe**do meio lista e nomeie-o **ExceptionUtility.cs**.
 3. Escolha **Adicionar**. O novo arquivo de classe é exibido.
 4. Substitua o código existente pelo seguinte:  
@@ -118,7 +118,7 @@ Quando ocorre uma exceção, a exceção pode ser gravada em um arquivo de log d
 No aplicativo de amostra Wingtip Toys, uma página será usada para exibir os erros. A página de erro foi projetada para mostrar uma mensagem de erro seguro aos usuários do site. No entanto, se o usuário for um desenvolvedor de fazer uma solicitação HTTP que está sendo atendida localmente no computador onde o código reside, detalhes de erro adicionais serão exibidos na página de erro.
 
 1. Clique no nome do projeto (**Wingtip Toys**) em **Solution Explorer** e selecione **adicionar**  - &gt; **Novo Item**.   
- A caixa de diálogo **Adicionar Novo Item** é exibida.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
 2. Selecione o **Visual C#**  - &gt; **Web** grupo de modelos, à esquerda. Na lista intermediária, selecione **Web Form com página mestra**e nomeie-o **ErrorPage.aspx**.
 3. Clique em **Adicionar**.
 4. Selecione o *Site.Master* de arquivos como a página mestra e, em seguida, escolha **Okey**.
@@ -166,7 +166,7 @@ Quando você solicitar o *NoPage.aspx* página, que não existe, a página de er
 Para verificar como o aplicativo funciona quando um erro ocorre, você pode criar deliberadamente condições de erro no ASP.NET. O aplicativo de exemplo Wingtip Toys, você gerará uma exceção de teste quando a página padrão é carregado para ver o que acontece.
 
 1. Abra o code-behind do *Default.aspx* página no Visual Studio.   
- O *Default.aspx.cs* página code-behind será exibida.
+   O *Default.aspx.cs* página code-behind será exibida.
 2. No `Page_Load` manipulador, adicione código para que o manipulador aparece da seguinte maneira:   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample9.cs?highlight=3-4)]
@@ -356,11 +356,11 @@ Gostaria de agradecer seguintes pessoas que fizeram contribuições significativ
 ## <a name="community-contributions"></a>Contribuições da comunidade
 
 - Graham Mendick ([@grahammendick](http://twitter.com/grahammendick))  
- O Visual Studio 2012 relacionados ao código de exemplo no MSDN: [navegação Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
+  O Visual Studio 2012 relacionados ao código de exemplo no MSDN: [navegação Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
 - James Chaney ([jchaney@agvance.net](mailto:jchaney@agvance.net))  
- O Visual Studio 2012 relacionados ao código de exemplo no MSDN: [ASP.NET 4.5 Web Forms Tutorial série no Visual Basic](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
+  O Visual Studio 2012 relacionados ao código de exemplo no MSDN: [ASP.NET 4.5 Web Forms Tutorial série no Visual Basic](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
 - Andrielle Azevedo - Colaborador de público técnico da Microsoft (twitter: @driazevedo)  
- Conversão do Visual Studio 2012: [Iniciando com ASP.NET Web Forms 4.5 - Parte 1 - Introdução e Visão Geral](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
+  Conversão do Visual Studio 2012: [Iniciando com ASP.NET Web Forms 4.5 - Parte 1 - Introdução e Visão Geral](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
->[!div class="step-by-step"]
-[Anterior](url-routing.md)
+> [!div class="step-by-step"]
+> [Anterior](url-routing.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
-title: "Criar e gerenciar funções (VB) | Microsoft Docs"
+title: Criar e gerenciar funções (VB) | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial examina as etapas necessárias para configurar a estrutura de funções. Depois disso, vamos criar páginas da web para criar e excluir funções."
+description: Este tutorial examina as etapas necessárias para configurar a estrutura de funções. Depois disso, vamos criar páginas da web para criar e excluir funções.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/24/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1132c6d782cd85edb8cbee98c8ab95a15171ac
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 75ca9b1c36f9a74d755ef05717f03d139d0b29ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-and-managing-roles-vb"></a>Criar e gerenciar funções (VB)
 ====================
@@ -96,10 +96,10 @@ O provedor `connectionStringName` atributo especifica o repositório de função
 
 Consequentemente, se podemos simplesmente ativar a estrutura de funções sem especificar nenhuma informação de provedor em nosso aplicativo `Web.config` arquivo, o aplicativo usa o provedor de funções padrão registrado, `AspNetSqlRoleProvider`. Se o `~/App_Data/aspnet.mdf` banco de dados não existe, o tempo de execução do ASP.NET automaticamente criá-lo e adicionar o esquema do serviços de aplicativo. No entanto, nós não desejamos usar o `aspnet.mdf` banco de dados; em vez disso, queremos usar o `SecurityTutorials.mdf` banco de dados que nós já criou e adicionou o esquema do serviços de aplicativo para. Essa modificação pode ser feita de duas maneiras:
 
-- **Especifique um valor para o *`LocalSqlServer`* nome de cadeia de caracteres de conexão em *`Web.config`*.** Substituindo o `LocalSqlServer` o valor do nome da cadeia de conexão no `Web.config`, podemos usar o provedor de funções padrão registrado (`AspNetSqlRoleProvider`) e ainda funcionar corretamente com o `SecurityTutorials.mdf` banco de dados. Para obter mais informações sobre essa técnica, consulte [Scott Guthrie](https://weblogs.asp.net/scottgu/)da postagem de blog, [Configurando serviços de aplicativos do ASP.NET 2.0 para uso do SQL Server 2000 ou SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx).
-- **Adicionar um novo provedor registrado do tipo *`SqlRoleProvider`* e configurar seu *`connectionStringName`* configuração para apontar para o *`SecurityTutorials.mdf`* banco de dados.** Essa é a abordagem que recomendado e usado no <a id="_msoanchor_7"> </a> [ *criar o esquema de associação no SQL Server* ](../membership/creating-the-membership-schema-in-sql-server-vb.md) tutorial e é a abordagem que eu usarei neste tutorial também.
+- <strong>Especifique um valor para o</strong><strong>`LocalSqlServer`</strong><strong>nome de cadeia de caracteres de conexão em</strong><strong>`Web.config`</strong><strong>.</strong> Substituindo o `LocalSqlServer` o valor do nome da cadeia de conexão no `Web.config`, podemos usar o provedor de funções padrão registrado (`AspNetSqlRoleProvider`) e ainda funcionar corretamente com o `SecurityTutorials.mdf` banco de dados. Para obter mais informações sobre essa técnica, consulte [Scott Guthrie](https://weblogs.asp.net/scottgu/)da postagem de blog, [Configurando serviços de aplicativos do ASP.NET 2.0 para uso do SQL Server 2000 ou SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx).
+- <strong>Adicionar um novo provedor registrado do tipo</strong><strong>`SqlRoleProvider`</strong><strong>e configurar seu</strong><strong>`connectionStringName`</strong><strong>configuração para apontar para o</strong> <strong>`SecurityTutorials.mdf`</strong> <strong>banco de dados.</strong> Essa é a abordagem que recomendado e usado no <a id="_msoanchor_7"> </a> [ *criar o esquema de associação no SQL Server* ](../membership/creating-the-membership-schema-in-sql-server-vb.md) tutorial e é a abordagem que eu usarei neste tutorial também.
 
-Adicione a seguinte marcação de configuração de funções para o `Web.config` arquivo. Essa marcação registra um novo provedor de chamada`SecurityTutorialsSqlRoleProvider.`
+Adicione a seguinte marcação de configuração de funções para o `Web.config` arquivo. Essa marcação registra um novo provedor de chamada `SecurityTutorialsSqlRoleProvider.`
 
 [!code-xml[Main](creating-and-managing-roles-vb/samples/sample5.xml)]
 
@@ -187,7 +187,7 @@ O GridView exibe uma única coluna Item porque o GridView `AutoGenerateColumns` 
 
 Ao exibir dados com um controle GridView, prefiro explicitamente definir minhas colunas em vez de tê-los implicitamente gerado pelo GridView. Definindo explicitamente as colunas é muito mais fácil formatar os dados, reorganizar as colunas e executar outras tarefas comuns. Portanto, vamos atualizar declarativo do GridView para que suas colunas são definidas explicitamente.
 
-Comece definindo o GridView `AutoGenerateColumns` a propriedade como False. Em seguida, adicione um TemplateField à grade, defina seu `HeaderText` propriedade às funções e configurar seu `ItemTemplate` para que ele exibe o conteúdo da matriz. Para fazer isso, adicione um controle de rótulo Web chamado `RoleNameLabel` para o `ItemTemplate` e associar seu `Text` propriedade`Container.DataItem.`
+Comece definindo o GridView `AutoGenerateColumns` a propriedade como False. Em seguida, adicione um TemplateField à grade, defina seu `HeaderText` propriedade às funções e configurar seu `ItemTemplate` para que ele exibe o conteúdo da matriz. Para fazer isso, adicione um controle de rótulo Web chamado `RoleNameLabel` para o `ItemTemplate` e associar seu `Text` propriedade `Container.DataItem.`
 
 Essas propriedades e o `ItemTemplate`do conteúdo pode ser definido declarativamente ou por meio de interface de editar modelos e a caixa de diálogo de campos do GridView. Para acessar os campos de caixa de diálogo, clique no link Editar colunas marca inteligente do GridView. Em seguida, desmarque a caixa de campos de geração automática de seleção para definir o `AutoGenerateColumns` a propriedade como False e adicionar um TemplateField GridView, definindo seu `HeaderText` propriedade à função. Para definir o `ItemTemplate`do conteúdo, escolha a opção de editar modelos de marca inteligente do GridView. Arraste um controle da Web de rótulo a `ItemTemplate`, defina seu `ID` propriedade `RoleNameLabel`e definir suas configurações de associação de dados para que seu `Text` propriedade está vinculada a `Container.DataItem`.
 
@@ -215,8 +215,8 @@ Agora quando o usuário adiciona uma nova função de `RoleList` GridView mostra
 
 Neste ponto, um usuário pode criar uma nova função e exibir todas as funções existentes da `ManageRoles.aspx` página. Vamos permitir que os usuários também excluir funções. O `Roles.DeleteRole` método tem duas sobrecargas:
 
-- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx)-Exclui a função *roleName*. Uma exceção é gerada se a função contém um ou mais membros.
-- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx)-Exclui a função *roleName*. Se *throwOnPopulateRole* é `True`, em seguida, uma exceção é gerada se a função contém um ou mais membros. Se *throwOnPopulateRole* é `False`, em seguida, a função será excluída se ele contém todos os membros ou não. Internamente, o `DeleteRole(roleName)` chamadas de método `DeleteRole(roleName, True)`.
+- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx) -Exclui a função *roleName*. Uma exceção é gerada se a função contém um ou mais membros.
+- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx) -Exclui a função *roleName*. Se *throwOnPopulateRole* é `True`, em seguida, uma exceção é gerada se a função contém um ou mais membros. Se *throwOnPopulateRole* é `False`, em seguida, a função será excluída se ele contém todos os membros ou não. Internamente, o `DeleteRole(roleName)` chamadas de método `DeleteRole(roleName, True)`.
 
 O `DeleteRole` método também lançará uma exceção se *roleName* é `Nothing` ou uma cadeia de caracteres vazia ou se *roleName* contém uma vírgula. Se *roleName* não existe no sistema, `DeleteRole` falha silenciosamente, sem gerar uma exceção.
 
@@ -263,12 +263,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
-Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial incluem Alicja Maziarz Suchi Banerjee e Teresa Murphy. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial incluem Alicja Maziarz Suchi Banerjee e Teresa Murphy. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](role-based-authorization-cs.md)
-[Próximo](assigning-roles-to-users-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](role-based-authorization-cs.md)
+> [Próximo](assigning-roles-to-users-vb.md)

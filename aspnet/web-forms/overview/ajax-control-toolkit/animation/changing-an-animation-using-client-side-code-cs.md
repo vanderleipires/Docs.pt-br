@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
-title: "Alterando uma animação usando o código do lado do cliente (c#) | Microsoft Docs"
+title: Alterando uma animação usando o código do lado do cliente (c#) | Microsoft Docs
 author: wenz
-description: "O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A animação também pode..."
+description: O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A animação também pode...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6dcaeac073f54b0804fe3acf7ec22491b1cbbba5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2f572efeb012d88ab15740bab7b0e4383572f3f7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="changing-an-animation-using-client-side-code-c"></a>Alterando uma animação usando o código do lado do cliente (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A animação também pode ser alterada usando código personalizado de JavaScript do lado do cliente.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A animação também pode ser alterada usando código personalizado de JavaScript do lado do cliente.
 
@@ -78,6 +78,6 @@ O código JavaScript a seguir atribui esse descripting JSON para o `OnClick` ani
 
 A animação é executada imediatamente, sem um clique do mouse (e com muito pouco marcação) ([clique para exibir a imagem em tamanho normal](changing-an-animation-using-client-side-code-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](executing-animations-using-client-side-code-cs.md)
-[Próximo](animating-an-updatepanel-control-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](executing-animations-using-client-side-code-cs.md)
+> [Próximo](animating-an-updatepanel-control-cs.md)

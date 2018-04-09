@@ -1,7 +1,7 @@
 ---
-title: Gerenciamento de chaves
+title: Gerenciamento de chaves no núcleo do ASP.NET
 author: rick-anderson
-description: "Este documento descreve os detalhes da implementação do ASP.NET Core dados proteção gerenciamento APIs."
+description: Obter os detalhes de implementação do gerenciamento de chaves de proteção de dados do ASP.NET Core APIs.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: a1fd7c55ec94d5def569bb407c064f4fd2fe9695
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 1b073d8779547a828c17e825b0663b26efb61d14
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-management"></a>Gerenciamento de chaves
+# <a name="key-management-in-aspnet-core"></a>Gerenciamento de chaves no núcleo do ASP.NET
 
 <a name="data-protection-implementation-key-management"></a>
 
@@ -29,7 +29,7 @@ O sistema de proteção de dados gerencia automaticamente o tempo de vida das ch
 
 * A chave revogada - estiver comprometida e não deve ser usada para novas operações de proteção.
 
-Todas as chaves expiradas, ativas e criadas podem ser usadas para desproteger cargas de entrada. Chaves revogadas por padrão não podem ser usadas para desproteger cargas, mas o desenvolvedor do aplicativo pode [substituir esse comportamento](../consumer-apis/dangerous-unprotect.md#data-protection-consumer-apis-dangerous-unprotect) se necessário.
+Todas as chaves expiradas, ativas e criadas podem ser usadas para desproteger cargas de entrada. Chaves revogadas por padrão não podem ser usadas para desproteger cargas, mas o desenvolvedor do aplicativo pode [substituir esse comportamento](xref:security/data-protection/consumer-apis/dangerous-unprotect#data-protection-consumer-apis-dangerous-unprotect) se necessário.
 
 >[!WARNING]
 > O desenvolvedor pode ser tentado para excluir uma chave do anel de chave (por exemplo, excluindo o arquivo correspondente do sistema de arquivos). Nesse ponto, todos os dados protegidos pela chave é indecifráveis permanentemente e não há nenhuma substituição de emergência como ocorre com chaves revogadas. Exclusão de uma chave é realmente destrutivo comportamento e, consequentemente, o sistema de proteção de dados não expõe nenhuma API de primeira classe para executar esta operação.
@@ -83,6 +83,6 @@ O exemplo a seguir demonstra como usar o `IKeyManager` interface para inspeciona
 
 O sistema de proteção de dados tem uma heurística na qual ele tenta deduzir um local de armazenamento de chave apropriado e criptografia no mecanismo de rest automaticamente. Isso também é configurável pelo desenvolvedor do aplicativo. Os documentos a seguir discutem as implementações de caixa de entrada desses mecanismos:
 
-* [Na caixa de provedores de armazenamento de chaves](key-storage-providers.md#data-protection-implementation-key-storage-providers)
+* [Na caixa de provedores de armazenamento de chaves](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers)
 
-* [Na caixa de criptografia de chave nos provedores de rest](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers)
+* [Na caixa de criptografia de chave nos provedores de rest](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers)

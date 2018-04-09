@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
-title: "Visão geral do controlador MVC do ASP.NET (c#) | Microsoft Docs"
+title: Visão geral do controlador MVC do ASP.NET (c#) | Microsoft Docs
 author: StephenWalther
-description: "Neste tutorial, Stephen Walther apresenta controladores do ASP.NET MVC. Você aprenderá a criar novos controladores e retornar tipos diferentes de res de ação..."
+description: Neste tutorial, Stephen Walther apresenta controladores do ASP.NET MVC. Você aprenderá a criar novos controladores e retornar tipos diferentes de res de ação...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9e4ca745fa068b1813e01b131d53a0199cc47d5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95e7c555a52c8c3b765a6fffab15276491cf5714
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-controller-overview-c"></a>Visão geral do controlador MVC do ASP.NET (c#)
 ====================
@@ -118,6 +118,6 @@ A ação Index () na listagem 5 retorna um objeto DateTime. A estrutura ASP.NET 
 
 O objetivo deste tutorial foi apresentar os conceitos de controladores do ASP.NET MVC, ações do controlador e resultados de ação do controlador. A primeira seção, você aprendeu a adicionar novos controladores para um projeto ASP.NET MVC. Em seguida, você aprendeu como públicos métodos de um controlador são expostos para o universo como ações do controlador. Por fim, discutimos os diferentes tipos de resultados de ação que podem ser retornados de uma ação do controlador. Em particular, discutimos como retornar um ViewResult, RedirectToActionResult e ContentResult de uma ação do controlador.
 
->[!div class="step-by-step"]
-[Anterior](creating-an-action-vb.md)
-[Próximo](creating-custom-routes-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-an-action-vb.md)
+> [Próximo](creating-custom-routes-cs.md)

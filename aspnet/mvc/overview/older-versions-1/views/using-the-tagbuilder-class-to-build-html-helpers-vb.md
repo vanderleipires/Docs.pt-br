@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 title: Usando a classe TagBuilder para compilar auxiliares HTML (VB) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther apresenta uma classe de utilitário útil na estrutura do ASP.NET MVC, denominada a classe TagBuilder. Você pode usar a classe TagBuilder facilmente..."
+description: Stephen Walther apresenta uma classe de utilitário útil na estrutura do ASP.NET MVC, denominada a classe TagBuilder. Você pode usar a classe TagBuilder facilmente...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 92c003cf929448d0b03f9de76330e9495ac51d20
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 2b72e08dff646f66252f210543230186cab6e641
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>Usando a classe TagBuilder para compilar auxiliares HTML (VB)
 ====================
@@ -79,6 +79,6 @@ Observe que você deve importar o namespace associado ao auxiliar de imagem na p
 
 Em um aplicativo do Visual Basic, o namespace padrão é o mesmo que o nome do aplicativo.
 
->[!div class="step-by-step"]
-[Anterior](creating-custom-html-helpers-vb.md)
-[Próximo](creating-page-layouts-with-view-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-custom-html-helpers-vb.md)
+> [Próximo](creating-page-layouts-with-view-master-pages-vb.md)

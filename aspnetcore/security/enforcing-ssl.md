@@ -1,7 +1,7 @@
 ---
-title: Impondo HTTPS em um aplicativo do ASP.NET Core
+title: Impor HTTPS do núcleo do ASP.NET
 author: rick-anderson
-description: "Mostra como exigir HTTPS/TLS em um núcleo de ASP.NET aplicativo web."
+description: Mostra como exigir HTTPS/TLS em um núcleo de ASP.NET aplicativo web.
 manager: wpickett
 ms.author: riande
 ms.date: 2/9/2018
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: dc320faf0048200412f131ea816f33f29ac023e1
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 2ebb975e1ea17698cee13ca00d3f5df4a5135e38
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="enforcing-https-in-an-aspnet-core-app"></a>Impondo HTTPS em um aplicativo do ASP.NET Core
+# <a name="enforce-https-in-an-aspnet-core"></a>Impor HTTPS do núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 

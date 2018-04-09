@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 title: Criando um MVC 3 aplicativo com Razor e o JavaScript discreto | Microsoft Docs
 author: microsoft
-description: "O aplicativo de web de exemplo da lista de usuários demonstra como é simples para criar aplicativos ASP.NET MVC 3 usando o mecanismo de exibição Razor. S de aplicativo de exemplo..."
+description: O aplicativo de web de exemplo da lista de usuários demonstra como é simples para criar aplicativos ASP.NET MVC 3 usando o mecanismo de exibição Razor. S de aplicativo de exemplo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/01/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9b273f6827cad2078b581d6da7b127198dfddaa5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>Criando um MVC 3 aplicativo com Razor e o JavaScript discreto
 ====================
@@ -54,7 +54,7 @@ Neste tutorial você não usará o provedor de associação do ASP.NET, portanto
 
 ![Soln Exp](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image5.png)
 
-Editar o  *\_cshtml* de arquivo e substitua a marcação dentro de `<div>` elemento chamado `logindisplay` com a mensagem  *&quot;* logon desabilitado&quot;. O exemplo a seguir mostra a marcação novo:
+Editar o  <em>\_cshtml</em> de arquivo e substitua a marcação dentro de `<div>` elemento chamado `logindisplay` com a mensagem <em>&quot;</em>logon desabilitado&quot;. O exemplo a seguir mostra a marcação novo:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample1.cshtml)]
 
@@ -122,7 +122,7 @@ Adicione o seguinte `Details` método para o controlador principal:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample8.cs)]
 
-Clique dentro do `Details` método e, em seguida, selecione **adicionar exibição**. Verifique o **exibir dados de classe** caixa contém **Mvc3Razor.Models.UserModel***.* Definir **exibir conteúdo** para **detalhes** e, em seguida, clique em **adicionar**.
+Clique dentro do `Details` método e, em seguida, selecione <strong>adicionar exibição</strong>. Verifique o <strong>exibir dados de classe</strong> caixa contém <strong>Mvc3Razor.Models.UserModel</strong><em>.</em> Definir <strong>exibir conteúdo</strong> para <strong>detalhes</strong> e, em seguida, clique em <strong>adicionar</strong>.
 
 ![Adicionar exibição de detalhes](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
 

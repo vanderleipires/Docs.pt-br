@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
-title: "Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 5 | Microsoft Docs"
+title: Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 Web Forms - parte 5 | Microsoft Docs
 author: tdykstra
-description: "O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é..."
+description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 5efc5ff367d5da5df060eba0028399af898a69fa
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7f351718123e881e832f4ac95af506ed601d3337
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e 4 Web Forms do ASP.NET - parte 5
 ====================
@@ -123,10 +123,10 @@ Execute a página.
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-Selecione um instrutor. O **atribuir um curso** lista suspensa exibe os cursos instrutor não ensina, e o **remover um curso** lista suspensa exibe os cursos instrutor já está atribuído a. No **atribuir um curso** seção, selecione um curso e, em seguida, clique em **atribuir**. O curso move para o **remover um curso** lista suspensa. Selecione um curso no **remover um curso** seção e clique em **remover *.* O curso move para o **atribuir um curso** lista suspensa.
+Selecione um instrutor. O <strong>atribuir um curso</strong> lista suspensa exibe os cursos instrutor não ensina, e o <strong>remover um curso</strong> lista suspensa exibe os cursos instrutor já está atribuído a. No <strong>atribuir um curso</strong> seção, selecione um curso e, em seguida, clique em <strong>atribuir</strong>. O curso move para o <strong>remover um curso</strong> lista suspensa. Selecione um curso no <strong>remover um curso</strong> seção e clique em <strong>remover</strong><em>.</em> O curso move para o <strong>atribuir um curso</strong> lista suspensa.
 
 Agora você já viu alguns mais maneiras de trabalhar com dados relacionados. O tutorial a seguir, você aprenderá como usar herança no modelo de dados para melhorar a facilidade de manutenção de seu aplicativo.
 
->[!div class="step-by-step"]
-[Anterior](the-entity-framework-and-aspnet-getting-started-part-4.md)
-[Próximo](the-entity-framework-and-aspnet-getting-started-part-6.md)
+> [!div class="step-by-step"]
+> [Anterior](the-entity-framework-and-aspnet-getting-started-part-4.md)
+> [Próximo](the-entity-framework-and-aspnet-getting-started-part-6.md)

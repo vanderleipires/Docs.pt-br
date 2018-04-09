@@ -2,7 +2,7 @@
 uid: web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 title: Com o Page Inspector no Visual Studio 2012 | Microsoft Docs
 author: rick-anderson
-description: "Neste laboratório prático, você vai descobrir uma nova ferramenta para encontrar e corrigir problemas de página da web no Visual Studio - o Inspetor de página. O Page Inspector é uma nova ferramenta que b..."
+description: Neste laboratório prático, você vai descobrir uma nova ferramenta para encontrar e corrigir problemas de página da web no Visual Studio - o Inspetor de página. O Page Inspector é uma nova ferramenta que b...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 1a9e093faae2cea1c27c582e22aebc908f78addb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 052d29dba170d403c2b1c1667c55fc2c34045615
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-page-inspector-in-visual-studio-2012"></a>Com o Page Inspector no Visual Studio 2012
 ====================
-por [Web Camps Team](https://twitter.com/webcamps)
+Por [Web Camps Team](https://twitter.com/webcamps)
 
 > Neste laboratório prático, você vai descobrir uma nova ferramenta para encontrar e corrigir problemas de página da web no Visual Studio - o Inspetor de página.
 > 
@@ -38,7 +38,7 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Este laboratório orienta os aperfeiçoamentos e novos recursos descritos anteriormente, aplicando alterações secundárias a um aplicativo da Web de exemplo fornecido na pasta de origem.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
 
 
 <a id="Objectives"></a>
@@ -96,12 +96,12 @@ Nesta tarefa, você aprenderá como usar o Inspetor de página no contexto de um
 
 1. Abra o **começar** solução localizado em **fonte/Ex1-MVC4/Begin/** pasta.
 
-    1. Você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
-    2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
-    3. Por fim, compile a solução clicando **criar** | **compilar solução**.
+   1. Você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
+   2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
+   3. Por fim, compile a solução clicando **criar** | **compilar solução**.
 
-    > [!NOTE]
-    > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
+      > [!NOTE]
+      > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
 2. No Solution Explorer, localize **cshtml** exibir sob o **/exibições/inicial** pasta do projeto, clique duas vezes e selecione **exibir em Inspetor de página**.
 
     ![Selecionando um arquivo para visualizar o Page Inspector](using-page-inspector-in-visual-studio-2012/_static/image1.png "selecionando um arquivo para visualização no Inspetor de página")
@@ -128,7 +128,7 @@ Nesta tarefa, você aprenderá como usar o Inspetor de página no contexto de um
 
     Essa ferramenta permitirá que você selecionar qualquer elemento da página e ver o código HTML e Razor.
 
-    ![Inspeção alternância-botão modo](using-page-inspector-in-visual-studio-2012/_static/image4.png)
+    ![Toggle-Inspection-Mode-button](using-page-inspector-in-visual-studio-2012/_static/image4.png)
 
     *Botão de alternância modo de inspeção*
 6. No navegador do Inspetor de página, mova o ponteiro do mouse sobre os elementos da página. Enquanto você move o ponteiro do mouse sobre qualquer parte da página renderizada, o tipo de elemento é exibido e a marcação de origem ou o código correspondente é realçado no editor do Visual Studio.
@@ -221,7 +221,7 @@ Nesta tarefa, você irá usar o Inspetor de página e corrigir alguns problemas 
 2. Com o modo de inspeção de alternância selecionado, clique em fechada, mas não no, o link de registro para abrir seu código.
 
     Observe que o código-fonte dos links está localizado no  **\_LoginPartial.cshtml** arquivo, não o cshtml nem o \_cshtml, que são locais para a qual você pode pesquisar em primeiro lugar. Foi adicionado diretamente no arquivo de origem correta.
-3. No **estilos** guia, localize e clique no  **<section> #login</section>**  item, que é o contêiner HTML para esses links.
+3. No **estilos** guia, localize e clique no **<section> #login</section>** item, que é o contêiner HTML para esses links.
 
     Observe que o **#login** estilo automaticamente está localizado em **Site.css** depois de clicar em. Além disso, o código agora é realçado.
 
@@ -242,7 +242,7 @@ Nesta tarefa, você irá usar o Inspetor de página e corrigir alguns problemas 
     ![Página atualizada](using-page-inspector-in-visual-studio-2012/_static/image18.png)
 
     *Página atualizada*
-6. Usando o modo de inspeção, selecione qualquer uma da  **&lt;li&gt;**  itens que contêm o &quot;registrar&quot; e &quot;login&quot; links. Em seguida, clique no  **&lt;seção&gt; #login** item para acesso **Styles** código.
+6. Usando o modo de inspeção, selecione qualquer uma da **&lt;li&gt;** itens que contêm o &quot;registrar&quot; e &quot;login&quot; links. Em seguida, clique no  **&lt;seção&gt; #login** item para acesso **Styles** código.
 
     ![Localizando o estilo](using-page-inspector-in-visual-studio-2012/_static/image19.png "localizando o estilo")
 
@@ -287,12 +287,12 @@ Nesta tarefa, você aprenderá como usar os recursos do Page Inspector no contex
 
 1. Abra o **começar** solução localizado em **fonte/o Ex2-WebForms/Begin/** pasta.
 
-    1. Você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
-    2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
-    3. Por fim, compile a solução clicando **criar** | **compilar solução**.
+   1. Você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
+   2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
+   3. Por fim, compile a solução clicando **criar** | **compilar solução**.
 
-    > [!NOTE]
-    > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
+      > [!NOTE]
+      > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
 2. No Solution Explorer, localize **Default.aspx** página, clique duas vezes e selecione **exibir em Inspetor de página**.
 
     ![Abrir Default.aspx com o Page Inspector](using-page-inspector-in-visual-studio-2012/_static/image24.png "abrir Default.aspx com o Page Inspector")
@@ -433,7 +433,7 @@ Nesta tarefa, você usará o Inspetor de página para corrigir alguns problemas 
     ![Página atualizada](using-page-inspector-in-visual-studio-2012/_static/image41.png)
 
     *Página atualizada*
-6. Usando o modo de inspeção, selecione qualquer uma da  **&lt;li&gt;**  itens que contêm o &quot;registrar&quot; e &quot;login&quot; links. Em seguida, clique no  **&lt;seção&gt; #login** item para acesso **Styles** código.
+6. Usando o modo de inspeção, selecione qualquer uma da **&lt;li&gt;** itens que contêm o &quot;registrar&quot; e &quot;login&quot; links. Em seguida, clique no  **&lt;seção&gt; #login** item para acesso **Styles** código.
 
     ![Localizando o estilo](using-page-inspector-in-visual-studio-2012/_static/image42.png "localizando o estilo")
 
@@ -474,9 +474,9 @@ Ao concluir este laboratório prático, você tem learnt como usar o Inspetor de
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Apêndice a: instalar o Visual Studio Express 2012 para Web
 
-Você pode instalar **Microsoft Visual Studio Express 2012 para Web** ou outro &quot;Express&quot; versão usando o  **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . As instruções a seguir guiá-lo pelas etapas necessárias para instalar o *Visual studio Express 2012 para Web* usando *Microsoft Web Platform Installer*.
+Você pode instalar **Microsoft Visual Studio Express 2012 para Web** ou outro &quot;Express&quot; versão usando o **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. As instruções a seguir guiá-lo pelas etapas necessárias para instalar o *Visual studio Express 2012 para Web* usando *Microsoft Web Platform Installer*.
 
-1. Vá para [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Como alternativa, se você já tiver instalado o Web Platform Installer, você pode abri-la e procure o produto &quot; *Visual Studio Express 2012 para Web com o SDK do Windows Azure*&quot;.
+1. Vá para [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Como alternativa, se você já tiver instalado o Web Platform Installer, você pode abri-la e procure o produto &quot; <em>Visual Studio Express 2012 para Web com o SDK do Windows Azure</em>&quot;.
 2. Clique em **instalar agora**. Se você não tem **Web Platform Installer** você será redirecionado para baixar e instalá-lo primeiro.
 3. Uma vez **Web Platform Installer** é aberto, clique em **instalar** para iniciar a instalação.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
-title: "Introdução a páginas da Web ASP.NET - excluir dados do banco de dados | Microsoft Docs"
+title: Introdução a páginas da Web ASP.NET - excluir dados do banco de dados | Microsoft Docs
 author: tfitzmac
-description: "Este tutorial mostra como excluir uma entrada de banco de dados individuais. Ele pressupõe que você tenha concluído a série por meio de atualização de banco de dados no PA da Web do ASP.NET..."
+description: Este tutorial mostra como excluir uma entrada de banco de dados individuais. Ele pressupõe que você tenha concluído a série por meio de atualização de banco de dados no PA da Web do ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: 5bc92b5d40e7a55dcd730d552c71031d913b277e
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 146199e862cd6fa2607671d31633476b1cb67021
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Introdução a páginas da Web ASP.NET - excluir dados do banco de dados
 ====================
@@ -172,6 +172,6 @@ O seguinte tutorial mostra como fornecer todas as páginas em seu site uma apar�
 - [Introdução à programação da Web do ASP.NET usando a sintaxe do Razor](../introducing-razor-syntax-c.md)
 - [A instrução DELETE do SQL](http://www.w3schools.com/sql/sql_delete.asp) no site W3Schools
 
->[!div class="step-by-step"]
-[Anterior](updating-data.md)
-[Próximo](layouts.md)
+> [!div class="step-by-step"]
+> [Anterior](updating-data.md)
+> [Próximo](layouts.md)

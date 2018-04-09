@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
-title: "Testes de unidade de criação de iteração #5 – (c#) | Microsoft Docs"
+title: 'Testes de unidade de criação de iteração #5 – (c#) | Microsoft Docs'
 author: microsoft
-description: "Na quinta iteração, fazemos nosso aplicativo mais fácil de manter e modificar adicionando testes de unidade. Vamos simular nossas classes de modelo de dados e criar testes de unidade para o..."
+description: Na quinta iteração, fazemos nosso aplicativo mais fácil de manter e modificar adicionando testes de unidade. Vamos simular nossas classes de modelo de dados e criar testes de unidade para o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f9b2d05ec8756d68f6bd2f387c85faf03abd167e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7a61b5791a40088df9d27f7b1bd37df1831ef22b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-5--create-unit-tests-c"></a>Iteração #5 – criar testes de unidade (c#)
 ====================
@@ -105,9 +105,9 @@ Por exemplo, você pode usar uma estrutura de objetos de simulação para gerar 
 
 O Visual Studio não inclui uma estrutura de objetos de simulação. No entanto, há várias estruturas de objeto simular comerciais e de código aberto disponíveis para o .NET framework:
 
-1. Moq - essa estrutura está disponível sob a licença BSD de código-fonte aberto. Você pode baixar Moq de [https://code.google.com/p/moq/](https://code.google.com/p/moq/).
-2. Rhino Mocks - essa estrutura está disponível sob a licença BSD de código-fonte aberto. Você pode baixar Rhino Mocks de [http://ayende.com/projects/rhino-mocks.aspx](http://ayende.com/projects/rhino-mocks.aspx).
-3. Typemock Isolator - este é um framework comercial. Você pode baixar uma versão de avaliação do [http://www.typemock.com/](http://www.typemock.com/).
+1. Moq - essa estrutura está disponível sob a licença BSD de código-fonte aberto. Você pode baixar Moq de [ https://code.google.com/p/moq/ ](https://code.google.com/p/moq/).
+2. Rhino Mocks - essa estrutura está disponível sob a licença BSD de código-fonte aberto. Você pode baixar Rhino Mocks de [ http://ayende.com/projects/rhino-mocks.aspx ](http://ayende.com/projects/rhino-mocks.aspx).
+3. Typemock Isolator - este é um framework comercial. Você pode baixar uma versão de avaliação do [ http://www.typemock.com/ ](http://www.typemock.com/).
 
 Neste tutorial, decidi usar Moq. No entanto, você poderia usar facilmente Rhino Mocks ou Typemock Isolator para criar a simulação objetos para o aplicativo do Gerenciador de contato.
 
@@ -239,6 +239,6 @@ Nós criamos dois conjuntos de testes de unidade. Primeiro, testamos nossa lógi
 
 Na próxima iteração, podemos modificar o aplicativo Gerenciador de contato para que ele oferece suporte a grupos de contato. Vamos adicionar essa nova funcionalidade para nosso aplicativo usando um processo de design de software chamado desenvolvimento controlado por testes.
 
->[!div class="step-by-step"]
-[Anterior](iteration-4-make-the-application-loosely-coupled-cs.md)
-[Próximo](iteration-6-use-test-driven-development-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](iteration-4-make-the-application-loosely-coupled-cs.md)
+> [Próximo](iteration-6-use-test-driven-development-cs.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cf3058ac095bc2ed728a716e70f962e260eef5a2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 42a6a76b0b05045bed1ada227b7c32a51600b760
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Mestre/detalhes filtragem com DropDownList (c#)
 ====================
@@ -87,12 +87,12 @@ A última etapa em nosso relatório mestre/detalhes é listar os produtos associ
 **Figura 7**: selecione o `GetProductsByCategoryID(categoryID)` método ([clique para exibir a imagem em tamanho normal](master-detail-filtering-with-a-dropdownlist-cs/_static/image21.png))
 
 
-Depois de escolher esse método, o assistente ObjectDataSource solicita a nós para o valor para o método  *`categoryID`*  parâmetro. Para usar o valor do selecionado `categories` item DropDownList define a origem de parâmetro de controle e ControlID para `Categories`.
+Depois de escolher esse método, o assistente ObjectDataSource solicita a nós para o valor para o método *`categoryID`* parâmetro. Para usar o valor do selecionado `categories` item DropDownList define a origem de parâmetro de controle e ControlID para `Categories`.
 
 
 [![Defina o parâmetro categoryID com o valor de DropDownList categorias](master-detail-filtering-with-a-dropdownlist-cs/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image22.png)
 
-**Figura 8**: definir o  *`categoryID`*  parâmetro para o valor da `Categories` DropDownList ([clique para exibir a imagem em tamanho normal](master-detail-filtering-with-a-dropdownlist-cs/_static/image24.png))
+**Figura 8**: definir o *`categoryID`* parâmetro para o valor da `Categories` DropDownList ([clique para exibir a imagem em tamanho normal](master-detail-filtering-with-a-dropdownlist-cs/_static/image24.png))
 
 
 Responda fazer check-out nosso progresso em um navegador. Ao primeiro visitar a página, os produtos pertencem à categoria selecionada (Bebidas) são exibidas (conforme mostrado na Figura 9), mas alterar DropDownList não atualiza os dados. Isso ocorre porque um postback deve ocorrer para que o GridView atualizar. Para fazer isso, temos duas opções (nenhum deles requer gravar nenhum código):
@@ -145,11 +145,11 @@ Após essas alterações, quando o primeiro visitar a página é selecionada a o
 **Figura 13**: sobre o inicial página carga não produtos são exibidos ([clique para exibir a imagem em tamanho normal](master-detail-filtering-with-a-dropdownlist-cs/_static/image37.png))
 
 
-O motivo pelo qual não há produtos são exibidos quando porque o item de lista "-- Escolha uma categoria –" é selecionado é porque seu valor é `-1` e não há nenhum produto no banco de dados com um `CategoryID` de `-1`. Se esse é o comportamento desejado e terminar agora! Se, no entanto, você deseja exibir *todos os* das categorias de quando o item de lista "-- Escolha uma categoria –" é selecionado, retorne para o `ProductsBLL` classe e personalizar o `GetProductsByCategoryID(categoryID)` método para que ele chama o `GetProducts()` método se passado na  *`categoryID`*  parâmetro é menor que zero:
+O motivo pelo qual não há produtos são exibidos quando porque o item de lista "-- Escolha uma categoria –" é selecionado é porque seu valor é `-1` e não há nenhum produto no banco de dados com um `CategoryID` de `-1`. Se esse é o comportamento desejado e terminar agora! Se, no entanto, você deseja exibir *todos os* das categorias de quando o item de lista "-- Escolha uma categoria –" é selecionado, retorne para o `ProductsBLL` classe e personalizar o `GetProductsByCategoryID(categoryID)` método para que ele chama o `GetProducts()` método se passado na *`categoryID`* parâmetro é menor que zero:
 
 [!code-csharp[Main](master-detail-filtering-with-a-dropdownlist-cs/samples/sample2.cs)]
 
-A técnica usada aqui é similar à abordagem são usados para exibir todos os fornecedores de volta a [parâmetros declarativos](../basic-reporting/declarative-parameters-cs.md) tutorial, embora para este exemplo, estamos usando um valor de `-1` para indicar que todos os registros devem ser recuperar em vez de `null`. Isso ocorre porque o  *`categoryID`*  parâmetro o `GetProductsByCategoryID(categoryID)` método espera como valor de inteiro passado, enquanto o tutorial de parâmetros declarativos foram passando um parâmetro de entrada de cadeia de caracteres.
+A técnica usada aqui é similar à abordagem são usados para exibir todos os fornecedores de volta a [parâmetros declarativos](../basic-reporting/declarative-parameters-cs.md) tutorial, embora para este exemplo, estamos usando um valor de `-1` para indicar que todos os registros devem ser recuperar em vez de `null`. Isso ocorre porque o *`categoryID`* parâmetro o `GetProductsByCategoryID(categoryID)` método espera como valor de inteiro passado, enquanto o tutorial de parâmetros declarativos foram passando um parâmetro de entrada de cadeia de caracteres.
 
 A Figura 14 mostra uma captura de tela de `FilterByDropDownList.aspx` quando a opção "-- Escolha uma categoria –" estiver selecionada. Aqui, todos os produtos são exibidos por padrão, e o usuário pode restringir a exibição, escolhendo uma categoria específica.
 
@@ -169,7 +169,7 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Avançar](master-detail-filtering-with-two-dropdownlists-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](master-detail-filtering-with-two-dropdownlists-cs.md)

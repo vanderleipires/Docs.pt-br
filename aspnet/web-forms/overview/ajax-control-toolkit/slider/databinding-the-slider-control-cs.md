@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
-title: "Associação de dados o controle deslizante (c#) | Microsoft Docs"
+title: Associação de dados o controle deslizante (c#) | Microsoft Docs
 author: wenz
-description: "O controle deslizante no controle AJAX Toolkit fornece um controle deslizante gráfico que pode ser controlado usando o mouse. É possível associar o positio atual..."
+description: O controle deslizante no controle AJAX Toolkit fornece um controle deslizante gráfico que pode ser controlado usando o mouse. É possível associar o positio atual...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2aa770bce5969a4ab57893d5ceecc127cf7f7872
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7644c991cd88868235511ba372be1f5b47c68fea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="databinding-the-slider-control-c"></a>Associação de dados o controle deslizante (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle deslizante no controle AJAX Toolkit fornece um controle deslizante gráfico que pode ser controlado usando o mouse. É possível associar a posição atual do controle deslizante para outro controle ASP.NET.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle deslizante no controle AJAX Toolkit fornece um controle deslizante gráfico que pode ser controlado usando o mouse. É possível associar a posição atual do controle deslizante para outro controle ASP.NET.
 
@@ -52,6 +52,6 @@ Como você pode ver no navegador, a associação de dados funciona em ambas as d
 
 Controle deslizante e caixa de texto estão em sincronia ([clique para exibir a imagem em tamanho normal](databinding-the-slider-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](using-the-slider-control-with-auto-postback-cs.md)
-[Próximo](using-the-slider-control-with-auto-postback-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](using-the-slider-control-with-auto-postback-cs.md)
+> [Próximo](using-the-slider-control-with-auto-postback-vb.md)

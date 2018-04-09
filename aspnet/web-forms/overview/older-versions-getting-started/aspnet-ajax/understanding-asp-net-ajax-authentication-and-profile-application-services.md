@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
-title: "Noções básicas sobre a autenticação do ASP.NET AJAX e serviços de aplicativo do perfil | Microsoft Docs"
+title: Noções básicas sobre a autenticação do ASP.NET AJAX e serviços de aplicativo do perfil | Microsoft Docs
 author: scottcate
-description: "O serviço de autenticação permite que os usuários forneçam credenciais para receber um cookie de autenticação e é o serviço de gateway para permitir que o usuário personalizada..."
+description: O serviço de autenticação permite que os usuários forneçam credenciais para receber um cookie de autenticação e é o serviço de gateway para permitir que o usuário personalizada...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0bf6538d0c4ae9488e6ac29ccba6d4b243cf070e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>Noções básicas sobre a autenticação do ASP.NET AJAX e serviços de aplicativos de perfil
 ====================
@@ -43,7 +43,7 @@ O serviço de autenticação permite que os usuários forneçam credenciais para
 
 O serviço de perfil permite a integração automática e o armazenamento de dados de usuário com base na associação, conforme fornecido pelo serviço de autenticação. Os dados armazenados são especificados pelo arquivo Web. config, e os vários provedores de serviços de criação de perfil lidar com o gerenciamento de dados. Assim como acontece com o serviço de autenticação, o serviço de perfil de AJAX é compatível com o serviço de perfil do ASP.NET padrão, para que as páginas atualmente a incorporação de recursos do serviço de perfil do ASP.NET não devem ser interrompidas, incluindo suporte a AJAX.
 
-Incorporando a autenticação do ASP.NET e serviços de criação de perfil em um aplicativo está fora do escopo deste white paper. Para obter mais informações sobre o tópico, consulte o MSDN Library referência artigo Gerenciando usuários com o uso de associações em [https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET também inclui um utilitário para configurar automaticamente a associação com o SQL Server, que é o provedor de serviços de autenticação padrão para a associação do ASP.NET. Para obter mais informações, consulte o artigo ferramenta de registro de servidor de SQL do ASP.NET (Aspnet\_regsql.exe) em [https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
+Incorporando a autenticação do ASP.NET e serviços de criação de perfil em um aplicativo está fora do escopo deste white paper. Para obter mais informações sobre o tópico, consulte o MSDN Library referência artigo Gerenciando usuários com o uso de associações em [ https://msdn.microsoft.com/library/tw292whz.aspx ](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET também inclui um utilitário para configurar automaticamente a associação com o SQL Server, que é o provedor de serviços de autenticação padrão para a associação do ASP.NET. Para obter mais informações, consulte o artigo ferramenta de registro de servidor de SQL do ASP.NET (Aspnet\_regsql.exe) em [ https://msdn.microsoft.com/library/ms229862(vs.80).aspx ](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*Usando o serviço de autenticação do ASP.NET AJAX*
 
@@ -65,7 +65,7 @@ O método de login () começa uma solicitação para autenticar as credenciais d
 
 | **Nome do parâmetro** | **Significado** |
 | --- | --- |
-| userName | Necessário. O nome de usuário para autenticar. |
+| userName | Obrigatório. O nome de usuário para autenticar. |
 | password | Opcional (o padrão é nulo). A senha do usuário. |
 | isPersistent | Opcional (o padrão é falso). Se o cookie de autenticação do usuário deve persistir entre sessões. Se for false, o usuário será fazer logoff quando o navegador for fechado ou a sessão expira. |
 | redirectUrl | Opcional (o padrão é nulo). A URL para redirecionar o navegador após a autenticação bem-sucedida. Se esse parâmetro for nulo ou uma cadeia de caracteres vazia, nenhum redirecionamento ocorre. |
@@ -131,7 +131,7 @@ A referência de função especificada por essa propriedade deve ter a seguinte 
 
 | **Nome do parâmetro** | **Significado** |
 | --- | --- |
-| validCredentials | Especifica se o usuário forneceu credenciais válidas. `true`Se o usuário fez logon com êxito. Caso contrário, `false`. |
+| validCredentials | Especifica se o usuário forneceu credenciais válidas. `true` Se o usuário fez logon com êxito. Caso contrário, `false`. |
 | userContext | Especifica as informações de contexto de usuário fornecidas quando a função de logon foi chamada. |
 | methodName | O nome do método de chamada. |
 
@@ -345,6 +345,6 @@ Além disso, ao criar implementações do serviço web simplificada com assinatu
 
 Scott Cate trabalha com tecnologias Microsoft Web desde 1997 e é presidente da myKB.com ([www.myKB.com](http://www.myKB.com)) onde ele é especializada em escrever ASP.NET com base em aplicativos voltados para soluções de Software da Base de dados de Conhecimento. Scott pode ser contatado via email em [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) ou em seu blog [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Anterior](understanding-asp-net-ajax-updatepanel-triggers.md)
-[Próximo](understanding-asp-net-ajax-localization.md)
+> [!div class="step-by-step"]
+> [Anterior](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [Próximo](understanding-asp-net-ajax-localization.md)

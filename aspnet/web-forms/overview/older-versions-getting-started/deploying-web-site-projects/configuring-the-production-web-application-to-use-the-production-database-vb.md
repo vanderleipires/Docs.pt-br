@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
-title: "Configurando o aplicativo da Web de produção para usar o banco de dados de produção (VB) | Microsoft Docs"
+title: Configurando o aplicativo da Web de produção para usar o banco de dados de produção (VB) | Microsoft Docs
 author: rick-anderson
-description: "Como discutido nos tutoriais anteriores, não é incomum para obter informações de configuração será diferente entre os ambientes de desenvolvimento e produção. Isso é es..."
+description: Como discutido nos tutoriais anteriores, não é incomum para obter informações de configuração será diferente entre os ambientes de desenvolvimento e produção. Isso é es...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 60ef1f93efea777e9309ad8c664a2c6645f1ce80
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: b1741807fe02b4e60db7098cfd46922d3ba50ccd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>Configurando o aplicativo da Web de produção para usar o banco de dados de produção (VB)
 ====================
@@ -71,7 +71,7 @@ Em seguida, especifique as várias informações de conexão de banco de dados (
 
 O banco de dados do ambiente de produção deve agora estar listado no Gerenciador de servidores. Selecione o banco de dados do Gerenciador de servidores e vá para a janela de propriedades. Lá você encontrará uma propriedade denominada cadeia de caracteres de Conexão com a cadeia de caracteres de conexão do banco de dados s. Supondo que você estiver usando um banco de dados do Microsoft SQL Server em produção e o provedor SqlClient sua cadeia de caracteres de conexão deve ser semelhante ao seguinte:
 
-**Fonte de dados =*serverName*; Catálogo inicial =*databaseName*; Atributo Persist Security Info = True; ID de usuário =*username*; Senha = * senha***
+<strong>Fonte de dados =<em>serverName</em>; Catálogo inicial =<em>databaseName</em>; Atributo Persist Security Info = True; ID de usuário =<em>username</em>; Senha =*senha</strong>*
 
 Onde *serverName*, *databaseName*, *username*, e *senha* com os valores para o nome de servidor de banco de dados, o banco de dados nome, o nome de usuário e a senha fornecida a você pela sua empresa de host da web.
 
@@ -152,6 +152,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Mover as configurações no arquivo Web. config](http://www.asp101.com/tips/index.asp?id=154)
 - [Documentação técnica para o &lt;connectionStrings&gt; elemento](https://msdn.microsoft.com/library/bf7sd233.aspx)
 
->[!div class="step-by-step"]
-[Anterior](deploying-a-database-vb.md)
-[Próximo](configuring-a-website-that-uses-application-services-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](deploying-a-database-vb.md)
+> [Próximo](configuring-a-website-that-uses-application-services-vb.md)

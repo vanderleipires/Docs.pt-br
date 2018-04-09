@@ -1,7 +1,7 @@
 ---
-title: "Armazenamento seguro de segredos do aplicativo durante o desenvolvimento no núcleo do ASP.NET"
+title: Armazenamento seguro de segredos do aplicativo em desenvolvimento no núcleo do ASP.NET
 author: rick-anderson
-description: "Mostra como armazenar com segurança os segredos durante o desenvolvimento"
+description: Mostra como armazenar com segurança os segredos durante o desenvolvimento
 manager: wpickett
 ms.author: riande
 ms.date: 09/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: a23c9dc9ee1e20c0e0551a372e1cd706bb82070e
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 166111696a9c4244ede44fca8878dd3725bb3099
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo durante o desenvolvimento no núcleo do ASP.NET
+# <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo em desenvolvimento no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), e [Scott Addie](https://scottaddie.com) 
 
@@ -34,15 +34,14 @@ Por exemplo, se você criar um novo aplicativo web ASP.NET Core com contas de us
 
 ## <a name="secret-manager"></a>Gerenciador de segredo
 
-A ferramenta Gerenciador de segredo armazena dados confidenciais para o trabalho de desenvolvimento fora da árvore do projeto. A ferramenta Gerenciador de segredo é uma ferramenta de projeto que pode ser usada para armazenar segredos para um [.NET Core](https://www.microsoft.com/net/core) projeto durante o desenvolvimento. Com a ferramenta Gerenciador de segredo, você pode associar os segredos do aplicativo um projeto específico e compartilhá-los em vários projetos.
+A ferramenta Gerenciador de segredo armazena dados confidenciais para o trabalho de desenvolvimento fora da árvore do projeto. A ferramenta Gerenciador de segredo é uma ferramenta de projeto que pode ser usada para armazenar segredos para um projeto .NET Core durante o desenvolvimento. Com a ferramenta Gerenciador de segredo, você pode associar os segredos do aplicativo um projeto específico e compartilhá-los em vários projetos.
 
 >[!WARNING]
 > A ferramenta Gerenciador de segredo não criptografa os segredos armazenados e não deve ser tratada como um repositório confiável. Ele destina-se apenas para fins de desenvolvimento. As chaves e valores são armazenados em um arquivo de configuração JSON no diretório de perfil do usuário.
 
 ## <a name="installing-the-secret-manager-tool"></a>Instalando a ferramenta Gerenciador de segredo
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-
+#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 Clique com botão direito no projeto no Gerenciador de soluções e selecione **editar \<project_name\>. csproj** no menu de contexto. Adicione a linha realçada para o *. csproj* de arquivo e salvar para restaurar o pacote NuGet associado:
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -59,8 +58,7 @@ Salvando o *. csproj* arquivo também abre uma `secrets.json` arquivo no editor 
 }
 ```
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
-
+#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 Adicionar `Microsoft.Extensions.SecretManager.Tools` para o *. csproj* e execute o [restauração dotnet](/dotnet/core/tools/dotnet-restore). Você pode usar as mesmas etapas para instalar a ferramenta Gerenciador de segredo usando a linha de comando.
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -89,15 +87,14 @@ dotnet user-secrets set MySecret ValueOfMySecret
 ```
 
 Você pode executar a ferramenta Gerenciador de segredo de outros diretórios, mas você deve usar o `--project` opção para passar o caminho para o *. csproj* arquivo:
- 
+
 ```console
 dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\webapp1
 ```
 
 Você também pode usar a ferramenta Gerenciador de segredo de lista, remover e limpar os segredos do aplicativo.
 
------
-
+* * *
 ## <a name="accessing-user-secrets-via-configuration"></a>Acessando os segredos do usuário por meio da configuração
 
 Acessar o Gerenciador de segredo segredos através do sistema de configuração. Adicionar o `Microsoft.Extensions.Configuration.UserSecrets` empacotar e executar [restauração dotnet](/dotnet/core/tools/dotnet-restore).

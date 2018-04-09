@@ -2,7 +2,7 @@
 uid: web-forms/videos/net-4/routing/aspnet-4-quick-hit-permanent-redirect
 title: Redirecionamento permanente | Microsoft Docs
 author: JoeStagner
-description: "Neste vídeo, você aprenderá como usar o método auxiliar RedirectPermanent respostas HTTP 301 do problema."
+description: Neste vídeo, você aprenderá como usar o método auxiliar RedirectPermanent respostas HTTP 301 do problema.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/routing/aspnet-4-quick-hit-permanent-redirect
 msc.type: video
-ms.openlocfilehash: 076294f2ceafe927cd96b41c5f96d860f3035a99
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c097dfb3ebb122b2069e011bc000a6870af35165
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-quick-hit---permanent-redirect"></a>O ASP.NET 4 "Hit rápida" - redirecionamento permanente
 ====================
@@ -24,7 +24,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 
 Neste vídeo, você aprenderá como usar o método auxiliar RedirectPermanent respostas HTTP 301 do problema. 
 
-[&#9654; Assista ao vídeo (5 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-permanent-redirect)
+[&#9654;Assista ao vídeo (5 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-permanent-redirect)
 
->[!div class="step-by-step"]
-[Avançar](aspnet-4-quick-hit-imperative-webforms-routing.md)
+> [!div class="step-by-step"]
+> [Avançar](aspnet-4-quick-hit-imperative-webforms-routing.md)

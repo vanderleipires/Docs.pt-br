@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-vb
-title: "Criar uma restrição de rota (VB) | Microsoft Docs"
+title: Criar uma restrição de rota (VB) | Microsoft Docs
 author: StephenWalther
-description: "Neste tutorial, Stephen Walther demonstra como você pode controlar como o navegador solicita rotas de correspondência, criando restrições da rota com expressões regulares."
+description: Neste tutorial, Stephen Walther demonstra como você pode controlar como o navegador solicita rotas de correspondência, criando restrições da rota com expressões regulares.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 67ff2666f4558abd4f8d9bddffd7aef8bb68d7bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2f50b371ac679218b06c4848e6d33516d29d3a82
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-route-constraint-vb"></a>Criar uma restrição de rota (VB)
 ====================
@@ -44,7 +44,7 @@ Observe que a ação de Details() exposta pelo controlador de produto aceita um 
 A rota definida na listagem 1 corresponderá a qualquer uma das seguintes URLs:
 
 - / Produto/23
-- / Produto/7
+- /Product/7
 
 Infelizmente, a rota também serão compatíveis com as seguintes URLs:
 
@@ -61,14 +61,14 @@ Porque a ação Details() espera um parâmetro de número inteiro, fazer uma sol
 
 O que você realmente deseja fazer é corresponder somente URLs que contêm um número inteiro apropriado productId. Você pode usar uma restrição ao definir uma rota para restringir as URLs que correspondem à rota. A rota de produto modificada na listagem 3 contém uma restrição de expressão regular que corresponde apenas números inteiros.
 
-**A listagem 3 - Global.asax.vb**
+**Listing 3 - Global.asax.vb**
 
 [!code-vb[Main](creating-a-route-constraint-vb/samples/sample3.vb)]
 
 \D+ a expressão regular corresponde a um ou mais inteiros. Essa restrição faz com que a rota de produto coincidir com as seguintes URLs:
 
 - / Produto/3
-- / Produtos/8999
+- /Product/8999
 
 Mas não as seguintes URLs:
 
@@ -77,6 +77,6 @@ Mas não as seguintes URLs:
 
 Essas solicitações do navegador serão tratadas por outra rota ou, se não houver nenhuma rota correspondente, um *não foi possível encontrar o recurso* erro será retornado.
 
->[!div class="step-by-step"]
-[Anterior](creating-custom-routes-vb.md)
-[Próximo](creating-a-custom-route-constraint-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-custom-routes-vb.md)
+> [Próximo](creating-a-custom-route-constraint-vb.md)

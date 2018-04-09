@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
 title: Determinar quais arquivos precisam ser implantados (c#) | Microsoft Docs
 author: rick-anderson
-description: "Quais arquivos precisam ser implantados no ambiente de desenvolvimento para o ambiente de produção depende em parte se o aplicativo ASP.NET foi criado nos..."
+description: Quais arquivos precisam ser implantados no ambiente de desenvolvimento para o ambiente de produção depende em parte se o aplicativo ASP.NET foi criado nos...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d58956323275a46b44b36d4f19db4d2f607e3916
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ff5f1d7d156efa12d97382db56211a07c43178fd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-c"></a>Determinar quais arquivos precisam ser implantados (c#)
 ====================
@@ -80,14 +80,14 @@ O download para este tutorial inclui um aplicativo ASP.NET chamado revisões de 
 - Sete páginas ASP.NET diferentes: 
 
     - ~`/Default.aspx`-homepage do site.
-    - ~`/About.aspx`-uma página de "Sobre o Site".
-    - ~`/Fiction/Default.aspx`-uma página listando os livros de ficção foram revisados. 
+    - ~`/About.aspx` -uma página de "Sobre o Site".
+    - ~`/Fiction/Default.aspx` -uma página listando os livros de ficção foram revisados. 
 
-        - ~`/Fiction/Blaze.aspx`-uma revisão do livro Richard Bachman *Blaze*.
-    - ~/`Tech/Default.aspx`-uma página listando os livros de tecnologia que foram examinados. 
+        - ~`/Fiction/Blaze.aspx` -uma revisão do livro Richard Bachman *Blaze*.
+    - ~/`Tech/Default.aspx` -uma página listando os livros de tecnologia que foram examinados. 
 
         - ~/`Tech/CYOW.aspx`-uma revisão do *criar seu próprio site*.
-        - ~/`Tech/TYASP35.aspx`-uma revisão do *ensinar por conta própria ASP.NET 3.5 nas 24 horas*.
+        - ~/`Tech/TYASP35.aspx` -uma revisão do *ensinar por conta própria ASP.NET 3.5 nas 24 horas*.
 - Três arquivos CSS diferentes na pasta estilos.
 - Quatro arquivos de imagem - funciona com o logotipo do ASP.NET e as imagens das tampas dos livros revisadas três - todos localizados no `Images` pasta.
 - Um `Web.sitemap` arquivo, que define o mapa de site e é usado para exibir menus de `Default.aspx` páginas no diretório raiz e `Fiction` e `Tech` pastas.
@@ -110,7 +110,7 @@ Este aplicativo não usar um banco de dados; cada revisão é implementado como 
 Download deste tutorial tem duas cópias do aplicativo web, cada um implementado como um tipo diferente de projeto do Visual Studio: BookReviewsWAP, um projeto de aplicativo Web e BookReviewsWSP, um projeto de Site da Web. Ambos os projetos foram criados com o Visual Web Developer 2008 SP1 e usam o ASP.NET 3.5 SP1. Para trabalhar com esses projetos iniciar ao descompactar o conteúdo em sua área de trabalho. Para abrir o projeto de aplicativo da Web (BookReviewsWAP), navegue até a pasta BookReviewsWAP e clique duas vezes no arquivo de solução, `BookReviewsWAP.sln`. Para abrir o projeto de Site da Web (BookReviewsWSP), inicie o Visual Studio e, em seguida, no menu Arquivo, escolha a opção de abrir o Site da Web, navegue até o `BookReviewsWSP` pasta na área de trabalho e clique em Okey.
 
 
-As duas seções restantes neste tutorial examinar quais arquivos você precisará copiar para o ambiente de produção ao implantar o aplicativo. Os próximos dois tutoriais -  *[Implantando seu Site usando FTP](deploying-your-site-using-an-ftp-client-cs.md)*  e  *[implantando seu Site usando o Visual Studio](deploying-your-site-using-visual-studio-cs.md)*  -mostram maneiras diferentes de Copie esses arquivos para um provedor de host da web.
+As duas seções restantes neste tutorial examinar quais arquivos você precisará copiar para o ambiente de produção ao implantar o aplicativo. Os próximos dois tutoriais - *[Implantando seu Site usando FTP](deploying-your-site-using-an-ftp-client-cs.md)* e *[implantando seu Site usando o Visual Studio](deploying-your-site-using-visual-studio-cs.md)* -mostram maneiras diferentes de Copie esses arquivos para um provedor de host da web.
 
 ## <a name="determining-the-files-to-deploy-for-the-web-application-project"></a>Determinando os arquivos para implantar o projeto de aplicativo Web
 
@@ -185,6 +185,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Sistema de projeto de Site da Web do Visual Studio 2005: o que é e por que o fizemos?](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
 - [Passo a passo: Convertendo um projeto de Site da Web para um projeto de aplicativo Web no Visual Studio](https://msdn.microsoft.com/library/aa983476.aspx)
 
->[!div class="step-by-step"]
-[Anterior](asp-net-hosting-options-cs.md)
-[Próximo](deploying-your-site-using-an-ftp-client-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](asp-net-hosting-options-cs.md)
+> [Próximo](deploying-your-site-using-an-ftp-client-cs.md)

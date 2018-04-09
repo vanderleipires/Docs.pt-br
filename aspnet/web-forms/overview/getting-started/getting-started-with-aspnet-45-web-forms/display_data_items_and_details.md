@@ -2,7 +2,7 @@
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 title: Exibir dados de itens e detalhes | Microsoft Docs
 author: Erikre
-description: "Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express 2013 para nós..."
+description: Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express 2013 para nós...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 msc.type: authoredcontent
-ms.openlocfilehash: 809d7a9c21a3ddf5dfd07d079eb8fe0d1d81712d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5fea654aa5116193cb7496c1b9020ed8e25fc06f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="display-data-items-and-details"></a>Exibir dados de itens e detalhes
 ====================
-Por [Erik Reitan](https://github.com/Erikre)
+por [Erik Reitan](https://github.com/Erikre)
 
 [Baixe o projeto de exemplo do Wingtip Toys (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ou [baixar livro eletrônico (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
@@ -38,7 +38,7 @@ Este tutorial descreve como exibir itens de dados e detalhes de item de dados us
 
 ### <a name="these-are-the-features-introduced-in-the-tutorial"></a>Estes são os recursos apresentados no tutorial de:
 
-- Associação de modelo
+- Associação de modelos
 - Provedores de valor
 
 ## <a name="adding-a-data-control-to-display-products"></a>Adicionando um controle de dados para exibir produtos
@@ -131,7 +131,7 @@ Esse código usa um **FormView** controle para exibir detalhes sobre um produto 
 Para conectar-se a marcação acima para o banco de dados, você deve adicionar o código adicional para o *ProductDetails.aspx* código.
 
 1. Em **Solution Explorer**, clique com botão direito *ProductDetails.aspx* e, em seguida, clique em **Exibir código**.  
- O *ProductDetails.aspx.cs* arquivo será exibido.
+   O *ProductDetails.aspx.cs* arquivo será exibido.
 2. Substitua o código existente pelo seguinte código:   
 
     [!code-csharp[Main](display_data_items_and_details/samples/sample6.cs)]
@@ -160,6 +160,6 @@ Neste tutorial da série de você ter adicionar marcação e código para exibir
 
 [Recuperando e exibindo dados com o modelo de associação e formulários da web](../../presenting-and-managing-data/model-binding/retrieving-data.md)
 
->[!div class="step-by-step"]
-[Anterior](ui_and_navigation.md)
-[Próximo](shopping-cart.md)
+> [!div class="step-by-step"]
+> [Anterior](ui_and_navigation.md)
+> [Próximo](shopping-cart.md)

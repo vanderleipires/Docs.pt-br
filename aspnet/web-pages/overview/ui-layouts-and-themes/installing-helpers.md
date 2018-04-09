@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/installing-helpers
-title: "Instalar um auxiliar em uma Web ASP.NET páginas Site (Razor) | Microsoft Docs"
+title: Instalar um auxiliar em uma Web ASP.NET páginas Site (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Este artigo descreve como instalar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um auxiliar é um componente reutilizável que inclui o código e marcação para por..."
+description: Este artigo descreve como instalar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um auxiliar é um componente reutilizável que inclui o código e marcação para por...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: 842c5a56d14314217c1e6ad6d48ded28d3cc5b4e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 766fbb87ae8bcb8917eb8fa7f552c00792242cf6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>Instalando um auxiliar em um Site de páginas (Razor) da Web do ASP.NET
 ====================
@@ -32,7 +32,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
 > 
 > 
-> - O WebMatrix 3
+> - WebMatrix 3
 
 
 ## <a name="overview-of-helpers"></a>Visão geral de auxiliares
@@ -49,10 +49,10 @@ Páginas da Web do ASP.NET tem alguns auxiliares internos. No entanto, muitos au
 2. Isso inicia o NuGet package manager e exibe os pacotes disponíveis. Na caixa de pesquisa, digite uma palavra-chave para o auxiliar que você deseja instalar.
 
     ![Caixa de diálogo do NuGet galeria no WebMatrix](installing-helpers/_static/image2.png)
-- Selecione o pacote e, em seguida, clique em **instalar**. Clique em **Sim** quando for perguntado se deseja instalar o pacote e indicar que você aceita os termos.
+3. Selecione o pacote e, em seguida, clique em **instalar**. Clique em **Sim** quando for perguntado se deseja instalar o pacote e indicar que você aceita os termos.
 
-    Se esta for a primeira vez em que você instalou um auxiliar, o NuGet cria pastas no seu site para o código que compõe o auxiliar.
-- Para desinstalar um auxiliar, clique o **galeria** , clique no **instalado** guia e selecione o pacote que deseja desinstalar.
+     Se esta for a primeira vez em que você instalou um auxiliar, o NuGet cria pastas no seu site para o código que compõe o auxiliar.
+4. Para desinstalar um auxiliar, clique o **galeria** , clique no **instalado** guia e selecione o pacote que deseja desinstalar.
 
 ## <a name="installing-the-twitter-helper"></a>Instalando o auxiliar do Twitter
 

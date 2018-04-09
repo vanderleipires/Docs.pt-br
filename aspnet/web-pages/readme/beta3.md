@@ -1,8 +1,8 @@
 ---
 uid: web-pages/readme/beta3
-title: "Web Matrix e Leiame de versão Beta 3 do ASP.NET páginas da Web (Razor) | Microsoft Docs"
+title: Web Matrix e Leiame de versão Beta 3 do ASP.NET páginas da Web (Razor) | Microsoft Docs
 author: rick-anderson
-description: "Web Matrix e da Web do ASP.NET (Razor) de páginas Beta 3 versão Leiame"
+description: Web Matrix e da Web do ASP.NET (Razor) de páginas Beta 3 versão Leiame
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/10/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5ef7a6f44758cf94fc19d6fbab3cc4b7bce8e8e5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix e da Web do ASP.NET (Razor) de páginas Beta 3 versão Leiame
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="contents"></a>Conteúdo
 
-- [Visão Geral](#Overview)
+- [Visão geral](#Overview)
 - [Instalação](#Installation_Notes)
 - [Novos recursos, alterações e problemas conhecidos na versão Beta 3](#Known_Issues)
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/24/2018
 
 <a id="Overview"></a>
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 > Microsoft WebMatrix Beta é uma pilha de desenvolvimento gratuito da web que é instalado em minutos. Ela integra um servidor web com o banco de dados e estruturas para criar uma única experiência integrada de programação. Você pode usar a versão Beta do WebMatrix para simplificar a maneira de código, testar e publicar o seu próprio site ASP.NET ou PHP, ou você pode usar a versão Beta do WebMatrix para iniciar um novo site usando aplicativos de código aberto populares como DotNetNuke, Umbraco, WordPress ou Joomla. O WebMatrix Beta usa o mesmo servidor de aplicativos web, o mecanismo de banco de dados e o ambiente de estruturas que executará o seu site na internet, o que faz a transição do desenvolvimento para produção simples e direta.
 
@@ -283,9 +283,9 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > Se você desinstalar o .NET Framework versão 4 e, em seguida, reinstalá-lo, o ASP.NET Web Pages com sintaxe do Razor são desabilitados. As páginas com a *. cshtml* extensão não são executados corretamente. Páginas da Web ASP.NET registra um assembly na raiz da máquina *Web. config* arquivo e remover o .NET Framework remove esse arquivo. Reinstalar o .NET Framework instala uma nova versão do arquivo de configuração, mas não adiciona a referência para o assembly de páginas da Web ASP.NET.
 > 
 > **Solução alternativa** após a reinstalação do .NET Framework, reinstale o ASP.NET Web Pages com sintaxe do Razor. Isso adiciona o elemento a seguir para o *Web. config* arquivo na raiz do computador, que normalmente é no seguinte local:  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
 > 
 > [!code-xml[Main](beta3/samples/sample6.xml)]
@@ -302,9 +302,9 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>Problema: URLs sem extensão não localizar arquivos de.cshtml/.vbhtml no IIS 7 ou IIS 7.5
 
 > No IIS 7 ou IIS 7.5, solicitações com uma URL semelhante à seguinte não serão possível localizar as páginas que têm o *. cshtml* ou *. vbhtml* extensão:  
->   
+> 
 > `http://www.example.com/ExampleSite/ExampleFile`  
->   
+> 
 > O problema ocorre porque a regravação de URL não está habilitado por padrão para IIS 7 ou IIS 7.5. O cenário mais provável é que você não vir o problema ao testar localmente usando o IIS Express, mas você enfrentar ao implantar seu site em um site de hospedagem.
 > 
 > **Solução alternativa**
@@ -344,7 +344,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 >     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **to** *\Bin\x86*
 >     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to** *\Bin\amd64*
 > 2. Na pasta raiz do site, crie ou abra um *Web. config* arquivo. (Na versão Beta 3 do WebMatrix, esse tipo de arquivo está disponível se você clicar em **todos os** no **escolher um tipo de arquivo** caixa de diálogo.)
-> 3. Adicione o seguinte elemento como um filho do  **&lt;configuração&gt;**  elemento (não dentro de  **&lt;System. Web&gt;**  elemento):
+> 3. Adicione o seguinte elemento como um filho do **&lt;configuração&gt;** elemento (não dentro de **&lt;System. Web&gt;** elemento):
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
@@ -366,21 +366,21 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > 
 > **Solução alternativa**  
 > Use o `Encryption Mode` propriedade o `SqlCeConnection` classe para criptografar arquivos de banco de dados do SQL Server Compact 4.0. O exemplo a seguir mostra como criar um banco de dados SQL Server Compact 4.0 criptografado usando o `Encryption Mode` propriedade:
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample11.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample12.vb)]
 > 
 > Para alterar o modo de criptografia de um banco de dados existente do SQL Server Compact 4.0, faça o seguinte:
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample13.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample14.vb)]
 > 
 > Para criptografar um banco de dados do SQL Server Compact 4.0 não criptografado, faça o seguinte:
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample15.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample16.vb)]
 
 
@@ -419,7 +419,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>Problema: Instalação de um aplicativo pode levar muito tempo se a pasta Meus documentos do usuário é redirecionada para um compartilhamento de rede
 
 > **Solução alternativa**  
-> nenhuma. O aplicativo pode demorar um pouco para ser instalado, mas será instalado corretamente.
+> Nenhum. O aplicativo pode demorar um pouco para ser instalado, mas será instalado corretamente.
 
 
 <a id="Known_Issues_Publishing_Applications"></a>
@@ -461,7 +461,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > 
 > Isso ocorre porque a versão do IIS Express Beta não oferece suporte a WCF por padrão.
 > 
-> **Solução alternativa** usar qualquer uma das seguintes alternativas (solução alternativa &#2; requer o Microsoft Windows Vista ou superior):
+> **Solução alternativa** usar qualquer uma das seguintes alternativas (solução alternativa 2 # requer o Microsoft Windows Vista ou superior):
 > 
 > 
 > 1. Copie o *Microsoft.Web.dll* e *Microsoft.Web.Administration.dll* assemblies no local de instalação do WebMatrix para o *bin* diretório do WCF aplicativo. Por padrão, o WebMatrix é instalado no *Microsoft WebMatrix* subpasta do sistema *arquivos de programa* pasta.
@@ -526,7 +526,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > O **relações** botão sob o **tabela** guia o **bancos de dados** espaço de trabalho está desabilitado para bancos de dados do SQL Server Compact.
 > 
 > **Solução alternativa**  
-> nenhuma. SQL Server Compact não dá suporte a relações entre tabelas.
+> Nenhum. SQL Server Compact não dá suporte a relações entre tabelas.
 
 
 #### <a name="issue-parameterized-sql-queries-throw-exceptions"></a>Problema: Consultas SQL parametrizadas lançam exceções
@@ -537,7 +537,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > Defina explicitamente o tipo de dados para parâmetros, como `SqlDbType` ou `DbType`. Isso é essencial no caso de tipos de dados BLOB (`image` e `ntext`). Use um código como o seguinte:
 > 
 > [!code-sql[Main](beta3/samples/sample20.sql)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample21.vb)]
 
 

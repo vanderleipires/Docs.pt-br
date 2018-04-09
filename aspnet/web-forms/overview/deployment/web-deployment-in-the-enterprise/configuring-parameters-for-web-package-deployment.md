@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
-title: "Configurar parâmetros para a implantação do pacote da Web | Microsoft Docs"
+title: Configurar parâmetros para a implantação do pacote da Web | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como definir valores de parâmetro, como nomes de aplicativos da web de serviços de informações da Internet (IIS), cadeias de caracteres de conexão e pontos de extremidade de serviço..."
+description: Este tópico descreve como definir valores de parâmetro, como nomes de aplicativos da web de serviços de informações da Internet (IIS), cadeias de caracteres de conexão e pontos de extremidade de serviço...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7be08f1a1fb7232911a44cf64e2e784dbb95ff48
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>Configurar parâmetros para a implantação do pacote da Web
 ====================
@@ -92,7 +92,7 @@ Para obter detalhes completos sobre como criar um *parameters.xml* de arquivos, 
 
 ## <a name="modifying-the-setparametersxml-file"></a>Modificando o arquivo SetParameters.xml
 
-Se você planeja implantar o pacote de aplicativo web manualmente & #x 2014; executando o *. Deploy* de arquivo ou ao executar o MSDeploy.exe da linha de comando & #x 2014; não há nada que impeça a edição manual de *SetParameters.xml* arquivo antes da implantação. No entanto, se você estiver trabalhando em uma solução de grande porte, você precisará implantar um pacote de aplicativo da web como parte de um processo de compilação e implantação automatizado, maior. Nesse cenário, é necessário o Microsoft Build Engine (MSBuild) para modificar o *SetParameters.xml* arquivo para você. Você pode fazer isso usando o MSBuild **XmlPoke** tarefa.
+Se você planeja implantar o pacote de aplicativo web manualmente&#x2014;executando o *. Deploy* arquivo ou ao executar o MSDeploy.exe da linha de comando&#x2014;não há nada que impeça a edição manual de  *SetParameters.xml* arquivo antes da implantação. No entanto, se você estiver trabalhando em uma solução de grande porte, você precisará implantar um pacote de aplicativo da web como parte de um processo de compilação e implantação automatizado, maior. Nesse cenário, é necessário o Microsoft Build Engine (MSBuild) para modificar o *SetParameters.xml* arquivo para você. Você pode fazer isso usando o MSBuild **XmlPoke** tarefa.
 
 O [solução de exemplo do Gerenciador de contato](the-contact-manager-solution.md) ilustra esse processo. Os exemplos de código a seguirem foram editados para mostrar apenas os detalhes que são relevantes para este exemplo.
 
@@ -148,6 +148,6 @@ Para obter informações sobre como criar pacotes da web, consulte [criação e 
 
 Para obter mais informações sobre parametrização na implantação da Web, consulte [Web implantar parametrização na ação](https://go.microsoft.com/?linkid=9805119) (postagem do blog).
 
->[!div class="step-by-step"]
-[Anterior](building-and-packaging-web-application-projects.md)
-[Próximo](deploying-web-packages.md)
+> [!div class="step-by-step"]
+> [Anterior](building-and-packaging-web-application-projects.md)
+> [Próximo](deploying-web-packages.md)

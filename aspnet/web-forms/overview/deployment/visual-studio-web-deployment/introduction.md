@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/introduction
-title: "Implantação de Web do ASP.NET usando o Visual Studio: Introdução | Microsoft Docs"
+title: 'Implantação de Web do ASP.NET usando o Visual Studio: Introdução | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutorial mostra como implantar um ASP.NET (publicar) aplicativo da web para aplicativos de Web do serviço de aplicativo do Azure ou um provedor de hospedagem de terceiros pelo usando V..."
+description: Esta série de tutorial mostra como implantar um ASP.NET (publicar) aplicativo da web para aplicativos de Web do serviço de aplicativo do Azure ou um provedor de hospedagem de terceiros pelo usando V...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: a7c5b348e44a88a56680237b0cac75c999901ec3
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 1ff4cc3b0fa6ce7e6cdc833a0c2f7fea2050c4e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Implantação de Web do ASP.NET usando o Visual Studio: Introdução
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -35,7 +35,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Este conteúdo também está disponível como um e-book gratuito no [na Galeria do TechNet E-Book](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#ASPNETWebDeploymentusingVisualStudio).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Esses tutoriais orientam você na implantação de um aplicativo web ASP.NET que inclui bancos de dados do SQL Server. Você implantará primeiro para o IIS no computador de desenvolvimento local para teste e, em seguida, para aplicativos Web no serviço de aplicativo do Azure e banco de dados SQL Azure para preparação e produção. Você verá como implantar usando o Visual Studio, um clique para publicar, e você verá como implantar usando a linha de comando.
 
@@ -202,5 +202,5 @@ Os seguintes recursos do aplicativo afetam como implantar ou o que você precisa
 
 Neste tutorial primeiro na série, você baixou o projeto do Visual Studio de exemplo e revisar os recursos de site que afetam como implantar o aplicativo. Os tutoriais a seguir, você preparar para implantação, configurando a algumas dessas coisas a serem manipulados automaticamente. Outras pessoas que você se encarrega manualmente.
 
->[!div class="step-by-step"]
-[Avançar](preparing-databases.md)
+> [!div class="step-by-step"]
+> [Avançar](preparing-databases.md)

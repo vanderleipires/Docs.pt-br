@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/introduction-to-signalr
-title: "Introdução ao SignalR | Microsoft Docs"
+title: Introdução ao SignalR | Microsoft Docs
 author: pfletcher
-description: "Este artigo descreve o SignalR e algumas das soluções que ele foi projetado para criar."
+description: Este artigo descreve o SignalR e algumas das soluções que ele foi projetado para criar.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 5bb49c9c2405d232ba5e067d99f8879b3bc99361
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: 0ceca3edc26d35b1155946e60863a84da0bbe592
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-signalr"></a>Introdução ao SignalR
 ====================
@@ -85,11 +85,11 @@ A lista a seguir mostra as etapas que usa o SignalR para decidir qual transporte
 2. Se JSONP está configurado (ou seja, o `jsonp` parâmetro está definido como `true` quando a conexão é iniciado), a sondagem longa é usado.
 3. Se estiver sendo feita uma conexão entre domínios (ou seja, se o ponto de extremidade do SignalR não está no mesmo domínio que a página de hospedagem), WebSocket será usado se os seguintes critérios são atendidos:
 
-    - O cliente oferece suporte a CORS (compartilhamento de recursos entre origens). Para obter detalhes sobre os clientes que suportam CORS, consulte [CORS em caniuse.com](http://www.caniuse.com/CORS).
-    - O cliente oferece suporte para WebSocket
-    - O suporte do servidor WebSocket
+   - O cliente oferece suporte a CORS (compartilhamento de recursos entre origens). Para obter detalhes sobre os clientes que suportam CORS, consulte [CORS em caniuse.com](http://www.caniuse.com/CORS).
+   - O cliente oferece suporte para WebSocket
+   - O suporte do servidor WebSocket
 
-    Se qualquer um desses critérios não forem atendidos, a sondagem longa será usado. Para obter mais informações sobre conexões entre domínios, consulte [como estabelecer uma conexão entre domínios](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain).
+     Se qualquer um desses critérios não forem atendidos, a sondagem longa será usado. Para obter mais informações sobre conexões entre domínios, consulte [como estabelecer uma conexão entre domínios](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain).
 4. Se JSONP não está configurado e a conexão não está entre domínios, WebSocket será usado se o cliente e o servidor oferecer suporte a ele.
 5. Se o cliente ou o servidor não dão suporte WebSocket, eventos enviados do servidor será usado se estiver disponível.
 6. Se os eventos enviados do servidor não estiver disponível, quadro para sempre é tentado.

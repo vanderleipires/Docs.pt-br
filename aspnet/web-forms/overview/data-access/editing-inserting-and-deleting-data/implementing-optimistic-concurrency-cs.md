@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
-title: "Implementando a concorrência otimista (c#) | Microsoft Docs"
+title: Implementando a concorrência otimista (c#) | Microsoft Docs
 author: rick-anderson
-description: "Para um aplicativo web que permite que vários usuários editar dados, há o risco de que dois usuários podem editar os mesmos dados ao mesmo tempo. Neste tutori..."
+description: Para um aplicativo web que permite que vários usuários editar dados, há o risco de que dois usuários podem editar os mesmos dados ao mesmo tempo. Neste tutori...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a19e6c320838849e10d2aa397a23a0ee906bac22
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 27441ea9343055b3139468036fc6f201c77667e5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-optimistic-concurrency-c"></a>Implementando a concorrência otimista (c#)
 ====================
@@ -259,8 +259,8 @@ Para esses tutoriais anteriores que envolvidos modificação de dados, removerí
 
 Há uma configuração de propriedade final que precisa ser feita em ordem para ObjectDataSource corretamente passar os valores originais para os métodos BLL. ObjectDataSource tem um [propriedade ConflictDetection](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) que podem ser atribuídos a [um de dois valores](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
-- `OverwriteChanges`-o valor padrão. não envia os valores originais para parâmetros de entrada original dos métodos BLL
-- `CompareAllValues`-envia os valores originais para os métodos BLL; Escolha esta opção ao usar a simultaneidade otimista
+- `OverwriteChanges` -o valor padrão. não envia os valores originais para parâmetros de entrada original dos métodos BLL
+- `CompareAllValues` -envia os valores originais para os métodos BLL; Escolha esta opção ao usar a simultaneidade otimista
 
 Reserve um tempo para definir a `ConflictDetection` propriedade `CompareAllValues`.
 
@@ -429,8 +429,8 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
->[!div class="step-by-step"]
-[Anterior](customizing-the-data-modification-interface-cs.md)
-[Próximo](adding-client-side-confirmation-when-deleting-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](customizing-the-data-modification-interface-cs.md)
+> [Próximo](adding-client-side-confirmation-when-deleting-cs.md)

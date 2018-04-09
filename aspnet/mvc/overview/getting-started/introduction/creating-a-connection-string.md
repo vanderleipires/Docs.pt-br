@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/creating-a-connection-string
-title: "Criando uma cadeia de Conexão e trabalhar com LocalDB do SQL Server | Microsoft Docs"
+title: Criando uma cadeia de Conexão e trabalhar com LocalDB do SQL Server | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: 25d1c1c9954baaca9ef91eff3dd3c853930a5893
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: edbd46ef8a03670f0cb7527142babe9bd5846c7a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>Criando uma cadeia de Conexão e trabalhar com LocalDB do SQL Server
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 ## <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>Criando uma cadeia de Conexão e trabalhar com LocalDB do SQL Server
 
@@ -64,6 +64,6 @@ Na verdade, não é necessário adicionar o `MovieDBContext` cadeia de caractere
 
 Em seguida, você criará um novo `MoviesController` classe que você pode usar para exibir os dados do filme e permitir que os usuários criem novas listagens de filme.
 
->[!div class="step-by-step"]
-[Anterior](adding-a-model.md)
-[Próximo](accessing-your-models-data-from-a-controller.md)
+> [!div class="step-by-step"]
+> [Anterior](adding-a-model.md)
+> [Próximo](accessing-your-models-data-from-a-controller.md)

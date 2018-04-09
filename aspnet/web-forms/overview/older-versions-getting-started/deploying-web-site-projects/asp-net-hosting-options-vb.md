@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
-title: "ASP.NET (VB) de opções de hospedagem | Microsoft Docs"
+title: ASP.NET (VB) de opções de hospedagem | Microsoft Docs
 author: rick-anderson
-description: "Aplicativos web ASP.NET são normalmente criados, criado e testado em um ambiente de desenvolvimento local e precisam ser implantados em um o ambiente de produção..."
+description: Aplicativos web ASP.NET são normalmente criados, criado e testado em um ambiente de desenvolvimento local e precisam ser implantados em um o ambiente de produção...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 54bac82a96a35d871d764849856c8e31f6570666
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0e99423ec803927d0f621c88f3d814578fec11f5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-hosting-options-vb"></a>Opções de hospedagem ASP.NET (VB)
 ====================
@@ -61,7 +61,7 @@ As informações de configuração para um aplicativo da web geralmente estão l
 Além das alterações de configuração do aplicativo web, etapa 1 também pode envolver a configuração para o servidor web e o banco de dados. Por exemplo, se uma página ASP.NET cria ou exclui arquivos de um diretório no servidor web, em seguida, o servidor web precisa ser configurado para permitir que essas modificações no sistema de arquivos. Da mesma forma, pode haver configurações de permissão ou de autenticação que precisam ser feitas no banco de dados.
 
 
-Etapa 2 envolve sincronizando o conjunto de páginas do ASP.NET essenciais e arquivos de suporte entre os ambientes de desenvolvimento e produção. O conjunto específico de ASP. Arquivos relacionados à rede que precisam ser sincronizados entre os dois ambientes depende do tipo de projeto criado no Visual Studio e é a discussão no tutorial de Avançar,  *[determinar quais arquivos precisam ser implantados](determining-what-files-need-to-be-deployed-vb.md)*. Os tutoriais de terceiros e quarto -  *[Implantando seu Site usando FTP](deploying-your-site-using-an-ftp-client-vb.md)*e  *[implantando seu Site usando o Visual Studio](deploying-your-site-using-visual-studio-vb.md)*  -examinar diferentes ferramentas e técnicas para esses arquivos de sincronização.
+Etapa 2 envolve sincronizando o conjunto de páginas do ASP.NET essenciais e arquivos de suporte entre os ambientes de desenvolvimento e produção. O conjunto específico de ASP. Arquivos relacionados à rede que precisam ser sincronizados entre os dois ambientes depende do tipo de projeto criado no Visual Studio e é a discussão no tutorial de Avançar,  <em>[determinar quais arquivos precisam ser implantados](determining-what-files-need-to-be-deployed-vb.md)</em>. Os tutoriais de terceiros e quarto -  <em>[Implantando seu Site usando FTP](deploying-your-site-using-an-ftp-client-vb.md)</em>e <em>[implantando seu Site usando o Visual Studio](deploying-your-site-using-visual-studio-vb.md)</em> -examinar diferentes ferramentas e técnicas para esses arquivos de sincronização.
 
 Ao criar aplicativos orientados a dados, há geralmente dois bancos de dados que está sendo usados: uma para desenvolvimento e outro na produção. Durante o desenvolvimento, o esquema do banco de dados de desenvolvimento pode ser modificada para incluir novas tabelas, colunas, procedimentos armazenados e gatilhos ou pode ser modificada para remover ou renomear objetos de banco de dados existente. Entre a hora em que essas alterações são feitas e a hora em que o aplicativo é implantado para produção, os bancos de dados de desenvolvimento e produção estão fora de sincronizado. Este assincronia precisa ser corrigido durante o processo de implantação. Esses desafios serão examinados em tutoriais futuros.
 
@@ -95,6 +95,6 @@ Boa programação!
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Teresa Murphy. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Anterior](users-and-roles-on-the-production-website-cs.md)
-[Próximo](determining-what-files-need-to-be-deployed-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](users-and-roles-on-the-production-website-cs.md)
+> [Próximo](determining-what-files-need-to-be-deployed-vb.md)

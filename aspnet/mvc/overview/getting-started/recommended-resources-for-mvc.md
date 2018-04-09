@@ -2,7 +2,7 @@
 uid: mvc/overview/getting-started/recommended-resources-for-mvc
 title: MVC recomendado recursos | Microsoft Docs
 author: Rick-Anderson
-description: "Este tópico fornece links para recursos de documentação sobre ASP.NET MVC 5. Se você souber uma postagem de blog excelente, thread stackoverflow ou qualquer outro link que possa ser..."
+description: Este tópico fornece links para recursos de documentação sobre ASP.NET MVC 5. Se você souber uma postagem de blog excelente, thread stackoverflow ou qualquer outro link que possa ser...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/10/2014
@@ -12,20 +12,20 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: d08ee5c2bf56611caa483337af0ec1bd7cf982c0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b328b733914b20b0aa3fe529c9a9f999349171ec
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="mvc-recommended-resources"></a>MVC recomendado recursos
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Este tópico fornece links para recursos de documentação sobre ASP.NET MVC 5. Se você souber que um blog excelente postagem, [stackoverflow](http://stackoverflow.com/) thread ou em qualquer link que poderia ser útil, enviar [me](mailto:aspnetue@microsoft.com?subject=Great ASP.NET MVC link) um email com o link. Os links fornecidos aqui são atualizados periodicamente. Você pode encontrar mais antigos (mas em muitos casos, ainda relevante) ASP.NET MVC links no [mapa de conteúdo do MSDN](https://msdn.microsoft.com/library/gg416514(v=vs.108).aspx).
 > 
 > É um bom lugar para obter suas dúvidas ou para encontrar soluções para problemas no [Fórum do ASP.NET MVC](https://forums.asp.net/1146.aspx/1?MVC) ou na [stackoverflow](http://stackoverflow.com/questions/tagged/mvc+asp.net-mvc).
-<a id="gettingstarted"></a>
+> <a id="gettingstarted"></a>
 
 ## <a name="getting-started-with-aspnet-mvc"></a>Introdução ao ASP.NET MVC
 

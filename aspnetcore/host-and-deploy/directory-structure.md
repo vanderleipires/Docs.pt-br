@@ -1,7 +1,7 @@
 ---
-title: "Estrutura de diretórios do ASP.NET Core"
+title: Estrutura de diretórios do ASP.NET Core
 author: guardrex
-description: "Consulte a estrutura do diretório de aplicativos publicados do ASP.NET Core."
+description: Consulte a estrutura do diretório de aplicativos publicados do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,23 +10,25 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: 55e1e0dac32609446243098dbb4a4373f06b4212
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2a6ee4fefcc6d23b1c893a40b7b1be9edfcf9732
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="directory-structure-of-published-aspnet-core-apps"></a>Estrutura de diretório de aplicativos do ASP.NET Core publicados
+# <a name="aspnet-core-directory-structure"></a>Estrutura de diretórios do ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex)
 
 No núcleo do ASP.NET, o diretório de aplicativo, *publicar*, é composta de arquivos de aplicativo, os arquivos de configuração, ativos estáticos, pacotes e o tempo de execução (para aplicativos independentes).
 
-| Tipo de aplicativo                       | Estrutura de diretórios |
-| ------------------------------ | ------------------- |
+
+|            Tipo de aplicativo            |                                                                                                                                                                                                                                                     Estrutura de diretórios                                                                                                                                                                                                                                                      |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Dependente de estrutura de implantação | <ul><li>Publicar\*<ul><li>logs de\* (se for incluído em publishOptions)</li><li>refs\*</li><li>tempos de execução\*</li><li>Modos de exibição\* (se for incluído em publishOptions)</li><li>wwwroot\* (se for incluído em publishOptions)</li><li>Arquivos .dll</li><li>myapp.deps.json</li><li>myapp.dll</li><li>myapp.pdb</li><li>MyApp. PrecompiledViews.dll (se pré-compilando exibições Razor)</li><li>MyApp. PrecompiledViews.pdb (se pré-compilando exibições Razor)</li><li>myapp.runtimeconfig.json</li><li>Web. config (se for incluído em publishOptions)</li></ul></li></ul> |
-| Independente de implantação      | <ul><li>Publicar\*<ul><li>logs de\* (se for incluído em publishOptions)</li><li>refs\*</li><li>Modos de exibição\* (se for incluído em publishOptions)</li><li>wwwroot\* (se for incluído em publishOptions)</li><li>Arquivos .dll</li><li>myapp.deps.json</li><li>myapp.exe</li><li>myapp.pdb</li><li>MyApp. PrecompiledViews.dll (se pré-compilando exibições Razor)</li><li>MyApp. PrecompiledViews.pdb (se pré-compilando exibições Razor)</li><li>myapp.runtimeconfig.json</li><li>Web. config (se for incluído em publishOptions)</li></ul></li></ul> |
-\*Indica um diretório
+|   Independente de implantação    |          <ul><li>Publicar\*<ul><li>logs de\* (se for incluído em publishOptions)</li><li>refs\*</li><li>Modos de exibição\* (se for incluído em publishOptions)</li><li>wwwroot\* (se for incluído em publishOptions)</li><li>Arquivos .dll</li><li>myapp.deps.json</li><li>myapp.exe</li><li>myapp.pdb</li><li>MyApp. PrecompiledViews.dll (se pré-compilando exibições Razor)</li><li>MyApp. PrecompiledViews.pdb (se pré-compilando exibições Razor)</li><li>myapp.runtimeconfig.json</li><li>Web. config (se for incluído em publishOptions)</li></ul></li></ul>           |
+
+\* Indica um diretório
 
 O conteúdo do *publicar* diretório representa o *caminho raiz de conteúdo*, também chamado de *caminho base do aplicativo*, da implantação. O nome que é fornecido para o *publicar* serve de seu local de diretório na implantação, como a caminho físico do servidor para o aplicativo hospedado. O *wwwroot* diretório, se presente, contém ativos estáticos somente. O *logs* diretório pode ser incluído na implantação ao criá-lo no projeto e adicionar o `<Target>` elemento mostrado abaixo ao seu *. csproj* arquivo ou criando o diretório fisicamente no servidor.
 

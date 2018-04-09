@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
-title: "Visão geral do controlador MVC do ASP.NET (VB) | Microsoft Docs"
+title: Visão geral do controlador MVC do ASP.NET (VB) | Microsoft Docs
 author: StephenWalther
-description: "Neste tutorial, Stephen Walther apresenta controladores do ASP.NET MVC. Você aprenderá a criar novos controladores e retornar tipos diferentes de res de ação..."
+description: Neste tutorial, Stephen Walther apresenta controladores do ASP.NET MVC. Você aprenderá a criar novos controladores e retornar tipos diferentes de res de ação...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 452e2cf771e8b1f298ce9693ec2a707e7c1d4dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0a45630e8f2d5ae0548bb6b8496df08ca5877a40
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-controller-overview-vb"></a>Visão geral do controlador MVC do ASP.NET (VB)
 ====================
@@ -103,9 +103,9 @@ O resultado da ação ContentResult é especial. Você pode usar o resultado da 
 **A listagem 4 - Controllers\StatusController.vb**
 
 > StatusController
-
-
-> Controller
+> 
+> 
+> System.Web.Mvc.Controller
 
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample4.vb)]
@@ -124,6 +124,6 @@ A ação Index () na listagem 5 retorna um objeto DateTime. A estrutura ASP.NET 
 
 O objetivo deste tutorial foi apresentar os conceitos de controladores do ASP.NET MVC, ações do controlador e resultados de ação do controlador. A primeira seção, você aprendeu a adicionar novos controladores para um projeto ASP.NET MVC. Em seguida, você aprendeu como públicos métodos de um controlador são expostos para o universo como ações do controlador. Por fim, discutimos os diferentes tipos de resultados de ação que podem ser retornados de uma ação do controlador. Em particular, discutimos como retornar um ViewResult, RedirectToActionResult e ContentResult de uma ação do controlador.
 
->[!div class="step-by-step"]
-[Anterior](creating-a-custom-route-constraint-cs.md)
-[Próximo](creating-custom-routes-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-a-custom-route-constraint-cs.md)
+> [Próximo](creating-custom-routes-vb.md)

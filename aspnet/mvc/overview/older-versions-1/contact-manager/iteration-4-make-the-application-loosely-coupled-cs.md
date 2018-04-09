@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
-title: "Iteração #4 – tornar o aplicativo flexível (c#) | Microsoft Docs"
+title: 'Iteração #4 – tornar o aplicativo flexível (c#) | Microsoft Docs'
 author: microsoft
-description: "Essa terceira iteração, podemos aproveitar vários padrões de design de software para facilitar a manutenção e modificar o aplicativo Gerenciador de contato. Para..."
+description: Essa terceira iteração, podemos aproveitar vários padrões de design de software para facilitar a manutenção e modificar o aplicativo Gerenciador de contato. Para...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1b8df72f51b4730a1fa9178b51a3770ce9edf181
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 33221c6c3326c7034fe013f152579828e2fc8a3a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-c"></a>Iteração #4 – tornar o aplicativo flexível (c#)
 ====================
@@ -196,6 +196,6 @@ Quando criamos a camada de serviço, aproveitamos o padrão de decorador para is
 
 Por fim, aproveitamos um padrão de design de software denominado o padrão de injeção de dependência. Esse padrão permite programar em interfaces (abstrações) em vez de classes concretas. Implementando o padrão de design de injeção de dependência também torna nosso código mais testável. A próxima iteração, adicionamos testes de unidade ao nosso projeto.
 
->[!div class="step-by-step"]
-[Anterior](iteration-3-add-form-validation-cs.md)
-[Próximo](iteration-5-create-unit-tests-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](iteration-3-add-form-validation-cs.md)
+> [Próximo](iteration-5-create-unit-tests-cs.md)

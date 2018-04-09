@@ -2,21 +2,21 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 title: Monitoramento e telemetria (Criando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/09/2015
 ms.topic: article
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: 9baddd1836323385239206a3cf49e5938bbaff58
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d58c495b3888c146a2a9bc831865cf7cc0d94c7b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Monitoramento e telemetria (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -292,6 +292,6 @@ Exemplo de código:
 
 - [Conceitos fundamentais do serviço no Azure na nuvem](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Aplicativo de exemplo criado pela equipe de consultoria ao cliente da Microsoft Azure. Demonstra a telemetria e as práticas recomendadas de registro em log, como explicado nos artigos a seguir. O exemplo implementa o log de aplicativo usando [NLog](http://nlog-project.org/). Para obter a documentação relacionada, consulte o [série de quatro artigos wiki do TechNet sobre a telemetria e o registro em log](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx#Telemetry_coming_soon).
 
->[!div class="step-by-step"]
-[Anterior](design-to-survive-failures.md)
-[Próximo](transient-fault-handling.md)
+> [!div class="step-by-step"]
+> [Anterior](design-to-survive-failures.md)
+> [Próximo](transient-fault-handling.md)

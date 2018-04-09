@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 title: Implantar o Site usando um cliente de FTP (VB) | Microsoft Docs
 author: rick-anderson
-description: "A maneira mais simples para implantar um aplicativo ASP.NET é copiar os arquivos necessários do ambiente de desenvolvimento para o ambiente de produção. EST..."
+description: A maneira mais simples para implantar um aplicativo ASP.NET é copiar os arquivos necessários do ambiente de desenvolvimento para o ambiente de produção. EST...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7792891aed6f0c5e952018dacb36a1d267cb6ae0
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 90ae866d82c4dbfd5c3e209c3d397df42d162515
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-vb"></a>Implantar o Site usando um cliente de FTP (VB)
 ====================
@@ -161,6 +161,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Aplicativo\_Offline.htm e resolver o recurso de "Erros amigável do IE"](https://weblogs.asp.net/scottgu/App_5F00_Offline.htm-and-working-around-the-_2200_IE-Friendly-Errors_2200_-feature)
 - [Modos de estado de sessão](https://msdn.microsoft.com/library/ms178586.aspx)
 
->[!div class="step-by-step"]
-[Anterior](determining-what-files-need-to-be-deployed-vb.md)
-[Próximo](deploying-your-site-using-visual-studio-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](determining-what-files-need-to-be-deployed-vb.md)
+> [Próximo](deploying-your-site-using-visual-studio-vb.md)

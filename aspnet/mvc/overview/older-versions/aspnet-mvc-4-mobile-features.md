@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 title: Recursos de celular do ASP.NET MVC 4 | Microsoft Docs
 author: Rick-Anderson
-description: "Agora há uma versão do MVC 5 deste tutorial com exemplos de código em implantar um aplicativo da Web do ASP.NET MVC 5 Mobile nos Sites do Azure."
+description: Agora há uma versão do MVC 5 deste tutorial com exemplos de código em implantar um aplicativo da Web do ASP.NET MVC 5 Mobile nos Sites do Azure.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: f4e0e4eb558e0c7b9e94fc83ede986fa4c666739
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 5f38fcdd8e71ce12f7899214b6b2133e21f9910c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Recursos móveis do ASP.NET MVC 4
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Agora há uma versão do MVC 5 deste tutorial com exemplos de código em [implantar um aplicativo da Web do ASP.NET MVC 5 Mobile nos Sites do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/).
 
@@ -190,7 +190,7 @@ Instalar o *jQuery.Mobile.MVC* pacote NuGet ao fazer isso:
 1. Do **ferramentas** menu, selecione **Gerenciador de biblioteca de pacote**e, em seguida, selecione **Package Manager Console**.
 
     [![p3_packageMgr](aspnet-mvc-4-mobile-features/_static/image20.png)](aspnet-mvc-4-mobile-features/_static/image19.png)
-2. No **Package Manager Console**, digite`Install-Package jQuery.Mobile.MVC -version 1.0.0`
+2. No **Package Manager Console**, digite `Install-Package jQuery.Mobile.MVC -version 1.0.0`
 
 A imagem a seguir mostra os arquivos adicionados e alterados para o projeto MvcMobile pelo pacote jQuery.Mobile.MVC NuGet. Arquivos que são adicionados a ter [Adicionar] acrescentado após o nome do arquivo. A imagem não mostra o GIF e PNG arquivos adicionados ao *Content\images* pasta.
 
@@ -204,7 +204,7 @@ O pacote jQuery.Mobile.MVC NuGet instala o seguinte:
 - arquivos do jQuery Mobile JavaScript.
 - Um arquivo de layout com estilo Mobile jQuery (*exibições \ compartilhadas\\cshtml*).
 - Uma exibição parcial de alternância de exibição *(MvcMobile\Views\Shared\\_ViewSwitcher.cshtml*) que fornece um link na parte superior de cada página para alternar do modo de exibição da área de trabalho para o modo de exibição móvel e vice-versa.
-- Vários*. PNG* e *. gif* arquivos de imagem de *Content\images* pasta.
+- Vários<em>. PNG</em> e <em>. gif</em> arquivos de imagem de <em>Content\images</em> pasta.
 
 Abra o *global. asax* de arquivo e adicione o código a seguir como a última linha do `Application_Start` método.
 
@@ -270,7 +270,7 @@ Globalmente você pode desabilitar o modo de exibição padrão (não móveis) d
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample17.cshtml)]
 
-Quando `RequireConsistentDisplayMode` é definido como `true`, o layout para dispositivos móveis (*\_Layout.Mobile.cshtml*) é usado apenas para exibições móveis. (Ou seja, o arquivo de exibição tem o formato ***ViewName**. Mobile.cshtml*.) Talvez você queira definir `RequireConsistentDisplayMode` para `true` se o layout para dispositivos móveis não funcionar bem com seus modos de exibição não móveis. Captura de tela a seguir mostra como o *alto-falantes* page renderiza quando `RequireConsistentDisplayMode` é definido como `true`.
+Quando `RequireConsistentDisplayMode` é definido como `true`, o layout para dispositivos móveis (<em>\_Layout.Mobile.cshtml</em>) é usado apenas para exibições móveis. (Ou seja, o arquivo de exibição tem o formato <em>* * ViewName</em><em>. Cshtml</em>.) Talvez você queira definir `RequireConsistentDisplayMode` para `true` se o layout para dispositivos móveis não funcionar bem com seus modos de exibição não móveis. Captura de tela a seguir mostra como o <em>alto-falantes</em> page renderiza quando `RequireConsistentDisplayMode` é definido como `true`.
 
 [![p3_speakersConsistent](aspnet-mvc-4-mobile-features/_static/image33.png)](aspnet-mvc-4-mobile-features/_static/image32.png)
 

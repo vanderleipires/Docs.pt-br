@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs
-title: "Especificar o título, marcas Meta e outros cabeçalhos HTML na página mestra (c#) | Microsoft Docs"
+title: Especificar o título, marcas Meta e outros cabeçalhos HTML na página mestra (c#) | Microsoft Docs
 author: rick-anderson
-description: "Examina as técnicas diferentes para definir sortidas &lt;head&gt; elementos da página mestra da página de conteúdo."
+description: Examina as técnicas diferentes para definir sortidas &lt;head&gt; elementos da página mestra da página de conteúdo.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 30324c45fd8acbcba43808307512ef7aecffe695
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2f9399be5b95f608f0d635b69b132dcb1d27909a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-c"></a>Especificar o título, marcas Meta e outros cabeçalhos HTML na página mestra (c#)
 ====================
@@ -130,7 +130,7 @@ A primeira tarefa é criar uma classe de página de base, que é uma classe que 
 
 ![Adicionar uma pasta App_Code e uma classe denominada BasePage](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image4.png)
 
-**Figura 04**: adicionar um `App_Code` pasta e uma classe denominada`BasePage`
+**Figura 04**: adicionar um `App_Code` pasta e uma classe denominada `BasePage`
 
 
 > [!NOTE]
@@ -279,7 +279,7 @@ Atualização de `BasePage` da classe `OnLoadComplete` método para incluir o c�
 
 Como antes, o `OnLoadComplete` método inicia, determinando se o título da página foi definido explicitamente. Se `Page.Title` é `null`, uma cadeia de caracteres vazia ou é atribuído o valor "Página sem título", em seguida, o código automaticamente atribui um valor para `Page.Title`.
 
-Para determinar o título a ser usado, o código começa consultando o [ `SiteMap` classe](https://msdn.microsoft.com/library/system.web.sitemap.aspx)do [ `CurrentNode` propriedade](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx). `CurrentNode`Retorna o [ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) instância no mapa do site que corresponde à página solicitada no momento. Supondo que a página solicitada no momento está localizado no mapa do site, o `SiteMapNode`do `Title` propriedade é atribuída para o título da página. Se a página solicitada no momento não está no mapa do site, `CurrentNode` retorna `null` e nome de arquivo da página solicitada é usado como o título (como foi feito na etapa 2).
+Para determinar o título a ser usado, o código começa consultando o [ `SiteMap` classe](https://msdn.microsoft.com/library/system.web.sitemap.aspx)do [ `CurrentNode` propriedade](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx). `CurrentNode` Retorna o [ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) instância no mapa do site que corresponde à página solicitada no momento. Supondo que a página solicitada no momento está localizado no mapa do site, o `SiteMapNode`do `Title` propriedade é atribuída para o título da página. Se a página solicitada no momento não está no mapa do site, `CurrentNode` retorna `null` e nome de arquivo da página solicitada é usado como o título (como foi feito na etapa 2).
 
 A Figura 12 mostra o `MultipleContentPlaceHolders.aspx` página quando visualizada através de um navegador. Como título desta página não é definido explicitamente, título correspondente site mapa do seu nó será usado.
 
@@ -345,12 +345,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Zack Jones e Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Anterior](multiple-contentplaceholders-and-default-content-cs.md)
-[Próximo](urls-in-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](multiple-contentplaceholders-and-default-content-cs.md)
+> [Próximo](urls-in-master-pages-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs
-title: "Adicionar dinamicamente um painel Acordeão (c#) | Microsoft Docs"
+title: Adicionar dinamicamente um painel Acordeão (c#) | Microsoft Docs
 author: wenz
-description: "O controle Accordion no AJAX Control Toolkit fornece vários painéis e permite ao usuário exibir um por vez. Painéis são normalmente declaradas w..."
+description: O controle Accordion no AJAX Control Toolkit fornece vários painéis e permite ao usuário exibir um por vez. Painéis são normalmente declaradas w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1c6af79186ca21082647beec500c47974a47c35a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad2fc6ea3d527215c0226f3f594d781163d538b5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-adding-an-accordion-pane-c"></a>Adicionar dinamicamente um painel Acordeão (c#)
 ====================
@@ -62,6 +62,6 @@ Para concluir o exemplo, duas classes CSS referenciadas no controle Accordion fo
 
 Os dados de accordion dinamicamente foi adicionados pelo código do lado do servidor ([clique para exibir a imagem em tamanho normal](dynamically-adding-an-accordion-pane-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](databinding-to-an-accordion-cs.md)
-[Próximo](databinding-to-an-accordion-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](databinding-to-an-accordion-cs.md)
+> [Próximo](databinding-to-an-accordion-vb.md)

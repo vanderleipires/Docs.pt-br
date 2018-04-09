@@ -2,7 +2,7 @@
 uid: web-pages/readme/overview
 title: WebMatrix Readme | Microsoft Docs
 author: rick-anderson
-description: "O WebMatrix e o Leiame do ASP.NET páginas da Web (Razor) versão 1.0"
+description: O WebMatrix e o Leiame do ASP.NET páginas da Web (Razor) versão 1.0
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: b8402aa3db1b2566878c4d56212facbbb2925eec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c65ee58b8c13b0b4acb6e7c9b631c8235e791506
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="webmatrix-readme"></a>Leiame do WebMatrix
 ====================
@@ -28,7 +28,7 @@ ms.lasthandoff: 01/24/2018
 > Este arquivo Leiame aplica-se para a 1.0 versão do WebMatrix.
 
 
-- [Visão Geral](#Overview)
+- [Visão geral](#Overview)
 - [Instalação](#Installation_Notes)
 - [Como publicar aplicativos](#InstructionsForPublishingApplications)
 - [Problemas e alterações](#ChangesAndIssues)
@@ -44,7 +44,7 @@ ms.lasthandoff: 01/24/2018
 
 <a id="Overview"></a>
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 > Microsoft WebMatrix 1.0 é uma pilha de desenvolvimento gratuito da web que é instalado em minutos. Ela integra um servidor web com o banco de dados e estruturas para criar uma única experiência integrada de programação. Você pode usar o WebMatrix para simplificar a maneira de código, testar e publicar o seu próprio site ASP.NET ou PHP, ou você pode usar o WebMatrix para iniciar um novo site usando aplicativos de código aberto populares como DotNetNuke, Umbraco, WordPress ou Joomla. O WebMatrix usa o mesmo servidor de aplicativos web, o mecanismo de banco de dados e o ambiente de estruturas que executará o seu site na internet, o que faz a transição do desenvolvimento para produção simples e direta.
 
@@ -126,7 +126,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 - [Alterações](#Changes)
 - [Problemas](#Issues)
 
-#### <a id="NewFeatures"></a>Novos recursos
+#### <a id="NewFeatures"></a>  Novos recursos
 
 #### <a name="new-configuration-setting-added-to-disable-the-package-manager"></a>Novo: Configuração adicionado para desabilitar o Gerenciador de pacotes
 
@@ -142,7 +142,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > O `webPages:AdminFolderVirtualPath` chave que pode ser adicionado para o *Web. config* foi renomeado um arquivo para especificar o local do Gerenciador de pacotes para usar o `asp:` namespace em vez do `webPages` namespace. Se você usou esse elemento, você deverá renomeá-la no arquivo de configuração.
 
 
-#### <a id="Issues"></a>Problemas conhecidos
+#### <a id="Issues"></a>  Problemas conhecidos
 
 #### <a name="issue-passwords-for-membership-users-no-longer-recognized"></a>Problema: Senhas para usuários de associação não reconhecidos
 
@@ -226,7 +226,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > Se você desinstalar o .NET Framework versão 4 e, em seguida, reinstalá-lo, o ASP.NET Web Pages com sintaxe do Razor são desabilitados. As páginas com a *. cshtml* extensão não são executados corretamente. Páginas da Web ASP.NET registra um assembly na raiz da máquina *Web. config* arquivo e remover o .NET Framework remove esse arquivo. Reinstalar o .NET Framework instala uma nova versão do arquivo de configuração, mas não adiciona a referência para o assembly de páginas da Web ASP.NET.
 > 
 > **Solução alternativa** após a reinstalação do .NET Framework, reinstale o ASP.NET Web Pages com sintaxe do Razor. Isso adiciona o elemento a seguir para o *Web. config* arquivo na raiz do computador, que normalmente é no seguinte local:  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
 > 
@@ -236,9 +236,9 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>Problema: URLs sem extensão não localizar arquivos de.cshtml/.vbhtml no IIS 7 ou IIS 7.5
 
 > No IIS 7 ou IIS 7.5, solicitações com uma URL semelhante à seguinte não serão possível localizar as páginas que têm o *. cshtml* ou *. vbhtml* extensão:  
->   
+> 
 > `http://www.example.com/ExampleSite/ExampleFile`  
->   
+> 
 > O problema ocorre porque a regravação de URL não está habilitado por padrão para IIS 7 ou IIS 7.5. O cenário mais provável é que você não vir o problema ao testar localmente usando o IIS Express, mas você enfrentar ao implantar seu site em um site de hospedagem.
 > 
 > **Solução alternativa**
@@ -257,10 +257,11 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > 
 > 1. Copie os assemblies do mecanismo de banco de dados para o *Bin* pasta (e subpastas) do aplicativo no computador de destino:  
 > 
->     - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->         **to** *\Bin*
->     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\* * * a * \Bin\x86*
->     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **para * \Bin\amd64*
+>    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>        **to** *\Bin*
+>    - Cópia <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\</em><strong><em>para</em></strong>\Bin\x86*
+>    - Copy <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>to</strong><em>\Bin\amd64</em>
+> 
 > 2. Na pasta raiz do site, crie ou abra um *Web. config* arquivo. (No WebMatrix 1.0, esse tipo de arquivo está disponível se você clicar em **todos os** no **escolher um tipo de arquivo** caixa de diálogo.)
 > 3. Adicione o seguinte elemento como um filho de `<configuration>` elemento (não dentro a `<system.web>` elemento):
 > 
@@ -366,7 +367,7 @@ Esta seção do documento descreve problemas conhecidos para o ambiente de desen
 > Há suporte para o IntelliSense para HTML e CSS no WebMatrix. No entanto, não está disponível para outros idiomas. 
 > 
 > **Solução alternativa**   
-> nenhuma.
+> Nenhum.
 
 
 #### <a name="issue-intellisense-for-html-and-css-suggests-elements-that-are-not-contextually-appropriate"></a>Problema: O IntelliSense para HTML e CSS sugere elementos que não são apropriados contextualmente
@@ -412,15 +413,15 @@ SQL Server Compact tem seu próprio arquivo Leiame, que está disponível na seg
 
 Para obter informações sobre problemas que envolvem a instalação do SQL Server Compact como parte do WebMatrix, consulte [problemas de instalação do WebMatrix](#Known_Issues_Installation) anteriormente neste documento.
 
-### <a id="Known_Issues_Installing_Applications"></a>Instalando aplicativos
+### <a id="Known_Issues_Installing_Applications"></a>  Instalando aplicativos
 
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>Problema: Instalação de um aplicativo pode levar muito tempo se a pasta Meus documentos do usuário é redirecionada para um compartilhamento de rede
 
 > **Solução alternativa**  
-> nenhuma. O aplicativo pode demorar um pouco para ser instalado, mas será instalado corretamente.
+> Nenhum. O aplicativo pode demorar um pouco para ser instalado, mas será instalado corretamente.
 
 
-### <a id="Known_Issues_Publishing_Applications"></a>Publicação de aplicativos
+### <a id="Known_Issues_Publishing_Applications"></a>  Publicação de aplicativos
 
 #### <a name="issue-required-permissions-cannot-be-acquired-error-when-publishing-a-sql-compact-database"></a>Problema: "necessário não foi possível adquirir as permissões" Erro ao publicar um banco de dados do SQL Compact
 

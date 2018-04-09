@@ -1,7 +1,7 @@
 ---
-title: Use o modelo de projeto reagir com retorno
+title: Use o modelo de projeto reagir com retorno com o ASP.NET Core
 author: SteveSandersonMS
-description: "Saiba como começar a usar o modelo de projeto de aplicativo de página única (SPA) do ASP.NET Core para reagir com Redux e criar reagir-aplicativo."
+description: Saiba como começar a usar o modelo de projeto de aplicativo de página única (SPA) do ASP.NET Core para reagir com Redux e criar reagir-aplicativo.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react-with-redux
-ms.openlocfilehash: f52f4a866b8bb2adeee19548df32f3e7a91761d1
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 9abfbfe5be69d3145de453d9d9e56ea35eec64ed
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="use-the-react-with-redux-project-template"></a>Use o modelo de projeto reagir com retorno
+# <a name="use-the-react-with-redux-project-template-with-aspnet-core"></a>Use o modelo de projeto reagir com retorno com o ASP.NET Core
 
 > [!NOTE]
 > Esta documentação não está sobre o modelo de projeto reagir com retorno incluída no ASP.NET 2.0 de núcleo. Trata-se o modelo de reagir com retorno mais recente para o qual você pode atualizar manualmente. O modelo é incluído no ASP.NET Core 2.1 por padrão.

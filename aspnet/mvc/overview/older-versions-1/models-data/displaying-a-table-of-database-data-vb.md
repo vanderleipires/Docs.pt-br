@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 title: Exibindo uma tabela de banco de dados (VB) | Microsoft Docs
 author: microsoft
-description: "Neste tutorial, demonstrarei dois métodos de exibição de um conjunto de registros do banco de dados. Mostrar dois métodos de formatação de um conjunto de registros do banco de dados em um HTML ta..."
+description: Neste tutorial, demonstrarei dois métodos de exibição de um conjunto de registros do banco de dados. Mostrar dois métodos de formatação de um conjunto de registros do banco de dados em um HTML ta...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6dc0aa91cfb68d308ed098f429d3251d424ab778
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dd871520f98aaae2d7b33d83b1646eb9eee88821
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-table-of-database-data-vb"></a>Exibindo uma tabela de banco de dados (VB)
 ====================
@@ -39,8 +39,8 @@ Vamos para exibir o conjunto de registros da tabela de banco de dados de filmes.
 | **Nome da coluna** | **Tipo de dados** | **Permitir nulos** |
 | --- | --- | --- |
 | Id | int | False |
-| Título | Nvarchar (200) | False |
-| Diretor | Nvarchar (50) | False |
+| Título | Nvarchar(200) | False |
+| Diretor | NVarchar(50) | False |
 | DateReleased | DateTime | False |
 
 
@@ -131,7 +131,7 @@ No **adicionar exibição** caixa de diálogo, marque a caixa de seleção **cri
 
 Depois de clicar no **adicionar** botão, o modo de exibição na lista 2 é gerado automaticamente. Essa exibição contém o código necessário para iterar pela coleção de filmes e exibir cada uma das propriedades de um filme.
 
-**A listagem 2 – Views\Movie\Index.aspx**
+**Listing 2 – Views\Movie\Index.aspx**
 
 [!code-aspx[Main](displaying-a-table-of-database-data-vb/samples/sample2.aspx)]
 
@@ -185,6 +185,6 @@ O método RenderPartial() é diferente do que a maioria dos outros métodos auxi
 
 O objetivo deste tutorial era explicam como você pode exibir um conjunto de registros do banco de dados em uma tabela HTML. Primeiro, você aprendeu como retornar um conjunto de registros do banco de dados de uma ação do controlador, aproveitando o Entity Framework da Microsoft. Em seguida, você aprendeu a usar scaffolding do Visual Studio para gerar uma exibição que exibe uma coleção de itens automaticamente. Por fim, você aprendeu a simplificar a exibição aproveitando um parcial. Você aprendeu a usar um parcial como um modelo para que você pode formatar cada registro do banco de dados.
 
->[!div class="step-by-step"]
-[Anterior](creating-model-classes-with-linq-to-sql-vb.md)
-[Próximo](performing-simple-validation-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-model-classes-with-linq-to-sql-vb.md)
+> [Próximo](performing-simple-validation-vb.md)

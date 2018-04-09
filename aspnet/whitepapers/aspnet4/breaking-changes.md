@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/aspnet4/breaking-changes
-title: "ASP.NET 4 últimas alterações | Microsoft Docs"
+title: ASP.NET 4 últimas alterações | Microsoft Docs
 author: rick-anderson
-description: "Este documento descreve as alterações que foram feitas para a versão do .NET Framework versão 4 que pode afetar os aplicativos que foram criados usando..."
+description: Este documento descreve as alterações que foram feitas para a versão do .NET Framework versão 4 que pode afetar os aplicativos que foram criados usando...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: d68723b52ae1ee80142fb1aca3b0b10de34332d1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7eea51add6b05684357314e3d6aa5087383c6408
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>Alterações de quebra 4 do ASP.NET
 ====================
@@ -180,7 +180,7 @@ Nesse cenário, o sistema de configuração nativo do IIS 7 e 7.5 do IIS retorna
 
 A solução alternativa para o primeiro cenário é atualizar o nível do aplicativo `Web.config` arquivo, incluindo o texto de configuração clichê de um `Web.config` arquivo que foi gerado automaticamente pelo Visual Studio 2008.
 
-Uma solução alternativa para o primeiro cenário é para instalar o Service Pack 2 para o Vista ou Windows Server 2008 em seu computador ou instale o hotfix KB958854 ([https://support.microsoft.com/kb/958854](https://support.microsoft.com/kb/958854)) para corrigir incorreto comportamento da mesclagem de configuração do sistema de configuração do IIS. No entanto, depois de executar qualquer uma dessas ações, seu aplicativo provavelmente encontrará um erro de configuração devido ao problema descrito para o segundo cenário.
+Uma solução alternativa para o primeiro cenário é para instalar o Service Pack 2 para o Vista ou Windows Server 2008 em seu computador ou instale o hotfix KB958854 ([https://support.microsoft.com/kb/958854](https://support.microsoft.com/kb/958854)) para corrigir o comportamento de mesclagem de configuração incorreta das Sistema de configuração do IIS. No entanto, depois de executar qualquer uma dessas ações, seu aplicativo provavelmente encontrará um erro de configuração devido ao problema descrito para o segundo cenário.
 
 A solução alternativa para o segundo cenário é exclua ou comente a todos os **Extensions** definições da seção de configuração e a seção de configuração de grupo de definições de nível de aplicativo `Web.config` arquivo. Essas definições geralmente estão na parte superior do nível do aplicativo `Web.config` de arquivos e pode ser identificado pelo **configSections** elemento e seus filhos.
 
@@ -192,8 +192,8 @@ Para ambos os cenários, é recomendável que você exclua manualmente o **Syste
 
 Os aplicativos ASP.NET 4 configurados como filhos de aplicativos que executam versões anteriores do ASP.NET talvez falhem ao iniciar devido a erros de configuração ou de compilação. O exemplo a seguir mostra uma estrutura de diretórios para um aplicativo afetado.
 
-`/parentwebapp`(configurado para usar o ASP.NET 2.0 ou ASP.NET 3.5)  
-`/childwebapp`(configurado para usar o ASP.NET 4)
+`/parentwebapp` (configurado para usar o ASP.NET 2.0 ou ASP.NET 3.5)  
+`/childwebapp` (configurado para usar o ASP.NET 4)
 
 O aplicativo no `childwebapp` pasta falhará ao iniciar no IIS 7 ou IIS 7.5 e relatará um erro de configuração. O texto de erro inclui uma mensagem semelhante à seguinte:
 
@@ -323,13 +323,13 @@ Se não for viável para remapear o site da Web para ASP.NET 2.0 ou para alterar
 
 ## <a name="event-handlers-might-not-be-not-raised-in-a-default-document-in-iis-7-or-iis-75-integrated-mode"></a>Manipuladores de eventos não podem não ser gerados em um documento padrão no IIS 7.5 ou IIS 7 modo integrado
 
-O ASP.NET 4 inclui modificações alterarem como o **ação** atributo do HTML **formulário** elemento é processado quando uma URL sem extensão resolve para um documento padrão. Um exemplo de uma URL sem extensão resolver para um documento padrão seria [http://contoso.com/](http://contoso.com/), resultando em uma solicitação para [http://contoso.com/Default.aspx](http://contoso.com/Default.aspx).
+O ASP.NET 4 inclui modificações alterarem como o **ação** atributo do HTML **formulário** elemento é processado quando uma URL sem extensão resolve para um documento padrão. Um exemplo de uma URL sem extensão resolver para um documento padrão seria [ http://contoso.com/ ](http://contoso.com/), resultando em uma solicitação para [ http://contoso.com/Default.aspx ](http://contoso.com/Default.aspx).
 
-Agora, o ASP.NET 4 processa o HTML **formulário** do elemento **ação** valor do atributo como uma cadeia de caracteres vazia quando uma solicitação é feita em uma URL sem extensão que tem um documento padrão mapeado para ele. Por exemplo, nas versões anteriores do ASP.NET, uma solicitação para [http://contoso.com](http://contoso.com) resultaria em uma solicitação para `Default.aspx`. Nesse documento, a abertura **formulário** marca deve ser renderizada como no exemplo a seguir:
+Agora, o ASP.NET 4 processa o HTML **formulário** do elemento **ação** valor do atributo como uma cadeia de caracteres vazia quando uma solicitação é feita em uma URL sem extensão que tem um documento padrão mapeado para ele. Por exemplo, nas versões anteriores do ASP.NET, uma solicitação para [ http://contoso.com ](http://contoso.com) resultaria em uma solicitação para `Default.aspx`. Nesse documento, a abertura **formulário** marca deve ser renderizada como no exemplo a seguir:
 
 `<form action="Default.aspx" />`
 
-No ASP.NET 4, uma solicitação para [http://contoso.com](http://contoso.com) também resulta em uma solicitação para `Default.aspx`. No entanto, o ASP.NET processa a abertura de HTML agora **formulário** marca como no exemplo a seguir:
+No ASP.NET 4, uma solicitação para [ http://contoso.com ](http://contoso.com) também resulta em uma solicitação para `Default.aspx`. No entanto, o ASP.NET processa a abertura de HTML agora **formulário** marca como no exemplo a seguir:
 
 `<form action="" />`
 
@@ -370,7 +370,7 @@ Quando você reverter para o modelo CAS herdado, os seguintes comportamentos de 
 - Vários conjuntos de permissões diferentes em um único domínio de aplicativo são permitidos.
 - Declarações de permissão explícita não são necessárias para assemblies no GAC que são invocados quando apenas ASP.NET ou outro código do .NET Framework estiver na pilha.
 
-Um cenário não pode ser revertido no .NET Framework 4: aplicativos de confiança parcial não Web não podem chamar determinadas APIs em System.Web.dll e System.Web.Extensions.dll. Nas versões anteriores do .NET Framework, era possível para aplicativos de confiança parcial da Web não deve ser concedido explicitamente **AspNetHostingPermission** permissões. Esses aplicativos podem usar **System.Web.HttpUtility**, digita o **System.Web.ClientServices.\***  namespaces e tipos relacionam a associação, funções e perfis. Não há suporte para chamar esses tipos de aplicativos de confiança parcial não Web no .NET Framework 4.
+Um cenário não pode ser revertido no .NET Framework 4: aplicativos de confiança parcial não Web não podem chamar determinadas APIs em System.Web.dll e System.Web.Extensions.dll. Nas versões anteriores do .NET Framework, era possível para aplicativos de confiança parcial da Web não deve ser concedido explicitamente <strong>AspNetHostingPermission</strong> permissões. Esses aplicativos podem usar <strong>System.Web.HttpUtility</strong>, digita o <strong>System.Web.ClientServices.\< / strong > * namespaces e tipos relacionam a associação, funções e perfis. Não há suporte para chamar esses tipos de aplicativos de confiança parcial não Web no .NET Framework 4.
 
 > [!NOTE]
 > O **HtmlEncode** e **HtmlDecode** funcionalidade do **System.Web.HttpUtility** classe foi movida para o .NET Framework 4 novo  **System.Net.WebUtility** classe. Se o que era a única funcionalidade ASP.NET que estava sendo usada, modifique o código do aplicativo para usar o novo **WebUtility** classe em vez disso.

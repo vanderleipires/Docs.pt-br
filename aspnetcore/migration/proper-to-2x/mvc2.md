@@ -1,7 +1,7 @@
 ---
-title: Migrando do ASP.NET para o ASP.NET Core 2.0
+title: Migrar do ASP.NET para ASP.NET 2.0 de núcleo
 author: isaac2004
-description: "Receba orientação para migrar aplicativos de ASP.NET MVC ou Web API existentes para o ASP.NET 2.0 de núcleo."
+description: Receba orientação para migrar aplicativos de ASP.NET MVC ou Web API existentes para o ASP.NET 2.0 de núcleo.
 manager: wpickett
 ms.author: scaddie
 ms.date: 08/27/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 9424234011525afdba35824b6b324f5175ba023f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 58fac7642dbfdad58fef99f04d17de33e7218524
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>Migrando do ASP.NET para o ASP.NET Core 2.0
+# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>Migrar do ASP.NET para ASP.NET 2.0 de núcleo
 
 Por [Isaac Levin](https://isaaclevin.com)
 
@@ -23,7 +23,12 @@ Este artigo serve como um guia de referência para migração de aplicativos ASP
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior.
+Instalar **um** das seguintes opções de [.NET Downloads: Windows](https://www.microsoft.com/net/download/windows):
+
+* SDK do .NET Core
+* O Visual Studio para Windows
+  * **Desenvolvimento do ASP.NET e web** carga de trabalho
+  * **Desenvolvimento de plataforma cruzada do .NET core** carga de trabalho
 
 ## <a name="target-frameworks"></a>Frameworks de destino
 Projetos do ASP.NET Core 2.0 oferecem aos desenvolvedores a flexibilidade de direcionamento para o .NET Core, .NET Framework ou ambos. Consulte [Escolhendo entre o .NET Core e .NET Framework para aplicativos de servidor](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server) para determinar qual estrutura de destino é mais apropriada.
@@ -145,7 +150,7 @@ No ASP.NET Core, arquivos estáticos são armazenados na "raiz da Web" (*&lt;rai
 
 Por exemplo, um ativo de imagem na pasta *wwwroot/imagens* está acessível para o navegador em um local como `http://<app>/images/<imageFileName>`.
 
-**Observação:** para obter uma referência mais aprofundada sobre como servir arquivos estáticos no ASP.NET Core, consulte [Introdução ao trabalho com arquivos estáticos no ASP.NET Core](xref:fundamentals/static-files).
+**Observação:** para obter uma referência mais aprofundada servir arquivos estáticos no núcleo do ASP.NET, consulte [trabalhar com arquivos estáticos em ASP.NET Core](xref:fundamentals/static-files).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

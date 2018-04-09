@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
-title: "Lote de inserção (c#) | Microsoft Docs"
+title: Lote de inserção (c#) | Microsoft Docs
 author: rick-anderson
-description: "Saiba como inserir vários registros de banco de dados em uma única operação. Na camada de Interface do usuário estendemos GridView para permitir que o usuário insira várias n..."
+description: Saiba como inserir vários registros de banco de dados em uma única operação. Na camada de Interface do usuário estendemos GridView para permitir que o usuário insira várias n...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9dc18e259da24d71464a156a70a85cfc9a1745ce
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c8995592d9206fb17a7769414212369946304c54
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="batch-inserting-c"></a>Lote de inserção (c#)
 ====================
@@ -203,7 +203,7 @@ Em seguida, crie manipuladores de eventos para adicionar produtos de remessa e o
 
 [!code-csharp[Main](batch-inserting-cs/samples/sample5.cs)]
 
-Ambos `Click` simplesmente chamar manipuladores de eventos de `ReturnToDisplayInterface` método, embora retornaremos ao adicionar produtos de remessa `Click` manipulador de eventos na etapa 4 e adicione código para salvar os produtos. `ReturnToDisplayInterface`inicia, retornando o `Suppliers` e `Categories` DropDownLists suas opções primeiro. As duas constantes `firstControlID` e `lastControlID` marca inicial e final usados em nomes de produto nome e o preço unitário caixas de texto na inserção de interface e são usadas em limites de valores de controle de índice a `for` loop que define o `Text`propriedades dos controles TextBox de volta para uma cadeia de caracteres vazia. Por fim, os painéis `Visible` para que a interface de inserção está oculta e a interface de exibição mostrada as propriedades são redefinidas.
+Ambos `Click` simplesmente chamar manipuladores de eventos de `ReturnToDisplayInterface` método, embora retornaremos ao adicionar produtos de remessa `Click` manipulador de eventos na etapa 4 e adicione código para salvar os produtos. `ReturnToDisplayInterface` inicia, retornando o `Suppliers` e `Categories` DropDownLists suas opções primeiro. As duas constantes `firstControlID` e `lastControlID` marca inicial e final usados em nomes de produto nome e o preço unitário caixas de texto na inserção de interface e são usadas em limites de valores de controle de índice a `for` loop que define o `Text`propriedades dos controles TextBox de volta para uma cadeia de caracteres vazia. Por fim, os painéis `Visible` para que a interface de inserção está oculta e a interface de exibição mostrada as propriedades são redefinidas.
 
 Dedicar um tempo para testar esta página em um navegador. Ao primeiro visitar a página você deve ver a interface de exibição, conforme mostrado na Figura 5. Clique no botão de remessa de produtos do processo. A página fará o postback e agora você deve ver a interface de inserção, como mostrado na Figura 12. Clicando em ambos os produtos adicionar botões de remessa ou em Cancelar, você retorna para a interface de exibição.
 
@@ -269,12 +269,12 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Gerar revisores para este tutorial foram ren Giesenow Hilton e S Jacob Lauritsen. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](batch-deleting-cs.md)
-[Próximo](wrapping-database-modifications-within-a-transaction-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](batch-deleting-cs.md)
+> [Próximo](wrapping-database-modifications-within-a-transaction-vb.md)

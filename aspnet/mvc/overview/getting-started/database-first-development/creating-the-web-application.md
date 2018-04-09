@@ -2,7 +2,7 @@
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
 title: 'Banco de dados EF primeiro com o ASP.NET MVC: Criando o aplicativo Web e modelos de dados | Microsoft Docs'
 author: tfitzmac
-description: "Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série..."
+description: Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: f495bfa3aa5332e4ca3e44c2ffbfb760fbbeafc8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04ccc00fa48702608fdc7b5b00d73778985852f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>Banco de dados EF primeiro com o ASP.NET MVC: Criando o aplicativo Web e modelos de dados
 ====================
@@ -101,6 +101,6 @@ O **ContosoModel.Context.cs** arquivo contém uma classe que deriva de **DbConte
 
 Antes de continuar com este tutorial, crie o projeto. Na próxima seção, você irá gerar o código com base nos modelos de dados, mas essa seção não funcionará se o projeto não foi criado.
 
->[!div class="step-by-step"]
-[Anterior](setting-up-database.md)
-[Próximo](generating-views.md)
+> [!div class="step-by-step"]
+> [Anterior](setting-up-database.md)
+> [Próximo](generating-views.md)

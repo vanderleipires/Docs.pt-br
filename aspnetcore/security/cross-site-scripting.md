@@ -1,7 +1,7 @@
 ---
-title: "Impedindo Cross Site Scripting (XSS) no núcleo do ASP.NET"
+title: Impedir que os sites script (XSS) no núcleo do ASP.NET
 author: rick-anderson
-description: "Saiba mais sobre a criação de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo do ASP.NET Core."
+description: Saiba mais sobre a criação de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: 9e54ee0b1169c01629c3cd91a378509a73c53904
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d9263a2c1bb6a376008b7d8a55864e4d15e77cee
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="preventing-cross-site-scripting-xss-in-aspnet-core"></a>Impedindo Cross Site Scripting (XSS) no núcleo do ASP.NET
+# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Impedir que os sites script (XSS) no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -37,7 +37,7 @@ AT um XSS de nível básico funciona enganar seu aplicativo para inserir um `<sc
 
 ## <a name="html-encoding-using-razor"></a>Codificação HTML usando o Razor
 
-O mecanismo Razor usado no MVC automaticamente codifica todos saída originados de variáveis, a menos que você trabalhar arduamente para evitar que isso. Ele usa o atributo HTML regras de codificação, sempre que você usar o  *@*  diretiva. Como HTML a codificação do atributo é um superconjunto de codificação de HTML, que isso significa que você não precisa se preocupar com você deve usar a codificação HTML ou codificação do atributo HTML. Certifique-se de que você só usar em um contexto HTML, não ao tentar inserir não confiáveis de entrada diretamente em JavaScript. Auxiliares de marcação codificará também usam parâmetros de marca de entrada.
+O mecanismo Razor usado no MVC automaticamente codifica todos saída originados de variáveis, a menos que você trabalhar arduamente para evitar que isso. Ele usa o atributo HTML regras de codificação, sempre que você usar o *@* diretiva. Como HTML a codificação do atributo é um superconjunto de codificação de HTML, que isso significa que você não precisa se preocupar com você deve usar a codificação HTML ou codificação do atributo HTML. Certifique-se de que você só usar em um contexto HTML, não ao tentar inserir não confiáveis de entrada diretamente em JavaScript. Auxiliares de marcação codificará também usam parâmetros de marca de entrada.
 
 Executar a seguinte exibição Razor;
 
@@ -145,7 +145,7 @@ Isso será renderizado no navegador:
 
 ## <a name="accessing-encoders-in-code"></a>Acessando codificadores no código
 
-Os codificadores HTML, JavaScript e URL estão disponíveis para o código de duas maneiras, você pode colocá-los por meio de [injeção de dependência](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) ou você pode usar os codificadores padrão contidos a `System.Text.Encodings.Web` namespace. Se você usar os codificadores padrão e qualquer aplicada a intervalos de caracteres a serem tratados como seguro não terão efeito - os codificadores padrão usem as regras de codificação mais seguras possível.
+Os codificadores HTML, JavaScript e URL estão disponíveis para o código de duas maneiras, você pode colocá-los por meio de [injeção de dependência](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) ou você pode usar os codificadores padrão contidos a `System.Text.Encodings.Web` namespace. Se você usar os codificadores padrão e qualquer aplicada a intervalos de caracteres a serem tratados como seguro não terão efeito - os codificadores padrão usem as regras de codificação mais seguras possível.
 
 Para usar os codificadores configuráveis por meio de DI seus construtores devem levar uma *HtmlEncoder*, *JavaScriptEncoder* e *UrlEncoder* parâmetro conforme apropriado. Por exemplo,
 

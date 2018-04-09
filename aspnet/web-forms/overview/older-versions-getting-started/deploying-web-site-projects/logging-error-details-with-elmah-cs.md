@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 title: Registro em log os detalhes do erro com ELMAH (c#) | Microsoft Docs
 author: rick-anderson
-description: "Erro de log de módulos e manipuladores (ELMAH) oferece outra abordagem para o log de erros de tempo de execução em um ambiente de produção. ELMAH é um erro de software livre..."
+description: Erro de log de módulos e manipuladores (ELMAH) oferece outra abordagem para o log de erros de tempo de execução em um ambiente de produção. ELMAH é um erro de software livre...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 26d40d17447b3b03d17265f291b8ac246a449966
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cd91c745624f09d01a326a445bea2bb756576688
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="logging-error-details-with-elmah-c"></a>Detalhes de erro de log com ELMAH (c#)
 ====================
@@ -70,9 +70,9 @@ O `Elmah.dll` assembly inclui as classes usadas pelo sistema ELMAH. Essas classe
 
 - **Módulos HTTP** -um módulo HTTP é uma classe que define os manipuladores de eventos para `HttpApplication` eventos, como o `Error` evento. ELMAH inclui vários módulos de HTTP, três os mais germane sendo: 
 
-    - `ErrorLogModule`-registra exceções sem tratamento em uma origem de log.
-    - `ErrorMailModule`-envia os detalhes de uma exceção sem tratamento em uma mensagem de email.
-    - `ErrorFilterModule`-aplica filtros especificado pelo desenvolvedor para determinar quais exceções são registradas e o que aqueles são ignorados.
+    - `ErrorLogModule` -registra exceções sem tratamento em uma origem de log.
+    - `ErrorMailModule` -envia os detalhes de uma exceção sem tratamento em uma mensagem de email.
+    - `ErrorFilterModule` -aplica filtros especificado pelo desenvolvedor para determinar quais exceções são registradas e o que aqueles são ignorados.
 - **Manipuladores HTTP** -um manipulador HTTP é uma classe que é responsável por gerar a marcação para um determinado tipo de solicitação. ELMAH inclui manipuladores HTTP que processam os detalhes do erro como uma página da web, como um feed RSS ou como um arquivo delimitado por vírgulas (CSV).
 - **Fontes de Log de erro** - predefinido ELMAH pode registrar erros de memória para um banco de dados do Microsoft SQL Server, um banco de dados do Microsoft Access, um banco de dados Oracle, para um arquivo XML, um banco de dados SQLite ou para um banco de dados do banco de dados do Vista. Como a sistema de monitoramento de integridade, a arquitetura do ELMAH foi criada usando o modelo de provedor, o que significa que você pode criar e integrar perfeitamente seus próprios provedores de log personalizado de fonte, se necessário.
 
@@ -257,6 +257,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Usando módulos HTTP e manipuladores para criar componentes ASP.NET conectáveis](https://msdn.microsoft.com/library/aa479332.aspx)
 - [Tutoriais de segurança de site](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
->[!div class="step-by-step"]
-[Anterior](logging-error-details-with-asp-net-health-monitoring-cs.md)
-[Próximo](precompiling-your-website-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](logging-error-details-with-asp-net-health-monitoring-cs.md)
+> [Próximo](precompiling-your-website-cs.md)

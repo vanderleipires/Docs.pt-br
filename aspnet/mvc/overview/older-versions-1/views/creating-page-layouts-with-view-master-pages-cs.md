@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-cs
-title: "Criar Layouts de página com páginas de exibição mestre (c#) | Microsoft Docs"
+title: Criar Layouts de página com páginas de exibição mestre (c#) | Microsoft Docs
 author: microsoft
-description: "Neste tutorial, você aprenderá como criar um layout de página comuns para várias páginas em seu aplicativo, tirando proveito da exibição de páginas mestras. Você pode usar um..."
+description: Neste tutorial, você aprenderá como criar um layout de página comuns para várias páginas em seu aplicativo, tirando proveito da exibição de páginas mestras. Você pode usar um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5d564b7e562435e8c6b1151287cbb1aec3d6bd10
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 82500a311e1110713a60604027d018ba16539b65
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-page-layouts-with-view-master-pages-c"></a>Criar Layouts de página com páginas de exibição mestre (c#)
 ====================
@@ -51,7 +51,7 @@ Uma página de exibição mestre é muito parecido com um modo de exibição pad
 
 Por exemplo, a página de exibição mestre na listagem 1 define um layout de duas colunas. Ele contém dois `<contentplaceholder>` marcas. Um `<ContentPlaceHolder>` para cada coluna.
 
-**Listando 1 –`Views\Shared\Site.master`**
+**Listando 1 – `Views\Shared\Site.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample1.aspx)]
 
@@ -83,7 +83,7 @@ Depois de clicar no botão Adicionar, um novo diálogo é exibida que permite qu
 
 Depois de criar uma nova página de conteúdo de modo de exibição com base na página mestra Site.master, você pode obter o arquivo na listagem 2.
 
-**A listagem 2 –`Views\Home\Index.aspx`**
+**A listagem 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample2.aspx)]
 
@@ -97,7 +97,7 @@ Você não precisa substituir cada `<asp:ContentPlaceHolder>` marca de uma pági
 
 Por exemplo, o modo de exibição do índice modificado na listagem 3 contém apenas duas `<asp:Content>` marcas. Cada uma da `<asp:Content>` marcas inclui algum texto.
 
-**A listagem 3 –`Views\Home\Index.aspx (modified)`**
+**A listagem 3 – `Views\Home\Index.aspx (modified)`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample3.aspx)]
 
@@ -127,7 +127,7 @@ Há um requisito importante que uma página de modo de exibição mestre deve at
 
 Uma abordagem alternativa para modificar o conteúdo da página mestra em uma página de conteúdo da exibição individual é encapsular a região que você deseja modificar em um `<asp:ContentPlaceHolder>` marca. Por exemplo, imagine que você deseja alterar não apenas o título, mas também as marcas meta, processadas por uma página de modo de exibição mestre. A página de modo de exibição mestre na listagem 4 contém um `<asp:ContentPlaceHolder>` marca dentro de seu `<head>` marca.
 
-**A listagem 4 –`Views\Shared\Site2.master`**
+**A listagem 4 – `Views\Shared\Site2.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample5.aspx)]
 
@@ -135,7 +135,7 @@ Observe que o `<asp:ContentPlaceHolder>` marca na listagem 4 inclui conteúdo pa
 
 A página de exibição de conteúdo na listagem 5 substitui o `<asp:ContentPlaceHolder>` marca para exibir um título personalizado e marcas meta personalizadas.
 
-**Listando 5 –`Views\Home\Index2.aspx`**
+**Listando 5 – `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample6.aspx)]
 
@@ -143,6 +143,6 @@ A página de exibição de conteúdo na listagem 5 substitui o `<asp:ContentPlac
 
 Neste tutorial você forneceu uma introdução básica para exibir páginas mestras e páginas de conteúdo. Você aprendeu a criar nova exibição páginas mestras e criar páginas de conteúdo do modo de exibição com base neles. Também examinamos como você pode modificar o conteúdo de uma página mestra do modo de exibição de uma página de conteúdo do modo de exibição específico.
 
->[!div class="step-by-step"]
-[Anterior](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
-[Próximo](passing-data-to-view-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
+> [Próximo](passing-data-to-view-master-pages-cs.md)

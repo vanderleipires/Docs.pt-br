@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
-title: "Adicionando validação para o modelo | Microsoft Docs"
+title: Adicionando validação para o modelo | Microsoft Docs
 author: shanselman
-description: "Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados."
+description: Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 5616c3c3bc77be0a770540d04cc2ae48ba9eedff
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 78dd6bdd81fcb51a3a21a8f1ee12b4b2bfc37db5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-to-the-model"></a>Adicionando validação para o modelo
 ====================
@@ -72,6 +72,6 @@ Executar seu aplicativo, visite /Movies/Create novamente e clique em criar sem i
 
 Isso está procurando válido! Agora vamos adicionar uma coluna adicional para o banco de dados.
 
->[!div class="step-by-step"]
-[Anterior](getting-started-with-mvc-part6.md)
-[Próximo](getting-started-with-mvc-part8.md)
+> [!div class="step-by-step"]
+> [Anterior](getting-started-with-mvc-part6.md)
+> [Próximo](getting-started-with-mvc-part8.md)

@@ -2,21 +2,21 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 title: Criando aplicativos de nuvem do mundo Real com o Azure | Microsoft Docs
 author: MikeWasson
-description: "Este livro eletrônico orienta você por meio de uma abordagem baseada em padrões para criar soluções de nuvem do mundo real. Os padrões se aplicam ao processo de desenvolvimento, bem como para um..."
+description: Este livro eletrônico orienta você por meio de uma abordagem baseada em padrões para criar soluções de nuvem do mundo real. Os padrões se aplicam ao processo de desenvolvimento, bem como para um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5a62818a2dc21128bb0a42a8b296ade460e7b060
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Criando aplicativos de nuvem do mundo Real com o Azure
 ====================
@@ -60,7 +60,7 @@ Este livro eletrônico explica que treze recomendadas padrões de desenvolviment
     - Mantenha a camada da web sem monitoração de estado.
     - Demonstração: escala e o dimensionamento automático em aplicativos da Web no serviço de aplicativo do Azure.
     - Evite o estado da sessão.
-    - Use um CDN.
+    - Use um CDN com um fallback quando o CDN não estiver disponível.
     - Use o modelo de programação assíncrona.
     - Demonstração: assíncrona no ASP.NET MVC e o Entity Framework.
 - [Logon único](single-sign-on.md). 
@@ -177,5 +177,5 @@ Vídeos:
 - [Arquitetura de Sites da Web - com Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/).
 - [Recursos internos de Sites do Azure com Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
->[!div class="step-by-step"]
-[Avançar](automate-everything.md)
+> [!div class="step-by-step"]
+> [Avançar](automate-everything.md)

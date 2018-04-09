@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
 title: 'Parte 2: Camada de acesso de dados | Microsoft Docs'
 author: JoeStagner
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 2 aborda a adição de camada de acesso a dados."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 2 aborda a adição de camada de acesso a dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 8b07b320640c1bb0074a4d3a04ca7c5b7e7bb6cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9f734b04a0f4cec3c33bc5b42ef283ea64cdb463
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-data-access-layer"></a>Parte 2: Camada de acesso a dados
 ====================
@@ -27,7 +27,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 > Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 2 aborda a adição de camada de acesso a dados.
 
 
-## <a id="_Toc260221668"></a>Adicionando a camada de acesso a dados
+## <a id="_Toc260221668"></a>  Adicionando a camada de acesso a dados
 
 Nosso aplicativo de comércio eletrônico depende de dois bancos de dados.
 
@@ -57,6 +57,6 @@ Salve e compile.
 
 Agora você está pronto para adicionar o nosso primeiro recurso – um menu de categoria de produto.
 
->[!div class="step-by-step"]
-[Anterior](tailspin-spyworks-part-1.md)
-[Próximo](tailspin-spyworks-part-3.md)
+> [!div class="step-by-step"]
+> [Anterior](tailspin-spyworks-part-1.md)
+> [Próximo](tailspin-spyworks-part-3.md)

@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-vb
 title: Usando o extensor de controle ColorPicker (VB) | Microsoft Docs
 author: microsoft
-description: "ColorPicker é um extensor AJAX ASP.NET que fornece funcionalidade de seleção de cor do lado do cliente com a interface do usuário em um controle de pop-up. Ele pode ser anexado a qualquer ASP.NET..."
+description: ColorPicker é um extensor AJAX ASP.NET que fornece funcionalidade de seleção de cor do lado do cliente com a interface do usuário em um controle de pop-up. Ele pode ser anexado a qualquer ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7453845909b2c0bd8d6b476b19d0fbc5050f7460
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3411119f85d7f5c26703b7df40cff24fdf30b81d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-colorpicker-control-extender-vb"></a>Usando o extensor de controle ColorPicker (VB)
 ====================
 por [Microsoft](https://github.com/microsoft)
 
-> ColorPicker é um extensor AJAX ASP.NET que fornece funcionalidade de seleção de cor do lado do cliente com a interface do usuário em um controle de pop-up. Ele pode ser conectado a qualquer controle de caixa de texto do ASP.NET. Ele.
+> ColorPicker é um extensor AJAX ASP.NET que fornece funcionalidade de seleção de cor do lado do cliente com a interface do usuário em um controle de pop-up. Ele pode ser conectado a qualquer controle de caixa de texto do ASP.NET. It.
 
 
 O objetivo deste tutorial é explicar como você pode usar o extensor do controle ColorPicker de kit de ferramentas de controle AJAX. O extensor do controle ColorPicker exibe uma caixa de diálogo pop-up que permite que você selecione uma cor. ColorPicker é útil sempre que você deseja fornecer uma interface de usuário intuitiva para um usuário selecionar uma cor.
@@ -58,7 +58,7 @@ Você precisa concluir as duas etapas para usar o extensor do controle ColorPick
 
 Antes de usar o ColorPicker, você deve adicionar um ScriptManager para sua página. É um bom lugar para adicionar o ScriptManager logo abaixo do lado do servidor abertura &lt;formulário&gt; marca. Você pode arrastar o ScriptManager para a página da caixa de ferramentas (o ScriptManager está localizado sob a guia Extensões AJAX). Como alternativa, você pode digitar a marca a seguir na exibição da fonte sob a marca de abertura formulário do lado do servidor:
 
-&lt;ASP: ScriptManager ID = "ScriptManager1" runat = "server" /&gt;
+&lt;asp:ScriptManager ID="ScriptManager1" runat="server" /&gt;
 
 A maneira mais fácil para adicionar o extensor do controle ColorPicker para a página está no modo de Design. Se você posicionar o mouse sobre a caixa de texto txtCardColor, uma opção inteligente aparece o permite que você adicione um extensor (consulte a Figura 3). Se você escolher essa opção, o Assistente de extensor é exibido (consulte a Figura 4).
 
@@ -114,5 +114,5 @@ A propriedade SampleControlID é usada para associar um controle que exibe a cor
 
 Neste tutorial, você aprendeu a usar o extensor do controle ColorPicker para exibir uma caixa de diálogo de seletor de cor de pop-up. Primeiro, examinamos como você pode exibir a caixa de diálogo quando o foco é movido para um controle de caixa de texto. Em seguida, você aprendeu a criar um botão que exibe a caixa de diálogo de seletor de cor quando o botão é clicado.
 
->[!div class="step-by-step"]
-[Anterior](using-the-colorpicker-control-extender-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](using-the-colorpicker-control-extender-cs.md)

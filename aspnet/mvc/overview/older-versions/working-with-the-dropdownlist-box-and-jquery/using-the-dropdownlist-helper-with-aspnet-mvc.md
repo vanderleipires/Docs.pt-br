@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 title: Usando o auxiliar DropDownList com ASP.NET MVC | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2012
@@ -12,19 +12,19 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 278d04aec68e93f3ebfd12d06a96b59f3bcbef4b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 21373deeded801c5cea9e89f6dac0f3542a55ca5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>Usando o auxiliar DropDownList com ASP.NET MVC
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 Este tutorial ensina os fundamentos de trabalhar com o [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) auxiliar e [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) auxiliar em um aplicativo ASP.NET MVC. Você pode usar o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é uma versão gratuita do Microsoft Visual Studio para acompanhar o tutorial. Antes de começar, verifique se que você instalou os pré-requisitos listados abaixo. Você pode instalar todos eles clicando no link a seguir: [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Como alternativa, você pode instalar individualmente os pré-requisitos usando os links a seguir:
 
-- [Pré-requisitos de Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)<a id="post"></a>
+- [Pré-requisitos de Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack) <a id="post"></a>
 - [Atualização de ferramentas do ASP.NET MVC 3](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
 - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(tempo de execução + ferramentas de suportam)
 
@@ -193,7 +193,7 @@ Abra o *Views\Home\MultiSelectCountry.cshtml* e adicione um `htmlAttributes` par
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-No código acima, estamos adicionando o atributo HTML e o valor do atributo `class = "chzn-select"`. O caractere @ anterior a classe não tem nada a fazer com que o mecanismo de exibição Razor. `class`é um [palavra-chave c#](https://msdn.microsoft.com/library/x53a06bb.aspx). Palavras-chave c# não podem ser usadas como identificadores, a menos que elas incluem como prefixo. No exemplo acima, `@class` é um identificador válido, mas **classe** porque não é **classe** é uma palavra-chave.
+No código acima, estamos adicionando o atributo HTML e o valor do atributo `class = "chzn-select"`. O caractere @ anterior a classe não tem nada a fazer com que o mecanismo de exibição Razor. `class` é um [palavra-chave c#](https://msdn.microsoft.com/library/x53a06bb.aspx). Palavras-chave c# não podem ser usadas como identificadores, a menos que elas incluem como prefixo. No exemplo acima, `@class` é um identificador válido, mas **classe** porque não é **classe** é uma palavra-chave.
 
 Adicione referências para o *Chosen/chosen.jquery.js* e *Chosen/chosen.css* arquivos. O *Chosen/chosen.jquery.js* e implementa a funcionalidade de plug-in escolhido. O *Chosen/chosen.css* arquivo fornece o estilo. Adicione estas referências à parte inferior do *Views\Home\MultiSelectCountry.cshtml* arquivo. O código a seguir mostra como referenciar o plug-in escolhido.
 
@@ -217,5 +217,5 @@ Execute o aplicativo e navegue até o `MultiSelectCountry` exibição. Tente adi
 
 Na próxima seção você verá como o mecanismo do ASP.NET MVC scaffolding funciona com o **DropDownList** auxiliar.
 
->[!div class="step-by-step"]
-[Avançar](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [!div class="step-by-step"]
+> [Avançar](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

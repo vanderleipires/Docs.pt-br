@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
-title: "Adicionando uma exibição (VB) | Microsoft Docs"
+title: Adicionando uma exibição (VB) | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é..."
+description: Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 7e8564c743510780b93d56bc1215f4c5b1faeb43
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c9675eb7776116ecbe910d5515abfe9b4391df22
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view-vb"></a>Adicionando uma exibição (VB)
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é uma versão gratuita do Microsoft Visual Studio. Antes de começar, verifique se que você instalou os pré-requisitos listados abaixo. Você pode instalar todos eles clicando no link a seguir: [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Como alternativa, você pode instalar individualmente os pré-requisitos usando os links a seguir:
 > 
@@ -65,7 +65,7 @@ Parece muito bom. No entanto, observe que a barra de título do navegador diz &q
 
 Primeiro, vamos alterar o texto &quot;meu aplicativo MVC.&quot; Esse texto é compartilhado e aparece em cada página. Na verdade, aparece em apenas um local em nosso projeto, mesmo que seja em cada página em nosso aplicativo. Vá para o */exibições/compartilhado* pasta **Solution Explorer** e abra o  *\_Layout.vbhtml* arquivo. Esse arquivo é chamado de uma página de layout e é compartilhado &quot;shell&quot; que usam todas as outras páginas.
 
-Observe o `@RenderBody()` linha de código na parte inferior do arquivo. `RenderBody`é um espaço reservado em que todas as páginas que você cria aparecem &quot;encapsulado&quot; na página de layout. Alterar o `<h1>` título do  **&quot;**  meu aplicativo MVC&quot; para &quot;aplicativo de filme MVC&quot;.
+Observe o `@RenderBody()` linha de código na parte inferior do arquivo. `RenderBody` é um espaço reservado em que todas as páginas que você cria aparecem &quot;encapsulado&quot; na página de layout. Alterar o `<h1>` título do **&quot;** meu aplicativo MVC&quot; para &quot;aplicativo de filme MVC&quot;.
 
 [!code-html[Main](adding-a-view/samples/sample3.html)]
 
@@ -111,11 +111,11 @@ Aqui está o que seu **adicionar exibição** aparência de caixa de diálogo.
 
 [![3AddWelcomeView](adding-a-view/_static/image12.png "3AddWelcomeView")](adding-a-view/_static/image11.png)
 
-Adicione o seguinte código sob o `<h2>` elemento no novo *bem-vindo.* arquivo vbhtml. Vamos fazer um loop e dizer &quot;Hello&quot; quantas vezes o usuário diz que deveríamos!
+Adicione o seguinte código sob o `<h2>` elemento no novo <em>bem-vindo.</em> arquivo vbhtml. Vamos fazer um loop e dizer &quot;Hello&quot; quantas vezes o usuário diz que deveríamos!
 
 [!code-vbhtml[Main](adding-a-view/samples/sample8.vbhtml)]
 
-Execute o aplicativo e navegue até`http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
+Execute o aplicativo e navegue até `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
 
 Agora dados é obtidos com a URL e passados para o controlador automaticamente. O controlador de pacotes de dados em um `Model` objeto e etapas de objeto para o modo de exibição. O modo de exibição que exibe os dados como HTML para o usuário.
 
@@ -123,6 +123,6 @@ Agora dados é obtidos com a URL e passados para o controlador automaticamente. 
 
 Bem, isso foi um tipo de um &quot;M&quot; para modelo, mas não o tipo de banco de dados. Vamos ver o que aprendemos e criar um banco de dados de filmes.
 
->[!div class="step-by-step"]
-[Anterior](adding-a-controller.md)
-[Próximo](adding-a-model.md)
+> [!div class="step-by-step"]
+> [Anterior](adding-a-controller.md)
+> [Próximo](adding-a-model.md)

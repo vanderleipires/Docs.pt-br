@@ -2,7 +2,7 @@
 uid: mvc/overview/getting-started/database-first-development/publish-to-azure
 title: Publicar o site MVC banco de dados primeiro no Azure | Microsoft Docs
 author: tfitzmac
-description: "Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série..."
+description: Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/22/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/publish-to-azure
 msc.type: authoredcontent
-ms.openlocfilehash: eadc0f2b08df29f80fe53d03cf88cd3cdcecfb12
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 839bbceba6f0e098303facd40dbb1496bd449ba3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>Publicar o site MVC banco de dados primeiro no Azure
 ====================
@@ -166,5 +166,5 @@ Para obter um exemplo de Introdução do desenvolvimento do Code First, consulte
 
 Para obter um exemplo mais avançado, consulte [criando um modelo de dados do Entity Framework para um aplicativo do ASP.NET MVC 4](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md). Observe que a API DbContext que você usa para trabalhar com dados no primeiro banco de dados é o mesmo que a API que você pode usar para trabalhar com dados no Code First. Mesmo se você pretende usar o primeiro banco de dados, você pode aprender a lidar com cenários mais complexos, como ler e atualizar dados relacionados, controlando conflitos de simultaneidade, e assim por diante de um tutorial Code First. A única diferença está em como o banco de dados, à classe de contexto e classes de entidade são criados.
 
->[!div class="step-by-step"]
-[Anterior](enhancing-data-validation.md)
+> [!div class="step-by-step"]
+> [Anterior](enhancing-data-validation.md)

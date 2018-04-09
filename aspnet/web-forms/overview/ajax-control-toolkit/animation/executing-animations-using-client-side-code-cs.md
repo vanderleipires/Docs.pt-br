@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
-title: "Executar animações usando o código do lado do cliente (c#) | Microsoft Docs"
+title: Executar animações usando o código do lado do cliente (c#) | Microsoft Docs
 author: wenz
-description: "O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A execução de animação..."
+description: O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A execução de animação...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6b1911686a79aa692ef193430cd0746a2511105a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cfaed745b4c547d04033ee89d2c6549c5989cb73
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="executing-animations-using-client-side-code-c"></a>Executar animações usando o código do lado do cliente (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A execução da animação também pode ser disparada usando código personalizado de JavaScript do lado do cliente.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A execução da animação também pode ser disparada usando código personalizado de JavaScript do lado do cliente.
 
@@ -70,6 +70,6 @@ Aqui está o código completo de JavaScript do lado do cliente que emula o cliqu
 
 A animação é executada imediatamente, sem um clique do mouse ([clique para exibir a imagem em tamanho normal](executing-animations-using-client-side-code-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](modifying-animations-from-the-server-side-cs.md)
-[Próximo](changing-an-animation-using-client-side-code-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](modifying-animations-from-the-server-side-cs.md)
+> [Próximo](changing-an-animation-using-client-side-code-cs.md)

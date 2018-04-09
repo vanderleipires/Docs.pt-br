@@ -1,7 +1,7 @@
 ---
-title: "Confirmação de conta e senha de recuperação no núcleo do ASP.NET"
+title: Confirmação de conta e de recuperação de senha no ASP.NET Core
 author: rick-anderson
-description: "Saiba como criar um aplicativo do ASP.NET Core com redefinição de senha e de confirmação de email."
+description: Saiba como criar um aplicativo do ASP.NET Core com redefinição de senha e de confirmação de email.
 manager: wpickett
 ms.author: riande
 ms.date: 2/11/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: b236b4e5d3a4fa7212453f2aec209d145f5f5e32
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 8ad2a63ce007a68eac3b607db454c6b4fc834444
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmação de conta e de recuperação de senha no ASP.NET Core
 
@@ -30,7 +30,7 @@ Consulte [este arquivo PDF](https://github.com/aspnet/Docs/tree/master/aspnetcor
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[.NET core 2.1.4 SDK](https://www.microsoft.com/net/core) ou posterior.
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="create-a-new-aspnet-core-project-with-the-net-core-cli"></a>Criar um novo projeto do ASP.NET Core com o .NET Core CLI
 
@@ -74,7 +74,7 @@ Executar o aplicativo, selecione o **registrar** vincular e registrar um usuári
 
 ## <a name="view-the-identity-database"></a>Exibir o banco de dados de identidade
 
-Consulte [trabalhando com SQLite em um projeto MVC do ASP.NET Core](xref:tutorials/first-mvc-app-xplat/working-with-sql) para obter instruções sobre como exibir o banco de dados SQLite.
+Consulte [trabalhar com SQLite em um projeto MVC do ASP.NET Core](xref:tutorials/first-mvc-app-xplat/working-with-sql) para obter instruções sobre como exibir o banco de dados SQLite.
 
 Para o Visual Studio:
 
@@ -138,16 +138,13 @@ O conteúdo do *secrets.json* arquivo não são criptografados. O *secrets.json*
 
 Adicionar `AuthMessageSenderOptions` ao contêiner de serviço no final o `ConfigureServices` método o *Startup.cs* arquivo:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
----
-
+* * *
 ### <a name="configure-the-authmessagesender-class"></a>Configurar a classe AuthMessageSender
 
 Este tutorial mostra como adicionar notificações de email por meio de [SendGrid](https://sendgrid.com/), mas você pode enviar emails usando SMTP e outros mecanismos.
@@ -160,31 +157,28 @@ Instalar o `SendGrid` pacote do NuGet:
 
 * No Console do Gerenciador de pacotes, digite o seguinte comando:
 
- `Install-Package SendGrid`
+  `Install-Package SendGrid`
 
 Consulte [comece com SendGrid gratuitamente](https://sendgrid.com/free/) para registrar-se para uma conta gratuita do SendGrid.
 
 #### <a name="configure-sendgrid"></a>Configurar o SendGrid
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 Para configurar o SendGrid, adicione o código semelhante ao seguinte no *Services/EmailSender.cs*:
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 * Adicione código *Services/MessageServices.cs* semelhante à seguinte para configurar o SendGrid:
 
 [!code-csharp[](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
 
----
-
+* * *
 ## <a name="enable-account-confirmation-and-password-recovery"></a>Habilitar a recuperação de confirmação e a senha da conta
 
 O modelo tem o código de recuperação de confirmação e a senha da conta. Localizar o `OnPostAsync` método *Pages/Account/Register.cshtml.cs*.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 Impedi que usuários recém-registrados sendo registrados automaticamente pelo comentar a seguinte linha:
 
 ```csharp
@@ -195,8 +189,7 @@ O método complete é mostrado com a linha alterada realçada:
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Para habilitar a confirmação de conta, descomente o código a seguir:
 
 [!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
@@ -215,15 +208,14 @@ Remova o elemento de formulário em *Views/Account/ForgotPassword.cshtml*. Talve
 
 [!code-cshtml[](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
 
----
-
+* * *
 ## <a name="register-confirm-email-and-reset-password"></a>Registrar, confirme o email e redefinição de senha
 
 Executar o aplicativo web e testar o fluxo de recuperação de senha e confirmação de conta.
 
 * Execute o aplicativo e registrar um novo usuário
 
- ![Registrar conta exibição do aplicativo Web](accconfirm/_static/loginaccconfirm1.png)
+  ![Registrar conta exibição do aplicativo Web](accconfirm/_static/loginaccconfirm1.png)
 
 * Verifique seu email para o link de confirmação de conta. Consulte [depurar email](#debug) se você não receber o email.
 * Clique no link para confirmar seu email.

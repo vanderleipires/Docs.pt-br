@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
-title: "Implantação de Web do ASP.NET usando o Visual Studio: implantação em produção | Microsoft Docs"
+title: 'Implantação de Web do ASP.NET usando o Visual Studio: implantação em produção | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin..."
+description: Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,22 +12,22 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f3b3898bd003ace100ba05619f2c45ca808462df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Implantação de Web do ASP.NET usando o Visual Studio: implantação em produção
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Neste tutorial, você configurar uma conta do Microsoft Azure, cria ambientes de preparo e produção e implanta seu aplicativo web ASP.NET de preparo e ambientes de produção usando o Visual Studio clique publicar o recurso.
 
@@ -144,10 +144,10 @@ Agora que você criou um aplicativo web e o banco de dados para o ambiente de pr
 9. 1. Selecione **Atualizar banco de dados**.
 
         O **cadeia de caracteres de conexão remota** caixa diretamente abaixo **DefaultConnection** é preenchido com a cadeia de caracteres de conexão do arquivo. publishsettings. A cadeia de caracteres de conexão contém credenciais do SQL Server, que são armazenadas em texto sem formatação no *. pubxml* arquivo. Se você preferir não armazená-las permanentemente lá, você pode removê-los do perfil de publicação após a implantação do banco de dados e armazená-las no Azure. Para obter mais informações, consulte [como proteger seu banco de dados do ASP.NET cadeias de caracteres de conexão durante a implantação no Azure de origem](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx) no blog de Scott Hanselman.
-    2. Clique em **configurar atualizações de banco de dados**.
-    3. No **configurar atualizações de banco de dados** caixa de diálogo, clique em **Adicionar Script do SQL**.
-    4. No **Adicionar Script do SQL** , navegue até o *aspnet de dados de prod.sql* script que você salvou anteriormente na pasta da solução e, em seguida, clique em **abrir**.
-    5. Fechar o **configurar atualizações de banco de dados** caixa de diálogo.
+      2. Clique em **configurar atualizações de banco de dados**.
+      3. No **configurar atualizações de banco de dados** caixa de diálogo, clique em **Adicionar Script do SQL**.
+      4. No **Adicionar Script do SQL** , navegue até o *aspnet de dados de prod.sql* script que você salvou anteriormente na pasta da solução e, em seguida, clique em **abrir**.
+      5. Fechar o **configurar atualizações de banco de dados** caixa de diálogo.
 10. Em **SchoolContext** no **bancos de dados** seção, selecione **executar migrações do Code First (executado na inicialização do aplicativo)**.
 
     O Visual Studio exibe **executar migrações do Code First** em vez de **Atualizar banco de dados** para `DbContext` classes. Se você deseja usar o provedor dbDacFx em vez de migrações para implantar um banco de dados que você acessa usando um `DbContext` de classe, consulte [como implantar a um banco de dados Code First sem migrações?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) nas perguntas Frequentes de implantação da Web para o Visual Studio e o ASP.NET no MSDN.
@@ -296,11 +296,11 @@ O seguinte tutorial, você atualizar o código do aplicativo e implante a altera
 
 > [!NOTE]
 > Enquanto seu aplicativo estiver em uso no ambiente de produção deve implementar um plano de recuperação. Ou seja, você deve ser periodicamente backup de seus bancos de dados do aplicativo de produção para um local de armazenamento seguro, e você deve manter várias gerações de backups desse tipo. Quando você atualizar o banco de dados, você deve fazer uma cópia de backup de imediatamente antes da alteração. Em seguida, se você comete um erro e não Descubra até depois de implantá-lo em produção, você ainda poderá recuperar o banco de dados para o estado em que estava antes que ele se tornou corrompido. Para obter mais informações, consulte [Backup de banco de dados do SQL Azure e restauração](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
-
-
+> 
+> 
 > [!NOTE]
 > Neste tutorial, o SQL Server edition que você está implantando é banco de dados do SQL Azure. Enquanto o processo de implantação é semelhante a outras edições do SQL Server, um aplicativo de produção real pode exigir código especial para o banco de dados do SQL Azure em alguns cenários. Para obter mais informações, consulte [trabalhando com o banco de dados do Azure SQL](../../../../whitepapers/aspnet-data-access-content-map.md#ssdb) e [escolhendo entre o SQL Server e banco de dados do SQL Azure](../../../../whitepapers/aspnet-data-access-content-map.md#ssdbchoosing).
-
->[!div class="step-by-step"]
-[Anterior](setting-folder-permissions.md)
-[Próximo](deploying-a-code-update.md)
+> 
+> [!div class="step-by-step"]
+> [Anterior](setting-folder-permissions.md)
+> [Próximo](deploying-a-code-update.md)

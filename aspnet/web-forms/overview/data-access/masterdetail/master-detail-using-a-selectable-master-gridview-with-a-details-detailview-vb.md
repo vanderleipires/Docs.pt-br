@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
-title: "Mestre/detalhes usando um GridView mestre selecionável com um Details DetailView (VB) | Microsoft Docs"
+title: Mestre/detalhes usando um GridView mestre selecionável com um Details DetailView (VB) | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial terá um GridView cujas linhas incluem o nome e o preço de cada produto junto com um botão de seleção. Clicar no botão Selecionar para uma particu..."
+description: Este tutorial terá um GridView cujas linhas incluem o nome e o preço de cada produto junto com um botão de seleção. Clicar no botão Selecionar para uma particu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eae9c07eff7780aab18346815ca410d687789d17
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 80db1589de901f7364c05c5bb67829145579b6c0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>Mestre/detalhes usando um GridView mestre selecionável com um Details DetailView (VB)
 ====================
@@ -131,12 +131,12 @@ Com o `ProductsGrid` concluir do GridView, tudo o que resta é adicionar um Deta
 **Figura 9**: chamar o `ProductsBLL` da classe `GetProductByProductID(productID)` método ([clique para exibir a imagem em tamanho normal](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image27.png))
 
 
-Ter o  *`productID`*  valor do parâmetro obtido do controle GridView `SelectedValue` propriedade. Conforme abordado anteriormente, o GridView `SelectedValue` propriedade retorna os primeiros dados de valor para a linha selecionada da chave. Portanto, é fundamental que o GridView `DataKeyNames` está definida como `ProductID`, de modo que a linha selecionada `ProductID` valor é retornado por `SelectedValue`.
+Ter o *`productID`* valor do parâmetro obtido do controle GridView `SelectedValue` propriedade. Conforme abordado anteriormente, o GridView `SelectedValue` propriedade retorna os primeiros dados de valor para a linha selecionada da chave. Portanto, é fundamental que o GridView `DataKeyNames` está definida como `ProductID`, de modo que a linha selecionada `ProductID` valor é retornado por `SelectedValue`.
 
 
 [![Defina o parâmetro productID como propriedade SelectedValue do GridView](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
 
-**Figura 10**: definir o  *`productID`*  parâmetro a GridView `SelectedValue` propriedade ([clique para exibir a imagem em tamanho normal](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
+**Figura 10**: definir o *`productID`* parâmetro a GridView `SelectedValue` propriedade ([clique para exibir a imagem em tamanho normal](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
 
 
 Uma vez o `productDetailsDataSource` ObjectDataSource foi configurado corretamente e associado a DetailsView, este tutorial está concluído! Quando a página for visitada primeiro nenhuma linha é selecionada, para que o GridView `SelectedValue` propriedade retorna `Nothing`. Como não há nenhum produto com um `NULL` `ProductID` valor, nenhum registro é retornado pelo `GetProductByProductID(productID)` método, o que significa que o DetailsView não será exibida (consulte a Figura 11). Após clicar em GridView selecione botão de uma linha, um postback tem lugar e DetailsView é atualizada. Dessa vez o GridView `SelectedValue` propriedade retorna o `ProductID` da linha selecionada, o `GetProductByProductID(productID)` método retorna um `ProductsDataTable` com informações sobre um produto em particular e DetailsView mostra esses detalhes (veja a Figura 12).
@@ -162,11 +162,11 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Giesenow Hilton. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](master-detail-filtering-across-two-pages-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](master-detail-filtering-across-two-pages-vb.md)

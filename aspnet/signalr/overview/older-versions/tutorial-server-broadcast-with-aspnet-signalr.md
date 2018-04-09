@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
-title: "Tutorial: Servidor de transmissão com ASP.NET SignalR 1. x | Microsoft Docs"
+title: 'Tutorial: Servidor de transmissão com ASP.NET SignalR 1. x | Microsoft Docs'
 author: pfletcher
-description: "Este tutorial mostra como criar um aplicativo web que usa o ASP.NET SignalR para fornecer funcionalidade de difusão de servidor. Significa que communic de difusão de servidor..."
+description: Este tutorial mostra como criar um aplicativo web que usa o ASP.NET SignalR para fornecer funcionalidade de difusão de servidor. Significa que communic de difusão de servidor...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/10/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 3f641b53a9ed568132909114c6cceaa957064fa2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 85d40e411a7ff974da5cc4fa7fbd789b83d92201
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Tutorial: Servidor de transmissão com ASP.NET SignalR 1. x
 ====================
@@ -29,7 +29,7 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gith
 > Comentários sobre o tutorial são boas-vindas. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [ASP.NET SignalR fórum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 O [Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.signalr.sample) pacote NuGet instala um aplicativo de cotações da bolsa simulado de exemplo em um projeto do Visual Studio. A primeira parte deste tutorial, você criará uma versão simplificada do aplicativo do zero. No restante do tutorial, você instalar o pacote do NuGet e examine o código que cria e recursos adicionais.
 
@@ -39,7 +39,7 @@ O aplicativo que você criará na primeira parte deste tutorial exibe uma grade 
 
 ![Versão inicial do StockTicker](tutorial-server-broadcast-with-aspnet-signalr/_static/image1.png)
 
-Periodicamente, o servidor atualiza os preços de estoque aleatoriamente e envia as atualizações para todos os clientes conectados. No navegador de números e símbolos no **alterar** e  **%**  colunas alteram dinamicamente em resposta a notificações do servidor. Se você abrir navegadores adicionais para a mesma URL, todas elas mostram os mesmos dados e as mesmas alterações nos dados simultaneamente.
+Periodicamente, o servidor atualiza os preços de estoque aleatoriamente e envia as atualizações para todos os clientes conectados. No navegador de números e símbolos no **alterar** e **%** colunas alteram dinamicamente em resposta a notificações do servidor. Se você abrir navegadores adicionais para a mesma URL, todas elas mostram os mesmos dados e as mesmas alterações nos dados simultaneamente.
 
 Este tutorial contém as seções a seguir:
 
@@ -217,7 +217,7 @@ Agora você concluiu o código do servidor de configuração. Na próxima seçã
 
     As marcas de script especificam o arquivo de script do jQuery, o arquivo de script do SignalR core, o arquivo de script do SignalR proxies e um arquivo de script StockTicker que você criará mais tarde. O arquivo de script de proxies SignalR, que especifica a URL "hubs do signalr /", é gerado dinamicamente e define os métodos de proxy para os métodos na classe Hub, nesse caso para StockTickerHub.GetAllStocks. Se preferir, você pode gerar esse arquivo JavaScript manualmente usando [SignalR utilitários](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/) e desativar a criação do arquivo dinâmico na chamada do método MapHubs.
 3. > [!IMPORTANT]
- > Verifique se o arquivo JavaScript referencia em *StockTicker.html* estão corretas. Ou seja, certifique-se de que a versão jQuery em sua marca de script (1.8.2 no exemplo) é o mesmo que a versão jQuery em seu projeto *Scripts* pasta e certifique-se de que a versão de SignalR em sua marca de script é o mesmo que o SignalR versão em seu projeto *Scripts* pasta. Altere os nomes de arquivo em marcas de script, se necessário.
+   > Verifique se o arquivo JavaScript referencia em *StockTicker.html* estão corretas. Ou seja, certifique-se de que a versão jQuery em sua marca de script (1.8.2 no exemplo) é o mesmo que a versão jQuery em seu projeto *Scripts* pasta e certifique-se de que a versão de SignalR em sua marca de script é o mesmo que o SignalR versão em seu projeto *Scripts* pasta. Altere os nomes de arquivo em marcas de script, se necessário.
 4. Em **Solution Explorer**, clique com botão direito *StockTicker.html*e, em seguida, clique em **definir como página inicial**.
 5. Crie um novo arquivo JavaScript na pasta do projeto e nomeie- *StockTicker.js*...
 6. Substitua o código de modelo com o código a seguir:

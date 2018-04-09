@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 title: 'Parte 1: Arquivo -> Novo projeto | Microsoft Docs'
 author: JoeStagner
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 1 abrange visão geral e o arquivo/novo projeto."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 1 abrange visão geral e o arquivo/novo projeto.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: bd840f9f3f5d723e6bc1bb35955a7770634e9483
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a1b9681516e626b6a0eec420b168a74e05d88afb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-1-file--new-project"></a>Parte 1: Arquivo -> Novo projeto
 ====================
@@ -27,7 +27,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 > Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 1 abrange visão geral e o arquivo/novo projeto.
 
 
-## <a id="_Toc260221666"></a>Visão geral
+## <a id="_Toc260221666"></a>  Visão geral
 
 Este tutorial é uma introdução aos formulários da Web do ASP.NET. Nós começarão lenta, para que a experiência de desenvolvimento de web de nível para iniciantes é okey.
 
@@ -61,11 +61,11 @@ Após a ordenação, eles veem uma tela de confirmação simples:
 
 Vamos começar criando um novo projeto de formulários da Web do ASP.NET no Visual Studio 2010 e adicionaremos incrementalmente recursos para criar um aplicativo funcional completo. Ao longo do caminho, vamos abordar o acesso de banco de dados, modos de exibição de lista e grade, páginas de atualização de dados, validação de dados, usando páginas mestras para layout de página consistente, AJAX, validação, a associação do usuário e muito mais.
 
-Você pode acompanhá-lo passo a passo, ou você pode baixar o aplicativo concluído de [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
+Você pode acompanhá-lo passo a passo, ou você pode baixar o aplicativo concluído [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
 
-Você pode usar o Visual Studio 2010 ou o livre Visual Web Developer 2010 de [https://www.microsoft.com/express/Web/](https://www.microsoft.com/express/Web/). Para criar o aplicativo, você pode usar o SQL Server ou o livre SQL Server Express para hospedar o banco de dados.
+Você pode usar o Visual Studio 2010 ou o livre Visual Web Developer 2010 de [ https://www.microsoft.com/express/Web/ ](https://www.microsoft.com/express/Web/). Para criar o aplicativo, você pode usar o SQL Server ou o livre SQL Server Express para hospedar o banco de dados.
 
-## <a id="_Toc260221667"></a>Arquivo / novo projeto
+## <a id="_Toc260221667"></a>  Arquivo / novo projeto
 
 Vamos começar selecionando o novo projeto no menu arquivo no Visual Studio. Isso abre a caixa de diálogo Novo projeto.
 
@@ -105,5 +105,5 @@ Também vamos realocar a página mestra para o diretório de estilos. Embora ess
 
 Depois de fazer isso, precisamos alterar a página mestra referências em todos os arquivos. aspx gerado pelo padrão páginas ASP.NET WebForms.
 
->[!div class="step-by-step"]
-[Avançar](tailspin-spyworks-part-2.md)
+> [!div class="step-by-step"]
+> [Avançar](tailspin-spyworks-part-2.md)

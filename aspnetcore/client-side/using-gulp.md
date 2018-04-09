@@ -1,5 +1,5 @@
 ---
-title: "Usando o Gulp no núcleo do ASP.NET"
+title: Use o Gulp no núcleo do ASP.NET
 author: rick-anderson
 description: Saiba como usar o Gulp em ASP.NET Core.
 manager: wpickett
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: 0a3443e8187d46992f55dc537d0f400c6771c50c
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: f776b2025b6ebfeff28d3903aaeac4d7d89665b3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="introduction-to-using-gulp-in-aspnet-core"></a>Introdução ao uso de Gulp no núcleo do ASP.NET 
+# <a name="use-gulp-in-aspnet-core"></a>Use o Gulp no núcleo do ASP.NET
 
 Por [Erik Reitan](https://github.com/Erikre), [Scott Addie](https://scottaddie.com), [Daniel Roth](https://github.com/danroth27), e [Shayne Boyer](https://twitter.com/spboyer)
 
@@ -183,6 +183,9 @@ Se você ainda não criou um novo aplicativo Web, crie um novo projeto de aplica
     **Explorador do Executador de tarefas** mostra a lista de tarefas de Gulp. (Talvez você precise clicar o **atualização** botão que aparece à esquerda do nome do projeto.)
     
     ![Explorador do Executador de tarefas](using-gulp/_static/03-TaskRunnerExplorer.png)
+    
+    > [!IMPORTANT]
+    > O **Explorador do Executador de tarefas** item de menu de contexto será exibida apenas se *gulpfile.js* está no diretório raiz do projeto.
 
 4.  Sob **tarefas** na **Explorador do Executador de tarefas**, clique com botão direito **limpa**e selecione **executar** no menu pop-up.
 
@@ -228,7 +231,7 @@ Para definir uma nova tarefa Gulp, modificar *gulpfile.js*.
 
     ![Execute a primeira tarefa Explorador do Executador de tarefas](using-gulp/_static/06-TaskRunner-First.png)
 
-    Você verá que o texto de saída é exibido. Se você estiver interessado nos exemplos com base em um cenário comum, consulte Gulp receitas.
+    O texto de saída é exibido. Para obter exemplos com base em cenários comuns, consulte [Gulp receitas](#gulp-recipes).
 
 ## <a name="defining-and-running-tasks-in-a-series"></a>Definindo e tarefas em execução em uma série
 
@@ -323,7 +326,7 @@ Para alternar entre a compilação para ambientes diferentes, modifique o **ASPN
 
     Observe que os links de folha de estilos apontam para as versões unminified dos arquivos CSS.
 
-Para obter mais informações relacionadas a ambientes em ASP.NET Core, consulte [trabalhando com vários ambientes](../fundamentals/environments.md).
+Para obter mais informações relacionadas a ambientes em ASP.NET Core, consulte [trabalhar com vários ambientes](../fundamentals/environments.md).
 
 ## <a name="task-and-module-details"></a>Detalhes da tarefa e o módulo
 
@@ -331,7 +334,7 @@ Uma tarefa Gulp está registrada com um nome de função. É possível especific
 
 |Função gulp|Sintaxe|Descrição|
 |---   |--- |--- |
-|tarefa  |`gulp.task(name[, deps], fn) { }`|O `task` função cria uma tarefa. O `name` parâmetro define o nome da tarefa. O `deps` parâmetro contém uma matriz de tarefas a serem concluídas antes de executa essa tarefa. O `fn` parâmetro representa uma função de retorno de chamada que executa as operações da tarefa.|
+|Tarefa  |`gulp.task(name[, deps], fn) { }`|O `task` função cria uma tarefa. O `name` parâmetro define o nome da tarefa. O `deps` parâmetro contém uma matriz de tarefas a serem concluídas antes de executa essa tarefa. O `fn` parâmetro representa uma função de retorno de chamada que executa as operações da tarefa.|
 |Inspecionar |`gulp.watch(glob [, opts], tasks) { }`|O `watch` função monitora arquivos e executa tarefas quando ocorre uma alteração de arquivo. O `glob` parâmetro é um `string` ou `array` que determina quais arquivos assistir. O `opts` parâmetro fornece observando as opções de arquivo adicionais.|
 |src   |`gulp.src(globs[, options]) { }`|O `src` função fornece os arquivos que correspondem os valores glob. O `glob` parâmetro é um `string` ou `array` que determina quais arquivos para leitura. O `options` parâmetro fornece outras opções de arquivo.|
 |dest  |`gulp.dest(path[, options]) { }`|O `dest` função define um local para o qual os arquivos podem ser gravados. O `path` parâmetro é uma cadeia de caracteres ou uma função que determina a pasta de destino. O `options` parâmetro é um objeto que especifica as opções de pasta de saída.|
@@ -346,4 +349,4 @@ A comunidade de Gulp fornece Gulp [receitas](https://github.com/gulpjs/gulp/blob
 
 * [Documentação de gulp](https://github.com/gulpjs/gulp/blob/master/docs/README.md)
 * [Empacotamento e minimização no núcleo do ASP.NET](bundling-and-minification.md)
-* [Usando o assistente no núcleo do ASP.NET](using-grunt.md)
+* [Use o assistente no núcleo do ASP.NET](using-grunt.md)

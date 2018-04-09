@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
-title: "Alterando uma animação usando o código do lado do cliente (VB) | Microsoft Docs"
+title: Alterando uma animação usando o código do lado do cliente (VB) | Microsoft Docs
 author: wenz
-description: "O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A animação também pode..."
+description: O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A animação também pode...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 83d1a21fba37d8807be467d02b5550dc7d096e6c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f9b72576cc3a9e91827cfb40983821704621060
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="changing-an-animation-using-client-side-code-vb"></a>Alterando uma animação usando o código do lado do cliente (VB)
 ====================
@@ -78,6 +78,6 @@ O código JavaScript a seguir atribui esse descripting JSON para o `OnClick` ani
 
 A animação é executada imediatamente, sem um clique do mouse (e com muito pouco marcação) ([clique para exibir a imagem em tamanho normal](changing-an-animation-using-client-side-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](executing-animations-using-client-side-code-vb.md)
-[Próximo](animating-an-updatepanel-control-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](executing-animations-using-client-side-code-vb.md)
+> [Próximo](animating-an-updatepanel-control-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
-title: "Exibindo uma página de erro personalizada (c#) | Microsoft Docs"
+title: Exibindo uma página de erro personalizada (c#) | Microsoft Docs
 author: rick-anderson
-description: "O que o usuário ver quando ocorre um erro de tempo de execução em um aplicativo web ASP.NET? A resposta depende de como o site &lt;customErrors&gt; configuração..."
+description: O que o usuário ver quando ocorre um erro de tempo de execução em um aplicativo web ASP.NET? A resposta depende de como o site &lt;customErrors&gt; configuração...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d68dedfc1f606cc6f0381bcbdb3f65c1ea3b2e5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f01a0f3af3680d53639512d7a86ac1a8645d00e2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-custom-error-page-c"></a>Exibindo uma página de erro personalizada (c#)
 ====================
@@ -60,7 +60,7 @@ Observe as informações de exceção apresentadas **Figura 1**. A mensagem de e
 
 O outro tipo de YSOD é YSOD de erro de tempo de execução e é mostrado na **Figura 2**. O tempo de execução erro YSOD informa o visitante que ocorreu um erro de tempo de execução, mas ele não inclui todas as informações sobre a exceção foi lançada. (No entanto, ele, fornecem instruções sobre como fazer os detalhes do erro podem ser exibidos, modificando o `Web.config` arquivo, que faz parte do que o torna tal YSOD uma aparência profissional.)
 
-Por padrão, o YSOD de erro de tempo de execução é exibido aos usuários visitar remotamente (por meio de http://www.yoursite.com), conforme evidenciado pela URL na barra de endereços do navegador do **Figura 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`. As duas telas diferentes YSOD existem porque os desenvolvedores estão interessados em saber os detalhes do erro, mas essas informações não devem ser mostradas em um site em tempo real como ele pode revelar possíveis vulnerabilidades de segurança ou outras informações confidenciais para qualquer pessoa que acessa sua site.
+Por padrão, o tempo de execução erro YSOD é exibido aos usuários visitar remotamente (por meio de http://www.yoursite.com), conforme evidenciado pela URL na barra de endereços do navegador do **Figura 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`. As duas telas diferentes YSOD existem porque os desenvolvedores estão interessados em saber os detalhes do erro, mas essas informações não devem ser mostradas em um site em tempo real como ele pode revelar possíveis vulnerabilidades de segurança ou outras informações confidenciais para qualquer pessoa que acessa sua site.
 
 > [!NOTE]
 > Se você estiver acompanhando e estiver usando DiscountASP.NET como host da web, você pode perceber que o YSOD de erro de tempo de execução não exibirá ao visitar o site. Isso ocorre porque DiscountASP.NET tem seus servidores configurados para mostrar o YSOD detalhes de exceção por padrão. A boa notícia é que você pode substituir esse comportamento padrão, adicionando um `<customErrors>` seção ao seu `Web.config` arquivo. A seção "Configurando qual erro página é exibido" examina o `<customErrors>` seção em detalhes.
@@ -89,11 +89,11 @@ Qual das três páginas de erro é exibida se baseia em duas variáveis:
 
 O [ `<customErrors>` seção](https://msdn.microsoft.com/library/h0hfz6fc.aspx) na `Web.config` tem dois atributos que afetam a página de erro que é mostrada: `defaultRedirect` e `mode`. O atributo `defaultRedirect` é opcional. Se fornecido, ele especifica a URL da página de erro personalizada e indica que a página de erro personalizada deve ser mostrada em vez de YSOD de erro de tempo de execução. O `mode` atributo é necessário e aceita um dos três valores: `On`, `Off`, ou `RemoteOnly`. Esses valores tem o seguinte comportamento:
 
-- `On`-indica que a página de erro personalizada ou YSOD de erro de tempo de execução é exibido para todos os visitantes, independentemente de estarem locais ou remotos.
-- `Off`-Especifica que o YSOD de detalhes de exceção é exibida para todos os visitantes, independentemente de estarem locais ou remotos.
-- `RemoteOnly`-indica que a página de erro personalizada ou YSOD de erro de tempo de execução é mostrado aos visitantes remotos, e o YSOD de detalhes da exceção para os visitantes do locais.
+- `On` -indica que a página de erro personalizada ou YSOD de erro de tempo de execução é exibido para todos os visitantes, independentemente de estarem locais ou remotos.
+- `Off` -Especifica que o YSOD de detalhes de exceção é exibida para todos os visitantes, independentemente de estarem locais ou remotos.
+- `RemoteOnly` -indica que a página de erro personalizada ou YSOD de erro de tempo de execução é mostrado aos visitantes remotos, e o YSOD de detalhes da exceção para os visitantes do locais.
 
-A menos que você especifique o contrário, o ASP.NET age como se você definiu o atributo de modo `RemoteOnly` e não tiver especificado um `defaultRedirect` valor. Em outras palavras, o comportamento padrão é que o YSOD de detalhes da exceção é exibida para os visitantes locais enquanto o YSOD de erro de tempo de execução é exibido aos visitantes remotos. Você pode substituir esse comportamento padrão, adicionando um `<customErrors>` seção do aplicativo web`Web.config file.`
+A menos que você especifique o contrário, o ASP.NET age como se você definiu o atributo de modo `RemoteOnly` e não tiver especificado um `defaultRedirect` valor. Em outras palavras, o comportamento padrão é que o YSOD de detalhes da exceção é exibida para os visitantes locais enquanto o YSOD de erro de tempo de execução é exibido aos visitantes remotos. Você pode substituir esse comportamento padrão, adicionando um `<customErrors>` seção do aplicativo web `Web.config file.`
 
 ## <a name="using-a-custom-error-page"></a>Usando uma página de erro personalizada
 
@@ -144,7 +144,7 @@ Com essa alteração no local, sempre que um usuário visitar remotamente solici
 > Check-out [páginas de erro 404, uma vez mais](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/) para obter orientação sobre como criar páginas de erro 404 efetivo.
 
 
-[![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)**Figura 7**: A página de erro 404 personalizada exibirá uma mensagem mais direcionada que`Oops.aspx`  
+[![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)**Figura 7**: A página de erro 404 personalizada exibirá uma mensagem mais direcionada que `Oops.aspx`  
  ([Clique para exibir a imagem em tamanho normal](displaying-a-custom-error-page-cs/_static/image20.png)) 
 
 Porque você sabe que o `404.aspx` página apenas é atingida quando o usuário faz uma solicitação para uma página que não foi encontrada, você pode aprimorar a esta página de erro personalizada para incluir funcionalidade para ajudar o usuário esse tipo de erro específico de endereço. Por exemplo, você poderia criar uma tabela de banco de dados que mapeia conhecida URLs incorretas para URLs BOM e, em seguida, o `404.aspx` página de erro personalizada executar uma consulta na tabela e sugere páginas que o usuário pode estar tentando acessar.
@@ -173,6 +173,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Manipulando e lançando exceções](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [Corretamente usando páginas de erro personalizadas no ASP.NET](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)
 
->[!div class="step-by-step"]
-[Anterior](strategies-for-database-development-and-deployment-cs.md)
-[Próximo](processing-unhandled-exceptions-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](strategies-for-database-development-and-deployment-cs.md)
+> [Próximo](processing-unhandled-exceptions-cs.md)

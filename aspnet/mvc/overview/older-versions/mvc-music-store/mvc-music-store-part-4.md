@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-4
 title: 'Parte 4: Acesso a dados e modelos | Microsoft Docs'
 author: jongalloway
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 4 aborda o acesso a dados e modelos."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 4 aborda o acesso a dados e modelos.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 727336344493b439130b2cf0ec6e7b5925dd5637
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 76671bbc7050d111b4d156c45584ba5aa4f1ea8f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-4-models-and-data-access"></a>Parte 4: Modelos e acesso a dados
 ====================
@@ -155,6 +155,6 @@ Agora estamos capazes de navegar em nossa página de armazenamento para uma pág
 
 ![](mvc-music-store-part-4/_static/image6.png)
 
->[!div class="step-by-step"]
-[Anterior](mvc-music-store-part-3.md)
-[Próximo](mvc-music-store-part-5.md)
+> [!div class="step-by-step"]
+> [Anterior](mvc-music-store-part-3.md)
+> [Próximo](mvc-music-store-part-5.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
-title: "Usar o AJAX para implementar o mapeamento de cenários | Microsoft Docs"
+title: Usar o AJAX para implementar o mapeamento de cenários | Microsoft Docs
 author: microsoft
-description: "Etapa 11 mostra como integrar o suporte de mapeamento de AJAX em nosso aplicativo NerdDinner, permitindo que os usuários que estão criando, editando ou exibindo jantares para ver o l..."
+description: Etapa 11 mostra como integrar o suporte de mapeamento de AJAX em nosso aplicativo NerdDinner, permitindo que os usuários que estão criando, editando ou exibindo jantares para ver o l...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: cc55560ce691826b6d52971b16d0515ed73d72a6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b3f1e46886c4c1f054e43768b0a44695d71bf09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>Usar o AJAX para implementar cenários de mapeamento
 ====================
@@ -115,7 +115,7 @@ Para finalizar a implementação de AJAX, vamos adicionar um mapa para a home pa
 
 ![](use-ajax-to-implement-mapping-scenarios/_static/image7.png)
 
-Vamos começar com a implementação de suporte em nossa camada de repositório e banco de dados para executar com eficiência jantares procure radius com base no local. Podemos usar o novo [recursos geoespaciais do SQL 2008](https://www.microsoft.com/sqlserver/2008/en/us/spatial-data.aspx) para implementar isso, ou como alternativa, pode usar uma abordagem de função do SQL Gary Dryden discutida no artigo aqui: [http://www.codeproject.com/KB/cs/ distancebetweenlocations.aspx](http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx) e Rob Conery publicou no blog sobre como usar com LINQ to SQL aqui: [http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/](http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/)
+Vamos começar com a implementação de suporte em nossa camada de repositório e banco de dados para executar com eficiência jantares procure radius com base no local. Podemos usar o novo [recursos geoespaciais do SQL 2008](https://www.microsoft.com/sqlserver/2008/en/us/spatial-data.aspx) para implementar isso, ou como alternativa, pode usar uma abordagem de função do SQL Gary Dryden discutida no artigo aqui: [ http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx ](http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx) e Rob Conery publicou no blog sobre como usar com LINQ to SQL aqui: [http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/](http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/)
 
 Para implementar essa técnica, podemos será abrir o "Gerenciador de servidores" dentro do Visual Studio, selecione NerdDinner banco de dados e, em seguida, clique no nó "funções" sub nele e optar por criar uma novo "função de valor escalar":
 
@@ -193,6 +193,6 @@ Clicando no título de uma refeição em bolha ou no lado direito da lista de HT
 
 Agora, implementamos toda a funcionalidade do aplicativo do nosso aplicativo NerdDinner. Vamos agora examinar como é possível habilitar automatizada unidade teste dele.
 
->[!div class="step-by-step"]
-[Anterior](use-ajax-to-deliver-dynamic-updates.md)
-[Próximo](enable-automated-unit-testing.md)
+> [!div class="step-by-step"]
+> [Anterior](use-ajax-to-deliver-dynamic-updates.md)
+> [Próximo](enable-automated-unit-testing.md)

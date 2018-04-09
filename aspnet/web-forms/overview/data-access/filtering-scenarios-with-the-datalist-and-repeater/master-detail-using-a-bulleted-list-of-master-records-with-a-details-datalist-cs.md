@@ -2,7 +2,7 @@
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs
 title: Mestre/detalhes usando uma lista com marcadores de registros mestre com DataList detalhes (c#) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, será compactar o relatório de duas páginas mestre/detalhes do tutorial anterior em uma única página, mostrando uma lista com marcadores de nomes de categoria em t..."
+description: Neste tutorial, será compactar o relatório de duas páginas mestre/detalhes do tutorial anterior em uma única página, mostrando uma lista com marcadores de nomes de categoria em t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cb943941ea4dbfbdc9230df4598ad406d4dee0b6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c041c352c379dc1d3c0f13013e7e323faa500912
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-c"></a>Mestre/detalhes usando uma lista com marcadores de registros mestre com DataList detalhes (c#)
 ====================
@@ -74,7 +74,7 @@ Depois de adicionar a classe CSS e configurar a marcação no `CategoriesAndProd
 
 Com o s repetidor e DataList ao redor marcação concluída, podemos re pronto para associar os dados de categoria ao repetidor controlar. No entanto, como mostra a lista com marcadores de categorias na Figura 1, além de cada nome de categoria s também precisamos exibir o número de produtos associados à categoria. Para acessar essas informações, pode:
 
-- **Determine essas informações de classe de code-behind da página s ASP.NET.** Dado um determinado  *`categoryID`*  podemos determinar o número de produtos associados ao chamar o `ProductsBLL` classe s `GetProductsByCategoryID(categoryID)` método. Este método retorna um `ProductsDataTable` do objeto cuja `Count` propriedade indica quantos `ProductsRow` s existe, que é o número de produtos para especificado  *`categoryID`* . Podemos criar um `ItemDataBound` manipulador de eventos repetidor que, para cada categoria associada ao repetidor, chama o `ProductsBLL` classe s `GetProductsByCategoryID(categoryID)` método e inclui a contagem na saída.
+- **Determine essas informações de classe de code-behind da página s ASP.NET.** Dado um determinado *`categoryID`* podemos determinar o número de produtos associados ao chamar o `ProductsBLL` classe s `GetProductsByCategoryID(categoryID)` método. Este método retorna um `ProductsDataTable` do objeto cuja `Count` propriedade indica quantos `ProductsRow` s existe, que é o número de produtos para especificado *`categoryID`*. Podemos criar um `ItemDataBound` manipulador de eventos repetidor que, para cada categoria associada ao repetidor, chama o `ProductsBLL` classe s `GetProductsByCategoryID(categoryID)` método e inclui a contagem na saída.
 - **Atualização de `CategoriesDataTable` no conjunto de dados tipado para incluir um `NumberOfProducts` coluna.** Podemos, em seguida, atualizar o `GetCategories()` método o `CategoriesDataTable` para incluir essas informações ou, Alternativamente, deixe `GetCategories()` como-é e criar um novo `CategoriesDataTable` método chamado `GetCategoriesAndNumberOfProducts()`.
 
 Permitir que o s explorar ambas as técnicas. A primeira abordagem é mais simples de implementar, já que estamos não precisa atualizar a camada de acesso de dados; No entanto, ele exige mais comunicações com o banco de dados. A chamada para o `ProductsBLL` classe s `GetProductsByCategoryID(categoryID)` método o `ItemDataBound` manipulador de eventos adiciona uma chamada de banco de dados extra para cada categoria exibida no Repetidor. Com essa técnica, há *N* + chamadas de banco de 1 dados, onde *N* é o número de categorias exibidas no Repetidor. Com a segunda abordagem, a contagem de produto é retornada com informações sobre cada categoria do `CategoriesBLL` classe s `GetCategories()` (ou `GetCategoriesAndNumberOfProducts()`) método, resultando assim em apenas uma viagem ao banco de dados.
@@ -210,7 +210,7 @@ A saída renderizada atualizando a DAL para incluir um `NumberOfProducts` coluna
 
 Neste ponto, temos o `Categories` repetidor exibindo a lista de categorias, juntamente com o número de produtos em cada categoria. Repetidor usa LinkButton para cada categoria que, quando clicado, faz com que uma postagem, em que ponto é necessário para exibir os produtos para a categoria selecionada no `CategoryProducts` DataList.
 
-Um desafio voltada para nós é como ter DataList exibir apenas os produtos para a categoria selecionada. No [mestre/detalhes usando um GridView mestre selecionável com um DetailsView detalhes](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) tutorial vimos como criar um controle GridView cujas linhas pode ser selecionada, com a linha selecionada s detalhes que está sendo exibido em um DetailsView na mesma página. O GridView s ObjectDataSource retornou informações sobre todos os produtos usando a `ProductsBLL` s `GetProducts()` método enquanto a s DetailsView ObjectDataSource recuperar informações sobre o produto selecionado usando o `GetProductsByProductID(productID)` método. O  *`productID`*  o valor do parâmetro foi fornecido declarativamente pelo associá-lo com o valor da s GridView `SelectedValue` propriedade. Infelizmente, repetidor não tem um `SelectedValue` propriedade e não pode servir como uma fonte de parâmetro.
+Um desafio voltada para nós é como ter DataList exibir apenas os produtos para a categoria selecionada. No [mestre/detalhes usando um GridView mestre selecionável com um DetailsView detalhes](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) tutorial vimos como criar um controle GridView cujas linhas pode ser selecionada, com a linha selecionada s detalhes que está sendo exibido em um DetailsView na mesma página. O GridView s ObjectDataSource retornou informações sobre todos os produtos usando a `ProductsBLL` s `GetProducts()` método enquanto a s DetailsView ObjectDataSource recuperar informações sobre o produto selecionado usando o `GetProductsByProductID(productID)` método. O *`productID`* o valor do parâmetro foi fornecido declarativamente pelo associá-lo com o valor da s GridView `SelectedValue` propriedade. Infelizmente, repetidor não tem um `SelectedValue` propriedade e não pode servir como uma fonte de parâmetro.
 
 > [!NOTE]
 > Isso é um dos desafios que aparecem ao usar o LinkButton em um repetidor. Podemos tiver usado um hiperlink para passar o `CategoryID` por meio de querystring em vez disso, podemos usar esse campo QueryString como a origem para o valor do parâmetro s.
@@ -233,7 +233,7 @@ Por enquanto, defina a lista suspensa de origem de parâmetros como None. Termin
 
 [![Faça não especificar uma fonte de parâmetro para o parâmetro categoryID](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image35.png)
 
-**Figura 13**: não especificar uma fonte de parâmetro para o  *`categoryID`*  parâmetro ([clique para exibir a imagem em tamanho normal](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png))
+**Figura 13**: não especificar uma fonte de parâmetro para o *`categoryID`* parâmetro ([clique para exibir a imagem em tamanho normal](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png))
 
 
 Depois de concluir o Assistente Configurar fonte de dados, o Visual Studio gera automaticamente o DataList s `ItemTemplate`. Substituir esse padrão `ItemTemplate` com o modelo usado no tutorial anterior; Além disso, defina o DataList s `RepeatColumns` propriedade para 2. Após fazer essas alterações a marcação declarativa para DataList e seu associado ObjectDataSource deve ser semelhante ao seguinte:
@@ -241,7 +241,7 @@ Depois de concluir o Assistente Configurar fonte de dados, o Visual Studio gera 
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample10.aspx)]
 
-Atualmente, o `CategoryProductsDataSource` ObjectDataSource s  *`categoryID`*  parâmetro nunca é definido para nenhum produto sejam exibido quando a página de exibição. O que precisamos fazer é ter esse valor de parâmetro definido com base no `CategoryID` da categoria clicada no Repetidor. Isso apresenta dois desafios: primeiro, como podemos para determinar quando um LinkButton no repetidor s `ItemTemplate` foi clicado; e o segundo, como podemos determinar a `CategoryID` da categoria correspondente cujo LinkButton foi clicado?
+Atualmente, o `CategoryProductsDataSource` ObjectDataSource s *`categoryID`* parâmetro nunca é definido para nenhum produto sejam exibido quando a página de exibição. O que precisamos fazer é ter esse valor de parâmetro definido com base no `CategoryID` da categoria clicada no Repetidor. Isso apresenta dois desafios: primeiro, como podemos para determinar quando um LinkButton no repetidor s `ItemTemplate` foi clicado; e o segundo, como podemos determinar a `CategoryID` da categoria correspondente cujo LinkButton foi clicado?
 
 LinkButton com os controles de botão e ImageButton tem um `Click` eventos e uma [ `Command` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx). O `Click` evento foi projetado para simplesmente Observe que no LinkButton foi clicado. Às vezes, no entanto, além de observar que o LinkButton clicado também precisamos passar informações extras para o manipulador de eventos. Se esse for o caso, o s LinkButton [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) e [ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) propriedades podem ser atribuídas a essas informações extras. Em seguida, quando você clica no botão LinkButton, seu `Command` evento ser acionado (em vez de seu `Click` eventos) e o manipulador de eventos é passado os valores da `CommandName` e `CommandArgument` propriedades.
 
@@ -296,12 +296,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Zack Jones. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](master-detail-filtering-acess-two-pages-datalist-cs.md)
-[Próximo](master-detail-filtering-with-a-dropdownlist-datalist-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](master-detail-filtering-acess-two-pages-datalist-cs.md)
+> [Próximo](master-detail-filtering-with-a-dropdownlist-datalist-vb.md)

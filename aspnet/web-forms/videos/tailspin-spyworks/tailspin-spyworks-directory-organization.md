@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/tailspin-spyworks/tailspin-spyworks-directory-organization
-title: "Tailspin Spyworks - organização Directory | Microsoft Docs"
+title: Tailspin Spyworks - organização Directory | Microsoft Docs
 author: JoeStagner
-description: "Joe Stagner modifica a estrutura do diretório padrão para o aplicativo de formulários da Web de exemplo Tailspin Spyworks."
+description: Joe Stagner modifica a estrutura do diretório padrão para o aplicativo de formulários da Web de exemplo Tailspin Spyworks.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-directory-organization
 msc.type: video
-ms.openlocfilehash: 72f3b01e082c35d339aa8aa7931f0fae81b23140
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bab21bbde27a11ca268eaed56bfd30023c1e6d34
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tailspin-spyworks---directory-organization"></a>Tailspin Spyworks - organização de diretório
 ====================
@@ -24,8 +24,8 @@ por [Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner modifica a estrutura do diretório padrão para o aplicativo de formulários da Web de exemplo Tailspin Spyworks.
 
-[&#9654; Assista ao vídeo (4 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-directory-organization)
+[&#9654;Assista ao vídeo (4 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-directory-organization)
 
->[!div class="step-by-step"]
-[Anterior](tailspin-spyworks-intro-ui-and-edm.md)
-[Próximo](tailspin-spyworks-category-menu.md)
+> [!div class="step-by-step"]
+> [Anterior](tailspin-spyworks-intro-ui-and-edm.md)
+> [Próximo](tailspin-spyworks-category-menu.md)

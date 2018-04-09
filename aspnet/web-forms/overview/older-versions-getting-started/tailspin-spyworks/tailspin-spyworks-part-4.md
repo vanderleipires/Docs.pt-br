@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 title: 'Parte 4: Lista os produtos | Microsoft Docs'
 author: JoeStagner
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 4 abrange produtos de listagem com contr. o GridView."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 4 abrange produtos de listagem com contr. o GridView.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 420cdbcc002bcbfff619d399a7a374009999d754
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69b26344e6dcdbf27e94da90ad5d6cd79f27ccd3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-4-listing-products"></a>Parte 4: Lista de produtos
 ====================
@@ -27,7 +27,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 > Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo Tailspin Spyworks. Parte 4 abrange a listagem de produtos com o controle GridView.
 
 
-## <a id="_Toc260221670"></a>Lista os produtos com o controle GridView
+## <a id="_Toc260221670"></a>  Lista os produtos com o controle GridView
 
 Vamos começar a implementar nossa página ProductsList.aspx clicando em"direita" em nossa solução e selecionando "Adicionar" e "Novo Item".
 
@@ -100,6 +100,6 @@ Nosso banco de dados contém uma tabela chamada "ShoppingCart". Quando é gerado
 
 Também vale a pena observar que estamos criando um carrinho de compras simple e inserindo a lógica de carrinho de compras com a exibição do carrinho de compras. Podemos também pode optar por implementar nosso carrinho de compras em uma camada de negócios totalmente separada.
 
->[!div class="step-by-step"]
-[Anterior](tailspin-spyworks-part-3.md)
-[Próximo](tailspin-spyworks-part-5.md)
+> [!div class="step-by-step"]
+> [Anterior](tailspin-spyworks-part-3.md)
+> [Próximo](tailspin-spyworks-part-5.md)

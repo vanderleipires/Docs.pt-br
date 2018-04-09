@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
-title: "Criar o perfil e depurar seu aplicativo ASP.NET MVC com prévia | Microsoft Docs"
+title: Criar o perfil e depurar seu aplicativo ASP.NET MVC com prévia | Microsoft Docs
 author: Rick-Anderson
-description: "Visão rápida é um prosperando e aumentando a família de pacotes do NuGet código-fonte aberto que fornece desempenho detalhada, depuração e informações de diagnóstico para o ASP.NET um..."
+description: Visão rápida é um prosperando e aumentando a família de pacotes do NuGet código-fonte aberto que fornece desempenho detalhada, depuração e informações de diagnóstico para o ASP.NET um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6ac23256c57116de81c7bf690d5ce743301c75ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Criar o perfil e depurar seu aplicativo ASP.NET MVC com prévia
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Visão rápida é um prosperando e aumentando a família de pacotes do NuGet código-fonte aberto que fornece desempenho detalhada, depuração e informações de diagnóstico para aplicativos ASP.NET. Ele é simples de instalar, leve, ultrarrápido e exibe as principais métricas de desempenho na parte inferior de cada página. Ele permite que você fazer drill down em seu aplicativo quando você precisa saber o que está acontecendo no servidor. Visão rápida fornece muito valiosas informações, que recomendamos que você pode usá-lo durante o ciclo de desenvolvimento, incluindo o seu ambiente de teste do Azure. Enquanto [Fiddler](http://www.telerik.com/fiddler) e [ferramentas de desenvolvimento F-12](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) fornecem um lado do cliente exibição, a visão rápida fornece uma exibição detalhada do servidor. Este tutorial se concentrará em usando o ASP.NET MVC de amostra e pacotes EF, mas muitos outros pacotes estão disponíveis. Sempre que possível, será vinculado ao apropriado [vislumbrar documentos](http://getglimpse.com/Docs/) que ajudam a manter. Visão rápida é um projeto, você também pode contribuir com o código-fonte e os documentos.
 
@@ -55,7 +55,7 @@ Os comandos a seguir instalam os módulos MVC5 prévia e EF6 do console do Geren
 <a id="eg"></a>
 ## <a name="enable-glimpse-for-localhost"></a>Habilitar prévia para localhost
 
-Navegue até http://localhost:&lt;porta #&gt;/glimpse.axd e clique no **ativar prévia** botão.
+Navegue até http://localhost: &lt;porta #&gt;/glimpse.axd e clique no <strong>ativar prévia</strong> botão.
 
 ![Página de axd prévia](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image4.png)
 
@@ -93,7 +93,7 @@ Você pode focalizar um segmento de tempo para obter informações detalhadas de
 ![Focalize tempo detalhados](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image10.png)
 
 <a id="mb"></a>
-## <a name="model-binding"></a>Associação de modelo
+## <a name="model-binding"></a>Associação de modelos
 
 O [guia modelo de associação](http://getglimpse.com/Docs/Model-Binding-Tab) fornece uma grande quantidade de informações para ajudá-lo a entender como as variáveis de formulário são limitadas e por que alguns não são associados conforme o esperado. A imagem abaixo mostra o **?** ícone, você pode clicar em para abrir a página de ajuda de amostra para esse recurso.
 

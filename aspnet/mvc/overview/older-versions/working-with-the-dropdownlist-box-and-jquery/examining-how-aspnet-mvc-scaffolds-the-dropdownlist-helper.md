@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 title: Examinar como o ASP.NET MVC scaffolds o auxiliar DropDownList | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: abd9b5c09e942b966eb3eaaebe1b315c30b8e0c0
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 09d2d7a0df5e8ffa14160b7d3c16b1e9da905fa1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Examinar como o ASP.NET MVC scaffolds o auxiliar DropDownList
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 Em **Solution Explorer**, com o botão direito do *controladores* pasta e, em seguida, selecione **Adicionar controlador**. Nome do controlador **StoreManagerController**. Definir as opções para o **Adicionar controlador** diálogo conforme mostrado na imagem abaixo.
 
@@ -206,6 +206,6 @@ Alguns desenvolvedores preferem a abordagem de ViewModel. Outros considere a mar
 
 Nesta seção aprendemos três abordagens para usar o **DropDownList** com dados de categoria. Na próxima seção, mostraremos como adicionar uma nova categoria.
 
->[!div class="step-by-step"]
-[Anterior](using-the-dropdownlist-helper-with-aspnet-mvc.md)
-[Próximo](adding-a-new-category-to-the-dropdownlist-using-jquery-ui.md)
+> [!div class="step-by-step"]
+> [Anterior](using-the-dropdownlist-helper-with-aspnet-mvc.md)
+> [Próximo](adding-a-new-category-to-the-dropdownlist-using-jquery-ui.md)

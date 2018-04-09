@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
-title: "Noções básicas sobre os recursos de depuração do ASP.NET AJAX | Microsoft Docs"
+title: Noções básicas sobre os recursos de depuração do ASP.NET AJAX | Microsoft Docs
 author: scottcate
-description: "A capacidade de depurar o código é uma habilidade que todos os desenvolvedores devem ter em seu arsenal independentemente da tecnologia que está sendo usada. Enquanto muitos desenvolvedores..."
+description: A capacidade de depurar o código é uma habilidade que todos os desenvolvedores devem ter em seu arsenal independentemente da tecnologia que está sendo usada. Enquanto muitos desenvolvedores...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 426d0182978faf7fc7516203fcc84ef0152790ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f082e2206f5e691579670e42634f30b57e3b3593
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>Noções básicas sobre os recursos de depuração do ASP.NET AJAX
 ====================
@@ -58,7 +58,7 @@ Figura 1 mostra que o Internet Explorer Avançado da caixa de diálogo deve apar
 
 Depois que a depuração foi ativada, você verá um novo item de menu aparecer no menu de exibição denominado depurador de Script. Ele tem duas opções disponíveis, incluindo aberto e quebra na próxima instrução. Quando abrir é selecionado você será solicitado para a página depuração no Visual Studio 2008 (Observe que o Visual Web Developer Express também pode ser usado para depuração). Se estiver executando o Visual Studio .NET, você pode escolher para usar essa instância ou para criar uma nova instância. Quando a interrupção na próxima instrução é selecionada você será solicitado a depurar a página quando o código JavaScript é executado. Se o código JavaScript é executado no evento onLoad da página, você pode atualizar a página para disparar uma sessão de depuração. Se o código JavaScript é executado depois que um botão é clicado, em seguida, o depurador será executado imediatamente depois que o botão é clicado.
 
-> *>[!NOTE] se você estiver executando no Windows Vista com usuário acesso UAC (controle) habilitado e tiver o Visual Studio 2008 definido para ser executado como um administrador, o Visual Studio falhará ao anexar ao processo quando você for solicitado a anexar. Para contornar esse problema, inicie o Visual Studio e usar essa instância para depurar.*
+> *> [!NOTE] Se você estiver executando no Windows Vista com usuário acesso UAC (controle) habilitado e tiver o Visual Studio 2008 definido para ser executado como um administrador, o Visual Studio falhará anexar ao processo quando você for solicitado a anexar. Para contornar esse problema, inicie o Visual Studio e usar essa instância para depurar.*
 
 
 Embora a próxima seção demonstrará como depurar uma página ASP.NET AJAX diretamente de dentro do Visual Studio 2008, usando a opção de depurador de Script do Internet Explorer é útil quando uma página já está aberta e você gostaria de mais totalmente inspecioná-lo.
@@ -101,7 +101,7 @@ Depois que uma sessão de depuração é iniciada e percorrer o código usando a
 
 Essa caixa de diálogo é mostrada porque o Visual Studio .NET não-se como obter o código-fonte de alguns dos scripts referenciados pela página. Enquanto isso pode ser muito frustrante primeiro, há uma correção simple. Depois de iniciar uma sessão de depuração e um ponto de interrupção, vá para a janela do Gerenciador de Script do Windows de depuração no menu do Visual Studio 2008 ou use a tecla de atalho Ctrl + Alt + N.
 
-> *>[!NOTE] Se você não vir o menu do Gerenciador de Script listado, vá para ferramentas* *personalizar* *comandos no menu do Visual Studio .NET. Localize a entrada de depuração na seção de categorias e clique nele para mostrar todas as entradas de menu disponíveis. Na lista de comandos, role para baixo até o Gerenciador de Script e, em seguida, arraste-o para cima para a depuração* *menu do Windows em mencionado anteriormente. Isso disponibilizará a entrada de menu do Gerenciador de Script toda vez que executar o Visual Studio .NET.*
+> *> [!NOTE] Se você não vir o menu do Gerenciador de Script listado, vá para ferramentas* *personalizar* *comandos no menu do Visual Studio .NET. Localize a entrada de depuração na seção de categorias e clique nele para mostrar todas as entradas de menu disponíveis. Na lista de comandos, role para baixo até o Gerenciador de Script e, em seguida, arraste-o para cima para a depuração* *menu do Windows em mencionado anteriormente. Isso disponibilizará a entrada de menu do Gerenciador de Script toda vez que executar o Visual Studio .NET.*
 
 
 O Gerenciador de Script pode ser usado para exibir todos os scripts usados em uma página e abri-los no editor de códigos. Quando o Gerenciador de Script é aberto, clique duas vezes na página. aspx sendo depurada no momento para abri-lo na janela do editor de código. Execute a mesma ação para todos os outros scripts mostrados no Gerenciador de Script. Depois que todos os scripts estão abertos na janela de código, você pode pressione F11 (e use as outras teclas de atalho de depuração) para depurar seu código. A Figura 3 mostra um exemplo do Gerenciador de Script. Ele lista o arquivo atual que está sendo depurado (Demo.aspx), bem como dois scripts personalizados e dois scripts injetadas dinamicamente a página, o ASP.NET AJAX ScriptManager.
@@ -116,11 +116,11 @@ Várias outras windows também podem ser usados para fornecer informações úte
 
 Conforme você avança através do código usando o depurador pode passar o mouse sobre as variáveis no código para exibir o valor que são atribuídos. No entanto, o depurador de scripts ocasionalmente não mostrará nada que você passe o mouse sobre uma variável JavaScript. Para ver o valor, realce a instrução ou a variável que você está tentando ver na janela do editor de código e, em seguida, passe o mouse sobre ele. Embora essa técnica não funciona em todas as situações, muitas vezes você poderá ver o valor sem precisar consultar em uma janela de depuração diferente como a janela locais.
 
-Um tutorial em vídeo demonstrando alguns dos recursos discutidos aqui pode ser exibido no [http://www.xmlforasp.net](http://www.xmlforasp.net).
+Um tutorial em vídeo demonstrando alguns dos recursos discutidos aqui pode ser exibido no [ http://www.xmlforasp.net ](http://www.xmlforasp.net).
 
 ## <a name="debugging-with-web-development-helper"></a>Depurando com o auxiliar de desenvolvimento da Web
 
-Embora o Visual Studio 2008 (e o Visual Web Developer Express 2008) são muito compatíveis com as ferramentas de depuração, há opções adicionais que podem ser usadas também que são mais leve. Uma das ferramentas mais recentes sejam liberados é o auxiliar de desenvolvimento da Web. Nikhil Kothari da Microsoft (um dos arquitetos de ASP.NET AJAX chave da Microsoft) gravou esta ferramenta excelente que pode executar muitas tarefas diferentes de depuração simples para exibir mensagens de solicitação e resposta HTTP. Auxiliar de desenvolvimento da Web pode ser baixado em [http://projects.nikhilk.net/Projects/WebDevHelper.aspx](http://projects.nikhilk.net/Projects/WebDevHelper.aspx).
+Embora o Visual Studio 2008 (e o Visual Web Developer Express 2008) são muito compatíveis com as ferramentas de depuração, há opções adicionais que podem ser usadas também que são mais leve. Uma das ferramentas mais recentes sejam liberados é o auxiliar de desenvolvimento da Web. Nikhil Kothari da Microsoft (um dos arquitetos de ASP.NET AJAX chave da Microsoft) gravou esta ferramenta excelente que pode executar muitas tarefas diferentes de depuração simples para exibir mensagens de solicitação e resposta HTTP. Auxiliar de desenvolvimento da Web pode ser baixado em [ http://projects.nikhilk.net/Projects/WebDevHelper.aspx ](http://projects.nikhilk.net/Projects/WebDevHelper.aspx).
 
 Auxiliar de desenvolvimento da Web pode ser usado diretamente no Internet Explorer, que é conveniente usar. Ele é iniciado, selecionando o auxiliar de desenvolvimento de Web de ferramentas do menu do Internet Explorer. Isso abrirá a ferramenta na parte inferior do navegador que é bom, pois você não precisa sair do navegador para executar várias tarefas, como o log de mensagem de solicitação e resposta HTTP. A Figura 4 mostra a aparência de auxiliar de desenvolvimento da Web em ação.
 
@@ -201,11 +201,11 @@ O Visualizador de Log HTTP automaticamente analisa objetos JSON e exibe-os usand
 **Figura 8**: mensagem de resposta de um UpdatePanel exibido usando o Visualizador de Log HTTP.  ([Clique para exibir a imagem em tamanho normal](understanding-asp-net-ajax-debugging-capabilities/_static/image24.png))
 
 
-Há várias outras ferramentas que podem ser usadas para exibir mensagens de solicitação e resposta, além de auxiliar de desenvolvimento da Web. Outra boa opção é o Fiddler, que está disponível gratuitamente no [http://www.fiddlertool.com](http://www.fiddlertool.com). Embora o Fiddler não será discutido aqui, também é uma boa opção quando você precisa Inspecione os cabeçalhos de mensagem e dados.
+Há várias outras ferramentas que podem ser usadas para exibir mensagens de solicitação e resposta, além de auxiliar de desenvolvimento da Web. Outra boa opção é o Fiddler, que está disponível gratuitamente no [ http://www.fiddlertool.com ](http://www.fiddlertool.com). Embora o Fiddler não será discutido aqui, também é uma boa opção quando você precisa Inspecione os cabeçalhos de mensagem e dados.
 
 ## <a name="debugging-with-firefox-and-firebug"></a>Depurando com o Firefox e Firebug
 
-Enquanto o Internet Explorer ainda é o navegador mais amplamente usado, outros navegadores como Firefox se tornou bastante populares e estão sendo usados mais. Como resultado, você desejará exibir e depurar suas páginas ASP.NET AJAX no Firefox, bem como Internet Explorer para garantir que seus aplicativos funcionem corretamente. Embora o Firefox não é possível vincular diretamente no Visual Studio 2008 para depuração, ele tem uma extensão chamada Firebug que pode ser usado para depurar páginas. Firebug pode ser baixado gratuitamente acessando [http://www.getfirebug.com](http://www.getfirebug.com).
+Enquanto o Internet Explorer ainda é o navegador mais amplamente usado, outros navegadores como Firefox se tornou bastante populares e estão sendo usados mais. Como resultado, você desejará exibir e depurar suas páginas ASP.NET AJAX no Firefox, bem como Internet Explorer para garantir que seus aplicativos funcionem corretamente. Embora o Firefox não é possível vincular diretamente no Visual Studio 2008 para depuração, ele tem uma extensão chamada Firebug que pode ser usado para depurar páginas. Firebug pode ser baixado gratuitamente acessando [ http://www.getfirebug.com ](http://www.getfirebug.com).
 
 Firebug fornece um ambiente de depuração completo que pode ser usado para percorrer o código linha por linha, acessar todos os scripts usados em uma página, exibir estruturas de DOM, exibir estilos CSS e até mesmo rastreia eventos que ocorrem em uma página. Uma vez instalado, Firebug pode ser acessado selecionando Ferramentas Firebug abrir Firebug no menu Firefox. Como auxiliar de desenvolvimento da Web, Firebug é usado diretamente no navegador, embora também possa ser usado como um aplicativo autônomo.
 
@@ -349,11 +349,11 @@ Tecnologia de ASP.NET AJAX da Microsoft fornece uma base sólida para a criaçã
 
 Neste artigo, você já foi apresentado para várias técnicas diferentes para depuração de páginas de ASP.NET AJAX, incluindo o Internet Explorer com o Visual Studio 2008, o auxiliar de desenvolvimento da Web e o Firebug. Essas ferramentas podem simplificar o processo geral de depuração, desde que você pode acessar dados da variável, percorrer o código linha por linha e exibir as instruções de rastreamento. Além das ferramentas de depuração diferentes discutidas, você também viu como classe de sys. Debug da biblioteca ASP.NET AJAX pode ser usado em um aplicativo e como a classe de ScriptManager pode ser usada para carregar depurar ou lançar versões de scripts.
 
-## <a name="bio"></a>Biografia do
+## <a name="bio"></a>Bio
 
 Dan Wahlin (Microsoft Most Valuable Professional para ASP.NET e XML Web Services) é um consultor .NET de instrutor e arquitetura de desenvolvimento no treinamento de Interface ([www.interfacett.com)](http://www.interfacett.com). Dan fundada o XML para o site da Web de desenvolvedores do ASP.NET ([www.XMLforASP.NET](http://www.XMLforASP.NET)), está em agência no apresentador INETA e participa de várias conferências. Dan autoria conjunta Professional Windows DNA (Wrox), ASP.NET: dicas, tutoriais e código (Sams), ASP.NET 1.1 Insider soluções, Professional ASP.NET 2.0 AJAX (Wrox), ASP.NET 2.0 MVP experimenta e XML criado para desenvolvedores do ASP.NET (Sams). Quando ele não está escrevendo código, artigos ou manuais, Dan gosta de escrever e música de gravação e execução Golfe e basquete com sua mulher e filhos.
 
 Scott Cate trabalha com tecnologias Microsoft Web desde 1997 e é presidente da myKB.com ([www.myKB.com](http://www.myKB.com)) onde ele é especializada em escrever ASP.NET com base em aplicativos voltados para soluções de Software da Base de dados de Conhecimento. Scott pode ser contatado via email em [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) ou em seu blog [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Anterior](understanding-asp-net-ajax-web-services.md)
+> [!div class="step-by-step"]
+> [Anterior](understanding-asp-net-ajax-web-services.md)

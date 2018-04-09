@@ -2,7 +2,7 @@
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 title: Criar um Farm de servidores com o Framework do Web Farm | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como usar o Web Farm Framework (WFF) 2.0 para criar e configurar um farm de servidores web de uma coleção de servidores."
+description: Este tópico descreve como usar o Web Farm Framework (WFF) 2.0 para criar e configurar um farm de servidores web de uma coleção de servidores.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: c592ed78a7332834923ce2290af77919fb3c7576
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 53a91660953795f2c55edcd795b053641d308dfe
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-server-farm-with-the-web-farm-framework"></a>Criar um Farm de servidores com o Framework do Web Farm
 ====================
@@ -27,7 +27,7 @@ por [Jason Lee](https://github.com/jrjlee)
 > Este tópico descreve como usar o Web Farm Framework (WFF) 2.0 para criar e configurar um farm de servidores web de uma coleção de servidores.
 
 
-WFF permite sincronizar os produtos de plataforma da web e componentes, aplicativos web, sites e configurações em vários servidores web com balanceamento de carga. Em cenários em que você precisa de mais de um servidor web, como ambientes de preparo e produção, isso pode simplificar consideravelmente o processo de implantação e configuração. Você pode implantar um aplicativo da web como um único servidor & #x 2014; o *servidor primário*& #x 2014; e serão WFF replica automaticamente esse aplicativo web em todos os outros servidores de web no farm de servidores.
+WFF permite sincronizar os produtos de plataforma da web e componentes, aplicativos web, sites e configurações em vários servidores web com balanceamento de carga. Em cenários em que você precisa de mais de um servidor web, como ambientes de preparo e produção, isso pode simplificar consideravelmente o processo de implantação e configuração. Você pode implantar um aplicativo web em um único servidor&#x2014;o *servidor primário*&#x2014;e WFF serão replicadas automaticamente esse aplicativo web em todos os outros servidores de web no farm de servidores.
 
 ## <a name="understanding-the-web-farm-framework"></a>Noções básicas sobre a estrutura do Web Farm
 
@@ -51,7 +51,7 @@ Antes de começar a configurar seus ambientes de preparo e de produção, recome
 
 ## <a name="task-overview"></a>Visão geral da tarefa
 
-Para concluir as tarefas e instruções passo a passo neste tópico, você precisará de pelo menos três servidores & #x 2014; um controlador WFF, um principal servidor web para o farm de servidores e um ou mais servidores web secundário para o farm de servidores. Você pode adicionar mais servidores secundários a um farm de servidores WFF a qualquer momento. Em um nível alto, para criar e configurar um farm de servidores WFF para seu ambiente de preparo ou de produção, que você precisará:
+Para concluir as tarefas e instruções passo a passo neste tópico, você precisará de pelo menos três servidores&#x2014;um controlador WFF, um servidor web principal para o farm de servidores e um ou mais servidores web secundário para o farm de servidores. Você pode adicionar mais servidores secundários a um farm de servidores WFF a qualquer momento. Em um nível alto, para criar e configurar um farm de servidores WFF para seu ambiente de preparo ou de produção, que você precisará:
 
 - Crie um servidor do controlador, instalando os serviços de informações da Internet (IIS) 7.5 e WFF 2.0.
 - Prepare servidores primário e secundário, criando uma conta de administrador comum e configurando as exceções de firewall.
@@ -78,7 +78,7 @@ Para criar um servidor do controlador WFF, você precisará instalar o IIS 7 ou 
 2. Na parte superior do **Web Platform Installer 3.0** janela, clique em **produtos**.
 3. No lado esquerdo da janela, no painel de navegação, clique em **Server**.
 4. No **configuração recomendada do IIS 7** de linha, clique em **adicionar**.
-5. No **Web Farm Framework 2. * * * x* de linha, clique em **adicionar**.
+5. No <strong>Web Farm Framework 2.</strong> <em>x</em> de linha, clique em <strong>adicionar</strong>.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image2.png)
 6. Clique em **Instalar**. Observe que o Web Platform Installer adicionou a ferramenta de implantação da Web, juntamente com várias outras dependências, na lista de instalação.
@@ -96,7 +96,7 @@ Antes de criar um farm de servidores WFF, você deve concluir algumas tarefas de
 
 Para obter mais informações sobre como configurar essas exceções de firewall no Firewall do Windows, consulte [sistema e requisitos de plataforma para a Web Farm Framework 2.0 para IIS 7](https://go.microsoft.com/?linkid=9805128). Para outros sistemas de firewall, consulte a documentação do produto.
 
-Você pode usar o procedimento a seguir para adicionar uma conta de domínio ao grupo Administradores local no Windows Server 2008 R2. Você deve executar esse procedimento em cada servidor que você deseja adicionar como o farm de servidores & #x 2014; em outras palavras, adicionar a mesma conta de domínio ao grupo Administradores local no servidor primário e em cada servidor secundário.
+Você pode usar o procedimento a seguir para adicionar uma conta de domínio ao grupo Administradores local no Windows Server 2008 R2. Você deve executar esse procedimento em cada servidor que você deseja adicionar ao farm de servidores&#x2014;em outras palavras, adicionar a mesma conta de domínio ao grupo Administradores local no servidor primário e em cada servidor secundário.
 
 **Para adicionar uma conta de domínio ao grupo de administradores locais**
 
@@ -111,7 +111,7 @@ Você pode usar o procedimento a seguir para adicionar uma conta de domínio ao 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image5.png)
 6. No **propriedades de administradores** caixa de diálogo, clique em **Okey**.
 
-Os servidores agora estão prontos para ser adicionado a um farm de servidores. No caso do servidor primário, você pode configurar o servidor para atender aos requisitos de seu aplicativo antes ou depois de criar o farm de servidores & #x 2014; em ambos os casos, o WFF sincronizará os servidores implantando os mesmos produtos, componentes, ou configuração para os servidores secundários. Para simplificar, este tutorial presume que você vai configurar o servidor primário quando terminar de criar o farm de servidores.
+Os servidores agora estão prontos para ser adicionado a um farm de servidores. No caso do servidor primário, você pode configurar o servidor para atender aos requisitos de seu aplicativo antes ou depois de criar o farm de servidores&#x2014;em ambos os casos, o WFF sincronizará os servidores ao implantar o mesmo produtos, componentes ou a configuração para os servidores secundários. Para simplificar, este tutorial presume que você vai configurar o servidor primário quando terminar de criar o farm de servidores.
 
 ## <a name="create-the-wff-server-farm"></a>Criar o Farm de servidores WFF
 
@@ -225,12 +225,12 @@ Você pode monitorar a integridade do seu farm de servidores a qualquer momento 
 
 ## <a name="conclusion"></a>Conclusão
 
-Seu farm de servidores WFF agora deve estar em execução. Você pode configurar o servidor primário para dar suporte a qualquer abordagem de implantação que você preferir & #x 2014; consulte a seção de leitura adicional para obter detalhes & #x 2014; e a configuração será replicado em cada servidor secundário no farm de servidores.
+Seu farm de servidores WFF agora deve estar em execução. Você pode configurar o servidor primário para dar suporte a abordagem de implantação que você preferir&#x2014;consulte a seção de leitura adicional para obter detalhes&#x2014;e sua configuração será replicada em cada servidor secundário no farm de servidores.
 
 ## <a name="further-reading"></a>Leitura adicional
 
 Para obter mais diretrizes sobre todos os aspectos de como configurar e usar o WFF, consulte o [Microsoft Web Farm Framework 2.0 para IIS 7](https://go.microsoft.com/?linkid=9805129) site.
 
->[!div class="step-by-step"]
-[Anterior](configuring-a-database-server-for-web-deploy-publishing.md)
-[Próximo](configuring-deployment-properties-for-a-target-environment.md)
+> [!div class="step-by-step"]
+> [Anterior](configuring-a-database-server-for-web-deploy-publishing.md)
+> [Próximo](configuring-deployment-properties-for-a-target-environment.md)

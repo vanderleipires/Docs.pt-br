@@ -2,7 +2,7 @@
 uid: web-forms/overview/moving-to-aspnet-20/caching
 title: Cache | Microsoft Docs
 author: microsoft
-description: "Um entendimento de cache é importante para um aplicativo ASP.NET bom desempenho. ASP.NET 1. x oferecidos três opções diferentes para armazenamento em cache; o cache de saída,..."
+description: Um entendimento de cache é importante para um aplicativo ASP.NET bom desempenho. ASP.NET 1. x oferecidos três opções diferentes para armazenamento em cache; o cache de saída,...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 9b229de60e09b94189f62a6bb6fa61a9973d637b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 90faaae75cc85585efa05e6e50eabe8c990d076e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching"></a>Cache
 ====================
@@ -59,7 +59,7 @@ Para invalidar o item que foi inserido acima, basta remova o item que foi inseri
 
 Observe que a chave do item que atua como a chave de cache deve ser o mesmo que o valor adicionado ao conjunto de chaves de cache.
 
-## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>Dependências de Cache de SQL com base em sondagem*(também chamado de dependências com base em tabela)*
+## <a name="polling-based-sql-cache-dependenciesemalso-called-table-based-dependenciesem"></a>Dependências de Cache de SQL com base em sondagem<em>(também chamado de dependências com base em tabela)</em>
 
 SQL Server 7 e 2000 usar o modelo de sondagem para dependências de cache SQL. O modelo baseado em pesquisa usa um gatilho em uma tabela de banco de dados que é disparada quando alterar dados na tabela. Que devem disparar atualizações um **changeId** campo na tabela de notificação que o ASP.NET verifica periodicamente. Se o **changeId** campo foi atualizado, o ASP.NET sabe que os dados foram alterados e invalida os dados armazenados em cache.
 
@@ -237,12 +237,13 @@ Os atributos a seguir estão disponíveis no &lt;cache&gt; elemento:
 
 Os seguintes atributos estão disponíveis para o &lt;outputCache&gt; elemento.
 
-| **Atributo** | **Descrição** |
-| --- | --- |
-| **enableOutputCache** | Opcional **booliano** atributo. Habilita/desabilita o cache de saída de página. Se desabilitada, nenhuma página é armazenados em cache independentemente das configurações de declarativa ou por programação. Valor padrão é **true**. |
-| **enableFragmentCache** | Opcional **booliano** atributo. Habilita/desabilita o cache de fragmento do aplicativo. Se desabilitada, nenhuma página é armazenados em cache independentemente do [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) diretiva ou cache perfil usado. Inclui um cabeçalho cache-control indicando que os servidores proxy upstream, bem como os clientes de navegador não devem tentar saída de página do cache. Valor padrão é **false**. |
-| **sendCacheControlHeader** | Opcional **booliano** atributo. Obtém ou define um valor que indica se o **cache-controle: privada** cabeçalho é enviado pelo módulo de cache de saída por padrão. Valor padrão é **false**. |
-| **omitVaryStar** | Opcional **booliano** atributo. Habilita/desabilita o envio de um Http "**Vary: \*** " cabeçalho na resposta. Com a configuração padrão de false, um "**Vary: \*** " cabeçalho é enviado para páginas de saída em cache. Quando o cabeçalho Vary é enviado, ele permite para diferente versões sejam armazenados em cache com base no que é especificado no cabeçalho Vary. Por exemplo, *Vary: usuário-agentes* irá armazenar versões diferentes de uma página com base no agente do usuário que emite a solicitação. Valor padrão é **false**. |
+
+|       <strong>Atributo</strong>        |                                                                                                                                                                                                                                                       <strong>Descrição</strong>                                                                                                                                                                                                                                                       |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   <strong>enableOutputCache</strong>    |                                                                                                                                                          Opcional <strong>booliano</strong> atributo. Habilita/desabilita o cache de saída de página. Se desabilitada, nenhuma página é armazenados em cache independentemente das configurações de declarativa ou por programação. Valor padrão é <strong>true</strong>.                                                                                                                                                           |
+|  <strong>enableFragmentCache</strong>   |                                                Opcional <strong>booliano</strong> atributo. Habilita/desabilita o cache de fragmento do aplicativo. Se desabilitada, nenhuma página é armazenados em cache independentemente do [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) diretiva ou cache perfil usado. Inclui um cabeçalho cache-control indicando que os servidores proxy upstream, bem como os clientes de navegador não devem tentar saída de página do cache. Valor padrão é <strong>false</strong>.                                                 |
+| <strong>sendCacheControlHeader</strong> |                                                                                                                                                      Opcional <strong>booliano</strong> atributo. Obtém ou define um valor que indica se o <strong>cache-controle: privada</strong> cabeçalho é enviado pelo módulo de cache de saída por padrão. Valor padrão é <strong>false</strong>.                                                                                                                                                      |
+|      <strong>omitVaryStar</strong>      | Opcional <strong>booliano</strong> atributo. Habilita/desabilita o envio de um Http "<strong>Vary: \</ strong ><em>" cabeçalho na resposta. Com a configuração padrão de false, um "</em>* Vary: \* <strong>" cabeçalho é enviado para páginas de saída em cache. Quando o cabeçalho Vary é enviado, ele permite para diferente versões sejam armazenados em cache com base no que é especificado no cabeçalho Vary. Por exemplo, <em>Vary: usuário-agentes</em> irá armazenar versões diferentes de uma página com base no agente do usuário que emite a solicitação. Valor padrão é * * false</strong>. |
 
 ### <a name="the-ltoutputcachesettingsgt-element"></a>O &lt;outputCacheSettings&gt; elemento
 
@@ -257,7 +258,7 @@ Os seguintes atributos estão disponíveis para o &lt;sqlCacheDependency&gt; ele
 | **enabled** | Necessário **booliano** atributo. Indica se as alterações estão sendo pesquisadas para. |
 | **pollTime** | Opcional **Int32** atributo. Define a frequência com que o SqlCacheDependency pesquisa a tabela de banco de dados de alterações. Esse valor corresponde ao número de milissegundos entre pollings sucessivas. Ele não pode ser definido para menos de 500 milissegundos. Valor padrão é 1 minuto. |
 
-### <a name="more-information"></a>Mais informações
+### <a name="more-information"></a>Mais Informações
 
 Há algumas informações adicionais que você deve conhecer sobre a configuração de cache.
 

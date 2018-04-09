@@ -2,7 +2,7 @@
 uid: mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 title: Acessando dados do modelo de um controlador | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d3dfa079c334e04f368531456ec2ec4e9728f893
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>Acessando dados do modelo de um controlador
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 Nesta seção, você criará um novo `MoviesController` classe e gravar o código que recupera os dados do filme e o exibe no navegador usando um modelo de exibição.
 
@@ -40,7 +40,7 @@ No **adicionar Scaffold** caixa de diálogo, clique em **controlador MVC 5 com m
 - Selecione **MovieDBContext (MvcMovie.Models)** para a classe de contexto de dados.
 - Para o nome do controlador, digite **MoviesController**.
 
- A imagem abaixo mostra a caixa de diálogo concluída.  
+  A imagem abaixo mostra a caixa de diálogo concluída.  
   
 ![](accessing-your-models-data-from-a-controller/_static/image3.png)   
 
@@ -64,7 +64,7 @@ Selecione o link **Criar Novo**. Insira alguns detalhes sobre um filme e, em seg
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
 > [!NOTE]
-> Você não poderá inserir pontos decimais ou vírgulas no campo preço. Para dar suporte a validação jQuery para idiomas diferentes do inglês que usam uma vírgula (&quot;,&quot;) para um ponto decimal e formatos de data diferente do inglês dos EUA, você deve incluir *globalize.js* e específicos  *cultures/globalize.cultures.js* arquivo (de [https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) e JavaScript para usar `Globalize.parseFloat`. Mostrarei como fazer isso no tutorial Avançar. Por enquanto, insira apenas números inteiros como 10.
+> Você não poderá inserir pontos decimais ou vírgulas no campo preço. para dar suporte a validação jQuery para idiomas diferentes do inglês que usam uma vírgula (&quot;,&quot;) para um ponto decimal e formatos de data diferente do inglês dos EUA, você deve incluir *globalize.js* e específicos  *cultures/globalize.cultures.js* arquivo (de [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) e JavaScript para usar `Globalize.parseFloat`. Mostrarei como fazer isso no tutorial Avançar. Por enquanto, insira apenas números inteiros como 10.
 
 
 Clique o **criar** botão faz com que o formulário seja enviado para o servidor, onde as informações de filme é salvo no banco de dados. Em seguida, você será redirecionado para a */Movies* URL, onde você pode ver o filme recém-criado na lista.
@@ -157,6 +157,6 @@ Quando tiver terminado, feche a conexão com um clique direito *MovieDBContext* 
 
 Agora você tem um banco de dados e páginas para exibir, editar, atualizar e excluir dados. O seguinte tutorial, vamos examinar o restante do código scaffolding e adicionar um `SearchIndex` método e uma `SearchIndex` modo de exibição que permite que você pesquise filmes neste banco de dados. Para obter mais informações sobre como usar o Entity Framework com MVC, consulte [criando um modelo de dados do Entity Framework para um aplicativo ASP.NET MVC](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
->[!div class="step-by-step"]
-[Anterior](creating-a-connection-string.md)
-[Próximo](examining-the-edit-methods-and-edit-view.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-a-connection-string.md)
+> [Próximo](examining-the-edit-methods-and-edit-view.md)

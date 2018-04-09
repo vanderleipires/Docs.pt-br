@@ -2,29 +2,29 @@
 uid: identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 title: Desenvolvimento de aplicativos ASP.NET com o Active Directory do Azure | Microsoft Docs
 author: Rick-Anderson
-description: "Ferramentas do Microsoft ASP.NET para Active Directory do Azure simplifica a habilitar a autenticação para aplicativos web hospedados no Azure. Você pode usar o Azure Autenti..."
+description: Ferramentas do Microsoft ASP.NET para Active Directory do Azure simplifica a habilitar a autenticação para aplicativos web hospedados no Azure. Você pode usar o Azure Autenti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2014
 ms.topic: article
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 1ef0468d5f5c17480b23ac88983f30fe6f4979c0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 44bf29e099583bf9d49f2715d3ff4f748728ad8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>Desenvolvimento de aplicativos ASP.NET com o Active Directory do Azure
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Microsoft ASP.NET ferramentas para Active Directory do Azure torna simples para habilitar a autenticação para aplicativos web hospedados no [Azure](https://www.windowsazure.com/home/features/web-sites/). Você pode usar a autenticação do Azure para autenticar usuários do Office 365 da sua organização, as contas corporativas sincronizadas do Active Directory local ou os usuários criados no seu próprio domínio personalizado do Active Directory do Azure. Habilitar a autenticação do Windows Azure configura seu aplicativo para autenticar usuários usando uma única [Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/) locatário.
 > 
->  Este tutorial foi escrito de Rick Anderson[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
+>  Este tutorial foi escrito de Rick Anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 
 
 Este tutorial mostra como criar um aplicativo ASP.NET que está configurado para logon com [Active Directory do Azure](https://msdn.microsoft.com/library/azure/mt168838.aspx) (AD do Azure). Você também aprenderá como chamar a API do Graph para obter informações sobre o usuário conectado no momento e como implantar o aplicativo no Azure.
@@ -52,7 +52,7 @@ Este tutorial mostra como criar um aplicativo ASP.NET que está configurado para
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image4.png)  
   
- Salvar a senha, será necessário alterar a senha após o primeiro logon. A imagem a seguir mostra a nova conta de administrador. Você deve usar o Active Directory do Azure para fazer logon em seu aplicativo, não a conta da Microsoft também mostrado nesta página.  
+   Salvar a senha, será necessário alterar a senha após o primeiro logon. A imagem a seguir mostra a nova conta de administrador. Você deve usar o Active Directory do Azure para fazer logon em seu aplicativo, não a conta da Microsoft também mostrado nesta página.  
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image5.png)
 
@@ -65,11 +65,11 @@ Use as etapas a seguir [Visual Studio Express 2013 para Web](https://www.microso
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image6.png)
 3. Sobre o **alterar autenticação** caixa de diálogo, selecione **contas organizacionais**. Essas opções podem ser usadas para registrar automaticamente o aplicativo no AD do Azure, bem como configurar automaticamente seu aplicativo para integrar com o AD do Azure. Você não precisa usar o **alterar autenticação** caixa de diálogo para registrar e configurar seu aplicativo, mas ele torna muito mais fácil. Se você estiver usando o Visual Studio 2012, por exemplo, você pode manualmente registrar o aplicativo no Portal de gerenciamento do Azure e atualize sua configuração para integrar com o Azure AD.  
- No menu suspenso, selecione **nuvem - única organização** e **logon único, ler dados do diretório**. Digite o domínio do seu diretório do AD do Azure, por exemplo (nas imagens abaixo) *aricka0yahoo.onmicrosoft.com*e, em seguida, clique em **Okey**. Você pode obter o nome de domínio da guia domínios para o diretório padrão no portal do azure (consulte a próxima imagem para baixo).   
+   No menu suspenso, selecione **nuvem - única organização** e **logon único, ler dados do diretório**. Digite o domínio do seu diretório do AD do Azure, por exemplo (nas imagens abaixo) *aricka0yahoo.onmicrosoft.com*e, em seguida, clique em **Okey**. Você pode obter o nome de domínio da guia domínios para o diretório padrão no portal do azure (consulte a próxima imagem para baixo).   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image7.png)  
   
- A imagem a seguir mostra o nome de domínio do portal do Azure.  
+   A imagem a seguir mostra o nome de domínio do portal do Azure.  
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image8.png)  
 
@@ -94,11 +94,11 @@ Use as etapas a seguir [Visual Studio Express 2013 para Web](https://www.microso
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image13.png)  
   
- Se você obtiver o erro:  
- Valor não pode ser nulo ou vazio. Nome do parâmetro: linkText   
+   Se você obtiver o erro:  
+   Valor não pode ser nulo ou vazio. Nome do parâmetro: linkText   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image14.png)  
   
- Consulte o [depurar](#dbg) seção no final do tutorial.
+   Consulte o [depurar](#dbg) seção no final do tutorial.
 
 ## <a name="basics-of-the-graph-api"></a>Noções básicas sobre a API do Graph
 

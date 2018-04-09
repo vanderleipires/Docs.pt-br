@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
 title: Recuperando e alterar senhas (c#) | Microsoft Docs
 author: rick-anderson
-description: "O ASP.NET inclui dois controles da Web para ajudar com a recuperação e a alteração de senhas. O controle PasswordRecovery habilita um visitante recuperar seu pa perdido..."
+description: O ASP.NET inclui dois controles da Web para ajudar com a recuperação e a alteração de senhas. O controle PasswordRecovery habilita um visitante recuperar seu pa perdido...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 76c02a3da7dffad25a7bee03efff6b693f261d85
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7f8b019631eff4840bf1759f8e2752946abcaf80
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="recovering-and-changing-passwords-c"></a>Recuperando e alterar senhas (c#)
 ====================
@@ -86,7 +86,7 @@ Antes de você testa esta página, há uma parte final da configuração para te
 A configuração de entrega de email for especificada por meio de [ `<system.net>` elemento](https://msdn.microsoft.com/library/6484zdc1.aspx)do [ `<mailSettings>` elemento](https://msdn.microsoft.com/library/w355a94k.aspx). Use o [ `<smtp>` elemento](https://msdn.microsoft.com/library/ms164240.aspx) para indicar o método de entrega e o padrão de endereço. A seguinte marcação define as configurações de email para usar um servidor de rede SMTP chamado `smtp.example.com` na porta 25 e com as credenciais de nome de usuário e senha de usuário e senha.
 
 > [!NOTE]
-> `<system.net>`é um elemento filho da raiz `<configuration>` elemento e um irmão de `<system.web>`. Portanto, não coloque o `<system.net>` elemento dentro do `<system.web>` elemento; em vez disso, coloque-o no mesmo nível.
+> `<system.net>` é um elemento filho da raiz `<configuration>` elemento e um irmão de `<system.web>`. Portanto, não coloque o `<system.net>` elemento dentro do `<system.web>` elemento; em vez disso, coloque-o no mesmo nível.
 
 
 [!code-xml[Main](recovering-and-changing-passwords-cs/samples/sample1.xml)]
@@ -125,7 +125,7 @@ Volte para o site e faça logon usando as informações a seguir.
 
 Nome de usuário: *nome de usuário*
 
-senha: *senha*
+Senha: *senha*
 
 Essa mensagem pode ser personalizada programaticamente por meio de um manipulador de eventos do controle PasswordRecovery [ `SendingMail` evento](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.sendingmail.aspx), ou declarativamente por meio de [ `MailDefinition` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.maildefinition.aspx). Vamos explorar essas duas opções.
 
@@ -165,8 +165,8 @@ O `MailDefinition` propriedade não é exclusiva para a classe PasswordRecovery.
 
 Quando redefinir uma senha de usuário a PasswordRecovery controlar chamadas de `MembershipUser` do objeto [ `ResetPassword` método](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx). Esse método tem duas sobrecargas:
 
-- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)**-Redefine a senha do usuário. Use essa sobrecarga se `RequiresQuestionAndAnswer` é False.
-- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)**-Redefine se somente de senha do usuário fornecido *securityAnswer* está correto. Use essa sobrecarga se `RequiresQuestionAndAnswer` for True.
+- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)** -Redefine a senha do usuário. Use essa sobrecarga se `RequiresQuestionAndAnswer` é False.
+- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)** -Redefine se somente de senha do usuário fornecido *securityAnswer* está correto. Use essa sobrecarga se `RequiresQuestionAndAnswer` for True.
 
 As duas sobrecargas retornam a nova senha gerada aleatoriamente.
 
@@ -300,16 +300,16 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Início rápido do controle de alteração de senha](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/changepassword.aspx)
 - [Início rápido do controle PasswordRecovery](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/passwordrecovery.aspx)
 - [Enviar o Email no ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
-- [`System.Net.Mail`Perguntas frequentes](http://www.systemnetmail.com/)
+- [`System.Net.Mail` Perguntas frequentes](http://www.systemnetmail.com/)
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
-Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial incluem Michael Emmings e Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial incluem Michael Emmings e Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](building-an-interface-to-select-one-user-account-from-many-cs.md)
-[Próximo](unlocking-and-approving-user-accounts-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](building-an-interface-to-select-one-user-account-from-many-cs.md)
+> [Próximo](unlocking-and-approving-user-accounts-cs.md)

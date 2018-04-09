@@ -2,21 +2,21 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 title: Single Sign-On (Criando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 82f2f99154d94074b03d580a0f491053d6f53bde
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Logon único (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -130,7 +130,7 @@ E, em alguns minutos terminar.
 
 Você só precisa executar isso em um controlador de domínio da empresa, no Windows 2003 ou superior. E nenhuma reinicialização é necessária. Quando terminar, todos os seus usuários estão na nuvem e você pode fazer logon único de qualquer web ou aplicativo móvel, usando SAML, OAuth ou WS-Fed.
 
-Às vezes, fazemos sobre o nível de segurança, isso é – Microsoft usá-lo para seus próprios dados confidenciais da empresa? E a resposta for Sim, que podemos fazer. Por exemplo, se você for para o site do Microsoft SharePoint interno no [https://microsoft.sharepoint.com/](https://microsoft.sharepoint.com/), for solicitado a fazer logon.
+Às vezes, fazemos sobre o nível de segurança, isso é – Microsoft usá-lo para seus próprios dados confidenciais da empresa? E a resposta for Sim, que podemos fazer. Por exemplo, se você for para o site do Microsoft SharePoint interno no [ https://microsoft.sharepoint.com/ ](https://microsoft.sharepoint.com/), for solicitado a fazer logon.
 
 ![Entrar no Office 365](single-sign-on/_static/image20.png)
 
@@ -193,6 +193,6 @@ Para obter mais informações, consulte os seguintes recursos:
 - [Blog do Azure Active Directory Graph API](https://blogs.msdn.com/b/aadgraphteam/).
 - [Controle de acesso no BYOD e integração de diretórios em uma infraestrutura de identidade híbrida](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/PCIT-B213#fbid=). Tech Ed 2014 sessão vídeo por Gayana Bagdasaryan.
 
->[!div class="step-by-step"]
-[Anterior](web-development-best-practices.md)
-[Próximo](data-storage-options.md)
+> [!div class="step-by-step"]
+> [Anterior](web-development-best-practices.md)
+> [Próximo](data-storage-options.md)

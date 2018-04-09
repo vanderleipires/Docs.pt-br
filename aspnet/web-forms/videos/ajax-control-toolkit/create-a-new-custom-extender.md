@@ -2,7 +2,7 @@
 uid: web-forms/videos/ajax-control-toolkit/create-a-new-custom-extender
 title: Criar um novo extensor personalizado | Microsoft Docs
 author: JoeStagner
-description: "Joe este vídeo demonstra como usar o Kit de ferramentas de controle AJAX para criar um novo extensor de controle AJAX personalizado."
+description: Joe este vídeo demonstra como usar o Kit de ferramentas de controle AJAX para criar um novo extensor de controle AJAX personalizado.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/create-a-new-custom-extender
 msc.type: video
-ms.openlocfilehash: afd6772e45eb00c8a86d843f98dd532815653e27
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8f9c0485311206c358f5a884ace9c7e76c1141f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-new-custom-extender"></a>Criar um novo extensor personalizado
 ====================
@@ -24,7 +24,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 
 Joe este vídeo demonstra como usar o Kit de ferramentas de controle AJAX para criar um novo extensor de controle AJAX personalizado.
 
-[&#9654; Assista ao vídeo (26 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/create-a-new-custom-extender)
+[&#9654;Assista ao vídeo (26 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/create-a-new-custom-extender)
 
->[!div class="step-by-step"]
-[Anterior](editor-control-custom.md)
+> [!div class="step-by-step"]
+> [Anterior](editor-control-custom.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
-title: "Iteração #2 – tornar o aplicativo parecer adequado (VB) | Microsoft Docs"
+title: 'Iteração #2 – tornar o aplicativo parecer adequado (VB) | Microsoft Docs'
 author: microsoft
-description: "Essa iteração, podemos melhorar a aparência do aplicativo, modificando a página mestra do ASP.NET MVC exibição padrão e em cascata a folha de estilos."
+description: Essa iteração, podemos melhorar a aparência do aplicativo, modificando a página mestra do ASP.NET MVC exibição padrão e em cascata a folha de estilos.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 07c4eaaf9ae5a389605a98951e970d410ca23122
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8545351b099e52533789b372903cd493f533f834
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-2--make-the-application-look-nice-vb"></a>Iteração #2 – tornar o aplicativo parecer adequado (VB)
 ====================
@@ -66,7 +66,7 @@ Decidi usar um modelo da Galeria de Design do ASP.NET MVC para o aplicativo do G
 
 A Galeria de Design do ASP.NET MVC é um recurso gratuito fornecido pela Microsoft. A Galeria do ASP.NET MVC está localizada no seguinte endereço:
 
-[https://www.ASP.NET/MVC/Gallery](https://www.asp.net/mvc/gallery)
+[https://www.asp.net/mvc/gallery](https://www.asp.net/mvc/gallery)
 
 A Galeria de Design do ASP.NET MVC hospeda uma coleção de designs de site gratuito que foram criados especificamente para uso em um projeto ASP.NET MVC. Os designs são carregados por membros da comunidade. Os visitantes a galeria podem votar em seus favoritos designs (consulte a Figura 2).
 
@@ -115,7 +115,7 @@ A Galeria de Design do ASP.NET MVC tem uma boa seleção de estilos de design di
 
 No entanto, você precisará criar um design completamente exclusivo para seu site. Nesse caso, faz sentido para trabalhar com uma empresa de design do site. Decidi essa abordagem para o design do aplicativo do gerente do contato.
 
-Eu compactado o Gerenciador de contato de iteração #1 e enviadas do projeto para a empresa de design. Eles não possuía Visual Studio (pena neles!), mas que não foi apresentar um problema. Ele conseguiu baixar o Microsoft Visual Web Developer livre do [https://www.asp.net](https://www.asp.net) site e abra o aplicativo Gerenciador de contato no Visual Web Developer. Em alguns dias, eles tinham gerados design na Figura 7.
+Eu compactado o Gerenciador de contato de iteração #1 e enviadas do projeto para a empresa de design. Eles não possuía Visual Studio (pena neles!), mas que não foi apresentar um problema. Ele conseguiu baixar o Microsoft Visual Web Developer livre do [ https://www.asp.net ](https://www.asp.net) site e abra o aplicativo Gerenciador de contato no Visual Web Developer. Em alguns dias, eles tinham gerados design na Figura 7.
 
 
 [![A caixa de diálogo Novo projeto](iteration-2-make-the-application-look-nice-vb/_static/image7.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image13.png)
@@ -163,6 +163,6 @@ Em seguida, discutimos como você pode criar um design personalizado modificando
 
 Na próxima iteração, vamos lidar com o assunto muito importante da validação. Vamos adicionar código de validação para o nosso aplicativo para que um usuário não é possível criar um novo contato sem fornecer valores necessários, como uma pessoa s primeiro e último nome.
 
->[!div class="step-by-step"]
-[Anterior](iteration-1-create-the-application-vb.md)
-[Próximo](iteration-3-add-form-validation-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](iteration-1-create-the-application-vb.md)
+> [Próximo](iteration-3-add-form-validation-vb.md)

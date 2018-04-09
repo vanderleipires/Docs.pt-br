@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 title: 'Parte 9: Check-out e o registro | Microsoft Docs'
 author: jongalloway
-description: "Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 9 abrange o registro e o check-out."
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 9 abrange o registro e o check-out.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: 1caf836f8c92cbc9ab95e0aa990f81493e577a27
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: e7e83b70f2508b6dfc0c078b992747a76e4d0ff2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-9-registration-and-checkout"></a>Parte 9: Check-out e o registro
 ====================
@@ -163,6 +163,6 @@ Como esta é uma página de erro genérica, o conteúdo é muito simple. Podemos
 [!code-cshtml[Main](mvc-music-store-part-9/samples/sample13.cshtml)]
 
 
->[!div class="step-by-step"]
-[Anterior](mvc-music-store-part-8.md)
-[Próximo](mvc-music-store-part-10.md)
+> [!div class="step-by-step"]
+> [Anterior](mvc-music-store-part-8.md)
+> [Próximo](mvc-music-store-part-10.md)

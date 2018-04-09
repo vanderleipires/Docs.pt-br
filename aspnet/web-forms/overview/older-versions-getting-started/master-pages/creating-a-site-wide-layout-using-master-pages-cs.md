@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
-title: "Criar um Layout de todo o Site usando páginas mestras (c#) | Microsoft Docs"
+title: Criar um Layout de todo o Site usando páginas mestras (c#) | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial mostrará as Noções básicas de página mestra. Isto é, quais são as páginas mestras, como faz uma criar uma página mestre, como quais são proprietários do conteúdo local, faz uma cr..."
+description: Este tutorial mostrará as Noções básicas de página mestra. Isto é, quais são as páginas mestras, como faz uma criar uma página mestre, como quais são proprietários do conteúdo local, faz uma cr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8061a2aff318d397116cbc0bc0a8ce24ef35c7fb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 72f870e07a4f7754e352dc3478d9c86d4cb43994
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>Criar um Layout de todo o Site usando páginas mestras (c#)
 ====================
@@ -34,7 +34,7 @@ Um atributo de um site bem projetado é um layout de página consistente em todo
 
 [![O site www.asp.net emprega uma aparência consistente em todas as páginas](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
 
-**Figura 01**: O site www.asp.net emprega uma aparência consistente e sinta-se em todas as páginas ([clique para exibir a imagem em tamanho normal](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
+<strong>Figura 01</strong>: O site www.asp.net emprega uma aparência consistente e sinta-se em todas as páginas ([clique para exibir a imagem em tamanho normal](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
 
 
 Outro atributo de um site bem projetado é a facilidade com que a aparência do site pode ser alterada. A Figura 1 mostra a home page do www.asp.net a partir de março de 2008, mas entre agora e publicação neste tutorial, a aparência pode ter sido alterado. Talvez os itens de menu na parte superior se expandirá para incluir uma nova seção para a estrutura MVC. Ou talvez um radicalmente novo design com diferentes cores, fontes e layout lado surgem. Aplicar essas alterações para o site inteiro deve ser um processo rápido e simple que não requer modificação milhares de páginas da web que compõem o site.
@@ -281,11 +281,11 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Avançar](multiple-contentplaceholders-and-default-content-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](multiple-contentplaceholders-and-default-content-cs.md)

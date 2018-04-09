@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
-title: "Introdução a páginas da Web ASP.NET - inserindo dados de banco de dados usando formulários | Microsoft Docs"
+title: Introdução a páginas da Web ASP.NET - inserindo dados de banco de dados usando formulários | Microsoft Docs
 author: tfitzmac
-description: "Este tutorial mostra como criar um formulário de entrada e, em seguida, insira os dados que você obtém do formulário em uma tabela de banco de dados quando você usa o ASP.NET Web Pages (..."
+description: Este tutorial mostra como criar um formulário de entrada e, em seguida, insira os dados que você obtém do formulário em uma tabela de banco de dados quando você usa o ASP.NET Web Pages (...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: b74eecb16b2c4695bb417816b90f701f724cc9d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bbccf8134e90c19e29efaa5afe1e46e15320c189
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Introdução a páginas da Web ASP.NET - inserindo dados de banco de dados usando formulários
 ====================
@@ -121,7 +121,7 @@ Na exibição de árvore de arquivos no WebMatrix, clique com botão direito do 
 
 !['Adicionar filme' page no navegador](entering-data/_static/image2.png)
 
-(Se você acabará com uma página diferente no navegador, certifique-se de que a URL é `http://localhost:nnnnn/AddMovie`), onde  *nnnnn*  é o número da porta que você está usando.)
+(Se você acabará com uma página diferente no navegador, certifique-se de que a URL é `http://localhost:nnnnn/AddMovie`), onde *nnnnn* é o número da porta que você está usando.)
 
 Você obteve uma página de erro? Em caso afirmativo, leia com atenção e certifique-se de que o código é exatamente o que estava listado anteriormente.
 
@@ -145,7 +145,7 @@ Nesse caso, o banco de dados, na verdade, não gerar (ou *gerar*) um erro. Você
 
 Obviamente, você não deseja permitir que os usuários inserir informações de filme metade vazio no banco de dados. A solução é validar a entrada do usuário. Inicialmente, a validação simplesmente garantirá que o usuário inseriu um valor para todos os campos (ou seja, nenhuma delas contém uma cadeia de caracteres vazia).
 
-> [!TIP] 
+> [!TIP]
 > 
 > **Cadeias de caracteres nulas e vazias**
 > 
@@ -157,7 +157,7 @@ Obviamente, você não deseja permitir que os usuários inserir informações de
 > 
 > Agora e, em seguida, é importante entender exatamente quando um valor é nulo e quando ele é apenas uma cadeia de caracteres vazia. No código para o *AddMovie* página, você obter os valores das caixas de texto usando `Request.Form["title"]` e assim por diante. Quando a página executa pela primeira vez (antes de você clicar no botão), o valor de `Request.Form["title"]` é nulo. Porém, quando você enviar o formulário, `Request.Form["title"]` obtém o valor da `title` caixa de texto. Não é óbvio, mas uma caixa de texto vazia não é nula. Ele apenas tem uma cadeia de caracteres vazia. Portanto, quando o código é executado em resposta ao botão clique, `Request.Form["title"]` exibe uma cadeia de caracteres vazia.
 > 
-> Por essa distinção é importante? Quando você criou o *filmes* tabela, você explicitamente disse que nenhum dos campos pode ser nulo. Mas aqui é ter um formulário de entrada de novos filmes e está saindo campos em branco. Você esperaria razoavelmente o banco de dados para reclamar quando você tentou salvar novos filmes que não têm valores de gênero ou ano. Mas isso é o ponto de &mdash; mesmo se você deixar as caixas de texto, os valores não nulos; elas estão cadeias de caracteres vazias. Como resultado, você é capaz de salvar novos filmes em banco de dados com essas colunas vazias &mdash; , mas não nulo! valores &mdash;. Portanto, você precisa certificar-se de que os usuários não enviarem uma cadeia de caracteres vazia, o que pode ser feito por meio da validação de entrada do usuário.
+> Por essa distinção é importante? Quando você criou o *filmes* tabela, você explicitamente disse que nenhum dos campos pode ser nulo. Mas aqui é ter um formulário de entrada de novos filmes e está saindo campos em branco. Você esperaria razoavelmente o banco de dados para reclamar quando você tentou salvar novos filmes que não têm valores de gênero ou ano. Mas isso é o ponto de &mdash; mesmo se você deixar as caixas de texto, os valores não nulos; elas estão cadeias de caracteres vazias. Como resultado, você é capaz de salvar novos filmes em banco de dados com essas colunas vazias &mdash; , mas não nulo! os valores &mdash;. Portanto, você precisa certificar-se de que os usuários não enviarem uma cadeia de caracteres vazia, o que pode ser feito por meio da validação de entrada do usuário.
 
 
 ### <a name="the-validation-helper"></a>O auxiliar de validação
@@ -260,6 +260,6 @@ O seguinte tutorial, você aprenderá como permitir aos usuários editar dados q
 - [Inserir na instrução SQL](http://www.w3schools.com/sql/sql_insert.asp) no site W3Schools
 - [Validando a entrada do usuário da Web do ASP.NET páginas Sites](https://go.microsoft.com/fwlink/?LinkId=253002). Para obter mais informações sobre como trabalhar com o `Validation` auxiliar.
 
->[!div class="step-by-step"]
-[Anterior](form-basics.md)
-[Próximo](updating-data.md)
+> [!div class="step-by-step"]
+> [Anterior](form-basics.md)
+> [Próximo](updating-data.md)

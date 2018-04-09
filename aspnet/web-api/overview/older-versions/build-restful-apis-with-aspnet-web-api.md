@@ -2,7 +2,7 @@
 uid: web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 title: Criar APIs RESTful API da Web do ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Nos últimos anos, ficou claro que o HTTP não é apenas para serviços de páginas HTML. Também é uma plataforma poderosa para criar APIs da Web, usando o uma série..."
+description: Nos últimos anos, ficou claro que o HTTP não é apenas para serviços de páginas HTML. Também é uma plataforma poderosa para criar APIs da Web, usando o uma série...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,25 +12,25 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 49dcd86649ceb77cd5a02ebeb5d9d7b11ff4f344
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 320409cd395384a608a07307a56d18105d45de14
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>Criar APIs RESTful API da Web do ASP.NET
 ====================
-por [Web Camps Team](https://twitter.com/webcamps)
+Por [Web Camps Team](https://twitter.com/webcamps)
 
 > Nos últimos anos, ficou claro que o HTTP não é apenas para serviços de páginas HTML. Também é uma plataforma poderosa para criar APIs da Web, usando uma série de verbos (GET, POST e assim por diante) e alguns conceitos simples como *URIs* e *cabeçalhos*. API da Web do ASP.NET é um conjunto de componentes que simplificam a programação HTTP. Porque ele se baseia no tempo de execução do ASP.NET MVC, API da Web automaticamente trata os detalhes de baixo nível de transporte de HTTP. Ao mesmo tempo, a API da Web naturalmente expõe o modelo de programação HTTP. Na verdade, um objetivo de API da Web é *não* abstrair a realidade de HTTP. Como resultado, a API da Web é flexível e fácil de estender. Neste laboratório prático, você usará a API da Web para criar uma API REST simples para um aplicativo do Gerenciador de contato. Você também criará um cliente para consumir o API. O estilo de arquitetura REST provou para ser uma maneira eficiente para aproveitar HTTP - embora também não é a abordagem válida somente para HTTP. O Gerenciador de contato irá expor RESTful para listar, adicionando e removendo contatos, entre outros. Este laboratório requer um entendimento básico de HTTP, REST e supõe que você tenha um conhecimento básico de funcionamento de HTML, JavaScript e jQuery.
 > 
 > > [!NOTE]
-> > O site da Web do ASP.NET tem uma área dedicada para a estrutura do ASP.NET Web API [ [https://asp.net/web-api](https://asp.net/web-api)](https://asp.net/web-api). Este site continuarão a fornecer as informações mais recentes, exemplos e notícias relacionadas à API da Web, portanto, verifique-frequentemente se você gostaria de se aprofundar mais em arte de criação personalizado APIs da Web disponíveis para praticamente qualquer estrutura de desenvolvimento ou dispositivo.
+> > O site da Web do ASP.NET tem uma área dedicada para a estrutura do ASP.NET Web API [ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api). Este site continuarão a fornecer as informações mais recentes, exemplos e notícias relacionadas à API da Web, portanto, verifique-frequentemente se você gostaria de se aprofundar mais em arte de criação personalizado APIs da Web disponíveis para praticamente qualquer estrutura de desenvolvimento ou dispositivo.
 > > 
 > > ASP.NET Web API, semelhante ao ASP.NET MVC 4, tem grande flexibilidade em termos de separar a camada de serviço dos controladores de permitindo que você use vários as estruturas de injeção de dependência disponíveis relativamente fácil. Há um bom exemplo no MSDN que mostra como usar Ninject para injeção de dependência em um projeto de API da Web ASP.NET que você pode baixá-lo do [aqui](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7).
 > 
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
 
 
 <a id="Objectives"></a>
@@ -172,7 +172,9 @@ Nesta tarefa, você criará as classes do controlador no qual residem os método
     (Código de trecho - *Web classe contato API laboratório - Ex01 -*)
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
+~~~
 4. No **ContactController** de classe, selecione a palavra **cadeia de caracteres** na definição de método do **obter** método e digite a palavra *entre em contato com*. Depois que a palavra é digitada no, um indicador será exibida no início da palavra **entre em contato com**. Segure a qualquer um de **Ctrl** chave e pressione a tecla ponto (.) ou clique no ícone usando o mouse para abrir a caixa de diálogo Assistência no editor de código para preencher automaticamente o **usando** diretiva para os modelos namespace.
 
     ![Usando a assistência do Intellisense para declarações de namespace](build-restful-apis-with-aspnet-web-api/_static/image12.png)
@@ -185,16 +187,16 @@ Nesta tarefa, você criará as classes do controlador no qual residem os método
     [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample3.cs)]
 6. Pressione **F5** para depurar o aplicativo web no navegador. Para exibir as alterações feitas para a saída de resposta da API, execute as etapas a seguir.
 
-    1. Depois que o navegador é aberta, pressione **F12** se as ferramentas de desenvolvedor ainda não estiverem abertas.
-    2. Clique o **rede** guia.
-    3. Pressione a **iniciar captura** botão.
-    4. Adicionar o sufixo de URL **/api/contato** para a URL na barra de endereços e pressione a **Enter** chave.
-    5. Pressione a **acesse a exibição detalhada** botão.
-    6. Selecione o **corpo da resposta** guia. Você deve ver uma cadeia de caracteres JSON que representa o formato serializado de uma matriz de instâncias de contato.
+   1. Depois que o navegador é aberta, pressione **F12** se as ferramentas de desenvolvedor ainda não estiverem abertas.
+   2. Clique o **rede** guia.
+   3. Pressione a **iniciar captura** botão.
+   4. Adicionar o sufixo de URL **/api/contato** para a URL na barra de endereços e pressione a **Enter** chave.
+   5. Pressione a **acesse a exibição detalhada** botão.
+   6. Selecione o **corpo da resposta** guia. Você deve ver uma cadeia de caracteres JSON que representa o formato serializado de uma matriz de instâncias de contato.
 
-    ![JSON serializado a saída de uma chamada de método de API da Web complexa](build-restful-apis-with-aspnet-web-api/_static/image13.png "JSON serializado a saída de uma chamada de método complexa API da Web")
+      ![JSON serializado a saída de uma chamada de método de API da Web complexa](build-restful-apis-with-aspnet-web-api/_static/image13.png "JSON serializado a saída de uma chamada de método complexa API da Web")
 
-    *Saída JSON serializada de uma chamada de método complexa API da Web*
+      *Saída JSON serializada de uma chamada de método complexa API da Web*
 
 <a id="Ex1Task4"></a>
 
@@ -221,7 +223,9 @@ Essa tarefa demonstrará como extrair a funcionalidade em uma camada de serviço
 4. Adicione um usando diretiva para o **ContactRepository.cs** arquivo para incluir o namespace de modelos.
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
+~~~
 5. Adicione o seguinte código realçado para o **ContactRepository.cs** arquivo para implementar o método GetAllContacts.
 
     (Código de trecho - *Web repositório contato API laboratório - Ex01 -*)
@@ -231,7 +235,9 @@ Essa tarefa demonstrará como extrair a funcionalidade em uma camada de serviço
 7. Adicione o seguinte usando a instrução para a seção da declaração de namespace do arquivo.
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
+~~~
 8. Adicione o seguinte código realçado para o **ContactController.cs** classe para adicionar um campo particular para representar a instância do repositório, para que o restante da classe os membros podem fazer uso de implementação do serviço.
 
     (Código de trecho de código - *Web controlador contato API laboratório - Ex01 -*)
@@ -244,9 +250,9 @@ Essa tarefa demonstrará como extrair a funcionalidade em uma camada de serviço
     [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample8.cs)]
 10. Colocar um ponto de interrupção a **ContactController**do **obter** definição de método.
 
-    ![Adicionando pontos de interrupção para o controlador de contato](build-restful-apis-with-aspnet-web-api/_static/image17.png "adicionar pontos de interrupção para o controlador de contato")
+   ![Adicionando pontos de interrupção para o controlador de contato](build-restful-apis-with-aspnet-web-api/_static/image17.png "adicionar pontos de interrupção para o controlador de contato")
 
-    *Adicionando pontos de interrupção para o controlador de contato*
+   *Adicionando pontos de interrupção para o controlador de contato*
 11. Pressione **F5** para executar o aplicativo.
 12. Quando o navegador é aberta, pressione **F12** para abrir as ferramentas de desenvolvedor.
 13. Clique o **rede** guia.
@@ -254,9 +260,9 @@ Essa tarefa demonstrará como extrair a funcionalidade em uma camada de serviço
 15. Anexar a URL na barra de endereços com o sufixo **/api/contato** e pressione **Enter** para carregar o controlador de API.
 16. O Visual Studio 2012 deve dividir uma vez **obter** método inicia a execução.
 
-    ![Quebrar dentro do método Get](build-restful-apis-with-aspnet-web-api/_static/image18.png "de quebra dentro do método Get")
+   ![Quebrar dentro do método Get](build-restful-apis-with-aspnet-web-api/_static/image18.png "de quebra dentro do método Get")
 
-    *Separação de dentro do método Get*
+   *Separação de dentro do método Get*
 17. Pressione **F5** para continuar.
 18. Volte para o Internet Explorer se ele não ainda estiver em foco. Observe a janela de captura de rede.
 
@@ -287,12 +293,12 @@ Nesta tarefa, você vai preparar para aprimorar o projeto de API da Web criado n
 1. Executar **Visual Studio 2012 Express para Web**, para fazer isso, vá para **iniciar** e tipo **VS Express para Web** pressione **Enter**.
 2. Abra o **começar** solução localizado em **fonte/Ex02-ReadWriteWebAPI/Begin/** pasta. Caso contrário, você pode continuar usando o **final** solução obtido executando o exercício anterior.
 
-    1. Se você abriu fornecido **começar** solução, você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
-    2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
-    3. Por fim, compile a solução clicando **criar** | **compilar solução**.
+   1. Se você abriu fornecido **começar** solução, você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
+   2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
+   3. Por fim, compile a solução clicando **criar** | **compilar solução**.
 
-    > [!NOTE]
-    > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
+      > [!NOTE]
+      > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
 3. Abra o **Services/ContactRepository.cs** arquivo.
 
 <a id="Ex2Task2"></a>
@@ -341,21 +347,25 @@ Nesta tarefa, você modificará a exibição de índice padrão do aplicativo da
 1. Abra **Visual Studio 2012 Express para Web** se ainda não estiver aberto.
 2. Abra o **começar** solução localizado em **fonte/Ex03-ConsumingWebAPI/Begin/** pasta. Caso contrário, você pode continuar usando o **final** solução obtido executando o exercício anterior.
 
-    1. Se você abriu fornecido **começar** solução, você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
-    2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
-    3. Por fim, compile a solução clicando **criar** | **compilar solução**.
+   1. Se você abriu fornecido **começar** solução, você precisará baixar alguns pacotes do NuGet ausentes antes de continuar. Para fazer isso, clique o **projeto** menu e selecione **gerenciar pacotes NuGet**.
+   2. No **gerenciar pacotes NuGet** caixa de diálogo, clique em **restaurar** para baixar os pacotes ausentes.
+   3. Por fim, compile a solução clicando **criar** | **compilar solução**.
 
-    > [!NOTE]
-    > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
+      > [!NOTE]
+      > Uma das vantagens de usar NuGet é que você não precisa enviar todas as bibliotecas no seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você poderá baixar todas as bibliotecas necessárias na primeira vez que você executar o projeto. É por isso você terá que executar estas etapas depois de abrir uma solução existente neste laboratório.
 3. Abra o **cshtml** arquivo localizado em **exibições/inicial** pasta.
 4. Substitua o código HTML dentro do elemento div com id **corpo** para que ele se parece com o código a seguir.
 
 
-    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
+~~~
+[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
+~~~
 5. Adicione o seguinte código Javascript na parte inferior do arquivo para executar a solicitação HTTP para a API da Web.
 
 
-    [!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
+~~~
+[!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
+~~~
 6. Abra o **ContactController.cs** arquivo se ele já não estiver aberto.
 7. Colocar um ponto de interrupção no **obter** método o **ContactController** classe.
 
@@ -391,12 +401,16 @@ Nesta tarefa, você continuará modificar a exibição do índice do aplicativo 
     (Código de trecho - *Web API laboratório - Ex03 - Post método*)
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
+~~~
 3. Abra o **cshtml** arquivo no Visual Studio, caso ainda não estiver aberto.
 4. Adicione o código HTML a seguir ao arquivo logo após a lista não ordenada adicionado na tarefa anterior.
 
 
-    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
+~~~
+[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
+~~~
 5. Dentro do elemento de script na parte inferior do documento, adicione o seguinte código realçado para manipular eventos de clique do botão, que publicará os dados para a API da Web usando uma chamada HTTP POST.
 
     [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample17.html)]
@@ -414,14 +428,14 @@ Nesta tarefa, você continuará modificar a exibição do índice do aplicativo 
     *O objeto de contato que está sendo enviado para a API da Web do cliente*
 10. Etapa por meio do método no depurador até que o **resposta** variável foi criada. Ao inspecionar no **locais** janela no depurador, você verá se todas as propriedades foram definidas.
 
-    ![A resposta após a criação do depurador](build-restful-apis-with-aspnet-web-api/_static/image26.png "a resposta após a criação do depurador")
+   ![A resposta após a criação do depurador](build-restful-apis-with-aspnet-web-api/_static/image26.png "a resposta após a criação do depurador")
 
-    *A resposta após a criação do depurador*
+   *A resposta após a criação do depurador*
 11. Se você pressionar **F5** ou clique em **continuar** no depurador a solicitação será concluída. Quando você alternar de volta para o navegador, o novo contato foi adicionado à lista de contatos armazenados pelo **ContactRepository** implementação.
 
-    ![O navegador reflete o êxito na criação da nova instância contato](build-restful-apis-with-aspnet-web-api/_static/image27.png "o navegador reflete o êxito na criação da nova instância de contato")
+   ![O navegador reflete o êxito na criação da nova instância contato](build-restful-apis-with-aspnet-web-api/_static/image27.png "o navegador reflete o êxito na criação da nova instância de contato")
 
-    *O navegador reflete o êxito na criação da nova instância de contato*
+   *O navegador reflete o êxito na criação da nova instância de contato*
 
 > [!NOTE]
 > Além disso, você pode implantar esse aplicativo do Azure seguinte [apêndice c: publicação um aplicativo ASP.NET MVC 4 usando a implantação da Web](#AppendixC).
@@ -434,7 +448,7 @@ Nesta tarefa, você continuará modificar a exibição do índice do aplicativo 
 
 Este laboratório introduziu a nova estrutura de API da Web ASP.NET e a implementação de APIs da Web RESTful usando a estrutura. A partir daqui, você pode criar um novo repositório que facilita a persistência de dados usando qualquer número de mecanismos e conectar esse serviço em vez de um simple fornecido como exemplo neste laboratório. API da Web dá suporte a vários recursos adicionais, como habilitar a comunicação de clientes não-HTML escrito em qualquer linguagem que ofereça suporte a HTTP e JSON ou XML. A capacidade de hospedar uma API da Web fora de um aplicativo web típico também é possível, bem como é a capacidade de criar seus próprios formatos de serialização.
 
-O site da Web do ASP.NET tem uma área dedicada para a estrutura do ASP.NET Web API [ [https://asp.net/web-api](https://asp.net/web-api)](https://asp.net/web-api). Este site continuarão a fornecer as informações mais recentes, exemplos e notícias relacionadas à API da Web, portanto, verifique-frequentemente se você gostaria de se aprofundar mais em arte de criação personalizado APIs da Web disponíveis para praticamente qualquer estrutura de desenvolvimento ou dispositivo.
+O site da Web do ASP.NET tem uma área dedicada para a estrutura do ASP.NET Web API [ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api). Este site continuarão a fornecer as informações mais recentes, exemplos e notícias relacionadas à API da Web, portanto, verifique-frequentemente se você gostaria de se aprofundar mais em arte de criação personalizado APIs da Web disponíveis para praticamente qualquer estrutura de desenvolvimento ou dispositivo.
 
 <a id="AppendixA"></a>
 
@@ -492,9 +506,9 @@ Com trechos de código, você tem todo o código que é necessário ao seu alcan
 <a id="Appendix_B_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-b-installing-visual-studio-express-2012-for-web"></a>Apêndice b: instalar o Visual Studio Express 2012 para Web
 
-Você pode instalar **Microsoft Visual Studio Express 2012 para Web** ou outro &quot;Express&quot; versão usando o  **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . As instruções a seguir guiá-lo pelas etapas necessárias para instalar o *Visual studio Express 2012 para Web* usando *Microsoft Web Platform Installer*.
+Você pode instalar **Microsoft Visual Studio Express 2012 para Web** ou outro &quot;Express&quot; versão usando o **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. As instruções a seguir guiá-lo pelas etapas necessárias para instalar o *Visual studio Express 2012 para Web* usando *Microsoft Web Platform Installer*.
 
-1. Vá para [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Como alternativa, se você já tiver instalado o Web Platform Installer, você pode abri-la e procure o produto &quot; *Visual Studio Express 2012 para Web com SDK do Azure*&quot;.
+1. Vá para [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Como alternativa, se você já tiver instalado o Web Platform Installer, você pode abri-la e procure o produto &quot; <em>Visual Studio Express 2012 para Web com SDK do Azure</em>&quot;.
 2. Clique em **instalar agora**. Se você não tem **Web Platform Installer** você será redirecionado para baixar e instalá-lo primeiro.
 3. Uma vez **Web Platform Installer** é aberto, clique em **instalar** para iniciar a instalação.
 
@@ -638,14 +652,14 @@ Se seu aplicativo utiliza o SQL Server bancos de dados que você precisará cria
     *Configuração de implantação da Web*
 5. Configure a conexão de banco de dados da seguinte maneira:
 
-    - No **nome do servidor** digite sua URL de servidor de banco de dados SQL usando o *tcp:* prefixo.
-    - Em **nome de usuário** digite seu nome de logon de administrador do servidor.
-    - Em **senha** digite sua senha de logon de administrador do servidor.
-    - Digite um novo nome de banco de dados, por exemplo: *MVC4SampleDB*.
+   - No **nome do servidor** digite sua URL de servidor de banco de dados SQL usando o *tcp:* prefixo.
+   - Em **nome de usuário** digite seu nome de logon de administrador do servidor.
+   - Em **senha** digite sua senha de logon de administrador do servidor.
+   - Digite um novo nome de banco de dados, por exemplo: *MVC4SampleDB*.
 
-    ![Configurando a cadeia de caracteres de conexão de destino](build-restful-apis-with-aspnet-web-api/_static/image55.png "Configurando a cadeia de caracteres de conexão de destino")
+     ![Configurando a cadeia de caracteres de conexão de destino](build-restful-apis-with-aspnet-web-api/_static/image55.png "Configurando a cadeia de caracteres de conexão de destino")
 
-    *Configurando a cadeia de caracteres de conexão de destino*
+     *Configurando a cadeia de caracteres de conexão de destino*
 6. Clique em **OK**. Quando solicitado a criar o banco de dados, clique em **Sim**.
 
     ![Criando o banco de dados](build-restful-apis-with-aspnet-web-api/_static/image56.png "criar a cadeia de caracteres do banco de dados")

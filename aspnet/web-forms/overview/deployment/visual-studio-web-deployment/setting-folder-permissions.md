@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
-title: "Implantação de Web do ASP.NET usando o Visual Studio: definindo permissões de pasta | Microsoft Docs"
+title: 'Implantação de Web do ASP.NET usando o Visual Studio: definindo permissões de pasta | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin..."
+description: Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
 msc.type: authoredcontent
-ms.openlocfilehash: 19bef5ff97fd5b79135df8ca9bd6bd316594cc5e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7efe267975835e889950983126088f1b637c28fb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-setting-folder-permissions"></a>Implantação de Web do ASP.NET usando o Visual Studio: definindo permissões de pasta
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -77,6 +77,6 @@ Neste exemplo, o motivo por que o Elmah não pôde salvar arquivos de log foi ba
 
 Para obter mais informações sobre como conceder permissões para identidades do pool de aplicativos, consulte [identidades do Pool de aplicativos](https://www.iis.net/learn/manage/configuring-security/application-pool-identities) e [conteúdo seguro no IIS através de ACLs de sistema de arquivo](https://www.iis.net/learn/get-started/planning-for-security/secure-content-in-iis-through-file-system-acls) no site IIS.net.
 
->[!div class="step-by-step"]
-[Anterior](deploying-to-iis.md)
-[Próximo](deploying-to-production.md)
+> [!div class="step-by-step"]
+> [Anterior](deploying-to-iis.md)
+> [Próximo](deploying-to-production.md)

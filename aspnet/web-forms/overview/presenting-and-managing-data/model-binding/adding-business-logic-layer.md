@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
-title: "Adicionar camada de lógica de negócios para um projeto que usa o modelo de associação e formulários da web | Microsoft Docs"
+title: Adicionar camada de lógica de negócios para um projeto que usa o modelo de associação e formulários da web | Microsoft Docs
 author: tfitzmac
-description: "Esta série de tutoriais demonstra aspectos básicos do uso de associação de modelo com um projeto Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais estreita-..."
+description: Esta série de tutoriais demonstra aspectos básicos do uso de associação de modelo com um projeto Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais estreita-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
-ms.openlocfilehash: ca50690052cca73a718342a9725c8096a72f1187
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 25e887bdc316abf65c780bb6c8d075e938e85064
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>Adicionar camada de lógica de negócios para um projeto que usa o modelo de associação e formulários da web
 ====================
@@ -98,5 +98,5 @@ Execute o aplicativo e observe que todas as páginas funcionem como tinham anter
 
 Neste tutorial, você estruturado novamente seu aplicativo para usar uma camada de acesso a dados e a camada de lógica comercial. Você especificou que os controles de dados usam um objeto que não é a página atual para operações de dados.
 
->[!div class="step-by-step"]
-[Anterior](using-query-string-values-to-retrieve-data.md)
+> [!div class="step-by-step"]
+> [Anterior](using-query-string-values-to-retrieve-data.md)

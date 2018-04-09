@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
 title: Criando testes de unidade para aplicativos ASP.NET MVC (c#) | Microsoft Docs
 author: StephenWalther
-description: "Saiba como criar testes de unidade para ações do controlador. Neste tutorial, Stephen Walther demonstra como testar se uma ação do controlador retorna um parti..."
+description: Saiba como criar testes de unidade para ações do controlador. Neste tutorial, Stephen Walther demonstra como testar se uma ação do controlador retorna um parti...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 56c981363f1905c1c9869dbaf2adb6b5ac1c28a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccd9a1b3aee8379c23c01c5eb7f756a786f6359d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>Criando testes de unidade para aplicativos ASP.NET MVC (c#)
 ====================
@@ -33,7 +33,7 @@ O objetivo deste tutorial é demonstrar como você pode escrever o testes de uni
 
 Vamos começar criando o controlador que pretendemos para testar. O controlador, chamado de `ProductController`, está contida na listagem 1.
 
-**Listando 1 –`ProductController.cs`**
+**Listando 1 – `ProductController.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample1.cs)]
 
@@ -43,7 +43,7 @@ O `ProductController` contém dois métodos de ação denominados `Index()` e `D
 
 Imagine que queremos testar se ou não o `ProductController` retorna a exibição à direita. Certifique-se de que, quando o `ProductController.Details()` ação é invocada, a exibição de detalhes é retornada. A classe de teste na listagem 2 contém um teste de unidade para testar o modo de exibição retornado pelo `ProductController.Details()` ação.
 
-**A listagem 2 –`ProductControllerTest.cs`**
+**A listagem 2 – `ProductControllerTest.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample2.cs)]
 
@@ -74,11 +74,11 @@ Você pode executar o teste de unidade na lista 2 inserindo a combinação de te
 
 ## <a name="testing-the-view-data-returned-by-a-controller"></a>Os dados de exibição de teste retornado por um controlador
 
-Um controlador MVC transmite dados a uma exibição usando algo chamado  *`View Data`* . Por exemplo, imagine que você deseja exibir os detalhes de um produto em particular, quando você invoca o `ProductController Details()` ação. Nesse caso, você pode criar uma instância de um `Product` classe (definido no modelo) e passe a instância para o `Details` exibição aproveitando `View Data`.
+Um controlador MVC transmite dados a uma exibição usando algo chamado *`View Data`*. Por exemplo, imagine que você deseja exibir os detalhes de um produto em particular, quando você invoca o `ProductController Details()` ação. Nesse caso, você pode criar uma instância de um `Product` classe (definido no modelo) e passe a instância para o `Details` exibição aproveitando `View Data`.
 
 A modificação `ProductController` na listagem 3 inclui atualizada `Details()` ação que retorna um produto.
 
-**A listagem 3 –`ProductController.cs`**
+**A listagem 3 – `ProductController.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample5.cs)]
 
@@ -86,7 +86,7 @@ Primeiro, o `Details()` ação cria uma nova instância do `Product` a classe qu
 
 Você pode escrever testes de unidade testar se os dados esperados são contido na exibição dados. O teste de unidade em testes de listagem 4 ou não um produto que representa um computador laptop é retornado ao chamar o `ProductController Details()` método de ação.
 
-**A listagem 4 –`ProductControllerTest.cs`**
+**A listagem 4 – `ProductControllerTest.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample6.cs)]
 
@@ -98,13 +98,13 @@ Uma ação do controlador mais complexa pode retornar tipos diferentes de result
 
 Por exemplo, a modificação `Details()` ação na listagem 5 retorna o `Details` exibir quando você passar um Id de produto válida para a ação. Se você passar um produto inválida Id – uma Id com um valor menor que 1 – em seguida, você será redirecionado para a `Index()` ação.
 
-**Listando 5 –`ProductController.cs`**
+**Listando 5 – `ProductController.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample7.cs)]
 
 Você pode testar o comportamento do `Details()` ação com o teste de unidade na listagem 6. O teste de unidade na listagem 6 verifica se você é redirecionado para a `Index` exibir quando um Id com o valor -1 é passado para o `Details()` método.
 
-**Listando 6 –`ProductControllerTest.cs`**
+**Listando 6 – `ProductControllerTest.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample8.cs)]
 
@@ -118,5 +118,5 @@ Em seguida, examinamos como você pode testar o conteúdo de `View Data`. Você 
 
 Por fim, discutimos como você pode testar se os tipos diferentes de resultados de ação são retornados de uma ação do controlador. Você aprendeu como testar se um controlador retorna um `ViewResult` ou `RedirectToRouteResult`.
 
->[!div class="step-by-step"]
-[Avançar](creating-unit-tests-for-asp-net-mvc-applications-vb.md)
+> [!div class="step-by-step"]
+> [Avançar](creating-unit-tests-for-asp-net-mvc-applications-vb.md)

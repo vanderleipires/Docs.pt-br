@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
-title: "Compilar o capítulo Downloads para o EF 5 MVC 4 tutoriais | Microsoft Docs"
+title: Compilar o capítulo Downloads para o EF 5 MVC 4 tutoriais | Microsoft Docs
 author: Rick-Anderson
 description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 4 usando o Entity Framework 5 Code First e o Visual Studio...
 ms.author: aspnetcontent
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
 msc.type: authoredcontent
-ms.openlocfilehash: 912a1383ed170b49782657372abc1801140df8dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bda7effabd715e4658d2472e1f0a66d7bba18cab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>Compilar o capítulo Downloads para o EF 5 MVC 4 tutoriais
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
@@ -41,7 +41,7 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 6. Clique no pacote Manager Console (PMC), **restauração**.  
   
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image3.png)
-7. Sair do Visual Studio.
+7. Saia do Visual Studio.
 8. Reinicie o Visual Studio, abrir o arquivo de solução que você encerrou na etapa anterior.
 9. No pacote Manager Console (PMC), insira o `Update-Database` comando:  
   
@@ -57,5 +57,5 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image5.png)
 
->[!div class="step-by-step"]
-[Anterior](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [!div class="step-by-step"]
+> [Anterior](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

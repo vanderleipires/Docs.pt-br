@@ -1,7 +1,7 @@
 ---
-title: "Solucionar problemas de núcleo do ASP.NET no IIS"
+title: Solucionar problemas de núcleo do ASP.NET no IIS
 author: guardrex
-description: "Saiba como diagnosticar problemas com implantações de serviços de informações da Internet (IIS) de aplicativos do ASP.NET Core."
+description: Saiba como diagnosticar problemas com implantações de serviços de informações da Internet (IIS) de aplicativos do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 65173e0101a17c64f4cde583e5bbb9fb0a9c7718
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e44892d2022ca1a176cee9d027e220e196c6572d
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>Solucionar problemas de núcleo do ASP.NET no IIS
 
@@ -29,7 +29,7 @@ Tópicos de solução de problemas adicionais:
 [Solucionar problemas no ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot)  
 Embora o serviço de aplicativo usa o [ASP.NET Core módulo](xref:fundamentals/servers/aspnet-core-module) e IIS para hospedar aplicativos, consulte o tópico dedicado para obter instruções específicas para o serviço de aplicativo.
 
-[Tratamento de erro](xref:fundamentals/error-handling)  
+[Tratar erros](xref:fundamentals/error-handling)  
 Descobrir como tratar erros em aplicativos do ASP.NET Core durante o desenvolvimento em um sistema local.
 
 [Aprenda a depurar usando o Visual Studio](/visualstudio/debugger/getting-started-with-the-debugger)  
@@ -96,7 +96,7 @@ Para habilitar e exibir logs de stdout:
 
 1. Navegue até a pasta de implantação do site no sistema de hospedagem.
 1. Se o *logs* pasta não estiver presente, crie a pasta. Para obter instruções sobre como habilitar o MSBuild criar o *logs* pasta na implantação automaticamente, consulte o [estrutura de diretórios](xref:host-and-deploy/directory-structure) tópico.
-1. Editar o *Web. config* arquivo. Definir **stdoutLogEnabled** para `true` e altere o **stdoutLogFile** path para apontar para o *logs* pasta (por exemplo, `.\logs\stdout`). `stdout`o caminho é o prefixo de nome de arquivo de log. Um carimbo de hora, a id do processo e a extensão de arquivo são adicionadas automaticamente quando o log é criado. Usando `stdout` como o prefixo de nome de arquivo, um arquivo de log típico é nomeado *stdout_20180205184032_5412.log*. 
+1. Editar o *Web. config* arquivo. Definir **stdoutLogEnabled** para `true` e altere o **stdoutLogFile** path para apontar para o *logs* pasta (por exemplo, `.\logs\stdout`). `stdout` o caminho é o prefixo de nome de arquivo de log. Um carimbo de hora, a id do processo e a extensão de arquivo são adicionadas automaticamente quando o log é criado. Usando `stdout` como o prefixo de nome de arquivo, um arquivo de log típico é nomeado *stdout_20180205184032_5412.log*. 
 1. Salvar o documento atualizado *Web. config* arquivo.
 1. Fazer uma solicitação para o aplicativo.
 1. Navegue até o *logs* pasta. Localize e abra o log de stdout mais recente.
@@ -109,7 +109,7 @@ Para habilitar e exibir logs de stdout:
 1. Salve o arquivo.
 
 > [!WARNING]
-> Falha ao desabilitar o log de stdout pode levar a falhas de aplicativo ou servidor. Não há nenhum limite no tamanho do arquivo de log ou o número de arquivos de log criados.
+> Falha ao desabilitar o log de stdout pode levar a falhas de aplicativo ou servidor. Não há limites para o tamanho do arquivo de log ou para o número de arquivos de log criados.
 >
 > Para log de rotina no aplicativo do ASP.NET Core, use uma biblioteca de registro em log que limita o tamanho do arquivo de log e gira logs. Para obter mais informações, consulte [provedores de log de terceiros](xref:fundamentals/logging/index#third-party-logging-providers).
 

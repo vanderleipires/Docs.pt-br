@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
-title: "Tópicos avançados (c#) e configuração de autenticação de formulários | Microsoft Docs"
+title: Tópicos avançados (c#) e configuração de autenticação de formulários | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, examine as várias configurações de autenticação de formulários e ver como modificá-las por meio do elemento de formulários. Isso envolvem uma detalhadas..."
+description: Neste tutorial, examine as várias configurações de autenticação de formulários e ver como modificá-las por meio do elemento de formulários. Isso envolvem uma detalhadas...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c57722965b510ac4f5cf0c06c7c01c8cea26384f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d6578737478fb86f64be261925becc3adec33247
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-c"></a>Configuração de autenticação de formulários e tópicos avançados (c#)
 ====================
@@ -41,19 +41,20 @@ O sistema de autenticação de formulários do ASP.NET oferece uma série de con
 
 A tabela 1 resume as propriedades que podem ser personalizadas por meio de &lt;formulários&gt; elemento. Como o Web. config é um arquivo XML, os nomes de atributo na coluna esquerda diferenciam maiusculas de minúsculas.
 
-| **Atributo** | **Descrição** |
-| --- | --- |
-| cookieless | Esse atributo especifica em quais condições o tíquete de autenticação é armazenado em um cookie versus sendo inserido na URL. Valores permitidos são: UseCookies; UseUri; Detecção automática; e UseDeviceProfile (o padrão). Etapa 2 examina essa configuração em mais detalhes. |
-| defaultUrl | Indica a URL que os usuários são redirecionados para depois de entrar na página de logon, se não houver nenhum valor RedirectUrl especificado na querystring. O valor padrão é default. aspx. |
-| domínio | Ao usar permissões de autenticação baseada em cookie, essa configuração especifica o valor de domínio do cookie. O valor padrão é uma cadeia de caracteres vazia, o que faz com que o navegador para usar o domínio do qual ele foi emitido (como www.yourdomain.com). Nesse caso, o cookie será **não** ser enviada ao fazer solicitações para sub-domínios, como admin.yourdomain.com. Se você deseja que o cookie a ser passado para todos os subdomínios que você precisará personalizar o atributo de domínio definido como seudomínio. |
-| enableCrossAppRedirects | Um valor booliano que indica se os usuários autenticados serão lembrados quando redirecionado para URLs em outros aplicativos web no mesmo servidor. O padrão é falso. |
-| loginUrl | A URL da página de logon. O valor padrão é login.aspx. |
-| name | Ao usar os tíquetes de autenticação baseada em cookie, o nome do cookie. O padrão é. ASPXAUTH. |
-| path | Ao usar permissões de autenticação baseada em cookie, essa configuração especifica o atributo de caminho do cookie. O atributo de caminho permite que um desenvolvedor limitar o escopo de um cookie para uma hierarquia de diretórios específica. O valor padrão é /, que informa ao navegador para enviar o cookie de tíquete de autenticação a qualquer solicitação feita no domínio. |
-| proteção | Indica as técnicas usadas para proteger o tíquete de autenticação de formulários. Os valores permitidos são: todos (padrão); Criptografia; Nenhum; e a validação. Essas configurações são discutidas em detalhes na etapa 3. |
-| requireSSL | Um valor booliano que indica se uma conexão SSL é necessária para transmitir o cookie de autenticação. O valor padrão é false. |
-| slidingExpiration | Um valor booliano que indica que se o tempo de limite do cookie de autenticação é redefinido cada vez que o usuário acessa o site durante uma única sessão. O valor padrão é true. A política de tempo limite de tíquete de autenticação é discutida mais detalhadamente a especificação seção do valor de tempo limite de tíquete. |
-| Tempo limite | Especifica o tempo, em minutos, após o qual o cookie de tíquete de autenticação expira. O valor padrão é 30. A política de tempo limite de tíquete de autenticação é discutida mais detalhadamente a especificação seção do valor de tempo limite de tíquete. |
+
+| <strong>Atributo</strong> |                                                                                                                                                                                                                                     <strong>Descrição</strong>                                                                                                                                                                                                                                      |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         cookieless         |                                                                                                                Esse atributo especifica em quais condições o tíquete de autenticação é armazenado em um cookie versus sendo inserido na URL. Valores permitidos são: UseCookies; UseUri; Detecção automática; e UseDeviceProfile (o padrão). Etapa 2 examina essa configuração em mais detalhes.                                                                                                                |
+|         defaultUrl         |                                                                                                                                                         Indica a URL que os usuários são redirecionados para depois de entrar na página de logon, se não houver nenhum valor RedirectUrl especificado na querystring. O valor padrão é default. aspx.                                                                                                                                                         |
+|           domínio           | Ao usar permissões de autenticação baseada em cookie, essa configuração especifica o valor de domínio do cookie. O valor padrão é uma cadeia de caracteres vazia, o que faz com que o navegador para usar o domínio do qual ele foi emitido (como www.yourdomain.com). Nesse caso, o cookie será <strong>não</strong> ser enviada ao fazer solicitações para sub-domínios, como admin.yourdomain.com. Se você deseja que o cookie a ser passado para todos os subdomínios que você precisará personalizar o atributo de domínio definido como seudomínio. |
+|  enableCrossAppRedirects   |                                                                                                                                                                   Um valor booliano que indica se os usuários autenticados serão lembrados quando redirecionado para URLs em outros aplicativos web no mesmo servidor. O padrão é falso.                                                                                                                                                                   |
+|          loginUrl          |                                                                                                                                                                                                                      A URL da página de logon. O valor padrão é login.aspx.                                                                                                                                                                                                                      |
+|            name            |                                                                                                                                                                                                   Ao usar os tíquetes de autenticação baseada em cookie, o nome do cookie. O padrão é. ASPXAUTH.                                                                                                                                                                                                   |
+|            demarcador            |                                                                             Ao usar permissões de autenticação baseada em cookie, essa configuração especifica o atributo de caminho do cookie. O atributo de caminho permite que um desenvolvedor limitar o escopo de um cookie para uma hierarquia de diretórios específica. O valor padrão é /, que informa ao navegador para enviar o cookie de tíquete de autenticação a qualquer solicitação feita no domínio.                                                                              |
+|         proteção         |                                                                                                                                            Indica as técnicas usadas para proteger o tíquete de autenticação de formulários. Os valores permitidos são: todos (padrão); Criptografia; Nenhum; e a validação. Essas configurações são discutidas em detalhes na etapa 3.                                                                                                                                            |
+|         requireSSL         |                                                                                                                                                                                Um valor booliano que indica se uma conexão SSL é necessária para transmitir o cookie de autenticação. O valor padrão é false.                                                                                                                                                                                |
+|     slidingExpiration      |                                                                                                 Um valor booliano que indica que se o tempo de limite do cookie de autenticação é redefinido cada vez que o usuário acessa o site durante uma única sessão. O valor padrão é true. A política de tempo limite de tíquete de autenticação é discutida mais detalhadamente a especificação seção do valor de tempo limite de tíquete.                                                                                                 |
+|          Tempo limite           |                                                                                                                               Especifica o tempo, em minutos, após o qual o cookie de tíquete de autenticação expira. O valor padrão é 30. A política de tempo limite de tíquete de autenticação é discutida mais detalhadamente a especificação seção do valor de tempo limite de tíquete.                                                                                                                               |
 
 **Tabela 1**: um resumo do &lt;formulários&gt; atributos do elemento
 
@@ -166,7 +167,7 @@ Salvar as alterações em Default.aspx e, em seguida, visite-o por meio de um na
 
 `http://localhost:2448/ASPNET\_Security\_Tutorial\_03\_CS/(F(jaIOIDTJxIr12xYS-VVgkqKCVAuIoW30Bu0diWi6flQC-FyMaLXJfow\_Vd9GZkB2Cv-rfezq0gKadKX0YPZCkA2))/SomePage.aspx`
 
-O SomePage.aspx de URL no link foi automaticamente convertido em uma URL que incluído o tíquete de autenticação - não tivemos que gravar uma linha de código! O tíquete de autenticação de formulário será inserido automaticamente na URL para todos os hiperlinks não começar com http:// ou /. Não importa se o hiperlink é exibido em uma chamada para Response. Redirect, em um controle de hiperlink ou em um elemento âncora HTML (ou seja, &lt;um href = "..."&gt;... &lt;/a&gt;). A URL não é algo como http://www.someserver.com/SomePage.aspx ou /SomePage.aspx, desde que o tíquete de autenticação de formulários será inserido para nós.
+O SomePage.aspx de URL no link foi automaticamente convertido em uma URL que incluído o tíquete de autenticação - não tivemos que gravar uma linha de código! O tíquete de autenticação de formulário será inserido automaticamente na URL para todos os hiperlinks não começar com http:// ou /. Não importa se o hiperlink é exibido em uma chamada para Response. Redirect, em um controle de hiperlink ou em um elemento âncora HTML (ou seja, &lt;um href = "..."&gt;... &lt;/a&gt;). Como a URL não é algo como http://www.someserver.com/SomePage.aspx ou /SomePage.aspx, formulários de tíquete de autenticação será inserido para nós.
 
 > [!NOTE]
 > Os tíquetes de autenticação de formulários cookieless aderem às mesmas políticas de tempo limite como tíquetes de autenticação baseada em cookie. No entanto, os tíquetes de autenticação sem cookies são mais propensas a ataques de repetição, desde que o tíquete de autenticação é inserido diretamente na URL. Imagine um usuário que visita um site, faz logon e cola a URL em um email para um colega. Se o colega clicar nesse link antes de atingir a expiração, eles são registrados que o usuário que enviou o email!
@@ -432,12 +433,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Alicja Maziarz. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com).
 
->[!div class="step-by-step"]
-[Anterior](an-overview-of-forms-authentication-cs.md)
-[Próximo](security-basics-and-asp-net-support-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](an-overview-of-forms-authentication-cs.md)
+> [Próximo](security-basics-and-asp-net-support-vb.md)

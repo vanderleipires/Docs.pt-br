@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
-title: "Guia de solução de problemas (Razor) do ASP.NET Web Pages | Microsoft Docs"
+title: Guia de solução de problemas (Razor) do ASP.NET Web Pages | Microsoft Docs
 author: tfitzmac
-description: "Este artigo descreve problemas que você possa ter ao trabalhar com páginas da Web do ASP.NET (Razor) e algumas soluções sugeridas. Versões de software da página de Web do ASP.NET..."
+description: Este artigo descreve problemas que você possa ter ao trabalhar com páginas da Web do ASP.NET (Razor) e algumas soluções sugeridas. Versões de software da página de Web do ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: 2e25e9c7cea937016301e0f11919adb9647ca216
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ec51169ccea0016712de3fdb28a16a174150a8bd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>Guia de solução de problemas (Razor) de páginas da Web do ASP.NET
 ====================
@@ -33,7 +33,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > Este tutorial também funciona com 2 de páginas da Web do ASP.NET e páginas da Web de ASP.NET 1.0.
 
 
-Esse tópico contém as seguintes seções:
+Este tópico contém as seguintes seções:
 
 - [Problemas com a execução de páginas](#Issues_Running_.cshtml_Pages)
 - [Problemas com o código do Razor](#IssuesWithRazorCode)
@@ -144,12 +144,12 @@ Substitua os valores apropriados para `your-SMTP-server-name`, e assim por diant
     *Uma tentativa de conexão falhou porque a parte conectada não respondeu corretamente após um período de tempo ou a conexão estabelecida falhou porque o host conectado não respondeu*
 
     Esse erro geralmente significa que o aplicativo não pôde se conectar ao servidor SMTP. Verifique o nome do servidor e o número da porta.
-- *Caixa de correio indisponível. A resposta do servidor foi: 5.1.0 &lt; someuser@invaliddomain &gt; remetente rejeitada: domínio remetente inválido*
+- <em>Caixa de correio indisponível. A resposta do servidor foi: 5.1.0 &lt; someuser@invaliddomain &gt; remetente rejeitada: domínio remetente inválido</em>
 
     Essa mensagem pode indicar que o `From` endereço não está correto ou está ausente.
 - *A cadeia de caracteres especificada não está no formato necessário para um endereço de email.*
 
-    Esse erro pode indicar que o valor de `To` ou `From` propriedades não são reconhecidas como endereços de email. (ASP.NET não é possível verificar se o endereço de email é válido, só que ele 's no formato correto, como  *name@domain.com* .)
+    Esse erro pode indicar que o valor de `To` ou `From` propriedades não são reconhecidas como endereços de email. (ASP.NET não é possível verificar se o endereço de email é válido, só que ele 's no formato correto, como *name@domain.com*.)
 
 > [!NOTE]
 > Remover a marcação que exibe o erro (`@errorMessage`) antes de publicar a página em um site ativo. Não é uma boa ideia para permitir aos usuários ver mensagens de erro que você pode obter de um servidor.

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
-title: "Adicionando validação para o modelo | Microsoft Docs"
+title: Adicionando validação para o modelo | Microsoft Docs
 author: Rick-Anderson
-description: "Observação: Uma versão atualizada deste tutorial está disponível aqui que usa o ASP.NET MVC 5 e Visual Studio 2013. É mais seguro e muito mais simples de seguir e demonstração..."
+description: 'Observação: Uma versão atualizada deste tutorial está disponível aqui que usa o ASP.NET MVC 5 e Visual Studio 2013. É mais seguro e muito mais simples de seguir e demonstração...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 6de7d279677c7bbf220b956767a97aaaff8da9a1
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 39d1d9d4cb8b11f7ce5a3a85c51f652115d79db7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-to-the-model"></a>Adicionando validação para o modelo
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > > [!NOTE]
 > > Uma versão atualizada deste tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) que usa o ASP.NET MVC 5 e Visual Studio 2013. É muito mais simples a seguir, mais segura e demonstra mais recursos.
@@ -81,7 +81,7 @@ Clique o **criar novo** link para adicionar um novo filme. Preencha o formulári
 ![8_validationErrors](adding-validation-to-the-model/_static/image1.png)
 
 > [!NOTE]
-> para dar suporte a validação jQuery para idiomas diferentes do inglês que usam uma vírgula (&quot;,&quot;) para um ponto decimal, você deve incluir *globalize.js* e específicos *cultures/globalize.cultures.js* arquivo (de [https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) e JavaScript para usar `Globalize.parseFloat`. O código a seguir mostra as modificações no arquivo Views\Movies\Edit.cshtml para trabalhar com o &quot;fr-FR&quot; cultura:
+> para dar suporte a validação jQuery para idiomas diferentes do inglês que usam uma vírgula (&quot;,&quot;) para um ponto decimal, você deve incluir *globalize.js* e específicos *cultures/globalize.cultures.js* arquivo (de [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) e JavaScript para usar `Globalize.parseFloat`. O código a seguir mostra as modificações no arquivo Views\Movies\Edit.cshtml para trabalhar com o &quot;fr-FR&quot; cultura:
 
 
 [!code-cshtml[Main](adding-validation-to-the-model/samples/sample6.cshtml)]
@@ -94,10 +94,10 @@ Você deve ter notado para as propriedades `Title` e `Genre`, o atributo necess�
 
 1. Guia para o campo.
 2. Digite algum texto.
-3. Guia saída.
+3. Saída da guia.
 4. Guia volta para o campo.
 5. Remova o texto.
-6. Guia saída.
+6. Saída da guia.
 
 A sequência acima disparará a validação necessária sem pressionar o botão de envio. Basta pressionar o botão de envio sem inserir qualquer um dos campos disparará a validação do lado do cliente. Os dados de formulário não são enviados no servidor até que não haja erros de validação do lado do cliente. Você pode testar isso colocando um ponto de interrupção no método HTTP Post ou usando o [ferramenta fiddler](http://fiddler2.com/fiddler2/) ou do IE 9 [ferramentas de desenvolvedor F12](https://msdn.microsoft.com/ie/aa740478).
 
@@ -165,6 +165,6 @@ A imagem abaixo mostra os mesmos dados exibidos com a cultura padrão (em inglê
 
 Na próxima parte da série, examinaremos o aplicativo e faremos algumas melhorias nos métodos `Details` e `Delete` gerados automaticamente.
 
->[!div class="step-by-step"]
-[Anterior](adding-a-new-field-to-the-movie-model-and-table.md)
-[Próximo](examining-the-details-and-delete-methods.md)
+> [!div class="step-by-step"]
+> [Anterior](adding-a-new-field-to-the-movie-model-and-table.md)
+> [Próximo](examining-the-details-and-delete-methods.md)

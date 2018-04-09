@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
-title: "Noções básicas sobre o ASP.NET AJAX UpdatePanel gatilhos | Microsoft Docs"
+title: Noções básicas sobre o ASP.NET AJAX UpdatePanel gatilhos | Microsoft Docs
 author: scottcate
-description: "Ao trabalhar no editor de marcação no Visual Studio, você pode perceber (de IntelliSense) que há dois elementos filho de um controle UpdatePanel. Uma das perguntas..."
+description: Ao trabalhar no editor de marcação no Visual Studio, você pode perceber (de IntelliSense) que há dois elementos filho de um controle UpdatePanel. Uma das perguntas...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/12/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: 1338ef0763d9bfab451bc30cafa39f715200153d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f30f2ead402d2f49a89b2caf47cc30b6445d4cfb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>Noções básicas sobre o ASP.NET AJAX UpdatePanel gatilhos
 ====================
@@ -57,10 +57,10 @@ Da mesma forma, o `<asp:PostBackTrigger>` elemento pode ser usado para renderiza
 
 *Marcação descendentes:*
 
-| **Marca** | **Descrição** |
+| **Tag** | **Descrição** |
 | --- | --- |
-| &lt;ASP: AsyncPostBackTrigger&gt; | Especifica um controle e o evento que fará com que uma atualização parcial de página para o UpdatePanel que contém esta referência de gatilho. |
-| &lt;ASP: PostBackTrigger&gt; | Especifica um controle e o evento que fará com que uma atualização de página inteira (uma atualização de página inteira). Essa marca pode ser usada para forçar uma atualização completa quando um controle dispararia caso contrário, o processamento parcial. |
+| &lt;asp:AsyncPostBackTrigger&gt; | Especifica um controle e o evento que fará com que uma atualização parcial de página para o UpdatePanel que contém esta referência de gatilho. |
+| &lt;asp:PostBackTrigger&gt; | Especifica um controle e o evento que fará com que uma atualização de página inteira (uma atualização de página inteira). Essa marca pode ser usada para forçar uma atualização completa quando um controle dispararia caso contrário, o processamento parcial. |
 
 ## <a name="walkthrough-cross-updatepanel-triggers"></a>*Passo a passo: UpdatePanel entre gatilhos*
 
@@ -149,12 +149,12 @@ Para reduzir o potencial de carga de processamento do servidor, é recomendável
 
 Examinando o funcionamento interno do formulário ASP.NET AJAX após o modelo de interceptação, pudemos determinar que utiliza a estrutura já fornecida pelo ASP.NET. Dessa forma, ele preserva a máxima compatibilidade com controles criados usando a mesma estrutura e minimamente atua em qualquer adicional JavaScript gravado para a página.
 
-## <a name="bio"></a>Biografia do
+## <a name="bio"></a>Bio
 
-Rob Paveza é um desenvolvedor de aplicativos .NET sênior em Terralever ([www.terralever.com](http://www.terralever.com)), uma empresa de marketing interativa líder em Tempe, AZ. Ele pode ser contatado em [ robpaveza@gmail.com ](mailto:robpaveza@gmail.com), e seu blog está localizado em [http://geekswithblogs.net/robp/](http://geekswithblogs.net/robp/).
+Rob Paveza é um desenvolvedor de aplicativos .NET sênior em Terralever ([www.terralever.com](http://www.terralever.com)), uma empresa de marketing interativa líder em Tempe, AZ. Ele pode ser contatado em [ robpaveza@gmail.com ](mailto:robpaveza@gmail.com), e seu blog está localizado em [ http://geekswithblogs.net/robp/ ](http://geekswithblogs.net/robp/).
 
 Scott Cate trabalha com tecnologias Microsoft Web desde 1997 e é presidente da myKB.com ([www.myKB.com](http://www.myKB.com)) onde ele é especializada em escrever ASP.NET com base em aplicativos voltados para soluções de Software da Base de dados de Conhecimento. Scott pode ser contatado via email em [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) ou em seu blog [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Anterior](understanding-partial-page-updates-with-asp-net-ajax.md)
-[Próximo](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+> [!div class="step-by-step"]
+> [Anterior](understanding-partial-page-updates-with-asp-net-ajax.md)
+> [Próximo](understanding-asp-net-ajax-authentication-and-profile-application-services.md)

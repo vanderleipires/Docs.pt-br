@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
-title: "Interagir com a página de conteúdo da página mestra (VB) | Microsoft Docs"
+title: Interagir com a página de conteúdo da página mestra (VB) | Microsoft Docs
 author: rick-anderson
-description: "Examina como chamar métodos, definir propriedades, etc. da página de conteúdo no código da página mestra."
+description: Examina como chamar métodos, definir propriedades, etc. da página de conteúdo no código da página mestra.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a25f739e5d5717d275554909e1584bb7e7fed302
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9274924b441cb21e33eb57de06ff374428fa036b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>Interagir com a página de conteúdo da página mestra (VB)
 ====================
@@ -153,7 +153,7 @@ Conforme discutido anteriormente neste tutorial, é preciso gerar um evento na p
 Uma classe assina um evento, criando uma *manipulador de eventos*, que é um método que é executado em resposta ao evento que está sendo gerado. O publicador define os eventos que ele gera definindo um *delegado do evento*. O delegado do evento especifica que o manipulador de eventos deve aceitar parâmetros de entrada. O .NET Framework, delegados de eventos não retornar qualquer valor em aceita dois parâmetros de entrada:
 
 - Um `Object`, que identifica a origem do evento, e
-- Uma classe derivada de`System.EventArgs`
+- Uma classe derivada de `System.EventArgs`
 
 O segundo parâmetro passado para um manipulador de eventos pode incluir informações adicionais sobre o evento. Enquanto a base de `EventArgs` classe não transmitir qualquer informação, o .NET Framework inclui um número de classes que estendem `EventArgs` e abrangem propriedades adicionais. Por exemplo, um `CommandEventArgs` instância é passada para manipuladores de eventos que respondem ao `Command` evento e inclui duas propriedades informativas: `CommandArgument` e `CommandName`.
 
@@ -257,12 +257,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
-Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](interacting-with-the-master-page-from-the-content-page-vb.md)
-[Próximo](master-pages-and-asp-net-ajax-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](interacting-with-the-master-page-from-the-content-page-vb.md)
+> [Próximo](master-pages-and-asp-net-ajax-vb.md)

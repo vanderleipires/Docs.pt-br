@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 title: Determinar quais arquivos precisam ser implantados (VB) | Microsoft Docs
 author: rick-anderson
-description: "Quais arquivos precisam ser implantados no ambiente de desenvolvimento para o ambiente de produção depende em parte se o aplicativo ASP.NET foi criado nos..."
+description: Quais arquivos precisam ser implantados no ambiente de desenvolvimento para o ambiente de produção depende em parte se o aplicativo ASP.NET foi criado nos...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: aad0d4d4f7db5942c51255c34f36be73ed0e1f2d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4b9fcdbaaa0c2a6d7610339ecb6018a0fe6895f4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a>Determinar quais arquivos precisam ser implantados (VB)
 ====================
@@ -41,7 +41,7 @@ Considere uma página ASP.NET chamada `Clock.aspx` que contém um controle de r�
 
 [!code-vb[Main](determining-what-files-need-to-be-deployed-vb/samples/sample1.vb)]
 
-Para que o mecanismo do ASP.NET atender uma solicitação para essa página, parte do código da página (o  *`WebPage`*  `.aspx.vb` arquivo) devem ser compilados primeiro. Esta compilação pode acontecer automaticamente ou explicitamente.
+Para que o mecanismo do ASP.NET atender uma solicitação para essa página, parte do código da página (o *`WebPage`* `.aspx.vb` arquivo) devem ser compilados primeiro. Esta compilação pode acontecer automaticamente ou explicitamente.
 
 Se a compilação acontece explicitamente, o código-fonte do aplicativo inteiro é compilado em um ou mais assemblies (`.dll` arquivos) localizado no aplicativo de `Bin` directory. Se a compilação ocorre automaticamente e resultante gerada automaticamente é assembly, por padrão, colocado no `Temporary ASP.NET Files` pasta, que pode ser encontrada em `%WINDOWS%\Microsoft.NET\Framework\<version>`, embora esse local é configurável por meio de [ &lt; compilação&gt; elemento](https://msdn.microsoft.com/library/s10awwz0.aspx) em `Web.config`. Com a compilação explícita você deve executar alguma ação para compilar o código do aplicativo ASP.NET em um assembly, e esta etapa ocorre antes da implantação. Com a compilação automática o processo de compilação ocorre no servidor web quando o recurso é acessado pela primeira vez.
 
@@ -79,15 +79,15 @@ O download para este tutorial inclui um aplicativo ASP.NET chamado revisões de 
 - Uma página mestra (`Site.master`).
 - Sete páginas ASP.NET diferentes:
 
-    - ~/`Default.aspx`-homepage do site.
-    - ~/`About.aspx`-uma página de "Sobre o Site".
-    - ~/`Fiction/Default.aspx`-uma página listando os livros de ficção foram revisados.
+    - ~/`Default.aspx` -homepage do site.
+    - ~/`About.aspx` -uma página de "Sobre o Site".
+    - ~/`Fiction/Default.aspx` -uma página listando os livros de ficção foram revisados.
 
-        - ~/`Fiction/Blaze.aspx`-uma revisão do livro Richard Bachman *Blaze*.
-    - ~/`Tech/Default.aspx`-uma página listando os livros de tecnologia que foram examinados.
+        - ~/`Fiction/Blaze.aspx` -uma revisão do livro Richard Bachman *Blaze*.
+    - ~/`Tech/Default.aspx` -uma página listando os livros de tecnologia que foram examinados.
 
-        - ~/`Tech/CYOW.aspx`-uma revisão do *criar seu próprio site*.
-        - ~/`Tech/TYASP35.aspx`-uma revisão do *ensinar por conta própria ASP.NET 3.5 nas 24 horas*.
+        - ~/`Tech/CYOW.aspx` -uma revisão do *criar seu próprio site*.
+        - ~/`Tech/TYASP35.aspx` -uma revisão do *ensinar por conta própria ASP.NET 3.5 nas 24 horas*.
 - Três arquivos diferentes de CSS no `Styles` pasta.
 - Quatro arquivos de imagem - funciona com o logotipo do ASP.NET e as imagens das tampas dos livros revisadas três - todos localizados no `Images` pasta.
 - Um `Web.sitemap` arquivo, que define o mapa de site e é usado para exibir menus de `Default.aspx` páginas no diretório raiz e `Fiction` e `Tech` pastas.
@@ -189,6 +189,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Sistema de projeto de Site da Web do Visual Studio 2005: o que é e por que o fizemos?](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
 - [Passo a passo: Convertendo um projeto de Site da Web para um projeto de aplicativo Web no Visual Studio](https://msdn.microsoft.com/library/aa983476.aspx)
 
->[!div class="step-by-step"]
-[Anterior](asp-net-hosting-options-vb.md)
-[Próximo](deploying-your-site-using-an-ftp-client-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](asp-net-hosting-options-vb.md)
+> [Próximo](deploying-your-site-using-an-ftp-client-vb.md)

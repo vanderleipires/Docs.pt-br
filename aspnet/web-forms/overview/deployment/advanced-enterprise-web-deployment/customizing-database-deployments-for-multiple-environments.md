@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 06f22bc9a3068ee5621df62ee5ed1bea06d7e9e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Personalizando as implantações de banco de dados para vários ambientes
 ====================
@@ -35,9 +35,9 @@ por [Jason Lee](https://github.com/jrjlee)
 > Em um projeto de banco de dados do Visual Studio 2010, as configurações de implantação estão contidas em um arquivo de configuração (.sqldeployment) de implantação. Neste tópico mostram como criar arquivos de configuração específicos ao ambiente de implantação e especifique aquele que você deseja usar como um parâmetro VSDBCMD.
 
 
-Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo & #x 2014; o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, Windows Serviço do Communication Foundation (WCF) e um projeto de banco de dados.
+Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo&#x2014;o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, uma comunicação do Windows Serviço Foundation (WCF) e um projeto de banco de dados.
 
-O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos & #x 2014; projeto contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
+O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos de projeto&#x2014;contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
 ## <a name="task-overview"></a>Visão geral da tarefa
 
@@ -72,12 +72,12 @@ Esta tabela mostra as configurações de implantação típica para ambientes de
 |  | Desenvolvedor/teste | Preparo/integração | Produção |
 | --- | --- | --- | --- |
 | **Agrupamento de comparação de implantação** | Origem | Destino | Destino |
-| **Implantar propriedades do banco de dados** | verdadeiro | Apenas na primeira vez | Apenas na primeira vez |
-| **Sempre recriar banco de dados** | verdadeiro | False | False |
-| **Bloquear implantação incremental se puder ocorrer perda de dados** | False | Talvez | verdadeiro |
-| **Executar script de implantação no modo de usuário único** | False | verdadeiro | verdadeiro |
-| **Fazer backup de banco de dados antes da implantação** | False | Talvez | verdadeiro |
-| **Gerar instruções DROP para objetos que estão no banco de dados de destino, mas que não estão no projeto de banco de dados** | False | verdadeiro | verdadeiro |
+| **Implantar propriedades do banco de dados** | True | Apenas na primeira vez | Apenas na primeira vez |
+| **Sempre recriar banco de dados** | True | False | False |
+| **Bloquear implantação incremental se puder ocorrer perda de dados** | False | Talvez | True |
+| **Executar script de implantação no modo de usuário único** | False | True | True |
+| **Fazer backup de banco de dados antes da implantação** | False | Talvez | True |
+| **Gerar instruções DROP para objetos que estão no banco de dados de destino, mas que não estão no projeto de banco de dados** | False | True | True |
 | **Não usar instruções ALTER ASSEMBLY para atualizar tipos CLR** | False | False | False |
   
 
@@ -146,6 +146,6 @@ Esses artigos no MSDN fornecem orientação geral sobre a implantação de banco
 - [Criar e implantar bancos de dados em um ambiente de desenvolvimento isolado](https://msdn.microsoft.com/library/dd193409.aspx)
 - [Criar e implantar bancos de dados em um ambiente de produção ou preparo](https://msdn.microsoft.com/library/dd193413.aspx)
 
->[!div class="step-by-step"]
-[Anterior](performing-a-what-if-deployment.md)
-[Próximo](deploying-database-role-memberships-to-test-environments.md)
+> [!div class="step-by-step"]
+> [Anterior](performing-a-what-if-deployment.md)
+> [Próximo](deploying-database-role-memberships-to-test-environments.md)

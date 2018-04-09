@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
-title: "Conta de confirmação e de recuperação de senha com a identidade do ASP.NET (c#) | Microsoft Docs"
+title: Conta de confirmação e de recuperação de senha com a identidade do ASP.NET (c#) | Microsoft Docs
 author: HaoK
-description: "Antes de fazer este tutorial, a que você deve primeiro concluir criar um aplicativo de web seguro do ASP.NET MVC 5 com logon, redefinição de senha e de confirmação de email. Este tutorial..."
+description: Antes de fazer este tutorial, a que você deve primeiro concluir criar um aplicativo de web seguro do ASP.NET MVC 5 com logon, redefinição de senha e de confirmação de email. Este tutorial...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
 ms.topic: article
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 548baaaa06980fb793c079b66b6edc34422eb579
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0167388cf6b488b72ca36f583a7794690dbf9900
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>Confirmação de conta e senha de recuperação com a identidade do ASP.NET (c#)
 ====================
@@ -88,7 +88,7 @@ Comece instalando e executando [Visual Studio Express 2013 para Web](https://go.
   
     ![](account-confirmation-and-password-recovery-with-aspnet-identity/_static/image10.png)  
   
- Agora o email não foi confirmado.
+   Agora o email não foi confirmado.
 
 O repositório de dados padrão para a identidade do ASP.NET é Entity Framework, mas você pode configurá-lo para usar outros repositórios de dados e adicionar outros campos. Consulte [recursos adicionais](#addRes) seção no final deste tutorial.
 
@@ -117,7 +117,7 @@ Examine o `ApplicationUserManager` classe, que contém as informações de ident
 - Autenticação de dois fatores (2FA). Abordaremos 2FA e SMS em outro tutorial.
 - Conectar o email e serviços do SMS. (Abordaremos SMS em outro tutorial).
 
-O `ApplicationUserManager` classe deriva genérica `UserManager<ApplicationUser>` classe. `ApplicationUser`deriva [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx). `IdentityUser`deriva genérica `IdentityUser` classe:
+O `ApplicationUserManager` classe deriva genérica `UserManager<ApplicationUser>` classe. `ApplicationUser` deriva [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx). `IdentityUser` deriva genérica `IdentityUser` classe:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample1.cs)]
 
@@ -127,11 +127,11 @@ Argumentos genéricos em `IUser` permitem que você derivar uma classe usando ti
 
 ### <a name="applicationuser"></a>ApplicationUser
 
-`ApplicationUser`(`public class ApplicationUserManager : UserManager<ApplicationUser>`) é definido em *Models\IdentityModels.cs* como:
+`ApplicationUser` (`public class ApplicationUserManager : UserManager<ApplicationUser>`) é definido em *Models\IdentityModels.cs* como:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample2.cs?highlight=8-9)]
 
-O código realçado acima gera um [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Identidade do ASP.NET e autenticação de Cookie OWIN são baseados em declarações, portanto o framework requer o aplicativo para gerar um `ClaimsIdentity` para o usuário. `ClaimsIdentity`contém informações sobre todas as declarações para o usuário, como o nome do usuário, idade e as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio.
+O código realçado acima gera um [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Identidade do ASP.NET e autenticação de Cookie OWIN são baseados em declarações, portanto o framework requer o aplicativo para gerar um `ClaimsIdentity` para o usuário. `ClaimsIdentity` contém informações sobre todas as declarações para o usuário, como o nome do usuário, idade e as funções que o usuário pertence. Você também pode adicionar mais declarações para o usuário neste estágio.
 
 O OWIN `AuthenticationManager.SignIn` método passa a `ClaimsIdentity` e assina o usuário:
 
@@ -152,7 +152,7 @@ Nesta seção, você usará o NuGet para baixar um exemplo mais completo, com qu
 
     [!code-console[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample4.cmd)]
 
- Neste tutorial, vamos usar [SendGrid](http://sendgrid.com/) para enviar email. O `Identity.Samples` pacote instala o código que trabalhará.
+   Neste tutorial, vamos usar [SendGrid](http://sendgrid.com/) para enviar email. O `Identity.Samples` pacote instala o código que trabalhará.
 3. Definir o [projeto para usar SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
 4. Criação de conta local de teste executando o aplicativo, clicando no **registrar** link e o formulário de registro de lançamento.
 5. Clique no link de email de demonstração, que simula a confirmação de email.
@@ -198,7 +198,7 @@ O código a seguir mostra como enviar email usando o [MailMessage](https://msdn.
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
 > [!WARNING]
-> Segurança - nunca armazenar os dados confidenciais em seu código-fonte. A conta e as credenciais são armazenadas na appSetting. No Azure, você pode armazenar com segurança esses valores de  **[configurar](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  no portal do Azure. Consulte [práticas recomendadas para a implantação de senhas e outros dados confidenciais em ASP.NET e o Azure](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
+> Segurança - nunca armazenar os dados confidenciais em seu código-fonte. A conta e as credenciais são armazenadas na appSetting. No Azure, você pode armazenar com segurança esses valores de **[configurar](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** no portal do Azure. Consulte [práticas recomendadas para a implantação de senhas e outros dados confidenciais em ASP.NET e o Azure](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
 
 
 Insira suas credenciais SendGrid, executar o aplicativo, registrar com um alias de email pode clicar no link confirmar seu email. Para saber como fazer isso com seu [Outlook.com](http://outlook.com) contas de email, consulte de John Atten [c# configuração de SMTP para o Host de SMTP do Outlook.Com](http://typecastexception.com/post/2013/12/20/C-SMTP-Configuration-for-OutlookCom-SMTP-Host.aspx) e suas[ASP.NET 2.0 de identidade: configuração de backup de validação da conta Autorização de dois fatores e](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) postagens.

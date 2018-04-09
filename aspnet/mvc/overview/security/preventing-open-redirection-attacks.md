@@ -2,7 +2,7 @@
 uid: mvc/overview/security/preventing-open-redirection-attacks
 title: Evitando ataques de redirecionamento aberto (c#) | Microsoft Docs
 author: jongalloway
-description: "Este tutorial explica como você pode impedir ataques de redirecionamento abertos em seus aplicativos ASP.NET MVC. Este tutorial aborda as alterações que foram feitas..."
+description: Este tutorial explica como você pode impedir ataques de redirecionamento abertos em seus aplicativos ASP.NET MVC. Este tutorial aborda as alterações que foram feitas...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 17944c0600a174176e3e9940f414b34f0835b800
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ec1cd1791eb6d32e7c1ea50bc6626929cad2960e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="preventing-open-redirection-attacks-c"></a>Evitando ataques de redirecionamento aberto (c#)
 ====================
@@ -39,7 +39,7 @@ Captura de tela abaixo, podemos ver que uma tentativa de acessar o modo de exibi
 
 **Figura 01**: página de logon com um redirecionamento aberto
 
-Como o parâmetro de querystring ReturnUrl não for validado, um invasor pode modificar para inserir qualquer endereço de URL para o parâmetro para realizar um ataque de redirecionamento aberto. Para demonstrar isso, podemos modificar o parâmetro ReturnUrl [http://bing.com](http://bing.com), portanto, a URL de logon resultante será/conta/LogOn? ReturnUrl = http://www.bing.com/. Após fazer logon com êxito no site, são redirecionadas para [http://bing.com](http://bing.com). Como esse redirecionamento não for validado, ele em vez disso, pode apontar para um site mal-intencionado que tenta fazer com que o usuário.
+Como o parâmetro de querystring ReturnUrl não for validado, um invasor pode modificar para inserir qualquer endereço de URL para o parâmetro para realizar um ataque de redirecionamento aberto. Para demonstrar isso, podemos modificar o parâmetro ReturnUrl [ http://bing.com ](http://bing.com), portanto, a URL de logon resultante será/conta/LogOn? ReturnUrl =<http://www.bing.com/>. Após fazer logon com êxito no site, são redirecionadas para [ http://bing.com ](http://bing.com). Como esse redirecionamento não for validado, ele em vez disso, pode apontar para um site mal-intencionado que tenta fazer com que o usuário.
 
 ### <a name="a-more-complex-open-redirection-attack"></a>Um ataque de redirecionamento aberto mais complexos
 
@@ -55,7 +55,7 @@ Observe que a URL de retorno aponta nerddiner.com, que está faltando um "n" de 
 
 **Figura 02**: NerdDinner a página de logon com um redirecionamento aberto
 
-Quando registramos corretamente, ação de LogOn do AccountController do ASP.NET MVC redireciona nós para a URL especificada no parâmetro querystring returnUrl. Nesse caso, é a URL que o invasor tenha inserido, que é [http://nerddiner.com/Account/LogOn](http://nerddiner.com/Account/LogOn). A menos que estamos muito cuidados, é muito provável que não irá notar que isso, especialmente porque o invasor tenha sido cuidado para garantir que suas páginas forjadas parece exatamente com a página de logon legítimo. Essa página de logon inclui uma mensagem de erro solicitando que podemos fazer logon novamente. Trabalhosa nós, é necessário ter digitado sua senha.
+Quando registramos corretamente, ação de LogOn do AccountController do ASP.NET MVC redireciona nós para a URL especificada no parâmetro querystring returnUrl. Nesse caso, é a URL que o invasor tenha inserido, que é [ http://nerddiner.com/Account/LogOn ](http://nerddiner.com/Account/LogOn). A menos que estamos muito cuidados, é muito provável que não irá notar que isso, especialmente porque o invasor tenha sido cuidado para garantir que suas páginas forjadas parece exatamente com a página de logon legítimo. Essa página de logon inclui uma mensagem de erro solicitando que podemos fazer logon novamente. Trabalhosa nós, é necessário ter digitado sua senha.
 
 [![](preventing-open-redirection-attacks/_static/image6.png)](preventing-open-redirection-attacks/_static/image5.png)
 
@@ -67,13 +67,13 @@ Quando é novamente em nosso nome de usuário e senha, a página de logon forjad
 
 O código para a ação de LogOn em um aplicativo ASP.NET MVC 2 é mostrado abaixo. Observe que, após um logon bem-sucedido, o controlador retorna um redirecionamento para a returnUrl. Você pode ver que nenhuma validação está sendo executada com o parâmetro returnUrl.
 
-**Listando 1 – a ação de LogOn do ASP.NET MVC 2`AccountController.cs`**
+**Listando 1 – a ação de LogOn do ASP.NET MVC 2 `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample1.cs)]
 
 Agora vamos examinar as alterações para a ação de LogOn do ASP.NET MVC 3. Este código foi alterado para validar o parâmetro returnUrl chamando um novo método na classe auxiliar System.Web.Mvc.Url chamada `IsLocalUrl()`.
 
-**Listando 2 – a ação de LogOn do ASP.NET MVC 3`AccountController.cs`**
+**Listando 2 – a ação de LogOn do ASP.NET MVC 3 `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample2.cs)]
 
@@ -85,7 +85,7 @@ Podemos pode aproveitar as alterações do ASP.NET MVC 3 em nosso ASP.NET MVC 1.
 
 O método UrlHelper IsLocalUrl() apenas chamando um método em System.Web.WebPages, como essa validação também é usado por aplicativos de páginas da Web ASP.NET.
 
-**A listagem 3 – o método IsLocalUrl() do UrlHelper do ASP.NET MVC 3`class`**
+**A listagem 3 – o método IsLocalUrl() do UrlHelper do ASP.NET MVC 3 `class`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample3.cs)]
 
@@ -107,7 +107,7 @@ Agora que o método IsLocalUrl() está em vigor, vamos pode chamá-la de nossa a
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample6.cs)]
 
-Agora podemos testar um ataque de redirecionamento aberto, na tentativa de fazer logon usando uma URL externa de retorno. Vamos usar conta/LogOn? ReturnUrl = http://www.bing.com/ novamente.
+Agora podemos testar um ataque de redirecionamento aberto, na tentativa de fazer logon usando uma URL externa de retorno. Vamos usar /Account/LogOn? ReturnUrl =<http://www.bing.com/> novamente.
 
 [![](preventing-open-redirection-attacks/_static/image8.png)](preventing-open-redirection-attacks/_static/image7.png)
 

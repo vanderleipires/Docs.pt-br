@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
-title: "Filtragem em duas páginas (c#) mestre/detalhes | Microsoft Docs"
+title: Filtragem em duas páginas (c#) mestre/detalhes | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial examinamos como separar um relatório mestre/detalhes em duas páginas. Na página 'mestre', usamos um controle repetidor para renderizar uma lista de categ..."
+description: Este tutorial examinamos como separar um relatório mestre/detalhes em duas páginas. Na página 'mestre', usamos um controle repetidor para renderizar uma lista de categ...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bb86db509ca26dde0c24341dee402e7af4355507
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6a3783175218438f2a9f735c3861c56e039a248e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>Mestre/detalhes filtragem em duas páginas (c#)
 ====================
@@ -59,7 +59,7 @@ Com essa marcação concluída, dedique alguns momentos para exibir nosso andame
 
 ## <a name="step-2-turning-the-category-name-into-a-link-to-the-details-page"></a>Etapa 2: Transformar o nome da categoria em um Link para a página de detalhes
 
-Para permitir que um usuário exibir as informações de "Detalhes" para uma determinada categoria, precisamos adicionar um link para cada lista com marcadores de item que, quando clicado, levará o usuário para a segunda página (`ProductsForCategoryDetails.aspx`). Essa segunda página, em seguida, exibirá os produtos para a categoria selecionada usando uma DataList. Para determinar a categoria cujo link foi clicado, precisamos passar a categoria clicada `CategoryID` para a segunda página por algum outro mecanismo. A maneira mais simples e mais simples para transferir dados escalar de uma página para outra é por meio de querystring, que é a opção que vamos usar neste tutorial. Em particular, o `ProductsForCategoryDetails.aspx` página esperará selecionado  *`categoryID`*  valor a ser passado por meio de um campo querystring chamado `CategoryID`. Por exemplo, para exibir os produtos para a categoria de bebidas, que tem um `CategoryID` de 1, um usuário deve visitar `ProductsForCategoryDetails.aspx?CategoryID=1`.
+Para permitir que um usuário exibir as informações de "Detalhes" para uma determinada categoria, precisamos adicionar um link para cada lista com marcadores de item que, quando clicado, levará o usuário para a segunda página (`ProductsForCategoryDetails.aspx`). Essa segunda página, em seguida, exibirá os produtos para a categoria selecionada usando uma DataList. Para determinar a categoria cujo link foi clicado, precisamos passar a categoria clicada `CategoryID` para a segunda página por algum outro mecanismo. A maneira mais simples e mais simples para transferir dados escalar de uma página para outra é por meio de querystring, que é a opção que vamos usar neste tutorial. Em particular, o `ProductsForCategoryDetails.aspx` página esperará selecionado *`categoryID`* valor a ser passado por meio de um campo querystring chamado `CategoryID`. Por exemplo, para exibir os produtos para a categoria de bebidas, que tem um `CategoryID` de 1, um usuário deve visitar `ProductsForCategoryDetails.aspx?CategoryID=1`.
 
 Para criar um hiperlink para cada item de lista com marcadores no repetidor, precisamos adicionar um controle HyperLink Web ou um elemento âncora HTML (`<a>`) para o `ItemTemplate`. Em cenários onde o hiperlink é exibido o mesmo para cada linha, qualquer abordagem será suficiente. Para repetidores, prefiro usando o elemento de âncora. Para usar o elemento de âncora, atualize ItemTemplate do repetidor para:
 
@@ -170,18 +170,18 @@ Depois de atualizar o banco de dados adequadamente, retornar o `CategoryListMast
 
 Enquanto os relatórios mestre/detalhes podem exibir registros mestre e de detalhes em uma única página, em muitos sites eles são separados em duas páginas da web. Neste tutorial vimos como implementar tal relatório mestre/detalhes categorias listadas em uma lista com marcadores usando um repetidor na página da web "mestre" e os produtos associados listados na página "Detalhes". Cada item da lista na página da web mestre continha um link para a página de detalhes do passado ao longo da linha `CategoryID` valor.
 
-Na página de detalhes, recuperar os produtos para o fornecedor especificado foi realizado por meio de `ProductsBLL` da classe `GetProductsByCategoryID(categoryID)` método. O  *`categoryID`*  o valor do parâmetro foi especificado usando o `CategoryID` valor de querystring como a origem do parâmetro. Também vimos como exibir detalhes de categoria na página de detalhes do usando um FormView e como exibir uma mensagem se não houvesse nenhum produto que pertencem à categoria selecionada.
+Na página de detalhes, recuperar os produtos para o fornecedor especificado foi realizado por meio de `ProductsBLL` da classe `GetProductsByCategoryID(categoryID)` método. O *`categoryID`* o valor do parâmetro foi especificado usando o `CategoryID` valor de querystring como a origem do parâmetro. Também vimos como exibir detalhes de categoria na página de detalhes do usando um FormView e como exibir uma mensagem se não houvesse nenhum produto que pertencem à categoria selecionada.
 
 Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a...
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Zack Jones e Liz Shulok. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](master-detail-filtering-with-a-dropdownlist-datalist-cs.md)
-[Próximo](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](master-detail-filtering-with-a-dropdownlist-datalist-cs.md)
+> [Próximo](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)

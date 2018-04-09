@@ -2,7 +2,7 @@
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 title: Carrinho de compras | Microsoft Docs
 author: Erikre
-description: "Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express 2013 para nós..."
+description: Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e o Microsoft Visual Studio Express 2013 para nós...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: 9fe6f28685d6a423b03f9c7abe753283b89344e1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a8e96da7737cdf649575711a464c4f7726cb6ded
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="shopping-cart"></a>Carrinho de compras
 ====================
-Por [Erik Reitan](https://github.com/Erikre)
+por [Erik Reitan](https://github.com/Erikre)
 
 [Baixe o projeto de exemplo do Wingtip Toys (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ou [baixar livro eletrônico (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
@@ -43,7 +43,7 @@ Este tutorial descreve a lógica comercial necessária para adicionar um carrinh
 1. Entity Framework Code First
 2. Anotações de dados
 3. Fortemente tipado a controles de dados
-4. Associação de modelo
+4. Associação de modelos
 
 ## <a name="creating-a-shopping-cart"></a>Criando um carrinho de compras
 
@@ -66,7 +66,7 @@ Anteriormente na série de tutoriais, você definiu o esquema para os dados de c
     ![-O carrinho de compras adicione a caixa de diálogo Novo Item](shopping-cart/_static/image2.png)
 3. Nomeie essa nova classe *CartItem.cs*.
 4. Clique em **Adicionar**.  
- O novo arquivo de classe é exibido no editor.
+   O novo arquivo de classe é exibido no editor.
 5. Substitua o código padrão pelo seguinte código:   
 
     [!code-csharp[Main](shopping-cart/samples/sample1.cs)]
@@ -136,7 +136,7 @@ Como mencionado anteriormente, você criará uma página de processamento de cha
 #### <a name="to-create-the-add-to-cart-functionality"></a>Para criar o adicionar ao carrinho funcionalidade:
 
 1. Em **Solution Explorer**, com o botão direito do **WingtipToys**de projeto, clique em **adicionar**  - &gt; **Novo Item**.  
- A caixa de diálogo **Adicionar Novo Item** é exibida.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
 2. Adicionar uma nova página padrão (Web Form) para o aplicativo chamado *AddToCart.aspx*. 
 
     ![-O carrinho de compras Adicionar formulário da Web](shopping-cart/_static/image4.png)
@@ -154,7 +154,7 @@ Como mencionado anteriormente, um usuário `ID` é usado para identificar os pro
 O *ShoppingCart.aspx* página exibirá os produtos que o usuário tenha adicionado ao carrinho de compras. Ele também fornecerá a capacidade de adicionar, remover e atualizar itens no carrinho de compras.
 
 1. Em **Solution Explorer**, clique com botão direito **WingtipToys**, clique em **adicionar**  - &gt; **Novo Item**.  
- A caixa de diálogo **Adicionar Novo Item** é exibida.
+   A caixa de diálogo **Adicionar Novo Item** é exibida.
 2. Adicione uma nova página (Web Form) que inclui uma página mestre, selecionando **formulário da Web usando página mestra**. Nomeie a nova página *ShoppingCart.aspx*.
 3. Selecione **Site.Master** para anexar a página mestra para recém-criado *. aspx* página.
 4. No *ShoppingCart.aspx* página, substitua a marcação existente com a seguinte marcação:   
@@ -323,6 +323,6 @@ O carrinho de compras dá suporte a adicionar, excluir e atualizar itens que o u
 
 [Visão geral do estado da sessão ASP.NET](https://msdn.microsoft.com/library/ms178581.aspx)
 
->[!div class="step-by-step"]
-[Anterior](display_data_items_and_details.md)
-[Próximo](checkout-and-payment-with-paypal.md)
+> [!div class="step-by-step"]
+> [Anterior](display_data_items_and_details.md)
+> [Próximo](checkout-and-payment-with-paypal.md)

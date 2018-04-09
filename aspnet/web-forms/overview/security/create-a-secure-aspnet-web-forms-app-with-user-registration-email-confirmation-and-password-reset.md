@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
-title: "Criar um aplicativo de Web Forms do ASP.NET seguro com o registro de usuário, email de redefinição de senha e de confirmação (c#) | Microsoft Docs"
+title: Criar um aplicativo de Web Forms do ASP.NET seguro com o registro de usuário, email de redefinição de senha e de confirmação (c#) | Microsoft Docs
 author: Erikre
-description: "Este tutorial mostra como criar um aplicativo de Web Forms do ASP.NET com o registro de usuário, email de confirmação e redefinição de senha usando o membro de identidade do ASP.NET..."
+description: Este tutorial mostra como criar um aplicativo de Web Forms do ASP.NET com o registro de usuário, email de confirmação e redefinição de senha usando o membro de identidade do ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/02/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: ed39295ed1bcaa924336a1faf52049e291abeadb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1dc7ace69473b45432fd942b9cf1ba32332cb707
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>Criar um aplicativo de Web Forms do ASP.NET seguro com o registro de usuário, email de redefinição de senha e de confirmação (c#)
 ====================
-Por [Erik Reitan](https://github.com/Erikre)
+por [Erik Reitan](https://github.com/Erikre)
 
 > Este tutorial mostra como criar um aplicativo de Web Forms do ASP.NET com o registro de usuário, email de confirmação e redefinição de senha usando o sistema de associação do ASP.NET Identity. Este tutorial baseia de Rick Anderson [tutorial MVC](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md).
 
@@ -90,7 +90,7 @@ Embora este tutorial mostra apenas como adicionar notificação por email por me
     [!code-xml[Main](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/samples/sample3.xml?highlight=2-5)]
 
     > [!WARNING]
-    > Segurança - nunca armazenar os dados confidenciais em seu código-fonte. Neste exemplo, a conta e as credenciais são armazenadas no **appSetting** seção o *Web. config* arquivo. No Azure, você pode armazenar com segurança esses valores de  **[configurar](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  no portal do Azure. Para obter informações relacionadas, consulte tópico de Rick Anderson [práticas recomendadas para a implantação de senhas e outros dados confidenciais em ASP.NET e o Azure](https://go.microsoft.com/fwlink/?LinkId=513141).
+    > Segurança - nunca armazenar os dados confidenciais em seu código-fonte. Neste exemplo, a conta e as credenciais são armazenadas no **appSetting** seção o *Web. config* arquivo. No Azure, você pode armazenar com segurança esses valores de **[configurar](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** no portal do Azure. Para obter informações relacionadas, consulte tópico de Rick Anderson [práticas recomendadas para a implantação de senhas e outros dados confidenciais em ASP.NET e o Azure](https://go.microsoft.com/fwlink/?LinkId=513141).
 6. Adicione os valores do serviço de email para refletir os valores de autenticação SendGrid (nome de usuário e senha) para que você possa bem-sucedida enviem email de seu aplicativo. Certifique-se de usar seu nome de conta do SendGrid em vez do endereço de email que você forneceu o SendGrid.
 
 ### <a name="enable-email-confirmation"></a>Habilitar o Email de confirmação
@@ -104,9 +104,9 @@ Embora este tutorial mostra apenas como adicionar notificação por email por me
 2. Em **Solution Explorer**, clique com botão direito *Default.aspx* e selecione **definir como página inicial**.
 3. Executar o aplicativo pressionando **F5.** Depois que a página é exibida, clique no **registrar** link para exibir a página de registro.
 4. Digite seu email e senha, clique o **registrar** botão para enviar uma mensagem de email por meio do SendGrid.  
- O estado atual do seu projeto e o código permitirá que o usuário fazer logon após concluir o formulário de registro, mesmo que eles ainda não confirmou sua conta.
+   O estado atual do seu projeto e o código permitirá que o usuário fazer logon após concluir o formulário de registro, mesmo que eles ainda não confirmou sua conta.
 5. Verifique sua conta de email e clique no link para confirmar seu email.  
- Depois que você envia o formulário de registro, você será conectado.  
+   Depois que você envia o formulário de registro, você será conectado.  
     ![Site de exemplo - conectado](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/_static/image4.png)
 
 <a id="require"></a>
@@ -146,9 +146,9 @@ Embora confirmar a conta de email, neste momento você não precisa clicar no li
 4. Executar o aplicativo pressionando **F5.** Depois que a página é exibida, clique no **login** link.
 5. Clique o **esqueceu sua senha?** link para exibir o **esqueceu a senha** página.
 6. Insira seu endereço de email e clique no **enviar** botão para enviar um email para o endereço que permitirá que você redefina sua senha.   
- Verifique sua conta de email e clique no link para exibir o **Redefinir senha** página.
+   Verifique sua conta de email e clique no link para exibir o **Redefinir senha** página.
 7. Sobre o **Redefinir senha** , insira seu email, a senha e a senha confirmada. Em seguida, pressione a **redefinir** botão.  
- Quando você redefinir com êxito sua senha, o **senha alterada** página será exibida. Agora você pode fazer logon com sua nova senha.
+   Quando você redefinir com êxito sua senha, o **senha alterada** página será exibida. Agora você pode fazer logon com sua nova senha.
 
 <a id="rsend"></a>
 ## <a name="resend-email-confirmation-link"></a>Reenviar o Link de confirmação de Email
@@ -167,7 +167,7 @@ Depois que um usuário cria uma nova conta local, eles são enviados por email u
 4. Excluir todas as contas no **AspNetUsers** tabela que contém o alias de email que você deseja testar.
 5. Executar o aplicativo (**F5**) e registrar o seu endereço de email.
 6. Antes de confirmar a sua nova conta por meio de email que acabou de ser enviado, tente fazer logon com a nova conta.  
- Você verá que você não consegue fazer logon no e que você deve ter uma conta de email confirmado. Além disso, você agora pode reenviar uma mensagem de confirmação para sua conta de email.
+   Você verá que você não consegue fazer logon no e que você deve ter uma conta de email confirmado. Além disso, você agora pode reenviar uma mensagem de confirmação para sua conta de email.
 7. Digite seu endereço de email e senha, em seguida, pressione a **reenviar confirmação** botão.
 8. Depois de confirmar seu endereço de email com base na mensagem de email enviadas recentemente, faça logon aplicativo.
 

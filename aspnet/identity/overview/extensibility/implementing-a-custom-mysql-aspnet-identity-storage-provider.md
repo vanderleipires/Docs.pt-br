@@ -2,21 +2,21 @@
 uid: identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 title: Implementando um provedor de armazenamento de identidade do ASP.NET personalizadas MySQL | Microsoft Docs
 author: raquelsa
-description: "Identidade do ASP.NET é um sistema extensível que permite que você criar seu próprio provedor de armazenamento e conectá-lo ao seu aplicativo sem trabalhar novamente o aplicativo..."
+description: Identidade do ASP.NET é um sistema extensível que permite que você criar seu próprio provedor de armazenamento e conectá-lo ao seu aplicativo sem trabalhar novamente o aplicativo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
 ms.topic: article
 ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 3bfbccd91705755fc24bb8305fff171baa26f370
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d843b31e011fe520aad6cfdab0beca2d12477f12
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>Implementando um provedor de armazenamento de identidade do ASP.NET personalizadas MySQL
 ====================
@@ -124,7 +124,7 @@ Se necessário, instale o [Visual Studio Express 2013 para Web](https://go.micro
 5. Clique com botão direito no projeto IdentityMySQLDemo, selecione **adicionar**, **referência, soluções, projetos;** selecione o projeto AspNet.Identity.MySQL e clique em **Okey**.
 6. No projeto IdentityMySQLDemo, substitua todas as referências a  
     `using Microsoft.AspNet.Identity.EntityFramework;`  
- with  
+   with  
      `using AspNet.Identity.MySQL;`
 7. Em IdentityModels.cs, defina **ApplicationDbContext** derivar **MySqlDatabase** e incluir um construtor que usam um único parâmetro com o nome da conexão.  
 

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/16-adding-security-and-membership
-title: "Adicionando segurança e associação a uma Web ASP.NET páginas Site (Razor) | Microsoft Docs"
+title: Adicionando segurança e associação a uma Web ASP.NET páginas Site (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Este capítulo mostra como proteger seu site para que algumas páginas estão disponíveis somente para as pessoas que entrar. (Você também aprenderá a criar páginas tha..."
+description: Este capítulo mostra como proteger seu site para que algumas páginas estão disponíveis somente para as pessoas que entrar. (Você também aprenderá a criar páginas tha...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 351368a356a71e85d4abfdceac8d4f84e0b217f4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>Adicionando a segurança e a associação a um Site de páginas (Razor) da Web do ASP.NET
 ====================
@@ -47,7 +47,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > - ASP.NET Web Helpers Library
 
 
-Você pode configurar seu site para que os usuários podem fazer logon em &#8212; ou seja, para que o site oferece suporte a *associação*. Isso pode ser útil por vários motivos. Por exemplo, o site pode ter páginas que devem estar disponíveis somente para membros. Em alguns casos, você pode exigir que os usuários fazer logon para enviar comentários ou deixar um comentário.
+Você pode configurar seu site para que os usuários podem fazer nele &#8212; ou seja, para que o site oferece suporte a *associação*. Isso pode ser útil por vários motivos. Por exemplo, o site pode ter páginas que devem estar disponíveis somente para membros. Em alguns casos, você pode exigir que os usuários fazer logon para enviar comentários ou deixar um comentário.
 
 Mesmo se seu site dá suporte à associação, os usuários não são necessariamente necessários para fazer logon antes de usar algumas das páginas no site. Usuários que não estão conectados são conhecidos como *usuários anônimos*.
 
@@ -88,26 +88,26 @@ O procedimento a seguir descreve como criar um site e configurá-lo.
     Se você não quiser configurar o email de confirmação, você poderá ignorar esta etapa e a próxima etapa. Se os valores de SMTP não estiverem definidos, a nova conta está imediatamente disponível sem um email de confirmação.
 6. Modifique as seguintes configurações de email no código:
 
-    - Defina `WebMail.SmtpServer` para o nome do servidor SMTP que você tem acesso ao.
-    - Deixe `WebMail.EnableSsl` definido como `true`. Essa configuração protege as credenciais que são enviadas para o servidor SMTP através de criptografia.
-    - Defina `WebMail.UserName` para o nome de usuário para sua conta do servidor SMTP.
-    - Definir `WebMail.Password` para a senha de sua conta do servidor SMTP.
-    - Definir `WebMail.From` para seu próprio endereço de email. Este é o endereço de email que a mensagem é enviada.
+   - Defina `WebMail.SmtpServer` para o nome do servidor SMTP que você tem acesso ao.
+   - Deixe `WebMail.EnableSsl` definido como `true`. Essa configuração protege as credenciais que são enviadas para o servidor SMTP através de criptografia.
+   - Defina `WebMail.UserName` para o nome de usuário para sua conta do servidor SMTP.
+   - Definir `WebMail.Password` para a senha de sua conta do servidor SMTP.
+   - Definir `WebMail.From` para seu próprio endereço de email. Este é o endereço de email que a mensagem é enviada.
 
-    > [!NOTE] 
-    > 
-    > **Dica** para obter informações adicionais sobre os valores para essas propriedades, consulte [definindo as configurações de Email](https://go.microsoft.com/fwlink/?LinkID=202906#configuring_email_settings) na [personalizar o comportamento de todo o Site para o ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkID=202906).
+     > [!NOTE] 
+     > 
+     > **Dica** para obter informações adicionais sobre os valores para essas propriedades, consulte [definindo as configurações de Email](https://go.microsoft.com/fwlink/?LinkID=202906#configuring_email_settings) na [personalizar o comportamento de todo o Site para o ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkID=202906).
 7. Salve e feche  *\_AppStart.cshtml*.
 8. Execute o *cshtml* página em um navegador.
 
     ![security-membership-2](16-adding-security-and-membership/_static/image1.png)
 
-    > [!NOTE]
-    > Se você vir um erro que informa que uma propriedade deve ser uma instância de `ExtendedMembershipProvider`, o site não pode ser configurado para usar o sistema de associação do ASP.NET Web Pages (SimpleMembership). Às vezes, isso pode ocorrer se o servidor de um provedor de hospedagem é configurado de forma diferente ao servidor local. Para corrigir isso, adicione o seguinte elemento para o site *Web. config* arquivo:
-    > 
-    > [!code-xml[Main](16-adding-security-and-membership/samples/sample2.xml)]
-    > 
-    > Adicionar esse elemento como um filho de `<configuration>` elemento e como um par da `<system.web>` elemento.
+   > [!NOTE]
+   > Se você vir um erro que informa que uma propriedade deve ser uma instância de `ExtendedMembershipProvider`, o site não pode ser configurado para usar o sistema de associação do ASP.NET Web Pages (SimpleMembership). Às vezes, isso pode ocorrer se o servidor de um provedor de hospedagem é configurado de forma diferente ao servidor local. Para corrigir isso, adicione o seguinte elemento para o site *Web. config* arquivo:
+   > 
+   > [!code-xml[Main](16-adding-security-and-membership/samples/sample2.xml)]
+   > 
+   > Adicionar esse elemento como um filho de `<configuration>` elemento e como um par da `<system.web>` elemento.
 9. No canto superior direito da página, clique no **registrar** link. O *Register. cshtml* página é exibida.
 10. Insira um nome de usuário e senha e, em seguida, clique em **registrar**.
 
@@ -120,14 +120,14 @@ O procedimento a seguir descreve como criar um site e configurá-lo.
 12. Clique no hiperlink para ativar sua conta. O hiperlink de confirmação abre uma página de confirmação do registro.
 
     ![5 de associação de segurança](16-adding-security-and-membership/_static/image4.png)
-- Clique o **Login** link e, em seguida, faça logon usando a conta que você registrou.
+13. Clique o **Login** link e, em seguida, faça logon usando a conta que você registrou.
 
-    Depois que você fizer logon, o **Login** e **registrar** links são substituídos por um **Logout** link. Seu nome de logon é exibido como um link. (O link permite que você acesse uma página onde você pode alterar sua senha.)
+      Depois que você fizer logon, o **Login** e **registrar** links são substituídos por um **Logout** link. Seu nome de logon é exibido como um link. (O link permite que você acesse uma página onde você pode alterar sua senha.)
 
-    ![6 de associação de segurança](16-adding-security-and-membership/_static/image5.png)
+      ![6 de associação de segurança](16-adding-security-and-membership/_static/image5.png)
 
-    > [!NOTE]
-    > Por padrão, o páginas da web ASP.NET enviar as credenciais para o servidor em texto não criptografado (como texto legível). Um site de produção deve usar o HTTP seguro (https://, também conhecido como o *protocolo SSL* ou SSL) para criptografar informações confidenciais que são trocadas com o servidor. Você pode email necessário mensagens a serem enviadas usando SSL definindo `WebMail.EnableSsl=true` como no exemplo anterior. Para obter mais informações sobre SSL, consulte [proteger as comunicações de Web: https://, SSL e certificados](https://go.microsoft.com/fwlink/?LinkId=208660).
+      > [!NOTE]
+      > Por padrão, o páginas da web ASP.NET enviar as credenciais para o servidor em texto não criptografado (como texto legível). Um site de produção deve usar o HTTP seguro (https://, também conhecido como o *protocolo SSL* ou SSL) para criptografar informações confidenciais que são trocadas com o servidor. Você pode email necessário mensagens a serem enviadas usando SSL definindo `WebMail.EnableSsl=true` como no exemplo anterior. Para obter mais informações sobre SSL, consulte [proteger as comunicações de Web: https://, SSL e certificados](https://go.microsoft.com/fwlink/?LinkId=208660).
 
 ## <a name="additional-membership-functionality-in-the-site"></a>Funcionalidade de associação adicionais no Site
 
@@ -165,7 +165,7 @@ Neste procedimento, você criará uma pasta que conterá as páginas que estão 
     (O número da porta (38366) provavelmente será diferente em sua URL.)
 
     Você será redirecionado para a *cshtml* página, porque você não estiver conectado.
-- Faça logon usando a conta que você criou anteriormente. Você será redirecionado de volta para o *MembersInformation* página. Porque você está conectado, neste momento você verá o conteúdo da página.
+7. Faça logon usando a conta que você criou anteriormente. Você será redirecionado de volta para o *MembersInformation* página. Porque você está conectado, neste momento você verá o conteúdo da página.
 
 Para proteger o acesso a várias páginas, você pode fazer isso:
 
@@ -227,10 +227,10 @@ A página de logon não irá parar programas automatizados (também conhecido co
 7. Substituir `PUBLIC_KEY` com sua chave.
 8. Se ele ainda não foi removido já, remova o `<div>` elemento que contém o texto que começa com "Para habilitar a verificação CAPTCHA...". (Remova todo o `<div>` elemento e seu conteúdo.)
 
-1. Executar *cshtml* em um navegador. Se você estiver conectado ao site, clique no **Logout** link.
-2. Clique o **registrar** vincular e testar o registro usando o teste CAPTCHA.
+9. Executar *cshtml* em um navegador. Se você estiver conectado ao site, clique no **Logout** link.
+10. Clique o **registrar** vincular e testar o registro usando o teste CAPTCHA.
 
-    ![10 de associação de segurança](16-adding-security-and-membership/_static/image9.png)
+     ![10 de associação de segurança](16-adding-security-and-membership/_static/image9.png)
 
 Para obter mais informações sobre o `ReCaptcha` auxiliar, consulte [usando um CATPCHA para impedir que programas de automatizada (Bots) do usando o ASP.NET Web Site](https://go.microsoft.com/fwlink/?LinkId=251967).
 

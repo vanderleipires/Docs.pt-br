@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
-title: "Implantação de Web do ASP.NET usando o Visual Studio: Preparando para implantação de banco de dados | Microsoft Docs"
+title: 'Implantação de Web do ASP.NET usando o Visual Studio: Preparando para implantação de banco de dados | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin..."
+description: Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,22 +12,22 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: caa79725ede320c4bd3e87ac246966c57175eb8e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 61392af322de454687da522055005a670b34f510
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Implantação de Web do ASP.NET usando o Visual Studio: Preparando para implantação de banco de dados
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Este tutorial mostra como obter o projeto pronto para a implantação de banco de dados. A estrutura de banco de dados e alguns (não todos) dos dados nas duas do aplicativo bancos de dados devem ser implantados para teste, preparação e ambientes de produção.
 
@@ -171,7 +171,7 @@ Aqui, você normalmente não quer os mesmos dados em produção que você tem em
 Você implantará os usuários de desenvolvimento para o ambiente de teste e os usuários de produção para preparação e produção. Para fazer isso você criará dois scripts SQL neste tutorial, um para o desenvolvimento e outro para produção e tutoriais subsequentes, você configurará o processo de publicação para executá-los.
 
 > [!NOTE]
-> O banco de dados de associação armazena um hash de senhas de conta. Para implantar as contas de um computador para outro, você deve garantir que as rotinas de hash não geram hashes diferentes no servidor de destino do que no computador de origem. Eles irá gerar os hashes mesmo quando você usa o ASP.NET Universal Providers, desde que você não altere o algoritmo padrão. O algoritmo padrão é HMACSHA256 e é especificado no **validação** atributo o  **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)**  elemento no arquivo Web. config.
+> O banco de dados de associação armazena um hash de senhas de conta. Para implantar as contas de um computador para outro, você deve garantir que as rotinas de hash não geram hashes diferentes no servidor de destino do que no computador de origem. Eles irá gerar os hashes mesmo quando você usa o ASP.NET Universal Providers, desde que você não altere o algoritmo padrão. O algoritmo padrão é HMACSHA256 e é especificado no **validação** atributo o **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)** elemento no arquivo Web. config.
 
 
 Você pode criar scripts de implantação de dados manualmente, usando o SQL Server Management Studio (SSMS), ou usando uma ferramenta de terceiros. Este restante deste tutorial mostrará como fazer isso no SSMS, mas se você não quiser instalar e usar o SSMS, você pode obter os scripts da versão do projeto concluído e ignorar a seção onde você armazená-los na pasta da solução.
@@ -215,11 +215,11 @@ Desde que você não executar o projeto com o banco de dados de produção, ele 
 1. No SSMS **Pesquisador de objetos**, clique com botão direito **bancos de dados** e clique em **Attach**.
 
     ![Anexar SSMS](preparing-databases/_static/image15.png)
-- No **anexar bancos de dados** caixa de diálogo, clique em **adicionar** e, em seguida, navegue até o *aspnet-ContosoUniversity-Prod.mdf* arquivo o *aplicativo\_ Dados* pasta.
+2. No **anexar bancos de dados** caixa de diálogo, clique em **adicionar** e, em seguida, navegue até o *aspnet-ContosoUniversity-Prod.mdf* arquivo o *aplicativo\_ Dados* pasta.
 
-    ![SSMS Adicionar arquivo. mdf para anexar](preparing-databases/_static/image16.png)
-- Clique em **OK**.
-- Siga o mesmo procedimento usado anteriormente para criar um script para o arquivo de produção. Nomeie o arquivo de script *aspnet de dados de prod.sql*.
+     ![SSMS Adicionar arquivo. mdf para anexar](preparing-databases/_static/image16.png)
+3. Clique em **OK**.
+4. Siga o mesmo procedimento usado anteriormente para criar um script para o arquivo de produção. Nomeie o arquivo de script *aspnet de dados de prod.sql*.
 
 ## <a name="summary"></a>Resumo
 
@@ -229,10 +229,10 @@ Os bancos de dados agora estão prontos para ser implantado e você tiver dois s
 
 O tutorial a seguir você define as configurações de projeto que afetam a implantação e configurar automático *Web. config* arquivo transformações para as configurações que devem ser diferentes em um aplicativo implantado.
 
-## <a name="more-information"></a>Mais informações
+## <a name="more-information"></a>Mais Informações
 
 Para obter mais informações sobre o NuGet, consulte [gerenciar bibliotecas de projeto com o NuGet](https://msdn.microsoft.com/magazine/hh547106.aspx) e [NuGet documentação](http://docs.nuget.org/docs/start-here/overview). Se você não quiser usar o NuGet, você precisará saber como analisar um pacote do NuGet para determinar o que fazer quando ele está instalado. (Por exemplo, ele pode configurar *Web. config* transformações, configurar scripts do PowerShell para executar em tempo de compilação, etc.) Para saber mais sobre como funciona o NuGet, consulte [criar e publicar um pacote](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) e [arquivo de configuração e transformações de código fonte](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 
->[!div class="step-by-step"]
-[Anterior](introduction.md)
-[Próximo](web-config-transformations.md)
+> [!div class="step-by-step"]
+> [Anterior](introduction.md)
+> [Próximo](web-config-transformations.md)

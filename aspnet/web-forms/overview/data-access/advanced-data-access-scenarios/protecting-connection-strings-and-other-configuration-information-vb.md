@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
-title: "Protegendo cadeias de caracteres de Conexão e outras informações de configuração (VB) | Microsoft Docs"
+title: Protegendo cadeias de caracteres de Conexão e outras informações de configuração (VB) | Microsoft Docs
 author: rick-anderson
-description: "Normalmente, um aplicativo ASP.NET armazena informações de configuração em um arquivo Web. config. Algumas dessas informações são confidenciais e garante a proteção. Por def..."
+description: Normalmente, um aplicativo ASP.NET armazena informações de configuração em um arquivo Web. config. Algumas dessas informações são confidenciais e garante a proteção. Por def...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f1514c4b6d041f6bbd83788e2110a95d3d831ff6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3372416dd9143afbfd442eaffb39cd807fae0de6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>Protegendo cadeias de caracteres de Conexão e outras informações de configuração (VB)
 ====================
@@ -60,8 +60,8 @@ ASP.NET 2.0 inclui um sistema de configuração protegida para criptografar e de
 
 O .NET Framework vem com dois provedores de configuração protegida:
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-usa assimétrica [algoritmo RSA](http://en.wikipedia.org/wiki/Rsa) para criptografia e descriptografia.
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-usa o Windows [API de proteção de dados (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) para criptografia e descriptografia.
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx) -usa assimétrica [algoritmo RSA](http://en.wikipedia.org/wiki/Rsa) para criptografia e descriptografia.
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx) -usa o Windows [API de proteção de dados (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) para criptografia e descriptografia.
 
 Como o sistema de configuração protegida implementa o padrão de design de provedor, é possível criar seu próprio provedor de configuração protegida e conectá-lo ao seu aplicativo. Consulte [implementando um provedor de configuração protegida](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx) para obter mais informações sobre esse processo.
 
@@ -96,7 +96,7 @@ Em seguida, é preciso escrever código que carrega e exibe o conteúdo de `Web.
 
 [!code-vb[Main](protecting-connection-strings-and-other-configuration-information-vb/samples/sample1.vb)]
 
-O `DisplayWebConfig` método usa o [ `File` classe](https://msdn.microsoft.com/library/system.io.file.aspx) para abrir o aplicativo s `Web.config` arquivo, o [ `StreamReader` classe](https://msdn.microsoft.com/library/system.io.streamreader.aspx) para ler seu conteúdo em uma cadeia de caracteres e o [ `Path` classe](https://msdn.microsoft.com/library/system.io.path.aspx) para gerar o caminho físico para o `Web.config` arquivo. Todos esses três classes são encontradas no [ `System.IO` namespace](https://msdn.microsoft.com/library/system.io.aspx). Consequentemente, você precisará adicionar um `Imports``System.IO` à parte superior da classe code-behind ou, Alternativamente, esses nomes de classe de prefixo`System.IO.`
+O `DisplayWebConfig` método usa o [ `File` classe](https://msdn.microsoft.com/library/system.io.file.aspx) para abrir o aplicativo s `Web.config` arquivo, o [ `StreamReader` classe](https://msdn.microsoft.com/library/system.io.streamreader.aspx) para ler seu conteúdo em uma cadeia de caracteres e o [ `Path` classe](https://msdn.microsoft.com/library/system.io.path.aspx) para gerar o caminho físico para o `Web.config` arquivo. Todos esses três classes são encontradas no [ `System.IO` namespace](https://msdn.microsoft.com/library/system.io.aspx). Consequentemente, você precisará adicionar um `Imports``System.IO` à parte superior da classe code-behind ou, Alternativamente, esses nomes de classe de prefixo `System.IO.`
 
 Em seguida, precisamos adicionar manipuladores de eventos para os dois controles de botão `Click` eventos e adicione o código necessário para criptografar e descriptografar o `<connectionStrings>` seção usando uma chave de nível de máquina com o provedor DPAPI. No Designer, clique duas vezes em cada um dos botões para adicionar um `Click` manipulador de eventos no code-behind de classe e, em seguida, adicione o seguinte código:
 
@@ -228,12 +228,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Teresa Murphy e Randy Schmidt. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
-[Próximo](debugging-stored-procedures-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
+> [Próximo](debugging-stored-procedures-vb.md)

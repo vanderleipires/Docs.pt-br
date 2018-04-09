@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 title: Maximizar o desempenho com o Entity Framework 4.0 em um aplicativo ASP.NET 4 | Microsoft Docs
 author: tdykstra
-description: "Esta série de tutorial se baseia no aplicativo web Contoso Universidade que é criado pelo guia de Introdução com a série de tutoriais do Entity Framework 4.0. I..."
+description: Esta série de tutorial se baseia no aplicativo web Contoso Universidade que é criado pelo guia de Introdução com a série de tutoriais do Entity Framework 4.0. I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 40a53a110115e5f6342d2a97d21b64470450fd3c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b85645eebf2822b33df944692736ea9d9b69b9aa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Maximizar o desempenho com o Entity Framework 4.0 em um aplicativo ASP.NET 4
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 > Esta série de tutoriais se baseia no aplicativo da web Contoso Universidade que é criado pelo [guia de Introdução com o Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) série de tutoriais. Se você não concluir os tutoriais anteriores, como um ponto de partida para este tutorial você pode [baixar o aplicativo](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) que você pode ter sido criado. Você também pode [baixar o aplicativo](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) que é criado pela série tutorial completo. Se você tiver dúvidas sobre os tutoriais, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx).
 
@@ -54,11 +54,11 @@ Para iniciar o tutorial, inicie o Visual Studio e abra o aplicativo web Contoso 
 
 Há várias maneiras que o Entity Framework pode carregar dados relacionados para as propriedades de navegação de uma entidade:
 
-- *Carregamento preguiçoso*. Quando a entidade é lido pela primeira vez, os dados relacionados não são recuperados. No entanto, na primeira vez que tentar acessar uma propriedade de navegação, os dados necessários para essa propriedade de navegação são recuperados automaticamente. Isso resulta em várias consultas enviadas ao banco de dados — um para a própria entidade e um cada vez que os dados para a entidade relacionados deve ser recuperado. 
+- *Carregamento lento*. Quando a entidade é lida pela primeira vez, os dados relacionados não são recuperados. No entanto, na primeira vez que você tenta acessar uma propriedade de navegação, os dados necessários para essa propriedade de navegação são recuperados automaticamente. Isso resulta em várias consultas enviadas ao banco de dados — um para a própria entidade e um cada vez que os dados para a entidade relacionados deve ser recuperado. 
 
     [![Image05](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image2.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image1.png)
 
-*Carregamento adiantado*. Quando a entidade é lido, os dados relacionados são recuperados com ela. Normalmente, isso resulta em uma consulta de junção único que recupera todos os dados que é necessário. Especifique o carregamento rápido usando o `Include` método, como já vimos nos tutoriais.
+*Carregamento adiantado*. Quando a entidade é lida, os dados relacionados são recuperados com ela. Normalmente, isso resulta em uma única consulta de junção que recupera todos os dados necessários. Especifique o carregamento rápido usando o `Include` método, como já vimos nos tutoriais.
 
 [![Image07](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
 
@@ -76,7 +76,7 @@ Em geral, se você souber terá dados relacionados para cada entidade recuperado
 
 Em um aplicativo web, carregamento lento pode ser relativamente pouco valor mesmo assim, porque ações de usuário que afetam a necessidade de dados relacionados ocorrem no navegador, que não tem nenhuma conexão para o contexto de objeto que a página renderizada. Por outro lado, quando você databind um controle, você normalmente sabe quais dados você precisa e geralmente é melhor escolher carregamento adiantado ou carregamento adiado com base no que é apropriado em cada cenário.
 
-Além disso, um controle de ligação de dados pode usar um objeto de entidade depois que o contexto do objeto é descartado. Nesse caso, uma tentativa de uma propriedade de navegação lento carga falhará. Você recebe a mensagem de erro é clara:&quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
+Além disso, um controle de ligação de dados pode usar um objeto de entidade depois que o contexto do objeto é descartado. Nesse caso, uma tentativa de uma propriedade de navegação lento carga falhará. Você recebe a mensagem de erro é clara: &quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
 
 O `EntityDataSource` desabilita o controle de carregamento lento por padrão. Para o `ObjectDataSource` controle que você está usando para o tutorial atual (ou se você acessar o contexto de objeto de código da página), há várias maneiras que você pode tornar lenta carregamento desabilitado por padrão. Você pode desabilitá-lo quando você criar uma instância de um contexto de objeto. Por exemplo, você pode adicionar a linha a seguir para o método de construtor do `SchoolRepository` classe:
 
@@ -266,6 +266,6 @@ Isso conclui a introdução para melhorar o desempenho de um aplicativo web ASP.
 
 O seguinte tutorial examina alguns dos aprimoramentos importantes para o Entity Framework que são novos na versão 4.
 
->[!div class="step-by-step"]
-[Anterior](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
-[Próximo](what-s-new-in-the-entity-framework-4.md)
+> [!div class="step-by-step"]
+> [Anterior](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [Próximo](what-s-new-in-the-entity-framework-4.md)

@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
 title: Como usar o controle de Editor de HTML (C#) | Microsoft Docs
 author: microsoft
-description: "HTMLEditor é um controle de AJAX do ASP.NET que permite que você facilmente criar e editar conteúdo HTML por meio de botões na barra de ferramentas."
+description: HTMLEditor é um controle de AJAX do ASP.NET que permite que você facilmente criar e editar conteúdo HTML por meio de botões na barra de ferramentas.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17343660d7bf7aa6210fa9c6c9c0206598d34b18
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fca18948c0e4f1323f214dc0033f19fa44efad47
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-html-editor-control-c"></a>Como usar o controle de Editor de HTML (C#)
 ====================
@@ -111,5 +111,5 @@ Por exemplo, imagine que você está criando um aplicativo de blog. Nessa situa�
 
 Neste tutorial, você foram fornecidos com uma breve visão geral do controle de Editor de HTML incluído no Kit de ferramentas de controle AJAX. Você aprendeu a usar o Editor de HTML para aceitar conteúdo formatado de um usuário e enviar o conteúdo para o servidor. Também discutimos como você pode personalizar os botões de barra de ferramentas que são exibidos pelo Editor de HTML. Por fim, você aprendeu como evitar ataques de scripts entre sites ao usar o Editor de HTML para aceitar a entrada potencialmente mal-intencionada.
 
->[!div class="step-by-step"]
-[Avançar](how-do-i-use-the-html-editor-control-vb.md)
+> [!div class="step-by-step"]
+> [Avançar](how-do-i-use-the-html-editor-control-vb.md)

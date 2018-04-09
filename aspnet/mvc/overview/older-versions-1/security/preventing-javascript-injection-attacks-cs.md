@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-cs
-title: "Evitando ataques de injeção de JavaScript (c#) | Microsoft Docs"
+title: Evitando ataques de injeção de JavaScript (c#) | Microsoft Docs
 author: StephenWalther
-description: "Evitar ataques de injeção de JavaScript e ataques de Cross Site Scripting aconteça para você. Neste tutorial, Stephen Walther explica como você pode facilmente de..."
+description: Evitar ataques de injeção de JavaScript e ataques de Cross Site Scripting aconteça para você. Neste tutorial, Stephen Walther explica como você pode facilmente de...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 67f53162cb1bb0771d632ba7a3f5960db00e2744
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fbec58c009640164d908db5a45557c9e50041173
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="preventing-javascript-injection-attacks-c"></a>Evitando ataques de injeção de JavaScript (c#)
 ====================
@@ -43,7 +43,7 @@ Imagine que você tenha criado um site de comentários do cliente (consulte a Fi
 
 O site de comentários do cliente usa o `controller` na listagem 1. Isso `controller` contém duas ações denominadas `Index()` e `Create()`.
 
-**Listando 1 –`HomeController.cs`**
+**Listando 1 – `HomeController.cs`**
 
 [!code-csharp[Main](preventing-javascript-injection-attacks-cs/samples/sample1.cs)]
 
@@ -53,7 +53,7 @@ O `Create()` método cria um novo item de comentários e o adiciona ao banco de 
 
 O `Index` exibição está contida na listagem 2.
 
-**A listagem 2 –`Index.aspx`**
+**A listagem 2 – `Index.aspx`**
 
 [!code-aspx[Main](preventing-javascript-injection-attacks-cs/samples/sample2.aspx)]
 
@@ -65,7 +65,7 @@ Imagine que você insira o seguinte texto no formulário de comentários do clie
 
 [!code-html[Main](preventing-javascript-injection-attacks-cs/samples/sample3.html)]
 
-Esse texto representa um script de JavaScript que exibe uma caixa de mensagem de alerta. Depois que alguém envia esse script em comentários do formulário, a mensagem *surpresas!* será exibida sempre que alguém visita o site de comentários do cliente no futuro (consulte a Figura 2).
+Esse texto representa um script de JavaScript que exibe uma caixa de mensagem de alerta. Depois que alguém envia esse script em comentários do formulário, a mensagem <em>surpresas!</em> será exibida sempre que alguém visita o site de comentários do cliente no futuro (consulte a Figura 2).
 
 
 [![Injeção de JavaScript](preventing-javascript-injection-attacks-cs/_static/image5.png)](preventing-javascript-injection-attacks-cs/_static/image4.png)
@@ -81,7 +81,7 @@ Por exemplo, um hacker pode usar um ataque de injeção de JavaScript para rouba
 
 *Esteja assustados*. Levar a ataques de injeção de JavaScript sério e proteger informações confidenciais do usuário. Nas próximas duas seções, discutiremos duas técnicas que você pode usar para proteger seus aplicativos ASP.NET MVC contra ataques de injeção de JavaScript.
 
-## <a name="approach-1-html-encode-in-the-view"></a>Abordagem &#1;: Codificação de HTML no modo de exibição
+## <a name="approach-1-html-encode-in-the-view"></a>Abordagem 1 #: Codificação de HTML no modo de exibição
 
 Um método fácil de evitar ataques de injeção de JavaScript é HTML codificar todos os dados inseridos por usuários do site quando você exibir novamente os dados em uma exibição. A atualização `Index` exibição na listagem 3 segue essa abordagem.
 
@@ -121,6 +121,6 @@ Por que isso é ruim? Se você precisar exibir os dados do banco de dados em alg
 
 O objetivo deste tutorial era assustar você sobre a possibilidade de um ataque de injeção de JavaScript. Este tutorial discutidas duas abordagens para proteger seus aplicativos ASP.NET MVC contra ataques de injeção de JavaScript: pode ou HTML codificar usuário enviado dados no modo de exibição, ou você podem HTML codificar usuário enviado dados no controlador.
 
->[!div class="step-by-step"]
-[Anterior](authenticating-users-with-windows-authentication-cs.md)
-[Próximo](authenticating-users-with-forms-authentication-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](authenticating-users-with-windows-authentication-cs.md)
+> [Próximo](authenticating-users-with-forms-authentication-vb.md)

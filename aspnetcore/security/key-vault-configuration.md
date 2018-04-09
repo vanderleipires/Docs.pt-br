@@ -1,18 +1,18 @@
 ---
-title: "Provedor de configuração do Cofre de chaves do Azure no núcleo do ASP.NET"
+title: Provedor de configuração do Cofre de chaves do Azure no núcleo do ASP.NET
 author: guardrex
-description: "Saiba como usar o provedor de configuração do Cofre de chave do Azure para configurar um aplicativo usando pares de nome-valor no tempo de execução."
+description: Saiba como usar o provedor de configuração do Cofre de chave do Azure para configurar um aplicativo usando pares de nome-valor no tempo de execução.
 manager: wpickett
 ms.author: riande
 ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: e1a4be77417f0a74182f1b123bfba429737d4330
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 09f28ec3792cf137fbcfdecc593e27ce6b2e7e09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Provedor de configuração do Cofre de chaves do Azure no núcleo do ASP.NET
 
@@ -54,20 +54,21 @@ O provedor é adicionado para o `ConfigurationBuilder` com o `AddAzureKeyVault` 
 
 ## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>Criando segredos de Cofre de chaves e carregar valores de configuração (exemplo basic)
 1. Criar um cofre de chaves e configurar o Azure Active Directory (AD do Azure) para o aplicativo seguindo as orientações em [Introdução ao Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
-  * Adicionar segredos no cofre de chaves usando o [AzureRM chave cofre PowerShell módulo](/powershell/module/azurerm.keyvault) disponíveis no [Galeria do PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), o [API de REST do Cofre de chaves do Azure](/rest/api/keyvault/), ou o [Portal do azure](https://portal.azure.com/). Os segredos são criados como *Manual* ou *certificado* segredos. *Certificado* segredos são certificados para uso por aplicativos e serviços, mas não são suportados pelo provedor de configuração. Você deve usar o *Manual* opção para criar os segredos do par nome-valor para uso com o provedor de configuração.
-    * Segredos simples são criados como pares nome-valor. Nomes de segredo de Cofre de chaves do Azure são limitados a caracteres alfanuméricos e traços.
-    * Usam valores hierárquicos (seções de configuração) `--` (dois traços) como um separador no exemplo. Dois-pontos, que normalmente são usadas para delimitar uma seção de uma subchave no [configuração do ASP.NET Core](xref:fundamentals/configuration/index), não são permitidos em nomes de segredo. Portanto, dois traços são usados e trocados para dois-pontos quando os segredos são carregados na configuração do aplicativo.
-    * Criar dois *Manual* segredos com os seguintes pares de nome-valor. O segredo primeiro é um nome simples e um valor e o segredo do segundo cria um valor secreto com uma seção e uma subchave no nome do segredo:
-      * `SecretName`: `secret_value_1`
-      * `Section--SecretName`: `secret_value_2`
-  * Registre o aplicativo de exemplo no Active Directory do Azure.
-  * Autorize o aplicativo para acessar o Cofre de chaves. Quando você usa o `Set-AzureRmKeyVaultAccessPolicy` cmdlet do PowerShell para autorizar o aplicativo para acessar o Cofre de chave, fornecer `List` e `Get` acesso para segredos com `-PermissionsToSecrets list,get`.
+   * Adicionar segredos no cofre de chaves usando o [AzureRM chave cofre PowerShell módulo](/powershell/module/azurerm.keyvault) disponíveis no [Galeria do PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), o [API de REST do Cofre de chaves do Azure](/rest/api/keyvault/), ou o [Portal do azure](https://portal.azure.com/). Os segredos são criados como *Manual* ou *certificado* segredos. *Certificado* segredos são certificados para uso por aplicativos e serviços, mas não são suportados pelo provedor de configuração. Você deve usar o *Manual* opção para criar os segredos do par nome-valor para uso com o provedor de configuração.
+     * Segredos simples são criados como pares nome-valor. Nomes de segredo de Cofre de chaves do Azure são limitados a caracteres alfanuméricos e traços.
+     * Usam valores hierárquicos (seções de configuração) `--` (dois traços) como um separador no exemplo. Dois-pontos, que normalmente são usadas para delimitar uma seção de uma subchave no [configuração do ASP.NET Core](xref:fundamentals/configuration/index), não são permitidos em nomes de segredo. Portanto, dois traços são usados e trocados para dois-pontos quando os segredos são carregados na configuração do aplicativo.
+     * Criar dois *Manual* segredos com os seguintes pares de nome-valor. O segredo primeiro é um nome simples e um valor e o segredo do segundo cria um valor secreto com uma seção e uma subchave no nome do segredo:
+       * `SecretName`: `secret_value_1`
+       * `Section--SecretName`: `secret_value_2`
+   * Registre o aplicativo de exemplo no Active Directory do Azure.
+   * Autorize o aplicativo para acessar o Cofre de chaves. Quando você usa o `Set-AzureRmKeyVaultAccessPolicy` cmdlet do PowerShell para autorizar o aplicativo para acessar o Cofre de chave, fornecer `List` e `Get` acesso para segredos com `-PermissionsToSecrets list,get`.
+
 2. Atualizar o aplicativo *appSettings. JSON* arquivo com os valores de `Vault`, `ClientId`, e `ClientSecret`.
 3. Executar o aplicativo de exemplo, que obtém seus valores de configuração de `IConfigurationRoot` com o mesmo nome que o nome do segredo.
-  * Valores não hierárquicos: O valor de `SecretName` é obtido com `config["SecretName"]`.
-  * Valores hierárquicos (seções): Use `:` notação (vírgula) ou o `GetSection` método de extensão. Use qualquer uma dessas abordagens para obter o valor de configuração:
-    * `config["Section:SecretName"]`
-    * `config.GetSection("Section")["SecretName"]`
+   * Valores não hierárquicos: O valor de `SecretName` é obtido com `config["SecretName"]`.
+   * Valores hierárquicos (seções): Use `:` notação (vírgula) ou o `GetSection` método de extensão. Use qualquer uma dessas abordagens para obter o valor de configuração:
+     * `config["Section:SecretName"]`
+     * `config.GetSection("Section")["SecretName"]`
 
 Quando você executa o aplicativo, uma página da Web mostra os valores de segredo carregados:
 
@@ -97,13 +98,14 @@ Quando você implementar essa abordagem:
 > Você também pode fornecer sua própria `KeyVaultClient` implementação `AddAzureKeyVault`. Fornecer um cliente personalizado permite que você compartilhe uma única instância do cliente entre o provedor de configuração e outras partes do seu aplicativo.
 
 1. Criar um cofre de chaves e configurar o Azure Active Directory (AD do Azure) para o aplicativo seguindo as orientações em [Introdução ao Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
-  * Adicionar segredos no cofre de chaves usando o [AzureRM chave cofre PowerShell módulo](/powershell/module/azurerm.keyvault) disponíveis no [Galeria do PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), o [API de REST do Cofre de chaves do Azure](/rest/api/keyvault/), ou o [Portal do azure](https://portal.azure.com/). Os segredos são criados como *Manual* ou *certificado* segredos. *Certificado* segredos são certificados para uso por aplicativos e serviços, mas não são suportados pelo provedor de configuração. Você deve usar o *Manual* opção para criar os segredos do par nome-valor para uso com o provedor de configuração.
-    * Usam valores hierárquicos (seções de configuração) `--` (dois traços) como separador.
-    * Criar dois *Manual* segredos com os seguintes pares de nome-valor:
-      * `5000-AppSecret`: `5.0.0.0_secret_value`
-      * `5100-AppSecret`: `5.1.0.0_secret_value`
-  * Registre o aplicativo de exemplo no Active Directory do Azure.
-  * Autorize o aplicativo para acessar o Cofre de chaves. Quando você usa o `Set-AzureRmKeyVaultAccessPolicy` cmdlet do PowerShell para autorizar o aplicativo para acessar o Cofre de chave, fornecer `List` e `Get` acesso para segredos com `-PermissionsToSecrets list,get`.
+   * Adicionar segredos no cofre de chaves usando o [AzureRM chave cofre PowerShell módulo](/powershell/module/azurerm.keyvault) disponíveis no [Galeria do PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), o [API de REST do Cofre de chaves do Azure](/rest/api/keyvault/), ou o [Portal do azure](https://portal.azure.com/). Os segredos são criados como *Manual* ou *certificado* segredos. *Certificado* segredos são certificados para uso por aplicativos e serviços, mas não são suportados pelo provedor de configuração. Você deve usar o *Manual* opção para criar os segredos do par nome-valor para uso com o provedor de configuração.
+     * Usam valores hierárquicos (seções de configuração) `--` (dois traços) como separador.
+     * Criar dois *Manual* segredos com os seguintes pares de nome-valor:
+       * `5000-AppSecret`: `5.0.0.0_secret_value`
+       * `5100-AppSecret`: `5.1.0.0_secret_value`
+   * Registre o aplicativo de exemplo no Active Directory do Azure.
+   * Autorize o aplicativo para acessar o Cofre de chaves. Quando você usa o `Set-AzureRmKeyVaultAccessPolicy` cmdlet do PowerShell para autorizar o aplicativo para acessar o Cofre de chave, fornecer `List` e `Get` acesso para segredos com `-PermissionsToSecrets list,get`.
+
 2. Atualizar o aplicativo *appSettings. JSON* arquivo com os valores de `Vault`, `ClientId`, e `ClientSecret`.
 3. Executar o aplicativo de exemplo, que obtém seus valores de configuração de `IConfigurationRoot` com o mesmo nome que o nome do segredo prefixado. Neste exemplo, o prefixo é a versão do aplicativo, o que você forneceu para o `PrefixKeyVaultSecretManager` quando você adicionou o provedor de configuração do Cofre de chaves do Azure. O valor de `AppSecret` é obtido com `config["AppSecret"]`. A página da Web gerada pelo aplicativo mostra o valor carregado:
 

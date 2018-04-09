@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/5-working-with-data
-title: "Introdução ao trabalho com um banco de dados da Web do ASP.NET páginas Sites (Razor) | Microsoft Docs"
+title: Introdução ao trabalho com um banco de dados da Web do ASP.NET páginas Sites (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Este capítulo descreve como acessar dados de um banco de dados e exibi-los usando as páginas da Web ASP.NET."
+description: Este capítulo descreve como acessar dados de um banco de dados e exibi-los usando as páginas da Web ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 460af471a1b0650f8d782d582ce6cd9a06664d5c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 563074cf3e60717c2e6c336a2c282b4203f73b8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Introdução ao trabalho com um banco de dados da Web do ASP.NET páginas Sites (Razor)
 ====================
@@ -361,7 +361,7 @@ Esta seção mostra como permitir que os usuários excluir um produto de *produt
 6. Clique o **excluir** link para um dos produtos. O *DeleteProduct.cshtml* página é exibida para confirmar que deseja excluí-lo.
 7. Clique o **excluir** botão. O registro de produto é excluído e a página é atualizada com uma lista de produtos atualizada.
 
-> [!TIP] 
+> [!TIP]
 > 
 > <a id="SB_ConnectingToADatabase"></a>
 > ### <a name="connecting-to-a-database"></a>Conectando-se a um banco de dados

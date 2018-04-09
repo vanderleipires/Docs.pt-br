@@ -1,7 +1,7 @@
 ---
-title: "Adicionar recursos do aplicativo usando uma configuração específica de plataforma no núcleo do ASP.NET"
+title: Adicionar recursos de aplicativo com uma configuração específica de plataforma no núcleo do ASP.NET
 author: guardrex
-description: "Saiba como adicionar recursos a um aplicativo ASP.NET Core de um assembly externo usando uma implementação de IHostingStartup."
+description: Saiba como adicionar recursos a um aplicativo ASP.NET Core de um assembly externo usando uma implementação de IHostingStartup.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/platform-specific-configuration
-ms.openlocfilehash: c36b8acd6f7fcb4e4d11e43013ccaf5ca6d1b0ab
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 9dd7774a1885a9c6c702b5b46fa1f88c86f7f7ac
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="add-app-features-using-a-platform-specific-configuration-in-aspnet-core"></a>Adicionar recursos do aplicativo usando uma configuração específica de plataforma no núcleo do ASP.NET
+# <a name="add-app-features-with-a-platform-specific-configuration-in-aspnet-core"></a>Adicionar recursos de aplicativo com uma configuração específica de plataforma no núcleo do ASP.NET
 
 Por [Luke Latham](https://github.com/guardrex)
 
@@ -143,7 +143,7 @@ O aplicativo de exemplo define esse valor como:
 %UserProfile%\.dotnet\x64\additionalDeps\StartupDiagnostics\
 ```
 
-Para obter exemplos de como definir variáveis de ambiente para vários sistemas operacionais, consulte [trabalhando com vários ambientes](xref:fundamentals/environments).
+Para obter exemplos de como definir variáveis de ambiente para vários sistemas operacionais, consulte [trabalhar com vários ambientes](xref:fundamentals/environments).
 
 ## <a name="sample-app"></a>Aplicativo de exemplo
 

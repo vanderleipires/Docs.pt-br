@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
-title: "Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 formulários da Web | Microsoft Docs"
+title: Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 formulários da Web | Microsoft Docs
 author: tdykstra
 description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework 4.0 e o Visual Studio 2010...
 ms.author: aspnetcontent
@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: ae2fddc81f6f4da866ec0719a0e74516bdd2a4d1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ad504b02d801f9513787f9fde1a4d00d7b0afff0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Introdução ao banco de dados do Entity Framework 4.0 primeiro e o ASP.NET 4 formulários da Web
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
-> O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework 4.0 e o Visual Studio 2010. O aplicativo de exemplo é um site de uma universidade Contoso fictícia. Ele inclui a funcionalidade como admissão do aluno, criação de curso e atribuições do instrutor.
+> O aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework 4.0 e o Visual Studio 2010. O aplicativo de exemplo é um site de uma universidade Contoso fictícia. Ele inclui funcionalidades como admissão de alunos, criação de cursos e atribuições de instrutor.
 > 
 > O tutorial mostra exemplos em c#. O [exemplo disponível para download](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) contém código em c# e Visual Basic.
 > 
@@ -48,13 +48,13 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), o [do Entity Framework e LINQ to Fórum de entidades](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 O aplicativo que você criará nos tutoriais é um site de university simples.
 
 [![Image03](the-entity-framework-and-aspnet-getting-started-part-1/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image1.png)
 
-Os usuários podem exibir e atualizar aluno, curso e informações do instrutor. Algumas das telas, você criará são mostradas abaixo.
+Os usuários podem exibir e atualizar informações de alunos, cursos e instrutores. Algumas das telas, você criará são mostradas abaixo.
 
 [![Image30](the-entity-framework-and-aspnet-getting-started-part-1/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image3.png)
 
@@ -161,7 +161,7 @@ Você pode ver que o diagrama de entidade parece muito semelhante ao diagrama de
 
     [![Image40](the-entity-framework-and-aspnet-getting-started-part-1/_static/image38.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image37.png)
 
-    Nesse caso, um `Person` entidade pode ou não podem estar associados `StudentGrade` entidades. Um `StudentGrade` entidade deve ser associada a um `Person` entidade. `StudentGrade`entidades realmente representam cursos registrados neste banco de dados; Se um aluno está registrado em um curso e ainda não houver nenhuma classificação, o `Grade` propriedade é nula. Em outras palavras, um aluno não pode ser registrado em qualquer cursos ainda, pode ser registrado em um curso ou pode ser registrado em vários cursos. Cada nível em um curso registrado aplica-se apenas um aluno.
+    Nesse caso, um `Person` entidade pode ou não podem estar associados `StudentGrade` entidades. Um `StudentGrade` entidade deve ser associada a um `Person` entidade. `StudentGrade` entidades realmente representam cursos registrados neste banco de dados; Se um aluno está registrado em um curso e ainda não houver nenhuma classificação, o `Grade` propriedade é nula. Em outras palavras, um aluno não pode ser registrado em qualquer cursos ainda, pode ser registrado em um curso ou pode ser registrado em vários cursos. Cada nível em um curso registrado aplica-se apenas um aluno.
 - Uma associação de muitos-para-muitos é representada por "\*"e"\*".
 
     [![Image41](the-entity-framework-and-aspnet-getting-started-part-1/_static/image40.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image39.png)
@@ -214,5 +214,5 @@ O Entity Framework usa XML para armazenar informações sobre o banco de dados, 
 
 Agora você criou um site, um banco de dados e um modelo de dados. A próximo passo a passo, você começará trabalhar com dados usando o modelo de dados e o ASP.NET `EntityDataSource` controle.
 
->[!div class="step-by-step"]
-[Avançar](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [!div class="step-by-step"]
+> [Avançar](the-entity-framework-and-aspnet-getting-started-part-2.md)

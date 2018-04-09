@@ -2,7 +2,7 @@
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 title: Criar um ponto de extremidade OData v3 com Web API 2 | Microsoft Docs
 author: MikeWasson
-description: "O Open Data Protocol (OData) é um protocolo de acesso de dados para a web. O OData fornece uma maneira uniforme de estrutura de dados, consultar os dados e manipular os dados..."
+description: O Open Data Protocol (OData) é um protocolo de acesso de dados para a web. O OData fornece uma maneira uniforme de estrutura de dados, consultar os dados e manipular os dados...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 33fe4d764bf9bf64c852f1269255925b5cc42536
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 227faacd3f42731e08a4cd2b71075776309961b6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Criar um ponto de extremidade OData v3 com Web API 2
 ====================
@@ -55,22 +55,22 @@ Neste tutorial, você criará um ponto de extremidade OData simple que os client
 
 Neste tutorial, você criará um ponto de extremidade OData que suporta operações CRUD básicas. O ponto de extremidade irá expor um único recurso, uma lista de produtos. Tutoriais posteriores adicionará mais recursos.
 
-Inicie o Visual Studio e selecione **novo projeto** na página de início. Ou, do **arquivo** menu, selecione **novo** e **projeto**.
+Inicie o Visual Studio e selecione **novo projeto** na página de início. Ou, no menu **Arquivo**, selecione **Novo** e, em seguida, **Projeto**.
 
 No **modelos** painel, selecione **modelos instalados** e expanda o nó do Visual c#. Em **Visual C#**, selecione **Web**. Selecione **aplicativo Web ASP.NET** modelo.
 
 ![](creating-an-odata-endpoint/_static/image1.png)
 
-No **novo projeto ASP.NET** caixa de diálogo, selecione o **vazio** modelo. Em &quot;adicionar pastas e referências de núcleo... &quot;, verifique **API da Web**. Clique em **OK**.
+Na caixa de diálogo **Novo Aplicativo Web ASP.NET**, selecione o modelo **Vazio**. Em &quot;adicionar pastas e referências de núcleo... &quot;, verifique **API da Web**. Clique em **OK**.
 
 ![](creating-an-odata-endpoint/_static/image2.png)
 
 <a id="add-model"></a>
 ## <a name="add-an-entity-model"></a>Adicionar um modelo de entidade
 
-Um *modelo* é um objeto que representa os dados em seu aplicativo. Para este tutorial, precisamos de um modelo que representa um produto. O modelo corresponde ao nosso tipo de entidade do OData.
+Um *modelo (model)* é um objeto que representa os dados em seu aplicativo. Para este tutorial, precisamos de um modelo que representa um produto. O modelo corresponde ao nosso tipo de entidade do OData.
 
-No Gerenciador de soluções, clique na pasta de modelos. No menu de contexto, selecione **adicionar** , em seguida, selecione **classe**.
+No Gerenciador de Soluções, clique com o botão direito na pasta de modelos (Models). No menu de contexto, selecione **Adicionar** , em seguida, selecione **Classe**.
 
 ![](creating-an-odata-endpoint/_static/image3.png)
 
@@ -95,7 +95,7 @@ Compile o projeto agora. Na próxima etapa, vamos usar alguns scaffolding do Vis
 
 Um *controlador* é uma classe que trata as solicitações HTTP. Você definir um controlador separado para cada entidade definida no serviço OData. Neste tutorial, vamos criar um único controlador.
 
-No Gerenciador de soluções, clique na pasta de controladores. Selecione **adicionar** e, em seguida, selecione **controlador**.
+No Gerenciador de soluções, clique na pasta de controladores. Selecione **Adicionar** e, em seguida, selecione **Controlador**.
 
 ![](creating-an-odata-endpoint/_static/image5.png)
 
@@ -150,7 +150,7 @@ O **MapODataRoute** método adiciona uma rota para o ponto de extremidade OData.
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample4.cs)]
 
-O primeiro parâmetro é um nome amigável para a rota. Os clientes do serviço não vir esse nome. O segundo parâmetro é o prefixo do URI do ponto de extremidade. Devido a esse código, o URI para o conjunto de entidades de produtos é http://*hostname*  /odata/produtos. O aplicativo pode ter mais de um ponto de extremidade OData. Para cada ponto de extremidade, chame **MapODataRoute** e forneça um nome de rota exclusivo e um prefixo URI exclusivo.
+O primeiro parâmetro é um nome amigável para a rota. Os clientes do serviço não vir esse nome. O segundo parâmetro é o prefixo do URI do ponto de extremidade. Devido a esse código, o URI para o conjunto de entidades de produtos é http://<em>hostname</em>  /odata/produtos. O aplicativo pode ter mais de um ponto de extremidade OData. Para cada ponto de extremidade, chame <strong>MapODataRoute</strong> e forneça um nome de rota exclusivo e um prefixo URI exclusivo.
 
 <a id="seed-db"></a>
 ## <a name="seed-the-database-optional"></a>Propagação do banco de dados (opcional)

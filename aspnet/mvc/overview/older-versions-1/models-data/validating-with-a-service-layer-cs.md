@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
-title: "Validando com uma camada de serviço (c#) | Microsoft Docs"
+title: Validando com uma camada de serviço (c#) | Microsoft Docs
 author: StephenWalther
-description: "Saiba como mover a lógica de validação de suas ações do controlador e em uma camada de serviço separado. Neste tutorial, Stephen Walther explica como você..."
+description: Saiba como mover a lógica de validação de suas ações do controlador e em uma camada de serviço separado. Neste tutorial, Stephen Walther explica como você...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f36301aef4377c6c00cb4fc33dbc5c57b1c426a9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 06042ac197cc54da767a94a44c57eb09bb3db9fa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-a-service-layer-c"></a>Validando com uma camada de serviço (c#)
 ====================
@@ -99,6 +99,6 @@ Usando o IValidationDictionary interface e a classe ModelStateWrapper nos permit
 
 O objetivo deste tutorial era discutir uma abordagem para executar a validação em um aplicativo ASP.NET MVC. Neste tutorial, você aprendeu como mover todos os de sua lógica de validação de seus controladores e em uma camada de serviço separado. Você também aprendeu como isolar sua camada de serviço de sua camada de controlador, criando uma classe ModelStateWrapper.
 
->[!div class="step-by-step"]
-[Anterior](validating-with-the-idataerrorinfo-interface-cs.md)
-[Próximo](validation-with-the-data-annotation-validators-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](validating-with-the-idataerrorinfo-interface-cs.md)
+> [Próximo](validation-with-the-data-annotation-validators-cs.md)

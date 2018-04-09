@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
-title: "Orientação de segurança para o ASP.NET Web API 2 OData | Microsoft Docs"
+title: Orientação de segurança para o ASP.NET Web API 2 OData | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/06/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 799e2a0c742b545acf3b5cd27531d734aa7def80
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 41b05f2a2f8247853d8358e6cc1246c8b438a6db
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="security-guidance-for-aspnet-web-api-2-odata"></a>Orientação de segurança para o ASP.NET Web API 2 OData
 ====================
@@ -70,8 +70,8 @@ Se você souber que todos os clientes são confiáveis (por exemplo, em um ambie
     [!code-csharp[Main](odata-security-guidance/samples/sample9.cs)]
 - Considere a possibilidade de restringir $filter consultas escrevendo um validador personalizada para seu banco de dados. Por exemplo, considere estas duas consultas: 
 
-    - Todos os filmes com atores cujo sobrenome começa com 'A'.
-    - Todos os filmes lançados em 1994.
+  - Todos os filmes com atores cujo sobrenome começa com 'A'.
+  - Todos os filmes lançados em 1994.
 
     A menos que filmes são indexados por atores, a primeira consulta pode exigir que o mecanismo de banco de dados para verificar a lista completa de filmes. Enquanto a segunda consulta pode ser aceitável, assumindo filmes são indexadas por ano de lançamento.
 

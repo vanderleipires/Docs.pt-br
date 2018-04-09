@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
-title: "Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio: Introdução - 1 de 12 | Microsoft Docs"
+title: 'Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio: Introdução - 1 de 12 | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutoriais mostra como implantar um ASP.NET (publicar) projeto de aplicativo web que inclui um banco de dados do SQL Server Compact usando Visual Stu..."
+description: Esta série de tutoriais mostra como implantar um ASP.NET (publicar) projeto de aplicativo web que inclui um banco de dados do SQL Server Compact usando Visual Stu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a0f38c83bd9231dbd37d3d505c90316af521b336
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3f1572bb890ee136cdd746040a5efae2ce537116
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio: Introdução - 1 de 12
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -35,7 +35,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [Fórum de implantação do ASP.NET](https://forums.asp.net/26.aspx/1?Configuration+and+Deployment).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Esses tutoriais orientam você na implantação primeiro ao IIS no computador de desenvolvimento local para teste e, em seguida, em um provedor de hospedagem de terceiros. O aplicativo que você implantará usa um banco de dados do aplicativo e um banco de dados de associação do ASP.NET. Começar usando o SQL Server Compact e implantando o SQL Server Compact e posteriores tutoriais mostram como implantar as alterações do banco de dados e como migrar para o SQL Server.
 
@@ -53,7 +53,7 @@ Os tutoriais são destinados a desenvolvedores do ASP.NET que trabalham em organ
 
 Em ambientes corporativos, é mais comum para implementar processos de integração contínua e o ambiente de produção é geralmente hospedado pelos servidores da empresa. Pessoas diferentes normalmente também executam funções diferentes. Para obter informações sobre implantação corporativa, consulte [implantação de aplicativos da Web em cenários corporativos](../../deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md).
 
-As organizações de todos os tamanhos também podem implantar aplicativos web no Azure, e a maioria dos procedimentos mostradas nos tutoriais também se aplicam à aplicativos de Web de serviços de aplicativo do Azure. Para obter uma introdução ao Azure, consulte [https://azure.microsoft.com](https://azure.microsoft.com).
+As organizações de todos os tamanhos também podem implantar aplicativos web no Azure, e a maioria dos procedimentos mostradas nos tutoriais também se aplicam à aplicativos de Web de serviços de aplicativo do Azure. Para obter uma introdução ao Azure, consulte [ https://azure.microsoft.com ](https://azure.microsoft.com).
 
 ## <a name="the-hosting-provider-shown-in-the-tutorials"></a>O provedor de hospedagem mostrado nos tutoriais
 
@@ -142,5 +142,5 @@ Os seguintes recursos do aplicativo afetam como implantar ou o que você precisa
 
 Neste tutorial primeiro na série, você baixou o projeto do Visual Studio de exemplo e revisar os recursos de site que afetam como implantar o aplicativo. Os tutoriais a seguir, você preparar para implantação, configurando a algumas dessas coisas a serem manipulados automaticamente. Outras pessoas que você se encarrega manualmente.
 
->[!div class="step-by-step"]
-[Avançar](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [!div class="step-by-step"]
+> [Avançar](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

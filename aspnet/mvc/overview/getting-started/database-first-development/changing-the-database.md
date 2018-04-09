@@ -2,7 +2,7 @@
 uid: mvc/overview/getting-started/database-first-development/changing-the-database
 title: 'Banco de dados EF primeiro com o ASP.NET MVC: alterando o banco de dados | Microsoft Docs'
 author: tfitzmac
-description: "Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série..."
+description: Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/changing-the-database
 msc.type: authoredcontent
-ms.openlocfilehash: 1ffe753812e5eef817f03ab488a28ae5fcefd41e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63ee8768a43dbdac80922e3adbedd3378c10da73
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-changing-the-database"></a>Banco de dados EF primeiro com o ASP.NET MVC: alterando o banco de dados
 ====================
@@ -63,6 +63,6 @@ As exibições agora contém a propriedade MiddleName.
 
 Na próxima seção, você adicionará código para personalizar o modo de exibição para mostrar os detalhes sobre um registro de aluno.
 
->[!div class="step-by-step"]
-[Anterior](generating-views.md)
-[Próximo](customizing-a-view.md)
+> [!div class="step-by-step"]
+> [Anterior](generating-views.md)
+> [Próximo](customizing-a-view.md)

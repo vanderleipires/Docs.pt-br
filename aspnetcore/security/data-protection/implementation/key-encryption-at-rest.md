@@ -1,7 +1,7 @@
 ---
-title: Criptografia de chave em repouso
+title: Criptografia de chave em repouso no núcleo do ASP.NET
 author: rick-anderson
-description: "Este documento descreve os detalhes de implementação ASP.NET Core proteção chave de criptografia de dados em repouso."
+description: Saiba os detalhes da implementação de criptografia de chave de proteção de dados do ASP.NET Core em repouso.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,20 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: c66430bfe547cf061e9e79a703ac665a968bbe0b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9247b141a44c958f34529e5a42a0ddc8c8893cb0
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-encryption-at-rest"></a>Criptografia de chave em repouso
+# <a name="key-encryption-at-rest-in-aspnet-core"></a>Criptografia de chave em repouso no núcleo do ASP.NET
 
 <a name="data-protection-implementation-key-encryption-at-rest"></a>
 
 Por padrão, o sistema de proteção de dados [emprega uma heurística](xref:security/data-protection/configuration/default-settings) para determinar o material de chave de criptografia como devem ser criptografados em repouso. O desenvolvedor pode substituir a heurística e especificar manualmente como chaves devem ser criptografadas em repouso.
 
 > [!NOTE]
-> Se você especificar uma criptografia de chave explícita no mecanismo de rest, o sistema de proteção de dados irá cancelar o registro o mecanismo de armazenamento de chave padrão que a heurística fornecida. Você deve [especificar um mecanismo de armazenamento de chave explícita](key-storage-providers.md#data-protection-implementation-key-storage-providers), caso contrário, o sistema de proteção de dados não será iniciado.
+> Se você especificar uma criptografia de chave explícita no mecanismo de rest, o sistema de proteção de dados irá cancelar o registro o mecanismo de armazenamento de chave padrão que a heurística fornecida. Você deve [especificar um mecanismo de armazenamento de chave explícita](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers), caso contrário, o sistema de proteção de dados não será iniciado.
 
 <a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
 
@@ -95,7 +95,7 @@ Nesse cenário, o controlador de domínio do AD é responsável por distribuir a
 
 ## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a>Criptografia baseada em certificado com o Windows DPAPI-NG
 
-Se você estiver executando no Windows 8.1 / Windows Server 2012 R2 ou posterior, você pode usar Windows DPAPI-NG para executar a criptografia baseada em certificado, mesmo que o aplicativo está em execução no [.NET Core](https://www.microsoft.com/net/core). Para tirar proveito disso, use a cadeia de caracteres do descritor de regra "certificado = HashId:thumbprint", onde a impressão digital é codificada em hexadecimal SHA1 impressão digital do certificado a ser usado. Veja abaixo um exemplo.
+Se você estiver executando no Windows 8.1 / Windows Server 2012 R2 ou posterior, você pode usar Windows DPAPI-NG para executar a criptografia baseada em certificado, mesmo se o aplicativo estiver em execução no .NET Core. Para tirar proveito disso, use a cadeia de caracteres do descritor de regra "certificado = HashId:thumbprint", onde a impressão digital é codificada em hexadecimal SHA1 impressão digital do certificado a ser usado. Veja abaixo um exemplo.
 
 ```csharp
 sc.AddDataProtection()

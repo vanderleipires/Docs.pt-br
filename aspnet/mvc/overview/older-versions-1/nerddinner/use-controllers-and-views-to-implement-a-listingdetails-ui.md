@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
-title: "Usar controladores e exibições para implementar uma interface de usuário/detalhes da listagem | Microsoft Docs"
+title: Usar controladores e exibições para implementar uma interface de usuário/detalhes da listagem | Microsoft Docs
 author: microsoft
-description: "Etapa 4 mostra como adicionar um controlador para o aplicativo que aproveita nosso modelo para fornecer aos usuários uma experiência de navegação de lista-detalhes de dados..."
+description: Etapa 4 mostra como adicionar um controlador para o aplicativo que aproveita nosso modelo para fornecer aos usuários uma experiência de navegação de lista-detalhes de dados...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 2f9148a2d419863229e2c5a2a0c98984001fcee5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac3568941eeef24bd9857c5787471aadea15fc7f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>Usar controladores e exibições para implementar uma interface de usuário de lista-detalhes
 ====================
@@ -62,7 +62,7 @@ Queremos permitem que os visitantes usando nosso aplicativo para procurar uma li
 | **URL** | **Finalidade** |
 | --- | --- |
 | */Dinners/* | Exibir uma lista HTML de jantares futuros |
-| */Dinners/detalhes / [id]* | Exibir detalhes sobre uma refeição específico indicado por um parâmetro de "id" incorporado a URL – que corresponderá a DinnerID de refeição no banco de dados. Por exemplo: /Dinners/Details/2 exibirá uma página HTML com detalhes sobre a refeição cujo valor DinnerID é 2. |
+| */Dinners/Details/[id]* | Exibir detalhes sobre uma refeição específico indicado por um parâmetro de "id" incorporado a URL – que corresponderá a DinnerID de refeição no banco de dados. Por exemplo: /Dinners/Details/2 exibirá uma página HTML com detalhes sobre a refeição cujo valor DinnerID é 2. |
 
 Publicaremos implementações inicias dessas URLs, adicionando dois público "métodos de ação" a nossa classe DinnersController como abaixo:
 
@@ -92,16 +92,16 @@ As regras de roteamento do ASP.NET MVC padrão são registradas no método "Regi
 
 As rotas". MapRoute() "acima da chamada de método registra uma regra de roteamento padrão que mapeia a URLs de entrada para classes do controlador usando o formato de URL:" / {controller} / {action} / {id} "– onde"controller"é o nome da classe do controlador para criar uma instância,"ação"é o nome de um método público a ser invocado, e "id" é um parâmetro opcional incorporado a URL que pode ser passada como um argumento para o método. O terceiro parâmetro passado para a chamada do método "MapRoute()" é um conjunto de valores padrão a ser usado para os valores de id/de ação de controlador que eles não estão presentes na URL (controlador = "Home", ação = "Index", Id = "").
 
-Abaixo está uma tabela que demonstra como uma variedade de URLs são mapeados usando o padrão "*/ {controladores} / {action} / {id}"*regra de rota:
+Abaixo está uma tabela que demonstra como uma variedade de URLs são mapeados usando o padrão "<em>/ {controladores} / {action} / {id}"</em>regra de rota:
 
 | **URL** | **Classe do controlador** | **Método de ação** | **Parâmetros passados** |
 | --- | --- | --- | --- |
-| *Jantares/2/detalhes* | DinnersController | Details(ID) | ID = 2 |
-| *Jantares/5/editar* | DinnersController | Edit(ID) | ID = 5 |
-| */ Jantares/criar* | DinnersController | Create) | N/D |
-| */ Jantares* | DinnersController | Index) | N/D |
-| */ Início* | HomeController | Index) | N/D |
-| */* | HomeController | Index) | N/D |
+| */Dinners/Details/2* | DinnersController | Details(ID) | id=2 |
+| */Dinners/Edit/5* | DinnersController | Edit(ID) | id=5 |
+| */Dinners/Create* | DinnersController | Create() | N/D |
+| */Dinners* | DinnersController | Index() | N/D |
+| */Home* | HomeController | Index() | N/D |
+| */* | HomeController | Index() | N/D |
 
 As três últimas linhas mostram os valores padrão (controlador Home, = ação = índice, Id = "") que está sendo usado. Porque o método "Index" está registrado como o nome de ação padrão se nenhuma for especificada, o "/ jantares" e "/home" causa de URLs o método de ação Index () a ser invocado em suas classes de controlador. Porque o controlador "Início" é registrado como o controlador padrão se nenhuma for especificada, a URL "/" faz com que o HomeController a ser criado e o método de ação Index () em que ele seja invocado.
 
@@ -301,6 +301,6 @@ Agora temos uma refeição adequada criada de experiência de navegação.
 
 Agora, vamos Habilitar suporte de edição de formulários de dados CRUD (criar, ler, atualizar, excluir).
 
->[!div class="step-by-step"]
-[Anterior](build-a-model-with-business-rule-validations.md)
-[Próximo](provide-crud-create-read-update-delete-data-form-entry-support.md)
+> [!div class="step-by-step"]
+> [Anterior](build-a-model-with-business-rule-validations.md)
+> [Próximo](provide-crud-create-read-update-delete-data-form-entry-support.md)

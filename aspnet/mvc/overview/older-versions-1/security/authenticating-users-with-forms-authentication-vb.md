@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
-title: "Autenticar usuários com a forma de autenticação (VB) | Microsoft Docs"
+title: Autenticar usuários com a forma de autenticação (VB) | Microsoft Docs
 author: microsoft
-description: "Saiba como usar o atributo [autorizar] senha proteger páginas específicas em seu aplicativo MVC. Você aprenderá a usar a administração de Site da Web também..."
+description: Saiba como usar o atributo [autorizar] senha proteger páginas específicas em seu aplicativo MVC. Você aprenderá a usar a administração de Site da Web também...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c7d52e51158575c674264efd19c81de9b077d27b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0ff425a4c9728de2eec3d0c94e76cb51a15de487
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-forms-authentication-vb"></a>Autenticar usuários com a autenticação de formulários (VB)
 ====================
@@ -33,25 +33,25 @@ Antes de fazermos qualquer outra coisa, deve começar criando alguns usuários e
 
 **Figura 1 – iniciar a ferramenta de administração de Site**
 
-![clip_image002 [4]](authenticating-users-with-forms-authentication-vb/_static/image1.jpg)
+![clip_image002[4]](authenticating-users-with-forms-authentication-vb/_static/image1.jpg)
 
 Em que a ferramenta de administração de Site, criar novos usuários e funções, selecionando a guia Segurança. Clique o **criar usuário** link para criar um novo usuário chamado Stephen (consulte a Figura 2). Fornecer ao usuário Stephen qualquer senha que você deseja (por exemplo, *segredo*).
 
 **Figura 2 – criar um novo usuário**
 
-![clip_image004 [4]](authenticating-users-with-forms-authentication-vb/_static/image2.jpg)
+![clip_image004[4]](authenticating-users-with-forms-authentication-vb/_static/image2.jpg)
 
 Você pode criar novas funções primeiro habilitar funções e definir uma ou mais funções. Habilitar funções clicando o **Habilitar funções** link. Em seguida, crie uma função chamada *administradores* clicando o **criar ou gerenciar funções** link (consulte a Figura 3).
 
 **Figura 3 – Criando uma nova função**
 
-![clip_image006 [4]](authenticating-users-with-forms-authentication-vb/_static/image3.jpg)
+![clip_image006[4]](authenticating-users-with-forms-authentication-vb/_static/image3.jpg)
 
 Finalmente, crie um novo usuário chamado Sally e associar Sally com a função de administradores clicando no link de Create User e selecionando os administradores ao criar Sally (consulte a Figura 4).
 
 **Figura 4 – adicionar um usuário a uma função**
 
-![clip_image008 [4]](authenticating-users-with-forms-authentication-vb/_static/image4.jpg)
+![clip_image008[4]](authenticating-users-with-forms-authentication-vb/_static/image4.jpg)
 
 Quando todos os resolvido e pronto, você deve ter dois novos usuários nomeados Stephen e Sally. Você também deve ter uma nova função chamada administradores. Sally é um membro da função de administradores e Stephen não é.
 
@@ -69,7 +69,7 @@ Se você chama a ação de CompanySecrets() digitando a URL /Home/CompanySecrets
 
 **Figura 5 – o modo de exibição de logon**
 
-![clip_image010 [4]](authenticating-users-with-forms-authentication-vb/_static/image5.jpg)
+![clip_image010[4]](authenticating-users-with-forms-authentication-vb/_static/image5.jpg)
 
 Você pode usar o modo de exibição de logon para inserir seu nome de usuário e senha. Se você não for um usuário registrado, você pode clicar no **registrar** link para navegar até o registro (consulte a Figura 6). Você pode usar o modo de exibição de registro para criar uma nova conta de usuário.
 
@@ -107,7 +107,7 @@ Usar o banco de dados SQL Express padrão é bom ao desenvolver um aplicativo. M
 
 A primeira etapa é adicionar todos os objetos de banco de dados necessários (tabelas e procedimentos armazenados) para seu banco de dados de produção. É a maneira mais fácil para adicionar esses objetos para um novo banco de dados aproveitar o Assistente de instalação do ASP.NET SQL Server (consulte a Figura 8). Você pode iniciar essa ferramenta, abra o Prompt de comando do Visual Studio 2008 no grupo de programas do Microsoft Visual Studio 2008 e executando o seguinte comando no prompt de comando:
 
-ASPNET\_regsql
+aspnet\_regsql
 
 **Figura 8 – o Assistente de instalação do servidor SQL do ASP.NET**
 
@@ -117,8 +117,8 @@ O Assistente de instalação do ASP.NET SQL Server permite que você selecione u
 
 > [!NOTE]
 > Se você não quiser usar o Assistente de instalação do ASP.NET SQL Server, você pode encontrar scripts SQL para adicionar os objetos de banco de dados de serviços de aplicativo na seguinte pasta:
-
-
+> 
+> 
 > C:\Windows\Microsoft.NET\Framework\v2.0.50727
 
 
@@ -152,6 +152,6 @@ Depois de criar o logon necessário, é necessário mapear o logon para um usuá
 
 Neste tutorial, você aprendeu a usar a autenticação de formulários ao compilar um aplicativo ASP.NET MVC. Primeiro, você aprendeu a criar novos usuários e funções, tirando proveito da ferramenta de administração de Site da Web. Em seguida, você aprendeu a usar o atributo [autorizar] para impedir que usuários não autorizados invocar ações do controlador. Por fim, você aprendeu como configurar seu aplicativo MVC para armazenar informações de usuário e funções em um banco de dados de produção.
 
->[!div class="step-by-step"]
-[Anterior](preventing-javascript-injection-attacks-cs.md)
-[Próximo](authenticating-users-with-windows-authentication-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](preventing-javascript-injection-attacks-cs.md)
+> [Próximo](authenticating-users-with-windows-authentication-vb.md)

@@ -1,7 +1,7 @@
 ---
 title: Suporte ao IIS no tempo de desenvolvimento no Visual Studio para ASP.NET Core
 author: shirhatti
-description: "Descobrir o suporte para depuração de aplicativos do ASP.NET Core quando executado por trás do IIS no Windows Server."
+description: Descobrir o suporte para depuração de aplicativos do ASP.NET Core quando executado por trás do IIS no Windows Server.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,22 +10,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: a8bdf4c0c0399c62666e6e61e70c0298a42c2c12
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: 218bb2653b92cd7b1cf2c6726b2d4bedbf307a62
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Suporte ao IIS no tempo de desenvolvimento no Visual Studio para ASP.NET Core
 
-Por: [Sourabh Shirhatti](https://twitter.com/sshirhatti)
+Por [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
 Este artigo descreve [Visual Studio](https://www.visualstudio.com/vs/) suporte para depuração de aplicativos do ASP.NET Core em execução por trás do IIS no Windows Server. Este tópico explica como habilitar esse recurso e configuração de um projeto.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Visual Studio (2017/versão 15.3 ou posterior)
-* Carga de trabalho de desenvolvimento Web e ASP.NET *OU* a carga de trabalho de desenvolvimento multiplataforma do .NET Core
+[!INCLUDE [](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="enable-iis"></a>Habilitar o IIS
 
@@ -33,7 +32,7 @@ Habilite o IIS. Navegue para **Painel de Controle** > **Programas** > **Programa
 
 ![Recursos do Windows mostrando a caixa de seleção Serviços de Informações da Internet marcada como um quadrado preto (não uma marca de seleção), indicando que alguns dos recursos do IIS estão habilitados](development-time-iis-support/_static/enable_iis.png)
 
-Se a instalação do IIS requer uma reinicialização, reinicie o sistema.
+Se a instalação do IIS exigir uma reinicialização, reinicie o sistema.
 
 ## <a name="enable-development-time-iis-support"></a>Habilitar suporte ao IIS no tempo de desenvolvimento
 
@@ -45,7 +44,7 @@ Inicie o instalador do Visual Studio. Selecione o **IIS suporte de tempo de dese
 
 Crie um novo perfil de inicialização para adicionar suporte ao IIS no tempo de desenvolvimento. No **Gerenciador de Soluções** do Visual Studio, clique com o botão direito do mouse no projeto e selecione **Propriedades**. Selecione a guia **Depurar**. Selecione **IIS** da lista suspensa **Iniciar**. Confirme se o recurso **Iniciar Navegador** está habilitado com a URL correta.
 
-![Janela de propriedades de projeto com a guia Depurar selecionada. As configurações de Perfil e de Inicialização são definidas para o IIS. O recurso de Inicialização do navegador está habilitado com um endereço de http://localhost/WebApplication2. O mesmo endereço também é fornecido no campo URL do Aplicativo da área Configurações do Servidor Web com a opção Habilitar a Autenticação Anônima habilitada.](development-time-iis-support/_static/project_properties.png)
+![Janela de propriedades de projeto com a guia Depurar selecionada. As configurações de Perfil e de Inicialização são definidas para o IIS. O recurso de navegador de inicialização está habilitado com um endereço de http://localhost/WebApplication2. O mesmo endereço também é fornecido no campo URL do Aplicativo da área Configurações do Servidor Web com a opção Habilitar a Autenticação Anônima habilitada.](development-time-iis-support/_static/project_properties.png)
 
 Como alternativa, um perfil de lançamento para adicionar manualmente o [launchSettings.json](http://json.schemastore.org/launchsettings) arquivo no aplicativo:
 

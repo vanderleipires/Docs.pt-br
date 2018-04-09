@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/enhancing-data-validation
-title: "Banco de dados EF primeiro com o ASP.NET MVC: melhorando a validação de dados | Microsoft Docs"
+title: 'Banco de dados EF primeiro com o ASP.NET MVC: melhorando a validação de dados | Microsoft Docs'
 author: tfitzmac
-description: "Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série..."
+description: Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/29/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 842496c2d3ec56fb81f2409dd7d05d800f83799b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8ea2e94db7956b76c5ccf0a139ac024e38910b49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-enhancing-data-validation"></a>Banco de dados EF primeiro com o ASP.NET MVC: melhorando a validação de dados
 ====================
@@ -87,6 +87,6 @@ Salve o arquivo ContosoModel.edmx para aplicar as alterações.
 
 Abra o arquivo Student.cs ou Enrollment.cs e observe que os atributos de validação de dados que você aplicou anteriormente não estão mais no arquivo. No entanto, executar o aplicativo e observe que as regras de validação ainda são aplicadas quando você insere dados.
 
->[!div class="step-by-step"]
-[Anterior](customizing-a-view.md)
-[Próximo](publish-to-azure.md)
+> [!div class="step-by-step"]
+> [Anterior](customizing-a-view.md)
+> [Próximo](publish-to-azure.md)

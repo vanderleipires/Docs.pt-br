@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
-title: "Diferenças de configuração comuns entre o desenvolvimento e produção (c#) | Microsoft Docs"
+title: Diferenças de configuração comuns entre o desenvolvimento e produção (c#) | Microsoft Docs
 author: rick-anderson
-description: "Nos tutoriais anteriores implantamos nosso site copiando todos os arquivos relevantes do ambiente de desenvolvimento para o ambiente de produção. No entanto, eu..."
+description: Nos tutoriais anteriores implantamos nosso site copiando todos os arquivos relevantes do ambiente de desenvolvimento para o ambiente de produção. No entanto, eu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 092362e3811213047820dab08efc16e1a1e75020
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2694e0dba774a5bca13b9acc6b14c3e47226a064
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a>Diferenças de configuração comuns entre o desenvolvimento e produção (c#)
 ====================
@@ -53,7 +53,7 @@ Quando uma página for visitada na primeira vez (ou na primeira vez após ele te
 O atributo de depuração é um dos atributos mais importantes no `<compilation>` elemento. Se o `debug` atributo é definido como "true", em seguida, os assemblies compilados incluem símbolos de depuração, que são necessários ao depurar um aplicativo no Visual Studio. Mas símbolos de depuração, aumentam o tamanho do assembly e impõem requisitos de memória adicional quando a execução do código. Além disso, quando o `debug` atributo é definido como "true" qualquer conteúdo retornado por `WebResource.axd` não estão em cache, que significa que cada vez que um usuário visita uma página, eles precisarão baixar novamente o conteúdo estático retornado por `WebResource.axd`.
 
 > [!NOTE]
-> `WebResource.axd`é um manipulador de HTTP interna introduzido no ASP.NET 2.0 que controles de servidor usam para recuperar recursos internos, como arquivos de script, imagens, arquivos CSS e outros tipos de conteúdo. Para obter mais informações sobre como `WebResource.axd` funciona e como você pode usá-lo para acessar os recursos inseridos em seus controles de servidor personalizado, consulte [acessando incorporado recursos por meio de uma URL usando `WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx).
+> `WebResource.axd` é um manipulador de HTTP interna introduzido no ASP.NET 2.0 que controles de servidor usam para recuperar recursos internos, como arquivos de script, imagens, arquivos CSS e outros tipos de conteúdo. Para obter mais informações sobre como `WebResource.axd` funciona e como você pode usá-lo para acessar os recursos inseridos em seus controles de servidor personalizado, consulte [acessando incorporado recursos por meio de uma URL usando `WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx).
 
 
 O `<compilation>` do elemento `debug` atributo geralmente é definido como "true" no ambiente de desenvolvimento. Na verdade, esse atributo deve ser definido como "true" para depurar um aplicativo da web. Se você tentar depurar um aplicativo ASP.NET no Visual Studio e o `debug` atributo é definido como "false", o Visual Studio exibirá uma mensagem informando que o aplicativo não pode ser depurado até que o `debug` atributo é definido como "true" e irá oferta para fazer essa alteração para você.
@@ -136,6 +136,6 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 - [Projetos de implantação da Web do VS 2008](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx) | [suporte de projeto de implantação do VS 2008 Web lançado](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
 - [Projetos de Implantação da Web](https://msdn.microsoft.com/magazine/cc163448.aspx)
 
->[!div class="step-by-step"]
-[Anterior](deploying-your-site-using-visual-studio-cs.md)
-[Próximo](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](deploying-your-site-using-visual-studio-cs.md)
+> [Próximo](core-differences-between-iis-and-the-asp-net-development-server-cs.md)

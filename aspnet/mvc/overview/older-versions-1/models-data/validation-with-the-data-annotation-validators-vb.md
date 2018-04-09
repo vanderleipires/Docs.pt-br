@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
-title: "Validação com os validadores de anotação de dados (VB) | Microsoft Docs"
+title: Validação com os validadores de anotação de dados (VB) | Microsoft Docs
 author: microsoft
-description: "Aproveite o associador de modelo de anotação de dados para executar a validação em um aplicativo ASP.NET MVC. Saiba como usar os diferentes tipos de validador..."
+description: Aproveite o associador de modelo de anotação de dados para executar a validação em um aplicativo ASP.NET MVC. Saiba como usar os diferentes tipos de validador...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 227c1acb5e478047c4e5cdc7dbddedd703e91292
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d1987182a44a0ad3f91f455342dc934d1dd50267
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a>Validação com os validadores de anotação de dados (VB)
 ====================
@@ -78,7 +78,7 @@ A classe do produto ilustra como usar um atributo adicional: o atributo DisplayN
 
 > [!NOTE] 
 > 
-> Se você quiser personalizar completamente a mensagem de erro exibida por um validador pode atribuir uma mensagem de erro personalizada a propriedade de mensagem de erro do validador assim:`<Required(ErrorMessage:="This field needs a value!")>`
+> Se você quiser personalizar completamente a mensagem de erro exibida por um validador pode atribuir uma mensagem de erro personalizada a propriedade de mensagem de erro do validador assim: `<Required(ErrorMessage:="This field needs a value!")>`
 
 
 Você pode usar a classe do produto em **listagem 1** com a ação de controlador Create () em **listagem 2**. Esta ação de controlador exibe novamente o Create view quando o estado do modelo contém erros.
@@ -153,5 +153,5 @@ A página em **Figura 6** ilustra as mensagens de erro retornadas quando você i
 
 Neste tutorial, você aprendeu como aproveitar o associador de modelo de anotação de dados para executar a validação em um aplicativo ASP.NET MVC. Você aprendeu a usar os diferentes tipos de atributos de validador como necessários e StringLength. Você também aprendeu a usar esses atributos ao trabalhar com o Microsoft Entity Framework.
 
->[!div class="step-by-step"]
-[Anterior](validating-with-a-service-layer-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](validating-with-a-service-layer-vb.md)

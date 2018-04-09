@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-cs
-title: "Criando um numérico para cima/baixo controle com um back-end da Web Service (c#) | Microsoft Docs"
+title: Criando um numérico para cima/baixo controle com um back-end da Web Service (c#) | Microsoft Docs
 author: wenz
-description: "Em vez de permitir que um usuário digitar um valor em uma caixa de seleção, um numérico para cima/baixo controle (que existe no Windows e outros sistemas operacionais) poderá ser mais como c..."
+description: Em vez de permitir que um usuário digitar um valor em uma caixa de seleção, um numérico para cima/baixo controle (que existe no Windows e outros sistemas operacionais) poderá ser mais como c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0cce9aa215c2b4480e845326f69cad4679ecf847
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 942902bdba93fe4fef8a9122403c6d5c62e6123c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-numeric-updown-control-with-a-web-service-backend-c"></a>Criando um controle para cima/baixo numérico com um back-end da Web Service (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > Em vez de permitir que um usuário digitar um valor em uma caixa de seleção, um numérico para cima/baixo controle (que existe no Windows e outros sistemas operacionais) pode revelar conforme mais confortável. Por padrão, o controle NumericUpDown sempre aumenta ou diminui um valor 1, mas um serviço web prova mais flexibilidade.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Em vez de permitir que um usuário digitar um valor em uma caixa de seleção, um numérico para cima/baixo controle (que existe no Windows e outros sistemas operacionais) pode revelar conforme mais confortável. Por padrão, o `NumericUpDown` controle sempre aumenta ou diminui um valor 1, mas um serviço web prova mais flexibilidade.
 
@@ -45,10 +45,10 @@ Para este exemplo, o valor numérico para cima/baixo controle só deve permitir 
 
 Finalmente, crie uma nova página ASP.NET. Normalmente, é necessário um `ScriptManager` controle, uma `TextBox` controle e um `NumericUpDownExtender` controle. Para o último, você precisa fornecer as informações do serviço web:
 
-- `ServiceDownMethod`nome do suspenso método web ou método de página
-- `ServiceDownPath`caminho para o serviço da web com o método de serviço para baixo; omitir se você estiver usando um método de página
-- `ServiceUpMethod`nome de cima método web ou método de página
-- `ServiceUpPath`caminho para o serviço da web com o método de serviço de backup; omitir se você estiver usando um método de página
+- `ServiceDownMethod` nome do suspenso método web ou método de página
+- `ServiceDownPath` caminho para o serviço da web com o método de serviço para baixo; omitir se você estiver usando um método de página
+- `ServiceUpMethod` nome de cima método web ou método de página
+- `ServiceUpPath` caminho para o serviço da web com o método de serviço de backup; omitir se você estiver usando um método de página
 
 Aqui está a marcação concluída para a página:
 
@@ -61,5 +61,5 @@ Se você executar a página, observe como o valor na caixa de texto dobra sempre
 
 Somente os números são uma potência de 2 aparecem ([clique para exibir a imagem em tamanho normal](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Avançar](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)
+> [!div class="step-by-step"]
+> [Avançar](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
-title: "Cache de dados na inicialização do aplicativo (c#) | Microsoft Docs"
+title: Cache de dados na inicialização do aplicativo (c#) | Microsoft Docs
 author: rick-anderson
-description: "Em um aplicativo Web alguns dados serão usados com frequência e alguns dados serão usados com pouca frequência. Podemos melhorar o desempenho do nosso aplicativo b ASP.NET..."
+description: Em um aplicativo Web alguns dados serão usados com frequência e alguns dados serão usados com pouca frequência. Podemos melhorar o desempenho do nosso aplicativo b ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a618ad702763a59b87336784afd1cb74de06d4c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8d962a182b5136d3e44ce678a355c9679b4c8be1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching-data-at-application-startup-c"></a>Cache de dados na inicialização do aplicativo (c#)
 ====================
@@ -129,11 +129,11 @@ Adicionar o `Global.asax` arquivo para o diretório raiz da web aplicativo s cli
 
 O padrão `Global.asax` arquivo modelo inclui cinco métodos em um servidor- `<script>` marca:
 
-- **`Application_Start`**executa quando o aplicativo web é iniciado pela primeira vez
-- **`Application_End`**é executado quando o aplicativo está sendo desligado
-- **`Application_Error`**sempre que uma exceção sem tratamento alcança o aplicativo é executado
-- **`Session_Start`**executa quando é criada uma nova sessão
-- **`Session_End`**é executado quando uma sessão expirou ou foi abandonada
+- **`Application_Start`** executa quando o aplicativo web é iniciado pela primeira vez
+- **`Application_End`** é executado quando o aplicativo está sendo desligado
+- **`Application_Error`** sempre que uma exceção sem tratamento alcança o aplicativo é executado
+- **`Session_Start`** executa quando é criada uma nova sessão
+- **`Session_End`** é executado quando uma sessão expirou ou foi abandonada
 
 O `Application_Start` manipulador de eventos é chamado apenas uma vez durante um ciclo de vida do aplicativo s. O aplicativo inicia na primeira vez um recurso do ASP.NET é solicitado do aplicativo e continuará a ser executado até que o aplicativo é reiniciado, o que pode ocorrer ao modificar o conteúdo do `/Bin` pasta, modificar `Global.asax`, modificando o o conteúdo no `App_Code` pasta ou modificando o `Web.config` arquivo, entre outras causas. Consulte [visão geral do ciclo de vida de aplicativos ASP.NET](https://msdn.microsoft.com/library/ms178473.aspx) para uma discussão mais detalhada sobre o ciclo de vida do aplicativo.
 
@@ -194,12 +194,12 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Teresa Murphy e Zack Jones. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](caching-data-in-the-architecture-cs.md)
-[Próximo](using-sql-cache-dependencies-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](caching-data-in-the-architecture-cs.md)
+> [Próximo](using-sql-cache-dependencies-cs.md)

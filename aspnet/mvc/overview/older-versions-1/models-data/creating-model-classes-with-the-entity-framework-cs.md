@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 title: Criando Classes de modelo com o Entity Framework (c#) | Microsoft Docs
 author: microsoft
-description: "Neste tutorial, você aprenderá como usar o ASP.NET MVC com o Entity Framework da Microsoft. Você aprenderá a usar o Assistente de entidade para criar um de entidade ADO.NET..."
+description: Neste tutorial, você aprenderá como usar o ASP.NET MVC com o Entity Framework da Microsoft. Você aprenderá a usar o Assistente de entidade para criar um de entidade ADO.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8a897f671de73d9991189e32a5d86b513051ef05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b0a79da580f14d5ae6bcfaaa00d3900234dc662e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-model-classes-with-the-entity-framework-c"></a>Criando Classes de modelo com o Entity Framework (c#)
 ====================
@@ -33,7 +33,7 @@ Para ilustrar como você pode usar o Entity Framework da Microsoft com o ASP.NET
 
 Este tutorial presume que você tenha o Visual Studio 2008 ou o Visual Web Developer 2008 com Service Pack 1. Você precisa Service Pack 1 para usar o Entity Framework. Você pode baixar o Visual Studio 2008 Service Pack 1 ou o Visual Web Developer com Service Pack 1 do seguinte endereço:
 
-> [https://www.ASP.NET/downloads/](https://www.asp.net/downloads)
+> [https://www.asp.net/downloads/](https://www.asp.net/downloads)
 
 
 > [!NOTE] 
@@ -48,8 +48,8 @@ O aplicativo de banco de dados do filme usa uma tabela de banco de dados denomin
 | Nome da coluna | Tipo de dados | Permitir nulos? | É a chave primária? |
 | --- | --- | --- | --- |
 | Id | int | False | verdadeiro |
-| Título | nvarchar (100) | False | False |
-| Diretor | nvarchar (100) | False | False |
+| Título | nvarchar(100) | False | False |
+| Diretor | nvarchar(100) | False | False |
 
 Você pode adicionar essa tabela para um projeto ASP.NET MVC seguindo estas etapas:
 
@@ -221,5 +221,5 @@ O objetivo deste tutorial foi demonstrar como você pode criar aplicativos da we
 
 Primeiro, discutimos como você pode usar o Assistente de modelo de dados de entidade para gerar um modelo de dados de entidade de dentro do Visual Studio. Em seguida, você aprenderá a usar o LINQ to Entities para recuperar um conjunto de registros do banco de dados de uma tabela de banco de dados. Finalmente, usamos o Entity Framework para inserir, atualizar e excluir registros do banco de dados.
 
->[!div class="step-by-step"]
-[Avançar](creating-model-classes-with-linq-to-sql-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](creating-model-classes-with-linq-to-sql-cs.md)

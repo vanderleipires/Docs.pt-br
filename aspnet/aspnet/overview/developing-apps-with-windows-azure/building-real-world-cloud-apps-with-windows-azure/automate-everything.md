@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
-title: "Automatizar tudo (compilação de aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs"
+title: Automatizar tudo (compilação de aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: aa8bb895ed6eaa0ef4c5752f475ea7c911544ef2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2e30ab7831a10f215a08f74e61adf2d147e76543
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatizar tudo (compilação de aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -128,7 +128,7 @@ A primeira coisa que o script faz é criar o aplicativo web chamando o `New-Azur
 
 ### <a name="create-the-storage-account"></a>Criar a conta de armazenamento
 
-Em seguida, o script principal é executado o *novo AzureStorage.ps1* script, especificando "*&lt;websitename&gt;*armazenamento" para o nome da conta de armazenamento, e a mesma data center local como o aplicativo web.
+Em seguida, o script principal é executado o <em>novo AzureStorage.ps1</em> script, especificando "<em>&lt;websitename&gt;</em>armazenamento" para o nome da conta de armazenamento, e a mesma data center local como o aplicativo web.
 
 [!code-powershell[Main](automate-everything/samples/sample4.ps1?highlight=3)]
 
@@ -158,7 +158,7 @@ O script de criação de banco de dados recupera o endereço IP do computador de
 
     [!code-powershell[Main](automate-everything/samples/sample10.ps1?highlight=4)]
 
-    `New-PSCredentialFromPlainText`é uma função no script que chama o `ConvertTo-SecureString` cmdlet para criptografar a senha e retorna um `PSCredential` do objeto, o mesmo tipo que o `Get-Credential` cmdlet retorna.
+    `New-PSCredentialFromPlainText` é uma função no script que chama o `ConvertTo-SecureString` cmdlet para criptografar a senha e retorna um `PSCredential` do objeto, o mesmo tipo que o `Get-Credential` cmdlet retorna.
 - Cria o banco de dados do aplicativo e o banco de dados de associação usando o `New-AzureSqlDatabase` cmdlet.
 
     [!code-powershell[Main](automate-everything/samples/sample11.ps1?highlight=2,5)]
@@ -264,6 +264,6 @@ No [próximo capítulo](source-control.md) vamos examinar o código-fonte e expl
 - [Usando Scripts do Windows PowerShell para publicar em ambientes de teste e desenvolvimento](https://msdn.microsoft.com/library/azure/dn642480.aspx). Documentação do MSDN que explica como usar scripts que o Visual Studio gera automaticamente para projetos da web de publicação.
 - [Ferramentas do PowerShell para Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597). Extensão do Visual Studio que adiciona o suporte de idioma para o Windows PowerShell no Visual Studio.
 
->[!div class="step-by-step"]
-[Anterior](introduction.md)
-[Próximo](source-control.md)
+> [!div class="step-by-step"]
+> [Anterior](introduction.md)
+> [Próximo](source-control.md)

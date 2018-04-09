@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
-title: "(Criando aplicativos de nuvem do mundo Real com o Azure) de estratégias de particionamento de dados | Microsoft Docs"
+title: (Criando aplicativos de nuvem do mundo Real com o Azure) de estratégias de particionamento de dados | Microsoft Docs
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: dca016cb6293a346f5622cc272e510b182c86d58
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9ff7f37a03d8d3dfab50e8007a6645bb0d88f453
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>(Criando aplicativos de nuvem do mundo Real com o Azure) de estratégias de particionamento de dados
 ====================
@@ -113,6 +113,6 @@ Código de exemplo:
 
 - [Conceitos fundamentais do serviço no Windows Azure na nuvem](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Aplicativo de exemplo que inclui um banco de dados fragmentado. Para obter uma descrição do esquema de fragmentação implementada, consulte [DAL – fragmentação de RDBMS](https://blogs.msdn.com/b/windowsazure/archive/2013/09/05/dal-sharding-of-rdbms.aspx) no blog do Windows Azure.
 
->[!div class="step-by-step"]
-[Anterior](data-storage-options.md)
-[Próximo](unstructured-blob-storage.md)
+> [!div class="step-by-step"]
+> [Anterior](data-storage-options.md)
+> [Próximo](unstructured-blob-storage.md)

@@ -1,5 +1,5 @@
 ---
-title: Evitando ataques de redirecionamento aberto em um aplicativo do ASP.NET Core
+title: Evitar ataques de redirecionamento aberto no núcleo do ASP.NET
 author: ardalis
 description: Mostra como evitar ataques de redirecionamento aberto em um aplicativo do ASP.NET Core
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/preventing-open-redirects
-ms.openlocfilehash: d6cd65a2516c4d5e41428f0c1f2dbbe913ac2123
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a210b8bb8091e7c036d4bc98306e3b3f90d7d46
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>Evitando ataques de redirecionamento aberto em um aplicativo do ASP.NET Core
+# <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>Evitar ataques de redirecionamento aberto no núcleo do ASP.NET
 
 Um aplicativo web que redireciona para uma URL que é especificada por meio de solicitação, como os dados de formulário ou querystring potencialmente pode ser violado para redirecionar usuários para uma URL externa e mal-intencionados. Essa violação é chamado de um ataque de redirecionamento aberto.
 
@@ -57,11 +57,11 @@ public IActionResult SomeAction(string redirectUrl)
 }
 ```
 
-``LocalRedirect``lançará uma exceção se uma URL de local não for especificada. Caso contrário, ele se comporta exatamente como o ``Redirect`` método.
+``LocalRedirect`` lançará uma exceção se uma URL de local não for especificada. Caso contrário, ele se comporta exatamente como o ``Redirect`` método.
 
 ### <a name="islocalurl"></a>IsLocalUrl
 
-Use o [IsLocalUrl](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iurlhelper#Microsoft_AspNetCore_Mvc_IUrlHelper_IsLocalUrl_System_String_) método de teste URLs antes de redirecionar:
+Use o [IsLocalUrl](/dotnet/api/Microsoft.AspNetCore.Mvc.IUrlHelper?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_IUrlHelper_IsLocalUrl_System_String_) método de teste URLs antes de redirecionar:
 
 O exemplo a seguir mostra como verificar se uma URL é local antes de redirecionar.
 

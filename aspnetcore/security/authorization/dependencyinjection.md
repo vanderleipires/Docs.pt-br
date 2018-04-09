@@ -1,7 +1,7 @@
 ---
-title: "Injeção de dependência em manipuladores de requisito"
+title: Injeção de dependência em manipuladores de requisito no núcleo do ASP.NET
 author: rick-anderson
-description: "Este documento descreve como injetar manipuladores de requisito de autorização em um aplicativo do ASP.NET Core usando a injeção de dependência."
+description: Saiba como injetar manipuladores de requisito de autorização em um aplicativo do ASP.NET Core usando a injeção de dependência.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/dependencyinjection
-ms.openlocfilehash: 1b7506b49109264a8c628ea2e39ded9f5ace95d3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4de7f0e49ade459968f8c30fbad76ce96a65815f
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="dependency-injection-in-requirement-handlers"></a>Injeção de dependência em manipuladores de requisito
+# <a name="dependency-injection-in-requirement-handlers-in-aspnet-core"></a>Injeção de dependência em manipuladores de requisito no núcleo do ASP.NET
 
 <a name="security-authorization-di"></a>
 
-[Manipuladores de autorização devem ser registrados](policies.md#handler-registration) na coleção durante a configuração do serviço (usando [injeção de dependência](../../fundamentals/dependency-injection.md#fundamentals-dependency-injection)).
+[Manipuladores de autorização devem ser registrados](xref:security/authorization/policies#handler-registration) na coleção durante a configuração do serviço (usando [injeção de dependência](xref:fundamentals/dependency-injection#fundamentals-dependency-injection)).
 
 Suponha que você tenha um repositório de regras que você deseja avaliar dentro de um manipulador de autorização e esse repositório foi registrado na coleção de serviço. A autorização será resolver e injetar que seu construtor.
 

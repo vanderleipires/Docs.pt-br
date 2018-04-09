@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
-title: "Estratégias de desenvolvimento de banco de dados e implantação (c#) | Microsoft Docs"
+title: Estratégias de desenvolvimento de banco de dados e implantação (c#) | Microsoft Docs
 author: rick-anderson
-description: "Ao implantar um aplicativo orientado a dados pela primeira vez você cegamente pode copiar o banco de dados no ambiente de desenvolvimento para o ambiente de produção. B..."
+description: Ao implantar um aplicativo orientado a dados pela primeira vez você cegamente pode copiar o banco de dados no ambiente de desenvolvimento para o ambiente de produção. B...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 551a04296ff92e174a14bd9d2636714e823397e1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 801eedba50e03b2fd9327e9a2902178b35b4275a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="strategies-for-database-development-and-deployment-c"></a>Estratégias de desenvolvimento de banco de dados e implantação (c#)
 ====================
@@ -160,6 +160,6 @@ Este tutorial conclui nosso foco sobre como implantar um aplicativo orientado a 
 
 Boa programação!
 
->[!div class="step-by-step"]
-[Anterior](configuring-a-website-that-uses-application-services-cs.md)
-[Próximo](displaying-a-custom-error-page-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](configuring-a-website-that-uses-application-services-cs.md)
+> [Próximo](displaying-a-custom-error-page-cs.md)

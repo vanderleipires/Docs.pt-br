@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-10
-title: "Publicar o aplicativo do Azure do serviço de aplicativo do Azure | Microsoft Docs"
+title: Publicar o aplicativo do Azure do serviço de aplicativo do Azure | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-10
 msc.type: authoredcontent
-ms.openlocfilehash: 08994815cb339800619caacdcb8d717e9986f9d5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cc8a9199144e9fac041435938ea8899374ea199f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="publish-the-app-to-azure-azure-app-service"></a>Publicar o aplicativo do Azure do serviço de aplicativo do Azure
 ====================
@@ -57,5 +57,5 @@ Insira um nome de site. Selecione sua assinatura do Azure e a região. Em **o se
 
 Clique o **configurações** guia e verificar &quot;executar migrações do Code First&quot;. Em seguida, clique em **publicar**.
 
->[!div class="step-by-step"]
-[Anterior](part-9.md)
+> [!div class="step-by-step"]
+> [Anterior](part-9.md)

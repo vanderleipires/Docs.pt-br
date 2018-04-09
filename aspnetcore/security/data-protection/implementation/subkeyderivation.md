@@ -1,7 +1,7 @@
 ---
-title: "Derivação subchave e criptografia autenticada"
+title: Derivação subchave e criptografia autenticada no núcleo do ASP.NET
 author: rick-anderson
-description: "Este documento explica os detalhes de implementação de proteção de dados do ASP.NET Core derivação de subchaves e autenticado criptografia."
+description: Saiba os detalhes de implementação de proteção de dados do ASP.NET Core derivação de subchaves e autenticado criptografia.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 4b905bbc7bb064b6ba1741557bd694c8c67ccfa8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8c83da40a524896becc07c94c01d5e2b684e4386
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="subkey-derivation-and-authenticated-encryption"></a>Derivação subchave e criptografia autenticada
+# <a name="subkey-derivation-and-authenticated-encryption-in-aspnet-core"></a>Derivação subchave e criptografia autenticada no núcleo do ASP.NET
 
 <a name="data-protection-implementation-subkey-derivation"></a>
 
@@ -63,7 +63,7 @@ Depois de K_E é gerado por meio do mecanismo acima, podemos gerar um vetor de i
 *output:= keyModifier || iv || E_cbc (K_E,iv,data) || HMAC(K_H, iv || E_cbc (K_E,iv,data))*
 
 > [!NOTE]
-> O `IDataProtector.Protect` implementação será [preceda o cabeçalho magic e a id de chave](authenticated-encryption-details.md) a saída antes de retorná-lo ao chamador. Porque o cabeçalho magic e a id de chave são implicitamente parte do [AAD](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation-aad), e porque o modificador de chave é passado como entrada para o KDF, isso significa que cada byte único da carga final retornada é autenticado pelo Mac.
+> O `IDataProtector.Protect` implementação será [preceda o cabeçalho magic e a id de chave](xref:security/data-protection/implementation/authenticated-encryption-details) a saída antes de retorná-lo ao chamador. Porque o cabeçalho magic e a id de chave são implicitamente parte do [AAD](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation-aad), e porque o modificador de chave é passado como entrada para o KDF, isso significa que cada byte único da carga final retornada é autenticado pelo Mac.
 
 ## <a name="galoiscounter-mode-encryption--validation"></a>Criptografia de modo Galois/contador + validação
 
@@ -74,4 +74,4 @@ Quando K_E é gerado por meio do mecanismo acima, podemos gerar um nonce de 96 b
 *saída: = keyModifier | | nonce | | E_gcm (dados de uso único, K_E,) | | authTag*
 
 > [!NOTE]
-> Embora GCM nativamente dá suporte ao conceito de AAD, podemos estiver ainda de alimentação AAD somente para o KDF original, aceitar para passar uma cadeia de caracteres vazia para GCM para seu parâmetro AAD. A razão para isso é dupla. Primeiro, [para dar suporte a agilidade](context-headers.md#data-protection-implementation-context-headers) nunca queremos usar K_M diretamente como a chave de criptografia. Além disso, GCM impõe requisitos de exclusividade muito estrita em suas entradas. Define a probabilidade de que a rotina de criptografia do GCM é sempre invocado em dois ou mais distintos de dados de entrada com o mesmo (chave, nonce) par não deve exceder 2 ^ 32. Se corrigir K_E não foi possível realizar mais de 2 ^ 32 operações de criptografia antes de podemos executar afoul da 2 ^ limitar -32. Isso pode parecer um grande número de operações, mas um servidor web de alto tráfego pode passar por solicitações de 4 bilhões em alguns dias, dentro do tempo de vida normal para essas chaves. Para manter a conformidade de 2 ^ limite de probabilidade-32, podemos continuar a usar um modificador de chave de 128 bits e nonce de 96 bits, o que aumenta a contagem de operação utilizável para qualquer K_M determinado. Para manter a simplicidade de design compartilha o caminho do código KDF entre as operações CBC e GCM e como AAD já é considerado o KDF não é necessário encaminhá-lo para a rotina do GCM.
+> Embora GCM nativamente dá suporte ao conceito de AAD, podemos estiver ainda de alimentação AAD somente para o KDF original, aceitar para passar uma cadeia de caracteres vazia para GCM para seu parâmetro AAD. A razão para isso é dupla. Primeiro, [para dar suporte a agilidade](xref:security/data-protection/implementation/context-headers#data-protection-implementation-context-headers) nunca queremos usar K_M diretamente como a chave de criptografia. Além disso, GCM impõe requisitos de exclusividade muito estrita em suas entradas. Define a probabilidade de que a rotina de criptografia do GCM é sempre invocado em dois ou mais distintos de dados de entrada com o mesmo (chave, nonce) par não deve exceder 2 ^ 32. Se corrigir K_E não foi possível realizar mais de 2 ^ 32 operações de criptografia antes de podemos executar afoul da 2 ^ limitar -32. Isso pode parecer um grande número de operações, mas um servidor web de alto tráfego pode passar por solicitações de 4 bilhões em alguns dias, dentro do tempo de vida normal para essas chaves. Para manter a conformidade de 2 ^ limite de probabilidade-32, podemos continuar a usar um modificador de chave de 128 bits e nonce de 96 bits, o que aumenta a contagem de operação utilizável para qualquer K_M determinado. Para manter a simplicidade de design compartilha o caminho do código KDF entre as operações CBC e GCM e como AAD já é considerado o KDF não é necessário encaminhá-lo para a rotina do GCM.

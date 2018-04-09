@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
-title: "Tutorial: Servidor de transmissão com SignalR 2 | Microsoft Docs"
+title: 'Tutorial: Servidor de transmissão com SignalR 2 | Microsoft Docs'
 author: tdykstra
-description: "Este tutorial mostra como criar um aplicativo web que usa o ASP.NET SignalR 2 para fornecer a funcionalidade de difusão de servidor. Difusão de servidor significa que commun..."
+description: Este tutorial mostra como criar um aplicativo web que usa o ASP.NET SignalR 2 para fornecer a funcionalidade de difusão de servidor. Difusão de servidor significa que commun...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 98a7ce4991d58181177cf56976888e9fd1526987
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: de4ccb4f0865e250fa0d78a9707fe5129c78e764
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>Tutorial: Servidor de transmissão com SignalR 2
 ====================
@@ -65,7 +65,7 @@ O aplicativo que você criará na primeira parte deste tutorial exibe uma grade 
 
 ![Versão inicial do StockTicker](tutorial-server-broadcast-with-signalr/_static/image1.png)
 
-Periodicamente, o servidor atualiza os preços de estoque aleatoriamente e envia as atualizações para todos os clientes conectados. No navegador de números e símbolos no **alterar** e  **%**  colunas alteram dinamicamente em resposta a notificações do servidor. Se você abrir navegadores adicionais para a mesma URL, todas elas mostram os mesmos dados e as mesmas alterações nos dados simultaneamente.
+Periodicamente, o servidor atualiza os preços de estoque aleatoriamente e envia as atualizações para todos os clientes conectados. No navegador de números e símbolos no **alterar** e **%** colunas alteram dinamicamente em resposta a notificações do servidor. Se você abrir navegadores adicionais para a mesma URL, todas elas mostram os mesmos dados e as mesmas alterações nos dados simultaneamente.
 
 Este tutorial contém as seções a seguir:
 
@@ -218,7 +218,7 @@ Agora você concluiu o código do servidor de configuração. Na próxima seçã
 
     As marcas de script especificam o arquivo de script do jQuery, o arquivo de script do SignalR core, o arquivo de script do SignalR proxies e um arquivo de script StockTicker que você criará mais tarde. O arquivo de script de proxies SignalR, que especifica a URL "hubs do signalr /", é gerado dinamicamente e define os métodos de proxy para os métodos na classe Hub, nesse caso para StockTickerHub.GetAllStocks. Se preferir, você pode gerar esse arquivo JavaScript manualmente usando [SignalR utilitários](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/) e desativar a criação do arquivo dinâmico na chamada do método MapHubs.
 3. > [!IMPORTANT]
- > Verifique se o arquivo JavaScript referencia em *StockTicker.html* estão corretas. Ou seja, certifique-se de que a versão jQuery em sua marca de script (1.10.2 no exemplo) é o mesmo que a versão jQuery em seu projeto *Scripts* pasta e certifique-se de que a versão de SignalR em sua marca de script é o mesmo que o SignalR versão em seu projeto *Scripts* pasta. Altere os nomes de arquivo em marcas de script, se necessário.
+   > Verifique se o arquivo JavaScript referencia em *StockTicker.html* estão corretas. Ou seja, certifique-se de que a versão jQuery em sua marca de script (1.10.2 no exemplo) é o mesmo que a versão jQuery em seu projeto *Scripts* pasta e certifique-se de que a versão de SignalR em sua marca de script é o mesmo que o SignalR versão em seu projeto *Scripts* pasta. Altere os nomes de arquivo em marcas de script, se necessário.
 4. Em **Solution Explorer**, clique com botão direito *StockTicker.html*e, em seguida, clique em **definir como página inicial**.
 5. Crie um novo arquivo JavaScript na pasta do projeto e nomeie- *StockTicker.js*...
 6. Substitua o código de modelo com o código a seguir:

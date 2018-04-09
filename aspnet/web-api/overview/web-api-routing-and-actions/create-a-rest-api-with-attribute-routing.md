@@ -2,7 +2,7 @@
 uid: web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 title: Criar uma API REST com o roteamento de atributo em ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
+ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/28/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Criar uma API REST com atributo roteamento ASP.NET Web API 2
 ====================
@@ -55,11 +55,11 @@ Para a maioria das solicitações, no entanto, a API retornará um subconjunto d
 
 Comece executando o Visual Studio. Do **arquivo** menu, selecione **novo** e, em seguida, selecione **projeto**.
 
-No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#** nó. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto &quot;BooksAPI&quot;.
+No painel **Modelos**, selecione **Modelos Instalados** e expanda o nó **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto &quot;BooksAPI&quot;.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 
-No **novo projeto ASP.NET** caixa de diálogo, selecione o **vazio** modelo. Em "Adicionar pastas e referências de núcleo", selecione o **API da Web** caixa de seleção. Clique em **criar projeto**.
+Na caixa de diálogo **Novo Aplicativo Web ASP.NET**, selecione o modelo **Vazio**. Em "Adicionar pastas e referências de núcleo", selecione o **API da Web** caixa de seleção. Clique em **criar projeto**.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image2.png)
 
@@ -67,7 +67,7 @@ Isso cria um projeto de esqueleto que está configurado para a funcionalidade da
 
 ### <a name="domain-models"></a>Modelos de domínio
 
-Em seguida, adicione as classes para modelos de domínio. No Gerenciador de soluções, clique na pasta de modelos. Selecione **adicionar**, em seguida, selecione **classe**. Nomeie a classe `Author`.
+Em seguida, adicione as classes para modelos de domínio. No Gerenciador de Soluções, clique com o botão direito na pasta de modelos (Models). Selecione **adicionar**, em seguida, selecione **classe**. Nomeie a classe `Author`.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image3.png)
 
@@ -184,7 +184,7 @@ Se você solicitar `/api/books/1/details`, a resposta tem esta aparência:
 
 ## <a name="get-books-by-genre"></a>Obter manuais por gênero
 
-Para obter uma lista de livros em uma forma específica, o cliente envia uma solicitação GET para `/api/books/genre`, onde *gênero* é o nome do que o gênero. (Por exemplo, `/get/books/fantasy`.)
+Para obter uma lista de livros em uma forma específica, o cliente envia uma solicitação GET para `/api/books/genre`, onde *gênero* é o nome do que o gênero. (Por exemplo, `/api/books/fantasy`.)
 
 Adicione o seguinte método para `BooksController`.
 

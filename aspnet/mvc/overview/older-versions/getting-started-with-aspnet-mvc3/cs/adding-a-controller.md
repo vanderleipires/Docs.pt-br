@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-controller
 title: Adicionando um controlador (c#) | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express independentemente Pack 1, que..."
+description: Este tutorial ensina as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express independentemente Pack 1, que...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 77bfc8f3778dcf75453c216579e50a016b1ac971
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 963d3bbbadf408d7045c50bfd693069e4097d45d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller-c"></a>Adicionando um controlador (c#)
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > > [!NOTE]
 > > Uma versão atualizada deste tutorial está disponível [aqui](../../../getting-started/introduction/getting-started.md) que usa o ASP.NET MVC 5 e Visual Studio 2013. É muito mais simples a seguir, mais segura e demonstra mais recursos.
@@ -85,6 +85,6 @@ Execute o aplicativo e navegue até a URL de exemplo (`http://localhost:xxxx/Hel
 
 Nos dois exemplos do controlador está executando a parte "VC" do MVC — ou seja, o trabalho de exibição e controlador. O controlador está retornando HTML diretamente. Normalmente, você não deseja controladores retornando HTML diretamente, desde que se torna muito difícil de código. Em vez disso, usaremos normalmente um arquivo de modelo de exibição separada para ajudar a gerar a resposta HTML. Vamos Avançar como podemos fazer isso.
 
->[!div class="step-by-step"]
-[Anterior](intro-to-aspnet-mvc-3.md)
-[Próximo](adding-a-view.md)
+> [!div class="step-by-step"]
+> [Anterior](intro-to-aspnet-mvc-3.md)
+> [Próximo](adding-a-view.md)

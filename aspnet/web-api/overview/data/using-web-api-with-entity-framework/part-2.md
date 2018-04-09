@@ -2,7 +2,7 @@
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-2
 title: Adicionar modelos e controladores | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 7e09316f0faaf0731e4cdda48040fdaedc0f244a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 015bb9698d81387d03ea8f9629316fb53232e708
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="add-models-and-controllers"></a>Adicionar modelos e controladores
 ====================
@@ -84,8 +84,8 @@ No **novo contexto de dados** caixa de diálogo, deixe o nome padrão e clique e
 
 Clique em **adicionar** para concluir o **Adicionar controlador** caixa de diálogo. A caixa de diálogo adiciona duas classes ao seu projeto:
 
-- `AuthorsController`define um controlador Web API. O controlador implementa a API REST que os clientes usam para executar operações CRUD na lista de autores.
-- `BookServiceContext`gerencia objetos de entidade durante o tempo de execução, o que inclui a popular objetos com dados de um banco de dados, controle de alterações e manter dados para o banco de dados. Ele herda de `DbContext`.
+- `AuthorsController` define um controlador Web API. O controlador implementa a API REST que os clientes usam para executar operações CRUD na lista de autores.
+- `BookServiceContext` gerencia objetos de entidade durante o tempo de execução, o que inclui a popular objetos com dados de um banco de dados, controle de alterações e manter dados para o banco de dados. Ele herda de `DbContext`.
 
 ![](part-2/_static/image7.png)
 
@@ -93,6 +93,6 @@ Neste ponto, compile o projeto novamente. Agora percorrer as mesmas etapas para 
 
 ![](part-2/_static/image8.png)
 
->[!div class="step-by-step"]
-[Anterior](part-1.md)
-[Próximo](part-3.md)
+> [!div class="step-by-step"]
+> [Anterior](part-1.md)
+> [Próximo](part-3.md)

@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/nerddinner/create-a-database
 title: Criar um banco de dados | Microsoft Docs
 author: microsoft
-description: "Etapa 2 mostra as etapas para criar o banco de dados contendo todos a refeição e RSVP dados de nosso aplicativo NerdDinner."
+description: Etapa 2 mostra as etapas para criar o banco de dados contendo todos a refeição e RSVP dados de nosso aplicativo NerdDinner.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-database
 msc.type: authoredcontent
-ms.openlocfilehash: 7635722fc357356edd06fb4cff301a8c4dfebbef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ba28d671bf13ec54b83b876462e2c23f90310037
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-database"></a>Criar um banco de dados
 ====================
@@ -131,6 +131,6 @@ Vamos adicionar algumas linhas de dados de uma refeição que podemos usar poste
 
 Podemos acabou de criar nosso banco de dados. Agora vamos criar classes de modelo que podemos usar para consultar e atualizá-lo.
 
->[!div class="step-by-step"]
-[Anterior](create-a-new-aspnet-mvc-project.md)
-[Próximo](build-a-model-with-business-rule-validations.md)
+> [!div class="step-by-step"]
+> [Anterior](create-a-new-aspnet-mvc-project.md)
+> [Próximo](build-a-model-with-business-rule-validations.md)

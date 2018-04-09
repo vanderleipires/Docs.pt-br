@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
-title: "Escolhendo a abordagem certa para a implantação da Web | Microsoft Docs"
+title: Escolhendo a abordagem certa para a implantação da Web | Microsoft Docs
 author: jrjlee
-description: "Quando você trabalha com o Internet Information Services (IIS) da ferramenta de implantação (implantação da Web) 2.0 ou posterior, há três abordagens principais que você pode usar para obter..."
+description: Quando você trabalha com o Internet Information Services (IIS) da ferramenta de implantação (implantação da Web) 2.0 ou posterior, há três abordagens principais que você pode usar para obter...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: b77aa37160f3822f58908866e44497aea3d3bdc8
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 2d690744687af93a69743dc6ce6c853629f61f5d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>Escolhendo a abordagem certa para a implantação da Web
 ====================
@@ -118,7 +118,7 @@ No caso de usuários não administradores, o serviço de gerenciamento da Web (W
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample6.cmd)]
 
 
-Por exemplo, suponha que um processo de compilação é configurado para implantar automaticamente de um aplicativo da web em um ambiente de preparo depois de cada compilação bem-sucedida. Se você usou a abordagem de agente remoto, você precisa fazer a identidade do processo de compilação um administrador em seus servidores de destino. Por outro lado, usando a abordagem de manipulador de implantação da Web você pode dar a um usuário não administrador & #x 2014; **FABRIKAM\stagingdeployer** esse caso & #x 2014; permissão para um determinado site IIS e o processo de compilação pode fornecer essas credenciais para implantar o pacote da web.
+Por exemplo, suponha que um processo de compilação é configurado para implantar automaticamente de um aplicativo da web em um ambiente de preparo depois de cada compilação bem-sucedida. Se você usou a abordagem de agente remoto, você precisa fazer a identidade do processo de compilação um administrador em seus servidores de destino. Por outro lado, usando a abordagem de manipulador de implantação da Web você pode dar a um usuário não administrador&#x2014;**FABRIKAM\stagingdeployer** nesse caso&#x2014;permissão para um determinado site IIS e o processo de compilação pode fornecer esses credenciais para implantar o pacote da web.
 
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample7.cmd)]
@@ -150,6 +150,6 @@ Para obter mais informações sobre operações de linha de comando de implanta�
 
 Para obter orientação geral sobre as diferentes maneiras em que você pode implantar pacotes de web de um computador remoto, consulte [usando Web implantar remotamente](https://technet.microsoft.com/library/ee461175(WS.10).aspx). Para obter mais informações sobre como usar o Web implantar sob demanda, consulte [Web implantar sob demanda](https://technet.microsoft.com/library/ee517345(WS.10).aspx).
 
->[!div class="step-by-step"]
-[Anterior](configuring-server-environments-for-web-deployment.md)
-[Próximo](scenario-configuring-a-test-environment-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [Anterior](configuring-server-environments-for-web-deployment.md)
+> [Próximo](scenario-configuring-a-test-environment-for-web-deployment.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
-title: "Parte 7: Criar principal página | Microsoft Docs"
+title: 'Parte 7: Criar principal página | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 4d06e72bc664f707bbbe4603be41347158c58903
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2c378e68a1e6600daf655c19afbfe355e89496d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-creating-the-main-page"></a>Parte 7: Criar principal página
 ====================
@@ -59,13 +59,13 @@ Os usuários podem selecionar um pedido existente e obter os detalhes do pedido.
 
 O `OrderDetailsViewModel` é inicializada com uma ordem, e ele busca dos detalhes do pedido, enviando uma solicitação AJAX para o servidor.
 
-Além disso, observe o `total` propriedade o `OrderDetailsViewModel`. Esta propriedade é um tipo especial de observável chamado um [computada observável](http://knockoutjs.com/documentation/computedObservables.html). Como o nome implica, um observável computada permite associar dados a um valor computado &#8212; nesse caso, o total de custo da ordem.
+Além disso, observe o `total` propriedade o `OrderDetailsViewModel`. Esta propriedade é um tipo especial de observável chamado um [computada observável](http://knockoutjs.com/documentation/computedObservables.html). Como o nome implica, um computada observável permite associação de dados para um valor computado&#8212;nesse caso, o total de custo da ordem.
 
 Em seguida, adicionar essas funções para `AppViewModel`:
 
-- `resetCart`Remove todos os itens do carrinho.
-- `getDetails`Obtém os detalhes de um pedido (por pusing um novo `OrderDetailsViewModel` até o `details` lista).
-- `createOrder`cria um novo pedido e esvazia o carrinho.
+- `resetCart` Remove todos os itens do carrinho.
+- `getDetails` Obtém os detalhes de um pedido (por pusing um novo `OrderDetailsViewModel` até o `details` lista).
+- `createOrder` cria um novo pedido e esvazia o carrinho.
 
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample6.js?highlight=4)]
@@ -119,5 +119,5 @@ Recursos adicionais:
 - [Mapa de conteúdo de acesso de dados do ASP.NET](https://msdn.microsoft.com/library/6759sth4.aspx)
 - [Entity Framework Developer Center](https://msdn.microsoft.com/data/ef)
 
->[!div class="step-by-step"]
-[Anterior](using-web-api-with-entity-framework-part-6.md)
+> [!div class="step-by-step"]
+> [Anterior](using-web-api-with-entity-framework-part-6.md)

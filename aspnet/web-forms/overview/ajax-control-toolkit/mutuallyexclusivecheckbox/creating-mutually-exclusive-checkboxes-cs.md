@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
-title: "Criando caixas de seleção mutuamente (c#) | Microsoft Docs"
+title: Criando caixas de seleção mutuamente (c#) | Microsoft Docs
 author: wenz
-description: "Quando apenas um de um conjunto de opções pode ser selecionado, os botões de opção são normalmente usadas. Há uma desvantagem, embora: quando um botão de opção em um grupo é selecionada,..."
+description: 'Quando apenas um de um conjunto de opções pode ser selecionado, os botões de opção são normalmente usadas. Há uma desvantagem, embora: quando um botão de opção em um grupo é selecionada,...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e165c3784b246effcaeafc0ad4274bc0ca81a99c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c3a5abe7d02ace16f4aaad8d4adfbd0cba8e84ef
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-mutually-exclusive-checkboxes-c"></a>Criando caixas de seleção mutuamente (c#)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > Quando apenas um de um conjunto de opções pode ser selecionado, os botões de opção são normalmente usadas. Há uma desvantagem, embora: quando um botão de opção em um grupo é selecionada, não é possível desmarcar todos os botões de opção. Caixas de seleção pode ser desmarcadas a qualquer momento, porém não são mutuamente exclusivas. Este tutorial fornece o melhor de ambas as abordagens: caixas de seleção são mutuamente exclusivas.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Quando apenas um de um conjunto de opções pode ser selecionado, os botões de opção são normalmente usadas. Há uma desvantagem, embora: quando um botão de opção em um grupo é selecionada, não é possível desmarcar todos os botões de opção. Caixas de seleção pode ser desmarcadas a qualquer momento, porém não são mutuamente exclusivas. Este tutorial fornece o melhor de ambas as abordagens: caixas de seleção são mutuamente exclusivas.
 
@@ -54,5 +54,5 @@ Salve e execute a página: você pode verificar e desmarque as duas caixas de se
 
 Apenas uma caixa de seleção pode ser verificada por vez ([clique para exibir a imagem em tamanho normal](creating-mutually-exclusive-checkboxes-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[Avançar](creating-mutually-exclusive-checkboxes-vb.md)
+> [!div class="step-by-step"]
+> [Avançar](creating-mutually-exclusive-checkboxes-vb.md)

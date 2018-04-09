@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
-title: "Exibindo dados binários na Web dados controles (VB) | Microsoft Docs"
+title: Exibindo dados binários na Web dados controles (VB) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, examine as opções para apresentar dados binários em uma página da Web, incluindo a exibição de um arquivo de imagem e o fornecimento de um link de 'Baixar' f..."
+description: Neste tutorial, examine as opções para apresentar dados binários em uma página da Web, incluindo a exibição de um arquivo de imagem e o fornecimento de um link de 'Baixar' f...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: df79748bf5734ffcb9eb81ca089aeded0e63bdc5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 006a4d014b610f3079d7f25e9420f687447a1b26
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>Exibindo dados binários nos controles da Web de dados (VB)
 ====================
@@ -89,7 +89,7 @@ Em vez de exibir o texto do `BrochurePath` coluna, quer criar um link para a pub
 
 ![Adicionar um HyperLinkField para BrochurePath](displaying-binary-data-in-the-data-web-controls-vb/_static/image6.gif)
 
-**Figura 6**: adicionar um HyperLinkField para`BrochurePath`
+**Figura 6**: adicionar um HyperLinkField para `BrochurePath`
 
 
 Isso adicionará uma coluna de links GridView, como mostra a Figura 7. Clicar em um link Exibir publicação irá exibir o PDF diretamente no navegador ou solicitar o usuário para baixar o arquivo, dependendo se um leitor de PDF está instalado e as configurações do navegador s.
@@ -226,12 +226,12 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Teresa Murphy e Dave Gardner. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](uploading-files-vb.md)
-[Próximo](including-a-file-upload-option-when-adding-a-new-record-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](uploading-files-vb.md)
+> [Próximo](including-a-file-upload-option-when-adding-a-new-record-vb.md)

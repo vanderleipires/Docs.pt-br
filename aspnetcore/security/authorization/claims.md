@@ -1,7 +1,7 @@
 ---
-title: "Autorização baseada em declarações"
+title: Autorização baseada em declarações no núcleo do ASP.NET
 author: rick-anderson
-description: "Este documento explica como adicionar declarações verificações de autorização em um aplicativo do ASP.NET Core."
+description: Saiba como adicionar declarações verificações de autorização em um aplicativo do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: da308b67be046395bb1baa0f272e767cccbc99c8
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="claims-based-authorization"></a>Autorização baseada em declarações
+# <a name="claims-based-authorization-in-aspnet-core"></a>Autorização baseada em declarações no núcleo do ASP.NET
 
 <a name="security-authorization-claims-based"></a>
 
@@ -122,4 +122,4 @@ public class SalaryController : Controller
 
 No exemplo acima qualquer identidade que atende a `EmployeeOnly` política pode acessar o `Payslip` ação como essa política é aplicada no controlador. No entanto para chamar o `UpdateSalary` ação de identidade deve ser atendidos *ambos* o `EmployeeOnly` política e o `HumanResources` política.
 
-Se você quiser políticas mais complicadas, como colocar uma data de nascimento declaração, calcular uma idade dele e verificando a idade for 21 ou anterior, você precisa gravar [manipuladores de política personalizada](policies.md).
+Se você quiser políticas mais complicadas, como colocar uma data de nascimento declaração, calcular uma idade dele e verificando a idade for 21 ou anterior, você precisa gravar [manipuladores de política personalizada](xref:security/authorization/policies).

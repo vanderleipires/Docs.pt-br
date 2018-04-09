@@ -1,7 +1,7 @@
 ---
-title: "Perfis para a implantação de aplicativo do ASP.NET Core de publicação do Visual Studio"
+title: Perfis para a implantação de aplicativo do ASP.NET Core de publicação do Visual Studio
 author: rick-anderson
-description: "Descubra como criar perfis de aplicativos do ASP.NET Core de publicação no Visual Studio."
+description: Descubra como criar perfis de aplicativos do ASP.NET Core de publicação no Visual Studio.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: d2c4ec317f235c6d042bd130dbf79f6cb5e2d47d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 64c96f572c42c56480cfe2bd58f926d54eddf35e
+ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Perfis para a implantação de aplicativo do ASP.NET Core de publicação do Visual Studio
 
@@ -91,7 +91,7 @@ Quando o MSBuild ou o Visual Studio carrega um projeto, as seguintes ações de 
 * Computar arquivos a publicar
 * Publicar arquivos para o destino
 
-### <a name="compute-project-items"></a>Itens de projeto de computação
+## <a name="compute-project-items"></a>Itens de projeto de computação
 
 Quando o projeto é carregado, os itens de projeto (arquivos) são computados. O atributo `item type` determina como o arquivo é processado. Por padrão, os arquivos *.cs* são incluídos na lista de itens `Compile`. Os arquivos na lista de itens `Compile` são compilados.
 
@@ -197,6 +197,7 @@ O Assistente de publicação dá suporte aos destinos de publicação a seguir:
 Para obter mais informações, consulte [Quais opções de publicação são adequadas para mim?](https://docs.microsoft.com/visualstudio/ide/not-in-toc/web-publish-options).
 
 Ao criar um perfil de publicação com o Visual Studio, um *propriedades/PublishProfiles/\<nome da publicação >. pubxml* arquivo MSBuild é criado. Esse arquivo *.pubxml* é um arquivo do MSBuild e contém definições de configuração de publicação. Esse arquivo pode ser alterado para personalizar a compilação e o processo de publicação. Esse arquivo é lido pelo processo de publicação. `<LastUsedBuildConfiguration>` é especial porque é uma propriedade global e não deve estar em qualquer arquivo que será importado no build. Para obter mais informações, consulte [MSBuild: como definir a propriedade de configuração](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx).
+
 O *. pubxml* arquivo não deve ser verificado no controle de origem porque ele depende do *. User* arquivo. O check-in do arquivo *.user* nunca deve ser feito no controle do código-fonte porque ele pode conter informações confidenciais e só é válido para um usuário e computador.
 
 Informações confidenciais (como a senha de publicação) são criptografadas em um nível por usuário/computador e armazenadas no arquivo *Properties/PublishProfiles/\<nome da publicação>.pubxml.user*. Como esse arquivo pode conter informações confidenciais, o check-in dele **não** deve ser realizado no controle do código-fonte.
@@ -444,7 +445,7 @@ MSBuild file.
 
 Consulte o [Leiame do WebSDK](https://github.com/aspnet/websdk) para obter mais amostras de implantação.
 
-### <a name="run-a-target-before-or-after-publishing"></a>Executar um destino antes ou depois da publicação
+## <a name="run-a-target-before-or-after-publishing"></a>Executar um destino antes ou depois da publicação
 
 O interno `BeforePublish` e `AfterPublish` destinos podem ser usados para executar um destino antes ou após o destino de publicação. A marcação a seguir pode ser adicionada ao perfil de publicação para registrar mensagens de saída do console antes e após a publicação:
 
@@ -455,6 +456,16 @@ O interno `BeforePublish` e `AfterPublish` destinos podem ser usados para execut
   <Target Name="CustomActionsAfterPublish" AfterTargets="AfterPublish">
     <Message Text="Inside AfterPublish" Importance="high" />
 </Target>
+```
+
+## <a name="publish-to-a-server-using-an-untrusted-certificate"></a>Publicar em um servidor usando um certificado não confiável
+
+Adicionar o `<AllowUntrustedCertificate>` propriedade com um valor de `True` para o perfil de publicação:
+
+```xml
+<PropertyGroup>
+  <AllowUntrustedCertificate>True</AllowUntrustedCertificate>
+</PropertyGroup>
 ```
 
 ## <a name="the-kudu-service"></a>O serviço Kudu
@@ -471,4 +482,4 @@ Selecione o item de menu [Console de Depuração](https://github.com/projectkudu
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Web Deploy](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy) simplifica a implantação de aplicativos web e sites para servidores IIS.
-* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): problemas de arquivos e recursos de solicitação para implantação.
+* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): Problemas de arquivos e recursos para implantação de solicitação.

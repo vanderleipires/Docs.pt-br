@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
-title: "A solução de Gerenciador de contato | Microsoft Docs"
+title: A solução de Gerenciador de contato | Microsoft Docs
 author: jrjlee
-description: "Esta série de tutoriais usa uma solução de exemplo #x 2014; a solução do gerente do contato & #x 2014; para representar um aplicativo de grande porte com um leve realista..."
+description: Esta série de tutoriais usa uma solução de exemplo&#x2014;a solução Contact Manager&#x2014;para representar um aplicativo de grande porte com um leve realista...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: b7f691a1ee855788f6a57616aea35d960e4c85c7
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d7034f800df98747d10401d7e2c7297fea0e46d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-contact-manager-solution"></a>A solução de Gerenciador de contato
 ====================
@@ -24,7 +24,7 @@ por [Jason Lee](https://github.com/jrjlee)
 
 [Baixar PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Isso [série de tutoriais](web-deployment-in-the-enterprise.md) usa uma solução de exemplo #x 2014; a solução de Gerenciador de contato & #x 2014; para representar um aplicativo de grande porte com um nível de complexidade de realista. Este tópico apresenta a solução de Gerenciador de contato, descreve os principais componentes da solução e identifica os desafios de implementar esse tipo de aplicativo para várias plataformas de destino em um ambiente corporativo.
+> Isso [série de tutoriais](web-deployment-in-the-enterprise.md) usa uma solução de exemplo&#x2014;a solução Contact Manager&#x2014;para representar um aplicativo de grande porte com um nível de complexidade de realista. Este tópico apresenta a solução de Gerenciador de contato, descreve os principais componentes da solução e identifica os desafios de implementar esse tipo de aplicativo para várias plataformas de destino em um ambiente corporativo.
 > 
 > Como trabalhar com os tópicos nos tutoriais, você pode usar a solução de Gerenciador de contato como uma implementação de referência que demonstra como você pode atender aos desafios específicos em cenários de implantação da empresa. O próximo tópico, [configuração a solução Contact Manager](setting-up-the-contact-manager-solution.md), descreve como baixar e executar a solução em sua estação de trabalho do desenvolvedor.
 
@@ -67,6 +67,6 @@ Este tópico fornecida uma visão geral da solução de Gerenciador de contato e
 
 O próximo tópico, [configuração a solução Contact Manager](setting-up-the-contact-manager-solution.md), descreve como baixar e executar a solução em sua estação de trabalho do desenvolvedor.
 
->[!div class="step-by-step"]
-[Anterior](web-deployment-in-the-enterprise.md)
-[Próximo](setting-up-the-contact-manager-solution.md)
+> [!div class="step-by-step"]
+> [Anterior](web-deployment-in-the-enterprise.md)
+> [Próximo](setting-up-the-contact-manager-solution.md)

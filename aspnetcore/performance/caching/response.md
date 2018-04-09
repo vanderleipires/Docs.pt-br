@@ -1,5 +1,5 @@
 ---
-title: "O cache de resposta no núcleo do ASP.NET"
+title: O cache de resposta no núcleo do ASP.NET
 author: rick-anderson
 description: Saiba como usar a resposta em cache para reduzir os requisitos de largura de banda e melhorar o desempenho de aplicativos do ASP.NET Core.
 manager: wpickett
@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: c654cfd7c2d291849067bfd3297f940018ccb3d8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cc1ec50155398ba4143a2bf697ca26435c228c49
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>O cache de resposta no núcleo do ASP.NET
 
@@ -64,13 +64,13 @@ Não há nenhum atual desenvolvedor controle sobre o comportamento de cache ao u
 
 O armazenamento em cache na memória usa a memória do servidor para armazenar dados em cache. Esse tipo de cache é adequado para um único servidor ou vários servidores usando *sessões Autoadesivas*. Sessões Autoadesivas significa que as solicitações de um cliente sempre são roteadas para o mesmo servidor para processamento.
 
-Para obter mais informações, consulte [Introdução ao cache na memória no ASP.NET Core](xref:performance/caching/memory).
+Para obter mais informações, consulte [Cache na memória](xref:performance/caching/memory).
 
 ### <a name="distributed-cache"></a>Cache distribuído
 
 Use um cache distribuído para armazenar dados na memória quando o aplicativo é hospedado em um farm de servidor ou de nuvem. O cache é compartilhado entre os servidores que processam solicitações. Um cliente pode enviar uma solicitação que é tratada por qualquer servidor no grupo, se os dados armazenados em cache para o cliente estão disponíveis. ASP.NET Core oferece o SQL Server e os caches Redis distribuído.
 
-Para obter mais informações, consulte [trabalhando com um cache distribuído](xref:performance/caching/distributed).
+Para obter mais informações, consulte [trabalhar com um cache distribuído](xref:performance/caching/distributed).
 
 ### <a name="cache-tag-helper"></a>Auxiliar de marca de cache
 
@@ -180,10 +180,10 @@ Cache-Control: public,max-age=60
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Armazenamento em cache em HTTP da especificação](https://tools.ietf.org/html/rfc7234#section-3)
+* [Armazenar respostas em Caches](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [Cache in-memory](xref:performance/caching/memory)
-* [Trabalhando com um cache distribuído](xref:performance/caching/distributed)
+* [Cache na memória](xref:performance/caching/memory)
+* [Trabalhar com um cache distribuído](xref:performance/caching/distributed)
 * [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 * [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
