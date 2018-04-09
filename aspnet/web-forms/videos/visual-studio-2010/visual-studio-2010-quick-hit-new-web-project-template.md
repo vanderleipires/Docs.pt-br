@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-new-web-project-template
-title: "Visual Studio 2010 rápida ocorrências - novo modelo de projeto da Web | Microsoft Docs"
+title: Visual Studio 2010 rápida ocorrências - novo modelo de projeto da Web | Microsoft Docs
 author: JoeStagner
-description: "Neste vídeo, você aprenderá sobre novo web starter modelo de projeto do Visual Studio."
+description: Neste vídeo, você aprenderá sobre novo web starter modelo de projeto do Visual Studio.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/11/2009
@@ -12,21 +12,21 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-new-web-project-template
 msc.type: video
-ms.openlocfilehash: 043251db78ed062807789cfa3ac1627929a1d310
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2d3d0f41799382efba2059e0b8c3e3ef3346e835
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="visual-studio-2010-quick-hit---new-web-project-template"></a><span data-ttu-id="b4ec9-103">Visual Studio 2010 "Rápido Hit" - novo modelo de projeto da Web</span><span class="sxs-lookup"><span data-stu-id="b4ec9-103">Visual Studio 2010 "Quick Hit" - New Web Project Template</span></span>
+<a name="visual-studio-2010-quick-hit---new-web-project-template"></a><span data-ttu-id="b4078-103">Visual Studio 2010 "Rápido Hit" - novo modelo de projeto da Web</span><span class="sxs-lookup"><span data-stu-id="b4078-103">Visual Studio 2010 "Quick Hit" - New Web Project Template</span></span>
 ====================
-<span data-ttu-id="b4ec9-104">por [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="b4ec9-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="b4078-104">por [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="b4078-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="b4ec9-105">Neste vídeo, você aprenderá sobre novo web starter modelo de projeto do Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="b4ec9-105">In this video you will learn about Visual Studio's new web project starter template.</span></span>
+<span data-ttu-id="b4078-105">Neste vídeo, você aprenderá sobre novo web starter modelo de projeto do Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="b4078-105">In this video you will learn about Visual Studio's new web project starter template.</span></span>
 
-[<span data-ttu-id="b4ec9-106">&#9654; Assista ao vídeo (2 minutos)</span><span class="sxs-lookup"><span data-stu-id="b4ec9-106">&#9654; Watch video (2 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2010-quick-hit-new-web-project-template)
+[<span data-ttu-id="b4078-106">&#9654;Assista ao vídeo (2 minutos)</span><span class="sxs-lookup"><span data-stu-id="b4078-106">&#9654; Watch video (2 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2010-quick-hit-new-web-project-template)
 
->[!div class="step-by-step"]
-<span data-ttu-id="b4ec9-107">[Anterior](visual-studio-2010-quick-hit-multi-monitor-support.md)
-[Próximo](visual-studio-2010-quick-hit-new-multi-targeting.md)</span><span class="sxs-lookup"><span data-stu-id="b4ec9-107">[Previous](visual-studio-2010-quick-hit-multi-monitor-support.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="b4078-107">[Anterior](visual-studio-2010-quick-hit-multi-monitor-support.md)
+> [Próximo](visual-studio-2010-quick-hit-new-multi-targeting.md)</span><span class="sxs-lookup"><span data-stu-id="b4078-107">[Previous](visual-studio-2010-quick-hit-multi-monitor-support.md)
 [Next](visual-studio-2010-quick-hit-new-multi-targeting.md)</span></span>

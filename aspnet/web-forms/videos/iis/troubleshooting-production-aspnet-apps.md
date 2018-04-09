@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/iis/troubleshooting-production-aspnet-apps
-title: "Solucionando problemas de aplicativos ASP.NET de produção | Microsoft Docs"
+title: Solucionando problemas de aplicativos ASP.NET de produção | Microsoft Docs
 author: JoeStagner
-description: "Este vídeo oferece um inventário rápido das ferramentas para solucionar problemas de aplicativos do ASP.NET de produção."
+description: Este vídeo oferece um inventário rápido das ferramentas para solucionar problemas de aplicativos do ASP.NET de produção.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2009
@@ -12,21 +12,21 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/iis/troubleshooting-production-aspnet-apps
 msc.type: video
-ms.openlocfilehash: 8fc57eb6d9b2d28076c0ddbfba52e88a79de6ce4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cc3b12f3063e677ad6a235fd0aa51854947a3361
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="troubleshooting-production-aspnet-apps"></a><span data-ttu-id="4de09-103">Solucionando problemas de aplicativos ASP.NET de produção</span><span class="sxs-lookup"><span data-stu-id="4de09-103">Troubleshooting Production ASP.NET Apps</span></span>
+<a name="troubleshooting-production-aspnet-apps"></a><span data-ttu-id="ce5b7-103">Solucionando problemas de aplicativos ASP.NET de produção</span><span class="sxs-lookup"><span data-stu-id="ce5b7-103">Troubleshooting Production ASP.NET Apps</span></span>
 ====================
-<span data-ttu-id="4de09-104">por [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="4de09-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="ce5b7-104">por [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ce5b7-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="4de09-105">Este vídeo oferece um inventário rápido das ferramentas para solucionar problemas de aplicativos do ASP.NET de produção.</span><span class="sxs-lookup"><span data-stu-id="4de09-105">This video provides you with a quick inventory of tools to troubleshoot your production ASP.NET applications.</span></span>
+<span data-ttu-id="ce5b7-105">Este vídeo oferece um inventário rápido das ferramentas para solucionar problemas de aplicativos do ASP.NET de produção.</span><span class="sxs-lookup"><span data-stu-id="ce5b7-105">This video provides you with a quick inventory of tools to troubleshoot your production ASP.NET applications.</span></span>
 
-[<span data-ttu-id="4de09-106">&#9654; Assista ao vídeo (30 minutos)</span><span class="sxs-lookup"><span data-stu-id="4de09-106">&#9654; Watch video (30 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/troubleshooting-production-aspnet-apps)
+[<span data-ttu-id="ce5b7-106">&#9654;Assista ao vídeo (30 minutos)</span><span class="sxs-lookup"><span data-stu-id="ce5b7-106">&#9654; Watch video (30 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/troubleshooting-production-aspnet-apps)
 
->[!div class="step-by-step"]
-<span data-ttu-id="4de09-107">[Anterior](feature-specific-delegated-management.md)
-[Próximo](creating-a-site-with-iis7-manager.md)</span><span class="sxs-lookup"><span data-stu-id="4de09-107">[Previous](feature-specific-delegated-management.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="ce5b7-107">[Anterior](feature-specific-delegated-management.md)
+> [Próximo](creating-a-site-with-iis7-manager.md)</span><span class="sxs-lookup"><span data-stu-id="ce5b7-107">[Previous](feature-specific-delegated-management.md)
 [Next](creating-a-site-with-iis7-manager.md)</span></span>
