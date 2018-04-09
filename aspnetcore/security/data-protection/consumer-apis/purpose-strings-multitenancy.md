@@ -1,7 +1,7 @@
 ---
-title: "Cadeias de caracteres de finalidade no núcleo do ASP.NET"
+title: Hierarquia de propósito e multilocação no núcleo do ASP.NET
 author: rick-anderson
-description: "Este documento descreve a hierarquia de cadeia de caracteres de propósito e multilocação como ele se relaciona com as APIs de proteção de dados ASP.NET Core."
+description: Saiba mais sobre hierarquia de cadeia de caracteres de propósito e multilocação como ele se relaciona com as APIs de proteção de dados do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/purpose-strings-multitenancy
-ms.openlocfilehash: 490896563db514aba3904b01e69a23b61659d830
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a1ca2c32f95a86b877cbbe94d106d23b86800443
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="purpose-hierarchy-and-multi-tenancy-in-aspnet-core"></a>Hierarquia de propósito e multilocação no núcleo do ASP.NET
 
 Como um `IDataProtector` também é implicitamente um `IDataProtectionProvider`, fins podem ser encadeada. Nesse sentido, `provider.CreateProtector([ "purpose1", "purpose2" ])` é equivalente a `provider.CreateProtector("purpose1").CreateProtector("purpose2")`.
 
-Isso permite que algumas relações hierárquicas interessantes através do sistema de proteção de dados. No exemplo anterior de [Contoso.Messaging.SecureMessage](purpose-strings.md#data-protection-contoso-purpose), pode chamar o componente SecureMessage `provider.CreateProtector("Contoso.Messaging.SecureMessage")` inicial de uma vez e armazenar em cache o resultado em uma particular `_myProvide` campo. Protetores futuras, em seguida, podem ser criados por meio de chamadas para `_myProvider.CreateProtector("User: username")`, e os protetores são usados para proteger as mensagens individuais.
+Isso permite que algumas relações hierárquicas interessantes através do sistema de proteção de dados. No exemplo anterior de [Contoso.Messaging.SecureMessage](xref:security/data-protection/consumer-apis/purpose-strings#data-protection-contoso-purpose), pode chamar o componente SecureMessage `provider.CreateProtector("Contoso.Messaging.SecureMessage")` inicial de uma vez e armazenar em cache o resultado em uma particular `_myProvide` campo. Protetores futuras, em seguida, podem ser criados por meio de chamadas para `_myProvider.CreateProtector("User: username")`, e os protetores são usados para proteger as mensagens individuais.
 
 Isso também pode ser invertido. Considere que hospeda vários locatários (um CMS parece razoável) e cada locatário podem ser configurado com seu próprio sistema de gerenciamento de autenticação e o estado de um único aplicativo lógico. O aplicativo de proteção tem um único provedor mestre e chama `provider.CreateProtector("Tenant 1")` e `provider.CreateProtector("Tenant 2")` para fornecer seu próprio fatia isolada do sistema de proteção de dados de cada locatário. Os locatários, em seguida, podem derivar seus próprio protetores individuais com base em suas necessidades, mas, independentemente de como eles tentam não é possível criar protetores que entrarem em conflito com qualquer outro locatário no sistema. Graficamente, isso é representado como abaixo.
 

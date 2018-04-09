@@ -2,7 +2,7 @@
 uid: mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 title: Criar MVC 5 aplicativo com Facebook, Twitter, LinkedIn e Google OAuth2 Sign-on (c#) | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial mostra como criar um aplicativo web ASP.NET MVC 5 que permite que os usuários façam logon usando OAuth 2.0 com as credenciais de um autenti externa..."
+description: Este tutorial mostra como criar um aplicativo web ASP.NET MVC 5 que permite que os usuários façam logon usando OAuth 2.0 com as credenciais de um autenti externa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 8dc2221ea19a33f1d34ba3aae8c60e365423e140
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c289c209b50f0c2c1f2d8b15a3aedeaebf671d0b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Criar um aplicativo ASP.NET MVC 5 com o Facebook, Twitter, LinkedIn e Google OAuth2 Sign-on (c#)
 ====================
@@ -34,7 +34,7 @@ por [Rick Anderson](https://github.com/Rick-Anderson)
 <a id="start"></a>
 ## <a name="getting-started"></a>Guia de Introdução
 
-Comece instalando e executando [Visual Studio Express 2013 para Web](https://go.microsoft.com/fwlink/?LinkId=299058) ou [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566). Instalar o Visual Studio [2013 atualização 3](https://go.microsoft.com/fwlink/?LinkId=390521) ou superior. Para obter ajuda com Dropbox, GitHub, Linkedin, Instagram, buffer, a equipe de vendas, o fluxo, pilha de Exchange, Tripit, twitch, Twitter, Yahoo e muito mais, consulte [uma parar guia](http://www.oauthforaspnet.com/).
+Comece instalando e executando [Visual Studio Express 2013 para Web](https://go.microsoft.com/fwlink/?LinkId=299058) ou [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566). Instalar o Visual Studio [2013 atualização 3](https://go.microsoft.com/fwlink/?LinkId=390521) ou superior. Para obter ajuda com Dropbox, GitHub, Linkedin, Instagram, Buffer, a equipe de vendas, o fluxo, pilha de Exchange, Tripit, Twitch, Twitter, Yahoo! e muito mais, consulte [projeto de exemplo](https://github.com/matthewdunsdon/oauthforaspnet).
 
 > [!NOTE]
 > Você deve instalar o Visual Studio [2013 atualização 3](https://go.microsoft.com/fwlink/?LinkId=390521) ou superior para usar o Google OAuth 2 e depurar localmente, sem avisos de SSL.
@@ -118,9 +118,9 @@ Para se conectar a provedores de autenticação, como Google e Facebook, você p
 > Para instruções do Google OAuth atuais, consulte [Google Configurando a autenticação no ASP.NET Core](/aspnet/core/security/authentication/social/google-logins).
 
 1. Navegue até o [Console de desenvolvedores do Google](https://console.developers.google.com/).
-1. Se você não criou um projeto antes de, selecione **credenciais** na guia à esquerda e, em seguida, selecione **criar**.
-1. Na guia à esquerda, clique em **credenciais**.
-1. Clique em **criar credenciais** , em seguida, **ID do cliente OAuth**. 
+2. Se você não criou um projeto antes de, selecione **credenciais** na guia à esquerda e, em seguida, selecione **criar**.
+3. Na guia à esquerda, clique em **credenciais**.
+4. Clique em **criar credenciais** , em seguida, **ID do cliente OAuth**. 
 
     1. No **criar ID do cliente** caixa de diálogo, mantenha o padrão **aplicativo Web** para o tipo de aplicativo.
     2. Definir o **JavaScript autorizado** origens para a URL de SSL usado acima (`https://localhost:44300/` , a menos que você criou outros projetos SSL)
@@ -131,7 +131,7 @@ Para se conectar a provedores de autenticação, como Google e Facebook, você p
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image15.png)  
   
- A imagem abaixo mostra as APIs habilitadas.  
+   A imagem abaixo mostra as APIs habilitadas.  
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image16.png)
 7. No Gerenciador de API de APIs do Google, visite o **credenciais** guia para obter o **ID do cliente**. Download para salvar um arquivo JSON com segredos do aplicativo. Copie e cole o **ClientId** e **ClientSecret** no `UseGoogleAuthentication` método encontrado no *Startup.Auth.cs* arquivo o *App_Start* pasta. O **ClientId** e **ClientSecret** valores mostrados abaixo são exemplos e não funcionam.
@@ -148,8 +148,8 @@ Para se conectar a provedores de autenticação, como Google e Facebook, você p
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image18.png)
 
     > [!NOTE]
-    > Se você perder qualquer uma das etapas acima, você obterá um erro HTTP 401. Verifique novamente as etapas acima. Se você perder uma configuração necessária (por exemplo **nome do produto**), adicionar o item e salve o ausentes, pode levar alguns minutos para que a autenticação funcione.
-10. Você será redirecionado para o site do google onde você irá inserir suas credenciais.   
+    > Se você perder qualquer uma das etapas acima, você obterá um erro HTTP 401. Verifique novamente as etapas acima. Se você perder uma configuração necessária (por exemplo **nome do produto**), adicione o item ausente e salvar; pode levar alguns minutos para que a autenticação funcione.
+10. Você será redirecionado para o site do Google onde você irá inserir suas credenciais.   
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image19.png)
 11. Depois de inserir suas credenciais, você deverá conceder permissões para o aplicativo web que você acabou de criar:
@@ -167,14 +167,14 @@ Para se conectar a provedores de autenticação, como Google e Facebook, você p
 
 Para a autenticação do Facebook OAuth2, você precisa copiar algumas configurações para o projeto de um aplicativo que você criar no Facebook.
 
-1. No seu navegador, navegue até [https://developers.facebook.com/apps](https://developers.facebook.com/apps) e faça logon inserindo suas credenciais do Facebook.
+1. No seu navegador, navegue até [ https://developers.facebook.com/apps ](https://developers.facebook.com/apps) e faça logon inserindo suas credenciais do Facebook.
 2. Se você já não estiver registrado como um desenvolvedor de Facebook, clique em **registrar como um desenvolvedor** e siga as instruções para registrar.
 3. Sobre o **aplicativos** , clique em **criar novo aplicativo**.
 
     ![Criar novo aplicativo](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
 4. Insira um **nome do aplicativo** e **categoria**, em seguida, clique em **criar aplicativo**.
 
-    Isso deve ser exclusivo em Facebook. O **aplicativo Namespace** é a parte da URL que seu aplicativo usará para acessar o aplicativo do Facebook para autenticação (por exemplo, https://apps.facebook.com/ {aplicativo Namespace}). Se você não especificar um **aplicativo Namespace**, o **ID do aplicativo** será usado para a URL. O **ID do aplicativo** é um número longo gerada pelo sistema que você verá na próxima etapa.
+    Isso deve ser exclusivo em Facebook. O <strong>aplicativo Namespace</strong> é a parte da URL que seu aplicativo usará para acessar o aplicativo do Facebook para autenticação (por exemplo, https://apps.facebook.com/{App Namespace}). Se você não especificar um <strong>aplicativo Namespace</strong>, o <strong>ID do aplicativo</strong> será usado para a URL. O <strong>ID do aplicativo</strong> é um número longo gerada pelo sistema que você verá na próxima etapa.
 
     ![Criar caixa de diálogo Novo aplicativo](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
 5. Envie a verificação de segurança padrão.

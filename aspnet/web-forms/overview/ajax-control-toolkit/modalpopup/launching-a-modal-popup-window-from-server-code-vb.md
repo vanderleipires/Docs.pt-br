@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
-title: "Abrindo uma janela pop-up Modal do código do servidor (VB) | Microsoft Docs"
+title: Abrindo uma janela pop-up Modal do código do servidor (VB) | Microsoft Docs
 author: wenz
-description: "O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. No entanto, alguns cenários exigem que o..."
+description: O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. No entanto, alguns cenários exigem que o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c4bcf3e32b3aa91bb73e01296bc1fc1a2e064711
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46554dae60ad9cd13e97e5755e95cb2125d1fed9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="launching-a-modal-popup-window-from-server-code-vb"></a>Abrindo uma janela pop-up Modal do código do servidor (VB)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. No entanto, alguns cenários exigem que a abertura do popup modal é acionada no lado do servidor.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle ModalPopup no Kit de ferramentas de controle AJAX oferece uma maneira simples para criar um pop-up modal usando meios do lado do cliente. No entanto, alguns cenários exigem que a abertura do popup modal é acionada no lado do servidor.
 
@@ -72,6 +72,6 @@ O `$find()` está procurando por um elemento nomeado na página de função e es
 
 O pop-up modal aparece quando qualquer um dos botões é clicado ([clique para exibir a imagem em tamanho normal](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](positioning-a-modalpopup-cs.md)
-[Próximo](using-modalpopup-with-a-repeater-control-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](positioning-a-modalpopup-cs.md)
+> [Próximo](using-modalpopup-with-a-repeater-control-vb.md)

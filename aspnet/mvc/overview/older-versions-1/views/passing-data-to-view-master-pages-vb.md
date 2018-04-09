@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
-title: "Transmitindo dados para páginas de exibição mestre (VB) | Microsoft Docs"
+title: Transmitindo dados para páginas de exibição mestre (VB) | Microsoft Docs
 author: microsoft
-description: "O objetivo deste tutorial é explicar como você pode passar dados de um controlador para uma página de exibição mestre. Vamos examinar duas estratégias para transferir dados para uma exibição m..."
+description: O objetivo deste tutorial é explicar como você pode passar dados de um controlador para uma página de exibição mestre. Vamos examinar duas estratégias para transferir dados para uma exibição m...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d92a1afe46af124e835b3d59f2b2093402742bbd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fcd7c5baacc00490720d1f82252d81e40c097c88
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="passing-data-to-view-master-pages-vb"></a>Transmitindo dados para páginas de exibição mestre (VB)
 ====================
@@ -53,7 +53,7 @@ Vamos começar com a solução mais simples para passar dados de exibição de u
 
 Considere o controlador na listagem 1. Isso expõe duas ações denominadas `Index()` e `Details()`. O `Index()` método de ação retorna cada filme na tabela de banco de dados de filmes. O `Details()` método de ação retorna todos os filmes em uma categoria específica de filme.
 
-**Listando 1 –`Controllers\HomeController.vb`**
+**Listando 1 – `Controllers\HomeController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample1.vb)]
 
@@ -69,13 +69,13 @@ O `Details()` ação também adiciona duas chaves denominado categorias e filmes
 
 O modo de exibição do índice está contido na listagem 2. Ele simplesmente itera através da lista de filmes representado pelo item de filmes nos dados de exibição.
 
-**A listagem 2 –`Views\Home\Index.aspx`**
+**A listagem 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-vb/samples/sample2.aspx)]
 
 A exibição de página mestra está contida na listagem 3. A página de exibição mestre itera e processa todas as categorias de filme representadas pelo item de categorias de dados de exibição.
 
-**A listagem 3 –`Views\Shared\Site.master`**
+**A listagem 3 – `Views\Shared\Site.master`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-vb/samples/sample3.aspx)]
 
@@ -91,7 +91,7 @@ A classe ApplicationController está contida na listagem 4.
 
 A classe ApplicationController está contida na listagem 4.
 
-**A listagem 4 –`Controllers\ApplicationController.vb`**
+**A listagem 4 – `Controllers\ApplicationController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample4.vb)]
 
@@ -103,7 +103,7 @@ Em terceiro lugar, observe que o controlador de aplicativo contém um construtor
 
 O controlador de filmes na listagem 5 herda do controlador de aplicativo.
 
-**Listando 5 –`Controllers\MoviesController.vb`**
+**Listando 5 – `Controllers\MoviesController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample5.vb)]
 
@@ -117,5 +117,5 @@ Neste tutorial, discutimos duas abordagens para passar dados de exibição de um
 
 Em seguida, examinamos uma estratégia melhor para adicionar dados requeridos por uma página de exibição mestre para exibir dados. Em vez de adicionar os dados de exibição em cada ação de controlador, adicionamos os exibir dados apenas uma vez dentro de um controlador de aplicativo. Dessa forma, você pode evitar código duplicado ao passar dados para uma página de exibição mestre em um aplicativo ASP.NET MVC.
 
->[!div class="step-by-step"]
-[Anterior](creating-page-layouts-with-view-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-page-layouts-with-view-master-pages-vb.md)

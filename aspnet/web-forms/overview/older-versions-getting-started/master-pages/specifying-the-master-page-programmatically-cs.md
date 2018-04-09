@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
-title: "Especificando a página mestra programaticamente (c#) | Microsoft Docs"
+title: Especificando a página mestra programaticamente (c#) | Microsoft Docs
 author: rick-anderson
-description: "Examina a configuração do conteúdo da página mestra programaticamente por meio do manipulador de eventos PreInit."
+description: Examina a configuração do conteúdo da página mestra programaticamente por meio do manipulador de eventos PreInit.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15efb8e2f38b7a405da0c0e12e447e5c3146f025
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2294ee2e58e55901d77958e7cf45dd74fc2a1187
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-master-page-programmatically-c"></a>Especificando a página mestra programaticamente (c#)
 ====================
@@ -139,7 +139,7 @@ Em seguida, adicione a seguinte marcação declarativa para `Alternate.master`. 
 
 ### <a name="testing-the-new-master-page"></a>Testar a nova página mestra
 
-Para testar essa nova atualização de página mestra a `BasePage` da classe `OnPreInit` método para que o `MasterPageFile` é atribuído o valor da propriedade "~ / Alternate.maser" e, em seguida, visite o site. Cada página deve funcionar sem erros, exceto dois: `~/Admin/AddProduct.aspx` e `~/Admin/Products.aspx`. Adicionar um produto a DetailsView em `~/Admin/AddProduct.aspx` resulta em uma `NullReferenceException` da linha de código que tenta definir a página mestra `GridMessageText` propriedade. Ao visitar `~/Admin/Products.aspx` um `InvalidCastException` é lançada no carregamento de página com a mensagem: "não é possível converter o objeto do tipo ' ASP.alternate\_mestre ' no tipo ' ASP.site\_mestre '."
+Para testar essa nova atualização de página mestra a `BasePage` da classe `OnPreInit` método para que o `MasterPageFile` é atribuído o valor da propriedade "~ / Alternate.master" e, em seguida, visite o site. Cada página deve funcionar sem erros, exceto dois: `~/Admin/AddProduct.aspx` e `~/Admin/Products.aspx`. Adicionar um produto a DetailsView em `~/Admin/AddProduct.aspx` resulta em uma `NullReferenceException` da linha de código que tenta definir a página mestra `GridMessageText` propriedade. Ao visitar `~/Admin/Products.aspx` um `InvalidCastException` é lançada no carregamento de página com a mensagem: "não é possível converter o objeto do tipo ' ASP.alternate\_mestre ' no tipo ' ASP.site\_mestre '."
 
 Esses erros ocorrem porque o `Site.master` classe code-behind inclui eventos públicos, propriedades e métodos que não estão definidos na `Alternate.master`. A parte de marcação dessas duas páginas têm um `@MasterType` diretiva que faz referência a `Site.master` página mestra.
 
@@ -282,12 +282,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 3.5 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott pode ser contatado pelo [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
-Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Suchi Banerjee. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha em [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](master-pages-and-asp-net-ajax-cs.md)
-[Próximo](nested-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](master-pages-and-asp-net-ajax-cs.md)
+> [Próximo](nested-master-pages-cs.md)

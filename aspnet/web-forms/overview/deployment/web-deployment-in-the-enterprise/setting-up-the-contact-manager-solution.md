@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
-title: "Configurar a solução de Gerenciador de contato | Microsoft Docs"
+title: Configurar a solução de Gerenciador de contato | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como baixar e configurar a solução de Gerenciador de contato para ser executada localmente em uma estação de trabalho do desenvolvedor."
+description: Este tópico descreve como baixar e configurar a solução de Gerenciador de contato para ser executada localmente em uma estação de trabalho do desenvolvedor.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: b8176b3b8622e21187a91647323322e55582373c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e8fb24f5b2d96d864d1aa6bc0f78644773de00ab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="setting-up-the-contact-manager-solution"></a>Configurar a solução de Gerenciador de contato
 ====================
@@ -27,7 +27,7 @@ por [Jason Lee](https://github.com/jrjlee)
 > Este tópico descreve como baixar e configurar a solução de Gerenciador de contato para ser executada localmente em uma estação de trabalho do desenvolvedor.
 
 
-## <a name="system-requirements"></a>Requisitos de sistema
+## <a name="system-requirements"></a>Requisitos do sistema
 
 Para executar a solução de Contact Manager localmente e executar outras tarefas descritas neste tutorial, você precisará instalar esse software em sua estação de trabalho do desenvolvedor:
 
@@ -125,6 +125,6 @@ Neste ponto, a solução de Gerenciador de contato deve ser totalmente configura
 
 O próximo tópico, [Noções básicas sobre o arquivo de projeto](understanding-the-project-file.md), explica como você pode usar os arquivos do projeto Microsoft Build Engine (MSBuild) personalizados dentro da solução de Gerenciador de contato para controlar o processo de implantação.
 
->[!div class="step-by-step"]
-[Anterior](the-contact-manager-solution.md)
-[Próximo](understanding-the-project-file.md)
+> [!div class="step-by-step"]
+> [Anterior](the-contact-manager-solution.md)
+> [Próximo](understanding-the-project-file.md)

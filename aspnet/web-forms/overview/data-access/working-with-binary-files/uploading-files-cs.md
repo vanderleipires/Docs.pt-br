@@ -2,7 +2,7 @@
 uid: web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 title: Carregamento de arquivos (c#) | Microsoft Docs
 author: rick-anderson
-description: "Saiba como permitir que os usuários carreguem arquivos binários (como documentos do Word ou PDF) para seu site da Web onde eles podem ser armazenados no sistema de arquivos do servidor..."
+description: Saiba como permitir que os usuários carreguem arquivos binários (como documentos do Word ou PDF) para seu site da Web onde eles podem ser armazenados no sistema de arquivos do servidor...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 629c1154683a0370e3e650873edf29dc9f22b4bc
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3c758e94311817d01b17d27083733f805caf600f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="uploading-files-c"></a>Carregamento de arquivos (c#)
 ====================
@@ -124,9 +124,9 @@ O `CategoriesDataTable` na dados acesso DAL (camada) atualmente tem quatro `Data
 
 Conforme discutido em *criando uma camada de acesso a dados*, tabelas de dados no conjunto de dados tipado compõem os objetos de negócios. Os TableAdapters são responsáveis para se comunicar com o banco de dados e preencher os objetos de negócios com os resultados da consulta. O `CategoriesDataTable` é preenchida pelo `CategoriesTableAdapter`, que tem três métodos de recuperação de dados:
 
-- `GetCategories()`executa a consulta principal do TableAdapter s e retorna o `CategoryID`, `CategoryName`, e `Description` campos de todos os registros de `Categories` tabela. A consulta principal é o que é usado pelo gerado automaticamente `Insert` e `Update` métodos.
-- `GetCategoryByCategoryID(categoryID)`Retorna o `CategoryID`, `CategoryName`, e `Description` campos da categoria cujo `CategoryID` é igual a *categoryID*.
-- `GetCategoriesAndNumberOfProducts()`-Retorna o `CategoryID`, `CategoryName`, e `Description` campos para todos os registros de `Categories` tabela. Também usa uma subconsulta para retornar o número de produtos associados a cada categoria.
+- `GetCategories()` executa a consulta principal do TableAdapter s e retorna o `CategoryID`, `CategoryName`, e `Description` campos de todos os registros de `Categories` tabela. A consulta principal é o que é usado pelo gerado automaticamente `Insert` e `Update` métodos.
+- `GetCategoryByCategoryID(categoryID)` Retorna o `CategoryID`, `CategoryName`, e `Description` campos da categoria cujo `CategoryID` é igual a *categoryID*.
+- `GetCategoriesAndNumberOfProducts()` -Retorna o `CategoryID`, `CategoryName`, e `Description` campos para todos os registros de `Categories` tabela. Também usa uma subconsulta para retornar o número de produtos associados a cada categoria.
 
 Observe que nenhum das consultas retornam o `Categories` tabela s `Picture` ou `BrochurePath` colunas; nem faz a `CategoriesDataTable` fornecer `DataColumn` s para esses campos. Para trabalhar com a imagem e `BrochurePath` propriedades, é preciso adicioná-los ao primeiro o `CategoriesDataTable` e, em seguida, atualize o `CategoriesTableAdapter` classe para retornar essas colunas.
 
@@ -287,11 +287,11 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Teresa Murphy e Bernadette Leigh. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Avançar](displaying-binary-data-in-the-data-web-controls-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](displaying-binary-data-in-the-data-web-controls-cs.md)

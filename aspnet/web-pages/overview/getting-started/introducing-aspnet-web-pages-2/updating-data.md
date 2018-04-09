@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
-title: "Introdução a páginas da Web ASP.NET - atualização do banco de dados | Microsoft Docs"
+title: Introdução a páginas da Web ASP.NET - atualização do banco de dados | Microsoft Docs
 author: tfitzmac
-description: "Este tutorial mostra como atualizar entrada (alterar) um banco de dados quando você usa páginas da Web do ASP.NET (Razor). Ele pressupõe que você tenha concluído a série th..."
+description: Este tutorial mostra como atualizar entrada (alterar) um banco de dados quando você usa páginas da Web do ASP.NET (Razor). Ele pressupõe que você tenha concluído a série th...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: b016231975bf8d359f4c390b0b478edc383117d4
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: e889cd27e2267a08f7b6ea708c92e35edbdd7a1a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Introdução a páginas da Web ASP.NET - atualização do banco de dados
 ====================
@@ -108,7 +108,7 @@ Depois que você conheça o `format` propriedade, é mais fácil entender como o
 
 A coluna consiste em *somente* da marcação que renderiza o link, além de algumas informações (a ID) que é extraído do registro do banco de dados para a linha.
 
-> [!TIP] 
+> [!TIP]
 > 
 > **Parâmetros nomeados e posicionais parâmetros para um método**
 > 
@@ -173,7 +173,7 @@ O código usa `Request.QueryString["id"]` para obter a ID que é passada para a 
 
 Esse código mostra uma maneira diferente de validar informações. No tutorial anterior, você trabalhou com o `Validation` auxiliar. Você registrou campos para validar e ASP.NET automaticamente fez a validação e exibidos erros usando `Html.ValidationMessage` e `Html.ValidationSummary`. Nesse caso, no entanto, você está realmente não Validando entrada do usuário. Em vez disso, você está validando um valor que foi passado para a página de qualquer outro lugar. O `Validation` auxiliar não faz isso para você.
 
-Portanto, é verificar o valor por conta própria, testando-o com `if(!Request.QueryString["ID"].IsEmpty()`). Se houver um problema, você pode exibir o erro usando `Html.ValidationSummary`, como você fez com o `Validation` auxiliar. Para fazer isso, você deve chamar `Validation.AddFormError` e passá-lo em uma mensagem a ser exibida. `Validation.AddFormError`é um método interno que permite que você defina as mensagens personalizadas empatarem com o sistema de validação que você já estiver familiarizado com. (Posteriormente neste tutorial falaremos sobre como tornar o processo de validação um pouco mais robusto.)
+Portanto, é verificar o valor por conta própria, testando-o com `if(!Request.QueryString["ID"].IsEmpty()`). Se houver um problema, você pode exibir o erro usando `Html.ValidationSummary`, como você fez com o `Validation` auxiliar. Para fazer isso, você deve chamar `Validation.AddFormError` e passá-lo em uma mensagem a ser exibida. `Validation.AddFormError` é um método interno que permite que você defina as mensagens personalizadas empatarem com o sistema de validação que você já estiver familiarizado com. (Posteriormente neste tutorial falaremos sobre como tornar o processo de validação um pouco mais robusto.)
 
 Após certificar-se de que há uma ID de filme, o código lê o banco de dados, procurando por apenas um item único banco de dados. (Você provavelmente notou o padrão geral para operações de banco de dados: Abra o banco de dados, definir uma instrução SQL e execute a instrução.) Neste momento, o SQL `Select` instrução inclui `WHERE ID = @0`. Porque a ID é exclusiva, apenas um registro pode ser retornado.
 
@@ -311,6 +311,6 @@ O seguinte tutorial, você verá como excluir um registro de filme.
 - [Introdução à programação da Web do ASP.NET usando a sintaxe do Razor](../../getting-started/introducing-razor-syntax-c.md)
 - [Instrução de atualização SQL](http://www.w3schools.com/sql/sql_update.asp) no site W3Schools
 
->[!div class="step-by-step"]
-[Anterior](entering-data.md)
-[Próximo](deleting-data.md)
+> [!div class="step-by-step"]
+> [Anterior](entering-data.md)
+> [Próximo](deleting-data.md)

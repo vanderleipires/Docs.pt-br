@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/generating-views
-title: "Banco de dados EF primeiro com o ASP.NET MVC: gerar exibições | Microsoft Docs"
+title: 'Banco de dados EF primeiro com o ASP.NET MVC: gerar exibições | Microsoft Docs'
 author: tfitzmac
-description: "Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série..."
+description: Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/29/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 5fccb3c56af0945ec448becff777a3e92dc160d7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b60e89a187a879255eb051dc87241714cef6fa63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a>Banco de dados EF primeiro com o ASP.NET MVC: gerando modos de exibição
 ====================
@@ -109,6 +109,6 @@ Além disso, os valores fornecidos a validação é aplicada automaticamente com
 
 Você verificou que os modos de exibição gerado automaticamente habilitam usuários a trabalhar com os dados no banco de dados. No próximo tutorial nesta série, você atualizará o banco de dados e fazer as alterações correspondentes no aplicativo web.
 
->[!div class="step-by-step"]
-[Anterior](creating-the-web-application.md)
-[Próximo](changing-the-database.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-the-web-application.md)
+> [Próximo](changing-the-database.md)

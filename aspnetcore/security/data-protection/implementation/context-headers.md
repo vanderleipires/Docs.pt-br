@@ -1,7 +1,7 @@
 ---
-title: "Cabeçalhos de contexto"
+title: Cabeçalhos de contexto no núcleo do ASP.NET
 author: rick-anderson
-description: "Este documento descreve os detalhes de implementação de cabeçalhos de contexto de proteção de dados do ASP.NET Core."
+description: Obter os detalhes de implementação de cabeçalhos de contexto de proteção de dados do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: c047c54efdcdb6192e4d38d2822c1077ee0a73e1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5ba247a74e11408145e1f6e87c7cfa251c66707f
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="context-headers"></a>Cabeçalhos de contexto
+# <a name="context-headers-in-aspnet-core"></a>Cabeçalhos de contexto no núcleo do ASP.NET
 
 <a name="data-protection-implementation-context-headers"></a>
 
@@ -27,7 +27,7 @@ A maioria dos sistemas que oferecem suporte a agilidade criptográfica de fazer 
 
 Recuando, decidimos que podemos foram chegando o problema de direção errada. Um OID informa o que é o algoritmo, mas, na verdade, não importa sobre isso. Se for necessário usar um único valor entropic com segurança em dois algoritmos diferentes, não é necessário para que possamos saber o que os algoritmos realmente são. O que é realmente importante é como eles se comportam. Qualquer algoritmo de codificação de bloco simétrica razoável também é uma forte permutação pseudoaleatórios (PRP): corrija as entradas (chave, cadeia de texto sem formatação de modo, o IV,) e a saída de texto cifrado com grandes probabilidade serão diferente dos outros qualquer codificação de bloco simétrica algoritmo considerando as entradas do mesmo. Da mesma forma, qualquer função de hash com chave razoável também é uma função pseudoaleatórios forte (PRF) e fornecido um conjunto fixo de entrada sua saída predominantemente serão diferente de qualquer outra função de hash com chave.
 
-Podemos usar esse conceito de alta segurança PRPs e PRFs para criar um cabeçalho de contexto. Esse cabeçalho de contexto atua essencialmente como uma impressão digital estável sobre os algoritmos em uso para qualquer operação especificada e fornece a agilidade criptográfica necessária ao sistema de proteção de dados. Esse cabeçalho pode ser reproduzido e é usado posteriormente como parte do [processo de derivação de subchave](subkeyderivation.md#data-protection-implementation-subkey-derivation). Há duas maneiras diferentes para criar o cabeçalho de contexto dependendo os modos de operação dos algoritmos subjacentes.
+Podemos usar esse conceito de alta segurança PRPs e PRFs para criar um cabeçalho de contexto. Esse cabeçalho de contexto atua essencialmente como uma impressão digital estável sobre os algoritmos em uso para qualquer operação especificada e fornece a agilidade criptográfica necessária ao sistema de proteção de dados. Esse cabeçalho pode ser reproduzido e é usado posteriormente como parte do [processo de derivação de subchave](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation). Há duas maneiras diferentes para criar o cabeçalho de contexto dependendo os modos de operação dos algoritmos subjacentes.
 
 ## <a name="cbc-mode-encryption--hmac-authentication"></a>Criptografia de modo CBC + autenticação HMAC
 

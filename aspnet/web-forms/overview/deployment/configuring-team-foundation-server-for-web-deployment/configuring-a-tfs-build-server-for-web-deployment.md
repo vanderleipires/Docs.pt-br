@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
-title: "Configurando um TFS criar servidor de implantação da Web | Microsoft Docs"
+title: Configurando um TFS criar servidor de implantação da Web | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como preparar um servidor de compilação do Team Foundation Server (TFS) para criar e implantar suas soluções usando o Team Build e a Internet Informat..."
+description: Este tópico descreve como preparar um servidor de compilação do Team Foundation Server (TFS) para criar e implantar suas soluções usando o Team Build e a Internet Informat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: de31a9dffb95b863a4ec38b74fd2c6e03f287a7f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7b3130ca7d36ffec457e1871fa62c1077b5e3174
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>Configurando um servidor de compilação do TFS para implantação da Web
 ====================
@@ -27,9 +27,9 @@ por [Jason Lee](https://github.com/jrjlee)
 > Este tópico descreve como preparar um servidor de compilação do Team Foundation Server (TFS) para criar e implantar suas soluções usando o Team Build e a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web).
 
 
-Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo & #x 2014; o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, Windows Serviço do Communication Foundation (WCF) e um projeto de banco de dados.
+Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo&#x2014;o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, uma comunicação do Windows Serviço Foundation (WCF) e um projeto de banco de dados.
 
-O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos & #x 2014; projeto contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
+O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos de projeto&#x2014;contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
 ## <a name="task-overview"></a>Visão geral da tarefa
 
@@ -100,7 +100,7 @@ A melhor maneira de instalar componentes de plataforma da web comum é usar o [W
 7. No **ASP.NET MVC 3 (Visual Studio 2010)** de linha, clique em **adicionar**.
 8. No painel de navegação, clique em **Server**.
 9. No **ferramenta de implantação da Web 2.1** de linha, clique em **adicionar**.
-10. Clique em **Instalar**. O Web Platform Installer mostrará uma lista de produtos & #x 2014; juntamente com quaisquer dependências associadas & #x 2014; a serem instalados e solicitará que você aceite os termos de licença.
+10. Clique em **Instalar**. O Web Platform Installer mostrará uma lista de produtos&#x2014;juntamente com quaisquer dependências associadas&#x2014;a serem instalados e solicitará que você aceite os termos de licença.
 11. Leia os termos de licença e se você concordar com os termos, clique em **aceito**.
 12. Quando a instalação for concluída, clique em **concluir**e, em seguida, feche o **Web Platform Installer 3.0** janela.
 
@@ -116,6 +116,6 @@ Neste ponto, seu servidor de compilação está pronto para começar a criar e i
 
 Para obter orientação geral sobre como trabalhar com o Team Build, consulte [administrando o Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx).
 
->[!div class="step-by-step"]
-[Anterior](adding-content-to-source-control.md)
-[Próximo](creating-a-build-definition-that-supports-deployment.md)
+> [!div class="step-by-step"]
+> [Anterior](adding-content-to-source-control.md)
+> [Próximo](creating-a-build-definition-that-supports-deployment.md)

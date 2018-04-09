@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
-title: "Criar contas de usuário (c#) | Microsoft Docs"
+title: Criar contas de usuário (c#) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, exploraremos usando a estrutura de associação (via SqlMembershipProvider) para criar novas contas de usuário. Veremos como criar novos nós..."
+description: Neste tutorial, exploraremos usando a estrutura de associação (via SqlMembershipProvider) para criar novas contas de usuário. Veremos como criar novos nós...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d1bdec096b68a01c36f46765abef00aad319f2c2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e00417639fba71083cbf392db5d5078561ab26e3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-user-accounts-c"></a>Criar contas de usuário (c#)
 ====================
@@ -31,7 +31,7 @@ por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 No <a id="_msoanchor_1"> </a> [tutorial anterior](creating-the-membership-schema-in-sql-server-cs.md) instalamos o esquema do serviços de aplicativo em um banco de dados que adicionou as tabelas, exibições e procedimentos necessários para armazenados o `SqlMembershipProvider` e `SqlRoleProvider`. Isso criou a infraestrutura que será necessário para o restante dos tutoriais na série. Neste tutorial, exploraremos usando a estrutura de associação (por meio de `SqlMembershipProvider`) para criar novas contas de usuário. Veremos como criar novos usuários por meio de programação e por meio do ASP. Controle de CreateUserWizard interno do NET.
 
-Além de aprender a criar novas contas de usuário, também precisamos atualizar o site de demonstração são criados pela primeira vez o  *<a id="_msoanchor_2"> </a> [uma visão geral de formulários de autenticação](../introduction/an-overview-of-forms-authentication-cs.md)*  tutorial e, em seguida, aprimorado no  *<a id="https://www.asp.net/learn/security/tutorial-03-cs.aspx"> </a> configuração de autenticação de formulários e tópicos avançados* tutorial. Nosso aplicativo da web de demonstração tem uma página de logon que valida as credenciais do usuário em pares de nome de usuário/senha embutida. Além disso, `Global.asax` inclui o código que cria personalizado `IPrincipal` e `IIdentity` objetos para usuários autenticados. Atualizaremos a página de logon para validar as credenciais do usuário em relação a estrutura de associação e remova a lógica principal e identidade personalizada.
+Além de aprender a criar novas contas de usuário, também precisamos atualizar o site de demonstração são criados pela primeira vez o *<a id="_msoanchor_2"> </a> [uma visão geral de formulários de autenticação](../introduction/an-overview-of-forms-authentication-cs.md)* tutorial e, em seguida, aprimorado no  *<a id="https://www.asp.net/learn/security/tutorial-03-cs.aspx"> </a> configuração de autenticação de formulários e tópicos avançados* tutorial. Nosso aplicativo da web de demonstração tem uma página de logon que valida as credenciais do usuário em pares de nome de usuário/senha embutida. Além disso, `Global.asax` inclui o código que cria personalizado `IPrincipal` e `IIdentity` objetos para usuários autenticados. Atualizaremos a página de logon para validar as credenciais do usuário em relação a estrutura de associação e remova a lógica principal e identidade personalizada.
 
 Vamos começar!
 
@@ -40,7 +40,7 @@ Vamos começar!
 Antes de começar a trabalhar com a estrutura de associação, vamos examinar as etapas importantes que levamos para chegar a este ponto. Ao usar a estrutura de associação com o `SqlMembershipProvider` em um cenário de autenticação baseada em formulários, as etapas a seguir precisam ser executadas antes de implementar a funcionalidade de associação em seu aplicativo web:
 
 1. **Habilite a autenticação baseada em formulários.** Conforme abordado em  *<a id="_msoanchor_4"> </a> [uma visão geral de formulários de autenticação](../introduction/an-overview-of-forms-authentication-cs.md)*, autenticação de formulários é habilitada por meio da edição `Web.config` e configuração de `<authentication>` elemento `mode` atributo `Forms`. Com a autenticação de formulários habilitada, cada solicitação de entrada é examinada para um *tíquete de autenticação de formulários*, que, se presente, identifica o solicitante.
-2. **Adicione o esquema do serviços de aplicativo para o banco de dados apropriado.** Ao usar o `SqlMembershipProvider` , precisamos instalar o esquema do serviços de aplicativo para um banco de dados. Normalmente esse esquema é adicionado ao mesmo banco de dados que contém o modelo de dados do aplicativo. O  *<a id="_msoanchor_5"> </a> [criar o esquema de associação no SQL Server](creating-the-membership-schema-in-sql-server-cs.md)*  tutorial visto usando o `aspnet_regsql.exe` ferramenta para fazer isso.
+2. **Adicione o esquema do serviços de aplicativo para o banco de dados apropriado.** Ao usar o `SqlMembershipProvider` , precisamos instalar o esquema do serviços de aplicativo para um banco de dados. Normalmente esse esquema é adicionado ao mesmo banco de dados que contém o modelo de dados do aplicativo. O *<a id="_msoanchor_5"> </a> [criar o esquema de associação no SQL Server](creating-the-membership-schema-in-sql-server-cs.md)* tutorial visto usando o `aspnet_regsql.exe` ferramenta para fazer isso.
 3. **Personalize as configurações do aplicativo da Web para o banco de dados de referência da etapa 2.** O *criar o esquema de associação no SQL Server* tutorial mostrou duas maneiras de configurar o aplicativo web para que o `SqlMembershipProvider` usaria o banco de dados selecionado na etapa 2: modificando o `LocalSqlServer` nome de cadeia de caracteres de conexão; ou adicionando um novo provedor registrado para a lista de provedores de estrutura de associação e personalizando a esse novo provedor para usar o banco de dados na etapa 2.
 
 Ao criar um aplicativo web que usa o `SqlMembershipProvider` e autenticação baseada em formulários, você precisará seguir estas três etapas antes de usar o `Membership` classe ou os controles da Web de logon do ASP.NET. Como nós já executou estas etapas nos tutoriais anteriores, você está pronto para começar a usar a estrutura de associação!
@@ -69,7 +69,7 @@ Cada página neste ponto, deve ter os dois controles de conteúdo, uma para cada
 
 [!code-aspx[Main](creating-user-accounts-cs/samples/sample1.aspx)]
 
-Lembre-se de que o `LoginContent` marcação de padrão do ContentPlaceHolder exibe um link para fazer logon ou logoff do site, dependendo se o usuário é autenticado. A presença de `Content2` controle de conteúdo, no entanto, substitui a marcação de padrão da página mestra. Conforme abordado em  *<a id="_msoanchor_6"> </a> [uma visão geral de formulários de autenticação](../introduction/an-overview-of-forms-authentication-cs.md)*  tutorial, isso é útil nas páginas onde não desejamos exibir opções relacionadas ao logon na coluna esquerda.
+Lembre-se de que o `LoginContent` marcação de padrão do ContentPlaceHolder exibe um link para fazer logon ou logoff do site, dependendo se o usuário é autenticado. A presença de `Content2` controle de conteúdo, no entanto, substitui a marcação de padrão da página mestra. Conforme abordado em *<a id="_msoanchor_6"> </a> [uma visão geral de formulários de autenticação](../introduction/an-overview-of-forms-authentication-cs.md)* tutorial, isso é útil nas páginas onde não desejamos exibir opções relacionadas ao logon na coluna esquerda.
 
 Essas páginas de cinco, no entanto, queremos mostrar uma marcação padrão da página mestra para o `LoginContent` ContentPlaceHolder. Portanto, remova a marcação declarativa para o `Content2` controle de conteúdo. Depois de fazer isso, cada marcação da página cinco deve conter somente um controle de conteúdo.
 
@@ -107,7 +107,7 @@ A marcação de mapa de site acima define a hierarquia mostrada na Figura 3.
 
 O ASP.NET inclui uma série de controles de Web relacionados a navegação para a criação de uma interface do usuário. Isso inclui os controles SiteMapPath, TreeView e Menu. Os controles de Menu e TreeView processam a estrutura de mapa de site em um menu ou uma árvore, respectivamente, enquanto o SiteMapPath exibe uma trilha de navegação que mostra o nó atual está sendo visitado, bem como seus ancestrais. Os dados de mapa de site podem ser associados a outros dados de controles da Web usando o SiteMapDataSource e pode ser acessados por programação via o `SiteMap` classe.
 
-Como uma discussão completa sobre a estrutura de mapa do Site e os controles de navegação está além do escopo esta série de tutoriais, em vez de gastar tempo criar nossa própria interface do usuário de navegação vamos em vez disso, emprestar usada no meu  *[ Trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)*  série de tutoriais, que usa um controle repetidor para exibir uma lista com marcadores dois profundo de links de navegação, como mostrado na Figura 4.
+Como uma discussão completa sobre a estrutura de mapa do Site e os controles de navegação está além do escopo esta série de tutoriais, em vez de gastar tempo criar nossa própria interface do usuário de navegação vamos em vez disso, emprestar usada no meu *[ Trabalhando com dados no ASP.NET 2.0](../../data-access/index.md)* série de tutoriais, que usa um controle repetidor para exibir uma lista com marcadores dois profundo de links de navegação, como mostrado na Figura 4.
 
 ### <a name="adding-a-two-level-list-of-links-in-the-left-column"></a>Adicionando uma lista de dois níveis de Links na coluna esquerda
 
@@ -143,7 +143,7 @@ A Figura 5 mostra a saída de SiteMapPath ao visitar `~/Membership/CreatingUserA
 
 ## <a name="step-4-removing-the-custom-principal-and-identity-logic"></a>Etapa 4: Remover a entidade de segurança personalizada e a lógica de identidade
 
-No  *<a id="_msoanchor_7"> </a> [configuração de autenticação de formulários e tópicos avançados](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)*  tutorial vimos como associar objetos principal e identidade personalizados para o usuário autenticado. Conseguimos isso criando um manipulador de eventos em `Global.asax` para o aplicativo `PostAuthenticateRequest` evento, que é acionado depois que o `FormsAuthenticationModule` autenticou o usuário. Este manipulador de eventos substituímos o `GenericPrincipal` e `FormsIdentity` objetos adicionados pelo `FormsAuthenticationModule` com o `CustomPrincipal` e `CustomIdentity` objetos criado neste tutorial.
+No *<a id="_msoanchor_7"> </a> [configuração de autenticação de formulários e tópicos avançados](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)* tutorial vimos como associar objetos principal e identidade personalizados para o usuário autenticado. Conseguimos isso criando um manipulador de eventos em `Global.asax` para o aplicativo `PostAuthenticateRequest` evento, que é acionado depois que o `FormsAuthenticationModule` autenticou o usuário. Este manipulador de eventos substituímos o `GenericPrincipal` e `FormsIdentity` objetos adicionados pelo `FormsAuthenticationModule` com o `CustomPrincipal` e `CustomIdentity` objetos criado neste tutorial.
 
 Enquanto os objetos principal e identidade personalizados são úteis em determinados cenários, na maioria dos casos o `GenericPrincipal` e `FormsIdentity` objetos são suficientes. Consequentemente, acho que seria útil para retornar para o comportamento padrão. Fazer essa alteração, removendo ou comentando o `PostAuthenticateRequest` manipulador de eventos ou excluindo o `Global.asax` totalmente.
 
@@ -160,17 +160,17 @@ O `CreateUser` método tem quatro sobrecargas, cada aceitar um número diferente
 
 Essas quatro sobrecargas diferem na quantidade de informações coletadas. A primeira sobrecarga, por exemplo, requer apenas o nome de usuário e a senha para a nova conta de usuário, enquanto o outro também requer o endereço de email do usuário.
 
-Essas sobrecargas existem porque as informações necessárias para criar uma nova conta de usuário dependem de definições de configuração do provedor de associação. No  *<a id="_msoanchor_8"> </a> [criar o esquema de associação no SQL Server](creating-the-membership-schema-in-sql-server-cs.md)*  tutorial examinamos especifica definições de configuração de provedor de associação no `Web.config`. Tabela 2 incluída uma lista completa das definições de configuração.
+Essas sobrecargas existem porque as informações necessárias para criar uma nova conta de usuário dependem de definições de configuração do provedor de associação. No *<a id="_msoanchor_8"> </a> [criar o esquema de associação no SQL Server](creating-the-membership-schema-in-sql-server-cs.md)* tutorial examinamos especifica definições de configuração de provedor de associação no `Web.config`. Tabela 2 incluída uma lista completa das definições de configuração.
 
 Uma configuração de provedor tal associação configuração afeta o que `CreateUser` sobrecargas podem ser usadas é o `requiresQuestionAndAnswer` configuração. Se `requiresQuestionAndAnswer` é definido como `true` (o padrão), em seguida, ao criar uma nova conta de usuário, deve especificar uma pergunta de segurança e a resposta. Essas informações são usadas mais tarde se o usuário precisar redefinir ou alterar sua senha. Especificamente, nesse momento, elas serão mostradas a pergunta de segurança e eles devem digitar a resposta correta para redefinir ou alterar sua senha. Consequentemente, se o `requiresQuestionAndAnswer` é definido como `true` , em seguida, chamar qualquer uma das duas primeiras `CreateUser` sobrecargas resulta em uma exceção porque a pergunta de segurança e a resposta estão ausentes. Como o nosso aplicativo está atualmente configurado para exigir uma pergunta de segurança e uma resposta, precisamos usar uma das duas sobrecargas último durante a criação do usuário por meio de programação.
 
 Para ilustrar o uso de `CreateUser` método, vamos criar uma interface do usuário em que podemos solicitar ao usuário seu nome, senha, email e uma resposta a uma pergunta de segurança predefinidos. Abra o `CreatingUserAccounts.aspx` página o `Membership` pasta e adicione os seguintes controles da Web para o controle de conteúdo:
 
-- Uma caixa de texto denominada`Username`
-- Uma caixa de texto denominada `Password`, cujo `TextMode` está definida como`Password`
-- Uma caixa de texto denominada`Email`
+- Uma caixa de texto denominada `Username`
+- Uma caixa de texto denominada `Password`, cujo `TextMode` está definida como `Password`
+- Uma caixa de texto denominada `Email`
 - Um rótulo denominado `SecurityQuestion` com seus `Text` propriedade limpo
-- Uma caixa de texto denominada`SecurityAnswer`
+- Uma caixa de texto denominada `SecurityAnswer`
 - Um botão chamado `CreateAccountButton` cuja propriedade de texto é definida como "Criar a conta de usuário"
 - Um controle de rótulo nomeado `CreateAccountResults` com seus `Text` propriedade limpo
 
@@ -192,7 +192,7 @@ Em seguida, crie um manipulador de eventos para o `CreateAccountButton`do `Click
 
 [!code-csharp[Main](creating-user-accounts-cs/samples/sample6.cs)]
 
-O `Click` manipulador de eventos é iniciado, definindo uma variável chamada `createStatus` do tipo [ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx). `MembershipCreateStatus`é uma enumeração que indica o status do `CreateUser` operação. Por exemplo, se a conta de usuário é criada com êxito, o resultante `MembershipCreateStatus` instância será definida como um valor de `Success`; no outro lado, se a operação falhar porque já existe um usuário com o mesmo nome de usuário, ele será definido como um valor de `DuplicateUserName`. No `CreateUser` sobrecarga usamos, precisamos passar um `MembershipCreateStatus` instância para o método como um `out` parâmetro. Esse parâmetro é definido como o valor apropriado dentro do `CreateUser` método e vamos examinar seu valor após a chamada de método para determinar se a conta de usuário foi criada com êxito.
+O `Click` manipulador de eventos é iniciado, definindo uma variável chamada `createStatus` do tipo [ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx). `MembershipCreateStatus` é uma enumeração que indica o status do `CreateUser` operação. Por exemplo, se a conta de usuário é criada com êxito, o resultante `MembershipCreateStatus` instância será definida como um valor de `Success`; no outro lado, se a operação falhar porque já existe um usuário com o mesmo nome de usuário, ele será definido como um valor de `DuplicateUserName`. No `CreateUser` sobrecarga usamos, precisamos passar um `MembershipCreateStatus` instância para o método como um `out` parâmetro. Esse parâmetro é definido como o valor apropriado dentro do `CreateUser` método e vamos examinar seu valor após a chamada de método para determinar se a conta de usuário foi criada com êxito.
 
 Depois de chamar `CreateUser`, passando `createStatus`, um `switch` instrução é usada para produzir uma mensagem apropriada dependendo do valor atribuído a `createStatus`. Figuras 7 mostra a saída quando um novo usuário foi criado com êxito. Figuras 8 e 9 mostram a saída quando a conta de usuário não é criada. Na Figura 8, o visitante inserido uma senha de letra de cinco, que não atende aos requisitos de força de senha previstos em definições de configuração do provedor de associação. Na Figura 9, o visitante está tentando criar uma conta de usuário com um nome de usuário existente (aquele criado na Figura 7).
 
@@ -227,7 +227,7 @@ Depois de criar algumas contas de usuário, verifique se as contas foram criadas
 Enquanto o repositório de usuário de associação agora inclui informações de conta Bruce e de Tito, ainda precisamos implementar a funcionalidade que permite Bruce ou Tito fazer logon no site. Atualmente, `Login.aspx` valida as credenciais do usuário em um conjunto de pares de nome de usuário/senha – de embutida faz *não* validar as credenciais fornecidas no Framework de associação. Para ver agora novas contas de usuário no `aspnet_Users` e `aspnet_Membership` tabelas devem ser suficientes. No tutorial de Avançar,  *<a id="_msoanchor_9"> </a> [validar o usuário credenciais em relação a associação usuário armazenar](validating-user-credentials-against-the-membership-user-store-cs.md)*, atualizaremos a página de logon para validar em relação ao armazenamento de associação.
 
 > [!NOTE]
-> Se você não vir todos os usuários em sua `SecurityTutorials.mdf` banco de dados, é possível que seu aplicativo web é usando o provedor de associação padrão, `AspNetSqlMembershipProvider`, que usa o `ASPNETDB.mdf` banco de dados como seu repositório do usuário. Para determinar se esse é o problema, clique no botão Atualizar no Gerenciador de soluções. Se um banco de dados denominado `ASPNETDB.mdf` foi adicionado para o `App_Data` pasta, esse é o problema. Retornar à etapa 4 do  *<a id="_msoanchor_10"> </a> [criar o esquema de associação no SQL Server](creating-the-membership-schema-in-sql-server-cs.md)*  tutorial para obter instruções sobre como configurar corretamente o provedor de associação.
+> Se você não vir todos os usuários em sua `SecurityTutorials.mdf` banco de dados, é possível que seu aplicativo web é usando o provedor de associação padrão, `AspNetSqlMembershipProvider`, que usa o `ASPNETDB.mdf` banco de dados como seu repositório do usuário. Para determinar se esse é o problema, clique no botão Atualizar no Gerenciador de soluções. Se um banco de dados denominado `ASPNETDB.mdf` foi adicionado para o `App_Data` pasta, esse é o problema. Retornar à etapa 4 do *<a id="_msoanchor_10"> </a> [criar o esquema de associação no SQL Server](creating-the-membership-schema-in-sql-server-cs.md)* tutorial para obter instruções sobre como configurar corretamente o provedor de associação.
 
 
 Na maioria dos criar usuário cenários de conta, o visitante é apresentado com alguma interface para inserir seu nome de usuário, senha, email e outras informações essenciais, no ponto em que é criada uma nova conta. Nesta etapa, examinamos a criação de tal interface manualmente e, em seguida, vimos como usar o `Membership.CreateUser` método para adicionar programaticamente a nova conta de usuário com base nas entradas do usuário. Nosso código, no entanto, acabou de criar a nova conta de usuário. Ele não executou qualquer acompanhamento das ações, como fazer logon do usuário para o site sob a conta de usuário recém-criada ou enviando um email de confirmação para o usuário. Estas etapas adicionais exigiria código adicional no botão de `Click` manipulador de eventos.
@@ -260,10 +260,10 @@ O interessante é que o controle CreateUserWizard consulta definições de confi
 
 O controle CreateUserWizard, como o nome sugere, é derivado de [controle Wizard](https://msdn.microsoft.com/library/s2etd1ek.aspx). Controles de assistente são projetados para fornecer uma interface para concluir as tarefas de várias etapas. Um controle Wizard pode ter um número arbitrário de `WizardSteps`, cada um deles é um modelo que define o HTML e controles da Web para essa etapa. O controle Wizard inicialmente exibe a primeira `WizardStep`, juntamente com os controles de navegação que permitem que o usuário para passar de uma etapa para a próxima ou para retornar às etapas anteriores.
 
-Como mostra a marcação declarativa na Figura 11, a interface de padrão de controle CreateUserWizard inclui dois`WizardSteps:`
+Como mostra a marcação declarativa na Figura 11, a interface de padrão de controle CreateUserWizard inclui dois `WizardSteps:`
 
-- [`CreateUserWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizardstep.aspx)– processa a interface para coletar informações sobre como criar a nova conta de usuário. Esta é a etapa mostrada na Figura 11.
-- [`CompleteWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.completewizardstep.aspx)– processa uma mensagem indicando que a conta foi criada corretamente.
+- [`CreateUserWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizardstep.aspx) – processa a interface para coletar informações sobre como criar a nova conta de usuário. Esta é a etapa mostrada na Figura 11.
+- [`CompleteWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.completewizardstep.aspx) – processa uma mensagem indicando que a conta foi criada corretamente.
 
 O CreateUserWizard aparência e comportamento podem ser modificados por converter qualquer uma das seguintes etapas para modelos, ou adicionando seus próprios `WizardSteps`. Examinaremos adicionando um `WizardStep` na interface de registro no *armazenar informações de usuário adicionais* tutorial.
 
@@ -346,7 +346,7 @@ Figura 15 mostra uma captura de tela de `CreatingUserAccounts.aspx` quando o usu
 
 
 > [!NOTE]
-> Veremos um exemplo do uso do controle CreateUserWizard `CreatedUser` evento o  *<a id="_msoanchor_11"> </a> [armazenar informações de usuário adicionais](storing-additional-user-information-cs.md)*  tutorial.
+> Veremos um exemplo do uso do controle CreateUserWizard `CreatedUser` evento o *<a id="_msoanchor_11"> </a> [armazenar informações de usuário adicionais](storing-additional-user-information-cs.md)* tutorial.
 
 
 ## <a name="summary"></a>Resumo
@@ -363,7 +363,7 @@ Boa programação!
 
 Para obter mais informações sobre os tópicos abordados neste tutorial, consulte os seguintes recursos:
 
-- [`CreateUser`Documentação técnica](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
+- [`CreateUser` Documentação técnica](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
 - [Visão geral do controle CreateUserWizard](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/createuserwizard.aspx)
 - [Criando um provedor de mapa de Site com base no sistema de arquivos](http://aspnet.4guysfromrolla.com/articles/020106-1.aspx)
 - [Criando uma Interface de usuário passo a passo com o controle do ASP.NET 2.0 de Assistente](http://aspnet.4guysfromrolla.com/articles/061406-1.aspx)
@@ -373,12 +373,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a...
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi Teresa Murphy. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
->[!div class="step-by-step"]
-[Anterior](creating-the-membership-schema-in-sql-server-cs.md)
-[Próximo](validating-user-credentials-against-the-membership-user-store-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-the-membership-schema-in-sql-server-cs.md)
+> [Próximo](validating-user-credentials-against-the-membership-user-store-cs.md)

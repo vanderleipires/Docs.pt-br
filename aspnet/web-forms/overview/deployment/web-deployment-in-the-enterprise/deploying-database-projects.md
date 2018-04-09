@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
-title: "Implantação de projetos de banco de dados | Microsoft Docs"
+title: Implantação de projetos de banco de dados | Microsoft Docs
 author: jrjlee
-description: "Observação: Em muitos cenários de implantação corporativa, você precisa da capacidade para publicar atualizações incrementais para um banco de dados implantado. A alternativa é recriar..."
+description: 'Observação: Em muitos cenários de implantação corporativa, você precisa da capacidade para publicar atualizações incrementais para um banco de dados implantado. A alternativa é recriar...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 9b1f9a19c76e33b5d996cb4d562cf0c1a3e2f83b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a0b3871ea098b549271bce2b9d5f0c24f9ca8a9c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-database-projects"></a>Implantação de projetos de banco de dados
 ====================
@@ -92,8 +92,8 @@ Nesse caso:
 
 - O **/a** (ou **/Action**) opção especifica que você deseja VSDBCMD fazer. Você pode definir isso como **importação** ou **implantar**. O **importação** opção é usada para gerar um arquivo de .dbschema de um banco de dados e o **implantar** opção é usada para implantar um arquivo .dbschema em um banco de dados de destino.
 - O **/manifesto** (ou **/ManifestFile**) comutador identifica o arquivo de .deploymanifest que você deseja implantar. Se você quiser usar o arquivo .dbschema em vez disso, você usaria o **/modelo** (ou **/ModelFile**) alternar.
-- O **/cs** (ou **/ConnectionString**) proporciona a cadeia de caracteres de conexão para o servidor de banco de dados de destino. Observe que isso não inclui o nome do banco de dados & #x 2014; VSDBCMD precisa se conectar ao servidor para criar o banco de dados; ele não precisa se conectar a um banco de dados individual. Se o arquivo de .deploymanifest inclui uma cadeia de caracteres de conexão, você pode omitir essa opção. Se você usar a opção mesmo assim, o valor da opção substituirá o valor de .deploymanifest.
-- O **/p:TargetDatabase** propriedade fornece o nome que você deseja atribuir ao banco de dados de destino durante a criação. Isso substitui o valor de **TargetDatabase** propriedade no arquivo .deploymanifest. Você pode usar o **/p:** *[nome da propriedade]*sintaxe para definir uma ampla variedade de propriedades de implantação e para substituir todas as variáveis SQLCMD declarado no arquivo .sqlcmdvars.
+- O **/cs** (ou **/ConnectionString**) proporciona a cadeia de caracteres de conexão para o servidor de banco de dados de destino. Observe que isso não inclui o nome do banco de dados&#x2014;VSDBCMD precisa se conectar ao servidor para criar o banco de dados; ele não precisa se conectar a um banco de dados individual. Se o arquivo de .deploymanifest inclui uma cadeia de caracteres de conexão, você pode omitir essa opção. Se você usar a opção mesmo assim, o valor da opção substituirá o valor de .deploymanifest.
+- O <strong>/p:TargetDatabase</strong> propriedade fornece o nome que você deseja atribuir ao banco de dados de destino durante a criação. Isso substitui o valor de <strong>TargetDatabase</strong> propriedade no arquivo .deploymanifest. Você pode usar o <strong>/p:</strong> <em>[nome da propriedade]</em>sintaxe para definir uma ampla variedade de propriedades de implantação e para substituir todas as variáveis SQLCMD declarado no arquivo .sqlcmdvars.
 - O **/dd+** (ou **/DeployToDatabase+**) opção indica que você deseja criar uma implantação e implantá-lo para o ambiente de destino. Se você especificar **/dd-**, ou omitir a opção, VSDBCMD irá gerar um script de implantação, mas não a implantar no ambiente de destino. Essa opção geralmente é a fonte de confusão e é explicada mais detalhadamente na próxima seção.
 - O **/script** (ou **/DeploymentScriptFile**) comutador Especifica onde você deseja gerar o script de implantação. Esse valor não afeta o processo de implantação.
 
@@ -150,6 +150,6 @@ Esses tópicos no MSDN fornecem orientação mais ampla e obter informações so
 - [Como: preparar um banco de dados para a implantação de um Prompt de comando usando VSDBCMD. EXE](https://msdn.microsoft.com/library/dd193258.aspx)
 - [Uma visão geral do banco de dados de compilação e implantação](https://msdn.microsoft.com/library/aa833165.aspx)
 
->[!div class="step-by-step"]
-[Anterior](deploying-web-packages.md)
-[Próximo](creating-and-running-a-deployment-command-file.md)
+> [!div class="step-by-step"]
+> [Anterior](deploying-web-packages.md)
+> [Próximo](creating-and-running-a-deployment-command-file.md)

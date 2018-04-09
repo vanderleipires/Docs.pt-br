@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
-title: "Implantação de Web do ASP.NET usando o Visual Studio: solução de problemas | Microsoft Docs"
+title: 'Implantação de Web do ASP.NET usando o Visual Studio: solução de problemas | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin..."
+description: Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/01/2015
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: a7a66e7e67539e4b075da6fc054a7b53984b6ce1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 15bda09c59afaf9e5449c68c5206bb28de245541
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>Implantação de Web do ASP.NET usando o Visual Studio: solução de problemas
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
@@ -292,8 +292,8 @@ Primeiro código está tentando criar o banco de dados, mas o aplicativo\_pasta 
 
 Foram com êxito usando um clique de publicação para implantar seu aplicativo e, em seguida, iniciar recebendo essa mensagem de erro:
 
-Falha na tarefa de implantação da Web. (Não foi possível concluir a solicitação para a URL de agente remoto 'https://serverurl.com/msdeploy.axd?site=sitename'.)  
- Não foi possível concluir a solicitação para a URL de agente remoto 'https://url/msdeploy.axd?site=sitename'.  
+Falha na tarefa de implantação da Web. (Não foi possível concluir a solicitação à URL de agente remoto '<https://serverurl.com/msdeploy.axd?site=sitename>'.)  
+ Não foi possível concluir a solicitação à URL de agente remoto '<https://url/msdeploy.axd?site=sitename>'.  
 A solicitação foi anulada: A solicitação foi cancelada.  
 Objeto COM que foi separado de seu RCW subjacente não pode ser usado.
 
@@ -309,7 +309,7 @@ Publicação falhará com um erro indicando que você não tem autoridade para d
 
 ### <a name="possible-cause-and-solution"></a>Possível causa e solução
 
-Por padrão, o Visual Studio define permissões de leitura na pasta raiz do site e permissões de gravação no aplicativo\_pasta de dados. Se você souber que as permissões padrão em pastas do site estão corretas e não precisam ser definidas, você desabilitar esse comportamento adicionando  **&lt;IncludeSetACLProviderOn destino&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  para o arquivo de perfil de publicação (para afetar um único perfil) ou para o arquivo wpp.targets (para afetar todos os perfis). Para obter informações sobre como editar esses arquivos, consulte [como: Editar configurações de implantação no arquivo de perfil (. pubxml)](https://msdn.microsoft.com/library/ff398069.aspx).
+Por padrão, o Visual Studio define permissões de leitura na pasta raiz do site e permissões de gravação no aplicativo\_pasta de dados. Se você souber que as permissões padrão em pastas do site estão corretas e não precisam ser definidas, você desabilitar esse comportamento adicionando **&lt;IncludeSetACLProviderOn destino&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** para o arquivo de perfil de publicação (para afetar um único perfil) ou para o arquivo wpp.targets (para afetar todos os perfis). Para obter informações sobre como editar esses arquivos, consulte [como: Editar configurações de implantação no arquivo de perfil (. pubxml)](https://msdn.microsoft.com/library/ff398069.aspx).
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>Erros de acesso negado quando o aplicativo tenta gravar em uma pasta de aplicativo
 
@@ -319,7 +319,7 @@ Os erros de aplicativo quando ele tenta criar ou editar um arquivo em uma das pa
 
 ### <a name="possible-cause-and-solution"></a>Possível causa e solução
 
-Por padrão, o Visual Studio define permissões de leitura na pasta raiz do site e permissões de gravação no aplicativo\_pasta de dados. Se seu aplicativo precisa de acesso de gravação para uma subpasta, você pode definir permissões para essa pasta como mostrado na definição de permissões de pasta e implantar para os tutoriais do ambiente de produção da série. Se seu aplicativo precisa de acesso de gravação para a pasta raiz do site, você precisa impedir que a configuração de acesso somente leitura na pasta raiz, adicionando  **&lt;IncludeSetACLProviderOn destino&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  para o arquivo de perfil de publicação (para afetar um único perfil) ou para o arquivo wpp.targets (para afetar todos os perfis). Para obter informações sobre como editar esses arquivos, consulte [como: Editar configurações de implantação no arquivo de perfil (. pubxml)](https://msdn.microsoft.com/library/ff398069.aspx).
+Por padrão, o Visual Studio define permissões de leitura na pasta raiz do site e permissões de gravação no aplicativo\_pasta de dados. Se seu aplicativo precisa de acesso de gravação para uma subpasta, você pode definir permissões para essa pasta como mostrado na definição de permissões de pasta e implantar para os tutoriais do ambiente de produção da série. Se seu aplicativo precisa de acesso de gravação para a pasta raiz do site, você precisa impedir que a configuração de acesso somente leitura na pasta raiz, adicionando **&lt;IncludeSetACLProviderOn destino&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** para o arquivo de perfil de publicação (para afetar um único perfil) ou para o arquivo wpp.targets (para afetar todos os perfis). Para obter informações sobre como editar esses arquivos, consulte [como: Editar configurações de implantação no arquivo de perfil (. pubxml)](https://msdn.microsoft.com/library/ff398069.aspx).
 
 <a id="aspnet45error"></a>
 
@@ -377,5 +377,5 @@ O conteúdo solicitado parece ser script e não será servido pelo manipulador d
 
 ASP.NET 4.5 não pode ser instalado em seu computador. Consulte as etapas de implantação para o IIS como um tutorial do ambiente de teste nesta série que explicam como instalar o ASP.NET 4.5.
 
->[!div class="step-by-step"]
-[Anterior](deploying-extra-files.md)
+> [!div class="step-by-step"]
+> [Anterior](deploying-extra-files.md)

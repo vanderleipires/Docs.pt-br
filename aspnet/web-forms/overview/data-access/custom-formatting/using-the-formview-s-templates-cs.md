@@ -2,7 +2,7 @@
 uid: web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 title: Usando os modelos de FormView (c#) | Microsoft Docs
 author: rick-anderson
-description: "Ao contrário de DetailsView FormView não é composto de campos. Em vez disso, o FormView é renderizado usando modelos. Neste tutorial, examinaremos usando a F..."
+description: Ao contrário de DetailsView FormView não é composto de campos. Em vez disso, o FormView é renderizado usando modelos. Neste tutorial, examinaremos usando a F...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 18e76a763e22c0d1046acc60e095bbd11960c5e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0e1b36f0bfc244e39bb620c1c066b3e2403722cb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-formviews-templates-c"></a>Usando os modelos de FormView (c#)
 ====================
@@ -33,12 +33,12 @@ Nos dois últimos tutoriais, vimos como personalizar saídas dos controles GridV
 
 Ao contrário de DetailsView FormView não é composto de campos. Você não pode adicionar um BoundField ou TemplateField para um FormView. Em vez disso, o FormView é renderizado usando modelos. Pense em FormView como um controle DetailsView que contém um TemplateField único. O FormView suporta os seguintes modelos:
 
-- `ItemTemplate`usado para renderizar o registro específico exibido em FormView
-- `HeaderTemplate`usado para especificar uma linha de cabeçalho opcional
-- `FooterTemplate`usado para especificar uma linha de rodapé opcional
-- `EmptyDataTemplate`Quando o FormView `DataSource` não tem nenhum registro a `EmptyDataTemplate` é usado em vez do `ItemTemplate` para renderizar a marcação do controle
-- `PagerTemplate`pode ser usado para personalizar a interface de paginação para FormViews com paginação habilitada
-- `EditItemTemplate` / `InsertItemTemplate`usado para personalizar a interface de edição ou inserção para FormViews que dão suporte a essa funcionalidade
+- `ItemTemplate` usado para renderizar o registro específico exibido em FormView
+- `HeaderTemplate` usado para especificar uma linha de cabeçalho opcional
+- `FooterTemplate` usado para especificar uma linha de rodapé opcional
+- `EmptyDataTemplate` Quando o FormView `DataSource` não tem nenhum registro a `EmptyDataTemplate` é usado em vez do `ItemTemplate` para renderizar a marcação do controle
+- `PagerTemplate` pode ser usado para personalizar a interface de paginação para FormViews com paginação habilitada
+- `EditItemTemplate` / `InsertItemTemplate` usado para personalizar a interface de edição ou inserção para FormViews que dão suporte a essa funcionalidade
 
 Neste tutorial, examinaremos usando o controle FormView para apresentar uma exibição menos rígida de produtos. Em vez de campos para o nome, categoria, fornecedor e do assim por diante, FormView `ItemTemplate` mostrará esses valores usando uma combinação de um elemento de cabeçalho e um `<table>` (consulte a Figura 1).
 
@@ -111,12 +111,12 @@ Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi E.R. Gomes. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](using-templatefields-in-the-detailsview-control-cs.md)
-[Próximo](displaying-summary-information-in-the-gridview-s-footer-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](using-templatefields-in-the-detailsview-control-cs.md)
+> [Próximo](displaying-summary-information-in-the-gridview-s-footer-cs.md)

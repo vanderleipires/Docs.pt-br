@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/an-overview-of-project-katana
-title: "Uma visão geral do projeto Katana | Microsoft Docs"
+title: Uma visão geral do projeto Katana | Microsoft Docs
 author: howarddierking
-description: "A estrutura do ASP.NET já existe há mais de 10 anos, e a plataforma habilitou o desenvolvimento de inúmeros sites e serviços. Como o aplicativo da Web..."
+description: A estrutura do ASP.NET já existe há mais de 10 anos, e a plataforma habilitou o desenvolvimento de inúmeros sites e serviços. Como o aplicativo da Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/30/2013
 ms.topic: article
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: ceb7d3a7d1cb1685c0f1e62698f508c9a73e77c2
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3c2bcbbc6e506af759f6d77af17d015278cc0bdf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-project-katana"></a>Uma visão geral do projeto Katana
 ====================
@@ -144,7 +144,7 @@ Na linha de comando, pode, em seguida, navegue até a pasta raiz do projeto e si
 - Gerenciar o processo subjacente.
 - Organizar o fluxo de trabalho que resulta na seleção de um servidor e a construção de um pipeline OWIN por meio de quais solicitações é manipulada.
 
- No momento, há 3 opções de hospedagem primárias para aplicativos baseados em Katana:  
+  No momento, há 3 opções de hospedagem primárias para aplicativos baseados em Katana:  
   
 **IIS/ASP.NET**: usando os tipos padrão HttpModule e HttpHandler, OWIN pipelines podem executados no IIS como parte de um fluxo de solicitação do ASP.NET. Suporte à hospedagem de ASP.NET é habilitado por instalar o pacote NuGet de Microsoft.AspNet.Host.SystemWeb em um projeto de aplicativo Web. Além disso, como IIS atua como um host e um servidor, a diferença de host do servidor OWIN é confundida neste pacote NuGet, que significa que, se usar o host SystemWeb, um desenvolvedor não pode substituir uma implementação de servidor alternativo.  
   
@@ -221,7 +221,7 @@ Para Katana 2.0, os componentes de middleware principalmente são se concentra e
 
 ## <a name="for-more-information-about-katana"></a>Para obter mais informações sobre Katana
 
-- O projeto Katana no GitHub: [https://github.com/aspnet/AspNetKatana/](https://github.com/aspnet/AspNetKatana/).
+- O projeto Katana no GitHub: [ https://github.com/aspnet/AspNetKatana/ ](https://github.com/aspnet/AspNetKatana/).
 - Vídeo: [projeto Katana - OWIN para o ASP.NET](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET), por Howard Dierking.
 
 ## <a name="acknowledgements"></a>Confirmações

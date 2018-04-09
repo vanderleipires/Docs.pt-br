@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 title: Validando com a Interface IDataErrorInfo (c#) | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther mostra como exibir mensagens de erro de validação personalizado implementando a interface IDataErrorInfo em uma classe de modelo."
+description: Stephen Walther mostra como exibir mensagens de erro de validação personalizado implementando a interface IDataErrorInfo em uma classe de modelo.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c04088c576481e4a91676d7e6962c03b56e7a8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5028b2e07c4144efa59824885ce96cd8b037dff
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-the-idataerrorinfo-interface-c"></a>Validando com a Interface IDataErrorInfo (c#)
 ====================
@@ -37,8 +37,8 @@ Neste tutorial, usarei o banco de dados MoviesDB e a tabela de banco de dados de
 | **Nome da coluna** | **Tipo de dados** | **Permitir nulos** |
 | --- | --- | --- |
 | Id | int | False |
-| Título | nvarchar (100) | False |
-| Diretor | nvarchar (100) | False |
+| Título | Nvarchar(100) | False |
+| Diretor | Nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
 
@@ -161,6 +161,6 @@ Observe que o valor de DateReleased é validada automaticamente. Porque a propri
 
 Neste tutorial, você aprendeu a usar a interface IDataErrorInfo para gerar mensagens de erro de validação. Primeiro, criamos uma classe parcial de filme que estende a funcionalidade da classe filme parcial gerada pelo Entity Framework. Em seguida, adicionamos a lógica de validação para os filme classe OnTitleChanging() e OnDirectorChanging() métodos parciais. Por fim, implementamos a interface IDataErrorInfo para expor essas mensagens de validação para a estrutura ASP.NET MVC.
 
->[!div class="step-by-step"]
-[Anterior](performing-simple-validation-cs.md)
-[Próximo](validating-with-a-service-layer-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](performing-simple-validation-cs.md)
+> [Próximo](validating-with-a-service-layer-cs.md)

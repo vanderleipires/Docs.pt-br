@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
-title: "Usando métodos assíncronos no ASP.NET 4.5 | Microsoft Docs"
+title: Usando métodos assíncronos no ASP.NET 4.5 | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo ASP.NET Web Forms assíncrono usando o Visual Studio Express 2012 para Web, que é um..."
+description: Este tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo ASP.NET Web Forms assíncrono usando o Visual Studio Express 2012 para Web, que é um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/06/2012
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: d3eb588aad592605a8e368d1af6e62ece34b79d0
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 839cfc39188a91b6674465b8ff8fe51804033295
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>Usando métodos assíncronos no ASP.NET 4.5
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Este tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo ASP.NET Web Forms assíncrona usando [Visual Studio Express 2012 para Web](https://www.microsoft.com/visualstudio/11), que é uma versão gratuita do Microsoft Visual Studio. Você também pode usar [Visual Studio 2012](https://www.microsoft.com/visualstudio/11). As seções a seguir estão incluídas neste tutorial.
 > 
@@ -34,7 +34,7 @@ Por [Rick Anderson](https://github.com/Rick-Anderson)
 > - [Configuração do servidor para o serviço Web de alta simultaneidade/alta latência chamadas](#ServerConfig)
 > 
 > Um exemplo é fornecido para este tutorial em  
->  [https://GitHub.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) no [GitHub](https://github.com/) site.
+>  [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) sobre o [GitHub](https://github.com/) site.
 
 
 Páginas da Web ASP.NET 4.5 em combinação [.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx) permite que você registre os métodos assíncronos que retornam um objeto do tipo [tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx). O .NET Framework 4 introduziu um conceito de programação assíncrono conhecido como um [tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) e dá suporte ao ASP.NET 4.5 [tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx). Tarefas são representadas pelo **tarefa** tipo e tipos relacionados no [Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx) namespace. O .NET Framework 4.5 amplia esse suporte assíncrono com o [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) e [async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) palavras-chave que tornam o trabalho com [tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) objetos muito menos complexos do que o anterior métodos assíncronos. O [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) palavra-chave é a abreviação sintática para indicar que um trecho de código deve aguardar assincronamente em alguma outra parte do código. O [async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) palavra-chave representa uma dica que você pode usar para marcar métodos como métodos assíncronos baseado em tarefa. A combinação de **await**, **async**e o **tarefa** objeto torna muito mais fácil para escrever código assíncrono no .NET 4.5. O novo modelo para métodos assíncronos é chamado de *padrão assíncrono baseado em tarefa* (**toque**). Este tutorial presume que você tenha alguma familiaridade com programação assíncrona usando [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) e [async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) palavras-chave e o [tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) namespace.
@@ -45,7 +45,7 @@ Para obter mais informações sobre o uso de [await](https://msdn.microsoft.com/
 - [Perguntas Frequentes de Async/Await](https://blogs.msdn.com/b/pfxteam/archive/2012/04/12/10293335.aspx)
 - [Programação assíncrona do Visual Studio](https://msdn.microsoft.com/vstudio/gg316360)
 
-## <a id="HowRequestsProcessedByTP"></a>Como as solicitações são processadas pelo Pool de Thread
+## <a id="HowRequestsProcessedByTP"></a>  Como as solicitações são processadas pelo Pool de Thread
 
 No servidor web, o .NET Framework mantém um pool de threads que são usados para atender a solicitações ASP.NET. Quando uma solicitação chega, um thread do pool é enviado para processar essa solicitação. Se a solicitação é processada de forma síncrona, o thread que processa a solicitação está ocupado durante a solicitação está sendo processado e que o thread não pode atender outra solicitação.   
   
@@ -55,7 +55,7 @@ Isso não pode ser um problema, porque o pool de threads pode se tornar grande o
 
 Em aplicativos web que vê um grande número de solicitações simultâneas na inicialização ou tem uma carga intermitente (onde simultaneidade aumenta, de repente,), fazer chamadas de serviço web assíncrona aumentará a capacidade de resposta do seu aplicativo. Uma solicitação assíncrona leva a mesma quantidade de tempo para processar uma solicitação síncrona. Por exemplo, se uma solicitação de um serviço web chamar que requer dois segundos ser concluída, a solicitação usa dois segundos se ela é realizada de forma síncrona ou assíncrona. No entanto, durante uma chamada assíncrona, um thread não é bloqueado de responder às outras solicitações enquanto aguarda a primeira solicitação ser concluída. Portanto, solicitações assíncronas evitar o crescimento de pool de enfileiramento de mensagens e thread de solicitação quando há muitas solicitações simultâneas que invocar operações de execução longa.
 
-## <a id="ChoosingSyncVasync"></a>Escolha os métodos síncronos ou assíncronos
+## <a id="ChoosingSyncVasync"></a>  Escolha os métodos síncronos ou assíncronos
 
 Esta seção lista as diretrizes para quando usar métodos síncronos ou assíncronos. Essas são apenas diretrizes; Examine cada aplicativo individualmente para determinar se os métodos assíncronos ajudam com o desempenho.
 
@@ -65,7 +65,7 @@ Em geral, use os métodos síncronos para as seguintes condições:
 - Simplicidade é mais importante do que a eficiência.
 - As operações são principalmente as operações da CPU, em vez de operações que envolvem a sobrecarga de rede ou de disco abrangentes. Usando métodos assíncronos em operações associadas à CPU não fornece nenhuma benefícios e resulta em mais sobrecarga.
 
- Em geral, use os métodos assíncronos para as seguintes condições:
+  Em geral, use os métodos assíncronos para as seguintes condições:
 
 - Chamada de serviços que podem ser consumidos por meio de métodos assíncronos, e você estiver usando o .NET 4.5 ou posterior.
 - As operações são vinculadas à rede ou I/O vinculados em vez de limite de CPU.
@@ -74,19 +74,19 @@ Em geral, use os métodos síncronos para as seguintes condições:
 - Quando o benefício da comutação threads out pondera o custo da alternância de contexto. Em geral, você deve fazer um método assíncrono se o método síncrono bloqueia o thread de solicitação do ASP.NET ao não fazer nenhum trabalho. Fazendo a chamada assíncrona, o thread de solicitação do ASP.NET não está bloqueado não executando nenhum trabalho enquanto aguarda a solicitação de serviço da web concluir.
 - O teste mostra que o bloqueio de operações é um afunilamento no desempenho do site e que o IIS pode atender mais solicitações usando métodos assíncronos para essas chamadas de bloqueio.
 
- O exemplo disponível para download mostra como usar métodos assíncronos com eficiência. O exemplo fornecido foi projetado para fornecer uma demonstração simple de programação assíncrona no ASP.NET 4.5. O exemplo não pretende ser uma arquitetura de referência para programação assíncrona no ASP.NET. O programa de exemplo chama [ASP.NET Web API](../../../web-api/index.md) métodos que por sua vez chamam [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) para simular chamadas de serviço web de longa execução. A maioria dos aplicativos de produção não mostrará esses benefícios óbvios ao uso de métodos assíncronos.   
+  O exemplo disponível para download mostra como usar métodos assíncronos com eficiência. O exemplo fornecido foi projetado para fornecer uma demonstração simple de programação assíncrona no ASP.NET 4.5. O exemplo não pretende ser uma arquitetura de referência para programação assíncrona no ASP.NET. O programa de exemplo chama [ASP.NET Web API](../../../web-api/index.md) métodos que por sua vez chamam [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) para simular chamadas de serviço web de longa execução. A maioria dos aplicativos de produção não mostrará esses benefícios óbvios ao uso de métodos assíncronos.   
   
 Alguns aplicativos exigem que todos os métodos para ser assíncrona. Geralmente, a conversão de alguns métodos síncronos para métodos assíncronos fornece o aumento de eficiência melhor para a quantidade de trabalho necessário.
 
-## <a id="SampleApp"></a>O aplicativo de exemplo
+## <a id="SampleApp"></a>  O aplicativo de exemplo
 
-Você pode baixar o aplicativo de exemplo do [https://github.com/RickAndMSFT/Async-ASP.NET](https://github.com/RickAndMSFT/Async-ASP.NET) no [GitHub](https://github.com/) site. O repositório consiste em três projetos:
+Você pode baixar o aplicativo de exemplo do [ https://github.com/RickAndMSFT/Async-ASP.NET ](https://github.com/RickAndMSFT/Async-ASP.NET) no [GitHub](https://github.com/) site. O repositório consiste em três projetos:
 
 - *WebAppAsync*: projeto o ASP.NET Web Forms que consome a API da Web **WebAPIpwg** service. A maior parte do código para este tutorial é neste projeto.
 - *WebAPIpgw*: projeto de API da Web do ASP.NET MVC 4 que implementa o `Products, Gizmos and Widgets` controladores. Ele fornece os dados para o *WebAppAsync* projeto e o *Mvc4Async* projeto.
 - *Mvc4Async*: projeto o ASP.NET MVC 4 que contém o código usado em outro tutorial. Ele faz chamadas de API da Web para o **WebAPIpwg** service.
 
-## <a id="GizmosSynch"></a>A página síncrona largue as
+## <a id="GizmosSynch"></a>  A página síncrona largue as
 
  O código a seguir mostra o `Page_Load` método síncrono é usado para exibir uma lista de largue as. (Neste artigo, um gizmo é um dispositivo mecânico fictício.) 
 
@@ -101,7 +101,7 @@ A imagem a seguir mostra a página largue as o projeto de exemplo.
 
 ![Gizmos](using-asynchronous-methods-in-aspnet-45/_static/image1.png)
 
-## <a id="CreatingAsynchGizmos"></a>Criando uma página largue as assíncrona
+## <a id="CreatingAsynchGizmos"></a>  Criando uma página largue as assíncrona
 
 O exemplo usa o novo [async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) e [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) palavras-chave (disponível no .NET 4.5 e o Visual Studio 2012) para permitir que o compilador serão responsáveis por manter as transformações complicadas necessárias para programação assíncrona. O compilador permite que você escreva o código usando que fluxo de controle síncrono do # constrói e o compilador aplica automaticamente as transformações necessárias para usar retornos de chamada para evitar o bloqueio de threads.
 
@@ -127,7 +127,7 @@ A versão assíncrona:
 - O [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) palavra-chave foi aplicada a chamada de serviço web.
 - A API do serviço da web assíncrono foi chamada (`GetGizmosAsync`).
 
-Dentro do `GetGizmosSvcAsync` outro método assíncrono, o corpo do método `GetGizmosAsync` é chamado. `GetGizmosAsync`retorna imediatamente um `Task<List<Gizmo>>` que eventualmente será concluída quando os dados estão disponíveis. Porque você não quiser fazer mais nada até que você tenha os dados de gizmo, o código aguarda a tarefa (usando o **await** palavra-chave). Você pode usar o **await** palavra-chave somente em métodos anotados com o **async** palavra-chave.
+Dentro do `GetGizmosSvcAsync` outro método assíncrono, o corpo do método `GetGizmosAsync` é chamado. `GetGizmosAsync` retorna imediatamente um `Task<List<Gizmo>>` que eventualmente será concluída quando os dados estão disponíveis. Porque você não quiser fazer mais nada até que você tenha os dados de gizmo, o código aguarda a tarefa (usando o **await** palavra-chave). Você pode usar o **await** palavra-chave somente em métodos anotados com o **async** palavra-chave.
 
 O **await** palavra-chave não bloqueia o thread até que a tarefa seja concluída. Ele se inscreve o restante do método como um retorno de chamada da tarefa e retorna imediatamente. Quando a tarefa esperada eventualmente for concluído, ele chamar o retorno de chamada e, assim, retomar a execução do direito de método em que parou. Para obter mais informações sobre como usar o [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) e [async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) palavras-chave e o [tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) namespace, consulte o [async referências](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async).
 
@@ -157,7 +157,7 @@ Métodos vinculada com `RegisterAsyncTask` será executado imediatamente após [
 
 A desvantagem eventos void assíncronos é que os desenvolvedores não tem controle total sobre quando os eventos são executados. Por exemplo, se um. aspx e um. Definir mestre `Page_Load` eventos e um ou ambos os parâmetros são assíncronos, a ordem de execução não pode ser garantida. A mesma ordem de indeterminiate para manipuladores de eventos não (como `async void Button_Click` ) se aplica. Para a maioria dos desenvolvedores, isso deve ser aceitável, mas aqueles que exigem o controle total sobre a ordem de execução só devem usar APIs como `RegisterAsyncTask` que consumir os métodos que retornam um objeto de tarefa.
 
-## <a id="Parallel"></a>Executar várias operações em paralelo
+## <a id="Parallel"></a>  Executar várias operações em paralelo
 
 Métodos assíncronos tem uma vantagem significativa sobre métodos síncronos quando uma ação deve executar várias operações independentes. No exemplo fornecido, a página síncrona *PWG.aspx*(para produtos, Widgets e largue as) exibe os resultados de três chamadas de serviço da web para obter uma lista de produtos, widgets e largue as. O [ASP.NET Web API](../../../web-api/index.md) projeto que fornece esses serviços usa [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) para simular a latência de rede lenta a chamadas. Quando o atraso é definido como 500 milissegundos, assíncronos *PWGasync.aspx* página leva um pouco mais de 500 milissegundos para concluir durante síncronos `PWG` versão assume 1.500 milésimos de segundo. Síncronos *PWG.aspx* página é mostrada no código a seguir.
 
@@ -171,7 +171,7 @@ A imagem a seguir mostra a exibição retornada de assíncronos *PWGasync.aspx* 
 
 ![](using-asynchronous-methods-in-aspnet-45/_static/image3.png)
 
-## <a id="CancelToken"></a>Usando um Token de cancelamento
+## <a id="CancelToken"></a>  Usando um Token de cancelamento
 
 Métodos assíncronos retornando `Task`são anulável, que é que eles terão uma [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken(VS.110).aspx) parâmetro quando é fornecida com o `AsyncTimeout` atributo do [página](https://msdn.microsoft.com/library/ydy4x04a.aspx) diretiva. O código a seguir mostra o *GizmosCancelAsync.aspx* página com um tempo limite de segundo.
 
@@ -183,14 +183,14 @@ O código a seguir mostra o *GizmosCancelAsync.aspx.cs* arquivo.
 
 O aplicativo de exemplo fornecido, selecionando o *GizmosCancelAsync* link chamadas a *GizmosCancelAsync.aspx* página e demonstra o cancelamento (por tempo limite) da chamada assíncrona. Como o tempo de espera está em um intervalo aleatório, talvez seja necessário atualizar a página duas vezes para obter a mensagem de erro de tempo limite.
 
-## <a id="ServerConfig"></a>Configuração do servidor para o serviço Web de alta simultaneidade/alta latência chamadas
+## <a id="ServerConfig"></a>  Configuração do servidor para o serviço Web de alta simultaneidade/alta latência chamadas
 
 Para obter os benefícios de um aplicativo web assíncrona, você precisará fazer algumas alterações na configuração de servidor padrão. Tenha em mente ao configurar e testar seu aplicativo web assíncrona de estresse.
 
 - Windows 7, Windows Vista, Windows 8 e todos os sistemas de operacionais de cliente Windows ter um máximo de 10 solicitações simultâneas. Você precisará de um sistema operacional de servidor do Windows para ver os benefícios dos métodos assíncronos sob alta carga.
 - Registre o .NET 4.5 com o IIS em um prompt de comando elevado usando o seguinte comando:  
- %windir%\Microsoft.NET\Framework64 \v4.0.30319\aspnet\_regiis -i  
- Consulte [ferramenta de registro ASP.NET IIS (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h.aspx)
+  %windir%\Microsoft.NET\Framework64 \v4.0.30319\aspnet\_regiis -i  
+  Consulte [ferramenta de registro ASP.NET IIS (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h.aspx)
 - Talvez seja necessário aumentar o [HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture) limite da fila do valor padrão de 1.000 a 5.000. Se a configuração é muito baixa, você poderá ver [HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture) rejeitar solicitações com um status de HTTP 503. Para alterar o limite de fila de HTTP. sys:
 
     - Abra o Gerenciador do IIS e navegue até o painel de Pools de aplicativos.
@@ -199,7 +199,7 @@ Para obter os benefícios de um aplicativo web assíncrona, você precisará faz
     - No **configurações avançadas** caixa de diálogo Alterar *comprimento da fila de* mais de 1.000 a 5.000.  
         ![Comprimento da fila](using-asynchronous-methods-in-aspnet-45/_static/image5.png)  
   
- Observe que nas imagens acima, o .NET framework está listado como v 4.0, mesmo que o pool de aplicativos usando o .NET 4.5. Para entender essa discrepância, consulte o seguinte:
+  Observe que nas imagens acima, o .NET framework está listado como v 4.0, mesmo que o pool de aplicativos usando o .NET 4.5. Para entender essa discrepância, consulte o seguinte:
 
         - [.NET Versioning and Multi-Targeting - .NET 4.5 is an in-place upgrade to .NET 4.0](http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx)
         - [How to set an IIS Application or AppPool to use ASP.NET 3.5 rather than 2.0](http://www.hanselman.com/blog/HowToSetAnIISApplicationOrAppPoolToUseASPNET35RatherThan20.aspx)

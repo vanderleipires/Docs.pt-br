@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Código primeiro migrações e implantação com o Entity Framework em um aplicativo ASP.NET MVC | Microsoft Docs"
+title: Código primeiro migrações e implantação com o Entity Framework em um aplicativo ASP.NET MVC | Microsoft Docs
 author: tdykstra
 description: O aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio...
 ms.author: aspnetcontent
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 2294f2aba3f765d7849d1f407e85f424dc8b2518
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04d393edca0469df140f06a7d083a48aa8f84b65
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="code-first-migrations-and-deployment-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Código primeiro migrações e implantação com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
@@ -37,9 +37,9 @@ O tutorial contém as seguintes seções:
 
 ## <a name="enable-code-first-migrations"></a>Habilitar migrações do Code First
 
-Quando você desenvolve um novo aplicativo, o modelo de dados é alterado com frequência e cada vez que as alterações do modelo, ele obtém fora de sincronia com o banco de dados. Você configurou o Entity Framework para descartar e recriar o banco de dados cada vez que você alterar o modelo de dados automaticamente. Quando você adicionar, remover, ou alterar as classes de entidade ou alterar seu `DbContext` classe, na próxima vez que você executar o aplicativo automaticamente exclui o banco de dados existente, cria um novo que corresponde ao modelo e propaga-lo com dados de teste.
+Quando você desenvolve um novo aplicativo, o modelo de dados é alterado com frequência e, sempre que o modelo é alterado, ele fica fora de sincronia com o banco de dados. Você configurou o Entity Framework para descartar e recriar o banco de dados cada vez que você alterar o modelo de dados automaticamente. Quando você adicionar, remover, ou alterar as classes de entidade ou alterar seu `DbContext` classe, na próxima vez que você executar o aplicativo automaticamente exclui o banco de dados existente, cria um novo que corresponde ao modelo e propaga-lo com dados de teste.
 
-Esse método de manter o banco de dados em sincronia com o modelo de dados funciona bem até que você implantar o aplicativo para produção. Quando o aplicativo é executado em produção, normalmente ele está armazenando dados que você deseja manter, e você não quiser perder tudo o que cada vez que você fizer uma alteração, como adicionar uma nova coluna. O [migrações do Code First](https://msdn.microsoft.com/data/jj591621) recurso resolve esse problema, permitindo Code First atualizar o esquema de banco de dados em vez de descartar e recriar o banco de dados. Neste tutorial, você implantará o aplicativo e para se preparar para isso habilitará as migrações.
+Esse método de manter o banco de dados em sincronia com o modelo de dados funciona bem até que você implante o aplicativo em produção. Quando o aplicativo é executado em produção, normalmente ele está armazenando dados que você deseja manter, e você não quiser perder tudo o que cada vez que você fizer uma alteração, como adicionar uma nova coluna. O [migrações do Code First](https://msdn.microsoft.com/data/jj591621) recurso resolve esse problema, permitindo Code First atualizar o esquema de banco de dados em vez de descartar e recriar o banco de dados. Neste tutorial, você implantará o aplicativo e para se preparar para isso habilitará as migrações.
 
 1. Desabilitar o inicializador de que você configurou anteriormente comentar ou excluindo o `contexts` elemento que você adicionou ao arquivo Web. config do aplicativo.
 
@@ -48,7 +48,7 @@ Esse método de manter o banco de dados em sincronia com o modelo de dados funci
 
     [!code-xml[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.xml?highlight=2)]
 
-    Essa alteração define o projeto para que a primeira migração irá criar um novo banco de dados. Isso não é obrigatório, mas você verá posteriormente por que ele é uma boa ideia.
+    Essa alteração configura o projeto, de modo que a primeira migração crie um novo banco de dados. Isso não é obrigatório, mas você verá posteriormente por que ele é uma boa ideia.
 3. Do **ferramentas** menu, clique em **Gerenciador de biblioteca de pacote** e **Package Manager Console**.
 
     ![Selecting_Package_Manager_Console](https://asp.net/media/4336350/1pm.png)
@@ -112,11 +112,11 @@ Quando você executou o `add-migration` de comando, migrações gerado o código
 
 [!code-csharp[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
 
-Chamadas de migrações de `Up` método para implementar as alterações do modelo de dados para uma migração. Quando você insere um comando para reverter a atualização, chamadas de migrações de `Down` método.
+As migrações chamam o método `Up` para implementar as alterações do modelo de dados para uma migração. Quando você insere um comando para reverter a atualização, as Migrações chamam o método `Down`.
 
 Isso é a migração inicial que foi criada quando você inseriu o `add-migration InitialCreate` comando. O parâmetro (`InitialCreate` no exemplo) é usado para o arquivo de nome e pode ser tudo o que você quiser; normalmente escolher uma palavra ou frase que resume o que está sendo feito a migração. Por exemplo, você pode nomear uma migração posterior &quot;AddDepartmentTable&quot;.
 
-Se você criou a migração inicial quando o banco de dados já existe, o código de criação do banco de dados é gerado, mas ele não precisa ser executado porque o banco de dados já coincide com o modelo de dados. Quando você implanta o aplicativo para outro ambiente onde o banco de dados não existe ainda, esse código será executado para criar o banco de dados, portanto é uma boa ideia para testá-lo primeiro. É por isso que você alterou o nome do banco de dados na cadeia de conexão anteriormente – para que as migrações podem criar um novo a partir do zero.
+Se você criou a migração inicial quando o banco de dados já existia, o código de criação de banco de dados é gerado, mas ele não precisa ser executado porque o banco de dados já corresponde ao modelo de dados. Quando você implantar o aplicativo em outro ambiente no qual o banco de dados ainda não existe, esse código será executado para criar o banco de dados; portanto, é uma boa ideia testá-lo primeiro. É por isso que você alterou o nome do banco de dados na cadeia de conexão anteriormente – para que as migrações possam criar um novo do zero.
 
 1. No **Package Manager Console** janela, digite o seguinte comando:
 
@@ -125,7 +125,7 @@ Se você criou a migração inicial quando o banco de dados já existe, o códig
     ![](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
     O `update-database` comando executa o `Up` método para criar o banco de dados e, em seguida, ele é executado o `Seed` para popular o banco de dados. O mesmo processo será executado automaticamente em produção depois que você implantar o aplicativo, como você verá na seção a seguir.
-- Use **Server Explorer** para inspecionar o banco de dados como você fez no primeiro tutorial e executar o aplicativo para verificar se tudo ainda funciona da mesma forma como antes.
+2. Use **Server Explorer** para inspecionar o banco de dados como você fez no primeiro tutorial e executar o aplicativo para verificar se tudo ainda funciona da mesma forma como antes.
 
 ## <a name="deploy-to-azure"></a>Implantar no Azure
 
@@ -153,7 +153,7 @@ Você implantará o banco de dados para o banco de dados do SQL Azure. Banco de 
 
     ![Novo botão no Portal de gerenciamento](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/CreateWeb-Sql.png)
 
- O **novo aplicativo Web & SQL - criar** assistente é aberto.
+   O **novo aplicativo Web & SQL - criar** assistente é aberto.
 
 2. Na folha, insira uma cadeia de caracteres de **nome do aplicativo** caixa para usar como a URL exclusiva para seu aplicativo. A URL completa consistirá em que você digitar aqui e o domínio padrão dos serviços de aplicativo do Azure (. azurewebsites.net). Se o **nome do aplicativo** já está em uso, o Assistente para notificá-lo com um vermelho *o nome do aplicativo não está disponível* mensagem. Se o **nome do aplicativo** estiver disponível, você terá uma marca de seleção verde.
 
@@ -175,9 +175,9 @@ Você implantará o banco de dados para o banco de dados do SQL Azure. Banco de 
 10. Modificar [agrupamento](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support) conforme necessário.
 11. Insira um administrador **nome de usuário de administrador de SQL** e **senha do administrador do SQL**. Se você selecionou **servidor novo banco de dados do SQL**, você não digitar um nome existente e a senha aqui, você está inserindo um novo nome e uma senha que você está definindo agora para usar mais tarde, quando você acessa o banco de dados. Se você tiver selecionado um servidor que você criou anteriormente, você vai inserir credenciais para o servidor.
 12. Coleção de telemetria pode ser habilitada para o serviço de aplicativo usando o Application Insights. Application Insights com pouca configuração coleta eventos importantes, exceções, dependência, solicitação e as informações de rastreamento. Para saber mais sobre o Application Insights, Introdução ao [documentos do Azure](https://azure.microsoft.com/services/application-insights/).
-12. Clique em **criar** na parte inferior da folha para indicar que você tiver terminado.
+13. Clique em **criar** na parte inferior da folha para indicar que você tiver terminado.
   
- O Portal de gerenciamento retorna para a página de painéis e o **notificações** folha na parte superior da página mostra que o site está sendo criado. Após alguns instantes (geralmente menor que um minuto), haverá uma notificação de que a implantação foi bem-sucedida. Na barra de navegação à esquerda, o novo **do serviço de aplicativo** aparece no *serviços de aplicativos* seção e a nova **banco de dados SQL** aparece no *bancos de dados SQL*  seção.
+    O Portal de gerenciamento retorna para a página de painéis e o **notificações** folha na parte superior da página mostra que o site está sendo criado. Após alguns instantes (geralmente menor que um minuto), haverá uma notificação de que a implantação foi bem-sucedida. Na barra de navegação à esquerda, o novo **do serviço de aplicativo** aparece no *serviços de aplicativos* seção e a nova **banco de dados SQL** aparece no *bancos de dados SQL*  seção.
 
 ### <a name="deploy-the-application-to-azure"></a>Implantar o aplicativo no Azure
 
@@ -195,30 +195,30 @@ Você implantará o banco de dados para o banco de dados do SQL Azure. Banco de 
 5. Depois que o perfil foi configurado, o **Conexão** guia será mostrada. Clique em **Conexão validar** para certificar-se de que as configurações estão corretas
 
     ![Validar a conexão](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Connection.png)
-7. Quando a conexão foi validada, uma marca de seleção verde é exibida ao lado de **Conexão validar** botão. Clique em **Avançar**.
+6. Quando a conexão foi validada, uma marca de seleção verde é exibida ao lado de **Conexão validar** botão. Clique em **Avançar**.
   
     ![Conexão validada com êxito](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-SettingsValidated.png)
-8. Abra o **cadeia de caracteres de conexão remota** lista suspensa em **SchoolContext** e selecione a cadeia de caracteres de conexão para o banco de dados que você criou.
-9. Selecione **Atualizar banco de dados**.
+7. Abra o **cadeia de caracteres de conexão remota** lista suspensa em **SchoolContext** e selecione a cadeia de caracteres de conexão para o banco de dados que você criou.
+8. Selecione **Atualizar banco de dados**.
 
     ![Guia Configurações](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Settings.png)
 
     Essa configuração faz com que o processo de implantação configurar automaticamente o aplicativo *Web. config* arquivos no servidor de destino, de forma que usa o Code First a `MigrateDatabaseToLatestVersion` classe inicializador.
-10. Clique em **Avançar**.
-11. No **visualização** , clique em **visualização iniciar**.
+9. Clique em **Avançar**.
+10. No **visualização** , clique em **visualização iniciar**.
   
     ![Botão de StartPreview na guia de visualização](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Preview.png)
   
- A guia exibe uma lista dos arquivos que serão copiados para o servidor. Exibir a visualização não é necessário para publicar o aplicativo, mas é uma função útil estar atento. Nesse caso, você não precisa fazer nada com a lista de arquivos que é exibida. Na próxima vez que você implantar esse aplicativo, somente os arquivos que foram alterados será nesta lista.
+    A guia exibe uma lista dos arquivos que serão copiados para o servidor. Exibir a visualização não é necessário para publicar o aplicativo, mas é uma função útil estar atento. Nesse caso, você não precisa fazer nada com a lista de arquivos que é exibida. Na próxima vez que você implantar esse aplicativo, somente os arquivos que foram alterados será nesta lista.
     ![Saída de arquivo StartPreview](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-PreviewLoaded.png)
 
-12. Clique em **Publicar**.
- O Visual Studio inicia o processo de copiar os arquivos para o servidor do Azure.
-13. O **saída** janela mostra quais ações de implantação foram realizadas e relata a conclusão com êxito da implantação.
+11. Clique em **Publicar**.
+    O Visual Studio inicia o processo de copiar os arquivos para o servidor do Azure.
+12. O **saída** janela mostra quais ações de implantação foram realizadas e relata a conclusão com êxito da implantação.
   
     ![Relatório de implantação bem-sucedida de janela de saída](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-BuildOutput.png)
-14. Após a implantação bem-sucedida, o navegador padrão é aberto automaticamente para a URL do site da web implantados.
- O aplicativo que você criou agora está em execução na nuvem. 
+13. Após a implantação bem-sucedida, o navegador padrão é aberto automaticamente para a URL do site da web implantados.
+    O aplicativo que você criou agora está em execução na nuvem. 
   
     ![Students_index_page_with_paging](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Site.png)
 
@@ -258,6 +258,6 @@ Deixe comentários em como você gostou neste tutorial e nós poderíamos melhor
 
 Links para outros recursos do Entity Framework podem ser encontradas no [acesso a dados ASP.NET - recomendado recursos](xref:whitepapers/aspnet-data-access-content-map).
 
->[!div class="step-by-step"]
-[Anterior](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
-[Próximo](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application)
+> [!div class="step-by-step"]
+> [Anterior](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
+> [Próximo](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application)

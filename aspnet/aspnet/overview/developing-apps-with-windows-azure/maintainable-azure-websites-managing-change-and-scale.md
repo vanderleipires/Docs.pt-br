@@ -1,26 +1,26 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
-title: "Laboratório prático: sustentáveis sites do Azure: gerenciamento de alteração e escala | Microsoft Docs"
+title: 'Laboratório prático: sustentáveis sites do Azure: gerenciamento de alteração e escala | Microsoft Docs'
 author: rick-anderson
-description: "Neste laboratório, saiba como o Microsoft Azure torna fácil criar e implantar sites em produção."
+description: Neste laboratório, saiba como o Microsoft Azure torna fácil criar e implantar sites em produção.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 4bce02b2c592ff04e0dbce78d18004c69268e4fd
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a79921681b4e742b5cd23f7119d19f4dd74c3f83
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Laboratório prático: sustentáveis sites do Azure: gerenciamento de alteração e escala
 ====================
-por [Web Camps Team](https://twitter.com/webcamps)
+Por [Web Camps Team](https://twitter.com/webcamps)
 
 [Baixar o Kit de treinamento de Camps de Web](http://aka.ms/webcamps-training-kit)
 
@@ -34,13 +34,13 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Com bancos de dados SQL, é importante manter o banco de dados de produção atualizados ao implantar novas versões do seu aplicativo. Graças **Entity Framework Code First Migrations**, o desenvolvimento e implantação do seu modelo de dados foi simplificado para atualizar seus ambientes em minutos. Este laboratório prático mostrará os tópicos diferentes que você pode encontrar ao implantar seu aplicativo web para ambientes de produção no Microsoft Azure.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 > 
 > Para obter mais informações deste tópico, consulte o [criando aplicativos de nuvem do mundo Real com o livro eletrônico do Azure](building-real-world-cloud-apps-with-windows-azure/introduction.md).
 
 
 <a id="Overview"></a>
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Objetivos
@@ -281,13 +281,13 @@ Nesta tarefa, você criará um aplicativo web no **do serviço de aplicativo do 
     *Personalizando o novo aplicativo web*
 5. Especifique as seguintes informações para as configurações de banco de dados:
 
-    - No **nome** texto, digite um nome de banco de dados (por exemplo, *geekquiz\_db*)
-    - No servidor **suspensa** lista, selecione **servidor de banco de dados SQL novo**. Como alternativa, você pode selecionar um servidor existente.
-    - No **nome de usuário de banco de dados** e **senha de banco de dados** caixas, insira o nome de usuário administrador e a senha para o servidor de banco de dados SQL. Se você selecionar um servidor já tiver criado, você será solicitado a senha.
+   - No **nome** texto, digite um nome de banco de dados (por exemplo, *geekquiz\_db*)
+   - No servidor **suspensa** lista, selecione **servidor de banco de dados SQL novo**. Como alternativa, você pode selecionar um servidor existente.
+   - No **nome de usuário de banco de dados** e **senha de banco de dados** caixas, insira o nome de usuário administrador e a senha para o servidor de banco de dados SQL. Se você selecionar um servidor já tiver criado, você será solicitado a senha.
 
-    ![Especificar as configurações de banco de dados](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
+     ![Especificar as configurações de banco de dados](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
 
-    *Especificar as configurações de banco de dados*
+     *Especificar as configurações de banco de dados*
 6. Clique em **Próximo** para continuar.
 7. Selecione **repositório Git Local** para o controle de origem e clique em **próximo**.
 
@@ -687,7 +687,7 @@ Nesta tarefa, você usará a janela Gerenciador de servidores do Visual Studio p
 
 Nesta tarefa, você configurará o **GeekQuiz** solução consumir a imagem carregada no armazenamento de BLOBs do Azure (em vez de imagem localizada no aplicativo web), adicionando uma regra de regravação de URL do ASP.NET no **Web. config**arquivo.
 
-1. No Visual Studio, abra o **Web. config** dentro do arquivo de **GeekQuiz** de projeto e localize o  **&lt;System. webServer&gt;**  elemento.
+1. No Visual Studio, abra o **Web. config** dentro do arquivo de **GeekQuiz** de projeto e localize o **&lt;System. webServer&gt;** elemento.
 2. Adicione o código a seguir para adicionar uma reescrita de URL para a regra, atualizar o espaço reservado com o nome da sua conta de armazenamento.
 
     (Código de trecho - *UrlRewriteRule WebSitesInProduction - Ex4 -*)
@@ -785,7 +785,7 @@ Agora que **AutoEscala** tiver sido configurado, você criará uma **projeto de 
     ![Adicionando uma solicitação para WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image81.png "adicionando uma solicitação para WebTest1")
 
     *Adicionando uma solicitação para WebTest1*
-4. No **propriedades** janela do novo nó de solicitação, atualizar o **Url** propriedade para apontar para a URL de seu aplicativo web (por exemplo,  *[http://geek-quiz.azurewebsites.net/](http://geek-quiz.azurewebsites.net/)* ).
+4. No **propriedades** janela do novo nó de solicitação, atualizar o **Url** propriedade para apontar para a URL de seu aplicativo web (por exemplo, *[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)*).
 
     ![Alterar a propriedade de Url](maintainable-azure-websites-managing-change-and-scale/_static/image82.png "alterando a propriedade Url")
 
@@ -797,13 +797,13 @@ Agora que **AutoEscala** tiver sido configurado, você criará uma **projeto de 
     *Adicionando um loop a WebTest1*
 6. No **Adicionar regra condicional e itens a Loop** caixa de diálogo, selecione o **para Loop** regra e modificar as propriedades a seguir.
 
-    1. **Encerrando o valor:** 1000
-    2. **Nome do parâmetro de contexto:** iterador
-    3. **Valor de incremento:** 1
+   1. **Encerrando o valor:** 1000
+   2. **Nome do parâmetro de contexto:** iterador
+   3. **Valor de incremento:** 1
 
-    ![Selecionando a regra de Loop For e atualizar as propriedades de](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "selecionando a regra de Loop For e atualizando as propriedades")
+      ![Selecionando a regra de Loop For e atualizar as propriedades de](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "selecionando a regra de Loop For e atualizando as propriedades")
 
-    *Selecionando a regra de Loop For e atualizando as propriedades*
+      *Selecionando a regra de Loop For e atualizando as propriedades*
 7. Sob o **itens em loop** seção, selecione a solicitação que você criou anteriormente para ser o primeiro e o último item para o loop. Clique em **OK** para continuar.
 
     ![Selecionar o primeiro e último item para o loop](maintainable-azure-websites-managing-change-and-scale/_static/image85.png "selecionando o primeiro e último item para o loop")
