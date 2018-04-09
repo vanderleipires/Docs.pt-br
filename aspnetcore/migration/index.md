@@ -1,5 +1,5 @@
 ---
-title: "Migração para o ASP.NET Core"
+title: Migração para o ASP.NET Core
 author: rick-anderson
 description: Descreve como migrar do ASP.NET para o ASP.NET Core, incluindo o ASP.NET 4.x e o ASP.NET Core 2
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/index
-ms.openlocfilehash: 6350dc43a2b5e63083a9e707dff74bf6407a0c94
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9df5519dd8a48fcc246616afcdbf77ef5407616b
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migration-to-aspnet-core-including-aspnet-4x-aspnet-core-2"></a>Migração para o ASP.NET Core, incluindo o ASP.NET 4.x e o ASP.NET Core 2
+# <a name="migration-to-aspnet-core"></a>Migração para o ASP.NET Core
 
 ### <a name="aspnet-to-aspnet-core-1x"></a>ASP.NET para ASP.NET Core 1.x
 *   [Migrar do ASP.NET MVC para o ASP.NET Core MVC](xref:migration/mvc)

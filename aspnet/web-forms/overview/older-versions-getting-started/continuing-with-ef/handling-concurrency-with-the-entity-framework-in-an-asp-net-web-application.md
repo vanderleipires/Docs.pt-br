@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
 title: Tratamento de simultaneidade com o Entity Framework 4.0 em um aplicativo ASP.NET 4 | Microsoft Docs
 author: tdykstra
-description: "Esta série de tutorial se baseia no aplicativo web Contoso Universidade que é criado pelo guia de Introdução com a série de tutoriais do Entity Framework 4.0. I..."
+description: Esta série de tutorial se baseia no aplicativo web Contoso Universidade que é criado pelo guia de Introdução com a série de tutoriais do Entity Framework 4.0. I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7bdcf610458631749531ed1279d27e90572f0371
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f40695270006e4f8b0c9ad8e94049e5239f06e63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Tratamento de simultaneidade com o Entity Framework 4.0 em um aplicativo ASP.NET 4
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 > Esta série de tutoriais se baseia no aplicativo da web Contoso Universidade que é criado pelo [guia de Introdução com o Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) série de tutoriais. Se você não concluir os tutoriais anteriores, como um ponto de partida para este tutorial você pode [baixar o aplicativo](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) que você pode ter sido criado. Você também pode [baixar o aplicativo](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) que é criado pela série tutorial completo. Se você tiver dúvidas sobre os tutoriais, você poderá postá-los para o [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx).
 
@@ -29,7 +29,7 @@ No tutorial anterior, você aprendeu como classificar e filtrar dados usando o `
 
 [![Image06](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image2.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image1.png)
 
-[![Para Image01](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
+[![Image01](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
 
 ## <a name="concurrency-conflicts"></a>Conflitos de simultaneidade
 
@@ -37,13 +37,13 @@ Um conflito de simultaneidade ocorre quando um usuário edita um registro e outr
 
 ### <a name="pessimistic-concurrency-locking"></a>Simultaneidade pessimista (bloqueio)
 
-Se seu aplicativo precisar evitar a perda acidental de dados em cenários de simultaneidade, uma maneira de fazer isso é usar bloqueios de banco de dados. Isso é chamado de *simultaneidade pessimista*. Por exemplo, antes de ler uma linha de um banco de dados, você solicita um bloqueio de somente leitura ou para acesso de atualização. Se você bloquear uma linha para acesso de atualização, outros usuários não têm permissão para bloquear a linha para somente leitura ou de acesso de atualização, porque eles obterá uma cópia dos dados que está sendo alterado. Se você bloquear uma linha para acesso somente leitura, outros também bloqueá-la para acesso somente leitura, mas não para atualização.
+Se o aplicativo precisar evitar a perda acidental de dados em cenários de simultaneidade, uma maneira de fazer isso será usar bloqueios de banco de dados. Isso é chamado de *simultaneidade pessimista*. Por exemplo, antes de ler uma linha de um banco de dados, você solicita um bloqueio para o acesso somente leitura ou de atualização. Se você bloquear uma linha para o acesso de atualização, nenhum outro usuário terá permissão para bloquear a linha para o acesso somente leitura ou de atualização, porque ele obterá uma cópia dos dados que estão sendo alterados. Se você bloquear uma linha para o acesso somente leitura, outros também poderão bloqueá-la para o acesso somente leitura, mas não para atualização.
 
-Gerenciar bloqueios apresenta algumas desvantagens. Ele pode ser complexo para o programa. Requer recursos de gerenciamento de banco de dados, e pode causar problemas de desempenho como o número de usuários de um aplicativo aumenta (ou seja, ele não é bem dimensionável). Por esses motivos, nem todos os sistemas de gerenciamento de banco de dados oferecem suporte a simultaneidade pessimista. O Entity Framework fornece sem suporte interno para ele, e este tutorial não mostra como implementá-la.
+Gerenciar bloqueios apresenta algumas desvantagens. Ele pode ser complexo de ser programado. Requer recursos de gerenciamento de banco de dados, e pode causar problemas de desempenho como o número de usuários de um aplicativo aumenta (ou seja, ele não é bem dimensionável). Por esses motivos, nem todos os sistemas de gerenciamento de banco de dados dão suporte à simultaneidade pessimista. O Entity Framework fornece sem suporte interno para ele, e este tutorial não mostra como implementá-la.
 
 ### <a name="optimistic-concurrency"></a>Simultaneidade otimista
 
-A alternativa de simultaneidade pessimista é *simultaneidade otimista*. Simultaneidade otimista significa permitindo que os conflitos de simultaneidade ocorrer e reagir adequadamente se eles fazem. Por exemplo, João executa o *Department.aspx* página, cliques o **editar** link para o departamento de histórico e reduz a **orçamento** valor de US $1,000,000.00 a $ 125,000.00. (João administra um departamento concorrente e deseja liberar dinheiro para seu próprio departamento.)
+A alternativa de simultaneidade pessimista é *simultaneidade otimista*. Simultaneidade otimista significa permitir que conflitos de simultaneidade ocorram e responder adequadamente se eles ocorrerem. Por exemplo, João executa o *Department.aspx* página, cliques o **editar** link para o departamento de histórico e reduz a **orçamento** valor de US $1,000,000.00 a $ 125,000.00. (João administra um departamento concorrente e deseja liberar dinheiro para seu próprio departamento.)
 
 [![Image07](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image6.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image5.png)
 
@@ -55,15 +55,15 @@ José clica em **atualização** em primeiro lugar, em seguida, clica Jane **atu
 
 Algumas das ações que você pode executar este cenário incluem o seguinte:
 
-- Você pode controlar qual propriedade de um usuário tiver modificado e atualizar apenas as colunas correspondentes no banco de dados. No cenário de exemplo, nenhum dado for perdido, porque as propriedades diferentes foram atualizadas por dois usuários. Na próxima vez que alguém procura o departamento de histórico, eles verão 1/1/1999 e US $125,000.00. 
+- Controle qual propriedade um usuário modificou e atualize apenas as colunas correspondentes no banco de dados. No cenário de exemplo, nenhum dado é perdido, porque propriedades diferentes foram atualizadas pelos dois usuários. Na próxima vez que alguém procura o departamento de histórico, eles verão 1/1/1999 e US $125,000.00. 
 
     Esse é o comportamento padrão no Entity Framework, e ele pode reduzir significativamente o número de conflitos que podem resultar em perda de dados. No entanto, esse comportamento não evita perda de dados se forem feitas alterações concorrentes a mesma propriedade de uma entidade. Além disso, esse comportamento não é sempre possível; Quando você mapeia procedimentos armazenados para um tipo de entidade, todas as propriedades da entidade são atualizadas quando todas as alterações da entidade são feitas no banco de dados.
-- Você pode deixar a alteração de Jane substituir a alteração de João. Após clica Jane **atualização**, o **orçamento** quantidade volta para $1,000,000.00. Isso é chamado de um *cliente ganha* ou *última no Wins* cenário. (Os valores do cliente têm precedência sobre o que está no repositório de dados.)
-- Você pode impedir a alteração de Jane seja atualizado no banco de dados. Normalmente, poderia exibir uma mensagem de erro, mostrar o estado atual dos dados e permitir que ela insira novamente suas alterações se ainda desejar torná-los. Ainda mais, você pode automatizar o processo salvando sua entrada e dando a ela uma oportunidade para reaplicá-lo sem a necessidade de redigitá-lo. Isso é chamado de um *repositório Wins* cenário. (Os valores de repositório de dados têm precedência sobre os valores enviados pelo cliente.)
+- Você pode deixar a alteração de Jane substituir a alteração de João. Após clica Jane **atualização**, o **orçamento** quantidade volta para $1,000,000.00. Isso é chamado de um cenário *O cliente vence* ou *O último vence*. (Os valores do cliente têm precedência sobre o que está no repositório de dados.)
+- Você pode impedir a alteração de Jane seja atualizado no banco de dados. Normalmente, poderia exibir uma mensagem de erro, mostrar o estado atual dos dados e permitir que ela insira novamente suas alterações se ainda desejar torná-los. Ainda mais, você pode automatizar o processo salvando sua entrada e dando a ela uma oportunidade para reaplicá-lo sem a necessidade de redigitá-lo. Isso é chamado de um cenário *O armazenamento vence*. (Os valores do armazenamento de dados têm precedência sobre os valores enviados pelo cliente.)
 
 ### <a name="detecting-concurrency-conflicts"></a>Detectando conflitos de simultaneidade
 
-No Entity Framework, você pode resolver conflitos manipulando `OptimisticConcurrencyException` exceções que gera o Entity Framework. Para saber quando gerar essas exceções, o Entity Framework deve ser capaz de detectar conflitos. Portanto, você deve configurar o banco de dados e o modelo de dados adequadamente. Algumas opções para ativar a detecção de conflitos incluem o seguinte:
+No Entity Framework, você pode resolver conflitos manipulando `OptimisticConcurrencyException` exceções que gera o Entity Framework. Para saber quando gerar essas exceções, o Entity Framework precisa poder detectar conflitos. Portanto, é necessário configurar o banco de dados e o modelo de dados de forma adequada. Algumas opções para habilitar a detecção de conflitos incluem as seguintes:
 
 - No banco de dados e inclua uma coluna de tabela que pode ser usada para determinar quando uma linha foi alterada. Você pode configurar o Entity Framework para incluir essa coluna no `Where` cláusula SQL `Update` ou `Delete` comandos.
 
@@ -304,6 +304,6 @@ Execute a página e criar um conflito de simultaneidade novamente. Neste momento
 
 Isso conclui a introdução à manipulação de conflitos de simultaneidade. O seguinte tutorial fornece orientação sobre como melhorar o desempenho em um aplicativo web que usa o Entity Framework.
 
->[!div class="step-by-step"]
-[Anterior](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
-[Próximo](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [!div class="step-by-step"]
+> [Anterior](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+> [Próximo](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

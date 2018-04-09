@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
-title: "Noções básicas sobre atualizações de página parcial com o ASP.NET AJAX | Microsoft Docs"
+title: Noções básicas sobre atualizações de página parcial com o ASP.NET AJAX | Microsoft Docs
 author: scottcate
-description: "Talvez o recurso mais visível das extensões AJAX do ASP.NET é a capacidade de fazer atualizações de uma página parcial ou incremental sem fazer um postback completo para t..."
+description: Talvez o recurso mais visível das extensões AJAX do ASP.NET é a capacidade de fazer atualizações de uma página parcial ou incremental sem fazer um postback completo para t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
-ms.openlocfilehash: 1d8d3009df0a264e466d3f7decfb65978d8ae7a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 91a98bf1c9a71ae84c569f7ae40930422cb652e0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>Página parcial Noções básicas sobre atualizações com o ASP.NET AJAX
 ====================
@@ -52,7 +52,7 @@ A capacidade de integrar o processamento parcial da página é integrada ao ASP.
 ## <a name="walkthrough-integrating-partial-rendering-into-an-existing-project"></a>Passo a passo: Integrando o processamento parcial em um projeto existente
 
 
-1. No Microsoft Visual Studio 2008, crie um novo projeto de Site da Web ASP.NET, vá para *arquivo*  *- &gt; novo*  *- &gt; Web Site* e selecionando o Site da Web ASP.NET da caixa de diálogo. Você pode atribuir o nome que você quiser, e você pode instalá-lo para o sistema de arquivos ou em serviços de informações da Internet (IIS).
+1. No Microsoft Visual Studio 2008, crie um novo projeto de Site da Web ASP.NET, vá para <em>arquivo</em>  <em>- &gt; novo</em>  <em>- &gt; Web Site</em> e selecionando o Site da Web ASP.NET da caixa de diálogo. Você pode atribuir o nome que você quiser, e você pode instalá-lo para o sistema de arquivos ou em serviços de informações da Internet (IIS).
 2. Você verá a página padrão em branco com marcação básica do ASP.NET (um formulário do lado do servidor e um `@Page` diretiva). Descartar um rótulo chamado `Label1` e um botão chamado `Button1` para a página de dentro do elemento de formulário. Você pode definir suas propriedades de texto para que você quiser.
 3. No modo Design, clique duas vezes em `Button1` para gerar um manipulador de eventos por trás do código. Dentro do manipulador de eventos, definir `Label1.Text` para você clicou no botão! .
 
@@ -73,11 +73,11 @@ A capacidade de integrar o processamento parcial da página é integrada ao ASP.
 ([Clique para exibir a imagem em tamanho normal](understanding-partial-page-updates-with-asp-net-ajax/_static/image3.png))
 
 
-1. *Problema conhecido:*se você instalar o Visual Studio 2008 em um computador que já tenha o Visual Studio 2005 instalado com as extensões AJAX do ASP.NET 2.0, o Visual Studio 2008 importará os itens da caixa de ferramentas de extensões AJAX. Você pode determinar se esse for o caso, examinando-se a dica de ferramenta de componentes. eles devem dizer versão 3.5.0.0. Se dizem versão 2.0.0.0, em seguida, você importou seus itens antigos da caixa de ferramentas e será necessário importá-las manualmente usando a caixa de diálogo Escolher itens da caixa de ferramentas no Visual Studio. Não será possível adicionar controles de versão 2 por meio do designer.
+1. <em>Problema conhecido:</em>se você instalar o Visual Studio 2008 em um computador que já tenha o Visual Studio 2005 instalado com as extensões AJAX do ASP.NET 2.0, o Visual Studio 2008 importará os itens da caixa de ferramentas de extensões AJAX. Você pode determinar se esse for o caso, examinando-se a dica de ferramenta de componentes. eles devem dizer versão 3.5.0.0. Se dizem versão 2.0.0.0, em seguida, você importou seus itens antigos da caixa de ferramentas e será necessário importá-las manualmente usando a caixa de diálogo Escolher itens da caixa de ferramentas no Visual Studio. Não será possível adicionar controles de versão 2 por meio do designer.
 
-1. Antes do `<asp:Label>` marca começa, criar uma linha em branco e clique duas vezes no controle UpdatePanel na caixa de ferramentas. Observe que um novo `@Register` diretiva está incluída na parte superior da página, indicando que os controles no namespace System.Web.UI devem ser importados usando o `asp:` prefixo.
-2. Arraste o fechamento `</asp:UpdatePanel>` marca após o fim do elemento Button, para que o elemento está bem formado com os controles de rótulo e o botão encapsulados.
-3. Após a abertura `<asp:UpdatePanel>` marca, começar a abrir uma nova marca. Observe que o IntelliSense solicitações duas opções. Nesse caso, crie um `<ContentTemplate>` marca. Certifique-se de quebrar essa marca ao redor de seu rótulo e um botão para que a marcação seja bem formada.
+2. Antes do `<asp:Label>` marca começa, criar uma linha em branco e clique duas vezes no controle UpdatePanel na caixa de ferramentas. Observe que um novo `@Register` diretiva está incluída na parte superior da página, indicando que os controles no namespace System.Web.UI devem ser importados usando o `asp:` prefixo.
+3. Arraste o fechamento `</asp:UpdatePanel>` marca após o fim do elemento Button, para que o elemento está bem formado com os controles de rótulo e o botão encapsulados.
+4. Após a abertura `<asp:UpdatePanel>` marca, começar a abrir uma nova marca. Observe que o IntelliSense solicitações duas opções. Nesse caso, crie um `<ContentTemplate>` marca. Certifique-se de quebrar essa marca ao redor de seu rótulo e um botão para que a marcação seja bem formada.
 
 
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image5.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image4.png)
@@ -116,11 +116,11 @@ Propriedades da marcação habilitada:
 
 | **Nome da propriedade** | **Tipo** | **Descrição** |
 | --- | --- | --- |
-| Redirecionamento de AllowCustomErrors | bool | Especifica se deve usar a seção de erro personalizada do arquivo Web. config para lidar com erros. |
-| Mensagem AsyncPostBackError | Cadeia de caracteres | Obtém ou define a mensagem de erro enviada ao cliente se ocorrer um erro. |
-| Tempo limite de AsyncPostBack | Int32 | Obtém ou define o valor padrão de um tempo em que um cliente deve esperar para concluir a solicitação assíncrona. |
-| Globalização EnableScript | bool | Obtém ou define se globalização de script está habilitada. |
-| Localização EnableScript | bool | Obtém ou define se a localização do script está habilitada. |
+| AllowCustomErrors-Redirect | Bool | Especifica se deve usar a seção de erro personalizada do arquivo Web. config para lidar com erros. |
+| AsyncPostBackError-Message | Cadeia de caracteres | Obtém ou define a mensagem de erro enviada ao cliente se ocorrer um erro. |
+| AsyncPostBack-Timeout | Int32 | Obtém ou define o valor padrão de um tempo em que um cliente deve esperar para concluir a solicitação assíncrona. |
+| EnableScript-Globalization | Bool | Obtém ou define se globalização de script está habilitada. |
+| EnableScript-Localization | Bool | Obtém ou define se a localização do script está habilitada. |
 | ScriptLoadTimeout | Int32 | Determina o número de segundos permitido para carregamento de scripts no cliente |
 | ScriptMode | Enum (Auto, depurar, versão, herdam) | Obtém ou define se deve processar versões de lançamento de scripts |
 | ScriptPath | Cadeia de caracteres | Obtém ou define o caminho raiz para o local dos arquivos de script a ser enviado ao cliente. |
@@ -129,13 +129,13 @@ Propriedades de código:
 
 | **Nome da propriedade** | **Tipo** | **Descrição** |
 | --- | --- | --- |
-| AuthenticationService | Gerenciador de AuthenticationService | Obtém os detalhes sobre o proxy do serviço de autenticação do ASP.NET que será enviada ao cliente. |
-| IsDebuggingEnabled | bool | Obtém se script e depuração de código está habilitada. |
-| IsInAsyncPostback | bool | Obtém se a página está atualmente em uma solicitação de postagem assíncrona. |
-| ProfileService | Gerenciador de ProfileService | Obtém os detalhes sobre o proxy do serviço de criação de perfil do ASP.NET que será enviada ao cliente. |
+| AuthenticationService | AuthenticationService-Manager | Obtém os detalhes sobre o proxy do serviço de autenticação do ASP.NET que será enviada ao cliente. |
+| IsDebuggingEnabled | Bool | Obtém se script e depuração de código está habilitada. |
+| IsInAsyncPostback | Bool | Obtém se a página está atualmente em uma solicitação de postagem assíncrona. |
+| ProfileService | ProfileService-Manager | Obtém os detalhes sobre o proxy do serviço de criação de perfil do ASP.NET que será enviada ao cliente. |
 | Scripts | Coleção&lt;referência de Script&gt; | Obtém uma coleção de referências de script que será enviada ao cliente. |
 | Serviços | Coleção&lt;referência de serviço&gt; | Obtém uma coleção de referências de proxy de serviço Web que será enviada ao cliente. |
-| SupportsPartialRendering | bool | Obtém se o cliente atual oferece suporte ao processamento parcial. Se essa propriedade retorna **false**, todas as solicitações de página serão postagens padrão. |
+| SupportsPartialRendering | Bool | Obtém se o cliente atual oferece suporte ao processamento parcial. Se essa propriedade retorna **false**, todas as solicitações de página serão postagens padrão. |
 
 Métodos públicos de código:
 
@@ -145,14 +145,14 @@ Métodos públicos de código:
 
 Marcação descendentes:
 
-| **Marca** | **Descrição** |
+| **Tag** | **Descrição** |
 | --- | --- |
 | &lt;AuthenticationService&gt; | Fornece detalhes sobre o proxy para o serviço de autenticação do ASP.NET. |
 | &lt;ProfileService&gt; | Fornece detalhes sobre o proxy para a criação de perfil de serviço do ASP.NET. |
 | &lt;Scripts&gt; | Fornece referências de script adicionais. |
-| &lt;ASP: ScriptReference&gt; | Indica uma referência de script específico. |
+| &lt;asp:ScriptReference&gt; | Indica uma referência de script específico. |
 | &lt;Serviço&gt; | Fornece referências adicionais do serviço Web que terão as classes de proxy geradas. |
-| &lt;ASP: ServiceReference&gt; | Indica uma referência de serviço Web específica. |
+| &lt;asp:ServiceReference&gt; | Indica uma referência de serviço Web específica. |
 
 O controle ScriptManager é o núcleo essencial para o ASP.NET AJAX Extensions. Ele fornece acesso à biblioteca de script (incluindo o sistema de tipos abrangentes script do lado do cliente), oferece suporte à renderização parcial e fornece amplo suporte para serviços adicionais do ASP.NET (como autenticação e criação de perfil, mas também outros serviços da Web). O controle ScriptManager também fornece suportam de globalização e localização para os scripts de cliente.
 
@@ -211,12 +211,12 @@ Métodos públicos de código:
 
 Marcação descendentes:
 
-| **Marca** | **Descrição** |
+| **Tag** | **Descrição** |
 | --- | --- |
 | &lt;ContentTemplate&gt; | Especifica a marcação a ser usado para renderizar o resultado da renderização parcial. Filho de &lt;asp: UpdatePanel&gt;. |
-| &lt;Gatilhos&gt; | Especifica uma coleção de  *n*  controles associados ao atualizar este UpdatePanel. Filho de &lt;asp: UpdatePanel&gt;. |
-| &lt;ASP: AsyncPostBackTrigger&gt; | Especifica um gatilho que invoca uma renderização de página parcial para o UpdatePanel determinado. Isso pode ou não ser um controle como um descendente do UpdatePanel em questão. Granulares para o nome do evento. Filho de &lt;gatilhos&gt;. |
-| &lt;ASP: PostBackTrigger&gt; | Especifica um controle que faz com que toda a página Atualizar. Isso pode ou não ser um controle como um descendente do UpdatePanel em questão. Granulares para o objeto. Filho de &lt;gatilhos&gt;. |
+| &lt;Gatilhos&gt; | Especifica uma coleção de *n* controles associados ao atualizar este UpdatePanel. Filho de &lt;asp: UpdatePanel&gt;. |
+| &lt;asp:AsyncPostBackTrigger&gt; | Especifica um gatilho que invoca uma renderização de página parcial para o UpdatePanel determinado. Isso pode ou não ser um controle como um descendente do UpdatePanel em questão. Granulares para o nome do evento. Filho de &lt;gatilhos&gt;. |
+| &lt;asp:PostBackTrigger&gt; | Especifica um controle que faz com que toda a página Atualizar. Isso pode ou não ser um controle como um descendente do UpdatePanel em questão. Granulares para o objeto. Filho de &lt;gatilhos&gt;. |
 
 O `UpdatePanel` controle é o controle que delimita o conteúdo do servidor que levará a parte à funcionalidade de processamento parcial das extensões AJAX. Não há nenhum limite para o número de controles do UpdatePanel que pode estar em uma página, e eles podem ser aninhados. Cada UpdatePanel é isolado, de forma que cada um pode trabalhar de forma independente (você pode ter dois UpdatePanels em execução ao mesmo tempo, de renderização diferentes partes da página, independente de postback da página).
 
@@ -285,13 +285,13 @@ Propriedades da marcação habilitada:
 
 | **Nome da propriedade** | **Tipo** | **Descrição** |
 | --- | --- | --- |
-| AssociatedUpdate PanelID | Cadeia de caracteres | Especifica a ID do UpdatePanel que este UpdateProgress deve relatar. |
-| DisplayAfter | int | Especifica o tempo limite em milissegundos antes que esse controle é exibido depois que a solicitação assíncrona começa. |
-| DataDrivenLayout | bool | Especifica se o progresso é processado dinamicamente. |
+| AssociatedUpdate-PanelID | Cadeia de caracteres | Especifica a ID do UpdatePanel que este UpdateProgress deve relatar. |
+| DisplayAfter | Int | Especifica o tempo limite em milissegundos antes que esse controle é exibido depois que a solicitação assíncrona começa. |
+| DynamicLayout | bool | Especifica se o progresso é processado dinamicamente. |
 
 Marcação descendentes:
 
-| **Marca** | **Descrição** |
+| **Tag** | **Descrição** |
 | --- | --- |
 | &lt;ProgressTemplate&gt; | Contém o modelo de controle definido para o conteúdo que será exibido com este controle. |
 
@@ -313,9 +313,9 @@ O UpdateProgress controle permite que o usuário sabe que ele não está sendo i
 
 Juntas, essas ferramentas ajudam criando uma experiência de usuário avançada e consistente, fazendo o trabalho de servidor menos aparente para o usuário e interromper o fluxo de trabalho menor.
 
-## <a name="bio"></a>Biografia do
+## <a name="bio"></a>Bio
 
 Scott Cate trabalha com tecnologias Microsoft Web desde 1997 e é presidente da myKB.com ([www.myKB.com](http://www.myKB.com)) onde ele é especializada em escrever ASP.NET com base em aplicativos voltados para soluções de Software da Base de dados de Conhecimento. Scott pode ser contatado via email em [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) ou em seu blog [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Avançar](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [!div class="step-by-step"]
+> [Avançar](understanding-asp-net-ajax-updatepanel-triggers.md)

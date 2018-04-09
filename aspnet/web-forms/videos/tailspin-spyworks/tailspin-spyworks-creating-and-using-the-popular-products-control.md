@@ -2,7 +2,7 @@
 uid: web-forms/videos/tailspin-spyworks/tailspin-spyworks-creating-and-using-the-popular-products-control
 title: Tailspin Spyworks - criando e usando o controle de produtos populares | Microsoft Docs
 author: JoeStagner
-description: "Joe Stagner cria e usa o controle de produtos populares Tailspin Spyworks aplicativo de exemplo formulários da Web."
+description: Joe Stagner cria e usa o controle de produtos populares Tailspin Spyworks aplicativo de exemplo formulários da Web.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/26/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-creating-and-using-the-popular-products-control
 msc.type: video
-ms.openlocfilehash: 99543265af180f1d45a5c1acd7bf13928ba399ea
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 28c5a4180c9d045c09cd046e5def8db7a8c13c54
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tailspin-spyworks---creating-and-using-the-popular-products-control"></a>Tailspin Spyworks - criando e usando o controle de produtos populares
 ====================
@@ -24,7 +24,7 @@ por [Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner cria e usa o controle de produtos populares Tailspin Spyworks aplicativo de exemplo formulários da Web.
 
-[&#9654; Assista ao vídeo (minutos 23)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-creating-and-using-the-popular-products-control)
+[&#9654;Assista ao vídeo (minutos 23)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-creating-and-using-the-popular-products-control)
 
->[!div class="step-by-step"]
-[Avançar](tailspin-spyworks-implementing-and-using-the-also-purchased-control.md)
+> [!div class="step-by-step"]
+> [Avançar](tailspin-spyworks-implementing-and-using-the-also-purchased-control.md)

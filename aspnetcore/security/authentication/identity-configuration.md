@@ -1,7 +1,7 @@
 ---
 title: Configurar a identidade do ASP.NET Core
 author: AdrienTorris
-description: "Entender valores padrão de identidade do ASP.NET Core e saber como configurar propriedades de identidade para usar valores personalizados."
+description: Entender valores padrão de identidade do ASP.NET Core e saber como configurar propriedades de identidade para usar valores personalizados.
 manager: wpickett
 ms.author: scaddie
 ms.date: 03/06/2018
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: f8be8a555454a99a3e75b5cd3d42c11e1d7b2b7e
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c254a5eaa94d7502fe3e3f2f49031c5120ecaff2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configure-identity"></a>Configurar identidade
+# <a name="configure-aspnet-core-identity"></a>Configurar a identidade do ASP.NET Core
 
 Identidade do ASP.NET Core usa a configuração padrão para configurações como a política de senha, tempo de bloqueio e configurações de cookie. Essas configurações podem ser substituídas no aplicativo do `Startup` classe.
 
@@ -61,18 +61,15 @@ var result = await _signInManager.PasswordSignInAsync(
 
 Por padrão, a identidade requer que as senhas conter um caractere maiusculo, caractere minúsculo, um dígito e um caractere não alfanumérico. Senhas devem ter pelo menos seis caracteres. [PasswordOptions](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions) podem ser alterados no `Startup.ConfigureServices`.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 ASP.NET Core 2.0 adicionado o [RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireduniquechars) propriedade. Caso contrário, as opções são o mesmo que o ASP.NET Core 1. x.
 
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-37,50-52)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?range=58-65,84)]
 
----
-
+* * *
 [IdentityOptions.Password](/dotnet/api/microsoft.aspnetcore.identity.identityoptions.password) Especifica o [PasswordOptions](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions) com as propriedades mostradas na tabela.
 
 | Propriedade | Descrição | Padrão |
@@ -99,14 +96,15 @@ ASP.NET Core 2.0 adicionado o [RequiredUniqueChars](/dotnet/api/microsoft.aspnet
 
 [IdentityOptions.Tokens](/dotnet/api/microsoft.aspnetcore.identity.identityoptions.tokens) Especifica o [TokenOptions](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions) com as propriedades mostradas na tabela.
 
-| Propriedade | Descrição |
-| -------- | ----------- |
-| [AuthenticatorTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.authenticatortokenprovider) | Obtém ou define o `AuthenticatorTokenProvider` usado para validar entradas de dois fatores com um autenticador. |
-| [ChangeEmailTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.changeemailtokenprovider) | Obtém ou define o `ChangeEmailTokenProvider` usado para gerar tokens usados nos emails de confirmação de alteração de email. |
-| [ChangePhoneNumberTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.changephonenumbertokenprovider) | Obtém ou define o `ChangePhoneNumberTokenProvider` usado para gerar tokens usados ao alterar os números de telefone. |
-| [EmailConfirmationTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.emailconfirmationtokenprovider) | Obtém ou define o provedor de token usado para gerar tokens usados nos emails de confirmação de conta. |
-| [PasswordResetTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.passwordresettokenprovider) | Obtém ou define o [IUserTwoFactorTokenProvider<TUser> ](/dotnet/api/microsoft.aspnetcore.identity.iusertwofactortokenprovider-1) usado para gerar tokens usados nos emails de redefinição de senha. |
-| [ProviderMap](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.providermap) | Usado para construir um [provedor de Token de usuário](/dotnet/api/microsoft.aspnetcore.identity.tokenproviderdescriptor) com a chave usada como o nome do provedor. |
+
+|                                                        Propriedade                                                         |                                                                                      Descrição                                                                                      |
+|-------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     [AuthenticatorTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.authenticatortokenprovider)     |                                       Obtém ou define o `AuthenticatorTokenProvider` usado para validar entradas de dois fatores com um autenticador.                                       |
+|       [ChangeEmailTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.changeemailtokenprovider)       |                                     Obtém ou define o `ChangeEmailTokenProvider` usado para gerar tokens usados nos emails de confirmação de alteração de email.                                     |
+| [ChangePhoneNumberTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.changephonenumbertokenprovider) |                                      Obtém ou define o `ChangePhoneNumberTokenProvider` usado para gerar tokens usados ao alterar os números de telefone.                                      |
+| [EmailConfirmationTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.emailconfirmationtokenprovider) |                                             Obtém ou define o provedor de token usado para gerar tokens usados nos emails de confirmação de conta.                                              |
+|     [PasswordResetTokenProvider](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.passwordresettokenprovider)     | Obtém ou define o [IUserTwoFactorTokenProvider<TUser> ](/dotnet/api/microsoft.aspnetcore.identity.iusertwofactortokenprovider-1) usado para gerar tokens usados nos emails de redefinição de senha. |
+|                    [ProviderMap](/dotnet/api/microsoft.aspnetcore.identity.tokenoptions.providermap)                    |                Usado para construir um [provedor de Token de usuário](/dotnet/api/microsoft.aspnetcore.identity.tokenproviderdescriptor) com a chave usada como o nome do provedor.                 |
 
 ### <a name="user"></a>User
 
@@ -123,45 +121,44 @@ ASP.NET Core 2.0 adicionado o [RequiredUniqueChars](/dotnet/api/microsoft.aspnet
 
 Configurar o cookie do aplicativo no `Startup.ConfigureServices`:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?name=snippet_configurecookie)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?range=58-59,72-80,84)]
 
----
-
+* * *
 [CookieAuthenticationOptions](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions) tem as seguintes propriedades:
 
-| Propriedade | Descrição |
-| -------- | ----------- |
-| [AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath) | Informa o manipulador que deve alterar uma saída *403 Proibido* código de status em um *redirecionamento 302* no caminho especificado.<br><br>O valor padrão é `/Account/AccessDenied`. |
-| [AuthenticationScheme](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.authenticationscheme) | Aplica-se somente a ASP.NET Core 1. x.<br><br> O nome lógico para um esquema de autenticação específico. |
-| [AutomaticAuthenticate](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticauthenticate) | Aplica-se somente a ASP.NET Core 1. x.<br><br> Quando for verdadeiro, autenticação de cookie deve executar em cada solicitação e tente validar e reconstrua qualquer entidade de segurança serializada criado por ele. |
-| [AutomaticChallenge](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticchallenge) | Aplica-se somente a ASP.NET Core 1. x.<br><br> Se for true, o middleware de autenticação manipula desafios automática. Se false, o middleware de autenticação altera somente respostas quando explicitamente indicado pelo `AuthenticationScheme`. |
-| [ClaimsIssuer](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.claimsissuer) | Obtém ou define o emissor deve ser usado para quaisquer declarações que são criadas (herdado de [AuthenticationSchemeOptions](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions)). |
-| [Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain) | O domínio para associar o cookie. |
-| [Cookie.Expiration](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.expiration) | Obtém ou define o tempo de vida do cookie HTTP (não o cookie de autenticação). Esta propriedade é substituída por [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan). Ele não deve ser usado no contexto de CookieAuthentication. |
-| [Cookie.HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) | Indica se um cookie pode ser acessado pelo script do lado do cliente.<br><br>O valor padrão é `true`. |
-| [Cookie.Name](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name) | O nome do cookie.<br><br>O valor padrão é `.AspNetCore.Cookies`. |
-| [Cookie.Path](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path) | O caminho do cookie. |
-| [Cookie.SameSite](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.samesite) | O `SameSite` atributo do cookie.<br><br>O valor padrão é [SameSiteMode.Lax](/dotnet/api/microsoft.aspnetcore.http.samesitemode). |
-| [Cookie.SecurePolicy](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.securepolicy) | O [CookieSecurePolicy](/dotnet/api/microsoft.aspnetcore.http.cookiesecurepolicy) configuração.<br><br>O valor padrão é [CookieSecurePolicy.SameAsRequest](/dotnet/api/microsoft.aspnetcore.http.cookiesecurepolicy). |
-| [CookieDomain](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiedomain) | Aplica-se somente a ASP.NET Core 1. x.<br><br> O nome de domínio em que o cookie é atendido. |
-| [CookieHttpOnly](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiehttponly) | Aplica-se somente a ASP.NET Core 1. x.<br><br> Um sinalizador que indica se o cookie deve ser acessível somente para servidores.<br><br>O valor padrão é `true`. |
-| [CookiePath](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiepath) | Aplica-se somente a ASP.NET Core 1. x.<br><br> Usado para isolar os aplicativos em execução no mesmo nome de host. |
-| [CookieSecure](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiesecure) | Aplica-se somente a ASP.NET Core 1. x.<br><br> Um sinalizador que indica se o cookie criado deve ser limitado para HTTPS (`CookieSecurePolicy.Always`), HTTP ou HTTPS (`CookieSecurePolicy.None`), ou o mesmo protocolo que a solicitação (`CookieSecurePolicy.SameAsRequest`).<br><br>O valor padrão é `CookieSecurePolicy.SameAsRequest`. |
-| [CookieManager](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.cookiemanager) | O componente usado para obter cookies de solicitação ou defini-las na resposta. | [ChunkingCookieManager](/dotnet/api/microsoft.aspnetcore.authentication.cookies.chunkingcookiemanager) |
-| [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.dataprotectionprovider) | Se definido, o provedor usado pelo [CookieAuthenticationHandler](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationhandler) para proteção de dados. |
-| [Descrição](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.description) | Aplica-se somente a ASP.NET Core 1. x.<br><br> Informações adicionais sobre o tipo de autenticação que é disponibilizado para o aplicativo. |
-| [Eventos](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.events) | O manipulador chama métodos no provedor que dê o controle de aplicativo em determinados pontos onde ocorre o processamento. |
-| [EventsType](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.eventstype) | Se definido, o tipo de serviço para obter o `Events` instância em vez da propriedade (herdado de [AuthenticationSchemeOptions](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions)). |
-| [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan) | Controles de quanto tempo o tíquete de autenticação armazenado no cookie permanece válido desde o ponto em que ele é criado.<br><br>O valor padrão é 14 dias. |
-| [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath) | Quando um usuário está autorizado, eles são redirecionados para esse caminho para fazer logon.<br><br>O valor padrão é `/Account/Login`. |
-| [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath) | Quando um usuário é desconectado, eles serão redirecionados a esse caminho.<br><br>O valor padrão é `/Account/Logout`. |
-| [ReturnUrlParameter](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.returnurlparameter) | Determina o nome do parâmetro de cadeia de caracteres de consulta que é acrescentado pelo middleware quando um *401 não autorizado* código de status é alterado para um *redirecionamento 302* até o caminho de logon.<br><br>O valor padrão é `ReturnUrl`. |
-| [SessionStore](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.sessionstore) | Um contêiner opcional no qual armazenar a identidade entre solicitações. |
-| [slidingExpiration](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.slidingexpiration) | Quando for verdadeiro, um novo cookie é emitido com uma nova hora de expiração quando o cookie atual é mais de meio a janela de expiração.<br><br>O valor padrão é `true`. |
-| [TicketDataFormat](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.ticketdataformat) | O `TicketDataFormat` é usado para proteger e desproteger a identidade e outras propriedades que são armazenadas no valor do cookie. |
+
+|                                                               Propriedade                                                               |                                                                                                                                                           Descrição                                                                                                                                                            |
+|--------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       [AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath)       |                                                                 Informa o manipulador que deve alterar uma saída <em>403 Proibido</em> código de status em um <em>redirecionamento 302</em> no caminho especificado.<br><br>O valor padrão é `/Account/AccessDenied`.                                                                  |
+|             [AuthenticationScheme](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.authenticationscheme)              |                                                                                                                Aplica-se somente a ASP.NET Core 1. x.<br><br> O nome lógico para um esquema de autenticação específico.                                                                                                                |
+|            [AutomaticAuthenticate](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticauthenticate)             |                                                                       Aplica-se somente a ASP.NET Core 1. x.<br><br> Quando for verdadeiro, autenticação de cookie deve executar em cada solicitação e tente validar e reconstrua qualquer entidade de segurança serializada criado por ele.                                                                        |
+|               [AutomaticChallenge](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticchallenge)                |                                              Aplica-se somente a ASP.NET Core 1. x.<br><br> Se for true, o middleware de autenticação manipula desafios automática. Se false, o middleware de autenticação altera somente respostas quando explicitamente indicado pelo `AuthenticationScheme`.                                               |
+|               [ClaimsIssuer](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.claimsissuer)               |                                                             Obtém ou define o emissor deve ser usado para quaisquer declarações que são criadas (herdado de [AuthenticationSchemeOptions](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions)).                                                             |
+|                             [Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain)                              |                                                                                                                                             O domínio para associar o cookie.                                                                                                                                             |
+|                         [Cookie.Expiration](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.expiration)                          |                 Obtém ou define o tempo de vida do cookie HTTP (não o cookie de autenticação). Esta propriedade é substituída por [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan). Ele não deve ser usado no contexto de CookieAuthentication.                  |
+|                           [Cookie.HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly)                            |                                                                                                               Indica se um cookie pode ser acessado pelo script do lado do cliente.<br><br>O valor padrão é `true`.                                                                                                                |
+|                               [Cookie.Name](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name)                                |                                                                                                                            O nome do cookie.<br><br>O valor padrão é `.AspNetCore.Cookies`.                                                                                                                            |
+|                               [Cookie.Path](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path)                                |                                                                                                                                                         O caminho do cookie.                                                                                                                                                         |
+|                           [Cookie.SameSite](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.samesite)                            |                                                                                           O `SameSite` atributo do cookie.<br><br>O valor padrão é [SameSiteMode.Lax](/dotnet/api/microsoft.aspnetcore.http.samesitemode).                                                                                            |
+|                       [Cookie.SecurePolicy](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.securepolicy)                        |                                                   O [CookieSecurePolicy](/dotnet/api/microsoft.aspnetcore.http.cookiesecurepolicy) configuração.<br><br>O valor padrão é [CookieSecurePolicy.SameAsRequest](/dotnet/api/microsoft.aspnetcore.http.cookiesecurepolicy).                                                    |
+|                  [CookieDomain](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiedomain)                   |                                                                                                                      Aplica-se somente a ASP.NET Core 1. x.<br><br> O nome de domínio em que o cookie é atendido.                                                                                                                       |
+|                [CookieHttpOnly](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiehttponly)                 |                                                                                       Aplica-se somente a ASP.NET Core 1. x.<br><br> Um sinalizador que indica se o cookie deve ser acessível somente para servidores.<br><br>O valor padrão é `true`.                                                                                        |
+|                    [CookiePath](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiepath)                     |                                                                                                                  Aplica-se somente a ASP.NET Core 1. x.<br><br> Usado para isolar os aplicativos em execução no mesmo nome de host.                                                                                                                   |
+|                  [CookieSecure](/dotnet/api/microsoft.aspnetcore.builder.cookieauthenticationoptions.cookiesecure)                   | Aplica-se somente a ASP.NET Core 1. x.<br><br> Um sinalizador que indica se o cookie criado deve ser limitado para HTTPS (`CookieSecurePolicy.Always`), HTTP ou HTTPS (`CookieSecurePolicy.None`), ou o mesmo protocolo que a solicitação (`CookieSecurePolicy.SameAsRequest`).<br><br>O valor padrão é `CookieSecurePolicy.SameAsRequest`. |
+|          [CookieManager](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.cookiemanager)          |                                                                                                                         O componente usado para obter cookies de solicitação ou defini-las na resposta.                                                                                                                          |
+| [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.dataprotectionprovider) |                                                                             Se definido, o provedor usado pelo [CookieAuthenticationHandler](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationhandler) para proteção de dados.                                                                             |
+|                      [Descrição](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.description)                       |                                                                                                Aplica-se somente a ASP.NET Core 1. x.<br><br> Informações adicionais sobre o tipo de autenticação que é disponibilizado para o aplicativo.                                                                                                |
+|                 [Eventos](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.events)                 |                                                                                                      O manipulador chama métodos no provedor que dê o controle de aplicativo em determinados pontos onde ocorre o processamento.                                                                                                       |
+|                 [EventsType](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.eventstype)                 |                                                            Se definido, o tipo de serviço para obter o `Events` instância em vez da propriedade (herdado de [AuthenticationSchemeOptions](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions)).                                                            |
+|         [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan)         |                                                                                      Controles de quanto tempo o tíquete de autenticação armazenado no cookie permanece válido desde o ponto em que ele é criado.<br><br>O valor padrão é 14 dias.                                                                                       |
+|              [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath)              |                                                                                                       Quando um usuário está autorizado, eles são redirecionados para esse caminho para fazer logon.<br><br>O valor padrão é `/Account/Login`.                                                                                                       |
+|             [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath)             |                                                                                                            Quando um usuário é desconectado, eles serão redirecionados a esse caminho.<br><br>O valor padrão é `/Account/Logout`.                                                                                                            |
+|     [ReturnUrlParameter](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.returnurlparameter)     |                                              Determina o nome do parâmetro de cadeia de caracteres de consulta que é acrescentado pelo middleware quando um <em>401 não autorizado</em> código de status é alterado para um <em>redirecionamento 302</em> até o caminho de logon.<br><br>O valor padrão é `ReturnUrl`.                                              |
+|           [SessionStore](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.sessionstore)           |                                                                                                                              Um contêiner opcional no qual armazenar a identidade entre solicitações.                                                                                                                               |
+|      [slidingExpiration](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.slidingexpiration)      |                                                                           Quando for verdadeiro, um novo cookie é emitido com uma nova hora de expiração quando o cookie atual é mais de meio a janela de expiração.<br><br>O valor padrão é `true`.                                                                           |
+|       [TicketDataFormat](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.ticketdataformat)       |                                                                                                 O `TicketDataFormat` é usado para proteger e desproteger a identidade e outras propriedades que são armazenadas no valor do cookie.                                                                                                  |
+

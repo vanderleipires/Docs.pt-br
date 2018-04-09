@@ -1,7 +1,7 @@
 ---
-title: "Unidade de páginas Razor e integração de teste no núcleo do ASP.NET"
+title: Testes de unidade e a integração de páginas de Razor em ASP.NET Core
 author: guardrex
-description: "Saiba como criar testes de unidade e a integração de aplicativos de páginas Razor."
+description: Saiba como criar testes de unidade e a integração de aplicativos de páginas Razor.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: e4f87a8151e378717aa9198e4629711c4ea6ef77
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: dc5e8651f873b8e86aaa8fdf2527e461bb065424
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Unidade de páginas Razor e integração de teste no núcleo do ASP.NET
+# <a name="razor-pages-unit-and-integration-tests-in-aspnet-core"></a>Testes de unidade e a integração de páginas de Razor em ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex)
 
@@ -32,7 +32,7 @@ Este tópico pressupõe que você tenha uma compreensão básica do Razor págin
 * [Introdução a Páginas do Razor](xref:mvc/razor-pages/index)
 * [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Teste de unidade c# no .NET Core usando xUnit e teste dotnet](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Teste de integração](xref:testing/integration-testing)
+* [Testes de integração](xref:testing/integration-testing)
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/razor-pages-testing/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
@@ -59,9 +59,9 @@ O aplicativo de mensagem é um sistema de mensagem páginas Razor simples com as
 * O aplicativo contém uma camada de acesso de dados (DAL) em sua classe de contexto de banco de dados, `AppDbContext` (*Data/AppDbContext.cs*). Os métodos DAL são marcados como `virtual`, que permite a simulação de métodos para uso em testes.
 * Se o banco de dados está vazio na inicialização do aplicativo, o repositório de mensagens foi inicializado com três mensagens. Essas *propagado mensagens* também são usados no teste.
 
-&#8224;O tópico EF [testes com InMemory](/ef/core/miscellaneous/testing/in-memory), explica como usar um banco de dados na memória para testes com MSTest. Este tópico usa o [xUnit](https://xunit.github.io/) estrutura de teste. Conceitos de teste e implementações de teste em estruturas de teste diferentes são semelhantes, mas não idêntica.
+&#8224;O tópico EF [teste com InMemory](/ef/core/miscellaneous/testing/in-memory), explica como usar um banco de dados na memória para testes com MSTest. Este tópico usa o [xUnit](https://xunit.github.io/) estrutura de teste. Conceitos de teste e implementações de teste em estruturas de teste diferentes são semelhantes, mas não idêntica.
 
-Embora o aplicativo não usa o [padrão repositório](http://martinfowler.com/eaaCatalog/repository.html) e não é um exemplo efetivação do [padrão de unidade de trabalho (UoW)](https://martinfowler.com/eaaCatalog/unitOfWork.html), páginas Razor dá suporte a esses padrões de desenvolvimento. Para obter mais informações, consulte [criar a camada de persistência de infraestrutura](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design), [Implementando o repositório e padrões de unidade de trabalho em um aplicativo ASP.NET MVC](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application), e [teste lógica do controlador](/aspnet/core/mvc/controllers/testing) (o exemplo implementa o padrão de repositório).
+Embora o aplicativo não usa o [padrão repositório](http://martinfowler.com/eaaCatalog/repository.html) e não é um exemplo efetivação do [padrão de unidade de trabalho (UoW)](https://martinfowler.com/eaaCatalog/unitOfWork.html), páginas Razor dá suporte a esses padrões de desenvolvimento. Para obter mais informações, consulte [criar a camada de persistência de infraestrutura](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design), [Implementando o repositório e padrões de unidade de trabalho em um aplicativo ASP.NET MVC](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application), e [controlador de teste lógica de](/aspnet/core/mvc/controllers/testing) (o exemplo implementa o padrão de repositório).
 
 ## <a name="test-app-organization"></a>Organização do aplicativo de teste
 
@@ -231,8 +231,8 @@ O `Post_AddMessageHandler_ReturnsSuccess_WhenMessageTextTooLong` teste `Message`
 ## <a name="see-also"></a>Consulte também
 
 * [Teste de unidade c# no .NET Core usando xUnit e teste dotnet](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Teste de integração](xref:testing/integration-testing)
-* [Testando os controladores](xref:mvc/controllers/testing)
+* [Testes de integração](xref:testing/integration-testing)
+* [Controladores de teste](xref:mvc/controllers/testing)
 * [O código de teste de unidade](/visualstudio/test/unit-test-your-code) (Visual Studio)
 * [xUnit.net](https://xunit.github.io/)
 * [Guia de Introdução ao xUnit.net (.NET Core/ASP.NET núcleos)](https://xunit.github.io/docs/getting-started-dotnet-core)

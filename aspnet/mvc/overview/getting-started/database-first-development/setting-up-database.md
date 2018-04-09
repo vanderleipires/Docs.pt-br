@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/setting-up-database
-title: "Guia de Introdução ao Entity Framework 6 Database First usando MVC 5 | Microsoft Docs"
+title: Guia de Introdução ao Entity Framework 6 Database First usando MVC 5 | Microsoft Docs
 author: tfitzmac
-description: "Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série..."
+description: Usando o MVC, Entity Framework e estrutura do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Este tutorial série...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: cb979333131cc6ac87fd640bf7c96931054a1814
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ae60b5c808d2522c66dc17ccf7d16fefdc65d552
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Guia de Introdução ao Entity Framework 6 Database First usando MVC 5
 ====================
@@ -111,5 +111,5 @@ Uma exibição editável dos dados da tabela é exibida.
 
 Seu banco de dados agora é configurado e preenchido com dados. O seguinte tutorial, você criará um aplicativo web para o banco de dados.
 
->[!div class="step-by-step"]
-[Avançar](creating-the-web-application.md)
+> [!div class="step-by-step"]
+> [Avançar](creating-the-web-application.md)

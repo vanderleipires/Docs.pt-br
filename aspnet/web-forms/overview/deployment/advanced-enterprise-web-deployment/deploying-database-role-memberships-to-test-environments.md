@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
-title: "Implantação de associações de função de banco de dados em ambientes de teste | Microsoft Docs"
+title: Implantação de associações de função de banco de dados em ambientes de teste | Microsoft Docs
 author: jrjlee
-description: "Este tópico descreve como adicionar contas de usuário a funções de banco de dados como parte de uma implantação de solução para um ambiente de teste. Quando você implanta uma solução que contém..."
+description: Este tópico descreve como adicionar contas de usuário a funções de banco de dados como parte de uma implantação de solução para um ambiente de teste. Quando você implanta uma solução que contém...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 226c28622f76e866fba1fc33cf9b9b7a01e5295b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4f635153213b0695d7d4b64d09adefaf8ee8e892
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a>Implantação de associações de função de banco de dados em ambientes de teste
 ====================
@@ -37,9 +37,9 @@ por [Jason Lee](https://github.com/jrjlee)
 > O fator chave é que esta operação deve ser condicional com base no ambiente de destino. Se você estiver implantando em um teste ou um ambiente de produção, você deseja ignorar a operação. Se você estiver implantando em um desenvolvedor ou ambiente de teste, você deseja implantar as associações de função sem intervenção adicional. Este tópico descreve uma abordagem que você pode usar para enfrentar esse desafio.
 
 
-Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo & #x 2014; o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, Windows Serviço do Communication Foundation (WCF) e um projeto de banco de dados.
+Este tópico faz parte de uma série de tutoriais com base em torno de requisitos de implantação corporativa de uma empresa fictícia chamada Fabrikam, Inc. Esta série de tutoriais usa uma solução de exemplo&#x2014;o [solução Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;para representar um aplicativo web com um nível realista de complexidade, incluindo um aplicativo ASP.NET MVC 3, uma comunicação do Windows Serviço Foundation (WCF) e um projeto de banco de dados.
 
-O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos & #x 2014; projeto contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
+O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos de projeto&#x2014;contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
 ## <a name="task-overview"></a>Visão geral da tarefa
 
@@ -94,7 +94,7 @@ Antes de você inserir esse comando em um destino do MSBuild, você precisa cons
 
 - O banco de dados de destino deve existir antes de alterar suas associações de função. Como tal, você precisa executar este script *depois* a implantação de banco de dados.
 - Você precisa incluir uma condição para que o script é executado apenas para ambientes de teste.
-- Se você estiver executando uma implantação "e se" & #x 2014; em outras palavras, se você estiver gerando scripts de implantação, mas não realmente em execução-los & #x 2014; você não deve executar o script SQL.
+- Se você estiver executando uma implantação "e se"&#x2014;em outras palavras, se você estiver gerando scripts de implantação, mas na verdade não executá-los&#x2014;você não deve executar o script SQL.
 
 Se você estiver usando a abordagem de arquivo de projeto de divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), conforme demonstrado pela solução de exemplo Contact Manager, você pode dividir as instruções de compilação para o seu script SQL como esta:
 
@@ -132,6 +132,6 @@ Este tópico descrito uma maneira na qual você pode adicionar usuários de banc
 
 Para obter mais informações sobre como usar VSDBCMD para implantar projetos de banco de dados, consulte [implantar projetos de banco de dados](../web-deployment-in-the-enterprise/deploying-database-projects.md). Para obter orientação sobre como personalizar as implantações de banco de dados para ambientes de destino diferente, consulte [personalizando implantações de banco de dados para vários ambientes](customizing-database-deployments-for-multiple-environments.md). Para obter mais informações sobre como usar arquivos de projeto MSBuild personalizados para controlar o processo de implantação, consulte [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md) e [Noções básicas sobre o processo de compilação](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Para obter mais informações sobre as opções de linha de comando sqlcmd, consulte [utilitário sqlcmd](https://msdn.microsoft.com/library/ms162773.aspx).
 
->[!div class="step-by-step"]
-[Anterior](customizing-database-deployments-for-multiple-environments.md)
-[Próximo](deploying-membership-databases-to-enterprise-environments.md)
+> [!div class="step-by-step"]
+> [Anterior](customizing-database-deployments-for-multiple-environments.md)
+> [Próximo](deploying-membership-databases-to-enterprise-environments.md)

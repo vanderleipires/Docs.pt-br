@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
-title: "Introdução a páginas da Web ASP.NET - publicar um Site usando o WebMatrix | Microsoft Docs"
+title: Introdução a páginas da Web ASP.NET - publicar um Site usando o WebMatrix | Microsoft Docs
 author: tfitzmac
-description: "Este tutorial é a parte final do conjunto de tutorial que apresenta páginas da Web ASP.NET e o Microsoft WebMatrix. Ele discute como publicar seu site t..."
+description: Este tutorial é a parte final do conjunto de tutorial que apresenta páginas da Web ASP.NET e o Microsoft WebMatrix. Ele discute como publicar seu site t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 1e718c92a2f94df50fcf7af6859917746a4982ac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7b9bffac5cc72e1bea3f1b211cc03be2ccb8e499
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Introdução a páginas da Web ASP.NET - publicar um Site usando o WebMatrix
 ====================
@@ -32,7 +32,7 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 
 ## <a name="about-publishing-your-site"></a>Sobre como publicar seu Site
 
-Até agora, você fez em um computador local, incluindo o teste suas páginas de todo o seu trabalho. Para executar o*. cshtml* páginas, você usou o servidor web que é criado para o WebMatrix, ou seja, o IIS Express. Mas, obviamente ninguém pode ver o site que você criou, exceto que você. Para permitir que outros trabalhar com seu site, é necessário publicá-lo com a Internet.
+Até agora, você fez em um computador local, incluindo o teste suas páginas de todo o seu trabalho. Para executar o<em>. cshtml</em> páginas, você usou o servidor web que é criado para o WebMatrix, ou seja, o IIS Express. Mas, obviamente ninguém pode ver o site que você criou, exceto que você. Para permitir que outros trabalhar com seu site, é necessário publicá-lo com a Internet.
 
 A menos que você tenha acesso a um servidor web público já, publicação significa que você precisa ter uma conta com um *plataforma de nuvem* ou um *provedor de hospedagem*. Uma plataforma de nuvem, como o Microsoft Azure fornece infraestrutura sob demanda para seus aplicativos. Um provedor de hospedagem é uma empresa que possui servidores web publicamente acessível e que será alugar você espaço para seu site. Planos de execução de alguns dólares por mês (ou até mesmo livres) de hospedagem para pequenos sites para centenas de dólares por mês para sites de alto volume comercial.
 
@@ -53,7 +53,7 @@ Este tutorial contém quatro seções:
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>Configurar a página padrão
 
-Quando um usuário navega para o endereço base para seu site da web, a página padrão do seu site é exibida ao usuário. Por exemplo, quando Default.htm for definido como a página padrão para o site em www.contoso.com, navegando até **www.contoso.com** é igual a navegação para **www.contoso.com/Default.htm**.
+Quando um usuário navega para o endereço base para seu site da web, a página padrão do seu site é exibida ao usuário. Por exemplo, quando Default.htm for definido como a página padrão para o site em www.contoso.com, navegando até <strong>www.contoso.com</strong> é igual a navegação para <strong>www.contoso.com/Default.htm</strong>.
 
 Atualmente, seu site usa **cshtml** como a página padrão. Esta página é bom para a página padrão, mas neste tutorial você não adicionou qualquer conteúdo para a página para que ele exibirá uma página em branco. Abra default. cshtml e substitua o conteúdo com o código a seguir.
 
@@ -219,5 +219,5 @@ Vá para o site (você pode clicar no link na mensagem de êxito, se ele ainda e
 
 - [Fórum do WebMatrix ASP.NET Web Pages ASP.NET](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages), um ótimo lugar para postar perguntas e obter respostas.
 
->[!div class="step-by-step"]
-[Anterior](layouts.md)
+> [!div class="step-by-step"]
+> [Anterior](layouts.md)

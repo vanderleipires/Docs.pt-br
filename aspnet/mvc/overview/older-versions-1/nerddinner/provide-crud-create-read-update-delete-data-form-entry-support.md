@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
-title: "Fornecer CRUD (criar, ler, atualizar e excluir) suporte de entrada de formulário de dados | Microsoft Docs"
+title: Fornecer CRUD (criar, ler, atualizar e excluir) suporte de entrada de formulário de dados | Microsoft Docs
 author: microsoft
-description: "Etapa 5 mostra como tirar nossa classe DinnersController ainda mais, habilite o suporte para editar, criar e excluir jantares com ele também."
+description: Etapa 5 mostra como tirar nossa classe DinnersController ainda mais, habilite o suporte para editar, criar e excluir jantares com ele também.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 5a314a1761527d8a2273166a743e3deac012a557
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bd906282db5c620476966ffbe09cecb5ade66ee4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>Fornecer CRUD (criar, ler, atualizar e excluir) suporte de entrada de formulário de dados
 ====================
@@ -42,19 +42,19 @@ Adicionamos anteriormente métodos de ação para DinnersController que implemen
 | **URL** | **VERBO** | **Finalidade** |
 | --- | --- | --- |
 | */Dinners/* | OBTER | Exiba uma lista HTML de jantares futuros. |
-| */Dinners/detalhes / [id]* | OBTER | Exibir detalhes sobre uma refeição específico. |
+| */Dinners/Details/[id]* | OBTER | Exibir detalhes sobre uma refeição específico. |
 
-Agora vamos adicionar métodos de ação para implementar as três URLs adicionais: */Dinners/Editar / [id], jantares/criar,*e*/Dinners/excluir / [id]*. Essas URLs serão habilitar o suporte para edição jantares existentes, criando novos jantares e excluindo jantares.
+Agora vamos adicionar métodos de ação para implementar as três URLs adicionais: <em>/Dinners/Editar / [id], jantares/criar,</em>e<em>/Dinners/excluir / [id]</em>. Essas URLs serão habilitar o suporte para edição jantares existentes, criando novos jantares e excluindo jantares.
 
 Podemos oferecerá suporte a interações de verbo HTTP GET e POST HTTP com essas novas URLs. Solicitações HTTP GET para essas URLs exibirá o modo de exibição HTML inicial de dados (um formulário preenchido com os dados de uma refeição no caso de "edit", um formulário em branco no caso de "criar" e uma tela de confirmação de exclusão no caso de "excluir"). Solicitações de HTTP POST para essas URLs serão salvar/atualizar/excluir os dados de uma refeição em nosso DinnerRepository (e daí no banco de dados).
 
 | **URL** | **VERBO** | **Finalidade** |
 | --- | --- | --- |
-| */Dinners/Editar / [id]* | OBTER | Exiba um formulário HTML editável preenchido com dados de uma refeição. |
+| */Dinners/Edit/[id]* | OBTER | Exiba um formulário HTML editável preenchido com dados de uma refeição. |
 | POSTAR | Salve as alterações de formato para uma refeição específica para o banco de dados. |
-| */ Jantares/criar* | OBTER | Exiba um formulário HTML vazio que permite aos usuários definir jantares novo. |
+| */Dinners/Create* | OBTER | Exiba um formulário HTML vazio que permite aos usuários definir jantares novo. |
 | POSTAR | Criar uma novo refeição e salvá-lo no banco de dados. |
-| */Dinners/excluir / [id]* | OBTER | Exibir a tela de confirmação de exclusão. |
+| */Dinners/Delete/[id]* | OBTER | Exibir a tela de confirmação de exclusão. |
 | POSTAR | Exclui uma refeição especificada do banco de dados. |
 
 ### <a name="edit-support"></a>Editar o suporte
@@ -107,7 +107,7 @@ Como alternativa, se você encontrar a instrução "using" abordagem artificial 
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample4.aspx)]
 
-Chamar Html.BeginForm() sem nenhum parâmetro fará com que a saída de um elemento de formulário que faz um HTTP POST para a URL da solicitação atual. Isto é porque nossa exibição de edição gera um  *&lt;da ação de formulário = "/ Editar/jantares/1" método = "post"&gt;*  elemento. Pode ter como alternativa passamos parâmetros explícitos para Html.BeginForm() se quiséssemos post para uma URL diferente.
+Chamar Html.BeginForm() sem nenhum parâmetro fará com que a saída de um elemento de formulário que faz um HTTP POST para a URL da solicitação atual. Isto é porque nossa exibição de edição gera um *&lt;da ação de formulário = "/ Editar/jantares/1" método = "post"&gt;* elemento. Pode ter como alternativa passamos parâmetros explícitos para Html.BeginForm() se quiséssemos post para uma URL diferente.
 
 ##### <a name="htmltextbox-helper-method"></a>Método auxiliar de Html.TextBox()
 
@@ -115,7 +115,7 @@ Nossa visão Edit.aspx usa o método auxiliar Html.TextBox() para saída &lt;tip
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample5.aspx)]
 
-O método Html.TextBox() acima usa um único parâmetro – o que está sendo usado para especificar os atributos de nome/id do &lt;tipo de entrada = "text" /&gt; saída, bem como a propriedade de modelo para preencher o valor da caixa de texto do elemento. Por exemplo, o objeto de uma refeição são passados para o modo de exibição de edição tinha um valor da propriedade "Title" de ".NET futuros", e então nosso método Html.TextBox("Title") chamadas de saída:  *&lt;id de entrada = "Title" nome = "Title" type = "text" value = ".NET futuros" /&gt;* .
+O método Html.TextBox() acima usa um único parâmetro – o que está sendo usado para especificar os atributos de nome/id do &lt;tipo de entrada = "text" /&gt; saída, bem como a propriedade de modelo para preencher o valor da caixa de texto do elemento. Por exemplo, o objeto de uma refeição são passados para o modo de exibição de edição tinha um valor da propriedade "Title" de ".NET futuros", e então nosso método Html.TextBox("Title") chamadas de saída: *&lt;id de entrada = "Title" nome = "Title" type = "text" value = ".NET futuros" /&gt;*.
 
 Como alternativa, podemos usar o primeiro parâmetro Html.TextBox() para especificar o nome/id do elemento e, em seguida, explicitamente passe o valor a ser usado como um segundo parâmetro:
 
@@ -141,7 +141,7 @@ Vamos começar com a adição de um método de ação sobrecarregado "Editar" pa
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample9.cs)]
 
-Quando o atributo [AcceptVerbs] é aplicado a métodos de ação sobrecarregado, o ASP.NET MVC controla automaticamente solicitações de distribuição para o método de ação apropriada dependendo do verbo HTTP de entrada. Solicitações HTTP POST para */Dinners/Editar / [id]* URLs para ir para o método de edição acima, enquanto todas as outras solicitações de verbo HTTP para */Dinners/Editar / [id]*URLs para ir para o primeiro método Editar implementamos (que foi não tem um atributo [AcceptVerbs]).
+Quando o atributo [AcceptVerbs] é aplicado a métodos de ação sobrecarregado, o ASP.NET MVC controla automaticamente solicitações de distribuição para o método de ação apropriada dependendo do verbo HTTP de entrada. Solicitações HTTP POST para <em>/Dinners/Editar / [id]</em> URLs para ir para o método de edição acima, enquanto todas as outras solicitações de verbo HTTP para <em>/Dinners/Editar / [id]</em>URLs para ir para o primeiro método Editar implementamos (que foi não tem um atributo [AcceptVerbs]).
 
 | **Tópico de lado: Por que diferencia por meio de verbos HTTP?** |
 | --- |
@@ -219,7 +219,7 @@ Essa regra CSS é o que causou a nossos elementos de entrada inválidos ser real
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image10.png)
 
-##### <a name="htmlvalidationmessage-helper-method"></a>Método auxiliar de Html.ValidationMessage()
+##### <a name="htmlvalidationmessage-helper-method"></a>Html.ValidationMessage() Helper Method
 
 O método auxiliar Html.ValidationMessage() pode ser usado para gerar a mensagem de erro ModelState associada a uma propriedade de modelo específico:
 
@@ -231,7 +231,7 @@ O método auxiliar Html.ValidationMessage() também oferece suporte a um segundo
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample18.aspx)]
 
-Gera o código acima:  *&lt;abrangem classe = "Erro de validação de campo"&gt;\*&lt;/span&gt;*em vez do texto de erro padrão quando houver um erro para o Propriedade de data doevento.
+Gera o código acima:  <em>&lt;abrangem classe = "Erro de validação de campo"&gt;\*&lt;/span&gt;</em>em vez do texto de erro padrão quando houver um erro para o Propriedade de data doevento.
 
 ##### <a name="htmlvalidationsummary-helper-method"></a>Método auxiliar de Html.ValidationSummary()
 
@@ -427,6 +427,6 @@ Agora temos suporte básico de CRUD (criar, ler, atualizar e excluir) implementa
 
 Agora, vamos ver como podemos pode usar classes ViewData e ViewModel para habilitar a interface do usuário ainda melhores em nosso formulários.
 
->[!div class="step-by-step"]
-[Anterior](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
-[Próximo](use-viewdata-and-implement-viewmodel-classes.md)
+> [!div class="step-by-step"]
+> [Anterior](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+> [Próximo](use-viewdata-and-implement-viewmodel-classes.md)

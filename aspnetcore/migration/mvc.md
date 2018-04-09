@@ -1,7 +1,7 @@
 ---
-title: Migrando do ASP.NET MVC para o ASP.NET Core MVC
+title: Migrar do ASP.NET MVC para o núcleo do ASP.NET MVC
 author: ardalis
-description: "Saiba como começar a migração de um projeto ASP.NET MVC ao MVC do ASP.NET Core."
+description: Saiba como começar a migração de um projeto ASP.NET MVC ao MVC do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: c9c9f63cd635f364d9b2e081dc051a46a44d3e4f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e249be06726b307a1c41a525a132f7e0ab8b50ee
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrando do ASP.NET MVC para o ASP.NET Core MVC
+# <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrar do ASP.NET MVC para o núcleo do ASP.NET MVC
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), e [Scott Addie](https://scottaddie.com)
 
@@ -48,7 +48,7 @@ Criar um novo *vazio* aplicativo web do ASP.NET Core com o mesmo nome que o proj
 
 * Instalar o `Microsoft.AspNetCore.Mvc` e `Microsoft.AspNetCore.StaticFiles` pacotes do NuGet.
 
-  `Microsoft.AspNetCore.Mvc` é a estrutura MVC do ASP.NET Core. `Microsoft.AspNetCore.StaticFiles` é o manipulador de arquivo estático. O tempo de execução do ASP.NET é modular, e você deve optar explicitamente para servir arquivos estáticos (consulte [trabalhando com arquivos estáticos](../fundamentals/static-files.md)).
+  `Microsoft.AspNetCore.Mvc` é a estrutura MVC do ASP.NET Core. `Microsoft.AspNetCore.StaticFiles` é o manipulador de arquivo estático. O tempo de execução do ASP.NET é modular, e você deve optar explicitamente para servir arquivos estáticos (consulte [trabalhar com arquivos estáticos](../fundamentals/static-files.md)).
 
 * Abra o *. csproj* arquivo (com o botão direito no projeto no **Solution Explorer** e selecione **Editar WebApp1.csproj**) e adicione um `PrepareForPublish` destino:
 
@@ -220,7 +220,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 }
 ```
 
-Consulte **usando a página de exceção de desenvolvedor** na [tratamento de erros](../fundamentals/error-handling.md) para obter mais informações.
+Consulte **usando a página de exceção de desenvolvedor** na [tratar erros](../fundamentals/error-handling.md) para obter mais informações.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

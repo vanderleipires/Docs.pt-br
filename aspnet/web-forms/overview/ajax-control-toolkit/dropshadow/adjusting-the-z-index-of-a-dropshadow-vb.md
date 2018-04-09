@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
-title: "Ajustando o índice Z de uma sombra (VB) | Microsoft Docs"
+title: Ajustando o índice Z de uma sombra (VB) | Microsoft Docs
 author: wenz
-description: "O controle de sombra no AJAX Control Toolkit estende um painel com uma sombra. No entanto essa sombra às vezes, está em conflito com outros controles, para insta..."
+description: O controle de sombra no AJAX Control Toolkit estende um painel com uma sombra. No entanto essa sombra às vezes, está em conflito com outros controles, para insta...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 844ea00c2ef1c974aa72c7dd627819b0429d612e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b484dc6bfa6f67bd6b70f7c36c2eb2ec7143edaf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a>Ajustando o índice Z de uma sombra (VB)
 ====================
@@ -27,7 +27,7 @@ por [Christian Wenz](https://github.com/wenz)
 > O controle de sombra no AJAX Control Toolkit estende um painel com uma sombra. No entanto essa sombra às vezes, está em conflito com outros controles, por exemplo, o controle de Menu do ASP.NET. Quando uma entrada de menu é exibido, ele aparece atrás a sombra projetada.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 O controle de sombra no AJAX Control Toolkit estende um painel com uma sombra. No entanto essa sombra às vezes, está em conflito com outros controles, por exemplo, o controle de Menu do ASP.NET. Quando uma entrada de menu é exibido, ele aparece atrás a sombra projetada.
 
@@ -68,6 +68,6 @@ Antes: A entrada de menu não estiver visível ([clique para exibir a imagem em 
 
 Depois: A entrada de menu é exibido ([clique para exibir a imagem em tamanho normal](adjusting-the-z-index-of-a-dropshadow-vb/_static/image6.png))
 
->[!div class="step-by-step"]
-[Anterior](manipulating-dropshadow-properties-from-client-code-cs.md)
-[Próximo](manipulating-dropshadow-properties-from-client-code-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [Próximo](manipulating-dropshadow-properties-from-client-code-vb.md)

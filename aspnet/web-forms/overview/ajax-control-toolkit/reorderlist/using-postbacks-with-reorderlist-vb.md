@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb
 title: Com Postbacks ReorderList (VB) | Microsoft Docs
 author: wenz
-description: "O controle ReorderList no AJAX Control Toolkit fornece uma lista que pode ser reordenada por usuário por meio de arrastar e soltar. Sempre que a lista é reordenada, uma ordem de compra..."
+description: O controle ReorderList no AJAX Control Toolkit fornece uma lista que pode ser reordenada por usuário por meio de arrastar e soltar. Sempre que a lista é reordenada, uma ordem de compra...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 971d060f2ee69e82ec574392a308754e015b0fd0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ef43471f7d8cc94c1a82a368e27acef05f474f81
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-postbacks-with-reorderlist-vb"></a>Usando Postbacks com ReorderList (VB)
 ====================
@@ -69,6 +69,6 @@ Por fim, para ativar a funcionalidade do ASP.NET AJAX e o Kit de ferramentas de 
 
 Cada reordenação dispara um postback ([clique para exibir a imagem em tamanho normal](using-postbacks-with-reorderlist-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[Anterior](drag-and-drop-via-reorderlist-cs.md)
-[Próximo](drag-and-drop-via-reorderlist-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](drag-and-drop-via-reorderlist-cs.md)
+> [Próximo](drag-and-drop-via-reorderlist-vb.md)

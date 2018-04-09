@@ -1,7 +1,7 @@
 ---
-title: "Host ASP.NET Core em um serviço do Windows"
+title: Host ASP.NET Core em um serviço do Windows
 author: tdykstra
-description: "Saiba como hospedar um aplicativo ASP.NET Core em um serviço do Windows."
+description: Saiba como hospedar um aplicativo ASP.NET Core em um serviço do Windows.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f3455e47cfc06a4492dc4e34871b348184c6ecfb
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: b0b27f274de1ca88b20bf582127132527b553ce0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Host ASP.NET Core em um serviço do Windows
 
@@ -40,25 +40,23 @@ Esta seção explica as alterações mínimas necessárias para configurar um pr
 
 1. Instale o pacote NuGet [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).
 
-1. Faça as seguintes alterações em `Program.Main`:
-  
+2. Faça as seguintes alterações em `Program.Main`:
+
    * Chamar `host.RunAsService` em vez de `host.Run`.
-  
+
    * Se o código chama `UseContentRoot`, use um caminho para o local de publicação em vez de `Directory.GetCurrentDirectory()`.
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,12)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,14)]
 
-   ---
+   * * *
 
-1. Publica o aplicativo em uma pasta. Use [dotnet publicar](/dotnet/articles/core/tools/dotnet-publish) ou um [perfil de publicação do Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) que publica uma pasta.
+3. Publica o aplicativo em uma pasta. Use [dotnet publicar](/dotnet/articles/core/tools/dotnet-publish) ou um [perfil de publicação do Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) que publica uma pasta.
 
-1. Teste ao criar e iniciar o serviço.
+4. Teste ao criar e iniciar o serviço.
 
    Abra um shell de comando com privilégios administrativos para usar o [sc.exe](https://technet.microsoft.com/library/bb490995) ferramenta de linha de comando para criar e iniciar um serviço. Se o serviço é chamado MyService, publicados `c:\svc`, e denominado AspNetCoreService, os comandos são:
 
@@ -79,16 +77,13 @@ Esta seção explica as alterações mínimas necessárias para configurar um pr
 
 É mais fácil de testar e depurar quando em execução fora de um serviço, portanto, é comum para adicionar o código que chama `RunAsService` apenas em determinadas condições. Por exemplo, o aplicativo pode ser executado como um aplicativo de console com um `--console` argumento de linha de comando ou se o depurador é anexado:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]
 
----
-
+* * *
 ## <a name="handle-stopping-and-starting-events"></a>Tratar parar e iniciar eventos
 
 Para tratar `OnStarting`, `OnStarted`, e `OnStopping` eventos, faça as seguintes alterações adicionais:
@@ -97,25 +92,26 @@ Para tratar `OnStarting`, `OnStarted`, e `OnStopping` eventos, faça as seguinte
 
    [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=NoLogging)]
 
-1. Criar um método de extensão para `IWebHost` que passa personalizado `WebHostService` para `ServiceBase.Run`:
+2. Criar um método de extensão para `IWebHost` que passa personalizado `WebHostService` para `ServiceBase.Run`:
 
    [!code-csharp[](windows-service/sample/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
-1. Em `Program.Main`, chame o novo método de extensão, `RunAsCustomService`, em vez de `RunAsService`:
+3. Em `Program.Main`, chame o novo método de extensão, `RunAsCustomService`, em vez de `RunAsService`:
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=24)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=26)]
 
-   ---
-
+   * * *
 Se personalizado `WebHostService` código requer que um serviço de injeção de dependência (como um agente de log), ele obtido o `Services` propriedade `IWebHost`:
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
+
+## <a name="proxy-server-and-load-balancer-scenarios"></a>Servidor proxy e cenários de Balanceador de carga
+
+Serviços que interagem com solicitações da Internet ou de uma rede corporativa e estiverem atrás de um proxy ou balanceador de carga podem exigir configuração adicional. Para obter mais informações, consulte [configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer).
 
 ## <a name="acknowledgments"></a>Agradecimentos
 

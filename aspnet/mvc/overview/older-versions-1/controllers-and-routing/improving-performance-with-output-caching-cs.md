@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
-title: "Melhorando o desempenho com saída cache (c#) | Microsoft Docs"
+title: Melhorando o desempenho com saída cache (c#) | Microsoft Docs
 author: microsoft
-description: "Neste tutorial, você aprenderá como você pode melhorar drasticamente o desempenho dos aplicativos da web ASP.NET MVC, aproveitando o cache de saída. Você..."
+description: Neste tutorial, você aprenderá como você pode melhorar drasticamente o desempenho dos aplicativos da web ASP.NET MVC, aproveitando o cache de saída. Você...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 47f0aa976c5876991ccc2406fb8f7402e59ec556
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8958caa5a0ccad669ca861bed261102625be5cb6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="improving-performance-with-output-caching-c"></a>Melhorando o desempenho com a saída de cache (c#)
 ====================
@@ -39,7 +39,7 @@ Habilitar o cache de saída com a adição de um atributo [OutputCache] para uma
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample1.cs)]
 
-Nas versões Beta do ASP.NET MVC, o cache de saída não funciona para uma URL como [http://www.MySite.com/](http://www.mysite.com/). Em vez disso, você deve inserir uma URL como [http://www.MySite.com/Home/Index](http://www.mysite.com/Home/Index). 
+Nas versões Beta do ASP.NET MVC, o cache de saída não funciona para uma URL como [ http://www.MySite.com/ ](http://www.mysite.com/). Em vez disso, você deve inserir uma URL como [ http://www.MySite.com/Home/Index ](http://www.mysite.com/Home/Index). 
 
 Na listagem 1, a saída da ação Index () é armazenado em cache por 10 segundos. Se preferir, você pode especificar uma duração de cache muito mais. Por exemplo, se você deseja armazenar em cache a saída de uma ação do controlador para um dia, em seguida, você pode especificar a duração do cache de 86400 segundos (60 segundos \* 60 minutos \* 24 horas).
 
@@ -132,7 +132,7 @@ A ação de Details() inclui uma propriedade VaryByParam com o valor "Id". Quand
 
 Você pode definir a propriedade VaryByParam com os seguintes valores:
 
-> \*= Crie uma versão diferente de cache sempre que varia de um parâmetro de cadeia de caracteres de consulta ou do formulário.
+> \* = Crie uma versão diferente de cache sempre que varia de um parâmetro de cadeia de caracteres de consulta ou do formulário.
 > 
 > None = nunca criar versões diferentes de cache
 > 
@@ -165,6 +165,6 @@ Se você chamar a ação de Index () exposta pelo controlador na listagem 7 simu
 
 Cache de saída fornece um método fácil de melhorar drasticamente o desempenho de seus aplicativos ASP.NET MVC. Neste tutorial, você aprendeu a usar o atributo [OutputCache] em cache a saída de ações do controlador. Você também aprendeu como modificar as propriedades do atributo [OutputCache] como as propriedades de duração e VaryByParam para modificar como conteúdo é armazenado em cache. Por fim, você aprendeu como definir perfis de cache no arquivo de configuração da web.
 
->[!div class="step-by-step"]
-[Anterior](understanding-action-filters-cs.md)
-[Próximo](adding-dynamic-content-to-a-cached-page-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](understanding-action-filters-cs.md)
+> [Próximo](adding-dynamic-content-to-a-cached-page-cs.md)

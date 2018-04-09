@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
-title: "Noções básicas sobre filtros de ação (c#) | Microsoft Docs"
+title: Noções básicas sobre filtros de ação (c#) | Microsoft Docs
 author: microsoft
-description: "O objetivo deste tutorial é explicar filtros de ação. Um filtro de ação é um atributo que você pode aplicar uma ação do controlador – ou um controlador inteiro..."
+description: O objetivo deste tutorial é explicar filtros de ação. Um filtro de ação é um atributo que você pode aplicar uma ação do controlador – ou um controlador inteiro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 86d5d429d9900d4c04391804598626705e6c88b4
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: d68933297329370e227f524c4b96ed7e259ef833
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-action-filters-c"></a>Noções básicas sobre filtros de ação (c#)
 ====================
@@ -45,7 +45,7 @@ Um filtro de ação é um atributo. Você pode aplicar a maioria dos filtros de 
 
 Por exemplo, o controlador de dados na listagem 1 expõe uma ação chamada `Index()` que retorna a hora atual. Essa ação é decorada com o `OutputCache` filtro de ação. Esse filtro faz com que o valor retornado a ação a ser armazenado em cache por 10 segundos.
 
-**Listando 1 –`Controllers\DataController.cs`**
+**Listando 1 – `Controllers\DataController.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample1.cs)]
 
@@ -103,7 +103,7 @@ Na próxima seção, veremos como você pode implementar cada um desses métodos
 
 Para ilustrar como você pode criar um filtro de ação personalizada, vamos criar um filtro de ação personalizada que registra os estágios de processamento de uma ação do controlador para a janela de saída do Visual Studio. Nosso `LogActionFilter` está contida na listagem 2.
 
-**A listagem 2 –`ActionFilters\LogActionFilter.cs`**
+**A listagem 2 – `ActionFilters\LogActionFilter.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample2.cs)]
 
@@ -117,7 +117,7 @@ Na listagem 2, o `OnActionExecuting()`, `OnActionExecuted()`, `OnResultExecuting
 
 O controlador Home na listagem 3 ilustra como você pode aplicar o filtro de ação de Log para uma classe inteira de controlador. Sempre que qualquer uma das ações expostas pelo controlador Home são invocados – ou o `Index()` método ou o `About()` método – os estágios de processamento que efetuou a ação para a janela de saída do Visual Studio.
 
-**A listagem 3 –`Controllers\HomeController.cs`**
+**A listagem 3 – `Controllers\HomeController.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample3.cs)]
 
@@ -127,6 +127,6 @@ Neste tutorial, você foram introduzidos para filtros de ação do ASP.NET MVC. 
 
 Por fim, você aprendeu como implementar um filtro de ação simples. Criamos um filtro de ação de Log que registra os estágios de processamento de uma ação do controlador para a janela de saída do Visual Studio.
 
->[!div class="step-by-step"]
-[Anterior](asp-net-mvc-routing-overview-cs.md)
-[Próximo](improving-performance-with-output-caching-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](asp-net-mvc-routing-overview-cs.md)
+> [Próximo](improving-performance-with-output-caching-cs.md)

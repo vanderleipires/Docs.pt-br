@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
-title: "Classificação, paginação e filtragem de dados com o modelo de associação e formulários da web | Microsoft Docs"
+title: Classificação, paginação e filtragem de dados com o modelo de associação e formulários da web | Microsoft Docs
 author: tfitzmac
-description: "Esta série de tutoriais demonstra aspectos básicos do uso de associação de modelo com um projeto Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais estreita-..."
+description: Esta série de tutoriais demonstra aspectos básicos do uso de associação de modelo com um projeto Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais estreita-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 94fc84533be5fcbcf0612fcdcabea7dee738d89b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d63ebecadd392877e4cb1d1dffe9db2d1d231190
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>Classificação, paginação e filtragem de dados com o modelo de associação e formulários da web
 ====================
@@ -100,6 +100,6 @@ Neste tutorial, você habilitou a classificação e paginação dos dados. Você
 
 Na próxima [tutorial](integrating-jquery-ui.md) aprimorará a interface do usuário, integrando um widget JQuery UI para o modelo de dados dinâmicos.
 
->[!div class="step-by-step"]
-[Anterior](updating-deleting-and-creating-data.md)
-[Próximo](integrating-jquery-ui.md)
+> [!div class="step-by-step"]
+> [Anterior](updating-deleting-and-creating-data.md)
+> [Próximo](integrating-jquery-ui.md)

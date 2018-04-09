@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
-title: "Introdução ao ASP.NET Web Pages - Noções básicas do formulário HTML | Microsoft Docs"
+title: Introdução ao ASP.NET Web Pages - Noções básicas do formulário HTML | Microsoft Docs
 author: tfitzmac
-description: "Este tutorial mostra os fundamentos de como criar um formulário de entrada e como tratar a entrada do usuário quando você usar as páginas da Web do ASP.NET (Razor). E agora que você..."
+description: Este tutorial mostra os fundamentos de como criar um formulário de entrada e como tratar a entrada do usuário quando você usar as páginas da Web do ASP.NET (Razor). E agora que você...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6f44f74774c2fa6338524987779e15f3940d1830
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>Introdução a páginas da Web ASP.NET - Noções básicas do formulário HTML
 ====================
@@ -88,11 +88,11 @@ O `<form>` elemento contém elementos HTML para serem enviados. (Um erro fácil 
 
 A maioria dos elementos de entrada do usuário são HTML `<input>` elementos. Sua aparência `<input type="type" name="name">,` onde *tipo* indica o tipo de controle de entrada do usuário desejado. Esses elementos são mais comuns:
 
-- Caixa de texto:`<input type="text">`
-- Caixa de seleção:`<input type="check">`
-- Botão de opção:`<input type="radio">`
-- Botão:`<input type="button">`
-- Botão de envio:`<input type="submit">`
+- Caixa de texto: `<input type="text">`
+- Caixa de seleção: `<input type="check">`
+- Botão de opção: `<input type="radio">`
+- botão: `<input type="button">`
+- Botão de envio: `<input type="submit">`
 
 Você também pode usar o `<textarea>` elemento para criar uma caixa de texto de várias linhas e o `<select>` elemento para criar uma lista suspensa ou uma lista de rolagem. (Para mais informações sobre HTML formam elementos, consulte [formulários HTML e a entrada](http://www.w3schools.com/html/html_forms.asp) no site W3Schools.)
 
@@ -169,9 +169,9 @@ Esse bloco define o estágio para criar uma consulta que usa o termo de pesquisa
 > 
 > O `Request` objeto realmente expõe várias subconjuntos. Por exemplo:
 > 
-> - `Request.Form`fornece os valores dos elementos dentro de enviado `<form>` elemento se a solicitação for uma `POST` solicitação.
-> - `Request.QueryString`fornece apenas os valores na cadeia de caracteres de consulta da URL. (Em uma URL como `http://mysite/myapp/page?searchGenre=action&page=2`, o `?searchGenre=action&page=2` seção da URL é a cadeia de caracteres de consulta.)
-> - `Request.Cookies`coleção fornece acesso a cookies que o navegador enviou.
+> - `Request.Form` fornece os valores dos elementos dentro de enviado `<form>` elemento se a solicitação for uma `POST` solicitação.
+> - `Request.QueryString` fornece apenas os valores na cadeia de caracteres de consulta da URL. (Em uma URL como `http://mysite/myapp/page?searchGenre=action&page=2`, o `?searchGenre=action&page=2` seção da URL é a cadeia de caracteres de consulta.)
+> - `Request.Cookies` coleção fornece acesso a cookies que o navegador enviou.
 > 
 > Para obter um valor que você sabe que está no formulário enviado, você pode usar `Request["name"]`. Como alternativa, você pode usar as versões mais específicas `Request.Form["name"]` (para `POST` solicitações) ou `Request.QueryString["name"]` (para `GET` solicitações). Obviamente, *nome* é o nome do item a ser obtido.
 > 
@@ -363,6 +363,6 @@ O seguinte tutorial, você criará uma página que usa um formulário para permi
 - [Cláusula WHERE SQL](http://www.w3schools.com/sql/sql_where.asp) no site W3Schools
 - [Definições de método](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) artigo no site do W3C
 
->[!div class="step-by-step"]
-[Anterior](displaying-data.md)
-[Próximo](entering-data.md)
+> [!div class="step-by-step"]
+> [Anterior](displaying-data.md)
+> [Próximo](entering-data.md)

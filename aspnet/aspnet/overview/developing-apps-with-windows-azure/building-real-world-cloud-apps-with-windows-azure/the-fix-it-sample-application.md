@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
-title: "Apêndice: A correção-aplicativo de exemplo (compilação de aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs"
+title: 'Apêndice: A correção-aplicativo de exemplo (compilação de aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs'
 author: MikeWasson
-description: "Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele..."
+description: Os aplicativos de nuvem criando Real World com livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que ele...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: c98e79bf8e9a1fe0899ed6d952c3e411ca472f7e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9a1fa36b34c4783b101bb27bc6931241e9251e10
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Apêndice: A correção-aplicativo de exemplo (compilação de aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -227,7 +227,7 @@ Há duas maneiras de executar o aplicativo corrigir:
 6. Clique duas vezes no arquivo. sln para iniciar o Visual Studio.
 7. No menu Ferramentas, clique em Gerenciador de biblioteca de pacote e, em seguida, Package Manager Console.
 8. No pacote Manager Console (PMC), clique em Restaurar.
-9. Sair do Visual Studio.
+9. Saia do Visual Studio.
 10. Iniciar o [emulador de armazenamento do Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx).
 11. Reinicie o Visual Studio, abrir o arquivo de solução que você encerrou na etapa anterior.
 12. Verifique se que o projeto FixIt está definido como o projeto de inicialização e, em seguida, pressione CTRL + F5 para executar o projeto.
@@ -245,18 +245,18 @@ Há duas maneiras de executar o aplicativo corrigir:
 
     Usando o Visual Studio 2013:
 
-    1. Pressione F5 para executar o projeto FixIt.
-    2. Em **Solution Explorer**, com o botão direito no projeto MyFixItCloudService e, em seguida, clique em **depurar** -- **iniciar uma nova instância**.
+   1. Pressione F5 para executar o projeto FixIt.
+   2. Em **Solution Explorer**, com o botão direito no projeto MyFixItCloudService e, em seguida, clique em **depurar** -- **iniciar uma nova instância**.
 
-    Usando o Visual Studio 2013 Express para Web:
+      Usando o Visual Studio 2013 Express para Web:
 
-    1. No Gerenciador de soluções, a solução FixIt e selecione **propriedades**.
-    2. Selecione **vários projetos de inicialização**...
-    3. No **ação** selecione da lista suspensa em MyFixIt e MyFixItCloudService, **iniciar**.
-    4. Clique em **OK**.
-    5. Pressione F5 para executar os dois projetos.
+   3. No Gerenciador de soluções, a solução FixIt e selecione **propriedades**.
+   4. Selecione **vários projetos de inicialização**...
+   5. No **ação** selecione da lista suspensa em MyFixIt e MyFixItCloudService, **iniciar**.
+   6. Clique em **OK**.
+   7. Pressione F5 para executar os dois projetos.
 
-    Quando você executar o projeto MyFixItCloudService, o Visual Studio inicia o emulador de computação do Azure. Dependendo da configuração do firewall, você precisará permitir que o emulador através do firewall.
+      Quando você executar o projeto MyFixItCloudService, o Visual Studio inicia o emulador de computação do Azure. Dependendo da configuração do firewall, você precisará permitir que o emulador através do firewall.
 
 <a id="deploybase"></a>
 ## <a name="how-to-deploy-the-base-app-to-azure-app-service-web-apps-by-using-the-windows-powershell-scripts"></a>Como implantar o aplicativo base para aplicativos de Web do serviço de aplicativo do Azure usando os scripts do Windows PowerShell
@@ -285,7 +285,7 @@ Essas instruções presumem que você já tiver baixado e executar a solução c
     Essas credenciais expirarem após um período de tempo e você precisa executar novamente o `Add-AzureAccount` cmdlet. Como este livro eletrônico está sendo gravado, o limite de tempo antes de expirarem credenciais é 12 horas.
 5. Se você tiver várias assinaturas, use o cmdlet Select-AzureSubscription para especificar a assinatura que você deseja criar o ambiente de teste.
 6. Importar um certificado de gerenciamento para a mesma assinatura do Azure usando o `Get-AzurePublishSettingsFile` e `Import-AzurePublishSettingsFile` cmdlets. O primeiro desses cmdlets baixa um arquivo de certificado e, no segundo, você especificar o local do arquivo para importá-lo. > [!IMPORTANT]
- > Manter o arquivo baixado em um local seguro ou excluí-lo quando você tiver concluído, porque ele contém um certificado que pode ser usado para gerenciar os serviços do Azure.
+   > Manter o arquivo baixado em um local seguro ou excluí-lo quando você tiver concluído, porque ele contém um certificado que pode ser usado para gerenciar os serviços do Azure.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample22.cmd)]
 
@@ -399,5 +399,5 @@ No MyFixItCloudService\ServiceConfiguration.Cloud.cscfg, substitua os mesmos doi
 
 Agora você está pronto para implantar o serviço de nuvem. No Gerenciador de soluções, clique com botão direito no projeto MyFixItCloudService e selecione **publicar**. Para obter mais informações, consulte "[implantar o aplicativo no Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", que está na parte 2 de [este tutorial](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
 
->[!div class="step-by-step"]
-[Anterior](more-patterns-and-guidance.md)
+> [!div class="step-by-step"]
+> [Anterior](more-patterns-and-guidance.md)

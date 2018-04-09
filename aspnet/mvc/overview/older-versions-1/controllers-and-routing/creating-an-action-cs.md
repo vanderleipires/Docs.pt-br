@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-cs
-title: "Criando uma ação (c#) | Microsoft Docs"
+title: Criando uma ação (c#) | Microsoft Docs
 author: microsoft
-description: "Saiba como adicionar uma nova ação a um controlador MVC do ASP.NET. Saiba mais sobre os requisitos para um método de uma ação."
+description: Saiba como adicionar uma nova ação a um controlador MVC do ASP.NET. Saiba mais sobre os requisitos para um método de uma ação.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8b751dc7e34951be33e7c27a3429c383a3e1e1c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c6145902db59b07e96a5563b138c1a6323946b2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-action-c"></a>Criando uma ação (c#)
 ====================
@@ -64,6 +64,6 @@ Se você tentar chamar a ação de controlador CompanySecrets() digitando /Work/
 
 **Figura 01**: invocando um método NonAction ([clique para exibir a imagem em tamanho normal](creating-an-action-cs/_static/image2.png))
 
->[!div class="step-by-step"]
-[Anterior](creating-a-controller-cs.md)
-[Próximo](asp-net-mvc-routing-overview-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-a-controller-cs.md)
+> [Próximo](asp-net-mvc-routing-overview-vb.md)

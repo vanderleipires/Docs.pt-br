@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
-title: "Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: transformações do arquivo Web. config - 3 de 12 | Microsoft Docs"
+title: 'Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: transformações do arquivo Web. config - 3 de 12 | Microsoft Docs'
 author: tdykstra
-description: "Esta série de tutoriais mostra como implantar um ASP.NET (publicar) projeto de aplicativo web que inclui um banco de dados do SQL Server Compact usando Visual Stu..."
+description: Esta série de tutoriais mostra como implantar um ASP.NET (publicar) projeto de aplicativo web que inclui um banco de dados do SQL Server Compact usando Visual Stu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ed78b55d2b0315cf428f137c56ad85b29a95e1c5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 86eb74ca35e8804978127412e2276eeee9d615dc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: transformações do arquivo Web. config - 3 de 12
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 [Baixe o projeto Starter](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
@@ -29,7 +29,7 @@ Por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Este tutorial mostra como automatizar o processo de alteração de *Web. config* arquivo quando você o implantar em ambientes de destino diferente. A maioria dos aplicativos têm configurações de *Web. config* arquivo deve ser diferente quando o aplicativo é implantado. Automatizando o processo de fazer essas alterações mantém você precise fazê-las manualmente sempre que você implanta, qual seria tedioso e propenso a erros.
 
@@ -136,7 +136,7 @@ Essa transformação mesmo é no teste e produção transformar arquivos porque 
 
 ## <a name="setting-connection-strings"></a>Cadeias de caracteres de Conexão de configuração
 
-Na maioria dos casos você não precisa configurar transformações de cadeia de caracteres de conexão, porque você pode especificar cadeias de caracteres de conexão no perfil de publicação. Mas há uma exceção quando você estiver implantando um banco de dados do SQL Server Compact e você estiver usando migrações do Entity Framework Code First para atualizar o banco de dados no servidor de destino. Para este cenário, você precisa especificar uma cadeia de caracteres de conexão adicionais que será usada no servidor para atualizar o esquema de banco de dados. Para configurar essa transformação, adicione um  **&lt;connectionStrings&gt;**  elemento imediatamente após a abertura  **&lt;configuração&gt;**  marca no o *Web.Test.config* e *Web.Production.config* arquivos de transformação:
+Na maioria dos casos você não precisa configurar transformações de cadeia de caracteres de conexão, porque você pode especificar cadeias de caracteres de conexão no perfil de publicação. Mas há uma exceção quando você estiver implantando um banco de dados do SQL Server Compact e você estiver usando migrações do Entity Framework Code First para atualizar o banco de dados no servidor de destino. Para este cenário, você precisa especificar uma cadeia de caracteres de conexão adicionais que será usada no servidor para atualizar o esquema de banco de dados. Para configurar essa transformação, adicione um **&lt;connectionStrings&gt;** elemento imediatamente após a abertura **&lt;configuração&gt;** marca no o *Web.Test.config* e *Web.Production.config* arquivos de transformação:
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 
@@ -144,10 +144,10 @@ O `Transform` atributo especifica que essa cadeia de caracteres de conexão ser�
 
 Você especificou agora todos os *Web. config* transformações que você precisa para implantar o aplicativo Contoso University para teste e produção. O tutorial a seguir, você vai ter cuidado das tarefas de configuração de implantação que requerem a definição de propriedades do projeto.
 
-## <a name="more-information"></a>Mais informações
+## <a name="more-information"></a>Mais Informações
 
 Para obter mais informações sobre os tópicos abordados por este tutorial, consulte o cenário de transformação do Web. config em [mapa de conteúdo de implantação do ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx).
 
->[!div class="step-by-step"]
-[Anterior](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
-[Próximo](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)
+> [!div class="step-by-step"]
+> [Anterior](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [Próximo](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)

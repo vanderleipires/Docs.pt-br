@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
-title: "Implantando aplicativos da Web em cenários corporativos usando o Visual Studio 2010 | Microsoft Docs"
+title: Implantando aplicativos da Web em cenários corporativos usando o Visual Studio 2010 | Microsoft Docs
 author: jrjlee
-description: "Esse conjunto de tutoriais descreve ferramentas e técnicas que você pode usar para implantar aplicativos da web em vários cenários corporativos. Explica como fazer o melhor uso..."
+description: Esse conjunto de tutoriais descreve ferramentas e técnicas que você pode usar para implantar aplicativos da web em vários cenários corporativos. Explica como fazer o melhor uso...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: 99bab371dd34b30f3554843e49bbec7f57c3f96c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 921b1ccd8a1f2109a51f3f75149588422fefb91d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a>Implantando aplicativos da Web em cenários corporativos usando o Visual Studio 2010
 ====================
@@ -36,7 +36,7 @@ por [Jason Lee](https://github.com/jrjlee)
 > > Enquanto esses tutoriais descrevem o uso do TFS, como um servidor de CI, a orientação é facilmente adaptada para qualquer servidor de CI. Não é necessário um conhecimento detalhado do TFS para compreender e aproveitar os tutoriais.
 > 
 > 
-> Para obter uma tradução italiana destes tutoriais, visite [http://www.lucamorelli.it](http://www.lucamorelli.it).
+> Para obter uma tradução italiana destes tutoriais, visite [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
 ## <a name="about-the-authors"></a>Sobre os autores
@@ -54,7 +54,7 @@ Esse conjunto de tutoriais é para desenvolvedores de aplicativos web ASP.NET e 
 Para seguir a instruções passo a passo e executar as tarefas que descrevem esses tutoriais, você precisará instalar esse software em seu computador de desenvolvimento:
 
 - Visual Studio 2010 Premium ou Ultimate Edition com Service Pack 1
-- .NET framework 4.0
+- .NET Framework 4.0
 - .NET framework 3.5 com Service Pack 1
 - ASP.NET MVC 3.0
 - O IIS 7.5 Express
@@ -80,5 +80,5 @@ A série inclui quatro conjuntos de tutorial. Cada uma se concentra nos diferent
 
 Esse conjunto de tutoriais usa uma solução de exemplo com um nível realista de complexidade, junto com um cenário de implantação da empresa fictícia, para fornecer uma implementação de referência e conceder a tarefas e instruções passo a passo um contexto de comum. O próximo tópico, [implantação de Web corporativa: Visão geral do cenário](enterprise-web-deployment-scenario-overview.md), apresenta o cenário e a solução de exemplo. A partir daí, você pode trabalhar nos tutoriais e tópicos que melhor atendem às suas necessidades.
 
->[!div class="step-by-step"]
-[Avançar](enterprise-web-deployment-scenario-overview.md)
+> [!div class="step-by-step"]
+> [Avançar](enterprise-web-deployment-scenario-overview.md)

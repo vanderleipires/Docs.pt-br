@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
-title: "Noções básicas sobre a localização do ASP.NET AJAX | Microsoft Docs"
+title: Noções básicas sobre a localização do ASP.NET AJAX | Microsoft Docs
 author: scottcate
-description: "A localização é o processo de design e integrar o suporte para um idioma específico e a cultura em um aplicativo ou um componente de aplicativo. O Mic..."
+description: A localização é o processo de design e integrar o suporte para um idioma específico e a cultura em um aplicativo ou um componente de aplicativo. O Mic...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: 5b801586ea77af78284f780fe47fe09cafb984af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 565b0294f57b784bc592b286b3d8b28504110415
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-localization"></a>Noções básicas sobre a localização do ASP.NET AJAX
 ====================
@@ -63,10 +63,10 @@ A tabela a seguir resume o convenções com exemplos de nomenclatura de arquivo:
 
 | Filename | Significado |
 | --- | --- |
-| Script. js | Um script de cultura neutra de versão de lançamento. |
-| Script.Debug.js | Um script de cultura neutra de versão de depuração. |
-| Script.en US.js | Um versão em inglês, Estados Unidos script de liberação. |
-| Script.Debug.es CO.js | Um script de Colúmbia Britânica espanhol, versão de depuração. |
+| Script.js | Um script de cultura neutra de versão de lançamento. |
+| Script.debug.js | Um script de cultura neutra de versão de depuração. |
+| Script.en-US.js | Um versão em inglês, Estados Unidos script de liberação. |
+| Script.debug.es-CO.js | Um script de Colúmbia Britânica espanhol, versão de depuração. |
 
 ## <a name="walkthrough-create-an-localized-embedded-script"></a>Passo a passo: Criar um Script inserido, localizado
 
@@ -149,10 +149,10 @@ Como aplicativos web crescem para alcançar um público maior, a necessidade de 
 
 O .NET Framework intrinsecamente dá suporte a uma estrutura de localização avançada, utilizando assemblies satélite e arquivos de recursos (. resx) XML para apresentar uma maneira uniforme para pesquisar imagens e cadeias de caracteres de recurso. O ASP.NET AJAX Extensions, incluindo o Microsoft AJAX Framework e a biblioteca de Script do Microsoft AJAX, oferecem suporte para este modelo de programação em código do lado do cliente, habilitando pesquisas de cadeia de caracteres de recurso fácil. Assemblies satélites suportam à inclusão automática de recursos de script (arquivos. js real) por meio de ScriptResource desde que os nomes de arquivo seguem um determinado esquema de nomenclatura. Com esse suporte, o ASP.NET AJAX Extensions simplificar a localização dos scripts e globalização de aplicativos.
 
-## <a name="bio"></a>*Biografia do*
+## <a name="bio"></a>*Bio*
 
 Scott Cate trabalha com tecnologias Microsoft Web desde 1997 e é presidente da myKB.com ([www.myKB.com](http://www.myKB.com)) onde ele é especializada em escrever ASP.NET com base em aplicativos voltados para soluções de Software da Base de dados de Conhecimento. Scott pode ser contatado via email em [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) ou em seu blog [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[Anterior](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
-[Próximo](understanding-asp-net-ajax-web-services.md)
+> [!div class="step-by-step"]
+> [Anterior](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+> [Próximo](understanding-asp-net-ajax-web-services.md)
