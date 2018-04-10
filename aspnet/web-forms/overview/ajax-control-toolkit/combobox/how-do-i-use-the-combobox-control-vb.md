@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 title: Como usar o controle ComboBox? (VB) | Microsoft Docs
 author: microsoft
-description: "Caixa de combinação é um controle AJAX do ASP.NET que combina a flexibilidade de uma caixa de texto com uma lista de opções do qual os usuários podem escolher."
+description: Caixa de combinação é um controle AJAX do ASP.NET que combina a flexibilidade de uma caixa de texto com uma lista de opções do qual os usuários podem escolher.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 54e36cf275dcc4b85253dc3b8bb5b0dbb027af77
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e42844e326cb190502a51c5a85195b4752d7e827
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-combobox-control-vb"></a>Como usar o controle ComboBox? (VB)
 ====================
@@ -172,5 +172,5 @@ Você pode usar a propriedade ComboBox AutoCompleteMode para especificar o que a
 
 Neste tutorial, você aprendeu a usar o controle ComboBox para exibir um conjunto fixo de itens. Podemos associado o controle de caixa de combinação para um conjunto de itens de estático e para uma tabela de banco de dados. Por fim, você aprendeu como modificar o comportamento de ComboBox definindo suas propriedades DropDownStyle DropDownList e AutoCompleteMode.
 
->[!div class="step-by-step"]
-[Anterior](how-do-i-use-the-combobox-control-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](how-do-i-use-the-combobox-control-cs.md)

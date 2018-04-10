@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
-title: "Visão geral (c#) de exibições do ASP.NET MVC | Microsoft Docs"
+title: Visão geral (c#) de exibições do ASP.NET MVC | Microsoft Docs
 author: StephenWalther
-description: "O que é um modo de exibição do ASP.NET MVC e como ela difere de uma página HTML? Neste tutorial, Stephen Walther apresenta exibições e demonstra como você pode t..."
+description: O que é um modo de exibição do ASP.NET MVC e como ela difere de uma página HTML? Neste tutorial, Stephen Walther apresenta exibições e demonstra como você pode t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9de095b0621af3b6166a2e1cbcb1c63c26a88aa2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5217994168ebac32a4a9754ae09e63e120804813
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-views-overview-c"></a>O ASP.NET MVC exibições visão geral (c#)
 ====================
@@ -45,7 +45,7 @@ Você pode chamar a primeira ação, ação Index (), digitando a URL a seguir n
 
 Você pode chamar a segunda ação, a ação de Details(), digitando este endereço no navegador:
 
--Home/detalhes
+/Home/Details
 
 A ação Index () retorna uma exibição. A maioria das ações que você criar retornará modos de exibição. No entanto, uma ação pode retornar outros tipos de resultados da ação. Por exemplo, a ação de Details() retorna um RedirectToActionResult que redireciona a solicitação de entrada para a ação Index ().
 
@@ -84,7 +84,7 @@ Por exemplo, o modo de exibição na lista 2 exibe a data e hora atuais.
 
 Observe que o corpo da página HTML na listagem 2 contém o script a seguir:
 
-&lt;% Response.Write(DateTime.Now); em %&gt;
+&lt;% Response.Write(DateTime.Now);%&gt;
 
 Use os delimitadores de script &lt;% e %&gt; para marcar o início e término de um script. Esse script é gravado em c#. Ele exibe a data e hora atuais chamando o método Response para renderizar o conteúdo para o navegador. Os delimitadores de script &lt;% e %&gt; pode ser usada para executar uma ou mais instruções.
 
@@ -102,7 +102,7 @@ Para tornar mais fácil de adicionar conteúdo a um modo de exibição, você po
 
 Por exemplo, a exibição na listagem 4 aproveita os auxiliares HTML três – os auxiliares BeginForm(), TextBox() e Password() – para gerar um logon de formam (consulte a Figura 1).
 
-**A listagem 4 – \Views\Home\Login.aspx**
+**Listing 4 -- \Views\Home\Login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample4.aspx)]
 
@@ -118,7 +118,7 @@ Observe que você use os delimitadores de script &lt;% = e %&gt; ao chamar o Htm
 
 Usar métodos auxiliares HTML é opcional. Elas facilitam sua vida, reduzindo a quantidade de HTML e script que você precisa para escrever. O modo de exibição na listagem 5 renderiza a mesma forma exata que o modo de exibição na listagem 4 sem usar auxiliares HTML.
 
-**Listagem 5 - \Views\Home\Login.aspx**
+**Listing 5 -- \Views\Home\Login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample5.aspx)]
 
@@ -152,5 +152,5 @@ Você também tem a opção de passar os dados de exibição fortemente tipada d
 
 Este tutorial fornecida uma breve introdução ao ASP.NET MVC modos de exibição, dados de exibição e auxiliares HTML. A primeira seção, você aprendeu a adicionar novos modos de exibição ao seu projeto. Você aprendeu que você deve adicionar um modo de exibição para a pasta correta para chamá-lo de um controlador específico. Em seguida, abordamos o tópico de auxiliares HTML. Você aprendeu como auxiliares HTML permitem que você gerar facilmente o conteúdo HTML padrão. Por fim, você aprendeu como tirar proveito dos dados de exibição para passar dados de um controlador para um modo de exibição.
 
->[!div class="step-by-step"]
-[Avançar](creating-custom-html-helpers-cs.md)
+> [!div class="step-by-step"]
+> [Avançar](creating-custom-html-helpers-cs.md)

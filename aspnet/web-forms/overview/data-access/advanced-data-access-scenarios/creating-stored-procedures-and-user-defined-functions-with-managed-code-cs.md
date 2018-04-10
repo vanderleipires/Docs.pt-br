@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
-title: "Criar procedimentos armazenados e funções definidas pelo usuário com o código (c#) gerenciado | Microsoft Docs"
+title: Criar procedimentos armazenados e funções definidas pelo usuário com o código (c#) gerenciado | Microsoft Docs
 author: rick-anderson
-description: "Microsoft SQL Server 2005 integra-se com o .NET Common Language Runtime para permitir que os desenvolvedores criem objetos de banco de dados por meio de código gerenciado. Este tutorial..."
+description: Microsoft SQL Server 2005 integra-se com o .NET Common Language Runtime para permitir que os desenvolvedores criem objetos de banco de dados por meio de código gerenciado. Este tutorial...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6daa0dec764e2e9248cac97ba7d7b6df0da3208f
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 5a860c8ab6ad7ff04de2175900491d532db782d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>Criando procedimentos armazenados e funções definidas pelo usuário com código gerenciado (c#)
 ====================
@@ -31,7 +31,7 @@ por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Bancos de dados como s do Microsoft SQL Server 2005 usam o [Transact-Structured (linguagem T-SQL)](http://en.wikipedia.org/wiki/Transact-SQL) para inserir, modificar e recuperar dados. A maioria dos sistemas de banco de dados incluem construções para agrupamento de uma série de instruções SQL que pode ser executado como uma unidade única e reutilizável. Procedimentos armazenados são um exemplo. Outra vantagem é *funções definidas pelo usuário*(UDFs), uma construção que vamos examinar mais detalhadamente na etapa 9.
 
-Essencialmente, o SQL foi projetado para trabalhar com conjuntos de dados. O `SELECT`, `UPDATE`, e `DELETE` instruções inerentemente se aplicam a todos os registros na tabela correspondente e são limitadas somente por seus `WHERE` cláusulas. Ainda há muitos recursos de linguagem projetados para trabalhar com um registro de cada vez e para a manipulação de dados escalares. [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553) permitem que um conjunto de registros em loop por meio de um de cada vez. Funções de manipulação de como cadeia de caracteres `LEFT`, `CHARINDEX`, e `PATINDEX` funcionam com dados escalares. SQL também inclui instruções de fluxo de controle como `IF` e `WHILE`.
+Essencialmente, o SQL foi projetado para trabalhar com conjuntos de dados. O `SELECT`, `UPDATE`, e `DELETE` instruções inerentemente se aplicam a todos os registros na tabela correspondente e são limitadas somente por seus `WHERE` cláusulas. Ainda há muitos recursos de linguagem projetados para trabalhar com um registro de cada vez e para a manipulação de dados escalares. [`CURSOR` s](http://www.sqlteam.com/item.asp?ItemID=553) permitem que um conjunto de registros em loop por meio de um de cada vez. Funções de manipulação de como cadeia de caracteres `LEFT`, `CHARINDEX`, e `PATINDEX` funcionam com dados escalares. SQL também inclui instruções de fluxo de controle como `IF` e `WHILE`.
 
 Antes do Microsoft SQL Server 2005, procedimentos armazenados e UDFs só podem ser definidos como uma coleção de instruções T-SQL. No entanto, o SQL Server 2005, foi projetado para fornecer integração com o [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), que é o tempo de execução usado por todos os assemblies do .NET. Consequentemente, os procedimentos armazenados e UDFs em um banco de dados do SQL Server 2005 podem ser criados usando código gerenciado. Ou seja, você pode criar um procedimento armazenado ou UDF como um método na classe c#. Isso permite que esses procedimentos armazenados e UDFs para utilizar a funcionalidade do .NET Framework e de suas próprias classes personalizadas.
 
@@ -424,8 +424,8 @@ Agora que o UDF gerenciado tiver sido criado, você está pronto para implantá-
 
 Depois de ter implantado o projeto, retorne ao SQL Server Management Studio e atualize a pasta de funções com valor escalar. Agora você deve ver duas entradas:
 
-- `dbo.udf_ComputeInventoryValue`-T-SQL UDF criado na etapa 9, e
-- `dbo.udf ComputeInventoryValue_Managed`-gerenciado UDF criado na etapa 10 que acabou de ser implantado.
+- `dbo.udf_ComputeInventoryValue` -T-SQL UDF criado na etapa 9, e
+- `dbo.udf ComputeInventoryValue_Managed` -gerenciado UDF criado na etapa 10 que acabou de ser implantado.
 
 Para testar este UDF gerenciado, execute a seguinte consulta no Management Studio:
 
@@ -569,12 +569,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisor levar para este tutorial foi S ren Jacob Lauritsen. Além de analisar este artigo, S ren também criou o projeto de Visual c# Express Edition incluído neste download do artigo s para compilar manualmente os objetos de banco de dados gerenciados. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[Anterior](debugging-stored-procedures-cs.md)
-[Próximo](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](debugging-stored-procedures-cs.md)
+> [Próximo](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)

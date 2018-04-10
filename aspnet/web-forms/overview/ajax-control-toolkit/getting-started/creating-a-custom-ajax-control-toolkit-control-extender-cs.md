@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2ae03484dd1161c65b77f4718bb8cedb5abfdd82
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dc058d1d19df880109352caf2dc7d1860121a104
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>Criando um extensor de controle do Kit de ferramentas de controle AJAX personalizados (c#)
 ====================
@@ -198,7 +198,7 @@ Em seguida, é preciso criar uma nova página ASP.NET. Siga estas etapas:
 2. Arraste um ScriptManager na página.
 3. Arraste um controle de caixa de texto para a página.
 4. Arraste um controle de botão para a página.
-5. Na janela Propriedades, altere a propriedade de ID de botões para o valor *btnSave* e a propriedade de texto como o valor *salvar\**.
+5. Na janela Propriedades, altere a propriedade de ID de botões para o valor <em>btnSave</em> e a propriedade de texto como o valor *salvar\**.
   
 
 Nós criamos uma página com um controle de caixa de texto do ASP.NET e o botão padrão.
@@ -238,6 +238,6 @@ Quando você executa a página (pressionando F5), o controle de botão é inicia
 
 O objetivo deste tutorial era explicam como você pode estender o Kit de ferramentas de controle AJAX com controles do extensor personalizado. Neste tutorial, criamos um extensor de controle de DisabledButton simple. Implementamos desse extensor, criando uma classe DisabledButtonExtender, um comportamento DisabledButtonBehavior JavaScript e uma classe DisabledButtonDesigner. Você seguir um conjunto similar de etapas sempre que você criar um extensor de controle personalizado.
 
->[!div class="step-by-step"]
-[Anterior](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
-[Próximo](get-started-with-the-ajax-control-toolkit-vb.md)
+> [!div class="step-by-step"]
+> [Anterior](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
+> [Próximo](get-started-with-the-ajax-control-toolkit-vb.md)

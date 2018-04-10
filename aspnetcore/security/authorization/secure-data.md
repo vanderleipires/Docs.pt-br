@@ -43,7 +43,7 @@ Na imagem a seguir, `admin@contoso.com` está conectado e na função de adminis
 
 ![imagem descrita anterior](secure-data/_static/admin.png)
 
-O administrador tem todos os privilégios. Ela pode ler/editar/excluir qualquer contato e alterar o status de contatos.
+O administrador tem todos os privilégios. Ele pode ler/editar/excluir todos os contatos e alterar os status deles.
 
 O aplicativo foi criado fazendo [scaffolding](xref:tutorials/first-mvc-app-xplat/adding-model#scaffold-the-moviecontroller) do seguinte modelo de `Contact`:
 
@@ -133,7 +133,7 @@ Adicionar `[AllowAnonymous]` para o [LoginModel e RegisterModel](https://github.
 
 ### <a name="configure-the-test-account"></a>Configurar a conta de teste
 
-O `SeedData` classe cria duas contas: administrador e Gerenciador. Use o [ferramenta Gerenciador de segredo](xref:security/app-secrets) para definir uma senha para essas contas. Definir a senha do diretório do projeto (o diretório que contém *Program.cs*):
+A classe `SeedData` cria duas contas: administrador e gerenciador. Use a [ferramenta Gerenciador de segredo](xref:security/app-secrets) para definir uma senha para essas contas. Defina a senha do diretório do projeto (o diretório que contém *Program.cs*):
 
 ```console
 dotnet user-secrets set SeedUserPW <PW>

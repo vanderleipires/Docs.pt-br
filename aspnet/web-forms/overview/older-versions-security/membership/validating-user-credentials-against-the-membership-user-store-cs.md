@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
-title: "Validando credenciais de usuário no repositório do usuário de associação (c#) | Microsoft Docs"
+title: Validando credenciais de usuário no repositório do usuário de associação (c#) | Microsoft Docs
 author: rick-anderson
-description: "Neste tutorial, examinaremos como validar as credenciais do usuário em relação ao armazenamento de usuário de associação usando meios programáticos e o controle de logon..."
+description: Neste tutorial, examinaremos como validar as credenciais do usuário em relação ao armazenamento de usuário de associação usando meios programáticos e o controle de logon...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f8f4db63ba8c1f1c1df7c1c5c1f92184bf6841d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 484a0f16265ee2d887ee08f6ae7ada47047f1f04
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-c"></a>Validando credenciais de usuário no repositório do usuário de associação (c#)
 ====================
@@ -39,9 +39,9 @@ Neste tutorial, examinaremos como validar as credenciais do usuário em relaçã
 
 Para sites que usam a autenticação de formulários, um usuário faz logon para o site visitando uma página de logon e inserir suas credenciais. Essas credenciais são comparadas em relação ao armazenamento do usuário. Se eles forem válidos, o usuário recebe um tíquete de autenticação de formulários, que é um token de segurança que indica a identidade e a autenticidade do visitante.
 
-Para validar um usuário em relação a estrutura de associação, use o `Membership` da classe [ `ValidateUser` método](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx). O `ValidateUser` método usa dois parâmetros de entrada -  *`username`*  e  *`password`*  - e retorna um valor booliano que indica se as credenciais foram válidas. Como com o `CreateUser` método examinamos no tutorial anterior, o `ValidateUser` método delega a validação real para o provedor de associação configurado.
+Para validar um usuário em relação a estrutura de associação, use o `Membership` da classe [ `ValidateUser` método](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx). O `ValidateUser` método usa dois parâmetros de entrada - *`username`* e *`password`* - e retorna um valor booliano que indica se as credenciais foram válidas. Como com o `CreateUser` método examinamos no tutorial anterior, o `ValidateUser` método delega a validação real para o provedor de associação configurado.
 
-O `SqlMembershipProvider` valida as credenciais fornecidas ao obter a senha do usuário especificado por meio de `aspnet_Membership_GetPasswordWithFormat` procedimento armazenado. Lembre-se de que o `SqlMembershipProvider` armazena as senhas dos usuários usando um dos três formatos: clear, criptografia ou hash. O `aspnet_Membership_GetPasswordWithFormat` procedimento armazenado retorna a senha em seu formato bruto. Para senhas criptografadas ou hash, o `SqlMembershipProvider` transforma o  *`password`*  valor passado para o `ValidateUser` método para seu equivalente criptografados ou com hash estado e, em seguida, compara com o que foi retornado da banco de dados. Se a senha armazenada no banco de dados corresponde a formatado senha inserida pelo usuário, as credenciais são válidas.
+O `SqlMembershipProvider` valida as credenciais fornecidas ao obter a senha do usuário especificado por meio de `aspnet_Membership_GetPasswordWithFormat` procedimento armazenado. Lembre-se de que o `SqlMembershipProvider` armazena as senhas dos usuários usando um dos três formatos: clear, criptografia ou hash. O `aspnet_Membership_GetPasswordWithFormat` procedimento armazenado retorna a senha em seu formato bruto. Para senhas criptografadas ou hash, o `SqlMembershipProvider` transforma o *`password`* valor passado para o `ValidateUser` método para seu equivalente criptografados ou com hash estado e, em seguida, compara com o que foi retornado da banco de dados. Se a senha armazenada no banco de dados corresponde a formatado senha inserida pelo usuário, as credenciais são válidas.
 
 Vamos atualizar nossa página de logon (~ /`Login.aspx`) para que ele valida as credenciais fornecidas no repositório de usuário de associação do framework. Criamos essa página de logon na <a id="Tutorial02"> </a> [ *uma visão geral de formulários de autenticação* ](../introduction/an-overview-of-forms-authentication-cs.md) tutorial, criando uma interface com duas caixas de texto para o nome de usuário e senha, um Lembrar na caixa de seleção e um botão de Login (consulte a Figura 1). O código valida as credenciais inseridas em uma lista codificada de pares de nome de usuário e senha (Scott/Jisun/senha, senha e Sam /). No <a id="Tutorial03"> </a> [ *configuração de autenticação de formulários e tópicos avançados* ](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md) tutorial atualizamos o código da página de logon para armazenar informações adicionais nos formulários tíquete de autenticação `UserData` propriedade.
 
@@ -71,8 +71,8 @@ Quando um visitante chega à página de logon e envia suas credenciais, o navega
 
 Para evitar tais ataques de força bruta, a estrutura de associação bloqueia um usuário se houver um determinado número de tentativas de logon sem êxito dentro de um determinado período de tempo. Os parâmetros exatos são configuráveis por meio de dois parâmetros de configuração de provedor de associação:
 
-- `maxInvalidPasswordAttempts`-Especifica a senha inválida quantas tentativas são permitidas para o usuário dentro do período de tempo antes que a conta está bloqueada. O valor padrão é 5.
-- `passwordAttemptWindow`-indica o período de tempo em minutos durante o qual o número especificado de tentativas de logon inválidas fará com que a conta seja bloqueada. O valor padrão é 10.
+- `maxInvalidPasswordAttempts` -Especifica a senha inválida quantas tentativas são permitidas para o usuário dentro do período de tempo antes que a conta está bloqueada. O valor padrão é 5.
+- `passwordAttemptWindow` -indica o período de tempo em minutos durante o qual o número especificado de tentativas de logon inválidas fará com que a conta seja bloqueada. O valor padrão é 10.
 
 Se um usuário estiver bloqueado, ela não é possível fazer logon até que um administrador a desbloqueie sua conta. Quando um usuário está bloqueado, o `ValidateUser` método será *sempre* retornar `false`, mesmo se as credenciais válidas são fornecidas. Embora esse comportamento reduz a probabilidade de que um hacker invadir o seu site por meio de métodos de força bruta, ele pode acabar bloquear um usuário válido que simplesmente esqueceu sua senha ou acidentalmente tem a tecla Caps Lock no ou está tendo um dia de digitação incorreto.
 
@@ -110,10 +110,10 @@ E pronto! Quando Log no botão do controle de logon é clicado, ocorrerá um pos
 
 O controle de logon usa quatro fatores para determinar a página apropriada para redirecionar o usuário após um logon bem-sucedido:
 
-- Se o controle de logon está na página de logon conforme definido pelo `loginUrl` configuração na configuração de autenticação de formulários; o valor dessa configuração padrão é`Login.aspx`
+- Se o controle de logon está na página de logon conforme definido pelo `loginUrl` configuração na configuração de autenticação de formulários; o valor dessa configuração padrão é `Login.aspx`
 - A presença de um `ReturnUrl` parâmetro querystring
 - O valor do controle do logon [ `DestinationUrl` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
-- O `defaultUrl` valor especificado em formulários de definições de configuração de autenticação; o valor padrão dessa configuração é`Default.aspx`
+- O `defaultUrl` valor especificado em formulários de definições de configuração de autenticação; o valor padrão dessa configuração é `Default.aspx`
 
 A Figura 4 ilustra como o controle de logon usa essas quatro parâmetros para chegar a sua decisão de página apropriada.
 
@@ -230,7 +230,7 @@ Como você pode ver, o `Authenticate` manipulador de eventos é passado um objet
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>Determinando e validar as credenciais fornecidas
 
-Use o controle de logon [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) e [ `Password` propriedades](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) para determinar as credenciais de usuário e senha inseridas pelo usuário. Para determinar os valores inseridos em todos os controles da Web adicionais (como o `Email` caixa de texto são adicionados na etapa anterior), use  *`LoginControlID`*  `.FindControl`(" *`controlID`* ") para obter uma programação de referência para o controle da Web no modelo cujo `ID` propriedade é igual a  *`controlID`* . Por exemplo, para obter uma referência para o `Email` caixa de texto, use o seguinte código:
+Use o controle de logon [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) e [ `Password` propriedades](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) para determinar as credenciais de usuário e senha inseridas pelo usuário. Para determinar os valores inseridos em todos os controles da Web adicionais (como o `Email` caixa de texto são adicionados na etapa anterior), use *`LoginControlID`* `.FindControl`("*`controlID`*") para obter uma programação de referência para o controle da Web no modelo cujo `ID` propriedade é igual a *`controlID`*. Por exemplo, para obter uma referência para o `Email` caixa de texto, use o seguinte código:
 
 `TextBox EmailTextBox = myLogin.FindControl("Email") as TextBox;`
 
@@ -310,12 +310,12 @@ Para obter mais informações sobre os tópicos abordados neste tutorial, consul
 
 ### <a name="about-the-author"></a>Sobre o autor
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [http://ScottOnWriting.NET](http://scottonwriting.net/).
+Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla. com, trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é  *[Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*. Scott pode ser contatado pelo [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) ou em seu blog [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
 ### <a name="special-thanks-to"></a>Agradecimentos especiais a
 
 Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Teresa Murphy e Michael Olivero. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com).
 
->[!div class="step-by-step"]
-[Anterior](creating-user-accounts-cs.md)
-[Próximo](user-based-authorization-cs.md)
+> [!div class="step-by-step"]
+> [Anterior](creating-user-accounts-cs.md)
+> [Próximo](user-based-authorization-cs.md)
