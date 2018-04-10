@@ -2,13 +2,13 @@
 uid: index
 layout: HubPage
 ms.topic: hub-page
-title: "Documentação do ASP.NET | Microsoft Docs"
-description: 
-ms.openlocfilehash: 4ab928b65bc91a24d02cd0450e143cd6bd3b639b
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+title: Documentação do ASP.NET | Microsoft Docs
+description: ''
+ms.openlocfilehash: cc887183fba9d3c46fbb1068d13d612a3e1806e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/08/2018
                             <li>
                                 <div class="container intro">
                                     <p>O ASP.NET Core é uma nova estrutura de software livre e multiplaforma do .NET para a criação de aplicativos Web modernos e baseados em nuvem, no Windows, Mac ou Linux.</p>
-                                    <p>[Saiba mais sobre os benefícios do ASP.NET Core e do ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework) e escolha o que for mais adequado para você.</p>
+                                    <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">Saiba mais sobre os benefícios do ASP.NET Core e do ASP.NET</a> e escolha o que for mais adequado para você.</p>
                                 </div>
                             </li>
                             <li>
@@ -153,7 +153,7 @@ ms.lasthandoff: 03/08/2018
                         <ul id="core_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
-                                    <p>Tutoriais em destaque | [Exibir todos os tutoriais do ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/)</p>
+                                    <p>Tutoriais em destaque | <a href="https://docs.microsoft.com/aspnet/core/tutorials/" data-raw-source="[View all ASP.NET Core tutorials](https://docs.microsoft.com/aspnet/core/tutorials/)">Exibir todos os tutoriais do ASP.NET Core</a></p>
                                 </div>
                             </li>
                             <li>
@@ -291,7 +291,7 @@ ms.lasthandoff: 03/08/2018
                             <li>
                                 <div class="container intro">
                                     <p>O ASP.NET é uma plataforma Web madura que oferece todos os serviços necessários à criação de aplicativos Web corporativos baseados em servidor usando o .NET no Windows.</p>
-                                    <p>[Saiba mais sobre os benefícios do ASP.NET Core e do ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework) e escolha o que for mais adequado para você.</p>
+                                    <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">Saiba mais sobre os benefícios do ASP.NET Core e do ASP.NET</a> e escolha o que for mais adequado para você.</p>
                                 </div>
                             </li>
                             <li>
@@ -568,7 +568,7 @@ ms.lasthandoff: 03/08/2018
                         <ul id="aspnet_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
-                                    <p>Tutoriais em destaque | [Exibir todos os tutoriais do ASP.NET](https://docs.microsoft.com/aspnet/tutorials/)</p>
+                                    <p>Tutoriais em destaque | <a href="https://docs.microsoft.com/aspnet/tutorials/" data-raw-source="[View all ASP.NET tutorials](https://docs.microsoft.com/aspnet/tutorials/)">Exibir todos os tutoriais do ASP.NET</a></p>
                                 </div>
                             </li>
                             <li>

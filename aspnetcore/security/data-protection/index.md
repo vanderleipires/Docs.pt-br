@@ -1,7 +1,7 @@
 ---
-title: "Proteção de Dados no ASP.NET Core"
+title: Proteção de Dados no ASP.NET Core
 author: rick-anderson
-description: "Este documento serve como um sumário para os diversos tópicos sobre proteção de dados do ASP.NET Core."
+description: Este documento serve como um sumário para os diversos tópicos sobre proteção de dados do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,70 +9,70 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/index
-ms.openlocfilehash: e08dea63f012c4a758f2e5561c4930d09cfee0ac
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 83b5bb1e6a4942a4d3e5ec0d445fa6e5a21fb533
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a><span data-ttu-id="aab9a-103">Proteção de Dados no ASP.NET Core: APIs de consumidor, configuração, APIs de extensibilidade e implementação</span><span class="sxs-lookup"><span data-stu-id="aab9a-103">Data Protection in ASP.NET Core: Consumer APIs, configuration, extensibility APIs and implementation</span></span>
+# <a name="data-protection-in-aspnet-core"></a><span data-ttu-id="105da-103">Proteção de Dados no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="105da-103">Data Protection in ASP.NET Core</span></span>
 
-* [<span data-ttu-id="aab9a-104">Introdução à proteção de dados</span><span class="sxs-lookup"><span data-stu-id="aab9a-104">Introduction to data protection</span></span>](introduction.md)
+* [<span data-ttu-id="105da-104">Introdução à proteção de dados</span><span class="sxs-lookup"><span data-stu-id="105da-104">Introduction to data protection</span></span>](xref:security/data-protection/introduction)
 
-* [<span data-ttu-id="aab9a-105">Introdução às APIs de proteção de dados</span><span class="sxs-lookup"><span data-stu-id="aab9a-105">Get started with the Data Protection APIs</span></span>](using-data-protection.md)
+* [<span data-ttu-id="105da-105">Introdução às APIs de proteção de dados</span><span class="sxs-lookup"><span data-stu-id="105da-105">Get started with the Data Protection APIs</span></span>](xref:security/data-protection/using-data-protection)
 
-* [<span data-ttu-id="aab9a-106">APIs de consumidor</span><span class="sxs-lookup"><span data-stu-id="aab9a-106">Consumer APIs</span></span>](consumer-apis/index.md)
+* [<span data-ttu-id="105da-106">APIs de consumidor</span><span class="sxs-lookup"><span data-stu-id="105da-106">Consumer APIs</span></span>](xref:security/data-protection/consumer-apis/index)
 
-  * [<span data-ttu-id="aab9a-107">Visão geral das APIs de consumidor</span><span class="sxs-lookup"><span data-stu-id="aab9a-107">Consumer APIs overview</span></span>](consumer-apis/overview.md)
+  * [<span data-ttu-id="105da-107">Visão geral das APIs de consumidor</span><span class="sxs-lookup"><span data-stu-id="105da-107">Consumer APIs overview</span></span>](xref:security/data-protection/consumer-apis/overview)
 
-  * [<span data-ttu-id="aab9a-108">Cadeias de caracteres de finalidade</span><span class="sxs-lookup"><span data-stu-id="aab9a-108">Purpose strings</span></span>](consumer-apis/purpose-strings.md)
+  * [<span data-ttu-id="105da-108">Cadeias de caracteres de finalidade</span><span class="sxs-lookup"><span data-stu-id="105da-108">Purpose strings</span></span>](xref:security/data-protection/consumer-apis/purpose-strings)
 
-  * [<span data-ttu-id="aab9a-109">Multilocação e hierarquia de finalidade</span><span class="sxs-lookup"><span data-stu-id="aab9a-109">Purpose hierarchy and multi-tenancy</span></span>](consumer-apis/purpose-strings-multitenancy.md)
+  * [<span data-ttu-id="105da-109">Multilocação e hierarquia de finalidade</span><span class="sxs-lookup"><span data-stu-id="105da-109">Purpose hierarchy and multi-tenancy</span></span>](xref:security/data-protection/consumer-apis/purpose-strings-multitenancy)
 
-  * [<span data-ttu-id="aab9a-110">Hash de senha</span><span class="sxs-lookup"><span data-stu-id="aab9a-110">Password hashing</span></span>](consumer-apis/password-hashing.md)
+  * [<span data-ttu-id="105da-110">Senhas hash</span><span class="sxs-lookup"><span data-stu-id="105da-110">Hash passwords</span></span>](xref:security/data-protection/consumer-apis/password-hashing)
 
-  * [<span data-ttu-id="aab9a-111">Limitando o tempo de vida de cargas protegidas</span><span class="sxs-lookup"><span data-stu-id="aab9a-111">Limiting the lifetime of protected payloads</span></span>](consumer-apis/limited-lifetime-payloads.md)
+  * [<span data-ttu-id="105da-111">Limitar o tempo de vida de cargas protegidas</span><span class="sxs-lookup"><span data-stu-id="105da-111">Limit the lifetime of protected payloads</span></span>](xref:security/data-protection/consumer-apis/limited-lifetime-payloads)
 
-  * [<span data-ttu-id="aab9a-112">Desprotegendo cargas cujas chaves foram revogadas</span><span class="sxs-lookup"><span data-stu-id="aab9a-112">Unprotecting payloads whose keys have been revoked</span></span>](consumer-apis/dangerous-unprotect.md)
+  * [<span data-ttu-id="105da-112">Desproteger cargas cujas chaves foram revogadas</span><span class="sxs-lookup"><span data-stu-id="105da-112">Unprotect payloads whose keys have been revoked</span></span>](xref:security/data-protection/consumer-apis/dangerous-unprotect)
 
-* [<span data-ttu-id="aab9a-113">Configuração</span><span class="sxs-lookup"><span data-stu-id="aab9a-113">Configuration</span></span>](configuration/index.md)
+* [<span data-ttu-id="105da-113">Configuração</span><span class="sxs-lookup"><span data-stu-id="105da-113">Configuration</span></span>](xref:security/data-protection/configuration/index)
 
-  * [<span data-ttu-id="aab9a-114">Configurar a proteção de dados</span><span class="sxs-lookup"><span data-stu-id="aab9a-114">Configuring data protection</span></span>](configuration/overview.md)
+  * [<span data-ttu-id="105da-114">Configurar a proteção de dados do ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="105da-114">Configure ASP.NET Core Data Protection</span></span>](xref:security/data-protection/configuration/overview)
 
-  * [<span data-ttu-id="aab9a-115">Configurações padrão</span><span class="sxs-lookup"><span data-stu-id="aab9a-115">Default settings</span></span>](configuration/default-settings.md)
+  * [<span data-ttu-id="105da-115">Configurações padrão</span><span class="sxs-lookup"><span data-stu-id="105da-115">Default settings</span></span>](xref:security/data-protection/configuration/default-settings)
 
-  * [<span data-ttu-id="aab9a-116">Política ampla de computador</span><span class="sxs-lookup"><span data-stu-id="aab9a-116">Machine-wide policy</span></span>](configuration/machine-wide-policy.md)
+  * [<span data-ttu-id="105da-116">Política ampla de computador</span><span class="sxs-lookup"><span data-stu-id="105da-116">Machine-wide policy</span></span>](xref:security/data-protection/configuration/machine-wide-policy)
 
-  * [<span data-ttu-id="aab9a-117">Cenários sem reconhecimento de DI</span><span class="sxs-lookup"><span data-stu-id="aab9a-117">Non DI-aware scenarios</span></span>](configuration/non-di-scenarios.md)
+  * [<span data-ttu-id="105da-117">Cenários sem reconhecimento de DI</span><span class="sxs-lookup"><span data-stu-id="105da-117">Non DI-aware scenarios</span></span>](xref:security/data-protection/configuration/non-di-scenarios)
 
-* [<span data-ttu-id="aab9a-118">APIs de extensibilidade</span><span class="sxs-lookup"><span data-stu-id="aab9a-118">Extensibility APIs</span></span>](extensibility/index.md)
+* [<span data-ttu-id="105da-118">APIs de extensibilidade</span><span class="sxs-lookup"><span data-stu-id="105da-118">Extensibility APIs</span></span>](xref:security/data-protection/extensibility/index)
 
-  * [<span data-ttu-id="aab9a-119">Extensibilidade da criptografia básica</span><span class="sxs-lookup"><span data-stu-id="aab9a-119">Core cryptography extensibility</span></span>](extensibility/core-crypto.md)
+  * [<span data-ttu-id="105da-119">Extensibilidade da criptografia básica</span><span class="sxs-lookup"><span data-stu-id="105da-119">Core cryptography extensibility</span></span>](xref:security/data-protection/extensibility/core-crypto)
 
-  * [<span data-ttu-id="aab9a-120">Extensibilidade de gerenciamento de chaves</span><span class="sxs-lookup"><span data-stu-id="aab9a-120">Key management extensibility</span></span>](extensibility/key-management.md)
+  * [<span data-ttu-id="105da-120">Extensibilidade de gerenciamento de chaves</span><span class="sxs-lookup"><span data-stu-id="105da-120">Key management extensibility</span></span>](xref:security/data-protection/extensibility/key-management)
 
-  * [<span data-ttu-id="aab9a-121">APIs diversas</span><span class="sxs-lookup"><span data-stu-id="aab9a-121">Miscellaneous APIs</span></span>](extensibility/misc-apis.md)
+  * [<span data-ttu-id="105da-121">APIs diversas</span><span class="sxs-lookup"><span data-stu-id="105da-121">Miscellaneous APIs</span></span>](xref:security/data-protection/extensibility/misc-apis)
 
-* [<span data-ttu-id="aab9a-122">Implementação</span><span class="sxs-lookup"><span data-stu-id="aab9a-122">Implementation</span></span>](implementation/index.md)
+* [<span data-ttu-id="105da-122">Implementação</span><span class="sxs-lookup"><span data-stu-id="105da-122">Implementation</span></span>](xref:security/data-protection/implementation/index)
 
-  * [<span data-ttu-id="aab9a-123">Detalhes de criptografia autenticada</span><span class="sxs-lookup"><span data-stu-id="aab9a-123">Authenticated encryption details</span></span>](implementation/authenticated-encryption-details.md)
+  * [<span data-ttu-id="105da-123">Detalhes de criptografia autenticada</span><span class="sxs-lookup"><span data-stu-id="105da-123">Authenticated encryption details</span></span>](xref:security/data-protection/implementation/authenticated-encryption-details)
 
-  * [<span data-ttu-id="aab9a-124">Derivação de subchaves e criptografia autenticada</span><span class="sxs-lookup"><span data-stu-id="aab9a-124">Subkey derivation and authenticated encryption</span></span>](implementation/subkeyderivation.md)
+  * [<span data-ttu-id="105da-124">Derivação de subchaves e criptografia autenticada</span><span class="sxs-lookup"><span data-stu-id="105da-124">Subkey derivation and authenticated encryption</span></span>](xref:security/data-protection/implementation/subkeyderivation)
 
-  * [<span data-ttu-id="aab9a-125">Cabeçalhos de contexto</span><span class="sxs-lookup"><span data-stu-id="aab9a-125">Context headers</span></span>](implementation/context-headers.md)
+  * [<span data-ttu-id="105da-125">Cabeçalhos de contexto</span><span class="sxs-lookup"><span data-stu-id="105da-125">Context headers</span></span>](xref:security/data-protection/implementation/context-headers)
 
-  * [<span data-ttu-id="aab9a-126">Gerenciamento de chaves</span><span class="sxs-lookup"><span data-stu-id="aab9a-126">Key management</span></span>](implementation/key-management.md)
+  * [<span data-ttu-id="105da-126">Gerenciamento de chaves</span><span class="sxs-lookup"><span data-stu-id="105da-126">Key management</span></span>](xref:security/data-protection/implementation/key-management)
 
-  * [<span data-ttu-id="aab9a-127">Provedores de armazenamento de chaves</span><span class="sxs-lookup"><span data-stu-id="aab9a-127">Key storage providers</span></span>](implementation/key-storage-providers.md)
+  * [<span data-ttu-id="105da-127">Provedores de armazenamento de chaves</span><span class="sxs-lookup"><span data-stu-id="105da-127">Key storage providers</span></span>](xref:security/data-protection/implementation/key-storage-providers)
 
-  * [<span data-ttu-id="aab9a-128">Criptografia de chave em repouso</span><span class="sxs-lookup"><span data-stu-id="aab9a-128">Key encryption at rest</span></span>](implementation/key-encryption-at-rest.md)
+  * [<span data-ttu-id="105da-128">Criptografia de chave em repouso</span><span class="sxs-lookup"><span data-stu-id="105da-128">Key encryption at rest</span></span>](xref:security/data-protection/implementation/key-encryption-at-rest)
 
-  * [<span data-ttu-id="aab9a-129">Imutabilidade de chave e alteração de configurações</span><span class="sxs-lookup"><span data-stu-id="aab9a-129">Key immutability and changing settings</span></span>](implementation/key-immutability.md)
+  * [<span data-ttu-id="105da-129">Imutabilidade de chave e configurações</span><span class="sxs-lookup"><span data-stu-id="105da-129">Key immutability and settings</span></span>](xref:security/data-protection/implementation/key-immutability)
 
-  * [<span data-ttu-id="aab9a-130">Formato do armazenamento de chaves</span><span class="sxs-lookup"><span data-stu-id="aab9a-130">Key storage format</span></span>](implementation/key-storage-format.md)
+  * [<span data-ttu-id="105da-130">Formato do armazenamento de chaves</span><span class="sxs-lookup"><span data-stu-id="105da-130">Key storage format</span></span>](xref:security/data-protection/implementation/key-storage-format)
 
-  * [<span data-ttu-id="aab9a-131">Provedores de proteção de dados efêmeros</span><span class="sxs-lookup"><span data-stu-id="aab9a-131">Ephemeral data protection providers</span></span>](implementation/key-storage-ephemeral.md)
+  * [<span data-ttu-id="105da-131">Provedores de proteção de dados efêmeros</span><span class="sxs-lookup"><span data-stu-id="105da-131">Ephemeral data protection providers</span></span>](xref:security/data-protection/implementation/key-storage-ephemeral)
 
-* [<span data-ttu-id="aab9a-132">Compatibilidade</span><span class="sxs-lookup"><span data-stu-id="aab9a-132">Compatibility</span></span>](compatibility/index.md)
+* [<span data-ttu-id="105da-132">Compatibilidade</span><span class="sxs-lookup"><span data-stu-id="105da-132">Compatibility</span></span>](xref:security/data-protection/compatibility/index)
 
-  * [<span data-ttu-id="aab9a-133">Substituindo <machineKey> no ASP.NET</span><span class="sxs-lookup"><span data-stu-id="aab9a-133">Replacing <machineKey> in ASP.NET</span></span>](xref:security/data-protection/compatibility/replacing-machinekey)
+  * [<span data-ttu-id="105da-133">Substituição do ASP.NET <machineKey> no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="105da-133">Replacing ASP.NET <machineKey> in ASP.NET Core</span></span>](xref:security/data-protection/compatibility/replacing-machinekey)
