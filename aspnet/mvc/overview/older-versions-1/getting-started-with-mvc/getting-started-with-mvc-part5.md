@@ -16,11 +16,11 @@ ms.openlocfilehash: 2ba1b73f40a920e27e4a03d9f703e62054d3f25c
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>Acessando dados do modelo de um controlador
 ====================
-por [Scott Hanselman](https://github.com/shanselman)
+by [Scott Hanselman](https://github.com/shanselman)
 
 > Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Você criará um aplicativo web simples que leituras e gravações de banco de dados. Visite o [Central de aprendizagem do ASP.NET MVC](../../../index.md) para localizar outros ASP.NET MVC, tutoriais e exemplos.
 

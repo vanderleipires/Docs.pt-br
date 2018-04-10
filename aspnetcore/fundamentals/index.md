@@ -1,7 +1,7 @@
 ---
-title: "Conceitos básicos do ASP.NET Core"
+title: Conceitos básicos do ASP.NET Core
 author: rick-anderson
-description: "Descubra os conceitos fundamentais para a criação de aplicativos do ASP.NET Core."
+description: Descubra os conceitos fundamentais para a criação de aplicativos do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,48 +10,42 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: be37df7789354ac4ce8e373a1560366be157ffa5
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: b74870c93ea0120e43931bb75f47bab19a6de201
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
 Um aplicativo ASP.NET Core é um aplicativo de console que cria um servidor Web em seu método `Main`:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs)]
 
 O método `Main` invoca `WebHost.CreateDefaultBuilder`, que segue o padrão de construtor para criar um host de aplicativo Web. O construtor tem métodos que definem o servidor Web (por exemplo, `UseKestrel`) e a classe de inicialização (`UseStartup`). No exemplo anterior, o servidor Web [Kestrel](xref:fundamentals/servers/kestrel) é alocado automaticamente. O host Web do ASP.NET Core tenta executar no IIS, se disponível. Outros servidores Web como [HTTP.sys](xref:fundamentals/servers/httpsys) podem ser usados ao chamar o método de extensão apropriado. `UseStartup` é explicado em mais detalhes na próxima seção.
 
 `IWebHostBuilder`, o tipo de retorno da invocação de `WebHost.CreateDefaultBuilder`, fornece muitos métodos opcionais. Alguns desses métodos incluem `UseHttpSys` para hospedar o aplicativo em HTTP.sys e `UseContentRoot` para especificar o diretório de conteúdo raiz. Os métodos `Build` e `Run` compilam o objeto `IWebHost` que hospeda o aplicativo e começa a escutar solicitações HTTP.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs)]
 
 O método `Main` usa `WebHostBuilder`, que segue o padrão de construtor para criar um host de aplicativo Web. O construtor tem métodos que definem o servidor Web (por exemplo, `UseKestrel`) e a classe de inicialização (`UseStartup`). No exemplo anterior, o servidor Web [Kestrel](xref:fundamentals/servers/kestrel) é usado. Outros servidores Web como [WebListener](xref:fundamentals/servers/weblistener) podem ser usados ao chamar o método de extensão apropriado. `UseStartup` é explicado em mais detalhes na próxima seção.
 
 O `WebHostBuilder` fornece muitos métodos opcionais, incluindo `UseIISIntegration`, para hospedagem no IIS e no IIS Express, e `UseContentRoot`, para especificar o diretório do conteúdo raiz. Os métodos `Build` e `Run` compilam o objeto `IWebHost` que hospeda o aplicativo e começa a escutar solicitações HTTP.
 
----
-
+* * *
 ## <a name="startup"></a>Inicialização
 
 O método `UseStartup` em `WebHostBuilder` especifica a classe `Startup` para seu aplicativo:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs?highlight=10&range=6-17)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs?highlight=7&range=6-17)]
 
----
-
+* * *
 É na classe `Startup` que você define o pipeline de tratamento de solicitação e é nela que todos os serviços que o aplicativo precisa estão configurados. A classe `Startup` deve ser pública e conter os seguintes métodos:
 
 ```csharp
@@ -109,7 +103,7 @@ Para obter mais informações, consulte [Middleware](xref:fundamentals/middlewar
 
 Os ambientes, como "Desenvolvimento" e "Produção", são uma noção de primeira classe no ASP.NET Core e podem ser definidos usando variáveis de ambiente.
 
-Para obter mais informações, consulte [Trabalhando com vários ambientes](xref:fundamentals/environments).
+Para obter mais informações, veja [Trabalhar com vários ambientes](xref:fundamentals/environments).
 
 ## <a name="configuration"></a>Configuração
 
@@ -127,7 +121,7 @@ O ASP.NET Core dá suporte a uma API de registro em log que funciona com uma var
 
 O ASP.NET Core tem recursos internos para manipular erros em aplicativos, incluindo uma página de exceção de desenvolvedor, páginas de erro personalizadas, páginas de código de status estático e tratamento de exceções de inicialização.
 
-Para obter mais informações, veja [Tratamento de erro](xref:fundamentals/error-handling).
+Para obter mais informações, veja [Como tratar erros](xref:fundamentals/error-handling).
 
 ## <a name="routing"></a>Roteamento
 
@@ -145,7 +139,7 @@ Para obter mais informações, consulte [Provedores de Arquivos](xref:fundamenta
 
 O middleware de arquivos estáticos fornece arquivos estáticos, como HTML, CSS, imagem e JavaScript.
 
-Para obter mais informações, consulte [Trabalhando com arquivos estáticos](xref:fundamentals/static-files).
+Para obter mais informações, veja [Trabalhar com arquivos estáticos](xref:fundamentals/static-files).
 
 ## <a name="hosting"></a>Hospedagem
 

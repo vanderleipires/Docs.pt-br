@@ -1,7 +1,7 @@
 ---
-title: "Exibições no ASP.NET Core MVC"
+title: Exibições no ASP.NET Core MVC
 author: ardalis
-description: "Saiba como as exibições tratam da apresentação de dados do aplicativo e da interação com o usuário no ASP.NET Core MVC."
+description: Saiba como as exibições tratam da apresentação de dados do aplicativo e da interação com o usuário no ASP.NET Core MVC.
 manager: wpickett
 ms.author: riande
 ms.date: 12/12/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: bab08e75652c75b371438581d6e9f56541844a61
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: HT
+ms.openlocfilehash: b9af2068aec4326585eb2a8994399a16461db3be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Exibições no ASP.NET Core MVC
 
@@ -48,7 +48,7 @@ As exibições ajudam a estabelecer um design de SoC ([**S**eparation **o**f **C
 
 Exibições que são específicas de um controlador são criadas na pasta *Views/ [NomeDoControlador]*. Exibições que são compartilhadas entre controladores são colocadas na pasta *Views/Shared*. Para criar uma exibição, adicione um novo arquivo e dê a ele o mesmo nome que o da ação de seu controlador associado, com a extensão de arquivo *.cshtml*. Para criar uma exibição correspondente à ação *About* no controlador *Home*, crie um arquivo *About.cshtml* na pasta *Views/Home*:
 
-[!code-cshtml[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
+[!code-cshtml[](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
 
 A marcação *Razor* começa com o símbolo `@`. Execute instruções em C# colocando o código C# dentro de [blocos de código Razor](xref:mvc/views/razor#razor-code-blocks) entre chaves (`{ ... }`). Por exemplo, consulte a atribuição de "About" para `ViewData["Title"]` mostrado acima. É possível exibir valores em HTML simplesmente referenciando o valor com o símbolo `@`. Veja o conteúdo dos elementos `<h2>` e `<h3>` acima.
 
@@ -60,7 +60,7 @@ Normalmente, as exibições são retornadas de ações como um [ViewResult](/asp
 
 *HomeController.cs*
 
-[!code-csharp[Main](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
+[!code-csharp[](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
 
 Quando essa ação é retornada, a exibição *About.cshtml* mostrada na seção anterior é renderizada como a seguinte página da Web:
 
@@ -92,7 +92,7 @@ O comportamento padrão do método `View` (`return View();`) é retornar uma exi
 
 Não importa se você retornar implicitamente o `ViewResult` com `return View();` ou se passar explicitamente o nome de exibição para o método `View` com `return View("<ViewName>");`. Nos dois casos, a descoberta de exibição pesquisa por um arquivo de exibição correspondente nesta ordem:
 
-   1. *Views/\[NomeDoControlador]\[NomeDaExibição].cshtml*
+   1. *Views/\[ControllerName]/\[ViewName].cshtml*
    1. *Views/Shared/\[NomeDaExibição].cshtml*
 
 Um caminho de arquivo de exibição pode ser fornecido em vez de um nome de exibição. Se um caminho absoluto que começa na raiz do aplicativo (ou é iniciado por "/" ou "~ /") estiver sendo usado, a extensão *.cshtml* deverá ser especificada:

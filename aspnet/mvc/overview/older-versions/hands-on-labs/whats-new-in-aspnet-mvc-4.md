@@ -16,7 +16,7 @@ ms.openlocfilehash: 977a6b5a84825ebd087752dcc2ebc0c5410e1657
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>O que há de novo no ASP.NET MVC 4
 
@@ -206,7 +206,7 @@ ASP.NET MVC 4 facilita o desenvolvimento de sites da Web para dispositivos móve
     *Criar um novo aplicativo ASP.NET MVC 4 Mobile*
 3. Agora é possível explorar a solução e check-out de alguns dos novos recursos introduzidos pelo modelo de solução do ASP.NET MVC 4 para dispositivos móveis:
 
-    - **jQuery Mobile biblioteca**
+    - **jQuery Mobile Library**
 
         O modelo de projeto de aplicativo móvel inclui a biblioteca jQuery Mobile, que é uma biblioteca de software livre para compatibilidade com navegadores móveis. o jQuery Mobile aplica aprimoramento progressivo para navegadores de dispositivos móveis que oferecem suporte a CSS e JavaScript. Aprimoramento progressivo permite que todos os navegadores exibir o conteúdo básico de uma página da web, enquanto ele só permite que os navegadores mais eficientes exibir o conteúdo. Os arquivos JavaScript e CSS, incluídos no jQuery Mobile estilo, ajudam navegadores móveis para ajustar o conteúdo na tela sem fazer qualquer alteração na marcação da página.
 

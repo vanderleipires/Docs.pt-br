@@ -1,7 +1,7 @@
 ---
 title: Middleware do ASP.NET Core
 author: rick-anderson
-description: "Saiba mais sobre o middleware do ASP.NET Core e o pipeline de solicitação."
+description: Saiba mais sobre o middleware do ASP.NET Core e o pipeline de solicitação.
 manager: wpickett
 ms.author: riande
 ms.date: 01/22/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 186faa4c02275ae1f4be53f4a2dd4f8325397bd2
-ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
+ms.openlocfilehash: 3312b27f936340a73243224c1a716fe421f178bc
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="aspnet-core-middleware"></a>Middleware do ASP.NET Core
 
@@ -32,7 +32,7 @@ Os delegados de solicitação são usados para criar o pipeline de solicitação
 
 Os delegados de solicitação são configurados usando os métodos de extensão [Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) e [Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions). Um delegado de solicitação individual pode ser especificado em linha como um método anônimo (chamado do middleware em linha) ou pode ser definido em uma classe reutilizável. Essas classes reutilizáveis e os métodos anônimos em linha são o *middleware* ou *componentes do middleware*. Cada componente do middleware no pipeline de solicitação é responsável por invocar o próximo componente no pipeline ou por ligar a cadeia em curto-circuito, se apropriado.
 
-A seção [Migrating HTTP Modules to Middleware](xref:migration/http-modules) (Migrando módulos HTTP para o Middleware) explica a diferença entre pipelines de solicitação no ASP.NET Core e no ASP.NET 4.x e fornece mais exemplos do middleware.
+A seção [Migrating HTTP Modules to Middleware](xref:migration/http-modules) (Migrar módulos HTTP para o Middleware) explica a diferença entre pipelines de solicitação no ASP.NET Core e no ASP.NET 4.x e fornece mais exemplos do middleware.
 
 ## <a name="creating-a-middleware-pipeline-with-iapplicationbuilder"></a>Criando um pipeline do middleware com o IApplicationBuilder
 
@@ -109,7 +109,7 @@ public void Configure(IApplicationBuilder app)
 
 No código acima, `UseExceptionHandler` é o primeiro componente de middleware adicionado ao pipeline—portanto, ele captura qualquer exceção que ocorra em chamadas posteriores.
 
-O middleware de arquivo estático é chamado no início do pipeline para que possa controlar as solicitações e o curto-circuito sem passar pelos componentes restantes. O middleware de arquivo estático não fornece **nenhuma** verificação de autorização. Todos os arquivos atendidos, incluindo aqueles em *wwwroot*, estão disponíveis publicamente. Consulte [Trabalhando com arquivos estáticos](xref:fundamentals/static-files) para conhecer uma abordagem para proteger arquivos estáticos.
+O middleware de arquivo estático é chamado no início do pipeline para que possa controlar as solicitações e o curto-circuito sem passar pelos componentes restantes. O middleware de arquivo estático não fornece **nenhuma** verificação de autorização. Todos os arquivos atendidos, incluindo aqueles em *wwwroot*, estão disponíveis publicamente. Consulte [Trabalhar com arquivos estáticos](xref:fundamentals/static-files) para conhecer uma abordagem para proteger arquivos estáticos.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -261,7 +261,7 @@ public class MyMiddleware
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Migrando módulos HTTP para Middleware](xref:migration/http-modules)
+* [Migrar módulos HTTP para Middleware](xref:migration/http-modules)
 * [Inicialização de aplicativos](xref:fundamentals/startup)
 * [Recursos de solicitação](xref:fundamentals/request-features)
 * [Ativação de middleware de fábrica](xref:fundamentals/middleware/extensibility)

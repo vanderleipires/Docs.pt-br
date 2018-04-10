@@ -1,7 +1,7 @@
 ---
-title: APIs de consumidor
+title: APIs de consumidor para o ASP.NET Core
 author: rick-anderson
-description: "Este documento serve como um sumário para os diversos tópicos sobre proteção de dados da API de consumidor do ASP.NET Core."
+description: Saiba mais sobre os vários tópicos de proteção de dados da API de consumidor do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,22 +9,22 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/index
-ms.openlocfilehash: a36dbaa7c34ed0cd99bfb2b27a9d59b81ffccbcf
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d7ca1104b0a14a330df8d13be58425b3371bff73
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="consumer-apis"></a>APIs de consumidor
+# <a name="consumer-apis-for-aspnet-core"></a>APIs de consumidor para o ASP.NET Core
 
-* [Visão geral das APIs de consumidor](overview.md)
+* [Visão geral das APIs de consumidor](xref:security/data-protection/consumer-apis/overview)
 
-* [Cadeias de caracteres de finalidade](purpose-strings.md)
+* [Cadeias de caracteres de finalidade](xref:security/data-protection/consumer-apis/purpose-strings)
 
-* [Multilocação e hierarquia de finalidade](purpose-strings-multitenancy.md)
+* [Multilocação e hierarquia de finalidade](xref:security/data-protection/consumer-apis/purpose-strings-multitenancy)
 
-* [Hash de senha](password-hashing.md)
+* [Senhas hash](xref:security/data-protection/consumer-apis/password-hashing)
 
-* [Limitando o tempo de vida de cargas protegidas](limited-lifetime-payloads.md)
+* [Limitar o tempo de vida de cargas protegidas](xref:security/data-protection/consumer-apis/limited-lifetime-payloads)
 
-* [Desprotegendo cargas cujas chaves foram revogadas](dangerous-unprotect.md)
+* [Desproteger cargas cujas chaves foram revogadas](xref:security/data-protection/consumer-apis/dangerous-unprotect)

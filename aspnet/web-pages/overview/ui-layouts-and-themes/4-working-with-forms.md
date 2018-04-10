@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/4-working-with-forms
-title: "Trabalhando com formulários HTML em Sites do ASP.NET páginas da Web (Razor) | Microsoft Docs"
+title: Trabalhando com formulários HTML em Sites do ASP.NET páginas da Web (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Um formulário é uma seção de um documento HTML em que você pode colocar controles de entrada do usuário, como caixas de texto, caixas de seleção, botões e listas suspensas. Usar formulários de pr..."
+description: Um formulário é uma seção de um documento HTML em que você pode colocar controles de entrada do usuário, como caixas de texto, caixas de seleção, botões e listas suspensas. Usar formulários de pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
 ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Trabalhando com formulários HTML em Sites de páginas (Razor) da Web do ASP.NET
 ====================
@@ -89,7 +89,7 @@ Para processar o formulário, você adiciona o código que lê os valores de cam
 > 
 > Codificação HTML substitui esses caracteres reservados com um código de navegadores interpretam como o símbolo correto. Por exemplo, o `<` caractere será substituído por `&lt;` e `>` caractere será substituído por `&gt;`. O navegador processa essas cadeias de caracteres de substituição, como os caracteres que você deseja ver.
 > 
-> É recomendável usar a qualquer momento que você exibir cadeias de caracteres de codificação HTML (entrada) que você obteve de um usuário. Se você não fizer isso, um usuário pode tentar obter a página da web para executar um script mal-intencionado ou fazer outras coisas que compromete a segurança de seu site ou simplesmente não pretende. (Isso é particularmente importante se você participar de entrada do usuário, armazená-lo em algum ponto e exiba-lo mais tarde &#8212; por exemplo, como um comentário de blog, usuário Revise, ou algo do tipo que).
+> É recomendável usar a qualquer momento que você exibir cadeias de caracteres de codificação HTML (entrada) que você obteve de um usuário. Se você não fizer isso, um usuário pode tentar obter a página da web para executar um script mal-intencionado ou fazer outras coisas que compromete a segurança de seu site ou simplesmente não pretende. (Isso é particularmente importante se você se entrada do usuário, armazene-o em algum ponto e, em seguida, exibi-lo mais tarde &#8212; por exemplo, como um comentário de blog, revisão de usuário ou algo assim.)
 > 
 > Para ajudar a evitar esses problemas, páginas da Web ASP.NET automaticamente codifica o HTML qualquer texto de conteúdo que você no seu código de saída. Por exemplo, quando você exibe o conteúdo de uma variável ou uma expressão usando código como `@MyVar`, páginas da Web ASP.NET automaticamente codifica a saída.
 

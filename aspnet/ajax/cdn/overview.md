@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn
 msc.type: content
 ms.openlocfilehash: bc5f40746ad6b1ed8a74bcb75def9ff8f08fb789
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="microsoft-ajax-content-delivery-network"></a>Rede de fornecimento de conteúdo do Microsoft Ajax
 ====================
@@ -68,7 +68,7 @@ A CDN hospeda as seguintes bibliotecas de scripts de terceiros que foram carrega
 - jQuery UI (www.jqueryui.com)
 - jQuery Mobile (www.jquerymobile.com)
 - jQuery validação (www.jquery.com)
-- jQuery ciclo (www.malsup.com/jquery/cycle/)
+- jQuery Cycle (www.malsup.com/jquery/cycle/)
 - jQuery DataTables (http://datatables.net/)
 
 A Microsoft Ajax CDN também inclui as seguintes bibliotecas que foram carregadas pela Microsoft:

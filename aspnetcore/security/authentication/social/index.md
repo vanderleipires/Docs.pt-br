@@ -1,7 +1,7 @@
 ---
-title: "Autenticação de Facebook, Google e de provedor externo no ASP.NET Core"
+title: Autenticação de Facebook, Google e de provedor externo no ASP.NET Core
 author: rick-anderson
-description: "Este tutorial demonstra como criar um aplicativo do ASP.NET Core 2.x usando o OAuth 2.0 com provedores de autenticação externa."
+description: Este tutorial demonstra como criar um aplicativo do ASP.NET Core 2.x usando o OAuth 2.0 com provedores de autenticação externa.
 manager: wpickett
 ms.author: riande
 ms.date: 11/01/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 76433f814d6850a449434c29eb0bd27570ce193a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 93fa42be9c551f5bbdf3851aec1d9e01139fdb76
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Autenticação de Facebook, Google e de provedor externo no ASP.NET Core
 
@@ -23,7 +23,7 @@ Por [Valeriy Novytskyy](https://github.com/01binary) e [Rick Anderson](https://t
 
 Este tutorial demonstra como criar um aplicativo ASP.NET Core 2.x que permite aos usuários fazer logon usando o OAuth 2.0 com as credenciais de provedores de autenticação externa.
 
-Os provedores [Facebook](facebook-logins.md), [Twitter](twitter-logins.md), [Google](google-logins.md) e [Microsoft](microsoft-logins.md) são abordados nas seções a seguir. Outros provedores estão disponíveis em pacotes de terceiros, como [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) e [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers).
+Os provedores [Facebook](xref:security/authentication/facebook-logins), [Twitter](xref:security/authentication/twitter-logins), [Google](xref:security/authentication/google-logins) e [Microsoft](xref:security/authentication/microsoft-logins) são abordados nas seções a seguir. Outros provedores estão disponíveis em pacotes de terceiros, como [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) e [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers).
 
 ![Ícones de mídia social do Facebook, Twitter, Google+ e Windows](index/_static/social.png)
 
@@ -58,7 +58,7 @@ O OAuth 2.0 exige o uso de SSL para autenticação por meio do protocolo HTTPS.
 
 Observação: os projetos criados com o uso de modelos de projeto **Aplicativo Web** ou **API Web** para o ASP.NET Core 2.x são automaticamente configurados para habilitar o SSL e iniciados com a URL HTTPS se a opção **Contas de Usuário Individuais** foi selecionada na **caixa de diálogo Alterar Autenticação** no assistente do projeto, conforme mostrado acima.
 
-* Exija o SSL em seu site seguindo as etapas do tópico [Impondo o SSL em um aplicativo ASP.NET Core](xref:security/enforcing-ssl).
+* Exija o SSL em seu site seguindo as etapas do tópico [Impor o SSL em um aplicativo ASP.NET Core](xref:security/enforcing-ssl).
 
 ## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>Usar o SecretManager para armazenar os tokens atribuídos por provedores de logon
 
@@ -72,11 +72,11 @@ Siga as etapas do tópico [Armazenamento seguro de segredos do aplicativo durant
 
 Use os seguintes tópicos para configurar seu aplicativo para usar os respectivos provedores:
 
-* Instruções do [Facebook](facebook-logins.md)
-* Instruções do [Twitter](twitter-logins.md)
-* Instruções do [Google](google-logins.md)
-* Instruções da [Microsoft](microsoft-logins.md)
-* [Outras](other-logins.md) instruções do provedor
+* Instruções do [Facebook](xref:security/authentication/facebook-logins)
+* Instruções do [Twitter](xref:security/authentication/twitter-logins)
+* Instruções do [Google](xref:security/authentication/google-logins)
+* Instruções da [Microsoft](xref:security/authentication/microsoft-logins)
+* [Outras](xref:security/authentication/otherlogins) instruções do provedor
 
 ## <a name="optionally-set-password"></a>Definir a senha opcionalmente
 

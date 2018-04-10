@@ -15,7 +15,7 @@ ms.openlocfilehash: a155422c0fd638f46fe4a9d8a77faebc0b2a5681
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>Pacote e minifiy ativos estáticos no núcleo do ASP.NET
 
@@ -81,7 +81,7 @@ Opções de configuração incluem:
 * `inputFiles`: Uma matriz de arquivos para agrupar em conjunto. Esses são os caminhos relativos ao arquivo de configuração. **opcional**, * um valor vazio resulta em um arquivo de saída vazia. [Globalização](http://www.tldp.org/LDP/abs/html/globbingref.html) padrões são suportados.
 * `minify`: As opções de minimização para o tipo de saída. **optional**, *default - `minify: { enabled: true }`*
   * Opções de configuração estão disponíveis por tipo de arquivo de saída.
-    * [Minificador CSS](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
+    * [CSS Minifier](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [Minificador de JavaScript](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
     * [Minificador de HTML](https://github.com/madskristensen/BundlerMinifier/wiki)
 * `includeInProject`: O sinalizador que indica se é para adicionar arquivos gerados ao arquivo de projeto. **optional**, *default - false*

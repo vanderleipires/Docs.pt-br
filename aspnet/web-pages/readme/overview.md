@@ -1,6 +1,6 @@
 ---
 uid: web-pages/readme/overview
-title: WebMatrix Readme | Microsoft Docs
+title: Leiame do WebMatrix | Microsoft Docs
 author: rick-anderson
 description: O WebMatrix e o Leiame do ASP.NET páginas da Web (Razor) versão 1.0
 ms.author: aspnetcontent
@@ -16,7 +16,7 @@ ms.openlocfilehash: c65ee58b8c13b0b4acb6e7c9b631c8235e791506
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="webmatrix-readme"></a>Leiame do WebMatrix
 ====================
@@ -44,7 +44,7 @@ ms.lasthandoff: 04/06/2018
 
 <a id="Overview"></a>
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 > Microsoft WebMatrix 1.0 é uma pilha de desenvolvimento gratuito da web que é instalado em minutos. Ela integra um servidor web com o banco de dados e estruturas para criar uma única experiência integrada de programação. Você pode usar o WebMatrix para simplificar a maneira de código, testar e publicar o seu próprio site ASP.NET ou PHP, ou você pode usar o WebMatrix para iniciar um novo site usando aplicativos de código aberto populares como DotNetNuke, Umbraco, WordPress ou Joomla. O WebMatrix usa o mesmo servidor de aplicativos web, o mecanismo de banco de dados e o ambiente de estruturas que executará o seu site na internet, o que faz a transição do desenvolvimento para produção simples e direta.
 
@@ -135,7 +135,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > [!code-xml[Main](overview/samples/sample1.xml)]
 
 
-#### <a id="Changes"></a>  Changes
+#### <a id="Changes"></a>  Alterações
 
 #### <a name="change-webpagesadminfoldervirtualpath-key-renamed-to-aspadminfoldervirtualpath"></a>Alterar: a chave de "webPages:AdminFolderVirtualPath" renomeada para "asp: AdminFolderVirtualPath"
 
@@ -257,10 +257,10 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > 
 > 1. Copie os assemblies do mecanismo de banco de dados para o *Bin* pasta (e subpastas) do aplicativo no computador de destino:  
 > 
->    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>    - Cópia *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
 >        **to** *\Bin*
 >    - Cópia <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\</em><strong><em>para</em></strong>\Bin\x86*
->    - Copy <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>to</strong><em>\Bin\amd64</em>
+>    - Cópia <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>para</strong><em>\Bin\amd64</em>
 > 
 > 2. Na pasta raiz do site, crie ou abra um *Web. config* arquivo. (No WebMatrix 1.0, esse tipo de arquivo está disponível se você clicar em **todos os** no **escolher um tipo de arquivo** caixa de diálogo.)
 > 3. Adicione o seguinte elemento como um filho de `<configuration>` elemento (não dentro a `<system.web>` elemento):
@@ -367,7 +367,7 @@ Esta seção do documento descreve problemas conhecidos para o ambiente de desen
 > Há suporte para o IntelliSense para HTML e CSS no WebMatrix. No entanto, não está disponível para outros idiomas. 
 > 
 > **Solução alternativa**   
-> Nenhum.
+> nenhuma.
 
 
 #### <a name="issue-intellisense-for-html-and-css-suggests-elements-that-are-not-contextually-appropriate"></a>Problema: O IntelliSense para HTML e CSS sugere elementos que não são apropriados contextualmente
@@ -418,7 +418,7 @@ Para obter informações sobre problemas que envolvem a instalação do SQL Serv
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>Problema: Instalação de um aplicativo pode levar muito tempo se a pasta Meus documentos do usuário é redirecionada para um compartilhamento de rede
 
 > **Solução alternativa**  
-> Nenhum. O aplicativo pode demorar um pouco para ser instalado, mas será instalado corretamente.
+> nenhuma. O aplicativo pode demorar um pouco para ser instalado, mas será instalado corretamente.
 
 
 ### <a id="Known_Issues_Publishing_Applications"></a>  Publicação de aplicativos

@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
-title: "ASP.NET e Web 2012.2 notas de versão das ferramentas | Microsoft Docs"
+title: ASP.NET e Web 2012.2 notas de versão das ferramentas | Microsoft Docs
 author: rick-anderson
-description: "Notas de versão do ASP.NET e Web Tools 2012.2."
+description: Notas de versão do ASP.NET e Web Tools 2012.2.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/14/2013
 ms.topic: article
 ms.assetid: 9534e58b-1d15-4f1d-b04c-10c79b9d8227
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
 msc.type: content
 ms.openlocfilehash: ab1642f1a3de298919aa9c6c1ddbd6bbb0cb99b5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>Notas de versão do ASP.NET e Web Tools 2012.2
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/24/2018
     - [Modelos ASP.NET MVC](#_Templates)
     - [API Web ASP.NET](#_ASP.NET_Web_API)
 
-    - [ASP.NET SignalR](#_ASP.NET_SignalR)
+    - [SignalR do ASP.NET](#_ASP.NET_SignalR)
     - [URLs amigáveis do ASP.NET](#_ASP.NET_Friendly_URLs)
 - [Problemas conhecidos e as alterações recentes](#_Known_Issues_and)
 
@@ -53,12 +53,12 @@ Você também pode instalar o ASP.NET e Web Tools 2012.2 manualmente. Você deve
 5. Quando executado clique solicitada. Você também pode salvar o arquivo para executá-lo mais tarde.
 
 > [!NOTE]
-> Versão do ASP.NET e Web Tools 2012.2 não inclui ferramentas de dados do SQL Server. SQL Server e bancos de dados SQL do Windows Azure fornece um valioso conjunto de ferramentas incluindo desenvolvimento baseado em projeto offline, comparação de esquemas e os recursos de implantação de banco de dados aprimorado de banco de dados. Para obter mais informações ou instalar o SQL Server Data Tools, visite [https://go.microsoft.com/fwlink/?LinkID=237127](https://go.microsoft.com/fwlink/?LinkID=237127).
+> Versão do ASP.NET e Web Tools 2012.2 não inclui ferramentas de dados do SQL Server. SQL Server e bancos de dados SQL do Windows Azure fornece um valioso conjunto de ferramentas incluindo desenvolvimento baseado em projeto offline, comparação de esquemas e os recursos de implantação de banco de dados aprimorado de banco de dados. Para obter mais informações ou instalar o SQL Server Data Tools, visite [ https://go.microsoft.com/fwlink/?LinkID=237127 ](https://go.microsoft.com/fwlink/?LinkID=237127).
 
 <a id="_Documentation"></a>
 ## <a name="documentation"></a>Documentação
 
-Tutoriais e outras informações sobre o ASP.NET e Web Tools 2012.2 estão disponíveis no site da web do ASP.NET (https://www.asp.net).
+Tutoriais e outras informações sobre o ASP.NET e Web Tools 2012.2 estão disponíveis no site da web ASP.NET ( https://www.asp.net).
 
 <a id="_Support"></a>
 ## <a name="support"></a>Suporte
@@ -104,10 +104,10 @@ Esta seção descreve os recursos que foram introduzidos na versão ASP.NET e We
 <a id="_Templates"></a>
 ### <a name="aspnet-mvc-templates"></a>Modelos ASP.NET MVC
 
-- O novo modelo de aplicativo do Facebook facilita a criação de aplicativos fáceis de Canvas do Facebook. Em algumas etapas simples, você pode criar um aplicativo do Facebook que obtém dados de um usuário conectado e integra-se com seus amigos. O modelo inclui uma nova biblioteca para cuidar de todo o encanamento envolvido na criação de um aplicativo do Facebook, incluindo autenticação, permissões, acesso aos dados do Facebook e muito mais. Para obter mais informações sobre como usar o modelo de aplicativo do Facebook, consulte [https://go.microsoft.com/fwlink/?LinkID=269921](https://go.microsoft.com/fwlink/?LinkID=269921).
-- Um novo modelo MVC de aplicativo de página única permite aos desenvolvedores compilar aplicativos web interativos de cliente usando HTML 5, CSS 3 e o populares Knockout e jQuery JavaScript bibliotecas, na parte superior da API Web do ASP.NET. O modelo inclui um aplicativo de lista "todo" que demonstra práticas comuns para a criação de um aplicativo JavaScript HTML5 que usa um API RESTful do servidor. Você pode ler mais em [https://www.asp.net/single-page-application](../../../single-page-application/index.md).
+- O novo modelo de aplicativo do Facebook facilita a criação de aplicativos fáceis de Canvas do Facebook. Em algumas etapas simples, você pode criar um aplicativo do Facebook que obtém dados de um usuário conectado e integra-se com seus amigos. O modelo inclui uma nova biblioteca para cuidar de todo o encanamento envolvido na criação de um aplicativo do Facebook, incluindo autenticação, permissões, acesso aos dados do Facebook e muito mais. Para obter mais informações sobre como usar o modelo de aplicativo do Facebook, consulte [ https://go.microsoft.com/fwlink/?LinkID=269921 ](https://go.microsoft.com/fwlink/?LinkID=269921).
+- Um novo modelo MVC de aplicativo de página única permite aos desenvolvedores compilar aplicativos web interativos de cliente usando HTML 5, CSS 3 e o populares Knockout e jQuery JavaScript bibliotecas, na parte superior da API Web do ASP.NET. O modelo inclui um aplicativo de lista "todo" que demonstra práticas comuns para a criação de um aplicativo JavaScript HTML5 que usa um API RESTful do servidor. Você pode ler mais em [ https://www.asp.net/single-page-application ](../../../single-page-application/index.md).
 - Agora você pode criar um VSIX que adiciona novos modelos para a caixa de diálogo Novo projeto do ASP.NET MVC. Saiba como fazer isso aqui: [https://go.microsoft.com/fwlink/?LinkId=275019](https://go.microsoft.com/fwlink/?LinkId=275019)
-- Pacote de FixedDisplayModes &#8211; Modelos de projeto MVC foram atualizados para incluir o novo pacote do NuGet 'FixedDisplayModes', que contém uma solução alternativa para um bug no MVC 4. Para obter mais informações sobre a correção contida no pacote, consulte esta postagem de blog ([https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx)) da equipe do MVC.
+- Pacote de FixedDisplayModes &#8211; modelos de projeto MVC foram atualizados para incluir o novo pacote do NuGet 'FixedDisplayModes', que contém uma solução alternativa para um bug no MVC 4. Para obter mais informações sobre a correção contida no pacote, consulte esta postagem de blog ([https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx)) da equipe do MVC.
 
 <a id="_ASP.NET_Web_API"></a>
 ### <a name="aspnet-web-api"></a>API da Web do ASP.NET
@@ -148,33 +148,33 @@ ASP.NET Web API OData atualmente suporta os seguintes recursos:
 - Ações de OData.
 - Criado com base no mesmo como o WCF Data Services, ou seja, ODataLib ([http://www.nuget.org/packages/microsoft.data.odata](http://www.nuget.org/packages/microsoft.data.odata)).
 
-Para obter mais informações sobre o ASP.NET Web API OData consulte [https://go.microsoft.com/fwlink/?LinkId=271141](https://go.microsoft.com/fwlink/?LinkId=271141).
+Para obter mais informações sobre o ASP.NET Web API OData consulte [ https://go.microsoft.com/fwlink/?LinkId=271141 ](https://go.microsoft.com/fwlink/?LinkId=271141).
 
 #### <a name="aspnet-web-api-tracing"></a>Rastreamento de API da Web ASP.NET
 
 Rastreamento de API da Web ASP.NET integra dados de rastreamento de suas APIs da web com o rastreamento do .NET. Agora, ele é habilitado por padrão no modelo de projeto de API da Web. APIs de rastreamento de dados para a web é enviada para a janela de saída e é disponibilizado por meio do IntelliTrace. Rastreamento do ASP.NET Web API permite rastrear as informações sobre a API da Web quando hospedado no Windows Azure por meio da integração com [diagnóstico do Windows Azure](https://msdn.microsoft.com/library/windowsazure/hh411529.aspx). Você também pode instalar e habilitar o rastreamento do ASP.NET Web API em qualquer aplicativo usando o pacote NuGet de rastreamento do ASP.NET Web API ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
 
-Para obter mais informações sobre como configurar e usar o ASP.NET Web API Tracing consulte [https://go.microsoft.com/fwlink/?LinkID=269874](https://go.microsoft.com/fwlink/?LinkID=269874).
+Para obter mais informações sobre como configurar e usar o ASP.NET Web API Tracing consulte [ https://go.microsoft.com/fwlink/?LinkID=269874 ](https://go.microsoft.com/fwlink/?LinkID=269874).
 
 #### <a name="aspnet-web-api-help-page"></a>Página de Ajuda da API da Web ASP.NET
 
 A página de Ajuda do ASP.NET Web API agora está incluída por padrão no modelo de projeto de API da Web. A página de Ajuda do ASP.NET Web API gera automaticamente a documentação de APIs, incluindo os pontos de extremidade HTTP, os métodos HTTP suportados, parâmetros e cargas de mensagem de solicitação e resposta de exemplo da web. Documentação automaticamente é extraída de comentários em seu código. Você também pode adicionar a página de Ajuda do ASP.NET Web API para qualquer aplicativo usando o pacote ASP.NET Web API ajuda Page NuGet ([http://www.nuget.org/packages/microsoft.aspnet.webapi.helppage](http://www.nuget.org/packages/microsoft.aspnet.webapi.helppage)).
 
-Para obter mais informações sobre como configurar e personalizar consulte a página de Ajuda do ASP.NET Web API [https://go.microsoft.com/fwlink/?LinkId=271140](https://go.microsoft.com/fwlink/?LinkId=271140).
+Para obter mais informações sobre como configurar e personalizar consulte a página de Ajuda do ASP.NET Web API [ https://go.microsoft.com/fwlink/?LinkId=271140 ](https://go.microsoft.com/fwlink/?LinkId=271140).
 
 <a id="_ASP.NET_SignalR"></a>
 ### <a name="aspnet-signalr"></a>ASP.NET SignalR
 
 ASP.NET SignalR torna simples para adicionar recursos da web em tempo real para seu aplicativo ASP.NET, usando WebSockets se disponível e automaticamente voltando para outras técnicas quando não estiver.
 
-Para obter mais informações sobre como usar o ASP.NET SignalR consulte [https://go.microsoft.com/fwlink/?LinkId=271271](https://go.microsoft.com/fwlink/?LinkId=271271).
+Para obter mais informações sobre como usar o ASP.NET SignalR consulte [ https://go.microsoft.com/fwlink/?LinkId=271271 ](https://go.microsoft.com/fwlink/?LinkId=271271).
 
 <a id="_ASP.NET_Friendly_URLs"></a>
 ### <a name="aspnet-friendly-urls"></a>URLs amigáveis do ASP.NET
 
 ASP.NET FriendlyURLs facilita para os desenvolvedores de formulários da web gerar a limpeza procurando URLs (sem a extensão. aspx). Ele requer pouca ou nenhuma configuração e pode ser usado com aplicativos ASP.NET v 4.0. O recurso de FriendlyURLs também torna mais fácil para os desenvolvedores adicionar suporte móvel para seus aplicativos, oferecendo suporte a alternância entre os modos de desktop e mobile.
 
-Para obter mais informações sobre como instalar e usar URLs amigáveis do ASP.NET, consulte [http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx](http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx).
+Para obter mais informações sobre como instalar e usar URLs amigáveis do ASP.NET, consulte [ http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx ](http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx).
 
 <a id="_Known_Issues_and"></a>
 ## <a name="known-issues-and-breaking-changes"></a>Problemas conhecidos e as alterações recentes
@@ -247,7 +247,7 @@ Se os usuários tiverem diferenciam maiusculas de minúsculas em javascript lado
 
 #### <a name="default-odata-routing-conventions-doesnt-support-postput-on-navigation-property"></a>Padrão OData convenções de roteamento não dá suporte a POST/PUT na propriedade de navegação.
 
-Padrão OData convenções de roteamento não dá suporte a POST/PUT na propriedade de navegação. Consulte o item de trabalho [http://aspnetwebstack.codeplex.com/workitem/366](http://aspnetwebstack.codeplex.com/workitem/366). Nós não essa convenção comumente usada em convenções padrão.
+Padrão OData convenções de roteamento não dá suporte a POST/PUT na propriedade de navegação. Consulte o item de trabalho [ http://aspnetwebstack.codeplex.com/workitem/366 ](http://aspnetwebstack.codeplex.com/workitem/366). Nós não essa convenção comumente usada em convenções padrão.
 
 Para resolvê-lo, os usuários precisam estender nova convenção de roteamento para dar suporte a ele.
 
@@ -259,7 +259,7 @@ Você deve selecionar o .NET 4.5 na lista suspensa do framework na caixa de diá
 
 #### <a name="real-time-update-controller"></a>Controlador de atualização em tempo real
 
-O modelo de aplicativo do Facebook permite que usuário facilmente criar um controlador de API da Web para manipular atualizações em tempo real do Facebook. Se sua máquina de desenvolvimento estiver atrás de NAT, o controlador pode não funcionar sem qualquer configuração de rede. Veja aqui para obter detalhes: [http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook](http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook)
+O modelo de aplicativo do Facebook permite que usuário facilmente criar um controlador de API da Web para manipular atualizações em tempo real do Facebook. Se sua máquina de desenvolvimento estiver atrás de NAT, o controlador pode não funcionar sem qualquer configuração de rede. Para obter detalhes, consulte aqui: [http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook](http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook)
 
 #### <a name="query-string-values-conflict-with-facebook-oauth-parameters"></a>Conflito de valores de cadeia de caracteres com OAuth do Facebook parâmetros de consulta
 
@@ -275,7 +275,7 @@ Você não pode usar o recurso de Inspetor de página no Visual Studio 2012 dura
 
 Com JQuery 1.9/Knockout 2.2.1 atualizar, ao executar o projeto do SPA MVC padrão, novo todo item Editar digite não mais foco volta para a caixa de edição do novo item de tarefas depois de inserir o novo item de tarefas à lista de tarefas.
 
-A referência de solução alternativa [http://knockoutjs.com/documentation/hasfocus-binding.html](http://knockoutjs.com/documentation/hasfocus-binding.html)e fazer correção semelhante para o código de exemplo a seguir:
+A referência de solução alternativa [ http://knockoutjs.com/documentation/hasfocus-binding.html ](http://knockoutjs.com/documentation/hasfocus-binding.html)e fazer correção semelhante para o código de exemplo a seguir:
 
 Arquivo todo.model.js  
  função todolist(data), adicione seguintes:  
@@ -286,6 +286,6 @@ função todoList.prototype.addTodo, adicione o seguinte texto blacked:
  self.newTodoTitle(&quot;&quot;);
 
 Arquivos cshtml, adicione o seguinte texto blacked:  
- &lt;formulário de associação de dados =&quot;enviar: addTodo&quot;&gt;  
+ &lt;form data-bind=&quot;submit: addTodo&quot;&gt;  
  &lt;classe de entrada =&quot;addTodo&quot; tipo =&quot;texto&quot; data-bind =&quot;valor: newTodoTitle, espaço reservado: 'Digite aqui para adicionar', blurOnEnter: true, **hasfocus: isSelected**, evento: {desfoque: addTodo}&quot; /&gt;  
  &lt;/form&gt;

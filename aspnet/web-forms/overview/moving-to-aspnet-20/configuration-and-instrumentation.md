@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
-title: "Configuração e instrumentação | Microsoft Docs"
+title: Configuração e instrumentação | Microsoft Docs
 author: microsoft
-description: "Há grandes alterações na configuração e instrumentação no ASP.NET 2.0. A nova API de configuração do ASP.NET permite alterações de configuração a serem feitas pr..."
+description: Há grandes alterações na configuração e instrumentação no ASP.NET 2.0. A nova API de configuração do ASP.NET permite alterações de configuração a serem feitas pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
 ms.openlocfilehash: 16dfe3c899dfa028d8a52b4b5f9c2868887e8fa9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="configuration-and-instrumentation"></a>Configuração e instrumentação
 ====================
@@ -81,7 +81,7 @@ Muitas classes de configuração e métodos são semelhantes entre si. A tabela 
 | [System. Configuration](https://msdn.microsoft.com/library/system.configuration.aspx) namespace | Contém as classes de configuração principais para todos os aplicativos do .NET Framework. Classes de manipulador de seção são usadas para obter dados de configuração para uma seção de métodos, como GetSection e GetSectionGroup. Esses dois métodos são não-estático. |
 | Classe System.Configuration.Configuration | Representa um conjunto de dados de configuração para um computador, aplicativo, diretório da Web ou outro recurso. Essa classe contém métodos úteis, como GetSection e GetSectionGroup, para atualizar as definições de configuração e obter referências para seções e grupos de seção. Essa classe é usada como um tipo de retorno para métodos que obtêm dados de configuração de tempo de design, como os métodos das classes WebConfigurationManager e ConfigurationManager. |
 | Namespace System.Web.Configuration | Contém as classes de manipulador de seção para as seções de configuração do ASP.NET definidas em [definições de configuração do ASP.NET](https://msdn.microsoft.com/library/b5ysx397.aspx). Classes de manipulador de seção são usadas para obter dados de configuração para uma seção de métodos, como GetSection e GetSectionGroup. |
-| Classe System.Web.Configuration.WebConfigurationManager | Fornece métodos úteis para obter referências para as definições de configuração de tempo de execução e tempo de design. Esses métodos usam a classe System.Configuration.Configuration como um tipo de retorno. Você pode usar o método estático GetSection dessa classe ou o método de GetSection não-estático da classe System.Configuration.ConfigurationManager alternadamente. Para configurações de aplicativo da Web, a classe System.Web.Configuration.WebConfigurationManager é recomendada em vez da classe System.Configuration.ConfigurationManager. |
+| System.Web.Configuration.WebConfigurationManager class | Fornece métodos úteis para obter referências para as definições de configuração de tempo de execução e tempo de design. Esses métodos usam a classe System.Configuration.Configuration como um tipo de retorno. Você pode usar o método estático GetSection dessa classe ou o método de GetSection não-estático da classe System.Configuration.ConfigurationManager alternadamente. Para configurações de aplicativo da Web, a classe System.Web.Configuration.WebConfigurationManager é recomendada em vez da classe System.Configuration.ConfigurationManager. |
 | [System.Configuration.Provider](https://msdn.microsoft.com/library/system.configuration.provider.aspx) namespace | Fornece uma maneira de personalizar e estender o provedor de configuração. Esta é a classe base para todas as classes de provedor no sistema de configuração. |
 | [System.Web.Management](https://msdn.microsoft.com/library/system.web.management.aspx) namespace | Contém classes e interfaces para gerenciar e monitorar a integridade de aplicativos da Web. Estritamente falando, esse namespace não é considerado parte da configuração de API. Por exemplo, o rastreamento e o acionamento do evento é realizado pelas classes neste namespace. |
 | [System.Management.Instrumentation](https://msdn.microsoft.com/library/system.management.instrumentation.aspx) namespace | Fornece as classes necessárias para a instrumentação de aplicativos para expor suas informações de gerenciamento e os eventos por meio do Windows Management Instrumentation (WMI) para os consumidores em potencial. Monitoramento de integridade do ASP.NET usa WMI para entregar eventos. Estritamente falando, esse namespace não é considerado parte da configuração de API. |
@@ -148,11 +148,11 @@ O &lt;healthMonitoring&gt; seção do arquivo Web. config global fornece padrão
 
 O &lt;healthMonitoring&gt; seção do arquivo Web. config global contém os seguintes itens:
 
-| **provedores** | Contém os provedores configurado para o Visualizador de eventos, o WMI e o SQL Server. |
+| **providers** | Contém os provedores configurado para o Visualizador de eventos, o WMI e o SQL Server. |
 | --- | --- |
 | **eventMappings** | Contém mapeamentos para várias classes de WebBase. Você pode estender esta lista se você gerar sua própria classe de evento. Gerar sua própria classe de evento oferece granularidade mais fina sobre os provedores de para que enviar informações. Por exemplo, você pode configurar exceções sem tratamento a ser enviada ao SQL Server, ao enviar seus próprios eventos personalizados para email. |
-| **regras** | Links eventMappings ao provedor. |
-| **armazenamento em buffer** | Usado com os provedores SQL Server e o email para determinar a frequência de eventos de liberação para o provedor. |
+| **rules** | Links eventMappings ao provedor. |
+| **buffering** | Usado com os provedores SQL Server e o email para determinar a frequência de eventos de liberação para o provedor. |
 
 Abaixo está um exemplo de código do arquivo Web. config global.
 
@@ -330,7 +330,7 @@ A tabela a seguir descreve como o compilação do ASP.NET ferramenta identificad
 
 | **Tipo de arquivo** | **Ação do compilador** |
 | --- | --- |
-| .ascx, .aspx, .master | Esses arquivos são divididos em marcação e código-fonte, que inclui os arquivos code-behind e qualquer código que é incluído na &lt;script runat = "server"&gt; elementos. Código-fonte é compilado em assemblies com nomes que são derivados de um algoritmo de hash, e os assemblies são colocados no diretório Bin. Qualquer código embutido, que é, o código colocado entre o  **&lt; %**  e  **% &gt;**  colchetes, incluído com a marcação e não compilado. Novos arquivos com o mesmo nome que os arquivos de origem são criados para conter a marcação e colocados nos diretórios de saída correspondente. |
+| .ascx, .aspx, .master | Esses arquivos são divididos em marcação e código-fonte, que inclui os arquivos code-behind e qualquer código que é incluído na &lt;script runat = "server"&gt; elementos. Código-fonte é compilado em assemblies com nomes que são derivados de um algoritmo de hash, e os assemblies são colocados no diretório Bin. Qualquer código embutido, que é, o código colocado entre o **&lt; %** e **% &gt;** colchetes, incluído com a marcação e não compilado. Novos arquivos com o mesmo nome que os arquivos de origem são criados para conter a marcação e colocados nos diretórios de saída correspondente. |
 | .ashx, .asmx | Esses arquivos não são compilados e são movidos para os diretórios de saída como está e não compilado. Se você quiser que o código de manipulador compilado, coloque o código em arquivos de código fonte no aplicativo\_diretório de código. |
 | . cs,. vb,. jsl,. cpp (não incluindo os arquivos code-behind para os tipos de arquivo listados anteriormente) | Esses arquivos são compilados e incluídos como um recurso em assemblies que fazem referência a eles. Arquivos de origem não são copiados para o diretório de saída. Se um arquivo de código não for referenciado, ele não é compilado. |
 | Tipos de arquivos personalizados | Esses arquivos não são compilados. Esses arquivos são copiados para os diretórios de saída correspondente. |
@@ -344,7 +344,7 @@ A tabela a seguir descreve como o compilação do ASP.NET ferramenta identificad
 
 | **Tipo de arquivo** | **Ação do compilador** |
 | --- | --- |
-| .aspx, .asmx, .ashx, .master | Esses arquivos são divididos em marcação e código-fonte, que inclui os arquivos code-behind e qualquer código que é incluído na &lt;script runat = "server"&gt; elementos. Código-fonte é compilado em assemblies com nomes que são derivados de um algoritmo de hash. Os conjuntos resultantes são colocados no diretório Bin. Qualquer código embutido, que é, o código colocado entre o  **&lt; %**  e  **% &gt;**  colchetes, incluído com a marcação e não compilado. O compilador cria novos arquivos para conter a marcação com o mesmo nome que os arquivos de origem. Esses arquivos resultantes são colocados no diretório Bin. O compilador também cria arquivos com o mesmo nome que os arquivos de origem, mas com a extensão. COMPILED que contêm informações de mapeamento. A. Arquivos COMPILADOS são colocados em diretórios de saída correspondente para o local original dos arquivos de origem. |
+| .aspx, .asmx, .ashx, .master | Esses arquivos são divididos em marcação e código-fonte, que inclui os arquivos code-behind e qualquer código que é incluído na &lt;script runat = "server"&gt; elementos. Código-fonte é compilado em assemblies com nomes que são derivados de um algoritmo de hash. Os conjuntos resultantes são colocados no diretório Bin. Qualquer código embutido, que é, o código colocado entre o **&lt; %** e **% &gt;** colchetes, incluído com a marcação e não compilado. O compilador cria novos arquivos para conter a marcação com o mesmo nome que os arquivos de origem. Esses arquivos resultantes são colocados no diretório Bin. O compilador também cria arquivos com o mesmo nome que os arquivos de origem, mas com a extensão. COMPILED que contêm informações de mapeamento. A. Arquivos COMPILADOS são colocados em diretórios de saída correspondente para o local original dos arquivos de origem. |
 | .ascx | Esses arquivos são divididos em marcação e código-fonte. Código-fonte é compilado em assemblies e colocado no diretório Bin, com nomes que são derivados de um algoritmo de hash. Nenhum arquivo de marcação é gerado. |
 | . cs,. vb,. jsl,. cpp (não incluindo os arquivos code-behind para os tipos de arquivo listados anteriormente) | Código-fonte que é referenciado pelos assemblies gerados a partir de arquivos. aspx,. ashx ou. ascx é compilado em assemblies e colocado no diretório Bin. Não há arquivos de origem são copiados. |
 | Tipos de arquivos personalizados | Esses arquivos são compilados como arquivos dinâmicos. Dependendo do tipo de arquivo, em que elas se baseiam, o compilador pode colocar arquivos de mapeamento em diretórios de saída. |

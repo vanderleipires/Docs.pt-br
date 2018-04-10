@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/working-with-files
-title: "Trabalhando com arquivos em um Site do ASP.NET páginas da Web (Razor) | Microsoft Docs"
+title: Trabalhando com arquivos em um Site do ASP.NET páginas da Web (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Este capítulo explica como ler, gravar, acrescentar, excluir e carregar arquivos."
+description: Este capítulo explica como ler, gravar, acrescentar, excluir e carregar arquivos.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
 ms.openlocfilehash: 0f119f8fb4873e55292203f21a2efd8f26793ae4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>Trabalhando com arquivos em um Site de páginas (Razor) da Web do ASP.NET
 ====================
@@ -133,9 +133,9 @@ Este procedimento mostra como ler e exibir os dados que você criou no exemplo a
 
     O código para fazer isso está dentro de um `if` instrução. Quando você quiser ler um arquivo, é recomendável usar o `File.Exists` método para determinar primeiro se o arquivo está disponível. O código também verifica se o arquivo está vazio.
 
-    O corpo da página contém dois `foreach` loops, um aninhado em outro. Externa `foreach` loop obtém uma linha por vez do arquivo de dados. Nesse caso, as linhas são definidas por quebras de linha no arquivo de &#8212; ou seja, cada item de dados está em sua própria linha. O loop externo cria um novo item (`<li>` elemento) dentro de uma lista ordenada (`<ol>` elemento).
+    O corpo da página contém dois `foreach` loops, um aninhado em outro. Externa `foreach` loop obtém uma linha por vez do arquivo de dados. Nesse caso, as linhas são definidas por quebras de linha no arquivo &#8212; ou seja, cada item de dados está em sua própria linha. O loop externo cria um novo item (`<li>` elemento) dentro de uma lista ordenada (`<ol>` elemento).
 
-    O loop interno divide cada linha de dados em itens (campos) usando uma vírgula como delimitador. (Com base no exemplo anterior, isso significa que cada linha contém três campos &#8212; o nome, sobrenome e endereço de email, cada um separado por vírgula). O loop interno também cria um `<ul>` lista e exibe uma lista de item para cada campo na linha de dados.
+    O loop interno divide cada linha de dados em itens (campos) usando uma vírgula como delimitador. (Com base no exemplo anterior, isso significa que cada linha contém três campos &#8212; o nome, sobrenome e endereço de email, cada um separado por uma vírgula.) O loop interno também cria um `<ul>` lista e exibe uma lista de item para cada campo na linha de dados.
 
     O código demonstra como usar dois tipos de dados, uma matriz e o `char` tipo de dados. A matriz é necessária porque o `File.ReadAllLines` método retorna dados como uma matriz. O `char` tipo de dados é necessário porque o `Split` método retorna um `array` no qual cada elemento é do tipo `char`. (Para obter informações sobre matrizes, consulte [Introdução ao ASP.NET Web programação usando a sintaxe do Razor](https://go.microsoft.com/fwlink/?LinkId=202890#ID_CollectionsAndObjects).)
 3. Execute a página em um navegador. Os dados inseridos nos exemplos anteriores, são exibidos. 
@@ -194,7 +194,7 @@ O `FileUpload` auxiliar permite que os usuários carregar arquivos em seu site. 
 
     As propriedades que você definiu para o `FileUpload` auxiliar especifique que você deseja que uma única caixa carregar o arquivo e que você deseja que o botão de envio para ler **carregar**. (Você adicionará mais caixas posteriormente neste artigo.)
 
-    Quando o usuário clica **carregar**, obtém o arquivo de código na parte superior da página e salva-o. O `Request` objeto que você normalmente usa para obter valores de campos de formulário também tem um `Files` matriz que contém o arquivo (ou arquivos) que foram carregados. Você pode obter dos arquivos individuais posições específicas na matriz &#8212; Por exemplo, para obter o primeiro arquivo carregado, você receberá `Request.Files[0]`, para obter o segundo arquivo, você obtém `Request.Files[1]`, e assim por diante. (Lembre-se de que em programação, contando geralmente começa em zero.)
+    Quando o usuário clica **carregar**, obtém o arquivo de código na parte superior da página e salva-o. O `Request` objeto que você normalmente usa para obter valores de campos de formulário também tem um `Files` matriz que contém o arquivo (ou arquivos) que foram carregados. Você pode obter posições específicas na matriz dos arquivos individuais &#8212; por exemplo, para obter o primeiro arquivo carregado, você receberá `Request.Files[0]`, para obter o segundo arquivo, você obtém `Request.Files[1]`, e assim por diante. (Lembre-se de que em programação, contando geralmente começa em zero.)
 
     Quando você busca um arquivo carregado, você colocá-lo em uma variável (aqui, `uploadedFile`) para que você possa manipulá-los. Para determinar o nome do arquivo carregado, você obtém apenas seu `FileName` propriedade. No entanto, quando o usuário carrega um arquivo, `FileName` contém o nome do usuário original, que inclui o caminho completo. Ele pode parecer com isso:
 

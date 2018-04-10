@@ -1,7 +1,7 @@
 ---
-title: "Visão geral do ASP.NET Core MVC"
+title: Visão geral do ASP.NET Core MVC
 author: ardalis
-description: "Saiba como o ASP.NET Core MVC é uma estrutura avançada para a criação de aplicativos Web e APIs usando o padrão de design Model-View-Controller."
+description: Saiba como o ASP.NET Core MVC é uma estrutura avançada para a criação de aplicativos Web e APIs usando o padrão de design Model-View-Controller.
 manager: wpickett
 ms.author: riande
 ms.date: 01/08/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/overview
-ms.openlocfilehash: 16fd1b5e71cde4364f02640f504d42218ed680df
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: HT
+ms.openlocfilehash: 1cf48499d3bc0ba63e2f0667740668fad0b13c28
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Visão geral do ASP.NET Core MVC
 
@@ -185,13 +185,13 @@ As [áreas](controllers/areas.md) fornecem uma maneira de particionar um aplicat
 
 Além de ser uma ótima plataforma para a criação de sites, o ASP.NET Core MVC tem um excelente suporte para a criação de APIs Web. Crie serviços que alcançam uma ampla gama de clientes, incluindo navegadores e dispositivos móveis.
 
-A estrutura inclui suporte para a negociação de conteúdo HTTP com suporte interno para [formatação de dados](models/formatting.md) como JSON ou XML. Escreva [formatadores personalizados](advanced/custom-formatters.md) para adicionar suporte para seus próprios formatos.
+A estrutura inclui suporte para a negociação de conteúdo HTTP com suporte interno para [formatar dados](xref:web-api/advanced/formatting) como JSON ou XML. Escreva [formatadores personalizados](xref:web-api/advanced/custom-formatters) para adicionar suporte para seus próprios formatos.
 
 Use a geração de links para habilitar o suporte para hipermídia. Habilite o suporte para o [CORS (Compartilhamento de Recursos Entre Origens)](http://www.w3.org/TR/cors/) com facilidade, de modo que as APIs Web possam ser compartilhadas entre vários aplicativos Web.
 
 ### <a name="testability"></a>Capacidade de teste
 
-O uso pela estrutura da injeção de dependência e de interfaces torna-a adequada para teste de unidade. Além disso, a estrutura inclui recursos (como um provedor TestHost e InMemory para o Entity Framework) que também agiliza e facilita a execução de [testes de integração](../testing/integration-testing.md). Saiba mais sobre a [lógica do controlador de teste](controllers/testing.md).
+Uso da estrutura de injeção de dependência e interfaces, é adequado para testes de unidade e a estrutura inclui recursos (como um provedor TestHost e InMemory para Entity Framework) que tornam [testes de integração](../testing/integration-testing.md) rápida e fácil também. Saiba mais sobre [como testar a lógica do controlador](controllers/testing.md).
 
 ### <a name="razor-view-engine"></a>Mecanismo de exibição do Razor
 

@@ -16,7 +16,7 @@ ms.openlocfilehash: 6ce52c387ff835eda46bc1882b8b974889e2d4af
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>O ASP.NET 4 e visão geral do desenvolvimento do Visual Studio 2010 Web
 ====================
@@ -28,11 +28,11 @@ ms.lasthandoff: 04/06/2018
 **Conteúdo**
 
 **[Core Services](#0.2__Toc253429238 "_Toc253429238")**  
-[Web.config File Refactoring](#0.2__Toc253429239 "_Toc253429239")  
+[Arquivo Web. config refatoração](#0.2__Toc253429239 "_Toc253429239")  
 [Cache de saída extensível](#0.2__Toc253429240 "_Toc253429240")  
 [Aplicativos da Web de auto-Start](#0.2__Toc253429241 "_Toc253429241")  
 [Redirecionando permanentemente uma página](#0.2__Toc253429242 "_Toc253429242")  
-[Shrinking Session State](#0.2__Toc253429243 "_Toc253429243")  
+[A redução de estado de sessão](#0.2__Toc253429243 "_Toc253429243")  
 [Expandindo o intervalo de URLs permitidas](#0.2__Toc253429244 "_Toc253429244")  
 [Validação de solicitação extensível](#0.2__Toc253429245 "_Toc253429245")  
 [Objeto de cache e cache de extensibilidade do objeto](#0.2__Toc253429246 "_Toc253429246")  
@@ -71,8 +71,8 @@ ms.lasthandoff: 04/06/2018
 
 **[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
 [Habilitar dados dinâmicos para projetos existentes](#0.2__Toc253429279 "_Toc253429279")  
-[Declarative DynamicDataManager Control Syntax](#0.2__Toc253429280 "_Toc253429280")  
-[Entity Templates](#0.2__Toc253429281 "_Toc253429281")  
+[Sintaxe de controle DynamicDataManager declarativo](#0.2__Toc253429280 "_Toc253429280")  
+[Modelos de entidade](#0.2__Toc253429281 "_Toc253429281")  
 [Novos modelos de campo para URLs e endereços de email](#0.2__Toc253429282 "_Toc253429282")  
 [Criação de Links com o controle DynamicHyperLink](#0.2__Toc253429283 "_Toc253429283")  
 [Suporte para herança no modelo de dados](#0.2__Toc253429284 "_Toc253429284")  
@@ -83,7 +83,7 @@ ms.lasthandoff: 04/06/2018
 **[Melhorias de desenvolvimento da Web do Visual Studio 2010](#0.2__Toc253429288 "_Toc253429288")**  
 [Melhor compatibilidade CSS](#0.2__Toc253429289 "_Toc253429289")  
 [HTML e JavaScript trechos](#0.2__Toc253429290 "_Toc253429290")  
-[JavaScript IntelliSense Enhancements](#0.2__Toc253429291 "_Toc253429291")
+[Aprimoramentos de JavaScript IntelliSense](#0.2__Toc253429291 "_Toc253429291")
 
 **[Implantação de aplicativo com o Visual Studio 2010 Web](#0.2__Toc253429292 "_Toc253429292")**  
 [Web Packaging](#0.2__Toc253429293 "_Toc253429293")  
@@ -988,7 +988,7 @@ Por padrão, os seguintes controles de servidor Web do ASP.NET que oferecem supo
 - *Login*
 - *PasswordRecovery*
 - *ChangePassword*
-- *Wizard*
+- *Assistente*
 - *CreateUserWizard*
 
 Uma nova propriedade chamada *RenderOuterTable* foi adicionado para esses controles que permite que a tabela externa a ser removido da marcação. Por exemplo, considere o seguinte exemplo de uma *FormView* controle:
@@ -1184,7 +1184,7 @@ Essa funcionalidade também fornece outros benefícios, como poder especificar p
 
 <a id="0.2__Toc224729043"></a><a id="0.2__Toc253429280"></a><a id="0.2__Toc243304651"></a>
 
-### <a name="declarative-dynamicdatamanager-control-syntax"></a>Declarative DynamicDataManager Control Syntax
+### <a name="declarative-dynamicdatamanager-control-syntax"></a>Sintaxe de controle DynamicDataManager declarativo
 
 O *DynamicDataManager* controle foi aprimorado para que você possa configurar declarativamente, assim como acontece com a maioria dos controles do ASP.NET, em vez de apenas no código. A marcação para o *DynamicDataManager* controle é semelhante ao exemplo a seguir:
 

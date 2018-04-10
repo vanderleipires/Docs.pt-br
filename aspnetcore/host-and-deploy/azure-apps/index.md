@@ -1,7 +1,7 @@
 ---
-title: "Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure"
+title: Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 author: guardrex
-description: "Descubra como hospedar aplicativos ASP.NET Core no Serviço de Aplicativo do Azure com links para recursos úteis."
+description: Descubra como hospedar aplicativos ASP.NET Core no Serviço de Aplicativo do Azure com links para recursos úteis.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: cefbc27c8091a2ed1441663e3779d67aae2c64dd
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c2675f73880a41ee75f6ec13155419945387e109
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 
 [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/) é um [serviço de plataforma de computação em nuvem da Microsoft](https://azure.microsoft.com/) para hospedar aplicativos Web, incluindo o ASP.NET Core.
-
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 ## <a name="useful-resources"></a>Recursos úteis
 
@@ -57,6 +55,10 @@ Com o ASP.NET Core 2.0 e posterior, três pacotes no metapacote [Microsoft.AspNe
 * [Microsoft.AspNetCore.AzureAppServicesIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServicesIntegration/) executa [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) para adicionar provedores de log de diagnósticos do Serviço de Aplicativo do Azure no pacote `Microsoft.Extensions.Logging.AzureAppServices`.
 * [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices/) fornece implementações de agente para dar suporte a recursos de streaming de log e logs de diagnóstico do Serviço de Aplicativo do Azure.
 
+## <a name="proxy-server-and-load-balancer-scenarios"></a>Servidor proxy e cenários de balanceador de carga
+
+O Middleware de integração do IIS, que configura Middleware de cabeçalhos encaminhados, e o módulo do ASP.NET Core são configurados para encaminhar o esquema (HTTP/HTTPS) e o endereço IP remoto de onde a solicitação foi originada. Configuração adicional pode ser necessária para aplicativos hospedados atrás de servidores proxy adicionais e balanceadores de carga. Para obter mais informações, veja [Configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer).
+
 ## <a name="monitoring-and-logging"></a>Monitoramento e registro em log
 
 Para monitoramento, registro em log e informações de solução de problemas, veja os seguintes artigos:
@@ -89,6 +91,62 @@ Quando ocorre a troca entre os slots de implantação, nenhum sistema que usa a 
 
 Para obter mais informações, veja [Principais provedores de armazenamento](xref:security/data-protection/implementation/key-storage-providers).
 
+## <a name="deploy-aspnet-core-preview-release-to-azure-app-service"></a>Implantar a versão de visualização do ASP.NET Core para o Serviço de Aplicativo do Azure
+
+Aplicativos de visualização do ASP.NET Core podem ser implantados para o Serviço de Aplicativo do Azure com as seguintes abordagens:
+
+* [Instalar a extensão de site de visualização](#site-x)
+* [Implantar o aplicativo autocontido](#self)
+* [Usar o Docker com aplicativos Web para contêineres](#docker)
+
+Se você tiver problemas ao usar a extensão de site de visualização, abra um problema no [GitHub](https://github.com/aspnet/azureintegration/issues/new).
+
+<a name="site-x"></a>
+### <a name="install-the-preview-site-extention"></a>Instalar a extensão de site de visualização
+
+* No portal do Azure, navegue até a folha Serviço de Aplicativo.
+* Digite "ex" na caixa de pesquisa.
+* Selecione **Extensões**.
+* Selecione "Adicionar".
+
+![Folha do Azure App com etapas anteriores](index/_static/x1.png)
+
+* Selecione **Extensões de tempo de execução do ASP.NET Core**.
+* Selecione **OK** > **OK**.
+
+Quando as operações de adição forem concluídas, a visualização mais recente do .NET Core 2.1 será instalada. Você pode verificar a instalação executando `dotnet --info` no console. Na folha de Serviço de Aplicativo:
+
+* Digite "con" na caixa de pesquisa.
+* Selecione **Console**.
+* Digite `dotnet --info` no console.
+
+![Folha do Azure App com etapas anteriores](index/_static/cons.png)
+
+A imagem anterior era atual no momento em que este texto foi escrito. Você pode ver uma versão diferente.
+
+O `dotnet --info` exibe o caminho para a extensão de site em que a visualização foi instalada. Ele mostra que o aplicativo está em execução na extensão de site em vez do local padrão *ProgramFiles*. Se você vir *ProgramFiles*, reinicie o site e execute `dotnet --info`.
+
+#### <a name="use-the-preview-site-extention-with-an-arm-template"></a>Usar a extensão de site de visualização com um modelo do ARM
+
+Se você estiver usando um modelo do ARM para criar e implantar aplicativos, poderá usar o tipo de recurso `siteextensions` para adicionar a extensão de site a um aplicativo Web. Por exemplo:
+
+[!code-json[Main](index/sample/arm.json?highlight=2)]
+
+<a name="self"></a>
+### <a name="deploy-the-app-self-contained"></a>Implantar o aplicativo autocontido
+
+Você pode implantar um [aplicativo autocontido](/dotnet/core/deploying/#self-contained-deployments-scd) que carrega o tempo de execução de visualização com ele quando está sendo implantado. Ao implantar um aplicativo autocontido:
+
+* Não é necessário preparar o seu site.
+* Exige que você publique seu aplicativo de forma diferente que ao implantar um aplicativo depois que o SDK está instalado no servidor.
+
+Aplicativos autocontidos são uma opção para todos os aplicativos do .NET Core.
+
+<a name="docker"></a>
+### <a name="use-docker-with-web-apps-for-containers"></a>Usar o Docker com aplicativos Web para contêineres
+
+O [Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) contém as imagens de visualização do Docker 2.1 mais recentes. Você pode usá-las como sua imagem de base e implantar em Aplicativos Web para Contêineres como faria normalmente.
+
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Visão geral de aplicativos Web (vídeo de visão geral com 5 minutos)](/azure/app-service/app-service-web-overview)
@@ -101,5 +159,5 @@ O Serviço de Aplicativo do Azure no Windows Server usa o [IIS (Serviços de Inf
 * [Hospedar o ASP.NET Core no Windows com o IIS](xref:host-and-deploy/iis/index)
 * [Introdução ao Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
 * [Referência de configuração do Módulo do ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
-* [Usando Módulos do IIS com o ASP.NET Core](xref:host-and-deploy/iis/modules)
+* [Módulos do IIS com o ASP.NET Core](xref:host-and-deploy/iis/modules)
 * [Biblioteca Microsoft TechNet: Windows Server](/windows-server/windows-server-versions)

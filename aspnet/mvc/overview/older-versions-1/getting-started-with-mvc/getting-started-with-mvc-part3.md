@@ -16,11 +16,11 @@ ms.openlocfilehash: 978d7980274c072ed559b54ed69ab86245b6c5a7
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="adding-a-view"></a>Adicionando uma exibição
 ====================
-por [Scott Hanselman](https://github.com/shanselman)
+by [Scott Hanselman](https://github.com/shanselman)
 
 > Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Você criará um aplicativo web simples que leituras e gravações de banco de dados. Visite o [Central de aprendizagem do ASP.NET MVC](../../../index.md) para localizar outros ASP.NET MVC, tutoriais e exemplos.
 
@@ -77,7 +77,7 @@ Aqui está o Site.Master em sua totalidade com nosso título alterado:
 
 Agora, vamos alterar o título da página de índice.
 
-Abra /HelloWorld/Index.aspx. Há dois locais para alterar. Primeiro, o título que aparece no título do navegador, o cabeçalho secundário - que também é H2. Vou deixá-los ligeiramente diferentes para ver qual parte do código altera qual parte do aplicativo.
+Open /HelloWorld/Index.aspx. Há dois locais para alterar. Primeiro, o título que aparece no título do navegador, o cabeçalho secundário - que também é H2. Vou deixá-los ligeiramente diferentes para ver qual parte do código altera qual parte do aplicativo.
 
 [!code-aspx[Main](getting-started-with-mvc-part3/samples/sample7.aspx)]
 
@@ -112,7 +112,7 @@ Adicione este código sob o &lt;h2&gt; no seu novo Welcome.aspx. Vamos fazer um 
 
 Além disso, observe enquanto você estiver digitando que porque disse este modo de exibição sobre o WelcomeViewModel (são casados, lembre-se?) que obtemos Intellisense útil sempre que referenciar nosso objeto de modelo, como visto na captura de tela abaixo:
 
-[![NumTime Source Code](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
+[![Código-fonte NumTime](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
 
 Execute o aplicativo e visite `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4` novamente. Agora estamos dando dados da URL, ele é passado para o nosso controlador automaticamente, nosso controlador empacota os dados em um ViewModel e passa esse objeto para nossa visão. O modo de exibição que exibe os dados como HTML para o usuário.
 

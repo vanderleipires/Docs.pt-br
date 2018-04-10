@@ -16,7 +16,7 @@ ms.openlocfilehash: 0bfe9cdc215226457ccfafff2b85ace87325b91b
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -94,7 +94,7 @@ ms.lasthandoff: 04/06/2018
 - [Isenção de responsabilidade](#0.1__Toc274034231)
 
 <a id="overview"></a>
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este documento descreve a versão do ASP.NET MVC 3 RTM para Visual Studio 2010. ASP.NET MVC é uma estrutura para desenvolvimento de aplicativos Web que usa o padrão Model-View-Controller (MVC). O instalador do ASP.NET MVC 3 inclui os seguintes componentes:
 
@@ -164,8 +164,8 @@ Para atualizar manualmente um aplicativo ASP.NET MVC 2 existente para a versão 
 
     - /Views/Web.config
     - /packages.config
-    - /scripts/\*. js
-    - /Conteúdo/temas/\*.\*
+    - /scripts/\*.js
+    - /Content/themes/\*.\*
 3. Copie o *pacotes* pasta na raiz da solução de projeto ASP.NET MVC 3 vazia para a raiz de sua solução, que está no diretório onde o arquivo da solução está localizado.
 4. Se seu projeto ASP.NET MVC 2 contém todas as áreas, copie o arquivo de /Views/Web.config para o *exibições* pasta de cada área.
 5. Em ambos os arquivos Web. config no projeto ASP.NET MVC 2, globalmente pesquisar e substituir a versão do ASP.NET MVC. Localize o seguinte: 
@@ -672,7 +672,7 @@ A nova tecnologia de páginas da Web ASP.NET inclui um conjunto de métodos auxi
 | **Auxiliar** | **Descrição** |
 | --- | --- |
 | Gráfico | Renderiza um gráfico em uma exibição. Contém métodos como Chart.ToWebImage, Chart.Save e Chart.Write. |
-| Crypto | Usa para criar corretamente os algoritmos de hash com salt e senhas de hash. |
+| Criptografia | Usa para criar corretamente os algoritmos de hash com salt e senhas de hash. |
 | WebGrid | Uma coleção de objetos (normalmente, os dados de um banco de dados) é renderizada como uma grade. Dá suporte à paginação e classificação. |
 | WebImage | Renderiza uma imagem. |
 | WebMail | Envia uma mensagem de email. |
@@ -862,7 +862,7 @@ Há um problema conhecido que faz com que a autenticação de formulários para 
 
 [!code-xml[Main](mvc3-release-notes/samples/sample43.xml)]
 
-## <a id="0.1__Toc274034231"></a>  Disclaimer
+## <a id="0.1__Toc274034231"></a>  Isenção de responsabilidade
 
 © 2011 Microsoft Corporation. Todos os direitos reservados. Este documento é fornecido "como-é." Informações e opiniões expressadas neste documento, incluindo URLs e outras referências a sites da Internet, podem ser alteradas sem aviso prévio. Você assume o risco de utilizá-las.
 

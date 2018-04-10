@@ -16,7 +16,7 @@ ms.openlocfilehash: 90faaae75cc85585efa05e6e50eabe8c990d076e
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="caching"></a>Cache
 ====================
@@ -79,10 +79,10 @@ Esta é uma explicação sobre as opções de linha de comando usada no comando 
 | --- | --- |
 | -S *server* | Especifica o nome do servidor. |
 | -ed | Especifica que o banco de dados deve estar habilitado para dependência de cache SQL. |
-| -d *banco de dados\_nome* | Especifica o nome do banco de dados que deve ser habilitado para dependência de cache SQL. |
+| -d *database\_name* | Especifica o nome do banco de dados que deve ser habilitado para dependência de cache SQL. |
 | -E | Especifica que aspnet\_regsql deve usar a autenticação do Windows ao conectar-se ao banco de dados. |
 | -et | Especifica que nós estiver habilitando uma tabela de banco de dados para dependência de cache SQL. |
-| -t *tabela\_nome* | Especifica o nome da tabela de banco de dados para habilitar a dependência de cache do SQL. |
+| -t *table\_name* | Especifica o nome da tabela de banco de dados para habilitar a dependência de cache do SQL. |
 
 > [!NOTE]
 > Há outras opções disponíveis para aspnet\_regsql.exe. Para obter uma lista completa, execute aspnet\_regsql.exe-? em uma linha de comando.
@@ -172,7 +172,7 @@ Outro método de configuração de uma dependência de cache com base em consult
 
 Mais informações: [https://msdn.microsoft.com/library/default.asp?url=/library/enus/dnvs05/html/querynotification.asp](https://msdn.microsoft.com/library/default.asp?url=/library/enus/dnvs05/html/querynotification.asp)
 
-## <a name="post-cache-substitution"></a>Substituição POST-Cache
+## <a name="post-cache-substitution"></a>Post-Cache Substitution
 
 Armazenar em cache uma página pode aumentar significativamente o desempenho de um aplicativo Web. No entanto, em alguns casos, você precisa mais da página a ser armazenado em cache e alguns fragmentos dentro da página para ser dinâmicos. Por exemplo, se você criar uma página de artigos de notícias que é totalmente estática para definir períodos de tempo, você pode definir a página inteira para ser armazenada em cache. Se você quiser incluir um cabeçalho de ad de rotação que foram alteradas em cada solicitação de página, a parte da página que contém o anúncio precisa ser dinâmico. Para permitir que uma página do cache, mas substituir algum conteúdo dinamicamente, você pode usar a substituição de POST-cache do ASP.NET. Com a substituição post-cache, a página inteira é armazenada em cache com partes específicas marcadas como isentas de cache de saída. No exemplo das faixas de anúncios, o controle AdRotator permite que você se beneficie da substituição post-cache para que anúncios criados dinamicamente para cada usuário e para cada atualização de página.
 
@@ -258,7 +258,7 @@ Os seguintes atributos estão disponíveis para o &lt;sqlCacheDependency&gt; ele
 | **enabled** | Necessário **booliano** atributo. Indica se as alterações estão sendo pesquisadas para. |
 | **pollTime** | Opcional **Int32** atributo. Define a frequência com que o SqlCacheDependency pesquisa a tabela de banco de dados de alterações. Esse valor corresponde ao número de milissegundos entre pollings sucessivas. Ele não pode ser definido para menos de 500 milissegundos. Valor padrão é 1 minuto. |
 
-### <a name="more-information"></a>Mais Informações
+### <a name="more-information"></a>Mais informações
 
 Há algumas informações adicionais que você deve conhecer sobre a configuração de cache.
 
@@ -285,7 +285,7 @@ Há algumas informações adicionais que você deve conhecer sobre a configuraç
 4. Adicione o seguinte à parte superior do default.aspx no modo de exibição de fonte: 
 
     [!code-aspx[Main](caching/samples/sample16.aspx)]
-5. Procure Default.aspx. O que o tempo de dizer?
+5. Browse Default.aspx. O que o tempo de dizer?
 6. Atualize o navegador. O que o tempo de dizer?
 7. Abra cache.xml e adicione o seguinte código: 
 

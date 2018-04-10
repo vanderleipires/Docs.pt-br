@@ -16,7 +16,7 @@ ms.openlocfilehash: a8358b91ca424f4f3e576057ab43d850081dda60
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Como: Adicionar páginas móveis aos formulários da Web do ASP.NET / aplicativo MVC
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="contents"></a>Conteúdo
 
-- Visão Geral
+- Visão geral
 - Opções de arquitetura
 - Detecção de navegadores e dispositivos
 - Como os aplicativos ASP.NET Web Forms podem apresentar páginas específicas para dispositivos móveis
@@ -41,7 +41,7 @@ ms.lasthandoff: 04/06/2018
 
 Para obter exemplos de código para download demonstram técnicas deste white paper Web Forms do ASP.NET e MVC, consulte [Sites com o ASP.NET & aplicativos móveis](https://docs.microsoft.com/aspnet/mobile/overview).
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Dispositivos móveis – smartphones, telefones de recurso e tablets – continuam crescendo em popularidade como um meio para acessar a Web. Para muitas empresas para a web e os desenvolvedores da web, isso significa que é cada vez mais importante fornecer uma ótima experiência de navegação para os visitantes que usam esses dispositivos.
 

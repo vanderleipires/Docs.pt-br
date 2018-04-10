@@ -1,26 +1,26 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-tools
-title: "Laboratório prático: Visual Studio 2013 Web Tools | Microsoft Docs"
+title: 'Laboratório prático: Visual Studio 2013 Web Tools | Microsoft Docs'
 author: rick-anderson
-description: "O Visual Studio é um ambiente de desenvolvimento excelente para. Janelas baseadas em rede e projetos da web. Ele inclui um editor de texto avançado que pode ser facilmente usado para..."
+description: O Visual Studio é um ambiente de desenvolvimento excelente para. Janelas baseadas em rede e projetos da web. Ele inclui um editor de texto avançado que pode ser facilmente usado para...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
 ms.openlocfilehash: ef8ab82f9043ef9da3a3e6a146a97f083149534d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/10/2018
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>Laboratório prático: Ferramentas de Web Visual Studio 2013
 ====================
-por [Web Camps Team](https://twitter.com/webcamps)
+Por [Web Camps Team](https://twitter.com/webcamps)
 
 [Baixar o Kit de treinamento de Camps de Web](http://aka.ms/webcamps-training-kit)
 
@@ -30,11 +30,11 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Toda essa capacidade também está disponível para as extensões, tornando mais fácil estender os editores com novos recursos poderosos para atender às suas necessidades. Web Essentials é uma coleção de (principalmente) relacionados à web aprimoramentos para o Visual Studio. Ele inclui vários novos conclusões IntelliSense (especialmente para CSS), novos recursos de Link do navegador, automático JSHint para JavaScript arquivos, novos avisos para HTML, CSS e muitos outros recursos que são essenciais para o desenvolvimento na web moderna.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 
 
 <a id="Overview"></a>
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Objetivos
@@ -52,7 +52,7 @@ Este laboratório prático, você aprenderá como:
 O exemplo a seguir é necessário para concluir este laboratório prático:
 
 - [Microsoft Visual Studio Professional 2013](https://www.microsoft.com/visualstudio/) ou maior
-- [Princípios da Web 2013](http://vswebessentials.com/)
+- [Web Essentials 2013](http://vswebessentials.com/)
 - [Google Chrome](https://www.google.com/chrome/)
 
 <a id="Setup"></a>
@@ -144,7 +144,7 @@ Neste exercício, você usará o recurso Zen codificação fornecido pelo Web Es
 
 1. Alterne para o Visual Studio.
 2. Abra o **cshtml** arquivo localizado no **exibições** | **início** pasta.
-3. Substitua o  **&lt;! – TODO: Adicione aqui – opções&gt;**  comentário com o seguinte código e pressione **guia**.
+3. Substitua o **&lt;! – TODO: Adicione aqui – opções&gt;** comentário com o seguinte código e pressione **guia**.
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
 4. O código deve ser expandido para HTML.
@@ -180,7 +180,7 @@ Neste exercício, você usará o recurso Zen codificação fornecido pelo Web Es
     *Gerado Lorem Ipsum automaticamente*
 
     > [!NOTE]
-    > Como parte da codificação Zen, agora é possível gerar código Lorem Ipsum diretamente no editor de HTML. Basta digitar **lorem** e clique em **guia** e um 30 palavras Lorem Ipsum o texto será inserido. Por exemplo *lorem10* insere 10 Lorem Ipsum palavras.
+    > Como parte da codificação Zen, agora é possível gerar código Lorem Ipsum diretamente no editor de HTML. Basta digitar **lorem** e clique em **guia** e um 30 palavras Lorem Ipsum o texto será inserido. Por exemplo, *lorem10* insere 10 Lorem Ipsum palavras.
 10. Você irá adicionar um logotipo na parte superior da pergunta usando outro novo recurso no Essentials Web chamado **gerador de Lorem Pixel**. Adicione o seguinte código como o primeiro elemento filho do **div** elemento com **contêiner** como **classe** valor e pressione **guia**.
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample3.css)]
@@ -307,7 +307,7 @@ Nesta tarefa, você usará o Link de navegador **modo de Design** recurso para e
     ![Pergunta editada](visual-studio-2013-web-tools/_static/image29.png "pergunta editada")
 
     *Pergunta editada*
-4. Alternar para o Visual Studio e abra **cshtml**, se ainda não estiver aberto. Observe que o texto interno do  **&lt;p&gt;**  elemento foi atualizado.
+4. Alternar para o Visual Studio e abra **cshtml**, se ainda não estiver aberto. Observe que o texto interno do **&lt;p&gt;** elemento foi atualizado.
 
     ![Pergunta atualizadas na página HTML](visual-studio-2013-web-tools/_static/image30.png "pergunta atualizadas na página HTML")
 
@@ -323,7 +323,7 @@ Nesta tarefa, você usará o Link de navegador **modo de Design** recurso para e
     ![Menu de modo de exibição de lista de erros](visual-studio-2013-web-tools/_static/image31.png "lista de erros no menu Exibir")
 
     *Menu de modo de exibição de lista de erros*
-2. Observe que há um aviso de SEO notificando que um  **&lt;meta&gt;**  marca para a descrição da página está ausente. Clique duas vezes na entrada de aviso de SEO para corrigi-lo.
+2. Observe que há um aviso de SEO notificando que um **&lt;meta&gt;** marca para a descrição da página está ausente. Clique duas vezes na entrada de aviso de SEO para corrigi-lo.
 
     ![Janela lista de erros](visual-studio-2013-web-tools/_static/image32.png "janela lista de erros")
 
@@ -333,7 +333,7 @@ Nesta tarefa, você usará o Link de navegador **modo de Design** recurso para e
     ![Caixa de diálogo do Web Essentials](visual-studio-2013-web-tools/_static/image33.png "caixa de diálogo Web Essentials")
 
     *Caixa de diálogo do Web Essentials*
-4. O editor de  **\_cshtml** abre e  **&lt;meta&gt;**  marca será adicionada automaticamente ao **head** seção o Arquivo HTML.
+4. O editor de  **\_cshtml** abre e **&lt;meta&gt;** marca será adicionada automaticamente ao **head** seção o Arquivo HTML.
 
     ![Marca meta adicionada automaticamente na página layout](visual-studio-2013-web-tools/_static/image34.png "MetaTag adicionado automaticamente no layout página")
 
@@ -354,7 +354,7 @@ Nesta tarefa, você criará um novo elemento de formulário HTML que contém um 
 
 1. Abra **Visual Studio Express 2013 para Web** e **Begin.sln** solução localizada no **fonte/o Ex2-TakingAdvantageofCodeSnippetsandIntelliSense/início** pasta. Como alternativa, você pode continuar com a solução que você obteve no exercício anterior.
 2. Em **Solution Explorer**, abra o **cshtml** arquivo localizado no **exibições** | **início** pasta.
-3. Adicione o seguinte formato dentro de  **&lt;seção&gt;**  elemento.
+3. Adicione o seguinte formato dentro de **&lt;seção&gt;** elemento.
 
     (Código de trecho - *VisualStudio2013WebTooling* - *o Ex2* - *formulário*)
 
@@ -362,19 +362,19 @@ Nesta tarefa, você criará um novo elemento de formulário HTML que contém um 
 4. A marca de entrada deve ser precedida por um rótulo com uma descrição do campo. Adicione o seguinte rótulo antes da marca de entrada.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample5.html)]
-5. O **para** atributo de um  **&lt;rótulo&gt;**  Especifica qual elemento de formulário de um rótulo está associado. O valor do atributo deve ser igual à id do elemento relacionado. Adicionar o **para** de atributo para o  **&lt;rótulo&gt;**  elemento. Conforme mostrado na figura a seguir, o &quot;nome&quot; valor exibido na caixa do IntelliSense, com base na id dos elementos dentro do mesmo escopo (circunscrição  **&lt;formulário&gt;**).
+5. O **para** atributo de um **&lt;rótulo&gt;** Especifica qual elemento de formulário de um rótulo está associado. O valor do atributo deve ser igual à id do elemento relacionado. Adicionar o **para** de atributo para o **&lt;rótulo&gt;** elemento. Conforme mostrado na figura a seguir, o &quot;nome&quot; valor exibido na caixa do IntelliSense, com base na id dos elementos dentro do mesmo escopo (circunscrição  **&lt;formulário&gt;**).
 
     ![Mostrando a id do IntelliSense](visual-studio-2013-web-tools/_static/image35.png "mostrando a id do IntelliSense")
 
     *Mostrando a id do IntelliSense*
-6. Excluir adicionado recentemente  **&lt;formulário&gt;**  elemento e seu conteúdo.
+6. Excluir adicionado recentemente **&lt;formulário&gt;** elemento e seu conteúdo.
 
 <a id="Ex2Task2"></a>
 #### <a name="task-2---using-html-code-snippets"></a>Tarefa 2: usando trechos de código HTML
 
 O HTML5 introduziu mais de 25 novas marcas semânticas. Visual Studio já tinha suporte do IntelliSense para essas marcas, mas o Visual Studio 2013 torna mais rápido e mais fácil de escrever marcação adicionando novos trechos de código. Embora essas marcas não sejam complicadas, elas apresentam algumas pequenas sutilezas, como a adição de fallbacks de codec corretos para o *áudio* marca. Nesta tarefa, você verá os trechos de código HTML para a marca de áudio.
 
-1. No **cshtml** de arquivos, digite  **&lt;aud** dentro de  **&lt;seção&gt;**  elemento conforme mostrado na figura a seguir.
+1. No **cshtml** de arquivos, digite  **&lt;aud** dentro de **&lt;seção&gt;** elemento conforme mostrado na figura a seguir.
 
     ![Inserindo um elemento audio](visual-studio-2013-web-tools/_static/image36.png "inserindo um elemento de áudio")
 
@@ -385,7 +385,7 @@ O HTML5 introduziu mais de 25 novas marcas semânticas. Visual Studio já tinha 
 
     > [!NOTE]
     > Pressionando o **guia** chave duas vezes, o trecho de código é inserido. O trecho de áudio mostra o uso padrão da *áudio* marca, com dois arquivos de origem para o suporte aprimorado.
-3. Exclua a segunda linha e atualizar a fonte da primeira linha com o seguinte link para a apresentação de WebCampsTV Katana: [http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3). O código resultante é mostrado abaixo.
+3. Exclua a segunda linha e atualizar a fonte da primeira linha com o seguinte link para a apresentação de WebCampsTV Katana: [ http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3 ](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3). O código resultante é mostrado abaixo.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample7.html)]
 
@@ -465,7 +465,7 @@ Com o Web Essentials 2013, folhas de estilo e páginas HTML produzem uma lista d
     ![Mostrando o IntelliSense para o método getElementByTagName](visual-studio-2013-web-tools/_static/image45.png "mostrando o IntelliSense para o método getElementByTagName")
 
     *Mostrando o IntelliSense para o método getElementsByTagName*
-13. Selecione  **&quot;áudio&quot;**  na lista e pressione **ENTER**. O resultado é mostrado na figura a seguir.
+13. Selecione **&quot;áudio&quot;** na lista e pressione **ENTER**. O resultado é mostrado na figura a seguir.
 
     ![Recuperando elementos áudio](visual-studio-2013-web-tools/_static/image46.png "recuperar os elementos de áudio")
 

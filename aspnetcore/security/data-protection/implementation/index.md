@@ -1,7 +1,7 @@
 ---
-title: "Implementação"
+title: Implementação da proteção de dados do ASP.NET Core
 author: rick-anderson
-description: "Este documento serve como um sumário para os diversos tópicos sobre implementação de proteção de dados do ASP.NET Core."
+description: Descubra os vários tópicos de implementação da proteção de dados do ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,28 +9,28 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/index
-ms.openlocfilehash: a464e961c0df1eb5f3def40d2a8c306454ed02d8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ac891077342bb60cf321b96ba6d55df1a90655cd
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="implementation"></a>Implementação
+# <a name="aspnet-core-data-protection-implementation"></a>Implementação da proteção de dados do ASP.NET Core
 
-* [Detalhes de criptografia autenticada](authenticated-encryption-details.md)
+* [Detalhes de criptografia autenticada](xref:security/data-protection/implementation/authenticated-encryption-details)
 
-* [Derivação de subchaves e criptografia autenticada](subkeyderivation.md)
+* [Derivação de subchaves e criptografia autenticada](xref:security/data-protection/implementation/subkeyderivation)
 
-* [Cabeçalhos de contexto](context-headers.md)
+* [Cabeçalhos de contexto](xref:security/data-protection/implementation/context-headers)
 
-* [Gerenciamento de chaves](key-management.md)
+* [Gerenciamento de chaves](xref:security/data-protection/implementation/key-management)
 
-* [Provedores de armazenamento de chaves](key-storage-providers.md)
+* [Provedores de armazenamento de chaves](xref:security/data-protection/implementation/key-storage-providers)
 
-* [Criptografia de chave em repouso](key-encryption-at-rest.md)
+* [Criptografia de chave em repouso](xref:security/data-protection/implementation/key-encryption-at-rest)
 
-* [Imutabilidade de chave e alteração de configurações](key-immutability.md)
+* [Imutabilidade de chave e configurações](xref:security/data-protection/implementation/key-immutability)
 
-* [Formato do armazenamento de chaves](key-storage-format.md)
+* [Formato do armazenamento de chaves](xref:security/data-protection/implementation/key-storage-format)
 
-* [Provedores de proteção de dados efêmeros](key-storage-ephemeral.md)
+* [Provedores de proteção de dados efêmeros](xref:security/data-protection/implementation/key-storage-ephemeral)

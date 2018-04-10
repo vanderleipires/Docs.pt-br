@@ -1,7 +1,7 @@
 ---
-title: "Usar os modelos de Aplicativo de Página Única"
+title: Usar os modelos de Aplicativo de Página Única com o ASP.NET Core
 author: SteveSandersonMS
-description: "Saiba como instalar e começar a trabalhar com os modelos de projeto do SPA (Aplicativo de Página Única) ASP.NET Core."
+description: Saiba como instalar e começar a trabalhar com os modelos de projeto do SPA (Aplicativo de Página Única) ASP.NET Core.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,20 +11,20 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/index
-ms.openlocfilehash: 63b56de101199e9ea0d66d89d2dd7288e47902f6
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: eda4817de007f3c3184b2ba6ed6c97989ff17da5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="use-the-single-page-application-templates"></a>Usar os modelos de Aplicativo de Página Única
+# <a name="use-the-single-page-application-templates-with-aspnet-core"></a>Usar os modelos de Aplicativo de Página Única com o ASP.NET Core
 
 > [!NOTE]
 > O SDK do .NET Core 2.0.x inclui modelos de projeto mais antigos para Angular, React e React with Redux. Esta documentação não é sobre esses modelos de projeto antigos. Essa documentação é para os modelos Angular, React e React with Redux mais recentes, que podem ser instalados manualmente no ASP.NET Core 2.0. Os modelos são incluídos por padrão com o ASP.NET Core 2.1.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [SDK do .NET Core](https://www.microsoft.com/net/download), versão 2.0.0 ou posterior
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * [Node.js](https://nodejs.org), versão 6 ou posterior
 
 ## <a name="installation"></a>Instalação
