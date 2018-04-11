@@ -1,7 +1,7 @@
 ---
-title: "Recursos de convenção de rota e aplicativo das Páginas do Razor no ASP.NET Core"
+title: Recursos de convenção de rota e aplicativo das Páginas do Razor no ASP.NET Core
 author: guardrex
-description: "Descubra como os recursos de convenção do provedor de modelo de aplicativo e rota ajudam você a controlar o roteamento, a descoberta e o processamento de página."
+description: Descubra como os recursos de convenção do provedor de modelo de aplicativo e rota ajudam você a controlar o roteamento, a descoberta e o processamento de página.
 manager: wpickett
 ms.author: riande
 ms.date: 10/23/2017
@@ -127,7 +127,7 @@ Observe que a URL gerada para o link **Contato** na página renderizada reflete 
 
 Visite a página Contact em sua rota comum, `/Contact`, ou na rota personalizada, `/TheContactPage`. Se você fornecer um segmento de rota `text` adicional, a página mostrará o segmento codificado em HTML fornecido:
 
-![Exemplo do navegador Edge de fornecimento de um segmento de rota 'text' opcional de 'TextValue' na URL. A página renderizada mostra o valor de segmento 'text'.](razor-pages-convention-features/_static/route-segment-with-custom-route.png)
+![Exemplo do navegador Microsoft Edge de fornecimento de um segmento de rota 'text' opcional de 'TextValue' na URL. A página renderizada mostra o valor de segmento 'text'.](razor-pages-convention-features/_static/route-segment-with-custom-route.png)
 
 ## <a name="page-model-action-conventions"></a>Convenções de ação do modelo de página
 
