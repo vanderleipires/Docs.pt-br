@@ -580,7 +580,7 @@ Nesta tarefa, você atualizará o layout da área de trabalho para incluir a alt
     ![Exibir alternador renderizado no modo de exibição da área de trabalho](whats-new-in-aspnet-mvc-4/_static/image32.png "alternância de exibição renderizado no modo de exibição da área de trabalho")
 
     *Alternância de exibição renderizada no modo de exibição da área de trabalho*
-7. Alterne para o modo de exibição móvel novamente e navegue até <strong>sobre</strong> página (http://localhost[porta] / Home/sobre). Observe que, mesmo se você não criou uma exibição About.Mobile.cshtml, a página sobre é exibida usando o layout para dispositivos móveis (\_Layout.Mobile.cshtml).
+7. Alterne para o modo de exibição móvel novamente e navegue até <strong>sobre</strong> página (http://localhost[porta]/Home/About). Observe que, mesmo se você não criou uma exibição About.Mobile.cshtml, a página sobre é exibida usando o layout para dispositivos móveis (\_Layout.Mobile.cshtml).
 
     ![Sobre a página](whats-new-in-aspnet-mvc-4/_static/image33.png "sobre a página")
 
