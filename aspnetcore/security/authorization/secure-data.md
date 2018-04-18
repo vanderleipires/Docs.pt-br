@@ -33,13 +33,13 @@ Na imagem a seguir, `manager@contoso.com` está conectado e na função de geren
 
 ![imagem descrita anterior](secure-data/_static/manager1.png)
 
-A imagem a seguir mostra os gerentes de modo de exibição de detalhes de um contato:
+A imagem a seguir mostra a tela de exibição de detalhes de um contato dos gerentes:
 
 ![imagem descrita anterior](secure-data/_static/manager.png)
 
-O **aprovar** e **rejeitar** botões são exibidos somente para administradores e gerentes.
+O botões **aprovar** e **rejeitar** são exibidos somente para administradores e gerentes.
 
-Na imagem a seguir, `admin@contoso.com` está conectado e na função de administradores:
+Na imagem a seguir, `admin@contoso.com` está conectado e na função de gerenciadores:
 
 ![imagem descrita anterior](secure-data/_static/admin.png)
 
@@ -75,7 +75,7 @@ Consulte [este arquivo PDF](https://github.com/aspnet/Docs/tree/master/aspnetcor
 
 [Baixe](xref:tutorials/index#how-to-download-a-sample) o aplicativo [inicial](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2).
 
-Executar o aplicativo, toque o **ContactManager** vincular e verifique se você pode criar, editar e excluir um contato.
+Execute o aplicativo, clique em **ContactManager** e verifique se você pode criar, editar e excluir um contato.
 
 ## <a name="secure-user-data"></a>Proteger os dados de usuário
 
@@ -245,7 +245,7 @@ Atualize o modelo de página de exclusão para usar o manipulador de autorizaç�
 
 No momento, a interface do usuário mostra editar e excluir links de dados que o usuário não pode modificar. A interface do usuário é fixo, aplicando o manipulador de autorização para os modos de exibição.
 
-Injetar o serviço de autorização no *Views/_ViewImports.cshtml* arquivo para que ele esteja disponível para todos os modos de exibição:
+Injetar o serviço de autorização no arquivo *Views/_ViewImports.cshtml* para que ele esteja disponível para todos os modos de exibição:
 
 [!code-cshtml[](secure-data/samples/final2/Pages/_ViewImports.cshtml?highlight=6-9)]
 
