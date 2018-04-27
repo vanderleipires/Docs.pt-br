@@ -2,21 +2,21 @@
 uid: signalr/overview/getting-started/supported-platforms
 title: Plataformas com suporte | Microsoft Docs
 author: pfletcher
-description: "Este artigo descreve quais clientes e servidores são suportados pelo SignalR."
+description: Este artigo descreve quais clientes e servidores são suportados pelo SignalR.
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 06/10/2014
+ms.date: 04/18/2018
 ms.topic: article
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
 ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 1379b9fb638f67896d88d7aa4312d95280ef7318
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4d3dc028ff67d0a9cfa03627b5f98f6541ecfff8
+ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/19/2018
 ---
 <a name="supported-platforms"></a>Plataformas compatíveis
 ====================
@@ -37,8 +37,9 @@ O componente de servidor do SignalR pode ser hospedado em uma variedade de confi
 
 ### <a name="supported-server-operating-systems"></a>Sistemas operacionais de servidor compatíveis
 
-O componente de servidor do SignalR pode ser hospedado no servidor ou cliente de sistemas operacionais a seguir. Observe que para o SignalR usar o WebSocket, Windows Server 2012 ou Windows 8 é necessário (WebSocket pode ser usado no Windows Azure Web Sites, desde que a versão do .NET framework do site é definido como 4.5 e soquetes da Web está habilitado na página de configuração do site).
+O componente de servidor do SignalR pode ser hospedado no servidor ou cliente de sistemas operacionais a seguir. Observe que para o SignalR usar o WebSocket, Windows 8, Windows Server 2016 ou Windows Server 2012 é necessária (WebSocket pode ser usado no Windows Azure Web Sites, desde que a versão do .NET framework do site é definido como 4.5 e soquetes da Web está habilitado no site do Página de configuração).
 
+- Windows Server 2016
 - Windows Server 2012
 - Windows Server 2008 r2
 - Windows 10
@@ -114,8 +115,8 @@ Além de sistema operacional e requisitos do .NET framework, os transportes disp
 | --- | --- | --- |
 | Soquetes da Web | Windows 8 e posteriores e o .NET 4.5 + | N/D |
 | Quadro para sempre | N/D | N/D |
-| Eventos enviados pelo servidor | .NET 4+ | 5+ |
-| Sondagem longa | .NET 4+ | 5+ |
+| Eventos enviados pelo servidor | .NET 4 + | 5+ |
+| Sondagem longa | .NET 4 + | 5+ |
 
 <a id="android"></a>
 

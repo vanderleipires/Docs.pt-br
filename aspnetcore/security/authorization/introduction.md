@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/introduction
-ms.openlocfilehash: 7ba1966dcaf1ce0510f489cfe0ff11501faffa56
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f969cb26d1fcddeac967b1e3d13e3c06ebc7631f
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-authorization-in-aspnet-core"></a>Introdução à autorização no núcleo do ASP.NET
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/22/2018
 
 Autorização é o processo que determina o que um usuário pode fazer. Por exemplo, um usuário administrativo tem permissão para criar uma biblioteca de documentos e adicionar, editar e excluir documentos. Um usuário não administrativo trabalhando com esta biblioteca só está autorizado a ler os documentos.
 
-A autorização é ortogonal e independente de autenticação, que é o processo de verificação de quem é o usuário. A autenticação pode criar uma ou mais identidades para o usuário atual.
+A autorização é ortogonal e independente da autenticação. No entanto, a autorização requer um mecanismo de autenticação. Autenticação é o processo de verificação de quem é um usuário. A autenticação pode criar uma ou mais identidades para o usuário atual.
 
 ## <a name="authorization-types"></a>Tipos de autorização
 

@@ -10,18 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 81244cfb71194876071c64899d627c296aad3802
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ada8120189baf036296b83f91d20b364ee90d074
+ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gerenciar pacotes do lado do cliente com Bower no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel arroz](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), e [Scott Addie](https://scottaddie.com) 
 
 > [!IMPORTANT]
-> Enquanto Bower é mantida, seus mantenedores recomendam usando uma solução diferente. Yarn com Webpack é uma alternativa popular para a qual [instruções de migração](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) estão disponíveis.
+> Enquanto Bower é mantida, seus mantenedores recomendam usando uma solução diferente. [O Gerenciador de biblioteca](https://blogs.msdn.microsoft.com/webdev/2018/04/18/what-happened-to-bower/) (LibMan abreviada) é o novo sistema de gerenciamento de conteúdo estático do lado do cliente do Visual Studio. Yarn com Webpack é uma alternativa popular para a qual [instruções de migração](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) estão disponíveis.
 
 [Bower](https://bower.io/) chama a mesmo "Um Gerenciador de pacotes para a web". No ecossistema do .NET, ele preenche essa lacuna deixado pela incapacidade do NuGet para entregar os arquivos de conteúdo estáticos. Para projetos do ASP.NET Core, esses arquivos estáticos são inerentes a bibliotecas de cliente como [jQuery](http://jquery.com/) e [inicialização](http://getbootstrap.com/). Para bibliotecas .NET, você usar [NuGet](https://www.nuget.org/) Gerenciador de pacotes.
 

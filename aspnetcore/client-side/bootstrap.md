@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: 142a997fa46f37545ea04971ab6593bff053b1ef
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a11ed13c709830795ebfd0e658d3f2fd2fd5a458
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>Crie sites lindos, respondendo com inicialização e ASP.NET Core
 
@@ -81,7 +81,7 @@ O modelo padrão usa um conjunto de `<div>` elementos para processar uma barra d
 </button>
 ```
 
-Ele também inclui o nome do aplicativo, que aparece no canto superior esquerdo. O menu de navegação principal é processado pelo `<ul>` elemento dentro do segundo div e inclui links para casa, aproximadamente e entre em contato com. Links adicionais para o registro e de logon são adicionados pela linha loginpartial em 29 de linha. Abaixo do painel de navegação, o corpo principal de cada página é renderizado em outro `<div>`, marcado com as classes de "contêiner" e "conteúdo do corpo". No arquivo layout simples padrão mostrado aqui, o conteúdo da página é renderizado pela exibição específica associada com a página e, em seguida, um simples `<footer>` é adicionada ao final do `<div>` elemento. Você pode ver como o interno sobre página aparece usando este modelo:
+Ele também inclui o nome do aplicativo, que aparece no canto superior esquerdo. O menu de navegação principal é processado pelo `<ul>` elemento dentro do segundo div e inclui links para casa, aproximadamente e entre em contato com. Abaixo do painel de navegação, o corpo principal de cada página é renderizado em outro `<div>`, marcado com as classes de "contêiner" e "conteúdo do corpo". No arquivo layout simples padrão mostrado aqui, o conteúdo da página é renderizado pela exibição específica associada com a página e, em seguida, um simples `<footer>` é adicionada ao final do `<div>` elemento. Você pode ver como o interno sobre página aparece usando este modelo:
 
 ![Sobre a página](bootstrap/_static/about-page-wide.png)
 
@@ -117,7 +117,7 @@ Prefixo da classe CSS | Camada do dispositivo | Largura
 :---: | :---: | :---:
 col-xs- | Telefones | < 768px
 col-sm- | Tablets | >= 768px
-col-md- | Áreas de trabalho | >= 992px
+col-md - | Áreas de trabalho | >= 992px
 col-lg - | Exibe maior de área de trabalho | >= 1200px
 
 Ao especificar duas colunas com "col-md-6" layout resultante será duas colunas com resoluções de área de trabalho, mas essas duas colunas serão empilhadas verticalmente quando renderizado em dispositivos menores (ou uma janela de navegador mais estreita em uma área de trabalho), permitindo aos usuários exibir facilmente conteúdo sem precisar rolar horizontalmente.
@@ -146,7 +146,7 @@ As classes de botão padrão e as cores são mostradas na figura abaixo.
 
 ### <a name="badges"></a>Notificações
 
-Selos consultem textos explicativos pequenos, geralmente numéricos ao lado de um item de navegação. Eles podem indicar um número de mensagens ou notificações de espera, ou a presença de atualizações. Especificar essas notificações é tão simple quanto adicionando um <span> que contém o texto, com a classe de "notificação":
+Selos consultem textos explicativos pequenos, geralmente numéricos ao lado de um item de navegação. Eles podem indicar um número de mensagens ou notificações de espera, ou a presença de atualizações. Especificar essas notificações é tão simple quanto adicionando um `<span>` que contém o texto, com a classe de "notificação":
 
 ![notificações com tema](bootstrap/_static/theme-badges.png)
 
@@ -158,7 +158,7 @@ Talvez seja necessário exibir algum tipo de notificação de alerta ou para usu
 
 ### <a name="navbars-and-menus"></a>Menus e barras de navegação
 
-Nosso layout já inclui uma barra de navegação padrão, mas o tema do bootstrap dá suporte a opções de estilo adicionais. Podemos facilmente optar por exibir a barra de navegação verticalmente em vez de horizontalmente se preferirmos, bem como adicionar itens de subnavegação aos menus de atalho. Menus de navegação simples, como as faixas guia, baseiam-se na parte superior dos  <ul> elementos. Eles podem ser facilmente criados, apenas fornecendo-os com as classes CSS "nav" e "nav-guias":
+Nosso layout já inclui uma barra de navegação padrão, mas o tema do bootstrap dá suporte a opções de estilo adicionais. Podemos facilmente optar por exibir a barra de navegação verticalmente em vez de horizontalmente se preferirmos, bem como adicionar itens de subnavegação aos menus de atalho. Menus de navegação simples, como as faixas guia baseiam-se na parte superior do `<ul>` elementos. Eles podem ser facilmente criados, apenas fornecendo-os com as classes CSS "nav" e "nav-guias":
 
 ![tabstrips com tema](bootstrap/_static/theme-tabstrips.png)
 

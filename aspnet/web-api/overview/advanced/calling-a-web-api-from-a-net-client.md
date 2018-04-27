@@ -11,17 +11,17 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: a243eeb982ba581e237263c4e31e130d634aff0e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fdb74b0eb74ce7f387f49a0b25ceebd3fc389da9
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>Chamar uma API da Web de um cliente .NET (c#)
 ====================
 por [Mike Wasson](https://github.com/MikeWasson) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[Baixe o projeto concluído](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)
+[Baixe o projeto concluído](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Instruções de download](/aspnet/core/tutorials/#how-to-download-a-sample). 
 
 Este tutorial mostra como chamar uma API da web de um aplicativo .NET, usando [System.Net.Http.HttpClient.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
@@ -29,10 +29,10 @@ Neste tutorial, um aplicativo cliente é gravado que consome a API da web seguin
 
 | Ação | Método HTTP | URI relativo |
 | --- | --- | --- |
-| Obter um produto por ID | OBTER | /api/products/*id* |
+| Obter um produto por ID | OBTER | /API/produtos/*id* |
 | Criar um novo produto | POSTAR | produtos/api / |
-| Atualização de um produto | PUT | /api/products/*id* |
-| Excluir um produto | DELETE | /api/products/*id* |
+| Atualização de um produto | PUT | /API/produtos/*id* |
+| Excluir um produto | DELETE | /API/produtos/*id* |
 
 Para saber como implementar essa API com a API da Web ASP.NET, consulte [criando uma API da Web que dá suporte a operações de CRUD](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 ).
@@ -167,7 +167,7 @@ Como obter, uma solicitação de exclusão não tem um corpo de solicitação. V
 
 Para testar o aplicativo cliente:
 
-1. [Baixar](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) e executar o aplicativo de servidor. [Instruções de download](https://docs.microsoft.com/aspnet/core/tutorials/#how-to-download-a-sample). Verifique se que o aplicativo de servidor está funcionando. Para exaxmple, `http://localhost:64195/api/products` deve retornar uma lista de produtos.
+1. [Baixar](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) e executar o aplicativo de servidor. [Instruções de download](/aspnet/core/tutorials/#how-to-download-a-sample). Verifique se que o aplicativo de servidor está funcionando. Para exaxmple, `http://localhost:64195/api/products` deve retornar uma lista de produtos.
 2. Defina o URI de base para solicitações HTTP. Altere o número da porta para a porta usada para o aplicativo de servidor.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

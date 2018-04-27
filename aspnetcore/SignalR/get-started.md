@@ -3,6 +3,7 @@ title: Introdução ao SignalR no ASP.NET Core
 author: rachelappel
 description: Neste tutorial, você deve criar um aplicativo usando o SignalR para ASP.NET Core.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 03/16/2018
@@ -10,17 +11,17 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: cf120d535c85c7871f5b1f27039018ea2405b9cb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 03735359bb22cc3085ddc7b34372ecfc9501a940
+ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>Introdução ao SignalR no ASP.NET Core
 
 Por [Rachel Appel](https://twitter.com/rachelappel)
 
-[!INCLUDE [Version notice](../includes/signalr-version-notice.md)]
+[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 Este tutorial ensina as Noções básicas de criação de um aplicativo em tempo real com SignalR para ASP.NET Core.
 
@@ -41,14 +42,14 @@ Instale o software a seguir:
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* [.NET core 2.1.0 visualizar 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1) ou posterior
-* [Visual Studio de 2017](https://www.visualstudio.com/downloads/) versão 15.6 ou posterior com o **desenvolvimento ASP.NET e web** carga de trabalho
+* [.NET core 2.1.0 Preview SDK 2](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2) ou posterior
+* [Visual Studio de 2017](https://www.visualstudio.com/downloads/) 15.7 ou posterior com o **desenvolvimento ASP.NET e web** carga de trabalho
 * [npm](https://www.npmjs.com/get-npm)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-* [.NET core 2.1.0 visualizar 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1) ou posterior
-* [Visual Studio Code](https://code.visualstudio.com/download) 
+* [.NET core 2.1.0 Preview SDK 2](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2) ou posterior
+* [Visual Studio Code](https://code.visualstudio.com/download)
 * [C# para o código do Visual Studio](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 * [npm](https://www.npmjs.com/get-npm)
 
@@ -56,7 +57,8 @@ Instale o software a seguir:
 
 ## <a name="create-an-aspnet-core-project-that-hosts-signalr-client-and-server"></a>Criar um projeto do ASP.NET Core que hospeda o servidor e cliente SignalR
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 1. Use o **arquivo** > **novo projeto** menu opção e escolha **aplicativo Web do ASP.NET Core**. Nomeie o projeto *SignalRChat*.
 
    ![Caixa de diálogo Nova projeto no Visual Studio](get-started/_static/signalr-new-project-dialog.png)
@@ -65,16 +67,19 @@ Instale o software a seguir:
 
    ![Caixa de diálogo Nova projeto no Visual Studio](get-started/_static/signalr-new-project-choose-type.png)
 
-3. Clique com botão direito no projeto no **Solution Explorer** > **adicionar** > **Novo Item** > **npm arquivo de configuração** . Nomeie o arquivo *Package. JSON*.
+O Visual Studio inclui a `Microsoft.AspNetCore.SignalR` pacote que contém suas bibliotecas do servidor como parte de seu **aplicativo Web do ASP.NET Core** modelo. No entanto, a biblioteca de cliente JavaScript para o SignalR deve ser instalada usando *npm*.
 
-4. Execute o seguinte comando **Package Manager Console** janela, na raiz do projeto:
+3. Execute os seguintes comandos **Package Manager Console** janela, na raiz do projeto:
 
     ```console
+      npm init -y
       npm install @aspnet/signalr
-    ```
-5. Copiar o <em>signalr.js</em> arquivo <em>node_modules\\ @aspnet\signalr\dist\browser</em>  para o <em>wwwroot\lib</em> pasta em seu projeto.
+    ```     
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+4. Copiar o *signalr.js* arquivo *node_modules\\ @aspnet\signalr\dist\browser*  para o *lib* pasta em seu projeto.
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 1. Do **Terminal integrada**, execute o seguinte comando:
 
     ```console
@@ -88,21 +93,24 @@ Instale o software a seguir:
       npm install @aspnet/signalr
     ```
 
-* * *
+-----
+
 ## <a name="create-the-signalr-hub"></a>Criar o Hub SignalR
 
 Um hub é uma classe que serve como um pipeline de alto nível que permite que o cliente e servidor chamar métodos em si.
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 1. Adicionar uma classe ao projeto, escolhendo **arquivo** > **novo** > **arquivo** e selecionando **Visual C# classe**.
 
 2. Herdar de `Microsoft.AspNetCore.SignalR.Hub`. O `Hub` classe contém propriedades e eventos para gerenciar conexões e grupos, bem como enviar e receber dados.
 
-3. Criar o `SendMessage` método que envia uma mensagem a todos os clientes conectados bate-papo. Observe que ele retorna um [tarefa](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task(v=vs.110).aspx), pois o SignalR é assíncrono. Será melhor dimensionado código assíncrono.
+3. Criar o `SendMessage` método que envia uma mensagem a todos os clientes conectados bate-papo. Observe que ele retorna um [tarefa](https://msdn.microsoft.com/library/system.threading.tasks.task(v=vs.110).aspx), pois o SignalR é assíncrono. Será melhor dimensionado código assíncrono.
 
-   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=7-14)]
+   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs)]
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 1. Abra o *SignalRChat* pasta no código do Visual Studio.
 
 2. Adicionar uma classe ao projeto selecionando **arquivo** > **novo arquivo** no menu.
@@ -111,9 +119,10 @@ Um hub é uma classe que serve como um pipeline de alto nível que permite que o
 
 4. Adicione o método `SendMessage` à classe. O `SendMessage` método envia uma mensagem a todos os clientes conectados bate-papo. Observe que ele retorna um [tarefa](/dotnet/api/system.threading.tasks.task), pois o SignalR é assíncrono. Será melhor dimensionado código assíncrono.
 
-   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=7-14)]
+   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=6-12)]
 
-* * *
+-----
+
 ## <a name="configure-the-project-to-use-signalr"></a>Configurar o projeto para usar o SignalR
 
 O servidor do SignalR deve ser configurado para que ele saiba que pode passar solicitações para o SignalR.
@@ -124,7 +133,9 @@ O servidor do SignalR deve ser configurado para que ele saiba que pode passar so
 
 2. Configurar rotas para seus hubs usando `UseSignalR`.
 
-   [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=22,40-43)]
+
+   [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=36,56-59)]
+
 
 ## <a name="create-the-signalr-client-code"></a>Criar o código de cliente SignalR
 

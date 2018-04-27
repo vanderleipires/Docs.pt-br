@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: 05b0d7f31e167e620f2d168109ffd907ba120a49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fd893b7c62f38442bf5633a956786983763e6f9f
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>Use JavaScriptServices para criar aplicativos de única página no núcleo do ASP.NET
 
@@ -50,7 +50,7 @@ SpaServices foi criado para posicionar o ASP.NET Core como plataforma de lado do
 
 SpaServices fornece a infraestrutura úteis, como:
 * [Pré-processamento do lado do servidor](#server-prerendering)
-* [Webpack Dev Middleware](#webpack-dev-middleware)
+* [Middleware de desenvolvimento webpack](#webpack-dev-middleware)
 * [Substituição do módulo ativa](#hot-module-replacement)
 * [Roteamentos auxiliares](#routing-helpers)
 
@@ -166,7 +166,7 @@ O *webpack.config.js* do arquivo `output.publicPath` propriedade informa o middl
 
 ## <a name="hot-module-replacement"></a>Substituição do módulo ativa
 
-Pense do Webpack [módulo substituições](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) recurso (HMR) como uma evolução do [Webpack desenvolvimento Middleware](#webpack-dev-middleware). HMR apresenta os mesmos benefícios, mas ele simplifica ainda mais o fluxo de trabalho de desenvolvimento por atualizar automaticamente o conteúdo da página depois de compilar as alterações. Não confunda isso com uma atualização do navegador, o que poderia interferir com o estado de memória atual e a sessão de depuração do SPA. Há um vínculo dinâmico entre o serviço de Middleware de desenvolvimento Webpack e o navegador, o que significa que as alterações são enviados por push para o navegador.
+Pense do Webpack [módulo substituições](https://webpack.js.org/concepts/hot-module-replacement/) recurso (HMR) como uma evolução do [Webpack desenvolvimento Middleware](#webpack-dev-middleware). HMR apresenta os mesmos benefícios, mas ele simplifica ainda mais o fluxo de trabalho de desenvolvimento por atualizar automaticamente o conteúdo da página depois de compilar as alterações. Não confunda isso com uma atualização do navegador, o que poderia interferir com o estado de memória atual e a sessão de depuração do SPA. Há um vínculo dinâmico entre o serviço de Middleware de desenvolvimento Webpack e o navegador, o que significa que as alterações são enviados por push para o navegador.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
@@ -226,7 +226,7 @@ Dica: As rotas são avaliadas na ordem em que eles foram configurados. Consequen
 
 ## <a name="creating-a-new-project"></a>Criar um novo projeto
 
-JavaScriptServices fornece modelos de aplicativo pré-configurado. SpaServices é usada nesses modelos, junto com diferentes estruturas e bibliotecas como Angular, Aurelia, Knockout, reagir e Vue.
+JavaScriptServices fornece modelos de aplicativo pré-configurado. SpaServices é usada nesses modelos, junto com diferentes estruturas e bibliotecas como Angular, reagir e Redux.
 
 Esses modelos podem ser instalados por meio da CLI do .NET Core executando o seguinte comando:
 
@@ -236,14 +236,11 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 Uma lista de modelos disponíveis do SPA é exibida:
 
-| Modelos                                 | Short Name | Linguagem | Marcas        |
+| Modelos                                 | Nome curto | Idioma | Marcas        |
 |:------------------------------------------|:-----------|:---------|:------------|
 | Núcleo do ASP.NET MVC com Angular             | angular    | [C#]     | Web/MVC/SPA |
-| Núcleo do ASP.NET MVC com Aurelia             | aurelia    | [C#]     | Web/MVC/SPA |
-| Núcleo do ASP.NET MVC com Knockout. js         | knockout   | [C#]     | Web/MVC/SPA |
 | Núcleo do ASP.NET MVC com React.js            | react      | [C#]     | Web/MVC/SPA |
 | Núcleo do ASP.NET MVC com React.js e retorno  | reactredux | [C#]     | Web/MVC/SPA |
-| Núcleo do ASP.NET MVC com Vue.js              | VUE        | [C#]     | Web/MVC/SPA | 
 
 Para criar um novo projeto usando um dos modelos de SPA, inclua o **nome curto** do modelo no [dotnet novo](/dotnet/core/tools/dotnet-new) comando. O comando a seguir cria um aplicativo Angular com ASP.NET MVC de núcleo configurado para o lado do servidor:
 
@@ -295,7 +292,7 @@ Usando o aplicativo Angular como exemplo, dois casos de teste Jasmine já são f
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
-Abra o prompt de comando na raiz do projeto e execute o seguinte comando:
+Abra o prompt de comando no *ClientApp* directory. Execute o seguinte comando:
 
 ```console
 npm test
