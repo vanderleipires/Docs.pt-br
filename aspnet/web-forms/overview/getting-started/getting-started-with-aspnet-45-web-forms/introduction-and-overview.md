@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 572b263a5f968b473457771a1dd4075910218c01
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a3527b54d1936bc14e32a1828ac3a2be625107ba
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>Guia de Introdução ao 4.5 Web Forms do ASP.NET e Visual Studio 2013
 ====================
@@ -101,7 +101,7 @@ Tarefas demonstradas nesta série:
 - Registrando as rotas para o aplicativo web
 - Implementando o tratamento de erros e log de erros
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Se você for novo no Web Forms do ASP.NET mas tem familiaridade com conceitos de programação, você tem o direito tutorial. Se você já estiver familiarizado com o Web Forms do ASP.NET, você pode aproveitar essa série de tutoriais pelos novos recursos disponíveis no ASP.NET 4.5. Se você estiver familiarizado com conceitos de programação e Web Forms do ASP.NET, consulte os tutoriais adicionais fornecidos no Web Forms [Introdução](../../../index.md) seção no site da Web do ASP.NET.
 
@@ -179,7 +179,7 @@ Depois de instalar os pré-requisitos, você está pronto para começar a criar 
 
 O download é um <em>. zip</em> arquivo. Para ver o projeto completo que cria esta série de tutoriais, encontre e selecione o <em>c#</em>pasta o <em>. zip</em> arquivo. Salve o <em>c#</em> folderto a pasta que você pode usar para trabalhar com projetos do Visual Studio 2013. Por padrão, a pasta de projetos do Visual Studio 2013 é o seguinte:
 
-<strong>C:\Users\</ strong ><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual 2013\Projects Studio</strong>
+<strong>C:\Users&#92;</strong><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual 2013\Projects Studio</strong>
 
 Renomear o ***c#*** pasta ***WingtipToys***.
 

@@ -1,21 +1,21 @@
 ---
 title: Introdução ao ASP.NET Core SignalR
 author: rachelappel
-description: Saiba como a biblioteca ASP.NET Core SignalR simplifica a adição de funcionalidade da web em tempo real para aplicativos.
+description: Saiba como a biblioteca ASP.NET Core SignalR simplifica a adicionar funcionalidade em tempo real aos aplicativos.
 manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 03/07/2018
+ms.date: 04/25/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/introduction
-ms.openlocfilehash: fa9b10201b5dc0e67bcd6d1321a3737e2025fda4
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 190dfe9eac95be646b458870ac4ee95f681f45d7
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>Introdução ao ASP.NET Core SignalR
 
@@ -51,20 +51,17 @@ A conexão entre o cliente e servidor é persistente, ao contrário de uma conex
 
 SignalR resumos sobre várias técnicas para criar aplicativos web em tempo real. [O WebSocket](https://tools.ietf.org/html/rfc7118) é o transporte ideal, mas outras técnicas como eventos Server-Sent e sondagem longa podem ser usadas quando os não estão disponíveis. SignalR detectará automaticamente e inicializar o transporte apropriado com base em recursos com suporte no cliente e servidor.
 
-## <a name="hubs-and-endpoints"></a>Hubs e pontos de extremidade
+## <a name="hubs"></a>Hubs
 
-O SignalR usa Hubs e pontos de extremidade para comunicação entre clientes e servidores. A API de Hubs abrange a maioria dos cenários.
+O SignalR usa hubs para comunicação entre clientes e servidores.
 
-Um hub é um pipeline de alto nível construído com a API de ponto de extremidade que permite que o cliente e o servidor chamar métodos em si. SignalR lida com a distribuição entre limites de máquina automaticamente, permitindo que os clientes chamar os métodos no servidor como facilmente como métodos locais e vice-versa. Hubs permitem passar parâmetros fortemente tipadas para métodos, que permite que a associação de modelo. O SignalR fornece dois protocolos de hub interno: um protocolo de texto com base em JSON e um protocolo binário com base em [MessagePack](https://msgpack.org/).  MessagePack geralmente cria mensagens menores do que o uso JSON. Devem oferecer suporte a navegadores mais antigos [nível XHR 2](https://caniuse.com/#feat=xhr2) para oferecer suporte a protocolo MessagePack.
+Um hub é um pipeline de alto nível que permite que o cliente e o servidor chamar métodos em si. SignalR lida com a distribuição entre limites de máquina automaticamente, permitindo que os clientes chamar os métodos no servidor como facilmente como métodos locais e vice-versa. Hubs permitem passar parâmetros fortemente tipadas para métodos, que permite que a associação de modelo. O SignalR fornece dois protocolos de hub interno: um protocolo de texto com base em JSON e um protocolo binário com base em [MessagePack](https://msgpack.org/).  MessagePack geralmente cria mensagens menores do que o uso JSON. Devem oferecer suporte a navegadores mais antigos [nível XHR 2](https://caniuse.com/#feat=xhr2) para oferecer suporte a protocolo MessagePack.
 
 Hubs de chamar o código de cliente, enviando mensagens usando o transporte ativo. As mensagens contêm o nome e os parâmetros do método do lado do cliente. Objetos enviados como parâmetros de método desserializados usando o protocolo configurado. O cliente tenta corresponder o nome a um método no código do lado do cliente. Quando ocorrer uma correspondência, o método do cliente é executado usando os dados de parâmetro desserializado.
 
-Pontos de extremidade fornecem uma API como soquete bruta, habilitá-las para leitura e gravação do cliente. Cabe ao desenvolvedor de lidar com o agrupamento, transmissão e outras funções. A API de Hubs é criada sobre a camada de pontos de extremidade.
+## <a name="additional-resources"></a>Recursos adicionais
 
-O diagrama a seguir mostra a relação entre hubs, pontos de extremidade e clientes.
-
-![Mapa de SignalR](introduction/_static/signalr-core-architecture.png)
-
-## <a name="related-resources"></a>Recursos relacionados
-
-[Introdução ao SignalR para ASP.NET Core](xref:signalr/get-started)
+* [Introdução ao SignalR para ASP.NET Core](xref:signalr/get-started)
+* [Plataformas com suporte](xref:signalr/supported-platforms)
+* [Hubs](xref:signalr/hubs)
+* [Cliente JavaScript](xref:signalr/javascript-client)
