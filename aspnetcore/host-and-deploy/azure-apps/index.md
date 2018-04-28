@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: c2675f73880a41ee75f6ec13155419945387e109
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f53f77d342cc59094a80e8667db6ef345a6e8305
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 
@@ -95,14 +95,13 @@ Para obter mais informações, veja [Principais provedores de armazenamento](xre
 
 Aplicativos de visualização do ASP.NET Core podem ser implantados para o Serviço de Aplicativo do Azure com as seguintes abordagens:
 
-* [Instalar a extensão de site de visualização](#site-x)
-* [Implantar o aplicativo autocontido](#self)
-* [Usar o Docker com aplicativos Web para contêineres](#docker)
+* [Instalar a extensão de site de visualização](#install-the-preview-site-extension)
+* [Implantar o aplicativo autocontido](#deploy-the-app-self-contained)
+* [Usar o Docker com aplicativos Web para contêineres](#use-docker-with-web-apps-for-containers)
 
-Se você tiver problemas ao usar a extensão de site de visualização, abra um problema no [GitHub](https://github.com/aspnet/azureintegration/issues/new).
+Se houver problemas ao usar a extensão de site de visualização, abra um problema no [GitHub](https://github.com/aspnet/azureintegration/issues/new).
 
-<a name="site-x"></a>
-### <a name="install-the-preview-site-extention"></a>Instalar a extensão de site de visualização
+### <a name="install-the-preview-site-extension"></a>Instalar a extensão de site de visualização
 
 * No portal do Azure, navegue até a folha Serviço de Aplicativo.
 * Digite "ex" na caixa de pesquisa.
@@ -111,10 +110,10 @@ Se você tiver problemas ao usar a extensão de site de visualização, abra um 
 
 ![Folha do Azure App com etapas anteriores](index/_static/x1.png)
 
-* Selecione **Extensões de tempo de execução do ASP.NET Core**.
-* Selecione **OK** > **OK**.
+* Selecione **tempo de execução do ASP.NET Core 2.1 (x86)** ou **tempo de execução do ASP.NET Core 2.1 (x64)**.
+* Selecione **OK**. Selecione **OK** novamente.
 
-Quando as operações de adição forem concluídas, a visualização mais recente do .NET Core 2.1 será instalada. Você pode verificar a instalação executando `dotnet --info` no console. Na folha de Serviço de Aplicativo:
+Quando as operações de adição forem concluídas, a versão prévia mais recente do .NET Core 2.1 será instalada. Verifique a instalação executando `dotnet --info` no console. Na folha de **Serviço de Aplicativo**:
 
 * Digite "con" na caixa de pesquisa.
 * Selecione **Console**.
@@ -126,26 +125,24 @@ A imagem anterior era atual no momento em que este texto foi escrito. Você pode
 
 O `dotnet --info` exibe o caminho para a extensão de site em que a visualização foi instalada. Ele mostra que o aplicativo está em execução na extensão de site em vez do local padrão *ProgramFiles*. Se você vir *ProgramFiles*, reinicie o site e execute `dotnet --info`.
 
-#### <a name="use-the-preview-site-extention-with-an-arm-template"></a>Usar a extensão de site de visualização com um modelo do ARM
+**Usar a extensão de site de visualização com um modelo do ARM**
 
-Se você estiver usando um modelo do ARM para criar e implantar aplicativos, poderá usar o tipo de recurso `siteextensions` para adicionar a extensão de site a um aplicativo Web. Por exemplo:
+Se um modelo do ARM for usado para criar e implantar aplicativos, o tipo de recurso `siteextensions` poderá ser usado para adicionar a extensão de site a um aplicativo Web. Por exemplo:
 
 [!code-json[Main](index/sample/arm.json?highlight=2)]
 
-<a name="self"></a>
 ### <a name="deploy-the-app-self-contained"></a>Implantar o aplicativo autocontido
 
-Você pode implantar um [aplicativo autocontido](/dotnet/core/deploying/#self-contained-deployments-scd) que carrega o tempo de execução de visualização com ele quando está sendo implantado. Ao implantar um aplicativo autocontido:
+Um [aplicativo autocontido](/dotnet/core/deploying/#self-contained-deployments-scd), que executa o tempo de execução de visualização na implantação, pode ser implantado. Ao implantar um aplicativo autocontido:
 
-* Não é necessário preparar o seu site.
-* Exige que você publique seu aplicativo de forma diferente que ao implantar um aplicativo depois que o SDK está instalado no servidor.
+* O site não precisa ser preparado.
+* O aplicativo deve ser publicado de modo diferente do que ao publicar uma implantação dependente de infraestrutura com o tempo de execução compartilhado e o host no servidor.
 
-Aplicativos autocontidos são uma opção para todos os aplicativos do .NET Core.
+Os aplicativos autocontidos são uma opção para todos os aplicativos do ASP.NET Core.
 
-<a name="docker"></a>
 ### <a name="use-docker-with-web-apps-for-containers"></a>Usar o Docker com aplicativos Web para contêineres
 
-O [Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) contém as imagens de visualização do Docker 2.1 mais recentes. Você pode usá-las como sua imagem de base e implantar em Aplicativos Web para Contêineres como faria normalmente.
+O [Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) contém as imagens de visualização do Docker 2.1 mais recentes. As imagens podem ser usadas como uma imagem de base. Use a imagem e implante aplicativos Web para contêineres normalmente.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
