@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: ada8120189baf036296b83f91d20b364ee90d074
-ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
+ms.openlocfilehash: 2d6cc526b5a0890103e2856a0ca4b58c5f162c79
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gerenciar pacotes do lado do cliente com Bower no ASP.NET Core
 
@@ -107,7 +107,7 @@ Depois que você listar pacotes no *bower. JSON* arquivo, o Visual Studio irá b
 ### <a name="enable-static-files"></a>Habilitar arquivos estáticos
 
 * Adicionar o `Microsoft.AspNetCore.StaticFiles` pacote NuGet para o projeto.
-* Habilitar arquivos estáticos sejam atendidos com o [middleware de arquivo estático](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions). Adicionar uma chamada para [UseStaticFiles](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions) para o `Configure` método `Startup`.
+* Habilitar arquivos estáticos sejam atendidos com o [middleware de arquivo estático](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions). Adicionar uma chamada para [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions) para o `Configure` método `Startup`.
 
 [!code-csharp[](bower/sample/Startup.cs?highlight=9)]
 

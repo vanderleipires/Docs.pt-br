@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 166111696a9c4244ede44fca8878dd3725bb3099
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0a04f5762a35426f342b58b8b60288c66c057ae7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo em desenvolvimento no núcleo do ASP.NET
 
@@ -21,7 +21,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://gith
 
 Este documento mostra como você pode usar a ferramenta Gerenciador de segredo em desenvolvimento para manter os segredos fora do seu código. O ponto mais importante é que você nunca deve armazenar senhas ou outros dados confidenciais no código-fonte, e você não deve usar os segredos de produção no modo de desenvolvimento e teste. Em vez disso, você pode usar o [configuração](xref:fundamentals/configuration/index) sistema ler esses valores de variáveis de ambiente ou dos valores armazenados usando o Gerenciador de segredo de ferramenta. A ferramenta Gerenciador de segredo ajuda a impedir que os dados confidenciais que está sendo verificado no controle de origem. O [configuração](xref:fundamentals/configuration/index) sistema pode ler os segredos armazenados com a ferramenta Gerenciador de segredo descrita neste artigo.
 
-A ferramenta Gerenciador de segredo é usada somente em desenvolvimento. Você pode proteger segredos de teste e produção do Azure com o [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) provedor de configuração. Consulte [provedor de configuração do Azure Key Vault](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration) para obter mais informações.
+A ferramenta Gerenciador de segredo é usada somente em desenvolvimento. Você pode proteger segredos de teste e produção do Azure com o [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) provedor de configuração. Consulte [provedor de configuração do Azure Key Vault](xref:security/key-vault-configuration) para obter mais informações.
 
 ## <a name="environment-variables"></a>Variáveis de ambiente
 

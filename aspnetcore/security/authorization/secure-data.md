@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 5acb65be078fd39b9e7a17ce2d8167b8f7b7db22
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e42f299efcae7c6a0e3d20b157c591eed98c99d0
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Criar um aplicativo do ASP.NET Core com dados de usuário protegidos por autorização
 
@@ -102,7 +102,7 @@ Adicionar [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostin
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_env)]
 
-No método `ConfigureServices` do arquivo *Startup.cs*  , adicione o filtro de autorização [RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute):
+No método `ConfigureServices` do arquivo *Startup.cs*  , adicione o filtro de autorização [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute):
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
 
@@ -110,7 +110,7 @@ Se você estiver usando o Visual Studio, habilite o HTTPS.
 
 Para redirecionar solicitações HTTP para HTTPS, consulte [Middleware de regravação de URL](xref:fundamentals/url-rewriting). Se você estiver usando o Visual Studio Code ou testando em uma plataforma local que não inclui um certificado de teste para HTTPS:
 
-  Definir `"LocalTest:skipSSL": true` no arquivo *appsettings. Developement.JSON*.
+  Definir `"LocalTest:skipSSL": true` no *appsettings. Developement.JSON* arquivo.
 
 ### <a name="require-authenticated-users"></a>Exigir usuários autenticados
 
@@ -182,7 +182,7 @@ Criar uma classe `ContactAdministratorsAuthorizationHandler` na pasta *autoriza�
 
 ## <a name="register-the-authorization-handlers"></a>Registrar os manipuladores de autorização
 
-Serviços usando o Entity Framework Core devem ser registrados para [injeção de dependência](xref:fundamentals/dependency-injection) usando [AddScoped](/aspnet/core/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions). O `ContactIsOwnerAuthorizationHandler` usa o ASP.NET Core [identidade](xref:security/authentication/identity), que está incluído no Entity Framework Core. Registrar os manipuladores com a coleção de serviço para que eles estejam disponíveis para o `ContactsController` por meio de [injeção de dependência](xref:fundamentals/dependency-injection). Adicione o seguinte código ao final da `ConfigureServices`:
+Serviços usando o Entity Framework Core devem ser registrados para [injeção de dependência](xref:fundamentals/dependency-injection) usando [AddScoped](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions). O `ContactIsOwnerAuthorizationHandler` usa o ASP.NET Core [identidade](xref:security/authentication/identity), que está incluído no Entity Framework Core. Registrar os manipuladores com a coleção de serviço para que eles estejam disponíveis para o `ContactsController` por meio de [injeção de dependência](xref:fundamentals/dependency-injection). Adicione o seguinte código ao final da `ConfigureServices`:
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
@@ -272,7 +272,7 @@ Atualize o modelo de página de detalhes:
 
 Se você estiver usando o Visual Studio Code ou testando em uma plataforma local que não inclui um certificado de teste para HTTPS:
 
-* Defina `"LocalTest:skipSSL": true` no arquivo *appsettings. Developement.JSON*. Use Skip HTTPS somente em um computador de desenvolvimento.
+* Defina `"LocalTest:skipSSL": true` no arquivo *appsettings. Developement.JSON*. Skip HTTPS somente em um computador de desenvolvimento.
 
 Se o aplicativo tiver contatos:
 

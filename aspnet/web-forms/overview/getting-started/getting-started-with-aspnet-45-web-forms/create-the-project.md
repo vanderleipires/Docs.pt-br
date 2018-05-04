@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: b42e62b560e01d592c9f4cb61ea6199a15dc8bb6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7cfceb38204b6cfd3589a082761273e54ac122ca
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 <a name="create-the-project"></a>Criar o projeto
 ====================
@@ -52,7 +52,10 @@ Neste tutorial você criar, analisar e executar o projeto padrão no Visual Stud
 
     > [!NOTE]
     > É o nome do projeto nesta série de tutoriais **WingtipToys**. É recomendável que você use isso *exata* nome do projeto para que o código fornecido em toda a série de tutoriais funcionando conforme o esperado.
-6. Em seguida, selecione o **Web Forms** modelo e escolha o **criar projeto** botão.  
+
+6. Clique o **alterar autenticação** botão. Selecione **contas de usuário individuais** e clique no **Okey** botão.
+
+7. Selecione o **Web Forms** modelo e clique no **Okey** botão.
 
     ![Criar o projeto - novo modelo de projeto](create-the-project/_static/image3.png)
 
@@ -150,7 +153,7 @@ Quando um servidor Web recebe uma solicitação para uma página, ele encontra a
 > 
 > Para navegadores que não oferecem suporte a HTML5, você pode usar [Modernizr](http://www.modernizr.com/). Modernizr é uma biblioteca de JavaScript do código-fonte aberto que pode detectar se um navegador dá suporte a recursos HTML5 e habilitá-los, se não existir. No modelo de aplicativo do ASP.NET Web Forms, Modernizr é instalado como um pacote do NuGet.
 > 
-> **Bootstrap**
+> **inicialização**
 > 
 > Usam os modelos de projeto do Visual Studio 2013 [Bootstrap](http://getbootstrap.com/), uma estrutura de layout e temas criada pelo Twitter. Inicialização usa CSS3 para fornecer um design responsivo, o que significa layouts dinamicamente podem adaptar a tamanhos de janela de navegador diferente. Você também pode usar o recurso de temas da inicialização facilmente efetuar uma alteração na aparência do aplicativo. Por padrão, o modelo de aplicativo Web ASP.NET no Visual Studio 2013 inclui Bootstrap como um pacote do NuGet.
 > 

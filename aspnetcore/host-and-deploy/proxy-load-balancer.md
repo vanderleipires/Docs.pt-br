@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: b153a7406ae1b31a2aa453135c6bd0e5ce0b2997
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: f18a5c518edc739e0fe667f3aef6ffd38c06366c
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>Configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga
 
@@ -35,7 +35,7 @@ Por convenção, os proxies encaminham informações em cabeçalhos HTTP.
 | ------ | ----------- |
 | X-Forwarded-For | Contém informações sobre o cliente que iniciou a solicitação e proxies subsequentes em uma cadeia de proxies. Esse parâmetro pode conter IP endereços (e, opcionalmente, os números de porta). Em uma cadeia de servidores proxy, o primeiro parâmetro indica o cliente em que a solicitação foi feita pela primeira vez. Siga os identificadores de proxy subsequentes. O último proxy na cadeia não está na lista de parâmetros. Endereço IP do proxy última e, opcionalmente, um número de porta estão disponíveis como o endereço IP remoto na camada de transporte. |
 | X-Forwarded-Proto | O valor do esquema de origem (HTTP/HTTPS). O valor também pode ser uma lista de esquemas, se a solicitação percorreu vários proxies. |
-| X-Forwarded-Host | O valor original do campo de cabeçalho de Host. Normalmente, os proxies não modifique o cabeçalho de Host. Consulte [Microsoft Security Advisory CVE-2018-0787](https://github.com/aspnet/Announcements/issues/295) para obter informações sobre uma vulnerabilidade de elevação de privilégios que afeta os sistemas em que o proxy não valida ou restict cabeçalhos de Host para valores de BOM conhecidos. |
+| Host encaminhados X | O valor original do campo de cabeçalho de Host. Normalmente, os proxies não modifique o cabeçalho de Host. Consulte [Microsoft Security Advisory CVE-2018-0787](https://github.com/aspnet/Announcements/issues/295) para obter informações sobre uma vulnerabilidade de elevação de privilégios que afeta os sistemas em que o proxy não valida ou restict cabeçalhos de Host para valores de BOM conhecidos. |
 
 O Middleware de cabeçalhos encaminhados do [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) empacotar, lê esses cabeçalhos e preenche os campos associados em [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext). 
 
@@ -110,6 +110,7 @@ services.Configure<ForwardedHeadersOptions>(options =>
 });
 ```
 
+::: moniker range="<= aspnetcore-2.0"
 | Opção | Descrição |
 | ------ | ----------- |
 | [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername).<br><br>O padrão é `X-Forwarded-For`. |
@@ -123,6 +124,23 @@ services.Configure<ForwardedHeadersOptions>(options =>
 | [OriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalhostheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XOriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalhostheadername).<br><br>O padrão é `X-Original-Host`. |
 | [OriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalprotoheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername).<br><br>O padrão é `X-Original-Proto`. |
 | [RequireHeaderSymmetry](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.requireheadersymmetry) | Exigem o número de valores de cabeçalho a serem sincronizados entre o [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) sendo processada.<br><br>O padrão no núcleo do ASP.NET 1. x é `true`. O padrão do ASP.NET Core 2.0 ou posterior é `false`. |
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+| Opção | Descrição |
+| ------ | ----------- |
+| AllowedHosts | Restringe os hosts com o `X-Forwarded-Host` cabeçalho para os valores fornecidos.<ul><li>Os valores são comparados usando case ignorar ordinal.</li><li>Números de porta devem ser excluídos.</li><li>Se a lista estiver vazia, todos os hosts são permitidos.</li><li>Um curinga de nível superior `*` permite que todos os hosts de não vazio.</li><li>Subdomínio curingas são permitidos, mas não coincidir com o domínio raiz. Por exemplo, `*.contoso.com` corresponde o subdomínio `foo.contoso.com` , mas não o domínio raiz `contoso.com`.</li><li>Nomes de host de Unicode são permitidos, mas são convertidos em [Punycode](https://tools.ietf.org/html/rfc3492) para correspondência.</li><li>[Endereços IPv6](https://tools.ietf.org/html/rfc4291) deve incluir delimitadora colchetes e estar em [formulário convencional](https://tools.ietf.org/html/rfc4291#section-2.2) (por exemplo, `[ABCD:EF01:2345:6789:ABCD:EF01:2345:6789]`). Endereços IPv6 não especial de maiusculas e minúsculas para verificar se há igualdade lógica entre formatos diferentes, e nenhuma conversão em formato canônico é executada.</li><li>Falha para restringir os hosts permitidos pode permitir que um invasor falsificar links gerado pelo serviço.</li></ul>O valor padrão é vazio [IList\<cadeia de caracteres >](/dotnet/api/system.collections.generic.ilist-1). |
+| [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername).<br><br>O padrão é `X-Forwarded-For`. |
+| [ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) | Identifica qual encaminhadores devem ser processados. Consulte o [ForwardedHeaders Enum](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders) para a lista de campos que se aplicam. Os valores típicos atribuídos a essa propriedade são <code>ForwardedHeaders.XForwardedFor &#124; ForwardedHeaders.XForwardedProto</code>.<br><br>O valor padrão é [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders). |
+| [ForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedhostheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedhostheadername).<br><br>O padrão é `X-Forwarded-Host`. |
+| [ForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedprotoheadername).<br><br>O padrão é `X-Forwarded-Proto`. |
+| [ForwardLimit](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardlimit) | Limita o número de entradas nos cabeçalhos que são processados. Definido como `null` desabilitar o limite, mas isso só deve ser feito se `KnownProxies` ou `KnownNetworks` estão configurados.<br><br>O padrão é 1. |
+| [KnownNetworks](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownnetworks) | Intervalos de proxies conhecidos para aceitar encaminhados cabeçalhos de endereços. Forneça os intervalos IP usando notação de roteamento entre domínios (CIDR).<br><br>O padrão é um [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPNetwork](/dotnet/api/microsoft.aspnetcore.httpoverrides.ipnetwork)> que contém uma única entrada para `IPAddress.Loopback`. |
+| [KnownProxies](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownproxies) | Endereços de proxies conhecidos para aceitar cabeçalhos encaminhados do. Use `KnownProxies` especificar o endereço IP corresponde.<br><br>O padrão é um [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPAddress](/dotnet/api/system.net.ipaddress)> que contém uma única entrada para `IPAddress.IPv6Loopback`. |
+| [OriginalForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalforheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XOriginalForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalforheadername).<br><br>O padrão é `X-Original-For`. |
+| [OriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalhostheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XOriginalHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalhostheadername).<br><br>O padrão é `X-Original-Host`. |
+| [OriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalprotoheadername) | Use o cabeçalho especificado por essa propriedade, em vez de um especificado por [ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername).<br><br>O padrão é `X-Original-Proto`. |
+| [RequireHeaderSymmetry](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.requireheadersymmetry) | Exigem o número de valores de cabeçalho a serem sincronizados entre o [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) sendo processada.<br><br>O padrão no núcleo do ASP.NET 1. x é `true`. O padrão do ASP.NET Core 2.0 ou posterior é `false`. |
+::: moniker-end
 
 ## <a name="scenarios-and-use-cases"></a>Cenários e casos de uso
 

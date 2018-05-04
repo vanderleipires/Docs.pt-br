@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 16369a14dbe97778724632317a82e11de5a8faed
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 0653906996f9f37d436ebefc6a738d2603788d53
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>Migrar de autenticação e identidade para o ASP.NET 2.0 de núcleo
 
@@ -238,7 +238,7 @@ Faça as seguintes alterações em *Startup.cs*:
     ```
 
 ### <a name="setting-default-authentication-schemes"></a>Esquemas de autenticação padrão de configuração
-Em 1. x, o `AutomaticAuthenticate` e `AutomaticChallenge` propriedades do [AuthenticationOptions](https://docs.microsoft.com/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1) classe base foram se destina a ser definido em um esquema de autenticação. Não havia uma maneira válida para impor isso.
+Em 1. x, o `AutomaticAuthenticate` e `AutomaticChallenge` propriedades do [AuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1) classe base foram se destina a ser definido em um esquema de autenticação. Não havia uma maneira válida para impor isso.
 
 No 2.0, essas duas propriedades foram removidas como propriedades individuais `AuthenticationOptions` instância. Eles podem ser configurados no `AddAuthentication` chamada de método do `ConfigureServices` método *Startup.cs*:
 

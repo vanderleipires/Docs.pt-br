@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: a410d686b6140a487efb9962e94f64cfbec245f2
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 4c44063fb3385fc625c35c8a3cf06a35b5b0afb7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aspnet-core-middleware"></a>Middleware do ASP.NET Core
 
@@ -30,7 +30,7 @@ O middleware é um software montado em um pipeline de aplicativo para manipular 
 
 Os delegados de solicitação são usados para criar o pipeline de solicitação. Os delegados de solicitação manipulam cada solicitação HTTP.
 
-Os delegados de solicitação são configurados usando os métodos de extensão [Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) e [Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions). Um delegado de solicitação individual pode ser especificado em linha como um método anônimo (chamado do middleware em linha) ou pode ser definido em uma classe reutilizável. Essas classes reutilizáveis e os métodos anônimos em linha são o *middleware* ou *componentes do middleware*. Cada componente do middleware no pipeline de solicitação é responsável por invocar o próximo componente no pipeline ou por ligar a cadeia em curto-circuito, se apropriado.
+Os delegados de solicitação são configurados usando os métodos de extensão [Run](/dotnet/api/microsoft.aspnetcore.builder.runextensions), [Map](/dotnet/api/microsoft.aspnetcore.builder.mapextensions) e [Use](/dotnet/api/microsoft.aspnetcore.builder.useextensions). Um delegado de solicitação individual pode ser especificado em linha como um método anônimo (chamado do middleware em linha) ou pode ser definido em uma classe reutilizável. Essas classes reutilizáveis e os métodos anônimos em linha são o *middleware* ou *componentes do middleware*. Cada componente do middleware no pipeline de solicitação é responsável por invocar o próximo componente no pipeline ou por ligar a cadeia em curto-circuito, se apropriado.
 
 A seção [Migrating HTTP Modules to Middleware](xref:migration/http-modules) (Migrar módulos HTTP para o Middleware) explica a diferença entre pipelines de solicitação no ASP.NET Core e no ASP.NET 4.x e fornece mais exemplos do middleware.
 
@@ -46,9 +46,9 @@ O aplicativo ASP.NET Core mais simples possível define um delegado de solicita�
 
 [!code-csharp[](index/sample/Middleware/Startup.cs)]
 
-O primeiro delegado [app.Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) encerra o pipeline.
+O primeiro delegado [app.Run](/dotnet/api/microsoft.aspnetcore.builder.runextensions) encerra o pipeline.
 
-É possível encadear vários delegados de solicitação junto com o [app.Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions). O parâmetro `next` representa o próximo delegado no pipeline. (Lembre-se de que você pode ligar o pipeline em curto-circuito ao *não* chamar o *próximo* parâmetro.) Normalmente, você pode executar ações antes e depois do próximo delegado, conforme este exemplo demonstra:
+É possível encadear vários delegados de solicitação junto com o [app.Use](/dotnet/api/microsoft.aspnetcore.builder.useextensions). O parâmetro `next` representa o próximo delegado no pipeline. (Lembre-se de que você pode ligar o pipeline em curto-circuito ao *não* chamar o *próximo* parâmetro.) Normalmente, você pode executar ações antes e depois do próximo delegado, conforme este exemplo demonstra:
 
 [!code-csharp[](index/sample/Chain/Startup.cs?name=snippet1)]
 
@@ -57,7 +57,7 @@ O primeiro delegado [app.Run](https://docs.microsoft.com/aspnet/core/api/microso
 > - Pode causar uma violação do protocolo. Por exemplo, gravar mais do que o `content-length` indicado.
 > - Pode corromper o formato do corpo. Por exemplo, gravar um rodapé HTML em um arquivo CSS.
 >
-> [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted) é uma dica útil para indicar se os cabeçalhos foram enviados e/ou o corpo foi gravado.
+> [HttpResponse.HasStarted](/dotnet/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted) é uma dica útil para indicar se os cabeçalhos foram enviados e/ou o corpo foi gravado.
 
 ## <a name="ordering"></a>Ordenando
 
@@ -122,7 +122,7 @@ Se a solicitação não for controlada pelo middleware de arquivo estático, ela
 
 -----------
 
-O exemplo a seguir demonstra uma solicitação de middleware na qual os pedidos de arquivos estáticos são tratados pelo middleware de arquivo estático antes do middleware de compactação de resposta. Os arquivos estáticos não são compactados com esse pedido de middleware. As respostas do MVC de [UseMvcWithDefaultRoute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_) podem ser compactadas.
+O exemplo a seguir demonstra uma solicitação de middleware na qual os pedidos de arquivos estáticos são tratados pelo middleware de arquivo estático antes do middleware de compactação de resposta. Os arquivos estáticos não são compactados com esse pedido de middleware. As respostas do MVC de [UseMvcWithDefaultRoute](/dotnet/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_) podem ser compactadas.
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -140,7 +140,7 @@ public void Configure(IApplicationBuilder app)
 
 Você pode configurar o pipeline de HTTP usando `Use`, `Run` e `Map`. O método `Use` pode ligar o pipeline em curto-circuito (ou seja, se ele não chamar um delegado de solicitação `next`). `Run` é uma convenção e alguns componentes de middleware podem expor os métodos `Run[Middleware]` que são executados no final do pipeline.
 
-As extensões `Map*` são usadas como uma convenção de ramificação do pipeline. [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) ramifica o pipeline de solicitação com base na correspondência do caminho da solicitação em questão. Se o caminho da solicitação iniciar com o caminho especificado, o branch será executado.
+As extensões `Map*` são usadas como uma convenção de ramificação do pipeline. [Map](/dotnet/api/microsoft.aspnetcore.builder.mapextensions) ramifica o pipeline de solicitação com base na correspondência do caminho da solicitação em questão. Se o caminho da solicitação iniciar com o caminho especificado, o branch será executado.
 
 [!code-csharp[](index/sample/Chain/StartupMap.cs?name=snippet1)]
 
@@ -155,7 +155,7 @@ A tabela a seguir mostra as solicitações e as respostas de `http://localhost:1
 
 Quando `Map` é usado, os segmentos de caminho correspondentes são removidos do `HttpRequest.Path` e anexados em `HttpRequest.PathBase` para cada solicitação.
 
-[MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions) ramifica o pipeline de solicitação com base no resultado do predicado em questão. Qualquer predicado do tipo `Func<HttpContext, bool>` pode ser usado para mapear as solicitações para um novo branch do pipeline. No exemplo a seguir, um predicado é usado para detectar a presença de uma variável de cadeia de caracteres de consulta `branch`:
+[MapWhen](/dotnet/api/microsoft.aspnetcore.builder.mapwhenextensions) ramifica o pipeline de solicitação com base no resultado do predicado em questão. Qualquer predicado do tipo `Func<HttpContext, bool>` pode ser usado para mapear as solicitações para um novo branch do pipeline. No exemplo a seguir, um predicado é usado para detectar a presença de uma variável de cadeia de caracteres de consulta `branch`:
 
 [!code-csharp[](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
@@ -225,7 +225,7 @@ O código a seguir move o delegado de middleware para uma classe:
 > [!NOTE]
 > No ASP.NET Core 1.x, o nome do método `Task` de middleware deve ser `Invoke`. No ASP.NET Core 2.0 ou posterior, o nome pode ser `Invoke` ou `InvokeAsync`.
 
-O seguinte método de extensão expõe o middleware por meio do [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder):
+O seguinte método de extensão expõe o middleware por meio do [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder):
 
 [!code-csharp[](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
@@ -235,7 +235,7 @@ O código a seguir chama o middleware de `Configure`:
 
 O middleware deve seguir o [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/) ao expor suas dependências em seu construtor. O middleware é construído uma vez por *tempo de vida do aplicativo*. Consulte a seção *Dependências por solicitação* abaixo se você precisar compartilhar serviços com middleware dentro de uma solicitação.
 
-Os componentes de middleware podem resolver suas dependências, utilizando a injeção de dependência por meio de parâmetros do construtor. [`UseMiddleware<T>`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) também pode aceitar parâmetros adicionais diretamente.
+Os componentes de middleware podem resolver suas dependências, utilizando a injeção de dependência por meio de parâmetros do construtor. [`UseMiddleware<T>`](/dotnet/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary) também pode aceitar parâmetros adicionais diretamente.
 
 ### <a name="per-request-dependencies"></a>Dependências de pré-solicitação
 

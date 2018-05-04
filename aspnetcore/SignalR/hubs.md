@@ -6,22 +6,24 @@ manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 03/30/2018
+ms.date: 05/01/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: 7da0c4832b1aa6a844172bf751a46b280a02f37a
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: e23d7ef6d5e5e93d5fc69ad4c845a6a896836170
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Usando os hubs de SignalR para ASP.NET Core
 
 Por [Rachel Appel](https://twitter.com/rachelappel) e [Griffin Kevin](https://twitter.com/1kevgriff)
 
 [!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
+
+[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(como fazer o download)](xref:tutorials/index#how-to-download-a-sample)
 
 ## <a name="what-is-a-signalr-hub"></a>O que é um hub SignalR
 
@@ -31,17 +33,17 @@ A API de Hubs de SignalR permite chamar métodos em clientes conectados do servi
 
 O middleware SignalR requer alguns serviços, que são configurados por meio da chamada `services.AddSignalR`.
 
-[!code-csharp[Configure service](hubs/sample/startup.cs?range=35)]
+[!code-csharp[Configure service](hubs/sample/startup.cs?range=37)]
 
 Ao adicionar a funcionalidade de SignalR para um aplicativo ASP.NET Core, configurar rotas SignalR chamando `app.UseSignalR` no `Startup.Configure` método.
 
-[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=55-58)]
+[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=56-59)]
 
 ## <a name="create-and-use-hubs"></a>Criar e usar hubs
 
 Criar um hub declarando uma classe que herda de `Hub`e adicionar métodos públicos a ele. Os clientes podem chamar os métodos que são definidos como `public`.
 
-[!code-csharp[Create and use hubs](hubs/sample/chathub.cs?range=10-13)]
+[!code-csharp[Create and use hubs](hubs/sample/hubs/chathub.cs?range=8-37)]
 
 Você pode especificar um tipo de retorno e parâmetros, incluindo tipos complexos e matrizes, como você faria em qualquer método em c#. SignalR lida com a serialização e desserialização de objetos complexos e matrizes em seus parâmetros e valores de retorno.
 
@@ -75,20 +77,19 @@ Cada propriedade ou método nas tabelas anteriores retorna um objeto com um `Sen
 
 Para fazer chamadas para clientes específicos, use as propriedades do `Clients` objeto. A seguir no exemplo a seguir, o `SendMessageToCaller` método demonstra enviando uma mensagem para a conexão que invocou o método de hub. O `SendMessageToGroups` método envia uma mensagem para os grupos armazenados em um `List` chamado `groups`.
 
-[!code-csharp[Send messages](hubs/sample/chathub.cs?range=15-24)]
+[!code-csharp[Send messages](hubs/sample/hubs/chathub.cs?range=15-24)]
 
 ## <a name="handle-events-for-a-connection"></a>Manipular eventos para uma conexão
 
 A API de Hubs de SignalR fornece o `OnConnectedAsync` e `OnDisconnectedAsync` métodos virtuais para gerenciar e controlar conexões. Substituir o `OnConnectedAsync` método virtual para executar ações quando um cliente se conecta ao Hub, como adicioná-lo a um grupo.
 
-[!code-csharp[Handle events](hubs/sample/chathub.cs?range=26-30)]
+[!code-csharp[Handle events](hubs/sample/hubs/chathub.cs?range=26-36)]
 
 ## <a name="handle-errors"></a>Tratar erros
 
 Exceções geradas em seus métodos de hub são enviadas ao cliente que invocou o método. No cliente JavaScript, o `invoke` método retorna um [promessa JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises). Quando o cliente recebe um erro com um manipulador anexado à promessa usando `catch`, ele foi chamado e passado como um JavaScript `Error` objeto.
 
-[!code-javascript[Error](hubs/sample/chat.js?range=20)]
-[!code-javascript[Error](hubs/sample/chat.js?range=16-18)]
+[!code-javascript[Error](hubs/sample/wwwroot/js/chat.js?range=22)]
 
 ## <a name="related-resources"></a>Recursos relacionados
 

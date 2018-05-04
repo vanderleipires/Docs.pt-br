@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/scaleout-with-windows-azure-service-bus
-title: "Expansão do SignalR com o barramento de serviço do Azure | Microsoft Docs"
+title: Expansão do SignalR com o barramento de serviço do Azure | Microsoft Docs
 author: MikeWasson
-description: "Versões de software usada nesta versão do Visual Studio 2013 .NET 4.5 SignalR tópico 2 versões anteriores desta versão do tópico para o SignalR 1. x desse tópico,..."
+description: Versões de software usada nesta versão do Visual Studio 2013 .NET 4.5 SignalR tópico 2 versões anteriores desta versão do tópico para o SignalR 1. x desse tópico,...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: 7cb68d578fee8d6ee036f8fb096ba45e0c8ef3d6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e6d9e4e6ba2040aa2c6e453aacf0ddca38c4a1a9
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/03/2018
 ---
 <a name="signalr-scaleout-with-azure-service-bus"></a>Expansão do SignalR com o barramento de serviço do Azure
 ====================
@@ -46,7 +46,7 @@ Antes de entrar para o tutorial detalhado, aqui está uma visão geral das taref
 2. Adicione esses pacotes do NuGet ao seu aplicativo: 
 
     - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
-    - [Microsoft.AspNet.SignalR.ServiceBus](http://www.nuget.org/packages/SignalR.WindowsAzureServiceBus)
+    - [Microsoft.AspNet.SignalR.ServiceBus3](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.ServiceBus3) ou [Microsoft.AspNet.SignalR.ServiceBus](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.ServiceBus)
 3. Crie um aplicativo do SignalR.
 4. Adicione o seguinte código ao Startup.cs para configurar o backplane: 
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: ff47519db4e9d1c5aea8811fef24c84bb564e80e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 876e1ab67fd283a9a8788bb2c7ef0ec111075794
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>Configurar a autenticação do Windows no ASP.NET Core
 
@@ -25,7 +25,7 @@ Autenticação do Windows pode ser configurada para aplicativos ASP.NET Core hos
 
 Autenticação do Windows se baseia no sistema operacional para autenticar os usuários de aplicativos do ASP.NET Core. Você pode usar a autenticação do Windows quando o servidor é executado em uma rede corporativa usando identidades do domínio do Active Directory ou outras contas do Windows para identificar os usuários. Autenticação do Windows é mais adequada para ambientes de intranet em que os usuários, os aplicativos cliente e servidores web pertencem ao mesmo domínio do Windows.
 
-[Saiba mais sobre a autenticação do Windows e instalá-lo para o IIS](https://docs.microsoft.com/iis/configuration/system.webServer/security/authentication/windowsAuthentication/).
+[Saiba mais sobre a autenticação do Windows e instalá-lo para o IIS](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/).
 
 ## <a name="enable-windows-authentication-in-an-aspnet-core-app"></a>Habilitar a autenticação do Windows em um aplicativo do ASP.NET Core
 

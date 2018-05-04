@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: e02f3a75269e5e4a4794d1979d3a5add21fe38be
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: cbdef871ffc3269e3118d23ed20306a71b9df030
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migrar manipuladores HTTP e módulos para o ASP.NET Core middleware
 
 Por [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-Este artigo mostra como migrar ASP.NET existente [módulos HTTP e manipuladores de System. webServer](https://docs.microsoft.com/iis/configuration/system.webserver/) para ASP.NET Core [middleware](xref:fundamentals/middleware/index).
+Este artigo mostra como migrar ASP.NET existente [módulos HTTP e manipuladores de System. webServer](/iis/configuration/system.webserver/) para ASP.NET Core [middleware](xref:fundamentals/middleware/index).
 
 ## <a name="modules-and-handlers-revisited"></a>Manipuladores revisitados e módulos
 
@@ -29,15 +29,15 @@ Antes de prosseguir para o ASP.NET Core middleware, vejamos primeiro novamente c
 
 **Manipuladores são:**
 
-   * As classes que implementam [IHttpHandler](https://docs.microsoft.com/dotnet/api/system.web.ihttphandler)
+   * As classes que implementam [IHttpHandler](/dotnet/api/system.web.ihttphandler)
 
    * Usado para manipular solicitações com uma extensão, ou o nome de arquivo fornecido como *relatório*
 
-   * [Configurado](https://docs.microsoft.com//iis/configuration/system.webserver/handlers/) em *Web. config*
+   * [Configurado](/iis/configuration/system.webserver/handlers/) em *Web. config*
 
 **Os módulos são:**
 
-   * As classes que implementam [IHttpModule](https://docs.microsoft.com/dotnet/api/system.web.ihttpmodule)
+   * As classes que implementam [IHttpModule](/dotnet/api/system.web.ihttpmodule)
 
    * Chamado para cada solicitação
 
@@ -45,11 +45,11 @@ Antes de prosseguir para o ASP.NET Core middleware, vejamos primeiro novamente c
 
    * Capaz de adicionar a resposta HTTP, ou criar seus próprios
 
-   * [Configurado](https://docs.microsoft.com//iis/configuration/system.webserver/modules/) em *Web. config*
+   * [Configurado](/iis/configuration/system.webserver/modules/) em *Web. config*
 
 **A ordem em que os módulos de processam solicitações de entrada é determinada por:**
 
-   1. O [ciclo de vida do aplicativo](https://msdn.microsoft.com/library/ms227673.aspx), que é um eventos série acionado pelo ASP.NET: [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest), etc. Cada módulo pode criar um manipulador de eventos de um ou mais.
+   1. O [ciclo de vida do aplicativo](https://msdn.microsoft.com/library/ms227673.aspx), que é um eventos série acionado pelo ASP.NET: [BeginRequest](/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](/dotnet/api/system.web.httpapplication.authenticaterequest), etc. Cada módulo pode criar um manipulador de eventos de um ou mais.
 
    2. Para o mesmo evento, a ordem na qual eles foram configurados no *Web. config*.
 
@@ -243,7 +243,7 @@ Anteriormente, você viu que o `Invoke` método no seu middleware usa um parâme
 public async Task Invoke(HttpContext context)
 ```
 
-`HttpContext` foi alterado significativamente no núcleo do ASP.NET. Esta seção mostra como converter as propriedades mais usadas de [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) para o novo `Microsoft.AspNetCore.Http.HttpContext`.
+`HttpContext` foi alterado significativamente no núcleo do ASP.NET. Esta seção mostra como converter as propriedades mais usadas de [System.Web.HttpContext](/dotnet/api/system.web.httpcontext) para o novo `Microsoft.AspNetCore.Http.HttpContext`.
 
 ### <a name="httpcontext"></a>HttpContext
 

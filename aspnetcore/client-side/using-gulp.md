@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: f776b2025b6ebfeff28d3903aaeac4d7d89665b3
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7a3d7807484b76e40e9728e0c750fa1383cc271f
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-gulp-in-aspnet-core"></a>Use o Gulp no núcleo do ASP.NET
 
@@ -63,8 +63,8 @@ O código acima Especifica quais módulos de nó são necessários. O `require` 
 | ----------- | ----------- |
 | gulp        | O sistema de compilação streaming Gulp. Para obter mais informações, consulte [gulp](https://www.npmjs.com/package/gulp). |
 | rimraf      | Um módulo de exclusão do nó. Para obter mais informações, consulte [rimraf](https://www.npmjs.com/package/rimraf). |
-| gulp-concat | Um módulo que concatena arquivos com base em caractere de nova linha do sistema operacional. Para obter mais informações, consulte [gulp concat](https://www.npmjs.com/package/gulp-concat). |
-| gulp-cssmin | Um módulo que minimiza arquivos CSS. Para obter mais informações, consulte [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin). |
+| gulp concat | Um módulo que concatena arquivos com base em caractere de nova linha do sistema operacional. Para obter mais informações, consulte [gulp concat](https://www.npmjs.com/package/gulp-concat). |
+| gulp cssmin | Um módulo que minimiza arquivos CSS. Para obter mais informações, consulte [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin). |
 | uglify gulp | Um módulo que minimiza *. js* arquivos. Para obter mais informações, consulte [uglify gulp](https://www.npmjs.com/package/gulp-uglify). |
 
 Depois que os módulos necessários são importados, as tarefas podem ser especificadas. Aqui, há seis tarefas registrado, representado pelo código a seguir:
@@ -101,7 +101,7 @@ A tabela a seguir fornece uma explicação das tarefas especificado no código a
 
 |Nome da Tarefa|Descrição|
 |--- |--- |
-|clean:js|Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão minimizada do arquivo site.js.|
+|Limpar: js|Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão minimizada do arquivo site.js.|
 |Limpar: css|Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão minimizada do arquivo site.css.|
 |Limpar|Uma tarefa que chama o `clean:js` tarefa, seguida de `clean:css` tarefa.|
 |min:js|Uma tarefa que minimiza e concatena todos os arquivos. js na pasta js. A. min.js arquivos serão excluídos.|
@@ -267,7 +267,7 @@ O IntelliSense oferece conclusão de código, descrições de parâmetro e outro
 
 ![gulp IntelliSense](using-gulp/_static/08-IntelliSense.png)
 
-Para obter mais informações sobre o IntelliSense, consulte [JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense).
+Para obter mais informações sobre o IntelliSense, consulte [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense).
 
 ## <a name="development-staging-and-production-environments"></a>Ambientes de desenvolvimento, teste e produção
 
@@ -334,7 +334,7 @@ Uma tarefa Gulp está registrada com um nome de função. É possível especific
 
 |Função gulp|Sintaxe|Descrição|
 |---   |--- |--- |
-|Tarefa  |`gulp.task(name[, deps], fn) { }`|O `task` função cria uma tarefa. O `name` parâmetro define o nome da tarefa. O `deps` parâmetro contém uma matriz de tarefas a serem concluídas antes de executa essa tarefa. O `fn` parâmetro representa uma função de retorno de chamada que executa as operações da tarefa.|
+|tarefa  |`gulp.task(name[, deps], fn) { }`|O `task` função cria uma tarefa. O `name` parâmetro define o nome da tarefa. O `deps` parâmetro contém uma matriz de tarefas a serem concluídas antes de executa essa tarefa. O `fn` parâmetro representa uma função de retorno de chamada que executa as operações da tarefa.|
 |Inspecionar |`gulp.watch(glob [, opts], tasks) { }`|O `watch` função monitora arquivos e executa tarefas quando ocorre uma alteração de arquivo. O `glob` parâmetro é um `string` ou `array` que determina quais arquivos assistir. O `opts` parâmetro fornece observando as opções de arquivo adicionais.|
 |src   |`gulp.src(globs[, options]) { }`|O `src` função fornece os arquivos que correspondem os valores glob. O `glob` parâmetro é um `string` ou `array` que determina quais arquivos para leitura. O `options` parâmetro fornece outras opções de arquivo.|
 |dest  |`gulp.dest(path[, options]) { }`|O `dest` função define um local para o qual os arquivos podem ser gravados. O `path` parâmetro é uma cadeia de caracteres ou uma função que determina a pasta de destino. O `options` parâmetro é um objeto que especifica as opções de pasta de saída.|

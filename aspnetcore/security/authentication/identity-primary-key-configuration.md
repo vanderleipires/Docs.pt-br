@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: db47055aecc5252dbb3991f29a8255b946deaeb7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ce654492dc7bab6c031c9f82555f877f642171ce
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>Configurar o tipo de dados de chave primária de identidade no núcleo do ASP.NET
 
@@ -21,11 +21,11 @@ Identidade do ASP.NET Core permite que você configure o tipo de dados usado par
 
 ## <a name="customize-the-primary-key-data-type"></a>Personalizar o tipo de dados de chave primária
 
-1. Criar uma implementação personalizada do [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) classe. Representa o tipo a ser usado para criar objetos de usuário. No exemplo a seguir, o padrão `string` tipo é substituído pelo `Guid`.
+1. Criar uma implementação personalizada do [IdentityUser](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) classe. Representa o tipo a ser usado para criar objetos de usuário. No exemplo a seguir, o padrão `string` tipo é substituído pelo `Guid`.
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
 
-2. Criar uma implementação personalizada do [IdentityRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) classe. Representa o tipo a ser usado para criar objetos de função. No exemplo a seguir, o padrão `string` tipo é substituído pelo `Guid`.
+2. Criar uma implementação personalizada do [IdentityRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) classe. Representa o tipo a ser usado para criar objetos de função. No exemplo a seguir, o padrão `string` tipo é substituído pelo `Guid`.
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
 
