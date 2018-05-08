@@ -1,6 +1,6 @@
 Substitua o conteúdo do arquivo de exibição *Views/HelloWorld/Index.cshtml* do Razor pelo seguinte:
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
 
 Navegue para `http://localhost:xxxx/HelloWorld`. O método `Index` no `HelloWorldController` não fez muita coisa: ele executou a instrução `return View();`, que especificou que o método deve usar um arquivo de modelo de exibição para renderizar uma resposta para o navegador. Como você não especificou explicitamente o nome do arquivo do modelo de exibição, o MVC usou como padrão o arquivo de exibição *Index.cshtml* na pasta */Views/HelloWorld*. A imagem abaixo mostra a cadeia de caracteres “Olá de nosso modelo de exibição!” embutida em código na exibição.
 
@@ -18,11 +18,11 @@ Os modelos de [layout](xref:mvc/views/layout) permitem especificar o layout de c
 
 ## <a name="change-the-title-and-menu-link-in-the-layout-file"></a>Alterar o título e o link de menu no arquivo de layout
 
-No elemento de título, altere `MvcMovie` para `Movie App`. Altere o texto de âncora no modelo de layout de `MvcMovie` para `Mvc Movie` e o controlador de `Home` para `Movies`, conforme realçado abaixo:
+No elemento de título, altere `MvcMovie` para `Movie App`. Altere o texto de âncora no modelo de layout de `MvcMovie` para `Movie App` e o controlador de `Home` para `Movies`, conforme realçado abaixo:
 
 Observação: a versão do ASP.NET Core 2.0 é ligeiramente diferente. Ela não contém `@inject ApplicationInsights` nem `@Html.Raw(JavaScriptSnippet.FullScript)`.
 
-[!code-html[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
+[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
 >[!WARNING]
 > Ainda não implementamos o controlador `Movies` e, portanto, se você clicar nesse link, obterá um erro 404 (Não encontrado).
@@ -73,7 +73,7 @@ Você os tornará ligeiramente diferentes para que possa ver qual parte do códi
 
 Salve as alterações e navegue para `http://localhost:xxxx/HelloWorld`. Observe que o título do navegador, o cabeçalho primário e os títulos secundários foram alterados. (Se as alterações não forem exibidas no navegador, talvez o conteúdo armazenado em cache esteja sendo exibido. Pressione Ctrl+F5 no navegador para forçar a resposta do servidor a ser carregada.) O título do navegador é criado com `ViewData["Title"]` que definimos no modelo de exibição *Index.cshtml* e o “– Aplicativo de Filme” adicional adicionado no arquivo de layout.
 
-Observe também como o conteúdo no modelo de exibição *Index.cshtml* foi mesclado com o modelo de exibição *Views/Shared/_Layout.cshtml* e uma única resposta HTML foi enviada para o navegador. Os modelos de layout facilitam realmente a realização de alterações que se aplicam a todas as páginas do aplicativo. Para saber mais, consulte [Layout](../../mvc/views/layout.md).
+Observe também como o conteúdo no modelo de exibição *Index.cshtml* foi mesclado com o modelo de exibição *Views/Shared/_Layout.cshtml* e uma única resposta HTML foi enviada para o navegador. Os modelos de layout facilitam realmente a realização de alterações que se aplicam a todas as páginas do aplicativo. Para saber mais, consulte [Layout](xref:mvc/views/layout).
 
 ![Exibição de Lista de Filmes](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
 
@@ -89,7 +89,7 @@ Atualmente, o método `Welcome` na classe `HelloWorldController` usa um parâmet
 
 Retorne ao arquivo *HelloWorldController.cs* e altere o método `Welcome` para adicionar um valor `Message` e `NumTimes` ao dicionário `ViewData`. O dicionário `ViewData` é um objeto dinâmico, o que significa que você pode colocar tudo o que deseja nele; o objeto `ViewData` não tem nenhuma propriedade definida até que você insira algo nele. O sistema de [associação de modelos](xref:mvc/models/model-binding) MVC mapeia automaticamente os parâmetros nomeados (`name` e `numTimes`) da cadeia de consulta na barra de endereços para os parâmetros no método. O arquivo *HelloWorldController.cs* completo tem esta aparência:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
 
 O objeto de dicionário `ViewData` contém dados que serão passados para a exibição. 
 
@@ -97,7 +97,7 @@ Crie um modelo de exibição Boas-vindas chamado *Views/HelloWorld/Welcome.cshtm
 
 Você criará um loop no modelo de exibição *Welcome.cshtml* que exibe “Olá” `NumTimes`. Substitua o conteúdo de *Views/HelloWorld/Welcome.cshtml* pelo seguinte:
 
-[!code-html[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
+[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
 
 Salve as alterações e navegue para a seguinte URL:
 

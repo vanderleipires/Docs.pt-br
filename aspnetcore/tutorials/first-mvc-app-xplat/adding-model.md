@@ -1,5 +1,5 @@
 ---
-title: Adicionando um modelo a um aplicativo ASP.NET Core MVC.
+title: Adicione um modelo a um aplicativo ASP.NET Core MVC
 author: rick-anderson
 description: Adicione um modelo a um aplicativo ASP.NET Core simples.
 manager: wpickett
@@ -9,18 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/adding-model
-ms.openlocfilehash: 81511b05a3cc11a58b93452d3c6e5305e7ee4357
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 77750ba0df7775d6a0e4744811848bfe9782d995
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model1](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>Adicione um modelo a um aplicativo ASP.NET Core MVC
+
+[!INCLUDE [adding-model1](../../includes/mvc-intro/adding-model1.md)]
 
 * Adicionar uma classe denominada *Movie.cs* à pasta *Modelos*.
 * Adicione o código a seguir ao arquivo *Models/Movie.cs*:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 O campo `ID` é necessário para o banco de dados para a chave primária. 
 
@@ -30,20 +32,20 @@ Compile o aplicativo para verificar se você não tem nenhum erro e, por fim, vo
 
 - Adicione os pacotes NuGet realçados a seguir ao arquivo *MvcMovie.csproj*:
              
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
 
 - Salve o arquivo e selecione **Restaurar** para a mensagem **Informativa** "Há dependências não resolvidas".
 - Crie um arquivo *Models/MvcMovieContext.cs* e adicione a seguinte classe `MvcMovieContext`:
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
    
 - Abra o arquivo *Startup.cs* e adicione dois usings:
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
 
 - Adicione o contexto do banco de dados para o arquivo *Startup.cs*:
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
 
   Isso informa ao Entity Framework quais classes de modelo estão incluídas no modelo de dados. Você está definindo um *conjunto de entidades* de objetos Movie, que serão representados no banco de dados como uma tabela Movie.
 
@@ -64,9 +66,9 @@ O mecanismo de scaffolding cria o seguinte:
 
 A criação automática das exibições e métodos de ação [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (criar, ler, atualizar e excluir) é conhecida como *scaffolding*. Logo você terá um aplicativo Web totalmente funcional que permitirá que você gerencie um banco de dados de filmes.
 
-[!INCLUDE[adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
+[!INCLUDE [adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
 Agora você tem um banco de dados e páginas para exibir, editar, atualizar e excluir dados. No próximo tutorial, trabalharemos com o banco de dados.
 
@@ -75,6 +77,6 @@ Agora você tem um banco de dados e páginas para exibir, editar, atualizar e ex
 * [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
 * [Globalização e localização](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[Anterior – adicionar uma exibição](adding-view.md)
-[Próximo – trabalhando com SQLite](working-with-sql.md)
+> [!div class="step-by-step"]
+> [Anterior – adicionar uma exibição](adding-view.md)
+> [Próximo – trabalhando com SQLite](working-with-sql.md)

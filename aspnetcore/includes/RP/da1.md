@@ -10,4 +10,4 @@ Temos um bom começo para o aplicativo de filme, mas a apresentação não é id
 
 Abra o arquivo *Models/Movie.cs* e adicione as linhas realçadas mostradas no seguinte código:
 
-[!code-csharp[Main](code/Models/Movie.cs?highlight=2,11-12)]
+[!code-csharp[](code/Models/Movie.cs?highlight=2,11-12)]

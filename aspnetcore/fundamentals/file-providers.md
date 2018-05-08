@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/file-providers
-ms.openlocfilehash: 06197f967e111d75531e9c3bcbcbdb971cb9f99b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cdbffdadd9616fe941809d67dc2c0bbd52149561
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="file-providers-in-aspnet-core"></a>Provedores de arquivos no ASP.NET Core
 
@@ -50,15 +50,15 @@ Você pode iterar no conteúdo do diretório ou obter as informações sobre o a
 
 Para solicitar um provedor de um controlador, especifique-o no construtor do controlador e atribua-o a um campo local. Use a instância local de seus métodos de ação:
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
 
 Em seguida, crie o provedor na classe `Startup` do aplicativo:
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
 
 Na exibição *Index.cshtml*, itere no `IDirectoryContents` fornecido:
 
-[!code-html[Main](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
+[!code-html[](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
 
 O resultado:
 
@@ -68,7 +68,7 @@ O resultado:
 
 O `EmbeddedFileProvider` é usado para acessar arquivos inseridos em assemblies. No .NET Core, você insere arquivos em um assembly com o elemento `<EmbeddedResource>` no arquivo *.csproj*:
 
-[!code-json[Main](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
+[!code-json[](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
 
 Você pode usar [padrões recurso de curinga](#globbing-patterns) ao especificar arquivos para serem inseridos no assembly. Esses padrões podem ser usados para corresponder a um ou mais arquivos.
 
@@ -97,7 +97,7 @@ Atualizar o aplicativo de exemplo para usar um `EmbeddedFileProvider` resulta na
 
 O `CompositeFileProvider` combina instâncias de `IFileProvider`, expondo uma interface única para trabalhar com arquivos de vários provedores. Ao criar o `CompositeFileProvider`, você passa uma ou mais instâncias de `IFileProvider` para o construtor:
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
 
 Atualizar o aplicativo de exemplo para usar um `CompositeFileProvider` que inclui os provedores físico e inserido configurados anteriormente resulta na seguinte saída:
 
@@ -109,7 +109,7 @@ O método `IFileProvider` `Watch` proporciona uma maneira de monitorar um ou mai
 
 No exemplo deste artigo, um aplicativo de console é configurado para exibir uma mensagem sempre que um arquivo de texto é modificado:
 
-[!code-csharp[Main](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
+[!code-csharp[](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
 
 O resultado, após salvar o arquivo várias vezes:
 

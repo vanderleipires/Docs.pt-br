@@ -1,5 +1,5 @@
 ---
-title: "Auxiliar de Marca de Cache Distribuído no ASP.NET Core"
+title: Auxiliar de Marca de Cache Distribuído no ASP.NET Core
 author: pkellner
 description: Mostra como trabalhar com o Auxiliar de Marca de Cache
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: 710477732b865e2e3821102d34545bbd4e0a5919
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 929156633048b8ee68a66290f44b12026a08c8c9
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="distributed-cache-tag-helper"></a>Auxiliar de Marca de Cache Distribuído
+# <a name="distributed-cache-tag-helper-in-aspnet-core"></a>Auxiliar de Marca de Cache Distribuído no ASP.NET Core
 
 Por [Peter Kellner](http://peterkellner.net) 
 

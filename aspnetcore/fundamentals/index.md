@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: b74870c93ea0120e43931bb75f47bab19a6de201
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d5b74e213828d1a1f7e09810e5cc72773a821dab
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
@@ -77,7 +77,7 @@ A raiz do conteúdo é o caminho base para qualquer conteúdo usado pelo aplicat
 
 A raiz Web de um aplicativo é o diretório do projeto que contém recursos públicos e estáticos como CSS, JavaScript e arquivos de imagem.
 
-## <a name="dependency-injection-services"></a>Injeção de Dependência (Serviços)
+## <a name="dependency-injection-services"></a>Injeção de dependência (serviços)
 
 Um serviço é um componente que é destinado ao consumo comum em um aplicativo. Os serviços são disponibilizados por meio de DI ([injeção de dependência](xref:fundamentals/dependency-injection)). O ASP.NET Core inclui um contêiner nativo de IoC (**I**nversão **d**e **C**ontrole) que dá suporte a injeção de [construtor](xref:mvc/controllers/dependency-injection#constructor-injection) por padrão. É possível substituir o contêiner nativo padrão se desejar. Além do benefício de seu acoplamento flexível, a DI disponibiliza serviços por todo o seu aplicativo (por exemplo, [registrar em log](xref:fundamentals/logging/index)).
 
@@ -98,6 +98,10 @@ O ASP.NET Core inclui um conjunto avançado de middleware interno:
 O middleware com base em [OWIN](http://owin.org) está disponível para aplicativos do ASP.NET Core e é possível escrever seu próprio middleware personalizado.
 
 Para obter mais informações, consulte [Middleware](xref:fundamentals/middleware/index) e [OWIN (Interface da Web Aberta para .NET)](xref:fundamentals/owin).
+
+## <a name="initiate-http-requests"></a>Iniciar solicitações HTTP
+
+Para saber mais sobre como usar o `IHttpClientFactory` para acessar instâncias do `HttpClient` a fim de fazer solicitações HTTP, confira [Iniciar solicitações HTTP](xref:fundamentals/http-requests).
 
 ## <a name="environments"></a>Ambientes
 

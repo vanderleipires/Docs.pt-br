@@ -4,4 +4,4 @@ Este tutorial ensina a usar o desenvolvimento Web do ASP.NET Core MVC com contro
 * É mais fácil de acompanhar.
 * Aborda mais recursos.
 
-Se você escolher este tutorial em vez da versão [Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start), deixe uma observação explicando o motivo.
+Se você escolher este tutorial em vez de a versão [Páginas Razor](xref:tutorials/razor-pages/razor-pages-start), deixe uma observação explicando o motivo nesta [questão do GitHub](https://github.com/aspnet/Docs/issues/6146).

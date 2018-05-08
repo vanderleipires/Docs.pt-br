@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 51811ee1669a24a0fc4ce9bc67e782b61bff655c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f19a989c9bdfddea7609c5571cdd49de29e036b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Auxiliar de Marca de Cache no ASP.NET Core MVC
 
@@ -60,10 +60,9 @@ Exemplo:
 
 ### <a name="expires-on"></a>expires-on 
 
-| Tipo de atributo    | Valor de exemplo     |
-|----------------   |----------------   |
-| DateTimeOffset    | "@new DateTime(2025,1,29,17,02,0)"    |
-
+| Tipo de atributo |           Valor de exemplo            |
+|----------------|------------------------------------|
+| DateTimeOffset | "@new DateTime(2025,1,29,17,02,0)" |
 
 Define uma data de expiração absoluta. O exemplo a seguir armazenará em cache o conteúdo do Auxiliar de Marca de Cache até 17:02 de 29 de janeiro de 2025.
 
@@ -79,10 +78,9 @@ Exemplo:
 
 ### <a name="expires-after"></a>expires-after
 
-| Tipo de atributo    | Valor de exemplo     |
-|----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(120)"    |
-
+| Tipo de atributo |        Valor de exemplo         |
+|----------------|------------------------------|
+|    TimeSpan    | "@TimeSpan.FromSeconds(120)" |
 
 Define o tempo decorrido desde a primeira solicitação para armazenar o conteúdo em cache. 
 
@@ -98,10 +96,9 @@ Exemplo:
 
 ### <a name="expires-sliding"></a>expires-sliding
 
-| Tipo de atributo    | Valor de exemplo     |
-|----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(60)"     |
-
+| Tipo de atributo |        Valor de exemplo        |
+|----------------|-----------------------------|
+|    TimeSpan    | "@TimeSpan.FromSeconds(60)" |
 
 Define a hora em que uma entrada de cache deve ser removida se não tiver sido acessada.
 
@@ -169,7 +166,7 @@ routes.MapRoute(
     name: "default",
     template: "{controller=Home}/{action=Index}/{Make?}/{Model?}");
 ```
-  
+
 *Index.cshtml*
 
 ```cshtml
@@ -224,10 +221,9 @@ Usar esse atributo mantém o conteúdo no cache durante um ciclo de logon e logo
 
 ### <a name="vary-by"></a>vary-by
 
-| Tipo de atributo    | Valores de exemplo                |
-|----------------   |----------------               |
-| Cadeia de Caracteres             | "@Model"                 |
-
+| Tipo de atributo | Valores de exemplo |
+|----------------|----------------|
+|     Cadeia de Caracteres     |    "@Model"    |
 
 Permite a personalização de quais dados são armazenados no cache. Quando o objeto referenciado pelo valor de cadeia de caracteres do atributo é alterado, o conteúdo do Auxiliar de Marca de Cache é atualizado. Frequentemente, uma concatenação de cadeia de caracteres de valores do modelo é atribuída a este atributo.  Na verdade, isso significa que uma atualização de qualquer um dos valores concatenados invalida o cache.
 
@@ -283,5 +279,5 @@ O Auxiliar de Marca de Cache é dependente do [serviço de cache de memória](xr
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Cache in-memory](xref:performance/caching/memory)
+* [Cache na memória](xref:performance/caching/memory)
 * [Introdução ao Identity](xref:security/authentication/identity)

@@ -1,7 +1,7 @@
 ---
-title: "Exibições e métodos do controlador em um aplicativo ASP.NET Core MVC"
+title: Exibições e métodos do controlador em um aplicativo ASP.NET Core MVC
 author: rick-anderson
-description: "Trabalhando com métodos do controlador, exibições e DataAnnotations"
+description: Trabalhando com métodos do controlador, exibições e DataAnnotations
 manager: wpickett
 ms.author: riande
 ms.date: 04/07/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-mac/controller-methods-views
-ms.openlocfilehash: 01c20e505bd9d1591e1921701f94d102822231c8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7a6a965d99742e7e06e6da82999dc60264cac6c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="controller-methods-and-views-in-an-aspnet-core-mvc-app"></a>Exibições e métodos do controlador em um aplicativo ASP.NET Core MVC
 
@@ -25,7 +25,7 @@ Temos um bom começo para o aplicativo de filme, mas a apresentação não é id
 
 Abra o arquivo *Models/Movie.cs* e adicione as linhas realçadas mostradas abaixo:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
 
 Compile e execute o aplicativo.
 
@@ -34,8 +34,8 @@ Compile e execute o aplicativo.
 
  -->
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/controller-methods-views.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/controller-methods-views.md)]
 
->[!div class="step-by-step"]
-[Anterior – Trabalhando com o SQLite](working-with-sql.md)
-[Próximo – Adicionar uma pesquisa](search.md)
+> [!div class="step-by-step"]
+> [Anterior – Trabalhando com o SQLite](working-with-sql.md)
+> [Próximo – Adicionar uma pesquisa](search.md)
