@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
-title: "Habilitar operações CRUD de ASP.NET Web API 1 | Microsoft Docs"
+title: Habilitar operações CRUD de ASP.NET Web API 1 | Microsoft Docs
 author: MikeWasson
-description: "Este tutorial mostra como dar suporte a operações CRUD em um serviço HTTP usando ASP.NET Web API. Versões de software usadas no tutorial Visual Studio 2012 Web ponto de acesso..."
+description: Este tutorial mostra como dar suporte a operações CRUD em um serviço HTTP usando ASP.NET Web API. Versões de software usadas no tutorial Visual Studio 2012 Web ponto de acesso...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2012

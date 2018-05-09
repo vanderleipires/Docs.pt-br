@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-browserlink
-ms.openlocfilehash: a75a896dd7ebc488e3e9344ec705c24201924375
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 0496f9df35956b8fe7ca9fcc7c03df33437d5a87
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>Link do navegador no ASP.NET Core
 
@@ -66,7 +66,7 @@ if (env.IsDevelopment())
 }
 ```
 
-Para obter mais informações, consulte [trabalhar com vários ambientes](xref:fundamentals/environments).
+Para obter mais informações, consulte [usar vários ambientes](xref:fundamentals/environments).
 
 ## <a name="how-to-use-browser-link"></a>Como usar o Link do navegador
 
@@ -104,7 +104,7 @@ Passe o mouse sobre o controle de barra de ferramentas de Link do navegador para
 
 Alterar a exibição do índice, e todos os navegadores conectados são atualizados quando você clicar no botão de atualização de Link do navegador:
 
-![browsers-sync-to-changes](using-browserlink/_static/browsers-sync-to-changes.png)
+![sincronização de navegadores de alterações](using-browserlink/_static/browsers-sync-to-changes.png)
 
 Link do navegador também funciona com navegadores que você inicia a partir de fora do Visual Studio e navegue até a URL do aplicativo.
 
@@ -112,7 +112,7 @@ Link do navegador também funciona com navegadores que você inicia a partir de 
 
 Abra o painel de Link do navegador de menu para gerenciar a conexão com o navegador abertas suspenso Link do navegador:
 
-![open-browserslink-dashboard](using-browserlink/_static/open-browserlink-dashboard.png)
+![Painel de browserslink abrir](using-browserlink/_static/open-browserlink-dashboard.png)
 
 Se nenhum navegador estiver conectado, você pode iniciar uma sessão de depuração não, selecionando Se nenhum navegador estiver conectado, você poderá iniciar uma sessão de não depuração selecionando o link *exibir no navegador*:
 

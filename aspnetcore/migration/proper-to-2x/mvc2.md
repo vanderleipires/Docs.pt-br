@@ -1,5 +1,5 @@
 ---
-title: Migrar do ASP.NET para ASP.NET 2.0 de núcleo
+title: Migrar do ASP.NET para o ASP.NET Core 2.0
 author: isaac2004
 description: Receba orientação para migrar aplicativos de ASP.NET MVC ou Web API existentes para o ASP.NET 2.0 de núcleo.
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 58fac7642dbfdad58fef99f04d17de33e7218524
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f8e9d3c222bdd5491e946f286bbdf71a2d26ab10
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
-# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>Migrar do ASP.NET para ASP.NET 2.0 de núcleo
+# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>Migrar do ASP.NET para o ASP.NET Core 2.0
 
 Por [Isaac Levin](https://isaaclevin.com)
 
@@ -150,7 +150,7 @@ No ASP.NET Core, arquivos estáticos são armazenados na "raiz da Web" (*&lt;rai
 
 Por exemplo, um ativo de imagem na pasta *wwwroot/imagens* está acessível para o navegador em um local como `http://<app>/images/<imageFileName>`.
 
-**Observação:** para obter uma referência mais aprofundada servir arquivos estáticos no núcleo do ASP.NET, consulte [trabalhar com arquivos estáticos em ASP.NET Core](xref:fundamentals/static-files).
+**Observação:** para obter uma referência mais aprofundada servir arquivos estáticos no núcleo do ASP.NET, consulte [arquivos estáticos](xref:fundamentals/static-files).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-utilize-the-css-friendly-control-adapters
-title: "[Como fazer:] Utilize os adaptadores de controle amigável CSS? | Microsoft Docs"
+title: '[Como fazer:] Utilize os adaptadores de controle amigável CSS? | Microsoft Docs'
 author: rick-anderson
-description: "Os adaptadores de controle amigável CSS permitem que você alterar o HTML que é processado por um controle de servidor padrão do ASP.NET 2.0. Neste vídeo, saiba que o stan..."
+description: Os adaptadores de controle amigável CSS permitem que você alterar o HTML que é processado por um controle de servidor padrão do ASP.NET 2.0. Neste vídeo, saiba que o stan...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/01/2007

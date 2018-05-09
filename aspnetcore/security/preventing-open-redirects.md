@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/preventing-open-redirects
-ms.openlocfilehash: 4a210b8bb8091e7c036d4bc98306e3b3f90d7d46
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 9ac6b311170dbbc27dd388842c071bc64add6f08
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>Evitar ataques de redirecionamento aberto no núcleo do ASP.NET
 
@@ -29,18 +29,18 @@ Como a URL de destino é especificada na querystring da solicitação, um usuár
 
 ### <a name="an-example-attack"></a>Um ataque de exemplo
 
-Um usuário mal-intencionado poderá desenvolver um ataque de objetivo de permitir que o usuário mal-intencionado acesso a informações confidenciais em seu aplicativo ou as credenciais de um usuário. Para iniciar o ataque, eles convencer o usuário clicar em um link para a página de logon do site, com um `returnUrl` valor de querystring adicionada à URL. Por exemplo, o [NerdDinner.com](http://nerddinner.com) (gravado para o ASP.NET MVC) do aplicativo de exemplo inclui tal uma página de logon aqui: ``http://nerddinner.com/Account/LogOn?returnUrl=/Home/About``. O ataque, em seguida, siga estas etapas:
+Um usuário mal-intencionado poderá desenvolver um ataque de objetivo de permitir que o usuário mal-intencionado acesso a informações confidenciais em seu aplicativo ou as credenciais de um usuário. Para iniciar o ataque, eles convencer o usuário clicar em um link para a página de logon do site, com um `returnUrl` valor de querystring adicionada à URL. Por exemplo, o [NerdDinner.com](http://nerddinner.com) (gravado para o ASP.NET MVC) do aplicativo de exemplo inclui tal uma página de logon aqui: `http://nerddinner.com/Account/LogOn?returnUrl=/Home/About`. O ataque, em seguida, siga estas etapas:
 
-1. Usuário clica em um link para ``http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn`` (Observe que a URL segundo é nerddi**n**er, não nerddi**nn**er).
+1. Usuário clica em um link para `http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn` (Observe que a URL segundo é nerddi**n**er, não nerddi**nn**er).
 2. O usuário fizer logon com êxito.
-3. O usuário é redirecionado (pelo site) para ``http://nerddiner.com/Account/LogOn`` (site mal-intencionado que se parece com um site real).
+3. O usuário é redirecionado (pelo site) para `http://nerddiner.com/Account/LogOn` (site mal-intencionado que se parece com um site real).
 4. O usuário fizer logon novamente (fornecendo mal-intencionado suas credenciais do site) e é redirecionado para o site real.
 
 O usuário provavelmente vai achar sua primeira tentativa de logon falha, e sua segunda foi bem-sucedida. Provavelmente permanecerá não reconhecem as credenciais foram comprometidas.
 
 ![Processo de ataques de redirecionamento aberto](preventing-open-redirects/_static/open-redirection-attack-process.png)
 
-Além das páginas de logon, alguns sites fornecem redirecionamento páginas ou pontos de extremidade. Imagine que seu aplicativo tem uma página com um redirecionamento aberto, ``/Home/Redirect``. Um invasor pode criar, por exemplo, um link em um email que vão para ``[yoursite]/Home/Redirect?url=http://phishingsite.com/Home/Login``. Um usuário normal na URL e ver começa com o nome do site. Confiar em que, eles clicarem no link. O redirecionamento aberto, em seguida, envia o usuário para o site de phishing, que é idêntico ao seu, e o usuário provavelmente é de logon para o que eles acreditam seu site.
+Além das páginas de logon, alguns sites fornecem redirecionamento páginas ou pontos de extremidade. Imagine que seu aplicativo tem uma página com um redirecionamento aberto, `/Home/Redirect`. Um invasor pode criar, por exemplo, um link em um email que vão para `[yoursite]/Home/Redirect?url=http://phishingsite.com/Home/Login`. Um usuário normal na URL e ver começa com o nome do site. Confiar em que, eles clicarem no link. O redirecionamento aberto, em seguida, envia o usuário para o site de phishing, que é idêntico ao seu, e o usuário provavelmente é de logon para o que eles acreditam seu site.
 
 ## <a name="protecting-against-open-redirect-attacks"></a>Proteção contra ataques de redirecionamento aberto
 
@@ -48,7 +48,7 @@ Ao desenvolver aplicativos da web, trate todos os dados fornecidos pelo usuário
 
 ### <a name="localredirect"></a>LocalRedirect
 
-Use o ``LocalRedirect`` método auxiliar de base de `Controller` classe:
+Use o `LocalRedirect` método auxiliar de base de `Controller` classe:
 
 ```csharp
 public IActionResult SomeAction(string redirectUrl)
@@ -57,7 +57,7 @@ public IActionResult SomeAction(string redirectUrl)
 }
 ```
 
-``LocalRedirect`` lançará uma exceção se uma URL de local não for especificada. Caso contrário, ele se comporta exatamente como o ``Redirect`` método.
+`LocalRedirect` lançará uma exceção se uma URL de local não for especificada. Caso contrário, ele se comporta exatamente como o `Redirect` método.
 
 ### <a name="islocalurl"></a>IsLocalUrl
 

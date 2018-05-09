@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: 7a3d7807484b76e40e9728e0c750fa1383cc271f
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 13f30be7670983bd65f8402404b841039bdacb09
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="use-gulp-in-aspnet-core"></a>Use o Gulp no núcleo do ASP.NET
 
@@ -326,7 +326,7 @@ Para alternar entre a compilação para ambientes diferentes, modifique o **ASPN
 
     Observe que os links de folha de estilos apontam para as versões unminified dos arquivos CSS.
 
-Para obter mais informações relacionadas a ambientes em ASP.NET Core, consulte [trabalhar com vários ambientes](../fundamentals/environments.md).
+Para obter mais informações relacionadas a ambientes em ASP.NET Core, consulte [usar vários ambientes](../fundamentals/environments.md).
 
 ## <a name="task-and-module-details"></a>Detalhes da tarefa e o módulo
 

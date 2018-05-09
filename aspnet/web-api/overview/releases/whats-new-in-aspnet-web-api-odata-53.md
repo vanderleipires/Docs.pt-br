@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/whats-new-in-aspnet-web-api-odata-53
-title: "O que há de novo no ASP.NET Web API OData 5.3 | Microsoft Docs"
+title: O que há de novo no ASP.NET Web API OData 5.3 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/16/2014

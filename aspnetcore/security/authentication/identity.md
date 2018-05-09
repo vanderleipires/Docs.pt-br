@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: f9215767bf9a7c8b43b474848ba7dff7c3ddaf24
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: cf63766dc4ae94d784190d6dbc7b5beb57342f42
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade do ASP.NET Core
 
@@ -49,7 +49,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
    # <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
 
-   Se usar o .NET Core CLI, crie o novo projeto usando ``dotnet new mvc --auth Individual``. Este comando cria um novo projeto com o mesmo código de modelo de identidade que Visual Studio cria.
+   Se usar o .NET Core CLI, crie o novo projeto usando `dotnet new mvc --auth Individual`. Este comando cria um novo projeto com o mesmo código de modelo de identidade que Visual Studio cria.
 
    O projeto criado contém o `Microsoft.AspNetCore.Identity.EntityFrameworkCore` pacote, persiste os dados de identidade e o esquema para o SQL Server usando [Entity Framework Core](https://docs.microsoft.com/ef/).
 
@@ -88,30 +88,30 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
    ![Aplicar página da Web de migrações](identity/_static/apply-migrations.png)
 
-   Como alternativa, você pode testar usando a identidade do ASP.NET Core com seu aplicativo sem um banco de dados persistente usando um banco de dados na memória. Para usar um banco de dados na memória, adicione o ``Microsoft.EntityFrameworkCore.InMemory`` do pacote para seu aplicativo e modifique a chamada do aplicativo para ``AddDbContext`` na ``ConfigureServices`` da seguinte maneira:
+   Como alternativa, você pode testar usando a identidade do ASP.NET Core com seu aplicativo sem um banco de dados persistente usando um banco de dados na memória. Para usar um banco de dados na memória, adicione o `Microsoft.EntityFrameworkCore.InMemory` do pacote para seu aplicativo e modifique a chamada do aplicativo para `AddDbContext` na `ConfigureServices` da seguinte maneira:
 
    ```csharp
    services.AddDbContext<ApplicationDbContext>(options =>
        options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
    ```
 
-   Quando o usuário clica o **registrar** link, o ``Register`` ação é invocada no ``AccountController``. O ``Register`` ação cria o usuário chamando `CreateAsync` no `_userManager` objeto (fornecido para ``AccountController`` por injeção de dependência):
+   Quando o usuário clica o **registrar** link, o `Register` ação é invocada no `AccountController`. O `Register` ação cria o usuário chamando `CreateAsync` no `_userManager` objeto (fornecido para `AccountController` por injeção de dependência):
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
-   Se o usuário foi criado com êxito, o usuário é conectado pela chamada para ``_signInManager.SignInAsync``.
+   Se o usuário foi criado com êxito, o usuário é conectado pela chamada para `_signInManager.SignInAsync`.
 
    **Observação:** consulte a [confirmação de conta](xref:security/authentication/accconfirm#prevent-login-at-registration) para verificar as etapas para impedir o logon imediato no registro.
 
 4. Iniciar sessão.
 
-   Os usuários podem entrar clicando no **login**, no link na parte superior do site, ou podem ser direcionados para a página de login se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de login, a ação``AccountController`` ``Login`` é chamada.
+   Os usuários podem entrar clicando no **login**, no link na parte superior do site, ou podem ser direcionados para a página de login se tentarem acessar uma parte do site que requer autorização. Quando o usuário envia o formulário na página de login, a ação`AccountController` `Login` é chamada.
 
-   O ``Login`` faz chamadas ``PasswordSignInAsync`` no objeto ``_signInManager`` (fornecido pelo ``AccountController`` por injeção de dependência).
+   O `Login` faz chamadas `PasswordSignInAsync` no objeto `_signInManager` (fornecido pelo `AccountController` por injeção de dependência).
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
 
-   A base de ``Controller`` classe expõe um ``User`` propriedade que você pode acessar de métodos do controlador. Por exemplo, você pode enumerar `User.Claims` e tomar decisões de autorização. Para obter mais informações, consulte [autorização](xref:security/authorization/index).
+   A base de `Controller` classe expõe um `User` propriedade que você pode acessar de métodos do controlador. Por exemplo, você pode enumerar `User.Claims` e tomar decisões de autorização. Para obter mais informações, consulte [autorização](xref:security/authorization/index).
 
 5. Faça logoff.
 
@@ -149,7 +149,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
     O modelo de projeto padrão *aplicativo Web do ASP.NET Core* permite que os usuários acessem qualquer ação no aplicativo sem precisar fazer logon. Para verificar se a identidade do ASP.NET funciona, adicione um`[Authorize]` como atributo para a ação `About` do controlador `Home`.
 
-    ```cs
+    ```csharp
     [Authorize]
     public IActionResult About()
     {
@@ -166,7 +166,7 @@ Neste tópico, você vai aprender a usar a identidade do ASP.NET Core para adici
 
     Abra uma janela de comando e navegue para a raiz do projeto diretório que contém o `.csproj` arquivo. Execute o [dotnet execute](/dotnet/core/tools/dotnet-run) comando para executar o aplicativo:
 
-    ```cs
+    ```csharp
     dotnet run 
     ```
 

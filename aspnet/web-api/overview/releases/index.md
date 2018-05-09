@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/index
-title: "Versões de API da Web ASP.NET | Microsoft Docs"
+title: Versões de API da Web ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Novidades na API da Web do recente versões."
+description: Novidades na API da Web do recente versões.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/13/2014

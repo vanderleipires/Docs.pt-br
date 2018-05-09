@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: ac9b777bcc7f4a8634161fc1347a4d0fdc3b4784
-ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
+ms.openlocfilehash: a5cc1f23d624643facddc9e2006fb246e5ae66dc
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-core-directory-structure"></a>Estrutura de diretórios do ASP.NET Core
 
@@ -34,7 +34,7 @@ O *publicar* diretório representa o *caminho raiz de conteúdo*, também chamad
 
 O *wwwroot* diretório, se presente, contém ativos estáticos somente.
 
-Stdout *logs* diretório pode ser criado a implantação usando uma das duas abordagens a seguir:
+Stdout *logs* diretório pode ser criado para a implantação usando uma das duas abordagens a seguir:
 
 * Adicione o seguinte `<Target>` elemento ao arquivo de projeto:
 

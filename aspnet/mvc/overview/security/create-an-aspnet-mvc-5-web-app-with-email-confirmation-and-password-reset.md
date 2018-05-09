@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
-title: "Criar um aplicativo web seguro do ASP.NET MVC 5 com logon, email de redefinição de senha e de confirmação (c#) | Microsoft Docs"
+title: Criar um aplicativo web seguro do ASP.NET MVC 5 com logon, email de redefinição de senha e de confirmação (c#) | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial mostra como criar um aplicativo da web ASP.NET MVC 5 com o email de confirmação e redefinição de senha usando o sistema de associação do ASP.NET Identity. Ca..."
+description: Este tutorial mostra como criar um aplicativo da web ASP.NET MVC 5 com o email de confirmação e redefinição de senha usando o sistema de associação do ASP.NET Identity. Ca...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015

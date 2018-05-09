@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: 3e2c990a6451c13e03baafa343df156b2d46d219
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 60115dd06a27bf856427953de29e993194afb991
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>Introdução a páginas da Web ASP.NET - Noções básicas de programação
 ====================
@@ -207,7 +207,7 @@ Execute a página e clique em **enviar**. Desta vez não verá apenas uma mensag
 
 ### <a name="testing-the-value-of-a-query-string"></a>Testar o valor de uma cadeia de caracteres de consulta
 
-Um teste mais. Neste momento, você adicionará um se bloco que testa um valor denominado show que pode ser passado na cadeia de caracteres de consulta. (Esta aparência: 'http://localhost:43097/TestRazorPart2.cshtml`?show=true`) você alterará a página para que a mensagem você tiver sido exibindo ("Esta é a primeira vez...", etc.) é exibida somente se o valor de mostrar é true.
+Um teste mais. Neste momento, você adicionará um se bloco que testa um valor denominado show que pode ser passado na cadeia de caracteres de consulta. (Esta aparência: `http://localhost:43097/TestRazorPart2.cshtml?show=true`) você alterará a página para que a mensagem você tiver sido exibindo ("Esta é a primeira vez...", etc.) é exibida somente se o valor de mostrar é true.
 
 Na parte inferior (mas interna), o bloco de código na parte superior da página, adicione o seguinte:
 
@@ -223,7 +223,7 @@ O novo código no bloco inicializa uma variável chamada showMessage como false.
 
 O código determina se a URL contém uma variável chamada show na cadeia de consulta, como a esta versão da URL:
 
-`http://localhost:43097/TestRazorPart2.cshtml`?show=true
+`http://localhost:43097/TestRazorPart2.cshtml`? Mostrar = true
 
 O próprio teste examina a propriedade QueryString do objeto de solicitação. Se a cadeia de caracteres de consulta contém um item denominado show, e se esse item é definido como true, o se bloco é executado e define a variável showMessage como true.
 

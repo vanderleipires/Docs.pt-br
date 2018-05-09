@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: a155422c0fd638f46fe4a9d8a77faebc0b2a5681
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 381025d1c4a9951349e242482ca9b780c461e588
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>Pacote e minifiy ativos estáticos no núcleo do ASP.NET
 
@@ -77,15 +77,15 @@ Os modelos de projeto MVC e páginas Razor fornecem uma *bundleconfig.json* arqu
 
 Opções de configuração incluem:
 
-* `outputFileName`: O nome do arquivo de pacote de saída. Pode conter um caminho relativo do *bundleconfig.json* arquivo. **required**
+* `outputFileName`: O nome do arquivo de pacote de saída. Pode conter um caminho relativo do *bundleconfig.json* arquivo. **Necessário**
 * `inputFiles`: Uma matriz de arquivos para agrupar em conjunto. Esses são os caminhos relativos ao arquivo de configuração. **opcional**, * um valor vazio resulta em um arquivo de saída vazia. [Globalização](http://www.tldp.org/LDP/abs/html/globbingref.html) padrões são suportados.
-* `minify`: As opções de minimização para o tipo de saída. **optional**, *default - `minify: { enabled: true }`*
+* `minify`: As opções de minimização para o tipo de saída. **opcional**, *padrão: `minify: { enabled: true }`*
   * Opções de configuração estão disponíveis por tipo de arquivo de saída.
-    * [CSS Minifier](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
+    * [Minificador CSS](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [Minificador de JavaScript](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
     * [Minificador de HTML](https://github.com/madskristensen/BundlerMinifier/wiki)
-* `includeInProject`: O sinalizador que indica se é para adicionar arquivos gerados ao arquivo de projeto. **optional**, *default - false*
-* `sourceMap`: O sinalizador que indica se deve gerar um mapa de origem para o arquivo de pacote. **optional**, *default - false*
+* `includeInProject`: O sinalizador que indica se é para adicionar arquivos gerados ao arquivo de projeto. **opcional**, *default - false*
+* `sourceMap`: O sinalizador que indica se deve gerar um mapa de origem para o arquivo de pacote. **opcional**, *default - false*
 * `sourceMapRootPath`: O caminho raiz para armazenar o arquivo de mapa de código-fonte gerado.
 
 ## <a name="build-time-execution-of-bundling-and-minification"></a>Execução de tempo de compilação de empacotamento e minimização
@@ -313,5 +313,5 @@ Como alternativa, o Explorador do Executador de tarefas do Visual Studio pode se
 
 * [Usar o Gulp](xref:client-side/using-gulp)
 * [Usar o Grunt](xref:client-side/using-grunt)
-* [Trabalhar com vários ambientes](xref:fundamentals/environments)
+* [Usar vários ambientes](xref:fundamentals/environments)
 * [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
