@@ -13,7 +13,7 @@ ms.topic: article
 uid: signalr/hubs
 ms.openlocfilehash: 4810b3a1978f05eb0608320750f31b8bb95d71fd
 ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/10/2018
 ---
