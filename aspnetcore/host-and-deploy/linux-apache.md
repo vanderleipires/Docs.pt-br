@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 5a8a035ff3f127d01655888d4f83a871645b0bf5
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: 473585f1be180645395c14a154c9c017ca50edab
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Hospedar o ASP.NET Core no Linux com o Apache
 
@@ -79,7 +79,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 Se nenhum [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) são especificados para o middleware, os cabeçalhos padrão para encaminhar são `None`.
 
-Configuração adicional pode ser necessária para aplicativos hospedados por trás de servidores proxy e balanceadores de carga. Para obter mais informações, consulte [configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer).
+Configuração adicional pode ser necessária para aplicativos hospedados atrás de servidores proxy e balanceadores de carga. Para obter mais informações, veja [Configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer).
 
 ### <a name="install-apache"></a>Instalar o Apache
 
@@ -189,6 +189,13 @@ WantedBy=multi-user.target
 
 > [!NOTE]
 > **Usuário** &mdash; se o usuário *apache* não é usado pela configuração, o usuário deve criado pela primeira vez e determinado propriedade adequada de arquivos.
+
+> [!NOTE]
+> Alguns valores (por exemplo, cadeias de conexão de SQL) devem ser substituídas para os provedores de configuração ler as variáveis de ambiente. Use o seguinte comando para gerar um valor corretamente com caracteres de escape para uso no arquivo de configuração:
+>
+> ```console
+> systemd-escape "<value-to-escape>"
+> ```
 
 Salve o arquivo e habilitar o serviço:
 

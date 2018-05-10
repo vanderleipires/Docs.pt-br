@@ -6,22 +6,20 @@ manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 04/06/2018
+ms.date: 05/09/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/javascript-client
-ms.openlocfilehash: d2530fe3c4b47687d3ef4015624499d96fea2d7b
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
-ms.translationtype: HT
+ms.openlocfilehash: 1701d9ac5222bf64f9690c1cecdf54ef95fe4a49
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>Cliente do ASP.NET Core SignalR JavaScript
 
 Por [Rachel Appel](http://twitter.com/rachelappel)
-
-[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 A biblioteca de cliente ASP.NET Core SignalR JavaScript permite que os desenvolvedores chamar o código de hub do lado do servidor.
 
@@ -58,7 +56,7 @@ Normalmente, navegadores carregar conexões do mesmo domínio que a página soli
 
 Para impedir que um site mal-intencionado lendo dados confidenciais de outro site, [conexões entre origens](xref:security/cors) estão desabilitados por padrão. Para permitir que uma solicitação entre origens, habilitá-lo na `Startup` classe.
 
-[!code-csharp[Cross-origin connections](javascript-client/sample/Startup.cs?highlight=29-34,55)]
+[!code-csharp[Cross-origin connections](javascript-client/sample/Startup.cs?highlight=29-35,56)]
 
 ## <a name="call-hub-methods-from-client"></a>Chamar métodos de hub do cliente
 
@@ -100,9 +98,9 @@ Configure o rastreamento de log do lado do cliente, passando um agente de log e 
 * `signalR.LogLevel.Information` : Mensagens de status sem erros. Logs de `Information`, `Warning`, e `Error` mensagens.
 * `signalR.LogLevel.Trace` : Mensagens de rastreamento. Registra tudo, incluindo dados transportados entre cliente e hub.
 
-Use o `configureLogging` método `HubConnectionBuilder` para configurar o nível de log. Mensagens são registradas para o Console do navegador.
+Use o `configureLogging` método `HubConnectionBuilder` para configurar o nível de log. Mensagens são registradas para o console do navegador.
 
-[!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=11)]
+[!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
 
 ## <a name="related-resources"></a>Recursos relacionados
 

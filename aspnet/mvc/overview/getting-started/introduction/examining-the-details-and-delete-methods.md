@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: b6939207ee15aa93bfb3ccb9cad553b814896bd1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f534080fe9aa22eb9092932babc74c5ab96aabbf
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 <a name="examining-the-details-and-delete-methods"></a>Examinar os detalhes e métodos de exclusão
 ====================
@@ -42,7 +42,7 @@ Examine os métodos `Delete` e `DeleteConfirmed`.
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample2.cs?highlight=17)]
 
-Observe que o `HTTP Get``Delete` método não exclui o filme especificado, ele retorna uma exibição do filme que você pode enviar (`HttpPost`) a exclusão. A execução de uma operação de exclusão em resposta a uma solicitação GET (ou, de fato, a execução de uma operação de edição, criação ou qualquer outra operação que altera dados) abre uma falha de segurança. Para obter mais informações sobre isso, consulte a entrada de blog de Stephen Walther [ASP.NET MVC dica 46 — não use Excluir Links porque eles criar vulnerabilidades de segurança](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx).
+Observe que o HTTP GET `Delete` método não exclui o filme especificado, ele retorna uma exibição do filme que você pode enviar (`HttpPost`) a exclusão. A execução de uma operação de exclusão em resposta a uma solicitação GET (ou, de fato, a execução de uma operação de edição, criação ou qualquer outra operação que altera dados) abre uma falha de segurança. Para obter mais informações sobre isso, consulte a entrada de blog de Stephen Walther [ASP.NET MVC dica 46 — não use Excluir Links porque eles criar vulnerabilidades de segurança](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx).
 
 O método `HttpPost` que exclui os dados é chamado `DeleteConfirmed` para fornecer ao método HTTP POST um nome ou uma assinatura exclusiva. As duas assinaturas de método são mostradas abaixo:
 

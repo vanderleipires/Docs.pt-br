@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: d084c5c7e232b92c8cfe2230e076752d42d8da5d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 946d4d5e5a506fb437232f9f4440c98e33a1a9b3
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 <a name="adding-validation"></a>Adicionando uma Validação
 ====================
@@ -134,7 +134,7 @@ Abra o arquivo *Movie.cs* e examine a classe `Movie`. O [ `System.ComponentModel
 
 O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributos somente fornecem dicas para o mecanismo de exibição formatar os dados (e fornecer atributos como `<a>` da URL e `<a href="mailto:EmailAddress.com">` para email. Você pode usar o [RegularExpression](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atributo para validar o formato dos dados. O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo é usado para especificar um tipo de dados que é mais específico que o tipo intrínseco do banco de dados, eles são ***não*** atributos de validação. Nesse caso, apenas desejamos acompanhar a data, não a data e a hora. O [enumeração DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) oferece para muitos tipos de dados, tais como *data, hora, PhoneNumber, moeda, EmailAddress* e muito mais. O atributo `DataType` também pode permitir que o aplicativo forneça automaticamente recursos específicos a um tipo. Por exemplo, um `mailto:` link pode ser criado para [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), e um seletor de data pode ser fornecido para [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) em navegadores que oferecem suporte a [HTML5](http://html5.org/). O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributos emite HTML 5 [dados -](http://ejohn.org/blog/html-5-data-attributes/) (pronunciado *dash dados*) atributos HTML 5 navegadores podem entender. O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributos não fornecem nenhuma validação.
 
-`DataType.Date` não especifica o formato da data exibida. Por padrão, o campo de dados será exibido conforme os formatos padrão com base no servidor de[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
+`DataType.Date` não especifica o formato da data exibida. Por padrão, o campo de dados será exibido conforme os formatos padrão com base no servidor de [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
 
 O atributo `DisplayFormat` é usado para especificar explicitamente o formato de data:
 
@@ -147,17 +147,17 @@ O `ApplyFormatInEditMode` configuração especifica que a formatação especific
 Você pode usar o [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atributo por si mesmo, mas geralmente é uma boa ideia usar a [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo também. O `DataType` atributo transmite o *semântica* dos dados como oposição para renderizá-lo em uma tela de instruções e fornece os seguintes benefícios que você não obtém com `DisplayFormat`:
 
 - O navegador pode habilitar recursos do HTML5 (por exemplo mostrar um controle de calendário, o símbolo de moeda local apropriado, links de email, etc.).
-- Por padrão, o navegador processará os dados usando o formato correto com base em sua[localidade](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx).
-- O[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo pode habilitar MVC escolher o modelo de campo à direita para processar os dados (o [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) se usado pelo próprio usa o modelo de cadeia de caracteres). Para obter mais informações, consulte Brad Wilson[modelos do ASP.NET MVC 2](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (Embora escrito para MVC 2, este artigo ainda se aplica à versão atual do ASP.NET MVC.)
+- Por padrão, o navegador processará os dados usando o formato correto com base em sua [localidade](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx).
+- O [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributo pode habilitar MVC escolher o modelo de campo à direita para processar os dados (o [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) se usado pelo próprio usa o modelo de cadeia de caracteres). Para obter mais informações, consulte Brad Wilson [modelos do ASP.NET MVC 2](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (Embora escrito para MVC 2, este artigo ainda se aplica à versão atual do ASP.NET MVC.)
 
 Se você usar o `DataType` atributo com um campo de data, você precisa especificar o `DisplayFormat` atributo também para garantir que o campo seja renderizado corretamente em navegadores Chrome. Para obter mais informações, consulte [esse thread StackOverflow](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie).
 
 > [!NOTE]
-> validação jQuery não funciona com o[intervalo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributo e[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx). Por exemplo, o seguinte código sempre exibirá um erro de validação do lado do cliente, mesmo quando a data estiver no intervalo especificado:
+> validação jQuery não funciona com o [intervalo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributo e [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx). Por exemplo, o seguinte código sempre exibirá um erro de validação do lado do cliente, mesmo quando a data estiver no intervalo especificado:
 > 
 > [!code-csharp[Main](adding-validation/samples/sample9.cs)]
 > 
-> Você precisará desabilitar a validação de data jQuery para usar o [intervalo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributo com[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx). Não geralmente é uma boa prática para compilar o disco rígidas datas em seus modelos, portanto, usar o[intervalo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributo e[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx) não é recomendado.
+> Você precisará desabilitar a validação de data jQuery para usar o [intervalo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributo com [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx). Não geralmente é uma boa prática para compilar o disco rígidas datas em seus modelos, portanto, usar o [intervalo](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributo e [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx) não é recomendado.
 
 
 O seguinte código mostra como combinar atributos em uma linha:
