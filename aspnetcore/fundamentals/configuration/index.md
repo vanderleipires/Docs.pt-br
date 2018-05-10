@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: b1c2b734a2e9b274792b597bfd222c31e661b0d7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 4637ff6312f32f5887ff0f7a6e74d10f5beb0ca5
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuration-in-aspnet-core"></a>Configuração no ASP.NET Core
 
@@ -105,13 +105,13 @@ Quando o ambiente está configurado como `Staging`, o seguinte método `Configur
 
 [!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 
-O ambiente normalmente é definido como `Development`, `Staging` ou `Production`. Para obter mais informações, veja [Trabalhar com vários ambientes](xref:fundamentals/environments).
+O ambiente normalmente é definido como `Development`, `Staging` ou `Production`. Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments).
 
 Considerações de configuração:
 
 * [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot) pode recarregar dados de configuração quando é alterado.
 * Chaves de configuração **não** diferenciam maiúsculas de minúsculas.
-* **Nunca** armazene senhas ou outros dados confidenciais no código do provedor de configuração ou nos arquivos de configuração de texto sem formatação. Não use segredos de produção em ambientes de teste ou de desenvolvimento. Especifique segredos fora do projeto para que eles não sejam acidentalmente comprometidos com um repositório de código-fonte. Saiba mais sobre [como trabalhar com vários ambientes](xref:fundamentals/environments) e gerenciar [armazenamento seguro de segredos de aplicativo no desenvolvimento](xref:security/app-secrets).
+* **Nunca** armazene senhas ou outros dados confidenciais no código do provedor de configuração ou nos arquivos de configuração de texto sem formatação. Não use segredos de produção em ambientes de teste ou de desenvolvimento. Especifique segredos fora do projeto para que eles não sejam acidentalmente comprometidos com um repositório de código-fonte. Saiba mais sobre [como usar vários ambientes](xref:fundamentals/environments) e gerenciar [armazenamento seguro de segredos de aplicativo no desenvolvimento](xref:security/app-secrets).
 * Para saber valores de configuração hierárquica especificados nas variáveis de ambiente, dois-pontos (`:`) pode não funcionar em todas as plataformas. Sublinhado duplo (`__`) é compatível com todas as plataformas.
 * Ao interagir com a configuração de API, dois-pontos (`:`) funciona em todas as plataformas.
 
@@ -413,6 +413,10 @@ Um arquivo *web.config* é necessário quando você hospeda o aplicativo em IIS 
 
 Para acessar a configuração em `ConfigureServices` ou `Configure` durante a inicialização, consulte os exemplos no tópico [Inicialização do aplicativo](xref:fundamentals/startup).
 
+## <a name="adding-configuration-from-an-external-assembly"></a>Adicionar configuração de um assembly externo
+
+Uma implementação [IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup) permite adicionar melhorias a um aplicativo durante a inicialização de um assembly externo fora da classe `Startup` do aplicativo. Para obter mais informações, veja [Aprimorar um aplicativo de um assembly externo](xref:fundamentals/configuration/platform-specific-configuration).
+
 ## <a name="access-configuration-in-a-razor-page-or-mvc-view"></a>Acessar a configuração em uma página do Razor ou exibição do MVC
 
 Para acessar definições de configuração em uma página do Razor ou uma exibição do MVC, adicione [usando diretiva](xref:mvc/views/razor#using) ([referência de C#: usando diretiva](/dotnet/csharp/language-reference/keywords/using-directive)) para o [namespace Microsoft.Extensions.Configuration](/dotnet/api/microsoft.extensions.configuration) e injete [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) na página ou na exibição.
@@ -468,7 +472,7 @@ Em uma exibição do MVC:
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Opções](xref:fundamentals/configuration/options)
-* [Trabalhar com vários ambientes](xref:fundamentals/environments)
+* [Usar vários ambientes](xref:fundamentals/environments)
 * [Armazenamento seguro dos segredos do aplicativo no desenvolvimento](xref:security/app-secrets)
 * [Hospedagem no ASP.NET Core](xref:fundamentals/hosting)
 * [Injeção de dependência](xref:fundamentals/dependency-injection)

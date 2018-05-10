@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 08866543d5b510b86c6af1896a9bd41ae0053ecf
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f9484d4806a7430177878b462209ba6608cfdd7d
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Ryan Nowak](https://github.com/rynowak)
 
-Páginas do Razor é um novo recurso do ASP.NET Core MVC que torna a codificação de cenários focados em página mais fácil e produtiva.
+Páginas do Razor é um novo aspecto do ASP.NET Core MVC que torna a codificação de cenários focados em página mais fácil e produtiva.
 
 Se você estiver procurando um tutorial que utiliza a abordagem Modelo-Exibição-Controlador, consulte a [Introdução ao ASP.NET Core MVC](xref:tutorials/first-mvc-app/start-mvc).
 
@@ -92,7 +92,7 @@ Notas:
 
 ## <a name="writing-a-basic-form"></a>Escrevendo um formulário básico
 
-Os recursos de Páginas do Razor são projetados para tornar fáceis os padrões comuns usados com navegadores da Web. [Associação de modelos](xref:mvc/models/model-binding), [auxiliares de marcas](xref:mvc/views/tag-helpers/intro) e auxiliares HTML *funcionam todos apenas* com as propriedades definidas em uma classe de Página do Razor. Considere uma página que implementa um formulário básico "Fale conosco" para o modelo `Contact`:
+Páginas do Razor foi projetado para facilitar a implementação de padrões comuns usados com navegadores da Web ao criar um aplicativo. [Associação de modelos](xref:mvc/models/model-binding), [auxiliares de marcas](xref:mvc/views/tag-helpers/intro) e auxiliares HTML *funcionam todos apenas* com as propriedades definidas em uma classe de Página do Razor. Considere uma página que implementa um formulário básico "Fale conosco" para o modelo `Contact`:
 
 Para as amostras neste documento, o `DbContext` é inicializado no arquivo [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16).
 
@@ -147,7 +147,7 @@ A propriedade `Customer` usa o atributo `[BindProperty]` para aceitar a associa�
 Páginas do Razor, por padrão, associam as propriedades somente com verbos não GET. A associação de propriedades pode reduzir a quantidade de código que você precisa escrever. A associação reduz o código usando a mesma propriedade para renderizar os campos de formulário (`<input asp-for="Customer.Name" />`) e aceitar a entrada.
 
 > [!NOTE]
-> Por motivos de segurança, você deve optar por associar os dados da solicitação GET às propriedades do modelo de página. Verifique a entrada do usuário antes de mapeá-la para as propriedades. Aceitar esse comportamento é útil quando você cria recursos que contam com a cadeia de caracteres de consulta ou com os valores de rota.
+> Por motivos de segurança, você deve optar por associar os dados da solicitação GET às propriedades do modelo de página. Verifique a entrada do usuário antes de mapeá-la para as propriedades. Aceitar esse comportamento é útil quando você lida com cenários que contam com a cadeia de caracteres de consulta ou com os valores de rota.
 >
 > Para associar uma propriedade às solicitações GET, defina a propriedade `SupportsGet` do atributo `[BindProperty]` como `true`: `[BindProperty(SupportsGet = true)]`
 
@@ -336,7 +336,7 @@ As páginas *Pages/Customers/Create.cshtml* e *Pages/Customers/Edit.cshtml* redi
 * `<a asp-page="/Index">My Index Page</a>`
 * `RedirectToPage("/Index")`
 
-O nome da página é o caminho para a página da pasta raiz */Pages* (incluindo um `/` à direita, por exemplo, `/Index`). As amostras anteriores de geração de URL são muito mais ricas em recursos do que apenas codificar uma URL. A geração de URL usa [roteamento](xref:mvc/controllers/routing) e pode gerar e codificar parâmetros de acordo com o modo como a rota é definida no caminho de destino.
+O nome da página é o caminho para a página da pasta raiz */Pages*, incluindo um `/` à direita (por exemplo, `/Index`). Os exemplos anteriores de geração de URL oferecem opções avançadas e recursos funcionais para codificar uma URL. A geração de URL usa [roteamento](xref:mvc/controllers/routing) e pode gerar e codificar parâmetros de acordo com o modo como a rota é definida no caminho de destino.
 
 A Geração de URL para páginas dá suporte a nomes relativos. A tabela a seguir mostra qual página de Índice é selecionada com diferentes parâmetros `RedirectToPage` de *Pages/Customers/Create.cshtml*:
 
@@ -455,5 +455,5 @@ services.AddMvc()
 * [Sintaxe Razor](xref:mvc/views/razor)
 * [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Convenções de autorização de Páginas Razor](xref:security/authorization/razor-pages-authorization)
-* [Provedores de modelo personalizado de página e rota de Páginas Razor](xref:mvc/razor-pages/razor-pages-convention-features)
+* [Provedores de modelo personalizado de página e rota de Páginas Razor](xref:mvc/razor-pages/razor-pages-conventions)
 * [Testes de integração e unidade de Páginas Razor](xref:testing/razor-pages-testing)
