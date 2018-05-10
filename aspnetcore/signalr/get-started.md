@@ -13,7 +13,7 @@ ms.technology: aspnet
 uid: signalr/get-started
 ms.openlocfilehash: ecd40eba5f46d4cbe768c332478c24277f27446b
 ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/08/2018
 ---

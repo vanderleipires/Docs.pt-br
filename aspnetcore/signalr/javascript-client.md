@@ -13,7 +13,7 @@ ms.topic: article
 uid: signalr/javascript-client
 ms.openlocfilehash: d2530fe3c4b47687d3ef4015624499d96fea2d7b
 ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/08/2018
 ---
