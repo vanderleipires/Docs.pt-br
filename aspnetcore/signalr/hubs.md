@@ -11,9 +11,9 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: 4810b3a1978f05eb0608320750f31b8bb95d71fd
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
-ms.translationtype: HT
+ms.openlocfilehash: cfe9f7a7321094b8f901687d91745df2247e1da6
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/10/2018
 ---
@@ -35,7 +35,7 @@ O middleware SignalR requer alguns serviços, que são configurados por meio da 
 
 Ao adicionar a funcionalidade de SignalR para um aplicativo ASP.NET Core, configurar rotas SignalR chamando `app.UseSignalR` no `Startup.Configure` método.
 
-[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=56-59)]
+[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=57-60)]
 
 ## <a name="create-and-use-hubs"></a>Criar e usar hubs
 
@@ -91,4 +91,6 @@ Exceções geradas em seus métodos de hub são enviadas ao cliente que invocou 
 
 ## <a name="related-resources"></a>Recursos relacionados
 
-[Introdução ao ASP.NET Core SignalR](xref:signalr/introduction)
+* [Introdução ao ASP.NET Core SignalR](xref:signalr/introduction)
+* [Cliente JavaScript](xref:signalr/javascript-client)
+* [Publicar no Azure](xref:signalr/publish-to-azure-web-app)
