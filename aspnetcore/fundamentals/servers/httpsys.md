@@ -1,7 +1,7 @@
 ---
-title: "Implementação do servidor Web HTTP.sys no ASP.NET Core"
+title: Implementação do servidor Web HTTP.sys no ASP.NET Core
 author: tdykstra
-description: "Conheça o HTTP.sys, um servidor Web para o ASP.NET Core executado no Windows. Desenvolvido com base no driver de modo kernel, o HTTP.sys é uma alternativa ao Kestrel, que pode ser usado na conexão direta com a Internet sem o IIS."
+description: Conheça o HTTP.sys, um servidor Web para o ASP.NET Core executado no Windows. Desenvolvido com base no driver de modo kernel, o HTTP.sys é uma alternativa ao Kestrel, que pode ser usado na conexão direta com a Internet sem o IIS.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: d7ae6c070c7eecfd714086e15f32eff96c0943d9
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 1ec309a00b6cb156b0d11ad085eda3b7a772ac94
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implementação do servidor Web HTTP.sys no ASP.NET Core
 
@@ -65,7 +65,7 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
 
 1. Não é necessário usar uma referência do pacote no arquivo de projeto com o [metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage) ([nuget.org](https://www.nuget.org/packages/Microsoft.AspNetCore.All/)) (ASP.NET Core 2.0 ou posterior). Se não estiver usando o metapacote `Microsoft.AspNetCore.All`, adicione uma referência do pacote a [Microsoft.AspNetCore.Server.HttpSys](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.HttpSys/).
 
-1. Chame o método de extensão [UseHttpSys](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderhttpsysextensions.usehttpsys) quando criar o Host Web, especificando todas as [opções do HTTP.sys](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions) necessárias:
+2. Chame o método de extensão [UseHttpSys](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderhttpsysextensions.usehttpsys) quando criar o Host Web, especificando todas as [opções do HTTP.sys](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions) necessárias:
 
    [!code-csharp[](httpsys/sample/Program.cs?name=snippet1&highlight=4-12)]
 
@@ -93,7 +93,7 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
    O tamanho máximo permitido em bytes para todos os corpos de solicitação. Quando é definido como `null`, o tamanho máximo do corpo da solicitação é ilimitado. Esse limite não afeta as conexões atualizadas que são sempre ilimitadas.
 
    O método recomendado para substituir o limite em um aplicativo ASP.NET Core MVC para um único `IActionResult` é usar o atributo [RequestSizeLimitAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requestsizelimitattribute) em um método de ação:
-   
+
    ```csharp
    [RequestSizeLimit(100000000)]
    public IActionResult MyActionMethod()
@@ -105,7 +105,7 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
 
    [!code-csharp[](httpsys/sample/Startup.cs?name=snippet1&highlight=6-7)]
 
-1. Quando usar o Visual Studio, verifique se que o aplicativo está configurado para executar o IIS ou IIS Express.
+3. Quando usar o Visual Studio, verifique se que o aplicativo está configurado para executar o IIS ou IIS Express.
 
    No Visual Studio, o perfil de inicialização padrão destina-se ao IIS Express. Para executar o projeto como um aplicativo de console, altere manualmente o perfil selecionado, conforme mostrado na captura de tela a seguir:
 
@@ -115,10 +115,10 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
 
 1. Se o aplicativo for uma [implantação dependente de estrutura](/dotnet/core/deploying/#framework-dependent-deployments-fdd), instale o .NET Core, o .NET Framework ou ambos (caso o aplicativo .NET Core seja direcionado ao .NET Framework).
 
-   * **.NET Core** &ndash; Se o aplicativo exigir o .NET Core, baixe e execute o instalador do .NET Core da página de [Downloads do .NET](https://www.microsoft.com/net/download/windows).
-   * **.NET Framework** &ndash; Se o aplicativo exigir o .NET Framework, confira [Guia de instalação do .NET Framework](/dotnet/framework/install/) para obter instruções de instalação. Instale o .NET Framework necessário. É possível encontrar o instalador para o .NET Framework mais recente na página de [Downloads do .NET](https://www.microsoft.com/net/download/windows).
+   * **.NET Core** &ndash; Se o aplicativo requer o .NET Core, obtenha e execute o instalador do .NET Core em [Todos os downloads do .NET](https://www.microsoft.com/net/download/all).
+   * **.NET Framework** &ndash; Se o aplicativo exigir o .NET Framework, confira [Guia de instalação do .NET Framework](/dotnet/framework/install/) para obter instruções de instalação. Instale o .NET Framework necessário. O instalador do .NET Framework mais recente pode ser encontrado em [Todos os downloads do .NET](https://www.microsoft.com/net/download/all).
 
-1. Configurar URLs e portas para o aplicativo.
+2. Configurar URLs e portas para o aplicativo.
 
    Por padrão, o ASP.NET Core é associado a `http://localhost:5000`. Para configurar portas e prefixos de URL, as opções incluem usar:
 
@@ -140,7 +140,7 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
    > [!WARNING]
    > Associações de curinga de nível superior (`http://*:80/` e `http://+:80`) **não** devem ser usadas. Associações de curinga de nível superior podem abrir o aplicativo para vulnerabilidades de segurança. Isso se aplica a curingas fortes e fracos. Use nomes de host explícitos em vez de curingas. Associações de curinga de subdomínio (por exemplo, `*.mysub.com`) não têm esse risco de segurança se você controlar o domínio pai completo (em vez de `*.com`, o qual é vulnerável). Veja [rfc7230 section-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) para obter mais informações.
 
-1. Faça o pré-registro dos prefixos de URL para associá-los ao HTTP.sys e configurar certificados X.509.
+3. Faça o pré-registro dos prefixos de URL para associá-los ao HTTP.sys e configurar certificados X.509.
 
    Se os prefixos de URL não estiverem pré-registrados no Windows, execute o aplicativo com privilégios de administrador. A única exceção ocorre durante a associação ao localhost usando HTTP (não HTTPS) com um número de porta superior a 1024. Nesse caso, não é necessário usar privilégios de administrador.
 
@@ -164,11 +164,16 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
       * [Comandos do Netsh para o protocolo HTTP](https://technet.microsoft.com/library/cc725882.aspx)
       * [Cadeias de caracteres de UrlPrefix](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
 
-   1. Crie certificados X.509 autoassinados, quando necessário.
+   2. Crie certificados X.509 autoassinados, quando necessário.
 
-     [!INCLUDE[How to make an X.509 cert](../../includes/make-x509-cert.md)]
+      [!INCLUDE [How to make an X.509 cert](../../includes/make-x509-cert.md)]
 
-1. Abra as portas do firewall para permitir que o tráfego chegue ao HTTP.sys. Use o *netsh.exe* ou os [cmdlets do PowerShell](https://technet.microsoft.com/library/jj554906).
+
+4. Abra as portas do firewall para permitir que o tráfego chegue ao HTTP.sys. Use o *netsh.exe* ou os [cmdlets do PowerShell](https://technet.microsoft.com/library/jj554906).
+
+## <a name="proxy-server-and-load-balancer-scenarios"></a>Servidor proxy e cenários de balanceador de carga
+
+Para aplicativos hospedados pelo HTTP.sys que interagem com solicitações da Internet ou de uma rede corporativa, podem ser necessárias configurações adicionais ao hospedar atrás de balanceadores de carga e de servidores proxy. Para obter mais informações, veja [Configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

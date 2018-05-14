@@ -1,7 +1,7 @@
 ---
-title: "Introdução ao ASP.NET Core 1.1"
+title: Introdução ao ASP.NET Core 1.1
 author: rick-anderson
-description: "Um tutorial rápido que cria e executa um aplicativo simples Olá, Mundo usando o ASP.NET Core 1.1."
+description: Siga este tutorial rápido para criar e executar um aplicativo Olá, Mundo simples usando o ASP.NET Core 1.1.
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: getting-started-1.1
-ms.openlocfilehash: 895e91efbba931923540e4cd182862cbc1851585
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c61a9a918e51bbd6c1f1142a04473393c8fc54ca
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="getting-started-with-aspnet-core-11"></a>Introdução ao ASP.NET Core 1.1
+# <a name="get-started-with-aspnet-core-11"></a>Introdução ao ASP.NET Core 1.1
 
 > [!NOTE]
 > Estas instruções referem-se ao ASP.NET Core 1.1. Procurando a última versão? Consulte [a versão atual deste tutorial](xref:getting-started).
 
-1. Instale o **Instalador do SDK** do .NET Core para o SDK 1.0.4 na [página de downloads do SDK 1.0.4 do .NET Core 1.0.5 e 1.1.2](https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.0.5-download.md).
+1. Instale o **Instalador do SDK** do .NET Core do SDK 1.0.4 que se encontra na [página Todos os downloads do .NET Core](https://www.microsoft.com/net/download/all).
 
 2. Crie uma pasta para um novo projeto .NET Core.
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 01/30/2018
 
 4. Execute o aplicativo.
 
-   O comando `dotnet run` compila o aplicativo primeiro, se necessário.
+   O comando [dotnet run](/dotnet/core/tools/dotnet-run) criará o aplicativo primeiro caso seja necessário.
 
    ```terminal
    dotnet run

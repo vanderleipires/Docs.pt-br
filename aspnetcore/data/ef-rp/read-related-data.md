@@ -1,7 +1,7 @@
 ---
-title: "Páginas do Razor com o EF Core – ler dados relacionados – 6 de 8"
+title: Páginas Razor com o EF Core no ASP.NET Core – Ler dados relacionados – 6 de 8
 author: rick-anderson
-description: "Neste tutorial, você lê e exibe dados relacionados – ou seja, os dados que o Entity Framework carrega nas propriedades de navegação."
+description: Neste tutorial, você lê e exibe dados relacionados – ou seja, os dados que o Entity Framework carrega nas propriedades de navegação.
 manager: wpickett
 ms.author: riande
 ms.date: 11/05/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: ccb1e95ae2b43fd0a4c4b1ac9ed58a4d474ab3b6
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 55d9b6743c7d97dc9a354bae218b1fac69d7b6bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>Lendo dados relacionados – EF Core com Páginas do Razor (6 de 8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Ler dados relacionados – 6 de 8
 
 Por [Tom Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 Neste tutorial, os dados relacionados são lidos e exibidos. Dados relacionados são dados que o EF Core carrega nas propriedades de navegação.
 
@@ -37,22 +37,22 @@ Há várias maneiras pelas quais o EF Core pode carregar dados relacionados nas 
 
 * [Carregamento adiantado](https://docs.microsoft.com/ef/core/querying/related-data#eager-loading). O carregamento adiantado é quando uma consulta para um tipo de entidade também carrega entidades relacionadas. Quando a entidade é lida, seus dados relacionados são recuperados. Normalmente, isso resulta em uma única consulta de junção que recupera todos os dados necessários. O EF Core emitirá várias consultas para alguns tipos de carregamento adiantado. A emissão de várias consultas pode ser mais eficiente do que era o caso para algumas consultas no EF6 quando havia uma única consulta. O carregamento adiantado é especificado com os métodos `Include` e `ThenInclude`.
 
- ![Exemplo de carregamento adiantado](read-related-data/_static/eager-loading.png)
+  ![Exemplo de carregamento adiantado](read-related-data/_static/eager-loading.png)
  
- O carregamento adiantado envia várias consultas quando a navegação de uma coleção é incluída:
+  O carregamento adiantado envia várias consultas quando a navegação de coleção é incluída:
 
- * Uma consulta para a consulta principal 
- * Uma consulta para cada "borda" de coleção na árvore de carregamento.
+  * Uma consulta para a consulta principal 
+  * Uma consulta para cada "borda" de coleção na árvore de carregamento.
 
 * Separe consultas com `Load`: os dados podem ser recuperados em consultas separadas e o EF Core "corrige" as propriedades de navegação. "Correção" significa que o EF Core popula automaticamente as propriedades de navegação. A separação de consultas com `Load` é mais parecida com o carregamento explícito do que com o carregamento adiantado.
 
- ![Exemplo de consultas separadas](read-related-data/_static/separate-queries.png)
+  ![Exemplo de consultas separadas](read-related-data/_static/separate-queries.png)
 
- Observação: o EF Core corrige automaticamente as propriedades de navegação para outras entidades que foram carregadas anteriormente na instância do contexto. Mesmo se os dados de uma propriedade de navegação *não* foram incluídos de forma explícita, a propriedade ainda pode ser populada se algumas ou todas as entidades relacionadas foram carregadas anteriormente.
+  Observação: o EF Core corrige automaticamente as propriedades de navegação para outras entidades que foram carregadas anteriormente na instância do contexto. Mesmo se os dados de uma propriedade de navegação *não* foram incluídos de forma explícita, a propriedade ainda pode ser populada se algumas ou todas as entidades relacionadas foram carregadas anteriormente.
 
 * [Carregamento explícito](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading). Quando a entidade é lida pela primeira vez, os dados relacionados não são recuperados. Um código precisa ser escrito para recuperar os dados relacionados quando eles forem necessários. O carregamento explícito com consultas separadas resulta no envio de várias consultas ao BD. Com o carregamento explícito, o código especifica as propriedades de navegação a serem carregadas. Use o método `Load` para fazer o carregamento explícito. Por exemplo:
 
- ![Exemplo de carregamento explícito](read-related-data/_static/explicit-loading.png)
+  ![Exemplo de carregamento explícito](read-related-data/_static/explicit-loading.png)
 
 * [Carregamento lento](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [No momento, o EF Core não dá suporte ao carregamento lento](https://github.com/aspnet/EntityFrameworkCore/issues/3797). Quando a entidade é lida pela primeira vez, os dados relacionados não são recuperados. Na primeira vez que uma propriedade de navegação é acessada, os dados necessários para essa propriedade de navegação são recuperados automaticamente. Uma consulta é enviada para o BD sempre que uma propriedade de navegação é acessada pela primeira vez.
 
@@ -76,9 +76,9 @@ Para exibir o nome do departamento atribuído em uma lista de cursos:
 * Abra uma janela de comando no diretório do projeto (o diretório que contém os arquivos *Program.cs*, *Startup.cs* e *.csproj*).
 * Execute o seguinte comando:
 
- ```console
-dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
- ```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
+  ```
 
 O comando anterior gera o modelo `Course` por scaffolding. Abra o projeto no Visual Studio.
 
@@ -97,7 +97,7 @@ Execute o aplicativo e selecione o link **Cursos**. A coluna de departamento exi
 
 Atualize o método `OnGetAsync` pelo seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod)]
 
 O código anterior adiciona `AsNoTracking`. `AsNoTracking` melhora o desempenho porque as entidades retornadas não são controladas. As entidades não são controladas porque elas não são atualizadas no contexto atual.
 
@@ -124,17 +124,17 @@ Execute o aplicativo e selecione a guia **Cursos** para ver a lista com nomes de
 
 O método `OnGetAsync` carrega dados relacionados com o método `Include`:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
 
-O operador `Select` carrega somente os dados relacionados necessários. Para itens únicos, como o `Department.Name`, ele usa um SQL INNER JOIN. Para coleções, ele usa outro acesso de banco de dados, assim como o operador `Include` em coleções.
+O operador `Select` carrega somente os dados relacionados necessários. Para itens únicos, como o `Department.Name`, ele usa um SQL INNER JOIN. Para coleções, ele usa outro acesso ao banco de dados, assim como o operador `Include` em coleções.
 
 O seguinte código carrega dados relacionados com o método `Select`:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
+[!code-csharp[](intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs?name=snippet_RevisedIndexMethod&highlight=4)]
 
 O `CourseViewModel`:
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/CourseViewModel.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/CourseViewModel.cs?name=snippet)]
 
 Consulte [IndexSelect.cshtml](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu/Pages/Courses/IndexSelect.cshtml) e [IndexSelect.cshtml.cs](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu/Pages/Courses/IndexSelect.cshtml.cs) para obter um exemplo completo.
 
@@ -148,7 +148,7 @@ Nesta seção, a página Instrutores é criada.
 Essa página lê e exibe dados relacionados das seguintes maneiras:
 
 * A lista de instrutores exibe dados relacionados da entidade `OfficeAssignment` (Office na imagem anterior). As entidades `Instructor` e `OfficeAssignment` estão em uma relação um para zero ou um. O carregamento adiantado é usado para as entidades `OfficeAssignment`. O carregamento adiantado costuma ser mais eficiente quando os dados relacionados precisam ser exibidos. Nesse caso, as atribuições de escritório para os instrutores são exibidas.
-* Quando o usuário seleciona um instrutor (Pedro na imagem anterior), as entidades `Course` relacionadas são exibidas. As entidades `Instructor` e `Course` estão em uma relação muitos para muitos. O carregamento adiantado para as entidades `Course` e suas entidades `Department` relacionadas é usado. Nesse caso, consultas separadas podem ser mais eficientes porque somente os cursos para o instrutor selecionado são necessários. Este exemplo mostra como usar o carregamento adiantado para propriedades de navegação em entidades que estão nas propriedades de navegação.
+* Quando o usuário seleciona um instrutor (Pedro na imagem anterior), as entidades `Course` relacionadas são exibidas. As entidades `Instructor` e `Course` estão em uma relação muitos para muitos. O carregamento adiantado é usado para entidades `Course` e suas entidades `Department` relacionadas. Nesse caso, consultas separadas podem ser mais eficientes porque somente os cursos para o instrutor selecionado são necessários. Este exemplo mostra como usar o carregamento adiantado para propriedades de navegação em entidades que estão nas propriedades de navegação.
 * Quando o usuário seleciona um curso (Química na imagem anterior), os dados relacionados da entidade `Enrollments` são exibidos. Na imagem anterior, o nome do aluno e a nota são exibidos. As entidades `Course` e `Enrollment` estão em uma relação um-para-muitos.
 
 ### <a name="create-a-view-model-for-the-instructor-index-view"></a>Criar um modelo de exibição para a exibição Índice de Instrutor
@@ -157,7 +157,7 @@ A página Instrutores mostra dados de três tabelas diferentes. É criado um mod
 
 Na pasta *SchoolViewModels*, crie *InstructorIndexData.cs* com o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
 
 ### <a name="scaffold-the-instructor-model"></a>Gerar o modelo Instrutor por scaffolding
 
@@ -165,9 +165,9 @@ Na pasta *SchoolViewModels*, crie *InstructorIndexData.cs* com o seguinte códig
 * Abra uma janela de comando no diretório do projeto (o diretório que contém os arquivos *Program.cs*, *Startup.cs* e *.csproj*).
 * Execute o seguinte comando:
 
- ```console
-dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
- ```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
+  ```
 
 O comando anterior gera o modelo `Instructor` por scaffolding. Abra o projeto no Visual Studio.
 
@@ -179,13 +179,13 @@ Execute o aplicativo e navegue para a página Instrutores.
 
 Substitua *Pages/Instructors/Index.cshtml.cs* pelo seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,20-)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,20-99)]
 
 O método `OnGetAsync` aceita dados de rota opcionais para a ID do instrutor selecionado.
 
 Examine a consulta na página *Pages/Instructors/Index.cshtml*:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_ThenInclude)]
 
 A consulta tem duas inclusões:
 
@@ -201,7 +201,7 @@ Atualize *Pages/Instructors/Index.cshtml* com a seguinte marcação:
 
 A marcação anterior faz as seguintes alterações:
 
-* Atualiza a diretiva `page` de `@page` para `@page "{id:int?}"`. `"{id:int?}"` é um modelo de rota. O modelo de rota altera cadeias de consulta de inteiro na URL para dados de rota. Por exemplo, clicar no link **Selecionar** para o instrutor quando a diretiva de página produz uma URL semelhante à seguinte:
+* Atualiza a diretiva `page` de `@page` para `@page "{id:int?}"`. `"{id:int?}"` é um modelo de rota. O modelo de rota altera cadeias de consulta de inteiro na URL para dados de rota. Por exemplo, clicar no link **Selecionar** de um o instrutor apenas com a diretiva `@page` produz uma URL semelhante à seguinte:
 
     `http://localhost:1234/Instructors?id=2`
 
@@ -248,17 +248,17 @@ Clique no link **Selecionar**. O estilo de linha é alterado.
 
 Atualize o método `OnGetAsync` em *Pages/Instructors/Index.cshtml.cs* com o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_OnGetAsync&highlight=1,8,16-)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_OnGetAsync&highlight=1,8,16-999)]
 
 Examine a consulta atualizada:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ThenInclude)]
 
 A consulta anterior adiciona as entidades `Department`.
 
 O código a seguir é executado quando o instrutor é selecionado (`id != null`). O instrutor selecionado é recuperado da lista de instrutores no modelo de exibição. Em seguida, a propriedade `Courses` do modelo de exibição é carregada com as entidades `Course` da propriedade de navegação `CourseAssignments` desse instrutor.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ID)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_ID)]
 
 O método `Where` retorna uma coleção. No método `Where` anterior, uma única entidade `Instructor` é retornada. O método `Single` converte a coleção em uma única entidade `Instructor`. A entidade `Instructor` fornece acesso à propriedade `CourseAssignments`. `CourseAssignments` fornece acesso às entidades `Course` relacionadas.
 
@@ -271,11 +271,11 @@ O método `Single` é usado em uma coleção quando a coleção tem apenas um it
 
 O seguinte código popula a propriedade `Enrollments` do modelo de exibição quando um curso é selecionado:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_courseID)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index2.cshtml.cs?name=snippet_courseID)]
 
 Adicione a seguinte marcação ao final da Página do Razor *Pages/Courses/Index.cshtml*:
 
-[!code-html[](intro/samples/cu/Pages/Instructors/IndexRRD.cshtml?range=60-102&highlight=7-)]
+[!code-html[](intro/samples/cu/Pages/Instructors/IndexRRD.cshtml?range=60-102&highlight=7-999)]
 
 A marcação anterior exibe uma lista de cursos relacionados a um instrutor quando um instrutor é selecionado.
 
@@ -289,7 +289,7 @@ Nesta seção, o aplicativo é atualizado para mostrar os dados de alunos de um 
 
 Atualize a consulta no método `OnGetAsync` em *Pages/Instructors/Index.cshtml.cs* com o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
 
 Atualize *Pages/Instructors/Index.cshtml*. Adicione a seguinte marcação ao final do arquivo:
 
@@ -305,7 +305,7 @@ Atualize a página e selecione um instrutor. Selecione um curso para ver a lista
 
 O método `Single` pode passar a condição `Where` em vez de chamar o método `Where` separadamente:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21,28-29)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21,28-29)]
 
 A abordagem `Single` anterior não oferece nenhum benefício em relação ao uso de `Where`. Alguns desenvolvedores preferem o estilo de abordagem `Single`.
 
@@ -313,13 +313,13 @@ A abordagem `Single` anterior não oferece nenhum benefício em relação ao uso
 
 O código atual especifica o carregamento adiantado para `Enrollments` e `Students`:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index.cshtml.cs?name=snippet_ThenInclude&highlight=6-9)]
 
 Suponha que os usuários raramente desejem ver registros em um curso. Nesse caso, uma otimização será carregar apenas os dados de registro se eles forem solicitados. Nesta seção, o `OnGetAsync` é atualizado para usar o carregamento explícito de `Enrollments` e `Students`.
 
 Atualize o `OnGetAsync` com o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Pages/Instructors/IndexXp.cshtml.cs?name=snippet_OnGetAsync&highlight=9-13,29-35)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexXp.cshtml.cs?name=snippet_OnGetAsync&highlight=9-13,29-35)]
 
 O código anterior remove as chamadas do método *ThenInclude* para dados de registro e de alunos. Se um curso é selecionado, o código realçado recupera:
 
