@@ -5,16 +5,16 @@ description: Saiba como as Páginas Razor no ASP.NET Core tornam a codificação
 manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/12/2017
+ms.date: 5/12/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: f9484d4806a7430177878b462209ba6608cfdd7d
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: c848c5d66a9e8141d9d737e8ce9c994587b04916
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
@@ -208,6 +208,13 @@ O método `OnPostDeleteAsync`:
 * Chama `RedirectToPage` para redirecionar para a página de índice de raiz (`/Index`).
 
 ::: moniker range=">= aspnetcore-2.1"
+
+## <a name="mark-page-properties-required"></a>Propriedades de página de marca necessárias
+
+As propriedades em um `PageModel` podem ser decoradas com o atributo [Required](/dotnet/api/system.componentmodel.dataannotations.requiredattribute):
+
+[!code-cs[](index/sample/Create.cshtml.cs?highlight=3,15-16)]
+
 ## <a name="manage-head-requests-with-the-onget-handler"></a>Gerenciar solicitações HEAD com o manipulador OnGet
 
 Geralmente, um manipulador HEAD é criado e chamado para solicitações HEAD:
@@ -226,9 +233,10 @@ services.AddMvc()
     .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 ```
 
-`SetCompatibilityVersion` define de forma eficiente a opção de Páginas Razor `AllowMappingHeadRequestsToGetHandler` como `true`. O comportamento é de aceitação até a liberação da versão prévia 1 do ASP.NET Core 3.0 ou posterior. Cada versão principal do ASP.NET Core adota todos os comportamentos de liberação de patch da versão anterior.
+`SetCompatibilityVersion` define de forma eficiente a opção de Páginas Razor `AllowMappingHeadRequestsToGetHandler` como `true`.
 
-O comportamento de aceitação global da liberação dos patches 2.1 a 2.x pode ser evitado com uma configuração de aplicativo que mapeia solicitações HEAD para o manipulador GET. Defina a opção de Páginas Razor `AllowMappingHeadRequestsToGetHandler` como `true`, sem chamar `SetCompatibilityVersion`, no `Startup.Configure`:
+Em vez de aceitar todos os 2.1 comportamentos com `SetCompatibilityVersion`, você pode explicitamente participar de comportamentos específicos. O código a seguir aceita as solicitações de mapeamento HEAD para o manipulador GET.
+
 
 ```csharp
 services.AddMvc()
@@ -267,7 +275,7 @@ A propriedade [Layout](xref:mvc/views/layout#specifying-a-layout) é definida em
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
-**Observação**: o layout está na pasta *Pages*. As páginas buscam outras exibições (layouts, modelos, parciais) hierarquicamente, iniciando na mesma pasta que a página atual. Um layout na pasta *Pages* pode ser usado em qualquer Página do Razor na pasta *Pages*.
+O layout está na pasta *Pages*. As páginas buscam outras exibições (layouts, modelos, parciais) hierarquicamente, iniciando na mesma pasta que a página atual. Um layout na pasta *Pages* pode ser usado em qualquer Página do Razor na pasta *Pages*.
 
 Recomendamos que você **não** coloque o arquivo de layout na pasta *Views/Shared*. *Views/Shared* é um padrão de exibições do MVC. As Páginas do Razor devem confiar na hierarquia de pasta e não nas convenções de caminho.
 
@@ -299,7 +307,7 @@ O arquivo *Pages/_ViewImports.cshtml* define o namespace a seguir:
 
 O namespace gerado para a Página do Razor *Pages/Customers/Edit.cshtml* é o mesmo que o do arquivo code-behind. A diretiva `@namespace` foi projetada de modo que as classes C# adicionadas a um projeto e o código gerado pelas páginas *funcione* sem a necessidade de adicionar uma diretiva `@using` para o arquivo code-behind.
 
-**Observação:** `@namespace` também funciona com exibições do Razor convencionais.
+`@namespace` *também funciona com exibições do Razor convencionais.*
 
 O arquivo de exibição *Pages/Create.cshtml* original:
 
@@ -350,6 +358,42 @@ A Geração de URL para páginas dá suporte a nomes relativos. A tabela a segui
 `RedirectToPage("Index")`, `RedirectToPage("./Index")` e `RedirectToPage("../Index")` são <em>nomes relativos</em>. O parâmetro `RedirectToPage` é <em>combinado</em> com o caminho da página atual para calcular o nome da página de destino.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 Vinculação de nome relativo é útil ao criar sites com uma estrutura complexa. Se você usar nomes relativos para vincular entre páginas em uma pasta, você poderá renomear essa pasta. Todos os links ainda funcionarão (porque eles não incluirão o nome da pasta).
+
+::: moniker range=">= aspnetcore-2.1"
+## <a name="viewdata-attribute"></a>Atributo ViewData
+
+Os dados podem ser passados para uma página com [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute). As propriedades nos controladores ou nos modelos da Página Razor decoradas com `[ViewData]` têm seus valores armazenados e carregados em [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary).
+
+No exemplo a seguir, o `AboutModel` contém uma propriedade `Title` decorada com `[ViewData]`. A propriedade `Title` está definida como o título da página Sobre:
+
+```csharp
+public class AboutModel : PageModel
+{
+    [ViewData]
+    public string Title { get; } = "About";
+
+    public void OnGet()
+    {
+    }
+}
+```
+
+Na página Sobre, acesse a propriedade `Title` como uma propriedade de modelo:
+
+```cshtml
+<h1>@Model.Title</h1>
+```
+
+No layout, o título é lido a partir do dicionário ViewData:
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - WebApplication</title>
+    ...
+```
+::: moniker-end
 
 ## <a name="tempdata"></a>TempData
 
