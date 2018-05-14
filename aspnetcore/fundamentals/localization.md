@@ -1,7 +1,7 @@
 ---
-title: "Globalização e localização no ASP.NET Core"
+title: Globalização e localização no ASP.NET Core
 author: rick-anderson
-description: "Saiba como o ASP.NET Core fornece serviços e middleware para localização de conteúdo em diferentes idiomas e culturas."
+description: Saiba como o ASP.NET Core fornece serviços e middleware para localização de conteúdo em diferentes idiomas e culturas.
 manager: wpickett
 ms.author: riande
 ms.date: 01/14/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 766cec5dd00b7b464eef31a3bc1721f522697608
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: b81926f81fdfb832ff6ae3bd65c00fa09412fec4
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalização e localização no ASP.NET Core
 
@@ -21,7 +21,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Damien Bowden](https://tw
 
 A criação de um site multilíngue com o ASP.NET Core permitirá que seu site alcance um público maior. O ASP.NET Core fornece serviços e middleware para localização em diferentes idiomas e culturas.
 
-A internacionalização envolve [Globalização](https://docs.microsoft.com/dotnet/api/system.globalization) e [Localização](https://docs.microsoft.com/dotnet/standard/globalization-localization/localization). Globalização é o processo de criação de aplicativos que dão suporte a diferentes culturas. A globalização adiciona suporte para entrada, exibição e saída de um conjunto definido de scripts de idiomas relacionados a áreas geográficas específicas.
+A internacionalização envolve [Globalização](/dotnet/api/system.globalization) e [Localização](/dotnet/standard/globalization-localization/localization). Globalização é o processo de criação de aplicativos que dão suporte a diferentes culturas. A globalização adiciona suporte para entrada, exibição e saída de um conjunto definido de scripts de idiomas relacionados a áreas geográficas específicas.
 
 Localização é o processo de adaptar um aplicativo globalizado, que você já processou para possibilidade de localização, a determinada cultura/localidade. Para obter mais informações, consulte **Termos de globalização e localização** próximo ao final deste documento.
 
@@ -35,37 +35,37 @@ A localização de aplicativos envolve o seguinte:
 
 ## <a name="make-the-apps-content-localizable"></a>Tornar o conteúdo do aplicativo localizável
 
-Introduzidos no ASP.NET Core `IStringLocalizer` e `IStringLocalizer<T>` foram projetados para melhorar a produtividade ao desenvolver aplicativos localizados. `IStringLocalizer` usa o [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager) e o [ResourceReader](https://docs.microsoft.com/dotnet/api/system.resources.resourcereader) para fornecer recursos específicos a uma cultura em tempo de execução. A interface simples tem um indexador e um `IEnumerable` para retornar cadeias de caracteres localizadas. `IStringLocalizer` não exige o armazenamento das cadeias de caracteres de idioma padrão em um arquivo de recurso. Você pode desenvolver um aplicativo direcionado à localização e não precisa criar arquivos de recurso no início do desenvolvimento. O código abaixo mostra como encapsular a cadeia de caracteres "About Title" para localização.
+Introduzidos no ASP.NET Core `IStringLocalizer` e `IStringLocalizer<T>` foram projetados para melhorar a produtividade ao desenvolver aplicativos localizados. `IStringLocalizer` usa o [ResourceManager](/dotnet/api/system.resources.resourcemanager) e o [ResourceReader](/dotnet/api/system.resources.resourcereader) para fornecer recursos específicos a uma cultura em tempo de execução. A interface simples tem um indexador e um `IEnumerable` para retornar cadeias de caracteres localizadas. `IStringLocalizer` não exige o armazenamento das cadeias de caracteres de idioma padrão em um arquivo de recurso. Você pode desenvolver um aplicativo direcionado à localização e não precisa criar arquivos de recurso no início do desenvolvimento. O código abaixo mostra como encapsular a cadeia de caracteres "About Title" para localização.
 
-[!code-csharp[Main](localization/sample/Localization/Controllers/AboutController.cs)]
+[!code-csharp[](localization/sample/Localization/Controllers/AboutController.cs)]
 
 No código acima, a implementação `IStringLocalizer<T>` é obtida da [Injeção de Dependência](dependency-injection.md). Se o valor localizado de "About Title" não é encontrado, a chave do indexador é retornada, ou seja, a cadeia de caracteres "About Title". Deixe as cadeias de caracteres literais de idioma padrão no aplicativo e encapsule-as no localizador, de modo que você possa se concentrar no desenvolvimento do aplicativo. Você pode desenvolve seu aplicativo com o idioma padrão e prepará-lo para a etapa de localização sem primeiro criar um arquivo de recurso padrão. Como alternativa, você pode usar a abordagem tradicional e fornecer uma chave para recuperar a cadeia de caracteres de idioma padrão. Para muitos desenvolvedores, o novo fluxo de trabalho de não ter um arquivo *.resx* de idioma padrão e simplesmente encapsular os literais de cadeia de caracteres pode reduzir a sobrecarga de localizar um aplicativo. Outros desenvolvedores preferirão o fluxo de trabalho tradicional, pois ele pode facilitar o trabalho com literais de cadeia de caracteres mais longas e a atualização de cadeias de caracteres localizadas.
 
 Use a implementação `IHtmlLocalizer<T>` para recursos que contêm HTML. O `IHtmlLocalizer` codifica em HTML os argumentos que são formatados na cadeia de caracteres de recurso, mas não codifica em HTML a cadeia de caracteres de recurso em si. Na amostra realçada abaixo, apenas o valor do parâmetro `name` é codificado em HTML.
 
-[!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
+[!code-csharp[](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 
 **Observação:** em geral, recomendamos localizar somente o texto e não o HTML.
 
 No nível mais baixo, você pode obter `IStringLocalizerFactory` com a [Injeção de Dependência](dependency-injection.md):
 
-[!code-csharp[Main](localization/sample/Localization/Controllers/TestController.cs?start=9&end=26&highlight=7-13)]
+[!code-csharp[](localization/sample/Localization/Controllers/TestController.cs?start=9&end=26&highlight=7-13)]
 
 O código acima demonstra cada um dos dois métodos Create de alocador.
 
 Você pode particionar as cadeias de caracteres localizadas por controlador, área ou ter apenas um contêiner. No aplicativo de exemplo, uma classe fictícia chamada `SharedResource` é usada para recursos compartilhados.
 
-[!code-csharp[Main](localization/sample/Localization/Resources/SharedResource.cs)]
+[!code-csharp[](localization/sample/Localization/Resources/SharedResource.cs)]
 
 Alguns desenvolvedores usam a classe `Startup` para conter cadeias de caracteres globais ou compartilhadas. Na amostra abaixo, os localizadores `InfoController` e `SharedResource` são usados:
 
-[!code-csharp[Main](localization/sample/Localization/Controllers/InfoController.cs?range=9-26)]
+[!code-csharp[](localization/sample/Localization/Controllers/InfoController.cs?range=9-26)]
 
 ## <a name="view-localization"></a>Localização de exibição
 
-O serviço `IViewLocalizer` fornece cadeias de caracteres localizadas para uma [exibição](https://docs.microsoft.com/aspnet/core). A classe `ViewLocalizer` implementa essa interface e encontra o local do recurso no caminho do arquivo de exibição. O seguinte código mostra como usar a implementação padrão de `IViewLocalizer`:
+O serviço `IViewLocalizer` fornece cadeias de caracteres localizadas para uma [exibição](xref:mvc/views/overview). A classe `ViewLocalizer` implementa essa interface e encontra o local do recurso no caminho do arquivo de exibição. O seguinte código mostra como usar a implementação padrão de `IViewLocalizer`:
 
-[!code-cshtml[Main](localization/sample/Localization/Views/Home/About.cshtml)]
+[!code-cshtml[](localization/sample/Localization/Views/Home/About.cshtml)]
 
 A implementação padrão de `IViewLocalizer` encontra o arquivo de recurso com base no nome de arquivo da exibição. Não há nenhuma opção para usar um arquivo de recurso compartilhado global. `ViewLocalizer` implementa o localizador usando `IHtmlLocalizer` e, portanto, o Razor não codifica em HTML a cadeia de caracteres localizada. Parametrize cadeias de recurso e o `IViewLocalizer` codificará em HTML os parâmetros, mas não a cadeia de caracteres de recurso. Considere a seguinte marcação do Razor:
 
@@ -85,16 +85,16 @@ A exibição renderizada contém a marcação HTML do arquivo de recurso.
 
 Para usar um arquivo de recurso compartilhado em uma exibição, injete `IHtmlLocalizer<T>`:
 
-[!code-cshtml[Main](../fundamentals/localization/sample/Localization/Views/Test/About.cshtml?highlight=5,12)]
+[!code-cshtml[](../fundamentals/localization/sample/Localization/Views/Test/About.cshtml?highlight=5,12)]
 
 ## <a name="dataannotations-localization"></a>Localização de DataAnnotations
 
 As mensagens de erro de DataAnnotations são localizadas com `IStringLocalizer<T>`. Usando a opção `ResourcesPath = "Resources"`, as mensagens de erro em `RegisterViewModel` podem ser armazenadas em um dos seguintes caminhos:
 
-* Resources/ViewModels.Account.RegisterViewModel.fr.resx
-* Resources/ViewModels/Account/RegisterViewModel.fr.resx
+* *Resources/ViewModels.Account.RegisterViewModel.fr.resx*
+* *Resources/ViewModels/Account/RegisterViewModel.fr.resx*
 
-[!code-csharp[Main](localization/sample/Localization/ViewModels/Account/RegisterViewModel.cs?start=9&end=26)]
+[!code-csharp[](localization/sample/Localization/ViewModels/Account/RegisterViewModel.cs?start=9&end=26)]
 
 No ASP.NET Core MVC 1.1.0 e superior, atributos que não sejam de validação são localizados. O ASP.NET Core MVC 1.0 **não** pesquisa cadeias de caracteres localizadas para atributos que não sejam de validação.
 
@@ -114,13 +114,13 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-No código anterior, `SharedResource` é a classe correspondente ao resx em que as mensagens de validação são armazenadas. Com essa abordagem, DataAnnotations usará apenas `SharedResource`, em vez de o recurso para cada classe. 
+No código anterior, `SharedResource` é a classe correspondente ao resx em que as mensagens de validação são armazenadas. Com essa abordagem, DataAnnotations usará apenas `SharedResource`, em vez de o recurso para cada classe.
 
-## <a name="provide-localized-resources-for-the-languages-and-cultures-you-support"></a>Fornecer recursos localizados para as culturas e os idiomas aos quais você dá suporte  
+## <a name="provide-localized-resources-for-the-languages-and-cultures-you-support"></a>Fornecer recursos localizados para as culturas e os idiomas aos quais você dá suporte
 
 ### <a name="supportedcultures-and-supporteduicultures"></a>SupportedCultures e SupportedUICultures
 
-O ASP.NET Core permite que você especifique dois valores de cultura, `SupportedCultures` e `SupportedUICultures`. O objeto [CultureInfo](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo) para `SupportedCultures` determina os resultados das funções dependentes de cultura, como data, hora, número e formatação de moeda. `SupportedCultures` também determina a ordem de classificação de texto, convenções de uso de maiúsculas e comparações de cadeia de caracteres. Consulte [CultureInfo.CurrentCulture](https://docs.microsoft.com/dotnet/api/system.stringcomparer.currentculture#System_StringComparer_CurrentCulture) para obter mais informações sobre como o servidor obtém a Cultura. O `SupportedUICultures` determina quais cadeias de caracteres traduzidas (de arquivos *.resx*) são pesquisadas pelo [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager). O `ResourceManager` apenas pesquisa cadeias de caracteres específicas a uma cultura determinadas por `CurrentUICulture`. Cada thread no .NET tem objetos `CurrentCulture` e `CurrentUICulture`. O ASP.NET Core inspeciona esses valores durante a renderização de funções dependentes de cultura. Por exemplo, se a cultura do thread atual estiver definida como "en-US" (inglês, Estados Unidos), `DateTime.Now.ToLongDateString()` exibirá "Thursday, February 18, 2016", mas se `CurrentCulture` estiver definida como "es-ES" (espanhol, Espanha), o resultado será "jueves, 18 de febrero de 2016".
+O ASP.NET Core permite que você especifique dois valores de cultura, `SupportedCultures` e `SupportedUICultures`. O objeto [CultureInfo](/dotnet/api/system.globalization.cultureinfo) para `SupportedCultures` determina os resultados das funções dependentes de cultura, como data, hora, número e formatação de moeda. `SupportedCultures` também determina a ordem de classificação de texto, convenções de uso de maiúsculas e comparações de cadeia de caracteres. Consulte [CultureInfo.CurrentCulture](/dotnet/api/system.stringcomparer.currentculture#System_StringComparer_CurrentCulture) para obter mais informações sobre como o servidor obtém a Cultura. O `SupportedUICultures` determina quais cadeias de caracteres traduzidas (de arquivos *.resx*) são pesquisadas pelo [ResourceManager](/dotnet/api/system.resources.resourcemanager). O `ResourceManager` apenas pesquisa cadeias de caracteres específicas a uma cultura determinadas por `CurrentUICulture`. Cada thread no .NET tem objetos `CurrentCulture` e `CurrentUICulture`. O ASP.NET Core inspeciona esses valores durante a renderização de funções dependentes de cultura. Por exemplo, se a cultura do thread atual estiver definida como "en-US" (inglês, Estados Unidos), `DateTime.Now.ToLongDateString()` exibirá "Thursday, February 18, 2016", mas se `CurrentCulture` estiver definida como "es-ES" (espanhol, Espanha), o resultado será "jueves, 18 de febrero de 2016".
 
 ## <a name="resource-files"></a>Arquivos de recurso
 
@@ -172,23 +172,31 @@ Se você não usar a opção `ResourcesPath`, o arquivo *.resx* de uma exibiçã
 
 ## <a name="culture-fallback-behavior"></a>Comportamento de fallback da cultura
 
+Ao procurar por um recurso, a localização participa do "fallback de cultura". Começando com a cultura solicitada, se ela não for encontrada, ela será revertida para a cultura pai dessa cultura. Além disso, a propriedade [CultureInfo.Parent](/dotnet/api/system.globalization.cultureinfo.parent) representa a cultura pai. Isso normalmente (mas nem sempre) significa a remoção do significante do ISO. Por exemplo, o dialeto do espanhol falado no México é "es-MX". Ele tem o pai "es", ou seja, espanhol, não específico de nenhum país.
+
+Imagine que seu site receba uma solicitação de um recurso “Boas-vindas" usando a cultura"fr-CA". O sistema de localização procura os seguintes recursos, em ordem, e seleciona a primeira correspondência:
+
+* *Welcome.fr-CA.resx*
+* *Welcome.fr.resx*
+* *Welcome.resx* (se o `NeutralResourcesLanguage` for "fr-CA")
+
 Por exemplo, se você remover o designador de cultura ".fr" e tiver a cultura definida como francês, o arquivo de recurso padrão será lido e as cadeias de caracteres serão localizadas. O Gerenciador de Recursos designa um padrão ou um recurso de fallback para quando nenhuma opção atende à cultura solicitada. Se você deseja apenas retornar a chave quando um recurso está ausente para a cultura solicitada, não deve ter um arquivo de recurso padrão.
 
 ### <a name="generate-resource-files-with-visual-studio"></a>Gerar arquivos de recurso com o Visual Studio
 
-Se você criar um arquivo de recurso no Visual Studio sem uma cultura no nome do arquivo (por exemplo, *Welcome.resx*), o Visual Studio criará uma classe do C# com uma propriedade para cada cadeia de caracteres. Em geral, não é isso que você quer obter com o ASP.NET Core; normalmente, você não tem um arquivo de recurso *.resx* padrão (um arquivo *.resx* sem o nome da cultura). Sugerimos que você crie o arquivo *.resx* com um nome de cultura (por exemplo *Welcome.fr.resx*). Quando você criar um arquivo *.resx* com um nome de cultura, o Visual Studio não gerará o arquivo de classe. Prevemos que muitos desenvolvedores **não** criarão um arquivo de recurso de idioma padrão.
+Se você criar um arquivo de recurso no Visual Studio sem uma cultura no nome do arquivo (por exemplo, *Welcome.resx*), o Visual Studio criará uma classe do C# com uma propriedade para cada cadeia de caracteres. Geralmente isso não é o desejado com o ASP.NET Core. Normalmente você não tem um arquivo de recurso *.resx* padrão (um arquivo *.resx* sem o nome de cultura). Sugerimos que você crie o arquivo *.resx* com um nome de cultura (por exemplo *Welcome.fr.resx*). Quando você criar um arquivo *.resx* com um nome de cultura, o Visual Studio não gerará o arquivo de classe. A nossa previsão é que muitos desenvolvedores não criarão um arquivo de recurso de idioma padrão.
 
 ### <a name="add-other-cultures"></a>Adicionar outras culturas
 
-Cada combinação de idioma e cultura (que não seja o idioma padrão) exige um arquivo de recurso exclusivo. Crie arquivos de recurso para diferentes culturas e localidades criando novos arquivos de recurso, nos quais os códigos ISO e de idioma fazem parte do nome do arquivo (por exemplo, **en-us**, **fr-ca** e **en-gb**). Esses códigos ISO são colocados entre o nome do arquivo e a extensão de nome de arquivo *.resx*, como em *Welcome.es-MX.resx* (espanhol/México). Para especificar um idioma culturalmente neutro, remova o código do país (`MX` no exemplo anterior). O nome do arquivo de recurso em espanhol culturalmente neutro é *Welcome.es.resx*.
+Cada combinação de idioma e cultura (que não seja o idioma padrão) exige um arquivo de recurso exclusivo. Crie arquivos de recurso para diferentes culturas e localidades criando novos arquivos de recurso, nos quais os códigos ISO e de idioma fazem parte do nome do arquivo (por exemplo, **en-us**, **fr-ca** e **en-gb**). Esses códigos ISO são colocados entre o nome do arquivo e a extensão de arquivo *.resx*, como em *Welcome.es-MX.resx* (espanhol/México).
 
-## <a name="implement-a-strategy-to-select-the-languageculture-for-each-request"></a>Implementar uma estratégia para selecionar o idioma e a cultura para cada solicitação  
+## <a name="implement-a-strategy-to-select-the-languageculture-for-each-request"></a>Implementar uma estratégia para selecionar o idioma e a cultura para cada solicitação
 
 ### <a name="configure-localization"></a>Configurar a localização
 
 A localização é configurada no método `ConfigureServices`:
 
-[!code-csharp[Main](localization/sample/Localization/Program.cs?name=snippet1)]
+[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet1)]
 
 * `AddLocalization` Adiciona os serviços de localização ao contêiner de serviços. O código acima também define o caminho de recursos como "Resources".
 
@@ -200,7 +208,7 @@ A localização é configurada no método `ConfigureServices`:
 
 A cultura atual em uma solicitação é definida no [Middleware](xref:fundamentals/middleware/index) de localização. O middleware de localização é habilitado no método `Configure`. O middleware de localização precisa ser configurado antes de qualquer middleware que possa verificar a cultura de solicitação (por exemplo, `app.UseMvcWithDefaultRoute()`).
 
-[!code-csharp[Main](localization/sample/Localization/Program.cs?name=snippet2)]
+[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet2)]
 
 `UseRequestLocalization` inicializa um objeto `RequestLocalizationOptions`. Em cada solicitação, a lista de `RequestCultureProvider` em `RequestLocalizationOptions` é enumerada e o primeiro provedor que pode determinar com êxito a cultura de solicitação é usado. Os provedores padrão são obtidos da classe `RequestLocalizationOptions`:
 
@@ -285,15 +293,16 @@ Use `RequestLocalizationOptions` para adicionar ou remover provedores de localiz
 
 Este projeto de exemplo **Localization.StarterWeb** no [GitHub](https://github.com/aspnet/entropy) contém a interface do usuário para definir a `Culture`. O arquivo *Views/Shared/_SelectLanguagePartial.cshtml* permite que você selecione a cultura na lista de culturas compatíveis:
 
-[!code-cshtml[Main](localization/sample/Localization/Views/Shared/_SelectLanguagePartial.cshtml)]
+
+[!code-cshtml[](localization/sample/Localization/Views/Shared/_SelectLanguagePartial.cshtml)]
 
 O arquivo *Views/Shared/_SelectLanguagePartial.cshtml* é adicionado à seção `footer` do arquivo de layout para que ele fique disponível para todos os exibições:
 
-[!code-cshtml[Main](localization/sample/Localization/Views/Shared/_Layout.cshtml?range=43-56&highlight=10)]
+[!code-cshtml[](localization/sample/Localization/Views/Shared/_Layout.cshtml?range=43-56&highlight=10)]
 
 O método `SetLanguage` define o cookie de cultura.
 
-[!code-csharp[Main](localization/sample/Localization/Controllers/HomeController.cs?range=57-67)]
+[!code-csharp[](localization/sample/Localization/Controllers/HomeController.cs?range=57-67)]
 
 Não é possível conectar o *_SelectLanguagePartial.cshtml* ao código de exemplo para este projeto. O projeto **Localization.StarterWeb** no [GitHub](https://github.com/aspnet/entropy) contém o código para o fluxo do `RequestLocalizationOptions` para uma parcial do Razor por meio do contêiner de [Injeção de Dependência](dependency-injection.md).
 
@@ -301,7 +310,7 @@ Não é possível conectar o *_SelectLanguagePartial.cshtml* ao código de exemp
 
 O processo de localização do aplicativo também exige uma compreensão básica dos conjuntos de caracteres relevantes geralmente usados no desenvolvimento moderno de software e uma compreensão dos problemas associados a eles. Embora todos os computadores armazenem texto como números (códigos), diferentes sistemas armazenam o mesmo texto usando números diferentes. O processo de localização se refere à tradução da interface do usuário do aplicativo para uma cultura/localidade específica.
 
-[Possibilidade de localização](https://docs.microsoft.com/dotnet/standard/globalization-localization/localizability-review) é um processo intermediário usado para verificar se um aplicativo globalizado está pronto para localização.
+[Possibilidade de localização](/dotnet/standard/globalization-localization/localizability-review) é um processo intermediário usado para verificar se um aplicativo globalizado está pronto para localização.
 
 O formato [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) para o nome de cultura é `<languagecode2>-<country/regioncode2>`, em que `<languagecode2>` é o código de idioma e `<country/regioncode2>` é o código de subcultura. Por exemplo, `es-CL` para Espanhol (Chile), `en-US` para inglês (Estados Unidos) e `en-AU` para inglês (Austrália). O [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) é uma combinação de um código de cultura de duas letras minúsculas ISO 639 associado a um idioma e um código de subcultura de duas letras maiúsculas ISO 3166 associado a um país ou uma região. Consulte [Nome da cultura de idioma](https://msdn.microsoft.com/library/ee825488(v=cs.20).aspx).
 
@@ -321,5 +330,6 @@ Termos:
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * O [projeto Localization.StarterWeb](https://github.com/aspnet/entropy) usado no artigo.
-* [Arquivos de recurso no Visual Studio](https://docs.microsoft.com/cpp/windows/resource-files-visual-studio)
-* [Recursos em arquivos .resx](https://docs.microsoft.com/dotnet/framework/resources/working-with-resx-files-programmatically)
+* [Arquivos de recurso no Visual Studio](/cpp/windows/resource-files-visual-studio)
+* [Recursos em arquivos .resx](/dotnet/framework/resources/working-with-resx-files-programmatically)
+* [Kit de Ferramentas de Aplicativo Multilíngue da Microsoft](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)

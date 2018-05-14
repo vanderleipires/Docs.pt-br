@@ -1,7 +1,7 @@
 ---
-title: Publicar um aplicativo Web ASP.NET Core no Azure usando o Visual Studio
+title: Publicar um aplicativo ASP.NET Core no Azure com o Visual Studio
 author: rick-anderson
-description: "Aprenda como publicar um aplicativo ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio."
+description: Aprenda como publicar um aplicativo ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio.
 manager: wpickett
 ms.author: riande
 ms.date: 12/16/2017
@@ -9,29 +9,33 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 14d8dd0a5e6a99bacce3bf50b0468b20e0dddb96
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e5c213a682c9bf7c64c40fad630cacfff24e23bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Publicar um aplicativo Web ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio
+# <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>Publicar um aplicativo ASP.NET Core no Azure com o Visual Studio
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs) e [Rachel Appel](https://twitter.com/rachelappel)
 
-Confira [Publicar no Azure do Visual Studio para Mac](https://blog.xamarin.com/publish-azure-visual-studio-mac/) se você estiver trabalhando em um Mac.
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
+
+Confira [Publicar no Azure do Visual Studio para Mac](https://blog.xamarin.com/publish-azure-visual-studio-mac/) se você estiver trabalhando no macOS.
+
+Para solucionar um problema de implantação do Serviço de Aplicativo, confira [Solucionar problemas do ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot).
 
 ## <a name="set-up"></a>Configurar
 
 * Abra uma [conta do Azure gratuita](https://aka.ms/K5y5yh) se você não tiver uma. 
 
-## <a name="create-a-web-app"></a>Criar um aplicativo Web
+## <a name="create-a-web-app"></a>Como criar um aplicativo Web
 
 Na página inicial do Visual Studio, selecione **Arquivo > Novo > Projeto...**
 
 ![Menu Arquivo](publish-to-azure-webapp-using-vs/_static/file_new_project.png)
 
-Preencha a caixa de diálogo **Novo Projeto**:
+Faça as configurações necessárias na caixa de diálogo **Novo Projeto**:
 
 * No painel esquerdo, selecione **.NET Core**.
 * No painel central, toque em **Aplicativo Web ASP.NET Core**.
@@ -185,3 +189,4 @@ Quando você concluir o teste do aplicativo, acesse o [portal do Azure](https://
 * [Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
 * [Grupo de recursos do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
 * [Banco de Dados SQL do Azure](https://docs.microsoft.com/azure/sql-database/)
+* [Solucionar problemas no ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot)

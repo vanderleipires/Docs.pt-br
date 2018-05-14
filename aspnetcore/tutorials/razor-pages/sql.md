@@ -1,31 +1,32 @@
 ---
-title: Trabalhando com o SQL Server LocalDB e o ASP.NET Core
+title: Trabalhar com o LocalDB do SQL Server e o ASP.NET Core
 author: rick-anderson
 description: Explica como trabalhar com o SQL Server LocalDB e o ASP.NET Core.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 3bec0b7b547443dbb20c7e3a7422262c05f93975
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d1a345fe8c61f6e07ebbe53de6d53e18d6f4c851
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="working-with-sql-server-localdb-and-aspnet-core"></a>Trabalhando com o SQL Server LocalDB e o ASP.NET Core
+# <a name="work-with-sql-server-localdb-and-aspnet-core"></a>Trabalhar com o LocalDB do SQL Server e o ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Joe Audette](https://twitter.com/joeaudette) 
 
 O objeto `MovieContext` cuida da tarefa de se conectar ao banco de dados e mapear objetos `Movie` para registros do banco de dados. O contexto de banco de dados é registrado com o contêiner [Injeção de Dependência](xref:fundamentals/dependency-injection) no método `ConfigureServices` no arquivo *Startup.cs*:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=7-8)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=7-8)]
 
 O sistema de [Configuração](xref:fundamentals/configuration/index) do ASP.NET Core lê a `ConnectionString`. Para o desenvolvimento local, ele obtém a cadeia de conexão do arquivo *appsettings.json*:
 
-[!code-json[Main](razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=2&range=8-10)]
+[!code-json[](razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=2&range=8-10)]
 
 Quando você implanta o aplicativo em um servidor de teste ou de produção, você pode usar uma variável de ambiente ou outra abordagem para definir a cadeia de conexão como um SQL Server real. Consulte [Configuração](xref:fundamentals/configuration/index) para obter mais informações.
 
@@ -54,7 +55,7 @@ Observe o ícone de chave ao lado de `ID`. Por padrão, o EF cria uma propriedad
 
 Crie uma nova classe chamada `SeedData` na pasta *Models*. Substitua o código gerado pelo seguinte:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/SeedData.cs?name=snippet_1)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedData.cs?name=snippet_1)]
 
 Se houver um filme no BD, o inicializador de semeadura será retornado e nenhum filme será adicionado.
 
@@ -69,7 +70,7 @@ if (context.Movie.Any())
 
 Adicione o inicializador de semeadura ao final do método `Main` no arquivo *Program.cs*:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Program.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Program.cs)]
 
 Testar o aplicativo
 
@@ -82,8 +83,8 @@ Testar o aplicativo
 
     ![Menu contextual](sql/_static/stopIIS.png)
 
-   * Se você estiver executando o VS no modo sem depuração, pressione F5 para executar no modo de depuração.
-   * Se você estiver executando o VS no modo de depuração, pare o depurador e pressione F5.
+    * Se você estiver executando o VS no modo sem depuração, pressione F5 para executar no modo de depuração.
+    * Se você estiver executando o VS no modo de depuração, pare o depurador e pressione F5.
    
 O aplicativo mostra os dados propagados:
 
@@ -91,6 +92,6 @@ O aplicativo mostra os dados propagados:
 
 O próximo tutorial limpará a apresentação dos dados.
 
->[!div class="step-by-step"]
-[Anterior: Páginas do Razor geradas por scaffolding](xref:tutorials/razor-pages/page)
-[Próximo: Atualização das páginas](xref:tutorials/razor-pages/da1)
+> [!div class="step-by-step"]
+> [Anterior: Páginas do Razor geradas por scaffolding](xref:tutorials/razor-pages/page)
+> [Próximo: Atualização das páginas](xref:tutorials/razor-pages/da1)

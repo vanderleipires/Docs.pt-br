@@ -1,7 +1,7 @@
 ---
-title: "Introdução ao ASP.NET Core MVC e ao Visual Studio para Mac"
+title: Introdução ao ASP.NET Core MVC e ao Visual Studio para Mac
 author: rick-anderson
-description: "Introdução ao ASP.NET Core MVC e ao Visual Studio"
+description: Saiba como começar a usar o ASP.NET Core MVC e o Visual Studio
 manager: wpickett
 ms.author: riande
 ms.date: 8/23/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: 05a2323851c58c95667066a74c11f1d015405e6f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ffa620f07251c52c785672d8fbeefacac31ed4c1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Introdução ao ASP.NET Core MVC e ao Visual Studio para Mac
+# <a name="get-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Introdução ao ASP.NET Core MVC e ao Visual Studio para Mac
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Este tutorial ensina os conceitos básicos da criação de um aplicativo Web ASP.NET Core MVC usando o [Visual Studio para Mac](https://www.visualstudio.com/vs/visual-studio-mac/). 
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 Há três versões deste tutorial:
 
@@ -31,14 +31,9 @@ Há três versões deste tutorial:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Este tutorial exige o [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior.
+[!INCLUDE [](~/includes/net-core-prereqs-macos.md)]
 
-Instale o seguinte:
-
-- [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior
-- [Visual Studio para Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
-
-## <a name="create-a-web-app"></a>Criar um aplicativo Web
+## <a name="create-a-web-app"></a>Como criar um aplicativo Web
 
 No Visual Studio, selecione **Arquivo > Nova Solução**.
 
@@ -67,5 +62,5 @@ O modelo padrão fornece os links **Página Inicial, Sobre** e **Contato**. A im
 
 Na próxima parte deste tutorial, você saberá mais sobre o MVC e começará a escrever um pouco de código.
 
->[!div class="step-by-step"]
-[Avançar](adding-controller.md)  
+> [!div class="step-by-step"]
+> [Avançar](adding-controller.md)  

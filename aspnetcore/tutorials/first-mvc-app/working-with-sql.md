@@ -1,7 +1,7 @@
 ---
-title: Trabalhando com o SQL Server LocalDB
+title: Trabalhar com o LocalDB do SQL Server no ASP.NET Core
 author: rick-anderson
-description: Usando o SQL Server LocalDB com um aplicativo MVC simples
+description: Saiba mais sobre como usar o LocalDB do SQL Server em um aplicativo ASP.NET Core MVC simples.
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: a0aa6fdfa51650628021a4ba6d0533e7e0e39200
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3f69657cb21e163bdf00fb1faea98889046e9b45
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="working-with-sql-server-localdb"></a>Trabalhando com o SQL Server LocalDB
+# <a name="work-with-sql-server-localdb-in-aspnet-core"></a>Trabalhar com o LocalDB do SQL Server no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 O objeto `MvcMovieContext` cuida da tarefa de se conectar ao banco de dados e mapear objetos `Movie` para registros do banco de dados. O contexto de banco de dados é registrado com o contêiner [Injeção de Dependência](xref:fundamentals/dependency-injection) no método `ConfigureServices` no arquivo *Startup.cs*:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
 
 O sistema de [Configuração](xref:fundamentals/configuration/index) do ASP.NET Core lê a `ConnectionString`. Para o desenvolvimento local, ele obtém a cadeia de conexão do arquivo *appsettings.json*:
 
-[!code-json[Main](start-mvc/sample/MvcMovie/appsettings.json?highlight=2&range=8-10)]
+[!code-json[](start-mvc/sample/MvcMovie/appsettings.json?highlight=2&range=8-10)]
 
 Quando você implanta o aplicativo em um servidor de teste ou de produção, você pode usar uma variável de ambiente ou outra abordagem para definir a cadeia de conexão como um SQL Server real. Consulte [Configuração](xref:fundamentals/configuration/index) para obter mais informações.
 
@@ -55,7 +55,7 @@ Observe o ícone de chave ao lado de `ID`. Por padrão, o EF tornará uma propri
 
 Crie uma nova classe chamada `SeedData` na pasta *Models*. Substitua o código gerado pelo seguinte:
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/SeedData.cs?name=snippet_1)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/SeedData.cs?name=snippet_1)]
 
 Se houver um filme no BD, o inicializador de semeadura será retornado e nenhum filme será adicionado.
 
@@ -69,20 +69,17 @@ if (context.Movie.Any())
 <a name="si"></a>
 ### <a name="add-the-seed-initializer"></a>Adicionar o inicializador de semeadura
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 Adicione o inicializador de semeadura ao método `Main` no arquivo *Program.cs*:
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Program.cs?highlight=6,14-32)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Program.cs?highlight=6,14-32)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Adicione o inicializador de semeadura ao final do método `Configure` no arquivo *Startup.cs*.
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
 
----
-
+* * *
 Testar o aplicativo
 
 * Exclua todos os registros no BD. Faça isso com os links Excluir no navegador ou no SSOX.
@@ -94,13 +91,13 @@ Testar o aplicativo
 
     ![Menu contextual](working-with-sql/_static/stopIIS.png)
 
-   * Se você estiver executando o VS no modo sem depuração, pressione F5 para executar no modo de depuração
-   * Se você estiver executando o VS no modo de depuração, pare o depurador e pressione F5
-   
+    * Se você estiver executando o VS no modo sem depuração, pressione F5 para executar no modo de depuração
+    * Se você estiver executando o VS no modo de depuração, pare o depurador e pressione F5
+
 O aplicativo mostra os dados propagados.
 
 ![Aplicativo de filme MVC aberto no Microsoft Edge, mostrando os dados do filme](working-with-sql/_static/m55.png)
 
->[!div class="step-by-step"]
-[Anterior](adding-model.md)
-[Próximo](controller-methods-views.md)  
+> [!div class="step-by-step"]
+> [Anterior](adding-model.md)
+> [Próximo](controller-methods-views.md)  

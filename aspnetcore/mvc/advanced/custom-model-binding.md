@@ -1,7 +1,7 @@
 ---
-title: "Associação de modelos personalizada"
+title: Associação de modelos personalizada no ASP.NET Core
 author: ardalis
-description: "Personalizando a associação de modelos no ASP.NET Core MVC."
+description: Saiba como a associação de modelos permite que as ações do controlador trabalhem diretamente com os tipos de modelo no ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 04/10/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: 313bc586a1c313f0bf5d8f413a4b082ffc2b7f0c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a687753083d3b11898e9ff35828780a5ad240854
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="custom-model-binding"></a>Associação de modelos personalizada
+# <a name="custom-model-binding-in-aspnet-core"></a>Associação de modelos personalizada no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
@@ -31,7 +31,7 @@ Os associadores de modelos padrão dão suporte à maioria dos tipos de dados co
 
 A associação de modelos usa definições específicas para os tipos nos quais opera. Um *tipo simples* é convertido de uma única cadeia de caracteres na entrada. Um *tipo complexo* é convertido de vários valores de entrada. A estrutura determina a diferença de acordo com a existência de um `TypeConverter`. Recomendamos que você crie um conversor de tipo se tiver um mapeamento `string` -> `SomeType` simples que não exige recursos externos.
 
-Antes de criar seu próprio associador de modelos personalizado, vale a pena analisar como os associadores de modelos existentes são implementados. Considere o [ByteArrayModelBinder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder), que pode ser usado para converter cadeias de caracteres codificadas em Base64 em matrizes de bytes. As matrizes de bytes costumam ser armazenadas como arquivos ou campos BLOB do banco de dados.
+Antes de criar seu próprio associador de modelos personalizado, vale a pena analisar como os associadores de modelos existentes são implementados. Considere o [ByteArrayModelBinder](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder), que pode ser usado para converter cadeias de caracteres codificadas em Base64 em matrizes de bytes. As matrizes de bytes costumam ser armazenadas como arquivos ou campos BLOB do banco de dados.
 
 ### <a name="working-with-the-bytearraymodelbinder"></a>Trabalhando com o ByteArrayModelBinder
 
@@ -45,7 +45,7 @@ Uma pequena parte da cadeia de caracteres codificada é mostrada na seguinte ima
 
 Siga as instruções do [LEIAME da amostra](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/advanced/custom-model-binding/sample/CustomModelBindingSample/README.md) para converter a cadeia de caracteres codificada em Base64 em um arquivo.
 
-O ASP.NET Core MVC pode usar uma cadeia de caracteres codificada em Base64 e usar um `ByteArrayModelBinder` para convertê-la em uma matriz de bytes. O [ByteArrayModelBinderProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider) que implementa [IModelBinderProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider) mapeia argumentos `byte[]` para `ByteArrayModelBinder`:
+O ASP.NET Core MVC pode usar uma cadeia de caracteres codificada em Base64 e usar um `ByteArrayModelBinder` para convertê-la em uma matriz de bytes. O [ByteArrayModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider) que implementa [IModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider) mapeia argumentos `byte[]` para `ByteArrayModelBinder`:
 
 ```csharp
 public IModelBinder GetBinder(ModelBinderProviderContext context)
@@ -64,11 +64,11 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 }
 ```
 
-Ao criar seu próprio associador de modelos personalizado, você pode implementar seu próprio tipo `IModelBinderProvider` ou usar o [ModelBinderAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinderattribute).
+Ao criar seu próprio associador de modelos personalizado, você pode implementar seu próprio tipo `IModelBinderProvider` ou usar o [ModelBinderAttribute](/dotnet/api/microsoft.aspnetcore.mvc.modelbinderattribute).
 
 O seguinte exemplo mostra como usar `ByteArrayModelBinder` para converter uma cadeia de caracteres codificada em Base64 em um `byte[]` e salvar o resultado em um arquivo:
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post1&highlight=3)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post1&highlight=3)]
 
 Execute POST em uma cadeia de caracteres codificada em Base64 para esse método de API usando uma ferramenta como o [Postman](https://www.getpostman.com/):
 
@@ -76,7 +76,7 @@ Execute POST em uma cadeia de caracteres codificada em Base64 para esse método 
 
 Desde que o associador possa associar dados de solicitação a propriedades ou argumentos nomeados de forma adequada, a associação de modelos terá êxito. O seguinte exemplo mostra como usar `ByteArrayModelBinder` com um modelo de exibição:
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post2&highlight=2)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post2&highlight=2)]
 
 ## <a name="custom-model-binder-sample"></a>Amostra de associador de modelos personalizado
 
@@ -88,21 +88,21 @@ Nesta seção, implementaremos um associador de modelos personalizado que:
 
 A seguinte amostra usa o atributo `ModelBinder` no modelo `Author`:
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Data/Author.cs?highlight=10)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Data/Author.cs?highlight=10)]
 
 No código anterior, o atributo `ModelBinder` especifica o tipo de `IModelBinder` que deve ser usado para associar parâmetros de ação `Author`. 
 
 O `AuthorEntityBinder` é usado para associar um parâmetro `Author` buscando a entidade de uma fonte de dados usando o Entity Framework Core e uma `authorId`:
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinder.cs?name=demo)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinder.cs?name=demo)]
 
 O seguinte código mostra como usar o `AuthorEntityBinder` em um método de ação:
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo2&highlight=2)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo2&highlight=2)]
 
 O atributo `ModelBinder` pode ser usado para aplicar o `AuthorEntityBinder` aos parâmetros que não usam convenções padrão:
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
 Neste exemplo, como o nome do argumento não é o `authorId` padrão, ele é especificado no parâmetro com o atributo `ModelBinder`. Observe que o controlador e o método de ação são simplificados, comparado à pesquisa da entidade no método de ação. A lógica para buscar o autor usando o Entity Framework Core é movida para o associador de modelos. Isso pode ser uma simplificação considerável quando há vários métodos associados ao modelo do autor e pode ajudá-lo a seguir o [princípio DRY](http://deviq.com/don-t-repeat-yourself/).
 
@@ -112,13 +112,13 @@ Aplique o atributo `ModelBinder` a propriedades de modelo individuais (como em u
 
 Em vez de aplicar um atributo, você pode implementar `IModelBinderProvider`. É assim que os associadores de estrutura interna são implementados. Quando você especifica o tipo no qual o associador opera, você especifica o tipo de argumento que ele produz, **não** a entrada aceita pelo associador. O provedor de associador a seguir funciona com o `AuthorEntityBinder`. Quando ele é adicionado à coleção do MVC de provedores, você não precisa usar o atributo `ModelBinder` em `Author` ou parâmetros tipados `Author`.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinderProvider.cs?highlight=17-20)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinderProvider.cs?highlight=17-20)]
 
 > Observação: o código anterior retorna um `BinderTypeModelBinder`. O `BinderTypeModelBinder` atua como um alocador para associadores de modelos e fornece a DI (injeção de dependência). O `AuthorEntityBinder` exige que a DI acesse o EF Core. Use `BinderTypeModelBinder` se o associador de modelos exigir serviços da DI.
 
 Para usar um provedor de associador de modelos personalizado, adicione-o a `ConfigureServices`:
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
 
 Ao avaliar associadores de modelos, a coleção de provedores é examinada na ordem. O primeiro provedor que retorna um associador é usado.
 
@@ -128,11 +128,11 @@ A imagem a seguir mostra os associadores de modelos padrão do depurador.
 
 A adição do provedor ao final da coleção pode resultar na chamada a um associador de modelos interno antes que o associador personalizado tenha uma oportunidade. Neste exemplo, o provedor personalizado é adicionado ao início da coleção para garantir que ele é usado para argumentos de ação `Author`.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
 
 ## <a name="recommendations-and-best-practices"></a>Recomendações e melhores práticas
 
 Associadores de modelos personalizados:
 - Não devem tentar definir códigos de status ou retornar resultados (por exemplo, 404 Não Encontrado). Se a associação de modelos falhar, um [filtro de ação](xref:mvc/controllers/filters) ou uma lógica no próprio método de ação deverá resolver a falha.
 - São muito úteis para eliminar código repetitivo e interesses paralelos de métodos de ação.
-- Normalmente, não devem ser usados para converter uma cadeia de caracteres em um tipo personalizado; um [`TypeConverter`](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) geralmente é uma opção melhor.
+- Normalmente, não devem ser usados para converter uma cadeia de caracteres em um tipo personalizado; um [`TypeConverter`](/dotnet/api/system.componentmodel.typeconverter) geralmente é uma opção melhor.

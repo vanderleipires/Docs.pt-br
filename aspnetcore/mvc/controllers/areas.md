@@ -1,7 +1,7 @@
 ---
-title: "Áreas"
+title: Áreas no ASP.NET Core
 author: rick-anderson
-description: "Mostra como trabalhar com áreas."
+description: Saiba por que as áreas são um recurso do ASP.NET MVC usado para organizar funcionalidades relacionadas em um grupo como um namespace (para roteamento) e uma estrutura de pasta (para exibições) separados.
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: 1ade49de3f6c58edc4ea7b06bc593b3db797081c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 61527eb350b5aba9cb37b1de5acdeae1287bf073
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="areas"></a>Áreas
+# <a name="areas-in-aspnet-core"></a>Áreas no ASP.NET Core
 
 Por [Dhananjay Kumar](https://twitter.com/debug_mode) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -125,7 +125,7 @@ Depois de definir a hierarquia de pastas, você precisa informar ao MVC que cada
    }
    ```
 
-Configure uma definição de rota que funciona com as áreas recém-criadas. O artigo [Roteamento para ações do controlador](routing.md) apresenta detalhes sobre como criar definições de rota, incluindo o uso de rotas convencionais versus rotas de atributo. Neste exemplo, usaremos uma rota convencional. Para fazer isso, abra o arquivo *Startup.cs* e modifique-o adicionando a definição de rota nomeada `areaRoute` abaixo.
+Configure uma definição de rota que funciona com as áreas recém-criadas. O artigo [Rota para ações do controlador](routing.md) apresenta detalhes de como criar definições de rota, incluindo o uso de rotas convencionais versus rotas de atributo. Neste exemplo, usaremos uma rota convencional. Para fazer isso, abra o arquivo *Startup.cs* e modifique-o adicionando a definição de rota nomeada `areaRoute` abaixo.
 
 ```csharp
 ...

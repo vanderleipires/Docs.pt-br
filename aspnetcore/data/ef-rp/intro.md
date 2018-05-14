@@ -1,7 +1,7 @@
 ---
-title: "Páginas do Razor com o Entity Framework Core – tutorial 1 de 8"
+title: Páginas Razor com o Entity Framework Core no ASP.NET Core – Tutorial 1 de 8
 author: rick-anderson
-description: "Mostra como criar um aplicativo das Páginas do Razor usando o Entity Framework Core"
+description: Mostra como criar um aplicativo das Páginas do Razor usando o Entity Framework Core
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: 091f34da347d52ba8e3e87779ddc4aeb790c2800
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 99a8d158c896566c2f6e6c22e4b37b1956e21cbf
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Introdução às Páginas do Razor e ao Entity Framework Core usando o Visual Studio (1 de 8)
+# <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Páginas Razor com o Entity Framework Core no ASP.NET Core – Tutorial 1 de 8
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -27,13 +27,13 @@ O aplicativo de exemplo é um site de uma Contoso University fictícia. Ele incl
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[!INCLUDE[install 2.0](../../includes/install2.0.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 Familiaridade com as [Páginas do Razor](xref:mvc/razor-pages/index). Os novos programadores devem concluir a [Introdução às Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start) antes de começar esta série.
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Caso tenha um problema que não consiga resolver, em geral, você poderá encontrar a solução comparando o código com o [estágio concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) ou o [projeto concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final). Para obter uma lista de erros comuns e como resolvê-los, consulte [a seção Solução de problemas do último tutorial da série](xref:data/ef-mvc/advanced#common-errors). Caso não encontre o que precisa na seção, poste uma pergunta no [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core) sobre o [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) ou o [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core).
+Se você tem algum problema que não consegue resolver, geralmente é possível encontrar a solução comparando seu código com o [estágio concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots). Para obter uma lista de erros comuns e como resolvê-los, consulte [a seção Solução de problemas do último tutorial da série](xref:data/ef-mvc/advanced#common-errors). Caso não encontre o que precisa na seção, poste uma pergunta no [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core) sobre o [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) ou o [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core).
 
 > [!TIP]
 > Esta série de tutoriais baseia-se no que foi feito nos tutoriais anteriores. Considere a possibilidade de salvar uma cópia do projeto após a conclusão bem-sucedida de cada tutorial. Caso tenha problemas, comece novamente no tutorial anterior em vez de voltar ao início. Como alternativa, você pode baixar um [estágio concluído](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) e começar novamente usando o estágio concluído.
@@ -98,9 +98,9 @@ Nas seções a seguir, é criada uma classe para cada uma dessas entidades.
 
 Crie uma pasta *Models*. Na pasta *Models*, crie um arquivo de classe chamado *Student.cs* com o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
 
-A propriedade `ID` se torna a coluna de chave primária da tabela de BD (banco de dados) que corresponde a essa classe. Por padrão, o EF Core interpreta uma propriedade nomeada `ID` ou `classnameID` como a chave primária.
+A propriedade `ID` se torna a coluna de chave primária da tabela de BD (banco de dados) que corresponde a essa classe. Por padrão, o EF Core interpreta uma propriedade nomeada `ID` ou `classnameID` como a chave primária. Em `classnameID`, `classname` é o nome da classe, como `Student` no exemplo anterior.
 
 A propriedade `Enrollments` é uma propriedade de navegação. As propriedades de navegação vinculam-se a outras entidades que estão relacionadas a essa entidade. Nesse caso, a propriedade `Enrollments` de uma `Student entity` armazena todas as entidades `Enrollment` relacionadas a essa `Student`. Por exemplo, se uma linha Aluno no BD tiver duas linhas Registro relacionadas, a propriedade de navegação `Enrollments` conterá duas entidades `Enrollment`. Uma linha `Enrollment` relacionada é uma linha que contém o valor de chave primária do aluno na coluna `StudentID`. Por exemplo, suponha que o aluno com ID=1 tenha duas linhas na tabela `Enrollment`. A tabela `Enrollment` tem duas linhas com `StudentID` = 1. `StudentID` é uma chave estrangeira na tabela `Enrollment` que especifica o aluno na tabela `Student`.
 
@@ -112,7 +112,7 @@ Se uma propriedade de navegação puder armazenar várias entidades, a proprieda
 
 Na pasta *Models*, crie *Enrollment.cs* com o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
 
 A propriedade `EnrollmentID` é a chave primária. Essa entidade usa o padrão `classnameID` em vez de `ID` como a entidade `Student`. Normalmente, os desenvolvedores escolhem um padrão e o usam em todo o modelo de dados. Em um tutorial posterior, o uso de uma ID sem nome de classe é mostrado para facilitar a implementação da herança no modelo de dados.
 
@@ -130,7 +130,7 @@ O EF Core interpreta uma propriedade como uma chave estrangeira se ela é nomead
 
 Na pasta *Models*, crie *Course.cs* com o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
 
 A propriedade `Enrollments` é uma propriedade de navegação. Uma entidade `Course` pode estar relacionada a qualquer quantidade de entidades `Enrollment`.
 
@@ -144,7 +144,7 @@ Na pasta do projeto, crie uma pasta chamada *Dados*.
 
 Na pasta *Dados*, crie *SchoolContext.cs* com o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
 
 Esse código cria uma propriedade `DbSet` para cada conjunto de entidades. Na terminologia do EF Core:
 
@@ -155,7 +155,7 @@ Esse código cria uma propriedade `DbSet` para cada conjunto de entidades. Na te
 
 Quando o BD é criado, o EF Core cria tabelas que têm nomes iguais aos nomes de propriedade `DbSet`. Nomes de propriedade para coleções são normalmente plurais (Students em vez de Student). Os desenvolvedores não concordam sobre se os nomes de tabela devem estar no plural. Para esses tutoriais, o comportamento padrão é substituído pela especificação de nomes singulares de tabela no DbContext. Para especificar nomes singulares de tabela, adicione o seguinte código realçado:
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
 
 ## <a name="register-the-context-with-dependency-injection"></a>Registrar o contexto com a injeção de dependência
 
@@ -163,19 +163,19 @@ O ASP.NET Core inclui a [injeção de dependência](xref:fundamentals/dependency
 
 Para registrar `SchoolContext` como um serviço, abra *Startup.cs* e adicione as linhas realçadas ao método `ConfigureServices`.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
 
 O nome da cadeia de conexão é passado para o contexto com a chamada de um método em um objeto `DbContextOptionsBuilder`. Para o desenvolvimento local, o [sistema de configuração do ASP.NET Core](xref:fundamentals/configuration/index) lê a cadeia de conexão do arquivo *appsettings.json*.
 
 Adicione instruções `using` aos namespaces `ContosoUniversity.Data` e `Microsoft.EntityFrameworkCore`. Compile o projeto.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_Usings)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Usings)]
 
 Abra o arquivo *appsettings.json* e adicione uma cadeia de conexão, conforme mostrado no seguinte código:
 
 [!code-json[](./intro/samples/cu/appsettings1.json?highlight=2-4)]
 
-A cadeia de conexão anterior usa `ConnectRetryCount=0` para impedir o travamento do [SQLClient](https://docs.microsoft.com/dotnet/framework/data/adonet/ef/sqlclient-for-the-entity-framework).
+A cadeia de conexão anterior usa `ConnectRetryCount=0` para impedir o travamento do [SQLClient](/dotnet/framework/data/adonet/ef/sqlclient-for-the-entity-framework).
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
@@ -187,7 +187,7 @@ O EF Core cria um BD vazio. Nesta seção, um método *Seed* é escrito para pop
 
 Na pasta *Dados*, crie um novo arquivo de classe chamado *DbInitializer.cs* e adicione o seguinte código:
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
 O código verifica se há alunos no BD. Se não houver nenhum aluno no BD, o BD será propagado com os dados de teste. Ele carrega os dados de teste em matrizes em vez de em coleções `List<T>` para otimizar o desempenho.
 
@@ -201,7 +201,7 @@ Em *Program.cs*, modifique o método `Main` para fazer o seguinte:
 
 O código a seguir mostra o arquivo *Program.cs* atualizado.
 
-[!code-csharp[Main](intro/samples/cu/ProgramOriginal.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu/ProgramOriginal.cs?name=snippet)]
 
 A primeira vez que o aplicativo é executado, o BD é criado e propagado com os dados de teste. Quando o modelo de dados é atualizado:
 * Exclua o BD.
@@ -226,7 +226,7 @@ Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Utils
 
 O comando anterior adiciona os pacotes NuGet ao arquivo *.csproj:
 
-[!code-csharp[Main](intro/samples/cu/ContosoUniversity1_csproj.txt?highlight=7-8)]
+[!code-csharp[](intro/samples/cu/ContosoUniversity1_csproj.txt?highlight=7-8)]
 
 <a name="scaffold"></a>
 ## <a name="scaffold-the-model"></a>Gerar o modelo por scaffolding
@@ -239,18 +239,6 @@ O comando anterior adiciona os pacotes NuGet ao arquivo *.csproj:
 dotnet restore
 dotnet aspnet-codegenerator razorpage -m Student -dc SchoolContext -udl -outDir Pages\Students --referenceScriptLibraries
  ```
- 
-Se o seguinte erro for gerado:
-
-```text
-Unhandled Exception: System.IO.FileNotFoundException: 
-Could not load file or assembly 
-'Microsoft.VisualStudio.Web.CodeGeneration.Utils, 
-Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
-The system cannot find the file specified.
-```
-
-Execute o comando novamente e deixe um comentário na parte inferior da página.
 
 Se você obtiver o erro:
   ```
@@ -266,7 +254,7 @@ Compile o projeto. O build gera erros, como o seguinte:
 
  Altere `_context.Student` globalmente para `_context.Students` (ou seja, adicione um "s" a `Student`). 7 ocorrências foram encontradas e atualizadas. Esperamos corrigir [este bug](https://github.com/aspnet/Scaffolding/issues/633) na próxima versão.
 
-[!INCLUDE[model4tbl](../../includes/RP/model4tbl.md)]
+[!INCLUDE [model4tbl](../../includes/RP/model4tbl.md)]
 
  <a name="test"></a>
 ### <a name="test-the-app"></a>Testar o aplicativo
@@ -288,7 +276,7 @@ Expanda o nó **Tabelas**.
 
 Clique com o botão direito do mouse na tabela **Aluno** e clique em **Exibir Dados** para ver as colunas criadas e as linhas inseridas na tabela.
 
-Os arquivos *.mdf* e *.ldf* do BD estão localizados na pasta *C:\Users\\<yourusername>*.
+Os arquivos <em>.mdf</em> e <em>.ldf</em> do BD estão localizados na pasta <em>C:\Users\\<yourusername></em>.
 
 `EnsureCreated` é chamado na inicialização do aplicativo, que permite que o seguinte fluxo de trabalho:
 
@@ -322,12 +310,12 @@ O código assíncrono introduz uma pequena quantidade de sobrecarga em tempo de 
 
 No código a seguir, a palavra-chave `async`, o valor retornado `Task<T>`, a palavra-chave `await` e o método `ToListAsync` fazem o código ser executado de forma assíncrona.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_ScaffoldedIndex)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_ScaffoldedIndex)]
 
 * A palavra-chave `async` instrui o compilador a:
 
   * Gerar retornos de chamada para partes do corpo do método.
-  * Criar automaticamente o objeto [Task](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task?view=netframework-4.7) que é retornado. Para obter mais informações, consulte [Tipo de retorno de Tarefa](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/async-return-types#BKMK_TaskReturnType).
+  * Criar automaticamente o objeto [Task](/dotnet/api/system.threading.tasks.task?view=netframework-4.7) que é retornado. Para obter mais informações, consulte [Tipo de retorno de Tarefa](/dotnet/csharp/programming-guide/concepts/async/async-return-types#BKMK_TaskReturnType).
 
 * O tipo de retorno implícito `Task` representa um trabalho em andamento.
 
@@ -343,9 +331,9 @@ Algumas coisas a serem consideradas ao escrever um código assíncrono que usa o
 
 * Para aproveitar os benefícios de desempenho do código assíncrono, verifique se os pacotes de biblioteca (como para paginação) usam o código assíncrono se eles chamam métodos do EF Core que enviam consultas ao BD.
 
-Para obter mais informações sobre a programação assíncrona no .NET, consulte [Visão geral da programação assíncrona](https://docs.microsoft.com/dotnet/articles/standard/async).
+Para obter mais informações sobre a programação assíncrona no .NET, consulte [Visão geral da programação assíncrona](/dotnet/articles/standard/async).
 
 No próximo tutorial, as operações CRUD (criar, ler, atualizar e excluir) básicas são examinadas.
 
->[!div class="step-by-step"]
-[Avançar](xref:data/ef-rp/crud)
+> [!div class="step-by-step"]
+> [Avançar](xref:data/ef-rp/crud)

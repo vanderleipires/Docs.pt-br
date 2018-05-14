@@ -1,23 +1,24 @@
 ---
-title: "Adicionando um modelo para um aplicativo de Páginas do Razor com o Visual Studio para Mac"
+title: Adicionar um modelo a um aplicativo Páginas Razor do ASP.NET Core com o Visual Studio para Mac
 author: rick-anderson
-description: "Adicionando um modelo para um aplicativo de Páginas do Razor no ASP.NET Core usando o Visual Studio para Mac"
+description: Saiba como adicionar um modelo para um aplicativo Páginas Razor no ASP.NET Core usando o Visual Studio para Mac.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/model
-ms.openlocfilehash: b8e5d65e195f9824602ec15d05dc013faa2a8dc9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 97bc9f14b8d6da958a7f587e54a37d2d0e0aabd4
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-for-mac"></a>Adicionando um modelo para um aplicativo de Páginas do Razor no ASP.NET Core com o Visual Studio para Mac
+# <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-for-mac"></a>Adicionar um modelo a um aplicativo Páginas Razor do ASP.NET Core com o Visual Studio para Mac
 
-[!INCLUDE[model1](../../includes/RP/model1.md)]
+[!INCLUDE [model1](../../includes/RP/model1.md)]
 
 ## <a name="add-a-data-model"></a>Adicionar um modelo de dados
 
@@ -29,10 +30,11 @@ ms.lasthandoff: 01/30/2018
   * Selecione **Classe Vazia** no painel central.
   * Nomeie a classe **Movie** e selecione **Novo**.
 
-[!INCLUDE[model 2](../../includes/RP/model2.md)]
-[!INCLUDE[model 2a](../../includes/RP/model2a.md)]
+[!INCLUDE [model 2](../../includes/RP/model2.md)]
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
+[!INCLUDE [model 2a](../../includes/RP/model2a.md)]
+
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
 
 Clique com o botão direito do mouse em uma linha curvada vermelha, por exemplo, `MovieContext` na linha `services.AddDbContext<MovieContext>(options =>`. Selecione **Correção Rápida > using RazorPagesMovie.Models;**. O Visual studio adiciona a instrução using.
 
@@ -54,25 +56,26 @@ Para editar um arquivo *.csproj*:
 
 Adicione a referência da ferramenta `Microsoft.EntityFrameworkCore.Tools.DotNet` para o segundo **\<ItemGroup>**.:
 
-[!code-xml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj?highlight=10)]
+[!code-xml[](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj?highlight=10)]
 
 Os números de versão mostrados no código a seguir estavam corretos no momento da gravação.
 
-[!INCLUDE[model3](../../includes/RP/model3.md)]
-[!INCLUDE[model 4x](../../includes/RP/model4x.md)]
+[!INCLUDE [model3](../../includes/RP/model3.md)]
 
-[!INCLUDE[model 4 exit](../../includes/RP/model4exit.md)]
+[!INCLUDE [model 4x](../../includes/RP/model4x.md)]
 
-[!INCLUDE[model 4](../../includes/RP/model4.md)]
+[!INCLUDE [model 4 exit](../../includes/RP/model4exit.md)]
+
+[!INCLUDE [model 4](../../includes/RP/model4.md)]
 
 ### <a name="add-the-pagesmovies-files-to-the-project"></a>Adicionar os arquivos de páginas/filmes ao projeto
 
 * No Visual Studio, clique com o botão direito do mouse na pasta *Páginas* e selecione **Adicionar > Adicionar Pasta Existente**.
 * Selecione a pasta *Filmes*.
-* Na caixa de diálogo *Selecionar arquivos para incluir no projeto*, selecione **Incluir Todos**.
+* Na caixa de diálogo *Escolher arquivos para incluir no projeto*, selecione **Incluir Todos**.
 
 O tutorial a seguir explica os arquivos criados por scaffolding.
 
->[!div class="step-by-step"]
-[Anterior: Introdução](xref:tutorials/razor-pages-mac/razor-pages-start)
-[Próximo: Páginas do Razor geradas por scaffolding](xref:tutorials/razor-pages-mac/page)
+> [!div class="step-by-step"]
+> [Anterior: Introdução](xref:tutorials/razor-pages-mac/razor-pages-start)
+> [Próximo: Páginas Razor geradas por scaffolding](xref:tutorials/razor-pages-mac/page)

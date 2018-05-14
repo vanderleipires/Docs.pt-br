@@ -1,7 +1,7 @@
 ---
-title: "Testando a lógica do controlador no ASP.NET Core"
+title: Lógica do controlador de teste no ASP.NET Core
 author: ardalis
-description: "Saiba como testar a lógica do controlador no ASP.NET Core com o Moq e o xUnit."
+description: Saiba como testar a lógica do controlador no ASP.NET Core com o Moq e o xUnit.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: cabb1d2498e6c993b327c2fb9719525ec2181f9e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 51b7a02c697807c9e3504b70f89370126ee0e781
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="testing-controller-logic-in-aspnet-core"></a>Testando a lógica do controlador no ASP.NET Core
+# <a name="test-controller-logic-in-aspnet-core"></a>Lógica do controlador de teste no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
@@ -40,20 +40,20 @@ Responsabilidades típicas do controlador:
 
 ## <a name="unit-testing"></a>Teste de unidade
 
-O [teste de unidade](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) envolve o teste de uma parte de um aplicativo de teste em isolamento de sua infraestrutura e suas dependências. Ao executar o teste de unidade na lógica do controlador, somente o conteúdo de uma única ação é testada, não o comportamento de suas dependências ou da própria estrutura. Ao executar o teste de unidade nas ações do controlador, concentre-se apenas em seu comportamento. Um teste de unidade do controlador evita itens como [filtros](filters.md), [roteamento](../../fundamentals/routing.md) ou [associação de modelos](../models/model-binding.md). Ao se concentrarem no teste de apenas uma coisa, os testes de unidade geralmente são simples de serem escritos e rápidos de serem executados. Um conjunto bem escrito de testes de unidade pode ser executado com frequência sem muita sobrecarga. No entanto, os testes de unidade não detectam problemas na interação entre componentes, que é a finalidade dos [testes de integração](xref:mvc/controllers/testing#integration-testing).
+O [teste de unidade](/dotnet/articles/core/testing/unit-testing-with-dotnet-test) envolve o teste de uma parte de um aplicativo de teste em isolamento de sua infraestrutura e suas dependências. Ao executar o teste de unidade na lógica do controlador, somente o conteúdo de uma única ação é testada, não o comportamento de suas dependências ou da própria estrutura. Ao executar o teste de unidade nas ações do controlador, concentre-se apenas em seu comportamento. Um teste de unidade do controlador evita itens como [filtros](filters.md), [roteamento](../../fundamentals/routing.md) ou [associação de modelos](../models/model-binding.md). Ao se concentrarem no teste de apenas uma coisa, os testes de unidade geralmente são simples de serem escritos e rápidos de serem executados. Um conjunto bem escrito de testes de unidade pode ser executado com frequência sem muita sobrecarga. No entanto, os testes de unidade não detectam problemas na interação entre os componentes, que é a finalidade dos [testes de integração](xref:mvc/controllers/testing#integration-testing).
 
 Se você estiver escrevendo filtros personalizados, rotas, etc., execute o teste de unidade neles, mas não como parte dos testes em uma ação específica do controlador. Eles devem ser testados em isolamento.
 
 > [!TIP]
-> [Crie e execute testes de unidade com o Visual Studio](https://docs.microsoft.com/visualstudio/test/unit-test-your-code).
+> [Crie e execute testes de unidade com o Visual Studio](/visualstudio/test/unit-test-your-code).
 
 Para demonstrar o teste de unidade, examine o controlador a seguir. Ele exibe uma lista de sessões de debate e permite que novas sessões de debate sejam criadas com um POST:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
 
 O controlador está seguindo o [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/), esperando receber da injeção de dependência uma instância de `IBrainstormSessionRepository`. Isso facilita muito o teste com o uso de uma estrutura de objeto fictício, como o [Moq](https://www.nuget.org/packages/Moq/). O método `HTTP GET Index` não tem nenhum loop ou branch e chama apenas um método. Para testar este método `Index`, precisamos verificar se um `ViewResult` for retornado, com um `ViewModel` do método `List` do repositório.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
 
 O método `HomeController` `HTTP POST Index` (mostrado acima) deve verificar se:
 
@@ -63,7 +63,7 @@ O método `HomeController` `HTTP POST Index` (mostrado acima) deve verificar se:
 
 O estado de modelo inválido pode ser testado com a adição de erros usando `AddModelError`, conforme mostrado no primeiro teste abaixo.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
 
 O primeiro teste confirma que quando `ModelState` não é válido, o mesmo `ViewResult` é retornado como para uma solicitação `GET`. Observe que o teste não tenta passar um modelo inválido. Isso não funcionará de qualquer forma, pois a associação de modelos não está em execução (embora um [teste de integração](xref:mvc/controllers/testing#integration-testing) use a associação de modelos de exercícios). Nesse caso, a associação de modelos não está sendo testada. Esses testes de unidade estão testando apenas o que o código faz no método de ação.
 
@@ -74,23 +74,23 @@ O segundo teste verifica que quando `ModelState` é válido, um novo `Brainstorm
 
 Outro controlador no aplicativo exibe informações relacionadas a uma sessão de debate específica. Ele inclui uma lógica para lidar com valores de ID inválidos:
 
-[!code-csharp[Main](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
+[!code-csharp[](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
 
 A ação do controlador tem três casos a serem testados, um para cada instrução `return`:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
 
 O aplicativo expõe a funcionalidade como uma API Web (uma lista de ideias associadas a uma sessão de debate e um método para adicionar novas ideias a uma sessão):
 
 <a name="ideas-controller"></a>
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
 
 O método `ForSession` retorna uma lista de tipos `IdeaDTO`. Evite retornar as entidades de domínio de negócios diretamente por meio de chamadas à API, pois, com frequência, elas incluem mais dados do que o cliente de API exige e acoplam desnecessariamente o modelo de domínio interno do aplicativo à API exposta externamente. O mapeamento entre entidades de domínio e os tipos que você retornará de forma eletrônica pode ser feito manualmente (usando um LINQ `Select`, conforme mostrado aqui) ou uma biblioteca como o [AutoMapper](https://github.com/AutoMapper/AutoMapper)
 
 Os testes de unidade para os métodos de API `Create` e `ForSession`:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
 
 Conforme mencionado anteriormente, para testar o comportamento do método quando `ModelState` é inválido, adicione um erro de modelo ao controlador como parte do teste. Não tente testar a validação ou a associação de modelos nos testes de unidade – teste apenas o comportamento do método de ação quando houver um valor `ModelState` específico.
 
@@ -100,7 +100,7 @@ O último teste verifica se o método `Update` do repositório é chamado. Como 
 
 ## <a name="integration-testing"></a>Teste de integração
 
-O [teste de integração](../../testing/integration-testing.md) é feito para garantir que módulos separados dentro do aplicativo funcionem corretamente juntos. Em geral, qualquer coisa que você possa testar com um teste de unidade, também pode testar com um teste de integração, mas o contrário não é verdadeiro. No entanto, os testes de integração tendem a ser muito mais lentos do que os testes de unidade. Portanto, é melhor testar tudo o que você puder com testes de unidade e usar testes de integração para cenários que envolvem vários colaboradores.
+Os [Testes de integração](../../testing/integration-testing.md) são executados para garantir que os módulos separados no aplicativo trabalhem juntos corretamente. Em geral, qualquer coisa que você possa testar com um teste de unidade, também pode testar com um teste de integração, mas o contrário não é verdadeiro. No entanto, os testes de integração tendem a ser muito mais lentos do que os testes de unidade. Portanto, é melhor testar tudo o que você puder com testes de unidade e usar testes de integração para cenários que envolvem vários colaboradores.
 
 Embora eles ainda possam ser úteis, objetos fictícios raramente são usados em testes de integração. Em um teste de unidade, objetos fictícios são uma maneira eficiente de controlar como os colaboradores fora da unidade que está sendo testada devem se comportar para fins do teste. Em um teste de integração, colaboradores reais são usados para confirmar que todo o subsistema funciona junto corretamente.
 
@@ -112,7 +112,7 @@ Neste aplicativo de exemplo, estou usando o suporte de InMemoryDatabase do Entit
 
 A classe `Startup`:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Startup.cs?highlight=19,20,34,35,43,52)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Startup.cs?highlight=19,20,34,35,43,52)]
 
 Você verá o método `GetTestSession` que costuma ser usado nos testes de integração abaixo.
 
@@ -127,11 +127,11 @@ The view 'Index' wasn't found. The following locations were searched:
 
 Para corrigir esse problema, você precisa configurar a raiz de conteúdo do servidor, para que ela possa localizar as exibições para o projeto que está sendo testado. Isso é feito por uma chamada a `UseContentRoot` na classe `TestFixture`, conforme mostrado abaixo:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/TestFixture.cs?highlight=30,33)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/TestFixture.cs?highlight=30,33)]
 
 A classe `TestFixture` é responsável por configurar e criar o `TestServer`, configurar um `HttpClient` para se comunicar com o `TestServer`. Cada um dos testes de integração usa a propriedade `Client` para se conectar ao servidor de teste e fazer uma solicitação.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/HomeControllerTests.cs?highlight=20,26,29,30,31,35,38,39,40,41,44,47,48)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/HomeControllerTests.cs?highlight=20,26,29,30,31,35,38,39,40,41,44,47,48)]
 
 No primeiro teste acima, a `responseString` armazena o HTML real renderizado de View, que pode ser inspecionado para confirmar se ele contém os resultados esperados.
 
@@ -143,7 +143,7 @@ Se o aplicativo expõe APIs Web, é uma boa ideia fazer com que os testes automa
 
 O seguinte conjunto de testes é direcionado ao método `Create` na classe [IdeasController](xref:mvc/controllers/testing#ideas-controller) mostrada acima:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/ApiIdeasControllerTests.cs)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/ApiIdeasControllerTests.cs)]
 
 Ao contrário dos testes de integração de ações que retornam exibições HTML, os métodos de API Web que retornam resultados podem normalmente ser desserializados como objetos fortemente tipados, como mostra o último teste acima. Nesse caso, o teste desserializa o resultado para uma instância `BrainstormSession` e confirma se a ideia foi corretamente adicionada à sua coleção de ideias.
 

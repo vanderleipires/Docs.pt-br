@@ -1,39 +1,39 @@
 <!--
-[!code-html[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
+[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_1stSearch)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_1stSearch)]
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchNull)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchNull)]
 
 ![Index view](../../tutorials/first-mvc-app/search/_static/ghost.png)
 
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?highlight=5&name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?highlight=5&name=snippet_1)]
 
 --> 
 
 O método `Index` anterior:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1,8&name=snippet_1stSearch)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1,8&name=snippet_1stSearch)]
 
 O método `Index` atualizado com o parâmetro `id`:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1,8&name=snippet_SearchID)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1,8&name=snippet_SearchID)]
 
 Agora você pode passar o título de pesquisa como dados de rota (um segmento de URL), em vez de como um valor de cadeia de consulta.
 
 ![Exibição de índice com a palavra “ghost” adicionada à URL e uma lista de filmes retornados com dois filmes, Ghostbusters e Ghostbusters 2](../../tutorials/first-mvc-app/search/_static/g2.png)
 
-No entanto, você não pode esperar que os usuários modifiquem a URL sempre que desejarem pesquisar um filme. Portanto, agora você adicionará uma interface do usuário para ajudá-los a filtrar os filmes. Se você tiver alterado a assinatura do método `Index` para testar como passar o parâmetro `ID` associado à rota, altere-o novamente para que ele use um parâmetro chamado `searchString`:
+No entanto, você não pode esperar que os usuários modifiquem a URL sempre que desejarem pesquisar um filme. Agora você adicionará os elementos da interface do usuário para ajudá-los a filtrar filmes. Se você tiver alterado a assinatura do método `Index` para testar como passar o parâmetro `ID` associado à rota, altere-o novamente para que ele use um parâmetro chamado `searchString`:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1&name=snippet_1stSearch)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1&name=snippet_1stSearch)]
 
 Abra o arquivo *Views/Movies/Index.cshtml* e, em seguida, adicione a marcação `<form>` realçada abaixo:
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexForm1.cshtml?highlight=10-16&range=4-21)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexForm1.cshtml?highlight=10-16&range=4-21)]
 
-A marcação `<form>` HTML usa o [Auxiliar de Marcação de Formulário](../../mvc/views/working-with-forms.md). Portanto, quando você enviar o formulário, a cadeia de caracteres de filtro será enviada para a ação `Index` do controlador de filmes. Salve as alterações e, em seguida, teste o filtro.
+A marcação `<form>` HTML usa o [Auxiliar de Marcação de Formulário](xref:mvc/views/working-with-forms). Portanto, quando você enviar o formulário, a cadeia de caracteres de filtro será enviada para a ação `Index` do controlador de filmes. Salve as alterações e, em seguida, teste o filtro.
 
 ![Exibição de índice com a palavra “ghost” digitada na caixa de texto Filtro de título](../../tutorials/first-mvc-app/search/_static/filter.png)
 
@@ -41,7 +41,7 @@ Não há nenhuma sobrecarga `[HttpPost]` do método `Index` que poderia ser espe
 
 Você poderá adicionar o método `[HttpPost] Index` a seguir.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1&name=snippet_SearchPost)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?highlight=1&name=snippet_SearchPost)]
 
 O parâmetro `notUsed` é usado para criar uma sobrecarga para o método `Index`. Falaremos sobre isso mais adiante no tutorial.
 
@@ -53,6 +53,6 @@ No entanto, mesmo se você adicionar esta versão `[HttpPost]` do método `Index
 
 ![Guia Rede das Ferramentas do Desenvolvedor no Microsoft Edge mostrando o corpo de uma solicitação com o valor de searchString “ghost”](../../tutorials/first-mvc-app/search/_static/f12_rb.png)
 
-Veja o parâmetro de pesquisa e o token [XSRF](../../security/anti-request-forgery.md) no corpo da solicitação. Observe, conforme mencionado no tutorial anterior, que o [Auxiliar de Marcação de Formulário](../../mvc/views/working-with-forms.md) gera um token antifalsificação [XSRF](../../security/anti-request-forgery.md). Não modificaremos os dados e, portanto, não precisamos validar o token no método do controlador.
+Veja o parâmetro de pesquisa e o token [XSRF](xref:security/anti-request-forgery) no corpo da solicitação. Observe, conforme mencionado no tutorial anterior, que o [Auxiliar de Marcação de Formulário](xref:mvc/views/working-with-forms) gera um token antifalsificação [XSRF](xref:security/anti-request-forgery). Não modificaremos os dados e, portanto, não precisamos validar o token no método do controlador.
 
 Como o parâmetro de pesquisa está no corpo da solicitação e não na URL, não é possível capturar essas informações de pesquisa para adicionar como Favoritos ou compartilhar com outras pessoas. Corrigiremos isso especificando que a solicitação deve ser `HTTP GET`.

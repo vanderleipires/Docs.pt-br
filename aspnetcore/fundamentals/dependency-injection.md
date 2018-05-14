@@ -1,7 +1,7 @@
 ---
-title: "Injeção de dependência no ASP.NET Core"
+title: Injeção de dependência no ASP.NET Core
 author: ardalis
-description: "Saiba como o ASP.NET Core implementa a injeção de dependência e como usá-la."
+description: Saiba como o ASP.NET Core implementa a injeção de dependência e como usá-la.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 43c937ff9631be3edc1f95b3689650e4574abfbd
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8a105f835dddfcd0e9f32059e644f60dc1fdbbe1
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injeção de dependência no ASP.NET Core
 
@@ -48,7 +48,6 @@ A injeção de construtor exige que o construtor em questão seja *público*. Ca
 
 > Um construtor adequado para o tipo 'YourType' não pôde ser localizado. Verifique se o tipo é concreto e se os serviços estão registrados para todos os parâmetros de um construtor público.
 
-
 A injeção de construtor exige apenas a existência de um construtor aplicável. Há suporte para sobrecargas de construtor, mas somente uma sobrecarga pode existir, cujos argumentos podem ser todos atendidos pela injeção de dependência. Se houver mais de um, o aplicativo gerará uma `InvalidOperationException`:
 
 > Vários construtores que aceitam todos os tipos de argumento fornecidos foram encontrados no tipo 'YourType'. Deve haver apenas um construtor aplicável.
@@ -77,35 +76,35 @@ O método `ConfigureServices` na classe `Startup` é responsável por definir os
 
 | Tipo de serviço | Tempo de vida |
 | ----- | ------- |
-| [Microsoft.AspNetCore.Hosting.IHostingEnvironment](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) | Singleton |
-| [Microsoft.Extensions.Logging.ILoggerFactory](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.iloggerfactory) | Singleton |
-| [Microsoft.Extensions.Logging.ILogger&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.ilogger) | Singleton |
-| [Microsoft.AspNetCore.Hosting.Builder.IApplicationBuilderFactory](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.builder.iapplicationbuilderfactory) | Transitório |
-| [Microsoft.AspNetCore.Http.IHttpContextFactory](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.ihttpcontextfactory) | Transitório |
-| [Microsoft.Extensions.Options.IOptions&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.options.ioptions-1) | Singleton |
+| [Microsoft.AspNetCore.Hosting.IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) | Singleton |
+| [Microsoft.Extensions.Logging.ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory) | Singleton |
+| [Microsoft.Extensions.Logging.ILogger&lt;T&gt;](/dotnet/api/microsoft.extensions.logging.ilogger) | Singleton |
+| [Microsoft.AspNetCore.Hosting.Builder.IApplicationBuilderFactory](/dotnet/api/microsoft.aspnetcore.hosting.builder.iapplicationbuilderfactory) | Transitório |
+| [Microsoft.AspNetCore.Http.IHttpContextFactory](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextfactory) | Transitório |
+| [Microsoft.Extensions.Options.IOptions&lt;T&gt;](/dotnet/api/microsoft.extensions.options.ioptions-1) | Singleton |
 | [System.Diagnostics.DiagnosticSource](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticsource) | Singleton |
 | [System.Diagnostics.DiagnosticListener](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticlistener) | Singleton |
-| [Microsoft.AspNetCore.Hosting.IStartupFilter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.istartupfilter) | Transitório |
-| [Microsoft.Extensions.ObjectPool.ObjectPoolProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.objectpool.objectpoolprovider) | Singleton |
-| [Microsoft.Extensions.Options.IConfigureOptions&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.options.iconfigureoptions-1) | Transitório |
-| [Microsoft.AspNetCore.Hosting.Server.IServer](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.server.iserver) | Singleton |
-| [Microsoft.AspNetCore.Hosting.IStartup](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.istartup) | Singleton |
-| [Microsoft.AspNetCore.Hosting.IApplicationLifetime](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) | Singleton |
+| [Microsoft.AspNetCore.Hosting.IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) | Transitório |
+| [Microsoft.Extensions.ObjectPool.ObjectPoolProvider](/dotnet/api/microsoft.extensions.objectpool.objectpoolprovider) | Singleton |
+| [Microsoft.Extensions.Options.IConfigureOptions&lt;T&gt;](/dotnet/api/microsoft.extensions.options.iconfigureoptions-1) | Transitório |
+| [Microsoft.AspNetCore.Hosting.Server.IServer](/dotnet/api/microsoft.aspnetcore.hosting.server.iserver) | Singleton |
+| [Microsoft.AspNetCore.Hosting.IStartup](/dotnet/api/microsoft.aspnetcore.hosting.istartup) | Singleton |
+| [Microsoft.AspNetCore.Hosting.IApplicationLifetime](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime) | Singleton |
 
 Veja abaixo um exemplo de como adicionar outros serviços ao contêiner usando vários métodos de extensão como `AddDbContext`, `AddIdentity` e `AddMvc`.
 
-[!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?highlight=5-6,8-10,12&range=39-56)]
+[!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=5-6,8-10,12&range=39-56)]
 
 Os recursos e o middleware fornecidos pelo ASP.NET, como o MVC, seguem uma convenção de uso de um único método de extensão Add*ServiceName* para registrar todos os serviços exigidos pelo recurso.
 
->[!TIP]
+> [!TIP]
 > Você pode solicitar alguns serviços fornecidos pela estrutura em métodos `Startup` por meio de suas listas de parâmetros – consulte [Inicialização do aplicativo](startup.md) para obter mais detalhes.
 
 ## <a name="registering-services"></a>Registrando serviços
 
 Você pode registrar seus próprios Serviços de Aplicativos conforme mostrado a seguir. O primeiro tipo genérico representa o tipo (normalmente uma interface) que será solicitado do contêiner. O segundo tipo genérico representa o tipo concreto do qual será criada uma instância pelo contêiner e que será usado para atender a essas solicitações.
 
-[!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?range=53-54)]
+[!code-csharp[](../common/samples/WebApplication1/Startup.cs?range=53-54)]
 
 > [!NOTE]
 > Cada método de extensão `services.Add<ServiceName>` adiciona (e possivelmente configura) serviços. Por exemplo, o `services.AddMvc()` adiciona os serviços exigidos pelo MVC. É recomendável que você siga essa convenção, colocando os métodos de extensão no namespace `Microsoft.Extensions.DependencyInjection`, para encapsular grupos de registros de serviço.
@@ -114,18 +113,18 @@ O método `AddTransient` é usado para mapear tipos abstratos para serviços con
 
 Na amostra deste artigo, há um controlador simples que exibe os nomes de caracteres, chamado `CharactersController`. Seu método `Index` exibe a lista atual de caracteres que foram armazenados no aplicativo e inicializa a coleção com uma série de caracteres, se não houver nenhum. Observe que, embora esse aplicativo use o Entity Framework Core e a classe `ApplicationDbContext` para sua persistência, nada disso é aparente no controlador. Em vez disso, o mecanismo de acesso a dados específico foi abstraído por trás de uma interface `ICharacterRepository`, que segue o [padrão do repositório](http://deviq.com/repository-pattern/). Uma instância de `ICharacterRepository` é solicitada por meio do construtor e atribuída a um campo particular, que é então usado para acessar caracteres, conforme necessário.
 
-[!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
+[!code-csharp[](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
 O `ICharacterRepository` define os dois métodos que o controlador precisa para trabalhar com instâncias `Character`.
 
-[!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
+[!code-csharp[](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
 
 Por sua vez, essa interface é implementada por um tipo concreto, `CharacterRepository`, que é usado em tempo de execução.
 
 > [!NOTE]
 > A maneira como a DI é usada com a classe `CharacterRepository` é um modelo geral que você pode seguir para todos os Serviços de Aplicativos, não apenas em "repositórios" ou classes de acesso a dados.
 
-[!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Models/CharacterRepository.cs?highlight=9,11,12,13,14)]
+[!code-csharp[](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Models/CharacterRepository.cs?highlight=9,11,12,13,14)]
 
 Observe que `CharacterRepository` solicita um `ApplicationDbContext` em seu construtor. Não é incomum que a injeção de dependência seja usada de maneira encadeada dessa forma, com cada dependência solicitada solicitando, por sua vez, suas próprias dependências. O contêiner é responsável por resolver todas as dependências no grafo e retornar o serviço totalmente resolvido.
 
@@ -134,11 +133,11 @@ Observe que `CharacterRepository` solicita um `ApplicationDbContext` em seu cons
 
 Nesse caso, `ICharacterRepository` e, por sua vez, `ApplicationDbContext` precisam ser registrados no contêiner de serviços em `ConfigureServices` em `Startup`. `ApplicationDbContext` é configurado com a chamada ao método de extensão `AddDbContext<T>`. O código a seguir mostra o registro do tipo `CharacterRepository`.
 
-[!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?highlight=3-5,11&range=16-32)]
+[!code-csharp[](dependency-injection/sample/DependencyInjectionSample/Startup.cs?highlight=3-5,11&range=16-32)]
 
 Os contextos do Entity Framework devem ser adicionados ao contêiner de serviços com o tempo de vida `Scoped`. Isso será resolvido automaticamente se você usar os métodos auxiliares, conforme mostrado acima. Os repositórios que farão uso do Entity Framework devem usar o mesmo tempo de vida.
 
->[!WARNING]
+> [!WARNING]
 > O principal perigo com o qual é necessário ter cautela é resolver um serviço `Scoped` em um singleton. É provável que, nesse caso, o serviço terá um estado incorreto durante o processamento das solicitações seguintes.
 
 Serviços que têm dependências devem registrá-las no contêiner. Se o construtor de um serviço exigir um primitivo, como uma `string`, isso poderá ser injetado com o uso da [configuração](xref:fundamentals/configuration/index) e do [padrão de opções](xref:fundamentals/configuration/options).
@@ -155,6 +154,9 @@ Os serviços com tempo de vida transitório são criados sempre que são solicit
 
 Os serviços com tempo de vida com escopo são criados uma vez por solicitação.
 
+> [!WARNING]
+> Se você estiver usando um serviço com escopo em um middleware, injete o serviço no método `Invoke` ou `InvokeAsync`. Não injete por meio de injeção de construtor porque isso força o serviço a se comportar como um singleton.
+
 **Singleton**
 
 Os serviços com tempo de vida singleton são criados na primeira vez em que são solicitados (ou quando `ConfigureServices` for executado se você especificar uma instância nele) e, em seguida, todas as solicitações seguintes usarão a mesma instância. Se o aplicativo exigir o comportamento singleton, é recomendado permitir que o contêiner de serviços gerencie o tempo de vida do serviço, em vez de implementar o padrão de design singleton e gerenciar o tempo de vida do objeto na classe por conta própria.
@@ -163,21 +165,21 @@ Os serviços podem ser registrados no contêiner de várias maneiras. Já vimos 
 
 Para demonstrar a diferença entre essas opções de tempo de vida e registro, considere uma interface simples que representa uma ou mais tarefas como uma *operação* com um identificador exclusivo, `OperationId`. Dependendo de como configurarmos o tempo de vida para esse serviço, o contêiner fornecerá as mesmas instâncias ou instâncias diferentes do serviço para a classe solicitante. Para tornar claro qual tempo de vida está sendo solicitado, criaremos um tipo por opção de tempo de vida:
 
-[!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/IOperation.cs?highlight=5-8)]
+[!code-csharp[](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/IOperation.cs?highlight=5-8)]
 
 Implementamos essas interfaces usando uma única classe, `Operation`, que aceita um `Guid` em seu construtor, ou usa um novo `Guid`, se nenhum é fornecido.
 
 Em seguida, em `ConfigureServices`, cada tipo é adicionado ao contêiner de acordo com seu tempo de vida nomeado:
 
-[!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Startup.cs?range=26-32)]
+[!code-csharp[](dependency-injection/sample/DependencyInjectionSample/Startup.cs?range=26-32)]
 
-Observe que o serviço `IOperationSingletonInstance` usa uma instância específica com uma ID conhecida `Guid.Empty`, para que fique claro quando esse tipo está em uso (seu Guid serão todos zeros). Também registramos um `OperationService` que depende de cada um dos outros tipos `Operation`, de modo que fique claro em uma solicitação se esse serviço está obtendo a mesma instância do controlador ou uma nova, para cada tipo de operação. Tudo o que esse serviço faz é expor suas dependências como propriedades, para que possam ser mostradas na exibição.
+Observe que o serviço `IOperationSingletonInstance` usa uma instância específica com uma ID conhecida `Guid.Empty`, para que fique claro quando esse tipo está em uso (seu Guid serão todos zeros). Também registramos um `OperationService` que depende de cada um dos outros tipos `Operation`, de modo que fique claro em uma solicitação se esse serviço está obtendo a mesma instância do controlador ou uma nova, para cada tipo de operação. Tudo o que esse serviço faz é expor suas dependências como propriedades, para que possam ser mostradas no exibição.
 
-[!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Services/OperationService.cs)]
+[!code-csharp[](dependency-injection/sample/DependencyInjectionSample/Services/OperationService.cs)]
 
 Para demonstrar os tempos de vida de objeto dentro e entre solicitações individuais separadas para o aplicativo, a amostra inclui um `OperationsController` que solicita cada tipo do tipo `IOperation`, bem como um `OperationService`. A ação `Index` então exibe todos os valores `OperationId` do controlador e do serviço.
 
-[!code-csharp[Main](dependency-injection/sample/DependencyInjectionSample/Controllers/OperationsController.cs)]
+[!code-csharp[](dependency-injection/sample/DependencyInjectionSample/Controllers/OperationsController.cs)]
 
 Agora, duas solicitações separadas são feitas para esta ação do controlador:
 
@@ -193,6 +195,48 @@ Observe qual dos valores `OperationId` varia em uma solicitação e entre as sol
 
 * Objetos *singleton* são os mesmos para cada objeto e solicitação (independentemente de uma instância ser fornecida em `ConfigureServices`)
 
+## <a name="resolve-a-scoped-service-within-the-application-scope"></a>Resolver um serviço com escopo dentro do escopo do aplicativo
+
+Crie um [IServiceScope](/dotnet/api/microsoft.extensions.dependencyinjection.iservicescope) com [IServiceScopeFactory.CreateScope](/dotnet/api/microsoft.extensions.dependencyinjection.iservicescopefactory.createscope) para resolver um serviço com escopo dentro do escopo do aplicativo. Essa abordagem é útil para acessar um serviço com escopo durante a inicialização para executar tarefas de inicialização. O exemplo a seguir mostra como obter um contexto para o `MyScopedService` em `Program.Main`:
+
+```csharp
+public static void Main(string[] args)
+{
+    var host = BuildWebHost(args);
+
+    using (var serviceScope = host.Services.CreateScope())
+    {
+        var services = serviceScope.ServiceProvider;
+
+        try
+        {
+            var serviceContext = services.GetRequiredService<MyScopedService>();
+            // Use the context here
+        }
+        catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogError(ex, "An error occurred.");
+        }
+    }
+
+    host.Run();
+}
+```
+
+## <a name="scope-validation"></a>Validação de escopo
+
+Quando o aplicativo é executado no ambiente de desenvolvimento no ASP.NET Core 2.0 ou posterior, o provedor de serviço padrão executa verificações para saber se:
+
+* Os serviços com escopo não são resolvidos direta ou indiretamente pelo provedor de serviço raiz.
+* Os serviços com escopo não são injetados direta ou indiretamente em singletons.
+
+O provedor de serviços raiz é criado quando [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider) é chamado. O tempo de vida do provedor de serviço raiz corresponde ao tempo de vida do aplicativo/servidor quando o provedor começa com o aplicativo e é descartado quando o aplicativo é desligado.
+
+Os serviços com escopo são descartados pelo contêiner que os criou. Se um serviço com escopo é criado no contêiner raiz, o tempo de vida do serviço é promovido efetivamente para singleton, porque ele só é descartado pelo contêiner raiz quando o aplicativo/servidor é desligado. A validação dos escopos de serviço detecta essas situações quando `BuildServiceProvider` é chamado.
+
+Para obter mais informações, confira [Validação de escopo no tópico Hospedagem](xref:fundamentals/hosting#scope-validation).
+
 ## <a name="request-services"></a>Serviços de solicitação
 
 Os serviços disponíveis em uma solicitação do ASP.NET de `HttpContext` são expostos por meio da coleção `RequestServices`.
@@ -201,7 +245,7 @@ Os serviços disponíveis em uma solicitação do ASP.NET de `HttpContext` são 
 
 Os Serviços de Solicitação representam os serviços configurados e solicitados como parte do aplicativo. Quando os objetos especificam dependências, elas são atendidas pelos tipos encontrados em `RequestServices`, não `ApplicationServices`.
 
-Em geral, você não deve usar essas propriedades diretamente, preferindo solicitar os tipos exigidos pelas classes por meio do construtor da classe e permitindo que a estrutura injete essas dependências. Isso produz classes que são mais fáceis de serem testadas (consulte [Teste](../testing/index.md)) e que têm acoplamento mais flexível.
+Em geral, você não deve usar essas propriedades diretamente, preferindo solicitar os tipos exigidos pelas classes por meio do construtor da classe e permitindo que a estrutura injete essas dependências. Isso resulta em classes que são mais fáceis de testar (confira [Testar e depurar](../testing/index.md)) e são mais fracamente acopladas.
 
 > [!NOTE]
 > Prefira solicitar dependências como parâmetros de construtor para acessar a coleção `RequestServices`.
@@ -315,7 +359,7 @@ Lembre-se de que a injeção de dependência é uma *alternativa* aos padrões d
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Inicialização de aplicativos](xref:fundamentals/startup)
-* [Teste](xref:testing/index)
+* [Testar e depurar](xref:testing/index)
 * [Ativação de middleware de fábrica](xref:fundamentals/middleware/extensibility)
 * [Como escrever um código limpo no ASP.NET Core com injeção de dependência (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Design de aplicativo gerenciado por contêiner, prelúdio: a que local o contêiner pertence?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)

@@ -1,7 +1,7 @@
 ---
 title: Novidades do ASP.NET Core 2.0
 author: rick-anderson
-description: Novidades do ASP.NET Core 2.0
+description: Saiba mais sobre os novos recursos no ASP.NET Core 2.0.
 manager: wpickett
 ms.author: riande
 ms.date: 07/10/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: 35d57abd07e83cd5b190572962fbf43aef03a534
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b4ac500888ce134e8f4f0d4bf16efa4e95f24c15
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Novidades do ASP.NET Core 2.0
 
@@ -26,7 +26,7 @@ Páginas do Razor é um novo recurso do ASP.NET Core MVC que torna a codificaç�
 Para obter mais informações, consulte a introdução e o tutorial:
 
 * [Introdução a Páginas do Razor](xref:mvc/razor-pages/index)
-* [Começando com Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
+* [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
 
 ## <a name="aspnet-core-metapackage"></a>Metapacote do ASP.NET Core
 
@@ -38,7 +38,7 @@ Para obter mais informações, consulte [Metapacote do Microsoft.AspNetCore.All 
 
 Aplicativos que usam o metapacote `Microsoft.AspNetCore.All` aproveitam automaticamente o novo repositório de tempo de execução do .NET Core. O repositório contém todos os ativos de tempo de execução necessários para executar aplicativos ASP.NET Core 2.0. Quando você usa o metapacote `Microsoft.AspNetCore.All`, nenhum ativo dos pacotes NuGet do ASP.NET Core referenciados são implantados com o aplicativo porque eles já estão no sistema de destino. Os ativos no repositório de tempo de execução também são pré-compilados para melhorar o tempo de inicialização do aplicativo.
 
-Para obter mais informações, consulte [Repositório de tempo de execução](https://docs.microsoft.com/dotnet/core/deploying/runtime-store)
+Para obter mais informações, consulte [Repositório de tempo de execução](/dotnet/core/deploying/runtime-store)
 
 ## <a name="net-standard-20"></a>.NET Standard 2.0
 
@@ -48,7 +48,7 @@ O metapacote `Microsoft.AspNetCore.All` aborda apenas o .Net Core 2.0 porque ele
 
 ## <a name="configuration-update"></a>Atualização da configuração
 
-Uma instância de `IConfiguration` é adicionada ao contêiner de serviços por padrão no ASP.NET Core 2.0. O `IConfiguration` no contêiner de serviços torna mais fácil para os aplicativos recuperarem os valores de configuração do contêiner.
+Uma instância de `IConfiguration` é adicionada ao contêiner de serviços por padrão no ASP.NET Core 2.0. `IConfiguration` no contêiner de serviços torna mais fácil para aplicativos recuperarem valores de configuração do contêiner.
 
 Para obter informações sobre o status da documentação planejada, consulte o [problema do GitHub](https://github.com/aspnet/Docs/issues/3387).
 
@@ -62,23 +62,23 @@ Para obter mais informações, consulte [Introdução ao registro em log](xref:f
 
 Um novo modelo de autenticação torna mais fácil configurar a autenticação para um aplicativo usando a DI.
 
-Novos modelos estão disponíveis para configurar a autenticação para aplicativos Web e APIs Web usando [Azure AD B2C] (https://azure.microsoft.com/services/active-directory-b2c/).
+Novos modelos estão disponíveis para configurar a autenticação para aplicativos Web e APIs Web usando o [Azure AD B2C] (https://azure.microsoft.com/services/active-directory-b2c/).
 
 Para obter informações sobre o status da documentação planejada, consulte o [problema do GitHub](https://github.com/aspnet/Docs/issues/3054).
 
 ## <a name="identity-update"></a>Atualização de identidade
 
-Facilitamos a criação de APIs Web seguras usando a identidade do ASP.NET Core 2.0. Você pode adquirir tokens de acesso para acessar suas APIs Web usando a [MSAL (Biblioteca de Autenticação da Microsoft)](https://www.nuget.org/packages/Microsoft.Identity.Client).
+Tornamos mais fácil criar APIs Web seguras usando a identidade do ASP.NET Core 2.0. Você pode adquirir tokens de acesso para acessar suas APIs Web usando a [MSAL (Biblioteca de Autenticação da Microsoft)](https://www.nuget.org/packages/Microsoft.Identity.Client).
 
 Para obter mais informações sobre alterações de autenticação no 2.0, consulte os seguintes recursos:
 
 * [Confirmação de conta e de recuperação de senha no ASP.NET Core](xref:security/authentication/accconfirm)
-* [Habilitar a geração de código QR para aplicativos de autenticação no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes)
-* [Migrando Autenticação e Identidade para o ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)
+* [Habilitar a geração de código QR para aplicativos de autenticador no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes)
+* [Migrar a autenticação e a identidade para o ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)
 
 ## <a name="spa-templates"></a>Modelos do SPA
 
-Modelos de projeto de SPA (aplicativo de página único) para Angular, Aurelia, Knockout.js, React.js e React.js com Redux estão disponíveis. O modelo Angular foi atualizado para Angular 4. Os modelos Angular e React estão disponíveis por padrão. Para obter informações sobre como obter os outros modelos, consulte [Criar um novo projeto de SPA](xref:client-side/spa-services#creating-a-new-project). Para obter informações sobre como criar um SPA no ASP.NET Core, consulte [Usando JavaScriptServices para criar aplicativos de página única](xref:client-side/spa-services).
+Modelos de projeto de SPA (aplicativo de página único) para Angular, Aurelia, Knockout.js, React.js e React.js com Redux estão disponíveis. O modelo Angular foi atualizado para Angular 4. Os modelos Angular e React estão disponíveis por padrão. Para saber como obter os outros modelos, confira [Criar um novo projeto de SPA](xref:client-side/spa-services#creating-a-new-project). Para obter informações de como criar um SPA no ASP.NET Core, confira [Usar JavaScriptServices para criar aplicativos de página única](xref:client-side/spa-services).
 
 ## <a name="kestrel-improvements"></a>Melhorias do Kestrel
 
@@ -122,11 +122,13 @@ Para obter informações sobre o status da documentação planejada, consulte o 
 
 O ASP.NET Core sempre ajudou a fazer a codificação HTML de seu conteúdo por padrão, mas com a nova versão, estamos dando um passo adicional para ajudar a impedir ataques de XSRF (falsificação de solicitação entre sites). O ASP.NET Core agora emitirá tokens antifalsificação por padrão e os validará em ações de POST do formulário e em páginas sem configuração adicional.
 
-Para obter mais informações, consulte [Impedindo ataques de falsificação de solicitação entre sites (CSRF/XSRF) no ASP.NET Core](xref:security/anti-request-forgery).
+Para obter mais informações, confira [Impedir ataques de XSRF/CSRF (solicitação intersite forjada)](xref:security/anti-request-forgery).
 
 ## <a name="automatic-precompilation"></a>Pré-compilação automática
 
 A pré-compilação da exibição do Razor é habilitada durante a publicação por padrão, reduzindo o tamanho da saída de publicação e o tempo de inicialização do aplicativo.
+
+Para obter mais informações, confira [Compilação e pré-compilação de exibição Razor no ASP.NET Core](xref:mvc/views/view-compilation).
 
 ## <a name="razor-support-for-c-71"></a>Suporte ao Razor para C# 7.1
 
@@ -142,17 +144,17 @@ Para obter informações sobre o status dos recursos do C# 7.1, consulte [o repo
 
 * [Perfis de publicação do Visual Studio para a implantação do aplicativo ASP.NET Core](xref:host-and-deploy/visual-studio-publish-profiles)
 * [Gerenciamento de chaves](xref:security/data-protection/implementation/key-management)
-* [Configurando a autenticação do Facebook](xref:security/authentication/facebook-logins)
-* [Configurando a autenticação do Twitter](xref:security/authentication/twitter-logins)
-* [Configurando a autenticação do Google](xref:security/authentication/google-logins)
-* [Configurando a autenticação da Conta da Microsoft](xref:security/authentication/microsoft-logins)
+* [Configurar a autenticação do Facebook](xref:security/authentication/facebook-logins)
+* [Configurar a autenticação do Twitter](xref:security/authentication/twitter-logins)
+* [Configurar a autenticação do Google](xref:security/authentication/google-logins)
+* [Configurar a autenticação da conta da Microsoft](xref:security/authentication/microsoft-logins)
 
 ## <a name="migration-guidance"></a>Diretrizes de migração
 
 Para obter diretrizes sobre como migrar aplicativos ASP.NET Core 1.x para o ASP.NET Core 2.0, consulte os seguintes recursos:
 
-* [Migrando do ASP.NET Core 1.x para o ASP.NET Core 2.0](xref:migration/1x-to-2x/index)
-* [Migrando Autenticação e Identidade para o ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)
+* [Migrar do ASP.NET Core 1.x para o ASP.NET Core 2.0](xref:migration/1x-to-2x/index)
+* [Migrar a autenticação e a identidade para o ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)
 
 ## <a name="additional-information"></a>Informações adicionais
 

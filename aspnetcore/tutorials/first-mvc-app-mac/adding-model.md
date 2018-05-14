@@ -1,5 +1,5 @@
 ---
-title: Adicione um modelo a um aplicativo ASP.NET Core MVC
+title: Adicionar um modelo a um aplicativo ASP.NET Core MVC com o Visual Studio para Mac
 author: rick-anderson
 description: Adicione um modelo a um aplicativo ASP.NET Core simples.
 manager: wpickett
@@ -10,13 +10,15 @@ ms.prod: .net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: bf4d5d289266b585cbdfbb70c7482620fd4ced54
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6792dbc7c9ab063d85c0c4145481b8fd6b40da63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app-with-visual-studio-for-mac"></a>Adicionar um modelo a um aplicativo ASP.NET Core MVC com o Visual Studio para Mac
+
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 * Clique com o botão direito do mouse na pasta *Modelos* e, em seguida, selecione **Adicionar** > **Novo Arquivo**. 
 * Na caixa de diálogo **Novo Arquivo**:
@@ -27,7 +29,7 @@ ms.lasthandoff: 01/30/2018
 
 Adicione as seguintes propriedades à classe `Movie`:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 O campo `ID` é necessário para o banco de dados para a chave primária.
 
@@ -41,17 +43,17 @@ Compile o projeto para verificar se não há erros. Agora você tem um **M**odel
 
 - Adicione os pacotes NuGet realçados a seguir ao arquivo *MvcMovie.csproj*:
              
-  [!code-csharp[Main](../first-mvc-app-xplat/start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
+  [!code-csharp[](../first-mvc-app-xplat/start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
 
 - Salve o arquivo.
 
-- Crie um arquivo *Models/MvcMovieContext.cs* e adicione a seguinte classe `MvcMovieContext`:  [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
+- Crie um arquivo *Models/MvcMovieContext.cs* e adicione a seguinte classe `MvcMovieContext`:  [!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
    
-- Abra o arquivo *Startup.cs* e adicione dois usings:  [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
+- Abra o arquivo *Startup.cs* e adicione dois usings:  [!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
 
 - Adicione o contexto do banco de dados para o arquivo *Startup.cs*:
 
-   [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
+   [!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
 
   Isso informa ao Entity Framework quais classes de modelo estão incluídas no modelo de dados. Você está definindo um *conjunto de entidades* de objetos Movie, que serão representados no banco de dados como uma tabela Movie.
 
@@ -96,9 +98,9 @@ A criação automática das exibições e métodos de ação [CRUD](https://wiki
   * Navegue até a pasta *Exibições*, selecione *Exibições\Filmes* e, em seguida, selecione **Abrir**.
   * Na caixa de diálogo **Selecionar arquivos para adicionar de Filmes**, selecione **Incluir Todos** e, em seguida, **OK**.
 
-[!INCLUDE[adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
+[!INCLUDE [adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
 Agora você tem um banco de dados e páginas para exibir, editar, atualizar e excluir dados. No próximo tutorial, trabalharemos com o banco de dados.
 
@@ -107,6 +109,6 @@ Agora você tem um banco de dados e páginas para exibir, editar, atualizar e ex
 * [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
 * [Globalização e localização](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[Anterior – Adicionando uma exibição](adding-view.md)
-[Próximo – Trabalhando com o SQL](working-with-sql.md)  
+> [!div class="step-by-step"]
+> [Anterior – Adicionando uma exibição](adding-view.md)
+> [Próximo – Trabalhando com o SQL](working-with-sql.md)  

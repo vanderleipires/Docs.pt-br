@@ -1,7 +1,7 @@
 ---
-title: "Exibições e métodos do controlador"
+title: Os métodos e as exibições do controlador no ASP.NET Core
 author: rick-anderson
-description: "Trabalhando com métodos do controlador, exibições e DataAnnotations"
+description: Aprenda a trabalhar com os métodos, as exibições e as DataAnnotations do controlador no ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 04/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/controller-methods-views
-ms.openlocfilehash: 34bd73af9bd0e4a7c1e59b491105f959bcbc06c6
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0bf9bffbf14ff958b28d9494600f55eb3f8e0c35
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="controller-methods-and-views"></a>Exibições e métodos do controlador
+# <a name="controller-methods-and-views-in-aspnet-core"></a>Os métodos e as exibições do controlador no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -25,7 +25,7 @@ Temos um bom começo para o aplicativo de filme, mas a apresentação não é id
 
 Abra o arquivo *Models/Movie.cs* e adicione as linhas realçadas mostradas abaixo:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
 
 Compile e execute o aplicativo.
 
@@ -34,8 +34,8 @@ Compile e execute o aplicativo.
 
  -->
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/controller-methods-views.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/controller-methods-views.md)]
 
->[!div class="step-by-step"]
-[Anterior – Trabalhando com o SQLite](working-with-sql.md)
-[Próximo – Adicionar uma pesquisa](search.md)  
+> [!div class="step-by-step"]
+> [Anterior – Trabalhando com o SQLite](working-with-sql.md)
+> [Próximo – Adicionar uma pesquisa](search.md)  

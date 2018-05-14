@@ -1,21 +1,22 @@
 ---
-title: "Carregando arquivos em uma página de Razor no ASP.NET Core"
+title: Carregar arquivos para uma Página Razor no ASP.NET Core
 author: guardrex
-description: "Saiba como carregar arquivos em uma página do Razor."
+description: Saiba como carregar arquivos em uma página do Razor.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/12/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 4a2c6da6ed698d1a65ee51bd00a557e607f012da
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 5f86164b3d227e55e11244da7600394809b6a4a7
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Carregando arquivos em uma página de Razor no ASP.NET Core
+# <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>Carregar arquivos para uma Página Razor no ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex)
 
@@ -47,7 +48,7 @@ Nas etapas a seguir, um recurso de upload de arquivo da agenda de filmes será a
 
 Criar uma Página Razor para lidar com um par de carregamentos de arquivos. Adicione uma classe `FileUpload`, que é vinculada à página para obter os dados do agendamento. Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **FileUpload** e adicione as seguintes propriedades:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
 
 A classe tem uma propriedade para o título do agendamento e uma propriedade para cada uma das duas versões do agendamento. Todas as três propriedades são necessárias e o título deve ter 3-60 caracteres.
 
@@ -55,20 +56,44 @@ A classe tem uma propriedade para o título do agendamento e uma propriedade par
 
 Para evitar duplicação de código para processar arquivos do agendamento carregados, primeiro, adicione um método auxiliar estático. Crie uma pasta de *Utilitários* no aplicativo e adicione um arquivo *FileHelpers.cs* com o seguinte conteúdo. O método auxiliar, `ProcessFormFile`, usa um [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) e [ModelStateDictionary](/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary) e retorna uma cadeia de caracteres que contém o tamanho e o conteúdo do arquivo. O comprimento e o tipo de conteúdo são verificados. Se o arquivo não passar em uma verificação de validação, um erro será adicionado ao `ModelState`.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
 
 ### <a name="save-the-file-to-disk"></a>Salvar o arquivo no disco
 
-O aplicativo de exemplo salva o conteúdo do arquivo em um campo de banco de dados. Para salvar o conteúdo do arquivo no disco, use um [FileStream](/dotnet/api/system.io.filestream):
+O aplicativo de exemplo salva os arquivos carregados em campos de banco de dados. Para salvar um arquivo no disco, use um [FileStream](/dotnet/api/system.io.filestream). O exemplo a seguir copia um arquivo mantido por `FileUpload.UploadPublicSchedule` para um `FileStream` em um método `OnPostAsync`. O `FileStream` grava o arquivo no disco no `<PATH-AND-FILE-NAME>` fornecido:
 
 ```csharp
-using (var fileStream = new FileStream(filePath, FileMode.Create))
+public async Task<IActionResult> OnPostAsync()
 {
-    await formFile.CopyToAsync(fileStream);
+    // Perform an initial check to catch FileUpload class attribute violations.
+    if (!ModelState.IsValid)
+    {
+        return Page();
+    }
+
+    var filePath = "<PATH-AND-FILE-NAME>";
+
+    using (var fileStream = new FileStream(filePath, FileMode.Create))
+    {
+        await FileUpload.UploadPublicSchedule.CopyToAsync(fileStream);
+    }
+
+    return RedirectToPage("./Index");
 }
 ```
 
 O processo de trabalho deve ter permissões de gravação para o local especificado por `filePath`.
+
+> [!NOTE]
+> O `filePath` *precisa* incluir o nome do arquivo. Se o nome do arquivo não for fornecido, uma [UnauthorizedAccessException](/dotnet/api/system.unauthorizedaccessexception) será gerada no tempo de execução.
+
+> [!WARNING]
+> Nunca persista os arquivos carregados na mesma árvore de diretório que o aplicativo.
+>
+> O exemplo de código não oferece proteção do lado do servidor contra carregamentos de arquivos mal-intencionados. Para obter informações de como reduzir a área da superfície de ataque ao aceitar arquivos de usuários, confira os seguintes recursos:
+>
+> * [Unrestricted File Upload](https://www.owasp.org/index.php/Unrestricted_File_Upload) (Carregamento de arquivo irrestrito)
+> * [Segurança do Azure: Verifique se os controles adequados estão em vigor ao aceitar arquivos de usuários](/azure/security/azure-security-threat-modeling-tool-input-validation#controls-users)
 
 ### <a name="save-the-file-to-azure-blob-storage"></a>Salvar o arquivo no Armazenamento de Blobs do Azure
 
@@ -78,7 +103,7 @@ Para carregar o conteúdo do arquivo para o Armazenamento de Blobs do Azure, con
 
 Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **Agendamento** e adicione as seguintes propriedades:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
 
 Usa a classe usa os atributos `Display` e `DisplayFormat`, que produzem formatação e títulos fáceis quando os dados de agendamento são renderizados.
 
@@ -86,7 +111,7 @@ Usa a classe usa os atributos `Display` e `DisplayFormat`, que produzem formata�
 
 Especifique um `DbSet` no `MovieContext` (*Models/MovieContext.cs*) para os agendamentos:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
 
 ## <a name="add-the-schedule-table-to-the-database"></a>Adicione a tabela de Agendamento ao banco de dados
 
@@ -105,7 +130,7 @@ Update-Database
 
 Na pasta *Páginas*, crie uma pasta *Agendamentos*. Na pasta *Agendamentos*, crie uma página chamada *Index.cshtml* para carregar um agendamento com o seguinte conteúdo:
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
 
 Cada grupo de formulário inclui um **\<rótulo>** que exibe o nome de cada propriedade de classe. Os atributos `Display` no modelo `FileUpload` fornecem os valores de exibição para os rótulos. Por exemplo, o nome de exibição da propriedade `UploadPublicSchedule` é definido com `[Display(Name="Public Schedule")]` e, portanto, exibe "Agendamento público" no rótulo quando o formulário é renderizado.
 
@@ -115,43 +140,43 @@ Cada grupo de formulário inclui uma validação **\<span>**. Se a entrada do us
 
 Adicione o modelo de página (*Index.cshtml.cs*) à pasta *Schedules*:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
 
 O modelo de página (`IndexModel` no *Index.cshtml.cs*) associa a classe `FileUpload`:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
 
 O modelo também usa uma lista dos agendamentos (`IList<Schedule>`) para exibir os agendamentos armazenados no banco de dados na página:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
 
 Quando a página for carregada com `OnGetAsync`, `Schedules` é preenchido com o banco de dados e usado para gerar uma tabela HTML de agendamentos carregados:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
 
 Quando o formulário é enviado para o servidor, o `ModelState` é verificado. Se for inválido, `Schedule` é recriado e a página é renderizada com uma ou mais mensagens de validação informando por que a validação de página falhou. Se for válido, as propriedades `FileUpload` serão usadas em *OnPostAsync* para concluir o upload do arquivo para as duas versões do agendamento e criar um novo objeto `Schedule` para armazenar os dados. O agendamento, em seguida, é salvo no banco de dados:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
 
 ## <a name="link-the-file-upload-razor-page"></a>Vincular a página do Razor de upload de arquivo
 
 Abra *_Layout.cshtml* e adicione um link para a barra de navegação para acessar a página de upload de arquivo:
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
 
 ## <a name="add-a-page-to-confirm-schedule-deletion"></a>Adicionar uma página para confirmar a exclusão de agendamento
 
 Quando o usuário clica para excluir um agendamento, é oferecida uma oportunidade de cancelar a operação. Adicione uma página de confirmação de exclusão (*Delete.cshtml*) à pasta *Agendamentos*:
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
 O modelo de página (*Delete.cshtml.cs*) carrega um único agendamento identificado por `id` nos dados de rota da solicitação. Adicione o arquivo *Delete.cshtml.cs* à pasta *Agendamentos*:
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
 
 O método `OnPostAsync` lida com a exclusão do agendamento pelo seu `id`:
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
 
 Após a exclusão com êxito do agendamento, o `RedirectToPage` envia o usuário para a página *Index.cshtml* dos agendamentos.
 
@@ -179,12 +204,12 @@ O usuário pode clicar no link **Excluir** para chegar à exibição de confirma
 
 Para solucionar problemas de informações com o carregamento de `IFormFile`, consulte [Carregamentos de arquivos no ASP.NET Core: solução de problemas](xref:mvc/models/file-uploads#troubleshooting).
 
-Obrigado por concluir esta introdução às Páginas Razor. Agradecemos os comentários. [Introdução ao MVC e ao EF Core](xref:data/ef-mvc/intro) é um excelente acompanhamento para este tutorial.
+Obrigado por concluir esta introdução às Páginas Razor. Agradecemos os comentários. A [Introdução ao MVC e ao EF Core](xref:data/ef-mvc/intro) é um excelente acompanhamento para este tutorial.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Carregamentos de arquivos no ASP.NET Core](xref:mvc/models/file-uploads)
 * [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile)
 
->[!div class="step-by-step"]
-[Anterior: validação](xref:tutorials/razor-pages/validation)
+> [!div class="step-by-step"]
+> [Anterior: validação](xref:tutorials/razor-pages/validation)

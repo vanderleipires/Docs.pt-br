@@ -1,7 +1,7 @@
 ---
-title: OWIN (Open Web Interface para .NET)
+title: OWIN (Open Web Interface para .NET) com o ASP.NET Core
 author: ardalis
-description: "Descubra como o ASP.NET Core dá suporte ao OWIN (Open Web Interface para .NET), que permite que aplicativos Web sejam desacoplados de servidores Web."
+description: Descubra como o ASP.NET Core dá suporte ao OWIN (Open Web Interface para .NET), que permite que aplicativos Web sejam desacoplados de servidores Web.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/owin
-ms.openlocfilehash: 1a6a49715840d66dc37465758d3a896af96e2976
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 3ff7b6e02284b4f6c61bf5d31013b4edfe8f7f29
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="introduction-to-open-web-interface-for-net-owin"></a>Introdução ao OWIN (Open Web Interface para .NET)
+# <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>OWIN (Open Web Interface para .NET) com o ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -80,10 +80,10 @@ Configure outras ações a serem executadas no pipeline do OWIN.
 ```csharp
 app.UseOwin(pipeline =>
 {
-    pipeline(next =>
+    pipeline(async (next) =>
     {
         // do something before
-        return OwinHello;
+        await OwinHello(new OwinEnvironment(HttpContext));
         // do something after
     });
 });
@@ -95,9 +95,9 @@ app.UseOwin(pipeline =>
 
 Servidores baseados no OWIN podem hospedar aplicativos ASP.NET. Um desses servidores é o [Nowin](https://github.com/Bobris/Nowin), um servidor Web do OWIN no .NET. Na amostra para este artigo, incluí um projeto que referencia o Nowin e usa-o para criar um `IServer` com capacidade de auto-hospedar o ASP.NET Core.
 
-[!code-csharp[Main](owin/sample/src/NowinSample/Program.cs?highlight=15)]
+[!code-csharp[](owin/sample/src/NowinSample/Program.cs?highlight=15)]
 
-`IServer` é uma interface que exige uma propriedade `Features` e um método `Start`.
+O `IServer` é uma interface que requer uma propriedade `Features` e um método `Start`.
 
 `Start` é responsável por configurar e iniciar o servidor, que, nesse caso, é feito por meio de uma série de chamadas à API fluente que definem endereços analisados do IServerAddressesFeature. Observe que a configuração fluente da variável `_builder` especifica que as solicitações serão manipuladas pelo `appFunc` definido anteriormente no método. Esse `Func` é chamado em cada solicitação para processar as solicitações de entrada.
 
@@ -134,10 +134,9 @@ namespace Microsoft.AspNetCore.Hosting
 }
 ```
 
-Com isso em vigor, temos tudo o que é necessário para executar um aplicativo ASP.NET usando esse servidor personalizado para chamar a extensão em *Program.cs*:
+Com isso em vigor, invoque a extensão no *Program.cs* para executar um aplicativo ASP.NET Core usando este servidor personalizado:
 
 ```csharp
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -162,7 +161,6 @@ namespace NowinSample
         }
     }
 }
-
 ```
 
 Saiba mais sobre os [Servidores](servers/index.md) ASP.NET.
@@ -223,7 +221,7 @@ Essa [amostra](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamental
 
 ## <a name="owin-environment"></a>Ambiente do OWIN
 
-Construa um ambiente do OWIN usando o `HttpContext`.
+Você pode construir um ambiente do OWIN usando o `HttpContext`.
 
 ```csharp
 

@@ -1,7 +1,7 @@
 ---
-title: "Introdução ao ASP.NET Core MVC no Mac, Linux ou Windows"
+title: Introdução ao ASP.NET Core MVC no Mac, no Linux ou no Windows
 author: rick-anderson
-description: "Introdução ao ASP.NET Core MVC e ao Visual Studio Code no Mac, Linux e Windows"
+description: Saiba como começar a usar o ASP.NET Core MVC e o Visual Studio Code no Windows, no Linux e no macOS
 manager: wpickett
 ms.author: riande
 ms.date: 07/07/2017
@@ -9,35 +9,29 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: 4771555b66f328a819f17a32eb3959f9ecf33d44
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 50fbd54c6b0cc1146271afda7e45a0dab590dd7d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc--on-mac-linux-or-windows"></a>Introdução ao ASP.NET Core MVC no Mac, Linux ou Windows
+# <a name="introduction-to-aspnet-core-mvc-on-macos-linux-or-windows"></a>Introdução ao ASP.NET Core MVC no Mac, no Linux ou no Windows
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Este tutorial ensinará os conceitos básicos da criação de um aplicativo Web ASP.NET Core MVC usando o [VS Code](https://code.visualstudio.com) (Visual Studio Code). O tutorial pressupõe que você já tenha familiaridade com o VS Code. Consulte [Introdução ao VS Code](https://code.visualstudio.com/docs) e [Ajuda do Visual Studio Code](#visual-studio-code-help) para obter mais informações. 
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 Há três versões deste tutorial:
 
 * macOS: [Criar um aplicativo ASP.NET Core MVC com o Visual Studio para Mac](xref:tutorials/first-mvc-app-mac/start-mvc)
-* Windows: [Criar um aplicativo ASP.NET Core MVC com o Visual Studio](xref:tutorials/first-mvc-app/start-mvc)
-* macOS, Linux e Windows: [Criar um aplicativo ASP.NET Core MVC com o Visual Studio Code](xref:tutorials/first-mvc-app-xplat/start-mvc) 
+* Windows: [Como criar um aplicativo ASP.NET Core MVC com o Visual Studio](xref:tutorials/first-mvc-app/start-mvc)
+* macOS, Linux e Windows: [Como criar um aplicativo ASP.NET Core MVC com o Visual Studio Code](xref:tutorials/first-mvc-app-xplat/start-mvc) 
 
-## <a name="install-vs-code-and-net-core"></a>Instalar o VS Code e o .NET Core
+## <a name="prerequisites"></a>Pré-requisitos
 
-Este tutorial exige o [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior. Consulte [este pdf](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf) para a versão ASP.NET Core 1.1.
-
-Instale o seguinte:
-
-* [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior.
-* [Visual Studio Code](https://code.visualstudio.com)
-* [Extensão C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) do VS Code 
+[!INCLUDE [](~/includes/net-core-prereqs-vscode.md)]
 
 ## <a name="create-a-web-app-with-dotnet"></a>Criar um aplicativo Web com o dotnet
 
@@ -75,9 +69,9 @@ Na próxima parte deste tutorial, saberemos mais sobre o MVC e começaremos a es
 - [Terminal integrado](https://code.visualstudio.com/docs/editor/integrated-terminal)
 - [Atalhos de teclado](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
-  - [Atalhos de teclado do Mac](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+  - [Atalhos de teclado do macOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
   - [Atalhos de teclado do Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
   - [Atalhos de teclado do Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
->[!div class="step-by-step"]
-[Próximo – Adicionar um controlador](adding-controller.md)
+> [!div class="step-by-step"]
+> [Próximo – Adicionar um controlador](adding-controller.md)

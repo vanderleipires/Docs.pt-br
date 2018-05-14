@@ -1,7 +1,7 @@
 ---
 title: Roteamento no ASP.NET Core
 author: ardalis
-description: "Descubra como a funcionalidade de roteamento do ASP.NET Core é responsável por mapear uma solicitação de entrada para um manipulador de rotas."
+description: Descubra como a funcionalidade de roteamento do ASP.NET Core é responsável por mapear uma solicitação de entrada para um manipulador de rotas.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: d35c24347e8e06ed85e2af8addcc1f8cf28dc47a
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 2e1257639ec41f657093439c5245b50adbad34dc
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
@@ -22,13 +22,13 @@ Por [Ryan Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.com/
 A funcionalidade de roteamento é responsável por mapear uma solicitação de entrada para um manipulador de rotas. As rotas são definidas no aplicativo ASP.NET e configuradas quando o aplicativo é iniciado. Uma rota pode opcionalmente extrair os valores da URL contida na solicitação e esses valores podem então ser usados para o processamento da solicitação. Usando as informações de rota do aplicativo ASP.NET, a funcionalidade de roteamento também pode gerar URLs que são mapeadas para manipuladores de rotas. Portanto, o roteamento pode encontrar um manipulador de rotas com base em uma URL ou a URL correspondente a um manipulador de rotas especificado com base nas informações do manipulador de rotas.
 
 >[!IMPORTANT]
-> Este documento abrange o roteamento de nível inferior do ASP.NET Core. Para o roteamento do ASP.NET Core MVC, consulte [Roteamento para ações do controlador](../mvc/controllers/routing.md)
+> Este documento abrange o roteamento de nível inferior do ASP.NET Core. Para o roteamento do ASP.NET Core MVC, confira [Rotear para ações do controlador](../mvc/controllers/routing.md)
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="routing-basics"></a>Conceitos básicos sobre roteamento
 
-O roteamento usa *rotas* (implementações de [IRouter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.routing.irouter)) para:
+O roteamento usa *rotas* (implementações de [IRouter](/dotnet/api/microsoft.aspnetcore.routing.irouter)) para:
 
 * mapear solicitações de entrada para *manipuladores de rotas*
 
@@ -88,7 +88,7 @@ O roteamento fornece a classe `Route` como a implementação padrão de `IRouter
 
 A maioria dos aplicativos criará rotas chamando `MapRoute` ou um dos métodos de extensão semelhante definidos em `IRouteBuilder`. Todos esses métodos criarão uma instância de `Route` e a adicionarão à coleção de rotas.
 
-Observação: `MapRoute` não usa um parâmetro de manipulador de rotas – ele apenas adiciona rotas que serão manipuladas pelo `DefaultHandler`. Como o manipulador padrão é um `IRouter`, ele pode optar por não manipular a solicitação. Por exemplo, o ASP.NET MVC normalmente é configurado como um manipulador padrão que só manipula as solicitações que correspondem a um controlador e uma ação disponíveis. Para saber mais sobre o roteamento para o MVC, consulte [Roteamento para ações do controlador](../mvc/controllers/routing.md).
+Observação: `MapRoute` não usa um parâmetro de manipulador de rotas – ele apenas adiciona rotas que serão manipuladas pelo `DefaultHandler`. Como o manipulador padrão é um `IRouter`, ele pode optar por não manipular a solicitação. Por exemplo, o ASP.NET MVC normalmente é configurado como um manipulador padrão que só manipula as solicitações que correspondem a um controlador e uma ação disponíveis. Para saber mais sobre o roteamento para o MVC, confira [Rotear para ações do controlador](../mvc/controllers/routing.md).
 
 Este é um exemplo de uma chamada `MapRoute` usada por uma definição de rota típica do ASP.NET MVC:
 
@@ -187,7 +187,7 @@ Adicione o pacote NuGet "Microsoft.AspNetCore.Routing".
 
 Adicione o roteamento ao contêiner de serviço em *Startup.cs*:
 
-[!code-csharp[Main](../fundamentals/routing/sample/RoutingSample/Startup.cs?highlight=3&start=11&end=14)]
+[!code-csharp[](../fundamentals/routing/sample/RoutingSample/Startup.cs?highlight=3&start=11&end=14)]
 
 As rotas precisam ser configuradas no método `Configure` na classe `Startup`. A amostra abaixo usa essas APIs:
 
@@ -321,7 +321,7 @@ A tabela a seguir demonstra algumas restrições de rota e seu comportamento esp
 
 ## <a name="regular-expressions"></a>Expressões regulares 
 
-A estrutura do ASP.NET Core adiciona `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` ao construtor de expressão regular. Consulte [Enumeração de RegexOptions](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions) para obter uma descrição desses membros.
+A estrutura do ASP.NET Core adiciona `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` ao construtor de expressão regular. Consulte [Enumeração de RegexOptions](/dotnet/api/system.text.regularexpressions.regexoptions) para obter uma descrição desses membros.
 
 As expressões regulares usam delimitadores e tokens semelhantes aos usados pelo Roteamento e pela linguagem C#. Os tokens de expressão regular precisam ter escape. Por exemplo, para usar a expressão regular `^\d{3}-\d{2}-\d{4}$` no Roteamento, ela precisa ter os caracteres `\` digitados como `\\` no arquivo de origem C# para fazer o escape do caractere de escape da cadeia de caracteres `\` (a menos que [literais de cadeia de caracteres textuais](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string) estejam sendo usados). Os caracteres `{`, `}`, '[' e ']' precisam ter o escape com aspas duplas para fazer o escape dos caracteres de delimitador do parâmetro de Roteamento.  A tabela abaixo mostra uma expressão regular e a versão com escape.
 
@@ -351,7 +351,7 @@ Para restringir um parâmetro a um conjunto conhecido de valores possíveis, use
 
 O exemplo abaixo mostra como gerar um link para uma rota com um dicionário de valores de rota e uma `RouteCollection`.
 
-[!code-csharp[Main](../fundamentals/routing/sample/RoutingSample/Startup.cs?range=45-59)]
+[!code-csharp[](../fundamentals/routing/sample/RoutingSample/Startup.cs?range=45-59)]
 
 O `VirtualPath` gerado no final da amostra acima é `/package/create/123`.
 

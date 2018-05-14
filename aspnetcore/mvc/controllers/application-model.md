@@ -1,7 +1,7 @@
 ---
-title: Trabalhando com o modelo de aplicativo
+title: Trabalhar com o modelo de aplicativo no ASP.NET Core
 author: ardalis
-description: 
+description: Saiba como ler e manipular o modelo de aplicativo para modificar como os elementos MVC se comportam no ASP.NET Core.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 6e5f290c48cfe58ae3efe5ce0208c72e8ffb1daf
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: f61d04f6cf0aa054566d9f48a030cf268f2ba72a
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="working-with-the-application-model"></a>Trabalhando com o modelo de aplicativo
+# <a name="work-with-the-application-model-in-aspnet-core"></a>Trabalhar com o modelo de aplicativo no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
@@ -39,18 +39,18 @@ Cada nível do modelo tem acesso a uma coleção `Properties` comum e níveis in
 
 ### <a name="iapplicationmodelprovider"></a>IApplicationModelProvider
 
-O ASP.NET Core MVC carrega o modelo de aplicativo usando um padrão de provedor, definido pela interface [IApplicationModelProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelprovider). Esta seção aborda alguns dos detalhes de implementação interna de como funciona esse provedor. Este é um tópico avançado – a maioria dos aplicativos que utiliza o modelo de aplicativo deve fazer isso trabalhando com convenções.
+O ASP.NET Core MVC carrega o modelo de aplicativo usando um padrão de provedor, definido pela interface [IApplicationModelProvider](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelprovider). Esta seção aborda alguns dos detalhes de implementação interna de como funciona esse provedor. Este é um tópico avançado – a maioria dos aplicativos que utiliza o modelo de aplicativo deve fazer isso trabalhando com convenções.
 
 Implementações da interface `IApplicationModelProvider` "encapsulam" umas às outras, com cada implementação chamando `OnProvidersExecuting` em ordem crescente com base em sua propriedade `Order`. O método `OnProvidersExecuted` é então chamado em ordem inversa. A estrutura define vários provedores:
 
 Primeiro (`Order=-1000`):
 
-* [`DefaultApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.internal.defaultapplicationmodelprovider)
+* [`DefaultApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.internal.defaultapplicationmodelprovider)
 
 Em seguida (`Order=-990`):
 
-* [`AuthorizationApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.internal.authorizationapplicationmodelprovider)
-* [`CorsApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
+* [`AuthorizationApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.internal.authorizationapplicationmodelprovider)
+* [`CorsApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
 
 > [!NOTE]
 > A ordem na qual dois provedores com o mesmo valor para `Order` são chamados não é definida e, portanto, não se deve depender dela.
@@ -66,7 +66,7 @@ O `DefaultApplicationModelProvider` estabelece muitos dos comportamentos padrão
 * Adicionar parâmetros de método de ação ao contexto
 * Aplicar a rota e outros atributos
 
-Alguns comportamentos internos são implementados pelo `DefaultApplicationModelProvider`. Esse provedor é responsável pela construção do [`ControllerModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel), que, por sua vez, referencia instâncias [`ActionModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel), [`PropertyModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel) e [`ParameterModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel). A classe `DefaultApplicationModelProvider` é um detalhe de implementação de estrutura interna que pode e será alterado no futuro. 
+Alguns comportamentos internos são implementados pelo `DefaultApplicationModelProvider`. Esse provedor é responsável pela construção do [`ControllerModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel), que, por sua vez, referencia instâncias [`ActionModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel), [`PropertyModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel) e [`ParameterModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel). A classe `DefaultApplicationModelProvider` é um detalhe de implementação de estrutura interna que pode e será alterado no futuro. 
 
 O `AuthorizationApplicationModelProvider` é responsável por aplicar o comportamento associado aos atributos `AuthorizeFilter` e `AllowAnonymousFilter`. [Saiba mais sobre esses atributos](xref:security/authorization/simple).
 
@@ -78,10 +78,10 @@ O modelo de aplicativo define abstrações de convenção que fornecem uma manei
 
 As seguintes convenções estão disponíveis:
 
-* [`IApplicationModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelconvention)
-* [`IControllerModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.icontrollermodelconvention)
-* [`IActionModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
-* [`IParameterModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
+* [`IApplicationModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelconvention)
+* [`IControllerModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.icontrollermodelconvention)
+* [`IActionModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
+* [`IParameterModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
 
 As convenções são aplicadas por sua adição às opções do MVC ou pela implementação de `Attribute`s e sua aplicação a controladores, ações ou parâmetros de ação (semelhante a [`Filters`](xref:mvc/controllers/filters)). Ao contrário dos filtros, as convenções são executadas apenas quando o aplicativo é iniciado, não como parte de cada solicitação.
 
@@ -89,25 +89,25 @@ As convenções são aplicadas por sua adição às opções do MVC ou pela impl
 
 A convenção a seguir é usada para adicionar uma propriedade ao modelo de aplicativo. 
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ApplicationDescription.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ApplicationDescription.cs)]
 
 As convenções de modelo de aplicativo são aplicadas como opções quando o MVC é adicionado em `ConfigureServices` em `Startup`.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=5)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=5)]
 
 As propriedades são acessíveis na coleção de propriedades `ActionDescriptor` nas ações do controlador:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/AppModelController.cs?name=AppModelController)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/AppModelController.cs?name=AppModelController)]
 
 ### <a name="sample-modifying-the-controllermodel-description"></a>Amostra: modificando a descrição de ControllerModel
 
 Como no exemplo anterior, o modelo de controlador também pode ser modificado para incluir propriedades personalizadas. Elas substituirão as propriedades existentes com o mesmo nome especificado no modelo de aplicativo. O seguinte atributo de convenção adiciona uma descrição no nível do controlador:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ControllerDescriptionAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ControllerDescriptionAttribute.cs)]
 
 Essa convenção é aplicada como um atributo em um controlador.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=ControllerDescription&highlight=1)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=ControllerDescription&highlight=1)]
 
 A propriedade "description" é acessada da mesma maneira como nos exemplos anteriores.
 
@@ -115,53 +115,53 @@ A propriedade "description" é acessada da mesma maneira como nos exemplos anter
 
 Uma convenção de atributo separada pode ser aplicada a ações individuais, substituindo o comportamento já aplicado no nível do aplicativo ou do controlador.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ActionDescriptionAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ActionDescriptionAttribute.cs)]
 
 A aplicação disso a uma ação no controlador do exemplo anterior demonstra como ela substitui a convenção no nível do controlador:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=DescriptionAttributesController&highlight=9)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=DescriptionAttributesController&highlight=9)]
 
 ### <a name="sample-modifying-the-parametermodel"></a>Amostra: modificando o ParameterModel
 
 A convenção a seguir pode ser aplicada a parâmetros de ação para modificar seu `BindingInfo`. A convenção a seguir exige que o parâmetro seja um parâmetro de rota; outras possíveis origens da associação (como valores de cadeia de caracteres de consulta) são ignoradas.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/MustBeInRouteParameterModelConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/MustBeInRouteParameterModelConvention.cs)]
 
 O atributo pode ser aplicado a qualquer parâmetro de ação:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/ParameterModelController.cs?name=ParameterModelController&highlight=5)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/ParameterModelController.cs?name=ParameterModelController&highlight=5)]
 
 ### <a name="sample-modifying-the-actionmodel-name"></a>Amostra: modificando o nome de ActionModel
 
 A convenção a seguir modifica o `ActionModel` para atualizar o *nome* da ação ao qual ele é aplicado. O novo nome é fornecido como um parâmetro para o atributo. Esse novo nome é usado pelo roteamento e, portanto, isso afetará a rota usada para acessar esse método de ação.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/CustomActionNameAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/CustomActionNameAttribute.cs)]
 
 Esse atributo é aplicado a um método de ação no `HomeController`:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/HomeController.cs?name=ActionModelConvention&highlight=2)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/HomeController.cs?name=ActionModelConvention&highlight=2)]
 
 Mesmo que o nome do método seja `SomeName`, o atributo substitui a convenção do MVC de uso do nome do método e substitui o nome da ação por `MyCoolAction`. Portanto, a rota usada para acessar essa ação é `/Home/MyCoolAction`.
 
 > [!NOTE]
-> Esse exemplo é basicamente o mesmo que usar o atributo [ActionName](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.actionnameattribute) interno.
+> Esse exemplo é basicamente o mesmo que usar o atributo [ActionName](/dotnet/api/microsoft.aspnetcore.mvc.actionnameattribute) interno.
 
 ### <a name="sample-custom-routing-convention"></a>Amostra: convenção de roteamento personalizada
 
 Use uma `IApplicationModelConvention` para personalizar como funciona o roteamento. Por exemplo, a seguinte convenção incorporará namespaces dos Controladores em suas rotas, substituindo `.` no namespace por `/` na rota:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/NamespaceRoutingConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/NamespaceRoutingConvention.cs)]
 
 A convenção é adicionada como uma opção na classe Startup.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
 
 > [!TIP]
 > Adicione convenções ao [middleware](xref:fundamentals/middleware/index) acessando `MvcOptions` com `services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
 
 Esta amostra aplica essa convenção às rotas que não estão usando o roteamento de atributo, nas quais o controlador tem "Namespace" em seu nome. O seguinte controlador demonstra essa convenção:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/NamespaceRoutingController.cs?highlight=7-8)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/NamespaceRoutingController.cs?highlight=7-8)]
 
 ## <a name="application-model-usage-in-webapicompatshim"></a>Uso do modelo de aplicativo em WebApiCompatShim
 
@@ -178,10 +178,10 @@ services.AddMvc().AddWebApiConventions();
 
 As convenções fornecidas pelo shim são aplicadas apenas às partes do aplicativo que tiveram determinados atributos aplicados a elas. Os seguintes quatro atributos são usados para controlar quais controladores devem ter suas convenções modificadas pelas convenções do shim:
 
-* [UseWebApiActionConventionsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiactionconventionsattribute)
-* [UseWebApiOverloadingAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapioverloadingattribute)
-* [UseWebApiParameterConventionsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiparameterconventionsattribute)
-* [UseWebApiRoutesAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiroutesattribute)
+* [UseWebApiActionConventionsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiactionconventionsattribute)
+* [UseWebApiOverloadingAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapioverloadingattribute)
+* [UseWebApiParameterConventionsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiparameterconventionsattribute)
+* [UseWebApiRoutesAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiroutesattribute)
 
 ### <a name="action-conventions"></a>Convenções de ação
 
@@ -203,8 +203,8 @@ Além de um conjunto de convenções, o pacote de compatibilidade inclui uma cla
 
 ## <a name="using-apiexplorer-to-document-your-app"></a>Usando o ApiExplorer para documentar o aplicativo
 
-O modelo de aplicativo expõe uma propriedade [`ApiExplorer`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) em cada nível, que pode ser usada para percorrer a estrutura do aplicativo. Isso pode ser usado para [gerar páginas da Ajuda para as APIs Web usando ferramentas como o Swagger](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger). A propriedade `ApiExplorer` expõe uma propriedade `IsVisible` que pode ser definida para especificar quais partes do modelo do aplicativo devem ser expostas. Defina essa configuração usando uma convenção:
+O modelo de aplicativo expõe uma propriedade [`ApiExplorer`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) em cada nível, que pode ser usada para percorrer a estrutura do aplicativo. Isso pode ser usado para [gerar páginas da Ajuda para as APIs Web usando ferramentas como o Swagger](xref:tutorials/web-api-help-pages-using-swagger). A propriedade `ApiExplorer` expõe uma propriedade `IsVisible` que pode ser definida para especificar quais partes do modelo do aplicativo devem ser expostas. Defina essa configuração usando uma convenção:
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
 
 Usando essa abordagem (e convenções adicionais, se necessário), você pode habilitar ou desabilitar a visibilidade da API em qualquer nível no aplicativo. 

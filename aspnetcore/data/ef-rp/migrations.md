@@ -1,7 +1,7 @@
 ---
-title: "Páginas do Razor com EF Core – migrações – 4 de 8"
+title: Páginas Razor com o EF Core no ASP.NET Core – Migrações – 4 de 8
 author: rick-anderson
-description: "Neste tutorial, você começa a usar o recurso de migrações do EF Core para gerenciar alterações do modelo de dados em um aplicativo ASP.NET Core MVC."
+description: Neste tutorial, você começa a usar o recurso de migrações do EF Core para gerenciar alterações do modelo de dados em um aplicativo ASP.NET Core MVC.
 manager: wpickett
 ms.author: riande
 ms.date: 10/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: e89d95702cb94556bc6e5dc73253c51acaa11578
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 690beaabeab098cf9b764730b1bf1bd04bf6b003
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>Migrações – tutorial do EF Core com as Páginas do Razor (4 de 8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Migrações – 4 de 8
 
 Por [Tom Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 Neste tutorial, o recurso de migrações do EF Core para o gerenciamento de alterações do modelo de dados é usado.
 
@@ -52,7 +52,7 @@ No exemplo anterior, os números de versão eram atuais no momento em que o tuto
 
 No arquivo *appsettings.json*, altere o nome do BD na cadeia de conexão para ContosoUniversity2.
 
-[!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
+[!code-json[](intro/samples/cu/appsettings2.json?range=1-4)]
 
 A alteração do nome do BD na cadeia de conexão faz com que a primeira migração crie um novo BD. Um novo BD é criado porque um banco de dados com esse nome não existe. A alteração da cadeia de conexão não é necessária para começar a usar as migrações.
 
@@ -100,30 +100,28 @@ Se a mensagem de erro "Falha no build." for exibida, execute o comando novamente
 
 O comando `migrations add` do EF Core gerou um código do qual criar o BD. Esse código de migrações está localizado no arquivo *Migrations\<timestamp>_InitialCreate.cs*. O método `Up` da classe `InitialCreate` cria as tabelas de BD que correspondem aos conjuntos de entidades do modelo de dados. O método `Down` exclui-os, conforme mostrado no seguinte exemplo:
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
+[!code-csharp[](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
 
 As migrações chamam o método `Up` para implementar as alterações do modelo de dados para uma migração. Quando você insere um comando para reverter a atualização, as migrações chamam o método `Down`.
 
 O código anterior refere-se à migração inicial. Esse código foi criado quando o comando `migrations add InitialCreate` foi executado. O parâmetro de nome da migração ("InitialCreate" no exemplo) é usado para o nome do arquivo. O nome da migração pode ser qualquer nome de arquivo válido. É melhor escolher uma palavra ou frase que resume o que está sendo feito na migração. Por exemplo, uma migração que adicionou uma tabela de departamento pode ser chamada "AddDepartmentTable".
 
-Se a migração inicial é criada e o BD é encerrado:
+Se a migração inicial foi criada e o BD existe:
 
 * O código de criação do BD é gerado.
-* O código de criação do BD não precisa ser executado porque o BD já corresponde ao modelo de dados. Se o código de criação do BD é executado, ele não faz nenhuma alteração porque o BD já corresponde ao modelo de dados.
+* O código de criação do BD não precisa ser executado porque o BD já corresponde ao modelo de dados. Se o código de criação do BD for executado, ele não fará nenhuma alteração porque o BD já corresponde ao modelo de dados.
 
 Quando o aplicativo é implantado em um novo ambiente, o código de criação do BD precisa ser executado para criar o BD.
 
 Anteriormente, a cadeia de conexão foi alterada para usar um novo nome para o BD. O BD especificado não existe e, portanto, as migrações criam o BD.
 
-### <a name="examine-the-data-model-snapshot"></a>Examinar o instantâneo do modelo de dados
+### <a name="the-data-model-snapshot"></a>O instantâneo do modelo de dados
 
-As migrações criam um *instantâneo* do esquema de BD atual em *Migrations/SchoolContextModelSnapshot.cs*:
+As migrações criam um *instantâneo* do esquema de banco de dados atual em *Migrations/SchoolContextModelSnapshot.cs*. Quando você adiciona uma migração, o EF determina o que foi alterado, comparando o modelo de dados com o arquivo de instantâneo.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
+Ao excluir uma migração, use o comando [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove). `dotnet ef migrations remove` exclui a migração e garante que o instantâneo seja redefinido corretamente.
 
-Como o esquema de BD atual é representado no código, o EF Core não precisa interagir com o BD para criar migrações. Quando você adiciona uma migração, o EF Core determina o que foi alterado, comparando o modelo de dados com o arquivo de instantâneo. O EF Core interage com o BD somente quando é necessário atualizar o BD.
-
-O arquivo de instantâneo precisa estar em sincronia com as migrações que o criaram. Uma migração não pode ser removida com a exclusão do arquivo nomeado *\<timestamp>_\<migrationname>.cs*. Se esse arquivo for excluído, as migrações restantes ficarão fora de sincronia com o arquivo de instantâneo de BD. Para excluir a última migração adicionada, use o comando [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove).
+Confira [Migrações do EF Core em ambientes de equipe](/ef/core/managing-schemas/migrations/teams) para obter mais informações de como o arquivo de instantâneo é usado.
 
 ## <a name="remove-ensurecreated"></a>Remover EnsureCreated
 
@@ -187,9 +185,9 @@ Use o **Pesquisador de Objetos do SQL Server** para inspecionar o BD. Observe a 
 
 Execute o aplicativo e verifique se tudo funciona.
 
-## <a name="appling-migrations-in-production"></a>Aplicando migrações em produção
+## <a name="applying-migrations-in-production"></a>Aplicando migrações na produção
 
-Recomendamos que os aplicativos de produção **não** chamem [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) na inicialização do aplicativo. `Migrate` não deve ser chamado em um aplicativo no farm de servidores. Por exemplo, se o aplicativo foi implantado na nuvem com escalabilidade horizontal (várias instâncias do aplicativo estão sendo executadas).
+Recomendamos que os aplicativos de produção **não** chamem [Database.Migrate](/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) na inicialização do aplicativo. `Migrate` não deve ser chamado em um aplicativo no farm de servidores. Por exemplo, se o aplicativo foi implantado na nuvem com escalabilidade horizontal (várias instâncias do aplicativo estão sendo executadas).
 
 A migração de banco de dados deve ser feita como parte da implantação e de maneira controlada. Abordagens de migração de banco de dados de produção incluem:
 
@@ -224,7 +222,7 @@ https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/S
 O aplicativo gera a seguinte exceção:
 
 ```text
-`SqlException: Cannot open database "ContosoUniversity" requested by the login.
+SqlException: Cannot open database "ContosoUniversity" requested by the login.
 The login failed.
 Login failed for user 'user name'.
 ```
@@ -236,6 +234,6 @@ Se o comando `update` retornar o erro "Falha no build":
 * Execute o comando novamente.
 * Deixe uma mensagem na parte inferior da página.
 
->[!div class="step-by-step"]
-[Anterior](xref:data/ef-rp/sort-filter-page)
-[Próximo](xref:data/ef-rp/complex-data-model)
+> [!div class="step-by-step"]
+> [Anterior](xref:data/ef-rp/sort-filter-page)
+> [Próximo](xref:data/ef-rp/complex-data-model)

@@ -1,5 +1,5 @@
 ---
-title: "Desenvolvendo aplicativos ASP.NET Core usando a inspeção dotnet"
+title: Desenvolver aplicativos ASP.NET Core usando dotnet watch
 author: rick-anderson
 description: Este tutorial demonstra como instalar e usar a ferramenta de inspetor de arquivo (dotnet watch) da CLI do .NET Core em um aplicativo do ASP.NET Core.
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: cb15e28cb98ea82091cf5ddeed12df8926079e52
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c3ece3a5b936b2ea7b7772eee10e598cb557b361
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="developing-aspnet-core-apps-using-dotnet-watch"></a>Desenvolvendo aplicativos ASP.NET Core usando a inspeção dotnet
+# <a name="develop-aspnet-core-apps-using-dotnet-watch"></a>Desenvolver aplicativos ASP.NET Core usando dotnet watch
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Victor Hurdugaci](https://twitter.com/victorhurdugaci)
 
@@ -95,7 +95,7 @@ Verifique se `http://localhost:<port number>/api/math/product?a=4&b=5` retorna o
 
 1. Altere o método `Product` de *MathController.cs* novamente para retornar a soma e salve o arquivo.
 1. Em um shell de comando, navegue até a pasta *WebAppTests*.
-1. Execute `dotnet restore`.
+1. Execute [dotnet restore](/dotnet/core/tools/dotnet-restore).
 1. Execute `dotnet watch test`. Seu resultado indica que um teste falhou e que o inspetor está aguardando as alterações de arquivo:
 
      ```console

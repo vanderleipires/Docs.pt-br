@@ -5,20 +5,25 @@ description: Criar uma API Web com o ASP.NET Core MVC e o Visual Studio para Mac
 helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Service, HTTP Service
 manager: wpickett
 ms.author: riande
-ms.date: 09/15/2017
+ms.custom: mvc
+ms.date: 04/27/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: b0e1a331fe3229119f4669fa336b6af4822785bf
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 46050f4bbd6ae821c03d92c8750e839d491328cd
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Criar uma API Web com o ASP.NET Core MVC e o Visual Studio para Mac
+# <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-mac"></a>Criar uma API Web com o ASP.NET Core e o Visual Studio para Mac
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Mike Wasson](https://github.com/mikewasson)
+
+::: moniker range="= aspnetcore-2.1"
+[!INCLUDE[](~/includes/2.1.md)]
+::: moniker-end
 
 Neste tutorial, crie uma API Web para gerenciar uma lista de itens de "tarefas pendentes". A interface do usuário não é construída.
 
@@ -32,44 +37,41 @@ Há três versões deste tutorial:
 
 [!INCLUDE[template files](../includes/webApi/intro.md)]
 
-* Consulte [Introdução ao ASP.NET Core MVC no Mac ou Linux](xref:tutorials/first-mvc-app-xplat/index) para obter um exemplo que usa um banco de dados persistente.
+Confira [Introdução ao ASP.NET Core MVC no Mac ou Linux](xref:tutorials/first-mvc-app-xplat/index) para obter um exemplo que usa um banco de dados persistente.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Instale o seguinte:
-
-- [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior
-- [Visual Studio para Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+[!INCLUDE[](~/includes/net-core-prereqs-macos.md)]
 
 ## <a name="create-the-project"></a>Criar o projeto
 
-No Visual Studio, selecione **Arquivo > Nova Solução**.
+No Visual Studio, selecione **Arquivo** > **Nova Solução**.
 
-![Nova Solução do macOS](first-web-api-mac/_static/sln.png)
+![Nova solução do macOS](first-web-api-mac/_static/sln.png)
 
-Selecione **Aplicativo .NET Core > API Web ASP.NET Core > Avançar**.
+Selecione **Aplicativo .NET Core** > **API Web ASP.NET Core** > **Avançar**.
 
-![Caixa de diálogo Novo Projeto do macOS](first-web-api-mac/_static/1.png)
+![Caixa de diálogo Novo projeto do macOS](first-web-api-mac/_static/1.png)
 
-Digite **TodoApi** para o **Nome do Projeto** e, em seguida, selecione Criar.
+Digite *TodoApi* para o **Nome do Projeto** e, em seguida, clique em **Criar**.
 
 ![caixa de diálogo de configuração](first-web-api-mac/_static/2.png)
 
 ### <a name="launch-the-app"></a>Iniciar o aplicativo
 
-No Visual Studio, selecione **Executar > Iniciar Com Depuração** para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:5000`. Você obtém um erro de HTTP 404 (Não Encontrado).  Altere a URL para `http://localhost:port/api/values`. Os dados de `ValuesController` serão exibidos:
+No Visual Studio, selecione **Executar** > **Iniciar com Depuração** para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:5000`. Você obtém um erro de HTTP 404 (Não Encontrado). Altere a URL para `http://localhost:<port>/api/values`. Os dados do `ValuesController` são exibidos:
 
-```
+```json
 ["value1","value2"]
 ```
 
 ### <a name="add-support-for-entity-framework-core"></a>Adicionar suporte ao Entity Framework Core
 
-Instalar o provedor de banco de dados [Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/). Este provedor de banco de dados permite que o Entity Framework Core seja usado com um banco de dados em memória.
+Instalar o provedor de banco de dados [Entity Framework Core InMemory](/ef/core/providers/in-memory/). Este provedor de banco de dados permite que o Entity Framework Core seja usado com um banco de dados em memória.
 
-* No menu **Projeto**, selecione **Adicionar pacotes do NuGet**. 
+* No menu **Projeto**, selecione **Adicionar pacotes do NuGet**.
 
-  *  Como alternativa, clique com o botão direito do mouse em **Dependências** e, em seguida, selecione **Adicionar Pacotes**.
+  * Como alternativa, clique com o botão direito do mouse em **Dependências** e, em seguida, selecione **Adicionar Pacotes**.
 
 * Digite `EntityFrameworkCore.InMemory` na caixa de pesquisa.
 * Selecione `Microsoft.EntityFrameworkCore.InMemory` e, em seguida, selecione **Adicionar Pacote**.
@@ -78,17 +80,18 @@ Instalar o provedor de banco de dados [Entity Framework Core InMemory](https://d
 
 Um modelo é um objeto que representa os dados em seu aplicativo. Nesse caso, o único modelo é um item de tarefas pendentes.
 
-Adicione uma pasta chamada *Models*. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto. Selecione **Adicionar** > **Nova Pasta**. Nomeie a pasta como *Modelos*.
+No Gerenciador de Soluções, clique com o botão direito do mouse no projeto. Selecione **Adicionar** > **Nova Pasta**. Nomeie a pasta como *Modelos*.
 
 ![nova pasta](first-web-api-mac/_static/folder.png)
 
-Observação: Você pode colocar as classes de modelo em qualquer lugar no seu projeto, mas a pasta *Modelos* é usada por convenção.
+> [!NOTE]
+> Você pode colocar as classes de modelo em qualquer lugar no projeto, mas a pasta *Models* é usada por convenção.
 
-Adicione uma classe `TodoItem`. Clique com o botão direito do mouse na pasta *Modelos* e selecione **Adicionar > Novo Arquivo > Geral > Classe Vazia**. Nomeie a classe `TodoItem` e, em seguida, selecione **Novo**.
+Clique com o botão direito do mouse na pasta *Modelos* e selecione **Adicionar** > **Novo Arquivo** > **Geral** > **Classe Vazia**. Nomeie a classe como *TodoItem* e, em seguida, clique em **Novo**.
 
 Substitua o código gerado por:
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Models/TodoItem.cs)]
 
 O banco de dados gera o `Id` quando um `TodoItem` é criado.
 
@@ -98,7 +101,7 @@ O *contexto de banco de dados* é a classe principal que coordena a funcionalida
 
 Adicione uma classe denominada `TodoContext` à pasta *Modelos*.
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Models/TodoContext.cs)]
 
 [!INCLUDE[Register the database context](../includes/webApi/register_dbContext.md)]
 
@@ -106,74 +109,91 @@ Adicione uma classe denominada `TodoContext` à pasta *Modelos*.
 
 No Gerenciador de Soluções, na pasta *Controladores*, adicione a classe `TodoController`.
 
-Substitua o código gerado pelo código a seguir (e adicione chaves de fechamento):
+Substitua o código gerado pelo seguinte:
 
 [!INCLUDE[code and get todo items](../includes/webApi/getTodoItems.md)]
 
 ### <a name="launch-the-app"></a>Iniciar o aplicativo
 
-No Visual Studio, selecione **Executar > Iniciar Com Depuração** para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:port`, em que *porta* é um número da porta escolhido aleatoriamente. Você obtém um erro de HTTP 404 (Não Encontrado).  Altere a URL para `http://localhost:port/api/values`. Os dados de `ValuesController` serão exibidos:
+No Visual Studio, selecione **Executar** > **Iniciar com Depuração** para iniciar o aplicativo. O Visual Studio inicia um navegador e navega para `http://localhost:<port>`, em que `<port>` é um número de porta escolhido aleatoriamente. Você obtém um erro de HTTP 404 (Não Encontrado). Altere a URL para `http://localhost:<port>/api/values`. Os dados do `ValuesController` são exibidos:
 
-```
+```json
 ["value1","value2"]
 ```
 
-Navegue até o controlador `Todo` no `http://localhost:port/api/todo`:
+Navegue até o controlador `Todo` em `http://localhost:<port>/api/todo`:
 
-```
+```json
 [{"key":1,"name":"Item1","isComplete":false}]
 ```
 
-## <a name="implement-the-other-crud-operations"></a>Implementar as outras operações de CRUD
+## <a name="implement-the-other-crud-operations"></a>Implementar as outras operações CRUD
 
-Adicionaremos os métodos `Create`, `Update` e `Delete` ao controlador. Essas são variações de um mesmo tema e, portanto, mostrarei apenas o código e realçarei as principais diferenças. Compile o projeto depois de adicionar ou alterar o código.
+Adicionaremos os métodos `Create`, `Update` e `Delete` ao controlador. Esses métodos são variações de um mesmo tema e, portanto, mostrarei apenas o código e realçarei as principais diferenças. Compile o projeto depois de adicionar ou alterar o código.
 
 ### <a name="create"></a>Create
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Este é um método HTTP POST, indicado pelo atributo [`[HttpPost]`](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute). O atributo [`[FromBody]`](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) informa ao MVC para obter o valor do item de tarefas pendentes do corpo da solicitação HTTP.
+O método anterior responde a um HTTP POST, conforme indicado pelo atributo [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute). O atributo [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) informa ao MVC que ele deve obter o valor do item pendente no corpo da solicitação HTTP.
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-O método `CreatedAtRoute` retorna uma resposta 201, que é a resposta padrão para um método HTTP POST que cria um novo recurso no servidor. `CreatedAtRoute` também adiciona um cabeçalho Local à resposta. O cabeçalho Location especifica o URI do item de tarefas pendentes recém-criado. Consulte [10.2.2 201 criado](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+O método anterior responde a um HTTP POST, conforme indicado pelo atributo [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute). O MVC obtém o valor do item pendente no corpo da solicitação HTTP.
+::: moniker-end
 
-### <a name="use-postman-to-send-a-create-request"></a>Use o Postman para enviar uma solicitação de criação
+O método `CreatedAtRoute` retorna uma resposta 201. Essa é a resposta padrão para um método HTTP POST que cria um novo recurso no servidor. `CreatedAtRoute` também adiciona um cabeçalho Local à resposta. O cabeçalho Location especifica o URI do item de tarefas pendentes recém-criado. Consulte [10.2.2 201 criado](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
-* Inicie o aplicativo (**Executar > Iniciar Com Depuração**).
-* Inicie o Postman.
+### <a name="use-postman-to-send-a-create-request"></a>Usar o Postman para enviar uma solicitação Create
+
+* Inicie o aplicativo (**Executar** > **Iniciar com Depuração**).
+* Abra o Postman.
 
 ![Console do Postman](first-web-api/_static/pmc.png)
 
-* Defina o método HTTP como `POST`
-* Selecione o botão de opção **Corpo**
-* Selecione o botão de opção **bruto**
-* Definir o tipo como JSON
-* No editor de chave-valor, insira um item de tarefas pendentes, como
+* Atualize o número da porta na URL do localhost.
+* Defina o método HTTP para *POST*.
+* Clique na guia **Corpo**.
+* Selecione o botão de opção **bruto**.
+* Defina o tipo como *JSON (aplicativo/json)*.
+* Insira um corpo de solicitação com um item pendente que se assemelhe ao JSON a seguir:
 
 ```json
 {
-    "name":"walk dog",
-    "isComplete":true
+  "name":"walk dog",
+  "isComplete":true
 }
 ```
 
-* Selecione **Enviar**
+* Clique no botão **Enviar**.
 
-* Selecione a guia Cabeçalhos no painel inferior e copie o cabeçalho **Location**:
+::: moniker range=">= aspnetcore-2.1"
+> [!TIP]
+> Se nenhuma resposta for exibida depois de clicar em **Enviar**, desabilite a opção **Verificação de certificação SSL**. Isso é encontrado em **Arquivo** > **Configurações**. Clique no botão **Enviar** novamente depois de desabilitar a configuração.
+::: moniker-end
 
-![Guia Cabeçalhos do console do Postman](first-web-api/_static/pmget.png)
+Clique na guia **Cabeçalhos** no painel **Resposta** e copie o valor do cabeçalho **Local**:
 
-Use o URI do cabeçalho Location para acessar o recurso que você acabou de criar. Lembre-se de que o método `GetById` criou a rota nomeada `"GetTodo"`:
+![Guia Cabeçalhos do console do Postman](first-web-api/_static/pmc2.png)
+
+É possível usar o URI do cabeçalho Local para acessar o recurso que você criou. O método `Create` retorna [CreatedAtRoute](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdatroute#Microsoft_AspNetCore_Mvc_ControllerBase_CreatedAtRoute_System_String_System_Object_System_Object_). O primeiro parâmetro passado para `CreatedAtRoute` representa a rota nomeada a ser usada para gerar a URL. Lembre-se de que o método `GetById` criou a rota nomeada `"GetTodo"`:
 
 ```csharp
 [HttpGet("{id}", Name = "GetTodo")]
-public IActionResult GetById(string id)
 ```
 
 ### <a name="update"></a>Atualização
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker-end
 
-`Update` é semelhante a `Create`, mas usa HTTP PUT. A resposta é [204 (Sem conteúdo)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). De acordo com a especificação HTTP, uma solicitação PUT exige que o cliente envie a entidade atualizada inteira, não apenas os deltas. Para dar suporte a atualizações parciais, use HTTP PATCH.
+`Update` é semelhante a `Create`, mas usa HTTP PUT. A resposta é [204 (Sem conteúdo)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). De acordo com a especificação HTTP, uma solicitação PUT exige que o cliente envie a entidade atualizada inteira, não apenas os deltas. Para dar suporte a atualizações parciais, use HTTP PATCH.
 
 ```json
 {
@@ -187,16 +207,12 @@ public IActionResult GetById(string id)
 
 ### <a name="delete"></a>Excluir
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
 
-A resposta é [204 (Sem conteúdo)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
+A resposta é [204 (Sem conteúdo)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
 
 ![Console do Postman mostrando a resposta 204 (Sem conteúdo)](first-web-api/_static/pmd.png)
 
-## <a name="next-steps"></a>Próximas etapas
+[!INCLUDE[jQuery](../includes/webApi/add-jquery.md)]
 
-* [Roteamento para ações do controlador](xref:mvc/controllers/routing)
-* Para obter informações sobre como implantar a API, consulte [Host e implantação](xref:host-and-deploy/index).
-* [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
-* [Postman](https://www.getpostman.com/)
-* [Fiddler](https://www.telerik.com/download/fiddler)
+[!INCLUDE[next steps](../includes/webApi/next.md)]

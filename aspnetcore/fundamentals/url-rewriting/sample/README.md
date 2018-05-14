@@ -33,11 +33,13 @@ using Microsoft.Extensions.FileProviders;
 PhysicalFileProvider fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
 ```
 ## <a name="secure-redirection-extensions"></a>Proteger extensões de redirecionamento
-Esta amostra inclui a configuração `WebHostBuilder` para que o aplicativo use URLs (**https://localhost:5001**, **https://localhost**) e um certificado de teste (**testCert.pfx**) para ajudá-lo a conhecer esses métodos de redirecionamento. Adicione um deles à `RewriteOptions()` em **Startup.cs** para estudar seu comportamento.
+Este exemplo inclui a configuração `WebHostBuilder` para o aplicativo usar URLs (**https://localhost:5001**, **https://localhost**) e um certificado de teste (**testCert.pfx**) para ajudá-lo a explorar esses métodos de redirecionamento. Adicione um deles à `RewriteOptions()` em **Startup.cs** para estudar seu comportamento.
 
-Método | Código de status | Porta
---- | :---: | :---:
-`.AddRedirectToHttpsPermanent()` | 301 | nulo (465)
-`.AddRedirectToHttps()` | 302 | nulo (465)
-`.AddRedirectToHttps(301)` | 301 | nulo (465)
-`.AddRedirectToHttps(301, 5001)` | 301 | 5001
+
+|              Método              | Código de status |    Porta    |
+|----------------------------------|:-----------:|:----------:|
+| `.AddRedirectToHttpsPermanent()` |     301     | nulo (465) |
+|     `.AddRedirectToHttps()`      |     302     | nulo (465) |
+|    `.AddRedirectToHttps(301)`    |     301     | nulo (465) |
+| `.AddRedirectToHttps(301, 5001)` |     301     |    5001    |
+

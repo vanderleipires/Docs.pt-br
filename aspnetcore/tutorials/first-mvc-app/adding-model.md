@@ -1,5 +1,5 @@
 ---
-title: Adicionando um modelo a um aplicativo ASP.NET Core MVC
+title: Adicione um modelo a um aplicativo ASP.NET Core MVC
 author: rick-anderson
 description: Adicione um modelo a um aplicativo ASP.NET Core simples.
 manager: wpickett
@@ -9,19 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 1819aff0e6ae68ad3c609466e52fcb6510fe1dcd
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4204d4e2d474db51692d42751a9f82373e9f0c0d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>Adicione um modelo a um aplicativo ASP.NET Core MVC
+
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 Observação: os modelos do ASP.NET Core 2.0 contêm a pasta *Models*.
 
 Clique com o botão direito do mouse na pasta *Models* > **Adicionar** > **Classe**. Nomeie a classe **Movie** e adicione as seguintes propriedades:
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 O campo `ID` é necessário para o banco de dados para a chave primária. 
 
@@ -59,7 +61,7 @@ O Visual Studio cria:
 
 * Uma [classe de contexto de banco de dados](xref:data/ef-mvc/intro#create-the-database-context) do Entity Framework Core (*Data/MvcMovieContext.cs*)
 * Um controlador de filmes (*Controllers/MoviesController.cs*)
-* Arquivos de exibição do Razor para as páginas Criar, Excluir, Detalhes, Editar e Índice (*Views/Movies/&ast;.cshtml*)
+* Arquivos de exibição do Razor para as páginas Criar, Excluir, Detalhes, Editar e Índice (<em>Views/Movies/&ast;.cshtml</em>)
 
 A criação automática do contexto de banco de dados e das exibições e métodos de ação [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (criar, ler, atualizar e excluir) é conhecida como *scaffolding*. Logo você terá um aplicativo Web totalmente funcional que permitirá que você gerencie um banco de dados de filmes.
 
@@ -113,12 +115,21 @@ O comando `Update-Database` executa o método `Up` no arquivo *Migrations/\<time
   dotnet ef database update
   ```     
   
+  Se você executar o aplicativo e obtiver o erro:
+  
+  ```text
+  SqlException: Cannot open database "Movie" requested by the login.
+  The login failed.
+  Login failed for user 'user name'.
+  ```
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+Provavelmente você não terá executado ` dotnet ef database update`.
+  
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model4.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model4.md)]
 
 ![Menu contextual do IntelliSense em um item de Modelo listando as propriedades disponíveis para ID, Preço, Data de Lançamento e Título](adding-model/_static/ints.png)
 
@@ -127,6 +138,6 @@ O comando `Update-Database` executa o método `Up` no arquivo *Migrations/\<time
 * [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
 * [Globalização e localização](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[Anterior – Adicionando uma exibição](adding-view.md)
-[Próximo – Trabalhando com o SQL](working-with-sql.md)  
+> [!div class="step-by-step"]
+> [Anterior – Adicionando uma exibição](adding-view.md)
+> [Próximo – Trabalhando com o SQL](working-with-sql.md)  
