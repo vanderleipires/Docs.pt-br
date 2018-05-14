@@ -1,7 +1,7 @@
-## <a name="next-steps"></a><span data-ttu-id="486fe-101">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="486fe-101">Next steps</span></span>
+## <a name="next-steps"></a>Próximas etapas
 
-* [<span data-ttu-id="486fe-102">Páginas de ajuda da API Web ASP.NET Core usando o Swagger</span><span class="sxs-lookup"><span data-stu-id="486fe-102">ASP.NET Core Web API Help Pages using Swagger</span></span>](xref:tutorials/web-api-help-pages-using-swagger)
-* [<span data-ttu-id="486fe-103">Roteamento para ações do controlador</span><span class="sxs-lookup"><span data-stu-id="486fe-103">Routing to Controller Actions</span></span>](xref:mvc/controllers/routing)
-* <span data-ttu-id="486fe-104">Para obter informações sobre como implantar uma API, incluindo o Serviço de Aplicativo do Azure, confira [Host e implantação](xref:host-and-deploy/index).</span><span class="sxs-lookup"><span data-stu-id="486fe-104">For information about deploying an API, including to Azure App Service, see [Host and deploy](xref:host-and-deploy/index).</span></span>
-* <span data-ttu-id="486fe-105">[Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample).</span><span class="sxs-lookup"><span data-stu-id="486fe-105">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample).</span></span> <span data-ttu-id="486fe-106">Consulte [como baixar](xref:tutorials/index#how-to-download-a-sample).</span><span class="sxs-lookup"><span data-stu-id="486fe-106">See [how to download](xref:tutorials/index#how-to-download-a-sample).</span></span>
-* [<span data-ttu-id="486fe-107">Postman</span><span class="sxs-lookup"><span data-stu-id="486fe-107">Postman</span></span>](https://www.getpostman.com/)
+* [Páginas de ajuda da API Web ASP.NET Core usando o Swagger](xref:tutorials/web-api-help-pages-using-swagger)
+* [Roteamento para ações do controlador](xref:mvc/controllers/routing)
+* Para obter informações sobre como implantar uma API, incluindo o Serviço de Aplicativo do Azure, confira [Host e implantação](xref:host-and-deploy/index).
+* [Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample). Consulte [como baixar](xref:tutorials/index#how-to-download-a-sample).
+* [Postman](https://www.getpostman.com/)

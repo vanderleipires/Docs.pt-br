@@ -1,5 +1,5 @@
-# <a name="aspnet-core-change-token-sample"></a><span data-ttu-id="40986-101">Amostra de token de alteração do ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="40986-101">ASP.NET Core Change Token Sample</span></span>
+# <a name="aspnet-core-change-token-sample"></a>Amostra de token de alteração do ASP.NET Core
 
-<span data-ttu-id="40986-102">Esta amostra ilustra o uso de [ChangeToken](https://docs.microsoft.com/dotnet/api/microsoft.extensions.primitives.changetoken).</span><span class="sxs-lookup"><span data-stu-id="40986-102">This sample illustrates the use of [ChangeToken](https://docs.microsoft.com/dotnet/api/microsoft.extensions.primitives.changetoken).</span></span> <span data-ttu-id="40986-103">Esta amostra apresenta os recursos descritos no tópico [Detectar alterações com tokens de alteração](https://docs.microsoft.com/aspnet/core/fundamentals/primitives/change-tokens).</span><span class="sxs-lookup"><span data-stu-id="40986-103">This sample demonstrates the features described in the [Detect changes with Change Tokens](https://docs.microsoft.com/aspnet/core/fundamentals/primitives/change-tokens) topic.</span></span>
+Esta amostra ilustra o uso de [ChangeToken](https://docs.microsoft.com/dotnet/api/microsoft.extensions.primitives.changetoken). Esta amostra apresenta os recursos descritos no tópico [Detectar alterações com tokens de alteração](https://docs.microsoft.com/aspnet/core/fundamentals/primitives/change-tokens).
 
-<span data-ttu-id="40986-104">Execute a amostra e siga as instruções na página Índice.</span><span class="sxs-lookup"><span data-stu-id="40986-104">Run the sample and follow the instructions on the Index page.</span></span>
+Execute a amostra e siga as instruções na página Índice.
