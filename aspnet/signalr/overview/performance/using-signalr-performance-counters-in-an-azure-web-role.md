@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/performance/using-signalr-performance-counters-in-an-azure-web-role
-title: "Usando contadores de desempenho do SignalR em uma função da Web do Azure | Microsoft Docs"
+title: Usando contadores de desempenho do SignalR em uma função da Web do Azure | Microsoft Docs
 author: guardrex
-description: "Como instalar e usar contadores de desempenho do SignalR em uma função da Web do Azure."
-keywords: "ASP.NET,SignalR,Performance contador, a função web do azure"
+description: Como instalar e usar contadores de desempenho do SignalR em uma função da Web do Azure.
+keywords: ASP.NET,SignalR,Performance contador, a função web do azure
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/11/2017

@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/deployment/docker
-title: "Migrando aplicativos ASP.NET MVC para contêineres do Windows"
-description: "Saiba como selecionar um aplicativo ASP.NET MVC existente e executá-lo em um contêiner do Docker do Windows"
+title: Migrando aplicativos ASP.NET MVC para contêineres do Windows
+description: Saiba como selecionar um aplicativo ASP.NET MVC existente e executá-lo em um contêiner do Docker do Windows
 keywords: Windows Containers,Docker,ASP.NET MVC
 author: BillWagner
 ms.author: wiwagn

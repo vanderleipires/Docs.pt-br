@@ -1,12 +1,12 @@
-# <a name="custom-model-binding-demo"></a>Demonstração de associação de modelos personalizada
+# <a name="custom-model-binding-demo"></a><span data-ttu-id="e5550-101">Demonstração de associação de modelos personalizada</span><span class="sxs-lookup"><span data-stu-id="e5550-101">Custom Model Binding Demo</span></span>
 
-Teste o `ByteArrayModelBinder` executando o aplicativo e postando uma cadeia de caracteres codificada em Base64 no ponto de extremidade `ImageController` (`/api/image/`). Especifique as propriedades de arquivo e de nome de arquivo no corpo da solicitação como dados de formulário (usando o [Postman](https://www.getpostman.com/) ou uma ferramenta semelhante). Use [esta cadeia de caracteres de exemplo](Base64String.txt). O resultado é salvo na pasta *wwwroot/images/upload* com o nome do arquivo especificado.
+<span data-ttu-id="e5550-102">Teste o `ByteArrayModelBinder` executando o aplicativo e postando uma cadeia de caracteres codificada em Base64 no ponto de extremidade `ImageController` (`/api/image/`).</span><span class="sxs-lookup"><span data-stu-id="e5550-102">Test `ByteArrayModelBinder` by running the app and POSTing a base64-encoded string to the `ImageController` endpoint (`/api/image/`).</span></span> <span data-ttu-id="e5550-103">Especifique as propriedades de arquivo e de nome de arquivo no corpo da solicitação como dados de formulário (usando o [Postman](https://www.getpostman.com/) ou uma ferramenta semelhante).</span><span class="sxs-lookup"><span data-stu-id="e5550-103">Specify the file and filename proparties in the request body as form-data (using [Postman](https://www.getpostman.com/) or a similar tool).</span></span> <span data-ttu-id="e5550-104">Use [esta cadeia de caracteres de exemplo](Base64String.txt).</span><span class="sxs-lookup"><span data-stu-id="e5550-104">You can use [this sample string](Base64String.txt).</span></span> <span data-ttu-id="e5550-105">O resultado é salvo na pasta *wwwroot/images/upload* com o nome do arquivo especificado.</span><span class="sxs-lookup"><span data-stu-id="e5550-105">The result is saved in the *wwwroot/images/upload* folder with the filename specified.</span></span>
 
-Para testar o exemplo de associação personalizada, experimente os seguintes pontos de extremidade:
+<span data-ttu-id="e5550-106">Para testar o exemplo de associação personalizada, experimente os seguintes pontos de extremidade:</span><span class="sxs-lookup"><span data-stu-id="e5550-106">To test the custom binding example, try the following endpoints:</span></span>
 
-* /api/authors/1
-* /api/authors/2 (NOT FOUND)
-* /api/boundauthors/1
-* /api/boundauthors/2 (NOT FOUND)
-* /api/boundauthors/get/1
-* /api/boundauthors/get/2 (NO CONTENT) &ndash; Essa ação não verifica se há nulos e retorna um *404 Não Encontrado*.
+* <span data-ttu-id="e5550-107">/api/authors/1</span><span class="sxs-lookup"><span data-stu-id="e5550-107">/api/authors/1</span></span>
+* <span data-ttu-id="e5550-108">/api/authors/2 (NOT FOUND)</span><span class="sxs-lookup"><span data-stu-id="e5550-108">/api/authors/2 (NOT FOUND)</span></span>
+* <span data-ttu-id="e5550-109">/api/boundauthors/1</span><span class="sxs-lookup"><span data-stu-id="e5550-109">/api/boundauthors/1</span></span>
+* <span data-ttu-id="e5550-110">/api/boundauthors/2 (NOT FOUND)</span><span class="sxs-lookup"><span data-stu-id="e5550-110">/api/boundauthors/2 (NOT FOUND)</span></span>
+* <span data-ttu-id="e5550-111">/api/boundauthors/get/1</span><span class="sxs-lookup"><span data-stu-id="e5550-111">/api/boundauthors/get/1</span></span>
+* <span data-ttu-id="e5550-112">/api/boundauthors/get/2 (NO CONTENT) &ndash; Essa ação não verifica se há nulos e retorna um *404 Não Encontrado*.</span><span class="sxs-lookup"><span data-stu-id="e5550-112">/api/boundauthors/get/2 (NO CONTENT) &ndash; This action doesn't check for null and returns a *404 Not Found*.</span></span>

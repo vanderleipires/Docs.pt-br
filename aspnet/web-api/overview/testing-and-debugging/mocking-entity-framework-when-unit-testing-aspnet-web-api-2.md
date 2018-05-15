@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
-title: "Simulação do Entity Framework quando ASP.NET Web API 2 de teste de unidade | Microsoft Docs"
+title: Simulação do Entity Framework quando ASP.NET Web API 2 de teste de unidade | Microsoft Docs
 author: tfitzmac
 description: Este guia e o aplicativo demonstram como criar testes de unidade para seu aplicativo de API Web 2 que usa o Entity Framework. Ele mostra como modificar o...
 ms.author: aspnetcontent

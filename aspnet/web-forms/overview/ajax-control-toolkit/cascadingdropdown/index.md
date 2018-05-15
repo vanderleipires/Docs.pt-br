@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/index
 title: CascadingDropdown | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial mostra como usar o o CascadingDropDown criar suspensa relacionada listas de controle de atualização quando os usuários fazem uma seleção."
+description: Este tutorial mostra como usar o o CascadingDropDown criar suspensa relacionada listas de controle de atualização quando os usuários fazem uma seleção.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011

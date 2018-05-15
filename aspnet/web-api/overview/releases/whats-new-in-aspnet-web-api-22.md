@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/whats-new-in-aspnet-web-api-22
-title: "O que há de novo no ASP.NET Web API 2.2 | Microsoft Docs"
+title: O que há de novo no ASP.NET Web API 2.2 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/25/2014

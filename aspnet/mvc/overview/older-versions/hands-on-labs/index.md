@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/index
-title: "O ASP.NET MVC 4 prático laboratórios | Microsoft Docs"
+title: O ASP.NET MVC 4 prático laboratórios | Microsoft Docs
 author: rick-anderson
-description: "Aprender a desenvolver com o ASP.NET MVC com esses ponteiros em laboratórios"
+description: Aprender a desenvolver com o ASP.NET MVC com esses ponteiros em laboratórios
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
