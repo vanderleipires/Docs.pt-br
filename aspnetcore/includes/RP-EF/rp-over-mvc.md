@@ -1,8 +1,8 @@
-Este tutorial ensina a usar o ASP.NET Core MVC e o Entity Framework Core com controladores e exibições. As Páginas Razor é uma nova alternativa no ASP.NET Core 2.0, um modelo de programação baseado em página que torna a criação da interface do usuário da Web mais fácil e produtiva. É recomendável tentar o tutorial das [Páginas Razor](xref:data/ef-rp/intro) na versão do MVC. O tutorial Páginas do Razor:
+<span data-ttu-id="0ff3c-101">Este tutorial ensina a usar o ASP.NET Core MVC e o Entity Framework Core com controladores e exibições.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-101">This tutorial teaches ASP.NET Core MVC and Entity Framework Core with controllers and views.</span></span> <span data-ttu-id="0ff3c-102">As Páginas Razor é uma nova alternativa no ASP.NET Core 2.0, um modelo de programação baseado em página que torna a criação da interface do usuário da Web mais fácil e produtiva.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-102">Razor Pages is a new alternative in ASP.NET Core 2.0, a page-based programming model that makes building web UI easier and more productive.</span></span> <span data-ttu-id="0ff3c-103">É recomendável tentar o tutorial das [Páginas Razor](xref:data/ef-rp/intro) na versão do MVC.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-103">We recommend the [Razor Pages](xref:data/ef-rp/intro) tutorial over the MVC version.</span></span> <span data-ttu-id="0ff3c-104">O tutorial Páginas do Razor:</span><span class="sxs-lookup"><span data-stu-id="0ff3c-104">The Razor Pages tutorial:</span></span>
 
-* É mais fácil de acompanhar.
-* Fornece mais práticas recomendadas do EF Core.
-* Usa consultas mais eficientes.
-* É mais atual com a API mais recente.
-* Aborda mais recursos.
-* É a abordagem preferencial para o desenvolvimento de novos aplicativos.
+* <span data-ttu-id="0ff3c-105">É mais fácil de acompanhar.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-105">Is easier to follow.</span></span>
+* <span data-ttu-id="0ff3c-106">Fornece mais práticas recomendadas do EF Core.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-106">Provides more EF Core best practices.</span></span>
+* <span data-ttu-id="0ff3c-107">Usa consultas mais eficientes.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-107">Uses more efficient queries.</span></span>
+* <span data-ttu-id="0ff3c-108">É mais atual com a API mais recente.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-108">Is more current with the latest API.</span></span>
+* <span data-ttu-id="0ff3c-109">Aborda mais recursos.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-109">Covers more features.</span></span>
+* <span data-ttu-id="0ff3c-110">É a abordagem preferencial para o desenvolvimento de novos aplicativos.</span><span class="sxs-lookup"><span data-stu-id="0ff3c-110">Is the preferred approach for new application development.</span></span>

@@ -1,13 +1,13 @@
 <a name="cli"></a>
-## <a name="perform-initial-migration"></a>Executar a migração inicial
+## <a name="perform-initial-migration"></a><span data-ttu-id="85708-101">Executar a migração inicial</span><span class="sxs-lookup"><span data-stu-id="85708-101">Perform initial migration</span></span>
 
-Na linha de comando, execute os seguintes comandos de CLI do .NET Core:
+<span data-ttu-id="85708-102">Na linha de comando, execute os seguintes comandos de CLI do .NET Core:</span><span class="sxs-lookup"><span data-stu-id="85708-102">From the command line, run the following .NET Core CLI commands:</span></span>
 
 ```console
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
-O comando `dotnet ef migrations add InitialCreate` gera código para criar o esquema de banco de dados inicial. O esquema é baseado no modelo especificado no `DbContext` (no arquivo *Models/MvcMovieContext.cs*). O argumento `Initial` é usado para nomear as migrações. Você pode usar qualquer nome, mas, por convenção, escolha um nome que descreve a migração. Consulte [Introdução às migrações](xref:data/ef-mvc/migrations#introduction-to-migrations) para obter mais informações.
+<span data-ttu-id="85708-103">O comando `dotnet ef migrations add InitialCreate` gera código para criar o esquema de banco de dados inicial.</span><span class="sxs-lookup"><span data-stu-id="85708-103">The `dotnet ef migrations add InitialCreate` command generates code to create the initial database schema.</span></span> <span data-ttu-id="85708-104">O esquema é baseado no modelo especificado no `DbContext` (no arquivo *Models/MvcMovieContext.cs*).</span><span class="sxs-lookup"><span data-stu-id="85708-104">The schema is based on the model specified in the `DbContext` (In the *Models/MvcMovieContext.cs* file).</span></span> <span data-ttu-id="85708-105">O argumento `Initial` é usado para nomear as migrações.</span><span class="sxs-lookup"><span data-stu-id="85708-105">The `Initial` argument is used to name the migrations.</span></span> <span data-ttu-id="85708-106">Você pode usar qualquer nome, mas, por convenção, escolha um nome que descreve a migração.</span><span class="sxs-lookup"><span data-stu-id="85708-106">You can use any name, but by convention you choose a name that describes the migration.</span></span> <span data-ttu-id="85708-107">Consulte [Introdução às migrações](xref:data/ef-mvc/migrations#introduction-to-migrations) para obter mais informações.</span><span class="sxs-lookup"><span data-stu-id="85708-107">See [Introduction to migrations](xref:data/ef-mvc/migrations#introduction-to-migrations) for more information.</span></span>
 
-O comando `dotnet ef database update` executa o método `Up` no arquivo *Migrations/\<time-stamp>_InitialCreate.cs*, que cria o banco de dados.
+<span data-ttu-id="85708-108">O comando `dotnet ef database update` executa o método `Up` no arquivo *Migrations/\<time-stamp>_InitialCreate.cs*, que cria o banco de dados.</span><span class="sxs-lookup"><span data-stu-id="85708-108">The `dotnet ef database update` command runs the `Up` method in the *Migrations/\<time-stamp>_InitialCreate.cs* file, which creates the database.</span></span>
