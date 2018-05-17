@@ -107,7 +107,7 @@ O filtro estenderá **ActionFilterAttributeClass** e substituir **OnActionExecut
 
 Esta solução de repositório de música tem uma nova tabela de modelo de dados para o log do site, **ActionLog**, com os seguintes campos: nome do controlador que recebeu uma solicitação, a ação de chamado, o IP do cliente e o carimbo de data / hora.
 
-![Modelo de dados. Tabela ActionLog. ] (aspnet-mvc-4-custom-action-filters/_static/image1.png "Modelo de dados. Tabela ActionLog.")
+![Modelo de dados. Tabela ActionLog. ](aspnet-mvc-4-custom-action-filters/_static/image1.png "Modelo de dados. Tabela ActionLog.")
 
 *Modelo de dados - ActionLog tabela*
 

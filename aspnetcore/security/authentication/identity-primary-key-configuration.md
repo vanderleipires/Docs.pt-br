@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: ce654492dc7bab6c031c9f82555f877f642171ce
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 49d5ef94abeb5bd616c5ddbcdd4358a58a8e63a4
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>Configurar o tipo de dados de chave primária de identidade no núcleo do ASP.NET
 
@@ -35,17 +35,20 @@ Identidade do ASP.NET Core permite que você configure o tipo de dados usado par
 
 4. Registre a classe de contexto de banco de dados personalizados ao adicionar o serviço de identidade na classe de inicialização do aplicativo.
 
-   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
-    O `AddEntityFrameworkStores` método não aceita um `TKey` argumento como fazia no ASP.NET Core 1. x. Tipo de dados da chave primária é deduzido analisando a `DbContext` objeto.
+   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
-    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
+   O `AddEntityFrameworkStores` método não aceita um `TKey` argumento como fazia no ASP.NET Core 1. x. Tipo de dados da chave primária é deduzido analisando a `DbContext` objeto.
 
-   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-    O `AddEntityFrameworkStores` método aceita um `TKey` argumento indicando o tipo de dados da chave primária.
+   [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
 
-    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
+   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
-   * * *
+   O `AddEntityFrameworkStores` método aceita um `TKey` argumento indicando o tipo de dados da chave primária.
+
+   [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
+
+   ---
+
 ## <a name="test-the-changes"></a>Teste as alterações
 
 Após a conclusão das alterações de configuração, a propriedade que representa a chave primária reflete o novo tipo de dados. O exemplo a seguir demonstra como acessar a propriedade em um controlador MVC.

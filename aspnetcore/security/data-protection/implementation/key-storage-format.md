@@ -1,6 +1,6 @@
 ---
 title: Formato de armazenamento de chaves no núcleo do ASP.NET
-author: tdykstra
+author: rick-anderson
 description: Obter os detalhes de implementação do formato de armazenamento de chaves de proteção de dados do ASP.NET Core.
 manager: wpickett
 ms.author: riande
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-storage-format
-ms.openlocfilehash: abe23da3de70107aa4f4d84f4da27aadfe7b2061
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 1a5912f246708355e6677c60034d982d053c3938
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="key-storage-format-in-aspnet-core"></a>Formato de armazenamento de chaves no núcleo do ASP.NET
 

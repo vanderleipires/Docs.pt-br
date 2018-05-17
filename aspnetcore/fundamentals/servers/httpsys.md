@@ -1,6 +1,6 @@
 ---
 title: Implementação do servidor Web HTTP.sys no ASP.NET Core
-author: tdykstra
+author: rick-anderson
 description: Conheça o HTTP.sys, um servidor Web para o ASP.NET Core executado no Windows. Desenvolvido com base no driver de modo kernel, o HTTP.sys é uma alternativa ao Kestrel, que pode ser usado na conexão direta com a Internet sem o IIS.
 manager: wpickett
 ms.author: tdykstra
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 1ec309a00b6cb156b0d11ad085eda3b7a772ac94
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ce4edf6f07808d3958c919a1d81561ce020fe52b
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implementação do servidor Web HTTP.sys no ASP.NET Core
 
@@ -156,7 +156,7 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
       O exemplo a seguir mostra como atribuir um certificado X.509:
 
       ```console
-      netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={00000000-0000-0000-0000-000000000000}"
+      netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid="{00000000-0000-0000-0000-000000000000}"
       ```
 
       Documentação de referência do *netsh.exe*:

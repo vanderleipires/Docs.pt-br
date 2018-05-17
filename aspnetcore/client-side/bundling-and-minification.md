@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 381025d1c4a9951349e242482ca9b780c461e588
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: a3d49315fbb62eb1a42eb1b30885dc19a81c0a91
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>Pacote e minifiy ativos estáticos no núcleo do ASP.NET
 
@@ -220,22 +220,28 @@ Especificar quais arquivos a serem incluídos nas suas páginas usando o [auxili
 
 O seguinte `environment` marca processa os arquivos CSS não processados durante a execução no `Development` ambiente:
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=21-24)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=9-12)]
 
-* * *
+---
+
 O seguinte `environment` marca processa os arquivos CSS agrupados e minimizados quando executado em um ambiente diferente de `Development`. Por exemplo, em execução em `Production` ou `Staging` dispara o processamento dessas folhas de estilo:
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=5&range=25-30)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=13-18)]
 
-* * *
+---
+
 ## <a name="consume-bundleconfigjson-from-gulp"></a>Consumir bundleconfig.json de Gulp
 
 Há casos em que o fluxo de trabalho empacotamento e minimização do aplicativo requer processamento adicional. Exemplos incluem a otimização da imagem, a eliminação de cache e processamento de ativos CDN. Para atender a esses requisitos, que você pode converter o fluxo de trabalho de empacotamento e minimização para usar o Gulp.

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
-title: "Modelo de validação na API da Web ASP.NET | Microsoft Docs"
+title: Modelo de validação na API da Web ASP.NET | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/20/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 45b519af4073b62c8be1ca8951e44d6cf3cbe075
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 409a91eceb8baa48a7dded1b850d59a27cec2c60
+ms.sourcegitcommit: 5ae0c125ee3bbd324edef3818d1d160f4dd84602
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/17/2018
 ---
 <a name="model-validation-in-aspnet-web-api"></a>Validação de modelo na API da Web ASP.NET
 ====================
@@ -26,7 +26,7 @@ Quando um cliente envia dados para sua API da web, geralmente você deseja valid
 
 ## <a name="data-annotations"></a>Anotações de dados
 
-Na API da Web do ASP.NET, você pode usar os atributos de [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) namespace para definir as regras de validação para propriedades em seu modelo. Considere o seguinte modelo:
+Na API da Web do ASP.NET, você pode usar os atributos de [DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) namespace para definir as regras de validação para propriedades em seu modelo. Considere o seguinte modelo:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample1.cs)]
 

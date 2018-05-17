@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: d9c7c1c3b2c052ba11f9ea5eaaa424d69bc43eb2
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: c40209e3b3f2b5bf28450bb2a88cbe40e9e23230
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>Trabalhar com um cache distribuído no núcleo do ASP.NET
 
@@ -121,7 +121,7 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 A tabela criada tem o esquema a seguir:
 
-![SqlServer Cache Table](distributed/_static/SqlServerCacheTable.png)
+![Tabela de Cache do SQL Server](distributed/_static/SqlServerCacheTable.png)
 
 Como todas as implementações de cache, seu aplicativo deve obter e definir valores de cache usando uma instância de `IDistributedCache`, não um `SqlServerCache`. O exemplo implementa `SqlServerCache` no `Production` ambiente (para que ele é configurado em `ConfigureProductionServices`).
 

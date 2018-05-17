@@ -1,6 +1,6 @@
 ---
 title: Implementações de servidor Web em ASP.NET Core
-author: tdykstra
+author: rick-anderson
 description: Descubra os servidores Web Kestrel e HTTP.sys para ASP.NET Core. Saiba como escolher um servidor e quando usar um servidor proxy reverso.
 manager: wpickett
 ms.author: tdykstra
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/index
-ms.openlocfilehash: cdf6fafce644f424d3cd58395e1fa91e5e6fa2cb
-ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
+ms.openlocfilehash: 38af9d0206d66ac7fd2dc13a5a8245e8f66df41e
+ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implementações de servidor Web em ASP.NET Core
 
@@ -24,13 +24,12 @@ Um aplicativo ASP.NET Core é executado com uma implementação do servidor HTTP
 
 O ASP.NET Core envia duas implementações de servidor:
 
-* O [Kestrel](xref:fundamentals/servers/kestrel) é um servidor HTTP de plataforma cruzada com base em [libuv](https://github.com/libuv/libuv), uma biblioteca de E/S assíncrona de plataforma cruzada.
-
+* O [Kestrel](xref:fundamentals/servers/kestrel) é o servidor HTTP de plataforma cruzada padrão para o ASP.NET Core.
 * O [HTTP.sys](xref:fundamentals/servers/httpsys) é um servidor HTTP somente do Windows com base no [driver do kernel HTTP.sys e na API do servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). (O HTTP.sys é chamado [WebListener](xref:fundamentals/servers/weblistener) no ASP.NET Core 1.x.)
 
 ## <a name="kestrel"></a>Kestrel
 
-O Kestrel é o servidor Web que está incluído por padrão em modelos de novo projeto do ASP.NET Core. 
+O Kestrel é o servidor Web padrão incluído nos modelos de projeto do ASP.NET Core.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

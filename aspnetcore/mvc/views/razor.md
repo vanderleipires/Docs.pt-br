@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 9c96ea34071bf3009f1ec53ed9af9206439aa229
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: 224c855b355b8ecde36377bba6966edec251af6a
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>Referência da sintaxe Razor para ASP.NET Core
 
@@ -545,6 +545,7 @@ Há três diretivas que relacionadas aos [Auxiliares de marca](xref:mvc/views/ta
 ### <a name="razor-keywords"></a>Palavras-chave do Razor
 
 * page (requer o ASP.NET Core 2.0 e posteriores)
+* namespace
 * funções
 * herda
 * modelo
@@ -574,7 +575,6 @@ Palavras-chave do Razor em C# precisam ter o escape duplo com `@(@C# Razor Keywo
 
 ### <a name="reserved-keywords-not-used-by-razor"></a>Palavras-chave reservadas não usadas pelo Razor
 
-* namespace
 * classe
 
 ## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>Exibindo a classe C# do Razor gerada para uma exibição

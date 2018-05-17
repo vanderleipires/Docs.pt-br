@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 78dcee05799965c72f878662df61034018a23021
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 7e2a4657211b0142ec87fd792d013f7ef397de2b
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -47,7 +47,8 @@ O ASP.NET Core não fornece métodos de agente assíncronos porque o registro em
 
 ## <a name="how-to-add-providers"></a>Como adicionar provedores
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 Um provedor de logs obtém as mensagens que você cria com um objeto `ILogger` e as exibe ou armazena. Por exemplo, o provedor Console exibe as mensagens no console e o provedor do Serviço de Aplicativo do Azure pode armazená-las no armazenamento de blobs do Azure.
 
 Para usar um provedor, chame o método de extensão `Add<ProviderName>` do provedor no *Program.cs*:
@@ -58,7 +59,8 @@ O modelo de projeto padrão permite o registro em log com o método [CreateDefau
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 Um provedor de logs obtém as mensagens que você cria com um objeto `ILogger` e as exibe ou armazena. Por exemplo, o provedor Console exibe as mensagens no console e o provedor do Serviço de Aplicativo do Azure pode armazená-las no armazenamento de blobs do Azure.
 
 Para usar um provedor, instale o pacote NuGet e chame o método de extensão do provedor em uma instância de `ILoggerFactory`, conforme mostrado no exemplo a seguir.
@@ -70,7 +72,8 @@ A [DI](xref:fundamentals/dependency-injection) (injeção de dependência) do AS
 > [!NOTE]
 > O aplicativo de exemplo deste artigo adiciona provedores de log no método `Configure` da classe `Startup`. Se você quiser obter saída de log de código que é executado anteriormente, adicione provedores de log no construtor de classe `Startup`. 
 
-* * *
+---
+
 Você encontrará informações sobre cada [provedor de log interno](#built-in-logging-providers) e links para [provedores de log de terceiros](#third-party-logging-providers) mais adiante no artigo.
 
 ## <a name="sample-logging-output"></a>Exemplo de saída de registro em log
@@ -263,7 +266,8 @@ System.Exception: Item not found exception.
 
 ## <a name="log-filtering"></a>Filtragem de log
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 Você pode especificar um nível de log mínimo para um provedor e uma categoria específicos ou para todos os provedores ou todas as categorias. Os logs abaixo do nível mínimo não serão passados para esse provedor, para que não sejam exibidos ou armazenados. 
 
 Se quiser suprimir todos os logs, você poderá especificar `LogLevel.None` como o nível de log mínimo. O valor inteiro de `LogLevel.None` é 6, que é maior do que `LogLevel.Critical` (5).
@@ -344,7 +348,8 @@ Você pode escrever código em uma função de filtro para aplicar regras de fil
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 Alguns provedores de log permitem especificar quando os logs devem ser gravados em uma mídia de armazenamento ou ignorados, com base no nível de log e na categoria.
 
 Os métodos de extensão `AddConsole` e `AddDebug` fornecem sobrecargas que permitem que você passe critérios de filtragem. O código de exemplo a seguir faz com que o provedor de console ignore os logs abaixo do nível `Warning`, enquanto o provedor Depuração ignora os logs criados pela estrutura.
@@ -361,7 +366,8 @@ Se quiser usar a filtragem para impedir que todos os logs de uma determinada cat
 
 O método de extensão `WithFilter` é fornecido pelo pacote NuGet [Microsoft.Extensions.Logging.Filter](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Filter). O método retorna um nova instância `ILoggerFactory`, que filtrará as mensagens de log passadas para todos os provedores de agente registrados com ela. Isso não afeta nenhuma outra instância de `ILoggerFactory`, incluindo a instância de `ILoggerFactory` original.
 
-* * *
+---
+
 ## <a name="log-scopes"></a>Escopos de log
 
 Você pode agrupar um conjunto de operações lógicas dentro de um *escopo* para anexar os mesmos dados a cada log que é criado como parte desse conjunto. Por exemplo, é conveniente que cada log criado como parte do processamento de uma transação inclua a ID da transação.
@@ -372,7 +378,8 @@ Um escopo é um tipo `IDisposable` retornado pelo método `ILogger.BeginScope<TS
 
 O código a seguir habilita os escopos para o provedor de console:
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 Em *Program.cs*:
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_Scopes&highlight=4)]
@@ -380,12 +387,14 @@ Em *Program.cs*:
 > [!NOTE]
 > A configuração da opção de agente de console `IncludeScopes` é necessária para habilitar o registro em log baseado em escopo. A configuração de `IncludeScopes` usando arquivos de configuração *appsettings* estará disponível com o lançamento do ASP.NET Core 2.1.
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 Em *Startup.cs*:
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_Scopes&highlight=6)]
 
-* * *
+---
+
 Cada mensagem de log inclui as informações com escopo definido:
 
 ```
@@ -413,12 +422,14 @@ O ASP.NET Core vem com os seguintes provedores:
 
 O pacote de provedor [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) envia a saída de log para o console. 
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 ```csharp
 logging.AddConsole()
 ```
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 ```csharp
 loggerFactory.AddConsole()
 ```
@@ -439,7 +450,8 @@ Esse código se refere à seção `Logging` do arquivo *appSettings.json*:
 
 As configurações mostradas limitam os logs de estrutura a avisos, permitindo que o aplicativo para faça registros no nível de depuração, conforme explicado na [Filtragem de log](#log-filtering) seção. Para obter mais informações, consulte [Configuração](xref:fundamentals/configuration/index).
 
-* * *
+---
+
 <a id="debug"></a>
 ### <a name="the-debug-provider"></a>O provedor Depuração
 

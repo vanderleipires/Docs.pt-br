@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: b7036b92e8f25613917cfc4112389be81c12f614
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 1dba6eaceb6b69cf92cb8a831df9dc8d70a005d4
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>Introdução ao ASP.NET Core MVC e ao Visual Studio
 
@@ -29,10 +29,12 @@ Há três versões deste tutorial:
 
 ## <a name="install-visual-studio-and-net-core"></a>Como instalar o Visual Studio e o .NET Core
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 Instale o Visual Studio Community 2017. Selecione o download de comunidade. Ignore esta etapa se você tiver o Visual Studio 2017 instalado.
 
 * [Instalador de home page do Visual Studio 2017](https://www.visualstudio.com/)
@@ -46,7 +48,8 @@ Execute o instalador e selecione as cargas de trabalho a seguir:
 
 ![**Desenvolvimento de plataforma cruzada do .NET Core** (em **Outros conjuntos de ferramentas**)](start-mvc/_static/x_plat_wl.png)
 
-* * *
+---
+
 ## <a name="create-a-web-app"></a>Como criar um aplicativo Web
 
 No Visual Studio, selecione **Arquivo > Novo > Projeto**.
@@ -61,7 +64,6 @@ Complete a caixa de diálogo **Novo Projeto**:
 * Toque em **OK**
 
 ![Caixa de diálogo Novo projeto, .NET Core no painel esquerdo, Web do ASP.NET Core ](start-mvc/_static/new_project2.png)
-
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

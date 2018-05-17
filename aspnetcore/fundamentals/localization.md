@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: b81926f81fdfb832ff6ae3bd65c00fa09412fec4
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 929c73c314a15e7003853d3996158d1328e597cb
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalização e localização no ASP.NET Core
 
@@ -141,14 +141,6 @@ Um arquivo de recurso é um mecanismo útil para separar cadeias de caracteres l
     O Visual Studio mostra o arquivo *Welcome.es.resx*.
 
     ![Gerenciador de Soluções mostrando o arquivo de recurso Welcome em espanhol (es)](localization/_static/se.png)
-
-<a name="error"></a>
-
-Se estiver usando o Visual Studio 2017 Preview versão 15.3, você obterá um indicador de erro no editor de recursos. Remova o valor *ResXFileCodeGenerator* da grade de propriedades de *Ferramenta Personalizada* para evitar essa mensagem de erro:
-
-![Editor do resx](localization/_static/err.png)
-
-Como alternativa, você pode ignorar esse erro. Esperamos corrigi-lo na próxima versão.
 
 ## <a name="resource-file-naming"></a>Nomenclatura do arquivo de recurso
 

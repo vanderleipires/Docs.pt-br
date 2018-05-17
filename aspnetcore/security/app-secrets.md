@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 0a04f5762a35426f342b58b8b60288c66c057ae7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
-ms.translationtype: MT
+ms.openlocfilehash: a268fd76a303dc1185b451e4f678fc2fe761e80a
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo em desenvolvimento no núcleo do ASP.NET
 
@@ -41,7 +41,8 @@ A ferramenta Gerenciador de segredo armazena dados confidenciais para o trabalho
 
 ## <a name="installing-the-secret-manager-tool"></a>Instalando a ferramenta Gerenciador de segredo
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 Clique com botão direito no projeto no Gerenciador de soluções e selecione **editar \<project_name\>. csproj** no menu de contexto. Adicione a linha realçada para o *. csproj* de arquivo e salvar para restaurar o pacote NuGet associado:
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -58,7 +59,8 @@ Salvando o *. csproj* arquivo também abre uma `secrets.json` arquivo no editor 
 }
 ```
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 Adicionar `Microsoft.Extensions.SecretManager.Tools` para o *. csproj* e execute o [restauração dotnet](/dotnet/core/tools/dotnet-restore). Você pode usar as mesmas etapas para instalar a ferramenta Gerenciador de segredo usando a linha de comando.
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -94,7 +96,8 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 
 Você também pode usar a ferramenta Gerenciador de segredo de lista, remover e limpar os segredos do aplicativo.
 
-* * *
+---
+
 ## <a name="accessing-user-secrets-via-configuration"></a>Acessando os segredos do usuário por meio da configuração
 
 Acessar o Gerenciador de segredo segredos através do sistema de configuração. Adicionar o `Microsoft.Extensions.Configuration.UserSecrets` empacotar e executar [restauração dotnet](/dotnet/core/tools/dotnet-restore).

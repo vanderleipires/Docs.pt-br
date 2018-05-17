@@ -2,7 +2,7 @@
 
 Nesta seção, é adicionada uma página HTML que usa o jQuery para chamar a API Web. O jQuery inicia a solicitação e atualiza a página com os detalhes da resposta da API.
 
-Configure o projeto para atender arquivos estáticos e habilitar o mapeamento de arquivo padrão. Isso é feito chamando os métodos de extensão [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) e [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) em *Startup.Configure*. Para obter mais informações, confira [Trabalhar com arquivos estáticos no ASP.NET Core](xref:fundamentals/static-files).
+Configure o projeto para atender arquivos estáticos e habilitar o mapeamento de arquivo padrão. Isso é feito chamando os métodos de extensão [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) e [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) em *Startup.Configure*. Para obter mais informações, veja [Arquivos estáticos](xref:fundamentals/static-files).
 
 [!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup2.cs?name=snippet_Configure&highlight=3-4)]
 
