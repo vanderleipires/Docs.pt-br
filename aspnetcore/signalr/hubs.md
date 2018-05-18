@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: cfe9f7a7321094b8f901687d91745df2247e1da6
-ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.openlocfilehash: 5c477dd64c4cf8b7d6da1f121a290b00f3864f45
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Usando os hubs de SignalR para ASP.NET Core
 
@@ -55,7 +55,8 @@ Cada instância do `Hub` classe tem uma propriedade denominada `Clients` que con
 | `Caller` | Chama um método no cliente que invocou o método de hub |
 | `Others` | Chama um método em todos os clientes conectados, exceto o cliente que invocou o método |
 
-Além disso, a `Hub` classe contém os seguintes métodos:
+
+Além disso, `Hub.Clients` contém os seguintes métodos:
 
 | Método | Descrição |
 | ------ | ----------- |
