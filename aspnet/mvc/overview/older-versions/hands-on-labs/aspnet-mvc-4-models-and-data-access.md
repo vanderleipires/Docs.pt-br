@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 57477cf15bf6755523f28356d5384517bea24982
-ms.sourcegitcommit: 5ae0c125ee3bbd324edef3818d1d160f4dd84602
+ms.openlocfilehash: 88b3316b116962dd35031f4b971dbfe31ed0e010
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>Acesso a dados e modelos do ASP.NET MVC 4
 
@@ -224,41 +224,27 @@ Nesta tarefa, você atualizará a classe StoreController para que, em vez de usa
 
     (Código de trecho - *modelos e acesso a dados - Ex1 storeDB*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
 2. O **MusicStoreEntities** classe expõe uma propriedade de coleção para cada tabela no banco de dados. Atualização **procurar** método de ação para recuperar um gênero com todos os **álbuns**.
 
     (Código de trecho - *modelos e acesso a dados - Ex1 repositório procurar*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
-~~~
-
-> [!NOTE]
-> Você está usando um recurso do .NET chamado **LINQ** (consulta integrada à linguagem) para escrever expressões de consulta fortemente tipada em relação a essas coleções - que executará o código no banco de dados e retornar objetos que você pode programar com relação.
-> 
-> Para obter mais informações sobre o LINQ, visite o [site msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
-
-
+    > [!NOTE]
+    > Você está usando um recurso do .NET chamado **LINQ** (consulta integrada à linguagem) para escrever expressões de consulta fortemente tipada em relação a essas coleções - que executará o código no banco de dados e retornar objetos que você pode programar com relação.
+    > 
+    > Para obter mais informações sobre o LINQ, visite o [site msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
 3. Atualização **índice** método de ação para recuperar todos os gêneros.
 
     (Código de trecho - *modelos e acesso a dados - índice de repositório Ex1*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
 4. Atualização **índice** método de ação para recuperar todos os gêneros e transformar a coleção para uma lista.
 
     (Código de trecho - *modelos e acesso a dados - Ex1 repositório GenreMenu*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
 
 <a id="Ex1Task5"></a>
 
@@ -316,18 +302,12 @@ Nesta tarefa, você preencherá o banco de dados com dados de exemplo, quando el
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 Global Asax usos*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
 4. No **aplicativo\_Start ()** método adicionar a linha a seguir para definir o inicializador de banco de dados.
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 Global Asax SetInitializer*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
 
 <a id="Ex2Task2"></a>
 
@@ -342,10 +322,7 @@ Agora que você já adicionou um banco de dados ao nosso projeto, você escrever
 
     *local do arquivo Web. config*
 
-
-~~~
-[!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
-~~~
+    [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
 
 <a id="Ex2Task3"></a>
 
@@ -354,39 +331,29 @@ Agora que você já adicionou um banco de dados ao nosso projeto, você escrever
 
 Agora que você já tiver configurado a conexão ao banco de dados, você vinculará o modelo com as tabelas de banco de dados. Nesta tarefa, você criará uma classe que será vinculada ao banco de dados com o Code First. Lembre-se de que há uma classe de modelo existente POCO que deve ser modificada.
 
-   > [!NOTE]
+> [!NOTE]
 > Se você concluiu o exercício 1, você observará que esta etapa foi executada por um assistente. Fazendo Code First, você criará manualmente classes que serão vinculados entidades de dados.
-
 
 1. Abra a classe de modelo POCO **gênero** de **modelos** pasta do projeto e incluir uma ID. Use uma int de propriedade com o nome **GenreId**.
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 código primeiro gênero*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
-
-> [!NOTE]
-> To work with Code First conventions, the class Genre must have a primary key property that will be automatically detected.
-> 
-> You can read more about Code First Conventions in this [msdn article](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
-~~~
+    > [!NOTE]
+    > Para trabalhar com as convenções de código primeiro, a classe gênero deve ter uma propriedade de chave primária será detectada automaticamente.
+    > 
+    > Você pode ler mais sobre as convenções de código primeiro neste [artigo do msdn](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
 2. Agora, abra a classe de modelo POCO **álbum** de **modelos** pasta do projeto e inclui as chaves estrangeiras, crie propriedades com os nomes **GenreId** e  **ArtistId**. Essa classe já tiver o **GenreId** para a chave primária.
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 código primeiro álbum*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
 3. Abra a classe de modelo POCO **artista** e incluir o **ArtistId** propriedade.
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 código primeiro artista*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
 4. Clique com botão direito do **modelos** pasta do projeto e selecione **adicionar | Classe**. Nomeie o arquivo **MusicStoreEntities.cs**. Em seguida, clique em **adicionar.**
 
     ![Adicionando uma classe](aspnet-mvc-4-models-and-data-access/_static/image20.png "adicionando uma classe")
@@ -398,21 +365,15 @@ Agora que você já tiver configurado a conexão ao banco de dados, você vincul
     *Adicionando uma classe*
 5. Abra a classe que você acabou de criar, **MusicStoreEntities.cs**e incluem os namespaces **System.Data.Entity** e **System.Data.Entity.Infrastructure**.
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
 6. Substitua a declaração de classe para estender o **DbContext** classe: declarar um público **DBSet** e substituir **OnModelCreating** método. Após essa etapa, você obterá uma classe de domínio que será vinculado a seu modelo com o Entity Framework. Para fazer isso, substitua o código de classe com o seguinte:
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 código primeiro MusicStoreEntities*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
 > [!NOTE]
-> With Entity Framework **DbContext** and **DBSet** you will be able to query the POCO class Genre. By extending **OnModelCreating** method, you are specifying in the **code** how Genre will be mapped to a database table. You can find more information about DBContext and DBSet in this msdn article: [link](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
-~~~
+> Com o Entity Framework **DbContext** e **DBSet** você poderá consultar a classe POCO gênero. Estendendo **OnModelCreating** método, você está especificando no **código** como gênero será mapeado para uma tabela de banco de dados. Você pode encontrar mais informações sobre DBContext e DBSet neste artigo do msdn: [link](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
 
 <a id="Ex2Task4"></a>
 
@@ -431,39 +392,27 @@ Nesta tarefa, você atualizará a classe StoreController para que, em vez de usa
 
     (Código de trecho - *modelos e acesso a dados - Ex1 storeDB*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
 2. O **MusicStoreEntities** classe expõe uma propriedade de coleção para cada tabela no banco de dados. Atualização **procurar** método de ação para recuperar um gênero com todos os **álbuns**.
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 repositório procurar*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
-
-> [!NOTE]
-> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
-> 
-> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
-~~~
+    > [!NOTE]
+    > Você está usando um recurso do .NET chamado **LINQ** (consulta integrada à linguagem) para escrever expressões de consulta fortemente tipada em relação a essas coleções - que executará o código no banco de dados e retornar objetos que você pode programar com relação.
+    > 
+    > Para obter mais informações sobre o LINQ, visite o [site msdn](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
 3. Atualização **índice** método de ação para recuperar todos os gêneros.
 
     (Código de trecho - *modelos e acesso a dados - índice de repositório o Ex2*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
 4. Atualização **índice** método de ação para recuperar todos os gêneros e transformar a coleção para uma lista.
 
     (Código de trecho - *modelos e acesso a dados - o Ex2 repositório GenreMenu*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
 
 <a id="Ex2Task5"></a>
 
@@ -494,7 +443,6 @@ Neste exercício, você aprenderá como o banco de dados usando parâmetros de c
 > [!NOTE]
 > Para obter mais informações sobre formatação de resultados de consulta, visite o [artigo do msdn](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
 
-
 <a id="Ex3Task1"></a>
 
 <a id="Task_1_-_Modifying_StoreController_to_Retrieve_Albums_from_Database"></a>
@@ -515,17 +463,14 @@ Nesta tarefa, você alterará a **StoreController** classe para acessar o banco 
 
     (Código de trecho - *modelos e acesso a dados - Ex3 StoreController BrowseMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
 
 > [!NOTE]
-> To populate a collection of the entity, you need to use the **Include** method to specify you want to retrieve the albums too. You can use the .**Single()** extension in LINQ because in this case only one genre is expected for an album. The **Single()** method takes a Lambda expression as a parameter, which in this case specifies a single Genre object such that its name matches the value defined.
+> Para preencher uma coleção da entidade, você precisa usar o **incluir** método para especificar que você deseja recuperar os álbuns muito. Você pode usar o. **Single()** extensão em LINQ porque nesse caso, somente um gênero é esperado para um álbum. O **Single()** método usa uma expressão Lambda como um parâmetro, que nesse caso, especifica um único objeto de gênero, de modo que seu nome corresponde ao valor definido.
 > 
-> You will take advantage of a feature that allows you to indicate other related entities you want loaded as well when the Genre object is retrieved. This feature is called **Query Result Shaping**, and enables you to reduce the number of times needed to access the database to retrieve information. In this scenario, you will want to pre-fetch the Albums for the Genre you retrieve.
+> Você irá tirar proveito de um recurso que permite que você indique a outras entidades relacionadas que deseja carregar bem quando o objeto de gênero é recuperado. Esse recurso é chamado **formatação de resultados de consulta**e permite que você reduza o número de vezes necessárias para acessar o banco de dados para recuperar informações. Nesse cenário, você desejará buscar álbuns previamente para o gênero recuperar.
 > 
-> The query includes **Genres.Include(&quot;Albums&quot;)** to indicate that you want related albums as well. This will result in a more efficient application, since it will retrieve both Genre and Album data in a single database request.
-~~~
+> A consulta inclui **Genres.Include (&quot;álbuns&quot;)** para indicar que você deseja também álbuns relacionados. Isso resultará em um aplicativo mais eficiente, pois ele recuperará os dados de gênero e álbum na solicitação de um único banco de dados.
 
 <a id="Ex3Task2"></a>
 
@@ -553,10 +498,7 @@ Nesta tarefa, repita o procedimento anterior para obter álbuns por seu ID.
 
     (Código de trecho - *modelos e acesso a dados - Ex3 StoreController DetailsMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
 
 <a id="Ex3Task4"></a>
 
@@ -574,7 +516,6 @@ Nesta tarefa, você executar o aplicativo em um navegador da web e obter detalhe
 
 > [!NOTE]
 > Além disso, você pode implantar esse aplicativo para Windows Azure Web Sites a seguir [apêndice b: publicação um aplicativo ASP.NET MVC 4 usando a implantação da Web](#AppendixB).
-
 
 * * *
 

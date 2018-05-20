@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 00b43cc548df44edded925521991a095ed856494
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f447dc0108dffb36ed6d627fb83b3117fd22c94c
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>O que há de novo no ASP.NET e desenvolvimento da Web no Visual Studio 2012
 ====================
@@ -259,10 +259,7 @@ Agora, o Visual Studio atualiza o HTML abrir ou fechar marcas do elemento que vo
 
 1. Sobre o **Default.aspx** página, adicione um **H3** elemento com um título (por exemplo, o Visual Studio 2012 Rocks!).
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
 2. Alterar o **H3** marca e o tipo **H2** ou **H1.**
 
     Observe que a marca de fim atualiza automaticamente. Você também pode modificar a marca de fim para ver se a marca de início atualiza muito.
@@ -288,13 +285,10 @@ O Visual Studio agora inclui vários trechos de código do HTML5. Nesta tarefa, 
     *Inserir trechos de código do HTML5*
 3. Atualize a fonte de áudio para apontar para um arquivo de áudio existente.
 
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
 
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
-
-> [!NOTE]
-> You will need to add the audio file to the solution.
-~~~
+    > [!NOTE]
+    > Você precisará adicionar o arquivo de áudio para a solução.
 4. Pressione **F5** para executar o site e executar o áudio.
 
     ![Executar o controle de áudio](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image29.png "executando o controle de áudio")
@@ -549,37 +543,25 @@ Nesta tarefa, você aprenderá como ativar e fazer referência aos arquivos agru
 
     Observe que o novo **Microsoft.Web.Optimization** namespace é comentado no início do arquivo. Remova o usando a diretiva para incluir os recursos de empacotamento e minimização.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
 4. Localize o **aplicativo\_iniciar** método.
 
     Nesse método, remova a chamada EnableDefaultBundles conforme mostrado no trecho a seguir. Isso nos permite fazer referência a uma coleção de pacote de arquivos CSS em uma pasta usando o caminho para a pasta, mais o &quot;CSS&quot; ou &quot;JS&quot; sufixo.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
 5. Abra o **Optimization.aspx** de arquivo e localize o controle de conteúdo de **HeadContent**.
 
     Observe os arquivos CSS e JS ter uma única marca referenciada.
 
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
 
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
-
-> [!NOTE]
-> This code is for demo purposes. Ideally, you will reference the bundles in the Site.Master file. In this sample code, you will find that some of the bundled files are also being referenced by the Site.Master file, making this last reference redundant.
-~~~
+    > [!NOTE]
+    > Esse código é para fins de demonstração. Idealmente, você irá referenciar os pacotes no arquivo Site.Master. Nesse código de exemplo, você descobrirá que alguns dos arquivos de pacote também estão sendo referenciados pelo arquivo de Site.Master, tornando esta última referência redundantes.
 6. Observe que os links são usando as convenções de agrupamento de **href** atributo para obter os arquivos de todos os CSS ou JS dos estilos e Scripts\custom pasta respectivamente.
 
     Você pode usar o caminho **personalizado/Scripts/JS** conforme mostrado abaixo, agrupar e minificada todos os arquivos JS dentro de um **Scripts/personalizada** pasta. Esse é o comportamento padrão com os pacotes padrão.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
 7. Abra o **Styles\Site.css** arquivo.
 
     Observe que o arquivo CSS original contém código recuado, espaços em branco e comentários que aumentam o arquivo. (Também o arquivo JavaScript contém comentários e espaços em branco).
@@ -620,18 +602,12 @@ Nesta tarefa, você configurará um conjunto estático para definir um conjunto 
 
     Observe que os arquivos não estão localizados no mesmo lugar; Essa é outra vantagem sobre o agrupamento padrão.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
 4. Abra o **Optimization.aspx** arquivo.
 
     Observe que o link para **conjunto estático de JS** está usando o caminho que você declarou quando você configurou o pacote estático no arquivo asax: **/StaticBundle**.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
 5. Pressione **F5** para executar o aplicativo e, em seguida, navegue até o **otimização** página.
 6. Clique no **conjunto estático de JS** link para abrir o arquivo.
 
@@ -656,10 +632,7 @@ Neste exemplo, você aprenderá como usar o **DynamicFolderBundle** classe para 
 
     Você está definindo um pacote da pasta dinâmico que usará o **CoffeeMinify** processador minimização personalizados que se aplicam somente a arquivos com o &quot; **.coffee** &quot; (de extensão Arquivos de CoffeeScript). Observe que você pode usar um padrão de pesquisa para selecionar os arquivos para agrupar dentro de uma pasta, como '\*.coffee'.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
 3. Abra o NuGet Package Manager Console. Para fazer isso, use o menu **exibição** | **outras janelas** | **Package Manager Console**.
 4. No **Package Manager Console,** tipo **Install-Package CoffeeSharp** e pressione **ENTER**.
 5. Clique o **Mostrar todos os arquivos** no botão de **Solution Explorer** janela
@@ -676,10 +649,7 @@ Neste exemplo, você aprenderá como usar o **DynamicFolderBundle** classe para 
 
     Essa classe herda do JsMinify ser minificada a saída de JavaScript resultante da compilação de código CoffeeScript. Ele chama o compilador CoffeeScript para gerar o código JavaScript primeiro e, em seguida, ele envia para o método de JsMinify.Process para minificada o código resultante.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
 8. Abra o **Script1.coffee** e **Script2.coffee** arquivos do **Scripts/pacote** pasta.
 
     Esses arquivos incluirá o código CoffeScript para ser compilada ao executar o agrupamento com a classe CoffeeMinify.
@@ -696,10 +666,7 @@ Neste exemplo, você aprenderá como usar o **DynamicFolderBundle** classe para 
 
     Observe que o link para **pacote dinâmico de JS** faz referência a **Scripts/pacote** pasta usando o **/café** sufixo que você configurou para o pacote da pasta dinâmico.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
 10. Pressione **F5** para executar o aplicativo e, em seguida, navegue até o **otimização** página.
 11. Clique no **pacote dinâmico de JS** link para abrir o arquivo gerado.
 

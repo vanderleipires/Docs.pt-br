@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 4db09d3d41b705597f93d05af91077f2b9236b7e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 88b4ee9a963543f8cc97cb66271628a14fe657de
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>Armazenamento seguro de segredos do aplicativo em desenvolvimento no núcleo do ASP.NET
 
@@ -55,8 +55,25 @@ A ferramenta Gerenciador de segredo armazena dados confidenciais durante o desen
 
 A ferramenta Gerenciador de segredo abstrai os detalhes de implementação, como onde e como os valores são armazenados. Você pode usar a ferramenta sem conhecer esses detalhes de implementação. Os valores são armazenados em um [JSON](https://json.org/) arquivo de configuração em uma pasta de perfil de usuário protegido pelo sistema no computador local:
 
-* Windows: `%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
-* & MacOS do Linux: `~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+Caminho do sistema de arquivos:
+
+`%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+Caminho do sistema de arquivos:
+
+`~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+Caminho do sistema de arquivos:
+
+`~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+---
 
 Na anterior caminhos de arquivo, substitua `<user_secrets_id>` com o `UserSecretsId` valor especificado no *. csproj* arquivo.
 
@@ -133,17 +150,33 @@ dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp
 
 ## <a name="set-multiple-secrets"></a>Definir vários segredos
 
-Um lote de segredos pode ser definido ao canalizar JSON para o `set` comando. No exemplo a seguir, o *input.json* conteúdo do arquivo é direcionado para o `set` comando no Windows:
+Um lote de segredos pode ser definido ao canalizar JSON para o `set` comando. No exemplo a seguir, o *input.json* conteúdo do arquivo é direcionado para o `set` comando.
 
-```console
-type .\input.json | dotnet user-secrets set
-```
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-Use o seguinte comando em macOS e Linux:
+Abra um shell de comando e execute o seguinte comando:
 
-```console
-cat ./input.json | dotnet user-secrets set
-```
+  ```console
+  type .\input.json | dotnet user-secrets set
+  ```
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+Abra um shell de comando e execute o seguinte comando:
+
+  ```console
+  cat ./input.json | dotnet user-secrets set
+  ```
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+Abra um shell de comando e execute o seguinte comando:
+
+  ```console
+  cat ./input.json | dotnet user-secrets set
+  ```
+
+---
 
 ## <a name="access-a-secret"></a>Acessar um segredo
 

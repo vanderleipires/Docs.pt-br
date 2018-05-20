@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: b328b733914b20b0aa3fe529c9a9f999349171ec
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7887d81366cc166ad89308b22ad7cc6af0263111
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="mvc-recommended-resources"></a>MVC recomendado recursos
 ====================
@@ -42,7 +42,6 @@ por [Rick Anderson](https://github.com/Rick-Anderson)
 ## <a name="new-featured-content"></a>Novo conteúdo em destaque
 
 - [Selecionando culturas para localização em ASP.NET](http://weblog.west-wind.com/posts/2014/Mar/27/Auto-Selecting-Cultures-for-Localization-in-ASPNET)
-- [Layouts de aninhamento no MVC](http://astutelogic.com/nesting-layouts-in-mvc/) por Russell Waite
 - [Criar um aplicativo ASP.NET MVC 5 com o Facebook e o logon do Google OAuth2](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
 - [Noções básicas sobre o ASP.NET MVC filtra e atributos](http://www.dotnet-tricks.com/Tutorial/mvc/b11a280114-Understanding-ASP.NET-MVC-Filters-and-Attributes.html)
 - [Ciclo de vida de um aplicativo ASP.NET MVC 5](lifecycle-of-an-aspnet-mvc-5-application.md) (PDF)
@@ -91,7 +90,7 @@ por [Rick Anderson](https://github.com/Rick-Anderson)
 - [Como criar (e como não compilar) um recurso de segurança "lembrar-me"](http://www.troyhunt.com/2013/07/how-to-build-and-how-not-to-build.html) pela busca de Troia
 - Vídeo: [o novo modelo de autenticação para Web, móveis e aplicativos de nuvem por Lucas Adams, Stuart Kwan](https://channel9.msdn.com/Events/Build/2014/2-601)
 - [Vídeo: Criando Enterprise e aplicativos da Web de SaaS e APIs da Web usando o Active Directory do Azure para entrar por Vittorio Bertocci](https://channel9.msdn.com/Events/Build/2014/3-599)
-- [ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx)
+- [Identidade do ASP.NET 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx)
 - [Noções básicas sobre o ASP.NET MVC filtra e atributos](http://www.dotnet-tricks.com/Tutorial/mvc/b11a280114-Understanding-ASP.NET-MVC-Filters-and-Attributes.html)
 - [Identidade do ASP.NET MVC 5: Estendendo e modificando as funções](http://typecastexception.com/post/2014/02/13/ASPNET-MVC-5-Identity-Extending-and-Modifying-Roles.aspx)
 - [Tokens Antifalsificação usando MVC, API da Web e AngularJS](http://www.novanet.no/blog/olav-nybo/dates/2013/12/anti-forgery-tokens-using-mvc-web-api-and-angularjs/)
@@ -249,10 +248,10 @@ por [Rick Anderson](https://github.com/Rick-Anderson)
 - [Ciclo de vida de um aplicativo ASP.NET MVC 5](lifecycle-of-an-aspnet-mvc-5-application.md) (PDF)
 - [Usando restrições para melhorar o encaminhamento no MVC](http://blog.greatrexpectations.com/2012/08/03/using-constraints-for-better-routing-in-mvc/)
 - [Profundidade: no Pipeline do ASP.NET MVC](http://blog.stevensanderson.com/2007/11/20/aspnet-mvc-pipeline-lifecycle/)
-- [ASP.NET MVC Routing](http://evolpin.wordpress.com/2011/03/27/asp-net-mvc-routing/)
+- [Roteamento do ASP.NET MVC](http://evolpin.wordpress.com/2011/03/27/asp-net-mvc-routing/)
 - [Extensibilidade de roteamento do ASP.NET MVC](http://www.simple-talk.com/dotnet/.net-framework/asp.net-mvc-routing-extensibility/)
 - [Uma introdução à extensibilidade do ASP.NET MVC](http://www.simple-talk.com/content/article.aspx?article=1358)
-- [ASP.NET MVC Routing](http://evolpin.wordpress.com/2011/03/27/asp-net-mvc-routing/)
+- [Roteamento do ASP.NET MVC](http://evolpin.wordpress.com/2011/03/27/asp-net-mvc-routing/)
 - [Fortemente tipado roteamento para MVC 4](http://dysphoria.net/2013/03/14/strongly-typed-action-references-in-microsoft-mvc4/)
 
 <a id="global"></a>
@@ -292,7 +291,7 @@ por [Rick Anderson](https://github.com/Rick-Anderson)
 - [Desenvolver híbrida nativo e móveis aplicativos Web](https://msdn.microsoft.com/magazine/hh852592.aspx)
 - [Criando um site de Desktop e Mobile podem ser trocado com o ASP.NET MVC 4 e o jQuery Mobile](http://www.hanselman.com/blog/MakingASwitchableDesktopAndMobileSiteWithASPNETMVC4AndJQueryMobile.aspx)
 - [Aplicativos do MVC 4 Web amigável móvel](http://www.codeproject.com/Articles/455627/MVC4-Mobile-Friendly-Web-Applications)
-- [ASP.NET MVC 4 Mobile](https://channel9.msdn.com/Events/aspConf/aspConf/ASP-NET-MVC-4-Mobile)
+- [O ASP.NET MVC 4 Mobile](https://channel9.msdn.com/Events/aspConf/aspConf/ASP-NET-MVC-4-Mobile)
 
 <a id="spa"></a>
 
@@ -356,7 +355,7 @@ por [Rick Anderson](https://github.com/Rick-Anderson)
 - [http://www.tinymce.com/](http://www.tinymce.com/)
 - [http://www.componentone.com/SuperProducts/StudioASPNET/](http://www.componentone.com/SuperProducts/StudioASPNET/)
 - [Edição de Rich Text com o Editor de HTML Infragistics em ambos os jQuery e ASP.NET MVC](http://www.infragistics.com/community/blogs/damyan_petev/archive/2012/02/24/rich-text-editing-with-infragistics-html-editor-in-both-jquery-and-asp-net-mvc.aspx)
-- [DevExpress ASP.NET MVC RichEdit Control](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_MVC_RichEdit.aspx)
+- [Controle RichEdit do DevExpress ASP.NET MVC](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_MVC_RichEdit.aspx)
 - [Layouts de aninhamento no MVC](http://astutelogic.com/nesting-layouts-in-mvc/) por Russell Waite
 
 <a id="general"></a>
