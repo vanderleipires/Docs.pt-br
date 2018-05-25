@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: "Tutorial: Introdução ao SignalR 2 e MVC 5 | Microsoft Docs"
+title: 'Tutorial: Introdução ao SignalR 2 e MVC 5 | Microsoft Docs'
 author: pfletcher
-description: "Este tutorial mostra como usar o ASP.NET SignalR 2 para criar um aplicativo de bate-papo em tempo real. Você adicionará o SignalR para um aplicativo MVC 5 e criar uma exibição de bate-papo..."
+description: Este tutorial mostra como usar o ASP.NET SignalR 2 para criar um aplicativo de bate-papo em tempo real. Você adicionará o SignalR para um aplicativo MVC 5 e criar uma exibição de bate-papo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

@@ -2,7 +2,7 @@
 uid: web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
 title: Roteamento na API da Web ASP.NET | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/11/2012
