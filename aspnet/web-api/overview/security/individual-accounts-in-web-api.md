@@ -2,7 +2,7 @@
 uid: web-api/overview/security/individual-accounts-in-web-api
 title: Proteger uma API da Web com contas individuais e logon Local no ASP.NET Web API 2.2 | Microsoft Docs
 author: MikeWasson
-description: "Este tópico mostra como proteger uma API da web usando OAuth2 para autenticar em relação a um banco de dados de associação. Versões de software usadas no tutorial 201 Visual do Studio..."
+description: Este tópico mostra como proteger uma API da web usando OAuth2 para autenticar em relação a um banco de dados de associação. Versões de software usadas no tutorial 201 Visual do Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/15/2014

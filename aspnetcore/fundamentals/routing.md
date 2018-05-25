@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: 2e1257639ec41f657093439c5245b50adbad34dc
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: d9d5a26b08f67fe4ee39d6b974027826a93e5d5f
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
@@ -74,7 +74,7 @@ As rotas usam principalmente os valores de rota fornecidos pelo `Values` e `Ambi
 
 Dica: considere `Values` como sendo um conjunto de substituições para os `AmbientValues`. A geração de URL tenta reutilizar os valores de rota da solicitação atual para facilitar a geração de URLs para links usando a mesma rota ou valores de rota.
 
-A saída de `GetVirtualPath` é um `VirtualPathData`. `VirtualPathData` é um paralelo do `RouteData`; ele contém o `VirtualPath` para a URL de saída, bem como algumas propriedades adicionais que devem ser definidas pela rota.
+A saída de `GetVirtualPath` é um `VirtualPathData`. `VirtualPathData` é um paralelo do `RouteData`; ele contém o `VirtualPath` para a URL de saída e algumas propriedades adicionais que devem ser definidas pela rota.
 
 A propriedade `VirtualPathData.VirtualPath` contém o *caminho virtual* produzido pela rota. Dependendo de suas necessidades, talvez você precise processar ainda mais o caminho. Por exemplo, se você deseja renderizar a URL gerada em HTML, precisa preceder o caminho base do aplicativo.
 

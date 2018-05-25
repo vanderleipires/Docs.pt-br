@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 3055eec91adc412b596d4cc73e8523e18ff63331
-ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
+ms.openlocfilehash: 06751e713fbd579a944333cc3c3b2c0c0ad51eba
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>Detectar alterações com tokens de alteração no ASP.NET Core
 
@@ -108,7 +108,7 @@ O construtor da classe implementada, `ConfigurationMonitor`, registra um retorno
 
 [!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet2)]
 
-`config.GetReloadToken()` fornece o token. `InvokeChanged` é o método de retorno de chamada. O `state` nesta instância é uma cadeia de caracteres que descreve o estado de monitoramento. Duas propriedades são usadas:
+`config.GetReloadToken()` fornece o token. `InvokeChanged` é o método de retorno de chamada. O `state` nesta instância é uma referência à instância `IConfigurationMonitor` que é usada para acessar o estado de monitoramento. Duas propriedades são usadas:
 
 * `MonitoringEnabled` indica se o retorno de chamada deve executar seu código personalizado.
 * `CurrentState` descreve o estado atual de monitoramento para uso na interface do usuário.
@@ -116,7 +116,6 @@ O construtor da classe implementada, `ConfigurationMonitor`, registra um retorno
 O método `InvokeChanged` é semelhante à abordagem anterior, exceto que ele:
 
 * Não executa o código, a menos que `MonitoringEnabled` seja `true`.
-* Define a cadeia de caracteres de propriedade `CurrentState` com uma mensagem descritiva que registra a hora em que o código foi executado.
 * Anota o `state` atual e sua saída `WriteConsole`.
 
 [!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet3)]
@@ -201,7 +200,6 @@ var compositeChangeToken =
 
 * [Cache na memória](xref:performance/caching/memory)
 * [Trabalhar com um cache distribuído](xref:performance/caching/distributed)
-* [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
 * [Cache de resposta](xref:performance/caching/response)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 * [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/troubleshooting
-title: "Solução de problemas do SignalR (SignalR 1. x) | Microsoft Docs"
+title: Solução de problemas do SignalR (SignalR 1. x) | Microsoft Docs
 author: pfletcher
 description: Este artigo descreve problemas comuns com o desenvolvimento de aplicativos do SignalR.
 ms.author: aspnetcontent

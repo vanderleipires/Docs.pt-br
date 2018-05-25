@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 8cad6ee45a8331513c72c4079f300fbb06c1ed77
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9f3a55c5e68e61a2d7907c765209d3786e05a485
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/24/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>Configurando um servidor Web para publicação (agente remoto) de implantação da Web
 ====================
@@ -217,7 +217,7 @@ Você pode verificar se um serviço está em execução de várias maneiras dife
 
 Por padrão, o serviço de agente remoto escuta na porta TCP 80, nesta URL:
 
-http:// [<em>nome do servidor</em>] / MSDEPLOYAGENTSERVICE
+<http://servername.com/MSDEPLOYAGENTSERVICE>
 
 Na maioria dos casos, você não precisará configurar as regras de firewall adicionais para o serviço de agente remoto, como servidores web geralmente escutam solicitações HTTP na porta 80. Se você personalizou a instalação para escutar em uma porta não padrão, você precisará configurar as exceções de firewall, conforme necessário.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-and-action-selection
-title: "Roteamento e seleção de ação na API da Web ASP.NET | Microsoft Docs"
+title: Roteamento e seleção de ação na API da Web ASP.NET | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2012
@@ -152,7 +152,7 @@ Com esse plano de fundo, aqui está o algoritmo de seleção de ação.
     4. Se mais que uma ação atenda a esses critérios, selecione aquela com as maioria das correspondências de parâmetro.
 4. Ignorar as ações com o **[NonAction]** atributo.
 
-Etapa &#3; é provavelmente mais confusos. A ideia básica é que um parâmetro pode obter seu valor do URI, o corpo da solicitação ou de uma associação personalizada. Para parâmetros que vêm do URI, queremos garantir que o URI contém um valor para esse parâmetro, o caminho (por meio do dicionário de rota) ou na cadeia de caracteres de consulta.
+Etapa 3 # é provavelmente mais confusos. A ideia básica é que um parâmetro pode obter seu valor do URI, o corpo da solicitação ou de uma associação personalizada. Para parâmetros que vêm do URI, queremos garantir que o URI contém um valor para esse parâmetro, o caminho (por meio do dicionário de rota) ou na cadeia de caracteres de consulta.
 
 Por exemplo, considere a seguinte ação:
 

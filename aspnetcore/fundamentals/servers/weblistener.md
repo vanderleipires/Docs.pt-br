@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: d40243454632550147a7d42ab26a8f1d2d100db2
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 46871edb744ad152df8eb958b344068b7408dd1e
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>Implementação do servidor Web WebListener no ASP.NET Core
 
@@ -84,7 +84,7 @@ Também há [configurações de registro do Http.Sys](https://support.microsoft.
 
 * Configurar URLs e portas nas quais escutar 
 
-  Por padrão, o ASP.NET Core é associado a `http://localhost:5000`. Para configurar portas e prefixos de URL, use o método de extensão `UseURLs`, o argumento de linha de comando `urls` ou o sistema de configuração do ASP.NET Core. Para obter mais informações, consulte [Hospedagem](../../fundamentals/hosting.md).
+  Por padrão, o ASP.NET Core é associado a `http://localhost:5000`. Para configurar portas e prefixos de URL, use o método de extensão `UseURLs`, o argumento de linha de comando `urls` ou o sistema de configuração do ASP.NET Core. Para saber mais, confira [Host no ASP.NET Core(xref:fundamentals/host/index)].
 
   O Ouvinte Web usa os [formatos de cadeia de caracteres de prefixo do Http.Sys](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx). Não há nenhum requisito de formato de cadeia de caracteres de prefixo específico ao WebListener.
 
@@ -179,4 +179,4 @@ Para obter mais informações, consulte os seguintes recursos:
 
 * [Aplicativo de exemplo para este artigo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample)
 * [Código-fonte do WebListener](https://github.com/aspnet/HttpSysServer/)
-* [Hospedagem](../hosting.md)
+* [Hospedagem](xref:fundamentals/host/index)

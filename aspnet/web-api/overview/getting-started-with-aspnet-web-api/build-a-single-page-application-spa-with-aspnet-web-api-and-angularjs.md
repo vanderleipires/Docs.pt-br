@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
-title: "Laboratório prático: Criar um aplicativo de página única (SPA) com a API da Web do ASP.NET e Angular.js | Microsoft Docs"
+title: 'Laboratório prático: Criar um aplicativo de página única (SPA) com a API da Web do ASP.NET e Angular.js | Microsoft Docs'
 author: rick-anderson
-description: "Em aplicativos web tradicionais, o cliente (navegador) inicia a comunicação com o servidor, solicitando uma página. O servidor processa a solicitação..."
+description: Em aplicativos web tradicionais, o cliente (navegador) inicia a comunicação com o servidor, solicitando uma página. O servidor processa a solicitação...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/30/2015
@@ -153,13 +153,13 @@ Nesta tarefa, você irá iniciar criando um novo projeto ASP.NET MVC com suporte
 
     > [!NOTE]
     > O **autorizar** filtrar verifica se o usuário é autenticado. Se o usuário não é autenticado, ele retorna o código de status HTTP 401 (não autorizado) sem chamar a ação. Você pode aplicar o filtro globalmente, no nível do controlador ou o nível de ações individuais.
-9. Agora você deseja personalizar o layout das páginas da web e a identidade visual. Para fazer isso, abra o  **\_cshtml** dentro do arquivo de **exibições | Compartilhado** pasta e atualizar o conteúdo do  **&lt;título&gt;**  elemento substituindo *meu aplicativo ASP.NET* com *nerd do teste* .
+9. Agora você deseja personalizar o layout das páginas da web e a identidade visual. Para fazer isso, abra o  **\_cshtml** dentro do arquivo de **exibições | Compartilhado** pasta e atualizar o conteúdo do **&lt;título&gt;** elemento substituindo *meu aplicativo ASP.NET* com *nerd do teste* .
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample4.cshtml)]
 10. No mesmo arquivo, atualizar a barra de navegação, removendo o *sobre* e *contato* links e renomear o *início* vincular a *reproduzir*. Além disso, renomeie o *nome do aplicativo* vincular a *nerd teste*. O HTML para a barra de navegação deve parecer com o código a seguir.
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample5.cshtml)]
-11. Atualizar o rodapé da página de layout, substituindo *meu aplicativo ASP.NET* com *nerd teste*. Para fazer isso, substitua o conteúdo do  **&lt;rodapé&gt;**  elemento com o seguinte código realçado.
+11. Atualizar o rodapé da página de layout, substituindo *meu aplicativo ASP.NET* com *nerd teste*. Para fazer isso, substitua o conteúdo do **&lt;rodapé&gt;** elemento com o seguinte código realçado.
 
     [!code-html[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample6.html)]
 
@@ -421,7 +421,7 @@ Nesta tarefa, você usará propriedades CSS3 para executar animações avançada
 5. Localize o **ocultar parte posterior do painel durante o flip** comentário. O estilo abaixo comentário oculta lado de trás das faces quando elas são opostas o visualizador, definindo o **backface visibilidade** propriedade CSS para *oculto*.
 
     [!code-css[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample23.css)]
-6. Abra o **BundleConfig.cs** dentro do arquivo a **aplicativo\_iniciar** pasta e adicionar a referência ao **Flip.css** do arquivo no  **&quot;~/Content/css&quot;**  pacote de estilo
+6. Abra o **BundleConfig.cs** dentro do arquivo a **aplicativo\_iniciar** pasta e adicionar a referência ao **Flip.css** do arquivo no **&quot;~/Content/css&quot;** pacote de estilo
 
     [!code-csharp[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample24.cs)]
 7. Pressione **F5** para executar a solução e faça logon com suas credenciais.

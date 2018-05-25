@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr
-title: "Tutorial: Introdução ao SignalR 1. x | Microsoft Docs"
+title: 'Tutorial: Introdução ao SignalR 1. x | Microsoft Docs'
 author: pfletcher
-description: "Use o SignalR do ASP.NET para criar um aplicativo de bate-papo em tempo real em uma página HTML."
+description: Use o SignalR do ASP.NET para criar um aplicativo de bate-papo em tempo real em uma página HTML.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013

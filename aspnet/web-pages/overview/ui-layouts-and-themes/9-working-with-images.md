@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/9-working-with-images
-title: "Trabalhando com imagens em um Site do ASP.NET páginas da Web (Razor) | Microsoft Docs"
+title: Trabalhando com imagens em um Site do ASP.NET páginas da Web (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Este capítulo mostra como adicionar, exibir e manipular imagens (redimensionar, inverter e adicionar marcas d'água) no seu site."
+description: Este capítulo mostra como adicionar, exibir e manipular imagens (redimensionar, inverter e adicionar marcas d'água) no seu site.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -58,7 +58,7 @@ Se uma imagem já está disponível em seu site e você quiser apenas para exibi
 
 [!code-html[Main](9-working-with-images/samples/sample1.html)]
 
-Às vezes, no entanto, você precisa ser capaz de exibir imagens dinamicamente &#8212; ou seja, você não sabe qual imagem para exibir até que a página está em execução.
+Às vezes, no entanto, você precisa ser capaz de exibir imagens dinamicamente & #8212; ou seja, você não sabe qual imagem para exibir até que a página está em execução.
 
 O procedimento nesta seção mostra como exibir uma imagem em tempo real em que os usuários especificar o nome do arquivo de imagem de uma lista de nomes de imagem. Eles selecionem o nome da imagem de uma lista suspensa e quando eles enviam a página, a imagem que selecionado é exibida.
 
@@ -109,7 +109,7 @@ O exemplo anterior mostrou como exibir uma imagem dinamicamente, mas ela funcion
 
     *C:\Users\Joe\Pictures\SamplePhoto1.jpg*
 
-    Você não deseja que todas essas informações de caminho, embora &#8212; você quiser apenas o nome do arquivo real (*SamplePhoto1.jpg*). Você pode extrair apenas o arquivo de um caminho usando o `Path.GetFileName` método, como este:
+    Você não deseja que todas essas informações de caminho, embora & #8212; você quiser apenas o nome do arquivo real (*SamplePhoto1.jpg*). Você pode extrair apenas o arquivo de um caminho usando o `Path.GetFileName` método, como este:
 
     [!code-csharp[Main](9-working-with-images/samples/sample4.cs)]
 

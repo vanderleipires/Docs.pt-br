@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
-title: "Suporte a relações de entidade no OData v3 com Web API 2 | Microsoft Docs"
+title: Suporte a relações de entidade no OData v3 com Web API 2 | Microsoft Docs
 author: MikeWasson
-description: "A maioria dos conjuntos de dados definem relações entre entidades: os clientes tiverem pedidos; os livros têm autores; os produtos têm fornecedores. Usando o OData, os clientes podem navegar por..."
+description: 'A maioria dos conjuntos de dados definem relações entre entidades: os clientes tiverem pedidos; os livros têm autores; os produtos têm fornecedores. Usando o OData, os clientes podem navegar por...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2014
@@ -68,7 +68,7 @@ Para dar suporte a essa solicitação, adicione o seguinte método para o `Produ
 
 [!code-csharp[Main](working-with-entity-relations/samples/sample6.cs)]
 
-O *chave* parâmetro é a chave do produto. O método retorna a entidade relacionada &#8212;nesse caso, um `Supplier` instância. O nome do método e o nome de parâmetro são importantes. Em geral, se a propriedade de navegação é denominada "X", você precisa adicionar um método chamado "GetX". O método deve ter um parâmetro denominado "*chave*" que corresponde ao tipo de dados da chave do pai.
+O *chave* parâmetro é a chave do produto. O método retorna a entidade relacionada & #8212 nesse caso, um `Supplier` instância. O nome do método e o nome de parâmetro são importantes. Em geral, se a propriedade de navegação é denominada "X", você precisa adicionar um método chamado "GetX". O método deve ter um parâmetro denominado "*chave*" que corresponde ao tipo de dados da chave do pai.
 
 Também é importante incluir a **[FromOdataUri]** atributo o *chave* parâmetro. Esse atributo diz API da Web para usar regras de sintaxe do OData quando ele analisa a chave do URI da solicitação.
 

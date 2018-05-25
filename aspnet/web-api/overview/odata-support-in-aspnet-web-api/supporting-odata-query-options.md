@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
-title: "Suporte a opções de consulta OData no ASP.NET Web API 2 | Microsoft Docs"
+title: Suporte a opções de consulta OData no ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/04/2013
@@ -26,7 +26,7 @@ OData define os parâmetros que podem ser usados para modificar uma consulta ODa
 
 `http://localhost/Products?$orderby=Name`
 
-A especificação de OData chama esses parâmetros *opções de consulta*. Você pode habilitar as opções de consulta OData para qualquer controlador de API da Web em seu projeto &#8212; o controlador não precisa ser um ponto de extremidade OData. Isso fornece uma maneira conveniente para adicionar recursos como filtragem e classificação a qualquer aplicativo de API da Web.
+A especificação de OData chama esses parâmetros *opções de consulta*. Você pode habilitar as opções de consulta OData para qualquer controlador de API da Web em seu projeto & #8212; o controlador não precisa ser um ponto de extremidade OData. Isso fornece uma maneira conveniente para adicionar recursos como filtragem e classificação a qualquer aplicativo de API da Web.
 
 Antes de habilitar as opções de consulta, leia o tópico [orientações de segurança do OData](odata-security-guidance.md).
 

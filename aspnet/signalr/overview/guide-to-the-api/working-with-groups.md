@@ -2,7 +2,7 @@
 uid: signalr/overview/guide-to-the-api/working-with-groups
 title: Trabalhando com grupos no SignalR | Microsoft Docs
 author: pfletcher
-description: "Este tópico descreve como manter informações de associação de grupo com a API de Hub."
+description: Este tópico descreve como manter informações de associação de grupo com a API de Hub.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

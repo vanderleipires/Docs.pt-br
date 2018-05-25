@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: d55b34135d5bab98ab8de31cc4b12dcc272cbc0a
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
+ms.openlocfilehash: bfa5d52019be81374c7a544e255ab7ffb301fa7b
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 05/22/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Criar um aplicativo web seguro do ASP.NET MVC 5 com logon, email de redefinição de senha e de confirmação (c#)
 ====================
@@ -58,11 +58,11 @@ Comece instalando e executando [Visual Studio Express 2013 para Web](https://go.
 Em geral você deseja impedir que novos usuários lançamento todos os dados para seu site da web antes de confirmar por email, uma mensagem de texto SMS ou outro mecanismo. <a id="build"></a>As seções a seguir, vamos habilitar confirmação por email e modifique o código para impedir que usuários recém-registrados logon até que o email foi confirmado.
 
 <a id="SG"></a>
-## <a name="hook-up-sendgrid"></a>Hook up SendGrid
+## <a name="hook-up-sendgrid"></a>Ligar SendGrid
 
 Embora este tutorial mostra apenas como adicionar notificação por email por meio de [SendGrid](http://sendgrid.com/), você pode enviar emails usando SMTP e outros mecanismos (consulte [recursos adicionais](#addRes)).
 
-1. No Console do Gerenciador de pacotes, digite o seguinte comando a seguir: 
+1. No Console do Gerenciador de pacotes, digite o seguinte comando: 
 
     [!code-console[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample1.cmd)]
 2. Vá para o [página de inscrição do Azure SendGrid](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409) e registre-se para uma conta gratuita do SendGrid. Configurar o SendGrid, adicionando o código semelhante ao seguinte no *App_Start/IdentityConfig.cs*:
@@ -78,7 +78,7 @@ Para simplificar este exemplo, armazenamos as configurações de aplicativo no *
 [!code-xml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample4.xml)]
 
 > [!WARNING]
-> Segurança - nunca armazenar os dados confidenciais em seu código-fonte. A conta e as credenciais são armazenadas na appSetting. No Azure, você pode armazenar com segurança esses valores de  **[configurar](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  no portal do Azure. Consulte [práticas recomendadas para a implantação de senhas e outros dados confidenciais em ASP.NET e o Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
+> Segurança - nunca armazenar os dados confidenciais em seu código-fonte. A conta e as credenciais são armazenadas na appSetting. No Azure, você pode armazenar com segurança esses valores de **[configurar](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** no portal do Azure. Consulte [práticas recomendadas para a implantação de senhas e outros dados confidenciais em ASP.NET e o Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
 
 
 ### <a name="enable-email-confirmation-in-the-account-controller"></a>Habilitar o email de confirmação no controlador de conta
@@ -108,7 +108,7 @@ Criar um `Views\Shared\Info.cshtml` de arquivo e adicione a seguinte marcação 
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample8.cshtml)]
 
-Adicionar o [autorizar atributo](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) para o `Contact` método de ação do controlador Home. Você pode usar o clique no **contato** link para verificar se os usuários anônimos não têm acesso e os usuários autenticados têm acesso.
+Adicionar o [autorizar atributo](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) para o `Contact` método de ação do controlador Home. Você pode clicar no **contato** link para verificar se os usuários anônimos não têm acesso e os usuários autenticados têm acesso.
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample9.cs?highlight=1)]
 
@@ -148,18 +148,18 @@ O método Register para usar o novo auxiliar de atualização:
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample15.cs?highlight=17)]
 
-Atualizar o método de logon para enviar novamente a senha quando se a conta de usuário não foi confirmada:
+Atualize o método de logon para reenviar a senha se a conta de usuário não foi confirmada:
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample16.cs?highlight=20)]
 
 <a id="combine"></a>
 ## <a name="combine-social-and-local-login-accounts"></a>Combinar as contas de logon local e social
 
-Você pode combinar as contas locais e sociais clicando no link seu email. Na sequência a seguir  **RickAndMSFT@gmail.com**  é criado pela primeira vez como um logon local, mas você pode criar a conta como um log social primeiro e adicionar um logon local.
+Você pode combinar as contas locais e sociais clicando no link seu email. Na sequência a seguir **RickAndMSFT@gmail.com** é criado pela primeira vez como um logon local, mas você pode criar a conta como um log social primeiro e adicionar um logon local.
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image5.png)
 
-Clique no **gerenciar** link. Observe externo 0 (logons sociais) associada à conta.
+Clique no **gerenciar** link. Observe o **logons externos: 0** associada à conta.
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image6.png)
 

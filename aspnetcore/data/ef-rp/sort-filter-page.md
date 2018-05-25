@@ -8,11 +8,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: be7d55bf1a5d3da63ff137ed86f71984dc897eff
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 26f516716864bdce81cf3acdacb0f9d2f98407b7
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Classificação, filtro, paginação – 3 de 8
 
@@ -58,7 +58,7 @@ A primeira linha especifica que, quando `sortOrder` é nulo ou vazio, `NameSort`
 
 O `?: operator` também é conhecido como o operador ternário.
 
-Essas duas instruções permitem que a exibição defina os hiperlinks de título de coluna da seguinte maneira:
+Essas duas instruções permitem que a página defina os hiperlinks de título de coluna da seguinte maneira:
 
 | Ordem de classificação atual | Hiperlink do sobrenome | Hiperlink de data |
 |:--------------------:|:-------------------:|:--------------:|
@@ -77,7 +77,7 @@ O método usa o LINQ to Entities para especificar a coluna pela qual classificar
 
 `OnGetAsync` pode ficar detalhado com um grande número de colunas.
 
-### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>Adicionar hiperlinks de título de coluna à exibição Índice de Alunos
+### <a name="add-column-heading-hyperlinks-to-the-student-index-page"></a>Adicionar hiperlinks de título de coluna à página Student Index
 
 Substitua o código em *Students/Index.cshtml*, pelo seguinte código realçado:
 
@@ -133,9 +133,9 @@ O código anterior garantirá que os resultados diferenciem maiúsculas de minú
 
 Há uma penalidade de desempenho por chamar `ToUpper`. O código `ToUpper` adiciona uma função à cláusula WHERE da instrução TSQL SELECT. A função adicionada impede que o otimizador use um índice. Considerando que o SQL é instalado como diferenciando maiúsculas de minúsculas, é melhor evitar a chamada `ToUpper` quando ela não for necessária.
 
-### <a name="add-a-search-box-to-the-student-index-view"></a>Adicionar uma Caixa de Pesquisa à exibição Índice de Alunos
+### <a name="add-a-search-box-to-the-student-index-page"></a>Adicionar uma Caixa de Pesquisa à página Student Index
 
-Em *Views/Student/Index.cshtml*, adicione o código realçado a seguir para criar um botão **Pesquisar** e o cromado variado.
+Em *Pages/Students/Index.cshtml*, adicione o código realçado a seguir para criar um botão **Pesquisar** e o cromado variado.
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
@@ -267,7 +267,7 @@ Observação: no momento, não há suporte para o comando `group` LINQ no EF Cor
 
 ### <a name="modify-the-about-razor-page"></a>Modificar a Página Sobre do Razor
 
-Substitua o código no arquivo *Views/Home/About.cshtml* pelo seguinte código:
+Substitua o código no arquivo *Pages/About.cshtml* pelo seguinte código:
 
 [!code-html[](intro/samples/cu/Pages/About.cshtml)]
 

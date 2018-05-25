@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
-title: "Notas de versão do ASP.NET e Web Tools 2013.1 para Visual Studio 2012 | Microsoft Docs"
+title: Notas de versão do ASP.NET e Web Tools 2013.1 para Visual Studio 2012 | Microsoft Docs
 author: microsoft
-description: "Este documento descreve a versão do ASP.NET e Web Tools 2013.1 para Visual Studio 2012."
+description: Este documento descreve a versão do ASP.NET e Web Tools 2013.1 para Visual Studio 2012.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2013
 ms.topic: article
 ms.assetid: ca26e5bb-630e-41d2-8512-2a9386c431cb
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
@@ -181,7 +181,7 @@ Depois de fazer essa alteração, selecionar F5 navega para a raiz do seu aplica
 
 Depois de atualizar para o ASP.NET Razor 3 ou 5 do ASP.NET MVC, a notação tilde(~) pode não funcionar corretamente se você estiver usando regravações de URL. A regravação de URL afeta a notação de tilde(~) em elementos HTML, como &lt;um /&gt;, &lt;SCRIPT /&gt;, &lt;LINK /&gt;, e assim o til não mapeia para o diretório raiz.
 
-Por exemplo, se você reescrever solicitações para **asp.net/content** para **asp.net**, o atributo href na &lt;A href = "~/content/" /&gt; resolve **/content/ conteúdo /** em vez de  **/** . Para suprimir essa alteração, você pode definir o **IIS\_WasUrlRewritten** contexto para false em cada página da Web ou em **aplicativo\_BeginRequest** em global. asax.
+Por exemplo, se você reescrever solicitações para **asp.net/content** para **asp.net**, o atributo href na &lt;A href = "~/content/" /&gt; resolve **/content/ conteúdo /** em vez de **/**. Para suprimir essa alteração, você pode definir o **IIS\_WasUrlRewritten** contexto para false em cada página da Web ou em **aplicativo\_BeginRequest** em global. asax.
 
 <a id="templateissue"></a>
 ### <a name="templates"></a>Modelos

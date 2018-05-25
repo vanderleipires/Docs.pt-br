@@ -10,21 +10,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: advanced
 uid: mvc/razor-pages/ui-class
-ms.openlocfilehash: 731d37a8f4983b18ded114f05470f8a408deb7cd
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 44091ab8ab5d69a5975e191fd00fca1d1d957238
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Crie interface do usuário reutilizável usando o projeto de biblioteca de classes Razor no ASP.NET Core.
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-A exibições, as páginas, os controladores, os modelos de página e os modelos de dados Razor podem ser construídos em uma RCL (Biblioteca de Classes Razor). A RCL pode ser e empacotada e reutilizada. Os aplicativos podem incluir a RCL e substituir as exibições e as páginas que ela contém. Quando uma exibição, uma exibição parcial ou uma página Razor for encontrada no aplicativo Web e na RCL, a marcação Razor (arquivo *.cshtml*) no aplicativo Web terá precedência.
+A exibições, as páginas, os controladores, os modelos de página e os modelos de dados do Razor podem ser criados em uma RCL (Biblioteca de Classes Razor). A RCL pode ser e empacotada e reutilizada. Os aplicativos podem incluir a RCL e substituir as exibições e as páginas que ela contém. Quando uma exibição, uma exibição parcial ou uma página Razor for encontrada no aplicativo Web e na RCL, a marcação Razor (arquivo *.cshtml*) no aplicativo Web terá precedência.
 
 Este recurso requer o [!INCLUDE[](~/includes/2.1-SDK.md)]
-
-[!INCLUDE[](~/includes/2.1.md)]
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/ui-class/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 

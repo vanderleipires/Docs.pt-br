@@ -2,7 +2,7 @@
 uid: web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 title: Com o Page Inspector do Visual Studio 2012 no ASP.NET Web Forms | Microsoft Docs
 author: rick-anderson
-description: "Inspetor de página para o Visual Studio 2012 é uma ferramenta de desenvolvimento na web com um navegador integrado. Selecione qualquer elemento no integrado do navegador e Inspetor de página..."
+description: Inspetor de página para o Visual Studio 2012 é uma ferramenta de desenvolvimento na web com um navegador integrado. Selecione qualquer elemento no integrado do navegador e Inspetor de página...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -249,7 +249,7 @@ Quando você digita o primeiro caractere de cada palavra em uma propriedade sepa
 
 ![Valores de filtro do IntelliSense](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image24.png)
 
-Agora, digite dois-pontos. Quando você fizer isso, o nome da propriedade de cor de plano de fundo completo é inserido. Tipo  **#**  ou **rgb (**, e a barra de seletor de cor é exibida:
+Agora, digite dois-pontos. Quando você fizer isso, o nome da propriedade de cor de plano de fundo completo é inserido. Tipo **#** ou **rgb (**, e a barra de seletor de cor é exibida:
 
 ![A barra de seletor de cores CSS](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image25.png)
 

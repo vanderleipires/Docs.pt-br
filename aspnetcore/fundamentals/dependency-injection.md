@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 8a105f835dddfcd0e9f32059e644f60dc1fdbbe1
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 700ceb081b2067f932ce8ed08c45c62058775e33
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injeção de dependência no ASP.NET Core
 
@@ -351,13 +351,15 @@ Ao trabalhar com a injeção de dependência, lembre-se das seguintes recomenda�
 
 * Evite o acesso estático a `HttpContext`.
 
-> [!NOTE]
-> Como todos os conjuntos de recomendações, talvez você encontre situações em que é necessário ignorar um. Descobrimos que exceções são raras – a maioria, casos muito especiais dentro da própria estrutura.
+Como todos os conjuntos de recomendações, talvez você encontre situações em que é necessário ignorar um. Descobrimos que exceções são raras – a maioria, casos muito especiais dentro da própria estrutura.
 
-Lembre-se de que a injeção de dependência é uma *alternativa* aos padrões de acesso a objeto estático/global. Você não poderá obter os benefícios da DI se combiná-lo com o acesso a objeto estático.
+A injeção de dependência é uma *alternativa* aos padrões de acesso a objeto estático/global. Talvez você não obtenha os benefícios da DI se combiná-lo com o acesso a objeto estático.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
+* [Injeção de dependência em exibições](xref:mvc/views/dependency-injection)
+* [Injeção de dependência em controladores](xref:mvc/controllers/dependency-injection)
+* [Injeção de dependência em manipuladores de requisitos](xref:security/authorization/dependencyinjection)
 * [Inicialização de aplicativos](xref:fundamentals/startup)
 * [Testar e depurar](xref:testing/index)
 * [Ativação de middleware de fábrica](xref:fundamentals/middleware/extensibility)

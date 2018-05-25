@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
-title: "Convenções de roteamento de ASP.NET Web API 2 Odata | Microsoft Docs"
+title: Convenções de roteamento de ASP.NET Web API 2 Odata | Microsoft Docs
 author: MikeWasson
-description: "Este artigo descreve as convenções de roteamento API Web usa para pontos de extremidade OData."
+description: Este artigo descreve as convenções de roteamento API Web usa para pontos de extremidade OData.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/31/2013
@@ -147,7 +147,7 @@ No momento as convenções internas não abrangem todos os OData URIs possíveis
 
 Para ambos os métodos, se a convenção não se aplicam a essa solicitação, o método deve retornar nulo.
 
-O **ODataPath** parâmetro representa o caminho do recurso de OData analisado. Ele contém uma lista de  **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)**  instâncias, uma para cada segmento do caminho do recurso. **ODataPathSegment** é uma classe abstrata; cada tipo de segmento é representado por uma classe que deriva de **ODataPathSegment**.
+O **ODataPath** parâmetro representa o caminho do recurso de OData analisado. Ele contém uma lista de **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** instâncias, uma para cada segmento do caminho do recurso. **ODataPathSegment** é uma classe abstrata; cada tipo de segmento é representado por uma classe que deriva de **ODataPathSegment**.
 
 O **ODataPath.TemplatePath** propriedade é uma cadeia de caracteres que representa a concatenação de todos os segmentos de caminho. Por exemplo, se o URI é `/Products(1)/Supplier`, o modelo de caminho é &quot;~/entityset/key/navigation&quot;. Observe que os segmentos não correspondem diretamente aos segmentos de URI. Por exemplo, a chave de entidade (1) é representada como seu próprio **ODataPathSegment**.
 
@@ -169,7 +169,7 @@ Notas:
 
 1. Derivam de **EntitySetRoutingConvention**, pois o **SelectController** método nessa classe é apropriado para essa nova convenção de roteamento. Isso significa que não preciso reimplementar **SelectController**.
 2. A convenção se aplica apenas às solicitações GET, e somente quando o modelo de caminho é &quot;~/entityset/key/navigation/key&quot;.
-3. O nome da ação é &quot;obter {EntityType}&quot;, onde *{EntityType}* é o tipo de coleção de navegação. Por exemplo, &quot;GetSupplier&quot;. Você pode usar qualquer convenção de nomenclatura que você deseja &#8212; Verifique se as ações do controlador corresponder.
+3. O nome da ação é &quot;obter {EntityType}&quot;, onde *{EntityType}* é o tipo de coleção de navegação. Por exemplo, &quot;GetSupplier&quot;. Você pode usar qualquer convenção de nomenclatura que você deseja & #8212; Verifique se as ações do controlador corresponder.
 4. A ação utiliza dois parâmetros denominados *chave* e *relatedKey*. (Para obter uma lista de alguns nomes de parâmetro predefinidos, consulte [ODataRouteConstants](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatarouteconstants.aspx).)
 
 A próxima etapa é adicionar a nova convenção à lista de convenções de roteamento. Isso ocorre durante a configuração, conforme mostrado no código a seguir:

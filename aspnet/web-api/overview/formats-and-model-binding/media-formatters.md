@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/media-formatters
-title: "Formatadores de mídia no ASP.NET Web API 2 | Microsoft Docs"
+title: Formatadores de mídia no ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -12,24 +12,24 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1cb1c7e0f832a0a0160276fbd41facc017e2ae3e
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/22/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>Formatadores de mídia no ASP.NET Web API 2
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
-Este tutorial mostra como suporte a formatos de mídia adicionais na API da Web do ASP.NET.
+Este tutorial mostra como dar suporte a formatos de mídia adicionais na API da Web do ASP.NET.
 
 ## <a name="internet-media-types"></a>Tipos de mídia da Internet
 
 Um tipo de mídia, também chamado de um tipo MIME, identifica o formato de uma parte dos dados. Tipos de mídia HTTP, descrevem o formato do corpo da mensagem. Um tipo de mídia consiste em duas cadeias de caracteres, um tipo e um subtipo. Por exemplo:
 
-- text/html
-- image/png
+- texto/html
+- imagem/png
 - application/json
 
 Quando uma mensagem HTTP contém um corpo de entidade, o cabeçalho Content-Type especifica o formato do corpo da mensagem. Isso informa o receptor como analisar o conteúdo do corpo da mensagem.

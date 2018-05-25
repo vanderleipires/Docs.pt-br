@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/json-and-xml-serialization
-title: "Serialização de XML na API da Web ASP.NET e JSON | Microsoft Docs"
+title: Serialização de XML na API da Web ASP.NET e JSON | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2012

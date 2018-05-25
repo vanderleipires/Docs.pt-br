@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: a288b454ac1b418ef0deacb3643be22d440cb938
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 80b3aae661342ccde257805c370780cd6f5b4aa4
+ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/20/2018
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 
@@ -36,9 +36,9 @@ Adicione uma cadeia de conexão ao arquivo *appsettings.json*.
 [!code-json[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=8-10)]
 
 <a name="reg"></a>
-###  <a name="register-the-database-context"></a>Registrar o contexto do banco de dados
+###  <a name="register-the-database-context"></a>Registrar o contexto de banco de dados
 
-Registre o contexto do banco de dados com o contêiner de [injeção de dependência](xref:fundamentals/dependency-injection) no arquivo *Startup.cs*.
+Registre o contexto do banco de dados com o contêiner de [injeção de dependência](xref:fundamentals/dependency-injection) no [método ConfigureServices da classe Startup](xref:fundamentals/startup#the-startup-class) (*Startup.cs*):
 
 [!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=3-5,7-9)]
 
@@ -60,7 +60,7 @@ No menu **Ferramentas**, selecione **Gerenciador de pacotes NuGet** > **Console 
 No PMC, insira os seguintes comandos:
 
 ```powershell
-Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design -Version 2.0.3
 Add-Migration Initial
 Update-Database
 ```

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: ce4edf6f07808d3958c919a1d81561ce020fe52b
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 89d9a51334bdd50b72213d32fa194808ac6a93b9
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implementação do servidor Web HTTP.sys no ASP.NET Core
 
@@ -133,7 +133,7 @@ O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques 
 
    Uma vantagem de usar `UrlPrefixes` é que uma mensagem de erro é gerada imediatamente no caso de prefixos formatados de forma incorreta.
 
-   As configurações de `UrlPrefixes` substituem as configurações `UseUrls`/`urls`/`ASPNETCORE_URLS`. Portanto, uma vantagem de usar `UseUrls`, `urls` e a variável de ambiente `ASPNETCORE_URLS` é que fica mais fácil alternar entre o Kestrel e o HTTP.sys. Para saber mais sobre `UseUrls`, `urls` e `ASPNETCORE_URLS`, confira o tópico [Hospedagem](xref:fundamentals/hosting).
+   As configurações de `UrlPrefixes` substituem as configurações `UseUrls`/`urls`/`ASPNETCORE_URLS`. Portanto, uma vantagem de usar `UseUrls`, `urls` e a variável de ambiente `ASPNETCORE_URLS` é que fica mais fácil alternar entre o Kestrel e o HTTP.sys. Para saber mais sobre `UseUrls`, `urls` e `ASPNETCORE_URLS`, confira o tópico [Host no ASP.NET Core](xref:fundamentals/host/index).
 
    O HTTP.sys usa os [formatos de cadeia de caracteres UrlPrefix da API do Servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx).
 
@@ -179,4 +179,4 @@ Para aplicativos hospedados pelo HTTP.sys que interagem com solicitações da In
 
 * [API do servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)
 * [Repositório aspnet/HttpSysServer do GitHub (código-fonte)](https://github.com/aspnet/HttpSysServer/)
-* [Hospedagem](xref:fundamentals/hosting)
+* [Host no ASP.NET Core](xref:fundamentals/host/index)

@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/testing-and-debugging/troubleshooting
-title: "Solução de problemas do SignalR | Microsoft Docs"
+title: Solução de problemas do SignalR | Microsoft Docs
 author: pfletcher
 description: Este artigo descreve problemas comuns com o desenvolvimento de aplicativos do SignalR.
 ms.author: aspnetcontent
