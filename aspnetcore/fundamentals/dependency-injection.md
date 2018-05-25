@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 700ceb081b2067f932ce8ed08c45c62058775e33
-ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.openlocfilehash: 067d9bd09f6d5e54bbafd953eea169d2df2be34e
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injeção de dependência no ASP.NET Core
 
@@ -72,7 +72,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 ## <a name="using-framework-provided-services"></a>Usando serviços fornecidos pela estrutura
 
-O método `ConfigureServices` na classe `Startup` é responsável por definir os serviços que serão usados pelo aplicativo, incluindo recursos de plataforma como o Entity Framework Core e ASP.NET Core MVC. Inicialmente, a `IServiceCollection` fornecida ao `ConfigureServices` tem os seguintes serviços definidos (dependendo de [como o host foi configurado](xref:fundamentals/hosting)):
+O método `ConfigureServices` na classe `Startup` é responsável por definir os serviços que serão usados pelo aplicativo, incluindo recursos de plataforma como o Entity Framework Core e ASP.NET Core MVC. Inicialmente, a `IServiceCollection` fornecida ao `ConfigureServices` tem os seguintes serviços definidos (dependendo de [como o host foi configurado](xref:fundamentals/host/index)):
 
 | Tipo de serviço | Tempo de vida |
 | ----- | ------- |
@@ -235,7 +235,7 @@ O provedor de serviços raiz é criado quando [BuildServiceProvider](/dotnet/api
 
 Os serviços com escopo são descartados pelo contêiner que os criou. Se um serviço com escopo é criado no contêiner raiz, o tempo de vida do serviço é promovido efetivamente para singleton, porque ele só é descartado pelo contêiner raiz quando o aplicativo/servidor é desligado. A validação dos escopos de serviço detecta essas situações quando `BuildServiceProvider` é chamado.
 
-Para obter mais informações, confira [Validação de escopo no tópico Hospedagem](xref:fundamentals/hosting#scope-validation).
+Para obter mais informações, confira [Validação de escopo no tópico Host da Web](xref:fundamentals/host/web-host#scope-validation).
 
 ## <a name="request-services"></a>Serviços de solicitação
 
@@ -245,7 +245,7 @@ Os serviços disponíveis em uma solicitação do ASP.NET de `HttpContext` são 
 
 Os Serviços de Solicitação representam os serviços configurados e solicitados como parte do aplicativo. Quando os objetos especificam dependências, elas são atendidas pelos tipos encontrados em `RequestServices`, não `ApplicationServices`.
 
-Em geral, você não deve usar essas propriedades diretamente, preferindo solicitar os tipos exigidos pelas classes por meio do construtor da classe e permitindo que a estrutura injete essas dependências. Isso resulta em classes que são mais fáceis de testar (confira [Testar e depurar](../testing/index.md)) e são mais fracamente acopladas.
+Em geral, você não deve usar essas propriedades diretamente, preferindo solicitar os tipos exigidos pelas classes por meio do construtor da classe e permitindo que a estrutura injete essas dependências. Isso resulta em classes que são mais fáceis de testar (confira [Testar e depurar](xref:testing/index)) e são mais fracamente acopladas.
 
 > [!NOTE]
 > Prefira solicitar dependências como parâmetros de construtor para acessar a coleção `RequestServices`.
