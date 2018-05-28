@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 7e2a4657211b0142ec87fd792d013f7ef397de2b
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 8b53a19f4958e97198175d6acea4017d54f827bb
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -583,21 +583,22 @@ O provedor funciona somente quando o projeto é executado no ambiente do Azure. 
 
 ## <a name="third-party-logging-providers"></a>Provedores de log de terceiros
 
-Aqui estão algumas estruturas de registros de terceiros que funcionam com o ASP.NET Core:
+Estruturas de log de terceiros que funcionam com o ASP.NET Core:
 
-* [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging) – provedor para o serviço Elmah.Io
-
-* [JSNLog](http://jsnlog.com) – registra as exceções de JavaScript e outros eventos do lado do cliente no registro do lado do servidor.
-
-* [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging) – provedor para o serviço Loggr
-
-* [NLog](https://github.com/NLog/NLog.Extensions.Logging) – provedor para a biblioteca NLog
-
-* [Serilog](https://github.com/serilog/serilog-extensions-logging) – provedor para a biblioteca Serilog
+* [elmah.io](https://elmah.io/) ([repositório GitHub](https://github.com/elmahio/Elmah.Io.Extensions.Logging))
+* [JSNLog](http://jsnlog.com/) ([repositório GitHub](https://github.com/mperdeck/jsnlog))
+* [Loggr](http://loggr.net/) ([repositório GitHub](https://github.com/imobile3/Loggr.Extensions.Logging))
+* [NLog](http://nlog-project.org/) ([repositório GitHub](https://github.com/NLog/NLog.Extensions.Logging))
+* [Serilog](https://serilog.net/) ([repositório GitHub](https://github.com/serilog/serilog-extensions-logging))
 
 Algumas estruturas de terceiros podem fazer o [log semântico, também conhecido como registro em log estruturado](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
 
-O uso de uma estrutura de terceiros é semelhante ao uso de um dos provedores internos: adicione um pacote NuGet ao seu projeto e chame um método de extensão em `ILoggerFactory`. Para obter mais informações, consulte a documentação de cada estrutura.
+Usar uma estrutura de terceiros é semelhante ao uso de um dos provedores internos:
+
+1. Adicione um pacote NuGet ao projeto.
+1. Chame um método de extensão em `ILoggerFactory`.
+
+Para obter mais informações, consulte a documentação de cada estrutura.
 
 ## <a name="azure-log-streaming"></a>Fluxo de log do Azure
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 3a9479dc1bb09218ebb4a5a76078ea514041d751
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 6b2c3334798861ebdb14787205480422d7d536ea
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hospedar o ASP.NET Core no Windows com o IIS
 
@@ -113,7 +113,7 @@ Ao impedir que o SDK Web transforme o arquivo, o *processPath* e os *argumentos*
 
 ### <a name="webconfig-file-location"></a>Local do arquivo web.config
 
-Os aplicativos ASP.NET Core são hospedados em um proxy reverso entre o IIS e o servidor Kestrel. Para criar um proxy reverso, o arquivo *web.config* deve estar presente no caminho raiz do conteúdo (geralmente, o aplicativo base do caminho) do aplicativo implantado. Esse é o mesmo local que o caminho físico do site fornecido ao IIS. O arquivo *web.config* é necessário na raiz do aplicativo para habilitar a publicação de vários aplicativos usando a Implantação da Web.
+Para criar um proxy reverso entre o IIS e o servidor Kestrel, o arquivo *web.config* deve estar presente no caminho raiz do conteúdo (geralmente, o caminho base do aplicativo) do aplicativo implantado. Esse é o mesmo local que o caminho físico do site fornecido ao IIS. O arquivo *web.config* é necessário na raiz do aplicativo para habilitar a publicação de vários aplicativos usando a Implantação da Web.
 
 Existem arquivos confidenciais no caminho físico do aplicativo, como *\<assembly>.runtimeconfig.json*, *\<assembly>.xml* (comentários da Documentação XML) e *\<assembly>.deps.json*. Quando o arquivo *web.config* estiver presente e o site for iniciado normalmente, o IIS não servirá esses arquivos confidenciais se eles forem solicitados. Se o arquivo *web.config* estiver ausente, nomeado incorretamente ou se não for possível configurar o site para inicialização normal, o IIS poderá servir arquivos confidenciais publicamente.
 
@@ -172,7 +172,7 @@ Habilite o **Console de Gerenciamento do IIS** e os **Serviços na World Wide We
 1. Instale o *pacote de hospedagem do .NET Core* no sistema de hospedagem. O pacote instala o Tempo de Execução .NET Core, a Biblioteca do .NET Core e o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). O módulo cria o proxy reverso entre o IIS e o servidor Kestrel. Se o sistema não tiver uma conexão com a Internet, obtenha e instale os [Pacotes redistribuíveis do Microsoft Visual C++ 2015](https://www.microsoft.com/download/details.aspx?id=53840) antes de instalar o pacote de hospedagem do .NET Core.
 
    1. Navegue até a [página Todos os downloads do .NET](https://www.microsoft.com/net/download/all).
-   1. Selecione o tempo de execução do .NET Core sem visualização mais recente na lista (**.NET Core** > **Tempo de Execução** > **Tempo de Execução do .NET Core x.y.z**). A menos que você pretenda trabalhar com softwares de visualização, evite tempos de execução com a palavra "visualização" no texto de link.
+   1. Selecione o tempo de execução do .NET Core sem visualização mais recente na lista (**.NET Core** > **Tempo de Execução** > **Tempo de Execução do .NET Core x.y.z**). A menos que você pretenda trabalhar com software em versão prévia, evite um tempo de execução com as palavras "versão prévia" ou "rc" (versão Release Candidate) no texto do link.
    1. Na página de download de tempo de execução do .NET Core no **Windows**, selecione o link **Instalador de pacote de hospedagem** para baixar o *pacote de hospedagem do .NET Core*.
 
    **Importante!** Se o pacote de hospedagem for instalado antes do IIS, a instalação do pacote deverá ser reparada. Execute o instalador do pacote de hospedagem novamente depois de instalar o IIS.
