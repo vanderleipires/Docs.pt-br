@@ -33,7 +33,7 @@ Representa o MVC *model-view-controller*. MVC é um padrão para o desenvolvimen
 Vamos ser abrangendo todos esses conceitos nesta série de tutoriais e mostram como usá-las para criar um aplicativo.
 
 > [!NOTE]
-> Na etapa anterior, o padrão MVC modelo foi selecionado. Isso cria os controladores(controllers) Home, Account e Manage por padrão.
+> Na etapa anterior, o padrão MVC modelo foi selecionado. Isso cria os controladores (controllers) Home, Account e Manage por padrão.
 
 Vamos começar criando uma classe de controlador. No **Gerenciador de soluções**, com o botão direito a *controladores* pasta e clique **adicionar**, em seguida, **controlador**.
 
