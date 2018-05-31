@@ -1,7 +1,7 @@
 ---
 title: Ferramentas do Visual Studio para Docker com ASP.NET Core
 author: spboyer
-description: "Saiba como usar as ferramentas do Visual Studio 2017 e o Docker para o Windows para colocar um aplicativo ASP.NET Core em um contêiner."
+description: Saiba como usar as ferramentas do Visual Studio 2017 e o Docker para o Windows para colocar um aplicativo ASP.NET Core em um contêiner.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -12,13 +12,14 @@ ms.topic: article
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
 ms.openlocfilehash: b2a3c369a22d50fcefdb96914f5bf84bfafab7cb
 ms.sourcegitcommit: 6fa546140575b3eb279eabae12d9acad966f70e0
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/09/2018
+ms.locfileid: "29841271"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Ferramentas do Visual Studio para Docker com ASP.NET Core
 
-[Visual Studio de 2017](https://www.visualstudio.com/) dá suporte à criação, depuração e execução em contêineres ASP.NET Core aplicativos voltados para o .NET Core. Contêineres do Windows e do Linux são compatíveis.
+O [Visual Studio 2017](https://www.visualstudio.com/) dá suporte à criação, depuração e execução de aplicativos do ASP.NET Core em contêineres direcionados ao .NET Core. Contêineres do Windows e do Linux são compatíveis.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -29,18 +30,18 @@ ms.lasthandoff: 03/09/2018
 
 Para a instalação do Docker, examine as informações em [Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) (Docker para Windows: o que saber antes de instalar) e instale o [Docker para Windows](https://docs.docker.com/docker-for-windows/install/).
 
-As **[Unidades Compartilhadas](https://docs.docker.com/docker-for-windows/#shared-drives)** do Docker para Windows devem ser configuradas para dar suporte ao mapeamento do volume e à depuração. Clique duas vezes o ícone de Docker da bandeja do sistema, selecione **configurações...** e selecione **unidades compartilhadas**. Selecione a unidade em que o Docker armazena arquivos. Selecione **aplicar**.
+As **[Unidades Compartilhadas](https://docs.docker.com/docker-for-windows/#shared-drives)** do Docker para Windows devem ser configuradas para dar suporte ao mapeamento do volume e à depuração. Clique com o botão direito do mouse no ícone do Docker na Bandeja do Sistema, selecione **Configurações...** e selecione **Unidades Compartilhadas**. Selecione a unidade em que o Docker armazena arquivos. Selecione **Aplicar**.
 
 ![Unidades Compartilhadas](./visual-studio-tools-for-docker/_static/settings-shared-drives-win.png)
 
 > [!TIP]
-> Visual Studio 2017 versões 15.6 e posteriores do prompt quando **unidades compartilhadas** não estão configurados.
+> A versão 15.6 e as versões posteriores do Visual Studio 2017 exibem um aviso quando as **Unidades Compartilhadas** não estão configuradas.
 
 ## <a name="add-docker-support-to-an-app"></a>Adicionar suporte do Docker a um aplicativo
 
-Para adicionar suporte de Docker para um projeto do ASP.NET Core, o projeto deve usar o .NET Core. Há suporte para contêineres do Linux e Windows.
+Para adicionar suporte do Docker para um projeto do ASP.NET Core, o projeto deve ser destinado ao .NET Core. Contêineres do Linux e Windows são ambos compatíveis.
 
-Ao adicionar o suporte de Docker para um projeto, escolha Windows ou um contêiner do Linux. O host do Docker deve estar executando o mesmo tipo de contêiner. Para alterar o tipo de contêiner na instância do Docker em execução, clique com o botão direito do mouse no ícone do Docker na Bandeja do Sistema e escolha **Alternar para contêineres do Windows...** ou **Alternar para contêineres do Linux...**.
+Ao adicionar o suporte do Docker a um projeto, escolha um contêiner do Windows ou Linux. O host do Docker deve estar executando o mesmo tipo de contêiner. Para alterar o tipo de contêiner na instância do Docker em execução, clique com o botão direito do mouse no ícone do Docker na Bandeja do Sistema e escolha **Alternar para contêineres do Windows...** ou **Alternar para contêineres do Linux...**.
 
 ### <a name="new-app"></a>Novo aplicativo
 
@@ -48,7 +49,7 @@ Ao criar um novo aplicativo com os modelos de projeto do **Aplicativo Web ASP.NE
 
 ![Caixa de seleção Habilitar Suporte do Docker](visual-studio-tools-for-docker/_static/enable-docker-support-checkbox.png)
 
-Se a estrutura de destino é o núcleo do .NET, o **OS** suspensa permite a seleção de um tipo de contêiner.
+Se a estrutura de destino for o .NET Core, a lista suspensa **SO** permitirá a seleção de um tipo de contêiner.
 
 ### <a name="existing-app"></a>Aplicativo existente
 
@@ -71,26 +72,26 @@ Um *Dockerfile*, a receita para criar uma imagem final do Docker, é adicionado 
 
 O *Dockerfile* se baseia na imagem [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore). Essa imagem base inclui os pacotes NuGet do ASP.NET Core, que foram pré-compilados com JIT para melhorar o desempenho de inicialização.
 
-O *docker compose.yml* arquivo contém o nome da imagem que é criado quando o projeto é executado:
+O arquivo *docker-compose.yml* contém o nome da imagem que é criada quando o projeto é executado:
 
 [!code-yaml[](visual-studio-tools-for-docker/samples/HelloDockerTools/docker-compose.yml?highlight=5)]
 
 No exemplo anterior, `image: hellodockertools` gera a imagem `hellodockertools:dev` quando o aplicativo é executado no modo **Depuração**. A imagem `hellodockertools:latest` é gerada quando o aplicativo é executado no modo **Versão**.
 
-Prefixo do nome de imagem com o [Hub do Docker](https://hub.docker.com/) nome de usuário (por exemplo, `dockerhubusername/hellodockertools`) se a imagem será enviada para o registro. Como alternativa, alterar o nome da imagem para incluir a URL de registro particular (por exemplo, `privateregistry.domain.com/hellodockertools`) dependendo da configuração.
+Prefixe o nome da imagem com o nome de usuário do [Hub do Docker](https://hub.docker.com/) (por exemplo, `dockerhubusername/hellodockertools`) se a imagem será enviada por push para o registro. Como alternativa, altere o nome da imagem para incluir a URL do registro privado (por exemplo, `privateregistry.domain.com/hellodockertools`), dependendo da configuração.
 
 ## <a name="debug"></a>Depurar
 
 Selecione **Docker** no menu suspenso de depuração na barra de ferramentas e inicie a depuração do aplicativo. A exibição **Docker** da janela **Saída** mostra as seguintes ações em andamento:
 
-* O *microsoft/aspnetcore* imagem de tempo de execução é adquirida (se ainda não estiver no cache).
-* O *aspnetcore/microsoft-compilação* imagem/publicação de compilação é adquirida (se ainda não estiver no cache).
+* A imagem em tempo de execução *microsoft/aspnetcore* é adquirida (se ainda não está no cache).
+* A imagem de compilação/publicação *microsoft/aspnetcore-build* é adquirida (se ainda não está no cache).
 * A variável de ambiente *ASPNETCORE_ENVIRONMENT* é definida como `Development` dentro do contêiner.
 * A porta 80 é exposta e mapeada para uma porta atribuída dinamicamente para o localhost. A porta é determinada pelo host do Docker e pode ser consultada com o comando `docker ps`.
 * O aplicativo é copiado para o contêiner.
-* O navegador padrão é iniciado com o depurador anexado ao contêiner usando a porta atribuída dinamicamente. 
+* O navegador padrão é iniciado com o depurador anexado ao contêiner, usando a porta atribuída dinamicamente. 
 
-A imagem resultante do Docker é o *desenvolvimento* imagem do aplicativo com o *microsoft/aspnetcore* imagens como a imagem base. Execute o comando `docker images` na janela do PMC **(Console do Gerenciador de Pacotes)**. As imagens no computador são exibidas:
+A imagem resultante do Docker é a imagem *dev* do aplicativo, com as imagens *microsoft/aspnetcore* como a imagem base. Execute o comando `docker images` na janela do PMC **(Console do Gerenciador de Pacotes)**. As imagens no computador são exibidas:
 
 ```console
 REPOSITORY                   TAG                   IMAGE ID            CREATED             SIZE
@@ -101,7 +102,7 @@ microsoft/aspnetcore         2.0-nanoserver-1709   8872347d7e5d        40 hours 
 ```
 
 > [!NOTE]
-> A imagem de desenvolvimento não tem o conteúdo do aplicativo, como **depurar** configurações usam a montagem de volume para fornecer uma experiência interativa. Para enviar uma imagem por push, use a configuração **Versão**.
+> A imagem dev não inclui o conteúdo do aplicativo, pois as configurações de **Depuração** usam a montagem de volume para fornecer uma experiência iterativa. Para enviar uma imagem por push, use a configuração **Versão**.
 
 Execute o comando `docker ps` no PMC. Observe que o aplicativo está em execução usando o contêiner:
 
@@ -114,7 +115,7 @@ baf9a678c88d        hellodockertools:dev   "C:\\remote_debugge..."   21 seconds 
 
 As alterações em arquivos estáticos e exibições do Razor são atualizadas automaticamente sem a necessidade de uma etapa de compilação. Faça a alteração, salve e atualize o navegador para exibir a atualização.  
 
-As modificações em arquivos de código exigem a compilação e a reinicialização do Kestrel dentro do contêiner. Depois de fazer a alteração, use CTRL + F5 para executar o processo e iniciar o aplicativo dentro do contêiner. O contêiner do Docker não é recriado ou interrompido. Execute o comando `docker ps` no PMC. Observe que o contêiner original ainda está em execução como há 10 minutos:
+As modificações em arquivos de código exigem a compilação e a reinicialização do Kestrel dentro do contêiner. Depois de fazer a alteração, use CTRL + F5 para executar o processo e iniciar o aplicativo dentro do contêiner. O contêiner do Docker não é recompilado nem interrompido. Execute o comando `docker ps` no PMC. Observe que o contêiner original ainda está em execução como há 10 minutos:
 
 ```console
 CONTAINER ID        IMAGE                  COMMAND                   CREATED             STATUS              PORTS                   NAMES
@@ -123,7 +124,7 @@ baf9a678c88d        hellodockertools:dev   "C:\\remote_debugge..."   10 minutes 
 
 ## <a name="publish-docker-images"></a>Publicar imagens do Docker
 
-Depois que o ciclo de desenvolver e depurar o aplicativo for concluído, o Visual Studio Tools para Docker ajudar a criar a imagem de produção do aplicativo. Altere a lista suspensa de configuração para **Versão** e compile o aplicativo. A ferramenta gera a imagem com o *mais recente* marca, que pode ser enviada para o registro particular ou o Hub do Docker. 
+Depois de concluir o ciclo de desenvolvimento e depuração de seu aplicativo, as Ferramentas do Visual Studio para Docker ajudarão você a criar a imagem de produção do aplicativo. Altere a lista suspensa de configuração para **Versão** e compile o aplicativo. A ferramenta produz a imagem com a marcação *latest*, que você pode enviar por push para seu registro privado ou para o Hub do Docker. 
 
 Execute o comando `docker images` no PMC para ver a lista de imagens:
 
@@ -136,6 +137,6 @@ microsoft/aspnetcore         2.0-nanoserver-1709   8872347d7e5d        40 hours 
 ```
 
 > [!NOTE]
-> O comando `docker images` retorna imagens intermediárias com nomes de repositório e marcas identificadas como *\<none>* (não listadas acima). Essas imagens sem nome são produzidas pelo *Dockerfile* no [build de vários estágios](https://docs.docker.com/engine/userguide/eng-image/multistage-build/). Elas melhoram a eficiência da compilação da imagem final &mdash; apenas as camadas necessárias são recompiladas quando ocorrem alterações. Quando as imagens intermediárias não são mais necessários, excluí-los usando o [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/) comando.
+> O comando `docker images` retorna imagens intermediárias com nomes de repositório e marcas identificadas como *\<none>* (não listadas acima). Essas imagens sem nome são produzidas pelo *Dockerfile* no [build de vários estágios](https://docs.docker.com/engine/userguide/eng-image/multistage-build/). Elas melhoram a eficiência da compilação da imagem final &mdash; apenas as camadas necessárias são recompiladas quando ocorrem alterações. Quando você não precisar mais das imagens intermediárias, exclua-as usando o comando [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/).
 
-Pode haver uma expectativa de que a imagem de produção ou versão seja menor em comparação com a imagem *dev*. O mapeamento do volume, devido a estavam em execução o depurador e o aplicativo no computador local e não dentro do contêiner. A *última* imagem empacotou o código do aplicativo necessário para executar o aplicativo em um computador host. Portanto, o delta é o tamanho do código do aplicativo.
+Pode haver uma expectativa de que a imagem de produção ou versão seja menor em comparação com a imagem *dev*. Devido ao mapeamento do volume, o depurador e o aplicativo estavam em execução no computador local e não dentro do contêiner. A *última* imagem empacotou o código do aplicativo necessário para executar o aplicativo em um computador host. Portanto, o delta é o tamanho do código do aplicativo.

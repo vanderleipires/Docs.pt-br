@@ -1,7 +1,7 @@
 ---
-title: Referência de erros comuns para o serviço de aplicativo do Azure e o IIS com o ASP.NET Core
+title: Referência de erros comuns para o Serviço de Aplicativo do Azure e o IIS com o ASP.NET Core
 author: guardrex
-description: Distingui erros comuns ao hospedar aplicativos ASP.NET Core no serviço de aplicativos do Azure e no IIS.
+description: Distinga erros comuns ao hospedar aplicativos ASP.NET Core no Serviço de Aplicativos do Azure e no IIS.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -12,23 +12,24 @@ ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
 ms.openlocfilehash: 995890a5e6b0cc1d9cebc21486917a7a39587076
 ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34233333"
 ---
-# <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Referência de erros comuns para o serviço de aplicativo do Azure e o IIS com o ASP.NET Core
+# <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Referência de erros comuns para o Serviço de Aplicativo do Azure e o IIS com o ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex)
 
-A lista a seguir não é uma lista completa de erros. Se você encontrar um erro não listado aqui, [abrir um novo problema](https://github.com/aspnet/Docs/issues/new) com instruções detalhadas para reproduzir o erro.
+A lista a seguir não é uma lista completa de erros. Se você encontrar um erro não listado aqui, [abra um novo problema](https://github.com/aspnet/Docs/issues/new) com instruções detalhadas para reproduzir o erro.
 
 Colete as seguintes informações:
 
 * Comportamento do navegador
-* Entradas de Log de eventos do aplicativo
-* Entradas de log do ASP.NET Core módulo stdout
+* Entradas do Log de Eventos do Aplicativo
+* Entradas do log de stdout do Módulo do ASP.NET Core
 
-Compare as informações para os seguintes erros comuns. Se uma correspondência for encontrada, siga os avisos de solução de problemas.
+Compare as informações para os erros comuns a seguir. Se uma correspondência for encontrada, siga o aviso de solução de problemas.
 
 [!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
@@ -42,7 +43,7 @@ Compare as informações para os seguintes erros comuns. Se uma correspondência
 
 Solução de problemas:
 
-* Se o sistema não tiver acesso à Internet durante a instalação do pacote de hospedagem, essa exceção ocorre quando o instalador não poderão obter o *Microsoft Visual C++ 2015 redistribuível*. Obter um instalador do [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840). Se o instalador falhar, o servidor pode não receber o tempo de execução do .NET Core necessário para hospedar uma implantação de framework dependente (FDD). Se hospedando um FDD, confirme que o tempo de execução é instalado em programas &amp; recursos. Se necessário, obtenha um instalador de tempo de execução de [.NET todos os Downloads](https://www.microsoft.com/net/download/all). Depois de instalar o tempo de execução, reinicie o sistema ou o IIS executando **net stop was /y** seguido por **net start w3svc** em um prompt de comando.
+* Se o sistema não tiver acesso à Internet durante a instalação do pacote de hospedagem, essa exceção ocorrerá quando o instalador for impedido de obter os *Pacotes Redistribuíveis do Microsoft Visual C++ 2015*. Obtenha um instalador do [Centro de Download da Microsoft](https://www.microsoft.com/download/details.aspx?id=53840). Se o instalador falhar, o servidor poderá não receber o tempo de execução do .NET Core necessário para hospedar uma FDD (implantação dependente de estrutura). Ao hospedar uma FDD, confirme se o tempo de execução está instalado em Programas &amp; Recursos. Se necessário, obtenha um instalador de tempo de execução de [Todos os Downloads do .NET](https://www.microsoft.com/net/download/all). Depois de instalar o tempo de execução, reinicie o sistema ou o IIS executando **net stop was /y** seguido por **net start w3svc** em um prompt de comando.
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>O upgrade do sistema operacional removeu o Módulo do ASP.NET Core de 32 bits
 
@@ -50,23 +51,23 @@ Solução de problemas:
 
 Solução de problemas:
 
-* Arquivos que não são do sistema operacional no diretório **C:\Windows\SysWOW64\inetsrv** não são preservados durante um upgrade do sistema operacional. Se o módulo de núcleo do ASP.NET está instalado antes de uma atualização do sistema operacional e, em seguida, qualquer AppPool é executado no modo de 32 bits depois de uma atualização do sistema operacional, esse problema é encontrado. Após um upgrade do sistema operacional, repare o Módulo do ASP.NET Core. Consulte [instalar o pacote de hospedagem do .NET Core](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle). Selecione **reparo** quando o instalador é executado.
+* Arquivos que não são do sistema operacional no diretório **C:\Windows\SysWOW64\inetsrv** não são preservados durante um upgrade do sistema operacional. Se o Módulo do ASP.NET Core estiver instalado antes de uma atualização do sistema operacional e, em seguida, qualquer AppPool for executado no modo de 32 bits após uma atualização do sistema operacional, esse problema será encontrado. Após um upgrade do sistema operacional, repare o Módulo do ASP.NET Core. Veja [Instalar o pacote de Hospedagem do .NET Core](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle). Selecione **Reparar** ao executar o instalador.
 
 ## <a name="platform-conflicts-with-rid"></a>Conflitos de plataforma com o RID
 
 * **Navegador:** 502.5 Erro HTTP – falha do processo
 
-* **Log de aplicativo:** aplicativo ' MACHINE/WEBROOT/APPHOST / {ASSEMBLY}' com raiz física ' c:\{caminho}\' Falha ao iniciar o processo com linha de comando ' "c:\\{caminho} {assembly}. { exe | dll} "', código de erro = ' 0x80004005: ff.
+* **Log do Aplicativo:** o aplicativo 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}' com a raiz física 'C:\{PATH}\' falhou ao iniciar o processo com a linha de comando '"C:\\{PATH}{assembly}.{exe|dll}" ', ErrorCode = '0x80004005 : ff.
 
-* **Log de módulo do ASP.NET Core:** exceção sem tratamento: System. BadImageFormatException: não foi possível carregar arquivo ou assembly '{assembly}. dll'. Foi feita uma tentativa de carregar um programa com um formato incorreto.
+* **Log do Módulo do ASP.NET Core:** exceção sem tratamento: System.BadImageFormatException: não foi possível carregar o arquivo ou o assembly '{assembly}.dll'. Foi feita uma tentativa de carregar um programa com um formato incorreto.
 
 Solução de problemas:
 
-* Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, consulte [solução de problemas](xref:host-and-deploy/iis/troubleshoot).
+* Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, confira [Solução de problemas](xref:host-and-deploy/iis/troubleshoot).
 
-* Confirme se o `<PlatformTarget>` no *. csproj* não entra em conflito com o RID. Por exemplo, não especifique um `<PlatformTarget>` de `x86` e publicar com uma RID da `win10-x64`, usando *dotnet publicar - c - r de versão para win10-x64* ou definindo o `<RuntimeIdentifiers>` no *. csproj*  para `win10-x64`. O projeto é publicado sem avisos nem erros, mas falha com as exceções registradas acima no sistema.
+* Confirme que o `<PlatformTarget>` no *.csproj* não entra em conflito com o RID. Por exemplo, não especifique um `<PlatformTarget>` igual a `x86` e publique com um RID igual a `win10-x64`, usando *dotnet publish -c Release -r win10-x64* ou definindo o `<RuntimeIdentifiers>` no *.csproj* como `win10-x64`. O projeto é publicado sem avisos nem erros, mas falha com as exceções registradas acima no sistema.
 
-* Se essa exceção ocorre para uma implantação de aplicativos do Azure ao atualizar um aplicativo e implantando assemblies mais recentes, exclua manualmente todos os arquivos de implantação anterior. Assemblies incompatíveis remanescentes podem resultar em uma exceção `System.BadImageFormatException` durante a implantação de um aplicativo atualizado.
+* Se essa exceção ocorrer para uma implantação dos Aplicativos do Azure ao fazer upgrade de um aplicativo e implantar assemblies mais recentes, exclua manualmente todos os arquivos da implantação anterior. Assemblies incompatíveis remanescentes podem resultar em uma exceção `System.BadImageFormatException` durante a implantação de um aplicativo atualizado.
 
 ## <a name="uri-endpoint-wrong-or-stopped-website"></a>Ponto de extremidade de URI incorreto ou site interrompido
 
@@ -78,9 +79,9 @@ Solução de problemas:
 
 Solução de problemas:
 
-* Confirme se que o ponto de extremidade URI correto para o aplicativo está sendo usado. Verifique as associações.
+* Confirme se que o ponto de extremidade do URI correto para o aplicativo está sendo usado. Verifique as associações.
 
-* Confirme que o site do IIS não está no *parado* estado.
+* Confirme que o site do IIS não está no estado *Parado*.
 
 ## <a name="corewebengine-or-w3svc-server-features-disabled"></a>Recursos do servidor CoreWebEngine ou W3SVC desabilitados
 
@@ -88,9 +89,9 @@ Solução de problemas:
 
 Solução de problemas:
 
-* Confirme se a função adequada e os recursos estão habilitados. Consulte [Configuração do IIS](xref:host-and-deploy/iis/index#iis-configuration).
+* Confirme que a função e os recursos apropriados estão habilitados. Consulte [Configuração do IIS](xref:host-and-deploy/iis/index#iis-configuration).
 
-## <a name="incorrect-website-physical-path-or-app-missing"></a>Caminho físico do site incorreto ou ausente do aplicativo
+## <a name="incorrect-website-physical-path-or-app-missing"></a>Caminho físico do site incorreto ou aplicativo ausente
 
 * **Navegador:** 403 Proibido – acesso negado **OU** 403.14 Proibido – o servidor Web está configurado para não listar o conteúdo deste diretório.
 
@@ -100,7 +101,7 @@ Solução de problemas:
 
 Solução de problemas:
 
-* Verifique o site do IIS **configurações básicas** e a pasta física do aplicativo. Confirme se o aplicativo está na pasta em que o site do IIS **caminho físico**.
+* Confira as **Configurações Básicas** no site do IIS e a pasta do aplicativo físico. Confirme que o aplicativo está na pasta no **Caminho físico** do site do IIS.
 
 ## <a name="incorrect-role-module-not-installed-or-incorrect-permissions"></a>Função incorreta, módulo não instalado ou permissões incorretas
 
@@ -112,55 +113,55 @@ Solução de problemas:
 
 Solução de problemas:
 
-* Confirme que a função adequada está habilitada. Consulte [Configuração do IIS](xref:host-and-deploy/iis/index#iis-configuration).
+* Confirme que você habilitou a função apropriada. Consulte [Configuração do IIS](xref:host-and-deploy/iis/index#iis-configuration).
 
-* Verifique **Programas &amp; Recursos** e confirme se o **Módulo do Microsoft ASP.NET Core** foi instalado. Se o **Módulo do Microsoft ASP.NET Core** não estiver presente na lista de programas instalados, instale o módulo. Consulte [instalar o .NET Core hospedagem pacote](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle).
+* Verifique **Programas &amp; Recursos** e confirme se o **Módulo do Microsoft ASP.NET Core** foi instalado. Se o **Módulo do Microsoft ASP.NET Core** não estiver presente na lista de programas instalados, instale o módulo. Veja [Instalar o pacote de Hospedagem do .NET Core](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle).
 
-* Verifique se o **Pool de aplicativos** > **modelo de processo** > **identidade** é definido como **ApplicationPoolIdentity** ou a identidade personalizada tem as permissões corretas para acessar a pasta de implantação do aplicativo.
+* Verifique se o **Pool de aplicativos** > **Modelo de processo** > **Identidade** está definido como **ApplicationPoolIdentity** ou se a identidade personalizada tem as permissões corretas para acessar a pasta de implantação do aplicativo.
 
-## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>ProcessPath incorreto, variável de caminho ausente, o pacote de hospedagem não instalado, não reiniciado sistema/IIS, VC + + redistribuível não está instalado ou dotnet.exe violação de acesso
+## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>processPath incorreto, variável de PATH ausente, pacote de hospedagem não instalado, sistema/IIS não reiniciado, Pacotes Redistribuíveis do VC++ não instalados ou violação de acesso de dotnet.exe
 
 * **Navegador:** 502.5 Erro HTTP – falha do processo
 
-* **Log de aplicativo:** aplicativo ' MACHINE/WEBROOT/APPHOST / {ASSEMBLY}' com raiz física ' c:\\{caminho}\' Falha ao iniciar o processo com linha de comando ' ".\{ assembly} .exe"', código de erro = ' 0x80070002: 0.
+* **Log do Aplicativo:** o aplicativo 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}' com a raiz física 'C:\\{PATH}\' falhou ao iniciar o processo com a linha de comando '".\{assembly}.exe" ', ErrorCode = '0x80070002 : 0.
 
 * **Log do Módulo do ASP.NET Core:** arquivo de log criado, mas vazio
 
 Solução de problemas:
 
-* Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, consulte [solução de problemas](xref:host-and-deploy/iis/troubleshoot).
+* Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, confira [Solução de problemas](xref:host-and-deploy/iis/troubleshoot).
 
-* Verifique o *processPath* atributo no `<aspNetCore>` elemento *Web. config* para confirmar se ele está *dotnet* para uma implantação do framework dependente (FDD) ou *. \{assembly} .exe* para uma implantação autossuficiente (SCD).
+* Verifique o atributo *processPath* no elemento `<aspNetCore>` em *web.config* para confirmar se ele é *dotnet* para uma FDD (implantação dependente de estrutura) ou *.\{assembly}.exe* para uma SCD (implantação autossuficiente).
 
 * Para uma FDD, o *dotnet.exe* pode não estar acessível por meio das configurações de PATH. Confirme se *C:\Program Files\dotnet\* existe nas configurações de PATH do Sistema.
 
-* Para uma FDD, o *dotnet.exe* pode não estar acessível para a identidade do usuário do Pool de aplicativos. Confirme se a identidade do usuário do AppPool tem acesso ao diretório *C:\Program Files\dotnet*. Confirme que não há nenhuma regra de negação configurada para a identidade do usuário AppPool no *Files\dotnet C:\Program* e diretórios do aplicativo.
+* Para uma FDD, o *dotnet.exe* pode não estar acessível para a identidade do usuário do Pool de aplicativos. Confirme se a identidade do usuário do AppPool tem acesso ao diretório *C:\Program Files\dotnet*. Confirme se não há nenhuma regra de negação configurada para a identidade do usuário do AppPool no *C:\Arquivos de Programas\dotnet* e nos diretórios do aplicativo.
 
-* Um FDD pode ter sido implantado e .NET Core instalado sem a reinicialização do IIS. Reinicie o servidor ou o IIS executando **net stop was /y** seguido por **net start w3svc** em um prompt de comando.
+* Talvez você tenha implantado uma FDD e instalado o .NET Core sem reiniciar o IIS. Reinicie o servidor ou o IIS executando **net stop was /y** seguido por **net start w3svc** em um prompt de comando.
 
-* Um FDD pode ter sido implantado sem instalar o tempo de execução do .NET Core no sistema de hospedagem. Se o tempo de execução do .NET Core ainda não foi instalado, execute o **instalador do pacote de hospedagem do .NET Core** no sistema. Consulte [instalar o .NET Core hospedagem pacote](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle). Se você tentar instalar o runtime do .NET Core em um sistema sem uma conexão de Internet, obter o tempo de execução de [.NET todos os Downloads](https://www.microsoft.com/net/download/all) e execute o instalador do pacote de hospedagem para instalar o módulo do ASP.NET Core. Conclua a instalação reiniciando o sistema ou o IIS executando **net stop was /y** seguido por **net start w3svc** em um prompt de comando.
+* Você pode ter implantado uma FDD sem instalar o tempo de execução do .NET Core no sistema de hospedagem. Se o tempo de execução do .NET Core ainda não foi instalado, execute o **Instalador do Pacote de Hospedagem do .NET Core** no sistema. Veja [Instalar o pacote de Hospedagem do .NET Core](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle). Se estiver tentando instalar o tempo de execução do .NET Core em um sistema sem uma conexão com a Internet, obtenha o tempo de execução em [Todos os Downloads do .NET](https://www.microsoft.com/net/download/all) e execute o instalador do pacote de hospedagem para instalar o Módulo do ASP.NET Core. Conclua a instalação reiniciando o sistema ou o IIS executando **net stop was /y** seguido por **net start w3svc** em um prompt de comando.
 
-* Um FDD pode ter sido implantado e o *Microsoft Visual C++ 2015 redistribuível (x64)* não está instalado no sistema. Obter um instalador do [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53840).
+* Talvez você tenha implantado uma FDD e os *Pacotes redistribuíveis do Microsoft Visual C++ 2015 (x64)* não estejam instalados no sistema. Obtenha um instalador do [Centro de Download da Microsoft](https://www.microsoft.com/download/details.aspx?id=53840).
 
 ## <a name="incorrect-arguments-of-aspnetcore-element"></a>Argumentos incorretos do elemento \<aspNetCore\>
 
 * **Navegador:** 502.5 Erro HTTP – falha do processo
 
-* **Log de aplicativo:** aplicativo ' MACHINE/WEBROOT/APPHOST / {ASSEMBLY}' com raiz física ' c:\\{caminho}\' Falha ao iniciar o processo com linha de comando ' "dotnet".\{ . dll de assembly}', código de erro = ' 0x80004005: 80008081.
+* **Log do Aplicativo:** o aplicativo 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}' com a raiz física 'C:\\{PATH}\' falhou ao iniciar o processo com a linha de comando '"dotnet" .\{assembly}.dll', ErrorCode = '0x80004005 : 80008081.
 
-* **Log de módulo do ASP.NET Core:** a execução do aplicativo não existe: ' caminho\{assembly}. dll '
+* **Log do Módulo do ASP.NET Core:** o aplicativo a ser executado não existe: 'PATH\{assembly}.dll'
 
 Solução de problemas:
 
-* Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, consulte [solução de problemas](xref:host-and-deploy/iis/troubleshoot).
+* Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, confira [Solução de problemas](xref:host-and-deploy/iis/troubleshoot).
 
-* Examine o *argumentos* atributo no `<aspNetCore>` elemento *Web. config* para confirmar se ele é (a) *.\{ . dll de assembly}* para uma implantação de framework dependente (FDD); ou (b) não está presente, uma cadeia de caracteres vazia (*argumentos = ""*), ou uma lista de argumentos do aplicativo (*argumentos = "arg1, arg2,..."*) para uma implantação autossuficiente (SCD).
+* Examine o atributo *arguments* no elemento `<aspNetCore>` no *web.config* para confirmar se ele: (a) é *.\{assembly}.dll* de uma FDD (implantação dependente de estrutura); ou (b) não está presente, é uma cadeia de caracteres vazia (*arguments=""*) ou uma lista de argumentos do aplicativo (*arguments="arg1, arg2, ..."*) para uma SCD (implantação autossuficiente).
 
 ## <a name="missing-net-framework-version"></a>Versão do .NET Framework ausente
 
 * **Navegador:** 502.3 Gateway incorreto – Erro de conexão ao tentar encaminhar a solicitação.
 
-* **Log de aplicativo:** ErrorCode = aplicativo ' MACHINE/WEBROOT/APPHOST / {ASSEMBLY}' com raiz física ' c:\\{caminho}\' Falha ao iniciar o processo com linha de comando ' "dotnet".\{ . dll de assembly}', código de erro = ' 0x80004005: 80008081.
+* **Log do Aplicativo:** ErrorCode = O aplicativo 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}' com a raiz física 'C:\\{PATH}\' falhou ao iniciar o processo com a linha de comando '"dotnet" .\{assembly}.dll', ErrorCode = '0x80004005 : 80008081.
 
 * **Log do Módulo do ASP.NET Core:** exceção do método, arquivo ou assembly ausente. O método, o arquivo ou o assembly especificado na exceção é um método, arquivo ou assembly do .NET Framework.
 
@@ -168,7 +169,7 @@ Solução de problemas:
 
 * Instale a versão do .NET Framework ausente no sistema.
 
-* Para uma implantação do framework dependente (FDD), confirme que o tempo de execução correto instalada no sistema. Se o projeto é atualizado de 1.1 para 2.0, o sistema host, implantados e os resultados dessa exceção, verifique se o framework 2.0 está no sistema de hospedagem.
+* Para uma FDD (implantação dependente de estrutura), confirme se você tem o tempo de execução correto instalado no sistema. Se o projeto foi atualizado de 1.1 para 2.0 e implantado no sistema de hospedagem e resultou nessa exceção, verifique se a estrutura 2.0 está no sistema de hospedagem.
 
 ## <a name="stopped-application-pool"></a>Pool de aplicativos interrompido
 
@@ -180,25 +181,25 @@ Solução de problemas:
 
 Solução de problemas
 
-* Confirme que o Pool de aplicativos não está no *parado* estado.
+* Confirme que o Pool de Aplicativos não está no estado *Parado*.
 
 ## <a name="iis-integration-middleware-not-implemented"></a>Middleware de Integração do IIS não implementado
 
 * **Navegador:** 502.5 Erro HTTP – falha do processo
 
-* **Log de aplicativo:** aplicativo ' MACHINE/WEBROOT/APPHOST / {ASSEMBLY}' com raiz física ' c:\\{caminho}\' criou um processo com linha de comando ' "c:\\{caminho}\{assembly}. { exe | dll} "' mas o falhou ou foi resposta não ou não escutar na porta determinada '{PORT}', código de erro = '0x800705b4'
+* **Log do Aplicativo:** o aplicativo 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}' com a raiz física 'C:\\{PATH}\' criou um processo com a linha de comando '"C:\\{PATH}\{assembly}.{exe|dll}"', mas falhou, não respondeu ou não escutou na porta '{PORT}' fornecida, ErrorCode = '0x800705b4'
 
 * **Log do Módulo do ASP.NET Core:** arquivo de log criado, mostrando uma operação normal.
 
 Solução de problemas
 
-* Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, consulte [solução de problemas](xref:host-and-deploy/iis/troubleshoot).
+* Confirme se o aplicativo é executado localmente no Kestrel. Uma falha do processo pode ser o resultado de um problema no aplicativo. Para obter mais informações, confira [Solução de problemas](xref:host-and-deploy/iis/troubleshoot).
 
-* Confirme se ou:
-  * O middleware de integração de IIS for referencedby chamando o `UseIISIntegration` método do aplicativo `WebHostBuilder` (ASP.NET Core 1. x)
-  * As aplicativos usa o `CreateDefaultBuilder` método (ASP.NET Core 2. x).
+* Confirme que uma das seguintes condições é verdadeira:
+  * O middleware de integração de IIS é referenciado chamando-se o método `UseIISIntegration` no `WebHostBuilder` do aplicativo (ASP.NET Core 1.x)
+  * Os aplicativos usam o método `CreateDefaultBuilder` (ASP.NET Core 2.x).
   
-  Consulte [Host no ASP.NET Core](xref:fundamentals/host/index) para obter detalhes.
+  Veja [Hospedar no ASP.NET Core](xref:fundamentals/host/index) para obter mais detalhes.
 
 ## <a name="sub-application-includes-a-handlers-section"></a>O subaplicativo inclui uma seção \<manipuladores\>
 
@@ -206,32 +207,32 @@ Solução de problemas
 
 * **Log do Aplicativo:** nenhuma entrada
 
-* **Log de módulo do ASP.NET Core:** arquivo de Log criado e mostra uma operação normal para o aplicativo raiz. Arquivo de log não foi criado para o aplicativo sub.
+* **Log do Módulo do ASP.NET Core:** arquivo de log criado, mostrando uma operação normal do aplicativo raiz. O arquivo de log não foi criado para o subaplicativo.
 
 Solução de problemas
 
 * Confirme se o arquivo *web.config* do subaplicativo não inclui uma seção `<handlers>`.
 
-## <a name="stdout-log-path-incorrect"></a>caminho do log stdout incorreto
+## <a name="stdout-log-path-incorrect"></a>caminho do log de stdout incorreto
 
-* **Navegador:** o aplicativo normalmente responde.
+* **Navegador:** o aplicativo responde normalmente.
 
-* **Log de aplicativo:** Aviso: não foi possível criar o stdoutLogFile \\? \C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log, ErrorCode = - 2147024893.
+* **Log do Aplicativo:** Aviso: não foi possível criar o stdoutLogFile \\?\C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log, ErrorCode = -2147024893.
 
 * **Log do Módulo do ASP.NET Core:** arquivo de log não criado
 
 Solução de problemas
 
-* O `stdoutLogFile` caminho especificado no `<aspNetCore>` elemento *Web. config* não existe. Para obter mais informações, consulte o [criação e redirecionamento de Log](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection) seção do tópico de referência de configuração ASP.NET Core módulo.
+* O caminho `stdoutLogFile` especificado no elemento `<aspNetCore>` de *web.config* não existe. Para obter mais informações, veja a seção [Criação e redirecionamento de log](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection) do tópico de referência de configuração do Módulo do ASP.NET Core.
 
 ## <a name="application-configuration-general-issue"></a>Problema geral de configuração do aplicativo
 
 * **Navegador:** 502.5 Erro HTTP – falha do processo
 
-* **Log de aplicativo:** aplicativo ' MACHINE/WEBROOT/APPHOST / {ASSEMBLY}' com raiz física ' c:\\{caminho}\' criou um processo com linha de comando ' "c:\\{caminho}\{assembly}. { exe | dll} "' mas o falhou ou foi resposta não ou não escutar na porta determinada '{PORT}', código de erro = '0x800705b4'
+* **Log do Aplicativo:** o aplicativo 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}' com a raiz física 'C:\\{PATH}\' criou um processo com a linha de comando '"C:\\{PATH}\{assembly}.{exe|dll}"', mas falhou, não respondeu ou não escutou na porta '{PORT}' fornecida, ErrorCode = '0x800705b4'
 
 * **Log do Módulo do ASP.NET Core:** arquivo de log criado, mas vazio
 
 Solução de problemas
 
-* Essa exceção geral indica que o processo não pôde iniciar, provavelmente devido a um problema de configuração do aplicativo. Referindo-se a [estrutura de diretórios](xref:host-and-deploy/directory-structure), confirme que o aplicativo implantado arquivos e pastas são apropriadas e que os arquivos de configuração do aplicativo estão presentes e conter as configurações corretas para o aplicativo e o ambiente. Para obter mais informações, consulte [solução de problemas](xref:host-and-deploy/iis/troubleshoot).
+* Essa exceção geral indica que o processo não pôde ser iniciado, provavelmente, devido a um problema de configuração do aplicativo. Consultando [Estrutura de diretório](xref:host-and-deploy/directory-structure), confirme se as pastas e os arquivos implantados do aplicativo são apropriados e se os arquivos de configuração do aplicativo estão presentes e contêm as configurações corretas para o aplicativo e o ambiente. Para obter mais informações, confira [Solução de problemas](xref:host-and-deploy/iis/troubleshoot).

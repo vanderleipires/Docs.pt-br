@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: f61d04f6cf0aa054566d9f48a030cf268f2ba72a
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: a0e38b041f428f8b519fd726643b3214761fb44e
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555346"
 ---
 # <a name="work-with-the-application-model-in-aspnet-core"></a>Trabalhar com o modelo de aplicativo no ASP.NET Core
 
@@ -168,7 +169,7 @@ Esta amostra aplica essa convenção às rotas que não estão usando o roteamen
 O ASP.NET Core MVC usa um conjunto diferente de convenções da API Web ASP.NET 2. Usando convenções personalizadas, você pode modificar o comportamento de um aplicativo ASP.NET Core MVC para que ele seja consistente com o comportamento de um aplicativo de API Web. A Microsoft fornece o [WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim/) especificamente para essa finalidade.
 
 > [!NOTE]
-> Saiba mais sobre como [migrar da API Web ASP.NET](xref:migration/webapi).
+> Saiba mais sobre [migração da API Web ASP.NET](xref:migration/webapi).
 
 Para usar o Shim de Compatibilidade de API Web, você precisa adicionar o pacote ao projeto e, em seguida, adicionar as convenções ao MVC chamando `AddWebApiConventions` em `Startup`:
 
