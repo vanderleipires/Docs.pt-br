@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: edc69443455677ba80ebb0a73e193d4d6741e470
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 0433ddb3bf1ef0074c683903ad4553cd6a0b4741
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34687812"
 ---
 # <a name="enforce-https-in-an-aspnet-core"></a>Impor HTTPS do núcleo do ASP.NET
 
@@ -112,16 +113,15 @@ Desmarque o **configurar para HTTPS** caixa de seleção.
 
 ![Diagrama de entidade](enforcing-ssl/_static/out.png)
 
-
 #   <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli) 
 
 Use a opção `--no-https`. Por exemplo
 
-```cli
-dotnet new razor --no-https
+```console
+dotnet new webapp --no-https
 ```
 
-------
+---
 
 ::: moniker-end
 

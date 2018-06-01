@@ -10,17 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/gdpr
-ms.openlocfilehash: 3adfd1703dbf6446356886a662168bf1dbf65d56
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
-ms.translationtype: HT
+ms.openlocfilehash: 92a7000f4f8e4c2097065cb530fe106ef0e98545
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34688621"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>Suporte de regulamentação de proteção de dados geral (GDPR) da UE no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core fornece APIs e modelos para ajudar a atender alguns do [regulamentação de proteção de dados geral (GDPR) UE](https://www.eugdpr.org/) requisitos:
+ASP.NET Core fornece APIs e modelos para ajudar a atender alguns do [regulamentação de proteção de dados geral (GDPR) da UE](https://www.eugdpr.org/) requisitos:
 
 * Os modelos de projeto incluem pontos de extensão e marcação fragmentada, que você pode substituir por sua privacidade e a política de uso de cookies.
 * Um recurso de consentimento do cookie permite solicitar (e acompanhar) consentimento dos usuários para o armazenamento de informações pessoais. Se um usuário não aceitou a coleta de dados e o aplicativo é definido com [CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded?view=aspnetcore-2.1#Microsoft_AspNetCore_Builder_CookiePolicyOptions_CheckConsentNeeded) para `true`, cookies não-essenciais não serão enviados para o navegador.
@@ -28,9 +29,9 @@ ASP.NET Core fornece APIs e modelos para ajudar a atender alguns do [regulamenta
 * [Cookies de sessão e TempData](#tempdata) não são funcionais quando o controle está desabilitado.
 * O [gerenciar identidade](#pd) página fornece um link para baixar e excluir dados de usuário.
 
-O [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr) permite que você teste a maioria dos pontos de extensão GDPR e APIs adicionado aos modelos ASP.NET Core 2.1. Consulte o [Leiame](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr) arquivo para testar as instruções.
+O [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) permite que você teste a maioria dos pontos de extensão GDPR e APIs adicionado aos modelos ASP.NET Core 2.1. Consulte o [Leiame](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) arquivo para testar as instruções.
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="aspnet-core-gdpr-support-in-template-generated-code"></a>Suporte do ASP.NET Core GDPR no código de modelo gerado
 
@@ -38,7 +39,7 @@ Páginas Razor e MVC projetos criados com os modelos de projeto incluem o seguin
 
 * [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions?view=aspnetcore-2.0) e [UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_CookiePolicyAppBuilderExtensions_UseCookiePolicy_Microsoft_AspNetCore_Builder_IApplicationBuilder_) são definidos no `Startup`.
 * O *_CookieConsentPartial.cshtml* [exibição parcial](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper).
-* O *Pages/Privacy.cshtml* ou *Home/rivacy.cshtml* exibição fornece uma página detalhada da política de privacidade do seu site. O *_CookieConsentPartial.cshtml* arquivo gera um link para a página de privacidade.
+* O *Pages/Privacy.cshtml* ou *Home/Privacy.cshtml* exibição fornece uma página detalhada da política de privacidade do seu site. O *_CookieConsentPartial.cshtml* arquivo gera um link para a página de privacidade.
 * Para aplicativos criados com contas de usuário individuais, a página de gerenciamento fornece links para baixar e excluir [dados pessoais do usuário](#pd).
 
 ### <a name="cookiepolicyoptions-and-usecookiepolicy"></a>CookiePolicyOptions e UseCookiePolicy

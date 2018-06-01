@@ -11,11 +11,12 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: fb448f22db5bb624083f07cefaad29d6d58331ef
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
+ms.openlocfilehash: eb14fbf42f5c18ccdc3ca42af8fd8bcfaa15c623
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34688582"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>Introdução ao SignalR no ASP.NET Core
 
@@ -40,13 +41,13 @@ Instale o software a seguir:
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* [SDK do .NET core 2.1.0 RC 1](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1) ou posterior
+* [.NET core SDK 2.1 ou posterior](https://www.microsoft.com/net/download/all)
 * [Visual Studio de 2017](https://www.visualstudio.com/downloads/) 15.7 ou posterior com o **desenvolvimento ASP.NET e web** carga de trabalho
 * [npm](https://www.npmjs.com/get-npm)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-* [SDK do .NET core 2.1.0 RC 1](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1) ou posterior
+* [.NET core SDK 2.1 ou posterior](https://www.microsoft.com/net/download/all)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [C# para o código do Visual Studio](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 * [npm](https://www.npmjs.com/get-npm)
@@ -81,7 +82,7 @@ O Visual Studio inclui a `Microsoft.AspNetCore.SignalR` pacote que contém suas 
 1. Do **Terminal integrada**, execute o seguinte comando:
 
     ```console
-    dotnet new razor -o SignalRChat
+    dotnet new webapp -o SignalRChat
     ```
 
 2. Instalar a biblioteca de cliente JavaScript usando *npm*.
