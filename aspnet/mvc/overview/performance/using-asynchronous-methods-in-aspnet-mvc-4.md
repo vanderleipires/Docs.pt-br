@@ -12,11 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: cee5fded4d8005df6054ab921f39882c3e5f21b8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5b3b9b82fa64155c1dfd2a49649def10d7dae87e
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729175"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>Usando métodos assíncronos no ASP.NET MVC 4
 ====================
@@ -43,7 +44,7 @@ Isso não pode ser um problema, porque o pool de threads pode se tornar grande o
 
 ## <a name="processing-asynchronous-requests"></a>Processamento de solicitações assíncronas
 
-Em aplicativos web que vê um grande número de solicitações simultâneas na inicialização ou tem uma carga intermitente (onde simultaneidade aumenta, de repente,), fazer essas chamadas de serviço web assíncrona aumentará a capacidade de resposta do seu aplicativo. Uma solicitação assíncrona leva a mesma quantidade de tempo para processar uma solicitação síncrona. Por exemplo, se uma solicitação de um serviço web chamar que requer dois segundos ser concluída, a solicitação usa dois segundos se ela é realizada de forma síncrona ou assíncrona. No entanto, durante uma chamada assíncrona, um thread não é bloqueado de responder às outras solicitações enquanto aguarda a primeira solicitação ser concluída. Portanto, solicitações assíncronas evitar o crescimento de pool de enfileiramento de mensagens e thread de solicitação quando há muitas solicitações simultâneas que invocar operações de execução longa.
+Em aplicativos web que vê um grande número de solicitações simultâneas na inicialização ou tem uma carga intermitente (onde simultaneidade aumenta, de repente,), fazer essas chamadas de serviço web assíncrona aumentará a capacidade de resposta do aplicativo. Uma solicitação assíncrona leva a mesma quantidade de tempo para processar uma solicitação síncrona. Por exemplo, se uma solicitação de um serviço web chamar que requer dois segundos ser concluída, a solicitação usa dois segundos se ela é realizada de forma síncrona ou assíncrona. No entanto, durante uma chamada assíncrona, um thread não é bloqueado de responder às outras solicitações enquanto aguarda a primeira solicitação ser concluída. Portanto, solicitações assíncronas evitar o crescimento de pool de enfileiramento de mensagens e thread de solicitação quando há muitas solicitações simultâneas que invocar operações de execução longa.
 
 ## <a id="ChoosingSyncVasync"></a>  Escolher os métodos de ação síncrono ou assíncrono
 
@@ -61,7 +62,7 @@ Em geral, use os métodos síncronos para as seguintes condições:
 - As operações são vinculadas à rede ou I/O vinculados em vez de limite de CPU.
 - Paralelismo é mais importante do que a simplicidade do código.
 - Você deseja fornecer um mecanismo que permite aos usuários cancelar uma solicitação de longa execução.
-- Quando o benefício da comutação threads out pondera o custo da alternância de contexto. Em geral, você deve fazer um método assíncrono se o método síncrono aguarda o thread de solicitação do ASP.NET ao não fazer nenhum trabalho. Fazendo a chamada assíncrona, o thread de solicitação do ASP.NET não está paralisado não executando nenhum trabalho enquanto aguarda a solicitação de serviço da web concluir.
+- Quando o benefício da comutação threads supera o custo da alternância de contexto. Em geral, você deve fazer um método assíncrono se o método síncrono aguarda o thread de solicitação do ASP.NET ao não fazer nenhum trabalho. Fazendo a chamada assíncrona, o thread de solicitação do ASP.NET não está paralisado não executando nenhum trabalho enquanto aguarda a solicitação de serviço da web concluir.
 - O teste mostra que o bloqueio de operações é um afunilamento no desempenho do site e que o IIS pode atender mais solicitações usando métodos assíncronos para essas chamadas de bloqueio.
 
   O exemplo disponível para download mostra como usar métodos de ação assíncrono com eficiência. O exemplo fornecido foi projetado para fornecer uma demonstração simple de programação assíncrona no ASP.NET MVC 4 usando o .NET 4.5. O exemplo não pretende ser uma arquitetura de referência para programação assíncrona no ASP.NET MVC. O programa de exemplo chama [ASP.NET Web API](../../../web-api/index.md) métodos que por sua vez chamam [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) para simular chamadas de serviço web de longa execução. A maioria dos aplicativos de produção não mostrará esses benefícios óbvios ao uso de métodos de ação assíncrono.   
@@ -89,7 +90,7 @@ O código a seguir mostra o `GetGizmos` método do serviço gizmo.
 O `GizmoService GetGizmos` método passa um URI para um serviço ASP.NET Web API HTTP que retorna uma lista de dados largue as. O *WebAPIpgw* projeto contém a implementação da API da Web `gizmos, widget` e `product` controladores.  
 A imagem a seguir mostra a exibição de largue as do projeto de exemplo.
 
-![Gizmos](using-asynchronous-methods-in-aspnet-mvc-4/_static/image1.png)
+![Largue as](using-asynchronous-methods-in-aspnet-mvc-4/_static/image1.png)
 
 ## <a id="CreatingAsynchGizmos"></a>  Criar um método de ação largue as assíncrona
 
