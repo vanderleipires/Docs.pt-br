@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530145"
 ---
 <a name="working-with-images-in-an-aspnet-web-pages-razor-site"></a>Trabalhando com imagens em um Site de páginas (Razor) da Web do ASP.NET
 ====================
@@ -62,7 +63,7 @@ Se uma imagem já está disponível em seu site e você quiser apenas para exibi
 
 O procedimento nesta seção mostra como exibir uma imagem em tempo real em que os usuários especificar o nome do arquivo de imagem de uma lista de nomes de imagem. Eles selecionem o nome da imagem de uma lista suspensa e quando eles enviam a página, a imagem que selecionado é exibida.
 
-![[imagem] ] (9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
+![[imagem]](9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
 
 1. No WebMatrix, crie um novo site.
 2. Adicionar uma nova página chamada *DynamicImage.cshtml*.
@@ -92,7 +93,7 @@ O procedimento nesta seção mostra como exibir uma imagem em tempo real em que 
 
 O exemplo anterior mostrou como exibir uma imagem dinamicamente, mas ela funcionou apenas com imagens que já estavam em seu site. Este procedimento mostra como permitir que os usuários carregue uma imagem, que é exibida na página. No ASP.NET, você pode manipular imagens em tempo real usando o `WebImage` auxiliar, que tem métodos que permitem a você cria, manipular e salva imagens. O `WebImage` auxiliar dá suporte a todas as comuns da web imagem tipos de arquivo, incluindo *. jpg*, *. PNG*, e *. bmp*. Neste artigo, você usará *. jpg* imagens, mas você pode usar qualquer um dos tipos de imagem.
 
-![[imagem] ] (9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
+![[imagem]](9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
 
 1. Adicione uma nova página e denomine- *UploadImage.cshtml*.
 2. Substitua o conteúdo existente na página com o seguinte: 
@@ -144,7 +145,7 @@ Se seu site aceita imagens de um usuário, você talvez queira redimensionar as 
 
 Este procedimento mostra como redimensionar uma imagem carregada para criar uma miniatura e, em seguida, salvar a miniatura e a imagem original no site. Exibir a miniatura na página e use um hiperlink para redirecionar os usuários para a imagem em tamanho normal.
 
-![[imagem] ] (9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
+![[imagem]](9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
 
 1. Adicionar uma nova página chamada *Thumbnail.cshtml*.
 2. No *imagens* pasta, crie uma subpasta chamada *miniaturas*.
@@ -165,7 +166,7 @@ Este procedimento mostra como redimensionar uma imagem carregada para criar uma 
 
 O `WebImage` auxiliar também lhe permite inverter e girar imagens. Este procedimento mostra como obter uma imagem do servidor, inverter a imagem de cabeça para baixo (vertical), salve-o e, em seguida, exiba a imagem invertida na página. Neste exemplo, você estiver usando apenas um arquivo que você já tem no servidor (*Photo2.jpg*). Em um aplicativo real, você provavelmente seria inverte uma imagem cujo nome você obter dinamicamente, como você fez nos exemplos anteriores.
 
-![[imagem] ] (9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
+![[imagem]](9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
 
 1. Adicionar uma nova página chamada *FlipImage.cshtml*.
 2. Substitua o conteúdo existente na página com o seguinte: 
@@ -189,7 +190,7 @@ Para girar uma imagem, você usa o mesmo código, exceto que, em vez de chamar o
 
 Quando você adicionar imagens ao seu site, você talvez queira adicionar uma marca d'água à imagem antes de salvá-lo ou exibi-lo em uma página. As pessoas geralmente usam marcas d'água para adicionar informações de copyright a uma imagem ou anunciar seu nome de negócios.
 
-![[imagem] ] (9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
+![[imagem]](9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
 
 1. Adicionar uma nova página chamada *Watermark.cshtml*.
 2. Substitua o conteúdo existente na página com o seguinte: 
@@ -206,7 +207,7 @@ Quando você adicionar imagens ao seu site, você talvez queira adicionar uma ma
 
 Em vez de usar o texto de marca d'água, você pode usar outra imagem. As pessoas às vezes usam imagens como um logotipo da empresa como uma marca d'água ou usar uma imagem de marca d'água em vez de texto para obter informações de direitos autorais.
 
-![[imagem] ] (9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
+![[imagem]](9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
 
 1. Adicionar uma nova página chamada *ImageWatermark.cshtml*.
 2. Adicionar uma imagem para o *imagens* pasta que você pode usar como um logotipo e renomeie a imagem *MyCompanyLogo.jpg*. Essa imagem deve ser uma imagem que você pode ver claramente quando ele é definido como 80 pixels de largura e 20 pixels de altura.
