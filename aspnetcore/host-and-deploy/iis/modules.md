@@ -10,12 +10,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: e88526d997618658f58488adb37ae1e519ea3f59
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 4a60b6c9bab77e8095cb9f19e615219817702b32
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483426"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566640"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>Módulos do IIS com o ASP.NET Core
 
@@ -40,7 +40,7 @@ A tabela indica módulos nativos do IIS que estão funcionando em solicitações
 | **Autenticação Digest**<br>`DigestAuthenticationModule` | Sim | |
 | **Pesquisa no Diretório**<br>`DirectoryListingModule` | Não | [Middleware de navegação no diretório](xref:fundamentals/static-files#enable-directory-browsing) |
 | **Compactação dinâmica**<br>`DynamicCompressionModule` | Sim | [Middleware de compactação de resposta](xref:performance/response-compression) |
-| **Rastreamento**<br>`FailedRequestsTracingModule` | Sim | [Registro em log do ASP.NET Core](xref:fundamentals/logging/index#the-tracesource-provider) |
+| **Rastreamento**<br>`FailedRequestsTracingModule` | Sim | [Registro em log do ASP.NET Core](xref:fundamentals/logging/index#tracesource-provider) |
 | **Cache de arquivo**<br>`FileCacheModule` | Não | [Middleware de Cache de Resposta](xref:performance/caching/middleware) |
 | **Cache HTTP**<br>`HttpCacheModule` | Não | [Middleware de Cache de Resposta](xref:performance/caching/middleware) |
 | **Log HTTP**<br>`HttpLoggingModule` | Sim | [Registro em log do ASP.NET Core](xref:fundamentals/logging/index)<br>Implementações: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)

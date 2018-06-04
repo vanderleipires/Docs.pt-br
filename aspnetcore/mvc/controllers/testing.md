@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: 51b7a02c697807c9e3504b70f89370126ee0e781
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: a0073e4de361c37a6854ceaf54ffd9eaea4837d4
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34567043"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Lógica do controlador de teste no ASP.NET Core
 
@@ -74,7 +75,7 @@ O segundo teste verifica que quando `ModelState` é válido, um novo `Brainstorm
 
 Outro controlador no aplicativo exibe informações relacionadas a uma sessão de debate específica. Ele inclui uma lógica para lidar com valores de ID inválidos:
 
-[!code-csharp[](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
 
 A ação do controlador tem três casos a serem testados, um para cada instrução `return`:
 
@@ -100,7 +101,7 @@ O último teste verifica se o método `Update` do repositório é chamado. Como 
 
 ## <a name="integration-testing"></a>Teste de integração
 
-Os [Testes de integração](../../testing/integration-testing.md) são executados para garantir que os módulos separados no aplicativo trabalhem juntos corretamente. Em geral, qualquer coisa que você possa testar com um teste de unidade, também pode testar com um teste de integração, mas o contrário não é verdadeiro. No entanto, os testes de integração tendem a ser muito mais lentos do que os testes de unidade. Portanto, é melhor testar tudo o que você puder com testes de unidade e usar testes de integração para cenários que envolvem vários colaboradores.
+Os [Testes de integração](xref:test/integration-tests) são executados para garantir que os módulos separados no aplicativo trabalhem juntos corretamente. Em geral, qualquer coisa que você possa testar com um teste de unidade, também pode testar com um teste de integração, mas o contrário não é verdadeiro. No entanto, os testes de integração tendem a ser muito mais lentos do que os testes de unidade. Portanto, é melhor testar tudo o que você puder com testes de unidade e usar testes de integração para cenários que envolvem vários colaboradores.
 
 Embora eles ainda possam ser úteis, objetos fictícios raramente são usados em testes de integração. Em um teste de unidade, objetos fictícios são uma maneira eficiente de controlar como os colaboradores fora da unidade que está sendo testada devem se comportar para fins do teste. Em um teste de integração, colaboradores reais são usados para confirmar que todo o subsistema funciona junto corretamente.
 

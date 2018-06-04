@@ -1,14 +1,14 @@
 Substitua o conteúdo do arquivo de exibição *Views/HelloWorld/Index.cshtml* do Razor pelo seguinte:
 
-[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
+[!code-HTML[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
 
 Navegue para `http://localhost:xxxx/HelloWorld`. O método `Index` no `HelloWorldController` não fez muita coisa: ele executou a instrução `return View();`, que especificou que o método deve usar um arquivo de modelo de exibição para renderizar uma resposta para o navegador. Como você não especificou explicitamente o nome do arquivo do modelo de exibição, o MVC usou como padrão o arquivo de exibição *Index.cshtml* na pasta */Views/HelloWorld*. A imagem abaixo mostra a cadeia de caracteres “Olá de nosso modelo de exibição!” embutida em código na exibição.
 
-![Janela do navegador](../../tutorials/first-mvc-app/adding-view/_static/hell_template.png)
+![Janela do navegador](~/tutorials/first-mvc-app/adding-view/_static/hell_template.png)
 
 Se a janela do navegador for pequena (por exemplo, em um dispositivo móvel), talvez você precise alternar (tocar) no [botão de navegação do Bootstrap](http://getbootstrap.com/components/#navbar) no canto superior direito para ver os links **Página Inicial**, **Sobre** e **Contato**.
 
-![Janela do navegador realçando o botão de navegação do Bootstrap](../../tutorials/first-mvc-app/adding-view/_static/1.png)
+![Janela do navegador realçando o botão de navegação do Bootstrap](~/tutorials/first-mvc-app/adding-view/_static/1.png)
 
 ## <a name="changing-views-and-layout-pages"></a>Alterando exibições e páginas de layout
 
@@ -20,16 +20,21 @@ Os modelos de [layout](xref:mvc/views/layout) permitem especificar o layout de c
 
 No elemento de título, altere `MvcMovie` para `Movie App`. Altere o texto de âncora no modelo de layout de `MvcMovie` para `Movie App` e o controlador de `Home` para `Movies`, conforme realçado abaixo:
 
-Observação: a versão do ASP.NET Core 2.0 é ligeiramente diferente. Ela não contém `@inject ApplicationInsights` nem `@Html.Raw(JavaScriptSnippet.FullScript)`.
+::: moniker range="<= aspnetcore-2.0"
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
-[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout21.cshtml?highlight=6,29)]
+::: moniker-end
 
 >[!WARNING]
 > Ainda não implementamos o controlador `Movies` e, portanto, se você clicar nesse link, obterá um erro 404 (Não encontrado).
 
 Salve as alterações e toque no link **Sobre**. Observe como o título na guia do navegador agora exibe **Sobre – Aplicativo de Filme**, em vez de **Sobre – Filme Mvc**: 
 
-![Sobre a guia](../../tutorials/first-mvc-app/adding-view/_static/about2.png)
+![Sobre a guia](~/tutorials/first-mvc-app/adding-view/_static/about2.png)
 
 Toque no link **Contato** e observe que o texto do título e de âncora também exibem **Aplicativo de Filme**. Conseguimos fazer a alteração uma vez no modelo de layout e fazer com que todas as páginas no site refletissem o novo texto do link e o novo título.
 
@@ -75,7 +80,7 @@ Salve as alterações e navegue para `http://localhost:xxxx/HelloWorld`. Observe
 
 Observe também como o conteúdo no modelo de exibição *Index.cshtml* foi mesclado com o modelo de exibição *Views/Shared/_Layout.cshtml* e uma única resposta HTML foi enviada para o navegador. Os modelos de layout facilitam realmente a realização de alterações que se aplicam a todas as páginas do aplicativo. Para saber mais, consulte [Layout](xref:mvc/views/layout).
 
-![Exibição de Lista de Filmes](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+![Exibição de Lista de Filmes](~/tutorials/first-mvc-app/adding-view/_static/hell3.png)
 
 Apesar disso, nossos poucos “dados” (nesse caso, a mensagem “Olá de nosso modelo de exibição!”) são embutidos em código. O aplicativo MVC tem um “V” (exibição) e você tem um “C” (controlador), mas ainda nenhum “M” (modelo).
 
@@ -89,7 +94,7 @@ Atualmente, o método `Welcome` na classe `HelloWorldController` usa um parâmet
 
 Retorne ao arquivo *HelloWorldController.cs* e altere o método `Welcome` para adicionar um valor `Message` e `NumTimes` ao dicionário `ViewData`. O dicionário `ViewData` é um objeto dinâmico, o que significa que você pode colocar tudo o que deseja nele; o objeto `ViewData` não tem nenhuma propriedade definida até que você insira algo nele. O sistema de [associação de modelos](xref:mvc/models/model-binding) MVC mapeia automaticamente os parâmetros nomeados (`name` e `numTimes`) da cadeia de consulta na barra de endereços para os parâmetros no método. O arquivo *HelloWorldController.cs* completo tem esta aparência:
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
 
 O objeto de dicionário `ViewData` contém dados que serão passados para a exibição. 
 
@@ -97,7 +102,7 @@ Crie um modelo de exibição Boas-vindas chamado *Views/HelloWorld/Welcome.cshtm
 
 Você criará um loop no modelo de exibição *Welcome.cshtml* que exibe “Olá” `NumTimes`. Substitua o conteúdo de *Views/HelloWorld/Welcome.cshtml* pelo seguinte:
 
-[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
 
 Salve as alterações e navegue para a seguinte URL:
 
@@ -105,7 +110,7 @@ Salve as alterações e navegue para a seguinte URL:
 
 Os dados são obtidos da URL e passados para o controlador usando o [associador de modelo MVC](xref:mvc/models/model-binding). O controlador empacota os dados em um dicionário `ViewData` e passa esse objeto para a exibição. Em seguida, a exibição renderiza os dados como HTML para o navegador.
 
-![Sobre uma exibição que mostra um rótulo Boas-vindas e a frase Olá, Ricardo mostrada quatro vezes](../../tutorials/first-mvc-app/adding-view/_static/rick2.png)
+![Sobre uma exibição que mostra um rótulo Boas-vindas e a frase Olá, Ricardo mostrada quatro vezes](~/tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
 Na amostra acima, usamos o dicionário `ViewData` para passar dados do controlador para uma exibição. Mais adiante no tutorial, usaremos um modelo de exibição para passar dados de um controlador para uma exibição. A abordagem de modelo de exibição para passar dados é geralmente a preferida em relação à abordagem do dicionário `ViewData`. Consulte [ViewModel vs. ViewData vs. ViewBag vs. TempData vs. Session no MVC](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc) para obter mais informações.
 

@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 95500686052a3f75dd71244bc9da500300416dec
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: fffb78e4d66c8a798d5f952ba9e4506c8cb666ca
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566926"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>ASP.NET Core MVC com EF Core – avançado – 10 de 10
 
@@ -147,9 +148,9 @@ Muitos desenvolvedores escrevem um código para implementar padrões de reposit�
 
 * O EF inclui recursos para implementar o TDD sem escrever um código de repositório.
 
-Para obter informações sobre como implementar os padrões de repositório e unidade de trabalho, consulte [a versão do Entity Framework 5 desta série de tutoriais](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application).
+Para obter informações sobre como implementar os padrões de repositório e unidade de trabalho, consulte [a versão do Entity Framework 5 desta série de tutoriais](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application).
 
-O Entity Framework Core implementa um provedor de banco de dados em memória que pode ser usado para teste. Para obter mais informações, confira [Testar com InMemory](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory).
+O Entity Framework Core implementa um provedor de banco de dados em memória que pode ser usado para teste. Para obter mais informações, confira [Testar com InMemory](/ef/core/miscellaneous/testing/in-memory).
 
 ## <a name="automatic-change-detection"></a>Detecção automática de alterações
 

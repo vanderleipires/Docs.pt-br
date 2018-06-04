@@ -9,13 +9,14 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/search
-ms.openlocfilehash: 772409f11a43e1d130265d8bba3bad1da5a41b86
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: aee1682755385d9fa292f9ba0814d5d3602f3881
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729902"
 ---
-[!INCLUDE [adding-model](../../includes/mvc-intro/search1.md)]
+[!INCLUDE [adding-model](~/includes/mvc-intro/search1.md)]
 
 Renomeie rapidamente o parâmetro `searchString` para `id` com o comando **rename**. Clique com o botão direito do mouse em `searchString` **> Renomear**.
 
@@ -29,7 +30,7 @@ Altere o parâmetro para `id` e todas as ocorrências de `searchString` altere p
 
 ![Editor de código mostrando que a variável foi alterada para ID](search/_static/rename3.png)
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/search2.md)]
+[!INCLUDE [adding-model](~/includes/mvc-intro/search2.md)]
 
 Observe como o IntelliSense nos ajuda a atualizar a marcação.
 
@@ -37,11 +38,11 @@ Observe como o IntelliSense nos ajuda a atualizar a marcação.
 
 ![Menu contextual do IntelliSense com get selecionado na lista de valores de atributo de método](search/_static/int_get.png)
 
-Observe a fonte diferenciada na marcação `<form>`. Essa fonte diferenciada indica que a marcação tem o suporte de [Auxiliares de Marcação](../../mvc/views/tag-helpers/intro.md).
+Observe a fonte diferenciada na marcação `<form>`. Essa fonte diferenciada indica que a marcação tem o suporte de [Auxiliares de Marcação](~/mvc/views/tag-helpers/intro.md).
 
 ![marcação de formulário com texto roxo](search/_static/th_font.png)
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/search3.md)]
+[!INCLUDE [adding-model](~/includes/mvc-intro/search3.md)]
 
 > [!div class="step-by-step"]
 > [Anterior](controller-methods-views.md)

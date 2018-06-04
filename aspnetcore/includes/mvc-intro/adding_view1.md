@@ -8,6 +8,6 @@ Crie um arquivo de modelo de exibição usando o Razor. Os modelos de exibição
 
 Atualmente, o método `Index` retorna uma cadeia de caracteres com uma mensagem que é embutida em código na classe do controlador. Na classe `HelloWorldController`, substitua o método `Index` pelo seguinte código:
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_4)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_4)]
 
 O código anterior retorna um objeto `View`. Ele usa um modelo de exibição para gerar uma resposta HTML para o navegador. Métodos do controlador (também conhecidos como métodos de ação), como o método `Index` acima, geralmente retornam um [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) (ou uma classe derivada de `ActionResult`), não um tipo como cadeia de caracteres.

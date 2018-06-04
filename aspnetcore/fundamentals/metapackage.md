@@ -10,16 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: c0d7d7fb5f41a91f8d881dd7880d8adcaa478968
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: fbb76f41f3178ddc4e51faa14edece1869a30cd0
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729071"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>Metapacote Microsoft.AspNetCore.All para ASP.NET Core 2.0
 
 > [!NOTE]
-> Recomendamos que os aplicativos voltados para o ASP.NET Core 2.1 e posterior usem o [Microsoft.AspNetCore.App](xref:fundamentals/metapackage) em vez deste pacote. Veja [Migração do Microsoft.AspNetCore.All para Microsoft.AspNetCore.App](#migrate) neste artigo.
+> Recomendamos que os aplicativos voltados para o ASP.NET Core 2.1 e posterior usem o [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) em vez deste pacote. Veja [Migração do Microsoft.AspNetCore.All para Microsoft.AspNetCore.App](#migrate) neste artigo.
 
 Este recurso exige o ASP.NET Core 2.x direcionado ao .NET Core 2.x.
 

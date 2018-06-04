@@ -11,11 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: 793169b491596cd7326d747a3f19d7fdaf7e2b65
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 618cb4349dcff696db37012af3aee844b82974f2
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729045"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>Aprimorar um aplicativo por meio de um assembly externo no ASP.NET Core com IHostingStartup
 
@@ -68,7 +69,7 @@ Apenas uma parte do arquivo é mostrada. O nome do assembly no exemplo é `Start
 
 ### <a name="update-the-dependencies-file"></a>Atualizar o arquivo de dependências
 
-O local do tempo de execução é especificado no arquivo *\*.deps.json*. Para ativar a melhoria, o elemento `runtime` deve especificar o local do assembly de tempo de execução da melhoria. Preceda o local `runtime` com `lib/netcoreapp2.0/`:
+O local do tempo de execução é especificado no arquivo *\*.deps.json*. Para ativar a melhoria, o elemento `runtime` deve especificar o local do assembly de tempo de execução da melhoria. Preceda o local `runtime` com `lib/<TARGET_FRAMEWORK_MONIKER>/`:
 
 [!code-json[](platform-specific-configuration/snapshot_sample/StartupEnhancement2.deps.json?range=2-13&highlight=8)]
 
@@ -83,13 +84,13 @@ O arquivo do assembly da implementação de `IHostingStartup` deve estar implant
 Para uso por usuário, coloque o assembly no repositório de tempo de execução do perfil do usuário em:
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\store\x64\netcoreapp2.0\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\netcoreapp2.0\
+<DRIVE>\Users\<USER>\.dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
 ```
 
 Para uso global, coloque o assembly no repositório de tempo de execução da instalação do .NET Core:
 
 ```
-<DRIVE>\Program Files\dotnet\store\x64\netcoreapp2.0\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\netcoreapp2.0\
+<DRIVE>\Program Files\dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
 ```
 
 Ao implantar o assembly no repositório de tempo de execução, o arquivo de símbolos pode ser implantado também, mas ele não é necessário para que a extensão funcione.
@@ -101,16 +102,16 @@ O arquivo *\*.deps.json* da implementação deve estar em um local acessível.
 Para uso por usuário, coloque o arquivo na pasta `additonalDeps` das configurações `.dotnet` do perfil do usuário: 
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\
+<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
 ```
 
 Para uso global, coloque o arquivo na pasta `additonalDeps` da instalação do .NET Core:
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
 ```
 
-Observe que a versão, `2.0.0`, reflete a versão do tempo de execução compartilhado usada pelo aplicativo de destino. O tempo de execução compartilhado é mostrado no arquivo *\*.runtimeconfig.json*. No aplicativo de exemplo, o tempo de execução compartilhado é especificado no arquivo *HostingStartupSample.runtimeconfig.json*.
+Observe que a versão, `2.1.0`, reflete a versão do tempo de execução compartilhado usada pelo aplicativo de destino. O tempo de execução compartilhado é mostrado no arquivo *\*.runtimeconfig.json*. No aplicativo de exemplo, o tempo de execução compartilhado é especificado no arquivo *HostingStartupSample.runtimeconfig.json*.
 
 **Definir variáveis de ambiente**
 
@@ -135,7 +136,7 @@ Se o arquivo for colocado na pasta *.dotnet* do perfil do usuário para uso por 
 Se o arquivo for colocado na instalação do .NET Core para uso global, forneça o caminho completo para o arquivo:
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
 ```
 
 O aplicativo de exemplo define esse valor como:

@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/controller-methods-views
-ms.openlocfilehash: 6fe0a0e71079bebcbd3a76abee0f2917f562e766
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3f84d242a41bc482110d87ff342fa5b5d8c870ff
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729847"
 ---
 # <a name="controller-methods-and-views-in-aspnet-core"></a>Os métodos e as exibições do controlador no ASP.NET Core
 
@@ -25,30 +26,14 @@ Temos um bom começo para o aplicativo de filme, mas a apresentação não é id
 
 Abra o arquivo *Models/Movie.cs* e adicione as linhas realçadas mostradas abaixo:
 
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](start-mvc/sample/MvcMovie21/Models/MovieDateFixed.cs?name=snippet_1&highlight=2,3,12-13,17)]
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
 [!code-csharp[](start-mvc/sample/MvcMovie/Models/MovieDateWithExtraUsings.cs?name=snippet_1&highlight=13-14)]
+::: moniker-end
 
-Clique com o botão direito do mouse em uma linha curvada vermelha **> Ações Rápidas e Refatorações**.
-
-  ![Menu contextual mostra **> Ações Rápidas e Refatorações**.](controller-methods-views/_static/qa.png)
-
-
-Toque em `using System.ComponentModel.DataAnnotations;`
-
-  ![usando System.ComponentModel.DataAnnotations na parte superior da lista](controller-methods-views/_static/da.png)
-
-  O Visual Studio adiciona `using System.ComponentModel.DataAnnotations;`.
-
-Vamos remover as instruções `using` que não são necessárias. Elas são exibidas por padrão em uma fonte cinza-claro. Clique com o botão direito do mouse em qualquer lugar do arquivo *Movie.cs* **> Remover e Classificar Usos**.
-
-![Remover e classificar usos](controller-methods-views/_static/rm.png)
-
-O código atualizado:
-
-[!code-csharp[](./start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1)]
-
-<!-- include start -->
-
-[!INCLUDE [adding-model](../../includes/mvc-intro/controller-methods-views.md)]
+[!INCLUDE [adding-model](~/includes/mvc-intro/controller-methods-views.md)]
 
 > [!div class="step-by-step"]
 > [Anterior](working-with-sql.md)

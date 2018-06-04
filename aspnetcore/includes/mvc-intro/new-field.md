@@ -1,3 +1,4 @@
+<!-- This include not used by windows version -->
 # <a name="adding-a-new-field"></a>Adicionando um novo campo
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
@@ -10,7 +11,12 @@ Depois que o aplicativo for implantado e você tiver dados que precisa preservar
 
 Abra o arquivo *Models/Movie.cs* e adicione uma propriedade `Rating`:
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Models/MovieDateRating.cs?highlight=12&name=snippet)]
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+::: moniker-end
 
 Como você adicionou um novo campo à classe `Movie`, você também precisa atualizar a lista de permissões de associação para que essa nova propriedade seja incluída. Em *MoviesController.cs*, atualize o atributo `[Bind]` dos métodos de ação `Create` e `Edit` para incluir a propriedade `Rating`:
 
@@ -22,7 +28,7 @@ Você também precisa atualizar os modelos de exibição para exibir, criar e ed
 
 Edite o arquivo */Views/Movies/Index.cshtml* e adicione um campo `Rating`:
 
-[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
+[!code-HTML[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
 Atualize */Views/Movies/Create.cshtml* com um campo `Rating`.
 
@@ -48,7 +54,7 @@ Para este tutorial, removeremos e recriaremos o banco de dados quando o esquema 
 
 Atualize a classe `SeedData` para que ela forneça um valor para a nova coluna. Uma alteração de amostra é mostrada abaixo, mas é recomendável fazer essa alteração em cada `new Movie`.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
 Adicione o campo `Rating` às exibições `Edit`, `Details` e `Delete`.
 

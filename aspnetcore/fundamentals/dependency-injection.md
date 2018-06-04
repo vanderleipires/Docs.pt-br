@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 067d9bd09f6d5e54bbafd953eea169d2df2be34e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 14c3d464773fe78a563a27776bfcd124c22df134
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566952"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injeção de dependência no ASP.NET Core
 
@@ -245,7 +246,7 @@ Os serviços disponíveis em uma solicitação do ASP.NET de `HttpContext` são 
 
 Os Serviços de Solicitação representam os serviços configurados e solicitados como parte do aplicativo. Quando os objetos especificam dependências, elas são atendidas pelos tipos encontrados em `RequestServices`, não `ApplicationServices`.
 
-Em geral, você não deve usar essas propriedades diretamente, preferindo solicitar os tipos exigidos pelas classes por meio do construtor da classe e permitindo que a estrutura injete essas dependências. Isso resulta em classes que são mais fáceis de testar (confira [Testar e depurar](xref:testing/index)) e são mais fracamente acopladas.
+Em geral, você não deve usar essas propriedades diretamente, preferindo solicitar os tipos exigidos pelas classes por meio do construtor da classe e permitindo que a estrutura injete essas dependências. Isso resulta em classes que são mais fáceis de testar (confira [Testar e depurar](xref:test/index)) e são mais fracamente acopladas.
 
 > [!NOTE]
 > Prefira solicitar dependências como parâmetros de construtor para acessar a coleção `RequestServices`.
@@ -361,7 +362,7 @@ A injeção de dependência é uma *alternativa* aos padrões de acesso a objeto
 * [Injeção de dependência em controladores](xref:mvc/controllers/dependency-injection)
 * [Injeção de dependência em manipuladores de requisitos](xref:security/authorization/dependencyinjection)
 * [Inicialização de aplicativos](xref:fundamentals/startup)
-* [Testar e depurar](xref:testing/index)
+* [Testar e depurar](xref:test/index)
 * [Ativação de middleware de fábrica](xref:fundamentals/middleware/extensibility)
 * [Como escrever um código limpo no ASP.NET Core com injeção de dependência (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Design de aplicativo gerenciado por contêiner, prelúdio: a que local o contêiner pertence?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
