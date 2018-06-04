@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 397d8bf04abf6be811ad8c91d52565251ac61678
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: b6dbe234973431448c18d3cc82a6ac98d4f53a3b
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "34688964"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34730445"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmação de conta e de recuperação de senha no ASP.NET Core
 
@@ -110,7 +110,7 @@ Consulte [exigir HTTPS](xref:security/enforcing-ssl).
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>Solicitar confirmação de email
 
-É uma prática recomendada para confirmar o email de um novo registro de usuário. Ajuda de confirmação para verificar se eles não estiver representando alguém de email (ou seja, eles ainda não registrados com outra pessoa email). Suponha que você tivesse um fórum de discussão, e quiser impedir "yli@example.com"do registro como"nolivetto@contoso.com." Sem confirmação por email, "nolivetto@contoso.com" pode receber email indesejado de seu aplicativo. Suponha que o usuário registrado acidentalmente como "ylo@example.com" e ainda não tenha percebido a digitação incorreta da "yli". Elas não serão capazes de usar a recuperação de senha porque o aplicativo não tiver seu email correto. Email de confirmação oferece apenas proteção limitada de robôs. Email de confirmação não fornece proteção contra usuários mal-intencionados com várias contas de email.
+É uma prática recomendada para confirmar o email de um novo registro de usuário. Ajuda de confirmação para verificar se eles não estiver representando alguém de email (ou seja, eles ainda não registrados com outra pessoa email). Suponha que você tivesse um fórum de discussão, e quiser impedir "yli@example.com"do registro como"nolivetto@contoso.com". Sem confirmação por email, "nolivetto@contoso.com" pode receber email indesejado de seu aplicativo. Suponha que o usuário registrado acidentalmente como "ylo@example.com" e ainda não tenha percebido a digitação incorreta da "yli". Elas não serão capazes de usar a recuperação de senha porque o aplicativo não tiver seu email correto. Email de confirmação oferece apenas proteção limitada de robôs. Email de confirmação não fornece proteção contra usuários mal-intencionados com várias contas de email.
 
 Geralmente você deseja impedir que novos usuários incluam dados em seu site até que eles tenham um email confirmado.
 
@@ -307,7 +307,7 @@ As duas contas foram combinadas. É possível fazer logon com a conta. Convém q
 
 ## <a name="enable-account-confirmation-after-a-site-has-users"></a>Habilitar confirmação de conta após um site tem usuários
 
-Habilitar confirmação de conta em um site com usuários bloqueia todos os usuários existentes. Os usuários estão bloqueados porque suas contas não são confirmadas. Solução alternativa para sair do bloqueio do usuário, use uma das seguintes abordagens:
+Habilitar confirmação de conta em um site com usuários bloqueia todos os usuários existentes. Os usuários estão bloqueados porque suas contas não são confirmadas. Para contornar o bloqueio de usuário existente, use uma das seguintes abordagens:
 
-* Atualizar o banco de dados para marcar todos os usuários existentes como sendo confirmada
+* Atualize o banco de dados para marcar todos os usuários existentes como sendo confirmada.
 * Confirme se os usuários existentes. Por exemplo, envio em lote-emails com links de confirmação.
