@@ -3,39 +3,41 @@ title: Resposta de cache Middleware no núcleo do ASP.NET
 author: guardrex
 description: Saiba como configurar e usar o Middleware de cache de resposta no núcleo do ASP.NET.
 manager: wpickett
+monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 8296d535725d95682fa5904a43ab196e21b4f83c
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 7ceccffa39baf5f13d63c26e78c64a595bb42f60
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734491"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Resposta de cache Middleware no núcleo do ASP.NET
 
 Por [Luke Latham](https://github.com/guardrex) e [John Luo](https://github.com/JunTaoLuo)
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar o código de exemplo do ASP.NET Core 2.1](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 Este artigo explica como configurar o Middleware de cache de resposta em um aplicativo do ASP.NET Core. O middleware determina quando as respostas são armazenável em cache, repositórios de respostas e respostas de serve de cache. Para obter uma introdução ao cache de HTTP e o `ResponseCache` de atributo, consulte [cache de resposta](xref:performance/caching/response).
 
 ## <a name="package"></a>Pacote
 
-Para incluir o middleware em um projeto, adicione uma referência para o [ `Microsoft.AspNetCore.ResponseCaching` ](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCaching/) pacote ou use o [ `Microsoft.AspNetCore.All` ](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) pacote (ASP.NET Core 2.0 ou posterior durante o direcionamento do .NET Core).
+Para incluir o middleware em seu projeto, adicione uma referência para o [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) pacote ou use o [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app), que está disponível para uso em ASP.NET Core 2.1 ou posterior.
 
 ## <a name="configuration"></a>Configuração
 
 Em `ConfigureServices`, adicione o middleware para a coleção de serviço.
 
-[!code-csharp[](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](middleware/samples/2.x/ResponseCachingMiddleware/Startup.cs?name=snippet1&highlight=9)]
 
 Configurar o aplicativo para usar o middleware com o `UseResponseCaching` método de extensão, o que adiciona o middleware para o pipeline de processamento de solicitação. O aplicativo de exemplo adiciona um [ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2) cabeçalho para a resposta que armazena em cache respostas armazenável em cache por até 10 segundos. O exemplo envia um [ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4) cabeçalho para configurar o middleware para servir uma resposta em cache somente se o [ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4) cabeçalho de solicitações subsequentes corresponde a solicitação original. No exemplo de código que segue, [CacheControlHeaderValue](/dotnet/api/microsoft.net.http.headers.cachecontrolheadervalue) e [HeaderNames](/dotnet/api/microsoft.net.http.headers.headernames) exigem um `using` instrução para o [Microsoft.Net.Http.Headers](/dotnet/api/microsoft.net.http.headers) namespace.
 
-[!code-csharp[](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
+[!code-csharp[](middleware/samples/2.x/ResponseCachingMiddleware/Startup.cs?name=snippet2&highlight=17,21-28)]
 
 Middleware de cache de resposta só armazena em cache as respostas do servidor que resultam em um código de status 200 (Okey). Outras respostas, incluindo [páginas de erro](xref:fundamentals/error-handling), são ignorados pelo middleware.
 
@@ -46,10 +48,10 @@ Middleware de cache de resposta só armazena em cache as respostas do servidor q
 
 O middleware oferece três opções para controlar o cache de resposta.
 
-| Opção                | Valor padrão |
-| --------------------- | ------------- |
-| UseCaseSensitivePaths | Determina se as respostas são armazenados em cache nos caminhos diferencia maiusculas de minúsculas.</p><p>O valor padrão é `false`. |
-| MaximumBodySize       | O maior tamanho armazenável em cache para o corpo da resposta em bytes.</p>O valor padrão é `64 * 1024 * 1024` (64 MB). |
+| Opção                | Descrição |
+| --------------------- | ----------- |
+| UseCaseSensitivePaths | Determina se as respostas são armazenados em cache nos caminhos diferencia maiusculas de minúsculas. O valor padrão é `false`. |
+| MaximumBodySize       | O maior tamanho armazenável em cache para o corpo da resposta em bytes. O valor padrão é `64 * 1024 * 1024` (64 MB). |
 | SizeLimit             | O limite de tamanho para o middleware de cache de resposta em bytes. O valor padrão é `100 * 1024 * 1024` (100 MB). |
 
 O exemplo a seguir configura o middleware para:
@@ -103,7 +105,7 @@ O cache de resposta pelo middleware é configurado usando cabeçalhos HTTP.
 
 O middleware respeita as regras de [especificação HTTP 1.1 cache](https://tools.ietf.org/html/rfc7234#section-5.2). As regras exigem um cache cumprir válido `Cache-Control` cabeçalho enviado pelo cliente. Sob a especificação de um cliente pode fazer solicitações com uma `no-cache` valor de cabeçalho e forçar o servidor para gerar uma nova resposta para cada solicitação. Atualmente, não há nenhum controle de desenvolvedor sobre o comportamento de cache ao usar o middleware porque o middleware segue a especificação oficial do cache.
 
-Para obter mais controle sobre o comportamento do cache, explore outros recursos de cache do ASP.NET Core. Consulte os tópicos a seguir:
+Para obter mais controle sobre o comportamento do cache, explore outros recursos de cache do ASP.NET Core. Confira os seguintes tópicos:
 
 * [Cache na memória](xref:performance/caching/memory)
 * [Trabalhar com um cache distribuído](xref:performance/caching/distributed)
