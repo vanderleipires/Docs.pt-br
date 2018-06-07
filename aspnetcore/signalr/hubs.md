@@ -11,11 +11,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: 5c477dd64c4cf8b7d6da1f121a290b00f3864f45
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 495aa156dd5e4641d688d7b16df1e5814c9607f4
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819078"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Usando os hubs de SignalR para ASP.NET Core
 
@@ -63,12 +64,12 @@ Além disso, `Hub.Clients` contém os seguintes métodos:
 | `AllExcept` | Chama um método em todos os clientes conectados, exceto para as conexões especificadas |
 | `Client` | Chama um método em um cliente conectado específico |
 | `Clients` | Chama um método específicos clientes conectados |
-| `Group` | Envia uma mensagem para todas as conexões no grupo especificado  |
-| `GroupExcept` | Envia uma mensagem para todas as conexões no grupo especificado, exceto as conexões especificadas |
-| `Groups` | Envia uma mensagem para vários grupos de conexões  |
-| `OthersInGroup` | Envia uma mensagem para um grupo de conexões, excluindo o cliente que invocou o método de hub  |
-| `User` | Envia uma mensagem para todas as conexões associadas a um usuário específico |
-| `Users` | Envia uma mensagem para todas as conexões associadas com os usuários especificados |
+| `Group` | Chama um método para todas as conexões no grupo especificado  |
+| `GroupExcept` | Chama um método para todas as conexões no grupo especificado, exceto as conexões especificadas |
+| `Groups` | Chama um método para vários grupos de conexões  |
+| `OthersInGroup` | Chama um método a um grupo de conexões, excluindo o cliente que invocou o método de hub  |
+| `User` | Chama um método para todas as conexões associadas a um usuário específico |
+| `Users` | Chama um método para todas as conexões associadas com os usuários especificados |
 
 Cada propriedade ou método nas tabelas anteriores retorna um objeto com um `SendAsync` método. O `SendAsync` método permite que você forneça o nome e os parâmetros do método de cliente para chamar.
 
