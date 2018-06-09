@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
 ms.openlocfilehash: 7d0486b4cab85ffe77fda87d4b34dd3ec0a9e8fe
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30874220"
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Chamar a API da Web de um aplicativo do Windows Phone 8 (c#)
 ====================
@@ -50,7 +51,7 @@ Este tutorial de ponta a ponta, você aprenderá como usar a API da Web para cri
 
 1. Abra **Visual Studio 2013**.
 2. Clique em **arquivo**, em seguida, **novo**e, em seguida, **projeto**.
-3. Quando o **novo projeto** caixa de diálogo é exibida, expanda **instalado**, em seguida, **modelos**, em seguida, **Visual C#**e, em seguida, **Web**.
+3. Quando o **novo projeto** caixa de diálogo é exibida, expanda **instalado**, em seguida, **modelos**, em seguida, **Visual C#** e, em seguida, **Web**.
 
 
    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image2.png)](calling-web-api-from-a-windows-phone-8-application/_static/image1.png) |
@@ -109,7 +110,7 @@ Este tutorial de ponta a ponta, você aprenderá como usar a API da Web para cri
 É a próxima etapa deste cenário de ponta a ponta criar o aplicativo de catálogo para o Windows Phone 8. Este aplicativo usará o *Windows Phone Databound App* modelo para a interface do usuário padrão e usará o aplicativo de API da Web que você criou na [etapa 1](#STEP1) deste tutorial, como a fonte de dados.
 
 1. Com o botão direito do **livraria** solução no Gerenciador de soluções, em seguida, clique em **adicionar**e, em seguida, **novo projeto**.
-2. Quando o **novo projeto** caixa de diálogo é exibida, expanda **instalado**, em seguida, **Visual c#**e, em seguida, **do Windows Phone**.
+2. Quando o **novo projeto** caixa de diálogo é exibida, expanda **instalado**, em seguida, **Visual c#** e, em seguida, **do Windows Phone**.
 3. Realçar **Windows Phone Databound App**, digite **BookCatalog** para o nome e depois clique em **Okey**.
 4. Adicionar o pacote NuGet do Json.NET para o **BookCatalog** projeto:
 

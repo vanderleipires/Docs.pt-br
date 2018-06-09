@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/security/enabling-cross-origin-requests-in-web-api
-title: "Habilitar solicitações entre origens em ASP.NET Web API 2 | Microsoft Docs"
+title: Habilitar solicitações entre origens em ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
 description: Mostra como dar suporte a compartilhamento de recursos entre origens (CORS) na API da Web do ASP.NET.
 ms.author: aspnetcontent
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/enabling-cross-origin-requests-in-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 453ad29ff4f10f9660f3aa8bab358519b4cfd48b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26508375"
 ---
 <a name="enabling-cross-origin-requests-in-aspnet-web-api-2"></a>Habilitar solicitações entre origens em ASP.NET Web API 2
 ====================
@@ -51,10 +52,10 @@ Essas duas URLs têm a mesma origem:
 
 Essas URLs têm diferentes origens que anterior dois:
 
-- `http://example.net`-Domínio diferente
-- `http://example.com:9000/foo.html`-Porta diferente
-- `https://example.com/foo.html`-Esquema diferente
-- `http://www.example.com/foo.html`-Subdomínio diferente
+- `http://example.net` -Domínio diferente
+- `http://example.com:9000/foo.html` -Porta diferente
+- `https://example.com/foo.html` -Esquema diferente
+- `http://www.example.com/foo.html` -Subdomínio diferente
 
 > [!NOTE]
 > Internet Explorer não considera a porta ao comparar as origens.
@@ -154,8 +155,8 @@ O navegador pode ignorar a solicitação de simulação se as seguintes condiç�
 - O aplicativo não definir os cabeçalhos de solicitação diferente de idioma do conteúdo Accept, Accept-Language, Content-Type ou última--ID do evento, *e*
 - O cabeçalho Content-Type (se definido) é um dos seguintes: 
 
-    - Application/x-www-form-urlencoded
-    - com diversas partes/dados de formulário
+    - application/x-www-form-urlencoded
+    - multipart/form-data
     - texto/sem formatação
 
 A regra sobre cabeçalhos de solicitação se aplica aos cabeçalhos que o aplicativo define chamando **setRequestHeader** no **XMLHttpRequest** objeto. (A especificação CORS chama esses cabeçalhos de solicitação"autor".) A regra não se aplica aos cabeçalhos de *navegador* pode definir como o agente do usuário, o Host ou o comprimento do conteúdo.
@@ -240,7 +241,7 @@ Se você definir *cabeçalhos* para algo diferente de "\*", você deve incluir p
 
 Por padrão, o navegador não expõe todos os cabeçalhos de resposta para o aplicativo. Os cabeçalhos de resposta que estão disponíveis por padrão são:
 
-- Controle de cache
+- Cache-Control
 - Idioma do conteúdo
 - Tipo de conteúdo
 - Expirar

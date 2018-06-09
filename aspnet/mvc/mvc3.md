@@ -2,7 +2,7 @@
 uid: mvc/mvc3
 title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
-description: "(inclui abril de 2011 ferramentas de atualização) O ASP.NET MVC 3 é uma estrutura para criar aplicativos web escalonável, baseado em padrões usando o padrão de design bem estabelecidos..."
+description: (inclui abril de 2011 ferramentas de atualização) O ASP.NET MVC 3 é uma estrutura para criar aplicativos web escalonável, baseado em padrões usando o padrão de design bem estabelecidos...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2010
@@ -13,12 +13,13 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc3
 msc.type: content
 ms.openlocfilehash: c7eee987b28a5d7f8b40fe89a7bf7517ec06646f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034731"
 ---
-<a name="aspnet-mvc-3"></a>ASP.NET MVC 3
+<a name="aspnet-mvc-3"></a>O ASP.NET MVC 3
 ====================
 > *(inclui abril de 2011 ferramentas de atualização)*
 > 
@@ -128,8 +129,8 @@ ASP.NET MVC 3 vem com um novo mecanismo de exibição denominado Razor que ofere
 
 Alguns recursos novos do Razor incluem o seguinte:
 
-- `@model`sintaxe para especificar o tipo que está sendo passado para o modo de exibição.
-- `@* *@`sintaxe de comentário.
+- `@model` sintaxe para especificar o tipo que está sendo passado para o modo de exibição.
+- `@* *@` sintaxe de comentário.
 - A capacidade de especificar os padrões (como `layoutpage`) uma vez para um site inteiro.
 - O `Html.Raw` método para exibir um texto sem codificação HTML-lo.
 - Suporte para compartilhar código entre vários modos de exibição (*\_viewstart.cshtml* ou  *\_viewstart.vbhtml* arquivos).

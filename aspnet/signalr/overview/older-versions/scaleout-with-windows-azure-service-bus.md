@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
 ms.openlocfilehash: b48a7b04701b69f68a492c0f7e08da4a37a92a48
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28036434"
 ---
 <a name="signalr-scaleout-with-azure-service-bus-signalr-1x"></a>Expansão do SignalR com o barramento de serviço do Azure (SignalR 1. x)
 ====================
@@ -30,7 +31,7 @@ Pré-requisitos:
 
 - Uma conta do Windows Azure.
 - O [Windows Azure SDK](https://go.microsoft.com/fwlink/?linkid=254364&amp;clcid=0x409).
-- Visual Studio 2012.
+- O Visual Studio 2012.
 
 O backplane de barramento de serviço também é compatível com [Service Bus for Windows Server](https://msdn.microsoft.com/library/windowsazure/dn282144.aspx), versão 1.1. No entanto, não é compatível com a versão 1.0 do Service Bus for Windows Server.
 

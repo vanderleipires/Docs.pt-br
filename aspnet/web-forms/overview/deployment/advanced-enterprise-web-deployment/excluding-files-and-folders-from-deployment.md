@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: c435448bf057bbef9127d66ffda24a07729f2322
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30890766"
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>Excluindo arquivos e pastas de implantação
 ====================
@@ -31,7 +32,7 @@ Este tópico faz parte de uma série de tutoriais com base em torno de requisito
 
 O método de implantação no centro desses tutoriais baseia-se a abordagem de arquivo de projeto divisão descrita em [Noções básicas sobre o arquivo de projeto](../web-deployment-in-the-enterprise/understanding-the-project-file.md), em que o processo de compilação é controlado por dois arquivos de projeto&#x2014;contendo um crie instruções que se aplicam a todos os ambientes de destino e que contém configurações específicas ao ambiente de compilação e implantação. No momento da compilação, o arquivo de projeto específico do ambiente é mesclado no arquivo de projeto de ambiente independente para formar um conjunto completo de instruções de compilação.
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Quando você compila um projeto de aplicativo web no Visual Studio 2010, o Pipeline de publicação de Web (WPP) permite que você estenda esse processo de compilação ao empacotar seu aplicativo web compilado em um pacote de implantação web. Você pode usar a ferramenta de implantação da Web de serviços de informações da Internet (IIS) (implantação da Web) para implantar este pacote da web em um servidor de web IIS remoto, ou importar pacote da web manualmente pelo Gerenciador do IIS. Esse processo de empacotamento é explicado em [criação e a projetos de aplicativo Web de empacotamento](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md).
 

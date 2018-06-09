@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/breezeangular-template
-title: "Modelo muito fácil/Angular | Microsoft Docs"
+title: Modelo muito fácil/Angular | Microsoft Docs
 author: madskristensen
-description: "Modelo de aplicativo de página única muito fácil/Angular"
+description: Modelo de aplicativo de página única muito fácil/Angular
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/08/2013
 ms.topic: article
 ms.assetid: db31e909-563a-4516-aadd-62aa210ac7e4
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/breezeangular-template
 msc.type: authoredcontent
 ms.openlocfilehash: faf28a510a83b7fa07585904344176601c2e1f34
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506685"
 ---
 <a name="breezeangular-template"></a>Modelo muito fácil/Angular
 ====================
@@ -43,7 +44,7 @@ Esta página exibe um log de eventos durante a sessão atual do usuário, inclui
 
 - Paginação. Observe a criação do controlador de tarefas em 2 de # e #7.
 - Consultas remotas (3) e consultas de cache local (7).
-- Salvar novas (n º 5, &#6;) e modificação de entidades (4).
+- Salvar novas (n º 5, 6 #) e modificação de entidades (4).
 - Alterações validadas no cliente (n º 9), para que o usuário pode corrigir os erros antes de confirmar as alterações no banco de dados.
 
 Há mais para explorar neste modelo, incluindo:
@@ -62,7 +63,7 @@ Vamos começar.
 
 Baixe e instale o modelo, clique no botão de Download acima. O modelo é empacotado como um arquivo de extensão de Visual Studio (VSIX). Talvez seja necessário reiniciar o Visual Studio.
 
-No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#** nó. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
+No painel **Modelos**, selecione **Modelos Instalados** e expanda o nó **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
 
 No **novo projeto** assistente, selecione **SPA Angular muito fácil**.
 

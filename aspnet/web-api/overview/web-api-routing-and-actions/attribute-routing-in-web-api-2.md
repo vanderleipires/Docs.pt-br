@@ -2,7 +2,7 @@
 uid: web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 title: Atributo de roteamento de ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
 ms.openlocfilehash: 173add73a150d3e13ae243d6548463da912dadee
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28038043"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Roteamento de atributo em ASP.NET Web API 2
 ====================
@@ -181,21 +182,21 @@ A tabela a seguir lista as restrições que são suportadas.
 | Restrição | Descrição | Exemplo |
 | --- | --- | --- |
 | Alpha | Correspondências maiusculas ou minúsculas caracteres do alfabeto latino (a-z, A-Z) | {x:alpha} |
-| bool | Corresponde a um valor booliano. | {x:bool} |
+| bool | Corresponde a um valor booliano. | {bool: x} |
 | datetime | Correspondências um **DateTime** valor. | {x:datetime} |
 | decimal | Corresponde a um valor decimal. | {x:decimal} |
-| double | Corresponde a um valor de ponto flutuante de 64 bits. | {x:double} |
+| double | Corresponde a um valor de ponto flutuante de 64 bits. | {duplo: x} |
 | float | Corresponde a um valor de ponto flutuante de 32 bits. | {x:float} |
 | GUID | Corresponde a um valor GUID. | {x:guid} |
 | int | Corresponde a um valor inteiro de 32 bits. | {x:int} |
-| length | Corresponde a uma cadeia de caracteres com o comprimento especificado ou dentro de um intervalo de comprimentos especificado. | {x:length(6)} {x:length(1,20)} |
+| length | Corresponde a uma cadeia de caracteres com o comprimento especificado ou dentro de um intervalo de comprimentos especificado. | {length(6): x} {length(1,20): x} |
 | long | Corresponde a um valor inteiro de 64 bits. | {x:long} |
 | max | Corresponde a um número inteiro com um valor máximo. | {x:max(10)} |
 | MaxLength | Corresponde a uma cadeia de caracteres com um comprimento máximo. | {x:maxlength(10)} |
 | min | Corresponde a um número inteiro com um valor mínimo. | {x:min(10)} |
 | minLength | Corresponde a uma cadeia de caracteres com um comprimento mínimo. | {x:minlength(10)} |
 | range | Corresponde a um número inteiro dentro do intervalo de valores. | {x:range(10,50)} |
-| Regex | Corresponde a uma expressão regular. | {x:regex(^\d{3}-\d{3}-\d{4}$)} |
+| Regex | Corresponde a uma expressão regular. | {regex(^\d{3}-\d{3}-\d{4}$): x} |
 
 Observe que algumas das restrições, como &quot;min&quot;, obtém argumentos entre parênteses. Você pode aplicar várias restrições a um parâmetro, separado por dois-pontos.
 
@@ -270,7 +271,7 @@ Vejamos um exemplo. Suponha que você definir o controlador a seguir:
 Essas rotas são ordenadas da seguinte maneira.
 
 1. detalhes dos pedidos /
-2. orders/{id}
+2. pedidos / {id}
 3. orders/{customerName}
 4. pedidos / {\*data}
 5. pedidos / pendente

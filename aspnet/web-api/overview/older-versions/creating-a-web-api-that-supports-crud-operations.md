@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
 ms.openlocfilehash: 69b7d5453b6ff36d6e28a69428b016cb8cfd06e9
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "29153002"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Habilitar operações CRUD de ASP.NET Web API 1
 ====================
@@ -42,11 +43,11 @@ Os produtos de API expõe métodos a seguir.
 | Ação | Método HTTP | URI relativo |
 | --- | --- | --- |
 | Obter uma lista de todos os produtos | OBTER | produtos/api / |
-| Obter um produto por ID | OBTER | /api/products/*id* |
+| Obter um produto por ID | OBTER | /API/produtos/*id* |
 | Obter um produto por categoria | OBTER | /api/products?category=*category* |
 | Criar um novo produto | POSTAR | produtos/api / |
-| Atualização de um produto | PUT | /api/products/*id* |
-| Excluir um produto | DELETE | /api/products/*id* |
+| Atualização de um produto | PUT | /API/produtos/*id* |
+| Excluir um produto | DELETE | /API/produtos/*id* |
 
 Observe que alguns dos URIs incluem a identificação do produto no caminho. Por exemplo, para obter o produto cuja ID é 28, o cliente envia uma solicitação GET `http://hostname/api/products/28`.
 
@@ -57,7 +58,7 @@ Os produtos API define URIs para os dois tipos de recursos:
 | Recurso | URI |
 | --- | --- |
 | A lista de todos os produtos. | produtos/api / |
-| Um produto individual. | /api/products/*id* |
+| Um produto individual. | /API/produtos/*id* |
 
 ### <a name="methods"></a>Métodos
 
@@ -72,9 +73,9 @@ Observação: O método PUT substitui a entidade de produtos inteiro. Ou seja, o
 
 ## <a name="create-a-new-web-api-project"></a>Criar um novo projeto de API da Web
 
-Comece executando o Visual Studio e selecione **novo projeto** do **iniciar** página. Ou, do **arquivo** menu, selecione **novo** e **projeto**.
+Comece executando o Visual Studio e selecione **novo projeto** do **iniciar** página. Ou, no menu **Arquivo**, selecione **Novo** e, em seguida, **Projeto**.
 
-No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#** nó. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto &quot;ProductStore&quot; e clique em **Okey**.
+No painel **Modelos**, selecione **Modelos Instalados** e expanda o nó **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto &quot;ProductStore&quot; e clique em **Okey**.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image1.png)
 
@@ -84,15 +85,15 @@ No **novo projeto ASP.NET MVC 4** caixa de diálogo, selecione **API da Web** e 
 
 ## <a name="adding-a-model"></a>Adicionando um modelo
 
-Um *modelo* é um objeto que representa os dados em seu aplicativo. Na API da Web do ASP.NET, fortemente tipados objetos CLR podem ser usados como modelos e ele serão automaticamente serializados como XML ou JSON para o cliente.
+Um *modelo (model)* é um objeto que representa os dados em seu aplicativo. Na API da Web do ASP.NET, fortemente tipados objetos CLR podem ser usados como modelos e ele serão automaticamente serializados como XML ou JSON para o cliente.
 
 Para a API ProductStore, nossos dados consistem em produtos, portanto, vamos criar uma nova classe chamada `Product`.
 
-Se o Gerenciador de soluções não estiver visível, clique no **exibição** menu e selecione **Gerenciador de soluções**. No Gerenciador de soluções, clique com botão direito do **modelos** pasta. Meny contexto, selecione **adicionar**, em seguida, selecione **classe**. Nomeie a classe &quot;produto&quot;.
+Se o Gerenciador de Soluções não estiver visível, clique no menu **Exibir** e selecione **Gerenciador de Soluções**. No Gerenciador de soluções, clique com botão direito do **modelos** pasta. Meny contexto, selecione **adicionar**, em seguida, selecione **classe**. Nomeie a classe &quot;Produt&quot; (produto).
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image3.png)
 
-Adicione as seguintes propriedades para o `Product` classe.
+Adicione as seguintes propriedades para a classe `Product`.
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample1.cs)]
 
@@ -127,7 +128,7 @@ Se você trabalhou com o ASP.NET MVC, em seguida, você já está familiarizado 
 
 Vá em frente e excluir ValuesController, clicando duas vezes o arquivo no Gerenciador de soluções e selecionando **excluir.** Agora adicione um novo controlador, da seguinte maneira:
 
-Em **Solution Explorer**, clique na pasta controladores. Selecione **adicionar** e, em seguida, selecione **controlador**.
+Em **Gerenciador de Soluções**, clique com o botão direito na pasta controllers (controladores).  Selecione **Adicionar** e, em seguida, selecione **Controlador**.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image6.png)
 
@@ -158,14 +159,14 @@ A API ProductStore irá expor vários &quot;ler&quot; ações como métodos HTTP
 | Ação | Método HTTP | URI relativo |
 | --- | --- | --- |
 | Obter uma lista de todos os produtos | OBTER | produtos/api / |
-| Obter um produto por ID | OBTER | /api/products/*id* |
+| Obter um produto por ID | OBTER | /API/produtos/*id* |
 | Obter um produto por categoria | OBTER | /api/products?category=*category* |
 
 Para obter a lista de todos os produtos, adicione este método para o `ProductsController` classe:
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample6.cs)]
 
-O nome do método começa com &quot;obter&quot;, portanto, por convenção, ele será mapeado para solicitações GET. Além disso, porque o método não tem parâmetros, ele será mapeado para um URI que não contém um  *&quot;id&quot;*  segmento do caminho.
+O nome do método começa com &quot;obter&quot;, portanto, por convenção, ele será mapeado para solicitações GET. Além disso, porque o método não tem parâmetros, ele será mapeado para um URI que não contém um *&quot;id&quot;* segmento do caminho.
 
 Para obter um produto por ID, adicione este método para o `ProductsController` classe:
 

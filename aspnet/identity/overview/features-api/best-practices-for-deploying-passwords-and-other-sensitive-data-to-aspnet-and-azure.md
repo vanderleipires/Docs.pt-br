@@ -1,26 +1,27 @@
 ---
 uid: identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
-title: "Práticas recomendadas para a implantação de senhas e outros dados confidenciais em ASP.NET e o serviço de aplicativo do Azure | Microsoft Docs"
+title: Práticas recomendadas para a implantação de senhas e outros dados confidenciais em ASP.NET e o serviço de aplicativo do Azure | Microsoft Docs
 author: Rick-Anderson
-description: "Este tutorial mostra como o seu código com segurança pode armazenar e acessar informações seguras. O ponto mais importante é que você nunca deve armazenar senhas ou outros sen..."
+description: Este tutorial mostra como o seu código com segurança pode armazenar e acessar informações seguras. O ponto mais importante é que você nunca deve armazenar senhas ou outros sen...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2015
 ms.topic: article
 ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
 ms.openlocfilehash: 995d9a088e3095f36a01d2adb19ec08e6a6d1b3e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28033015"
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>Práticas recomendadas para implantar as senhas e outros dados confidenciais para ASP.NET e o serviço de aplicativo do Azure
 ====================
-Por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Este tutorial mostra como o seu código com segurança pode armazenar e acessar informações seguras. O ponto mais importante é que você nunca deve armazenar senhas ou outros dados confidenciais no código-fonte, e você não deve usar os segredos de produção no modo de desenvolvimento e teste.
 > 
@@ -90,7 +91,7 @@ O *App. config* arquivo usado por um aplicativo de console não oferece suporte 
 
 Quando você implantar seu aplicativo web no Azure, o *AppSettingsSecrets.config* arquivo não será implantado (ou seja, o que você deseja). Você pode ir para o [Portal de gerenciamento](https://azure.microsoft.com/services/management-portal/) e defini-las manualmente, para fazer isso:
 
-1. Vá para [https://portal.azure.com](https://portal.azure.com)e entre com suas credenciais do Azure.
+1. Vá para [ https://portal.azure.com ](https://portal.azure.com)e entre com suas credenciais do Azure.
 2. Clique em **procurar &gt; aplicativos Web**, em seguida, clique no nome do seu aplicativo web.
 3. Clique em **todas as configurações &gt; configurações de aplicativo**.
 

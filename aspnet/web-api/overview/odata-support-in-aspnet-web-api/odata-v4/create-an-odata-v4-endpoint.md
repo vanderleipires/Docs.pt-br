@@ -2,7 +2,7 @@
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 title: Criar um ponto de extremidade OData v4 usando ASP.NET Web API 2.2 | Microsoft Docs
 author: MikeWasson
-description: "O Open Data Protocol (OData) é um protocolo de acesso de dados para a web. O OData fornece uma maneira uniforme para consultar e manipular os conjuntos de dados por meio de operações CRUD..."
+description: O Open Data Protocol (OData) é um protocolo de acesso de dados para a web. O OData fornece uma maneira uniforme para consultar e manipular os conjuntos de dados por meio de operações CRUD...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 msc.type: authoredcontent
 ms.openlocfilehash: a3f94818f9674b0e1e9a45b2a6cc9455edc79726
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26508045"
 ---
 <a name="create-an-odata-v4-endpoint-using-aspnet-web-api-22"></a>Criar um ponto de extremidade OData v4 usando ASP.NET Web API 2.2
 ====================
@@ -67,7 +68,7 @@ Esse comando instala os pacotes de OData NuGet mais recentes.
 
 Um *modelo* é um objeto que representa uma entidade de dados em seu aplicativo.
 
-No Gerenciador de soluções, clique na pasta de modelos. No menu de contexto, selecione **adicionar** &gt; **classe**.
+No Gerenciador de Soluções, clique com o botão direito na pasta de modelos (Models). No menu de contexto, selecione **adicionar** &gt; **classe**.
 
 [![](create-an-odata-v4-endpoint/_static/image6.png)](create-an-odata-v4-endpoint/_static/image5.png)
 

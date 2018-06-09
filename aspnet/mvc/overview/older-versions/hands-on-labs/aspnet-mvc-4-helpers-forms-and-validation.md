@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
 ms.openlocfilehash: 4cfa98144919c3f1bdb3608970af1a7952fe6ea7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30878172"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>Validação, formulários e auxiliares do ASP.NET MVC 4
 
@@ -605,7 +606,7 @@ Você pode adicionar validação para o aplicativo com a adição de anotações
 
 Nesta tarefa, você irá adicionar anotações de dados para o modelo de álbum que fará com que a página criar e editar exibir mensagens de validação quando apropriado.
 
-Para uma classe simple do modelo, adicionar uma anotação de dados é tratado apenas adicionando uma **usando** instrução para **System.ComponentModel.DataAnnotation**, em seguida, colocar um **[obrigatório]**atributo as propriedades adequadas. O exemplo a seguir faria o **nome** um campo obrigatório no modo de exibição da propriedade.
+Para uma classe simple do modelo, adicionar uma anotação de dados é tratado apenas adicionando uma **usando** instrução para **System.ComponentModel.DataAnnotation**, em seguida, colocar um **[obrigatório]** atributo as propriedades adequadas. O exemplo a seguir faria o **nome** um campo obrigatório no modo de exibição da propriedade.
 
 [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample18.cs)]
 
@@ -747,7 +748,7 @@ Nesta tarefa, você testará que o **StoreManager** criar exibição de modelo e
    > - Intervalo de valor de dados
    > - Data-val-intervalo-min / dados val-intervalo máximo
    > - Dados val necessários
-   > - Data-val-length
+   > - Comprimento do valor de dados
    > - Data-val-tamanho-max / dados val-comprimento mínimo
    > 
    > Todos os valores de dados são preenchidos com modelo **anotação de dados**. Em seguida, toda a lógica que funciona no lado do servidor pode ser executada no lado do cliente. Por exemplo, o atributo preço tem a anotação de dados a seguir no modelo:

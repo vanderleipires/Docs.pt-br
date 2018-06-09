@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: ac5508334bf6d471471a719b98618bdcd3214fb5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30888923"
 ---
 <a name="aspnet-error-handling"></a>Tratamento de erros do ASP.NET
 ====================
@@ -37,7 +38,7 @@ Neste tutorial, você modificará o aplicativo de exemplo Wingtip Toys para incl
 - Como exibir mensagens de erro que não comprometer a segurança.
 - Como implementar manipuladores (ELMAH) e módulos de log de erro de log de erros.
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Aplicativos ASP.NET devem ser capazes de manipular erros que ocorrem durante a execução de uma maneira consistente. O ASP.NET usa o common language runtime (CLR), que fornece uma maneira de notificar aplicativos de erros de maneira uniforme. Quando ocorre um erro, uma exceção será lançada. Uma exceção é qualquer erro, uma condição ou um comportamento inesperado que encontrar um aplicativo.
 
@@ -339,9 +340,9 @@ Gostaria de agradecer seguintes pessoas que fizeram contribuições significativ
 - [Alex Thissen, Países Baixos](http://blog.alexthissen.nl/) (twitter: [ @alexthissen ](http://twitter.com/alexthissen))
 - [Andre Tournier, EUA](http://andret503.wordpress.com/)
 - Apurva Joshi, Microsoft
-- [Bojan Vrhovnik, Slovenia](http://twitter.com/bvrhovnik)
+- [Bojan Vrhovnik, Eslovênia](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino, Brasil](http://msmvps.com/blogs/bsonnino) (twitter: [ @bsonnino ](http://twitter.com/bsonnino))
-- [Carlos dos Santos, Brazil](http://www.carloscds.net/)
+- [Dos Carlos Santos, Brasil](http://www.carloscds.net/)
 - [Dave Campbell, USA](http://www.wynapse.com/) (twitter: [ @windowsdevnews ](http://twitter.com/windowsdevnews))
 - [Jon Galloway, Microsoft](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))
 - [Michael cerquilha, EUA](http://www.930solutions.com/) (twitter: [ @mrsharps ](http://twitter.com/mrsharps))

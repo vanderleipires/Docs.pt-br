@@ -1,22 +1,23 @@
 ---
 uid: visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
-title: "ASP.NET e Web ferramentas 2013.2 para notas de versão do Visual Studio 2013 | Microsoft Docs"
+title: ASP.NET e Web ferramentas 2013.2 para notas de versão do Visual Studio 2013 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2014
 ms.topic: article
 ms.assetid: 7ef5f73c-ca60-43c1-bdb2-702800347e7e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: 0e7ad52662f7ceaa1f087d007d0b14b610f90bee
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28036018"
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET e Web Tools 2013.2 para notas de versão do Visual Studio 2013
 ====================
@@ -52,7 +53,7 @@ As seções a seguir descrevem os recursos que foram introduzidos na versão.
 - [ASP.NET Web API 2.1.2](#webapi)
 - [Páginas da Web do ASP.NET 3.1.2](#webpages)
 - [Entity Framework 6.1](#ef)
-- [ASP.NET Identity 2.0.0](#identity)
+- [Identidade do ASP.NET 2.0.0](#identity)
 - [Componentes do Microsoft OWIN](#owin)
 - [ASP.NET SignalR 2.0.2](#signalr)
 
@@ -99,7 +100,7 @@ Firefox usa seu próprio repositório de certificados, portanto ele exibirá um 
 
     IntelliSense agora dá suporte a [esquema JSON](http://json-schema.org/) v3 e v4. Há uma caixa de combinação de esquema para escolher esquemas existentes, edite o caminho do local do esquema, ou simplesmente arrastar e soltar um arquivo JSON de projeto-o para obter o caminho relativo.
 
-    ![JSON Intellisense](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image7.png)    ![Editor de esquema JSON](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image8.png)
+    ![Intellisense JSON](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image7.png)    ![Editor de esquema JSON](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image8.png)
 - **Novo editor de Sass (SCSS)**: adicionamos menor no VS2013 RTM, e agora temos um item de projeto Sass e editor. Editor de sass recursos são comparáveis ao menos editor e incluem colorização, variável e Mixins IntelliSense, remova os comentários /, informações rápidas, formatação, validação de sintaxe, estrutura de tópicos, ir para definição, seletor de cores, ferramentas de configuração de opção etc.
 
     ![Adicionar Novo Item: Folha de estilo SCSS](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image9.png)    ![Editor de folha de estilo](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image10.png)
@@ -109,7 +110,7 @@ Firefox usa seu próprio repositório de certificados, portanto ele exibirá um 
 - **Atualizações para o editor LESS com a adição de mais recursos**
 - **Atualização do Intellisense Knockout**: adicionamos uma sintaxe de separação não padrão para VS intelliSense, "ko-vs-editor viewModel:" sintaxe. Ele pode ser usado para associar a vários modelos de exibição em uma página com comentários no formulário:
 
-    ![Knockout Intellisense](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image14.png)
+    ![Intellisense de separação](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image14.png)
 
     Também adicionamos suporte para ViewModel IntelliSense aninhadas, portanto você pode analisar os objetos profundamente aninhados no ViewModel.
 
@@ -244,7 +245,7 @@ Foi atualizado para a versão 6.1 para tempo de execução e ferramentas do Enti
 - **Melhorias de desempenho** incluindo operações de redução de banco de dados durante a inicialização, otimizações para comparação de igualdade nulo em consultas LINQ, mais rápido exibir geração (criação de modelo) em cenários mais e mais eficiente materialização de entidades controladas com várias associações.
 
 <a id="identity"></a>
-### <a name="aspnet-identity-200"></a>ASP.NET Identity 2.0.0
+### <a name="aspnet-identity-200"></a>Identidade do ASP.NET 2.0.0
 
 - **Autenticação de dois fatores**: ASP.NET Identity agora dá suporte a autenticação de dois fatores. Autenticação de dois fatores fornece uma camada extra de segurança para as contas de usuário no caso em que a senha for comprometida. Também há proteção contra ataques de força bruta contra os códigos de dois fatores.
 - **Bloqueio de conta:** fornece uma maneira de bloquear o usuário se o usuário insere sua senha ou códigos de dois fatores incorretamente. O número de tentativas inválidas e o período de tempo para que os usuários estão bloqueados pode ser configurado. Um desenvolvedor pode, opcionalmente, desativar o bloqueio de conta para determinadas contas de usuário caso precisem.

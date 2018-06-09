@@ -13,14 +13,15 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
 ms.openlocfilehash: 9a748628d53878be380869ac5327de0111d2284d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26507255"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>Laboratório prático: Criar um aplicativo de página única (SPA) com a API da Web do ASP.NET e Angular.js
 ====================
-por [Web Camps Team](https://twitter.com/webcamps)
+Por [Web Camps Team](https://twitter.com/webcamps)
 
 [Baixar o Kit de treinamento de Camps de Web](http://aka.ms/webcamps-training-kit)
 
@@ -32,10 +33,10 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Neste laboratório disponível na rede, você será tirar proveito dessas tecnologias para implementar nerd do teste, um site trívia baseado no conceito SPA. Você primeiro implementar a camada de serviço com a API da Web do ASP.NET para expor os pontos de extremidade necessários para recuperar as perguntas de teste e armazenar as respostas. Em seguida, você criará um avançados e capacidade de resposta da interface do usuário usando os efeitos de transformação AngularJS e CSS3.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Objetivos
@@ -307,7 +308,7 @@ Essa tarefa, você usará **AngularJS** para implementar o lado do cliente do ap
 Você irá iniciar instalação AngularJS a partir Package Manager Console do Visual Studio. Em seguida, você criará o controlador para o comportamento do aplicativo de teste nerd e o modo de exibição para renderizar o teste e respostas usando o mecanismo de modelo AngularJS.
 
 > [!NOTE]
-> Para obter mais informações sobre AngularJS, consulte [ [http://angularjs.org/](http://angularjs.org/)](http://angularjs.org/).
+> Para obter mais informações sobre AngularJS, consulte [ [ http://angularjs.org/ ](http://angularjs.org/) ](http://angularjs.org/).
 
 
 1. Abra **Visual Studio Express 2013 para Web** e abra o **GeekQuiz.sln** solução localizada no **fonte/o Ex2-CreatingASPAInterface/início** pasta. Como alternativa, você pode continuar com a solução que você obteve no exercício anterior.

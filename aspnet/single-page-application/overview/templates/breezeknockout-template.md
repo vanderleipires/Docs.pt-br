@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/breezeknockout-template
-title: "Modelo muito fácil/Knockout | Microsoft Docs"
+title: Modelo muito fácil/Knockout | Microsoft Docs
 author: madskristensen
-description: "Modelo de aplicativo de página única muito fácil/Knockout"
+description: Modelo de aplicativo de página única muito fácil/Knockout
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
 ms.openlocfilehash: 07ec099a0381458fe42c1972a2554f76fd34638c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506695"
 ---
 <a name="breezeknockout-template"></a>Modelo muito fácil/Knockout
 ====================
@@ -57,7 +58,7 @@ Vamos começar.
 
 Baixe e instale o modelo, clique no botão de Download acima. O modelo é empacotado como um arquivo de extensão de Visual Studio (VSIX). Talvez seja necessário reiniciar o Visual Studio.
 
-No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#** nó. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
+No painel **Modelos**, selecione **Modelos Instalados** e expanda o nó **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
 
 No **novo projeto** assistente, selecione **muito fácil Knockout SPA**.
 

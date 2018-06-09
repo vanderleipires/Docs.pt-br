@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
 ms.openlocfilehash: 06f22bc9a3068ee5621df62ee5ed1bea06d7e9e6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30881351"
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Personalizando as implantações de banco de dados para vários ambientes
 ====================
@@ -72,12 +73,12 @@ Esta tabela mostra as configurações de implantação típica para ambientes de
 |  | Desenvolvedor/teste | Preparo/integração | Produção |
 | --- | --- | --- | --- |
 | **Agrupamento de comparação de implantação** | Origem | Destino | Destino |
-| **Implantar propriedades do banco de dados** | True | Apenas na primeira vez | Apenas na primeira vez |
-| **Sempre recriar banco de dados** | True | False | False |
-| **Bloquear implantação incremental se puder ocorrer perda de dados** | False | Talvez | True |
-| **Executar script de implantação no modo de usuário único** | False | True | True |
-| **Fazer backup de banco de dados antes da implantação** | False | Talvez | True |
-| **Gerar instruções DROP para objetos que estão no banco de dados de destino, mas que não estão no projeto de banco de dados** | False | True | True |
+| **Implantar propriedades do banco de dados** | verdadeiro | Apenas na primeira vez | Apenas na primeira vez |
+| **Sempre recriar banco de dados** | verdadeiro | False | False |
+| **Bloquear implantação incremental se puder ocorrer perda de dados** | False | Talvez | verdadeiro |
+| **Executar script de implantação no modo de usuário único** | False | verdadeiro | verdadeiro |
+| **Fazer backup de banco de dados antes da implantação** | False | Talvez | verdadeiro |
+| **Gerar instruções DROP para objetos que estão no banco de dados de destino, mas que não estão no projeto de banco de dados** | False | verdadeiro | verdadeiro |
 | **Não usar instruções ALTER ASSEMBLY para atualizar tipos CLR** | False | False | False |
   
 

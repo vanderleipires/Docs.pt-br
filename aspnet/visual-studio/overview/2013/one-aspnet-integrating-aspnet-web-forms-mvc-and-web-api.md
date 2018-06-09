@@ -13,14 +13,15 @@ ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 55109723e566a9f7c66c1a59414377b05dbec760
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26507115"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>Laboratório prático: ASP.NET de um: integração de Web Forms do ASP.NET, MVC e API da Web
 ====================
-por [Web Camps Team](https://twitter.com/webcamps)
+Por [Web Camps Team](https://twitter.com/webcamps)
 
 [Baixar o Kit de treinamento de Camps de Web](http://aka.ms/webcamps-training-kit)
 
@@ -28,11 +29,11 @@ por [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Visual Studio 2013 apresenta um novo sistema de projeto unificada que permite que você criar um aplicativo e usar todas as tecnologias do ASP.NET em um único projeto. Esse recurso elimina a necessidade de selecionar uma tecnologia no início de um projeto e o cartão com ele e, em vez disso, incentiva o uso de várias estruturas ASP.NET dentro de um projeto.
 > 
-> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit).
+> Todo o código de exemplo e trechos de código são incluídos no Web Camps treinamento Kit, disponíveis em [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
 
 
 <a id="Overview"></a>
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Objetivos
@@ -161,7 +162,7 @@ Nesta tarefa, você executar a solução gerada, explore o aplicativo e alguns d
     *URLs amigáveis*
 
     > [!NOTE]
-    > Você pode ver, a URL será alterado para **ou contate**. A partir **ASP.NET 4**, recursos de roteamento de URL foram adicionados para Web Forms, portanto você pode escrever URLs como *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* em vez de  *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. Para obter mais informações, consulte [roteamento de URL](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md).
+    > Você pode ver, a URL será alterado para **ou contate**. A partir **ASP.NET 4**, recursos de roteamento de URL foram adicionados para Web Forms, portanto você pode escrever URLs como *[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* em vez de  *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. Para obter mais informações, consulte [roteamento de URL](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md).
 3. Agora, você explorará o fluxo de autenticação integrado no aplicativo. Para fazer isso, clique em **registrar** no canto superior direito da página.
 
     ![Registrar um novo usuário](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)

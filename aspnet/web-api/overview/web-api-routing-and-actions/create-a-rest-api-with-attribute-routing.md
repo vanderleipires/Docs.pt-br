@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
 ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
-ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30223256"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Criar uma API REST com atributo roteamento ASP.NET Web API 2
 ====================
@@ -29,7 +30,7 @@ Web API 2 dá suporte a um novo tipo de roteamento, chamado *roteamento de atrib
 | Obter uma lista de todos os livros. | api/manuais |
 | Obter um livro por ID. | /API/Books/1 |
 | Obter os detalhes de um livro. | /API/Books/1/Details |
-| Obter uma lista de livros por gênero. | /api/books/fantasy |
+| Obter uma lista de livros por gênero. | /API/Books/fantasy |
 | Obter uma lista de livros por data de publicação. | /API/Books/Date/2013-02-16 /api/books/date/2013/02/16 (formato alternativo) |
 | Obter uma lista de livros publicados por um autor específico. | /API/Authors/1/Books |
 
@@ -168,7 +169,7 @@ O modelo de rota para cada método de controlador é o prefixo e a cadeia de car
 | Método | Modelo de rota | URI de exemplo |
 | --- | --- | --- |
 | `GetBooks` | "api/livros" | `http://localhost/api/books` |
-| `GetBook` | "api/books/{id:int}" | `http://localhost/api/books/5` |
+| `GetBook` | "api/manuais / {id: int}" | `http://localhost/api/books/5` |
 
 ## <a name="get-book-details"></a>Obter detalhes do catálogo
 

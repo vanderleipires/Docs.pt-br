@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 573e75221a1c0018bded7544e584b0c75f47d607
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30887259"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-setting-folder-permissions---6-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: definindo permissões de pasta - 6 de 12
 ====================
@@ -29,7 +30,7 @@ por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Neste tutorial, defina as permissões de pasta para o *Elmah* pasta na web implantada para que o aplicativo pode criar arquivos de log na pasta do site.
 
@@ -77,7 +78,7 @@ Você também precisa de permissão de gravação no *aplicativo\_dados* pasta p
 
 Agora você concluiu todas as tarefas necessárias para que a Contoso University funcionando corretamente no IIS no computador local. No tutorial de Avançar, você fará o site disponível publicamente, implantando-a para um provedor de hospedagem.
 
-## <a name="more-information"></a>Mais Informações
+## <a name="more-information"></a>Mais informações
 
 Neste exemplo, o motivo por que o Elmah não pôde salvar arquivos de log foi bastante óbvio. Você pode usar o rastreamento do IIS nos casos em que a causa do problema não é tão óbvia; consulte [Solucionando problemas de solicitações falhas usando rastreamento no IIS 7](https://www.iis.net/learn/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis) no site IIS.net.
 

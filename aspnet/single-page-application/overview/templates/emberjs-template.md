@@ -8,15 +8,16 @@ manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 04d5f142-5f62-494a-b5ea-4f3d068d34cb
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/emberjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 1fb7633aee288be648d4f9681b43c8911b7dbab9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506795"
 ---
 <a name="emberjs-template"></a>Modelo de EmberJS
 ====================
@@ -43,7 +44,7 @@ No lado do servidor, o modelo EmberJS é quase idêntico de [modelo SPA Knockout
 
 Baixe e instale o modelo, clique no botão de Download acima. Talvez seja necessário reiniciar o Visual Studio.
 
-No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#** nó. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
+No painel **Modelos**, selecione **Modelos Instalados** e expanda o nó **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
 
 ![](emberjs-template/_static/image2.png)
 
@@ -134,7 +135,7 @@ TodoListRoute.js carrega dados para o TodoListRoute, substituindo a função set
 
 [!code-javascript[Main](emberjs-template/samples/sample11.js)]
 
-Ember usa convenções de nomenclatura para corresponder URLs, nomes de rotas, controladores e modelos. Para obter mais informações, consulte [http://emberjs.com/guides/routing/defining-your-routes/](http://emberjs.com/guides/routing/defining-your-routes/) a documentação de EmberJS.
+Ember usa convenções de nomenclatura para corresponder URLs, nomes de rotas, controladores e modelos. Para obter mais informações, consulte [ http://emberjs.com/guides/routing/defining-your-routes/ ](http://emberjs.com/guides/routing/defining-your-routes/) a documentação de EmberJS.
 
 ## <a name="templates"></a>Modelos
 
@@ -146,7 +147,7 @@ A pasta de modelos contém quatro modelos:
 - todoList.hbs: O modelo para o "/ todo" rota.
 - \_NavBar.HBS: O modelo define o menu de navegação.
 
-O modelo de aplicativo age como uma página mestra. Ele contém um cabeçalho, um rodapé e uma "{{tomada}}" para inserir os outros modelos dependendo da rota. Para obter mais informações sobre modelos de aplicativos em Ember, consulte [http://guides.emberjs.com/v1.10.0/templates/the-application-template//](http://guides.emberjs.com/v1.10.0/templates/the-application-template/).
+O modelo de aplicativo age como uma página mestra. Ele contém um cabeçalho, um rodapé e uma "{{tomada}}" para inserir os outros modelos dependendo da rota. Para obter mais informações sobre modelos de aplicativos em Ember, consulte [ http://guides.emberjs.com/v1.10.0/templates/the-application-template// ](http://guides.emberjs.com/v1.10.0/templates/the-application-template/).
 
 O "/ todoList" modelo contém duas expressões de loop. O loop externo é `{{#each controller}}`e o loop é `{{#each todos}}`. O código a seguir mostra um interno `Ember.Checkbox` exibir um personalizado `App.TodoItemEditView`e um link com um `deleteTodo` ação.
 

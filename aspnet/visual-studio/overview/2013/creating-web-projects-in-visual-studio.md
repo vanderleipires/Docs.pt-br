@@ -2,25 +2,26 @@
 uid: visual-studio/overview/2013/creating-web-projects-in-visual-studio
 title: Criando projetos da Web do ASP.NET no Visual Studio 2013 | Microsoft Docs
 author: tdykstra
-description: "Este tópico explica as opções para a criação de projetos web ASP.NET no Visual Studio 2013 com atualização 3 aqui estão alguns dos novos recursos do c de desenvolvimento da web..."
+description: Este tópico explica as opções para a criação de projetos web ASP.NET no Visual Studio 2013 com atualização 3 aqui estão alguns dos novos recursos do c de desenvolvimento da web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/01/2014
 ms.topic: article
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
 ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28038859"
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Criando projetos da Web do ASP.NET no Visual Studio 2013
 ====================
-Por [Tom Dykstra](https://github.com/tdykstra)
+por [Tom Dykstra](https://github.com/tdykstra)
 
 > Este tópico explica as opções para a criação de projetos web ASP.NET no Visual Studio 2013 com atualização 3
 > 
@@ -243,7 +244,7 @@ Restringir a janela um pouco mais e menu superior horizontal se transforma em um
 
 Você também pode usar o recurso de temas da inicialização facilmente efetuar uma alteração na aparência do aplicativo. Por exemplo, você pode fazer as seguintes etapas para alterar o tema.
 
-1. Em seu navegador, vá para [http://Bootswatch.com](http://Bootswatch.com), escolher um tema e, em seguida, clique em **baixar**. (Isso downloads *bootstrap.min.css* por padrão; se você deseja examinar o código de CSS, obter *bootstrap.css* em vez da versão minimizada.)
+1. Em seu navegador, vá para [ http://Bootswatch.com ](http://Bootswatch.com), escolher um tema e, em seguida, clique em **baixar**. (Isso downloads *bootstrap.min.css* por padrão; se você deseja examinar o código de CSS, obter *bootstrap.css* em vez da versão minimizada.)
 2. Copie o conteúdo do arquivo baixado de CSS.
 3. No Visual Studio, crie um novo **folha de estilo** arquivo chamado *bootstrap theme.css* no *conteúdo* pasta e colar o CSS baixado de código para ele.
 4. Abra *aplicativo\_Start/Bundle.config* e alterar *bootstrap.css* para *theme.css inicialização*.
@@ -426,4 +427,4 @@ Forneça um URI exclusivo que AD pode usar para identificar esse aplicativo, ou 
 <a id="nextsteps"></a>
 ## <a name="next-steps"></a>Próximas etapas
 
-Este documento fornece ajuda básica para criar um novo projeto da web ASP.NET no Visual Studio 2013. Para obter mais informações sobre como usar o Visual Studio para desenvolvimento na web, consulte [https://www.asp.net/visual-studio/](../../index.md).
+Este documento fornece ajuda básica para criar um novo projeto da web ASP.NET no Visual Studio 2013. Para obter mais informações sobre como usar o Visual Studio para desenvolvimento na web, consulte [ https://www.asp.net/visual-studio/ ](../../index.md).

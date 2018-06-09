@@ -2,7 +2,7 @@
 uid: mvc/overview/advanced/custom-mvc-templates
 title: Modelo MVC personalizado | Microsoft Docs
 author: joeloff
-description: "Crie um modelo como uma extensão do VSIX."
+description: Crie um modelo como uma extensão do VSIX.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/10/2012
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
 ms.openlocfilehash: c3ddd4e341511f520927e924b25d890088adb69e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034601"
 ---
 <a name="custom-mvc-template"></a>Modelo MVC personalizado
 ====================
@@ -79,15 +80,15 @@ Fechar o designer VSIX, em seguida, clique com o botão direito no **source.exte
 
 ![Abra a caixa de diálogo](custom-mvc-templates/_static/image7.jpg)
 
-Criar um  **&lt;ativos&gt;**  elemento e adicione um  **&lt;ativos&gt;**  elemento para cada arquivo que deve ser incluído no VSIX. O **tipo** atributo de cada  **&lt;ativos&gt;**  elemento deve ser definido como **Microsoft.VisualStudio.Mvc.Template**. Isso é um namespace personalizado que reconheça o Assistente de projeto MVC. Consulte a documentação do esquema do VSIX 2.0 para obter informações adicionais sobre a estrutura e o layout do arquivo de manifesto.
+Criar um **&lt;ativos&gt;** elemento e adicione um **&lt;ativos&gt;** elemento para cada arquivo que deve ser incluído no VSIX. O **tipo** atributo de cada **&lt;ativos&gt;** elemento deve ser definido como **Microsoft.VisualStudio.Mvc.Template**. Isso é um namespace personalizado que reconheça o Assistente de projeto MVC. Consulte a documentação do esquema do VSIX 2.0 para obter informações adicionais sobre a estrutura e o layout do arquivo de manifesto.
 
-Não é suficiente para registrar os modelos com o assistente MVC apenas adicionar arquivos ao VSIX. Você precisa fornecer informações como o nome do modelo, a descrição, a mecanismos de exibição com suporte e a linguagem de programação para o assistente MVC. Essa informação é executada em atributos personalizados associados a  **&lt;ativos&gt;**  elemento para cada **vstemplate** arquivo.
+Não é suficiente para registrar os modelos com o assistente MVC apenas adicionar arquivos ao VSIX. Você precisa fornecer informações como o nome do modelo, a descrição, a mecanismos de exibição com suporte e a linguagem de programação para o assistente MVC. Essa informação é executada em atributos personalizados associados a **&lt;ativos&gt;** elemento para cada **vstemplate** arquivo.
 
 &lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
 Type=&quot;Microsoft.VisualStudio.Mvc.Template&quot;
 
-d:Source=&quot;File&quot;
+d:Source =&quot;arquivo&quot;
 
 Path=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
 
@@ -114,7 +115,7 @@ Abaixo está uma explicação dos atributos personalizados devem estar presentes
 - **Título** designa a descrição curta exibida no Assistente de MVC abaixo de cada modelo de projeto.
 - **Descrição** designa uma descrição mais detalhada do modelo.
 
-Depois que você adicionou todos os arquivos para o manifesto e salvo, você observará que o **ativos** guia no designer de exibirá todos os arquivos, mas não o de atributos personalizados adicionados ao  **&lt;ativos&gt;**  elementos para o **vstemplate** arquivos.
+Depois que você adicionou todos os arquivos para o manifesto e salvo, você observará que o **ativos** guia no designer de exibirá todos os arquivos, mas não o de atributos personalizados adicionados ao **&lt;ativos&gt;** elementos para o **vstemplate** arquivos.
 
 ![Ativos de Designer de projeto](custom-mvc-templates/_static/image8.jpg)
 
@@ -122,7 +123,7 @@ Tudo o que resta agora é compilar o projeto do VSIX e instalá-lo.
 
 Certifique-se de que todas as instâncias do Visual Studio estão fechadas no computador onde você pretende testar a extensão do VSIX. O Visual Studio procura novas extensões durante a inicialização, portanto, se o IDE estiver aberto durante a instalação de um VSIX será necessário reiniciar o Visual Studio. No Pesquisador de objetos, clique duas vezes no arquivo VSIX para iniciar o **instalador VSIX**, clique em **instalar** e, em seguida, inicie o Visual Studio.
 
-![VSIX Installer](custom-mvc-templates/_static/image9.jpg)
+![Instalador do VSIX](custom-mvc-templates/_static/image9.jpg)
 
 No menu, selecione **Ferramentas > extensões e atualizações** para confirmar se a sua extensão foi instalada. Se o instalador do VSIX relatou erros durante a instalação da extensão, você pode exibir o log do instalador do VSIX para obter mais informações. O log é geralmente criado na **% temp %** pasta do usuário que instalou a extensão, por exemplo **C:\Users\Bob\AppData\Local\Temp**.
 

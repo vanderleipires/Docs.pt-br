@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
 ms.openlocfilehash: ac3568941eeef24bd9857c5787471aadea15fc7f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30875728"
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>Usar controladores e exibições para implementar uma interface de usuário de lista-detalhes
 ====================
@@ -62,7 +63,7 @@ Queremos permitem que os visitantes usando nosso aplicativo para procurar uma li
 | **URL** | **Finalidade** |
 | --- | --- |
 | */Dinners/* | Exibir uma lista HTML de jantares futuros |
-| */Dinners/Details/[id]* | Exibir detalhes sobre uma refeição específico indicado por um parâmetro de "id" incorporado a URL – que corresponderá a DinnerID de refeição no banco de dados. Por exemplo: /Dinners/Details/2 exibirá uma página HTML com detalhes sobre a refeição cujo valor DinnerID é 2. |
+| */Dinners/detalhes / [id]* | Exibir detalhes sobre uma refeição específico indicado por um parâmetro de "id" incorporado a URL – que corresponderá a DinnerID de refeição no banco de dados. Por exemplo: /Dinners/Details/2 exibirá uma página HTML com detalhes sobre a refeição cujo valor DinnerID é 2. |
 
 Publicaremos implementações inicias dessas URLs, adicionando dois público "métodos de ação" a nossa classe DinnersController como abaixo:
 
@@ -97,11 +98,11 @@ Abaixo está uma tabela que demonstra como uma variedade de URLs são mapeados u
 | **URL** | **Classe do controlador** | **Método de ação** | **Parâmetros passados** |
 | --- | --- | --- | --- |
 | */Dinners/Details/2* | DinnersController | Details(ID) | id=2 |
-| */Dinners/Edit/5* | DinnersController | Edit(ID) | id=5 |
-| */Dinners/Create* | DinnersController | Create() | N/D |
-| */Dinners* | DinnersController | Index() | N/D |
-| */Home* | HomeController | Index() | N/D |
-| */* | HomeController | Index() | N/D |
+| *Jantares/5/editar* | DinnersController | Edit(ID) | id=5 |
+| */Dinners/Create* | DinnersController | Create) | N/D |
+| */ Jantares* | DinnersController | Index) | N/D |
+| */ Início* | HomeController | Index) | N/D |
+| */* | HomeController | Index) | N/D |
 
 As três últimas linhas mostram os valores padrão (controlador Home, = ação = índice, Id = "") que está sendo usado. Porque o método "Index" está registrado como o nome de ação padrão se nenhuma for especificada, o "/ jantares" e "/home" causa de URLs o método de ação Index () a ser invocado em suas classes de controlador. Porque o controlador "Início" é registrado como o controlador padrão se nenhuma for especificada, a URL "/" faz com que o HomeController a ser criado e o método de ação Index () em que ele seja invocado.
 

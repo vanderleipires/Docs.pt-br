@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 7e1a457c23ef659bf7ee9c15b66dc5c2d8a31416
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30891454"
 ---
 <a name="creating-a-data-access-layer-c"></a>Criando uma camada de acesso a dados (c#)
 ====================
@@ -269,7 +270,7 @@ Essas consultas com parâmetros podem ser testadas diretamente no Designer de co
 
 Com o **GetProductsByCategoryID (*categoryID*)** método nosso DAL, agora podemos criar uma página ASP.NET que exibe apenas os produtos em uma categoria especificada. O exemplo a seguir mostra todos os produtos na categoria de bebidas, que têm um **CategoryID** de 1.
 
-Beverages.asp
+Beverages.ASP
 
 [!code-aspx[Main](creating-a-data-access-layer-cs/samples/sample4.aspx)]
 

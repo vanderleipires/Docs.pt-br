@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: ab3b7ba332deddae7d04fc37c7aabc72bdb2d17e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30889677"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Implantando o ambiente de produção - 7 de 12
 ====================
@@ -29,7 +30,7 @@ por [Tom Dykstra](https://github.com/tdykstra)
 > Para obter um tutorial que mostra os recursos de implantação introduzidos após a versão RC do Visual Studio 2012, mostra como implantar as edições do SQL Server diferente do SQL Server Compact e mostra como implantar aplicativos de Web do serviço de aplicativo do Azure, consulte [implantação da Web do ASP.NET usando o Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Neste tutorial, você pode configurar uma conta com um provedor de hospedagem e implantar seu ASP.NET recurso de publicação do aplicativo web para o ambiente de produção usando o Visual Studio um clique.
 
@@ -85,7 +86,7 @@ No **propriedades do Site** caixa, selecione a **extensões** guia.
 
 [![Cytanium_Control_Panel_Extensions_tab](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image18.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image17.png)
 
-Alterar ASP.NET de **2.0 Pipeline integrado** para **4.0 (Pipeline integrado)**e, em seguida, clique em **atualização**.
+Alterar ASP.NET de **2.0 Pipeline integrado** para **4.0 (Pipeline integrado)** e, em seguida, clique em **atualização**.
 
 ## <a name="publishing-to-the-hosting-provider"></a>Publicação para o provedor de hospedagem
 

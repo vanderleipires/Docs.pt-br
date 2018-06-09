@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
-title: "Alterar a chave primária para usuários no ASP.NET Identity | Microsoft Docs"
+title: Alterar a chave primária para usuários no ASP.NET Identity | Microsoft Docs
 author: tfitzmac
-description: "No Visual Studio 2013, o aplicativo web padrão usa um valor de cadeia de caracteres para a chave para as contas de usuário. Identidade do ASP.NET permite que você altere o tipo da..."
+description: No Visual Studio 2013, o aplicativo web padrão usa um valor de cadeia de caracteres para a chave para as contas de usuário. Identidade do ASP.NET permite que você altere o tipo da...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/30/2014
 ms.topic: article
 ms.assetid: 44925849-5762-4504-a8cd-8f0cd06f6dc3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 79812efb4de2461fad3765d6005bbd20393e62b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26498225"
 ---
 <a name="change-primary-key-for-users-in-aspnet-identity"></a>Alterar a chave primária para usuários no ASP.NET Identity
 ====================
@@ -275,7 +276,7 @@ Se você tiver criado anteriormente a identidade do ASP.NET tabelas com uma chav
 <a id="other"></a>
 ## <a name="other-resources"></a>Outros recursos
 
-- [Visão geral dos provedores de armazenamento personalizado para a identidade do ASP.NET](overview-of-custom-storage-providers-for-aspnet-identity.md)
-- [Migrando um site existente da associação SQL para a identidade do ASP.NET](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [Visão geral de provedores de armazenamento personalizados para a Identidade do ASP.NET](overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [Migração de um site existente da Associação do SQL para a Identidade do ASP.NET](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [Migração de dados Universal do provedor de associação e os perfis de usuário para a identidade do ASP.NET](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
 - [Aplicativo de exemplo](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt) com a chave primária alterada
