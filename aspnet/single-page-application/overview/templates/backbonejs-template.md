@@ -8,15 +8,16 @@ manager: wpickett
 ms.date: 04/04/2013
 ms.topic: article
 ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 3b8eabd3cefcb96dc40bbf6cc6e3ee81accb0d7c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506675"
 ---
 <a name="backbone-template"></a>Modelo de estrutura
 ====================
@@ -39,7 +40,7 @@ Requisitos:
 
 Baixe e instale o modelo, clique no botão de Download acima. O modelo é empacotado como um arquivo de extensão de Visual Studio (VSIX). Talvez seja necessário reiniciar o Visual Studio.
 
-No **modelos** painel, selecione **modelos instalados** e expanda o **Visual C#** nó. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
+No painel **Modelos**, selecione **Modelos Instalados** e expanda o nó **Visual C#**. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto e clique em **Okey**.
 
 ![](backbonejs-template/_static/image1.png)
 
@@ -61,7 +62,7 @@ Vamos começa com o lado do cliente. Os scripts de aplicativo do cliente estão 
 
 **Aplicativo**
 
-`Application`é definido em application.ts. Esse objeto inicializa o aplicativo e atua como o namespace raiz. Mantém informações de configuração e o estado que são compartilhadas entre o aplicativo, como se o usuário está conectado.
+`Application` é definido em application.ts. Esse objeto inicializa o aplicativo e atua como o namespace raiz. Mantém informações de configuração e o estado que são compartilhadas entre o aplicativo, como se o usuário está conectado.
 
 O `application.start` método cria os modos de exibição restritas e anexa os manipuladores de eventos para eventos de nível de aplicativo, como a entrada do usuário. Em seguida, ele cria o roteador padrão e verifica se qualquer URL do lado do cliente é especificado. Se não, ele redireciona para a url padrão (#! /).
 
