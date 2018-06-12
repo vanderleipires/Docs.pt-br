@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 9cd14a47a512c2a887614e617dd914dbdb25cb9d
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 019224e86f1f5583ce0f212d8be70e8829274c7e
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34688421"
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -39,7 +40,7 @@ As [Páginas Razor](xref:mvc/razor-pages/index) são a abordagem recomendada par
 * [Introdução ao ASP.NET Core e ao Entity Framework Core usando o Visual Studio](xref:data/ef-mvc/index)
 * [Criar auxiliares de marcação](xref:mvc/views/tag-helpers/authoring)
 * [Criar um componente de exibição simples](xref:mvc/views/view-components#walkthrough-creating-a-simple-view-component)
-* [Desenvolvendo aplicativos ASP.NET Core usando a inspeção dotnet](xref:tutorials/dotnet-watch)
+* [Desenvolver aplicativos usando um inspetor de arquivo](xref:tutorials/dotnet-watch)
 
 ## <a name="build-web-apis"></a>Criar APIs da Web
 * Criar uma API Web com o ASP.NET Core
