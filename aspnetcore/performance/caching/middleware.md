@@ -10,12 +10,12 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 7ceccffa39baf5f13d63c26e78c64a595bb42f60
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: abf07ec2d2692a8504caea243eacead6aa6e1a62
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734491"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341698"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Resposta de cache Middleware no núcleo do ASP.NET
 
@@ -27,7 +27,7 @@ Este artigo explica como configurar o Middleware de cache de resposta em um apli
 
 ## <a name="package"></a>Pacote
 
-Para incluir o middleware em seu projeto, adicione uma referência para o [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) pacote ou use o [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app), que está disponível para uso em ASP.NET Core 2.1 ou posterior.
+Para incluir o middleware em seu projeto, adicione uma referência para o [Microsoft.AspNetCore.ResponseCaching](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCaching/) pacote ou use o [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app), que está disponível para uso em ASP. Núcleo NET 2.1 ou posterior.
 
 ## <a name="configuration"></a>Configuração
 

@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: 35a21156c001d8703e09e604129c4c2c500fe25f
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: cd1fa7957ca50db0de71f71234f84d3fbc631f45
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734647"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341737"
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>Convenções de autorização de páginas Razor do ASP.NET Core
 
@@ -23,7 +23,7 @@ Por [Luke Latham](https://github.com/guardrex)
 
 Uma maneira de controlar o acesso em seu aplicativo de páginas Razor é usar as convenções de autorização na inicialização. As seguintes convenções permitem que você autorizar os usuários e permitir que usuários anônimos acessem páginas individuais ou pastas de páginas. Aplicam as convenções descritas neste tópico automaticamente [filtros de autorização](xref:mvc/controllers/filters#authorization-filters) para controlar o acesso.
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 O aplicativo de exemplo usa [autenticação de Cookie sem a identidade do ASP.NET Core](xref:security/authentication/cookie). A conta de usuário para o usuário hipotético, Maria Rodriguez, está codificada no aplicativo. Use o nome de usuário de Email "maria.rodriguez@contoso.com" e uma senha para entrar no usuário. O usuário é autenticado no `AuthenticateUser` método o *Pages/Account/Login.cshtml.cs* arquivo. Em um exemplo do mundo real, o usuário deve ser autenticado em um banco de dados. Para usar a identidade do ASP.NET Core, siga as orientações de [Introdução a identidade do ASP.NET Core](xref:security/authentication/identity) tópico. Os conceitos e os exemplos mostrados neste tópico se aplicam igualmente a aplicativos que usam a identidade do ASP.NET Core.
 
