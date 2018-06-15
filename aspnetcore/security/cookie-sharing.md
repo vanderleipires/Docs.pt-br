@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cookie-sharing
-ms.openlocfilehash: f6d62d5f6e446e3e2001ed6bde72a6c409aa2833
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: c22db501a2689feb8c16649eba4866e1190361a4
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734673"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613012"
 ---
 # <a name="share-cookies-among-apps-with-aspnet-and-aspnet-core"></a>Compartilhar cookies entre aplicativos com o ASP.NET e ASP.NET Core
 
@@ -141,19 +141,15 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 
 ASP.NET 4. x aplicativos que usam o middleware de autenticação de cookie Katana podem ser configurados para gerar os cookies de autenticação que são compatíveis com o middleware de autenticação de cookie do ASP.NET Core. Isso permite atualizar aplicativos individuais de um grande site gradativamente, proporcionando uma experiência de SSO suave em todo o site.
 
-> [!TIP]
-> Quando um aplicativo usa Katana middleware de autenticação de cookie, ele chama `UseCookieAuthentication` do projeto *Startup.Auth.cs* arquivo. Projetos de aplicativo web do ASP.NET 4. x criadas com o Visual Studio 2013 e depois, usar o middleware de autenticação de cookie Katana por padrão.
+Quando um aplicativo usa Katana middleware de autenticação de cookie, ele chama `UseCookieAuthentication` do projeto *Startup.Auth.cs* arquivo. Projetos de aplicativo web do ASP.NET 4. x criadas com o Visual Studio 2013 e depois, usar o middleware de autenticação de cookie Katana por padrão. Embora `UseCookieAuthentication` está obsoleto e sem suporte para aplicativos do ASP.NET Core, chamar `UseCookieAuthentication` em um aplicativo do ASP.NET 4. x que usa Katana middleware de autenticação de cookie é válido.
 
-> [!NOTE]
-> Um aplicativo do ASP.NET 4. x deve ter como destino do .NET Framework 4.5.1 ou posterior. Caso contrário, os pacotes do NuGet necessário falharem na instalação.
+Um aplicativo do ASP.NET 4. x deve ter como destino do .NET Framework 4.5.1 ou posterior. Caso contrário, os pacotes do NuGet necessário falharem na instalação.
 
-Para compartilhar os cookies de autenticação entre aplicativos do ASP.NET 4. x e ASP.NET Core, configure o aplicativo do ASP.NET Core, conforme mencionado acima e configure os aplicativos do ASP.NET 4. x, seguindo as etapas abaixo.
+Para compartilhar os cookies de autenticação entre um aplicativo do ASP.NET 4. x e um aplicativo ASP.NET Core, configure o aplicativo do ASP.NET Core, conforme mencionado acima, configure o aplicativo do ASP.NET 4. x seguindo estas etapas:
 
 1. Instalar o pacote [Microsoft.Owin.Security.Interop](https://www.nuget.org/packages/Microsoft.Owin.Security.Interop/) em cada aplicativo do ASP.NET 4. x.
 
 2. Em *Startup.Auth.cs*, localize a chamada para `UseCookieAuthentication` e modificá-lo da seguinte maneira. Altere o nome do cookie para corresponder ao nome usado pelo middleware de autenticação de cookie do ASP.NET Core. Fornecer uma instância de um `DataProtectionProvider` inicializado para o local de armazenamento de chaves de proteção de dados comuns. Certifique-se de que o nome do aplicativo é definido como o nome de aplicativo comuns usado por todos os aplicativos que compartilham cookies, `SharedCookieApp` no aplicativo de exemplo.
-
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
 [!code-csharp[](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/App_Start/Startup.Auth.cs?name=snippet1)]
 
@@ -164,32 +160,6 @@ Ao gerar uma identidade de usuário, o tipo de autenticação deve corresponder 
 *Models/IdentityModels.cs*:
 
 [!code-csharp[](cookie-sharing/sample/CookieAuthWithIdentity.NETFramework/CookieAuthWithIdentity.NETFramework/Models/IdentityModels.cs?name=snippet1)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-
-Definir o `CookieManager` à interoperabilidade `ChunkingCookieManager` para o formato das partes seja compatível.
-
-```csharp
-app.UseCookieAuthentication(new CookieAuthenticationOptions
-{
-    AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-    CookieName = ".AspNetCore.Cookies",
-    // CookieName = ".AspNetCore.ApplicationCookie", (if using ASP.NET Identity)
-    // CookiePath = "...", (if necessary)
-    // ...
-    TicketDataFormat = new AspNetTicketDataFormat(
-        new DataProtectorShim(
-            DataProtectionProvider.Create(
-                new DirectoryInfo(@"PATH_TO_KEY_RING_FOLDER"))
-            .CreateProtector(
-                "Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware",
-                "Cookies", 
-                "v2"))),
-    CookieManager = new ChunkingCookieManager()
-});
-```
-
----
 
 ## <a name="use-a-common-user-database"></a>Usar um banco de dados comum do usuário
 
