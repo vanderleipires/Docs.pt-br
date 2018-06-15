@@ -4,12 +4,17 @@ Nesta etapa, o contexto do banco de dados é registrado com o contêiner [injeç
 
 Registre o contexto de banco de dados com o contêiner de serviço usando o suporte interno para [injeção de dependência](xref:fundamentals/dependency-injection). Substitua o conteúdo do arquivo *Startup.cs* pelo seguinte código:
 
-::: moniker range="<= aspnetcore-2.0"
-[!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup.cs?highlight=2,4,12-13)]
-::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Startup.cs?highlight=3,5,13-14)]
+
 ::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+
+[!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup.cs?highlight=2,4,12-13)]
+
+::: moniker-end  
 
 O código anterior:
 
