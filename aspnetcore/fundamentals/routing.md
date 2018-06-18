@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: d9d5a26b08f67fe4ee39d6b974027826a93e5d5f
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: a23e2e1a1dd25a57e5d6189bbd5938c48078515b
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341776"
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
@@ -262,7 +263,6 @@ Um texto literal diferente dos parâmetros de rota (por exemplo, `{id}`) e do se
 Padrões de URL que tentam capturar um nome de arquivo com uma extensão de arquivo opcional apresentam considerações adicionais. Por exemplo, o uso do modelo `files/{filename}.{ext?}` – quando `filename` e `ext` existirem, os dois valores serão populados. Se apenas `filename` existir na URL, a rota encontrará a correspondência, pois o ponto à direita `.` é opcional. As seguintes URLs corresponderão a essa rota:
 
 * `/files/myFile.txt`
-* `/files/myFile.`
 * `/files/myFile`
 
 Use o caractere `*` como um prefixo para um parâmetro de rota para associá-lo ao restante do URI – isso é chamado de um parâmetro *catch-all*. Por exemplo, `blog/{*slug}` corresponderá a qualquer URI que começa com `/blog` e tem qualquer valor (que será atribuído ao valor de rota `slug`). Os parâmetros catch-all também podem corresponder à cadeia de caracteres vazia.

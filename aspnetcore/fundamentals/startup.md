@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: a61f78b2d0e5c6c171a26690fcce256462a82508
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 58ced0ae11f462bc309526b7db7bda7897c33009
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "34233164"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Inicialização do aplicativo no ASP.NET Core
 
@@ -46,7 +47,7 @@ O construtor de classe `Startup` aceita dependências definidas pelo host. Um us
 
 Uma alternativa a injetar `IHostingEnvironment` é usar uma abordagem baseada em convenções. O aplicativo pode definir classes `Startup` separadas para ambientes diferentes (por exemplo, `StartupDevelopment`) e a classe de inicialização adequada é selecionada em tempo de execução. A classe cujo sufixo do nome corresponde ao ambiente atual é priorizada. Se o aplicativo for executado no ambiente de desenvolvimento e incluir uma classe `Startup` e uma classe `StartupDevelopment`, a classe `StartupDevelopment` será usada. Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments#startup-conventions).
 
-Para saber mais sobre `WebHostBuilder`, consulte tópico sobre [Hospedagem](xref:fundamentals/hosting). Para obter informações sobre como tratar erros durante a inicialização, consulte [Tratamento de exceção na inicialização](xref:fundamentals/error-handling#startup-exception-handling).
+Para saber mais sobre `WebHostBuilder`, consulte tópico sobre [Hospedagem](xref:fundamentals/host/index). Para obter informações sobre como tratar erros durante a inicialização, consulte [Tratamento de exceção na inicialização](xref:fundamentals/error-handling#startup-exception-handling).
 
 ## <a name="the-configureservices-method"></a>O método ConfigureServices
 
@@ -58,7 +59,7 @@ O método [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupba
 
 Adicionar serviços ao contêiner de serviços os torna disponíveis dentro do aplicativo e no método `Configure`. Os serviços são resolvidos via [injeção de dependência](xref:fundamentals/dependency-injection) ou [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
-O host da Web pode configurar alguns serviços antes que métodos `Startup` sejam chamados. Detalhes estão disponíveis no tópico sobre [Hospedagem](xref:fundamentals/hosting).
+O host da Web pode configurar alguns serviços antes que métodos `Startup` sejam chamados. Detalhes estão disponíveis no tópico [Host no ASP.NET Core](xref:fundamentals/host/index).
 
 Para recursos que exigem uma configuração significativa, há métodos de extensão `Add[Service]` em [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Um aplicativo Web típico registra serviços para o Entity Framework, Identity e MVC:
 
@@ -164,7 +165,7 @@ Uma implementação [IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.i
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Hospedagem](xref:fundamentals/hosting)
+* [Hospedagem](xref:fundamentals/host/index)
 * [Usar vários ambientes](xref:fundamentals/environments)
 * [Middleware](xref:fundamentals/middleware/index)
 * [Registro em log](xref:fundamentals/logging/index)
