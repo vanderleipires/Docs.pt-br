@@ -19,7 +19,7 @@ ms.lasthandoff: 04/03/2018
 
 Por [Daniel Roth](https://github.com/danroth27), [Rick Anderson](https://twitter.com/RickAndMSFT) e [Shaun Luttin](https://twitter.com/dicshaunary)
 
-O ASP.NET Core é uma estrutura de [software livre](https://github.com/aspnet/home), de multiplaforma e alto desempenho para a criação de aplicativos modernos conectados à Internet e baseados em nuvem. Com o ASP.NET Core, você pode:
+O ASP.NET Core é uma estrutura de [software livre](https://github.com/aspnet/home), de multiplataforma e alto desempenho para a criação de aplicativos modernos conectados à Internet e baseados em nuvem. Com o ASP.NET Core, você pode:
 
 * Compilar aplicativos e serviços Web, aplicativos [IoT](https://www.microsoft.com/internet-of-things/) e back-ends móveis.
 * Usar suas ferramentas de desenvolvimento favoritas no Windows, macOS e Linux.
