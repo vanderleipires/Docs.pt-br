@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/google-logins
-ms.openlocfilehash: ccb771dbefefb007aede1bdf05ab50ec363a3089
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 878c0b16e24f48a0ee84f93393af67af1728e284
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689029"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725959"
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>Configuração de logon externo do Google no núcleo do ASP.NET
 
@@ -61,7 +61,10 @@ Este tutorial mostra como habilitar os usuários entrar com sua conta Google + u
 
 * Porque estamos criando um projeto do Google + com apenas um recurso (entrada), podemos inserir a mesma **nome** para a ID do cliente OAuth 2.0 é usado para o projeto.
 
-* Insira o URI de desenvolvimento com */signin-google* acrescentados no **autorizados redirecionar URIs** campo (por exemplo: `https://localhost:44320/signin-google`). A autenticação do Google configurada mais tarde neste tutorial automaticamente manipulará as solicitações no */signin-google* rota para implementar o fluxo do OAuth.
+* Insira o URI de desenvolvimento com `/signin-google` acrescentados no **autorizados redirecionar URIs** campo (por exemplo: `https://localhost:44320/signin-google`). A autenticação do Google configurada mais tarde neste tutorial automaticamente manipulará as solicitações no `/signin-google` rota para implementar o fluxo do OAuth.
+
+> [!NOTE]
+> O segmento do URI `/signin-google` é definido como o retorno de chamada padrão do provedor de autenticação do Google. Você pode alterar o retorno de chamada padrão URI ao configurar o middleware de autenticação do Google por meio de herdadas [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) propriedade o [GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions) classe.
 
 * Pressione TAB para adicionar o **autorizados redirecionar URIs** entrada.
 

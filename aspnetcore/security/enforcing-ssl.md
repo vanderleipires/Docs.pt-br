@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: 48a25b7ba7affe84cfa6fe16096409239c510221
-ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
+ms.openlocfilehash: f49a7846149385125390285e2f1332d8e40642c0
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/15/2018
-ms.locfileid: "35652182"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725930"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>Impor HTTPS no núcleo do ASP.NET
 
@@ -111,7 +111,7 @@ Por [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Secur
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=10)]
 
-`UseHsts` não é recomendável em desenvolvimento porque o cabeçalho HSTS é altamente armazenável por navegadores. Por padrão, UseHsts exclui o endereço de loopback local.
+`UseHsts` não é recomendado em desenvolvimento porque o cabeçalho HSTS é altamente armazenável em cache por navegadores. Por padrão, `UseHsts` exclui o endereço de loopback local.
 
 O código a seguir:
 

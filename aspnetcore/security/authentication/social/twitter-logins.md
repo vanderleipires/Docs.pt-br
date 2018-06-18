@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: 3f59f7d1bf0280cef8f7757e8cd57d4872769b3d
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 440695f98714f33cff9e4bf97bfc09477901e14c
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688990"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725985"
 ---
 # <a name="twitter-external-login-setup-with-aspnet-core"></a>Configuração de logon externo com o ASP.NET Core do Twitter
 
@@ -32,7 +32,10 @@ Este tutorial mostra como habilitar usuários para [entrar com sua conta do Twit
 
 ![Criar uma página de aplicativo](index/_static/TwitterCreate.png)
 
-* Insira o URI de desenvolvimento com */signin-twitter* acrescentados no **válido URIs de redirecionamento OAuth** campo (por exemplo: `https://localhost:44320/signin-twitter`). O esquema de autenticação do Twitter configurado posteriormente neste tutorial automaticamente manipulará as solicitações no */signin-twitter* rota para implementar o fluxo do OAuth.
+* Insira o URI de desenvolvimento com `/signin-twitter` acrescentados no **válido URIs de redirecionamento OAuth** campo (por exemplo: `https://localhost:44320/signin-twitter`). O esquema de autenticação do Twitter configurado posteriormente neste tutorial automaticamente manipulará as solicitações no `/signin-twitter` rota para implementar o fluxo do OAuth.
+
+> [!NOTE]
+> O segmento do URI `/signin-twitter` é definido como o retorno de chamada padrão do provedor de autenticação do Twitter. Você pode alterar o retorno de chamada padrão URI ao configurar o middleware de autenticação do Twitter via o herdadas [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) propriedade o [TwitterOptions](/dotnet/api/microsoft.aspnetcore.authentication.twitter.twitteroptions) classe.
 
 * Preencha o restante do formulário e toque em **criar seu aplicativo Twitter**. Novos detalhes do aplicativo são exibidos:
 

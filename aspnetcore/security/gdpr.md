@@ -11,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/gdpr
-ms.openlocfilehash: c3c8a3fcd4a303aea65c57ff6be2ff0434383f33
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: eb9173bfe554b8b00ef8deb255e8347a534e7ba3
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341919"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725790"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>Suporte de regulamentação de proteção de dados geral (GDPR) da UE no núcleo do ASP.NET
 
@@ -121,4 +121,4 @@ Você poderá usar a criptografia de disco para fornecer a mesma proteção para
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Microsoft.com/GDPR](https://www.microsoft.com/trustcenter/Privacy/GDPR)
+* [Microsoft.com/GDPR](https://www.microsoft.com/en-us/trustcenter/Privacy/GDPR)
