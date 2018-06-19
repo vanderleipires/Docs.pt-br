@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891975"
 ---
 <a name="storing-additional-user-information-vb"></a>Armazenando informações de usuário adicionais (VB)
 ====================

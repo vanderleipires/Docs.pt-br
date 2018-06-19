@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077901"
 ---
 # <a name="authenticated-encryption-details-in-aspnet-core"></a>Detalhes de criptografia autenticada no núcleo do ASP.NET
 

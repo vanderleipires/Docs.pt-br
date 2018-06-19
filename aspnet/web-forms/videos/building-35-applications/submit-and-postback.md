@@ -2,7 +2,7 @@
 uid: web-forms/videos/building-35-applications/submit-and-postback
 title: Envie e Postback | Microsoft Docs
 author: JoeStagner
-description: "Este vídeo apresenta a que acontece no &quot;nos bastidores&quot; quando o navegador e o servidor do seu aplicativo ASP.NET interagem."
+description: Este vídeo apresenta a que acontece no &quot;nos bastidores&quot; quando o navegador e o servidor do seu aplicativo ASP.NET interagem.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882348"
 ---
 <a name="submit-and-postback"></a>Envie e Postback
 ====================

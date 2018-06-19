@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-an-aspnet-page-based-upon-information-in-the-http-header
-title: "[Como fazer:]  Cache de uma página ASP.NET com base nas informações no cabeçalho HTTP | Microsoft Docs"
+title: '[Como fazer:]  Cache de uma página ASP.NET com base nas informações no cabeçalho HTTP | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostra como manter uma página no cache de saída do ASP.NET com base nas informações no cabeçalho HTTP da página. Primeiro, o potencial Pre HTTP..."
+description: Este Chris Pels vídeo mostra como manter uma página no cache de saída do ASP.NET com base nas informações no cabeçalho HTTP da página. Primeiro, o potencial Pre HTTP...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882211"
 ---
 <a name="how-do-i--cache-an-aspnet-page-based-upon-information-in-the-http-header"></a>[Como fazer:]  Cache de uma página ASP.NET com base nas informações no cabeçalho HTTP
 ====================

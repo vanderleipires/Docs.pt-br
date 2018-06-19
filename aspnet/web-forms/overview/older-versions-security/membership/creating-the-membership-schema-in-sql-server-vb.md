@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891751"
 ---
 <a name="creating-the-membership-schema-in-sql-server-vb"></a>Criando o esquema de associação no SQL Server (VB)
 ====================

@@ -1,7 +1,7 @@
 ---
-title: "Gerenciamento de chaves de proteção de dados e o tempo de vida no núcleo do ASP.NET"
+title: Gerenciamento de chaves de proteção de dados e o tempo de vida no núcleo do ASP.NET
 author: rick-anderson
-description: "Saiba mais sobre o gerenciamento de chaves de proteção de dados e o tempo de vida no núcleo do ASP.NET."
+description: Saiba mais sobre o gerenciamento de chaves de proteção de dados e o tempo de vida no núcleo do ASP.NET.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28887284"
 ---
 # <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>Gerenciamento de chaves de proteção de dados e o tempo de vida no núcleo do ASP.NET
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 02/05/2018
+ms.locfileid: "28987997"
 ---
 <a name="how-do-i-use-cascading-style-sheets-for-web-page-layout"></a>[Como fazer:] Usar folhas de estilo em cascata para Layout de página da Web?
 ====================

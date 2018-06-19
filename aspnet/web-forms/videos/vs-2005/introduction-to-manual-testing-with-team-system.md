@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894834"
 ---
 <a name="introduction-to-manual-testing-with-team-system"></a>Introdução ao teste Manual com o Team System
 ====================

@@ -1,7 +1,7 @@
 ---
-title: "Auxiliares de marcação internos do ASP.NET Core"
+title: Auxiliares de marcação internos do ASP.NET Core
 author: pkellner
-description: "Descubra como os auxiliares de marcação internos do ASP.NET Core aumentam sua produtividade."
+description: Descubra como os auxiliares de marcação internos do ASP.NET Core aumentam sua produtividade.
 manager: wpickett
 ms.author: riande
 ms.date: 09/13/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29903202"
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 

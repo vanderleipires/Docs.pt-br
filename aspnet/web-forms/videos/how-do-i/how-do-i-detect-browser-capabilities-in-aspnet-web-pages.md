@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages
-title: "[Como fazer:] Detectar recursos do navegador em páginas da Web ASP.NET | Microsoft Docs"
+title: '[Como fazer:] Detectar recursos do navegador em páginas da Web ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo, Chris Pels mostrará como determinar quais recursos o navegador do usuário tem ao exibir páginas em um site da web ASP.NET. Primeiro, saiba como acc...."
+description: Neste vídeo, Chris Pels mostrará como determinar quais recursos o navegador do usuário tem ao exibir páginas em um site da web ASP.NET. Primeiro, saiba como acc....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28884085"
 ---
 <a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[Como fazer:] Detectar recursos do navegador em páginas da Web ASP.NET
 ====================

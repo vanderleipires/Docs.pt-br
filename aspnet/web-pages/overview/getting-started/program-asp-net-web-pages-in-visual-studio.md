@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896570"
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>Programação de páginas da Web do ASP.NET (Razor) usando o Visual Studio
 ====================

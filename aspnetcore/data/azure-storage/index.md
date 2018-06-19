@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071279"
 ---
 # <a name="azure-storage-in-aspnet-core"></a>Armazenamento do Azure no ASP.NET Core
 

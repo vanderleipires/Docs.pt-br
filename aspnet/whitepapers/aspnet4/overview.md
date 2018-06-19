@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30899034"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>O ASP.NET 4 e visão geral do desenvolvimento do Visual Studio 2010 Web
 ====================

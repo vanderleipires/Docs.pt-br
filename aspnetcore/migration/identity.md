@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851437"
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core"></a>Migrar de autenticação e identidade para o ASP.NET Core
 

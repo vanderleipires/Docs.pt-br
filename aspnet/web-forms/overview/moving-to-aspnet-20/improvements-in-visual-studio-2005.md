@@ -17,6 +17,7 @@ ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 02/05/2018
+ms.locfileid: "28987984"
 ---
 <a name="improvements-in-visual-studio-2005"></a>Melhorias no Visual Studio 2005
 ====================

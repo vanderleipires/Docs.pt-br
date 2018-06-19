@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893502"
 ---
 <a name="understanding-security-and-network-connectivity"></a>Noções básicas sobre segurança e conectividade de rede
 ====================
