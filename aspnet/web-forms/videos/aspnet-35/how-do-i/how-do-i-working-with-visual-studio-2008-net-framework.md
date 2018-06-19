@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881110"
 ---
 <a name="how-do-i-working-with-visual-studio-2008-net-framework"></a>[Como fazer:] Trabalhando com o Visual Studio 2008 .NET Framework
 ====================

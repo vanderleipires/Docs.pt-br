@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control
-title: "[Como fazer:] Salvar e informações de estado de exibição de carga para um personalizado controle de servidor Web | Microsoft Docs"
+title: '[Como fazer:] Salvar e informações de estado de exibição de carga para um personalizado controle de servidor Web | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como manter e restaurar as informações de um controle de usuário personalizada no ViewState. Primeiro, saiba como manter o valor simples..."
+description: Este Chris Pels vídeo mostrará como manter e restaurar as informações de um controle de usuário personalizada no ViewState. Primeiro, saiba como manter o valor simples...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525565"
 ---
 <a name="how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control"></a>[Como fazer:] Salvar e informações de estado de exibição de carga para um controle de servidor Web personalizado
 ====================

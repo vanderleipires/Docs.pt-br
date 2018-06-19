@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868471"
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-vb"></a>Tratamento de postagens de um controle pop-up com um UpdatePanel (VB)
 ====================

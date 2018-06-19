@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867652"
 ---
 <a name="ef-database-first-with-aspnet-mvc-customizing-a-view"></a>Banco de dados EF primeiro com o ASP.NET MVC: personalizar um modo de exibição
 ====================

@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-make-use-of-caching
 title: '[Como fazer:] Certifique-se de usar o cache? | Microsoft Docs'
 author: microsoft
-description: "Assista a uma demonstração de cache de saída de página seguido de uma visão geral do que o novo suporte a cache de banco de dados do SQL Server 2000 e SQL Server 2005."
+description: Assista a uma demonstração de cache de saída de página seguido de uma visão geral do que o novo suporte a cache de banco de dados do SQL Server 2000 e SQL Server 2005.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526295"
 ---
 <a name="how-do-i-make-use-of-caching"></a>[Como fazer:] Certifique-se de usar o cache?
 ====================
