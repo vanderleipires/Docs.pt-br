@@ -14,6 +14,7 @@ ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/28/2018
+ms.locfileid: "30223161"
 ---
 # <a name="work-with-data-in-aspnet-core"></a><span data-ttu-id="d6a66-104">Trabalhar com os dados no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="d6a66-104">Work with data in ASP.NET Core</span></span>
 

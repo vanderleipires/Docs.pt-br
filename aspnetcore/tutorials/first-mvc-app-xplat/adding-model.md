@@ -14,6 +14,7 @@ ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/21/2018
+ms.locfileid: "30896524"
 ---
 # <a name="add-a-model-to-an-aspnet-core-mvc-app"></a><span data-ttu-id="f418c-103">Adicione um modelo a um aplicativo ASP.NET Core MVC</span><span class="sxs-lookup"><span data-stu-id="f418c-103">Add a model to an ASP.NET Core MVC app</span></span>
 

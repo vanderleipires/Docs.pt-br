@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891452"
 ---
 <a name="nested-master-pages-c"></a><span data-ttu-id="43c2f-103">Páginas mestras aninhadas (c#)</span><span class="sxs-lookup"><span data-stu-id="43c2f-103">Nested Master Pages (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891939"
 ---
 <a name="user-based-authorization-vb"></a><span data-ttu-id="5a580-103">Autorização baseada em usuário (VB)</span><span class="sxs-lookup"><span data-stu-id="5a580-103">User-Based Authorization (VB)</span></span>
 ====================

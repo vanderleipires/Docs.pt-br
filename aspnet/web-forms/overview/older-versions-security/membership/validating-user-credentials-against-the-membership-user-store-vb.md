@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891328"
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-vb"></a><span data-ttu-id="9747e-103">Validando credenciais de usuário no repositório de usuário de associação (VB)</span><span class="sxs-lookup"><span data-stu-id="9747e-103">Validating User Credentials Against the Membership User Store (VB)</span></span>
 ====================

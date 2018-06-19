@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894311"
 ---
 <a name="how-do-i-discover-application-changes-prior-to-deployment"></a><span data-ttu-id="5f8bb-104">[Como fazer:] Detecta alterações antes da implantação do aplicativo?</span><span class="sxs-lookup"><span data-stu-id="5f8bb-104">[How Do I:] Discover Application Changes Prior to Deployment?</span></span>
 ====================

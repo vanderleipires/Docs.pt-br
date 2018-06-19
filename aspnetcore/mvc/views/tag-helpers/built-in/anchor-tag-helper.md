@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899402"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a><span data-ttu-id="619fa-103">Auxiliar de Marca de Âncora no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="619fa-103">Anchor Tag Helper in ASP.NET Core</span></span>
 

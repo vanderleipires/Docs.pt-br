@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/guide-to-the-api/handling-connection-lifetime-events
-title: "Compreensão e tratamento de eventos de tempo de vida de Conexão no SignalR | Microsoft Docs"
+title: Compreensão e tratamento de eventos de tempo de vida de Conexão no SignalR | Microsoft Docs
 author: pfletcher
 description: Este artigo descreve como usar os eventos expostos pela API de Hubs.
 ms.author: aspnetcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036564"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a><span data-ttu-id="ee268-103">Compreensão e tratamento de eventos de tempo de vida de Conexão no SignalR</span><span class="sxs-lookup"><span data-stu-id="ee268-103">Understanding and Handling Connection Lifetime Events in SignalR</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33962678"
 ---
 # <a name="view-components-in-aspnet-core"></a><span data-ttu-id="0471e-103">Componentes de exibição no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="0471e-103">View components in ASP.NET Core</span></span>
 

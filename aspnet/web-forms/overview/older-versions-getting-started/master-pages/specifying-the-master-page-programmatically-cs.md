@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891146"
 ---
 <a name="specifying-the-master-page-programmatically-c"></a><span data-ttu-id="9c3f8-103">Especificando a página mestra programaticamente (c#)</span><span class="sxs-lookup"><span data-stu-id="9c3f8-103">Specifying the Master Page Programmatically (C#)</span></span>
 ====================

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29904554"
 ---
 # <a name="model-binding-in-aspnet-core"></a><span data-ttu-id="2e141-103">Associação de modelos no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="2e141-103">Model Binding in ASP.NET Core</span></span>
 

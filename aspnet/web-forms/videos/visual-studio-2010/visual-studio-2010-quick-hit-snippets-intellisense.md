@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896947"
 ---
 <a name="visual-studio-2010-quick-hit---snippets-intellisense"></a><span data-ttu-id="30254-103">Visual Studio 2010 "Rápido Hit" - trechos de código IntelliSense</span><span class="sxs-lookup"><span data-stu-id="30254-103">Visual Studio 2010 "Quick Hit" - Snippets IntelliSense</span></span>
 ====================

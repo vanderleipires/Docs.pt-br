@@ -1,7 +1,7 @@
 ---
-title: "Cenários de reconhecimento não DI para proteção de dados no ASP.NET Core"
+title: Cenários de reconhecimento não DI para proteção de dados no ASP.NET Core
 author: rick-anderson
-description: "Saiba como dar suporte a cenários de proteção de dados em que você não pode ou não quiser usar um serviço fornecido pela injeção de dependência."
+description: Saiba como dar suporte a cenários de proteção de dados em que você não pode ou não quiser usar um serviço fornecido pela injeção de dependência.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29727240"
 ---
 # <a name="non-di-aware-scenarios-for-data-protection-in-aspnet-core"></a><span data-ttu-id="47054-103">Cenários de reconhecimento não DI para proteção de dados no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="47054-103">Non-DI aware scenarios for Data Protection in ASP.NET Core</span></span>
 

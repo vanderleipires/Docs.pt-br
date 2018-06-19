@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893323"
 ---
 <a name="tailspin-spyworks---creating-and-using-the-popular-products-control"></a><span data-ttu-id="2a67a-103">Tailspin Spyworks - criando e usando o controle de produtos populares</span><span class="sxs-lookup"><span data-stu-id="2a67a-103">Tailspin Spyworks - Creating and Using the Popular Products Control</span></span>
 ====================

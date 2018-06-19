@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890496"
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a><span data-ttu-id="1603d-103">Escolhendo a abordagem certa para a implantação da Web</span><span class="sxs-lookup"><span data-stu-id="1603d-103">Choosing the Right Approach to Web Deployment</span></span>
 ====================

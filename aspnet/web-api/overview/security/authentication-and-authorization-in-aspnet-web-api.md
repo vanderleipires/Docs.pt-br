@@ -17,6 +17,7 @@ ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29726752"
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a><span data-ttu-id="33583-103">Autenticação e autorização na API da Web ASP.NET</span><span class="sxs-lookup"><span data-stu-id="33583-103">Authentication and Authorization in ASP.NET Web API</span></span>
 ====================

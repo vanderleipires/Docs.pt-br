@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881458"
 ---
 <a name="create-the-data-access-layer"></a><span data-ttu-id="6a6df-103">Criar camada de acesso a dados</span><span class="sxs-lookup"><span data-stu-id="6a6df-103">Create the Data Access Layer</span></span>
 ====================

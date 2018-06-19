@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896037"
 ---
 <a name="tailspin-spyworks---category-menu"></a><span data-ttu-id="20031-103">Tailspin Spyworks - Menu categoria</span><span class="sxs-lookup"><span data-stu-id="20031-103">Tailspin Spyworks - Category Menu</span></span>
 ====================

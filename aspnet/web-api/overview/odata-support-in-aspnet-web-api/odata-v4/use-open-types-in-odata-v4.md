@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29153266"
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a><span data-ttu-id="76c44-104">Abrir tipos no v4 do OData com a API da Web do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="76c44-104">Open Types in OData v4 with ASP.NET Web API</span></span>
 ====================

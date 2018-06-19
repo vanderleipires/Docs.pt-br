@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893271"
 ---
 <a name="using-the-load-test-agent"></a><span data-ttu-id="92cd8-104">Usando o agente de teste de carga</span><span class="sxs-lookup"><span data-stu-id="92cd8-104">Using the Load Test Agent</span></span>
 ====================

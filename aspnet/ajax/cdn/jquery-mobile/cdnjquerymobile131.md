@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071610"
 ---
 <a name="jquery-mobile-131-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="c3d91-102">jQuery Mobile 1.3.1 no Microsoft Ajax CDN</span><span class="sxs-lookup"><span data-stu-id="c3d91-102">jQuery Mobile 1.3.1 on the Microsoft Ajax CDN</span></span>
 ====================

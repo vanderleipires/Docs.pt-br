@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891861"
 ---
 <a name="batch-deleting-c"></a><span data-ttu-id="b601b-104">Lote excluindo (c#)</span><span class="sxs-lookup"><span data-stu-id="b601b-104">Batch Deleting (C#)</span></span>
 ====================

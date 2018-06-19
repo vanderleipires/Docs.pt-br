@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897952"
 ---
 <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a><span data-ttu-id="d7f1b-103">Introdução a páginas da Web ASP.NET - inserindo dados de banco de dados usando formulários</span><span class="sxs-lookup"><span data-stu-id="d7f1b-103">Introducing ASP.NET Web Pages - Entering Database Data by Using Forms</span></span>
 ====================

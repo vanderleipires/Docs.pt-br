@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29904745"
 ---
 # <a name="layout-in-aspnet-core"></a><span data-ttu-id="c3dfa-103">Layout no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="c3dfa-103">Layout in ASP.NET Core</span></span>
 

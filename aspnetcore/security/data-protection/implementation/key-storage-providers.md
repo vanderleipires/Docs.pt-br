@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077343"
 ---
 # <a name="key-storage-providers-in-aspnet-core"></a><span data-ttu-id="a9775-103">Provedores de armazenamento de chaves no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="a9775-103">Key storage providers in ASP.NET Core</span></span>
 

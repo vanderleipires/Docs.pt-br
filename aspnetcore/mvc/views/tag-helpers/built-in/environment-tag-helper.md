@@ -1,7 +1,7 @@
 ---
 title: Auxiliar de Marca de Ambiente no ASP.NET Core
 author: pkellner
-description: "Definição de Auxiliar de Marca de Ambiente do ASP.NET Core, incluindo todas as propriedades"
+description: Definição de Auxiliar de Marca de Ambiente do ASP.NET Core, incluindo todas as propriedades
 manager: wpickett
 ms.author: riande
 ms.date: 07/14/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28901178"
 ---
 # <a name="environment-tag-helper-in-aspnet-core"></a><span data-ttu-id="78dee-103">Auxiliar de Marca de Ambiente no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="78dee-103">Environment Tag Helper in ASP.NET Core</span></span>
 

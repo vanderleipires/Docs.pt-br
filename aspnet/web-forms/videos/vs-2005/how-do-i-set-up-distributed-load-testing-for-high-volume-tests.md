@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894383"
 ---
 <a name="how-do-i-set-up-distributed-load-testing-for-high-volume-tests"></a><span data-ttu-id="c5dc2-104">[Como fazer:] Configurar o teste de carga distribuída para testes de alto Volume?</span><span class="sxs-lookup"><span data-stu-id="c5dc2-104">[How Do I:] Set Up Distributed Load Testing for High Volume Tests?</span></span>
 ====================

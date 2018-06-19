@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072256"
 ---
 # <a name="image-tag-helper-in-aspnet-core"></a><span data-ttu-id="f90f1-103">Auxiliar de Marca de Imagem no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="f90f1-103">Image Tag Helper in ASP.NET Core</span></span>
 

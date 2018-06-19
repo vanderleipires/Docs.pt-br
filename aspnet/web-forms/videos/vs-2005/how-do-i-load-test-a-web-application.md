@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893993"
 ---
 <a name="how-do-i-load-test-a-web-application"></a><span data-ttu-id="dba09-105">[Como fazer:] Um aplicativo Web de teste de carga?</span><span class="sxs-lookup"><span data-stu-id="dba09-105">[How Do I:] Load Test a Web Application?</span></span>
 ====================

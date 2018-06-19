@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076627"
 ---
 # <a name="view-based-authorization-in-aspnet-core-mvc"></a><span data-ttu-id="15f01-103">Autorização baseada em modo de exibição no ASP.NET MVC de núcleo</span><span class="sxs-lookup"><span data-stu-id="15f01-103">View-based authorization in ASP.NET Core MVC</span></span>
 

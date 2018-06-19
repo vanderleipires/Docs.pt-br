@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891962"
 ---
 <a name="creating-a-data-access-layer-vb"></a><span data-ttu-id="f86e3-103">Criando uma camada de acesso a dados (VB)</span><span class="sxs-lookup"><span data-stu-id="f86e3-103">Creating a Data Access Layer (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889950"
 ---
 <a name="precompiling-your-website-vb"></a><span data-ttu-id="f868c-104">Pré-compilação seu site (VB)</span><span class="sxs-lookup"><span data-stu-id="f868c-104">Precompiling Your Website (VB)</span></span>
 ====================

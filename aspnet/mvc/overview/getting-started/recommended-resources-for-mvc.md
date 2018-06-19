@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306709"
 ---
 <a name="mvc-recommended-resources"></a><span data-ttu-id="0200d-104">MVC recomendado recursos</span><span class="sxs-lookup"><span data-stu-id="0200d-104">MVC Recommended Resources</span></span>
 ====================

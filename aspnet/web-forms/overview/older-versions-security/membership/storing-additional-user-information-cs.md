@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30892160"
 ---
 <a name="storing-additional-user-information-c"></a><span data-ttu-id="d03aa-104">Armazenando informações de usuário adicionais (c#)</span><span class="sxs-lookup"><span data-stu-id="d03aa-104">Storing Additional User Information (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893928"
 ---
 <a name="adding-social-networking-to-your-website"></a><span data-ttu-id="dea57-103">Adicionando redes sociais para seu site</span><span class="sxs-lookup"><span data-stu-id="dea57-103">Adding Social Networking to Your Website</span></span>
 ====================

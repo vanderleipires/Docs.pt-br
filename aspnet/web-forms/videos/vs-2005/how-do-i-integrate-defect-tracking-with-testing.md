@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895770"
 ---
 <a name="how-do-i-integrate-defect-tracking-with-testing"></a><span data-ttu-id="33b0f-104">[Como fazer:] Integrar o controle com testes de defeito?</span><span class="sxs-lookup"><span data-stu-id="33b0f-104">[How Do I:] Integrate Defect Tracking with Testing?</span></span>
 ====================

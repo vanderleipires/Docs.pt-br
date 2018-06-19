@@ -1,7 +1,7 @@
 ---
 title: Primitivos no ASP.NET Core
 author: guardrex
-description: "Descubra artigos sobre blocos de construção do ASP.NET Core, compartilhados por extensões de estrutura que você pode usar em seu próprio código."
+description: Descubra artigos sobre blocos de construção do ASP.NET Core, compartilhados por extensões de estrutura que você pode usar em seu próprio código.
 manager: wpickett
 ms.author: riande
 ms.date: 10/28/2017
@@ -14,6 +14,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882705"
 ---
 # <a name="primitives-in-aspnet-core"></a><span data-ttu-id="41ad7-103">Primitivos no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="41ad7-103">Primitives in ASP.NET Core</span></span>
 

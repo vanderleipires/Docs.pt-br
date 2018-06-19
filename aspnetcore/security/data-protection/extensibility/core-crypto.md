@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896816"
 ---
 # <a name="core-cryptography-extensibility-in-aspnet-core"></a><span data-ttu-id="3232a-103">Extensibilidade da criptografia de núcleo no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="3232a-103">Core cryptography extensibility in ASP.NET Core</span></span>
 

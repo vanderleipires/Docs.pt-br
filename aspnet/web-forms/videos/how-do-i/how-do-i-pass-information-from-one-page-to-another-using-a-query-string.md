@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string
-title: "[Como fazer:] Passar informações de uma página para outra usando uma cadeia de caracteres de consulta | Microsoft Docs"
+title: '[Como fazer:] Passar informações de uma página para outra usando uma cadeia de caracteres de consulta | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo, Chris Pels mostrará como as informações podem ser passadas de uma página para outra usando uma cadeia de caracteres de consulta. Primeiro, consulte como construir uma cadeia de caracteres de consulta em..."
+description: Neste vídeo, Chris Pels mostrará como as informações podem ser passadas de uma página para outra usando uma cadeia de caracteres de consulta. Primeiro, consulte como construir uma cadeia de caracteres de consulta em...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521955"
 ---
 <a name="how-do-i-pass-information-from-one-page-to-another-using-a-query-string"></a><span data-ttu-id="fba0d-104">[Como fazer:] Passar informações de uma página para outra usando uma cadeia de caracteres de consulta</span><span class="sxs-lookup"><span data-stu-id="fba0d-104">[How Do I:] Pass Information From One Page to Another Using a Query String</span></span>
 ====================

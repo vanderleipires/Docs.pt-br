@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890015"
 ---
 <a name="enterprise-web-deployment-scenario-overview"></a><span data-ttu-id="3a436-103">Implantação da Web de empresa: Visão geral do cenário</span><span class="sxs-lookup"><span data-stu-id="3a436-103">Enterprise Web Deployment: Scenario Overview</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892303"
 ---
 <a name="building-and-packaging-web-application-projects"></a><span data-ttu-id="deec9-103">Criação e a embalagem de projetos de aplicativo Web</span><span class="sxs-lookup"><span data-stu-id="deec9-103">Building and Packaging Web Application Projects</span></span>
 ====================

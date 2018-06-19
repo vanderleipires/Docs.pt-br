@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30070440"
 ---
 <a name="jqueryvalidate-version-18"></a><span data-ttu-id="fdd25-102">jQuery.Validate versão 1.8</span><span class="sxs-lookup"><span data-stu-id="fdd25-102">jquery.validate version 1.8</span></span>
 ====================

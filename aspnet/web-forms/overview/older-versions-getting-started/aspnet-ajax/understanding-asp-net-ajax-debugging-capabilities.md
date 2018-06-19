@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890925"
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a><span data-ttu-id="4f281-104">Noções básicas sobre os recursos de depuração do ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="4f281-104">Understanding ASP.NET AJAX Debugging Capabilities</span></span>
 ====================

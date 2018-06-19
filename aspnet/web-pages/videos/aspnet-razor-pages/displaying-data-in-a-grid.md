@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895983"
 ---
 <a name="displaying-data-in-a-grid"></a><span data-ttu-id="8d57d-103">Exibindo dados em uma grade</span><span class="sxs-lookup"><span data-stu-id="8d57d-103">Displaying Data in a Grid</span></span>
 ====================

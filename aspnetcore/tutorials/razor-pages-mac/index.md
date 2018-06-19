@@ -15,6 +15,7 @@ ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483900"
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core-on-macos-with-visual-studio-for-mac"></a><span data-ttu-id="4bff3-103">Criar um aplicativo Web de Páginas do Razor com o ASP.NET Core no macOS com o Visual Studio para Mac</span><span class="sxs-lookup"><span data-stu-id="4bff3-103">Create a Razor Pages web app with ASP.NET Core on macOS with Visual Studio for Mac</span></span>
 

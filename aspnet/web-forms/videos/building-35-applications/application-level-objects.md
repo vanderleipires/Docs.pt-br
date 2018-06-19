@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/application-level-objects
-title: "Objetos de nível de aplicativo | Microsoft Docs"
+title: Objetos de nível de aplicativo | Microsoft Docs
 author: JoeStagner
-description: "Este vídeo apresentará objetos e eventos em nível de aplicativo e explica o conceito de &quot;escopo&quot; relacionada a eles."
+description: Este vídeo apresentará objetos e eventos em nível de aplicativo e explica o conceito de &quot;escopo&quot; relacionada a eles.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521555"
 ---
 <a name="application-level-objects"></a><span data-ttu-id="5710b-103">Objetos de nível de aplicativo</span><span class="sxs-lookup"><span data-stu-id="5710b-103">Application Level Objects</span></span>
 ====================

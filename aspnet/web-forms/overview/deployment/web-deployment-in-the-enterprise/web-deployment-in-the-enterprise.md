@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890457"
 ---
 <a name="web-deployment-in-the-enterprise"></a><span data-ttu-id="30e27-103">Implantação da Web da empresa</span><span class="sxs-lookup"><span data-stu-id="30e27-103">Web Deployment in the Enterprise</span></span>
 ====================

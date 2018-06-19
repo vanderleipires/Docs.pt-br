@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890997"
 ---
 <a name="recovering-and-changing-passwords-c"></a><span data-ttu-id="7cb6f-104">Recuperando e alterar senhas (c#)</span><span class="sxs-lookup"><span data-stu-id="7cb6f-104">Recovering and Changing Passwords (C#)</span></span>
 ====================

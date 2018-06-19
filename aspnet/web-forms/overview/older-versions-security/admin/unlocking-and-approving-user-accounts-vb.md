@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891848"
 ---
 <a name="unlocking-and-approving-user-accounts-vb"></a><span data-ttu-id="01f17-104">Contas de usuário do desbloqueio e aprovação (VB)</span><span class="sxs-lookup"><span data-stu-id="01f17-104">Unlocking and Approving User Accounts (VB)</span></span>
 ====================

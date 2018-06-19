@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896083"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax"></a><span data-ttu-id="be222-103">Introdução a O ASP.NET que programa usando a sintaxe razor</span><span class="sxs-lookup"><span data-stu-id="be222-103">Introduction to ASP.NET Web Programming Using the Razor Syntax</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892030"
 ---
 <a name="an-overview-of-forms-authentication-c"></a><span data-ttu-id="32f78-103">Uma visão geral da autenticação de formulários (c#)</span><span class="sxs-lookup"><span data-stu-id="32f78-103">An Overview of Forms Authentication (C#)</span></span>
 ====================

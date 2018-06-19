@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899717"
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a><span data-ttu-id="28591-105">Exibindo dados em um gráfico com páginas da Web do ASP.NET (Razor)</span><span class="sxs-lookup"><span data-stu-id="28591-105">Displaying Data in a Chart with ASP.NET Web Pages (Razor)</span></span>
 ====================

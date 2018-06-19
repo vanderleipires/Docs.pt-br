@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28886011"
 ---
 <a name="configuration-and-instrumentation"></a><span data-ttu-id="22a51-104">Configuração e instrumentação</span><span class="sxs-lookup"><span data-stu-id="22a51-104">Configuration and Instrumentation</span></span>
 ====================

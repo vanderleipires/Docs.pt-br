@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895292"
 ---
 <a name="how-do-i-deploy-a-web-application-during-a-team-build"></a><span data-ttu-id="aeae6-105">[Como fazer:] Implantar um aplicativo Web durante uma compilação de equipe?</span><span class="sxs-lookup"><span data-stu-id="aeae6-105">[How Do I:] Deploy a Web Application during a Team Build?</span></span>
 ====================

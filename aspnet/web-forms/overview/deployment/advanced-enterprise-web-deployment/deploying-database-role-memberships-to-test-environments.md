@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892550"
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a><span data-ttu-id="ebbb5-104">Implantação de associações de função de banco de dados em ambientes de teste</span><span class="sxs-lookup"><span data-stu-id="ebbb5-104">Deploying Database Role Memberships to Test Environments</span></span>
 ====================

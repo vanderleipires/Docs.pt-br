@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892472"
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a><span data-ttu-id="93a3f-103">Implantação de bancos de dados de associação em ambientes corporativos</span><span class="sxs-lookup"><span data-stu-id="93a3f-103">Deploying Membership Databases to Enterprise Environments</span></span>
 ====================

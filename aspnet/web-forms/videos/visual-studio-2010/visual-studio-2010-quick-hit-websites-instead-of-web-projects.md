@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895816"
 ---
 <a name="visual-studio-2010-quick-hit---websites-instead-of-web-projects"></a><span data-ttu-id="fc26a-103">Visual Studio 2010 "Rápido Hit" - sites, em vez de projetos Web</span><span class="sxs-lookup"><span data-stu-id="fc26a-103">Visual Studio 2010 "Quick Hit" - Websites Instead of Web Projects</span></span>
 ====================

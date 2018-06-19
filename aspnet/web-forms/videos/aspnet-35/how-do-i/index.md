@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/how-do-i/index
-title: "Como faço para | Microsoft Docs"
+title: Como faço para | Microsoft Docs
 author: rick-anderson
-description: "Esta série de vídeos de várias parte mostram como tirar proveito dos novos recursos no ASP.NET 3.5 e Visual Studio 2008."
+description: Esta série de vídeos de várias parte mostram como tirar proveito dos novos recursos no ASP.NET 3.5 e Visual Studio 2008.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 0556f497692e1c9b2c871512b9467b7686c62a4a
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520635"
 ---
 <a name="how-do-i"></a><span data-ttu-id="41938-103">Como fazer</span><span class="sxs-lookup"><span data-stu-id="41938-103">How Do I</span></span>
 ====================

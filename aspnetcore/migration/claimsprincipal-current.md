@@ -12,8 +12,10 @@ ms.topic: article
 uid: migration/claimsprincipal-current
 ms.openlocfilehash: ea43d17e76380baf57cd9debbc508e8812cfa4a6
 ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851528"
 ---
 # <a name="migrate-from-claimsprincipalcurrent"></a><span data-ttu-id="29f2c-103">Migrar do ClaimsPrincipal.Current</span><span class="sxs-lookup"><span data-stu-id="29f2c-103">Migrate from ClaimsPrincipal.Current</span></span>
 

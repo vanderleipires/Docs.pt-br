@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889911"
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a><span data-ttu-id="9dda2-103">Determinar quais arquivos precisam ser implantados (VB)</span><span class="sxs-lookup"><span data-stu-id="9dda2-103">Determining What Files Need to Be Deployed (VB)</span></span>
 ====================

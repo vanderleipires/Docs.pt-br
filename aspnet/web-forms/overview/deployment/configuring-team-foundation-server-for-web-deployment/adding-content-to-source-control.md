@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890428"
 ---
 <a name="adding-content-to-source-control"></a><span data-ttu-id="b4c82-104">Adicionar conteúdo ao controle de origem</span><span class="sxs-lookup"><span data-stu-id="b4c82-104">Adding Content to Source Control</span></span>
 ====================

@@ -16,6 +16,7 @@ ms.sourcegitcommit: c867d7427bd4a88a78b2322e156367733b532730
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33923349"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a><span data-ttu-id="93e8a-103">Introdução ao ASP.NET Core SignalR</span><span class="sxs-lookup"><span data-stu-id="93e8a-103">Introduction to ASP.NET Core SignalR</span></span>
 

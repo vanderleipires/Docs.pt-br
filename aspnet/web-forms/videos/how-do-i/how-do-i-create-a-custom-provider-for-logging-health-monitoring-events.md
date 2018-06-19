@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524965"
 ---
 <a name="how-do-i-create-a-custom-provider-for-logging-health-monitoring-events"></a><span data-ttu-id="f662b-104">[Como fazer:] Criar um provedor personalizado para o log de eventos de monitoramento de integridade</span><span class="sxs-lookup"><span data-stu-id="f662b-104">[How Do I:] Create a Custom Provider for Logging Health Monitoring Events</span></span>
 ====================
