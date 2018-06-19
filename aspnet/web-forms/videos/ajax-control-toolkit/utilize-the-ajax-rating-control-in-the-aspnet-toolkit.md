@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885787"
 ---
 <a name="utilize-the-ajax-rating-control-in-the-aspnet-toolkit"></a>Utilizar o AJAX controle de classificação no Kit de ferramentas do ASP.NET
 ====================

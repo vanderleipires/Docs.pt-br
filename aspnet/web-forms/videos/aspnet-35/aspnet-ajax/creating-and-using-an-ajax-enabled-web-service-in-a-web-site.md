@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890158"
 ---
 <a name="creating-and-using-an-ajax-enabled-web-service-in-a-web-site"></a>Criando e usando um serviço da Web habilitado para AJAX em um Site da Web
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882371"
 ---
 <a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a>Duas técnicas simples para o disparo de atualizações para atualizar os painéis
 ====================

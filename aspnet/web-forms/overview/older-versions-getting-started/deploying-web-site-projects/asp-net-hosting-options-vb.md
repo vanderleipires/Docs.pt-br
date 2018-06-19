@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886947"
 ---
 <a name="aspnet-hosting-options-vb"></a>Opções de hospedagem ASP.NET (VB)
 ====================

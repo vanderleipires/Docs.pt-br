@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879719"
 ---
 <a name="aspnet-mvc-storefront-part-12-mocking"></a>O ASP.NET MVC vitrine parte 12: fictícias
 ====================

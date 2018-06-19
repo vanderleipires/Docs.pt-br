@@ -2,7 +2,7 @@
 uid: web-forms/videos/building-35-applications/login-controls
 title: Controles de logon | Microsoft Docs
 author: JoeStagner
-description: "Este vídeo Joe apresentará você a associação do ASP.NET, mostrando como usar alguns dos controles de logon do ASP.NET."
+description: Este vídeo Joe apresentará você a associação do ASP.NET, mostrando como usar alguns dos controles de logon do ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/04/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520915"
 ---
 <a name="login-controls"></a>Controles de logon
 ====================

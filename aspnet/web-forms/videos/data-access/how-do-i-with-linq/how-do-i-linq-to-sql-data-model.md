@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880239"
 ---
 <a name="how-do-i-linq-to-sql-data-model"></a>[Como fazer:] O LINQ to SQL: modelo de dados
 ====================

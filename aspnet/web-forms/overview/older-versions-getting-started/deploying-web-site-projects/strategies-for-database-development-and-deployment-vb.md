@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889586"
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>Estratégias de desenvolvimento de banco de dados e implantação (VB)
 ====================

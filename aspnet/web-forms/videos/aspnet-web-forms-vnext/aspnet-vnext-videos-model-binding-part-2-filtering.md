@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884383"
 ---
 <a name="aspnet-vnext-videos-model-binding-part-2---filtering"></a>ASP.NET vNext vídeos: modelo de associação parte 2: filtragem
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886723"
 ---
 <a name="how-to-use-attribute-validation-in-aspnet-dynamic-data-applications"></a>Como usar o atributo de validação em aplicativos de dados dinâmicos do ASP.NET
 ====================

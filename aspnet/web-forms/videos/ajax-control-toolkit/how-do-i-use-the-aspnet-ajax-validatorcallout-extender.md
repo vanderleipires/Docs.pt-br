@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884035"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-validatorcallout-extender"></a>[Como fazer:] Usar o extensor ValidatorCallout do ASP.NET AJAX?
 ====================

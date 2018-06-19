@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886128"
 ---
 <a name="aspnet-4-quick-hit--tableless-menu-control"></a>O ASP.NET 4 "Hit rápido –" controle de Menu Tableless
 ====================

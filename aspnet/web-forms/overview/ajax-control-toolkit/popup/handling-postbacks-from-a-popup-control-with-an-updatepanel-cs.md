@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879628"
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a>Tratamento de postagens de um controle pop-up com um UpdatePanel (c#)
 ====================

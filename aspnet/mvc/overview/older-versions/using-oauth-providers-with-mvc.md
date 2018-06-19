@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions/using-oauth-providers-with-mvc
 title: Usando provedores OAuth com MVC 4 | Microsoft Docs
 author: tfitzmac
-description: "Este tutorial mostra como criar um aplicativo web ASP.NET MVC 4 que permite que os usuários façam logon com as credenciais de um provedor externo, como Facebo..."
+description: Este tutorial mostra como criar um aplicativo web ASP.NET MVC 4 que permite que os usuários façam logon com as credenciais de um provedor externo, como Facebo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28033561"
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>Usando provedores OAuth com MVC 4
 ====================
