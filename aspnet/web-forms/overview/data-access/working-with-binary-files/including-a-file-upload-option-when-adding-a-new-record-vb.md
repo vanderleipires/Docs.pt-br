@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888647"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>Incluindo uma opção de carregamento de arquivo ao adicionar um novo registro (VB)
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/14-analyzing-traffic
-title: "Informações de visitante (análise) do controle de uma ASP.NET Web Pages (Razor) Site | Microsoft Docs"
+title: Informações de visitante (análise) do controle de uma ASP.NET Web Pages (Razor) Site | Microsoft Docs
 author: tfitzmac
-description: "Depois que você tiver chegado a seu site for, você talvez queira analisar o tráfego do site."
+description: Depois que você tiver chegado a seu site for, você talvez queira analisar o tráfego do site.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528755"
 ---
 <a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a>Informações de controle visitante (análise) de um Site ASP.NET da páginas (Razor)
 ====================

@@ -2,7 +2,7 @@
 uid: web-pages/overview/data/index
 title: Trabalhando com dados | Microsoft Docs
 author: rick-anderson
-description: "Como trabalhar com bancos de dados e arquivos em páginas da Web e como exibir e atualizar dados."
+description: Como trabalhar com bancos de dados e arquivos em páginas da Web e como exibir e atualizar dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/data
 msc.type: chapter
 ms.openlocfilehash: 99893092b5f6a4cc7112795b3ff1541a653682ea
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528535"
 ---
 <a name="working-with-data"></a>Trabalhando com dados
 ====================

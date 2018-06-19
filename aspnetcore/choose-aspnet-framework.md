@@ -14,6 +14,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094429"
 ---
 # <a name="choose-between-aspnet-and-aspnet-core"></a>Escolher entre o ASP.NET e o ASP.NET Core
 

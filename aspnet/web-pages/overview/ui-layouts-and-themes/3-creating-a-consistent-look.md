@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
-title: "Criar um Layout consistente da Web ASP.NET de páginas de Sites (Razor) | Microsoft Docs"
+title: Criar um Layout consistente da Web ASP.NET de páginas de Sites (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Para torná-lo mais eficiente para criar páginas da web para seu site, você pode criar reutilizáveis blocos de conteúdo (como cabeçalhos e rodapés) para o site e você c..."
+description: Para torná-lo mais eficiente para criar páginas da web para seu site, você pode criar reutilizáveis blocos de conteúdo (como cabeçalhos e rodapés) para o site e você c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530235"
 ---
 <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a>Criar um Layout consistente em Sites de páginas (Razor) da Web do ASP.NET
 ====================
