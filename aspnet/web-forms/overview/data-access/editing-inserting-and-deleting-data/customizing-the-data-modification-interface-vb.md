@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888624"
 ---
 <a name="customizing-the-data-modification-interface-vb"></a><span data-ttu-id="ee2ca-103">Personalizando a Interface de modificação de dados (VB)</span><span class="sxs-lookup"><span data-stu-id="ee2ca-103">Customizing the Data Modification Interface (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876989"
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-vb"></a><span data-ttu-id="f3b48-105">Protegendo cadeias de caracteres de Conexão e outras informações de configuração (VB)</span><span class="sxs-lookup"><span data-stu-id="f3b48-105">Protecting Connection Strings and Other Configuration Information (VB)</span></span>
 ====================

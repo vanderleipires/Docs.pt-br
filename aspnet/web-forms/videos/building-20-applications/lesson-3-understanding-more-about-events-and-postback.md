@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886141"
 ---
 <a name="lesson-3--understanding-more-about-events-and-postback"></a><span data-ttu-id="b8948-103">[Lição 3:]  Noções básicas sobre mais informações sobre eventos e Postback</span><span class="sxs-lookup"><span data-stu-id="b8948-103">[Lesson 3:]  Understanding More About Events and Postback</span></span>
 ====================

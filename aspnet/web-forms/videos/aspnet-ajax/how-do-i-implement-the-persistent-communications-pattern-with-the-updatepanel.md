@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886388"
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a><span data-ttu-id="2c57f-104">[Como fazer:] Implementar o padrão de comunicações persistente com o UpdatePanel?</span><span class="sxs-lookup"><span data-stu-id="2c57f-104">[How Do I:] Implement the Persistent Communications Pattern with the UpdatePanel?</span></span>
 ====================

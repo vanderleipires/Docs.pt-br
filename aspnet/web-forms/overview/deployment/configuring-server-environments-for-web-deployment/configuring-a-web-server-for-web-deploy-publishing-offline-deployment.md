@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884022"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a><span data-ttu-id="c2c61-104">Configurando um servidor Web para publicação (implantação off-line) de implantação da Web</span><span class="sxs-lookup"><span data-stu-id="c2c61-104">Configuring a Web Server for Web Deploy Publishing (Offline Deployment)</span></span>
 ====================

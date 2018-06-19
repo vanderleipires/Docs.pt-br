@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895224"
 ---
 <a name="more-structured-query-language"></a><span data-ttu-id="a422e-103">Mais Structured Query Language</span><span class="sxs-lookup"><span data-stu-id="a422e-103">More Structured Query Language</span></span>
 ====================

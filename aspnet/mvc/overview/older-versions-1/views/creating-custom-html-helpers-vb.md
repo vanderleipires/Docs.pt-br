@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871500"
 ---
 <a name="creating-custom-html-helpers-vb"></a><span data-ttu-id="019aa-104">Criando auxiliares HTML personalizado (VB)</span><span class="sxs-lookup"><span data-stu-id="019aa-104">Creating Custom HTML Helpers (VB)</span></span>
 ====================

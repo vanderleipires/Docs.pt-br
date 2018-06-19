@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874844"
 ---
 <a name="part-3-views-and-viewmodels"></a><span data-ttu-id="9b2fd-104">Parte 3: Exibições e ViewModels</span><span class="sxs-lookup"><span data-stu-id="9b2fd-104">Part 3: Views and ViewModels</span></span>
 ====================

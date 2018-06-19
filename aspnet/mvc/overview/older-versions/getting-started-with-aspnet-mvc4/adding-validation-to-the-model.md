@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874542"
 ---
 <a name="adding-validation-to-the-model"></a><span data-ttu-id="abe59-104">Adicionando validação para o modelo</span><span class="sxs-lookup"><span data-stu-id="abe59-104">Adding Validation to the Model</span></span>
 ====================
