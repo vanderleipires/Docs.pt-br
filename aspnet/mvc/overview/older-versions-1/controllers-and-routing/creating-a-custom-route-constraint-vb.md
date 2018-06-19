@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867493"
 ---
 <a name="creating-a-custom-route-constraint-vb"></a><span data-ttu-id="f87b8-104">Criar uma restrição de rota personalizados (VB)</span><span class="sxs-lookup"><span data-stu-id="f87b8-104">Creating a Custom Route Constraint (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26501005"
 ---
 <a name="understanding-models-views-and-controllers-c"></a><span data-ttu-id="838df-104">Noções básicas sobre modelos, exibições e controladores (c#)</span><span class="sxs-lookup"><span data-stu-id="838df-104">Understanding Models, Views, and Controllers (C#)</span></span>
 ====================

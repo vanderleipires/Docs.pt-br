@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870369"
 ---
 <a name="intro-to-aspnet-mvc-3-vb"></a><span data-ttu-id="f3654-103">Introdução ao ASP.NET MVC 3 (VB)</span><span class="sxs-lookup"><span data-stu-id="f3654-103">Intro to ASP.NET MVC 3 (VB)</span></span>
 ====================

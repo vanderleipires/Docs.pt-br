@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869719"
 ---
 <a name="creating-custom-html-helpers-c"></a><span data-ttu-id="9206e-104">Criando auxiliares HTML personalizados (c#)</span><span class="sxs-lookup"><span data-stu-id="9206e-104">Creating Custom HTML Helpers (C#)</span></span>
 ====================

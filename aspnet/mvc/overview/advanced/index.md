@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/advanced/index
-title: "Tópicos avançados do ASP.NET MVC | Microsoft Docs"
+title: Tópicos avançados do ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: "Tópicos avançados de programação ASP.NET MVC, incluindo internacionalização, extensibilidade e a acessibilidade."
+description: Tópicos avançados de programação ASP.NET MVC, incluindo internacionalização, extensibilidade e a acessibilidade.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/advanced
 msc.type: chapter
 ms.openlocfilehash: 5d3a39f8420abced04a96b7e3ed53590cde5ab75
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26498145"
 ---
 <a name="aspnet-mvc-advanced-topics"></a><span data-ttu-id="93300-103">Tópicos avançados do ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="93300-103">ASP.NET MVC Advanced Topics</span></span>
 ====================

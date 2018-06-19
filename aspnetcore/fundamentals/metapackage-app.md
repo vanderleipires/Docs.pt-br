@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306615"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a><span data-ttu-id="14185-103">Metapacote Microsoft.AspNetCore.App para ASP.NET Core 2.1</span><span class="sxs-lookup"><span data-stu-id="14185-103">Microsoft.AspNetCore.App metapackage for ASP.NET Core 2.1</span></span>
 

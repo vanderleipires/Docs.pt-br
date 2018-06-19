@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
-title: "Criando e usando um auxiliar em uma Web ASP.NET páginas Site (Razor) | Microsoft Docs"
+title: Criando e usando um auxiliar em uma Web ASP.NET páginas Site (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Este artigo descreve como criar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um auxiliar é um componente reutilizável que inclui o código e a marcação para o desempenho..."
+description: Este artigo descreve como criar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um auxiliar é um componente reutilizável que inclui o código e a marcação para o desempenho...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529995"
 ---
 <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="39d0b-104">Criando e usando um auxiliar em um Site de páginas da Web (Razor) do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="39d0b-104">Creating and Using a Helper in an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

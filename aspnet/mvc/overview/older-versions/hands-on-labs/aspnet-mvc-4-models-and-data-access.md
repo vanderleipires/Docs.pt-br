@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306732"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a><span data-ttu-id="b09ea-104">Acesso a dados e modelos do ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="b09ea-104">ASP.NET MVC 4 Models and Data Access</span></span>
 

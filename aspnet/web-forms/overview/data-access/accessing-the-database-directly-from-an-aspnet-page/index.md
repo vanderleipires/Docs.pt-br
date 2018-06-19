@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/index
-title: "Acessando o banco de dados diretamente de uma página ASP.NET | Microsoft Docs"
+title: Acessando o banco de dados diretamente de uma página ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Esses tutoriais mostram como usar o controle SqlDataSource para consultar o banco de dados diretamente quando não precisar de uma separação estrita de apresentação de dados..."
+description: Esses tutoriais mostram como usar o controle SqlDataSource para consultar o banco de dados diretamente quando não precisar de uma separação estrita de apresentação de dados...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-f
 msc.type: chapter
 ms.openlocfilehash: ec6474ccfd2aadc76dc21596fa1e4a5dc7bf01f8
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26511715"
 ---
 <a name="accessing-the-database-directly-from-an-aspnet-page"></a><span data-ttu-id="888c2-103">Acessando o banco de dados diretamente de uma página ASP.NET</span><span class="sxs-lookup"><span data-stu-id="888c2-103">Accessing the Database Directly from an ASP.NET Page</span></span>
 ====================

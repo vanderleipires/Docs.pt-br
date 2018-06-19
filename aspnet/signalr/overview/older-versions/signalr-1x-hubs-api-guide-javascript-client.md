@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036915"
 ---
 <a name="signalr-1x-hubs-api-guide---javascript-client"></a><span data-ttu-id="cf5e3-103">Guia de API de Hubs do SignalR 1. x - cliente JavaScript</span><span class="sxs-lookup"><span data-stu-id="cf5e3-103">SignalR 1.x Hubs API Guide - JavaScript Client</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884776"
 ---
 <a name="how-do-i-use-the-conditional-updatemode-of-the-updatepanel"></a><span data-ttu-id="0914e-105">[Como fazer:] Use o UpdateMode condicional do UpdatePanel?</span><span class="sxs-lookup"><span data-stu-id="0914e-105">[How Do I:] Use the Conditional UpdateMode of the UpdatePanel?</span></span>
 ====================

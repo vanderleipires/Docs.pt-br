@@ -17,6 +17,7 @@ ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 12/01/2017
+ms.locfileid: "26536075"
 ---
 <a name="using-web-api-with-aspnet-web-forms"></a><span data-ttu-id="18256-102">Usando a API da Web com Web Forms do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="18256-102">Using Web API with ASP.NET Web Forms</span></span>
 ====================

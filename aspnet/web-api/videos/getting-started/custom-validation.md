@@ -1,8 +1,8 @@
 ---
 uid: web-api/videos/getting-started/custom-validation
-title: "ASP.NET Web API, parte 5: Validação personalizada | Microsoft Docs"
+title: 'ASP.NET Web API, parte 5: Validação personalizada | Microsoft Docs'
 author: jongalloway
-description: "Observação: Este vídeo contém informações de uma versão de pré-lançamento do ASP.NET Web API"
+description: 'Observação: Este vídeo contém informações de uma versão de pré-lançamento do ASP.NET Web API'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509005"
 ---
 <a name="aspnet-web-api-part-5-custom-validation"></a><span data-ttu-id="2b9b0-103">ASP.NET Web API, parte 5: Validação personalizada</span><span class="sxs-lookup"><span data-stu-id="2b9b0-103">ASP.NET Web API, Part 5: Custom Validation</span></span>
 ====================

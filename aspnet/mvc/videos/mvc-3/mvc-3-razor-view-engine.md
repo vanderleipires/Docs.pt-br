@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-3/mvc-3-razor-view-engine
-title: "O MVC 3 - mecanismo de exibição Razor | Microsoft Docs"
+title: O MVC 3 - mecanismo de exibição Razor | Microsoft Docs
 author: jongalloway
-description: "Neste vídeo, você aprenderá os conceitos básicos do novo mecanismo de exibição do Razor incluídos no ASP.NET MVC 3."
+description: Neste vídeo, você aprenderá os conceitos básicos do novo mecanismo de exibição do Razor incluídos no ASP.NET MVC 3.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503815"
 ---
 <a name="mvc-3---razor-view-engine"></a><span data-ttu-id="f4309-103">3 - mecanismo de exibição Razor do MVC</span><span class="sxs-lookup"><span data-stu-id="f4309-103">MVC 3 - Razor View Engine</span></span>
 ====================

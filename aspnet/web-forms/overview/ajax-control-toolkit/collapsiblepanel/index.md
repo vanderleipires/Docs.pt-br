@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/collapsiblepanel/index
 title: CollapsiblePanel | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial mostra como usar o controle CollapsiblePanel para permitir que os usuários expandam e recolham áreas da página."
+description: Este tutorial mostra como usar o controle CollapsiblePanel para permitir que os usuários expandam e recolham áreas da página.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel
 msc.type: chapter
 ms.openlocfilehash: eb511e4c0f126fc54aad7b64473bd40eccf335a6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509335"
 ---
 <a name="collapsiblepanel"></a><span data-ttu-id="099b4-103">CollapsiblePanel</span><span class="sxs-lookup"><span data-stu-id="099b4-103">CollapsiblePanel</span></span>
 ====================

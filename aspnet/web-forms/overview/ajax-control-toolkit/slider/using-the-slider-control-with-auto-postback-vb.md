@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879264"
 ---
 <a name="using-the-slider-control-with-auto-postback-vb"></a><span data-ttu-id="09fb8-104">Usando o controle deslizante com Postback automático (VB)</span><span class="sxs-lookup"><span data-stu-id="09fb8-104">Using the Slider Control With Auto-Postback (VB)</span></span>
 ====================

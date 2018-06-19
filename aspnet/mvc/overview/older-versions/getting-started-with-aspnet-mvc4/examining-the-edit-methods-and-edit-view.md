@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875039"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a><span data-ttu-id="d2f34-104">Examinando os métodos de edição e exibição de edição</span><span class="sxs-lookup"><span data-stu-id="d2f34-104">Examining the Edit Methods and Edit View</span></span>
 ====================

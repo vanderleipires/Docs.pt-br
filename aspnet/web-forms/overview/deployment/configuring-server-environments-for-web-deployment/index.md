@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/index
-title: "O ASP.NET 4 - Enterprise implantação série 2 Configurando servidores | Microsoft Docs"
+title: O ASP.NET 4 - Enterprise implantação série 2 Configurando servidores | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial mostra como configurar ambientes de servidor para suporte de um clique ou automatizado, implantação de site da Web e publicação em vários cenário diferente..."
+description: Este tutorial mostra como configurar ambientes de servidor para suporte de um clique ou automatizado, implantação de site da Web e publicação em vários cenário diferente...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-fo
 msc.type: chapter
 ms.openlocfilehash: 48281541d8337daf9cf252bc4601c8b1e75fd398
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515225"
 ---
 <a name="aspnet-4---enterprise-deployment-series-2-configuring-servers"></a><span data-ttu-id="95090-103">ASP.NET 4 - Enterprise implantação série 2 Configurando servidores</span><span class="sxs-lookup"><span data-stu-id="95090-103">ASP.NET 4 - Enterprise Deployment Series 2 Configuring Servers</span></span>
 ====================

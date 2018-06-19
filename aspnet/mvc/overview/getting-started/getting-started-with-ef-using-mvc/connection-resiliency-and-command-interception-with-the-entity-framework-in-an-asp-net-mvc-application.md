@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875338"
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a><span data-ttu-id="d980a-103">Resiliência de Conexão e interceptação de comando com o Entity Framework em um aplicativo ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="d980a-103">Connection Resiliency and Command Interception with the Entity Framework in an ASP.NET MVC Application</span></span>
 ====================

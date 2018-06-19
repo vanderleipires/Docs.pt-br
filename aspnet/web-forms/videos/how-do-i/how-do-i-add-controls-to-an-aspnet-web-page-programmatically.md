@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically
-title: "[Como fazer:] Adicionar controles a uma página da Web por meio de programação | Microsoft Docs"
+title: '[Como fazer:] Adicionar controles a uma página da Web por meio de programação | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como criar um controle de servidor ASP.NET programaticamente no tempo de execução e adicioná-lo a uma página. Primeiro, Aprenda a o conceito básico..."
+description: Este Chris Pels vídeo mostrará como criar um controle de servidor ASP.NET programaticamente no tempo de execução e adicioná-lo a uma página. Primeiro, Aprenda a o conceito básico...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525645"
 ---
 <a name="how-do-i-add-controls-to-an-aspnet-web-page-programmatically"></a><span data-ttu-id="656ca-104">[Como fazer:] Adicionar controles a uma página da Web por meio de programação</span><span class="sxs-lookup"><span data-stu-id="656ca-104">[How Do I:] Add Controls to an ASP.NET Web Page Programmatically</span></span>
 ====================

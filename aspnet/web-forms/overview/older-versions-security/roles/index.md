@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/roles/index
-title: "ASP.NET 3.5 - funções | Microsoft Docs"
+title: ASP.NET 3.5 - funções | Microsoft Docs
 author: rick-anderson
-description: "Esta série de tutoriais descreve como criar e excluir funções, como atribuir usuários às funções e como autorizar pela função."
+description: Esta série de tutoriais descreve como criar e excluir funções, como atribuir usuários às funções e como autorizar pela função.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-security/roles
 msc.type: chapter
 ms.openlocfilehash: 9fc5695f18d3624d07e2457c1bb33f15911eac96
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519485"
 ---
 <a name="aspnet-35---roles"></a><span data-ttu-id="2e54d-103">ASP.NET 3.5 - funções</span><span class="sxs-lookup"><span data-stu-id="2e54d-103">ASP.NET 3.5 - Roles</span></span>
 ====================

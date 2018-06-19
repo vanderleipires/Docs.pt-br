@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-outputcache-to-cache-an-aspnet-page
-title: "[Como fazer:] Use OutputCache para armazenar em Cache uma página ASP.NET | Microsoft Docs"
+title: '[Como fazer:] Use OutputCache para armazenar em Cache uma página ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostra como utilizar o armazenamento em cache interno do ASP.NET para armazenar uma página no cache, portanto, não precisa ser re-renderizados. Primeiro, o..."
+description: Este Chris Pels vídeo mostra como utilizar o armazenamento em cache interno do ASP.NET para armazenar uma página no cache, portanto, não precisa ser re-renderizados. Primeiro, o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/05/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526195"
 ---
 <a name="how-do-i-use-outputcache-to-cache-an-aspnet-page"></a><span data-ttu-id="eb5ac-104">[Como fazer:] Use OutputCache para armazenar em Cache uma página ASP.NET</span><span class="sxs-lookup"><span data-stu-id="eb5ac-104">[How Do I:] Use OutputCache to Cache an ASP.NET Page</span></span>
 ====================

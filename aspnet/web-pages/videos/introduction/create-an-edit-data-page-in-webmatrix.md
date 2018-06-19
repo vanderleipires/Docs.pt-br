@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/create-an-edit-data-page-in-webmatrix
-title: "Criar uma página de dados de edição no WebMatrix | Microsoft Docs"
+title: Criar uma página de dados de edição no WebMatrix | Microsoft Docs
 author: rick-anderson
-description: "A parte 7 baseia-se neste para mostrar como você pode ter uma página para editar seu banco de dados e ver as alterações atualizadas automaticamente."
+description: A parte 7 baseia-se neste para mostrar como você pode ter uma página para editar seu banco de dados e ver as alterações atualizadas automaticamente.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529755"
 ---
 <a name="create-an-edit-data-page-in-webmatrix"></a><span data-ttu-id="a1d7a-103">Criar uma página de dados de edição no WebMatrix</span><span class="sxs-lookup"><span data-stu-id="a1d7a-103">Create an Edit Data Page in WebMatrix</span></span>
 ====================

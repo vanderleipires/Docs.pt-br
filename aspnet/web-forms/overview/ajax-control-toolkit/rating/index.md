@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/rating/index
-title: "Classificação | Microsoft Docs"
+title: Classificação | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial mostra como usar o controle de classificação para permitir que os usuários a inserir as classificações de artigos ou itens."
+description: Este tutorial mostra como usar o controle de classificação para permitir que os usuários a inserir as classificações de artigos ou itens.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating
 msc.type: chapter
 ms.openlocfilehash: cabc043fd4be36d5d81563fa2f4b7e46a08fcad8
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26511605"
 ---
 <a name="rating"></a><span data-ttu-id="460a9-103">Classificação</span><span class="sxs-lookup"><span data-stu-id="460a9-103">Rating</span></span>
 ====================

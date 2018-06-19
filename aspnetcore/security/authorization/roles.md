@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740030"
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a><span data-ttu-id="d0de9-103">Autorização baseada em função no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="d0de9-103">Role-based authorization in ASP.NET Core</span></span>
 

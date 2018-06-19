@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-send-email-asynchronously-with-aspnet
-title: "[Como fazer:] Enviar Email de forma assíncrona com o ASP.NET | Microsoft Docs"
+title: '[Como fazer:] Enviar Email de forma assíncrona com o ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo, Chris Pels mostra como usar as classes de mail em ASP.NET para enviar uma mensagem de email assíncrona. Primeiro, consulte como configurar um si da web..."
+description: Neste vídeo, Chris Pels mostra como usar as classes de mail em ASP.NET para enviar uma mensagem de email assíncrona. Primeiro, consulte como configurar um si da web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525865"
 ---
 <a name="how-do-i-send-email-asynchronously-with-aspnet"></a><span data-ttu-id="b8a56-104">[Como fazer:] Enviar Email de forma assíncrona com o ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b8a56-104">[How Do I:] Send Email Asynchronously with ASP.NET</span></span>
 ====================

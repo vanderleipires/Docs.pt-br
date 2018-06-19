@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879096"
 ---
 <a name="aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components"></a><span data-ttu-id="a1249-104">O ASP.NET MVC vitrine parte 11: Conectar o carrinho de compras e usando componentes</span><span class="sxs-lookup"><span data-stu-id="a1249-104">ASP.NET MVC Storefront Part 11: Hooking Up The Shopping Cart and Using Components</span></span>
 ====================

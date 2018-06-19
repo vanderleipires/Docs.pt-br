@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072017"
 ---
 # <a name="limit-the-lifetime-of-protected-payloads-in-aspnet-core"></a><span data-ttu-id="9e112-103">Limite o tempo de vida das cargas protegidos no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="9e112-103">Limit the lifetime of protected payloads in ASP.NET Core</span></span>
 

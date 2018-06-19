@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524885"
 ---
 <a name="build-your-first-aspnet-application-with-aspnet-web-forms"></a><span data-ttu-id="73236-103">Criar seu primeiro aplicativo ASP.NET com Web Forms do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="73236-103">Build Your First ASP.NET Application with ASP.NET Web Forms</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/ninja-on-fire-black-belt-tips
-title: "Ninja em dicas de faixa preta incêndio | Microsoft Docs"
+title: Ninja em dicas de faixa preta incêndio | Microsoft Docs
 author: Haacked
-description: "Veja um passo a passo de várias dicas e truques para obter o máximo proveito de estrutura do ASP.NET MVC."
+description: Veja um passo a passo de várias dicas e truques para obter o máximo proveito de estrutura do ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503895"
 ---
 <a name="ninja-on-fire-black-belt-tips"></a><span data-ttu-id="bdb4f-103">Ninja em dicas de faixa preta incêndio</span><span class="sxs-lookup"><span data-stu-id="bdb4f-103">Ninja on Fire Black Belt Tips</span></span>
 ====================

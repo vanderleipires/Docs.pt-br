@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/5-minute-introduction-to-aspnet-web-forms
-title: "Introdução ao ASP.NET Web Forms | Microsoft Docs"
+title: Introdução ao ASP.NET Web Forms | Microsoft Docs
 author: shanselman
-description: "Scott Hanselman apresenta uma introdução de 5 minutos a ASP.NET Web Forms."
+description: Scott Hanselman apresenta uma introdução de 5 minutos a ASP.NET Web Forms.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525315"
 ---
 <a name="intro-to-aspnet-web-forms"></a><span data-ttu-id="b78bf-103">Introdução aos formulários da Web do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b78bf-103">Intro to ASP.NET Web Forms</span></span>
 ====================

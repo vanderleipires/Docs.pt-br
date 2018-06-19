@@ -2,7 +2,7 @@
 uid: web-forms/videos/aspnet-35/visual-studio-editor/index
 title: Editor do Visual Studio | Microsoft Docs
 author: rick-anderson
-description: "Esta série de vídeos mostra os novos recursos do editor do Visual Studio 2008, incluindo suporte aprimorado para JavaScript e CSS."
+description: Esta série de vídeos mostra os novos recursos do editor do Visual Studio 2008, incluindo suporte aprimorado para JavaScript e CSS.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor
 msc.type: chapter
 ms.openlocfilehash: 651a5d0e8a61acfad286e4d5eeac3f42136ca97d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520645"
 ---
 <a name="visual-studio-editor"></a><span data-ttu-id="274e4-103">Editor do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="274e4-103">Visual Studio Editor</span></span>
 ====================

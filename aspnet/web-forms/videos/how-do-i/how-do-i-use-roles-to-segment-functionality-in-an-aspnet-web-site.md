@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site
-title: "[Como fazer:] Usar funções para segmentar a funcionalidade em um Site ASP.NET | Microsoft Docs"
+title: '[Como fazer:] Usar funções para segmentar a funcionalidade em um Site ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo, Chris Pels mostrará como maximizar o uso de funções em um site ASP.NET depois de configurar a associação do ASP.NET. Primeiro, saiba como configurar rol..."
+description: Neste vídeo, Chris Pels mostrará como maximizar o uso de funções em um site ASP.NET depois de configurar a associação do ASP.NET. Primeiro, saiba como configurar rol...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526525"
 ---
 <a name="how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site"></a><span data-ttu-id="ed605-104">[Como fazer:] Usar funções para segmentar a funcionalidade em um Site da Web ASP.NET</span><span class="sxs-lookup"><span data-stu-id="ed605-104">[How Do I:] Use Roles to Segment Functionality in an ASP.NET Web Site</span></span>
 ====================

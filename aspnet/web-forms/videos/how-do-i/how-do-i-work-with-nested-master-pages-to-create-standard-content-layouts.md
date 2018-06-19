@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts
-title: "[Como fazer:] Trabalhar com páginas mestras aninhadas para criar Layouts de conteúdo padrão | Microsoft Docs"
+title: '[Como fazer:] Trabalhar com páginas mestras aninhadas para criar Layouts de conteúdo padrão | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como usar páginas mestras aninhadas para criar páginas mestras individuais que representam diferentes layouts de conteúdo padrão para um w..."
+description: Este Chris Pels vídeo mostrará como usar páginas mestras aninhadas para criar páginas mestras individuais que representam diferentes layouts de conteúdo padrão para um w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525955"
 ---
 <a name="how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts"></a><span data-ttu-id="2403d-103">[Como fazer:] Trabalhar com páginas mestras aninhadas para criar Layouts de conteúdo padrão</span><span class="sxs-lookup"><span data-stu-id="2403d-103">[How Do I:] Work with Nested Master Pages to Create Standard Content Layouts</span></span>
 ====================

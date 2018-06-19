@@ -2,7 +2,7 @@
 uid: signalr/overview/index
 title: Diretrizes de SignalR | Microsoft Docs
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/24/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /signalr/overview
 msc.type: book
 ms.openlocfilehash: 2b82918afd1513975b11265a13f3dac4bb4fbc6f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26505555"
 ---
 <a name="signalr-guidance"></a><span data-ttu-id="3e1f4-102">Diretrizes de SignalR</span><span class="sxs-lookup"><span data-stu-id="3e1f4-102">SignalR Guidance</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/index
-title: "Páginas ASP.NET Razor | Microsoft Docs"
+title: Páginas ASP.NET Razor | Microsoft Docs
 author: rick-anderson
-description: "Os vídeos que você pode exibir para fazer drill down em páginas da Web e o WebMatrix."
+description: Os vídeos que você pode exibir para fazer drill down em páginas da Web e o WebMatrix.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/videos/aspnet-razor-pages
 msc.type: chapter
 ms.openlocfilehash: c2656e666e3267895ced67562e0b3e6292d83d3d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529925"
 ---
 <a name="aspnet-web-pages"></a><span data-ttu-id="90fa4-103">Páginas da Web do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="90fa4-103">ASP.NET Web Pages</span></span>
 =================

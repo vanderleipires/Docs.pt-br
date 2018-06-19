@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869953"
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a><span data-ttu-id="f1530-104">Publicar o site MVC banco de dados primeiro no Azure</span><span class="sxs-lookup"><span data-stu-id="f1530-104">Publish MVC Database First site to Azure</span></span>
 ====================

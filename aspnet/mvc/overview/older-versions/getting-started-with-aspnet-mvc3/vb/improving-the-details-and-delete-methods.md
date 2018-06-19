@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869511"
 ---
 <a name="improving-the-details-and-delete-methods-vb"></a><span data-ttu-id="ec48f-103">Melhorando os detalhes e métodos de exclusão (VB)</span><span class="sxs-lookup"><span data-stu-id="ec48f-103">Improving the Details and Delete Methods (VB)</span></span>
 ====================

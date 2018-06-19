@@ -15,6 +15,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153677"
 ---
 # <a name="websockets-support-in-aspnet-core"></a><span data-ttu-id="b3bc0-103">Suporte ao WebSockets no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b3bc0-103">WebSockets support in ASP.NET Core</span></span>
 

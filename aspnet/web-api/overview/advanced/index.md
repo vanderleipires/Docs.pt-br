@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/index
-title: "Tópicos avançados para ASP.NET Web API | Microsoft Docs"
+title: Tópicos avançados para ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "Mais avançados de tópicos para o desenvolvimento de API da Web ASP.NET, após você aprendeu as Noções básicas."
+description: Mais avançados de tópicos para o desenvolvimento de API da Web ASP.NET, após você aprendeu as Noções básicas.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/23/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/advanced
 msc.type: chapter
 ms.openlocfilehash: dca812e1c88d1aa2692365711d71813199be9ca2
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506745"
 ---
 <a name="advanced-topics-for-aspnet-web-api"></a><span data-ttu-id="54aef-103">Tópicos avançados para a API da Web do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="54aef-103">Advanced Topics for ASP.NET Web API</span></span>
 ====================

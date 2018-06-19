@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870005"
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a><span data-ttu-id="14d3f-103">Reutilizar usando páginas mestras e existe meio-termo de interface do usuário</span><span class="sxs-lookup"><span data-stu-id="14d3f-103">Re-use UI Using Master Pages and Partials</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555554"
 ---
 # <a name="use-the-single-page-application-templates-with-aspnet-core"></a><span data-ttu-id="0adaa-103">Usar os modelos de Aplicativo de Página Única com o ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="0adaa-103">Use the Single Page Application templates with ASP.NET Core</span></span>
 

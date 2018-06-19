@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/index
-title: "Introdução ao ASP.NET MVC3 | Microsoft Docs"
+title: Introdução ao ASP.NET MVC3 | Microsoft Docs
 author: rick-anderson
-description: "Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express."
+description: Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3
 msc.type: chapter
 ms.openlocfilehash: e5af266175260c5fce4c88823895a8a8ab28830a
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26501645"
 ---
 <a name="getting-started-with-aspnet-mvc3"></a><span data-ttu-id="3a2cc-103">Introdução ao ASP.NET MVC3</span><span class="sxs-lookup"><span data-stu-id="3a2cc-103">Getting Started with ASP.NET MVC3</span></span>
 ====================

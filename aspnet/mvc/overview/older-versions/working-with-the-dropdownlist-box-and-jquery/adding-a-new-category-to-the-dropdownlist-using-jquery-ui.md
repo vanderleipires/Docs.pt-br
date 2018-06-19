@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871929"
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a><span data-ttu-id="03771-102">Adicionando uma nova categoria a DropDownList usando jQuery UI</span><span class="sxs-lookup"><span data-stu-id="03771-102">Adding a New Category to the DropDownList using jQuery UI</span></span>
 ====================

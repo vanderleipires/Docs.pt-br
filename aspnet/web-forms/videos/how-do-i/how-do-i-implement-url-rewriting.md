@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-url-rewriting
-title: "[Como fazer:] Implementar a regravação de URL? | Microsoft Docs"
+title: '[Como fazer:] Implementar a regravação de URL? | Microsoft Docs'
 author: scottgolightly
-description: "Neste vídeo, Scott Golightly mostra como criar um HttpModule ASP.NET reescrever '' a URL quando chega uma solicitação para uma página da web. Talvez você queira reescrever..."
+description: Neste vídeo, Scott Golightly mostra como criar um HttpModule ASP.NET reescrever '' a URL quando chega uma solicitação para uma página da web. Talvez você queira reescrever...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526255"
 ---
 <a name="how-do-i-implement-url-rewriting"></a><span data-ttu-id="10d90-105">[Como fazer:] Implementar a regravação de URL?</span><span class="sxs-lookup"><span data-stu-id="10d90-105">[How Do I:] Implement URL Rewriting?</span></span>
 ====================

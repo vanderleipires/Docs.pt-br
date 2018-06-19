@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871292"
 ---
 <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a><span data-ttu-id="b7754-104">Ajustando o índice Z de uma sombra (VB)</span><span class="sxs-lookup"><span data-stu-id="b7754-104">Adjusting the Z-Index of a DropShadow (VB)</span></span>
 ====================

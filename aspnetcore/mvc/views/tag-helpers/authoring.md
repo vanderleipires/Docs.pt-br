@@ -15,6 +15,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740992"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a><span data-ttu-id="47387-103">Auxiliares de marca de autor no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="47387-103">Author Tag Helpers in ASP.NET Core</span></span>
 

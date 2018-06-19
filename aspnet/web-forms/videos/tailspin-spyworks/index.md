@@ -2,7 +2,7 @@
 uid: web-forms/videos/tailspin-spyworks/index
 title: Tailspin Spyworks | Microsoft Docs
 author: rick-anderson
-description: "Como usar os novos recursos no ASP.NET 4 para criar uma loja online, inclusive de compras, check-out e administração."
+description: Como usar os novos recursos no ASP.NET 4 para criar uma loja online, inclusive de compras, check-out e administração.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/tailspin-spyworks
 msc.type: chapter
 ms.openlocfilehash: 28e504c3e1332d047ca7c4f1696eaaf5167cc145
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522445"
 ---
 <a name="tailspin-spyworks"></a><span data-ttu-id="bf85f-103">Spyworks Tailspin</span><span class="sxs-lookup"><span data-stu-id="bf85f-103">Tailspin Spyworks</span></span>
 ====================

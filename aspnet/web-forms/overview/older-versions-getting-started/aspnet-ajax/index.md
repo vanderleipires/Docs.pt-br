@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/index
 title: ASP.NET 3.5 - AJAX | Microsoft Docs
 author: rick-anderson
-description: "Sobre a biblioteca ASP.NET AJAX, incluindo UpdatePanels e atualizações parciais de página, a autenticação, localização e depuração."
+description: Sobre a biblioteca ASP.NET AJAX, incluindo UpdatePanels e atualizações parciais de página, a autenticação, localização e depuração.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax
 msc.type: chapter
 ms.openlocfilehash: a0b8f4ab1a6f218ea111a4f3364f704f672e3dd6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516645"
 ---
 <a name="aspnet-35---ajax"></a><span data-ttu-id="2fdf4-103">ASP.NET 3.5 - AJAX</span><span class="sxs-lookup"><span data-stu-id="2fdf4-103">ASP.NET 3.5 - AJAX</span></span>
 ====================

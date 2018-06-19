@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873242"
 ---
 <a name="implement-efficient-data-paging"></a><span data-ttu-id="3050c-103">Implementar a paginação de dados eficiente</span><span class="sxs-lookup"><span data-stu-id="3050c-103">Implement Efficient Data Paging</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870837"
 ---
 <a name="unit-testing-signalr-applications"></a><span data-ttu-id="be708-103">Teste de unidade e os aplicativos SignalR</span><span class="sxs-lookup"><span data-stu-id="be708-103">Unit Testing SignalR Applications</span></span>
 ====================

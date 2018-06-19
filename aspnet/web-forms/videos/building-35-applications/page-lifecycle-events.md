@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/page-lifecycle-events
-title: "Eventos de ciclo de vida da página | Microsoft Docs"
+title: Eventos de ciclo de vida da página | Microsoft Docs
 author: JoeStagner
-description: "ASP.NET fornece um mecanismo de eventos muito avançados com ganchos em todas as instâncias de cronológicos importantes no ciclo de vida da página do ASP.NET. Este vídeo será enum..."
+description: ASP.NET fornece um mecanismo de eventos muito avançados com ganchos em todas as instâncias de cronológicos importantes no ciclo de vida da página do ASP.NET. Este vídeo será enum...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521595"
 ---
 <a name="page-lifecycle-events"></a><span data-ttu-id="df10d-104">Eventos de ciclo de vida da página</span><span class="sxs-lookup"><span data-stu-id="df10d-104">Page Lifecycle Events</span></span>
 ====================

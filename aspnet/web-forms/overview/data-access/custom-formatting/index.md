@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/index
-title: "Formatação personalizada | Microsoft Docs"
+title: Formatação personalizada | Microsoft Docs
 author: rick-anderson
-description: "Esses tutoriais examinar como personalizar a exibição de dados durante a associação de dados usando os manipuladores de eventos nos controles do GridView, DetailsView e FormView."
+description: Esses tutoriais examinar como personalizar a exibição de dados durante a associação de dados usando os manipuladores de eventos nos controles do GridView, DetailsView e FormView.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/custom-formatting
 msc.type: chapter
 ms.openlocfilehash: afced0e5c310d8843107dde48d97e55e5242dd13
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26513015"
 ---
 <a name="custom-formatting"></a><span data-ttu-id="d4d24-103">Formatação personalizada</span><span class="sxs-lookup"><span data-stu-id="d4d24-103">Custom Formatting</span></span>
 ====================

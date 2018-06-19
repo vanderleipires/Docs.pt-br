@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-web-forms
-title: "Introdução aos formulários da Web | Microsoft Docs"
+title: Introdução aos formulários da Web | Microsoft Docs
 author: JoeStagner
-description: "Web Forms do ASP.NET é o mecanismo de Interface de usuário padrão para aplicativos ASP.NET. Este vídeo demonstra os fundamentos de desenvolvimento de Web Forms."
+description: Web Forms do ASP.NET é o mecanismo de Interface de usuário padrão para aplicativos ASP.NET. Este vídeo demonstra os fundamentos de desenvolvimento de Web Forms.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521015"
 ---
 <a name="intro-to-web-forms"></a><span data-ttu-id="a05cd-104">Introdução aos formulários da Web</span><span class="sxs-lookup"><span data-stu-id="a05cd-104">Intro to Web Forms</span></span>
 ====================

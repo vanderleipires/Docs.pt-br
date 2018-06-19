@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/index
-title: "Como faço | Microsoft Docs"
+title: Como faço | Microsoft Docs
 author: rick-anderson
-description: "Vídeos nesta seção abordam ASP.NET MVC, incluindo como criar um aplicativo de comércio eletrônico inteira de início para concluir a 'O Storefront -'."
+description: Vídeos nesta seção abordam ASP.NET MVC, incluindo como criar um aplicativo de comércio eletrônico inteira de início para concluir a 'O Storefront -'.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/videos/mvc-2/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 54d09894c61d8be19ab6b8a1ceb37312c47497a7
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26504255"
 ---
 <a name="how-do-i"></a><span data-ttu-id="a3aa0-103">Como faço</span><span class="sxs-lookup"><span data-stu-id="a3aa0-103">How-Do-I</span></span>
 ====================

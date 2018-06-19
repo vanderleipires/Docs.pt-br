@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874906"
 ---
 <a name="part-5-edit-forms-and-templating"></a><span data-ttu-id="c6eff-104">Parte 5: Formulários de edição e modelagem</span><span class="sxs-lookup"><span data-stu-id="c6eff-104">Part 5: Edit Forms and Templating</span></span>
 ====================

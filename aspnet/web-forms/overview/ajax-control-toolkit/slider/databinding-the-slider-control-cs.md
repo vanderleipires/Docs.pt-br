@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870577"
 ---
 <a name="databinding-the-slider-control-c"></a><span data-ttu-id="d5b90-104">Associação de dados o controle deslizante (c#)</span><span class="sxs-lookup"><span data-stu-id="d5b90-104">Databinding the Slider Control (C#)</span></span>
 ====================

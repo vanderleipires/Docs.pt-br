@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-membership-provider
-title: "[Como fazer:] Criar um provedor de associação personalizado? | Microsoft Docs"
+title: '[Como fazer:] Criar um provedor de associação personalizado? | Microsoft Docs'
 author: rick-anderson
-description: "Um provedor de associação permite que um aplicativo web para armazenar e recuperar dados de associação para um usuário e previamente define a padrão usa o provedor de associação ASP.NET..."
+description: Um provedor de associação permite que um aplicativo web para armazenar e recuperar dados de associação para um usuário e previamente define a padrão usa o provedor de associação ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525515"
 ---
 <a name="how-do-i-create-a-custom-membership-provider"></a><span data-ttu-id="778a1-104">[Como fazer:] Criar um provedor de associação personalizado?</span><span class="sxs-lookup"><span data-stu-id="778a1-104">[How Do I:] Create a Custom Membership Provider?</span></span>
 ====================

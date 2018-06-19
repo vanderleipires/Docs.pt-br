@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-create-a-full-featured-customer-login-portal
 title: '[Como fazer:] Criar um Portal de logon do cliente completo? | Microsoft Docs'
 author: microsoft
-description: "Acompanhar a criação de um portal para clientes fictício para saber mais sobre páginas mestras, temas, associação, funções, navegação de site, perfis de usuário, e..."
+description: Acompanhar a criação de um portal para clientes fictício para saber mais sobre páginas mestras, temas, associação, funções, navegação de site, perfis de usuário, e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/05/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525295"
 ---
 <a name="how-do-i-create-a-full-featured-customer-login-portal"></a><span data-ttu-id="bb622-104">[Como fazer:] Criar um Portal de logon do cliente completo?</span><span class="sxs-lookup"><span data-stu-id="bb622-104">[How Do I:] Create a Full-Featured Customer Login Portal?</span></span>
 ====================

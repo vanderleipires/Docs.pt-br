@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/choosing-the-right-programming-model
-title: "Escolhendo o direito de modelo de programação | Microsoft Docs"
+title: Escolhendo o direito de modelo de programação | Microsoft Docs
 author: shanselman
-description: "Scott Hanselman da Microsoft fornece as informações que você precisa decidir se as páginas da Web ASP.NET, ASP.NET MVC ou Web Forms do ASP.NET é ideal para você."
+description: Scott Hanselman da Microsoft fornece as informações que você precisa decidir se as páginas da Web ASP.NET, ASP.NET MVC ou Web Forms do ASP.NET é ideal para você.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/10/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525435"
 ---
 <a name="choosing-the-right-programming-model"></a><span data-ttu-id="bfcfa-103">Escolhendo o direito de modelo de programação</span><span class="sxs-lookup"><span data-stu-id="bfcfa-103">Choosing the Right Programming Model</span></span>
 ====================

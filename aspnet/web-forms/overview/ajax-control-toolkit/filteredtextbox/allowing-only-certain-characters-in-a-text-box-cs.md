@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869732"
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-c"></a><span data-ttu-id="c2840-104">Permitir que somente determinados caracteres em uma caixa de texto (c#)</span><span class="sxs-lookup"><span data-stu-id="c2840-104">Allowing Only Certain Characters in a Text Box (C#)</span></span>
 ====================

@@ -1,14 +1,14 @@
 ---
 uid: single-page-application/overview/introduction/knockoutjs-template
-title: "Aplicativo de página única: Modelo KnockoutJS | Microsoft Docs"
+title: 'Aplicativo de página única: Modelo KnockoutJS | Microsoft Docs'
 author: MikeWasson
-description: "Modelo de separação"
+description: Modelo de separação
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "28036889"
 ---
 <a name="single-page-application-knockoutjs-template"></a><span data-ttu-id="91d34-103">Aplicativo de página única: Modelo de KnockoutJS</span><span class="sxs-lookup"><span data-stu-id="91d34-103">Single Page Application: KnockoutJS template</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/index
-title: "Filtragem de cenários com o controle DataList e repetidor | Microsoft Docs"
+title: Filtragem de cenários com o controle DataList e repetidor | Microsoft Docs
 author: rick-anderson
-description: "Nesses tutoriais, você verá como exibir relatórios mestre/detalhes usando listas suspensas para os registros mestres e um controle DataList para obter detalhes."
+description: Nesses tutoriais, você verá como exibir relatórios mestre/detalhes usando listas suspensas para os registros mestres e um controle DataList para obter detalhes.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-data
 msc.type: chapter
 ms.openlocfilehash: a8a1c2301dc287b49149bc5afe85a7dedad54d58
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514095"
 ---
 <a name="filtering-scenarios-with-the-datalist-and-repeater"></a><span data-ttu-id="bf170-103">Cenários de filtragem com o controle DataList e repetidor</span><span class="sxs-lookup"><span data-stu-id="bf170-103">Filtering Scenarios with the DataList and Repeater</span></span>
 ====================

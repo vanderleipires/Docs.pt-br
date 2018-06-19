@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/index
-title: "O ASP.NET 4 - continuar com o Entity Framework 4 e formulários da Web | Microsoft Docs"
+title: O ASP.NET 4 - continuar com o Entity Framework 4 e formulários da Web | Microsoft Docs
 author: rick-anderson
 description: Como criar o aplicativo da Contoso U como um aplicativo de n camadas usando o controle ObjectDataSource e como lidar com simultaneidade e maximizar o desempenho.
 ms.author: aspnetcontent
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-wit
 msc.type: chapter
 ms.openlocfilehash: aa412b55bddf886f6915dc852599a423c56c9fc3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516635"
 ---
 <a name="aspnet-4---continuing-with-entity-framework-4-and-web-forms"></a><span data-ttu-id="00bdf-103">O ASP.NET 4 - continuar com o Entity Framework 4 e formulários da Web</span><span class="sxs-lookup"><span data-stu-id="00bdf-103">ASP.NET 4 - Continuing with Entity Framework 4 and Web Forms</span></span>
 ====================

@@ -2,7 +2,7 @@
 uid: web-api/videos/getting-started/getting-data
 title: 'API da Web ASP.NET, parte 2: Obtendo dados | Microsoft Docs'
 author: jongalloway
-description: "Observação: Este vídeo contém informações de uma versão de pré-lançamento do ASP.NET Web API"
+description: 'Observação: Este vídeo contém informações de uma versão de pré-lançamento do ASP.NET Web API'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509055"
 ---
 <a name="aspnet-web-api-part-2-getting-data"></a><span data-ttu-id="8e6bf-103">API da Web ASP.NET, parte 2: Obtendo dados</span><span class="sxs-lookup"><span data-stu-id="8e6bf-103">ASP.NET Web API, Part 2: Getting Data</span></span>
 ====================

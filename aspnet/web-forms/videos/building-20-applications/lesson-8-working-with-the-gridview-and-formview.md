@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882384"
 ---
 <a name="lesson-8-working-with-the-gridview-and-formview"></a><span data-ttu-id="80363-103">[Lição 8:] Trabalhando com GridView e FormView</span><span class="sxs-lookup"><span data-stu-id="80363-103">[Lesson 8:] Working with the GridView and FormView</span></span>
 ====================

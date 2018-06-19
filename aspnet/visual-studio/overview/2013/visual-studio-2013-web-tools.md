@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "26507125"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a><span data-ttu-id="19dd4-104">Laboratório prático: Ferramentas de Web Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="19dd4-104">Hands On Lab: Visual Studio 2013 Web Tools</span></span>
 ====================
@@ -302,7 +303,7 @@ ms.lasthandoff: 04/10/2018
     <span data-ttu-id="19dd4-291">![Editando a pergunta](visual-studio-2013-web-tools/_static/image28.png "editando a pergunta")</span><span class="sxs-lookup"><span data-stu-id="19dd4-291">![Editing the question](visual-studio-2013-web-tools/_static/image28.png "Editing the question")</span></span>
 
     <span data-ttu-id="19dd4-292">*Editar a pergunta*</span><span class="sxs-lookup"><span data-stu-id="19dd4-292">*Editing the question*</span></span>
-3. <span data-ttu-id="19dd4-293">Um cursor deve aparecer.</span><span class="sxs-lookup"><span data-stu-id="19dd4-293">A cursor should appear.</span></span> <span data-ttu-id="19dd4-294">Substitua o texto original por *o que é ele a aparência quando escrever uma pergunta mais?*e, em seguida, pressione **ESC** para sair do modo de Design.</span><span class="sxs-lookup"><span data-stu-id="19dd4-294">Replace the original text with *What does it look like when I write a longer question?*, and then press **ESC** to exit Design Mode.</span></span>
+3. <span data-ttu-id="19dd4-293">Um cursor deve aparecer.</span><span class="sxs-lookup"><span data-stu-id="19dd4-293">A cursor should appear.</span></span> <span data-ttu-id="19dd4-294">Substitua o texto original por *o que é ele a aparência quando escrever uma pergunta mais?* e, em seguida, pressione **ESC** para sair do modo de Design.</span><span class="sxs-lookup"><span data-stu-id="19dd4-294">Replace the original text with *What does it look like when I write a longer question?*, and then press **ESC** to exit Design Mode.</span></span>
 
     <span data-ttu-id="19dd4-295">![Pergunta editada](visual-studio-2013-web-tools/_static/image29.png "pergunta editada")</span><span class="sxs-lookup"><span data-stu-id="19dd4-295">![Question edited](visual-studio-2013-web-tools/_static/image29.png "Question edited")</span></span>
 

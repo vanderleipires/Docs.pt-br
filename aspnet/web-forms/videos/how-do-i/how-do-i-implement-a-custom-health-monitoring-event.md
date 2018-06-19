@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-implement-a-custom-health-monitoring-event
 title: '[Como fazer:] Implementar um evento de monitoramento de integridade personalizado | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como criar uma evento que estende uma eventos no ASP.NET de monitoramento de integridade padrão de monitoramento de integridade personalizada. O pro personalizado..."
+description: Este Chris Pels vídeo mostrará como criar uma evento que estende uma eventos no ASP.NET de monitoramento de integridade padrão de monitoramento de integridade personalizada. O pro personalizado...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524955"
 ---
 <a name="how-do-i-implement-a-custom-health-monitoring-event"></a><span data-ttu-id="775bd-104">[Como fazer:] Implementar um evento de monitoramento de integridade personalizado</span><span class="sxs-lookup"><span data-stu-id="775bd-104">[How Do I:] Implement a Custom Health Monitoring Event</span></span>
 ====================

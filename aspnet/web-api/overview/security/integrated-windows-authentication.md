@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/integrated-windows-authentication
-title: "Autenticação integrada do Windows | Microsoft Docs"
+title: Autenticação integrada do Windows | Microsoft Docs
 author: MikeWasson
-description: "Descreve como usar a autenticação integrada do Windows na API da Web do ASP.NET."
+description: Descreve como usar a autenticação integrada do Windows na API da Web do ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508155"
 ---
 <a name="integrated-windows-authentication"></a><span data-ttu-id="8f6e4-103">Autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="8f6e4-103">Integrated Windows Authentication</span></span>
 ====================

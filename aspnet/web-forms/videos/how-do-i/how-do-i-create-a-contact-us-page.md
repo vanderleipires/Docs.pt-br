@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-contact-us-page
-title: "Como criar um contato que conosco página"
+title: Como criar um contato que conosco página
 author: microsoft
-description: "Crie uma página da web para coletar informações do usuário com o controle Wizard, validar essas informações e usar as classes de mail para enviar um confi..."
+description: Crie uma página da web para coletar informações do usuário com o controle Wizard, validar essas informações e usar as classes de mail para enviar um confi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/24/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525455"
 ---
 <a name="how-do-i-create-a-contact-us-page"></a><span data-ttu-id="0c0c0-103">[Como fazer:] Criar uma página "Fale conosco"?</span><span class="sxs-lookup"><span data-stu-id="0c0c0-103">[How Do I:] Create a "Contact Us" Page?</span></span>
 ====================

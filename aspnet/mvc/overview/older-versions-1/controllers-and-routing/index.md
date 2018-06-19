@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/controllers-and-routing/index
 title: Controladores e roteamento | Microsoft Docs
 author: rick-anderson
-description: "Conjunto neste tutorial, você aprenderá sobre roteamento ASP.NET, que mapeia as solicitações de navegador para ações do controlador MVC do ASP.NET."
+description: Conjunto neste tutorial, você aprenderá sobre roteamento ASP.NET, que mapeia as solicitações de navegador para ações do controlador MVC do ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing
 msc.type: chapter
 ms.openlocfilehash: fe42077c119599bd169464ec2a7cdc4a0dd008a3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499945"
 ---
 <a name="controllers-and-routing"></a><span data-ttu-id="e4bf3-103">Controladores e roteamento</span><span class="sxs-lookup"><span data-stu-id="e4bf3-103">Controllers and Routing</span></span>
 ====================

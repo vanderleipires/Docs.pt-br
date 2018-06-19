@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868523"
 ---
 <a name="aspnet-mvc-storefront-part-24-finis"></a><span data-ttu-id="27674-104">O ASP.NET MVC vitrine parte 24: términ</span><span class="sxs-lookup"><span data-stu-id="27674-104">ASP.NET MVC Storefront Part 24: Finis</span></span>
 ====================

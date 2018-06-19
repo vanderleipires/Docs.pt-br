@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/seo/aspnet-4-quick-hit-dynamic-metadata
-title: "Metadados dinâmico | Microsoft Docs"
+title: Metadados dinâmico | Microsoft Docs
 author: JoeStagner
-description: "Neste vídeo, você aprenderá sobre as propriedades Page.MetaKeywords e Page.MetaDescription, que permitem que você defina os metadados de página dinamicamente em ti execução..."
+description: Neste vídeo, você aprenderá sobre as propriedades Page.MetaKeywords e Page.MetaDescription, que permitem que você defina os metadados de página dinamicamente em ti execução...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521855"
 ---
 <a name="aspnet-4-quick-hit---dynamic-metadata"></a><span data-ttu-id="b935d-103">O ASP.NET 4 "Hit rápida" - metadados dinâmico</span><span class="sxs-lookup"><span data-stu-id="b935d-103">ASP.NET 4 "Quick Hit" - Dynamic Metadata</span></span>
 ====================

@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-implement-health-monitoring-for-an-aspnet-application
 title: '[Como fazer:]  Implementar o monitoramento de integridade de um aplicativo ASP.NET? | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrar como implementar para obter informações detalhadas de tempo de execução de um aplicativo ASP.NET de monitoramento de integridade. Saiba mais poderoso e..."
+description: Este Chris Pels vídeo mostrar como implementar para obter informações detalhadas de tempo de execução de um aplicativo ASP.NET de monitoramento de integridade. Saiba mais poderoso e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526245"
 ---
 <a name="how-do-i--implement-health-monitoring-for-an-aspnet-application"></a><span data-ttu-id="e3d30-105">[Como fazer:]  Implementar o monitoramento de integridade de um aplicativo ASP.NET?</span><span class="sxs-lookup"><span data-stu-id="e3d30-105">[How Do I:]  Implement Health Monitoring for an ASP.NET Application?</span></span>
 ====================

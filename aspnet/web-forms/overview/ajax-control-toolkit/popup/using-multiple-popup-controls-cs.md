@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869680"
 ---
 <a name="using-multiple-popup-controls-c"></a><span data-ttu-id="223be-104">Usando vários controles de pop-up (c#)</span><span class="sxs-lookup"><span data-stu-id="223be-104">Using Multiple Popup Controls (C#)</span></span>
 ====================

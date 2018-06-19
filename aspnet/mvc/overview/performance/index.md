@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/performance
 msc.type: chapter
 ms.openlocfilehash: 9c0e41e7356dca788f4e144dd211fd1483da8465
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503175"
 ---
 <a name="aspnet-mvc-performance"></a><span data-ttu-id="d3130-103">Desempenho do ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="d3130-103">ASP.NET MVC Performance</span></span>
 ====================

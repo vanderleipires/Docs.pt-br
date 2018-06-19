@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/debugging
-title: "Depuração | Microsoft Docs"
+title: Depuração | Microsoft Docs
 author: JoeStagner
-description: "Descrição: O Visual Web Developer oferece uma experiência de depuração para iniciantes e especialista developer semelhante. Neste vídeo Joe irá fazer um tour você por meio de VW..."
+description: 'Descrição: O Visual Web Developer oferece uma experiência de depuração para iniciantes e especialista developer semelhante. Neste vídeo Joe irá fazer um tour você por meio de VW...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/30/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528145"
 ---
 <a name="debugging"></a><span data-ttu-id="270ce-104">Depuração</span><span class="sxs-lookup"><span data-stu-id="270ce-104">Debugging</span></span>
 ====================

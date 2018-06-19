@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site
-title: "[Como fazer:] Usar capas CSS para um Site ASP.NET flexível e de fácil manutenção | Microsoft Docs"
+title: '[Como fazer:] Usar capas CSS para um Site ASP.NET flexível e de fácil manutenção | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostra como criar capas para controles de servidor ASP.NET e incorporar os estilos CSS para controlar a aparência de contr. o uso de capas."
+description: Este Chris Pels vídeo mostra como criar capas para controles de servidor ASP.NET e incorporar os estilos CSS para controlar a aparência de contr. o uso de capas.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/07/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521765"
 ---
 <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a><span data-ttu-id="cd071-103">[Como fazer:] Usar capas CSS para um Site da Web do ASP.NET flexível e sustentável</span><span class="sxs-lookup"><span data-stu-id="cd071-103">[How Do I:] Use Skins with CSS for a Flexible and Maintainable ASP.NET Web Site</span></span>
 ====================

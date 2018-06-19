@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-customize-my-site-with-profiles-and-themes
 title: '[Como fazer:] Personalizar Meu Site com perfis e temas? | Microsoft Docs'
 author: microsoft
-description: "Saiba como usar perfis para coletar informações de configuração por usuário e aplicar temas para estender uma aparência-e-estilo consistentes em todo o site da Web."
+description: Saiba como usar perfis para coletar informações de configuração por usuário e aplicar temas para estender uma aparência-e-estilo consistentes em todo o site da Web.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526185"
 ---
 <a name="how-do-i-customize-my-site-with-profiles-and-themes"></a><span data-ttu-id="2c026-104">[Como fazer:] Personalizar Meu Site com perfis e temas?</span><span class="sxs-lookup"><span data-stu-id="2c026-104">[How Do I:] Customize my Site with Profiles and Themes?</span></span>
 ====================

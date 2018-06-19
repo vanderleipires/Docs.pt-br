@@ -2,7 +2,7 @@
 uid: web-forms/videos/aspnet-35/visual-studio-designer/visual-studio-2008-and-nested-masterpages
 title: O Visual Studio 2008 e Masterpages aninhado | Microsoft Docs
 author: JoeStagner
-description: "Vou usar um modelo da web em oswd.org para demonstrar o uso de páginas mestras e como eles são suportados no Visual Studio 2008. Especificamente, mostrarei th..."
+description: Vou usar um modelo da web em oswd.org para demonstrar o uso de páginas mestras e como eles são suportados no Visual Studio 2008. Especificamente, mostrarei th...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520555"
 ---
 <a name="visual-studio-2008-and-nested-masterpages"></a><span data-ttu-id="9b20e-104">O Visual Studio 2008 e Masterpages aninhada</span><span class="sxs-lookup"><span data-stu-id="9b20e-104">Visual Studio 2008 and Nested Masterpages</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503675"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a><span data-ttu-id="5d92d-104">Usando o Inspetor de Página no ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="5d92d-104">Using Page Inspector in ASP.NET MVC</span></span>
 ====================

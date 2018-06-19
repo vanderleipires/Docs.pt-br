@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-learn-the-tips-and-tricks-of-experts
 title: '[Como fazer:] Aprenda as dicas e truques de especialistas? | Microsoft Docs'
 author: microsoft
-description: "Exibir dicas e truques incluindo criptografar informações confidenciais armazenadas no arquivo Web. config, postagem de conteúdo em uma página diferente, simplificação de URLs complexas..."
+description: Exibir dicas e truques incluindo criptografar informações confidenciais armazenadas no arquivo Web. config, postagem de conteúdo em uma página diferente, simplificação de URLs complexas...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525755"
 ---
 <a name="how-do-i-learn-the-tips-and-tricks-of-experts"></a><span data-ttu-id="c4239-104">[Como fazer:] Aprenda as dicas e truques de especialistas?</span><span class="sxs-lookup"><span data-stu-id="c4239-104">[How Do I:] Learn the Tips and Tricks of Experts?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30869862"
 ---
 <a name="part-7-creating-the-main-page"></a><span data-ttu-id="0bd0b-102">Parte 7: Criar principal página</span><span class="sxs-lookup"><span data-stu-id="0bd0b-102">Part 7: Creating the Main Page</span></span>
 ====================

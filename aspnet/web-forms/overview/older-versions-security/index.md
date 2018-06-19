@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/index
-title: "Versões mais antigas - segurança | Microsoft Docs"
+title: Versões mais antigas - segurança | Microsoft Docs
 author: rick-anderson
-description: "Tópicos de segurança, autenticação e autorização para ASP.NET 4 e aplicativos Web Forms anteriores."
+description: Tópicos de segurança, autenticação e autorização para ASP.NET 4 e aplicativos Web Forms anteriores.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/18/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-security
 msc.type: chapter
 ms.openlocfilehash: 2a21be5f59e1893ce5a85d0ec801abf6750024b9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519065"
 ---
 <a name="older-versions---security"></a><span data-ttu-id="79eaa-103">Versões mais antigas - segurança</span><span class="sxs-lookup"><span data-stu-id="79eaa-103">Older Versions - Security</span></span>
 ====================
