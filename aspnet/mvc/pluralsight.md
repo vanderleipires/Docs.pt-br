@@ -1,8 +1,8 @@
 ---
 uid: mvc/pluralsight
-title: "Treinamento em vídeo de Pluralsight MVC | Microsoft Docs"
+title: Treinamento em vídeo de Pluralsight MVC | Microsoft Docs
 author: rick-anderson
-description: "Treinamento em vídeo de Pluralsight esse treinamento em vídeo livre MVC irá proporcionar a você em funcionamento com o ASP.NET MVC. Ele abrange tudo da configuração de um desenvolvimento..."
+description: Treinamento em vídeo de Pluralsight esse treinamento em vídeo livre MVC irá proporcionar a você em funcionamento com o ASP.NET MVC. Ele abrange tudo da configuração de um desenvolvimento...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503885"
 ---
 <a name="mvc-video-training-from-pluralsight"></a>Treinamento em vídeo de Pluralsight MVC
 ====================

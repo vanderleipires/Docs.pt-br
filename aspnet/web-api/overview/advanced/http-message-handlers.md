@@ -2,7 +2,7 @@
 uid: web-api/overview/advanced/http-message-handlers
 title: Manipuladores de mensagens de HTTP na API da Web ASP.NET | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506945"
 ---
 <a name="http-message-handlers-in-aspnet-web-api"></a>Manipuladores de mensagens de HTTP na API da Web ASP.NET
 ====================

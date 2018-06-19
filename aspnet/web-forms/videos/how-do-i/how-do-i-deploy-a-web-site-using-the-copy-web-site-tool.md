@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool
 title: '[Como fazer:] Implantar um Site usando a ferramenta Copiar Site | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como implantar um site usando a ferramenta Copy Web Site no Visual Studio. Primeiro, consulte como se conectar a um site remoto e..."
+description: Este Chris Pels vídeo mostrará como implantar um site usando a ferramenta Copy Web Site no Visual Studio. Primeiro, consulte como se conectar a um site remoto e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525665"
 ---
 <a name="how-do-i-deploy-a-web-site-using-the-copy-web-site-tool"></a>[Como fazer:] Implantar um Site usando a ferramenta Copiar Site
 ====================

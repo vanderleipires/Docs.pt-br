@@ -2,7 +2,7 @@
 uid: web-forms/videos/net-4/index
 title: O .NET 4 | Microsoft Docs
 author: rick-anderson
-description: "Os novos recursos do ASP.NET e a funcionalidade disponível no .NET Framework 4."
+description: Os novos recursos do ASP.NET e a funcionalidade disponível no .NET Framework 4.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/net-4
 msc.type: chapter
 ms.openlocfilehash: da794a64d51d23d6f18594e7e4580146891fe92d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522535"
 ---
 <a name="net-4"></a>.NET 4
 ====================

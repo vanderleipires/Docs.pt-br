@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/sending-html-form-data-part-2
-title: "Enviar dados de formulário HTML na API da Web do ASP.NET: com diversas partes MIME e o carregamento de arquivo | Microsoft Docs"
+title: 'Enviar dados de formulário HTML na API da Web do ASP.NET: com diversas partes MIME e o carregamento de arquivo | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/21/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28040136"
 ---
 <a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a>Enviar dados de formulário HTML na API da Web do ASP.NET: com diversas partes MIME e o carregamento de arquivo
 ====================

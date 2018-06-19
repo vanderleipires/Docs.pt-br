@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-multi-lingual-site-with-localization
-title: "[Como fazer:] Criar um Site multilíngue com localização? | Microsoft Docs"
+title: '[Como fazer:] Criar um Site multilíngue com localização? | Microsoft Docs'
 author: microsoft
-description: "Aprenda a criar conteúdo da web com reconhecimento de cultura e específicas de localidade sem nenhum código adicional. Use o Editor de recurso para criar o nível de página e nível de aplicativo..."
+description: Aprenda a criar conteúdo da web com reconhecimento de cultura e específicas de localidade sem nenhum código adicional. Use o Editor de recurso para criar o nível de página e nível de aplicativo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525105"
 ---
 <a name="how-do-i-create-a-multi-lingual-site-with-localization"></a>[Como fazer:] Criar um Site multilíngue com localização?
 ====================

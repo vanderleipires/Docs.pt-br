@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-embed-an-image-in-an-email-with-aspnet
 title: '[Como fazer:] Inserir uma imagem em um Email com o ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Chris Pels mostra como inserir uma imagem em um email com o ASP.NET. Ele cria um formulário da web (com campos para, de, assunto e corpo), usa o AlternateView..."
+description: Chris Pels mostra como inserir uma imagem em um email com o ASP.NET. Ele cria um formulário da web (com campos para, de, assunto e corpo), usa o AlternateView...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525065"
 ---
 <a name="how-do-i-embed-an-image-in-an-email-with-aspnet"></a>[Como fazer:] Inserir uma imagem em um Email com o ASP.NET
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-make-html-elements-accessible-from-server-side-code
-title: "[Como fazer:] Disponibilizar os elementos HTML do lado do código do servidor | Microsoft Docs"
+title: '[Como fazer:] Disponibilizar os elementos HTML do lado do código do servidor | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como fazer elementos HTML padrão em uma página. aspx acessível a partir de código do lado do servidor para que possam ser usados no processamento da página..."
+description: Este Chris Pels vídeo mostrará como fazer elementos HTML padrão em uma página. aspx acessível a partir de código do lado do servidor para que possam ser usados no processamento da página...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521545"
 ---
 <a name="how-do-i-make-html-elements-accessible-from-server-side-code"></a>[Como fazer:] Disponibilizar os elementos HTML do lado do código do servidor
 ====================

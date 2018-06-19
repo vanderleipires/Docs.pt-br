@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/index
-title: "Interface do usuário, Layouts e temas | Microsoft Docs"
+title: Interface do usuário, Layouts e temas | Microsoft Docs
 author: rick-anderson
-description: "Como personalizar o site da interface do usuário em um aplicativo ASP.NET Web Pages."
+description: Como personalizar o site da interface do usuário em um aplicativo ASP.NET Web Pages.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/ui-layouts-and-themes
 msc.type: chapter
 ms.openlocfilehash: 3681ff95e4dbd3cc50f74ef9771ff23cd3ae070a
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529565"
 ---
 <a name="ui-layouts-and-themes"></a>Interface do usuário, Layouts e temas
 ====================

@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/building-20-applications/index
-title: "Criação de 2.0 aplicativos | Microsoft Docs"
+title: Criação de 2.0 aplicativos | Microsoft Docs
 author: rick-anderson
 description: Criando o ASP.NET 2.0 aplicativos
 ms.author: aspnetcontent
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/building-20-applications
 msc.type: chapter
 ms.openlocfilehash: 7260e5ba8bc913729c21245a3904a684d94086dd
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521585"
 ---
 <a name="building-20-applications"></a>Criação de 2.0 aplicativos
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/forms-authentication
-title: "Autenticação de formulários ASP.NET Web API | Microsoft Docs"
+title: Autenticação de formulários ASP.NET Web API | Microsoft Docs
 author: MikeWasson
-description: "Descreve como usar a autenticação de formulários na API da Web do ASP.NET."
+description: Descreve como usar a autenticação de formulários na API da Web do ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508305"
 ---
 <a name="forms-authentication-in-aspnet-web-api"></a>Autenticação de formulários na API da Web ASP.NET
 ====================

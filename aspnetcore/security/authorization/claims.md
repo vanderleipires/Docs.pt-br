@@ -14,6 +14,7 @@ ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/20/2018
+ms.locfileid: "34336298"
 ---
 # <a name="claims-based-authorization-in-aspnet-core"></a>Autorização baseada em declarações no núcleo do ASP.NET
 

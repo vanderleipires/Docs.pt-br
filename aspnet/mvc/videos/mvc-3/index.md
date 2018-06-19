@@ -2,7 +2,7 @@
 uid: mvc/videos/mvc-3/index
 title: O ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
-description: "Acertos rápida do ASP.NET MVC 3"
+description: Acertos rápida do ASP.NET MVC 3
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/videos/mvc-3
 msc.type: chapter
 ms.openlocfilehash: e5388ba664e50bd3786b1ce3f923f20dfab80972
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503525"
 ---
 <a name="aspnet-mvc-3"></a>O ASP.NET MVC 3
 ====================

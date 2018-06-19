@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-visual-web-developer
-title: "Introdução ao Visual Web Developer | Microsoft Docs"
+title: Introdução ao Visual Web Developer | Microsoft Docs
 author: JoeStagner
-description: "Microsoft Visual Web Developer é a versão gratuita do Visual Studio para desenvolver aplicativos ASP.NET. Este vídeo mostra como obter e instalá-lo, t..."
+description: Microsoft Visual Web Developer é a versão gratuita do Visual Studio para desenvolver aplicativos ASP.NET. Este vídeo mostra como obter e instalá-lo, t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520855"
 ---
 <a name="intro-to-visual-web-developer"></a>Introdução ao Visual Web Developer
 ====================

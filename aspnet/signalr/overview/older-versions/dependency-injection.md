@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/dependency-injection
-title: "Injeção de dependência no SignalR 1. x | Microsoft Docs"
+title: Injeção de dependência no SignalR 1. x | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/15/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26505485"
 ---
 <a name="dependency-injection-in-signalr-1x"></a>Injeção de dependência no SignalR 1. x
 ====================

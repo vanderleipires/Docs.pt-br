@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/index
-title: "Versões de páginas da Web | Microsoft Docs"
+title: Versões de páginas da Web | Microsoft Docs
 author: rick-anderson
-description: "O que há de novo em cada versão de páginas da Web ASP.NET."
+description: O que há de novo em cada versão de páginas da Web ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/releases
 msc.type: chapter
 ms.openlocfilehash: e9a9229b964268fb386bb5e956a73505198ca1a6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528565"
 ---
 <a name="web-pages-releases"></a>Versões de páginas da Web
 ====================

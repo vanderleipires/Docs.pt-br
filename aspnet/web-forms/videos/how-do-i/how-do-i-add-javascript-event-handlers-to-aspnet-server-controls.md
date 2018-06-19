@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-add-javascript-event-handlers-to-aspnet-server-controls
 title: '[Como fazer:] Adicionar manipuladores de eventos JavaScript para controles de servidor ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo, Chris Pels mostrará como métodos de JavaScript com controles de servidor ASP.NET para fornecer do lado do cliente de interface funcionalidade para o servidor contr...."
+description: Neste vídeo, Chris Pels mostrará como métodos de JavaScript com controles de servidor ASP.NET para fornecer do lado do cliente de interface funcionalidade para o servidor contr....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525405"
 ---
 <a name="how-do-i-add-javascript-event-handlers-to-aspnet-server-controls"></a>[Como fazer:] Adicionar manipuladores de eventos JavaScript para controles de servidor ASP.NET
 ====================

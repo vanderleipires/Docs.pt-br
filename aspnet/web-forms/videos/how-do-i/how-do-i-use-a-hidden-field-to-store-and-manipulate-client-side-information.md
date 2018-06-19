@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information
-title: "[Como fazer:] Usar um campo oculto para armazenar e manipular informações de cliente | Microsoft Docs"
+title: '[Como fazer:] Usar um campo oculto para armazenar e manipular informações de cliente | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo, Chris Pels mostrará como usar um campo oculto como uma abordagem para o gerenciamento de estado simples em uma página ASP.NET e para comunicação do lado do cliente..."
+description: Neste vídeo, Chris Pels mostrará como usar um campo oculto como uma abordagem para o gerenciamento de estado simples em uma página ASP.NET e para comunicação do lado do cliente...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525075"
 ---
 <a name="how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information"></a>[Como fazer:] Usar um campo oculto para armazenar e manipular informações de cliente
 ====================

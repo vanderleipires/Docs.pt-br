@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/advanced/index
-title: "Tópicos avançados de SignalR | Microsoft Docs"
+title: Tópicos avançados de SignalR | Microsoft Docs
 author: rick-anderson
-description: "Documentação do SignalR - tópicos avançados."
+description: Documentação do SignalR - tópicos avançados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/19/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /signalr/overview/advanced
 msc.type: chapter
 ms.openlocfilehash: dffeb2d91c034ca87732cbdd0784e22a32b7b7cd
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503545"
 ---
 <a name="signalr-advanced-topics"></a>SignalR tópicos avançados
 ====================

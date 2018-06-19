@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/index
-title: "Documentação em versões mais antigas da API da Web | Microsoft Docs"
+title: Documentação em versões mais antigas da API da Web | Microsoft Docs
 author: rick-anderson
-description: "Documentação em versões mais antigas da API da Web."
+description: Documentação em versões mais antigas da API da Web.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/older-versions
 msc.type: chapter
 ms.openlocfilehash: e3cb215e60ba11ec23f4e0c8d03dd08aa39a174f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508185"
 ---
 <a name="documentation-on-older-versions-of-web-api"></a>Documentação em versões mais antigas da API da Web
 ====================

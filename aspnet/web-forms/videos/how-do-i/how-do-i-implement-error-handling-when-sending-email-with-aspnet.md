@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-implement-error-handling-when-sending-email-with-aspnet
 title: '[Como fazer:] Implementar o tratamento de erros ao Enviar Email com o ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Chris Pels mostra como implementar o tratamento de erro ao enviar um email com o ASP.NET. Ele cria uma página da web para enviar email, mostra como configurar o & lt...."
+description: Chris Pels mostra como implementar o tratamento de erro ao enviar um email com o ASP.NET. Ele cria uma página da web para enviar email, mostra como configurar o & lt....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526425"
 ---
 <a name="how-do-i-implement-error-handling-when-sending-email-with-aspnet"></a>[Como fazer:] Implementar o tratamento de erros ao Enviar Email com o ASP.NET
 ====================

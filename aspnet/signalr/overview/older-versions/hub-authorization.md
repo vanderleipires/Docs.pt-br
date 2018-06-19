@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/hub-authorization
-title: "Autenticação e autorização para os Hubs de SignalR (SignalR 1. x) | Microsoft Docs"
+title: Autenticação e autorização para os Hubs de SignalR (SignalR 1. x) | Microsoft Docs
 author: pfletcher
-description: "Este tópico descreve como restringir quais usuários ou funções podem acessar os métodos de hub."
+description: Este tópico descreve como restringir quais usuários ou funções podem acessar os métodos de hub.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042869"
 ---
 <a name="authentication-and-authorization-for-signalr-hubs-signalr-1x"></a>Autenticação e autorização para os Hubs de SignalR (SignalR 1. x)
 ====================

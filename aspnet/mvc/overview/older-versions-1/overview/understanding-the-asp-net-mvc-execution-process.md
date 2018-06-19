@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
-title: "Noções básicas sobre o processo de execução do ASP.NET MVC | Microsoft Docs"
+title: Noções básicas sobre o processo de execução do ASP.NET MVC | Microsoft Docs
 author: microsoft
-description: "Saiba como a estrutura ASP.NET MVC processa uma solicitação do navegador passo a passo."
+description: Saiba como a estrutura ASP.NET MVC processa uma solicitação do navegador passo a passo.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500725"
 ---
 <a name="understanding-the-aspnet-mvc-execution-process"></a>Noções básicas sobre o processo de execução do ASP.NET MVC
 ====================

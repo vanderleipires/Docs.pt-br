@@ -2,7 +2,7 @@
 uid: web-api/videos/getting-started/delete-and-update
 title: 'API da Web ASP.NET, parte 3: Excluir e atualizar | Microsoft Docs'
 author: jongalloway
-description: "Observação: Este vídeo contém informações de uma versão de pré-lançamento do ASP.NET Web API"
+description: 'Observação: Este vídeo contém informações de uma versão de pré-lançamento do ASP.NET Web API'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509015"
 ---
 <a name="aspnet-web-api-part-3-delete-and-update"></a>API da Web ASP.NET, parte 3: Exclusão e atualização
 ====================

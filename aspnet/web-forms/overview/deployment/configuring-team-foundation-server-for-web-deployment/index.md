@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/index
-title: "O ASP.NET 4 - série de implantação corporativa 3 configurar o TFS | Microsoft Docs"
+title: O ASP.NET 4 - série de implantação corporativa 3 configurar o TFS | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial mostra como configurar o Team Foundation Server (TFS) 2010 para criar soluções e implantar o conteúdo da web em vários ambientes de destino."
+description: Este tutorial mostra como configurar o Team Foundation Server (TFS) 2010 para criar soluções e implantar o conteúdo da web em vários ambientes de destino.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server
 msc.type: chapter
 ms.openlocfilehash: e82bcc3d408a47233e2192d9dd9a56ecd06fbaa1
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515165"
 ---
 <a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>O ASP.NET 4 - série de implantação corporativa 3 configurar o TFS
 ====================

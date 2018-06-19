@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-set-up-the-sql-membership-provider
-title: "[Como fazer:] Configurar o provedor de associação SQL | Microsoft Docs"
+title: '[Como fazer:] Configurar o provedor de associação SQL | Microsoft Docs'
 author: rick-anderson
-description: "Una Patrick Hynds enquanto ele demonstra como configurar o provedor de associação do SQL para adicionar autenticação de formulários para seu site da Web do ASP.NET 2.0. Existem alguns dica..."
+description: Una Patrick Hynds enquanto ele demonstra como configurar o provedor de associação do SQL para adicionar autenticação de formulários para seu site da Web do ASP.NET 2.0. Existem alguns dica...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526085"
 ---
 <a name="how-do-i-set-up-the-sql-membership-provider"></a>[Como fazer:] Configurar o provedor de associação do SQL
 ====================

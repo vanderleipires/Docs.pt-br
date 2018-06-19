@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/sql-2005
 msc.type: chapter
 ms.openlocfilehash: 42fc321b4d1d51ec2fe71e4c8873ae62da43c345
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522245"
 ---
 <a name="sql-2005"></a>O SQL 2005
 ====================

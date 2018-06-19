@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/deployment/index
-title: "Implantação | Microsoft Docs"
+title: Implantação | Microsoft Docs
 author: rick-anderson
 description: Como implantar projetos do ASP.NET MVC para um servidor.
 ms.author: aspnetcontent
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 8efbf5ee2e24ea6e302177a64e751b00809250fb
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26497875"
 ---
 # <a name="aspnet-mvc-deployment"></a>Implantação do ASP.NET MVC
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-event-handlers-in-aspnet-web-pages-and-controls
-title: "[Como fazer:] Manipuladores de eventos em páginas da Web ASP.NET e controles | Microsoft Docs"
+title: '[Como fazer:] Manipuladores de eventos em páginas da Web ASP.NET e controles | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como criar manipuladores de eventos para páginas da web ASP.NET e controles de servidor web. Primeiro, saiba como criar f de eventos no nível de página..."
+description: Este Chris Pels vídeo mostrará como criar manipuladores de eventos para páginas da web ASP.NET e controles de servidor web. Primeiro, saiba como criar f de eventos no nível de página...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526035"
 ---
 <a name="how-do-i-event-handlers-in-aspnet-web-pages-and-controls"></a>[Como fazer:] Manipuladores de eventos em páginas da Web ASP.NET e controles
 ====================

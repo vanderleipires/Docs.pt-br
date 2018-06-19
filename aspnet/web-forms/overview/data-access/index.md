@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/index
-title: "Versões mais antigas - acesso a dados | Microsoft Docs"
+title: Versões mais antigas - acesso a dados | Microsoft Docs
 author: rick-anderson
 description: Como executar uma variedade de tarefas relacionadas a dados usando controles de dados de Web Forms do ASP.NET.
 ms.author: aspnetcontent
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access
 msc.type: chapter
 ms.openlocfilehash: 9356c58db6ef5d57babdc7c6e6c09b7cc78a8167
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514195"
 ---
 <a name="older-versions---data-access"></a>Versões mais antigas - acesso a dados
 ====================

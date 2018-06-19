@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/index
-title: "Introdução ao ASP.NET MVC 4 | Microsoft Docs"
+title: Introdução ao ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, w..."
+description: Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, w...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4
 msc.type: chapter
 ms.openlocfilehash: 2d53060133e982e01e371407fc18ac62188c36b7
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26501825"
 ---
 <a name="getting-started-with-aspnet-mvc-4"></a>Introdução ao ASP.NET MVC 4
 ====================

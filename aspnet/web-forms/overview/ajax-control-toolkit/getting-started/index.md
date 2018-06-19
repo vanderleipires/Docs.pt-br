@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/index
-title: "Guia de Introdução | Microsoft Docs"
+title: Guia de Introdução | Microsoft Docs
 author: rick-anderson
-description: "Esta página descreve como baixar o Kit de ferramentas de controle Ajax e como adicionar controles para a caixa de ferramentas do Visual Studio ou Visual Web Developer."
+description: Esta página descreve como baixar o Kit de ferramentas de controle Ajax e como adicionar controles para a caixa de ferramentas do Visual Studio ou Visual Web Developer.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started
 msc.type: chapter
 ms.openlocfilehash: a2bee0fa190a0215546bd5ac72e14df23b2be87b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26510495"
 ---
 <a name="getting-started"></a>Guia de Introdução
 ====================

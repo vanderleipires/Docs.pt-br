@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-editor-features-publishing
-title: "Recursos de Editor de Web do Visual Studio 2013 - publicação | Microsoft Docs"
+title: Recursos de Editor de Web do Visual Studio 2013 - publicação | Microsoft Docs
 author: shanselman
-description: "Visões gerais de Scott Hanselman os recursos de publicação na web no Visual Studio 2013."
+description: Visões gerais de Scott Hanselman os recursos de publicação na web no Visual Studio 2013.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 27e27ef7-9c63-4e68-97e7-d943db68290f
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-publishing
 msc.type: video
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506595"
 ---
 <a name="visual-studio-2013-web-editor-features---publishing"></a>Recursos de Editor de Web do Visual Studio 2013 - publicação
 ====================

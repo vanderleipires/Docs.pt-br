@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/read-write-and-delete-cookies-in-aspnet
-title: "Leitura, gravação e Excluir Cookies em ASP.NET | Microsoft Docs"
+title: Leitura, gravação e Excluir Cookies em ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como ler, gravar e excluir cookies em um aplicativo ASP.NET. Primeiro, aprenda as operações básicas para manipular cooki..."
+description: Este Chris Pels vídeo mostrará como ler, gravar e excluir cookies em um aplicativo ASP.NET. Primeiro, aprenda as operações básicas para manipular cooki...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/10/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526365"
 ---
 <a name="read-write-and-delete-cookies-in-aspnet"></a>Leitura, gravação e Excluir Cookies no ASP.NET
 ====================

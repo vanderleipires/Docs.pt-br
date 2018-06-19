@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/index
-title: "Guia de Introdução ao EF 5 usando MVC 4 | Microsoft Docs"
+title: Guia de Introdução ao EF 5 usando MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "Noções básicas de como usar o Entity Framework 5 para exibir e editar dados em um aplicativo ASP.NET MVC 4."
+description: Noções básicas de como usar o Entity Framework 5 para exibir e editar dados em um aplicativo ASP.NET MVC 4.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/26/2013
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-
 msc.type: chapter
 ms.openlocfilehash: 45d58999934e1d4a3df144f1e5b0e108192f6588
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26502435"
 ---
 <a name="getting-started-with-ef-5-using-mvc-4"></a>Guia de Introdução ao EF 5 usando MVC 4
 ====================

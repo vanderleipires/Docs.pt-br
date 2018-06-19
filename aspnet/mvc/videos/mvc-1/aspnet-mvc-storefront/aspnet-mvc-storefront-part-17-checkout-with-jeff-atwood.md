@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867145"
 ---
 <a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a>O ASP.NET MVC vitrine parte 17: Check-out com Jeff Atwood
 ====================

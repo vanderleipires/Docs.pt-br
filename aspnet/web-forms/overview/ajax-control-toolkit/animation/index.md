@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/index
-title: "Animação | Microsoft Docs"
+title: Animação | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial mostra como criar animações usando o controle de animação e a estrutura de animação."
+description: Este tutorial mostra como criar animações usando o controle de animação e a estrutura de animação.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/11/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation
 msc.type: chapter
 ms.openlocfilehash: 96a27f734e616022e17dc073ac0467b88eddced3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509505"
 ---
 <a name="animation"></a>Animação
 ====================

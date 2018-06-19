@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/mapping-users-to-connections
-title: "Mapeamento de usuários do SignalR para conexões no SignalR 1. x | Microsoft Docs"
+title: Mapeamento de usuários do SignalR para conexões no SignalR 1. x | Microsoft Docs
 author: pfletcher
-description: "Este tópico mostra como reter informações sobre usuários e suas conexões."
+description: Este tópico mostra como reter informações sobre usuários e suas conexões.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28037006"
 ---
 <a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>Mapeamento de usuários do SignalR para conexões no SignalR 1. x
 ====================

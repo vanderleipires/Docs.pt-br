@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/side-by-side-with-10
-title: "Execução do ASP.NET lado a lado do .NET Framework 1.0 e 1.1 | Microsoft Docs"
+title: Execução do ASP.NET lado a lado do .NET Framework 1.0 e 1.1 | Microsoft Docs
 author: rick-anderson
-description: "Este white paper descreve como instalar o .NET 1.0 e 1.1 do .NET em seu computador, permitindo que um aplicativo Web ASP.NET ser executado em qualquer versão do enquadrar..."
+description: Este white paper descreve como instalar o .NET 1.0 e 1.1 do .NET em seu computador, permitindo que um aplicativo Web ASP.NET ser executado em qualquer versão do enquadrar...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530175"
 ---
 <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>Execução do ASP.NET lado a lado do .NET Framework 1.0 e 1.1
 ====================

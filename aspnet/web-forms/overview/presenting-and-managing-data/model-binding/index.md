@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/index
-title: "Modelo de associação e formulários da Web no Visual Studio 2013 | Microsoft Docs"
+title: Modelo de associação e formulários da Web no Visual Studio 2013 | Microsoft Docs
 author: rick-anderson
-description: "Como trabalhar com dados usando o modelo de associação e formulários da Web."
+description: Como trabalhar com dados usando o modelo de associação e formulários da Web.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2013
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding
 msc.type: chapter
 ms.openlocfilehash: f653a1394af8bfc562c244dad00ff35bc4744647
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519765"
 ---
 <a name="model-binding-and-web-forms-in-visual-studio-2013"></a>Modelo de associação e formulários da Web no Visual Studio 2013
 ====================

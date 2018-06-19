@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/change-the-visual-style-of-a-web-page
-title: "Alterar o estilo Visual de uma página da Web | Microsoft Docs"
+title: Alterar o estilo Visual de uma página da Web | Microsoft Docs
 author: rick-anderson
-description: "Parte 3 apresenta com folhas de estilo CSS para garantir sua página mais Linda."
+description: Parte 3 apresenta com folhas de estilo CSS para garantir sua página mais Linda.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529975"
 ---
 <a name="change-the-visual-style-of-a-web-page"></a>Alterar o estilo Visual de uma página da Web
 ====================

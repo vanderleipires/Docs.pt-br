@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/index
-title: "O ASP.NET 4 - introdução de implantação corporativa | Microsoft Docs"
+title: O ASP.NET 4 - introdução de implantação corporativa | Microsoft Docs
 author: rick-anderson
-description: "Esse conjunto de tutoriais descreve ferramentas e técnicas que você pode usar para implantar aplicativos da web em vários cenários corporativos."
+description: Esse conjunto de tutoriais descreve ferramentas e técnicas que você pode usar para implantar aplicativos da web em vários cenários corporativos.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-ente
 msc.type: chapter
 ms.openlocfilehash: 049a7485473d53fb179d0d05f05c56e221a38ba8
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515155"
 ---
 <a name="aspnet-4---enterprise-deployment-introduction"></a>ASP.NET 4 - introdução de implantação do Enterprise
 ====================

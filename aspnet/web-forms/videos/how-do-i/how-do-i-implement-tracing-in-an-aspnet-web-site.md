@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-implement-tracing-in-an-aspnet-web-site
 title: '[Como fazer:]  Implementa o rastreamento em um Site ASP.NET? | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo Chris Pels mostrará como implementar o rastreamento em um site ASP.NET para monitorar ou medir o desempenho e para diagnosticar erros. Aprenda uem..."
+description: Neste vídeo Chris Pels mostrará como implementar o rastreamento em um site ASP.NET para monitorar ou medir o desempenho e para diagnosticar erros. Aprenda uem...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526555"
 ---
 <a name="how-do-i--implement-tracing-in-an-aspnet-web-site"></a>[Como fazer:]  Implementa o rastreamento em um Site ASP.NET?
 ====================

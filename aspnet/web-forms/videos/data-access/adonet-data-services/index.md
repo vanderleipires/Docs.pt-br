@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/data-access/adonet-data-services/index
-title: "Serviços de dados ADO.NET | Microsoft Docs"
+title: Serviços de dados ADO.NET | Microsoft Docs
 author: rick-anderson
-description: "Esses vídeos mostram como criar uma camada de acesso a dados usando um conjunto de dados tipado para um aplicativo simples ASP.NET."
+description: Esses vídeos mostram como criar uma camada de acesso a dados usando um conjunto de dados tipado para um aplicativo simples ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/04/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/data-access/adonet-data-services
 msc.type: chapter
 ms.openlocfilehash: 07181564ee701c71ce74ac7cea3d8cfd0f9f4ffd
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525095"
 ---
 <a name="adonet-data-services"></a>Serviços de dados ADO.NET
 ====================

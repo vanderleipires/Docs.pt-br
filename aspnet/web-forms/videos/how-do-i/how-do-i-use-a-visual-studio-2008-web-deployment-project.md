@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-a-visual-studio-2008-web-deployment-project
-title: "[Como fazer:] Usar um projeto de implantação de Web do Visual Studio 2008 | Microsoft Docs"
+title: '[Como fazer:] Usar um projeto de implantação de Web do Visual Studio 2008 | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo, Chris Pels mostra como usar o complemento a implantação da Web do Visual Studio 2008 para criar projetos de implantação com um maior grau de controle sobre como..."
+description: Neste vídeo, Chris Pels mostra como usar o complemento a implantação da Web do Visual Studio 2008 para criar projetos de implantação com um maior grau de controle sobre como...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/11/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521845"
 ---
 <a name="how-do-i-use-a-visual-studio-2008-web-deployment-project"></a>[Como fazer:] Usar um projeto de implantação de Web do Visual Studio 2008
 ====================

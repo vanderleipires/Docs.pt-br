@@ -1,8 +1,8 @@
 ---
 uid: web-api/videos/getting-started/index
-title: "Visão geral da API da Web ASP.NET e vídeos de Introdução | Microsoft Docs"
+title: Visão geral da API da Web ASP.NET e vídeos de Introdução | Microsoft Docs
 author: rick-anderson
-description: "Essa é uma série de vídeos para começar com a API da Web do ASP.NET."
+description: Essa é uma série de vídeos para começar com a API da Web do ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/videos/getting-started
 msc.type: chapter
 ms.openlocfilehash: c06a3e5670839af357a515331cd864521d260c0e
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508985"
 ---
 <a name="aspnet-web-api-overview-and-getting-started-videos"></a>Visão geral da API da Web ASP.NET e vídeos de Introdução
 ====================

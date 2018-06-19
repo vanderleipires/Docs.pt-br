@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/htmleditor/index
 title: HTMLEditor | Microsoft Docs
 author: rick-anderson
-description: "Este tutorial mostra como usar o controle de HTMLEditor, que fornece um editor avançado e WYSIWYG ou editando a fonte de conteúdo HTML."
+description: Este tutorial mostra como usar o controle de HTMLEditor, que fornece um editor avançado e WYSIWYG ou editando a fonte de conteúdo HTML.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor
 msc.type: chapter
 ms.openlocfilehash: 06e68d964cecc00c0ab45f7965a8df11e8afc6ea
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26510615"
 ---
 <a name="htmleditor"></a>HTMLEditor
 ====================

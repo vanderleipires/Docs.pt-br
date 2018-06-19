@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/americas-next-top-model-view-controller-framework
-title: "Próximo modelo superior exibição controlador Framework do América | Microsoft Docs"
+title: Próximo modelo superior exibição controlador Framework do América | Microsoft Docs
 author: Haacked
-description: "Consulte como criar um aplicativo simples que destaca alguns dos principais recursos do ASP.NET MVC. Além disso, saiba como aumentar a produtividade usando alguns o..."
+description: Consulte como criar um aplicativo simples que destaca alguns dos principais recursos do ASP.NET MVC. Além disso, saiba como aumentar a produtividade usando alguns o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503435"
 ---
 <a name="americas-next-top-model-view-controller-framework"></a>Próximo modelo superior exibição controlador Framework do América
 ====================

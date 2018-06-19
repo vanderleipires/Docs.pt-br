@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site
-title: "Registro em log usando Sites externos em uma Web ASP.NET páginas Site (Razor) | Microsoft Docs"
+title: Registro em log usando Sites externos em uma Web ASP.NET páginas Site (Razor) | Microsoft Docs
 author: tfitzmac
-description: "Este artigo explica como fazer logon no seu site de páginas da Web do ASP.NET (Razor) usando o Google, Facebook, Twitter, Yahoo e outros sites — ou seja, como dar suporte..."
+description: Este artigo explica como fazer logon no seu site de páginas da Web do ASP.NET (Razor) usando o Google, Facebook, Twitter, Yahoo e outros sites — ou seja, como dar suporte...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530165"
 ---
 <a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a>Registro em log usando Sites externos em um Site de páginas (Razor) da Web do ASP.NET
 ====================

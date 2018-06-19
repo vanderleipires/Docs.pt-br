@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874649"
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>Projeto de formulários de identidade do ASP.NET adicionando um Web vazio ou existente
 ====================

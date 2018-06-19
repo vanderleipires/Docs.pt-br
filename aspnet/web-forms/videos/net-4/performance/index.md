@@ -2,7 +2,7 @@
 uid: web-forms/videos/net-4/performance/index
 title: Desempenho | Microsoft Docs
 author: rick-anderson
-description: "Esta série de vídeos abrange novas maneiras de otimizar a páginas Web Forms no ASP.NET 4."
+description: Esta série de vídeos abrange novas maneiras de otimizar a páginas Web Forms no ASP.NET 4.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/net-4/performance
 msc.type: chapter
 ms.openlocfilehash: e046546fafa487f53b90e106a69c935a1bc187ad
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522005"
 ---
 <a name="performance"></a>Desempenho
 ====================

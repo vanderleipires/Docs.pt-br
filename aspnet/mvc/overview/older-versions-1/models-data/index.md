@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/models-data/index
 title: Modelos (dados) | Microsoft Docs
 author: rick-anderson
-description: "Esta série de tutoriais, você aprenderá a usar o ASP.NET MVC com o Entity Framework da Microsoft. No decorrer deste tutorial, você deve criar um aplicativo da web..."
+description: Esta série de tutoriais, você aprenderá a usar o ASP.NET MVC com o Entity Framework da Microsoft. No decorrer deste tutorial, você deve criar um aplicativo da web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/models-data
 msc.type: chapter
 ms.openlocfilehash: b531a5ad6924840487985a57c178d18d945a0b06
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499975"
 ---
 <a name="models-data"></a>Modelos (dados)
 ====================

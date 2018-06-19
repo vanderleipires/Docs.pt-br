@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/signalr-connection-density-testing-with-crank
-title: "Densidade de Conexão do SignalR testes com pedais | Microsoft Docs"
+title: Densidade de Conexão do SignalR testes com pedais | Microsoft Docs
 author: tfitzmac
-description: "Densidade de Conexão do SignalR testes com pedais"
+description: Densidade de Conexão do SignalR testes com pedais
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/22/2015
@@ -17,6 +17,7 @@ ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/21/2017
+ms.locfileid: "26535325"
 ---
 <a name="signalr-connection-density-testing-with-crank"></a>Densidade de Conexão do SignalR testes com pedais
 ====================

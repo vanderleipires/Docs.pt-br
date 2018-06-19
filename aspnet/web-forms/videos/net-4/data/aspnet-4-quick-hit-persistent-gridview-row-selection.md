@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/data/aspnet-4-quick-hit-persistent-gridview-row-selection
-title: "Seleção de linha GridView persistente | Microsoft Docs"
+title: Seleção de linha GridView persistente | Microsoft Docs
 author: JoeStagner
-description: "Neste vídeo, você aprenderá sobre a seleção de linha persistente para o controle GridView."
+description: Neste vídeo, você aprenderá sobre a seleção de linha persistente para o controle GridView.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/16/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522025"
 ---
 <a name="aspnet-4-quick-hit--persistent-gridview-row-selection"></a>O ASP.NET 4 "Hit rápido –" seleção de linha GridView persistente
 ====================

@@ -2,7 +2,7 @@
 uid: web-api/overview/odata-support-in-aspnet-web-api/index
 title: OData na API da Web ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Como criar pontos de extremidade OData na API da Web. O OData é um protocolo de acesso de dados para a web. Ele fornece uma maneira uniforme para consultar e manipular os conjuntos de dados. S de API da Web..."
+description: Como criar pontos de extremidade OData na API da Web. O OData é um protocolo de acesso de dados para a web. Ele fornece uma maneira uniforme para consultar e manipular os conjuntos de dados. S de API da Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/17/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api
 msc.type: chapter
 ms.openlocfilehash: dd46454ae78424ab383a71d185ff7a563692cc5f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508035"
 ---
 <a name="odata-in-aspnet-web-api"></a>OData na API da Web ASP.NET
 ====================

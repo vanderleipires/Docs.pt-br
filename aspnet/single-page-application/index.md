@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/index
-title: "Aplicativo de página única ASP.NET | Microsoft Docs"
+title: Aplicativo de página única ASP.NET | Microsoft Docs
 author: rick-anderson
-description: "Baixe a atualização do ASP.NET estão 2012 e ter uma melhor experiência de ponta a ponta para criar aplicativos com significativas interações de cliente usando JavaScrip..."
+description: Baixe a atualização do ASP.NET estão 2012 e ter uma melhor experiência de ponta a ponta para criar aplicativos com significativas interações de cliente usando JavaScrip...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2012
 ms.topic: article
 ms.assetid: 4760328c-3d73-4757-a36f-ab80a5b3f611
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application
 msc.type: categoryindex
 ms.openlocfilehash: 459af328c37edd0ac38ddd51bc7eb6e705690df5
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26505625"
 ---
 <a name="aspnet-single-page-application"></a>Aplicativo de página única do ASP.NET
 ====================

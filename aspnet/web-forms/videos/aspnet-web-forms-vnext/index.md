@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext
 msc.type: chapter
 ms.openlocfilehash: 7b4c1e39dcc1b93c40cff69e6e5337d55b5607ba
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521285"
 ---
 <a name="aspnet-45"></a>ASP.NET 4.5
 ====================

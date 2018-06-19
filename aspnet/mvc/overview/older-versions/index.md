@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/index
-title: "Versões mais antigas - MVC 3 e 4 | Microsoft Docs"
+title: Versões mais antigas - MVC 3 e 4 | Microsoft Docs
 author: rick-anderson
-description: "Links para recursos para aprender a usar versões anteriores do ASP.NET MVC."
+description: Links para recursos para aprender a usar versões anteriores do ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions
 msc.type: chapter
 ms.openlocfilehash: b017b33346c3d61741f2285896870002d61d3703
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26502565"
 ---
 <a name="older-versions---mvc-3-and-4"></a>Versões mais antigas - MVC 3 e 4
 ====================

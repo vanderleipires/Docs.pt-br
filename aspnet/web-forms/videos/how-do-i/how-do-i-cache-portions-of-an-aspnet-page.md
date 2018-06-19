@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
-title: "[Como fazer:] Armazenar em cache as partes de uma página ASP.NET | Microsoft Docs"
+title: '[Como fazer:] Armazenar em cache as partes de uma página ASP.NET | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostra como armazenar em cache as partes de um ou mais de uma página ASP.NET implementando OutputCache para controles de usuário na página. Primeiro, um..."
+description: Este Chris Pels vídeo mostra como armazenar em cache as partes de um ou mais de uma página ASP.NET implementando OutputCache para controles de usuário na página. Primeiro, um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525275"
 ---
 <a name="how-do-i-cache-portions-of-an-aspnet-page"></a>[Como fazer:] Cache de partes de uma página ASP.NET
 ====================
