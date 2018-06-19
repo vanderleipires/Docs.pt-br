@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it
-title: "[Como fazer:] Mapear um controle de servidor ASP.NET para o adaptador usado para renderizá-lo | Microsoft Docs"
+title: '[Como fazer:] Mapear um controle de servidor ASP.NET para o adaptador usado para renderizá-lo | Microsoft Docs'
 author: rick-anderson
-description: "Este Chris Pels vídeo mostrará como usar um adaptador de controle para fornecer diferentes renderizações para um controle de servidor ASP.NET sem alterando o c..."
+description: Este Chris Pels vídeo mostrará como usar um adaptador de controle para fornecer diferentes renderizações para um controle de servidor ASP.NET sem alterando o c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526055"
 ---
 <a name="how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it"></a><span data-ttu-id="3fc61-103">[Como fazer:] Mapear um controle de servidor ASP.NET para o adaptador usado para renderizá-lo</span><span class="sxs-lookup"><span data-stu-id="3fc61-103">[How Do I:] Map an ASP.NET Server Control to the Adaptor Used to Render It</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/index
-title: "Implantação de Web do ASP.NET usando o Visual Studio | Microsoft Docs"
+title: Implantação de Web do ASP.NET usando o Visual Studio | Microsoft Docs
 author: rick-anderson
-description: "Esta série de tutorial mostra como criar um aplicativo web ASP.NET que usa o SQL Server (não SQL Server Compact) disponíveis através da internet, implantando-t..."
+description: Esta série de tutorial mostra como criar um aplicativo web ASP.NET que usa o SQL Server (não SQL Server Compact) disponíveis através da internet, implantando-t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment
 msc.type: chapter
 ms.openlocfilehash: de7898f13c132f82b64403061558ba04684f523c
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515195"
 ---
 <a name="aspnet-web-deployment-using-visual-studio"></a><span data-ttu-id="5529b-103">Implantação de Web do ASP.NET usando o Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5529b-103">ASP.NET Web Deployment using Visual Studio</span></span>
 ====================

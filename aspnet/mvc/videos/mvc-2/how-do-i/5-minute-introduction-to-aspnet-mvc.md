@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879641"
 ---
 <a name="5-minute-introduction-to-aspnet-mvc"></a><span data-ttu-id="72113-103">5 minutos Introdução ao ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="72113-103">5 Minute Introduction to ASP.NET MVC</span></span>
 ====================

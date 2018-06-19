@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883486"
 ---
 <a name="begin-modifying-dynamic-data-applications-with-url-routing"></a><span data-ttu-id="d082f-103">Começar a modificar os aplicativos de dados dinâmicos com o roteamento de URL</span><span class="sxs-lookup"><span data-stu-id="d082f-103">Begin Modifying Dynamic Data Applications with URL Routing</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882651"
 ---
 <a name="how-do-i-advance-cascading-style-sheet-features-and-management"></a><span data-ttu-id="52140-104">[Como fazer:] Avançar de gerenciamento e recursos de folha de estilo em cascata</span><span class="sxs-lookup"><span data-stu-id="52140-104">[How Do I:] Advance Cascading Style Sheet Features and Management</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887516"
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a><span data-ttu-id="89e2e-104">Principais diferenças entre o IIS e o ASP.NET Development Server (c#)</span><span class="sxs-lookup"><span data-stu-id="89e2e-104">Core Differences Between IIS and the ASP.NET Development Server (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892134"
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a><span data-ttu-id="30c60-103">Noções básicas sobre a autenticação do ASP.NET AJAX e serviços de aplicativos de perfil</span><span class="sxs-lookup"><span data-stu-id="30c60-103">Understanding ASP.NET AJAX Authentication and Profile Application Services</span></span>
 ====================

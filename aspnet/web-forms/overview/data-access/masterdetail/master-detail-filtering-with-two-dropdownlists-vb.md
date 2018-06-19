@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887220"
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a><span data-ttu-id="6e556-103">Filtragem com dois DropDownLists (VB) mestre/detalhes</span><span class="sxs-lookup"><span data-stu-id="6e556-103">Master/Detail Filtering With Two DropDownLists (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889118"
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a><span data-ttu-id="49125-103">Adicionando controles de validação a Interface de edição do DataList (c#)</span><span class="sxs-lookup"><span data-stu-id="49125-103">Adding Validation Controls to the DataList's Editing Interface (C#)</span></span>
 ====================

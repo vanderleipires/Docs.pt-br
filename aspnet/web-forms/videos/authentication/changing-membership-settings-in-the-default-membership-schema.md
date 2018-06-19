@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886024"
 ---
 <a name="changing-membership-settings-in-the-default-membership-schema"></a><span data-ttu-id="0205b-104">Alterar as configurações de associação do esquema de associação padrão</span><span class="sxs-lookup"><span data-stu-id="0205b-104">Changing Membership Settings in the Default Membership Schema</span></span>
 ====================

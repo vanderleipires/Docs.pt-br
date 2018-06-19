@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899376"
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a><span data-ttu-id="09e78-103">Os principais recursos em páginas da Web do ASP.NET 2</span><span class="sxs-lookup"><span data-stu-id="09e78-103">The Top Features in ASP.NET Web Pages 2</span></span>
 ====================

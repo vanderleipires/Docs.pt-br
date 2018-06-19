@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/index
-title: "Autenticação | Microsoft Docs"
+title: Autenticação | Microsoft Docs
 author: rick-anderson
-description: "Como implementar e gerenciar a segurança (autenticação) em um aplicativo ASP.NET."
+description: Como implementar e gerenciar a segurança (autenticação) em um aplicativo ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/authentication
 msc.type: chapter
 ms.openlocfilehash: b9cd2d86bce12795802302b822e945762690a57b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521725"
 ---
 <a name="authentication"></a><span data-ttu-id="74a72-103">Autenticação</span><span class="sxs-lookup"><span data-stu-id="74a72-103">Authentication</span></span>
 ====================

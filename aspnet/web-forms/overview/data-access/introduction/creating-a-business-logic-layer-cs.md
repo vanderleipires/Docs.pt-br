@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886934"
 ---
 <a name="creating-a-business-logic-layer-c"></a><span data-ttu-id="1e0c6-103">Criando uma camada de lógica de negócios (c#)</span><span class="sxs-lookup"><span data-stu-id="1e0c6-103">Creating a Business Logic Layer (C#)</span></span>
 ====================

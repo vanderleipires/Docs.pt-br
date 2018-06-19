@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876963"
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-c"></a><span data-ttu-id="168a8-105">Protegendo cadeias de caracteres de Conexão e outras informações de configuração (c#)</span><span class="sxs-lookup"><span data-stu-id="168a8-105">Protecting Connection Strings and Other Configuration Information (C#)</span></span>
 ====================

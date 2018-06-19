@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875806"
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a><span data-ttu-id="9a032-103">Examinando os métodos de edição e exibição de edição (c#)</span><span class="sxs-lookup"><span data-stu-id="9a032-103">Examining the Edit Methods and Edit View (C#)</span></span>
 ====================

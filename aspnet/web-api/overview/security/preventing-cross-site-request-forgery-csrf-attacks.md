@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
-title: "Impedindo ataques CSRF (falsificação) de solicitação entre sites na API da Web ASP.NET | Microsoft Docs"
+title: Impedindo ataques CSRF (falsificação) de solicitação entre sites na API da Web ASP.NET | Microsoft Docs
 author: MikeWasson
-description: "Descreve o ataque CSRF (falsificação) de solicitação entre sites e como implementar medidas de anti-CSRF na API da Web do ASP.NET."
+description: Descreve o ataque CSRF (falsificação) de solicitação entre sites e como implementar medidas de anti-CSRF na API da Web do ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508145"
 ---
 <a name="preventing-cross-site-request-forgery-csrf-attacks-in-aspnet-web-api"></a><span data-ttu-id="107dc-103">Impedindo ataques CSRF (falsificação) de solicitação entre sites na API da Web ASP.NET</span><span class="sxs-lookup"><span data-stu-id="107dc-103">Preventing Cross-Site Request Forgery (CSRF) Attacks in ASP.NET Web API</span></span>
 ====================

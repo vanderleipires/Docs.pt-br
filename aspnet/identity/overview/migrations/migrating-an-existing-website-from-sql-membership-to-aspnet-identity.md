@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874987"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a><span data-ttu-id="7e9af-103">Migrando um site existente da associação SQL para a identidade do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="7e9af-103">Migrating an Existing Website from SQL Membership to ASP.NET Identity</span></span>
 ====================

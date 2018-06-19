@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886037"
 ---
 <a name="intro-to-aspnet-20-aspnet-20-fundamentals"></a><span data-ttu-id="d4734-103">[Introdução ao ASP.NET 2.0:] O ASP.NET 2.0 conceitos básicos</span><span class="sxs-lookup"><span data-stu-id="d4734-103">[Intro to ASP.NET 2.0:] ASP.NET 2.0 Fundamentals</span></span>
 ====================

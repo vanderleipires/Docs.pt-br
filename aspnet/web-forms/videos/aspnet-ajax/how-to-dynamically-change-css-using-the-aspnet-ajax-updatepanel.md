@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885222"
 ---
 <a name="how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel"></a><span data-ttu-id="06fca-103">Como alterar dinamicamente usando ASP.NET AJAX UpdatePanel CSS</span><span class="sxs-lookup"><span data-stu-id="06fca-103">How To Dynamically Change CSS Using the ASP.NET AJAX UpdatePanel</span></span>
 ====================

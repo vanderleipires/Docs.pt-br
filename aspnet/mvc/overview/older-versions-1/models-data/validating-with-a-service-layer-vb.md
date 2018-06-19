@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868237"
 ---
 <a name="validating-with-a-service-layer-vb"></a><span data-ttu-id="fdd52-104">Validando com uma camada de serviço (VB)</span><span class="sxs-lookup"><span data-stu-id="fdd52-104">Validating with a Service Layer (VB)</span></span>
 ====================

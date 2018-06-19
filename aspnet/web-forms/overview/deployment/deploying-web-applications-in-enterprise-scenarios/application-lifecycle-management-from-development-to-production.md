@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887273"
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a><span data-ttu-id="1ddd6-103">Gerenciamento de ciclo de vida do aplicativo: De desenvolvimento para produção</span><span class="sxs-lookup"><span data-stu-id="1ddd6-103">Application Lifecycle Management: From Development to Production</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888699"
 ---
 <a name="wrapping-database-modifications-within-a-transaction-vb"></a><span data-ttu-id="54657-104">Quebra automática de modificações de banco de dados em uma transação (VB)</span><span class="sxs-lookup"><span data-stu-id="54657-104">Wrapping Database Modifications within a Transaction (VB)</span></span>
 ====================

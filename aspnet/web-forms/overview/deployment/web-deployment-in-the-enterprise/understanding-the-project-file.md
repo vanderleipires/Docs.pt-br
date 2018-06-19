@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886895"
 ---
 <a name="understanding-the-project-file"></a><span data-ttu-id="cfdc9-104">Noções básicas sobre o arquivo de projeto</span><span class="sxs-lookup"><span data-stu-id="cfdc9-104">Understanding the Project File</span></span>
 ====================

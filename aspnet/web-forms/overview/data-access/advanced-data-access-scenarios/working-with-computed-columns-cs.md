@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877220"
 ---
 <a name="working-with-computed-columns-c"></a><span data-ttu-id="82676-103">Trabalhando com colunas computadas (c#)</span><span class="sxs-lookup"><span data-stu-id="82676-103">Working with Computed Columns (C#)</span></span>
 ====================

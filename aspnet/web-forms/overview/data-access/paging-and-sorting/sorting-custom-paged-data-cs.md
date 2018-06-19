@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882410"
 ---
 <a name="sorting-custom-paged-data-c"></a><span data-ttu-id="7ccf1-104">Classificação personalizada paginável dados (c#)</span><span class="sxs-lookup"><span data-stu-id="7ccf1-104">Sorting Custom Paged Data (C#)</span></span>
 ====================

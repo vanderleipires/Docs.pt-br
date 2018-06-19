@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879199"
 ---
 <a name="aspnet-mvc-routing-overview-vb"></a><span data-ttu-id="8513f-103">O ASP.NET MVC visão geral de roteamento (VB)</span><span class="sxs-lookup"><span data-stu-id="8513f-103">ASP.NET MVC Routing Overview (VB)</span></span>
 ====================

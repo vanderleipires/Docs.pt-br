@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880067"
 ---
 <a name="lesson-2-creating-a-web-forms-user-interface"></a><span data-ttu-id="250a8-104">[Lição 2:] Criando uma Interface de usuário de formulários da Web</span><span class="sxs-lookup"><span data-stu-id="250a8-104">[Lesson 2:] Creating a Web Forms User Interface</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888936"
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a><span data-ttu-id="7be61-104">Detalhes de erro de log com o ASP.NET (VB) de monitoramento de integridade</span><span class="sxs-lookup"><span data-stu-id="7be61-104">Logging Error Details with ASP.NET Health Monitoring (VB)</span></span>
 ====================

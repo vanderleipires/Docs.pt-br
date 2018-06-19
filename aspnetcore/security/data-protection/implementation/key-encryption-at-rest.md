@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851112"
 ---
 # <a name="key-encryption-at-rest-in-aspnet-core"></a><span data-ttu-id="f73ec-103">Criptografia de chave em repouso no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="f73ec-103">Key encryption at rest in ASP.NET Core</span></span>
 

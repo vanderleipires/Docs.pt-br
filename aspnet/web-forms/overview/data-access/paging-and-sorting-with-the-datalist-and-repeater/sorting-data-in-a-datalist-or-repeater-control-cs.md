@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889547"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a><span data-ttu-id="86ef5-103">Classificando dados em um controle de Repetidor (c#) ou DataList</span><span class="sxs-lookup"><span data-stu-id="86ef5-103">Sorting Data in a DataList or Repeater Control (C#)</span></span>
 ====================

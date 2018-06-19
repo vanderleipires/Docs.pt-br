@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889050"
 ---
 <a name="multiple-contentplaceholders-and-default-content-c"></a><span data-ttu-id="9d7b1-103">Vários ContentPlaceHolders e conteúdo padrão (c#)</span><span class="sxs-lookup"><span data-stu-id="9d7b1-103">Multiple ContentPlaceHolders and Default Content (C#)</span></span>
 ====================

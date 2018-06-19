@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878728"
 ---
 <a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a><span data-ttu-id="17203-103">ASP.NET MVC vitrine parte 7: Roteamento e trabalho de interface do usuário</span><span class="sxs-lookup"><span data-stu-id="17203-103">ASP.NET MVC Storefront Part 7: Routing and UI Work</span></span>
 ====================

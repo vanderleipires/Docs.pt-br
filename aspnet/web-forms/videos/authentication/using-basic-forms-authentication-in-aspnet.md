@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887636"
 ---
 <a name="using-basic-forms-authentication-in-aspnet"></a><span data-ttu-id="730e1-104">Usando a autenticação de formulários básicos no ASP.NET</span><span class="sxs-lookup"><span data-stu-id="730e1-104">Using Basic Forms Authentication in ASP.NET</span></span>
 ====================

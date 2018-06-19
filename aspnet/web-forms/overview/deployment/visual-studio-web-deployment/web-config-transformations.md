@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880499"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a><span data-ttu-id="5258f-103">Implantação de Web do ASP.NET usando o Visual Studio: transformações do arquivo Web. config</span><span class="sxs-lookup"><span data-stu-id="5258f-103">ASP.NET Web Deployment using Visual Studio: Web.config File Transformations</span></span>
 ====================

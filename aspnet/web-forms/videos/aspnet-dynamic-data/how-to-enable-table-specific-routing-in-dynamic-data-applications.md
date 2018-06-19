@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883327"
 ---
 <a name="how-to-enable-table-specific-routing-in-dynamic-data-applications"></a><span data-ttu-id="ec1e0-103">Como habilitar o roteamento específico da tabela em aplicativos de dados dinâmicos</span><span class="sxs-lookup"><span data-stu-id="ec1e0-103">How to Enable Table Specific Routing in Dynamic Data Applications</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872083"
 ---
 <a name="understanding-views-view-data-and-html-helpers"></a><span data-ttu-id="e05d4-104">Compreendendo as exibições e exibir dados auxiliares HTML</span><span class="sxs-lookup"><span data-stu-id="e05d4-104">Understanding Views, View Data, and HTML Helpers</span></span>
 ====================

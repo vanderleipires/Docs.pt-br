@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876339"
 ---
 <a name="caching-data-at-application-startup-vb"></a><span data-ttu-id="cb4fa-104">Cache de dados na inicialização do aplicativo (VB)</span><span class="sxs-lookup"><span data-stu-id="cb4fa-104">Caching Data at Application Startup (VB)</span></span>
 ====================

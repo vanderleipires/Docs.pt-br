@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884981"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-roundedcorners-extender"></a><span data-ttu-id="3f10b-104">[Como fazer:] Usar o extensor RoundedCorners do ASP.NET AJAX?</span><span class="sxs-lookup"><span data-stu-id="3f10b-104">[How Do I:] Use the ASP.NET AJAX RoundedCorners Extender?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893489"
 ---
 <a name="enabling-full-text-search-in-your-text-data"></a><span data-ttu-id="ee77e-103">Habilitando a pesquisa de texto completo em seus dados de texto</span><span class="sxs-lookup"><span data-stu-id="ee77e-103">Enabling Full-Text Search in your Text Data</span></span>
 ====================

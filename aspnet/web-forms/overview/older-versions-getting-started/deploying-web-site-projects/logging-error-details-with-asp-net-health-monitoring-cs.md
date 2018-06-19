@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888517"
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a><span data-ttu-id="591e9-104">Registro em log detalhes de erro com a integridade do ASP.NET de monitoramento (c#)</span><span class="sxs-lookup"><span data-stu-id="591e9-104">Logging Error Details with ASP.NET Health Monitoring (C#)</span></span>
 ====================

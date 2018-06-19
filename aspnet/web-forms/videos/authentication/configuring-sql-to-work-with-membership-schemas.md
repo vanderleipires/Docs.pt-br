@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882787"
 ---
 <a name="configuring-sql-to-work-with-membership-schemas"></a><span data-ttu-id="dc599-103">Configurando o SQL para trabalhar com esquemas de associação</span><span class="sxs-lookup"><span data-stu-id="dc599-103">Configuring SQL To Work with Membership Schemas</span></span>
 ====================

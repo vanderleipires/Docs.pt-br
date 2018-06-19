@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889417"
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-c"></a><span data-ttu-id="c6808-103">Adicionando uma coluna de GridView dos botões de opção (c#)</span><span class="sxs-lookup"><span data-stu-id="c6808-103">Adding a GridView Column of Radio Buttons (C#)</span></span>
 ====================

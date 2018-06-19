@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883328"
 ---
 <a name="the-datapager-control"></a><span data-ttu-id="064f4-105">O controle DataPager</span><span class="sxs-lookup"><span data-stu-id="064f4-105">The DataPager Control</span></span>
 ====================

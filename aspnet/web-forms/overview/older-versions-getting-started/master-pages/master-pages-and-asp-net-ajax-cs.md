@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888774"
 ---
 <a name="master-pages-and-aspnet-ajax-c"></a><span data-ttu-id="b6b78-104">Páginas mestras e ASP.NET AJAX (c#)</span><span class="sxs-lookup"><span data-stu-id="b6b78-104">Master Pages and ASP.NET AJAX (C#)</span></span>
 ====================

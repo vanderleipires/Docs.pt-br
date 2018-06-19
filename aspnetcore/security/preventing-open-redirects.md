@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851203"
 ---
 # <a name="prevent-open-redirect-attacks-in-aspnet-core"></a><span data-ttu-id="161e1-103">Evitar ataques de redirecionamento aberto no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="161e1-103">Prevent open redirect attacks in ASP.NET Core</span></span>
 

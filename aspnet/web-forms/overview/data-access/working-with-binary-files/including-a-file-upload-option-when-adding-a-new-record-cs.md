@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888608"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-c"></a><span data-ttu-id="2e832-104">Incluindo uma opção de carregamento de arquivo ao adicionar um novo registro (c#)</span><span class="sxs-lookup"><span data-stu-id="2e832-104">Including a File Upload Option When Adding a New Record (C#)</span></span>
 ====================

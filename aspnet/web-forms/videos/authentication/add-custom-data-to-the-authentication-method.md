@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881364"
 ---
 <a name="add-custom-data-to-the-authentication-method"></a><span data-ttu-id="e7224-103">Adicionar dados personalizados para o método de autenticação</span><span class="sxs-lookup"><span data-stu-id="e7224-103">Add Custom Data to the Authentication Method</span></span>
 ====================

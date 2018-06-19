@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887581"
 ---
 <a name="customizing-the-datalists-editing-interface-c"></a><span data-ttu-id="5c7c4-103">Personalizando a Interface de edição do DataList (c#)</span><span class="sxs-lookup"><span data-stu-id="5c7c4-103">Customizing the DataList's Editing Interface (C#)</span></span>
 ====================

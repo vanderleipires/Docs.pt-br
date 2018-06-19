@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888949"
 ---
 <a name="wrapping-database-modifications-within-a-transaction-c"></a><span data-ttu-id="1ac3e-104">Quebra automática de modificações de banco de dados em uma transação (c#)</span><span class="sxs-lookup"><span data-stu-id="1ac3e-104">Wrapping Database Modifications within a Transaction (C#)</span></span>
 ====================

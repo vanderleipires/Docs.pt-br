@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874480"
 ---
 <a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a><span data-ttu-id="e346d-104">O ASP.NET MVC vitrine parte 2: O repositório padrão</span><span class="sxs-lookup"><span data-stu-id="e346d-104">ASP.NET MVC Storefront Part 2: The Repository Pattern</span></span>
 ====================

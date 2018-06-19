@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886921"
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-vb"></a><span data-ttu-id="f549d-103">Exibindo dados binários nos controles da Web de dados (VB)</span><span class="sxs-lookup"><span data-stu-id="f549d-103">Displaying Binary Data in the Data Web Controls (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890571"
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a><span data-ttu-id="18b76-103">Configurando um site que usa serviços de aplicativo (VB)</span><span class="sxs-lookup"><span data-stu-id="18b76-103">Configuring a Website that Uses Application Services (VB)</span></span>
 ====================

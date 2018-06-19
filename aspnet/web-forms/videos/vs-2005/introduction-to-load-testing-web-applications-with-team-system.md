@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894214"
 ---
 <a name="introduction-to-load-testing-web-applications-with-team-system"></a><span data-ttu-id="6b805-103">Introdução ao carregar o teste de aplicativos Web com o Team System</span><span class="sxs-lookup"><span data-stu-id="6b805-103">Introduction to Load Testing Web Applications with Team System</span></span>
 ====================

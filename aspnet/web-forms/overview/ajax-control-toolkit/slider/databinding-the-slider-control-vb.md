@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879134"
 ---
 <a name="databinding-the-slider-control-vb"></a><span data-ttu-id="0736f-104">Associação de dados o controle deslizante (VB)</span><span class="sxs-lookup"><span data-stu-id="0736f-104">Databinding the Slider Control (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883970"
 ---
 <a name="forms-login-custom-key-configuration"></a><span data-ttu-id="64906-104">Configuração de chave personalizada de logon formulários</span><span class="sxs-lookup"><span data-stu-id="64906-104">Forms Login Custom Key Configuration</span></span>
 ====================

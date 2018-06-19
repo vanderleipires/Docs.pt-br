@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882956"
 ---
 <a name="nested-data-web-controls-vb"></a><span data-ttu-id="1f3c5-104">Controles da Web de dados aninhadas (VB)</span><span class="sxs-lookup"><span data-stu-id="1f3c5-104">Nested Data Web Controls (VB)</span></span>
 ====================

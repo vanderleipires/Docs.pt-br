@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879823"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a><span data-ttu-id="b4174-104">[Como fazer:] Use o controle de lista suspensa do ASP.NET AJAX?</span><span class="sxs-lookup"><span data-stu-id="b4174-104">[How Do I:] Use the ASP.NET AJAX DropDown Control?</span></span>
 ====================

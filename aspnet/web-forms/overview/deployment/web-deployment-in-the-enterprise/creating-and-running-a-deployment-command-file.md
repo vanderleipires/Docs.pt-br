@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891172"
 ---
 <a name="creating-and-running-a-deployment-command-file"></a><span data-ttu-id="1277b-103">Criando e executando um arquivo de comando de implantação</span><span class="sxs-lookup"><span data-stu-id="1277b-103">Creating and Running a Deployment Command File</span></span>
 ====================

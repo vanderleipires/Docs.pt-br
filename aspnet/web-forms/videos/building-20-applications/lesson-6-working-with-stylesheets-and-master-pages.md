@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880304"
 ---
 <a name="lesson-6-working-with-stylesheets-and-master-pages"></a><span data-ttu-id="3e6d0-103">[Lição 6:] Trabalhando com folhas de estilo e páginas mestras</span><span class="sxs-lookup"><span data-stu-id="3e6d0-103">[Lesson 6:] Working with Stylesheets and Master Pages</span></span>
 ====================

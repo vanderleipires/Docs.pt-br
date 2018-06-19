@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884997"
 ---
 <a name="how-do-i-linq-to-sql-updating-the-database"></a><span data-ttu-id="25d39-103">[Como fazer:] O LINQ to SQL: atualizando o banco de dados</span><span class="sxs-lookup"><span data-stu-id="25d39-103">[How Do I:] LINQ to SQL: Updating the Database</span></span>
 ====================

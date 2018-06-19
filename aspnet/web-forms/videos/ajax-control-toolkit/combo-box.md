@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880447"
 ---
 <a name="combo-box"></a><span data-ttu-id="c493b-103">Caixa de Combinação</span><span class="sxs-lookup"><span data-stu-id="c493b-103">Combo Box</span></span>
 ====================

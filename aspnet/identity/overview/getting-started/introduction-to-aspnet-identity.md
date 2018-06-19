@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874090"
 ---
 <a name="introduction-to-aspnet-identity"></a><span data-ttu-id="769c3-103">Introdução a identidade do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="769c3-103">Introduction to ASP.NET Identity</span></span>
 ====================

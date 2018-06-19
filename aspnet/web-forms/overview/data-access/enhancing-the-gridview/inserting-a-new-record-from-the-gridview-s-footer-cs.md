@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888348"
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-c"></a><span data-ttu-id="0780e-103">Inserindo um novo registro de rodapé do GridView (c#)</span><span class="sxs-lookup"><span data-stu-id="0780e-103">Inserting a New Record from the GridView's Footer (C#)</span></span>
 ====================

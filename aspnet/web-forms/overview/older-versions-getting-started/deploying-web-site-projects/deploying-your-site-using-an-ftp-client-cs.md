@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887675"
 ---
 <a name="deploying-your-site-using-an-ftp-client-c"></a><span data-ttu-id="12d1b-104">Implantar o Site usando um cliente de FTP (c#)</span><span class="sxs-lookup"><span data-stu-id="12d1b-104">Deploying Your Site Using an FTP Client (C#)</span></span>
 ====================

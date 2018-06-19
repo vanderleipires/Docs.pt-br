@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872225"
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a><span data-ttu-id="6fb05-104">Usando a classe TagBuilder para compilar auxiliares HTML (VB)</span><span class="sxs-lookup"><span data-stu-id="6fb05-104">Using the TagBuilder Class to Build HTML Helpers (VB)</span></span>
 ====================

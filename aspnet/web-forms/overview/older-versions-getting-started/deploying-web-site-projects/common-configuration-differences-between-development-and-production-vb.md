@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889365"
 ---
 <a name="common-configuration-differences-between-development-and-production-vb"></a><span data-ttu-id="41ada-104">Diferenças de configuração comuns entre o desenvolvimento e produção (VB)</span><span class="sxs-lookup"><span data-stu-id="41ada-104">Common Configuration Differences Between Development and Production (VB)</span></span>
 ====================

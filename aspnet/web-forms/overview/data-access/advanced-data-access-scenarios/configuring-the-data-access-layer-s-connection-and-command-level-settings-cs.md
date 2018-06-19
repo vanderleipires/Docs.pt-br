@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876105"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a><span data-ttu-id="4a3b2-103">Definindo configurações de nível de Conexão e comando da camada de acesso a dados (c#)</span><span class="sxs-lookup"><span data-stu-id="4a3b2-103">Configuring the Data Access Layer's Connection- and Command-Level Settings (C#)</span></span>
 ====================

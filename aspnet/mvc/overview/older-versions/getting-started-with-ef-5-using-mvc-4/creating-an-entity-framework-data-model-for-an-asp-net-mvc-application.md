@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877925"
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a><span data-ttu-id="49074-104">Criando um modelo de dados do Entity Framework para um aplicativo ASP.NET MVC (1 a 10)</span><span class="sxs-lookup"><span data-stu-id="49074-104">Creating an Entity Framework Data Model for an ASP.NET MVC Application (1 of 10)</span></span>
 ====================

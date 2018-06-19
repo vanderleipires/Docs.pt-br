@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885853"
 ---
 <a name="iis7-playlists"></a><span data-ttu-id="eeae2-103">Listas de reprodução do IIS7</span><span class="sxs-lookup"><span data-stu-id="eeae2-103">IIS7 Playlists</span></span>
 ====================
