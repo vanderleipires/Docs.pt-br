@@ -14,6 +14,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094860"
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a><span data-ttu-id="8e381-103">Configurar o tipo de dados de chave primária de identidade no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="8e381-103">Configure Identity primary key data type in ASP.NET Core</span></span>
 

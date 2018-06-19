@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870200"
 ---
 <a name="get-started-with-the-ajax-control-toolkit-vb"></a><span data-ttu-id="ca80d-103">Introdução ao Kit de ferramentas de controle do AJAX (VB)</span><span class="sxs-lookup"><span data-stu-id="ca80d-103">Get Started with the AJAX Control Toolkit (VB)</span></span>
 ====================

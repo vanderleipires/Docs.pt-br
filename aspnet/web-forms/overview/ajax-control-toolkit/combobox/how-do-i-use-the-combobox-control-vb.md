@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875403"
 ---
 <a name="how-do-i-use-the-combobox-control-vb"></a><span data-ttu-id="223ce-104">Como usar o controle ComboBox?</span><span class="sxs-lookup"><span data-stu-id="223ce-104">How do I use the ComboBox Control?</span></span> <span data-ttu-id="223ce-105">(VB)</span><span class="sxs-lookup"><span data-stu-id="223ce-105">(VB)</span></span>
 ====================

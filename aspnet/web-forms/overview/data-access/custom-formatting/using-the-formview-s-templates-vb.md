@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875143"
 ---
 <a name="using-the-formviews-templates-vb"></a><span data-ttu-id="d2849-105">Usando os modelos de FormView (VB)</span><span class="sxs-lookup"><span data-stu-id="d2849-105">Using the FormView's Templates (VB)</span></span>
 ====================

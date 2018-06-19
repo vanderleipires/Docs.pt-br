@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877405"
 ---
 <a name="declarative-parameters-vb"></a><span data-ttu-id="dc053-103">Parâmetros declarativos (VB)</span><span class="sxs-lookup"><span data-stu-id="dc053-103">Declarative Parameters (VB)</span></span>
 ====================

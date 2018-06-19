@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868224"
 ---
 <a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a><span data-ttu-id="c898d-105">Como posso Trabalhar com dados em exibições parciais do ASP.NET MVC?</span><span class="sxs-lookup"><span data-stu-id="c898d-105">How Do I: Work with Data in ASP.NET MVC Partial Views?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877106"
 ---
 <a name="querying-data-with-the-sqldatasource-control-c"></a><span data-ttu-id="fc615-104">Consultando dados com o controle SqlDataSource (c#)</span><span class="sxs-lookup"><span data-stu-id="fc615-104">Querying Data with the SqlDataSource Control (C#)</span></span>
 ====================

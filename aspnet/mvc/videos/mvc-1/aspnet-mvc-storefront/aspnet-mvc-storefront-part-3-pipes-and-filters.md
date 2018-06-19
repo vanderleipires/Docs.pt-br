@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878445"
 ---
 <a name="aspnet-mvc-storefront-part-3-pipes-and-filters"></a><span data-ttu-id="5c15b-103">Parte Storefront do ASP.NET MVC 3: Pipes e filtros</span><span class="sxs-lookup"><span data-stu-id="5c15b-103">ASP.NET MVC Storefront Part 3: Pipes and Filters</span></span>
 ====================

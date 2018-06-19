@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30877477"
 ---
 <a name="bundling-and-minification"></a><span data-ttu-id="f24c3-104">Empacotamento e minimização</span><span class="sxs-lookup"><span data-stu-id="f24c3-104">Bundling and Minification</span></span>
 ====================

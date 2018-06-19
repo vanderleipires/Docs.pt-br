@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042739"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a><span data-ttu-id="5be77-104">ASP.NET Web API 2 de teste de unidade</span><span class="sxs-lookup"><span data-stu-id="5be77-104">Unit Testing ASP.NET Web API 2</span></span>
 ====================

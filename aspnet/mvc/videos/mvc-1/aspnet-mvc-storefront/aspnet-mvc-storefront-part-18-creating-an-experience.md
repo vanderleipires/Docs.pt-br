@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867197"
 ---
 <a name="aspnet-mvc-storefront-part-18-creating-an-experience"></a><span data-ttu-id="e7d39-103">O ASP.NET MVC vitrine parte 18: A criação de uma experiência</span><span class="sxs-lookup"><span data-stu-id="e7d39-103">ASP.NET MVC Storefront Part 18: Creating An Experience</span></span>
 ====================

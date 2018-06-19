@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870382"
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a><span data-ttu-id="8bc9e-104">Usando a classe TagBuilder para compilar auxiliares HTML (c#)</span><span class="sxs-lookup"><span data-stu-id="8bc9e-104">Using the TagBuilder Class to Build HTML Helpers (C#)</span></span>
 ====================

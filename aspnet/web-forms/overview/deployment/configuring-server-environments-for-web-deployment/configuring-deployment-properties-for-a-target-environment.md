@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881582"
 ---
 <a name="configuring-deployment-properties-for-a-target-environment"></a><span data-ttu-id="f32fc-103">Configurando propriedades de implantação para um ambiente de destino</span><span class="sxs-lookup"><span data-stu-id="f32fc-103">Configuring Deployment Properties for a Target Environment</span></span>
 ====================

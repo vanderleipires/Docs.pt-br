@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874246"
 ---
 <a name="creating-mutually-exclusive-checkboxes-vb"></a><span data-ttu-id="0bc28-104">Criando caixas de seleção mutuamente (VB)</span><span class="sxs-lookup"><span data-stu-id="0bc28-104">Creating Mutually Exclusive Checkboxes (VB)</span></span>
 ====================

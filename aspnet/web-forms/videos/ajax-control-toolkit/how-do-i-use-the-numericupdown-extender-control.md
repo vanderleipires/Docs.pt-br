@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883811"
 ---
 <a name="how-do-i-use-the-numericupdown-extender-control"></a><span data-ttu-id="7dd98-105">[Como fazer:] Use o controle do extensor NumericUpDown?</span><span class="sxs-lookup"><span data-stu-id="7dd98-105">[How Do I:] Use the NumericUpDown Extender Control?</span></span>
 ====================

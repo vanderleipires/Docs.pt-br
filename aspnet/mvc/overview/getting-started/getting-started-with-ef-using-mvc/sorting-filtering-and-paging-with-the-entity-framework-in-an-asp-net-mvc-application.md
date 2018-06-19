@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874675"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a><span data-ttu-id="7c959-103">Classificação, filtragem e paginação com o Entity Framework em um aplicativo ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="7c959-103">Sorting, Filtering, and Paging with the Entity Framework in an ASP.NET MVC Application</span></span>
 ====================

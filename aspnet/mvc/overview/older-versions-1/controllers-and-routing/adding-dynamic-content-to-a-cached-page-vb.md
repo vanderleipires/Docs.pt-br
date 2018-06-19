@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879758"
 ---
 <a name="adding-dynamic-content-to-a-cached-page-vb"></a><span data-ttu-id="99c7c-104">Adicionando conteúdo dinâmico para uma página em cache (VB)</span><span class="sxs-lookup"><span data-stu-id="99c7c-104">Adding Dynamic Content to a Cached Page (VB)</span></span>
 ====================

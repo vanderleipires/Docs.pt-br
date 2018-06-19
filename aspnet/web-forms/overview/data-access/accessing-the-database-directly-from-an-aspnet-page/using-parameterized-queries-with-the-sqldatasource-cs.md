@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878185"
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-c"></a><span data-ttu-id="d7a04-104">Usar consultas parametrizadas com SqlDataSource (c#)</span><span class="sxs-lookup"><span data-stu-id="d7a04-104">Using Parameterized Queries with the SqlDataSource (C#)</span></span>
 ====================

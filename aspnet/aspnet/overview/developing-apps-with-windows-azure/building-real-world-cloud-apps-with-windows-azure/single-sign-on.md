@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873879"
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="10bb6-104">Logon único (Criando aplicativos de nuvem do mundo Real com o Azure)</span><span class="sxs-lookup"><span data-stu-id="10bb6-104">Single Sign-On (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

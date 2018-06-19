@@ -2,7 +2,7 @@
 uid: web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
 title: Testes de unidade controladores em ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
-description: "Este tópico descreve algumas técnicas específicas para testes de unidade controladores em API Web 2. Antes de ler este tópico, você talvez queira ler o tutorial unidade..."
+description: Este tópico descreve algumas técnicas específicas para testes de unidade controladores em API Web 2. Antes de ler este tópico, você talvez queira ler o tutorial unidade...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/11/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28039538"
 ---
 <a name="unit-testing-controllers-in-aspnet-web-api-2"></a><span data-ttu-id="2b5df-104">Testes de unidade controladores em ASP.NET Web API 2</span><span class="sxs-lookup"><span data-stu-id="2b5df-104">Unit Testing Controllers in ASP.NET Web API 2</span></span>
 ====================

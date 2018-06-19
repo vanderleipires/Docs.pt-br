@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873294"
 ---
 <a name="how-do-i-use-the-html-editor-control-vb"></a><span data-ttu-id="db9d4-104">Como usar o controle de Editor de HTML</span><span class="sxs-lookup"><span data-stu-id="db9d4-104">How do I use the HTML Editor Control?</span></span> <span data-ttu-id="db9d4-105">(VB)</span><span class="sxs-lookup"><span data-stu-id="db9d4-105">(VB)</span></span>
 ====================

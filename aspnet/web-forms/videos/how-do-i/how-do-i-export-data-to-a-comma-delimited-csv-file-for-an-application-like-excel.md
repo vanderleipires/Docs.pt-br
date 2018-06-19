@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel
-title: "[Como fazer:] Exportar dados para um arquivo de (CSV) delimitados por vírgulas para um aplicativo como o Excel | Microsoft Docs"
+title: '[Como fazer:] Exportar dados para um arquivo de (CSV) delimitados por vírgulas para um aplicativo como o Excel | Microsoft Docs'
 author: rick-anderson
-description: "Neste vídeo, Chris Pels mostra como obter os dados de um banco de dados ou de outras fontes e exportá-lo para um arquivo delimitado por vírgulas que pode ser usado em um aplicativo li..."
+description: Neste vídeo, Chris Pels mostra como obter os dados de um banco de dados ou de outras fontes e exportá-lo para um arquivo delimitado por vírgulas que pode ser usado em um aplicativo li...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/22/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525635"
 ---
 <a name="how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel"></a><span data-ttu-id="23ba4-103">[Como fazer:] Exportar dados para um arquivo de (CSV) delimitados por vírgulas para um aplicativo como o Excel</span><span class="sxs-lookup"><span data-stu-id="23ba4-103">[How Do I:] Export Data to a Comma Delimited (CSV) File for an Application Like Excel</span></span>
 ====================

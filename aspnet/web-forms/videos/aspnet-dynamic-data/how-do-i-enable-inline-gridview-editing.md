@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883619"
 ---
 <a name="how-do-i-enable-inline-gridview-editing"></a><span data-ttu-id="a4093-105">Como habilitar o GridView embutido edição?</span><span class="sxs-lookup"><span data-stu-id="a4093-105">How Do I Enable Inline GridView Editing?</span></span>
 ====================
