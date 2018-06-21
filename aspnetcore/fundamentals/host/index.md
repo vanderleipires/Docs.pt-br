@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/index
-ms.openlocfilehash: 7ad059e39866f59040c12b7ac15e9fa3405a9aad
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 7f8ccff7e3da93d6e617505ac93fafc3a82ed880
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252003"
 ---
 # <a name="host-in-aspnet-core"></a>Host no ASP.NET Core
 
@@ -23,4 +24,4 @@ Aplicativos ASP.NET Core configuram e inicializam um *host*. O host é responsá
 * [Host da Web](xref:fundamentals/host/web-host) &ndash; Adequado para a hospedagem de aplicativos Web.
 * [Host Genérico](xref:fundamentals/host/generic-host) (ASP.NET Core 2.1 ou posteriores) &ndash; Adequado para a hospedagem de aplicativos não Web (por exemplo, aplicativos que executam tarefas em segundo plano). Em uma versão futura, o Host Genérico será adequado para hospedar qualquer tipo de aplicativo, incluindo aplicativos Web. Eventualmente, o Host Genérico substituirá o Host da Web.
 
-Neste momento, os desenvolvedores devem usar o [Host da Web](xref:fundamentals/host/web-host) com base no [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) para hospedar aplicativos ASP.NET Core.
+Para hospedar *aplicativos Web* do ASP.NET Core, os desenvolvedores devem usar o Web Host com base em [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder). Para hospedar *aplicativos que não sejam Web*, os desenvolvedores devem usar o Host Genérico com base em [HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder).
