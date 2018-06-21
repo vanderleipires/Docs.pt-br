@@ -2,19 +2,15 @@
 title: Autenticação de Facebook, Google e de provedor externo no ASP.NET Core
 author: rick-anderson
 description: Este tutorial demonstra como criar um aplicativo do ASP.NET Core 2.x usando o OAuth 2.0 com provedores de autenticação externa.
-manager: wpickett
 ms.author: riande
 ms.date: 11/01/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: dc6ec61519c200901cc8af03853e7381c1d4cad0
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 58045504ce4588f854428273273d3ea8f181e12e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "35217316"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277992"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Autenticação de Facebook, Google e de provedor externo no ASP.NET Core
 
