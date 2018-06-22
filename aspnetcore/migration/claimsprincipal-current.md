@@ -2,20 +2,16 @@
 title: Migrar do ClaimsPrincipal.Current
 author: mjrousos
 description: Saiba como afastar ClaimsPrincipal.Current para recuperar declarações no núcleo do ASP.NET e a identidade do usuário autenticado atual.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 05/04/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/claimsprincipal-current
-ms.openlocfilehash: ea43d17e76380baf57cd9debbc508e8812cfa4a6
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 477f9fe8f0249bdfc528e1b401f072851f2f0d23
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851528"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277180"
 ---
 # <a name="migrate-from-claimsprincipalcurrent"></a>Migrar do ClaimsPrincipal.Current
 

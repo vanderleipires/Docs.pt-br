@@ -2,19 +2,15 @@
 title: Migrar do ASP.NET para o ASP.NET Core 2.0
 author: isaac2004
 description: Receba orientação para migrar aplicativos de ASP.NET MVC ou Web API existentes para o ASP.NET 2.0 de núcleo.
-manager: wpickett
 ms.author: scaddie
 ms.date: 08/27/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: f8e9d3c222bdd5491e946f286bbdf71a2d26ab10
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 68b00ead1b0bf785211638692cdbeab226a2cb4e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851034"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278629"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core-20"></a>Migrar do ASP.NET para o ASP.NET Core 2.0
 

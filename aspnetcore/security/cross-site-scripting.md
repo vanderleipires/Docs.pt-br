@@ -2,18 +2,15 @@
 title: Impedir que os sites script (XSS) no núcleo do ASP.NET
 author: rick-anderson
 description: Saiba mais sobre a criação de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo do ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: d9263a2c1bb6a376008b7d8a55864e4d15e77cee
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ce6bb273034c56890e0cd98b890436602b5acc69
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272442"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Impedir que os sites script (XSS) no núcleo do ASP.NET
 
@@ -60,7 +57,7 @@ Essa exibição mostra o conteúdo do *untrustedInput* variável. Essa variável
 
 ## <a name="javascript-encoding-using-razor"></a>Usando o Razor de codificação JavaScript
 
-Pode haver momentos que você deseja inserir um valor em JavaScript para processar no modo de exibição. Há duas formas de fazer isso. A maneira mais segura para inserir valores simples é colocar o valor em um atributo de dados de uma marca e recuperá-lo em seu JavaScript. Por exemplo:
+Pode haver momentos que você deseja inserir um valor em JavaScript para processar no modo de exibição. Há duas formas de fazer isso. É a maneira mais segura para inserir valores colocar o valor em um atributo de dados de uma marca e recuperá-lo em seu JavaScript. Por exemplo:
 
 ```none
 @{
@@ -228,4 +225,4 @@ Gerais aceito prática é que a codificação ocorre no ponto de saída e valore
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>Validação como uma técnica de prevenção de XSS
 
-A validação pode ser uma ferramenta útil limitar ataques XSS. Por exemplo, uma cadeia de caracteres numérica simple que contém somente os caracteres 0-9 não aciona um ataque XSS. A validação se torna mais complicada que você deseja aceitar HTML na entrada do usuário - análise de entrada HTML é difícil, se não impossível. Redução e outros formatos de texto seria uma opção mais segura para a entrada avançada. Você nunca deve depender somente de validação. Sempre codifica a entrada não confiável antes de saída, não importa o que você executou a validação.
+A validação pode ser uma ferramenta útil limitar ataques XSS. Por exemplo, uma cadeia de caracteres numérica que contém somente os caracteres 0-9 não aciona um ataque XSS. A validação se torna mais complicada que você deseja aceitar HTML na entrada do usuário - análise de entrada HTML é difícil, se não impossível. Redução e outros formatos de texto seria uma opção mais segura para a entrada avançada. Você nunca deve depender somente de validação. Sempre codifica a entrada não confiável antes de saída, não importa o que você executou a validação.

@@ -2,20 +2,16 @@
 title: Migrar de autenticação de associação do ASP.NET para a identidade do ASP.NET Core 2.0
 author: isaac2004
 description: Saiba como migrar aplicativos existentes do ASP.NET usando a autenticação de associação para a identidade do ASP.NET Core 2.0.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 04/24/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/proper-to-2x/membership-to-core-identity
-ms.openlocfilehash: f0d1099bfda01d036831350e0888ae3830ad3d58
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 3ec22713997a74b587ef5d18e71a28668a5481e2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851538"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274099"
 ---
 # <a name="migrate-from-aspnet-membership-authentication-to-aspnet-core-20-identity"></a>Migrar de autenticação de associação do ASP.NET para a identidade do ASP.NET Core 2.0
 
@@ -42,7 +38,7 @@ ASP.NET Core 2.0 segue o [identidade](/aspnet/identity/index) princípio introdu
 
 * Selecione **Arquivo** > **Novo** > **Projeto**.
 * Criar um novo **aplicativo Web do ASP.NET Core**e nomeie o projeto *CoreIdentitySample*.
-* Selecione **ASP.NET Core 2.0** na lista suspensa e selecione **Aplicativo Web**. Esse modelo gera um [páginas Razor](xref:mvc/razor-pages/index) aplicativo. Antes de clicar em **Okey**, clique em **alterar autenticação**.
+* Selecione **ASP.NET Core 2.0** na lista suspensa e selecione **Aplicativo Web**. Esse modelo gera um [páginas Razor](xref:razor-pages/index) aplicativo. Antes de clicar em **Okey**, clique em **alterar autenticação**.
 * Escolha **contas de usuário individuais** para os modelos de identidade. Por fim, clique em **Okey**, em seguida, **Okey**. Visual Studio cria um projeto usando o modelo de identidade do ASP.NET Core.
 
 Identidade de núcleo de ASP.NET 2.0 usa [Entity Framework Core](/ef/core) para interagir com o banco de dados armazenar os dados de autenticação. Em ordem para o aplicativo recém-criado trabalhar, deve ser um banco de dados para armazenar esses dados. Depois de criar um novo aplicativo, a maneira mais rápida para inspecionar o esquema em um ambiente de banco de dados é criar o banco de dados usando migrações do Entity Framework. Esse processo cria um banco de dados, seja localmente ou em outro local, que reflete o esquema. Leia a documentação anterior para obter mais informações.

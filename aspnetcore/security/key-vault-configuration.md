@@ -2,18 +2,15 @@
 title: Provedor de configuração do Cofre de chaves do Azure no núcleo do ASP.NET
 author: guardrex
 description: Saiba como usar o provedor de configuração do Cofre de chave do Azure para configurar um aplicativo usando pares de nome-valor no tempo de execução.
-manager: wpickett
 ms.author: riande
 ms.date: 08/09/2017
-ms.prod: asp.net-core
-ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: cf56515a2a7116f399af7e671547fc81b616619c
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 433a9cee917a36ff7aa950dbe2a631d127c74821
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734699"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273431"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Provedor de configuração do Cofre de chaves do Azure no núcleo do ASP.NET
 

@@ -1,21 +1,17 @@
 ---
 title: Testes de integração no núcleo do ASP.NET
 author: guardrex
-description: Saiba como testes de integração Certifique-se de que os componentes do aplicativo funcionem corretamente no nível de infraestrutura, incluindo o banco de dados, o sistema de arquivos e a rede.
-manager: wpickett
+description: Saiba como testes de integração garantem que os componentes do aplicativo funcionem corretamente no nível de infraestrutura, incluindo o banco de dados, o sistema de arquivos e a rede.
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: test/integration-tests
-ms.openlocfilehash: a402c3f5f6a75917eba4058e6cc6926f25b214d4
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 1895b06f1af9a9eb66c14aa5c7834497fc95d583
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "35217504"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277690"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>Testes de integração no núcleo do ASP.NET
 
@@ -29,9 +25,9 @@ Este tópico pressupõe um entendimento básico de testes de unidade. Se estiver
 
 O aplicativo de exemplo é um aplicativo de páginas Razor e pressupõe um entendimento básico de páginas Razor. Se estiver familiarizado com páginas Razor, consulte os tópicos a seguir:
 
-* [Introdução a Páginas do Razor](xref:mvc/razor-pages/index)
+* [Introdução a Páginas do Razor](xref:razor-pages/index)
 * [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
-* [Testes de unidade de páginas Razor](xref:test/razor-pages-tests)
+* [Testes de unidades de páginas Razor](xref:test/razor-pages-tests)
 
 ## <a name="introduction-to-integration-tests"></a>Introdução a testes de integração
 
@@ -314,6 +310,6 @@ O aplicativo de exemplo sementes de banco de dados com três mensagens em *Utili
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Testes de unidade](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Testes de unidade de páginas Razor](xref:test/razor-pages-tests)
+* [Testes de unidades de páginas Razor](xref:test/razor-pages-tests)
 * [Middleware](xref:fundamentals/middleware/index)
 * [Controladores de teste](xref:mvc/controllers/testing)

@@ -2,20 +2,16 @@
 title: Use JavaScriptServices para criar aplicativos de única página no núcleo do ASP.NET
 author: scottaddie
 description: Saiba mais sobre os benefícios de usar JavaScriptServices para criar um aplicativo de página única (SPA) com o apoio de ASP.NET Core.
-manager: wpickett
 ms.author: scaddie
 ms.custom: H1Hack27Feb2017
 ms.date: 08/02/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: fd893b7c62f38442bf5633a956786983763e6f9f
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: c3f454ddd91fadf94e4ee4faa8930d8a89d13833
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483546"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279617"
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>Use JavaScriptServices para criar aplicativos de única página no núcleo do ASP.NET
 

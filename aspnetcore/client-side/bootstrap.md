@@ -2,19 +2,15 @@
 title: Crie sites lindos, respondendo com inicialização e ASP.NET Core
 author: ardalis
 description: Saiba como usar a inicialização para o desenvolvimento de aplicativos web responsivo com ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: a11ed13c709830795ebfd0e658d3f2fd2fd5a458
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: c7a4dc193f52532b1046853d98ae5c838c8b1723
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483705"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279539"
 ---
 # <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>Crie sites lindos, respondendo com inicialização e ASP.NET Core
 
@@ -26,11 +22,11 @@ Bootstrap atualmente é a estrutura da web mais popular de desenvolvimento de ap
 
 ## <a name="get-started"></a>Introdução
 
-Há várias maneiras para começar a Bootstrap. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, em cujo caso o Bootstrap virá pré-instalados:
+Há várias maneiras para começar a Bootstrap. Se você estiver iniciando um novo aplicativo web no Visual Studio, você pode escolher o modelo de início padrão para o ASP.NET Core, no qual caso Bootstrap virão pré-instalados:
 
 ![Bootstrap no modo de exibição de solução de modelo starter](bootstrap/_static/bootstrap-in-starter-template.png)
 
-A adição do bootstrap para um projeto ASP.NET Core é simplesmente uma questão de adicioná-la no *bower. JSON* como uma dependência:
+A adição de Bootstrap para um ASP.NET Core projeto é simplesmente uma questão de adicioná-la à *bower. JSON* como uma dependência:
 
 [!code-json[](../common/samples/WebApplication1/bower.json?highlight=5)]
 

@@ -2,19 +2,15 @@
 title: Derivação subchave e criptografia autenticada no núcleo do ASP.NET
 author: rick-anderson
 description: Saiba os detalhes de implementação de proteção de dados do ASP.NET Core derivação de subchaves e autenticado criptografia.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 8c83da40a524896becc07c94c01d5e2b684e4386
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 37e7b01700e8a6b755b5ed16a9d7d75a9eeb970e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072633"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275717"
 ---
 # <a name="subkey-derivation-and-authenticated-encryption-in-aspnet-core"></a>Derivação subchave e criptografia autenticada no núcleo do ASP.NET
 
@@ -39,7 +35,7 @@ O `IAuthenticatedEncryptor` interface serve como a interface principal para toda
 
 Como o AAD é exclusivo para a tupla de todos os três componentes, podemos usá-lo derivar novas chaves KM em vez de usar KM em si em todos os nossos operações criptográficas. Para todas as chamadas para `IAuthenticatedEncryptor.Encrypt`, ocorre o processo de derivação de chaves a seguir:
 
-( K_E, K_H ) = SP800_108_CTR_HMACSHA512(K_M, AAD, contextHeader || keyModifier)
+(K_E, K_H) = SP800_108_CTR_HMACSHA512 (contextHeader K_M, AAD, | | keyModifier)
 
 Aqui, estamos ligando para o NIST SP800-108 KDF no modo de contador (consulte [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), SEC 5.1) com os seguintes parâmetros:
 
@@ -47,7 +43,7 @@ Aqui, estamos ligando para o NIST SP800-108 KDF no modo de contador (consulte [N
 
 * PRF = HMACSHA512
 
-* label = additionalAuthenticatedData
+* rótulo = additionalAuthenticatedData
 
 * context = contextHeader || keyModifier
 
@@ -61,7 +57,7 @@ Depois de K_E é gerado por meio do mecanismo acima, podemos gerar um vetor de i
 
 ![Processo do modo CBC e retorno](subkeyderivation/_static/cbcprocess.png)
 
-*output:= keyModifier || iv || E_cbc (K_E,iv,data) || HMAC(K_H, iv || E_cbc (K_E,iv,data))*
+*saída: = keyModifier | | IV | | E_cbc (dados K_E, iv,) | | HMAC (K_H, iv | | E_cbc (dados K_E, iv,))*
 
 > [!NOTE]
 > O `IDataProtector.Protect` implementação será [preceda o cabeçalho magic e a id de chave](xref:security/data-protection/implementation/authenticated-encryption-details) a saída antes de retorná-lo ao chamador. Porque o cabeçalho magic e a id de chave são implicitamente parte do [AAD](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation-aad), e porque o modificador de chave é passado como entrada para o KDF, isso significa que cada byte único da carga final retornada é autenticado pelo Mac.

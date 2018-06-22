@@ -2,20 +2,16 @@
 title: Autenticar usuários com o WS-Federation no núcleo do ASP.NET
 author: chlowell
 description: Este tutorial demonstra como usar o WS-Federation em um aplicativo do ASP.NET Core.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/27/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/ws-federation
-ms.openlocfilehash: d4621c7b97678903b9f2562e353da3883334b599
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 55504ed28cf8ef1095bf16c101c09a6f374f038c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898798"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277433"
 ---
 # <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>Autenticar usuários com o WS-Federation no núcleo do ASP.NET
 
@@ -26,7 +22,7 @@ Para aplicativos do ASP.NET Core 2.0, o suporte do WS-Federation é fornecido po
 Por padrão, o middleware novo:
 
 * Não permitir logons não solicitados. Esse recurso do protocolo WS-Federation é vulnerável a ataques XSRF. No entanto, ela pode ser habilitada com o `AllowUnsolicitedLogins` opção.
-* Não verifica cada postagem de formulário para mensagens de entrada. Somente as solicitações para o `CallbackPath` são verificados quanto à entrada-ins `CallbackPath` padrão é `/signin-wsfed` , mas pode ser alterado. Esse caminho pode ser compartilhado com outros provedores de autenticação, permitindo que o `SkipUnrecognizedRequests` opção.
+* Não verifica cada postagem de formulário para mensagens de entrada. Somente solicitações para o `CallbackPath` são verificados quanto à entrada-ins `CallbackPath` assume como padrão `/signin-wsfed` , mas pode ser alterado por meio de herdadas [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) propriedade do [ WsFederationOptions](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions) classe. Esse caminho pode ser compartilhado com outros provedores de autenticação, permitindo que o [SkipUnrecognizedRequests](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions.skipunrecognizedrequests) opção.
 
 ## <a name="register-the-app-with-active-directory"></a>Registrar o aplicativo com o Active Directory
 

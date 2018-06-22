@@ -2,19 +2,16 @@
 title: Link do navegador no ASP.NET Core
 author: ncarandini
 description: Explica como o Link do navegador é um recurso do Visual Studio que vincula o ambiente de desenvolvimento com um ou mais navegadores da web.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/22/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/using-browserlink
-ms.openlocfilehash: 0496f9df35956b8fe7ca9fcc7c03df33437d5a87
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 8808dc705ec87ebf6e7874ad69616ed5bbf61576
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274086"
 ---
 # <a name="browser-link-in-aspnet-core"></a>Link do navegador no ASP.NET Core
 
@@ -26,7 +23,13 @@ Link do navegador é um recurso no Visual Studio que cria um canal de comunicaç
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-O ASP.NET Core 2. x **aplicativo Web**, **vazio**, e **API da Web** modelo projetos usam o [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) pacote meta, que contém uma referência de pacote para [browserlink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/). Portanto, usando o `Microsoft.AspNetCore.All` pacote meta não requer nenhuma ação adicional para disponibilizar o Link do navegador para uso.
+O ASP.NET 2.0 de núcleo **aplicativo Web**, **vazio**, e **API da Web** modelo projetos usam o [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All/) metapackage , que contém uma referência de pacote para [browserlink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/). Portanto, usando o `Microsoft.AspNetCore.All` metapackage não requer nenhuma ação adicional para disponibilizar o Link do navegador para uso.
+
+::: moniker range=">= aspnetcore-2.1"
+
+Ao converter um projeto do ASP.NET Core 2.0 em ASP.NET Core 2.1 e fazer a transição para o [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) metapackage, você deve instalar o [browserlink](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.BrowserLink/) pacote manualmente para a funcionalidade de BrowserLink.
+
+::: moniker-end
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -66,7 +69,7 @@ if (env.IsDevelopment())
 }
 ```
 
-Para obter mais informações, consulte [usar vários ambientes](xref:fundamentals/environments).
+Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments).
 
 ## <a name="how-to-use-browser-link"></a>Como usar o Link do navegador
 

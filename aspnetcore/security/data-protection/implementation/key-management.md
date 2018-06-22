@@ -2,19 +2,15 @@
 title: Gerenciamento de chaves no núcleo do ASP.NET
 author: rick-anderson
 description: Obter os detalhes de implementação do gerenciamento de chaves de proteção de dados do ASP.NET Core APIs.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 1b073d8779547a828c17e825b0663b26efb61d14
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: be8597a2522c3145056dee709210de065e8cb593
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077463"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276624"
 ---
 # <a name="key-management-in-aspnet-core"></a>Gerenciamento de chaves no núcleo do ASP.NET
 

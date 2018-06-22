@@ -2,20 +2,16 @@
 title: Testes de unidade de páginas Razor no núcleo do ASP.NET
 author: guardrex
 description: Saiba como criar testes de unidade para aplicativos de páginas Razor.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: test/razor-pages-tests
-ms.openlocfilehash: df74d8e44b2dff00e76139edba47fd8a30ce33ef
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: bde1bef78fcc7ac1d570057d54636ea0f5490de8
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252299"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274401"
 ---
 # <a name="razor-pages-unit-tests-in-aspnet-core"></a>Testes de unidade de páginas Razor no núcleo do ASP.NET
 
@@ -30,7 +26,7 @@ ASP.NET Core dá suporte a testes de unidade de aplicativos de páginas Razor. T
 
 Este tópico pressupõe que você tenha uma compreensão básica de aplicativos de páginas Razor e testes de unidade. Se você estiver familiarizado com conceitos de teste ou com aplicativos de páginas Razor, consulte os tópicos a seguir:
 
-* [Introdução a Páginas do Razor](xref:mvc/razor-pages/index)
+* [Introdução a Páginas do Razor](xref:razor-pages/index)
 * [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Teste de unidade c# no .NET Core usando xUnit e teste dotnet](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 

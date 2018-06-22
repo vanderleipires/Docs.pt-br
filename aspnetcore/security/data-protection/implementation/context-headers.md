@@ -2,19 +2,15 @@
 title: Cabeçalhos de contexto no núcleo do ASP.NET
 author: rick-anderson
 description: Obter os detalhes de implementação de cabeçalhos de contexto de proteção de dados do ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: 5ba247a74e11408145e1f6e87c7cfa251c66707f
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2343e59898c024eba420390d7fb0bce2fc82a895
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077848"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274463"
 ---
 # <a name="context-headers-in-aspnet-core"></a>Cabeçalhos de contexto no núcleo do ASP.NET
 
@@ -118,7 +114,7 @@ D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
 
 Em seguida, calcular Enc_CBC (K_E, IV, "") para 3DES-192-CBC fornecido IV = 0 * e K_E como acima.
 
-result := ABB100F81E53E10E
+resultado: = ABB100F81E53E10E
 
 Em seguida, o MAC de computação (K_H, "") para HMACSHA1 determinado K_H como acima.
 
@@ -166,7 +162,7 @@ O cabeçalho de contexto consiste dos seguintes componentes:
 
 K_E é obtida usando o mesmo mecanismo como a criptografia CBC + o cenário de autenticação de HMAC. No entanto, já que não há nenhum K_H em jogo aqui, essencialmente temos | K_H | = 0, e o algoritmo recolhe para o formulário abaixo.
 
-K_E = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
+K_E = SP800_108_CTR (prf = HMACSHA512, chave = "", rótulo = "", contexto = "")
 
 ### <a name="example-aes-256-gcm"></a>Exemplo: AES-256-GCM
 

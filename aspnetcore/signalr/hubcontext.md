@@ -2,21 +2,17 @@
 title: SignalR HubContext
 author: rachelappel
 description: Saiba como usar o serviço ASP.NET Core SignalR HubContext para enviar notificações para clientes externos um hub.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 06/13/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/hubcontext
-ms.openlocfilehash: 79b91a776a38a2e6810cc89ff0b8d15fe836ce66
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: ccfcdc8337275fd26e09c1a43db36cf9ab90cf46
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35726064"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277755"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>Enviar mensagens de fora de um hub
 
@@ -62,6 +58,6 @@ app.Use(next => (context) =>
 
 ## <a name="related-resources"></a>Recursos relacionados
 
-* [Introdução](xref:signalr/get-started)
+* [Introdução](xref:tutorials/signalr)
 * [Hubs](xref:signalr/hubs)
 * [Publicar no Azure](xref:signalr/publish-to-azure-web-app)
