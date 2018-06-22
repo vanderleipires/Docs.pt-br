@@ -181,7 +181,7 @@ Neste exercício, você irá explorar os aprimoramentos nos modelos de projeto d
 
        Procure exibições de modelo para descobrir a nova marcação de tema.
 
-       ![Novo modelo, usando About.cshtml de marcação Razor e HTML5. ] (whats-new-in-aspnet-mvc-4/_static/image10.png "Novo modelo, usando About.cshtml de marcação Razor e HTML5.")
+       ![Novo modelo, usando About.cshtml de marcação Razor e HTML5. ](whats-new-in-aspnet-mvc-4/_static/image10.png "Novo modelo, usando About.cshtml de marcação Razor e HTML5.")
 
        *Novo modelo, usando marcação Razor e HTML5 (About.cshtml).*
    - **Bibliotecas de JavaScript atualizadas**
