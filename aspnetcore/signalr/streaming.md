@@ -7,12 +7,12 @@ ms.author: rachelap
 ms.custom: mvc
 ms.date: 06/07/2018
 uid: signalr/streaming
-ms.openlocfilehash: ae0e733dddfb48db07d77ea73f4673cf8f783b88
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 08ddea4fb83150bab27a9e2685c75ff34565606b
+ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275844"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36327487"
 ---
 # <a name="use-streaming-in-aspnet-core-signalr"></a>Use o SignalR do ASP.NET Core de streaming
 
@@ -29,7 +29,7 @@ Um método de hub automaticamente se torna um método de hub streaming quando el
 > [!NOTE]
 > Gravar o `ChannelReader` em um thread em segundo plano e retorne o `ChannelReader` assim que possível. Outras chamadas de hub serão bloqueadas até que um `ChannelReader` é retornado.
 
-[!code-csharp[Streaming hub method](streaming/sample/hubs/streamhub.cs?range=10-34)]
+[!code-csharp[Streaming hub method](streaming/sample/Hubs/StreamHub.cs?range=10-34)]
 
 ## <a name="net-client"></a>Cliente .NET
 
