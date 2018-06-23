@@ -1,0 +1,5 @@
+> <span data-ttu-id="5c5db-101">Alguns comandos não têm suporte se o aplicativo usa SQLite como armazenamento de dados de identidade.</span><span class="sxs-lookup"><span data-stu-id="5c5db-101">Some commands aren't supported if the app uses SQLite as its Identity data store.</span></span> <span data-ttu-id="5c5db-102">Devido às limitações no mecanismo de banco de dados, `Alter` comandos geram a seguinte exceção:</span><span class="sxs-lookup"><span data-stu-id="5c5db-102">Due to limitations in the database engine, `Alter` commands throw the following exception:</span></span>
+>
+> <span data-ttu-id="5c5db-103">"System. NotSupportedException: SQLite não oferece suporte a essa operação de migração."</span><span class="sxs-lookup"><span data-stu-id="5c5db-103">"System.NotSupportedException: SQLite does not support this migration operation."</span></span> 
+>
+> <span data-ttu-id="5c5db-104">Como uma solução alternativa, execute migrações do Code First no banco de dados para alterar as tabelas.</span><span class="sxs-lookup"><span data-stu-id="5c5db-104">As a work around, run Code First migrations on the database to change the tables.</span></span>
