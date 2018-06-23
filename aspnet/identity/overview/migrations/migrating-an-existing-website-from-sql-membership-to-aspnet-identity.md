@@ -12,12 +12,12 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 2790f32bc74cecf450f5a258fc1ff5b280a63923
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1766c11dabec3931ec2bfc4ae2e15332427d7855
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874987"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314007"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrando um site existente da associação SQL para a identidade do ASP.NET
 ====================
@@ -108,14 +108,16 @@ Para classes de identidade do ASP.NET trabalhar fora da caixa com os dados de us
 | IdentityUser | AspnetUsers | Id |  |
 | IdentityRole | AspnetRoles | Id |  |
 | IdentityUserRole | AspnetUserRole | UserId + RoleId | Usuário\_Id -&gt;AspnetUsers RoleId -&gt;AspnetRoles |
-| IdentityUserLogin | AspnetUserLogins | UserId + ProviderKey + LoginProvider | UserId-&gt;AspnetUsers |
-| IdentityUserClaim | AspnetUserClaims | Id | User\_Id-&gt;AspnetUsers |
+| IdentityUserLogin | AspnetUserLogins | UserId + ProviderKey + LoginProvider | UserId -&gt;AspnetUsers |
+| IdentityUserClaim | AspnetUserClaims | Id | Usuário\_Id -&gt;AspnetUsers |
 
 Com essas informações, podemos criar instruções SQL para criar novas tabelas. Podemos pode gravar cada instrução individualmente ou gerar o script usando comandos do PowerShell de EntityFramework que, em seguida, podemos Editar conforme necessário. Para fazer isso, no VS abrir o **Package Manager Console** do **exibição** ou **ferramentas** menu
 
 - Execute o comando "Enable-Migrations" para permitir as migrações de EntityFramework.
 - Execute o comando "Add-migration inicial", que cria o código de configuração inicial para criar o banco de dados em c# / VB.
 - A etapa final é executar "Atualizar banco de dados – Script" comando que gera o script SQL baseado nas classes de modelo.
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
 Este script de geração de banco de dados pode ser usado como um início onde podemos estará fazendo alterações adicionais para adicionar novas colunas e copiar dados. A vantagem disso é que podemos gerar o `_MigrationHistory` tabela que é usada pelo EntityFramework para modificar o esquema de banco de dados quando o modelo de classes de alteração para versões futuras de versões de identidade. 
 
@@ -146,11 +148,11 @@ Esse arquivo de script é específico para este exemplo. Para aplicativos que t�
 
     Abaixo está a como as informações nas tabelas de associação do SQL são mapeados para o novo sistema de identidade.
 
-    aspnet\_Roles --&gt; AspNetRoles
+    ASPNET\_funções –&gt; AspNetRoles
 
     ASP\_netUsers e asp\_netMembership -&gt; AspNetUsers
 
-    aspnet\_UserInRoles --&gt; AspNetUserRoles
+    ASPNET\_UserInRoles -&gt; AspNetUserRoles
 
     Conforme explicado na seção acima, as tabelas AspNetUserClaims e AspNetUserLogins estão vazias. O campo 'Discriminador' na tabela AspNetUser deve corresponder ao nome de classe de modelo que está definido como uma próxima etapa. Também a coluna PasswordHash está no formato ' senha criptografada | salt de senha | formatação da senha '. Isso permite que você use SQL associação criptografia uma lógica especial para que você pode reutilizar as senhas antigas. Que é explicado em posteriormente neste artigo.
 

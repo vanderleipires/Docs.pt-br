@@ -12,12 +12,12 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: f65f93b20543d06ea70a9009b6921e297477c99e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 75d273d9fdb5d8ff0f7a910f42abe8bcce6e397d
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871565"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36313994"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>Migração de dados Universal do provedor de associação e os perfis de usuário para a identidade do ASP.NET (c#)
 ====================
@@ -106,6 +106,8 @@ Cole o script SQL de [ https://raw.github.com/suhasj/UniversalProviders-Identity
    Observe que o 'ProfileInfo' agora é uma propriedade da classe de usuário. Portanto, podemos usar a classe de usuário para trabalhar diretamente com dados de perfil.
 
 Copie os arquivos de **IdentityModels** e **IdentityAccount** pastas da fonte de download ( [ https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations) ). Eles têm as classes de modelo restantes e as novas páginas necessárias para o usuário e gerenciamento de função usando as APIs de identidade do ASP.NET. A abordagem usada assemelha-se à associação de SQL e a explicação detalhada pode ser encontrada [aqui](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md).
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
 ## <a name="copying-profile-data-to-the-new-tables"></a>Copiando dados de perfil para as novas tabelas
 
