@@ -2,49 +2,45 @@
 title: Adicionando uma pesquisa
 author: rick-anderson
 description: Mostra como adicionar uma pesquisa a um aplicativo ASP.NET Core MVC simples
-manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/first-mvc-app/search
-ms.openlocfilehash: aee1682755385d9fa292f9ba0814d5d3602f3881
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: fb93d9688c9abf76ad0057c646c4b7662d003108
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729902"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274834"
 ---
 [!INCLUDE [adding-model](~/includes/mvc-intro/search1.md)]
 
-<span data-ttu-id="c2a40-103">Renomeie rapidamente o parâmetro `searchString` para `id` com o comando **rename**.</span><span class="sxs-lookup"><span data-stu-id="c2a40-103">You can quickly rename the `searchString` parameter to `id` with the **rename** command.</span></span> <span data-ttu-id="c2a40-104">Clique com o botão direito do mouse em `searchString` **> Renomear**.</span><span class="sxs-lookup"><span data-stu-id="c2a40-104">Right click on `searchString` **> Rename**.</span></span>
+<span data-ttu-id="dab45-103">Renomeie rapidamente o parâmetro `searchString` para `id` com o comando **rename**.</span><span class="sxs-lookup"><span data-stu-id="dab45-103">You can quickly rename the `searchString` parameter to `id` with the **rename** command.</span></span> <span data-ttu-id="dab45-104">Clique com o botão direito do mouse em `searchString` **> Renomear**.</span><span class="sxs-lookup"><span data-stu-id="dab45-104">Right click on `searchString` **> Rename**.</span></span>
 
 ![Menu contextual](search/_static/rename.png)
 
-<span data-ttu-id="c2a40-106">Os destinos de renomeação são realçados.</span><span class="sxs-lookup"><span data-stu-id="c2a40-106">The rename targets are highlighted.</span></span>
+<span data-ttu-id="dab45-106">Os destinos de renomeação são realçados.</span><span class="sxs-lookup"><span data-stu-id="dab45-106">The rename targets are highlighted.</span></span>
 
 ![Editor de código mostrando a variável realçada em todo o método ActionResult do Índice](search/_static/rename2.png)
 
-<span data-ttu-id="c2a40-108">Altere o parâmetro para `id` e todas as ocorrências de `searchString` altere para `id`.</span><span class="sxs-lookup"><span data-stu-id="c2a40-108">Change the parameter to `id` and all occurrences of `searchString` change to `id`.</span></span>
+<span data-ttu-id="dab45-108">Altere o parâmetro para `id` e todas as ocorrências de `searchString` altere para `id`.</span><span class="sxs-lookup"><span data-stu-id="dab45-108">Change the parameter to `id` and all occurrences of `searchString` change to `id`.</span></span>
 
 ![Editor de código mostrando que a variável foi alterada para ID](search/_static/rename3.png)
 
 [!INCLUDE [adding-model](~/includes/mvc-intro/search2.md)]
 
-<span data-ttu-id="c2a40-110">Observe como o IntelliSense nos ajuda a atualizar a marcação.</span><span class="sxs-lookup"><span data-stu-id="c2a40-110">Notice how intelliSense helps us update the markup.</span></span>
+<span data-ttu-id="dab45-110">Observe como o IntelliSense nos ajuda a atualizar a marcação.</span><span class="sxs-lookup"><span data-stu-id="dab45-110">Notice how intelliSense helps us update the markup.</span></span>
 
 ![Menu contextual do IntelliSense com o método selecionado na lista de atributos do elemento de formulário](search/_static/int_m.png)
 
 ![Menu contextual do IntelliSense com get selecionado na lista de valores de atributo de método](search/_static/int_get.png)
 
-<span data-ttu-id="c2a40-113">Observe a fonte diferenciada na marcação `<form>`.</span><span class="sxs-lookup"><span data-stu-id="c2a40-113">Notice the distinctive font in the `<form>` tag.</span></span> <span data-ttu-id="c2a40-114">Essa fonte diferenciada indica que a marcação tem o suporte de [Auxiliares de Marcação](~/mvc/views/tag-helpers/intro.md).</span><span class="sxs-lookup"><span data-stu-id="c2a40-114">That distinctive font indicates the tag is supported by [Tag Helpers](~/mvc/views/tag-helpers/intro.md).</span></span>
+<span data-ttu-id="dab45-113">Observe a fonte diferenciada na marcação `<form>`.</span><span class="sxs-lookup"><span data-stu-id="dab45-113">Notice the distinctive font in the `<form>` tag.</span></span> <span data-ttu-id="dab45-114">Essa fonte diferenciada indica que a marcação tem o suporte de [Auxiliares de Marcação](~/mvc/views/tag-helpers/intro.md).</span><span class="sxs-lookup"><span data-stu-id="dab45-114">That distinctive font indicates the tag is supported by [Tag Helpers](~/mvc/views/tag-helpers/intro.md).</span></span>
 
 ![marcação de formulário com texto roxo](search/_static/th_font.png)
 
 [!INCLUDE [adding-model](~/includes/mvc-intro/search3.md)]
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="c2a40-116">[Anterior](controller-methods-views.md)
-> [Próximo](new-field.md)</span><span class="sxs-lookup"><span data-stu-id="c2a40-116">[Previous](controller-methods-views.md)
+> <span data-ttu-id="dab45-116">[Anterior](controller-methods-views.md)
+> [Próximo](new-field.md)</span><span class="sxs-lookup"><span data-stu-id="dab45-116">[Previous](controller-methods-views.md)
 [Next](new-field.md)</span></span>  
