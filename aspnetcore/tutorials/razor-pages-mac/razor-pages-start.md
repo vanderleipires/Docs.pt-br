@@ -2,26 +2,22 @@
 title: Introdução a Páginas Razor no ASP.NET Core no macOS com o Visual Studio para Mac
 author: rick-anderson
 description: Descubra como começar a usar Páginas Razor no ASP.NET Core usando o Visual Studio para Mac.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 07/27/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: 29eb11d0195f483b144394e505dd63fb6016161b
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: c2d2038a77a67d4e955856756f73e18e31f13a5d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252328"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272046"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core-on-macos-with-visual-studio-for-mac"></a>Introdução a Páginas Razor no ASP.NET Core no macOS com o Visual Studio para Mac
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Este tutorial ensina as noções básicas de criação de um aplicativo Web de Páginas do Razor do ASP.NET Core. Recomendamos que você examine a [Introdução a Páginas do Razor](xref:mvc/razor-pages/index) antes de iniciar este tutorial. Páginas do Razor é a maneira recomendada para criar a interface do usuário para aplicativos Web no ASP.NET Core.
+Este tutorial ensina as noções básicas de criação de um aplicativo Web de Páginas do Razor do ASP.NET Core. Recomendamos que você examine a [Introdução a Páginas do Razor](xref:razor-pages/index) antes de iniciar este tutorial. Páginas do Razor é a maneira recomendada para criar a interface do usuário para aplicativos Web no ASP.NET Core.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

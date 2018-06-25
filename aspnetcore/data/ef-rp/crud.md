@@ -2,19 +2,15 @@
 title: Páginas Razor com o EF Core no ASP.NET Core – CRUD – 2 de 8
 author: rick-anderson
 description: Mostra como criar, ler, atualizar e excluir com o EF Core
-manager: wpickett
 ms.author: riande
 ms.date: 10/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/crud
-ms.openlocfilehash: b3f170ad35bcff7c662fb0205b0bff2e98b4724c
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 17d48cae50745508a64a9fb8a153b7b891e64a23
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32741440"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278681"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – CRUD – 2 de 8
 
@@ -101,8 +97,7 @@ O método `AsNoTracking` melhora o desempenho em cenários em que as entidades r
 
 Abra *Pages/Students/Details.cshtml*. Adicione o seguinte código realçado para exibir uma lista de registros:
 
- <!--2do ricka. if doesn't change, remove dup -->
-[!code-cshtml[](intro/samples/cu/Pages/Students/Details1.cshtml?highlight=32-53)]
+ <!--2do ricka. if doesn't change, remove dup --> [!code-cshtml[](intro/samples/cu/Pages/Students/Details1.cshtml?highlight=32-53)]
 
 Se o recuo do código estiver incorreto depois que o código for colado, pressione CTRL-K-D para corrigi-lo.
 

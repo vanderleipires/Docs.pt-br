@@ -2,20 +2,16 @@
 title: Páginas de ajuda da API Web ASP.NET Core com o Swagger/Open API
 author: rsuter
 description: Este tutorial oferece um passo a passo de como adicionar o Swagger para gerar a documentação e as páginas de ajuda para um aplicativo de API Web.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 03/09/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: e44b491fd5265e12646efa42f12eb0662e287f04
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 56e146337ad9e94298f72abf5ede009eea65fb46
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077330"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272245"
 ---
 # <a name="aspnet-core-web-api-help-pages-with-swagger--open-api"></a>Páginas de ajuda da API Web ASP.NET Core com o Swagger/Open API
 

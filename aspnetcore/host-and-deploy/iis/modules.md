@@ -2,20 +2,16 @@
 title: Módulos do IIS com o ASP.NET Core
 author: guardrex
 description: Descubra módulos ativos e inativos do IIS para aplicativos do ASP.NET Core e como gerenciar os módulos do IIS.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 04/04/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 4a60b6c9bab77e8095cb9f19e615219817702b32
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 1ff0fdcaae066b493eeebf6a061e383f88c81052
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34566640"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272731"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>Módulos do IIS com o ASP.NET Core
 

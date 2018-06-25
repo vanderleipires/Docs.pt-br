@@ -2,19 +2,15 @@
 title: Páginas Razor com o EF Core no ASP.NET Core – Atualizar dados relacionados – 7 de 8
 author: rick-anderson
 description: Neste tutorial, você atualizará dados relacionados pela atualização dos campos de chave estrangeira e das propriedades de navegação.
-manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 2eff6cd5f4bb737cb79875c9b04c889914376cd0
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: e987971f60e5c5a9fb79e30440c7c986df64447e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740368"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275288"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Atualizar dados relacionados – 7 de 8
 
@@ -95,8 +91,6 @@ A marcação anterior faz as seguintes alterações:
 * Exibe a ID do curso. Geralmente, a PK (chave primária) de uma entidade não é exibida. Em geral, PKs não têm sentido para os usuários. Nesse caso, o PK é o número do curso.
 * Altera a legenda de **DepartmentID** para **Departamento**.
 * Substitui `"ViewBag.DepartmentID"` por `DepartmentNameSL` (da classe base).
-* Adiciona a opção "Selecionar Departamento". Essa alteração renderiza "Selecionar Departamento", em vez do departamento primeiro.
-* Adiciona uma mensagem de validação quando o departamento não está selecionado.
 
 A página contém um campo oculto (`<input type="hidden">`) para o número do curso. A adição de um auxiliar de marcação `<label>` com `asp-for="Course.CourseID"` não elimina a necessidade do campo oculto. `<input type="hidden">` é necessário para que o número seja incluído nos dados postados quando o usuário clicar em **Salvar**.
 

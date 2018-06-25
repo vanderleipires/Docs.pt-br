@@ -9,9 +9,9 @@ Teste os links. Os links **RazorPagesMovie** e **Início** vão para a página d
 A tabela a seguir lista os arquivos e pastas no projeto. Para este tutorial, o arquivo *Startup.cs* é o mais importante de se entender. Não é necessário examinar cada link fornecido abaixo. Os links são fornecidos como uma referência para quando você precisar de mais informações sobre um arquivo ou pasta no projeto.
 
 | Arquivo ou pasta              | Finalidade |
-| ----------------- | ------------ | 
+| ----------------- | ------------ |
 | wwwroot | Contém arquivos estáticos. Confira [Arquivos estáticos](xref:fundamentals/static-files). |
-| Páginas | Pasta para [Páginas do Razor](xref:mvc/razor-pages/index). | 
+| Páginas | Pasta para [Páginas do Razor](xref:razor-pages/index). |
 | *appsettings.json* | [Configuração](xref:fundamentals/configuration/index) |
 | *Program.cs* | [Hospeda](xref:fundamentals/host/index) o aplicativo ASP.NET Core.|
 | *Startup.cs* | Configura os serviços e o pipeline de solicitação. Consulte [Inicialização](xref:fundamentals/startup).|

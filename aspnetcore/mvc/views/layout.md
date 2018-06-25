@@ -2,19 +2,15 @@
 title: Layout no ASP.NET Core
 author: ardalis
 description: Saiba como usar layouts comuns, compartilhar diretivas e executar um código comum antes de renderizar exibições em um aplicativo ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/layout
-ms.openlocfilehash: 8e89c8e6cf18c47abb6bf432cdc6bb6b97e8aeb0
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a99b239a0aeeb14492b1eee962dc1149f056f0eb
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "29904745"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274112"
 ---
 # <a name="layout-in-aspnet-core"></a>Layout no ASP.NET Core
 

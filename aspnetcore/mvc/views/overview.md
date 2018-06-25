@@ -2,25 +2,21 @@
 title: Exibições no ASP.NET Core MVC
 author: ardalis
 description: Saiba como as exibições tratam da apresentação de dados do aplicativo e da interação com o usuário no ASP.NET Core MVC.
-manager: wpickett
 ms.author: riande
 ms.date: 12/12/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: b9947de03942bd71616e4bf12263befd9f784915
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 4d5cb6288711cdef145ebb0b52e4e645c535bdf2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33965719"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278343"
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Exibições no ASP.NET Core MVC
 
 Por [Steve Smith](https://ardalis.com/) e [Luke Latham](https://github.com/guardrex)
 
-Este documento explica as exibições usadas em aplicativos do ASP.NET Core MVC. Para obter informações sobre páginas do Razor, consulte [Introdução a Páginas do Razor](xref:mvc/razor-pages/index).
+Este documento explica as exibições usadas em aplicativos do ASP.NET Core MVC. Para obter informações sobre páginas do Razor, consulte [Introdução a Páginas do Razor](xref:razor-pages/index).
 
 No padrão MVC (Modelo-Exibição-Controlador), a *exibição* cuida da apresentação de dados do aplicativo e da interação com o usuário. Uma exibição é um modelo HTML com [marcação Razor](xref:mvc/views/razor) inserida. A marcação Razor é um código que interage com a marcação HTML para produzir uma página da Web que é enviada ao cliente.
 

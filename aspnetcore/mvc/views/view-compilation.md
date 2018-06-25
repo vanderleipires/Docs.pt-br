@@ -2,21 +2,17 @@
 title: Compilação e pré-compilação do arquivo do Razor no ASP.NET Core
 author: rick-anderson
 description: Saiba mais sobre os benefícios de pré-compilação arquivos do Razor e como realizar pré-compilação desses arquivos em um aplicativo do ASP.NET Core.
-manager: wpickett
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 03b11116a15c291452acd878e32cd015dc553dcc
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: 6ef450a24f57c721021f77f6df5088574caa2645
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34336272"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274034"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>Compilação de arquivo do Razor no ASP.NET Core
 
@@ -29,7 +25,7 @@ Um arquivo do Razor é compilado em tempo de execução, quando o modo de exibi�
 Um arquivo do Razor é compilado em tempo de execução, quando o modo de exibição do MVC ou da Página do Razor associada é chamado. Não há suporte para a publicação de arquivos do Razor de tempo de build. Como opção, os arquivos do Razor podem ser compilados durante a publicação e implantados com o aplicativo &mdash; usando a ferramenta de pré-compilação.
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
-Um arquivo do Razor é compilado em tempo de execução, quando o modo de exibição do MVC ou da Página do Razor associada é chamado. Os arquivos do Razor são compilados em tempo de build e de publicação usando o [SDK do Razor](xref:mvc/razor-pages/sdk).
+Um arquivo do Razor é compilado em tempo de execução, quando o modo de exibição do MVC ou da Página do Razor associada é chamado. Os arquivos do Razor são compilados em tempo de build e de publicação usando o [SDK do Razor](xref:razor-pages/sdk).
 ::: moniker-end
 
 ## <a name="precompilation-considerations"></a>Considerações sobre a pré-compilação
@@ -87,12 +83,12 @@ Um arquivo *<nome_do_projeto>.PrecompiledViews.dll*, que contém os arquivos do 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
-* <xref:mvc/razor-pages/index>
+* <xref:razor-pages/index>
 * <xref:mvc/views/overview>
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
-* <xref:mvc/razor-pages/index>
+* <xref:razor-pages/index>
 * <xref:mvc/views/overview>
-* <xref:mvc/razor-pages/sdk>
+* <xref:razor-pages/sdk>
 ::: moniker-end

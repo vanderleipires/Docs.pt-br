@@ -2,19 +2,15 @@
 title: Associação de modelos personalizada no ASP.NET Core
 author: ardalis
 description: Saiba como a associação de modelos permite que as ações do controlador trabalhem diretamente com os tipos de modelo no ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 04/10/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: a687753083d3b11898e9ff35828780a5ad240854
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f5bd9a3eefb1fd9c1534e8767ad8e8af37514adb
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740615"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275387"
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a>Associação de modelos personalizada no ASP.NET Core
 

@@ -2,20 +2,16 @@
 title: Implantação contínua no Azure com o Visual Studio e o GIT com o ASP.NET Core
 author: rick-anderson
 description: Saiba como criar um aplicativo Web ASP.NET Core usando o Visual Studio e implantá-lo no Serviço de Aplicativo do Azure, usando o Git para implantação contínua.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 4de1893e8c1f7f2f4d9af7278a110067ea777c61
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0a9a2d9d0de25a4eaab704680c627c1216d146e3
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30897885"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275477"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>Implantação contínua no Azure com o Visual Studio e o GIT com o ASP.NET Core
 

@@ -2,20 +2,16 @@
 title: Metapacote Microsoft.AspNetCore.All para ASP.NET Core 2.0 e posterior
 author: Rick-Anderson
 description: O metapacote Microsoft.AspNetCore.All inclui todos os pacotes do ASP.NET Core e Entity Framework Core compatíveis, juntamente com suas dependências.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/20/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: fbb76f41f3178ddc4e51faa14edece1869a30cd0
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 2fddc59d74dce4b114b5b4ed0646f773eb66ffb9
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729071"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277796"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>Metapacote Microsoft.AspNetCore.All para ASP.NET Core 2.0
 

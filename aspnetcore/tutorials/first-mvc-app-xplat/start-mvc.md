@@ -2,19 +2,15 @@
 title: Introdução ao ASP.NET Core MVC no Mac, no Linux ou no Windows
 author: rick-anderson
 description: Saiba como começar a usar o ASP.NET Core MVC e o Visual Studio Code no Windows, no Linux e no macOS
-manager: wpickett
 ms.author: riande
 ms.date: 07/07/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: 50fbd54c6b0cc1146271afda7e45a0dab590dd7d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b25ee29541e345a3bf6700b67d992409c02b183a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893554"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275269"
 ---
 # <a name="introduction-to-aspnet-core-mvc-on-macos-linux-or-windows"></a>Introdução ao ASP.NET Core MVC no Mac, no Linux ou no Windows
 
