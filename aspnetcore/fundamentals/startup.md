@@ -2,20 +2,16 @@
 title: Inicialização do aplicativo no ASP.NET Core
 author: ardalis
 description: Saiba como a classe Startup no ASP.NET Core configura serviços e o pipeline de solicitação do aplicativo.
-manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: 58ced0ae11f462bc309526b7db7bda7897c33009
-ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
+ms.openlocfilehash: f0b907e4322809dfe2bcd287bb064f35f5ebe150
+ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "34233164"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36314114"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Inicialização do aplicativo no ASP.NET Core
 
@@ -45,7 +41,7 @@ O construtor de classe `Startup` aceita dependências definidas pelo host. Um us
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-Uma alternativa a injetar `IHostingEnvironment` é usar uma abordagem baseada em convenções. O aplicativo pode definir classes `Startup` separadas para ambientes diferentes (por exemplo, `StartupDevelopment`) e a classe de inicialização adequada é selecionada em tempo de execução. A classe cujo sufixo do nome corresponde ao ambiente atual é priorizada. Se o aplicativo for executado no ambiente de desenvolvimento e incluir uma classe `Startup` e uma classe `StartupDevelopment`, a classe `StartupDevelopment` será usada. Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments#startup-conventions).
+Uma alternativa a injetar `IHostingEnvironment` é usar uma abordagem baseada em convenções. O aplicativo pode definir classes `Startup` separadas para ambientes diferentes (por exemplo, `StartupDevelopment`) e a classe de inicialização adequada é selecionada em tempo de execução. A classe cujo sufixo do nome corresponde ao ambiente atual é priorizada. Se o aplicativo for executado no ambiente de desenvolvimento e incluir uma classe `Startup` e uma classe `StartupDevelopment`, a classe `StartupDevelopment` será usada. Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments#environment-based-startup-class-and-methods).
 
 Para saber mais sobre `WebHostBuilder`, consulte tópico sobre [Hospedagem](xref:fundamentals/host/index). Para obter informações sobre como tratar erros durante a inicialização, consulte [Tratamento de exceção na inicialização](xref:fundamentals/error-handling#startup-exception-handling).
 
