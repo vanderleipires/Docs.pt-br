@@ -5,12 +5,12 @@ description: Saiba como usar o atributo de autorização para restringir o acess
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/simple
-ms.openlocfilehash: 3c5e9d5dfd65ded40c9828a666143c1868f5562f
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6409def0508b855d3d2a4a1f4d3a3d15bfe5dd32
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272059"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961117"
 ---
 # <a name="simple-authorization-in-aspnet-core"></a>Simples de autorização no núcleo do ASP.NET
 
@@ -71,5 +71,5 @@ public class AccountController : Controller
 
 Isso permitiria que somente usuários autenticados para o `AccountController`, exceto para o `Login` ação, que pode ser acessada por todos os usuários, independentemente de seu status de autenticado ou anônimo / não autenticado.
 
->[!WARNING]
-> `[AllowAnonymous]` Ignora todas as declarações de autorização. Se você aplicar combinar `[AllowAnonymous]` e qualquer `[Authorize]` atributo e os atributos de autorizar sempre serão ignorados. Por exemplo, se você aplicar `[AllowAnonymous]` no controlador de nível qualquer `[Authorize]` atributos no mesmo controlador, ou em qualquer ação dentro dele serão ignorados.
+> [!WARNING]
+> `[AllowAnonymous]` Ignora todas as declarações de autorização. Se você combinar `[AllowAnonymous]` e `[Authorize]` atributo, o `[Authorize]` atributos são ignorados. Por exemplo, se você aplicar `[AllowAnonymous]` no nível do controlador, qualquer `[Authorize]` atributos no mesmo controlador (ou em qualquer ação dentro dele) é ignorada.

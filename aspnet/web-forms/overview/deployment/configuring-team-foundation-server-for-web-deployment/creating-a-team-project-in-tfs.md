@@ -12,12 +12,12 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 79c069a601c0eafd84ae142241895428052acd29
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 96e0ee5fd0b74e7b22b8e346aa8462f7558a3ddc
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880421"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960688"
 ---
 <a name="creating-a-team-project-in-tfs"></a>Criando um projeto de equipe no TFS
 ====================
@@ -110,9 +110,8 @@ Em seguida, você precisa conceder ao usuário permissão para criar novos sites
 
    > [!NOTE]
    > Você pode receber um <strong>HTTP 404 não encontrado</strong> erro devido a um bug de codificação duplo do HTTP. Se isso ocorrer, substitua a URL com isso:   
-   > [<em>URL de coleção de sites</em>] /\_layouts/permsetup.aspx  
-   > Por exemplo:  
-   > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
+   > `[site_collection_URL]/_layouts/permsetup.aspx` Por exemplo:  
+   > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
 8. No **configurar grupos para este Site** página, adicione o usuário que irá criar projetos de equipe para o **proprietários** de grupo e, em seguida, clique em **Okey**.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)

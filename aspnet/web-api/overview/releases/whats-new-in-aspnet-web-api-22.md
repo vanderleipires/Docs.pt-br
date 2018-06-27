@@ -12,12 +12,12 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/releases/whats-new-in-aspnet-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 400329dd852ca3c527387ee45e3e902b725e771b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 89b065fccd0e4864f4a24c37b4caa29a1e127840
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26508395"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961293"
 ---
 <a name="whats-new-in-aspnet-web-api-22"></a>O que há de novo no ASP.NET Web API 2.2
 ====================
@@ -131,7 +131,7 @@ Por exemplo, literais de cadeia de caracteres podem ser usados nos caminhos ODat
 
 Quando os serviços recebem tais solicitações a hosts será un-escape as sequências de escape antes de passá-los para o tempo de execução de API da Web. Isso protege contra ataques semelhante ao seguinte:  
   
- http://www.contoso.com/..%2f..%2f/Windows/System32/cmd.exe?/c+dir+c:
+`http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:`
 
 Isso faz com que a pilha de OData da API Web retornar um erro 404 (não encontrado). Para evitar esse erro, o cliente deve usar sequências de escape duplo para barra (% 252F) e barra invertida (% C de 255). Isso não acontecer por cadeias de caracteres de consulta como /Employees? $filter = Name eq 'Nome % 2F'
 
@@ -158,7 +158,7 @@ Uma solução alternativa é usar o código a seguir em sua configuração de AP
 Problema: Associação de modelo de tipo complexo que está decorado com atributos FromUri tem um comportamento diferente ao usar o roteamento de atributo.
 
 Link a seguir para acompanhar o problema e também exibe detalhes sobre uma solução alternativa.  
-[http://aspnetwebstack.codeplex.com/WorkItem/1944](http://aspnetwebstack.codeplex.com/workitem/1944)
+[http://aspnetwebstack.codeplex.com/workitem/1944](http://aspnetwebstack.codeplex.com/workitem/1944)
 
 Problema: Scaffolding MVC/Web API em um projeto com 5.2.0 resultados de pacotes em 5.1.2 pacotes para aqueles que já não existe no projeto
 

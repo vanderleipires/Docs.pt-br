@@ -12,12 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 946d4d5e5a506fb437232f9f4440c98e33a1a9b3
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 96dc6724b48daf77034c0741be970be11b81ab37
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33966553"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961510"
 ---
 <a name="adding-validation"></a>Adicionando uma Validação
 ====================
@@ -57,7 +57,7 @@ Quando esse comando for concluído, o Visual Studio abrirá o arquivo de classe 
 
 [!code-csharp[Main](adding-validation/samples/sample3.cs)]
 
-O `Genre` campo não são mais anulável (ou seja, você deve inserir um valor). O `Rating` campo tem um comprimento máximo de 5 e `Title` tem um comprimento máximo de 60. O comprimento mínimo de 3 em `Title` e o intervalo em `Price` não criou as alterações de esquema.
+O `Genre` campo não é anulável (ou seja, você deve inserir um valor). O `Rating` campo tem um comprimento máximo de 5 e `Title` tem um comprimento máximo de 60. O comprimento mínimo de 3 em `Title` e o intervalo em `Price` não criou as alterações de esquema.
 
 Examine o esquema de filme:
 
