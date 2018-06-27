@@ -1,0 +1,11 @@
+# <a name="aspnet-core-web-api-sample"></a><span data-ttu-id="4bfc0-101">Exemplo de núcleo API Web ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="4bfc0-101">ASP.NET Core Web API sample</span></span>
+
+<span data-ttu-id="4bfc0-102">A tabela a seguir apresenta uma descrição das várias pastas que compõem a solução de exemplo:</span><span class="sxs-lookup"><span data-stu-id="4bfc0-102">The following table provides a description of the various folders making up the sample solution:</span></span>
+
+
+|              <span data-ttu-id="4bfc0-103">Pasta</span><span class="sxs-lookup"><span data-stu-id="4bfc0-103">Folder</span></span>              |                                        <span data-ttu-id="4bfc0-104">Finalidade</span><span class="sxs-lookup"><span data-stu-id="4bfc0-104">Purpose</span></span>                                        |
+|----------------------------------|---------------------------------------------------------------------------------------|
+|   <span data-ttu-id="4bfc0-105"><em>WebApiSample.Api.21</em></span><span class="sxs-lookup"><span data-stu-id="4bfc0-105"><em>WebApiSample.Api.21</em></span></span>   |                         <span data-ttu-id="4bfc0-106">Um projeto de API Web ASP.NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="4bfc0-106">An ASP.NET Core 2.1 Web API project.</span></span>                          |
+| <span data-ttu-id="4bfc0-107"><em>WebApiSample.Api.Pre21</em></span><span class="sxs-lookup"><span data-stu-id="4bfc0-107"><em>WebApiSample.Api.Pre21</em></span></span>  |                         <span data-ttu-id="4bfc0-108">Um projeto de API Web ASP.NET Core 2.0.</span><span class="sxs-lookup"><span data-stu-id="4bfc0-108">An ASP.NET Core 2.0 Web API project.</span></span>                          |
+| <span data-ttu-id="4bfc0-109"><em>WebApiSample.DataAccess</em></span><span class="sxs-lookup"><span data-stu-id="4bfc0-109"><em>WebApiSample.DataAccess</em></span></span> | <span data-ttu-id="4bfc0-110">Um projeto de camada de acesso a dados do .NET Standard 2.0 usado por ambos os projetos da API Web.</span><span class="sxs-lookup"><span data-stu-id="4bfc0-110">A .NET Standard 2.0 data access layer project which is used by both Web API projects.</span></span> |
+

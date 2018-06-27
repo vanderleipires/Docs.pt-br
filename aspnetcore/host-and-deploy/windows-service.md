@@ -1,130 +1,188 @@
 ---
 title: Hospedar o ASP.NET Core em um serviço Windows
-author: rick-anderson
+author: guardrex
 description: Saiba como hospedar um aplicativo ASP.NET Core em um serviço Windows.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 01/30/2018
+ms.date: 06/04/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 29f83ee585c73aeb57a09f70ea8e28650c05ce69
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 5eba685bbe55d43bb063a01798bc691a1ba0d6fc
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34153523"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613080"
 ---
-# <a name="host-aspnet-core-in-a-windows-service"></a><span data-ttu-id="c7118-103">Hospedar o ASP.NET Core em um serviço Windows</span><span class="sxs-lookup"><span data-stu-id="c7118-103">Host ASP.NET Core in a Windows Service</span></span>
+# <a name="host-aspnet-core-in-a-windows-service"></a><span data-ttu-id="0abed-103">Hospedar o ASP.NET Core em um serviço Windows</span><span class="sxs-lookup"><span data-stu-id="0abed-103">Host ASP.NET Core in a Windows Service</span></span>
 
-<span data-ttu-id="c7118-104">Por [Tom Dykstra](https://github.com/tdykstra)</span><span class="sxs-lookup"><span data-stu-id="c7118-104">By [Tom Dykstra](https://github.com/tdykstra)</span></span>
+<span data-ttu-id="0abed-104">Por [Luke Latham](https://github.com/guardrex) e [Tom Dykstra](https://github.com/tdykstra)</span><span class="sxs-lookup"><span data-stu-id="0abed-104">By [Luke Latham](https://github.com/guardrex) and [Tom Dykstra](https://github.com/tdykstra)</span></span>
 
-<span data-ttu-id="c7118-105">A maneira recomendada de hospedar um aplicativo ASP.NET Core no Windows sem usar o IIS é executá-lo em um [serviço Windows](/dotnet/framework/windows-services/introduction-to-windows-service-applications).</span><span class="sxs-lookup"><span data-stu-id="c7118-105">The recommended way to host an ASP.NET Core app on Windows without using IIS is to run it in a [Windows Service](/dotnet/framework/windows-services/introduction-to-windows-service-applications).</span></span> <span data-ttu-id="c7118-106">Quando hospedado como um serviço Windows, o aplicativo pode iniciar automaticamente após reinicializações e falhas, sem exigir intervenção humana.</span><span class="sxs-lookup"><span data-stu-id="c7118-106">When hosted as a Windows Service, the app can automatically start after reboots and crashes without requiring human intervention.</span></span>
+<span data-ttu-id="0abed-105">Um aplicativo ASP.NET Core pode ser hospedado no Windows sem usar o IIS como um [Serviço Windows](/dotnet/framework/windows-services/introduction-to-windows-service-applications).</span><span class="sxs-lookup"><span data-stu-id="0abed-105">An ASP.NET Core app can be hosted on Windows without using IIS as a [Windows Service](/dotnet/framework/windows-services/introduction-to-windows-service-applications).</span></span> <span data-ttu-id="0abed-106">Quando hospedado como um serviço Windows, o aplicativo pode iniciar automaticamente após reinicializações e falhas, sem exigir intervenção humana.</span><span class="sxs-lookup"><span data-stu-id="0abed-106">When hosted as a Windows Service, the app can automatically start after reboots and crashes without requiring human intervention.</span></span>
 
-<span data-ttu-id="c7118-107">[Exibir ou baixar um código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample)).</span><span class="sxs-lookup"><span data-stu-id="c7118-107">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample)).</span></span> <span data-ttu-id="c7118-108">Para obter instruções sobre como executar o aplicativo de exemplo, confira o arquivo *README.md* do exemplo.</span><span class="sxs-lookup"><span data-stu-id="c7118-108">For instructions on how to run the sample app, see the sample's *README.md* file.</span></span>
+<span data-ttu-id="0abed-107">[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="0abed-107">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="c7118-109">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="c7118-109">Prerequisites</span></span>
+## <a name="get-started"></a><span data-ttu-id="0abed-108">Introdução</span><span class="sxs-lookup"><span data-stu-id="0abed-108">Get started</span></span>
 
-* <span data-ttu-id="c7118-110">O aplicativo deve ser executado no tempo de execução do .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="c7118-110">The app must run on the .NET Framework runtime.</span></span> <span data-ttu-id="c7118-111">No arquivo *.csproj*, especifique os valores apropriados para [TargetFramework](/nuget/schema/target-frameworks) e [RuntimeIdentifier](/dotnet/articles/core/rid-catalog).</span><span class="sxs-lookup"><span data-stu-id="c7118-111">In the *.csproj* file, specify appropriate values for [TargetFramework](/nuget/schema/target-frameworks) and [RuntimeIdentifier](/dotnet/articles/core/rid-catalog).</span></span> <span data-ttu-id="c7118-112">Veja um exemplo:</span><span class="sxs-lookup"><span data-stu-id="c7118-112">Here's an example:</span></span>
+<span data-ttu-id="0abed-109">As seguintes alterações mínimas são necessárias para configurar um projeto existente do ASP.NET Core para ser executado em um serviço:</span><span class="sxs-lookup"><span data-stu-id="0abed-109">The following minimum changes are required to set up an existing ASP.NET Core project to run in a service:</span></span>
 
-  [!code-xml[](windows-service/sample/AspNetCoreService.csproj?range=3-6)]
+1. <span data-ttu-id="0abed-110">No arquivo de projeto:</span><span class="sxs-lookup"><span data-stu-id="0abed-110">In the project file:</span></span>
 
-  <span data-ttu-id="c7118-113">Ao criar um projeto no Visual Studio, use o modelo **Aplicativo ASP.NET Core (.NET Framework)**.</span><span class="sxs-lookup"><span data-stu-id="c7118-113">When creating a project in Visual Studio, use the **ASP.NET Core Application (.NET Framework)** template.</span></span>
+   1. <span data-ttu-id="0abed-111">Confirme a presença do identificador de tempo de execução ou adicione-o ao **\<PropertyGroup>** que contém a estrutura de destino:</span><span class="sxs-lookup"><span data-stu-id="0abed-111">Confirm the presence of the runtime identifier or add it to the **\<PropertyGroup>** that contains the target framework:</span></span>
+      ```xml
+      <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+      </PropertyGroup>
+      ```
+   1. <span data-ttu-id="0abed-112">Adicionar uma referência de pacote para [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).</span><span class="sxs-lookup"><span data-stu-id="0abed-112">Add a package reference for [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).</span></span>
 
-* <span data-ttu-id="c7118-114">Se o aplicativo recebe solicitações da Internet (não apenas de uma rede interna), ele deve usar o servidor Web [HTTP.sys](xref:fundamentals/servers/httpsys) (anteriormente conhecido como [WebListener](xref:fundamentals/servers/weblistener) para aplicativos do ASP.NET Core 1.x) em vez do [Kestrel](xref:fundamentals/servers/kestrel).</span><span class="sxs-lookup"><span data-stu-id="c7118-114">If the app receives requests from the Internet (not just from an internal network), it must use the [HTTP.sys](xref:fundamentals/servers/httpsys) web server (formerly known as [WebListener](xref:fundamentals/servers/weblistener) for ASP.NET Core 1.x apps) rather than [Kestrel](xref:fundamentals/servers/kestrel).</span></span> <span data-ttu-id="c7118-115">O IIS é recomendado para uso como um servidor proxy reverso com o Kestrel para implantações de borda.</span><span class="sxs-lookup"><span data-stu-id="c7118-115">IIS is recommended for use as a reverse proxy server with Kestrel for edge deployments.</span></span> <span data-ttu-id="c7118-116">Para obter mais informações, consulte [Quando usar Kestrel com um proxy reverso](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).</span><span class="sxs-lookup"><span data-stu-id="c7118-116">For more information, see [When to use Kestrel with a reverse proxy](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).</span></span>
+1. <span data-ttu-id="0abed-113">Faça as seguintes alterações em `Program.Main`:</span><span class="sxs-lookup"><span data-stu-id="0abed-113">Make the following changes in `Program.Main`:</span></span>
 
-## <a name="get-started"></a><span data-ttu-id="c7118-117">Introdução</span><span class="sxs-lookup"><span data-stu-id="c7118-117">Get started</span></span>
+   * <span data-ttu-id="0abed-114">Chame [host. RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice), em vez de `host.Run`.</span><span class="sxs-lookup"><span data-stu-id="0abed-114">Call [host.RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice) instead of `host.Run`.</span></span>
 
-<span data-ttu-id="c7118-118">Esta seção explica as alterações mínimas necessárias para configurar um projeto existente do ASP.NET Core para executar em um serviço.</span><span class="sxs-lookup"><span data-stu-id="c7118-118">This section explains the minimum changes required to set up an existing ASP.NET Core project to run in a service.</span></span>
+   * <span data-ttu-id="0abed-115">Se o código chama `UseContentRoot`, use um caminho para o local publicado do aplicativo, em vez de `Directory.GetCurrentDirectory()`.</span><span class="sxs-lookup"><span data-stu-id="0abed-115">If the code calls `UseContentRoot`, use a path to the app's published location instead of `Directory.GetCurrentDirectory()`.</span></span>
 
-1. <span data-ttu-id="c7118-119">Instale o pacote NuGet [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).</span><span class="sxs-lookup"><span data-stu-id="c7118-119">Install the NuGet package [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).</span></span>
+     ::: moniker range=">= aspnetcore-2.0"
 
-2. <span data-ttu-id="c7118-120">Faça as seguintes alterações em `Program.Main`:</span><span class="sxs-lookup"><span data-stu-id="c7118-120">Make the following changes in `Program.Main`:</span></span>
+     <span data-ttu-id="0abed-116">[!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,11)]</span><span class="sxs-lookup"><span data-stu-id="0abed-116">[!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,11)]</span></span>
 
-   * <span data-ttu-id="c7118-121">Chame `host.RunAsService` em vez de `host.Run`.</span><span class="sxs-lookup"><span data-stu-id="c7118-121">Call `host.RunAsService` instead of `host.Run`.</span></span>
+     ::: moniker-end
 
-   * <span data-ttu-id="c7118-122">Se o código chama `UseContentRoot`, use um caminho para o local de publicação em vez de `Directory.GetCurrentDirectory()`.</span><span class="sxs-lookup"><span data-stu-id="c7118-122">If the code calls `UseContentRoot`, use a path to the publish location instead of `Directory.GetCurrentDirectory()`.</span></span>
+     ::: moniker range="< aspnetcore-2.0"
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="c7118-123">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="c7118-123">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+     <span data-ttu-id="0abed-117">[!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,13)]</span><span class="sxs-lookup"><span data-stu-id="0abed-117">[!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,13)]</span></span>
 
-   [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,12)]
+     ::: moniker-end
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="c7118-124">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="c7118-124">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+1. <span data-ttu-id="0abed-118">Publique o aplicativo em uma pasta.</span><span class="sxs-lookup"><span data-stu-id="0abed-118">Publish the app to a folder.</span></span> <span data-ttu-id="0abed-119">Use [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) ou um [perfil de publicação do Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) que publica para uma pasta.</span><span class="sxs-lookup"><span data-stu-id="0abed-119">Use [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) or a [Visual Studio publish profile](xref:host-and-deploy/visual-studio-publish-profiles) that publishes to a folder.</span></span>
 
-   [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,14)]
-
-   ---
-
-3. <span data-ttu-id="c7118-125">Publique o aplicativo em uma pasta.</span><span class="sxs-lookup"><span data-stu-id="c7118-125">Publish the app to a folder.</span></span> <span data-ttu-id="c7118-126">Use [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) ou um [perfil de publicação do Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) que publica para uma pasta.</span><span class="sxs-lookup"><span data-stu-id="c7118-126">Use [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) or a [Visual Studio publish profile](xref:host-and-deploy/visual-studio-publish-profiles) that publishes to a folder.</span></span>
-
-4. <span data-ttu-id="c7118-127">Teste criando e iniciando o serviço.</span><span class="sxs-lookup"><span data-stu-id="c7118-127">Test by creating and starting the service.</span></span>
-
-   <span data-ttu-id="c7118-128">Abra um shell de comando com privilégios administrativos para usar a ferramenta de linha de comando [sc.exe](https://technet.microsoft.com/library/bb490995) para criar e iniciar um serviço.</span><span class="sxs-lookup"><span data-stu-id="c7118-128">Open a command shell with administrative privileges to use the [sc.exe](https://technet.microsoft.com/library/bb490995) command-line tool to create and start a service.</span></span> <span data-ttu-id="c7118-129">Se o serviço é nomeado MyService, publicado para `c:\svc` e denominado AspNetCoreService, os comandos são:</span><span class="sxs-lookup"><span data-stu-id="c7118-129">If the service is named MyService, published to `c:\svc`, and named AspNetCoreService, the commands are:</span></span>
+   <span data-ttu-id="0abed-120">Para publicar o aplicativo de exemplo da linha de comando, execute o seguinte comando em uma janela do console da pasta de projeto:</span><span class="sxs-lookup"><span data-stu-id="0abed-120">To publish the sample app from the command line, run the following command in a console window from the project folder:</span></span>
 
    ```console
-   sc create MyService binPath="c:\svc\aspnetcoreservice.exe"
+   dotnet publish --configuration Release --output c:\svc
+   ```
+
+1. <span data-ttu-id="0abed-121">Use a ferramenta de linha de comando [sc.exe](https://technet.microsoft.com/library/bb490995) para criar o serviço (`sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"`).</span><span class="sxs-lookup"><span data-stu-id="0abed-121">Use the [sc.exe](https://technet.microsoft.com/library/bb490995) command-line tool to create the service (`sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"`).</span></span> <span data-ttu-id="0abed-122">O valor `binPath` é o caminho para o executável do aplicativo, que inclui o nome do arquivo executável.</span><span class="sxs-lookup"><span data-stu-id="0abed-122">The `binPath` value is the path to the app's executable, which includes the executable file name.</span></span> <span data-ttu-id="0abed-123">**O espaço entre o sinal de igual e o caractere de aspas que inicia o caminho é necessário.**</span><span class="sxs-lookup"><span data-stu-id="0abed-123">**The space between the equal sign and the quote character that starts the path is required.**</span></span>
+
+   <span data-ttu-id="0abed-124">Para o aplicativo de exemplo e o comando que se segue, o serviço é:</span><span class="sxs-lookup"><span data-stu-id="0abed-124">For the sample app and command that follows, the service is:</span></span>
+
+   * <span data-ttu-id="0abed-125">Chamado **MyService**.</span><span class="sxs-lookup"><span data-stu-id="0abed-125">Named **MyService**.</span></span>
+   * <span data-ttu-id="0abed-126">Publicado na pasta *c:\\svc*.</span><span class="sxs-lookup"><span data-stu-id="0abed-126">Published to *c:\\svc* folder.</span></span>
+   * <span data-ttu-id="0abed-127">Tem um aplicativo executável chamado *AspNetCoreService.exe*.</span><span class="sxs-lookup"><span data-stu-id="0abed-127">Has an app executable named *AspNetCoreService.exe*.</span></span>
+
+   <span data-ttu-id="0abed-128">Abra um shell de comando com privilégios administrativos e execute o seguinte comando:</span><span class="sxs-lookup"><span data-stu-id="0abed-128">Open a command shell with administrative privileges and run the following command:</span></span>
+
+   ```console
+   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe"
+   ```
+
+   <span data-ttu-id="0abed-129">**Verifique se existe o espaço entre o argumento `binPath=` e seu valor.**</span><span class="sxs-lookup"><span data-stu-id="0abed-129">**Make sure the space is present between the `binPath=` argument and its value.**</span></span>
+
+1. <span data-ttu-id="0abed-130">Inicie o serviço com o comando `sc start <SERVICE_NAME>`.</span><span class="sxs-lookup"><span data-stu-id="0abed-130">Start the service with the `sc start <SERVICE_NAME>` command.</span></span>
+
+   <span data-ttu-id="0abed-131">Para iniciar o serviço de aplicativo de exemplo, use o seguinte comando:</span><span class="sxs-lookup"><span data-stu-id="0abed-131">To start the sample app service, use the following command:</span></span>
+
+   ```console
    sc start MyService
    ```
 
-   <span data-ttu-id="c7118-130">O valor `binPath` é o caminho para o executável do aplicativo, que inclui o nome do arquivo executável.</span><span class="sxs-lookup"><span data-stu-id="c7118-130">The `binPath` value is the path to the app's executable, which includes the executable file name.</span></span>
+   <span data-ttu-id="0abed-132">O comando leva alguns segundos para iniciar o serviço.</span><span class="sxs-lookup"><span data-stu-id="0abed-132">The command takes a few seconds to start the service.</span></span>
 
-   ![Exemplo de criação e início de janela do console](windows-service/_static/create-start.png)
+1. <span data-ttu-id="0abed-133">O comando `sc query <SERVICE_NAME>` pode ser usado para verificar o status do serviço para determinar seu status:</span><span class="sxs-lookup"><span data-stu-id="0abed-133">The `sc query <SERVICE_NAME>` command can be used to check the status of the service to determine its status:</span></span>
 
-   <span data-ttu-id="c7118-132">Quando terminar desses comandos, navegue até o mesmo caminho usado ao executar como um aplicativo de console (por padrão, `http://localhost:5000`):</span><span class="sxs-lookup"><span data-stu-id="c7118-132">When these commands finish, browse to the same path as when running as a console app (by default, `http://localhost:5000`):</span></span>
+   * `START_PENDING`
+   * `RUNNING`
+   * `STOP_PENDING`
+   * `STOPPED`
 
-   ![Executar em um serviço](windows-service/_static/running-in-service.png)
+   <span data-ttu-id="0abed-134">Use o seguinte comando para verificar o status do serviço de aplicativo de exemplo:</span><span class="sxs-lookup"><span data-stu-id="0abed-134">Use the following command to check the status of the sample app service:</span></span>
 
-## <a name="provide-a-way-to-run-outside-of-a-service"></a><span data-ttu-id="c7118-134">Fornecer uma maneira de executar fora de um serviço</span><span class="sxs-lookup"><span data-stu-id="c7118-134">Provide a way to run outside of a service</span></span>
+   ```console
+   sc query MyService
+   ```
 
-<span data-ttu-id="c7118-135">É mais fácil testar e depurar ao executar fora de um serviço, então é comum adicionar código que chama `RunAsService` apenas em determinadas condições.</span><span class="sxs-lookup"><span data-stu-id="c7118-135">It's easier to test and debug when running outside of a service, so it's customary to add code that calls `RunAsService` only under certain conditions.</span></span> <span data-ttu-id="c7118-136">Por exemplo, o aplicativo pode ser executado como um aplicativo de console com um argumento de linha de comando `--console` ou se o depurador está anexado:</span><span class="sxs-lookup"><span data-stu-id="c7118-136">For example, the app can run as a console app with a `--console` command-line argument or if the debugger is attached:</span></span>
+1. <span data-ttu-id="0abed-135">Quando o serviço estiver no estado `RUNNING` e se o serviço for um aplicativo Web, procure o aplicativo em seu caminho (por padrão, `http://localhost:5000`, que redireciona para `https://localhost:5001` ao usar [Middleware de Redirecionamento HTTPS](xref:security/enforcing-ssl)).</span><span class="sxs-lookup"><span data-stu-id="0abed-135">When the service is in the `RUNNING` state and if the service is a web app, browse the app at its path (by default, `http://localhost:5000`, which redirects to `https://localhost:5001` when using [HTTPS Redirection Middleware](xref:security/enforcing-ssl)).</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="c7118-137">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="c7118-137">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+   <span data-ttu-id="0abed-136">Para o serviço de aplicativo de exemplo, procure o aplicativo em `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="0abed-136">For the sample app service, browse the app at `http://localhost:5000`.</span></span>
 
-[!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]
+1. <span data-ttu-id="0abed-137">Interrompa o serviço com o comando `sc stop <SERVICE_NAME>`.</span><span class="sxs-lookup"><span data-stu-id="0abed-137">Stop the service with the `sc stop <SERVICE_NAME>` command.</span></span>
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="c7118-138">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="c7118-138">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+   <span data-ttu-id="0abed-138">O comando a seguir interrompe o serviço de aplicativo de exemplo:</span><span class="sxs-lookup"><span data-stu-id="0abed-138">The following command stops the sample app service:</span></span>
 
-[!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]
+   ```console
+   sc stop MyService
+   ```
 
----
+1. <span data-ttu-id="0abed-139">Após um pequeno atraso para interromper um serviço, desinstale o serviço com o comando `sc delete <SERVICE_NAME>`.</span><span class="sxs-lookup"><span data-stu-id="0abed-139">After a short delay to stop a service, uninstall the service with the `sc delete <SERVICE_NAME>` command.</span></span>
 
-## <a name="handle-stopping-and-starting-events"></a><span data-ttu-id="c7118-139">Manipular eventos de início e de parada</span><span class="sxs-lookup"><span data-stu-id="c7118-139">Handle stopping and starting events</span></span>
+   <span data-ttu-id="0abed-140">Verifique o status do serviço de aplicativo de exemplo:</span><span class="sxs-lookup"><span data-stu-id="0abed-140">Check the status of the sample app service:</span></span>
 
-<span data-ttu-id="c7118-140">Para manipular eventos `OnStarting`, `OnStarted` e `OnStopping`, faça as seguintes alterações adicionais:</span><span class="sxs-lookup"><span data-stu-id="c7118-140">To handle `OnStarting`, `OnStarted`, and `OnStopping` events, make the following additional changes:</span></span>
+   ```console
+   sc query MyService
+   ```
 
-1. <span data-ttu-id="c7118-141">Crie uma classe que deriva de `WebHostService`:</span><span class="sxs-lookup"><span data-stu-id="c7118-141">Create a class that derives from `WebHostService`:</span></span>
+   <span data-ttu-id="0abed-141">Quando o serviço de aplicativo de exemplo estiver no estado `STOPPED`, use o seguinte comando para desinstalar o serviço de aplicativo de exemplo:</span><span class="sxs-lookup"><span data-stu-id="0abed-141">When the sample app service is in the `STOPPED` state, use the following command to uninstall the sample app service:</span></span>
+
+   ```console
+   sc delete MyService
+   ```
+
+## <a name="provide-a-way-to-run-outside-of-a-service"></a><span data-ttu-id="0abed-142">Fornecer uma maneira de executar fora de um serviço</span><span class="sxs-lookup"><span data-stu-id="0abed-142">Provide a way to run outside of a service</span></span>
+
+<span data-ttu-id="0abed-143">É mais fácil testar e depurar ao executar fora de um serviço, então é comum adicionar código que chama `RunAsService` apenas em determinadas condições.</span><span class="sxs-lookup"><span data-stu-id="0abed-143">It's easier to test and debug when running outside of a service, so it's customary to add code that calls `RunAsService` only under certain conditions.</span></span> <span data-ttu-id="0abed-144">Por exemplo, o aplicativo pode ser executado como um aplicativo de console com um argumento de linha de comando `--console` ou se o depurador está anexado:</span><span class="sxs-lookup"><span data-stu-id="0abed-144">For example, the app can run as a console app with a `--console` command-line argument or if the debugger is attached:</span></span>
+
+::: moniker range=">= aspnetcore-2.0"
+
+<span data-ttu-id="0abed-145">[!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]</span><span class="sxs-lookup"><span data-stu-id="0abed-145">[!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]</span></span>
+
+<span data-ttu-id="0abed-146">Porque a configuração do ASP.NET Core requer pares nome-valor para argumentos de linha de comando, a opção `--console` é removida antes que os argumentos sejam passados para [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder).</span><span class="sxs-lookup"><span data-stu-id="0abed-146">Because ASP.NET Core configuration requires name-value pairs for command-line arguments, the `--console` switch is removed before the arguments are passed to [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder).</span></span>
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+<span data-ttu-id="0abed-147">[!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]</span><span class="sxs-lookup"><span data-stu-id="0abed-147">[!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]</span></span>
+
+::: moniker-end
+
+## <a name="handle-stopping-and-starting-events"></a><span data-ttu-id="0abed-148">Manipular eventos de início e de parada</span><span class="sxs-lookup"><span data-stu-id="0abed-148">Handle stopping and starting events</span></span>
+
+<span data-ttu-id="0abed-149">Para tratar eventos [OnStarting](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarting), [OnStarted](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarted) e [OnStopping](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstopping), faça as seguintes alterações adicionais:</span><span class="sxs-lookup"><span data-stu-id="0abed-149">To handle [OnStarting](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarting), [OnStarted](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarted), and [OnStopping](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstopping) events, make the following additional changes:</span></span>
+
+1. <span data-ttu-id="0abed-150">Crie uma classe que derive de [WebHostService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice):</span><span class="sxs-lookup"><span data-stu-id="0abed-150">Create a class that derives from [WebHostService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice):</span></span>
 
    [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=NoLogging)]
 
-2. <span data-ttu-id="c7118-142">Criar um método de extensão para `IWebHost` que passa o `WebHostService` personalizado para `ServiceBase.Run`:</span><span class="sxs-lookup"><span data-stu-id="c7118-142">Create an extension method for `IWebHost` that passes the custom `WebHostService` to `ServiceBase.Run`:</span></span>
+2. <span data-ttu-id="0abed-151">Crie um método de extensão para [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost) que passe o `WebHostService` personalizado para [ServiceBase.Run](/dotnet/api/system.serviceprocess.servicebase.run):</span><span class="sxs-lookup"><span data-stu-id="0abed-151">Create an extension method for [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost) that passes the custom `WebHostService` to [ServiceBase.Run](/dotnet/api/system.serviceprocess.servicebase.run):</span></span>
 
    [!code-csharp[](windows-service/sample/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
-3. <span data-ttu-id="c7118-143">Em `Program.Main`, chame o novo método de extensão, `RunAsCustomService`, em vez de `RunAsService`:</span><span class="sxs-lookup"><span data-stu-id="c7118-143">In `Program.Main`, call the new extension method, `RunAsCustomService`, instead of `RunAsService`:</span></span>
+3. <span data-ttu-id="0abed-152">Em `Program.Main`, chame o novo método de extensão, `RunAsCustomService`, em vez de [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice):</span><span class="sxs-lookup"><span data-stu-id="0abed-152">In `Program.Main`, call the new extension method, `RunAsCustomService`, instead of [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice):</span></span>
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="c7118-144">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="c7118-144">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+   ::: moniker range=">= aspnetcore-2.0"
 
-   [!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=24)]
+   <span data-ttu-id="0abed-153">[!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=27)]</span><span class="sxs-lookup"><span data-stu-id="0abed-153">[!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=27)]</span></span>
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="c7118-145">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="c7118-145">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+   ::: moniker-end
 
-   [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=26)]
+   ::: moniker range="< aspnetcore-2.0"
 
-   ---
+   <span data-ttu-id="0abed-154">[!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=27)]</span><span class="sxs-lookup"><span data-stu-id="0abed-154">[!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=27)]</span></span>
 
-<span data-ttu-id="c7118-146">Se o código `WebHostService` personalizado requer um serviço de injeção de dependência (como um agente), obtenha-o da propriedade `Services` de `IWebHost`:</span><span class="sxs-lookup"><span data-stu-id="c7118-146">If the custom `WebHostService` code requires a service from dependency injection (such as a logger), obtain it from the `Services` property of `IWebHost`:</span></span>
+   ::: moniker-end
+
+<span data-ttu-id="0abed-155">Se o código `WebHostService` personalizado exigir um serviço de injeção de dependência (como um agente), obtenha-o da propriedade [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services):</span><span class="sxs-lookup"><span data-stu-id="0abed-155">If the custom `WebHostService` code requires a service from dependency injection (such as a logger), obtain it from the [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) property:</span></span>
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
 
-## <a name="proxy-server-and-load-balancer-scenarios"></a><span data-ttu-id="c7118-147">Servidor proxy e cenários de balanceador de carga</span><span class="sxs-lookup"><span data-stu-id="c7118-147">Proxy server and load balancer scenarios</span></span>
+## <a name="proxy-server-and-load-balancer-scenarios"></a><span data-ttu-id="0abed-156">Servidor proxy e cenários de balanceador de carga</span><span class="sxs-lookup"><span data-stu-id="0abed-156">Proxy server and load balancer scenarios</span></span>
 
-<span data-ttu-id="c7118-148">Serviços que interagem com solicitações da Internet ou de uma rede corporativa e estão atrás de um proxy ou de um balanceador de carga podem exigir configuração adicional.</span><span class="sxs-lookup"><span data-stu-id="c7118-148">Services that interact with requests from the Internet or a corporate network and are behind a proxy or load balancer might require additional configuration.</span></span> <span data-ttu-id="c7118-149">Para obter mais informações, veja [Configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer).</span><span class="sxs-lookup"><span data-stu-id="c7118-149">For more information, see [Configure ASP.NET Core to work with proxy servers and load balancers](xref:host-and-deploy/proxy-load-balancer).</span></span>
+<span data-ttu-id="0abed-157">Serviços que interagem com solicitações da Internet ou de uma rede corporativa e estão atrás de um proxy ou de um balanceador de carga podem exigir configuração adicional.</span><span class="sxs-lookup"><span data-stu-id="0abed-157">Services that interact with requests from the Internet or a corporate network and are behind a proxy or load balancer might require additional configuration.</span></span> <span data-ttu-id="0abed-158">Para obter mais informações, veja [Configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer).</span><span class="sxs-lookup"><span data-stu-id="0abed-158">For more information, see [Configure ASP.NET Core to work with proxy servers and load balancers](xref:host-and-deploy/proxy-load-balancer).</span></span>
 
-## <a name="acknowledgments"></a><span data-ttu-id="c7118-150">Agradecimentos</span><span class="sxs-lookup"><span data-stu-id="c7118-150">Acknowledgments</span></span>
+## <a name="kestrel-endpoint-configuration"></a><span data-ttu-id="0abed-159">Configuração de ponto de extremidade do Kestrel</span><span class="sxs-lookup"><span data-stu-id="0abed-159">Kestrel endpoint configuration</span></span>
 
-<span data-ttu-id="c7118-151">Este artigo foi escrito com a ajuda das fontes publicadas:</span><span class="sxs-lookup"><span data-stu-id="c7118-151">This article was written with the help of published sources:</span></span>
-
-* [<span data-ttu-id="c7118-152">Hospedar o ASP.NET Core como um serviço Windows</span><span class="sxs-lookup"><span data-stu-id="c7118-152">Hosting ASP.NET Core as Windows service</span></span>](https://stackoverflow.com/questions/37346383/hosting-asp-net-core-as-windows-service/37464074)
-* [<span data-ttu-id="c7118-153">Como hospedar o ASP.NET Core em um serviço Windows</span><span class="sxs-lookup"><span data-stu-id="c7118-153">How to host your ASP.NET Core in a Windows Service</span></span>](https://dotnetthoughts.net/how-to-host-your-aspnet-core-in-a-windows-service/)
+<span data-ttu-id="0abed-160">Para obter informações sobre a configuração de ponto de extremidade Kestrel, incluindo configuração do HTTPS e suporte a SNI, veja [configuração de ponto de extremidade Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration).</span><span class="sxs-lookup"><span data-stu-id="0abed-160">For information on Kestrel endpoint configuration, including HTTPS configuration and SNI support, see [Kestrel endpoint configuration](xref:fundamentals/servers/kestrel#endpoint-configuration).</span></span>

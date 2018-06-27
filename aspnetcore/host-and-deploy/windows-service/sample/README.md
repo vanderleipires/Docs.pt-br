@@ -1,35 +1,37 @@
-# <a name="custom-webhost-service-sample"></a>Exemplo de serviço personalizado WebHost
+# <a name="custom-webhost-service-sample"></a><span data-ttu-id="ee493-101">Exemplo de serviço WebHost personalizado</span><span class="sxs-lookup"><span data-stu-id="ee493-101">Custom WebHost Service Sample</span></span>
 
-Este exemplo mostra a maneira recomendada para hospedar um aplicativo ASP.NET Core no Windows sem usar o IIS como um serviço do Windows. Este exemplo demonstra os recursos descritos [hospedar um aplicativo ASP.NET Core em um serviço Windows](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).
+<span data-ttu-id="ee493-102">Este exemplo mostra como hospedar um aplicativo ASP.NET Core como um Serviço Windows sem usar IIS.</span><span class="sxs-lookup"><span data-stu-id="ee493-102">This sample shows how to host an ASP.NET Core app as a Windows Service without using IIS.</span></span> <span data-ttu-id="ee493-103">Este exemplo demonstra o cenário descrito em [Hospedar um aplicativo ASP.NET Core em um Serviço Windows](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).</span><span class="sxs-lookup"><span data-stu-id="ee493-103">This sample demonstrates the scenario described in [Host an ASP.NET Core app in a Windows Service](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).</span></span>
 
-## <a name="instructions"></a>Instruções
+## <a name="instructions"></a><span data-ttu-id="ee493-104">Instruções</span><span class="sxs-lookup"><span data-stu-id="ee493-104">Instructions</span></span>
 
-O aplicativo de exemplo é um simple aplicativo de web MVC modificado de acordo com as instruções em [hospedar um aplicativo ASP.NET Core em um serviço Windows](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).
+<span data-ttu-id="ee493-105">O aplicativo de exemplo é um aplicativo Web Razor Pages simples modificado de acordo com as instruções em [Hospedar um aplicativo ASP.NET Core em um Serviço Windows](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).</span><span class="sxs-lookup"><span data-stu-id="ee493-105">The sample app is a Razor Pages web app modified according to the instructions in [Host an ASP.NET Core app in a Windows Service](https://docs.microsoft.com/aspnet/core/host-and-deploy/windows-service).</span></span>
 
-Para executar o aplicativo em um serviço, execute as seguintes etapas:
+<span data-ttu-id="ee493-106">Para executar o aplicativo em um serviço, realize as seguintes etapas:</span><span class="sxs-lookup"><span data-stu-id="ee493-106">To run the app in a service, perform the following steps:</span></span>
 
-1. Crie uma pasta no *c:\svc*.
+1. <span data-ttu-id="ee493-107">Crie uma pasta em *c:\svc*.</span><span class="sxs-lookup"><span data-stu-id="ee493-107">Create a folder at *c:\svc*.</span></span>
 
-1. Publicar o aplicativo para a pasta com `dotnet publish --configuration Release --output c:\\svc`. O comando moverá ativos do aplicativo para a pasta, incluindo o necessária `appsettings.json` arquivo e o `wwwroot` pasta com seu conteúdo.
+1. <span data-ttu-id="ee493-108">Publicar o aplicativo na pasta com `dotnet publish --configuration Release --output c:\\svc`.</span><span class="sxs-lookup"><span data-stu-id="ee493-108">Publish the app to the folder with `dotnet publish --configuration Release --output c:\\svc`.</span></span> <span data-ttu-id="ee493-109">O comando move os ativos do aplicativo para a pasta *svc*, incluindo o arquivo `appsettings.json` necessário e a pasta `wwwroot`.</span><span class="sxs-lookup"><span data-stu-id="ee493-109">The command moves the app's assets to the *svc* folder, including the required `appsettings.json` file and the `wwwroot` folder.</span></span>
 
-1. Abra um **administrador** shell de comando.
+1. <span data-ttu-id="ee493-110">Abra um prompt de comando de **administrador**.</span><span class="sxs-lookup"><span data-stu-id="ee493-110">Open an **administrator** command prompt.</span></span>
 
-1. Execute os seguintes comandos:
+1. <span data-ttu-id="ee493-111">Execute os seguintes comandos:</span><span class="sxs-lookup"><span data-stu-id="ee493-111">Execute the following commands:</span></span>
 
    ```console
-   sc create MyService binPath="c:\svc\aspnetcoreservice.exe"
+   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe"
    sc start MyService
    ```
 
-1. Em um navegador, vá para `http://localhost:5000` para verificar se o serviço está em execução.
+  <span data-ttu-id="ee493-112">*O espaço entre o sinal de igual e o início da cadeia de caracteres do caminho é necessário.*</span><span class="sxs-lookup"><span data-stu-id="ee493-112">*The space between the equal sign and the start of the path string is required.*</span></span>
 
-1. Para interromper o serviço, use o comando:
+1. <span data-ttu-id="ee493-113">Em um navegador, vá para `http://localhost:5000` e verifique se o serviço está em execução.</span><span class="sxs-lookup"><span data-stu-id="ee493-113">In a browser, navigate to `http://localhost:5000` and verify that the service is running.</span></span> <span data-ttu-id="ee493-114">O aplicativo redireciona para o ponto de extremidade seguro `https://localhost:5001`.</span><span class="sxs-lookup"><span data-stu-id="ee493-114">The app redirects to the secure endpoint `https://localhost:5001`.</span></span>
+
+1. <span data-ttu-id="ee493-115">Para interromper o serviço, use o comando:</span><span class="sxs-lookup"><span data-stu-id="ee493-115">To stop the service, use the command:</span></span>
 
    ```console
    sc stop MyService
    ```
 
-Se o aplicativo não for iniciado como o esperado quando em execução em um serviço, uma maneira rápida para disponibilizar as mensagens de erro é adicionar um provedor de log, como o [provedor de log de eventos do Windows](https://docs.microsoft.com/aspnet/core/fundamentals/logging/index#eventlog). Outra opção é verificar o Log de eventos do aplicativo usando o Visualizador de eventos no sistema. Por exemplo, aqui está uma exceção sem tratamento de um erro de arquivo não encontrado no Log de eventos do aplicativo:
+<span data-ttu-id="ee493-116">Se o aplicativo não for iniciado conforme o esperado, uma maneira rápida de tornar as mensagens de erro acessíveis será adicionar um provedor de log, como o [provedor de EventLog do Windows](https://docs.microsoft.com/aspnet/core/fundamentals/logging/index#eventlog).</span><span class="sxs-lookup"><span data-stu-id="ee493-116">If the app doesn't start as expected, a quick way to make error messages accessible is to add a logging provider, such as the [Windows EventLog provider](https://docs.microsoft.com/aspnet/core/fundamentals/logging/index#eventlog).</span></span> <span data-ttu-id="ee493-117">Outra opção é verificar o Log de Eventos do Aplicativo usando o Visualizador de Eventos no sistema.</span><span class="sxs-lookup"><span data-stu-id="ee493-117">Another option is to check the Application Event Log using the Event Viewer on the system.</span></span> <span data-ttu-id="ee493-118">Por exemplo, aqui está uma exceção sem tratamento de um erro FileNotFound no Log de Eventos do Aplicativo:</span><span class="sxs-lookup"><span data-stu-id="ee493-118">For example, here's an unhandled exception for a FileNotFound error in the Application Event Log:</span></span>
 
 ```console
 Application: AspNetCoreService.exe
