@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 6b2c3334798861ebdb14787205480422d7d536ea
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 0cb9bc7d8bf415e5a0125c3798f2430c9e861c98
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729646"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hospedar o ASP.NET Core no Windows com o IIS
 
@@ -43,7 +44,7 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. O método `UseIISIntegration` seleciona a porta dinâmica e configura o Kestrel para escutar em `http://localhost:{dynamicPort}/`. Isso substitui outras configurações de URL, como chamadas a `UseUrls` ou à [API de Escuta do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Portanto, as chamadas a `UseUrls` ou à API `Listen` do Kestrel não são necessárias ao usar o módulo. Se `UseUrls` ou `Listen` for chamado, o Kestrel escutará na porta especificada durante a execução do aplicativo sem o IIS.
+O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. `CreateDefaultBuilder` chama o método [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration), que seleciona a porta dinâmica e configura Kestrel para escutar em `http://localhost:{dynamicPort}/`. Isso substitui outras configurações de URL, como chamadas a `UseUrls` ou à [API de Escuta do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Portanto, as chamadas a `UseUrls` ou à API `Listen` do Kestrel não são necessárias ao usar o módulo. Se `UseUrls` ou `Listen` for chamado, o Kestrel escutará na porta especificada durante a execução do aplicativo sem o IIS.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -89,7 +90,7 @@ O Middleware de integração do IIS, que configura Middleware de cabeçalhos enc
 
 ### <a name="webconfig-file"></a>Arquivo web.config
 
-O arquivo *web.config* configura o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). A criação, transformação e publicação do *web.config* é gerenciada pelo SDK Web do .NET Core (`Microsoft.NET.Sdk.Web`). O SDK é definido na parte superior do arquivo de projeto:
+O arquivo *web.config* configura o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). Criando, transformar e publicar o arquivo *Web.config* é tratado por um destino do MSBuild (`_TransformWebConfig`) quando o projeto é publicado. Este destino está presente nos destinos do SDK da Web (`Microsoft.NET.Sdk.Web`). O SDK é definido na parte superior do arquivo de projeto:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -172,8 +173,9 @@ Habilite o **Console de Gerenciamento do IIS** e os **Serviços na World Wide We
 1. Instale o *pacote de hospedagem do .NET Core* no sistema de hospedagem. O pacote instala o Tempo de Execução .NET Core, a Biblioteca do .NET Core e o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). O módulo cria o proxy reverso entre o IIS e o servidor Kestrel. Se o sistema não tiver uma conexão com a Internet, obtenha e instale os [Pacotes redistribuíveis do Microsoft Visual C++ 2015](https://www.microsoft.com/download/details.aspx?id=53840) antes de instalar o pacote de hospedagem do .NET Core.
 
    1. Navegue até a [página Todos os downloads do .NET](https://www.microsoft.com/net/download/all).
-   1. Selecione o tempo de execução do .NET Core sem visualização mais recente na lista (**.NET Core** > **Tempo de Execução** > **Tempo de Execução do .NET Core x.y.z**). A menos que você pretenda trabalhar com software em versão prévia, evite um tempo de execução com as palavras "versão prévia" ou "rc" (versão Release Candidate) no texto do link.
-   1. Na página de download de tempo de execução do .NET Core no **Windows**, selecione o link **Instalador de pacote de hospedagem** para baixar o *pacote de hospedagem do .NET Core*.
+   1. Na coluna **Tempo de Execução** da tabela, selecione o tempo de execução do .NET Core não de versão prévia mais recente na lista (**downloads do Tempo de Execução do X.Y (vX.Y.Z)**). O tempo de execução mais recente tem um rótulo de **Atual**. A menos que você pretenda trabalhar com software em versão prévia, evite um tempo de execução com as palavras "versão prévia" ou "rc" (versão Release Candidate) no texto do link.
+   1. Na página de download do tempo de execução do .NET Core no **Windows**, selecione o link **Instalador de Pacote de Hospedagem** para baixar o *Pacote de Hospedagem do .NET Core*.
+   1. Execute o instalador no servidor.
 
    **Importante!** Se o pacote de hospedagem for instalado antes do IIS, a instalação do pacote deverá ser reparada. Execute o instalador do pacote de hospedagem novamente depois de instalar o IIS.
    

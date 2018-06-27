@@ -2,21 +2,17 @@
 title: Aprimorar um aplicativo por meio de um assembly externo no ASP.NET Core com IHostingStartup
 author: guardrex
 description: Descubra como aprimorar um aplicativo ASP.NET Core por meio de um assembly externo usando uma implementação de IHostingStartup.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
 ms.date: 12/07/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: 618cb4349dcff696db37012af3aee844b82974f2
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: bd9605dd8efee2c3ba8bc82a81554cace40630be
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729045"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278077"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>Aprimorar um aplicativo por meio de um assembly externo no ASP.NET Core com IHostingStartup
 
@@ -57,7 +53,7 @@ Um atributo [HostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.hostingsta
 
 [!code-csharp[](platform-specific-configuration/snapshot_sample/StartupEnhancement.cs?name=snippet1)]
 
-Uma classe implementa `IHostingStartup`. O método [Configure](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) da classe usa um [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) para adicionar melhorias a um aplicativo:
+Uma classe implementa `IHostingStartup`. O método [Configure](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) da classe usa um [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) para adicionar melhorias a um aplicativo. `IHostingStartup.Configure` no assembly de inicialização de hospedagem é chamado pelo tempo de execução antes de `Startup.Configure` no código do usuário, o que permite que o código de usuário substitua qualquer configuração fornecida pelo assembly de inicialização de hospedagem.
 
 [!code-csharp[](platform-specific-configuration/snapshot_sample/StartupEnhancement.cs?name=snippet2&highlight=3,5)]
 
@@ -99,31 +95,33 @@ Ao implantar o assembly no repositório de tempo de execução, o arquivo de sí
 
 O arquivo *\*.deps.json* da implementação deve estar em um local acessível.
 
-Para uso por usuário, coloque o arquivo na pasta `additonalDeps` das configurações `.dotnet` do perfil do usuário: 
+Para uso por usuário, coloque o arquivo na pasta `additonalDeps` das configurações `.dotnet` do perfil do usuário:
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
+<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\
 ```
 
 Para uso global, coloque o arquivo na pasta `additonalDeps` da instalação do .NET Core:
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\
 ```
 
-Observe que a versão, `2.1.0`, reflete a versão do tempo de execução compartilhado usada pelo aplicativo de destino. O tempo de execução compartilhado é mostrado no arquivo *\*.runtimeconfig.json*. No aplicativo de exemplo, o tempo de execução compartilhado é especificado no arquivo *HostingStartupSample.runtimeconfig.json*.
+Observe que a versão da estrutura compartilhada reflete a versão do tempo de execução compartilhado usado pelo aplicativo de destino. O tempo de execução compartilhado é mostrado no arquivo *\*.runtimeconfig.json*. No aplicativo de exemplo, o tempo de execução compartilhado é especificado no arquivo *HostingStartupSample.runtimeconfig.json*.
 
 **Definir variáveis de ambiente**
 
 Defina as variáveis de ambiente a seguir no contexto do aplicativo que usa a melhoria.
 
-ASPNETCORE\_HOSTINGSTARTUPASSEMBLIES
+ASPNETCORE_HOSTINGSTARTUPASSEMBLIES
 
 Apenas assemblies de inicialização de hospedagem são verificados quanto ao `HostingStartupAttribute`. O nome do assembly da implementação é fornecido nessa variável de ambiente. O aplicativo de exemplo define esse valor como `StartupDiagnostics`.
 
 O valor também pode ser definido usando a configuração do host [Assemblies de Inicialização de Hospedagem](xref:fundamentals/host/web-host#hosting-startup-assemblies).
 
-DOTNET\_ADDITIONAL\_DEPS
+Quando há vários assemblies de inicialização de hospedagem, os métodos [Configure](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) são executados na ordem em que os assemblies são listados.
+
+DOTNET_ADDITIONAL_DEPS
 
 O local do arquivo *\*.deps.json* da implementação.
 
@@ -136,7 +134,7 @@ Se o arquivo for colocado na pasta *.dotnet* do perfil do usuário para uso por 
 Se o arquivo for colocado na instalação do .NET Core para uso global, forneça o caminho completo para o arquivo:
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
 ```
 
 O aplicativo de exemplo define esse valor como:

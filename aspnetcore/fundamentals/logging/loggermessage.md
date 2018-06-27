@@ -2,24 +2,21 @@
 title: Registro em log de alto desempenho com o LoggerMessage no ASP.NET Core
 author: guardrex
 description: Saiba como usar o LoggerMessage para criar representantes que podem ser armazenados em cache e exigem menos alocações de objeto para cenários de registro em log de alto desempenho.
-manager: wpickett
 ms.author: riande
 ms.date: 11/03/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: 24a75cfacfa61ca66e78deeb743baa75718dfb76
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e952591bac29868d87d765820e88c74b50a1fe88
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272429"
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>Registro em log de alto desempenho com o LoggerMessage no ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex)
 
-Os recursos do [LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) criam delegados armazenáveis em cache que exigem menos alocações de objeto e sobrecarga de computação reduzida comparado aos [métodos de extensão do agente](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), como `LogInformation`, `LogDebug` e `LogError`. Para cenários de registro em log de alto desempenho, use o padrão `LoggerMessage`.
+Os recursos do [LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) criam delegados armazenáveis em cache que exigem menos alocações de objeto e sobrecarga de computação reduzida em comparação aos [métodos de extensão do agente](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions), como `LogInformation`, `LogDebug` e `LogError`. Para cenários de registro em log de alto desempenho, use o padrão `LoggerMessage`.
 
 `LoggerMessage` fornece as seguintes vantagens de desempenho em relação aos métodos de extensão do Agente:
 
@@ -143,13 +140,9 @@ Defina um [escopo de log](xref:fundamentals/logging/index#log-scopes) a ser apli
 
 O aplicativo de exemplo tem um botão **Limpar Tudo** para excluir todas as aspas no banco de dados. As aspas são excluídas com a remoção das aspas individualmente, uma por vez. Sempre que aspas são excluídas, o método `QuoteDeleted` é chamado no agente. Um escopo de log é adicionado a essas mensagens de log.
 
-Habilite `IncludeScopes` nas opções do agente do console:
+Habilite `IncludeScopes` na seção de agente do console de *appSettings.json*:
 
-[!code-csharp[](loggermessage/sample/Program.cs?name=snippet1&highlight=10)]
-
-A configuração de `IncludeScopes` é necessária em aplicativos ASP.NET Core 2.0 para habilitar os escopos de log. A configuração de `IncludeScopes` por meio dos arquivos de configuração *appsettings* é um recurso que foi planejado para a versão ASP.NET Core 2.1.
-
-O aplicativo de exemplo limpa outros provedores e adiciona filtros para reduzir a saída de log. Isso facilita a visualização das mensagens de log da amostra que demonstram os recursos de `LoggerMessage`.
+[!code-csharp[](loggermessage/sample/appsettings.json?highlight=3-5)]
 
 Para criar um escopo de log, adicione um campo para conter um delegado `Func` para o escopo. O aplicativo de exemplo cria um campo chamado `_allQuotesDeletedScope` (*Internal/LoggerExtensions.cs*):
 
@@ -181,6 +174,6 @@ info: LoggerMessageSample.Pages.IndexModel[4]
       Quote deleted (Quote = 'Quote 3' Id = 4)
 ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-resources"></a>Recursos adicionais
 
 * [Registro em log](xref:fundamentals/logging/index)

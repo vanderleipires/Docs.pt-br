@@ -3,22 +3,30 @@ title: Introdução às Páginas do Razor no ASP.NET Core
 author: rick-anderson
 description: Conheça as noções básicas da criação de um aplicativo Web Páginas Razor do ASP.NET Core. O aplicativo Páginas Razor é recomendado para cargas de trabalho da Web no ASP.NET Core.
 manager: wpickett
-monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 12/22/2017
+ms.date: 5/30/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: caf4376c0a02931eeec85e5067a082b37ef9da68
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: d7cdf7c8fac3b2ac1e526c6eeee8205068964ec9
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34582811"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>Introdução às Páginas do Razor no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
+
+::: moniker range="= aspnetcore-2.0"
+
+Recomendamos que você siga a versão ASP.NET Core 2.1 deste tutorial. É **muito** mais fácil de seguir e cobre muito mais recursos. Selecione **ASP.NET Core 2.1** no seletor de versão.
+
+![Seletor de versão no sumário](razor-pages-start/_static/v21.png)
+
+::: moniker-end
 
 Este tutorial ensina as noções básicas de criação de um aplicativo Web de Páginas do Razor do ASP.NET Core. As Páginas do Razor são a maneira recomendada para criar a interface do usuário para aplicativos Web no ASP.NET Core.
 
@@ -28,11 +36,47 @@ Há três versões deste tutorial:
 * MacOS: [Introdução a Páginas Razor com o Visual Studio para Mac](xref:tutorials/razor-pages-mac/razor-pages-start)
 * macOS, Linux e Windows: [Introdução a Páginas Razor no ASP.NET Core no Visual Studio Code](xref:tutorials/razor-pages-vsc/razor-pages-start)
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+
+::: moniker range=">= aspnetcore-2.1"
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[!INCLUDE [](~/includes/net-core-prereqs-windows.md)]
+[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
+
+## <a name="create-a-razor-web-app"></a>Criar um aplicativo Web do Razor
+
+* No menu **Arquivo** do Visual Studio, selecione **Novo** > **Projeto**.
+* Crie um novo Aplicativo Web ASP.NET Core. Nomeie o projeto **RazorPagesMovie**. É importante nomear o projeto *RazorPagesMovie* de modo que os namespaces façam a correspondência quando você copiar/colar código.
+ ![novo aplicativo Web ASP.NET Core](razor-pages-start/_static/np_2.1.png)
+* Selecione **ASP.NET Core 2.1** na lista suspensa e selecione **Aplicativo Web**.
+
+ ![novo Aplicativo Web ASP.NET Core](razor-pages-start/_static/np_2_2.1.png)
+
+O modelo do Visual Studio cria um projeto inicial:
+
+![Gerenciador de Soluções](razor-pages-start/_static/se2.1.png)
+
+Pressione **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5** para executar sem anexar o depurador. Selecione **Aceitar** para dar consentimento ao acompanhamento. Este aplicativo não acompanha informações pessoais. O código de modelo gerado inclui ativos para ajudar a cumprir o [RGPD (Regulamento Geral sobre a Proteção de Dados)](xref:security/gdpr).
+
+![Página Inicial ou de Índice](razor-pages-start/_static/homeGDPR.png)
+
+A imagem a seguir mostra o aplicativo depois de aceitar o acompanhamento:
+
+![Página Inicial ou de Índice](razor-pages-start/_static/home2.1.png)
+
+* O Visual Studio inicia o [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) e executa o aplicativo. A barra de endereços mostra `localhost:port#` e não algo como `example.com`. Isso ocorre porque `localhost` é o nome do host padrão do computador local. Localhost serve somente solicitações da Web do computador local. Quando o Visual Studio cria um projeto Web, uma porta aleatória é usada para o servidor Web. Na imagem anterior, o número da porta é 5000. Quando você executar o aplicativo, verá um número de porta diferente.
+* Iniciar o aplicativo com **Ctrl+F5** (modo de não depuração) permite que você faça alterações de código, salve o arquivo, atualize o navegador e veja as alterações de código. Muitos desenvolvedores preferem usar o modo de não depuração para iniciar o aplicativo rapidamente e exibir alterações.
+
+[!INCLUDE [razor-pages-start](~/includes/RP/2.1/razor-pages-start.md)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="create-a-razor-web-app"></a>Criar um aplicativo Web do Razor
 
@@ -41,7 +85,7 @@ Há três versões deste tutorial:
   ![novo aplicativo Web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
 * Selecione **ASP.NET Core 2.0** na lista suspensa e selecione **Aplicativo Web**.
 
-  [!INCLUDE [install 2.0](../../includes/dotnetcore-on-dotnetfx-vs.md)]
+  [!INCLUDE [install 2.0](~/includes/dotnetcore-on-dotnetfx-vs.md)]
 
 O modelo do Visual Studio cria um projeto inicial:
 
@@ -54,7 +98,9 @@ Pressione **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5*
 * O Visual Studio inicia o [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) e executa o aplicativo. A barra de endereços mostra `localhost:port#` e não algo como `example.com`. Isso ocorre porque `localhost` é o nome do host padrão do computador local. Localhost serve somente solicitações da Web do computador local. Quando o Visual Studio cria um projeto Web, uma porta aleatória é usada para o servidor Web. Na imagem anterior, o número da porta é 5000. Quando você executar o aplicativo, verá um número de porta diferente.
 * Iniciar o aplicativo com **Ctrl+F5** (modo de não depuração) permite que você faça alterações de código, salve o arquivo, atualize o navegador e veja as alterações de código. Muitos desenvolvedores preferem usar o modo de não depuração para iniciar o aplicativo rapidamente e exibir alterações.
 
-[!INCLUDE [razor-pages-start](../../includes/RP/razor-pages-start.md)]
+[!INCLUDE [razor-pages-start](~/includes/RP/2.1/razor-pages-start.md)]
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Próximo: adicionando um modelo](xref:tutorials/razor-pages/model)

@@ -2,19 +2,16 @@
 title: Auxiliares de Marca no ASP.NET Core
 author: rick-anderson
 description: Saiba o que são auxiliares de marca e como usá-los no ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 2/14/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: 0c66b700f9bb3e6349fe2e0c8a7e254b8e7903a5
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: be75667f34eed7ba601eee331e3451c5738ef223
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273563"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>Auxiliares de Marca no ASP.NET Core
 
@@ -67,11 +64,11 @@ O escopo dos Auxiliares de Marca é controlado por uma combinação de `@addTagH
 
 ### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper` disponibiliza os Auxiliares de Marca
 
-Se você criar um novo aplicativo Web ASP.NET Core chamado *AuthoringTagHelpers* (sem nenhuma autenticação), o seguinte arquivo *Views/_ViewImports.cshtml* será adicionado ao projeto:
+Se você criar um novo aplicativo Web ASP.NET Core chamado *AuthoringTagHelpers*, o seguinte arquivo *Views/_ViewImports.cshtml* será adicionado ao projeto:
 
 [!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
-A diretiva `@addTagHelper` disponibiliza os Auxiliares de Marca para a exibição. Nesse caso, o arquivo de exibição é *Views/_ViewImports.cshtml*, que por padrão é herdado por todos os arquivos de exibição na pasta *Views* e seus subdiretórios, disponibilizando os Auxiliares de Marca. O código acima usa a sintaxe de curinga ("\*") para especificar que todos os Auxiliares de Marca no assembly especificado (*Microsoft.AspNetCore.Mvc.TagHelpers*) estarão disponíveis para todos os arquivos de exibição no diretório *Views* ou subdiretório. O primeiro parâmetro após `@addTagHelper` especifica os Auxiliares de Marca a serem carregados (estamos usando "\*" para todos os Auxiliares de Marca) e o segundo parâmetro "Microsoft.AspNetCore.Mvc.TagHelpers" especifica o assembly que contém os Auxiliares de Marca. *Microsoft.AspNetCore.Mvc.TagHelpers* é o assembly para os Auxiliares de Marca internos do ASP.NET Core.
+A diretiva `@addTagHelper` disponibiliza os Auxiliares de Marca para a exibição. Nesse caso, o arquivo de exibição é *Pages/_ViewImports.cshtml*, que por padrão é herdado por todos os arquivos na pasta *Pages* e suas subpastas, disponibilizando os Auxiliares de Marca. O código acima usa a sintaxe de curinga ("\*") para especificar que todos os Auxiliares de Marca no assembly especificado (*Microsoft.AspNetCore.Mvc.TagHelpers*) estarão disponíveis para todos os arquivos de exibição no diretório *Views* ou subdiretório. O primeiro parâmetro após `@addTagHelper` especifica os Auxiliares de Marca a serem carregados (estamos usando "\*" para todos os Auxiliares de Marca) e o segundo parâmetro "Microsoft.AspNetCore.Mvc.TagHelpers" especifica o assembly que contém os Auxiliares de Marca. *Microsoft.AspNetCore.Mvc.TagHelpers* é o assembly para os Auxiliares de Marca internos do ASP.NET Core.
 
 Para expor todos os Auxiliares de Marca neste projeto (que cria um assembly chamado *AuthoringTagHelpers*), você usará o seguinte:
 

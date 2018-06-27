@@ -2,19 +2,16 @@
 title: Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 author: guardrex
 description: Descubra como hospedar aplicativos ASP.NET Core no Serviço de Aplicativo do Azure com links para recursos úteis.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/29/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 9e438cef9db61e725b5385da53e8aa2b407218c3
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 2890b2e6cdb536850b3764b5a78084cca335b489
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275756"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 
@@ -103,25 +100,29 @@ Se houver problemas ao usar a extensão de site de visualização, abra um probl
 
 ### <a name="install-the-preview-site-extension"></a>Instalar a extensão de site de visualização
 
-* No portal do Azure, navegue até a folha Serviço de Aplicativo.
-* Digite "ex" na caixa de pesquisa.
-* Selecione **Extensões**.
-* Selecione "Adicionar".
+1. No portal do Azure, navegue até a folha Serviço de Aplicativo.
+1. Selecione o aplicativo Web.
+1. Insira "ex" na caixa de pesquisa ou role para baixo na lista de painéis de gerenciamento para **FERRAMENTAS DE DESENVOLVIMENTO**.
+1. Selecione **FERRAMENTAS DE DESENVOLVIMENTO** > **Extensões**.
+1. Selecione **Adicionar**.
 
-![Folha do Azure App com etapas anteriores](index/_static/x1.png)
+   ![Folha do Azure App com etapas anteriores](index/_static/x1.png)
 
-* Selecione **tempo de execução do ASP.NET Core 2.1 (x86)** ou **tempo de execução do ASP.NET Core 2.1 (x64)**.
-* Selecione **OK**. Selecione **OK** novamente.
+1. Selecione **Extensões do ASP.NET Core**.
+1. Selecione **OK** para aceitar os termos legais.
+1. Selecione **OK** para instalar a extensão.
 
-Quando as operações de adição forem concluídas, a versão prévia mais recente do .NET Core 2.1 será instalada. Verifique a instalação executando `dotnet --info` no console. Na folha de **Serviço de Aplicativo**:
+Quando as operações de adição forem concluídas, a versão prévia mais recente do .NET Core será instalada. Verifique a instalação executando `dotnet --info` no console. Na folha de **Serviço de Aplicativo**:
 
-* Digite "con" na caixa de pesquisa.
-* Selecione **Console**.
-* Digite `dotnet --info` no console.
+1. Insira "con" na caixa de pesquisa ou role para baixo na lista de painéis de gerenciamento para **FERRAMENTAS DE DESENVOLVIMENTO**.
+1. Selecione **FERRAMENTAS DE DESENVOLVIMENTO** > **Console**.
+1. Digite `dotnet --info` no console.
+
+Se a versão `2.1.300-preview1-008174` for a versão prévia mais recente, a seguinte saída será obtida executando `dotnet --info` no prompt de comando:
 
 ![Folha do Azure App com etapas anteriores](index/_static/cons.png)
 
-A imagem anterior era atual no momento em que este texto foi escrito. Você pode ver uma versão diferente.
+A versão do ASP.NET Core mostrada na imagem anterior, `2.1.300-preview1-008174`, é um exemplo. A versão prévia mais recente do ASP.NET Core no momento em que a extensão de site foi configurada é exibida quando você executa `dotnet --info`.
 
 O `dotnet --info` exibe o caminho para a extensão de site em que a visualização foi instalada. Ele mostra que o aplicativo está em execução na extensão de site em vez do local padrão *ProgramFiles*. Se você vir *ProgramFiles*, reinicie o site e execute `dotnet --info`.
 
@@ -142,7 +143,7 @@ Os aplicativos autocontidos são uma opção para todos os aplicativos do ASP.NE
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Usar o Docker com aplicativos Web para contêineres
 
-O [Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) contém as imagens de visualização do Docker 2.1 mais recentes. As imagens podem ser usadas como uma imagem de base. Use a imagem e implante aplicativos Web para contêineres normalmente.
+O [Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/) contém as imagens de versão prévia do Docker mais recentes. As imagens podem ser usadas como uma imagem de base. Use a imagem e implante aplicativos Web para contêineres normalmente.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -2,18 +2,15 @@
 title: Middleware de Reconfiguração de URL no ASP.NET Core
 author: guardrex
 description: Saiba mais sobre a reconfiguração de URL e o redirecionamento com o Middleware de Reconfiguração de URL em aplicativos ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 08/17/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 336a097c2186bc195854bd54211d4554a577ed14
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: d3484e222c4412a427d086c1b71a12b81095ba72
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276341"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware de Reconfiguração de URL no ASP.NET Core
 
@@ -22,15 +19,16 @@ Por [Luke Latham](https://github.com/guardrex) e [Mikael Mengistu](https://githu
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 A reconfiguração de URL é o ato de modificar URLs de solicitação com base em uma ou mais regras predefinidas. A reconfiguração de URL cria uma abstração entre locais de recursos e seus endereços, de forma que os locais e endereços não estejam totalmente vinculados. Há vários cenários em que a reconfiguração de URL é útil:
-* Mover ou substituir recursos de servidor temporária ou permanentemente mantendo localizadores estáveis para esses recursos
-* Dividir o processamento de solicitação em diferentes aplicativos ou áreas de um aplicativo
-* Remover, adicionar ou reorganizar segmentos de URL em solicitações de entrada
-* Otimizar URLs públicas para SEO (otimização do mecanismo de pesquisa)
-* Permitir o uso de URLs públicas amigáveis para ajudar as pessoas a prever o conteúdo que encontrarão seguindo um link
-* Redirecionar solicitações não seguras para pontos de extremidade seguros
-* Impedir hotlinking de imagem
 
-Defina regras para alterar a URL de várias maneiras, incluindo regex, regras do módulo mod_rewrite do Apache, regras do Módulo de Reconfiguração do IIS e uso de uma lógica de regra personalizada. Este documento apresenta a reconfiguração de URL com instruções sobre como usar o Middleware de Reconfiguração de URL em aplicativos ASP.NET Core.
+* Mover ou substituir recursos de servidor temporária ou permanentemente mantendo localizadores estáveis para esses recursos.
+* Dividir o processamento de solicitação entre diferentes aplicativos ou áreas de um aplicativo.
+* Remover, adicionar ou reorganizar segmentos de URL em solicitações de entrada.
+* Otimizar URLs públicas para SEO (Otimização do Mecanismo de Pesquisa).
+* Permitir o uso de URLs públicas amigáveis para ajudar as pessoas a prever o conteúdo que encontrarão seguindo um link.
+* Redirecionar solicitações não seguras para pontos de extremidade seguros.
+* Impedir hotlinking de imagem.
+
+Defina regras para alterar a URL de várias maneiras, incluindo Regex, regras do módulo mod_rewrite do Apache, regras do Módulo de Reconfiguração do IIS e uso de uma lógica de regra personalizada. Este documento apresenta a reconfiguração de URL com instruções sobre como usar o Middleware de Reconfiguração de URL em aplicativos ASP.NET Core.
 
 > [!NOTE]
 > A reconfiguração de URL pode reduzir o desempenho de um aplicativo. Sempre que possível, você deve limitar o número e a complexidade de regras.
@@ -127,8 +125,8 @@ A parte da expressão contida nos parênteses é chamada um *grupo de captura*. 
 
 Na cadeia de caracteres de substituição, os grupos capturados são injetados na cadeia de caracteres com o cifrão (`$`) seguido do número de sequência da captura. O primeiro valor de grupo de captura é obtido com `$1`, o segundo com `$2` e eles continuam em sequência para os grupos de captura no regex. Há apenas um grupo capturado no regex da regra de redirecionamento no aplicativo de exemplo, para que haja apenas um grupo injetado na cadeia de caracteres de substituição, que é `$1`. Quando a regra é aplicada, a URL se torna `/redirected/1234/5678`.
 
-<a name="url-redirect-to-secure-endpoint"></a>
 ### <a name="url-redirect-to-a-secure-endpoint"></a>Redirecionamento de URL para um ponto de extremidade seguro
+
 Use `AddRedirectToHttps` para redirecionar solicitações HTTP para o mesmo host e caminho usando HTTPS (`https://`). Se o código de status não for fornecido, o middleware usará como padrão 302 (Encontrado). Se a porta não for fornecida, o middleware usará `null` como padrão, o que significa que o protocolo é alterado para `https://` e o cliente acessa o recurso na porta 443. O exemplo mostra como definir o código de status como 301 (Movido Permanentemente) e alterar a porta para 5001.
 
 ```csharp
@@ -153,13 +151,16 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-O aplicativo de exemplo pode demonstrar como usar `AddRedirectToHttps` ou `AddRedirectToHttpsPermanent`. Adicione o método de extensão às `RewriteOptions`. Faça uma solicitação não segura para o aplicativo em qualquer URL. Ignore o aviso de segurança do navegador que informa que o certificado autoassinado não é confiável.
+> [!NOTE]
+> Ao redirecionar para HTTPS sem a necessidade de regras de redirecionamento adicionais, é recomendável usar Middleware de Redirecionamento HTTPS. Para obter mais informações, veja o tópico [Impor HTTPS](xref:security/enforcing-ssl#require-https).
 
-Solicitação original usando `AddRedirectToHttps(301, 5001)`: `/secure`
+O aplicativo de exemplo pode demonstrar como usar `AddRedirectToHttps` ou `AddRedirectToHttpsPermanent`. Adicione o método de extensão às `RewriteOptions`. Faça uma solicitação não segura para o aplicativo em qualquer URL. Ignore o aviso de segurança do navegador de que o certificado autoassinado não é confiável ou crie uma exceção para confiar no certificado.
+
+Solicitação original usando `AddRedirectToHttps(301, 5001)`: `http://localhost:5000/secure`
 
 ![Janela do navegador com as Ferramentas para Desenvolvedores acompanhando as solicitações e respostas](url-rewriting/_static/add_redirect_to_https.png)
 
-Solicitação original usando `AddRedirectToHttpsPermanent`: `/secure`
+Solicitação original usando `AddRedirectToHttpsPermanent`: `http://localhost:5000/secure`
 
 ![Janela do navegador com as Ferramentas para Desenvolvedores acompanhando as solicitações e respostas](url-rewriting/_static/add_redirect_to_https_permanent.png)
 
@@ -254,6 +255,7 @@ Solicitação original: `/apache-mod-rules-redirect/1234`
 ##### <a name="supported-server-variables"></a>Variáveis de servidor compatíveis
 
 O middleware dá suporte às seguintes variáveis de servidor do mod_rewrite do Apache:
+
 * CONN_REMOTE_ADDR
 * HTTP_ACCEPT
 * HTTP_CONNECTION
@@ -325,6 +327,7 @@ Caso você tenha um Módulo de Reconfiguração do IIS ativo com regras no níve
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 O middleware liberado com o ASP.NET Core 2.x não dá suporte aos seguintes recursos do Módulo de Reconfiguração de URL do IIS:
+
 * Regras de saída
 * Variáveis de servidor personalizadas
 * Curingas
@@ -333,6 +336,7 @@ O middleware liberado com o ASP.NET Core 2.x não dá suporte aos seguintes recu
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 O middleware liberado com o ASP.NET Core 1.x não dá suporte aos seguintes recursos do Módulo de Reconfiguração de URL do IIS:
+
 * Regras globais
 * Regras de saída
 * Mapas de Reconfiguração
@@ -347,6 +351,7 @@ O middleware liberado com o ASP.NET Core 1.x não dá suporte aos seguintes recu
 #### <a name="supported-server-variables"></a>Variáveis de servidor compatíveis
 
 O middleware dá suporte às seguintes variáveis de servidor do Módulo de Reconfiguração de URL do IIS:
+
 * CONTENT_LENGTH
 * CONTENT_TYPE
 * HTTP_ACCEPT

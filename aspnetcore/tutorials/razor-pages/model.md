@@ -3,22 +3,24 @@ title: Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 author: rick-anderson
 description: Saiba como adicionar classes de gerenciamento de filmes em um banco de dados usando o EF Core (Entity Framework Core).
 manager: wpickett
-monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 07/27/2017
+ms.date: 5/30/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 80b3aae661342ccde257805c370780cd6f5b4aa4
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: 50b1b01448ad870a2889db7dfe8367ab9e661840
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729957"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 
-[!INCLUDE [model1](../../includes/RP/model1.md)]
+::: moniker range=">= aspnetcore-2.1"
+
+[!INCLUDE [model1](~/includes/RP/model1.md)]
 
 ## <a name="add-a-data-model"></a>Adicionar um modelo de dados
 
@@ -26,7 +28,91 @@ No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **
 
 Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **Movie** e adicione as seguintes propriedades:
 
-[!INCLUDE [model 2](../../includes/RP/model2.md)]
+Substitua o conteúdo da classe `Movie` pelo seguinte código:
+
+[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie21/Models/Movie1.cs?name=snippet)]
+
+## <a name="scaffold-the-movie-model"></a>Fazer scaffold do modelo de filme
+
+Nesta seção, é feito o scaffold do modelo de filme. Ou seja, a ferramenta de scaffolding gera páginas para operações de CRUD (Criar, Ler, Atualizar e Excluir) para o modelo do filme.
+
+Crie uma pasta *Pages/Movies*:
+
+* No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Páginas* > **Adicionar** > **Nova Pasta**.
+* Dê à pasta o nome *Filmes*
+
+No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Páginas/Filmes* pasta > **Adicionar** > **Novo item com scaffold**.
+
+![Imagem das instruções anteriores.](model/_static/sca.png)
+
+Na caixa de diálogo **Adicionar Scaffold**, selecione **Razor Pages usando o Entity Framework (CRUD)** > **Adicionar**.
+
+![Imagem das instruções anteriores.](model/_static/add_scaffold.png)
+
+Conclua a caixa de diálogo **Adicionar Razor Pages usando o Entity Framework (CRUD)**:
+
+* Na lista suspensa **Classe de modelo**, selecione **Filme (RazorPagesMovie.Models)**.
+* Na linha **Classe de contexto de dados**, selecione o sinal **+** (+) e aceite o nome gerado **RazorPagesMovie.Models.RazorPagesMovieContext**.
+* Na lista suspensa **Classe de contexto de dados**, selecione **RazorPagesMovie.Models.RazorPagesMovieContext**
+* Selecione **Adicionar**.
+
+![Imagem das instruções anteriores.](model/_static/arp.png)
+
+<a name="pmc"></a>
+## <a name="perform-initial-migration"></a>Executar a migração inicial
+
+Nesta seção, você deve usar o PMC (Console de Gerenciador de Pacotes) para:
+
+* Adicione uma migração inicial.
+* Atualize o banco de dados com a migração inicial.
+
+No menu **Ferramentas**, selecione **Gerenciador de Pacotes NuGet** > **Console do Gerenciador de Pacotes**.
+
+  ![Menu do PMC](../first-mvc-app/adding-model/_static/pmc.png)
+
+No PMC, insira os seguintes comandos:
+
+```PMC
+Add-Migration Initial
+Update-Database
+```
+
+Como alternativa, os seguintes comandos da CLI do .NET Core podem ser usados:
+
+```console
+dotnet ef migrations add Initial
+dotnet ef database update
+```
+
+Ignore a seguinte mensagem de aviso, você corrigirá isso no próximo tutorial:
+
+`Microsoft.EntityFrameworkCore.Model.Validation[30000]`
+
+      *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.*
+
+O comando `Add-Migration` gera código para criar o esquema de banco de dados inicial. O esquema é baseado no modelo especificado no `DbContext` (no arquivo *Models/MovieContext.cs*). O argumento `Initial` é usado para nomear as migrações. Você pode usar qualquer nome, mas, por convenção, escolha um nome que descreve a migração. Consulte [Introdução às migrações](xref:data/ef-mvc/migrations#introduction-to-migrations) para obter mais informações.
+
+O comando `Update-Database` executa o método `Up` no arquivo *Migrations/{time-stamp}_InitialCreate.cs*, que cria o banco de dados.
+
+Se você obtiver o erro:
+
+SqlException: não é possível abrir o banco de dados "RazorPagesMovieContext-GUID" solicitado pelo logon. O logon falhou.
+O logon falhou para o usuário 'User-name'.
+
+Você perdeu a [etapa de migrações](#pmc).
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+[!INCLUDE [model1](~/includes/RP/model1.md)]
+
+## <a name="add-a-data-model"></a>Adicionar um modelo de dados
+
+No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **RazorPagesMovie** > **Adicionar** > **Nova Pasta**. Nomeie a pasta *Models*.
+
+Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **Movie** e adicione as seguintes propriedades:
+
+[!INCLUDE [model 2](~/includes/RP/model2.md)]
 
 <a name="cs"></a>
 ### <a name="add-a-database-connection-string"></a>Adicionar uma cadeia de conexão de banco de dados
@@ -53,7 +139,7 @@ Nesta seção, você deve usar o PMC (Console de Gerenciador de Pacotes) para:
 * Adicionar uma migração inicial.
 * Atualize o banco de dados com a migração inicial.
 
-No menu **Ferramentas**, selecione **Gerenciador de pacotes NuGet** > **Console do Gerenciador de pacotes**.
+No menu **Ferramentas**, selecione **Gerenciador de Pacotes NuGet** > **Console do Gerenciador de Pacotes**.
 
   ![Menu do PMC](../first-mvc-app/adding-model/_static/pmc.png)
 
@@ -73,17 +159,28 @@ dotnet ef migrations add Initial
 dotnet ef database update
 ```
 
+Ignore a mensagem a seguir:
+
+    `Microsoft.EntityFrameworkCore.Model.Validation[30000]`
+
+      *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'*
+
+você corrigirá isso no próximo tutorial.
+
 O comando `Install-Package` instala as ferramentas necessárias para executar o mecanismo de scaffolding.
 
 O comando `Add-Migration` gera código para criar o esquema de banco de dados inicial. O esquema é baseado no modelo especificado no `DbContext` (no arquivo *Models/MovieContext.cs*). O argumento `Initial` é usado para nomear as migrações. Você pode usar qualquer nome, mas, por convenção, escolha um nome que descreve a migração. Consulte [Introdução às migrações](xref:data/ef-mvc/migrations#introduction-to-migrations) para obter mais informações.
 
-O comando `Update-Database` executa o método `Up` no arquivo *Migrations/\<time-stamp>_InitialCreate.cs*, que cria o banco de dados.
+O comando `Update-Database` executa o método `Up` no arquivo *Migrations/{time-stamp}_InitialCreate.cs*, que cria o banco de dados.
 
-[!INCLUDE [model 4windows](../../includes/RP/model4Win.md)]
+[!INCLUDE [model 4windows](~/includes/RP/model4Win.md)]
 
-[!INCLUDE [model 4](../../includes/RP/model4tbl.md)]
+[!INCLUDE [model 4](~/includes/RP/model4tbl.md)]
+
+::: moniker-end
 
 <a name="test"></a>
+
 ### <a name="test-the-app"></a>Testar o aplicativo
 
 * Executar o aplicativo e acrescentar `/Movies` à URL no navegador (`http://localhost:port/movies`).
@@ -95,7 +192,7 @@ O comando `Update-Database` executa o método `Up` no arquivo *Migrations/\<time
 
 * Teste os links **Editar**, **Detalhes** e **Excluir**.
 
-Se você receber uma exceção SQL, verifique se você executou migrações e atualizou o banco de dados:
+Se você receber uma exceção SQL, verifique se executou migrações e atualizou o banco de dados.
 
 O tutorial a seguir explica os arquivos criados por scaffolding.
 
