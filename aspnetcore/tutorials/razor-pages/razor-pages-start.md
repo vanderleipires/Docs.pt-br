@@ -2,19 +2,15 @@
 title: Introdução às Páginas do Razor no ASP.NET Core
 author: rick-anderson
 description: Conheça as noções básicas da criação de um aplicativo Web Páginas Razor do ASP.NET Core. O aplicativo Páginas Razor é recomendado para cargas de trabalho da Web no ASP.NET Core.
-manager: wpickett
 ms.author: riande
-ms.date: 5/30/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
+ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: d7cdf7c8fac3b2ac1e526c6eeee8205068964ec9
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: e317b49f2ad33c392de33bc32a87f67bb8cb72a0
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34582811"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278038"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>Introdução às Páginas do Razor no ASP.NET Core
 
@@ -82,7 +78,7 @@ A imagem a seguir mostra o aplicativo depois de aceitar o acompanhamento:
 
 * No menu **Arquivo** do Visual Studio, selecione **Novo** > **Projeto**.
 * Crie um novo Aplicativo Web ASP.NET Core. Nomeie o projeto **RazorPagesMovie**. É importante nomear o projeto *RazorPagesMovie* de modo que os namespaces façam a correspondência quando você copiar/colar código.
-  ![novo aplicativo Web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
+  ![novo aplicativo Web ASP.NET Core](../../razor-pages/index/_static/np.png)
 * Selecione **ASP.NET Core 2.0** na lista suspensa e selecione **Aplicativo Web**.
 
   [!INCLUDE [install 2.0](~/includes/dotnetcore-on-dotnetfx-vs.md)]
