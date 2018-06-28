@@ -5,12 +5,12 @@ description: Saiba mais sobre a estrutura de registros no ASP.NET Core. Descubra
 ms.author: tdykstra
 ms.date: 12/15/2017
 uid: fundamentals/logging/index
-ms.openlocfilehash: 8ba604ae8748455c95932f9d8843c1f7a5da2a06
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2307df3b4b571840f31808b86b48b0e6fb2de852
+ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272757"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37033307"
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -488,7 +488,7 @@ loggerFactory.AddEventSourceLogger()
 
 ---
 
-Uma boa maneira de coletar e exibir logs é usar o [utilitário PerfView](https://www.microsoft.com/download/details.aspx?id=28567). Há outras ferramentas para exibir os logs do ETW, mas o PerfView proporciona a melhor experiência para trabalhar com os eventos de ETW emitidos pelo ASP.NET. 
+Uma boa maneira de coletar e exibir logs é usar o [utilitário PerfView](https://github.com/Microsoft/perfview). Há outras ferramentas para exibir os logs do ETW, mas o PerfView proporciona a melhor experiência para trabalhar com os eventos de ETW emitidos pelo ASP.NET. 
 
 Para configurar o PerfView para coletar eventos registrados por esse provedor, adicione a cadeia de caracteres `*Microsoft-Extensions-Logging` à lista **Provedores Adicionais**. (Não se esqueça do asterisco no início da cadeia de caracteres).
 
