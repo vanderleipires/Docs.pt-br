@@ -6,18 +6,18 @@ monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.date: 08/15/2017
 uid: security/authentication/2fa
-ms.openlocfilehash: 335edfd5cd4dfbb9d223ba0ae888a6d2386cd4a5
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 0308b05ebcda1af7f6850549d7a33f1df1a912a0
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272303"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089978"
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>Autenticação de dois fatores com SMS no núcleo do ASP.NET
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [desenvolvedores Suíça](https://github.com/Swiss-Devs)
 
-Consulte [geração de código de QR habilitar para aplicativos de autenticador no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes) para ASP.NET Core 2.0 e posterior.
+ Dois aplicativos factor authentication (2FA) autenticador, usando um baseada em tempo de uso único senha algoritmo (TOTP), são o setor abordagem para 2FA recomendado. 2FA usar TOTP é preferível à 2FA do SMS. Para obter mais informações, consulte [geração de código de QR habilitar para aplicativos de autenticador TOTP no ASP.NET Core](xref:security/authentication/identity-enable-qrcodes) para ASP.NET Core 2.0 e posterior.
 
 Este tutorial mostra como configurar a autenticação de dois fatores (2FA) usando o SMS. As instruções são fornecidas para [twilio](https://www.twilio.com/) e [ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/), mas você pode usar qualquer outro provedor SMS. Recomendamos que você realize [confirmação de conta e senha de recuperação](xref:security/authentication/accconfirm) antes de iniciar este tutorial.
 
@@ -33,28 +33,24 @@ Criar uma conta SMS, por exemplo, de [twilio](https://www.twilio.com/) ou [ASPSM
 
 #### <a name="figuring-out-sms-provider-credentials"></a>Descobrir as credenciais do provedor de SMS
 
-**Twilio:**  
-Na guia Painel de sua conta do Twilio, copie o **SID de conta** e **token de autenticação**.
+**Twilio:** da guia Painel de sua conta do Twilio, copie o **SID de conta** e **token de autenticação**.
 
-**ASPSMS:**  
-De suas configurações de conta, navegue até **chave de usuário confidenciais** e copie-a junto com seu **senha**.
+**ASPSMS:** de suas configurações de conta, navegue até **chave de usuário confidenciais** e copie-a junto com seu **senha**.
 
 Mais tarde armazenaremos esses valores com a ferramenta de Gerenciador de segredo nas chaves `SMSAccountIdentification` e `SMSAccountPassword`.
 
 #### <a name="specifying-senderid--originator"></a>Especificando SenderID / originador
 
-**Twilio:**  
-Na guia números, copie o Twilio **número de telefone**. 
+**Twilio:** na guia números, copie o Twilio **número de telefone**.
 
-**ASPSMS:**  
-No Menu originadores desbloquear desbloquear originadores de uma ou mais ou escolha um originador alfanumérico (não é suportado por todas as redes). 
+**ASPSMS:** dentro do Menu de originadores desbloquear desbloquear originadores de uma ou mais ou escolha um originador alfanumérico (não é suportado por todas as redes).
 
 Posteriormente, armazenará esse valor com a ferramenta Gerenciador de segredo na chave do `SMSAccountFrom`.
 
 
 ### <a name="provide-credentials-for-the-sms-service"></a>Forneça credenciais para o serviço SMS
 
-Usaremos o [padrão de opções](xref:fundamentals/configuration/options) para acessar as configurações de conta e a chave de usuário. 
+Usaremos o [padrão de opções](xref:fundamentals/configuration/options) para acessar as configurações de conta e a chave de usuário.
 
    * Crie uma classe para obter a chave segura do SMS. Para este exemplo, o `SMSoptions` classe é criada no *Services/SMSoptions.cs* arquivo.
 
@@ -68,21 +64,19 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 ```
 * Adicione o pacote NuGet do provedor de SMS. Do pacote Manager Console (PMC) executar:
 
-**Twilio:**  
+**Twilio:**
 `Install-Package Twilio`
 
-**ASPSMS:**  
+**ASPSMS:**
 `Install-Package ASPSMS`
 
 
 * Adicione código de *Services/MessageServices.cs* arquivo para habilitar o SMS. Use o Twilio ou seção ASPSMS:
 
 
-**Twilio:**  
-[!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_twilio.cs)]
+**Twilio:** [!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_twilio.cs)]
 
-**ASPSMS:**  
-[!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_ASPSMS.cs)]
+**ASPSMS:** [!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_ASPSMS.cs)]
 
 ### <a name="configure-startup-to-use-smsoptions"></a>Configurar a inicialização para usar `SMSoptions`
 

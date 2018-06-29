@@ -5,12 +5,12 @@ description: Descubra tópicos do Azure Active Directory relacionados ao ASP.NET
 ms.author: riande
 ms.date: 10/4/2017
 uid: security/authentication/azure-active-directory/index
-ms.openlocfilehash: d909de78a8794a71d75c65affbeee29bf15158b6
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3a520bd8f8ad6c6afaed59960a95f531a18c9164
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272903"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077719"
 ---
 # <a name="azure-active-directory-with-aspnet-core"></a>Azure Active Directory com o ASP.NET Core
 
@@ -23,10 +23,10 @@ Os exemplos a seguir mostram como integrar o Azure Active Directory V1, permitin
 ## <a name="azure-ad-v2-samples"></a>Exemplos do Azure Active Directory V2
 Os exemplos a seguir mostram como integrar o Azure Active Directory V2, permitindo que os usuários entrem com uma conta corporativa ou de estudante ou com uma conta pessoal da Microsoft (antiga conta Live):
 * [Integrando o Azure Active Directory V2 em um aplicativo Web ASP.NET Core 2.0](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2): 
-  * Consulte [este vídeo associado](https://channel9.msdn.com/Events/Build/2018/THR5000) 
+  * Consulte [este vídeo associado](https://channel9.msdn.com/Events/Build/2018/THR5001) 
 
 * [Chamando uma API Web ASP.NET Core 2.0 em um aplicativo do WPF usando o Azure Active Directory V2](https://github.com/azure-samples/active-directory-dotnet-native-aspnetcore-v2): 
-  * Consulte [este vídeo associado](https://channel9.msdn.com/Events/Build/2018/THR5001) 
+  * Consulte [este vídeo associado](https://channel9.msdn.com/Events/Build/2018/THR5000)
 
 ## <a name="azure-ad-b2c-sample"></a>Exemplo do Azure Active Directory B2C
 Este exemplo mostra como integrar o Azure Active Directory B2C, permitindo que os usuários entrem com contas sociais (como Facebook, Google...)

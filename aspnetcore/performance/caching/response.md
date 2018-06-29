@@ -2,18 +2,15 @@
 title: O cache de resposta no núcleo do ASP.NET
 author: rick-anderson
 description: Saiba como usar a resposta em cache para reduzir os requisitos de largura de banda e melhorar o desempenho de aplicativos do ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.date: 09/20/2017
-ms.prod: asp.net-core
-ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: e5a3877c68f8475e7dd49d44f4a92cf7b09ac7f5
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: c53ae3f6ab8d26588533772dd4fdacb36ec12059
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734504"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077758"
 ---
 # <a name="response-caching-in-aspnet-core"></a>O cache de resposta no núcleo do ASP.NET
 
@@ -98,9 +95,9 @@ O Middleware de cache de resposta deve ser habilitado para definir o `VaryByQuer
 
 | Solicitação                          | Resultado                   |
 | -------------------------------- | ------------------------ |
-| `http://example.com?key1=value1` | retornado do servidor     |
-| `http://example.com?key1=value1` | retornado de middleware |
-| `http://example.com?key1=value2` | retornado do servidor     |
+| `http://example.com?key1=value1` | Retornado do servidor     |
+| `http://example.com?key1=value1` | Retornado de middleware |
+| `http://example.com?key1=value2` | Retornado do servidor     |
 
 A primeira solicitação é retornada pelo servidor e armazenados em cache no middleware. A segunda solicitação é retornada pelo middleware porque a cadeia de caracteres de consulta corresponde a solicitação anterior. A terceira solicitação não está no cache de middleware porque o valor de cadeia de caracteres de consulta não corresponde a uma solicitação anterior. 
 
