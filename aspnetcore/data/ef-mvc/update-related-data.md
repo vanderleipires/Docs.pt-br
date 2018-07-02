@@ -5,14 +5,18 @@ description: Neste tutorial, você atualizará dados relacionados pela atualiza�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 53f1607d96a9a1db98f4e80e9582c124cedf6c8d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ef8cb3916e5d1542e4d36cad694351462b94ed32
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272644"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093053"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>ASP.NET Core MVC com o EF Core – atualizar dados relacionados – 7 de 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -134,7 +138,7 @@ O código faz o seguinte:
         "",
         i => i.FirstMidName, i => i.LastName, i => i.HireDate, i => i.OfficeAssignment))
     ```
-    
+
 -   Se o local do escritório estiver em branco, a propriedade Instructor.OfficeAssignment será definida como nula para que a linha relacionada na tabela OfficeAssignment seja excluída.
 
     <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
@@ -213,7 +217,7 @@ Se a caixa de seleção para um curso não foi marcada, mas o curso está na pro
 Em *Views/Instructors/Edit.cshtml*, adicione um campo **Cursos** com uma matriz de caixas de seleção, adicionando o código a seguir imediatamente após os elementos `div` para o campo **Escritório** e antes do elemento `div` para o botão **Salvar**.
 
 <a id="notepad"></a>
-> [!NOTE] 
+> [!NOTE]
 > Quando você colar o código no Visual Studio, as quebras de linha serão alteradas de uma forma que divide o código.  Pressione Ctrl+Z uma vez para desfazer a formatação automática.  Isso corrigirá as quebras de linha para que elas se pareçam com o que você vê aqui. O recuo não precisa ser perfeito, mas cada uma das linhas `@</tr><tr>`, `@:<td>`, `@:</td>` e `@:</tr>` precisa estar em uma única linha, conforme mostrado, ou você receberá um erro de tempo de execução. Com o bloco de novo código selecionado, pressione Tab três vezes para alinhar o novo código com o código existente. Verifique o status deste problema [aqui](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html).
 
 [!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
@@ -228,7 +232,7 @@ Execute o aplicativo, selecione a guia **Instrutores** e clique em **Editar** em
 
 Altere algumas atribuições de curso e clique em Salvar. As alterações feitas são refletidas na página Índice.
 
-> [!NOTE] 
+> [!NOTE]
 > A abordagem usada aqui para editar os dados de curso do instrutor funciona bem quando há uma quantidade limitada de cursos. Para coleções muito maiores, uma interface do usuário e um método de atualização diferentes são necessários.
 
 ## <a name="update-the-delete-page"></a>Atualizar a página Excluir
@@ -282,7 +286,7 @@ Em *Views/Instructor/Create.cshtml*, adicione uma caixa de texto de local do esc
 
 [!code-html[](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
 
-Faça o teste executando o aplicativo e criando um instrutor. 
+Faça o teste executando o aplicativo e criando um instrutor.
 
 ## <a name="handling-transactions"></a>Manipulando transações
 
@@ -292,6 +296,8 @@ Conforme explicado no [tutorial do CRUD](crud.md), o Entity Framework implementa
 
 Agora você concluiu a introdução ao trabalho com os dados relacionados. No próximo tutorial, você verá como lidar com conflitos de simultaneidade.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [Anterior](read-related-data.md)
-> [Próximo](concurrency.md)  
+> [Próximo](concurrency.md)

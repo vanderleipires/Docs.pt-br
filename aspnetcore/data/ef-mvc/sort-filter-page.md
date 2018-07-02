@@ -5,14 +5,18 @@ description: Neste tutorial, você adicionará funcionalidades de classificaçã
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 34097eacad16c0ffb989efb3b6a8656be4a076cd
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 1f80faf0e36332c28e8337ddc331cc8b4c4970d7
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273644"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093082"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a>ASP.NET Core MVC com EF Core – classificação, filtro, paginação – 3 de 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -228,7 +232,7 @@ Substitua o método `About` pelo seguinte código:
 [!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
 A instrução LINQ agrupa as entidades de alunos por data de registro, calcula o número de entidades em cada grupo e armazena os resultados em uma coleção de objetos de modelo de exibição `EnrollmentDateGroup`.
-> [!NOTE] 
+> [!NOTE]
 > Na versão 1.0 do Entity Framework Core, todo o conjunto de resultados é retornado para o cliente e o agrupamento é feito no cliente. Em alguns cenários, isso pode criar problemas de desempenho. Teste o desempenho com volumes de dados de produção e, se necessário, use o SQL bruto para fazer o agrupamento no servidor. Para obter informações sobre como usar o SQL bruto, veja [o último tutorial desta série](advanced.md).
 
 ### <a name="modify-the-about-view"></a>Modificar a exibição Sobre
@@ -245,6 +249,8 @@ Execute o aplicativo e acesse a página Sobre. A contagem de alunos para cada da
 
 Neste tutorial, você viu como realizar classificação, filtragem, paginação e agrupamento. No próximo tutorial, você aprenderá a manipular as alterações do modelo de dados usando migrações.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [Anterior](crud.md)
-> [Próximo](migrations.md)  
+> [Próximo](migrations.md)

@@ -5,14 +5,18 @@ description: Neste tutorial, você começa a usar o recurso de migrações do EF
 ms.author: tdykstra
 ms.date: 03/15/2018
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: d8b92aeedb252b93e1dc1aca424d26a377305da2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f710b33ac1a6017b0e3d7e8c3e528675a41424bb
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273579"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37092936"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC com EF Core – migrações – 4 de 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -34,7 +38,7 @@ As ferramentas do EF para a CLI (interface de linha de comando) são fornecidas 
 
 [!code-xml[](intro/samples/cu/ContosoUniversity.csproj?range=12-15&highlight=2)]
   
-(Neste exemplo, os números de versão eram atuais no momento em que o tutorial foi escrito.) 
+(Neste exemplo, os números de versão eram atuais no momento em que o tutorial foi escrito.)
 
 ## <a name="change-the-connection-string"></a>Alterar a cadeia de conexão
 
@@ -154,14 +158,15 @@ Os comandos do EF para os comandos do PMC estão no pacote [Microsoft.EntityFram
 
 **Importante:** esse não é o mesmo pacote que é instalado para a CLI com a edição do arquivo *.csproj*. O nome deste termina com `Tools`, ao contrário do nome do pacote da CLI que termina com `Tools.DotNet`.
 
-Para obter mais informações sobre os comandos da CLI, consulte [CLI do .NET Core](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet). 
+Para obter mais informações sobre os comandos da CLI, consulte [CLI do .NET Core](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet).
 
 Para obter mais informações sobre os comandos do PMC, consulte [Console do Gerenciador de Pacotes (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell).
 
 ## <a name="summary"></a>Resumo
 
 Neste tutorial, você viu como criar e aplicar sua primeira migração. No próximo tutorial, você começará examinando tópicos mais avançados com a expansão do modelo de dados. Ao longo do processo, você criará e aplicará migrações adicionais.
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Anterior](sort-filter-page.md)
-> [Próximo](complex-data-model.md)  
+> [Próximo](complex-data-model.md)

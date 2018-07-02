@@ -5,14 +5,18 @@ description: Este tutorial mostra como lidar com conflitos quando os mesmos usu�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 77e5fba176835f7da9be6c7057084ed017d34bec
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9bf65621213c9657232dfff1701c9937d5105a9c
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278392"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093017"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC com EF Core – simultaneidade – 8 de 10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -207,7 +211,7 @@ Em *DepartmentsController.cs*, substitua o método HttpGet `Delete` pelo seguint
 
 [!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
 
-O método aceita um parâmetro opcional que indica se a página está sendo exibida novamente após um erro de simultaneidade. Se esse sinalizador é verdadeiro e o departamento especificado não existe mais, isso indica que ele foi excluído por outro usuário. Nesse caso, o código redireciona para a página Índice.  Se esse sinalizador é verdadeiro e o departamento existe, isso indica que ele foi alterado por outro usuário. Nesse caso, o código envia uma mensagem de erro para a exibição usando `ViewData`.  
+O método aceita um parâmetro opcional que indica se a página está sendo exibida novamente após um erro de simultaneidade. Se esse sinalizador é verdadeiro e o departamento especificado não existe mais, isso indica que ele foi excluído por outro usuário. Nesse caso, o código redireciona para a página Índice.  Se esse sinalizador é verdadeiro e o departamento existe, isso indica que ele foi alterado por outro usuário. Nesse caso, o código envia uma mensagem de erro para a exibição usando `ViewData`.
 
 Substitua o código no método HttpPost `Delete` (chamado `DeleteConfirmed`) pelo seguinte código:
 
@@ -276,6 +280,8 @@ Substitua o código em *Views/Departments/Create.cshtml* para adicionar uma opç
 
 Isso conclui a introdução à manipulação de conflitos de simultaneidade. Para obter mais informações sobre como lidar com a simultaneidade no EF Core, consulte [Conflitos de simultaneidade](https://docs.microsoft.com/ef/core/saving/concurrency). O próximo tutorial mostra como implementar a herança de tabela por hierarquia para as entidades Instructor e Student.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [Anterior](update-related-data.md)
-> [Próximo](inheritance.md)  
+> [Próximo](inheritance.md)
