@@ -2,19 +2,15 @@
 title: Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 author: rick-anderson
 description: Saiba como adicionar classes de gerenciamento de filmes em um banco de dados usando o EF Core (Entity Framework Core).
-manager: wpickett
 ms.author: riande
-ms.date: 5/30/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
+ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 50b1b01448ad870a2889db7dfe8367ab9e661840
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 508cca07fa96c20e228d2c55c9fb101f7fc3cb02
+ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729957"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36327546"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 
@@ -90,7 +86,7 @@ Ignore a seguinte mensagem de aviso, você corrigirá isso no próximo tutorial:
 
       *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.*
 
-O comando `Add-Migration` gera código para criar o esquema de banco de dados inicial. O esquema é baseado no modelo especificado no `DbContext` (no arquivo *Models/MovieContext.cs*). O argumento `Initial` é usado para nomear as migrações. Você pode usar qualquer nome, mas, por convenção, escolha um nome que descreve a migração. Consulte [Introdução às migrações](xref:data/ef-mvc/migrations#introduction-to-migrations) para obter mais informações.
+O comando `Add-Migration` gera código para criar o esquema de banco de dados inicial. O esquema é baseado no modelo especificado no `RazorPagesMovieContext` (no arquivo *Data/RazorPagesMovieContext.cs*). O argumento `Initial` é usado para nomear as migrações. Você pode usar qualquer nome, mas, por convenção, escolha um nome que descreve a migração. Consulte [Introdução às migrações](xref:data/ef-mvc/migrations#introduction-to-migrations) para obter mais informações.
 
 O comando `Update-Database` executa o método `Up` no arquivo *Migrations/{time-stamp}_InitialCreate.cs*, que cria o banco de dados.
 

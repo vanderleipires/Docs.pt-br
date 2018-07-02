@@ -2,20 +2,16 @@
 title: Metapacote Microsoft.AspNetCore.App para ASP.NET Core 2.1 e posterior
 author: Rick-Anderson
 description: O metapacote Microsoft.AspNetCore.App inclui todos os pacotes do ASP.NET Core e Entity Framework Core compatíveis.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: 7c7f69a6176d3f7982a67106cb823ff42200b50e
-ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
+ms.openlocfilehash: 4840d0a7536b1e9d8da835690b285ac2074967f5
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34306615"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277466"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>Metapacote Microsoft.AspNetCore.App para ASP.NET Core 2.1
 
@@ -63,5 +59,11 @@ A versão implícita é definida como `major.minor.0` para aplicativos portátil
 Especificar um número de versão na referência `Microsoft.AspNetCore.App` **não** garante que a versão da estrutura compartilhada será escolhida. Por exemplo, suponha que a versão "2.1.1" foi especificada, mas "2.1.3" está instalada. Nesse caso, o aplicativo usará "2.1.3". Embora não seja recomendado, você pode desabilitar o roll forward (patch e/ou secundária). Para obter mais informações sobre como efetuar roll forward do host dotnet e como configurar seu comportamento, veja [Efetuar roll forward do host dotnet](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
 
 O `Microsoft.AspNetCore.App` [metapacote](/dotnet/core/packages#metapackages) não é um pacote tradicional que é atualizado do NuGet. Semelhante ao `Microsoft.NETCore.App`, `Microsoft.AspNetCore.App` representa um tempo de execução compartilhado, que tem semântica de controle de versão especial tratada fora do NuGet. Para obter mais informações, veja [Pacotes, metapacotes e estruturas](/dotnet/core/packages).
+
+`<Project Sdk` deve ser definido como `Microsoft.NET.Sdk.Web` para usar o `Microsoft.AspNetCore.App` da versão implícita.  Quando `<Project Sdk="Microsoft.NET.Sdk">` é usado, os seguintes avisos são gerados:
+
+*Aviso NU1604: a dependência de projeto Microsoft.AspNetCore.App não tem um limite inferior inclusivo. Inclua um limite inferior na versão de dependência para garantir resultados consistentes de restauração.*
+
+*Aviso NU1602: [Nome do Projeto] não fornece um limite inferior inclusivo para a dependência Microsoft.AspNetCore.App. Uma melhor correspondência aproximada de Microsoft.AspNetCore.App 2.1.0 foi resolvida.*
 
 Se seu aplicativo tiver usado `Microsoft.AspNetCore.All`, veja [Migração do Microsoft.AspNetCore.All para Microsoft.AspNetCore.App](xref:fundamentals/metapackage#migrate).

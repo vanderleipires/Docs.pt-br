@@ -2,20 +2,16 @@
 title: Conceitos básicos do ASP.NET Core
 author: rick-anderson
 description: Descubra os conceitos fundamentais para a criação de aplicativos do ASP.NET Core.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/30/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 97c0b289b259332d57f8175e05020fe03d505723
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: b51d7b62525944d9924ecb4ce5964312f30a7835
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233304"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278863"
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
@@ -78,7 +74,7 @@ Para obter mais informações, veja [Inicialização do aplicativo](xref:fundame
 
 ## <a name="content-root"></a>Raiz do conteúdo
 
-A raiz do conteúdo é o caminho base para qualquer conteúdo usado pelo aplicativo, tal como exibições, [Páginas do Razor](xref:mvc/razor-pages/index) e ativos estáticos. Por padrão, a raiz do conteúdo é o mesmo caminho base do aplicativo para o executável que hospeda o aplicativo.
+A raiz do conteúdo é o caminho base para qualquer conteúdo usado pelo aplicativo, tal como exibições, [Páginas do Razor](xref:razor-pages/index) e ativos estáticos. Por padrão, a raiz do conteúdo é o mesmo caminho base do aplicativo para o executável que hospeda o aplicativo.
 
 ## <a name="web-root"></a>Raiz da Web
 
@@ -106,9 +102,13 @@ O middleware com base em [OWIN](http://owin.org) está disponível para aplicati
 
 Para obter mais informações, consulte [Middleware](xref:fundamentals/middleware/index) e [OWIN (Interface da Web Aberta para .NET)](xref:fundamentals/owin).
 
+::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="initiate-http-requests"></a>Iniciar solicitações HTTP
 
 Para saber mais sobre como usar o `IHttpClientFactory` para acessar instâncias do `HttpClient` a fim de fazer solicitações HTTP, confira [Iniciar solicitações HTTP](xref:fundamentals/http-requests).
+
+::: moniker-end
 
 ## <a name="environments"></a>Ambientes
 
@@ -126,7 +126,7 @@ Para obter mais informações, consulte [Configuração](xref:fundamentals/confi
 
 O ASP.NET Core dá suporte a uma API de registro em log que funciona com uma variedade de provedores de logs. Os provedores internos dão suporte ao envio de logs para um ou mais destinos. As estruturas de registro em log de terceiros podem ser usadas.
 
-[Registro em log](xref:fundamentals/logging/index)
+Consulte [Log](xref:fundamentals/logging/index) para obter mais informações
 
 ## <a name="error-handling"></a>Tratamento de erros
 
@@ -158,9 +158,9 @@ Os aplicativos ASP.NET Core configuram e iniciam um *host*, que é responsável 
 
 Para saber mais, confira [Host no ASP.NET Core](xref:fundamentals/host/index).
 
-## <a name="session-and-application-state"></a>Estado de sessão e de aplicativo
+## <a name="session-and-app-state"></a>Estado de sessão e de aplicativo
 
-O estado de sessão é um recurso do ASP.NET Core que você pode usar para salvar e armazenar dados de usuário enquanto o usuário navega seu aplicativo Web.
+O ASP.NET Core oferece várias abordagens para preservar o estado de sessão e de aplicativo enquanto o usuário procura um aplicativo Web.
 
 Para obter mais informações, consulte [Estado de sessão e aplicativo](xref:fundamentals/app-state).
 

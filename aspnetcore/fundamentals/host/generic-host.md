@@ -2,21 +2,17 @@
 title: Host Genérico .NET
 author: guardrex
 description: Saiba mais sobre o Host Genérico no .NET, que é responsável pelo gerenciamento de tempo de vida e pela inicialização do aplicativo.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: a851f2faf13792b2c232c124371d07710ae1fce3
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 33e5829ce4a09e132743b4174a588cf232a44775
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734465"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276247"
 ---
 # <a name="net-generic-host"></a>Host Genérico .NET
 
@@ -58,7 +54,13 @@ A biblioteca do Host Genérico está disponível no [namespace Microsoft.Extensi
 
 ### <a name="configuration-builder"></a>Construtor de configuração
 
-A configuração do construtor de host é criada chamando [ConfigureHostConfiguration](/dotnet/api/microsoft.extensions.hosting.ihostbuilder.configurehostconfiguration) na implementação [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder). `ConfigureHostConfiguration` usa um [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) para criar um [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) para o host. O construtor de configuração inicializa o [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment) para uso no processo de compilação do aplicativo. `ConfigureHostConfiguration` pode ser chamado várias vezes com resultados aditivos. O host usa a opção que define um valor por último.
+A configuração do construtor de host é criada chamando [ConfigureHostConfiguration](/dotnet/api/microsoft.extensions.hosting.ihostbuilder.configurehostconfiguration) na implementação [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder). `ConfigureHostConfiguration` usa um [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder) para criar um [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) para o host. O construtor de configuração inicializa o [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment) para uso no processo de compilação do aplicativo.
+
+A configuração de variável de ambiente não é adicionada por padrão. Chame [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables) no construtor de host para configurar o host com base em variáveis de ambiente. `AddEnvironmentVariables` aceita um prefixo opcional definido pelo usuário. O aplicativo de exemplo usa um prefixo igual a `PREFIX_`. O prefixo é removido quando as variáveis de ambiente são lidas. Quando o host do aplicativo de exemplo é configurado, o valor da variável de ambiente de `PREFIX_ENVIRONMENT` torna-se o valor de configuração de host para a chave `environment`.
+
+Durante o desenvolvimento, ao usar o [Visual Studio](https://www.visualstudio.com/) ou executar um aplicativo com `dotnet run`, as variáveis de ambiente poderão ser definidas no arquivo *Properties/launchSettings.json*. No [Visual Studio Code](https://code.visualstudio.com/), as variáveis de ambiente podem ser definidas no arquivo *.vscode/launch.json* durante o desenvolvimento. Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments).
+
+`ConfigureHostConfiguration` pode ser chamado várias vezes com resultados aditivos. O host usa a opção que define um valor por último.
 
 *hostsettings.json*:
 
@@ -83,7 +85,7 @@ Essa configuração determina onde o host começa a procurar por arquivos de con
 **Tipo**: *string*  
 **Padrão**: o padrão é a pasta em que o assembly do aplicativo reside.  
 **Definido usando**: `UseContentRoot`  
-**Variável de ambiente**: `ASPNETCORE_CONTENTROOT`
+**Variável de ambiente**: `<PREFIX_>CONTENTROOT` (`<PREFIX_>` é [opcional e definida pelo usuário](#configuration-builder))
 
 Se o caminho não existir, o host não será iniciado.
 
@@ -97,9 +99,9 @@ Define o [ambiente](xref:fundamentals/environments) do aplicativo.
 **Tipo**: *string*  
 **Padrão**: Production  
 **Definido usando**: `UseEnvironment`  
-**Variável de ambiente**: `ASPNETCORE_ENVIRONMENT`
+**Variável de ambiente**: `<PREFIX_>ENVIRONMENT` (`<PREFIX_>` é [opcional e definida pelo usuário](#configuration-builder))
 
-O ambiente pode ser definido como qualquer valor. Os valores definidos pela estrutura incluem `Development`, `Staging` e `Production`. Os valores não diferenciam maiúsculas de minúsculas. Por padrão, o *Ambiente* é lido da variável de ambiente `ASPNETCORE_ENVIRONMENT`. Ao usar o [Visual Studio](https://www.visualstudio.com/), variáveis de ambiente podem ser definidas no arquivo *launchSettings.json*. Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments).
+O ambiente pode ser definido como qualquer valor. Os valores definidos pela estrutura incluem `Development`, `Staging` e `Production`. Os valores não diferenciam maiúsculas de minúsculas.
 
 [!code-csharp[](generic-host/samples-snapshot/2.x/GenericHostSample/Program.cs?name=snippet_UseEnvironment)]
 

@@ -2,19 +2,15 @@
 title: Roteamento no ASP.NET Core
 author: ardalis
 description: Descubra como a funcionalidade de roteamento do ASP.NET Core é responsável por mapear uma solicitação de entrada para um manipulador de rotas.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: a23e2e1a1dd25a57e5d6189bbd5938c48078515b
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 4482c865671eb4f5decbd5f1cd6e26f2e68e5c25
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341776"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314130"
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
@@ -154,7 +150,7 @@ routes.MapRoute(
     dataTokens: new { locale = "en-US" });
 ```
 
-Esse modelo corresponderá a um caminho de URL como `/Products/5` e extrairá os valores `{ controller = Products, action = Details, id = 5 }` e os tokens de dados `{ locale = en-US }`.
+Este modelo corresponde a um caminho de URL como `/en-US/Products/5` e extrai os valores de `{ controller = Products, action = Details, id = 5 }` e os tokens de dados `{ locale = en-US }`.
 
 ![Tokens locais do Windows](routing/_static/tokens.png)
 
@@ -286,7 +282,17 @@ Em geral, o uso de um modelo é a abordagem mais simples para o roteamento. Rest
 
 Dica: habilite o [Log](xref:fundamentals/logging/index) para ver como as implementações de roteamento internas, como `Route`, fazem a correspondência de solicitações.
 
-## <a name="route-constraint-reference"></a>Referência de restrições de rota
+## <a name="reserved-routing-names"></a>Nomes reservados de roteamento
+
+As seguintes palavras-chave são nomes reservados e não podem ser usadas como nomes de rota ou parâmetros:
+
+* `action`
+* `area`
+* `controller`
+* `handler`
+* `page`
+
+## <a name="route-constraint-reference"></a>Referência de restrição de rota
 
 As restrições da rota são executadas quando uma `Route` correspondeu à sintaxe da URL de entrada e criou um token do caminho de URL para valores de rota. Em geral, as restrições da rota inspecionam o valor de rota associado por meio do modelo de rota e tomam uma decisão simples do tipo "sim/não" sobre se o valor é aceitável ou não. Algumas restrições da rota usam dados fora do valor de rota para considerar se a solicitação pode ser encaminhada. Por exemplo, a `HttpMethodRouteConstraint` pode aceitar ou rejeitar uma solicitação de acordo com o verbo HTTP.
 
