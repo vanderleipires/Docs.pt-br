@@ -1,29 +1,28 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/installing-helpers
-title: Instalar um auxiliar em uma Web ASP.NET páginas Site (Razor) | Microsoft Docs
+title: Instalação de um auxiliar em uma Web do ASP.NET (Razor) sites de páginas | Microsoft Docs
 author: tfitzmac
-description: Este artigo descreve como instalar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um auxiliar é um componente reutilizável que inclui o código e marcação para por...
+description: Este artigo descreve como instalar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um auxiliar é um componente reutilizável que inclui código e marcação para por...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
 ms.topic: article
 ms.assetid: 5e968ead-906a-45ea-ac2a-c70e57e1a9b1
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: 766fbb87ae8bcb8917eb8fa7f552c00792242cf6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 38290fd47355e7893eddd1f867f47b113b54ca7e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30896765"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37361800"
 ---
-<a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>Instalando um auxiliar em um Site de páginas (Razor) da Web do ASP.NET
+<a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>Instalação de um auxiliar em um Site do ASP.NET Web Pages (Razor)
 ====================
 por [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Este artigo descreve como instalar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um *auxiliar* é um componente reutilizável que inclui o código e marcação para executar uma tarefa que pode ser entediante ou complexos.
+> Este artigo descreve como instalar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um *auxiliar* é um componente reutilizável que inclui código e marcação para executar uma tarefa que pode ser entediante ou complexos.
 > 
 > O que você aprenderá:
 > 
@@ -33,31 +32,31 @@ por [Tom FitzMacken](https://github.com/tfitzmac)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
 > 
 > 
-> - WebMatrix 3
+> - O WebMatrix 3
 
 
-## <a name="overview-of-helpers"></a>Visão geral de auxiliares
+## <a name="overview-of-helpers"></a>Visão geral dos auxiliares
 
-Algumas tarefas que as pessoas desejam em páginas da web geralmente exigem muito código ou exigem conhecimento extra. Exemplos incluem a exibição de um gráfico de dados. colocar um botão "Seguir" do Twitter em uma página. Enviar email de seu site. recortando ou redimensionamento de imagens; usando PayPal para o seu site. Para facilitar a esses tipos de coisas, o ASP.NET Web Pages permite que você use *auxiliares*. Auxiliares são componentes que você instale um site e que permitem a você executam tarefas comuns usando apenas uma linha ou duas de código Razor.
+Algumas tarefas que as pessoas frequentemente desejam fazer em páginas da web exigem um monte de código ou exigem conhecimento extra. Exemplos incluem a exibição de um gráfico para dados; colocar um botão "Seguir" do Twitter em uma página. envio de email do seu site; recortando ou redimensionamento de imagens; usando PayPal para o seu site. Para que seja fácil fazer esses tipos de coisas, o ASP.NET Web Pages permite que você use *auxiliares*. Os auxiliares são componentes que você instale para um site e que permitem que você realize tarefas típicas usando apenas uma ou duas linhas de código do Razor.
 
-Páginas da Web do ASP.NET tem alguns auxiliares internos. No entanto, muitos auxiliares estão disponíveis em pacotes (Suplementos) que são fornecidos usando o NuGet package manager. O NuGet permite que você selecione um pacote para instalar e, em seguida, ele cuida de todos os detalhes da instalação.
+Páginas da Web do ASP.NET tem alguns auxiliares internos. No entanto, muitos auxiliares estão disponíveis em pacotes (Suplementos) que são fornecidos usando o Gerenciador de pacotes do NuGet. O NuGet permite que você selecione um pacote para instalar e, em seguida, ele cuida de todos os detalhes da instalação.
 
-## <a name="installing-a-helper-in-webmatrix-3"></a>Instalando um auxiliar no WebMatrix 3
+## <a name="installing-a-helper-in-webmatrix-3"></a>Instalação de um auxiliar no WebMatrix 3
 
-1. No WebMatrix 3, clique no **NuGet** botão.
+1. O WebMatrix 3, clique no **NuGet** botão.
 
-    ![Caixa de diálogo do NuGet galeria no WebMatrix](installing-helpers/_static/image1.png)
-2. Isso inicia o NuGet package manager e exibe os pacotes disponíveis. Na caixa de pesquisa, digite uma palavra-chave para o auxiliar que você deseja instalar.
+    ![Caixa de diálogo de galeria do NuGet no WebMatrix](installing-helpers/_static/image1.png)
+2. Isso inicia o Gerenciador de pacotes do NuGet e exibe os pacotes disponíveis. Na caixa de pesquisa, insira uma palavra-chave para o auxiliar que você deseja instalar.
 
-    ![Caixa de diálogo do NuGet galeria no WebMatrix](installing-helpers/_static/image2.png)
-3. Selecione o pacote e, em seguida, clique em **instalar**. Clique em **Sim** quando for perguntado se deseja instalar o pacote e indicar que você aceita os termos.
+    ![Caixa de diálogo de galeria do NuGet no WebMatrix](installing-helpers/_static/image2.png)
+3. Selecione o pacote e, em seguida, clique em **instalar**. Clique em **Sim** quando for perguntado se você deseja instalar o pacote e indicar que você aceite os termos.
 
-     Se esta for a primeira vez em que você instalou um auxiliar, o NuGet cria pastas no seu site para o código que compõe o auxiliar.
-4. Para desinstalar um auxiliar, clique o **galeria** , clique no **instalado** guia e selecione o pacote que deseja desinstalar.
+     Se essa for a primeira vez em que você instalou um auxiliar, o NuGet cria pastas no seu site para o código que compõe o auxiliar.
+4. Para desinstalar um auxiliar, clique o **galeria** , clique no **instalado** guia e, em seguida, selecione o pacote que você deseja desinstalar.
 
 ## <a name="installing-the-twitter-helper"></a>Instalando o auxiliar do Twitter
 
-A versão mais recente da API do Twitter não é compatível com o auxiliar do Twitter que instalar por meio do NuGet. Em vez disso, consulte o [auxiliar do Twitter com o WebMatrix](twitter-helper.md) tópico para obter informações sobre como configurar o auxiliar do Twitter em seu projeto.
+A versão mais recente da API do Twitter não é compatível com o auxiliar do Twitter que instalar por meio do NuGet. Em vez disso, consulte a [auxiliar do Twitter com o WebMatrix](twitter-helper.md) tópico para obter informações sobre como configurar o auxiliar do Twitter em seu projeto.
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Recursos adicionais

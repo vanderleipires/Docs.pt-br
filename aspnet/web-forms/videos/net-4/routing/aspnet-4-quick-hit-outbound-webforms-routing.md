@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/net-4/routing/aspnet-4-quick-hit-outbound-webforms-routing
-title: Roteamento de saída WebForms | Microsoft Docs
+title: Roteamento de WebForms de saída | Microsoft Docs
 author: JoeStagner
 description: Neste vídeo, você verá como usar o mecanismo de roteamento para criar dinamicamente uma URL de saída com base na entrada do usuário.
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 11/11/2009
 ms.topic: article
 ms.assetid: 90d79218-505c-4b6d-87f5-a59592d59ccc
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/routing/aspnet-4-quick-hit-outbound-webforms-routing
 msc.type: video
-ms.openlocfilehash: f49b7115a18413c9b6faefe49e988a86b443ea94
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 11975e5425d1d8bc8238e34bb3fac8e3574313af
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893746"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37362314"
 ---
-<a name="aspnet-4-quick-hit---outbound-webforms-routing"></a>O ASP.NET 4 "Hit rápida" - saídas WebForms roteamento
+<a name="aspnet-4-quick-hit---outbound-webforms-routing"></a>ASP.NET 4 "Acertar rápida" - roteamento de WebForms de saída
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 
