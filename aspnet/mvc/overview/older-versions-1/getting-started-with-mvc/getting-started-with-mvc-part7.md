@@ -1,65 +1,64 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
-title: Adicionando validação para o modelo | Microsoft Docs
+title: Adicionar validação ao modelo | Microsoft Docs
 author: shanselman
-description: Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que leituras e gravações de banco de dados.
+description: Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Crie um aplicativo web simples que lê e grava de um banco de dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
 ms.topic: article
 ms.assetid: aa7b3e8e-e23d-49f1-b160-f99a7f2982bd
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 78dd6bdd81fcb51a3a21a8f1ee12b4b2bfc37db5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1a8c186d5a6b00aaf1061bb4025f4f062203a7df
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871942"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37402974"
 ---
-<a name="adding-validation-to-the-model"></a>Adicionando validação para o modelo
+<a name="adding-validation-to-the-model"></a>Adicionar validação ao modelo
 ====================
 por [Scott Hanselman](https://github.com/shanselman)
 
-> Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Você criará um aplicativo web simples que leituras e gravações de banco de dados. Visite o [Central de aprendizagem do ASP.NET MVC](../../../index.md) para localizar outros ASP.NET MVC, tutoriais e exemplos.
+> Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Você criará um aplicativo web simples que lê e grava de um banco de dados. Visite o [Central de informações do ASP.NET MVC](../../../index.md) para localizar outros ASP.NET MVC, tutoriais e exemplos.
 
 
-Nesta seção, vamos implementar o suporte necessário para habilitar a validação de entrada em nosso aplicativo. Irá garantir que nosso conteúdo de banco de dados sempre está correto e fornecer mensagens de erro úteis para os usuários finais quando eles tentem e inserem dados de filme que não é válidos. Vamos começar adicionando um pouco lógica de validação para a classe do filme.
+Nesta seção, vamos implementar o suporte necessário para habilitar a validação de entrada dentro do nosso aplicativo. Nós garantiremos que nosso conteúdo de banco de dados sempre está correto e fornecer mensagens de erro úteis para os usuários finais quando eles tente e insere dados de filme que não não válidos. Vamos começar adicionando um pouco lógica de validação para a classe de filme.
 
-Clique com o botão direito na pasta do modelo e selecione Adicionar classe. Nome de sua classe filme.
+Clique com o botão direito na pasta do modelo e selecione Add Class. Nome de sua classe de filme.
 
-Quando criamos o modelo de entidade de filme anteriormente, o IDE criado uma classe do filme. Na verdade, parte da classe de filme pode estar em um arquivo e parte em outro. Isso é chamado de uma classe parcial. Vamos estender a classe de filme de outro arquivo.
+Quando criamos o modelo de entidade do filme anteriormente, o IDE criado uma classe de filme. Na verdade, parte da classe de filme pode ser em um arquivo e parte em outro. Isso é chamado de uma classe parcial. Vamos estender a classe de filme de outro arquivo.
 
-Vamos criar uma classe parcial de filme que aponta para uma classe"amigos" com alguns atributos que fornecerá as dicas de validação para o sistema. Vamos marcar o título e o preço conforme necessário e também insistir que o preço seja em um determinado intervalo. Clique com botão direito na pasta modelos e selecione Adicionar classe. Nome de sua classe filme e clique no botão Okey. É aqui que nosso parcial filme classe parece.
+Vamos criar uma classe parcial do filme que aponta para uma amigo "class" com alguns atributos que fornecerá dicas de validação para o sistema. Vamos marcar o título e o preço, conforme necessário e também insistir que o preço estar em um determinado intervalo. Clique com botão direito na pasta modelos e selecione Add Class. Nomeie sua classe de filme e clique no botão Okey. Aqui está a aparência de nossa pesquisa de classe parcial do filme.
 
 [!code-csharp[Main](getting-started-with-mvc-part7/samples/sample1.cs)]
 
-Execute novamente o seu aplicativo e tentar inserir um filme com um preço acima de 100. Após ter enviado o formulário, você receberá um erro. O erro é detectado no lado do servidor e ocorre depois que o formulário é enviado. Observe como os auxiliares HTML internos de ASP.NET MVC foram inteligentes exibir a mensagem de erro e manter os valores para que possamos dentro de elementos de texto:
+Execute novamente o seu aplicativo e tentar inserir um filme com um preço acima de 100. Você obterá um erro depois de enviar o formulário. O erro é capturado no lado do servidor e ocorre depois que o formulário é postado. Observe como os auxiliares HTML internos de ASP.NET MVC foram inteligentes o suficiente para exibir a mensagem de erro e mantenha os valores para que possamos dentro dos elementos da caixa de texto:
 
 [![CreateMovieWithValidation](getting-started-with-mvc-part7/_static/image2.png)](getting-started-with-mvc-part7/_static/image1.png)
 
-Isso funciona muito bem, mas seria interessante se poderia informamos ao usuário no lado do cliente, imediatamente, antes do servidor é envolvido.
+Isso funciona muito bem, mas seria interessante se poderíamos dar ao usuário no lado do cliente, imediatamente, antes que o servidor é envolvido.
 
-Vamos habilitar alguma validação do lado do cliente com JavaScript.
+Vamos habilitar alguma validação do lado do cliente com o JavaScript.
 
-## <a name="adding-client-side-validation"></a>Adicionando validação do lado do cliente
+## <a name="adding-client-side-validation"></a>Adicionando uma validação do lado do cliente
 
-Como nossa classe filme já tem alguns atributos de validação, vamos apenas precisará adicionar alguns arquivos JavaScript para nosso modelo de exibição de Create.aspx e adicionar uma linha de código para habilitar a validação do lado do cliente ocorra.
+Como nossa classe Movie já tem alguns atributos de validação, estamos apenas será necessário adicionar alguns arquivos de JavaScript para nosso modelo de exibição de aspx e adicionar uma linha de código para habilitar a validação do lado do cliente entrar em vigor.
 
-No VWD acesse nossa pasta de modos de exibição/filme e abra Create.aspx.
+De dentro do VWD, acesse nossa pasta de modos de exibição/filme e abra aspx.
 
 Abra a pasta de Scripts no Gerenciador de soluções e arraste os seguintes três scripts para dentro do &lt;head&gt; marca.
 
 - MicrosoftAjax.js
 - MicrosoftMvcValidation.js
 
-Deseja que esses arquivos de script são exibidos nessa ordem.
+Você deseja que esses arquivos de script são exibidos nessa ordem.
 
 [!code-html[Main](getting-started-with-mvc-part7/samples/sample2.html)]
 
-Além disso, adicione esta linha única acima de Html.BeginForm:
+Além disso, adicione essa única linha acima a Html.BeginForm:
 
 [!code-aspx[Main](getting-started-with-mvc-part7/samples/sample3.aspx)]
 
@@ -67,11 +66,11 @@ Aqui está o código mostrado no IDE.
 
 [![Filmes - Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
-Executar seu aplicativo, visite /Movies/Create novamente e clique em criar sem inserir os dados. As mensagens de erro aparecem imediatamente sem a página flash que associadas ao enviar dados de volta para o servidor. Isso ocorre porque o ASP.NET MVC agora está validando a entrada no cliente (usando JavaScript) e no servidor.
+Executar seu aplicativo, visite /Movies/Create novamente e clique em criar sem inserir nenhum dado. As mensagens de erro são exibidas imediatamente sem a página flash que associamos ao enviar dados de volta para o servidor. Isso é porque o ASP.NET MVC agora está validando a entrada em ambos o cliente (usando JavaScript) e no servidor.
 
-[![Criar - Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
+[![Criar – Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
-Isso está procurando válido! Agora vamos adicionar uma coluna adicional para o banco de dados.
+Isso está funcionando bem! Vamos agora adicionar uma coluna adicional para o banco de dados.
 
 > [!div class="step-by-step"]
 > [Anterior](getting-started-with-mvc-part6.md)
