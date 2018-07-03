@@ -4,14 +4,14 @@ author: rick-anderson
 description: Descubra os conceitos fundamentais para a criação de aplicativos do ASP.NET Core.
 ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.date: 09/30/2017
+ms.date: 07/02/2018
 uid: fundamentals/index
-ms.openlocfilehash: b51d7b62525944d9924ecb4ce5964312f30a7835
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 33786bf78567a1aa12a1ac97d44d1a596ec4c3be
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278863"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144970"
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
@@ -204,15 +204,23 @@ O [WebSocket](https://wikipedia.org/wiki/WebSocket) é um protocolo que permite 
 
 Para obter mais informações, consulte [WebSockets](xref:fundamentals/websockets).
 
+::: moniker range=">= aspnetcore-2.1"
+## <a name="microsoftaspnetcoreapp-metapackage"></a>Metapacote Microsoft.AspNetCore.App
+
+O metapacote [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/) simplifica o gerenciamento de pacotes. Para obter mais informações, veja [Metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app).
+
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
 ## <a name="microsoftaspnetcoreall-metapackage"></a>Metapacote Microsoft.AspNetCore.All
 
 O [Metapacote do Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) para ASP.NET Core inclui:
 
 * Todos os pacotes com suporte da equipe do ASP.NET Core.
-* Todos os pacotes com suporte pelo Entity Framework Core. 
+* Todos os pacotes compatíveis com o Entity Framework Core.
 * Dependências internas e de terceiros usadas por ASP.NET Core e pelo Entity Framework Core.
 
 Para obter mais informações, consulte [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage).
+::: moniker-end
 
 ## <a name="net-core-vs-net-framework-runtime"></a>Tempo de execução do .NET Core vs do .NET Framework
 

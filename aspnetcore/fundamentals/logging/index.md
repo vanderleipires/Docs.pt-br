@@ -5,12 +5,12 @@ description: Saiba mais sobre a estrutura de registros no ASP.NET Core. Descubra
 ms.author: tdykstra
 ms.date: 12/15/2017
 uid: fundamentals/logging/index
-ms.openlocfilehash: 4ceb7886cc9410c3b39beec68c2b11ea3578d851
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 969ad303c3fee06aa40d43140153ffbf58b735db
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077771"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126281"
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -18,15 +18,17 @@ Por [Steve Smith](https://ardalis.com/) e [Tom Dykstra](https://github.com/tdyks
 
 O ASP.NET Core dá suporte a uma API de registro em log que funciona com uma variedade de provedores de logs. Os provedores internos permitem que você envie logs para um ou mais destinos e você pode se conectar a uma estrutura de registros de terceiros. Este artigo mostra como usar a API de registro em log e os provedores internos em seu código.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample2) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
----
+::: moniker-end
 
 ## <a name="how-to-create-logs"></a>Como criar logs
 
@@ -44,7 +46,7 @@ O ASP.NET Core não fornece métodos de agente assíncronos porque o registro em
 
 ## <a name="how-to-add-providers"></a>Como adicionar provedores
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 Um provedor de logs obtém as mensagens que você cria com um objeto `ILogger` e as exibe ou armazena. Por exemplo, o provedor Console exibe as mensagens no console e o provedor do Serviço de Aplicativo do Azure pode armazená-las no armazenamento de blobs do Azure.
 
@@ -56,7 +58,9 @@ O modelo de projeto padrão permite o registro em log com o método [CreateDefau
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 Um provedor de logs obtém as mensagens que você cria com um objeto `ILogger` e as exibe ou armazena. Por exemplo, o provedor Console exibe as mensagens no console e o provedor do Serviço de Aplicativo do Azure pode armazená-las no armazenamento de blobs do Azure.
 
@@ -69,9 +73,53 @@ A [DI](xref:fundamentals/dependency-injection) (injeção de dependência) do AS
 > [!NOTE]
 > O [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample) adiciona provedores de log no método `Startup.Configure`. Se você quiser obter saída de log do código que é executado anteriormente, adicione provedores de log no construtor de classe `Startup`.
 
----
+::: moniker-end
 
 Você encontrará informações sobre cada [provedor de log interno](#built-in-logging-providers) e links para [provedores de log de terceiros](#third-party-logging-providers) mais adiante no artigo.
+
+## <a name="settings-file-configuration"></a>Definições do arquivo de configurações
+
+Cada um dos exemplos anteriores na seção [Como adicionar provedores](#how-to-add-providers) carrega a configuração do provedor de logs da seção `Logging` dos arquivos de configurações do aplicativo. O exemplo a seguir mostra o conteúdo de um típico arquivo *appsettings.Development.json*:
+
+::: moniker range=">= aspnetcore-2.1"
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Information",
+      "Microsoft": "Information"
+    },
+    "Console":
+    {
+      "IncludeScopes": "true"
+    }
+  }
+}
+```
+
+Chaves `LogLevel` representam nomes de log. A chave `Default` aplica-se a logs não listados de forma explícita. O valor representa o [nível de log](#log-level) aplicado ao log fornecido. Chaves de log que definem `IncludeScopes` (`Console` no exemplo) especificam se os [escopos de log](#log-scopes) estão habilitados para o log indicado.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.1"
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  }
+}
+```
+
+Chaves `LogLevel` representam nomes de log. A chave `Default` aplica-se a logs não listados de forma explícita. O valor representa o [nível de log](#log-level) aplicado ao log fornecido.
+
+::: moniker-end
 
 ## <a name="sample-logging-output"></a>Exemplo de saída de registro em log
 
@@ -263,7 +311,7 @@ System.Exception: Item not found exception.
 
 ## <a name="log-filtering"></a>Filtragem de log
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 Você pode especificar um nível de log mínimo para um provedor e uma categoria específicos ou para todos os provedores ou todas as categorias. Os logs abaixo do nível mínimo não serão passados para esse provedor, para que não sejam exibidos ou armazenados. 
 
@@ -345,7 +393,9 @@ Você pode escrever código em uma função de filtro para aplicar regras de fil
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 Alguns provedores de log permitem especificar quando os logs devem ser gravados em uma mídia de armazenamento ou ignorados, com base no nível de log e na categoria.
 
@@ -363,7 +413,7 @@ Se quiser usar a filtragem para impedir que todos os logs de uma determinada cat
 
 O método de extensão `WithFilter` é fornecido pelo pacote NuGet [Microsoft.Extensions.Logging.Filter](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Filter). O método retorna um nova instância `ILoggerFactory`, que filtrará as mensagens de log passadas para todos os provedores de agente registrados com ela. Isso não afeta nenhuma outra instância de `ILoggerFactory`, incluindo a instância de `ILoggerFactory` original.
 
----
+::: moniker-end
 
 ## <a name="log-scopes"></a>Escopos de log
 
@@ -375,22 +425,37 @@ Um escopo é um tipo `IDisposable` retornado pelo método [ILogger.BeginScope&lt
 
 O código a seguir habilita os escopos para o provedor de console:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range="> aspnetcore-2.0"
 
-Em *Program.cs*:
+*Program.cs*:
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_Scopes&highlight=4)]
 
 > [!NOTE]
-> A configuração da opção de agente de console `IncludeScopes` é necessária para habilitar o registro em log baseado em escopo. A configuração de `IncludeScopes` usando arquivos de configuração *appsettings* estará disponível com o lançamento do ASP.NET Core 2.1.
+> A configuração da opção de agente de console `IncludeScopes` é necessária para habilitar o registro em log baseado em escopo.
+>
+> `IncludeScopes` pode ser configurado por meio de arquivos de configuração *appsettings*. Para obter mais informações, veja a seção [Definição do arquivo de configurações](#settings-file-configuration).
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
 
-Em *Startup.cs*:
+::: moniker range="= aspnetcore-2.0"
+
+*Program.cs*:
+
+[!code-csharp[](index/sample2/Program.cs?name=snippet_Scopes&highlight=4)]
+
+> [!NOTE]
+> A configuração da opção de agente de console `IncludeScopes` é necessária para habilitar o registro em log baseado em escopo.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+*Startup.cs*:
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_Scopes&highlight=6)]
 
----
+::: moniker-end
 
 Cada mensagem de log inclui as informações com escopo definido:
 
@@ -418,13 +483,16 @@ O ASP.NET Core vem com os seguintes provedores:
 
 O pacote de provedor [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) envia a saída de log para o console. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
+
 
 ```csharp
 logging.AddConsole()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 loggerFactory.AddConsole()
@@ -446,7 +514,7 @@ Esse código se refere à seção `Logging` do arquivo *appSettings.json*:
 
 As configurações mostradas limitam os logs de estrutura a avisos, permitindo que o aplicativo para faça registros no nível de depuração, conforme explicado na [Filtragem de log](#log-filtering) seção. Para obter mais informações, consulte [Configuração](xref:fundamentals/configuration/index).
 
----
+::: moniker-end
 
 ### <a name="debug-provider"></a>Depurar provedor
 
@@ -454,13 +522,15 @@ O pacote de provedor [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/
 
 No Linux, esse provedor grava logs em */var/log/message*.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
 logging.AddDebug()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 loggerFactory.AddDebug()
@@ -468,25 +538,27 @@ loggerFactory.AddDebug()
 
 As [sobrecargas de AddDebug](/dotnet/api/microsoft.extensions.logging.debugloggerfactoryextensions) permitem que você passe um nível de log mínimo ou uma função de filtro.
 
----
+::: moniker-end
 
 ### <a name="eventsource-provider"></a>Provedor EventSource
 
 Para aplicativos que se destinam ao ASP.NET Core 1.1.0 ou superior, o pacote de provedor [Microsoft.Extensions.Logging.EventSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource) pode implementar o rastreamento de eventos. No Windows, ele usa [ETW](https://msdn.microsoft.com/library/windows/desktop/bb968803). O provedor é multiplataforma, mas ainda não há ferramentas de coleta e exibição de eventos para Linux ou macOS. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
 logging.AddEventSourceLogger()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 loggerFactory.AddEventSourceLogger()
 ```
 
----
+::: moniker-end
 
 Uma boa maneira de coletar e exibir logs é usar o [utilitário PerfView](https://github.com/Microsoft/perfview). Há outras ferramentas para exibir os logs do ETW, mas o PerfView proporciona a melhor experiência para trabalhar com os eventos de ETW emitidos pelo ASP.NET. 
 
@@ -498,13 +570,15 @@ Para configurar o PerfView para coletar eventos registrados por esse provedor, a
 
 O pacote de provedor [Microsoft.Extensions.Logging.EventLog](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog) envia a saída de log para o Log de Eventos do Windows.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
 logging.AddEventLog()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 loggerFactory.AddEventLog()
@@ -512,25 +586,27 @@ loggerFactory.AddEventLog()
 
 As [sobrecargas de AddEventLog](/dotnet/api/microsoft.extensions.logging.eventloggerfactoryextensions) permitem que você passe `EventLogSettings` ou um nível de log mínimo.
 
----
+::: moniker-end
 
 ### <a name="tracesource-provider"></a>Provedor TraceSource
 
 O pacote de provedor [Microsoft.Extensions.Logging.TraceSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.TraceSource) usa as bibliotecas e provedores de [System.Diagnostics.TraceSource](/dotnet/api/system.diagnostics.tracesource).
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 ```csharp
 logging.AddTraceSource(sourceSwitchName);
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 loggerFactory.AddTraceSource(sourceSwitchName);
 ```
 
----
+::: moniker-end
 
 As [sobrecargas de AddTraceSource](/dotnet/api/microsoft.extensions.logging.tracesourcefactoryextensions) permitem que você passe um comutador de fonte e um ouvinte de rastreamento.
 
@@ -544,7 +620,7 @@ O exemplo a seguir configura um provedor `TraceSource` que registra mensagens `W
 
 O pacote de provedor [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) grava logs em arquivos de texto no sistema de arquivos de um aplicativo do Serviço de Aplicativo do Azure e no [armazenamento de blobs](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage) em uma conta de Armazenamento do Azure. O provedor está disponível somente para aplicativos que se destinam ao ASP.NET Core 1.1 ou superior.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 Se o destino for o .NET Core, não instale o pacote de provedor ou chame explicitamente [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics). O provedor fica automaticamente disponível para o aplicativo quando o aplicativo for implantado no Serviço de Aplicativo do Azure.
 
@@ -554,7 +630,9 @@ Se o destino for o .NET Framework, adicione o pacote de provedor ao projeto e in
 logging.AddAzureWebAppDiagnostics();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ```csharp
 loggerFactory.AddAzureWebAppDiagnostics();
@@ -562,7 +640,7 @@ loggerFactory.AddAzureWebAppDiagnostics();
 
 Uma sobrecarga do [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) permite que você passe no [AzureAppServicesDiagnosticsSettings](/dotnet/api/microsoft.extensions.logging.azureappservices.azureappservicesdiagnosticssettings) com a qual você pode substituir as configurações padrão, como o modelo de saída de registro em log, o nome do blob e o limite do tamanho do arquivo. (O *modelo Output* é um modelo de mensagem que é aplicado a todos os logs, sobre aquele que você fornece ao chamar um método `ILogger`).
 
----
+::: moniker-end
 
 Ao implantar um aplicativo do Serviço de Aplicativo, o aplicativo respeitará as configurações na seção [Logs de Diagnóstico](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/#enablediag) da página **Serviço de Aplicativo** do Portal do Azure. Quando essas configurações são atualizadas, as alterações entram em vigor imediatamente sem a necessidade de uma reinicialização ou reimplantação do aplicativo.
 
