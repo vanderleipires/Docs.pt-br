@@ -7,16 +7,15 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.topic: article
-ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: 7a580c6c6236b375ea54ef4e9978fff6993d885a
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: fa010e795878b26c79dbe04ef0017373283c4269
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2018
-ms.locfileid: "29143183"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403006"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>Migrando aplicativos ASP.NET MVC para contêineres do Windows
 
@@ -97,7 +96,7 @@ Execute o comando de compilação do Docker para criar a imagem que executa seu 
 docker build -t mvcrandomanswers .
 ```
 
-Este comando criará a nova imagem usando as instruções em seu Dockerfile, nomear (-t marcação) a imagem como mvcrandomanswers. Isso pode incluir efetuar o pull da imagem base do [Hub do Docker](http://hub.docker.com) e, em seguida, adicionar seu aplicativo àquela imagem.
+Esse comando criará a nova imagem usando as instruções no seu Dockerfile de nomenclatura (-t marcação) a imagem como mvcrandomanswers. Isso pode incluir efetuar o pull da imagem base do [Hub do Docker](http://hub.docker.com) e, em seguida, adicionar seu aplicativo àquela imagem.
 
 Depois que o comando for concluído, você poderá executar o comando `docker images` para ver informações sobre a nova imagem:
 
@@ -118,7 +117,7 @@ docker run -d --name randomanswers mvcrandomanswers
 
 O argumento `-d` diz ao Docker para iniciar a imagem no modo desconectado. Isso significa que a imagem do Docker é executada desconectada do shell atual.
 
-Em muitos exemplos de docker, você poderá ver -p para mapear as portas do contêiner e o host. A imagem padrão do aspnet já tiver configurado o contêiner para escutar na porta 80 e expô-lo. 
+Em muitos exemplos de docker, você poderá ver -p para mapear as portas de contêiner e o host. A imagem padrão do aspnet já tiver configurado o contêiner para escutar na porta 80 e expô-lo. 
 
 O `--name randomanswers` fornece um nome para o contêiner em execução. Você pode usar esse nome em vez da ID do contêiner na maioria dos comandos.
 
@@ -127,7 +126,7 @@ O `mvcrandomanswers` é o nome da imagem a ser iniciada.
 ## <a name="verify-in-the-browser"></a>Verificar no navegador
 
 > [!NOTE]
-> Com a versão atual do contêiner do Windows, não é possível navegar para `http://localhost`.
+> Com a versão atual do contêiner do Windows, é possível navegar até `http://localhost`.
 > Esse é um comportamento conhecido no WinNAT e ele será resolvido no futuro. Até que isso seja resolvido, você precisará usar o endereço IP do contêiner.
 
 Após o contêiner ser iniciado, localize seu endereço IP para que possa se conectar ao seu contêiner em execução de um navegador:
@@ -137,7 +136,7 @@ docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" randomanswers
 172.31.194.61
 ```
 
-Conecte-se ao contêiner em execução usando o endereço IPv4, `http://172.31.194.61` no exemplo mostrado. Digite a URL no navegador e você deverá ver o site em execução.
+Conectar-se ao contêiner em execução usando o endereço IPv4, `http://172.31.194.61` no exemplo mostrado. Digite a URL no navegador e você deverá ver o site em execução.
 
 > [!NOTE]
 > Alguns softwares de proxy ou VPN podem impedir que você navegue para seu site.
