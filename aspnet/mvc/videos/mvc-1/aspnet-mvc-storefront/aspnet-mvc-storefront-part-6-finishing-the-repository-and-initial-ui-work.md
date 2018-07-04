@@ -1,6 +1,6 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work
-title: 'O ASP.NET MVC vitrine parte 6: Concluir o repositório e o trabalho de interface do usuário inicial | Microsoft Docs'
+title: 'ASP.NET MVC vitrine parte 6: Concluir o repositório e trabalho de interface do usuário inicial | Microsoft Docs'
 author: robconery
 description: Rob fala com Jon Galloway sobre estratégias CSS e começar a trabalhar no Front-end do aplicativo.
 ms.author: aspnetcontent
@@ -9,19 +9,18 @@ ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: 40c12998-f699-409f-acdc-59699a0e5514
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work
 msc.type: video
-ms.openlocfilehash: 49521cb66a65e826cd6e4db337c22f01ce1cc467
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b7787c4d08ddf87ea5d5beeb671442d2a74ceeb2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30872101"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37379927"
 ---
-<a name="aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work"></a>O ASP.NET MVC vitrine parte 6: Concluir o repositório e o trabalho inicial de interface de usuário
+<a name="aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work"></a>ASP.NET MVC vitrine parte 6: Concluir o repositório e trabalho inicial da interface do usuário
 ====================
-por [roubar Conery](https://github.com/robconery)
+por [Rob Conery](https://github.com/robconery)
 
 Rob fala com Jon Galloway sobre estratégias CSS e começar a trabalhar no Front-end do aplicativo.
 
