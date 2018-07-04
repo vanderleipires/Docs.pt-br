@@ -1,33 +1,32 @@
 ---
 uid: web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-1-selecting-data
-title: 'ASP.NET vNext vídeos: modelo de associação parte 1: selecionar dados | Microsoft Docs'
+title: 'Vídeos do ASP.NET vNext: modelo Binding Part 1: selecionar dados | Microsoft Docs'
 author: DamianEdwards
-description: Neste vídeo, Damian Edwards começa uma olhada na associação de modelo demonstrando a seleção de dados.
+description: Neste vídeo, Damian Edwards começa uma olhada na associação de modelo que demonstra a seleção de dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/12/2011
 ms.topic: article
 ms.assetid: 744d229b-a109-4692-a58d-1b2445bee54e
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-1-selecting-data
 msc.type: video
-ms.openlocfilehash: d4bd7f2dd9cacff86a991d51f4941f86489c0448
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 06d29667995c713c8d250cc716f890906966093c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885619"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376155"
 ---
-<a name="aspnet-vnext-videos-model-binding-part-1---selecting-data"></a><span data-ttu-id="fbeff-103">ASP.NET vNext vídeos: modelo de associação parte 1: selecionar dados</span><span class="sxs-lookup"><span data-stu-id="fbeff-103">ASP.NET vNext Videos: Model Binding Part 1 - Selecting Data</span></span>
+<a name="aspnet-vnext-videos-model-binding-part-1---selecting-data"></a><span data-ttu-id="ee436-103">Vídeos do ASP.NET vNext: modelo Binding Part 1: selecionar dados</span><span class="sxs-lookup"><span data-stu-id="ee436-103">ASP.NET vNext Videos: Model Binding Part 1 - Selecting Data</span></span>
 ====================
-<span data-ttu-id="fbeff-104">por [Edwards Damian](https://github.com/DamianEdwards)</span><span class="sxs-lookup"><span data-stu-id="fbeff-104">by [Damian Edwards](https://github.com/DamianEdwards)</span></span>
+<span data-ttu-id="ee436-104">por [Damian Edwards](https://github.com/DamianEdwards)</span><span class="sxs-lookup"><span data-stu-id="ee436-104">by [Damian Edwards](https://github.com/DamianEdwards)</span></span>
 
-<span data-ttu-id="fbeff-105">Neste vídeo, Damian Edwards começa uma olhada na associação de modelo demonstrando a seleção de dados.</span><span class="sxs-lookup"><span data-stu-id="fbeff-105">In this video, Damian Edwards begins a look at model binding by demonstrating data selection.</span></span>
+<span data-ttu-id="ee436-105">Neste vídeo, Damian Edwards começa uma olhada na associação de modelo que demonstra a seleção de dados.</span><span class="sxs-lookup"><span data-stu-id="ee436-105">In this video, Damian Edwards begins a look at model binding by demonstrating data selection.</span></span>
 
-[<span data-ttu-id="fbeff-106">&#9654;Assista ao vídeo (minutos 1)</span><span class="sxs-lookup"><span data-stu-id="fbeff-106">&#9654; Watch video (1 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-1-selecting-data)
+[<span data-ttu-id="ee436-106">&#9654;Assista ao vídeo (1 minutos)</span><span class="sxs-lookup"><span data-stu-id="ee436-106">&#9654; Watch video (1 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-1-selecting-data)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="fbeff-107">[Anterior](aspnet-vnext-videos-strongly-typed-data-controls.md)
-> [Próximo](aspnet-vnext-videos-model-binding-part-2-filtering.md)</span><span class="sxs-lookup"><span data-stu-id="fbeff-107">[Previous](aspnet-vnext-videos-strongly-typed-data-controls.md)
+> <span data-ttu-id="ee436-107">[Anterior](aspnet-vnext-videos-strongly-typed-data-controls.md)
+> [Próximo](aspnet-vnext-videos-model-binding-part-2-filtering.md)</span><span class="sxs-lookup"><span data-stu-id="ee436-107">[Previous](aspnet-vnext-videos-strongly-typed-data-controls.md)
 [Next](aspnet-vnext-videos-model-binding-part-2-filtering.md)</span></span>
