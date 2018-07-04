@@ -1,36 +1,35 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-cs
-title: Manipulação de propriedades de sombra no código do cliente (c#) | Microsoft Docs
+title: Manipulando propriedades de DropShadow através de código do cliente (c#) | Microsoft Docs
 author: wenz
-description: Personalizando a Interface de edição do DataList.
+description: Personalizando a Interface de edição do DataList
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: c83ca3e6-c0bf-4158-a166-40c1ab0f33da
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 37a7784e1d42477e31938e1d15495993ac86fc56
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e3166b9da97a0f4097566b62ba52b6d672eab78f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870330"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377279"
 ---
-<a name="manipulating-dropshadow-properties-from-client-code-c"></a>Manipulação de propriedades de sombra no código do cliente (c#)
+<a name="manipulating-dropshadow-properties-from-client-code-c"></a>Manipulando propriedades de DropShadow através de código do cliente (c#)
 ====================
 por [Christian Wenz](https://github.com/wenz)
 
 [Baixar o código](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow2.cs.zip) ou [baixar PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow2CS.pdf)
 
-> O controle de sombra no AJAX Control Toolkit estende um painel com uma sombra. Propriedades desse extensor também podem ser alteradas usando o código de JavaScript do cliente.
+> O controle de DropShadow no AJAX Control Toolkit, um painel com uma sombra. Propriedades desse extensor também podem ser alteradas usando o código de JavaScript do cliente.
 
 
 ## <a name="overview"></a>Visão geral
 
-O controle de sombra no AJAX Control Toolkit estende um painel com uma sombra. Propriedades desse extensor também podem ser alteradas usando o código de JavaScript do cliente.
+O controle de DropShadow no AJAX Control Toolkit, um painel com uma sombra. Propriedades desse extensor também podem ser alteradas usando o código de JavaScript do cliente.
 
 ## <a name="steps"></a>Etapas
 
@@ -38,7 +37,7 @@ O código começa com um painel que contém algumas linhas de texto:
 
 [!code-aspx[Main](manipulating-dropshadow-properties-from-client-code-cs/samples/sample1.aspx)]
 
-A classe CSS associada fornece o painel de uma cor de plano de fundo adequado:
+A classe CSS associada fornece o painel de uma cor de fundo interessante:
 
 [!code-css[Main](manipulating-dropshadow-properties-from-client-code-cs/samples/sample2.css)]
 
@@ -46,15 +45,15 @@ O `DropShadowExtender` é adicionado ao estender o painel com um efeito de sombr
 
 [!code-aspx[Main](manipulating-dropshadow-properties-from-client-code-cs/samples/sample3.aspx)]
 
-Em seguida, o ASP.NET AJAX `ScriptManager` controle permite que o Kit de ferramentas de controle funcionar:
+Em seguida, o ASP.NET AJAX `ScriptManager` controle permite que o Kit de ferramentas trabalhar:
 
 [!code-aspx[Main](manipulating-dropshadow-properties-from-client-code-cs/samples/sample4.aspx)]
 
-Outro painel contém dois links de JavaScript para definir a opacidade da sombra: o link menos diminui a opacidade da sombra, o link mais aumenta.
+Outro painel contém dois links de JavaScript para definir a opacidade da sombra: o link do sinal de subtração diminui a opacidade da sombra, o link de adição aumenta a ele.
 
 [!code-aspx[Main](manipulating-dropshadow-properties-from-client-code-cs/samples/sample5.aspx)]
 
-A função JavaScript `changeOpacity()` , em seguida, deve saber o `DropShadowExtender` controle na página. ASP.NET AJAX define o `$find()` método exatamente dessa tarefa. Em seguida, o `get_Opacity()` método recupera a opacidade atual, o `set_Opacity()` método define. O código JavaScript coloca o valor de opacidade atual no `<label>` elemento:
+A função JavaScript `changeOpacity()` , em seguida, deve primeiro localizar o `DropShadowExtender` controle na página. ASP.NET AJAX define o `$find()` método para exatamente essa tarefa. Em seguida, o `get_Opacity()` método recupera a opacidade atual, o `set_Opacity()` método define a ele. O código JavaScript, em seguida, coloca o valor de opacidade atual no `<label>` elemento:
 
 [!code-html[Main](manipulating-dropshadow-properties-from-client-code-cs/samples/sample6.html)]
 

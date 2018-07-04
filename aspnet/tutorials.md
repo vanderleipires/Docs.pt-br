@@ -2,27 +2,26 @@
 uid: aspnet/tutorials
 title: Tutoriais do ASP.NET | Microsoft Docs
 author: tdykstra
-description: Uma lista de guias passo a passo para o desenvolvimento de aplicativos ASP.NET.
+description: Uma lista de guias passo a passo para desenvolver aplicativos ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.technology: ''
-ms.prod: .net-framework
-ms.openlocfilehash: 704285fe06e2ece0f6afdc117aedf98f6155ef87
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7929a06fd7857237c2529aca34d36564c2a89f82
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28036759"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389606"
 ---
 # <a name="aspnet-tutorials"></a>Tutoriais do ASP.NET
 
-Os seguintes guias passo a passo para o desenvolvimento de aplicativos ASP.NET estão disponíveis.
+Os seguintes guias passo a passo para desenvolvimento de aplicativos do ASP.NET estão disponíveis.
 
 > [!NOTE]
-> Tutoriais do ASP.NET Core está procurando?  Encontrá-las [aqui](https://docs.microsoft.com/aspnet/core/tutorials/).
+> Tutoriais do ASP.NET Core está procurando?  Encontrá-los [aqui](https://docs.microsoft.com/aspnet/core/tutorials/).
 
 ## <a name="web-forms"></a>Web Forms
 
@@ -48,7 +47,7 @@ Os seguintes guias passo a passo para o desenvolvimento de aplicativos ASP.NET e
 
 ## <a name="mvc"></a>MVC
 
-* [Introdução ao ASP.NET MVC 5](mvc/overview/getting-started/introduction/index.md)
+* [Introdução ao ASP.NET MVC 5 ](mvc/overview/getting-started/introduction/index.md)
 * [Introdução ao EF 6 usando o MVC 5](mvc/overview/getting-started/getting-started-with-ef-using-mvc/index.md)
 * [Database First do EF com o ASP.NET MVC](mvc/overview/getting-started/database-first-development/index.md)
 * [Uso do Inspetor de Página no ASP.NET MVC](mvc/overview/views/using-page-inspector-in-aspnet-mvc.md)

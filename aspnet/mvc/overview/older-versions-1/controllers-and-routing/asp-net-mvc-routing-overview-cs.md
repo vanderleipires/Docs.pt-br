@@ -1,54 +1,53 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
-title: Visão geral roteamento de ASP.NET MVC (c#) | Microsoft Docs
+title: Visão geral o roteamento do ASP.NET MVC (c#) | Microsoft Docs
 author: StephenWalther
-description: Neste tutorial, Stephen Walther mostra como a estrutura ASP.NET MVC mapeia solicitações do navegador para ações do controlador.
+description: Neste tutorial, Stephen Walther mostra como o ASP.NET MVC framework mapeia as solicitações do navegador para ações do controlador.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
 ms.topic: article
 ms.assetid: 5b39d2d5-4bf9-4d04-94c7-81b84dfeeb31
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa565d2ef253539844f5224df00bdcdc047bb3f9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ff6d7a1540ee7e1de625f692bb5da2c28fdc57f7
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868588"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37388773"
 ---
-<a name="aspnet-mvc-routing-overview-c"></a>Visão geral roteamento de ASP.NET MVC (c#)
+<a name="aspnet-mvc-routing-overview-c"></a>Visão geral o roteamento do ASP.NET MVC (c#)
 ====================
 por [Stephen Walther](https://github.com/StephenWalther)
 
-> Neste tutorial, Stephen Walther mostra como a estrutura ASP.NET MVC mapeia solicitações do navegador para ações do controlador.
+> Neste tutorial, Stephen Walther mostra como o ASP.NET MVC framework mapeia as solicitações do navegador para ações do controlador.
 
 
-Neste tutorial, você conheça um recurso importante de todos os aplicativos ASP.NET MVC chamado *roteamento ASP.NET*. O módulo de roteamento do ASP.NET é responsável por mapeamento de solicitações do navegador para determinadas ações do controlador MVC. No final deste tutorial, você entenderá como a tabela de rotas padrão mapeia solicitações para ações do controlador.
+Neste tutorial, você será apresentado a um recurso importante de todos os aplicativos ASP.NET MVC chamado *roteamento do ASP.NET*. O módulo de roteamento do ASP.NET é responsável por mapear solicitações recebidas do navegador para determinadas ações do controlador MVC. No final deste tutorial, você entenderá como a tabela de rota padrão mapeia solicitações para ações do controlador.
 
 ## <a name="using-the-default-route-table"></a>Usando a tabela de rota padrão
 
-Quando você cria um novo aplicativo ASP.NET MVC, o aplicativo já está configurado para usar o roteamento do ASP.NET. Roteamento ASP.NET está configurado em dois locais.
+Quando você cria um novo aplicativo ASP.NET MVC, o aplicativo já está configurado para usar o roteamento do ASP.NET. O roteamento do ASP.NET está configurado em dois locais.
 
-Primeiro, o roteamento ASP.NET está habilitado no arquivo de configuração do aplicativo Web (arquivo Web. config). Há quatro seções no arquivo de configuração que são relevantes para roteamento: seção system.web.httpModules, seção system.web.httpHandlers, seção system.webserver.modules e a seção system.webserver.handlers. Tenha cuidado para não excluir essas seções porque sem essas seções roteamento deixará de funcionar.
+Primeiro, o roteamento do ASP.NET está habilitado no arquivo de configuração do seu aplicativo Web (arquivo Web. config). Há quatro seções no arquivo de configuração que são relevantes para roteamento: seção system.web.httpModules, a seção system.web.httpHandlers, a seção system.webserver.modules e a seção system.webserver.handlers. Tenha cuidado para não excluir essas seções, porque sem essas seções roteamento deixarão de funcionar.
 
-Segundo e mais importante, uma tabela de rota é criada no arquivo global asax do aplicativo. O arquivo global. asax é um arquivo especial que contém manipuladores de eventos para eventos de ciclo de vida do aplicativo ASP.NET. A tabela de rotas é criada durante o início do aplicativo do evento.
+Em segundo lugar e mais importante, uma tabela de rotas é criada no arquivo global asax do aplicativo. O arquivo global asax é um arquivo especial que contém os manipuladores de eventos para eventos de ciclo de vida do aplicativo ASP.NET. A tabela de rotas é criada durante o evento de início do aplicativo.
 
 O arquivo na listagem 1 contém o arquivo global asax padrão para um aplicativo ASP.NET MVC.
 
-**Listando 1 - asax**
+**Listagem 1 - Global.asax.cs**
 
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample1.cs)]
 
-Quando um aplicativo MVC iniciado pela primeira vez, o aplicativo\_método Start () é chamado. Esse método, por sua vez, chama o método RegisterRoutes(). O método RegisterRoutes() cria a tabela de rotas.
+Quando um aplicativo MVC é iniciado, o aplicativo\_método Start () é chamado. Esse método, por sua vez, chama o método de RegisterRoutes(). O método RegisterRoutes() cria a tabela de rotas.
 
-A tabela de rota padrão contém uma única rota (denominada Default). A rota padrão mapeia o primeiro segmento de URL para um nome de controlador, o segundo segmento de URL para uma ação do controlador e o terceiro segmento para um parâmetro denominado **id**.
+A tabela de rotas padrão contém uma única rota (denominada Default). A rota padrão mapeia o primeiro segmento de URL para um nome de controlador, o segundo segmento de URL para uma ação do controlador e o terceiro segmento para um parâmetro denominado **id**.
 
-Imagine que você digite a seguinte URL na barra de endereços do navegador da web:
+Imagine que você insira a seguinte URL na barra de endereços do navegador da web:
 
-/Home/Index/3
+Página inicial/3/índice
 
 A rota padrão mapeia essa URL para os seguintes parâmetros:
 
@@ -62,39 +61,39 @@ Quando você solicita 3/índice/URL /Home, o código a seguir é executado:
 
 HomeController.Index(3)
 
-A rota padrão inclui padrões para todos os três parâmetros. Se você não fornecer um controlador, em seguida, o parâmetro de controlador padrão para o valor **início**. Se você não fornecer uma ação, o parâmetro de ação padrão para o valor **índice**. Por fim, se você não fornecer uma id, o parâmetro de id padrão é uma cadeia de caracteres vazia.
+A rota padrão inclui os padrões para todos os três parâmetros. Se você não fornecer um controlador, em seguida, o parâmetro de controlador padrão para o valor **Home**. Se você não fornecer uma ação, o parâmetro de ação padrão para o valor **índice**. Por fim, se você não fornecer uma id, o parâmetro id padrão é uma cadeia de caracteres vazia.
 
-Vamos examinar alguns exemplos de como a rota padrão mapeia URLs para ações do controlador. Imagine que você digite a seguinte URL na barra de endereços do navegador:
+Vamos examinar alguns exemplos de como a rota padrão mapeia as URLs para ações do controlador. Imagine que você insira a seguinte URL na barra de endereços do navegador:
 
-/ Início
+/ Home
 
-Devido os padrões de parâmetro de rota padrão, inserir esta URL fará com que o método Index () da classe HomeController na listagem 2 seja chamado.
+Por causa dos padrões de parâmetro de rota padrão, inserir esta URL fará com que o método Index () da classe HomeController na listagem 2 a ser chamado.
 
-**A listagem 2 - HomeController**
+**Listagem 2 - HomeController.cs**
 
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample2.cs)]
 
 Na listagem 2, a classe HomeController inclui um método chamado Index () que aceita um parâmetro único chamado ID. A URL /Home faz com que o método Index () seja chamado com uma cadeia de caracteres vazia como o valor do parâmetro Id.
 
-Por causa da forma a estrutura MVC invoca ações do controlador, o URL /Home também corresponde o método Index () da classe HomeController na listagem 3.
+Por causa da maneira que a estrutura do MVC invoca as ações do controlador, /Home a URL também corresponde o método Index () da classe HomeController na listagem 3.
 
-**A listagem 3 - HomeController (ação de índice sem nenhum parâmetro)**
+**Listagem 3 - HomeController.cs (ação de índice sem nenhum parâmetro)**
 
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample3.cs)]
 
-O método Index () na listagem 3 não aceita todos os parâmetros. A URL /Home fará com que esse método Index () seja chamado. 3/índice/URL /Home também chama esse método (a Id é ignorada).
+O método Index () na listagem 3 não aceita parâmetros. O /Home URL fará com que esse método Index () seja chamado. 3/índice/URL /Home também invoca esse método (a Id é ignorada).
 
-A URL /Home também corresponde o método Index () da classe HomeController na listagem 4.
+O /Home URL também corresponde o método Index () da classe HomeController na listagem 4.
 
-**A listagem 4 - HomeController (ação de índice com parâmetro anulável)**
+**Listagem 4 - HomeController.cs (ação de índice com o parâmetro anulável)**
 
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample4.cs)]
 
-Na listagem 4, o método Index () tem um parâmetro de número inteiro. Como o parâmetro é um parâmetro nulo (pode ter o valor Null), o Index () pode ser chamado sem gerar um erro.
+Na listagem 4, o método Index () tem um parâmetro de número inteiro. Como o parâmetro é um parâmetro anulável (pode ter o valor Null), o Index () pode ser chamado sem gerar um erro.
 
-Por fim, chamar o método Index () na listagem 5 com a URL /Home gera uma exceção desde o parâmetro Id *não* um parâmetro nulo. Se você tentar chamar o método Index (), em seguida, você obterá o erro exibido na Figura 1.
+Por fim, invocando o método Index () na listagem 5 com a URL /Home faz com que uma exceção desde o parâmetro de Id *não é* um parâmetro que permite valor nulo. Se você tentar invocar o método Index (), em seguida, você obterá o erro exibido na Figura 1.
 
-**Listagem 5 - HomeController (ação de índice com o parâmetro Id)**
+**Listagem 5 - HomeController.cs (ação de índice com o parâmetro de Id)**
 
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample5.cs)]
 
@@ -108,7 +107,7 @@ O URL /Home/índice/3, por outro lado, funciona muito bem com a ação de contro
 
 ## <a name="summary"></a>Resumo
 
-O objetivo deste tutorial era fornecerá uma breve introdução ao roteamento ASP.NET. Examinamos a tabela de rota padrão que você obtém com um novo aplicativo ASP.NET MVC. Você aprendeu como a rota padrão mapeia URLs para ações do controlador.
+O objetivo deste tutorial era fornecer uma breve introdução ao roteamento ASP.NET. Examinamos a tabela de rotas padrão que você obtém com um novo aplicativo ASP.NET MVC. Você aprendeu como a rota padrão mapeia as URLs para ações do controlador.
 
 > [!div class="step-by-step"]
 > [Avançar](understanding-action-filters-cs.md)

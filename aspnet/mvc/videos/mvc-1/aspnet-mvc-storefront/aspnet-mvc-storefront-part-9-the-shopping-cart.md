@@ -1,31 +1,30 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-9-the-shopping-cart
-title: 'O ASP.NET MVC vitrine parte 9: O carrinho de compras | Microsoft Docs'
+title: 'ASP.NET MVC vitrine parte 9: Carrinho de compras | Microsoft Docs'
 author: robconery
-description: Rob Conery cooks um sistema de carrinho simples, portanto ele pode ter picos.
+description: Rob Conery cooks um sistema simples de carrinho, portanto, ele pode ter picos.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: 47d8a6e3-21de-4ac9-be5a-9f755c596529
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-9-the-shopping-cart
 msc.type: video
-ms.openlocfilehash: 905de3c5d44b18f2e24b93fc0027a27e7cd60ac5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3f4dfdef2ba0b4b6eca4cb30fe2f645d96c8a0d7
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871864"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389354"
 ---
-<a name="aspnet-mvc-storefront-part-9-the-shopping-cart"></a>O ASP.NET MVC vitrine parte 9: O carrinho de compras
+<a name="aspnet-mvc-storefront-part-9-the-shopping-cart"></a>ASP.NET MVC vitrine parte 9: Carrinho de compras
 ====================
-por [roubar Conery](https://github.com/robconery)
+por [Rob Conery](https://github.com/robconery)
 
-Rob Conery cooks um sistema de carrinho simples, portanto ele pode ter picos.
+Rob Conery cooks um sistema simples de carrinho, portanto, ele pode ter picos.
 
-[&#9654;Assista ao vídeo (minutos 28)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-9-the-shopping-cart)
+[&#9654;Assista ao vídeo (28 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-9-the-shopping-cart)
 
 > [!div class="step-by-step"]
 > [Anterior](aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete.md)
