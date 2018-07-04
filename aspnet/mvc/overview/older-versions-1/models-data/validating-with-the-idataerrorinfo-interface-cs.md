@@ -1,32 +1,31 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
-title: Validando com a Interface IDataErrorInfo (c#) | Microsoft Docs
+title: Validação com a Interface IDataErrorInfo (c#) | Microsoft Docs
 author: StephenWalther
-description: Stephen Walther mostra como exibir mensagens de erro de validação personalizado implementando a interface IDataErrorInfo em uma classe de modelo.
+description: Stephen Walther mostra como exibir mensagens de erro de validação personalizada, Implementando a interface IDataErrorInfo em uma classe de modelo.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
 ms.topic: article
 ms.assetid: 4733b9f1-9999-48fb-8b73-6038fbcc5ecb
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b5028b2e07c4144efa59824885ce96cd8b037dff
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0ed86c5467d6f55f83fa84144c374b3c63539174
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870512"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376585"
 ---
-<a name="validating-with-the-idataerrorinfo-interface-c"></a>Validando com a Interface IDataErrorInfo (c#)
+<a name="validating-with-the-idataerrorinfo-interface-c"></a>Validação com a Interface IDataErrorInfo (c#)
 ====================
 por [Stephen Walther](https://github.com/StephenWalther)
 
-> Stephen Walther mostra como exibir mensagens de erro de validação personalizado implementando a interface IDataErrorInfo em uma classe de modelo.
+> Stephen Walther mostra como exibir mensagens de erro de validação personalizada, Implementando a interface IDataErrorInfo em uma classe de modelo.
 
 
-O objetivo deste tutorial é explicar um método para executar a validação em um aplicativo ASP.NET MVC. Você aprenderá a impedir que alguém enviar um formulário HTML sem fornecer valores para os campos obrigatórios do formulário. Neste tutorial, você aprenderá a executar a validação usando a interface IErrorDataInfo.
+O objetivo deste tutorial é explicar uma abordagem para executar a validação em um aplicativo ASP.NET MVC. Você aprenderá a evitar que alguém envie um formulário HTML sem fornecer valores para campos de formulário necessária. Neste tutorial, você aprenderá a executar a validação usando a interface IErrorDataInfo.
 
 ## <a name="assumptions"></a>Suposições
 
@@ -43,7 +42,7 @@ Neste tutorial, usarei o banco de dados MoviesDB e a tabela de banco de dados de
 | DateReleased | DateTime | False |
 
 
-Neste tutorial, posso usar o Microsoft Entity Framework para gerar classes de modelo meu banco de dados. A classe de filme gerada pelo Entity Framework é exibida na Figura 1.
+Neste tutorial, posso usar o Microsoft Entity Framework para gerar minhas classes de modelo de banco de dados. A classe Movie gerada pelo Entity Framework é exibida na Figura 1.
 
 
 [![A entidade de filme](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
@@ -53,20 +52,20 @@ Neste tutorial, posso usar o Microsoft Entity Framework para gerar classes de mo
 
 > [!NOTE] 
 > 
-> Para saber mais sobre como usar o Entity Framework para gerar as classes de modelo de banco de dados, consulte o tutorial Criando Classes de modelo com o Entity Framework.
+> Para saber mais sobre como usar o Entity Framework para gerar classes de modelo de banco de dados, consulte a que minha tutorial o direito de criar Classes de modelo com o Entity Framework.
 
 
 ## <a name="the-controller-class"></a>A classe do controlador
 
-Podemos usar o controlador Home filmes de lista e criar novos filmes. O código para essa classe está contido na listagem 1.
+Usamos o controlador Home filmes de lista e criar novos filmes. O código para essa classe está contido na listagem 1.
 
-**Listando 1 - Controllers\HomeController.cs**
+**Listagem 1 - Controllers\HomeController.cs**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample1.cs)]
 
-A classe do controlador Home na listagem 1 contém duas ações Create (). A primeira ação exibe o formulário HTML para criar um novo filme. A segunda ação Create () executa a inserção real do novo filme no banco de dados. A segunda ação Create () é chamada quando o formulário exibido, a primeira ação Create () é enviado ao servidor.
+A classe de controlador Home na listagem 1 contém duas ações Create (). A primeira ação exibe o formulário HTML para a criação de um novo filme. A segunda ação Create () executa a inserção real do novo filme no banco de dados. A segunda ação Create () é invocada quando o formulário exibido pela primeira ação Create () é enviado ao servidor.
 
-Observe que a segunda ação Create () contém linhas de código a seguir:
+Observe que a segunda ação Create () contém as seguintes linhas de código:
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample2.cs)]
 
@@ -74,7 +73,7 @@ A propriedade IsValid retorna false quando há um erro de validação. Nesse cas
 
 ## <a name="creating-a-partial-class"></a>Criar uma classe parcial
 
-A classe de filme é gerada pelo Entity Framework. Você pode ver o código para a classe de filme, se você expandir o arquivo MoviesDBModel.edmx na janela do Gerenciador de soluções e abra o arquivo MoviesDBModel.Designer.cs no Editor de código (consulte a Figura 2).
+A classe de filme é gerada pelo Entity Framework. Você pode ver o código para a classe de filme, se você expandir o arquivo MoviesDBModel.edmx na janela do Gerenciador de soluções e abra o arquivo de MoviesDBModel.Designer.cs no Editor de códigos (veja a Figura 2).
 
 
 [![O código para a entidade de filme](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
@@ -84,17 +83,17 @@ A classe de filme é gerada pelo Entity Framework. Você pode ver o código para
 
 A classe de filme é uma classe parcial. Isso significa que podemos adicionar outra classe parcial com o mesmo nome para estender a funcionalidade da classe filme. Vamos adicionar nossa lógica de validação para a nova classe parcial.
 
-Adicione a classe na lista 2 para a pasta de modelos.
+Adicione a classe na listagem 2 para a pasta de modelos.
 
-**A listagem 2 - Models\Movie.cs**
+**Listagem 2 - Models\Movie.cs**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample3.cs)]
 
-Observe que a classe na lista 2 inclui a *parcial* modificador. Quaisquer métodos ou propriedades que você adicionar a essa classe se tornam parte da classe de filme gerado pelo Entity Framework.
+Observe que a classe na listagem 2 inclui o *parcial* modificador. Todos os métodos ou propriedades que você adiciona a essa classe se tornam parte da classe Movie gerada pelo Entity Framework.
 
-## <a name="adding-onchanging-and-onchanged-partial-methods"></a>Adicionando OnChanging e métodos OnChanged Partial
+## <a name="adding-onchanging-and-onchanged-partial-methods"></a>Adicionando OnChanging e métodos de alguns OnChanged parcial
 
-Quando o Entity Framework gera uma classe de entidade, o Entity Framework adiciona métodos parciais para a classe automaticamente. O Entity Framework gera OnChanging e OnChanged métodos parciais que correspondem a cada propriedade da classe.
+Quando o Entity Framework gera uma classe de entidade, o Entity Framework adiciona métodos parciais para a classe automaticamente. O Entity Framework gera OnChanging e alguns OnChanged métodos parciais que correspondem a cada propriedade da classe.
 
 No caso da classe de filme, o Entity Framework cria os seguintes métodos:
 
@@ -107,48 +106,48 @@ No caso da classe de filme, o Entity Framework cria os seguintes métodos:
 - OnDateReleasedChanging
 - OnDateReleasedChanged
 
-O método OnChanging é chamado correto antes da propriedade correspondente é alterada. O método OnChanged é chamado direita depois que a propriedade é alterada.
+O método OnChanging é chamado correto antes da propriedade correspondente é alterada. O método de alguns OnChanged é chamado direita depois que a propriedade é alterada.
 
-Você pode tirar proveito desses métodos parciais para adicionar lógica de validação para a classe do filme. A classe de filme na listagem 3 de atualização verifica que as propriedades Title e diretor são atribuídas valores não vazios.
+Você pode tirar proveito desses métodos parciais para adicionar lógica de validação para a classe de filme. A classe de filme na listagem 3 de atualização verifica que as propriedades Title e diretor recebem valores não vazios.
 
 > [!NOTE] 
 > 
-> Um método parcial é um método definido em uma classe que não é necessário para implementar. Se você não implementa um método parcial, em seguida, o compilador remove a assinatura do método e todas as chamadas para o método para que estão sem qualquer custo de tempo de execução associado com o método parcial. No código de Editor do Visual Studio, você pode adicionar um método parcial, digitando a palavra-chave *parcial* seguido por um espaço para exibir uma lista de existe meio-termo para implementar.
+> Um método parcial é um método definido em uma classe que não são necessários para implementar. Se você não implementar um método parcial, em seguida, o compilador removerá a assinatura do método e todas as chamadas para o método, então, aqui estão sem custos de tempo de execução associados ao método parcial. No código de Editor do Visual Studio, você pode adicionar um método parcial, digitando a palavra-chave *parcial* seguido por um espaço para exibir uma lista de parciais para implementar.
 
 
-**A listagem 3 - Models\Movie.cs**
+**Listagem 3 - Models\Movie.cs**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample4.cs)]
 
-Por exemplo, se você tentar atribuir uma cadeia de caracteres vazia para a propriedade Title, em seguida, uma mensagem de erro é atribuída a um dicionário, chamado \_erros.
+Por exemplo, se você tentar atribuir uma cadeia de caracteres vazia para a propriedade de título, em seguida, uma mensagem de erro é atribuída a um dicionário chamado \_erros.
 
-Neste ponto, nada acontece mesmo quando você atribui uma cadeia de caracteres vazia para a propriedade de título e um erro será adicionado à particular \_campo de erros. É necessário implementar a interface IDataErrorInfo para expor esses erros de validação para a estrutura ASP.NET MVC.
+Neste ponto, nada realmente acontece quando você atribuir uma cadeia de caracteres vazia para a propriedade de título e um erro é adicionado ao particular \_campo de erros. É necessário implementar a interface IDataErrorInfo para expor esses erros de validação para a estrutura ASP.NET MVC.
 
 ## <a name="implementing-the-idataerrorinfo-interface"></a>Implementando a Interface IDataErrorInfo
 
-A interface IDataErrorInfo foi parte do .NET framework desde a primeira versão. Esta é uma interface muito simple:
+A interface IDataErrorInfo tem sido parte do .NET framework desde a primeira versão. Esta é uma interface muito simple:
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample5.cs)]
 
-Se uma classe implementa a interface IDataErrorInfo, a estrutura ASP.NET MVC usará essa interface ao criar uma instância da classe. Por exemplo, o controlador Home ação Create () aceita uma instância da classe filme:
+Se uma classe implementa a interface IDataErrorInfo, o ASP.NET MVC framework usará essa interface ao criar uma instância da classe. Por exemplo, o controlador Home ação Create () aceita uma instância da classe filme:
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample6.cs)]
 
-A estrutura ASP.NET MVC cria a instância do filme passado para a ação Create () usando um associador de modelo (o DefaultModelBinder). O associador de modelo é responsável pela criação de uma instância do objeto do filme ao associar os campos de formulário HTML para uma instância do objeto de filme.
+O ASP.NET MVC framework cria a instância do filme passado para a ação Create () usando um associador de modelo (o DefaultModelBinder). O associador de modelo é responsável por criar uma instância do objeto de filme, associando os campos de formulário HTML a uma instância do objeto de filme.
 
-O DefaultModelBinder detecta se uma classe implementa a interface IDataErrorInfo ou não. Se uma classe implementa essa interface o associador de modelo invoca o indexador IDataErrorInfo.this para cada propriedade da classe. Se o indexador retorna uma mensagem de erro o associador de modelo adiciona essa mensagem de erro para modelar o estado automaticamente.
+O DefaultModelBinder detecta se uma classe implementa a interface IDataErrorInfo. Se uma classe implementa essa interface, em seguida, o associador de modelo invoca o indexador IDataErrorInfo.this para cada propriedade da classe. Se o indexador retorna que uma mensagem de erro, em seguida, o associador de modelos adiciona essa mensagem de erro para modelar o estado automaticamente.
 
-O DefaultModelBinder também verifica a propriedade IDataErrorInfo.Error. Essa propriedade é serve para representar os erros de validação específicos de propriedade não associados à classe. Por exemplo, você talvez queira aplicar uma regra de validação que depende dos valores de várias propriedades da classe filme. Nesse caso, você retornará um erro de validação da propriedade de erro.
+O DefaultModelBinder também verifica a propriedade IDataErrorInfo.Error. Esta propriedade destina-se para representar erros de validação específica da propriedade não associados à classe. Por exemplo, você talvez queira aplicar uma regra de validação que depende dos valores de várias propriedades da classe filme. Nesse caso, retornaria um erro de validação da propriedade de erro.
 
-A classe de filme atualizada na listagem 4 implementa a interface IDataErrorInfo.
+A classe Movie atualizada na listagem 4 implementa a interface IDataErrorInfo.
 
-**A listagem 4 - Models\Movie.cs (implementa IDataErrorInfo)**
+**Listagem 4 - Models\Movie.cs (implementa IDataErrorInfo)**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample7.cs)]
 
-Na listagem 4, verifica a propriedade do indexador a \_coleção de erros para ver se ele contém uma chave que corresponde ao nome da propriedade é passado para o indexador. Se não houver nenhum erro de validação associado com a propriedade é retornada uma cadeia de caracteres vazia.
+Na listagem 4, verifica a propriedade do indexador a \_coleção de erros para ver se ele contém uma chave que corresponde ao nome da propriedade é passado para o indexador. Se não houver nenhum erro de validação associado à propriedade, uma cadeia de caracteres vazia será retornada.
 
-Você não precisa modificar o controlador inicial de qualquer forma ao usar a classe de filme modificada. A página exibida na Figura 3 ilustra o que acontece quando nenhum valor for inserido para os campos de formulário título ou Director.
+Você não precisa modificar o controlador inicial de qualquer forma ao usar a classe Movie modificada. A página exibida na Figura 3 ilustra o que acontece quando nenhum valor for inserido para os campos de título ou diretor do formulário.
 
 
 [![Criação automática de métodos de ação](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
@@ -156,11 +155,11 @@ Você não precisa modificar o controlador inicial de qualquer forma ao usar a c
 **Figura 03**: um formulário com valores ausentes ([clique para exibir a imagem em tamanho normal](validating-with-the-idataerrorinfo-interface-cs/_static/image6.png))
 
 
-Observe que o valor de DateReleased é validada automaticamente. Porque a propriedade DateReleased não aceita valores NULL, o DefaultModelBinder gera um erro de validação para esta propriedade automaticamente quando ele não tem um valor. Se você quiser modificar a mensagem de erro para a propriedade DateReleased, em seguida, você precisa criar um associador de modelo personalizado.
+Observe que o valor de DateReleased é validada automaticamente. Porque a propriedade DateReleased não aceita valores NULL, o DefaultModelBinder gera um erro de validação para essa propriedade automaticamente quando ele não tem um valor. Se você quiser modificar a mensagem de erro para a propriedade DateReleased, em seguida, você precisa criar um associador de modelo personalizado.
 
 ## <a name="summary"></a>Resumo
 
-Neste tutorial, você aprendeu a usar a interface IDataErrorInfo para gerar mensagens de erro de validação. Primeiro, criamos uma classe parcial de filme que estende a funcionalidade da classe filme parcial gerada pelo Entity Framework. Em seguida, adicionamos a lógica de validação para os filme classe OnTitleChanging() e OnDirectorChanging() métodos parciais. Por fim, implementamos a interface IDataErrorInfo para expor essas mensagens de validação para a estrutura ASP.NET MVC.
+Neste tutorial, você aprendeu como usar a interface IDataErrorInfo para gerar mensagens de erro de validação. Primeiro, criamos uma classe parcial do filme que estende a funcionalidade da classe parcial do filme gerada pelo Entity Framework. Em seguida, adicionamos lógica de validação ao filme métodos da classe OnTitleChanging() e OnDirectorChanging() parciais. Por fim, implementamos a interface IDataErrorInfo para expor essas mensagens de validação para a estrutura MVC do ASP.NET.
 
 > [!div class="step-by-step"]
 > [Anterior](performing-simple-validation-cs.md)

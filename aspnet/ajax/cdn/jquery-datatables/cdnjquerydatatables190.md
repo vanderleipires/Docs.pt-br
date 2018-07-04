@@ -9,19 +9,18 @@ ms.date: 07/23/2014
 ms.topic: article
 ms.assetid: 0f9c7b5e-bac0-40f1-b353-bd46e8759836
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/jquery-datatables/cdnjquerydatatables190
 msc.type: content
-ms.openlocfilehash: bacf8263805181a946bb26a421057d455d22ce86
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: 1bee97ca6c2d328486c4d9591731dff462d5365e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "30072909"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377132"
 ---
-<a name="jquery-datatables-190"></a>JQuery DataTables 1.9.0
+<a name="jquery-datatables-190"></a>jQuery DataTables 1.9.0
 ====================
-Os seguintes arquivos para o jQuery DataTables plug-ins são hospedados na CDN:
+Os seguintes arquivos para o plug-ins de DataTables do jQuery são hospedados na CDN:
 
 - https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.js
 - https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js

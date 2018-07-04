@@ -9,15 +9,14 @@ ms.date: 07/28/2014
 ms.topic: article
 ms.assetid: cced3924-251c-4c77-bef0-7992acbac106
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/cdnajax4
 msc.type: content
-ms.openlocfilehash: c312b2d721de7dc29576d0cd509eb4ec5791420e
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: cff084e82a820881bd9fa1544f12bf61f1e070d0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30070684"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364087"
 ---
 <a name="aspnet-web-forms-and-ajax-4"></a>Web Forms do ASP.NET e Ajax 4
 ====================
@@ -60,6 +59,6 @@ Os seguintes arquivos são hospedados na CDN:
 - https://ajax.aspnetcdn.com/ajax/4.0/1/WebParts.js
 - https://ajax.aspnetcdn.com/ajax/4.0/1/WebUIValidation.js
 
-Observação: Os scripts de globalização, como FR.js-fr, podem ser encontrados na seguinte pasta:
+Observação: Os scripts de globalização, como fr-FR.js, podem ser encontrados na seguinte pasta:
 
 - https://ajax.aspnetcdn.com/ajax/4.0/1/globalization/
