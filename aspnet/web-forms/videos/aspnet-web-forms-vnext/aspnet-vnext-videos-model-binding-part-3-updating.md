@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-3-updating
-title: 'ASP.NET vNext vídeos: modelo de associação parte 3 - atualizando | Microsoft Docs'
+title: 'Vídeos do ASP.NET vNext: associação de modelo parte 3 - atualizando | Microsoft Docs'
 author: DamianEdwards
-description: Neste vídeo, Damian Edwards conclui a análise de associação de modelo demonstrando como os dados são atualizados.
+description: Neste vídeo, Damian Edwards conclui a análise de associação de modelo que demonstra como os dados são atualizados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/22/2011
 ms.topic: article
 ms.assetid: 63c42590-08ac-44da-91f8-bd79489b9ecc
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-3-updating
 msc.type: video
-ms.openlocfilehash: c8b541ce7194077f669c52b6275607c4528ba97a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 881f09edc81d70a364d6c2800edb25180343d96b
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881250"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392033"
 ---
-<a name="aspnet-vnext-videos-model-binding-part-3---updating"></a>ASP.NET vNext vídeos: modelo de associação parte 3 - atualização
+<a name="aspnet-vnext-videos-model-binding-part-3---updating"></a>Vídeos do ASP.NET vNext: associação de modelo parte 3 - atualizar
 ====================
-por [Edwards Damian](https://github.com/DamianEdwards)
+por [Damian Edwards](https://github.com/DamianEdwards)
 
-Neste vídeo, Damian Edwards conclui a análise de associação de modelo demonstrando como os dados são atualizados.
+Neste vídeo, Damian Edwards conclui a análise de associação de modelo que demonstra como os dados são atualizados.
 
-[&#9654;Assista ao vídeo (minutos 1)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-3-updating)
+[&#9654;Assista ao vídeo (1 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-3-updating)
 
 > [!div class="step-by-step"]
 > [Anterior](aspnet-vnext-videos-model-binding-part-2-filtering.md)

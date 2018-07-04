@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mocking
-title: 'ASP.NET MVC vitrine parte 12: Simulação | Microsoft Docs'
+title: 'ASP.NET MVC parte vitrine 12: Simulação | Microsoft Docs'
 author: robconery
-description: Neste episódio implementei fictícias para que eu possa testar minha ação de autenticação para meu UserController.
+description: Neste episódio, eu implemento para que eu posso testar minha ação de autenticação para meu UserController de simulação.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
 ms.topic: article
 ms.assetid: 9a0f04b9-6a49-4e2c-9c12-03ab71ab2705
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mocking
 msc.type: video
-ms.openlocfilehash: f8f80eaf39aaa76f00d75f8bd45d9c6cb5ef4afb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6d9d6d149dd093b4233e1d98d970e77a4d5ad89a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879719"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377490"
 ---
-<a name="aspnet-mvc-storefront-part-12-mocking"></a>O ASP.NET MVC vitrine parte 12: fictícias
+<a name="aspnet-mvc-storefront-part-12-mocking"></a>Vitrine do ASP.NET MVC parte 12: simulação
 ====================
-por [roubar Conery](https://github.com/robconery)
+por [Rob Conery](https://github.com/robconery)
 
-Neste episódio implementei fictícias para que eu possa testar minha ação de autenticação para meu UserController.
+Neste episódio, eu implemento para que eu posso testar minha ação de autenticação para meu UserController de simulação.
 
 [&#9654;Assista ao vídeo (18 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-12-mocking)
 

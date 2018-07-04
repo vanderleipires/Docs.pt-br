@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application
-title: 'Como fazer: o uso HttpVerbs atributos em um aplicativo MVC? | Microsoft Docs'
+title: Como faço o uso HttpVerbs atributos em um aplicativo MVC? | Microsoft Docs
 author: rick-anderson
-description: Este Chris Pels vídeo mostra como usar os atributos de HttpVerbs para controlar o acesso a ações de MVC. Primeiro, um aplicativo de exemplo é criado com um padrão co...
+description: Neste vídeo, Chris Pels mostra como usar atributos HttpVerbs para controlar o acesso a ações do MVC. Primeiro, um aplicativo de exemplo é criado com um padrão co...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/30/2009
 ms.topic: article
 ms.assetid: d2488a1d-0f3f-4994-8fbe-4f59b8c9503e
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application
 msc.type: video
-ms.openlocfilehash: 42817e712db0489f277ac65250b9c0f102088c0a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7319c89e01b2316c37c9d4bfc101ce9dd0f7c2ee
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869524"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37379028"
 ---
-<a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a>Como fazer: o uso HttpVerbs atributos em um aplicativo MVC?
+<a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a>Como faço o uso HttpVerbs atributos em um aplicativo MVC?
 ====================
-por [Carlos Pels](https://twitter.com/chrispels)
+por [Chris Pels](https://twitter.com/chrispels)
 
-Este Chris Pels vídeo mostra como usar os atributos de HttpVerbs para controlar o acesso a ações de MVC. Primeiro, um aplicativo de exemplo é criado com um controlador padrão e o modo de exibição para editar as informações. Em seguida, uma segunda ação de índice é adicionada ao controlador que tem um atributo HttpPost que restringe a ser chamado somente quando é usado um HTTP POST. Como um acompanhamento, o atributo AcceptVerbs() é implementado como uma sintaxe alternativa para o Visual Studio 2008. Um uso do HttpVerbs para evitar o risco de segurança associado usando um HTTP GET para executar uma exclusão de um link, em seguida, é abordado.
+Neste vídeo, Chris Pels mostra como usar atributos HttpVerbs para controlar o acesso a ações do MVC. Primeiro, um aplicativo de exemplo é criado com um controlador padrão e o modo de exibição para editar as informações. Em seguida, uma segunda ação de índice é adicionada ao controlador que tem um atributo HttpPost que o restringe a que está sendo chamado somente quando um HTTP POST é usado. Como um acompanhamento, o atributo AcceptVerbs() é implementado como uma sintaxe alternativa para o Visual Studio 2008. Um uso do HttpVerbs para evitar o risco de segurança associado ao uso de um HTTP GET para executar uma exclusão de um link, em seguida, é discutido.
 
 [&#9654;Assista ao vídeo (16 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-httpverbs-attributes-in-an-mvc-application)
 

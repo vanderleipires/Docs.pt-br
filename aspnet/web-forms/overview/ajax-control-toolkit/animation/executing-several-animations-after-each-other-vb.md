@@ -1,40 +1,39 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-vb
-title: Executar várias animações após o outro (VB) | Microsoft Docs
+title: Executando várias animações após a outra (VB) | Microsoft Docs
 author: wenz
-description: O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Ele permite para executar severa...
+description: O controle de animação no ASP.NET AJAX Control Toolkit não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Ele permite para executar severa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 21ece509-79cc-4d9d-892d-7b6e9c4d3502
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 700946b9f32c5ed2dcb8586e7c0e84d2238ff103
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0d9e1ce0c156752ce0e97b91f253ced26360a721
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873752"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364747"
 ---
-<a name="executing-several-animations-after-each-other-vb"></a>Executar várias animações após o outro (VB)
+<a name="executing-several-animations-after-each-other-vb"></a>Executando várias animações após a outra (VB)
 ====================
 por [Christian Wenz](https://github.com/wenz)
 
 [Baixar o código](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.vb.zip) ou [baixar PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3VB.pdf)
 
-> O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Ele permite para executar várias animações um após o outro.
+> O controle de animação no ASP.NET AJAX Control Toolkit não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Ele permite para executar várias animações um após o outro.
 
 
 ## <a name="overview"></a>Visão geral
 
-O controle de animação no Kit de ferramentas de controle AJAX ASP.NET não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Ele permite para executar várias animações um após o outro.
+O controle de animação no ASP.NET AJAX Control Toolkit não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. Ele permite para executar várias animações um após o outro.
 
 ## <a name="steps"></a>Etapas
 
-Em primeiro lugar, incluem o `ScriptManager` na página; em seguida, a biblioteca ASP.NET AJAX é carregada, tornando possível usar o Kit de ferramentas:
+Em primeiro lugar, inclua o `ScriptManager` na página; em seguida, a biblioteca do AJAX ASP.NET é carregada, tornando possível usar o Kit de ferramentas de controle:
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample1.aspx)]
 
@@ -42,24 +41,24 @@ A animação será aplicada a um painel de texto que tem esta aparência:
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample2.aspx)]
 
-Na classe CSS associada para o painel, definir uma cor de plano de fundo adequado e também uma largura fixa para o painel:
+Na classe CSS associado para o painel, definir uma cor de fundo interessante e também definir uma largura fixa para o painel:
 
 [!code-css[Main](executing-several-animations-after-each-other-vb/samples/sample3.css)]
 
-Em seguida, adicione o `AnimationExtender` para a página, fornecendo um `ID`, o `TargetControlID` atributo e o obrigatórias `runat="server":`
+Em seguida, adicione a `AnimationExtender` para a página, fornecendo uma `ID`, o `TargetControlID` atributo e o obrigatório `runat="server":`
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample4.aspx)]
 
-Dentro de `<Animations>` nó, use `<OnLoad>` para executar as animações depois que a página foi totalmente carregada. Em geral, `<OnLoad>` aceita apenas uma animação. A estrutura de animação permite unir várias animações em um, utilizando o `<Sequence>` elemento. Todas as animações em `<Sequence>` são executadas uma após a outra. Aqui está a uma marcação possíveis para o `AnimationExtender` controle, primeiro fazer o painel mais amplo e, em seguida, diminuir sua altura:
+Dentro de `<Animations>` nó, use `<OnLoad>` para as animações são executadas uma vez que a página foi totalmente carregada. Em geral, `<OnLoad>` aceita apenas uma animação. A estrutura de animação permite unir várias animações em um, utilizando o `<Sequence>` elemento. Todas as animações em `<Sequence>` são executados um após o outro. Aqui está a uma marcação possíveis para o `AnimationExtender` controle, primeiro fazer o painel mais amplo e, em seguida, diminuir sua altura:
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample5.aspx)]
 
-Quando você executa esse script, painel primeiro obtém maior e, em seguida, menores.
+Quando você executa esse script, o painel primeiro obtém mais largos e, em seguida, menores.
 
 
-[![Primeiro aumenta a largura](executing-several-animations-after-each-other-vb/_static/image2.png)](executing-several-animations-after-each-other-vb/_static/image1.png)
+[![Pela primeira vez a largura é aumentada](executing-several-animations-after-each-other-vb/_static/image2.png)](executing-several-animations-after-each-other-vb/_static/image1.png)
 
-Primeiro aumenta a largura ([clique para exibir a imagem em tamanho normal](executing-several-animations-after-each-other-vb/_static/image3.png))
+Pela primeira vez a largura é aumentada ([clique para exibir a imagem em tamanho normal](executing-several-animations-after-each-other-vb/_static/image3.png))
 
 
 [![Em seguida, diminui a altura](executing-several-animations-after-each-other-vb/_static/image5.png)](executing-several-animations-after-each-other-vb/_static/image4.png)

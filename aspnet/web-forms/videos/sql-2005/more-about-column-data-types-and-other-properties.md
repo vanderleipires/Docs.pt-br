@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/sql-2005/more-about-column-data-types-and-other-properties
-title: Mais informações sobre tipos de dados de coluna e outras propriedades | Microsoft Docs
+title: Mais sobre os tipos de dados de coluna e outras propriedades | Microsoft Docs
 author: microsoft
-description: Iniciantes do SQL Server explorar a integridade dos dados, saber quais tipos de dados a ser usado para o que e evitar as armadilhas comuns de tipo de dados.
+description: Iniciantes do SQL Server explorar a integridade dos dados, saiba quais tipos de dados a ser usado para o que e evitar armadilhas comuns de tipo de dados.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/22/2006
 ms.topic: article
 ms.assetid: 8fcd3402-1711-4f19-b0cc-b91edfe285fc
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/sql-2005/more-about-column-data-types-and-other-properties
 msc.type: video
-ms.openlocfilehash: 4287702c3906e9447edb5b9d40ec88510bacc174
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a96226aaa43eeeff653ac8f246f00fceb6c85c46
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895885"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364330"
 ---
 <a name="more-about-column-data-types-and-other-properties"></a>Mais informações sobre tipos de dados de coluna e outras propriedades
 ====================
 por [Microsoft](https://github.com/microsoft)
 
-Iniciantes do SQL Server explorar a integridade dos dados, saber quais tipos de dados a ser usado para o que e evitar as armadilhas comuns de tipo de dados.
+Iniciantes do SQL Server explorar a integridade dos dados, saiba quais tipos de dados a ser usado para o que e evitar armadilhas comuns de tipo de dados.
 
-[&#9654;Assista ao vídeo (minutos 21)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/more-about-column-data-types-and-other-properties)
+[&#9654;Assista ao vídeo (21 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/more-about-column-data-types-and-other-properties)
 
 > [!div class="step-by-step"]
 > [Anterior](understanding-database-tables-and-records.md)

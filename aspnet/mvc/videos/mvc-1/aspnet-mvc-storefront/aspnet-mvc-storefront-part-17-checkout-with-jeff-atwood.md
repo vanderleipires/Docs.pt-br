@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood
-title: 'O ASP.NET MVC vitrine parte 17: Check-out com Jeff Atwood | Microsoft Docs'
+title: 'ASP.NET MVC parte vitrine 17: Check-out com Jeff Atwood | Microsoft Docs'
 author: robconery
-description: Este episódio pronto o processo de check-out e fale com CodingHorror SR. ele mesmo, Jeff Atwood. Fale sobre todos os tipos de coisas, mas principalmente discutir Ope...
+description: Este episódio pronto o processo de check-out e conversar com CodingHorror SR. si próprio, Jeff Atwood. Vamos falar sobre todos os tipos de coisas, mas principalmente discutir Ope...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
 ms.topic: article
 ms.assetid: a39182f9-a82c-41fa-9be0-92c2291a3a96
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood
 msc.type: video
-ms.openlocfilehash: ccb6b6bb76598c1aef2321e22eb0cfc2846f53a4
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3c5acf743757a088b22de63f5882e0b3f425c3c1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867145"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37365153"
 ---
-<a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a>O ASP.NET MVC vitrine parte 17: Check-out com Jeff Atwood
+<a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a>ASP.NET MVC parte vitrine 17: Check-out com Jeff Atwood
 ====================
-por [roubar Conery](https://github.com/robconery)
+por [Rob Conery](https://github.com/robconery)
 
-Este episódio pronto o processo de check-out e fale com CodingHorror SR. ele mesmo, Jeff Atwood. Fale sobre todos os tipos de coisas, mas principalmente discutem como Jeff deseja ver o processo de check-out a trabalhar em um mundo ideal, CardSpace e Open ID. Em seguida, orientará Configurando o CardSpace em seu computador local.
+Este episódio pronto o processo de check-out e conversar com CodingHorror SR. si próprio, Jeff Atwood. Vamos falar sobre todos os tipos de coisas, mas principalmente discutem como Jeff deseja ver o processo de check-out a trabalhar em um mundo ideal, CardSpace e Open ID. Em seguida, você será orientado como configurar o CardSpace em seu computador local.
 
 [&#9654;Assista ao vídeo (34 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood)
 

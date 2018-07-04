@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
-title: '[Como fazer:] Usar o extensor de apresentação de slides do ASP.NET AJAX? | Microsoft Docs'
+title: '[Como fazer:] Usar o extensor SlideShow do ASP.NET AJAX? | Microsoft Docs'
 author: JoeStagner
-description: Este vídeo demonstra como extensor de apresentação de slides do Kit de ferramentas de controle AJAX ASP.NET ativa o controle de imagem do ASP.NET padrão para um sl totalmente funcional...
+description: Este vídeo demonstra como o extensor SlideShow do ASP.NET AJAX Control Toolkit ativa o controle de imagem do ASP.NET padrão para um sl totalmente funcional...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2007
 ms.topic: article
 ms.assetid: dfc9f5bb-5e51-46ec-8e1d-2ef9942d258b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
 msc.type: video
-ms.openlocfilehash: 2a4ef518e98e1524c0f598537e86c81d6c14247f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 47b914ee8e157f4f3ae0e4123b4a54c780477e53
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30883464"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392486"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[Como fazer:] Usar o extensor de apresentação de slides do ASP.NET AJAX?
+<a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[Como fazer:] Usar o extensor SlideShow do ASP.NET AJAX?
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 
-Este vídeo demonstra como extensor de apresentação de slides do Kit de ferramentas de controle AJAX ASP.NET ativa o controle de imagem do ASP.NET padrão para uma apresentação de slides totalmente funcional. Vemos também como um serviço Web ASP.NET pode retornar não apenas texto e dados XML mas completos objetos AJAX para ser consumido pelo aplicativo Web do ASP.NET AJAX. Joe também comentários sobre os benefícios de armazenar imagens de sistema de arquivos em vez do banco de dados.
+Este vídeo demonstra como o extensor SlideShow do ASP.NET AJAX Control Toolkit ativa o controle de imagem do ASP.NET padrão para uma apresentação de slides totalmente funcional. Também vemos como um serviço Web ASP.NET pode retornar não apenas texto e dados XML, mas objetos de AJAX completos a ser consumida pelo aplicativo Web do ASP.NET AJAX. Joe também os comentários sobre os benefícios do armazenamento de imagens no sistema de arquivos em vez do banco de dados.
 
-[&#9654;Assista ao vídeo (minutos 19)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
+[&#9654;Assista ao vídeo (19 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
 
 > [!div class="step-by-step"]
 > [Anterior](how-do-i-use-the-aspnet-ajax-tabs-control.md)

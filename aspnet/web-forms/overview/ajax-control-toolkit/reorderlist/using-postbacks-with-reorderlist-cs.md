@@ -1,36 +1,35 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
-title: Com Postbacks ReorderList (c#) | Microsoft Docs
+title: Uso de Postbacks com ReorderList (c#) | Microsoft Docs
 author: wenz
-description: O controle ReorderList no AJAX Control Toolkit fornece uma lista que pode ser reordenada por usuário por meio de arrastar e soltar. Sempre que a lista é reordenada, uma ordem de compra...
+description: O controle ReorderList no AJAX Control Toolkit fornece uma lista que pode ser reordenada por usuário por meio de arrastar e soltar. Sempre que a lista for reordenada, uma OC...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 70d5d106-b547-442c-a7fd-3492b3e3d646
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ed01c30c0721c8f1cd8ccb3fea0735ea8fa4f0a1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 71e806b7915c010cec66931d87bd8c1f3b6d1fb3
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871721"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37365627"
 ---
-<a name="using-postbacks-with-reorderlist-c"></a>Usando Postbacks com ReorderList (c#)
+<a name="using-postbacks-with-reorderlist-c"></a>Uso de Postbacks com ReorderList (c#)
 ====================
 por [Christian Wenz](https://github.com/wenz)
 
 [Baixar o código](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/ReorderList4.cs.zip) ou [baixar PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/reorderlist4CS.pdf)
 
-> O controle ReorderList no AJAX Control Toolkit fornece uma lista que pode ser reordenada por usuário por meio de arrastar e soltar. Sempre que a lista é reordenada, um postback deve informar ao servidor da alteração.
+> O controle ReorderList no AJAX Control Toolkit fornece uma lista que pode ser reordenada por usuário por meio de arrastar e soltar. Sempre que a lista for reordenada, deverá informar o servidor da alteração de um postback.
 
 
 ## <a name="overview"></a>Visão geral
 
-O `ReorderList` controle no AJAX Control Toolkit fornece uma lista que pode ser reordenada por usuário por meio de arrastar e soltar. Sempre que a lista é reordenada, um postback deve informar ao servidor da alteração.
+O `ReorderList` controle no AJAX Control Toolkit fornece uma lista que pode ser reordenada por usuário por meio de arrastar e soltar. Sempre que a lista for reordenada, deverá informar o servidor da alteração de um postback.
 
 ## <a name="steps"></a>Etapas
 
@@ -38,30 +37,30 @@ Há várias fontes de dados possíveis para o `ReorderList` controle. Uma é usa
 
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample1.aspx)]
 
-Para associar esse XML para um `ReorderList` postbacks de controle e ativar os seguintes atributos devem ser definidos:
+Para associar esse XML para um `ReorderList` postbacks de controle e ativar os seguintes atributos devem ser definidas:
 
 - `DataSourceID`: A ID da fonte de dados
-- `SortOrderField`: A propriedade classificar por
-- `AllowReorder`: Se deseja permitir que o usuário reordenar os elementos de lista
-- `PostBackOnReorder`: Se deseja criar uma nova postagem sempre que a lista é reorganizada
+- `SortOrderField`: A propriedade de classificação
+- `AllowReorder`: Se desejar permitir que o usuário reordenar os elementos de lista
+- `PostBackOnReorder`: Se desejar criar uma nova postagem sempre que a lista é reorganizada
 
 Aqui está a marcação apropriada para o controle:
 
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample2.aspx)]
 
-Dentro de `ReorderList` controle, os dados específicos da fonte de dados pode ser vinculado usando o `Eval()` método:
+Dentro de `ReorderList` controle, dados específicos da fonte de dados pode ser associado usando o `Eval()` método:
 
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample3.aspx)]
 
-Em uma posição arbitrária na página, um rótulo armazenará as informações quando ocorreu a última reordenação:
+Em uma posição arbitrária na página, um rótulo manterá as informações quando ocorreu a última reordenação:
 
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample4.aspx)]
 
-Este rótulo é preenchido com o texto no código do lado do servidor, a postagem de tratamento:
+Esse rótulo é preenchido com o texto no código do lado do servidor, manipular o postback:
 
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample5.aspx)]
 
-Por fim, para ativar a funcionalidade do ASP.NET AJAX e o Kit de ferramentas de controle, o `ScriptManager` controle deve ser colocado na página:
+Por fim, para ativar a funcionalidade do AJAX ASP.NET e o Kit de ferramentas de controle, o `ScriptManager` controle deve ser colocada na página:
 
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample6.aspx)]
 

@@ -9,15 +9,14 @@ ms.date: 08/20/2008
 ms.topic: article
 ms.assetid: 10b39a66-091b-4719-8283-7ef3e671a32b
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/understanding-models-views-and-controllers
 msc.type: video
-ms.openlocfilehash: f443b2fc147221392cbc68d350fbc7b7a8bf9914
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 25557d14e32bbf589d9313400e7daac540d17e8e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870018"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377559"
 ---
 <a name="understanding-models-views-and-controllers"></a>Noções básicas sobre modelos, exibições e controladores
 ====================

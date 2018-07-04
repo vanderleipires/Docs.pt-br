@@ -1,29 +1,28 @@
 ---
 uid: signalr/overview/releases/upgrading-signalr-1x-projects-to-20
-title: Atualizando projetos do SignalR 1. x para a versão 2 | Microsoft Docs
+title: Atualizando projetos do SignalR 1.x para a versão 2 | Microsoft Docs
 author: pfletcher
-description: Este tópico descreve como atualizar um projeto existente de 1. x do SignalR para SignalR 2. x e como solucionar problemas que podem surgir durante o processo de atualização...
+description: Este tópico descreve como atualizar um projeto existente do SignalR 1.x para o SignalR 2. x e como solucionar problemas que podem surgir durante o processo de atualização...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
 ms.topic: article
 ms.assetid: adcfef99-9bc5-489d-a91b-9b7c2bc35e04
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/releases/upgrading-signalr-1x-projects-to-20
 msc.type: authoredcontent
-ms.openlocfilehash: e372275ae5dd4bbf354db2d02e4407f8c513b7a3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f8e388cc9a9acf0283be5c719eed1c3c2d031f50
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26505735"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37379758"
 ---
-<a name="upgrading-signalr-1x-projects-to-version-2"></a>Atualizando projetos do SignalR 1. x para a versão 2
+<a name="upgrading-signalr-1x-projects-to-version-2"></a>Atualizando projetos do SignalR 1.x para a versão 2
 ====================
 por [Patrick Fletcher](https://github.com/pfletcher)
 
-> Este tópico descreve como atualizar um projeto existente de 1. x do SignalR para SignalR 2. x e como solucionar problemas que podem surgir durante o processo de atualização.
+> Este tópico descreve como atualizar um projeto existente do SignalR 1.x para o SignalR 2. x e como solucionar problemas que podem surgir durante o processo de atualização.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
 > 
@@ -39,38 +38,38 @@ por [Patrick Fletcher](https://github.com/pfletcher)
 > 
 > Para usar o Visual Studio 2012 com este tutorial, faça o seguinte:
 > 
-> - Atualização de seu [Package Manager](http://docs.nuget.org/docs/start-here/installing-nuget) para a versão mais recente.
+> - Atualização de seu [Gerenciador de pacotes](http://docs.nuget.org/docs/start-here/installing-nuget) para a versão mais recente.
 > - Instalar o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
-> - No Web Platform Installer, procurar e instalar **ASP.NET e Web 2013.1 de ferramentas para Visual Studio 2012**. Isso irá instalar os modelos do Visual Studio para SignalR classes como **Hub**.
-> - Alguns modelos (como **classe de inicialização OWIN**) não estará disponível; para isso, use um arquivo de classe em vez disso.
+> - No Web Platform Installer, procure e instale **ASP.NET e Web Tools 2013.1 para Visual Studio 2012**. Isso irá instalar os modelos do Visual Studio para classes do SignalR, como **Hub**.
+> - Alguns modelos (como **classe de inicialização OWIN**) não está disponível; nesses casos, use um arquivo de classe em vez disso.
 > 
 > 
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
 > 
-> Deixe comentários em como você gostou neste tutorial e o que podemos melhorar nos comentários na parte inferior da página. Se você tiver dúvidas que não estão diretamente relacionadas ao tutorial, você poderá postá-los para o [ASP.NET SignalR fórum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
+> Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
-SignalR 2 oferece uma experiência de desenvolvimento consistente entre as plataformas de servidor usando [OWIN](http://owin.org). Este artigo descreve as etapas necessárias para atualizar um aplicativo de 1. x SignalR para a versão 2.
+SignalR 2 oferece uma experiência de desenvolvimento consistente entre as plataformas de servidor usando [OWIN](http://owin.org). Este artigo descreve as etapas que são necessárias para atualizar um aplicativo do 1.x SignalR para a versão 2.
 
-Enquanto ele é recomendável atualizar aplicativos para 2 SignalR, SignalR 1. x ainda suporte.
+Enquanto ela é incentivada a atualizar aplicativos para o SignalR 2, o SignalR 1.x ainda ter suporte.
 
-Este tutorial descreve como atualizar um aplicativo web hospedado para o SignalR 2. Agora há suporte para aplicativos de hospedagem interna (aquelas que hospedam um servidor em um aplicativo de console, o serviço do Windows ou outro processo) em 2 de SignalR. Para obter informações sobre como começar a criar um aplicativo hospedado automaticamente com o SignalR 2, consulte [Tutorial: SignalR auto-host](../deployment/tutorial-signalr-self-host.md).
+Este tutorial descreve como atualizar um aplicativo hospedado na web para o SignalR 2. Agora há suporte para aplicativos auto-hospedados (aqueles que hospedam um servidor em um aplicativo de console, o serviço do Windows ou outro processo) em SignalR 2. Para obter informações sobre como começar a criar um aplicativo hospedado internamente com SignalR 2, consulte [Tutorial: auto-hospedar SignalR](../deployment/tutorial-signalr-self-host.md).
 
 ## <a name="contents"></a>Conteúdo
 
-As seções a seguir descrevem as tarefas envolvidas na atualização de projetos de SignalR e como solucionar problemas que podem surgir.
+As seções a seguir descrevem as tarefas envolvidas com a atualização de projetos do SignalR e como solucionar problemas que podem surgir.
 
-- [Exemplo: Atualizar o tutorial de Introdução para o SignalR 2](#example)
-- [Solucionando problemas de erros encontrados durante a atualização](#troubleshooting)
+- [Exemplo: Atualizando o tutorial de Introdução ao SignalR 2](#example)
+- [Solução de problemas de erros encontrados durante a atualização](#troubleshooting)
 
 <a id="example"></a>
 
-## <a name="example-upgrading-the-getting-started-tutorial-application-to-signalr-2"></a>Exemplo: Atualizar o aplicativo tutorial de Introdução para SignalR 2
+## <a name="example-upgrading-the-getting-started-tutorial-application-to-signalr-2"></a>Exemplo: Atualizar o aplicativo de tutorial de Introdução ao SignalR 2
 
-Nesta seção, você atualizará o aplicativo criado no [SignalR versão 1. x do Tutorial de Introdução](../older-versions/index.md) usar 2 SignalR.
+Nesta seção, você atualizará o aplicativo criado na [versão do SignalR 1.x do Tutorial de Introdução](../older-versions/index.md) para usar o SignalR 2.
 
-1. Depois de concluir o tutorial de Introdução, clique com botão direito no projeto e selecione **propriedades**. Verifique o **framework de destino** é definido como **.NET Framework 4.5.**
-2. Abra o Console do Gerenciador de pacotes. Remover SignalR 1. x do projeto usando o seguinte comando:
+1. Depois que você concluiu o tutorial de Introdução, clique com botão direito no projeto e selecione **propriedades**. Verifique se que o **estrutura de destino** é definido como **.NET Framework 4.5.**
+2. Abra o Console do Gerenciador de pacotes. Remover o SignalR 1.x do projeto usando o comando a seguir:
 
     [!code-powershell[Main](upgrading-signalr-1x-projects-to-20/samples/sample1.ps1)]
 3. Instale o SignalR 2 usando o seguinte comando:
@@ -82,26 +81,26 @@ Nesta seção, você atualizará o aplicativo criado no [SignalR versão 1. x do
 5. Na classe de aplicativo global, remova a chamada para MapHubs.
 
     [!code-csharp[Main](upgrading-signalr-1x-projects-to-20/samples/sample4.cs)]
-6. A solução e selecione **adicionar**, **Novo Item...** . Na caixa de diálogo, selecione **classe de inicialização Owin**. Nomeie a nova classe **Startup.cs**.
+6. A solução com o botão direito e selecione **Add**, **Novo Item...** . Na caixa de diálogo, selecione **classe de inicialização Owin**. Nomeie a nova classe **Startup.cs**.
 
     ![](upgrading-signalr-1x-projects-to-20/_static/image1.png)
 7. Substitua o conteúdo do Startup.cs com o código a seguir:
 
     [!code-csharp[Main](upgrading-signalr-1x-projects-to-20/samples/sample5.cs)]
 
-    O atributo do assembly adiciona a classe para o processo de inicialização do Owin, que executa o `Configuration` método quando Owin é iniciado. Por sua vez chama o `MapSignalR` método, que cria rotas para todos os hubs de SignalR no aplicativo.
-8. Execute o projeto e copie a URL da página principal para outro navegador ou no painel do navegador, como antes. Cada página solicitará um nome de usuário e as mensagens enviadas de cada página devem estar visíveis em ambos os painéis do navegador.
+    O atributo de assembly adiciona a classe ao processo de inicialização do Owin, que executa o `Configuration` método quando Owin é iniciado. Isso por sua vez chama o `MapSignalR` método, que cria as rotas para todos os hubs de SignalR no aplicativo.
+8. Execute o projeto e copie a URL da página principal em outro navegador ou no painel do navegador, como antes. Cada página solicitará um nome de usuário e as mensagens enviadas de cada página devem estar visíveis em ambos os painéis do navegador.
 
 <a id="troubleshooting"></a>
 
-## <a name="troubleshooting-errors-encountered-during-upgrading"></a>Solucionando problemas de erros encontrados durante a atualização
+## <a name="troubleshooting-errors-encountered-during-upgrading"></a>Solução de problemas de erros encontrados durante a atualização
 
-Esta seção descreve problemas que podem surgir durante a atualização. Para obter uma lista mais completa de erros e problemas que podem ocorrer com um aplicativo SignalR, consulte [solução de problemas do SignalR](../testing-and-debugging/troubleshooting.md).
+Esta seção descreve problemas que podem surgir durante a atualização. Para obter uma lista mais abrangente de erros e problemas que podem ocorrer com um aplicativo do SignalR, consulte [solução de problemas do SignalR](../testing-and-debugging/troubleshooting.md).
 
 ### <a name="the-call-is-ambiguous-between-the-following-methods-or-properties"></a>'A chamada é ambígua entre os seguintes métodos ou propriedades'
 
-Este erro ocorrerá se uma referência a `Microsoft.AspNet.SignalR.Owin` não é removido. Este pacote é substituído; a referência deve ser removida e a versão 1. x do pacote SelfHost deve ser desinstalada.
+Esse erro ocorrerá se uma referência a `Microsoft.AspNet.SignalR.Owin` não é removido. Esse pacote foi preterido; a referência deve ser removida e a versão 1.x do pacote SelfHost deve ser desinstalada.
 
 ### <a name="hub-methods-fail-silently"></a>Métodos de Hub falharem em modo silencioso
 
-Verifique se as referências de script no seu cliente até a data e que o `OwinStartup` atributo para sua classe de inicialização tem a classe correta e nomes de assembly para seu projeto. Além disso, tente abrir o endereço de hubs (hubs de signalr /) em seu navegador; qualquer erro que aparece oferecem mais informações sobre o que está acontecendo errado.
+Verifique se as referências de script no seu cliente estão atualizadas e que o `OwinStartup` de atributo para a sua classe de inicialização tem a classe correta e nomes de assembly para o seu projeto. Além disso, tente abrir o endereço de hubs (hubs do signalr /) no seu navegador. qualquer erro que aparece se oferecerá para obter mais informações sobre o que está errado.

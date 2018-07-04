@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool
-title: '[Como fazer:] Implantar um Site usando a ferramenta Copiar Site | Microsoft Docs'
+title: '[Como fazer:] Implantar um Site usando a ferramenta Copy Web Site | Microsoft Docs'
 author: rick-anderson
-description: Este Chris Pels vídeo mostrará como implantar um site usando a ferramenta Copy Web Site no Visual Studio. Primeiro, consulte como se conectar a um site remoto e...
+description: Neste vídeo, Chris Pels mostrará como implantar um site usando a ferramenta Copy Web Site no Visual Studio. Primeiro veja como se conectar a um site remoto e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2008
 ms.topic: article
 ms.assetid: 4926a73c-fa70-4f47-b57d-b33556447377
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool
 msc.type: video
-ms.openlocfilehash: cf8dfddd63332bf4e0c80a7b36584425779156cb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cac0323682b2b4830b49bdb16c702cc13ad51015
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26525665"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37391939"
 ---
-<a name="how-do-i-deploy-a-web-site-using-the-copy-web-site-tool"></a>[Como fazer:] Implantar um Site usando a ferramenta Copiar Site
+<a name="how-do-i-deploy-a-web-site-using-the-copy-web-site-tool"></a>[Como fazer:] Implantar um Site usando a ferramenta Copy Web Site
 ====================
-por [Carlos Pels](https://twitter.com/chrispels)
+por [Chris Pels](https://twitter.com/chrispels)
 
-Este Chris Pels vídeo mostrará como implantar um site usando a ferramenta Copy Web Site no Visual Studio. Primeiro, consulte como se conectar a um site remoto e implantar um site inteiro para o local de destino. Em seguida, Aprenda como sincronizar um site inteiro de origem e destino. Além disso, consulte como copiar e sincronizar individuais ou grupos de arquivos, incluindo como a cópia da ferramenta de Site fornece indicadores de status das diferenças entre arquivos. Como parte desse processo, consulte como a ferramenta fornecerá opções em uma base por arquivo para a tomada de decisões quando há diferenças de status entre dois ou mais arquivos.
+Neste vídeo, Chris Pels mostrará como implantar um site usando a ferramenta Copy Web Site no Visual Studio. Primeiro, veja como se conectar a um site remoto e implantar um site inteiro para o local de destino. Em seguida, saiba como sincronizar um site inteiro de origem e destino. Além disso, consulte como copiar e sincronizar individuais ou grupos de arquivos, incluindo como a ferramenta Copy Web Site fornece indicadores de status das diferenças entre arquivos. Como parte desse processo ver como a ferramenta fornece opções de arquivo por arquivo de acordo com a tomada de decisões quando há diferenças no status entre dois ou mais arquivos.
 
-[&#9654; Assista ao vídeo (17 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool)
+[&#9654;Assista ao vídeo (17 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool)

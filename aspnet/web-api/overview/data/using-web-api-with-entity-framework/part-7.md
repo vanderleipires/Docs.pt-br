@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-7
-title: Criar modo de exibição (UI) | Microsoft Docs
+title: Criar a exibição de (UI) | Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 06/16/2014
 ms.topic: article
 ms.assetid: b2445062-a1fe-4133-8994-f510280f6d9a
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 5052d7cca4a5c12a9ea56eb929d4794b19e82603
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e9ebe60f88ecbf65a6f8d04de9a23d72a72fda83
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878796"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364975"
 ---
-<a name="create-the-view-ui"></a>Criar modo de exibição (IU)
+<a name="create-the-view-ui"></a>Criar modo de exibição (interface do usuário)
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
@@ -27,11 +26,11 @@ por [Mike Wasson](https://github.com/MikeWasson)
 
 Nesta seção, você começará a definir o HTML para o aplicativo e adicionar a associação de dados entre o HTML e o modelo de exibição.
 
-Abra o arquivo Views/Home/Index.cshtml. Substitua todo o conteúdo do arquivo com o seguinte.
+Abra o arquivo Views/Home/Index.cshtml. Substitua todo o conteúdo desse arquivo pelo seguinte.
 
 [!code-cshtml[Main](part-7/samples/sample1.cshtml)]
 
-A maioria do `div` elementos existem para [Bootstrap](http://getbootstrap.com/) estilo. Os elementos importantes são aqueles com `data-bind` atributos. Este atributo vincula o HTML para o modelo de exibição.
+A maioria dos `div` elementos existem para o [Bootstrap](http://getbootstrap.com/) definindo o estilo. Os elementos importantes são aqueles com `data-bind` atributos. Esse atributo vincula o HTML para o modelo de exibição.
 
 Por exemplo:
 
@@ -41,9 +40,9 @@ Neste exemplo, o &quot; `text` &quot; associação faz com que o `<p>` elemento 
 
 [!code-javascript[Main](part-7/samples/sample3.js)]
 
-Sempre que um novo valor é atribuído a `error`, Knockout atualiza o texto de `<p>` elemento.
+Sempre que um novo valor é atribuído a `error`, o Knockout atualiza o texto no `<p>` elemento.
 
-O `foreach` associação informa Knockout para percorrer o conteúdo do `books` matriz. Para cada item na matriz, Knockout cria um novo &lt;li&gt; elemento. Associações de dentro do contexto da `foreach` consulte Propriedades do item de matriz. Por exemplo:
+O `foreach` associação informa ao Knockout para executar um loop pelo conteúdo do `books` matriz. Para cada item na matriz, o Knockout cria um novo &lt;li&gt; elemento. Associações de dentro do contexto da `foreach` fazer referência às propriedades do item da matriz. Por exemplo:
 
 [!code-html[Main](part-7/samples/sample4.html)]
 
@@ -53,7 +52,7 @@ Se você executar o aplicativo agora, ele deve ser assim:
 
 ![](part-7/_static/image1.png)
 
-A lista de livros carrega assincronamente, depois que a página for carregada. Agora, o &quot;detalhes&quot; links não são funcionais. Vamos adicionar essa funcionalidade na próxima seção.
+A lista de livros carrega de forma assíncrona, depois que a página for carregada. Agora, o &quot;detalhes&quot; links não são funcionais. Vamos adicionar essa funcionalidade na próxima seção.
 
 > [!div class="step-by-step"]
 > [Anterior](part-6.md)

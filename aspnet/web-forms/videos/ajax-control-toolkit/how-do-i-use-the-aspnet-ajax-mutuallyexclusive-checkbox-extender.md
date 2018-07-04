@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender
-title: '[Como fazer:] Use o caixa de seleção MutuallyExclusive extensor do ASP.NET AJAX? | Microsoft Docs'
+title: '[Como fazer:] Usar o extensor de caixa de seleção MutuallyExclusive do ASP.NET AJAX? | Microsoft Docs'
 author: JoeStagner
-description: O controle de MutuallyExclusive do Kit de ferramentas de controle AJAX ASP.NET permite que o desenvolvedor configurar um número de caixas de seleção como mutuamente exclusivas, quais e...
+description: O controle de MutuallyExclusive do ASP.NET AJAX Control Toolkit permite que o desenvolvedor configure um número de caixas de seleção como mutuamente exclusivas, quais e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2007
 ms.topic: article
 ms.assetid: 808a89d3-4a98-4abe-83b5-0aa01f749048
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender
 msc.type: video
-ms.openlocfilehash: 8de022c371949b5c107d524d9c2b0050e5253557
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 29b07af7e09bd72227e2ca8893f7bd4d424e32aa
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882001"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392485"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender"></a>[Como fazer:] Use o caixa de seleção MutuallyExclusive extensor do ASP.NET AJAX?
+<a name="how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender"></a>[Como fazer:] Usar o extensor de caixa de seleção MutuallyExclusive do ASP.NET AJAX?
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 
-O controle de MutuallyExclusive do Kit de ferramentas de controle AJAX ASP.NET permite que o desenvolvedor configurar um número de caixas de seleção como mutuamente exclusivo, que garante que o usuário pode verificar apenas uma única opção. Quando uma lista de botão de opção fornece um comportamento semelhante, a necessidade de uma caixa de seleção ser clicado pelo usuário torna o controle MutuallyExclusive ideal para receber a confirmação do usuário, como aceitar ou não aceitar os termos de uso.
+O controle de MutuallyExclusive do ASP.NET AJAX Control Toolkit permite que o desenvolvedor configurar um número de caixas de seleção como mutuamente exclusivos, que garante que o usuário só pode verificar uma única opção. Enquanto uma lista de botão de opção fornece um comportamento semelhante, a necessidade de uma caixa de seleção para ser clicado pelo usuário torna o controle MutuallyExclusive ideal para receber a confirmação do usuário, como aceitar ou não aceitar os termos de uso.
 
 [&#9654;Assista ao vídeo (10 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender)
 

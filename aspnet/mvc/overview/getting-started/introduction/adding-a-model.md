@@ -9,15 +9,14 @@ ms.date: 05/28/2015
 ms.topic: article
 ms.assetid: 276552b5-f349-4fcf-8f40-6d042f7aa88e
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: b3ef871c4d7627a03c8f0fd8cce9d3e97fc1a4ba
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 98b6693b07e4da318a649494649d9da83fe8a7d3
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867444"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37365130"
 ---
 <a name="adding-a-model"></a>Adicionando um modelo
 ====================
@@ -25,45 +24,45 @@ por [Rick Anderson](https://github.com/Rick-Anderson)
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
 
-Nesta seção, você adicionará algumas classes de gerenciamento de filmes em um banco de dados. Essas classes será o &quot;modelo&quot; parte do aplicativo ASP.NET MVC.
+Nesta seção, você adicionará algumas classes para o gerenciamento de filmes em um banco de dados. Essas classes serão a &quot;modelo&quot; faz parte do aplicativo ASP.NET MVC.
 
-Você usará uma tecnologia de acesso a dados do .NET Framework conhecida como o [do Entity Framework](https://docs.microsoft.com/ef/) para definir e trabalhar com essas classes de modelo. O Entity Framework (também conhecido como EF) oferece suporte a um paradigma de desenvolvimento chamado *Code First*. Código primeiro permite que você crie objetos de modelo, escrevendo classes simples. (Eles também são conhecidas como POCO classes, de &quot;objetos CLR simples antigo.&quot;) Em seguida, você pode ter o banco de dados criado dinamicamente de suas classes, que permite que um fluxo de trabalho de desenvolvimento muito claro e rápida. Se for necessário para criar o banco de dados pela primeira vez, você ainda pode seguir este tutorial para aprender sobre o desenvolvimento de aplicativo MVC e EF. Você pode seguir Tom Fizmakens [ASP.NET Scaffolding](xref:visual-studio/overview/2013/aspnet-scaffolding-overview) tutorial, que abrange a primeira abordagem de banco de dados.
+Você usará uma tecnologia de acesso a dados do .NET Framework conhecida como o [Entity Framework](https://docs.microsoft.com/ef/) para definir e trabalhar com essas classes de modelo. A Entity Framework (também conhecido como EF) oferece suporte a um paradigma de desenvolvimento chamado *Code First*. Código primeiro permite que você crie objetos de modelo ao escrever classes simples. (Esses também são conhecidas como classes POCO, do &quot;objetos CLR de BOM e velho.&quot;) Em seguida, você pode ter o banco de dados criado em tempo real de suas classes, que permite que um fluxo de trabalho de desenvolvimento muito claro e rápido. Se você precisar criar o banco de dados pela primeira vez, você ainda pode seguir este tutorial para saber mais sobre o desenvolvimento de aplicativo do MVC e ao EF. Em seguida, você pode seguir Tom Fizmakens [Scaffolding do ASP.NET](xref:visual-studio/overview/2013/aspnet-scaffolding-overview) tutorial, que abrange a primeira abordagem de banco de dados.
 
 ## <a name="adding-model-classes"></a>Adicionando Classes de modelo
 
-Em **Solution Explorer**, clique com botão direito do *modelos* pasta, selecione **adicionar**e, em seguida, selecione **classe**.
+Na **Gerenciador de soluções**, clique com botão direito do *modelos* pasta, selecione **Add**e, em seguida, selecione **classe**.
 
 ![](adding-a-model/_static/image1.png)
 
 Insira o *classe* nome &quot;filme&quot;.
 
-Adicione as seguintes cinco propriedades para o `Movie` classe:
+Adicione as seguintes propriedades de cinco para o `Movie` classe:
 
 [!code-csharp[Main](adding-a-model/samples/sample1.cs)]
 
-Usaremos a `Movie` classe para representar filmes em um banco de dados. Cada instância de um `Movie` correspondam a uma linha em uma tabela de banco de dados e cada propriedade do objeto de `Movie` classe será mapeado para uma coluna na tabela.
+Vamos usar o `Movie` classe para representar os filmes em um banco de dados. Cada instância de um `Movie` objeto corresponderá a uma linha em uma tabela de banco de dados e cada propriedade do `Movie` classe será mapeado para uma coluna na tabela.
 
-Observação: Para usar System.Data.Entity e a classe relacionada, você precisa instalar o [pacote do NuGet do Entity Framework](https://www.nuget.org/packages/EntityFramework/). Siga o link para obter mais informações.
+Observação: Para usar Entity e a classe relacionada, você precisa instalar o [pacote do NuGet do Entity Framework](https://www.nuget.org/packages/EntityFramework/). Siga o link para obter mais instruções.
 
 No mesmo arquivo, adicione o seguinte `MovieDBContext` classe:
 
 [!code-csharp[Main](adding-a-model/samples/sample2.cs?highlight=2,15-18)]
 
-O `MovieDBContext` classe representa o contexto de banco de dados do filme do Entity Framework, que manipula a busca, armazenar e atualizar `Movie` instâncias em um banco de dados de classe. O `MovieDBContext` deriva o `DbContext` fornecido pelo Entity Framework de classe base.
+O `MovieDBContext` classe representa o contexto de banco de dados de filme do Entity Framework, que lida com a busca, armazenar e atualizar `Movie` instâncias em um banco de dados de classe. O `MovieDBContext` deriva o `DbContext` fornecido pela estrutura de entidades de classe base.
 
-Para poder referenciar `DbContext` e `DbSet`, você precisa adicionar o seguinte `using` instrução na parte superior do arquivo:
+Para poder referenciar `DbContext` e `DbSet`, você precisará adicionar o seguinte `using` instrução na parte superior do arquivo:
 
 [!code-csharp[Main](adding-a-model/samples/sample3.cs)]
 
-Você pode fazer isso manualmente adicionando o uso instrução ou passe o mouse sobre as linhas curvadas vermelhas, clique em `Show potential fixes` e clique em `using System.Data.Entity;`
+Você pode fazer isso adicionando manualmente o usando instrução, ou você pode passar o mouse sobre as linhas curvadas vermelhas, clique em `Show potential fixes` e clique em `using System.Data.Entity;`
 
 ![](adding-a-model/_static/image2.png)
 
-Observação: Vários não utilizados `using` instruções foram removidas. O Visual Studio mostrará dependências não usadas em cinza. Você pode remover dependências não usadas ao passar sobre as dependências cinzas, clique em `Show potential fixes` e clique em **remover usos não utilizados.**
+Observação: Várias não utilizados `using` instruções foram removidas. Visual Studio mostrará dependências não utilizadas como cinza. Você pode remover as dependências não utilizadas focalizando as dependências de cinza, clique em `Show potential fixes` e clique em **remover usos não utilizados.**
 
 ![](adding-a-model/_static/image3.png)
 
-Por fim, adicionamos um modelo (M no MVC). Na próxima seção, você trabalhará com a cadeia de caracteres de conexão do banco de dados.
+Por fim, adicionamos um modelo (M no MVC). Na próxima seção, você trabalhará com a cadeia de caracteres de conexão de banco de dados.
 
 > [!div class="step-by-step"]
 > [Anterior](adding-a-view.md)
