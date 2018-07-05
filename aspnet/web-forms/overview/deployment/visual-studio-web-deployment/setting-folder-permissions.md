@@ -4,19 +4,16 @@ title: 'Implantação de Web do ASP.NET usando o Visual Studio: definindo permis
 author: tdykstra
 description: Esta série de tutoriais mostra como implantar (publicar) um ASP.NET web de aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usin...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2013
-ms.topic: article
 ms.assetid: 9715a121-fa55-4f1b-a5d2-fb3f6cd8be8f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
 msc.type: authoredcontent
-ms.openlocfilehash: a0c4f9f7cf30c1fc6a06c2cf798dc7ed04585504
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0660a464063783406a69caf663036811c8ac818e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383643"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802027"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-setting-folder-permissions"></a>Implantação de Web do ASP.NET usando o Visual Studio: definindo permissões de pasta
 ====================

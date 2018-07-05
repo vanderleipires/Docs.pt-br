@@ -4,19 +4,16 @@ title: Assíncrono e procedimentos armazenados com o Entity Framework em um apli
 author: tdykstra
 description: Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/07/2014
-ms.topic: article
 ms.assetid: 27d110fc-d1b7-4628-a763-26f1e6087549
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 4c2deb53856d79a52415db48e04ea96111833b02
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 211c9c8c66f3eed15121b4dd425fa728c39b7de3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381923"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802043"
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Assíncrono e procedimentos armazenados com o Entity Framework em um aplicativo ASP.NET MVC
 ====================

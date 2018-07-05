@@ -4,19 +4,16 @@ title: '[Como fazer:] Use a classe FtpWebRequest para criar uma Conexão de FTP 
 author: rick-anderson
 description: Neste vídeo, Chris Pels mostra como usar a classe FtpWebRequest para criar uma conexão de FTP e transferir um arquivo. Primeiro, crie um formulário. aspx simples para selec...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/18/2008
-ms.topic: article
 ms.assetid: 99a0394d-96aa-445c-a338-43961cc717e8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server
 msc.type: video
-ms.openlocfilehash: 67e43238708fbb08e20b7e45962fcc2f587c9d5d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ca465d54024bc26addb7451440c00e9c7ece14e4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393737"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37801875"
 ---
 <a name="how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server"></a>[Como fazer:] Use a classe FtpWebRequest para criar uma Conexão de FTP a um servidor FTP
 ====================
