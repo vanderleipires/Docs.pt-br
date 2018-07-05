@@ -4,19 +4,16 @@ title: Configurar seu ambiente de desenvolvimento do ASP.NET 3.5 | Microsoft Doc
 author: JoeStagner
 description: Neste vídeo, você aprenderá como configurar seu ambiente de desenvolvimento para o desenvolvimento de aplicativos do ASP.NET AJAX se você estiver direcionando o ASP.NET 3.5.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/13/2009
-ms.topic: article
 ms.assetid: 00c0a4c9-5c25-413f-938c-8b77814ad2bd
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/set-up-your-development-environment-for-aspnet-35
 msc.type: video
-ms.openlocfilehash: 93f21ad063dfc2d7b45865377e5688af7dde66bb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 80ff1eb071d2b3fda4ffcca9b74804167f3d8080
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402701"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37801749"
 ---
 <a name="set-up-your-development-environment-for-aspnet-35"></a>Configurar seu ambiente de desenvolvimento do ASP.NET 3.5
 ====================
