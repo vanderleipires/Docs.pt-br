@@ -4,19 +4,16 @@ title: Configurando um servidor de banco de dados para a Web de publicação de 
 author: jrjlee
 description: Este tópico descreve como configurar um servidor de banco de dados do SQL Server 2008 R2 para dar suporte à publicação e implantação da web. As tarefas descritas neste tópico são co...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: e7c447f9-eddf-4bbe-9f18-3326d965d093
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 5563b737e3fd200070951f8d281ed8015137ae35
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9ec938298ea63609c276aed807a67722bf9bd66d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384453"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841973"
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Configurando um servidor de banco de dados para publicação de implantação da Web
 ====================
