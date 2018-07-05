@@ -4,19 +4,16 @@ title: '[Como fazer:] Usar o controle de preenchimento automático do ASP.NET AJ
 author: JoeStagner
 description: O controle do extensor AutoComplete do ASP.NET AJAX Control Toolkit fornece sugestões em tempo real para o usuário como tipos ele ou ela em uma caixa de texto em que os nós...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/20/2007
-ms.topic: article
 ms.assetid: 636a88fa-bafa-4310-8163-dba4a3461ce3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-autocomplete-control
 msc.type: video
-ms.openlocfilehash: 5a22d8f91af4d8b114722f1fbb2321c6c3a2ac76
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a27aec4220bb2c20dfdfb63c5fa434ba343347b7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392575"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842686"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-autocomplete-control"></a>[Como fazer:] Usar o controle de preenchimento automático do AJAX ASP.NET
 ====================

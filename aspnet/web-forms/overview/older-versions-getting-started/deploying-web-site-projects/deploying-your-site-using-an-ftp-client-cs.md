@@ -4,19 +4,16 @@ title: Implantando o Site usando um cliente FTP (c#) | Microsoft Docs
 author: rick-anderson
 description: A maneira mais simples de implantar um aplicativo ASP.NET é copiar manualmente os arquivos necessários do ambiente de desenvolvimento para o ambiente de produção. EST...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: a3599cf7-8474-4006-954a-3bc693736b66
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1fa0c72beb18ceabefeae41bec64dda036372d79
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 50e1522a39cb7b8ea2ee4c664f166b45f22ff070
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385321"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842277"
 ---
 <a name="deploying-your-site-using-an-ftp-client-c"></a>Implantando o Site usando um cliente FTP (c#)
 ====================
