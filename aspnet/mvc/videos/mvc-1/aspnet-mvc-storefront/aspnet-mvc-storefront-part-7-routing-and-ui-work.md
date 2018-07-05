@@ -9,19 +9,18 @@ ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: 07cb4434-cb24-4746-a4ba-bfeea889a7e2
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-7-routing-and-ui-work
 msc.type: video
-ms.openlocfilehash: 18acf244c29f3b698eb3588640ac1b0491b360b2
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4005511ea1f92530878281ff593717397af1b286
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878728"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37388403"
 ---
 <a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a>ASP.NET MVC vitrine parte 7: Roteamento e trabalho de interface do usuário
 ====================
-por [roubar Conery](https://github.com/robconery)
+por [Rob Conery](https://github.com/robconery)
 
 Rob fala com Scott Hanselman sobre como configurar o roteamento e, em seguida, ele implementa a interface do usuário.
 

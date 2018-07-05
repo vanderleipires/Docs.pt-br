@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/net-4/routing/aspnet-4-quick-hit-declarative-webforms-routing
-title: O ASP.NET 4 rápida ocorrências - declarativas WebForms roteamento
+title: ASP.NET 4 rápido ocorrências - roteamento de WebForms declarativo
 author: JoeStagner
-description: Neste vídeo, você aprenderá como fazer WebForms declarativamente roteamento por meio de marcação.
+description: Neste vídeo, você aprenderá como fazer o roteamento de WebForms declarativamente por meio de marcação.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/11/2009
 ms.topic: article
 ms.assetid: bfeb728e-3216-4310-8303-6cdb79255c15
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/routing/aspnet-4-quick-hit-declarative-webforms-routing
 msc.type: video
-ms.openlocfilehash: 27fdd978fc96c842e235888a370d0efa9842265a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: eacdb1a2a682ab9fce2f60171188311fdb141e70
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893011"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37397007"
 ---
-<a name="aspnet-4-quick-hit---declarative-webforms-routing"></a>O ASP.NET 4 "Hit rápida" - declarativas WebForms roteamento
+<a name="aspnet-4-quick-hit---declarative-webforms-routing"></a>ASP.NET 4 "Acertar rápida" - roteamento de WebForms declarativo
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 
-Neste vídeo, você aprenderá como fazer WebForms declarativamente roteamento por meio de marcação. 
+Neste vídeo, você aprenderá como fazer o roteamento de WebForms declarativamente por meio de marcação. 
 
 [&#9654;Assista ao vídeo (14 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-declarative-webforms-routing)
 

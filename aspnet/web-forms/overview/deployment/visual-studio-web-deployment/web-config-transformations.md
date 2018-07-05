@@ -1,98 +1,97 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
-title: 'Implantação de Web do ASP.NET usando o Visual Studio: transformações do arquivo Web. config | Microsoft Docs'
+title: 'Implantação de Web do ASP.NET usando o Visual Studio: as transformações do arquivo Web. config | Microsoft Docs'
 author: tdykstra
-description: Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, por usin...
+description: Esta série de tutoriais mostra como implantar (publicar) um ASP.NET web de aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
 ms.topic: article
 ms.assetid: 5a2a927b-14cb-40bc-867a-f0680f9febd7
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: 77ed0d8b2fe85adb009a3f4759030b7fba8fb9d7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4d8a7d2a6faa0b03fff4416778101b47df2dd26e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880499"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37371759"
 ---
-<a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>Implantação de Web do ASP.NET usando o Visual Studio: transformações do arquivo Web. config
+<a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>Implantação de Web do ASP.NET usando o Visual Studio: as transformações do arquivo Web. config
 ====================
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto Starter](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[Baixe o projeto inicial](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
-> Esta série de tutorial mostra como implantar (publicação) de uma ASP.NET web do aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [primeiro tutorial na série](introduction.md).
+> Esta série de tutoriais mostra como implantar (publicar) um ASP.NET web application para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usando o Visual Studio 2012 ou Visual Studio 2010. Para obter informações sobre a série, consulte [o primeiro tutorial na série](introduction.md).
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
-Este tutorial mostra como automatizar o processo de alteração de *Web. config* arquivo quando você o implantar em ambientes de destino diferente. A maioria dos aplicativos têm configurações de *Web. config* arquivo deve ser diferente quando o aplicativo é implantado. Automatizando o processo de fazer essas alterações mantém você precise fazê-las manualmente sempre que você implanta, qual seria tedioso e propenso a erros.
+Este tutorial mostra como automatizar o processo de alteração de *Web. config* arquivo quando você implantá-lo em ambientes de destino diferente. A maioria dos aplicativos têm configurações na *Web. config* arquivos que devem ser diferentes quando o aplicativo é implantado. Automatizando o processo de fazer essas alterações evita a necessidade para fazê-las manualmente sempre que você implanta, qual seria entediante e sujeito a erros.
 
-Lembrete: Se você receber uma mensagem de erro ou algo não funciona ao percorrer o tutorial, certifique-se verificar a [página de solução de problemas](troubleshooting.md).
+Lembrete: Se você receber uma mensagem de erro ou se algo não funciona ao percorrer o tutorial, não se esqueça de verificar a [página de solução de problemas](troubleshooting.md).
 
-## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Transformações de Web. config em vez de parâmetros de implantação da Web
+## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Transformações de Web. config em comparação com os parâmetros de implantação da Web
 
-Há duas maneiras de automatizar o processo de alteração *Web. config* configurações de arquivo: [transformações de Web. config](https://msdn.microsoft.com/library/dd465326.aspx) e [parâmetros de implantação da Web](https://msdn.microsoft.com/library/ff398068.aspx). Um *Web. config* arquivo de transformação contém marcação XML que especifica como alterar o *Web. config* arquivo quando ele é implantado. Você pode especificar diferentes alterações para determinado configurações de compilação e perfis de publicação para determinado. As configurações de compilação padrão são Debug e Release e você pode criar configurações de compilação personalizada. Um perfil de publicação geralmente corresponde a um ambiente de destino. (Você aprenderá mais sobre como publicar perfis no [implantando para o IIS como um ambiente de teste](deploying-to-iis.md) tutorial.)
+Há duas maneiras para automatizar o processo de alteração *Web. config* configurações do arquivo: [transformações de Web. config](https://msdn.microsoft.com/library/dd465326.aspx) e [parâmetros de implantação da Web](https://msdn.microsoft.com/library/ff398068.aspx). Um *Web. config* arquivo de transformação contém marcação XML que especifica como alterar a *Web. config* arquivo quando ele é implantado. Você pode especificar alterações diferentes para determinado compila as configurações e perfis de publicação para específico. As configurações de compilação padrão são Debug e Release e você pode criar configurações de compilação personalizada. Um perfil de publicação geralmente corresponde a um ambiente de destino. (Você aprenderá mais sobre como publicar perfis na [implantando no IIS como um ambiente de teste](deploying-to-iis.md) tutorial.)
 
-Parâmetros de implantação da Web podem ser usados para especificar vários tipos diferentes de configurações que devem ser configurados durante a implantação, incluindo as configurações que se encontram em *Web. config* arquivos. Quando usado para especificar *Web. config* alterações no arquivo, parâmetros de implantação da Web são mais complexos para configurar, mas eles são úteis quando você não souber o valor a ser definido até que você implante. Por exemplo, em um ambiente corporativo, você pode criar um *pacote de implantação* e dê a ele uma pessoa no departamento de TI para instalar o em produção, e essa pessoa tem que inserir cadeias de caracteres de conexão ou senhas que você não sabe.
+Parâmetros de implantação da Web podem ser usados para especificar vários tipos diferentes de configurações que devem ser configurados durante a implantação, incluindo as configurações que são encontradas em *Web. config* arquivos. Quando usado para especificar *Web. config* alterações de arquivo, os parâmetros de implantação da Web são mais complexos para configurar, mas eles são úteis quando você não souber o valor a ser definido até que você implante. Por exemplo, em um ambiente corporativo, você pode criar uma *pacote de implantação* e dê a ele a uma pessoa no departamento de TI para instalar em produção e que a pessoa deve ser capaz de inserir cadeias de caracteres de conexão ou senhas que você não fizer isso sabe.
 
-Para o cenário que abrange essa série de tutoriais, já sabe tudo o que deve ser feita para o *Web. config* de arquivos, portanto você não precisa usar parâmetros de implantação da Web. Você vai configurar algumas transformações que são diferentes dependendo da configuração de compilação usada, e alguns que são diferentes dependendo do perfil de publicação usado.
+Para o cenário que abrange esta série de tutoriais, você sabe de antemão tudo o que precisa ser feito para o *Web. config* de arquivos, portanto você não precisa usar parâmetros de implantação da Web. Você vai configurar algumas transformações que são diferentes dependendo da configuração de compilação usada, e algumas que são diferentes dependendo do perfil de publicação usado.
 
 <a id="watransforms"></a>
 
 ## <a name="specifying-webconfig-settings-in-azure"></a>Especificando as configurações de Web. config no Azure
 
-Se o *Web. config* são configurações do arquivo que você deseja alterar no `<connectionStrings>` ou `<appSettings>` elemento, e se você estiver implantando em aplicativos Web no serviço de aplicativo do Azure, você terá outra opção para automatizar as alterações durante implantação. Você pode inserir as configurações que você deseja em vigor no Azure no **configurar** guia da página do portal de gerenciamento para seu aplicativo web (Role para baixo até o **configurações do aplicativo** e **cadeias de caracteres de conexão**  seções). Quando você implanta o projeto, o Azure aplica automaticamente as alterações. Para obter mais informações, consulte [Sites do Windows Azure: como cadeias de caracteres de aplicativo e o trabalho de cadeias de caracteres de Conexão](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx).
+Se o *Web. config* configurações do arquivo que você deseja alterar estão na `<connectionStrings>` ou o `<appSettings>` elemento, e se você estiver implantando em aplicativos Web no serviço de aplicativo do Azure, você tem outra opção para automatizar alterações durante implantação. Você pode inserir as configurações que você deseja entrar em vigor no Azure na **configurar** guia da página do portal de gerenciamento para seu aplicativo web (Role para baixo até a **configurações do aplicativo** e **cadeias de caracteres de conexão**  seções). Quando você implanta o projeto, o Azure aplica automaticamente as alterações. Para obter mais informações, consulte [Sites do Windows Azure: como cadeias de caracteres de aplicativo e o trabalho de cadeias de caracteres de Conexão](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx).
 
 ## <a name="default-transformation-files"></a>Arquivos de transformação padrão
 
-Em **Solution Explorer**, expanda *Web. config* para ver o *Web.Debug.config* e *Web.Release.config* arquivos de transformação são criados por padrão para as configurações de compilação padrão de dois.
+Na **Gerenciador de soluções**, expanda *Web. config* para ver os *Debug* e *Release* arquivos de transformação são criados por padrão para as configurações de compilação padrão de dois.
 
 ![Web.config_transform_files](web-config-transformations/_static/image1.png)
 
-Você pode criar arquivos de transformação para configurações de compilação personalizada clicando duas vezes o arquivo Web. config e escolhendo **adicionar transformações Config** no menu de contexto. Para este tutorial, você não precisa fazer isso, e a opção de menu é desabilitada, porque você não tiver criado as configurações de compilação personalizada.
+Você pode criar arquivos de transformação para configurações de compilação personalizada clicando duas vezes o arquivo Web. config e escolhendo **adicionar transformações de Config** no menu de contexto. Para este tutorial, você não precisa fazer isso, e a opção de menu está desabilitada, pois você não tiver criado quaisquer configurações de compilação personalizada.
 
-Mais tarde você criará três arquivos mais de transformação, um para o teste, preparo e produção de perfis de publicação. Um exemplo típico de uma configuração que você usaria em um arquivo de transformação do perfil de publicação porque ela depende do ambiente de destino é um ponto de extremidade do WCF que é diferente para teste e produção. Você criará publicar arquivos de perfil de transformação em tutoriais subsequentes depois de criar os perfis de publicação que entram com.
+Mais tarde você criará três arquivos mais de transformação, um para o teste, preparo e produção de perfis de publicação. Um exemplo típico de uma configuração que você usaria em um arquivo de transformação de perfil de publicação porque ela depende do ambiente de destino é um ponto de extremidade do WCF que é diferente para teste versus produção. Você criará publicar arquivos de transformação de perfil em tutoriais posteriores depois de criar perfis de publicação que eles acompanham.
 
-## <a name="disable-debug-mode"></a>Desabilitar modo de depuração
+## <a name="disable-debug-mode"></a>Desabilitar o modo de depuração
 
-Um exemplo de uma configuração que depende da configuração de compilação em vez de ambiente de destino é o `debug` atributo. Para uma versão de compilação, normalmente deseja depuração desabilitada, independentemente de qual ambiente você está implantando. Portanto, por padrão, o Visual Studio modelos de projeto criam *Web.Release.config* transformar arquivos com o código que remove o `debug` de atributo do `compilation` elemento. Aqui é o padrão *Web.Release.config*: além de algum código de transformação de exemplo que é comentado, ele inclui código de `compilation` elemento remove o `debug` atributo:
+Um exemplo de uma configuração que depende da configuração de compilação em vez do ambiente de destino é o `debug` atributo. Para um build de versão, você normalmente deseja depuração desabilitada, independentemente de qual ambiente você está implantando em. Portanto, por padrão, o Visual Studio modelos de projeto criam *Release* transformar arquivos com o código que remove as `debug` de atributos do `compilation` elemento. Aqui está o padrão *Release*: além de um código de transformação de exemplo que é comentado, ele inclui código na `compilation` elemento remove o `debug` atributo:
 
 [!code-xml[Main](web-config-transformations/samples/sample1.xml?highlight=18)]
 
-O `xdt:Transform="RemoveAttributes(debug)"` atributo especifica que você deseja que o `debug` atributo a ser removido do `system.web/compilation` elemento implantado *Web. config* arquivo. Isso será feito sempre que você implantar uma compilação de versão.
+O `xdt:Transform="RemoveAttributes(debug)"` atributo especifica que você deseja que o `debug` atributo a ser removido do `system.web/compilation` elemento no implantado *Web. config* arquivo. Isso será feito sempre que você implantar uma compilação de versão.
 
 ## <a name="limit-error-log-access-to-administrators"></a>Limitar o acesso ao log de erros para administradores
 
-Se houver um erro enquanto o aplicativo é executado, o aplicativo exibe uma página de erro genérico no lugar da página de erro gerado pelo sistema e ele usa o [pacote Elmah NuGet](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx) para emissão de relatórios e o log de erros. O `customErrors` elemento no aplicativo *Web. config* arquivo Especifica a página de erro:
+Se houver um erro enquanto o aplicativo é executado, o aplicativo exibe uma página de erro genérico no lugar da página de erro gerada pelo sistema e ele usa o [pacote do NuGet do Elmah](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx) para emissão de relatórios e log de erros. O `customErrors` elemento no aplicativo *Web. config* arquivo Especifica a página de erro:
 
 [!code-xml[Main](web-config-transformations/samples/sample2.xml)]
 
-Para ver a página de erro, altere temporariamente o `mode` atributo o `customErrors` elemento de "RemoteOnly" como "On" e execute o aplicativo do Visual Studio. Causar um erro ao solicitar uma URL inválida, como *Studentsxxx.aspx*. Em vez de um erro gerado pelo IIS "não é possível encontrar o recurso" página, você verá o *GenericErrorPage* página.
+Para ver a página de erro, altere temporariamente o `mode` atributo do `customErrors` elemento do "RemoteOnly" para "Ativado" e execute o aplicativo do Visual Studio. Causar um erro ao solicitar uma URL inválida, como *Studentsxxx.aspx*. Em vez de um erro gerado pelo IIS "o recurso não pode ser encontrado" página, você vê o *GenericErrorPage* página.
 
 ![Página de erro](web-config-transformations/_static/image2.png)
 
-Para ver o log de erros, substituir tudo na URL após o número da porta com *elmah.axd* (por exemplo, `http://localhost:51130/elmah.axd`) e pressione Enter:
+Para ver o log de erros, substitua tudo da URL após o número da porta com *elmah.axd* (por exemplo, `http://localhost:51130/elmah.axd`) e pressione Enter:
 
-![Página ELMAH](web-config-transformations/_static/image3.png)
+![Página do ELMAH](web-config-transformations/_static/image3.png)
 
-Não se esqueça de definir o `customErrors` elemento para o modo de "RemoteOnly" quando estiver pronto.
+Não se esqueça de definir o `customErrors` elemento para o modo de "RemoteOnly" quando terminar.
 
-No computador de desenvolvimento é conveniente permitir o acesso livre para a página de erro do log, mas em produção que poderia ser um risco à segurança. Para o site de produção, você deseja adicionar uma regra de autorização que restringe o acesso ao log de erros para administradores e para certificar-se de que a restrição funciona você desejar no teste e de preparo também. Portanto, isso é outra alteração que você deseja implementar toda vez que você implantar uma compilação de versão e, portanto, ele pertence a *Web.Release.config* arquivo.
+No computador de desenvolvimento é conveniente permitir o acesso gratuito à página de log de erro, mas em produção que seria um risco à segurança. Para o site de produção, você deseja adicionar uma regra de autorização que restringe o acesso ao log de erros para administradores e para certificar-se de que a restrição funciona, você desejar no teste e preparação também. Portanto, isso é outra alteração que você deseja implementar sempre que você implantar uma compilação de versão e, portanto, ele pertence a *Release* arquivo.
 
-Abra *Web.Release.config* e adicione um novo `location` elemento imediatamente antes do fechamento `configuration` marca, conforme mostrado aqui.
+Abra *Release* e adicione um novo `location` elemento imediatamente antes do fechamento `configuration` de marca, conforme mostrado aqui.
 
 [!code-xml[Main](web-config-transformations/samples/sample3.xml?highlight=27-34)]
 
-O `Transform` valor do atributo de "Inserção" faz com que essa `location` elemento a ser adicionado como um irmão qualquer existente `location` elementos o *Web. config* arquivo. (Já existe um `location` regras de elemento que especifica a autorização para o **atualização créditos** página.)
+O `Transform` valor de atributo de "Insert" faz com que essa `location` elemento a ser adicionado como um irmão qualquer existente `location` elementos no *Web. config* arquivo. (Já houver um `location` regras de elemento que especifica a autorização para o **atualização créditos** página.)
 
-Agora você pode visualizar a transformação para certificar-se de que o codificados corretamente.
+Agora você pode visualizar a transformação para certificar-se de que o codificado corretamente.
 
-Em **Solution Explorer**, clique com botão direito *Web.Release.config* e clique em **visualização transformar**.
+Na **Gerenciador de soluções**, clique com botão direito *Release* e clique em **visualização transformar**.
 
 ![Menu de transformação de visualização](web-config-transformations/_static/image4.png)
 
@@ -102,18 +101,18 @@ Abre uma página que mostra o desenvolvimento *Web. config* arquivo à esquerda 
 
 ![Visualização de transformação de local](web-config-transformations/_static/image6.png)
 
-(Na visualização, você poderá notar que algumas alterações adicionais que você não grava transformações para: eles normalmente envolvem a remoção de espaço em branco que não afetam a funcionalidade.)
+(Na visualização, você pode notar que algumas alterações adicionais que você não escreveu transforma para: elas normalmente envolvem a remoção de espaço em branco que não afeta a funcionalidade.)
 
 Quando você testar o site após a implantação, você também vai testar para verificar se a regra de autorização é eficiente.
 
 > [!NOTE] 
 > 
-> **Observação de segurança** nunca exibir detalhes do erro para o público em um aplicativo de produção ou armazenar essas informações em um local público. Os invasores poderão usar as informações de erro para detectar vulnerabilidades em um site. Se você usar ELMAH em seu próprio aplicativo, configure ELMAH para minimizar os riscos de segurança. O exemplo ELMAH neste tutorial não deve ser considerado uma configuração recomendada. É um exemplo que foi escolhido para ilustrar como lidar com uma pasta que o aplicativo deve ser capaz de criar arquivos. Para obter mais informações, consulte [proteger o ponto de extremidade do ELMAH](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages).
+> **Observação de segurança** nunca exibir detalhes do erro para o público em um aplicativo de produção, ou armazenar essas informações em um local público. Os invasores podem usar informações de erro para descobrir vulnerabilidades em um site. Se você usar o ELMAH no seu próprio aplicativo, configure para ELMAH para minimizar os riscos de segurança. O exemplo do ELMAH neste tutorial não deve ser considerado uma configuração recomendada. É um exemplo que foi escolhido para ilustrar como lidar com uma pasta que o aplicativo deve ser capaz de criar arquivos. Para obter mais informações, consulte [proteger o ponto de extremidade do ELMAH](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages).
 
 
-## <a name="a-setting-that-youll-handle-in-publish-profile-transformation-files"></a>Uma configuração que você vai manipular em Publicar arquivos de perfil de transformação
+## <a name="a-setting-that-youll-handle-in-publish-profile-transformation-files"></a>Arquivos de transformação de perfil de publicação de uma configuração que você lidará na
 
-Um cenário comum é ter *Web. config* configurações que devem ser diferentes em cada ambiente que você implantar arquivos. Por exemplo, um aplicativo que chama um serviço WCF talvez seja necessário um ponto de extremidade diferente em ambientes de teste e produção. O aplicativo Contoso University inclui uma configuração desse tipo também. Essa configuração controla um indicador visível nas páginas de um site que informa qual ambiente são in, como desenvolvimento, teste ou produção. O valor da configuração determina se o aplicativo acrescentará "(desenvolvimento)" ou "(teste)" para o título principal a *Site.Master* página mestre:
+Um cenário comum é ter *Web. config* as configurações que devem ser diferentes em cada ambiente que você implanta em arquivos. Por exemplo, um aplicativo que chama um serviço WCF talvez seja necessário um ponto de extremidade diferente em ambientes de teste e produção. O aplicativo Contoso University inclui uma configuração desse tipo também. Essa configuração controla um indicador visível nas páginas de um site que informa qual ambiente você está no, como desenvolvimento, teste ou produção. O valor da configuração determina se o aplicativo acrescentará "(desenvolvimento)" ou "(teste)" no cabeçalho principal do *Master* página mestra:
 
 ![Indicador de ambiente](web-config-transformations/_static/image7.png)
 
@@ -123,35 +122,35 @@ Páginas da web Contoso University ler um valor que é definido em `appSettings`
 
 [!code-xml[Main](web-config-transformations/samples/sample4.xml)]
 
-O valor deve ser "Teste" no ambiente de teste e "Produção" para preparação e produção.
+O valor deve ser "Teste" no ambiente de teste e "Produção" para a preparação e produção.
 
-O código a seguir em um arquivo de transformação implementar essa transformação:
+O código a seguir em um arquivo de transformação implementará essa transformação:
 
 [!code-xml[Main](web-config-transformations/samples/sample5.xml)]
 
-O `xdt:Transform` valor "SetAttributes" indica que a finalidade dessa transformação é alterar os valores de atributo de um elemento existente no atributo de *Web. config* arquivo. O `xdt:Locator` "Match(key)" indica que o elemento a ser modificado é o de valor de atributo cujo `key` atributo corresponde a `key` atributo especificado aqui. O somente outro atributo do `add` elemento `value`, e que é o que será alterado em implantado *Web. config* arquivo. O código mostrado aqui faz com que o `value` atributo do `Environment` `appSettings` elemento a ser definido como "Test" *Web. config* arquivo implantado.
+O `xdt:Transform` valor "SetAttributes" indica que a finalidade dessa transformação é alterar os valores de atributo de um elemento existente no atributo o *Web. config* arquivo. O `xdt:Locator` "Match(key)" indica que o elemento a ser modificado é aquele do valor do atributo cujo `key` atributo corresponde a `key` atributo especificado aqui. O apenas outro atributo do `add` elemento é `value`, e isso é o que será alterado em implantado *Web. config* arquivo. O código mostrado aqui faz com que o `value` atributo do `Environment` `appSettings` elemento a ser definido como "Test" no *Web. config* arquivo que é implantado.
 
-Esta transformação pertence nos arquivos de transformação do perfil de publicação, que você ainda não tenha criado. Você criará e atualizar os arquivos de transformação que implementam essa alteração, quando você criar os perfis de publicação para os ambientes de teste, preparação e produção. Você vai fazer que a [implantar em IIS](deploying-to-iis.md) e [implantar na produção](deploying-to-production.md) tutoriais.
+Essa transformação pertence nos arquivos de transformação do perfil de publicação, que você ainda não tenha criado. Você vai criar e atualizar os arquivos de transformação que implementam essa alteração ao criar perfis de publicação para os ambientes de teste, preparação e produção. Você terá de fazer isso [implantar no IIS](deploying-to-iis.md) e [implantar na produção](deploying-to-production.md) tutoriais.
 
 > [!NOTE]
-> Porque esta configuração está a `<appSettings>` elemento, você tem outra alternativa para especificar a transformação quando você estiver implantando em aplicativos Web no serviço de aplicativo do Azure consulte [Web. config especificando configurações no Azure](#watransforms) anteriormente neste tópico.
+> Porque essa configuração está na `<appSettings>` elemento, você tem outra alternativa para especificar a transformação quando você estiver implantando em aplicativos Web no serviço de aplicativo do Azure ver [Web. config especificando configurações no Azure](#watransforms) anteriormente neste tópico.
 
 
-## <a name="setting-connection-strings"></a>Cadeias de caracteres de conexão de configuração
+## <a name="setting-connection-strings"></a>Configurar cadeias de conexão
 
-Embora o arquivo de transformação padrão contém um exemplo que mostra como atualizar uma cadeia de caracteres de conexão, na maioria dos casos você não precisa configurar transformações de cadeia de caracteres de conexão, porque você pode especificar cadeias de caracteres de conexão no perfil de publicação. Você vai fazer que a [implantar em IIS](deploying-to-iis.md) e [implantar na produção](deploying-to-production.md) tutoriais.
+Embora o arquivo de transformação padrão contém um exemplo que mostra como atualizar uma cadeia de caracteres de conexão, na maioria dos casos você não precisa configurar transformações de cadeia de caracteres de conexão, porque você pode especificar cadeias de caracteres de conexão no perfil de publicação. Você terá de fazer isso [implantar no IIS](deploying-to-iis.md) e [implantar na produção](deploying-to-production.md) tutoriais.
 
 ## <a name="summary"></a>Resumo
 
-Agora você ter feito tanto quanto possível com *Web. config* transformações antes de criar os perfis de publicação, e você viu uma visualização da qual será o arquivo Web. config implantado.
+Agora você ter feito tanto quanto você pode fazer com *Web. config* transformações antes de você criar os perfis de publicação, e você já viu uma visualização de quais serão no arquivo Web. config implantado.
 
 ![Visualização de transformação de local](web-config-transformations/_static/image8.png)
 
-O tutorial a seguir, você vai ter cuidado das tarefas de configuração de implantação que requerem a definição de propriedades do projeto.
+No tutorial a seguir, você vai cuidar das tarefas de configuração de implantação que requerem a definição de propriedades do projeto.
 
-## <a name="more-information"></a>Mais Informações
+## <a name="more-information"></a>Mais informações
 
-Para obter mais informações sobre os tópicos abordados por este tutorial, consulte [Web. config usando transformações para alterar as configurações no arquivo App. config ou o arquivo Web. config de destino durante a implantação](https://go.microsoft.com/fwlink/p/?LinkId=282413#transforms) do mapa de conteúdo de implantação da Web para O Visual Studio e ASP.NET.
+Para obter mais informações sobre os tópicos abordados por este tutorial, consulte [Web. config usando transformações para alterar as configurações no arquivo Web. config de destino ou no arquivo App. config durante a implantação](https://go.microsoft.com/fwlink/p/?LinkId=282413#transforms) no mapa de conteúdo de implantação da Web para Visual Studio e ASP.NET.
 
 > [!div class="step-by-step"]
 > [Anterior](preparing-databases.md)

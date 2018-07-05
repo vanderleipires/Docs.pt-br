@@ -9,21 +9,20 @@ ms.date: 11/28/2005
 ms.topic: article
 ms.assetid: 22ddc59d-cd84-4def-a58b-ec3ca57f0d85
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-4-understanding-web-application-state
 msc.type: video
-ms.openlocfilehash: adfcc03b761ec55502b5b945f3c68ecc33a5c40c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ed804d37f94845bcc2043bf21e16a27b12f64f83
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886752"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400571"
 ---
 <a name="lesson-4-understanding-web-application-state"></a>[Lição 4:] Compreendendo o estado do aplicativo Web
 ====================
 por [Microsoft](https://github.com/microsoft)
 
-Nesta lição, você verá como manter o estado no ASP.NET, inclusive os vários objetos que você pode usar para armazenar informações para aplicativos ASP.NET 2.0.
+Nesta lição, você verá como manter o estado no ASP.NET, inclusive os vários objetos que você pode usar para armazenar informações para seus aplicativos ASP.NET 2.0.
 
 [&#9654;Assista ao vídeo (40 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-4-understanding-web-application-state)
 

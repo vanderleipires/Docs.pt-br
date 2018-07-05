@@ -1,6 +1,6 @@
 ---
 uid: whitepapers/denied-access-to-iis-directories
-title: ASP.NET negado acesso a diretórios IIS | Microsoft Docs
+title: Acesso negado do ASP.NET para IIS diretórios | Microsoft Docs
 author: rick-anderson
 description: Este white paper descreve o que você deve fazer uma solicitação para seu aplicativo ASP.NET retorna o erro "acesso negado ao diretório DirectoryName. Falha ao s...
 ms.author: aspnetcontent
@@ -9,52 +9,51 @@ ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: 3cb27b8a-354f-4332-bfe0-232b13bbf8aa
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /whitepapers/denied-access-to-iis-directories
 msc.type: content
-ms.openlocfilehash: d95423776a6b58fc67ae6c791685543dadd2480c
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 22868738e02472f5f433c729967ac324131a0fdc
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30070765"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383056"
 ---
-<a name="aspnet-denied-access-to-iis-directories"></a>Acesso negado para diretórios do IIS do ASP.NET
+<a name="aspnet-denied-access-to-iis-directories"></a>Acesso negado do ASP.NET a diretórios do IIS
 ====================
-> Este white paper descreve o que você deve fazer uma solicitação para seu aplicativo ASP.NET retorna o erro "acesso negado ao *DirectoryName* directory. Falha ao iniciar o monitoramento de alterações de diretório."
+> Este white paper descreve o que você deve fazer uma solicitação para seu aplicativo ASP.NET retorna o erro "acesso negado ao *Nomedodiretório* directory. Falha ao iniciar o monitoramento de alterações de diretório".
 > 
-> Aplica-se ao ASP.NET 1.0 e 1.1 do ASP.NET.
+> Aplica-se para o ASP.NET 1.0 e ASP.NET 1.1.
 
 
-RTM do ASP.NET V1 agora é executada usando um menor com privilégios de conta do windows - registrada como a conta "ASPNET" em um computador local.
+ASP.NET V1 RTM agora é executada usando um menor com privilégios de conta do windows - registrada como a conta "ASPNET" em um computador local.
 
-Em alguns bloqueados sistemas, essa conta pode não por padrão têm acesso de leitura segurança para diretórios de conteúdo do site, o diretório raiz do aplicativo ou o diretório raiz do site. Nesse caso, você receberá o seguinte erro ao solicitar páginas de um determinado aplicativo web:
+Em alguns bloqueado sistemas, essa conta pode não por padrão tem acesso de leitura segurança para diretórios de conteúdo de um site, o diretório raiz do aplicativo ou o diretório raiz do site da web. Nesse caso, você receberá o seguinte erro ao solicitar as páginas de um determinado aplicativo web:
 
 ![](denied-access-to-iis-directories/_static/image1.jpg)
 
-Para corrigir isso, você precisará alterar as permissões de segurança nos diretórios apropriados.
+Para corrigir esse problema, você precisará alterar as permissões de segurança nos diretórios apropriados.
 
-Especificamente, o ASP.NET exige leitura, executar e lista de acesso para a conta ASPNET para a raiz do site da web (por exemplo: c:\inetpub\wwwroot ou qualquer diretório de site alternativo, talvez você tenha configurado no IIS), o diretório de conteúdo e o diretório raiz do aplicativo para monitorar as alterações de arquivo de configuração. A raiz do aplicativo corresponde ao caminho da pasta associado com o diretório virtual do aplicativo na ferramenta de administração do IIS (inetmgr).
+Especificamente, o ASP.NET exige leitura, executar e lista de acesso para a conta ASPNET para a raiz do site da web (por exemplo: c:\inetpub\wwwroot ou em qualquer diretório de site alternativo que você pode ter configurado no IIS), o diretório de conteúdo e o diretório raiz do aplicativo para monitorar as alterações de arquivo de configuração. A raiz do aplicativo corresponde ao caminho da pasta associado com o diretório virtual do aplicativo na ferramenta de administração do IIS (inetmgr).
 
-Por exemplo, considere a seguinte hierarquia de aplicativo na pasta wwwroot.
+Por exemplo, considere a seguinte hierarquia de aplicativo sob a pasta wwwroot.
 
 `C:\inetpub\wwwroot\myapp\default.aspx`
 
-Neste exemplo, a conta ASPNET precisa de permissões de leitura definidas acima para o conteúdo de myapp e o diretório wwwroot. Uma ACL herdada único na pasta raiz também pode ser usada opcionalmente para ambos os diretórios se ele estão aninhados.
+Neste exemplo, a conta ASPNET precisa de permissões de leitura definidas acima para o conteúdo de myapp e o diretório wwwroot. Uma ACL herdada única na pasta raiz também pode ser usada opcionalmente para ambos os diretórios se eles estão aninhados.
 
 Para adicionar permissões para um diretório, execute as seguintes etapas:
 
 - Usando o Windows explorer, navegue até o diretório
-- Clique com o botão direito na pasta do diretório e escolha "Propriedades"
+- Clique com o botão direito na pasta de diretório e escolha "Propriedades"
 - Navegue até a guia "Segurança" na caixa de diálogo de propriedade
-- Clique no botão "Adicionar" e insira o nome do computador seguido pelo nome da conta ASPNET. Por exemplo, em um computador chamado "webdev", você poderia insira webdev\ASPNET e ocorrências de "Okey".
-- Verifique se a conta ASPNET tem de "leitura &amp; Execute", "Listar conteúdo da pasta" e "Leitura" caixas de seleção marcadas.
-- Acertos Okey para fechar a caixa de diálogo e salvar as alterações.
+- Clique no botão "Adicionar" e insira o nome do computador seguido pelo nome da conta ASPNET. Por exemplo, em um computador chamado "webdev", você seria insira webdev\ASPNET e pressione "Okey".
+- Certifique-se de que a conta ASPNET tem a "leitura &amp; Execute", "Listar conteúdo da pasta" e "Leitura" caixas de seleção marcadas.
+- Pressione Okey para fechar a caixa de diálogo e salvar as alterações.
 
 ![](denied-access-to-iis-directories/_static/image2.jpg)
 
-Se desejar, essas alterações podem ser automatizadas usando scripts ou a ferramenta "cacls.exe" que é fornecido com o Windows. Para obter mais informações sobre a conta ASPNET, consulte o [documento perguntas frequentes sobre](https://go.microsoft.com/fwlink/?LinkId=5828).
+Se desejado, essas alterações podem ser automatizadas usando scripts ou a ferramenta de "cacls.exe" que é fornecido com o Windows. Para obter mais informações sobre a conta ASPNET, consulte o [documentos de perguntas frequentes sobre](https://go.microsoft.com/fwlink/?LinkId=5828).
 
-Se um determinado aplicativo web depende de ter gravar ou modificar permissões para um arquivo ou pasta específica, isso pode receber o mesmo procedimento a seguir e marcando as caixas de seleção "Gravação" e/ou "Modificar".
+Se um determinado aplicativo web se baseia em ter a gravação ou modificar as permissões para um arquivo ou pasta em particular, isso pode ser concedido seguindo o mesmo procedimento e marcando as caixas de seleção de "Gravação" e/ou "Modificar".
 
-Em computadores que permitem que todos, ou o acesso de leitura do grupo de usuários para esses diretórios (que é a configuração padrão), nenhum problema será encontrado e as etapas acima não será necessárias.
+Em computadores que permitem que todas as pessoas ou o acesso de leitura do grupo de usuários a esses diretórios (que é a configuração padrão), nenhum problema será encontrado e as etapas acima não será necessárias.

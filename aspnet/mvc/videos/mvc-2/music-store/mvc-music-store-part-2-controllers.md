@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/music-store/mvc-music-store-part-2-controllers
-title: 'Repositório de música MVC parte 2: Controladores | Microsoft Docs'
+title: 'Store de música do MVC parte 2: Controladores | Microsoft Docs'
 author: jongalloway
-description: Jon continua o tutorial do repositório de música MVC criando algumas ações básicas do controlador.
+description: Jon continua o tutorial de Store de música do MVC criando algumas ações básicas do controlador.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/22/2010
 ms.topic: article
 ms.assetid: 2849e269-af4f-4e87-a07e-0b9cb01b4241
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/music-store/mvc-music-store-part-2-controllers
 msc.type: video
-ms.openlocfilehash: 5a07f528b80b273d0b01ecf1b0e1f38d65830e90
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9da01a57255917715b48d6e04c77301928f7ef94
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871058"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37399793"
 ---
-<a name="mvc-music-store-part-2-controllers"></a>Repositório de música MVC parte 2: controladores
+<a name="mvc-music-store-part-2-controllers"></a>Store de música do MVC parte 2: controladores
 ====================
 por [Jon Galloway](https://github.com/jongalloway)
 
-Jon continua o tutorial do repositório de música MVC criando algumas ações básicas do controlador.
+Jon continua o tutorial de Store de música do MVC criando algumas ações básicas do controlador.
 
 [&#9654;Assista ao vídeo (6 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc-music-store-part-2-controllers)
 

@@ -2,28 +2,27 @@
 uid: web-forms/videos/vs-2005/how-do-i-deploy-a-web-application-during-a-team-build
 title: '[Como fazer:] Implantar um aplicativo Web durante uma compilação de equipe? | Microsoft Docs'
 author: pjhacker
-description: Este vídeo demonstra como criar uma nova compilação de equipe e como implantar seu aplicativo da Web como parte do processo de compilação. Podemos ver que o deploym incluindo...
+description: Este vídeo demonstra como criar uma nova compilação de equipe e como implantar seu aplicativo Web como parte do processo de compilação. Podemos ver que, incluindo a implantação...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/01/2007
 ms.topic: article
 ms.assetid: 3c81ee94-4561-4267-864d-2656b33d95c9
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-deploy-a-web-application-during-a-team-build
 msc.type: video
-ms.openlocfilehash: a2e9c9495f2222db12eafacc70d37efa0254a5ec
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 04b2e5fb5d720ad41847e96700fb10ecc2002d57
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895292"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384319"
 ---
 <a name="how-do-i-deploy-a-web-application-during-a-team-build"></a>[Como fazer:] Implantar um aplicativo Web durante uma compilação de equipe?
 ====================
 por [Paul Hacker](https://github.com/pjhacker)
 
-Este vídeo demonstra como criar uma nova compilação de equipe e como implantar seu aplicativo da Web como parte do processo de compilação. Podemos ver que incluindo a etapa da implantação é tão simple quanto a adição de um comando de cópia de X para o script de compilação.
+Este vídeo demonstra como criar uma nova compilação de equipe e como implantar seu aplicativo Web como parte do processo de compilação. Podemos ver que a incluir a etapa de implantação é tão simple quanto adicionar um comando de cópia de X para o script de compilação.
 
 [&#9654;Assista ao vídeo (5 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-deploy-a-web-application-during-a-team-build)
 

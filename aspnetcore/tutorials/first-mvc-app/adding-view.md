@@ -1,16 +1,16 @@
 ---
-title: Adicionando uma exibição
+title: Adicionar uma exibição a um aplicativo ASP.NET Core MVC
 author: rick-anderson
 description: Adicionando uma exibição a um aplicativo ASP.NET Core MVC simples
 ms.author: riande
 ms.date: 03/04/2017
 uid: tutorials/first-mvc-app/adding-view
-ms.openlocfilehash: 16e0920c011931588586e51a5b5b7c8046a7976e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d0847f65fad5946426c981ca01218f6fb484c679
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276143"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961406"
 ---
 [!INCLUDE [adding-view](../../includes/mvc-intro/adding_view1.md)]
 

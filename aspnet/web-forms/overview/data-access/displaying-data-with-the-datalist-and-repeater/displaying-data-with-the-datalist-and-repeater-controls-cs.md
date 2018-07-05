@@ -1,44 +1,43 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
-title: Exibindo dados com os controles de Repetidor (c#) e DataList | Microsoft Docs
+title: Exibindo dados com os controles DataList e Repeater (c#) | Microsoft Docs
 author: rick-anderson
-description: Nos tutoriais anteriores usamos o controle GridView para exibir dados. A partir deste tutorial, vamos examinar a criação de padrões comuns de relatório com...
+description: Nos tutoriais anteriores usamos o controle GridView para exibir dados. Começando com este tutorial, vamos examinar a criação de padrões comuns de geração de relatórios com...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
 ms.topic: article
 ms.assetid: 0591cacc-b34b-4cf6-885e-2c9953bb0946
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a329ff5d598156e613e3b5ef370d9d1147e4ea61
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ca585c51ae12be2395897044f6d0fd1857d3e357
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878276"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382696"
 ---
-<a name="displaying-data-with-the-datalist-and-repeater-controls-c"></a>Exibindo dados com o DataList e controles de Repetidor (c#)
+<a name="displaying-data-with-the-datalist-and-repeater-controls-c"></a>Exibindo dados com os controles DataList e Repeater (c#)
 ====================
 por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Baixe o aplicativo de exemplo](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_29_CS.exe) ou [baixar PDF](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/datatutorial29cs1.pdf)
 
-> Nos tutoriais anteriores usamos o controle GridView para exibir dados. A partir deste tutorial, vamos examinar a criação de padrões comuns de relatório com os controles DataList e repetidor, começando com os conceitos básicos de exibição de dados com esses controles.
+> Nos tutoriais anteriores usamos o controle GridView para exibir dados. Começando com este tutorial, vamos examinar a criação de padrões comuns de geração de relatórios com os controles DataList e Repeater, começando com os conceitos básicos da exibição de dados com esses controles.
 
 
 ## <a name="introduction"></a>Introdução
 
-Em todos os exemplos durante os últimos 28 tutoriais, se necessário para exibir vários registros de uma fonte de dados são ativados para o controle GridView. GridView processa uma linha para cada registro da fonte de dados, exibindo os campos de dados de registro s em colunas. Embora GridView facilita a exibição, paginar, classificar, editar e excluir dados, sua aparência é um pouco boxy. Além disso, a marcação responsável para a estrutura GridView é fixo ele inclui um HTML `<table>` com uma linha de tabela (`<tr>`) para cada registro e uma célula de tabela (`<td>`) para cada campo.
+Em todos os exemplos durante os últimos 28 tutoriais, se for necessário para exibir vários registros de uma fonte de dados são ativados para o controle GridView. O GridView renderiza uma linha para cada registro na fonte de dados, exibindo os campos de dados de registro s em colunas. Embora GridView facilita a exibição, paginar, classificar, editar e excluir dados, sua aparência é um pouco boxy. Além disso, a marcação responsável para a estrutura de s GridView é fixo e ele inclui um HTML `<table>` com uma linha da tabela (`<tr>`) para cada registro e uma célula de tabela (`<td>`) para cada campo.
 
-Para fornecer um grau maior de personalização na aparência e a marcação renderizada ao exibir vários registros, o ASP.NET 2.0 oferece os controles DataList e repetidor (que também estavam disponíveis na versão do ASP.NET 1. x). O controle DataList e repetidor processar seu conteúdo usando modelos em vez de BoundFields, CheckBoxFields, ButtonFields e assim por diante. Como o GridView, DataList renderiza como um HTML `<table>`, mas permite que dados de vários registros de origem a serem exibidos por linha da tabela. Repetidor, por outro lado, não processa nenhuma marcação adicional que o que você explicitamente especifique e é um candidato ideal quando precisar de mais controle sobre a marcação emitido.
+Para fornecer um maior grau de personalização na aparência e a marcação renderizada ao exibir vários registros, o ASP.NET 2.0 oferece os controles DataList e Repeater (que também estavam disponíveis na versão do ASP.NET 1. x). Os controles DataList e Repeater renderizam seu conteúdo usando modelos em vez de BoundFields CheckBoxFields, ButtonFields e assim por diante. Como o GridView, DataList é renderizado como uma marca HTML `<table>`, mas permite que dados de vários registros de origem a serem exibidos por linha da tabela. O Repeater, por outro lado, não renderiza nenhuma marcação adicional que o que você explicitamente Especifica e é um candidato ideal quando você precisa de um controle preciso sobre a marcação emitida.
 
-Sobre os lado dezenas de tutoriais, vamos examinar a criação de padrões comuns de relatório com os controles DataList e repetidor, começando com os conceitos básicos de exibição de dados com esses modelos de controles. Veremos como formatar esses controles, como alterar o layout dos registros de dados em DataList, cenários comuns de detalhes/mestre, maneiras para editar e excluir dados, como por meio de registros da página e assim por diante.
+Sobre os lado dezenas de tutoriais, vamos examinar a criação de padrões comuns de geração de relatórios com os controles DataList e Repeater, começando com os conceitos básicos da exibição de dados com esses modelos de controles. Veremos como formatar esses controles, como alterar o layout dos registros de origem de dados no DataList, cenários comuns de detalhes/mestre, maneiras para editar e excluir dados, como página por meio de registros e assim por diante.
 
-## <a name="step-1-adding-the-datalist-and-repeater-tutorial-web-pages"></a>Etapa 1: Adicionar DataList e as páginas da Web do Tutorial repetidor
+## <a name="step-1-adding-the-datalist-and-repeater-tutorial-web-pages"></a>Etapa 1: Adicionando o DataList e Repeater Tutorial páginas de Web
 
-Antes de começar este tutorial, permitem s primeiro dedicar um tempo para adicionar as páginas ASP.NET que vamos precisar para este tutorial e os tutoriais de alguns Avançar lidar com a exibição de dados usando o DataList e Repetidor. Comece criando uma nova pasta no projeto chamado `DataListRepeaterBasics`. Em seguida, adicione as seguintes páginas ASP.NET cinco nesta pasta, ter todos os configurado para usar a página mestra `Site.master`:
+Antes de começar este tutorial, deixe s primeiro dedique uns momentos para adicionar as páginas do ASP.NET, precisaremos para este tutorial e os próximo poucos tutoriais que lidar com a exibição de dados usando o DataList e Repeater. Comece criando uma nova pasta no projeto chamado `DataListRepeaterBasics`. Em seguida, adicione as seguintes páginas ASP.NET cinco nesta pasta, manter todos eles configurado para usar a página mestra `Site.master`:
 
 - `Default.aspx`
 - `Basics.aspx`
@@ -47,46 +46,46 @@ Antes de começar este tutorial, permitem s primeiro dedicar um tempo para adici
 - `NestedControls.aspx`
 
 
-![Crie uma pasta DataListRepeaterBasics e adicionar as páginas ASP.NET Tutorial](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image1.png)
+![Crie uma pasta DataListRepeaterBasics e adicione as páginas do Tutorial do ASP.NET](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image1.png)
 
-**Figura 1**: criar um `DataListRepeaterBasics` pasta e adicionar as páginas ASP.NET Tutorial
-
-
-Abra o `Default.aspx` página e arraste o `SectionLevelTutorialListing.ascx` controle de usuário da `UserControls` pasta para a superfície de Design. Este controle de usuário que criamos no [páginas mestras e navegação de Site](../introduction/master-pages-and-site-navigation-cs.md) tutorial, enumera o mapa do site e exibe os tutoriais na seção atual em uma lista com marcadores.
+**Figura 1**: criar um `DataListRepeaterBasics` pasta e adicione as páginas do Tutorial do ASP.NET
 
 
-[![Adicionar o controle de usuário SectionLevelTutorialListing.ascx a Default.aspx](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image3.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image2.png)
-
-**Figura 2**: adicionar o `SectionLevelTutorialListing.ascx` controle de usuário `Default.aspx` ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image4.png))
+Abra o `Default.aspx` da página e arraste o `SectionLevelTutorialListing.ascx` controle de usuário do `UserControls` pasta para a superfície de Design. Esse controle de usuário que criamos na [páginas mestras e navegação no Site](../introduction/master-pages-and-site-navigation-cs.md) tutorial, enumera o mapa do site e exibe os tutoriais da seção atual em uma lista com marcadores.
 
 
-Para ter a exibição de lista com marcadores os tutoriais de DataList e repetidor que é criado, precisamos adicioná-los ao mapa do site. Abra o `Web.sitemap` de arquivo e adicione a seguinte marcação após a marcação de nó de mapa de site adicionando botões de personalizado:
+[![Adicionar o controle de usuário SectionLevelTutorialListing.ascx para default. aspx](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image3.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image2.png)
+
+**Figura 2**: Adicione o `SectionLevelTutorialListing.ascx` controle de usuário `Default.aspx` ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image4.png))
+
+
+Para ter a exibição de lista com marcadores os tutoriais do DataList e Repeater, criaremos, precisamos adicioná-los ao mapa do site. Abra o `Web.sitemap` arquivo e adicione a marcação a seguir após a marcação de nó de mapa de site adicionando botões de personalizado:
 
 
 [!code-xml[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample1.xml)]
 
 
-![Atualizar o mapa de Site para incluir as novas páginas ASP.NET](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image5.png)
+![Atualizar o mapa de Site para incluir as novas páginas do ASP.NET](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image5.png)
 
-**Figura 3**: atualizar o mapa de Site para incluir as novas páginas ASP.NET
-
-
-## <a name="step-2-displaying-product-information-with-the-datalist"></a>Etapa 2: Exibindo informações de produto com o controle DataList
-
-Semelhante ao FormView, o controle DataList s saída renderizada depende de modelos em vez de BoundFields, CheckBoxFields e assim por diante. Ao contrário de FormView, DataList foi projetado para exibir um conjunto de registros em vez de uma única. Permitir que o s começar este tutorial com uma análise de informações de produto de associação para uma DataList. Comece abrindo o `Basics.aspx` página o `DataListRepeaterBasics` pasta. Em seguida, arraste uma DataList da caixa de ferramentas para o Designer. Como ilustra a Figura 4, antes de especificar os modelos de DataList s, o Designer exibe como uma caixa cinza.
+**Figura 3**: atualizar o mapa de Site para incluir as novas páginas do ASP.NET
 
 
-[![Arraste o DataList da caixa de ferramentas para o Designer](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image7.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image6.png)
+## <a name="step-2-displaying-product-information-with-the-datalist"></a>Etapa 2: Exibindo informações de produto com o DataList
+
+Assim como FormView, o controle DataList s saída renderizada varia de acordo com modelos em vez de BoundFields, CheckBoxFields e assim por diante. Ao contrário de FormView, DataList foi projetado para exibir um conjunto de registros em vez de um solitário. Deixe o s começar este tutorial com uma análise de informações de produto de associação para uma DataList. Comece abrindo o `Basics.aspx` página o `DataListRepeaterBasics` pasta. Em seguida, arraste uma DataList da caixa de ferramentas para o Designer. Como ilustra a Figura 4, antes de especificar os modelos de DataList s, o Designer exibe como uma caixa cinza.
+
+
+[![Arraste DataList da caixa de ferramentas para o Designer](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image7.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image6.png)
 
 **Figura 4**: arraste o DataList da caixa de ferramentas para o Designer ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image8.png))
 
 
-De DataList s marca inteligente, adicione um novo ObjectDataSource e configurá-lo para usar o `ProductsBLL` classe s `GetProducts` método. Como re criando uma DataList somente leitura neste tutorial, definimos a lista suspensa como (nenhum) em s Assistente inserir, atualizar e excluir guias.
+Do DataList s marca inteligente, adicione um novo ObjectDataSource e configurá-lo para usar o `ProductsBLL` classe s `GetProducts` método. Como re criando um DataList de somente leitura neste tutorial, definimos a lista suspensa como (nenhum) em s Assistente inserir, atualizar e excluir guias.
 
 
 [![Optar por criar um novo ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image10.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image9.png)
 
-**Figura 5**: optar por criar um novo ObjectDataSource ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image11.png))
+**Figura 5**: otimizado para criar um novo ObjectDataSource ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image11.png))
 
 
 [![Configurar o ObjectDataSource para usar a classe ProductsBLL](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image13.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image12.png)
@@ -96,51 +95,51 @@ De DataList s marca inteligente, adicione um novo ObjectDataSource e configurá-
 
 [![Recuperar informações sobre todos os produtos usando o método GetProducts](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image16.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image15.png)
 
-**Figura 7**: recuperar informações sobre todos os do produtos usando a `GetProducts` método ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image17.png))
+**Figura 7**: recuperar informações sobre todos os de produtos usando o `GetProducts` método ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image17.png))
 
 
-Depois de configurar o ObjectDataSource e associá-lo com DataList por meio de sua marca inteligente, o Visual Studio criará automaticamente um `ItemTemplate` em DataList que exibe o nome e valor de cada campo de dados retornado pela fonte de dados (consulte a marcação abaixo). Esse padrão `ItemTemplate` aparência s é idêntica ao que os modelos criados automaticamente quando uma fonte de dados de associação para o FormView por meio do Designer.
+Depois de configurar o ObjectDataSource e associá-lo com o DataList por meio de sua marca inteligente, o Visual Studio criará automaticamente um `ItemTemplate` no DataList que exibe o nome e valor de cada campo de dados retornado pela fonte de dados (consulte a marcação abaixo). Esse padrão `ItemTemplate` aparência é idêntica dos modelos criados automaticamente quando uma fonte de dados de associação para FormView por meio do Designer.
 
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample2.aspx)]
 
 > [!NOTE]
-> Lembre-se de que quando uma fonte de dados de associação a um controle de FormView através da marca inteligente de s FormView, Visual Studio é criada uma `ItemTemplate`, `InsertItemTemplate`, e `EditItemTemplate`. Com o controle DataList, no entanto, apenas um `ItemTemplate` é criado. Isso ocorre porque DataList não tem o mesmo interno edição e inserção suporte oferecido por FormView. DataList conter eventos relacionados a editar e excluir e editar e excluir suporte podem ser adicionados com um pouco de código, mas não há s sem suporte de caixa simple como FormView. Veremos como incluir edição e exclusão de suporte com DataList em um tutorial futuras.
+> Lembre-se de que ao associar a uma fonte de dados a um controle FormView por meio da marca inteligente do FormView s, o Visual Studio criou uma `ItemTemplate`, `InsertItemTemplate`, e `EditItemTemplate`. Com o DataList, no entanto, somente um `ItemTemplate` é criado. Isso ocorre porque o DataList não tem interno mesmo edição e inserção de suporte oferecido pelo FormView. DataList conter eventos relacionados a edição e exclusão e edição e exclusão de suporte não podem ser adicionados com um pouco de código, mas s não existe nenhum suporte de out-of-the-box simples como FormView. Veremos como incluir a edição e exclusão de suporte com o DataList em um tutorial futuro.
 
 
-Permitir que o s dedicar um tempo para melhorar a aparência desse modelo. Em vez de exibir todos os campos de dados, permitem s exibir apenas a s nome do produto, o fornecedor, a categoria, a quantidade por unidade e preço unitário. Além disso, permitem s exibir o nome de um `<h4>` título e formatar os campos restantes usando um `<table>` abaixo do título.
+Deixe o s dedique uns momentos para melhorar a aparência desse modelo. Em vez de exibir todos os campos de dados, deixe s exibir somente o s nome do produto, o fornecedor, a categoria, a quantidade por unidade e o preço unitário. Além disso, let s exibem o nome em uma `<h4>` título e formatar os campos restantes usando um `<table>` abaixo do título.
 
-Para fazer essas alterações, que você pode use o modelo de recursos no Designer de DataList s inteligente marca, clique no link Editar modelos ou você pode modificar o modelo manualmente por meio de sintaxe declarativa de s de página de edição. Se você usar a opção de editar modelos no Designer, a marcação resultante pode não coincidir com a seguinte marcação exatamente, mas quando visualizados por meio de um navegador deve ser muito semelhante ao mostrado na Figura 8 de captura de tela.
+Use o recursos no Designer do DataList s smart tag clique no link Editar modelos ou você pode modificar o modelo manualmente por meio da sintaxe declarativa de s de página de edição de modelo para fazer essas alterações, que você pode. Se você usar a opção de editar modelos no Designer, sua marcação resultante pode não corresponder a marcação a seguir exatamente, mas quando visualizado por meio de um navegador deve parecer muito semelhante à mostrada na Figura 8 de captura de tela.
 
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample3.aspx)]
 
 > [!NOTE]
-> O exemplo acima usa controles de rótulo Web cujo `Text` propriedade é atribuída o valor da sintaxe de associação de dados. Como alternativa, podemos poderia omitir os rótulos, digitando a sintaxe de associação de dados. Isto é, em vez de usar `<asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />` pode em vez disso, usamos a sintaxe declarativa `<%# Eval("CategoryName") %>`.
+> O exemplo acima usa controles de Web Label cujo `Text` propriedade recebe o valor da sintaxe de associação de dados. Como alternativa, poderia omitimos os rótulos completamente, digitar apenas a sintaxe de associação de dados. Ou seja, em vez de usar `<asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />` podemos poderia ter usado em vez disso, a sintaxe declarativa `<%# Eval("CategoryName") %>`.
 
 
-No entanto, deixando os controles da Web de rótulo, oferece duas vantagens. Primeiro, ele fornece uma maneira mais fácil para formatar os dados com base nos dados, como você verá o seguinte tutorial. Em segundo lugar, a opção de editar modelos na sintaxe de associação de dados declarativo do Designer t exibição que aparece fora algum controle da Web. Em vez disso, a interface de editar modelos foi projetada para facilitar o trabalho com marcação estática e Web controla e pressupõe que qualquer associação de dados será feita por meio da caixa de diálogo Editar DataBindings, que é acessível a partir de marcas inteligentes de controles da Web.
+No entanto, deixando nos controles da Web de rótulo, oferece duas vantagens. Primeiro, ele fornece um meio mais fácil para formatar os dados com base nos dados, como veremos no próximo tutorial. Em segundo lugar, a opção de editar modelos na sintaxe de vinculação de dados declarativa de Designer ainda não t exibição que aparece fora de algum controle da Web. Em vez disso, a interface de editar modelos foi projetada para facilitar o trabalho com marcação estática e controles de Web e pressupõe que qualquer associação de dados será feita por meio da caixa de diálogo Editar DataBindings, que é acessível a partir de marcas inteligentes de controles da Web.
 
-Portanto, ao trabalhar com DataList, que fornece a opção de edição de modelos por meio do Designer, prefiro usar controles da Web de rótulo para que o conteúdo está acessível por meio da interface de editar modelos. Como você verá em breve, repetidor requer que o modelo de conteúdo s ser editada da exibição da fonte. Consequentemente, quando criar os modelos de s repetidor irei geralmente omiti Web rótulo controla a menos que eu sei que precisarei formatar a aparência dos dados vinculados texto com base na lógica de programação.
+Portanto, ao trabalhar com o controle DataList que fornece a opção de editar os modelos por meio do Designer, eu prefiro usar controles da Web de rótulo para que o conteúdo é acessível por meio da interface de editar modelos. Como você verá em breve, o Repeater requer que o modelo de conteúdo s ser editado da exibição da fonte. Consequentemente, ao criar os modelos de s Repeater geralmente omitirei Web rótulo controla a menos que eu sei que precisarei formatar a aparência dos dados associados texto com base em lógica programática.
 
 
-[![Cada produto s saída é renderizado usando s ItemTemplate DataList](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image19.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image18.png)
+[![Cada produto s saída é renderizado usando DataList s ItemTemplate](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image19.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image18.png)
 
-**Figura 8**: cada produto saída é renderizado usando DataList s `ItemTemplate` ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image20.png))
+**Figura 8**: cada produto s saída é renderizado usando s DataList `ItemTemplate` ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image20.png))
 
 
 ## <a name="step-3-improving-the-appearance-of-the-datalist"></a>Etapa 3: Melhorar a aparência do DataList
 
-Como o GridView, DataList oferece uma série de propriedades relacionadas a estilo, como `Font`, `ForeColor`, `BackColor`, `CssClass`, `ItemStyle`, `AlternatingItemStyle`, `SelectedItemStyle`e assim por diante. Ao trabalhar com os controles GridView e DetailsView, criamos os arquivos de capa no `DataWebControls` tema predefinidas a `CssClass` propriedades para esses dois controles e `CssClass` propriedade para vários dos seus subpropriedades (`RowStyle` `HeaderStyle`e assim por diante). Permitir que o s faça o mesmo para DataList.
+Como o GridView, DataList oferece uma série de propriedades relacionadas a estilo, como `Font`, `ForeColor`, `BackColor`, `CssClass`, `ItemStyle`, `AlternatingItemStyle`, `SelectedItemStyle`e assim por diante. Ao trabalhar com os controles GridView e DetailsView, criamos os arquivos de capa na `DataWebControls` tema predefinidas a `CssClass` propriedades para esses dois controles e o `CssClass` propriedade para várias de suas subpropriedades (`RowStyle` `HeaderStyle`e assim por diante). Deixe o s faça o mesmo para DataList.
 
-Como discutido o [exibindo dados com o ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md) tutorial, um arquivo de capa Especifica as propriedades relacionadas a aparência do padrão para um controle da Web; um tema é uma coleção de arquivos de capa, CSS, imagem e JavaScript definem uma determinada aparência para um site. No *exibindo dados com o ObjectDataSource* tutorial, criamos um `DataWebControls` tema (que é implementado como uma pasta dentro de `App_Themes` pasta) que tem, no momento, dois arquivos de capa - `GridView.skin` e `DetailsView.skin`. Permitir que o s adicione um terceiro arquivo de capa para especificar as definições de estilo predefinido de DataList.
+Conforme discutido na [exibindo dados com o ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md) tutorial, um arquivo de capa Especifica as propriedades relacionadas à aparência padrão para um controle Web; um tema é uma coleção de arquivos de capa, CSS, imagem e JavaScript que definem uma determinada aparência para um site. No *exibindo dados com o ObjectDataSource* tutorial, criamos um `DataWebControls` tema (que é implementado como uma pasta dentro de `App_Themes` pasta) que tem, no momento, dois arquivos de capa - `GridView.skin` e `DetailsView.skin`. Deixe o s adicionar um terceiro arquivo de capa para especificar as configurações de estilo predefinido para DataList.
 
-Para adicionar um arquivo de capa, clique duas vezes no `App_Themes/DataWebControls` pasta, escolha Adicionar um novo Item e selecione a opção de arquivo de capa da lista. Dê o nome `DataList.skin` para o arquivo.
+Para adicionar um arquivo de capa, clique com botão direito no `App_Themes/DataWebControls` pasta, escolha Adicionar um novo Item e selecione a opção de arquivo de capa da lista. Dê o nome `DataList.skin` para o arquivo.
 
 
-[![Criar um novo arquivo de capa denominado DataList.skin](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image22.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image21.png)
+[![Criar um novo arquivo de capa chamado DataList.skin](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image22.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image21.png)
 
-**Figura 9**: criar um arquivo de capa novo chamado `DataList.skin` ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image23.png))
+**Figura 9**: criar um novo nomeado de arquivo de capa `DataList.skin` ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image23.png))
 
 
 Use a seguinte marcação para o `DataList.skin` arquivo:
@@ -148,68 +147,68 @@ Use a seguinte marcação para o `DataList.skin` arquivo:
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample4.aspx)]
 
-Essas configurações atribua as mesmas classes CSS para as propriedades adequadas de DataList que foram usadas com os controles GridView e DetailsView. As classes CSS usadas aqui `DataWebControlStyle`, `AlternatingRowStyle`, `RowStyle`, e assim por diante são definidos no `Styles.css` de arquivo e foram adicionados em tutoriais anteriores.
+Essas configurações atribuir as mesmas classes CSS para as propriedades de DataList adequadas conforme foram usados com os controles GridView e DetailsView. As classes CSS usadas aqui `DataWebControlStyle`, `AlternatingRowStyle`, `RowStyle`e assim por diante são definidos na `Styles.css` de arquivo e foram adicionados nos tutoriais anteriores.
 
-Com a adição deste arquivo de capa, a aparência de s DataList é atualizada no Designer (talvez seja necessário atualizar a exibição de Designer para ver os efeitos do novo arquivo de capa; no menu Exibir, escolha Atualizar). Como mostra a Figura 10, cada produto alternado tem uma cor de plano de fundo rosa claro.
-
-
-[![Criar um novo arquivo de capa denominado DataList.skin](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image25.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image24.png)
-
-**Figura 10**: criar um arquivo de capa novo chamado `DataList.skin` ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image26.png))
+Com a adição desse arquivo de capa, a aparência de s DataList é atualizada no Designer (talvez seja necessário atualizar a exibição de Designer para ver os efeitos do novo arquivo de capa; a partir do menu Exibir, escolha Atualizar). Como mostra a Figura 10, cada produto alternado tem uma cor de plano de fundo rosa-claro.
 
 
-## <a name="step-4-exploring-the-datalist-s-other-templates"></a>Etapa 4: Explorando os modelos DataList s outros
+[![Criar um novo arquivo de capa chamado DataList.skin](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image25.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image24.png)
 
-Além de `ItemTemplate`, DataList dá suporte a seis outros modelos opcionais:
+**Figura 10**: criar um novo nomeado de arquivo de capa `DataList.skin` ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image26.png))
 
-- `HeaderTemplate` Se fornecido, adiciona uma linha de cabeçalho para a saída e é usado para processar essa linha
+
+## <a name="step-4-exploring-the-datalist-s-other-templates"></a>Etapa 4: Explorando DataList s outros modelos
+
+Além de `ItemTemplate`, DataList dá suporte a seis modelos de opcionais:
+
+- `HeaderTemplate` Se fornecido, adiciona uma linha de cabeçalho na saída e é usado para renderizar essa linha
 - `AlternatingItemTemplate` usado para processar itens alternados
-- `SelectedItemTemplate` usado para renderizar o item selecionado; o item selecionado é o item cujo índice corresponde à DataList s [ `SelectedIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `SelectedItemTemplate` usado para renderizar o item selecionado; o item selecionado é o item cujo índice corresponde ao s DataList [ `SelectedIndex` propriedade](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
 - `EditItemTemplate` usado para renderizar o item que está sendo editado
-- `SeparatorTemplate` Se fornecido, adiciona um separador entre cada item e é usado para processar esse separador
-- `FooterTemplate` -Se fornecido, adiciona uma linha de rodapé para a saída e é usado para processar essa linha
+- `SeparatorTemplate` Se fornecido, adiciona um separador entre cada item e é usado para renderizar esse separador
+- `FooterTemplate` -Se fornecidos, adiciona uma linha de rodapé para a saída e é usado para renderizar essa linha
 
-Ao especificar o `HeaderTemplate` ou `FooterTemplate`, DataList adiciona uma linha de cabeçalho ou rodapé de página adicional para a saída renderizada. Como com o GridView s cabeçalho e rodapé linhas, o cabeçalho e rodapé em DataList não estão associados aos dados. Portanto, qualquer sintaxe de associação de dados no `HeaderTemplate` ou `FooterTemplate` que tenta acessar os dados associados retornará uma cadeia de caracteres em branco.
+Ao especificar o `HeaderTemplate` ou `FooterTemplate`, DataList adiciona uma linha de cabeçalho ou rodapé adicional para a saída renderizada. Como com o GridView s cabeçalho e rodapé linhas, o cabeçalho e rodapé em um DataList não estão associados aos dados. Portanto, qualquer sintaxe de associação de dados na `HeaderTemplate` ou `FooterTemplate` que tentam acessar os dados associados retornará uma cadeia de caracteres em branco.
 
 > [!NOTE]
-> Como vimos no [exibindo informações de resumo em GridView s rodapé](../custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs.md) tutorial, enquanto as linhas de cabeçalho e rodapé don sintaxe de associação de dados de suporte de t, informações específicas de dados pode ser inserida diretamente para essas linhas da GridView s `RowDataBound` manipulador de eventos. Essa técnica pode ser usada para ambos calculam totais em execução ou outras informações dos dados associada ao controle, bem como atribuir essas informações para o rodapé. Este mesmo conceito que pode ser aplicado aos controles DataList e repetidor; a única diferença é que, para o controle DataList e repetidor criam um manipulador de eventos para o `ItemDataBound` evento (em vez de para o `RowDataBound` evento).
+> Como vimos na [exibindo informações de resumo em s GridView rodapé](../custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs.md) tutorial, enquanto as linhas de cabeçalho e rodapé don sintaxe de associação de dados de suporte de t, informações específicas de dados pode ser injetado diretamente nessas linhas das S GridView `RowDataBound` manipulador de eventos. Essa técnica pode ser usada para os dois calculam os totais em execução ou outras informações dos dados associado ao controle, bem como atribuir essas informações para o rodapé. Este mesmo conceito pode ser aplicado aos controles DataList e Repeater; a única diferença é que, para o DataList e Repeater, crie um manipulador de eventos para o `ItemDataBound` evento (em vez de para o `RowDataBound` evento).
 
 
-Para nosso exemplo, permitem s têm o título exibido na parte superior dos resultados DataList s em informações sobre o produto um `<h3>` título. Para fazer isso, adicione um `HeaderTemplate` com a marcação apropriada. No Designer, isso pode ser feito clicando no link Editar modelos da marca inteligente DataList s, escolher o modelo de cabeçalho na lista suspensa e digitando o texto depois de escolher a opção de título 3 do estilo de lista suspensa lista (veja a Figura 11).
+Para nosso exemplo, let s têm o título de informações do produto exibida na parte superior dos resultados DataList s em um `<h3>` título. Para fazer isso, adicione um `HeaderTemplate` com a marcação apropriada. No Designer, isso pode ser feito clicando no link Editar modelos na marca inteligente DataList s, escolhendo o modelo de cabeçalho da lista suspensa e digitar o texto depois de escolher a opção de título 3 do estilo de lista suspensa lista (veja a Figura 11).
 
 
 [![Adicionar um HeaderTemplate com as informações de produto do texto](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image28.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image27.png)
 
-**Figura 11**: adicionar um `HeaderTemplate` com as informações de produto de texto ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image29.png))
+**Figura 11**: adicionar um `HeaderTemplate` com as informações de produto do texto ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image29.png))
 
 
-Como alternativa, isso pode ser adicionado declarativamente inserindo a seguinte marcação dentro de `<asp:DataList>` marcas:
+Como alternativa, isso pode ser adicionado declarativamente, inserindo a seguinte marcação dentro do `<asp:DataList>` marcas:
 
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample5.html)]
 
-Para adicionar um pouco de espaço entre cada produto na listagem, deixe s adicionar um `SeparatorTemplate` que inclui uma linha entre cada seção. A marca da régua horizontal (`<hr>`), adiciona uma linha de divisória. Criar o `SeparatorTemplate` para que ele tenha a seguinte marcação:
+Para adicionar um pouco de espaço entre cada produto na listagem, permitem que s adicione um `SeparatorTemplate` que inclui uma linha entre cada seção. A marca da régua horizontal (`<hr>`), adiciona tal um divisor. Criar o `SeparatorTemplate` para que ele tenha a seguinte marcação:
 
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample6.html)]
 
 > [!NOTE]
-> Como o `HeaderTemplate` e `FooterTemplates`, o `SeparatorTemplate` não está associado a qualquer registro da fonte de dados e, portanto, não é diretamente associados à DataList de registros da fonte de dados de acesso.
+> Como o `HeaderTemplate` e `FooterTemplates`, o `SeparatorTemplate` não está associado a qualquer registro da fonte de dados e, portanto, não é diretamente associados à DataList de registros da fonte de dados do access.
 
 
-Depois de fazer essa adição, ao exibir a página por meio de um navegador deve ser semelhante à Figura 12. Observe a linha de cabeçalho e a linha entre cada produto na listagem.
+Depois de fazer essa adição ao exibir a página por meio de um navegador deve ser semelhante à Figura 12. Observe a linha de cabeçalho e a linha entre cada produto na listagem.
 
 
-[![DataList inclui uma linha de cabeçalho e uma régua Horizontal entre cada listagem do produto](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image31.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image30.png)
+[![DataList inclui uma linha de cabeçalho e uma régua Horizontal entre cada listagem de produto](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image31.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image30.png)
 
-**Figura 12**: DataList inclui uma linha de cabeçalho e um Horizontal regra entre cada produto listando ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image32.png))
+**Figura 12**: DataList inclui uma linha de cabeçalho e um Horizontal regra entre cada listagem de produtos ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image32.png))
 
 
-## <a name="step-5-rendering-specific-markup-with-the-repeater-control"></a>Etapa 5: Processamento de marcação específica com o controle repetidor
+## <a name="step-5-rendering-specific-markup-with-the-repeater-control"></a>Etapa 5: Processamento de marcação específica com o controle Repeater
 
-Se você fizer uma fonte de exibição/do seu navegador ao visitar o exemplo de DataList da Figura 12, você verá que o DataList emite um HTML `<table>` que contém uma linha de tabela (`<tr>`) com uma única célula de tabela (`<td>`) para cada item vinculado para o DataList. Essa saída, na verdade, é idêntica ao que poderia ser emitido a partir um GridView com um único TemplateField. Como você verá um tutorial futuras, DataList permitir personalização adicional de saída, que nos permite exibir vários registros de fonte de dados por linha da tabela.
+Se você fizer uma fonte de exibição/do seu navegador ao visitar o exemplo de DataList da Figura 12, você verá que DataList emite um HTML `<table>` que contém uma linha da tabela (`<tr>`) com uma única célula de tabela (`<td>`) para cada item associado para o DataList. Na verdade, essa saída é idêntica ao que seria ser emitido a partir de um GridView com um único TemplateField. Como veremos em um tutorial futuro, DataList permitir personalização adicional da saída, possibilitando a exibir vários registros da fonte de dados por linha da tabela.
 
-Se você não quiser t para emitir um HTML `<table>`, embora? Para controle total e completa sobre a marcação gerada por um controle de Web de dados, podemos deve usar o controle Repetidor. Como o DataList repetidor é construído com base em modelos. Repetidor, no entanto, apenas oferece os seguintes cinco modelos:
+E se você não deseja t para emitir uma marca HTML `<table>`, embora? Para controle total e completo sobre a marcação gerada por um controle de Web de dados, devemos usar o controle Repeater. Como DataList e Repeater é construído com base em modelos. O Repeater, no entanto, apenas oferece os seguintes cinco modelos:
 
 - `HeaderTemplate` Se fornecido, adiciona a marcação especificada antes dos itens
 - `ItemTemplate` usado para processar itens
@@ -217,18 +216,18 @@ Se você não quiser t para emitir um HTML `<table>`, embora? Para controle tota
 - `SeparatorTemplate` Se fornecido, adiciona a marcação especificada entre cada item
 - `FooterTemplate` -Se fornecido, adiciona a marcação especificada após os itens
 
-No ASP.NET 1. x, repetidor controle foi comumente usado para exibir uma lista com marcadores cujos dados veio algumas fontes de dados. Nesse caso, o `HeaderTemplate` e `FooterTemplates` conteria a abertura e fechamento `<ul>` marcas, respectivamente, enquanto o `ItemTemplate` conteria `<li>` elementos com a sintaxe de associação de dados. Essa abordagem ainda pode ser usada no ASP.NET 2.0 como vimos nos dois exemplos de [páginas mestras e navegação de Site](../introduction/master-pages-and-site-navigation-cs.md) tutorial:
+No ASP.NET 1. x, o Repeater controle era comumente usado para exibir uma lista com marcadores cujos dados vem de alguma fonte de dados. Nesse caso, o `HeaderTemplate` e `FooterTemplates` conteria a abertura e fechamento `<ul>` marcas, respectivamente, enquanto o `ItemTemplate` conteria `<li>` elementos com a sintaxe de associação de dados. Essa abordagem ainda pode ser usada no ASP.NET 2.0 como vimos nos dois exemplos de [páginas mestras e navegação no Site](../introduction/master-pages-and-site-navigation-cs.md) tutorial:
 
-- No `Site.master` página mestre, um repetidor foi usado para exibir uma lista com marcadores do conteúdo do mapa do site de nível superior (relatórios básicos, filtragem de relatórios, formatação personalizada e assim por diante); outro repetidor aninhada foi usado para exibir as seções de filhos das seções de nível superior
-- Em `SectionLevelTutorialListing.ascx`, um repetidor foi usado para exibir uma lista com marcadores das seções filhos da seção de mapa de site atual
+- No `Site.master` página mestra, um repetidor foi usado para exibir uma lista com marcadores do conteúdo do mapa do site de nível superior (relatórios básicos, filtragem de relatórios, formatação personalizada e assim por diante); repetidor aninhado e outro foi usada para exibir as seções de filhos das seções de nível superior
+- No `SectionLevelTutorialListing.ascx`, um repetidor foi usado para exibir uma lista com marcadores das seções filhos da seção de mapa de site atual
 
 > [!NOTE]
-> O ASP.NET 2.0 apresenta o novo [controle BulletedList](https://msdn.microsoft.com/library/ms228101.aspx), que pode ser associada a um controle de fonte de dados para exibir uma lista com marcadores simple. Com o controle de BulletedList não precisamos especificar qualquer HTML relacionada à lista; em vez disso, podemos simplesmente indicar o campo de dados a ser exibida como o texto para cada item da lista.
+> O ASP.NET 2.0 apresenta o novo [controle BulletedList](https://msdn.microsoft.com/library/ms228101.aspx), que pode ser associado a um controle de fonte de dados para exibir uma lista com marcadores simple. Com o controle BulletedList não precisamos especificar qualquer um dos HTML relacionada à lista; em vez disso, podemos simplesmente indicar o campo de dados a ser exibido como o texto para cada item de lista.
 
 
-Repetidor serve como uma captura todos os dados de controle da Web. Se não houver um controle existente que gera a marcação necessária, o controle de Repetidor pode ser usado. Para ilustrar usando repetidor, permitem s tiverem a lista de categorias exibida acima do DataList de informações de produto criado na etapa 2. Em particular, permitem s têm as categorias exibidas em uma única linha HTML `<table>` com cada categoria exibida como uma coluna na tabela.
+O Repeater serve como uma captura todos os dados de controle da Web. Se não for um controle existente que gera a marcação necessária, o controle Repeater pode ser usado. Para ilustrar como usar o Repeater, deixe s a lista de categorias exibido acima do DataList de informações do produto criado na etapa 2. Em particular, let s têm as categorias exibidas em uma única linha HTML `<table>` com cada categoria exibida como uma coluna na tabela.
 
-Para fazer isso, inicie arrastando um controle repetidor da caixa de ferramentas para o Designer, acima do DataList de informações do produto. Assim como acontece com DataList, repetidor exibe inicialmente como uma caixa cinza até que seu modelo foram definido.
+Para fazer isso, comece a arrastar um controle Repeater da caixa de ferramentas para o Designer, acima do DataList de informações do produto. Assim como acontece com o DataList e Repeater exibe inicialmente como uma caixa cinza até que seus modelos foram definidos.
 
 
 [![Adicionar um repetidor para o Designer](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image34.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image33.png)
@@ -236,7 +235,7 @@ Para fazer isso, inicie arrastando um controle repetidor da caixa de ferramentas
 **Figura 13**: adicionar um repetidor para o Designer ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image35.png))
 
 
-Apenas uma opção de lá s na marca inteligente repetidor s: Escolher fonte de dados. Optar por criar um novo ObjectDataSource e configurá-lo para usar o `CategoriesBLL` classe s `GetCategories` método.
+Somente uma opção ali s na marca inteligente Repeater s: Escolher fonte de dados. Optar por criar um novo ObjectDataSource e configurá-lo para usar o `CategoriesBLL` classe s `GetCategories` método.
 
 
 [![Criar um novo ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image37.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image36.png)
@@ -254,36 +253,36 @@ Apenas uma opção de lá s na marca inteligente repetidor s: Escolher fonte de 
 **Figura 16**: recuperar informações sobre todas as categorias usando o `GetCategories` método ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image44.png))
 
 
-Ao contrário do DataList, Visual Studio não cria automaticamente um ItemTemplate para repetidor após a associação a uma fonte de dados. Além disso, os modelos de s repetidor não podem ser configurados por meio do Designer e devem ser especificados declarativamente.
+Ao contrário do DataList, o Visual Studio não cria automaticamente um ItemTemplate para repetidor depois de associá-lo a uma fonte de dados. Além disso, os modelos de s Repeater não podem ser configurados por meio do Designer e devem ser especificados de forma declarativa.
 
-Para exibir as categorias como uma única linha `<table>` com uma coluna para cada categoria, precisamos repetidor emitir marcação semelhante à seguinte:
+Para exibir as categorias como uma única linha `<table>` com uma coluna para cada categoria, precisamos que o Repeater para emitir marcação semelhante ao seguinte:
 
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample7.html)]
 
-Desde o `<td>Category X</td>` texto é a parte que se repete, isso será exibido no repetidor s ItemTemplate. A marcação que aparece antes de ele - `<table><tr>` -será colocada no `HeaderTemplate` durante a marcação final - `</tr></table>` -será colocada no `FooterTemplate`. Para inserir essas configurações de modelo, vá para a parte declarativa de página ASP.NET clicando no botão fonte no canto inferior esquerdo e digite a seguinte sintaxe:
+Uma vez que o `<td>Category X</td>` texto é a parte que se repete, isso será exibido no repetidor s ItemTemplate. A marcação que aparece antes de ele - `<table><tr>` -será colocada em de `HeaderTemplate` durante a marcação final - `</tr></table>` -será colocada no `FooterTemplate`. Para inserir essas configurações de modelo, vá para a parte declarativa da página ASP.NET, clicando no botão fonte no canto inferior esquerdo e digite a sintaxe a seguir:
 
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample8.aspx)]
 
-Repetidor emite marcação conforme especificado por seus modelos, nada mais, nada menos precisa. Figura 17 mostra a saída de s repetidor quando visualizada através de um navegador.
+O Repeater emite marcação conforme especificado por seus modelos, nada mais, nada menos precisa. Figura 17 mostra a saída de s Repeater quando visualizado por meio de um navegador.
 
 
-[![Uma única linha HTML &lt;tabela&gt; lista cada categoria em uma coluna separada](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image46.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image45.png)
+[![Uma única linha de HTML &lt;tabela&gt; lista cada categoria em uma coluna separada](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image46.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image45.png)
 
 **Figura 17**: uma única linha HTML `<table>` lista cada categoria em uma coluna separada ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image47.png))
 
 
 ## <a name="step-6-improving-the-appearance-of-the-repeater"></a>Etapa 6: Melhorar a aparência do repetidor
 
-Desde o repetidor emite precisamente a marcação especificada por seus modelos, ele deve ter nenhuma surpresa que não existem propriedades relacionadas a estilo para Repetidor. Para alterar a aparência do conteúdo gerado pelo repetidor, podemos deve adicionar manualmente o conteúdo HTML ou CSS necessário diretamente aos modelos repetidor s.
+Uma vez que o Repeater emite precisamente a marcação especificada por seus modelos, ele deve ser nenhuma surpresa que não existem propriedades relacionadas ao estilo para o Repeater. Para alterar a aparência do conteúdo gerado pelo Repeater, podemos deve adicionar manualmente o conteúdo HTML ou CSS necessário diretamente aos modelos Repeater s.
 
-Para nosso exemplo, permitem s tem as colunas categoria alternativa cores de plano de fundo, como com as linhas alternadas em DataList. Para fazer isso, é preciso atribuir a `RowStyle` classe CSS para cada item repetidor e o `AlternatingRowStyle` classe CSS para cada item de alternância repetidor por meio de `ItemTemplate` e `AlternatingItemTemplate` modelos, da seguinte forma:
+Para nosso exemplo, deixe s tem as colunas categoria alternativo cores de plano de fundo, como com as linhas alternadas no DataList. Para fazer isso, precisamos atribuir a `RowStyle` a classe CSS para cada item Repeater e o `AlternatingRowStyle` classe CSS para cada item Repeater alternada por meio do `ItemTemplate` e `AlternatingItemTemplate` modelos, da seguinte forma:
 
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample9.aspx)]
 
-Permitir que o s também adicionar uma linha de cabeçalho para a saída com o texto de categorias de produto. Já que estamos não t saber quantas colunas nosso resultante `<table>` será composta, a maneira mais simples para gerar uma linha de cabeçalho que é garantida para abranger todas as colunas é usar *duas* `<table>` s. A primeira `<table>` conterá duas linhas, a linha de cabeçalho e uma linha que contém a segunda, uma linha `<table>` que tem uma coluna para cada categoria no sistema. Ou seja, queremos emita a seguinte marcação:
+Deixe o s também adicionar uma linha de cabeçalho para a saída com o texto de categorias de produto. Já que estamos não t saber quantas colunas nosso resultando `<table>` será composta, a maneira mais simples para gerar uma linha de cabeçalho que é garantida para abranger todas as colunas é usar *dois* `<table>` s. A primeira `<table>` conterá duas linhas, a linha de cabeçalho e uma linha que contém a segunda, uma linha `<table>` que tem uma coluna para cada categoria no sistema. Ou seja, queremos emita a seguinte marcação:
 
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample10.html)]
@@ -293,31 +292,31 @@ O seguinte `HeaderTemplate` e `FooterTemplate` resultar na marcação desejada:
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample11.aspx)]
 
-A Figura 18 mostra repetidor depois que essas alterações foram feitas.
+Figura 18 mostra o Repeater depois que essas alterações foram feitas.
 
 
-[![As colunas categoria alternam na cor de plano de fundo e inclui uma linha de cabeçalho](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image49.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image48.png)
+[![As colunas categoria alternativo na cor do plano de fundo e inclui uma linha de cabeçalho](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image49.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image48.png)
 
 **Figura 18**: A categoria colunas alternativo na cor de plano de fundo e inclui uma linha de cabeçalho ([clique para exibir a imagem em tamanho normal](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image50.png))
 
 
 ## <a name="summary"></a>Resumo
 
-Enquanto o controle GridView facilita a exibir, editar, excluir, classificar e paginar através dos dados, a aparência está muito boxy e grade. Para obter mais controle sobre a aparência, é necessário ativar a controles de DataList ou Repetidor. Esses dois controles exibem um conjunto de registros usando modelos em vez de BoundFields, CheckBoxFields e assim por diante.
+Enquanto o controle GridView torna fácil exibir, editar, excluir, classificar e paginar dados, a aparência é boxy e como grade. Para obter mais controle sobre a aparência, precisamos recorrer aos controles DataList ou Repeater. Ambos esses controles exibem um conjunto de registros usando modelos, em vez de BoundFields, CheckBoxFields e assim por diante.
 
-DataList renderiza como um HTML `<table>` que, por padrão, exibe cada registro da fonte de dados em uma única linha da tabela, assim como um GridView com um TemplateField único. No entanto, conforme veremos um tutorial futuras, DataList permitir vários registros a serem exibidos por linha da tabela. Repetidor, por outro lado, estritamente emite a marcação especificada em seus modelos; ele não adicione qualquer marcação adicional e, portanto, normalmente é usado para exibir dados em elementos HTML diferente de um `<table>` (como em uma lista com marcadores).
+DataList é renderizado como uma marca HTML `<table>` que, por padrão, exibe cada registro da fonte de dados em uma linha da tabela, assim como um GridView com um TemplateField único. No entanto, como veremos em um tutorial futuro, DataList permitem vários registros a serem exibidos por linha da tabela. O Repeater, por outro lado, estritamente emite a marcação especificada nos seus modelos; ele não adiciona qualquer marcação adicional e, portanto, normalmente é usado para exibir dados em elementos HTML diferente de um `<table>` (como em uma lista com marcadores).
 
-Enquanto o DataList e repetidor oferecem mais flexibilidade em sua saída renderizada, eles não têm muitos dos recursos internos encontrados em GridView. Como examinaremos em tutoriais futuros, alguns desses recursos podem ser conectado novamente sem muito esforço, mas é manter em mente que o uso do DataList ou repetidor em vez de GridView limitar os recursos que você pode usar sem a necessidade de implementar esses recursos por conta própria.
+Enquanto o DataList e Repeater oferecem mais flexibilidade em sua saída renderizada, eles não têm muitos dos recursos internos encontrados no GridView. Como nós examinaremos nos próximos tutoriais, alguns desses recursos podem ser conectada novamente sem muito esforço, mas fazer mantenha em mente que usar DataList ou Repeater no lugar de GridView limitar os recursos que você pode usar sem necessidade de implementar esses recursos por conta própria.
 
 Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla.com](http://www.4guysfromrolla.com), tem trabalhado com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e escritor. Seu livro mais recente é [ *Sams Teach por conta própria ASP.NET 2.0 em 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado pelo [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 ## <a name="special-thanks-to"></a>Agradecimentos especiais a
 
-Esta série de tutoriais foi revisado por vários revisores úteis. Revisores levar para este tutorial foram Yaakov Ellis, Liz Shulok, Randy Schmidt e Stacy Park. Interessado em examinar meu artigos futuros do MSDN? Nesse caso, me enviar uma linha no [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Esta série de tutoriais foi revisada por muitos revisores úteis. Revisores líder para este tutorial foram Yaakov Ellis, Liz Shulok, Randy Schmidt e Stacy Park. Você está interessado na revisão Meus próximos artigos do MSDN? Nesse caso, me descartar uma linha na [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Avançar](formatting-the-datalist-and-repeater-based-upon-data-cs.md)

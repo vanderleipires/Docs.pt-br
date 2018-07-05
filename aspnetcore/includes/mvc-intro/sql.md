@@ -1,4 +1,4 @@
-# <a name="working-with-sqlite-in-an-aspnet-core-mvc-project"></a>Trabalhando com o SQLite em um projeto ASP.NET Core MVC
+# <a name="work-with-sqlite-in-an-aspnet-core-mvc-app"></a>Trabalhar com o SQLite em um aplicativo ASP.NET Core MVC
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 

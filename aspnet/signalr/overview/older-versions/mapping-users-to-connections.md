@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/mapping-users-to-connections
-title: Mapeamento de usuários do SignalR para conexões no SignalR 1. x | Microsoft Docs
+title: Mapeamento de usuários do SignalR para conexões no SignalR 1.x | Microsoft Docs
 author: pfletcher
 description: Este tópico mostra como reter informações sobre usuários e suas conexões.
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: ebbc93a8-e6c4-4122-8e0d-3aa42293c747
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/mapping-users-to-connections
 msc.type: authoredcontent
-ms.openlocfilehash: 896bf4142ce090e39ed5697ff053cd56728318ed
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8c8c6ffbea92fac5da21ec268f6b805a40c5fd73
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28037006"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395429"
 ---
-<a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>Mapeamento de usuários do SignalR para conexões no SignalR 1. x
+<a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>Mapeamento de usuários do SignalR para conexões no SignalR 1.x
 ====================
 por [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
 
@@ -28,20 +27,20 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://g
 
 ## <a name="introduction"></a>Introdução
 
-Cada cliente que se conecta a um hub passa uma id de conexão exclusivo. Você pode recuperar esse valor no `Context.ConnectionId` propriedade do contexto do hub. Se seu aplicativo precisa mapear um usuário para a id de conexão e manter esse mapeamento, você pode usar um dos seguintes:
+Cada cliente que se conecta a um hub passa uma id de conexão exclusivo. Você pode recuperar esse valor no `Context.ConnectionId` propriedade de contexto de hub. Se seu aplicativo precisar mapear um usuário para a id de conexão e manter esse mapeamento, você pode usar um dos seguintes:
 
 - [Armazenamento na memória](#inmemory), como um dicionário
-- [Grupo de SignalR para cada usuário](#groups)
-- [Armazenamento externo permanente](#database), como uma tabela de banco de dados ou armazenamento de tabela do Azure
+- [Grupo do SignalR para cada usuário](#groups)
+- [Armazenamento externo permanente](#database), como uma tabela de banco de dados ou o armazenamento de tabelas do Azure
 
 Cada uma dessas implementações é mostrada neste tópico. Você usa o `OnConnected`, `OnDisconnected`, e `OnReconnected` métodos do `Hub` classe para acompanhar o status de conexão do usuário.
 
 A melhor abordagem para seu aplicativo depende de:
 
-- O número de servidores web hospedando o seu aplicativo.
+- O número de servidores web que hospedam seu aplicativo.
 - Se você precisa obter uma lista dos usuários conectados no momento.
-- Se você precisa manter informações de grupo e usuário quando o aplicativo ou o servidor for reiniciado.
-- Se a latência de chamada de um servidor externo é um problema.
+- Se você precisar persistir informações de usuário e grupo quando o aplicativo ou o servidor for reiniciado.
+- Se a latência da chamada de um servidor externo é um problema.
 
 A tabela a seguir mostra qual abordagem funciona para essas considerações.
 
@@ -49,17 +48,17 @@ A tabela a seguir mostra qual abordagem funciona para essas considerações.
 | --- | --- | --- | --- | --- |
 | Na memória |  | ![](mapping-users-to-connections/_static/image1.png) |  | ![](mapping-users-to-connections/_static/image2.png) |
 | Grupos de usuário único | ![](mapping-users-to-connections/_static/image3.png) |  |  | ![](mapping-users-to-connections/_static/image4.png) |
-| Permanentes, externa | ![](mapping-users-to-connections/_static/image5.png) | ![](mapping-users-to-connections/_static/image6.png) | ![](mapping-users-to-connections/_static/image7.png) |  |
+| Permanentes, externas | ![](mapping-users-to-connections/_static/image5.png) | ![](mapping-users-to-connections/_static/image6.png) | ![](mapping-users-to-connections/_static/image7.png) |  |
 
 <a id="inmemory"></a>
 
 ## <a name="in-memory-storage"></a>Armazenamento na memória
 
-Os exemplos a seguir mostram como reter informações de conexão e do usuário em um dicionário que é armazenado na memória. O dicionário usa um `HashSet` para armazenar a id de conexão. A qualquer momento, um usuário pode ter mais de uma conexão para o aplicativo do SignalR. Por exemplo, um usuário que está conectado por meio de vários dispositivos ou mais de uma guia do navegador teria mais de uma id de conexão.
+Os exemplos a seguir mostram como reter informações de conexão e do usuário em um dicionário que é armazenado na memória. O dictionary usa um `HashSet` para armazenar a id de conexão. A qualquer momento, um usuário pode ter mais de uma conexão para o aplicativo do SignalR. Por exemplo, um usuário que está conectado por meio de vários dispositivos ou mais de uma guia do navegador teria mais de uma id de conexão.
 
-Se o aplicativo for fechado, todas as informações é perdida, mas ele será novamente preenchido conforme os usuários restabelecer a conexão. Armazenamento na memória não funcionará se o seu ambiente incluir mais de um servidor web, porque cada servidor deve ter um conjunto separado de conexões.
+Se o aplicativo é desligado, todas as informações é perdida, mas ele será novamente preenchido conforme os usuários restabelecer suas conexões. Armazenamento na memória não funcionará se o seu ambiente incluir mais de um servidor web, pois cada servidor teria uma coleção separada de conexões.
 
-O primeiro exemplo mostra uma classe que gerencia o mapeamento de usuários para conexões. A chave para o HashSet será o nome do usuário.
+O primeiro exemplo mostra uma classe que gerencia o mapeamento de usuários para conexões. A chave para HashSet será o nome do usuário.
 
 [!code-csharp[Main](mapping-users-to-connections/samples/sample1.cs)]
 
@@ -73,9 +72,9 @@ O exemplo a seguir mostra como usar a classe de mapeamento de conexão de um hub
 
 Você pode criar um grupo para cada usuário e, em seguida, enviar uma mensagem a esse grupo quando quiser acessar somente esse usuário. O nome de cada grupo é o nome do usuário. Se um usuário tiver mais de uma conexão, cada id de conexão é adicionada ao grupo do usuário.
 
-Você deve não remover manualmente o usuário do grupo quando o usuário se desconecta. Essa ação é executada automaticamente pela estrutura do SignalR.
+Você deve não remover manualmente o usuário a partir do grupo quando o usuário se desconecta. Essa ação é executada automaticamente pela estrutura do SignalR.
 
-O exemplo a seguir mostra como implementar grupos de usuário único.
+O exemplo a seguir mostra como implementar os grupos de usuário único.
 
 [!code-csharp[Main](mapping-users-to-connections/samples/sample3.cs)]
 
@@ -83,25 +82,25 @@ O exemplo a seguir mostra como implementar grupos de usuário único.
 
 ## <a name="permanent-external-storage"></a>Armazenamento externo permanente
 
-Este tópico mostra como usar um banco de dados ou o armazenamento de tabela do Azure para armazenar informações de conexão. Essa abordagem funciona quando você tiver vários servidores web, porque cada servidor web pode interagir com o mesmo repositório de dados. Se os servidores web parar de funcionar ou o aplicativo ser reiniciado, o `OnDisconnected` método não for chamado. Portanto, é possível que o repositório de dados tenha registros para as ids de conexão que não são mais válidas. Para limpar esses registros órfãos, você poderá invalidar qualquer conexão que foi criado fora do período de tempo que são relevante para seu aplicativo. Os exemplos nesta seção incluem um valor para controlar quando a conexão foi criada, mas não mostram como limpar registros antigos porque talvez você queira fazer isso como um processo em segundo plano.
+Este tópico mostra como usar um banco de dados ou o armazenamento de tabelas do Azure para armazenar informações de conexão. Essa abordagem funciona quando você tiver vários servidores web, porque cada servidor web pode interagir com o mesmo repositório de dados. Se seus servidores web parar de funcionar ou o aplicativo ser reiniciado, o `OnDisconnected` método não é chamado. Portanto, é possível que seu repositório de dados tenha registros para ids de conexão que não são mais válidas. Para limpar esses registros órfãos, você poderá invalidar a qualquer conexão que foi criado fora de um período de tempo que é relevante para seu aplicativo. Os exemplos nesta seção incluem um valor para controlar quando a conexão foi criada, mas não mostram como a limpeza dos registros antigos, porque você talvez queira fazer isso como um processo em segundo plano.
 
 ### <a name="database"></a>Banco de Dados
 
-Os exemplos a seguir mostram como reter informações de conexão e do usuário em um banco de dados. Você pode usar qualquer tecnologia de acesso a dados; No entanto, o exemplo a seguir mostra como definir modelos usando o Entity Framework. Esses modelos de entidade correspondem a campos e as tabelas de banco de dados. A estrutura de dados pode variar consideravelmente dependendo dos requisitos do seu aplicativo.
+Os exemplos a seguir mostram como reter informações de conexão e do usuário em um banco de dados. Você pode usar qualquer tecnologia de acesso a dados; No entanto, o exemplo a seguir mostra como definir modelos usando o Entity Framework. Esses modelos de entidade correspondem aos campos e tabelas de banco de dados. A estrutura de dados pode variar consideravelmente dependendo dos requisitos do seu aplicativo.
 
-O primeiro exemplo mostra como definir uma entidade de usuário que pode ser associada a várias entidades de conexão.
+O primeiro exemplo mostra como definir uma entidade de usuário que pode ser associada com muitas entidades de conexão.
 
 [!code-csharp[Main](mapping-users-to-connections/samples/sample4.cs)]
 
-Em seguida, do hub, você pode controlar o estado de cada conexão com o código mostrado abaixo.
+Em seguida, no hub, você pode acompanhar o estado de cada conexão com o código mostrado abaixo.
 
 [!code-csharp[Main](mapping-users-to-connections/samples/sample5.cs)]
 
-### <a name="azure-table-storage"></a>Armazenamento de tabela do Azure
+### <a name="azure-table-storage"></a>Armazenamento de tabelas do Azure
 
-O seguinte exemplo de armazenamento de tabela do Azure é semelhante ao exemplo de banco de dados. Ele não inclui todas as informações que você precisa começar com o serviço de armazenamento de tabela do Azure. Para obter informações, consulte [como usar o armazenamento de tabela do .NET](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/).
+O exemplo de armazenamento de tabela do Azure a seguir é semelhante ao exemplo de banco de dados. Ele não inclui todas as informações que você precisa para começar com o serviço de armazenamento de tabela do Azure. Para obter informações, consulte [como usar o armazenamento de tabela do .NET](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/).
 
-O exemplo a seguir mostra uma entidade de tabela para armazenar informações de conexão. Ela particiona os dados por nome de usuário e identifica cada entidade pela id de conexão, para que um usuário pode ter várias conexões a qualquer momento.
+O exemplo a seguir mostra uma entidade de tabela para armazenar informações de conexão. Ela particiona os dados por nome de usuário e identifica cada entidade pela id de conexão, portanto, um usuário pode ter várias conexões a qualquer momento.
 
 [!code-csharp[Main](mapping-users-to-connections/samples/sample6.cs)]
 

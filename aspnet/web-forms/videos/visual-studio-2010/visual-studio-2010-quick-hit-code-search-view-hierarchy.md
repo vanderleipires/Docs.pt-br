@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-code-search-view-hierarchy
-title: Visual Studio 2010 rápida ocorrências - hierarquia de exibição de pesquisa de código
+title: Visual Studio 2010 rápido ocorrências - hierarquia de exibição de pesquisa de código
 author: JoeStagner
 description: Neste vídeo, você aprenderá sobre a hierarquia de exibição de pesquisa de código do Visual Studio.
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 11/11/2009
 ms.topic: article
 ms.assetid: 0f24b680-e3a6-46f6-a52a-91191e09ab78
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-code-search-view-hierarchy
 msc.type: video
-ms.openlocfilehash: 1569f175597a08f4b048687d2fb968d8423b6e7e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ae1cf513aa9bfd536499bdeb9e516e7546e7133b
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30894711"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384927"
 ---
-<a name="visual-studio-2010-quick-hit---code-search-view-hierarchy"></a>Visual Studio 2010 "Rápido Hit" - hierarquia de exibição de pesquisa de código
+<a name="visual-studio-2010-quick-hit---code-search-view-hierarchy"></a>Visual Studio 2010 "Acertar rápida" - hierarquia de exibição de pesquisa de código
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 

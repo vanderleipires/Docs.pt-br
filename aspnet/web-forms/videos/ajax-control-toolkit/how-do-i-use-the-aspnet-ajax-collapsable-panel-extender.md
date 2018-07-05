@@ -2,28 +2,27 @@
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-collapsable-panel-extender
 title: '[Como fazer:] Usar o extensor do painel recolhível do ASP.NET AJAX? | Microsoft Docs'
 author: JoeStagner
-description: Neste vídeo, você aprenderá como usar o extensor do painel recolhível ASP.NET AJAX para permitir que o usuário Mostrar ou ocultar o conteúdo em uma página da web dinamicamente.
+description: Neste vídeo, você aprenderá como usar o extensor do painel recolhível do ASP.NET AJAX para permitir que o usuário dinamicamente Mostrar ou ocultar o conteúdo em uma página da web.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/31/2007
 ms.topic: article
 ms.assetid: d54549cd-e832-4bfa-b490-52e58a8a03c4
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-collapsable-panel-extender
 msc.type: video
-ms.openlocfilehash: 8c218237f38bf41139f170a9ee99be197e99dcbd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0b2e8aacc24d31ccbc769f6bf76f5ae333cfd2a9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881224"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37387615"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-collapsable-panel-extender"></a>[Como fazer:] Usar o extensor do painel recolhível do ASP.NET AJAX?
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 
-Neste vídeo, você aprenderá como usar o extensor do painel recolhível ASP.NET AJAX para permitir que o usuário Mostrar ou ocultar o conteúdo em uma página da web dinamicamente.
+Neste vídeo, você aprenderá como usar o extensor do painel recolhível do ASP.NET AJAX para permitir que o usuário dinamicamente Mostrar ou ocultar o conteúdo em uma página da web.
 
 [&#9654;Assista ao vídeo (11 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-collapsable-panel-extender)
 

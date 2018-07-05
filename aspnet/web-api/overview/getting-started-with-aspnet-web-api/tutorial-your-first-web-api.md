@@ -2,21 +2,20 @@
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 title: Introdução ao ASP.NET Web API 2 (c#)
 author: MikeWasson
-description: HTTP não é apenas para serviços de páginas da web. Também é uma plataforma poderosa para a criação de APIs que expõem os dados e serviços. O HTTP é simples, flexível e ubiq...
+description: HTTP não é apenas para servir as páginas da web. Também é uma plataforma poderosa para a criação de APIs que expõem serviços e dados. O HTTP é simples, flexível e ubiq...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/28/2017
 ms.topic: article
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: d881563cdb6449aada444ef0528061581113a925
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: adda92a6a06bc30b9217d440bbd38066ef9ea24f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "29905030"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368858"
 ---
 <a name="get-started-with-aspnet-web-api-2-c"></a>Introdução ao ASP.NET Web API 2 (c#)
 ====================
@@ -24,7 +23,7 @@ por [Mike Wasson](https://github.com/MikeWasson)
 
 [Baixe o projeto concluído](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
 
-HTTP não é apenas para serviços de páginas da web. HTTP também é uma plataforma poderosa para a criação de APIs que expõem os dados e serviços. O HTTP é simples, flexível e de todos os lugares. Praticamente qualquer plataforma que você pode pensar tem uma biblioteca HTTP para que serviços HTTP podem atingir uma ampla gama de clientes, incluindo navegadores, dispositivos móveis e aplicativos de área de trabalho tradicionais.
+HTTP não é apenas para servir as páginas da web. HTTP também é uma plataforma poderosa para a criação de APIs que expõem serviços e dados. HTTP é simples, flexível e todos os lugares. Praticamente qualquer plataforma que você pode pensar tem uma biblioteca HTTP, para que os serviços HTTP podem alcançar uma ampla gama de clientes, incluindo navegadores, dispositivos móveis e aplicativos de desktop tradicionais.
  
 A API Web ASP.NET é uma estrutura para a criação de APIs Web sobre o .NET Framework. Neste tutorial, você usará a API Web ASP.NET para criar uma API Web que retorna uma lista de produtos.
 
@@ -32,7 +31,7 @@ A API Web ASP.NET é uma estrutura para a criação de APIs Web sobre o .NET Fra
  ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
   
  - [Visual Studio 2017](https://www.visualstudio.com/downloads/)
- - Web API 2
+ - API Web 2
 
 Consulte [criar uma API Web com o Visual Studio para Windows e o ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) para ver uma versão mais recente deste tutorial.
 
@@ -58,7 +57,7 @@ Na caixa de diálogo **Novo Aplicativo Web ASP.NET**, selecione o modelo **Vazio
 
 ## <a name="adding-a-model"></a>Adicionando um modelo
 
-Um *modelo* é um objeto que representa os dados em seu aplicativo. ASP.NET Web API pode serializar automaticamente seu modelo para outro formato, XML ou JSON, e, em seguida, gravar os dados serializados no corpo da mensagem de resposta HTTP. Como um cliente pode ler o formato de serialização, ele pode desserializar o objeto. A maioria dos clientes pode analisar XML ou JSON. Além disso, o cliente pode indicar qual formato ele deseja definindo o cabeçalho Accept na mensagem de solicitação HTTP.
+Um *modelo (model)* é um objeto que representa os dados em seu aplicativo. ASP.NET Web API pode serializar automaticamente seu modelo para outro formato, XML ou JSON, e, em seguida, gravar os dados serializados no corpo da mensagem de resposta HTTP. Como um cliente pode ler o formato de serialização, ele pode desserializar o objeto. A maioria dos clientes pode analisar XML ou JSON. Além disso, o cliente pode indicar qual formato ele deseja definindo o cabeçalho Accept na mensagem de solicitação HTTP.
 
 Vamos começar criando um modelo simples que representa um produto.
 
@@ -94,10 +93,10 @@ O scaffolding cria um arquivo chamado ProductsController.cs na pasta controlador
 ![](tutorial-your-first-web-api/_static/image8.png)
 
 > [!NOTE]
-> Não é necessário colocar os controladores em uma pasta chamada controladores. O nome da pasta é apenas uma maneira conveniente de organizar seus arquivos de origem.
+> Você não precisa colocar seus controladores em uma pasta chamada controladores. O nome da pasta é apenas uma maneira conveniente de organizar seus arquivos de origem.
 
 
-Se esse arquivo não estiver aberto, clique duas vezes no arquivo para abri-lo. Substitua o código neste arquivo com o seguinte:
+Se esse arquivo ainda não estiver aberto, clique duas vezes no arquivo para abri-lo. Substitua o código nesse arquivo com o seguinte:
 
 [!code-csharp[Main](tutorial-your-first-web-api/samples/sample2.cs)]
 
@@ -113,7 +112,7 @@ O controlador define dois métodos que retornam produtos:
 | Método do controlador | URI |
 | --- | --- |
 | GetAllProducts | produtos/api / |
-| GetProduct | /api/products/*id* |
+| GetProduct | /API/produtos/*id* |
 
 Para o método `GetProduct`, o *id* no URI é um espaço reservado. Por exemplo, para obter o produto com ID 5, o URI é `api/products/5`.
 
@@ -135,7 +134,7 @@ Substitua tudo neste arquivo com o seguinte:
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample3.html)]
 
-Há várias maneiras de obter jQuery. Neste exemplo, usei o [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Você também pode baixá-lo do [ http://jquery.com/ ](http://jquery.com/)e o ASP.NET "API Web" jQuery também inclui o modelo de projeto.
+Há várias maneiras de obter jQuery. Neste exemplo, usei o [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Você também pode baixá-lo partir [ http://jquery.com/ ](http://jquery.com/)e o ASP.NET "API Web" modelo de projeto inclui também o jQuery.
 
 ### <a name="getting-a-list-of-products"></a>Obtendo uma lista de produtos
 
@@ -145,17 +144,17 @@ A função jQuery [getJSON](http://api.jquery.com/jQuery.getJSON/) envia uma sol
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample4.html)]
 
-### <a name="getting-a-product-by-id"></a>Um produto por ID
+### <a name="getting-a-product-by-id"></a>Obtendo um produto por ID
 
-Para obter um produto por ID, envie uma solicitação HTTP GET para &quot;/api/produtos/*id*&quot;, onde *id* é a ID do produto.
+Para obter um produto por ID, envie uma solicitação HTTP GET para &quot;/API/produtos/*id*&quot;, onde *id* é a ID do produto.
 
 [!code-javascript[Main](tutorial-your-first-web-api/samples/sample5.js)]
 
-Chamamos ainda `getJSON` para enviar a solicitação AJAX, mas desta vez colocamos a ID no URI de solicitação. A resposta dessa solicitação é uma representação JSON de um único produto.
+Chamamos ainda `getJSON` para enviar a solicitação AJAX, mas dessa vez colocamos a ID no URI da solicitação. A resposta dessa solicitação é uma representação JSON de um único produto.
 
 ## <a name="running-the-application"></a>Executando o aplicativo
 
-Pressione F5 para iniciar a depuração do aplicativo. A página da web deve parecer com o seguinte:
+Pressione F5 para iniciar a depuração do aplicativo. A página da web deve ser semelhante ao seguinte:
 
 ![](tutorial-your-first-web-api/_static/image11.png)
 
@@ -169,7 +168,7 @@ Se você inserir uma ID inválida, o servidor retornará um erro HTTP:
 
 ## <a name="using-f12-to-view-the-http-request-and-response"></a>Usando a tecla F12 para exibir a solicitação e resposta HTTP
 
-Quando você estiver trabalhando com um serviço HTTP, ele pode ser muito útil ver a solicitação HTTP e mensagens de solicitação. Você pode fazer isso usando as ferramentas de desenvolvedor F12 no Internet Explorer 9. No Internet Explorer 9, pressione **F12** para abrir as ferramentas. Clique o **rede** guia e pressione **iniciar captura**. Agora vá para a página da web e pressione **F5** para recarregar a página da web. Internet Explorer capturará o tráfego HTTP entre o navegador e o servidor web. O modo de exibição de resumo mostra todo o tráfego de rede para uma página:
+Quando você estiver trabalhando com um serviço HTTP, ela pode ser muito útil ver a solicitação HTTP e mensagens de solicitação. Você pode fazer isso usando as ferramentas de desenvolvedor F12 no Internet Explorer 9. No Internet Explorer 9, pressione **F12** para abrir as ferramentas. Clique o **rede** guia e pressione **iniciar captura**. Agora, volte para a página da web e pressione **F5** para recarregar a página da web. Internet Explorer irá capturar o tráfego HTTP entre o navegador e o servidor web. A exibição de resumo mostra todo o tráfego de rede para uma página:
 
 ![](tutorial-your-first-web-api/_static/image14.png)
 
@@ -177,21 +176,21 @@ Localize a entrada para o URI relativo "api/produtos /". Selecione esta opção 
 
 ![](tutorial-your-first-web-api/_static/image15.png)
 
-Se você clicar na guia de corpo de resposta, você pode ver como a lista de produtos foi serializada como JSON. Outros navegadores têm funcionalidade semelhante. Outra ferramenta útil é [Fiddler](http://www.fiddler2.com/fiddler2/), um web proxy de depuração. Você pode usar o Fiddler para exibir o tráfego HTTP e também para compor as solicitações HTTP, que lhe dá controle total sobre os cabeçalhos HTTP na solicitação.
+Se você clicar na guia de corpo de resposta, você pode ver como a lista de produtos foi serializada como JSON. Outros navegadores têm uma funcionalidade semelhante. É outra ferramenta útil [Fiddler](http://www.fiddler2.com/fiddler2/), uma proxy de depuração da web. Você pode usar o Fiddler para exibir seu tráfego HTTP e também para compor a solicitações HTTP, que lhe dá controle total sobre os cabeçalhos HTTP na solicitação.
 
-## <a name="see-this-app-running-on-azure"></a>Consulte este aplicativo em execução no Azure
+## <a name="see-this-app-running-on-azure"></a>Consulte esse aplicativo em execução no Azure
 
-Você gostaria de ver o site concluído em execução como um aplicativo web em tempo real? Você pode implantar uma versão completa do aplicativo para sua conta do Azure, clicando no botão a seguir.
+Você gostaria de ver o site concluído em execução como um aplicativo web ao vivo? Você pode implantar uma versão completa do aplicativo para sua conta do Azure, simplesmente clicando no botão a seguir.
 
 [![](http://azuredeploy.net/deploybutton.png)](https://deploy.azure.com/?WT.mc_id=deploy_azure_aspnet&repository=https://github.com/tfitzmac/WebAPI-ProductsApp#/form/setup)
 
-Você precisa de uma conta do Azure para implantar essa solução no Azure. Se você não tiver uma conta, você tem as seguintes opções:
+Você precisa de uma conta do Azure para implantar essa solução no Azure. Se você ainda não tiver uma conta, você tem as seguintes opções:
 
-- [Abra uma conta do Azure gratuitamente](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -você obtém créditos você pode usar para experimentar os serviços do Azure pagos e mesmo depois que eles são usados até que você pode manter a conta e livre de usar os serviços do Azure.
-- [Ativar os benefícios de assinante do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -assinatura do MSDN fornece créditos de cada mês em que você pode usar para os serviços do Azure pagos.
+- [Abrir uma conta do Azure gratuitamente](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -obtenha créditos você pode usar para experimentar serviços pagos do Azure e até mesmo após eles serem utilizados, você pode manter a conta e utilizar os serviços do Azure gratuitos.
+- [Ativar benefícios de assinante do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -sua assinatura do MSDN concede créditos todos os meses que você pode usar para serviços pagos do Azure.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para obter um exemplo mais completo de um serviço HTTP que dá suporte a ações de POST, PUT e DELETE e grava em um banco de dados, consulte [usando API Web 2 com o Entity Framework 6](../data/using-web-api-with-entity-framework/part-1.md).
-- Para obter mais informações sobre como criar aplicativos web flexível e responsivo sobre um serviço HTTP, consulte [único aplicativo de página ASP.NET](../../../single-page-application/index.md).
-- Para obter informações sobre como implantar um projeto da web do Visual Studio para o serviço de aplicativo do Azure, consulte [criar um aplicativo web ASP.NET no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
+- Para obter um exemplo mais completo de um serviço HTTP que dá suporte a ações de POST, PUT e DELETE e grava em um banco de dados, consulte [usando o Web API 2 com o Entity Framework 6](../data/using-web-api-with-entity-framework/part-1.md).
+- Para obter mais informações sobre como criar aplicativos de web fluidos e dinâmicos com base em um serviço HTTP, consulte [aplicativo de página única ASP.NET](../../../single-page-application/index.md).
+- Para obter informações sobre como implantar um projeto do Visual Studio web no serviço de aplicativo do Azure, consulte [criar um aplicativo web ASP.NET no serviço de aplicativo do Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).

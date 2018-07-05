@@ -1,69 +1,68 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
-title: Preencher dinamicamente um controle (VB) | Microsoft Docs
+title: Preenchimento dinâmico de um controle (VB) | Microsoft Docs
 author: wenz
-description: O controle DynamicPopulate no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino em t...
+description: O controle de DynamicPopulate no ASP.NET AJAX Control Toolkit chama um serviço web (ou o método de página) e preenche o valor resultante em um controle de destino em t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 27305347-7b5d-4519-97b7-197a357e7f6e
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e2031a80be71a406e632955583d83920dd0f3ef7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fd55b59f9375eb320711ffea8d971a8d86179c43
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879732"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368654"
 ---
-<a name="dynamically-populating-a-control-vb"></a>Preencher dinamicamente um controle (VB)
+<a name="dynamically-populating-a-control-vb"></a>Preenchimento dinâmico de um controle (VB)
 ====================
 por [Christian Wenz](https://github.com/wenz)
 
 [Baixar o código](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate0.vb.zip) ou [baixar PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate0VB.pdf)
 
-> O controle DynamicPopulate no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino na página, sem uma atualização de página.
+> O controle de DynamicPopulate no ASP.NET AJAX Control Toolkit chama um serviço web (ou o método de página) e preenche o valor resultante em um controle de destino na página, sem uma atualização de página.
 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
-O `DynamicPopulate` controle no Kit de ferramentas de controle AJAX ASP.NET chama um serviço da web (ou método de página) e preenche o valor resultante em um controle de destino na página, sem uma atualização de página. Este tutorial mostra como configurar isso.
+O `DynamicPopulate` controle no ASP.NET AJAX Control Toolkit chama um serviço web (ou o método de página) e preenche o valor resultante em um controle de destino na página, sem uma atualização de página. Este tutorial mostra como configurá-la.
 
 ## <a name="steps"></a>Etapas
 
-Em primeiro lugar, você precisa de um serviço Web do ASP.NET que implementa o método a ser chamado `DynamicPopulate`. A classe de serviço da web requer o `ScriptService` atributo que é definido em `Microsoft.Web.Script.Services`; caso contrário, o ASP.NET AJAX não é possível criar proxy JavaScript do lado do cliente para o serviço web, que por sua vez, é necessário por `DynamicPopulate`.
+Em primeiro lugar, você precisa de um serviço Web do ASP.NET que implementa o método a ser chamado pelo `DynamicPopulate`. A classe de serviço da web requer o `ScriptService` atributo que é definido dentro `Microsoft.Web.Script.Services`; caso contrário, o ASP.NET AJAX não é possível criar o proxy de JavaScript do lado do cliente para o serviço web, que por sua vez, é necessário para `DynamicPopulate`.
 
-O método da web deve esperar que um argumento do tipo cadeia de caracteres chamado `contextKey`, pois o `DynamicPopulate` controle envia um pedaço de informações de contexto com cada chamada de serviço web. O serviço da web a seguir retorna a data atual em um formato representado pelo `contextKey` argumento:
+O método da web deve esperar que um argumento do tipo cadeia de caracteres, chamado `contextKey`, uma vez que o `DynamicPopulate` controle envia uma parte das informações de contexto com cada chamada de serviço web. O serviço web a seguir retorna a data atual em um formato representado pelo `contextKey` argumento:
 
 [!code-aspx[Main](dynamically-populating-a-control-vb/samples/sample1.aspx)]
 
-O serviço da web, em seguida, é salvo como `DynamicPopulate.vb.asmx`. Como alternativa, você pode implementar o `getDate()` método como um método de página dentro da página real do ASP.NET com o `DynamicPopulate` controle.
+O serviço web, em seguida, é salvo como `DynamicPopulate.vb.asmx`. Como alternativa, você pode implementar o `getDate()` método como um método de página dentro da página ASP.NET real com o `DynamicPopulate` controle.
 
-Na próxima etapa, crie um novo arquivo do ASP.NET. Como sempre, a primeira etapa é incluir o `ScriptManager` na página atual para carregar a biblioteca ASP.NET AJAX e fazer o trabalho do Kit de ferramentas:
+Na próxima etapa, crie um novo arquivo do ASP.NET. Como sempre, a primeira etapa é incluir o `ScriptManager` na página atual ao carregar a biblioteca AJAX do ASP.NET e para fazer o trabalho do Kit de ferramentas de controle:
 
 [!code-aspx[Main](dynamically-populating-a-control-vb/samples/sample2.aspx)]
 
-Em seguida, adicione um controle de rótulo (por exemplo, usando o controle HTML de mesmo nome, ou o &lt; `asp:Label`  / &gt; controle web) que mostrará o resultado da chamada de serviço web mais tarde.
+Em seguida, adicione um controle de rótulo (por exemplo, usando o controle HTML de mesmo nome, ou o &lt; `asp:Label`  / &gt; controle da web) mais tarde, que mostrará o resultado da chamada de serviço web.
 
 [!code-aspx[Main](dynamically-populating-a-control-vb/samples/sample3.aspx)]
 
-Um botão HTML (como um controle HTML, desde que não exigimos um postback para o servidor) será usado para disparar a população dinâmica:
+Um botão HTML (como um controle HTML, pois não exigimos um postback para o servidor), em seguida, será usado para disparar o preenchimento dinâmico:
 
 [!code-aspx[Main](dynamically-populating-a-control-vb/samples/sample4.aspx)]
 
-Por fim, é necessário o `DynamicPopulateExtender` controle as coisas durante a transmissão. Os seguintes atributos serão definidos (além das óbvias, `ID` e `runat` = `"server"`):
+Por fim, precisamos de `DynamicPopulateExtender` controle conecte tudo. Os atributos a seguir serão definidos (além do óbvio aqueles, `ID` e `runat` = `"server"`):
 
 - `TargetControlID` onde colocar o resultado da chamada de serviço web
-- `ServicePath` caminho para o serviço da web (omitir se você quiser usar um método de página)
-- `ServiceMethod` nome do método da web ou método de página
+- `ServicePath` caminho para o serviço web (omitir se você quiser usar um método de página)
+- `ServiceMethod` nome do método da web ou do método de página
 - `ContextKey` informações de contexto a ser enviado ao serviço web
 - `PopulateTriggerControlID` elemento que dispara a chamada de serviço web
 - `ClearContentsDuringUpdate` Se deseja esvaziar o elemento de destino durante a chamada de serviço web
 
-Como você pode ver, o controle requer algumas informações mas colocar tudo em vigor é bastante direta. Aqui está a marcação para o `DynamicPopulateExtender` controle no cenário atual:
+Como você pode ver, o controle requer algumas informações, mas colocar tudo no lugar é bastante simples. Aqui está a marcação para o `DynamicPopulateExtender` controle no cenário atual:
 
 [!code-aspx[Main](dynamically-populating-a-control-vb/samples/sample5.aspx)]
 

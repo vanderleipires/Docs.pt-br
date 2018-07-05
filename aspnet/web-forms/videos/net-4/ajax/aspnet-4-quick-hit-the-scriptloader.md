@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/net-4/ajax/aspnet-4-quick-hit-the-scriptloader
-title: Visual Studio 2010 rápida ocorrências - o ScriptLoader | Microsoft Docs
+title: Visual Studio 2010 rápido ocorrências - o ScriptLoader | Microsoft Docs
 author: JoeStagner
 description: Neste vídeo aprenderá sobre o ScriptLoader.
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 11/16/2009
 ms.topic: article
 ms.assetid: b79562dd-ddd2-4a6b-a681-6aa75f25e59c
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/ajax/aspnet-4-quick-hit-the-scriptloader
 msc.type: video
-ms.openlocfilehash: 4e7319e96ce06866277bcb8cb3a4acdd65690de7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2e1afee03bf33e55f9751281bd9a73d830c4df07
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881383"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400438"
 ---
-<a name="aspnet-4-quick-hit---the-scriptloader"></a>O ASP.NET 4 "Hit rápida" - o ScriptLoader
+<a name="aspnet-4-quick-hit---the-scriptloader"></a>ASP.NET 4 "Acertar rápido" – o ScriptLoader
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 

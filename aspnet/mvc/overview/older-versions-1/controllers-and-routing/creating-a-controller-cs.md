@@ -2,100 +2,99 @@
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 title: Criando um controlador (c#) | Microsoft Docs
 author: StephenWalther
-description: Neste tutorial, Stephen Walther demonstra como você pode adicionar um controlador para um aplicativo ASP.NET MVC.
+description: Neste tutorial, Stephen Walther demonstra como você pode adicionar um controlador a um aplicativo ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
 ms.topic: article
 ms.assetid: 719d50d4-2305-454c-98b4-bae64937c48f
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 86966f1064d09419e2102542c6d14c4162d153e4
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4477418be589af7b9127c7b7373a128a6867bf11
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868354"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37399432"
 ---
 <a name="creating-a-controller-c"></a>Criando um controlador (c#)
 ====================
 por [Stephen Walther](https://github.com/StephenWalther)
 
-> Neste tutorial, Stephen Walther demonstra como você pode adicionar um controlador para um aplicativo ASP.NET MVC.
+> Neste tutorial, Stephen Walther demonstra como você pode adicionar um controlador a um aplicativo ASP.NET MVC.
 
 
-O objetivo deste tutorial é explicar como você pode criar novos ASP.NET MVC controladores. Você aprenderá a criar controladores usando a opção de menu do Visual Studio Adicionar controlador e criando um arquivo de classe manualmente.
+O objetivo deste tutorial é explicar como você pode criar novas ASP.NET MVC controladores. Você aprenderá a criar controladores usando a opção de menu do Visual Studio Adicionar controlador e criando um arquivo de classe manualmente.
 
 ### <a name="using-the-add-controller-menu-option"></a>Usando o adicionar a opção de Menu do controlador
 
-É a maneira mais fácil de criar um novo controlador para a pasta de controladores na janela do Gerenciador de soluções do Visual Studio e selecione o **adicionar, controlador** opção de menu (consulte a Figura 1). Selecionar essa opção de menu abre o **Adicionar controlador** caixa de diálogo (consulte a Figura 2).
+A maneira mais fácil de criar um novo controlador é com o botão direito na pasta controladores na janela do Gerenciador de soluções do Visual Studio e selecione o **Add, controlador** opção de menu (veja a Figura 1). Selecionar essa opção de menu abre a **Adicionar controlador** caixa de diálogo (consulte a Figura 2).
 
 
 [![A caixa de diálogo Novo projeto](creating-a-controller-cs/_static/image1.jpg)](creating-a-controller-cs/_static/image1.png)
 
-**Figura 01**: adicionando um novo controlador ([clique para exibir a imagem em tamanho normal](creating-a-controller-cs/_static/image2.png))
+**Figura 01**: adicionar um novo controlador ([clique para exibir a imagem em tamanho normal](creating-a-controller-cs/_static/image2.png))
 
 
 [![A caixa de diálogo Novo projeto](creating-a-controller-cs/_static/image2.jpg)](creating-a-controller-cs/_static/image3.png)
 
-**Figura 02**: caixa de diálogo a adicionar controlador ([clique para exibir a imagem em tamanho normal](creating-a-controller-cs/_static/image4.png))
+**Figura 02**: caixa de diálogo o adicionar controlador ([clique para exibir a imagem em tamanho normal](creating-a-controller-cs/_static/image4.png))
 
 
-Observe que a primeira parte do nome do controlador está realçada no **Adicionar controlador** caixa de diálogo. Cada nome de controlador deve terminar com o sufixo *controlador*. Por exemplo, você pode criar um controlador nomeado *ProductController* , mas não um controlador chamado *produto*.
+Observe que a primeira parte do nome do controlador está realçada na **Adicionar controlador** caixa de diálogo. Cada nome de controlador deve terminar com o sufixo *controlador*. Por exemplo, você pode criar um controlador chamado *ProductController* , mas não um controlador chamado *produto*.
 
 
-Se você criar um controlador que está faltando o *controlador* sufixo, em seguida, você não poderá invocar o controlador. Não faça isso - desperdício de frustração da minha vida depois de fazer esse erro.
+Se você criar um controlador que está faltando a *controlador* sufixo e em seguida, você não poderá invocar o controlador. Não fizer isso, eu já desperdiçado incontáveis horas da minha vida depois de cometer esse erro.
 
 
-**Listando 1 - Controllers\ProductController.cs**
+**Listagem 1 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](creating-a-controller-cs/samples/sample1.cs)]
 
-Você sempre deve criar os controladores na pasta controladores. Caso contrário, você irá violar as convenções do ASP.NET MVC e outros desenvolvedores terão mais dificuldades Noções básicas sobre o seu aplicativo.
+Você deve sempre criar controladores na pasta controladores. Caso contrário, você vai ser violar as convenções do ASP.NET MVC e outros desenvolvedores terá mais dificuldade Noções básicas sobre seu aplicativo.
 
 ### <a name="scaffolding-action-methods"></a>Métodos de ação de scaffolding
 
-Quando você cria um controlador, você tem a opção para gerar automaticamente o métodos de ação de criar, atualizar e detalhes (consulte a Figura 3). Se você selecionar essa opção, em seguida, a classe do controlador na listagem 2 é gerada.
+Quando você cria um controlador, você tem a opção para gerar os métodos de ação de criar, atualizar e detalhes automaticamente (veja a Figura 3). Se você selecionar essa opção, em seguida, a classe do controlador na listagem 2 é gerada.
 
 
 [![Criação automática de métodos de ação](creating-a-controller-cs/_static/image3.jpg)](creating-a-controller-cs/_static/image5.png)
 
-**Figura 03**: criação automática de métodos de ação ([clique para exibir a imagem em tamanho normal](creating-a-controller-cs/_static/image6.png))
+**Figura 03**: a criação automática de métodos de ação ([clique para exibir a imagem em tamanho normal](creating-a-controller-cs/_static/image6.png))
 
 
-**A listagem 2 - Controllers\CustomerController.cs**
+**Listagem 2 - Controllers\CustomerController.cs**
 
 [!code-csharp[Main](creating-a-controller-cs/samples/sample2.cs)]
 
-Esses métodos gerados são os métodos de stub. Você deve adicionar a lógica real para criar, atualizar e mostrando detalhes de um cliente. Porém, os métodos de stub fornecem um bom ponto de partida.
+Esses métodos gerados são métodos stub. Você deve adicionar a lógica real para criar, atualizar e mostrando detalhes de um cliente. Porém, os métodos stub fornecem um bom ponto de partida.
 
 ### <a name="creating-a-controller-class"></a>Criando uma classe de controlador
 
-Controlador MVC do ASP.NET é apenas uma classe. Se preferir, você pode ignorar o scaffolding de controlador conveniente do Visual Studio e crie uma classe de controlador manualmente. Siga estas etapas:
+O controlador MVC do ASP.NET é apenas uma classe. Se você preferir, você pode ignorar o scaffolding de controlador conveniente do Visual Studio e criar uma classe de controlador manualmente. Siga estas etapas:
 
-1. Clique na pasta controladores e selecione a opção de menu **adicionar, o novo Item** e selecione o **classe** modelo (consulte a Figura 4).
+1. Clique com botão direito na pasta controladores e selecione a opção de menu **Add, o novo Item** e selecione o **classe** modelo (consulte a Figura 4).
 2. Nomeie a nova classe PersonController.cs e clique no **adicionar** botão.
 3. Modifique o arquivo de classe resultante para que a classe herda da classe Controller base (consulte a listagem 3).
 
 
 [![Criando uma nova classe](creating-a-controller-cs/_static/image4.jpg)](creating-a-controller-cs/_static/image7.png)
 
-**Figura 04**: Criando uma nova classe ([clique para exibir a imagem em tamanho normal](creating-a-controller-cs/_static/image8.png))
+**Figura 04**: criar uma nova classe ([clique para exibir a imagem em tamanho normal](creating-a-controller-cs/_static/image8.png))
 
 
-**A listagem 3 - Controllers\PersonController.cs**
+**Listagem 3 - Controllers\PersonController.cs**
 
 [!code-csharp[Main](creating-a-controller-cs/samples/sample3.cs)]
 
-O controlador na listagem 3 expõe uma ação chamada index () que retorna a cadeia de caracteres "Hello World!". Você pode chamar a ação de controlador executando seu aplicativo e solicitar uma URL semelhante ao seguinte:
+O controlador na listagem 3 expõe uma ação chamada index () que retorna a cadeia de caracteres "Hello World!". Você pode chamar essa ação de controlador, executando o aplicativo e solicitar uma URL semelhante à seguinte:
 
 `http://localhost:40071/Person`
 
 > [!NOTE]
 > 
-> O servidor de desenvolvimento ASP.NET usa um número de porta aleatória (por exemplo, 40071). Ao inserir uma URL para invocar um controlador, você precisará fornecer o número de porta correto. Você pode determinar o número da porta passando o mouse sobre o ícone para o servidor de desenvolvimento ASP.NET na área de notificação do Windows (inferior direito da tela).
+> O ASP.NET Development Server usa um número de porta aleatória (por exemplo, 40071). Ao inserir uma URL para invocar um controlador, você precisará fornecer o número da porta à direita. Você pode passar o mouse sobre o ícone para o ASP.NET Development Server na área de notificação do Windows (canto inferior direito da tela) para determinar o número da porta.
 > 
 > [!div class="step-by-step"]
 > [Anterior](adding-dynamic-content-to-a-cached-page-cs.md)

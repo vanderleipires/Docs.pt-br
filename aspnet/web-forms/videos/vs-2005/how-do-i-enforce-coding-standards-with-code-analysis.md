@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
-title: '[Como fazer:] Para impor padrões de codificação com análise de código? | Microsoft Docs'
+title: '[Como fazer:] Impor padrões de codificação com a análise de código? | Microsoft Docs'
 author: rick-anderson
-description: Com o Visual Studio Team System, você tem controle refinado sobre as regras de análise de código que se aplicam a projetos de biblioteca de classe, projetos de site e cobertura de código fonte...
+description: Com o Visual Studio Team System, você tem controle refinado sobre as regras de análise de código que se aplicam a projetos de biblioteca de classes, projetos de site e co de código fonte...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/09/2007
 ms.topic: article
 ms.assetid: ab2eedbc-79b5-4b63-a1df-935940c1545b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
-ms.openlocfilehash: f57e2372ec4a4d1ba7f6a8f9f2f81cdfc275819c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b8e68c88ae059e47ca3224adcb957ff745c7bf4d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893141"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381962"
 ---
-<a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[Como fazer:] Para impor padrões de codificação com análise de código?
+<a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[Como fazer:] Impor padrões de codificação com a análise de código?
 ====================
-por [Carlos Menegay](https://twitter.com/CMenegay)
+por [Chris Menegay](https://twitter.com/CMenegay)
 
-Com o Visual Studio Team System, você tem controle refinado sobre as regras de análise de código que se aplicam a projetos de biblioteca de classe, projetos de site e controle do código fonte. Neste vídeo, saiba como especificar os erros e avisos que serão aplicadas durante o projeto de compilações e o código de check-in e podemos ver como suprimir uma determinada regra da aplicação de um membro de classe específica. Com essa capacidade de configuração que você pode impor padrões de codificação para melhorar a qualidade do seu código, garantindo regras inaplicáveis nunca recebe.
+Com o Visual Studio Team System, você tem controle refinado sobre as regras de análise de código que se aplicam a projetos de biblioteca de classes, projetos de site e controle do código fonte. Neste vídeo, saiba como especificar os erros e avisos que serão aplicadas durante o projeto de código e compilações de check-ins e vemos como suprimir uma determinada regra da aplicação a um membro de classe específica. Com essa capacidade de configuração que você pode impor padrões de codificação para melhorar a qualidade do seu código, garantindo regras inaplicáveis obtém nunca sua maneira.
 
 [&#9654;Assista ao vídeo (6 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-enforce-coding-standards-with-code-analysis)
 

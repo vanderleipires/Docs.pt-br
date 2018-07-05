@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-discover-application-changes-prior-to-deployment
-title: '[Como fazer:] Detecta alterações antes da implantação do aplicativo? | Microsoft Docs'
+title: '[Como fazer:] Detectar alterações de aplicativo antes da implantação? | Microsoft Docs'
 author: pjhacker
-description: Saiba como usar o Gerenciador de controle do código-fonte do Visual Studio Team System para descobrir as alterações que foram feitas para seu aplicativo da Web e ensur...
+description: Saiba como usar o Gerenciador de controle do código-fonte do Visual Studio Team System para descobrir as alterações que foram feitas para seu aplicativo Web e ensur...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/25/2007
 ms.topic: article
 ms.assetid: 6945a637-cab3-4a13-a678-f6d2d83c2587
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-discover-application-changes-prior-to-deployment
 msc.type: video
-ms.openlocfilehash: 29c13582b41408a318f6cab0eeef516778554b4a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a61186141a95688f3e09e22658dd383149a23727
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30894311"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396913"
 ---
-<a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[Como fazer:] Detecta alterações antes da implantação do aplicativo?
+<a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[Como fazer:] Detectar alterações de aplicativo antes da implantação?
 ====================
 por [Paul Hacker](https://github.com/pjhacker)
 
-Saiba como usar o Gerenciador de controle do código-fonte do Visual Studio Team System para descobrir as alterações que foram feitas ao seu aplicativo Web e certifique-se de que apenas as alterações necessárias implantadas para o site da Web. Também vamos examinar um utilitário gratuito que permite que você mescle as alterações para simplificar a implantação.
+Saiba como usar o Gerenciador de controle do código-fonte do Visual Studio Team System para descobrir as alterações que foram feitas ao seu aplicativo Web e para garantir que somente as alterações necessárias são implantadas para o site da Web ao vivo. Também examinamos um utilitário gratuito que permite que você mescle alterações juntos para simplificar a implantação.
 
 [&#9654;Assista ao vídeo (5 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-discover-application-changes-prior-to-deployment)
 

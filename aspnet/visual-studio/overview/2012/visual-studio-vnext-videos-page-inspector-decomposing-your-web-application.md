@@ -1,6 +1,6 @@
 ---
 uid: visual-studio/overview/2012/visual-studio-vnext-videos-page-inspector-decomposing-your-web-application
-title: 'Vídeos do Visual Studio vNext: Page Inspector - Decomposição de seu aplicativo Web | Microsoft Docs'
+title: 'Visual Studio vNext vídeos: Inspetor de página – Decomposição de seu aplicativo Web | Microsoft Docs'
 author: gabosom
 description: Neste vídeo, Jorge Gabuardi Gonzalez mostra como usar o Inspetor de página no Visual Studio vNext para solucionar problemas de HTML e estilos no seu aplicativo ASP.NET...
 ms.author: aspnetcontent
@@ -9,20 +9,19 @@ ms.date: 08/30/2011
 ms.topic: article
 ms.assetid: 527a3d23-2e22-4a79-accd-eda47ab40350
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-vnext-videos-page-inspector-decomposing-your-web-application
 msc.type: video
-ms.openlocfilehash: 4d0966ddf870217ec2353beecce1fddbfb74c778
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e229240b85b815ff56ce5bedf777fd637ea64b1d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26506585"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396579"
 ---
-<a name="visual-studio-vnext-videos-page-inspector---decomposing-your-web-application"></a>Vídeos do Visual Studio vNext: Page Inspector - Decomposição de seu aplicativo Web
+<a name="visual-studio-vnext-videos-page-inspector---decomposing-your-web-application"></a>Visual Studio vNext vídeos: Inspetor de página – Decomposição de seu aplicativo Web
 ====================
 por [Jorge Gabuardi Gonzalez](https://github.com/gabosom)
 
-Neste vídeo, Jorge Gabuardi Gonzalez mostra como usar o Inspetor de página no Visual Studio vNext para solucionar problemas de estilos em seus aplicativos ASP.NET e HTML.
+Neste vídeo, Jorge Gabuardi Gonzalez mostra como usar o Inspetor de página no Visual Studio vNext para solucionar problemas de HTML e estilos nos aplicativos ASP.NET.
 
-[&#9654; Assista ao vídeo (minutos 1)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-vnext-videos-page-inspector-decomposing-your-web-application)
+[&#9654;Assista ao vídeo (1 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-vnext-videos-page-inspector-decomposing-your-web-application)

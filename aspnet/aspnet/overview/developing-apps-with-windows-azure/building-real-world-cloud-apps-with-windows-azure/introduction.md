@@ -2,56 +2,55 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 title: Criando aplicativos de nuvem do mundo Real com o Azure | Microsoft Docs
 author: MikeWasson
-description: Este livro eletrônico orienta você por meio de uma abordagem baseada em padrões para criar soluções de nuvem do mundo real. Os padrões se aplicam ao processo de desenvolvimento, bem como para um...
+description: Este livro eletrônico o orienta através de uma abordagem baseada em padrões para criar soluções de nuvem do mundo real. Os padrões aplicam-se ao processo de desenvolvimento, bem como para um...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 5a62818a2dc21128bb0a42a8b296ade460e7b060
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 15e5c0a0411e3cd9433544e9a09b6373311daf6b
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870525"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396208"
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Criando aplicativos de nuvem do mundo Real com o Azure
 ====================
 por [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Tom Dykstra](https://github.com/tdykstra)
 
-[Download corrigi-lo projeto](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) ou [baixar livro eletrônico](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Download corrigi-lo Project](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) ou [Baixe o livro eletrônico](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Este livro eletrônico orienta você por meio de uma abordagem baseada em padrões para criar soluções de nuvem do mundo real. Os padrões se aplicam ao processo de desenvolvimento, bem como a arquitetura e práticas de codificação.
+> Este livro eletrônico o orienta através de uma abordagem baseada em padrões para criar soluções de nuvem do mundo real. Os padrões aplicam-se ao processo de desenvolvimento, bem como a arquitetura e práticas de codificação.
 > 
-> O conteúdo é baseado em uma apresentação desenvolvido por Scott Guthrie e entregue por ele na conferência de desenvolvedores norueguês (NDC) em junho de 2013 ([parte 1](http://vimeo.com/68215538), [parte 2](http://vimeo.com/68215602)) e no Microsoft Tech Ed Austrália no Setembro de 2013 ([parte 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324), [parte 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)). [Muitos outros](more-patterns-and-guidance.md#acknowledgments) atualizado e aumentada o conteúdo durante a transição-lo de vídeo para forma escrita.
+> O conteúdo baseia-se em uma apresentação desenvolvido por Scott Guthrie e entregues por ele na Norwegian Developers Conference (NDC) em junho de 2013 ([parte 1](http://vimeo.com/68215538), [parte 2](http://vimeo.com/68215602)) e no Microsoft Tech Ed Austrália no Setembro de 2013 ([parte 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324), [parte 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)). [Muitos outros](more-patterns-and-guidance.md#acknowledgments) atualizaram e ampliaram o conteúdo ao fazer a transição do vídeo para a forma escrita.
 
 
 ## <a name="intended-audience"></a>Público-alvo
 
-Os desenvolvedores que estiver curioso sobre o desenvolvimento para a nuvem, considerando uma mudança para a nuvem, ou que são novos para desenvolvimento em nuvem encontrará aqui uma visão geral dos conceitos mais importantes e práticas recomendadas que precisam saber. Os conceitos são ilustrados com exemplos concretos e cada capítulo para outros recursos para obter informações mais detalhadas. Os exemplos e os links para recursos adicionais são estruturas da Microsoft e serviços, mas os princípios ilustrados se aplicam a outras estruturas de desenvolvimento da web e também para ambientes de nuvem.
+Os desenvolvedores que estiver curioso sobre o desenvolvimento para a nuvem, considerando uma mudança para a nuvem, ou for novo no desenvolvimento de nuvem encontrará aqui uma visão geral concisa dos mais importantes conceitos e práticas recomendadas que precisam saber. Os conceitos são ilustrados com exemplos concretos, hiperlinks e cada capítulo para outros recursos para obter informações mais detalhadas. Os exemplos e os links para recursos adicionais são para serviços e estruturas Microsoft, mas os princípios ilustrados se aplicam a outras estruturas de desenvolvimento da web e também para ambientes de nuvem.
 
-Os desenvolvedores que já estão desenvolvendo para a nuvem podem descobrir ideias aqui que ajudarão a torná-los mais bem-sucedida. Cada capítulo na série pode ser lido independentemente, para que você pode escolher e escolha tópicos que você está interessado.
+Os desenvolvedores que já estão desenvolvendo para a nuvem podem achar ideias aqui que o ajudará a torná-los mais bem-sucedida. Cada capítulo da série pode ser lido independentemente, portanto, você pode selecionar e escolher tópicos que você está interessado.
 
-Qualquer pessoa que é inspecionada de Scott Guthrie *nuvem aplicativos do mundo Real criando com o Azure* apresentação e deseja obter mais detalhes e as informações atualizadas descobrirá que aqui.
+Qualquer pessoa que assistiu Guthrie *aos aplicativos de nuvem Real mundo de construção com o Azure* apresentação e deseja obter mais detalhes e informações atualizadas poderá encontrá-lo aqui.
 
 <a id="patterns"></a>
 ## <a name="cloud-development-patterns"></a>Padrões de desenvolvimento de nuvem
 
-Este livro eletrônico explica que treze recomendadas padrões de desenvolvimento em nuvem. "Padrão" é usado aqui em um sentido mais amplo para significar uma maneira recomendada para fazer coisas: a melhor maneira de desenvolver, criar e codificar aplicativos de nuvem. Estes são os padrões de chave que ajudarão "entram na pit de sucesso" Se você segui-los.
+Este livro eletrônico explica que treze recomendado padrões para desenvolvimento em nuvem. "Padrão" é usado aqui em um sentido mais amplo para significar uma maneira recomendada de fazer as coisas: a melhor maneira de desenvolver, criar e codificar aplicativos de nuvem. Esses são os principais padrões que irá ajudá-lo "entram na pit de sucesso" Se você segui-los.
 
 - [Automatizar tudo](automate-everything.md).
 
-    - Use scripts para maximizar a eficiência e minimizar erros em processos repetitivos.
+    - Use scripts para maximizar a eficiência e minimizar os erros em processos repetitivos.
     - Demonstração: Scripts de gerenciamento do Azure.
-- [Controle de origem](source-control.md). 
+- [Controle de fonte](source-control.md). 
 
-    - Configure a estrutura de ramificação em controle de origem para facilitar o fluxo de trabalho do DevOps.
+    - Configure a estrutura de ramificação no controle de origem para facilitar o fluxo de trabalho de DevOps.
     - Demonstração: Adicione scripts ao controle de origem.
-    - Demonstração: mantenha os dados confidenciais do controle de origem.
+    - Demonstração: manter os dados confidenciais fora do controle do código-fonte.
     - Demonstração: use o Git no Visual Studio.
 - [Integração contínua e entrega](continuous-integration-and-continuous-delivery.md). 
 
@@ -59,28 +58,28 @@ Este livro eletrônico explica que treze recomendadas padrões de desenvolviment
 - [Práticas recomendadas de desenvolvimento de Web](web-development-best-practices.md). 
 
     - Mantenha a camada da web sem monitoração de estado.
-    - Demonstração: escala e o dimensionamento automático em aplicativos da Web no serviço de aplicativo do Azure.
-    - Evite o estado da sessão.
-    - Use um CDN com um fallback quando o CDN não estiver disponível.
+    - Demonstração: dimensionamento e o dimensionamento automático em aplicativos Web no serviço de aplicativo do Azure.
+    - Evite o estado de sessão.
+    - Use uma CDN com um fallback quando o CDN não estiver disponível.
     - Use o modelo de programação assíncrona.
-    - Demonstração: assíncrona no ASP.NET MVC e o Entity Framework.
+    - Demonstração: assíncronos no ASP.NET MVC e ao Entity Framework.
 - [Logon único](single-sign-on.md). 
 
     - Introdução ao Azure Active Directory.
-    - Demonstração: Crie um aplicativo ASP.NET que usa o Active Directory do Azure.
+    - Demonstração: Crie um aplicativo ASP.NET que usa o Azure Active Directory.
 - [Opções de armazenamento de dados](data-storage-options.md). 
 
     - Tipos de armazenamentos de dados.
-    - Como escolher o repositório de dados à direita.
+    - Como escolher o armazenamento de dados correto.
     - Demonstração: Banco de dados SQL do Azure.
 - [Estratégias de particionamento de dados](data-partitioning-strategies.md). 
 
     - Particionar os dados verticalmente, horizontalmente, ou ambos para facilitar o dimensionamento de um banco de dados relacional.
 - [Armazenamento de blob não estruturados](unstructured-blob-storage.md). 
 
-    - Armazenar arquivos na nuvem usando o serviço blob.
-    - Demonstração: usando o armazenamento de blob no aplicativo corrigi-lo.
-- [Design sobreviver a falhas](design-to-survive-failures.md). 
+    - Store arquivos na nuvem usando o serviço blob.
+    - Demonstração: usando o armazenamento de BLOBs no aplicativo corrigi-lo.
+- [Design para resistir a falhas](design-to-survive-failures.md). 
 
     - Tipos de falhas.
     - Escopo da falha.
@@ -89,79 +88,79 @@ Este livro eletrônico explica que treze recomendadas padrões de desenvolviment
 
     - Por que você deve comprar um aplicativo de telemetria tanto escrever seu próprio código para instrumentar seu aplicativo.
     - Demonstração: New Relic para o Azure
-    - Demonstração: log de código no aplicativo corrigi-lo.
+    - Demonstração: código de registro no aplicativo corrigi-lo.
     - Demonstração: injeção de dependência no aplicativo corrigi-lo.
     - Demonstração: o suporte de registro em log internos no Azure.
 - [Tratamento de falhas transitórias](transient-fault-handling.md). 
 
-    - Use uma lógica de repetição/retirada inteligente para reduzir o efeito de falhas transitórias.
-    - Demonstração: repetição/retirada no Entity Framework 6.
+    - Use a lógica de repetição/retirada inteligente para reduzir o efeito de falhas transitórias.
+    - Demonstração: repetição/retirada do Entity Framework 6.
 - [Cache distribuído](distributed-caching.md). 
 
-    - Melhorar a escalabilidade e reduzir os custos de transações do banco de dados usando o cache distribuído.
-- [Padrão de trabalho centrado em fila](queue-centric-work-pattern.md). 
+    - Melhorar a escalabilidade e reduzir os custos de transação de banco de dados usando o armazenamento em cache distribuído.
+- [Padrão centrado em fila](queue-centric-work-pattern.md). 
 
-    - Habilitar a alta disponibilidade e melhorar a escalabilidade acoplamento flexível camadas web e de trabalho.
+    - Habilitar a alta disponibilidade e melhorar a escalabilidade aliando livremente as camadas web e de trabalho.
     - Demonstração: Filas de armazenamento do Azure no aplicativo corrigi-lo.
-- [Mais diretrizes e padrões de aplicativo de nuvem](more-patterns-and-guidance.md).
+- [Mais orientações e padrões de aplicativo de nuvem](more-patterns-and-guidance.md).
 - [Apêndice: o aplicativo de exemplo Fix It](the-fix-it-sample-application.md)
 
     - Problemas Conhecidos
     - Práticas recomendadas
-    - Como baixar, criar, executar e implantar.
+    - Como baixar, compilar, executar e implantar.
 
-Esses padrões se aplicam a todos os ambientes de nuvem, mas que ilustraremos usando exemplos com base em tecnologias da Microsoft e serviços, como o Visual Studio, o Team Foundation Service, o ASP.NET e o Azure.
+Esses padrões se aplicam a todos os ambientes de nuvem, mas que ilustraremos usando exemplos com base em tecnologias da Microsoft e serviços, como o Visual Studio, Team Foundation Service, ASP.NET e do Azure.
 
-Este restante deste capítulo apresenta o aplicativo de exemplo corrigir e os aplicativos Web no ambiente de nuvem do serviço de aplicativo do Azure que executa o aplicativo para corrigi-lo no.
+O restante deste capítulo apresenta o aplicativo de exemplo Fix It e os aplicativos Web no ambiente de nuvem do serviço de aplicativo do Azure que executa o aplicativo corrigi-lo no.
 
 <a id="fixit"></a>
-## <a name="the-fix-it-sample-application"></a>A exemplo de aplicativo de correção
+## <a name="the-fix-it-sample-application"></a>A correção do exemplo de aplicativo
 
-A maioria dos exemplos de código mostrados neste livro eletrônico e capturas de tela baseiam-se o aplicativo corrigir originalmente desenvolvido pela [Scott Guthrie](https://weblogs.asp.net/scottgu/) para demonstrar as práticas e padrões de desenvolvimento de aplicativo de nuvem recomendado.
+A maioria das capturas de tela e exemplos de código mostrados neste livro se baseiam no aplicativo Fix It originalmente desenvolvido pela [Scott Guthrie](https://weblogs.asp.net/scottgu/) para demonstrar as práticas e padrões de desenvolvimento de aplicativo de nuvem recomendada.
 
-![Corrija-a página inicial do aplicativo](introduction/_static/image1.png)
+![Corrigi-lo a home page do aplicativo](introduction/_static/image1.png)
 
-O aplicativo de exemplo é um sistema de registro de item de trabalho simples. Quando você precisar de algo fixo, você cria um tíquete e atribuir a alguém e outras pode fazer logon e ver as permissões atribuídas a eles e marca tíquetes como concluído quando o trabalho é feito.
+O aplicativo de exemplo é um item de trabalho simples sistema de tíquetes. Quando você precisa de algo fixo, você cria um tíquete e atribuir a alguém e outras pode fazer logon e ver os tíquetes atribuídos a eles e marca tíquetes como concluído quando o trabalho estiver concluído.
 
-É um projeto de web padrão do Visual Studio. Ele se baseia no ASP.NET MVC e usa um banco de dados do SQL Server. Ele pode ser executada localmente no IIS Express e pode ser implantado para um Site do Azure para executar na nuvem. Você pode fazer logon usando autenticação de formulários e um banco de dados local ou por meio de um provedor social, como Google. (Posteriormente também mostraremos como fazer logon com uma conta organizacional do Active Directory.)
+É um projeto de web padrão do Visual Studio. Ele se baseia no ASP.NET MVC e usa um banco de dados do SQL Server. Ele pode ser executado localmente no IIS Express e pode ser implantado para um Site da Web do Azure para ser executado na nuvem. Você pode fazer logon usando autenticação de formulários e um banco de dados local ou usando um provedor social, como Google. (Posteriormente, também mostraremos como fazer logon com uma conta organizacional do Active Directory.)
 
 ![Página de logon](introduction/_static/image2.png)
 
-Depois que você está conectado em você pode criar um tíquete, atribuí-lo a outra e carregue uma imagem do que você deseja obter corrigido.
+Quando estiver conectado em você pode criar um tíquete, atribuí-la a alguém e carregue uma imagem do que você deseja que seja corrigido.
 
-![Criar uma tarefa corrigir](introduction/_static/image3.png)
+![Criar uma tarefa Fix It](introduction/_static/image3.png)
 
-![Corrija-a tarefa criada](introduction/_static/image4.png)
+![Corrigi-lo a tarefa criada](introduction/_static/image4.png)
 
-Você pode acompanhar o progresso de itens de trabalho criados por você, consulte permissões atribuídas a você, exibir detalhes de tíquete e itens de marca como concluído.
+Você pode acompanhar o progresso dos itens de trabalho que você criou, consulte tíquetes atribuídos a você, exibir detalhes de tíquete e marcar itens como concluídos.
 
-Este é um aplicativo muito simples de uma perspectiva de recurso, mas você verá como criá-lo para que ele pode dimensionar para milhões de usuários e serão resiliente a coisas como falhas de banco de dados e encerramentos de conexão. Você também verá como criar um fluxo de trabalho de desenvolvimento ágil e automatizada, o que permite que você inicie simples e tornar o aplicativo melhor e melhor iteração do ciclo de desenvolvimento, rápida e eficiente.
+Esse é um aplicativo muito simple de uma perspectiva de recurso, mas você verá como criá-lo para que ele pode ser dimensionado para milhões de usuários e seja resiliente a coisas como falhas de banco de dados e encerramentos de conexão. Você também verá como criar um fluxo de trabalho de desenvolvimento ágil e automatizada, que permite que você inicie com simplicidade e fazer com que o aplicativo melhor e melhor pela iteração rápida e eficiente de ciclo de desenvolvimento.
 
 <a id="waws"></a>
 ## <a name="web-apps-in-azure-app-service"></a>Aplicativos Web no serviço de aplicativo do Azure
 
-Usado para o aplicativo para corrigir o ambiente de nuvem é um serviço do Azure que chamamos de Sites da Web. Esse serviço é uma maneira que você pode hospedar seu próprio aplicativo web no Azure sem a necessidade de criar VMs e mantê-los atualizados, instalar e configurar o IIS, etc. Podemos hospedar seu site em nosso VMs e forneça automaticamente o backup e recuperação e outros serviços para você. O serviço de Sites da Web funciona com o ASP.NET, Node.js, PHP e Python. Ele permite que você implante rapidamente usando o Visual Studio, implantação da Web, FTP, Git ou TFS. É normalmente apenas alguns segundos entre a hora em que você iniciar uma implantação e a hora em que a atualização está disponível na Internet. É tudo gratuito começar, e você pode expandir conforme seu tráfego cresce.
+O ambiente de nuvem usado para o aplicativo Fix It é um serviço do Azure que chamamos de Sites da Web. Esse serviço é uma maneira que você pode hospedar seu próprio aplicativo web no Azure sem a necessidade de criar VMs e mantê-los atualizados, instalar e configurar o IIS, etc. Podemos hospedar seu site em nossas VMs e fornecem automaticamente o backup e recuperação e outros serviços para você. O serviço de Sites da Web funciona com ASP.NET, Node. js, PHP e Python. Ele permite que você implante rapidamente usando o Visual Studio, implantação da Web, FTP, Git ou TFS. Normalmente, é apenas alguns segundos entre a hora em que você iniciar uma implantação e a hora em que a atualização está disponível na Internet. É tudo gratuito começar a usar, e você pode escalar verticalmente conforme seu tráfego aumenta.
 
-Nos bastidores, aplicativos Web no serviço de aplicativo do Azure fornece muitos componentes de arquitetura e os recursos que você precisa criar por conta própria, se você for para hospedar um site da web usando o IIS em suas próprias VMs. Um componente é um ponto de extremidade de implantação que configura o IIS automaticamente e instala o aplicativo em como muitas máquinas virtuais que você deseja executar o seu site.
+Nos bastidores, aplicativos Web no serviço de aplicativo do Azure fornece muitos componentes de arquitetura e recursos que você precisaria criar por conta própria, se você fosse para hospedar um site da web usando o IIS em suas próprias VMs. Um componente é um ponto de extremidade de implantação que configura o IIS automaticamente e instala o aplicativo em várias VMs que deseja executar o seu site.
 
 ![Serviço de implantação](introduction/_static/image5.png)
 
-Quando um usuário acessa o site da web, não atingem o IIS VMs diretamente, passam pelo [roteamento ARR (Application Request)](https://www.iis.net/downloads/microsoft/application-request-routing) balanceadores de carga. Você pode usá-los com seus próprios servidores, mas a vantagem aqui é que ele estão configurados para você automaticamente. Eles usam uma heurística inteligente que leva em consideração fatores como a afinidade de sessão, profundidade da fila no IIS, e o uso da CPU em cada computador direcione o tráfego para as máquinas virtuais que hospedam o site da web.
+Quando um usuário acessa o site da web, eles não atinjam as VMs do IIS diretamente, eles passam [roteamento ARR (Application Request)](https://www.iis.net/downloads/microsoft/application-request-routing) balanceadores de carga. Você pode usá-los com seus próprios servidores, mas a vantagem aqui é que eles configurá-lo para você automaticamente. Eles usam uma heurística inteligente que leva em consideração fatores como afinidade de sessão, profundidade da fila no IIS, e o uso da CPU em cada computador para direcionar o tráfego para as máquinas virtuais que hospedam seu site da web.
 
 ![Balanceador de carga do ARR](introduction/_static/image6.png)
 
-Se uma máquina falhar, Azure automaticamente extrair da rotação, gira uma nova instância de máquina virtual e direcionar o tráfego para a nova instância – tudo sem nenhum tempo de inatividade para seu aplicativo é iniciado.
+Se um computador ficar inoperante, Azure automaticamente extrai de rotação gira uma nova instância VM e inicia o direcionamento do tráfego para a nova instância – tudo com nenhum tempo de inatividade para seu aplicativo.
 
 ![Recuperação automática de falha do computador](introduction/_static/image7.png)
 
-Tudo isso ocorre automaticamente. Tudo o que você precisa fazer é criar um site da web e implantar seu aplicativo, usando o Windows PowerShell, o Visual Studio ou o portal de gerenciamento do Azure.
+Tudo isso ocorre automaticamente. Tudo o que você precisa fazer é criar um site da web e implantar seu aplicativo a ele, usando o Windows PowerShell, Visual Studio ou o portal de gerenciamento do Azure.
 
-Para obter um tutorial de passo a passo de rápida e fácil que mostra como criar um aplicativo web no Visual Studio e implantá-lo para um Site do Azure, consulte [Introdução ao Azure e ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
+Para obter um tutorial de passo a passo de rápida e fácil que mostra como criar um aplicativo web no Visual Studio e implantá-lo para um Site da Web do Azure, consulte [Introdução ao Azure e ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
 
 <a id="summary"></a>
 ## <a name="summary"></a>Resumo
 
-Esta introdução forneceu uma lista de tópicos aborda o catálogo, capturas de tela do aplicativo de exemplo e uma breve visão geral dos aplicativos Web no ambiente de nuvem do serviço de aplicativo do Azure. Uma das grandes vantagens do desenvolvimento de aplicativos de e para a nuvem é que ele é fácil de automatizar tarefas repetitivas de desenvolvimento, como criar um ambiente de teste e implantar seu código para ele. Como fazer isto é o assunto do [próximo capítulo](automate-everything.md).
+Esta introdução forneceu uma lista de tópicos que abordará o livro, capturas de tela do aplicativo de exemplo e uma breve visão geral dos aplicativos Web no ambiente de nuvem do serviço de aplicativo do Azure. Uma das grandes vantagens do desenvolvimento de aplicativos no e para a nuvem é que ele é fácil de automatizar tarefas repetitivas de desenvolvimento, como criar um ambiente de teste e implantar seu código para ele. Como fazer isso, o assunto do [próximo capítulo](automate-everything.md).
 
 ## <a name="resources"></a>Recursos
 
@@ -169,12 +168,12 @@ Para obter mais informações sobre os tópicos abordados neste capítulo, consu
 
 Documentação:
 
-- [Aplicativos no serviço de aplicativo do Azure Web](https://azure.microsoft.com/services/app-service/web/). Página do portal para obter a documentação sobre os aplicativos Web do Azure.
-- [Web de aplicativos, serviços de nuvem e VMs: quando usar o quê?](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, conforme mostrado neste capítulo é apenas uma das três maneiras que você pode executar aplicativos web no Azure. Este artigo explica as diferenças entre as três formas e fornece orientação sobre como escolher qual delas é adequada para seu cenário. Como Sites, serviços de nuvem é um recurso de PaaS do Azure. Máquinas virtuais são um recurso de IaaS. Para obter uma explicação de PaaS e IaaS, consulte o [opções de dados](data-storage-options.md#paasiaas) capítulo.
+- [Aplicativos Web no serviço de aplicativo do Azure](https://azure.microsoft.com/services/app-service/web/). Página do portal para obter a documentação sobre os aplicativos Web do Azure.
+- [Web de aplicativos, serviços de nuvem e VMs: quando usar qual?](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, conforme mostrado neste capítulo é apenas um dos três modos que você pode executar aplicativos web no Azure. Este artigo explica as diferenças entre as três maneiras e fornece orientação sobre como escolher qual delas é adequada para seu cenário. Como Sites, serviços de nuvem é um recurso de PaaS do Azure. As VMs são um recurso de IaaS. Para obter uma explicação de PaaS em vez de IaaS, consulte o [opções de dados](data-storage-options.md#paasiaas) capítulo.
 
 Vídeos:
 
-- [Scott Guthrie começa na etapa 0 - o que é o sistema operacional em nuvem do Azure?](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
+- [Scott Guthrie começa na etapa 0 – o que é o sistema operacional em nuvem do Azure?](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
 - [Arquitetura de Sites da Web - com Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/).
 - [Recursos internos de Sites do Azure com Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 

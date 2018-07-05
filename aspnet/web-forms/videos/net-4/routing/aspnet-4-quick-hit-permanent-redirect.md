@@ -9,17 +9,16 @@ ms.date: 11/05/2009
 ms.topic: article
 ms.assetid: adea2a1f-4650-4e3d-8bff-3ff5cd22f895
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/routing/aspnet-4-quick-hit-permanent-redirect
 msc.type: video
-ms.openlocfilehash: c097dfb3ebb122b2069e011bc000a6870af35165
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 63d408dfcf1bcb4d31a29cb97e496e78ffbde496
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30899743"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37394906"
 ---
-<a name="aspnet-4-quick-hit---permanent-redirect"></a>O ASP.NET 4 "Hit rápida" - redirecionamento permanente
+<a name="aspnet-4-quick-hit---permanent-redirect"></a>ASP.NET 4 "Acertar rápido" – redirecionamento permanente
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 

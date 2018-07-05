@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/aspnet-web-forms-vnext/getting-started-with-the-next-version-of-aspnet
-title: Guia de Introdução na próxima versão do ASP.NET | Microsoft Docs
+title: Guia de Introdução a próxima versão do ASP.NET | Microsoft Docs
 author: shanselman
 description: Scott Hanselman apresenta os recursos futuros na próxima versão do ASP.NET.
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 11/18/2011
 ms.topic: article
 ms.assetid: ebe337ae-9646-49f4-bb38-e6d3138b39fd
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/getting-started-with-the-next-version-of-aspnet
 msc.type: video
-ms.openlocfilehash: 8a5b972741a0e524fff4d2d8ecf908cffc894c58
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 04ad10b250c3d4aea0d4af85f437c863bc6ade31
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885658"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396091"
 ---
-<a name="getting-started-with-the-next-version-of-aspnet"></a>Guia de Introdução na próxima versão do ASP.NET
+<a name="getting-started-with-the-next-version-of-aspnet"></a>Guia de Introdução a próxima versão do ASP.NET
 ====================
 por [Scott Hanselman](https://github.com/shanselman)
 

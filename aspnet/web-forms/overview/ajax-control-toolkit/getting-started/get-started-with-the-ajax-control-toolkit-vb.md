@@ -1,79 +1,78 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb
-title: Introdução ao Kit de ferramentas de controle do AJAX (VB) | Microsoft Docs
+title: Introdução ao AJAX Control Toolkit (VB) | Microsoft Docs
 author: microsoft
-description: Saiba tudo o que precisa saber para começar a usar o Kit de ferramentas de controle AJAX.
+description: Aprenda tudo o que você precisa saber para começar a usar o AJAX Control Toolkit.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
 ms.topic: article
 ms.assetid: 9f8fa166-49a2-402c-b236-20caef0c658f
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 30653a147bd3bf581af27220e11cdecc2f89fc4a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6041087df3a15ef42d2364881f08a991f4eeb4fc
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870200"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367768"
 ---
-<a name="get-started-with-the-ajax-control-toolkit-vb"></a>Introdução ao Kit de ferramentas de controle do AJAX (VB)
+<a name="get-started-with-the-ajax-control-toolkit-vb"></a>Introdução ao AJAX Control Toolkit (VB)
 ====================
 por [Microsoft](https://github.com/microsoft)
 
-> Saiba tudo o que precisa saber para começar a usar o Kit de ferramentas de controle AJAX.
+> Aprenda tudo o que você precisa saber para começar a usar o AJAX Control Toolkit.
 
 
-O Kit de ferramentas de controle AJAX contém mais de 30 controles livres que você pode usar em seus aplicativos ASP.NET. Neste tutorial, você aprenderá como baixar o Kit de ferramentas de controle AJAX e adicionar os controles do Kit de ferramentas para sua caixa de ferramentas do Visual Studio/Visual Web Developer Express.
+O AJAX Control Toolkit contém mais de 30 controles gratuitos que você pode usar em seus aplicativos ASP.NET. Neste tutorial, você aprenderá como baixar o AJAX Control Toolkit e adicione os controles do Kit de ferramentas para sua caixa de ferramentas do Visual Studio/Visual Web Developer Express.
 
-## <a name="downloading-the-ajax-control-toolkit"></a>Baixar o Kit de ferramentas de controle AJAX
+## <a name="downloading-the-ajax-control-toolkit"></a>Baixando o AJAX Control Toolkit
 
-O [AJAX Control Toolkit](http://devexpress.com/act) é um projeto de software livre desenvolvido por membros da comunidade do ASP.NET e a equipe do ASP.NET.
-
-
-[![Baixar o Kit de ferramentas de controle AJAX](get-started-with-the-ajax-control-toolkit-vb/_static/image1.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image1.png)
-
-**Figura 01**: baixar o Kit de ferramentas de controle AJAX ([clique para exibir a imagem em tamanho normal](get-started-with-the-ajax-control-toolkit-vb/_static/image2.png))
+O [AJAX Control Toolkit](http://devexpress.com/act) é um projeto de código-fonte aberto desenvolvido por membros da comunidade do ASP.NET e a equipe do ASP.NET.
 
 
-Depois de baixar o arquivo, você precisa desbloquear o arquivo. Clique no arquivo, selecione Propriedades e clique no **desbloquear** botão (consulte a Figura 2).
+[![Baixando o AJAX Control Toolkit](get-started-with-the-ajax-control-toolkit-vb/_static/image1.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image1.png)
+
+**Figura 01**: baixar o AJAX Control Toolkit ([clique para exibir a imagem em tamanho normal](get-started-with-the-ajax-control-toolkit-vb/_static/image2.png))
 
 
-[![Desbloquear o arquivo ZIP de kit de ferramentas de controle AJAX](get-started-with-the-ajax-control-toolkit-vb/_static/image2.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image3.png)
-
-**Figura 02**: desbloquear o arquivo ZIP de kit de ferramentas de controle AJAX ([clique para exibir a imagem em tamanho normal](get-started-with-the-ajax-control-toolkit-vb/_static/image4.png))
+Depois de baixar o arquivo, você precisará desbloquear o arquivo. O arquivo com o botão direito, selecione Propriedades e clique o **Unblock** botão (consulte a Figura 2).
 
 
-Depois de desbloquear o arquivo, você pode descompactar o arquivo: o arquivo e selecione o **extrair tudo** opção de menu. Agora, você está pronto para adicionar o Kit de ferramentas para a caixa de ferramentas do Visual Studio/Visual Web Developer.
+[![Desbloquear o arquivo ZIP de kit de ferramentas de controle do AJAX](get-started-with-the-ajax-control-toolkit-vb/_static/image2.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image3.png)
 
-## <a name="adding-the-ajax-control-toolkit-to-the-toolbox"></a>Adicionando o Kit de ferramentas de controle AJAX para a caixa de ferramentas
-
-É a maneira mais fácil de usar o Kit de ferramentas de controle AJAX adicionar o Kit de ferramentas para sua caixa de ferramentas do Visual Studio/Visual Web Developer (consulte a Figura 3). Dessa forma, você pode simplesmente arraste um kit de ferramentas controle para uma página quando você deseja usá-lo.
+**Figura 02**: desbloquear o arquivo ZIP de kit de ferramentas de controle do AJAX ([clique para exibir a imagem em tamanho normal](get-started-with-the-ajax-control-toolkit-vb/_static/image4.png))
 
 
-[![Kit de ferramentas de controle AJAX aparece na caixa de ferramentas](get-started-with-the-ajax-control-toolkit-vb/_static/image3.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image5.png)
+Depois de desbloquear o arquivo, você pode descompactar o arquivo: o arquivo com o botão direito e selecione o **extrair tudo** opção de menu. Agora, estamos prontos para adicionar o Kit de ferramentas para a caixa de ferramentas do Visual Studio/Visual Web Developer.
+
+## <a name="adding-the-ajax-control-toolkit-to-the-toolbox"></a>Adicionando o AJAX Control Toolkit à caixa de ferramentas
+
+A maneira mais fácil de usar o AJAX Control Toolkit é adicionar o Kit de ferramentas para sua caixa de ferramentas do Visual Studio/Visual Web Developer (veja a Figura 3). Dessa forma, você pode simplesmente arrastar um controle do Kit de ferramentas em uma página quando você deseja usá-lo.
+
+
+[![AJAX Control Toolkit é exibido na caixa de ferramentas](get-started-with-the-ajax-control-toolkit-vb/_static/image3.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image5.png)
 
 **Figura 03**: AJAX Control Toolkit é exibido na caixa de ferramentas ([clique para exibir a imagem em tamanho normal](get-started-with-the-ajax-control-toolkit-vb/_static/image6.png))
 
 
-Primeiro, você precisa adicionar uma guia do Kit de ferramentas de controle AJAX para a caixa de ferramentas. Siga estas etapas.
+Primeiro, você precisará adicionar uma guia do AJAX Control Toolkit à caixa de ferramentas. Siga estas etapas.
 
-1. Crie um novo site da Web ASP.NET, selecionando a opção de menu Arquivo, novo site. Clique duas vezes em Default.aspx na janela do Gerenciador de soluções para abrir o arquivo no editor.
-2. A caixa de ferramentas sob a guia Geral e selecione a opção de menu **Adicionar guia** (consulte a Figura 4).
+1. Crie um novo site do ASP.NET, selecionando a opção de menu Arquivo, novo site. Clique duas vezes em Default. aspx na janela do Gerenciador de soluções para abrir o arquivo no editor.
+2. A caixa de ferramentas sob a guia geral com o botão direito e selecione a opção de menu **Adicionar guia** (veja a Figura 4).
 3. Insira uma nova guia chamada AJAX Control Toolkit.
 
 
 [![Adicionar uma nova guia](get-started-with-the-ajax-control-toolkit-vb/_static/image4.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image7.png)
 
-**Figura 04**: adicionando uma nova guia ([clique para exibir a imagem em tamanho normal](get-started-with-the-ajax-control-toolkit-vb/_static/image8.png))
+**Figura 04**: adicionar uma nova guia ([clique para exibir a imagem em tamanho normal](get-started-with-the-ajax-control-toolkit-vb/_static/image8.png))
 
 
-Em seguida, você precisa adicionar os controles do Kit de ferramentas de controle AJAX para a nova guia. Siga estas etapas:
+Em seguida, você precisa adicionar os controles do AJAX Control Toolkit para a nova guia. Siga estas etapas:
 
-- Sob a guia AJAX Control Toolkit e selecione a opção de menu **escolher itens (consulte a Figura 5)**.
-- Navegue até o local onde você descompactou o Kit de ferramentas de controle AJAX e selecione o assembly AjaxControlToolkit.
+- Clique com botão direito sob a guia do AJAX Control Toolkit e selecionar a opção de menu **escolher itens (consulte a Figura 5)**.
+- Navegue até o local onde você descompactou o AJAX Control Toolkit e selecione o assembly AjaxControlToolkit.
 
 
 [![Escolha os itens a serem adicionados à caixa de ferramentas](get-started-with-the-ajax-control-toolkit-vb/_static/image5.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image9.png)
@@ -83,12 +82,12 @@ Em seguida, você precisa adicionar os controles do Kit de ferramentas de contro
 
 Depois de concluir essas etapas, todos os controles do Kit de ferramentas serão exibida na caixa de ferramentas.
 
-## <a name="upgrading-to-a-new-version-of-the-toolkit"></a>Atualizar para uma nova versão do Kit de ferramentas
+## <a name="upgrading-to-a-new-version-of-the-toolkit"></a>Atualizando para uma nova versão do Kit de ferramentas
 
-Se você estivesse usando uma versão mais antiga do Kit de ferramentas e agora precisa mover para uma versão posterior aqui estão as etapas recomendadas:
+Se você estivesse usando uma versão mais antiga do Kit de ferramentas e agora preciso migrar para uma versão mais recente aqui são as etapas recomendadas:
 
 - Binários - excluir a versão antiga do assembly AjaxControlToolkit da pasta Bin do site.
-- Itens de caixa de ferramentas - Excluir guia AJAX Control Toolkit e siga as etapas acima para recriar a guia com a nova versão do assembly AjaxControlToolkit.
+- Itens de caixa de ferramentas - excluir a guia do AJAX Control Toolkit e siga as etapas acima para recriar a guia com a nova versão do assembly AjaxControlToolkit.
 
 > [!div class="step-by-step"]
 > [Anterior](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)

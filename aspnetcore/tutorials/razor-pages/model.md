@@ -5,12 +5,12 @@ description: Saiba como adicionar classes de gerenciamento de filmes em um banco
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 508cca07fa96c20e228d2c55c9fb101f7fc3cb02
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: ed8faf8b3049adc7bcc7953d63ad805b0a836bd9
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36327546"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961169"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 
@@ -53,6 +53,36 @@ Conclua a caixa de diálogo **Adicionar Razor Pages usando o Entity Framework (C
 * Selecione **Adicionar**.
 
 ![Imagem das instruções anteriores.](model/_static/arp.png)
+
+O processo de scaffold criou e alterou os seguintes arquivos:
+
+### <a name="files-created"></a>Arquivos criados
+
+* *Pages/Movies* Criar, Excluir, Detalhes, Editar, Índice. Essas páginas serão detalhadas no próximo tutorial.
+* *Data/RazorPagesMovieContext.cs*
+
+### <a name="files-updates"></a>Atualizações de arquivos
+
+* *Startup.cs*: alterações nesse arquivo serão detalhadas na próxima seção.
+* *appsettings.json*: a cadeia de conexão usada para se conectar a um banco de dados local é adicionada.
+
+## <a name="examine-the-context-registered-with-dependency-injection"></a>Examinar o contexto registrado com a injeção de dependência
+
+O ASP.NET Core é construído com a [injeção de dependência](xref:fundamentals/dependency-injection). Serviços (como o contexto de BD do EF Core) são registrados com injeção de dependência durante a inicialização do aplicativo. Os componentes que exigem esses serviços (como as Páginas do Razor) recebem esses serviços por meio de parâmetros do construtor. O código de construtor que obtém uma instância de contexto do BD será mostrado mais adiante no tutorial.
+
+A ferramenta de scaffolding criou automaticamente um contexto de BD e o registrou no contêiner da injeção de dependência.
+
+Examine o método `Startup.ConfigureServices`. A linha destacada foi adicionada pelo scaffolder:
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Startup.cs?name=snippet_ConfigureServices&highlight=12-13)]
+
+A classe principal que coordena a funcionalidade do EF Core de um modelo de dados é a classe de contexto de BD. O contexto de dados deriva de [Microsoft.EntityFrameworkCore.DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext). O contexto de dados especifica quais entidades são incluídas no modelo de dados. Neste projeto, a classe é chamada `RazorPagesMovieContext`.
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Data/RazorPagesMovieContext.cs)]
+
+O código anterior cria uma propriedade [DbSet\<Movie>](/dotnet/api/microsoft.entityframeworkcore.dbset-1) para o conjunto de entidades. Na terminologia do Entity Framework, um conjunto de entidades normalmente corresponde a uma tabela de banco de dados. Uma entidade corresponde a uma linha da tabela.
+
+O nome da cadeia de conexão é passado para o contexto com a chamada de um método em um objeto [DbContextOptions](/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions). Para o desenvolvimento local, o [sistema de configuração do ASP.NET Core](xref:fundamentals/configuration/index) lê a cadeia de conexão do arquivo *appsettings.json*.
 
 <a name="pmc"></a>
 ## <a name="perform-initial-migration"></a>Executar a migração inicial
@@ -194,4 +224,4 @@ O tutorial a seguir explica os arquivos criados por scaffolding.
 
 > [!div class="step-by-step"]
 > [Anterior: Introdução](xref:tutorials/razor-pages/razor-pages-start)
-> [Próximo: Páginas Razor geradas por scaffolding](xref:tutorials/razor-pages/page)    
+> [Próximo: Páginas Razor geradas por scaffolding](xref:tutorials/razor-pages/page)

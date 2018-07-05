@@ -1,6 +1,6 @@
 ---
 uid: ajax/cdn/jquery-mobile/cdnjquerymobile130
-title: o jQuery Mobile 1.3.0 no Microsoft Ajax CDN | Microsoft Docs
+title: jQuery Mobile 1.3.0 na CDN do Microsoft Ajax | Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 07/23/2014
 ms.topic: article
 ms.assetid: 99dd9ca6-27e6-48cb-8b8e-625022e0c5a0
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/jquery-mobile/cdnjquerymobile130
 msc.type: content
-ms.openlocfilehash: 9bd067f1a3ae3c907cc3a013226352067447aeb3
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3e187b50387ba471603a9d4cb4b921248265c76a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30070973"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395902"
 ---
-<a name="jquery-mobile-130-on-the-microsoft-ajax-cdn"></a>jQuery Mobile 1.3.0 no Microsoft Ajax CDN
+<a name="jquery-mobile-130-on-the-microsoft-ajax-cdn"></a>jQuery Mobile 1.3.0 na CDN do Microsoft Ajax
 ====================
 A biblioteca do jQuery Mobile 1.3.0 inclui os seguintes arquivos:
 

@@ -3,20 +3,24 @@ title: Páginas Razor com o EF Core no ASP.NET Core – Modelo de dados – 5 de
 author: rick-anderson
 description: Neste tutorial, você adiciona mais entidades e relações e personaliza o modelo de dados especificando formatação, validação e regras de mapeamento.
 ms.author: riande
-ms.date: 10/25/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: a885809205f13e1090a957496710cc0d9c7257c0
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d96ce7a3f81c54d3c4c0fe26d3fb588d9ce2e0ce
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274535"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089991"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Modelo de dados – 5 de 8
 
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
+::: moniker range=">= aspnetcore-2.1"
+
 Por [Tom Dykstra](https://github.com/tdykstra) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](~/includes/RP-EF/intro.md)]
 
 Os tutoriais anteriores trabalharam com um modelo de dados básico composto por três entidades. Neste tutorial:
 
@@ -27,7 +31,8 @@ As classes de entidade para o modelo de dados concluído são mostradas na segui
 
 ![Diagrama de entidade](complex-data-model/_static/diagram.png)
 
-Caso tenha problemas que não consiga resolver, baixe o [aplicativo concluído para este estágio](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part5-complex).
+Caso tenha problemas que não consiga resolver, baixe o [aplicativo concluído](
+https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples).
 
 ## <a name="customize-the-data-model-with-attributes"></a>Personalizar o modelo de dados com atributos
 
@@ -39,7 +44,7 @@ As páginas de alunos atualmente exibem a hora da data de registro. Normalmente,
 
 Atualize *Models/Student.cs* com o seguinte código realçado:
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
 O atributo [DataType](/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) especifica um tipo de dados mais específico do que o tipo intrínseco de banco de dados. Neste caso, apenas a data deve ser exibida, não a data e a hora. A [Enumeração DataType](/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1) fornece muitos tipos de dados, como Date, Time, PhoneNumber, Currency, EmailAddress, etc. O atributo `DataType` também pode permitir que o aplicativo forneça automaticamente recursos específicos a um tipo. Por exemplo:
 
@@ -75,7 +80,7 @@ Regras de validação de dados e mensagens de erro de validação podem ser espe
 
 Atualize o modelo `Student` com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
 O código anterior limita os nomes a, no máximo, 50 caracteres. O atributo `StringLength` não impede que um usuário insira um espaço em branco em um nome. O atributo [RegularExpression](/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) é usado para aplicar restrições à entrada. Por exemplo, o seguinte código exige que o primeiro caractere esteja em maiúscula e os caracteres restantes estejam em ordem alfabética:
 
@@ -107,7 +112,7 @@ O modelo `Student` usa `FirstMidName` para o campo de nome porque o campo també
 
 Atualize o arquivo *Student.cs* com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 Com a alteração anterior, `Student.FirstMidName` no aplicativo é mapeado para a coluna `FirstName` da tabela `Student`.
 
@@ -121,12 +126,23 @@ Para atualizar o BD:
 * Compile o projeto.
 * Abra uma janela Comando na pasta do projeto. Insira os seguintes comandos para criar uma nova migração e atualizar o BD:
 
-    ```console
-    dotnet ef migrations add ColumnFirstName
-    dotnet ef database update
-    ```
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-O comando `dotnet ef migrations add ColumnFirstName` gera a seguinte mensagem de aviso:
+```PMC
+Add-Migration ColumnFirstName
+Update-Database
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
+
+```console
+dotnet ef migrations add ColumnFirstName
+dotnet ef database update
+```
+
+------
+
+O comando `migrations add ColumnFirstName` gera a seguinte mensagem de aviso:
 
 ```text
 An operation was scaffolded that may result in the loss of data.
@@ -152,7 +168,7 @@ Antes de a migração ser aplicada, as colunas de nome eram do tipo [nvarchar(MA
 
 Atualize *Models/Student.cs* com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>O atributo Required
 
@@ -180,9 +196,7 @@ O atributo `Display` especifica que a legenda para as caixas de texto deve ser "
 
 Crie *Models/Instructor.cs* com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
-
-Observe que várias propriedades são iguais nas entidades `Student` e `Instructor`. No tutorial Implementando a herança mais adiante nesta série, esse código é refatorado para eliminar a redundância.
+[!code-csharp[](intro/samples/cu21/Models/Instructor.cs)]
 
 Vários atributos podem estar em uma linha. Os atributos `HireDate` podem ser escritos da seguinte maneira:
 
@@ -226,7 +240,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 Crie *Models/OfficeAssignment.cs* com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu21/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>O atributo Key
 
@@ -275,7 +289,7 @@ O código anterior especifica que deve haver um instrutor relacionado. O código
 
 Atualize *Models/Course.cs* com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu21/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
 A entidade `Course` tem uma propriedade de FK (chave estrangeira) `DepartmentID`. `DepartmentID` aponta para a entidade `Department` relacionada. A entidade `Course` tem uma propriedade de navegação `Department`.
 
@@ -333,7 +347,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 Crie *Models/Department.cs* com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu21/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>O atributo Column
 
@@ -386,7 +400,7 @@ Se as regras de negócio exigirem que a propriedade `InstructorID` não permita 
 
 O código anterior desabilita a exclusão em cascata na relação departamento-instrutor.
 
-## <a name="update-the-enrollment-entity"></a>Atualizar a entidade Enrollment
+## <a name="update-the-enrollment-entityupdate-the-enrollment-entity"></a>Atualizar a entidade Enrollment
 
 Um registro refere-se a um curso feito por um aluno.
 
@@ -394,7 +408,7 @@ Um registro refere-se a um curso feito por um aluno.
 
 Atualize *Models/Enrollment.cs* com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu21/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>Propriedades de navegação e de chave estrangeira
 
@@ -436,7 +450,7 @@ Observação: o EF 6.x é compatível com tabelas de junção implícita para re
 
 Crie *Models/CourseAssignment.cs* com o seguinte código:
 
-[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu21/Models/CourseAssignment.cs)]
 
 ### <a name="instructor-to-courses"></a>Instrutor para Cursos
 
@@ -470,7 +484,7 @@ A entidade de junção `Enrollment` define sua própria PK e, portanto, duplicat
 
 Adicione o seguinte código realçado a *Data/SchoolContext.cs*:
 
-[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu21/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 O código anterior adiciona novas entidades e configura a PK composta da entidade `CourseAssignment`.
 
@@ -520,7 +534,7 @@ O diagrama anterior mostra:
 
 Atualize o código em *Data/DbInitializer.cs*:
 
-[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu21/Data/DbInitializer.cs?name=snippet_Final)]
 
 O código anterior fornece dados de semente para as novas entidades. A maioria desse código cria novos objetos de entidade e carrega dados de exemplo. Os dados de exemplo são usados para teste. O código anterior cria as seguintes relações muitos para muitos:
 
@@ -531,11 +545,21 @@ Observação: o [EF Core 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki
 
 ## <a name="add-a-migration"></a>Adicionar uma migração
 
-Compile o projeto. Abra uma janela Comando na pasta do projeto e insira o seguinte comando:
+Compile o projeto.
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+```PMC
+Add-Migration ComplexDataModel
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
 
 ```console
 dotnet ef migrations add ComplexDataModel
 ```
+
+------
 
 O comando anterior exibe um aviso sobre a possível perda de dados.
 
@@ -554,42 +578,40 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 
 Quando as migrações são executadas com os dados existentes, pode haver restrições de FK que não são atendidas com os dados existentes. Para este tutorial, um novo BD é criado e, portanto, não há nenhuma violação de restrição de FK. Consulte [Corrigindo restrições de chave estrangeira com os dados herdados](#fk) para obter instruções sobre como corrigir as violações de FK no BD atual.
 
-## <a name="change-the-connection-string-and-update-the-db"></a>Alterar a cadeia de conexão e atualizar o BD
+### <a name="drop-and-update-the-database"></a>Remover e atualizar o banco de dados
 
-O código no `DbInitializer` atualizado adiciona dados de semente às novas entidades. Para forçar o EF Core a criar um novo BD vazio:
+O código no `DbInitializer` atualizado adiciona dados de semente às novas entidades. Para forçar o EF Core a criar um novo BD, remova e atualize o BD:
 
-* Altere o nome de cadeia de conexão do BD no *appsettings.json* para ContosoUniversity3. O novo nome deve ser um nome que ainda não foi usado no computador.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-    ```json
-    {
-      "ConnectionStrings": {
-        "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=ContosoUniversity3;Trusted_Connection=True;MultipleActiveResultSets=true"
-      },
-    ```
+No **PMC** (Console do Gerenciador de Pacotes), execute o seguinte comando:
 
-* Como alternativa, exclua o BD usando:
-
-  * **SSOX** (Pesquisador de Objetos do SQL Server).
-  * O comando `database drop` da CLI:
-
-    ```console
-    dotnet ef database drop
-    ```
-
-Execute `database update` na janela Comando:
-
-```console
-dotnet ef database update
+```PMC
+Drop-Database
+Update-Database
 ```
 
-O comando anterior executa todas as migrações.
+Execute `Get-Help about_EntityFrameworkCore` no PMC para obter informações de ajuda.
+
+# <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
+
+Abra uma janela Comando e navegue para a pasta do projeto. A pasta do projeto contém o arquivo *Startup.cs*.
+
+Insira o seguinte na janela Comando:
+
+ ```console
+ dotnet ef database drop
+dotnet ef database update
+ ```
+
+------
 
 Execute o aplicativo. A execução do aplicativo executa o método `DbInitializer.Initialize`. O `DbInitializer.Initialize` popula o novo BD.
 
 Abra o BD no SSOX:
 
-* Expanda o nó **Tabelas**. As tabelas criadas são exibidas.
 * Se o SSOX for aberto anteriormente, clique no botão **Atualizar**.
+* Expanda o nó **Tabelas**. As tabelas criadas são exibidas.
 
 ![Tabelas no SSOX](complex-data-model/_static/ssox-tables.png)
 
@@ -638,6 +660,8 @@ Um aplicativo de produção:
 * Não usa o departamento "Temp" nem o valor padrão para `Course.DepartmentID`.
 
 O próximo tutorial abrange os dados relacionados.
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [Anterior](xref:data/ef-rp/migrations)

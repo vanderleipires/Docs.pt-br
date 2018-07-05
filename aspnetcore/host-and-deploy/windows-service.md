@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 0149039f69539b7c69d7ba45efcf09d80ffcba79
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 718cc83bb29c0cff323853d22c107e00616b1dd1
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275088"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126229"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Hospedar o ASP.NET Core em um serviço Windows
 
@@ -54,29 +54,39 @@ As seguintes alterações mínimas são necessárias para configurar um projeto 
 
      ::: moniker-end
 
-1. Publique o aplicativo em uma pasta. Use [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) ou um [perfil de publicação do Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) que publica para uma pasta.
+1. Publique o aplicativo. Use [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) ou um [perfil de publicação do Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles).
 
    Para publicar o aplicativo de exemplo da linha de comando, execute o seguinte comando em uma janela do console da pasta de projeto:
 
    ```console
-   dotnet publish --configuration Release --output c:\svc
+   dotnet publish --configuration Release
    ```
 
-1. Use a ferramenta de linha de comando [sc.exe](https://technet.microsoft.com/library/bb490995) para criar o serviço (`sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"`). O valor `binPath` é o caminho para o executável do aplicativo, que inclui o nome do arquivo executável. **O espaço entre o sinal de igual e o caractere de aspas que inicia o caminho é necessário.**
+1. Use a ferramenta de linha de comando [sc.exe](https://technet.microsoft.com/library/bb490995) para criar o serviço. O valor `binPath` é o caminho para o executável do aplicativo, que inclui o nome do arquivo executável. **O espaço entre o sinal de igual e o caractere de aspas no início do caminho é necessário.**
 
-   Para o aplicativo de exemplo e o comando que se segue, o serviço é:
+   ```console
+   sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
+   ```
+
+   Para um serviço publicado na pasta do projeto, use o caminho para a pasta *publish* para criar o serviço. No exemplo a seguir, o serviço é:
 
    * Chamado **MyService**.
-   * Publicado na pasta *c:\\svc*.
-   * Tem um aplicativo executável chamado *AspNetCoreService.exe*.
+   * Publicado na pasta *c:\\my_services\\AspNetCoreService\\bin\\Release\\&lt;TARGET_FRAMEWORK&gt;\\publish*.
+   * Representado por um executável de aplicativo chamado *AspNetCoreService.exe*.
 
    Abra um shell de comando com privilégios administrativos e execute o seguinte comando:
 
    ```console
-   sc create MyService binPath= "c:\svc\aspnetcoreservice.exe"
+   sc create MyService binPath= "c:\my_services\aspnetcoreservice\bin\release\<TARGET_FRAMEWORK>\publish\aspnetcoreservice.exe"
    ```
-
-   **Verifique se existe o espaço entre o argumento `binPath=` e seu valor.**
+   
+   > [!IMPORTANT]
+   > Verifique se existe o espaço entre o argumento `binPath=` e seu valor.
+   
+   Para publicar e iniciar o serviço de uma pasta diferente:
+   
+   1. Use a opção [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) no comando `dotnet publish`.
+   1. Crie o serviço com o comando `sc.exe` usando o caminho da pasta de saída. Inclua o nome do executável do serviço no caminho fornecido para `binPath`.
 
 1. Inicie o serviço com o comando `sc start <SERVICE_NAME>`.
 

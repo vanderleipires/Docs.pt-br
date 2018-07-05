@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/09/2018
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: 06d3f097cd93ceb2a23b9f6516a9b7a1f3ca3089
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 8e2693397f826d0e9a36ff52aa1d1d623b31043d
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273667"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960821"
 ---
 # <a name="aspnet-core-directory-structure"></a>Estrutura do diretório do ASP.NET Core
 
@@ -22,8 +22,8 @@ No ASP.NET Core, o diretório de aplicativo publicado, *publicar*, é composto d
 
 | Tipo de aplicativo | Estrutura de diretórios |
 | -------- | ------------------- |
-| [Implantação dependente de estrutura](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>logs&dagger; (opcional, a menos que necessário para receber logs de stdout)</li><li>Exibições&dagger; (aplicativos MVC; se as exibições não são pré-compiladas)</li><li>Páginas&dagger; (aplicativos de Páginas do Razor ou MVC, se as páginas não são pré-compiladas)</li><li>wwwroot&dagger;</li><li>arquivos *\.dll</li><li>\<nome-do-assembly>.deps.json</li><li>\<nome-do-assembly>.dll</li><li>\<nome-do-assembly>.pdb</li><li>\<nome-do-assembly>.PrecompiledViews.dll</li><li>\<nome-do-assembly>.PrecompiledViews.pdb</li><li>\<nome-do-assembly>.runtimeconfig.json</li><li>web.config (implantações do IIS)</li></ul></li></ul> |
-| [Implantação autossuficiente](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>logs&dagger; (opcional, a menos que necessário para receber logs de stdout)</li><li>refs&dagger;</li><li>Exibições&dagger; (aplicativos MVC; se as exibições não são pré-compiladas)</li><li>Páginas&dagger; (aplicativos de Páginas do Razor ou MVC, se as páginas não são pré-compiladas)</li><li>wwwroot&dagger;</li><li>arquivos \*.dll</li><li>\<nome-do-assembly>.deps.json</li><li>\<nome-do-assembly>.exe</li><li>\<nome-do-assembly>.pdb</li><li>\<nome-do-assembly>.PrecompiledViews.dll</li><li>\<nome-do-assembly>.PrecompiledViews.pdb</li><li>\<nome-do-assembly>.runtimeconfig.json</li><li>web.config (implantações do IIS)</li></ul></li></ul> |
+| [Implantação dependente de estrutura](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>Logs&dagger; (opcional, a menos que necessário para receber logs de stdout)</li><li>Exibições&dagger; (aplicativos MVC; se as exibições não são pré-compiladas)</li><li>Páginas&dagger; (aplicativos de Páginas do Razor ou MVC, se as páginas não são pré-compiladas)</li><li>wwwroot&dagger;</li><li>arquivos *\.dll</li><li>\<nome-do-assembly>.deps.json</li><li>\<nome-do-assembly>.dll</li><li>\<nome-do-assembly>.pdb</li><li>\<nome-do-assembly>.PrecompiledViews.dll</li><li>\<nome-do-assembly>.PrecompiledViews.pdb</li><li>\<nome-do-assembly>.runtimeconfig.json</li><li>web.config (implantações do IIS)</li></ul></li></ul> |
+| [Implantação autossuficiente](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>Logs&dagger; (opcional, a menos que necessário para receber logs de stdout)</li><li>refs&dagger;</li><li>Exibições&dagger; (aplicativos MVC; se as exibições não são pré-compiladas)</li><li>Páginas&dagger; (aplicativos de Páginas do Razor ou MVC, se as páginas não são pré-compiladas)</li><li>wwwroot&dagger;</li><li>arquivos \*.dll</li><li>\<nome-do-assembly>.deps.json</li><li>\<nome-do-assembly>.exe</li><li>\<nome-do-assembly>.pdb</li><li>\<nome-do-assembly>.PrecompiledViews.dll</li><li>\<nome-do-assembly>.PrecompiledViews.pdb</li><li>\<nome-do-assembly>.runtimeconfig.json</li><li>web.config (implantações do IIS)</li></ul></li></ul> |
 
 &dagger;Indica um diretório
 
@@ -31,7 +31,7 @@ O diretório *publish* representa o *caminho raiz de conteúdo* (também chamado
 
 O diretório *wwwroot*, se presente, contém somente ativos estáticos.
 
-O diretório *logs* de stdout pode ser criado para a implantação usando uma das duas abordagens a seguir:
+O diretório *Logs* de stdout pode ser criado para a implantação usando uma das duas abordagens a seguir:
 
 * Adicione o seguinte elemento `<Target>` ao arquivo de projeto:
 

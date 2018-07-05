@@ -2,30 +2,29 @@
 uid: web-forms/videos/aspnet-ajax/two-simple-techniques-for-triggering-updates-to-update-panels
 title: Duas técnicas simples para o disparo de atualizações para atualizar painéis | Microsoft Docs
 author: JoeStagner
-description: Neste vídeo, demonstrarei duas técnicas simples de atualização. Primeiro, usar o índice selecionado evento alterado do controle de lista suspensa como o disparo de um evento...
+description: Neste vídeo, demonstrarei duas técnicas simples de atualização. Primeiro, usar o índice selecionado evento alterado na lista suspensa do controle de lista como um disparo do evento...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/13/2008
 ms.topic: article
 ms.assetid: c844da8a-10e6-45c9-a9e2-331a3b8d3e03
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/two-simple-techniques-for-triggering-updates-to-update-panels
 msc.type: video
-ms.openlocfilehash: a43b69ed3085b0413f88e9a51ad11a4c6ba43bac
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: df88eb66f0f327a31b96cc35dd1f415125a891cc
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882371"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385126"
 ---
-<a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a>Duas técnicas simples para o disparo de atualizações para atualizar os painéis
+<a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a>Duas técnicas simples para o disparo de atualizações para atualizar painéis
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 
-Neste vídeo, demonstrarei duas técnicas simples de atualização. Primeiro, usando o índice selecionado alterado evento na lista suspensa de controle de lista como um gatilho de evento para a atualização de painéis de atualização. E dois, alterando dinamicamente a classe de folha de estilo associado com controles contidos no painel de atualização AJAX.
+Neste vídeo, demonstrarei duas técnicas simples de atualização. Primeiro, usar o índice selecionado evento alterado na lista suspensa do controle de lista como um gatilho de evento para a atualização de painéis de atualização. E dois, alterar dinamicamente a classe de folha de estilos associada com controles contidos no painel de atualização AJAX.
 
-[&#9654;Assista ao vídeo (minutos 9)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/two-simple-techniques-for-triggering-updates-to-update-panels)
+[&#9654;Assista ao vídeo (9 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/two-simple-techniques-for-triggering-updates-to-update-panels)
 
 > [!div class="step-by-step"]
 > [Anterior](how-do-i-retrieve-values-from-server-side-ajax-controls.md)

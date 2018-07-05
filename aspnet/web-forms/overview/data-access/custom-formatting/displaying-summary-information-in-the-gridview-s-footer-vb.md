@@ -2,22 +2,21 @@
 uid: web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
 title: Exibindo informações de resumo no rodapé do GridView (VB) | Microsoft Docs
 author: rick-anderson
-description: Informações de resumo geralmente são exibidas na parte inferior do relatório em uma linha de resumo. O controle GridView pode incluir uma linha de rodapé em cujas células podemos pr...
+description: Muitas vezes, informações de resumo são exibidas na parte inferior do relatório em uma linha de resumo. O controle GridView pode incluir uma linha de rodapé em cujas células, podemos pr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
 ms.topic: article
 ms.assetid: 41c818b7-603a-402b-8847-890a63547b6f
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d9a1a3f3c680f367395f984254da6cdcdd3c08d4
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4299cf7dc684c1080600789a91349011e495d391
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30877610"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400633"
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>Exibindo informações de resumo no rodapé do GridView (VB)
 ====================
@@ -25,20 +24,20 @@ por [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Baixe o aplicativo de exemplo](http://download.microsoft.com/download/5/7/0/57084608-dfb3-4781-991c-407d086e2adc/ASPNET_Data_Tutorial_15_VB.exe) ou [baixar PDF](displaying-summary-information-in-the-gridview-s-footer-vb/_static/datatutorial15vb1.pdf)
 
-> Informações de resumo geralmente são exibidas na parte inferior do relatório em uma linha de resumo. O controle GridView pode incluir uma linha de rodapé em cujas células pode programaticamente inserimos agregar dados. Neste tutorial, veremos como exibir dados de agregação nesta linha de rodapé.
+> Muitas vezes, informações de resumo são exibidas na parte inferior do relatório em uma linha de resumo. O controle GridView pode incluir uma linha de rodapé em cujas células pode programaticamente inserimos os dados de agregação. Neste tutorial, veremos como exibir dados de agregação nesta linha de rodapé.
 
 
 ## <a name="introduction"></a>Introdução
 
-Além de ver cada um dos preços de produtos, unidades em estoque, unidades na ordem e níveis de estoque, um usuário também pode estar interessado em informações de agregação, como o preço médio, o número total de unidades em estoque e assim por diante. Geralmente, essas informações de resumo são exibidas na parte inferior do relatório em uma linha de resumo. O controle GridView pode incluir uma linha de rodapé em cujas células pode programaticamente inserimos agregar dados.
+Além de ver cada um dos preços dos produtos, unidades em estoque, unidades na ordem e níveis de novo pedido, um usuário também pode estar interessado em informações de agregação, como o preço médio, o número total de unidades em estoque e assim por diante. Geralmente, essas informações de resumo são exibidas na parte inferior do relatório em uma linha de resumo. O controle GridView pode incluir uma linha de rodapé em cujas células pode programaticamente inserimos os dados de agregação.
 
 Essa tarefa apresenta três desafios:
 
-1. Configurando o GridView para exibir a linha de rodapé
-2. Determinando os dados resumidos; ou seja, como é calcular o preço médio ou o total de unidades em estoque?
-3. Inserindo os dados resumidos nas células apropriadas da linha de rodapé
+1. Configurando o GridView para exibir sua linha de rodapé
+2. Determinando os dados de resumo; ou seja, como, computamos o preço médio ou o total de unidades no estoque?
+3. Injetando dados de resumo nas células apropriadas da linha do rodapé
 
-Neste tutorial, veremos como superar esses desafios. Especificamente, vamos criar uma página que lista as categorias em uma lista suspensa com os produtos da categoria selecionada exibidos em um controle GridView. GridView incluirá uma linha de rodapé que mostra o preço médio e o número total de unidades em estoque e ordem de produtos na categoria.
+Neste tutorial, veremos como superar esses desafios. Especificamente, vamos criar uma página que lista as categorias em uma lista suspensa com os produtos da categoria selecionada exibidos em um GridView. O GridView incluirá uma linha de rodapé que mostra o preço médio e o número total de unidades em estoque e ordem de produtos dessa categoria.
 
 
 [![Informações de resumo são exibidas na linha de rodapé do GridView](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image1.png)
@@ -46,26 +45,26 @@ Neste tutorial, veremos como superar esses desafios. Especificamente, vamos cria
 **Figura 1**: informações de resumo é exibida na linha de rodapé do GridView ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image3.png))
 
 
-Neste tutorial, sua categoria interface mestre/detalhes de produtos, tem como base os conceitos abordados o anteriores [filtragem de mestre/detalhes com um DropDownList](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md) tutorial. Se você ainda não tiver trabalhado com o tutorial anterior, faça isso antes de prosseguir com esta.
+Neste tutorial, com a categoria à interface de mestre/detalhes de produtos, tem como base os conceitos abordados anterior [filtragem de mestre/detalhes com uma DropDownList](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md) tutorial. Se você ainda não tiver trabalhado com o tutorial anterior, faça isso antes de prosseguir com este.
 
-## <a name="step-1-adding-the-categories-dropdownlist-and-products-gridview"></a>Etapa 1: Adicionar categorias DropDownList e produtos GridView
+## <a name="step-1-adding-the-categories-dropdownlist-and-products-gridview"></a>Etapa 1: Adicionando a DropDownList categorias e GridView de produtos
 
-Antes de sobre nós com a adição de informações de resumo para o rodapé do GridView, vamos primeiro simplesmente criar o relatório de detalhes/mestre. Depois de concluir esta etapa primeiro, vamos examinar como incluir dados de resumo.
+Antes de respeito sozinhos com a adição de informações de resumo para o rodapé do GridView, vamos primeiro simplesmente criar relatório mestre/detalhes. Depois de concluir a primeira etapa, vamos examinar como incluir dados de resumo.
 
-Comece abrindo o `SummaryDataInFooter.aspx` página o `CustomFormatting` pasta. Adicionar um controle DropDownList e definir seu `ID` para `Categories`. Em seguida, clique no link Escolher fonte de dados de marca inteligente do DropDownList e optar por adicionar um novo ObjectDataSource denominado `CategoriesDataSource` que invoca o `CategoriesBLL` da classe `GetCategories()` método.
+Comece abrindo o `SummaryDataInFooter.aspx` página o `CustomFormatting` pasta. Adicione um controle DropDownList e defina suas `ID` para `Categories`. Em seguida, clique no link Escolher fonte de dados na marca inteligente do DropDownList e optar por adicionar um novo ObjectDataSource denominado `CategoriesDataSource` que invoca a `CategoriesBLL` da classe `GetCategories()` método.
 
 
-[![Adicionar um novo ObjectDataSource denominado CategoriesDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image4.png)
+[![Adicionar um novo ObjectDataSource chamado CategoriesDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image4.png)
 
 **Figura 2**: adicionar um novo ObjectDataSource nomeado `CategoriesDataSource` ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image6.png))
 
 
-[![Ter o ObjectDataSource GetCategories() método da classe CategoriesBLL Invoke](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image7.png)
+[![Ter o ObjectDataSource invocar o CategoriesBLL método da classe GetCategories()](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image7.png)
 
-**Figura 3**: tem o ObjectDataSource invocar o `CategoriesBLL` da classe `GetCategories()` método ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image9.png))
+**Figura 3**: que invoque o ObjectDataSource a `CategoriesBLL` da classe `GetCategories()` método ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image9.png))
 
 
-Depois de configurar o ObjectDataSource, o assistente retornará a configuração de fontes de dados do DropDownList assistente a partir do qual é necessário especificar o valor do campo de dados deve ser exibido e qual delas deve corresponder ao valor da DropDownList `ListItem` s. Ter o `CategoryName` campo exibido e use o `CategoryID` como o valor.
+Depois de configurar o ObjectDataSource, o assistente retornará a configuração de fonte de dados do DropDownList assistente a partir do qual precisamos especificar o valor do campo de dados deve ser exibido e qual delas deve corresponder ao valor da DropDownList `ListItem` s. Ter o `CategoryName` campo exibido e use o `CategoryID` como o valor.
 
 
 [![Use os campos de CategoryID e CategoryName como o texto e o valor para o ListItems, respectivamente](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image10.png)
@@ -73,18 +72,18 @@ Depois de configurar o ObjectDataSource, o assistente retornará a configuraçã
 **Figura 4**: Use o `CategoryName` e `CategoryID` campos como o `Text` e `Value` para o `ListItem` s, respectivamente ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image12.png))
 
 
-Neste ponto, temos DropDownList (`Categories`) que lista as categorias no sistema. Agora, precisamos adicionar um controle GridView que lista os produtos que pertencem à categoria selecionada. Antes de fazermos, porém, responda para verificar se a caixa de seleção Habilitar AutoPostBack marca inteligente do DropDownList. Conforme discutido no *filtragem de mestre/detalhes com um DropDownList* tutorial, definindo a DropDownList `AutoPostBack` propriedade `True` a página será lançada novamente cada vez que o valor de DropDownList é alterado. Isso fará com que o GridView deve ser atualizado, mostrando os produtos para a categoria selecionada recentemente. Se o `AutoPostBack` está definida como `False` (o padrão), alterar a categoria não causar um postback e, portanto, não são atualizados os produtos listados.
+Neste ponto, temos uma DropDownList (`Categories`) que lista as categorias no sistema. Agora, precisamos adicionar um GridView que lista os produtos que pertencem à categoria selecionada. Antes de fazer, no entanto, reserve um tempo para verificar a caixa de seleção Enable AutoPostBack na marca inteligente da DropDownList. Conforme discutido na *filtragem de mestre/detalhes com uma DropDownList* tutoriais, definindo a DropDownList `AutoPostBack` propriedade `True` a página será postada novamente sempre que o valor de DropDownList é alterado. Isso fará com que o GridView seja atualizada, mostrando os produtos para a categoria selecionada recentemente. Se o `AutoPostBack` estiver definida como `False` (o padrão), alterar a categoria não causará um postback e, portanto, não são atualizados os produtos listados.
 
 
 [![Marque a caixa de seleção Habilitar AutoPostBack na marca inteligente do DropDownList](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image13.png)
 
-**Figura 5**: marcar a opção Habilitar AutoPostBack na marca inteligente do DropDownList ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image15.png))
+**Figura 5**: marque a seleção de AutoPostBack habilitar na marca inteligente do DropDownList ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image15.png))
 
 
-Adicione um controle GridView para a página para exibir os produtos para a categoria selecionada. Definir o GridView `ID` para `ProductsInCategory` e associá-lo a um novo ObjectDataSource denominado `ProductsInCategoryDataSource`.
+Adicione um controle GridView à página para exibir os produtos para a categoria selecionada. Defina o GridView `ID` à `ProductsInCategory` e associá-lo para um novo ObjectDataSource chamado `ProductsInCategoryDataSource`.
 
 
-[![Adicionar um novo ObjectDataSource denominado ProductsInCategoryDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image16.png)
+[![Adicionar um novo ObjectDataSource chamado ProductsInCategoryDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image16.png)
 
 **Figura 6**: adicionar um novo ObjectDataSource nomeado `ProductsInCategoryDataSource` ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image18.png))
 
@@ -92,60 +91,60 @@ Adicione um controle GridView para a página para exibir os produtos para a cate
 Configurar o ObjectDataSource para que ele chama o `ProductsBLL` da classe `GetProductsByCategoryID(categoryID)` método.
 
 
-[![Ter o ObjectDataSource invocar o método GetProductsByCategoryID(categoryID)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image19.png)
+[![Ter o ObjectDataSource invoca o método GetProductsByCategoryID(categoryID)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image19.png)
 
-**Figura 7**: tem o ObjectDataSource invocar o `GetProductsByCategoryID(categoryID)` método ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image21.png))
+**Figura 7**: que invoque o ObjectDataSource a `GetProductsByCategoryID(categoryID)` método ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image21.png))
 
 
-Desde o `GetProductsByCategoryID(categoryID)` método assume um parâmetro de entrada, na etapa final do assistente, especifique a fonte do valor do parâmetro. Para exibir os produtos da categoria selecionada, tem o parâmetro retirado do `Categories` DropDownList.
+Uma vez que o `GetProductsByCategoryID(categoryID)` método assume um parâmetro de entrada, na etapa final do assistente, podemos especificar a origem do valor do parâmetro. Para exibir os produtos da categoria selecionada, tem o parâmetro retirado o `Categories` DropDownList.
 
 
 [![Obter o valor do parâmetro categoryID na lista suspensa de categorias selecionadas](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
 
-**Figura 8**: obter o *`categoryID`* valor do parâmetro na lista suspensa de categorias selecionadas ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
+**Figura 8**: obtenha o *`categoryID`* valor do parâmetro na lista suspensa de categorias selecionadas ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
 
 
-Depois de concluir o Assistente de GridView terá um BoundField para cada uma das propriedades do produto. Vamos limpar esses BoundFields para que somente o `ProductName`, `UnitPrice`, `UnitsInStock`, e `UnitsOnOrder` BoundFields são exibidos. Fique à vontade para adicionar as configurações de nível de campo para o restante BoundFields (como a formatação de `UnitPrice` como uma moeda). Depois de fazer essas alterações, declarativo do GridView deve ser semelhante ao seguinte:
+Depois de concluir o Assistente de GridView terá um BoundField para cada uma das propriedades do produto. Vamos limpar esses BoundFields para que somente o `ProductName`, `UnitPrice`, `UnitsInStock`, e `UnitsOnOrder` BoundFields são exibidos. Fique à vontade adicionar todas as configurações de nível de campo para o restante BoundFields (como a formatação a `UnitPrice` como uma moeda). Depois de fazer essas alterações, a marcação declarativa do GridView deve ser semelhante ao seguinte:
 
 
 [!code-aspx[Main](displaying-summary-information-in-the-gridview-s-footer-vb/samples/sample1.aspx)]
 
-Neste ponto, temos um relatório de detalhes/mestre totalmente funcional que mostra o nome, preço unitário, unidades em estoque e unidades na ordem para os produtos que pertencem à categoria selecionada.
+Neste ponto, temos um relatório mestre/detalhes totalmente funcional que mostra o nome, preço unitário, unidades em estoque e unidades no pedido para os produtos que pertencem à categoria selecionada.
 
 
 [![Obter o valor do parâmetro categoryID na lista suspensa de categorias selecionadas](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
 
-**Figura 9**: obter o *`categoryID`* valor do parâmetro na lista suspensa de categorias selecionadas ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
+**Figura 9**: obtenha o *`categoryID`* valor do parâmetro na lista suspensa de categorias selecionadas ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
 
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>Etapa 2: Exibir um rodapé em GridView
 
-O controle GridView pode exibir a linha de cabeçalho e rodapé. Essas linhas são exibidas, dependendo dos valores da `ShowHeader` e `ShowFooter` propriedades, respectivamente, com `ShowHeader` Padronizando para `True` e `ShowFooter` para `False`. Para incluir um rodapé em GridView, basta definir sua `ShowFooter` propriedade `True`.
+O controle GridView pode exibir a linha de cabeçalho e rodapé. Essas linhas são exibidas dependendo dos valores da `ShowHeader` e `ShowFooter` propriedades, respectivamente, com `ShowHeader` Padronizando para `True` e `ShowFooter` para `False`. Para incluir um rodapé no GridView simplesmente definir seus `ShowFooter` propriedade para `True`.
 
 
-[![Defina ShowFooter propriedade do GridView como True](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image28.png)
+[![Definir ShowFooter propriedade do GridView como True](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image28.png)
 
-**Figura 10**: definir o GridView `ShowFooter` propriedade `True` ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image30.png))
+**Figura 10**: defina o GridView `ShowFooter` propriedade `True` ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image30.png))
 
 
-A linha de rodapé de página tem uma célula para cada um dos campos definidos em GridView; No entanto, essas células estarão vazias por padrão. Dedicar um tempo para exibir nosso progresso em um navegador. Com o `ShowFooter` propriedade agora definido como `True`, GridView inclui uma linha de rodapé vazio.
+A linha de rodapé tem uma célula para cada um dos campos definidos em GridView; No entanto, essas células são vazias por padrão. Reserve um tempo para exibir nosso progresso em um navegador. Com o `ShowFooter` propriedade definida agora como `True`, GridView inclui uma linha de rodapé vazio.
 
 
 [![O GridView agora inclui uma linha de rodapé](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image31.png)
 
-**Figura 11**: GridView agora inclui uma linha de rodapé ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image33.png))
+**Figura 11**: O GridView agora inclui uma linha de rodapé ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image33.png))
 
 
-A linha de rodapé na Figura 11 não se destacam, pois ela tem um plano de fundo branco. Vamos criar um `FooterStyle` da classe CSS em `Styles.css` que especifica um plano de fundo vermelho escuro e, em seguida, configure o `GridView.skin` arquivo de capa no `DataWebControls` tema para atribuir esta classe CSS a GridView `FooterStyle`do `CssClass` propriedade. Se você precisar sobre capas e temas, consultar o [exibindo dados com o ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md) tutorial.
+A linha de rodapé na Figura 11 não se destacam, pois ela tem um plano de fundo branco. Vamos criar uma `FooterStyle` da classe CSS na `Styles.css` que especifica um plano de fundo vermelho escuro e, em seguida, configure o `GridView.skin` arquivo de capa no `DataWebControls` tema para atribuir essa classe CSS a GridView `FooterStyle`do `CssClass` propriedade. Se você precisar recordar temas e capas, voltar para o [exibindo dados com o ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md) tutorial.
 
-Comece adicionando a seguinte classe CSS para `Styles.css`:
+Comece adicionando a seguinte classe CSS à `Styles.css`:
 
 
 [!code-css[Main](displaying-summary-information-in-the-gridview-s-footer-vb/samples/sample2.css)]
 
-O `FooterStyle` classe CSS é semelhante em estilo para o `HeaderStyle` classe, embora o `HeaderStyle`da cor de plano de fundo é sutilmente mais escuro e o texto é exibido em uma fonte em negrito. Além disso, o texto no rodapé é alinhado à direita enquanto o texto do cabeçalho é centralizado.
+O `FooterStyle` classe CSS é semelhante em estilo para o `HeaderStyle` classe, embora o `HeaderStyle`da cor de plano de fundo é sutileza mais escura e o texto é exibido em uma fonte em negrito. Além disso, o texto no rodapé é alinhado à direita, enquanto o texto do cabeçalho é centralizado.
 
-Em seguida, para associar essa classe CSS rodapé do cada GridView, abra o `GridView.skin` do arquivo no `DataWebControls` tema e defina o `FooterStyle`do `CssClass` propriedade. Após essa adição marcação do arquivo deve parecer com:
+Em seguida, para associar essa classe CSS ao rodapé do GridView, cada, abra o `GridView.skin` do arquivo no `DataWebControls` tema e defina o `FooterStyle`do `CssClass` propriedade. Após essa adição a marcação do arquivo deve ser semelhante:
 
 
 [!code-aspx[Main](displaying-summary-information-in-the-gridview-s-footer-vb/samples/sample3.aspx)]
@@ -153,76 +152,76 @@ Em seguida, para associar essa classe CSS rodapé do cada GridView, abra o `Grid
 Como a captura de tela abaixo mostra, essa alteração torna o rodapé mais destacado.
 
 
-[![Linha de rodapé do GridView agora tem uma cor de plano de fundo avermelhado](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image34.png)
+[![Linha de rodapé do GridView agora tem uma cor de fundo avermelhado](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image34.png)
 
-**Figura 12**: linha de rodapé a GridView agora tem uma cor de plano de fundo avermelhado ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image36.png))
+**Figura 12**: linha de rodapé do GridView The agora tem uma cor de plano de fundo avermelhado ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image36.png))
 
 
-## <a name="step-3-computing-the-summary-data"></a>Etapa 3: Calcular os dados de resumo
+## <a name="step-3-computing-the-summary-data"></a>Etapa 3: Computando os dados de resumo
 
-Com o rodapé do GridView exibido, o próximo desafio voltada para nós é como os dados de resumo de computação. Há duas maneiras de computação essas informações de agregação:
+Com o rodapé do GridView exibido, o próximo desafio voltados para nós é como os dados de resumo de computação. Há duas maneiras para calcular essas informações de agregação:
 
-1. Por meio de uma consulta SQL é pode emitir uma consulta adicional para o banco de dados para calcular os dados de resumo para uma determinada categoria. SQL inclui um número de funções de agregação junto com um `GROUP BY` cláusula para especificar os dados sobre o qual os dados devem ser resumidos. A seguinte consulta SQL seria trazer de volta as informações necessárias:  
+1. Por meio de uma consulta SQL, podemos pode emitir uma consulta adicional ao banco de dados para calcular os dados de resumo para uma determinada categoria. SQL inclui um número de funções de agregação junto com um `GROUP BY` cláusula para especificar os dados sobre o qual os dados devem ser resumidos. A seguinte consulta SQL seria trazer de volta as informações necessárias:  
 
     [!code-sql[Main](displaying-summary-information-in-the-gridview-s-footer-vb/samples/sample4.sql)]
 
-    Naturalmente, você não iria querer emitir esta consulta diretamente do `SummaryDataInFooter.aspx` página, mas em vez disso, criando um método no `ProductsTableAdapter` e `ProductsBLL`.
-2. Essas informações de computação que está sendo adicionado à GridView conforme discutido em [personalizado formatação com base em dados](custom-formatting-based-upon-data-cs.md) tutorial, GridView `RowDataBound` manipulador de eventos é acionada uma vez para cada linha que está sendo adicionada à GridView após seu foi associação de dados. Criando um manipulador de eventos para esse evento, podemos manter um execução total dos valores que você deseja agregar. Após a última linha de dados foi associada a GridView temos os totais e as informações necessárias para calcular a média.
+    É claro, você não iria querer emitir esta consulta diretamente a partir o `SummaryDataInFooter.aspx` página, mas em vez disso, criando um método na `ProductsTableAdapter` e o `ProductsBLL`.
+2. Essas informações de computação, pois ele está sendo adicionado a GridView, conforme discutido em [formatação com base em dados personalizados](custom-formatting-based-upon-data-cs.md) tutorial, o GridView `RowDataBound` manipulador de eventos é acionado uma vez para cada linha que está sendo adicionada à GridView após sua foi associação de dados. Criando um manipulador de eventos para este evento podemos manter um execução total dos valores que queremos de agregação. Após a última linha de dados foi associada a GridView que temos os totais e as informações necessárias para calcular a média.
 
-Normalmente emprego a segunda abordagem salva uma viagem para o banco de dados e o esforço necessário para implementar a funcionalidade de resumida na camada de acesso a dados e camada de lógica comercial, mas qualquer abordagem seria suficiente. Para este tutorial vamos usar a segunda opção e controlar o uso total de `RowDataBound` manipulador de eventos.
+Eu normalmente empregam a segunda abordagem, como ele salva uma viagem para o banco de dados e os esforços necessários para implementar a funcionalidade de resumida na camada de acesso a dados e camada de lógica comercial, mas qualquer abordagem seria suficiente. Para este tutorial vamos usar a segunda opção e controlar o total usando o `RowDataBound` manipulador de eventos.
 
-Criar um `RowDataBound` GridView selecionando o GridView no Designer, clicando no ícone de raio da janela de propriedades e clicando duas vezes no manipulador de eventos de `RowDataBound` eventos. Como alternativa, você pode selecionar a GridView e seu evento RowDataBound nas listas suspensas na parte superior do arquivo de classe de code-behind do ASP.NET. Isso criará um novo manipulador de eventos chamado `ProductsInCategory_RowDataBound` no `SummaryDataInFooter.aspx` classe de code-behind da página.
+Criar uma `RowDataBound` manipulador de eventos para o GridView selecionando o GridView no Designer, clicando no ícone de raio da janela Propriedades e clicando duas vezes o `RowDataBound` eventos. Como alternativa, você pode selecionar o GridView e seu evento RowDataBound das listas suspensas na parte superior do arquivo de classe de code-behind do ASP.NET. Isso criará um novo manipulador de eventos chamado `ProductsInCategory_RowDataBound` no `SummaryDataInFooter.aspx` classe de code-behind da página.
 
 
 [!code-vb[Main](displaying-summary-information-in-the-gridview-s-footer-vb/samples/sample5.vb)]
 
-Para manter um total contínuo, precisamos definir variáveis de fora do escopo do manipulador de eventos. Crie as seguintes quatro variáveis de nível de página:
+Para manter um total contínuo, precisamos definir variáveis fora do escopo do manipulador de eventos. Crie as quatro variáveis de nível de página a seguir:
 
 - `_totalUnitPrice`, do tipo `Decimal`
 - `_totalNonNullUnitPriceCount`, do tipo `Integer`
 - `_totalUnitsInStock`, do tipo `Integer`
 - `_totalUnitsOnOrder`, do tipo `Integer`
 
-Em seguida, escrever o código para incrementar esses três variáveis para cada linha de dados encontrados no `RowDataBound` manipulador de eventos.
+Em seguida, escreva o código para incrementar essas três variáveis para cada linha de dados encontrados no `RowDataBound` manipulador de eventos.
 
 
 [!code-vb[Main](displaying-summary-information-in-the-gridview-s-footer-vb/samples/sample6.vb)]
 
-O `RowDataBound` manipulador de eventos é iniciado, garantindo que estamos lidando com um DataRow. Uma vez que é estabelecida, o `Northwind.ProductsRow` instância associado a apenas o `GridViewRow` do objeto no `e.Row` é armazenado na variável `product`. Em seguida, em execução variáveis total são incrementados em valores correspondentes do produto atual (supondo que não contêm um banco de dados `NULL` valor). Podemos manter o controle de ambas as executadas `UnitPrice` total e o número de não -`NULL` `UnitPrice` registra porque o preço médio é o quociente desses dois números.
+O `RowDataBound` manipulador de eventos é iniciado, garantindo que estamos lidando com uma DataRow. Uma vez que é estabelecida, o `Northwind.ProductsRow` instância que estava associada apenas para o `GridViewRow` do objeto no `e.Row` é armazenado na variável `product`. Em seguida, em execução variáveis total são incrementadas em valores de correspondente do produto atual (supondo que eles não contêm um banco de dados `NULL` valor). Podemos manter o controle de ambas as executadas `UnitPrice` total e o número de não -`NULL` `UnitPrice` registra porque o preço médio é o quociente desses dois números.
 
 ## <a name="step-4-displaying-the-summary-data-in-the-footer"></a>Etapa 4: Exibindo dados de resumo no rodapé
 
-Com os dados de resumos somados, a última etapa é para exibi-lo na linha de rodapé do GridView. Essa tarefa também pode ser feita programaticamente por meio de `RowDataBound` manipulador de eventos. Lembre-se de que o `RowDataBound` manipulador de eventos é acionado para *cada* linha que está associada a GridView, inclusive a linha de rodapé. Portanto, podemos pode ampliar nosso manipulador de eventos para exibir os dados na linha de rodapé usando o seguinte código:
+Com os dados de resumidos somados, a última etapa é para exibi-lo na linha de rodapé do GridView. Nesta tarefa, também, pode ser feita por meio de programação por meio de `RowDataBound` manipulador de eventos. Lembre-se de que o `RowDataBound` manipulador de eventos é acionado para *cada* linha que está associada ao controle GridView, incluindo a linha de rodapé. Portanto, podemos pode incrementar nosso manipulador de eventos para exibir os dados na linha de rodapé usando o seguinte código:
 
 
 [!code-vb[Main](displaying-summary-information-in-the-gridview-s-footer-vb/samples/sample7.vb)]
 
-Desde que a linha de rodapé é adicionada ao GridView depois que todas as linhas de dados foram adicionadas, podemos pode ter certo de que no momento estamos prontos para exibir os dados de resumo no rodapé que os cálculos total terá concluído. A última etapa, em seguida, é definir esses valores nas células do rodapé.
+Desde que a linha de rodapé é adicionada ao GridView depois que todas as linhas de dados foram adicionadas, podemos pode ter certeza de que no momento, estamos prontos para exibir os dados de resumo no rodapé que cálculos total terá concluído. A última etapa, em seguida, é definir esses valores nas células do rodapé.
 
-Para exibir o texto em uma célula do rodapé específico, use `e.Row.Cells(index).Text = value`, onde o `Cells` indexação começa em 0. O código a seguir calcula o preço médio (o preço total dividido pelo número de produtos) e o exibe junto com o número total de unidades em estoque e unidades na ordem nas células do rodapé apropriado de GridView.
+Para exibir texto em uma célula do rodapé específico, use `e.Row.Cells(index).Text = value`, onde o `Cells` indexação começa em 0. O código a seguir calcula o preço médio (o preço total dividido pelo número de produtos) e o exibe juntamente com o número total de unidades em estoque e unidades no pedido nas células apropriadas do rodapé do GridView.
 
 
 [!code-vb[Main](displaying-summary-information-in-the-gridview-s-footer-vb/samples/sample8.vb)]
 
-Figura 13 mostra o relatório depois que esse código foi adicionado. Observe como o `ToString("c")` faz com que as informações de resumo de preço médio ser formatado como uma moeda.
+Figura 13 mostra o relatório depois que esse código foi adicionado. Observe como o `ToString("c")` faz com que as informações de resumo de preço médio a ser formatado como uma moeda.
 
 
-[![Linha de rodapé do GridView agora tem uma cor de plano de fundo avermelhado](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image37.png)
+[![Linha de rodapé do GridView agora tem uma cor de fundo avermelhado](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image37.png)
 
-**Figura 13**: linha de rodapé a GridView agora tem uma cor de plano de fundo avermelhado ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image39.png))
+**Figura 13**: linha de rodapé do GridView The agora tem uma cor de plano de fundo avermelhado ([clique para exibir a imagem em tamanho normal](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image39.png))
 
 
 ## <a name="summary"></a>Resumo
 
-Exibir dados de resumo é um requisito comum de relatório e o controle GridView facilita incluir essas informações em sua linha de rodapé. A linha de rodapé de página é exibida quando o GridView `ShowFooter` está definida como `True` e pode ter o texto em seu células definidas programaticamente por meio de `RowDataBound` manipulador de eventos. Os dados de resumo de computação pode qualquer um ser feito consultando novamente o banco de dados ou por meio de código na classe de code-behind da página ASP.NET para computar programaticamente os dados de resumo.
+Exibir dados de resumo é um requisito comum de relatório e o controle GridView torna mais fácil de incluir essas informações em sua linha de rodapé. A linha de rodapé é exibida quando o GridView `ShowFooter` estiver definida como `True` e pode ter o texto em suas células definidas programaticamente através de `RowDataBound` manipulador de eventos. Os dados de resumo de computação pode ser realizada por consultar novamente o banco de dados ou por meio de código na classe de code-behind da página ASP.NET para computar programaticamente os dados de resumo.
 
-Este tutorial conclui nossa análise de formatação personalizada com os controles GridView, DetailsView e FormView. Nosso tutorial próximo inicia o nosso exploração de inserindo, atualizando e excluindo dados usando esses mesmos controles.
+Esse tutorial conclui nossa análise de formatação personalizada com os controles GridView, DetailsView e FormView. Nosso próximo tutorial inicia nossa exploração de inserindo, atualizando e excluindo dados usando esses mesmos controles.
 
 Boa programação!
 
 ## <a name="about-the-author"></a>Sobre o autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla. com](http://www.4guysfromrolla.com), trabalha com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e gravador. Seu livro mais recente é [ *Sams ensinar por conta própria ASP.NET 2.0 nas 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado em [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), autor de sete livros sobre ASP/ASP.NET e fundador da [4GuysFromRolla.com](http://www.4guysfromrolla.com), tem trabalhado com tecnologias Microsoft Web desde 1998. Scott funciona como um consultor independente, instrutor e escritor. Seu livro mais recente é [ *Sams Teach por conta própria ASP.NET 2.0 em 24 horas*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Ele pode ser contatado pelo [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) ou por meio de seu blog, que pode ser encontrado em [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
 > [Anterior](using-the-formview-s-templates-vb.md)
