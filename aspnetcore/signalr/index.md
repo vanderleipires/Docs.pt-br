@@ -4,27 +4,30 @@ author: rachelappel
 description: Descubra os tópicos que pertencem ao SignalR do ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
-ms.date: 06/21/2018
+ms.date: 07/03/2018
 uid: signalr/index
-ms.openlocfilehash: 249b4760aafe481d6a11437b83a0640e965d0447
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: 53b3c9824faf2acc17738b8bdcf403ee35b9a829
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126138"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37434050"
 ---
 # <a name="aspnet-core-signalr"></a>SignalR do ASP.NET Core
 
 * [Introdução](xref:signalr/introduction)
 * [Introdução](xref:tutorials/signalr)
-* [Hubs](xref:signalr/hubs)
-* [Cliente JavaScript](xref:signalr/javascript-client)
-* [Cliente .NET](xref:signalr/dotnet-client)
-* [HubContext](xref:signalr/hubcontext)
-* [Usuários e Grupos](xref:signalr/groups)
+* [Conceitos de servidor](xref:signalr/hubs)
+  * [Plataformas compatíveis](xref:signalr/supported-platforms)
+  * [Hubs](xref:signalr/hubs)
+  * [HubContext](xref:signalr/hubcontext)
+  * [Usuários e Grupos](xref:signalr/groups)
+  * [Publicar no Azure](xref:signalr/publish-to-azure-web-app)
+* [Clientes](xref:signalr/javascript-client)
+  * [Cliente JavaScript](xref:signalr/javascript-client)
+  * [Cliente .NET](xref:signalr/dotnet-client)
+  * [WebPack e TypeScript](xref:tutorials/signalr-typescript-webpack)
 * [Configuração](xref:signalr/configuration)
 * [Protocolo de Hub do MessagePack](xref:signalr/messagepackhubprotocol)
-* [Publicar no Azure](xref:signalr/publish-to-azure-web-app)
 * [Streaming](xref:signalr/streaming)
-* [WebPack e TypeScript](xref:tutorials/signalr-typescript-webpack)
-* [Plataformas compatíveis](xref:signalr/supported-platforms)
+* [Diferenças entre as versões do SignalR](xref:signalr/version-differences)

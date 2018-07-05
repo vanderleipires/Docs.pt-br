@@ -2,63 +2,62 @@
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
 title: Criando uma ação (VB) | Microsoft Docs
 author: microsoft
-description: Saiba como adicionar uma nova ação a um controlador MVC do ASP.NET. Saiba mais sobre os requisitos para um método de uma ação.
+description: Saiba como adicionar uma nova ação para um controlador ASP.NET MVC. Saiba mais sobre os requisitos para um método a ser uma ação.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
 ms.topic: article
 ms.assetid: c8d93e11-ef78-4a30-afbc-f30419000a60
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c77e4738444c61d60bdd78a50b36f98be41fc271
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 64bc75eaccdd71ebff59f34a824c9b6c520a27ef
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867886"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367862"
 ---
 <a name="creating-an-action-vb"></a>Criando uma ação (VB)
 ====================
 por [Microsoft](https://github.com/microsoft)
 
-> Saiba como adicionar uma nova ação a um controlador MVC do ASP.NET. Saiba mais sobre os requisitos para um método de uma ação.
+> Saiba como adicionar uma nova ação para um controlador ASP.NET MVC. Saiba mais sobre os requisitos para um método a ser uma ação.
 
 
-O objetivo deste tutorial é explicar como você pode criar uma nova ação de controlador. Você aprenderá sobre os requisitos de um método de ação. Você também aprenderá como impedir que um método que está sendo exposto como uma ação.
+O objetivo deste tutorial é explicar como você pode criar uma nova ação de controlador. Você aprenderá sobre os requisitos de um método de ação. Você também aprenderá a impedir que um método que está sendo exposto como uma ação.
 
-## <a name="adding-an-action-to-a-controller"></a>Adicionar uma ação a um controlador
+## <a name="adding-an-action-to-a-controller"></a>Adicionando uma ação a um controlador
 
-Adicionar uma nova ação a um controlador, adicionando um novo método para o controlador. Por exemplo, o controlador na listagem 1 contém uma ação chamada index () e uma ação chamada sayHello (). Ambos os métodos são expostos como ações.
+Adicionar uma nova ação para um controlador, adicionando um novo método ao controlador. Por exemplo, o controlador na listagem 1 contém uma ação chamada index () e uma ação chamada sayHello (). Ambos os métodos são expostos como ações.
 
-**Listando 1 - Controllers\HomeController.vb**
+**Listagem 1 - Controllers\HomeController.vb**
 
 [!code-vb[Main](creating-an-action-vb/samples/sample1.vb)]
 
-Para ser exposto ao universo como uma ação, um método deve atender a certos requisitos:
+Para serem expostos para o universo como uma ação, um método deve atender a certos requisitos:
 
 - O método deve ser público.
 - O método não pode ser um método estático.
 - O método não pode ser um método de extensão.
 - O método não pode ser um construtor, getter ou setter.
-- O método não pode ter abertos tipos genéricos.
+- O método não pode ter tipos genéricos abertos.
 - O método não é um método da classe base do controlador.
 - O método não pode conter **ref** ou **out** parâmetros.
 
-Observe que não existem restrições no tipo de retorno de uma ação do controlador. Uma ação do controlador pode retornar uma cadeia de caracteres, uma data e hora, uma instância da classe Random, nulo ou vazio. A estrutura ASP.NET MVC converterá qualquer tipo de retorno não é o resultado de uma ação em uma cadeia de caracteres e processar a cadeia de caracteres para o navegador.
+Observe que não há nenhuma restrição sobre o tipo de retorno de uma ação do controlador. Uma ação do controlador pode retornar uma cadeia de caracteres, uma data e hora, uma instância da classe Random, ou nulo. O ASP.NET MVC framework converterá qualquer tipo de retorno que não seja o resultado de uma ação em uma cadeia de caracteres e processar a cadeia de caracteres para o navegador.
 
-Quando você adicionar qualquer método que não viole a esses requisitos para um controlador, o método é exposto como uma ação do controlador. Tenha cuidado aqui. Uma ação do controlador pode ser chamada por qualquer usuário conectado à Internet. Não, por exemplo, crie uma ação do controlador DeleteMyWebsite().
+Quando você adiciona qualquer método que não viole a esses requisitos para um controlador, o método é exposto como uma ação do controlador. Tenha cuidado aqui. Uma ação do controlador pode ser chamada por qualquer pessoa conectado à Internet. Não, por exemplo, crie uma ação do controlador DeleteMyWebsite().
 
-## <a name="preventing-a-public-method-from-being-invoked"></a>Impedindo que um método público que está sendo invocado
+## <a name="preventing-a-public-method-from-being-invoked"></a>Impedir que um método público que está sendo invocado
 
-Se você precisa criar um método público em uma classe de controlador e você não deseja expor o método como uma ação do controlador, você pode impedir que o método que está sendo invocado usando a &lt;NonAction&gt; atributo. Por exemplo, o controlador na listagem 2 contém um método público chamado CompanySecrets() decorada com o &lt;NonAction&gt; atributo.
+Se você precisa criar um método público em uma classe de controlador e você não deseja expor o método como uma ação do controlador, você pode impedir que o método que está sendo invocado usando o &lt;NonAction&gt; atributo. Por exemplo, o controlador na listagem 2 contém um método público chamado CompanySecrets() é decorado com o &lt;NonAction&gt; atributo.
 
-**A listagem 2 - Controllers\WorkController.vb**
+**Listagem 2 - Controllers\WorkController.vb**
 
 [!code-vb[Main](creating-an-action-vb/samples/sample2.vb)]
 
-Se você tentar chamar a ação de controlador CompanySecrets() digitando /Work/CompanySecrets na barra de endereços do navegador, em seguida, você receberá a mensagem de erro na Figura 1.
+Se você tentar invocar a ação do controlador CompanySecrets() digitando /Work/CompanySecrets na barra de endereços do navegador, em seguida, você obterá a mensagem de erro na Figura 1.
 
 
 [![Invocando um método NonAction](creating-an-action-vb/_static/image1.jpg)](creating-an-action-vb/_static/image1.png)

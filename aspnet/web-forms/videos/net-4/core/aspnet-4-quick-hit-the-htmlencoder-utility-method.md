@@ -9,17 +9,16 @@ ms.date: 11/11/2009
 ms.topic: article
 ms.assetid: e1f67fe5-32ce-409b-bba4-d8f730851b33
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/core/aspnet-4-quick-hit-the-htmlencoder-utility-method
 msc.type: video
-ms.openlocfilehash: 588313ecd6f12ede53068f35b94e3ac48485e02b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 76e2adf70a1086586e156d95e80e37230936685e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30883944"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381189"
 ---
-<a name="aspnet-4-quick-hit--the-htmlencoder-utility-method"></a>O ASP.NET 4 "Hit rápido" – o método de utilitário HtmlEncoder
+<a name="aspnet-4-quick-hit--the-htmlencoder-utility-method"></a>ASP.NET 4 "Acertar rápido" – o método de utilitário HtmlEncoder
 ====================
 por [Joe Stagner](https://github.com/JoeStagner)
 

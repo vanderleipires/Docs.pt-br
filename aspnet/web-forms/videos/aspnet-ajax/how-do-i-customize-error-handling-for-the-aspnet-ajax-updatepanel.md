@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel
-title: 'Como i: personalizar a manipulação de erro para o ASP.NET AJAX UpdatePanel | Microsoft Docs'
+title: 'Como eu faço para: personalizar a manipulação de erro para UpdatePanel do ASP.NET AJAX | Microsoft Docs'
 author: rick-anderson
-description: Quando ocorre um erro durante o processamento de um postback disparado por um UpdatePanel do ASP.NET AJAX, do lado do cliente PageRequestManager mostrará um alerta (. NE....
+description: Quando ocorre um erro durante o processamento de um postback disparado pelo UpdatePanel do ASP.NET AJAX, o PageRequestManager do cliente mostrará um alerta (. NE...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/18/2009
 ms.topic: article
 ms.assetid: 28bd411b-e708-4eab-baed-76981d6cd0dc
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: 34fcc15b4801cbe4126c91317fedcaf81d25b9df
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 116366377d2c6b27cb2394ac089848c91110bd4f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884266"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367597"
 ---
-<a name="how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel"></a>Como os i: personalizar o tratamento de erros para o ASP.NET AJAX UpdatePanel
+<a name="how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel"></a>Como eu faço para: personalizar o tratamento de erro para UpdatePanel do ASP.NET AJAX
 ====================
 por [Rob Windsor](https://twitter.com/robwindsor)
 
-Quando ocorre um erro durante o processamento de um postback disparado por um UpdatePanel do ASP.NET AJAX, PageRequestManager no lado do cliente exibirá um alerta (.NET 2.0 ou 3.0) ou apenas relançar a exceção (.NET 3.5 ou posterior). Em ambos os casos, a experiência do usuário final é menor que ideal. Neste vídeo, Rob Windsor demonstrará como resolver esse problema ao personalizar a manipulação de erros associados com o UpdatePanel
+Quando ocorre um erro durante o processamento de um postback disparado pelo UpdatePanel do ASP.NET AJAX, o PageRequestManager do cliente mostrará um alerta (.NET 2.0 ou 3.0) ou apenas relançar a exceção (.NET 3.5 ou posterior). Em ambos os casos, a experiência do usuário final é menor que ideal. Neste vídeo, Rob Windsor demonstrará como resolver esse problema ao personalizar a manipulação de erros associado com o UpdatePanel
 
 [&#9654;Assista ao vídeo (17 minutos)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel)
 
