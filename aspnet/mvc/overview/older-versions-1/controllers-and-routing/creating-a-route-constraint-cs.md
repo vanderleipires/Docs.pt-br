@@ -4,19 +4,16 @@ title: Criar uma restrição de rota (c#) | Microsoft Docs
 author: StephenWalther
 description: Neste tutorial, Stephen Walther demonstra como você pode controlar como o navegador solicita as rotas de correspondência, criando restrições de rota com expressões regulares.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/16/2009
-ms.topic: article
 ms.assetid: 0bfd06b1-12d3-4fbb-9779-a82e5eb7fe7d
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8c977df126ce79f6ca20bd3941009ae7295ae0a5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f0dbbb880bc679da934444b87ef24d040b69e2f7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366526"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828248"
 ---
 <a name="creating-a-route-constraint-c"></a>Criar uma restrição de rota (c#)
 ====================

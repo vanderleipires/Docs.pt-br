@@ -4,19 +4,16 @@ title: Lote de exclusão (VB) | Microsoft Docs
 author: rick-anderson
 description: Saiba como excluir vários registros de banco de dados em uma única operação. Na camada de Interface do usuário que criamos em um GridView aprimorado criado em uma sessão tut...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: 4fb72f75-32ab-4bf7-a764-be20367be726
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c99ec343d9197e5d2aa7b1a7e49278d13b4e16cf
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c7a0db8708c95cc348619cadd21514f4bea2e553
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368240"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815983"
 ---
 <a name="batch-deleting-vb"></a>Lote de exclusão (VB)
 ====================
