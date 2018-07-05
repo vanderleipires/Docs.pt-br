@@ -1,26 +1,25 @@
 ---
 uid: signalr/videos/getting-started/signalr-and-web-sockets
-title: SignalR e soquetes da Web | Microsoft Docs
+title: O SignalR e soquetes da Web | Microsoft Docs
 author: shanselman
-description: Scott Hanselman apresenta SignalR e soquetes da Web.
+description: Scott Hanselman apresenta o SignalR e soquetes da Web.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
 ms.topic: article
 ms.assetid: d20b4bfc-2cc1-4aeb-b235-733146df1eca
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/videos/getting-started/signalr-and-web-sockets
 msc.type: video
-ms.openlocfilehash: 21f8dfb4038df9a6821adb98382bc01c7c42fd6c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 80a7d66caf6cbb8cbe16c9f07ae24ac827f299ba
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26505515"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381784"
 ---
-<a name="signalr-and-web-sockets"></a><span data-ttu-id="fa869-103">SignalR e soquetes da Web</span><span class="sxs-lookup"><span data-stu-id="fa869-103">SignalR and Web Sockets</span></span>
+<a name="signalr-and-web-sockets"></a><span data-ttu-id="c8342-103">O SignalR e soquetes da Web</span><span class="sxs-lookup"><span data-stu-id="c8342-103">SignalR and Web Sockets</span></span>
 ====================
-<span data-ttu-id="fa869-104">por [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="fa869-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="c8342-104">por [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="c8342-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-[<span data-ttu-id="fa869-105">&#9654; Assista ao vídeo (6 minutos)</span><span class="sxs-lookup"><span data-stu-id="fa869-105">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/signalr-and-web-sockets)
+[<span data-ttu-id="c8342-105">&#9654;Assista ao vídeo (6 minutos)</span><span class="sxs-lookup"><span data-stu-id="c8342-105">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/signalr-and-web-sockets)

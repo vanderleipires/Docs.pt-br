@@ -1,33 +1,32 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-predictive-fetch-pattern-for-ajax
-title: '[Como fazer:] Implementar o padrão de busca preditiva para AJAX? | Microsoft Docs'
+title: '[Como fazer:] Implementar o padrão de busca preditiva para o AJAX? | Microsoft Docs'
 author: JoeStagner
-description: Demonstra uma implementação do padrão de busca preditiva para AJAX, em que o mecanismo de AJAX usa o estado atual da interação do usuário para prever o que é...
+description: Demonstra uma implementação do padrão de busca preditiva para o AJAX, em que o mecanismo de AJAX usa o estado atual da interação do usuário para prever o que é...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2007
 ms.topic: article
 ms.assetid: 4ecca278-0cd6-4198-8382-802359b30120
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-predictive-fetch-pattern-for-ajax
 msc.type: video
-ms.openlocfilehash: 9e06492aa6dcec5ff1ce82f8e2140efab7b629fd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e7703a5d9930909d7850d0b7739f7e51e9ce0c77
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30883366"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37397342"
 ---
-<a name="how-do-i-implement-the-predictive-fetch-pattern-for-ajax"></a><span data-ttu-id="de575-104">[Como fazer:] Implementar o padrão de busca preditiva para AJAX?</span><span class="sxs-lookup"><span data-stu-id="de575-104">[How Do I:] Implement the Predictive Fetch Pattern for AJAX?</span></span>
+<a name="how-do-i-implement-the-predictive-fetch-pattern-for-ajax"></a><span data-ttu-id="15ee9-104">[Como fazer:] Implementar o padrão de busca preditiva para o AJAX?</span><span class="sxs-lookup"><span data-stu-id="15ee9-104">[How Do I:] Implement the Predictive Fetch Pattern for AJAX?</span></span>
 ====================
-<span data-ttu-id="de575-105">por [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="de575-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="15ee9-105">por [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="15ee9-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="de575-106">Demonstra uma implementação do padrão de busca preditiva para AJAX, onde o mecanismo de AJAX usa o estado atual da interação do usuário para prever qual conjunto de conteúdo serão necessárias a seguir, e, em seguida, busca dados previamente do servidor.</span><span class="sxs-lookup"><span data-stu-id="de575-106">Demonstrates an implementation of the Predictive Fetch pattern for AJAX, where the AJAX engine uses the current state of the user's interaction to predict which set of content will be needed next, and then fetches that data in advance from the server.</span></span> <span data-ttu-id="de575-107">Isso fornece uma experiência de usuário mais ágil na resposta.</span><span class="sxs-lookup"><span data-stu-id="de575-107">This provides for a more responsive user experience.</span></span>
+<span data-ttu-id="15ee9-106">Demonstra uma implementação do padrão de busca preditiva para o AJAX, em que o mecanismo de AJAX usa o estado atual da interação do usuário para prever qual conjunto de conteúdo serão necessárias a seguir, e busca de antemão que os dados do servidor.</span><span class="sxs-lookup"><span data-stu-id="15ee9-106">Demonstrates an implementation of the Predictive Fetch pattern for AJAX, where the AJAX engine uses the current state of the user's interaction to predict which set of content will be needed next, and then fetches that data in advance from the server.</span></span> <span data-ttu-id="15ee9-107">Isso fornece uma experiência de usuário mais ágil na resposta.</span><span class="sxs-lookup"><span data-stu-id="15ee9-107">This provides for a more responsive user experience.</span></span>
 
-[<span data-ttu-id="de575-108">&#9654;Assista ao vídeo (24 minutos)</span><span class="sxs-lookup"><span data-stu-id="de575-108">&#9654; Watch video (24 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-predictive-fetch-pattern-for-ajax)
+[<span data-ttu-id="15ee9-108">&#9654;Assista ao vídeo (24 minutos)</span><span class="sxs-lookup"><span data-stu-id="15ee9-108">&#9654; Watch video (24 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-predictive-fetch-pattern-for-ajax)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="de575-109">[Anterior](how-do-i-use-the-aspnet-ajax-timer-control.md)
-> [Próximo](how-do-i-implement-the-ajax-paging-pattern.md)</span><span class="sxs-lookup"><span data-stu-id="de575-109">[Previous](how-do-i-use-the-aspnet-ajax-timer-control.md)
+> <span data-ttu-id="15ee9-109">[Anterior](how-do-i-use-the-aspnet-ajax-timer-control.md)
+> [Próximo](how-do-i-implement-the-ajax-paging-pattern.md)</span><span class="sxs-lookup"><span data-stu-id="15ee9-109">[Previous](how-do-i-use-the-aspnet-ajax-timer-control.md)
 [Next](how-do-i-implement-the-ajax-paging-pattern.md)</span></span>

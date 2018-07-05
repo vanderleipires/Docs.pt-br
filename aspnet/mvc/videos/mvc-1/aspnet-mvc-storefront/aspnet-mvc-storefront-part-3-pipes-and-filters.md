@@ -1,33 +1,32 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-3-pipes-and-filters
-title: 'Parte Storefront do ASP.NET MVC 3: Pipes e filtros | Microsoft Docs'
+title: 'ASP.NET MVC vitrine parte 3: Pipes e filtros | Microsoft Docs'
 author: robconery
-description: Rob Conery discute os comentários de partes de 1 e 2 e, em seguida, aprofundar a implementação de Pipes e filtros no repositório IQueryable.
+description: Rob Conery discute os comentários de partes 1 e 2 e, em seguida, aprofundar a implementação de Pipes e filtros no repositório de IQueryable.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: 69de22ba-0129-4bb9-b32a-e99319ee8021
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-3-pipes-and-filters
 msc.type: video
-ms.openlocfilehash: 3666acf556f49232f7e403a40ada08884694c611
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 574dd039a4266ef4ef235ace0b1480cfc7e13691
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878445"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37386843"
 ---
-<a name="aspnet-mvc-storefront-part-3-pipes-and-filters"></a><span data-ttu-id="5c15b-103">Parte Storefront do ASP.NET MVC 3: Pipes e filtros</span><span class="sxs-lookup"><span data-stu-id="5c15b-103">ASP.NET MVC Storefront Part 3: Pipes and Filters</span></span>
+<a name="aspnet-mvc-storefront-part-3-pipes-and-filters"></a><span data-ttu-id="2a079-103">ASP.NET MVC vitrine parte 3: Pipes e filtros</span><span class="sxs-lookup"><span data-stu-id="2a079-103">ASP.NET MVC Storefront Part 3: Pipes and Filters</span></span>
 ====================
-<span data-ttu-id="5c15b-104">por [roubar Conery](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="5c15b-104">by [Rob Conery](https://github.com/robconery)</span></span>
+<span data-ttu-id="2a079-104">por [Rob Conery](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="2a079-104">by [Rob Conery](https://github.com/robconery)</span></span>
 
-<span data-ttu-id="5c15b-105">Rob Conery discute os comentários de partes de 1 e 2 e, em seguida, aprofundar a implementação de Pipes e filtros no repositório IQueryable.</span><span class="sxs-lookup"><span data-stu-id="5c15b-105">Rob Conery discusses the feedback from Parts 1 and 2, and then dive into the Pipes and Filters implementation on the IQueryable repository.</span></span>
+<span data-ttu-id="2a079-105">Rob Conery discute os comentários de partes 1 e 2 e, em seguida, aprofundar a implementação de Pipes e filtros no repositório de IQueryable.</span><span class="sxs-lookup"><span data-stu-id="2a079-105">Rob Conery discusses the feedback from Parts 1 and 2, and then dive into the Pipes and Filters implementation on the IQueryable repository.</span></span>
 
-[<span data-ttu-id="5c15b-106">&#9654;Assista ao vídeo (16 minutos)</span><span class="sxs-lookup"><span data-stu-id="5c15b-106">&#9654; Watch video (16 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-3-pipes-and-filters)
+[<span data-ttu-id="2a079-106">&#9654;Assista ao vídeo (16 minutos)</span><span class="sxs-lookup"><span data-stu-id="2a079-106">&#9654; Watch video (16 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-3-pipes-and-filters)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="5c15b-107">[Anterior](aspnet-mvc-storefront-part-2-the-repository-pattern.md)
-> [Próximo](aspnet-mvc-storefront-part-4-linq-to-sql-spike.md)</span><span class="sxs-lookup"><span data-stu-id="5c15b-107">[Previous](aspnet-mvc-storefront-part-2-the-repository-pattern.md)
+> <span data-ttu-id="2a079-107">[Anterior](aspnet-mvc-storefront-part-2-the-repository-pattern.md)
+> [Próximo](aspnet-mvc-storefront-part-4-linq-to-sql-spike.md)</span><span class="sxs-lookup"><span data-stu-id="2a079-107">[Previous](aspnet-mvc-storefront-part-2-the-repository-pattern.md)
 [Next](aspnet-mvc-storefront-part-4-linq-to-sql-spike.md)</span></span>
