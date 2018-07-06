@@ -4,19 +4,16 @@ title: Executando Scripts do Windows PowerShell de arquivos de projeto do MSBuil
 author: jrjlee
 description: Este tópico descreve como executar um script do Windows PowerShell como parte de um processo de compilação e implantação. Você pode executar um script localmente (em outras palavras, no b...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 55f1ae45-fcb5-43a9-8415-fa5b935fc9c9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: ddb658d8a8f224a7c417321df3e17ce0610d2473
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: faedcee480b6c50dc560055206fedbe7af4d5f67
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362889"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803143"
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>Executando Scripts do Windows PowerShell de arquivos de projeto do MSBuild
 ====================
@@ -59,7 +56,7 @@ Este tópico mostra como executar esses procedimentos. As tarefas e instruções
 As tarefas neste tópico usam um exemplo de script do Windows PowerShell nomeado **LogDeploy.ps1** para ilustrar como executar scripts do MSBuild. O **LogDeploy.ps1** script contém uma função simples que grava uma entrada de linha única para um arquivo de log:
 
 
-[!code-javascript[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample1.js)]
+[!code-powershell[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample1.ps1)]
 
 
 O **LogDeploy.ps1** script aceita dois parâmetros. O primeiro parâmetro representa o caminho completo para o arquivo de log para o qual você deseja adicionar uma entrada e o segundo parâmetro representa o destino de implantação que você deseja gravar no arquivo de log. Quando você executa o script, ele adiciona uma linha ao arquivo de log neste formato:

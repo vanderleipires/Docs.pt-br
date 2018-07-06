@@ -4,19 +4,16 @@ title: Noções básicas sobre o arquivo de projeto | Microsoft Docs
 author: jrjlee
 description: Arquivos de projeto do Microsoft Build Engine (MSBuild) são a base do processo de compilação e implantação. Este tópico começa com uma visão geral conceitual do MSBuild...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 89c5c7906ccfc453195b788cbc6393dc74cda1fb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7e117459f5953be7bac53267700dfb9f69802aec
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377198"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836837"
 ---
 <a name="understanding-the-project-file"></a>Noções básicas sobre o arquivo de projeto
 ====================

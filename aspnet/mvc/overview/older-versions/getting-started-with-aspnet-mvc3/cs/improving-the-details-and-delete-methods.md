@@ -4,19 +4,16 @@ title: Aprimorando os métodos Details e Delete (c#) | Microsoft Docs
 author: Rick-Anderson
 description: Este tutorial ensinará os conceitos básicos da criação de um aplicativo Web ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: 3f42edd9-c5b8-4712-9055-970f7d38e350
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 185b757b0d6e385c4fcd0fd9e6560d922f5ece02
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 17789aa9e9388f3b05ece953cfc0f50ffa510f52
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384232"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803766"
 ---
 <a name="improving-the-details-and-delete-methods-c"></a>Aprimorando os métodos Details e Delete (c#)
 ====================

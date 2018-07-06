@@ -4,19 +4,16 @@ title: Associação e administração | Microsoft Docs
 author: Erikre
 description: Esta série de tutoriais ensinará os conceitos básicos da criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e do Microsoft Visual Studio Express 2013 para nós...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/08/2014
-ms.topic: article
 ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: 58eda260ccf2d0f237aaade65017760ed87a8c4f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cdd67b946f58d5a6543bb2443dbf193e21751c48
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368292"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829788"
 ---
 <a name="membership-and-administration"></a>Associação e administração
 ====================

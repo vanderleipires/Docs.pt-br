@@ -4,19 +4,16 @@ title: Classificação, paginação e filtragem de dados com a associação de m
 author: tfitzmac
 description: Esta série de tutoriais demonstra aspectos básicos de como usar a associação de modelo com um projeto de Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais simples-...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/27/2014
-ms.topic: article
 ms.assetid: 266e7866-e327-4687-b29d-627a0925e87d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 7529c811e6196327094f8f735de1bd65be76ee3a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ded398bcbbb8d7d9e5c882a598bf9d6faa6ea81e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398301"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833870"
 ---
 <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>Classificação, paginação e filtragem de dados com a associação de modelos e formulários da web
 ====================

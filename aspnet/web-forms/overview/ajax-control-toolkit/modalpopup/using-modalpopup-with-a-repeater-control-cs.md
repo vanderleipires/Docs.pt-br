@@ -4,19 +4,16 @@ title: Uso de ModalPopup com um controle repetidor (c#) | Microsoft Docs
 author: wenz
 description: O controle ModalPopup no AJAX Control Toolkit oferece uma maneira simples de criar um pop-up modal usando meios do lado do cliente. Também é possível usar esse contr....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: d686d84a-1c58-492e-8a77-3eb5a0cfe918
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/using-modalpopup-with-a-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6136bac48b7c1b0931cada66501d303be8e927
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 72d0f16d22911d867f9a91faf273e236453e7b3a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371071"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833618"
 ---
 <a name="using-modalpopup-with-a-repeater-control-c"></a>Uso de ModalPopup com um controle repetidor (c#)
 ====================

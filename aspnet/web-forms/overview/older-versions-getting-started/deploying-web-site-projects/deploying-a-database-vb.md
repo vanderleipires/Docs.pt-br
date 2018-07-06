@@ -4,19 +4,16 @@ title: Implantando um banco de dados (VB) | Microsoft Docs
 author: rick-anderson
 description: Implantar um aplicativo web ASP.NET envolve obter os arquivos necessários e os recursos do ambiente de desenvolvimento para o ambiente de produção. Para o Acelerador de desenvolvimento...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: 96ac3e69-04c7-4917-ad06-5f8968c3fbf1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3dc5e9b4e189929b2b898b997b7577a623bdc8a7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c49b963cb5cfc40d8a0b03eb3ca722e3b789eab2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381316"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836269"
 ---
 <a name="deploying-a-database-vb"></a>Implantando um banco de dados (VB)
 ====================

@@ -4,19 +4,16 @@ title: Instalação de um auxiliar em uma Web do ASP.NET (Razor) sites de págin
 author: tfitzmac
 description: Este artigo descreve como instalar um auxiliar em um site de páginas da Web do ASP.NET (Razor). Um auxiliar é um componente reutilizável que inclui código e marcação para por...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/18/2014
-ms.topic: article
 ms.assetid: 5e968ead-906a-45ea-ac2a-c70e57e1a9b1
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: 38290fd47355e7893eddd1f867f47b113b54ca7e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: db3dff9f2d70577bb0618335c0100b9899e87727
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37361800"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838608"
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>Instalação de um auxiliar em um Site do ASP.NET Web Pages (Razor)
 ====================

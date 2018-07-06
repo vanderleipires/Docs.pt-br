@@ -4,19 +4,16 @@ title: Implantar uma compilação específica | Microsoft Docs
 author: jrjlee
 description: Este tópico descreve como implantar pacotes da web e scripts de banco de dados de uma compilação anterior específica para um novo destino, como um ambiente de produção ou preparo...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: c979535f-48a3-4ec4-a633-a77889b86ddb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: 6d55497dbc13133aa9c8b8eaecca0f6915fd9ed0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 312cd6f42463722b76996a3a848102946e0ca265
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388218"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832462"
 ---
 <a name="deploying-a-specific-build"></a>Implantando um Build específico
 ====================

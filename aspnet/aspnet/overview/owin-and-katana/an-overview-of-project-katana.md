@@ -4,19 +4,16 @@ title: Uma visão geral do projeto Katana | Microsoft Docs
 author: howarddierking
 description: A estrutura do ASP.NET já existe há mais de dez anos, e a plataforma habilitou o desenvolvimento de inúmeros sites da Web e serviços. Como o aplicativo Web...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/30/2013
-ms.topic: article
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 212594b503bfc17d3faa6df03e01402d2862522f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a4c7d6cb5dc40ad68280a87acd89f60106a260a8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390182"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803088"
 ---
 <a name="an-overview-of-project-katana"></a>Uma visão geral do projeto Katana
 ====================

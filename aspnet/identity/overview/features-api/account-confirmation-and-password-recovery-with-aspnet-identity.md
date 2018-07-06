@@ -4,19 +4,16 @@ title: Confirmação de conta e recuperação de senha com a identidade do ASP.N
 author: HaoK
 description: Antes de fazer este tutorial, que você deve concluir primeiro crie um aplicativo de web do ASP.NET MVC 5 seguro com logon, redefinição de senha e de confirmação de email. Este tutorial...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/26/2015
-ms.topic: article
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
-ms.technology: ''
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 38b908d145986102ff1b1734cdcef75b320bd0ab
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 08a954f8fab4a92b84bd79b4f644bcc1f55b1bc6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384125"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831077"
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>Confirmação de conta e recuperação de senha com a identidade do ASP.NET (c#)
 ====================
@@ -92,7 +89,7 @@ Comece instalando e executando [Visual Studio Express 2013 para Web](https://go.
 
 O armazenamento de dados padrão para a identidade do ASP.NET é o Entity Framework, mas você pode configurá-lo para usar outros armazenamentos de dados e adicionar outros campos. Ver [recursos adicionais](#addRes) seção no final deste tutorial.
 
-O [classe de inicialização OWIN](../../../aspnet/overview/owin-and-katana/owin-startup-class-detection.md) ( *Startup.cs* ) é chamado quando o aplicativo é iniciado e invoca o `ConfigureAuth` método na *aplicativo\_Start\Startup.Auth.cs*, que configura o pipeline do OWIN e inicializa a identidade do ASP.NET. Examinar o `ConfigureAuth` método. Cada `CreatePerOwinContext` chamada registra um retorno de chamada (salvo no `OwinContext`) que será chamado uma vez por solicitação para criar uma instância do tipo especificado. Você pode definir um ponto de interrupção no construtor e `Create` método de cada tipo (`ApplicationDbContext, ApplicationUserManager`) e verifique se eles são chamados em cada solicitação. Uma instância do `ApplicationDbContext` e `ApplicationUserManager` é armazenado no contexto OWIN, que pode ser acessado em todo o aplicativo. Ganchos de identidade do ASP.NET no pipeline OWIN por meio do middleware de cookie. Para obter mais informações, consulte [por gerenciamento de tempo de vida de solicitação para a classe UserManager no ASP.NET Identity](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx).
+O [classe de inicialização OWIN](../../../aspnet/overview/owin-and-katana/owin-startup-class-detection.md) ( *Startup.cs* ) é chamado quando o aplicativo é iniciado e invoca o `ConfigureAuth` método na *aplicativo\_Start\Startup.Auth.cs*, que configura o pipeline do OWIN e inicializa a identidade do ASP.NET. Examine o método `ConfigureAuth`. Cada `CreatePerOwinContext` chamada registra um retorno de chamada (salvo no `OwinContext`) que será chamado uma vez por solicitação para criar uma instância do tipo especificado. Você pode definir um ponto de interrupção no construtor e `Create` método de cada tipo (`ApplicationDbContext, ApplicationUserManager`) e verifique se eles são chamados em cada solicitação. Uma instância do `ApplicationDbContext` e `ApplicationUserManager` é armazenado no contexto OWIN, que pode ser acessado em todo o aplicativo. Ganchos de identidade do ASP.NET no pipeline OWIN por meio do middleware de cookie. Para obter mais informações, consulte [por gerenciamento de tempo de vida de solicitação para a classe UserManager no ASP.NET Identity](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx).
 
 Quando você altera seu perfil de segurança, um novo carimbo de segurança é gerado e armazenado na `SecurityStamp` campo do *AspNetUsers* tabela. Observe que o `SecurityStamp` campo é diferente do que o cookie de segurança. O cookie de segurança não é armazenado no `AspNetUsers` tabela (ou qualquer outro lugar no banco de dados de identidade). O token de cookie de segurança é autoassinado usando [DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx) e é criado com o `UserId, SecurityStamp` e informações de tempo de expiração.
 

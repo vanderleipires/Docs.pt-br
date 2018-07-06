@@ -4,19 +4,16 @@ title: Personalizando as implantações de banco de dados para vários ambientes
 author: jrjlee
 description: 'Este tópico descreve como personalizar as propriedades de um banco de dados para ambientes de destino específico como parte do processo de implantação. Observação: O tópico supõe th...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: a172979a-1318-4318-a9c6-4f9560d26267
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 3a368e5055f4921b68f5c5eb2739728a2f1fd4d2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 2ecd73e4eb3cb00545b5ba090ac5f8428586941b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378067"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804287"
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Personalizando as implantações de banco de dados para vários ambientes
 ====================

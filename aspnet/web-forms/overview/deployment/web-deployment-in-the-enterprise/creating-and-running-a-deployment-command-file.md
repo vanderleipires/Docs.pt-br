@@ -4,19 +4,16 @@ title: Criando e executando uma implantação de arquivo de comando | Microsoft 
 author: jrjlee
 description: Este tópico descreve como criar um arquivo de comando que lhe permitirá executar uma implantação usando os arquivos de projeto do Microsoft Build Engine (MSBuild) como uma única etapa, re...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: c61560e9-9f6c-4985-834a-08a3eabf9c3c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: fc59920feb5eb48bc8150606b58a1ed4ba60ee92
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6b2a75e0740f648a3a6e4f39c00bd30609325728
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395367"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830296"
 ---
 <a name="creating-and-running-a-deployment-command-file"></a>Criando e executando um arquivo de comando de implantação
 ====================

@@ -4,19 +4,16 @@ title: Controles modelo livre de tabela | Microsoft Docs
 author: JoeStagner
 description: Neste vídeo, você aprenderá sobre o RenderOuterTable propriedade para controles de modelo, que permite que você controle se a tabela externa é renderizado...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/16/2009
-ms.topic: article
 ms.assetid: 3d8c871d-7e00-4f13-937c-aa1f9b5a7dba
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/markup-control/aspnet-4-quick-hit-table-free-templated-controls
 msc.type: video
-ms.openlocfilehash: 55e24fc59bac7ca0e926126d573f0e4db6c1e0e1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f3afb933bc3b576b3c15ef17185b6f4c4faffff9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385843"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835687"
 ---
 <a name="aspnet-4-quick-hit--table-free-templated-controls"></a>ASP.NET 4 "rápido" ocorrências – controles modelo livre de tabela
 ====================

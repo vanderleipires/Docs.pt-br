@@ -4,19 +4,16 @@ title: 'Vídeos do ASP.NET vNext: fortemente tipados controles de dados | Micros
 author: DamianEdwards
 description: Neste vídeo, Damian Edwards demonstra os controles com rigidez de tipos de dados no Visual Studio vNext, que fornecem IntelliSense e compilar a verificação de tempo.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2011
-ms.topic: article
 ms.assetid: 4eda33a1-54f8-4cb6-8cc4-4be78f5fdc00
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-strongly-typed-data-controls
 msc.type: video
-ms.openlocfilehash: 3cede9b88684f2f26841eb377e2222643ed89ef4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bcd03f87b85782cd2b8de70370557ed628608925
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364624"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803928"
 ---
 <a name="aspnet-vnext-videos-strongly-typed-data-controls"></a>Vídeos do ASP.NET vNext: fortemente tipados controles de dados
 ====================

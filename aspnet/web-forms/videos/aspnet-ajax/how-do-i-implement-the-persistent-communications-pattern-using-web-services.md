@@ -4,19 +4,16 @@ title: '[Como fazer:] Implementar o padrão de comunicações persistentes usand
 author: JoeStagner
 description: Em um site da Web tradicional o navegador e o servidor não mantêm uma comunicação em andamento, mas se comunicar apenas em resposta ao usuário que está executando uma ação...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2007
-ms.topic: article
 ms.assetid: 424c06cd-6d61-43cd-a1f2-d1a6b62e47b1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-using-web-services
 msc.type: video
-ms.openlocfilehash: 8d7aac37b3b5b47f0533454f2d1d6f1f8677af99
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b1cc0ad7ba9ce608a54bcf158bd71cf8a65c51ed
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367468"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826462"
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[Como fazer:] Implementar o padrão de comunicações persistentes usando serviços da Web?
 ====================

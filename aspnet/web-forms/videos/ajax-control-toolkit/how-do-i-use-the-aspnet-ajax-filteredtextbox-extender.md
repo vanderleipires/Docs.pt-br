@@ -4,19 +4,16 @@ title: '[Como fazer:] Usar o extensor FilteredTextbox do ASP.NET AJAX? | Microso
 author: JoeStagner
 description: Saiba como o extensor FilteredTextbox do ASP.NET AJAX prático permite ao desenvolvedor definir quais caracteres que o usuário pode inserir em um controle de caixa de texto.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/31/2007
-ms.topic: article
 ms.assetid: 919b509c-37e8-4765-92a4-70277bd87269
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-filteredtextbox-extender
 msc.type: video
-ms.openlocfilehash: a4c9d36a411e413d479764ba8aa23125eb5939f3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4f24f569d163fe7639aa24d2e499b68a5d13ca73
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392562"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804589"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-filteredtextbox-extender"></a>[Como fazer:] Usar o extensor FilteredTextbox do ASP.NET AJAX?
 ====================

@@ -4,19 +4,16 @@ title: Criação de um controle classificação (c#) | Microsoft Docs
 author: wenz
 description: Muitos sites, de comércio eletrônico para sites de comunidades, oferecem seus usuários para artigos de taxa ou itens. Isso geralmente exige algum esforço de codificação, mas temos o...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7be954a73c6c08bca9992aacf6ad529bc61c9247
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 67c66d2a28a247493a0b1ea67e15935c27af80ae
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389573"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830948"
 ---
 <a name="creating-a-rating-control-c"></a>Criação de um controle classificação (c#)
 ====================

@@ -4,19 +4,16 @@ title: Preenchendo uma lista usando o CascadingDropDown (VB) | Microsoft Docs
 author: wenz
 description: O controle CascadingDropDown do AJAX Control Toolkit estende um controle DropDownList, de modo que as alterações em uma carga de DropDownList associado valores em anoth...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 5236695e-5c70-4887-baee-0bfb0afb3448
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: edd6c330d21a7875b8f90fcf9bbde75978b6d08d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4a2e2440c0b93fc3945c466a2c60c6560c9e57a4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389593"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834171"
 ---
 <a name="filling-a-list-using-cascadingdropdown-vb"></a>Preenchendo uma lista usando o CascadingDropDown (VB)
 ====================

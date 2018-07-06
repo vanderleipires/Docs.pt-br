@@ -4,19 +4,16 @@ title: Configuração de autenticação formulários e tópicos avançados (c#) 
 author: rick-anderson
 description: Neste tutorial examinaremos as várias configurações de autenticação de formulários e veja como modificá-los por meio do elemento de formulários. Isso envolvem uma detalhada...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/14/2008
-ms.topic: article
 ms.assetid: b9c29865-a34e-48bb-92c0-c443a72cb860
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 707c47917450bad409a04b3b5b80edc560b7c756
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 3bdbcd5e8f8890fe3fae2063d6f8a44aa8bb5b1e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372768"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833265"
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-c"></a>Configuração de autenticação de formulários e tópicos avançados (c#)
 ====================
