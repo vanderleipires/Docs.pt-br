@@ -4,29 +4,26 @@ title: Como alterar dinamicamente o CSS usando UpdatePanel do ASP.NET AJAX | Mic
 author: JoeStagner
 description: Este vídeo ilustra como modificar dinamicamente o estilo de sua página usando CSS e o UpdatePanel do AJAX.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/16/2008
-ms.topic: article
 ms.assetid: 6e0eca38-0344-4732-97de-73acf0551c28
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: eb8c806949b109c5b5dc406f208e1e2e36e24858
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f635c8e153d17c96684704b1622041b381c5f2a7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378878"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804653"
 ---
-<a name="how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel"></a><span data-ttu-id="420ce-103">Como alterar dinamicamente o CSS usando UpdatePanel do AJAX ASP.NET</span><span class="sxs-lookup"><span data-stu-id="420ce-103">How To Dynamically Change CSS Using the ASP.NET AJAX UpdatePanel</span></span>
+<a name="how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel"></a><span data-ttu-id="052be-103">Como alterar dinamicamente o CSS usando UpdatePanel do AJAX ASP.NET</span><span class="sxs-lookup"><span data-stu-id="052be-103">How To Dynamically Change CSS Using the ASP.NET AJAX UpdatePanel</span></span>
 ====================
-<span data-ttu-id="420ce-104">por [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="420ce-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="052be-104">por [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="052be-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="420ce-105">Este vídeo ilustra como modificar dinamicamente o estilo de sua página usando CSS e o UpdatePanel do AJAX.</span><span class="sxs-lookup"><span data-stu-id="420ce-105">This video illustrates how to dynamically modify the style of your page using CSS and the AJAX UpdatePanel.</span></span>
+<span data-ttu-id="052be-105">Este vídeo ilustra como modificar dinamicamente o estilo de sua página usando CSS e o UpdatePanel do AJAX.</span><span class="sxs-lookup"><span data-stu-id="052be-105">This video illustrates how to dynamically modify the style of your page using CSS and the AJAX UpdatePanel.</span></span>
 
-[<span data-ttu-id="420ce-106">&#9654;Assista ao vídeo (11 minutos)</span><span class="sxs-lookup"><span data-stu-id="420ce-106">&#9654; Watch video (11 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel)
+[<span data-ttu-id="052be-106">&#9654;Assista ao vídeo (11 minutos)</span><span class="sxs-lookup"><span data-stu-id="052be-106">&#9654; Watch video (11 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="420ce-107">[Anterior](basic-aspnet-authentication-in-an-ajax-enabled-application.md)
-> [Próximo](how-to-dynamically-add-controls-to-a-web-page.md)</span><span class="sxs-lookup"><span data-stu-id="420ce-107">[Previous](basic-aspnet-authentication-in-an-ajax-enabled-application.md)
+> <span data-ttu-id="052be-107">[Anterior](basic-aspnet-authentication-in-an-ajax-enabled-application.md)
+> [Próximo](how-to-dynamically-add-controls-to-a-web-page.md)</span><span class="sxs-lookup"><span data-stu-id="052be-107">[Previous](basic-aspnet-authentication-in-an-ajax-enabled-application.md)
 [Next](how-to-dynamically-add-controls-to-a-web-page.md)</span></span>
