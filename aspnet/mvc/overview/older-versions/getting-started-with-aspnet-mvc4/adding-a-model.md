@@ -4,19 +4,16 @@ title: Adicionando um modelo | Microsoft Docs
 author: Rick-Anderson
 description: 'Observação: Uma versão atualizada deste tutorial está disponível aqui que usa o ASP.NET MVC 5 e Visual Studio 2013. Ele é mais seguro e muito mais simples a seguir e demonstração...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/28/2012
-ms.topic: article
 ms.assetid: 53db72da-e0b9-44d9-b60b-6e6988c00b28
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: ea8700020c1cc4b8ca88f657bd46b82e61d6f40f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e68b6d41c7880fb849bbefbedd4c4e25c6f47b0e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388543"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837753"
 ---
 <a name="adding-a-model"></a>Adicionando um modelo
 ====================

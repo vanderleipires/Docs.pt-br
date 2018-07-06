@@ -4,19 +4,16 @@ title: Adicionando uma coluna de GridView de botões de opção (c#) | Microsoft
 author: rick-anderson
 description: Este tutorial explica como adicionar uma coluna de botões de opção em um controle GridView para fornecer ao usuário uma maneira mais intuitiva de selecionar uma única linha de...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/06/2007
-ms.topic: article
 ms.assetid: 32377145-ec25-4715-8370-a1c590a331d5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1e1691b3c0c5fb576f25b84e8f4d7125a8d0c698
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 83e7a938d9860b8f31cb391e07497def8854310f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366910"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811828"
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-c"></a>Adicionando uma coluna de GridView de botões de opção (c#)
 ====================

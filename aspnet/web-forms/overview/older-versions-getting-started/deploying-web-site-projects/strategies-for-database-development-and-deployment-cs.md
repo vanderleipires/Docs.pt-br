@@ -4,19 +4,16 @@ title: Estratégias de desenvolvimento de banco de dados e de implantação (c#)
 author: rick-anderson
 description: Ao implantar um aplicativo controlado por dados pela primeira vez você cegamente pode copiar o banco de dados no ambiente de desenvolvimento para o ambiente de produção. B....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: 3e8b0627-3eb7-488e-807e-067cba7cec05
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 98ba771f6eafad84303279045e5b5c4a167c0678
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0cec51d7b0e87f3073e27eb9bbdb4187d61307f2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371925"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823664"
 ---
 <a name="strategies-for-database-development-and-deployment-c"></a>Estratégias de desenvolvimento de banco de dados e de implantação (c#)
 ====================

@@ -4,19 +4,16 @@ title: Criação de Classes de modelo com o Entity Framework (c#) | Microsoft Do
 author: microsoft
 description: Neste tutorial, você aprenderá como usar o ASP.NET MVC com o Entity Framework da Microsoft. Você aprenderá a usar o Assistente de entidade para criar um acelerador de desenvolvimento de entidade ADO.NET...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/27/2009
-ms.topic: article
 ms.assetid: 61644169-e8b1-45dd-bf96-9c2301b69879
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bd94c3dd39fc83f0d412f3e646c237b58819bd11
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8b88aaaae21323fe3e3e8548cc04110c9caafef7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363436"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808136"
 ---
 <a name="creating-model-classes-with-the-entity-framework-c"></a>Criação de Classes de modelo com o Entity Framework (c#)
 ====================

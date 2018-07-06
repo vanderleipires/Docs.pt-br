@@ -4,19 +4,16 @@ title: 'Banco de dados do EF primeiro com o ASP.NET MVC: gerando exibições | M
 author: tfitzmac
 description: Usando o MVC, Entity Framework e o Scaffolding do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Esta série de tutoriais...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/29/2014
-ms.topic: article
 ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 58f8be181f80f5b27353e9ef5cafe48bcb370e29
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9c85b330ac415d8c73d58b31a5108197b754669f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399604"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835322"
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a>Banco de dados do EF primeiro com o ASP.NET MVC: gerando exibições
 ====================

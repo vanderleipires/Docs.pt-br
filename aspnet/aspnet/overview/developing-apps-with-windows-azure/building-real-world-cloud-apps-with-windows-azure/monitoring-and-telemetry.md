@@ -4,19 +4,16 @@ title: Monitoramento e telemetria (compilando aplicativos de nuvem do mundo Real
 author: MikeWasson
 description: Os aplicativos de nuvem construção Real World com o livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem a ele...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/09/2015
-ms.topic: article
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: b2c91b26fddc21986bf90957f7e4ef0a493d5837
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e71970e0ec3a10d464c56e0eed11ff97e9580a26
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396754"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822057"
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Monitoramento e telemetria (compilando aplicativos de nuvem do mundo Real com o Azure)
 ====================

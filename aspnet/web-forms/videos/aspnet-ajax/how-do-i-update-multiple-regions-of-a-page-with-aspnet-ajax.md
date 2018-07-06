@@ -4,19 +4,16 @@ title: '[Como fazer:] Para atualizar várias regiões de uma página com o ASP.N
 author: scottgolightly
 description: Neste vídeo, saiba que o controle UpdatePanel do ASP.NET AJAX fornece duas propriedades que você pode usar para atualizar várias regiões de uma página da Web na resposta...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/09/2007
-ms.topic: article
 ms.assetid: 7572654d-6fa2-4ea3-a43b-56a8578af0f6
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 090f47975e10cf10b64e1194cfc2af202cac8998
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8ee08c07999f59153a6757faa24803bdabf420f3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397418"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820678"
 ---
 <a name="how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax"></a>[Como fazer:] Para atualizar várias regiões de uma página com o ASP.NET AJAX?
 ====================

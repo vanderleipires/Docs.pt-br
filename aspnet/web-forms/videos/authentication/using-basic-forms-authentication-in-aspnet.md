@@ -4,19 +4,16 @@ title: Usando o Basic a autenticação de formulários no ASP.NET | Microsoft Do
 author: JoeStagner
 description: Joe Stagner explica o processo para utilizar as formas básicas com base em autenticação por meio de programação com o ASP.NET. É aconselhável que os visualizadores leia este imediatamente antes...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/16/2008
-ms.topic: article
 ms.assetid: 5356f9f4-63a5-4481-87a3-78bb1dfc6f0f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/using-basic-forms-authentication-in-aspnet
 msc.type: video
-ms.openlocfilehash: 08d849ee763bc89e635e74b5ca75aefc57b5a1f6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2f239adceb6c8c8d6f1eabcf6e5754b30435791f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364601"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815902"
 ---
 <a name="using-basic-forms-authentication-in-aspnet"></a>Usando a autenticação de formulários básica no ASP.NET
 ====================

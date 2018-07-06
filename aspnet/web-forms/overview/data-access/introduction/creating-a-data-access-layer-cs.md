@@ -4,19 +4,16 @@ title: Criando uma camada de acesso a dados (c#) | Microsoft Docs
 author: rick-anderson
 description: Neste tutorial, vamos começar desde o início e criar o Data Access DAL (camada), usando DataSets tipados, para acessar as informações em um banco de dados.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/05/2010
-ms.topic: article
 ms.assetid: cfe2a6a0-1e56-4dc8-9537-c8ec76ba96a4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3e124edc137db8444c687092f33db7e03aaeb179
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 556771994fd80773ec1e86bcbab0f60f2bb821e4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398314"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838748"
 ---
 <a name="creating-a-data-access-layer-c"></a>Criando uma camada de acesso a dados (c#)
 ====================

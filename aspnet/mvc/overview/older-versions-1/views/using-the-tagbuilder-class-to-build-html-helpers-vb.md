@@ -4,19 +4,16 @@ title: Usando a classe TagBuilder para criar auxiliares de HTML (VB) | Microsoft
 author: StephenWalther
 description: Stephen Walther apresenta uma classe de utilitário útil na estrutura do ASP.NET MVC, a classe TagBuilder nomeada. Você pode usar facilmente a classe TagBuilder para...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/02/2009
-ms.topic: article
 ms.assetid: ec26f264-d0ea-4031-9943-825505a3ac4b
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b95073a53e73ebe4035ef9b8dcdf84dc3c4febee
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 85673837c105ecab8595568b028c9caa83f041d8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370951"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821930"
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>Usando a classe TagBuilder para criar auxiliares de HTML (VB)
 ====================

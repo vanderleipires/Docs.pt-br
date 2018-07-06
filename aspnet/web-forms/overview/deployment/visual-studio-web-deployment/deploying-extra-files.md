@@ -4,19 +4,16 @@ title: 'Implantação de Web do ASP.NET usando o Visual Studio: Implantando arqu
 author: tdykstra
 description: Esta série de tutoriais mostra como implantar (publicar) um ASP.NET web de aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usin...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/23/2015
-ms.topic: article
 ms.assetid: 1cd91055-84bc-42c6-9d80-646f41429d4d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: 41bea625a53afbf7b39c03a2e8a92a03ce144289
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 609c0be968e8f38d7be6e5f5c96a569a9a35c2eb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371814"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820844"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>Implantação de Web do ASP.NET usando o Visual Studio: Implantando arquivos extras
 ====================

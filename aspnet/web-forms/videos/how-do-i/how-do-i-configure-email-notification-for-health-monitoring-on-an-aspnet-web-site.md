@@ -4,19 +4,16 @@ title: '[Como fazer:] Configurar notificações por Email para monitoramento de 
 author: rick-anderson
 description: Neste vídeo, Chris Pels mostra como configurar notificações por email em um site da web ASP.NET de monitoramento de integridade. Primeiro, consulte como configurar o envio de e...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/11/2008
-ms.topic: article
 ms.assetid: 1fa884c0-582e-4dc6-abb6-a5ec70d43ffb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site
 msc.type: video
-ms.openlocfilehash: d368a5a064ff2379e1d5d42e6083180b75c22092
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8bf71273a953edcd61f33af9b40bdd9dd9ff6e9f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401361"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822736"
 ---
 <a name="how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site"></a>[Como fazer:] Configurar notificações por Email para monitoramento de integridade em um Site ASP.NET
 ====================

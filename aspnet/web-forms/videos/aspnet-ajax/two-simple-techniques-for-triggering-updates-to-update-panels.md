@@ -4,19 +4,16 @@ title: Duas técnicas simples para o disparo de atualizações para atualizar pa
 author: JoeStagner
 description: Neste vídeo, demonstrarei duas técnicas simples de atualização. Primeiro, usar o índice selecionado evento alterado na lista suspensa do controle de lista como um disparo do evento...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/13/2008
-ms.topic: article
 ms.assetid: c844da8a-10e6-45c9-a9e2-331a3b8d3e03
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/two-simple-techniques-for-triggering-updates-to-update-panels
 msc.type: video
-ms.openlocfilehash: df88eb66f0f327a31b96cc35dd1f415125a891cc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2eec9ca1efdb1f05f493a3ca0ae43e31074f1b45
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385126"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816983"
 ---
 <a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a>Duas técnicas simples para o disparo de atualizações para atualizar painéis
 ====================

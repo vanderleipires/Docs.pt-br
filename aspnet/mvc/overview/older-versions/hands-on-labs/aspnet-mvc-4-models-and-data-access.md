@@ -4,19 +4,16 @@ title: Acesso a dados e modelos do ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
 description: 'Observação: Esse laboratório prático pressupõe que você tenha um conhecimento básico do ASP.NET MVC. Se você não tiver usado o ASP.NET MVC antes, recomendamos que você passe sobre ASP.NET MVC 4...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/18/2013
-ms.topic: article
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: afc03d87431632bbb3ab59241de0edb4bb7af12d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: bbb726f9f4abb2f9c72153a8c7986c5c83a9a840
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371123"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818366"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>Acesso a dados e modelos do ASP.NET MVC 4
 

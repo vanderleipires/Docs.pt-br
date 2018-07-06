@@ -4,19 +4,16 @@ title: Desenvolvendo aplicativos ASP.NET com o Active Directory do Azure | Micro
 author: Rick-Anderson
 description: Ferramentas do Microsoft ASP.NET para o Azure Active Directory torna simples para habilitar a autenticação para aplicativos web hospedados no Azure. Você pode usar o Azure Autenti...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/14/2014
-ms.topic: article
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
-ms.technology: ''
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 296c897887ea55a2e786d0229b0766e608e4edfb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bb12ed6c13105cf08412ecf969c215cc9004a0c3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388274"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809067"
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>Desenvolvendo aplicativos ASP.NET com o Azure Active Directory
 ====================

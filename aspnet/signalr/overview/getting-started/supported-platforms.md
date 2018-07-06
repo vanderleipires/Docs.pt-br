@@ -4,19 +4,16 @@ title: Plataformas com suporte | Microsoft Docs
 author: pfletcher
 description: Este artigo descreve quais os clientes e servidores têm suporte pelo SignalR.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/18/2018
-ms.topic: article
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: fd15296dbc0954a3f9b668abe3f392d76bf49b11
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5d77db71c5c6b0c297756921b5b7cb79add03998
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375250"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805805"
 ---
 <a name="supported-platforms"></a>Plataformas compatíveis
 ====================

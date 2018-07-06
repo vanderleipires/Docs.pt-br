@@ -4,19 +4,16 @@ title: Tailspin Spyworks – organização de diretório | Microsoft Docs
 author: JoeStagner
 description: Joe Stagner modifica a estrutura de diretório padrão para o aplicativo de formulários da Web de exemplo Tailspin Spyworks.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/12/2010
-ms.topic: article
 ms.assetid: bec45728-da0d-4876-a92e-5eea3e52c868
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-directory-organization
 msc.type: video
-ms.openlocfilehash: b27de4c8942405d28a6d41556f664be15117598a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e3318a25fd899fa761635d1196f27d352cae02da
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385791"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839192"
 ---
 <a name="tailspin-spyworks---directory-organization"></a>Tailspin Spyworks – organização de diretórios
 ====================

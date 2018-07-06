@@ -4,19 +4,16 @@ title: Suporte ao novo Designer no Visual Studio 2008 | Microsoft Docs
 author: JoeStagner
 description: Neste vídeo, demonstrarei vários dos novos recursos de designer no Visual Studio 2008.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/15/2007
-ms.topic: article
 ms.assetid: 01305c35-5b83-408b-bc9d-fa31b17a723f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor/new-designer-support-in-visual-studio-2008
 msc.type: video
-ms.openlocfilehash: b4b133dde8cc7691881c4d87c99d8721321e2e42
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 711a85903070dd7a432674fc141ba6e02c899f40
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390525"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821129"
 ---
 <a name="new-designer-support-in-visual-studio-2008"></a>Suporte ao novo Designer no Visual Studio 2008
 ====================

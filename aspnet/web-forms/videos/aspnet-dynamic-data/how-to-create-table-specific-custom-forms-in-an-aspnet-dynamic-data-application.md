@@ -4,19 +4,16 @@ title: Como criar formulários personalizados específicos de tabela em um aplic
 author: JoeStagner
 description: Às vezes precisamos desviar do padrão da interface do usuário no nosso aplicativo de dados dinâmicos do ASP.NET. Neste vídeo, veremos como é possível fazer isso e como podemos desativá-la...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/11/2008
-ms.topic: article
 ms.assetid: 14d3a727-8a1a-4950-8e8f-ce97f5b2ec1f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application
 msc.type: video
-ms.openlocfilehash: 806d5fc86cb38e9593ba404297c1cc58170cd5e5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0f23131754cdf2bbb874cec6fffcce554b4e5bda
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379657"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840992"
 ---
 <a name="how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application"></a>Como criar formulários personalizados específicos de tabela em um aplicativo de dados dinâmicos do ASP.NET
 ====================

@@ -4,19 +4,16 @@ title: Criando e usando procedimentos armazenados | Microsoft Docs
 author: microsoft
 description: Este vídeo expande o tópico de procedimentos armazenados que foi introduzida atrás de várias lições. Neste vídeo, vamos explicar a sintaxe básica para criar e atualizar...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/14/2006
-ms.topic: article
 ms.assetid: 817bc763-7faa-4ac5-880b-b3f5531e9d07
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/sql-2005/creating-and-using-stored-procedures
 msc.type: video
-ms.openlocfilehash: f066c0887c800b8cbfd27affa26e26f7ad4c743a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f1fc8fc6acda45352d24684d6f21adaf565d8d6e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384823"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816622"
 ---
 <a name="creating-and-using-stored-procedures"></a>Criando e usando procedimentos armazenados
 ====================

@@ -4,19 +4,16 @@ title: Usando HTML5 e calendário jQuery UI Datepicker pop-up com o ASP.NET MVC 
 author: Rick-Anderson
 description: Este tutorial ensinará os fundamentos de como trabalhar com modelos do editor, modelos de exibição e o calendário de pop-up jQuery UI datepicker em uma MV do ASP.NET...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/29/2011
-ms.topic: article
 ms.assetid: 8f5f91ae-12d7-4cf3-ac09-4bb53d07ee60
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 11f9e0a8602e9ee1feda9d0e7d0d319add7c440c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 27bbc4e1df6e26eed66680d596d13863dfab5db0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400765"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812264"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>Usando HTML5 e calendário jQuery UI Datepicker pop-up com o ASP.NET MVC – parte 3
 ====================

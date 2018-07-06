@@ -4,19 +4,16 @@ title: 'Tutorial: Transmissão de servidor com SignalR do ASP.NET 1.x | Microsof
 author: pfletcher
 description: Este tutorial mostra como criar um aplicativo web que usa o SignalR do ASP.NET para fornecer funcionalidade de difusão de servidor. Significa que communic de transmissão de servidor...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/10/2013
-ms.topic: article
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: caaafd0ff353b180b0f71a1e1f9522cfa574d854
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1f98b35236812aac1362f1e36e60971ff8d896bc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369929"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816188"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Tutorial: Transmissão de servidor com SignalR do ASP.NET 1.x
 ====================

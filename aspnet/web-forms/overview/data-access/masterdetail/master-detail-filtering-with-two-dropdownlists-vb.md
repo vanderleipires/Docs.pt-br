@@ -4,19 +4,16 @@ title: Mestre/detalhes filtragem com duas DropDownLists (VB) | Microsoft Docs
 author: rick-anderson
 description: Este tutorial se expande a relação mestre/detalhes para adicionar uma terceira camada, usando dois controles DropDownList para selecionar o desejado superiores de pai e avô...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 11ae4f64-01ba-4823-95f4-a2fe1f84f7d7
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e9921da99a61e0153446cf509fe1a6d8f0c39ec8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 17bbaa346925585b5b184127fa80fd2203869492
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387771"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805279"
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a>Mestre/detalhes filtragem com duas DropDownLists (VB)
 ====================

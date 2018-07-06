@@ -4,19 +4,16 @@ title: Lendo dados relacionados com o Entity Framework em um aplicativo ASP.NET 
 author: tdykstra
 description: Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 4 usando o Code First do Entity Framework 5 e o Visual Studio...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: 0d6fb83b-71f7-425d-8dec-981197d7ec42
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6fa85f561c85d1761ddcbc7167aa4b39a6c6eda3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 750c49572e99c6ab8c84d65e4c18f8da9b5d304c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374319"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835240"
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>Lendo dados relacionados com o Entity Framework em um aplicativo ASP.NET MVC (5 de 10)
 ====================

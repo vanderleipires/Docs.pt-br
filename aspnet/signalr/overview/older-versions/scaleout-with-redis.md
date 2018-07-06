@@ -4,19 +4,16 @@ title: Expansão do SignalR com Redis (SignalR 1.x) | Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/01/2013
-ms.topic: article
 ms.assetid: 6abecf80-8ffa-41ba-b0d9-1d9edbe7687b
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 2214ce5b4e064b60fa3230c3ae7351ef2654706a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1aa391aadfada85f90fe37a70a983b2efa3fbb62
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362071"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833106"
 ---
 <a name="signalr-scaleout-with-redis-signalr-1x"></a>Expansão do SignalR com Redis (SignalR 1.x)
 ====================

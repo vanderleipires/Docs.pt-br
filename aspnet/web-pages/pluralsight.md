@@ -4,19 +4,16 @@ title: O WebMatrix e páginas da Web treinamento em vídeo da Pluralsight | Micr
 author: rick-anderson
 description: O WebMatrix &amp; páginas da Web de treinamento do Pluralsight este curso detalhado irá proporcionar a você tudo em funcionamento com o WebMatrix e páginas da Web ASP.NET. Ele aborda everythi...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/18/2012
-ms.topic: article
 ms.assetid: 79eca52c-e7ad-44ab-a3e4-d8093e9da5a7
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/pluralsight
 msc.type: content
-ms.openlocfilehash: 43155f278187c193683fb04148b87377f63a9265
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 07fe95b0b7779988fc80639777402930f5af5334
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385755"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819689"
 ---
 <a name="webmatrix-and-web-pages-video-training-from-pluralsight"></a>O WebMatrix e páginas da Web treinamento em vídeo da Pluralsight
 ====================

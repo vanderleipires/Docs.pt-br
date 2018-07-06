@@ -4,19 +4,16 @@ title: ASP.NET e Web Tools para notas de versão do Visual Studio 2013 | Microso
 author: microsoft
 description: Este documento descreve a versão do ASP.NET and Web Tools para Visual Studio 2013.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2013
-ms.topic: article
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 94050d752348cadf4ed1044e6d8f96834ec981d8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0f5b8d6a4e0cbfefb7a1fa1d81d9bd27af4a5ad6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370559"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833718"
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET e Web Tools para notas de versão do Visual Studio 2013
 ====================

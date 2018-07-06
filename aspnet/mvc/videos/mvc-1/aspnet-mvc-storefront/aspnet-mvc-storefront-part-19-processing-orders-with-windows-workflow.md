@@ -4,19 +4,16 @@ title: 'ASP.NET MVC vitrine do MVC parte 19: Processamento de pedidos com o flux
 author: robconery
 description: Neste episódio apresento o fluxo de trabalho do Windows e apresentam picos-lo para ver quão bem ele funcionará para vários processos no site.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/16/2008
-ms.topic: article
 ms.assetid: 3d08b4c5-a92f-4f75-aa10-5c2e9da8c114
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow
 msc.type: video
-ms.openlocfilehash: fa9edd274c995bfbf73b932c7ac20eb6dfa22576
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2d572c43c8c288174068f6c372da0ec4059a4a4d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378132"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820620"
 ---
 <a name="aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow"></a>ASP.NET MVC vitrine do MVC parte 19: Processamento de pedidos com o fluxo de trabalho do Windows
 ====================

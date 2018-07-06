@@ -4,19 +4,16 @@ title: 'ASP.NET MVC parte vitrine 10: Compras refatoração do carrinho e autori
 author: robconery
 description: Rob refatora o go inicial ao carrinho de compras e implementa o núcleo de um sistema de associação usando a associação do ASP.NET.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/27/2008
-ms.topic: article
 ms.assetid: 24ee3167-c5ae-45e1-9636-299231e5eae0
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization
 msc.type: video
-ms.openlocfilehash: 62fac3251ea998665cc6a4d279c97e2f7d7705ee
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f88ce460335391b49ac74c301769ee73102de580
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393206"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819095"
 ---
 <a name="aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization"></a>ASP.NET MVC parte vitrine 10: Refatoração de carrinho de compras e a autorização
 ====================
