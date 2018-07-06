@@ -4,19 +4,16 @@ title: Principais diferenças entre o IIS e o ASP.NET Development Server (VB) | 
 author: rick-anderson
 description: Ao testar um aplicativo ASP.NET localmente, provavelmente que você está usando o Web do ASP.NET Development Server. No entanto, o site de produção é mais provável pow...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: 090e9205-52f3-4d72-ae31-44775b8b8421
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d16e4d20f2e1fe85b6844ea714546fbae8c95b4e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 586bc45a44e773c3097de0959411a2d27098459a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377026"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821084"
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a>Principais diferenças entre o IIS e o ASP.NET Development Server (VB)
 ====================

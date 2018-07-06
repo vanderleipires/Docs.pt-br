@@ -4,19 +4,16 @@ title: Visão geral o roteamento do ASP.NET MVC (c#) | Microsoft Docs
 author: StephenWalther
 description: Neste tutorial, Stephen Walther mostra como o ASP.NET MVC framework mapeia as solicitações do navegador para ações do controlador.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/19/2008
-ms.topic: article
 ms.assetid: 5b39d2d5-4bf9-4d04-94c7-81b84dfeeb31
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ff6d7a1540ee7e1de625f692bb5da2c28fdc57f7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2b43c3dca1587d79a60c5a89a451dda989403d56
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388773"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819141"
 ---
 <a name="aspnet-mvc-routing-overview-c"></a>Visão geral o roteamento do ASP.NET MVC (c#)
 ====================

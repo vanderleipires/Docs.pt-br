@@ -4,19 +4,16 @@ title: Fazer logon usando Sites externos em uma Web do ASP.NET (Razor) sites de 
 author: tfitzmac
 description: Este artigo explica como fazer logon seu site de páginas da Web do ASP.NET (Razor) usando o Facebook, Google, Twitter, Yahoo e outros sites — ou seja, como dar suporte a...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/21/2014
-ms.topic: article
 ms.assetid: ef852096-a5bf-47b3-9945-125cde065093
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: b161a890d11b1c0bf86669b819b97255c075075f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e6c5b578b4c74fd04136d31751d51b59ba9197ba
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396884"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825431"
 ---
 <a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a>Fazer logon usando Sites externos em um Site do ASP.NET Web Pages (Razor)
 ====================

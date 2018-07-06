@@ -4,19 +4,16 @@ title: Controles de servidor | Microsoft Docs
 author: microsoft
 description: O ASP.NET 2.0 aprimora a controles de servidor de várias maneiras. Este módulo, abordaremos algumas das alterações de arquitetura para a maneira como o ASP.NET 2.0 e 200 do Visual Studio...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2005
-ms.topic: article
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 989986c45e76a65582f35172c7d837a78484d09a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: da06429f3949a47a02fccef45666d1220781e473
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374218"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837063"
 ---
 <a name="server-controls"></a>Controles de servidor
 ====================

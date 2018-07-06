@@ -4,19 +4,16 @@ title: Usar o AJAX para implementar cenários de mapeamento | Microsoft Docs
 author: microsoft
 description: Etapa 11 mostra como integrar o suporte de mapeamento do AJAX em nosso aplicativo NerdDinner, permitindo que os usuários que estão criando, editando ou exibindo os jantares para ver o l...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/27/2010
-ms.topic: article
 ms.assetid: f731990a-0a81-4d62-81df-87d676cdedd6
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: 173ba551ca453ad46dbfd83ce1a2eb4a9b8eba3f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f8b9704e966c0211a690156555f4a272a823023a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374286"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825973"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>Usar o AJAX para implementar cenários de mapeamento
 ====================

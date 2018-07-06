@@ -4,19 +4,16 @@ title: Aplicativos do SignalR de teste de unidade | Microsoft Docs
 author: pfletcher
 description: Este artigo descreve como usar os recursos de teste de unidade do SignalR 2.0.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2014
-ms.topic: article
 ms.assetid: d1983524-e0d5-4ee6-9d87-1f552f7cb964
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: b058e8a05e50c2841b6272743f00dcd5b73b1460
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f46c6edd2002bcc6e62f4e4fe313c9e50e35aaff
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366181"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840896"
 ---
 <a name="unit-testing-signalr-applications"></a>Aplicativos do SignalR de testes de unidade
 ====================

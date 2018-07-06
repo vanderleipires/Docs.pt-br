@@ -4,19 +4,16 @@ title: 'Implantação de Web do ASP.NET usando o Visual Studio: Implantando uma 
 author: tdykstra
 description: Esta série de tutoriais mostra como implantar (publicar) um ASP.NET web de aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usin...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2013
-ms.topic: article
 ms.assetid: c76dbc35-a914-4ee3-919c-4f4d1fa05104
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: 3649f0250e830b76c42d832e51038c2c52ed4561
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c058d4314ea0bed87e22c0e6b3fa09b89b2423d9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368208"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833349"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>Implantação de Web do ASP.NET usando o Visual Studio: Implantando uma atualização de código
 ====================

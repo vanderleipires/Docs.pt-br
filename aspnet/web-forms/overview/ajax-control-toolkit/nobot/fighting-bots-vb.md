@@ -4,19 +4,16 @@ title: (VB) de Bots de combate | Microsoft Docs
 author: wenz
 description: Os bots automatizados Estuque blogs e outros sites com spams, Enviar comentário formulários sem qualquer interação do usuário. Controle NoBot do ASP.NET AJAX Con...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e9803150-452d-4521-97e3-d75d5599383c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f919d130cc97b5f892cc01d58a0bcba790a98e3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e79a973f721c1feeddb00ecbf9d6a76786afb4bb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362512"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833437"
 ---
 <a name="fighting-bots-vb"></a>Combatendo Bots (VB)
 ====================

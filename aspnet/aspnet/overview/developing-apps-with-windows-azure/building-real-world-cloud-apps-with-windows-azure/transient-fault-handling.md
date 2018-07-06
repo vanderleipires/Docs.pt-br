@@ -4,19 +4,16 @@ title: Transient Fault Handling (criação de aplicativos de nuvem do mundo Real
 author: MikeWasson
 description: Os aplicativos de nuvem construção Real World com o livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem a ele...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/03/2015
-ms.topic: article
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 13ed8c2373c22070d21519bc495161e956b0ac4d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e67f3106f060d52f90ba56d6684af64779009e39
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398408"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823372"
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>Transient Fault Handling (criação de aplicativos de nuvem do mundo Real com o Azure)
 ====================

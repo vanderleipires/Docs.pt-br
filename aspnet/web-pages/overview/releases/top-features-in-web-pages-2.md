@@ -4,19 +4,16 @@ title: Os principais recursos do ASP.NET Web Pages 2 | Microsoft Docs
 author: microsoft
 description: Este tópico fornece uma visão geral dos principais novos recursos no ASP.NET Web Pages 2, uma estrutura de programação na web leve que é incluída com o WebMatr...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/13/2012
-ms.topic: article
 ms.assetid: cc712e72-c3d0-4e43-bc2d-28cc09cd8f71
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/releases/top-features-in-web-pages-2
 msc.type: authoredcontent
-ms.openlocfilehash: 3cdb9d83e0f612ad7404bfaa9721b580916e112d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6e20dedd19ae458b9881973570f23b5d77dda654
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385260"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37827395"
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a>Os principais recursos do ASP.NET Web Pages 2
 ====================

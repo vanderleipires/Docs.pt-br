@@ -4,19 +4,16 @@ title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
 description: (inclui de abril de 2011 Tools atualização) O ASP.NET MVC 3 é uma estrutura para criar aplicativos web escalonáveis baseados em padrões, usando o padrão de design bem estabelecidos...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/05/2010
-ms.topic: article
 ms.assetid: dddc8812-a0bc-49f9-aafb-caf2064c2b8c
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/mvc3
 msc.type: content
-ms.openlocfilehash: ed3bf81943ac2ffa143cf169c87b3012269d9e77
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2c2d53734cd62e59ee4f550713b0576a73b0e32b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375785"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834764"
 ---
 <a name="aspnet-mvc-3"></a>O ASP.NET MVC 3
 ====================

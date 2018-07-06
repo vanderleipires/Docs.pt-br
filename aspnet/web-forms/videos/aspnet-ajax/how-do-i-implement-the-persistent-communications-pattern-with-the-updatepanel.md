@@ -4,19 +4,16 @@ title: '[Como fazer:] Implementar o padrão de comunicações persistentes com o
 author: JoeStagner
 description: Em um site da Web tradicional o navegador e o servidor não mantêm uma comunicação em andamento, mas se comunicar apenas em resposta ao usuário que está executando uma ação...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/01/2007
-ms.topic: article
 ms.assetid: 49c7a74d-dce7-4d5c-8282-c7846f478e11
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel
 msc.type: video
-ms.openlocfilehash: 3812b41085f6ad0e08bd37599af845cfa4ff08e8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 89dea5c2c44e8bdd9c12a127864428f681a66fb2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380546"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833142"
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a>[Como fazer:] Implementar o padrão de comunicações persistentes com o UpdatePanel?
 ====================

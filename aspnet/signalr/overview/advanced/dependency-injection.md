@@ -4,19 +4,16 @@ title: Injeção de dependência no SignalR | Microsoft Docs
 author: MikeWasson
 description: Versões de software usado neste tópico, o Visual Studio 2013 .NET 4.5 SignalR versões anteriores de versão 2 deste tópico para obter informações sobre versões anteriores do...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2014
-ms.topic: article
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 0b4276d25c999c2a78864a856f7f3de233c9ac87
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 423fe4475312b4772c83d071321b162da1beb9b1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397753"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819170"
 ---
 <a name="dependency-injection-in-signalr"></a>Injeção de dependência no SignalR
 ====================

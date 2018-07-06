@@ -4,19 +4,16 @@ title: '[Como fazer:] Escolha entre os métodos do AJAX página atualizações? 
 author: JoeStagner
 description: Neste vídeo, Joe Stagner compara os dois principais métodos de execução de atualizações de página de estilo AJAX em um aplicativo ASP.NET. O primeiro método é usar um Upd...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/09/2007
-ms.topic: article
 ms.assetid: a5e33a7d-ccb2-483f-a955-3d39f72ba4ec
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-choose-between-methods-of-ajax-page-updates
 msc.type: video
-ms.openlocfilehash: c092a7dcaeeeec53e899bb1cdf12f9bb02a99597
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 226fb0423ea05ad9034c909037358331918f2892
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392042"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838433"
 ---
 <a name="how-do-i-choose-between-methods-of-ajax-page-updates"></a>[Como fazer:] Escolha entre os métodos do AJAX página atualizações?
 ====================

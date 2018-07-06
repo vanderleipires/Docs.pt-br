@@ -4,19 +4,16 @@ title: Criando um projeto de equipe no TFS | Microsoft Docs
 author: jrjlee
 description: Este tópico descreve como criar um novo projeto de equipe no Team Foundation Server (TFS) 2010.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: b28d3e2d-0bb4-4e29-a780-af810b964722
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 2c3b30cac408f47d7d15ae7456f0744219506c85
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 98725b9d2f669e6520f24c3a8122be086002e96a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397555"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810218"
 ---
 <a name="creating-a-team-project-in-tfs"></a>Criando um projeto de equipe no TFS
 ====================

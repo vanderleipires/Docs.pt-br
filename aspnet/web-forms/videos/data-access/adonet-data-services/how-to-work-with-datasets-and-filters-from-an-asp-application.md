@@ -4,19 +4,16 @@ title: Como trabalhar com conjuntos de dados e filtros de um aplicativo ASP | Mi
 author: JoeStagner
 description: Neste vídeo, parte 3 de 3, Joe Stagner demonstra como retornar um conjunto de dados filtrado do conjunto de dados geral do aplicativo. Para ab informações adicionais...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/07/2008
-ms.topic: article
 ms.assetid: 4ea744fa-ee7f-45a5-a0de-e3b17af67d8c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application
 msc.type: video
-ms.openlocfilehash: 52f44a5477b5bb88a39fea92895c3d955509e4f2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ddf7e27372e8f49557dc16996d3d91c809d22a6a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395948"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837607"
 ---
 <a name="how-to-work-with-datasets-and-filters-from-an-asp-application"></a>Como trabalhar com conjuntos de dados e filtros de um aplicativo ASP
 ====================

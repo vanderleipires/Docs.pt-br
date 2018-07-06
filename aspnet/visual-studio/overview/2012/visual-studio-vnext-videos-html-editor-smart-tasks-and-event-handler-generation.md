@@ -4,19 +4,16 @@ title: 'Visual Studio vNext vídeos: Editor de HTML Smart Tasks and Event Handle
 author: madskristensen
 description: Neste vídeo, Mads Kristensen demonstra melhorias no editor de HTML do vNext do Visual Studio que simplifica a executar tarefas comuns.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/30/2011
-ms.topic: article
 ms.assetid: 3aa5b073-1359-41ac-8f4f-b09c1c8cb4bd
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation
 msc.type: video
-ms.openlocfilehash: 4df0776a3ba575425f6b22cb63d93607de787819
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a88b9fc3148ebb9bb608d6fdafb2e116801fb9b3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395403"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825789"
 ---
 <a name="visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation"></a>Visual Studio vNext vídeos: tarefas inteligentes do Editor de HTML e geração de manipulador de eventos
 ====================

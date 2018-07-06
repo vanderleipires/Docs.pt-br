@@ -4,19 +4,16 @@ title: Validação com uma camada de serviço (VB) | Microsoft Docs
 author: StephenWalther
 description: Aprenda a mover sua lógica de validação fora de suas ações do controlador e uma camada de serviço separado. Neste tutorial, Stephen Walther explica como você...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/02/2009
-ms.topic: article
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a914a7351e0faf6babf144d80512994d513ed12f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 673e9be46e37e9a805f1dae4944f69939b087dda
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393219"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836559"
 ---
 <a name="validating-with-a-service-layer-vb"></a>Validação com uma camada de serviço (VB)
 ====================

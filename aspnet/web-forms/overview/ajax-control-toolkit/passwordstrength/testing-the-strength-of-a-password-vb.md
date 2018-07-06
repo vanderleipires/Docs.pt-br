@@ -4,19 +4,16 @@ title: Teste da força de uma senha (VB) | Microsoft Docs
 author: wenz
 description: As senhas são necessárias em praticamente qualquer lugar, para que os usuários lentos tendem a escolher senhas simples, que são fáceis de interromper. O controle PasswordStrength do ASP. N...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 9215a37f-3133-4887-8ed2-3689f3a53551
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3faf9996c73fb5aaa427b515d396f36663cf1801
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7073a06186ba3ff6c6a12d558445d75d9301589a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379696"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805895"
 ---
 <a name="testing-the-strength-of-a-password-vb"></a>Teste da força de uma senha (VB)
 ====================

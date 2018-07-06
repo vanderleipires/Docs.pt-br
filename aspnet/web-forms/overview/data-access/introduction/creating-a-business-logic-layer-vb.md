@@ -4,19 +4,16 @@ title: Criando uma camada de lógica de negócios (VB) | Microsoft Docs
 author: rick-anderson
 description: Neste tutorial, veremos como centralizar suas regras de negócios em um negócio lógica BLL (camada) que serve como um intermediário para troca de dados entre o t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 142e5181-29ce-4bb9-907b-2a0becf7928b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 06799205ca180ca504083a6e2e99faceb79b22fc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: eaa91cc46f0d043983c252c1d0adfc413f3b582d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375309"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832348"
 ---
 <a name="creating-a-business-logic-layer-vb"></a>Criando uma camada de lógica de negócios (VB)
 ====================

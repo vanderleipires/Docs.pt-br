@@ -4,19 +4,16 @@ title: O que há de novo no ASP.NET 4.5 e Visual Studio 2012 | Microsoft Docs
 author: rick-anderson
 description: Este documento descreve novos recursos e aprimoramentos que estão sendo introduzidos no ASP.NET 4.5. Ele também descreve as melhorias que estão sendo feitas para desenvolvimento da web...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/29/2012
-ms.topic: article
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
-ms.technology: ''
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: e89b8faa7d513209436d40d15821694cf24fa453
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: cfe9b1a7f05b43d5eb638c8fa7cb581d1edac9d5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369341"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835807"
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>O que há de novo no ASP.NET 4.5 e Visual Studio 2012
 ====================

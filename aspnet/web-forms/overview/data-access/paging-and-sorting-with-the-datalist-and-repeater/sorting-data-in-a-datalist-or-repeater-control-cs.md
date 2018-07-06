@@ -4,19 +4,16 @@ title: Classificando dados em um controle DataList ou Repeater (c#) | Microsoft 
 author: rick-anderson
 description: Neste tutorial, examinaremos como incluir a classificação de suporte no DataList e Repeater, bem como construir um DataList ou Repeater cujos dados podem...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/13/2006
-ms.topic: article
 ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 85b59040cce266165353fe1627ffd983473bdcb6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f394487523a7da112d32fb18b622bc73d5077aaa
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371626"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839986"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>Classificação de dados em um controle DataList ou Repeater (c#)
 ====================

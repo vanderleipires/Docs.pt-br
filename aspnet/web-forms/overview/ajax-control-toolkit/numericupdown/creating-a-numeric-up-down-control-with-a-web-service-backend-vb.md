@@ -4,19 +4,16 @@ title: Criando um numérico para cima/para baixo do controle com um serviço bac
 author: wenz
 description: Em vez de deixar um usuário digitar um valor em uma caixa de seleção, um controle (o que existe no Windows e outros sistemas operacionais) para cima/baixo numérico pode revelar mais assim como c...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: afa59dfa-fef1-43d3-8fdd-aea3be36ed3c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9e63c76a69002e7cc66f7a8a1bc28e36796eb42c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bebf70093dacb81331c009c6642c2f2d649b8567
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375480"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805367"
 ---
 <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>Criando um controle cima/baixo numérico com um serviço back-end Web (VB)
 ====================

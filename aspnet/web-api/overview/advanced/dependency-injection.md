@@ -4,19 +4,16 @@ title: Injeção de dependência no ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
 description: Este tutorial mostra como injetar dependências em seu controlador de API Web do ASP.NET. Versões de software usadas no tutorial Web API 2 Unity Application Block...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/20/2014
-ms.topic: article
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 92ce5eadc7f371540295c1c4279f817dba09f8e3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a470c778fd5998006a0bf8edb08b62a75d72c48c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369166"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802669"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>Injeção de dependência no ASP.NET Web API 2
 ====================

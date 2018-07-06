@@ -4,19 +4,16 @@ title: 'Banco de dados do EF primeiro com o ASP.NET MVC: alterar o banco de dado
 author: tfitzmac
 description: Usando o MVC, Entity Framework e o Scaffolding do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Esta série de tutoriais...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/01/2014
-ms.topic: article
 ms.assetid: cfd5c083-a319-482e-8f25-5b38caa93954
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/changing-the-database
 msc.type: authoredcontent
-ms.openlocfilehash: 7c9bca87c51bee35be2c5b533916255be80056b0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0176274694426a527ed0862b5138919d4cf5c319
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385428"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840934"
 ---
 <a name="ef-database-first-with-aspnet-mvc-changing-the-database"></a>Banco de dados do EF primeiro com o ASP.NET MVC: alterar o banco de dados
 ====================

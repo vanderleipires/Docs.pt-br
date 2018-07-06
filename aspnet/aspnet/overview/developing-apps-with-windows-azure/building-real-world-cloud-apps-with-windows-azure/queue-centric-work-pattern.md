@@ -4,19 +4,16 @@ title: Padrão centrado em fila (Criando aplicativos de nuvem do mundo Real com 
 author: MikeWasson
 description: Os aplicativos de nuvem construção Real World com o livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem a ele...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/12/2014
-ms.topic: article
 ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: fd8f9165de333d22bed0001bb932d7bab8430672
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f9916e4ecbe6234ee12bcb56519e7e2c0e490972
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370252"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840175"
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Padrão centrado em fila (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================

@@ -4,19 +4,16 @@ title: Os extensores de controle | Microsoft Docs
 author: JoeStagner
 description: Assista a este vídeo para entender a diferença entre controles e extensores de controle AJAX e como usar esses extensores em seus aplicativos.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/13/2009
-ms.topic: article
 ms.assetid: 26f6a508-5ad4-4551-826d-61e48135943f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/control-extenders
 msc.type: video
-ms.openlocfilehash: 68b34410fd0afa0428b111e32f48c16484c24e04
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 64208ee4cb152f5fdad9dede7538be103268d3de
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392666"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809538"
 ---
 <a name="control-extenders"></a>Extensores de controle
 ====================

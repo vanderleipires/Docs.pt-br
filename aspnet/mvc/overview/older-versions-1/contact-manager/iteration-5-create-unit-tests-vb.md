@@ -4,19 +4,16 @@ title: 'Iteração #5 – criar testes de unidade (VB) | Microsoft Docs'
 author: microsoft
 description: Na quinta iteração, podemos tornar nosso aplicativo mais fácil de manter e modificar adicionando testes de unidade. Vamos simular a nossas classes de modelo de dados e criar testes de unidade para o...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 302dfc2a26e3f357818570c673eafe44346330c4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f2a535128816153d9ff9b14d1895dabd967ad871
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389996"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806375"
 ---
 <a name="iteration-5--create-unit-tests-vb"></a>Iteração #5 – criar testes de unidade (VB)
 ====================

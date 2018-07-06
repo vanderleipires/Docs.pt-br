@@ -4,19 +4,16 @@ title: Realizar validação simples (c#) | Microsoft Docs
 author: StephenWalther
 description: Saiba como executar a validação em um aplicativo ASP.NET MVC. Neste tutorial, Stephen Walther apresenta você ao estado de modelo e o auxiliar de validação HTML...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/02/2009
-ms.topic: article
 ms.assetid: 21383c9d-6aea-4bad-a99b-b5f2c9d6503f
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 622d4bc40b2f403c0a4efe0ee799a68f1adbe4fd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2a8f21a3950eb7793fd76458799ab4f6a6b5fa09
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377409"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816464"
 ---
 <a name="performing-simple-validation-c"></a>Realizar validação simples (c#)
 ====================

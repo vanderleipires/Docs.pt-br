@@ -4,19 +4,16 @@ title: Examinando os métodos de edição e o modo de exibição editar | Micros
 author: Rick-Anderson
 description: ''
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/22/2015
-ms.topic: article
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 563da09adac93a0f6db4637a5884763ffb36e4fd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a166f6c4450c72adc23f7d36113ceba7e04f1929
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396741"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820883"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>Examinando os métodos de edição e exibição de edição
 ====================

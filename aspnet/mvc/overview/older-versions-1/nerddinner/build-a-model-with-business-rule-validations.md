@@ -4,19 +4,16 @@ title: Criar um modelo com validações de regra de negócios | Microsoft Docs
 author: microsoft
 description: Etapa 3 mostra como criar um modelo que podemos usar para ambas as consultas e atualizar o banco de dados de nosso aplicativo NerdDinner.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/27/2010
-ms.topic: article
 ms.assetid: 0bc191b2-4311-479a-a83a-7f1b1c32e6fe
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: 8e871a8c14dce80edbddb9d87dba929bf3356895
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4bed4dd794c7c34551cd3c7543e08ed12d83505a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379015"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836758"
 ---
 <a name="build-a-model-with-business-rule-validations"></a>Criar um modelo com validações de regra de negócios
 ====================

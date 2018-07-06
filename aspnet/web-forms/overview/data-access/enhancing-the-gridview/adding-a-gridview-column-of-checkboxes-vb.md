@@ -4,19 +4,16 @@ title: Adicionando uma coluna de GridView de caixas de seleção (VB) | Microsof
 author: rick-anderson
 description: Este tutorial explica como adicionar uma coluna de caixas de seleção a um controle GridView para fornecer ao usuário uma maneira intuitiva de seleção de várias linhas de a G....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/06/2007
-ms.topic: article
 ms.assetid: 39253d05-75c0-41c7-b9d4-a6c58ecf69ce
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41e1ab660b6a0231eda59565ce99d153ebb9697c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 01515e0034d69c563cbc96dceb6ae2ee481cc1a0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370297"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819562"
 ---
 <a name="adding-a-gridview-column-of-checkboxes-vb"></a>Adicionando uma coluna de GridView de caixas de seleção (VB)
 ====================

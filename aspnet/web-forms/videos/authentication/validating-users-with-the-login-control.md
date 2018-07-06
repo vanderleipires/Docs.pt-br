@@ -4,19 +4,16 @@ title: Validação de usuários com o controle Login | Microsoft Docs
 author: JoeStagner
 description: Neste vídeo, Joe Stagner explora um método alternativo de autenticação do usuário em vez disso, em seguida, criando um formulário personalizado e chamar a API para autenticar um uso...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2008
-ms.topic: article
 ms.assetid: 6c11816b-504a-4512-b67e-9bd15947a7f8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/validating-users-with-the-login-control
 msc.type: video
-ms.openlocfilehash: 9e08d09821f3c16c847a1a2d494b943f778cb2e7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 35aa776fd87a7ebc411f5dde1d675660c459328d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390657"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835689"
 ---
 <a name="validating-users-with-the-login-control"></a>Validação de usuários com o controle de logon
 ====================

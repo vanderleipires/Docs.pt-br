@@ -4,19 +4,16 @@ title: Reutilizar interface do usuário usando páginas mestras e parciais | Mic
 author: microsoft
 description: Etapa 7 examina maneiras que podemos aplicar o "princípio de DRY em nossos modelos de exibição para eliminar a duplicação de código, usando as páginas mestras e modelos de exibição parcial.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/27/2010
-ms.topic: article
 ms.assetid: d4243a4a-e91c-4116-9ae0-5c08e5285677
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: f96d3f3059a442f977d4422797c872b865a55695
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 961378d6d710c678a0cd223a5c31544f014ace7f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391425"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839588"
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>Reutilizar interface do usuário usando páginas mestras e parciais
 ====================

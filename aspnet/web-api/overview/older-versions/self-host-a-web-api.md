@@ -4,19 +4,16 @@ title: Hospedar internamente o ASP.NET Web API 1 (c#) | Microsoft Docs
 author: MikeWasson
 description: API Web ASP.NET não requer o IIS. Você pode hospedar internamente uma API da web em seu próprio processo de host. Este tutorial mostra como hospedar uma API da web dentro de um console applic...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/26/2012
-ms.topic: article
 ms.assetid: be5ab1e2-4140-4275-ac59-ca82a1bac0c1
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 28ba54acd7947a1c837fb5f73b292901e6b19260
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 50681dcd89dfed480cf343f753371af384fd3e68
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376252"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811731"
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>Hospedar internamente o ASP.NET Web API 1 (c#)
 ====================

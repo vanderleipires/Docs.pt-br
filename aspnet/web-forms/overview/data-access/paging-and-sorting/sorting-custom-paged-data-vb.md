@@ -4,19 +4,16 @@ title: Classificação personalizados paginados dados (VB) | Microsoft Docs
 author: rick-anderson
 description: No tutorial anterior, aprendemos como implementar a paginação personalizada quando presentating dados em uma página da web. Neste tutorial, podemos ver como estender o anterior...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/15/2006
-ms.topic: article
 ms.assetid: 4823a186-caaf-4116-a318-c7ff4d955ddc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9921b541e0160054f080ff08468ddfc5cc92373b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7a660f697676e20d8987af150b10fc6694ce7c57
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363647"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805308"
 ---
 <a name="sorting-custom-paged-data-vb"></a>Classificação personalizados paginados dados (VB)
 ====================

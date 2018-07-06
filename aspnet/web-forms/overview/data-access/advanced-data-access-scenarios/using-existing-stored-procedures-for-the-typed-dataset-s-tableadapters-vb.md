@@ -4,19 +4,16 @@ title: Usando existente de procedimentos armazenados para os TableAdapters do co
 author: rick-anderson
 description: No tutorial anterior, aprendemos como usar o Assistente do TableAdapter para gerar novos procedimentos armazenados. Neste tutorial, saiba como o mesmo TableAdapter...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: 2da25f6a-757e-4e7b-a812-1575288d8f7a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a478b52387a6bbf726872978a0ad4a83c22c9911
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 586b46acf1df19cb1bdd56c4242e92d2019c7b8a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382890"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805620"
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>Usando existente de procedimentos armazenados para os TableAdapters do conjunto de dados tipado (VB)
 ====================

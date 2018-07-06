@@ -4,19 +4,16 @@ title: Autorização baseada em função (c#) | Microsoft Docs
 author: rick-anderson
 description: Este tutorial começa com uma olhada em como o framework de funções associa uma função do usuário com seu contexto de segurança. Ele, em seguida, examina como aplicar a URL baseada em função...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/24/2008
-ms.topic: article
 ms.assetid: 4d9b63fa-c3d4-4e85-82b1-26ae3ba3ca1c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c8c22f140478deddc2e44f0933edfe0e499bb471
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 243a386bf682d63e3095a4e90ca0a0f08d24b503
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397157"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839941"
 ---
 <a name="role-based-authorization-c"></a>Autorização baseada em função (c#)
 ====================

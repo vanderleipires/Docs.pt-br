@@ -4,19 +4,16 @@ title: 'ASP.NET MVC vitrine parte 5: Globalização | Microsoft Docs'
 author: robconery
 description: Rob Conery funciona com Damien Guard para refatorar o banco de dados para lidar com problemas de globalização e dados de teste.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/27/2008
-ms.topic: article
 ms.assetid: ec659d9f-8172-4c9e-9dd0-f5743bb27d4b
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-5-globalization
 msc.type: video
-ms.openlocfilehash: c2322c20c7f3040ab684ab15d8c2bdd7d8240bac
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5f0e6e4c91c9cc39270df7801c47bce947433845
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375296"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37827408"
 ---
 <a name="aspnet-mvc-storefront-part-5-globalization"></a>Vitrine do ASP.NET MVC parte 5: globalização
 ====================

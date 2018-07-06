@@ -4,19 +4,16 @@ title: Noções básicas sobre os recursos de depuração do ASP.NET AJAX | Micr
 author: scottcate
 description: A capacidade de depurar o código é uma habilidade que todo desenvolvedor deve ter em seu arsenal independentemente da tecnologia que está sendo usada. Embora muitos desenvolvedores estão...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/28/2008
-ms.topic: article
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 533eb8d2faf735915fa5cf5044db09d0ab636938
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9d420a41f50d06541d04a1dd3cb78a2e6beaaa9a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390966"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813822"
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>Noções básicas sobre depuração de recursos do AJAX ASP.NET
 ====================

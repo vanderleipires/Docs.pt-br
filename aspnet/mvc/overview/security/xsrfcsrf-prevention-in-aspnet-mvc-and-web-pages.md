@@ -4,19 +4,16 @@ title: Prevenção de XSRF/CSRF no ASP.NET MVC e páginas da Web | Microsoft Doc
 author: Rick-Anderson
 description: Falsificação de solicitação intersite forjada (também conhecida como XSRF ou CSRF) é um ataque contra aplicativos web hospedados no qual um site mal-intencionado pode influenciar o interacti...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/14/2013
-ms.topic: article
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 454b98cc1b6b20349cfb17789fa878d6fb2a8bd9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: be0e8ebe521e9952d7525b581f9b91af6edca1da
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371652"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820250"
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>Prevenção de XSRF/CSRF no ASP.NET MVC e páginas da Web
 ====================

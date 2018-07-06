@@ -4,19 +4,16 @@ title: Personalizando a Interface de modificação de dados (c#) | Microsoft Doc
 author: rick-anderson
 description: Neste tutorial, examinaremos como personalizar a interface de um GridView editável, substituindo a caixa de texto padrão e controles de caixa de seleção com alternati...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: 22e99600-8d18-4a94-a20e-a3a62bb63798
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f8f08fc78ef5cf6d6878daf6b00d6556f585762
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6e04d9c09d9c359c223c70b11ab0f7909182bb46
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383711"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808736"
 ---
 <a name="customizing-the-data-modification-interface-c"></a>Personalizando a Interface de modificação de dados (c#)
 ====================

@@ -4,19 +4,16 @@ title: Criação de usuários inativos | Microsoft Docs
 author: JoeStagner
 description: Este vídeo Joe Stagner conduz pela criação de usuários inativos no sistema de associação do ASP.NET e, em seguida, usando uma interface de administrador para ativar os usuários um...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/16/2010
-ms.topic: article
 ms.assetid: dc572644-1f4f-40a2-8173-e17caa3c8582
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/creating-inactive-users
 msc.type: video
-ms.openlocfilehash: 0f43ea1ea86f4daff2b059157fea01db4be3290d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a63fa855a402150a52f6983f9ec6ec7f9e8b17d3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402584"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823878"
 ---
 <a name="creating-inactive-users"></a>Criação de usuários inativos
 ====================

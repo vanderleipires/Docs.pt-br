@@ -4,19 +4,16 @@ title: Criando testes de unidade para aplicativos ASP.NET MVC (c#) | Microsoft D
 author: StephenWalther
 description: Saiba como criar testes de unidade para ações do controlador. Neste tutorial, Stephen Walther demonstra como testar se uma ação do controlador retorna um parti...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/19/2008
-ms.topic: article
 ms.assetid: d3a270b9-d7b1-47f2-8775-fc3beb518b5c
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4c88024a85d418befc9b2a111d96643ca0249ff4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f9e6945a379d37f1539c7135041f50dcc7041750
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396611"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826673"
 ---
 <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>Criando testes de unidade para aplicativos ASP.NET MVC (c#)
 ====================

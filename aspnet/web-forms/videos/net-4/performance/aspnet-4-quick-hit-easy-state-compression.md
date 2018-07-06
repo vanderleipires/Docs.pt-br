@@ -4,19 +4,16 @@ title: Compactação de estado fácil | Microsoft Docs
 author: JoeStagner
 description: Neste vídeo, que você aprenderá a usar a opção de configuração compressionEnabled para compactar (e descompactar) serializado de estado de sessão.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/16/2009
-ms.topic: article
 ms.assetid: 8e2c66c5-1b67-483a-9e74-ed67b3d85051
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/performance/aspnet-4-quick-hit-easy-state-compression
 msc.type: video
-ms.openlocfilehash: 5b2bf65acfb0e018360036d0678e751e4e5a882b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 20d46eebb43bfde8764fce69e90442a4ab0dc890
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37373709"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836860"
 ---
 <a name="aspnet-4-quick-hit--easy-state-compression"></a>ASP.NET 4 "Acertar rápido" – compactação de estado fácil
 ====================
