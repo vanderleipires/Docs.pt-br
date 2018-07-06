@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: ea18c451c2f68dc389cc6dc30ede9a10e3d8e6ac
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f35fbbbf7d04b041565e76d3cc6b9822f1056e50
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275406"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824533"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hospedar o ASP.NET Core no Windows com o IIS
 
@@ -370,7 +370,7 @@ Aplicativos ASP.NET Core são configurados para usar outros provedores de config
 
 ## <a name="application-pools"></a>Pools de aplicativos
 
-Ao hospedar vários sites em um servidor, isole os aplicativos entre si, executando cada aplicativo em seu próprio pool de aplicativos. A caixa de diálogo **Adicionar Site** do IIS usa como padrão essa configuração. Quando você fornece um **Nome do site**, o texto é transferido automaticamente para a caixa de texto **Pool de aplicativos**. Um novo pool de aplicativos é criado usando o nome do site quando você adicionar o site.
+Ao hospedar vários sites em um servidor, é recomendável isolar os aplicativos uns dos outros, executando cada aplicativo em seu próprio pool de aplicativo. A caixa de diálogo **Adicionar Site** do IIS usa como padrão essa configuração. Quando você fornece um **Nome do site**, o texto é transferido automaticamente para a caixa de texto **Pool de aplicativos**. Um novo pool de aplicativos é criado usando o nome do site quando você adicionar o site.
 
 ## <a name="application-pool-identity"></a>Identidade do pool de aplicativos
 
