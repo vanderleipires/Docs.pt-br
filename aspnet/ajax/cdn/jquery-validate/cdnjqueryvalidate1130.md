@@ -4,26 +4,23 @@ title: Validação do jQuery 1.13.0 | Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/23/2014
-ms.topic: article
 ms.assetid: 686b60a7-24a0-4ce9-90c6-b208219617bf
-ms.technology: ''
 msc.legacyurl: /ajax/cdn/jquery-validate/cdnjqueryvalidate1130
 msc.type: content
-ms.openlocfilehash: 568f302a614ed1528f9b5c80fef002b5364a8410
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a8098a6138a36a0f870841c0aca184c00e2dca33
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401103"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816104"
 ---
-<a name="jquery-validation-1130"></a><span data-ttu-id="66af7-102">Validação do jQuery 1.13.0</span><span class="sxs-lookup"><span data-stu-id="66af7-102">jQuery Validation 1.13.0</span></span>
+<a name="jquery-validation-1130"></a><span data-ttu-id="8b66e-102">Validação do jQuery 1.13.0</span><span class="sxs-lookup"><span data-stu-id="8b66e-102">jQuery Validation 1.13.0</span></span>
 ====================
-<span data-ttu-id="66af7-103">Os seguintes arquivos são hospedados na CDN:</span><span class="sxs-lookup"><span data-stu-id="66af7-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="8b66e-103">Os seguintes arquivos são hospedados na CDN:</span><span class="sxs-lookup"><span data-stu-id="8b66e-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js
-- <span data-ttu-id="66af7-104">Arquivos de localização em https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/localization/messages\_##.js onde # # é o código de loc.</span><span class="sxs-lookup"><span data-stu-id="66af7-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/localization/messages\_##.js where ## is the loc code.</span></span>
+- <span data-ttu-id="8b66e-104">Arquivos de localização em https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/localization/messages\_##.js onde # # é o código de loc.</span><span class="sxs-lookup"><span data-stu-id="8b66e-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/localization/messages\_##.js where ## is the loc code.</span></span>
