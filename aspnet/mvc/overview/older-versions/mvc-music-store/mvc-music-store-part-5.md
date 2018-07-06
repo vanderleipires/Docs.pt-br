@@ -2,176 +2,175 @@
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 title: 'Parte 5: Formulários de edição e modelagem | Microsoft Docs'
 author: jongalloway
-description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 5 abrange formulários de edição e modelagem.
+description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo de Store de música do ASP.NET MVC. Parte 5 aborda os formulários de edição e modelagem.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
 ms.topic: article
 ms.assetid: 6b09413a-6d6a-425a-87c9-629f91b91b28
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: d584e614b5a4124044cd9decd2272192ca164643
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: MT
+ms.openlocfilehash: f799c4d492e88f3edcf3800e66e0a1bae3845ba2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874906"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395195"
 ---
 <a name="part-5-edit-forms-and-templating"></a>Parte 5: Formulários de edição e modelagem
 ====================
 por [Jon Galloway](https://github.com/jongalloway)
 
-> O repositório de música MVC é um aplicativo tutorial que apresenta e explica passo a passo sobre como usar o ASP.NET MVC e o Visual Studio para desenvolvimento na web.  
+> A Store de música do MVC é um aplicativo tutorial que apresenta e explica passo a passo de como usar o ASP.NET MVC e o Visual Studio para desenvolvimento da web.  
 >   
-> O repositório de música MVC é uma implementação de repositório de exemplo leve que vende álbuns de música online e implementa a administração de site básico, entrada do usuário e funcionalidade do carrinho de compras.
+> A Store de música do MVC é uma implementação de repositório de exemplo leve que vende álbuns de música online e implementa a administração de site básico, entrada do usuário e a funcionalidade de carrinho de compras.
 > 
-> Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo do repositório de música do ASP.NET MVC. Parte 5 abrange formulários de edição e modelagem.
+> Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo de Store de música do ASP.NET MVC. Parte 5 aborda os formulários de edição e modelagem.
 
 
-O capítulo anterior, nós foram carregamento de dados de nosso banco de dados e exibi-lo. Neste capítulo, também deverá habilitar edição dos dados.
+No capítulo anterior, estávamos Carregando dados de nosso banco de dados e exibi-la. Neste capítulo, também será habilitar edição de dados.
 
 ## <a name="creating-the-storemanagercontroller"></a>Criando o StoreManagerController
 
-Vamos começar criando um novo controlador chamado **StoreManagerController**. Para este controlador, faremos aproveitar os recursos de Scaffolding disponíveis na atualização das ferramentas do ASP.NET MVC 3. Defina as opções para a caixa de diálogo Adicionar controlador, conforme mostrado abaixo.
+Vamos começar criando um novo controlador chamado **StoreManagerController**. Para este controlador, Extrairemos proveito dos recursos disponíveis na atualização das ferramentas do ASP.NET MVC 3 Scaffolding. Defina as opções da caixa de diálogo Adicionar controlador, conforme mostrado abaixo.
 
 ![](mvc-music-store-part-5/_static/image1.png)
 
-Quando você clica no botão Adicionar, você verá que o mecanismo do ASP.NET MVC 3 scaffolding faz uma boa quantidade de trabalho para você:
+Quando você clica no botão Adicionar, você verá que o mecanismo de scaffolding do ASP.NET MVC 3 faz uma boa quantidade de trabalho para você:
 
-- Cria o novo StoreManagerController com uma variável local do Entity Framework
-- Ele adiciona uma pasta StoreManager para a pasta de modos de exibição do projeto
-- Ele adiciona exibição Create.cshtml, Delete.cshtml, Details.cshtml, Edit.cshtml e cshtml, fortemente tipada para a classe álbum
+- Ele cria o novo StoreManagerController com uma variável local do Entity Framework
+- Ele adiciona uma pasta de StoreManager à pasta de modos de exibição do projeto
+- Ele adiciona a exibição Create. cshtml, DELETE. cshtml, details. cshtml, Edit. cshtml e index. cshtml, fortemente tipada para a classe do álbum
 
 ![](mvc-music-store-part-5/_static/image2.png)
 
-A nova classe de controlador StoreManager inclui CRUD (criar, ler, atualizar e excluir) ações do controlador que sabem como trabalhar com o álbum de classe de modelo e usar o nosso contexto do Entity Framework para acesso ao banco de dados.
+A nova classe de controlador StoreManager inclui CRUD (criar, ler, atualizar e excluir) ações do controlador que sabe como trabalhar com o álbum de classe de modelo e usar o nosso contexto de Entity Framework para acesso de banco de dados.
 
-## <a name="modifying-a-scaffolded-view"></a>Modificação de uma exibição de scaffolding
+## <a name="modifying-a-scaffolded-view"></a>Modificação de uma exibição gerado por scaffolding
 
-É importante lembrar-se de que, embora este código foi gerado para nós, é código padrão do ASP.NET MVC, assim como o você escreve em todo este tutorial. Ele tem se destina a economizar tempo você levaria em escrever o código do controlador clichê e criar os modos de exibição fortemente tipados manualmente, mas isso não é do tipo de código gerado que você pode ter visto precedido de avisos terríveis nos comentários sobre como você não deve alterar o código. Este é seu código, e você deverá alterá-lo.
+É importante lembrar que, embora esse código foi gerado para nós, ele é código ASP.NET MVC padrão, assim como escrevemos ao longo deste tutorial. Ele tem se destina a economizar tempo que gastaria sobre como escrever o código do controlador clichê e criar as exibições fortemente tipadas manualmente, mas isso não é o tipo de código gerado que talvez você tenha visto precedido com avisos terríveis nos comentários sobre como você não deve alterar a código. Este é seu código, e você deverá alterá-la.
 
-Portanto, vamos começar com uma edição rápida para o modo de exibição do índice StoreManager (/ Views/StoreManager/Index.cshtml). Essa exibição mostrará uma tabela que lista os álbuns em nosso repositório com editar / detalhes / excluir links e inclui as propriedades públicas do álbum. Vamos removê campo AlbumArtUrl, pois não é muito útil nessa exibição. Em &lt;tabela&gt; seção do código de exibição, remova o &lt;th&gt; e &lt;td&gt; elementos ao redor AlbumArtUrl referências, como indicado pelas linhas realçadas abaixo:
+Então, vamos começar com uma edição rápida para o modo de exibição de índice StoreManager (/ Views/StoreManager/Index.cshtml). Este modo de exibição exibe uma tabela que lista os álbuns em nosso repositório com editar / detalhes / excluir links e inclui as propriedades públicas do álbum. Vamos remover o campo AlbumArtUrl, pois ela não é muito útil nessa exibição. Na &lt;tabela&gt; seção do código de exibição, remover o &lt;th&gt; e &lt;td&gt; elementos ao redor AlbumArtUrl referências, conforme indicado pelas linhas destacadas abaixo:
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample1.cshtml)]
 
-O código de modo de exibição modificado será exibida da seguinte maneira:
+O código de exibição modificado será exibida da seguinte maneira:
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample2.cshtml)]
 
-## <a name="a-first-look-at-the-store-manager"></a>Um primeiro olhar o Gerenciador de armazenamento
+## <a name="a-first-look-at-the-store-manager"></a>Um primeiro olhar o Store Manager
 
-Agora execute o aplicativo e navegue até/StoreManager /. Isso exibe apenas modificamos, mostrando uma lista dos álbuns no repositório com links para obter detalhes, editar e excluir o índice de Gerenciador de repositório.
+Agora execute o aplicativo e navegue até/StoreManager /. Isso exibe apenas modificamos, mostrando uma lista dos álbuns no repositório com links para obter detalhes, editar e excluir o índice de Gerenciador de Store.
 
 ![](mvc-music-store-part-5/_static/image3.png)
 
-Clicar no link de edição exibe um formulário de edição com campos por álbum, incluindo listas suspensas para gênero e artista.
+Ao clicar no link de edição exibe um formulário de edição com campos para o álbum, incluindo menus suspensos para gênero e artista.
 
 ![](mvc-music-store-part-5/_static/image4.png)
 
-Clique no link "Voltar à lista" na parte inferior, clique no link de detalhes para um álbum. Isso exibe informações detalhadas sobre um álbum individual.
+Clique no link de "Volta à lista" na parte inferior, clique no link de detalhes para um álbum. Isso exibe informações detalhadas sobre um álbum individual.
 
 ![](mvc-music-store-part-5/_static/image5.png)
 
-Novamente, clique em Voltar para o link de lista, clique no link excluir. Isso exibe uma caixa de diálogo de confirmação, mostrando os detalhes do álbum e perguntando se podemos tem certeza de que deseja excluí-lo.
+Novamente, clique o link voltar ao lista, clique em um link de Delete. Isso exibe uma caixa de diálogo de confirmação, mostrando os detalhes de álbum e perguntando se temos certeza de que deseja excluí-lo.
 
 ![](mvc-music-store-part-5/_static/image6.png)
 
-Clicando no botão Excluir na parte inferior excluirá o álbum e você retorna à página de índice, que mostra o álbum excluído.
+Clicando no botão Excluir na parte inferior, exclui o álbum e de volta para a página de índice, que mostra o álbum excluído.
 
-Não terminamos com o Gerenciador de armazenamento, mas é necessário trabalhar controlador e o código de exibição para as operações CRUD Iniciar em.
+Não terminamos com o Gerenciador de Store, mas temos controlador e o código de exibição para as operações CRUD iniciar a partir de trabalhar.
 
-## <a name="looking-at-the-store-manager-controller-code"></a>Examinar o código do controlador do Gerenciador de armazenamento
+## <a name="looking-at-the-store-manager-controller-code"></a>Observando o código do controlador do Store Manager
 
-O controlador do Gerenciador de armazenamento contém uma boa quantidade de código. Vamos por meio de cima para baixo. O controlador inclui alguns namespaces padrão para um controlador MVC, bem como uma referência ao namespace nossos modelos. O controlador tem uma instância particular da MusicStoreEntities, usado por cada uma das ações do controlador para acesso a dados.
+O controlador do Store Manager contém uma boa quantidade de código. Vamos analisar isso de cima para baixo. O controlador inclui alguns namespaces padrão para um controlador MVC, bem como uma referência ao namespace nossos modelos. O controlador tem uma instância particular da MusicStoreEntities, usado por cada uma das ações do controlador para acesso a dados.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample3.cs)]
 
-### <a name="store-manager-index-and-details-actions"></a>Armazenar ações do Gerenciador de índice e detalhes
+### <a name="store-manager-index-and-details-actions"></a>Store Manager Index e Details ações
 
-A exibição índice recupera uma lista de álbuns, inclusive do cada álbum referenciadas gênero artista informações e, como visto anteriormente ao trabalhar no método Store procurar. O modo de exibição do índice está seguindo as referências a objetos vinculados para que ele possa exibir cada álbum gênero e artista nome, para que o controlador está sendo eficiente e consultar para obter essas informações na solicitação original.
+O modo de exibição de índice recupera uma lista dos álbuns, inclusive referenciado gênero artista informações e do cada álbum, como vimos anteriormente ao trabalhar no método Store procurar. O modo de exibição de índice é seguir as referências a objetos vinculados para que ele possa exibir cada álbum de nome de gênero e nome do artista, para que o controlador está sendo eficiente e de consulta para obter essas informações na solicitação original.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample4.cs)]
 
-Ação de controlador de detalhes do controlador StoreManager funciona exatamente como a ação de detalhes do controlador de armazenamento escrevemos anteriormente - ele consulta para o álbum por ID usando o método Find(), em seguida, retorna ao modo de exibição.
+Ação do controlador de detalhes do controlador StoreManager funciona exatamente da mesma forma que a ação de detalhes do controlador de Store que escrevemos anteriormente - ele consulta para o álbum por ID usando o método Find (), em seguida, retorna para o modo de exibição.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample5.cs)]
 
 ### <a name="the-create-action-methods"></a>A criar métodos de ação
 
-Os métodos de ação Criar são um pouco diferentes daquelas que vimos até agora, porque eles tratam de entrada de formulário. Quando um usuário acessa primeiro /StoreManager/criação/eles serão mostrados um formulário vazio. Esta página HTML conterá um &lt;formulário&gt; onde eles podem digitar os detalhes do álbum de elementos de entrada do elemento que contém a lista suspensa e caixa de texto.
+Os métodos de ação Criar são um pouco diferentes daquelas que vimos até agora, porque eles manipulam a entrada de formulário. Quando um usuário visita primeiro /StoreManager/criar/eles serão mostrados um formulário vazio. Essa página HTML conterá uma &lt;formulário&gt; onde eles podem digitar os detalhes do álbum de elementos de entrada do elemento que contém a lista suspensa e caixa de texto.
 
-Depois que o usuário preenche os valores de formulário álbum, pressione o botão "Salvar" para enviar que essas alterações de volta para o nosso aplicativo ao salvar no banco de dados. Quando o usuário pressiona o botão "Salvar" o &lt;formulário&gt; executará um HTTP POST para a URL de /StoreManager/criação/e enviar o &lt;formulário&gt; valores como parte do POST HTTP.
+Depois que o usuário preenche os valores de formulário do álbum, pressione o botão "Salvar" para enviar que essas alterações de volta para o nosso aplicativo para salvar no banco de dados. Quando o usuário pressiona o botão "Salvar" a &lt;formulário&gt; executará um HTTP-POST para a URL de /StoreManager/criar e enviar o &lt;formulário&gt; valores como parte de um HTTP POST.
 
-ASP.NET MVC permite dividir facilmente a lógica desses dois cenários de invocação de URL, permitindo que nós a implementação de dois métodos de ação "Criar" separados em nossa classe StoreManagerController – um para tratar de HTTP GET inicial, navegue para o /StoreManager/Create / URL e a outra para manipular o HTTP POST das alterações enviadas.
+ASP.NET MVC permite dividir facilmente a lógica desses dois cenários de invocação de URL, permitindo-nos implementar dois métodos de ação "Criar" separados dentro de nossa classe StoreManagerController – uma para tratar de HTTP GET inicial, navegue para o /StoreManager/Create / URL e o outro para lidar com HTTP-POST, as alterações enviadas.
 
 ### <a name="passing-information-to-a-view-using-viewbag"></a>Passar informações para uma exibição usando ViewBag
 
-Usei a ViewBag anteriormente neste tutorial, mas não falamos muito sobre ele. A ViewBag nos permite passar informações para o modo de exibição sem usar um objeto de modelo com rigidez de tipos. Nesse caso, nossa ação do controlador Editar HTTP GET precisa passar uma lista de artistas e gêneros para o formulário para preencher as listas suspensas e a maneira mais simples de fazer isso é para retorná-los como itens ViewBag.
+Usei a ViewBag neste tutorial, mas ainda não falamos muito sobre ele. A ViewBag nos permite passar informações para o modo de exibição sem usar um objeto de modelo fortemente tipado. Nesse caso, nossa ação de controlador HTTP-GET Editar precisa passar uma lista de gêneros e artistas ao formulário para preencher os menus suspensos, e a maneira mais simples de fazer isso é para retorná-las como itens ViewBag.
 
-A ViewBag é um objeto dinâmico, o que significa que você pode digitar ViewBag.Foo ou ViewBag.YourNameHere sem escrever código para definir essas propriedades. Nesse caso, o código do controlador usa ViewBag.GenreId e ViewBag.ArtistId para que os valores de lista suspensa enviados com o formulário será GenreId e ArtistId, que são as propriedades de álbum estiver configurando.
+A ViewBag é um objeto dinâmico, que significa que você pode digitar ViewBag.Foo ou ViewBag.YourNameHere sem escrever código para definir essas propriedades. Nesse caso, o código do controlador usa ViewBag.GenreId e ViewBag.ArtistId para que os valores de lista suspensa enviados com o formulário serão GenreId e ArtistId, são eles definirá as propriedades do álbum.
 
-Esses valores de lista suspensa são retornados para o formulário usando o objeto SelectList, que é criado apenas para essa finalidade. Isso é feito usando código como este:
+Esses valores de lista suspensa são retornados para o formulário usando o objeto SelectList, que é criado apenas para essa finalidade. Isso é feito usando o código como este:
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample6.cs)]
 
-Como você pode ver do código do método de ação, três parâmetros são sendo usados para criar este objeto:
+Como você pode ver no código do método de ação, três parâmetros estão sendo usados para criar esse objeto:
 
-- A lista de itens que deseja exibir a lista suspensa. Observe que isso não é apenas uma cadeia de caracteres – estamos passando uma lista de gêneros.
-- O próximo parâmetro que está sendo passado para o SelectList é o valor selecionado. Este como o SelectList sabe como pre-selecionar um item na lista. Isso será mais fácil de entender quando vamos examinar o formulário de edição, o que é bastante semelhante.
-- O parâmetro final é a propriedade a ser exibida. Nesse caso, isso é que indica que a propriedade Genre.Name é o que será mostrado ao usuário.
+- A lista de itens que deseja exibir a lista suspensa. Observe que isso não é apenas uma cadeia de caracteres - estamos passando uma lista de gêneros.
+- O próximo parâmetro que está sendo passado para o SelectList é o valor selecionado. Este como o SelectList sabe como pre-selecionar um item na lista. Isso será mais fácil de entender quando olhamos o formulário de edição, que é muito semelhante.
+- O parâmetro final é a propriedade a ser exibido. Nesse caso, isso está indicando que a propriedade Genre.Name é o que será mostrado ao usuário.
 
-Com isso em mente, em seguida, a ação Criar HTTP GET é bastante simple - dois SelectLists são adicionados a ViewBag e nenhum objeto de modelo é passado para o formulário (desde que ele não tenha sido criado).
+Com isso em mente, em seguida, a ação Criar HTTP GET é bastante simple – duas SelectLists são adicionados ao ViewBag e nenhum objeto de modelo é passado para o formulário (já que ele ainda não foi criado ainda).
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample7.cs)]
 
-### <a name="html-helpers-to-display-the-drop-downs-in-the-create-view"></a>Auxiliares HTML para exibir a liste Drop em Create View
+### <a name="html-helpers-to-display-the-drop-downs-in-the-create-view"></a>Auxiliares HTML para exibir a liste Drop no modo de exibição criar
 
-Como falamos sobre como a lista suspensa de valores são passados para o modo de exibição, vamos dar uma olhada rápida no modo de exibição para ver como esses valores são exibidos. No código de exibição (/ Views/StoreManager/Create.cshtml), você verá a seguinte chamada é feita para exibir o descarte de gênero para baixo.
+Uma vez que já falamos sobre como a lista suspensa de valores são passados para o modo de exibição, vamos dar uma olhada rápida na exibição para ver como esses valores são exibidos. No código do modo de exibição (/ Views/StoreManager/Create.cshtml), você verá a seguinte chamada é feita para exibir a lista de gênero para baixo.
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample8.cshtml)]
 
-Isso é conhecido como um auxiliar HTML - um método de utilitário que executa uma tarefa comum do modo de exibição. Auxiliares HTML são muito úteis para manter nossos Exibir código conciso e legível. O auxiliar Html.DropDownList é fornecido pelo ASP.NET MVC, mas como você verá posteriormente é possível criar nossos própria auxiliares para exibir o código que reutilizará em nosso aplicativo.
+Isso é conhecido como um auxiliar de HTML - um método de utilitário que executa uma tarefa comum de exibição. Os auxiliares HTML são muito úteis em manter nosso código de exibição concisas e legíveis. O auxiliar Html.DropDownList é fornecido pelo ASP.NET MVC, mas, como veremos posteriormente é possível criar nossos própria auxiliares para exibir o código que vai reutilizar em nosso aplicativo.
 
-A chamada de Html.DropDownList só precisa ser informado que duas coisas - onde obter a lista para exibir e qual é o valor (se houver) deve ser pré-selecionada. O primeiro parâmetro, GenreId, informa DropDownList para procurar um valor chamado GenreId no modelo ou ViewBag. O segundo parâmetro é usado para indicar o valor para mostrar como inicialmente selecionado na lista suspensa. Como este formulário é um formulário de criação, não há nenhum valor seja pré-selecionados e Empty é passado.
+A chamada Html.DropDownList apenas precisa ser informado duas coisas - onde para obter a lista para exibir e qual valor (se houver) deve estar pré-selecionado. O primeiro parâmetro, GenreId, informa à DropDownList para procurar um valor chamado GenreId no modelo ou ViewBag. O segundo parâmetro é usado para indicar o valor para mostrar como inicialmente selecionado na lista suspensa. Uma vez que esse formulário é uma forma de criar, não há nenhum valor a ser pré-selecionado e String. Empty é passado.
 
-### <a name="handling-the-posted-form-values"></a>Tratamento de valores de formulário postado
+### <a name="handling-the-posted-form-values"></a>Lidar com os valores de formulário postados
 
-Conforme abordado anteriormente, há dois métodos de ação associados a cada formulário. O primeiro manipula a solicitação HTTP GET e exibe o formulário. O segundo manipula a solicitação HTTP POST, que contém os valores de formulário enviado. Observe que a ação do controlador tem um atributo [HttpPost], que faz com que o ASP.NET MVC que ele só deve responder a solicitações HTTP POST.
+Como abordado anteriormente, há dois métodos de ação associados a cada formulário. O primeiro manipula a solicitação HTTP GET e exibe o formulário. O segundo manipula a solicitação HTTP POST, que contém os valores de formulário enviado. Observe que a ação do controlador tem um atributo [HttpPost], que informa ao ASP.NET MVC que ele só deve responder a solicitações HTTP POST.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample9.cs)]
 
 Essa ação tem quatro responsabilidades:
 
 - 1. Ler os valores de formulário
-- 2. Verifique se os valores de formulário passam todas as regras de validação
-- 3. Se o envio do formulário é válido, salve os dados e exibir a lista atualizada
+- 2. Verifique se os valores de formulário passam qualquer regra de validação
+- 3. Se o envio do formulário for válido, salve os dados e exibir a lista atualizada
 - 4. Se o envio do formulário não é válido, reexiba o formulário com erros de validação
 
-#### <a name="reading-form-values-with-model-binding"></a>Valores de formulário de leitura com associação de modelo
+#### <a name="reading-form-values-with-model-binding"></a>Ler valores de formulário com associação de modelos
 
-Ação do controlador está processando uma submissão de formulário que inclui valores de GenreId e ArtistId (na lista suspensa) e os valores de caixa de texto de título, preço e AlbumArtUrl. Embora seja possível acessar diretamente os valores de formulário, uma abordagem melhor é usar os recursos de associação de modelo criados no ASP.NET MVC. Quando uma ação do controlador tem um tipo de modelo como um parâmetro, o ASP.NET MVC tentará preencher um objeto desse tipo usando entradas de formulário (bem como valores de rota e querystring). Isso é feito procurando valores cujos nomes correspondem a propriedades do objeto de modelo, por exemplo, ao configurar o novo álbum valor do objeto GenreId, ele procura uma entrada com o nome GenreId. Quando você criar modos de exibição usando os métodos padrão do ASP.NET MVC, os formulários sempre serão processados usando nomes de propriedades como nomes de campo de entrada, para que isso os nomes de campo apenas coincidirá.
+A ação do controlador está processando o envio de um formulário que inclui valores para GenreId e ArtistId (na lista suspensa) e os valores de caixa de texto de título, preço e AlbumArtUrl. Embora seja possível acessar diretamente os valores de formulário, uma abordagem melhor é usar os recursos de associação de modelos integrados ASP.NET MVC. Quando uma ação do controlador usa um tipo de modelo como um parâmetro, o ASP.NET MVC tentará popular um objeto desse tipo usando entradas de formulário (bem como valores de rota e de cadeia de consulta). Isso é feito procurando valores cujos nomes correspondem a propriedades do objeto de modelo, por exemplo, ao definir o novo álbum valor do objeto GenreId, ele procura uma entrada com o nome GenreId. Ao criar modos de exibição usando os métodos padrão no ASP.NET MVC, os formulários sempre serão processados usando nomes de propriedades como nomes de campo de entrada, portanto, isso os nomes de campo serão apenas corresponder ao.
 
 #### <a name="validating-the-model"></a>Validação do modelo
 
-O modelo é validado com uma chamada simple para o ModelState. Ainda não adicionamos quaisquer regras de validação para nossa classe álbum ainda - faremos isso um pouco - direito agora essa verificação não tem muito o que fazer. O importante é que essa verificação ModelStat.IsValid adaptará às regras de validação que colocamos em nosso modelo, para que as alterações futuras para regras de validação não necessitam de atualizações para o código de ação do controlador.
+O modelo é validado com uma chamada simples para o ModelState. Ainda não adicionamos qualquer regra de validação à nossa classe de álbum ainda – vamos fazer isso daqui a pouco – agora essa verificação não têm muita relação. O importante é que essa verificação ModelStat.IsValid adaptará às regras de validação, colocamos em nosso modelo, para que as alterações futuras em regras de validação não exigirá nenhuma atualização para o código de ação do controlador.
 
-#### <a name="saving-the-submitted-values"></a>Salvar os valores enviados
+#### <a name="saving-the-submitted-values"></a>Salvando os valores enviados
 
-Se o envio do formulário passar na validação, é hora de salvar os valores para o banco de dados. Com o Entity Framework, que exige apenas adicionar modelo à coleção álbuns e chamar SaveChanges.
+Se o envio do formulário passar na validação, é hora de salvar os valores no banco de dados. Com o Entity Framework, que requer apenas adicionar modelo à coleção de álbuns e chamar SaveChanges.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample10.cs)]
 
-Entity Framework gera os comandos SQL apropriados para manter o valor. Depois de salvar os dados, podemos redirecionar voltar à lista de álbuns então podemos ver nossa atualização. Isso é feito retornando RedirectToAction com o nome da ação do controlador que deseja exibir. Nesse caso, que é o método de índice.
+Entity Framework gera os comandos SQL apropriados para manter o valor. Se o texto fornecido é menor que o comprimento especificado, o auxiliar de saídas-lo como-está. Se for mais longo, ele trunca o texto e renderiza..."para o restante. Agora podemos usar nosso auxiliar de truncamento para garantir que as propriedades de título do álbum tanto o nome do artista são menos de 25 caracteres.
 
-#### <a name="displaying-invalid-form-submissions-with-validation-errors"></a>Exibindo os envios de formulário inválido com erros de validação
+#### <a name="displaying-invalid-form-submissions-with-validation-errors"></a>O código de exibição completa usando nosso novo auxiliar de truncamento é exibida abaixo.
 
-No caso de entrada de forma inválida, os valores de lista suspensa são adicionados ao ViewBag (como no caso de HTTP GET) e os valores do modelo associado são retransmitidos para o modo de exibição para exibição. Erros de validação são exibidos automaticamente usando o @Html.ValidationMessageFor auxiliar HTML.
+Agora quando pesquisamos a URL /StoreManager/, os álbuns e títulos são mantidos abaixo nosso comprimentos máximos. Observação: Isso mostra o caso mais simples de criar e usar um auxiliar em um modo de exibição.
 
-#### <a name="testing-the-create-form"></a>O formulário de criação de teste
+#### <a name="testing-the-create-form"></a>Para saber mais sobre a criação de auxiliares que podem ser usados em todo o site, consulte a postagem do meu blog:
 
-Para testar isso, execute o aplicativo e navegue até /StoreManager/criação / - Isso mostrará o formulário em branco que foi retornado pelo método StoreController criar HTTP GET.
+Para testar isso, execute o aplicativo e navegue até /StoreManager/criar / - Isso mostrará o formulário em branco que foi retornado pelo método StoreController criar HTTP-GET.
 
 Preencha alguns valores e clique no botão Criar para enviar o formulário.
 
@@ -181,51 +180,51 @@ Preencha alguns valores e clique no botão Criar para enviar o formulário.
 
 ### <a name="handling-edits"></a>Tratamento de edições
 
-O par de ação de edição (HTTP GET e POST HTTP) é muito semelhante aos métodos de ação de criar que acabamos de ver. Como o cenário de edição envolve trabalhar com um álbum existente, editar HTTP-GET método carrega o álbum com base no parâmetro "id", passado por meio de rota. Esse código para recuperar um álbum por AlbumId é o mesmo anteriormente vimos na ação de controlador de detalhes. Assim como acontece com a criação / método HTTP GET, na lista suspensa de valores são retornados por meio de ViewBag. Isso nos permite retornar um álbum como nosso objeto de modelo para o modo de exibição (que é fortemente tipado para a classe álbum) passando dados adicionais (por exemplo, uma lista de gêneros) via ViewBag.
+O par de ação Editar (HTTP-GET e HTTP POST) é muito semelhante aos métodos de ação Criar que acabamos de ver. Uma vez que o cenário de edição envolve o trabalho com um álbum existente, editar HTTP-GET método carrega o álbum de acordo com o parâmetro de "id", passado por meio da rota. Esse código para recuperar um álbum por AlbumId é o mesmo anteriormente examinamos na ação de controlador de detalhes. Assim como acontece com a criação / método HTTP GET, na lista suspensa de valores são retornados por meio de ViewBag. Isso nos permite retornar um álbum como nosso objeto de modelo para o modo de exibição (que é fortemente tipado para a classe de álbum) ao transmitir dados adicionais (por exemplo, uma lista de gêneros) por meio de ViewBag.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample11.cs)]
 
-A ação de editar HTTP POST é muito semelhante à ação Criar HTTP POST. A única diferença é que, em vez de adicionar um novo álbum ao banco de dados. Coleção de álbuns, podemos está localizando a instância atual do álbum usando o banco de dados. Entry(Album) e definir seu estado como modificado. Isso informa o Entity Framework que estamos modificando um álbum existente em vez de criar um novo.
+A ação HTTP-POST editar é muito semelhante à ação HTTP-POST criar. A única diferença é que, em vez de adicionar um novo álbum ao banco de dados. Coleção de álbuns, podemos está localizando a instância atual do álbum usando o banco de dados. Entry(Album) e definindo seu estado para modificado. Isso informa ao Entity Framework que estamos modificando um álbum existente em vez de criar um novo.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample12.cs)]
 
-Podemos testar isso executando o aplicativo e navegando até StoreManger /, em seguida, clique no link de edição para um álbum.
+Podemos testar isso executando o aplicativo e navegando até/StoreManger /, em seguida, clicar no link de edição para um álbum.
 
 ![](mvc-music-store-part-5/_static/image9.png)
 
-Exibe o formulário de edição mostrado pelo método Editar HTTP GET. Preencha alguns valores e clique no botão Salvar.
+Isso exibe o formulário de edição, mostrado pelo método HTTP-GET editar. Preencha alguns valores e clique no botão Salvar.
 
 ![](mvc-music-store-part-5/_static/image10.png)
 
-Isso envia o formulário, salva os valores e retorna à lista de álbum, mostrando que os valores foram atualizados.
+Isso envia o formulário, salva os valores e retorna-à lista de álbum, mostrando que os valores foram atualizados.
 
 ![](mvc-music-store-part-5/_static/image11.png)
 
 ### <a name="handling-deletion"></a>Tratamento de exclusão
 
-Exclusão segue o mesmo padrão como editar e criar, usando a ação de um controlador para exibir o formulário de confirmação e outra ação de controlador para lidar com o envio do formulário.
+Exclusão segue o mesmo padrão que editar e criar, usando a ação de um controlador para exibir o formulário de confirmação e outra ação do controlador para manipular o envio do formulário.
 
-A ação de controlador HTTP GET e Delete é exatamente o nosso ação de controlador de detalhes do Gerenciador de armazenamento anterior.
+A ação do controlador GET HTTP Delete é exatamente o mesmo que nossa ação de controlador Store Manager detalhes anterior.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample13.cs)]
 
-Podemos exibir um formulário que é fortemente tipado para um tipo de álbum, usando o modelo de conteúdo de modo de exibição de exclusão.
+Podemos exibir um formulário que é fortemente tipado a um tipo de álbum, usando o modelo de conteúdo de modo de exibição de exclusão.
 
 ![](mvc-music-store-part-5/_static/image12.png)
 
-O modelo de exclusão mostra todos os campos para o modelo, mas podemos simplificar que busca um pouco. Altere o código de exibição no /Views/StoreManager/Delete.cshtml para o seguinte.
+O modelo de exclusão mostra todos os campos para o modelo, mas podemos simplificar bastante essa busca. Altere o código de exibição no /Views/StoreManager/Delete.cshtml ao seguinte.
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample14.cshtml)]
 
-Isso exibirá uma confirmação de exclusão simplificada.
+Isso exibe uma confirmação de exclusão simplificada.
 
 ![](mvc-music-store-part-5/_static/image13.png)
 
-Clicando no botão Excluir faz com que o formulário a ser lançado para o servidor que executa a ação de DeleteConfirmed.
+Clicando no botão Excluir faz com que o formulário a ser postada de volta para o servidor que executa a ação DeleteConfirmed.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample15.cs)]
 
-Ação do controlador excluir nosso HTTP POST executa as seguintes ações:
+Nossa ação de controlador HTTP-POST excluir realiza as seguintes ações:
 
 - 1. Carrega o álbum por ID
 - 2. Exclui o álbum e salvar as alterações
@@ -235,17 +234,17 @@ Para testar isso, execute o aplicativo e navegue até /StoreManager. Selecione u
 
 ![](mvc-music-store-part-5/_static/image14.png)
 
-Isso exibe a nossa tela de confirmação de exclusão.
+Isso exibe nossa tela de confirmação de exclusão.
 
 ![](mvc-music-store-part-5/_static/image15.png)
 
-Clicando no botão Excluir remove o álbum e retorna à página de índice de Gerenciador de armazenamento, que mostra que o álbum foi excluído.
+Clicando no botão Excluir remove o álbum e retorna-nos para a página de índice do Store Manager, que mostra que o álbum foi excluído.
 
 ![](mvc-music-store-part-5/_static/image16.png)
 
-### <a name="using-a-custom-html-helper-to-truncate-text"></a>Usando um auxiliar HTML personalizado para truncar o texto
+### <a name="using-a-custom-html-helper-to-truncate-text"></a>Usando um auxiliar de HTML personalizados para truncar o texto
 
-Temos um possível problema com nossa página de índice do Gerenciador de armazenamento. Nosso propriedades álbum e artista nome podem ambos ser suficientemente longa que eles podem acionar desativar a formatação de nossa tabela. Vamos criar um auxiliar HTML personalizado para permitir que nós truncar facilmente essas e outras propriedades no nosso modos de exibição.
+Temos um problema potencial com nossa página de índice do Store Manager. Nossas propriedades do título do álbum e o nome do artista podem ambos ser longo o suficiente que eles poderia lançar desativar a formatação de nossa tabela. Vamos criar um auxiliar de HTML personalizados para permitir que nós truncar facilmente essas e outras propriedades em nossos modos de exibição.
 
 ![](mvc-music-store-part-5/_static/image17.png)
 
@@ -253,17 +252,17 @@ Do Razor @helper sintaxe tornou muito fácil criar suas próprias funções auxi
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample16.cshtml)]
 
-Esse método auxiliar usa uma cadeia de caracteres e um comprimento máximo para permitir. Se o texto fornecido é menor que o comprimento especificado, o auxiliar gera como-é. Se for mais longo, ele truncará o texto e renderiza "..." para o restante.
+Esse método auxiliar usa uma cadeia de caracteres e um comprimento máximo para permitir. Se o texto fornecido é menor que o comprimento especificado, o auxiliar de saídas-lo como-está. Se for mais longo, ele trunca o texto e renderiza..."para o restante.
 
-Agora podemos usar nossa Truncate auxiliar para garantir que o título do álbum e o nome de artista propriedades menos de 25 caracteres. O código de exibição completa usando nosso novo auxiliar de truncamento é exibida abaixo.
+Agora podemos usar nosso auxiliar de truncamento para garantir que as propriedades de título do álbum tanto o nome do artista são menos de 25 caracteres. O código de exibição completa usando nosso novo auxiliar de truncamento é exibida abaixo.
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample17.cshtml)]
 
-Agora quando pesquisamos a URL /StoreManager/, álbuns de títulos são mantidos abaixo os comprimentos máximos.
+Agora quando pesquisamos a URL /StoreManager/, os álbuns e títulos são mantidos abaixo nosso comprimentos máximos.
 
 ![](mvc-music-store-part-5/_static/image18.png)
 
-Observação: Isso mostra o caso mais simples de criar e usar um auxiliar em uma exibição. Para saber mais sobre a criação de auxiliares que podem ser usados em todo o site, consulte a postagem do meu blog: [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
+Observação: Isso mostra o caso mais simples de criar e usar um auxiliar em um modo de exibição. Para saber mais sobre a criação de auxiliares que podem ser usados em todo o site, consulte a postagem do meu blog: [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
 
 
 > [!div class="step-by-step"]
