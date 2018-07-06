@@ -7,12 +7,12 @@ ms.author: rachelap
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 62cef2d6f032caa2f048cfdd49a225d975dad10d
-ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
+ms.openlocfilehash: ca9145d9e16c23e34bbc1d84ff01ce02709187ce
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37033336"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144866"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>Introdução ao SignalR no ASP.NET Core
 
@@ -128,9 +128,9 @@ O servidor do SignalR deve ser configurado de moldo que saiba que pode passar so
 
 1. Para configurar um projeto SignalR, modifique o método `Startup.ConfigureServices` do projeto.
 
-   `services.AddSignalR` adiciona o SignalR como parte do pipeline [middleware](xref:fundamentals/middleware/index).
+   `services.AddSignalR` disponibiliza os serviços SignalR para o sistema de [injeção de dependência](xref:fundamentals/dependency-injection).
 
-2. Configure rotas para seus hubs usando `UseSignalR`.
+1. Configure rotas para seus hubs com `UseSignalR` usando o método `Configure`. `app.UseSignalR` adiciona o SignalR ao pipeline do [middleware](xref:fundamentals/middleware/index).
 
    [!code-csharp[Startup](signalr/sample/Startup.cs?highlight=37,57-60)]
 
