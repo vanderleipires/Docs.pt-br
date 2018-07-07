@@ -5,12 +5,12 @@ description: Saiba como configurar provedores de armazenamento personalizados pa
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: d7baa8ed142a7d3337adceff2dc93274604bde4c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bdde9b93449c2f3f8d43cc4ff86472ed8a60ed1c
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831330"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889162"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizados para ASP.NET Core Identity
 
@@ -51,7 +51,7 @@ Para criar um provedor de armazenamento personalizado, crie a fonte de dados, a 
 
 Ao criar uma nova instância da `UserManager` ou `RoleManager` você fornecer o tipo da classe de usuário e passar uma instância da classe de armazenamento como um argumento. Essa abordagem permite que você conecte suas classes personalizadas no ASP.NET Core. 
 
-[Reconfigurar o aplicativo para usar o novo provedor de armazenamento](#reconfigure-app-to-use-new-storage-provider) mostra como instanciar `UserManager` e `RoleManager` com um repositório personalizado.
+[Reconfigurar o aplicativo para usar o novo provedor de armazenamento](#reconfigure-app-to-use-a-new-storage-provider) mostra como instanciar `UserManager` e `RoleManager` com um repositório personalizado.
 
 ## <a name="aspnet-core-identity-stores-data-types"></a>Tipos de dados de armazenamentos de identidade do ASP.NET Core
 
