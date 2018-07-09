@@ -4,25 +4,22 @@ title: '[How Do I]: Synchronize Data in Secondary User Control(s) Based Upon Use
 author: rick-anderson
 description: Neste vídeo, Chris Pels mostra como criar dois controles DropDownList em que selecionar um item na primeira lista preenche os itens na segunda lista. Primeira PAS...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/06/2009
-ms.topic: article
 ms.assetid: 55eadf85-3a2b-4993-8444-494cd2c92d65
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections
 msc.type: video
-ms.openlocfilehash: 60961347ea54ab601554bab417b008cef194a722
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 1b8bd8c32de0174b6c40185904e2a675c621652a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374776"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818425"
 ---
 <a name="how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections"></a>[Como faço para]: sincronizar dados no controle de usuário secundário com base nas seleções do usuário
 [How Do I]: Synchronize Data in Secondary User Control(s) Based Upon User Selections
 ====================
-<span data-ttu-id="8722d-104">por [Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="8722d-104">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="259bd-104">por [Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="259bd-104">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="8722d-105">Neste vídeo, Chris Pels mostra como criar dois controles DropDownList em que selecionar um item na primeira lista preenche os itens na segunda lista.</span><span class="sxs-lookup"><span data-stu-id="8722d-105">In this video Chris Pels shows how to create two DropDownList controls where selecting an item in the first list populates the items in the second list.</span></span> <span data-ttu-id="8722d-106">Primeiro, uma página ASP.NET é criada com dois controles DropDownList, um para o cliente e outro para os estados em que o cliente faz negócios.</span><span class="sxs-lookup"><span data-stu-id="8722d-106">First, an ASP.NET page is created with two DropDownList controls, one for customer and the other for states in which the customer does business.</span></span> <span data-ttu-id="8722d-107">A lista de clientes, em seguida, é preenchida no code-behind.</span><span class="sxs-lookup"><span data-stu-id="8722d-107">The customer list is then populated in the code behind.</span></span> <span data-ttu-id="8722d-108">Em seguida, no SelectedIndexChanged eventos da lista de clientes, que os itens na lista de estado são preenchidos com base na seleção.</span><span class="sxs-lookup"><span data-stu-id="8722d-108">Next, in the SelectedIndexChanged event of the customer list the items in the state list are populated based upon the selection.</span></span> <span data-ttu-id="8722d-109">Por fim, há uma discussão de como essa abordagem pode ser aplicada a outros tipos de dados e controles.</span><span class="sxs-lookup"><span data-stu-id="8722d-109">Finally, there is a discussion of how this approach can be applied to other types of controls and data.</span></span>
+<span data-ttu-id="259bd-105">Neste vídeo, Chris Pels mostra como criar dois controles DropDownList em que selecionar um item na primeira lista preenche os itens na segunda lista.</span><span class="sxs-lookup"><span data-stu-id="259bd-105">In this video Chris Pels shows how to create two DropDownList controls where selecting an item in the first list populates the items in the second list.</span></span> <span data-ttu-id="259bd-106">Primeiro, uma página ASP.NET é criada com dois controles DropDownList, um para o cliente e outro para os estados em que o cliente faz negócios.</span><span class="sxs-lookup"><span data-stu-id="259bd-106">First, an ASP.NET page is created with two DropDownList controls, one for customer and the other for states in which the customer does business.</span></span> <span data-ttu-id="259bd-107">A lista de clientes, em seguida, é preenchida no code-behind.</span><span class="sxs-lookup"><span data-stu-id="259bd-107">The customer list is then populated in the code behind.</span></span> <span data-ttu-id="259bd-108">Em seguida, no SelectedIndexChanged eventos da lista de clientes, que os itens na lista de estado são preenchidos com base na seleção.</span><span class="sxs-lookup"><span data-stu-id="259bd-108">Next, in the SelectedIndexChanged event of the customer list the items in the state list are populated based upon the selection.</span></span> <span data-ttu-id="259bd-109">Por fim, há uma discussão de como essa abordagem pode ser aplicada a outros tipos de dados e controles.</span><span class="sxs-lookup"><span data-stu-id="259bd-109">Finally, there is a discussion of how this approach can be applied to other types of controls and data.</span></span>
 
-[<span data-ttu-id="8722d-110">&#9654;Assista ao vídeo (22 minutos)</span><span class="sxs-lookup"><span data-stu-id="8722d-110">&#9654; Watch video (22 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections)
+[<span data-ttu-id="259bd-110">&#9654;Assista ao vídeo (22 minutos)</span><span class="sxs-lookup"><span data-stu-id="259bd-110">&#9654; Watch video (22 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections)
