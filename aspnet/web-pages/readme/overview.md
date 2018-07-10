@@ -4,19 +4,16 @@ title: Leiame do WebMatrix | Microsoft Docs
 author: rick-anderson
 description: O WebMatrix e o Leiame do ASP.NET Web Pages (Razor) versão 1.0
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/06/2011
-ms.topic: article
 ms.assetid: 36c5beeb-45a7-48a0-9c30-f82cdf5c5f5f
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: 924bf04772a1d73c7fdfb1168090daef388438ab
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 8aa0eedb3156ca33905c106b72d5fa553a917b16
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398794"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822856"
 ---
 <a name="webmatrix-readme"></a>Leiame do WebMatrix
 ====================
@@ -212,20 +209,20 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 
 #### <a name="issue-reading-feeds-or-other-external-data-via-a-proxy-server"></a>Problema: Leitura de feeds ou outros dados externos por meio de um servidor proxy
 
-> Se o servidor que executa o site estiver atrás de um servidor proxy, você talvez precise configurar informações de proxy nas *Web. config* arquivo para que seja possível ler informações provenientes de fora do site. Por exemplo, se você usar o `ReCaptcha` auxiliar, o auxiliar se comunica com o serviço reCAPTCHA, mas podem ser bloqueado pelo seu servidor proxy. Problema: Usando o projeto de aplicativo Web ou páginas ASP.NET MVC e Web ASP.NET no mesmo aplicativo
+> Se o servidor que executa o site estiver atrás de um servidor proxy, você talvez precise configurar informações de proxy nas *Web. config* arquivo para que seja possível ler informações provenientes de fora do site. Por exemplo, se você usar o `ReCaptcha` auxiliar, o auxiliar se comunica com o serviço reCAPTCHA, mas podem ser bloqueado pelo seu servidor proxy. Da mesma forma, os feeds que são usados no ASP.NET Web Pages, como o feed usado pelo Gerenciador de pacote, podem exigir configuração de proxy.
 > 
 > Se você tiver problemas em trabalhar com um serviço externo ou trabalhar com o feed de pacote, coloque os seguintes elementos raiz do seu aplicativo *Web. config* arquivo:
 > 
 > [!code-xml[Main](overview/samples/sample2.xml)]
 > 
-> Se você receber esse erro, altere a classe base da qual deriva o aplicativo.
+> Para obter mais informações sobre como configurar um servidor proxy, consulte [ &lt;proxy&gt; (configurações de rede)](https://msdn.microsoft.com/library/sa91de1e.aspx) no site do MSDN.
 
 
-#### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>Solução alternativa se você precisar copiar esses arquivos e fazer a Web. config alterações de arquivo manualmente, faça o seguinte:
+#### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>Problema: Desinstalar o .NET Framework versão 4 desabilita a ASP.NET Web Pages com sintaxe do Razor
 
-> Copie os assemblies do mecanismo de banco de dados para o Bin pasta (e as subpastas) do aplicativo no computador de destino: Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86*para \Bin\x86 Páginas da Web ASP.NET registra um assembly na raiz da máquina *Web. config* arquivo e remover o .NET Framework remove esse arquivo. Na pasta raiz do site, crie ou abra uma Web. config arquivo.
+> Se você desinstalar o .NET Framework versão 4 e, em seguida, reinstalá-lo, ASP.NET Web Pages com sintaxe do Razor estão desabilitados. As páginas com as *. cshtml* extensão não são executados corretamente. Páginas da Web ASP.NET registra um assembly na raiz da máquina *Web. config* arquivo e remover o .NET Framework remove esse arquivo. Reinstalar o .NET Framework instala uma nova versão do arquivo de configuração, mas não adiciona a referência para o assembly de páginas da Web ASP.NET.
 > 
-> **(No WebMatrix Beta 3, esse tipo de arquivo estará disponível se você clicar **todos os** na escolher um tipo de arquivo caixa de diálogo.) Isso adiciona o elemento a seguir para o *Web. config* arquivo na raiz do computador, que normalmente é no seguinte local:  
+> **Solução alternativa** após reinstalar o .NET Framework, reinstale o ASP.NET Web Pages com sintaxe do Razor. Isso adiciona o elemento a seguir para o *Web. config* arquivo na raiz do computador, que normalmente é no seguinte local:  
 > 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
@@ -233,29 +230,29 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > [!code-xml[Main](overview/samples/sample3.xml)]
 
 
-#### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>O  propriedade foi preterida na versão 3.5 compacto do SQL Server e foi mantida somente para compatibilidade com versões anteriores.
+#### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>Problema: As URLs sem extensão não encontrar arquivos.cshtml/.vbhtml no IIS 7 ou IIS 7.5
 
-> Use o *propriedade do* classe para criptografar arquivos de banco de dados do SQL Server Compact 4.0.  
+> No IIS 7 ou IIS 7.5, solicitações com uma URL semelhante à seguinte não serão possível localizar as páginas que têm o *. cshtml* ou *. vbhtml* extensão:  
 > 
 > `http://www.example.com/ExampleSite/ExampleFile`  
 > 
-> O exemplo a seguir mostra como criar um banco de dados SQL Server Compact 4.0 criptografada usando o  propriedade: Para alterar o modo de criptografia de banco de dados SQL Server Compact 4.0 existente, faça o seguinte:
+> O problema surge porque a regravação de URL não está habilitado por padrão para o IIS 7 ou IIS 7.5. O cenário mais provável é que você não vir o problema ao testar localmente usando o IIS Express, mas a experiência quando você implanta seu site em um site de hospedagem.
 > 
 > **Solução alternativa**
 > 
-> - Para criptografar um banco de dados do SQL Server Compact 4.0 não criptografado, faça o seguinte:
+> - Se você tiver controle sobre o computador do servidor, no computador do servidor instale a atualização descrita no [uma atualização está disponível que permite que certos manipuladores do IIS 7.0 ou IIS 7.5 para manipular as solicitações cujas URLs não terminam com um período](https://support.microsoft.com/kb/980368).
 > - Se você não tem controle sobre o computador do servidor (por exemplo, você estiver implantando em um site de hospedagem), adicione o seguinte para o site *Web. config* arquivo: 
 > 
 >     [!code-xml[Main](overview/samples/sample4.xml)]
 
 
-#### <a name="issue-deploying-an-application-to-a-computer-that-does-not-have-sql-server-compact-installed"></a>Problema: O WebMatrix Beta 3 é capaz de realizar certas tarefas que exigem elevação
+#### <a name="issue-deploying-an-application-to-a-computer-that-does-not-have-sql-server-compact-installed"></a>Problema: Implantando um aplicativo em um computador que não tenha o SQL Server Compact instalado
 
-> O WebMatrix Beta 3 é capaz de realizar certas tarefas que exigem elevação de privilégio, como a instalação de componentes adicionais nas seguintes situações: Microsoft WebMatrix 1.0 copia esses binários para você automaticamente e executa apropriado *Web. config* transformações de arquivo.
+> Aplicativos que incluem bancos de dados do SQL Server Compact podem ser executados em um computador em que o SQL Server Compact não está instalado. Microsoft WebMatrix 1.0 copia esses binários para você automaticamente e executa apropriado *Web. config* transformações de arquivo.
 > 
 > **Solução alternativa** se você precisar copiar esses arquivos e fazer a *Web. config* alterações de arquivo manualmente, faça o seguinte:
 > 
-> 1. A maioria das tarefas no WebMatrix Beta 3 não exigem permissão administrativa.  
+> 1. Copie os assemblies do mecanismo de banco de dados para o *Bin* pasta (e as subpastas) do aplicativo no computador de destino:  
 > 
 >    - Cópia *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
 >        **para** *\Bin.*
@@ -270,7 +267,7 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 
 #### <a name="issue-database-and-webgrid-helpers-do-not-work-in-medium-trust-in-visual-basic"></a>Problema: "Database" e "WebGrid" auxiliares não funcionam no nível de confiança média no Visual Basic
 
-> Problema: No Windows Server 2003, o IIS Express não é iniciado para um usuário não administrativo
+> Se você estiver usando o Visual Basic (criando *. vbhtml* arquivos), o `Database` e `WebGrid` auxiliares não funcionará se o aplicativo está configurado para usar confiança média.
 > 
 > **Solução alternativa**  
 > Se você usar o Visual Studio 2010, você pode resolver esse problema ao instalar a versão de Service Pack 1. Até que a versão final da versão do SP1 está disponível, você pode baixar a versão Beta do SP1 a partir de [Microsoft Visual Studio 2010 Service Pack 1 Beta](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=11ea69cb-cf12-4842-a3d7-b32a1e5642e2&amp;displaylang=en) página no Microsoft Download Center.   

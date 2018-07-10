@@ -4,19 +4,16 @@ title: 'Parte 5: Formulários de edição e modelagem | Microsoft Docs'
 author: jongalloway
 description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo de Store de música do ASP.NET MVC. Parte 5 aborda os formulários de edição e modelagem.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/21/2011
-ms.topic: article
 ms.assetid: 6b09413a-6d6a-425a-87c9-629f91b91b28
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: f799c4d492e88f3edcf3800e66e0a1bae3845ba2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: acb4a4c427870e375ff19823f0bdfa208438e899
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395195"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835995"
 ---
 <a name="part-5-edit-forms-and-templating"></a>Parte 5: Formulários de edição e modelagem
 ====================
@@ -162,13 +159,13 @@ Se o envio do formulário passar na validação, é hora de salvar os valores no
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample10.cs)]
 
-Entity Framework gera os comandos SQL apropriados para manter o valor. Se o texto fornecido é menor que o comprimento especificado, o auxiliar de saídas-lo como-está. Se for mais longo, ele trunca o texto e renderiza..."para o restante. Agora podemos usar nosso auxiliar de truncamento para garantir que as propriedades de título do álbum tanto o nome do artista são menos de 25 caracteres.
+Entity Framework gera os comandos SQL apropriados para manter o valor. Depois de salvar os dados, podemos redirecionar de volta para a lista de álbuns para que podermos ver nossa atualização. Isso é feito por meio do retorno RedirectToAction com o nome da ação de controlador que deseja exibir. Nesse caso, que é o método de índice.
 
-#### <a name="displaying-invalid-form-submissions-with-validation-errors"></a>O código de exibição completa usando nosso novo auxiliar de truncamento é exibida abaixo.
+#### <a name="displaying-invalid-form-submissions-with-validation-errors"></a>Exibindo os envios de formulário inválido com erros de validação
 
-Agora quando pesquisamos a URL /StoreManager/, os álbuns e títulos são mantidos abaixo nosso comprimentos máximos. Observação: Isso mostra o caso mais simples de criar e usar um auxiliar em um modo de exibição.
+No caso de entrada de formulário inválido, os valores de lista suspensa são adicionados ao ViewBag (como no caso de HTTP GET) e os valores de modelo associado são passados para o modo de exibição para exibição. Erros de validação são exibidos automaticamente usando o @Html.ValidationMessageFor auxiliar HTML.
 
-#### <a name="testing-the-create-form"></a>Para saber mais sobre a criação de auxiliares que podem ser usados em todo o site, consulte a postagem do meu blog:
+#### <a name="testing-the-create-form"></a>Testando o formulário de criação
 
 Para testar isso, execute o aplicativo e navegue até /StoreManager/criar / - Isso mostrará o formulário em branco que foi retornado pelo método StoreController criar HTTP-GET.
 

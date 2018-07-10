@@ -4,19 +4,16 @@ title: Web Matrix e Leiame de versão Beta 3 do ASP.NET Web Pages (Razor) | Micr
 author: rick-anderson
 description: Web Matrix e Leiame de versão Beta 3 do ASP.NET Web Pages (Razor)
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/10/2011
-ms.topic: article
 ms.assetid: ffa3d5c9-91e5-4da3-b409-560b0c7fbbf0
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 5aa609bf31499485dc7a1298fa689f3a7cee4774
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 16b324e555b5450fc1e05c63e7e19985a2d02b89
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363527"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831826"
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix e Leiame de versão Beta 3 do ASP.NET Web Pages (Razor)
 ====================
@@ -259,30 +256,30 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 
 #### <a name="issue-reading-feeds-or-other-external-data-via-a-proxy-server"></a>Problema: Leitura de feeds ou outros dados externos por meio de um servidor proxy
 
-> Se o servidor que executa o site estiver atrás de um servidor proxy, você talvez precise configurar informações de proxy nas *Web. config* arquivo para que seja possível ler informações provenientes de fora do site. Por exemplo, se você usar o `ReCaptcha` auxiliar, o auxiliar se comunica com o serviço reCAPTCHA, mas podem ser bloqueado pelo seu servidor proxy. Problema: Usando o projeto de aplicativo Web ou páginas ASP.NET MVC e Web ASP.NET no mesmo aplicativo
+> Se o servidor que executa o site estiver atrás de um servidor proxy, você talvez precise configurar informações de proxy nas *Web. config* arquivo para que seja possível ler informações provenientes de fora do site. Por exemplo, se você usar o `ReCaptcha` auxiliar, o auxiliar se comunica com o serviço reCAPTCHA, mas podem ser bloqueado pelo seu servidor proxy. Da mesma forma, os feeds que são usados no ASP.NET Web Pages, como o feed usado pelo Gerenciador de pacote, podem exigir configuração de proxy.
 > 
-> Se você estivesse usando páginas da Web ASP.NET em um projeto de aplicativo Web ou um aplicativo ASP.NET MVC, você poderá ver um erro que *WebPageHttpApplication* não pode ser encontrado.
+> Se você tiver problemas em trabalhar com um serviço externo ou trabalhar com o feed de pacote, coloque os seguintes elementos raiz do seu aplicativo *Web. config* arquivo:
 > 
 > [!code-xml[Main](beta3/samples/sample5.xml)]
 > 
-> Se você receber esse erro, altere a classe base da qual deriva o aplicativo.
+> Para obter mais informações sobre como configurar um servidor proxy, consulte [ &lt;proxy&gt; (configurações de rede)](https://msdn.microsoft.com/library/sa91de1e.aspx) no site do MSDN.
 
 
-#### <a name="issue-microsoftwebinfrastructuredll-cannot-be-loaded-error"></a>No global. asax file, altere a linha a seguir:
+#### <a name="issue-microsoftwebinfrastructuredll-cannot-be-loaded-error"></a>Problema: Erro "Não é possível carregar Microsoft.Web.Infrastructure.dll"
 
-> Para isso: Isso inverte a uma alteração que foi introduzida em vigor para a versão Beta 1 do ASP.NET Web Pages com sintaxe do Razor.
+> Se você instalou a versão Beta 1 do ASP.NET Web Pages com sintaxe do Razor e, em seguida, instale a versão Beta 3, todos os assemblies apropriados estão instalados no GAC, exceto *Microsoft.Web.Infrastructure.dll*. Como consequência, quando você executa páginas Razor do ASP.NET, você verá um erro que indica que *Microsoft.Web.Infrastructure.dll* não pôde ser carregado.
 > 
-> Problema: Implantando um aplicativo em um computador que não tenha o SQL Server Compact instalado
+> Esse problema não ocorre se você tiver carregado a versão Beta 3 em um computador limpo.
 > 
 > **Solução alternativa**  
-> Aplicativos que incluem bancos de dados do SQL Server Compact podem ser executados em um computador em que o SQL Server Compact não está instalado. Microsoft WebMatrix Beta 3 copia esses binários para você automaticamente e executa apropriado Web. config transformações de arquivo.
+> No painel de controle, desinstale as páginas da Web ASP.NET. Em seguida, reinstale a versão Beta 3.
 
 
-#### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>Solução alternativa se você precisar copiar esses arquivos e fazer a Web. config alterações de arquivo manualmente, faça o seguinte:
+#### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>Problema: Desinstalar o .NET Framework versão 4 desabilita a ASP.NET Web Pages com sintaxe do Razor
 
-> Copie os assemblies do mecanismo de banco de dados para o Bin pasta (e as subpastas) do aplicativo no computador de destino: Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86*para \Bin\x86 Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64*para \Bin\amd64 Na pasta raiz do site, crie ou abra uma Web. config arquivo.
+> Se você desinstalar o .NET Framework versão 4 e, em seguida, reinstalá-lo, ASP.NET Web Pages com sintaxe do Razor estão desabilitados. As páginas com as *. cshtml* extensão não são executados corretamente. Páginas da Web ASP.NET registra um assembly na raiz da máquina *Web. config* arquivo e remover o .NET Framework remove esse arquivo. Reinstalar o .NET Framework instala uma nova versão do arquivo de configuração, mas não adiciona a referência para o assembly de páginas da Web ASP.NET.
 > 
-> **(No WebMatrix Beta 3, esse tipo de arquivo estará disponível se você clicar **todos os** na escolher um tipo de arquivo caixa de diálogo.) Adicione o seguinte elemento como um filho do ** configuration  elemento (não dentro de  System. Web  elemento):  
+> **Solução alternativa** após reinstalar o .NET Framework, reinstale o ASP.NET Web Pages com sintaxe do Razor. Isso adiciona o elemento a seguir para o *Web. config* arquivo na raiz do computador, que normalmente é no seguinte local:  
 > 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
 > 
@@ -291,123 +288,123 @@ Esta seção do documento descreve novos recursos, alterações e problemas conh
 > [!code-xml[Main](beta3/samples/sample6.xml)]
 
 
-#### <a name="issue-applications-previously-deployed-with-aspnet-assemblies-in-the-bin-folder-experience-errors"></a>Problema: Os auxiliares de banco de dados e o WebGrid não funcionam no nível de confiança média no Visual Basic
+#### <a name="issue-applications-previously-deployed-with-aspnet-assemblies-in-the-bin-folder-experience-errors"></a>Problema: Os aplicativos implantados anteriormente com o ASP.NET assemblies na pasta Bin ocorrerem erros
 
-> Se você estiver usando o Visual Basic (criando *. vbhtml* arquivos), o *e* auxiliares não funcionará se o aplicativo está configurado para usar confiança média. Defina temporariamente o aplicativo para usar a confiança total. Problema: A propriedade "Encrypt" não é reconhecida SQL Server Compact 4.0 não reconhece o  propriedade do  classe.
+> Durante a implantação, cópias dos assemblies páginas da Web ASP.NET (por exemplo, *Microsoft.WebPages.dll*) para o *Bin* pasta do site no servidor. (Isso pode ter acontecido automaticamente durante a implantação ou porque o desenvolvedor copiados explicitamente os assemblies.) No entanto, quando a versão Beta 3 está instalada, erros ocorre, como os erros que certos tipos não podem ser encontrados. Isso ocorre porque vários tipos de páginas da Web ASP.NET foram movidos para namespaces diferentes para a versão Beta 3.
 > 
 > **Solução alternativa**   
-> Você não deve usar essa propriedade para criptografar arquivos de banco de dados.
+> Desmarque a *Bin* pasta do aplicativo implantado, copie os novos assemblies para a pasta (ou reimplantar o aplicativo) e, em seguida, reinicie o aplicativo.
 
 
-#### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>O  propriedade foi preterida na versão 3.5 compacto do SQL Server e foi mantida somente para compatibilidade com versões anteriores.
+#### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>Problema: As URLs sem extensão não encontrar arquivos.cshtml/.vbhtml no IIS 7 ou IIS 7.5
 
-> Use o *propriedade do* classe para criptografar arquivos de banco de dados do SQL Server Compact 4.0.  
+> No IIS 7 ou IIS 7.5, solicitações com uma URL semelhante à seguinte não serão possível localizar as páginas que têm o *. cshtml* ou *. vbhtml* extensão:  
 > 
 > `http://www.example.com/ExampleSite/ExampleFile`  
 > 
-> O exemplo a seguir mostra como criar um banco de dados SQL Server Compact 4.0 criptografada usando o  propriedade: Para alterar o modo de criptografia de banco de dados SQL Server Compact 4.0 existente, faça o seguinte:
+> O problema surge porque a regravação de URL não está habilitado por padrão para o IIS 7 ou IIS 7.5. O cenário mais provável é que você não vir o problema ao testar localmente usando o IIS Express, mas a experiência quando você implanta seu site em um site de hospedagem.
 > 
 > **Solução alternativa**
 > 
-> - Para criptografar um banco de dados do SQL Server Compact 4.0 não criptografado, faça o seguinte:
-> - Problema: Bibliotecas de tempo de execução do Microsoft Visual C++ 2008 são necessárias
+> - Se você tiver controle sobre o computador do servidor, no computador do servidor instale a atualização descrita no [uma atualização está disponível que permite que certos manipuladores do IIS 7.0 ou IIS 7.5 para manipular as solicitações cujas URLs não terminam com um período](https://support.microsoft.com/kb/980368).
+> - Se você não tem controle sobre o computador do servidor (por exemplo, você estiver implantando em um site de hospedagem), adicione o seguinte para o site *Web. config* arquivo:
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample7.xml)]
 
 
-#### <a name="issue-using-web-application-project-or-aspnet-mvc-and-aspnet-web-pages-in-the-same-application"></a>O native DLLs do SQL Server Compact 4.0 é necessário o Microsoft Visual C++ 2008 bibliotecas de Runtime (x86, IA64 e x64), o Service Pack 1.
+#### <a name="issue-using-web-application-project-or-aspnet-mvc-and-aspnet-web-pages-in-the-same-application"></a>Problema: Usando o projeto de aplicativo Web ou páginas ASP.NET MVC e Web ASP.NET no mesmo aplicativo
 
-> Instale o .NET Framework 3.5 SP1.
+> Se você estivesse usando páginas da Web ASP.NET em um projeto de aplicativo Web ou um aplicativo ASP.NET MVC, você poderá ver um erro que *WebPageHttpApplication* não pode ser encontrado.
 > 
 > **Solução alternativa**  
-> Isso também instala o Visual C++ 2008 tempo de execução de bibliotecas do SP1. Você pode baixar as bibliotecas do seguinte local:
+> Se você receber esse erro, altere a classe base da qual deriva o aplicativo. No *global. asax* file, altere a linha a seguir:
 > 
 > [!code-csharp[Main](beta3/samples/sample8.cs)]
 > 
-> Atualização de segurança ATL do Microsoft Visual C++ 2008 Service Pack 1 Redistributable Package
+> Para isso:
 > 
 > [!code-csharp[Main](beta3/samples/sample9.cs)]
 > 
-> Observe que o .NET Framework 2.0, 3.0, a instalação ou 4 faz não instalar o SP1 de bibliotecas de tempo de execução do Visual C++ 2008.
+> Isso inverte a uma alteração que foi introduzida em vigor para a versão Beta 1 do ASP.NET Web Pages com sintaxe do Razor.
 
 
-#### <a name="issue-deploying-an-application-to-a-computer-that-does-not-have-sql-server-compact-installed"></a>Problema: O WebMatrix Beta 3 é capaz de realizar certas tarefas que exigem elevação
+#### <a name="issue-deploying-an-application-to-a-computer-that-does-not-have-sql-server-compact-installed"></a>Problema: Implantando um aplicativo em um computador que não tenha o SQL Server Compact instalado
 
-> O WebMatrix Beta 3 é capaz de realizar certas tarefas que exigem elevação de privilégio, como a instalação de componentes adicionais nas seguintes situações: No Windows Vista ou Windows 7, você está conectado com uma conta que não tem privilégios administrativos e controle de conta de usuário (UAC) está desabilitado.
+> Aplicativos que incluem bancos de dados do SQL Server Compact podem ser executados em um computador em que o SQL Server Compact não está instalado. Microsoft WebMatrix Beta 3 copia esses binários para você automaticamente e executa apropriado *Web. config* transformações de arquivo.
 > 
-> **Você está usando o Microsoft Windows XP ou Microsoft Windows Server 2003.
+> **Solução alternativa** se você precisar copiar esses arquivos e fazer a *Web. config* alterações de arquivo manualmente, faça o seguinte:
 > 
-> 1. A maioria das tarefas no WebMatrix Beta 3 não exigem permissão administrativa. 
+> 1. Copie os assemblies do mecanismo de banco de dados para o *Bin* pasta (e as subpastas) do aplicativo no computador de destino: 
 > 
 >     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **to** *\Bin*
->     - Para aqueles que fazer, você pode executar a operação como um administrador ou siga estas etapas:*
->     - No Windows Vista ou Windows 7, habilite o UAC.*
-> 2. No Windows XP, adicione o usuário ao grupo de segurança Administradores. Problema: "Site da Galeria de Web" está desabilitada
-> 3. O **Site da Galeria de Web&lt; opção será desabilitada se o Web Platform Installer 3.0 não está instalado.
+>     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **para** *\Bin\x86*
+>     - Cópia *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **para** *\Bin\amd64*
+> 2. Na pasta raiz do site, crie ou abra uma *Web. config* arquivo. (No WebMatrix Beta 3, esse tipo de arquivo estará disponível se você clicar **todos os** na **escolher um tipo de arquivo** caixa de diálogo.)
+> 3. Adicione o seguinte elemento como um filho do **&lt;configuration&gt;** elemento (não dentro de **&lt;System. Web&gt;** elemento):
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
 
 
-#### <a name="issue-database-and-webgrid-helpers-do-not-work-in-medium-trust-in-visual-basic"></a>Instalar o Microsoft Web Platform Installer 3.0.
+#### <a name="issue-database-and-webgrid-helpers-do-not-work-in-medium-trust-in-visual-basic"></a>Problema: Os auxiliares de banco de dados e o WebGrid não funcionam no nível de confiança média no Visual Basic
 
-> Problema: No Windows Server 2003, o IIS Express não é iniciado para um usuário não administrativo
+> Se você estiver usando o Visual Basic (criando *. vbhtml* arquivos), o `Database` e `WebGrid` auxiliares não funcionará se o aplicativo está configurado para usar confiança média.
 > 
 > **Solução alternativa**  
-> No Windows Server 2003, quando você iniciar uma página ou iniciar o IIS Express, o IIS Express não é iniciado.
+> Defina temporariamente o aplicativo para usar a confiança total.
 
 <a id="Known_Issues_SQL_Server_Compact"></a>
 ### <a name="sql-server-compact"></a>SQL Server Compact
 
-#### <a name="issue-encrypt-property-is-not-recognized"></a>Páginas da Web, um erro será exibido que indica se o aplicativo foi iniciado por um usuário não administrativo.
+#### <a name="issue-encrypt-property-is-not-recognized"></a>Problema: A propriedade "Encrypt" não é reconhecida
 
-> Inicie o WebMatrix Beta 3 como um usuário administrativo. Para obter mais detalhes, consulte o seguinte artigo da Base de Conhecimento: Um aplicativo que é iniciado por um usuário não administrativo não pode ouvir o tráfego HTTP do computador no qual o aplicativo é executado no Windows Vista, Windows Server 2003 ou Windows XP. 
+> SQL Server Compact 4.0 não reconhece o `Encrypt` propriedade do `SqlCeConnection` classe. Você não deve usar essa propriedade para criptografar arquivos de banco de dados. O `Encrypt` propriedade foi preterida na versão 3.5 compacto do SQL Server e foi mantida somente para compatibilidade com versões anteriores. 
 > 
 > **Solução alternativa**  
-> Problema: O Google Chrome não está disponível como uma opção de execução Google Chrome não é exibido na lista de navegadores em `Encryption Mode`executados sobre o Home guia.
+> Use o `Encryption Mode` propriedade do `SqlCeConnection` classe para criptografar arquivos de banco de dados do SQL Server Compact 4.0. O exemplo a seguir mostra como criar um banco de dados SQL Server Compact 4.0 criptografada usando o `Encryption Mode` propriedade:
 > 
 > [!code-csharp[Main](beta3/samples/sample11.cs)]
 > 
 > [!code-vb[Main](beta3/samples/sample12.vb)]
 > 
-> Algumas versões do Google Chrome não se registram corretamente com o recurso de programas padrão no Windows.
+> Para alterar o modo de criptografia de banco de dados SQL Server Compact 4.0 existente, faça o seguinte:
 > 
 > [!code-csharp[Main](beta3/samples/sample13.cs)]
 > 
 > [!code-vb[Main](beta3/samples/sample14.vb)]
 > 
-> Como alternativa, inicie o Google Chrome, clique o personalizar e controle Google Chrome menu, clique em opçõese, em seguida, clique em Make Google Chrome meu navegador padrão.
+> Para criptografar um banco de dados do SQL Server Compact 4.0 não criptografado, faça o seguinte:
 > 
 > [!code-csharp[Main](beta3/samples/sample15.cs)]
 > 
 > [!code-vb[Main](beta3/samples/sample16.vb)]
 
 
-#### <a name="issue-microsoft-visual-c-2008-runtime-libraries-are-required"></a>Problema: A caixa de diálogo "Foreign Key" não permite inserir uma chave primária
+#### <a name="issue-microsoft-visual-c-2008-runtime-libraries-are-required"></a>Problema: Bibliotecas de tempo de execução do Microsoft Visual C++ 2008 são necessárias
 
-> O Foreign Key caixa de diálogo não permite que você insira o nome da chave primário da tabela de chave primária.
+> O native DLLs do SQL Server Compact 4.0 é necessário o Microsoft Visual C++ 2008 bibliotecas de Runtime (x86, IA64 e x64), o Service Pack 1.
 > 
 > **Solução alternativa**  
-> Isso é intencional. Você não precisará inserir o nome da chave primária da tabela de chave primária. Problema: O botão "Relações" está desabilitado   
+> Instale o .NET Framework 3.5 SP1. Isso também instala o Visual C++ 2008 tempo de execução de bibliotecas do SP1. Você pode baixar as bibliotecas do seguinte local:   
 >   
-> [O [relacionamentos](https://go.microsoft.com/fwlink/?LinkId=194827) botão sob o tabela guia o bancos de dados espaço de trabalho está desabilitado para bancos de dados do SQL Server Compact.](https://go.microsoft.com/fwlink/?LinkId=194827)
+> [Atualização de segurança ATL do Microsoft Visual C++ 2008 Service Pack 1 Redistributable Package](https://go.microsoft.com/fwlink/?LinkId=194827)
 > 
 > [!NOTE]
-> O SQL Server Compact não oferece suporte a relações entre tabelas.
+> Observe que o .NET Framework 2.0, 3.0, a instalação ou 4 faz *não* instalar o SP1 de bibliotecas de tempo de execução do Visual C++ 2008.
 
 
-#### <a name="issue-if-sql-server-compact-is-installed-prior-to-installing-net-framework-on-the-computer-its-provider-invariant-name-is-not-registered-in-the-net-framework-machineconfig-file"></a>Problema: Consultas SQL parametrizadas lançam exceções
+#### <a name="issue-if-sql-server-compact-is-installed-prior-to-installing-net-framework-on-the-computer-its-provider-invariant-name-is-not-registered-in-the-net-framework-machineconfig-file"></a>Problema: Se o SQL Server Compact está instalado antes de instalar o .NET Framework no computador, seu nome invariável do provedor não está registrado no arquivo Machine. config do .NET Framework
 
-> No SQL Server Compact 4.0, se você não especificar um tipo de dados, como  ou  para parâmetros em consultas parametrizadas, uma exceção é lançada quando a consulta é executada. Definir explicitamente o tipo de dados para parâmetros, como *ou*. Isso é importante no caso de tipos de dados BLOB (*e*). Use o código semelhante ao seguinte:
+> O SQL Server Compact pode ser instalado em um computador que não tenha o .NET Framework instalado, pois o SQL Server Compact requerem o .NET framework. Se nem o .NET Framework versão 3.5 nem 4 está instalado antes de instalar o SQL Server Compact, a instalação do SQL Server Compact não registra seu nome invariável do provedor na *Machine. config* arquivo. Qualquer aplicativo que se baseia na entrada do SQL Server Compact na *Machine. config* arquivo falhará. A entrada de registro de nome invariável na *Machine. config* se parece com o exemplo a seguir:
 > 
 > [!code-xml[Main](beta3/samples/sample17.xml)]
 > 
 > **Solução alternativa**  
-> Para obter mais informações sobre o WebMatrix Beta 3, consulte os seguintes sites: Todos os direitos reservados.
+> Desinstale o SQL Server Compact 4.0 CTP1. Baixe e instale as versões completas do .NET Framework do seguinte local:
 > 
 > [Microsoft .NET Framework 3.5 Service pack 1 (pacote completo)](https://go.microsoft.com/fwlink/?LinkId=194828)  
-> [Termos de uso](https://www.microsoft.com/downloads/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992&amp;displaylang=en).](https://www.microsoft.com/downloads/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992&amp;displaylang=en)
+> [Versão do Microsoft .NET Framework 4.0 (pacote completo)](https://www.microsoft.com/downloads/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992&amp;displaylang=en)
 > 
 > Em seguida, reinstalar [SQL Server Compact 4.0 CTP1](https://www.microsoft.com/downloads/details.aspx?FamilyID=0d2357ea-324f-46fd-88fc-7364c80e4fdb&amp;displaylang=en).
 

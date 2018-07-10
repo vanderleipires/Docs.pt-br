@@ -4,19 +4,16 @@ title: ASP.NET 4 últimas alterações | Microsoft Docs
 author: rick-anderson
 description: Este documento descreve as alterações que foram feitas para a versão do .NET Framework versão 4 que potencialmente pode afetar os aplicativos que foram criados usando...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
-ms.technology: ''
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: bf9968c49e904c064338d7123405cb6578a915f2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: e6d7972c333e302bb8b6b2d23ea7123b8757b2f4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378644"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842503"
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 últimas alterações
 ====================
@@ -276,43 +273,43 @@ Em versões anteriores do ASP.NET, **HttpRequest** propriedades têm os seguinte
 
 **HttpRequest.PathInfo**: (vazio)
 
-No entanto, os desenvolvedores ficam confusas pelo comportamento no ASP.NET, e relatórios de bugs sugerem que os desenvolvedores estejam cientes da existente **SetOmitVaryStar** comportamento.
+No ASP.NET 4 **HttpRequest** propriedades em vez disso, tem os seguintes valores:
 
 **HttpRequest.FilePath**: `/testapp/Action.mvc`
 
-**No ASP.NET 4, a decisão foi tomada para corrigir a causa do problema. `SomeAction`
+**HttpRequest.PathInfo**: `SomeAction`
 
 <a id="0.1__Toc252995493"></a><a id="0.1__Toc255587642"></a><a id="0.1__Toc256770153"></a><a id="0.1__Toc245724861"></a>
 
-## <a name="aspnet-20-applications-might-generate-httpexception-errors-that-reference-eurlaxd"></a>O  cabeçalho HTTP não é mais emitido de respostas que especificam a diretiva a seguir:
+## <a name="aspnet-20-applications-might-generate-httpexception-errors-that-reference-eurlaxd"></a>O ASP.NET 2.0 aplicativos podem gerar erros HttpException que referenciam eurl
 
-Como resultado, SetOmitVaryStar não for mais necessário para suprimir o  cabeçalho.
+Depois que o ASP.NET 4 tiver sido habilitado no IIS 6, os aplicativos ASP.NET 2.0 que são executados no IIS 6 (no Windows Server 2003 ou Windows Server 2003 R2) poderão gerar erros como o seguinte:
 
 `System.Web.HttpException: Path '/[yourApplicationRoot]/eurl.axd/[Value]' was not found.`
 
-Em aplicativos que especificam  no @ OutputCache diretiva em uma página, agora você verá o comportamento implícito pelo nome da local valor do atributo – que é, as páginas serão armazenáveis em cache no navegador sem a necessidade de que você chamar o SetOmitVaryStar método. Se as páginas em seu aplicativo devem emitir , chame o AppendHeader método, como no exemplo a seguir: Como alternativa, você pode alterar o valor do cache de saída local atributo como "Servidor". Security tipos do Passport estão obsoleto O suporte de Passport incorporado no ASP.NET 2.0 tem sido obsoletos e não há suporte para alguns anos devido a alterações no Passport (agora LiveID). Como resultado, os cinco tipos relacionados ao Passport no **Security** agora são marcadas com o ObsoleteAttribute atributo.
+Esse erro ocorre porque quando o ASP.NET detecta que um site da Web está configurado para usar o ASP.NET 4, um componente nativo do ASP.NET 4 passa uma URL sem extensão para a parte gerenciada do ASP.NET para processamento adicional. No entanto, se os diretórios virtuais que estão abaixo de um site do ASP.NET 4 são configurados para usar o ASP.NET 2.0, processar a URL sem extensão nos resultados forma em uma URL modificada que contém a cadeia de caracteres "eurl". Essa URL modificada é enviado para o aplicativo ASP.NET 2.0. O ASP.NET 2.0 não reconhece o formato de "eurl". Portanto, o ASP.NET 2.0 tenta encontrar um arquivo chamado `eurl.axd` e executá-lo. Porque esse arquivo não existe, a solicitação falhará com um **HttpException** exceção.
 
-A propriedade MenuItem.PopOutImageUrl Falha ao renderizar uma imagem no ASP.NET 4
+Você pode contornar esse problema usando uma das opções a seguir.
 
-### <a name="option-1"></a>No ASP.NET 3.5, o MenuItem.PopOutImageUrl propriedade permite que você especifique a URL para uma imagem que é exibida em um item de menu para indicar que o item de menu tem um submenu dinâmico.
+### <a name="option-1"></a>Opção 1
 
-O exemplo a seguir mostra como especificar essa propriedade na marcação no ASP.NET 3.5.
+Se o ASP.NET 4 não é necessário para executar o site da Web, Remapeie o site para usar o ASP.NET 2.0.
 
-### <a name="option-2"></a>Como resultado de uma alteração de design no ASP.NET 4, nenhuma saída é renderizada para o PopOutImageUrl se a propriedade é definida para o MenuItem classe.
+### <a name="option-2"></a>Opção 2
 
-Em vez disso, você deve especificar uma URL de imagem diretamente na Menu controlar usando o StaticPopOutImageUrl propriedade ou o DynamicPopOutImageUrl propriedade.
+Se o ASP.NET 4 é necessário para executar o site da Web, mova quaisquer diretórios virtuais de ASP.NET 2.0 filho para um site diferente que é mapeado para o ASP.NET 2.0.
 
-### <a name="option-3"></a>Quando você trabalha com um menu estático, o Menu.StaticPopOutImageUrl propriedade especifica a URL para uma imagem que é exibida para indicar que o item de menu estático tem um submenu, conforme mostrado no exemplo a seguir:
+### <a name="option-3"></a>Opção 3
 
-Se você estiver trabalhando com um menu dinâmico, você usa o Menu.DynamicPopOutImageUrl propriedade para especificar a URL para uma imagem que indica que um item de menu dinâmico tem um submenu. O exemplo a seguir é semelhante ao anterior, mas mostra como definir a DynamicPopOutImageUrl propriedade para um menu dinâmico.
+Se não for prático para remapear o site da Web para o ASP.NET 2.0 ou para alterar o local de um diretório virtual, desabilite explicitamente a URL sem extensão de processamento no ASP.NET 4. Use o procedimento a seguir:
 
-1. Se o Menu.DynamicPopOutImageUrl não está definida e o Menu.DynamicEnableDefaultPopOutImage estiver definida como false, nenhuma imagem é exibida.
+1. No registro do Windows, abra o seguinte nó:
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0`
 
-1. Da mesma forma, se o **StaticPopOutImageUrl** não está definida e o **StaticEnableDefaultPopOutImage** estiver definida como false, nenhuma imagem é exibida.
-2. Quando você definir os caminhos para essas propriedades, use uma barra (/) em vez de uma barra invertida (**. Para obter mais informações, consulte Menu.StaticPopOutImageUrl e falha de Menu.DynamicPopOutImageUrl ao renderizar imagens quando caminhos de conter barras invertidas_Menu.StaticPopOutImageUrl_and_Menu.
-3. em outros lugares neste documento.
+1. Criar um novo **DWORD** valor denominado **EnableExtensionlessUrls**.
+2. Definir **EnableExtensionlessUrls** como 0. Isso desabilita o comportamento da URL sem extensão.
+3. Salve o valor do registro e feche o editor do registro.
 4. Execute o **iisreset** ferramenta de linha de comando, que faz com que o IIS ler o novo valor de registro.
 
 > [!NOTE]

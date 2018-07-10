@@ -4,19 +4,16 @@ title: Referência rápida da API de (Razor) de páginas da Web ASP.NET | Micros
 author: tfitzmac
 description: Esta página contém uma lista com breves exemplos de como os objetos mais usados, propriedades e métodos para a programação de páginas da Web ASP.NET com sintaxe do Razor.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2014
-ms.topic: article
 ms.assetid: 4001cb9b-3bfd-4ace-8a89-1561d8421e2c
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: 3bf706cefe5302cf1085e0f814dc6654e42ae917
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 5fb5b8d29fce25fb36704a58b673f5f3bd582873
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378657"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836756"
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a>Referência rápida da API de (Razor) de páginas da Web ASP.NET
 ====================
@@ -329,38 +326,38 @@ Retorna VERDADEIRO se o nome do usuário atual corresponde ao nome de usuário e
 
 ### `WebSecurity.Login(userName,password[, persistCookie])`
 
-Normalmente você definir essa propriedadeAppStart página.
+Conecta o usuário no definindo um token de autenticação no cookie.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample47.cs)]
 
 ### `WebSecurity.Logout()`
 
-Define o nome de usuário para o servidor SMTP.
+Conecta o usuário de fora, removendo o cookie de autenticação de token.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample48.css)]
 
 ### `WebSecurity.RequireAuthenticatedUser()`
 
-Normalmente, você deve definir essa propriedade na  AppStart página.
+Se o usuário não for autenticado, define o status HTTP como 401 (não autorizado).
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample49.css)]
 
 ### `WebSecurity.RequireRoles(roles)`
 
-(v2) Processa uma mensagem de erro de validação para o campo especificado.
+Se o usuário atual não for um membro de uma das funções especificadas, define o status HTTP como 401 (não autorizado).
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample50.html)]
 
 ### `WebSecurity.RequireUser(userId)`  
 `WebSecurity.RequireUser(userName)`
 
-(v2) Exibe uma lista de todos os erros de validação.
+Se o usuário atual não é o usuário especificado por *nome de usuário*, define o status HTTP como 401 (não autorizado).
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample51.css)]
 
 ### `WebSecurity.ResetPassword(passwordResetToken,newPassword)`
 
-(v2) Registra um elemento de entrada do usuário para o tipo de validação especificado.
+Se o token de redefinição de senha for válido, altera a senha do usuário para a nova senha.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample52.css)]
 
@@ -369,44 +366,44 @@ Normalmente, você deve definir essa propriedade na  AppStart página.
 
 ### `Database.Execute(SQLstatement [,parameters]`
 
-(v2) Renderiza dinamicamente os atributos de classe CSS para validação do lado do cliente para que você pode formatar mensagens de erro de validação.
+Executa *SQLstatement* (com parâmetros opcionais), como INSERT, DELETE ou UPDATE e retorna uma contagem de registros afetados.
 
 [!code-sql[Main](asp-net-web-pages-api-reference/samples/sample53.sql)]
 
 ### `Database.GetLastInsertId()`
 
-(Requer que você referencie as bibliotecas de script de cliente apropriadas e que você define classes CSS).
+Retorna a coluna de identidade da linha inserida mais recentemente.
 
 [!code-sql[Main](asp-net-web-pages-api-reference/samples/sample54.sql)]
 
 ### `Database.Open(filename)`  
 `Database.Open(connectionStringName)`
 
-(v2) Habilita a validação do lado do cliente para o campo de entrada do usuário.
+Abre o arquivo de banco de dados especificado ou o banco de dados especificado usando uma cadeia de caracteres de conexão nomeada a *Web. config* arquivo.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample55.cs)]
 
 ### `Database.OpenConnectionString(connectionString)`
 
-(Requer que você referencie as bibliotecas de script de cliente apropriado.) (v2) Retornará true se todos os elementos de entrada de usuário que estão registrado para a validação contêm valores válidos.
+Abre um banco de dados usando a cadeia de conexão. (Isso contrasta com `Database.Open`, que usa um nome de cadeia de caracteres de conexão.)
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample56.cs)]
 
 ### `Database.Query(SQLstatement[,parameters])`
 
-(v2) Especifica que os usuários devem fornecer um valor para o elemento de entrada do usuário.
+Consulta o banco de dados usando *SQLstatement* (opcionalmente passando parâmetros) e retorna os resultados como uma coleção.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample57.html)]
 
 ### `Database.QuerySingle(SQLstatement [, parameters])`
 
-(v2) Especifica que os usuários devem fornecer valores para cada um dos elementos de entrada do usuário.
+Executa *SQLstatement* (com parâmetros opcionais) e retorna um único registro.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample58.cs)]
 
 ### `Database.QueryValue(SQLstatement [, parameters])`
 
-Esse método não permite que você especificar uma mensagem de erro personalizada.
+Executa *SQLstatement* (com parâmetros opcionais) e retorna um valor único.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample59.cs)]
 
@@ -415,7 +412,7 @@ Esse método não permite que você especificar uma mensagem de erro personaliza
 
 ### `Analytics.GetGoogleHtml(webPropertyId)`
 
-(v2) Especifica um teste de validação quando você usar o  método.
+Processa o código JavaScript do Google Analytics para a ID especificada.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample60.js)]
 

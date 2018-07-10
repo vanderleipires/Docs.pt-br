@@ -4,19 +4,16 @@ title: Interagindo com a página mestre da página de conteúdo (VB) | Microsoft
 author: rick-anderson
 description: Examina como chamar métodos, definir propriedades, etc. da página mestra do código na página de conteúdo.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/11/2008
-ms.topic: article
 ms.assetid: 081fe010-ba0f-4e7d-b4ba-774840b601c2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d605fea4b6417eec4ac8c89a71986213dbc18c38
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 451b76b2f6a706c7ca6908434b39492e5cba91b9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389209"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826488"
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>Interagindo com a página mestre da página de conteúdo (VB)
 ====================
@@ -192,40 +189,40 @@ Vamos examinar as duas abordagens.
 
 ### <a name="using-the-loosely-typedpagemasterproperty"></a>Usando a tipagem`Page.Master`propriedade
 
-Todas as páginas da web ASP.NET devem derivar de `Page` classe, que está localizado no `System.Web.UI` namespace. Para obter uma visão mais completa em por que esse é o caso e como a `Page` propriedade é construída quando o [ diretiva for incluída, consulte `Master`K. Scott Allen](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx)da entrada de blog   no ASP.NET 2.0. Atualizando a página mestra depois de adicionar um novo produto
+Todas as páginas da web ASP.NET devem derivar de `Page` classe, que está localizado no `System.Web.UI` namespace. O `Page` classe inclui um [ `Master` propriedade](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx) que retorna uma referência para a página mestra do título. Se a página não tem uma página mestra `Master` retorna `Nothing`.
 
-Agora que sabemos como chamar propriedades públicas e métodos de uma página de conteúdo de uma página mestra, estamos prontos para atualizar o `Master` de página para que a página mestra for atualizada depois de adicionar um novo produto. No início da etapa 4, criamos um manipulador de eventos do controle DetailsView `MasterPage` evento, que é executado imediatamente após o novo produto foi adicionado ao banco de dados. Adicione o seguinte código ao manipulador de eventos: O código acima usa os dois a tipagem `Page.Master` propriedade e fortemente tipado `Site` propriedade.
+O `Master` propriedade retorna um objeto do tipo [ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (também localizado no `System.Web.UI` namespace) que é o tipo base da qual todas as páginas mestras derivam. Portanto, para uso de propriedades públicas ou métodos definidos na página mestra do nosso site, é necessário converter o `MasterPage` objeto retornado do `Master` propriedade para o tipo apropriado. Como nomeamos o nosso arquivo de página mestra `Site.master`, a classe code-behind foi nomeada `Site`. Portanto, o código a seguir converte o `Page.Master` propriedade para uma instância da `Site` classe.
 
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample8.vb)]
 
-Observe que o `Page.Master` estiver definida como "ProductName adicionada à grade..." Valores do produto adicionado apenas são acessíveis por meio de  coleta; como você pode ver, o just-adicionado  valor é acessado por meio de .
+Agora que temos convertidos a tipagem `Page.Master` propriedade para o tipo de Site podemos referenciar as propriedades e métodos específicos do Site. Como mostra a Figura 7, a propriedade pública `GridMessageText` aparece no menu suspenso IntelliSense.
 
 
-[![A Figura 8 mostra o [ imediatamente após um novo produto - de Scott Soda - foi adicionada ao banco de dados.](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
+[![O IntelliSense mostra os métodos e propriedades públicas da nossa página mestra](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
 
-**Observe que o nome do produto just-adicionado é observado no rótulo da página mestra e que o GridView tiver sido atualizado para incluir o produto e seu preço.
+**Figura 07**: o IntelliSense mostra os métodos e propriedades públicas da nossa página mestra ([clique para exibir a imagem em tamanho normal](interacting-with-the-master-page-from-the-content-page-vb/_static/image21.png))
 
 
 > [!NOTE]
-> Rótulo da página mestra e o GridView mostram o produto Just-adicionado Figura 08`MasterPage`: A página mestra rótulo e GridView mostram o produto Just-Added (clique para exibir a imagem em tamanho normal) O ideal é que uma página mestra e suas páginas de conteúdo são completamente separadas umas das outras e nenhum nível de interação. Enquanto as páginas mestras e páginas de conteúdo devem ser criadas com esse objetivo em mente, há um número de cenários comuns em que uma página de conteúdo deve interagir com sua página mestra.
+> Se você nomeou seu arquivo de página mestra `MasterPage.master` e em seguida, o nome da classe de lógica da página mestra é `MasterPage`. Isso pode levar a código ambíguo na conversão do tipo `System.Web.UI.MasterPage` ao seu `MasterPage` classe. Em resumo, você precisa qualificar totalmente o tipo que você está convertendo, que pode ser um pouco complicado, ao usar o modelo de projeto de Site. Minha sugestão é se certificar de que quando você cria uma página mestre você o nomear algo diferente de `MasterPage.master` ou, melhor ainda, criar uma referência fortemente tipada para a página mestra.
 
 
-### <a name="creating-a-strongly-typed-reference-with-themastertypedirective"></a>Um dos motivos mais comuns gira em torno de atualização de uma parte específica da exibição de página mestra com base em alguma ação que ocorreu na página de conteúdo.
+### <a name="creating-a-strongly-typed-reference-with-themastertypedirective"></a>Criar uma referência fortemente tipada com o`@MasterType`diretiva
 
-A boa notícia é que é relativamente fácil para ter uma página de conteúdo interagir programaticamente com sua página mestra. Comece criando métodos ou propriedades públicas na página mestra que encapsulam a funcionalidade de que precisa ser invocado por uma página de conteúdo. Em seguida, na página de conteúdo, acessar a página mestra propriedades e métodos por meio de tipagem `AddProduct.aspx.vb` propriedade ou use o  diretiva para criar uma referência fortemente tipada para a página mestra. No próximo tutorial, vamos examinar como fazer com que a página mestra interagir programaticamente com uma das suas páginas de conteúdo.
+Se você examinar de perto você pode ver que a classe code-behind de uma página ASP.NET é uma classe parcial (Observe o `Partial` palavra-chave na definição de classe). Classes parciais foram introduzidas no c# e Visual Basic com o.NET Framework 2.0 e, em resumo, permitem para membros de uma classe a ser definido em vários arquivos. O arquivo de classe code-behind - `AddProduct.aspx.vb`, por exemplo - contém o código que nós, o desenvolvedor da página criar. Além do nosso código, o mecanismo do ASP.NET cria automaticamente um arquivo de classe separada com propriedades e manipuladores de eventos em que signifique a marcação declarativa a hierarquia de classe da página.
 
-Acessar e atualizar dados no ASP.NET Páginas mestras do ASP.NET: Dicas, truques e armadilhas
+A geração de código automática ocorre sempre que uma página ASP.NET é visitada abre caminho para algumas possibilidades bastante interessantes e úteis. No caso de páginas mestras, se dizemos que o mecanismo do ASP.NET que página mestre está sendo usada por nossa página de conteúdo, ele gera um tipo mais acentuado `Master` propriedade para nós.
 
-no ASP.NET 2.0 Passando informações entre o conteúdo e páginas mestras Trabalhando com dados nos tutoriais do ASP.NET
+Use o [ `@MasterType` diretiva](https://msdn.microsoft.com/library/ms228274.aspx) para informar o mecanismo do ASP.NET do tipo de página mestra da página de conteúdo. O `@MasterType` diretiva pode aceitar o nome do tipo da página mestra ou seu caminho de arquivo. Para especificar que o `AddProduct.aspx` página usos `Site.master` como sua página mestra, adicione a seguinte diretiva na parte superior do `AddProduct.aspx`:
 
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample9.aspx)]
 
-Scott Mitchell, autor de vários livros sobre ASP/ASP.NET e fundador da 4GuysFromRolla.com, trabalha com tecnologias Web Microsoft desde 1998. Seu livro mais recente é `@MasterType` `Site.master`Sams Teach por conta própria ASP.NET 3.5 in 24 horas`Master`.
+Essa diretiva instrui o mecanismo do ASP.NET para adicionar uma referência fortemente tipada para a página mestra por meio de uma propriedade chamada `Master`. Com o `@MasterType` diretiva em vigor, podemos chamar o `Site.master` mestre da página de propriedades públicas e métodos diretamente por meio de `Master` propriedade sem todas as conversões.
 
 > [!NOTE]
-> Scott pode ser contatado pelo `@MasterType` `Page.Master` `Master` ou por meio de seu blog em   . Revisor de avanço para este tutorial foi Zack Jones. `Page.Master`Nesse caso, escreva-me em Para obter uma visão mais completa em por que esse é o caso e como a `Master` propriedade é construída quando o `@MasterType` diretiva for incluída, consulte [K. Scott Allen](http://odetocode.com/blogs/scott/default.aspx)da entrada de blog [ `@MasterType` no ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx).
+> Se você omitir a `@MasterType` diretiva, a sintaxe `Page.Master` e `Master` retornar a mesma coisa: um objeto tipagem para a página mestra do título. Se você incluir a `@MasterType` , em seguida, a diretiva `Master` retorna uma referência fortemente tipada para a página mestra especificada. `Page.Master`, no entanto, ainda retornará uma referência fracamente tipada. Para obter uma visão mais completa em por que esse é o caso e como a `Master` propriedade é construída quando o `@MasterType` diretiva for incluída, consulte [K. Scott Allen](http://odetocode.com/blogs/scott/default.aspx)da entrada de blog [ `@MasterType` no ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx).
 
 
 ### <a name="updating-the-master-page-after-adding-a-new-product"></a>Atualizando a página mestra depois de adicionar um novo produto
