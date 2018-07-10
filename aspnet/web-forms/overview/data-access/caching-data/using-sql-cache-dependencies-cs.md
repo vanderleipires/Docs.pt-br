@@ -4,19 +4,16 @@ title: Uso de dependências de Cache SQL (c#) | Microsoft Docs
 author: rick-anderson
 description: A estratégia de cache mais simples é permitir que os dados armazenados em cache expirar após um período de tempo especificado. Mas essa abordagem simples significa que os dados armazenados em cache maintai...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: 0e91842c-7f10-4aed-8c23-4ee3e2774014
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 16766ce7d741a9bcaea7cc676ed87978ea9f9f68
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 3401babaa3541bcf214f778b5ad4f1ea4ae76b38
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385898"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802579"
 ---
 <a name="using-sql-cache-dependencies-c"></a>Uso de dependências de Cache SQL (c#)
 ====================

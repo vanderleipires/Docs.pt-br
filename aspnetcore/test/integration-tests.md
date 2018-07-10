@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: 2893ff41a104b4bef1277675afaf7dd1c758ecd6
-ms.sourcegitcommit: 79d2457989fc5b08925582dab0f1511ab11ad741
+ms.openlocfilehash: e18c5704c9d4db9669d8f831f1b556d1723a0fc1
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37347246"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894160"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>Testes de integração no ASP.NET Core
 
@@ -96,10 +96,16 @@ Não há praticamente nenhuma diferença entre a configuração para testes de a
 
 O projeto de teste deve:
 
-* Ter uma referência de pacote para [Microsoft](https://www.nuget.org/packages/Microsoft.AspNetCore.App/).
-* Usar o SDK para Web no arquivo de projeto (`<Project Sdk="Microsoft.NET.Sdk.Web">`).
+* Referenciar os seguintes pacotes:
+  - [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)
+  - [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/)
+* Especifique o SDK para Web no arquivo de projeto (`<Project Sdk="Microsoft.NET.Sdk.Web">`). O SDK para Web é necessário ao fazer referência a [metapacote Microsoft](xref:fundamentals/metapackage-app).
 
-Esses prerequesities podem ser vistos na [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples/). Inspecione o *tests/RazorPagesProject.Tests/RazorPagesProject.Tests.csproj* arquivo.
+Esses pré-requisitos podem ser vistos na [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples/). Inspecione o *tests/RazorPagesProject.Tests/RazorPagesProject.Tests.csproj* arquivo. O aplicativo de exemplo usa o [xUnit](https://xunit.github.io/) estrutura de teste e o [AngleSharp](https://anglesharp.github.io/) biblioteca do analisador, portanto, o aplicativo de exemplo também referencia:
+
+* [xUnit](https://www.nuget.org/packages/xunit/)
+* [xUnit](https://www.nuget.org/packages/xunit.runner.visualstudio/)
+* [AngleSharp](https://www.nuget.org/packages/AngleSharp/)
 
 ## <a name="basic-tests-with-the-default-webapplicationfactory"></a>Testes básicos com o padrão WebApplicationFactory
 
