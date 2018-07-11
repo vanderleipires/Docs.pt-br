@@ -1,6 +1,6 @@
-# <a name="how-to-buildrun-secure-user-data-sample"></a>Como exemplo de dados de usuário segura Compile/execute
+# <a name="how-to-buildrun-secure-user-data-sample"></a>Como exemplo de dados de usuário segura de build/execução
 
-* Definir a senha com a ferramenta Gerenciador de segredo:
+* Definir a senha com a ferramenta Secret Manager:
 
   `dotnet user-secrets set SeedUserPW <pw>`
 
