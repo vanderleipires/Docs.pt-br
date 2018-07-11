@@ -2,16 +2,17 @@
 title: Suporte ao WebSockets no ASP.NET Core
 author: rick-anderson
 description: Saiba como começar a usar o WebSockets no ASP.NET Core.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/15/2018
+ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: ee529f1aaadb6b6062bed56003c51f161eae7e72
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a9fe13ef7895ea3ab43257dbbaf4521f883c0804
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273791"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37433981"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>Suporte ao WebSockets no ASP.NET Core
 
@@ -46,16 +47,9 @@ Este artigo explica como começar a usar o WebSockets no ASP.NET Core. [WebSocke
 
 Use WebSockets para trabalhar diretamente com uma conexão de soquete. Por exemplo, use WebSockets para obter o melhor desempenho possível em um jogo em tempo real.
 
-O [ASP.NET SignalR](/aspnet/signalr/overview/getting-started/introduction-to-signalr) fornece um modelo de aplicativo mais rico para a funcionalidade em tempo real, mas só é executado no ASP.NET 4.x, não no ASP.NET Core. Uma versão do SignalR para o ASP.NET Core está agendada para ser lançada com o ASP.NET Core 2.1. Confira [ASP.NET Core 2.1 high-level planning](https://github.com/aspnet/Announcements/issues/288) (Planejamento de alto nível do ASP.NET Core 2.1).
+[SignalR do ASP.NET Core](xref:signalr/introduction) é uma biblioteca que simplifica a adição da funcionalidade da Web em tempo real aos aplicativos. Ele usa WebSockets sempre que possível.
 
-É possível usar WebSockets até que o SignalR Core seja liberado. No entanto, os recursos oferecidos pelo SignalR devem ser fornecidos pelo desenvolvedor e receber o suporte dele. Por exemplo:
-
-* Suporte para uma variedade maior de versões de navegador usando fallback automático para métodos de transporte alternativos.
-* Reconexão automática quando houver uma queda de conexão.
-* Suporte para clientes que chamam métodos no servidor ou vice-versa.
-* Suporte para dimensionamento para vários servidores.
-
-## <a name="how-to-use-it"></a>Como usá-lo
+## <a name="how-to-use-websockets"></a>Como usar WebSockets
 
 * Instale o pacote [Microsoft.AspNetCore.WebSockets](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets/).
 * Configure o middleware.

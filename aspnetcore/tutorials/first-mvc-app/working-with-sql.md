@@ -5,12 +5,12 @@ description: Saiba mais sobre como usar o LocalDB do SQL Server em um aplicativo
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 05bd76038e5856d2a3e392e3b00e589dbc26fcc6
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 2981035222681e6badbb0d917e4091baa96b9af1
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36961052"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889123"
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>Trabalhar com o LocalDB do SQL Server no ASP.NET Core
 
@@ -70,6 +70,8 @@ if (context.Movie.Any())
 
 <a name="si"></a>
 ### <a name="add-the-seed-initializer"></a>Adicionar o inicializador de semeadura
+
+Substitua o conteúdo de *Program.cs* pelo código a seguir:
 
 ::: moniker range=">= aspnetcore-2.1"
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Program.cs)]

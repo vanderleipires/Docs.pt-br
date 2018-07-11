@@ -5,14 +5,14 @@ description: Descubra o auxiliar de marca parcial do ASP.NET Core e a função d
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 04/13/2018
+ms.date: 07/06/2018
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: fea84621f185c4113147cf0dfd173704bc7b6d81
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2272b2ecdd6f2b0a759356b1f03dd5c495ea1c91
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274395"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889097"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>Auxiliar de marca parcial no ASP.NET Core
 
@@ -25,7 +25,7 @@ Por [Scott Addie](https://github.com/scottaddie)
 O auxiliar de marca parcial é usado para renderizar uma [exibição parcial](xref:mvc/views/partial) em Páginas Razor e em aplicativos MVC. Considere que ele:
 
 * Exige o ASP.NET Core 2.1 ou posterior.
-* É uma alternativa à [sintaxe do HTML Helper](xref:mvc/views/partial#referencing-a-partial-view).
+* É uma alternativa à [sintaxe do HTML Helper](xref:mvc/views/partial#reference-a-partial-view).
 * Renderiza a exibição parcial de forma assíncrona.
 
 As opções do HTML Helper para renderizar uma exibição parcial incluem:
@@ -81,7 +81,17 @@ No código anterior, o valor da chave `IsNumberReadOnly` é definido como `true`
 
 Neste exemplo, o valor de `ViewData["IsNumberReadOnly"]` determina se o campo *Número* é exibido como somente leitura.
 
+## <a name="migrate-from-an-html-helper"></a>Migrar de um auxiliar HTML
+
+Considere o seguinte exemplo de auxiliar HTML assíncrono. Uma coleção de produtos é iterada e exibida. Segundo o primeiro parâmetro do método `PartialAsync`, a exibição parcial *_ProductPartial.cshtml* é carregada. Uma instância do modelo `Product` é passada para a exibição parcial para associação.
+
+[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Products.cshtml?name=snippet_HtmlHelper&highlight=3)]
+
+O auxiliar de marca parcial seguir alcança o mesmo comportamento de renderização assíncrona que o auxiliar HTML `PartialAsync`. Uma instância de modelo `Product` é atribuída ao atributo `model` para associação à exibição parcial.
+
+[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Products.cshtml?name=snippet_TagHelper&highlight=3)]
+
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Exibições parciais](xref:mvc/views/partial)
-* [Dados de tipo fraco (ViewData, atributo ViewData e ViewBag)](xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag)
+* <xref:mvc/views/partial>
+* <xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag>

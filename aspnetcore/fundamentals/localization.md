@@ -5,12 +5,12 @@ description: Saiba como o ASP.NET Core fornece serviços e middleware para local
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 0f48490af5805e4351c983f3ae519268c8e9c7a7
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9647b605d4b9a23b365085e3677fb0e9b93f0da4
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274125"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37434007"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalização e localização no ASP.NET Core
 
@@ -158,6 +158,27 @@ Os arquivos de recurso que usam `@inject IViewLocalizer` em exibições do Razor
 * Resources/Views.Home.About.fr.resx
 
 Se você não usar a opção `ResourcesPath`, o arquivo *.resx* de uma exibição estará localizado na mesma pasta da exibição.
+
+### <a name="rootnamespaceattribute"></a>RootNamespaceAttribute 
+
+O atributo [RootNamespace](/dotnet/api/microsoft.extensions.localization.rootnamespaceattribute?view=aspnetcore-2.1) fornece o namespace raiz de um assembly quando o namespace raiz de um assembly é diferente do nome do assembly. 
+
+Se o namespace raiz de um assembly é diferente do nome do assembly:
+
+* A localização não funciona por padrão.
+* A localização falha devido à maneira como os recursos são pesquisados dentro do assembly. `RootNamespace` é um valor de tempo de build que não está disponível para o processo em execução. 
+
+Se o `RootNamespace` é diferente de `AssemblyName`, inclua o seguinte no *AssemblyInfo.cs* (com valores de parâmetro substituídos pelos valores reais):
+
+```Csharp
+using System.Reflection;
+using Microsoft.Extensions.Localization;
+
+[assembly: ResourceLocation("Resource Folder Name")]
+[assembly: RootNamespace("App Root Namespace")]
+```
+
+O código anterior permite a resolução bem-sucedida de arquivos resx.
 
 ## <a name="culture-fallback-behavior"></a>Comportamento de fallback da cultura
 

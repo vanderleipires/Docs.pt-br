@@ -4,14 +4,14 @@ author: scottaddie
 description: Saiba mais sobre os recursos disponíveis para a criação de uma API Web no ASP.NET Core e quando é apropriado usar cada recurso.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 04/24/2018
+ms.date: 07/06/2018
 uid: web-api/index
-ms.openlocfilehash: ab672667d1ca349d80c4ca80f8d1f32f4871c7e6
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 84e4a51a8a8ab031752ef054cba834bd202a4927
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "36274960"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894209"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>Criar APIs Web com o ASP.NET Core
 
@@ -26,22 +26,32 @@ Este documento explica como criar uma API Web no ASP.NET Core e quando é mais a
 Herde da classe [ControllerBase](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase) em um controlador destinado a servir como uma API Web. Por exemplo:
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
-::: moniker-end
-::: moniker range="<= aspnetcore-2.0"
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
+
 ::: moniker-end
 
-A classe `ControllerBase` fornece acesso a várias propriedades e métodos. No exemplo anterior, alguns desses métodos incluem [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) e [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction). Esses métodos são invocados em métodos de ação para retornar os códigos de status HTTP 400 e 201, respectivamente. A propriedade [ModelState](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.modelstate), também fornecida pelo `ControllerBase`, é acessada para executar a validação do modelo de solicitação.
+::: moniker range="<= aspnetcore-2.0"
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
+
+::: moniker-end
+
+A classe `ControllerBase` fornece acesso a várias propriedades e métodos. No exemplo anterior, alguns desses métodos incluem [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) e [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction). Esses métodos são chamados em métodos de ação para retornar os códigos de status HTTP 400 e 201, respectivamente. A propriedade [ModelState](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.modelstate), também fornecida pelo `ControllerBase`, é acessada para executar a validação do modelo de solicitação.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="annotate-class-with-apicontrollerattribute"></a>Anotar classe com o ApiControllerAttribute
 
 O ASP.NET Core 2.1 apresenta o atributo [[ApiController]](/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute) para denotar uma classe do controlador API Web. Por exemplo:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=2)]
 
-Esse atributo é geralmente associado ao `ControllerBase` para obter acesso a propriedades e métodos úteis. `ControllerBase` fornece acesso aos métodos como [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) e [File](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.file).
+Uma versão de compatibilidade do 2.1 ou posteriores, definida por meio de [SetCompatibilityVersion](/dotnet/api/microsoft.extensions.dependencyinjection.mvccoremvcbuilderextensions.setcompatibilityversion), é necessária para usar esse atributo. Por exemplo, o código realçado em *Startup.ConfigureServices* define o sinalizador de compatibilidade 2.1:
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=2)]
+
+Geralmente, o atributo `[ApiController]` é associado ao `ControllerBase` para habilitar o comportamento específico de REST para controladores. `ControllerBase` fornece acesso aos métodos como [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) e [File](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.file).
 
 Outra abordagem é criar uma classe de base de controlador personalizada anotada com o atributo `[ApiController]`:
 
@@ -55,7 +65,7 @@ Os erros de validação disparam uma resposta HTTP 400 automaticamente. O códig
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?range=46-49)]
 
-Esse comportamento padrão é desabilitado com o código a seguir no *Startup.ConfigureServices*:
+O comportamento padrão é desabilitado quando a propriedade [SuppressModelStateInvalidFilter](/dotnet/api/microsoft.aspnetcore.mvc.apibehavioroptions.suppressmodelstateinvalidfilter) estiver definida como `true`. Adicione o seguinte código em *Startup.ConfigureServices* depois de `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=5)]
 
@@ -72,8 +82,8 @@ Um atributo de origem de associação define o local no qual o valor do parâmet
 |**[[FromRoute]](/dotnet/api/microsoft.aspnetcore.mvc.fromrouteattribute)**   | Dados de rota da solicitação atual |
 |**[[FromServices]](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices)** | O serviço de solicitação inserido como um parâmetro de ação |
 
-> [!NOTE]
-> **Não** use `[FromRoute]`, se os valores puderem conter `%2f` (que é `/`), porque `%2f` não ficará sem escape para `/`. Use `[FromQuery]`, se o valor puder conter `%2f`.
+> [!WARNING]
+> Não use `[FromRoute]` quando os valores puderem conter `%2f` (ou seja, `/`). `%2f` não ficará sem escape para `/`. Use `[FromQuery]`, se o valor puder conter `%2f`.
 
 Sem o atributo `[ApiController]`, os atributos da origem da associação são definidos explicitamente. No exemplo a seguir, o atributo `[FromQuery]` indica que o valor do parâmetro `discontinuedOnly` é fornecido na cadeia de caracteres de consulta da URL de solicitação:
 
@@ -86,10 +96,10 @@ Regras de inferência são aplicadas para as fontes de dados padrão dos parâme
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/TestController.cs?name=snippet_ActionsCausingExceptions)]
 
 * **[FromForm]**  é inferido para os parâmetros de tipo de ação [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) e [IFormFileCollection](/dotnet/api/microsoft.aspnetcore.http.iformfilecollection). Ele não é inferido para qualquer tipo simples ou definido pelo usuário.
-* **[FromRoute]**  é inferido para qualquer nome de parâmetro de ação correspondente a um parâmetro no modelo de rota. Quando várias rotas correspondem a um parâmetro de ação, qualquer valor de rota é considerado `[FromRoute]`.
+* **[FromRoute]**  é inferido para qualquer nome de parâmetro de ação correspondente a um parâmetro no modelo de rota. Quando mais de uma rota correspondem a um parâmetro de ação, qualquer valor de rota é considerado `[FromRoute]`.
 * **[FromQuery]**  é inferido para todos os outros parâmetros de ação.
 
-As regras de inferência padrão são desabilitadas com o código a seguir em *Startup.ConfigureServices*:
+As regras de inferência padrão são desabilitadas quando a propriedade [SuppressInferBindingSourcesForParameters](/dotnet/api/microsoft.aspnetcore.mvc.apibehavioroptions.suppressinferbindingsourcesforparameters) estiver definida como `true`. Adicione o seguinte código em *Startup.ConfigureServices* depois de `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=4)]
 
@@ -97,7 +107,7 @@ As regras de inferência padrão são desabilitadas com o código a seguir em *S
 
 Quando um parâmetro de ação é anotado com o atributo [[FromForm]](/dotnet/api/microsoft.aspnetcore.mvc.fromformattribute), o tipo de conteúdo de solicitação `multipart/form-data` é inferido.
 
-O comportamento padrão é desabilitado com o código a seguir em *Startup.ConfigureServices*:
+O comportamento padrão é desabilitado quando a propriedade [SuppressConsumesConstraintForFormFileParameters](/dotnet/api/microsoft.aspnetcore.mvc.apibehavioroptions.suppressconsumesconstraintforformfileparameters) estiver definida como `true`. Adicione o seguinte código em *Startup.ConfigureServices* depois de `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=3)]
 
@@ -108,12 +118,13 @@ O roteamento de atributo se torna um requisito. Por exemplo:
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=1)]
 
 As ações são inacessíveis por meio de [rotas convencionais](xref:mvc/controllers/routing#conventional-routing) definidas em [UseMvc](/dotnet/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions.usemvc#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvc_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Microsoft_AspNetCore_Routing_IRouteBuilder__) ou [UseMvcWithDefaultRoute](/dotnet/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions.usemvcwithdefaultroute#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_) em *Startup.Configure*.
+
 ::: moniker-end
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Tipos de retorno de ação do controlador](xref:web-api/action-return-types)
-* [Formatadores personalizados](xref:web-api/advanced/custom-formatters)
-* [Formatar dados de resposta](xref:web-api/advanced/formatting)
-* [Páginas de Ajuda usando o Swagger](xref:tutorials/web-api-help-pages-using-swagger)
-* [Roteamento para ações do controlador](xref:mvc/controllers/routing)
+* <xref:web-api/action-return-types>
+* <xref:web-api/advanced/custom-formatters>
+* <xref:web-api/advanced/formatting>
+* <xref:tutorials/web-api-help-pages-using-swagger>
+* <xref:mvc/controllers/routing>
