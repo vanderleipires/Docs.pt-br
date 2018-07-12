@@ -5,12 +5,12 @@ description: Saiba mais sobre a estrutura de registros no ASP.NET Core. Descubra
 ms.author: tdykstra
 ms.date: 12/15/2017
 uid: fundamentals/logging/index
-ms.openlocfilehash: 969ad303c3fee06aa40d43140153ffbf58b735db
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: dde01129bb7ea29544c4c416dfe9b5522a738d01
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126281"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938479"
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -29,6 +29,8 @@ O ASP.NET Core dá suporte a uma API de registro em log que funciona com uma var
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ::: moniker-end
+
+Para obter informações sobre o registro stdout ao hospedar com IIS, confira <xref:host-and-deploy/iis/troubleshoot#aspnet-core-module-stdout-log>. Para obter informações sobre o registro stdout com o Serviço de Aplicativo do Azure, confira <xref:host-and-deploy/azure-apps/troubleshoot#aspnet-core-module-stdout-log>.
 
 ## <a name="how-to-create-logs"></a>Como criar logs
 
