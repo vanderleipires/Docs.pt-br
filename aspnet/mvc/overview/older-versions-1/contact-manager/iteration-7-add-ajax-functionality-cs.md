@@ -4,19 +4,16 @@ title: 'Iteração #7 – adicionar funcionalidade do Ajax (c#) | Microsoft Docs
 author: microsoft
 description: A sétima iteração, podemos melhorar a capacidade de resposta e o desempenho do nosso aplicativo, adicionando suporte para Ajax.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: f1b0809e-8909-444e-b6bb-a5cd1dea3f72
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17978cc8deacb6c023afa1c81f91a256e4eacb28
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: b7214a419b841f6814c3c37834b8ecd40e141926
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394223"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823291"
 ---
 <a name="iteration-7--add-ajax-functionality-c"></a>Iteração #7 – adicionar funcionalidade do Ajax (c#)
 ====================
@@ -93,21 +90,21 @@ Adicione o seguinte JavaScript inclui dentro de &lt;head&gt; marca da sua págin
 
 ## <a name="refactoring-the-index-view-to-use-ajax"></a>A exibição de índice para usar o Ajax de refatoração
 
-Primeiro, podemos refatorar a exibição índice de modo que clicar em um grupo de contato não atualiza a exibição inteira. Em vez disso, clicar em um grupo de contato somente atualiza a lista de contatos.
+Permitir que o s comece modificando nossa exibição de índice, de modo que apenas clicando em um grupo de contatos atualiza a região da exibição que exibe os contatos. A caixa vermelha na Figura 1 contém a região que queremos atualizar.
 
 
-[![Em seguida, usamos efeitos de animação do jQuery para esmaecer e aplicar fade-in a lista de contatos.](iteration-7-add-ajax-functionality-cs/_static/image1.jpg)](iteration-7-add-ajax-functionality-cs/_static/image1.png)
+[![Atualizar somente os contatos](iteration-7-add-ajax-functionality-cs/_static/image1.jpg)](iteration-7-add-ajax-functionality-cs/_static/image1.png)
 
-**Adicionando animação a um aplicativo Ajax pode ser usado para fornecer aos usuários do aplicativo com o equivalente de uma barra de progresso do navegador.
+**Figura 01**: atualizar somente os contatos ([clique para exibir a imagem em tamanho normal](iteration-7-add-ajax-functionality-cs/_static/image2.png))
 
 
-Também adicionamos suporte ao histórico de navegador para o nosso aplicativo Ajax. Habilitamos a usuários, clique novamente no navegador e encaminhar os botões para alterar o estado da exibição índice.
+A primeira etapa é separar a parte do modo de exibição que desejamos atualize de forma assíncrona em um parcial separado (controle de usuário do modo de exibição). A seção da exibição índice que exibe a tabela de contatos foi movida para parcial na listagem 1.
 
-**Por fim, criamos um link de exclusão que dá suporte a operações HTTP DELETE.**
+**Listagem 1 - Views\Contact\ContactList.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample2.aspx)]
 
-Ao realizar exclusões de Ajax, podemos permitir que os usuários excluir registros de banco de dados sem exigir que o usuário solicitar uma página de confirmação de exclusão adicionais. O *Inherits* atributo na &lt;% @ Page %&gt; diretiva especifica que a parcial herda o ViewUserControl&lt;grupo&gt; classe.
+Observe que a parcial na listagem 1 tem um modelo diferente do que o modo de exibição de índice. O *Inherits* atributo na &lt;% @ Page %&gt; diretiva especifica que a parcial herda o ViewUserControl&lt;grupo&gt; classe.
 
 O modo de exibição de índice atualizado está contido na listagem 2.
 

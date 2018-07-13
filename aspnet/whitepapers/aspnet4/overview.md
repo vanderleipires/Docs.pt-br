@@ -4,19 +4,16 @@ title: ASP.NET 4 e visão geral de desenvolvimento Visual Studio 2010 Web | Micr
 author: rick-anderson
 description: Este documento fornece uma visão geral de muitos dos novos recursos do ASP.NET que estão incluídos no.NET Framework 4 e no Visual Studio 2010.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
-ms.technology: ''
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 7a75b0c39c923bb500368dbb2304b534d8ed994d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 5c7aa95b18bc0a97f42cc981476c110830286fa5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380773"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829037"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 e visão geral de desenvolvimento Visual Studio 2010 Web
 ====================
@@ -28,7 +25,7 @@ ms.locfileid: "37380773"
 **Conteúdo**
 
 **[Core Services](#0.2__Toc253429238 "_Toc253429238")**  
-[Arquivo Web. config refatoração](#0.2__Toc253429239 "_Toc253429239")  
+[Web.config File Refactoring](#0.2__Toc253429239 "_Toc253429239")  
 [O cache de saída extensível](#0.2__Toc253429240 "_Toc253429240")  
 [Aplicativos da Web de auto-Start](#0.2__Toc253429241 "_Toc253429241")  
 [Redirecionando permanentemente uma página](#0.2__Toc253429242 "_Toc253429242")  
@@ -52,7 +49,7 @@ ms.locfileid: "37380773"
 [Roteamento no ASP.NET 4](#0.2__Toc253429260 "_Toc253429260")  
 [Definindo as IDs de cliente](#0.2__Toc253429261 "_Toc253429261")  
 [Manter seleção de linha nos controles de dados](#0.2__Toc253429262 "_Toc253429262")  
-[Controle de gráfico do ASP.NET](#0.2__Toc253429263 "_Toc253429263")  
+[ASP.NET Chart Control](#0.2__Toc253429263 "_Toc253429263")  
 [Filtrando dados com o controle QueryExtender](#0.2__Toc253429264 "_Toc253429264")  
 [Expressões de código codificadas em HTML](#0.2__Toc253429265 "_Toc253429265")  
 [As alterações do modelo de projeto](#0.2__Toc253429266 "_Toc253429266")  
@@ -80,10 +77,10 @@ ms.locfileid: "37380773"
 [Novos atributos para exibição do controle e suporte a enumerações](#0.2__Toc253429286 "_Toc253429286")  
 [Suporte aprimorado para filtros](#0.2__Toc253429287 "_Toc253429287")
 
-**[Melhorias de desenvolvimento da Web do Visual Studio 2010](#0.2__Toc253429288 "_Toc253429288")**  
+**[Visual Studio 2010 Web Development Improvements](#0.2__Toc253429288 "_Toc253429288")**  
 [CSS compatibilidade aprimorada](#0.2__Toc253429289 "_Toc253429289")  
 [HTML e JavaScript trechos](#0.2__Toc253429290 "_Toc253429290")  
-[Aprimoramentos do JavaScript IntelliSense](#0.2__Toc253429291 "_Toc253429291")
+[JavaScript IntelliSense Enhancements](#0.2__Toc253429291 "_Toc253429291")
 
 **[Implantação de aplicativo com o Visual Studio 2010 Web](#0.2__Toc253429292 "_Toc253429292")**  
 [Web Packaging](#0.2__Toc253429293 "_Toc253429293")  
@@ -102,7 +99,7 @@ ASP.NET 4 apresenta uma série de recursos que melhoram a serviços do ASP.NET c
 
 <a id="0.2__Toc243304613"></a><a id="0.2__Toc253429239"></a><a id="0.2__Toc224729019"></a>
 
-### <a name="webconfig-file-refactoring"></a>Arquivo Web. config de refatoração
+### <a name="webconfig-file-refactoring"></a>Web.config File Refactoring
 
 O `Web.config` arquivo que contém a configuração para um aplicativo Web cresceu consideravelmente nas versões anteriores do .NET Framework como novos recursos foram adicionados, como o Ajax, roteamento e a integração com o IIS 7. Isso tornou mais difícil de configurar ou iniciar novos aplicativos Web sem uma ferramenta como o Visual Studio. No. the .NET Framework 4, os elementos de configuração principais foram movidos para o `machine.config` arquivos e aplicativos agora herdarão essas configurações. Isso permite que o `Web.config` arquivo em aplicativos ASP.NET 4 estar vazio ou conter apenas as seguintes linhas, que especificam para o Visual Studio qual versão do framework que o aplicativo está definindo como destino:
 
@@ -499,89 +496,89 @@ Para substituir completamente a funcionalidade de definição de recursos de nav
 
     [!code-csharp[Main](overview/samples/sample31.cs)]
 
-    Esse código deve ser executado *aplicativo\_começar* evento do `Global.asax` arquivo. Sabendo que o *id* atributo para elementos renderizados é importante se seu aplicativo incluir um script de cliente que faz referência a esses elementos.
+    Esse código deve ser executado *aplicativo\_começar* evento do `Global.asax` arquivo. Qualquer alteração de *BrowserCapabilitiesProvider* classe deve ocorrer antes que qualquer código no aplicativo é executado, para certificar-se de que o cache permanece em um estado válido para o resolvido *HttpCapabilitiesBase* objeto.
 
-#### <a name="caching-the-httpbrowsercapabilities-object"></a>O identificação atributo em HTML que é renderizado para controles de servidor Web é gerado com base nas ClientID propriedade do controle.
+#### <a name="caching-the-httpbrowsercapabilities-object"></a>Armazenamento em cache o objeto HttpBrowserCapabilities
 
-Até que o ASP.NET 4, o algoritmo para gerar o *identificação* de atributos do ClientID propriedade tiver sido concatenar o contêiner de nomenclatura (se houver) com a ID e, no caso de controles repetidos (como em controles de dados), para adicionar um prefixo e um número sequencial. Embora isso tenha sempre a garantia de que as IDs dos controles na página sejam exclusivas, o algoritmo resultou em identificações de controle que não foram previsível e, portanto, eram difíceis de referência no script de cliente. O novo ClientIDMode propriedade permite que você especificar mais precisamente como a ID do cliente é gerada para controles. Você pode definir as *ClientIDMode* propriedade para qualquer controle, inclusive para a página. Configurações possíveis são os seguintes: Siga estas etapas:
+O exemplo anterior tem um problema, o que é que o código seria executado sempre que o provedor personalizado é invocado para obter o *HttpBrowserCapabilities* objeto. Isso pode ocorrer várias vezes durante cada solicitação. No exemplo, o código para o provedor não faz muito. No entanto, se o código no seu provedor personalizado executa um trabalho significativo em ordem para obter o *HttpBrowserCapabilities* do objeto, isso pode afetar o desempenho. Para evitar que isso aconteça, você pode armazenar em cache o *HttpBrowserCapabilities* objeto. Siga estas etapas:
 
-1. AutoID* – isso é equivalente ao algoritmo para a geração ClientID valores de propriedade que foi usado em versões anteriores do ASP.NET. 
+1. Criar uma classe que deriva de *HttpCapabilitiesProvider*, conforme mostrado no exemplo a seguir: 
 
     [!code-csharp[Main](overview/samples/sample32.cs)]
 
-    Estática – Especifica que o ClientID valor será igual à ID sem concatenando as IDs dos contêineres de nomenclatura do pai. Isso pode ser útil em controles de usuário da Web. Como um controle de usuário da Web pode ser localizado em diferentes páginas e nos controles de contêiner diferente, pode ser difícil de escrever script de cliente para controles que usam o AutoID algoritmo porque você não pode prever quais serão os valores de ID .
-2. Previsível – essa opção é principalmente para uso em controles de dados que usam modelos de repetição.
+    No exemplo, o código gera uma chave de cache chamando um método BuildCacheKey personalizado e obtém o período de tempo ao cache chamando um método GetCacheTime personalizado. O código, em seguida, adiciona o resolvido *HttpBrowserCapabilities* objeto ao cache. O objeto pode ser recuperado do cache e reutilizado em solicitações subsequentes que fazem usam do provedor personalizado.
+2. Registre o provedor com o aplicativo, conforme descrito no procedimento anterior.
 
-#### <a name="extending-aspnet-browser-capabilities-functionality"></a>Ele concatena as propriedades de identificação de contêineres de nomenclatura do controle, mas gerado ClientID valores não contêm cadeias de caracteres como "ctlxxx".
+#### <a name="extending-aspnet-browser-capabilities-functionality"></a>Estendendo a funcionalidade de recursos do navegador ASP.NET
 
-Essa configuração funciona em conjunto com o *ClientIDRowSuffix* propriedade do controle. Defina as ClientIDRowSuffix propriedade para o nome de um campo de dados e o valor desse campo é usada como o sufixo para o gerado ClientID valor. Normalmente você usaria a chave primária de um registro de dados como o ClientIDRowSuffix valor. Herdar – essa configuração é o comportamento padrão para controles, ela especifica que a geração de ID do controle é o mesmo que seu pai.
+A seção anterior descreveu como criar um novo *HttpBrowserCapabilities* objeto no ASP.NET 4. Você também pode estender a funcionalidade de recursos do navegador ASP.NET, adicionando novas definições de recursos do navegador para aqueles que já estão no ASP.NET. Você pode fazer isso sem usar as definições do navegador XML. O procedimento a seguir mostra como.
 
-1. Você pode definir as *ClientIDMode* propriedade no nível da página. 
+1. Criar uma classe que deriva de *HttpCapabilitiesEvaluator* e que substitui o *GetBrowserCapabilities* método, conforme mostrado no exemplo a seguir: 
 
     [!code-csharp[Main](overview/samples/sample33.cs)]
 
-    Isso define o padrão ClientIDMode valor para todos os controles na página atual. O padrão *ClientIDMode* é o valor no nível da página *AutoID*e o padrão ClientIDMode valor no nível de controle é herdar.
-2. Como resultado, se você não definir essa propriedade em qualquer lugar no seu código, todos os controles padrão serão o AutoID algoritmo.
+    Primeiro, esse código usa a funcionalidade de recursos do navegador ASP.NET para tentar identificar o navegador. No entanto, se nenhum navegador é identificado com base nas informações definidas na solicitação (ou seja, se o *Browser* propriedade da *HttpBrowserCapabilities* objeto é a cadeia de caracteres "Desconhecido"), o código chama o provedor personalizado (MyBrowserCapabilitiesEvaluator) para identificar o navegador.
+2. Registre o provedor com o aplicativo, conforme descrito no exemplo anterior.
 
-#### <a name="extending-browser-capabilities-functionality-by-adding-new-capabilities-to-existing-capabilities-definitions"></a>Definir o valor de nível de página na @ Page diretiva, conforme mostrado no exemplo a seguir:
+#### <a name="extending-browser-capabilities-functionality-by-adding-new-capabilities-to-existing-capabilities-definitions"></a>Estender a funcionalidade de recursos do navegador, adicionando novas funcionalidades a definições de recursos existentes
 
-Você também pode definir as ClientIDMode valor no arquivo de configuração no nível do computador (computador) ou no nível do aplicativo. Isso define o padrão ClientIDMode configuração para todos os controles em todas as páginas no aplicativo. Se você definir o valor no nível do computador, ele define o padrão ClientIDMode configuração para todos os sites nesse computador.
+Além de criar um provedor de definição de navegador personalizado e criando dinamicamente novas definições do navegador, você pode estender as definições de navegador existentes com recursos adicionais. Isso permite que você use uma definição de perto o que você deseja, mas não tem apenas algumas funcionalidades. Para fazer isso, use as etapas a seguir.
 
-1. Você pode definir as *ClientIDMode* propriedade no nível da página. 
+1. Criar uma classe que deriva de *HttpCapabilitiesEvaluator* e que substitui o *GetBrowserCapabilities* método, conforme mostrado no exemplo a seguir: 
 
     [!code-csharp[Main](overview/samples/sample34.cs)]
 
-    A exemplo a seguir mostra a *ClientIDMode* configuração no arquivo de configuração:
+    O exemplo de código se estende do ASP.NET existentes *HttpCapabilitiesEvaluator* classe e obtém os *HttpBrowserCapabilities* objeto que corresponde à definição de solicitação atual usando o código a seguir :
 
     [!code-csharp[Main](overview/samples/sample35.cs)]
 
-    Conforme observado anteriormente, o valor de ClientID propriedade é derivada do contêiner de nomenclatura para o pai do controle. Em alguns cenários, como quando você estiver usando as páginas mestras, controles podem acabar com IDs de como as mostradas na seguinte HTML renderizado:
+    O código, em seguida, pode adicionar ou modificar um recurso para este navegador. Há duas maneiras para especificar uma nova funcionalidade do navegador:
 
-    - Mesmo que o *entrada* mostrado na marcação de elemento (de um *caixa de texto* controle) é apenas dois contêineres de nomenclatura abaixo na página (aninhada *ContentPlaceholder* controles), Por causa da maneira que as páginas mestras são processadas, o resultado final é uma ID de controle semelhante ao seguinte: Essa ID é garantido que seja exclusivo na página, mas é desnecessariamente longo para a maioria das finalidades.
-    - Imagine que você deseja reduzir o tamanho da ID renderizada e para ter mais controle sobre como a ID é gerada. (Por exemplo, você deseja eliminar os prefixos "ctlxxx".) A maneira mais fácil de fazer isso é, definindo o *ClientIDMode* propriedade conforme mostrado no exemplo a seguir: 
+    - Adicionar um par chave/valor para o *IDictionary* objeto é exposto pelo *funcionalidades* propriedade do *HttpCapabilitiesBase* objeto. No exemplo anterior, o código adiciona um recurso chamado multitoque com um valor de *verdadeira*.
+    - Defina as propriedades existentes da *HttpCapabilitiesBase* objeto. No exemplo anterior, o código define a *quadros* propriedade *verdadeiro*. Essa propriedade é simplesmente um acessador para o *IDictionary* objeto é exposto pelo *recursos* propriedade. 
 
         > [!NOTE]
-        > Neste exemplo, o *ClientIDMode* estiver definida como estático para mais externo NamingPanel elemento e definido como previsível para interna NamingControl elemento.
-2. Essas configurações resultam na marcação a seguir (o restante da página e a página mestra é considerado ser o mesmo, conforme mostrado no exemplo anterior):
+        > Observe que esse modelo se aplica a qualquer propriedade do *HttpBrowserCapabilities*, incluindo adaptadores de controle.
+2. Registre o provedor com o aplicativo, conforme descrito no procedimento anterior.
 
 <a id="0.2__Toc224729036"></a><a id="0.2__Toc253429260"></a><a id="0.2__Toc243304634"></a>
 
-### <a name="routing-in-aspnet-4"></a>O estáticos configuração tem o efeito de redefinir na hierarquia de nomenclatura para todos os controles dentro do mais externo NamingPanel elemento e de eliminar o ContentPlaceHolder e MasterPage IDs da identificação do gerado.
+### <a name="routing-in-aspnet-4"></a>Roteamento no ASP.NET 4
 
-(O nome atributo de elementos renderizados é afetado, portanto, a funcionalidade normal do ASP.NET é retida por eventos, o estado de exibição e assim por diante.) Um efeito colateral de redefinição na hierarquia de nomenclatura é que, mesmo se você mover a marcação para o NamingPanel elementos para outra ContentPlaceholder controle, as IDs de cliente renderizado permanecem os mesmos. Observe que cabe a você certifique-se de que as IDs de controle renderizado são exclusivas. Se não, isso pode interromper qualquer funcionalidade que exija IDs exclusivos para elementos HTML individuais, como o cliente getElementById função.
+ASP.NET 4 adiciona suporte interno para usar o roteamento com formulários da Web. Roteamento permite que você configurar um aplicativo para aceitar solicitação de URLs que não são mapeadas para arquivos físicos. Em vez disso, você pode usar o roteamento para definir URLs que são significativas para os usuários e que podem ajudar com a otimização do mecanismo de pesquisa (SEO) para seu aplicativo. Por exemplo, a URL para uma página que exibe as categorias de produtos em um aplicativo existente pode parecer com o exemplo a seguir:
 
 [!code-console[Main](overview/samples/sample36.cmd)]
 
-Criação de IDs de cliente previsíveis em controles ligados a dados
+Usando o roteamento, você pode configurar o aplicativo para aceitar a URL para renderizar as mesmas informações a seguir:
 
 [!code-console[Main](overview/samples/sample37.cmd)]
 
-O ClientID valores que são gerados para controles em um controle de lista associado a dados pelo algoritmo herdado podem ser longos e não são realmente previsíveis. O [ClientIDMode] funcionalidade pode ajudá-lo a ter mais controle sobre como essas IDs são geradas.") A marcação no exemplo a seguir inclui um ListView controle: No exemplo anterior, o ClientIDMode e RowClientIDRowSuffix propriedades são definidas na marcação.
+Roteamento está disponível começando com o ASP.NET 3.5 SP1. (Para obter um exemplo de como usar o roteamento no ASP.NET 3.5 SP1, consulte a entrada [usando roteamento com WebForms](http://haacked.com/archive/2008/03/11/using-routing-with-webforms.aspx "título desta entrada.") no blog de Phil Haack.) No entanto, o ASP.NET 4 inclui alguns recursos que tornam mais fácil de usar o roteamento, incluindo o seguinte:
 
-- O *ClientIDRowSuffix* propriedade pode ser usada somente em controles ligados a dados e seu comportamento é diferente dependendo de qual controle você está usando. As diferenças são estes:
-- GridView* controle — você pode especificar o nome de uma ou mais colunas na fonte de dados, que são combinados em tempo de execução para criar o cliente IDs. Por exemplo, se você definir RowClientIDRowSuffix para "ProductName, ProductId," IDs de controle para elementos renderizados terá um formato semelhante ao seguinte:
-- ListView* controle — você pode especificar uma única coluna na fonte de dados que é acrescentado à ID de cliente.
-- *Por exemplo, se você definir *ClientIDRowSuffix* para "NomeDoProduto", as IDs de controle renderizada terá um formato semelhante ao seguinte:
-- *Nesse caso, o 1 à direita é derivado da ID do produto do item de dados atual.
-- Repetidor* controle — esse controle não dá suporte a *ClientIDRowSuffix* propriedade.
+- O *PageRouteHandler* classe, que é um simple manipulador HTTP que você usa quando você define rotas. A classe transmite dados para a página que a solicitação é encaminhada para.
+- As novas propriedades *HttpRequest.RequestContext* e *Page.RouteData* (que é um proxy para o *HttpRequest.RequestContext.RouteData* objeto). Essas propriedades facilitam para acessar as informações que são passadas da rota.
+- Os seguintes construtores de expressões nova, que são definidos no *System.Web.Compilation.RouteUrlExpressionBuilder* e *System.Web.Compilation.RouteValueExpressionBuilder*:
+- *RouteUrl*, que fornece uma maneira simples de criar uma URL que corresponde a uma URL da rota em um controle de servidor ASP.NET.
+- *RouteValue*, que fornece uma maneira simple para extrair informações do *RouteContext* objeto.
+- O *RouteParameter* classe, o que torna mais fácil passar os dados contidos em um *RouteContext* objeto a uma consulta de um controle de fonte de dados (semelhante à [ *FormParameter* ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx)).
 
-#### <a name="routing-for-web-forms-pages"></a>Em um Repeater controle, o índice da linha atual é usado.
+#### <a name="routing-for-web-forms-pages"></a>Roteamento para páginas de Web Forms
 
-Quando você usa ClientIDMode = "Previsível" com um *Repeater* controlar, as IDs são geradas de cliente que têm o seguinte formato:
+O exemplo a seguir mostra como definir uma rota de Web Forms usando o novo *MapPageRoute* método o *rota* classe:
 
 [!code-csharp[Main](overview/samples/sample38.cs)]
 
-O 0 à direita é o índice da linha atual. O *FormView* e DetailsView controles não exibem várias linhas, portanto, eles não dão suporte a ClientIDRowSuffix propriedade.
+O ASP.NET 4 apresenta o *MapPageRoute* método. O exemplo a seguir é equivalente à definição de SearchRoute mostrada no exemplo anterior, mas usa o *PageRouteHandler* classe.
 
 [!code-csharp[Main](overview/samples/sample39.cs)]
 
-Manter seleção de linha nos controles de dados O GridView e ListView controles podem permitir que usuários selecionem uma linha.
+O código de exemplo mapeia a rota para uma página física (em que a primeira rota, a `~/search.aspx`). A primeira definição de rota também especifica que o parâmetro denominado searchterm deve ser extraído da URL e passado para a página.
 
-Nas versões anteriores do ASP.NET, seleção tem sido com base no índice de linha na página.
+O *MapPageRoute* método dá suporte a sobrecargas de método a seguir:
 
 - *MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess)*
-- *Por exemplo, se você selecionar o terceiro item na página 1 e, em seguida, mova para a página 2, o terceiro item nessa página é selecionado.*
-- *Persistente seleção foi inicialmente tem suporte apenas em projetos de dados dinâmicos no .NET Framework 3.5 SP1.*
+- *MapPageRoute (routeName de cadeia de caracteres, routeUrl de cadeia de caracteres, physicalFile de cadeia de caracteres, bool checkPhysicalUrlAccess, RouteValueDictionary padrões)*
+- *MapPageRoute (routeName de cadeia de caracteres, routeUrl de cadeia de caracteres, physicalFile de cadeia de caracteres, bool checkPhysicalUrlAccess, RouteValueDictionary padrões, restrições de RouteValueDictionary)*
 
 O *checkPhysicalUrlAccess* parâmetro especifica se a rota deve verificar as permissões de segurança para a página física que está sendo roteado para (nesse caso, aspx) e as permissões da URL de entrada (nesse caso, pesquisar / {searchterm}). Se o valor de *checkPhysicalUrlAccess* é *falso*, somente as permissões de URL de entrada serão verificadas. Essas permissões são definidas no `Web.config` arquivo usando as configurações, como o seguinte:
 
@@ -985,7 +982,7 @@ Em seguida, você pode definir uma classe CSS que se aplica apenas à *ocultos* 
 Por padrão, os seguintes controles de servidor Web do ASP.NET que dão suporte a modelos são automaticamente encapsulados em uma tabela externa que é usada para aplicar estilos embutidos:
 
 - *FormView*
-- *Logon*
+- *Login*
 - *PasswordRecovery*
 - *ChangePassword*
 - *Assistente*
