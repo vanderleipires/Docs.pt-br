@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: cabf3d955ef2eb17b3bcb40170a9de7b53ffd107
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 0d35de827ca6fea530229f1ef263ea7b9351e5ad
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077625"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992822"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>Adicionar validação a uma Página Razor do ASP.NET Core
 
@@ -157,6 +157,8 @@ O seguinte código mostra como combinar atributos em uma linha:
 
 Confira as instruções sobre como publicar este aplicativo no Azure em [Publicar um aplicativo Web ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs).
 
+Obrigado por concluir esta introdução às Páginas Razor. Agradecemos os comentários. A [Introdução ao MVC e ao EF Core](xref:data/ef-mvc/intro) é um excelente acompanhamento para este tutorial.
+
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Trabalhando com formulários](xref:mvc/views/working-with-forms)
@@ -165,5 +167,4 @@ Confira as instruções sobre como publicar este aplicativo no Azure em [Publica
 * [Auxiliares de marca de autor](xref:mvc/views/tag-helpers/authoring)
 
 > [!div class="step-by-step"]
-> [Antes: adicionando um novo campo](xref:tutorials/razor-pages/new-field)
-> [Depois: carregando arquivos](xref:tutorials/razor-pages/uploading-files)
+> [Anterior: Adicionando um novo campo](xref:tutorials/razor-pages/new-field)

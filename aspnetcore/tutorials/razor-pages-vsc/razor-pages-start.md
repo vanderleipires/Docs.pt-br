@@ -2,26 +2,22 @@
 title: Introdução a Páginas Razor do ASP.NET Core no Visual Studio Code
 author: rick-anderson
 description: Conheça as noções básicas da criação de um aplicativo Web Páginas Razor do ASP.NET Core Razor com o Visual Studio Code.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/razor-pages-vsc/razor-pages-start
-ms.openlocfilehash: 17ab52b80a40f6204e2bf2cf9048071c55c0a708
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: b1f1dcc1401d707cff79f3269ab70b900e9fc21c
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252211"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38123377"
 ---
 # <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a>Introdução a Páginas Razor do ASP.NET Core no Visual Studio Code
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Este tutorial ensina as noções básicas de criação de um aplicativo Web de Páginas do Razor do ASP.NET Core. Recomendamos que você conclua a [Introdução a Páginas do Razor](xref:mvc/razor-pages/index) antes de iniciar este tutorial. Páginas do Razor é a maneira recomendada para criar a interface do usuário para aplicativos Web no ASP.NET Core.
+Este tutorial ensina as noções básicas de criação de um aplicativo Web de Páginas do Razor do ASP.NET Core. Recomendamos que você conclua a [Introdução a Páginas do Razor](xref:razor-pages/index) antes de iniciar este tutorial. Páginas do Razor é a maneira recomendada para criar a interface do usuário para aplicativos Web no ASP.NET Core.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

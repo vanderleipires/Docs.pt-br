@@ -5,12 +5,12 @@ description: Neste tutorial, você lerá e exibirá dados relacionados – ou se
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: d5c9b665a80003ef5029754d7ad1780b3254e97e
-ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
+ms.openlocfilehash: a310c9e4b9cec6e2ab2477461f395c9bbd3fa364
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37092978"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063280"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a>ASP.NET Core MVC com o EF Core – ler dados relacionados – 6 de 10
 
@@ -155,7 +155,7 @@ Use o método `Single` em uma coleção quando souber que a coleção terá apen
 Em vez de:
 
 ```csharp
-.Where(I => i.ID == id.Value).Single()
+.Where(i => i.ID == id.Value).Single()
 ```
 
 Em seguida, se um curso foi selecionado, o curso selecionado é recuperado na lista de cursos no modelo de exibição. Em seguida, a propriedade `Enrollments` do modelo de exibição é carregada com as entidades Enrollment da propriedade de navegação `Enrollments` desse curso.

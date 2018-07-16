@@ -5,12 +5,12 @@ description: Saiba como o ASP.NET Core MVC usa o middleware de roteamento para c
 ms.author: riande
 ms.date: 03/14/2017
 uid: mvc/controllers/routing
-ms.openlocfilehash: 795ca13674f85b6e8c1f84718c225613a7a7125a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 081332fd1007db5292a8812fc6ae934cb07dffb5
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278405"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952975"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>Roteamento para ações do controlador no ASP.NET Core
 
@@ -696,7 +696,7 @@ Conceitualmente, `IActionConstraint` é uma forma de *sobrecarga*, mas em vez de
 
 A maneira mais simples de implementar um `IActionConstraint` é criar uma classe derivada de `System.Attribute` e colocá-la em suas ações e controladores. O MVC descobrirá automaticamente qualquer `IActionConstraint` que for aplicado como atributo. Você pode usar o modelo de aplicativo para aplicar restrições e, provavelmente, essa é a abordagem mais flexível, pois permite a você faça uma metaprogramação de como elas são aplicadas.
 
-No exemplo a seguir, uma restrição escolhe uma ação com base em um *código de país* dos dados de rota. O [exemplo completo no GitHub](https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs).
+No exemplo a seguir, uma restrição escolhe uma ação com base em um *código de país* dos dados de rota. O [exemplo completo no GitHub](https://github.com/aspnet/Entropy/blob/master/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs).
 
 ```csharp
 public class CountrySpecificAttribute : Attribute, IActionConstraint

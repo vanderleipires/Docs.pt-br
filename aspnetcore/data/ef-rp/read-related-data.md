@@ -5,12 +5,12 @@ description: Neste tutorial, você lê e exibe dados relacionados – ou seja, o
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 4e0aa7151cc54f666202458ba60500a7c04f5ebb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fa3147cc4ad121784911eef802e04ca91f16448f
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276754"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063306"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Ler dados relacionados – 6 de 8
 
@@ -74,19 +74,11 @@ Para exibir o nome do departamento atribuído em uma lista de cursos:
 * Execute o seguinte comando:
 
   ```console
+  dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
   dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
   ```
 
 O comando anterior gera o modelo `Course` por scaffolding. Abra o projeto no Visual Studio.
-
-Compile o projeto. O build gera erros, como o seguinte:
-
-`1>Pages/Courses/Index.cshtml.cs(26,37,26,43): error CS1061: 'SchoolContext' does not
- contain a definition for 'Course' and no extension method 'Course' accepting a first
- argument of type 'SchoolContext' could be found (are you missing a using directive or
- an assembly reference?)`
-
- Altere `_context.Course` globalmente para `_context.Courses` (ou seja, adicione um "s" a `Course`). 7 ocorrências foram encontradas e atualizadas.
 
 Abra *Pages/Courses/Index.cshtml.cs* e examine o método `OnGetAsync`. O mecanismo de scaffolding especificou o carregamento adiantado para a propriedade de navegação `Department`. O método `Include` especifica o carregamento adiantado.
 
