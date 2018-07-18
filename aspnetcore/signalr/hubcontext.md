@@ -1,47 +1,47 @@
 ---
-title: SignalR HubContext
-author: rachelappel
-description: Saiba como usar o serviço ASP.NET Core SignalR HubContext para enviar notificações para clientes externos um hub.
+title: O SignalR HubContext
+author: tdykstra
+description: Saiba como usar o serviço HubContext de SignalR do ASP.NET Core para enviar notificações para clientes externos um hub.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/13/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: ccfcdc8337275fd26e09c1a43db36cf9ab90cf46
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6b955c2064d7d6a045594e56326e2f7df282675f
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277755"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095301"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>Enviar mensagens de fora de um hub
 
 Por [Mikael Mengistu](https://twitter.com/MikaelM_12)
 
-O hub SignalR é a abstração de núcleo para enviar mensagens para clientes conectados ao servidor do SignalR. Também é possível enviar mensagens em outros locais do seu aplicativo usando o `IHubContext` service. Este artigo explica como acessar um SignalR `IHubContext` para enviar notificações aos clientes de fora de um hub.
+O hub do SignalR é a abstração central para enviar mensagens para os clientes conectados ao servidor SignalR. Também é possível enviar mensagens de outros lugares no seu aplicativo usando o `IHubContext` service. Este artigo explica como acessar um SignalR `IHubContext` para enviar notificações para clientes externos um hub.
 
 [Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubcontext/sample/) [(como fazer o download)](xref:tutorials/index#how-to-download-a-sample)
 
-## <a name="get-an-instance-of-ihubcontext"></a>Obter uma instância de `IHubContext`
+## <a name="get-an-instance-of-ihubcontext"></a>Obtenha uma instância do `IHubContext`
 
-No ASP.NET Core SignalR, você pode acessar uma instância de `IHubContext` por meio de injeção de dependência. Você pode inserir uma instância de `IHubContext` em um controlador, middleware ou outro serviço de injeção de dependência. Use a instância para enviar mensagens aos clientes.
+No SignalR do ASP.NET Core, você pode acessar uma instância de `IHubContext` por meio da injeção de dependência. Você pode injetar uma instância do `IHubContext` em um controlador, middleware ou outro serviço de injeção de dependência. Use a instância para enviar mensagens para os clientes.
 
 > [!NOTE]
-> Isso é diferente do ASP.NET SignalR que usada GlobalHost para fornecer acesso para o `IHubContext`. ASP.NET Core tem uma estrutura de injeção de dependência que elimina a necessidade de neste singleton global.
+> Isso é diferente do SignalR do ASP.NET que usado GlobalHost para fornecer acesso ao `IHubContext`. O ASP.NET Core tem uma estrutura de injeção de dependência que remove a necessidade de neste singleton global.
 
-### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>Inserir uma instância de `IHubContext` em um controlador
+### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>Injetar uma instância de `IHubContext` em um controlador
 
-Você pode inserir uma instância de `IHubContext` em um controlador, adicionando-o para seu construtor:
+Você pode injetar uma instância do `IHubContext` em um controlador, adicionando-o para seu construtor:
 
 [!code-csharp[IHubContext](hubcontext/sample/Controllers/HomeController.cs?range=12-19,57)]
 
-Agora, com acesso a uma instância de `IHubContext`, você pode chamar métodos de hub, como se estivesse no hub de si mesmo.
+Agora, com acesso a uma instância de `IHubContext`, você pode chamar métodos de hub, como se estivessem no próprio hub.
 
 [!code-csharp[IHubContext](hubcontext/sample/Controllers/HomeController.cs?range=21-25)]
 
-### <a name="get-an-instance-of-ihubcontext-in-middleware"></a>Obter uma instância de `IHubContext` no middleware
+### <a name="get-an-instance-of-ihubcontext-in-middleware"></a>Obtenha uma instância de `IHubContext` no middleware
 
-Acesso a `IHubContext` no pipeline de middleware da seguinte forma:
+Acesso a `IHubContext` dentro do pipeline de middleware da seguinte forma:
 
 ```csharp
 app.Use(next => (context) =>

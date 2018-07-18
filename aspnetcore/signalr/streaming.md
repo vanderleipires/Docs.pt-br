@@ -1,30 +1,30 @@
 ---
-title: Use o SignalR do ASP.NET Core de streaming
-author: rachelappel
+title: Usar o streaming em SignalR do ASP.NET Core
+author: tdykstra
 description: ''
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/07/2018
 uid: signalr/streaming
-ms.openlocfilehash: 08ddea4fb83150bab27a9e2685c75ff34565606b
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: 0001eed830249ac46ba35331759187bb4e7e8fd3
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36327487"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095256"
 ---
-# <a name="use-streaming-in-aspnet-core-signalr"></a>Use o SignalR do ASP.NET Core de streaming
+# <a name="use-streaming-in-aspnet-core-signalr"></a>Usar o streaming em SignalR do ASP.NET Core
 
 Por [Brennan Conroy](https://github.com/BrennanConroy)
 
-O SignalR do ASP.NET Core dá suporte a streaming valores de retorno dos métodos de servidor. Isso é útil para cenários onde fragmentos de dados ficará no decorrer do tempo. Quando um valor de retorno é transmitido para o cliente, cada fragmento é enviado ao cliente assim que ele se torna disponível, em vez de aguardar por todos os dados fiquem disponíveis.
+SignalR do ASP.NET Core dá suporte a streaming valores de retorno dos métodos de servidor. Isso é útil para cenários em que os fragmentos de dados serão apresentadas ao longo do tempo. Quando um valor de retorno é transmitido ao cliente, cada fragmento é enviado ao cliente assim que ele se torna disponível, em vez de aguardar que todos os dados fiquem disponíveis.
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/live/aspnetcore/signalr/streaming/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="set-up-the-hub"></a>Configurar o hub
 
-Um método de hub automaticamente se torna um método de hub streaming quando ele retorna um `ChannelReader<T>` ou `Task<ChannelReader<T>>`. Abaixo está um exemplo que mostra os fundamentos de fluxo de dados para o cliente. Sempre que um objeto é gravado o `ChannelReader` esse objeto é enviado imediatamente para o cliente. No final, o `ChannelReader` é concluída para dizer ao cliente o fluxo está fechado.
+Um método de hub automaticamente se torna um método de hub streaming quando ele retorna um `ChannelReader<T>` ou um `Task<ChannelReader<T>>`. Abaixo está um exemplo que mostra os conceitos básicos do fluxo de dados para o cliente. Sempre que um objeto é gravado o `ChannelReader` esse objeto é enviado imediatamente para o cliente. No final, o `ChannelReader` estiver concluído para dizer ao cliente o fluxo está fechado.
 
 > [!NOTE]
 > Gravar o `ChannelReader` em um thread em segundo plano e retorne o `ChannelReader` assim que possível. Outras chamadas de hub serão bloqueadas até que um `ChannelReader` é retornado.
@@ -33,7 +33,7 @@ Um método de hub automaticamente se torna um método de hub streaming quando el
 
 ## <a name="net-client"></a>Cliente .NET
 
-O `StreamAsChannelAsync` método `HubConnection` é usado para chamar um método de transmissão. Passe o nome do método de hub e argumentos definidos no método de hub para `StreamAsChannelAsync`. O parâmetro genérico em `StreamAsChannelAsync<T>` Especifica o tipo de objetos retornados pelo método de transmissão. Um `ChannelReader<T>` é retornada da invocação de fluxo e representa o fluxo no cliente. Para ler dados, um padrão comum é para loop sobre `WaitToReadAsync` e chamar `TryRead` quando os dados estão disponíveis. O loop será encerrado quando o fluxo foi fechado pelo servidor ou o token de cancelamento passados para `StreamAsChannelAsync` é cancelada.
+O `StreamAsChannelAsync` método no `HubConnection` é usado para invocar um método de transmissão. Passe o nome do método de hub e argumentos definidos no método de hub para `StreamAsChannelAsync`. O parâmetro genérico em `StreamAsChannelAsync<T>` Especifica o tipo de objetos retornados pelo método de transmissão. Um `ChannelReader<T>` é retornada da invocação de fluxo e representa o fluxo no cliente. Para ler dados, um padrão comum é executar um loop sobre `WaitToReadAsync` e chamar `TryRead` quando os dados estiverem disponíveis. O loop terminará quando o fluxo foi fechado pelo servidor ou o token de cancelamento passado para `StreamAsChannelAsync` é cancelada.
 
 ```csharp
 var channel = await hubConnection.StreamAsChannelAsync<int>("Counter", 10, 500, CancellationToken.None);
@@ -58,11 +58,11 @@ Os clientes JavaScript chamar métodos de streaming em hubs usando `connection.s
 * O nome do método de hub. No exemplo a seguir, o nome do método de hub é `Counter`.
 * Argumentos definidos no método de hub. No exemplo a seguir, os argumentos são: uma contagem do número de itens de fluxo para receber e o atraso entre itens de fluxo.
 
-`connection.stream` Retorna um `IStreamResult` que contém um `subscribe` método. Passar um `IStreamSubscriber` para `subscribe` e defina o `next`, `error`, e `complete` retornos de chamada para receber as notificações do `stream` invocação.
+`connection.stream` Retorna um `IStreamResult` que contém um `subscribe` método. Passar uma `IStreamSubscriber` para `subscribe` e defina as `next`, `error`, e `complete` retornos de chamada para receber as notificações a `stream` invocação.
 
 [!code-javascript[Streaming javascript](streaming/sample/wwwroot/js/stream.js?range=19-36)]
 
-Para encerrar o fluxo da chamada de cliente a `dispose` método no `ISubscription` que é retornado o `subscribe` método.
+Para encerrar o fluxo da chamada de cliente do `dispose` método na `ISubscription` que é retornado do `subscribe` método.
 
 ## <a name="related-resources"></a>Recursos relacionados
 
