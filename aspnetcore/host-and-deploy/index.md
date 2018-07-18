@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/07/2017
 uid: host-and-deploy/index
-ms.openlocfilehash: 31444475e39a12d526dd624bb508770429e414ca
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e62b68c4cfad29bb8bea3b9fbb2c231a4afeccea
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277144"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095662"
 ---
 # <a name="host-and-deploy-aspnet-core"></a>Hospedar e implantar o ASP.NET Core
 
@@ -71,6 +71,10 @@ Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo 
 ## <a name="publishing-to-azure"></a>Publicação no Azure
 
 Confira as instruções sobre como publicar um aplicativo no Azure usando o Visual Studio em [Publicar um aplicativo Web ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs). O aplicativo também pode ser publicado no Azure através da [linha de comando](xref:tutorials/publish-to-azure-webapp-using-cli).
+
+## <a name="host-in-a-web-farm"></a>Hospedar em uma web farm
+
+Para obter informações sobre a configuração para hospedar aplicativos do ASP.NET Core em um ambiente de web farm (por exemplo, a implantação de várias instâncias do aplicativo para escalabilidade), veja <xref:host-and-deploy/web-farm>.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 126a782bfd32f9ecd0596045218371ef5ccc82f2
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 6aded9525a0abd31dec8441c7fba60d8845c7d93
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894134"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938235"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Tratar erros no ASP.NET Core
 
@@ -193,7 +193,7 @@ Apenas a camada de hospedagem pode tratar exceções que ocorrem durante a inici
 
 A hospedagem apenas poderá mostrar uma página de erro para um erro de inicialização capturado se o erro ocorrer após a associação de endereço do host/porta. Se alguma associação falhar por algum motivo, a camada de hospedagem registrará uma exceção crítica em log, o processo do dotnet falhará e nenhuma página de erro será exibida quando o aplicativo estiver sendo executado no servidor [Kestrel](xref:fundamentals/servers/kestrel).
 
-Quando executado no [IIS](/iis) ou no [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview), um *502.5 Falha no Processo* será retornado pelo [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) se o processo não puder ser iniciado. Siga os avisos de solução de problemas no tópico [Solucionar problemas do ASP.NET Core no IIS](xref:host-and-deploy/iis/troubleshoot).
+Quando executado no [IIS](/iis) ou no [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview), um *502.5 Falha no Processo* será retornado pelo [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) se o processo não puder ser iniciado. Para obter informações sobre como solucionar problemas de inicialização ao hospedar com o IIS, consulte <xref:host-and-deploy/iis/troubleshoot>. Para obter informações sobre como solucionar problemas de inicialização com o Serviço de Aplicativo do Azure, consulte <xref:host-and-deploy/azure-apps/troubleshoot>.
 
 ## <a name="aspnet-mvc-error-handling"></a>Tratamento de erro do ASP.NET MVC
 
@@ -215,4 +215,5 @@ Alguns aplicativos optam por seguir uma convenção padrão para lidar com erros
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * <xref:host-and-deploy/azure-iis-errors-reference>
+* <xref:host-and-deploy/iis/troubleshoot>
 * <xref:host-and-deploy/azure-apps/troubleshoot>

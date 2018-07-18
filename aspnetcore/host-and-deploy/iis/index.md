@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 96a4403653e474bb056374909b3ee66998bc99be
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: 607bdb7ee830c9a3bbb83ca2aec4661772a285b2
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992809"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095834"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hospedar o ASP.NET Core no Windows com o IIS
 
@@ -168,9 +168,8 @@ Habilite o **Console de Gerenciamento do IIS** e os **Serviços na World Wide We
 
 1. Instale o *pacote de hospedagem do .NET Core* no sistema de hospedagem. O pacote instala o Tempo de Execução .NET Core, a Biblioteca do .NET Core e o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). O módulo cria o proxy reverso entre o IIS e o servidor Kestrel. Se o sistema não tiver uma conexão com a Internet, obtenha e instale os [Pacotes redistribuíveis do Microsoft Visual C++ 2015](https://www.microsoft.com/download/details.aspx?id=53840) antes de instalar o pacote de hospedagem do .NET Core.
 
-   1. Navegue até a [página Todos os downloads do .NET](https://www.microsoft.com/net/download/all).
-   1. Na coluna **Tempo de Execução** da tabela, selecione o tempo de execução do .NET Core não de versão prévia mais recente na lista (**downloads do Tempo de Execução do X.Y (vX.Y.Z)**). O tempo de execução mais recente tem um rótulo de **Atual**. A menos que você pretenda trabalhar com software em versão prévia, evite um tempo de execução com as palavras "versão prévia" ou "rc" (versão Release Candidate) no texto do link.
-   1. Na página de download do tempo de execução do .NET Core no **Windows**, selecione o link **Instalador de Pacote de Hospedagem** para baixar o *Pacote de Hospedagem do .NET Core*.
+   1. Navegue para a [página de downloads do .NET](https://www.microsoft.com/net/download/windows).
+   1. No **.NET Core**, selecione o botão **Baixar Tempo de Execução do .NET Core** próximo ao rótulo **Executar Aplicativos**. O executável do instalador contém a palavra "hosting" no nome do arquivo (por exemplo, *dotnet-hosting-2.1.2-win.exe*).
    1. Execute o instalador no servidor.
 
    **Importante!** Se o pacote de hospedagem for instalado antes do IIS, a instalação do pacote deverá ser reparada. Execute o instalador do pacote de hospedagem novamente depois de instalar o IIS.

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: f0b907e4322809dfe2bcd287bb064f35f5ebe150
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: 285d74c0d12e3aca4d8c33d39467dfda02712993
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36314114"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063254"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Inicialização do aplicativo no ASP.NET Core
 
@@ -41,7 +41,7 @@ O construtor de classe `Startup` aceita dependências definidas pelo host. Um us
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-Uma alternativa a injetar `IHostingEnvironment` é usar uma abordagem baseada em convenções. O aplicativo pode definir classes `Startup` separadas para ambientes diferentes (por exemplo, `StartupDevelopment`) e a classe de inicialização adequada é selecionada em tempo de execução. A classe cujo sufixo do nome corresponde ao ambiente atual é priorizada. Se o aplicativo for executado no ambiente de desenvolvimento e incluir uma classe `Startup` e uma classe `StartupDevelopment`, a classe `StartupDevelopment` será usada. Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments#environment-based-startup-class-and-methods).
+Uma alternativa a injetar `IHostingEnvironment` é usar uma abordagem baseada em convenções. O aplicativo pode definir classes `Startup` separadas para ambientes diferentes (por exemplo, `StartupDevelopment`), e a classe `Startup` adequada é selecionada em tempo de execução. A classe cujo sufixo do nome corresponde ao ambiente atual é priorizada. Se o aplicativo for executado no ambiente de desenvolvimento e incluir uma classe `Startup` e uma classe `StartupDevelopment`, a classe `StartupDevelopment` será usada. Para obter mais informações, veja [Usar vários ambientes](xref:fundamentals/environments#environment-based-startup-class-and-methods).
 
 Para saber mais sobre `WebHostBuilder`, consulte tópico sobre [Hospedagem](xref:fundamentals/host/index). Para obter informações sobre como tratar erros durante a inicialização, consulte [Tratamento de exceção na inicialização](xref:fundamentals/error-handling#startup-exception-handling).
 
@@ -84,8 +84,8 @@ A compatibilidade de padrão para aplicativos ASP.NET Core 2.1 e 2.x posteriores
 
 O código a seguir define o modo de compatibilidade para o ASP.NET Core 2.1, exceto para os seguintes comportamentos:
 
-* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
-* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
 
 [!code-csharp[Main](startup/sampleCompatibility/Startup2.cs?name=snippet1)]
 
@@ -94,7 +94,7 @@ Para aplicativos que encontram alterações da falha de comportamento, o uso das
 * Permite que você use a versão mais recente e recuse alterações da falha de comportamento específicas.
 * Tenha tempo para atualizar seu aplicativo para que ele funcione com as alterações mais recentes.
 
-Os comentários do código-fonte da classe [MvcOptions](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) têm uma boa explicação sobre o que mudou e por que as alterações são uma melhoria para a maioria dos usuários.
+Os comentários do código-fonte da classe [MvcOptions](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) têm uma boa explicação sobre o que mudou e por que as alterações são uma melhoria para a maioria dos usuários.
 
 Futuramente, haverá uma [versão 3.0 do ASP.NET Core](https://github.com/aspnet/Home/wiki/Roadmap). Os comportamentos antigos compatíveis por meio de opções de compatibilidade serão removidos na versão 3.0. Consideramos que essas são alterações positivas que beneficiam quase todos os usuários. Com a introdução dessas alterações, a maioria dos aplicativos poderá se beneficiar agora e os demais terão tempo para serem atualizados.
 

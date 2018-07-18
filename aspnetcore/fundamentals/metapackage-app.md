@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: 4840d0a7536b1e9d8da835690b285ac2074967f5
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e82c219635bbbebe1d6f5639308490c37361b286
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277466"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952949"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>Metapacote Microsoft.AspNetCore.App para ASP.NET Core 2.1
 
@@ -33,9 +33,9 @@ O uso do metapacote `Microsoft.AspNetCore.App` fornece restrições de versões 
 * Outros pacotes adicionados ao seu aplicativo não podem alterar a versão dos pacotes incluídos no `Microsoft.AspNetCore.App`.
 * A consistência de versão garante uma experiência confiável. `Microsoft.AspNetCore.App` foi projetado para evitar combinações de versão não testado de bits relacionados que estão sendo usados juntos no mesmo aplicativo.
 
-Aplicativos que usam o metapacote `Microsoft.AspNetCore.App` aproveitam automaticamente a estrutura compartilhada do ASP.NET Core. Quando você usa o metapacote `Microsoft.AspNetCore.App`, **nenhum** ativo dos pacotes NuGet do ASP.NET Core referenciados é implantado com o aplicativo &mdash;, porque a estrutura compartilhada do ASP.NET Core contém esses ativos. Os ativos na estrutura compartilhada são pré-compilados para melhorar o tempo de inicialização do aplicativo. Para obter mais informações, veja "estrutura compartilhada" em [Empacotamento de distribuição do .NET Core](/dotnet/core/build/distribution-packaging).
+Aplicativos que usam o metapacote `Microsoft.AspNetCore.App` aproveitam automaticamente a estrutura compartilhada do ASP.NET Core. Quando você usa o metapacote `Microsoft.AspNetCore.App`, **nenhum** ativo dos pacotes NuGet do ASP.NET Core referenciados é implantado com o aplicativo, porque a estrutura compartilhada do ASP.NET Core contém esses ativos. Os ativos na estrutura compartilhada são pré-compilados para melhorar o tempo de inicialização do aplicativo. Para obter mais informações, veja "estrutura compartilhada" em [Empacotamento de distribuição do .NET Core](/dotnet/core/build/distribution-packaging).
 
-O seguinte arquivo de projeto *.csproj* referencia os metapacotes `Microsoft.AspNetCore.App` para o ASP.NET Core:
+O seguinte arquivo de projeto referencia o metapacote `Microsoft.AspNetCore.App` do ASP.NET Core e representa um modelo típico do ASP.NET Core 2.1:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -45,25 +45,14 @@ O seguinte arquivo de projeto *.csproj* referencia os metapacotes `Microsoft.Asp
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
   </ItemGroup>
 
 </Project>
-
 ```
 
-A marcação anterior representa um modelo típico de ASP.NET Core 2.1 e posterior. Ela não especifica um número de versão para a referência de pacote `Microsoft.AspNetCore.App`. Quando a versão não for especificada, uma versão [implícita](https://github.com/dotnet/core/blob/master/release-notes/1.0/sdk/1.0-rc3-implicit-package-refs.md) será especificada pelo SDK, ou seja, `Microsoft.NET.Sdk.Web`. Recomendamos que você conte com a versão implícita especificada pelo SDK, e não defina explicitamente o número de versão na referência de pacote. Você pode deixar um comentário do GitHub em [Discussão sobre a versão implícita Microsoft.AspNetCore.App](https://github.com/aspnet/Docs/issues/6430).
+O número de versão na referência `Microsoft.AspNetCore.App` **não** garante que a versão da estrutura compartilhada será usada. Por exemplo, suponha que a versão `2.1.1` foi especificada, mas `2.1.3` está instalada. Nesse caso, o aplicativo usa `2.1.3`. Embora não seja recomendado, é possível desabilitar o comportamento de roll forward (patch e/ou secundário). Para obter mais informações sobre o comportamento de roll forward da versão do pacote, consulte [dotnet host roll-forward](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
 
-A versão implícita é definida como `major.minor.0` para aplicativos portátil. O mecanismo de roll forward estrutura compartilhada executará o aplicativo na versão compatível mais recente entre as estruturas compartilhadas instaladas. Para garantir que a mesma versão seja usada no desenvolvimento, no teste e na produção, certifique-se de que a mesma versão da estrutura compartilhada seja instalada em todos os ambientes. Para aplicativos independentes, o número de versão implícita é definido como `major.minor.patch` da estrutura compartilhada incluída no SDK instalado.
-
-Especificar um número de versão na referência `Microsoft.AspNetCore.App` **não** garante que a versão da estrutura compartilhada será escolhida. Por exemplo, suponha que a versão "2.1.1" foi especificada, mas "2.1.3" está instalada. Nesse caso, o aplicativo usará "2.1.3". Embora não seja recomendado, você pode desabilitar o roll forward (patch e/ou secundária). Para obter mais informações sobre como efetuar roll forward do host dotnet e como configurar seu comportamento, veja [Efetuar roll forward do host dotnet](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
-
-O `Microsoft.AspNetCore.App` [metapacote](/dotnet/core/packages#metapackages) não é um pacote tradicional que é atualizado do NuGet. Semelhante ao `Microsoft.NETCore.App`, `Microsoft.AspNetCore.App` representa um tempo de execução compartilhado, que tem semântica de controle de versão especial tratada fora do NuGet. Para obter mais informações, veja [Pacotes, metapacotes e estruturas](/dotnet/core/packages).
-
-`<Project Sdk` deve ser definido como `Microsoft.NET.Sdk.Web` para usar o `Microsoft.AspNetCore.App` da versão implícita.  Quando `<Project Sdk="Microsoft.NET.Sdk">` é usado, os seguintes avisos são gerados:
-
-*Aviso NU1604: a dependência de projeto Microsoft.AspNetCore.App não tem um limite inferior inclusivo. Inclua um limite inferior na versão de dependência para garantir resultados consistentes de restauração.*
-
-*Aviso NU1602: [Nome do Projeto] não fornece um limite inferior inclusivo para a dependência Microsoft.AspNetCore.App. Uma melhor correspondência aproximada de Microsoft.AspNetCore.App 2.1.0 foi resolvida.*
+O `Microsoft.AspNetCore.App` [metapacote](/dotnet/core/packages#metapackages) não é um pacote tradicional atualizado do NuGet. Semelhante ao `Microsoft.NETCore.App`, `Microsoft.AspNetCore.App` representa um tempo de execução compartilhado, que tem semântica de controle de versão especial tratada fora do NuGet. Para obter mais informações, veja [Pacotes, metapacotes e estruturas](/dotnet/core/packages).
 
 Se seu aplicativo tiver usado `Microsoft.AspNetCore.All`, veja [Migração do Microsoft.AspNetCore.All para Microsoft.AspNetCore.App](xref:fundamentals/metapackage#migrate).
