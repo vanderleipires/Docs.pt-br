@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: ef1b226d673d18ec333c35f193dbe6bd21e54225
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2807560484d03122ed68ee3efb49a50e45150e12
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842909"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123795"
 ---
 <a name="ui-and-navigation"></a>Interface do usuário e navegação
 ====================
@@ -164,7 +164,7 @@ Neste tutorial, você irá alterar a aparência do aplicativo Wingtip Toys, subs
 3. Renomeie o *Bootstrap* à *bootstrap original.min.css*.
 4. Na **Gerenciador de soluções**, clique com botão direito do *conteúdo* pasta e selecione **Abrir pasta no Explorador de arquivos**.  
    O Explorador de arquivos será exibido. Você salvará um arquivos baixados de CSS bootstrap para este local.
-5. No seu navegador, acesse [ http://Bootswatch.com ](http://bootswatch.com/).
+5. No seu navegador, acesse [ https://bootswatch.com/3/ ](https://bootswatch.com/3/).
 6. Role a janela do navegador até que você veja o tema Cerulean. 
 
     ![Interface do usuário e navegação - Cerulean tema](ui_and_navigation/_static/image5.png)
