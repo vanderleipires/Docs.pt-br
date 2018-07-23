@@ -43,7 +43,7 @@ Criar um novo *vazio* aplicativo web do ASP.NET Core com o mesmo nome que o proj
 
 ## <a name="configure-the-site-to-use-mvc"></a>Configurar o site para usar o MVC
 
-* Durante o direcionamento o núcleo do .NET, o ASP.NET Core metapackage é adicionado ao projeto, chamado `Microsoft.AspNetCore.All` por padrão. Este pacote contém os pacotes como `Microsoft.AspNetCore.Mvc` e `Microsoft.AspNetCore.StaticFiles`. Se o destino do .NET Framework, referências de pacote precisam listada individualmente no arquivo csproj.
+* Durante o direcionamento o núcleo do .NET, o ASP.NET Core metapackage é adicionado ao projeto, chamado `Microsoft.AspNetCore.All` por padrão. Este pacote contém os pacotes como `Microsoft.AspNetCore.Mvc` e `Microsoft.AspNetCore.StaticFiles`. Se o destino do .NET Framework, referências de pacote precisam listada individualmente no arquivo \*.csproj.
 
 `Microsoft.AspNetCore.Mvc` é a estrutura MVC do ASP.NET Core. `Microsoft.AspNetCore.StaticFiles` é o manipulador de arquivo estático. O tempo de execução do ASP.NET Core é modular, e você deve optar explicitamente para servir arquivos estáticos (consulte [arquivos estáticos](xref:fundamentals/static-files)).
 

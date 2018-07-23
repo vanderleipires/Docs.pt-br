@@ -1056,7 +1056,7 @@ As seguintes versões do [getbootstrap.com](http://getbootstrap.com "getbootstra
 
 ### <a name="bootstrap-touchcarousel-releases-on-the-cdn"></a>Versões de bootstrap TouchCarousel na CDN
 
-As seguintes versões do [ https://github.com/ixisio/bootstrap-touch-carousel ] (https://github.com/ixisio/bootstrap-touch-carousel " https://github.com/ixisio/bootstrap-touch-carousel ") versões de Bootstrap TouchCarousel são hospedados na CDN:
+As seguintes versões do [https://github.com/ixisio/bootstrap-touch-carousel](https://github.com/ixisio/bootstrap-touch-carousel "https://github.com/ixisio/bootstrap-touch-carousel") versões de Bootstrap TouchCarousel são hospedados na CDN:
 
 #### <a name="bootstrap-touchcarousel-version-080"></a>Bootstrap TouchCarousel versão 0.8.0
 
@@ -1067,7 +1067,7 @@ As seguintes versões do [ https://github.com/ixisio/bootstrap-touch-carousel ] 
 
 ### <a name="hammerjs-releases-on-the-cdn"></a>Versões de hammer.js na CDN
 
-As seguintes versões do [ http://hammerjs.github.io/ ] (http://hammerjs.github.io/ " http://hammerjs.github.io/ ") Hammer.js versões são hospedados na CDN:
+As seguintes versões do [http://hammerjs.github.io/](http://hammerjs.github.io/ "http://hammerjs.github.io/") Hammer.js versões são hospedados na CDN:
 
 #### <a name="hammerjs-version-204"></a>Hammer.js versão 2.0.4
 

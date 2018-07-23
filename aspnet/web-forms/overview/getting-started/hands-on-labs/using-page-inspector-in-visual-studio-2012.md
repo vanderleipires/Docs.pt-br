@@ -333,7 +333,7 @@ Nesta tarefa, você aprenderá como usar os recursos do Page Inspector no contex
     ![Inspecionar elementos](using-page-inspector-in-visual-studio-2012/_static/image29.png "inspecionar elementos")
 
     *Inspecionar elementos*
-7. Clique o **ativar/desativar modo de inspeção** botão (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.] (using-page-inspector-in-visual-studio-2012/_static/image30.png "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.") ), localizadas em guias de Inspetor de página, para desabilitar o cursor.
+7. Clique o **ativar/desativar modo de inspeção** botão (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.](using-page-inspector-in-visual-studio-2012/_static/image30.png "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.") ), localizadas em guias de Inspetor de página, para desabilitar o cursor.
 8. Selecione o **HTML** guia para exibir o código HTML renderizado no navegador Inspetor de página.
 9. No código HTML, localize o item de lista com o link Koala e selecioná-lo.
 
