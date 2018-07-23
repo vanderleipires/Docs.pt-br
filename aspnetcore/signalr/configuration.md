@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/30/2018
 uid: signalr/configuration
-ms.openlocfilehash: fac0226c939f4cf446c876b1c0b359d6c5b9dfd3
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: f5a345795f17dafd482e359e77a151d5b0a15688
+ms.sourcegitcommit: 8b68e144aab75374af52605a71717c77345a28b2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095396"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182584"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>Configuração do ASP.NET SignalR Core
 
@@ -62,7 +62,7 @@ A tabela a seguir descreve as opções de configuração hubs do SignalR:
 
 | Opção | Descrição |
 | ------ | ----------- |
-| `HandshakeTimeout` | Se o cliente não envia uma mensagem de handshake inicial dentro deste intervalo de tempo, a conexão será fechada. |
+| `HandshakeTimeout` | Se o cliente não envia uma mensagem de handshake inicial dentro deste intervalo de tempo, a conexão será fechada. Isso é uma configuração avançada que deve ser modificada apenas se os erros de tempo limite de handshake estiverem ocorrendo devido à latência de rede graves. Para obter mais detalhes sobre o processo de Handshake, consulte a [especificação de protocolo de Hub do SignalR](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
 | `KeepAliveInterval` | Se o servidor não enviou uma mensagem dentro deste intervalo, uma mensagem de ping é enviada automaticamente para manter a conexão aberta. |
 | `SupportedProtocols` | Protocolos com suporte por esse hub. Por padrão, todos os protocolos registrados no servidor são permitidos, mas protocolos podem ser removidos dessa lista para desabilitar os protocolos específicos para hubs individuais. |
 | `EnableDetailedErrors` | Se `true`detalhada mensagens de exceção são retornadas aos clientes quando uma exceção é gerada em um método de Hub. O padrão é `false`, conforme essas mensagens de exceção podem conter informações confidenciais. |
@@ -216,10 +216,10 @@ Opções adicionais para configurar o tempo limite e o comportamento de keep ali
 
 | Opção de .NET | Opção de JavaScript | Descrição |
 | ----------- | ----------------- | ----------- |
-| `ServerTimeout` | `serverTimeoutInMilliseconds` | Tempo limite para a atividade do servidor. Se o servidor não enviou qualquer mensagem nesse intervalo, o cliente considera a servidor desconectado e disparar o `Closed` evento (`onclose` em JavaScript). |
-| `HandshakeTimeout` | Não é configurável | Tempo limite para o handshake inicial do servidor. Se o servidor não enviar uma resposta de handshake nesse intervalo, o cliente cancela a handshake e disparar o `Closed` evento (`onclose` em JavaScript). |
+| `ServerTimeout` | `serverTimeoutInMilliseconds` | Tempo limite para a atividade do servidor. Se o servidor não enviou uma mensagem nesse intervalo, o cliente considera o servidor desconectado e gatilhos do `Closed` evento (`onclose` em JavaScript). |
+| `HandshakeTimeout` | Não é configurável | Tempo limite para o handshake inicial do servidor. Se o servidor não enviar uma resposta de handshake nesse intervalo, o cliente cancela o handshake e gatilhos do `Closed` evento (`onclose` em JavaScript). Isso é uma configuração avançada que deve ser modificada apenas se os erros de tempo limite de handshake estiverem ocorrendo devido à latência de rede graves. Para obter mais detalhes sobre o processo de Handshake, consulte a [especificação de protocolo de Hub do SignalR](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
 
-No cliente do .NET, os valores de tempo limite são especificados como `TimeSpan` valores. No cliente JavaScript, os valores de tempo limite são especificados como números. Os números representam valores de tempo em milissegundos.
+No cliente do .NET, os valores de tempo limite são especificados como `TimeSpan` valores. No cliente JavaScript, os valores de tempo limite são especificados como um número que indica a duração em milissegundos.
 
 ### <a name="configure-additional-options"></a>Configurar opções adicionais
 

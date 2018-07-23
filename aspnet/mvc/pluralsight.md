@@ -8,12 +8,12 @@ ms.date: 03/09/2011
 ms.assetid: 87612fe1-258c-4f50-88d8-c3047dec3f14
 msc.legacyurl: /mvc/pluralsight
 msc.type: content
-ms.openlocfilehash: 95b1a38a6842f0ed46568757d0420a57ee2a3c63
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 41c83b9a348fec1ac73b005ffec466ecf37abb24
+ms.sourcegitcommit: 8b68e144aab75374af52605a71717c77345a28b2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817236"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182610"
 ---
 <a name="mvc-video-training-from-pluralsight"></a>Treinamento em vídeo da Pluralsight sobre MVC
 ====================
@@ -28,14 +28,13 @@ ms.locfileid: "37817236"
 - [SignalR](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m7-signalr&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
 - [Ferramentas de desenvolvedor da Web e o Visual Studio 2013](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m8-visualstudio&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
 
-
-"Este curso de MVC 5 registrado por K. Scott Allen da Pluralsight fornece uma maneira fantástica de obter rapidamente a trabalhar na versão mais recente do ASP.NET MVC. Estilo de apresentação de Scott é tecnicamente atraentes e fáceis de acompanhar e o formato de curso, o player de vídeo e cadência geral são realmente excelentes. Além disso – ele é gratuito, portanto, há desculpas para não saiba o MVC 5 hoje!"
-
-Grupo de Scott Guthrie, Vice-presidente executivo, Microsoft Cloud e Enterprise, Microsoft
-
+> Este curso de MVC 5 registrado por K. Scott Allen da Pluralsight fornece uma maneira fantástica de obter rapidamente a trabalhar na versão mais recente do ASP.NET MVC. Estilo de apresentação de Scott é tecnicamente atraentes e fáceis de acompanhar e o formato de curso, o player de vídeo e cadência geral são realmente excelentes. Além disso – ele é gratuito, portanto, há desculpas para não saiba o MVC 5 hoje mesmo!
+>
+> &mdash;Grupo de Scott Guthrie, Vice-presidente executivo, Microsoft Cloud e Enterprise, Microsoft
 
 ![Pluralsight de logotipo de playbutton](pluralsight/_static/image1.png)
 
-Desbloquear o acesso a 3.000 + dev, IT e cursos criativos que você pode assistir a qualquer momento, em qualquer lugar
+Desbloquear o acesso a 3.000 + dev, IT e cursos criativos que você pode assistir a qualquer momento, em qualquer lugar.
 
-**Começando em US $ 29/ mês**[Iniciar avaliação gratuita](https://pluralsight.com/microsoft/OLT/subscribe/Subscribe1.aspx?freetrial=true&planHint=Monthly&utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course) [Assine agora](https://pluralsight.com/microsoft/olt/subscriptions.aspx?utm_source=microsoft&utm_medium=sponsored-page&utm_content=aspdotnet-mvc5-fundamentals&utm_campaign=microsoft-sponsored-course)
+* [Conceitos básicos do ASP.NET MVC 5](https://www.pluralsight.com/courses/aspdotnet-mvc5-fundamentals)
+* [Planos e preços do Pluralsight](https://www.pluralsight.com/pricing)
