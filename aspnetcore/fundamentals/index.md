@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 07/02/2018
 uid: fundamentals/index
-ms.openlocfilehash: 33786bf78567a1aa12a1ac97d44d1a596ec4c3be
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: 30c456685ce26522faff9b58fbd2977ad2f2869a
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144970"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202621"
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
@@ -122,7 +122,7 @@ O ASP.NET Core usa um modelo de configuração com base nos pares de nome-valor.
 
 Para obter mais informações, consulte [Configuração](xref:fundamentals/configuration/index).
 
-## <a name="logging"></a>Registrando em log
+## <a name="logging"></a>Registro em log
 
 O ASP.NET Core dá suporte a uma API de registro em log que funciona com uma variedade de provedores de logs. Os provedores internos dão suporte ao envio de logs para um ou mais destinos. As estruturas de registro em log de terceiros podem ser usadas.
 
@@ -191,6 +191,12 @@ Para obter mais informações, consulte [Solicitar Recursos](xref:fundamentals/r
 As tarefas em segundo plano são implementadas como *serviços hospedados*. Um serviço hospedado é uma classe com lógica de tarefa em segundo plano que implementa a interface [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice).
 
 Saiba mais em [Tarefas em segundo plano com serviços hospedados](xref:fundamentals/host/hosted-services).
+
+## <a name="access-httpcontext"></a>Acessar o HttpContext
+
+Acesse o `HttpContext` por meio da interface [IHttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor) e da implementação padrão do [HttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.httpcontextaccessor).
+
+Para obter mais informações, consulte <xref:fundamentals/httpcontext>.
 
 ## <a name="open-web-interface-for-net-owin"></a>OWIN (Open Web Interface para .NET)
 
