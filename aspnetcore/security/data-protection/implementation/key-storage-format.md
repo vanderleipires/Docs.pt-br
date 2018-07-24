@@ -1,26 +1,26 @@
 ---
-title: Formato de armazenamento de chaves no núcleo do ASP.NET
+title: Formato de armazenamento de chaves no ASP.NET Core
 author: rick-anderson
-description: Obter os detalhes de implementação do formato de armazenamento de chaves de proteção de dados do ASP.NET Core.
+description: Conheça os detalhes de implementação do formato de armazenamento de chaves de proteção de dados do ASP.NET Core.
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/key-storage-format
-ms.openlocfilehash: bb2bcdff3ac2b17623a67f51fd27b29bb928a2fb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: bca19ad001dd20b5d02ae5470f7d928082496037
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274512"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219271"
 ---
-# <a name="key-storage-format-in-aspnet-core"></a>Formato de armazenamento de chaves no núcleo do ASP.NET
+# <a name="key-storage-format-in-aspnet-core"></a>Formato de armazenamento de chaves no ASP.NET Core
 
 <a name="data-protection-implementation-key-storage-format"></a>
 
-Objetos são armazenados em repouso na representação XML. O diretório padrão para armazenamento de chaves é % LOCALAPPDATA%\ASP.NET\DataProtection-Keys\.
+Objetos são armazenados em repouso na representação XML. O diretório padrão para o armazenamento de chaves é % LOCALAPPDATA%\ASP.NET\DataProtection-Keys\.
 
-## <a name="the-key-element"></a>O \<chave > elemento
+## <a name="the-key-element"></a>O \<key > elemento
 
-Chaves existirem como objetos de nível superior no repositório de chave. Por convenção, as chaves têm o nome do arquivo **chave-{guid}. XML**, onde {guid} é a id da chave. Cada arquivo contém uma única chave. O formato do arquivo é da seguinte maneira.
+Chaves existem como objetos de nível superior no repositório de chave. Por convenção, as chaves têm o nome do arquivo **chave-{guid}. XML**, onde {guid} é a id da chave. Cada arquivo contém uma única chave. O formato do arquivo é da seguinte maneira.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -43,35 +43,35 @@ Chaves existirem como objetos de nível superior no repositório de chave. Por c
 </key>
 ```
 
-O \<chave > elemento contém os seguintes atributos e elementos filho:
+O \<key > elemento contém os seguintes atributos e elementos filho:
 
-* A id de chave. Esse valor é tratado como autoritativo; o nome do arquivo é simplesmente uma sutileza para facilitar a leitura humana.
+* A id da chave. Esse valor é tratado como autoritativo; o nome do arquivo é simplesmente uma sutileza por humanos.
 
-* A versão do \<chave > elemento fixado no momento em 1.
+* A versão do \<key > elemento, no momento é fixado em 1.
 
-* Datas de expiração, ativação e criação da chave.
+* Datas de criação, ativação e expiração da chave.
 
 * Um \<descritor > elemento, que contém informações sobre a implementação de criptografia autenticada contida dentro dessa chave.
 
-No exemplo acima, id da chave é {80732141-ec8f-4b80-af9c-c4d2d1ff8901}, ele foi criado e ativado em 19 de março de 2015, e ele tem um tempo de vida de 90 dias. (Ocasionalmente, a data de ativação pode ser um pouco antes da data de criação, como neste exemplo. Isso ocorre devido a um nit em como as APIs de trabalho e é inofensivas na prática.)
+No exemplo acima, id da chave é {80732141-ec8f-4b80-af9c-c4d2d1ff8901}, ele foi criado e ativado no dia 19 de março de 2015, e ele tem um tempo de vida de 90 dias. (Ocasionalmente, a data de ativação pode ser um pouco antes da data de criação, como neste exemplo. Isso ocorre devido a um nit em como as APIs funcionam e é inofensivas na prática.)
 
 ## <a name="the-descriptor-element"></a>O \<descritor > elemento
 
-Externa \<descritor > elemento contém um deserializerType de atributo, que é o nome qualificado do assembly de um tipo que implementa IAuthenticatedEncryptorDescriptorDeserializer. Esse tipo é responsável por ler interna \<descritor > elemento e para analisar as informações contidas em.
+Externo \<descritor > elemento contém um deserializerType de atributo, que é o nome qualificado pelo assembly de um tipo que implementa IAuthenticatedEncryptorDescriptorDeserializer. Esse tipo é responsável por ler interno \<descritor > elemento e para analisar as informações contidas neles.
 
-O formato específico do \<descritor > elemento depende da implementação do Criptografador autenticado encapsulada pela chave e cada tipo desserializador espera um formato ligeiramente diferente para isso. Em geral, no entanto, esse elemento conterá informações de algoritmos (nomes, tipos, OIDs, ou semelhante) e o material de chave secreta. No exemplo acima, o descritor especifica que esta chave encapsula a criptografia AES-256-CBC + HMACSHA256 validação.
+O formato específico do \<descritor > elemento depende da implementação do Criptografador autenticado encapsulada pela chave e cada tipo de desserializador espera um formato ligeiramente diferente para isso. Em geral, no entanto, esse elemento conterá informações algorítmicos (nomes, tipos, OIDs, ou semelhante) e o material de chave secreta. No exemplo acima, o descritor especifica que essa chave encapsula a criptografia AES-256-CBC + HMACSHA256 validação.
 
 ## <a name="the-encryptedsecret-element"></a>O \<encryptedSecret > elemento
 
-Um <encryptedSecret> elemento que contém o formulário criptografado do material de chave secreto pode estar presente se [criptografia de segredos em repouso está ativada](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest). O atributo decryptorType será o nome qualificado do assembly de um tipo que implementa IXmlDecryptor. Esse tipo é responsável por ler interna <encryptedKey> elemento e descriptografá-los para recuperar o texto não criptografado original.
+Uma **&lt;encryptedSecret&gt;** elemento que contém o formulário criptografado do material de chave secreto pode estar presente se [criptografia de segredos em repouso está ativada](xref:security/data-protection/implementation/key-encryption-at-rest). O atributo `decryptorType` é o nome qualificado pelo assembly de um tipo que implementa [IXmlDecryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmldecryptor). Esse tipo é responsável por ler interna **&lt;encryptedKey&gt;** elemento e descriptografá-los para recuperar o texto sem formatação original.
 
 Assim como acontece com \<descritor >, o formato específico do <encryptedSecret> elemento depende do mecanismo de criptografia em repouso em uso. No exemplo acima, a chave mestra é criptografada usando a DPAPI do Windows por comentário.
 
 ## <a name="the-revocation-element"></a>O \<revogação > elemento
 
-Revogações existem como objetos de nível superior no repositório de chave. Por convenção revogações tem o nome do arquivo **. XML de revogação-{timestamp}** (para revogar todas as chaves antes de uma data específica) ou **revogação-{guid}. XML** (para revogar uma chave específica). Cada arquivo contém um único \<revogação > elemento.
+Revogações existem como objetos de nível superior no repositório de chave. Por convenção revogações têm o nome do arquivo **revogação-{timestamp}. XML** (para revogar todas as chaves antes de uma data específica) ou **revogação-{guid}. XML** (para a revogação de uma chave específica). Cada arquivo contém um único \<revogação > elemento.
 
-Para revogações de chaves individuais, o conteúdo do arquivo será abaixo.
+Para revogações de chaves individuais, o conteúdo do arquivo será conforme mostrado abaixo.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -82,7 +82,7 @@ Para revogações de chaves individuais, o conteúdo do arquivo será abaixo.
 </revocation>
 ```
 
-Nesse caso, somente a chave especificada é revogada. Se a id de chave é "*", no entanto, como no exemplo abaixo, todas as chaves cuja data de criação está antes da data de revogação especificada serão revogadas.
+Nesse caso, apenas a chave especificada é revogada. Se a id da chave é "*", no entanto, como mostra o exemplo abaixo, cuja data de criação está antes da data de revogação especificado de todas as chaves são revogadas.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -94,4 +94,4 @@ Nesse caso, somente a chave especificada é revogada. Se a id de chave é "*", n
 </revocation>
 ```
 
-O \<motivo > elemento nunca é lidos pelo sistema. Ele é simplesmente um local conveniente para armazenar um motivo legível revogação.
+O \<motivo > elemento nunca é lido pelo sistema. Ele é simplesmente um local conveniente para armazenar um motivo legível por humanos para revogação.

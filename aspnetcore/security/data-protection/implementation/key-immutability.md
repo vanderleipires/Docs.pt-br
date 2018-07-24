@@ -1,32 +1,32 @@
 ---
-title: A imutabilidade de chave e configurações de chave no núcleo do ASP.NET
+title: Imutabilidade de chave e as configurações de chave no ASP.NET Core
 author: rick-anderson
-description: Obter os detalhes de implementação de imutabilidade principal APIs de proteção de dados do ASP.NET Core.
+description: Conheça os detalhes de implementação de imutabilidade de chave de proteção de dados do ASP.NET Core APIs.
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/implementation/key-immutability
-ms.openlocfilehash: 45460e0bdf6ad0a978f984d55b64f562c13fb575
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 7796cb102c0f6f03809704016fd36b28c7a82438
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279448"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219297"
 ---
-# <a name="key-immutability-and-key-settings-in-aspnet-core"></a>A imutabilidade de chave e configurações de chave no núcleo do ASP.NET
+# <a name="key-immutability-and-key-settings-in-aspnet-core"></a>Imutabilidade de chave e as configurações de chave no ASP.NET Core
 
-Depois que um objeto é persistido para o armazenamento de backup, sua representação para sempre é fixo. Novos dados podem ser adicionados ao repositório de backup, mas os dados existentes nunca podem ser modificados. O objetivo principal deste comportamento é evitar a corrupção de dados.
+Depois que um objeto é persistido para o repositório de backup, sua representação para sempre é fixo. Novos dados podem ser adicionados ao repositório de backup, mas os dados existentes nunca podem ser modificados. A principal finalidade desse comportamento é evitar dados corrompidos.
 
-Uma consequência esse comportamento é que, quando uma chave é gravada para armazenamento de backup, é imutável. As datas de criação, ativação e expiração nunca podem ser alteradas, embora ele pode ser revogada usando `IKeyManager`. Além disso, suas informações algorítmicos subjacentes, material de chave mestre e criptografia propriedades rest também são imutáveis.
+Uma consequência deste comportamento é que, quando uma chave é gravada para o repositório de backup, é imutável. As datas de criação, ativação e expiração nunca podem ser alteradas, embora ele pode ser revogada usando `IKeyManager`. Além disso, suas informações de algorítmicos subjacentes, material de chave mestre e a criptografia em Propriedades do rest também são imutáveis.
 
-Se o desenvolvedor altera qualquer configuração que afeta a persistência de chave, essas alterações não entram em vigor até a próxima vez que uma chave é gerada, através de uma chamada explícita para `IKeyManager.CreateNewKey` ou por meio do sistema proteção de dados próprio [chave automática geração](xref:security/data-protection/implementation/key-management#data-protection-implementation-key-management) comportamento. As configurações que afetam a persistência de chave são da seguinte maneira:
+Se o desenvolvedor altera qualquer configuração que afeta a persistência de chave, essas alterações não entrarão em vigor até a próxima vez que uma chave é gerada, por meio de uma chamada explícita para `IKeyManager.CreateNewKey` ou por meio do sistema proteção de dados próprio [chave automática geração](xref:security/data-protection/implementation/key-management#data-protection-implementation-key-management) comportamento. As configurações que afetam a persistência de chave são da seguinte maneira:
 
 * [O tempo de vida de chave padrão](xref:security/data-protection/implementation/key-management#data-protection-implementation-key-management)
 
-* [A criptografia de chave no mecanismo de rest](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest)
+* [A criptografia de chave no mecanismo de rest](xref:security/data-protection/implementation/key-encryption-at-rest)
 
-* [As informações de algoritmos contidas na chave do](xref:security/data-protection/configuration/overview#changing-algorithms-with-usecryptographicalgorithms)
+* [As informações de algorítmicos contidas na chave do](xref:security/data-protection/configuration/overview#changing-algorithms-with-usecryptographicalgorithms)
 
-Se você precisar essas configurações de anteriores a próxima chave automática sem interrupção tempo, considere a possibilidade de fazer uma chamada explícita para `IKeyManager.CreateNewKey` para forçar a criação de uma nova chave. Lembre-se de fornecer uma data de ativação explícita ({agora + 2 dias} é uma boa regra prática para permitir um tempo para que a alteração se propague) e a data de expiração na chamada.
+Se você precisar dessas configurações arranque anteriores à próxima chave automática sem interrupção de tempo, considere fazer uma chamada explícita para `IKeyManager.CreateNewKey` para forçar a criação de uma nova chave. Lembre-se de fornecer uma data de ativação explícita ({agora + 2 dias} é uma boa regra prática para dar tempo para a alteração seja propagada) e a data de expiração na chamada.
 
 >[!TIP]
-> Tocar o repositório de todos os aplicativos devem especificar as mesmas configurações com o `IDataProtectionBuilder` métodos de extensão. Caso contrário, as propriedades da chave persistente dependerá do aplicativo específico que invocou as rotinas de geração de chave.
+> Tocar o repositório de todos os aplicativos devem especificar as mesmas configurações com o `IDataProtectionBuilder` métodos de extensão. Caso contrário, as propriedades da chave persistente será dependentes do aplicativo específico que invocou as rotinas de geração de chave.
