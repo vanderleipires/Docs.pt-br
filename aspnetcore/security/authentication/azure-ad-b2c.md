@@ -5,12 +5,12 @@ description: Descubra como configurar a autenticação do Azure Active Directory
 ms.date: 01/25/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: bb146804d9491dea168ddcdfc8fb2cfeaae83700
-ms.sourcegitcommit: 7097dba14d5b858e82758ee031ac62dbe3611339
+ms.openlocfilehash: 731b25cac6f0d56fd34d12114a73e5cb5265dda6
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39138578"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202634"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Autenticação de nuvem com o Azure Active Directory B2C no ASP.NET Core
 
@@ -19,7 +19,7 @@ Por [Cam Soper](https://twitter.com/camsoper)
 [Azure Active Directory B2C do diretório](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C) é uma solução de gerenciamento de identidade de nuvem para aplicativos web e móveis. O serviço fornece autenticação para aplicativos hospedados na nuvem e locais. Tipos de autenticação incluem contas individuais, contas de rede social e contas corporativas de federado. Além disso, o Azure AD B2C pode fornecer a autenticação multifator com configuração mínima.
 
 > [!TIP]
-> Azure Active Directory (Azure AD) do Azure AD B2C são ofertas de produto separado. Um locatário do AD do Azure representa uma organização, enquanto que um locatário do Azure AD B2C representa uma coleção de identidades a serem usados com aplicativos de terceira parte confiável. Para obter mais informações, consulte [do Azure AD B2C: perguntas frequentes (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs).
+> Azure Active Directory (Azure AD) e o Azure AD B2C são ofertas de produtos separados. Um locatário do AD do Azure representa uma organização, enquanto que um locatário do Azure AD B2C representa uma coleção de identidades a serem usados com aplicativos de terceira parte confiável. Para obter mais informações, consulte [do Azure AD B2C: perguntas frequentes (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs).
 
 Neste tutorial, saiba como:
 
