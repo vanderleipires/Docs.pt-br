@@ -8,12 +8,12 @@ ms.date: 01/12/2012
 ms.assetid: 53767e05-c8ab-42e1-a94b-22d906195200
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 9f16c01515bde80d3994618d26818c2d93f69d87
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6dbffe715990de5c0b3b834e354379e414925816
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828371"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219050"
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>Usando o auxiliar do DropDownList com ASP.NET MVC
 ====================
@@ -190,7 +190,7 @@ Abra o *Views\Home\MultiSelectCountry.cshtml* arquivo e adicione um `htmlAttribu
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-No código acima, estamos adicionando o atributo HTML e o valor do atributo `class = "chzn-select"`. O caractere @ precede a classe tem nada a ver com o mecanismo de exibição do Razor. `class` é um [palavra-chave c#](https://msdn.microsoft.com/library/x53a06bb.aspx). Palavras-chave c# não podem ser usadas como identificadores, a menos que eles incluam @ como prefixo. No exemplo acima, `@class` é um identificador válido, mas **classe** não é porque **classe** é uma palavra-chave.
+No código acima, estamos adicionando o atributo HTML e o valor do atributo `class = "chzn-select"`. O \@ caractere classe anterior não tem nada a ver com o mecanismo de exibição do Razor. `class` é um [palavra-chave c#](https://msdn.microsoft.com/library/x53a06bb.aspx). Palavras-chave c# não podem ser usadas como identificadores, a menos que elas incluem \@ como um prefixo. No exemplo acima, `@class` é um identificador válido, mas **classe** não é porque **classe** é uma palavra-chave.
 
 Adicione referências para o *Chosen/chosen.jquery.js* e *Chosen/chosen.css* arquivos. O *Chosen/chosen.jquery.js* e implementa a funcionalidade do plugin escolhido. O *Chosen/chosen.css* arquivo fornece a definição de estilo. Adicione essas referências na parte inferior do *Views\Home\MultiSelectCountry.cshtml* arquivo. O código a seguir mostra como referenciar o plug-in escolhido.
 
