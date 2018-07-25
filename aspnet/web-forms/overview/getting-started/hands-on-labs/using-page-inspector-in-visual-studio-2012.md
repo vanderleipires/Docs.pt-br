@@ -142,7 +142,7 @@ Nesta tarefa, você aprenderá como usar o Inspetor de página no contexto de um
     ![Inspectingelements](using-page-inspector-in-visual-studio-2012/_static/image6.png)
 
     *Inspecionar elementos*
-7. Clique o **ativar/desativar modo de inspeção** botão (![selecione a guia HTML para exibir o código HTML renderizado no navegador Inspetor de página.] (using-page-inspector-in-visual-studio-2012/_static/image7.png "Selecione a guia HTML para exibir o código HTML renderizado no navegador Inspetor de página.") ) para desabilitar o cursor.
+7. Clique o **ativar/desativar modo de inspeção** botão (![selecione a guia HTML para exibir o código HTML renderizado no navegador Inspetor de página.](using-page-inspector-in-visual-studio-2012/_static/image7.png "Selecione a guia HTML para exibir o código HTML renderizado no navegador Inspetor de página.") ) para desabilitar o cursor.
 8. Selecione o **HTML** guia para exibir o código HTML renderizado no navegador Inspetor de página.
 9. Na marcação HTML, localize o item de lista com o link Koala e selecioná-lo.
 

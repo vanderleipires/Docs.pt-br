@@ -1,22 +1,20 @@
 ---
 title: Introdução ao SignalR no ASP.NET Core
-author: rachelappel
+author: tdykstra
 description: Neste tutorial, você deverá criar um aplicativo usando o SignalR para ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 6b8222ee04573ca7157b4e1125ed5a4453b2b9a9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 83be28b30cf06eeea37e8d76b3f6444ffd9a10e8
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830549"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095485"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>Introdução ao SignalR no ASP.NET Core
-
-Por [Rachel Appel](https://twitter.com/rachelappel)
 
 Este tutorial ensina as noções básicas para compilar um aplicativo em tempo real com SignalR para ASP.NET Core.
 
@@ -39,14 +37,14 @@ Instale o software a seguir:
 
 * [SDK do .NET Core 2.1 Core ou posterior](https://www.microsoft.com/net/download/all)
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/) versão 15.7.3 ou posterior com a carga de trabalho do **ASP.NET e desenvolvimento para a Web**
-* [npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm) (gerenciador de pacotes para Node.js)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 * [SDK do .NET Core 2.1 Core ou posterior](https://www.microsoft.com/net/download/all)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [C# para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-* [npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm) (gerenciador de pacotes para Node.js)
 
 -----
 
@@ -71,7 +69,7 @@ O Visual Studio inclui o pacote `Microsoft.AspNetCore.SignalR` que contém suas 
     npm install @aspnet/signalr
     ```
 
-4. Criar uma nova pasta chamada "signalr" dentro da pasta *lib* em seu projeto. Copiar o arquivo *signalr.js* de *node_modules\\@aspnet\signalr\dist\browser* para essa pasta.
+4. Criar uma nova pasta chamada "signalr" dentro da pasta *wwwroot/lib* em seu projeto. Copiar o arquivo *signalr.js* de *node_modules\\@aspnet\signalr\dist\browser* para essa pasta.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 

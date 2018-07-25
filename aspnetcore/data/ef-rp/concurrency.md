@@ -5,15 +5,13 @@ description: Este tutorial mostra como lidar com conflitos quando os mesmos usu�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: c6ec07eb7bf484490bd7730edc44bf2d89e8fb2a
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: ff9e52df63f9c9f47ee659a68beb28b773a114a1
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38150477"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202686"
 ---
-en-us/
-
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Simultaneidade – 8 de 8
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra) e [Jon P Smith](https://twitter.com/thereformedprog)
@@ -54,17 +52,21 @@ A simultaneidade otimista inclui as seguintes opções:
 
 * Controle qual propriedade um usuário modificou e atualize apenas as colunas correspondentes no BD.
 
-  No cenário, não haverá perda de dados. Propriedades diferentes foram atualizadas pelos dois usuários. Na próxima vez que alguém navegar no departamento de inglês, verá as alterações de Alice e Julio. Esse método de atualização pode reduzir o número de conflitos que podem resultar em perda de dados. Essa abordagem: * Não poderá evitar a perda de dados se forem feitas alterações concorrentes na mesma propriedade.
-        * Geralmente, não é prática em um aplicativo Web. Ela exige um estado de manutenção significativo para controlar todos os valores buscados e novos valores. Manter grandes quantidades de estado pode afetar o desempenho do aplicativo.
-        * Pode aumentar a complexidade do aplicativo comparado à detecção de simultaneidade em uma entidade.
+  No cenário, não haverá perda de dados. Propriedades diferentes foram atualizadas pelos dois usuários. Na próxima vez que alguém navegar no departamento de inglês, verá as alterações de Alice e Julio. Esse método de atualização pode reduzir o número de conflitos que podem resultar em perda de dados. Essa abordagem:
+ 
+  * Não poderá evitar a perda de dados se forem feitas alterações concorrentes na mesma propriedade.
+  * Geralmente, não é prática em um aplicativo Web. Ela exige um estado de manutenção significativo para controlar todos os valores buscados e novos valores. Manter grandes quantidades de estado pode afetar o desempenho do aplicativo.
+  * Pode aumentar a complexidade do aplicativo comparado à detecção de simultaneidade em uma entidade.
 
 * Você não pode deixar a alteração de Julio substituir a alteração de Alice.
 
   Na próxima vez que alguém navegar pelo departamento de inglês, verá 1/9/2013 e o valor de US$ 350.000,00 buscado. Essa abordagem é chamada de um cenário *O cliente vence* ou *O último vence*. (Todos os valores do cliente têm precedência sobre o conteúdo do armazenamento de dados.) Se você não fizer nenhuma codificação para a manipulação de simultaneidade, o cenário O cliente vence ocorrerá automaticamente.
 
-* Você pode impedir que as alterações de Julio sejam atualizadas no BD. Normalmente, o aplicativo: * Exibe uma mensagem de erro.
-        * Mostra o estado atual dos dados.
-        * Permite ao usuário aplicar as alterações novamente.
+* Você pode impedir que as alterações de Julio sejam atualizadas no BD. Normalmente, o aplicativo:
+
+  * Exibe uma mensagem de erro.
+  * Mostra o estado atual dos dados.
+  * Permite ao usuário aplicar as alterações novamente.
 
   Isso é chamado de um cenário *O armazenamento vence*. (Os valores do armazenamento de dados têm precedência sobre os valores enviados pelo cliente.) Você implementará o cenário O armazenamento vence neste tutorial. Esse método garante que nenhuma alteração é substituída sem que um usuário seja alertado.
 
@@ -144,7 +146,7 @@ Os comandos anteriores:
 * Adicionam o arquivo de migração *Migrations/{time stamp}_RowVersion.cs*.
 * Atualizam o arquivo *Migrations/SchoolContextModelSnapshot.cs*. A atualização adiciona o seguinte código realçado ao método `BuildModel`:
 
-[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
+  [!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
 
 * Executam migrações para atualizar o BD.
 
