@@ -4,14 +4,14 @@ author: guardrex
 description: Descubra como hospedar aplicativos ASP.NET Core no Serviço de Aplicativo do Azure com links para recursos úteis.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/29/2018
+ms.date: 07/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 83965e69249ca8196d0f226528735444936567ad
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: ece61a3e362ec5e2ff8f415351a0f9257fc72098
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095607"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228605"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 
@@ -44,13 +44,19 @@ Configurar um build de CI para um aplicativo ASP.NET Core e, em seguida, criar u
 [Área restrita de aplicativo Web do Azure](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  
 Descubra as limitações de tempo de execução do Serviço de Aplicativo do Azure impostas pela plataforma de Aplicativos do Azure.
 
+::: moniker range=">= aspnetcore-2.0"
+
 ## <a name="application-configuration"></a>Configuração do aplicativo
 
-Com o ASP.NET Core 2.0 e posterior, três pacotes no metapacote [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) fornecem recursos de registro em log automático para aplicativos implantados no Serviço de Aplicativo do Azure:
+No ASP.NET Core 2.0 ou posterior, os seguintes pacotes NuGet fornecem recursos de registro em log automático para aplicativos implantados para o Serviço de Aplicativo do Azure:
 
-* [Microsoft.AspNetCore.AzureAppServices.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServices.HostingStartup/) usa [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration) para fornecer integração leve do ASP.NET Core com o Serviço de Aplicativo do Azure. Os recursos de registro em log adicionais são fornecidos pelo pacote `Microsoft.AspNetCore.AzureAppServicesIntegration`.
+* O [Microsoft.AspNetCore.AzureAppServices.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServices.HostingStartup/) usa [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration) para fornecer integração leve do ASP.NET Core com o Serviço de Aplicativo do Azure. Os recursos de registro em log adicionais são fornecidos pelo pacote `Microsoft.AspNetCore.AzureAppServicesIntegration`.
 * [Microsoft.AspNetCore.AzureAppServicesIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServicesIntegration/) executa [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) para adicionar provedores de log de diagnósticos do Serviço de Aplicativo do Azure no pacote `Microsoft.Extensions.Logging.AzureAppServices`.
 * [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices/) fornece implementações de agente para dar suporte a recursos de streaming de log e logs de diagnóstico do Serviço de Aplicativo do Azure.
+
+Se você estiver direcionando para o .NET Core e estiver referenciando o [metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage), os pacotes já estarão incluídos. Ambos os pacotes estão ausentes no [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) mais novo. Se você estiver direcionando ao .NET Framework ou referenciando ao metapacote `Microsoft.AspNetCore.App`, referencie os pacotes individuais de registro em log.
+
+::: moniker-end
 
 ## <a name="proxy-server-and-load-balancer-scenarios"></a>Servidor proxy e cenários de balanceador de carga
 
@@ -67,7 +73,7 @@ Saiba como examinar as cotas e métricas para aplicativos e planos do Serviço d
 Descubra como habilitar e acessar o log de diagnósticos para os códigos de status HTTP, solicitações com falha e atividade do servidor Web.
 
 [Introdução ao tratamento de erro no ASP.NET Core](xref:fundamentals/error-handling)  
-Entenda abordagens comuns para o tratamento de erros em aplicativos ASP.NET Core.
+Entenda as abordagens comuns para o tratamento de erros em aplicativos ASP.NET Core.
 
 [Solucionar problemas no ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot)  
 Saiba como diagnosticar problemas com implantações do Serviço de Aplicativo do Azure com aplicativos ASP.NET Core.

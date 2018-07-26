@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/11/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 70e9e73eeb5d08baf9ef190ebfbda998ace60d77
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 59ab0cd0f6975d15bd01ce7e4128521938182c24
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278317"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228618"
 ---
 # <a name="configuration-in-aspnet-core"></a>Configuração no ASP.NET Core
 
@@ -34,6 +34,40 @@ Cada valor de configuração é mapeado para uma chave de cadeia de caracteres. 
 O padrão de opções usa classes de opções para representar grupos de configurações relacionadas. Para obter mais informações sobre como usar o padrão de opções, consulte o tópico [Opções](xref:fundamentals/configuration/options).
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+
+::: moniker range=">= aspnetcore-2.1"
+
+Exemplos apresentados neste tópico contam com:
+
+* Definir o caminho de base do aplicativo com [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath). `SetBasePath` é disponibilizado para o aplicativo fazendo referência a [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/).
+* Resolver seções dos arquivos de configuração com [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection). `GetSection` é disponibilizado ao aplicativo referenciando o pacote [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/).
+* Associar configuração com [Associar](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind). `Bind` é disponibilizado ao aplicativo consultando o pacote [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) pacote.
+
+Esses pacotes são incluídos no [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app).
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+Exemplos apresentados neste tópico contam com:
+
+* Definir o caminho de base do aplicativo com [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath). `SetBasePath` é disponibilizado para o aplicativo fazendo referência a [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/).
+* Resolver seções dos arquivos de configuração com [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection). `GetSection` é disponibilizado ao aplicativo referenciando o pacote [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/).
+* Associar configuração com [Associar](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind). `Bind` é disponibilizado ao aplicativo consultando o pacote [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) pacote.
+
+Esses pacotes são incluídos no [metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage).
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+Exemplos apresentados neste tópico contam com:
+
+* Definir o caminho de base do aplicativo com [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath). `SetBasePath` é disponibilizado para o aplicativo fazendo referência a [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/).
+* Resolver seções dos arquivos de configuração com [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection). `GetSection` é disponibilizado ao aplicativo referenciando o pacote [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/).
+* Associar configuração com [Associar](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind). `Bind` é disponibilizado ao aplicativo consultando o pacote [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) pacote.
+
+::: moniker-end
 
 ## <a name="json-configuration"></a>Configuração de JSON
 
