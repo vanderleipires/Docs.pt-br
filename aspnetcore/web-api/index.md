@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: web-api/index
-ms.openlocfilehash: 0ff0bbc629930666d46247d6c1257fac8bfaf7c2
-ms.sourcegitcommit: 260abb706ed17f07a53288d8a0c3e69fc13e7468
+ms.openlocfilehash: ccee4f7bae0abe1b36088d58e5c1e1362d8de9f0
+ms.sourcegitcommit: 5338b1ed9e2ef225ab565d6cba072b474fd9324d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38966803"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39243091"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>Criar APIs Web com o ASP.NET Core
 
@@ -63,7 +63,7 @@ As seções a seguir descrevem os recursos de conveniência adicionados pelo atr
 
 Os erros de validação disparam uma resposta HTTP 400 automaticamente. O código a seguir se torna desnecessário em suas ações:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?range=46-49)]
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
 
 O comportamento padrão é desabilitado quando a propriedade [SuppressModelStateInvalidFilter](/dotnet/api/microsoft.aspnetcore.mvc.apibehavioroptions.suppressmodelstateinvalidfilter) estiver definida como `true`. Adicione o seguinte código em *Startup.ConfigureServices* depois de `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
 
