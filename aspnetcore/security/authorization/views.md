@@ -1,29 +1,29 @@
 ---
-title: Autorização baseada em modo de exibição no ASP.NET MVC de núcleo
+title: Autorização baseada em modo de exibição no ASP.NET Core MVC
 author: rick-anderson
-description: Este documento demonstra como injetar e utilizar o serviço de autorização dentro de um modo de exibição Razor do ASP.NET Core.
+description: Este documento demonstra como injetar e utilizar o serviço de autorização dentro de um modo de exibição do Razor do ASP.NET Core.
 ms.author: riande
 ms.date: 10/30/2017
 uid: security/authorization/views
-ms.openlocfilehash: f25bab61afc93ff14bfd9c36d95a6d2e54b06dfb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e497c41d4dca29fed8733f18cf727804e3f06d8c
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277794"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342530"
 ---
-# <a name="view-based-authorization-in-aspnet-core-mvc"></a>Autorização baseada em modo de exibição no ASP.NET MVC de núcleo
+# <a name="view-based-authorization-in-aspnet-core-mvc"></a>Autorização baseada em modo de exibição no ASP.NET Core MVC
 
-Um desenvolvedor quer geralmente Mostrar, ocultar ou modificar uma interface do usuário com base na identidade do usuário atual. Você pode acessar o serviço de autorização em modos de exibição do MVC por meio de [injeção de dependência](xref:fundamentals/dependency-injection#fundamentals-dependency-injection). Para injetar o serviço de autorização em um modo de exibição Razor, use o `@inject` diretiva:
+Um desenvolvedor geralmente deseja mostrar, ocultar ou modificar uma interface do usuário com base na identidade do usuário atual. Você pode acessar o serviço de autorização em modos de exibição do MVC por meio [injeção de dependência](xref:fundamentals/dependency-injection). Para injetar o serviço de autorização em um modo de exibição do Razor, use o `@inject` diretiva:
 
 ```cshtml
 @using Microsoft.AspNetCore.Authorization
 @inject IAuthorizationService AuthorizationService
 ```
 
-Se você deseja que o serviço de autorização em cada exibição, coloque o `@inject` diretiva para o *viewimports. cshtml* arquivo do *exibições* diretório. Para obter mais informações, consulte [Injeção de dependência em exibições](xref:mvc/views/dependency-injection).
+Se você quiser que o serviço de autorização em cada exibição, coloque o `@inject` diretiva na *viewimports. cshtml* arquivo do *exibições* directory. Para obter mais informações, consulte [Injeção de dependência em exibições](xref:mvc/views/dependency-injection).
 
-Usar o serviço de autorização injetado para invocar `AuthorizeAsync` exatamente da mesma forma que você deve verificar durante [autorização baseada em recursos](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
+Usar o serviço de autorização injetado para invocar `AuthorizeAsync` exatamente da mesma forma que você poderia verificar durante [autorização baseada em recursos](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -45,7 +45,7 @@ Usar o serviço de autorização injetado para invocar `AuthorizeAsync` exatamen
 
 ---
 
-Em alguns casos, o recurso será o modelo de exibição. Invocar `AuthorizeAsync` exatamente da mesma forma que você deve verificar durante [autorização baseada em recursos](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
+Em alguns casos, o recurso será o seu modelo de exibição. Invocar `AuthorizeAsync` exatamente da mesma forma que você poderia verificar durante [autorização baseada em recursos](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -69,7 +69,7 @@ Em alguns casos, o recurso será o modelo de exibição. Invocar `AuthorizeAsync
 
 ---
 
-No código anterior, o modelo é passado como um recurso de que avaliação de política deve levar em consideração.
+No código anterior, o modelo é passado como um recurso de que avaliação da política deve levar em consideração.
 
 > [!WARNING]
-> Não confie na alternância de visibilidade de elementos de interface do usuário do aplicativo como a verificação de autorização exclusiva. Ocultar um elemento de interface do usuário pode completamente impede o acesso a sua ação de controlador associado. Por exemplo, considere o botão no trecho de código anterior. Um usuário pode invocar o `Edit` URL do método de ação se saiba o recurso relativo é */Document/Edit/1*. Por esse motivo, o `Edit` método de ação deve executar sua própria verificação de autorização.
+> Não confie na alternância de visibilidade de elementos de interface do usuário do seu aplicativo como a verificação de autorização única. Ocultar um elemento de interface do usuário pode completamente impede o acesso a sua ação de controlador associado. Por exemplo, considere o botão no trecho de código anterior. Um usuário pode invocar o `Edit` é de URL do método de ação, se ele ou ela sabe que o recurso relativo */Document/Edit/1*. Por esse motivo, o `Edit` método de ação deve realizar sua própria verificação de autorização.

@@ -1,40 +1,40 @@
 ---
-title: Impedir que os sites script (XSS) no núcleo do ASP.NET
+title: Evitar Cross-Site Scripting (XSS) no ASP.NET Core
 author: rick-anderson
-description: Saiba mais sobre a criação de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo do ASP.NET Core.
+description: Saiba mais sobre a criação de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo ASP.NET Core.
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/cross-site-scripting
-ms.openlocfilehash: ce6bb273034c56890e0cd98b890436602b5acc69
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4784b1775d955f0ef00526e50b960fc873ea218d
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272442"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342205"
 ---
-# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Impedir que os sites script (XSS) no núcleo do ASP.NET
+# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Evitar Cross-Site Scripting (XSS) no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Execução de scripts entre sites (XSS) é uma vulnerabilidade de segurança que permite que um invasor inserir os scripts do lado do cliente (geralmente JavaScript) em páginas da web. Quando outros usuários carregar páginas afetadas, os invasores scripts serão executados, permitindo que o invasor roubar cookies e tokens de sessão, alterar o conteúdo da página da web por meio de manipulação de DOM ou redirecionar o navegador para outra página. Vulnerabilidades XSS geralmente ocorrem quando um aplicativo usa a entrada do usuário e passa em uma página sem validação, codificação ou escape-lo.
+Criação de scripts entre sites (XSS) é uma vulnerabilidade de segurança que permite que um invasor inserir os scripts do lado do cliente (geralmente o JavaScript) em páginas da web. Quando outros usuários carregar páginas afetadas, os invasores scripts serão executados, permitindo que o invasor roubar cookies e tokens de sessão, altere o conteúdo da página da web por meio de manipulação de DOM ou redirecionar o navegador para outra página. As vulnerabilidades de XSS geralmente ocorrem quando um aplicativo recebe entrada do usuário e produz saídas em uma página sem validação, codificação ou escape-lo.
 
-## <a name="protecting-your-application-against-xss"></a>Protegendo seu aplicativo contra XSS
+## <a name="protecting-your-application-against-xss"></a>Proteger seu aplicativo contra o XSS
 
-AT um XSS de nível básico funciona enganar seu aplicativo para inserir um `<script>` marca na página renderizada, ou inserindo um `On*` evento em um elemento. Os desenvolvedores devem usar as seguintes etapas de prevenção para evitar introduzir XSS em seu aplicativo.
+AT um XSS de nível básico funciona por enganar o seu aplicativo para inserir uma `<script>` marca em sua página processada, ou inserindo um `On*` eventos em um elemento. Os desenvolvedores devem usar as seguintes etapas de prevenção para evitar a introdução de XSS em seu aplicativo.
 
-1. Nunca coloque dados não confiáveis em sua entrada HTML, a menos que você siga o restante das etapas a seguir. Dados não confiáveis são todos os dados que podem ser controlados por um invasor, entradas de formulário HTML, cadeias de caracteres de consulta, os cabeçalhos HTTP, até mesmo dados originados de um banco de dados como um invasor consiga violar seu banco de dados, mesmo se eles não podem violar seu aplicativo.
+1. Nunca coloque dados não confiáveis em sua entrada HTML, a menos que você siga o restante das etapas a seguir. Dados não confiáveis são todos os dados que podem ser controlados por um invasor, entradas de formulário HTML, cadeias de caracteres de consulta, os cabeçalhos HTTP, até mesmo dados originados de um banco de dados como um invasor pode ser capaz de violar o seu banco de dados, mesmo se eles não podem violar o seu aplicativo.
 
-2. Antes de colocar os dados não confiáveis dentro de um elemento HTML garanta é codificada em HTML. Codificação HTML usa caracteres como &lt; e alterá-los em um formato seguro como &amp;lt;
+2. Antes de colocar os dados não confiáveis dentro de um elemento HTML, verifique se que ele é codificado em HTML. A codificação HTML usa caracteres, como &lt; e alterá-los em um formulário seguro como &amp;lt;
 
-3. Antes de colocar os dados não confiáveis em um atributo HTML garanta é atributo HTML codificado. Codificação do atributo HTML é um superconjunto de codificação HTML e codifica caracteres adicionais, como "e '.
+3. Antes de colocar os dados não confiáveis em um atributo HTML, verifique se que ele é o atributo HTML codificado. Codificação do atributo HTML é um superconjunto de codificação HTML e codifica os caracteres adicionais, como "e '.
 
-4. Antes de colocar os dados não confiáveis em JavaScript coloca os dados em um elemento HTML cujo conteúdo você recuperar em tempo de execução. Se isso não é possível assegurar que os dados é codificado com o JavaScript. Codificação de JavaScript usa caracteres perigosas para JavaScript e substitui-los com seu hex, por exemplo &lt; poderia ser codificado como `\u003C`.
+4. Antes de colocar os dados não confiáveis em JavaScript, colocar os dados em um elemento HTML cujo conteúdo você recuperar em tempo de execução. Se isso não for possível, verifique se os dados de JavaScript é codificado. Codificação de JavaScript usa caracteres perigosos para JavaScript e os substitui por sua hex, por exemplo &lt; seria codificado como `\u003C`.
 
-5. Antes de colocar os dados não confiáveis em uma cadeia de caracteres de consulta de URL, verifique se é codificada de URL.
+5. Antes de colocar os dados não confiáveis em uma cadeia de caracteres de consulta de URL, verifique se que ele é codificado por URL.
 
 ## <a name="html-encoding-using-razor"></a>Codificação HTML usando o Razor
 
-O mecanismo Razor usado no MVC automaticamente codifica todos saída originados de variáveis, a menos que você trabalhar arduamente para evitar que isso. Ele usa o atributo HTML regras de codificação, sempre que você usar o *@* diretiva. Como HTML a codificação do atributo é um superconjunto de codificação de HTML, que isso significa que você não precisa se preocupar com você deve usar a codificação HTML ou codificação do atributo HTML. Certifique-se de que você só usar em um contexto HTML, não ao tentar inserir não confiáveis de entrada diretamente em JavaScript. Auxiliares de marcação codificará também usam parâmetros de marca de entrada.
+O mecanismo Razor usado no MVC automaticamente codifica todos originado de saída de variáveis, a menos que você trabalha muito para impedi-lo ao fazer isso. Ele usa o atributo HTML de regras de codificação, sempre que você usar o *@* diretiva. Como HTML a codificação do atributo é um superconjunto de codificação de HTML, que isso significa que você não precisa se preocupar com se você deve usar a codificação HTML ou codificação do atributo HTML. Você deve garantir que você só usar em um contexto HTML, não quando a tentativa de inserir entradas não confiáveis diretamente em JavaScript. Os auxiliares de marca codificará também usar parâmetros de marca de entrada.
 
 Executar a seguinte exibição Razor;
 
@@ -46,18 +46,18 @@ Executar a seguinte exibição Razor;
    @untrustedInput
    ```
 
-Essa exibição mostra o conteúdo do *untrustedInput* variável. Essa variável inclui alguns caracteres que são usadas em ataques XSS, ou seja, &lt;, "e &gt;. Examinando a fonte mostra a saída renderizada codificada como:
+Essa exibição mostra o conteúdo do *untrustedInput* variável. Essa variável inclui alguns caracteres que são usadas em ataques de XSS, ou seja, &lt;, "e &gt;. Examinar o código-fonte mostra a saída renderizada codificada como:
 
 ```html
 &lt;&quot;123&quot;&gt;
    ```
 
 >[!WARNING]
-> Núcleo ASP.NET MVC fornece uma `HtmlString` classe que não é codificado automaticamente após a saída. Isso nunca deve ser usado em combinação com entradas não confiáveis, pois isso irá expor uma vulnerabilidade XSS.
+> ASP.NET Core MVC fornece uma `HtmlString` classe que não é codificado automaticamente após a saída. Isso nunca deve ser usado em combinação com entradas não confiáveis, pois isso irá expor uma vulnerabilidade de XSS.
 
-## <a name="javascript-encoding-using-razor"></a>Usando o Razor de codificação JavaScript
+## <a name="javascript-encoding-using-razor"></a>Usando o Razor de codificação do JavaScript
 
-Pode haver momentos que você deseja inserir um valor em JavaScript para processar no modo de exibição. Há duas formas de fazer isso. É a maneira mais segura para inserir valores colocar o valor em um atributo de dados de uma marca e recuperá-lo em seu JavaScript. Por exemplo:
+Pode haver ocasiões que você deseja inserir um valor em JavaScript para processar no modo de exibição. Há duas formas de fazer isso. A maneira mais segura para inserir valores é colocar o valor em um atributo de dados de uma marca e recuperá-lo em seu JavaScript. Por exemplo:
 
 ```none
 @{
@@ -107,14 +107,14 @@ Isso produzirá o HTML a seguir
    </script>
    ```
 
-Que, quando ele é executado, processará a seguir:
+Que, quando ele é executado, renderizará o seguinte:
 
 ```none
 <"123">
    <"123">
    ```
 
-Você também pode chamar o codificador de JavaScript diretamente.
+Você também pode chamar o codificador de JavaScript diretamente,
 
 ```none
 @using System.Text.Encodings.Web;
@@ -129,7 +129,7 @@ Você também pode chamar o codificador de JavaScript diretamente.
    </script>
    ```
 
-Isso será renderizado no navegador:
+Isso será renderizado no navegador como se segue;
 
 ```html
 <script>
@@ -138,13 +138,13 @@ Isso será renderizado no navegador:
    ```
 
 >[!WARNING]
-> Não concatene a entrada não confiável em JavaScript para criar elementos de DOM. Você deve usar `createElement()` e atribuir valores de propriedade adequadamente como `node.TextContent=`, ou use `element.SetAttribute()` / `element[attribute]=` contrário você expor ao XSS baseado em DOM.
+> Não concatene entradas não confiáveis em JavaScript para criar elementos DOM. Você deve usar `createElement()` e atribuir valores de propriedade adequadamente, como `node.TextContent=`, ou use `element.SetAttribute()` / `element[attribute]=` caso contrário, você se exporá a XSS baseado em DOM.
 
 ## <a name="accessing-encoders-in-code"></a>Acessando codificadores no código
 
-Os codificadores HTML, JavaScript e URL estão disponíveis para o código de duas maneiras, você pode colocá-los por meio de [injeção de dependência](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) ou você pode usar os codificadores padrão contidos a `System.Text.Encodings.Web` namespace. Se você usar os codificadores padrão e qualquer aplicada a intervalos de caracteres a serem tratados como seguro não terão efeito - os codificadores padrão usem as regras de codificação mais seguras possível.
+Os codificadores HTML, JavaScript e a URL estão disponíveis para seu código de duas maneiras, você pode colocá-los por meio [injeção de dependência](xref:fundamentals/dependency-injection) ou você pode usar os codificadores padrão contidos no `System.Text.Encodings.Web` namespace. Se você usar os codificadores padrão, qualquer aplicadas ao intervalos de caracteres a serem tratados como seguro não terão efeito - os codificadores padrão usam as regras de codificação mais seguras possíveis.
 
-Para usar os codificadores configuráveis por meio de DI seus construtores devem levar uma *HtmlEncoder*, *JavaScriptEncoder* e *UrlEncoder* parâmetro conforme apropriado. Por exemplo,
+Para usar os codificadores configuráveis por meio da DI seus construtores devem levar uma *HtmlEncoder*, *JavaScriptEncoder* e *UrlEncoder* parâmetro conforme apropriado. Por exemplo:
 
 ```csharp
 public class HomeController : Controller
@@ -164,29 +164,29 @@ public class HomeController : Controller
    }
    ```
 
-## <a name="encoding-url-parameters"></a>Parâmetros de URL de codificação
+## <a name="encoding-url-parameters"></a>Parâmetros de codificação de URL
 
-Se você deseja criar uma cadeia de caracteres de consulta de URL com entradas não confiáveis, como um valor, use o `UrlEncoder` para codificar o valor. Por exemplo,
+Se você quiser criar uma cadeia de caracteres de consulta de URL com a entrada não confiável como um valor, use o `UrlEncoder` para codificar o valor. Por exemplo,
 
 ```csharp
 var example = "\"Quoted Value with spaces and &\"";
    var encodedValue = _urlEncoder.Encode(example);
    ```
 
-Após a codificação de encodedValue variável conterá `%22Quoted%20Value%20with%20spaces%20and%20%26%22`. Espaços, aspas, pontuação e outros caracteres não seguros será porcentagem codificado para seu valor hexadecimal, por exemplo, um caractere de espaço será % 20.
+Após a codificação de encodedValue variável conterá `%22Quoted%20Value%20with%20spaces%20and%20%26%22`. Espaços, aspas, pontuação e outros caracteres não seguros será porcentagem codificado para seu valor hexadecimal, por exemplo, um caractere de espaço tornará % 20.
 
 >[!WARNING]
-> Não use a entrada não confiável como parte de um caminho de URL. Sempre passe a entrada não confiável como um valor de cadeia de caracteres de consulta.
+> Não use entradas não confiáveis como parte de um caminho de URL. Sempre passe a entrada não confiável como um valor de cadeia de caracteres de consulta.
 
 <a name="security-cross-site-scripting-customization"></a>
 
 ## <a name="customizing-the-encoders"></a>Personalizando os codificadores
 
-Por padrão, codificadores usam uma lista de segurança limitada para o intervalo Unicode Latim básico e codificar todos os caracteres fora do intervalo como seus equivalentes do código de caractere. Esse comportamento também afeta o processamento Razor TagHelper e HtmlHelper como ele usará os codificadores para suas cadeias de caracteres de saída.
+Por padrão, codificadores de usam uma lista segura limitada ao intervalo Unicode de Latim básico e codificar todos os caracteres fora do intervalo como seus equivalentes de código de caractere. Esse comportamento também afeta a renderização TagHelper Razor e HtmlHelper como ele utilizará os codificadores para suas cadeias de caracteres de saída.
 
-O raciocínio por trás disso é proteger contra erros de navegador desconhecido ou futuro (bugs de navegador anterior tiveram ultrapassado a análise com base no processamento de caracteres estendidos). Se seu site faz uso intenso de caracteres não latinos, como o chinês, cirílico ou outras pessoas isso provavelmente não é o comportamento desejado.
+O raciocínio por trás disso é proteger contra bugs no navegador desconhecido ou futuras (bugs no navegador anterior tiveram atropelados análise com base no processamento de caracteres do inglês). Se seu site da web faz uso intenso de caracteres não latinos, como o chinês, cirílico ou outras pessoas isso provavelmente não é o comportamento desejado.
 
-Você pode personalizar as listas de codificador seguro para incluir Unicode intervalos adequados ao seu aplicativo durante a inicialização, em `ConfigureServices()`.
+Você pode personalizar as listas de seguro de codificador para incluir Unicode intervalos apropriadas para seu aplicativo durante a inicialização, no `ConfigureServices()`.
 
 Por exemplo, usando a configuração padrão que você pode usar um HtmlHelper Razor assim;
 
@@ -194,13 +194,13 @@ Por exemplo, usando a configuração padrão que você pode usar um HtmlHelper R
 <p>This link text is in Chinese: @Html.ActionLink("汉语/漢語", "Index")</p>
    ```
 
-Quando você exibir a origem da página da web, você verá que tenha sido processado como a seguir, com o texto chinês codificado;
+Quando você exibir a origem da página da web, você verá que ele foi renderizado da seguinte maneira, com o texto codificado; em chinês
 
 ```html
 <p>This link text is in Chinese: <a href="/">&#x6C49;&#x8BED;/&#x6F22;&#x8A9E;</a></p>
    ```
 
-Para ampliar os caracteres tratados como seguro pelo codificador você inseriria a linha a seguir para o `ConfigureServices()` método `startup.cs`;
+Ampliar os caracteres tratados como seguro pelo codificador você inseriria a linha a seguir para o `ConfigureServices()` método no `startup.cs`;
 
 ```csharp
 services.AddSingleton<HtmlEncoder>(
@@ -208,21 +208,21 @@ services.AddSingleton<HtmlEncoder>(
                                                UnicodeRanges.CjkUnifiedIdeographs }));
    ```
 
-Este exemplo amplia a lista segura para incluir o CjkUnifiedIdeographs de intervalo de Unicode. Agora se torna a saída renderizada
+Este exemplo amplia a lista segura para incluir o CjkUnifiedIdeographs de intervalo Unicode. A saída renderizada tornaria
 
 ```html
 <p>This link text is in Chinese: <a href="/">汉语/漢語</a></p>
    ```
 
-Listar seguro intervalos são especificados como gráficos de código Unicode, não os idiomas. O [padrão Unicode](http://unicode.org/) tem uma lista de [código gráficos](http://www.unicode.org/charts/index.html) você pode usar para localizar o gráfico que contém os caracteres. Cada codificador, Html, JavaScript e a Url, deve ser configurado separadamente.
+Intervalos de lista segura são especificados como gráficos de código Unicode, não os idiomas. O [padrão Unicode](http://unicode.org/) tem uma lista de [gráficos de código](http://www.unicode.org/charts/index.html) você pode usar para localizar o gráfico que contém os caracteres. Cada codificador, Html, JavaScript e a Url, deve ser configurado separadamente.
 
 > [!NOTE]
-> Personalização da lista de afeta somente os codificadores originados por meio de injeção de dependência. Se você acessar diretamente um codificador via `System.Text.Encodings.Web.*Encoder.Default` , em seguida, o padrão, Latim básico somente lista segura será usada.
+> Personalização da lista de confiáveis afeta apenas os codificadores originados por meio da DI. Se você acessar diretamente um codificador via `System.Text.Encodings.Web.*Encoder.Default` , em seguida, o padrão, Latim básico somente lista segura será usada.
 
-## <a name="where-should-encoding-take-place"></a>Qual codificação take deve colocar?
+## <a name="where-should-encoding-take-place"></a>Onde a codificação take deve colocar?
 
-Gerais aceito prática é que a codificação ocorre no ponto de saída e valores codificados nunca devem ser armazenados em um banco de dados. Codificação no ponto de saída permite que você altere o uso de dados, por exemplo, de HTML para um valor de cadeia de caracteres de consulta. Ele também permite que você pesquise facilmente os dados sem a necessidade de codificar valores antes de pesquisar e permite que você se beneficie de quaisquer alterações ou correções feitas codificadores.
+Em geral aceito prática é que a codificação ocorre no ponto de saída e valores codificados nunca devem ser armazenados em um banco de dados. Codificação no ponto de saída permite que você altere o uso de dados, por exemplo, de HTML para um valor de cadeia de caracteres de consulta. Ele também permite que você pesquise facilmente seus dados sem a necessidade de codificar valores antes de pesquisar e permite que você se beneficie de quaisquer alterações ou correções de bug feitas aos codificadores.
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>Validação como uma técnica de prevenção de XSS
 
-A validação pode ser uma ferramenta útil limitar ataques XSS. Por exemplo, uma cadeia de caracteres numérica que contém somente os caracteres 0-9 não aciona um ataque XSS. A validação se torna mais complicada que você deseja aceitar HTML na entrada do usuário - análise de entrada HTML é difícil, se não impossível. Redução e outros formatos de texto seria uma opção mais segura para a entrada avançada. Você nunca deve depender somente de validação. Sempre codifica a entrada não confiável antes de saída, não importa o que você executou a validação.
+Validação pode ser uma ferramenta útil na limitação de ataques de XSS. Por exemplo, uma cadeia de caracteres numérica que contém somente os caracteres de 0 a 9 não disparar um ataque XSS. Validação se torna mais complicada, caso queira aceitar HTML na entrada do usuário - análise de entrada HTML é difícil, se não impossível. MarkDown e outros formatos de texto seria uma opção mais segura para a entrada avançada. Você nunca deve depender apenas de validação. Sempre codificar entradas não confiáveis antes da saída, não importa o que você executou de validação.

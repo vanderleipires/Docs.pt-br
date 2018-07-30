@@ -5,12 +5,12 @@ description: Saiba como configurar provedores de armazenamento personalizados pa
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: bdde9b93449c2f3f8d43cc4ff86472ed8a60ed1c
-ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
+ms.openlocfilehash: 7fb64f0b911c11750946697d782488c2107a3637
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37889162"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342517"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizados para ASP.NET Core Identity
 
@@ -41,7 +41,7 @@ dotnet new webapi -au Individual
 
 ## <a name="the-aspnet-core-identity-architecture"></a>A arquitetura do ASP.NET Core Identity
 
-Identidade do ASP.NET Core consiste em classes chamado gerentes e repositórios. *Gerenciadores de* são classes de alto nível que um desenvolvedor de aplicativo usa para executar operações, como a criação de um usuário de identidade. *Repositórios* são classes de nível inferior que especificam como entidades, como usuários e funções, são persistentes. Siga armazena o [padrão de repositório](http://deviq.com/repository-pattern/) e estão intimamente acoplado com o mecanismo de persistência. Os gerentes são separados dos armazenamentos, que significa que você pode substituir o mecanismo de persistência sem alterar o código do aplicativo (com exceção de configuração).
+Identidade do ASP.NET Core consiste em classes chamado gerentes e repositórios. *Gerenciadores de* são classes de alto nível que um desenvolvedor de aplicativo usa para executar operações, como a criação de um usuário de identidade. *Repositórios* são classes de nível inferior que especificam como entidades, como usuários e funções, são persistentes. Siga armazena o [padrão de repositório](xref:fundamentals/repository-pattern) e estão intimamente acoplado com o mecanismo de persistência. Os gerentes são separados dos armazenamentos, que significa que você pode substituir o mecanismo de persistência sem alterar o código do aplicativo (com exceção de configuração).
 
 O diagrama a seguir mostra como um aplicativo web interage com os gerentes, enquanto os armazenamentos de interagem com a camada de acesso a dados.
 

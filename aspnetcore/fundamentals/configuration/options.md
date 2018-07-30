@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: c996ac6ab05b98bcca72d0993fe412f553b58106
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: aa9c490aff873d12c9417e7b611991617207c0d3
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992958"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342439"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Padrão de opções no ASP.NET Core
 
@@ -36,7 +36,7 @@ A classe `MyOptions` é adicionada ao contêiner de serviço com [Configure&lt;T
 
 [!code-csharp[](options/sample/Startup.cs?name=snippet_Example1)]
 
-O seguinte modelo de página usa a [injeção de dependência de construtor](xref:fundamentals/dependency-injection#what-is-dependency-injection) com [IOptions&lt;TOptions&gt;](/dotnet/api/Microsoft.Extensions.Options.IOptions-1) para acessar as configurações (*Pages/Index.cshtml.cs*):
+O seguinte modelo de página usa a [injeção de dependência de construtor](xref:mvc/controllers/dependency-injection) com [IOptions&lt;TOptions&gt;](/dotnet/api/Microsoft.Extensions.Options.IOptions-1) para acessar as configurações (*Pages/Index.cshtml.cs*):
 
 [!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=9)]
 

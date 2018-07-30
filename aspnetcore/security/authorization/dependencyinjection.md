@@ -1,26 +1,26 @@
 ---
-title: Injeção de dependência em manipuladores de requisito no núcleo do ASP.NET
+title: Injeção de dependência em manipuladores de requisito no ASP.NET Core
 author: rick-anderson
-description: Saiba como injetar manipuladores de requisito de autorização em um aplicativo do ASP.NET Core usando a injeção de dependência.
+description: Saiba como injetar manipuladores de requisito de autorização em um aplicativo ASP.NET Core usando a injeção de dependência.
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/dependencyinjection
-ms.openlocfilehash: c6bb2589c6fef9f4586e6f4ddbb574866e6c48ab
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 71d563e11d308a95c08e6d012d3a071f4697d2de
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273716"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342108"
 ---
-# <a name="dependency-injection-in-requirement-handlers-in-aspnet-core"></a>Injeção de dependência em manipuladores de requisito no núcleo do ASP.NET
+# <a name="dependency-injection-in-requirement-handlers-in-aspnet-core"></a>Injeção de dependência em manipuladores de requisito no ASP.NET Core
 
 <a name="security-authorization-di"></a>
 
-[Manipuladores de autorização devem ser registrados](xref:security/authorization/policies#handler-registration) na coleção durante a configuração do serviço (usando [injeção de dependência](xref:fundamentals/dependency-injection#fundamentals-dependency-injection)).
+[Manipuladores de autorização devem ser registrados](xref:security/authorization/policies#handler-registration) na coleção durante a configuração do serviço (usando [injeção de dependência](xref:fundamentals/dependency-injection)).
 
-Suponha que você tenha um repositório de regras que você deseja avaliar dentro de um manipulador de autorização e esse repositório foi registrado na coleção de serviço. A autorização será resolver e injetar que seu construtor.
+Suponha que você tenha um repositório de regras que você queira avaliar dentro de um manipulador de autorização e esse repositório foi registrado na coleção de serviço. A autorização será resolver e inseri-los em seu construtor.
 
-Por exemplo, se você quiser usar o ASP. NET do log de infraestrutura que você deseja inserir `ILoggerFactory` para o manipulador. Tal um manipulador pode parecer com:
+Por exemplo, se você quiser usar o ASP. NET do log a infraestrutura que você deseja injetar `ILoggerFactory` em seu manipulador. Um manipulador desse tipo pode parecer com:
 
 ```csharp
 public class LoggingAuthorizationHandler : AuthorizationHandler<MyRequirement>
@@ -47,7 +47,7 @@ Você deve registrar o manipulador com `services.AddSingleton()`:
 services.AddSingleton<IAuthorizationHandler, LoggingAuthorizationHandler>();
 ```
 
-Uma instância do manipulador será criado quando o aplicativo é iniciado e será DI injetar registrado `ILoggerFactory` para seu construtor.
+Uma instância do manipulador será criado quando o aplicativo for iniciado e será de DI injetar registrado `ILoggerFactory` em seu construtor.
 
 > [!NOTE]
 > Manipuladores que usam o Entity Framework não devem ser registrados como singletons.
