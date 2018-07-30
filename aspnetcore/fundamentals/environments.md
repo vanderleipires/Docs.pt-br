@@ -5,12 +5,12 @@ description: Aprenda a controlar o comportamento do aplicativo em vários ambien
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: 3394113de37da2571ab6398405751961117f12d2
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: eaa6fa44ed90d0c85a11f5e67a4bb9a91e84c196
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992867"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39254864"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Usar vários ambientes no ASP.NET Core
 
@@ -219,7 +219,7 @@ Para definir o valor globalmente no Windows, use uma das seguintes abordagens:
   **Prompt de comando**
 
   ```console
-  setx ASPNETCORE_ENVIRONMENT=Development /M
+  setx ASPNETCORE_ENVIRONMENT Development /M
   ```
 
   O comutador `/M` indica para definir a variável de ambiente no nível do sistema. Se o comutador `/M` não for usado, a variável de ambiente será definida para a conta de usuário.

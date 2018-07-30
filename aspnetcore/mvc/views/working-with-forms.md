@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 02/14/2017
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 3e4e597fde829ae2e2ce4dbd19a4ec0b42d078df
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 34a553c7ff8a18c367bf5e8079e2ea71f968bf3b
+ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274847"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39219414"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>Auxiliares de marca em formulários no ASP.NET Core
 
@@ -169,7 +169,7 @@ As anotações de dados aplicadas às propriedades `Email` e `Password` geram me
 
 ### <a name="expression-names"></a>Nomes de expressão
 
-O valor do atributo `asp-for` é um `ModelExpression` e o lado direito de uma expressão lambda. Portanto, `asp-for="Property1"` se torna `m => m.Property1` no código gerado e é por isso você não precisa colocar o prefixo `Model`. Você pode usar o caractere "@" para iniciar uma expressão embutida e mover para antes de `m.`:
+O valor do atributo `asp-for` é um `ModelExpression` e o lado direito de uma expressão lambda. Portanto, `asp-for="Property1"` se torna `m => m.Property1` no código gerado e é por isso você não precisa colocar o prefixo `Model`. Você pode usar o caractere "\@" para iniciar uma expressão embutida e mover para antes de `m.`:
 
 ```HTML
 @{

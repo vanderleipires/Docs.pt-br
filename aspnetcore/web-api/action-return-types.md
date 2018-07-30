@@ -4,14 +4,14 @@ author: scottaddie
 description: Aprenda a usar os vários tipos de retorno do método de ação do controlador em uma API Web ASP.NET Core.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 03/21/2018
+ms.date: 07/23/2018
 uid: web-api/action-return-types
-ms.openlocfilehash: 422db97da222fb5e742e1d8e6ae410edc90dbc18
-ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
+ms.openlocfilehash: 82d18d866d4d18613cccb950b2f30ae81bd749de
+ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "36273550"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39220606"
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>Tipos de retorno de ação do controlador na API Web ASP.NET Core
 
@@ -21,14 +21,19 @@ Por [Scott Addie](https://github.com/scottaddie)
 
 O ASP.NET Core oferece as seguintes opções para os tipos de retorno da ação do controlador da API Web:
 
-::: moniker range="<= aspnetcore-2.0"
-* [Tipo específico](#specific-type)
-* [IActionResult](#iactionresult-type)
-::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
+
 * [Tipo específico](#specific-type)
 * [IActionResult](#iactionresult-type)
 * [ActionResult\<T>](#actionresultt-type)
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+
+* [Tipo específico](#specific-type)
+* [IActionResult](#iactionresult-type)
+
 ::: moniker-end
 
 Este documento explica quando é mais adequado usar cada tipo de retorno.
@@ -70,12 +75,25 @@ Na ação anterior, um código de status 400 é retornado quando há falha na va
 O outro código de retorno conhecido da ação anterior é 201, que é gerado pelo método auxiliar [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction). Nesse caminho, o objeto `Product` é retornado.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="actionresultt-type"></a>Tipo ActionResult\<T>
 
 O ASP.NET Core 2.1 apresenta o tipo de retorno [ActionResult\<T >](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1) para ações do controlador de API Web. Permite que você retorne um tipo derivado de [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult) ou retorne um [tipo específico](#specific-type). `ActionResult<T>` oferece os seguintes benefícios em relação ao [tipo IActionResult](#iactionresult-type):
 
-* O atributo [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) pode ter sua propriedade `Type` excluída.
+* O atributo [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) pode ter sua propriedade `Type` excluída. Por exemplo, `[ProducesResponseType(200, Type = typeof(Product))]` é simplificado para `[ProducesResponseType(200)]`. O tipo de retorno esperado da ação é inferido do `T` em `ActionResult<T>`.
 * [Operadores de conversão implícita](/dotnet/csharp/language-reference/keywords/implicit) são compatíveis com a conversão de `T` e `ActionResult` em `ActionResult<T>`. `T` converte em [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult), o que significa que `return new ObjectResult(T);` é simplificado para `return T;`.
+
+C# não dá suporte a operadores de conversão implícita em interfaces. Consequentemente, a conversão da interface para um tipo concreto é necessário para usar `ActionResult<T>`. Por exemplo, o uso de `IEnumerable` no exemplo a seguir não funciona:
+
+    ```csharp
+    [HttpGet]
+    public ActionResult<IEnumerable<Product>> Get()
+    {
+        return _repository.GetProducts();
+    }
+    ```
+
+Uma opção para corrigir o código anterior é retornar a `_repository.GetProducts().ToList();`.
 
 A maioria das ações tem um tipo de retorno específico. Condições inesperadas podem ocorrer durante a execução da ação, caso em que o tipo específico não é retornado. Por exemplo, o parâmetro de entrada de uma ação pode falhar na validação do modelo. Nesse caso, é comum retornar o tipo `ActionResult` adequado, em vez do tipo específico.
 
@@ -100,10 +118,11 @@ Se a validação do modelo falhar, o método [BadRequest](/dotnet/api/microsoft.
 
 > [!TIP]
 > Do ASP.NET Core 2.1 em diante, a inferência de origem de associação de parâmetro de ação é habilitada quando uma classe de controlador é decorada com o atributo `[ApiController]`. Parâmetros de tipo complexo são vinculados automaticamente usando o corpo da solicitação. Consequentemente, o parâmetro `product` da ação anterior não é explicitamente anotado com o atributo [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute).
+
 ::: moniker-end
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Ações do controlador](xref:mvc/controllers/actions)
-* [Validação de modelo](xref:mvc/models/validation)
-* [Páginas de ajuda da API Web usando Swagger](xref:tutorials/web-api-help-pages-using-swagger)
+* <xref:mvc/controllers/actions>
+* <xref:mvc/models/validation>
+* <xref:tutorials/web-api-help-pages-using-swagger>

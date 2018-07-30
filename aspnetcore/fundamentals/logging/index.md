@@ -5,12 +5,12 @@ description: Saiba mais sobre a estrutura de registros no ASP.NET Core. Descubra
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 0181566aeab1fa055435ac90887c019eef52878c
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: f629b062afb5c17cd05040a9ef0281aa7121aabc
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228631"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320746"
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -56,7 +56,7 @@ Para usar um provedor, chame o método de extensão `Add<ProviderName>` do prove
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
-O modelo de projeto padrão permite o registro em log com o método [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___):
+O modelo do projeto padrão habilita os provedores de log de depuração e console com uma chamada para o método de extensão [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) no *Program.cs*:
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
@@ -77,11 +77,21 @@ A [DI](xref:fundamentals/dependency-injection) (injeção de dependência) do AS
 
 ::: moniker-end
 
-Você encontrará informações sobre cada [provedor de log interno](#built-in-logging-providers) e links para [provedores de log de terceiros](#third-party-logging-providers) mais adiante no artigo.
+Saiba mais sobre os [provedores de log internos](#built-in-logging-providers) e encontre links para [provedores de log de terceiros](#third-party-logging-providers) mais adiante no artigo.
 
-## <a name="settings-file-configuration"></a>Definições do arquivo de configurações
+## <a name="configuration"></a>Configuração
 
-Cada um dos exemplos anteriores na seção [Como adicionar provedores](#how-to-add-providers) carrega a configuração do provedor de logs da seção `Logging` dos arquivos de configurações do aplicativo. O exemplo a seguir mostra o conteúdo de um típico arquivo *appsettings.Development.json*:
+A configuração do provedor de logs é fornecida por um ou mais provedores de sincronização:
+
+* Formatos de arquivo (INI, JSON e XML).
+* Argumentos de linha de comando.
+* Variáveis de ambiente.
+* Objetos do .NET na memória.
+* O armazenamento do [Secret Manager](xref:security/app-secrets) não criptografado.
+* Um repositório de usuário criptografado, como o [Azure Key Vault](xref:security/key-vault-configuration).
+* Provedores personalizados (instalados ou criados).
+
+Por exemplo, a configuração de log geralmente é fornecida pela seção `Logging` dos arquivos de configurações do aplicativo. O exemplo a seguir mostra o conteúdo de um típico arquivo *appsettings.Development.json*:
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -122,6 +132,8 @@ Chaves `LogLevel` representam nomes de log. A chave `Default` aplica-se a logs n
 Chaves `LogLevel` representam nomes de log. A chave `Default` aplica-se a logs não listados de forma explícita. O valor representa o [nível de log](#log-level) aplicado ao log fornecido.
 
 ::: moniker-end
+
+Saiba mais sobre como implementar provedores de configuração em <xref:fundamentals/configuration/index>.
 
 ## <a name="sample-logging-output"></a>Exemplo de saída de registro em log
 
@@ -436,7 +448,7 @@ O código a seguir habilita os escopos para o provedor de console:
 > [!NOTE]
 > A configuração da opção de agente de console `IncludeScopes` é necessária para habilitar o registro em log baseado em escopo.
 >
-> `IncludeScopes` pode ser configurado por meio de arquivos de configuração *appsettings*. Para obter mais informações, veja a seção [Definição do arquivo de configurações](#settings-file-configuration).
+> Saiba mais sobre como configurar na seção [Configuração](#Configuration).
 
 ::: moniker-end
 
