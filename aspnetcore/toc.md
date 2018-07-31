@@ -141,6 +141,7 @@
 ### [Kestrel](xref:fundamentals/servers/kestrel)
 ### [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
 ### [HTTP.sys](xref:fundamentals/servers/httpsys)
+## [Padrão de repositório](xref:fundamentals/repository-pattern)
 ## [Globalização e localização](xref:fundamentals/localization)
 ### [Configurar a localização do objeto portátil com Orchard Core](xref:fundamentals/portable-object-localization)
 ## [Iniciar solicitações HTTP](xref:fundamentals/http-requests)

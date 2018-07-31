@@ -5,12 +5,12 @@ description: Receba orientações para migrar os aplicativos existentes do ASP.N
 ms.author: scaddie
 ms.date: 08/27/2017
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 285f252767e4eacbb6a9ccc50bd98d1916e26bd4
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2f42ca6f9da8d9941e5bab40afc36c95360c3550
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273502"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342179"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core"></a>Migrar do ASP.NET para o ASP.NET Core
 
@@ -136,7 +136,7 @@ Já que a injeção de dependência é parte do ASP.NET Core, você pode adicion
 O repositório pode ser injetado em qualquer lugar, como ocorria com a Unity.
 
 > [!NOTE]
-> Para uma referência detalhada sobre a injeção de dependência no ASP.NET Core, veja [Injeção de dependência no ASP.NET Core](xref:fundamentals/dependency-injection#replacing-the-default-services-container)
+> Para obter mais informações sobre injeção de dependência, confira [Injeção de dependência](xref:fundamentals/dependency-injection).
 
 ## <a name="serve-static-files"></a>Fornecer arquivos estáticos
 
