@@ -5,14 +5,14 @@ description: Saiba como configurar aplicativos do SignalR do ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/30/2018
+ms.date: 07/31/2018
 uid: signalr/configuration
-ms.openlocfilehash: f5a345795f17dafd482e359e77a151d5b0a15688
-ms.sourcegitcommit: 8b68e144aab75374af52605a71717c77345a28b2
+ms.openlocfilehash: 32c0ad94fba09fa099c2ab4a6b1d6d79a5542d7f
+ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39182584"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39396056"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>Configuração do ASP.NET SignalR Core
 
@@ -20,7 +20,7 @@ ms.locfileid: "39182584"
 
 SignalR do ASP.NET Core dá suporte a dois protocolos para codificação de mensagens: [JSON](https://www.json.org/) e [MessagePack](https://msgpack.org/index.html). Cada protocolo tem opções de configuração de serialização.
 
-Serialização JSON pode ser configurada no servidor usando o [ `AddJsonProtocol` ](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol) método de extensão, que pode ser adicionado após [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) no seu `Startup.ConfigureServices` método. O `AddJsonProtocol` leva um delegado que recebe um `options` objeto. O [ `PayloadSerializerSettings` ](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings) propriedade desse objeto é um JSON.NET `JsonSerializerSettings` objeto que pode ser usado para configurar a serialização de argumentos e valores de retorno. Consulte a [documentação do JSON.NET](https://www.newtonsoft.com/json/help/html/Introduction.htm) para obter mais detalhes.
+Serialização JSON pode ser configurada no servidor usando o [AddJsonProtocol](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol) método de extensão, que pode ser adicionado após [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) em seu `Startup.ConfigureServices` método. O `AddJsonProtocol` leva um delegado que recebe um `options` objeto. O [PayloadSerializerSettings](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings) propriedade desse objeto é um JSON.NET `JsonSerializerSettings` objeto que pode ser usado para configurar a serialização de argumentos e valores de retorno. Consulte a [documentação do JSON.NET](https://www.newtonsoft.com/json/help/html/Introduction.htm) para obter mais detalhes.
 
 Por exemplo, para configurar o serializador para usar nomes de propriedade "PascalCase", em vez dos nomes de "camelCase" padrão, use o seguinte código:
 
@@ -60,12 +60,12 @@ MessagePack serialização pode ser configurada fornecendo um delegado para o [A
 
 A tabela a seguir descreve as opções de configuração hubs do SignalR:
 
-| Opção | Descrição |
-| ------ | ----------- |
-| `HandshakeTimeout` | Se o cliente não envia uma mensagem de handshake inicial dentro deste intervalo de tempo, a conexão será fechada. Isso é uma configuração avançada que deve ser modificada apenas se os erros de tempo limite de handshake estiverem ocorrendo devido à latência de rede graves. Para obter mais detalhes sobre o processo de Handshake, consulte a [especificação de protocolo de Hub do SignalR](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
-| `KeepAliveInterval` | Se o servidor não enviou uma mensagem dentro deste intervalo, uma mensagem de ping é enviada automaticamente para manter a conexão aberta. |
-| `SupportedProtocols` | Protocolos com suporte por esse hub. Por padrão, todos os protocolos registrados no servidor são permitidos, mas protocolos podem ser removidos dessa lista para desabilitar os protocolos específicos para hubs individuais. |
-| `EnableDetailedErrors` | Se `true`detalhada mensagens de exceção são retornadas aos clientes quando uma exceção é gerada em um método de Hub. O padrão é `false`, conforme essas mensagens de exceção podem conter informações confidenciais. |
+| Opção | Valor padrão | Descrição |
+| ------ | ------------- | ----------- |
+| `HandshakeTimeout` | 15 segundos | Se o cliente não envia uma mensagem de handshake inicial dentro deste intervalo de tempo, a conexão será fechada. Isso é uma configuração avançada que deve ser modificada apenas se os erros de tempo limite de handshake estiverem ocorrendo devido à latência de rede graves. Para obter mais detalhes sobre o processo de handshake, consulte a [especificação de protocolo de Hub do SignalR](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
+| `KeepAliveInterval` | 15 segundos | Se o servidor não enviou uma mensagem dentro deste intervalo, uma mensagem de ping é enviada automaticamente para manter a conexão aberta. |
+| `SupportedProtocols` | Todos os protocolos | Protocolos com suporte por esse hub. Por padrão, todos os protocolos registrados no servidor são permitidos, mas protocolos podem ser removidos dessa lista para desabilitar os protocolos específicos para hubs individuais. |
+| `EnableDetailedErrors` | `false` | Se `true`detalhada mensagens de exceção são retornadas aos clientes quando uma exceção é gerada em um método de Hub. O padrão é `false`, conforme essas mensagens de exceção podem conter informações confidenciais. |
 
 Opções podem ser configuradas para todos os hubs, fornecendo um delegado de opções para o `AddSignalR` chamar em `Startup.ConfigureServices`.
 
@@ -80,7 +80,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Opções para um único hub substituem as opções de globais fornecidas no `AddSignalR` e pode ser configurado usando [ `AddHubOptions<T>` ](/dotnet/api/microsoft.extensions.dependencyinjection.huboptionsdependencyinjectionextensions.addhuboptions):
+Opções para um único hub substituem as opções de globais fornecidas no `AddSignalR` e pode ser configurado usando [AddHubOptions\<T >](/dotnet/api/microsoft.extensions.dependencyinjection.huboptionsdependencyinjectionextensions.addhuboptions):
 
 ```csharp
 services.AddSignalR().AddHubOptions<MyHub>(options =>
@@ -89,29 +89,29 @@ services.AddSignalR().AddHubOptions<MyHub>(options =>
 }
 ```
 
-Use `HttpConnectionDispatcherOptions` para definir configurações avançadas relacionadas a transportes e gerenciamento de buffer de memória. Essas opções são configuradas passando um delegado para [ `MapHub<T>` ](/dotnet/api/microsoft.aspnetcore.signalr.hubroutebuilder.maphub).
+Use `HttpConnectionDispatcherOptions` para definir configurações avançadas relacionadas a transportes e gerenciamento de buffer de memória. Essas opções são configuradas passando um delegado para [MapHub\<T >](/dotnet/api/microsoft.aspnetcore.signalr.hubroutebuilder.maphub).
 
-| Opção | Descrição |
-| ------ | ----------- |
-| `ApplicationMaxBufferSize` | O número máximo de bytes recebidos do cliente que os buffers de servidor. Aumentar esse valor permite que o servidor receber mensagens maiores, mas pode afetar negativamente o consumo de memória. O valor padrão é 32KB. |
-| `AuthorizationData` | Uma lista dos [ `IAuthorizeData` ](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizedata) objetos usados para determinar se um cliente está autorizado a conectar-se ao hub. Por padrão, esse campo é preenchido com os valores do `Authorize` atributos aplicados à classe Hub. |
-| `TransportMaxBufferSize` | O número máximo de bytes enviados pelo aplicativo que os buffers de servidor. Aumentar esse valor permite que o servidor enviar mensagens maiores, mas pode afetar negativamente o consumo de memória. O valor padrão é 32KB. |
-| `Transports` | Um bitmask de `HttpTransportType` valores que possam restringir os transportes de um cliente pode usar para se conectar. Todos os transportes são habilitados por padrão. |
-| `LongPolling` | Opções adicionais específicas para o transporte de sondagem longa. |
-| `WebSockets` | Opções adicionais específicas para o transporte de WebSockets. |
+| Opção | Valor padrão | Descrição |
+| ------ | ------------- | ----------- |
+| `ApplicationMaxBufferSize` | 32 KB | O número máximo de bytes recebidos do cliente que os buffers de servidor. Aumentar esse valor permite que o servidor receber mensagens maiores, mas pode afetar negativamente o consumo de memória. |
+| `AuthorizationData` | Dados coletados automaticamente a partir de `Authorize` atributos aplicados à classe Hub. | Uma lista dos [IAuthorizeData](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizedata) objetos usados para determinar se um cliente está autorizado a conectar-se ao hub. |
+| `TransportMaxBufferSize` | 32 KB | O número máximo de bytes enviados pelo aplicativo que os buffers de servidor. Aumentar esse valor permite que o servidor enviar mensagens maiores, mas pode afetar negativamente o consumo de memória. |
+| `Transports` | Todos os transportes estão habilitados. | Um bitmask de `HttpTransportType` valores que possam restringir os transportes de um cliente pode usar para se conectar. |
+| `LongPolling` | Veja a seguir. | Opções adicionais específicas para o transporte de sondagem longa. |
+| `WebSockets` | Veja a seguir. | Opções adicionais específicas para o transporte de WebSockets. |
 
 O transporte de sondagem longa tem opções adicionais que podem ser configuradas usando o `LongPolling` propriedade:
 
-| Opção | Descrição |
-| ------ | ----------- |
-| `PollTimeout` | A quantidade máxima de tempo o servidor aguarda uma mensagem para enviar ao cliente antes de encerrar uma solicitação de pesquisa único. Diminuir esse valor faz com que o cliente emitir novas solicitações de sondagem com mais frequência. O valor padrão é 90 segundos. |
+| Opção | Valor padrão | Descrição |
+| ------ | ------------- | ----------- |
+| `PollTimeout` | 90 segundos | A quantidade máxima de tempo o servidor aguarda uma mensagem para enviar ao cliente antes de encerrar uma solicitação de pesquisa único. Diminuir esse valor faz com que o cliente emitir novas solicitações de sondagem com mais frequência. |
 
 O transporte de WebSocket tem opções adicionais que podem ser configuradas usando o `WebSockets` propriedade:
 
-| Opção | Descrição |
-| ------ | ----------- |
-| `CloseTimeout` | Depois de fecha o servidor, se o cliente não conseguir fechar dentro deste intervalo de tempo, a conexão é encerrada. |
-| `SubProtocolSelector` | Um delegado que pode ser usado para definir o `Sec-WebSocket-Protocol` cabeçalho para um valor personalizado. O delegado recebe os valores solicitados pelo cliente como entrada e deve retornar o valor desejado. |
+| Opção | Valor padrão | Descrição |
+| ------ | ------------- | ----------- |
+| `CloseTimeout` | 5 segundos | Depois de fecha o servidor, se o cliente não conseguir fechar dentro deste intervalo de tempo, a conexão é encerrada. |
+| `SubProtocolSelector` | `null` | Um delegado que pode ser usado para definir o `Sec-WebSocket-Protocol` cabeçalho para um valor personalizado. O delegado recebe os valores solicitados pelo cliente como entrada e deve retornar o valor desejado. |
 
 ## <a name="configure-client-options"></a>Configurar opções do cliente
 
@@ -214,10 +214,10 @@ let connection = new signalR.HubConnectionBuilder()
 
 Opções adicionais para configurar o tempo limite e o comportamento de keep alive estão disponíveis no `HubConnection` objeto em si:
 
-| Opção de .NET | Opção de JavaScript | Descrição |
-| ----------- | ----------------- | ----------- |
-| `ServerTimeout` | `serverTimeoutInMilliseconds` | Tempo limite para a atividade do servidor. Se o servidor não enviou uma mensagem nesse intervalo, o cliente considera o servidor desconectado e gatilhos do `Closed` evento (`onclose` em JavaScript). |
-| `HandshakeTimeout` | Não é configurável | Tempo limite para o handshake inicial do servidor. Se o servidor não enviar uma resposta de handshake nesse intervalo, o cliente cancela o handshake e gatilhos do `Closed` evento (`onclose` em JavaScript). Isso é uma configuração avançada que deve ser modificada apenas se os erros de tempo limite de handshake estiverem ocorrendo devido à latência de rede graves. Para obter mais detalhes sobre o processo de Handshake, consulte a [especificação de protocolo de Hub do SignalR](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
+| Opção de .NET | Opção de JavaScript | Valor padrão | Descrição |
+| ----------- | ----------------- | ------------- | ----------- |
+| `ServerTimeout` | `serverTimeoutInMilliseconds` | 30 segundos (30.000 milissegundos) | Tempo limite para a atividade do servidor. Se o servidor não enviou uma mensagem nesse intervalo, o cliente considera o servidor desconectado e gatilhos do `Closed` evento (`onclose` em JavaScript). |
+| `HandshakeTimeout` | Não é configurável | 15 segundos | Tempo limite para o handshake inicial do servidor. Se o servidor não enviar uma resposta de handshake nesse intervalo, o cliente cancela o handshake e gatilhos do `Closed` evento (`onclose` em JavaScript). Isso é uma configuração avançada que deve ser modificada apenas se os erros de tempo limite de handshake estiverem ocorrendo devido à latência de rede graves. Para obter mais detalhes sobre o processo de Handshake, consulte a [especificação de protocolo de Hub do SignalR](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
 
 No cliente do .NET, os valores de tempo limite são especificados como `TimeSpan` valores. No cliente JavaScript, os valores de tempo limite são especificados como um número que indica a duração em milissegundos.
 
@@ -225,19 +225,19 @@ No cliente do .NET, os valores de tempo limite são especificados como `TimeSpan
 
 Opções adicionais podem ser configuradas na `WithUrl` (`withUrl` em JavaScript) método em `HubConnectionBuilder`:
 
-| Opção de .NET | Opção de JavaScript | Descrição |
-| ----------- | ----------------- | ----------- |
-| `AccessTokenProvider` | `accessTokenFactory` | Uma função que retorna uma cadeia de caracteres que é fornecida como um token de autenticação de portador em solicitações HTTP. |
-| `SkipNegotiation` | `skipNegotiation` | Defina isso como `true` para ignorar a etapa de negociação. **Só tem suporte quando o transporte de WebSockets é o único transporte habilitado**. Essa configuração não pode ser habilitada ao usar o serviço do Azure SignalR. |
-| `ClientCertificates` | Não é configurável * | Uma coleção de certificados TLS para enviar para autenticar solicitações. |
-| `Cookies` | Não é configurável * | Uma coleção de cookies HTTP a ser enviado com cada solicitação HTTP. |
-| `Credentials` | Não é configurável * | Credenciais devem ser enviados com cada solicitação HTTP. |
-| `CloseTimeout` | Não é configurável * | WebSockets. A quantidade máxima de tempo que o cliente aguardará depois de fechamento para o servidor confirmar a solicitação de fechamento. Se o servidor não reconhece o fechamento dentro desse período, o cliente se desconecta. |
-| `Headers` | Não é configurável * | Um dicionário de cabeçalhos HTTP adicionais para enviar com todas as solicitações HTTP. |
-| `HttpMessageHandlerFactory` | Não é configurável * | Um delegado que pode ser usado para configurar ou substituir o `HttpMessageHandler` usado para enviar solicitações HTTP. Não é usado para conexões de WebSocket. Esse delegado deve retornar um valor não nulo e recebe o valor padrão como um parâmetro. Modificar configurações nesse valor padrão e retorná-lo ou retornar um completamente novo `HttpMessageHandler` instância. |
-| `Proxy` | Não é configurável * | Um proxy HTTP a ser usado ao enviar solicitações HTTP. |
-| `UseDefaultCredentials` | Não é configurável * | Defina esse valor booliano para enviar as credenciais padrão para solicitações HTTP e WebSockets. Isso permite que o uso da autenticação do Windows. |
-| `WebSocketConfiguration` | Não é configurável * | Um delegado que pode ser usado para configurar opções adicionais de WebSocket. Recebe uma instância do [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions) que pode ser usado para configurar as opções. |
+| Opção de .NET | Opção de JavaScript | Valor padrão | Descrição |
+| ----------- | ----------------- | ------------- | ----------- |
+| `AccessTokenProvider` | `accessTokenFactory` | `null` | Uma função que retorna uma cadeia de caracteres que é fornecida como um token de autenticação de portador em solicitações HTTP. |
+| `SkipNegotiation` | `skipNegotiation` | `false` | Defina isso como `true` para ignorar a etapa de negociação. **Só tem suporte quando o transporte de WebSockets é o único transporte habilitado**. Essa configuração não pode ser habilitada ao usar o serviço do Azure SignalR. |
+| `ClientCertificates` | Não é configurável * | Vazio | Uma coleção de certificados TLS para enviar para autenticar solicitações. |
+| `Cookies` | Não é configurável * | Vazio | Uma coleção de cookies HTTP a ser enviado com cada solicitação HTTP. |
+| `Credentials` | Não é configurável * | Vazio | Credenciais devem ser enviados com cada solicitação HTTP. |
+| `CloseTimeout` | Não é configurável * | 5 segundos | WebSockets. A quantidade máxima de tempo que o cliente aguardará depois de fechamento para o servidor confirmar a solicitação de fechamento. Se o servidor não reconhece o fechamento dentro desse período, o cliente se desconecta. |
+| `Headers` | Não é configurável * | Vazio | Um dicionário de cabeçalhos HTTP adicionais para enviar com todas as solicitações HTTP. |
+| `HttpMessageHandlerFactory` | Não é configurável * | `null` | Um delegado que pode ser usado para configurar ou substituir o `HttpMessageHandler` usado para enviar solicitações HTTP. Não é usado para conexões de WebSocket. Esse delegado deve retornar um valor não nulo e recebe o valor padrão como um parâmetro. Modificar configurações nesse valor padrão e retorná-lo ou retornar um completamente novo `HttpMessageHandler` instância. |
+| `Proxy` | Não é configurável * | `null` | Um proxy HTTP a ser usado ao enviar solicitações HTTP. |
+| `UseDefaultCredentials` | Não é configurável * | `false` | Defina esse valor booliano para enviar as credenciais padrão para solicitações HTTP e WebSockets. Isso permite que o uso da autenticação do Windows. |
+| `WebSocketConfiguration` | Não é configurável * | `null` | Um delegado que pode ser usado para configurar opções adicionais de WebSocket. Recebe uma instância do [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions) que pode ser usado para configurar as opções. |
 
 Opções marcadas com um asterisco (*) não são configuráveis no cliente JavaScript, devido a limitações no navegador APIs.
 

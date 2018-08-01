@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 6/16/2018
 uid: security/authentication/add-user-data
-ms.openlocfilehash: ecd0e6d1c71b24309fab70fbb06af7731463bb0e
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 6f583d65460803c816bf1ccd314216952710cd55
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38215929"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378609"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>Adicionar, baixar e excluir dados de usuário personalizada à identidade em um projeto ASP.NET Core
 
@@ -108,7 +108,7 @@ Siga as instruções da [migrações, UseAuthentication e layout](xref:security/
 
 ## <a name="add-custom-user-data-to-the-identity-db"></a>Adicionar dados de usuário personalizada para o banco de dados de identidade
 
-Atualização de `IdentityUser` derivado da classe com propriedades personalizadas. Se tiver nomeado seu projeto WebApp1, o arquivo é nomeado *Areas/Identity/Data/WebApp1User.cs*. Atualize o arquivo com o código a seguir:
+Atualização de `IdentityUser` derivado da classe com propriedades personalizadas. Se você nomeou o projeto WebApp1, o arquivo é nomeado *Areas/Identity/Data/WebApp1User.cs*. Atualize o arquivo com o código a seguir:
 
 [!code-csharp[Main](add-user-data/sample/Areas/Identity/Data/WebApp1User.cs)]
 
