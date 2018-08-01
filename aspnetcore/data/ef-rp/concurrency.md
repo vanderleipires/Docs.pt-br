@@ -5,12 +5,12 @@ description: Este tutorial mostra como lidar com conflitos quando os mesmos usu�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: ff9e52df63f9c9f47ee659a68beb28b773a114a1
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: a010e2ed660bea56b112799e850f2fb0ff37579e
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202686"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219388"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Simultaneidade – 8 de 8
 
@@ -153,24 +153,23 @@ Os comandos anteriores:
 <a name="scaffold"></a>
 ## <a name="scaffold-the-departments-model"></a>Gerar o modelo Departamentos por scaffolding
 
-* Saia do Visual Studio.
-* Abra uma janela de comando no diretório do projeto (o diretório que contém os arquivos *Program.cs*, *Startup.cs* e *.csproj*).
-* Execute o seguinte comando:
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+Siga as instruções em [Gere um modelo de aluno por scaffold](xref:data/ef-rp/intro#scaffold-the-student-model) e use `Department` para a classe de modelo.
+
+# <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
+
+ Execute o seguinte comando:
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outDir Pages\Departments --referenceScriptLibraries
   ```
 
+------
+
 O comando anterior gera o modelo `Department` por scaffolding. Abra o projeto no Visual Studio.
 
-Compile o projeto. O build gera erros, como o seguinte:
-
-`1>Pages/Departments/Index.cshtml.cs(26,37,26,43): error CS1061: 'SchoolContext' does not
- contain a definition for 'Department' and no extension method 'Department' accepting a first
- argument of type 'SchoolContext' could be found (are you missing a using directive or
- an assembly reference?)`
-
- Altere `_context.Department` globalmente para `_context.Departments` (ou seja, adicione um "s" a `Department`). 7 ocorrências foram encontradas e atualizadas.
+Compile o projeto.
 
 ### <a name="update-the-departments-index-page"></a>Atualizar a página Índice de Departamentos
 

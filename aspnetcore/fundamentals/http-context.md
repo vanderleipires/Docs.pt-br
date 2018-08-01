@@ -4,18 +4,18 @@ author: coderandhiker
 description: Saiba como acessar o HttpContext no ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/20/2018
+ms.date: 07/27/2018
 uid: fundamentals/httpcontext
-ms.openlocfilehash: b1ff80943db1788b465accd51c70a3c3a3462d5c
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: ee185cd30af51fa6ee9a4d23ea60a56ec1b76c8d
+ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202699"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332282"
 ---
 # <a name="access-httpcontext-in-aspnet-core"></a>Acessar o HttpContext no ASP.NET Core
 
-Os aplicativos ASP.NET Core acessam o `HttpContext` por meio da interface [IHttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor) e da implementação padrão do [HttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.httpcontextaccessor).
+Os aplicativos ASP.NET Core acessam o `HttpContext` por meio da interface [IHttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor) e da implementação padrão do [HttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.httpcontextaccessor). Só é necessário usar o `IHttpContextAccessor` quando você precisar acessar o `HttpContext` em um serviço.
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -36,6 +36,16 @@ public class AboutModel : PageModel
 ```
 
 ::: moniker-end
+
+## <a name="use-httpcontext-from-a-razor-view"></a>Usar o HttpContext de uma exibição do Razor
+
+As exibições do Razor expõem o `HttpContext` diretamente por meio de uma propriedade [RazorPage.Context](/dotnet/api/microsoft.aspnetcore.mvc.razor.razorpage.context#Microsoft_AspNetCore_Mvc_Razor_RazorPage_Context) na exibição. O exemplo a seguir recupera o nome de usuário atual em um aplicativo de Intranet usando a Autenticação do Windows:
+
+```cshtml
+@{
+    var username = Context.User.Identity.Name;
+}
+```
 
 ## <a name="use-httpcontext-from-a-controller"></a>Usar o HttpContext de um controlador
 

@@ -5,12 +5,12 @@ description: Neste tutorial, você adiciona mais entidades e relações e person
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 6888df174e92ab2ddf8add7b8927250be320bff8
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: 88d727b0545f1dacb56ea889e45b02f947867b19
+ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202647"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39220593"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Modelo de dados – 5 de 8
 
@@ -400,9 +400,9 @@ Se as regras de negócio exigirem que a propriedade `InstructorID` não permita 
 
 O código anterior desabilita a exclusão em cascata na relação departamento-instrutor.
 
-## <a name="update-the-enrollment-entityupdate-the-enrollment-entity"></a>Atualizar a entidade Enrollment
+## <a name="update-the-enrollment-entity"></a>Atualizar a entidade Enrollment
 
-Um registro refere-se a um curso feito por um aluno.
+Um registro se refere a um curso feito por um aluno.
 
 ![Entidade Enrollment](complex-data-model/_static/enrollment-entity.png)
 

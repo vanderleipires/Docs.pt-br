@@ -5,14 +5,14 @@ description: Saiba mais sobre como usar a interface IHttpClientFactory para gere
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 06/22/2018
+ms.date: 07/23/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: e56c7a3ed80cc08103f6178859a1a99f1a5ec068
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: 87424eaea499ba7ece1e5ef88649fcbb2e297635
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36327516"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320649"
 ---
 # <a name="initiate-http-requests"></a>Iniciar solicitações HTTP
 
@@ -24,6 +24,12 @@ Um [IHttpClientFactory](/dotnet/api/system.net.http.ihttpclientfactory) pode ser
 * Codifica o conceito de middleware de saída por meio da delegação de manipuladores no `HttpClient` e fornece extensões para que o middleware baseado no Polly possa aproveitar esse recurso.
 * Gerencia o pooling e o tempo de vida das instâncias de `HttpClientMessageHandler` subjacentes para evitar problemas de DNS comuns que ocorrem no gerenciamento manual de tempos de vida de `HttpClient`.
 * Adiciona uma experiência de registro em log configurável (via `ILogger`) para todas as solicitações enviadas por meio de clientes criados pelo alocador.
+
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/http-requests/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+Os projetos direcionados ao .NET Framework exigem a instalação do pacote do NuGet [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/). Os projetos destinados ao .Net Core e a referência ao [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) já incluem o pacote `Microsoft.Extensions.Http`.
 
 ## <a name="consumption-patterns"></a>Padrões de consumo
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 6aded9525a0abd31dec8441c7fba60d8845c7d93
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: d7e60c0f615841461a17b093bffe5fb3f82f8616
+ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938235"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332269"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Tratar erros no ASP.NET Core
 
@@ -103,11 +103,11 @@ Outro método usa uma cadeia de caracteres de formato e de tipo de conteúdo:
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-Há também métodos de extensão de redirecionamento e de nova execução. O método de redirecionamento envia um código de status *302 – Encontrado* para o cliente:
+Há também métodos de extensão de redirecionamento e de nova execução. O método de redirecionamento envia um código de status *302 encontrado* para o cliente e o redireciona para o modelo de URL do local fornecido. O modelo pode incluir um espaço reservado de `{0}` para o código de status. As URLs que começam com `~` têm o caminho base anexado. Uma URL que não começa com `~` é usada como está.
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
-O método de nova execução retorna o código de status original para o cliente, mas também executa o manipulador para a URL de redirecionamento:
+O método de nova execução retorna o código de status original ao cliente e especifica que o corpo da resposta deve ser gerado executando novamente o pipeline de solicitação, utilizando um caminho alternativo. Esse caminho pode conter um espaço reservado de `{0}` para o código de status:
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");

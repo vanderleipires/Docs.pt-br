@@ -5,12 +5,12 @@ description: Saiba como as exibições tratam da apresentação de dados do apli
 ms.author: riande
 ms.date: 12/12/2017
 uid: mvc/views/overview
-ms.openlocfilehash: 4d5cb6288711cdef145ebb0b52e4e645c535bdf2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 276540a5d77b1d65119d1b2104508d77f45d5588
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278343"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219362"
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Exibições no ASP.NET Core MVC
 
@@ -123,15 +123,15 @@ Siga a melhor prática de organizar a estrutura de arquivos de suas exibições 
 Passe dados para exibições usando várias abordagens:
 
 * Dados fortemente tipados: viewmodel
-* Dados de tipo fraco
-  - `ViewData` (`ViewDataAttribute`)
-  - `ViewBag`
+* Dados fracamente tipados
+  * `ViewData` (`ViewDataAttribute`)
+  * `ViewBag`
 
 ### <a name="strongly-typed-data-viewmodel"></a>Dados fortemente tipados (viewmodel)
 
 A abordagem mais robusta é especificar um tipo de [modelo](xref:mvc/models/model-binding) na exibição. Esse modelo é conhecido como *viewmodel*. Você passa uma instância do tipo viewmodel para a exibição da ação.
 
-Usar um viewmodel para passar dados para uma exibição permite que a exibição tire proveito da verificação de tipo *forte*. *Tipagem forte* (ou *fortemente tipado*) significa que cada variável e constante tem um tipo definido explicitamente (por exemplo, `string`, `int` ou `DateTime`). A validade dos tipos usados em uma exibição é verificada em tempo de compilação.
+Usar um viewmodel para passar dados para uma exibição permite que a exibição tire proveito da verificação de tipo *forte*. *Tipagem forte* (ou *fortemente tipado*) significa que cada variável e constante têm um tipo definido explicitamente (por exemplo, `string`, `int` ou `DateTime`). A validade dos tipos usados em uma exibição é verificada em tempo de compilação.
 
 O [Visual Studio](https://www.visualstudio.com/vs/) e o [Visual Studio Code](https://code.visualstudio.com/) listam membros de classe fortemente tipados usando um recurso chamado [IntelliSense](/visualstudio/ide/using-intellisense). Quando quiser ver as propriedades de um viewmodel, digite o nome da variável para o viewmodel, seguido por um ponto final (`.`). Isso ajuda você a escrever código mais rapidamente e com menos erros.
 
@@ -188,11 +188,11 @@ Nada impede que você use as mesmas classes para seus tipos de viewmodel e seus 
 
 <a name="VD_VB"></a>
 
-### <a name="weakly-typed-data-viewdata-viewdata-attribute-and-viewbag"></a>Dados de tipo fraco (ViewData, atributo ViewData e ViewBag)
+### <a name="weakly-typed-data-viewdata-viewdata-attribute-and-viewbag"></a>Dados fracamente tipados (ViewData, atributo ViewData e ViewBag)
 
 `ViewBag` *não está disponível nas Páginas do Razor.*
 
-Além de exibições fortemente tipadas, as exibições têm acesso a uma coleção de dados com *tipagem fraca* (também chamada de *tipagem flexível*). Diferente dos tipos fortes, ter *tipos fracos* (ou *tipos flexíveis*) significa que você não declara explicitamente o tipo dos dados que está usando. Você pode usar a coleção de dados com tipagem fraca para passar pequenas quantidades de dados para dentro e para fora de controladores e exibições.
+Além de exibições fortemente tipadas, as exibições têm acesso a uma coleção de dados *fracamente tipados* (também chamada de *tipagem flexível*). Diferente dos tipos fortes, ter *tipos fracos* (ou *tipos flexíveis*) significa que você não declara explicitamente o tipo dos dados que está usando. Você pode usar a coleção de dados fracamente tipados para transmitir pequenas quantidades de dados para dentro e para fora dos controladores e das exibições.
 
 | Passar dados entre...                        | Exemplo                                                                        |
 | ------------------------------------------------- | ------------------------------------------------------------------------------ |
@@ -200,7 +200,7 @@ Além de exibições fortemente tipadas, as exibições têm acesso a uma coleç
 | Uma exibição e uma [exibição de layout](xref:mvc/views/layout)   | Definir o conteúdo do elemento **\<title>** na exibição de layout de um arquivo de exibição.  |
 | Uma [exibição parcial](xref:mvc/views/partial) e uma exibição | Um widget que exibe dados com base na página da Web que o usuário solicitou.      |
 
-Essa coleção pode ser referenciada por meio das propriedades `ViewData` ou `ViewBag` em controladores e exibições. A propriedade `ViewData` é um dicionário de objetos com tipagem fraca. A propriedade `ViewBag` é um wrapper em torno de `ViewData` que fornece propriedades dinâmicas à coleção de `ViewData` subjacente.
+Essa coleção pode ser referenciada por meio das propriedades `ViewData` ou `ViewBag` em controladores e exibições. A propriedade `ViewData` é um dicionário de objetos fracamente tipados. A propriedade `ViewBag` é um wrapper em torno de `ViewData` que fornece propriedades dinâmicas à coleção de `ViewData` subjacente.
 
 `ViewData` e `ViewBag` são resolvidos dinamicamente em tempo de execução. Uma vez que não oferecem verificação de tipo em tempo de compilação, geralmente ambos são mais propensos a erros do que quando um viewmodel é usado. Por esse motivo, alguns desenvolvedores preferem nunca usar `ViewData` e `ViewBag` ou usá-los o mínimo possível.
 
@@ -247,6 +247,7 @@ Trabalhar com os dados em uma exibição:
 ```
 
 ::: moniker range=">= aspnetcore-2.1"
+
 **Atributo ViewData**
 
 Outra abordagem que usa o [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) é [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute). As propriedades nos controladores ou nos modelos da Página do Razor decoradas com `[ViewData]` têm seus valores armazenados e carregados do dicionário.
@@ -284,6 +285,7 @@ No layout, o título é lido a partir do dicionário ViewData:
     <title>@ViewData["Title"] - WebApplication</title>
     ...
 ```
+
 ::: moniker-end
 
 **ViewBag**

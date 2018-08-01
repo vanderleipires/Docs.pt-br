@@ -5,14 +5,14 @@ description: Descubra o auxiliar de marca parcial do ASP.NET Core e a função d
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/06/2018
+ms.date: 07/25/2018
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: a289a946a6d3eb491a08103dcefdd688eab52072
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: cb63357b1859c3709b2eae9f4e380c4a74e5e448
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938333"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39254747"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>Auxiliar de marca parcial no ASP.NET Core
 
@@ -43,7 +43,7 @@ Segue um inventário dos atributos do auxiliar de marca parcial.
 
 ## <a name="name"></a>name
 
-O atributo `name` é necessário. Indica o nome ou o caminho da exibição parcial a ser renderizada. Quando é fornecido um nome de exibição parcial, o processo [descoberta de exibição](xref:mvc/views/overview#view-discovery) é iniciado. Esse processo é ignorado quando um caminho explícito é fornecido.
+O atributo `name` é necessário. Indica o nome ou o caminho da exibição parcial a ser renderizada. Quando é fornecido um nome de exibição parcial, o processo [descoberta de exibição](xref:mvc/views/overview#view-discovery) é iniciado. Esse processo é ignorado quando um caminho explícito é fornecido. Para todos os valores de `name` aceitáveis, consulte [Descoberta de exibição parcial](xref:mvc/views/partial#partial-view-discovery).
 
 A marcação a seguir usa um caminho explícito, indicando que *_ProductPartial.cshtml* deve ser carregado da pasta *Compartilhado*. Usando o atributo [for](#for), um modelo é passado para a exibição parcial para associação.
 

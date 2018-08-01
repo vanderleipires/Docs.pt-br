@@ -3,14 +3,14 @@ title: Roteamento no ASP.NET Core
 author: ardalis
 description: Descubra como a funcionalidade de roteamento do ASP.NET Core é responsável por mapear uma solicitação de entrada para um manipulador de rotas.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 07/25/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 4482c865671eb4f5decbd5f1cd6e26f2e68e5c25
-ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
+ms.openlocfilehash: 19265ac4d19915462c50628061600b1fde04694b
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314130"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39254877"
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
@@ -73,7 +73,7 @@ Dica: considere `Values` como sendo um conjunto de substituições para os `Ambi
 
 A saída de `GetVirtualPath` é um `VirtualPathData`. `VirtualPathData` é um paralelo do `RouteData`; ele contém o `VirtualPath` para a URL de saída e algumas propriedades adicionais que devem ser definidas pela rota.
 
-A propriedade `VirtualPathData.VirtualPath` contém o *caminho virtual* produzido pela rota. Dependendo de suas necessidades, talvez você precise processar ainda mais o caminho. Por exemplo, se você deseja renderizar a URL gerada em HTML, precisa preceder o caminho base do aplicativo.
+A propriedade `VirtualPathData.VirtualPath` contém o *caminho virtual* produzido pela rota. Dependendo das suas necessidades, talvez você precise processar ainda mais o caminho. Por exemplo, se você deseja renderizar a URL gerada em HTML, precisa preceder o caminho base do aplicativo.
 
 O `VirtualPathData.Router` é uma referência à rota que é gerou a URL com êxito.
 
@@ -322,17 +322,24 @@ A tabela a seguir demonstra algumas restrições de rota e seu comportamento esp
 | `regex(expression)` | `{ssn:regex(^\\d{{3}}-\\d{{2}}-\\d{{4}}$)}` | `123-45-6789` | A cadeia de caracteres deve corresponder à expressão regular (veja as dicas sobre como definir uma expressão regular) |
 | `required`  | `{name:required}` | `Rick` |  Usado para impor que um valor não parâmetro está presente durante a geração de URL |
 
+Várias restrições delimitadas por vírgula podem ser aplicadas a um único parâmetro. Por exemplo, a restrição a seguir restringe um parâmetro para um valor inteiro de 1 ou maior:
+
+```csharp
+[Route("users/{id:int:min(1)}")]
+public User GetUserById(int id) { }
+```
+
 >[!WARNING]
 > Restrições de rota que verificam se a URL pode ser convertida em um tipo CLR (como `int` ou `DateTime`) sempre usam a cultura invariável – elas supõem que a URL não é localizável. As restrições de rota fornecidas pela estrutura não modificam os valores armazenados nos valores de rota. Todos os valores de rota analisados com base na URL serão armazenados como cadeias de caracteres. Por exemplo, a [restrição de rota Float](https://github.com/aspnet/Routing/blob/1.0.0/src/Microsoft.AspNetCore.Routing/Constraints/FloatRouteConstraint.cs#L44-L60) tentará converter o valor de rota em um float, mas o valor convertido é usado somente para verificar se ele pode ser convertido em um float.
 
-## <a name="regular-expressions"></a>Expressões regulares 
+## <a name="regular-expressions"></a>Expressões regulares
 
 A estrutura do ASP.NET Core adiciona `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` ao construtor de expressão regular. Consulte [Enumeração de RegexOptions](/dotnet/api/system.text.regularexpressions.regexoptions) para obter uma descrição desses membros.
 
-As expressões regulares usam delimitadores e tokens semelhantes aos usados pelo Roteamento e pela linguagem C#. Os tokens de expressão regular precisam ter escape. Por exemplo, para usar a expressão regular `^\d{3}-\d{2}-\d{4}$` no Roteamento, ela precisa ter os caracteres `\` digitados como `\\` no arquivo de origem C# para fazer o escape do caractere de escape da cadeia de caracteres `\` (a menos que [literais de cadeia de caracteres textuais](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string) estejam sendo usados). Os caracteres `{`, `}`, '[' e ']' precisam ter o escape com aspas duplas para fazer o escape dos caracteres de delimitador do parâmetro de Roteamento.  A tabela abaixo mostra uma expressão regular e a versão com escape.
+As expressões regulares usam delimitadores e tokens semelhantes aos usados pelo Roteamento e pela linguagem C#. Os tokens de expressão regular precisam ter escape. Por exemplo, para usar a expressão regular `^\d{3}-\d{2}-\d{4}$` no Roteamento, ela precisa ter os caracteres `\` digitados como `\\` no arquivo de origem C# para fazer o escape do caractere de escape da cadeia de caracteres `\` (a menos que [literais de cadeia de caracteres textuais](/dotnet/csharp/language-reference/keywords/string) estejam sendo usados). Os caracteres `{`, `}`, '[' e ']' precisam ter o escape com aspas duplas para fazer o escape dos caracteres de delimitador do parâmetro de Roteamento.  A tabela abaixo mostra uma expressão regular e a versão com escape.
 
 | Expressão               | Observação |
-| ----------------- | ------------ | 
+| ----------------- | ------------ |
 | `^\d{3}-\d{2}-\d{4}$` | Expressão regular |
 | `^\\d{{3}}-\\d{{2}}-\\d{{4}}$` | Com escape  |
 | `^[a-z]{2}$` | Expressão regular |
@@ -341,7 +348,7 @@ As expressões regulares usam delimitadores e tokens semelhantes aos usados pelo
 As expressões regulares usadas no roteamento geralmente começarão com o caractere `^` (corresponde à posição inicial da cadeia de caracteres) e terminarão com o caractere `$` (corresponde à posição final da cadeia de caracteres). Os caracteres `^` e `$` garantem que a expressão regular corresponde a todo o valor do parâmetro de rota. Sem os caracteres `^` e `$`, a expressão regular corresponderá a qualquer subcadeia de caracteres na cadeia de caracteres, o que geralmente não é o desejado. A tabela abaixo mostra alguns exemplos e explica por que eles encontram ou não uma correspondência.
 
 | Expressão               | Cadeia de Caracteres | Corresponder a | Comentário |
-| ----------------- | ------------ |  ------------ |  ------------ | 
+| ----------------- | ------------ |  ------------ |  ------------ |
 | `[a-z]{2}` | hello | sim | correspondências com a subcadeia de caracteres |
 | `[a-z]{2}` | 123abc456 | sim | correspondências com a subcadeia de caracteres |
 | `[a-z]{2}` | mz | sim | correspondência com a expressão |
