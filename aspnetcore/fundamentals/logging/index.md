@@ -5,12 +5,12 @@ description: Saiba mais sobre a estrutura de registros no ASP.NET Core. Descubra
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 5d31c5609c0e98a81d76ce0581f1c63f349d14d0
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 60777d4f8664b7f02c806abb6ca40a29602d207f
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342465"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378645"
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -448,7 +448,7 @@ O código a seguir habilita os escopos para o provedor de console:
 > [!NOTE]
 > A configuração da opção de agente de console `IncludeScopes` é necessária para habilitar o registro em log baseado em escopo.
 >
-> Saiba mais sobre como configurar na seção [Configuração](#Configuration).
+> Saiba mais sobre como configurar na seção [Configuração](#configuration).
 
 ::: moniker-end
 
