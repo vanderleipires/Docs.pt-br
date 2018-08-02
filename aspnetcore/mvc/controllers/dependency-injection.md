@@ -5,12 +5,12 @@ description: Saiba como os controladores do ASP.NET Core MVC solicitam suas depe
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 23c91a4363223a135c50ceca51e6af22ed69fe3b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9dec9807e8fc2883144b2da518f36a7eb8ddc871
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276445"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342127"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a>Injeção de dependência em controladores no ASP.NET Core
 
@@ -74,7 +74,7 @@ InvalidOperationException: Multiple constructors accepting all given argument ty
 Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
 ```
 
-Como a mensagem de erro afirma, você pode corrigir esse problema tendo apenas um único construtor. Você também pode [substituir o suporte para injeção de dependência padrão por uma implementação de terceiros](../../fundamentals/dependency-injection.md#replacing-the-default-services-container), muitas das quais dão suporte a vários construtores.
+Como a mensagem de erro afirma, você pode corrigir esse problema usando um único construtor. Você também pode [substituir o contêiner de injeção de dependência padrão por uma implementação de terceiros](xref:fundamentals/dependency-injection#default-service-container-replacement), muitas das quais dão suporte a vários construtores.
 
 ## <a name="action-injection-with-fromservices"></a>Injeção de ação com FromServices
 
