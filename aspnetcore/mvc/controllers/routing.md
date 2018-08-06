@@ -5,12 +5,12 @@ description: Saiba como o ASP.NET Core MVC usa o middleware de roteamento para c
 ms.author: riande
 ms.date: 03/14/2017
 uid: mvc/controllers/routing
-ms.openlocfilehash: 081332fd1007db5292a8812fc6ae934cb07dffb5
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 0d328d930ecb932c22fec524babb1c856b656b95
+ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952975"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514772"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>Roteamento para ações do controlador no ASP.NET Core
 
@@ -589,13 +589,14 @@ Os exemplos acima mostraram o uso de `IUrlHelper` em um controlador, enquanto o 
 As classes base `ControllerBase` e `Controller` fornecem métodos de conveniência para resultados de ação que fazem referência a outra ação. Um uso típico é para redirecionar após aceitar a entrada do usuário.
 
 ```csharp
-public Task<IActionResult> Edit(int id, Customer customer)
+public IActionResult Edit(int id, Customer customer)
 {
     if (ModelState.IsValid)
     {
         // Update DB with new details.
         return RedirectToAction("Index");
     }
+    return View(customer);
 }
 ```
 
