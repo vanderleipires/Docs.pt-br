@@ -21,32 +21,15 @@ Examine o Modelo de Página, *Pages/Movies/Index.cshtml.cs*:
 
 As Páginas do Razor são derivadas de `PageModel`. Por convenção, a classe derivada de `PageModel` é chamada de `<PageName>Model`. O construtor usa [injeção de dependência](xref:fundamentals/dependency-injection) para adicionar o `MovieContext` à página. Todas as páginas geradas por scaffolding seguem esse padrão. Consulte [Código assíncrono](xref:data/ef-rp/intro#asynchronous-code) para obter mais informações sobre a programação assíncrona com o Entity Framework.
 
-Quando uma solicitação é feita à página, o método `OnGetAsync` retorna uma lista de filmes para a Página do Razor. `OnGetAsync` ou `OnGet` é chamado em uma Página do Razor para inicializar o estado da página. Nesse caso, `OnGetAsync` obtém uma lista de filmes e os exibe. 
+Quando uma solicitação é feita à página, o método `OnGetAsync` retorna uma lista de filmes para a Página do Razor. `OnGetAsync` ou `OnGet` é chamado em uma Página do Razor para inicializar o estado da página. Nesse caso, `OnGetAsync` obtém uma lista de filmes e os exibe.
 
 Quando `OnGet` retorna `void` ou `OnGetAsync` retorna `Task`, então nenhum método de retorno é usado. Quando o tipo de retorno for `IActionResult` ou `Task<IActionResult>`, é necessário fornecer uma instrução de retorno. Por exemplo, o método `OnPostAsync` do arquivo *Pages/Movies/Create.cshtml.cs*:
 
-<!-- TODO - replace with snippet
-[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
- -->
-
-```csharp
-public async Task<IActionResult> OnPostAsync()
-{
-    if (!ModelState.IsValid)
-    {
-        return Page();
-    }
-
-    _context.Movie.Add(Movie);
-    await _context.SaveChangesAsync();
-
-    return RedirectToPage("./Index");
-}
-```
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Pages/Movies/Create.cshtml.cs?name=snippet)]
 
 Examine a Página do Razor *Pages/Movies/Index.cshtml*:
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]
 
 O Razor pode fazer a transição do HTML em C# ou em marcação específica do Razor. Quando um símbolo `@` é seguido por uma [palavra-chave reservada do Razor](xref:mvc/views/razor#razor-reserved-keywords), ele faz a transição para marcação específica do Razor, caso contrário, ele faz a transição para C#.
 
@@ -63,7 +46,7 @@ O auxiliar HTML `DisplayNameFor` inspeciona a propriedade `Title` referenciada n
 <a name="md"></a>
 ### <a name="the-model-directive"></a>A diretiva @model
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
 
 A diretiva `@model` especifica o tipo de modelo passado para a Página do Razor. No exemplo anterior, a linha `@model` torna a classe derivada de `PageModel` disponível para a Página do Razor. O modelo é usado nos [auxiliares HTML](/aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs#understanding-html-helpers) `@Html.DisplayNameFor` e `@Html.DisplayName` na página.
 
@@ -76,7 +59,7 @@ A diretiva `@model` especifica o tipo de modelo passado para a Página do Razor.
 
 Considere o código a seguir:
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-6&highlight=4-999)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-6&highlight=4-999)]
 
 O código realçado anterior é um exemplo de transição do Razor para C#. Os caracteres `{` e `}` circunscrevem um bloco de código C#.
 
@@ -84,7 +67,7 @@ A classe base `PageModel` tem uma propriedade de dicionário `ViewData` que pode
 
 ::: moniker range="= aspnetcore-2.0"
 
-A propriedade "Título" é usada no arquivo *Pages/_Layout.cshtml*. A marcação a seguir mostra as primeiras linhas do arquivo *Pages/_Layout.cshtml*.
+A propriedade "Título" é usada no arquivo *Pages/_Layout.cshtml*. A marcação a seguir mostra as primeiras linhas do arquivo *Pages/Shared/_Layout.cshtml*.
 
 ::: moniker-end
 
@@ -94,7 +77,7 @@ A propriedade "Título" é usada no arquivo *Pages/_Layout.cshtml*. A marcação
 
 ::: moniker-end
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/NU/_Layout1.cshtml?highlight=6-999)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/NU/_Layout1.cshtml?highlight=6-999)]
 
 A linha `@*Markup removed for brevity.*@` é um comentário do Razor. Ao contrário de comentários HTML (`<!-- -->`), comentários do Razor não são enviados ao cliente.
 
@@ -105,15 +88,15 @@ Execute o aplicativo e teste os links no projeto (**Início**, **Sobre**, **Cont
 
 A propriedade `Layout` é definida no arquivo *Pages/_ViewStart.cshtml*:
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
 
-A marcação anterior define o arquivo de layout *Pages/_Layout.cshtml* para todos os arquivos do Razor na pasta *Pages*. Veja [Layout](xref:razor-pages/index#layout) para obter mais informações.
+A marcação anterior define o arquivo de layout como *Pages/Shared/_Layout.cshtml* para todos os arquivos do Razor na pasta *Pages*. Veja [Layout](xref:razor-pages/index#layout) para obter mais informações.
 
 ### <a name="update-the-layout"></a>Atualizar o layout
 
-Altere o elemento `<title>` no arquivo *Pages/_Layout.cshtml* para usar uma cadeia de caracteres mais curta.
+Altere o elemento `<title>` no arquivo *Pages/Shared/_Layout.cshtml* para usar uma cadeia de caracteres mais curta.
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=1-6&highlight=6)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=1-6&highlight=6)]
 
 Localizar o elemento de âncora a seguir no arquivo *Pages/_Layout.cshtml*.
 
