@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: aa9c490aff873d12c9417e7b611991617207c0d3
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: fd3e55ec821be336501f523550f547f6049c9937
+ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342439"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514746"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Padrão de opções no ASP.NET Core
 
@@ -294,10 +294,17 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 
 ## <a name="accessing-options-during-startup"></a>Acessando opções durante a inicialização
 
-`IOptions` pode ser usado em `Configure`, pois os serviços são criados antes da execução do método `Configure`. Se um provedor de serviços for criado em `ConfigureServices` para acessar as opções, ele não conterá nenhuma configuração de opções fornecida após sua criação. Portanto, pode haver um estado inconsistente de opções devido à ordenação dos registros de serviço.
+`IOptions` pode ser usado em `Startup.Configure`, pois os serviços são criados antes da execução do método `Configure`.
 
-Como as opções geralmente são carregadas da configuração, a configuração pode ser usada na inicialização em `Configure` e `ConfigureServices`. Para obter exemplos de como usar a configuração durante a inicialização, consulte o tópico [Inicialização do aplicativo](xref:fundamentals/startup).
+```csharp
+public void Configure(IApplicationBuilder app, IOptions<MyOptions> optionsAccessor)
+{
+    var option1 = optionsAccessor.Value.Option1;
+}
+```
 
-## <a name="see-also"></a>Consulte também
+`IOptions` não deve ser usado em `Startup.ConfigureServices`. Pode haver um estado inconsistente de opções devido à ordenação dos registros de serviço.
 
-* [Configuração](xref:fundamentals/configuration/index)
+## <a name="additional-resources"></a>Recursos adicionais
+
+* <xref:fundamentals/configuration/index>

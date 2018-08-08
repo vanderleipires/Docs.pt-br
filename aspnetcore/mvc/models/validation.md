@@ -3,14 +3,14 @@ title: Validação de modelo no ASP.NET Core MVC
 author: tdykstra
 description: Saiba mais sobre a validação do modelo no ASP.NET Core MVC.
 ms.author: riande
-ms.date: 12/18/2016
+ms.date: 07/31/2018
 uid: mvc/models/validation
-ms.openlocfilehash: 9c2ba1c1fad3ac077a886b3465142acfd4d639af
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: f407903577e40b6501737ef5b78d90e1e3e60c06
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095821"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378661"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Validação de modelo no ASP.NET Core MVC
 
@@ -118,7 +118,7 @@ A validação do lado do cliente é uma ótima conveniência para usuários. Ela
 
 [!code-cshtml[](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
-O script do [jQuery Unobtrusive Validation](https://github.com/aspnet/jquery-validation-unobtrusive) é uma biblioteca de front-end personalizada da Microsoft que se baseia no popular plug-in [jQuery Validate](https://jqueryvalidation.org/). Sem o jQuery Unobtrusive Validation, você precisará codificar a mesma lógica de validação em dois locais: uma vez nos atributos de validação do lado do servidor nas propriedades do modelo e, em seguida, novamente nos scripts do lado do cliente (os exemplos para o método [`validate()`](https://jqueryvalidation.org/validate/) do jQuery Validate mostram a complexidade que isso pode gerar). Em vez disso, os [Auxiliares de Marca](xref:mvc/views/tag-helpers/intro) e os [Auxiliares HTML](xref:mvc/views/overview) do MVC podem usar os atributos de validação e os metadados de tipo das propriedades do modelo para renderizar [atributos de dados](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) HTML 5 nos elementos de formulário que precisam de validação. O MVC gera os atributos `data-` para atributos internos e personalizados. Em seguida, o jQuery Unobtrusive Validation analisa os atributos `data-` e passa a lógica para o jQuery Validate, "copiando" efetivamente a lógica de validação do lado do servidor para o cliente. Exiba erros de validação no cliente usando os auxiliares de marca relevantes, conforme mostrado aqui:
+O script do [jQuery Unobtrusive Validation](https://github.com/aspnet/jquery-validation-unobtrusive) é uma biblioteca de front-end personalizada da Microsoft que se baseia no popular plug-in [jQuery Validate](https://jqueryvalidation.org/). Sem o jQuery Unobtrusive Validation, você precisará codificar a mesma lógica de validação em dois locais: uma vez nos atributos de validação do lado do servidor nas propriedades do modelo e, em seguida, novamente nos scripts do lado do cliente (os exemplos para o método [`validate()`](https://jqueryvalidation.org/validate/) do jQuery Validate mostram a complexidade que isso pode gerar). Em vez disso, os [Auxiliares de Marca](xref:mvc/views/tag-helpers/intro) e os [Auxiliares HTML](xref:mvc/views/overview) do MVC podem usar os atributos de validação e os metadados de tipo das propriedades do modelo para renderizar [atributos de dados](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) HTML 5 nos elementos de formulário que precisam de validação. O MVC gera os atributos `data-` para atributos internos e personalizados. O jQuery Unobtrusive Validation analisa os atributos `data-` e passa a lógica para o jQuery Validate, "copiando" efetivamente a lógica de validação do lado do servidor para o cliente. Exiba erros de validação no cliente usando os auxiliares de marca relevantes, conforme mostrado aqui:
 
 [!code-cshtml[](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
@@ -208,11 +208,11 @@ Atributos que implementam essa interface podem adicionar atributos HTML a campos
     id="ReleaseDate" name="ReleaseDate" value="" />
 ```
 
-A validação não invasiva usa os dados nos atributos `data-` para exibir mensagens de erro. No entanto, o jQuery não reconhece regras ou mensagens até que você adicione-as ao objeto `validator` do jQuery. Isso é mostrado no exemplo abaixo que adiciona um método chamado `classicmovie`, que contém um código de validação do cliente personalizado para o objeto `validator` do jQuery. Uma explicação sobre o método unobtrusive.adapters.add pode ser encontrada [aqui](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)
+A validação não invasiva usa os dados nos atributos `data-` para exibir mensagens de erro. No entanto, o jQuery não reconhece regras ou mensagens até que você adicione-as ao objeto `validator` do jQuery. Isso é mostrado no exemplo a seguir, que adiciona um método de validação de cliente `classicmovie` personalizado ao objeto `validator` do jQuery. Para obter uma explicação sobre o método `unobtrusive.adapters.add`, confira [Unobtrusive Client Validation no ASP.NET MVC](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html).
 
-[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
+[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?name=snippet_UnobtrusiveValidation)]
 
-Agora o jQuery tem as informações para executar a validação personalizada do JavaScript, bem como a mensagem de erro a ser exibida se esse código de validação retornar falso.
+Com o código anterior, o método `classicmovie` executa a validação do lado do cliente na data de lançamento do filme. A mensagem de erro é exibida se o método retornar `false`.
 
 ## <a name="remote-validation"></a>Validação remota
 
@@ -222,11 +222,14 @@ Implemente a validação remota em um processo de duas etapas. Primeiro, é nece
 
 [!code-csharp[](validation/sample/User.cs?range=7-8)]
 
-A segunda etapa é colocar o código de validação no método de ação correspondente, conforme definido no atributo `[Remote]`. De acordo com a documentação do método [`remote()`](https://jqueryvalidation.org/remote-method/) do jQuery Validate:
+A segunda etapa é colocar o código de validação no método de ação correspondente, conforme definido no atributo `[Remote]`. De acordo com a documentação do método jQuery Validate[remoto](https://jqueryvalidation.org/remote-method/), a resposta do servidor deve ser uma cadeia JSON que seja:
 
-> A resposta do lado do servidor deve ser uma cadeia de caracteres JSON que deve ser `"true"` para elementos válidos e pode ser `"false"`, `undefined` ou `null` para elementos inválidos, usando a mensagem de erro padrão. Se a resposta do lado do servidor for uma cadeia de caracteres, por exemplo, `"That name is already taken, try peter123 instead"`, essa cadeia de caracteres será exibida como uma mensagem de erro personalizada, em vez do padrão.
+* `"true"` para elementos válidos.
+* `"false"`, `undefined` ou `null` para elementos inválidos, usando a mensagem de erro padrão.
 
-A definição do método `VerifyEmail()` segue essas regras, conforme mostrado abaixo. Ela retorna uma mensagem de erro de validação se o email já está sendo usado ou `true` se o email está livre e encapsula o resultado em um objeto `JsonResult`. O lado do cliente pode então usar o valor retornado para continuar ou exibir o erro, se necessário.
+Se a resposta do servidor for uma cadeia de caracteres (por exemplo, `"That name is already taken, try peter123 instead"`), a cadeia de caracteres é exibida como uma mensagem de erro personalizada no lugar da cadeia de caracteres padrão.
+
+A definição do método `VerifyEmail` segue essas regras, conforme mostrado abaixo. Ela retorna uma mensagem de erro de validação se o email já está sendo usado ou `true` se o email está livre e encapsula o resultado em um objeto `JsonResult`. O lado do cliente pode então usar o valor retornado para continuar ou exibir o erro, se necessário.
 
 [!code-csharp[](validation/sample/UsersController.cs?range=19-28)]
 
@@ -243,7 +246,7 @@ A propriedade `AdditionalFields` do atributo `[Remote]` é útil para validaçã
 Agora, quando os usuários inserem um nome e sobrenome, o JavaScript:
 
 * Faz uma chamada remota para ver se esse par de nomes já está sendo usado.
-* Se o par já está sendo usado, uma mensagem de erro é exibida. 
+* Se o par já está sendo usado, uma mensagem de erro é exibida.
 * Caso contrário, o usuário pode enviar o formulário.
 
 Se você precisa validar dois ou mais campos adicionais com o atributo `[Remote]`, forneça-os como uma lista delimitada por vírgula. Por exemplo, para adicionar uma propriedade `MiddleName` ao modelo, defina o atributo `[Remote]`, conforme mostrado no seguinte código:
