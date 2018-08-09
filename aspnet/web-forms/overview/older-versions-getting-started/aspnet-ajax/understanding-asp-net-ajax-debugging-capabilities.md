@@ -8,12 +8,12 @@ ms.date: 03/28/2008
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 9d420a41f50d06541d04a1dd3cb78a2e6beaaa9a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 95c2487f26109cbdd8c76dc6f269f37264f5e34b
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813822"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655440"
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>Noções básicas sobre depuração de recursos do AJAX ASP.NET
 ====================
@@ -55,8 +55,8 @@ Figura 1 mostra que o Internet Explorer avançada da caixa de diálogo deve pare
 
 Depois que a depuração foi ativada, você verá um novo item de menu aparecem no menu de exibição denominado depurador de Script. Ele tem duas opções disponíveis, incluindo abrir e quebra na próxima instrução. Quando abertos for marcado você será solicitado a depurar a página no Visual Studio 2008 (Observe que o Visual Web Developer Express também pode ser usado para depuração). Se estiver executando o Visual Studio .NET, você pode escolher para usar essa instância ou para criar uma nova instância. Quando a interrupção na próxima instrução é selecionada você será solicitado a depurar a página quando o código JavaScript é executado. Se o código JavaScript é executado no evento onLoad da página, você pode atualizar a página para disparar uma sessão de depuração. Se o código JavaScript é executado depois que um botão é clicado, em seguida, o depurador será executado imediatamente depois que o botão é clicado.
 
-> *> [!NOTE] Se você estiver executando no Windows Vista com o usuário acesso UAC (controle) habilitado e você tiver o Visual Studio 2008 definido para ser executado como um administrador, o Visual Studio falhará anexar ao processo quando você for solicitado para anexar. Para contornar esse problema, inicie o Visual Studio pela primeira vez e usar essa instância para depurar.*
-
+> [!NOTE]
+> Se você estiver executando no Windows Vista com o usuário acesso UAC (controle) habilitado e tiver o Visual Studio 2008 definido para ser executado como um administrador, o Visual Studio falhará anexar ao processo quando você for solicitado para anexar. Para contornar esse problema, inicie o Visual Studio pela primeira vez e usar essa instância para depurar.
 
 Embora a próxima seção demonstrará como depurar uma página ASP.NET AJAX diretamente de dentro do Visual Studio 2008, usando a opção de depurador de Script do Internet Explorer é útil quando uma página já está aberta e você gostaria de mais completamente inspecioná-la.
 
@@ -98,8 +98,8 @@ Depois de uma sessão de depuração é iniciada e começar a percorrer o códig
 
 Essa caixa de diálogo é mostrada porque o Visual Studio .NET não estiver certo sobre como obter o código-fonte de alguns dos scripts referenciados pela página. Embora isso possa ser muito frustrante primeiro, há uma correção simple. Depois de iniciada uma sessão de depuração e um ponto de interrupção, vá para a janela do Gerenciador de Script do Windows de depuração no menu do Visual Studio 2008 ou use a tecla de atalho Ctrl + Alt + N.
 
-> *> [!NOTE] Se você não puder ver o menu do Gerenciador de Script listado, vá para ferramentas* *personalizar* *comandos no menu do Visual Studio .NET. Localize a entrada de depuração na seção de categorias e clique nele para mostrar todas as entradas de menu disponíveis. Na lista de comandos, role para baixo até o Gerenciador de Script e, em seguida, arraste-o para a depuração* *menu do Windows no mencionado anteriormente. Isso disponibilizará a entrada de menu do Gerenciador de Script sempre que você executar o Visual Studio .NET.*
-
+> [!NOTE]
+> Se você não puder ver o menu do Gerenciador de Script listado, vá para **ferramentas** > **personalizar** > **comandos** no menu do Visual Studio .NET. Localize o **depurar** entrada nas categorias de seção e clique nele para mostrar todas as entradas de menu disponíveis. Na lista de comandos, role para baixo até o Gerenciador de Script e, em seguida, arraste-o para o Windows depurar menu no mencionado anteriormente. Isso disponibilizará a entrada de menu do Gerenciador de Script sempre que você executar o Visual Studio .NET.
 
 O Gerenciador de Script pode ser usado para exibir todos os scripts usados em uma página e abri-los no editor de códigos. Quando o Gerenciador de Script é aberto, clique duas vezes na página. aspx que estão sendo depurada no momento para abri-lo na janela do editor de código. Execute a mesma ação para todos os outros scripts mostrados no Gerenciador de Script. Depois que todos os scripts estão abertos na janela de código, você pode pressione F11 (e use as outras teclas de atalho de depuração) para percorrer seu código. Figura 3 mostra um exemplo de como o Gerenciador de Script. Ela lista o arquivo atual que está sendo depurado (Demo.aspx), bem como dois scripts personalizados e dois scripts dinamicamente injetados na página pelo ScriptManager ASP.NET AJAX.
 
