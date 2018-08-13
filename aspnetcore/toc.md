@@ -35,7 +35,7 @@
 ## [Criar APIs da Web](xref:web-api/index)
 ### [Criar uma API Web no Visual Studio Code](xref:tutorials/web-api-vsc)
 ### [Criar uma API Web no Visual Studio para Mac](xref:tutorials/first-web-api-mac)
-### [Criar uma API Web no Visual Studio para Windows](xref:tutorials/first-web-api)
+### [Criar uma API Web no Visual Studio](xref:tutorials/first-web-api)
 ### [Criar serviços de back-end para aplicativos móveis nativos](xref:mobile/native-mobile-backend)
 ### [Páginas de Ajuda usando o Swagger](xref:tutorials/web-api-help-pages-using-swagger)
 #### [Introdução ao NSwag](xref:tutorials/get-started-with-nswag)
@@ -218,7 +218,7 @@
 ## [Depurando de instantâneo no Visual Studio](/visualstudio/debugger/debug-live-azure-applications)
 ## [Solução de problemas](xref:test/troubleshoot)
 
-# [Acesso a dados com o EF Core e o Azure](data/index.md)
+# [Acesso a dados com EF Core](xref:data/index)
 ## [Introdução às páginas do Razor e ao EF Core usando o Visual Studio](xref:data/ef-rp/intro)
 ## [Introdução ao ASP.NET Core e ao EF Core usando o Visual Studio](data/ef-mvc/index.md)
 ## [ASP.NET Core com EF Core – novo banco de dados](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
@@ -229,6 +229,15 @@
 ### [Introdução ao Armazenamento de Blobs e ao Visual Studio Connected Services](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
 ### [Introdução ao Armazenamento de Filas e ao Visual Studio Connected Services](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
 ### [Introdução ao Armazenamento de Tabelas e ao Visual Studio Connected Services](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+
+# [Diretrizes do Azure](xref:azure/index)
+## DevOps com ASP.NET Core e Azure
+### [Introdução](xref:azure/devops/index)
+### [Ferramentas e downloads](xref:azure/devops/tools-and-downloads)
+### [Implantar no Serviço de Aplicativo](xref:azure/devops/deploy-to-app-service)
+### [Integração contínua e implantação](xref:azure/devops/cicd)
+### [Monitorar e solucionar problemas](xref:azure/devops/monitor)
+### [Próximas etapas](xref:azure/devops/next-steps)
 
 # [Desenvolvimento do lado do cliente](xref:client-side/index)
 ## [Usar o Gulp](xref:client-side/using-gulp)
