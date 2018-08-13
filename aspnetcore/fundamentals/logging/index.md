@@ -5,12 +5,12 @@ description: Saiba mais sobre a estrutura de registros no ASP.NET Core. Descubra
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 60777d4f8664b7f02c806abb6ca40a29602d207f
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: 35bb7fa51db541f825a79151fb7fbe85d48e1998
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378645"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655353"
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -707,7 +707,7 @@ Navegue até a página **Fluxo de Log** para exibir as mensagens de aplicativo. 
 
 ## <a name="azure-application-insights-trace-logging"></a>Log de rastreamento do Azure Application Insights
 
-O SDK do [Application Insights](https://azure.microsoft.com/services/application-insights/) é capaz de coletar telemetria de rastreamento de logs gerados por meio de infraestrutura de log do ASP.NET Core. Para obter mais informações, veja [Wiki do Microsoft/ApplicationInsights-aspnetcore: Log](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging).
+O SDK do [Application Insights](https://azure.microsoft.com/services/application-insights/) é capaz de coletar telemetria de rastreamento de logs gerados por meio de infraestrutura de log do ASP.NET Core. Para obter mais informações, veja [Application Insights para ASP.NET Core](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-core) e [Wiki do Microsoft/ApplicationInsights-aspnetcore: registro em log](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
