@@ -5,12 +5,12 @@ description: Mostra como criar um aplicativo das Páginas do Razor usando o Enti
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: 2f6408f2381721c450519818a5973bad0f86ccad
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: b954c1ab4774ceab3ac0ebb190b162b112ff1307
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938401"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655330"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Páginas Razor com o Entity Framework Core no ASP.NET Core – Tutorial 1 de 8
 
@@ -30,11 +30,11 @@ O aplicativo de exemplo é um site de uma Contoso University fictícia. Ele incl
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
+[!INCLUDE [](~/includes/net-core-prereqs-windows.md)]
 
 # <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
 
-[!INCLUDE [](~/includes/2.1-SDK.md) [](~/includes/2.1-SDK.md)]
+[!INCLUDE [](~/includes/2.1-SDK.md)]
 
 ------
 
@@ -185,7 +185,7 @@ O processo de scaffold criou e alterou os seguintes arquivos:
 ### <a name="files-created"></a>Arquivos criados
 
 * *Pages/Students* Criar, Excluir, Detalhes, Editar, Índice.
-* *Data/ContosoUniversityContext.cs*
+* *Data/SchoolContext.cs*
 
 ### <a name="files-updates"></a>Atualizações de arquivos
 

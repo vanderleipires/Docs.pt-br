@@ -5,14 +5,14 @@ description: Saiba mais sobre como usar a interface IHttpClientFactory para gere
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/23/2018
+ms.date: 08/07/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: 87424eaea499ba7ece1e5ef88649fcbb2e297635
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: dd217cfed230ea92c31eeed64ec19838032dd224
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320649"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655226"
 ---
 # <a name="initiate-http-requests"></a>Iniciar solicitações HTTP
 
@@ -20,7 +20,7 @@ Por [Glenn Condron](https://github.com/glennc), [Ryan Nowak](https://github.com/
 
 Um [IHttpClientFactory](/dotnet/api/system.net.http.ihttpclientfactory) pode ser registrado e usado para configurar e criar instâncias de [HttpClient](/dotnet/api/system.net.http.httpclient) em um aplicativo. Ele oferece os seguintes benefícios:
 
-* Fornece um local central para nomear e configurar instâncias lógicas de `HttpClient`. Por exemplo, um cliente "github" pode ser registrado e configurado para acessar o GitHub. Um cliente padrão pode ser registrado para outras finalidades.
+* Fornece um local central para nomear e configurar instâncias lógicas de `HttpClient`. Por exemplo, um cliente *github* pode ser registrado e configurado para acessar o GitHub. Um cliente padrão pode ser registrado para outras finalidades.
 * Codifica o conceito de middleware de saída por meio da delegação de manipuladores no `HttpClient` e fornece extensões para que o middleware baseado no Polly possa aproveitar esse recurso.
 * Gerencia o pooling e o tempo de vida das instâncias de `HttpClientMessageHandler` subjacentes para evitar problemas de DNS comuns que ocorrem no gerenciamento manual de tempos de vida de `HttpClient`.
 * Adiciona uma experiência de registro em log configurável (via `ILogger`) para todas as solicitações enviadas por meio de clientes criados pelo alocador.
@@ -52,15 +52,15 @@ Depois de registrado, o código pode aceitar um `IHttpClientFactory` em qualquer
 
 [!code-csharp[](http-requests/samples/Pages/BasicUsage.cshtml.cs?name=snippet1&highlight=9-12,20)]
 
-Usar o `IHttpClientFactory` dessa forma é uma ótima maneira de refatorar um aplicativo existente. Não há nenhum impacto na maneira em que o `HttpClient` é usado. Nos locais em que as instâncias de `HttpClient` são criadas no momento, substitua essas ocorrências por uma chamada a `CreateClient`.
+Usar o `IHttpClientFactory` dessa forma é uma ótima maneira de refatorar um aplicativo existente. Não há nenhum impacto na maneira em que o `HttpClient` é usado. Nos locais em que as instâncias `HttpClient` são criadas no momento, substitua essas ocorrências por uma chamada a [CreateClient](/dotnet/api/system.net.http.ihttpclientfactory.createclient).
 
 ### <a name="named-clients"></a>Clientes nomeados
 
-Se um aplicativo exige vários usos distintos do `HttpClient`, cada com uma configuração diferente, uma opção é usar **clientes nomeados**. A configuração de um `HttpClient` nomeado pode ser especificada durante o registro em `Startup.ConfigureServices`.
+Quando um aplicativo exige vários usos distintos do `HttpClient`, cada um com uma configuração diferente, uma opção é usar **clientes nomeados**. A configuração de um `HttpClient` nomeado pode ser especificada durante o registro em `Startup.ConfigureServices`.
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet2)]
 
-No código anterior, `AddHttpClient` é chamado, fornecendo o nome "github". Esse cliente tem algumas configurações padrão aplicadas, ou seja, o endereço básico e dois cabeçalhos necessários para trabalhar com a API do GitHub.
+No código anterior, `AddHttpClient` é chamado, fornecendo o nome *github*. Esse cliente tem algumas configurações padrão aplicadas, ou seja, o endereço básico e dois cabeçalhos necessários para trabalhar com a API do GitHub.
 
 Toda vez que o `CreateClient` é chamado, uma nova instância de `HttpClient` é criada e a ação de configuração é chamada.
 
@@ -161,13 +161,13 @@ Para criar um manipulador, defina uma classe derivando-a de `DelegatingHandler`.
 
 [!code-csharp[Main](http-requests/samples/Handlers/ValidateHeaderHandler.cs?name=snippet1)]
 
-O código anterior define um manipulador básico. Ele verifica se um cabeçalho X-API-KEY foi incluído na solicitação. Se o cabeçalho estiver ausente, isso poderá evitar a chamada de HTTP e retornar uma resposta adequada.
+O código anterior define um manipulador básico. Ele verifica se um cabeçalho `X-API-KEY` foi incluído na solicitação. Se o cabeçalho estiver ausente, isso poderá evitar a chamada de HTTP e retornar uma resposta adequada.
 
-Durante o registro, um ou mais manipuladores podem ser adicionados à configuração de um `HttpClient`. Essa tarefa é realizada por meio de métodos de extensão no `IHttpClientBuilder`.
+Durante o registro, um ou mais manipuladores podem ser adicionados à configuração de um `HttpClient`. Essa tarefa é realizada por meio de métodos de extensão no [IHttpClientBuilder](/dotnet/api/microsoft.extensions.dependencyinjection.ihttpclientbuilder).
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet5)]
 
-No código anterior, o `ValidateHeaderHandler` é registrado com a DI. O manipulador **precisa** ser registrado na DI como transitório. Depois de registrado, o `AddHttpMessageHandler` poderá ser chamado, passando o tipo para o manipulador.
+No código anterior, o `ValidateHeaderHandler` é registrado com a DI. O manipulador **precisa** ser registrado na DI como transitório. Depois de registrado, é possível chamar [AddHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.addhttpmessagehandler), passando o tipo para o manipulador.
 
 Vários manipuladores podem ser registrados na ordem em que eles devem ser executados. Cada manipulador encapsula o próximo manipulador até que o `HttpClientHandler` final execute a solicitação:
 
@@ -185,7 +185,7 @@ Depois de restaurar este pacote, os métodos de extensão ficam disponíveis par
 
 ### <a name="handle-transient-faults"></a>Tratar falhas transitórias
 
-As falhas mais comuns que podem ocorrer ao fazer chamadas de HTTP externas são as transitórias. Um método de extensão conveniente chamado `AddTransientHttpErrorPolicy` é incluído para permitir que uma política seja definido para tratar erros transitórios. As políticas configuradas com esse método de extensão tratam `HttpRequestException`, respostas HTTP 5xx e respostas HTTP 408.
+As falhas mais comuns ocorrem quando as chamadas HTTP externas são transitórias. Um método de extensão conveniente chamado `AddTransientHttpErrorPolicy` é incluído para permitir que uma política seja definido para tratar erros transitórios. As políticas configuradas com esse método de extensão tratam `HttpRequestException`, respostas HTTP 5xx e respostas HTTP 408.
 
 A extensão `AddTransientHttpErrorPolicy` pode ser usada em `Startup.ConfigureServices`. A extensão fornece acesso a um objeto `PolicyBuilder` configurado para tratar erros que representam uma possível falha transitória:
 
@@ -215,29 +215,33 @@ Uma abordagem para gerenciar as políticas usadas com frequência é defini-las 
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet10)]
 
-No código anterior, um PolicyRegistry é adicionado ao `ServiceCollection` e duas políticas são registradas nele. Para usar uma política do registro, o método `AddPolicyHandlerFromRegistry` é usado, passando o nome da política a ser aplicada.
+No código anterior, duas políticas são registradas quando `PolicyRegistry` é adicionado ao `ServiceCollection`. Para usar uma política do registro, o método `AddPolicyHandlerFromRegistry` é usado, passando o nome da política a ser aplicada.
 
 Mais informações sobre o `IHttpClientFactory` e as integrações do Polly podem ser encontradas no [Wiki do Polly](https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory).
 
 ## <a name="httpclient-and-lifetime-management"></a>HttpClient e gerenciamento de tempo de vida
 
-Toda vez que o `CreateClient` é chamado no `IHttpClientFactory`, uma nova instância de um `HttpClient` é retornada. Haverá um `HttpMessageHandler` por cliente nomeado. O `IHttpClientFactory` criará um pool com as instâncias de `HttpMessageHandler` criadas pelo alocador para reduzir o consumo de recursos. Uma instância de `HttpMessageHandler` poderá ser reutilizada do pool ao criar uma nova instância de `HttpClient` se seu tempo de vida não tiver expirado. 
+Uma nova instância de `HttpClient` é chamada, sempre que `CreateClient` é chamado na `IHttpClientFactory`. Haverá um [HttpMessageHandler](/dotnet/api/system.net.http.httpmessagehandler) para cada cliente nomeado. `IHttpClientFactory` cria pools com as instâncias de `HttpMessageHandler` criadas pelo alocador para reduzir o consumo de recursos. Uma instância de `HttpMessageHandler` poderá ser reutilizada no pool, ao criar uma nova instância de `HttpClient`, se o respectivo tempo de vida não tiver expirado.
 
-O pooling de manipuladores é interessante porque cada manipulador normalmente gerencia suas próprias conexões de HTTP subjacentes. Criar mais manipuladores do que o necessário pode resultar em atrasos de conexão. Alguns manipuladores também mantêm as conexões abertas indefinidamente, o que pode impedir que o manipulador reaja a alterações de DNS.
+O pooling de manipuladores é preferível porque normalmente cada manipulador gerencia as próprias conexões HTTP subjacentes. Criar mais manipuladores do que o necessário pode resultar em atrasos de conexão. Alguns manipuladores também mantêm as conexões abertas indefinidamente, o que pode impedir que o manipulador reaja a alterações de DNS.
 
-O tempo de vida padrão do manipulador é de 2 minutos. O valor padrão pode ser substituído para cada cliente nomeado. Para substituí-lo, chame `SetHandlerLifetime` no `IHttpClientBuilder` que é retornado ao criar o cliente:
+O tempo de vida padrão do manipulador é de 2 minutos. O valor padrão pode ser substituído para cada cliente nomeado. Para substituí-lo, chame [SetHandlerLifetime](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.sethandlerlifetime) no `IHttpClientBuilder` que é retornado ao criar o cliente:
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet11)]
 
+Não é necessário descartar o cliente. O descarte cancela as solicitações de saída e garante que a determinada instância de `HttpClient` não seja mais usada depois de chamar [Dispose](/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose). `IHttpClientFactory` rastreia e descarta recursos usados pelas instâncias de `HttpClient`. Geralmente, as instâncias de `HttpClient` podem ser tratadas como objetos do .NET e não exigem descarte.
+
+Manter uma única instância de `HttpClient` ativa por uma longa duração é um padrão comum usado, antes do início de `IHttpClientFactory`. Esse padrão se torna desnecessário após a migração para `IHttpClientFactory`.
+
 ## <a name="logging"></a>Registrando em log
 
-Os clientes criado pelo `IHttpClientFactory` registram mensagens de log para todas as solicitações. Você precisará habilitar o nível apropriado de informações em sua configuração de registro em log para ver as mensagens de log padrão. Os registros em log adicionais, como o registro em log dos cabeçalhos de solicitação, estão incluídos somente no nível de rastreamento.
+Os clientes criado pelo `IHttpClientFactory` registram mensagens de log para todas as solicitações. Habilite o nível apropriado de informações na configuração de log para ver as mensagens de log padrão. Os registros em log adicionais, como o registro em log dos cabeçalhos de solicitação, estão incluídos somente no nível de rastreamento.
 
-A categoria de log usada para cada cliente inclui o nome do cliente. Um cliente chamado "MyNamedClient", por exemplo, registra mensagens com uma categoria de `System.Net.Http.HttpClient.MyNamedClient.LogicalHandler`. As mensagens com o sufixo "LogicalHandler" ocorrem fora do pipeline do manipulador de solicitação. Na solicitação, as mensagens são registradas em log antes que qualquer outro manipulador no pipeline a tenha processado. Na resposta, as mensagens são registradas depois que qualquer outro manipulador do pipeline tenha recebido a resposta.
+A categoria de log usada para cada cliente inclui o nome do cliente. Um cliente chamado *MyNamedClient*, por exemplo, registra mensagens com uma categoria de `System.Net.Http.HttpClient.MyNamedClient.LogicalHandler`. Mensagens sufixadas com *LogicalHandler* ocorrem fora do pipeline do manipulador de solicitações. Na solicitação, as mensagens são registradas em log antes que qualquer outro manipulador no pipeline a tenha processado. Na resposta, as mensagens são registradas depois que qualquer outro manipulador do pipeline tenha recebido a resposta.
 
-O registro em log também ocorre dentro do pipeline do manipulador de solicitação. No caso do exemplo de "MyNamedClient", essas mensagens são registradas em log na categoria de log `System.Net.Http.HttpClient.MyNamedClient.ClientHandler`. Para a solicitação, isso ocorre depois que todos os outros manipuladores são executados e imediatamente antes que a solicitação seja enviada pela rede. Na resposta, esse registro em log inclui o estado da resposta antes que ela seja retornada por meio do pipeline do manipulador.
+O registro em log também ocorre dentro do pipeline do manipulador de solicitações. No caso do exemplo de *MyNamedClient*, essas mensagens são registradas em log na categoria de log `System.Net.Http.HttpClient.MyNamedClient.ClientHandler`. Para a solicitação, isso ocorre depois que todos os outros manipuladores são executados e imediatamente antes que a solicitação seja enviada pela rede. Na resposta, esse registro em log inclui o estado da resposta antes que ela seja retornada por meio do pipeline do manipulador.
 
-Habilitar o registro em log fora e dentro do pipeline permite a inspeção das alterações feitas por outros manipuladores do pipeline. Isso pode incluir, por exemplo, alterações nos cabeçalhos de solicitação ou no código de status da resposta.
+Habilitar o registro em log dentro e fora do pipeline permite a inspeção das alterações feitas por outros manipuladores do pipeline. Isso pode incluir, por exemplo, alterações nos cabeçalhos de solicitação ou no código de status da resposta.
 
 Incluir o nome do cliente na categoria de log permite a filtragem de log para clientes nomeados específicos, quando necessário.
 
@@ -245,6 +249,6 @@ Incluir o nome do cliente na categoria de log permite a filtragem de log para cl
 
 Talvez seja necessário controlar a configuração do `HttpMessageHandler` interno usado por um cliente.
 
-Um `IHttpClientBuilder` é retornado ao adicionar clientes nomeados ou com tipo. O método de extensão `ConfigurePrimaryHttpMessageHandler` pode ser usado para definir um representante. O representante que é usado para criar e configurar o `HttpMessageHandler` primário usado pelo cliente:
+Um `IHttpClientBuilder` é retornado ao adicionar clientes nomeados ou com tipo. O método de extensão [ConfigurePrimaryHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.configureprimaryhttpmessagehandler) pode ser usado para definir um delegado. O representante que é usado para criar e configurar o `HttpMessageHandler` primário usado pelo cliente:
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet12)]
