@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/handli
 title: Tratamento de simultaneidade com o Entity Framework 4.0 em um aplicativo ASP.NET 4 | Microsoft Docs
 author: tdykstra
 description: Esta série de tutoriais se baseia no aplicativo web Contoso University que é criado pelo Getting Started with a série de tutoriais do Entity Framework 4.0. EU...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: a5aa22a6-fb7f-4f41-9c7f-addda151940b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 52c4dbdd5cf2919d0a04a883c1cd48cb56dd4e94
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6b10aca944a322cae252666218aee4d5a2d6ed35
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804540"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825421"
 ---
 <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Tratamento de simultaneidade com o Entity Framework 4.0 em um aplicativo ASP.NET 4
 ====================

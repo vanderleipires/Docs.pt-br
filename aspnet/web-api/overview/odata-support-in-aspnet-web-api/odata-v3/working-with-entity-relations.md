@@ -3,17 +3,17 @@ uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-enti
 title: Suporte a relações de entidade no OData v3 com a API Web 2 | Microsoft Docs
 author: MikeWasson
 description: 'A maioria dos conjuntos de dados definem relações entre entidades: os clientes tiverem pedidos; os livros têm autores; os produtos têm fornecedores. Usar o OData, os clientes podem navegar sobre...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/26/2014
 ms.assetid: 1e4c2eb4-b6cf-42ff-8a65-4d71ddca0394
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
 msc.type: authoredcontent
-ms.openlocfilehash: b24e3ca4e3d39b424bec6bb408bb0f85825c6761
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fc1c6b938c4e4be379edf1a495ca47f5f5f2eb4f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810738"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824193"
 ---
 <a name="supporting-entity-relations-in-odata-v3-with-web-api-2"></a>Suporte a relações de entidade no OData v3 com a API Web 2
 ====================

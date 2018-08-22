@@ -3,17 +3,17 @@ uid: aspnet/overview/owin-and-katana/owin-startup-class-detection
 title: Detecção de classe de inicialização OWIN | Microsoft Docs
 author: Praburaj
 description: Este tutorial mostra como configurar qual classe de inicialização OWIN é carregado. Para obter mais informações sobre o OWIN, consulte uma visão geral do projeto Katana. Este tutorial foi...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/17/2013
 ms.assetid: 08257f55-36f4-4e39-9c88-2a5602838c79
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: 0a4b87192296054bf6aef6c9406c64f19677a061
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 591a04f429284ae73896807a6c2837ad498e8ae1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828287"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824561"
 ---
 <a name="owin-startup-class-detection"></a>Detecção de classe de inicialização OWIN
 ====================

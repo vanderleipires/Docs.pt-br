@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/creating-a-s
 title: Criação de um Layout de todo o Site usando páginas mestras (c#) | Microsoft Docs
 author: rick-anderson
 description: Este tutorial mostrará as Noções básicas de página mestra. Ou seja, quais são as páginas mestras, como faz um criar uma página mestra, o que são o conteúdo de espaços reservados, como faz uma cr...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cf9264f6569fe1a5c0369b17a2358c5207cad6ad
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3bdb533c1cb724d57152e676a75af8067a6828d8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829262"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825427"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>Criação de um Layout de todo o Site usando páginas mestras (c#)
 ====================

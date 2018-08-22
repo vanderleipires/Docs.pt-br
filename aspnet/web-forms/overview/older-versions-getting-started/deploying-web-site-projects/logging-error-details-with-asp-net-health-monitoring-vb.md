@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: Registro em log os detalhes do erro com (VB) de monitoramento de integridade do ASP.NET | Microsoft Docs
 author: rick-anderson
 description: Sistema de monitoramento de integridade da Microsoft fornece uma maneira fácil e personalizável para fazer logon de vários eventos da web, incluindo as exceções sem tratamento. Este tutorial orienta sua...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: 09a6c74e-936a-4c04-8547-5bb313a4e4a3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a19c1dc6ad5b3b45501befded4d8f14f7549b019
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f9aeeb0b3d21707324d239efad4deffcf0f7fead
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809917"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825619"
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>Detalhes do erro de registro em log com (VB) de monitoramento de integridade do ASP.NET
 ====================

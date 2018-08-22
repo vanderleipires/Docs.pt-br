@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 title: 'Implantação de Web do ASP.NET usando o Visual Studio: Implantando para teste | Microsoft Docs'
 author: tdykstra
 description: Esta série de tutoriais mostra como implantar (publicar) um ASP.NET web de aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usin...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/23/2015
 ms.assetid: 8bf2c4fb-4ee5-4841-bfc2-03462c1f7a7a
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 6bfd1399c9e627839005fa27086c90bc0cc049e5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ce361d2826733d5ecb9005713993e5ecf7f11860
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826362"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834054"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>Implantação de Web do ASP.NET usando o Visual Studio: Implantando para teste
 ====================

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-15-public
 title: 'Vitrine do ASP.NET MVC parte 15: Revisão de código público | Microsoft Docs'
 author: robconery
 description: Neste episódio Rob Conery faz uma revisão de código público do aplicativo de vitrine com base nos comentários do usuário. Rob Conery documentou cada etapa no desenvolvimento de...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/10/2008
 ms.assetid: c06b991f-b1d8-4315-9bc7-d17bc644cbd3
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-15-public-code-review
 msc.type: video
-ms.openlocfilehash: 06253386aed8da4b487509e6893dd909fcb2266f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3311b62385a7b9f5beae1b8108a1aaebcd84a9cc
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821804"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824782"
 ---
 <a name="aspnet-mvc-storefront-part-15-public-code-review"></a>Vitrine do ASP.NET MVC parte 15: Revisão de código público
 ====================

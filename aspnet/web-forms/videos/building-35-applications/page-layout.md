@@ -3,17 +3,17 @@ uid: web-forms/videos/building-35-applications/page-layout
 title: Layout de página | Microsoft Docs
 author: JoeStagner
 description: Tabelas ou folhas de estilo? Posicionamento relativo ou absoluto? Este vídeo demonstra os recursos do Visual Web developer que dão suporte a desenvolvimento com yo...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/09/2009
 ms.assetid: c757d668-6f3e-4af1-beb5-100d4c101b88
 msc.legacyurl: /web-forms/videos/building-35-applications/page-layout
 msc.type: video
-ms.openlocfilehash: d83ab45fee6077a95408802fea81633d3faaa7af
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c7aa534d3d795427132252cf1cbe6f4dbe2dd0c3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835049"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824586"
 ---
 <a name="page-layout"></a>Layout de página
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 title: Recursos móveis do ASP.NET MVC 4 | Microsoft Docs
 author: Rick-Anderson
 description: Agora há uma versão do MVC 5 deste tutorial com exemplos de código em implantar um aplicativo da Web do ASP.NET MVC 5 móveis nos Sites do Azure.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: c852f4a853d14badb6c9a1c2c1ddb7b069bc3441
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a3cb2414775b2c29617296dcf0c2dc5729153cdd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806570"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824382"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Recursos móveis do ASP.NET MVC 4
 ====================
@@ -212,7 +212,7 @@ O código a seguir mostra todo *global. asax* arquivo.
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample11.cs?highlight=26)]
 
 > [!NOTE]
-> Se você estiver usando o Internet Explorer 9 e você não vir as `BundleMobileConfig` linha acima no realce amarelo, clique em de [botão de exibição de compatibilidade](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![imagem do botão de exibição de compatibilidade (desativado)] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Imagem do botão de exibição de compatibilidade (desativado)") no IE para alterar o ícone de uma estrutura de tópicos ![imagem do botão de exibição de compatibilidade (desativado)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "imagem do botão de exibição de compatibilidade (desativado) ") para uma cor sólida ![imagem do botão de exibição de compatibilidade (on)](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "imagem do botão de exibição de compatibilidade (on)"). Como alternativa, você pode exibir este tutorial no FireFox ou Chrome.
+> Se você estiver usando o Internet Explorer 9 e você não vir as `BundleMobileConfig` linha acima no realce amarelo, clique em de [botão de exibição de compatibilidade](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![imagem do botão de exibição de compatibilidade (desativado)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Imagem do botão de exibição de compatibilidade (desativado)") no IE para alterar o ícone de uma estrutura de tópicos ![imagem do botão de exibição de compatibilidade (desativado)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "imagem do botão de exibição de compatibilidade (desativado) ") para uma cor sólida ![imagem do botão de exibição de compatibilidade (on)](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "imagem do botão de exibição de compatibilidade (on)"). Como alternativa, você pode exibir este tutorial no FireFox ou Chrome.
 
 
 Abra o *MvcMobile\Views\Shared\\cshtml* arquivo e adicione a marcação a seguir diretamente após o `Html.Partial` chamar:

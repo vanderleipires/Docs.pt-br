@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-
 title: Interagindo com a página mestre da página de conteúdo (VB) | Microsoft Docs
 author: rick-anderson
 description: Examina como chamar métodos, definir propriedades, etc. da página mestra do código na página de conteúdo.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/11/2008
 ms.assetid: 081fe010-ba0f-4e7d-b4ba-774840b601c2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 451b76b2f6a706c7ca6908434b39492e5cba91b9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 59a00305cdcaf41ac0b37649382b9c3dc9ce1b0c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826488"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825623"
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>Interagindo com a página mestre da página de conteúdo (VB)
 ====================

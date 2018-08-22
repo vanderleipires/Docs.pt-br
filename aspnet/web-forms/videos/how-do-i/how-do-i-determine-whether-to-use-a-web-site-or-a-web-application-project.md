@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-determine-whether-to-use-a-web-site-or-a
 title: '[Como fazer:] Determine se deseja usar um Site da Web ou um projeto de aplicativo Web | Microsoft Docs'
 author: rick-anderson
 description: Neste vídeo, Chris Pels irá comparar as diferenças entre um projeto de site da web do ASP.NET e um projeto de aplicativo web. Aprenda as considerações para uso...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/22/2008
 ms.assetid: 2fba2d1d-1bd3-451a-ae94-8acf4faa75ec
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-determine-whether-to-use-a-web-site-or-a-web-application-project
 msc.type: video
-ms.openlocfilehash: b19e0f775a85aa31bdcea10b18424f3d5440697d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8063c6f52f7c58fe424ac70f894e0d4463c44f5b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813452"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830385"
 ---
 <a name="how-do-i-determine-whether-to-use-a-web-site-or-a-web-application-project"></a>[Como fazer:] Determine se deseja usar um Site da Web ou um projeto de aplicativo Web
 ====================

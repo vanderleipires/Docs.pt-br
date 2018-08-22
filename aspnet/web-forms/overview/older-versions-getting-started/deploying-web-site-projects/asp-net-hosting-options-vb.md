@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: ASP.NET (VB) de opções de hospedagem | Microsoft Docs
 author: rick-anderson
 description: Aplicativos web ASP.NET normalmente são projetados, criados e testado em um ambiente de desenvolvimento local e precisam ser implantados em um ambiente de produção e s...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: 492f5ae2-bad7-4107-89a9-f04a9525dee7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 68f12de0b459c01ecf766e09144364a64e2d69d3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 95df9c7595dc10f2bfce44845236d11457b8b3cb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817704"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824205"
 ---
 <a name="aspnet-hosting-options-vb"></a>Opções de hospedagem do ASP.NET (VB)
 ====================

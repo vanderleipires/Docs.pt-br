@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/executing-animations-usin
 title: Executar animações usando o código do lado do cliente (VB) | Microsoft Docs
 author: wenz
 description: O controle de animação no ASP.NET AJAX Control Toolkit não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. A execução de animação...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: f7073f50-d765-456d-9957-926ce60f35f6
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9b180ad17e0e3d2dffa6262d10a83a8353e0a1d0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 08cba7fa04249da4f0c7baa8e730ac75489e0efc
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811880"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823489"
 ---
 <a name="executing-animations-using-client-side-code-vb"></a>Executar animações usando o código do lado do cliente (VB)
 ====================

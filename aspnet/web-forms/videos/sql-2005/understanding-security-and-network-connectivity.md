@@ -3,17 +3,17 @@ uid: web-forms/videos/sql-2005/understanding-security-and-network-connectivity
 title: Noções básicas sobre segurança e conectividade de rede | Microsoft Docs
 author: microsoft
 description: Iniciantes do SQL Server irá aprender diferenciar entre os arquivos de banco de dados do SQL Server e os processos do SQL Server. Explore os cenários para se conectar ao servidor do SQL E....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/20/2006
 ms.assetid: 5a0df3fa-07d9-4762-b9db-1824dcd8a31a
 msc.legacyurl: /web-forms/videos/sql-2005/understanding-security-and-network-connectivity
 msc.type: video
-ms.openlocfilehash: 7c5acc53d5e54e2d1cdde2b0929a8d4b3988fb31
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1f37c39df6b3b9c9c4847e038b490347888300a3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834896"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834871"
 ---
 <a name="understanding-security-and-network-connectivity"></a>Noções básicas sobre segurança e conectividade de rede
 ====================

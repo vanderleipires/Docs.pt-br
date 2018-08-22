@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-re
 title: Mestre/detalhes filtragem em duas páginas (c#) | Microsoft Docs
 author: rick-anderson
 description: Neste tutorial vamos examinar como separar um relatório mestre/detalhes em duas páginas. Na página 'mestre', usamos um controle Repeater para renderizar uma lista de categ...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/30/2010
 ms.assetid: 68b8c023-92fa-4df6-9563-1764e16e4b04
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1dc0c074ecc8ca6128376c8cdf5548028d9779e3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6d4f38201eaa25097dcba589f35506204d3f73a3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830727"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824410"
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>Mestre/detalhes filtragem em duas páginas (c#)
 ====================

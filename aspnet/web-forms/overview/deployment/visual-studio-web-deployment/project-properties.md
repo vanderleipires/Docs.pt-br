@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/visual-studio-web-deployment/project-properti
 title: 'Implantação de Web do ASP.NET usando o Visual Studio: propriedades do projeto | Microsoft Docs'
 author: tdykstra
 description: Esta série de tutoriais mostra como implantar (publicar) um ASP.NET web de aplicativo para aplicativos de Web do serviço de aplicativo do Azure ou para um provedor de hospedagem de terceiros, usin...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/15/2013
 ms.assetid: ec1cec4c-a75f-47af-a2ba-b1e2f971d24b
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
-ms.openlocfilehash: 86e4e3ef5f126a5bf8abc91c2d5ce3d14b1e1c6c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 85b2aa982c56f030c2de0f3ac2ad0dca780f3f38
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837659"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832474"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>Implantação de Web do ASP.NET usando o Visual Studio: propriedades do projeto
 ====================

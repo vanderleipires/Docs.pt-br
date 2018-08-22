@@ -3,17 +3,17 @@ uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms
 title: Carrinho de compras | Microsoft Docs
 author: Erikre
 description: Esta série de tutoriais ensinará os conceitos básicos da criação de um aplicativo de Web Forms do ASP.NET usando o ASP.NET 4.5 e do Microsoft Visual Studio Express 2013 para nós...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/08/2014
 ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: 00fd00778477bea21add76c799dbfe24dfdec1dc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2823970144e6dce4a3a9f4d28dabfabe9fe053d6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816996"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824198"
 ---
 <a name="shopping-cart"></a>Carrinho de compras
 ====================

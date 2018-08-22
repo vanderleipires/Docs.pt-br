@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-
 title: 'Usando o Entity Framework 4.0 e o controle ObjectDataSource, parte 2: adicionando uma camada de lógica de negócios e testes de unidade | Microsoft Docs'
 author: tdykstra
 description: Esta série de tutoriais se baseia no aplicativo web Contoso University que é criado pelo Getting Started with a série de tutoriais do Entity Framework 4.0. EU...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: efb0e677-10b8-48dc-93d3-9ba3902dd807
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: 6adeb0e49fa754c42bdff6e0bb058f7b73a3f68f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6517f037a03bb520ee4f3b3185a255b0eaa9de9a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832552"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825402"
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>Usando o Entity Framework 4.0 e o controle ObjectDataSource, parte 2: adicionando uma camada de lógica de negócios e testes de unidade
 ====================

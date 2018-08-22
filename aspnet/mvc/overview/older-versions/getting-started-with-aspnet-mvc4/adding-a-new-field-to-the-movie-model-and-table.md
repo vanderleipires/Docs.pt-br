@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-f
 title: Adicionando um novo campo para o modelo de filme e a tabela | Microsoft Docs
 author: Rick-Anderson
 description: 'Observação: Uma versão atualizada deste tutorial está disponível aqui que usa o ASP.NET MVC 5 e Visual Studio 2013. Ele é mais seguro e muito mais simples a seguir e demonstração...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/28/2012
 ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 2435bb50bb8124cce3150ba488ad76c012107b27
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 45e6de410266af9d7909cea6d03258d2db7cb240
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840169"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824393"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>Adicionando um novo campo ao modelo de filme e à tabela
 ====================

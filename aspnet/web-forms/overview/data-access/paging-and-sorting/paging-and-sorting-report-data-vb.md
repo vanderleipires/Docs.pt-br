@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report
 title: Paginação e classificação relatórios de dados (VB) | Microsoft Docs
 author: rick-anderson
 description: Paginação e classificação são dois recursos muito comuns ao exibir dados em um aplicativo online. Neste tutorial vamos dar uma primeira olhada na adição de classificação e...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: b895e37e-0e69-45cc-a7e4-17ddd2e1b38d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e8e33bc11074815b5beacd92c49c95f8ea9da2c0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2e1cc844122b0fdebbc0be09f88baa11a461ab8e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808454"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824394"
 ---
 <a name="paging-and-sorting-report-data-vb"></a>Paginação e classificação de dados do relatório (VB)
 ====================

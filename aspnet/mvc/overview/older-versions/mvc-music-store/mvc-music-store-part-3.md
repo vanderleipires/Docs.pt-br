@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 title: 'Parte 3: Exibições e ViewModels | Microsoft Docs'
 author: jongalloway
 description: Esta série de tutoriais fornece detalhes sobre todas as etapas realizadas para compilar o aplicativo de exemplo de Store de música do ASP.NET MVC. Parte 3 aborda Views e ViewModels.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 8fd89c2a448877bf13a7828f545ffcd400f63bb1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 828ff18abcc5932f82be71a45ebde589eeb051fa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837404"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824157"
 ---
 <a name="part-3-views-and-viewmodels"></a>Parte 3: Exibições e ViewModels
 ====================
@@ -214,7 +214,7 @@ Observe que temos suporte total ao IntelliSense como podemos inserir esse códig
 
 ![](mvc-music-store-part-3/_static/image18.png)
 
-Dentro do nosso loop "foreach", o Visual Web Developer sabe que cada item é do tipo gênero, para que possamos ver IntelliSence para cada tipo de gênero.
+Dentro do nosso loop "foreach", o Visual Web Developer sabe que cada item é do tipo gênero, para que possamos ver o IntelliSense para cada tipo de gênero.
 
 ![](mvc-music-store-part-3/_static/image19.png)
 

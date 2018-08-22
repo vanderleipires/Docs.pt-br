@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding
 title: Noções básicas sobre a autenticação do AJAX ASP.NET e serviços de aplicativo de perfil | Microsoft Docs
 author: scottcate
 description: O serviço de autenticação permite que os usuários forneçam credenciais para receber um cookie de autenticação e é o serviço de gateway para permitir que o usuário personalizada...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/14/2008
 ms.assetid: 6ab4efb6-aab6-45ac-ad2c-bdec5848ef9e
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 6c08cffacb9ebde6f29398f53b2e568b4bd59d5d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d722130e625a9f867923280fce0ef35f19bfeb9d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831674"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830031"
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>Noções básicas sobre a autenticação do AJAX ASP.NET e serviços de aplicativo de perfil
 ====================

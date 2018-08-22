@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-v
 title: Adicionando controles de validação para a edição e inserção de Interfaces (c#) | Microsoft Docs
 author: rick-anderson
 description: Neste tutorial, veremos como é fácil adicionar controles de validação ao EditItemTemplate e InsertItemTemplate de um controle da Web, de dados para fornecer uma mais...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/17/2006
 ms.assetid: 2086cb1a-ab78-49ae-9c0b-03891c69776a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fedcad6265e7247d59a74a2dcaccb71fabfe0b4c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4990ce2c15465873ef08aeb697780d98a186b3c6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834197"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834464"
 ---
 <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-c"></a>Adicionando controles de validação para a edição e inserção de Interfaces (c#)
 ====================

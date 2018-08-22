@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-da
 title: Exibindo uma tabela de banco de dados (VB) | Microsoft Docs
 author: microsoft
 description: Neste tutorial, demonstrarei dois métodos de exibição de um conjunto de registros do banco de dados. Eu mostro dois métodos de formatação de um conjunto de registros de banco de dados em um HTML ta...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: 5bb4587f-5bcd-44f5-b368-3c1709162b35
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b796c424cfe3fb03f3d6eddd8812438ceea2026
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d96f574c9284ab259b8733b3b8109ecd0b689aa8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830267"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824374"
 ---
 <a name="displaying-a-table-of-database-data-vb"></a>Exibindo uma tabela de banco de dados (VB)
 ====================

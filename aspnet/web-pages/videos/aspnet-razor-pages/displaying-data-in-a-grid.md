@@ -3,17 +3,17 @@ uid: web-pages/videos/aspnet-razor-pages/displaying-data-in-a-grid
 title: Exibindo dados em uma grade | Microsoft Docs
 author: JoeStagner
 description: Acompanhamento de vídeo exibindo dados em um tutorial de grade
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/25/2011
 ms.assetid: 76ac6b38-ca93-4d8f-8a72-9e46c82054ab
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/displaying-data-in-a-grid
 msc.type: video
-ms.openlocfilehash: 092dbfbfe27a1751802904ad254f1e08d49e401a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a8da9a5f454ce94b22365bc302cd2348240bd09b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838039"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824357"
 ---
 <a name="displaying-data-in-a-grid"></a>Exibindo dados em uma grade
 ====================

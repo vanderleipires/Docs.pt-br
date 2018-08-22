@@ -3,17 +3,17 @@ uid: web-forms/videos/sql-2005/what-is-a-database
 title: O que é um banco de dados? | Microsoft Docs
 author: microsoft
 description: 'Esta introdução abrange as perguntas e iniciantes do SQL Server de terminologia precisam criar e gerenciar bancos de dados, tais como: o que é um banco de dados do SQL Server? Como...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/29/2006
 ms.assetid: 560d2455-ce08-4b2a-900d-7e9ccf82e048
 msc.legacyurl: /web-forms/videos/sql-2005/what-is-a-database
 msc.type: video
-ms.openlocfilehash: ab349d6157b8db70569b2f28063c21009027b656
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 23038d2fa13e888ecdd3edc3fb0ea7f8072e1bce
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822716"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832847"
 ---
 <a name="what-is-a-database"></a>O que é um banco de dados?
 ====================

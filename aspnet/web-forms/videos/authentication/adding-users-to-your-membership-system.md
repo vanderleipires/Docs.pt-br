@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/adding-users-to-your-membership-system
 title: Adicionar usuários ao seu sistema de associação | Microsoft Docs
 author: JoeStagner
 description: Neste vídeo, Joe Stagner mostra como adicionar novos usuários para o repositório de associação.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/29/2010
 ms.assetid: fc0f145a-ba00-495e-b8aa-a6e8ad4e80f5
 msc.legacyurl: /web-forms/videos/authentication/adding-users-to-your-membership-system
 msc.type: video
-ms.openlocfilehash: 756a7875cddeab6a8132e95a8219ae1617ee8398
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2b92c58f4fddf1362972fa3b1e8e2a56a6a15eb0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812320"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833656"
 ---
 <a name="adding-users-to-your-membership-system"></a>Adicionar usuários ao seu sistema de associação
 ====================

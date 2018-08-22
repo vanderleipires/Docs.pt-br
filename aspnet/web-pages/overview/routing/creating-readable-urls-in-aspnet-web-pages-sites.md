@@ -3,17 +3,17 @@ uid: web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
 title: Criação de URLs legíveis na Web do ASP.NET (Razor) Sites de páginas | Microsoft Docs
 author: tfitzmac
 description: Este artigo descreve o roteamento em um site de páginas da Web do ASP.NET (Razor) e como isso permite que você use URLs que são mais legíveis e melhor para SEO. O que você irá...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/17/2014
 ms.assetid: a8aac1ac-89de-4415-afe0-97a41c6423d2
 msc.legacyurl: /web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 3304a226e374618a567e69ac72448a9964a34c47
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b8405283dc5bf44a4cd8d1122d327346774d95e8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809865"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832864"
 ---
 <a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a>Criação de URLs legíveis em Sites do ASP.NET Web Pages (Razor)
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-
 title: Criar o capítulo Downloads para o EF 5 MVC 4 tutoriais | Microsoft Docs
 author: Rick-Anderson
 description: Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 4 usando o Code First do Entity Framework 5 e o Visual Studio...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/30/2013
 ms.assetid: d0a89089-eed8-4f61-a478-c5ffa30186f5
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
 msc.type: authoredcontent
-ms.openlocfilehash: 0433c07bc42d7d5f397772704a6cb7aa2e03f8e2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ce143f05e8faec3c3bf58bb4a396f53e73486fb7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810783"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830033"
 ---
 <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>Criar o capítulo Downloads para o EF 5 MVC 4 tutoriais
 ====================

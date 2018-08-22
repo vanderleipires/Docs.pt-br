@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mockin
 title: 'ASP.NET MVC parte vitrine 12: Simulação | Microsoft Docs'
 author: robconery
 description: Neste episódio, eu implemento para que eu posso testar minha ação de autenticação para meu UserController de simulação.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/19/2008
 ms.assetid: 9a0f04b9-6a49-4e2c-9c12-03ab71ab2705
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mocking
 msc.type: video
-ms.openlocfilehash: 4f25641ad0246d54e3e34b691d7169b76cfbde92
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0af5799a779f19f19f8eaeab5c554d90993ca4af
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841875"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832844"
 ---
 <a name="aspnet-mvc-storefront-part-12-mocking"></a>Vitrine do ASP.NET MVC parte 12: simulação
 ====================

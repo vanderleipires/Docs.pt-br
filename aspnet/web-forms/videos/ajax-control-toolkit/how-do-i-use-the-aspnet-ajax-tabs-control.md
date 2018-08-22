@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-tabs-con
 title: '[Como fazer:] Usar o controle de guias do ASP.NET AJAX? | Microsoft Docs'
 author: JoeStagner
 description: Este vídeo demonstra as Noções básicas do controle de guias do ASP.NET AJAX Control Toolkit, com a qual você pode criar um conjunto de guias para organizar o conteúdo...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/01/2007
 ms.assetid: f85fcce9-a897-4f43-b12f-5c6f5f2733cd
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-tabs-control
 msc.type: video
-ms.openlocfilehash: 23fa24c15f6aafaecb22aa7a44ea2b2659640f20
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b38bc5d9d655bad106bf34547e922ddc598274da
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807236"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825392"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-tabs-control"></a>[Como fazer:] Usar o controle de guias do ASP.NET AJAX?
 ====================

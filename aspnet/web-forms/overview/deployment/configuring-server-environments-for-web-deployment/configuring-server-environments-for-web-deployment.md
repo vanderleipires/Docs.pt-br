@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-server-environments-for-web-deplo
 title: Configurar ambientes de servidor para implantação da Web | Microsoft Docs
 author: jrjlee
 description: Este tutorial mostra como configurar ambientes de servidor para suporte em um único clique, ou automatizado, implantação de site e publicação em vários cenário diferente...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 0bf0959b-4ca8-45de-bd13-b15347543b5a
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: df40cc9d16b9e6b3fe0b659b405106e68cee62b5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4f6433f0b8a9ad3b3634c9bcd8d95015eebaa865
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835557"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830026"
 ---
 <a name="configuring-server-environments-for-web-deployment"></a>Configurar ambientes de servidor para implantação da Web
 ====================

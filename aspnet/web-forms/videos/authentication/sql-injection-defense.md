@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/sql-injection-defense
 title: Defesa contra injeção de SQL | Microsoft Docs
 author: JoeStagner
 description: Uma vulnerabilidade de injeção de SQL em seu aplicativo pode arruinando o seu dia inteiro. Neste vídeo, Joe Stagner da Microsoft explica como ataques de injeção de SQL podem happ...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/29/2009
 ms.assetid: b9fb1e01-06d9-43d9-9e8f-5fa1e4c6a211
 msc.legacyurl: /web-forms/videos/authentication/sql-injection-defense
 msc.type: video
-ms.openlocfilehash: 883c01abf61f34762ffc96b6af09d316131f7218
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 388217f314b7e44e33f830328120e85d11e92ea0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827751"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824364"
 ---
 <a name="sql-injection-defense"></a>Defesa contra injeção de SQL
 ====================

@@ -3,17 +3,17 @@ uid: web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-afte
 title: Solução de problemas de HTTP 405 erros após a publicação da API Web 2 aplicativos | Microsoft Docs
 author: rmcmurray
 description: Este tutorial descreve como solucionar problemas de erros HTTP 405 após publicar um aplicativo de API da Web para um servidor web de produção.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/01/2014
 ms.assetid: 07ec7d37-023f-43ea-b471-60b08ce338f7
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
-ms.openlocfilehash: 7dd7fd1fc6be9bc2f843c293222179a9774dff3c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 735b8ceeafa63e0546529ef17f103070dc760794
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827858"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834058"
 ---
 <a name="troubleshooting-http-405-errors-after-publishing-web-api-2-applications"></a>Solução de problemas de HTTP 405 erros após a publicação da API Web 2 aplicativos
 ====================

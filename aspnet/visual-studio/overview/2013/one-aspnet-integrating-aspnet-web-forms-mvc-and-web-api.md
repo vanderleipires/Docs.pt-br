@@ -3,17 +3,17 @@ uid: visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and
 title: 'Laboratório prático: One ASP.NET: a integração do ASP.NET Web Forms, MVC e API da Web | Microsoft Docs'
 author: rick-anderson
 description: O ASP.NET é uma estrutura para criar sites da Web, aplicativos e serviços usando tecnologias especializadas, como MVC, API da Web e outros. Com a expansão h do ASP.NET...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 276207a6e7d2388ce53778928665c35de9327318
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b6ac0dca92ab3d75eb871099882dcea549264354
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837299"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832846"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>Laboratório prático: One ASP.NET: a integração do ASP.NET Web Forms, MVC e API da Web
 ====================

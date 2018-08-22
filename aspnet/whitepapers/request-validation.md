@@ -3,17 +3,17 @@ uid: whitepapers/request-validation
 title: Solicitação de validação – impedindo ataques de Script | Microsoft Docs
 author: rick-anderson
 description: Este documento descreve o recurso de validação de solicitação do ASP.NET, onde, por padrão, o aplicativo será impedido de processamento submitt conteúdo de HTML não codificado...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 0dfbfcae70792c57d530fc5e6fb73f8f96ec6e02
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 087f30428602137e01f574825f3ebcd4db9285ff
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809739"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824160"
 ---
 <a name="request-validation---preventing-script-attacks"></a>Solicitação de validação – impedindo ataques de Script
 ====================

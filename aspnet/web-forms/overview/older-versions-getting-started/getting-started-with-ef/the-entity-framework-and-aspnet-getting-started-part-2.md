@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/t
 title: Introdução ao banco de dados do Entity Framework 4.0 First e 4 do ASP.NET Web Forms - parte 2 | Microsoft Docs
 author: tdykstra
 description: Aplicativo web de exemplo Contoso University demonstra como criar aplicativos Web Forms do ASP.NET usando o Entity Framework. O aplicativo de exemplo é...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/03/2010
 ms.assetid: fb63a326-a4ae-4b0c-a4f5-412327197216
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: c43e7b9d090b0e25fe1db1ce6a944afea4b081d9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a0b4acca93deee4fb514fa1bc3e2bd13490cf10e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802620"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832890"
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>Introdução ao banco de dados do Entity Framework 4.0 First e 4 do Web Forms do ASP.NET – parte 2
 ====================

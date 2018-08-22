@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-
 title: Animação em resposta à interação do usuário (VB) | Microsoft Docs
 author: wenz
 description: O controle de animação no ASP.NET AJAX Control Toolkit não é apenas um controle, mas uma estrutura inteira para adicionar animações a um controle. As animações podem estrelas...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: c8204c05-ec27-40fe-933d-88e4e727a482
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4b774a058e715e4a98e767daf92886f24e627822
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0d9a3bf853afdbde0a419b90d1563fc06d3f9979
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815519"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833037"
 ---
 <a name="animating-in-response-to-user-interaction-vb"></a>Animação em resposta à interação do usuário (VB)
 ====================

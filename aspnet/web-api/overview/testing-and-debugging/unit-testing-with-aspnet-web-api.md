@@ -3,23 +3,23 @@ uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 title: API Web ASP.NET 2 de teste de unidade | Microsoft Docs
 author: tfitzmac
 description: Este guia e o aplicativo demonstram como criar testes de unidade simples para seu aplicativo de API Web 2. Este tutorial mostra como incluir um projeto de teste de unidade...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 701ced855ff2848182fdbf8d4b9e2bcf0c33341b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0a3f9ddde725995359de85c5e0783106f5de02bd
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806209"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825702"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>API Web ASP.NET 2 de teste de unidade
 ====================
 por [Tom FitzMacken](https://github.com/tfitzmac)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
+[Baixe o projeto concluído](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > Este guia e o aplicativo demonstram como criar testes de unidade simples para seu aplicativo de API Web 2. Este tutorial mostra como incluir um projeto de teste de unidade em sua solução e escrever métodos de teste que verificam os valores retornados de um método de controlador.
 > 

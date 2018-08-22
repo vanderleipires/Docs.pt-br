@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-debug-aspnet-ajax-applications-using-
 title: '[Como fazer:] Depurar aplicativos do AJAX ASP.NET usando o Visual Studio 2005? | Microsoft Docs'
 author: scottgolightly
 description: Neste vídeo, saiba como usar o Visual Studio 2005 para depurar aplicativos ASP.NET AJAX. Nós são mostrados como o ScriptManager é usado para acessar o JavaScript...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: 0c766dac-5366-47e4-baa4-3a9fd71e4b80
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-debug-aspnet-ajax-applications-using-visual-studio-2005
 msc.type: video
-ms.openlocfilehash: b28469f248c3fdb35033890996ab7c75bdf1fde2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 15dc6d0f9e6f77d387b1fd1df97bf1515e39737a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801713"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825398"
 ---
 <a name="how-do-i-debug-aspnet-ajax-applications-using-visual-studio-2005"></a>[Como fazer:] Depurar aplicativos do AJAX ASP.NET usando o Visual Studio 2005?
 ====================

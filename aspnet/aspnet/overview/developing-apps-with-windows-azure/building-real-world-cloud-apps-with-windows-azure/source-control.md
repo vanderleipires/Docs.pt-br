@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: (Criando aplicativos de nuvem do mundo Real com o Azure) do controle de fonte | Microsoft Docs
 author: MikeWasson
 description: Os aplicativos de nuvem construção Real World com o livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem a ele...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/23/2015
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: 045dc654057802be4ad96f5ecc3ed6c3d7a1ccb1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8402b73f5f9d063d958df39f98267468e4aef746
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823307"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833064"
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Controle de origem (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================

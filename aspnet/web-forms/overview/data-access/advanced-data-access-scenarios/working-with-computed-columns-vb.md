@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/working-with-
 title: Trabalhando com colunas computadas (VB) | Microsoft Docs
 author: rick-anderson
 description: Ao criar uma tabela de banco de dados, o Microsoft SQL Server permite que você defina uma coluna computada, cujo valor é calculado a partir de uma expressão que normalmente referen...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: 5811b8ff-ed56-40fc-9397-6b69ae09a8f6
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7e489640c9075b3443725ddd776ca08fd5569232
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 81254408252c5e786c938d4eb8beb1c7a2b65218
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830976"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825420"
 ---
 <a name="working-with-computed-columns-vb"></a>Trabalhando com colunas computadas (VB)
 ====================

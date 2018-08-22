@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-35/visual-studio-editor/quick-tour-of-the-visual-st
 title: Ambiente de desenvolvimento integrado do Tour rápido do Visual Studio 2008 | Microsoft Docs
 author: rick-anderson
 description: Faça um tour as alterações e novos recursos do IDE do Visual Studio 2008. Consulte o editor de página da web atualizada, designer de formulários do WPF, o editor de CSS e muito mais.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: f20c5f1c-e49c-4909-b18f-8b5a442eafe3
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor/quick-tour-of-the-visual-studio-2008-integrated-development-environment
 msc.type: video
-ms.openlocfilehash: f25baf2dac16473be97c3c25d01d8a004ee3759e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8c94be873fdc7424e66b932f0389ad8738fb3f1f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822102"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824151"
 ---
 <a name="quick-tour-of-the-visual-studio-2008-integrated-development-environment"></a>Tour rápido pelo ambiente de desenvolvimento integrado do Visual Studio 2008
 ====================

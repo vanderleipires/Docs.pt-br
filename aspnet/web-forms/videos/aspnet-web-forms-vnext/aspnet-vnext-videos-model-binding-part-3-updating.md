@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-p
 title: 'Vídeos do ASP.NET vNext: associação de modelo parte 3 - atualizando | Microsoft Docs'
 author: DamianEdwards
 description: Neste vídeo, Damian Edwards conclui a análise de associação de modelo que demonstra como os dados são atualizados.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/22/2011
 ms.assetid: 63c42590-08ac-44da-91f8-bd79489b9ecc
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-3-updating
 msc.type: video
-ms.openlocfilehash: 124405cdc01b3722eb07dac21a43da31d90c143a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bc278ae16c120eb62498055fa3753d7d2561e0ea
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827110"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833068"
 ---
 <a name="aspnet-vnext-videos-model-binding-part-3---updating"></a>Vídeos do ASP.NET vNext: associação de modelo parte 3 - atualizar
 ====================

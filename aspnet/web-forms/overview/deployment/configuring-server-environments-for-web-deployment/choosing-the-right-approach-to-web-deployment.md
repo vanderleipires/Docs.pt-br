@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-server-environments-for-web-deplo
 title: Escolhendo a abordagem correta para a implantação da Web | Microsoft Docs
 author: jrjlee
 description: Quando você trabalha com os serviços de informações da Internet (IIS) ferramenta de implantação Web (implantação da Web) 2.0 ou posterior, há três abordagens principais que você pode usar para obter...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 787a53fd-9901-4a11-9d58-61e0509cda45
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: eb1b7d50e5d7461d760ad7a963cc70369b7a4513
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0b21852a1db2862a8452e332021b55ce7f1db423
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807045"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830597"
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>Escolhendo a abordagem correta para a implantação da Web
 ====================
@@ -36,7 +36,7 @@ Esta tabela mostra as principais vantagens e desvantagens de cada abordagem de i
 | Abordagem | Vantagens | Desvantagens | Cenários típicos |
 | --- | --- | --- | --- |
 | Agente remoto | É fácil de configurar. Ele é adequado para atualizações regulares em aplicativos da web e o conteúdo. | O usuário deve ser um administrador no servidor de destino. o usuário não é possível fornecer credenciais alternativas. | Ambientes de desenvolvimento. Ambientes de teste. |
-| Agente Temp | Não é necessário para instalar a implantação da Web no computador de destino. A versão mais recente da implantação da Web é usada automaticamente. | O usuário deve ser um administrador no servidor de destino. O usuário não é possível fornecer credenciais alternativas. | Ambientes de desenvolvimento. Ambientes de teste. |
+| Agente Temp | Não é necessário para instalar a implantação da Web no computador de destino. A versão mais recente da implantação da Web é usada automaticamente. | O usuário deve ser um administrador no servidor de destino. o usuário não é possível fornecer credenciais alternativas. | Ambientes de desenvolvimento. Ambientes de teste. |
 | Manipulador de implantação da Web | Os usuários não administradores podem implantar o conteúdo. Ele é adequado para atualizações regulares em aplicativos da web e o conteúdo. | É muito mais complexa para configurar. | Ambientes de preparo. Ambientes de produção de intranet. Ambientes hospedados. |
 | Implantação offline | É muito fácil de configurar. Ele é adequado para ambientes isolados. | O administrador do servidor manualmente deve copiar e importar o pacote da web sempre. | Ambientes de produção para a Internet. Ambientes isolados da rede. |
   

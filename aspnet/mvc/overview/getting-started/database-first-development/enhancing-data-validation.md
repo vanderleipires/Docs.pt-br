@@ -3,17 +3,17 @@ uid: mvc/overview/getting-started/database-first-development/enhancing-data-vali
 title: 'Banco de dados do EF primeiro com o ASP.NET MVC: Aprimorando a validação de dados | Microsoft Docs'
 author: tfitzmac
 description: Usando o MVC, Entity Framework e o Scaffolding do ASP.NET, você pode criar um aplicativo web que fornece uma interface para um banco de dados existente. Esta série de tutoriais...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/29/2014
 ms.assetid: 0ed5e67a-34c0-4b57-84a6-802b0fb3cd00
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 9a7c6e200caa72aea61a80d6496ec1a1569e5e48
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: dbff33a1c4f47474adda82e796d9c292392142f2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816312"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830002"
 ---
 <a name="ef-database-first-with-aspnet-mvc-enhancing-data-validation"></a>Banco de dados do EF primeiro com o ASP.NET MVC: Aprimorando a validação de dados
 ====================

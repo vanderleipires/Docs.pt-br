@@ -3,17 +3,17 @@ uid: web-api/overview/security/authentication-and-authorization-in-aspnet-web-ap
 title: Autenticação e autorização na API Web ASP.NET | Microsoft Docs
 author: MikeWasson
 description: Fornece uma visão geral de autenticação e autorização na API Web ASP.NET.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/27/2012
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f882a9bb2922d0eb28eee7cdba0896bdc5318c2a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a78606a74b2149e68e3b01f4fe204f4a13edf4b5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812828"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834062"
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>Autenticação e autorização na API Web ASP.NET
 ====================
@@ -117,6 +117,6 @@ O diagrama a seguir mostra a hierarquia de classe para o **AuthorizeAttribute** 
 
 ### <a name="authorization-inside-a-controller-action"></a>Autorização dentro de uma ação do controlador
 
-Em alguns casos, você pode permitir que uma solicitação para continuar, mas alterar o comportamento com base no principal. Por exemplo, as informações que você retornar podem mudar dependendo da função do usuário. Dentro de um método de controlador, você pode obter o princípio atual do **ApiController.User** propriedade.
+Em alguns casos, você pode permitir que uma solicitação para continuar, mas alterar o comportamento com base no principal. Por exemplo, as informações que você retornar podem mudar dependendo da função do usuário. Dentro de um método de controlador, você pode obter a entidade de segurança atual do **ApiController.User** propriedade.
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample7.cs)]

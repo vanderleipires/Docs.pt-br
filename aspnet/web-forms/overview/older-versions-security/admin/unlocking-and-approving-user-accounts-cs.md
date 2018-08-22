@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/admin/unlocking-and-approving-us
 title: Desbloqueio e aprovação de contas de usuário (c#) | Microsoft Docs
 author: rick-anderson
 description: Este tutorial mostra como criar uma página da web para os administradores gerenciarem bloqueada e aprovado o status dos usuários. Também veremos como aprovar o novo de usuários...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2008
 ms.assetid: 5346aab1-9974-489f-a065-ae3883b8a350
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ab6fa1b460de671559dc16ca85f2a4df1e3d5922
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1a8373f62833c3a76d2e7f96193e5ecbe2d9c593
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818298"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833687"
 ---
 <a name="unlocking-and-approving-user-accounts-c"></a>Contas de usuário de desbloqueio e aprovação (c#)
 ====================
