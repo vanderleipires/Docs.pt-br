@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-pop
 title: Tratamento de Postbacks de um controle pop-up com um UpdatePanel (c#) | Microsoft Docs
 author: wenz
 description: O extensor PopupControl no AJAX Control Toolkit oferece uma maneira fácil de disparar um pop-up quando qualquer outro controle é ativado. Tenha cuidado especial a ser executada...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 1f68f59d-9c1e-4cf3-b304-c13ae6b7203e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9fdf2821e005bfcb691134bb6994c01fa72b7abd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0f886ba0f3e79bc6d5daf193eaedfd627bc9b937
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815376"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830413"
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a>Tratamento de Postbacks de um controle pop-up com um UpdatePanel (c#)
 ====================

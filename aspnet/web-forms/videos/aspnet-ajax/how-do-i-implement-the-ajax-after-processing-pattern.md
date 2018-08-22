@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-after-processing-p
 title: '[Como fazer:] Implementar o AJAX após o processamento padrão? | Microsoft Docs'
 author: JoeStagner
 description: A estrutura ASP.NET AJAX permite que seu código do lado do servidor conectar-se no e responder a vários eventos do lado do cliente. Neste vídeo, saiba como implementar o Aft...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/21/2007
 ms.assetid: 9a382d8e-ea3a-4fa4-bd24-b56f9051f4db
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-after-processing-pattern
 msc.type: video
-ms.openlocfilehash: b9edac497aec78f8a8af6b782120c04975b96b3c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6e10200299b78dcf2d5ae356b302ddddcffb999c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830387"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824669"
 ---
 <a name="how-do-i-implement-the-ajax-after-processing-pattern"></a>[Como fazer:] Implementar o AJAX após o processamento padrão?
 ====================

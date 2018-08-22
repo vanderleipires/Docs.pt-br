@@ -3,17 +3,17 @@ uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filt
 title: Classificação, filtragem e paginação com o Entity Framework em um aplicativo ASP.NET MVC | Microsoft Docs
 author: tdykstra
 description: Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/01/2015
 ms.assetid: d5723e46-41fe-4d09-850a-e03b9e285bfa
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 231dd6bc9892d855a12289fde681d3f210494af9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a72d6cbce0e5f20360e1e9bfc20f4a75bfeb3343
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839707"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830409"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Classificação, filtragem e paginação com o Entity Framework em um aplicativo ASP.NET MVC
 ====================

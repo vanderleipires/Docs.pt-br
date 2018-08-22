@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: Opções de armazenamento de dados (compilando aplicativos de nuvem do mundo Real com o Azure) | Microsoft Docs
 author: MikeWasson
 description: Os aplicativos de nuvem construção Real World com o livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem a ele...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 16388bf00c291ee21eec7bc72a9c01c33cec9371
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 239592b6e356436e86be1a2ab2f994343884cf90
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820328"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824594"
 ---
 <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>Opções de armazenamento de dados (compilando aplicativos de nuvem do mundo Real com o Azure)
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-history-control
 title: '[Como fazer:] Usar o controle de histórico do ASP.NET AJAX? | Microsoft Docs'
 author: scottgolightly
 description: Um problema enfrentado por um aplicativo típico do AJAX é uma atualização parcial de página não é adicionada ao histórico do navegador da Web. Isso significa que B. do navegador...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/21/2007
 ms.assetid: 557b0118-fde8-48c9-bf6d-829f9043706b
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-history-control
 msc.type: video
-ms.openlocfilehash: 50a74721860c992de4f1f06a171469e7799ef23c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 627d7d06020cc669edccb2a94bd366e96343f850
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837903"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830497"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-history-control"></a>[Como fazer:] Usar o controle de histórico do ASP.NET AJAX?
 ====================
