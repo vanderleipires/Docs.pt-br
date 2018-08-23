@@ -1,22 +1,22 @@
 ---
-title: Configuração de logon externo do Facebook no núcleo do ASP.NET
+title: Configuração de logon externo do Facebook no ASP.NET Core
 author: rick-anderson
-description: Este tutorial demonstra a integração da autenticação de usuário de conta do Facebook em um aplicativo existente do ASP.NET Core.
+description: Este tutorial demonstra a integração da autenticação de usuário de conta do Facebook em um aplicativo ASP.NET Core existente.
 ms.author: riande
 ms.date: 08/01/2017
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 53e5fa3ccee44451646c84e58260db23e59d6cbd
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3ba6fe7785afa268e54e6032f1963c1867f6bb27
+ms.sourcegitcommit: 74c09caec8992635825b45b7f065f871d33c077a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273393"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42634803"
 ---
-# <a name="facebook-external-login-setup-in-aspnet-core"></a>Configuração de logon externo do Facebook no núcleo do ASP.NET
+# <a name="facebook-external-login-setup-in-aspnet-core"></a>Configuração de logon externo do Facebook no ASP.NET Core
 
 Por [Valeriy Novytskyy](https://github.com/01binary) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Este tutorial mostra como permitir que os usuários entrem com a conta do Facebook deles usando um projeto de amostra do ASP.NET Core 2.0 criado na [página anterior](xref:security/authentication/social/index). Requer a autenticação do Facebook do [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) pacote NuGet. Vamos começar criando um Facebook App ID seguindo as [etapas oficiais](https://developers.facebook.com).
+Este tutorial mostra como permitir que os usuários entrem com a conta do Facebook deles usando um projeto de amostra do ASP.NET Core 2.0 criado na [página anterior](xref:security/authentication/social/index). Autenticação do Facebook requer o [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) pacote do NuGet. Vamos começar criando um Facebook App ID seguindo as [etapas oficiais](https://developers.facebook.com).
 
 ## <a name="create-the-app-in-facebook"></a>Criar o aplicativo no Facebook
 
@@ -28,7 +28,7 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
 * Preencha o formulário e clique no botão **criar ID do aplicativo**.
 
-   ![Criar um formulário de nova ID de aplicativo](index/_static/FBNewAppId.png)
+   ![Criar um formulário de nova ID do aplicativo](index/_static/FBNewAppId.png)
 
 * Na página **selecionar um produto** , clique em **Set Up** no painel **Facebook Login**.
 
@@ -38,30 +38,29 @@ Este tutorial mostra como permitir que os usuários entrem com a conta do Facebo
 
    ![Início rápido do Skip](index/_static/FBSkipQuickStart.png)
 
-* Você verá o **configurações do cliente OAuth** página:
+* Você verá a **configurações do cliente OAuth** página:
 
-![Página de configurações de OAuth do cliente](index/_static/FBOAuthSetup.png)
+![Página de configurações do OAuth do cliente](index/_static/FBOAuthSetup.png)
 
-* Insira o URI de desenvolvimento com */signin-facebook* acrescentados no **válido URIs de redirecionamento OAuth** campo (por exemplo: `https://localhost:44320/signin-facebook`). A autenticação do Facebook configurada mais tarde neste tutorial automaticamente manipulará as solicitações no */signin-facebook* rota para implementar o fluxo do OAuth.
+* Insira o URI de desenvolvimento com */signin-facebook* acrescentado para o **URIs de redirecionamento de OAuth válido** campo (por exemplo: `https://localhost:44320/signin-facebook`). A autenticação do Facebook configurada mais tarde neste tutorial automaticamente manipulará as solicitações no */signin-facebook* rota para implementar o fluxo de OAuth.
 
 > [!NOTE]
-> O URI */signin-facebook* é definido como o retorno de chamada padrão do provedor de autenticação do Facebook. Você pode alterar o retorno de chamada padrão URI ao configurar o middleware de autenticação do Facebook através de herdadas [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) propriedade o [FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions) classe.
+> O URI */signin-facebook* é definido como o retorno de chamada padrão do provedor de autenticação do Facebook. Você pode alterar o retorno de chamada padrão URI ao configurar o middleware de autenticação do Facebook por meio de herdadas [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) propriedade da [FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions) classe.
 
 * Clique em **salvar alterações**.
 
-* Clique o **painel** link no painel de navegação esquerdo. 
+* Clique em **Configurações > básico** link no painel de navegação à esquerda. 
 
-    Nessa página, anote o `App ID` e `App Secret`. Você adicionará ambos em seu aplicativo ASP.NET Core na próxima seção:
+    Nessa página, anote seu `App ID` e seu `App Secret`. Você adicionará os dois em seu aplicativo ASP.NET Core na próxima seção:
 
-   ![Painel do desenvolvedor do Facebook](index/_static/FBDashboard.png)
 
 * Ao implantar o site, você precisará voltar para a página de configurações **Logon do Facebook** e registrar um novo URI público.
 
-## <a name="store-facebook-app-id-and-app-secret"></a>Armazenar a ID do aplicativo Facebook e o segredo do aplicativo
+## <a name="store-facebook-app-id-and-app-secret"></a>ID do Facebook App Store e o segredo do aplicativo
 
-Vincular as configurações confidenciais como Facebook `App ID` e `App Secret` para sua configuração de aplicativo usando o [Manager segredo](xref:security/app-secrets). Para os fins deste tutorial, nomeie os tokens `Authentication:Facebook:AppId` e `Authentication:Facebook:AppSecret`.
+Vincular as configurações confidenciais, como o Facebook `App ID` e `App Secret` para sua configuração de aplicativo usando o [Secret Manager](xref:security/app-secrets). Para os fins deste tutorial, nomeie os tokens `Authentication:Facebook:AppId` e `Authentication:Facebook:AppSecret`.
 
-Execute os seguintes comandos para armazenar com segurança `App ID` e `App Secret` usando o Gerenciador de segredo:
+Execute os seguintes comandos para armazenar com segurança `App ID` e `App Secret` usando o Secret Manager:
 
 ```console
 dotnet user-secrets set Authentication:Facebook:AppId <app-id>
@@ -118,19 +117,19 @@ Consulte as referências de API do [FacebookOptions](/dotnet/api/microsoft.aspne
 
 ## <a name="sign-in-with-facebook"></a>Entrar com o Facebook
 
-Execute o aplicativo e clique em **login**. Você verá uma opção para entrar com o Facebook.
+Executar o aplicativo e clique em **faça logon no**. Você verá uma opção para entrar com o Facebook.
 
 ![Aplicativo Web: usuário não autenticado](index/_static/DoneFacebook.png)
 
-Quando você clica na **Facebook**, você será redirecionado para o Facebook para autenticação:
+Quando você clica em **Facebook**, você será redirecionado ao Facebook para autenticação:
 
 ![Página de autenticação do Facebook](index/_static/FBLogin.png)
 
-Endereço de email e o perfil público de solicitações de autenticação do Facebook por padrão:
+Autenticação do Facebook solicita o endereço de email e o perfil público por padrão:
 
 ![Página de autenticação do Facebook](index/_static/FBLoginDone.png)
 
-Depois que você insira suas credenciais de Facebook, que você será redirecionado para o site onde você pode definir seu email.
+Depois que você insira suas credenciais do Facebook, você será redirecionado para seu site em que você pode definir seu email.
 
 Agora você está conectado usando suas credenciais do Facebook:
 
@@ -139,12 +138,12 @@ Agora você está conectado usando suas credenciais do Facebook:
 ## <a name="troubleshooting"></a>Solução de problemas
 
 * Apenas **ASP.NET Core 2.x:** se a identidade não for configurada chamando `services.AddIdentity` no `ConfigureServices`, a autenticação resultará em *ArgumentException: a opção 'SignInScheme' deve ser fornecida*. O modelo de projeto usado neste tutorial garante que isso é feito.
-* Se o banco de dados do site não tiver sido criado, aplicando a migração inicial, você obtém *uma operação de banco de dados falhou ao processar a solicitação* erro. Toque em **aplicar migrações** para criar o banco de dados e a atualização para continuar após o erro.
+* Se o banco de dados do site não foi criado por meio da aplicação a migração inicial, você obterá *uma operação de banco de dados falhou ao processar a solicitação* erro. Toque **aplicar migrações** para criar o banco de dados e atualizar para continuar após o erro.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Este artigo mostrou como você pode autenticar com o Facebook. Você pode seguir uma abordagem semelhante para autenticar com outros provedores listados no [página anterior](xref:security/authentication/social/index).
+* Este artigo mostrou como você pode autenticar com o Facebook. Você pode seguir uma abordagem semelhante para autenticar com outros provedores listados na [página anterior](xref:security/authentication/social/index).
 
-* Depois de publicar seu site da web para o aplicativo web do Azure, você deve redefinir o `AppSecret` no portal do desenvolvedor do Facebook.
+* Depois de publicar seu site da web para aplicativo web do Azure, você deve redefinir o `AppSecret` no portal do desenvolvedor do Facebook.
 
-* Definir o `Authentication:Facebook:AppId` e `Authentication:Facebook:AppSecret` como configurações de aplicativo no portal do Azure. O sistema de configuração é configurado para ler as chaves de variáveis de ambiente.
+* Defina as `Authentication:Facebook:AppId` e `Authentication:Facebook:AppSecret` como configurações de aplicativo no portal do Azure. Configurar o sistema de configuração para ler as chaves de variáveis de ambiente.

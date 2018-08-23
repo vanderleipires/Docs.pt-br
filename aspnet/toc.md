@@ -1640,7 +1640,8 @@
 
 
 
-
+# [Visual Studio 2017](visual-studio/overview/2017/index.md)
+## [Otimizar o desempenho de build para a solução](xref:visual-studio/overview/2017/optimize-build-perf)
 
 # [Visual Studio 2013](visual-studio/overview/2013/index.md)
 ## [Criação de Projetos Web do ASP.NET no Visual Studio 2013](visual-studio/overview/2013/creating-web-projects-in-visual-studio.md)
