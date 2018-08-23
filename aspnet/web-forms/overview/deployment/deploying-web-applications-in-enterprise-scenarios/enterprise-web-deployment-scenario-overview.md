@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scen
 title: 'Implantação da Web corporativa: Visão geral do cenário | Microsoft Docs'
 author: jrjlee
 description: Esse conjunto de tutoriais usa uma solução de exemplo com um nível realista de complexidade, junto com um cenário de implantação da empresa fictícia, para fornecer uma ref...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/03/2012
 ms.assetid: aa862153-4cd8-4e33-beeb-abf502c6664f
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
 msc.type: authoredcontent
-ms.openlocfilehash: ce533b246b14c9e041c89a778c022784f09d01a0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ec5b62f3991fa256bc8efe7abe9b953d61d1a515
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836740"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832854"
 ---
 <a name="enterprise-web-deployment-scenario-overview"></a>Implantação da Web corporativa: Visão geral do cenário
 ====================
