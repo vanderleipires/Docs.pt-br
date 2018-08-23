@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-create-and-use-a-custom-configuration-se
 title: '[Como fazer:] Criar e usar uma seção de configuração em um arquivo de configuração do ASP.NET | Microsoft Docs'
 author: rick-anderson
 description: Neste vídeo, Chris Pels mostrará como estender o conjunto padrão de definições de configuração do ASP.NET com seus próprios elementos de configuração XML. Primeiro, veja como...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/16/2008
 ms.assetid: fa9ed773-cceb-49d0-a939-5a9e6bbae00f
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file
 msc.type: video
-ms.openlocfilehash: 75621262205fae79c09e9a14900e7de6fb53c3e1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b4189ca107f5e2f455e5e83809bdd6d267478e3b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810602"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830910"
 ---
 <a name="how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file"></a>[Como fazer:] Criar e usar uma seção de configuração em um arquivo de configuração do ASP.NET
 ====================

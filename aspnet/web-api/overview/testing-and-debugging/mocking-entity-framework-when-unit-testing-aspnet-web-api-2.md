@@ -3,23 +3,23 @@ uid: web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-t
 title: Simulação do Entity Framework quando a API Web ASP.NET 2 de teste de unidade | Microsoft Docs
 author: tfitzmac
 description: Este guia e o aplicativo demonstram como criar testes de unidade para seu aplicativo de API Web 2 que usa o Entity Framework. Ele mostra como modificar o...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/13/2013
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: dc50965a2757defb254d05f0b8a5fd46a90dc75f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0bc5ab59583a2be3f889ba05d26c6cda4589057d
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804388"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824824"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Simulação do Entity Framework quando a API Web ASP.NET 2 de teste de unidade
 ====================
 por [Tom FitzMacken](https://github.com/tfitzmac)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
+[Baixe o projeto concluído](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > Este guia e o aplicativo demonstram como criar testes de unidade para seu aplicativo de API Web 2 que usa o Entity Framework. Ele mostra como modificar o controlador gerados automaticamente para habilitar passando um objeto de contexto para teste e como criar objetos de teste que funcionam com o Entity Framework.
 > 

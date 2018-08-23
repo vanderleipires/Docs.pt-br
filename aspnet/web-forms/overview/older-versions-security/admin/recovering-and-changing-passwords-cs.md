@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/admin/recovering-and-changing-pa
 title: Recuperação e alteração de senhas (c#) | Microsoft Docs
 author: rick-anderson
 description: O ASP.NET inclui dois controles de Web para ajudar com a recuperação e alteração de senhas. O controle PasswordRecovery permite que um visitante recuperar seu perdido pa...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2008
 ms.assetid: 19c4d042-4e34-4b44-9f1d-6bf2253ba366
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e63d3d1153c81c1bb54a1fb6bb242df032899511
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c04ed8ae18a3739f5519e30dea7768b8f6c7c7ff
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824332"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832949"
 ---
 <a name="recovering-and-changing-passwords-c"></a>Recuperação e alteração de senhas (c#)
 ====================

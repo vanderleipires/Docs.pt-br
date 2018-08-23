@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/improving-performance
 title: Melhorando o desempenho com saída de cache (VB) | Microsoft Docs
 author: microsoft
 description: Neste tutorial, você aprenderá como você pode melhorar drasticamente o desempenho dos aplicativos web ASP.NET MVC, aproveitando o cache de saída. Você...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 0e7b4d85-2c46-4eaf-b6a8-6cd566a67334
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 72d73067f6f7dabe4644a35c8d9462bfbc7a93ed
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9402d7e053ef11eeefa92d112b05ec255d5ec6f7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807324"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834520"
 ---
 <a name="improving-performance-with-output-caching-vb"></a>Melhorando o desempenho com a saída de cache (VB)
 ====================

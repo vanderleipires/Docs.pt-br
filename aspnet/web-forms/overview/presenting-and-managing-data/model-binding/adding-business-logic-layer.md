@@ -3,17 +3,17 @@ uid: web-forms/overview/presenting-and-managing-data/model-binding/adding-busine
 title: Adicionar camada de lógica comercial para um projeto que usa a associação de modelos e formulários da web | Microsoft Docs
 author: tfitzmac
 description: Esta série de tutoriais demonstra aspectos básicos de como usar a associação de modelo com um projeto de Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais simples-...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 7ef664b3-1cc8-4cbf-bb18-9f0f3a3ada2b
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
-ms.openlocfilehash: 70e7ae6ad12c26ea5001ff68b25c0431a7440a77
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2c54c0a635c662c8740aa7f9b6bd02cd71913e24
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837867"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831727"
 ---
 <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>Adicionar camada de lógica comercial para um projeto que usa a associação de modelos e formulários da web
 ====================

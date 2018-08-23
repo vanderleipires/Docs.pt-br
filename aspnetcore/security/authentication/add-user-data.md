@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 6/16/2018
 uid: security/authentication/add-user-data
-ms.openlocfilehash: 6f583d65460803c816bf1ccd314216952710cd55
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: 3fe329e21b430cc432e97129ffb8499bce002976
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378609"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830646"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>Adicionar, baixar e excluir dados de usuário personalizada à identidade em um projeto ASP.NET Core
 
@@ -67,7 +67,7 @@ dotnet new webapp -o WebApp1
 
 # <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
 
-Se você já não tiver instalado o scaffolder ASP.NET, instale-o agora:
+Se você já não tiver instalado o scaffolder de ASP.NET Core, instale-o agora:
 
 ```cli
 dotnet tool install -g dotnet-aspnet-codegenerator

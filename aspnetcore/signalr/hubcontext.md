@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/13/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: 6b955c2064d7d6a045594e56326e2f7df282675f
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: a02588dc98283a375e9deb7c8561c59f6d886eb0
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095301"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825232"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>Enviar mensagens de fora de um hub
 
@@ -27,7 +27,7 @@ O hub do SignalR é a abstração central para enviar mensagens para os clientes
 No SignalR do ASP.NET Core, você pode acessar uma instância de `IHubContext` por meio da injeção de dependência. Você pode injetar uma instância do `IHubContext` em um controlador, middleware ou outro serviço de injeção de dependência. Use a instância para enviar mensagens para os clientes.
 
 > [!NOTE]
-> Isso é diferente do SignalR do ASP.NET que usado GlobalHost para fornecer acesso ao `IHubContext`. O ASP.NET Core tem uma estrutura de injeção de dependência que remove a necessidade de neste singleton global.
+> Isso é diferente do ASP.NET 4.x SignalR que usado GlobalHost para fornecer acesso ao `IHubContext`. O ASP.NET Core tem uma estrutura de injeção de dependência que remove a necessidade de neste singleton global.
 
 ### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>Injetar uma instância de `IHubContext` em um controlador
 

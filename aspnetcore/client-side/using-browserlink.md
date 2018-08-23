@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/22/2017
 uid: client-side/using-browserlink
-ms.openlocfilehash: 5ab15c841c472e6c9d47bad70fcf5e0c6dc3010f
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 452ba5149563c186750466f471c7b950f0017614
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894173"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830913"
 ---
 # <a name="browser-link-in-aspnet-core"></a>Link do navegador no ASP.NET Core
 
@@ -139,7 +139,7 @@ Quando a sincronização automática de CSS está habilitada, os navegadores con
 
 ## <a name="how-it-works"></a>Como ele funciona
 
-Link do navegador usa o SignalR para criar um canal de comunicação entre o Visual Studio e o navegador. Quando o Link do navegador está habilitado, o Visual Studio atua como um servidor de SignalR que vários clientes (navegadores) podem se conectar ao. Link do navegador também registra um componente de middleware no pipeline de solicitação do ASP.NET. Esse componente injeta especial `<script>` referências em cada solicitação de página do servidor. Você pode ver as referências de script selecionando **Exibir código-fonte** no navegador e rolar até o final do `<body>` conteúdo de marca:
+Link do navegador usa o SignalR para criar um canal de comunicação entre o Visual Studio e o navegador. Quando o Link do navegador está habilitado, o Visual Studio atua como um servidor de SignalR que vários clientes (navegadores) podem se conectar ao. Link do navegador também registra um componente de middleware no pipeline de solicitação do ASP.NET Core. Esse componente injeta especial `<script>` referências em cada solicitação de página do servidor. Você pode ver as referências de script selecionando **Exibir código-fonte** no navegador e rolar até o final do `<body>` conteúdo de marca:
 
 ```html
     <!-- Visual Studio Browser Link -->

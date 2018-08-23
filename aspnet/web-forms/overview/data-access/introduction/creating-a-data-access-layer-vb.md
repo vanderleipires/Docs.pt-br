@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 title: Criando uma camada de acesso de dados (VB) | Microsoft Docs
 author: rick-anderson
 description: Neste tutorial, vamos começar desde o início e criar o Data Access DAL (camada), usando DataSets tipados, para acessar as informações em um banco de dados.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/05/2010
 ms.assetid: 6227233a-6254-4b6b-9a89-947efef22330
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bfd4a1d9e47101594140ad4357bb467128ce26ee
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e1ac8d90ecdedc2bf5f963ddc6e3abd0942fac13
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833083"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833768"
 ---
 <a name="creating-a-data-access-layer-vb"></a>Criando uma camada de acesso de dados (VB)
 ====================

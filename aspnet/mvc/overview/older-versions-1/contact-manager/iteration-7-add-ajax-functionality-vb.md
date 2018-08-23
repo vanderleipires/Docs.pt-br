@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-function
 title: 'Iteração #7 – adicionar funcionalidade do Ajax (VB) | Microsoft Docs'
 author: microsoft
 description: A sétima iteração, podemos melhorar a capacidade de resposta e o desempenho do nosso aplicativo, adicionando suporte para Ajax.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: f640e063-150e-453d-8cfc-7e54a6ce0f1e
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b39a251acc96a78245238da5b82365958223e4c7
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 0b9c6ff228e73ce63f7a0b046110db656103d6d5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396173"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833094"
 ---
 <a name="iteration-7--add-ajax-functionality-vb"></a>Iteração #7 – adicionar funcionalidade do Ajax (VB)
 ====================

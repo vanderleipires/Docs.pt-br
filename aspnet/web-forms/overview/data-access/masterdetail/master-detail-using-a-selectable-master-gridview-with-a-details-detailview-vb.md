@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectabl
 title: Mestre/detalhes usando um GridView mestre selecionável com um DetailView de detalhes (VB) | Microsoft Docs
 author: rick-anderson
 description: Este tutorial terá um GridView cujas linhas incluem o nome e o preço de cada produto, juntamente com um botão de seleção. Clicar no botão Selecionar para uma particu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 1d1a7c93-971d-4690-9c5e-dac0e5014a09
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17885b2f4892011629e04596b24ca677de2fa8b7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0bf724741ffbc01aa7611d8b075d89827bf83777
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820918"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830846"
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>Mestre/detalhes usando um GridView mestre selecionável com um DetailView de detalhes (VB)
 ====================

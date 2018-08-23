@@ -5,12 +5,12 @@ description: Saiba como usar o provedor de configuração do Cofre de chave do A
 ms.author: riande
 ms.date: 08/01/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 6474b9f5cb9e441854565a7891c4aac7f781c810
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: 829c6c7e2750879b51bf3ce8225c6e472900f2ad
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410124"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834522"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Provedor de configuração de Cofre de chaves do Azure no ASP.NET Core
 
@@ -155,7 +155,7 @@ Segredos desabilitados e expirados lançar um `KeyVaultClientException`. Para im
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Quando o aplicativo falha ao carregar a configuração usando o provedor, uma mensagem de erro é gravada para o [infra-estrutura de log de ASP.NET](xref:fundamentals/logging/index). As seguintes condições impedirá que a configuração de carregamento:
+Quando o aplicativo falha ao carregar a configuração usando o provedor, uma mensagem de erro é gravada para o [infra-estrutura de log do ASP.NET Core](xref:fundamentals/logging/index). As seguintes condições impedirá que a configuração de carregamento:
 
 * O aplicativo não está configurado corretamente no Azure Active Directory.
 * O Cofre de chaves não existe no Azure Key Vault.
