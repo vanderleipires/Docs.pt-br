@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
 title: Visão geral (VB) de exibições do ASP.NET MVC | Microsoft Docs
 author: StephenWalther
 description: O que é um modo de exibição de MVC do ASP.NET e como ela difere de uma página HTML? Neste tutorial, Stephen Walther apresenta exibições e demonstra como você pode t...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/16/2008
 ms.assetid: c28ba88d-3a93-47f5-a306-049bd766714d
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eeba2bd251e837d6d6eb43fd1506eba9e3d18680
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a7f4afd70a17281123a7448a00896c186b9a00f8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827917"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832442"
 ---
 <a name="aspnet-mvc-views-overview-vb"></a>Visão geral (VB) de exibições do ASP.NET MVC
 ====================

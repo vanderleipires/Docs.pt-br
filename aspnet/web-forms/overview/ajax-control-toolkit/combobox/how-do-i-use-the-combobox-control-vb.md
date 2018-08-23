@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-
 title: Como usar o controle ComboBox? (VB) | Microsoft Docs
 author: microsoft
 description: Caixa de combinação é um controle do ASP.NET AJAX que combina a flexibilidade de uma caixa de texto com uma lista de opções do qual os usuários podem escolher.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: e887e7b2-a6e7-4a28-a134-ba334494badb
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 745871b7e8cca14b3458d9004d581dfacf55ea24
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ec00a58581f36f87ecdca2fbd96fcea645f75f48
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837718"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824673"
 ---
 <a name="how-do-i-use-the-combobox-control-vb"></a>Como usar o controle ComboBox? (VB)
 ====================

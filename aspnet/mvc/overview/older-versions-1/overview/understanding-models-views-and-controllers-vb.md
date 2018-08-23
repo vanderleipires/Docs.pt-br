@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-contr
 title: Noções básicas sobre modelos, exibições e controladores (VB) | Microsoft Docs
 author: StephenWalther
 description: Confuso sobre modelos, exibições e controladores? Neste tutorial, Stephen Walther apresenta as diferentes partes de um aplicativo ASP.NET MVC.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: a106374a-5e74-4fd0-9ac0-1a32280e5d0d
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1c751972b0f59a3988e15eed0c6cff3bc566de0e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 15d4e7d7b6a2662296b8e3647cd60187de580789
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838722"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825211"
 ---
 <a name="understanding-models-views-and-controllers-vb"></a>Noções básicas sobre modelos, exibições e controladores (VB)
 ====================
@@ -120,15 +120,15 @@ Essa URL é analisada em três parâmetros como este:
 
 Controlador = funcionário
 
-Ação = índice
+ação = índice
 
 ID =
 
 Por fim, se você abrir um aplicativo ASP.NET MVC sem fornecer qualquer URL (por exemplo, `http://localhost`) e em seguida, a URL é analisada como este:
 
-Controlador = início
+controlador = início
 
-Ação = índice
+ação = índice
 
 ID =
 

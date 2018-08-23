@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 title: Uso de dependências de Cache SQL (VB) | Microsoft Docs
 author: rick-anderson
 description: A estratégia de cache mais simples é permitir que os dados armazenados em cache expirar após um período de tempo especificado. Mas essa abordagem simples significa que os dados armazenados em cache maintai...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/30/2007
 ms.assetid: bd347d93-4251-4532-801c-a36f2dfa7f96
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7929966d9eb82994b9d427d0c3fd7f08c41212fc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f47cc7c1fd4fd0d1e41bef31a2e68dd34393d52e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821639"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824416"
 ---
 <a name="using-sql-cache-dependencies-vb"></a>Uso de dependências de Cache SQL (VB)
 ====================
