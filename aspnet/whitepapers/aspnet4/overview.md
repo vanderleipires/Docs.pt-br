@@ -3,17 +3,17 @@ uid: whitepapers/aspnet4/overview
 title: ASP.NET 4 e visão geral de desenvolvimento Visual Studio 2010 Web | Microsoft Docs
 author: rick-anderson
 description: Este documento fornece uma visão geral de muitos dos novos recursos do ASP.NET que estão incluídos no.NET Framework 4 e no Visual Studio 2010.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 5c7aa95b18bc0a97f42cc981476c110830286fa5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 775286df610df9040cbf04125b1742b6befa055b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829037"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833692"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 e visão geral de desenvolvimento Visual Studio 2010 Web
 ====================
@@ -25,7 +25,7 @@ ms.locfileid: "37829037"
 **Conteúdo**
 
 **[Core Services](#0.2__Toc253429238 "_Toc253429238")**  
-[Web.config File Refactoring](#0.2__Toc253429239 "_Toc253429239")  
+[Arquivo Web. config refatoração](#0.2__Toc253429239 "_Toc253429239")  
 [O cache de saída extensível](#0.2__Toc253429240 "_Toc253429240")  
 [Aplicativos da Web de auto-Start](#0.2__Toc253429241 "_Toc253429241")  
 [Redirecionando permanentemente uma página](#0.2__Toc253429242 "_Toc253429242")  
@@ -49,7 +49,7 @@ ms.locfileid: "37829037"
 [Roteamento no ASP.NET 4](#0.2__Toc253429260 "_Toc253429260")  
 [Definindo as IDs de cliente](#0.2__Toc253429261 "_Toc253429261")  
 [Manter seleção de linha nos controles de dados](#0.2__Toc253429262 "_Toc253429262")  
-[ASP.NET Chart Control](#0.2__Toc253429263 "_Toc253429263")  
+[Controle de gráfico do ASP.NET](#0.2__Toc253429263 "_Toc253429263")  
 [Filtrando dados com o controle QueryExtender](#0.2__Toc253429264 "_Toc253429264")  
 [Expressões de código codificadas em HTML](#0.2__Toc253429265 "_Toc253429265")  
 [As alterações do modelo de projeto](#0.2__Toc253429266 "_Toc253429266")  
@@ -77,10 +77,10 @@ ms.locfileid: "37829037"
 [Novos atributos para exibição do controle e suporte a enumerações](#0.2__Toc253429286 "_Toc253429286")  
 [Suporte aprimorado para filtros](#0.2__Toc253429287 "_Toc253429287")
 
-**[Visual Studio 2010 Web Development Improvements](#0.2__Toc253429288 "_Toc253429288")**  
+**[Melhorias de desenvolvimento da Web do Visual Studio 2010](#0.2__Toc253429288 "_Toc253429288")**  
 [CSS compatibilidade aprimorada](#0.2__Toc253429289 "_Toc253429289")  
 [HTML e JavaScript trechos](#0.2__Toc253429290 "_Toc253429290")  
-[JavaScript IntelliSense Enhancements](#0.2__Toc253429291 "_Toc253429291")
+[Aprimoramentos do JavaScript IntelliSense](#0.2__Toc253429291 "_Toc253429291")
 
 **[Implantação de aplicativo com o Visual Studio 2010 Web](#0.2__Toc253429292 "_Toc253429292")**  
 [Web Packaging](#0.2__Toc253429293 "_Toc253429293")  
@@ -99,7 +99,7 @@ ASP.NET 4 apresenta uma série de recursos que melhoram a serviços do ASP.NET c
 
 <a id="0.2__Toc243304613"></a><a id="0.2__Toc253429239"></a><a id="0.2__Toc224729019"></a>
 
-### <a name="webconfig-file-refactoring"></a>Web.config File Refactoring
+### <a name="webconfig-file-refactoring"></a>Arquivo Web. config de refatoração
 
 O `Web.config` arquivo que contém a configuração para um aplicativo Web cresceu consideravelmente nas versões anteriores do .NET Framework como novos recursos foram adicionados, como o Ajax, roteamento e a integração com o IIS 7. Isso tornou mais difícil de configurar ou iniciar novos aplicativos Web sem uma ferramenta como o Visual Studio. No. the .NET Framework 4, os elementos de configuração principais foram movidos para o `machine.config` arquivos e aplicativos agora herdarão essas configurações. Isso permite que o `Web.config` arquivo em aplicativos ASP.NET 4 estar vazio ou conter apenas as seguintes linhas, que especificam para o Visual Studio qual versão do framework que o aplicativo está definindo como destino:
 
@@ -982,7 +982,7 @@ Em seguida, você pode definir uma classe CSS que se aplica apenas à *ocultos* 
 Por padrão, os seguintes controles de servidor Web do ASP.NET que dão suporte a modelos são automaticamente encapsulados em uma tabela externa que é usada para aplicar estilos embutidos:
 
 - *FormView*
-- *Login*
+- *logon*
 - *PasswordRecovery*
 - *ChangePassword*
 - *Assistente*

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-
 title: Criando novos procedimentos armazenados para os TableAdapters do conjunto de dados tipado (c#) | Microsoft Docs
 author: rick-anderson
 description: Nos tutoriais anteriores temos criado instruções SQL em nosso código e passado as instruções para o banco de dados a ser executado. Uma abordagem alternativa é usar s...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/18/2007
 ms.assetid: 751282ca-5870-4d66-84e4-6cefae23eb4a
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 420c4f33a6df2d7d99daeaac7682ede12adfb122
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0932749d6cf1665eedd5f452ab5dd63ed8678962
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824764"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834074"
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>Criando novos procedimentos armazenados para os TableAdapters do conjunto de dados tipado (c#)
 ====================

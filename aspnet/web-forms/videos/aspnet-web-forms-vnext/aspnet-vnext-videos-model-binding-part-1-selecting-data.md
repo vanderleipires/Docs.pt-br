@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-p
 title: 'Vídeos do ASP.NET vNext: modelo Binding Part 1: selecionar dados | Microsoft Docs'
 author: DamianEdwards
 description: Neste vídeo, Damian Edwards começa uma olhada na associação de modelo que demonstra a seleção de dados.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/12/2011
 ms.assetid: 744d229b-a109-4692-a58d-1b2445bee54e
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-1-selecting-data
 msc.type: video
-ms.openlocfilehash: 981e18d4a7c60f2ffba211975008a852b8afb8d6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 78052280116e397c9ed432165806d58baabd0436
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802200"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831664"
 ---
 <a name="aspnet-vnext-videos-model-binding-part-1---selecting-data"></a>Vídeos do ASP.NET vNext: modelo Binding Part 1: selecionar dados
 ====================

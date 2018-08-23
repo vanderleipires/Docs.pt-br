@@ -3,17 +3,17 @@ uid: web-forms/videos/migrating/migrating-from-classic-asp-to-aspnet
 title: '[Migração do] ASP clássico para o ASP.NET | Microsoft Docs'
 author: microsoft
 description: Você está planejando migrar do ASP clássico para o Microsoft ASP.NET 2.0? Esta série de webcasts percorre a consideração de design arquitetônico importante...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/25/2006
 ms.assetid: af5736dd-e01d-45d6-8ac0-01ec0fe49023
 msc.legacyurl: /web-forms/videos/migrating/migrating-from-classic-asp-to-aspnet
 msc.type: video
-ms.openlocfilehash: 2ae5a0549279eb756fa9fdf3d7a1be8818942fb8
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ea216257400d508811bf34dcd63b5f9c85d614e9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817490"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834110"
 ---
 <a name="migrating-from-classic-asp-to-aspnet"></a>[Migração do] ASP clássico para o ASP.NET
 ====================

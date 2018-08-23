@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmod
 title: Usar ViewData e implementar Classes ViewModel | Microsoft Docs
 author: microsoft
 description: Etapa 6 mostra como habilitar o suporte para cenários, de edição de formulários mais rico e também aborda duas abordagens que podem ser usadas para passar dados de controladores para exibições:...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 5755ec4c-60f1-4057-9ec0-3a5de3a20e23
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
 msc.type: authoredcontent
-ms.openlocfilehash: 70b264def11b55fc08165dda307ff9e82fd4be7f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8df1ca30f8c0415b68d29eeaa0f7d83a606989ff
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826945"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831641"
 ---
 <a name="use-viewdata-and-implement-viewmodel-classes"></a>Usar ViewData e implementar Classes ViewModel
 ====================

@@ -3,17 +3,17 @@ uid: web-api/overview/advanced/dependency-injection
 title: Injeção de dependência no ASP.NET Web API 2 | Microsoft Docs
 author: MikeWasson
 description: Este tutorial mostra como injetar dependências em seu controlador de API Web do ASP.NET. Versões de software usadas no tutorial Web API 2 Unity Application Block...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/20/2014
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: a470c778fd5998006a0bf8edb08b62a75d72c48c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 41db1af79ed63ff4dd12be37e9cc76e16f1bf5e4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802669"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825174"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>Injeção de dependência no ASP.NET Web API 2
 ====================
@@ -33,7 +33,7 @@ por [Mike Wasson](https://github.com/MikeWasson)
 
 ## <a name="what-is-dependency-injection"></a>O que é a injeção de dependência?
 
-Um *dependência* é qualquer objeto que requer outro objeto. Por exemplo, é comum para definir um [repositório](http://martinfowler.com/eaaCatalog/repository.html) que manipula o acesso a dados. Vamos ilustrar um exemplo. Primeiro, vamos definir um modelo de domínio:
+Uma *dependência* é qualquer objeto exigido por outro objeto. Por exemplo, é comum para definir um [repositório](http://martinfowler.com/eaaCatalog/repository.html) que manipula o acesso a dados. Vamos ilustrar um exemplo. Primeiro, vamos definir um modelo de domínio:
 
 [!code-csharp[Main](dependency-injection/samples/sample1.cs)]
 

@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-re
 title: Uso de HoverMenu com um controle repetidor (VB) | Microsoft Docs
 author: wenz
 description: 'O controle de HoverMenu no AJAX Control Toolkit fornece um efeito de pop-up simples: quando o ponteiro do mouse passa sobre um elemento, um pop-up é exibido em pela especificação...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 7f07c112-cd4f-4427-9699-57cfab2791fd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a00d2c610696672a36ebbb78b80abec6c5150101
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ef2481b93a8bbe16b79edb8c93c02e24fc9890f3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821337"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832464"
 ---
 <a name="using-hovermenu-with-a-repeater-control-vb"></a>Uso de HoverMenu com um controle repetidor (VB)
 ====================

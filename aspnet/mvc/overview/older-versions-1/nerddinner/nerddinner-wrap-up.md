@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
 title: Do NerdDinner | Microsoft Docs
 author: microsoft
 description: Isso é a conclusão do tutorial do NerdDinner e fornece informações sobre como obter mais informações.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 5c6371c0-a944-4adf-a28e-5afbdd011ca8
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
 msc.type: authoredcontent
-ms.openlocfilehash: e58b187d3f25e76195be7690c865fc11d284da78
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 97381ad6fb50c94df48a1950115cfc61ee1a53d3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818227"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830810"
 ---
 <a name="nerddinner-wrap-up"></a>Do NerdDinner
 ====================

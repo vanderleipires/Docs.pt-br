@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-de
 title: Criando uma definição de compilação que dá suporte à implantação | Microsoft Docs
 author: jrjlee
 description: Se você quiser executar qualquer tipo de compilação no Team Foundation Server (TFS) 2010, você precisará criar uma definição de compilação dentro do seu projeto de equipe. Des neste tópico...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: fe47a018-f6d0-4979-80e7-5b1fa75a5865
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 18f88cff032bd0694ef98f0b19849f0edf1681ee
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 33ebde3074603801945c676ace64b26ca5bbf44a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827382"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834879"
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>Criando uma definição de compilação que dá suporte à implantação
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updati
 title: '[Como fazer:] LINQ to SQL: atualizando o banco de dados | Microsoft Docs'
 author: scottstanfield
 description: Neste vídeo, demonstrei como criar, atualizar e excluir registros por meio de LINQ, transações simples, atualizações em relações e a coluna personalizada e...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: d37b9859-1fc1-4669-89ea-b16f3c349d82
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database
 msc.type: video
-ms.openlocfilehash: c015991a3a12b6f523467ed947e0f72f990ab457
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e50420921bc3e88c51f86ad0ea5aade99fee552a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829655"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834881"
 ---
 <a name="how-do-i-linq-to-sql-updating-the-database"></a>[Como fazer:] LINQ to SQL: atualizando o banco de dados
 ====================

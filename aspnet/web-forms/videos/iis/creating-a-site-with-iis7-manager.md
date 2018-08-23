@@ -3,17 +3,17 @@ uid: web-forms/videos/iis/creating-a-site-with-iis7-manager
 title: Criando um Site com o Gerenciador do IIS7 | Microsoft Docs
 author: JoeStagner
 description: Este vídeo demonstra o processo de provisionamento de novos sites da web com o IIS7.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/09/2009
 ms.assetid: f52814a3-b458-415c-ab9f-b0f904c48705
 msc.legacyurl: /web-forms/videos/iis/creating-a-site-with-iis7-manager
 msc.type: video
-ms.openlocfilehash: 361696e8dc14b1b631513c86169ba94b42ec43c4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 818a2d4a896730c54720df898fa6152349cbbfd5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824999"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825376"
 ---
 <a name="creating-a-site-with-iis7-manager"></a>Criando um Site com o Gerenciador do IIS7
 ====================

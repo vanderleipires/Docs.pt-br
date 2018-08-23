@@ -3,17 +3,17 @@ uid: web-forms/overview/presenting-and-managing-data/model-binding/integrating-j
 title: A integração do JQuery UI Datepicker com associação de modelos e formulários da web | Microsoft Docs
 author: tfitzmac
 description: Esta série de tutoriais demonstra aspectos básicos de como usar a associação de modelo com um projeto de Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais simples-...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 3cbab37b-fb0f-4751-9ec4-74e068c3f380
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/integrating-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: fc278575615e63af2fc7284e51814cf318165110
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 81cc5f010f2c6c7707223679717e34108a5a7aa3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807571"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833648"
 ---
 <a name="integrating-jquery-ui-datepicker-with-model-binding-and-web-forms"></a>A integração do JQuery UI Datepicker com associação de modelos e formulários da web
 ====================

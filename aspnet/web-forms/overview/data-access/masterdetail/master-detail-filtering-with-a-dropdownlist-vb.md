@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-
 title: Mestre/detalhes filtragem com uma DropDownList (VB) | Microsoft Docs
 author: rick-anderson
 description: Neste tutorial, veremos como exibir os registros principais em um controle DropDownList e os detalhes do item de lista selecionado em um GridView.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: ea44717e-ab2e-46cd-a692-e4a9c0de194c
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a1bd1a20950376244c1d461d139f3eee6bc9a9cc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d9d50da7f11d1494d49fbeaa18a45991e577cdb3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816250"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834083"
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>Mestre/detalhes filtragem com uma DropDownList (VB)
 ====================

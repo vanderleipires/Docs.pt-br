@@ -3,17 +3,17 @@ uid: visual-studio/overview/2013/visual-studio-2013-web-tools
 title: 'Laboratório prático: Visual Studio 2013 Web Tools | Microsoft Docs'
 author: rick-anderson
 description: Visual Studio é um ambiente de desenvolvimento excelente para. Windows com base em NET e projetos da web. Ele inclui um editor de texto avançada que pode ser facilmente usado para...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 9553d3129ff4c942eacbba628d1daaf6c4e33635
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 82248efd767c1110b9a4067b7d0c0e2ecafcbef9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807522"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831042"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>Laboratório prático: Ferramentas de Web Visual Studio 2013
 ====================
@@ -324,7 +324,7 @@ Nesta tarefa, você usará o Link do navegador **modo de Design** recurso para e
 
     ![Janela lista de erros](visual-studio-2013-web-tools/_static/image32.png "janela lista de erros")
 
-    *Janela lista de erros*
+    *Janela Lista de Erros*
 3. No **Web Essentials** caixa de diálogo, clique em **Yes** para inserir uma descrição &lt;meta&gt; marca.
 
     ![Caixa de diálogo do Web Essentials](visual-studio-2013-web-tools/_static/image33.png "caixa de diálogo do Web Essentials")

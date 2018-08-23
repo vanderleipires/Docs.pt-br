@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-razor-syntax-vb
 title: Introdução à programação Web do ASP.NET usando a sintaxe do Razor (Visual Basic) | Microsoft Docs
 author: tfitzmac
 description: Este apêndice fornece uma visão geral da programação com páginas da Web ASP.NET no Visual Basic, usando a sintaxe do Razor.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 72f995e62141df4e8f4cd082b4873d82067af8c1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cbec035533c37723afcd5bf4aa0c6e1c83dbae23
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816542"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825181"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Introdução à programação Web do ASP.NET usando a sintaxe do Razor (Visual Basic)
 ====================
@@ -273,30 +273,88 @@ Para converter os valores inteiros, você deve chamar o `AsInt` método. Se a co
 A tabela a seguir lista alguns métodos comuns de conversão e teste para variáveis.
 
 
-Iniciando linha:::::: coluna::: <strong>método</strong> ::: coluna final:::::: coluna::: <strong>descrição</strong> ::: coluna final:::::: coluna::: <strong>exemplo</strong> ::: coluna final:::::: final de linha:::
+:::row:::
+    :::column:::
+        <strong>Método</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Descrição</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Exemplo</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: linha:::::: coluna 0x%2 `AsInt(), IsInt()` ::: coluna final:::::: coluna::: converte uma cadeia de caracteres que representa um número inteiro (como &quot;593&quot;) em um inteiro.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `AsInt(), IsInt()`
+    :::column-end:::
+    :::column:::
+        Converte uma cadeia de caracteres que representa um número inteiro (como &quot;593&quot;) em um inteiro.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `AsBool(), IsBool()` ::: coluna final:::::: coluna::: converte uma cadeia de caracteres, como &quot;verdadeiro&quot; ou &quot;false&quot; para um tipo booleano.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `AsBool(), IsBool()`
+    :::column-end:::
+    :::column:::
+        Converte uma cadeia de caracteres like &quot;verdadeira&quot; ou &quot;falso&quot; para um tipo booleano.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: linha:::::: coluna 0x%2 `AsFloat(), IsFloat()` ::: coluna final:::::: coluna::: converte uma cadeia de caracteres que tem um valor decimal como &quot;1.3&quot; ou &quot;7.439&quot; um número de ponto flutuante.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `AsFloat(), IsFloat()`
+    :::column-end:::
+    :::column:::
+        Converte uma cadeia de caracteres que tem um valor decimal como &quot;1.3&quot; ou &quot;7.439&quot; um número de ponto flutuante.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: linha:::::: coluna 0x%2 `AsDecimal(), IsDecimal()` ::: coluna final:::::: coluna::: converte uma cadeia de caracteres que tem um valor decimal como &quot;1.3&quot; ou &quot;7.439&quot; em um número decimal. (No ASP.NET, um número decimal é mais preciso do que um número de ponto flutuante.) ::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `AsDecimal(), IsDecimal()`
+    :::column-end:::
+    :::column:::
+        Converte uma cadeia de caracteres que tem um valor decimal como &quot;1.3&quot; ou &quot;7.439&quot; em um número decimal. (No ASP.NET, um número decimal é mais preciso do que um número de ponto flutuante.) :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: linha:::::: coluna 0x%2 `AsDateTime(), IsDateTime()` ::: coluna final:::::: coluna::: converte uma cadeia de caracteres que representa um valor de data e hora para o ASP.NET `DateTime` tipo.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `AsDateTime(), IsDateTime()`
+    :::column-end:::
+    :::column:::
+        Converte uma cadeia de caracteres que representa um valor de data e hora para o ASP.NET `DateTime` tipo.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `ToString()` ::: coluna final:::::: coluna::: converte qualquer tipo de dados em uma cadeia de caracteres.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `ToString()`
+    :::column-end:::
+    :::column:::
+        Converte qualquer tipo de dados em uma cadeia de caracteres.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
+    :::column-end:::
+:::row-end:::
 
 
 ## <a name="operators"></a>Operadores
@@ -304,47 +362,137 @@ Iniciando linha:::::: coluna::: `ToString()` ::: coluna final:::::: coluna::: co
 Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo de comando para executar em uma expressão. Visual Basic oferece suporte a muitos operadores, mas você só precisa reconhecer algumas para começar a desenvolver páginas da web ASP.NET. A tabela a seguir resume os operadores mais comuns.
 
 
-Iniciando linha:::::: coluna::: <strong>operador</strong> ::: coluna final:::::: coluna::: <strong>descrição</strong> ::: coluna final:::::: coluna::: <strong>exemplos</strong> ::: coluna final:::::: final de linha:::
+:::row:::
+    :::column:::
+        <strong>Operador</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Descrição</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Exemplos</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `+ - * /` ::: coluna final:::::: coluna::: operadores de cálculo usados em expressões numéricas.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `+ - * /`
+    :::column-end:::
+    :::column:::
+        Operadores de cálculo usados em expressões numéricas.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `=` ::: end coluna:::::: coluna::: atribuição e igualdade. Dependendo do contexto, atribui o valor no lado direito de uma instrução para o objeto no lado esquerdo ou verifica os valores para igualdade.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `=`
+    :::column-end:::
+    :::column:::
+        Atribuição e igualdade. Dependendo do contexto, atribui o valor no lado direito de uma instrução para o objeto no lado esquerdo ou verifica os valores para igualdade.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `<>` ::: end coluna:::::: coluna::: desigualdade. Retorna `True` se os valores não forem iguais.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `<>`
+    :::column-end:::
+    :::column:::
+        Desigualdade. Retorna `True` se os valores não forem iguais.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `< > <= >=` ::: coluna final:::::: coluna::: menor, maior, menor ou igual e maior ou igual.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `< > <= >=`
+    :::column-end:::
+    :::column:::
+        Menor que, maior, menor ou igual e maior ou igual.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `&` ::: coluna final:::::: coluna::: concatenação, que é usada para unir cadeias de caracteres.
-::: end coluna:::::: coluna::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `&`
+    :::column-end:::
+    :::column:::
+        Concatenação, que é usada para unir cadeias de caracteres.
+    :::column-end:::
+    :::column:::
+        [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `+= -=` ::: coluna final:::::: coluna::: os operadores de incremento e decremento, que adicionar e subtrair 1 (respectivamente) a partir de uma variável.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `+= -=`
+    :::column-end:::
+    :::column:::
+        Os operadores de incremento e decremento, que adicionar e subtrair 1 (respectivamente) a partir de uma variável.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `.` ::: coluna final:::::: coluna::: ponto. Usado para distinguir os objetos e suas propriedades e métodos.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `.`
+    :::column-end:::
+    :::column:::
+        Ponto. Usado para distinguir os objetos e suas propriedades e métodos.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `()` ::: end coluna:::::: coluna::: parênteses. Usado para agrupar expressões, para passar parâmetros para métodos e para acessar membros de coleções e matrizes.
-::: end coluna:::::: coluna::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `()`
+    :::column-end:::
+    :::column:::
+        Parênteses. Usado para agrupar expressões, para passar parâmetros para métodos e para acessar membros de coleções e matrizes.
+    :::column-end:::
+    :::column:::
+        [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `Not` ::: end coluna:::::: coluna::: não. Inverte um valor true para false e vice-versa. Normalmente usado como uma forma abreviada para testar `False` (ou seja, para não `True`).
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `Not`
+    :::column-end:::
+    :::column:::
+        Não. Inverte um valor true para false e vice-versa. Normalmente usado como uma forma abreviada para testar `False` (ou seja, para não `True`).
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-Iniciando linha:::::: coluna::: `AndAlso OrElse` ::: coluna final:::::: coluna::: lógica e e, que são usados para vincular condições ou juntos.
-::: end coluna:::::: coluna::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
-    ::: end coluna:::::: final de linha:::
+:::row:::
+    :::column:::
+        `AndAlso OrElse`
+    :::column-end:::
+    :::column:::
+        AND lógico e, que são usados para vincular condições ou juntos.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
+    :::column-end:::
+:::row-end:::
 
 ## <a name="working-with-file-and-folder-paths-in-code"></a>Trabalhando com arquivos e caminhos de pasta no código
 

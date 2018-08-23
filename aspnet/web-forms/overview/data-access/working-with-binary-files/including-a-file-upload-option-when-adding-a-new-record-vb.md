@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-binary-files/including-a-file-u
 title: Incluindo um arquivo de opção Carregar ao adicionar um novo registro (VB) | Microsoft Docs
 author: rick-anderson
 description: Este tutorial mostra como criar uma interface da Web que permite que o usuário digite dados de texto e carregar arquivos binários. Para ilustrar o t disponível de opções...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/27/2007
 ms.assetid: 5776281d-4637-4d1e-a65b-2621d2cade44
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eac86318136d6f28ecf6551b8b8a6b691a8969d7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 22ca0d85fac598b2f845be4bd5c18fdcbd3bc3a8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807746"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824808"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>Incluindo uma opção de Upload de arquivo ao adicionar um novo registro (VB)
 ====================

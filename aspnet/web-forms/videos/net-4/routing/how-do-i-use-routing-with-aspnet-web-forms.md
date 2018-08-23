@@ -3,17 +3,17 @@ uid: web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 title: 'Como fazer: usar o roteamento com Web Forms do ASP.NET? | Microsoft Docs'
 author: rick-anderson
 description: Neste vídeo, Chris Pels mostra como implementar o roteamento para formulários da Web no ASP.NET 4. Primeiro, o conceito de uma URL de roteamento é comparado ao mapear a URL para um p...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/15/2010
 ms.assetid: a3ab6cd9-8f71-4b73-9336-21c0de078269
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 msc.type: video
-ms.openlocfilehash: 4b570df24b7a931b3853c5117a29d405ca8ecf24
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b1bba2725f893032f49fa1d43dbc7348f2c21e6e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830196"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834113"
 ---
 <a name="how-do-i-use-routing-with-aspnet-web-forms"></a>Como fazer: usar o roteamento com Web Forms do ASP.NET?
 ====================

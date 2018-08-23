@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: Opções (c#) de hospedagem do ASP.NET | Microsoft Docs
 author: rick-anderson
 description: Aplicativos web ASP.NET normalmente são projetados, criados e testado em um ambiente de desenvolvimento local e precisam ser implantados em um ambiente de produção e s...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: 89a1d2bc-fdfd-4c5c-a3b0-49a08baaf63a
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 12d4e0e4332cf611e304799155b45f5d668da8f6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3adad579c5893fb4f40e7043b9ece78740080f65
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804181"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830636"
 ---
 <a name="aspnet-hosting-options-c"></a>Opções de hospedagem do ASP.NET (c#)
 ====================

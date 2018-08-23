@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-
 title: Introdução ao ASP.NET Web Pages – excluindo o banco de dados | Microsoft Docs
 author: tfitzmac
 description: Este tutorial mostra como excluir uma entrada de banco de dados individuais. Ele pressupõe que você tenha concluído a série por meio de atualização de banco de dados no PA da Web do ASP.NET....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/02/2018
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: 234b5f99c5d5f580316204c88ea1ab8c1269d452
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3b759a5c88b066640005c823ce0cc3cc3ac89bc2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815350"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834893"
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Introdução ao ASP.NET Web Pages – excluindo o banco de dados
 ====================

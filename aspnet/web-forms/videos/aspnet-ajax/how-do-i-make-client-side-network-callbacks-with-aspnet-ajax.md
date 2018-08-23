@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-make-client-side-network-callbacks-wi
 title: '[Como fazer:] Fazer retornos de chamada de rede do lado do cliente com o ASP.NET AJAX? | Microsoft Docs'
 author: JoeStagner
 description: Neste vídeo, podemos ver como o Microsoft ASP.NET AJAX ajuda os desenvolvedores da web fazer retornos de chamada de rede diretamente do código de script do lado do cliente. Consulte também como um ASP.NET...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/26/2007
 ms.assetid: ea4211be-faf9-40a0-8a7b-63427218b947
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-make-client-side-network-callbacks-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 565588294f4ee0dd755e300fe7c4e1350d9a529a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 73face950ec7d0e798f8c3a64612503105c6e7d0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816400"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831011"
 ---
 <a name="how-do-i-make-client-side-network-callbacks-with-aspnet-ajax"></a>[Como fazer:] Fazer retornos de chamada de rede do lado do cliente com o ASP.NET AJAX?
 ====================

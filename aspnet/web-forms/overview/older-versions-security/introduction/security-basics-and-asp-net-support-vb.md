@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/introduction/security-basics-and
 title: Noções básicas sobre segurança e suporte do ASP.NET (VB) | Microsoft Docs
 author: rick-anderson
 description: Este é o primeiro tutorial de uma série de tutoriais que exploram técnicas para autenticar os visitantes por meio de um formulário da web, autorizar o acesso a determinado...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/13/2008
 ms.assetid: ab68a92b-fc81-40a4-a7dc-406625d2c5d4
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ebd4e52720fc36bfcf86b7ef4205afcca7e2bc4a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c293f4946001d0940c7e12b67f4fbc63cf5ca18c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820870"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824800"
 ---
 <a name="security-basics-and-aspnet-support-vb"></a>Noções básicas sobre segurança e suporte do ASP.NET (VB)
 ====================

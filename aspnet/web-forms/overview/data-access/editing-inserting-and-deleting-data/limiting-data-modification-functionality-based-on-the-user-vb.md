@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting
 title: Limitando a funcionalidade de modificação de dados com base no usuário (VB) | Microsoft Docs
 author: rick-anderson
 description: Em um aplicativo web que permite aos usuários editarem dados, contas de usuário diferentes podem ter diferentes privilégios de edição de dados. Neste tutorial, examinaremos como t...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/17/2006
 ms.assetid: 9dc264a6-feb8-474b-8b91-008c50708065
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 23e23c288ccceab7f7e1c07aa9a902bef4045de0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8633d6ba5d82dfa2ebbea6858eb89433573a775f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836798"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824807"
 ---
 <a name="limiting-data-modification-functionality-based-on-the-user-vb"></a>Limitando a funcionalidade de modificação de dados com base no usuário (VB)
 ====================

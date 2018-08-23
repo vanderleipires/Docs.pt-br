@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: (Criando aplicativos de nuvem do mundo Real com o Azure) de cache distribuído | Microsoft Docs
 author: MikeWasson
 description: Os aplicativos de nuvem construção Real World com o livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem a ele...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/20/2015
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: a165c789ae656025934bc5e3ed8e8caef1c21787
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1f67c754fcc03462c25983a8397a1093997b1213
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821613"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831109"
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>Cache (construção reais na nuvem aplicativos distribuídos com o Azure)
 ====================

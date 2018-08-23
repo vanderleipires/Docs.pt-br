@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windo
 title: 'Vitrine do ASP.NET MVC parte 19a: acompanhamento de fluxo de trabalho do Windows | Microsoft Docs'
 author: robconery
 description: Neste episódio, acompanhamento com mais informações sobre como usar o fluxo de trabalho do Windows, e eu abordam alguns dos comentários que recebemos com episódio 19.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: 50ed58f9-f329-45a8-b8be-675040172072
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup
 msc.type: video
-ms.openlocfilehash: 19fd03147a4626bf092811ea22b4cdf9125e565d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: de22839d9434079c3872692383893c921111c2ed
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840372"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831003"
 ---
 <a name="aspnet-mvc-storefront-part-19a-windows-workflow-followup"></a>Vitrine do ASP.NET MVC parte 19a: acompanhamento de fluxo de trabalho do Windows
 ====================

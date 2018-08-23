@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspn
 title: Implementando a simultaneidade otimista com o SqlDataSource (VB) | Microsoft Docs
 author: rick-anderson
 description: Neste tutorial, examine os conceitos básicos de controle de simultaneidade otimista e, em seguida, explore como implementá-lo usando o controle SqlDataSource.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2007
 ms.assetid: a8fa72ee-8328-4854-a419-c1b271772303
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b1b5c16dcc504ef2ec8e7e8447d06cfacfa20ee8
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7695ffad0599701840da83670af3940569e01c21
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824063"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831648"
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>Implementando a simultaneidade otimista com o SqlDataSource (VB)
 ====================

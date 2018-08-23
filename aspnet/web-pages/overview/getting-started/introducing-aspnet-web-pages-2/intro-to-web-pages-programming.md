@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-
 title: Introdução ao ASP.NET Web Pages - Noções básicas da programação | Microsoft Docs
 author: tfitzmac
 description: "Este tutorial fornece uma visão geral de como ao programa em páginas da Web do ASP.NET com sintaxe do Razor. O que você vai aprender: A sintaxe 'Razor' básica que você usa para pr..."
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/17/2015
 ms.assetid: 7526ed45-a97d-4e8a-8301-01324ef0eff9
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: 56268943b09d366b15d3a11e641d6c6b6c95aa16
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 120246fab3e71afeef2e2b7c4388f7c294e6b703
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839743"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41825197"
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>Introdução ao ASP.NET Web Pages - Noções básicas de programação
 ====================

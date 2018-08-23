@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/membership/creating-user-account
 title: Criar contas de usuário (VB) | Microsoft Docs
 author: rick-anderson
 description: Neste tutorial, exploraremos usando a estrutura de associação (por meio de SqlMembershipProvider) para criar novas contas de usuário. Veremos como criar novos nós...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: 9ef3e893-bebe-4b13-9fe5-8b71720dd85e
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fe5e55df3fa9f65a94199c2064a785255f231537
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c7f5f4ec6ce27c1a52569e6414b8f96892f68574
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815337"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831627"
 ---
 <a name="creating-user-accounts-vb"></a>Criar contas de usuário (VB)
 ====================

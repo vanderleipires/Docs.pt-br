@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: (Criando aplicativos de nuvem do mundo Real com o Azure) de estratégias de particionamento de dados | Microsoft Docs
 author: MikeWasson
 description: Os aplicativos de nuvem construção Real World com o livro eletrônico do Azure baseia-se em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem a ele...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 89921df4f84b86ef7c222f8e8c871f510856b4f3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1a19b5b8ce47439c39359a805e16ab4e7631deec
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819793"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830819"
 ---
 <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>(Criando aplicativos de nuvem do mundo Real com o Azure) de estratégias de particionamento de dados
 ====================
