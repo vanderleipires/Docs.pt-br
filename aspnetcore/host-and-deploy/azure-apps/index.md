@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: ece61a3e362ec5e2ff8f415351a0f9257fc72098
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: 9a7d20378cac597b748d8a60eb0f0bf17c9ba082
+ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228605"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41746074"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
 
@@ -98,8 +98,8 @@ Para obter mais informações, veja [Principais provedores de armazenamento](xre
 
 Aplicativos de visualização do ASP.NET Core podem ser implantados para o Serviço de Aplicativo do Azure com as seguintes abordagens:
 
-* [Instalar a extensão de site de visualização](#install-the-preview-site-extension)
-* [Implantar o aplicativo autocontido](#deploy-the-app-self-contained)
+* [Instalar a extensão de site da versão prévia](#install-the-preview-site-extension)
+<!-- * [Deploy the app self-contained](#deploy-the-app-self-contained) -->
 * [Usar o Docker com aplicativos Web para contêineres](#use-docker-with-web-apps-for-containers)
 
 Se houver problemas ao usar a extensão de site de visualização, abra um problema no [GitHub](https://github.com/aspnet/azureintegration/issues/new).
@@ -130,7 +130,7 @@ Se a versão `2.1.300-preview1-008174` for a versão prévia mais recente, a seg
 
 A versão do ASP.NET Core mostrada na imagem anterior, `2.1.300-preview1-008174`, é um exemplo. A versão prévia mais recente do ASP.NET Core no momento em que a extensão de site foi configurada é exibida quando você executa `dotnet --info`.
 
-O `dotnet --info` exibe o caminho para a extensão de site em que a visualização foi instalada. Ele mostra que o aplicativo está em execução na extensão de site em vez do local padrão *ProgramFiles*. Se você vir *ProgramFiles*, reinicie o site e execute `dotnet --info`.
+O `dotnet --info` exibe o caminho para a extensão de site em que a Versão Prévia foi instalada. Ele mostra que o aplicativo está em execução na extensão de site em vez do local padrão *ProgramFiles*. Se você vir *ProgramFiles*, reinicie o site e execute `dotnet --info`.
 
 **Usar a extensão de site de visualização com um modelo do ARM**
 
@@ -138,14 +138,16 @@ Se um modelo do ARM for usado para criar e implantar aplicativos, o tipo de recu
 
 [!code-json[Main](index/sample/arm.json?highlight=2)]
 
-### <a name="deploy-the-app-self-contained"></a>Implantar o aplicativo autocontido
+<!--
+### Deploy the app self-contained
 
-Um [aplicativo autocontido](/dotnet/core/deploying/#self-contained-deployments-scd), que executa o tempo de execução de visualização na implantação, pode ser implantado. Ao implantar um aplicativo autocontido:
+A [self-contained app](/dotnet/core/deploying/#self-contained-deployments-scd) can be deployed that carries the preview runtime in the deployment. When deploying a self-contained app:
 
-* O site não precisa ser preparado.
-* O aplicativo deve ser publicado de modo diferente do que ao publicar uma implantação dependente de infraestrutura com o tempo de execução compartilhado e o host no servidor.
+* The site doesn't need to be prepared.
+* The app must be published differently than when publishing for a framework-dependent deployment with the shared runtime and host on the server.
 
-Os aplicativos autocontidos são uma opção para todos os aplicativos do ASP.NET Core.
+Self-contained apps are an option for all ASP.NET Core apps.
+-->
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Usar o Docker com aplicativos Web para contêineres
 
