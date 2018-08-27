@@ -3,14 +3,14 @@ title: Filtros no ASP.NET Core
 author: ardalis
 description: Saiba como os filtros funcionam e como usá-los no ASP.NET Core MVC.
 ms.author: riande
-ms.date: 4/10/2018
+ms.date: 08/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 24551382847fee0896fe6620d52c30a03aca69d1
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6b3d5446b1c9aafc02d4c31ad57a234f16513e3f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275639"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751602"
 ---
 # <a name="filters-in-aspnet-core"></a>Filtros no ASP.NET Core
 

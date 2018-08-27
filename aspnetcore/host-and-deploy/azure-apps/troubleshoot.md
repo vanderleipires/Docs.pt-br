@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/31/2018
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: f9918e9162329f4c5dbd1ff18e30fce0db24e651
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a995c743b4e43be8bea5329affb3f2c736b1d016
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272718"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902548"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Solucionar problemas no ASP.NET Core no Serviço de Aplicativo do Azure
 
@@ -178,7 +178,7 @@ Para obter mais informações, veja [Habilitar log de diagnósticos para aplicat
 * [Introdução ao tratamento de erro no ASP.NET Core](xref:fundamentals/error-handling)
 * [Referência de erros comuns para o Serviço de Aplicativo do Azure e o IIS com o ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
 * [Solucionar problemas de um aplicativo Web no Serviço de Aplicativo do Azure usando o Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
-* [Solucionar problemas de erros HTTP de "502 – gateway incorreto" e "503 – serviço não disponível" em seus aplicativos Web do Azure](/app-service/app-service-web-troubleshoot-http-502-http-503)
+* [Solucionar problemas de erros HTTP de "502 – gateway incorreto" e "503 – serviço não disponível" em seus aplicativos Web do Azure](/azure/app-service/app-service-web-troubleshoot-http-502-http-503)
 * [Solucionar problemas de desempenho lento do aplicativo Web no Serviço de Aplicativo do Azure](/azure/app-service/app-service-web-troubleshoot-performance-degradation)
 * [Perguntas frequentes sobre o desempenho do aplicativo para aplicativos Web no Azure](/azure/app-service/app-service-web-availability-performance-application-issues-faq)
 * [Área restrita do aplicativo Web do Azure (limitações de execução de tempo de execução do Serviço de Aplicativo)](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)

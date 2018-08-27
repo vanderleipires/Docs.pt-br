@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 255faf12064aa424d51fb6faa801884c474bd288
-ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
+ms.openlocfilehash: ef4e1fb3bf1ac1b3695ff89d6692ac6fa1641e31
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37889477"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41820153"
 ---
 # <a name="work-with-sql-server-localdb-and-aspnet-core"></a>Trabalhar com o LocalDB do SQL Server e o ASP.NET Core
 
@@ -30,7 +30,7 @@ O objeto `MovieContext` cuida da tarefa de se conectar ao banco de dados e mapea
 Para obter mais informações sobre os métodos usados em `ConfigureServices`, veja:
 
 * [Suporte ao RGPD (Regulamento Geral sobre a Proteção de Dados) da UE no ASP.NET Core](xref:security/gdpr) para `CookiePolicyOptions`.
-* [SetCompatibilityVersion](xref:fundamentals/startup#setcompatibilityversion-for-aspnet-core-mvc)
+* [SetCompatibilityVersion](xref:mvc/compatibility-version)
 
 ::: moniker-end
 
