@@ -8,12 +8,12 @@ ms.date: 12/08/2014
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 39a06f40e51b57c0ccdd0c701b58b83c6a6be9b5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 6e3de242f7cfc584f4c3d1dfa3d1948ee4d49d66
+ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831658"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42899819"
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>Avançados do Entity Framework 6 cenários para um aplicativo do MVC 5 Web (12 de 12)
 ====================
@@ -154,7 +154,7 @@ Agora defina um ponto de interrupção a `return` instrução (F9 com o cursor n
 
 [!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample7.json)]
 
-Clique na classe de ampliação para ver a consulta a **Visualizador de texto**.
+Clique na lupa para ver a consulta a **Visualizador de texto**.
 
 ![](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image10.png)
 
