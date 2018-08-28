@@ -8,12 +8,12 @@ ms.date: 02/21/2014
 ms.assetid: 5fa1daf9-1161-4cfa-bd4c-658f48b2c229
 msc.legacyurl: /web-forms/what-is-web-forms
 msc.type: content
-ms.openlocfilehash: ccb0e6096b0281e5ef8af63bfd84b172e7f209b9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e135cfa2945b9e7e5269eb436ff0c1dff20aacdf
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833763"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055706"
 ---
 <a name="what-is-web-forms"></a>O que é o Web Forms
 ====================
@@ -21,7 +21,7 @@ Web Forms do ASP.NET é uma parte da estrutura de aplicativo web ASP.NET e está
 
 Formulários da Web são páginas que os usuários solicitam usando seu navegador. Essas páginas podem ser gravadas usando uma combinação de HTML, script de cliente, os controles de servidor e código do servidor. Quando os usuários solicitam uma página, ele é compilado e executado no servidor pelo framework e, em seguida, a estrutura gera a marcação HTML que pode fazer com que o navegador. Uma página de Web Forms do ASP.NET apresenta informações para o usuário em qualquer navegador ou dispositivo cliente.
 
-Usando o Visual Studio, você pode criar Web Forms do ASP.NET. O Visual Studio Development IDE (ambiente integrado) permite arrastar e soltar os controles de servidor para dispor de sua página de Web Forms. Você pode facilmente definir propriedades, métodos e eventos para controles na página ou para a própria página. Essas propriedades, métodos e eventos são usados para definir o comportamento da página da web, e a aparência e assim por diante. Para escrever código para manipular a lógica para a página do servidor, você pode usar uma linguagem .NET como Visual Basic ou c#.
+Usando o Visual Studio, você pode criar Web Forms do ASP.NET. O Visual Studio Development IDE (ambiente integrado) permite arrastar e soltar os controles de servidor para dispor de sua página de Web Forms. Você pode facilmente definir propriedades, métodos e eventos para controles na página ou para a página propriamente dita. Essas propriedades, métodos e eventos são usados para definir o comportamento da página da web, e a aparência e assim por diante. Para escrever código para manipular a lógica para a página do servidor, você pode usar uma linguagem .NET como Visual Basic ou c#.
 
 > [!NOTE] 
 > 
