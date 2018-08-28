@@ -1,16 +1,18 @@
 ---
 uid: index
 layout: HubPage
-ms.topic: hub-page
+ms.topic: conceptual
+author: Rick-Anderson
 ms.author: riande
-title: Documentação do ASP.NET | Microsoft Docs
+title: Documentação do ASP.NET
+ms.date: 08/24/2018
 description: Saiba como desenvolver o ASP.NET e aplicativos Web ASP.NET. Obter documentação, código de exemplo, tutoriais e muito mais.
-ms.openlocfilehash: 9b63e7a708e1b0551e1f48cea2080528d29bdfa9
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: a89dc9c28303ab60314663caf6750cf096f5f052
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927917"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055768"
 ---
 <div id="main" class="v2">
     <div class="container">
