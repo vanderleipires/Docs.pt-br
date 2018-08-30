@@ -5,12 +5,12 @@ description: Este tutorial apresenta tópicos úteis para ir além das noções 
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: be44ef115ce72e1571bbdea2c609ea6c53792c59
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 25916365b4e682a8e296e0affbcddd4f1e5846b1
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194036"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751683"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>ASP.NET Core MVC com EF Core – avançado – 10 de 10
 
@@ -187,7 +187,7 @@ O [terceiro tutorial desta série](sort-filter-page.md) mostra como escrever um 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Isso conclui esta série de tutoriais sobre como usar o Entity Framework Core em um aplicativo ASP.NET MVC.
+Isso conclui esta série de tutoriais sobre como usar o Entity Framework Core em um aplicativo ASP.NET Core MVC.
 
 Para obter mais informações sobre o EF Core, consulte a [documentação do Entity Framework Core](https://docs.microsoft.com/ef/core). Um manual também está disponível: [Entity Framework Core in Action](https://www.manning.com/books/entity-framework-core-in-action) (Entity Framework Core em ação).
 

@@ -5,12 +5,12 @@ description: Saiba como usar as partes do aplicativo, que são abstrações sobr
 ms.author: riande
 ms.date: 01/04/2017
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: e0290ceadc159d7c3608ec4420d95cd219407d32
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 377217870743e70f5e20544da43cb80c2c916c42
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276819"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41751421"
 ---
 # <a name="application-parts-in-aspnet-core"></a>Partes do aplicativo no ASP.NET Core
 
@@ -37,7 +37,7 @@ services.AddMvc()
 
 Por padrão, o MVC pesquisa a árvore de dependência e localiza controladores (mesmo em outros assemblies). Para carregar um assembly arbitrário (por exemplo, de um plug-in que não é referenciado em tempo de compilação), você pode usar uma parte do aplicativo.
 
-Você pode usar as partes do aplicativo para *evitar* pesquisar controladores em um determinado assembly ou local. Você pode controlar quais partes (ou assemblies) ficam disponíveis para o aplicativo modificando a coleção `ApplicationParts` do `ApplicationPartManager`. A ordem das entradas na coleção `ApplicationParts` não é importante. É importante configurar totalmente o `ApplicationPartManager` antes de usá-lo para configurar serviços no contêiner. Por exemplo, você deve configurar totalmente o `ApplicationPartManager` antes de invocar `AddControllersAsServices`. Deixar de fazer isso significará que os controladores em partes do aplicativo adicionadas depois da chamada de método não serão afetados (não serão registrados como serviços), o que pode resultar em um comportamento incorreto de seu aplicativo.
+Você pode usar as partes do aplicativo para *evitar* pesquisar controladores em um determinado assembly ou local. Você pode controlar quais partes (ou assemblies) ficam disponíveis para o aplicativo modificando a coleção `ApplicationParts` do `ApplicationPartManager`. A ordem das entradas na coleção `ApplicationParts` não é importante. É importante configurar totalmente o `ApplicationPartManager` antes de usá-lo para configurar serviços no contêiner. Por exemplo, você deve configurar totalmente o `ApplicationPartManager` antes de invocar `AddControllersAsServices`. Se isso não for feito, os controladores em partes do aplicativo adicionadas depois da chamada de método não serão afetados (não serão registrados como serviços), o que poderá resultar em um comportamento incorreto do aplicativo.
 
 Se tiver um assembly que contém controladores que você não deseja usar, remova-o do `ApplicationPartManager`:
 

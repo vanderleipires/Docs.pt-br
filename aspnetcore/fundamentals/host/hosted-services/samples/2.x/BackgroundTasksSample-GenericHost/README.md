@@ -1,4 +1,4 @@
-# <a name="aspnet-background-tasks-sample-generic-host"></a>Exemplo de tarefas em segundo plano do ASP.NET (Host Genérico)
+# <a name="aspnet-core-background-tasks-sample-generic-host"></a>Exemplo de tarefas em segundo plano do ASP.NET Core (host genérico)
 
 Este exemplo ilustra o uso de [IHostedService](https://docs.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostedservice). Este exemplo demonstra os recursos descritos no tópico [Tarefas em segundo plano com serviços hospedados no ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services).
 

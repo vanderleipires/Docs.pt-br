@@ -5,12 +5,12 @@ description: Mostra como trabalhar com o Auxiliar de Marca de Cache
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 969716e21211513053f52049368a0a7190ffba47
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 425d8c2235f0070665bc0c967d2498f2cff2a4a6
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276546"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751491"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Auxiliar de Marca de Cache no ASP.NET Core MVC
 
@@ -181,7 +181,7 @@ routes.MapRoute(
 | Cadeia de Caracteres            | ".AspNetCore.Identity.Application"                |
 |                   | ".AspNetCore.Identity.Application,HairColor" |
 
-Aceita um único valor de cabeçalho ou uma lista separada por vírgulas de valores de cabeçalho que disparam uma atualização do cache quando os valores do cabeçalho são alterados. O exemplo a seguir examina o cookie associado à identidade do ASP.NET. Quando um usuário é autenticado, o cookie de solicitação é definido, o que dispara uma atualização do cache.
+Aceita um único valor de cabeçalho ou uma lista separada por vírgulas de valores de cabeçalho que disparam uma atualização do cache quando os valores do cabeçalho são alterados. O exemplo a seguir examina o cookie associado à identidade do ASP.NET Core. Quando um usuário é autenticado, o cookie de solicitação é definido, o que dispara uma atualização do cache.
 
 Exemplo:
 

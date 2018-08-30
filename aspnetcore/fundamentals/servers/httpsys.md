@@ -2,16 +2,16 @@
 title: Implementação do servidor Web HTTP.sys no ASP.NET Core
 author: guardrex
 description: Conheça o HTTP.sys, um servidor Web para o ASP.NET Core executado no Windows. Desenvolvido com base no driver de modo kernel, o HTTP.sys é uma alternativa ao Kestrel, que pode ser usado na conexão direta com a Internet sem o IIS.
+monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
-ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 08/15/2018
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: aabfd99b7a28e80c665798fab86264b2b11954c2
-ms.sourcegitcommit: 7097dba14d5b858e82758ee031ac62dbe3611339
+ms.openlocfilehash: 58f71596b8ad54dd500699265ab022dc57c4f7a3
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39138565"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751454"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implementação do servidor Web HTTP.sys no ASP.NET Core
 
@@ -54,7 +54,11 @@ O HTTP.sys é útil nas implantações em que:
 
   ![O HTTP.sys se comunica diretamente com a rede interna](httpsys/_static/httpsys-to-internal.png)
 
-O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques e proporciona as propriedades de robustez, segurança e escalabilidade de um servidor Web completo. O próprio IIS é executado como um ouvinte HTTP sobre o HTTP.sys. 
+O HTTP.sys é uma tecnologia madura que protege contra vários tipos de ataques e proporciona as propriedades de robustez, segurança e escalabilidade de um servidor Web completo. O próprio IIS é executado como um ouvinte HTTP sobre o HTTP.sys.
+
+## <a name="kernel-mode-authentication-with-kerberos"></a>Autenticação de modo kernel com Kerberos
+
+O HTTP.sys delega à autenticação de modo kernel com o protocolo de autenticação Kerberos. Não há suporte para autenticação de modo de usuário com o Kerberos e o HTTP.sys. A conta do computador precisa ser usada para descriptografar o token/tíquete do Kerberos que é obtido do Active Directory e encaminhado pelo cliente ao servidor para autenticar o usuário. Registre o SPN (nome da entidade de serviço) do host, não do usuário do aplicativo.
 
 ## <a name="how-to-use-httpsys"></a>Como usar o HTTP.sys
 

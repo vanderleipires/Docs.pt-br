@@ -5,12 +5,12 @@ description: Saiba como o ASP.NET Core MVC é uma estrutura avançada para a cri
 ms.author: riande
 ms.date: 01/08/2018
 uid: mvc/overview
-ms.openlocfilehash: 7f8aab02c0ee37dad49ff224b182ec455e837a7a
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: d2a50e48c20fe69b1fe691bfc9c91a27d4219922
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378632"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902593"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Visão geral do ASP.NET Core MVC
 
@@ -251,3 +251,9 @@ Os Auxiliares de Marca fornecem uma experiência de desenvolvimento amigável a 
 ### <a name="view-components"></a>Componentes da exibição
 
 Os [Componentes de Exibição](views/view-components.md) permitem que você empacote a lógica de renderização e reutilize-a em todo o aplicativo. São semelhantes às [exibições parciais](views/partial.md), mas com a lógica associada.
+
+## <a name="compatibility-version"></a>Versão de compatibilidade
+
+O método <xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*> permite que um aplicativo aceite ou recuse as possíveis alterações da falha de comportamento introduzidas no ASP.NET Core MVC 2.1 ou posteriores.
+
+Para obter mais informações, consulte <xref:mvc/compatibility-version>.

@@ -5,18 +5,18 @@ description: Saiba como usar layouts comuns, compartilhar diretivas e executar u
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/views/layout
-ms.openlocfilehash: a99b239a0aeeb14492b1eee962dc1149f056f0eb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ad0b339572f387be8a636204015ffc361947acb8
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274112"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751734"
 ---
 # <a name="layout-in-aspnet-core"></a>Layout no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
-Com frequência, as exibições compartilham elementos visuais e programáticos. Neste artigo, você aprenderá a usar layouts comuns, compartilhar diretivas e executar o código comum antes de renderizar exibições no aplicativo ASP.NET.
+Com frequência, as exibições compartilham elementos visuais e programáticos. Neste artigo, você aprenderá como usar layouts comuns, compartilhar diretivas e executar o código comum antes de renderizar exibições no aplicativo ASP.NET Core.
 
 ## <a name="what-is-a-layout"></a>O que é um layout
 
@@ -26,7 +26,7 @@ A maioria dos aplicativos Web tem um layout comum que fornece aos usuários uma 
 
 Estruturas HTML comuns, como scripts e folhas de estilo, também são usadas com frequência por muitas páginas em um aplicativo. Todos esses elementos compartilhados podem ser definidos em um arquivo de *layout*, que pode então ser referenciado por qualquer exibição usada no aplicativo. Os layouts reduzem o código duplicado em exibições, ajudando-os a seguir o [princípio DRY (Don't Repeat Yourself)](http://deviq.com/don-t-repeat-yourself/).
 
-Por convenção, o layout padrão de um aplicativo ASP.NET é chamado `_Layout.cshtml`. O modelo de projeto do ASP.NET Core MVC no Visual Studio inclui o arquivo de layout na pasta `Views/Shared`:
+Por convenção, o layout padrão de um aplicativo ASP.NET Core é chamado `_Layout.cshtml`. O modelo de projeto do ASP.NET Core MVC no Visual Studio inclui o arquivo de layout na pasta `Views/Shared`:
 
 ![pasta de exibições no gerenciador de soluções](layout/_static/web-project-views.png)
 

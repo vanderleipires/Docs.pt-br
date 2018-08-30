@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 4e0bcffd1162681aa4d31c4fe74acac5a7e981f1
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: cbef7e5edf2950a87a4cd4155c63a22fff2990fe
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216306"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751559"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>ASP.NET Core MVC com o Entity Framework Core – tutorial – 1 de 10
 
@@ -35,7 +35,7 @@ O EF Core 2.0 é a última versão do EF, mas ainda não tem todos os recursos d
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[!INCLUDE [](~/includes/net-core-prereqs.md) [](~/includes/net-core-prereqs.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
@@ -80,7 +80,7 @@ Abra o Visual Studio e crie um novo projeto Web ASP.NET Core C# chamado "Contoso
 
 * Clique em **OK**
 
-  ![Caixa de diálogo Novo Projeto ASP.NET](intro/_static/new-aspnet.png)
+  ![Caixa de diálogo Novo projeto ASP.NET Core](intro/_static/new-aspnet.png)
 
 ## <a name="set-up-the-site-style"></a>Configurar o estilo do site
 
@@ -273,7 +273,7 @@ Você observará que o controlador usa um `SchoolContext` como parâmetro de con
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
 
-A injeção de dependência do ASP.NET será responsável por passar uma instância de `SchoolContext` para o controlador. Você configurou isso no arquivo *Startup.cs* anteriormente.
+A injeção de dependência do ASP.NET Core é responsável por passar uma instância de `SchoolContext` para o controlador. Você configurou isso no arquivo *Startup.cs* anteriormente.
 
 O controlador contém um método de ação `Index`, que exibe todos os alunos no banco de dados. O método obtém uma lista de alunos do conjunto de entidades Students pela leitura da propriedade `Students` da instância de contexto de banco de dados:
 

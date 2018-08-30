@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/10/2018
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 280599ab4b4f0a70d154cc4408e7232aaf766d8e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2958b83de13207b93790004a4fa60b0509af3cd2
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279552"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902580"
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Perfis de publicação do Visual Studio para a implantação do aplicativo ASP.NET Core
 
@@ -505,3 +505,4 @@ Selecione o item de menu [Console de Depuração](https://github.com/projectkudu
 
 * A [Implantação da Web](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy) simplifica a implantação de aplicativos Web e sites da Web em servidores IIS.
 * [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): problemas de arquivos e recursos de solicitação para implantação.
+* [Publicar um aplicativo Web ASP.NET em uma VM do Azure usando o Visual Studio](/azure/virtual-machines/windows/publish-web-app-from-visual-studio)

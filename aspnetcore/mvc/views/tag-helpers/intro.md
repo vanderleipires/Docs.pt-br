@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 2/14/2018
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: be75667f34eed7ba601eee331e3451c5738ef223
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c2af9099fe439e1cdbf9ba86ffae3b2b0f67391e
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273563"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751471"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>Auxiliares de Marca no ASP.NET Core
 
@@ -130,7 +130,7 @@ As mesmas regras de hierarquia que se aplicam a `@addTagHelper` também se aplic
 
 ## <a name="intellisense-support-for-tag-helpers"></a>Suporte do IntelliSense para Auxiliares de Marca
 
-Quando você cria um novo aplicativo Web ASP.NET no Visual Studio, ele adiciona o pacote NuGet "Microsoft.AspNetCore.Razor.Tools". Esse é o pacote que adiciona ferramentas do Auxiliar de Marca.
+Quando você cria um novo aplicativo Web ASP.NET Core no Visual Studio, ele adiciona o pacote NuGet "Microsoft.AspNetCore.Razor.Tools". Esse é o pacote que adiciona ferramentas do Auxiliar de Marca.
 
 Considere a escrita de um elemento `<label>` HTML. Assim que você insere `<l` no editor do Visual Studio, o IntelliSense exibe elementos correspondentes:
 

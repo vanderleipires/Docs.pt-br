@@ -5,12 +5,12 @@ description: Saiba como os componentes de exibição são usados no ASP.NET Core
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: 2b196d8d46942604d1c85eb5f2f073661e5acb30
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c4e4de6e4ffb634a636bccdb2a929a524baebecf
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278356"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751767"
 ---
 # <a name="view-components-in-aspnet-core"></a>Componentes de exibição no ASP.NET Core
 
@@ -75,8 +75,9 @@ Um componente de exibição define sua lógica em um método `InvokeAsync` que r
 
 O tempo de execução pesquisa a exibição nos seguintes caminhos:
 
-   * Views/\<nome_do_controlador>/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>
-   * Views/Shared/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>
+* /Pages/Components/<component name>/\<view_name>
+* Views/\<nome_do_controlador>/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>
+* Views/Shared/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>
 
 O nome de exibição padrão de um componente de exibição é *Default*, o que significa que o arquivo de exibição geralmente será nomeado *Default.cshtml*. Especifique outro nome de exibição ao criar o resultado do componente de exibição ou ao chamar o método `View`.
 
