@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: client-side/libman/libman-vs
-ms.openlocfilehash: b44769f1d0925f38523d6570858de17f37e32c2b
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: a653b1a5c07feca8672ba38e0cda3ddc30482c5a
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41909876"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312173"
 ---
 # <a name="use-libman-with-aspnet-core-in-visual-studio"></a>LibMan de uso com o ASP.NET Core no Visual Studio
 
@@ -100,7 +100,7 @@ Com o seguinte arquivo de manifesto, LibMan recupera arquivos de acordo com a co
 
 * Um subconjunto de [jQuery](https://jquery.com/) versão 3.3.1 é recuperado do provedor CDNJS. O subconjunto é definido na `files` propriedade&mdash;*jQuery*, *obtive*, e *jquery.min.map*. Os arquivos são colocados no projeto do *wwwroot/lib/jquery* pasta.
 * Na íntegra [Bootstrap](https://getbootstrap.com/) versão 4.1.3 é recuperado e colocado em um *wwwroot/lib/bootstrap* pasta. O literal de objeto `provider` substituições de propriedades de `defaultProvider` valor da propriedade. LibMan recupera os arquivos de inicialização do provedor de unpkg.
-* Um subconjunto de [Lodash](https://lodash.com/) foi aprovada por um corpo regulador dentro da organização. O *lodash.js* e *lodash.min.js* arquivos são recuperados do sistema de arquivos local no *c:\\tmp\\*. Os arquivos são copiados para o projeto *wwwroot/lib/lodash* pasta.
+* Um subconjunto de [Lodash](https://lodash.com/) foi aprovada por um corpo regulador dentro da organização. O *lodash.js* e *lodash.min.js* arquivos são recuperados do sistema de arquivos local no *c:\\temp\\lodash\\*. Os arquivos são copiados para o projeto *wwwroot/lib/lodash* pasta.
 
 [!code-json[](samples/LibManSample/libman.json)]
 
@@ -193,7 +193,7 @@ Clean libraries operation completed
 2 libraries were successfully deleted in 1.91 secs
 ```
 
-A operação de limpeza exclui somente os arquivos do projeto. Arquivos de biblioteca permanecem no cache para uma recuperação mais rápida em operações de restauração futuras. Para gerenciar arquivos de biblioteca armazenados no cache do computador local, use a CLI LibMan.
+A operação de limpeza exclui somente os arquivos do projeto. Arquivos de biblioteca permanecem no cache para uma recuperação mais rápida em operações de restauração futuras. Para gerenciar arquivos de biblioteca armazenados no cache do computador local, use o [LibMan CLI](xref:client-side/libman/libman-cli).
 
 ## <a name="uninstall-library-files"></a>Desinstalar os arquivos de biblioteca
 
@@ -231,4 +231,5 @@ Para fazer o downgrade para uma versão mais antiga da biblioteca, edite manualm
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Repositório LibMan GitHub](https://github.com/aspnet/LibraryManager)
+* <xref:client-side/libman/libman-cli>
+* [Repositório do GitHub do LibMan](https://github.com/aspnet/LibraryManager)

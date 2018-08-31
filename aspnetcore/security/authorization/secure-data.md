@@ -5,12 +5,12 @@ description: Saiba como criar um aplicativo páginas Razor com dados protegidos 
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: ba59e8d6243965188397c4ba7a130eec42acfb91
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: 9f264daa4a6b63478077cadb06a697f274014199
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055874"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336005"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -19,7 +19,7 @@ Ver [esse PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/au
 
 ::: moniker range="= aspnetcore-2.0"
 
-Consulte a [esse pdf] (https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_July16_18.pdf)
+Consulte [esse pdf](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_July16_18.pdf)
 
 ::: moniker-end
 
@@ -75,7 +75,13 @@ Este tutorial é avançado. Você deve estar familiarizado com:
 * [Autorização](xref:security/authorization/index)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
-O código de download para este tutorial requer a versão prévia do ASP.NET Core 2.2 1 ou posterior. Ver [esse problema de GitHub](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) para uma solução alternativa.
+::: moniker-end
+::: moniker range="= aspnetcore-2.1"
+
+No ASP.NET Core 2.1, `User.IsInRole` Falha ao usar `AddDefaultIdentity`. Este tutorial usa `AddDefaultIdentity` e, portanto, requer a versão prévia do ASP.NET Core 2.2 1 ou posterior. Ver [esse problema de GitHub](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) para uma solução alternativa.
+
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
 
 ## <a name="the-starter-and-completed-app"></a>O aplicativo inicial e o concluído
 
