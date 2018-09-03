@@ -5,12 +5,12 @@ description: Saiba mais sobre a validação do modelo no ASP.NET Core MVC.
 ms.author: riande
 ms.date: 07/31/2018
 uid: mvc/models/validation
-ms.openlocfilehash: f407903577e40b6501737ef5b78d90e1e3e60c06
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: fe036f261b80f6134078835080409720d149374d
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378661"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312148"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Validação de modelo no ASP.NET Core MVC
 
@@ -239,7 +239,7 @@ A propriedade `AdditionalFields` do atributo `[Remote]` é útil para validaçã
 
 [!code-csharp[](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields` poderia ter sido definido de forma explícita com as cadeias de caracteres `"FirstName"` e `"LastName"`, mas o uso do operador [`nameof`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) dessa forma, simplifica a refatoração posterior. Em seguida, o método de ação para executar a validação precisa aceitar dois argumentos, um para o valor de `FirstName` e outro para o valor de `LastName`.
+`AdditionalFields` poderia ter sido definido de forma explícita com as cadeias de caracteres `"FirstName"` e `"LastName"`, mas o uso do operador [`nameof`](/dotnet/csharp/language-reference/keywords/nameof) dessa forma, simplifica a refatoração posterior. Em seguida, o método de ação para executar a validação precisa aceitar dois argumentos, um para o valor de `FirstName` e outro para o valor de `LastName`.
 
 [!code-csharp[](validation/sample/UsersController.cs?range=30-39)]
 
