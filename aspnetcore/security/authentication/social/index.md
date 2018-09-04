@@ -5,12 +5,12 @@ description: Este tutorial demonstra como criar um aplicativo do ASP.NET Core 2.
 ms.author: riande
 ms.date: 11/01/2016
 uid: security/authentication/social/index
-ms.openlocfilehash: b2176ef40faaee02c5ef53dbb92a802212e58e8b
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: 48a01ab241f9a6ad6ad3fb2ee9e210f459075c33
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063319"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336114"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Autenticação de Facebook, Google e de provedor externo no ASP.NET Core
 
@@ -97,3 +97,5 @@ Para criar uma senha e entrar usando seu email definido durante o processo de en
 * Este artigo apresentou a autenticação externa e explicou os pré-requisitos necessários para adicionar logons externos ao aplicativo ASP.NET Core.
 
 * Páginas de referência específicas ao provedor para configurar logons para os provedores necessários para o aplicativo.
+
+* Você talvez queira manter os dados adicionais sobre o usuário e seus tokens de atualização e acesso. Para obter mais informações, consulte <xref:security/authentication/social/additional-claims>.
