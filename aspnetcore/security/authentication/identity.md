@@ -5,12 +5,12 @@ description: Use identidade com um aplicativo ASP.NET Core. Saiba como definir o
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: bc69b1db56361dc185f582032148a4fb8078fdda
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 96f446ad9ec1ef5d807a8648e68308ee20583365
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893227"
+ms.locfileid: "44040022"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade do ASP.NET Core
 
@@ -56,7 +56,7 @@ Execute o aplicativo e registrar um usuário. Dependendo do tamanho da tela, voc
 <a name="pw"></a>
 ### <a name="configure-identity-services"></a>Configurar os serviços de identidade
 
-Serviços são adicionados no `ConfigureServices`. O código a seguir não inclui o modelo gerado `CookiePolicyOptions`:
+Serviços são adicionados no `ConfigureServices`. O padrão típico é chamar todos os `Add{Service}` métodos e, em seguida, chame o `services.Configure{Service}` métodos. O código a seguir não inclui o modelo gerado `CookiePolicyOptions`:
 
 ::: moniker range=">= aspnetcore-2.1"
 
