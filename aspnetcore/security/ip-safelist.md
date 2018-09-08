@@ -6,21 +6,22 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: security/ip-safelist
-ms.openlocfilehash: 40fe7b67359efd1692490099c3fb529ba4a6148f
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 362d1ded00bda3f328e029fb467f2b3eeaa01396
+ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040102"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126703"
 ---
 # <a name="client-ip-safelist-for-aspnet-core"></a>Lista segura IP do cliente para o ASP.NET Core
 
 Por [Damien Bowden](https://twitter.com/damien_bod) e [Tom Dykstra](https://github.com/tdykstra)
  
-Este artigo mostra duas maneiras de implementar uma lista segura IP (também conhecido como uma lista de permissões):
+Este artigo mostra três maneiras de implementar uma lista segura IP (também conhecido como uma lista de permissões) em um aplicativo ASP.NET Core. Você pode usar:
 
-* Usando o middleware do ASP.NET Core para verificar o endereço IP remoto de cada solicitação.
-* Usando filtros de ação do ASP.NET Core para verificar o endereço IP remoto de solicitações para os métodos de ação específica.
+* Middleware para verificar o endereço IP remoto de cada solicitação.
+* Filtros de ação para verificar o endereço IP remoto de solicitações para controladores específicos ou métodos de ação.
+* Filtros de páginas do Razor para verificar o endereço IP remoto de solicitações de páginas do Razor.
 
 O aplicativo de exemplo ilustra as duas abordagens. Em cada caso, uma cadeia de caracteres que contém os endereços IP de cliente aprovados é armazenada em uma configuração de aplicativo. O middleware ou filtro analisa a cadeia de caracteres em uma lista e verifica se o IP remoto estiver na lista. Caso contrário, será retornado um código de status HTTP 403 Proibido.
 
