@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: tutorials/signalr
-ms.openlocfilehash: db7f31963f6a4280069f1f4f82a547e2879e64bb
-ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
+ms.openlocfilehash: a2573e2817a2d8921954264ca17bc3a7e2a010a8
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41751705"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055826"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>Tutorial: Introdução ao SignalR no ASP.NET Core
 
@@ -95,7 +95,7 @@ No final, você terá um aplicativo de chat funcionando:
 
 ## <a name="add-the-signalr-client-library"></a>Adicionar a biblioteca de clientes do SignalR
 
-A biblioteca do servidor SignalR está incluída no [Metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app). Mas você precisa obter a biblioteca de clientes JavaScript do npm, ou seja, o gerenciador de pacotes do Node.js.
+A biblioteca do servidor SignalR está incluída no [Metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app). Mas você precisa obter a biblioteca de clientes JavaScript do [npm, ou seja, o gerenciador de pacotes do Node.js](https://www.npmjs.com/get-npm).
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 

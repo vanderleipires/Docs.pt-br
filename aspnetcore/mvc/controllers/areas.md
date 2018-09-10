@@ -5,12 +5,12 @@ description: Saiba por que as áreas são um recurso do ASP.NET MVC usado para o
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/controllers/areas
-ms.openlocfilehash: 3e998af42cd6209271495dd8dd97a8aed35717a4
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b78bb5146f1ab9039fa9ff015471654510718ed6
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274821"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312212"
 ---
 # <a name="areas-in-aspnet-core"></a>Áreas no ASP.NET Core
 
@@ -30,13 +30,13 @@ Considere o uso de Áreas em um projeto MVC quando:
 
 Recursos de área:
 
-* Um aplicativo ASP.NET Core MVC pode ter qualquer quantidade de áreas
+* Um aplicativo ASP.NET Core MVC pode ter qualquer quantidade de áreas.
 
-* Cada área tem seus próprios controladores, modelos e exibições
+* Cada área tem seus próprios controladores, modelos e exibições.
 
-* Permite organizar projetos MVC grandes em vários componentes de alto nível que podem ser trabalhados de forma independente
+* As áreas permitem organizar projetos MVC grandes em vários componentes de alto nível que podem ser trabalhados de forma independente.
 
-* Dá suporte a vários controladores com o mesmo nome – desde que eles tenham *áreas* diferentes
+* As áreas dão suporte a vários controladores com o mesmo nome, desde que eles tenham *áreas* diferentes.
 
 Vamos dar uma olhada em um exemplo para ilustrar como as Áreas são criadas e usadas. Digamos que você tenha um aplicativo de loja que tem dois agrupamentos distintos de controladores e exibições: Produtos e Serviços. Uma estrutura de pastas comum para isso usando áreas do MVC tem a aparência mostrada abaixo:
 

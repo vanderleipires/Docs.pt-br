@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 8d4283c61163a586557135fddfb85440251aaf29
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2eff8c9cf2661a3ba9870e8c908d0471a6672481
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275613"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312260"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Referência de configuração do Módulo do ASP.NET Core
 
@@ -126,7 +126,7 @@ Se o Módulo do ASP.NET Core falhar ao iniciar o processo de back-end ou se o pr
 
 ## <a name="log-creation-and-redirection"></a>Criação de log e redirecionamento
 
-O Módulo do ASP.NET Core redireciona os logs stdout e stderr para o disco se os atributos `stdoutLogEnabled` e `stdoutLogFile` do elemento `aspNetCore` são definidos. As pastas no caminho `stdoutLogFile` devem existir para que o módulo crie o arquivo de log. O pool de aplicativos deve ter acesso de gravação ao local em que os logs foram gravados (use `IIS AppPool\<app_pool_name>` para fornecer permissão de gravação).
+O Módulo do ASP.NET Core redireciona as saídas de console stdout e stderr para o disco se os atributos `stdoutLogEnabled` e `stdoutLogFile` do elemento `aspNetCore` forem definidos. As pastas no caminho `stdoutLogFile` devem existir para que o módulo crie o arquivo de log. O pool de aplicativos deve ter acesso de gravação ao local em que os logs foram gravados (use `IIS AppPool\<app_pool_name>` para fornecer permissão de gravação).
 
 Logs não sofrem rotação, a menos que ocorra a reciclagem/reinicialização do processo. É responsabilidade do hoster limitar o espaço em disco consumido pelos logs.
 

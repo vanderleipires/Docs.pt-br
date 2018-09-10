@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: ff04ebeb6a682ec924afe896fd6716010a63f7cd
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 7ea944bc423001aa47ce684443b96104cf9174bf
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751581"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312241"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Tratar erros no ASP.NET Core
 
@@ -45,8 +45,8 @@ Para configurar um aplicativo para exibir uma página que mostra informações d
 
 Coloque a chamada para [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) na frente de qualquer middleware no qual você deseja capturar exceções, tais como `app.UseMvc`.
 
->[!WARNING]
-> Habilite a página de exceção do desenvolvedor **somente quando o aplicativo estiver em execução no ambiente de Desenvolvimento**. Não é recomendável compartilhar informações de exceção detalhadas publicamente quando o aplicativo é executado em produção. [Saiba mais sobre como configurar ambientes](xref:fundamentals/environments).
+> [!WARNING]
+> Habilite a página de exceção do desenvolvedor **somente quando o aplicativo estiver em execução no ambiente de desenvolvimento**. Não é recomendável compartilhar informações de exceção detalhadas publicamente quando o aplicativo é executado em produção. [Saiba mais sobre como configurar ambientes](xref:fundamentals/environments).
 
 Para ver a página de exceção do desenvolvedor, execute o aplicativo de exemplo com o ambiente definido como `Development` e adicione `?throw=true` à URL base do aplicativo. A página inclui várias guias com informações sobre a exceção e a solicitação. A primeira guia inclui um rastreamento de pilha:
 
@@ -60,7 +60,7 @@ Se a solicitação tem cookies, eles serão exibidos na guia **Cookies**. Os cab
 
 ![Cabeçalhos](error-handling/_static/developer-exception-page-headers.png)
 
-## <a name="configuring-a-custom-exception-handling-page"></a>Configurando uma página de tratamento de exceção personalizada
+## <a name="configure-a-custom-exception-handling-page"></a>Configurar uma página de tratamento de exceção personalizada
 
 Configure uma página do manipulador de exceção para usar quando o aplicativo não estiver em execução no ambiente `Development`:
 
@@ -81,13 +81,35 @@ public IActionResult Error()
 }
 ```
 
-## <a name="configuring-status-code-pages"></a>Configurando páginas de código de status
+## <a name="configure-status-code-pages"></a>Configurar páginas de código de status
 
-Por padrão, o aplicativo não fornece uma página de código de status detalhada para códigos de status HTTP, como *404 Não Encontrado*. Para fornecer páginas de código de status, configure o middleware de páginas de código de status, adicionando uma linha ao método `Startup.Configure`:
+Por padrão, o aplicativo não fornece uma página de código de status detalhada para códigos de status HTTP, como *404 Não Encontrado*. Para fornecer páginas de código de status, use o middleware das páginas de código de status.
+
+::: moniker range=">= aspnetcore-2.1"
+
+O middleware é disponibilizado pelo pacote [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/), que está disponível no [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app).
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+O middleware é disponibilizado pelo pacote [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/), que está disponível no [metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage).
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+O middleware é disponibilizado adicionando uma referência de pacote para o pacote [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) no arquivo de projeto.
+
+::: moniker-end
+
+Adicione uma linha ao método `Startup.Configure`:
 
 ```csharp
 app.UseStatusCodePages();
 ```
+
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePages*> deve ser chamado antes dos middlewares de tratamento da solicitação no pipeline (por exemplo, o middleware de arquivos estáticos e o middleware MVC).
 
 Por padrão, o middleware de páginas de código de status adiciona manipuladores, somente de texto, para os códigos de status comuns, como o 404:
 
