@@ -5,12 +5,12 @@ description: Um guia que fornece orientação de ponta a ponta sobre a criação
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: abd7167b313e131dc8b7ea6a49b774e14ae53bb9
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: 710e65a048fdc062219e90b0db323e8e96fd8e9d
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42910003"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340128"
 ---
 # <a name="deploy-an-app-to-app-service"></a>Implantar um aplicativo de serviço de aplicativo
 
@@ -234,7 +234,7 @@ Nesta seção, as tarefas a seguir foram concluídas:
 * Implantasse uma atualização para o slot de preparo.
 * Trocado os slots de preparo e produção.
 
-Na próxima seção, você aprenderá a criar um pipeline de DevOps com o Azure e o Visual Studio Team Services.
+Na próxima seção, você aprenderá a criar um pipeline de DevOps com Pipelines do Azure.
 
 ## <a name="additional-reading"></a>Leitura adicional
 

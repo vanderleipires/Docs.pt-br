@@ -5,12 +5,12 @@ description: Um guia que fornece orientação de ponta a ponta sobre a criação
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: a63e97d9ab9eb0ed2fbd30e8c2e033f0c048d33e
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 5529068b83db475315784571fbf4151d7ecd0d5d
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312295"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340154"
 ---
 # <a name="tools-and-downloads"></a>Ferramentas e downloads
 
@@ -21,7 +21,7 @@ O Azure tem várias interfaces para provisionamento e gerenciamento de recursos,
 As assinaturas a seguir são necessárias:
 
 * Azure &mdash; se você não tiver uma conta [Obtenha uma avaliação gratuita](https://azure.microsoft.com/free/).
-* Visual Studio Team Services (VSTS) &mdash; essa conta é criada no capítulo 4.
+* Os serviços do Azure DevOps &mdash; sua assinatura de DevOps do Azure e a organização é criado no capítulo 4.
 * GitHub &mdash; se você não tiver uma conta [Inscreva-se gratuitamente](https://github.com/join).
 
 As ferramentas a seguir são necessárias:
