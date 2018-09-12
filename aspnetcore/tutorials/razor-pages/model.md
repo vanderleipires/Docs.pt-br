@@ -5,12 +5,12 @@ description: Saiba como adicionar classes de gerenciamento de filmes em um banco
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 9e0fd0ee98c84bb2336749640b2a3c103e4639b6
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: fb3a287725fa68ff9feb9935d7e6c5c2b8316517
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938320"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893114"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 
@@ -103,14 +103,14 @@ Add-Migration Initial
 Update-Database
 ```
 
-Como alternativa, os seguintes comandos da CLI do .NET Core podem ser usados:
+Como alternativa, é possível usar os seguintes comandos do .NET Core CLI na pasta do projeto:
 
 ```console
 dotnet ef migrations add Initial
 dotnet ef database update
 ```
 
-Ignore a seguinte mensagem de aviso, você corrigirá isso no próximo tutorial:
+Ignore a mensagem de aviso a seguir, pois você corrigirá isso em um tutorial posterior:
 
 `Microsoft.EntityFrameworkCore.Model.Validation[30000]`
 

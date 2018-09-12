@@ -4,14 +4,14 @@ author: guardrex
 description: Saiba mais sobre o host da Web no ASP.NET Core, que é responsável pelo gerenciamento de tempo de vida e pela inicialização do aplicativo.
 ms.author: riande
 ms.custom: mvc
-ms.date: 06/19/2018
+ms.date: 09/01/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: abb687c864ebe863c2bba265131c29939961cac0
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 7440ab26534840b190a346614f645860fc2b7d78
+ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336060"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44089893"
 ---
 # <a name="aspnet-core-web-host"></a>Host da Web do ASP.NET Core
 
@@ -80,6 +80,25 @@ A configuração definida por `CreateDefaultBuilder` pode ser substituída e aum
         ...
     ```
 
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+* A seguinte chamada para `ConfigureKestrel` substitui o padrão [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) de 30 milhões de bytes, estabelecido quando o Kestrel foi configurado pelo `CreateDefaultBuilder`:
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.MaxRequestBodySize = 20000000;
+        });
+        ...
+    ```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 * A seguinte chamada a [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) substitui o padrão [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) de 30.000.000 bytes estabelecido quando Kestrel foi configurado por `CreateDefaultBuilder`:
 
     ```csharp
@@ -90,6 +109,10 @@ A configuração definida por `CreateDefaultBuilder` pode ser substituída e aum
         });
         ...
     ```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
 
 A *raiz do conteúdo* determina onde o host procura por arquivos de conteúdo, como arquivos de exibição do MVC. Quando o aplicativo é iniciado na pasta raiz do projeto, essa pasta é usada como a raiz do conteúdo. Esse é o padrão usado no [Visual Studio](https://www.visualstudio.com/) e nos [novos modelos dotnet](/dotnet/core/tools/dotnet-new).
 

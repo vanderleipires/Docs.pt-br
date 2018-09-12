@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 465d33cc1f19428d5189b3a6fa7088ac402a9751
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 923d17be9c2bb1a9d338599d1cdc4c34302cddab
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927965"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040089"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Inicialização do aplicativo no ASP.NET Core
 
@@ -54,7 +54,9 @@ O método [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupba
 
 * Opcional
 * Chamado pelo host da Web antes do `Configure` método para configurar os serviços do aplicativo.
-* Quando as [opções de configuração](xref:fundamentals/configuration/index) são definidas por convenção.
+* Onde as [opções de configuração](xref:fundamentals/configuration/index) são definidas por convenção.
+
+O padrão típico consiste em chamar todos os métodos `Add{Service}` e, em seguida, chamar todos os métodos `services.Configure{Service}`. Por exemplo, veja o tópico [Configurar serviços de identidade](xref:security/authentication/identity#pw).
 
 Adicionar serviços ao contêiner de serviços os torna disponíveis dentro do aplicativo e no método `Configure`. Os serviços são resolvidos via [injeção de dependência](xref:fundamentals/dependency-injection) ou [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
@@ -66,7 +68,7 @@ Para recursos que exigem uma configuração significativa, há métodos de exten
 
 ## <a name="the-configure-method"></a>O método Configure
 
-O método [Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) é usado para especificar como o aplicativo responde as solicitações HTTP. O pipeline de solicitação é configurado adicionando componentes de [middleware](xref:fundamentals/middleware/index) a uma instância de [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder). `IApplicationBuilder` está disponível para o método `Configure`, mas não é registrado no contêiner de serviço. A hospedagem cria um `IApplicationBuilder` e o passa diretamente para `Configure` ([fonte de referência](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
+O método [Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) é usado para especificar como o aplicativo responde as solicitações HTTP. O pipeline de solicitação é configurado adicionando componentes de [middleware](xref:fundamentals/middleware/index) a uma instância de [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder). `IApplicationBuilder` está disponível para o método `Configure`, mas não é registrado no contêiner de serviço. A hospedagem cria um `IApplicationBuilder` e o passa diretamente para `Configure`.
 
 Os [modelos do ASP.NET Core](/dotnet/core/tools/dotnet-new) configuram o pipeline com suporte para uma página de exceção de desenvolvedor, o [BrowserLink](http://vswebessentials.com/features/browserlink), páginas de erro, arquivos estáticos e o ASP.NET Core MVC:
 
@@ -86,7 +88,7 @@ Os métodos de conveniência [ConfigureServices](/dotnet/api/microsoft.aspnetcor
 
 [!code-csharp[](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
-## <a name="startup-filters"></a>Filtros de inicialização
+## <a name="extend-startup-with-startup-filters"></a>Estender a inicialização com filtros de inicialização
 
 Use [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) para configurar o middleware no início ou no final do pipeline do middleware [Configure](#the-configure-method) de um aplicativo. `IStartupFilter` é útil para garantir que um middleware seja executado antes ou depois do middleware adicionado pelas bibliotecas no início ou no final do pipeline de processamento de solicitação do aplicativo.
 
@@ -102,9 +104,9 @@ O `RequestSetOptionsMiddleware` é configurado na classe `RequestSetOptionsStart
 
 [!code-csharp[](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
 
-O `IStartupFilter` é registrado no contêiner de serviço em `ConfigureServices`:
+O `IStartupFilter` está registrado no contêiner de serviço do [IWebHostBuilder.ConfigureServices](xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.ConfigureServices*) para demonstrar como o filtro de inicialização aumenta a `Startup` externa da classe `Startup`:
 
-[!code-csharp[](startup/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](startup/sample/Program.cs?name=snippet1&highlight=4-5)]
 
 Quando um parâmetro de cadeia de caracteres de consulta para `option` é fornecido, o middleware processa a atribuição de valor antes que o middleware do MVC renderize a resposta:
 
@@ -126,4 +128,3 @@ Uma implementação [IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.i
 * <xref:fundamentals/middleware/index>
 * <xref:fundamentals/logging/index>
 * <xref:fundamentals/configuration/index>
-* [Classe StartupLoader: método FindStartupType (fonte de referência)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116)

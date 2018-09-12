@@ -6,18 +6,20 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: aba9ed41ac3650d8c645d71fb772e2a8e4f32f02
-ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
+ms.openlocfilehash: d94640075f6fe5db06672f7dc641470c71076a16
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39254849"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040004"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Host ASP.NET Core no Linux com Nginx
 
 Por [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
 Este guia explica como configurar um ambiente ASP.NET Core pronto para produção em um servidor Ubuntu 16.04. Essas instruções provavelmente funcionarão com versões mais recentes do Ubuntu, mas as instruções não foram testadas com versões mais recentes.
+
+Para saber mais sobre outras distribuições do Linux compatíveis com o ASP.NET Core, veja [Pré-requisitos para o .NET Core no Linux](/dotnet/core/linux-prerequisites).
 
 > [!NOTE]
 > Para Ubuntu 14.04, o *supervisord* é recomendado como uma solução para monitorar o processo do Kestrel. O *systemd* não está disponível no Ubuntu 14.04. Para obter instruções Ubuntu 14.04, veja a [versão anterior deste tópico](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md).
@@ -383,6 +385,7 @@ Adicione a linha `add_header X-Content-Type-Options "nosniff";` e salve o arquiv
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
+* [Pré-requisitos para o .NET Core no Linux](/dotnet/core/linux-prerequisites)
 * [Nginx: versões binárias: pacotes Debian/Ubuntu oficiais](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)
 * [Configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer)
 * [NGINX: usando o cabeçalho Encaminhado](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)
