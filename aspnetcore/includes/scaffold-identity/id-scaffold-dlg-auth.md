@@ -19,7 +19,7 @@ Observação: Se você estiver criando um novo contexto de usuário, você não 
 
 # <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
 
-Se você já não tiver instalado o scaffolder ASP.NET, instale-o agora:
+Se você já não tiver instalado o scaffolder de ASP.NET Core, instale-o agora:
 
 ```cli
 dotnet tool install -g dotnet-aspnet-codegenerator
@@ -44,4 +44,9 @@ Na pasta do projeto, execute o scaffolder de identidade com as opções desejada
 dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files Account.Register
 ```
 
+O PowerShell usa o ponto e vírgula como separador de comando. Ao usar o powershell, a ponto e vírgula na lista de arquivos de escape ou coloque a lista de arquivos entre aspas duplas. Por exemplo:
+
+```cli
+dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
+```
 -------------

@@ -5,12 +5,12 @@ description: Saiba como criar um aplicativo páginas Razor com dados protegidos 
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 9f264daa4a6b63478077cadb06a697f274014199
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: a263b092194763ae4ff3360fc0d76e8ee494b5a6
+ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336005"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44510357"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -268,6 +268,10 @@ Atualize a exibição de detalhes para que os gerentes possam aprovar ou rejeita
 Atualize o modelo de página de detalhes:
 
 [!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Details.cshtml.cs?name=snippet)]
+
+## <a name="add-a-user-to-a-role"></a>Adicionar um usuário a uma função
+
+As funções são armazenadas no cookie de identidade. As alterações feitas ao usuário as funções não são mantidas para o cookie até que o cookie é regenerado ou o usuário sai e faz logon. Aplicativos que adicionar os usuários a uma função devem chamar `SignInManager.RefreshSignInAsync(user)` para atualizar o cookie.
 
 ## <a name="test-the-completed-app"></a>Testar o aplicativo concluído
 
