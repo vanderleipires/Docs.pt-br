@@ -7,16 +7,14 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/10/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: 205ca8ca228dcc2cc77f7e9b6431943851a3b152
-ms.sourcegitcommit: 1a2fc47fb5d3da0f2a3c3269613ab20eb3b0da2c
+ms.openlocfilehash: ef84ede2ed45ddc3b64d4ce8f5bd0018a681faf6
+ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44373313"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44749315"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>Cliente de .NET do SignalR do ASP.NET Core
-
-Por [Rachel Appel](http://twitter.com/rachelappel)
 
 A biblioteca de cliente .NET de SignalR do ASP.NET Core permite que você se comunicar com os hubs de SignalR em aplicativos .NET.
 
@@ -39,7 +37,26 @@ Install-Package Microsoft.AspNetCore.SignalR.Client
 
 Para estabelecer uma conexão, cria uma `HubConnectionBuilder` e chamar `Build`. A URL do hub, protocolo, o tipo de transporte, nível de log, cabeçalhos e outras opções podem ser configuradas durante a criação de uma conexão. Configurar as opções necessárias, inserindo qualquer um dos `HubConnectionBuilder` métodos em `Build`. Iniciar a conexão com `StartAsync`.
 
-[!code-csharp[Build hub connection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_MainWindowClass&highlight=14-16,32)]
+[!code-csharp[Build hub connection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_MainWindowClass&highlight=15-17,39)]
+
+## <a name="handle-lost-connection"></a>Lidar com a conexão perdida
+
+Use o <xref:Microsoft.AspNetCore.SignalR.Client.HubConnection.Closed> eventos para responder a uma conexão perdida. Por exemplo, você talvez queira automatizar a reconexão.
+
+O `Closed` evento requer um delegado que retorna um `Task`, que permite que o código assíncrono executar sem usar `async void`. Para satisfazer a assinatura do delegado em um `Closed` manipulador de eventos que é executado de forma síncrona, retorna `Task.CompletedTask`:
+
+```csharp
+connection.Closed += (error) => {
+    // Do your close logic.
+    return Task.CompletedTask;
+};
+```
+
+O principal motivo para o suporte assíncrono é portanto, você pode reiniciar a conexão. Iniciar uma conexão é uma ação assíncrona.
+
+Em um `Closed` manipulador que reinicia a conexão, considere aguardar algum atraso aleatório evitar sobrecarregar o servidor, conforme mostrado no exemplo a seguir:
+
+[!code-csharp[Use Closed event handler to automate reconnection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_ClosedRestart)]
 
 ## <a name="call-hub-methods-from-client"></a>Chamar métodos de hub do cliente
 
