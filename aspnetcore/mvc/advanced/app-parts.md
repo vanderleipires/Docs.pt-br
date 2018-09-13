@@ -50,7 +50,7 @@ services.AddMvc()
 
         if (dependentLibrary != null)
         {
-           p.ApplicationParts.Remove(dependentLibrary);
+           apm.ApplicationParts.Remove(dependentLibrary);
         }
     })
 ```
