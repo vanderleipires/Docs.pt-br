@@ -5,12 +5,12 @@ description: Saiba como criar um aplicativo páginas Razor com dados protegidos 
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: a263b092194763ae4ff3360fc0d76e8ee494b5a6
-ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
+ms.openlocfilehash: e4a54c95aa8131441d29a835751ce6241aac2ed3
+ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44510357"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601763"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -269,9 +269,12 @@ Atualize o modelo de página de detalhes:
 
 [!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Details.cshtml.cs?name=snippet)]
 
-## <a name="add-a-user-to-a-role"></a>Adicionar um usuário a uma função
+## <a name="add-or-remove-a-user-to-a-role"></a>Adicionar ou remover um usuário a uma função
 
-As funções são armazenadas no cookie de identidade. As alterações feitas ao usuário as funções não são mantidas para o cookie até que o cookie é regenerado ou o usuário sai e faz logon. Aplicativos que adicionar os usuários a uma função devem chamar `SignInManager.RefreshSignInAsync(user)` para atualizar o cookie.
+Ver [esse problema](https://github.com/aspnet/Docs/issues/8502) para obter informações sobre:
+
+* Remoção de privilégios de um usuário. Por exemplo um silenciament um usuário em um aplicativo de bate-papo.
+* Adicionando privilégios a um usuário.
 
 ## <a name="test-the-completed-app"></a>Testar o aplicativo concluído
 
