@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: d9bf8c7cea20bf38aacf432465d7b33514bcd64d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6c23e5ab21dbb94c69ba50200a1d76647e22410a
+ms.sourcegitcommit: 4afaa55918262c8dcbd3efa9584959a731b47681
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277287"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45613447"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>Adicionar um novo campo em uma página Razor no ASP.NET Core
 
@@ -29,12 +29,15 @@ Verificação automática de esquema/modelo em sincronia torna mais fácil encon
 ## <a name="adding-a-rating-property-to-the-movie-model"></a>Adicionando uma propriedade de classificação ao modelo de filme
 
 Abra o arquivo *Models/Movie.cs* e adicione uma propriedade `Rating`:
+
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
 
 ::: moniker-end
