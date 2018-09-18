@@ -5,12 +5,12 @@ description: Saiba como o hash de senhas usando as APIs de proteção de dados d
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/password-hashing
-ms.openlocfilehash: 882ac9b256b0cdf5fd19dc4bd2757cac7e8ecad3
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 70301ffffbaaf3c5ff0642b19b80e40be83aa438
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538369"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010956"
 ---
 # <a name="hash-passwords-in-aspnet-core"></a>Hash de senhas no ASP.NET Core
 
@@ -26,4 +26,4 @@ O pacote no momento, oferece um método `KeyDerivation.Pbkdf2` que permite o has
 
 [!code-csharp[](password-hashing/samples/passwordhasher.cs)]
 
-Consulte [código de origem] (https://github.com/aspnet/Identity/blob/master/src/Core/PasswordHasher.cs) para o ASP.NET Core Identity `PasswordHasher` caso de uso de tipo para um mundo real.
+Consulte a [código-fonte](https://github.com/aspnet/Identity/blob/master/src/Core/PasswordHasher.cs) para o ASP.NET Core Identity `PasswordHasher` caso de uso de tipo para um mundo real.

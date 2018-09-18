@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
 uid: spa/react
-ms.openlocfilehash: 721ea1d4197ddd17dde657924f12dee2a6858d97
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c83b119e81d7d0abfd727cb8c72abb09763d9448
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291499"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011411"
 ---
 # <a name="use-the-react-project-template-with-aspnet-core"></a>Usar o modelo de projeto do React com o ASP.NET Core
 
@@ -34,9 +34,10 @@ O modelo é equivalente à criação de dois projetos: um projeto do ASP.NET Cor
 Se usar o ASP.NET Core 2.0, verifique se você [instalou o modelo de projeto do React atualizado](xref:spa/index#installation).
 
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
 
-Se você tiver o ASP.NET Core 2.1 instalado, não é necessário para instalar o modelo de projeto reagir.
+Se você tiver o ASP.NET Core 2.1 instalado, não será necessário instalar o modelo de projeto React.
 
 ::: moniker-end
 

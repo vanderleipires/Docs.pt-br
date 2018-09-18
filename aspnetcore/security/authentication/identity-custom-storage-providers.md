@@ -3,14 +3,14 @@ title: Provedores de armazenamento personalizados para ASP.NET Core Identity
 author: ardalis
 description: Saiba como configurar provedores de armazenamento personalizados para ASP.NET Core Identity.
 ms.author: riande
-ms.date: 05/24/2017
+ms.date: 09/17/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 4b210a52ae9761bb838dd5611e86ce8f71345499
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: db51c39cc700f93917f54c80adbfe7922ffcd67e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824479"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011255"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizados para ASP.NET Core Identity
 
@@ -59,7 +59,7 @@ Ao criar uma nova instância da `UserManager` ou `RoleManager` você fornecer o 
 
 ### <a name="users"></a>Usuários
 
-Usuários registrados do seu site da web. O [IdentityUser](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser) tipo pode ser estendido ou usado como um exemplo para seu próprio tipo personalizado. Você não precisa herdar de um tipo específico para implementar sua própria solução de armazenamento de identidade personalizada.
+Usuários registrados do seu site da web. O [IdentityUser](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser) tipo pode ser estendido ou usado como um exemplo para seu próprio tipo personalizado. Você não precisa herdar de um tipo específico para implementar sua própria solução de armazenamento de identidade personalizada.
 
 ### <a name="user-claims"></a>Declarações de usuário
 
@@ -67,11 +67,11 @@ Um conjunto de instruções (ou [declarações](/dotnet/api/system.security.clai
 
 ### <a name="user-logins"></a>Logons de usuário
 
-Informações sobre o provedor de autenticação externa (como Facebook ou uma conta da Microsoft) para usar ao fazer logon em um usuário. [Exemplo](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuserlogin)
+Informações sobre o provedor de autenticação externa (como Facebook ou uma conta da Microsoft) para usar ao fazer logon em um usuário. [Exemplo](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuserlogin)
 
 ### <a name="roles"></a>Funções
 
-Grupos de autorização para seu site. Inclui o nome da função Id e a função (como "Admin" ou "Employee"). [Exemplo](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityrole)
+Grupos de autorização para seu site. Inclui o nome da função Id e a função (como "Admin" ou "Employee"). [Exemplo](/dotnet/api/microsoft.aspnet.identity.corecompat.identityrole)
 
 ## <a name="the-data-access-layer"></a>A camada de acesso a dados
 
@@ -83,11 +83,11 @@ A camada de acesso a dados fornece a lógica para salvar os dados de identidade 
 
 ### <a name="context-class"></a>Classe de contexto
 
-Encapsula as informações para conectar-se ao mecanismo de persistência e executar consultas. Várias classes de dados requerem uma instância dessa classe, normalmente é fornecido por meio da injeção de dependência. [Exemplo](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identitydbcontext-1).
+Encapsula as informações para conectar-se ao mecanismo de persistência e executar consultas. Várias classes de dados requerem uma instância dessa classe, normalmente é fornecido por meio da injeção de dependência. [Exemplo](/dotnet/api/microsoft.aspnet.identity.corecompat.identitydbcontext-1).
 
 ### <a name="user-storage"></a>Armazenamento de usuário
 
-Armazena e recupera informações de usuário (por exemplo, o hash de nome e a senha do usuário). [Exemplo](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+Armazena e recupera informações de usuário (por exemplo, o hash de nome e a senha do usuário). [Exemplo](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="role-storage"></a>Armazenamento de função
 
@@ -95,15 +95,15 @@ Armazena e recupera informações de função (como o nome da função). [Exempl
 
 ### <a name="userclaims-storage"></a>Armazenamento de UserClaims
 
-Armazena e recupera informações de declaração de usuário (como o tipo de declaração e o valor). [Exemplo](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+Armazena e recupera informações de declaração de usuário (como o tipo de declaração e o valor). [Exemplo](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="userlogins-storage"></a>Armazenamento de UserLogins
 
-Armazena e recupera informações de logon do usuário (como um provedor de autenticação externa). [Exemplo](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+Armazena e recupera informações de logon do usuário (como um provedor de autenticação externa). [Exemplo](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="userrole-storage"></a>Armazenamento de UserRole
 
-Armazena e recupera a quais funções são atribuídas a quais usuários. [Exemplo](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+Armazena e recupera a quais funções são atribuídas a quais usuários. [Exemplo](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 **Dica:** implementar apenas as classes que você pretende usar em seu aplicativo.
 
@@ -115,7 +115,7 @@ A lógica de implementação para criar o usuário está no `_usersTable.CreateA
 
 ## <a name="customize-the-user-class"></a>Personalizar a classe de usuário
 
-Ao implementar um provedor de armazenamento, crie uma classe de usuário que é equivalente à [ `IdentityUser` classe](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser).
+Ao implementar um provedor de armazenamento, crie uma classe de usuário que é equivalente à [classe IdentityUser](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser).
 
 No mínimo, sua classe de usuário deve incluir um `Id` e um `UserName` propriedade.
 
@@ -185,7 +185,7 @@ public class UserStore : IUserStore<IdentityUser>,
 
 ### <a name="identityuserclaim-identityuserlogin-and-identityuserrole"></a>IdentityUserClaim, IdentityUserLogin e IdentityUserRole
 
-O `Microsoft.AspNet.Identity.EntityFramework` namespace contém implementações do [IdentityUserClaim](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserclaim-1), [IdentityUserLogin](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuserlogin), e [IdentityUserRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserrole-1) classes. Se você estiver usando esses recursos, você talvez queira criar suas próprias versões dessas classes e definir as propriedades para seu aplicativo. No entanto, às vezes, é mais eficiente para não carregar essas entidades na memória ao executar operações básicas (como adicionar ou remover a declaração do usuário). Em vez disso, as classes de armazenamento de back-end podem executar essas operações diretamente na fonte de dados. Por exemplo, o `UserStore.GetClaimsAsync` método pode chamar o `userClaimTable.FindByUserId(user.Id)` método para executar uma consulta em que diretamente da tabela e retorna uma lista de declarações.
+O `Microsoft.AspNet.Identity.EntityFramework` namespace contém implementações do [IdentityUserClaim](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserclaim-1), [IdentityUserLogin](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuserlogin), e [IdentityUserRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserrole-1) classes. Se você estiver usando esses recursos, você talvez queira criar suas próprias versões dessas classes e definir as propriedades para seu aplicativo. No entanto, às vezes, é mais eficiente para não carregar essas entidades na memória ao executar operações básicas (como adicionar ou remover a declaração do usuário). Em vez disso, as classes de armazenamento de back-end podem executar essas operações diretamente na fonte de dados. Por exemplo, o `UserStore.GetClaimsAsync` método pode chamar o `userClaimTable.FindByUserId(user.Id)` método para executar uma consulta em que diretamente da tabela e retorna uma lista de declarações.
 
 ## <a name="customize-the-role-class"></a>Personalizar a classe de função
 

@@ -4,14 +4,14 @@ author: guardrex
 description: Descubra como as convenções do provedor de modelo de aplicativo e rota ajudam você a controlar o roteamento, a descoberta e o processamento de página.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 04/12/2018
+ms.date: 09/17/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: 5a5d580b4260767e411571ccacc19d6e8fe12559
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: ea4f785dc8a64b430e312fd122a4d3184b61949e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "42909150"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011856"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>Convenções de rota e aplicativo das Páginas do Razor no ASP.NET Core
 
@@ -69,6 +69,26 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+## <a name="route-order"></a>Ordem de rota
+
+As rotas especificam um <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> para processamento (rota correspondente).
+
+| Pedido            | Comportamento |
+| :--------------: | -------- |
+| -1               | A rota é processada antes de outras rotas são processadas. |
+| 0                | Ordem não for especificada (valor padrão). Não atribui `Order` (`Order = null`) usa como padrão a rota `Order` como 0 (zero) para processamento. |
+| 1, 2, &hellip; n | Especifica a ordem de processamento de rota. |
+
+Processamento de rota é estabelecido por convenção:
+
+* As rotas são processadas em ordem sequencial (-1, 0, 1, 2, &hellip; n).
+* Quando as rotas têm a mesma `Order`, a maioria dos rota específica é correspondida primeiro, seguido por rotas menos específicas.
+* Quando as rotas com o mesmo `Order` e o mesmo número de parâmetros corresponde a uma URL de solicitação, as rotas são processadas na ordem em que eles forem adicionados à <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.PageConventionCollection>.
+
+Se possível, evite dependendo de uma ordem de processamento de rota estabelecido. Em geral, o roteamento seleciona a rota correta com a URL correspondente. Se você deve definir a rota `Order` propriedades para rotear solicitações corretamente, o esquema do aplicativo roteamento é provavelmente confuso para os clientes e frágil para manter. Para simplificar o esquema do aplicativo roteamento de busca. O aplicativo de exemplo requer uma rota explícita de processamento de pedido para demonstrar os vários cenários de roteamento usando um único aplicativo. No entanto, você deve tentar evitar a prática de rota de configuração `Order` em aplicativos de produção.
+
+Roteamento de páginas do Razor e compartilhar uma implementação do roteamento de controlador MVC. Informações sobre a ordem de rota nos tópicos MVC estão disponíveis em [roteamento para ações do controlador: ordenação de rotas de atributo](xref:mvc/controllers/routing#ordering-attribute-routes).
+
 ## <a name="model-conventions"></a>Convenções de modelo
 
 Adicione um representante para [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) para adicionar as [convenções de modelo](xref:mvc/controllers/application-model#conventions) que se aplicam às Páginas Razor.
@@ -81,8 +101,13 @@ O aplicativo de exemplo adiciona um modelo de rota `{globalTemplate?}` a todas a
 
 [!code-csharp[](razor-pages-conventions/sample/Conventions/GlobalTemplatePageRouteModelConvention.cs?name=snippet1)]
 
-> [!NOTE]
-> A propriedade `Order` do `AttributeRouteModel` é definida como `-1`. Isso garante que esse modelo tenha prioridade para a primeira posição de valor de dados de rota quando é fornecido um único valor de rota e também tenha prioridade sobre as rotas de Páginas Razor geradas automaticamente. Por exemplo, a amostra adiciona um modelo de rota `{aboutTemplate?}` mais adiante no tópico. O modelo `{aboutTemplate?}` recebe uma `Order` de `1`. Quando a página About é solicitada no `/About/RouteDataValue`, "RouteDataValue" é carregado no `RouteData.Values["globalTemplate"]` (`Order = -1`) e não `RouteData.Values["aboutTemplate"]` (`Order = 1`) devido à configuração da propriedade `Order`.
+A propriedade <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> do <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> é definida como `1`. Isso garante que a rota correspondência de comportamento no aplicativo de exemplo a seguir:
+
+* Um modelo de rota para `TheContactPage/{text?}` é adicionado posteriormente no tópico. A rota de página Contact tem uma ordem padrão de `null` (`Order = 0`), para que ele corresponda ao antes do `{globalTemplate?}` modelo de rota.
+* Um `{aboutTemplate?}` modelo de rota é adicionado posteriormente no tópico. O modelo `{aboutTemplate?}` recebe uma `Order` de `2`. Quando a página About é solicitada no `/About/RouteDataValue`, "RouteDataValue" é carregado no `RouteData.Values["globalTemplate"]` (`Order = 1`) e não `RouteData.Values["aboutTemplate"]` (`Order = 2`) devido à configuração da propriedade `Order`.
+* Um `{otherPagesTemplate?}` modelo de rota é adicionado posteriormente no tópico. O modelo `{otherPagesTemplate?}` recebe uma `Order` de `2`. Quando qualquer página na *páginas/OtherPages* pasta for solicitada com um parâmetro de rota (por exemplo, `/OtherPages/Page1/RouteDataValue`), "RouteDataValue" é carregado no `RouteData.Values["globalTemplate"]` (`Order = 1`) e não `RouteData.Values["otherPagesTemplate"]` (`Order = 2`) devido à configuração de `Order` propriedade.
+
+Sempre que possível, não defina a `Order`, que resulta em `Order = 0`. Dependem de roteamento para selecionar a rota correta.
 
 As opções de Páginas Razor, como a adição de [Convenções](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions), são adicionados quando o MVC é adicionado à coleção de serviços em `Startup.ConfigureServices`. Para obter um exemplo, confira o [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/sample/).
 
@@ -111,6 +136,7 @@ Solicite a página About da amostra em `localhost:5000/About` e inspecione os ca
 ![Os cabeçalhos de resposta da página About mostram que o GlobalHeader foi adicionado.](razor-pages-conventions/_static/about-page-global-header.png)
 
 ::: moniker range=">= aspnetcore-2.1"
+
 **Adicionar uma convenção de modelo de manipulador a todas as páginas**
 
 Use [Convenções](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) para criar e adicionar um [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention) à coleção de instâncias de [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) que são aplicadas durante a construção do modelo de manipulador de página.
@@ -135,6 +161,7 @@ services.AddMvc()
             options.Conventions.Add(new GlobalPageHandlerModelConvention());
         });
 ```
+
 ::: moniker-end
 
 ## <a name="page-route-action-conventions"></a>Convenções de ação da rota de página
@@ -149,8 +176,9 @@ O aplicativo de exemplo usa `AddFolderRouteModelConvention` para adicionar um mo
 
 [!code-csharp[](razor-pages-conventions/sample/Startup.cs?name=snippet3)]
 
-> [!NOTE]
-> A propriedade `Order` do `AttributeRouteModel` é definida como `1`. Isso garante que o modelo para `{globalTemplate?}` (definido anteriormente no tópico) tenha prioridade para a primeira posição de valor de dados de rota quando um único valor de rota é fornecido. Se a página Page1 é solicitada no `/OtherPages/Page1/RouteDataValue`, "RouteDataValue" é carregado no `RouteData.Values["globalTemplate"]` (`Order = -1`) e não `RouteData.Values["otherPagesTemplate"]` (`Order = 1`) devido à configuração da propriedade `Order`.
+A propriedade <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> do <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> é definida como `2`. Isso garante que o modelo para `{globalTemplate?}` (definido anteriormente no tópico para `1`) tem prioridade para os dados de rota a primeira posição de valor quando um único valor de rota é fornecido. Se uma página na *páginas/OtherPages* pasta for solicitada com um valor de parâmetro de rota (por exemplo, `/OtherPages/Page1/RouteDataValue`), "RouteDataValue" é carregado no `RouteData.Values["globalTemplate"]` (`Order = 1`) e não `RouteData.Values["otherPagesTemplate"]` (`Order = 2`) devido à configuração de `Order` propriedade.
+
+Sempre que possível, não defina a `Order`, que resulta em `Order = 0`. Dependem de roteamento para selecionar a rota correta.
 
 Solicite a página Page1 da amostra em `localhost:5000/OtherPages/Page1/GlobalRouteValue/OtherPagesRouteValue` e inspecione o resultado:
 
@@ -164,8 +192,9 @@ O aplicativo de exemplo usa `AddPageRouteModelConvention` para adicionar um mode
 
 [!code-csharp[](razor-pages-conventions/sample/Startup.cs?name=snippet4)]
 
-> [!NOTE]
-> A propriedade `Order` do `AttributeRouteModel` é definida como `1`. Isso garante que o modelo para `{globalTemplate?}` (definido anteriormente no tópico) tenha prioridade para a primeira posição de valor de dados de rota quando um único valor de rota é fornecido. Se a página About é solicitada no `/About/RouteDataValue`, "RouteDataValue" é carregado no `RouteData.Values["globalTemplate"]` (`Order = -1`) e não `RouteData.Values["aboutTemplate"]` (`Order = 1`) devido à configuração da propriedade `Order`.
+A propriedade <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> do <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> é definida como `2`. Isso garante que o modelo para `{globalTemplate?}` (definido anteriormente no tópico para `1`) tem prioridade para os dados de rota a primeira posição de valor quando um único valor de rota é fornecido. Se a página About é solicitada com um valor de parâmetro de rota no `/About/RouteDataValue`, "RouteDataValue" é carregado no `RouteData.Values["globalTemplate"]` (`Order = 1`) e não `RouteData.Values["aboutTemplate"]` (`Order = 2`) devido à configuração de `Order` propriedade.
+
+Sempre que possível, não defina a `Order`, que resulta em `Order = 0`. Dependem de roteamento para selecionar a rota correta.
 
 Solicite a página About da amostra em `localhost:5000/About/GlobalRouteValue/AboutRouteValue` e inspecione o resultado:
 
