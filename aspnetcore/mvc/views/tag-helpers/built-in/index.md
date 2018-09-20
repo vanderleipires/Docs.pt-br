@@ -3,14 +3,14 @@ title: Auxiliares de marcação internos do ASP.NET Core
 author: pkellner
 description: Descubra como os auxiliares de marcação internos do ASP.NET Core aumentam sua produtividade.
 ms.author: riande
-ms.date: 09/13/2017
+ms.date: 09/18/2018
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 4f2ebf1600f42847db1c1f9517787b020d2e86c9
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5d9425e0b68578c86a6f9a691322e0bb63a860fb
+ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279162"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46292304"
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
@@ -59,5 +59,5 @@ O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar s
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Desenvolvimento do lado do cliente](xref:client-side/index)
-* [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
+* <xref:mvc/views/tag-helpers/intro>
+* <xref:mvc/views/tag-helpers/th-components>
