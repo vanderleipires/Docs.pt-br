@@ -7,14 +7,16 @@ ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.author: riande
 ms.date: 09/20/2017
 ms.technology: aspnet
-ms.openlocfilehash: fa7fe92ae0a6545986f816c04c18e659718846f1
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8f45f73c691600ae5138170db5cc4794246c4f2e
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829999"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482964"
 ---
 # <a name="aspnet-tutorials"></a>Tutoriais do ASP.NET
+
+[!INCLUDE[](~/includes/rp.md)]
 
 Os seguintes guias passo a passo para desenvolvimento de aplicativos do ASP.NET estão disponíveis.
 
@@ -23,11 +25,9 @@ Os seguintes guias passo a passo para desenvolvimento de aplicativos do ASP.NET 
 
 ## <a name="web-forms"></a>Web Forms
 
-* [Introdução ao Web Forms do ASP.NET 4.5 e ao Visual Studio 2013](web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/index.md)
-* [Criação de uma página de Web Forms básica no Visual Studio 2013](web-forms/overview/getting-started/creating-a-basic-web-forms-page.md)
 * [Edição de código de Web Forms do ASP.NET no Visual Studio 2013](web-forms/overview/getting-started/code-editing-in-web-forms-pages.md)
 * [Uso do Inspetor de Página no Visual Studio 2012](web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012.md)
-* [Associação de modelos e Web Forms no Visual Studio 2013](web-forms/overview/presenting-and-managing-data/model-binding/index.md)
+* [Model binding e Web Forms no Visual Studio 2013](web-forms/overview/presenting-and-managing-data/model-binding/index.md)
 * [Resiliência de conexão do Web Forms do ASP.NET e interceptação de comando](web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception.md)
 * [Criar um aplicativo de Web Forms do ASP.NET seguro com registro de usuário, confirmação por email e redefinição de senha (C#)](web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)
 * [Criar um aplicativo de Web Forms do ASP.NET com autenticação de dois fatores por SMS (C#)](web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication.md)
@@ -45,9 +45,6 @@ Os seguintes guias passo a passo para desenvolvimento de aplicativos do ASP.NET 
 
 ## <a name="mvc"></a>MVC
 
-* [Introdução ao ASP.NET MVC 5 ](mvc/overview/getting-started/introduction/index.md)
-* [Introdução ao EF 6 usando o MVC 5](mvc/overview/getting-started/getting-started-with-ef-using-mvc/index.md)
-* [Database First do EF com o ASP.NET MVC](mvc/overview/getting-started/database-first-development/index.md)
 * [Uso do Inspetor de Página no ASP.NET MVC](mvc/overview/views/using-page-inspector-in-aspnet-mvc.md)
 * [Criar um aplicativo do ASP.NET MVC 5 com logon OAuth2 no Facebook, Twitter, LinkedIn e Google (C#)](mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
 * [Criar um aplicativo Web seguro do ASP.NET MVC 5 com logon, confirmação por email e redefinição de senha (C#)](mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
@@ -64,7 +61,7 @@ Os seguintes guias passo a passo para desenvolvimento de aplicativos do ASP.NET 
 * [Introdução à API Web 2 (C#)](web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
 * [Uso da API Web com Web Forms do ASP.NET](web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
 * [Criação páginas de ajuda da API Web](web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-* [Laboratório prático: criar um SPA (aplicativo de página única) com a API Web ASP.NET e o Angular.js](web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+* [Laboratório prático: criar um SPA (aplicativo de página única) com o ASP.NET Web API e o Angular.js](web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
 * [Criar uma API REST com roteamento de atributo na API Web 2](web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing.md)
 * [Uso da API Web 2 com o Entity Framework 6](web-api/overview/data/using-web-api-with-entity-framework/index.md)
 * [Chamar a API Web em um aplicativo do Windows Phone 8 (C#)](web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application.md)
@@ -72,7 +69,7 @@ Os seguintes guias passo a passo para desenvolvimento de aplicativos do ASP.NET 
 * [OData v3](web-api/overview/odata-support-in-aspnet-web-api/odata-v3/index.md)
 * [Rastreamento na API Web 2](web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api.md)
 * [Teste de unidade da API Web 2](web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api.md)
-* [Controladores de teste de unidade na API Web ASP.NET 2](web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api.md)
+* [Controladores de teste de unidade no ASP.NET Web API 2](web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api.md)
 * [Simulação do Entity Framework ao realizar teste de unidade da API Web 2](web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)
 * [Solução de problemas de erros HTTP 405 após a publicação de aplicativos da API Web 2](web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications.md)
 * [Proteger uma API Web com contas individuais na API Web 2.2](web-api/overview/security/individual-accounts-in-web-api.md)

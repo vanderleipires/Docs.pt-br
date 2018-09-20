@@ -4,14 +4,14 @@ author: rick-anderson
 description: Saiba como armazenar em cache os dados na memória do ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 7/22/2018
+ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 091d00ca7a30b61bdd83618e055bf23e0f2753c4
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: 2570ad7d939d67530b3de8cd0147815c2e25ecc8
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899838"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482977"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>Memória de cache no ASP.NET Core
 
@@ -31,7 +31,19 @@ O cache `IMemoryCache` removerá entradas de cache sob pressão de memória, a m
 
 O cache de memória pode armazenar qualquer objeto, enquanto a interface de cache distribuída é limitada a`byte[]`.
 
-### <a name="cache-guidelines"></a>Diretrizes de cache
+## <a name="systemruntimecachingmemorycache"></a>System.Runtime.Caching/MemoryCache
+
+<xref:System.Runtime.Caching>/<xref:System.Runtime.Caching.MemoryCache> ([Pacote do NuGet](https://www.nuget.org/packages/System.Runtime.Caching/)) pode ser usado com:
+
+* .NET standard 2.0 ou posterior.
+* Qualquer [implementação do .NET](/dotnet/standard/net-standard#net-implementation-support) que tem como alvo o .NET Standard 2.0 ou posterior. Por exemplo, ASP.NET Core 2.0 ou posterior.
+* .NET framework 4.5 ou posterior.
+
+[Extensions](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/) / `IMemoryCache` (descrita neste tópico) é mais recomendada `System.Runtime.Caching` / `MemoryCache` porque ele é melhor integrado ao ASP.NET Core. Por exemplo, `IMemoryCache` funciona nativamente com o ASP.NET Core [injeção de dependência](xref:fundamentals/dependency-injection).
+
+Use `System.Runtime.Caching` / `MemoryCache` como uma ponte de compatibilidade ao portar código do ASP.NET 4.x ASP.NET Core.
+
+## <a name="cache-guidelines"></a>Diretrizes de cache
 
 * Código deveria ter sempre uma opção de fallback para buscar dados e **não** dependem de um valor em cache que está sendo disponível.
 * O cache usa um recurso escasso, de memória. Limitar o crescimento de cache:
