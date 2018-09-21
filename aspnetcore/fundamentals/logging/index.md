@@ -4,14 +4,14 @@ author: ardalis
 description: Saiba mais sobre a estrutura de registros no ASP.NET Core. Descubra os provedores de log internos e saiba mais sobre os provedores de terceiros populares.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/27/2018
+ms.date: 09/19/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: c6e9aae06df6ebec373b1296f86e37380bf08b15
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: e3bf5909edb515a2dabba206abaa160bc431d622
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055755"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46483081"
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -116,7 +116,7 @@ Por exemplo, a configuração de log geralmente é fornecida pela seção `Loggi
     },
     "Console":
     {
-      "IncludeScopes": "true"
+      "IncludeScopes": true
     }
   }
 }
