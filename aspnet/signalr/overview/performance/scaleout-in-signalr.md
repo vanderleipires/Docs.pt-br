@@ -52,7 +52,7 @@ Uma solução é encaminhar mensagens entre servidores, usando um componente cha
 
 Atualmente, o SignalR fornece três backplanes:
 
-- **O barramento de serviço do Azure**. O barramento de serviço é uma infraestrutura de mensagens que permite que os componentes enviar mensagens de uma maneira menos rígida.
+- **O barramento de serviço do Azure**. O barramento de serviço é uma infraestrutura de mensagens que permite que os componentes enviem mensagens de uma maneira menos rígida.
 - **Redis**. O redis é um repositório de chave-valor na memória. Redis oferece suporte a um padrão de publicação/assinatura ("pub/sub") para enviar mensagens.
 - **SQL Server**. Backplane do SQL Server grava mensagens em tabelas SQL. Backplane usa o Service Broker para o sistema de mensagens eficiente. No entanto, ele também funciona se o Service Broker não está habilitado.
 
