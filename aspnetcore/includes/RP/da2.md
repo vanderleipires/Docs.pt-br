@@ -1,4 +1,5 @@
 ::: moniker range=">= aspnetcore-2.1"
+
 Clique com o botão direito do mouse em uma linha vermelha ondulada > **Ações Rápidas e Refatorações** no atributo `[Column]` e selecione `using System.ComponentModel.DataAnnotations.Schema;`
 
 A anotação de dados `[Column(TypeName = "decimal(18, 2)")]` é necessária para que o Entity Framework Core possa mapear corretamente o `Price` para a moeda no banco de dados. Para obter mais informações, veja [Tipos de Dados](/ef/core/modeling/relational/data-types).
@@ -75,11 +76,13 @@ O código de produção geralmente detectará conflitos de simultaneidade quando
 Examine o arquivo *Pages/Movies/Edit.cshtml.cs*:
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit21.cshtml.cs?name=snippet2)]
 
 ::: moniker-end
@@ -92,7 +95,7 @@ Quando uma solicitação HTTP GET é feita para a página Movies/Edit (por exemp
 
 Quando a página Movies/Edit é postada:
 
-* Os valores de formulário na página são associados à propriedade `Movie`. O atributo `[BindProperty]` habilita a [Associação de modelos](xref:mvc/models/model-binding).
+* Os valores de formulário na página são associados à propriedade `Movie`. O atributo `[BindProperty]` habilita o [Model binding](xref:mvc/models/model-binding).
 
   ```csharp
   [BindProperty]

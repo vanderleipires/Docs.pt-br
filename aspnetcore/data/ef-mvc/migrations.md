@@ -5,12 +5,12 @@ description: Neste tutorial, você começa a usar o recurso de migrações do EF
 ms.author: tdykstra
 ms.date: 03/15/2018
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: f710b33ac1a6017b0e3d7e8c3e528675a41424bb
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 556d7d4ad05679ebfce6c909b29610482bb3f350
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194164"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011452"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC com EF Core – migrações – 4 de 10
 
@@ -165,6 +165,7 @@ Para obter mais informações sobre os comandos do PMC, consulte [Console do Ger
 ## <a name="summary"></a>Resumo
 
 Neste tutorial, você viu como criar e aplicar sua primeira migração. No próximo tutorial, você começará examinando tópicos mais avançados com a expansão do modelo de dados. Ao longo do processo, você criará e aplicará migrações adicionais.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

@@ -14,4 +14,5 @@ O tutorial do 2.0 ensina a usar o ASP.NET Core MVC e o Entity Framework Core com
 * É a abordagem preferencial para o desenvolvimento de novos aplicativos.
 
 Se você escolher este tutorial em vez da versão [Razor Pages](xref:data/ef-rp/intro), deixe uma observação explicando o motivo nesta [discussão do GitHub](https://github.com/aspnet/Docs/issues/6146).
+
 ::: moniker-end

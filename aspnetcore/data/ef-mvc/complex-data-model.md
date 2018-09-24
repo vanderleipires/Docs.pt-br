@@ -5,12 +5,12 @@ description: Neste tutorial, você adiciona mais entidades e relações e person
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: c97acd2b943e1d4c466c060247220b3b8bab6d6b
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 3714cf7ce705a52653394319fef1728a6ddcc3ee
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751406"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011762"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC com EF Core – modelo de dados – 5 de 10
 
@@ -495,6 +495,7 @@ Clique com o botão direito do mouse na tabela **CourseAssignment** e selecione 
 ## <a name="summary"></a>Resumo
 
 Agora você tem um modelo de dados mais complexo e um banco de dados correspondente. No tutorial a seguir, você aprenderá mais sobre como acessar dados relacionados.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]
