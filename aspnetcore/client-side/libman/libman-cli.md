@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/30/2018
 uid: client-side/libman/libman-cli
-ms.openlocfilehash: ad81af2e789a31382f50ed37754bfc94469eb197
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 5667f79648a60b8fd9496f8041ef08891ab766af
+ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336031"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47402079"
 ---
 # <a name="use-the-libman-command-line-interface-cli-with-aspnet-core"></a>Use a interface de linha de comando LibMan (CLI) com o ASP.NET Core
 
@@ -195,10 +195,10 @@ Considere o seguinte *libman.json* arquivo:
 }
 ```
 
-Para instalar a versão do jQuery 3.2.1 *jQuery* do arquivo para o *wwwroot\scripts\jquery* pasta usando o provedor do CDNJS:
+Para instalar a versão do jQuery 3.2.1 *jQuery* do arquivo para o *wwwroot/scripts/jquery* pasta usando o provedor do CDNJS:
 
 ```console
-libman install jquery@3.2.1 --provider cdnjs --destination wwwroot\scripts\jquery --files jquery.min.js
+libman install jquery@3.2.1 --provider cdnjs --destination wwwroot/scripts/jquery --files jquery.min.js
 ```
 
 O *libman.json* arquivo semelhante ao seguinte:
@@ -210,7 +210,7 @@ O *libman.json* arquivo semelhante ao seguinte:
   "libraries": [
     {
       "library": "jquery@3.2.1",
-      "destination": "wwwroot\\scripts\\jquery",
+      "destination": "wwwroot/scripts/jquery",
       "files": [
         "jquery.min.js"
       ]
@@ -241,7 +241,7 @@ Depois de aceitar o destino padrão, o *libman.json* arquivo semelhante ao segui
   "libraries": [
     {
       "library": "jquery@3.2.1",
-      "destination": "wwwroot\\scripts\\jquery",
+      "destination": "wwwroot/scripts/jquery",
       "files": [
         "jquery.min.js"
       ]
@@ -249,7 +249,7 @@ Depois de aceitar o destino padrão, o *libman.json* arquivo semelhante ao segui
     {
       "library": "C:\\temp\\contosoCalendar\\",
       "provider": "filesystem",
-      "destination": "wwwroot\\lib\\contosoCalendar",
+      "destination": "wwwroot/lib/contosoCalendar",
       "files": [
         "calendar.js",
         "calendar.css"
