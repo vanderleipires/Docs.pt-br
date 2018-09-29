@@ -5,12 +5,12 @@ description: Uma lista de guias passo a passo para aprender a desenvolver aplica
 ms.author: riande
 ms.date: 10/14/2017
 uid: tutorials/index
-ms.openlocfilehash: d103c351595f0d61e5f0ee14492f9f46b8c17e86
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: 3d2fbb453c8f6510806d8dc263ea344023aa4cda
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144944"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454785"
 ---
 # <a name="aspnet-core-tutorials"></a>Tutoriais do ASP.NET Core
 
@@ -82,7 +82,7 @@ As [Páginas Razor](xref:razor-pages/index) são a abordagem recomendada para cr
 ## <a name="host-and-deploy"></a>Hospedar e implantar
 
 * [Implantar um aplicativo Web ASP.NET Core para o Azure usando o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)
-* [Implantar um aplicativo Web do ASP.NET Core no Azure usando a linha de comando](xref:tutorials/publish-to-azure-webapp-using-cli)
+* [Implantar um aplicativo Web do ASP.NET Core no Azure usando a linha de comando](/azure/app-service/app-service-web-get-started-dotnet)
 * [Publicar um aplicativo Web do Azure com implantação contínua](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 * [Implantar um contêiner ASP.NET em um host remoto do Docker](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 * [ASP.NET Core e Azure Service Fabric](/azure/service-fabric/service-fabric-add-a-web-frontend)

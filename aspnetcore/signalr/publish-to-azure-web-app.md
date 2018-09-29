@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/20/2018
 uid: signalr/publish-to-azure-web-app
-ms.openlocfilehash: b0126771a9ba3a28a7af14adf5b5959c7591e5fb
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: a6a0e44f5c67fefdac6bd26b3772c23e75f8bfc1
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095288"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454720"
 ---
 # <a name="publish-an-aspnet-core-signalr-app-to-an-azure-web-app"></a>Publicar um ASP.NET Core aplicativo SignalR em um aplicativo Web do Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "39095288"
 
 ## <a name="publish-the-app"></a>Publique o aplicativo
 
-Visual Studio fornece ferramentas internas para publicação de um aplicativo da Web do Azure. Usuário do Visual Studio Code pode usar [CLI do Azure](/cli/azure) comandos para publicar aplicativos no Azure. Este artigo aborda a publicação usando as ferramentas do Visual Studio. Para publicar um aplicativo usando a CLI do Azure, consulte [publicar um aplicativo ASP.NET Core no Azure com ferramentas de linha de comando](xref:tutorials/publish-to-azure-webapp-using-cli).
+Visual Studio fornece ferramentas internas para publicação de um aplicativo da Web do Azure. Usuário do Visual Studio Code pode usar [CLI do Azure](/cli/azure) comandos para publicar aplicativos no Azure. Este artigo aborda a publicação usando as ferramentas do Visual Studio. Para publicar um aplicativo usando a CLI do Azure, consulte [publicar um aplicativo ASP.NET Core no Azure com ferramentas de linha de comando](/azure/app-service/app-service-web-get-started-dotnet).
 
 Clique com botão direito no projeto no **Gerenciador de soluções** e selecione **publicar**. Confirme **criar novo** check-in a **escolher um destino de publicação** caixa de diálogo e selecione **publicar**.
 
@@ -63,6 +63,6 @@ No portal do Azure, navegue até **configurações do aplicativo** para seu apli
 
 ## <a name="related-resources"></a>Recursos relacionados
 
-* [Publicar um aplicativo ASP.NET Core no Azure com ferramentas de linha de comando](xref:tutorials/publish-to-azure-webapp-using-cli?tabs=windows)
+* [Publicar um aplicativo ASP.NET Core no Azure com ferramentas de linha de comando](/azure/app-service/app-service-web-get-started-dotnet)
 * [Publicar um aplicativo ASP.NET Core no Azure com o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)
 * [Hospedar e implantar aplicativos de visualização do ASP.NET Core no Azure](xref:host-and-deploy/azure-apps/index#deploy-aspnet-core-preview-release-to-azure-app-service)

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/07/2017
 uid: host-and-deploy/index
-ms.openlocfilehash: e62b68c4cfad29bb8bea3b9fbb2c231a4afeccea
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 024275be3fc5db3f2ed2f7cea1582a1a5f12bda7
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095662"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454746"
 ---
 # <a name="host-and-deploy-aspnet-core"></a>Hospedar e implantar o ASP.NET Core
 
@@ -66,11 +66,11 @@ Configuração adicional pode ser necessária para aplicativos hospedados atrás
 
 A implantação muitas vezes requer tarefas adicionais além de copiar a saída da [dotnet publish](/dotnet/core/tools/dotnet-publish) para um servidor. Por exemplo, arquivos extras podem ser necessários ou excluídos da pasta *publish*. O MSBuild, que é usado pelo Visual Studio para implantação da Web, pode ser personalizado para fazer muitas outras tarefas durante a implantação. Para obter mais informações, consulte [Perfis de publicação no Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) e o livro [Usando MSBuild e o Team Foundation Build](http://msbuildbook.com/).
 
-Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo do Azure usando [o recurso Publicar na Web](xref:tutorials/publish-to-azure-webapp-using-vs) ou usando o [suporte ao Git interno](xref:host-and-deploy/azure-apps/azure-continuous-deployment). O Visual Studio Team Services dá suporte à [implantação contínua para o Serviço de Aplicativo do Azure](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts).
+Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo do Azure usando [o recurso Publicar na Web](xref:tutorials/publish-to-azure-webapp-using-vs) ou usando o [suporte ao Git interno](xref:host-and-deploy/azure-apps/azure-continuous-deployment). O Azure DevOps Services dá suporte à [implantação contínua para o Serviço de Aplicativo do Azure](/azure/devops/pipelines/targets/webapp).
 
 ## <a name="publishing-to-azure"></a>Publicação no Azure
 
-Confira as instruções sobre como publicar um aplicativo no Azure usando o Visual Studio em [Publicar um aplicativo Web ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs). O aplicativo também pode ser publicado no Azure através da [linha de comando](xref:tutorials/publish-to-azure-webapp-using-cli).
+Confira as instruções sobre como publicar um aplicativo no Azure usando o Visual Studio em [Publicar um aplicativo Web ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs). O aplicativo também pode ser publicado no Azure através da [linha de comando](/azure/app-service/app-service-web-get-started-dotnet).
 
 ## <a name="host-in-a-web-farm"></a>Hospedar em uma web farm
 
