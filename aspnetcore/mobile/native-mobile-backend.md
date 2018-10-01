@@ -5,12 +5,12 @@ description: Saiba como criar serviços de back-end usando o ASP.NET Core MVC pa
 ms.author: riande
 ms.date: 10/14/2016
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: 27051cd3c4e2c3aa1ebf6d5510db4645651120e8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3ebd30ad1ffbd66b256e7f3954a07d682f76a754
+ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276120"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230172"
 ---
 # <a name="create-backend-services-for-native-mobile-apps-with-aspnet-core"></a>Criar serviços de back-end para aplicativos móveis nativos com o ASP.NET Core
 
@@ -22,7 +22,7 @@ Os aplicativos móveis podem se comunicar com facilidade com os serviços de bac
 
 ## <a name="the-sample-native-mobile-app"></a>Exemplo do aplicativo móvel nativo
 
-Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativos. Ele usa o [aplicativo Xamarin Forms ToDoRest](/xamarin/xamarin-forms/data-cloud/consuming/rest) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Siga o tutorial com links para criar o aplicativo nativo (e instale as ferramentas do Xamarin gratuitas necessárias), além de baixar a solução de exemplo do Xamarin. A amostra do Xamarin inclui um projeto de serviços da API Web ASP.NET 2, que substitui o aplicativo ASP.NET Core deste artigo (sem nenhuma alteração exigida pelo cliente).
+Este tutorial demonstra como criar serviços de back-end usando o ASP.NET Core MVC para dar suporte a aplicativos móveis nativos. Ele usa o [aplicativo Xamarin Forms ToDoRest](/xamarin/xamarin-forms/data-cloud/consuming/rest) como seu cliente nativo, que inclui clientes nativos separados para dispositivos Android, iOS, Universal do Windows e Windows Phone. Siga o tutorial com links para criar o aplicativo nativo (e instale as ferramentas do Xamarin gratuitas necessárias), além de baixar a solução de exemplo do Xamarin. A amostra do Xamarin inclui um projeto de serviços do ASP.NET Web API 2, que substitui o aplicativo ASP.NET Core deste artigo (sem nenhuma alteração exigida pelo cliente).
 
 ![Aplicativo ToDoRest em execução em um smartphone Android](native-mobile-backend/_static/todo-android.png)
 
@@ -151,3 +151,7 @@ Observe que, ao testar a funcionalidade de exclusão, nada é necessário no Cor
 À medida que você desenvolve serviços de back-end para seu aplicativo, desejará criar um conjunto consistente de convenções ou políticas para lidar com preocupações paralelas. Por exemplo, no serviço mostrado acima, as solicitações de registros específicos que não foram encontrados receberam uma resposta `NotFound`, em vez de uma resposta `BadRequest`. Da mesma forma, os comandos feitos para esse serviço que passaram tipos associados a um modelo sempre verificaram `ModelState.IsValid` e retornaram um `BadRequest` para tipos de modelo inválidos.
 
 Depois de identificar uma diretiva comum para suas APIs, você geralmente pode encapsulá-la em um [filtro](../mvc/controllers/filters.md). Saiba mais sobre [como encapsular políticas comuns da API em aplicativos ASP.NET Core MVC](https://msdn.microsoft.com/magazine/mt767699.aspx).
+
+## <a name="additional-resources"></a>Recursos adicionais
+
+* [Autenticação e autorização](/xamarin/xamarin-forms/enterprise-application-patterns/authentication-and-authorization)
