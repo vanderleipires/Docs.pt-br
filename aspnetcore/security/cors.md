@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/05/2018
 uid: security/cors
-ms.openlocfilehash: f654260411f1bd5725a0e3d14951c7e9bbc893e8
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: cfbf24edb1dae76f676d51738b0d57266688d53e
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44039972"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045582"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>Habilitar solicitações entre origens (CORS) no ASP.NET Core
 
@@ -270,7 +270,7 @@ Para algumas solicitações CORS, o navegador envia uma solicitação adicional 
 
 * O método de solicitação é GET, HEAD ou POST.
 * O aplicativo não define cabeçalhos de solicitação diferente de `Accept`, `Accept-Language`, `Content-Language`, `Content-Type`, ou `Last-Event-ID`.
-* O `Content-Type` cabeçalho, se definido, tem um a um dos valores a seguir:
+* O `Content-Type` cabeçalho, se definido, tem um dos seguintes valores:
   * `application/x-www-form-urlencoded`
   * `multipart/form-data`
   * `text/plain`
