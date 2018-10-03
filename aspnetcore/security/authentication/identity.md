@@ -5,12 +5,12 @@ description: Use identidade com um aplicativo ASP.NET Core. Saiba como definir o
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: ca83d07f7d93bd0cc61cd17cc373096b8e6aa2e1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: d427932bb175c09105534379be4d71760f4e04e5
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010969"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860947"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade do ASP.NET Core
 
@@ -45,7 +45,7 @@ Crie um projeto de aplicativo Web ASP.NET Core com contas de usuário individuai
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* Selecione **Arquivo** > **Novo** > **Projeto**. 
+* Selecione **Arquivo** > **Novo** > **Projeto**.
 * Selecione **Aplicativo Web ASP.NET Core**. Nomeie o projeto **WebApp1** para ter o mesmo namespace que o download do projeto. Clique em **OK**.
 * Selecione um ASP.NET Core **aplicativo Web** para o ASP.NET Core 2.1, em seguida, selecione **alterar autenticação**.
 * Selecione **contas de usuário individuais** e clique em **Okey**.
@@ -119,15 +119,12 @@ Siga as [criar o scaffolding de identidade em um projeto do Razor com autorizaç
 
 Adicione os arquivos de registro, logon e logoff.
 
-
 # <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli)
 
 Se você criou o projeto com o nome **WebApp1**, execute os seguintes comandos. Caso contrário, use o namespace correto para o `ApplicationDbContext`:
 
-
 ```cli
 dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
-
 ```
 
 O PowerShell usa o ponto e vírgula como separador de comando. Ao usar o PowerShell, a ponto e vírgula na lista de arquivos de escape ou coloque a lista de arquivos entre aspas duplas, como mostra o exemplo anterior.
@@ -163,7 +160,7 @@ O PowerShell usa o ponto e vírgula como separador de comando. Ao usar o PowerSh
 O formulário de logon é exibido quando:
 
 * O **faça logon no** link é selecionado.
-* Quando um usuário acessa uma página em que eles não são autenticados **ou** autorizado, eles são redirecionados para a página de logon. 
+* Quando um usuário acessa uma página em que eles não são autenticados **ou** autorizado, eles são redirecionados para a página de logon.
 
 Quando o formulário na página de logon é enviado, o `OnPostAsync` ação é chamada. `PasswordSignInAsync` é chamado de `_signInManager` (fornecido pela injeção de dependência) do objeto.
 
@@ -254,7 +251,6 @@ Consulte [configuração](#pw) para obter um exemplo que defina os requisitos m�
 * <xref:security/authorization/secure-data>
 * <xref:security/authentication/add-user-data>
 * <xref:security/authentication/identity-enable-qrcodes>
-* [Configurar o tipo de dados de chaves primárias de identidade](xref:security/authentication/identity-primary-key-configuration).
 * <xref:migration/identity>
 * <xref:security/authentication/accconfirm>
 * <xref:security/authentication/2fa>
