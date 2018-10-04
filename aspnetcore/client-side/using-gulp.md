@@ -1,46 +1,46 @@
 ---
-title: Use o Gulp no núcleo do ASP.NET
+title: Use o Gulp no ASP.NET Core
 author: rick-anderson
-description: Saiba como usar o Gulp em ASP.NET Core.
+description: Saiba como usar o Gulp no ASP.NET Core.
 ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.date: 02/28/2017
+ms.date: 10/04/2018
 uid: client-side/using-gulp
-ms.openlocfilehash: 35f62bf276d3708df0e2c8b56a44c34c178d8ff8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4f383be0498b5b861bd43cc0f0685b1e62c7571b
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278246"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795508"
 ---
-# <a name="use-gulp-in-aspnet-core"></a><span data-ttu-id="c319f-103">Use o Gulp no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="c319f-103">Use Gulp in ASP.NET Core</span></span>
+# <a name="use-gulp-in-aspnet-core"></a><span data-ttu-id="4bbc4-103">Use o Gulp no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="4bbc4-103">Use Gulp in ASP.NET Core</span></span>
 
-<span data-ttu-id="c319f-104">Por [Erik Reitan](https://github.com/Erikre), [Scott Addie](https://scottaddie.com), [Daniel Roth](https://github.com/danroth27), e [Shayne Boyer](https://twitter.com/spboyer)</span><span class="sxs-lookup"><span data-stu-id="c319f-104">By [Erik Reitan](https://github.com/Erikre), [Scott Addie](https://scottaddie.com), [Daniel Roth](https://github.com/danroth27), and [Shayne Boyer](https://twitter.com/spboyer)</span></span>
+<span data-ttu-id="4bbc4-104">Por [Scott Addie](https://scottaddie.com), [Shayne Boyer](https://twitter.com/spboyer), e [Alcatrão de David](https://twitter.com/davidpine7)</span><span class="sxs-lookup"><span data-stu-id="4bbc4-104">By [Scott Addie](https://scottaddie.com), [Shayne Boyer](https://twitter.com/spboyer), and [David Pine](https://twitter.com/davidpine7)</span></span>
 
-<span data-ttu-id="c319f-105">Em um aplicativo web moderna típico, o processo de compilação pode:</span><span class="sxs-lookup"><span data-stu-id="c319f-105">In a typical modern web app, the build process might:</span></span>
+<span data-ttu-id="4bbc4-105">Em um aplicativo web moderno típico, o processo de compilação pode:</span><span class="sxs-lookup"><span data-stu-id="4bbc4-105">In a typical modern web app, the build process might:</span></span>
 
-* <span data-ttu-id="c319f-106">Agrupar e minificada arquivos JavaScript e CSS.</span><span class="sxs-lookup"><span data-stu-id="c319f-106">Bundle and minify JavaScript and CSS files.</span></span>
-* <span data-ttu-id="c319f-107">Execute ferramentas para chamar as tarefas de empacotamento e minimização antes de cada compilação.</span><span class="sxs-lookup"><span data-stu-id="c319f-107">Run tools to call the bundling and minification tasks before each build.</span></span>
-* <span data-ttu-id="c319f-108">Compilar menos ou SASS arquivos CSS.</span><span class="sxs-lookup"><span data-stu-id="c319f-108">Compile LESS or SASS files to CSS.</span></span>
-* <span data-ttu-id="c319f-109">Compile arquivos CoffeeScript ou TypeScript para JavaScript.</span><span class="sxs-lookup"><span data-stu-id="c319f-109">Compile CoffeeScript or TypeScript files to JavaScript.</span></span>
+* <span data-ttu-id="4bbc4-106">Agrupar e minificar arquivos JavaScript e CSS.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-106">Bundle and minify JavaScript and CSS files.</span></span>
+* <span data-ttu-id="4bbc4-107">Execute ferramentas para chamar as tarefas de empacotamento e minimização antes de cada compilação.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-107">Run tools to call the bundling and minification tasks before each build.</span></span>
+* <span data-ttu-id="4bbc4-108">Arquivos de compilar menos ou SASS para CSS.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-108">Compile LESS or SASS files to CSS.</span></span>
+* <span data-ttu-id="4bbc4-109">Compile arquivos CoffeeScript ou TypeScript para JavaScript.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-109">Compile CoffeeScript or TypeScript files to JavaScript.</span></span>
 
-<span data-ttu-id="c319f-110">Um *executor de tarefas* é uma ferramenta que automatiza a essas tarefas de rotina de desenvolvimento e muito mais.</span><span class="sxs-lookup"><span data-stu-id="c319f-110">A *task runner* is a tool which automates these routine development tasks and more.</span></span> <span data-ttu-id="c319f-111">O Visual Studio fornece suporte interno para dois executores de tarefas comuns de baseados em JavaScript: [Gulp](https://gulpjs.com/) e [Grunt](using-grunt.md).</span><span class="sxs-lookup"><span data-stu-id="c319f-111">Visual Studio provides built-in support for two popular JavaScript-based task runners: [Gulp](https://gulpjs.com/) and [Grunt](using-grunt.md).</span></span>
+<span data-ttu-id="4bbc4-110">Um *executor de tarefas* é uma ferramenta que automatiza a essas tarefas de rotina de desenvolvimento e muito mais.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-110">A *task runner* is a tool which automates these routine development tasks and more.</span></span> <span data-ttu-id="4bbc4-111">Visual Studio fornece suporte interno para dois executores de tarefas de baseados em JavaScript populares: [Gulp](https://gulpjs.com/) e [Grunt](using-grunt.md).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-111">Visual Studio provides built-in support for two popular JavaScript-based task runners: [Gulp](https://gulpjs.com/) and [Grunt](using-grunt.md).</span></span>
 
-## <a name="gulp"></a><span data-ttu-id="c319f-112">gulp</span><span class="sxs-lookup"><span data-stu-id="c319f-112">Gulp</span></span>
+## <a name="gulp"></a><span data-ttu-id="4bbc4-112">Gulp</span><span class="sxs-lookup"><span data-stu-id="4bbc4-112">Gulp</span></span>
 
-<span data-ttu-id="c319f-113">Gulp é um baseados em JavaScript streaming compilação Kit de ferramentas do código do lado do cliente.</span><span class="sxs-lookup"><span data-stu-id="c319f-113">Gulp is a JavaScript-based streaming build toolkit for client-side code.</span></span> <span data-ttu-id="c319f-114">Ele costuma ser usado para transmitir arquivos do lado do cliente por meio de uma série de processos quando um evento específico é acionado em um ambiente de compilação.</span><span class="sxs-lookup"><span data-stu-id="c319f-114">It's commonly used to stream client-side files through a series of processes when a specific event is triggered in a build environment.</span></span> <span data-ttu-id="c319f-115">Por exemplo, o Gulp pode ser usado para automatizar [empacotamento e minimização](bundling-and-minification.md) ou a limpeza de um ambiente de desenvolvimento antes de uma nova compilação.</span><span class="sxs-lookup"><span data-stu-id="c319f-115">For instance, Gulp can be used to automate [bundling and minification](bundling-and-minification.md) or the cleansing of a development environment before a new build.</span></span>
+<span data-ttu-id="4bbc4-113">O gulp é baseado em JavaScript streaming build Kit de ferramentas para o código do lado do cliente.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-113">Gulp is a JavaScript-based streaming build toolkit for client-side code.</span></span> <span data-ttu-id="4bbc4-114">Normalmente, ele é usado para transmitir arquivos do lado do cliente por meio de uma série de processos quando um evento específico é disparado em um ambiente de compilação.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-114">It's commonly used to stream client-side files through a series of processes when a specific event is triggered in a build environment.</span></span> <span data-ttu-id="4bbc4-115">Por exemplo, o Gulp pode ser usado para automatizar [agrupamento e minificação](bundling-and-minification.md) ou a limpeza de um ambiente de desenvolvimento antes de uma nova compilação.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-115">For instance, Gulp can be used to automate [bundling and minification](bundling-and-minification.md) or the cleansing of a development environment before a new build.</span></span>
 
-<span data-ttu-id="c319f-116">Um conjunto de tarefas Gulp é definido em *gulpfile.js*.</span><span class="sxs-lookup"><span data-stu-id="c319f-116">A set of Gulp tasks is defined in *gulpfile.js*.</span></span> <span data-ttu-id="c319f-117">O JavaScript a seguir inclui módulos de Gulp e especifica os caminhos de arquivo a ser referenciado de tarefas disponível em breve:</span><span class="sxs-lookup"><span data-stu-id="c319f-117">The following JavaScript includes Gulp modules and specifies file paths to be referenced within the forthcoming tasks:</span></span>
+<span data-ttu-id="4bbc4-116">Um conjunto de tarefas do Gulp é definido em *gulpfile. js*.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-116">A set of Gulp tasks is defined in *gulpfile.js*.</span></span> <span data-ttu-id="4bbc4-117">O seguinte JavaScript inclui módulos de Gulp e especifica os caminhos de arquivo a ser referenciado de tarefas disponível em breve:</span><span class="sxs-lookup"><span data-stu-id="4bbc4-117">The following JavaScript includes Gulp modules and specifies file paths to be referenced within the forthcoming tasks:</span></span>
 
 ```javascript
 /// <binding Clean='clean' />
 "use strict";
 
 var gulp = require("gulp"),
-  rimraf = require("rimraf"),
-  concat = require("gulp-concat"),
-  cssmin = require("gulp-cssmin"),
-  uglify = require("gulp-uglify");
+    rimraf = require("rimraf"),
+    concat = require("gulp-concat"),
+    cssmin = require("gulp-cssmin"),
+    uglify = require("gulp-uglify");
 
 var paths = {
   webroot: "./wwwroot/"
@@ -54,74 +54,87 @@ paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 ```
 
-<span data-ttu-id="c319f-118">O código acima Especifica quais módulos de nó são necessários.</span><span class="sxs-lookup"><span data-stu-id="c319f-118">The above code specifies which Node modules are required.</span></span> <span data-ttu-id="c319f-119">O `require` função importa cada módulo, para que as tarefas dependentes podem utilizar seus recursos.</span><span class="sxs-lookup"><span data-stu-id="c319f-119">The `require` function imports each module so that the dependent tasks can utilize their features.</span></span> <span data-ttu-id="c319f-120">Cada um dos módulos importados é atribuída a uma variável.</span><span class="sxs-lookup"><span data-stu-id="c319f-120">Each of the imported modules is assigned to a variable.</span></span> <span data-ttu-id="c319f-121">Os módulos podem estar localizados por nome ou caminho.</span><span class="sxs-lookup"><span data-stu-id="c319f-121">The modules can be located either by name or path.</span></span> <span data-ttu-id="c319f-122">Neste exemplo, os módulos denominado `gulp`, `rimraf`, `gulp-concat`, `gulp-cssmin`, e `gulp-uglify` são recuperados por nome.</span><span class="sxs-lookup"><span data-stu-id="c319f-122">In this example, the modules named `gulp`, `rimraf`, `gulp-concat`, `gulp-cssmin`, and `gulp-uglify` are retrieved by name.</span></span> <span data-ttu-id="c319f-123">Além disso, uma série de caminhos são criadas para que os locais de arquivos CSS e JavaScript podem ser reutilizados e referência de tarefas.</span><span class="sxs-lookup"><span data-stu-id="c319f-123">Additionally, a series of paths are created so that the locations of CSS and JavaScript files can be reused and referenced within the tasks.</span></span> <span data-ttu-id="c319f-124">A tabela a seguir fornece descrições dos módulos incluídos no *gulpfile.js*.</span><span class="sxs-lookup"><span data-stu-id="c319f-124">The following table provides descriptions of the modules included in *gulpfile.js*.</span></span>
+<span data-ttu-id="4bbc4-118">O código acima Especifica quais módulos de nó são necessários.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-118">The above code specifies which Node modules are required.</span></span> <span data-ttu-id="4bbc4-119">O `require` função importa cada módulo para que as tarefas dependentes podem utilizar seus recursos.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-119">The `require` function imports each module so that the dependent tasks can utilize their features.</span></span> <span data-ttu-id="4bbc4-120">Cada um dos módulos importados é atribuída a uma variável.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-120">Each of the imported modules is assigned to a variable.</span></span> <span data-ttu-id="4bbc4-121">Os módulos podem ser localizados por nome ou caminho.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-121">The modules can be located either by name or path.</span></span> <span data-ttu-id="4bbc4-122">Neste exemplo, os módulos denominado `gulp`, `rimraf`, `gulp-concat`, `gulp-cssmin`, e `gulp-uglify` são recuperados por nome.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-122">In this example, the modules named `gulp`, `rimraf`, `gulp-concat`, `gulp-cssmin`, and `gulp-uglify` are retrieved by name.</span></span> <span data-ttu-id="4bbc4-123">Além disso, uma série de caminhos são criados para que os locais dos arquivos CSS e JavaScript podem ser reutilizados e referenciados dentro das tarefas.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-123">Additionally, a series of paths are created so that the locations of CSS and JavaScript files can be reused and referenced within the tasks.</span></span> <span data-ttu-id="4bbc4-124">A tabela a seguir fornece descrições dos módulos do incluídos no *gulpfile. js*.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-124">The following table provides descriptions of the modules included in *gulpfile.js*.</span></span>
 
-| <span data-ttu-id="c319f-125">Nome do Módulo</span><span class="sxs-lookup"><span data-stu-id="c319f-125">Module Name</span></span> | <span data-ttu-id="c319f-126">Descrição</span><span class="sxs-lookup"><span data-stu-id="c319f-126">Description</span></span> |
+| <span data-ttu-id="4bbc4-125">Nome do Módulo</span><span class="sxs-lookup"><span data-stu-id="4bbc4-125">Module Name</span></span> | <span data-ttu-id="4bbc4-126">Descrição</span><span class="sxs-lookup"><span data-stu-id="4bbc4-126">Description</span></span> |
 | ----------- | ----------- |
-| <span data-ttu-id="c319f-127">gulp</span><span class="sxs-lookup"><span data-stu-id="c319f-127">gulp</span></span>        | <span data-ttu-id="c319f-128">O sistema de compilação streaming Gulp.</span><span class="sxs-lookup"><span data-stu-id="c319f-128">The Gulp streaming build system.</span></span> <span data-ttu-id="c319f-129">Para obter mais informações, consulte [gulp](https://www.npmjs.com/package/gulp).</span><span class="sxs-lookup"><span data-stu-id="c319f-129">For more information, see [gulp](https://www.npmjs.com/package/gulp).</span></span> |
-| <span data-ttu-id="c319f-130">rimraf</span><span class="sxs-lookup"><span data-stu-id="c319f-130">rimraf</span></span>      | <span data-ttu-id="c319f-131">Um módulo de exclusão do nó.</span><span class="sxs-lookup"><span data-stu-id="c319f-131">A Node deletion module.</span></span> <span data-ttu-id="c319f-132">Para obter mais informações, consulte [rimraf](https://www.npmjs.com/package/rimraf).</span><span class="sxs-lookup"><span data-stu-id="c319f-132">For more information, see [rimraf](https://www.npmjs.com/package/rimraf).</span></span> |
-| <span data-ttu-id="c319f-133">gulp concat</span><span class="sxs-lookup"><span data-stu-id="c319f-133">gulp-concat</span></span> | <span data-ttu-id="c319f-134">Um módulo que concatena arquivos com base em caractere de nova linha do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="c319f-134">A module that concatenates files based on the operating system's newline character.</span></span> <span data-ttu-id="c319f-135">Para obter mais informações, consulte [gulp concat](https://www.npmjs.com/package/gulp-concat).</span><span class="sxs-lookup"><span data-stu-id="c319f-135">For more information, see [gulp-concat](https://www.npmjs.com/package/gulp-concat).</span></span> |
-| <span data-ttu-id="c319f-136">gulp cssmin</span><span class="sxs-lookup"><span data-stu-id="c319f-136">gulp-cssmin</span></span> | <span data-ttu-id="c319f-137">Um módulo que minimiza arquivos CSS.</span><span class="sxs-lookup"><span data-stu-id="c319f-137">A module that minifies CSS files.</span></span> <span data-ttu-id="c319f-138">Para obter mais informações, consulte [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin).</span><span class="sxs-lookup"><span data-stu-id="c319f-138">For more information, see [gulp-cssmin](https://www.npmjs.com/package/gulp-cssmin).</span></span> |
-| <span data-ttu-id="c319f-139">uglify gulp</span><span class="sxs-lookup"><span data-stu-id="c319f-139">gulp-uglify</span></span> | <span data-ttu-id="c319f-140">Um módulo que minimiza *. js* arquivos.</span><span class="sxs-lookup"><span data-stu-id="c319f-140">A module that minifies *.js* files.</span></span> <span data-ttu-id="c319f-141">Para obter mais informações, consulte [uglify gulp](https://www.npmjs.com/package/gulp-uglify).</span><span class="sxs-lookup"><span data-stu-id="c319f-141">For more information, see [gulp-uglify](https://www.npmjs.com/package/gulp-uglify).</span></span> |
+| <span data-ttu-id="4bbc4-127">gulp</span><span class="sxs-lookup"><span data-stu-id="4bbc4-127">gulp</span></span>        | <span data-ttu-id="4bbc4-128">O sistema de compilação streaming Gulp.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-128">The Gulp streaming build system.</span></span> <span data-ttu-id="4bbc4-129">Para obter mais informações, consulte [gulp](https://www.npmjs.com/package/gulp).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-129">For more information, see [gulp](https://www.npmjs.com/package/gulp).</span></span> |
+| <span data-ttu-id="4bbc4-130">rimraf</span><span class="sxs-lookup"><span data-stu-id="4bbc4-130">rimraf</span></span>      | <span data-ttu-id="4bbc4-131">Um módulo de exclusão do nó.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-131">A Node deletion module.</span></span> <span data-ttu-id="4bbc4-132">Para obter mais informações, consulte [rimraf](https://www.npmjs.com/package/rimraf).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-132">For more information, see [rimraf](https://www.npmjs.com/package/rimraf).</span></span> |
+| <span data-ttu-id="4bbc4-133">gulp-concat</span><span class="sxs-lookup"><span data-stu-id="4bbc4-133">gulp-concat</span></span> | <span data-ttu-id="4bbc4-134">Um módulo que concatena arquivos com base em caractere de nova linha do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-134">A module that concatenates files based on the operating system's newline character.</span></span> <span data-ttu-id="4bbc4-135">Para obter mais informações, consulte [gulp-concat](https://www.npmjs.com/package/gulp-concat).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-135">For more information, see [gulp-concat](https://www.npmjs.com/package/gulp-concat).</span></span> |
+| <span data-ttu-id="4bbc4-136">gulp cssmin</span><span class="sxs-lookup"><span data-stu-id="4bbc4-136">gulp-cssmin</span></span> | <span data-ttu-id="4bbc4-137">Um módulo que minimiza os arquivos CSS.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-137">A module that minifies CSS files.</span></span> <span data-ttu-id="4bbc4-138">Para obter mais informações, consulte [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-138">For more information, see [gulp-cssmin](https://www.npmjs.com/package/gulp-cssmin).</span></span> |
+| <span data-ttu-id="4bbc4-139">tarefa uglify gulp</span><span class="sxs-lookup"><span data-stu-id="4bbc4-139">gulp-uglify</span></span> | <span data-ttu-id="4bbc4-140">Um módulo que minimiza *. js* arquivos.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-140">A module that minifies *.js* files.</span></span> <span data-ttu-id="4bbc4-141">Para obter mais informações, consulte [tarefa uglify gulp](https://www.npmjs.com/package/gulp-uglify).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-141">For more information, see [gulp-uglify](https://www.npmjs.com/package/gulp-uglify).</span></span> |
 
-<span data-ttu-id="c319f-142">Depois que os módulos necessários são importados, as tarefas podem ser especificadas.</span><span class="sxs-lookup"><span data-stu-id="c319f-142">Once the requisite modules are imported, the tasks can be specified.</span></span> <span data-ttu-id="c319f-143">Aqui, há seis tarefas registrado, representado pelo código a seguir:</span><span class="sxs-lookup"><span data-stu-id="c319f-143">Here there are six tasks registered, represented by the following code:</span></span>
+<span data-ttu-id="4bbc4-142">Depois que o requisito os módulos são importados, as tarefas podem ser especificadas.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-142">Once the requisite modules are imported, the tasks can be specified.</span></span> <span data-ttu-id="4bbc4-143">Aqui, há seis tarefas registrado, representado pelo código a seguir:</span><span class="sxs-lookup"><span data-stu-id="4bbc4-143">Here there are six tasks registered, represented by the following code:</span></span>
 
 ```javascript
-gulp.task("clean:js", function (cb) {
-  rimraf(paths.concatJsDest, cb);
-});
+gulp.task("clean:js", done => rimraf(paths.concatJsDest, done));
+gulp.task("clean:css", done => rimraf(paths.concatCssDest, done));
+gulp.task("clean", gulp.series(["clean:js", "clean:css"]));
 
-gulp.task("clean:css", function (cb) {
-  rimraf(paths.concatCssDest, cb);
-});
-
-gulp.task("clean", ["clean:js", "clean:css"]);
-
-gulp.task("min:js", function () {
+gulp.task("min:js", () => {
   return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
     .pipe(concat(paths.concatJsDest))
     .pipe(uglify())
     .pipe(gulp.dest("."));
 });
 
-gulp.task("min:css", function () {
+gulp.task("min:css", () => {
   return gulp.src([paths.css, "!" + paths.minCss])
     .pipe(concat(paths.concatCssDest))
     .pipe(cssmin())
     .pipe(gulp.dest("."));
 });
 
-gulp.task("min", ["min:js", "min:css"]);
+gulp.task("min", gulp.series(["min:js", "min:css"]));
+    
+// A 'default' task is required by Gulp v4
+gulp.task("default", gulp.series(["min"]));
 ```
 
-<span data-ttu-id="c319f-144">A tabela a seguir fornece uma explicação das tarefas especificado no código acima:</span><span class="sxs-lookup"><span data-stu-id="c319f-144">The following table provides an explanation of the tasks specified in the code above:</span></span>
+---
 
-|<span data-ttu-id="c319f-145">Nome da Tarefa</span><span class="sxs-lookup"><span data-stu-id="c319f-145">Task Name</span></span>|<span data-ttu-id="c319f-146">Descrição</span><span class="sxs-lookup"><span data-stu-id="c319f-146">Description</span></span>|
+<span data-ttu-id="4bbc4-144">A tabela a seguir fornece uma explicação sobre as tarefas especificadas no código acima:</span><span class="sxs-lookup"><span data-stu-id="4bbc4-144">The following table provides an explanation of the tasks specified in the code above:</span></span>
+
+|<span data-ttu-id="4bbc4-145">Nome da Tarefa</span><span class="sxs-lookup"><span data-stu-id="4bbc4-145">Task Name</span></span>|<span data-ttu-id="4bbc4-146">Descrição</span><span class="sxs-lookup"><span data-stu-id="4bbc4-146">Description</span></span>|
 |--- |--- |
-|<span data-ttu-id="c319f-147">Limpar: js</span><span class="sxs-lookup"><span data-stu-id="c319f-147">clean:js</span></span>|<span data-ttu-id="c319f-148">Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão minimizada do arquivo site.js.</span><span class="sxs-lookup"><span data-stu-id="c319f-148">A task that uses the rimraf Node deletion module to remove the minified version of the site.js file.</span></span>|
-|<span data-ttu-id="c319f-149">Limpar: css</span><span class="sxs-lookup"><span data-stu-id="c319f-149">clean:css</span></span>|<span data-ttu-id="c319f-150">Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão minimizada do arquivo site.css.</span><span class="sxs-lookup"><span data-stu-id="c319f-150">A task that uses the rimraf Node deletion module to remove the minified version of the site.css file.</span></span>|
-|<span data-ttu-id="c319f-151">Limpar</span><span class="sxs-lookup"><span data-stu-id="c319f-151">clean</span></span>|<span data-ttu-id="c319f-152">Uma tarefa que chama o `clean:js` tarefa, seguida de `clean:css` tarefa.</span><span class="sxs-lookup"><span data-stu-id="c319f-152">A task that calls the `clean:js` task, followed by the `clean:css` task.</span></span>|
-|<span data-ttu-id="c319f-153">min:js</span><span class="sxs-lookup"><span data-stu-id="c319f-153">min:js</span></span>|<span data-ttu-id="c319f-154">Uma tarefa que minimiza e concatena todos os arquivos. js na pasta js.</span><span class="sxs-lookup"><span data-stu-id="c319f-154">A task that minifies and concatenates all .js files within the js folder.</span></span> <span data-ttu-id="c319f-155">A. min.js arquivos serão excluídos.</span><span class="sxs-lookup"><span data-stu-id="c319f-155">The .min.js files are excluded.</span></span>|
-|<span data-ttu-id="c319f-156">min:CSS</span><span class="sxs-lookup"><span data-stu-id="c319f-156">min:css</span></span>|<span data-ttu-id="c319f-157">Uma tarefa que minimiza e concatena todos os arquivos. CSS dentro da pasta de css.</span><span class="sxs-lookup"><span data-stu-id="c319f-157">A task that minifies and concatenates all .css files within the css folder.</span></span> <span data-ttu-id="c319f-158">A. min.css arquivos serão excluídos.</span><span class="sxs-lookup"><span data-stu-id="c319f-158">The .min.css files are excluded.</span></span>|
-|<span data-ttu-id="c319f-159">min</span><span class="sxs-lookup"><span data-stu-id="c319f-159">min</span></span>|<span data-ttu-id="c319f-160">Uma tarefa que chama o `min:js` tarefa, seguida de `min:css` tarefa.</span><span class="sxs-lookup"><span data-stu-id="c319f-160">A task that calls the `min:js` task, followed by the `min:css` task.</span></span>|
+|<span data-ttu-id="4bbc4-147">Limpar: js</span><span class="sxs-lookup"><span data-stu-id="4bbc4-147">clean:js</span></span>|<span data-ttu-id="4bbc4-148">Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão reduzida do arquivo js.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-148">A task that uses the rimraf Node deletion module to remove the minified version of the site.js file.</span></span>|
+|<span data-ttu-id="4bbc4-149">Limpar: css</span><span class="sxs-lookup"><span data-stu-id="4bbc4-149">clean:css</span></span>|<span data-ttu-id="4bbc4-150">Uma tarefa que usa o módulo de exclusão do nó rimraf para remover a versão reduzida do arquivo site CSS.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-150">A task that uses the rimraf Node deletion module to remove the minified version of the site.css file.</span></span>|
+|<span data-ttu-id="4bbc4-151">Limpar</span><span class="sxs-lookup"><span data-stu-id="4bbc4-151">clean</span></span>|<span data-ttu-id="4bbc4-152">Uma tarefa que chama o `clean:js` tarefa, seguida de `clean:css` tarefa.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-152">A task that calls the `clean:js` task, followed by the `clean:css` task.</span></span>|
+|<span data-ttu-id="4bbc4-153">min:js</span><span class="sxs-lookup"><span data-stu-id="4bbc4-153">min:js</span></span>|<span data-ttu-id="4bbc4-154">Uma tarefa que minimiza e concatena todos os arquivos. js na pasta js.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-154">A task that minifies and concatenates all .js files within the js folder.</span></span> <span data-ttu-id="4bbc4-155">A. Min arquivos são excluídos.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-155">The .min.js files are excluded.</span></span>|
+|<span data-ttu-id="4bbc4-156">min:CSS</span><span class="sxs-lookup"><span data-stu-id="4bbc4-156">min:css</span></span>|<span data-ttu-id="4bbc4-157">Uma tarefa que minimiza e concatena todos os arquivos. CSS dentro da pasta de css.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-157">A task that minifies and concatenates all .css files within the css folder.</span></span> <span data-ttu-id="4bbc4-158">A. min.css arquivos são excluídos.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-158">The .min.css files are excluded.</span></span>|
+|<span data-ttu-id="4bbc4-159">min</span><span class="sxs-lookup"><span data-stu-id="4bbc4-159">min</span></span>|<span data-ttu-id="4bbc4-160">Uma tarefa que chama o `min:js` tarefa, seguida de `min:css` tarefa.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-160">A task that calls the `min:js` task, followed by the `min:css` task.</span></span>|
 
-## <a name="running-default-tasks"></a><span data-ttu-id="c319f-161">Execução de tarefas padrão</span><span class="sxs-lookup"><span data-stu-id="c319f-161">Running default tasks</span></span>
+## <a name="running-default-tasks"></a><span data-ttu-id="4bbc4-161">Execução de tarefas padrão</span><span class="sxs-lookup"><span data-stu-id="4bbc4-161">Running default tasks</span></span>
 
-<span data-ttu-id="c319f-162">Se você ainda não criou um novo aplicativo Web, crie um novo projeto de aplicativo Web ASP.NET no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c319f-162">If you haven't already created a new Web app, create a new ASP.NET Web Application project in Visual Studio.</span></span>
+<span data-ttu-id="4bbc4-162">Se você já não tiver criado um novo aplicativo Web, crie um novo projeto de aplicativo Web ASP.NET no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-162">If you haven't already created a new Web app, create a new ASP.NET Web Application project in Visual Studio.</span></span>
 
-1.  <span data-ttu-id="c319f-163">Adicione um novo arquivo JavaScript ao seu projeto e denomine- *gulpfile.js*, em seguida, copie o código a seguir.</span><span class="sxs-lookup"><span data-stu-id="c319f-163">Add a new JavaScript file to your project and name it *gulpfile.js*, then copy the following code.</span></span>
+1.  <span data-ttu-id="4bbc4-163">Abra o *Package. JSON* arquivo (Adicionar se não existe) e adicione o seguinte.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-163">Open the *package.json* file (add if not there) and add the following.</span></span>
+
+    ```json
+    {
+      "devDependencies": {
+        "gulp": "^4.0.0",
+        "gulp-concat": "2.6.1",
+        "gulp-cssmin": "0.2.0",
+        "gulp-uglify": "3.0.0",
+        "rimraf": "2.6.1"
+      }
+    }
+    ```
+
+2.  <span data-ttu-id="4bbc4-164">Adicionar um novo arquivo JavaScript ao seu projeto e denomine *gulpfile. js*, em seguida, copie o código a seguir.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-164">Add a new JavaScript file to your project and name it *gulpfile.js*, then copy the following code.</span></span>
 
     ```javascript
     /// <binding Clean='clean' />
     "use strict";
     
-    var gulp = require("gulp"),
-      rimraf = require("rimraf"),
-      concat = require("gulp-concat"),
-      cssmin = require("gulp-cssmin"),
-      uglify = require("gulp-uglify");
+    const gulp = require("gulp"),
+          rimraf = require("rimraf"),
+          concat = require("gulp-concat"),
+          cssmin = require("gulp-cssmin"),
+          uglify = require("gulp-uglify");
     
-    var paths = {
+    const paths = {
       webroot: "./wwwroot/"
     };
     
@@ -132,71 +145,54 @@ gulp.task("min", ["min:js", "min:css"]);
     paths.concatJsDest = paths.webroot + "js/site.min.js";
     paths.concatCssDest = paths.webroot + "css/site.min.css";
     
-    gulp.task("clean:js", function (cb) {
-      rimraf(paths.concatJsDest, cb);
-    });
-    
-    gulp.task("clean:css", function (cb) {
-      rimraf(paths.concatCssDest, cb);
-    });
-    
-    gulp.task("clean", ["clean:js", "clean:css"]);
-    
-    gulp.task("min:js", function () {
+    gulp.task("clean:js", done => rimraf(paths.concatJsDest, done));
+    gulp.task("clean:css", done => rimraf(paths.concatCssDest, done));
+    gulp.task("clean", gulp.series(["clean:js", "clean:css"]));
+
+    gulp.task("min:js", () => {
       return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
         .pipe(concat(paths.concatJsDest))
         .pipe(uglify())
         .pipe(gulp.dest("."));
     });
-    
-    gulp.task("min:css", function () {
+
+    gulp.task("min:css", () => {
       return gulp.src([paths.css, "!" + paths.minCss])
         .pipe(concat(paths.concatCssDest))
         .pipe(cssmin())
         .pipe(gulp.dest("."));
     });
+
+    gulp.task("min", gulp.series(["min:js", "min:css"]));
     
-    gulp.task("min", ["min:js", "min:css"]);
+    // A 'default' task is required by Gulp v4
+    gulp.task("default", gulp.series(["min"]));
     ```
 
-2.  <span data-ttu-id="c319f-164">Abra o *Package. JSON* arquivo (Adicionar se não há) e adicione o seguinte.</span><span class="sxs-lookup"><span data-stu-id="c319f-164">Open the *package.json* file (add if not there) and add the following.</span></span>
-
-    ```json
-    {
-      "devDependencies": {
-        "gulp": "3.9.1",
-        "gulp-concat": "2.6.1",
-        "gulp-cssmin": "0.1.7",
-        "gulp-uglify": "2.0.1",
-        "rimraf": "2.6.1"
-      }
-    }
-    ```
-
-3.  <span data-ttu-id="c319f-165">Em **Solution Explorer**, clique com botão direito *gulpfile.js*e selecione **Explorador do Executador de tarefas**.</span><span class="sxs-lookup"><span data-stu-id="c319f-165">In **Solution Explorer**, right-click *gulpfile.js*, and select **Task Runner Explorer**.</span></span>
+3.  <span data-ttu-id="4bbc4-165">Na **Gerenciador de soluções**, clique com botão direito *gulpfile. js*e selecione **Task Runner Explorer**.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-165">In **Solution Explorer**, right-click *gulpfile.js*, and select **Task Runner Explorer**.</span></span>
     
-    ![Abra o Explorador do Executador de tarefas no Gerenciador de soluções](using-gulp/_static/02-SolutionExplorer-TaskRunnerExplorer.png)
+    ![Abra o Explorador do Executador de tarefas do Gerenciador de soluções](using-gulp/_static/02-SolutionExplorer-TaskRunnerExplorer.png)
     
-    <span data-ttu-id="c319f-167">**Explorador do Executador de tarefas** mostra a lista de tarefas de Gulp.</span><span class="sxs-lookup"><span data-stu-id="c319f-167">**Task Runner Explorer** shows the list of Gulp tasks.</span></span> <span data-ttu-id="c319f-168">(Talvez você precise clicar o **atualização** botão que aparece à esquerda do nome do projeto.)</span><span class="sxs-lookup"><span data-stu-id="c319f-168">(You might have to click the **Refresh** button that appears to the left of the project name.)</span></span>
+    <span data-ttu-id="4bbc4-167">**Explorador do Executador de tarefas** mostra a lista de tarefas de Gulp.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-167">**Task Runner Explorer** shows the list of Gulp tasks.</span></span> <span data-ttu-id="4bbc4-168">(Talvez você precise clicar o **Refresh** botão que aparece à esquerda do nome do projeto.)</span><span class="sxs-lookup"><span data-stu-id="4bbc4-168">(You might have to click the **Refresh** button that appears to the left of the project name.)</span></span>
     
-    ![Explorador do Executador de tarefas](using-gulp/_static/03-TaskRunnerExplorer.png)
+    ![Task Runner Explorer](using-gulp/_static/03-TaskRunnerExplorer.png)
     
     > [!IMPORTANT]
-    > <span data-ttu-id="c319f-170">O **Explorador do Executador de tarefas** item de menu de contexto será exibida apenas se *gulpfile.js* está no diretório raiz do projeto.</span><span class="sxs-lookup"><span data-stu-id="c319f-170">The **Task Runner Explorer** context menu item appears only if *gulpfile.js* is in the root project directory.</span></span>
+    > <span data-ttu-id="4bbc4-170">O **Task Runner Explorer** item de menu de contexto será exibida apenas se *gulpfile. js* está no diretório do projeto raiz.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-170">The **Task Runner Explorer** context menu item appears only if *gulpfile.js* is in the root project directory.</span></span>
 
-4.  <span data-ttu-id="c319f-171">Sob **tarefas** na **Explorador do Executador de tarefas**, clique com botão direito **limpa**e selecione **executar** no menu pop-up.</span><span class="sxs-lookup"><span data-stu-id="c319f-171">Underneath **Tasks** in **Task Runner Explorer**, right-click **clean**, and select **Run** from the pop-up menu.</span></span>
+4.  <span data-ttu-id="4bbc4-171">Sob **tarefas** na **Task Runner Explorer**, clique com botão direito **limpa**e selecione **executar** no menu pop-up.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-171">Underneath **Tasks** in **Task Runner Explorer**, right-click **clean**, and select **Run** from the pop-up menu.</span></span>
 
     ![Tarefa de limpeza de Explorador do Executador de tarefas](using-gulp/_static/04-TaskRunner-clean.png)
 
-    <span data-ttu-id="c319f-173">**Explorador do Executador de tarefas** criará uma nova guia chamada **limpa** e execute a tarefa de limpeza, conforme definido em *gulpfile.js*.</span><span class="sxs-lookup"><span data-stu-id="c319f-173">**Task Runner Explorer** will create a new tab named **clean** and execute the clean task as it's defined in *gulpfile.js*.</span></span>
+    <span data-ttu-id="4bbc4-173">**Explorador do Executador de tarefas** criará uma nova guia chamada **limpa** e execute a tarefa limpar conforme definido na *gulpfile. js*.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-173">**Task Runner Explorer** will create a new tab named **clean** and execute the clean task as it's defined in *gulpfile.js*.</span></span>
 
-5.  <span data-ttu-id="c319f-174">Com o botão direito do **limpa** de tarefas e selecione **associações** > **antes de criar**.</span><span class="sxs-lookup"><span data-stu-id="c319f-174">Right-click the **clean** task, then select **Bindings** > **Before Build**.</span></span>
+5.  <span data-ttu-id="4bbc4-174">Com o botão direito do **limpa** da tarefa e, em seguida, selecione **associações** > **antes da compilação**.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-174">Right-click the **clean** task, then select **Bindings** > **Before Build**.</span></span>
 
-    ![Associação BeforeBuild Explorador do Executador de tarefas](using-gulp/_static/05-TaskRunner-BeforeBuild.png)
+    ![Associação BeforeBuild do Task Runner Explorer](using-gulp/_static/05-TaskRunner-BeforeBuild.png)
 
-    <span data-ttu-id="c319f-176">O **antes de criar** associação configura a tarefa de limpeza para executar automaticamente antes de cada build do projeto.</span><span class="sxs-lookup"><span data-stu-id="c319f-176">The **Before Build** binding configures the clean task to run automatically before each build of the project.</span></span>
+    <span data-ttu-id="4bbc4-176">O **antes da compilação** associação configura a tarefa Limpar para serem executados automaticamente antes de cada compilação do projeto.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-176">The **Before Build** binding configures the clean task to run automatically before each build of the project.</span></span>
 
-<span data-ttu-id="c319f-177">As associações que você configurar o com **Explorador do Executador de tarefas** são armazenadas na forma de um comentário na parte superior da sua *gulpfile.js* e entrarão em vigor somente no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c319f-177">The bindings you set up with **Task Runner Explorer** are stored in the form of a comment at the top of your *gulpfile.js* and are effective only in Visual Studio.</span></span> <span data-ttu-id="c319f-178">É uma alternativa que não requer o Visual Studio configurar a execução automática de tarefas de vez em seu *. csproj* arquivo.</span><span class="sxs-lookup"><span data-stu-id="c319f-178">An alternative that doesn't require Visual Studio is to configure automatic execution of gulp tasks in your *.csproj* file.</span></span> <span data-ttu-id="c319f-179">Por exemplo, colocar isso em seu *. csproj* arquivo:</span><span class="sxs-lookup"><span data-stu-id="c319f-179">For example, put this in your *.csproj* file:</span></span>
+<span data-ttu-id="4bbc4-177">As associações que você configura o com **Task Runner Explorer** são armazenadas na forma de um comentário na parte superior da sua *gulpfile. js* e entrarão em vigor apenas no Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-177">The bindings you set up with **Task Runner Explorer** are stored in the form of a comment at the top of your *gulpfile.js* and are effective only in Visual Studio.</span></span> <span data-ttu-id="4bbc4-178">Uma alternativa que não requer o Visual Studio é configurar a execução automática de tarefas de gulp em seu *. csproj* arquivo.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-178">An alternative that doesn't require Visual Studio is to configure automatic execution of gulp tasks in your *.csproj* file.</span></span> <span data-ttu-id="4bbc4-179">Por exemplo, colocar isso no seu *. csproj* arquivo:</span><span class="sxs-lookup"><span data-stu-id="4bbc4-179">For example, put this in your *.csproj* file:</span></span>
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -204,71 +200,76 @@ gulp.task("min", ["min:js", "min:css"]);
 </Target>
 ```
 
-<span data-ttu-id="c319f-180">Agora que a tarefa de limpeza é executada quando você executar o projeto no Visual Studio ou de um prompt de comando usando o [dotnet executar](/dotnet/core/tools/dotnet-run) comando (execute `npm install` primeiro).</span><span class="sxs-lookup"><span data-stu-id="c319f-180">Now the clean task is executed when you run the project in Visual Studio or from a command prompt using the [dotnet run](/dotnet/core/tools/dotnet-run) command (run `npm install` first).</span></span>
+<span data-ttu-id="4bbc4-180">Agora a tarefa de limpeza é executada quando você executar o projeto no Visual Studio ou de um prompt de comando usando o [execução dotnet](/dotnet/core/tools/dotnet-run) comando (executar `npm install` primeiro).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-180">Now the clean task is executed when you run the project in Visual Studio or from a command prompt using the [dotnet run](/dotnet/core/tools/dotnet-run) command (run `npm install` first).</span></span>
 
-## <a name="defining-and-running-a-new-task"></a><span data-ttu-id="c319f-181">Definir e executar uma nova tarefa</span><span class="sxs-lookup"><span data-stu-id="c319f-181">Defining and running a new task</span></span>
+## <a name="defining-and-running-a-new-task"></a><span data-ttu-id="4bbc4-181">Definir e executar uma nova tarefa</span><span class="sxs-lookup"><span data-stu-id="4bbc4-181">Defining and running a new task</span></span>
 
-<span data-ttu-id="c319f-182">Para definir uma nova tarefa Gulp, modificar *gulpfile.js*.</span><span class="sxs-lookup"><span data-stu-id="c319f-182">To define a new Gulp task, modify *gulpfile.js*.</span></span>
+<span data-ttu-id="4bbc4-182">Para definir uma nova tarefa Gulp, modifique *gulpfile. js*.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-182">To define a new Gulp task, modify *gulpfile.js*.</span></span>
 
-1.  <span data-ttu-id="c319f-183">Adicione o seguinte JavaScript ao final da *gulpfile.js*:</span><span class="sxs-lookup"><span data-stu-id="c319f-183">Add the following JavaScript to the end of *gulpfile.js*:</span></span>
+1.  <span data-ttu-id="4bbc4-183">Adicione o seguinte JavaScript ao final da *gulpfile. js*:</span><span class="sxs-lookup"><span data-stu-id="4bbc4-183">Add the following JavaScript to the end of *gulpfile.js*:</span></span>
 
     ```javascript
-    gulp.task("first", function () {
+    gulp.task('first', done => {
       console.log('first task! <-----');
+      done(); // signal completion
     });
     ```
 
-    <span data-ttu-id="c319f-184">Essa tarefa é denominada `first`, e simplesmente exibe uma cadeia de caracteres.</span><span class="sxs-lookup"><span data-stu-id="c319f-184">This task is named `first`, and it simply displays a string.</span></span>
+    <span data-ttu-id="4bbc4-184">Essa tarefa é denominada `first`, e ele simplesmente exibe uma cadeia de caracteres.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-184">This task is named `first`, and it simply displays a string.</span></span>
 
-2.  <span data-ttu-id="c319f-185">Salvar *gulpfile.js*.</span><span class="sxs-lookup"><span data-stu-id="c319f-185">Save *gulpfile.js*.</span></span>
+2.  <span data-ttu-id="4bbc4-185">Salve *gulpfile. js*.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-185">Save *gulpfile.js*.</span></span>
 
-3.  <span data-ttu-id="c319f-186">Em **Solution Explorer**, clique com botão direito *gulpfile.js*e selecione *Explorador do Executador de tarefas*.</span><span class="sxs-lookup"><span data-stu-id="c319f-186">In **Solution Explorer**, right-click *gulpfile.js*, and select *Task Runner Explorer*.</span></span>
+3.  <span data-ttu-id="4bbc4-186">Na **Gerenciador de soluções**, clique com botão direito *gulpfile. js*e selecione *Task Runner Explorer*.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-186">In **Solution Explorer**, right-click *gulpfile.js*, and select *Task Runner Explorer*.</span></span>
 
-4.  <span data-ttu-id="c319f-187">Em **Explorador do Executador de tarefas**, clique com botão direito **primeiro**e selecione **executar**.</span><span class="sxs-lookup"><span data-stu-id="c319f-187">In **Task Runner Explorer**, right-click **first**, and select **Run**.</span></span>
+4.  <span data-ttu-id="4bbc4-187">Na **Task Runner Explorer**, clique com botão direito **primeiro**e selecione **executar**.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-187">In **Task Runner Explorer**, right-click **first**, and select **Run**.</span></span>
 
-    ![Execute a primeira tarefa Explorador do Executador de tarefas](using-gulp/_static/06-TaskRunner-First.png)
+    ![Execute a primeira tarefa do Task Runner Explorer](using-gulp/_static/06-TaskRunner-First.png)
 
-    <span data-ttu-id="c319f-189">O texto de saída é exibido.</span><span class="sxs-lookup"><span data-stu-id="c319f-189">The output text is displayed.</span></span> <span data-ttu-id="c319f-190">Para obter exemplos com base em cenários comuns, consulte [Gulp receitas](#gulp-recipes).</span><span class="sxs-lookup"><span data-stu-id="c319f-190">To see examples based on common scenarios, see [Gulp Recipes](#gulp-recipes).</span></span>
+    <span data-ttu-id="4bbc4-189">O texto de saída é exibido.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-189">The output text is displayed.</span></span> <span data-ttu-id="4bbc4-190">Para obter exemplos com base em cenários comuns, consulte [receitas do Gulp](#gulp-recipes).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-190">To see examples based on common scenarios, see [Gulp Recipes](#gulp-recipes).</span></span>
 
-## <a name="defining-and-running-tasks-in-a-series"></a><span data-ttu-id="c319f-191">Definindo e tarefas em execução em uma série</span><span class="sxs-lookup"><span data-stu-id="c319f-191">Defining and running tasks in a series</span></span>
+## <a name="defining-and-running-tasks-in-a-series"></a><span data-ttu-id="4bbc4-191">Definir e executar tarefas em uma série</span><span class="sxs-lookup"><span data-stu-id="4bbc4-191">Defining and running tasks in a series</span></span>
 
-<span data-ttu-id="c319f-192">Quando você executa várias tarefas, as tarefas executadas simultaneamente por padrão.</span><span class="sxs-lookup"><span data-stu-id="c319f-192">When you run multiple tasks, the tasks run concurrently by default.</span></span> <span data-ttu-id="c319f-193">No entanto, se você precisar executar tarefas em uma ordem específica, você deve especificar quando cada tarefa é concluída, bem como quais tarefas dependentes na conclusão de outra tarefa.</span><span class="sxs-lookup"><span data-stu-id="c319f-193">However, if you need to run tasks in a specific order, you must specify when each task is complete, as well as which tasks depend on the completion of another task.</span></span>
+<span data-ttu-id="4bbc4-192">Quando você executa várias tarefas, as tarefas executadas simultaneamente por padrão.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-192">When you run multiple tasks, the tasks run concurrently by default.</span></span> <span data-ttu-id="4bbc4-193">No entanto, se você precisar executar tarefas em uma ordem específica, você deve especificar quando cada tarefa é concluída, bem como quais tarefas dependem da conclusão de outra tarefa.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-193">However, if you need to run tasks in a specific order, you must specify when each task is complete, as well as which tasks depend on the completion of another task.</span></span>
 
-1.  <span data-ttu-id="c319f-194">Para definir uma série de tarefas a serem executadas em ordem, substitua o `first` tarefas que você adicionou acima na *gulpfile.js* com o seguinte:</span><span class="sxs-lookup"><span data-stu-id="c319f-194">To define a series of tasks to run in order, replace the `first` task that you added above in *gulpfile.js* with the following:</span></span>
+1.  <span data-ttu-id="4bbc4-194">Para definir uma série de tarefas a serem executados em ordem, substitua a `first` que você adicionou acima na tarefa *gulpfile. js* com o seguinte:</span><span class="sxs-lookup"><span data-stu-id="4bbc4-194">To define a series of tasks to run in order, replace the `first` task that you added above in *gulpfile.js* with the following:</span></span>
 
     ```javascript
-    gulp.task("series:first", function () {
+    gulp.task('series:first', done => {
       console.log('first task! <-----');
+      done(); // signal completion
     });
- 
-    gulp.task("series:second", ["series:first"], function () {
+    gulp.task('series:second', done => {
       console.log('second task! <-----');
+      done(); // signal completion
     });
- 
-    gulp.task("series", ["series:first", "series:second"], function () {});
+
+    gulp.task('series', gulp.series(['series:first', 'series:second']), () => { });
+
+    // A 'default' task is required by Gulp v4
+    gulp.task('default', gulp.series('series'));
     ```
  
-    <span data-ttu-id="c319f-195">Agora você tem três tarefas: `series:first`, `series:second`, e `series`.</span><span class="sxs-lookup"><span data-stu-id="c319f-195">You now have three tasks: `series:first`, `series:second`, and `series`.</span></span> <span data-ttu-id="c319f-196">O `series:second` tarefa inclui um segundo parâmetro que especifica uma matriz de tarefas a ser executado e concluído antes do `series:second` tarefa será executada.</span><span class="sxs-lookup"><span data-stu-id="c319f-196">The `series:second` task includes a second parameter which specifies an array of tasks to be run and completed before the `series:second` task will run.</span></span> <span data-ttu-id="c319f-197">Conforme especificado no código acima, somente o `series:first` tarefa deve ser concluída antes do `series:second` tarefa será executada.</span><span class="sxs-lookup"><span data-stu-id="c319f-197">As specified in the code above, only the `series:first` task must be completed before the `series:second` task will run.</span></span>
+    <span data-ttu-id="4bbc4-195">Agora você tem três tarefas: `series:first`, `series:second`, e `series`.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-195">You now have three tasks: `series:first`, `series:second`, and `series`.</span></span> <span data-ttu-id="4bbc4-196">O `series:second` tarefa inclui um segundo parâmetro que especifica uma matriz de tarefas para serem executados e concluídos antes do `series:second` tarefa será executada.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-196">The `series:second` task includes a second parameter which specifies an array of tasks to be run and completed before the `series:second` task will run.</span></span> <span data-ttu-id="4bbc4-197">Conforme especificado no código acima, somente o `series:first` tarefa deve ser concluída antes do `series:second` tarefa será executada.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-197">As specified in the code above, only the `series:first` task must be completed before the `series:second` task will run.</span></span>
 
-2.  <span data-ttu-id="c319f-198">Salvar *gulpfile.js*.</span><span class="sxs-lookup"><span data-stu-id="c319f-198">Save *gulpfile.js*.</span></span>
+2.  <span data-ttu-id="4bbc4-198">Salve *gulpfile. js*.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-198">Save *gulpfile.js*.</span></span>
 
-3.  <span data-ttu-id="c319f-199">Em **Solution Explorer**, clique com botão direito *gulpfile.js* e selecione **Explorador do Executador de tarefas** se ainda não estiver aberto.</span><span class="sxs-lookup"><span data-stu-id="c319f-199">In **Solution Explorer**, right-click *gulpfile.js* and select **Task Runner Explorer** if it isn't already open.</span></span>
+3.  <span data-ttu-id="4bbc4-199">Na **Gerenciador de soluções**, clique com botão direito *gulpfile. js* e selecione **Task Runner Explorer** se ainda não estiver aberto.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-199">In **Solution Explorer**, right-click *gulpfile.js* and select **Task Runner Explorer** if it isn't already open.</span></span>
 
-4.  <span data-ttu-id="c319f-200">Em **Explorador do Executador de tarefas**, clique com botão direito **série** e selecione **executar**.</span><span class="sxs-lookup"><span data-stu-id="c319f-200">In **Task Runner Explorer**, right-click **series** and select **Run**.</span></span>
+4.  <span data-ttu-id="4bbc4-200">Na **Task Runner Explorer**, clique com botão direito **série** e selecione **executar**.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-200">In **Task Runner Explorer**, right-click **series** and select **Run**.</span></span>
 
-    ![Explorador do Executador de tarefas executar tarefa de série](using-gulp/_static/07-TaskRunner-Series.png)
+    ![Executar tarefa de série do Task Runner Explorer](using-gulp/_static/07-TaskRunner-Series.png)
 
-## <a name="intellisense"></a><span data-ttu-id="c319f-202">IntelliSense</span><span class="sxs-lookup"><span data-stu-id="c319f-202">IntelliSense</span></span>
+## <a name="intellisense"></a><span data-ttu-id="4bbc4-202">IntelliSense</span><span class="sxs-lookup"><span data-stu-id="4bbc4-202">IntelliSense</span></span>
 
-<span data-ttu-id="c319f-203">O IntelliSense oferece conclusão de código, descrições de parâmetro e outros recursos para aumentar a produtividade e diminuir os erros.</span><span class="sxs-lookup"><span data-stu-id="c319f-203">IntelliSense provides code completion, parameter descriptions, and other features to boost productivity and to decrease errors.</span></span> <span data-ttu-id="c319f-204">Gulp tarefas são escritas em JavaScript; Portanto, o IntelliSense pode fornecer assistência durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="c319f-204">Gulp tasks are written in JavaScript; therefore, IntelliSense can provide assistance while developing.</span></span> <span data-ttu-id="c319f-205">Conforme você trabalha com JavaScript, IntelliSense listará os objetos, funções, propriedades e parâmetros que estão disponíveis com base em seu contexto atual.</span><span class="sxs-lookup"><span data-stu-id="c319f-205">As you work with JavaScript, IntelliSense lists the objects, functions, properties, and parameters that are available based on your current context.</span></span> <span data-ttu-id="c319f-206">Selecione uma opção de codificação na lista pop-up fornecida pelo IntelliSense para concluir o código.</span><span class="sxs-lookup"><span data-stu-id="c319f-206">Select a coding option from the pop-up list provided by IntelliSense to complete the code.</span></span>
+<span data-ttu-id="4bbc4-203">IntelliSense fornece conclusão de código, descrições de parâmetro e outros recursos para aumentar a produtividade e diminuir a erros.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-203">IntelliSense provides code completion, parameter descriptions, and other features to boost productivity and to decrease errors.</span></span> <span data-ttu-id="4bbc4-204">As tarefas de gulp são escritas em JavaScript; Portanto, o IntelliSense pode fornecer assistência durante o desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-204">Gulp tasks are written in JavaScript; therefore, IntelliSense can provide assistance while developing.</span></span> <span data-ttu-id="4bbc4-205">Conforme você trabalha com JavaScript, o IntelliSense lista os objetos, funções, propriedades e parâmetros que estão disponíveis com base em seu contexto atual.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-205">As you work with JavaScript, IntelliSense lists the objects, functions, properties, and parameters that are available based on your current context.</span></span> <span data-ttu-id="4bbc4-206">Selecione uma opção de codificação na lista pop-up fornecida pelo IntelliSense para concluir o código.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-206">Select a coding option from the pop-up list provided by IntelliSense to complete the code.</span></span>
 
-![gulp IntelliSense](using-gulp/_static/08-IntelliSense.png)
+![IntelliSense do gulp](using-gulp/_static/08-IntelliSense.png)
 
-<span data-ttu-id="c319f-208">Para obter mais informações sobre o IntelliSense, consulte [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense).</span><span class="sxs-lookup"><span data-stu-id="c319f-208">For more information about IntelliSense, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense).</span></span>
+<span data-ttu-id="4bbc4-208">Para obter mais informações sobre o IntelliSense, consulte [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-208">For more information about IntelliSense, see [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense).</span></span>
 
-## <a name="development-staging-and-production-environments"></a><span data-ttu-id="c319f-209">Ambientes de desenvolvimento, teste e produção</span><span class="sxs-lookup"><span data-stu-id="c319f-209">Development, staging, and production environments</span></span>
+## <a name="development-staging-and-production-environments"></a><span data-ttu-id="4bbc4-209">Ambientes de desenvolvimento, preparo e produção</span><span class="sxs-lookup"><span data-stu-id="4bbc4-209">Development, staging, and production environments</span></span>
 
-<span data-ttu-id="c319f-210">Quando o Gulp é usado para otimizar os arquivos do lado do cliente para produção e preparo, os arquivos processados são salvos em um local de preparo e produção.</span><span class="sxs-lookup"><span data-stu-id="c319f-210">When Gulp is used to optimize client-side files for staging and production, the processed files are saved to a local staging and production location.</span></span> <span data-ttu-id="c319f-211">O *cshtml* arquivo usa o **ambiente** marca auxiliar para fornecer duas versões diferentes de arquivos CSS.</span><span class="sxs-lookup"><span data-stu-id="c319f-211">The *_Layout.cshtml* file uses the **environment** tag helper to provide two different versions of CSS files.</span></span> <span data-ttu-id="c319f-212">É uma versão dos arquivos CSS para o desenvolvimento e a outra versão é otimizada para preparação e produção.</span><span class="sxs-lookup"><span data-stu-id="c319f-212">One version of CSS files is for development and the other version is optimized for both staging and production.</span></span> <span data-ttu-id="c319f-213">No Visual Studio de 2017, quando você altera o **ASPNETCORE_ENVIRONMENT** variável de ambiente `Production`, Visual Studio criará o aplicativo Web e um link para os arquivos CSS minimizados.</span><span class="sxs-lookup"><span data-stu-id="c319f-213">In Visual Studio 2017, when you change the **ASPNETCORE_ENVIRONMENT** environment variable to `Production`, Visual Studio will build the Web app and link to the minimized CSS files.</span></span> <span data-ttu-id="c319f-214">A marcação a seguir mostra o **ambiente** marca auxiliares que contém as marcações de link para o `Development` CSS arquivos e o minimizada `Staging, Production` arquivos CSS.</span><span class="sxs-lookup"><span data-stu-id="c319f-214">The following markup shows the **environment** tag helpers containing link tags to the `Development` CSS files and the minified `Staging, Production` CSS files.</span></span>
+<span data-ttu-id="4bbc4-210">Quando o Gulp é usado para otimizar arquivos do lado do cliente para produção e preparo, os arquivos processados são salvos em um local de preparo e produção local.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-210">When Gulp is used to optimize client-side files for staging and production, the processed files are saved to a local staging and production location.</span></span> <span data-ttu-id="4bbc4-211">O *layout. cshtml* arquivo de usar o **ambiente** auxiliar para fornecer duas versões diferentes de arquivos CSS de marcação.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-211">The *_Layout.cshtml* file uses the **environment** tag helper to provide two different versions of CSS files.</span></span> <span data-ttu-id="4bbc4-212">Uma versão de arquivos CSS é para o desenvolvimento e a outra versão é otimizada para produção e preparo.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-212">One version of CSS files is for development and the other version is optimized for both staging and production.</span></span> <span data-ttu-id="4bbc4-213">No Visual Studio 2017, quando você altera a **ASPNETCORE_ENVIRONMENT** variável de ambiente `Production`, Visual Studio criará o aplicativo Web e um link para os arquivos CSS minimizados.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-213">In Visual Studio 2017, when you change the **ASPNETCORE_ENVIRONMENT** environment variable to `Production`, Visual Studio will build the Web app and link to the minimized CSS files.</span></span> <span data-ttu-id="4bbc4-214">A marcação a seguir mostra a **ambiente** que contém as marcações de link para os auxiliares de marca a `Development` CSS arquivos e o minificado `Staging, Production` arquivos CSS.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-214">The following markup shows the **environment** tag helpers containing link tags to the `Development` CSS files and the minified `Staging, Production` CSS files.</span></span>
 
 ```html
 <environment names="Development">
@@ -293,57 +294,57 @@ gulp.task("min", ["min:js", "min:css"]);
 </environment>
 ```
 
-## <a name="switching-between-environments"></a><span data-ttu-id="c319f-215">Alternar entre ambientes</span><span class="sxs-lookup"><span data-stu-id="c319f-215">Switching between environments</span></span>
+## <a name="switching-between-environments"></a><span data-ttu-id="4bbc4-215">Alternância entre ambientes</span><span class="sxs-lookup"><span data-stu-id="4bbc4-215">Switching between environments</span></span>
 
-<span data-ttu-id="c319f-216">Para alternar entre a compilação para ambientes diferentes, modifique o **ASPNETCORE_ENVIRONMENT** valor da variável de ambiente.</span><span class="sxs-lookup"><span data-stu-id="c319f-216">To switch between compiling for different environments, modify the **ASPNETCORE_ENVIRONMENT** environment variable's value.</span></span>
+<span data-ttu-id="4bbc4-216">Para alternar entre a compilação para ambientes diferentes, modifique a **ASPNETCORE_ENVIRONMENT** valor da variável de ambiente.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-216">To switch between compiling for different environments, modify the **ASPNETCORE_ENVIRONMENT** environment variable's value.</span></span>
 
-1.  <span data-ttu-id="c319f-217">Em **Explorador do Executador de tarefas**, verifique o **min** tarefa foi definida para executar **antes de criar**.</span><span class="sxs-lookup"><span data-stu-id="c319f-217">In **Task Runner Explorer**, verify that the **min** task has been set to run **Before Build**.</span></span>
+1.  <span data-ttu-id="4bbc4-217">No **Task Runner Explorer**, verifique se que o **min** foi definida para executar tarefas **antes da compilação**.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-217">In **Task Runner Explorer**, verify that the **min** task has been set to run **Before Build**.</span></span>
 
-2.  <span data-ttu-id="c319f-218">Em **Solution Explorer**, clique no nome do projeto e selecione **propriedades**.</span><span class="sxs-lookup"><span data-stu-id="c319f-218">In **Solution Explorer**, right-click the project name and select **Properties**.</span></span>
+2.  <span data-ttu-id="4bbc4-218">Na **Gerenciador de soluções**, clique com botão direito no nome do projeto e selecione **propriedades**.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-218">In **Solution Explorer**, right-click the project name and select **Properties**.</span></span>
 
-    <span data-ttu-id="c319f-219">A folha de propriedades para o aplicativo Web é exibida.</span><span class="sxs-lookup"><span data-stu-id="c319f-219">The property sheet for the Web app is displayed.</span></span>
+    <span data-ttu-id="4bbc4-219">A folha de propriedades para o aplicativo Web é exibida.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-219">The property sheet for the Web app is displayed.</span></span>
 
-3.  <span data-ttu-id="c319f-220">Clique na guia **Depurar**.</span><span class="sxs-lookup"><span data-stu-id="c319f-220">Click the **Debug** tab.</span></span>
+3.  <span data-ttu-id="4bbc4-220">Clique na guia **Depurar**.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-220">Click the **Debug** tab.</span></span>
 
-4.  <span data-ttu-id="c319f-221">Definir o valor de **: ambiente de hospedagem** variável de ambiente `Production`.</span><span class="sxs-lookup"><span data-stu-id="c319f-221">Set the value of the **Hosting:Environment** environment variable to `Production`.</span></span>
+4.  <span data-ttu-id="4bbc4-221">Definir o valor de **: ambiente de hospedagem** variável de ambiente `Production`.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-221">Set the value of the **Hosting:Environment** environment variable to `Production`.</span></span>
 
-5.  <span data-ttu-id="c319f-222">Pressione **F5** para executar o aplicativo em um navegador.</span><span class="sxs-lookup"><span data-stu-id="c319f-222">Press **F5** to run the application in a browser.</span></span>
+5.  <span data-ttu-id="4bbc4-222">Pressione **F5** para executar o aplicativo em um navegador.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-222">Press **F5** to run the application in a browser.</span></span>
 
-6.  <span data-ttu-id="c319f-223">Na janela do navegador, a página e selecione **Exibir código-fonte** para exibir o HTML da página.</span><span class="sxs-lookup"><span data-stu-id="c319f-223">In the browser window, right-click the page and select **View Source** to view the HTML for the page.</span></span>
+6.  <span data-ttu-id="4bbc4-223">Na janela do navegador, a página com o botão direito e selecione **Exibir código-fonte** para exibir o HTML da página.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-223">In the browser window, right-click the page and select **View Source** to view the HTML for the page.</span></span>
 
-    <span data-ttu-id="c319f-224">Observe que os links de folha de estilos apontam para os arquivos CSS minimizados.</span><span class="sxs-lookup"><span data-stu-id="c319f-224">Notice that the stylesheet links point to the minified CSS files.</span></span>
+    <span data-ttu-id="4bbc4-224">Observe que os links de folha de estilos apontam para os arquivos CSS minificados.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-224">Notice that the stylesheet links point to the minified CSS files.</span></span>
 
-7.  <span data-ttu-id="c319f-225">Feche o navegador para interromper o aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="c319f-225">Close the browser to stop the Web app.</span></span>
+7.  <span data-ttu-id="4bbc4-225">Feche o navegador para parar o aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-225">Close the browser to stop the Web app.</span></span>
 
-8.  <span data-ttu-id="c319f-226">No Visual Studio, retorne a folha de propriedades para o aplicativo Web e altere o **: ambiente de hospedagem** de volta para a variável de ambiente `Development`.</span><span class="sxs-lookup"><span data-stu-id="c319f-226">In Visual Studio, return to the property sheet for the Web app and change the **Hosting:Environment** environment variable back to `Development`.</span></span>
+8.  <span data-ttu-id="4bbc4-226">No Visual Studio, retorne para a folha de propriedades para o aplicativo Web e altere o **: ambiente de hospedagem** variável de ambiente de volta para `Development`.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-226">In Visual Studio, return to the property sheet for the Web app and change the **Hosting:Environment** environment variable back to `Development`.</span></span>
 
-9.  <span data-ttu-id="c319f-227">Pressione **F5** para executar o aplicativo em um navegador novamente.</span><span class="sxs-lookup"><span data-stu-id="c319f-227">Press **F5** to run the application in a browser again.</span></span>
+9.  <span data-ttu-id="4bbc4-227">Pressione **F5** para executar o aplicativo em um navegador novamente.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-227">Press **F5** to run the application in a browser again.</span></span>
 
-10. <span data-ttu-id="c319f-228">Na janela do navegador, a página e selecione **Exibir código-fonte** para ver o HTML da página.</span><span class="sxs-lookup"><span data-stu-id="c319f-228">In the browser window, right-click the page and select **View Source** to see the HTML for the page.</span></span>
+10. <span data-ttu-id="4bbc4-228">Na janela do navegador, a página com o botão direito e selecione **Exibir código-fonte** para ver o HTML da página.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-228">In the browser window, right-click the page and select **View Source** to see the HTML for the page.</span></span>
 
-    <span data-ttu-id="c319f-229">Observe que os links de folha de estilos apontam para as versões unminified dos arquivos CSS.</span><span class="sxs-lookup"><span data-stu-id="c319f-229">Notice that the stylesheet links point to the unminified versions of the CSS files.</span></span>
+    <span data-ttu-id="4bbc4-229">Observe que os links de folha de estilos apontam para as versões unminified dos arquivos CSS.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-229">Notice that the stylesheet links point to the unminified versions of the CSS files.</span></span>
 
-<span data-ttu-id="c319f-230">Para obter mais informações relacionadas a ambientes em ASP.NET Core, consulte [usar vários ambientes](../fundamentals/environments.md).</span><span class="sxs-lookup"><span data-stu-id="c319f-230">For more information related to environments in ASP.NET Core, see [Use multiple environments](../fundamentals/environments.md).</span></span>
+<span data-ttu-id="4bbc4-230">Para obter mais informações relacionadas aos ambientes no ASP.NET Core, consulte [usar vários ambientes](../fundamentals/environments.md).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-230">For more information related to environments in ASP.NET Core, see [Use multiple environments](../fundamentals/environments.md).</span></span>
 
-## <a name="task-and-module-details"></a><span data-ttu-id="c319f-231">Detalhes da tarefa e o módulo</span><span class="sxs-lookup"><span data-stu-id="c319f-231">Task and module details</span></span>
+## <a name="task-and-module-details"></a><span data-ttu-id="4bbc4-231">Detalhes da tarefa e o módulo</span><span class="sxs-lookup"><span data-stu-id="4bbc4-231">Task and module details</span></span>
 
-<span data-ttu-id="c319f-232">Uma tarefa Gulp está registrada com um nome de função.</span><span class="sxs-lookup"><span data-stu-id="c319f-232">A Gulp task is registered with a function name.</span></span> <span data-ttu-id="c319f-233">É possível especificar dependências se outras tarefas devem ser executadas antes da tarefa atual.</span><span class="sxs-lookup"><span data-stu-id="c319f-233">You can specify dependencies if other tasks must run before the current task.</span></span> <span data-ttu-id="c319f-234">Funções adicionais permitem que você execute e observar as tarefas de Gulp, bem como definir a origem (*src*) e de destino (*dest*) dos arquivos que está sendo modificados.</span><span class="sxs-lookup"><span data-stu-id="c319f-234">Additional functions allow you to run and watch the Gulp tasks, as well as set the source (*src*) and destination (*dest*) of the files being modified.</span></span> <span data-ttu-id="c319f-235">Estas são as funções de API Gulp primárias:</span><span class="sxs-lookup"><span data-stu-id="c319f-235">The following are the primary Gulp API functions:</span></span>
+<span data-ttu-id="4bbc4-232">Uma tarefa Gulp está registrada com um nome de função.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-232">A Gulp task is registered with a function name.</span></span> <span data-ttu-id="4bbc4-233">É possível especificar dependências se outras tarefas devem ser executadas antes da tarefa atual.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-233">You can specify dependencies if other tasks must run before the current task.</span></span> <span data-ttu-id="4bbc4-234">Funções adicionais permitem que você execute e assistir as tarefas de Gulp, bem como definir a origem (*src*) e de destino (*dest*) dos arquivos que está sendo modificados.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-234">Additional functions allow you to run and watch the Gulp tasks, as well as set the source (*src*) and destination (*dest*) of the files being modified.</span></span> <span data-ttu-id="4bbc4-235">Estas são as funções de API do Gulp primárias:</span><span class="sxs-lookup"><span data-stu-id="4bbc4-235">The following are the primary Gulp API functions:</span></span>
 
-|<span data-ttu-id="c319f-236">Função gulp</span><span class="sxs-lookup"><span data-stu-id="c319f-236">Gulp Function</span></span>|<span data-ttu-id="c319f-237">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="c319f-237">Syntax</span></span>|<span data-ttu-id="c319f-238">Descrição</span><span class="sxs-lookup"><span data-stu-id="c319f-238">Description</span></span>|
+|<span data-ttu-id="4bbc4-236">Função gulp</span><span class="sxs-lookup"><span data-stu-id="4bbc4-236">Gulp Function</span></span>|<span data-ttu-id="4bbc4-237">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="4bbc4-237">Syntax</span></span>|<span data-ttu-id="4bbc4-238">Descrição</span><span class="sxs-lookup"><span data-stu-id="4bbc4-238">Description</span></span>|
 |---   |--- |--- |
-|<span data-ttu-id="c319f-239">tarefa</span><span class="sxs-lookup"><span data-stu-id="c319f-239">task</span></span>  |`gulp.task(name[, deps], fn) { }`|<span data-ttu-id="c319f-240">O `task` função cria uma tarefa.</span><span class="sxs-lookup"><span data-stu-id="c319f-240">The `task` function creates a task.</span></span> <span data-ttu-id="c319f-241">O `name` parâmetro define o nome da tarefa.</span><span class="sxs-lookup"><span data-stu-id="c319f-241">The `name` parameter defines the name of the task.</span></span> <span data-ttu-id="c319f-242">O `deps` parâmetro contém uma matriz de tarefas a serem concluídas antes de executa essa tarefa.</span><span class="sxs-lookup"><span data-stu-id="c319f-242">The `deps` parameter contains an array of tasks to be completed before this task runs.</span></span> <span data-ttu-id="c319f-243">O `fn` parâmetro representa uma função de retorno de chamada que executa as operações da tarefa.</span><span class="sxs-lookup"><span data-stu-id="c319f-243">The `fn` parameter represents a callback function which performs the operations of the task.</span></span>|
-|<span data-ttu-id="c319f-244">Inspecionar</span><span class="sxs-lookup"><span data-stu-id="c319f-244">watch</span></span> |`gulp.watch(glob [, opts], tasks) { }`|<span data-ttu-id="c319f-245">O `watch` função monitora arquivos e executa tarefas quando ocorre uma alteração de arquivo.</span><span class="sxs-lookup"><span data-stu-id="c319f-245">The `watch` function monitors files and runs tasks when a file change occurs.</span></span> <span data-ttu-id="c319f-246">O `glob` parâmetro é um `string` ou `array` que determina quais arquivos assistir.</span><span class="sxs-lookup"><span data-stu-id="c319f-246">The `glob` parameter is a `string` or `array` that determines which files to watch.</span></span> <span data-ttu-id="c319f-247">O `opts` parâmetro fornece observando as opções de arquivo adicionais.</span><span class="sxs-lookup"><span data-stu-id="c319f-247">The `opts` parameter provides additional file watching options.</span></span>|
-|<span data-ttu-id="c319f-248">src</span><span class="sxs-lookup"><span data-stu-id="c319f-248">src</span></span>   |`gulp.src(globs[, options]) { }`|<span data-ttu-id="c319f-249">O `src` função fornece os arquivos que correspondem os valores glob.</span><span class="sxs-lookup"><span data-stu-id="c319f-249">The `src` function provides files that match the glob value(s).</span></span> <span data-ttu-id="c319f-250">O `glob` parâmetro é um `string` ou `array` que determina quais arquivos para leitura.</span><span class="sxs-lookup"><span data-stu-id="c319f-250">The `glob` parameter is a `string` or `array` that determines which files to read.</span></span> <span data-ttu-id="c319f-251">O `options` parâmetro fornece outras opções de arquivo.</span><span class="sxs-lookup"><span data-stu-id="c319f-251">The `options` parameter provides additional file options.</span></span>|
-|<span data-ttu-id="c319f-252">dest</span><span class="sxs-lookup"><span data-stu-id="c319f-252">dest</span></span>  |`gulp.dest(path[, options]) { }`|<span data-ttu-id="c319f-253">O `dest` função define um local para o qual os arquivos podem ser gravados.</span><span class="sxs-lookup"><span data-stu-id="c319f-253">The `dest` function defines a location to which files can be written.</span></span> <span data-ttu-id="c319f-254">O `path` parâmetro é uma cadeia de caracteres ou uma função que determina a pasta de destino.</span><span class="sxs-lookup"><span data-stu-id="c319f-254">The `path` parameter is a string or function that determines the destination folder.</span></span> <span data-ttu-id="c319f-255">O `options` parâmetro é um objeto que especifica as opções de pasta de saída.</span><span class="sxs-lookup"><span data-stu-id="c319f-255">The `options` parameter is an object that specifies output folder options.</span></span>|
+|<span data-ttu-id="4bbc4-239">tarefa</span><span class="sxs-lookup"><span data-stu-id="4bbc4-239">task</span></span>  |`gulp.task(name[, deps], fn) { }`|<span data-ttu-id="4bbc4-240">O `task` função cria uma tarefa.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-240">The `task` function creates a task.</span></span> <span data-ttu-id="4bbc4-241">O `name` parâmetro define o nome da tarefa.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-241">The `name` parameter defines the name of the task.</span></span> <span data-ttu-id="4bbc4-242">O `deps` parâmetro contém uma matriz de tarefas a serem concluídas antes que essa tarefa é executada.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-242">The `deps` parameter contains an array of tasks to be completed before this task runs.</span></span> <span data-ttu-id="4bbc4-243">O `fn` parâmetro representa uma função de retorno de chamada que executa as operações da tarefa.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-243">The `fn` parameter represents a callback function which performs the operations of the task.</span></span>|
+|<span data-ttu-id="4bbc4-244">Inspeção</span><span class="sxs-lookup"><span data-stu-id="4bbc4-244">watch</span></span> |`gulp.watch(glob [, opts], tasks) { }`|<span data-ttu-id="4bbc4-245">O `watch` function monitora arquivos e execuções de tarefas quando ocorre uma alteração de arquivo.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-245">The `watch` function monitors files and runs tasks when a file change occurs.</span></span> <span data-ttu-id="4bbc4-246">O `glob` parâmetro é um `string` ou `array` que determina quais arquivos assistir.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-246">The `glob` parameter is a `string` or `array` that determines which files to watch.</span></span> <span data-ttu-id="4bbc4-247">O `opts` parâmetro fornece monitoramento opções de arquivo adicional.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-247">The `opts` parameter provides additional file watching options.</span></span>|
+|<span data-ttu-id="4bbc4-248">src</span><span class="sxs-lookup"><span data-stu-id="4bbc4-248">src</span></span>   |`gulp.src(globs[, options]) { }`|<span data-ttu-id="4bbc4-249">O `src` função fornece os arquivos que correspondem os valores de glob.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-249">The `src` function provides files that match the glob value(s).</span></span> <span data-ttu-id="4bbc4-250">O `glob` parâmetro é um `string` ou `array` que determina quais arquivos para ler.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-250">The `glob` parameter is a `string` or `array` that determines which files to read.</span></span> <span data-ttu-id="4bbc4-251">O `options` parâmetro fornece opções de arquivo adicionais.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-251">The `options` parameter provides additional file options.</span></span>|
+|<span data-ttu-id="4bbc4-252">dest</span><span class="sxs-lookup"><span data-stu-id="4bbc4-252">dest</span></span>  |`gulp.dest(path[, options]) { }`|<span data-ttu-id="4bbc4-253">O `dest` função define um local para o qual os arquivos podem ser gravados.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-253">The `dest` function defines a location to which files can be written.</span></span> <span data-ttu-id="4bbc4-254">O `path` parâmetro é uma cadeia de caracteres ou uma função que determina a pasta de destino.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-254">The `path` parameter is a string or function that determines the destination folder.</span></span> <span data-ttu-id="4bbc4-255">O `options` parâmetro é um objeto que especifica as opções de pasta de saída.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-255">The `options` parameter is an object that specifies output folder options.</span></span>|
 
-<span data-ttu-id="c319f-256">Para obter informações de referência de API Gulp, consulte [Gulp documentos API](https://github.com/gulpjs/gulp/blob/master/docs/API.md).</span><span class="sxs-lookup"><span data-stu-id="c319f-256">For additional Gulp API reference information, see [Gulp Docs API](https://github.com/gulpjs/gulp/blob/master/docs/API.md).</span></span>
+<span data-ttu-id="4bbc4-256">Para obter informações de referência de API Gulp, consulte [Gulp Docs API](https://github.com/gulpjs/gulp/blob/master/docs/API.md).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-256">For additional Gulp API reference information, see [Gulp Docs API](https://github.com/gulpjs/gulp/blob/master/docs/API.md).</span></span>
 
-## <a name="gulp-recipes"></a><span data-ttu-id="c319f-257">Gulp receitas</span><span class="sxs-lookup"><span data-stu-id="c319f-257">Gulp recipes</span></span>
+## <a name="gulp-recipes"></a><span data-ttu-id="4bbc4-257">Receitas do gulp</span><span class="sxs-lookup"><span data-stu-id="4bbc4-257">Gulp recipes</span></span>
 
-<span data-ttu-id="c319f-258">A comunidade de Gulp fornece Gulp [receitas](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md).</span><span class="sxs-lookup"><span data-stu-id="c319f-258">The Gulp community provides Gulp [Recipes](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md).</span></span> <span data-ttu-id="c319f-259">Essas receitas consistem em tarefas de Gulp para abordar cenários comuns.</span><span class="sxs-lookup"><span data-stu-id="c319f-259">These recipes consist of Gulp tasks to address common scenarios.</span></span>
+<span data-ttu-id="4bbc4-258">A comunidade do Gulp fornece Gulp [receitas](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md).</span><span class="sxs-lookup"><span data-stu-id="4bbc4-258">The Gulp community provides Gulp [Recipes](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md).</span></span> <span data-ttu-id="4bbc4-259">Essas receitas consistem em tarefas de Gulp para lidar com cenários comuns.</span><span class="sxs-lookup"><span data-stu-id="4bbc4-259">These recipes consist of Gulp tasks to address common scenarios.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="c319f-260">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="c319f-260">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="4bbc4-260">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="4bbc4-260">Additional resources</span></span>
 
-* [<span data-ttu-id="c319f-261">Documentação de gulp</span><span class="sxs-lookup"><span data-stu-id="c319f-261">Gulp documentation</span></span>](https://github.com/gulpjs/gulp/blob/master/docs/README.md)
-* [<span data-ttu-id="c319f-262">Empacotamento e minimização no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="c319f-262">Bundling and minification in ASP.NET Core</span></span>](bundling-and-minification.md)
-* [<span data-ttu-id="c319f-263">Use o assistente no núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="c319f-263">Use Grunt in ASP.NET Core</span></span>](using-grunt.md)
+* [<span data-ttu-id="4bbc4-261">Documentação do gulp</span><span class="sxs-lookup"><span data-stu-id="4bbc4-261">Gulp documentation</span></span>](https://github.com/gulpjs/gulp/blob/master/docs/README.md)
+* [<span data-ttu-id="4bbc4-262">Agrupamento e minificação no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="4bbc4-262">Bundling and minification in ASP.NET Core</span></span>](bundling-and-minification.md)
+* [<span data-ttu-id="4bbc4-263">Usar o Grunt no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="4bbc4-263">Use Grunt in ASP.NET Core</span></span>](using-grunt.md)
