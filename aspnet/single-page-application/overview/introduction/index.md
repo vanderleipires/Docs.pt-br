@@ -1,28 +1,24 @@
 ---
 uid: single-page-application/overview/introduction/index
-title: Introdução ao aplicativo de página única ASP.NET | Microsoft Docs
+title: Introdução ao aplicativo de página única do ASP.NET | Microsoft Docs
 author: rick-anderson
-description: Saiba mais sobre ASP.NET única página aplicativo ASP.NET única página aplicativo (SPA) ajuda a criar aplicativos que incluem interacti significativa do lado do cliente...
-ms.author: aspnetcontent
-manager: wpickett
+description: Saiba mais sobre ASP.NET única página ASP.NET única página aplicativo SPA (aplicativo) ajuda você a criar aplicativos que incluem interacti significativa do lado do cliente...
+ms.author: riande
 ms.date: 11/14/2012
-ms.topic: article
 ms.assetid: f0643c61-c310-4906-a238-dfc86f09b940
-ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction
 msc.type: chapter
-ms.openlocfilehash: 550bf971f4d262ba59537c6541d4f73f18c04432
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 8607e1d11aa087216a70e6aefb720308743d17c6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26505655"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252379"
 ---
 <a name="introduction-to-aspnet-single-page-application"></a>Introdução ao aplicativo de página única do ASP.NET
 ====================
 > Conteúdo para usar o novo modelo do SPA e Knockoutjs.
 
 
-- [Aplicativo de página única: Modelo de KnockoutJS](knockoutjs-template.md)
-- [Saber a uma biblioteca que não seja Knockout?](other-libraries.md)
+- [Aplicativo de página única: modelo KnockoutJS](knockoutjs-template.md)
+- [Conhece uma biblioteca diferente do Knockout?](other-libraries.md)

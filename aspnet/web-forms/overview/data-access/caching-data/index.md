@@ -1,34 +1,30 @@
 ---
 uid: web-forms/overview/data-access/caching-data/index
-title: Cache de dados | Microsoft Docs
+title: Armazenando dados em cache | Microsoft Docs
 author: rick-anderson
-description: Esse conjunto de tutorial explica o armazenamento em cache, que pode melhorar o desempenho do site e como aplicar o cache para a camada de apresentação usando o controle ObjectDataSource...
-ms.author: aspnetcontent
-manager: wpickett
+description: Este conjunto de tutoriais explica o armazenamento em cache, que pode melhorar o desempenho do site e como aplicar o cache para a camada de apresentação usando o controle ObjectDataSource...
+ms.author: riande
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: 7d7ee56c-a867-4777-9407-ec8f73a605a3
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data
 msc.type: chapter
-ms.openlocfilehash: 0b14ecdd4a8cab1d61bf9b7c238fc32330d54e52
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: daa92182f2c28a7fd79d584c0a647f6a15700d12
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26512615"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252422"
 ---
 <a name="caching-data"></a>Armazenando dados em cache
 ====================
-> Esse conjunto de tutorial explica o armazenamento em cache, que pode melhorar o desempenho do site e como aplicar o cache para a camada de apresentação usando o controle ObjectDataSource.
+> Este conjunto de tutoriais explica o armazenamento em cache, que pode melhorar o desempenho do site e como aplicar o cache para a camada de apresentação usando o controle ObjectDataSource.
 
 
-- [Cache de dados com o ObjectDataSource (c#)](caching-data-with-the-objectdatasource-cs.md)
-- [Cache de dados na arquitetura (c#)](caching-data-in-the-architecture-cs.md)
-- [Cache de dados na inicialização do aplicativo (c#)](caching-data-at-application-startup-cs.md)
-- [Usando as dependências de Cache SQL (c#)](using-sql-cache-dependencies-cs.md)
-- [Cache de dados com o ObjectDataSource (VB)](caching-data-with-the-objectdatasource-vb.md)
-- [Cache de dados na arquitetura (VB)](caching-data-in-the-architecture-vb.md)
-- [Cache de dados na inicialização do aplicativo (VB)](caching-data-at-application-startup-vb.md)
-- [Usando as dependências de Cache SQL (VB)](using-sql-cache-dependencies-vb.md)
+- [Armazenando dados em cache com o ObjectDataSource (C#)](caching-data-with-the-objectdatasource-cs.md)
+- [Armazenando dados em cache na arquitetura (C#)](caching-data-in-the-architecture-cs.md)
+- [Armazenando dados em cache na inicialização do aplicativo (C#)](caching-data-at-application-startup-cs.md)
+- [Uso de dependências de cache de SQL (C#)](using-sql-cache-dependencies-cs.md)
+- [Armazenando dados em cache com o ObjectDataSource (VB)](caching-data-with-the-objectdatasource-vb.md)
+- [Armazenando dados em cache na arquitetura (VB)](caching-data-in-the-architecture-vb.md)
+- [Armazenando dados em cache na inicialização do aplicativo (VB)](caching-data-at-application-startup-vb.md)
+- [Uso de dependências de cache de SQL (VB)](using-sql-cache-dependencies-vb.md)

@@ -3,25 +3,21 @@ uid: visual-studio/overview/2013/index
 title: ASP.NET e Visual Studio 2013 | Microsoft Docs
 author: rick-anderson
 description: Visual Studio 2013
-ms.author: aspnetcontent
-manager: wpickett
+ms.author: riande
 ms.date: 06/25/2013
-ms.topic: article
 ms.assetid: 646edfc7-dc62-4fa0-84c2-926996c92aeb
-ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013
 msc.type: chapter
-ms.openlocfilehash: fad379374814c794754605a2aab193ec625e2182
-ms.sourcegitcommit: 3625e4f7a667641b058d23126f0d9d1844fee886
-ms.translationtype: HT
+ms.openlocfilehash: 74793becba663d163a31cb1b02654b7b6cb021af
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/20/2018
-ms.locfileid: "27980157"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252435"
 ---
 <a name="aspnet-and-visual-studio-2013"></a>ASP.NET e Visual Studio 2013
 ====================
-> Desenvolvimento de aplicativos de web do ASP.NET com o Visual Studio 2013
+> Desenvolvimento de aplicativos web do ASP.NET com o Visual Studio 2013
 
 
 - [Criação de Projetos Web do ASP.NET no Visual Studio 2013](creating-web-projects-in-visual-studio.md)

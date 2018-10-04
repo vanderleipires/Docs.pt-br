@@ -1,36 +1,32 @@
 ---
 uid: single-page-application/index
-title: Aplicativo de página única ASP.NET | Microsoft Docs
+title: Aplicativo de página única do ASP.NET | Microsoft Docs
 author: rick-anderson
-description: Baixe a atualização do ASP.NET estão 2012 e ter uma melhor experiência de ponta a ponta para criar aplicativos com significativas interações de cliente usando JavaScrip...
-ms.author: aspnetcontent
-manager: wpickett
+description: Baixe a atualização de 2012 do outono de ASP.NET e ter uma melhor experiência de ponta a ponta para a criação de aplicativos com as interações do lado do cliente significativas usando JavaScript&lt;2}&lt;1}...
+ms.author: riande
 ms.date: 11/14/2012
-ms.topic: article
 ms.assetid: 4760328c-3d73-4757-a36f-ab80a5b3f611
-ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /single-page-application
 msc.type: categoryindex
-ms.openlocfilehash: 459af328c37edd0ac38ddd51bc7eb6e705690df5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 30b992967c3fe36539481f11a94a5db290cf99c5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26505625"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252350"
 ---
 <a name="aspnet-single-page-application"></a>Aplicativo de página única do ASP.NET
 ====================
-- [Visão Geral](overview/index.md)
+- [Visão geral](overview/index.md)
 
     - [Introdução](overview/introduction/index.md)
 
-        - [Aplicativo de página única: Modelo de KnockoutJS](overview/introduction/knockoutjs-template.md)
-        - [Saber a uma biblioteca que não seja Knockout?](overview/introduction/other-libraries.md)
+        - [Aplicativo de página única: modelo KnockoutJS](overview/introduction/knockoutjs-template.md)
+        - [Conhece uma biblioteca diferente do Knockout?](overview/introduction/other-libraries.md)
     - [Modelos](overview/templates/index.md)
 
-        - [Modelo de estrutura](overview/templates/backbonejs-template.md)
-        - [Modelo muito fácil/Angular](overview/templates/breezeangular-template.md)
-        - [Modelo muito fácil/Knockout](overview/templates/breezeknockout-template.md)
-        - [Modelo de EmberJS](overview/templates/emberjs-template.md)
-        - [Modelo de toalhas ativo](overview/templates/hottowel-template.md)
+        - [Modelo Backbone](overview/templates/backbonejs-template.md)
+        - [Modelo Breeze/Angular](overview/templates/breezeangular-template.md)
+        - [Modelo Breeze/Knockout](overview/templates/breezeknockout-template.md)
+        - [Modelo EmberJS](overview/templates/emberjs-template.md)
+        - [Modelo Hot Towel](overview/templates/hottowel-template.md)

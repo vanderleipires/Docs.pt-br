@@ -2,22 +2,18 @@
 uid: whitepapers/index
 title: White papers | Microsoft Docs
 author: rick-anderson
-description: Nessa página, você encontrará white papers para ajudá-lo a instalar e configurar o ASP.NET e para ajudá-lo a escrever aplicativos do ASP.NET seguros, rápidos e flexíveis.
-ms.author: aspnetcontent
-manager: wpickett
+description: Nesta página você encontrará white papers para ajudá-lo a instalar e configurar o ASP.NET e para ajudar a escrever aplicativos do ASP.NET seguros, rápidos e flexíveis.
+ms.author: riande
 ms.date: 11/15/2011
-ms.topic: article
 ms.assetid: 3824e2d7-446f-406b-9c8b-5a1634359a78
-ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 5d335017a28f3dcbb8332b5361a2b068bddd2cce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: HT
+ms.openlocfilehash: 3e463e0fb8e6af228480fc4795e1bd0ee5badac9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28883797"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252283"
 ---
 <a name="whitepapers"></a>Whitepapers
 ====================
@@ -28,7 +24,7 @@ ms.locfileid: "28883797"
     - [Alterações significativas do ASP.NET 4](aspnet4/breaking-changes.md)
 - [Atualização de um aplicativo do ASP.NET MVC 1.0 para o ASP.NET MVC 2](aspnet-mvc2-upgrade-notes.md)
 - [Acesso negado do ASP.NET a diretórios do IIS](denied-access-to-iis-directories.md)
-- [O que há de novo no ASP.NET MVC 2](what-is-new-in-aspnet-mvc.md)
+- [Novidades no ASP.NET MVC 2](what-is-new-in-aspnet-mvc.md)
 - [ASP.NET MVC 3](mvc3-release-notes.md)
 - [ASP.NET MVC 4](mvc4-beta-release-notes.md)
 - [Executando o ASP.NET 1.1 com o IIS 6.0](aspnet-and-iis6.md)

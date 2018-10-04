@@ -1,28 +1,24 @@
 ---
 uid: mvc/overview/views/index
-title: Interface de usuário do ASP.NET MVC, Layouts e temas | Microsoft Docs
+title: Interface do usuário do ASP.NET MVC, Layouts e temas | Microsoft Docs
 author: rick-anderson
-description: A sintaxe do Razor e como usá-lo nos modos de exibição (V MVC) para exibir informações.
-ms.author: aspnetcontent
-manager: wpickett
+description: A sintaxe do Razor e como usá-lo nas exibições (V MVC) para exibir informações.
+ms.author: riande
 ms.date: 08/10/2011
-ms.topic: article
 ms.assetid: 786e452d-c0d6-45fb-85eb-22c820304667
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views
 msc.type: chapter
-ms.openlocfilehash: 914820b5d086f2f194881ec9d47da2e5db9732a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 258746b494410b5bf10dccefaba244088b6bdbeb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26503275"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252405"
 ---
-<a name="aspnet-mvc-ui-layouts-and-themes"></a>Interface de usuário do ASP.NET MVC, Layouts e temas
+<a name="aspnet-mvc-ui-layouts-and-themes"></a>Interface do usuário do ASP.NET MVC, Layouts e temas
 ====================
-> A sintaxe do Razor e como usá-lo nos modos de exibição (V MVC) para exibir informações.
+> A sintaxe do Razor e como usá-lo nas exibições (V MVC) para exibir informações.
 
 
-- [Usando o Inspetor de página no ASP.NET MVC](using-page-inspector-in-aspnet-mvc.md)
-- [Dinâmico v. Modos de exibição fortemente tipados](dynamic-v-strongly-typed-views.md)
+- [Uso do Inspetor de Página no ASP.NET MVC](using-page-inspector-in-aspnet-mvc.md)
+- [Modos de exibição dinâmicos versus fortemente tipados](dynamic-v-strongly-typed-views.md)

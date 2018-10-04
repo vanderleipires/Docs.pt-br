@@ -1,34 +1,30 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/index
-title: Exibindo dados com o controle DataList e repetidor | Microsoft Docs
+title: Exibindo dados com o DataList e Repeater | Microsoft Docs
 author: rick-anderson
-description: Esses tutoriais mostram maneiras alternativas para exibir dados usando os controles DataList e Repetidor.
-ms.author: aspnetcontent
-manager: wpickett
+description: Esses tutoriais mostram maneiras alternativas para exibir dados usando os controles DataList e Repeater.
+ms.author: riande
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: 3005174a-ba3d-4937-8b3e-b913ee4172ac
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater
 msc.type: chapter
-ms.openlocfilehash: 99d24bafb594df2005ba4a7ca9326524e713f25f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 7b751a7c9dfdb5738dafb795a82f80540ae002bd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26513095"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252710"
 ---
-<a name="displaying-data-with-the-datalist-and-repeater"></a>Exibindo dados com o controle DataList e repetidor
+<a name="displaying-data-with-the-datalist-and-repeater"></a>Exibindo dados com o DataList e Repeater
 ====================
-> Esses tutoriais mostram maneiras alternativas para exibir dados usando os controles DataList e Repetidor.
+> Esses tutoriais mostram maneiras alternativas para exibir dados usando os controles DataList e Repeater.
 
 
-- [Exibindo dados com o DataList e controles de Repetidor (c#)](displaying-data-with-the-datalist-and-repeater-controls-cs.md)
-- [Formatação de DataList e repetidor com base nos dados (c#)](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
-- [Exibindo vários registros por linha com o controle DataList (c#)](showing-multiple-records-per-row-with-the-datalist-control-cs.md)
-- [Controles da Web de dados aninhadas (c#)](nested-data-web-controls-cs.md)
-- [Exibindo dados com os controles de Repetidor (VB) e de DataList](displaying-data-with-the-datalist-and-repeater-controls-vb.md)
-- [Formatação de DataList e repetidor com base nos dados (VB)](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
+- [Exibindo dados com os controles DataList e o Repeater (C#)](displaying-data-with-the-datalist-and-repeater-controls-cs.md)
+- [Formatação do DataList e Repeater com base nos dados (C#)](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
+- [Exibindo vários registros por linha com o controle DataList (C#)](showing-multiple-records-per-row-with-the-datalist-control-cs.md)
+- [Controles da Web de dados aninhadas (C#)](nested-data-web-controls-cs.md)
+- [Exibindo dados com os controles DataList e o Repeater (VB)](displaying-data-with-the-datalist-and-repeater-controls-vb.md)
+- [Formatação do DataList e Repeater com base nos dados (VB)](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
 - [Exibindo vários registros por linha com o controle DataList (VB)](showing-multiple-records-per-row-with-the-datalist-control-vb.md)
 - [Controles da Web de dados aninhadas (VB)](nested-data-web-controls-vb.md)

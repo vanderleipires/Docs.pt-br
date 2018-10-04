@@ -1,25 +1,21 @@
 ---
 uid: mobile/index
-title: Sites com o ASP.NET e aplicativos móveis | Microsoft Docs
+title: Aplicativos móveis e Sites com ASP.NET | Microsoft Docs
 author: rick-anderson
-description: Saiba como o ASP.NET torna fácil de criar aplicativos Web móveis
-ms.author: aspnetcontent
-manager: wpickett
+description: Saiba como o ASP.NET torna fácil criar aplicativos da Web móveis
+ms.author: riande
 ms.date: 01/28/2011
-ms.topic: article
 ms.assetid: 71217425-e015-41af-b88a-1f4472f81886
-ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: b20f99d92451ac96f11c05db38c737102c714891
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: c09089bc84304ec3ea91d069f183d57665763f58
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26498095"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252562"
 ---
-<a name="mobile-apps--sites-with-aspnet"></a>Aplicativos móveis & Sites com o ASP.NET
+<a name="mobile-apps--sites-with-aspnet"></a>Aplicativos móveis e Sites com ASP.NET
 ====================
 - [Dispositivo móvel](overview.md)
 - [Dispositivos testados de controles móveis do ASP.NET](tested-devices.md)

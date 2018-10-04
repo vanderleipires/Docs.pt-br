@@ -2,27 +2,23 @@
 uid: web-forms/overview/ajax-control-toolkit/passwordstrength/index
 title: PasswordStrength | Microsoft Docs
 author: rick-anderson
-description: Este tutorial mostra como controlar PasswordStrength para verificar como forte é uma senha como um usuário cria.
-ms.author: aspnetcontent
-manager: wpickett
+description: Este tutorial mostra como uma senha ao controle PasswordStrength para verificar como forte é como um usuário cria a ele.
+ms.author: riande
 ms.date: 11/14/2011
-ms.topic: article
 ms.assetid: bdbeb8f7-90e7-4bc5-aeb6-0f928660fb4f
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength
 msc.type: chapter
-ms.openlocfilehash: 8bed18ed3d711c09e27ff6b0b04cb7ee769460ab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 08a4dab55e5084286e6ae6c397c018ce5030dbce
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26510625"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252646"
 ---
 <a name="passwordstrength"></a>PasswordStrength
 ====================
-> Este tutorial mostra como controlar PasswordStrength para verificar como forte é uma senha como um usuário cria.
+> Este tutorial mostra como uma senha ao controle PasswordStrength para verificar como forte é como um usuário cria a ele.
 
 
-- [Testando a força da senha (c#)](testing-the-strength-of-a-password-cs.md)
-- [Testando a força da senha (VB)](testing-the-strength-of-a-password-vb.md)
+- [Teste da força de uma senha (C#)](testing-the-strength-of-a-password-cs.md)
+- [Teste da força de uma senha (VB)](testing-the-strength-of-a-password-vb.md)

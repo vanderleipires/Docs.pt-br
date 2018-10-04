@@ -2,35 +2,31 @@
 uid: mvc/overview/older-versions-1/views/index
 title: Exibições do ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: Esse conjunto de tutoriais fornece uma breve introdução ao ASP.NET MVC exibições, dados de exibição e auxiliares HTML.
-ms.author: aspnetcontent
-manager: wpickett
+description: Esse conjunto de tutoriais fornece uma breve introdução ao auxiliares de HTML, exibir dados e exibições do ASP.NET MVC.
+ms.author: riande
 ms.date: 09/28/2011
-ms.topic: article
 ms.assetid: c2dea264-0d8c-4216-bbe5-70d2421597b0
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views
 msc.type: chapter
-ms.openlocfilehash: ba9f94794f1a53d9b3a027b1cfdf2e97b5544488
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 05f49ffb2bb6bb4a0a04d673845f8e9901d138f8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26500825"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252313"
 ---
-<a name="aspnet-mvc-views"></a>Exibições do MVC do ASP.NET
+<a name="aspnet-mvc-views"></a>Exibições do ASP.NET MVC
 ====================
-> Esse conjunto de tutoriais fornece uma breve introdução ao ASP.NET MVC exibições, dados de exibição e auxiliares HTML.
+> Esse conjunto de tutoriais fornece uma breve introdução ao auxiliares de HTML, exibir dados e exibições do ASP.NET MVC.
 
 
-- [O ASP.NET MVC exibições visão geral (c#)](asp-net-mvc-views-overview-cs.md)
-- [Criando auxiliares HTML personalizados (c#)](creating-custom-html-helpers-cs.md)
-- [Classe TagBuilder criem auxiliares HTML (c#)](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
-- [Criar Layouts de página com páginas de exibição mestre (c#)](creating-page-layouts-with-view-master-pages-cs.md)
-- [Transmitindo dados para páginas de exibição mestre (c#)](passing-data-to-view-master-pages-cs.md)
-- [Visão geral (VB) de exibições do MVC do ASP.NET](asp-net-mvc-views-overview-vb.md)
-- [Criando auxiliares HTML personalizado (VB)](creating-custom-html-helpers-vb.md)
-- [Classe TagBuilder criem auxiliares HTML (VB)](using-the-tagbuilder-class-to-build-html-helpers-vb.md)
-- [Criar Layouts de página com páginas de exibição mestre (VB)](creating-page-layouts-with-view-master-pages-vb.md)
-- [Transmitindo dados para páginas de exibição mestre (VB)](passing-data-to-view-master-pages-vb.md)
+- [Visão geral de exibições do ASP.NET MVC (C#)](asp-net-mvc-views-overview-cs.md)
+- [Criação de auxiliares de HTML personalizados (C#)](creating-custom-html-helpers-cs.md)
+- [Classe TagBuilder para criar auxiliares de HTML (C#)](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
+- [Criar layouts de página com Exibir páginas mestras (C#)](creating-page-layouts-with-view-master-pages-cs.md)
+- [Transmitindo dados para Exibir páginas mestras (C#)](passing-data-to-view-master-pages-cs.md)
+- [Visão geral de exibições do ASP.NET MVC (VB)](asp-net-mvc-views-overview-vb.md)
+- [Criação de auxiliares de HTML personalizados (VB)](creating-custom-html-helpers-vb.md)
+- [Classe TagBuilder para criar auxiliares de HTML (VB)](using-the-tagbuilder-class-to-build-html-helpers-vb.md)
+- [Criar layouts de página com Exibir páginas mestras (VB)](creating-page-layouts-with-view-master-pages-vb.md)
+- [Transmitindo dados para Exibir páginas mestras (VB)](passing-data-to-view-master-pages-vb.md)

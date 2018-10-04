@@ -1,30 +1,26 @@
 ---
 uid: mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/index
-title: O ASP.NET MVC para o resto de nós | Microsoft Docs
+title: ASP.NET MVC para o restante de nós | Microsoft Docs
 author: rick-anderson
-description: O ASP.NET MVC para o restante dos EUA
-ms.author: aspnetcontent
-manager: wpickett
+description: ASP.NET MVC para o restante de nós
+ms.author: riande
 ms.date: 09/28/2011
-ms.topic: article
 ms.assetid: b57141fa-8903-4afe-8c8c-d965204001e2
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us
 msc.type: chapter
-ms.openlocfilehash: 6c1d8eb52d39a4d133c4a6b8e209d1d4990f0b77
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: f0a686f36bdd3b7d534f7d00965e8057f48cdf84
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26503415"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252289"
 ---
-<a name="aspnet-mvc-for-the-rest-of-us"></a>O ASP.NET MVC para o restante dos EUA
+<a name="aspnet-mvc-for-the-rest-of-us"></a>ASP.NET MVC para o restante de nós
 ====================
-> O ASP.NET MVC para o restante dos EUA
+> ASP.NET MVC para o restante de nós
 
 
-- [O ASP.NET MVC para o resto de nós: parte 1](aspnet-mvc-for-the-rest-of-us-part-1.md)
-- [O ASP.NET MVC para o resto de nós: parte 2](aspnet-mvc-for-the-rest-of-us-part-2.md)
-- [O ASP.NET MVC para o resto de nós: parte 3](aspnet-mvc-for-the-rest-of-us-part-3.md)
-- [O ASP.NET MVC para o resto de nós: parte 4](aspnet-mvc-for-the-rest-of-us-part-4.md)
+- [ASP.NET MVC para o restante de nós: parte 1](aspnet-mvc-for-the-rest-of-us-part-1.md)
+- [ASP.NET MVC para o restante de nós: parte 2](aspnet-mvc-for-the-rest-of-us-part-2.md)
+- [ASP.NET MVC para o restante de nós: parte 3](aspnet-mvc-for-the-rest-of-us-part-3.md)
+- [ASP.NET MVC para o restante de nós: parte 4](aspnet-mvc-for-the-rest-of-us-part-4.md)

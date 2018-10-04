@@ -1,62 +1,58 @@
 ---
 uid: web-forms/overview/older-versions-security/index
-title: Versões mais antigas - segurança | Microsoft Docs
+title: Versões mais antigas – segurança | Microsoft Docs
 author: rick-anderson
-description: Tópicos de segurança, autenticação e autorização para ASP.NET 4 e aplicativos Web Forms anteriores.
-ms.author: aspnetcontent
-manager: wpickett
+description: Tópicos de segurança, autenticação e autorização para ASP.NET 4 e aplicativos de formulários da Web anteriores.
+ms.author: riande
 ms.date: 10/18/2014
-ms.topic: article
 ms.assetid: 2f952638-6b1f-48b6-b019-1c5d1e9ab746
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security
 msc.type: chapter
-ms.openlocfilehash: 2a21be5f59e1893ce5a85d0ec801abf6750024b9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 5a2eeef18163d0d408e4aba33bad7464ebf600a8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26519065"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252361"
 ---
-<a name="older-versions---security"></a>Versões mais antigas - segurança
+<a name="older-versions---security"></a>Versões mais antigas – segurança
 ====================
-> Tópicos de segurança, autenticação e autorização para ASP.NET 4 e aplicativos Web Forms anteriores.
+> Tópicos de segurança, autenticação e autorização para ASP.NET 4 e aplicativos de formulários da Web anteriores.
 
 
-- [ASP.NET 3.5 - Introdução à segurança](introduction/index.md)
+- [ASP.NET 3.5 – introdução à segurança](introduction/index.md)
 
-    - [Noções básicas sobre segurança e suporte do ASP.NET (c#)](introduction/security-basics-and-asp-net-support-cs.md)
-    - [Visão geral da autenticação de formulários (c#)](introduction/an-overview-of-forms-authentication-cs.md)
-    - [Configuração de autenticação de formulários e tópicos avançados (c#)](introduction/forms-authentication-configuration-and-advanced-topics-cs.md)
+    - [Noções básicas sobre segurança e suporte do ASP.NET (C#)](introduction/security-basics-and-asp-net-support-cs.md)
+    - [Visão geral sobre autenticação de formulários (C#)](introduction/an-overview-of-forms-authentication-cs.md)
+    - [Configuração de autenticação de formulários e tópicos avançados (C#)](introduction/forms-authentication-configuration-and-advanced-topics-cs.md)
     - [Noções básicas sobre segurança e suporte do ASP.NET (VB)](introduction/security-basics-and-asp-net-support-vb.md)
-    - [Visão geral da autenticação de formulários (VB)](introduction/an-overview-of-forms-authentication-vb.md)
+    - [Visão geral sobre autenticação de formulários (VB)](introduction/an-overview-of-forms-authentication-vb.md)
     - [Configuração de autenticação de formulários e tópicos avançados (VB)](introduction/forms-authentication-configuration-and-advanced-topics-vb.md)
-- [ASP.NET 3.5 - associação](membership/index.md)
+- [ASP.NET 3.5 – associação](membership/index.md)
 
-    - [Criando o esquema de associação no SQL Server (c#)](membership/creating-the-membership-schema-in-sql-server-cs.md)
-    - [Criar contas de usuário (c#)](membership/creating-user-accounts-cs.md)
-    - [Validando credenciais de usuário no repositório do usuário de associação (c#)](membership/validating-user-credentials-against-the-membership-user-store-cs.md)
-    - [Autorização baseada em usuário (c#)](membership/user-based-authorization-cs.md)
-    - [Armazenando informações de usuário adicionais (c#)](membership/storing-additional-user-information-cs.md)
-    - [Criando o esquema de associação no SQL Server (VB)](membership/creating-the-membership-schema-in-sql-server-vb.md)
-    - [Criar contas de usuário (VB)](membership/creating-user-accounts-vb.md)
-    - [Validando credenciais de usuário no repositório de usuário de associação (VB)](membership/validating-user-credentials-against-the-membership-user-store-vb.md)
+    - [Criação do esquema de associação no SQL Server (C#)](membership/creating-the-membership-schema-in-sql-server-cs.md)
+    - [Criação de contas de usuário (C#)](membership/creating-user-accounts-cs.md)
+    - [Validando credenciais de usuário no repositório de usuário associado (C#)](membership/validating-user-credentials-against-the-membership-user-store-cs.md)
+    - [Autorização baseada em usuário (C#)](membership/user-based-authorization-cs.md)
+    - [Armazenando informações de usuário adicionais (C#)](membership/storing-additional-user-information-cs.md)
+    - [Criação do esquema de associação no SQL Server (VB)](membership/creating-the-membership-schema-in-sql-server-vb.md)
+    - [Criação de contas de usuário (VB)](membership/creating-user-accounts-vb.md)
+    - [Validando credenciais de usuário no repositório de usuário associado (VB)](membership/validating-user-credentials-against-the-membership-user-store-vb.md)
     - [Autorização baseada em usuário (VB)](membership/user-based-authorization-vb.md)
     - [Armazenando informações de usuário adicionais (VB)](membership/storing-additional-user-information-vb.md)
-- [ASP.NET 3.5 - funções](roles/index.md)
+- [ASP.NET 3.5 – funções](roles/index.md)
 
-    - [Criar e gerenciar funções (c#)](roles/creating-and-managing-roles-cs.md)
-    - [Atribuir funções aos usuários (c#)](roles/assigning-roles-to-users-cs.md)
-    - [Autorização baseada em função (c#)](roles/role-based-authorization-cs.md)
+    - [Criar e gerenciar funções (C#)](roles/creating-and-managing-roles-cs.md)
+    - [Atribuindo funções aos usuários (C#)](roles/assigning-roles-to-users-cs.md)
+    - [Autorização baseada em função (C#)](roles/role-based-authorization-cs.md)
     - [Criar e gerenciar funções (VB)](roles/creating-and-managing-roles-vb.md)
-    - [Atribuir funções aos usuários (VB)](roles/assigning-roles-to-users-vb.md)
+    - [Atribuindo funções aos usuários (VB)](roles/assigning-roles-to-users-vb.md)
     - [Autorização baseada em função (VB)](roles/role-based-authorization-vb.md)
-- [ASP.NET 3.5 - administração de segurança](admin/index.md)
+- [ASP.NET 3.5 – administração de segurança](admin/index.md)
 
-    - [Criando uma Interface para selecionar uma conta de usuário de muitos (c#)](admin/building-an-interface-to-select-one-user-account-from-many-cs.md)
-    - [Recuperando e alterar senhas (c#)](admin/recovering-and-changing-passwords-cs.md)
-    - [Contas de usuário de desbloqueio e aprovação (c#)](admin/unlocking-and-approving-user-accounts-cs.md)
-    - [Criando uma Interface para selecionar uma conta de usuário de muitos (VB)](admin/building-an-interface-to-select-one-user-account-from-many-vb.md)
-    - [Recuperando e alterar senhas (VB)](admin/recovering-and-changing-passwords-vb.md)
-    - [Contas de usuário do desbloqueio e aprovação (VB)](admin/unlocking-and-approving-user-accounts-vb.md)
+    - [Criação de uma interface para selecionar uma conta de usuário dentre muitas (C#)](admin/building-an-interface-to-select-one-user-account-from-many-cs.md)
+    - [Recuperação e alteração de senhas (C#)](admin/recovering-and-changing-passwords-cs.md)
+    - [Desbloqueio e aprovação de contas de usuário (C#)](admin/unlocking-and-approving-user-accounts-cs.md)
+    - [Criação de uma interface para selecionar uma conta de usuário dentre muitas (VB)](admin/building-an-interface-to-select-one-user-account-from-many-vb.md)
+    - [Recuperação e alteração de senhas (VB)](admin/recovering-and-changing-passwords-vb.md)
+    - [Desbloqueio e aprovação de contas de usuário (VB)](admin/unlocking-and-approving-user-accounts-vb.md)

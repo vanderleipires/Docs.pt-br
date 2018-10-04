@@ -1,27 +1,23 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/index
-title: O ASP.NET MVC 4 prático laboratórios | Microsoft Docs
+title: ASP.NET MVC 4 com laboratórios práticos online | Microsoft Docs
 author: rick-anderson
-description: Aprender a desenvolver com o ASP.NET MVC com esses ponteiros em laboratórios
-ms.author: aspnetcontent
-manager: wpickett
+description: Saiba como desenvolver com o ASP.NET MVC com estes laboratórios de em mãos
+ms.author: riande
 ms.date: 02/18/2013
-ms.topic: article
 ms.assetid: eb23eb99-bfca-4043-9b48-2cf7838dd754
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs
 msc.type: chapter
-ms.openlocfilehash: bfdab4cfd3945401213bcc0b6f282dd5ffbedc5d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
-ms.translationtype: HT
+ms.openlocfilehash: 02ef51cd3320df200920cba19a59d8ab23836c95
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2018
-ms.locfileid: "29727165"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252349"
 ---
-# <a name="aspnet-mvc-4-hands-on-labs"></a>O ASP.NET MVC 4 prático Labs
+# <a name="aspnet-mvc-4-hands-on-labs"></a>ASP.NET MVC 4 com laboratórios práticos online
 
-Aprender a desenvolver com o ASP.NET MVC com esses ponteiros em laboratórios
+Saiba como desenvolver com o ASP.NET MVC com estes laboratórios de em mãos
 
 - [Novidades no ASP.NET MVC 4](whats-new-in-aspnet-mvc-4.md)
 - [Conceitos básicos do ASP.NET MVC 4](aspnet-mvc-4-fundamentals.md)

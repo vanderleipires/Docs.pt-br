@@ -3,21 +3,17 @@ uid: mvc/videos/index
 title: Vídeos | Microsoft Docs
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
-manager: wpickett
+ms.author: riande
 ms.date: 06/24/2011
-ms.topic: article
 ms.assetid: e618c37c-68f3-49aa-9fda-f86cb3b578b9
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos
 msc.type: book
-ms.openlocfilehash: 03e8129816a2fb8b9261618207b0e1795fb7cf23
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
-ms.translationtype: HT
+ms.openlocfilehash: 1f284bb52bb45880d656592f173b3e57fbc47118
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29152957"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252626"
 ---
 <a name="videos"></a>Vídeos
 ====================
@@ -50,7 +46,7 @@ ms.locfileid: "29152957"
         - [ASP.NET MVC: como? Vídeo técnico de 10 minutos para desenvolvedores](mvc-2/how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
         - [Retornar dados em formato JSON para uma chamada do AJAX em um aplicativo Web do ASP.NET MVC](mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
         - [Trabalhar com os dados em exibições parciais do ASP.NET MVC](mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-        - [Implementar modelos de exibição para gerenciar os dados para exibições do MVC do ASP.NET](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+        - [Implementar modelos de exibição para gerenciar dados para exibições do ASP.NET MVC](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
         - [Criar um auxiliar de HTML personalizado para um aplicativo do MVC](mvc-2/how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
         - [Trabalhar com associadores de modelos em um aplicativo do MVC](mvc-2/how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application.md)
         - [Usar atributos HttpVerbs em um aplicativo do MVC](mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
@@ -95,7 +91,7 @@ ms.locfileid: "29152957"
         - [Vitrine do ASP.NET MVC parte 16: refazer associação com OpenID](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
         - [Vitrine do ASP.NET MVC parte 17: check-out com Jeff Atwood](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
         - [Vitrine do ASP.NET MVC parte 18: criação de experiência](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-        - [ASP.NET MVC vitrine parte 19: Processamento de pedidos ao fluxo de trabalho do Windows](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+        - [Vitrine do ASP.NET MVC parte 19: processamento de pedidos com o fluxo de trabalho do Windows](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
         - [Vitrine do ASP.NET MVC parte 19a: acompanhamento do fluxo de trabalho do Windows](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
         - [Vitrine do ASP.NET MVC parte 20: registro em log](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
         - [Vitrine do ASP.NET MVC parte 21: Gerenciador de Pedidos e personalização](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

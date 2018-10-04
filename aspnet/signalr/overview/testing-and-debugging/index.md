@@ -1,29 +1,25 @@
 ---
 uid: signalr/overview/testing-and-debugging/index
-title: SignalR para teste e depuração | Microsoft Docs
+title: O SignalR Testando e depurando | Microsoft Docs
 author: rick-anderson
-description: Como testar e depurar aplicativos SignalR.
-ms.author: aspnetcontent
-manager: wpickett
+description: Como testar e depurar aplicativos do SignalR.
+ms.author: riande
 ms.date: 09/19/2014
-ms.topic: article
 ms.assetid: 437f6dec-ab4b-4d12-af71-e8ab028aab7b
-ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging
 msc.type: chapter
-ms.openlocfilehash: 54cace2dff97e405ab5b4d9205b4c85266a02e96
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 4d252a080819873435318b6fd317383ad710980a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26505525"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252547"
 ---
-<a name="signalr-testing-and-debugging"></a>SignalR Testando e depurando
+<a name="signalr-testing-and-debugging"></a>O SignalR Testando e depurando
 ====================
-> Como testar e depurar aplicativos SignalR.
+> Como testar e depurar aplicativos do SignalR.
 
 
-- [Solução de problemas de SignalR](troubleshooting.md)
-- [Teste de unidade e os aplicativos SignalR](unit-testing-signalr-applications.md)
+- [Solução de problemas do SignalR](troubleshooting.md)
+- [Teste de unidade em aplicativos do SignalR](unit-testing-signalr-applications.md)
 - [Habilitar o rastreamento do SignalR](enabling-signalr-tracing.md)

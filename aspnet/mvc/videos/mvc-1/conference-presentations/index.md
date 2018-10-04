@@ -2,28 +2,24 @@
 uid: mvc/videos/mvc-1/conference-presentations/index
 title: Fala | Microsoft Docs
 author: rick-anderson
-description: Fala de ASP.NET MVC 1
-ms.author: aspnetcontent
-manager: wpickett
+description: Fala de MVC do ASP.NET 1
+ms.author: riande
 ms.date: 09/28/2011
-ms.topic: article
 ms.assetid: 276507d5-e9bd-46ba-8e98-32a8957504fa
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/conference-presentations
 msc.type: chapter
-ms.openlocfilehash: ed730075f5c4232ff48406a2cc047d85f16c2244
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: e95a05cb4403fd373a2e0e2e4591bec3e4da2df7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26503365"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252678"
 ---
 <a name="talks"></a>Fala
 ====================
-> Fala de ASP.NET MVC 1
+> Fala de MVC do ASP.NET 1
 
 
-- [Criando NerdDinner.com com o Microsoft ASP.NET Model View Controller (MVC)](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
-- [Próximo modelo superior exibição controlador Framework do América](americas-next-top-model-view-controller-framework.md)
-- [Ninja em dicas de faixa preta incêndio](ninja-on-fire-black-belt-tips.md)
+- [Criação do NerdDinner.com o Microsoft ASP.NET MVC (Model View Controller)](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
+- [Estrutura do America's Next Top Model View Controller](americas-next-top-model-view-controller-framework.md)
+- [Melhores dicas de ninja faixa preta](ninja-on-fire-black-belt-tips.md)

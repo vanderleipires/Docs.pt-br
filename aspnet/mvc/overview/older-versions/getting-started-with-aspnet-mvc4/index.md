@@ -2,34 +2,30 @@
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/index
 title: Introdução ao ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, w...
-ms.author: aspnetcontent
-manager: wpickett
+description: Esta série de tutoriais ensinará os conceitos básicos da criação de um aplicativo Web ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, w...
+ms.author: riande
 ms.date: 02/15/2012
-ms.topic: article
 ms.assetid: a35183ac-cbcb-4070-9233-6331cde921ad
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4
 msc.type: chapter
-ms.openlocfilehash: 2d53060133e982e01e371407fc18ac62188c36b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 73b01c8f2cd1d36ff5f4dc2020df2e14f6a0f290
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26501825"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252659"
 ---
 <a name="getting-started-with-aspnet-mvc-4"></a>Introdução ao ASP.NET MVC 4
 ====================
-> Esta série de tutorial irá ensiná-lo as Noções básicas de criação de um aplicativo Web do ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é uma versão gratuita do Microsoft Visual Studio.
+> Esta série de tutoriais ensinará os conceitos básicos da criação de um aplicativo Web ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é uma versão gratuita do Microsoft Visual Studio.
 
 
 - [Introdução ao ASP.NET MVC 4](intro-to-aspnet-mvc-4.md)
 - [Adicionando um controlador](adding-a-controller.md)
 - [Adicionando uma exibição](adding-a-view.md)
 - [Adicionando um modelo](adding-a-model.md)
-- [Acessando dados do modelo de um controlador](accessing-your-models-data-from-a-controller.md)
-- [Examinando os métodos de edição e exibição de edição](examining-the-edit-methods-and-edit-view.md)
-- [Adicionar um novo campo para o modelo de filme e tabela](adding-a-new-field-to-the-movie-model-and-table.md)
-- [Adicionando validação para o modelo](adding-validation-to-the-model.md)
-- [Examinar os detalhes e métodos de exclusão](examining-the-details-and-delete-methods.md)
+- [Acessando dados do seu modelo por meio de um controlador](accessing-your-models-data-from-a-controller.md)
+- [Examinando os métodos de edição e a exibição de edição](examining-the-edit-methods-and-edit-view.md)
+- [Adicionar um novo campo ao modelo de filme e à tabela](adding-a-new-field-to-the-movie-model-and-table.md)
+- [Adicionar validação ao modelo](adding-validation-to-the-model.md)
+- [Examinando os métodos Details e Delete](examining-the-details-and-delete-methods.md)

@@ -1,27 +1,23 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/index
-title: O ASP.NET MVC Storefront | Microsoft Docs
+title: Vitrine do ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: O ASP.NET MVC vitrine Starter Kit
-ms.author: aspnetcontent
-manager: wpickett
+description: Kit de início de vitrine do ASP.NET MVC
+ms.author: riande
 ms.date: 09/28/2011
-ms.topic: article
 ms.assetid: 296b3a7a-483d-4937-ba2f-3f9c1319616a
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront
 msc.type: chapter
-ms.openlocfilehash: 78b42135d38918fb1d5c1d7a9dcdae1da9b660f1
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
-ms.translationtype: HT
+ms.openlocfilehash: b6030c14980bfe86b04284160d2c1e4a5ccc8bf7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29153236"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252432"
 ---
-<a name="aspnet-mvc-storefront"></a>Vitrine eletrônica do ASP.NET MVC
+<a name="aspnet-mvc-storefront"></a>Vitrine do ASP.NET MVC
 ====================
-> O ASP.NET MVC vitrine Starter Kit
+> Kit de início de vitrine do ASP.NET MVC
 
 
 - [Vitrine do ASP.NET MVC parte 1: discussões sobre arquitetura e visão geral](aspnet-mvc-storefront-part-1-architectural-discussion-and-overview.md)
@@ -42,7 +38,7 @@ ms.locfileid: "29153236"
 - [Vitrine do ASP.NET MVC parte 16: refazer associação com OpenID](aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
 - [Vitrine do ASP.NET MVC parte 17: check-out com Jeff Atwood](aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
 - [Vitrine do ASP.NET MVC parte 18: criação de experiência](aspnet-mvc-storefront-part-18-creating-an-experience.md)
-- [ASP.NET MVC vitrine parte 19: Processamento de pedidos ao fluxo de trabalho do Windows](aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+- [Vitrine do ASP.NET MVC parte 19: processamento de pedidos com o fluxo de trabalho do Windows](aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
 - [Vitrine do ASP.NET MVC parte 19a: acompanhamento do fluxo de trabalho do Windows](aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
 - [Vitrine do ASP.NET MVC parte 20: registro em log](aspnet-mvc-storefront-part-20-logging.md)
 - [Vitrine do ASP.NET MVC parte 21: Gerenciador de Pedidos e personalização](aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

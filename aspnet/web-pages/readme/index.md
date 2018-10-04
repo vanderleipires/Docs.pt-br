@@ -2,24 +2,20 @@
 uid: web-pages/readme/index
 title: Leiame do WebMatrix | Microsoft Docs
 author: rick-anderson
-description: O WebMatrix e o Leiame do ASP.NET páginas da Web (Razor) versão 1.0
-ms.author: aspnetcontent
-manager: wpickett
+description: O WebMatrix e o Leiame do ASP.NET Web Pages (Razor) versão 1.0
+ms.author: riande
 ms.date: 01/06/2011
-ms.topic: article
 ms.assetid: 9ded2fdb-ac4c-448f-9774-10bff657514c
-ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 1ca87090d6dc8f4050e8a017777edb530533218a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 3039249e002dff314efd522ac7e72de746546553
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26529635"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252337"
 ---
 <a name="webmatrix-readme"></a>Leiame do WebMatrix
 ====================
 - [Leiame do WebMatrix](overview.md)
-- [Web Matrix e da Web do ASP.NET (Razor) de páginas Beta 3 versão Leiame](beta3.md)
+- [Leiame do Web Matrix e de Páginas da Web do ASP.NET (Razor) versão beta 3](beta3.md)

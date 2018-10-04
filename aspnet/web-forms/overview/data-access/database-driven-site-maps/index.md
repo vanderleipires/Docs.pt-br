@@ -1,28 +1,24 @@
 ---
 uid: web-forms/overview/data-access/database-driven-site-maps/index
-title: Para banco de dados de mapas de Site | Microsoft Docs
+title: Mapas de Site controlado por banco de dados | Microsoft Docs
 author: rick-anderson
-description: Este tutorial explica como criar um mapa de site dinamicamente com base nas informações no banco de dados.
-ms.author: aspnetcontent
-manager: wpickett
+description: Este tutorial explica como criar um mapa do site dinamicamente com base nas informações no banco de dados.
+ms.author: riande
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: c31f540a-0117-4bf2-9235-eb32a3e23529
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps
 msc.type: chapter
-ms.openlocfilehash: a237409281885cbec652de091c6e1d690b24061c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 34053bb62ded6d7ae1b24d1a6a7bc9137dfb1156
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26513025"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252600"
 ---
-<a name="database-driven-site-maps"></a>Mapas de Site para banco de dados
+<a name="database-driven-site-maps"></a>Mapas de Site controlado por banco de dados
 ====================
-> Este tutorial explica como criar um mapa de site dinamicamente com base nas informações no banco de dados.
+> Este tutorial explica como criar um mapa do site dinamicamente com base nas informações no banco de dados.
 
 
-- [Criação de um provedor de mapa de Site personalizado para banco de dados (c#)](building-a-custom-database-driven-site-map-provider-cs.md)
-- [Criação de um provedor de mapa de Site personalizado para banco de dados (VB)](building-a-custom-database-driven-site-map-provider-vb.md)
+- [Criação de um provedor de mapa de site personalizado controlado por banco de dados (C#)](building-a-custom-database-driven-site-map-provider-cs.md)
+- [Criação de um provedor de mapa de site personalizado controlado por banco de dados (VB)](building-a-custom-database-driven-site-map-provider-vb.md)

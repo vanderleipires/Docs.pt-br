@@ -2,28 +2,24 @@
 uid: web-pages/overview/performance-and-traffic/index
 title: Desempenho | Microsoft Docs
 author: rick-anderson
-description: Como o conteúdo do cache para melhorar o desempenho e como medir o tráfego do site.
-ms.author: aspnetcontent
-manager: wpickett
+description: Como armazenar em cache o conteúdo para um desempenho mais rápido e como medir o tráfego do site.
+ms.author: riande
 ms.date: 09/08/2014
-ms.topic: article
 ms.assetid: ce798572-e7dc-44c1-a7fe-a029820e195e
-ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/performance-and-traffic
 msc.type: chapter
-ms.openlocfilehash: fffeb7c5b5a202a273bfd8b144ad1f63d5743087
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: a38142955ffed9197b5e376a3b23fe11f46421df
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26528515"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252530"
 ---
 <a name="performance"></a>Desempenho
 ====================
-> Como o conteúdo do cache para melhorar o desempenho e como medir o tráfego do site.
+> Como armazenar em cache o conteúdo para um desempenho mais rápido e como medir o tráfego do site.
 
 
-- [Armazenamento em cache para melhorar o desempenho do seu site](15-caching-to-improve-the-performance-of-your-website.md)
+- [Cache para melhorar o desempenho do seu site](15-caching-to-improve-the-performance-of-your-website.md)
 - [Análise de tráfego](14-analyzing-traffic.md)
-- [Empacotando e minimizando os ativos em um Site de páginas da Web (Razor) do ASP.NET](bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
+- [Agrupamento e minificação de ativos em um site de Páginas da Web do ASP.NET (Razor)](bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
