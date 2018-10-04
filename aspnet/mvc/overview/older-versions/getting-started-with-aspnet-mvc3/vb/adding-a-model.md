@@ -8,16 +8,16 @@ ms.date: 01/12/2011
 ms.assetid: b3aa7720-5c78-4ca2-baef-9a52234fb7ce
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 0c846d31fb6b24ad964d69d0f81858c87305d68c
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: b1370148018faa8c6c884251bfa86761f45d7e49
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825229"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48576996"
 ---
 <a name="adding-a-model-vb"></a>Adicionando um modelo (VB)
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Este tutorial ensinará os conceitos básicos da criação de um aplicativo Web ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é uma versão gratuita do Microsoft Visual Studio. Antes de começar, verifique se que você instalou os pré-requisitos listados abaixo. Você pode instalar todos eles clicando no link a seguir: [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Como alternativa, você pode instalar individualmente os pré-requisitos usando os links a seguir:
 > 

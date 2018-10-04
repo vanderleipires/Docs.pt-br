@@ -8,16 +8,16 @@ ms.date: 01/12/2011
 ms.assetid: abc7c78d-cb09-4a4c-a887-61bc401d40e3
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 4254bfa1098ed2d2d850c00a44e94458ad2e7a54
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9fc8c6cad44016511c462b4206c28ea3449ff97e
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41823500"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48576606"
 ---
 <a name="adding-a-view-c"></a>Adicionando uma exibição (c#)
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > > [!NOTE]
 > > Uma versão atualizada deste tutorial está disponível [aqui](../../../getting-started/introduction/getting-started.md) que usa o ASP.NET MVC 5 e Visual Studio 2013. É mais seguro e muito mais simples a seguir e apresenta mais recursos.

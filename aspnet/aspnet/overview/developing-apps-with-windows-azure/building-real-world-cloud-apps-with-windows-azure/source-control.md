@@ -8,23 +8,22 @@ ms.date: 06/23/2015
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: 8402b73f5f9d063d958df39f98267468e4aef746
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 5df863762523b62759bb4f7849ca2635e5241b0a
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833064"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577789"
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Controle de origem (Criando aplicativos de nuvem do mundo Real com o Azure)
 ====================
-por [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Tom Dykstra](https://github.com/tdykstra)
+por [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [Download corrigi-lo Project](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) ou [Baixe o livro eletrônico](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > O **aos aplicativos de nuvem Real mundo de construção com o Azure** livro eletrônico se baseia em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem ajudá-lo a ser bem-sucedido no desenvolvimento de aplicativos web para a nuvem. Para obter informações sobre o livro eletrônico, consulte [o primeiro capítulo](introduction.md).
 
-
-Controle do código-fonte é essencial para todos os projetos de desenvolvimento de nuvem, não apenas a ambientes de equipe. Você jamais pensou que de edição de código-fonte ou até mesmo um documento do Word sem uma função de desfazer e backups automáticos e controle do código-fonte fornece essas funções em um nível de projeto em que eles podem economizar ainda mais tempo quando algo dá errado. Com os serviços de controle do código-fonte de nuvem, você não precisa se preocupar sobre a configuração complexa e você pode usar o controle de fonte de Visual Studio Online gratuito para até 5 usuários.
+Controle do código-fonte é essencial para todos os projetos de desenvolvimento de nuvem, não apenas a ambientes de equipe. Você jamais pensou que de edição de código-fonte ou até mesmo um documento do Word sem uma função de desfazer e backups automáticos e controle do código-fonte fornece essas funções em um nível de projeto em que eles podem economizar ainda mais tempo quando algo dá errado. Com os serviços de controle do código-fonte de nuvem, você não precisa se preocupar sobre a configuração complexa e você pode usar o controle de origem de repositórios do Azure gratuita para até 5 usuários.
 
 A primeira parte deste capítulo explica os três principais práticas recomendadas para ter em mente:
 
@@ -32,11 +31,11 @@ A primeira parte deste capítulo explica os três principais práticas recomenda
 - [Nunca fazer check-in segredos](#secrets) (dados confidenciais, como credenciais) em um repositório de código-fonte.
 - [Configurar ramificações do código-fonte](#devops) para habilitar o fluxo de trabalho de DevOps.
 
-O restante do capítulo fornece algumas implementações de exemplo desses padrões no Visual Studio, o Azure e Visual Studio Online:
+O restante do capítulo fornece algumas implementações de exemplo desses padrões no Visual Studio, o Azure e os repositórios do Azure:
 
 - [Adicionar scripts ao controle do código-fonte no Visual Studio](#vsscripts)
 - [Dados confidenciais no Azure Store](#appsettings)
-- [Use Git no Visual Studio e Visual Studio Online](#gittfs)
+- [Use o Git no Visual Studio e repositórios do Azure](#gittfs)
 
 <a id="scripts"></a>
 ## <a name="treat-automation-scripts-as-source-code"></a>Trate os scripts de automação como código-fonte
@@ -73,7 +72,7 @@ Essa estrutura também permite que você reaja rapidamente aos comentários dos 
 
 Sem uma estrutura de ramificação assim com sua separação das ramificações de desenvolvimento e produção, um problema de produção pode colocá-lo na posição de ter que promover o novo código de recurso, juntamente com sua correção de produção. O novo código de recurso pode não ser totalmente testada e pronta para produção e você talvez precise fazer muito trabalho fazendo as alterações que não estão prontas. Ou, talvez seja necessário atrasar a correção para testar as alterações e prepará-los implantar.
 
-Em seguida, você verá exemplos de como implementar esses três padrões no Visual Studio, o Azure e Visual Studio Online. Estes são exemplos, em vez de instruções passo a passo de how-to--it detalhadas; Para obter instruções detalhadas que oferecem todos o contexto necessário, consulte a [recursos](#resources) seção no final deste capítulo.
+Em seguida, você verá exemplos de como implementar esses três padrões no Visual Studio, o Azure e os repositórios do Azure. Estes são exemplos, em vez de instruções passo a passo de how-to--it detalhadas; Para obter instruções detalhadas que oferecem todos o contexto necessário, consulte a [recursos](#resources) seção no final deste capítulo.
 
 <a id="vsscripts"></a>
 ## <a name="add-scripts-to-source-control-in-visual-studio"></a>Adicionar scripts ao controle do código-fonte no Visual Studio
@@ -128,17 +127,17 @@ Observe que os scripts são parametrizados, de modo que os valores reais não s�
 Quando você executa localmente no seu ambiente de desenvolvimento, o aplicativo lê o arquivo Web. config local e sua conexão pontos de cadeia de caracteres para um banco de dados SQL Server de LocalDB a *App\_dados* pasta do seu projeto web. Quando você executar o aplicativo no Azure e o aplicativo tenta ler esses valores no arquivo Web. config, o que ele obtém de volta e usa são os valores armazenados para o Site da Web, não o que é, na verdade, no arquivo Web. config.
 
 <a id="gittfs"></a>
-## <a name="use-git-in-visual-studio-and-visual-studio-online"></a>Use Git no Visual Studio e Visual Studio Online
+## <a name="use-git-in-visual-studio-and-azure-devops"></a>Use o Git no Visual Studio e DevOps do Azure
 
 Você pode usar qualquer ambiente de controle do código-fonte para implementar a estrutura de ramificação do DevOps apresentada anteriormente. Para equipes distribuídas uma [sistema de controle de versão distribuído](http://en.wikipedia.org/wiki/Distributed_revision_control) (DVCS) pode funcionar melhor; para outras equipes um [centralizado sistema](http://en.wikipedia.org/wiki/Revision_control) podem funcionar melhor.
 
-[Git](http://git-scm.com/) é um DVCS que está se tornou muito popular. Quando você usa Git para controle de origem, você tem uma cópia completa do repositório com todo o histórico no computador local. Muitas pessoas preferem que porque é mais fácil continuar trabalhando quando não estiver conectado à rede – você pode continuar a fazer confirmações e reversões, criar e alternar os branches e assim por diante. Mesmo quando você estiver conectado à rede, é mais fácil e rápido para criar ramificações e alternar os branches quando tudo é local. Você também pode fazer confirmações locais e reversões sem causar impacto em outros desenvolvedores. E você pode criar lotes de confirmações antes de enviá-los para o servidor.
+[Git](http://git-scm.com/) é um sistema de controle de versão distribuído popularmente. Quando você usa Git para controle de origem, você tem uma cópia completa do repositório com todo o histórico no computador local. Muitas pessoas preferem que porque é mais fácil continuar trabalhando quando não estiver conectado à rede – você pode continuar a fazer confirmações e reversões, criar e alternar os branches e assim por diante. Mesmo quando você estiver conectado à rede, é mais fácil e rápido para criar ramificações e alternar os branches quando tudo é local. Você também pode fazer confirmações locais e reversões sem causar impacto em outros desenvolvedores. E você pode criar lotes de confirmações antes de enviá-los para o servidor.
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), anteriormente conhecido como Team Foundation Service, oferece Git e [Team Foundation Version Control](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC; controle do código-fonte centralizado). Aqui na Microsoft, no grupo do Azure algumas equipes usam o controle de fonte centralizada, algum uso distribuído, e algumas usam uma mistura (centralizados para alguns projetos e distribuídos para outros projetos). O serviço do VSO é gratuito para até 5 usuários. Você pode se inscrever para um plano gratuito [aqui](https://go.microsoft.com/fwlink/?LinkId=307137).
+[Repositórios do Azure](/azure/devops/repos/index?view=vsts) oferece ambos [Git](/azure/devops/repos/git/?view=vsts) e [Team Foundation Version Control](/azure/devops/repos/tfvc/index?view=vsts) (TFVC; controle do código-fonte centralizado). Introdução ao Azure DevOps [aqui](https://app.vsaex.visualstudio.com/signup).
 
-Visual Studio 2013 inclui interno de primeira classe [suporte ao Git](https://msdn.microsoft.com/library/hh850437.aspx); aqui está uma rápida demonstração de como isso funciona.
+Visual Studio 2017 inclui interno, primeira classe [suporte ao Git](https://msdn.microsoft.com/library/hh850437.aspx). Aqui está uma rápida demonstração de como isso funciona.
 
-Com um projeto aberto no Visual Studio 2013, clique com botão direito na solução **Gerenciador de soluções**e escolha **adicionar solução ao controle do código-fonte**.
+Com um projeto aberto no Visual Studio, clique com botão direito na solução **Gerenciador de soluções**e, em seguida, escolha **adicionar solução ao controle do código-fonte**.
 
 ![Adicionar solução ao controle do código-fonte](source-control/_static/image9.png)
 
@@ -184,7 +183,7 @@ Se você alternar de volta para o mestre de ramificação, o conteúdo do  *\_la
 
 Esse um exemplo simples de como você pode criar uma ramificação e e alternar entre branches rapidamente. Esse recurso permite que um fluxo de trabalho altamente agile usando a estrutura de ramificação e scripts de automação é apresentado na [automatizar tudo](automate-everything.md) capítulo. Por exemplo, você pode estar trabalhando na ramificação desenvolvimento, criar uma ramificação de hot fix a partir do mestre, alterne para o novo branch, faça as alterações lá e confirmá-las e alterne de volta para a ramificação de desenvolvimento e continuar que estava fazendo.
 
-O que você viu aqui é como você trabalha com um repositório Git local no Visual Studio. Em um ambiente de equipe você normalmente também enviar por push as alterações para cima para um repositório comum. Ferramentas do Visual Studio também permitem que você apontar para um repositório Git remoto. Você pode usar GitHub.com para essa finalidade, ou você pode usar [Git no Visual Studio Online](https://msdn.microsoft.com/library/hh850437.aspx) integrado com todos os outros recursos Online do Visual Studio, como o item de trabalho e acompanhamento de bugs.
+O que você viu aqui é como você trabalha com um repositório Git local no Visual Studio. Em um ambiente de equipe você normalmente também enviar por push as alterações para cima para um repositório comum. Ferramentas do Visual Studio também permitem que você apontar para um repositório Git remoto. Você pode usar GitHub.com para essa finalidade, ou você pode usar [Git e repositórios Azure](/azure/devops/repos/git/overview?view=vsts) integrado com todos os outros recursos de DevOps do Azure, como o item de trabalho e acompanhamento de bugs.
 
 Isso não é a única maneira que você pode implementar uma estratégia de ramificação do agile, é claro. Você pode habilitar o mesmo fluxo de trabalho agile usando um repositório de controle de fonte centralizada.
 
@@ -194,13 +193,6 @@ Medir o sucesso do seu sistema de controle do código-fonte com base em quão ra
 
 <a id="resources"></a>
 ## <a name="resources"></a>Recursos
-
-O [Visual Studio Online](https://www.visualstudio.com/) portal fornece serviços de suporte e documentação, e você pode se inscrever para uma conta. Se você tiver o Visual Studio 2012 e gostaria de usar o Git, consulte [Visual Studio Tools for Git](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c).
-
-Para obter mais informações sobre o TFVC (controle de versão centralizado) e o Git (controle de versão distribuído), consulte os seguintes recursos:
-
-- [Qual sistema de controle de versão devo usar: TFVC ou Git?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) Documentação do MSDN, inclui uma tabela resumindo as diferenças entre TFVC e Git.
-- [Bem, eu gosto de Team Foundation Server e eu gosto de Git, mas que é melhor?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Comparação de Git e TFVC.
 
 Para obter mais informações sobre estratégias de expansão, consulte os seguintes recursos:
 

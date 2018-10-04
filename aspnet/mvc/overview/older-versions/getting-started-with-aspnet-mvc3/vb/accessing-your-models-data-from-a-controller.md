@@ -8,16 +8,16 @@ ms.date: 01/12/2011
 ms.assetid: cad00de1-3c68-4ff4-a436-54236d449459
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 526f3b532a0b5c1c5c6d0cf8a9e17899300ca237
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 47d6e611ea79cf8c217f1f793d342b065233081f
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830831"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577880"
 ---
 <a name="accessing-your-models-data-from-a-controller-vb"></a>Acessando dados do seu modelo de um controlador (VB)
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Este tutorial ensinará os conceitos básicos da criação de um aplicativo Web ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é uma versão gratuita do Microsoft Visual Studio. Antes de começar, verifique se que você instalou os pré-requisitos listados abaixo. Você pode instalar todos eles clicando no link a seguir: [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Como alternativa, você pode instalar individualmente os pré-requisitos usando os links a seguir:
 > 

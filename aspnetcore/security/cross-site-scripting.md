@@ -3,14 +3,14 @@ title: Evitar Cross-Site Scripting (XSS) no ASP.NET Core
 author: rick-anderson
 description: Saiba mais sobre a criação de scripts entre sites (XSS) e técnicas para lidar com essa vulnerabilidade em um aplicativo ASP.NET Core.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 10/02/2018
 uid: security/cross-site-scripting
-ms.openlocfilehash: 4784b1775d955f0ef00526e50b960fc873ea218d
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: e937ce47b7151155197cd607832eeb6bf62e3a19
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342205"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577438"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Evitar Cross-Site Scripting (XSS) no ASP.NET Core
 
@@ -36,9 +36,9 @@ AT um XSS de nível básico funciona por enganar o seu aplicativo para inserir u
 
 O mecanismo Razor usado no MVC automaticamente codifica todos originado de saída de variáveis, a menos que você trabalha muito para impedi-lo ao fazer isso. Ele usa o atributo HTML de regras de codificação, sempre que você usar o *@* diretiva. Como HTML a codificação do atributo é um superconjunto de codificação de HTML, que isso significa que você não precisa se preocupar com se você deve usar a codificação HTML ou codificação do atributo HTML. Você deve garantir que você só usar em um contexto HTML, não quando a tentativa de inserir entradas não confiáveis diretamente em JavaScript. Os auxiliares de marca codificará também usar parâmetros de marca de entrada.
 
-Executar a seguinte exibição Razor;
+Execute o seguinte modo de exibição do Razor:
 
-```none
+```cshtml
 @{
        var untrustedInput = "<\"123\">";
    }
@@ -59,7 +59,7 @@ Essa exibição mostra o conteúdo do *untrustedInput* variável. Essa variável
 
 Pode haver ocasiões que você deseja inserir um valor em JavaScript para processar no modo de exibição. Há duas formas de fazer isso. A maneira mais segura para inserir valores é colocar o valor em um atributo de dados de uma marca e recuperá-lo em seu JavaScript. Por exemplo:
 
-```none
+```cshtml
 @{
        var untrustedInput = "<\"123\">";
    }
@@ -114,9 +114,9 @@ Que, quando ele é executado, renderizará o seguinte:
    <"123">
    ```
 
-Você também pode chamar o codificador de JavaScript diretamente,
+Você também pode chamar diretamente o codificador de JavaScript:
 
-```none
+```cshtml
 @using System.Text.Encodings.Web;
    @inject JavaScriptEncoder encoder;
 
@@ -225,4 +225,4 @@ Em geral aceito prática é que a codificação ocorre no ponto de saída e valo
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>Validação como uma técnica de prevenção de XSS
 
-Validação pode ser uma ferramenta útil na limitação de ataques de XSS. Por exemplo, uma cadeia de caracteres numérica que contém somente os caracteres de 0 a 9 não disparar um ataque XSS. Validação se torna mais complicada, caso queira aceitar HTML na entrada do usuário - análise de entrada HTML é difícil, se não impossível. MarkDown e outros formatos de texto seria uma opção mais segura para a entrada avançada. Você nunca deve depender apenas de validação. Sempre codificar entradas não confiáveis antes da saída, não importa o que você executou de validação.
+Validação pode ser uma ferramenta útil na limitação de ataques de XSS. Por exemplo, uma cadeia de caracteres numérica que contém somente os caracteres de 0 a 9 não disparar um ataque XSS. Validação se torna mais complicada ao aceitar HTML na entrada do usuário. Analisar a entrada em HTML é difícil, se não impossível. Markdown, juntamente com um analisador que retira HTML incorporado, é uma opção mais segura para aceitar a entrada avançada. Nunca confie em validação sozinha. Sempre codificar entradas não confiáveis antes da saída, não importa quais validação ou limpeza foi executada.

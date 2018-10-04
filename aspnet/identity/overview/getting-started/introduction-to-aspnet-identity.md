@@ -8,16 +8,16 @@ ms.date: 10/17/2013
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 24674adf1f28b3ffc0822a4b112c972d1e7ed5b4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1938de2b57c8fafa7ea8a656c0a42d2d3f1a6c81
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830410"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577867"
 ---
 <a name="introduction-to-aspnet-identity"></a>Introdução ao ASP.NET Identity
 ====================
-por [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://github.com/Rick-Anderson), [Tom Dykstra](https://github.com/tdykstra)
+por [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 > O sistema de associação do ASP.NET foi introduzido com o ASP.NET 2.0 voltar em 2005 e desde a época houve muitas alterações das maneiras a aplicativos da web geralmente lidar com a autenticação e autorização. O ASP.NET Identity é um novo olhar sobre o que o sistema de associação deve ser durante a criação de aplicativos modernos para a web, telefone ou tablet.
 > 

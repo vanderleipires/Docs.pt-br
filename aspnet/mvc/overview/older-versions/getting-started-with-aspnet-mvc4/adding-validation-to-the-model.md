@@ -8,16 +8,16 @@ ms.date: 08/28/2012
 ms.assetid: 5d9a2999-fcc4-4c45-a018-271fddf74a3b
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 01190b7bffc0258649373f3be0c75c41af80921d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 5819d789f31b9452d40ae3aa7f821f101ae126ce
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41823468"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578309"
 ---
 <a name="adding-validation-to-the-model"></a>Adicionar validação ao modelo
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > > [!NOTE]
 > > Uma versão atualizada deste tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) que usa o ASP.NET MVC 5 e Visual Studio 2013. É mais seguro e muito mais simples a seguir e apresenta mais recursos.

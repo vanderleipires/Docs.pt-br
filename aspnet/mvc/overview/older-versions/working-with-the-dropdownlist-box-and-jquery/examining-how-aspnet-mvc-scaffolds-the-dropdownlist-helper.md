@@ -8,16 +8,16 @@ ms.date: 01/12/2012
 ms.assetid: 8921d7f2-21f0-427a-8b27-2df7251174b0
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: ab45a14c4eda9e7552af4831851396af3c13dce1
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 542790b7f475cc641ed26ff3187c25c25118e0ed
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830406"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577841"
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Examinando como o ASP.NET MVC faz Scaffold do auxiliar DropDownList
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 Na **Gerenciador de soluções**, clique com botão direito do *controladores* pasta e, em seguida, selecione **Adicionar controlador**. Nomeie o controlador **StoreManagerController**. Defina as opções para o **Adicionar controlador** caixa de diálogo, conforme mostrado na imagem abaixo.
 

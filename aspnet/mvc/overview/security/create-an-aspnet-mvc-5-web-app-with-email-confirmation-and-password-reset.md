@@ -8,16 +8,16 @@ ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: e15595cab2d1f51374d4577a67f0f190a531acb5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 02a0153f20e9390a5ab8d4ecb4f73556b339d9a9
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834493"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48576434"
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Criar um aplicativo de web do ASP.NET MVC 5 seguro com logon, o email de confirmação e redefinição de senha (c#)
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Este tutorial mostra como criar um aplicativo de web do ASP.NET MVC 5 com confirmação por email e redefinição de senha usando o sistema de associação do ASP.NET Identity. Você pode baixar o aplicativo concluído [aqui](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952). O download contém os auxiliares de depuração que permitem que você teste confirmação por email e SMS sem configurar um email ou um provedor de SMS.
 > 

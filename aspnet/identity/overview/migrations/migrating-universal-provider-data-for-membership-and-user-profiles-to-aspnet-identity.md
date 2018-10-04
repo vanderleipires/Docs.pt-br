@@ -8,16 +8,16 @@ ms.date: 12/13/2013
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 6115b2a6caca05659f1c35ce97954807a6fb01ae
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a91bb6ac51819d7dbb8eb3c63bd36a9d830eecce
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830840"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578218"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>Migrando dados do provedor Universal para associações e perfis de usuário para a identidade do ASP.NET (c#)
 ====================
-por [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://github.com/Rick-Anderson), [Robert McMurray](https://github.com/rmcmurray), [Suhas Joshi](https://github.com/suhasj)
+por [Pranav Rastogi](https://github.com/rustd), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Robert McMurray](https://github.com/rmcmurray), [Suhas Joshi](https://github.com/suhasj)
 
 > Este tutorial descreve as etapas necessárias migrar dados de perfil de usuário criados usando provedores universais de um aplicativo existente para o modelo de identidade do ASP.NET e de usuário e dados de função. A abordagem mencionada aqui migrar dados de perfil do usuário pode ser usados em um aplicativo com a associação do SQL também.
 

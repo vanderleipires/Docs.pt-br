@@ -8,16 +8,16 @@ ms.date: 06/06/2012
 ms.assetid: a56572ba-81c3-47af-826d-941e9c4775ec
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 5469ac18f55001b441def5b547b7f1836ee9d052
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 757b15c34f6fa0078d0bca0dfb38d553bb73809d
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833049"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577698"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>Usando métodos assíncronos no ASP.NET MVC 4
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Este tutorial lhe ensinará os conceitos básicos da criação de um aplicativo Web ASP.NET MVC assíncrona usando [Visual Studio Express 2012 para Web](https://www.microsoft.com/visualstudio/11), que é uma versão gratuita do Microsoft Visual Studio. Você também pode usar [Visual Studio 2012](https://www.microsoft.com/visualstudio/11).
 > 

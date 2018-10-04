@@ -8,16 +8,16 @@ ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: f5d174ff6823d654a24dcb2c90f10a3cbd24f1e7
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 94a72f22cbcd7fa84528dde502cceaa1e26dcaa1
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833090"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577282"
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Analisar e depurar seu aplicativo ASP.NET MVC com Glimpse
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Visão rápida é prosperando e aumentando a família de pacotes do NuGet de software livre que fornece desempenho detalhados, depuração e informações de diagnóstico para aplicativos ASP.NET. Ele é trivial para instalar, leve, com rapidez e exibe as principais métricas de desempenho na parte inferior de cada página. Ele permite fazer uma busca detalhada em seu aplicativo quando você precisa descobrir o que está acontecendo no servidor. Visão rápida fornece informações muito valiosas que é recomendável que usá-lo em todo seu ciclo de desenvolvimento, incluindo o seu ambiente de teste do Azure. Enquanto [Fiddler](http://www.telerik.com/fiddler) e o [ferramentas de desenvolvimento F-12](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) fornecem um cliente modo de exibição, a visão rápida fornece uma exibição detalhada do servidor. Este tutorial se concentrará em usando o ASP.NET MVC de amostra e pacotes do EF, mas muitos outros pacotes estão disponíveis. Sempre que possível, eu vinculará a apropriado [dê uma olhada docs](http://getglimpse.com/Docs/) que ajudam a manter. Visão rápida é um projeto de código-fonte aberto, você também pode contribuir com o código-fonte e os documentos.
 
@@ -25,7 +25,7 @@ por [Rick Anderson](https://github.com/Rick-Anderson)
 - [Instalando a amostra](#ig)
 - [Habilitar Glimpse para localhost](#eg)
 - [Na guia da linha do tempo](#Time)
-- [Associação de modelos](#mb)
+- [Model binding](#mb)
 - [Rotas](#route)
 - [Usando a amostra no Azure](#da)
 - [Recursos adicionais](#addRes)
@@ -90,7 +90,7 @@ Você pode passar o mouse sobre um segmento de tempo para obter informações de
 ![Passe o mouse para ver o tempo detalhados](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image10.png)
 
 <a id="mb"></a>
-## <a name="model-binding"></a>Associação de modelos
+## <a name="model-binding"></a>Model binding
 
 O [guia de associação de modelo](http://getglimpse.com/Docs/Model-Binding-Tab) fornece uma grande quantidade de informações para ajudá-lo a entender como as variáveis de formulário são associadas e por que alguns não são associados conforme o esperado. A imagem abaixo mostra o **?** ícone, você poderá clicar para abrir a página de ajuda de amostra para esse recurso.
 

@@ -8,16 +8,16 @@ ms.date: 01/12/2011
 ms.assetid: a1b3d789-93b4-487f-b90d-80c9c9b4f8fa
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
-ms.openlocfilehash: 92439a6c75e8e106d0c8c99b672dcfb1effd513f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f596dbfb534a64169767fb77fb15ecc867466c74
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824189"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577178"
 ---
 <a name="intro-to-aspnet-mvc-3-vb"></a>Introdução ao ASP.NET MVC 3 (VB)
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Este tutorial ensinará os conceitos básicos da criação de um aplicativo Web ASP.NET MVC usando o Microsoft Visual Web Developer 2010 Express Service Pack 1, que é uma versão gratuita do Microsoft Visual Studio. Antes de começar, verifique se que você instalou os pré-requisitos listados abaixo. Você pode instalar todos eles clicando no link a seguir: [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Como alternativa, você pode instalar individualmente os pré-requisitos usando os links a seguir:
 > 

@@ -8,16 +8,16 @@ ms.date: 08/14/2014
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: e2df906d220d738c45006de8b3c92e157ca9e57e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 96a6b8d1c258e742907b649b631f8a6c2c4bbf98
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824796"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577464"
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>Desenvolvendo aplicativos ASP.NET com o Azure Active Directory
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 Ferramentas do Microsoft ASP.NET para simplifica a habilitar a autenticação para aplicativos web hospedados no Azure Active Directory [Azure](https://www.windowsazure.com/home/features/web-sites/). Você pode usar a autenticação do Azure para autenticar usuários do Office 365 da sua organização, sincronizadas do Active Directory no local de contas corporativas ou os usuários criados no seu próprio domínio personalizado do Azure Active Directory. Habilitar a autenticação do Windows Azure configura seu aplicativo para autenticar usuários usando uma única [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) locatário.
 
