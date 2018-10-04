@@ -8,30 +8,28 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 02805eda4f8dceb467547fa4e00aef8ea956f228
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 426e3500c504a651a325eec021e2d9e8b9cc1d32
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292278"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795274"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>Rastreamento na API Web ASP.NET 2
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
 > Quando você está tentando depurar um aplicativo baseado na web, não há nenhum substituto para um bom conjunto de logs de rastreamento. Este tutorial mostra como habilitar o rastreamento na API Web ASP.NET. Você pode usar esse recurso para rastrear o que faz a estrutura da API da Web antes e depois que ela invoca seu controlador. Você também pode usá-lo para rastrear o seu próprio código.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
-> - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (também funciona com o Visual Studio 2015)
+>
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) (também funciona com o Visual Studio 2015)
 > - API Web 2
 > - [Microsoft.AspNet.WebApi.Tracing](http://www.nuget.org/packages/Microsoft.AspNet.WebApi.Tracing)
 
-
 ## <a name="enable-systemdiagnostics-tracing-in-web-api"></a>Habilitar o rastreamento na API Web de System. Diagnostics
 
-Primeiro, vamos criar um novo projeto de aplicativo Web ASP.NET. No Visual Studio, do **arquivo** menu, selecione **New**, em seguida, **projeto**. Sob **modelos**, **Web**, selecione **aplicativo Web ASP.NET**.
+Primeiro, vamos criar um novo projeto de aplicativo Web ASP.NET. No Visual Studio, do **arquivo** menu, selecione **New** > **projeto**. Sob **modelos**, **Web**, selecione **aplicativo Web ASP.NET**.
 
 [![](tracing-in-aspnet-web-api/_static/image2.png)](tracing-in-aspnet-web-api/_static/image1.png)
 

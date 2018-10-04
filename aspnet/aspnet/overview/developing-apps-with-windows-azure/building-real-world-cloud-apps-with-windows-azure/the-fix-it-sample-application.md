@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6f4fa7cf3746da0a6cdd4bd037fea509d488a59d
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 435ee61a9c28ad0035457990cd3a889f5b240517
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578010"
+ms.locfileid: "48795532"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Apêndice: A correção-aplicativo de exemplo (criação de aplicativos de nuvem do mundo Real com o Azure)
 ====================
@@ -22,7 +22,6 @@ por [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitt
 [Baixe a correção-lo do projeto](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
 > O **aos aplicativos de nuvem Real mundo de construção com o Azure** livro eletrônico se baseia em uma apresentação desenvolvida por Scott Guthrie. Ele explica 13 padrões e práticas recomendadas que podem ajudá-lo a ser bem-sucedido no desenvolvimento de aplicativos web para a nuvem. Para obter informações sobre o livro eletrônico, consulte [o primeiro capítulo](introduction.md).
-
 
 Este apêndice para os aplicativos de nuvem construção Real World com o Azure de livro eletrônico contém as seções a seguir fornecem informações adicionais sobre o Fix It aplicativo de exemplo que você pode baixar:
 
@@ -177,11 +176,11 @@ Coloca o novo modelo de projeto `Thread.Sleep` no exemplo de código para uma fu
 
 Se um método assíncrono não precisa retornar um valor, retornam um `Task` tipo em vez de `void`.
 
-Este exemplo é do `FixItQueueManager` classe: 
+Este exemplo é do `FixItQueueManager` classe:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-Você deve usar `async void` somente para manipuladores de eventos de nível superior. Se você definir um método como `async void`, o chamador não é possível **await** o método ou capturar todas as exceções que o método gera. Para obter mais informações, consulte [práticas recomendadas na programação assíncrona](https://msdn.microsoft.com/magazine/jj991977.aspx). 
+Você deve usar `async void` somente para manipuladores de eventos de nível superior. Se você definir um método como `async void`, o chamador não é possível **await** o método ou capturar todas as exceções que o método gera. Para obter mais informações, consulte [práticas recomendadas na programação assíncrona](https://msdn.microsoft.com/magazine/jj991977.aspx).
 
 ### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>Use um token de cancelamento para interromper o loop de função de trabalho
 
@@ -216,8 +215,8 @@ Há duas maneiras de executar o aplicativo Fix It:
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>Execute o aplicativo de base
 
-1. Instale [Visual Studio 2013 ou Visual Studio 2013 Express para Web](https://www.visualstudio.com/downloads).
-2. Instalar o [SDK do Azure para .NET para Visual Studio 2013.](https://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409)
+1. Instale [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
+2. Instalar o [SDK do Azure para .NET para o Visual Studio](https://azure.microsoft.com/downloads/).
 3. Baixe o arquivo. zip do [MSDN Code Gallery](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4).
 4. No Explorador de arquivos, clique com botão direito no arquivo. zip e clique em propriedades, na janela Propriedades, clique em Desbloquear.
 5. Descompacte o arquivo.
@@ -225,7 +224,7 @@ Há duas maneiras de executar o aplicativo Fix It:
 7. No menu Ferramentas, clique em Gerenciador de pacotes de biblioteca e, em seguida, Package Manager Console.
 8. No pacote Manager Console (PMC), clique em Restaurar.
 9. Saia do Visual Studio.
-10. Iniciar o [emulador de armazenamento do Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx).
+10. Iniciar o [emulador de armazenamento do Azure](/azure/storage/common/storage-use-emulator).
 11. Reinicie o Visual Studio, abrir o arquivo de solução que você fechou na etapa anterior.
 12. Verifique se que o projeto do FixIt é definido como o projeto de inicialização e, em seguida, pressione CTRL + F5 para executar o projeto.
 
@@ -234,24 +233,24 @@ Há duas maneiras de executar o aplicativo Fix It:
 
 1. Siga as instruções para [executar o aplicativo base](#runbase)e, em seguida, feche o navegador e feche o Visual Studio.
 2. Inicie o Visual Studio com privilégios de administrador. (Você estará usando o emulador de computação do Azure, e que requer privilégios de administrador).
-3. No aplicativo *Web. config* arquivo na *MyFixIt* (no projeto da web) do projeto, altere o valor de `appSettings/UseQueues` como "true": 
+3. No aplicativo *Web. config* arquivo na *MyFixIt* (no projeto da web) do projeto, altere o valor de `appSettings/UseQueues` como "true":
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
 4. Se o [emulador de armazenamento do Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx) não está ainda em execução, inicie-o novamente.
 5. Execute o projeto de web do FixIt e o projeto MyFixItCloudService simultaneamente.
 
-    Usando o Visual Studio 2013:
+    Usando o Visual Studio:
 
-   1. Pressione F5 para executar o projeto FixIt.
-   2. Na **Gerenciador de soluções**, clique com botão direito no projeto MyFixItCloudService e, em seguida, clique em **Debug** -- **iniciar uma nova instância**.
+   1. Pressione **F5** para executar o projeto FixIt.
+   2. Na **Gerenciador de soluções**, clique com botão direito no projeto MyFixItCloudService e, em seguida, clique em **Debug** > **iniciar uma nova instância**.
 
-      Usando o Visual Studio 2013 Express para Web:
+    Usando o Visual Studio 2013 Express para Web:
 
    3. No Gerenciador de soluções, a solução do FixIt com o botão direito e selecione **propriedades**.
-   4. Selecione **vários projetos de inicialização**...
+   4. Selecione **vários projetos de inicialização**.
    5. No **ação** lista suspensa em MyFixIt e MyFixItCloudService, selecione **iniciar**.
    6. Clique em **OK**.
-   7. Pressione F5 para executar os dois projetos.
+   7. Pressione **F5** para executar os dois projetos.
 
       Quando você executar o projeto MyFixItCloudService, o Visual Studio inicia o emulador de computação do Azure. Dependendo da configuração do firewall, você precisa permitir que o emulador por meio do firewall.
 
@@ -354,8 +353,7 @@ Para determinar quais recursos o script criado antes de ter parado, use os segui
 
 - `Get-AzureWebsite`
 - `Get-AzureSqlDatabaseServer`
-- `Get-AzureSqlDatabase`: Para executar este cmdlet, canalizar o nome do servidor de banco de dados para `Get-AzureSqlDatabase`:  
-    `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
+- `Get-AzureSqlDatabase`: Para executar este cmdlet, canalizar o nome do servidor de banco de dados para `Get-AzureSqlDatabase`:   `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
 
 Para excluir esses recursos, use os comandos a seguir. Observe que se você excluir o servidor de banco de dados, você automaticamente exclui os bancos de dados associados ao servidor.
 
@@ -366,7 +364,7 @@ Para excluir esses recursos, use os comandos a seguir. Observe que se você excl
 <a id="deployqueues"></a>
 ## <a name="how-to-deploy-the-app-with-queue-processing-to-azure-app-service-web-apps-and-an-azure-cloud-service"></a>Como implantar o aplicativo com a fila de processamento para aplicativos de Web do serviço de aplicativo do Azure e um serviço de nuvem do Azure
 
-Para habilitar as filas, faça a seguinte alteração no arquivo MyFixIt\Web.config. Sob `appSettings`, altere o valor de `UseQueues` como "true": 
+Para habilitar as filas, faça a seguinte alteração no arquivo MyFixIt\Web.config. Sob `appSettings`, altere o valor de `UseQueues` como "true":
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample31.xml)]
 

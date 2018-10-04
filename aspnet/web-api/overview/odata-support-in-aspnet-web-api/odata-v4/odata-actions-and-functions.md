@@ -8,32 +8,29 @@ ms.date: 06/27/2014
 ms.assetid: 0e6fb03c-b16d-4bb0-ab0b-552bd2b6ece1
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
 msc.type: authoredcontent
-ms.openlocfilehash: 4e61c6b4bf59792b6570e32e6d24635d4f5e5ac3
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 45b84ec4ee76e83ece99bf6841c28e13c3ab7728
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834510"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795261"
 ---
 <a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>Ações e funções no OData v4 usando a API Web ASP.NET 2.2
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
 > Em OData, ações e funções são uma maneira para adicionar comportamentos do lado do servidor que não são facilmente definidos como operações CRUD nas entidades. Este tutorial mostra como adicionar ações e funções a um ponto de extremidade de v4 do OData, usando o Web API 2.2. O tutorial se baseia no tutorial [criar um OData v4 ponto de extremidade usando API Web ASP.NET 2](create-an-odata-v4-endpoint.md)
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
+>
 > - API Web 2.2
 > - OData v4
-> - [Visual Studio 2013 Atualização 2](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+> - Visual Studio 2013 (Baixe o Visual Studio 2017 [aqui](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
 > - .NET 4.5
-> 
-> 
+>
 > ## <a name="tutorial-versions"></a>Versões de tutoriais
-> 
+>
 > Para OData versão 3, consulte [ações de OData na API Web ASP.NET 2](../odata-v3/odata-actions.md).
-
 
 A diferença entre *ações* e *funções* é que as ações podem ter efeitos colaterais e não funções. Ações e funções podem retornar dados. Alguns usos para ações incluem:
 

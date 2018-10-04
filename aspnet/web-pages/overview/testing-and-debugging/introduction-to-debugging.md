@@ -8,38 +8,38 @@ ms.date: 02/20/2014
 ms.assetid: 68de4326-7611-4b9b-b5f6-79b7adc3069f
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: da04158c58054a8c0b8e31d3a55bea2dcbae7a05
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: fb9a69d568e10ddafd71e2b9600b3dae21576807
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824972"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794983"
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>Introdução à depuração da Web do ASP.NET (Razor) Sites de páginas
 ====================
 por [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Este artigo explica as várias maneiras de depurar páginas em um site de páginas da Web do ASP.NET (Razor). Depuração é o processo de localizar e corrigir erros em suas páginas de código.
-> 
-> **O que você aprenderá:** 
-> 
+>
+> **O que você aprenderá:**
+>
 > - Como exibir informações que ajudam a analisar e depurar páginas.
 > - Como usar a depuração de ferramentas no Visual Studio.
->   
-> 
+>
+>
 > Estes são os recursos do ASP.NET introduzidos no artigo:
-> 
+>
 > - O `ServerInfo` auxiliar.
 > - `ObjectInfo` auxiliar.
->   
-> 
+>
+>
 > ## <a name="software-versions"></a>Versões de software
-> 
-> 
+>
+>
 > - Páginas da Web do ASP.NET (Razor) 3
 > - Visual Studio 2013
->   
-> 
+>
+>
 > Este tutorial também funciona com ASP.NET Web Pages 2. Você pode usar o WebMatrix 3, mas não há suporte para o depurador integrado.
 
 
@@ -54,8 +54,8 @@ O `ServerInfo` auxiliar é uma ferramenta de diagnóstico que lhe dá uma visão
 
     Você pode adicionar o `ServerInfo` código em qualquer lugar na página. Mas, adicioná-lo no final será manter sua saída separados de seus outros conteúdos da página, que torna mais fácil de ler.
 
-    > [!NOTE] 
-    > 
+    > [!NOTE]
+    >
     > **Importante** você deverá remover qualquer código de diagnóstico de suas páginas da web antes de mover as páginas da web para um servidor de produção. Isso se aplica ao `ServerInfo` auxiliar, bem como as outras técnicas de diagnóstico neste artigo que envolvem a adição de código para uma página. Você não deseja os visitantes do site para obter informações sobre seu nome do servidor, os nomes de usuário, os caminhos no seu servidor e detalhes semelhantes, pois esse tipo de informação pode ser útil para pessoas com más intenções.
 3. Salve a página e executá-lo em um navegador.
 
@@ -119,7 +119,7 @@ O `ObjectInfo` auxiliar exibe o tipo e o valor de cada objeto que você passa pa
 
 ## <a name="using-debugging-tools-in-visual-studio"></a>Usando as ferramentas de depuração no Visual Studio
 
-Para uma experiência de depuração mais abrangente, use o Visual Studio 2013 ou o software gratuito [Visual Studio Express 2013 para Web](https://www.visualstudio.com/downloads/download-visual-studio-vs#d-2013-express). Com o Visual Studio, você pode definir um ponto de interrupção em seu código na linha que você deseja inspecionar.
+Para uma experiência de depuração mais abrangente, use [Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Com o Visual Studio, você pode definir um ponto de interrupção em seu código na linha que você deseja inspecionar.
 
 ![Definir ponto de interrupção](introduction-to-debugging/_static/image1.png)
 

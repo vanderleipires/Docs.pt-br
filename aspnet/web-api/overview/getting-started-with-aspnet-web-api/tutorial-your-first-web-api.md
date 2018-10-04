@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 11/28/2017
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 14796ce31187a0f6a6331b46477fadc77e281c3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 62e99a41ba935470c39476c9aea8ee4193543425
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825383"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795287"
 ---
 <a name="get-started-with-aspnet-web-api-2-c"></a>Introdução ao ASP.NET Web API 2 (c#)
 ====================
@@ -21,14 +21,13 @@ por [Mike Wasson](https://github.com/MikeWasson)
 [Baixe o projeto concluído](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
 
 HTTP não é apenas para servir as páginas da web. HTTP também é uma plataforma poderosa para a criação de APIs que expõem serviços e dados. HTTP é simples, flexível e todos os lugares. Praticamente qualquer plataforma que você pode pensar tem uma biblioteca HTTP, para que os serviços HTTP podem alcançar uma ampla gama de clientes, incluindo navegadores, dispositivos móveis e aplicativos de desktop tradicionais.
- 
+
 A API Web ASP.NET é uma estrutura para a criação de APIs Web sobre o .NET Framework. Neste tutorial, você usará a API Web ASP.NET para criar uma API Web que retorna uma lista de produtos.
 
- 
- ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-  
- - [Visual Studio 2017](https://www.visualstudio.com/downloads/)
- - API Web 2
+## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
+
+- [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+- API Web 2
 
 Consulte [criar uma API Web com o Visual Studio para Windows e o ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) para ver uma versão mais recente deste tutorial.
 

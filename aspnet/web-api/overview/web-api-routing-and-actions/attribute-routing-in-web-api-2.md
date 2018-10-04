@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: f13720c5e9de99fb4ae5b27a757c257cac881f89
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 35cf3bf555218b6b49b30f48186e4c67aff4ff7b
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824385"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795545"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Roteamento de atributo na API Web ASP.NET 2
 ====================
@@ -25,10 +25,9 @@ O estilo anterior de roteamento, chamado baseado em convenção de roteamento, a
 
 Este tópico mostra como habilitar o roteamento de atributo e descreve as várias opções para o roteamento de atributo. Para obter um tutorial de ponta a ponta que usa o roteamento de atributo, consulte [criar uma API REST com roteamento de atributo na API Web 2](create-a-rest-api-with-attribute-routing.md).
 
-
 ## <a name="prerequisites"></a>Pré-requisitos
 
-[Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional ou Enterprise Edition
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional ou Enterprise edition
 
 Como alternativa, use o Gerenciador de pacotes NuGet para instalar os pacotes necessários. Dos **ferramentas** menu no Visual Studio, selecione **Gerenciador de pacotes de biblioteca**, em seguida, selecione **Package Manager Console**. Digite o seguinte comando na janela do Console do Gerenciador de pacotes:
 
@@ -55,21 +54,21 @@ Aqui estão alguns outros padrões que atributo faz roteamento fácil.
 
 Neste exemplo, "/ produtos/api/v1" seria roteado para um controlador diferente que "/ v2/api/produtos".
 
-`/api/v1/products`  
+`/api/v1/products`
 `/api/v2/products`
 
 **Segmentos de URI sobrecarregados**
 
 Neste exemplo, "1" é um número de pedido, mas mapeia "pendente" para uma coleção.
 
-`/orders/1`  
+`/orders/1`
 `/orders/pending`
 
 **Vários tipos de parâmetro**
 
 Neste exemplo, "1" é um número de pedido, mas "2013/06/16" Especifica uma data.
 
-`/orders/1`  
+`/orders/1`
 `/orders/2013/06/16`
 
 <a id="enable"></a>
@@ -251,7 +250,7 @@ Quando o framework tenta corresponder a um URI com uma rota, ele avalia as rotas
 Aqui está como a ordenação total é determinada:
 
 1. Comparar as **RouteOrder** propriedade do atributo de rota.
-2. Examinar cada segmento do URI no modelo de rota. Para cada segmento, ordem da seguinte maneira: 
+2. Examinar cada segmento do URI no modelo de rota. Para cada segmento, ordem da seguinte maneira:
 
     1. Segmentos de literais.
     2. Parâmetros com restrições de rota.

@@ -9,12 +9,12 @@ ms.date: 03/12/2010
 ms.technology: aspnet
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 5bdebcc226050afc2469840dc4a4dc97ec6b80b2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2dc48e1262b1807a77a9889f7e0e62c9b9ea463e
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834895"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794805"
 ---
 # <a name="aspnet-overview"></a>Visão geral do ASP.NET
 
@@ -24,7 +24,7 @@ O ASP.NET é um framework web grátis para a criação de ótimos sites e aplica
 
 ## <a name="get-started"></a>Introdução
 
-[Visual Studio Community 2017](https://www.visualstudio.com/downloads/), um IDE é gratuito para o ASP.NET no Windows.
+Instale [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community edition, um IDE gratuito para o ASP.NET no Windows.
 
 ## <a name="websites-and-web-applications"></a>Sites e aplicativos web
 
@@ -34,7 +34,7 @@ Cada estrutura tem como alvo um estilo de desenvolvimento diferentes. Aquele que
 
 Abaixo está uma visão geral de cada uma das estruturas e algumas ideias para como escolher entre eles. Se você preferir um vídeo de Introdução, consulte [tornando sites com o ASP.NET](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/Making-Websites-with-ASPNET) e [What ' s ferramentas da Web?](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-web-tools)
 
-|   | Se você tiver experiência em | Estilo de desenvolvimento | Experiência | 
+|   | Se você tiver experiência em | Estilo de desenvolvimento | Experiência |
 |-----------|----------------------|-----------------------------------------------------|----------------|
 | Web Forms | Win Forms, WPF, .NET | Rápido desenvolvimento usando uma vasta biblioteca de controles que encapsulam a marcação HTML | RAD de nível intermediário, Avançado |
 | MVC       | Ruby on Rails, .NET  | Obter controle total sobre a marcação HTML, código e marcação separada e fáceis de escrever testes. A melhor opção para aplicativos móveis e de página única (SPA). | Nível intermediário, Avançado |
@@ -42,13 +42,13 @@ Abaixo está uma visão geral de cada uma das estruturas e algumas ideias para c
 
 ### <a name="web-forms"></a>Web Forms
 
-Com Web Forms do ASP.NET, você pode criar sites dinâmicos usando um modelo familiar de arrastar e soltar, controlada por evento. Uma superfície de design e centenas de controles e componentes permitem que você crie rapidamente sofisticados, poderosos sites baseados em UI com acesso a dados. 
+Com Web Forms do ASP.NET, você pode criar sites dinâmicos usando um modelo familiar de arrastar e soltar, controlada por evento. Uma superfície de design e centenas de controles e componentes permitem que você crie rapidamente sofisticados, poderosos sites baseados em UI com acesso a dados.
 
 [Saiba mais sobre Web Forms](web-forms/index.md)
 
 ### <a name="mvc"></a>MVC
 
-ASP.NET MVC lhe oferece uma maneira eficiente com base em padrões para criar sites dinâmicos que habilitam uma separação limpa de preocupações e que lhe dá controle total sobre a marcação para o desenvolvimento ágil e divertido. O ASP.NET MVC inclui muitos recursos que permitem o desenvolvimento rápido e amigável a TDD para criar aplicativos sofisticados que usam os últimos padrões da web. 
+ASP.NET MVC lhe oferece uma maneira eficiente com base em padrões para criar sites dinâmicos que habilitam uma separação limpa de preocupações e que lhe dá controle total sobre a marcação para o desenvolvimento ágil e divertido. O ASP.NET MVC inclui muitos recursos que permitem o desenvolvimento rápido e amigável a TDD para criar aplicativos sofisticados que usam os últimos padrões da web.
 
 [Saiba mais sobre o MVC](mvc/index.md)
 
@@ -66,7 +66,7 @@ Além disso, as três estruturas não são totalmente independentes e escolhendo
 
 ## <a name="web-apis"></a>APIs da Web
 
-API Web ASP.NET é uma estrutura que torna mais fácil criar serviços HTTP que alcançam uma ampla gama de clientes, incluindo navegadores e dispositivos móveis. A API do ASP.NET Web é uma plataforma ideal para criar aplicativos com REST no .NET Framework.
+API Web ASP.NET é uma estrutura que torna mais fácil criar serviços HTTP que alcançam uma ampla gama de clientes, incluindo navegadores e dispositivos móveis. O ASP.NET Web API é uma plataforma ideal para o desenvolvimento de aplicativos RESTful no .NET Framework.
 
 [Saiba mais sobre a API da Web](web-api/index.md)
 
@@ -80,7 +80,7 @@ SignalR do ASP.NET é uma nova biblioteca para desenvolvedores do ASP.NET que fa
 
 <!-- Put first under SignalR TOC:  Watch video (6 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/signalr-and-the-real-time-web -->
 
-## <a name="mobile-apps-and-sites"></a>Sites e aplicativos móveis 
+## <a name="mobile-apps-and-sites"></a>Sites e aplicativos móveis
 
 ASP.NET pode potencializar aplicativos móveis nativos com um back-end de API da Web, bem como os sites para celular usando estruturas de design dinâmico como o Twitter Bootstrap. Se você estiver criando um aplicativo móvel nativo, é fácil criar uma API da Web baseado em JSON para o identificador de acesso a dados, autenticação e notificações por push para seu aplicativo. Se você estiver criando um site para celular responsivo, você pode usar qualquer estrutura CSS ou o sistema de grade aberta preferem, ou selecione um sistema móvel poderoso como ótimos aplicativos móveis com o PhoneGap e Sencha ou o jQuery Mobile.
 
@@ -88,7 +88,7 @@ ASP.NET pode potencializar aplicativos móveis nativos com um back-end de API da
 
 <!-- Put first under mobile TOC:  Watch video (11 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-and-mobile -->
 
-## <a name="single-page-applications"></a>Aplicativos de página única 
+## <a name="single-page-applications"></a>Aplicativos de página única
 
 Aplicativo de página ASP.NET única (SPA) ajuda a criar aplicativos que incluam significativas interações do lado do cliente usando HTML 5, 3 de CSS e JavaScript. Visual Studio inclui um modelo para criar aplicativos de página única usando o Knockout. js e API Web do ASP.NET. Além do modelo interno do SPA, os modelos criados pela comunidade do SPA também estão disponíveis para download.
 
