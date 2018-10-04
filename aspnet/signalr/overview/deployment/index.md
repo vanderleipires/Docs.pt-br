@@ -1,28 +1,24 @@
 ---
 uid: signalr/overview/deployment/index
-title: SignalR implantação e hospedagem | Microsoft Docs
+title: O SignalR implantação e hospedagem | Microsoft Docs
 author: rick-anderson
-description: Como implantar e hospedar aplicativos SignalR.
-ms.author: aspnetcontent
-manager: wpickett
+description: Como implantar e hospedar aplicativos do SignalR.
+ms.author: riande
 ms.date: 09/19/2014
-ms.topic: article
 ms.assetid: 62482bdd-e2a4-46e5-b909-6d0c6bc07114
-ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment
 msc.type: chapter
-ms.openlocfilehash: 8c018a2fe92c90e3264326116cb4b21a0070bff4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: df56c36ba757192169fa6aac0fa48a120dfc717c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26504065"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252699"
 ---
-<a name="signalr-deployment-and-hosting"></a><span data-ttu-id="2be7b-103">Implantação de SignalR e hospedagem</span><span class="sxs-lookup"><span data-stu-id="2be7b-103">SignalR Deployment and Hosting</span></span>
+<a name="signalr-deployment-and-hosting"></a><span data-ttu-id="a56f7-103">Implantação do SignalR e hospedagem</span><span class="sxs-lookup"><span data-stu-id="a56f7-103">SignalR Deployment and Hosting</span></span>
 ====================
-> <span data-ttu-id="2be7b-104">Como implantar e hospedar aplicativos SignalR.</span><span class="sxs-lookup"><span data-stu-id="2be7b-104">How to deploy and host SignalR applications.</span></span>
+> <span data-ttu-id="a56f7-104">Como implantar e hospedar aplicativos do SignalR.</span><span class="sxs-lookup"><span data-stu-id="a56f7-104">How to deploy and host SignalR applications.</span></span>
 
 
-- [<span data-ttu-id="2be7b-105">Tutorial: SignalR auto-host</span><span class="sxs-lookup"><span data-stu-id="2be7b-105">Tutorial: SignalR Self-Host</span></span>](tutorial-signalr-self-host.md)
-- [<span data-ttu-id="2be7b-106">Usando o SignalR com aplicativos Web no serviço de aplicativo do Azure</span><span class="sxs-lookup"><span data-stu-id="2be7b-106">Using SignalR with Web Apps in Azure App Service</span></span>](using-signalr-with-azure-web-sites.md)
+- [<span data-ttu-id="a56f7-105">Tutorial: auto-hospedar SignalR</span><span class="sxs-lookup"><span data-stu-id="a56f7-105">Tutorial: SignalR Self-Host</span></span>](tutorial-signalr-self-host.md)
+- [<span data-ttu-id="a56f7-106">Usando o SignalR com aplicativos Web no Serviço de Aplicativo do Azure</span><span class="sxs-lookup"><span data-stu-id="a56f7-106">Using SignalR with Web Apps in Azure App Service</span></span>](using-signalr-with-azure-web-sites.md)

@@ -1,27 +1,23 @@
 ---
 uid: signalr/videos/getting-started/index
-title: Vídeos do ASP.NET SignalR | Microsoft Docs
+title: Vídeos do SignalR do ASP.NET | Microsoft Docs
 author: rick-anderson
-description: Esses proporcionam vídeos que você em segundo plano e exemplos de aplicativo para usar o SignalR para adicionar funcionalidade em tempo real para aplicativos da web.
-ms.author: aspnetcontent
-manager: wpickett
+description: Esses oferecem vídeos que básicas e exemplos de aplicativo para usar o SignalR para adicionar funcionalidade em tempo real aos aplicativos web.
+ms.author: riande
 ms.date: 12/12/2012
-ms.topic: article
 ms.assetid: d8d03cc9-13bc-4921-9aca-3dfbda53660d
-ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/videos/getting-started
 msc.type: chapter
-ms.openlocfilehash: 509d5475650e758960da3116b53cd21c0b628edf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 3c80a4f96fb0b70667dae054cec5444b093a3845
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26505615"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48252433"
 ---
-<a name="aspnet-signalr-videos"></a><span data-ttu-id="7700f-103">Vídeos do ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="7700f-103">ASP.NET SignalR Videos</span></span>
+<a name="aspnet-signalr-videos"></a><span data-ttu-id="5e05a-103">Vídeos do SignalR do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="5e05a-103">ASP.NET SignalR Videos</span></span>
 ====================
-> <span data-ttu-id="7700f-104">Esses proporcionam vídeos que você em segundo plano e exemplos de aplicativo para usar o SignalR para adicionar funcionalidade em tempo real para aplicativos da web.</span><span class="sxs-lookup"><span data-stu-id="7700f-104">These videos give you background and application examples for using SignalR to add real-time functionality to web applications.</span></span>
+> <span data-ttu-id="5e05a-104">Esses oferecem vídeos que básicas e exemplos de aplicativo para usar o SignalR para adicionar funcionalidade em tempo real aos aplicativos web.</span><span class="sxs-lookup"><span data-stu-id="5e05a-104">These videos give you background and application examples for using SignalR to add real-time functionality to web applications.</span></span>
 
 
-- [<span data-ttu-id="7700f-105">SignalR e soquetes da Web</span><span class="sxs-lookup"><span data-stu-id="7700f-105">SignalR and Web Sockets</span></span>](signalr-and-web-sockets.md)
+- [<span data-ttu-id="5e05a-105">SignalR e Soquetes Web</span><span class="sxs-lookup"><span data-stu-id="5e05a-105">SignalR and Web Sockets</span></span>](signalr-and-web-sockets.md)
