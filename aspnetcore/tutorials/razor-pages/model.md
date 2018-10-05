@@ -34,10 +34,10 @@ Nesta seção, é feito o scaffold do modelo de filme. Ou seja, a ferramenta de 
 
 Crie uma pasta *Pages/Movies*:
 
-* No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Páginas* > **Adicionar** > **Nova Pasta**.
-* Dê à pasta o nome *Filmes*
+* No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Pages* > **Adicionar** > **Nova Pasta**.
+* Dê à pasta o nome *Movies* 
 
-No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Páginas/Filmes* pasta > **Adicionar** > **Novo item com scaffold**.
+No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Pages/Movies* pasta > **Adicionar** > **Novo item com scaffold**.
 
 ![Imagem das instruções anteriores.](model/_static/sca.png)
 
