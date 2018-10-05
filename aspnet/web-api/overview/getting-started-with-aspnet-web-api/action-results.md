@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/action-results
-title: Ação resultará na API Web 2 | Microsoft Docs
+title: Action Results no Web API Web 2 | Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: riande
