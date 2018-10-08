@@ -4,14 +4,14 @@ author: tdykstra
 description: Descubra os tópicos que pertencem ao SignalR do ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
-ms.date: 08/30/2018
+ms.date: 09/19/2018
 uid: signalr/index
-ms.openlocfilehash: a26acad61c09a0c58ede313bfbcd88e2c87ff45c
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 16d560537e8d911e9ee1d3132800a0d2653acb75
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893027"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860895"
 ---
 # <a name="aspnet-core-signalr"></a>SignalR do ASP.NET Core
 
@@ -23,11 +23,12 @@ ms.locfileid: "43893027"
   * [HubContext](xref:signalr/hubcontext)
   * [Usuários e Grupos](xref:signalr/groups)
   * [Publicar no Azure](xref:signalr/publish-to-azure-web-app)
-* [Clientes](xref:signalr/javascript-client)
+* [Clientes](xref:signalr/clients)
   * [Cliente .NET](xref:signalr/dotnet-client)
   * [Cliente Java](xref:signalr/java-client)
+  * [Referência de API Java](/java/api/com.microsoft.aspnet.signalr?view=aspnet-signalr-java)
   * [Cliente JavaScript](xref:signalr/javascript-client)
-  * [API JavaScript](/javascript/api/?view=signalr-js-latest)
+  * [Referência de API JavaScript](/javascript/api/?view=signalr-js-latest)
   * [WebPack e TypeScript](xref:tutorials/signalr-typescript-webpack)
 * [Configuração](xref:signalr/configuration)
 * [Autenticação e autorização](xref:signalr/authn-and-authz)

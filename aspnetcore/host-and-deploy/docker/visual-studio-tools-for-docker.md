@@ -4,14 +4,14 @@ author: spboyer
 description: Saiba como usar as ferramentas do Visual Studio 2017 e o Docker para o Windows para colocar um aplicativo ASP.NET Core em um contêiner.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/26/2018
+ms.date: 09/12/2018
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: 962c35cb1487dacd93fd78d09e2417ef77387e42
-ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
+ms.openlocfilehash: 4bb28e7644997c50c14046bc0c89338fa35a5f14
+ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39275857"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538473"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Ferramentas do Visual Studio para Docker com ASP.NET Core
 
@@ -102,6 +102,10 @@ O arquivo *docker-compose.yml* faz referência ao nome da imagem que é criada q
 No exemplo anterior, `image: hellodockertools` gera a imagem `hellodockertools:dev` quando o aplicativo é executado no modo **Depuração**. A imagem `hellodockertools:latest` é gerada quando o aplicativo é executado no modo **Versão**.
 
 Prefixe o nome da imagem com o nome de usuário do [hub do Docker](https://hub.docker.com/) (por exemplo, `dockerhubusername/hellodockertools`) se a imagem for enviada por push para o registro. Como alternativa, altere o nome da imagem para incluir a URL do registro privado (por exemplo, `privateregistry.domain.com/hellodockertools`), dependendo da configuração.
+
+Se você desejar um comportamento diferente com base na configuração de build (por exemplo, Depuração ou Versão), adicione arquivos *docker-compose* específicos para a configuração. Os arquivos precisam ser nomeados de acordo com a configuração de build (por exemplo, *docker-compose.vs.debug.yml* e *docker-compose.vs.release.yml*) e colocado no mesmo local que o arquivo *docker-compose-override.yml*. 
+
+Usando os arquivos de substituição específicos da configuração, é possível especificar definições de configuração diferentes (como variáveis de ambiente ou pontos de entrada) para as configurações de build de Depuração e Versão.
 
 ### <a name="service-fabric"></a>Service Fabric
 
@@ -227,6 +231,7 @@ Pode haver uma expectativa de que a imagem de produção ou versão seja menor e
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
+* [Desenvolvimento de contêiner com o Visual Studio](/visualstudio/containers)
 * [Azure Service Fabric: prepare seu ambiente de desenvolvimento](/azure/service-fabric/service-fabric-get-started)
 * [Implantar um aplicativo .NET em um contêiner do Windows no Azure Service Fabric](/azure/service-fabric/service-fabric-host-app-in-a-container)
 * [Solucionar problemas de desenvolvimento do Visual Studio 2017 com o Docker](/azure/vs-azure-tools-docker-troubleshooting-docker-errors)

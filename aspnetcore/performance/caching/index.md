@@ -1,23 +1,33 @@
 ---
 title: Respostas de cache no ASP.NET Core
-author: ardalis
-description: Saiba como usar o cache para melhorar o desempenho de aplicativos do ASP.NET Core.
+author: guardrex
+description: Saiba como usar o cache de dados e de resposta para melhorar o desempenho de aplicativos ASP.NET Core.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 09/16/2018
 uid: performance/caching/index
-ms.openlocfilehash: 3600d5be18e35901fba23e4e507435741ab4d14d
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: bb188f598f3acdbc6eca59d58d26e1b8382f5701
+ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077667"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028109"
 ---
 # <a name="cache-responses-in-aspnet-core"></a>Respostas de cache no ASP.NET Core
 
-* [Cache na memória](xref:performance/caching/memory)
-* [Trabalhar com um cache distribuído](xref:performance/caching/distributed)
-* [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
-* [Cache de resposta](xref:performance/caching/response)
-* [Middleware de Cache de Resposta](xref:performance/caching/middleware)
-* [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+[Cache na memória](xref:performance/caching/memory)  
+Saiba como armazenar dados em cache na memória no ASP.NET Core.
+
+[Trabalhar com um cache distribuído](xref:performance/caching/distributed)  
+Saiba como usar o cache de ASP.NET Core distribuído para melhorar o desempenho e a escalabilidade do aplicativo, especialmente em um ambiente de nuvem ou de farm de servidores.
+
+[Cache de resposta](xref:performance/caching/response)  
+Saiba como usar o cache de resposta para reduzir os requisitos de largura de banda e elevar o desempenho de aplicativos ASP.NET Core.
+
+[Middleware de Cache de Resposta](xref:performance/caching/middleware)  
+Saiba como configurar e usar o Middleware de cache de resposta no ASP.NET Core.
+
+[Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)  
+Saiba como usar o Auxiliar de marca de cache.
+
+[Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)  
+Saiba como usar o Auxiliar de marca de cache distribuído.

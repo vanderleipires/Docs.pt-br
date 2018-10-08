@@ -5,12 +5,12 @@ description: Saiba como os filtros funcionam e como usá-los no ASP.NET Core MVC
 ms.author: riande
 ms.date: 08/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 6b3d5446b1c9aafc02d4c31ad57a234f16513e3f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e20d934a17337d404249220d703ac4bb7164dfa6
+ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751602"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47402153"
 ---
 # <a name="filters-in-aspnet-core"></a>Filtros no ASP.NET Core
 
@@ -43,7 +43,7 @@ Cada tipo de filtro é executado em um estágio diferente no pipeline de filtros
 
 * [Filtros de autorização](#authorization-filters) são executados primeiro e são usados para determinar se o usuário atual tem autorização para a solicitação atual. Eles podem fazer um curto-circuito do pipeline quando uma solicitação não é autorizada. 
 
-* [Filtros de recurso](#resource-filters) são os primeiros a lidar com uma solicitação após a autorização.  Eles podem executar código antes do restante do pipeline de filtros e após o restante do pipeline ser concluído. Esses filtros são úteis para implementar o cache ou para, de alguma forma, fazer o curto-circuito do pipeline de filtros por motivos de desempenho. Eles são executados antes da associação de modelos, portanto, podem influenciar a associação de modelos.
+* [Filtros de recurso](#resource-filters) são os primeiros a lidar com uma solicitação após a autorização.  Eles podem executar código antes do restante do pipeline de filtros e após o restante do pipeline ser concluído. Esses filtros são úteis para implementar o cache ou para, de alguma forma, fazer o curto-circuito do pipeline de filtros por motivos de desempenho. Eles são executados antes do model binding, portanto, podem influenciar o model binding.
 
 * [Filtros de ação](#action-filters) podem executar código imediatamente antes e depois de um método de ação individual ser chamado. Eles podem ser usados para manipular os argumentos passados para uma ação, bem como o resultado da ação.
 
@@ -53,7 +53,7 @@ Cada tipo de filtro é executado em um estágio diferente no pipeline de filtros
 
 O diagrama a seguir mostra como esses tipos de filtro interagem no pipeline de filtros.
 
-![A solicitação é processada por meio de Filtros de autorização, Filtros de recurso, Associação de modelos, Filtros de ação, Execução de ação e Conversão do resultado de ação, Filtros de exceção, Filtros de resultado e Execução de resultado. Na saída, a solicitação é processada somente por Filtros de resultado e Filtros de recurso antes de se tornar uma resposta enviada ao cliente.](filters/_static/filter-pipeline-2.png)
+![A solicitação é processada por meio de Filtros de autorização, Filtros de recurso, Model binding, Filtros de ação, Execução de ação e Conversão do resultado de ação, Filtros de exceção, Filtros de resultado e Execução de resultado. Na saída, a solicitação é processada somente por Filtros de resultado e Filtros de recurso antes de se tornar uma resposta enviada ao cliente.](filters/_static/filter-pipeline-2.png)
 
 ## <a name="implementation"></a>Implementação
 
@@ -232,6 +232,8 @@ O exemplo a seguir demonstra como passar argumentos para um tipo usando `TypeFil
 
 [!code-csharp[](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_TypeFilter&highlight=1,2)]
 
+### <a name="ifilterfactory-implemented-on-your-attribute"></a>IFilterFactory implementado em seu atributo
+
 Se você tiver um filtro que:
 
 * Não exija nenhum argumento.
@@ -266,7 +268,7 @@ Os filtros de recursos são úteis para causar um curto-circuito na maior parte 
 
 O [filtro de recurso com curto-circuito](#short-circuiting-resource-filter) mostrado anteriormente é um exemplo de filtro de recurso. Outro exemplo é [DisableFormValueModelBindingAttribute](https://github.com/aspnet/Entropy/blob/rel/1.1.1/samples/Mvc.FileUpload/Filters/DisableFormValueModelBindingAttribute.cs):
 
-* Essa opção impedirá a associação de modelos de acessar os dados do formulário. 
+* Essa opção impedirá o model binding de acessar os dados do formulário. 
 * Ela é útil para uploads de arquivos grandes e para impedir que o formulário seja lido na memória.
 
 ## <a name="action-filters"></a>Filtros de ação
@@ -321,7 +323,7 @@ Filtros de exceção:
 
 * Não têm eventos anteriores nem posteriores. 
 * Implementam `OnException` ou `OnExceptionAsync`. 
-* Tratam as exceções sem tratamento que ocorrem na criação do controlador, na [associação de modelos](../models/model-binding.md), nos filtros de ação ou nos métodos de ação. 
+* Tratam as exceções sem tratamento que ocorrem na criação do controlador, no [model binding](../models/model-binding.md), nos filtros de ação ou nos métodos de ação. 
 * Não capturam as exceções que ocorrem em Filtros de recurso, em Filtros de resultado ou na execução do Resultado de MVC.
 
 Para tratar uma exceção, defina a propriedade `ExceptionContext.ExceptionHandled` como verdadeiro ou grave uma resposta. Isso interrompe a propagação da exceção. Um Filtro de exceção não pode transformar uma exceção em "êxito". Somente um filtro de ação pode fazer isso.
@@ -378,7 +380,7 @@ Depois, você pode usar o `MiddlewareFilterAttribute` para executar o middleware
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_MiddlewareFilter&highlight=2)]
 
-Filtros de middleware são executados no mesmo estágio do pipeline de filtros que filtros de recurso, antes da associação de modelos e depois do restante do pipeline.
+Filtros de middleware são executados no mesmo estágio do pipeline de filtros que filtros de recurso, antes do model binding e depois do restante do pipeline.
 
 ## <a name="next-actions"></a>Próximas ações
 
