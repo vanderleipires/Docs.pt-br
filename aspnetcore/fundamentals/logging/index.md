@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/19/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: e3bf5909edb515a2dabba206abaa160bc431d622
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: 62418d108461cf07490d7f406104db9ab3f11783
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46483081"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47861064"
 ---
 # <a name="logging-in-aspnet-core"></a>Registro em log no ASP.NET Core
 
@@ -25,7 +25,7 @@ Para obter informações sobre o registro stdout ao hospedar com IIS, confira <x
 
 ## <a name="how-to-create-logs"></a>Como criar logs
 
-Para criar logs, implemente um objeto [ILogger&lt;TCategoryName&gt;](/dotnet/api/microsoft.extensions.logging.ilogger-1) do contêiner de [injeção de dependência](xref:fundamentals/dependency-injection):
+Para criar logs, obtenha um [ILogger&lt;TCategoryName&gt;](/dotnet/api/microsoft.extensions.logging.ilogger-1) do contêiner de [injeção de dependência](xref:fundamentals/dependency-injection):
 
 ::: moniker range=">= aspnetcore-2.0"
 

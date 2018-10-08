@@ -3,92 +3,187 @@ title: Lógica do controlador de teste no ASP.NET Core
 author: ardalis
 description: Saiba como testar a lógica do controlador no ASP.NET Core com o Moq e o xUnit.
 ms.author: riande
-ms.date: 10/14/2016
+ms.custom: mvc
+ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: d0b2a25d00187c088671be147844aa892f824c6e
-ms.sourcegitcommit: 64c2ca86fff445944b155635918126165ee0f8aa
+ms.openlocfilehash: f036181f43d12ece89243fa3b0b0070ea84f8bc7
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "41751685"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010982"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Lógica do controlador de teste no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
-Os controladores são uma parte central de qualquer aplicativo ASP.NET Core MVC. Assim, você deve estar confiante de que eles se comportam conforme o esperado para o aplicativo. Testes automatizados podem fornecer essa confiança e podem detectar erros antes que eles atinjam a produção. É importante evitar colocar responsabilidades desnecessárias dentro dos controladores e garantir que o teste tenha como foco somente as responsabilidades do controlador.
-
-A lógica do controlador deve ser mínima e não estar voltada para a lógica de negócios ou interesses de infraestrutura (por exemplo, acesso a dados). Teste a lógica do controlador, não a estrutura. Teste como o controlador *se comporta* de acordo com as entradas válidas ou inválidas. Teste as respostas do controlador de acordo com o resultado da operação de negócios executada por ele.
-
-Responsabilidades típicas do controlador:
-
-* Verificar `ModelState.IsValid`.
-* Retornar uma resposta de erro se `ModelState` for inválido.
-* Recuperar uma entidade de negócios da persistência.
-* Executar uma ação na entidade de negócios.
-* Salvar a entidade de negócios para persistência.
-* Retornar um `IActionResult` apropriado.
+[Controladores](xref:mvc/controllers/actions) desempenham um papel central em qualquer aplicativo ASP.NET Core MVC. Assim, você precisa estar confiante de que os controladores se comportarão conforme o esperado. Testes automatizados podem detectar erros antes do aplicativo ser implantado em um ambiente de produção.
 
 [Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/testing/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="unit-tests-of-controller-logic"></a>Testes de unidade da lógica do controlador
 
-Os [testes de unidade](/dotnet/articles/core/testing/unit-testing-with-dotnet-test) envolvem o teste de uma parte de um aplicativo isoladamente em relação à sua infraestrutura e às suas dependências. Ao executar o teste de unidade na lógica do controlador, somente o conteúdo de uma única ação é testada, não o comportamento de suas dependências ou da própria estrutura. Ao executar o teste de unidade nas ações do controlador, concentre-se apenas em seu comportamento. Um teste de unidade do controlador evita itens como [filtros](xref:mvc/controllers/filters), [roteamento](xref:fundamentals/routing) ou [associação de modelos](xref:mvc/models/model-binding). Ao se concentrarem no teste de apenas uma coisa, os testes de unidade geralmente são simples de serem escritos e rápidos de serem executados. Um conjunto bem escrito de testes de unidade pode ser executado com frequência sem muita sobrecarga. No entanto, os testes de unidade não detectam problemas na interação entre os componentes, que é a finalidade dos [testes de integração](xref:test/integration-tests).
+Os [testes de unidade](/dotnet/articles/core/testing/unit-testing-with-dotnet-test) envolvem o teste de uma parte de um aplicativo isoladamente em relação à sua infraestrutura e às suas dependências. Quando a unidade está testando a lógica do controlador, somente o conteúdo de uma única ação é testada, não o comportamento de suas dependências ou da estrutura em si.
 
-Se você estiver escrevendo filtros personalizados e rotas, execute o teste de unidade neles de forma isolada, mas não como parte dos testes em uma ação do controlador específica.
+Configure testes de unidade de ações do controlador para se concentrarem no comportamento do controlador. Um teste de unidade do controlador evita cenários como [filtros](xref:mvc/controllers/filters), [roteamento](xref:fundamentals/routing) ou [model binding](xref:mvc/models/model-binding). Os testes que abrangem as interações entre os componentes que respondem coletivamente a uma solicitação são manipulados pelos *testes de integração*. Para obter mais informações sobre os testes de integração, consulte <xref:test/integration-tests>.
 
-> [!TIP]
-> [Crie e execute testes de unidade com o Visual Studio](/visualstudio/test/unit-test-your-code).
+Se você estiver escrevendo filtros e rotas personalizados, realize testes de unidade neles de forma isolada, não como parte dos testes em uma ação do controlador específica.
 
-Para demonstrar o teste de unidade, examine o controlador a seguir. Ele exibe uma lista de sessões de debate e permite que novas sessões de debate sejam criadas com um POST:
+Para demonstrar testes de unidade do controlador, examine o controlador a seguir no aplicativo de exemplo. O controlador Home exibe uma lista de sessões de debate e permite que novas sessões sejam criadas com uma solicitação POST:
 
-[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?name=snippet_HomeController&highlight=1,5,10,31-32)]
 
-O controlador está seguindo o [princípio de dependências explícitas](http://deviq.com/explicit-dependencies-principle/), esperando receber da injeção de dependência uma instância de `IBrainstormSessionRepository`. Isso facilita muito o teste com o uso de uma estrutura de objeto fictício, como o [Moq](https://www.nuget.org/packages/Moq/). O método `HTTP GET Index` não tem nenhum loop ou branch e chama apenas um método. Para testar este método `Index`, precisamos verificar se um `ViewResult` for retornado, com um `ViewModel` do método `List` do repositório.
+O controlador anterior:
 
-[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
+* Segue o [Princípio de Dependências Explícitas](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies).
+* Espera [DI (injeção de dependência)](xref:fundamentals/dependency-injection) para fornecer uma instância de `IBrainstormSessionRepository`.
+* Pode ser testado com um serviço `IBrainstormSessionRepository` fictício usando uma estrutura de objeto fictício, como [Moq](https://www.nuget.org/packages/Moq/). Um *objeto fictício* é um objeto fabricado com um conjunto predeterminado de comportamentos de propriedade e de método usado para teste. Para saber mais, consulte [Introdução aos testes de integração](xref:test/integration-tests#introduction-to-integration-tests).
 
-O método `HomeController` `HTTP POST Index` (mostrado acima) deve verificar se:
+O método `HTTP GET Index` não tem nenhum loop ou branch e chama apenas um método. O teste de unidade para esta ação:
 
-* O método de ação retorna um `ViewResult` de Solicitação Inválida com os dados apropriados quando `ModelState.IsValid` é `false`.
+* Imita o serviço `IBrainstormSessionRepository` usando o método `GetTestSessions`. `GetTestSessions` cria duas sessões de debate fictícias com datas e nomes de sessão.
+* Executa o método `Index`.
+* Faz declarações sobre o resultado retornado pelo método:
+  * Um <xref:Microsoft.AspNetCore.Mvc.ViewResult> é retornado.
+  * O [ViewDataDictionary.Model](xref:Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.Model*) é um `StormSessionViewModel`.
+  * Há duas sessões de debate armazenadas no `ViewDataDictionary.Model`.
 
-* O método `Add` no repositório é chamado e um `RedirectToActionResult` é retornado com os argumentos corretos quando `ModelState.IsValid` é verdadeiro.
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?name=snippet_Index_ReturnsAViewResult_WithAListOfBrainstormSessions&highlight=14-17)]
 
-O estado de modelo inválido pode ser testado com a adição de erros usando `AddModelError`, conforme mostrado no primeiro teste abaixo.
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?name=snippet_GetTestSessions)]
 
-[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
+Os testes método `HTTP POST Index` do controlador Home verificam se:
 
-O primeiro teste confirma que quando `ModelState` não é válido, o mesmo `ViewResult` é retornado como para uma solicitação `GET`. Observe que o teste não tenta passar um modelo inválido. Isso não funcionará de qualquer forma, pois a associação de modelos não está em execução (embora um [teste de integração](xref:test/integration-tests) use a associação de modelos de exercícios). Nesse caso, a associação de modelos não está sendo testada. Esses testes de unidade estão testando apenas o que o código faz no método de ação.
+* Quando [ModelState.IsValid](xref:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary.IsValid*) é `false`, o método de ação retorna uma *400 Solicitação inválida* <xref:Microsoft.AspNetCore.Mvc.ViewResult> com os dados apropriados.
+* Quando `ModelState.IsValid` é `true`:
+  * O método `Add` no repositório é chamado.
+  * Um <xref:Microsoft.AspNetCore.Mvc.RedirectToActionResult> é retornado com os argumentos corretos.
 
-O segundo teste verifica que quando `ModelState` é válido, um novo `BrainstormSession` é adicionado (por meio do repositório) e o método retorna um `RedirectToActionResult` com as propriedades esperadas. Chamadas fictícias que não são chamadas são normalmente ignoradas, mas a chamada a `Verifiable` no final da chamada de instalação permite que ele seja verificada no teste. Isso é feito com a chamada a `mockRepo.Verify`, que não será aprovado no teste se o método esperado não tiver sido chamado.
+O estado de modelo inválido é testado por meio da adição de erros usando <xref:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary.AddModelError*>, conforme mostrado no primeiro teste abaixo:
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?name=snippet_ModelState_ValidOrInvalid&highlight=9,16-17,38-41)]
+
+Quando [ModelState](xref:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary) não for válido, o mesmo `ViewResult` será retornado para uma solicitação GET. O teste não tenta passar um modelo inválido. Passar um modelo inválido não é uma abordagem válida, visto que o model binding não está em execução (embora um [teste de integração](xref:test/integration-tests) use model binding). Nesse caso, o model binding não está sendo testado. Esses testes de unidade estão testando apenas o código no método de ação.
+
+O segundo teste verifica se, quando o `ModelState` é válido:
+
+* Um novo `BrainstormSession` é adicionado (por meio do [repositório](xref:fundamentals/repository-pattern)).
+* O método retorna um `RedirectToActionResult` com as propriedades esperadas.
+
+Chamadas fictícias que não são chamadas são normalmente ignoradas, mas a chamada a `Verifiable` no final da chamada de instalação permite a validação fictícia no teste. Isso é realizado com a chamada a `mockRepo.Verify`, que não será aprovada no teste se o método esperado não tiver sido chamado.
 
 > [!NOTE]
-> A biblioteca do Moq usada nesta amostra facilita a combinação de simulações verificáveis ou "estritas" com simulações não verificáveis (também chamadas de simulações "flexíveis" ou stubs). Saiba mais sobre como [personalizar o comportamento de Simulação com o Moq](https://github.com/Moq/moq4/wiki/Quickstart#customizing-mock-behavior).
+> A biblioteca do Moq usada neste exemplo possibilita a combinação de simulações verificáveis ou "estritas" com simulações não verificáveis (também chamadas de simulações "flexíveis" ou stubs). Saiba mais sobre como [personalizar o comportamento de Simulação com o Moq](https://github.com/Moq/moq4/wiki/Quickstart#customizing-mock-behavior).
 
-Outro controlador no aplicativo exibe informações relacionadas a uma sessão de debate específica. Ele inclui uma lógica para lidar com valores de ID inválidos:
+Outro controlador no aplicativo de exemplo exibe informações relacionadas a uma sessão de debate específica. O controlador inclui lógica para lidar com valores `id` inválidos (há dois cenários `return` no exemplo a seguir para abordar esses cenários). A instrução `return` final retorna um novo `StormSessionViewModel` para a exibição:
 
-[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?name=snippet_SessionController&highlight=12-16,18-22,31)]
 
-A ação do controlador tem três casos a serem testados, um para cada instrução `return`:
+Os testes de unidade incluem um teste para cada cenário `return` na ação `Index` do controlador Session:
 
-[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?name=snippet_SessionControllerTests&highlight=2,11-14,18,31-32,36,50-55)]
 
-O aplicativo expõe a funcionalidade como uma API Web (uma lista de ideias associadas a uma sessão de debate e um método para adicionar novas ideias a uma sessão):
+Mudando para o controlador Ideas, o aplicativo expõe a funcionalidade como uma API Web na rota `api/ideas`:
 
-[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
+* Uma lista de ideias (`IdeaDTO`) associada com uma sessão de debate é retornada pelo método `ForSession`.
+* O método `Create` adiciona novas ideias a uma sessão.
 
-O método `ForSession` retorna uma lista de tipos `IdeaDTO`. Evite retornar as entidades de domínio de negócios diretamente por meio de chamadas à API, pois, com frequência, elas incluem mais dados do que o cliente de API exige e acoplam desnecessariamente o modelo de domínio interno do aplicativo à API exposta externamente. O mapeamento entre entidades de domínio e os tipos que você retornará de forma eletrônica pode ser feito manualmente (usando um LINQ `Select`, conforme mostrado aqui) ou uma biblioteca como a [AutoMapper](https://github.com/AutoMapper/AutoMapper).
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?name=snippet_ForSessionAndCreate&highlight=1-2,21-22)]
 
-Os testes de unidade para os métodos de API `Create` e `ForSession`:
+Evite retornar entidades de domínio de negócios diretamente por meio de chamadas à API. Entidades de domínio:
 
-[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
+* Geralmente incluem mais dados do que o cliente necessita.
+* Acople desnecessariamente o modelo de domínio interno do aplicativo à API exposta publicamente.
 
-Conforme mencionado anteriormente, para testar o comportamento do método quando `ModelState` é inválido, adicione um erro de modelo ao controlador como parte do teste. Não tente testar a validação ou a associação de modelos nos testes de unidade – teste apenas o comportamento do método de ação quando houver um valor `ModelState` específico.
+É possível executar o mapeamento entre entidades de domínio e os tipos retornados ao cliente:
 
-O segundo teste depende do repositório retornar nulo. Portanto, o repositório fictício é configurado para retornar nulo. Não é necessário criar um banco de dados de teste (em memória ou de outra forma) e construir uma consulta que retornará esse resultado – isso pode ser feito em uma única instrução, conforme mostrado.
+* Manualmente com um LINQ `Select`, como o aplicativo de exemplo usa. Para saber mais, consulte [LINQ (Consulta Integrada à Linguagem)](/dotnet/standard/using-linq).
+* Automaticamente com uma biblioteca, como [AutoMapper](https://github.com/AutoMapper/AutoMapper).
 
-O último teste verifica se o método `Update` do repositório é chamado. Como fizemos anteriormente, a simulação é chamada com `Verifiable` e, em seguida, o método `Verify` do repositório fictício é chamado para confirmar se o método verificável foi executado. Não é responsabilidade do teste de unidade garantir que o método `Update` salva os dados; isso pode ser feito com um teste de integração.
+Em seguida, o aplicativo de exemplo demonstra os testes de unidade para os métodos de API `Create` e `ForSession` do controlador Ideas.
+
+O aplicativo de exemplo contém dois testes `ForSession`. O primeiro teste determina se `ForSession` retorna um <xref:Microsoft.AspNetCore.Mvc.NotFoundObjectResult> (HTTP não encontrado) para uma sessão inválida:
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_ApiIdeasControllerTests4&highlight=5,7-8,15-16)]
+
+O segundo teste `ForSession` determina se `ForSession` retorna uma lista de ideias de sessão (`<List<IdeaDTO>>`) para uma sessão válida. As verificações também examinam a primeira ideia para confirmar se sua propriedade `Name` está correta:
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_ApiIdeasControllerTests5&highlight=5,7-8,15-18)]
+
+Para testar o comportamento do método `Create` quando o `ModelState` é inválido, o aplicativo de exemplo adiciona um erro de modelo ao controlador como parte do teste. Não tente testar a validação de modelos ou o model binding em testes de unidade&mdash;teste apenas o comportamento do método de ação quando houver um `ModelState` inválido:
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_ApiIdeasControllerTests1&highlight=7,13)]
+
+O segundo teste de `Create` depende do repositório retornar `null`, portanto, o repositório fictício é configurado para retornar `null`. Não é necessário criar um banco de dados de teste (na memória ou de outro tipo) e construir uma consulta que retornará esse resultado. O teste pode ser realizado em uma única instrução, como mostrado no código de exemplo:
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_ApiIdeasControllerTests2&highlight=7-8,15)]
+
+O terceiro teste `Create`, `Create_ReturnsNewlyCreatedIdeaForSession`, verifica se o método `UpdateAsync` do repositório é chamado. A simulação é chamada com `Verifiable` e o método `Verify` do repositório fictício é chamado para confirmar se o método verificável é executado. Não é responsabilidade do teste de unidade garantir que o método `UpdateAsync` salve os dados&mdash;isso pode ser realizado com um teste de integração.
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_ApiIdeasControllerTests3&highlight=20-22,28-33)]
+
+::: moniker range=">= aspnetcore-2.1"
+
+## <a name="test-actionresultlttgt"></a>Testar ActionResult&lt;T&gt;
+
+No ASP.NET Core 2.1 ou posterior, o [ActionResult&lt;T&gt;](xref:web-api/action-return-types#actionresultt-type) (<xref:Microsoft.AspNetCore.Mvc.ActionResult`1>) permite que você retorne um tipo derivado de `ActionResult` ou retorne um tipo específico.
+
+O aplicativo de exemplo inclui um método que retorna um `List<IdeaDTO>` para uma sessão `id` determinada. Se a sessão `id` não existir, o controlador retornará <xref:Microsoft.AspNetCore.Mvc.ControllerBase.NotFound*>:
+
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?name=snippet_ForSessionActionResult&highlight=10,21)]
+
+Dois testes do controlador `ForSessionActionResult` estão incluídos no `ApiIdeasControllerTests`.
+
+O primeiro teste confirma se o controlador retorna um `ActionResult`, mas não uma lista de ideias inexistente para uma sessão `id` inexistente:
+
+* O tipo `ActionResult<List<IdeaDTO>>` é `ActionResult`.
+* O <xref:Microsoft.AspNetCore.Mvc.ActionResult`1.Result*> é um <xref:Microsoft.AspNetCore.Mvc.NotFoundObjectResult>.
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_ForSessionActionResult_ReturnsNotFoundObjectResultForNonexistentSession&highlight=7,10,13-14)]
+
+Para uma sessão `id` válida, o segundo teste confirma se o método retorna:
+
+* Um `ActionResult` com um tipo `List<IdeaDTO>`.
+* O [ActionResult&lt;T&gt;.Value](xref:Microsoft.AspNetCore.Mvc.ActionResult`1.Value*) é um tipo `List<IdeaDTO>`.
+* O primeiro item na lista é uma ideia válida que corresponde à ideia armazenada na sessão fictícia (obtida chamando `GetTestSession`).
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_ForSessionActionResult_ReturnsIdeasForSession&highlight=7-8,15-18)]
+
+O aplicativo de exemplo também inclui um método para criar um novo `Idea` para uma determinada sessão. O controlador retorna:
+
+* <xref:Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest*> para um modelo inválido.
+* <xref:Microsoft.AspNetCore.Mvc.ControllerBase.NotFound*> se a sessão não existir.
+* <xref:Microsoft.AspNetCore.Mvc.ControllerBase.CreatedAtAction*> quando a sessão for atualizada com a nova ideia.
+
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?name=snippet_CreateActionResult&highlight=9,16,29)]
+
+Três testes `CreateActionResult` estão incluídos no `ApiIdeasControllerTests`.
+
+O primeiro texto confirma que um <xref:Microsoft.AspNetCore.Mvc.ControllerBase.BadRequest*> é retornado para um modelo inválido.
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_CreateActionResult_ReturnsBadRequest_GivenInvalidModel&highlight=7,13-14)]
+
+O segundo teste verifica se um <xref:Microsoft.AspNetCore.Mvc.ControllerBase.NotFound*> será retornado se a sessão não existir.
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_CreateActionResult_ReturnsNotFoundObjectResultForNonexistentSession&highlight=5,15,22-23)]
+
+Para uma sessão `id` válida, o teste final confirmará se:
+
+* O método retorna um `ActionResult` com um tipo `BrainstormSession`.
+* O [ActionResult&lt;T&gt;.Result](xref:Microsoft.AspNetCore.Mvc.ActionResult`1.Result*) é um <xref:Microsoft.AspNetCore.Mvc.CreatedAtActionResult>. `CreatedAtActionResult` é semelhante à resposta *201 Criado* com um cabeçalho `Location`.
+* O [ActionResult&lt;T&gt;.Value](xref:Microsoft.AspNetCore.Mvc.ActionResult`1.Value*) é um tipo `BrainstormSession`.
+* A chamada fictícia para atualizar a sessão, `UpdateAsync(testSession)`, foi invocada. A chamada de método `Verifiable` é verificada por meio da execução de `mockRepo.Verify()` nas declarações.
+* Dois objetos `Idea` são retornados para a sessão.
+* O último item (o `Idea` adicionado pela chamada fictícia a `UpdateAsync`) corresponde ao `newIdea` adicionado à sessão no teste.
+
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?name=snippet_CreateActionResult_ReturnsNewlyCreatedIdeaForSession&highlight=20-22,28-34)]
+
+::: moniker-end
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
+* <xref:test/index>
 * <xref:test/integration-tests>
+* [Crie e execute testes de unidade com o Visual Studio](/visualstudio/test/unit-test-your-code).
+* <xref:fundamentals/repository-pattern>
+* [Princípio de Dependências Explícitas](https://deviq.com/explicit-dependencies-principle/)

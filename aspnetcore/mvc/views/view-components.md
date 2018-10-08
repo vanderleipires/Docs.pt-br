@@ -5,12 +5,12 @@ description: Saiba como os componentes de exibição são usados no ASP.NET Core
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: c4e4de6e4ffb634a636bccdb2a929a524baebecf
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: cf2cfcdb07271503b844e31940e90b7376db0a6f
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751767"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211059"
 ---
 # <a name="view-components-in-aspnet-core"></a>Componentes de exibição no ASP.NET Core
 
@@ -20,7 +20,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="view-components"></a>Componentes da exibição
 
-Os componentes de exibição são semelhantes às exibições parciais, mas são muito mais eficientes. Os componentes de exibição não usam a associação de modelos e dependem apenas dos dados fornecidos durante uma chamada a eles. Este artigo foi escrito com o ASP.NET Core MVC, mas os componentes de exibição também funcionam com Páginas do Razor.
+Os componentes de exibição são semelhantes às exibições parciais, mas são muito mais eficientes. Os componentes de exibição não usam o model binding e dependem apenas dos dados fornecidos durante uma chamada a eles. Este artigo foi escrito com o ASP.NET Core MVC, mas os componentes de exibição também funcionam com Páginas do Razor.
 
 Um componente de exibição:
 
@@ -63,11 +63,11 @@ Uma classe de componente de exibição:
 
 ### <a name="view-component-methods"></a>Métodos de componente de exibição
 
-Um componente de exibição define sua lógica em um método `InvokeAsync` que retorna um `IViewComponentResult`. Os parâmetros são recebidos diretamente da invocação do componente de exibição, não da associação de modelos. Um componente de exibição nunca manipula uma solicitação diretamente. Normalmente, um componente de exibição inicializa um modelo e passa-o para uma exibição chamando o método `View`. Em resumo, os métodos de componente de exibição:
+Um componente de exibição define sua lógica em um método `InvokeAsync` que retorna um `IViewComponentResult`. Os parâmetros são recebidos diretamente da invocação do componente de exibição, não do model binding. Um componente de exibição nunca manipula uma solicitação diretamente. Normalmente, um componente de exibição inicializa um modelo e passa-o para uma exibição chamando o método `View`. Em resumo, os métodos de componente de exibição:
 
 * Definem um método `InvokeAsync` que retorna um `IViewComponentResult`
 * Normalmente, inicializam um modelo e passam-o para uma exibição chamando o método `ViewComponent` `View`
-* Os parâmetros são recebidos do método de chamada, não do HTTP e não há nenhuma associação de modelos
+* Os parâmetros são recebidos do método de chamada, não do HTTP e não há nenhum model binding
 * Não podem ser acessados diretamente como um ponto de extremidade HTTP e são invocados no código (normalmente em uma exibição). Um componente de exibição nunca manipula uma solicitação
 * São sobrecarregados na assinatura, em vez de nos detalhes da solicitação HTTP atual
 
@@ -75,9 +75,9 @@ Um componente de exibição define sua lógica em um método `InvokeAsync` que r
 
 O tempo de execução pesquisa a exibição nos seguintes caminhos:
 
-* /Pages/Components/<component name>/\<view_name>
-* Views/\<nome_do_controlador>/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>
-* Views/Shared/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>
+* /Pages/Components/\<nome_do_componente_da_exibição>/\<nome_da_exibição>
+* /Views/\<nome_do_controlador>/Components/\<nome_do_componente_da_exibição>/\<nome_da_exibição>
+* /Views/Shared/Components/\<nome_do_componente_da_exibição>/\<nome_da_exibição>
 
 O nome de exibição padrão de um componente de exibição é *Default*, o que significa que o arquivo de exibição geralmente será nomeado *Default.cshtml*. Especifique outro nome de exibição ao criar o resultado do componente de exibição ou ao chamar o método `View`.
 
@@ -95,6 +95,8 @@ Os parâmetros serão passados para o método `InvokeAsync`. O componente de exi
 
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
+::: moniker range=">= aspnetcore-1.1"
+
 ## <a name="invoking-a-view-component-as-a-tag-helper"></a>Invocando um componente de exibição como um Auxiliar de Marca
 
 Para o ASP.NET Core 1.1 e superior, invoque um componente de exibição como um [Auxiliar de Marca](xref:mvc/views/tag-helpers/intro):
@@ -110,13 +112,13 @@ Os parâmetros de classe e de método na formatação Pascal Case para Auxiliare
 </vc:[view-component-name]>
 ```
 
-Observação: para usar um Componente de Exibição como um Auxiliar de Marca, é necessário registrar o assembly que contém o Componente de Exibição usando a diretiva `@addTagHelper`. Por exemplo, se o Componente de Exibição está em um assembly chamado "MyWebApp", adicione a seguinte diretiva ao arquivo `_ViewImports.cshtml`:
+Para usar um componente de exibição como um Auxiliar de Marca, registre o assembly que contém o componente de exibição usando a diretiva `@addTagHelper`. Se seu componente de exibição estiver em um assembly chamado `MyWebApp`, adicione a seguinte diretiva ao arquivo *_ViewImports.cshtml*:
 
 ```cshtml
 @addTagHelper *, MyWebApp
 ```
 
-Registre um Componente de Exibição como um Auxiliar de Marca em qualquer arquivo que referencia o Componente de Exibição. Consulte [Gerenciando o escopo do Auxiliar de Marca](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope) para obter mais informações sobre como registrar Auxiliares de Marca.
+É possível registrar um componente de exibição como um Auxiliar de Marca a qualquer arquivo que referencie o componente de exibição. Consulte [Gerenciando o escopo do Auxiliar de Marca](xref:mvc/views/tag-helpers/intro#managing-tag-helper-scope) para obter mais informações sobre como registrar Auxiliares de Marca.
 
 O método `InvokeAsync` usado neste tutorial:
 
@@ -127,6 +129,8 @@ Na marcação do Auxiliar de Marca:
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
 Na amostra acima, o componente de exibição `PriorityList` torna-se `priority-list`. Os parâmetros para o componente de exibição são passados como atributos em kebab case em minúsculas.
+
+::: moniker-end
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>Invocando um componente de exibição diretamente em um controlador
 
@@ -243,6 +247,76 @@ Se deseja obter segurança em tempo de compilação, substitua o nome do compone
 Adicione uma instrução `using` ao arquivo de exibição do Razor e use o operador `nameof`:
 
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,35-)]
+
+## <a name="perform-synchronous-work"></a>Executar o trabalho síncrono
+
+A estrutura manipulará a invocação de um método `Invoke` síncrono se não for necessário realizar o trabalho assíncrono. O método a seguir cria um componente de exibição `Invoke` síncrono:
+
+```csharp
+public class PriorityList : ViewComponent
+{
+    public IViewComponentResult Invoke(int maxPriority, bool isDone)
+    {
+        var items = new List<string> { $"maxPriority: {maxPriority}", $"isDone: {isDone}" };
+        return View(items);
+    }
+}
+```
+
+O arquivo do Razor do componente de exibição lista as cadeias de caracteres passadas para o método `Invoke` (*Views/Home/Components/PriorityList/Default.cshtml*):
+
+```cshtml
+@model List<string>
+
+<h3>Priority Items</h3>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+</ul>
+```
+
+::: moniker range=">= aspnetcore-1.1"
+
+O componente de exibição é invocado em um arquivo do Razor (por exemplo, *Views/Home/Index.cshtml*) usando uma das seguintes abordagens:
+
+* <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper>
+* [Auxiliar de Marca](xref:mvc/views/tag-helpers/intro)
+
+Para usar a abordagem <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper>, chame `Component.InvokeAsync`:
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-1.1"
+
+O componente de exibição é invocado em um arquivo do Razor (por exemplo, *Views/Home/Index.cshtml*) com <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper>.
+
+Chame `Component.InvokeAsync`:
+
+::: moniker-end
+
+```cshtml
+@await Component.InvokeAsync(nameof(PriorityList), new { maxPriority = 4, isDone = true })
+```
+
+::: moniker range=">= aspnetcore-1.1"
+
+Para usar o Auxiliar de Marca, registre o assembly que contém o Componente de exibição que usa a diretiva `@addTagHelper` (o componente de exibição está em um assembly chamado `MyWebApp`):
+
+```cshtml
+@addTagHelper *, MyWebApp
+```
+
+Use o componente de exibição Auxiliar de Marca no arquivo de marcação do Razor:
+
+```cshtml
+<vc:priority-list max-priority="999" is-done="false">
+</vc:priority-list>
+```
+::: moniker-end
+
+A assinatura do método de `PriorityList.Invoke` é síncrona, mas o Razor localiza e chama o método com `Component.InvokeAsync` no arquivo de marcação.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

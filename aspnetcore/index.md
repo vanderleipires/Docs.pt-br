@@ -3,14 +3,14 @@ title: Introdução ao ASP.NET Core
 author: rick-anderson
 description: Obtenha uma introdução ao ASP.NET Core, uma estrutura de software livre, plataforma cruzada e alto desempenho para a criação de aplicativos modernos conectados à Internet e baseados em nuvem.
 ms.author: riande
-ms.date: 02/28/2018
+ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 6de7f1bc8229c5de519e4064dda0a7061cf8b9c6
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 85f2aa04e4b6692dd03a63f14bcebdec97ee270e
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077706"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454772"
 ---
 # <a name="introduction-to-aspnet-core"></a>Introdução ao ASP.NET Core
 
@@ -40,8 +40,6 @@ O ASP.NET Core oferece os seguintes benefícios:
 * A capacidade de criar e executar no Windows, macOS e Linux.
 * De software livre e [voltado para a comunidade](https://live.asp.net/).
 
-O ASP.NET Core é fornecido inteiramente como pacotes [NuGet](https://www.nuget.org/). Os pacotes NuGet permitem otimizar o aplicativo para incluir somente as dependências necessárias. Na verdade, aplicativos do ASP.NET Core 2.x direcionando o .NET Core só exigem um [único pacote de NuGet](xref:fundamentals/metapackage). Os benefícios de uma área de superfície menor do aplicativo incluem maior segurança, manutenção reduzida e desempenho aprimorado.
-
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>Compilar APIs Web e uma interface do usuário da Web usando o ASP.NET Core MVC
 
 O ASP.NET Core MVC fornece recursos que ajudam você a compilar [APIs Web](xref:tutorials/index#build-web-apis) e [aplicativos Web](xref:tutorials/index#build-web-apps):
@@ -51,8 +49,8 @@ O ASP.NET Core MVC fornece recursos que ajudam você a compilar [APIs Web](xref:
 * A [marcação Razor](xref:mvc/views/razor) fornece uma sintaxe produtiva para [Páginas Razor](xref:razor-pages/index) e as [Exibições do MVC](xref:mvc/views/overview).
 * Os [Auxiliares de Marcação](xref:mvc/views/tag-helpers/intro) permitem que o código do servidor participe da criação e renderização de elementos HTML em arquivos do Razor.
 * O suporte interno para [vários formatos de dados e negociação de conteúdo](xref:web-api/advanced/formatting) permite que as APIs Web alcancem uma ampla gama de clientes, incluindo navegadores e dispositivos móveis.
-* A [Associação de Modelos](xref:mvc/models/model-binding) mapeia automaticamente os dados de solicitações HTTP para os parâmetros de método de ação.
-* A [Validação de Modelos](xref:mvc/models/validation) executa automaticamente a validação do cliente e do servidor.
+* O [model binding](xref:mvc/models/model-binding) mapeia automaticamente os dados de solicitações HTTP para os parâmetros de método de ação.
+* A [Validação de Modelos](xref:mvc/models/validation) executa automaticamente a validação no lado do cliente e do servidor.
 
 ## <a name="client-side-development"></a>Desenvolvimento do lado do cliente
 
@@ -78,5 +76,6 @@ Para obter mais informações, consulte os seguintes recursos:
 
 * [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Tutoriais do ASP.NET Core](xref:tutorials/index)
+* <xref:tutorials/publish-to-azure-webapp-using-vs>
 * [Conceitos básicos do ASP.NET Core](xref:fundamentals/index)
 * O [Community Standup semanal do ASP.NET](https://live.asp.net/) aborda o progresso e os planos da equipe. Ele apresenta o novo software de terceiros e blogs.

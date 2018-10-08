@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: f5549a24c5b5fe2e6b33bd55960f87a8bf86bd19
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: f55d0e534dafb0709f1411bad9b038a87abde7ab
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870874"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523305"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Introdução a Páginas do Razor no ASP.NET Core
 
@@ -41,8 +41,6 @@ Consulte a [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-p
 
 Da linha de comando, execute `dotnet new webapp`.
 
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
-
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -59,8 +57,6 @@ Abra o arquivo *.csproj* gerado do Visual Studio para Mac.
 
 Da linha de comando, execute `dotnet new webapp`.
 
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
-
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -74,8 +70,6 @@ Da linha de comando, execute `dotnet new razor`.
 ::: moniker range=">= aspnetcore-2.1"
 
 Da linha de comando, execute `dotnet new webapp`.
-
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 ::: moniker-end
 
@@ -125,7 +119,7 @@ Notas:
 
 ## <a name="writing-a-basic-form"></a>Escrevendo um formulário básico
 
-Páginas do Razor foi projetado para facilitar a implementação de padrões comuns usados com navegadores da Web ao criar um aplicativo. [Associação de modelos](xref:mvc/models/model-binding), [auxiliares de marcas](xref:mvc/views/tag-helpers/intro) e auxiliares HTML *funcionam todos apenas* com as propriedades definidas em uma classe de Página do Razor. Considere uma página que implementa um formulário básico "Fale conosco" para o modelo `Contact`:
+Páginas do Razor foi projetado para facilitar a implementação de padrões comuns usados com navegadores da Web ao criar um aplicativo. [Model binding](xref:mvc/models/model-binding), [auxiliares de marcas](xref:mvc/views/tag-helpers/intro) e auxiliares HTML *funcionam todos apenas* com as propriedades definidas em uma classe de Página do Razor. Considere uma página que implementa um formulário básico "Fale conosco" para o modelo `Contact`:
 
 Para as amostras neste documento, o `DbContext` é inicializado no arquivo [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16).
 
@@ -156,7 +150,7 @@ A página tem um *método de manipulador* `OnPostAsync`, que é executado em sol
 * `OnGet` para inicializar o estado necessário para a página. Amostra de [OnGet](#OnGet).
 * `OnPost` para manipular envios de formulário.
 
-O sufixo de nomenclatura `Async` é opcional, mas geralmente é usado por convenção para funções assíncronas. O código `OnPostAsync` no exemplo anterior tem aparência semelhante ao que você normalmente escreve em um controlador. O código anterior é comum para as Páginas do Razor. A maioria dos primitivos MVC como [associação de modelos](xref:mvc/models/model-binding), [validação](xref:mvc/models/validation) e resultados da ação são compartilhados.  <!-- Review: Ryan, can we get a list of what is shared and what isn't? -->
+O sufixo de nomenclatura `Async` é opcional, mas geralmente é usado por convenção para funções assíncronas. O código `OnPostAsync` no exemplo anterior tem aparência semelhante ao que você normalmente escreve em um controlador. O código anterior é comum para as Páginas do Razor. A maioria dos primitivos MVC como [model binding](xref:mvc/models/model-binding), [validação](xref:mvc/models/validation) e resultados da ação são compartilhados.  <!-- Review: Ryan, can we get a list of what is shared and what isn't? -->
 
 O método `OnPostAsync` anterior:
 
@@ -173,7 +167,7 @@ Quando os dados são inseridos com êxito, o método de manipulador `OnPostAsync
 
 Quando o formulário enviado tem erros de validação (que são passados para o servidor), o método de manipulador `OnPostAsync` chama o método auxiliar `Page`. `Page` retorna uma instância de `PageResult`. Retornar `Page` é semelhante a como as ações em controladores retornam `View`. `PageResult` é o tipo de retorno <!-- Review  --> padrão para um método de manipulador. Um método de manipulador que retorna `void` renderiza a página.
 
-A propriedade `Customer` usa o atributo `[BindProperty]` para aceitar a associação de modelos.
+A propriedade `Customer` usa o atributo `[BindProperty]` para aceitar o model binding.
 
 [!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
 
@@ -376,6 +370,8 @@ O arquivo de exibição *Pages/Create.cshtml* atualizado:
 
 O [projeto inicial de Páginas do Razor](#rpvs17) contém o *Pages/_ValidationScriptsPartial.cshtml*, que conecta a validação do lado do cliente.
 
+Para obter mais informações sobre exibições parciais, consulte <xref:mvc/views/partial>.
+
 <a name="url_gen"></a>
 
 ## <a name="url-generation-for-pages"></a>Geração de URL para Páginas
@@ -417,6 +413,7 @@ A Geração de URL para páginas dá suporte a nomes relativos. A tabela a segui
 Vinculação de nome relativo é útil ao criar sites com uma estrutura complexa. Se você usar nomes relativos para vincular entre páginas em uma pasta, você poderá renomear essa pasta. Todos os links ainda funcionarão (porque eles não incluirão o nome da pasta).
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="viewdata-attribute"></a>Atributo ViewData
 
 Os dados podem ser passados para uma página com [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute). As propriedades nos controladores ou nos modelos da Página Razor decoradas com `[ViewData]` têm seus valores armazenados e carregados em [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary).
@@ -450,6 +447,7 @@ No layout, o título é lido a partir do dicionário ViewData:
     <title>@ViewData["Title"] - WebApplication</title>
     ...
 ```
+
 ::: moniker-end
 
 ## <a name="tempdata"></a>TempData
@@ -558,11 +556,12 @@ services.AddMvc()
     .WithRazorPagesRoot("/path/to/razor/pages");
 ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-resources"></a>Recursos adicionais
 
-* [Introdução ao ASP.NET Core](xref:index)
-* [Sintaxe Razor](xref:mvc/views/razor)
-* [Introdução a Páginas do Razor](xref:tutorials/razor-pages/razor-pages-start)
-* [Convenções de autorização de Páginas Razor](xref:security/authorization/razor-pages-authorization)
-* [Provedores de modelo personalizado de página e rota de Páginas Razor](xref:razor-pages/razor-pages-conventions)
-* [Testes de unidades de páginas Razor](xref:test/razor-pages-tests)
+* <xref:index>
+* <xref:mvc/views/razor>
+* <xref:tutorials/razor-pages/razor-pages-start>
+* <xref:security/authorization/razor-pages-authorization>
+* <xref:razor-pages/razor-pages-conventions>
+* <xref:test/razor-pages-tests>
+* <xref:mvc/views/partial>

@@ -1,17 +1,17 @@
 ---
 title: Metapacote Microsoft.AspNetCore.All para ASP.NET Core 2.0
 author: Rick-Anderson
-description: O metapacote Microsoft.AspNetCore.All inclui todos os pacotes do ASP.NET Core e Entity Framework Core compatíveis, juntamente com suas dependências.
+description: O metapacote Microsoft.AspNetCore.All não é recomendado para o ASP.NET Core 2.1 e posterior.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/20/2017
+ms.date: 09/20/2018
 uid: fundamentals/metapackage
-ms.openlocfilehash: fbc0f5465dc37a612b81c293f1a58b53ea4b2238
-ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
+ms.openlocfilehash: 1942426dbd5c15ae4a5fa5fbb931b94f50aa6043
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39123821"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454733"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>Metapacote Microsoft.AspNetCore.All para ASP.NET Core 2.0
 
@@ -65,3 +65,11 @@ Todas as dependências dos pacotes anteriores que, de outra forma, não são dep
 
 * `StackExchange.Redis` como uma dependência de `Microsoft.Extensions.Caching.Redis`
 * `Microsoft.ApplicationInsights` como uma dependência de `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`
+
+## <a name="update-aspnet-core-21"></a>Atualizar o ASP.NET Core 2.1
+
+É recomendável migrar para o metapacote `Microsoft.AspNetCore.App` para a versão 2.1 e posteriores. Para continuar usando o metapacote `Microsoft.AspNetCore.All` e certificar-se de que a versão de patch mais recente foi implantada:
+
+* Em computadores de desenvolvimento e em servidores de build: instale o [SDK do .NET Core](https://www.microsoft.com/net/download) mais recente.
+* Nos servidores de implantação: instale o [tempo de execução do .NET Core](https://www.microsoft.com/net/download) mais recente.
+ Seu aplicativo efetuará roll forward para a versão instalada mais recente em uma reinicialização do aplicativo.

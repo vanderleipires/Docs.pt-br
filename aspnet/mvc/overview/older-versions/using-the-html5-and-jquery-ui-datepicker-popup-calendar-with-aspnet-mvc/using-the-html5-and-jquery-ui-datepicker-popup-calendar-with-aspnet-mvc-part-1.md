@@ -8,16 +8,16 @@ ms.date: 08/29/2011
 ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: c98c77d5e9e965fb82efbe6ed88700c89bc67b4c
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a9a373a54458faa21199019a4adbe69c0b94cb60
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825584"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577337"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>Usando HTML5 e calendário jQuery UI Datepicker pop-up com o ASP.NET MVC – parte 1
 ====================
-por [Rick Anderson](https://github.com/Rick-Anderson)
+por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Este tutorial ensinará os fundamentos de como trabalhar com modelos do editor, modelos de exibição e calendário pop-up jQuery UI datepicker em um aplicativo Web ASP.NET MVC.
 
@@ -54,7 +54,7 @@ Aqui está o que você aprenderá:
 
 ### <a name="getting-started"></a>Guia de Introdução
 
-Se você ainda não tiver o aplicativo de listagem de filmes do projeto starter, baixá-lo usando o seguinte link: [baixar](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800). No Windows Explorer, clique com o *MvcMovie.zip* do arquivo e selecione **propriedades**. No **propriedades MvcMovie.zip** caixa de diálogo, selecione **Unblock**. (Desbloquear impede um aviso de segurança que ocorre quando você tentar usar um *. zip* arquivo que você baixou da web.)
+Se você ainda não tiver o aplicativo de listagem de filmes do projeto starter, baixá-lo usando o seguinte link: [baixar](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx? https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800). No Windows Explorer, clique com o *MvcMovie.zip* do arquivo e selecione **propriedades**. No **propriedades MvcMovie.zip** caixa de diálogo, selecione **Unblock**. (Desbloquear impede um aviso de segurança que ocorre quando você tentar usar um *. zip* arquivo que você baixou da web.)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image2.png)
 
