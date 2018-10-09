@@ -212,9 +212,9 @@
 
 # [SignalR](xref:signalr/index)
 ## [Introdução](xref:signalr/introduction)
+## [Plataformas compatíveis](xref:signalr/supported-platforms)
 ## [Introdução](xref:tutorials/signalr)
 ## [Conceitos de servidor](xref:signalr/hubs)
-### [Plataformas compatíveis](xref:signalr/supported-platforms)
 ### [Hubs](xref:signalr/hubs)
 ### [HubContext](xref:signalr/hubcontext)
 ### [Usuários e Grupos](xref:signalr/groups)
