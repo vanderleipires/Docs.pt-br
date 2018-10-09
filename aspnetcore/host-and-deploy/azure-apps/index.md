@@ -1,19 +1,19 @@
 ---
-title: Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
+title: Implantar aplicativos ASP.NET Core no Serviço de Aplicativo do Azure
 author: guardrex
-description: Descubra como hospedar aplicativos ASP.NET Core no Serviço de Aplicativo do Azure com links para recursos úteis.
+description: Este artigo contém links para o host do Azure e para implantar recursos.
 ms.author: riande
 ms.custom: mvc
 ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: bc2a686c5ddc44fded135c9eed5caf676218773a
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: f2de81af4bd2992aec76a287484d0057021231d8
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312064"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860960"
 ---
-# <a name="host-aspnet-core-on-azure-app-service"></a>Hospedar o ASP.NET Core no Serviço de Aplicativo do Azure
+# <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Implantar aplicativos ASP.NET Core no Serviço de Aplicativo do Azure
 
 [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/) é um [serviço de plataforma de computação em nuvem da Microsoft](https://azure.microsoft.com/) para hospedar aplicativos Web, incluindo o ASP.NET Core.
 
@@ -32,13 +32,10 @@ Os artigos a seguir estão disponíveis na documentação do ASP.NET Core:
 [Publicar no Azure com o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)  
 Aprenda como publicar um aplicativo ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio.
 
-[Publicar no Azure com as ferramentas CLI](xref:tutorials/publish-to-azure-webapp-using-cli)  
-Saiba como publicar um aplicativo ASP.NET Core no Serviço de Aplicativo do Azure usando o cliente de linha de comando do Git.
-
 [Implantação contínua no Azure com o Visual Studio e o Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment)  
 Saiba como criar um aplicativo Web ASP.NET Core usando o Visual Studio e implantá-lo no Serviço de Aplicativo do Azure, usando o Git para implantação contínua.
 
-[Implantação contínua no Azure com o VSTS](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)  
+[Criar seu primeiro pipeline com o Azure Pipelines](/azure/devops/pipelines/get-started-yaml)  
 Configurar um build de CI para um aplicativo ASP.NET Core e, em seguida, criar uma versão de implantação contínua para o Serviço de Aplicativo do Azure.
 
 [Área restrita de aplicativo Web do Azure](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  
