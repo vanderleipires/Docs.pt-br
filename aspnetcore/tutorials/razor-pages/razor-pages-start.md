@@ -53,11 +53,11 @@ O modelo do Visual Studio cria um projeto inicial:
 
 ![Gerenciador de Soluções](razor-pages-start/_static/se2.1.png)
 
-Pressione **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5** para executar sem anexar o depurador. Selecione **Aceitar** para dar consentimento ao acompanhamento. Este aplicativo não acompanha informações pessoais. O código de modelo gerado inclui ativos para ajudar a cumprir o [RGPD (Regulamento Geral sobre a Proteção de Dados)](xref:security/gdpr).
+Pressione **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5** para executar sem anexar o depurador. Selecione **Aceitar** para dar consentimento de rastreamento. Este aplicativo não rastreia informações pessoais. O código de modelo gerado inclui ativos para ajudar a cumprir o [RGPD (Regulamento Geral sobre a Proteção de Dados)](xref:security/gdpr).
 
 ![Página Inicial ou de Índice](razor-pages-start/_static/homeGDPR.png)
 
-A imagem a seguir mostra o aplicativo depois de aceitar o acompanhamento:
+A imagem a seguir mostra o aplicativo depois de aceitar o rastreamento:
 
 ![Página Inicial ou de Índice](razor-pages-start/_static/home2.1.png)
 
