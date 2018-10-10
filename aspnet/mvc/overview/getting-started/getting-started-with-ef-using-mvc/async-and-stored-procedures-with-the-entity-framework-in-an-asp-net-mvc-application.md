@@ -8,20 +8,20 @@ ms.date: 11/07/2014
 ms.assetid: 27d110fc-d1b7-4628-a763-26f1e6087549
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c665ff3bd4ce5173ee17ab7e0c4591f72b439eeb
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 84be966c1e1a4357125c1a53b8065676c8f073f6
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832857"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910727"
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Assíncrono e procedimentos armazenados com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio 2013. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 Nos tutoriais anteriores, você aprendeu como ler e atualizar dados usando o modelo de programação síncrono. Neste tutorial, você verá como implementar o modelo de programação assíncrono. O código assíncrono pode ajudar a um aplicativo têm melhor desempenho porque faz melhor uso dos recursos de servidor.

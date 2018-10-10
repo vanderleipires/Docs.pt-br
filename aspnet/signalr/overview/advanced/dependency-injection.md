@@ -8,32 +8,32 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 2f9b8eeb87882a686df5f35b2e7048a8518c8d4b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 607738e7531eaf9ee9f6a24267b65e153cc4d599
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833674"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912859"
 ---
 <a name="dependency-injection-in-signalr"></a>Injeção de dependência no SignalR
 ====================
 por [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
 > ## <a name="software-versions-used-in-this-topic"></a>Versões de software usadas neste tópico
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Versões anteriores deste tópico
-> 
+>
 > Para obter informações sobre versões anteriores do SignalR, consulte [versões mais antigas do SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -140,7 +140,7 @@ Criando um `IStockTicker` interface não é estritamente necessário, mas eu que
 
 Há vários contêineres de IoC de código-fonte aberto para .NET. Para este tutorial, usarei [Ninject](http://www.ninject.org/). (Outras bibliotecas populares incluem [Castle Windsor](http://www.castleproject.org/), [Spring.Net](http://www.springframework.net/), [Autofac](https://code.google.com/p/autofac/), [Unity](https://github.com/unitycontainer/unity), e [StructureMap ](http://docs.structuremap.net).)
 
-Use o Gerenciador de pacotes NuGet para instalar o [Ninject biblioteca](https://nuget.org/packages/Ninject/3.0.1.10). No Visual Studio, do **ferramentas** menu, selecione **Gerenciador de pacotes de biblioteca** | **Package Manager Console**. Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
+Use o Gerenciador de pacotes NuGet para instalar o [Ninject biblioteca](https://nuget.org/packages/Ninject/3.0.1.10). No Visual Studio, do **ferramentas** menu, selecione **Gerenciador de pacotes NuGet** > **Package Manager Console**. Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
 
 [!code-powershell[Main](dependency-injection/samples/sample13.ps1)]
 

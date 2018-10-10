@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: ed5d7b9b4e61b0289734f4cdef1039b31ddda7a7
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: af5e5a9c8d211b07b57aa50238b02cabe249aef8
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833649"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911834"
 ---
 <a name="aspnet-error-handling"></a>Tratamento de erros do ASP.NET
 ====================
@@ -275,7 +275,7 @@ O ELMAH (módulos de log de erros e manipuladores) é um recurso de registro de 
 
 Antes de poder trabalhar com o ELMAH, você deve instalá-lo. Isso é fácil usando o *NuGet* instalador do pacote. Como mencionado anteriormente nesta série de tutoriais, o NuGet é uma extensão do Visual Studio que facilita a instalação e atualização de bibliotecas de código-fonte aberto e ferramentas no Visual Studio.
 
-1. No Visual Studio, do **ferramentas** menu, selecione **Gerenciador de pacotes de biblioteca**  - &gt; **gerenciar pacotes NuGet para solução**. 
+1. No Visual Studio, do **ferramentas** menu, selecione **Gerenciador de pacotes NuGet** > **gerenciar pacotes NuGet para solução**. 
 
     ![Tratamento de erros do ASP.NET - gerenciar pacotes NuGet para solução](aspnet-error-handling/_static/image6.png)
 2. O **gerenciar pacotes NuGet** caixa de diálogo é exibida dentro do Visual Studio.

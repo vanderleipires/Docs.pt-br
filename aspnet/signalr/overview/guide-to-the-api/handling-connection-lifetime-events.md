@@ -8,40 +8,40 @@ ms.date: 06/10/2014
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 42cf7faf9112875e15072993b6210348d0c42534
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1783a3ab292a5460d5cc1b7ad78073071d65d379
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834874"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911925"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>Noções básicas sobre e manipular eventos de tempo de vida de Conexão no SignalR
 ====================
 por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 > Este artigo fornece uma visão geral de como os eventos de conexão, a reconexão e a desconexão do SignalR que você pode manipular e configurações de tempo limite e keepalive que você pode configurar.
-> 
+>
 > O artigo supõe que você já tem algum conhecimento dos eventos de tempo de vida do SignalR e conexão. Para obter uma introdução ao SignalR, consulte [Introdução ao SignalR](../getting-started/introduction-to-signalr.md). Para listas de eventos de tempo de vida de conexão, consulte os seguintes recursos:
-> 
+>
 > - [Como manipular eventos de tempo de vida de conexão na classe Hub](hubs-api-guide-server.md#connectionlifetime)
 > - [Como manipular eventos de tempo de vida de conexão nos clientes JavaScript](hubs-api-guide-javascript-client.md#connectionlifetime)
 > - [Como manipular eventos de tempo de vida de conexão em clientes .NET](hubs-api-guide-net-client.md#connectionlifetime)
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>Versões de software usadas neste tópico
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Versões anteriores deste tópico
-> 
+>
 > Para obter informações sobre versões anteriores do SignalR, consulte [versões mais antigas do SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -144,8 +144,8 @@ Interrupções de conexão de transporte que não são detectadas pelo transport
 
 Alguns ambientes de rede fechar deliberadamente conexões ociosas e outra função dos pacotes keepalive é ajudar a evitar isso, informando a essas redes que uma conexão SignalR está em uso. Em casos extremos a frequência de padrão de pings keepalive pode não ser suficiente para impedir conexões fechadas. Nesse caso, você pode configurar os pings de keepalive sejam enviadas com mais frequência. Para obter mais informações, consulte [as configurações de tempo limite e keepalive](#timeoutkeepalive) mais adiante neste tópico.
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > **Importante**: A sequência de eventos descritas aqui não é garantida. Torna o SignalR cada tentativa de gerar eventos de tempo de vida de conexão de uma maneira previsível de acordo com esse esquema, mas há muitas variações de eventos de rede e de várias maneiras em que estruturas de comunicação subjacente como transporte APIs tratarão-los. Por exemplo, o `Reconnected` evento não pode ser gerado quando o cliente se reconecta, ou o `OnConnected` manipulador no servidor pode ser executados quando a tentativa de estabelecer uma conexão não for bem-sucedida. Este tópico descreve somente os efeitos que normalmente seriam produzidos por determinadas circunstâncias normais.
 
 

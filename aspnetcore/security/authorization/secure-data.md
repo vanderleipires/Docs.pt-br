@@ -5,12 +5,12 @@ description: Saiba como criar um aplicativo páginas Razor com dados protegidos 
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 2fb13f0772a1f8aa4ed2ff3ece2a2c5d3b7360c9
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 71b7855958b530b8bac32843a8d1e7db0113ffd9
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010930"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912625"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -350,6 +350,7 @@ Se o aplicativo propagado o banco de dados de teste. Se não houver nenhuma linh
 
 ### <a name="additional-resources"></a>Recursos adicionais
 
+* [Criar um aplicativo web .NET Core e o banco de dados SQL no serviço de aplicativo do Azure](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 * [Laboratório de autorização do ASP.NET Core](https://github.com/blowdart/AspNetAuthorizationWorkshop). Este laboratório apresenta mais detalhes sobre os recursos de segurança introduzidos neste tutorial.
 * [Autorização no ASP.NET Core: simples, função, baseada em declarações e personalizada](xref:security/authorization/index)
 * [Autorização baseada em política personalizada](xref:security/authorization/policies)

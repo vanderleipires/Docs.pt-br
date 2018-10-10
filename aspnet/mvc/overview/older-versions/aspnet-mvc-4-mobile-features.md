@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: 8b82b8b9b1ee6646072931da889c643afb34d474
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6fe55a14b40f8c50dee91cdc7f59d0378f2a1ea2
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578153"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912314"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Recursos móveis do ASP.NET MVC 4
 ====================
@@ -184,7 +184,7 @@ Renomeie *Views\Home\AllTags.Mobile.cshtml* e *Views\Home\AllTags.iPhone.cshtml*
 
 Instalar o *jQuery.Mobile.MVC* pacote NuGet ao fazer isso:
 
-1. Dos **ferramentas** menu, selecione **Gerenciador de pacotes de biblioteca**e, em seguida, selecione **Package Manager Console**.
+1. Dos **ferramentas** menu, selecione **Gerenciador de pacotes NuGet**e, em seguida, selecione **Package Manager Console**.
 
     [![p3_packageMgr](aspnet-mvc-4-mobile-features/_static/image20.png)](aspnet-mvc-4-mobile-features/_static/image19.png)
 2. No **Package Manager Console**, insira `Install-Package jQuery.Mobile.MVC -version 1.0.0`
@@ -245,11 +245,11 @@ Atualizar o *AllTags* exibir no navegador móvel. Agora você pode navegar entre
 
 > [!NOTE]
 > Depurar Observação: você pode adicionar o seguinte código ao final do Views\Shared\\_ViewSwitcher.cshtml para ajudar a depurar modos de exibição quando usando um navegador, a cadeia de caracteres de agente do usuário definido como um dispositivo móvel.
-> 
+>
 > [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample15.cs)]
-> 
->  e adicionar o título para o *Views\Shared\\layout. cshtml* arquivo.  
-> 
+>
+>  e adicionar o título para o *Views\Shared\\layout. cshtml* arquivo.
+>
 > [!code-html[Main](aspnet-mvc-4-mobile-features/samples/sample16.html)]
 
 

@@ -8,32 +8,32 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: ee62a7b01ff357262aa89dbac4f49180b4c58fe0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 89b27267bec5edb0692fe75061d08b4688df5a8c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834917"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912060"
 ---
 <a name="enabling-signalr-tracing"></a>Habilitar o rastreamento do SignalR
 ====================
 por [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Este documento descreve como habilitar e configurar o rastreamento de clientes e servidores do SignalR. O rastreamento permite que você exiba informações sobre eventos de diagnóstico em seu aplicativo do SignalR.
-> 
+>
 > Este tópico foi originalmente escrito por Patrick Fletcher.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET Framework 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -134,7 +134,7 @@ A saída a seguir mostra as entradas de `ClientLog.txt` arquivo para um aplicati
 <a id="phone"></a>
 ## <a name="enabling-tracing-in-windows-phone-8-clients"></a>Habilitando o rastreamento em clientes do Windows Phone 8
 
-Aplicativos do SignalR para aplicativos do Windows Phone usam o mesmo cliente do .NET como aplicativos de área de trabalho, mas [console. out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx) e gravar em um arquivo com [StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx) não estão disponíveis. Em vez disso, você precisará criar uma implementação personalizada de [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) para rastreamento. 
+Aplicativos do SignalR para aplicativos do Windows Phone usam o mesmo cliente do .NET como aplicativos de área de trabalho, mas [console. out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx) e gravar em um arquivo com [StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx) não estão disponíveis. Em vez disso, você precisará criar uma implementação personalizada de [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) para rastreamento.
 
 <a id="phone_ui"></a>
 ### <a name="logging-windows-phone-client-events-to-the-ui"></a>Log de eventos do cliente do Windows Phone na interface do usuário

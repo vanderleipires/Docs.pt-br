@@ -8,21 +8,21 @@ ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 856b7d98ac8bd30982d81b0609bb9c1288e07e49
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9a8ecac5203234c140783bbe3a518d35f6a57675
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824787"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910768"
 ---
 <a name="adding-a-controller"></a>Adicionando um controlador
 ====================
 por [Scott Hanselman](https://github.com/shanselman)
 
 > > [!NOTE]
-> > Uma versão atualizada, se este tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) usando [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads). O novo tutorial usa o ASP.NET MVC 5, que fornece muitos aprimoramentos ao longo deste tutorial.
-> 
-> 
+> > Uma versão atualizada, se este tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) usando [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013). O novo tutorial usa o ASP.NET MVC 5, que fornece muitos aprimoramentos ao longo deste tutorial.
+>
+>
 > Este é um tutorial para iniciantes que apresenta os conceitos básicos do ASP.NET MVC. Você criará um aplicativo web simples que lê e grava de um banco de dados. Visite o [Central de informações do ASP.NET MVC](../../../index.md) para localizar outros ASP.NET MVC, tutoriais e exemplos.
 
 

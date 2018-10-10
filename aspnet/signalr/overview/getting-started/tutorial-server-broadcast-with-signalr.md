@@ -8,49 +8,49 @@ ms.date: 10/13/2014
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: c2248e68b3c9411687ab6410f12ec85488fe0738
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7a85a704dc5d830ec793540fbc44a3ce7ec8c934
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824392"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911523"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>Tutorial: Transmissão de servidor com SignalR 2
 ====================
 por [Tom Dykstra](https://github.com/tdykstra), [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Este tutorial mostra como criar um aplicativo web que usa o ASP.NET SignalR 2 para fornecer funcionalidade de difusão de servidor. Transmissão de servidor significa que as comunicações enviadas para os clientes são iniciadas pelo servidor. Esse cenário requer uma abordagem de programação diferente que peer-to-peer cenários como aplicativos de bate-papo, em que as comunicações enviadas para os clientes são iniciadas por um ou mais dos clientes.
-> 
+>
 > O aplicativo que você criará neste tutorial simula uma bolsa, um cenário típico para a funcionalidade de difusão de servidor.
-> 
+>
 > Este tópico foi originalmente escrito por Patrick Fletcher.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>Usando o Visual Studio 2012 com este tutorial
-> 
-> 
+>
+>
 > Para usar o Visual Studio 2012 com este tutorial, faça o seguinte:
-> 
+>
 > - Atualização de seu [Gerenciador de pacotes](http://docs.nuget.org/docs/start-here/installing-nuget) para a versão mais recente.
 > - Instalar o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
 > - No Web Platform Installer, procure e instale **ASP.NET e Web Tools 2013.1 para Visual Studio 2012**. Isso irá instalar os modelos do Visual Studio para classes do SignalR, como **Hub**.
 > - Alguns modelos (como **classe de inicialização OWIN**) não está disponível; nesses casos, use um arquivo de classe em vez disso.
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>Versões de tutoriais
-> 
+>
 > Para obter informações sobre versões anteriores do SignalR, consulte [versões mais antigas do SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: b1d80928d765bc71ea1579272662b6697371c47b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9d5a51a5887ecbbc96fce1416b88aa849bc3674e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825191"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912716"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>O que há de novo no ASP.NET MVC 4
 
@@ -323,7 +323,7 @@ Nesta tarefa, você criará uma simulação do serviço para recuperar o conteú
 
     *Testar o serviço de foto fictícia*
 
-Em uma implementação real, você pode usar [API Web ASP.NET](../../../../web-api/index.md) para implementar o serviço de galeria de fotos. API Web ASP.NET é uma estrutura que torna mais fácil criar serviços HTTP que alcançam uma ampla gama de clientes, incluindo navegadores e dispositivos móveis. A API do ASP.NET Web é uma plataforma ideal para criar aplicativos com REST no .NET Framework.
+Em uma implementação real, você pode usar [API Web ASP.NET](../../../../web-api/index.md) para implementar o serviço de galeria de fotos. API Web ASP.NET é uma estrutura que torna mais fácil criar serviços HTTP que alcançam uma ampla gama de clientes, incluindo navegadores e dispositivos móveis. O ASP.NET Web API é uma plataforma ideal para o desenvolvimento de aplicativos RESTful no .NET Framework.
 
 <a id="Task_2_-_Displaying_the_Photo_Gallery"></a>
 #### <a name="task-2---displaying-the-photo-gallery"></a>Tarefa 2 - exibir a Galeria de fotos
@@ -382,7 +382,7 @@ Uma das principais atualizações no ASP.NET MVC 4 é o suporte para desenvolvim
 
       > [!NOTE]
       > Uma das vantagens de usar o NuGet é que você não precisa enviar todas as bibliotecas em seu projeto, reduzindo o tamanho do projeto. Com o NuGet Power Tools, especificando as versões do pacote no arquivo Packages. config, você será capaz de baixar todas as bibliotecas necessárias na primeira vez em que você executar o projeto. É por isso você terá que executar essas etapas depois de abrir uma solução existente neste laboratório.
-2. Abra o **Package Manager Console** clicando o **ferramentas** &gt; **Library Package Manager** &gt; **Gerenciador de pacotes Console** opção de menu.
+2. Abra o **Package Manager Console** clicando o **ferramentas** > **NuGet Package Manager** > **Package Manager Console**  opção de menu.
 
     ![Abrindo o Console do Gerenciador de pacotes NuGet](whats-new-in-aspnet-mvc-4/_static/image22.png "abrindo o Console do Gerenciador de pacotes NuGet")
 

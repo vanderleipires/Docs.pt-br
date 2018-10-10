@@ -8,21 +8,20 @@ ms.date: 12/08/2014
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6e3de242f7cfc584f4c3d1dfa3d1948ee4d49d66
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: 0aa440e700c9bfb02aa5d55ebf481850a730febe
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899819"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912677"
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>Avançados do Entity Framework 6 cenários para um aplicativo do MVC 5 Web (12 de 12)
 ====================
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio 2013. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
-
+> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 No tutorial anterior você implementou a herança de tabela por hierarquia. Este tutorial inclui apresenta vários tópicos que são úteis para consideração quando você vai além das noções básicas de desenvolvimento de aplicativos web ASP.NET que usam o Entity Framework Code First. Instruções passo a passo orientam você durante o código e usando o Visual Studio para os seguintes tópicos:
 
@@ -150,7 +149,7 @@ Na *controladores/CourseController*, substitua o `Index` método com o código a
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample6.cs)]
 
-Agora defina um ponto de interrupção a `return` instrução (F9 com o cursor nessa linha). Pressione F5 para executar o projeto no modo de depuração e selecione a página de índice do curso. Quando o código atinge o ponto de interrupção, examinar o `sql` variável. Você vê a consulta que é enviada para o SQL Server. É um simples `Select` instrução.
+Agora defina um ponto de interrupção a `return` instrução (F9 com o cursor nessa linha). Pressione **F5** para executar o projeto no modo de depuração e selecione a página de índice do curso. Quando o código atinge o ponto de interrupção, examinar o `sql` variável. Você vê a consulta que é enviada para o SQL Server. É um simples `Select` instrução.
 
 [!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample7.json)]
 
@@ -291,7 +290,6 @@ Mensagem de erro:
 
 > Não é possível criar/shadow copy '&lt;filename&gt;' quando esse arquivo já existe.
 
-
 Solução
 
 Aguarde alguns segundos e atualize a página.
@@ -301,7 +299,6 @@ Aguarde alguns segundos e atualize a página.
 Mensagem de erro (da `Update-Database` comando no PMC):
 
 > O termo 'Update-Database' não é reconhecido como o nome de um cmdlet, função, arquivo de script ou programa operável. Verifique a ortografia do nome, ou se um caminho foi incluído, verifique se o caminho está correto e tente novamente.
-
 
 Solução
 
@@ -313,7 +310,6 @@ Mensagem de erro (da `Update-Database` comando no PMC):
 
 > Falha na validação de uma ou mais entidades. Consulte a propriedade 'EntityValidationErrors' para obter mais detalhes.
 
-
 Solução
 
 Uma causa desse problema é erros de validação quando o `Seed` execuções de método. Ver [propagando e depurando Entity Framework (EF) BDs](https://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx) para obter dicas sobre como depurar o `Seed` método.
@@ -322,9 +318,7 @@ Uma causa desse problema é erros de validação quando o `Seed` execuções de 
 
 Mensagem de erro:
 
-> Erro HTTP 500.19 - erro interno do servidor  
-> A página solicitada não pode ser acessada porque os dados de configuração relacionados para a página são inválidos.
-
+> Erro HTTP 500.19 - erro interno do servidor a página solicitada não pode ser acessado porque os dados de configuração relacionados para a página são inválidos.
 
 Solução
 
@@ -335,7 +329,6 @@ Uma maneira que você pode obter esse erro é de várias cópias da solução, c
 Mensagem de erro:
 
 > Ocorreu um erro relacionado à rede ou específico a uma instância ao estabelecer uma conexão com o SQL Server. O servidor não foi encontrado ou não estava acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. (provedor: Adaptadores de Rede do SQL, erro: 26 – Erro ao Localizar Servidor/Instância Especificada)
-
 
 Solução
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 80bfe5fb-bdfc-41fe-ac43-2132e5d69fac
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 3fca46ac1e73905063afec9fc1eb9cf8df3aee24
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a58b95adfb5d0165887b95abd3247d3a829aa882
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831617"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912222"
 ---
 <a name="tutorial-getting-started-with-signalr-2-and-mvc-5"></a>Tutorial: Introdução ao SignalR 2 e MVC 5
 ====================
@@ -21,35 +21,35 @@ por [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://gith
 
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/Getting-Started-with-c366b2f3)
 
-> Este tutorial mostra como usar o ASP.NET SignalR 2 para criar um aplicativo de bate-papo em tempo real. Você adicionará o SignalR para um aplicativo MVC 5 e criar uma exibição de bate-papo para enviar e exibir as mensagens. 
-> 
+> Este tutorial mostra como usar o ASP.NET SignalR 2 para criar um aplicativo de bate-papo em tempo real. Você adicionará o SignalR para um aplicativo MVC 5 e criar uma exibição de bate-papo para enviar e exibir as mensagens.
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - MVC 5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>Usando o Visual Studio 2012 com este tutorial
-> 
-> 
+>
+>
 > Para usar o Visual Studio 2012 com este tutorial, faça o seguinte:
-> 
+>
 > - Atualização de seu [Gerenciador de pacotes](http://docs.nuget.org/docs/start-here/installing-nuget) para a versão mais recente.
 > - Instalar o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
 > - No Web Platform Installer, procure e instale **ASP.NET e Web Tools 2013.1 para Visual Studio 2012**. Isso irá instalar os modelos do Visual Studio para classes do SignalR, como **Hub**.
 > - Alguns modelos (como **classe de inicialização OWIN**) não está disponível; nesses casos, use um arquivo de classe em vez disso.
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>Versões de tutoriais
-> 
+>
 > Para obter informações sobre versões anteriores do SignalR, consulte [versões mais antigas do SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -97,7 +97,7 @@ Esta seção mostra como criar um aplicativo ASP.NET MVC 5, adicione a bibliotec
     > [!NOTE]
     > Se você selecionar um provedor de autenticação diferentes para seu aplicativo, uma `Startup.cs` classe será criada para você, você não precisará criar seus próprios `Startup.cs` classe na etapa 10 abaixo.
 4. Clique em **Okey** na **novo projeto ASP.NET** caixa de diálogo.
-5. Abra o **ferramentas | Gerenciador de pacotes de biblioteca | Package Manager Console** e execute o comando a seguir. Esta etapa adiciona ao projeto de um conjunto de arquivos de script e referências de assembly que habilitar a funcionalidade do SignalR.
+5. Abra o **Ferramentas > Gerenciador de pacotes NuGet > Package Manager Console** e execute o comando a seguir. Esta etapa adiciona ao projeto de um conjunto de arquivos de script e referências de assembly que habilitar a funcionalidade do SignalR.
 
     `install-package Microsoft.AspNet.SignalR`
 6. Na **Gerenciador de soluções**, expanda a pasta de Scripts. Observe que as bibliotecas de script para o SignalR foram adicionadas ao projeto.

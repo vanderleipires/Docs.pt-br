@@ -8,20 +8,20 @@ ms.date: 11/07/2014
 ms.assetid: 46f7f3c9-274f-4649-811d-92222a9b27e2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 25bd71f9860db01afb7177da0f9befbdd8eb8e12
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 25cec8bb9384dbd053f8af12855171a54675a40e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831724"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912482"
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application"></a>Criando um modelo de dados mais complexo para um aplicativo ASP.NET MVC
 ====================
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio 2013. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 Nos tutoriais anteriores trabalharam com um modelo de dados simples composto por três entidades. Neste tutorial você adicionará mais entidades e relações e personalizará o modelo de dados especificando formatação, validação e regras de mapeamento de banco de dados. Você verá duas maneiras de personalizar o modelo de dados: adicionando atributos a classes de entidade e adicionando código para a classe de contexto do banco de dados.
@@ -230,13 +230,13 @@ Por padrão, o Entity Framework pressupõe que os valores de chave primária sã
 
 As propriedades de chave estrangeira e propriedades de navegação no `Course` entidade refletem as seguintes relações:
 
-- Um curso é atribuído a um departamento e, portanto, há uma propriedade de chave estrangeira `DepartmentID` e de navegação `Department` pelas razões mencionadas acima. 
+- Um curso é atribuído a um departamento e, portanto, há uma propriedade de chave estrangeira `DepartmentID` e de navegação `Department` pelas razões mencionadas acima.
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
-- Um curso pode ter qualquer quantidade de estudantes inscritos; portanto, a propriedade de navegação `Enrollments` é uma coleção: 
+- Um curso pode ter qualquer quantidade de estudantes inscritos; portanto, a propriedade de navegação `Enrollments` é uma coleção:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample18.cs)]
-- Um curso pode ser ministrado por vários instrutores; portanto, a propriedade de navegação `Instructors` é uma coleção: 
+- Um curso pode ser ministrado por vários instrutores; portanto, a propriedade de navegação `Instructors` é uma coleção:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample19.cs)]
 
@@ -260,15 +260,15 @@ Mapeamento de coluna geralmente não é necessário, pois o Entity Framework ger
 
 As propriedades de navegação e de chave estrangeira refletem as seguintes relações:
 
-- Um departamento pode ou não ter um administrador, e um administrador é sempre um instrutor. Portanto, o `InstructorID` propriedade é incluída como a chave estrangeira para a `Instructor` entidade e um ponto de interrogação é adicionado após o `int` designação para marcar a propriedade como nulo de tipo. A propriedade de navegação é chamada `Administrator` , mas contém uma `Instructor` entidade: 
+- Um departamento pode ou não ter um administrador, e um administrador é sempre um instrutor. Portanto, o `InstructorID` propriedade é incluída como a chave estrangeira para a `Instructor` entidade e um ponto de interrogação é adicionado após o `int` designação para marcar a propriedade como nulo de tipo. A propriedade de navegação é chamada `Administrator` , mas contém uma `Instructor` entidade:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample22.cs)]
-- Um departamento pode ter vários cursos e, portanto, não há um `Courses` propriedade de navegação: 
+- Um departamento pode ter vários cursos e, portanto, não há um `Courses` propriedade de navegação:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample23.cs)]
 
   > [!NOTE]
-  > Por convenção, o Entity Framework habilita a exclusão em cascata para chaves estrangeiras que não permitem valor nulo e em relações muitos para muitos. Isso pode resultar em regras de exclusão em cascata circular, que causará uma exceção quando você tentar adicionar uma migração. Por exemplo, se você não definiu o `Department.InstructorID` propriedade como anuláveis, você teria a seguinte mensagem de exceção: "a relação referencial resultará em uma referência cíclica não permitida." Se as regras de negócio necessário `InstructorID` propriedade como não anuláveis, você precisaria usar a seguinte instrução de API fluente para desabilitar a exclusão em cascata na relação: 
+  > Por convenção, o Entity Framework habilita a exclusão em cascata para chaves estrangeiras que não permitem valor nulo e em relações muitos para muitos. Isso pode resultar em regras de exclusão em cascata circular, que causará uma exceção quando você tentar adicionar uma migração. Por exemplo, se você não definiu o `Department.InstructorID` propriedade como anuláveis, você teria a seguinte mensagem de exceção: "a relação referencial resultará em uma referência cíclica não permitida." Se as regras de negócio necessário `InstructorID` propriedade como não anuláveis, você precisaria usar a seguinte instrução de API fluente para desabilitar a exclusão em cascata na relação:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
@@ -285,10 +285,10 @@ As propriedades de navegação e de chave estrangeira refletem as seguintes rela
 
 As propriedades de navegação e de chave estrangeira refletem as seguintes relações:
 
-- Um registro destina-se a um único curso e, portanto, há uma propriedade de chave estrangeira `CourseID` e uma propriedade de navegação `Course`: 
+- Um registro destina-se a um único curso e, portanto, há uma propriedade de chave estrangeira `CourseID` e uma propriedade de navegação `Course`:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample26.cs)]
-- Um registro destina-se a um único aluno e, portanto, há uma propriedade de chave estrangeira `StudentID` e uma propriedade de navegação `Student`: 
+- Um registro destina-se a um único aluno e, portanto, há uma propriedade de chave estrangeira `StudentID` e uma propriedade de navegação `Student`:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample27.cs)]
 
@@ -382,13 +382,13 @@ Depois de concluir a edição do &lt; *timestamp&gt;\_ComplexDataModel.cs* arqui
 
 > [!NOTE]
 > É possível receber outros erros durante a migração de dados e fazer alterações de esquema. Se você receber erros de migração que não consegue resolver, altere o nome do banco de dados na cadeia de conexão ou exclua o banco de dados. A abordagem mais simples é renomear o banco de dados *Web. config* arquivo. O exemplo a seguir mostra o nome foi alterado para CU\_teste:
-> 
+>
 > [!code-xml[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample36.xml?highlight=1)]
-> 
+>
 > Com um novo banco de dados, não há nenhum dado para migrar e o `update-database` comando é muito mais provável de ser concluído sem erros. Para obter instruções sobre como excluir o banco de dados, consulte [como descartar um banco de dados do Visual Studio 2012](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/).
-> 
+>
 > Se isso falhar, outra coisa que você pode tentar é inicializar novamente o banco de dados, inserindo o seguinte comando no PMC:
-> 
+>
 > `update-database -TargetMigration:0`
 
 
@@ -406,7 +406,7 @@ Clique com botão direito a `CourseInstructor` de tabela e selecione **Mostrar d
 
 Agora você tem um modelo de dados mais complexo e um banco de dados correspondente. O tutorial a seguir você aprenderá mais sobre as diferentes maneiras de acessar dados relacionados.
 
-Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar. Você também pode solicitar novos tópicos em [Mostrar-Me como com código](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar.
 
 Links para outros recursos do Entity Framework podem ser encontradas na [acesso a dados ASP.NET – recursos recomendados](../../../../whitepapers/aspnet-data-access-content-map.md).
 

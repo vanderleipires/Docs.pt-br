@@ -8,20 +8,20 @@ ms.date: 11/07/2014
 ms.assetid: 18cdd896-8ed9-4547-b143-114711e3eafb
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 16bef0094406f3f45307eabd19c0872e90ecf7ef
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 18d3720f891e2356af42b58389776f2d04eee39d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832875"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913197"
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Lendo dados relacionados com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio 2013. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 No tutorial anterior, você concluiu o modelo de dados de escola. Neste tutorial, você vai ler e exibir dados relacionados – ou seja, os dados que o Entity Framework carrega nas propriedades de navegação.
@@ -36,7 +36,7 @@ As ilustrações a seguir mostram as páginas com as quais você trabalhará.
 
 Há várias maneiras que o Entity Framework pode carregar dados relacionados nas propriedades de navegação de uma entidade:
 
-- *Carregamento lento*. Quando a entidade é lida pela primeira vez, os dados relacionados não são recuperados. No entanto, na primeira vez que você tenta acessar uma propriedade de navegação, os dados necessários para essa propriedade de navegação são recuperados automaticamente. Isso resulta em várias consultas enviadas ao banco de dados — um para a própria entidade e um cada vez que os dados para a entidade relacionados deve ser recuperado. O `DbContext` classe habilita o carregamento lento por padrão. 
+- *Carregamento lento*. Quando a entidade é lida pela primeira vez, os dados relacionados não são recuperados. No entanto, na primeira vez que você tenta acessar uma propriedade de navegação, os dados necessários para essa propriedade de navegação são recuperados automaticamente. Isso resulta em várias consultas enviadas ao banco de dados — um para a própria entidade e um cada vez que os dados para a entidade relacionados deve ser recuperado. O `DbContext` classe habilita o carregamento lento por padrão.
 
     ![Lazy_loading_example](https://asp.net/media/2577850/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Lazy_loading_example_2c44eabb-5fd3-485a-837d-8e3d053f2c0c.png)
 - *Carregamento adiantado*. Quando a entidade é lida, os dados relacionados são recuperados com ela. Normalmente, isso resulta em uma única consulta de junção que recupera todos os dados necessários. Especificar o carregamento adiantado, usando o `Include` método.
@@ -69,7 +69,7 @@ Se você não usar DTOs, você pode desabilitar o carregamento lento e evitar pr
 Aqui estão algumas outras [maneiras de desabilitar o carregamento lento](https://msdn.microsoft.com/data/jj574232):
 
 - Para propriedades de navegação específicas, omita o `virtual` palavra-chave quando você declara a propriedade.
-- Para todas as propriedades de navegação, defina `LazyLoadingEnabled` para `false`, coloque o seguinte código no construtor da sua classe de contexto: 
+- Para todas as propriedades de navegação, defina `LazyLoadingEnabled` para `false`, coloque o seguinte código no construtor da sua classe de contexto:
 
     [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
@@ -183,10 +183,10 @@ Você fez as seguintes alterações no código existente:
 
 - Alterou a classe de modelo para `InstructorIndexData`.
 - Alterou o título de página de **Índice** para **Instrutores**.
-- Adicionada uma **Office** coluna que exibe `item.OfficeAssignment.Location` somente se `item.OfficeAssignment` não for nulo. (Como esta é uma relação um-para-zero-ou-um, talvez não haja um relacionados `OfficeAssignment` entity.) 
+- Adicionada uma **Office** coluna que exibe `item.OfficeAssignment.Location` somente se `item.OfficeAssignment` não for nulo. (Como esta é uma relação um-para-zero-ou-um, talvez não haja um relacionados `OfficeAssignment` entity.)
 
     [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample16.cshtml)]
-- Código adicionado dinamicamente adicionará `class="success"` para o `tr` elemento do instrutor selecionado. Isso define uma cor de plano de fundo para a linha selecionada usando um [Bootstrap](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap) classe. 
+- Código adicionado dinamicamente adicionará `class="success"` para o `tr` elemento do instrutor selecionado. Isso define uma cor de plano de fundo para a linha selecionada usando um [Bootstrap](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap) classe.
 
     [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample17.cshtml)]
 - Adicionar uma nova `ActionLink` rotulado **selecione** imediatamente antes dos outros links em cada linha, que faz com que a ID do instrutor selecionado seja enviada para o `Index` método.
@@ -243,7 +243,7 @@ Execute a página de índice de instrutor agora e você não verá nenhuma difer
 
 Agora, você usou todos os três maneiras (lentas, adiantadas e explícitas) para carregar dados relacionados nas propriedades de navegação. No próximo tutorial, você aprenderá a atualizar dados relacionados.
 
-Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar. Você também pode solicitar novos tópicos em [Mostrar-Me como com código](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar.
 
 Links para outros recursos do Entity Framework podem ser encontradas na [acesso a dados ASP.NET – recursos recomendados](../../../../whitepapers/aspnet-data-access-content-map.md).
 

@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 378bcc038335ee852cd1a6c6e545eb72c6e0c78b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9b3d47c3c8fe5f0b37f1d45e19341df3f91a5bb0
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834097"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911182"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>Implantando um aplicativo da Web ASP.NET com o SQL Server Compact usando o Visual Studio ou Visual Web Developer: Implantando SQL Server Compact bancos de dados – 2 de 12
 ====================
@@ -105,12 +105,11 @@ Abra o arquivo Web. config do aplicativo e remova o elemento que especifica a cl
 > [!NOTE]
 > Outra maneira de especificar uma classe de inicializador é fazê-lo chamando `Database.SetInitializer` no `Application_Start` método na *global. asax* arquivo. Se você estiver habilitando as migrações em um projeto que usa esse método para especificar o inicializador, remova essa linha de código.
 
-
 Em seguida, habilite migrações do Code First.
 
 A primeira etapa é certificar-se de que o projeto ContosoUniversity é definido como o projeto de inicialização. Na **Gerenciador de soluções**, clique com botão direito no projeto ContosoUniversity e selecione **definir como projeto de inicialização**. Migrações do Code First examinará o projeto de inicialização para localizar a cadeia de caracteres de conexão de banco de dados.
 
-Dos **ferramentas** menu, clique em **Gerenciador de pacotes de biblioteca** e, em seguida, **Package Manager Console**.
+Dos **ferramentas** menu, clique em **Gerenciador de pacotes NuGet** e, em seguida, **Package Manager Console**.
 
 ![Selecting_Package_Manager_Console](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image6.png)
 

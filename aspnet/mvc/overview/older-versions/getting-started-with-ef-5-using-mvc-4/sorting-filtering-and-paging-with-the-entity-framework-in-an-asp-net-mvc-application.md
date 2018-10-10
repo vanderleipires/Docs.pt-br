@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 72180686ea1ee6f6695b24fcedf3af90c1eddcfa
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8bea3d4bc19a5a47240abeb2cc015116814a8fdf
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825588"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911813"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Classificação, filtragem e paginação com o Entity Framework em um aplicativo ASP.NET MVC (3 de 10)
 ====================
@@ -117,7 +117,7 @@ Para adicionar paginação à página índice de alunos, comece instalando o **P
 
 O NuGet **PagedList.Mvc** pacote instala automaticamente o **PagedList** pacote como uma dependência. O **PagedList** pacote instala um `PagedList` métodos de tipo e a extensão de coleção para `IQueryable` e `IEnumerable` coleções. Os métodos de extensão criam uma única página de dados em um `PagedList` coleção fora de seu `IQueryable` ou `IEnumerable`e o `PagedList` coleção fornece várias propriedades e métodos que facilitam a paginação. O **PagedList.Mvc** pacote instala um auxiliar de paginação que exibe os botões de paginação.
 
-Dos **ferramentas** menu, selecione **Gerenciador de pacotes de biblioteca** e, em seguida, **gerenciar pacotes NuGet para solução**.
+Dos **ferramentas** menu, selecione **Gerenciador de pacotes NuGet** e, em seguida, **gerenciar pacotes NuGet para solução**.
 
 No **gerenciar pacotes NuGet** caixa de diálogo, clique o **Online** guia à esquerda e, em seguida, insira "paginável" na caixa de pesquisa. Quando você vir a **PagedList.Mvc** do pacote, clique em **instalar**.
 

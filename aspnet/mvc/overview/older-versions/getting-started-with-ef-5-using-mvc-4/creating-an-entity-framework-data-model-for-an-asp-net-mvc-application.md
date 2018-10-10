@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 4ba029b6-ee7c-4e45-a0e7-b703c37e5d9a
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 037f67d679762a037eaef9f0a4060156b94d97b1
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: b691f718258f98e03513a089ca26b286f284765e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824820"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913224"
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>Criando um modelo de dados do Entity Framework para um aplicativo ASP.NET MVC (1 a 10)
 ====================
@@ -142,7 +142,7 @@ No *modelos* pasta, crie *Student.cs* e substitua o código existente pelo códi
 
 A propriedade `StudentID` se tornará a coluna de chave primária da tabela de banco de dados que corresponde a essa classe. Por padrão, o Entity Framework interpreta uma propriedade chamada `ID` ou *classname* `ID` como a chave primária.
 
-O `Enrollments` propriedade é um *propriedade de navegação*. As propriedades de navegação armazenam outras entidades que estão relacionadas a essa entidade. Nesse caso, o `Enrollments` propriedade de um `Student` entidade armazenará todas as `Enrollment` entidades relacionadas a essa `Student` entidade. Em outras palavras, se um determinado `Student` linha no banco de dados tem dois relacionadas `Enrollment` linhas (valor de linhas que contêm a chave primária do aluno em seus `StudentID` coluna de chave estrangeira), que `Student` da entidade `Enrollments` propriedade de navegação conterá as duas `Enrollment` entidades.
+A propriedade `Enrollments` é uma *propriedade de navegação*. As propriedades de navegação armazenam outras entidades que estão relacionadas a essa entidade. Nesse caso, o `Enrollments` propriedade de um `Student` entidade armazenará todas as `Enrollment` entidades relacionadas a essa `Student` entidade. Em outras palavras, se um determinado `Student` linha no banco de dados tem dois relacionadas `Enrollment` linhas (valor de linhas que contêm a chave primária do aluno em seus `StudentID` coluna de chave estrangeira), que `Student` da entidade `Enrollments` propriedade de navegação conterá as duas `Enrollment` entidades.
 
 Propriedades de navegação geralmente são definidas como `virtual` para que eles podem tirar proveito de determinada funcionalidade do Entity Framework, como *carregamento lento*. (Carregamento lento será explicado mais adiante, o [lendo dados relacionados](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) tutorial posteriormente nessa série.
 
@@ -210,7 +210,7 @@ Quando você começa a desenvolver um aplicativo, seus dados de modelo é altera
 
 ### <a name="enable-code-first-migrations"></a>Habilitar migrações do Code First
 
-1. Dos **ferramentas** menu, clique em **Gerenciador de pacotes de biblioteca** e, em seguida, **Package Manager Console**.
+1. Dos **ferramentas** menu, clique em **Gerenciador de pacotes NuGet** e, em seguida, **Package Manager Console**.
 
     ![Selecting_Package_Manager_Console](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image10.png)
 2. No `PM>` prompt digite o seguinte comando:

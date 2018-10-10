@@ -8,38 +8,38 @@ ms.date: 09/28/2015
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: de47593e7f54757d4f91a6e92485567e74b829ed
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9edb7fd100a3f4c5331454045ac206d2f7a81961
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831016"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912443"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR guia da API Hubs – cliente JavaScript
 ====================
 por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 > Este documento fornece uma introdução ao uso da API de Hubs de SignalR versão 2 nos clientes JavaScript, como navegadores e aplicativos da Windows Store (WinJS).
-> 
+>
 > A API de Hubs de SignalR permite que você faça chamadas de procedimento remoto (RPCs) de um servidor para clientes conectados e de clientes para o servidor. No código do servidor, você define métodos que podem ser chamados por clientes e você chamar métodos que são executados no cliente. No código do cliente, você define métodos que podem ser chamados a partir do servidor e você chamar métodos que são executados no servidor. O SignalR é responsável por todos os detalhes de cliente-servidor para você.
-> 
+>
 > O SignalR também oferece uma API de nível inferior chamada conexões persistentes. Para obter uma introdução ao SignalR, Hubs e conexões persistentes, consulte [Introdução ao SignalR](../getting-started/introduction-to-signalr.md).
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>Versões de software usadas neste tópico
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Versões anteriores deste tópico
-> 
+>
 > Para obter informações sobre versões anteriores do SignalR, consulte [versões mais antigas do SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -234,7 +234,7 @@ Esse comando adicionará o 2.1.0 versão do pacote ao seu projeto.
 
 ### <a name="calling-usecors"></a>Chamar UseCors
 
- O trecho de código a seguir demonstra como implementar conexões entre domínios no SignalR 2. 
+ O trecho de código a seguir demonstra como implementar conexões entre domínios no SignalR 2.
 
 **Implementando solicitações entre domínios no SignalR 2**
 
@@ -242,12 +242,12 @@ O código a seguir demonstra como habilitar o CORS ou JSONP em um projeto Signal
 
 [!code-csharp[Main](hubs-api-guide-javascript-client/samples/sample11.cs)]
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > - Não defina `jQuery.support.cors` como true no seu código.
-> 
+>
 >     ![Não defina jQuery.support.cors como true](hubs-api-guide-javascript-client/_static/image7.png)
-> 
+>
 >     O SignalR lida com o uso de CORS. Definindo `jQuery.support.cors` para true desabilita JSONP porque ele faz com que o SignalR assumir o navegador dá suporte a CORS.
 > - Quando você estiver se conectando a uma URL de localhost, o Internet Explorer 10 não considerá-la uma conexão entre domínios, para que o aplicativo funcione localmente com o IE 10, mesmo se você não tiver habilitado conexões entre domínios no servidor.
 > - Para obter informações sobre como usar conexões entre domínios com o Internet Explorer 9, consulte [esse thread de StackOverflow](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work).

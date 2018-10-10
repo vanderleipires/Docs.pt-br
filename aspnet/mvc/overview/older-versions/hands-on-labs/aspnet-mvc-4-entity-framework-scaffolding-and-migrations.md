@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 093c1362-f10b-407c-a708-be370f4b62b0
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 10a61b70ef52aa9f5bb9004df3dba9e323d021db
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: bfb1edfcb756706e44126e7e96803bd2e9ce99fb
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41834470"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911013"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>Migrações e Scaffolding do Entity Framework do ASP.NET MVC 4
 
@@ -172,7 +172,7 @@ Neste ponto, o banco de dados ainda não foi criado. Nesta tarefa, você irá ex
 
 Nesta tarefa, você atualizará o banco de dados usando migrações do Entity Framework. Você descobrirá como é fácil alterar o modelo e refletir as alterações nos bancos de dados usando o recurso de migrações do Entity Framework.
 
-1. Abra o Console do Gerenciador de pacotes. Selecione **ferramentas | Gerenciador de pacotes de biblioteca | Package Manager Console**.
+1. Abra o Console do Gerenciador de pacotes. Selecione **ferramentas** > **Gerenciador de pacotes NuGet** > **Package Manager Console**.
 2. No Console do Gerenciador de pacotes, digite o seguinte comando:
 
     PMC

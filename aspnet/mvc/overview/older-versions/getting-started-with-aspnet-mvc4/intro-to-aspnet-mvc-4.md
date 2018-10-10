@@ -8,39 +8,39 @@ ms.date: 08/15/2012
 ms.assetid: ed66530a-04d5-49eb-b76a-85be1f57c437
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 62f67d0d0dfe7a3c9d04eacfbcac56f7fd03ef07
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: ea3d1517192ded0e5372c49897bb1fec33324b6f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577360"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912391"
 ---
 <a name="intro-to-aspnet-mvc-4"></a>Introdução ao ASP.NET MVC 4
 ====================
 por [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-> Uma versão atualizada, se este tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) usando [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads). O novo tutorial usa o ASP.NET MVC 5, que fornece muitos aprimoramentos ao longo deste tutorial.
-> 
+> Uma versão atualizada, se este tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) usando [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013). O novo tutorial usa o ASP.NET MVC 5, que fornece muitos aprimoramentos ao longo deste tutorial.
+>
 > Este tutorial lhe ensinará os conceitos básicos da criação de um aplicativo Web do ASP.NET MVC 4 usando o Microsoft [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) ou Visual Web Developer 2010 Express Service Pack 1. Visual Studio 2012 é recomendado, você não precisará instalar qualquer coisa para concluir o tutorial. Se você estiver usando o Visual Studio 2010, você deve instalar componentes abaixo. Você pode instalar todos eles clicando nos links a seguir:
-> 
+>
 > - [Pré-requisitos de Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 > - [Instalador WPI para ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)
 > - [LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)
 > - [SSDT](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)
-> 
+>
 > Se você estiver usando o Visual Studio 2010, em vez do Visual Web Developer 2010, instale o [installer WPI para ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392) e o: [pré-requisitos do Visual Studio 2010](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
-> 
+>
 > Um projeto do Visual Web Developer com código-fonte c# está disponível para acompanhar este tópico. [Baixe a versão c#](https://code.msdn.microsoft.com/Intro-to-ASPNET-MVC-4-61d0219d/file/114480/1/MvcMovie.zip).
-> 
+>
 > No tutorial, você executar o aplicativo no Visual Studio. Você também pode fazer o aplicativo disponível na Internet, implantá-lo em um provedor de hospedagem. A Microsoft oferece a hospedagem de web gratuita para até 10 sites em uma [conta gratuita do Windows Azure](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604). Para obter informações sobre como implantar um projeto de web do Visual Studio para um Site do Windows Azure, consulte [criar e implantar um site da web ASP.NET e o banco de dados SQL com o Visual Studio](https://docs.microsoft.com/dotnet/azure/). Esse tutorial também mostra como usar o Entity Framework Code First Migrations para implantar seu banco de dados do SQL Server no Windows Azure SQL Database (anteriormente conhecido como SQL Azure).
-> 
+>
 > Este tutorial foi escrito por Rick Anderson ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ).
 
 
 ## <a name="what-youll-build"></a>O que você vai criar
 
 > [!NOTE]
-> Uma versão atualizada, se este tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) usando [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads). O novo tutorial usa o ASP.NET MVC 5, que fornece muitos aprimoramentos ao longo deste tutorial.
+> Uma versão atualizada, se este tutorial está disponível [aqui](../../getting-started/introduction/getting-started.md) usando [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013). O novo tutorial usa o ASP.NET MVC 5, que fornece muitos aprimoramentos ao longo deste tutorial.
 
 
 Você implementará um simples aplicativo de listagem de filmes que dá suporte à criação, edição, pesquisando e listagem de filmes de um banco de dados. Abaixo estão as duas capturas de tela do aplicativo que você criará. Ele inclui uma página que exibe uma lista de filmes de um banco de dados:

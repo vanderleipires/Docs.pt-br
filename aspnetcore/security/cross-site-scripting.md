@@ -5,18 +5,18 @@ description: Saiba mais sobre a criação de scripts entre sites (XSS) e técnic
 ms.author: riande
 ms.date: 10/02/2018
 uid: security/cross-site-scripting
-ms.openlocfilehash: e937ce47b7151155197cd607832eeb6bf62e3a19
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 50f0211a2c64708d9b788dd10ce9064e66014d55
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577438"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910519"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Evitar Cross-Site Scripting (XSS) no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Criação de scripts entre sites (XSS) é uma vulnerabilidade de segurança que permite que um invasor inserir os scripts do lado do cliente (geralmente o JavaScript) em páginas da web. Quando outros usuários carregar páginas afetadas, os invasores scripts serão executados, permitindo que o invasor roubar cookies e tokens de sessão, altere o conteúdo da página da web por meio de manipulação de DOM ou redirecionar o navegador para outra página. As vulnerabilidades de XSS geralmente ocorrem quando um aplicativo recebe entrada do usuário e produz saídas em uma página sem validação, codificação ou escape-lo.
+Criação de scripts entre sites (XSS) é uma vulnerabilidade de segurança que permite que um invasor inserir os scripts do lado do cliente (geralmente o JavaScript) em páginas da web. Quando outros usuários carregar páginas afetadas, scripts do invasor serão executado, permitindo que o invasor roubar cookies e tokens de sessão, altere o conteúdo da página da web por meio de manipulação de DOM ou redirecionar o navegador para outra página. As vulnerabilidades de XSS geralmente ocorrem quando um aplicativo recebe entrada do usuário e os coloca em uma página sem validação, codificação ou escape-lo.
 
 ## <a name="protecting-your-application-against-xss"></a>Proteger seu aplicativo contra o XSS
 
@@ -26,15 +26,15 @@ AT um XSS de nível básico funciona por enganar o seu aplicativo para inserir u
 
 2. Antes de colocar os dados não confiáveis dentro de um elemento HTML, verifique se que ele é codificado em HTML. A codificação HTML usa caracteres, como &lt; e alterá-los em um formulário seguro como &amp;lt;
 
-3. Antes de colocar os dados não confiáveis em um atributo HTML, verifique se que ele é o atributo HTML codificado. Codificação do atributo HTML é um superconjunto de codificação HTML e codifica os caracteres adicionais, como "e '.
+3. Antes de colocar os dados não confiáveis em um atributo HTML, verifique se que ele é codificado em HTML. Codificação do atributo HTML é um superconjunto de codificação HTML e codifica os caracteres adicionais, como "e '.
 
-4. Antes de colocar os dados não confiáveis em JavaScript, colocar os dados em um elemento HTML cujo conteúdo você recuperar em tempo de execução. Se isso não for possível, verifique se os dados de JavaScript é codificado. Codificação de JavaScript usa caracteres perigosos para JavaScript e os substitui por sua hex, por exemplo &lt; seria codificado como `\u003C`.
+4. Antes de colocar os dados não confiáveis em JavaScript, colocar os dados em um elemento HTML cujo conteúdo você recuperar em tempo de execução. Se isso não for possível, verifique se que os dados são codificado de JavaScript. Codificação de JavaScript usa caracteres perigosos para JavaScript e os substitui por sua hex, por exemplo &lt; seria codificado como `\u003C`.
 
 5. Antes de colocar os dados não confiáveis em uma cadeia de caracteres de consulta de URL, verifique se que ele é codificado por URL.
 
 ## <a name="html-encoding-using-razor"></a>Codificação HTML usando o Razor
 
-O mecanismo Razor usado no MVC automaticamente codifica todos originado de saída de variáveis, a menos que você trabalha muito para impedi-lo ao fazer isso. Ele usa o atributo HTML de regras de codificação, sempre que você usar o *@* diretiva. Como HTML a codificação do atributo é um superconjunto de codificação de HTML, que isso significa que você não precisa se preocupar com se você deve usar a codificação HTML ou codificação do atributo HTML. Você deve garantir que você só usar em um contexto HTML, não quando a tentativa de inserir entradas não confiáveis diretamente em JavaScript. Os auxiliares de marca codificará também usar parâmetros de marca de entrada.
+O mecanismo Razor usado no MVC automaticamente codifica todos originado de saída de variáveis, a menos que você trabalha muito para impedi-lo ao fazer isso. Ele usa as regras de codificação HTML atributo sempre que você usar o *@* diretiva. Como HTML a codificação do atributo é um superconjunto de codificação de HTML, que isso significa que você não precisa se preocupar com se você deve usar a codificação HTML ou codificação do atributo HTML. Você deve garantir que você só usar em um contexto HTML, não quando a tentativa de inserir entradas não confiáveis diretamente em JavaScript. Os auxiliares de marca codificará também usar parâmetros de marca de entrada.
 
 Execute o seguinte modo de exibição do Razor:
 
@@ -107,7 +107,7 @@ Isso produzirá o HTML a seguir
    </script>
    ```
 
-Que, quando ele é executado, renderizará o seguinte:
+Que, quando ele é executado, será renderizado o seguinte:
 
 ```none
 <"123">
@@ -129,7 +129,7 @@ Você também pode chamar diretamente o codificador de JavaScript:
    </script>
    ```
 
-Isso será renderizado no navegador como se segue;
+Isso será renderizado no navegador da seguinte maneira:
 
 ```html
 <script>

@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 400db427-27af-4f2f-abf0-5486d5e024b5
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
-ms.openlocfilehash: 5d7d485357a6c820f11e0135e2ff9479c1965d96
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a08ce2e89ae13125cbc3915b44bcd1120fc22150
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41823583"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911514"
 ---
 <a name="tutorial-signalr-self-host"></a>Tutorial: Auto-hospedar de SignalR
 ====================
@@ -22,29 +22,29 @@ por [Patrick Fletcher](https://github.com/pfletcher)
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/SignalR-Self-Host-Sample-6da0f383)
 
 > Este tutorial mostra como criar um servidor de SignalR 2 auto-hospedado e como conectá-lo com um cliente JavaScript.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>Usando o Visual Studio 2012 com este tutorial
-> 
-> 
+>
+>
 > Para usar o Visual Studio 2012 com este tutorial, faça o seguinte:
-> 
+>
 > - Atualização de seu [Gerenciador de pacotes](http://docs.nuget.org/docs/start-here/installing-nuget) para a versão mais recente.
 > - Instalar o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
 > - No Web Platform Installer, procure e instale **ASP.NET e Web Tools 2013.1 para Visual Studio 2012**. Isso irá instalar os modelos do Visual Studio para classes do SignalR, como **Hub**.
 > - Alguns modelos (como **classe de inicialização OWIN**) não está disponível; nesses casos, use um arquivo de classe em vez disso.
-> 
-> 
+>
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -74,7 +74,7 @@ Neste tutorial, você criará um servidor que está hospedado em um aplicativo d
 1. Abra o Visual Studio 2013 com privilégios de administrador. Selecione **arquivo**, **novo projeto**. Selecione **Windows** sob o **Visual c#** nó no **modelos** painel e selecione o **aplicativo de Console** modelo. Nomeie o novo projeto "SignalRSelfHost" e clique em **Okey**.
 
     ![](tutorial-signalr-self-host/_static/image1.png)
-2. Abra o console de Gerenciador de pacotes de biblioteca, selecionando **ferramentas**, **Gerenciador de pacotes de biblioteca**, **Package Manager Console**.
+2. Abra o console de Gerenciador de pacotes do NuGet, selecionando **ferramentas** > **Gerenciador de pacotes NuGet** > **Package Manager Console**.
 3. No console do Gerenciador de pacotes, digite o seguinte comando:
 
     [!code-powershell[Main](tutorial-signalr-self-host/samples/sample1.ps1)]

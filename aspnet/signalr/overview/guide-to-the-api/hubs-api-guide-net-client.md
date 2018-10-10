@@ -8,38 +8,38 @@ ms.date: 06/10/2014
 ms.assetid: 6d02d9f7-94e5-4140-9f51-5a6040f274f6
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: ce952e26c35b85582f53aa3708943848ec4998ec
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2d7dd1480694eacffc0cfa60ac0179b16348488d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833091"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912989"
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-c"></a>ASP.NET SignalR guia da API Hubs – cliente .NET (c#)
 ====================
 por [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 > Este documento fornece uma introdução ao uso da API de Hubs de SignalR versão 2 em clientes do .NET, como aplicativos de console, WPF, Silverlight e Store do Windows (WinRT).
-> 
+>
 > A API de Hubs de SignalR permite que você faça chamadas de procedimento remoto (RPCs) de um servidor para clientes conectados e de clientes para o servidor. No código do servidor, você define métodos que podem ser chamados por clientes e você chamar métodos que são executados no cliente. No código do cliente, você define métodos que podem ser chamados a partir do servidor e você chamar métodos que são executados no servidor. O SignalR é responsável por todos os detalhes de cliente-servidor para você.
-> 
+>
 > O SignalR também oferece uma API de nível inferior chamada conexões persistentes. Para obter uma introdução ao SignalR, Hubs e conexões persistentes, ou para um tutorial que mostra como criar um aplicativo completo do SignalR, consulte [SignalR - Introdução ao](../getting-started/index.md).
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>Versões de software usadas neste tópico
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Versões anteriores deste tópico
-> 
+>
 > Para obter informações sobre versões anteriores do SignalR, consulte [versões mais antigas do SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 

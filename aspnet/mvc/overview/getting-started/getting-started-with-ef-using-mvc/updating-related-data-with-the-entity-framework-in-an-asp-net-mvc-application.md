@@ -8,20 +8,20 @@ ms.date: 05/01/2015
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e7f5fd725a0d151f19f49be9ceaf52b049d459c0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 647793a65dec8feaf37de561ad77b4585bb869a8
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825206"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912209"
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Atualizando dados relacionados com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio 2013. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 No tutorial anterior, você exibiu dados relacionados; Neste tutorial, você atualizará dados relacionados. Para a maioria das relações, isso pode ser feito atualizando os campos de chave estrangeira ou propriedades de navegação. Para relações muitos-para-muitos, o Entity Framework não expõe a tabela de junção diretamente, para que você adiciona e remove entidades de e para as propriedades de navegação apropriado.
@@ -168,7 +168,7 @@ Em seguida, adicione o código que é executado quando o usuário clica em **Sal
 
 A assinatura de método agora é diferente de `HttpGet` `Edit` método, portanto, o nome do método muda de `EditPost` voltar ao `Edit`.
 
-Como o modo de exibição não tem uma coleção de `Course` entidades, o associador de modelo não pode atualizar automaticamente o `Courses` propriedade de navegação. Em vez de usar o associador de modelo para atualizar o `Courses` propriedade de navegação, você terá de fazer isso no novo `UpdateInstructorCourses` método. Portanto, você precisa excluir a propriedade `Courses` da associação de modelos. Isso não exige nenhuma alteração ao código que chama [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx) porque você está usando o *lista de permissões* sobrecarga e `Courses` não está na lista de inclusão.
+Como o modo de exibição não tem uma coleção de `Course` entidades, o associador de modelo não pode atualizar automaticamente o `Courses` propriedade de navegação. Em vez de usar o associador de modelo para atualizar o `Courses` propriedade de navegação, você terá de fazer isso no novo `UpdateInstructorCourses` método. Portanto, você precisa excluir a propriedade `Courses` do model binding. Isso não exige nenhuma alteração ao código que chama [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx) porque você está usando o *lista de permissões* sobrecarga e `Courses` não está na lista de inclusão.
 
 Se nenhuma seleção caixas tiverem sido selecionadas, o código na `UpdateInstructorCourses` inicializa o `Courses` propriedade de navegação com uma coleção vazia:
 
@@ -214,8 +214,8 @@ Clique em **editar** em um instrutor para ver a página de edição.
 
 Altere algumas atribuições de curso e clique em **salvar**. As alterações feitas são refletidas na página Índice.
 
- Observação: A abordagem usada aqui para editar os dados de curso do instrutor funciona bem quando há uma quantidade limitada de cursos. Para coleções muito maiores, uma interface do usuário e um método de atualização diferentes são necessários.  
- 
+ Observação: A abordagem usada aqui para editar os dados de curso do instrutor funciona bem quando há uma quantidade limitada de cursos. Para coleções muito maiores, uma interface do usuário e um método de atualização diferentes são necessários.
+
 
 ## <a name="update-the-deleteconfirmed-method"></a>Atualize o método DeleteConfirmed
 
@@ -269,7 +269,7 @@ Conforme explicado a [tutorial de funcionalidade básica de CRUD](implementing-b
 
 Agora você concluiu esta introdução ao trabalhar com dados relacionados. Até agora nesses tutoriais você já trabalhou com o código que faz a e/s síncrona. Você pode fazer com que o aplicativo usar recursos de servidor da web com mais eficiência com a implementação de código assíncrono e que é o que você fará o próximo tutorial.
 
-Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar. Você também pode solicitar novos tópicos em [Mostrar-Me como com código](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar.
 
 Links para outros recursos do Entity Framework pode ser encontrado na [acesso a dados ASP.NET – recursos recomendados](../../../../whitepapers/aspnet-data-access-content-map.md).
 

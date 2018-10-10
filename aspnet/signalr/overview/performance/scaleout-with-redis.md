@@ -8,32 +8,32 @@ ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 630be13906e2143267ef33a59ccc2ea05073a258
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ebb61e4296f78bcd74622b729a10d45b60ebb724
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825381"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912781"
 ---
 <a name="signalr-scaleout-with-redis"></a>Expansão do SignalR com Redis
 ====================
 por [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
 > ## <a name="software-versions-used-in-this-topic"></a>Versões de software usadas neste tópico
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Versões anteriores deste tópico
-> 
+>
 > Para obter informações sobre versões anteriores do SignalR, consulte [versões mais antigas do SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -52,8 +52,8 @@ Se você não tiver três servidores físicos para usar, você pode criar máqui
 
 Embora este tutorial usa a implementação do Redis oficial, há também uma [porta do Windows do Redis](https://github.com/MSOpenTech/redis) do MSOpenTech. Instalação e configuração são diferentes, mas caso contrário, as etapas são as mesmas.
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > Expansão do SignalR com Redis não oferece suporte a clusters do Redis.
 
 
@@ -62,12 +62,12 @@ Embora este tutorial usa a implementação do Redis oficial, há também uma [po
 Antes de passarmos para o tutorial detalhado, aqui está uma visão rápida do que você deve fazer.
 
 1. Instale o Redis e inicie o servidor Redis.
-2. Adicione esses pacotes do NuGet ao seu aplicativo: 
+2. Adicione esses pacotes do NuGet ao seu aplicativo:
 
     - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
     - [Microsoft.AspNet.SignalR.Redis](http://nuget.org/packages/Microsoft.AspNet.SignalR.Redis)
 3. Crie um aplicativo do SignalR.
-4. Adicione o seguinte código para o Startup.cs para configurar o backplane: 
+4. Adicione o seguinte código para o Startup.cs para configurar o backplane:
 
     [!code-csharp[Main](scaleout-with-redis/samples/sample1.cs)]
 
@@ -112,7 +112,7 @@ Crie um aplicativo do SignalR, seguindo um destes tutoriais:
 - [Introdução ao SignalR 2.0](../getting-started/tutorial-getting-started-with-signalr.md)
 - [Introdução ao SignalR 2.0 e ao MVC 5](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
 
-Em seguida, modificaremos o aplicativo de bate-papo para dar suporte à expansão com Redis. Primeiro, adicione o pacote do SignalR.Redis NuGet ao seu projeto. No Visual Studio, do **ferramentas** menu, selecione **Gerenciador de pacotes de biblioteca**, em seguida, selecione **Package Manager Console**. Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
+Em seguida, modificaremos o aplicativo de bate-papo para dar suporte à expansão com Redis. Primeiro, adicione o pacote do SignalR.Redis NuGet ao seu projeto. No Visual Studio, do **ferramentas** menu, selecione **Gerenciador de pacotes NuGet**, em seguida, selecione **Package Manager Console**. Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample5.ps1)]
 

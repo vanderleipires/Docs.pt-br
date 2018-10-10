@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: de0f8092342a8ba8979a31e9a97b603e44e6a85d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 754f085e3e43f7efa155f410d02a0d29d3349612
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825207"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912287"
 ---
 <a name="create-the-project"></a>Criar o projeto
 ====================
@@ -174,8 +174,7 @@ Quando um servidor Web recebe uma solicitação para uma página, ele encontra a
 > 
 > Além de recursos no modelo de aplicativo do ASP.NET Web Forms, usa o aplicativo Wingtip Toys [Entity Framework Code First](https://weblogs.asp.net/scottgu/archive/2010/12/08/announcing-entity-framework-code-first-ctp5-release.aspx), que é uma biblioteca do NuGet que permite o desenvolvimento centrada em código quando você trabalha com dados. Simplificando, ele cria a parte do banco de dados do seu aplicativo com base no código que você escreve. Usando o Entity Framework, recuperar e manipular os dados como objetos fortemente tipados. Isso permite que você se concentrar na lógica de negócios do seu aplicativo em vez dos detalhes de como os dados são acessados.
 > 
-> Para obter informações adicionais sobre as bibliotecas instaladas e pacotes incluídos com o modelo de Web Forms do ASP.NET, consulte a lista de pacotes NuGet instalados. Para fazer isso, no Visual Studio crie um novo projeto de formulários da Web, selecione **ferramentas**  - &gt; **Library Package Manager**  - &gt; **gerenciar Pacotes NuGet para solução**e selecione **pacotes instalados** no **Manage NuGet Packages** caixa de diálogo.
-
+> Para obter informações adicionais sobre as bibliotecas instaladas e pacotes incluídos com o modelo de Web Forms do ASP.NET, consulte a lista de pacotes NuGet instalados. Para fazer isso, no Visual Studio crie um novo projeto de formulários da Web, selecione **ferramentas** > **Gerenciador de pacotes NuGet** > **gerenciar pacotes NuGet para solução**e selecione **pacotes instalados** no **gerenciar pacotes NuGet** caixa de diálogo.
 
 ### <a name="touring-visual-studio"></a>Passeio Visual Studio
 

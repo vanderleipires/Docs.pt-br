@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 7bdf443fbce7376ac057c848df146717955203f9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 67f44d9f23a2fe83c48e68328b1dee739056e32f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831711"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912378"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Implantação de Web do ASP.NET usando o Visual Studio: Preparando-se para a implantação de banco de dados
 ====================
@@ -84,15 +84,13 @@ Abra o aplicativo *Web. config* do arquivo e remova ou comente o `add` elemento 
 > [!NOTE]
 > Outra maneira de especificar uma classe de inicializador é fazê-lo chamando `Database.SetInitializer` no `Application_Start` método na *global. asax* arquivo. Se você estiver habilitando as migrações em um projeto que usa esse método para especificar o inicializador, remova essa linha de código.
 
-
 > [!NOTE]
 > Se você estiver usando o Visual Studio 2013, adicione as etapas a seguir entre as etapas 2 e 3: (a) no PMC insira "update-package entityframework – versão 6.1.1" para obter a versão atual do EF. Em seguida, a compilação de (b) o projeto para obter uma lista de erros de compilação e corrigi-los. Excluir usando as instruções para namespaces que não existem, clique com botão direito e clique em resolver para adicionar instruções de uso onde eles são necessários e altere as ocorrências de System.Data.EntityState para entitystate.
-
 
 ### <a name="enable-code-first-migrations"></a>Habilitar migrações do Code First
 
 1. Certifique-se de que o projeto de ContosoUniversity (não ContosoUniversity.DAL) é definido como o projeto de inicialização. Na **Gerenciador de soluções**, clique com botão direito no projeto ContosoUniversity e selecione **definir como projeto de inicialização**. Migrações do Code First examinará o projeto de inicialização para localizar a cadeia de caracteres de conexão de banco de dados.
-2. Dos **ferramentas** menu, clique em **Gerenciador de pacotes de biblioteca** (ou **Gerenciador de pacotes NuGet**) e, em seguida, **Package Manager Console**.
+2. Dos **ferramentas** menu, escolha **Gerenciador de pacotes NuGet** > **Package Manager Console**.
 
     ![Selecting_Package_Manager_Console](preparing-databases/_static/image3.png)
 3. Na parte superior a **Package Manager Console** janela Selecione ContosoUniversity.DAL como o projeto padrão e, em seguida, at a `PM>` prompt insira "enable-migrations".

@@ -8,20 +8,20 @@ ms.date: 11/07/2014
 ms.assetid: 08834147-77ec-454a-bb7a-d931d2a40dab
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9bfe860761a18cb4a69d33336d64a169e3c834f9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 613494d58d7652f69a52241bcd3a7e896bc5407c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830630"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912692"
 ---
 <a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>Implementando a herança com o Entity Framework 6 em um aplicativo ASP.NET MVC 5 (11 12)
 ====================
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio 2013. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 No tutorial anterior, você tratou exceções de simultaneidade. Este tutorial mostrará como implementar a herança no modelo de dados.
@@ -116,9 +116,9 @@ Execute o `update-database` comando novamente.
 
 > [!NOTE]
 > É possível receber outros erros durante a migração de dados e fazer alterações de esquema. Se você obtiver erros de migração não é possível resolver, você pode continuar com o tutorial, alterando a cadeia de conexão na *Web. config* de arquivos ou excluindo o banco de dados. A abordagem mais simples é renomear o banco de dados do *Web. config* arquivo. Por exemplo, altere o nome do banco de dados para ContosoUniversity2, conforme mostrado no exemplo a seguir:
-> 
+>
 > [!code-xml[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample6.xml?highlight=2)]
-> 
+>
 > Com um novo banco de dados, não há nenhum dado para migrar e o `update-database` comando é muito mais provável de ser concluído sem erros. Para obter instruções sobre como excluir o banco de dados, consulte [como descartar um banco de dados do Visual Studio 2012](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/). Se você usar essa abordagem para continuar com o tutorial, ignore a etapa de implantação no final deste tutorial ou implantar um novo site e o banco de dados. Se você implantar uma atualização ao mesmo site que já foi implantado já, o EF obterá o mesmo erro existe quando ele é automaticamente executado as migrações. Se você quiser solucionar o erro migrações, o melhor recurso é um dos fóruns do Entity Framework ou StackOverflow.com.
 
 
@@ -142,13 +142,13 @@ O diagrama a seguir ilustra a estrutura do novo banco de dados de escola:
 
 Esta seção requer que você concluiu a opcional **Implantando o aplicativo do Azure** seção [parte 3, classificação, filtragem e paginação](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md) esta série de tutoriais. Se você tiver erros de migrações que resolvido excluindo o banco de dados em seu projeto local, ignore esta etapa; ou crie um novo site e o banco de dados e implantar para o novo ambiente.
 
-1. No Visual Studio, clique com botão direito no projeto no **Gerenciador de soluções** e selecione **publicar** no menu de contexto.  
-  
+1. No Visual Studio, clique com botão direito no projeto no **Gerenciador de soluções** e selecione **publicar** no menu de contexto.
+
     ![Publicar no menu de contexto do projeto](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
-2. Clique em **Publicar**.  
-  
-    ![publicar](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)  
-  
+2. Clique em **Publicar**.
+
+    ![publicar](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
+
    O aplicativo Web será aberto no navegador padrão.
 3. Testar o aplicativo para verificar se ele está funcionando.
 

@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 501db899-e68c-49ff-81b2-1dc561bfe908
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: d3c5af75c87f4ba51bb5627ddf237a70e5181678
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d597eebc958815b1b1b9fdffc256c4453efce6b3
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832837"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910948"
 ---
 <a name="signalr-scaleout-with-azure-service-bus-signalr-1x"></a>Expansão do SignalR com o barramento de serviço do Azure (SignalR 1.x)
 ====================
@@ -88,7 +88,7 @@ No **novo projeto ASP.NET MVC 4** assistente, selecione **aplicativo de Internet
 
 Para criar o aplicativo de bate-papo, siga as etapas no tutorial [Introdução ao SignalR e MVC 4](tutorial-getting-started-with-signalr-and-mvc-4.md).
 
-Use o NuGet para instalar as bibliotecas necessárias. Dos **ferramentas** menu, selecione **Gerenciador de pacotes de biblioteca**, em seguida, selecione **Package Manager Console**. No **Package Manager Console** janela, digite os seguintes comandos:
+Use o NuGet para instalar as bibliotecas necessárias. Dos **ferramentas** menu, selecione **Gerenciador de pacotes NuGet**, em seguida, selecione **Package Manager Console**. No **Package Manager Console** janela, digite os seguintes comandos:
 
 [!code-powershell[Main](scaleout-with-windows-azure-service-bus/samples/sample2.ps1)]
 

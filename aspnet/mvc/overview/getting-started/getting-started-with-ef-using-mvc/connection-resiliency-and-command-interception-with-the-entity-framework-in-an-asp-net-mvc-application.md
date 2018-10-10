@@ -8,21 +8,20 @@ ms.date: 01/13/2015
 ms.assetid: c89d809f-6c65-4425-a3fa-c9f6e8ac89f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9b326ec22fc70a8c1746c5cd2c302c7f04fa8d3e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ab6a553100d704746840eaad512ec140d4576c44
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830612"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911780"
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Resiliência de Conexão e interceptação de comando com o Entity Framework em um aplicativo ASP.NET MVC
 ====================
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio 2013. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
-
+> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 Até agora o aplicativo tiver sido executado localmente no IIS Express no computador de desenvolvimento. Para disponibilizar um aplicativo real para que outras pessoas usem a Internet, você precisará implantá-lo em um provedor de hospedagem na web, e você precisa implantar o banco de dados em um servidor de banco de dados.
 
@@ -73,7 +72,7 @@ Você também pode usar a interceptação de consulta para implementar a prátic
 
 ### <a name="create-a-logging-interface-and-class"></a>Criar uma interface de registro em log e a classe
 
-Um [práticas recomendadas para registro em log](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) é fazer isso usando uma interface em vez de embutir chamadas para Diagnostics. Trace ou uma classe de registro em log. Isso facilita alterar seu mecanismo de log mais tarde, se você precisar fazer isso. Portanto, nesta seção você criará a interface de registro em log e uma classe para implementar o proprietário. / p > 
+Um [práticas recomendadas para registro em log](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) é fazer isso usando uma interface em vez de embutir chamadas para Diagnostics. Trace ou uma classe de registro em log. Isso facilita alterar seu mecanismo de log mais tarde, se você precisar fazer isso. Portanto, nesta seção você criará a interface de registro em log e uma classe para implementar o proprietário. / p >
 
 1. Crie uma pasta no projeto e denomine *registro em log*.
 2. No *registro em log* pasta, crie um arquivo de classe chamado *ILogger.cs*e substitua o código de modelo pelo código a seguir:
@@ -138,7 +137,7 @@ Em seguida, você criará as classes que o Entity Framework irá chamar toda vez
 
 ## <a name="test-logging-and-connection-resiliency"></a>Resiliência de conexão e de registro em log de teste
 
-1. Pressione F5 para executar o aplicativo no modo de depuração e, em seguida, clique no **alunos** guia.
+1. Pressione **F5** para executar o aplicativo no modo de depuração e, em seguida, clique no **alunos** guia.
 2. Examinar o Visual Studio **saída** janela para ver a saída de rastreamento. Você talvez precise rolar para cima, alguns erros de JavaScript para obter os logs gravados pelo seu agente de log anteriores.
 
     Observe que você pode ver as consultas SQL reais enviadas para o banco de dados. Você verá algumas consultas inicias e comandos que o Entity Framework para começar, verificando a versão do banco de dados e tabela de histórico de migração (você saberá mais sobre as migrações no próximo tutorial). E você verá uma consulta para a paginação, descubra quantos alunos existem, e, por fim, você pode ver a consulta que obtém os dados de alunos.
@@ -172,7 +171,7 @@ Em seguida, você criará as classes que o Entity Framework irá chamar toda vez
 
 Neste tutorial, você viu como habilitar a resiliência de conexão e comandos SQL que compõe Entity Framework e o envia para o banco de dados de log. O próximo tutorial, você implantará o aplicativo à Internet, usando o Code First Migrations para implantar o banco de dados.
 
-Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar. Você também pode solicitar novos tópicos em [Mostrar-Me como com código](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar.
 
 Links para outros recursos do Entity Framework pode ser encontrado na [acesso a dados ASP.NET – recursos recomendados](../../../../whitepapers/aspnet-data-access-content-map.md).
 

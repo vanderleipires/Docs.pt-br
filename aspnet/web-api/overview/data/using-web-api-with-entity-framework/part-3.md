@@ -8,12 +8,12 @@ ms.date: 06/16/2014
 ms.assetid: 76e2013a-65b7-488c-834d-9448ecea378e
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 533d3a6e9a69584fb2523b2c0a604755e372f031
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 733b1c343d774e5fa8757808be07a9ae67481d84
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825633"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910493"
 ---
 <a name="use-code-first-migrations-to-seed-the-database"></a>Usar migrações do Code First para propagar o banco de dados
 ====================
@@ -23,7 +23,7 @@ por [Mike Wasson](https://github.com/MikeWasson)
 
 Nesta seção, você usará [migrações do Code First](https://msdn.microsoft.com/data/jj591621) no EF para propagar o banco de dados com dados de teste.
 
-Dos **ferramentas** menu, selecione **Gerenciador de pacotes de biblioteca**, em seguida, selecione **Package Manager Console**. Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
+Dos **ferramentas** menu, selecione **Gerenciador de pacotes NuGet**, em seguida, selecione **Package Manager Console**. Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
 
 [!code-console[Main](part-3/samples/sample1.cmd)]
 

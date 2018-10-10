@@ -8,27 +8,27 @@ ms.date: 04/02/2014
 ms.assetid: 6980ee2e-d6b0-4a08-8fb6-ab96362dd0e3
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: cabf88e4e6c946f92a9e4534a4db5ae15dd8cae5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 40cb1a4514beaf81e7ed75bbd3e478f2ba146fe5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41825424"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910740"
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>Hospedar a API Web ASP.NET 2 em uma função de trabalho do Azure
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
 > Este tutorial mostra como hospedar a API Web do ASP.NET em uma função de trabalho do Azure, usar o OWIN para auto-hospedar a estrutura da API Web.
-> 
+>
 > [Open Web Interface para .NET](http://owin.org/) (OWIN) define uma abstração entre servidores de web do .NET e aplicativos da web. OWIN separa o aplicativo web do servidor, o que torna o OWIN ideal para auto-hospedagem em um aplicativo web em seu próprio processo, fora do IIS – por exemplo, dentro de uma função de trabalho do Azure.
-> 
+>
 > Neste tutorial, você usará o pacote Microsoft.Owin.Host.HttpListener, que fornece um servidor HTTP que ser usado para hospedar internamente os aplicativos do OWIN.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - API Web 2
 > - [SDK do Azure para .NET 2.3](https://azure.microsoft.com/downloads/)
 
@@ -56,7 +56,7 @@ Em geral, um aplicativo do Azure pode conter várias funções, embora este tuto
 
 ## <a name="add-the-web-api-and-owin-packages"></a>Adicionar a API da Web e pacotes do OWIN
 
-Do **ferramentas** menu, clique em **Gerenciador de pacotes de biblioteca**, em seguida, clique em **Package Manager Console**.
+Do **ferramentas** menu, clique em **Gerenciador de pacotes NuGet**, em seguida, clique em **Package Manager Console**.
 
 Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
 

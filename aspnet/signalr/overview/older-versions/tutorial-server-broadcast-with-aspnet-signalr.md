@@ -8,12 +8,12 @@ ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 76dc2f4d54f6ab4cebbde06dfd611a9b5ee5ae64
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7d604af11ade848358e291d1df25f2f8df850132
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830421"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911975"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Tutorial: Transmissão de servidor com SignalR do ASP.NET 1.x
 ====================
@@ -80,7 +80,7 @@ Se você tiver o Visual Studio 2010, verifique se [NuGet](https://visualstudioga
 
 Você pode adicionar funcionalidade de SignalR para um projeto por meio da instalação de um pacote do NuGet.
 
-1. Clique em **ferramentas | Gerenciador de pacotes de biblioteca | Package Manager Console**.
+1. Clique em **ferramentas | Gerenciador de pacotes NuGet | Package Manager Console**.
 2. Digite o seguinte comando no Gerenciador de pacotes.
 
     [!code-powershell[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample1.ps1)]

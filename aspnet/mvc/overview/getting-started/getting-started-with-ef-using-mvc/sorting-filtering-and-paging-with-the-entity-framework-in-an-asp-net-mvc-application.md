@@ -4,25 +4,24 @@ title: Classificação, filtragem e paginação com o Entity Framework em um apl
 author: tdykstra
 description: Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio...
 ms.author: riande
-ms.date: 06/01/2015
+ms.date: 10/08/2018
 ms.assetid: d5723e46-41fe-4d09-850a-e03b9e285bfa
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: a72d6cbce0e5f20360e1e9bfc20f4a75bfeb3343
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9fabb5a90af715d4e96ff79b43bfff5a4600ac08
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830409"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912768"
 ---
-<a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Classificação, filtragem e paginação com o Entity Framework em um aplicativo ASP.NET MVC
-====================
+# <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Classificação, filtragem e paginação com o Entity Framework em um aplicativo ASP.NET MVC
+
 por [Tom Dykstra](https://github.com/tdykstra)
 
-[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) ou [baixar PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio 2013. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
-
+> Aplicativo web de exemplo Contoso University demonstra como criar aplicativos ASP.NET MVC 5 usando o Entity Framework 6 Code First e o Visual Studio. Para obter informações sobre a série de tutoriais, consulte [primeiro tutorial na série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 No tutorial anterior, você implementou um conjunto de páginas da web para operações CRUD básicas para `Student` entidades. Neste tutorial você adicionará classificação, filtragem e a funcionalidade de paginação para o **alunos** página de índice. Você também criará uma página que faz um agrupamento simples.
 
@@ -30,17 +29,17 @@ A ilustração a seguir mostra a aparência da página quando você terminar. Os
 
 ![Students_Index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
-## <a name="add-column-sort-links-to-the-students-index-page"></a>Adicionar links de classificação de coluna à página Índice de Alunos
+## <a name="add-column-sort-links-to-the-students-index-page"></a>Adicionar links de classificação de coluna para a página de índice de alunos
 
 Para adicionar uma classificação à página índice de alunos, você alterará a `Index` método da `Student` controlador e adicione código para o `Student` indexa a exibição.
 
-### <a name="add-sorting-functionality-to-the-index-method"></a>Adicionar funcionalidade ao método Index de classificação
+### <a name="add-sorting-functionality-to-the-index-method"></a>Adicionar a funcionalidade de classificação ao método Index
 
-Na *Controllers\StudentController.cs*, substitua o `Index` método com o código a seguir:
+- Na *Controllers\StudentController.cs*, substitua o `Index` método com o código a seguir:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-Esse código recebe um parâmetro `sortOrder` da cadeia de caracteres de consulta na URL. O valor de cadeia de caracteres de consulta é fornecido pelo ASP.NET MVC como um parâmetro para o método de ação. O parâmetro será uma cadeia de caracteres "Name" ou "Date", opcionalmente, seguido de um sublinhado e a cadeia de caracteres "desc" para especificar a ordem descendente. A ordem de classificação crescente é padrão.
+Esse código recebe um parâmetro `sortOrder` da cadeia de caracteres de consulta na URL. O valor de cadeia de caracteres de consulta é fornecido pelo ASP.NET MVC como um parâmetro para o método de ação. O parâmetro é uma cadeia de caracteres que é "Name" ou "Date", opcionalmente seguido por um sublinhado e a cadeia de caracteres "desc" para especificar a ordem decrescente. A ordem de classificação crescente é padrão.
 
 Na primeira vez que a página Índice é solicitada, não há nenhuma cadeia de caracteres de consulta. Os alunos são exibidos em ordem crescente pela `LastName`, que é o padrão, conforme estabelecido pelo caso fall-through no `switch` instrução. Quando o usuário clica em um hiperlink de título de coluna, o valor `sortOrder` apropriado é fornecido na cadeia de caracteres de consulta.
 
@@ -57,61 +56,60 @@ Essas são instruções ternárias. A primeira delas Especifica que, se o `sortO
 | Data ascendente | ascending | descending |
 | Data descendente | ascending | ascending |
 
-Usa o método [LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx) para especificar a coluna para classificar por. O código cria um [IQueryable](https://msdn.microsoft.com/library/bb351562.aspx) variável antes do `switch` instrução, modifica-o no `switch` instrução e chama o `ToList` método após o `switch` instrução. Quando você cria e modifica variáveis `IQueryable`, nenhuma consulta é enviada para o banco de dados. A consulta não é executada até que você converta a `IQueryable` objeto em uma coleção chamando um método como `ToList`. Portanto, esse código resulta em uma única consulta que não é executada até que o `return View` instrução.
+Usa o método [LINQ to Entities](/dotnet/framework/data/adonet/ef/language-reference/linq-to-entities) para especificar a coluna para classificar por. O código cria um <xref:System.Linq.IQueryable%601> variável antes do `switch` instrução, modifica-o na `switch` instrução e chama o `ToList` método após o `switch` instrução. Quando você cria e modifica variáveis `IQueryable`, nenhuma consulta é enviada para o banco de dados. A consulta não é executada até que você converta a `IQueryable` objeto em uma coleção chamando um método como `ToList`. Portanto, esse código resulta em uma única consulta que não é executada até que o `return View` instrução.
 
 Como uma alternativa para escrever instruções LINQ diferentes para cada ordem de classificação, você pode criar dinamicamente uma instrução LINQ. Para obter informações sobre o LINQ dinâmico, consulte [LINQ dinâmico](https://go.microsoft.com/fwlink/?LinkID=323957).
 
-### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>Adicionar hiperlinks a exibição índice de alunos de título de coluna
+### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>Adicionar hiperlinks de título de coluna à exibição índice de alunos
 
-Na *Views\Student\Index.cshtml*, substitua o `<tr>` e `<th>` elementos para a linha de cabeçalho com o código realçado:
+1. Na *Views\Student\Index.cshtml*, substitua o `<tr>` e `<th>` elementos para a linha de cabeçalho com o código realçado:
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cshtml?highlight=5-15)]
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cshtml?highlight=5-15)]
 
-Esse código usa as informações a `ViewBag` valores de cadeia de caracteres de propriedades para configurar hiperlinks com a consulta apropriada.
+   Esse código usa as informações a `ViewBag` valores de cadeia de caracteres de propriedades para configurar hiperlinks com a consulta apropriada.
 
-Execute a página e clique no **Sobrenome** e **data de registro** títulos de coluna para verificar se a classificação funciona.
+2. Execute a página e clique no **Sobrenome** e **data de registro** títulos de coluna para verificar se a classificação funciona.
 
-![Students_Index_page_with_sort_hyperlinks](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
+   ![Students_Index_page_with_sort_hyperlinks](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
 
-Depois de clicar na **Sobrenome** título, os alunos são exibidos na ordem do último nome decrescente.
+   Depois de clicar na **Sobrenome** título, os alunos são exibidos na ordem do último nome decrescente.
 
-![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
+   ![Exibição de índice de alunos no navegador da web](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
 ## <a name="add-a-search-box-to-the-students-index-page"></a>Adicione uma caixa de pesquisa para a página de índice de alunos
 
-Para adicionar a filtragem à página Índice de Alunos, você adicionará uma caixa de texto e um botão Enviar à exibição e fará alterações correspondentes no método `Index`. A caixa de texto permitirá que você insira uma cadeia de caracteres a ser pesquisada nos campos de nome e sobrenome.
+Para adicionar filtragem à página de índice de alunos, você adicionará uma caixa de texto e um botão Enviar para o modo de exibição e fará alterações correspondentes no `Index` método. A caixa de texto permite inserir uma cadeia de caracteres a ser pesquisado nos campos de nome e último nome.
 
-### <a name="add-filtering-functionality-to-the-index-method"></a>Adicionar funcionalidade de filtragem a método Index
+### <a name="add-filtering-functionality-to-the-index-method"></a>Adicionar a funcionalidade de filtragem a método Index
 
-Na *Controllers\StudentController.cs*, substitua o `Index` método com o código a seguir (as alterações são realçadas):
+- Na *Controllers\StudentController.cs*, substitua o `Index` método com o código a seguir (as alterações são realçadas):
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-Você adicionou um parâmetro `searchString` ao método `Index`. O valor de cadeia de caracteres de pesquisa é recebido em uma caixa de texto que você adicionará à exibição Índice. Você também adicionou à instrução LINQ uma `where` cláusula que seleciona somente os alunos cujo nome ou sobrenome contém a cadeia de caracteres de pesquisa. A instrução que adiciona o [onde](https://msdn.microsoft.com/library/bb535040.aspx) cláusula é executada somente se houver um valor a ser pesquisado.
+O código adiciona uma `searchString` parâmetro para o `Index` método. O valor de cadeia de caracteres de pesquisa é recebido em uma caixa de texto que você adicionará à exibição Índice. Ele também adiciona um `where` cláusula à instrução LINQ que seleciona somente os alunos cujo nome ou sobrenome contém a cadeia de caracteres de pesquisa. A instrução que adiciona o <xref:System.Linq.Queryable.Where%2A> cláusula é executada somente se houver um valor a ser pesquisado.
 
 > [!NOTE]
 > Em muitos casos, você pode chamar o mesmo método em um conjunto de entidades do Entity Framework ou como um método de extensão em uma coleção em memória. Os resultados são normalmente os mesmos, mas em alguns casos podem ser diferentes.
-> 
+>
 > Por exemplo, a implementação do .NET Framework a `Contains` método retorna todas as linhas quando você passar uma cadeia de caracteres vazia para ele, mas o provedor do Entity Framework para SQL Server Compact 4.0 retorna zero linhas de cadeias de caracteres vazias. Portanto, o código de exemplo (colocando a `Where` instrução dentro de um `if` instrução) torna-se de que você obter os mesmos resultados para todas as versões do SQL Server. Além disso, a implementação do .NET Framework a `Contains` método executa uma comparação que diferencia maiusculas de minúsculas por padrão, mas os provedores SQL Server do Entity Framework executam comparações de maiusculas e minúsculas por padrão. Portanto, chamar o `ToUpper` método para fazer o teste de maiusculas e minúsculas explicitamente garante que eles não são alterados quando você altera o código mais tarde para usar um repositório, que retornará um `IEnumerable` coleção em vez de um `IQueryable` objeto. (Quando você chama o método `Contains` em uma coleção `IEnumerable`, obtém a implementação do .NET Framework; quando chama-o em um objeto `IQueryable`, obtém a implementação do provedor de banco de dados.)
-> 
+>
 > Tratamento de nulos também pode ser diferente para provedores de banco de dados diferente ou quando você usa um `IQueryable` objeto comparado a quando você usa um `IEnumerable` coleção. Por exemplo, em alguns cenários de um `Where` da condição, como `table.Column != 0` não pode retornar colunas que tenham `null` como o valor. Para obter mais informações, consulte [tratamento incorreto de nulos variáveis na cláusula 'where'](https://data.uservoice.com/forums/72025-entity-framework-feature-suggestions/suggestions/1015361-incorrect-handling-of-null-variables-in-where-cl).
 
+### <a name="add-a-search-box-to-the-student-index-view"></a>Adicionar uma caixa de pesquisa à exibição índice de alunos
 
-### <a name="add-a-search-box-to-the-student-index-view"></a>Adicionar uma Caixa de Pesquisa à exibição Índice de Alunos
+1. Na *Views\Student\Index.cshtml*, adicione o código realçado imediatamente antes da abertura `table` marca para criar uma legenda, uma caixa de texto e um **pesquisa** botão.
 
-Na *Views\Student\Index.cshtml*, adicione o código realçado imediatamente antes da abertura `table` marca para criar uma legenda, uma caixa de texto e um **pesquisa** botão.
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample5.cshtml?highlight=4-11)]
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample5.cshtml?highlight=5-10)]
+2. Execute a página, insira uma cadeia de caracteres de pesquisa e clique em **pesquisa** para verificar se a filtragem está funcionando.
 
-Execute a página, insira uma cadeia de caracteres de pesquisa e clique em **pesquisa** para verificar se a filtragem está funcionando.
+   ![Students_Index_page_with_search_box](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 
-![Students_Index_page_with_search_box](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
-
-Observe que a URL não contiver a "uma" cadeia de pesquisa, que significa que se você marcar essa página, você não obterá a lista filtrada quando você usa o indicador. Isso também se aplica os links de classificação de coluna, como eles serão classificar a lista inteira. Você alterará a **pesquisa** botão usar cadeias de caracteres de consulta para os critérios de filtro mais tarde no tutorial.
+   Observe que a URL não contiver a "uma" cadeia de pesquisa, que significa que se você marcar essa página, você não obterá a lista filtrada quando você usa o indicador. Isso também se aplica os links de classificação de coluna, como eles serão classificar a lista inteira. Você alterará a **pesquisa** botão usar cadeias de caracteres de consulta para os critérios de filtro mais tarde no tutorial.
 
 ## <a name="add-paging-to-the-students-index-page"></a>Adicionar paginação à página de índice de alunos
 
-Para adicionar paginação à página índice de alunos, comece instalando o **PagedList.Mvc** pacote do NuGet. Em seguida, você fará alterações adicionais na `Index` método e adicionar links de paginação para o `Index` modo de exibição. **PagedList.Mvc** é um dos muitos paginação boa e classificação pacotes para o ASP.NET MVC e seu uso aqui destina-se apenas como um exemplo, não como uma recomendação para que ele sobre outras opções. A ilustração a seguir mostra os links de paginação.
+Para adicionar paginação à página de índice de alunos, comece instalando o **PagedList.Mvc** pacote do NuGet. Em seguida, você fará alterações adicionais na `Index` método e adicionar links de paginação para o `Index` modo de exibição. **PagedList.Mvc** é um dos muitos paginação boa e classificação pacotes para o ASP.NET MVC e seu uso aqui destina-se apenas como um exemplo, não como uma recomendação para que ele sobre outras opções. A ilustração a seguir mostra os links de paginação.
 
 ![Students_index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
 
@@ -119,91 +117,93 @@ Para adicionar paginação à página índice de alunos, comece instalando o **P
 
 O NuGet **PagedList.Mvc** pacote instala automaticamente o **PagedList** pacote como uma dependência. O **PagedList** pacote instala um `PagedList` métodos de tipo e a extensão de coleção para `IQueryable` e `IEnumerable` coleções. Os métodos de extensão criam uma única página de dados em um `PagedList` coleção fora de seu `IQueryable` ou `IEnumerable`e o `PagedList` coleção fornece várias propriedades e métodos que facilitam a paginação. O **PagedList.Mvc** pacote instala um auxiliar de paginação que exibe os botões de paginação.
 
-Dos **ferramentas** menu, selecione **Gerenciador de pacotes de biblioteca** e, em seguida, **Package Manager Console**.
+1. Dos **ferramentas** menu, selecione **Gerenciador de pacotes NuGet** e, em seguida, **Package Manager Console**.
 
-No **Package Manager Console** janela, verifique se o **origem do pacote** é **nuget.org** e o **projeto padrão** é **ContosoUniversity**e, em seguida, digite o seguinte comando:
+2. No **Package Manager Console** janela, verifique se o **origem do pacote** é **nuget.org** e o **projeto padrão** é **ContosoUniversity**e, em seguida, digite o seguinte comando:
 
-`Install-Package PagedList.Mvc`
+   ```text
+   Install-Package PagedList.Mvc
+   ```
 
-![Instalar PagedList.Mvc](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
+   ![Instalar PagedList.Mvc](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
-Compile o projeto. 
+3. Compile o projeto.
 
 ### <a name="add-paging-functionality-to-the-index-method"></a>Adicionar a funcionalidade de paginação ao método Index
 
-Na *Controllers\StudentController.cs*, adicione uma `using` instrução para o `PagedList` namespace:
+1. Na *Controllers\StudentController.cs*, adicione uma `using` instrução para o `PagedList` namespace:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample6.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample6.cs)]
 
-Substitua o método `Index` pelo seguinte código:
+2. Substitua o método `Index` pelo seguinte código:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample7.cs?highlight=1,3,7-16,41-43)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample7.cs?highlight=1,3,7-16,41-43)]
 
-Este código adiciona um `page` parâmetro, um parâmetro de ordem de classificação atual e um parâmetro de filtro atual à assinatura do método:
+   Este código adiciona um `page` parâmetro, um parâmetro de ordem de classificação atual e um parâmetro de filtro atual à assinatura do método:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
 
-Na primeira vez que a página for exibida, ou se o usuário ainda não tiver clicado em um link de paginação ou classificação, todos os parâmetros serão nulos. Se um link de paginação é clicado, o `page` variável conterá o número da página para exibir.
+   Na primeira vez em que a página é exibida, ou se o usuário ainda não clicou em uma paginação ou classificação de link, todos os parâmetros são nulos. Se um link de paginação é clicado, o `page` variável contém o número da página para exibir.
 
-Um `ViewBag` propriedade fornece a exibição com a ordem de classificação atual, pois isso precisa ser incluído nos links de paginação para manter a ordem de classificação igual durante a paginação:
+   Um `ViewBag` propriedade fornece a exibição com a ordem de classificação atual, pois isso precisa ser incluído nos links de paginação para manter a ordem de classificação igual durante a paginação:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs)]
 
-Outra propriedade, `ViewBag.CurrentFilter`, fornece a exibição com a cadeia de caracteres de filtro atual. Esse valor precisa ser incluído nos links de paginação para manter as configurações de filtro durante a paginação e precisa ser restaurado para a caixa de texto quando a página é exibida novamente. Se a cadeia de caracteres de pesquisa for alterada durante a paginação, a página precisará ser redefinida como 1, porque o novo filtro pode resultar na exibição de dados diferentes. A cadeia de caracteres de pesquisa é alterada quando um valor é inserido na caixa de texto e o botão Enviar é pressionado. Nesse caso, o `searchString` parâmetro não for nulo.
+   Outra propriedade, `ViewBag.CurrentFilter`, fornece a exibição com a cadeia de caracteres de filtro atual. Esse valor precisa ser incluído nos links de paginação para manter as configurações de filtro durante a paginação e precisa ser restaurado para a caixa de texto quando a página é exibida novamente. Se a cadeia de caracteres de pesquisa for alterada durante a paginação, a página precisará ser redefinida como 1, porque o novo filtro pode resultar na exibição de dados diferentes. A cadeia de caracteres de pesquisa é alterada quando um valor é inserido na caixa de texto e o botão Enviar é pressionado. Nesse caso, o `searchString` parâmetro não for nulo.
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 
-No final do método, o `ToPagedList` método de extensão em que os alunos `IQueryable` objeto converte a consulta de alunos em uma única página de alunos em um tipo de coleção que dá suporte à paginação. A única página de alunos é então passada para o modo de exibição:
+   No final do método, o `ToPagedList` método de extensão em que os alunos `IQueryable` objeto converte a consulta de alunos em uma única página de alunos em um tipo de coleção que dá suporte à paginação. A única página de alunos é então passada para o modo de exibição:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-O método `ToPagedList` usa um número de página. Os dois pontos de interrogação representam o [operador de coalescência nula](https://msdn.microsoft.com/library/ms173224.aspx). O operador de união de nulo define um valor padrão para um tipo que permite valor nulo; a expressão `(page ?? 1)` significa retornar o valor de `page` se ele tiver um valor ou retornar 1 se `page` for nulo.
+   O método `ToPagedList` usa um número de página. Os dois pontos de interrogação representam o [operador de coalescência nula](/dotnet/csharp/language-reference/operators/null-coalescing-operator). O operador de união de nulo define um valor padrão para um tipo que permite valor nulo; a expressão `(page ?? 1)` significa retornar o valor de `page` se ele tiver um valor ou retornar 1 se `page` for nulo.
 
-### <a name="add-paging-links-to-the-student-index-view"></a>Adicionar Links de paginação à exibição índice de alunos
+### <a name="add-paging-links-to-the-student-index-view"></a>Adicionar links de paginação à exibição índice de alunos
 
-Na *Views\Student\Index.cshtml*, substitua o código existente pelo código a seguir. As alterações são realçadas.
+1. Na *Views\Student\Index.cshtml*, substitua o código existente pelo código a seguir. As alterações são realçadas.
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cshtml?highlight=1-3,6,9,14,17,24,30,55-56,58-59)]
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cshtml?highlight=1-3,6,9,14,17,24,30,55-56,58-59)]
 
-A instrução `@model` na parte superior da página especifica que a exibição agora obtém um objeto `PagedList`, em vez de um objeto `List`.
+   A instrução `@model` na parte superior da página especifica que a exibição agora obtém um objeto `PagedList`, em vez de um objeto `List`.
 
-O `using` instrução para `PagedList.Mvc` fornece acesso para o auxiliar do MVC para os botões de paginação.
+   O `using` instrução para `PagedList.Mvc` fornece acesso para o auxiliar do MVC para os botões de paginação.
 
-O código usa uma sobrecarga [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) que permite que ele especifique [FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
+   O código usa uma sobrecarga [BeginForm](/previous-versions/aspnet/dd492719(v=vs.108)) que permite que ele especifique [FormMethod.Get](/previous-versions/aspnet/dd460179(v=vs.100)).
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-O padrão [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) envia dados de formulário com um POST, o que significa que os parâmetros são passados no corpo da mensagem HTTP e não na URL como cadeias de caracteres de consulta. Quando você especifica HTTP GET, os dados de formulário são passados na URL como cadeias de consulta, o que permite aos usuários marcar a URL. O [diretrizes do W3C para o uso de HTTP GET](http://www.w3.org/2001/tag/doc/whenToUseGet.html) recomendável que você deve usar GET quando a ação não resulta em uma atualização.
+   O padrão [BeginForm](/previous-versions/aspnet/dd492719(v=vs.108)) envia dados de formulário com um POST, o que significa que os parâmetros são passados no corpo da mensagem HTTP e não na URL como cadeias de caracteres de consulta. Quando você especifica HTTP GET, os dados de formulário são passados na URL como cadeias de consulta, o que permite aos usuários marcar a URL. O [diretrizes do W3C para o uso de HTTP GET](http://www.w3.org/2001/tag/doc/whenToUseGet.html) recomendável que você deve usar GET quando a ação não resulta em uma atualização.
 
-A caixa de texto é inicializada com a cadeia de caracteres de pesquisa atual quando você clica em uma nova página, você pode ver a cadeia de caracteres de pesquisa atual.
+   A caixa de texto é inicializada com a cadeia de caracteres de pesquisa atual quando você clica em uma nova página, você pode ver a cadeia de caracteres de pesquisa atual.
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample14.cshtml?highlight=1)]
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample14.cshtml?highlight=1)]
 
-Os links de cabeçalho de coluna usam a cadeia de caracteres de consulta para passar a cadeia de caracteres de pesquisa atual para o controlador, de modo que o usuário possa classificar nos resultados do filtro:
+   Os links de cabeçalho de coluna usam a cadeia de caracteres de consulta para passar a cadeia de caracteres de pesquisa atual para o controlador, de modo que o usuário possa classificar nos resultados do filtro:
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cshtml?highlight=1)]
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cshtml?highlight=1)]
 
-O número atual de página e total de páginas é exibido.
+   O número atual de página e total de páginas é exibido.
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample16.cshtml)]
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample16.cshtml)]
 
-Se não houver nenhuma página para exibir, "Página 0 de 0" é mostrada. (Nesse caso, o número da página é maior que a contagem de páginas porque `Model.PageNumber` for 1, e `Model.PageCount` é 0.)
+   Se não houver nenhuma página para exibir, "Página 0 de 0" é mostrada. (Nesse caso, o número da página é maior que a contagem de páginas porque `Model.PageNumber` for 1, e `Model.PageCount` é 0.)
 
-Os botões de paginação são exibidos pelo `PagedListPager` auxiliar:
+   Os botões de paginação são exibidos pelo `PagedListPager` auxiliar:
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample17.cshtml)]
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample17.cshtml)]
 
-O `PagedListPager` auxiliar fornece várias opções que você pode personalizar, incluindo URLs e estilo. Para obter mais informações, consulte [TroyGoode / PagedList](https://github.com/TroyGoode/PagedList) no site do GitHub.
+   O `PagedListPager` auxiliar fornece várias opções que você pode personalizar, incluindo URLs e estilo. Para obter mais informações, consulte [TroyGoode / PagedList](https://github.com/TroyGoode/PagedList) no site do GitHub.
 
-Execute a página.
+2. Execute a página.
 
-![Students_index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
+   ![Página de índice de alunos com paginação](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
 
-Clique nos links de paginação em ordens de classificação diferentes para verificar se a paginação funciona. Em seguida, insira uma cadeia de caracteres de pesquisa e tente fazer a paginação novamente para verificar se ela também funciona corretamente com a classificação e filtragem.
+   Clique nos links de paginação em ordens de classificação diferentes para verificar se a paginação funciona. Em seguida, insira uma cadeia de caracteres de pesquisa e tente fazer a paginação novamente para verificar se ela também funciona corretamente com a classificação e filtragem.
 
-![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
+   ![Página com texto de filtro de pesquisa de índice de alunos](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
 
-## <a name="create-an-about-page-that-shows-student-statistics"></a>Criar uma página que mostra as estatísticas de alunos sobre
+## <a name="create-an-about-page-that-shows-student-statistics"></a>Criar uma página Sobre que mostra as estatísticas de Alunos
 
 O Contoso University do site sobre a página, você exibirá quantos alunos se registraram para cada data de registro. Isso exige agrupamento e cálculos simples nos grupos. Para fazer isso, você fará o seguinte:
 
@@ -219,39 +219,41 @@ Criar uma *ViewModels* pasta na pasta do projeto. Nessa pasta, adicione um arqui
 
 ### <a name="modify-the-home-controller"></a>Modificar o controlador Home
 
-Na *HomeController.cs*, adicione o seguinte `using` instruções na parte superior do arquivo:
+1. Na *HomeController.cs*, adicione o seguinte `using` instruções na parte superior do arquivo:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample19.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample19.cs)]
 
-Adicione uma variável de classe para o contexto de banco de dados imediatamente após a chave de abertura para a classe:
+2. Adicione uma variável de classe para o contexto de banco de dados imediatamente após a chave de abertura para a classe:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample20.cs?highlight=3)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample20.cs?highlight=3)]
 
-Substitua o método `About` pelo seguinte código:
+3. Substitua o método `About` pelo seguinte código:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample21.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample21.cs)]
 
-A instrução LINQ agrupa as entidades de alunos por data de registro, calcula o número de entidades em cada grupo e armazena os resultados em uma coleção de objetos de modelo de exibição `EnrollmentDateGroup`.
+   A instrução LINQ agrupa as entidades de alunos por data de registro, calcula o número de entidades em cada grupo e armazena os resultados em uma coleção de objetos de modelo de exibição `EnrollmentDateGroup`.
 
-Adicionar um `Dispose` método:
+4. Adicionar um `Dispose` método:
 
-[!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample22.cs)]
+   [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample22.cs)]
 
 ### <a name="modify-the-about-view"></a>Modificar a exibição Sobre
 
-Substitua o código na *Views\Home\About.cshtml* arquivo pelo código a seguir:
+1. Substitua o código na *Views\Home\About.cshtml* arquivo pelo código a seguir:
 
-[!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample23.cshtml)]
+   [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample23.cshtml)]
 
-Execute o aplicativo e clique no **sobre** link. A contagem de alunos para cada data de registro é exibida em uma tabela.
+2. Execute o aplicativo e clique no **sobre** link.
 
-![About_page](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
+   Exibe a contagem de alunos para cada data de registro em uma tabela.
+
+   ![About_page](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
 
 ## <a name="summary"></a>Resumo
 
-Neste tutorial, você viu como criar um modelo de dados e implementar CRUD básicas, classificação, filtragem, paginação e funcionalidade de agrupamento. O próximo tutorial, você começará examinando tópicos mais avançados, expandindo o modelo de dados.
+Neste tutorial, você viu como criar um modelo de dados e implementar CRUD básicas, classificação, filtragem, paginação e funcionalidade de agrupamento. No próximo tutorial, você começará examinando tópicos mais avançados com a expansão do modelo de dados.
 
-Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar. Você também pode solicitar novos tópicos em [Mostrar-Me como com código](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar.
 
 Links para outros recursos do Entity Framework pode ser encontrado na [acesso a dados ASP.NET – recursos recomendados](../../../../whitepapers/aspnet-data-access-content-map.md).
 

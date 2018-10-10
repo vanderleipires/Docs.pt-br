@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 008cbc8ec7ca0af4b20e5e3974cf3862efa7677e
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 23dc9cc7fd469e934ed9915922a3baa772d9e1ab
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48794874"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912020"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>Tutorial: Em tempo real de alta frequência com SignalR 2
 ====================
@@ -22,37 +22,37 @@ por [Patrick Fletcher](https://github.com/pfletcher)
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)
 
 > Este tutorial mostra como criar um aplicativo web que usa o ASP.NET SignalR 2 para fornecer a funcionalidade de mensagens de alta frequência. Alta frequência de mensagens nesse caso, significa que as atualizações que são enviadas a uma taxa fixa; no caso deste aplicativo, até 10 mensagens por segundo.
-> 
+>
 > O aplicativo que você criará neste tutorial exibe uma forma que os usuários poderão arrastar. A posição da forma em todos os outros navegadores conectados será atualizada de acordo com a posição da forma arrastada usando atualizações constantes.
-> 
+>
 > Os conceitos apresentados neste tutorial tem aplicativos em jogos em tempo real e outros aplicativos de simulação.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Versão 2 do SignalR
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>Usando o Visual Studio 2012 com este tutorial
-> 
-> 
+>
+>
 > Para usar o Visual Studio 2012 com este tutorial, faça o seguinte:
-> 
+>
 > - Atualização de seu [Gerenciador de pacotes](http://docs.nuget.org/docs/start-here/installing-nuget) para a versão mais recente.
 > - Instalar o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
 > - No Web Platform Installer, procure e instale **ASP.NET e Web Tools 2013.1 para Visual Studio 2012**. Isso irá instalar os modelos do Visual Studio para classes do SignalR, como **Hub**.
 > - Alguns modelos (como **classe de inicialização OWIN**) não está disponível; nesses casos, use um arquivo de classe em vez disso.
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>Versões de tutoriais
-> 
+>
 > Para obter informações sobre versões anteriores do SignalR, consulte [versões mais antigas do SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Perguntas e comentários
-> 
+>
 > Deixe comentários sobre como você gostou neste tutorial e o que poderíamos melhorar nos comentários na parte inferior da página. Se você tiver perguntas que não estão diretamente relacionadas para o tutorial, você pode postá-los para o [Fórum do ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -102,12 +102,12 @@ As etapas a seguir usam o Visual Studio 2013 para criar um aplicativo Web vazio 
 3. Na **Gerenciador de soluções**, clique com botão direito no projeto, selecione **adicionar | Classe de Hub do SignalR (v2)**. Nomeie a classe **MoveShapeHub.cs** e adicioná-lo ao projeto. Esta etapa cria o **MoveShapeHub** de classe e o adiciona ao projeto de um conjunto de arquivos de script e referências de assembly que dão suporte ao SignalR.
 
     > [!NOTE]
-    > Você também pode adicionar o SignalR para um projeto, clicando em **ferramentas | Gerenciador de pacotes de biblioteca | Package Manager Console** e executando um comando:
+    > Você também pode adicionar o SignalR para um projeto, clicando em **Ferramentas > Gerenciador de pacotes NuGet > Console do Gerenciador de pacotes** e executando um comando:
 
-    `install-package Microsoft.AspNet.SignalR`. 
+    `install-package Microsoft.AspNet.SignalR`.
 
     Se você usar o console para adicionar o SignalR, crie a classe de hub do SignalR como uma etapa separada depois de adicionar o SignalR.
-4. Clique em **ferramentas | Gerenciador de pacotes de biblioteca | Package Manager Console**. Na janela do Gerenciador de pacote, execute o seguinte comando:
+4. Clique em **Ferramentas > Gerenciador de pacotes NuGet > Console do Gerenciador de pacotes**. Na janela do Gerenciador de pacote, execute o seguinte comando:
 
     `Install-Package jQuery.UI.Combined`
 

@@ -8,27 +8,27 @@ ms.date: 04/11/2014
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 6bead915491c62de809b8625d8071a63c70a6ef5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: dbf0964695dd2592d063b05c0778923edffe8e2e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833077"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910766"
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Hospedar OWIN em uma função de trabalho do Azure
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
 > Este tutorial mostra como hospedar internamente o OWIN em uma função de trabalho do Microsoft Azure.
-> 
+>
 > [Open Web Interface para .NET](http://owin.org/) (OWIN) define uma abstração entre servidores de web do .NET e aplicativos da web. OWIN separa o aplicativo web do servidor, o que torna o OWIN ideal para auto-hospedagem em um aplicativo web em seu próprio processo, fora do IIS – por exemplo, dentro de uma função de trabalho do Azure.
-> 
+>
 > Neste tutorial, você aprenderá como hospedar internamente um aplicativos OWIN dentro de uma função de trabalho do Microsoft Azure. Para saber mais sobre as funções de trabalho, consulte [modelos de execução do Azure](https://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices).
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>Versões de software usadas no tutorial
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - [SDK do Azure para .NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
@@ -56,7 +56,7 @@ Em geral, um aplicativo do Azure pode conter várias funções, embora este tuto
 
 ## <a name="add-the-owin-self-host-packages"></a>Adicione os pacotes de auto-hospedagem de OWIN
 
-Do **ferramentas** menu, clique em **Gerenciador de pacotes de biblioteca**, em seguida, clique em **Package Manager Console**.
+Do **ferramentas** menu, clique em **Gerenciador de pacotes NuGet**, em seguida, clique em **Package Manager Console**.
 
 Na janela do Console do Gerenciador de pacotes, digite o seguinte comando:
 
