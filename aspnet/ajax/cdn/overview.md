@@ -156,7 +156,7 @@ Para saber mais sobre a biblioteca de interface do usuário do jQuery, visite of
 
 ## <a name="third-party-files-on-the-cdn"></a>Arquivos de terceiros na CDN
 
-A CDN hospeda algumas das bibliotecas de JavaScript de terceiros mais populares. Microsoft não reivindica a propriedade de todas as bibliotecas de terceiros hospedados deste CDN. Os proprietários dos direitos autorais das bibliotecas são licenciamento dessas bibliotecas para você. Quaisquer direitos que talvez você precise baixar e usar essas bibliotecas são concedidos exclusivamente pelos respectivos proprietários dos direitos autorais. Como esses não são bibliotecas da Microsoft, a Microsoft fornece sem garantias ou licenças de direitos de propriedade intelectual (incluindo sem direitos de patentes implícitos) para as bibliotecas de terceiros hospedadas deste CDN.
+A CDN hospeda algumas das bibliotecas de JavaScript de terceiros mais populares. Microsoft não reivindica a propriedade de todas as bibliotecas de terceiros hospedados nesta CDN. Os proprietários dos direitos autorais das bibliotecas são licenciamento destas bibliotecas para você. Quaisquer direitos que talvez você precise baixar para usar essas bibliotecas, são concedidos unicamente e exclusivamente pelos respectivos proprietários dos direitos autorais. Como esses não são bibliotecas da Microsoft, a Microsoft fornece sem garantias ou licenças de direitos de propriedade intelectual (incluindo sem direitos de patentes implícitos) para as bibliotecas de terceiros hospedadas deste CDN.
 
 <a id="jQuery_Releases_on_the_CDN_0"></a>
 
