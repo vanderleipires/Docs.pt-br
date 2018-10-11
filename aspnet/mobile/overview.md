@@ -27,7 +27,7 @@ Na primeira parte de um artigo de duas partes, os autores exploram alguns dos pr
 
 ### <a name="cloud-connected-mobile-apps---build-a-xamarin-app-with-authentication-and-offline-supporthttpsmsdnmicrosoftcommagazinemt422581aspxpart-2"></a>[Aplicativos móveis conectados à nuvem – criar um aplicativo Xamarin com autenticação e suporte Offline](https://msdn.microsoft.com/magazine/mt422581.aspx)(parte 2)
 
-No segundo artigo da série, os autores discutem como usar o Xamarin para atingir várias plataformas de cliente móvel em mostram como implementar a autenticação e manter um cache sincronizado do lado do cliente dos dados.
+No segundo artigo da série, os autores discutem como usar o Xamarin para atingir várias plataformas de cliente móvel e mostram como implementar a autenticação e manter um cache sincronizado do lado do cliente dos dados.
 
 
 ### <a name="calling-web-api-from-a-windows-phone-8-applicationweb-apioverviewmobile-clientscalling-web-api-from-a-windows-phone-8-applicationmd"></a>[Chamar API Web em um aplicativo do Windows Phone 8](../web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application.md)
@@ -60,7 +60,7 @@ Este tutorial ensinará os fundamentos de como implantar um aplicativo MVC 5 em 
 
 ### <a name="add-mobile-pages-to-your-aspnet-web-forms--mvc-applicationwhitepapersadd-mobile-pages-to-your-aspnet-web-forms-mvc-applicationmd"></a>[Adicionar páginas móveis ao seu Web Forms do ASP.NET / aplicativo MVC](../whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
 
-Esse manual descreve várias maneiras para servir páginas otimizadas para dispositivos móveis do seu Web Forms do ASP.NET / aplicativo MVC e sugere, arquitetura e design problemas a serem considerados ao direcionar uma ampla gama de dispositivos.
+Esse manual descreve várias maneiras para servir páginas otimizadas para dispositivos móveis do seu Web Forms do ASP.NET / aplicativo MVC e sugere problemas de design e arquitetônicos a serem considerados ao direcionar uma ampla gama de dispositivos.
 
 
 ### <a name="detect-the-latest-mobile-devices-using-51degreesmobi-foundationhttpsgithubcom51degreesdotnet-device-detection"></a>[Detectar os dispositivos móveis mais recentes usando 51degrees.mobi Foundation](https://github.com/51Degrees/dotNET-Device-Detection)
@@ -70,7 +70,7 @@ Esse manual descreve várias maneiras para servir páginas otimizadas para dispo
 
 ### <a name="simulate-popular-mobile-devices-for-testingdevice-simulatorsmd"></a>[Simular dispositivos móveis populares para teste](device-simulators.md)
 
-Links para os emuladores de dispositivos e simuladores de que você pode usar para testar seus aplicativos web móveis
+Links para os emuladores de dispositivos e simuladores que você pode usar para testar seus aplicativos web móveis
 
 
 ### <a name="mobile-web-sites-with-aspnet-mvc-and-the-mobile-browser-definition-filehttpwwwhanselmancomblogmixmobilewebsiteswithaspnetmvcandthemobilebrowserdefinitionfileaspx"></a>[Sites da Web móvel ASP.NET MVC e o arquivo de definição do navegador móvel](http://www.hanselman.com/blog/MixMobileWebSitesWithASPNETMVCAndTheMobileBrowserDefinitionFile.aspx)
