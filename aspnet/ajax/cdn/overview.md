@@ -18,11 +18,11 @@ ms.locfileid: "48578296"
 <a name="microsoft-ajax-content-delivery-network"></a>Rede de distribuição de conteúdo do Microsoft Ajax
 ====================
 > [!WARNING]
-> Aplicativos de produção não devem usar uma dependências nos ativos da CDN. Aplicativos devem testar para o ativo CDN referenciado e usar um ativo de fallback quando o CDN não está disponível. 
+> Aplicativos de produção não devem usar uma dependência nos ativos da CDN. Aplicativos devem testar para o ativo CDN referenciado e usar um ativo de fallback quando o CDN não está disponível. 
 >
 > CDN do Microsoft Ajax não tem SLA além de usar uma CDN do Azure.
 >
-> Use [esse problema de GitHub](https://github.com/aspnet/Docs/issues/5832) relata problemas com a CDN do Microsoft Ajax.
+> Use [esse problema de GitHub](https://github.com/aspnet/Docs/issues/5832) para relatar problemas com a CDN do Microsoft Ajax.
 
 ## <a name="table-of-contents"></a>Sumário
 
@@ -53,7 +53,7 @@ ms.locfileid: "48578296"
  [Versões do ASP.NET MVC no CDN](#ASPNET_MVC_Releases_on_the_CDN_16)  
  [Versões do ASP.NET SignalR no CDN](#ASPNET_SignalR_Releases_on_the_CDN_17)
 
-A Microsoft Ajax Content Delivery Network (CDN) hospeda bibliotecas JavaScript populares de terceiros, como o jQuery e permite que você adicioná-los facilmente para seus aplicativos Web. Por exemplo, você pode começar a usar jQuery, que é hospedado deste CDN simplesmente adicionando um &lt;script&gt; marca para a página que aponta para ajax.aspnetcdn.com.
+A Microsoft Ajax Content Delivery Network (CDN) hospeda bibliotecas JavaScript populares de terceiros, como o jQuery e permite que você os adicione facilmente para seus aplicativos Web. Por exemplo, você pode começar a usar jQuery, que é hospedado deste CDN simplesmente adicionando um &lt;script&gt; marca para a página que aponta para ajax.aspnetcdn.com.
 
 Ao aproveitar a CDN, você pode melhorar significativamente o desempenho de seus aplicativos Ajax. O conteúdo da CDN é armazenados em cache em servidores localizados em todo o mundo. Além disso, a CDN permite que os navegadores para reutilizar arquivos JavaScript de terceiros em cache para sites da web que estão localizados em domínios diferentes.
 
@@ -74,7 +74,7 @@ CDN do Microsoft Ajax também inclui as seguintes bibliotecas que foram carregad
 - Arquivos de JavaScript do ASP.NET MVC
 - Arquivos ASP.NET SignalR JavaScript
 
-Microsoft não reivindica a propriedade de todas as bibliotecas de terceiros hospedados nesta CDN. Os proprietários dos direitos autorais das bibliotecas são licenciamento destas bibliotecas para você. Quaisquer direitos que talvez você precise baixar para usar essas bibliotecas, são concedidos unico e exclusivamente pelos respectivos proprietários dos direitos autorais. Como esses não são bibliotecas da Microsoft, a Microsoft fornece sem garantias ou licenças de direitos de propriedade intelectual (incluindo sem direitos de patentes implícitos) para as bibliotecas de terceiros hospedadas deste CDN.
+Microsoft não reivindica a propriedade de todas as bibliotecas de terceiros hospedados nesta CDN. Os proprietários dos direitos autorais das bibliotecas são licenciamento destas bibliotecas para você. Quaisquer direitos que talvez você precise baixar para usar essas bibliotecas, são concedidos unicamente e exclusivamente pelos respectivos proprietários dos direitos autorais. Como esses não são bibliotecas da Microsoft, a Microsoft fornece sem garantias ou licenças de direitos de propriedade intelectual (incluindo sem direitos de patentes implícitos) para as bibliotecas de terceiros hospedadas deste CDN.
 
 Se você quiser enviar sua biblioteca de JavaScript e sua biblioteca é uma das principais bibliotecas JavaScript (conforme listado em http://trends.builtwith.com) ou extensões/plug-ins para essas bibliotecas que são (a) populares; ou (b) útil para uso no ASP.NET, em seguida, entre em contato com AjaxCDNSubmission@Microsoft.com.
 
@@ -649,7 +649,7 @@ As seguintes versões da biblioteca jQuery Mobile são hospedadas nesta CDN. Cli
 
 ### <a name="jquery-templates-releases-on-the-cdn"></a>Versões de modelos na CDN do jQuery
 
-As seguintes versões do plug-in do jQuery modelos são hospedadas nesta CDN. Clique em cada link para ver a lista real de arquivos.
+As seguintes versões do plug-in do jQuery Templates são hospedadas nesta CDN. Clique em cada link para ver a lista real de arquivos.
 
 - [Modelos jQuery Beta 1](jquery-templates/cdnjquerytemplatesbeta1.md "modelos jQuery Beta 1")
 
@@ -657,7 +657,7 @@ As seguintes versões do plug-in do jQuery modelos são hospedadas nesta CDN. Cl
 
 ### <a name="jquery-cycle-releases-on-the-cdn"></a>Ciclo de lançamentos na CDN do jQuery
 
-As seguintes versões do plug-in do jQuery ciclo são hospedadas nesta CDN. Clique em cada link para ver a lista real de arquivos.
+As seguintes versões do plug-in do jQuery Cycle são hospedadas nesta CDN. Clique em cada link para ver a lista real de arquivos.
 
 - [jQuery ciclo 2.99](jquery-cycle/cdnjquerycycle299.md "jQuery 2.99 ciclo")
 - [jQuery ciclo 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery 2.94 ciclo")
