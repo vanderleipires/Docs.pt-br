@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 02/14/2017
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 34a553c7ff8a18c367bf5e8079e2ea71f968bf3b
-ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
+ms.openlocfilehash: e613dc1e85b84cc5e2b8ad2bf3958040257d1966
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39219414"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911273"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>Auxiliares de marca em formulários no ASP.NET Core
 
@@ -413,7 +413,7 @@ Amostra:
 
 O método `Index` inicializa o `CountryViewModel`, define o país selecionado e o transmite para a exibição `Index`.
 
-[!code-csharp[](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
+[!code-csharp[](working-with-forms/sample/final/Controllers/HomeController.cs?range=8-13)]
 
 O método `Index` HTTP POST exibe a seleção:
 
@@ -577,7 +577,7 @@ O elemento `<option>` correto será selecionado (contém o atributo `selected="s
 * [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
 * [Elemento de formulário HTML](https://www.w3.org/TR/html401/interact/forms.html)
 * [Token de verificação de solicitação](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
-* [Associação de modelos](xref:mvc/models/model-binding)
+* [Model binding](xref:mvc/models/model-binding)
 * [Validação de modelo](xref:mvc/models/validation)
 * [Interface IAttributeAdapter](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
-* [Trechos de código para este documento](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)
+* [Snippets de código para este documento](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)
