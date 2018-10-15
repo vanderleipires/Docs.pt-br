@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
 uid: spa/angular
-ms.openlocfilehash: 763b4fff7c64432328af660c66e6ff3f8f697f71
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 8283fe9e96acb57942040dd4c90fabd204a19663
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011346"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326037"
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>Usar o modelo de projeto Angular com o ASP.NET Core
 
@@ -31,7 +31,7 @@ O modelo é equivalente à criação de um projeto do ASP.NET Core para atuar co
 
 ::: moniker range="= aspnetcore-2.0"
 
-Se usar o ASP.NET Core 2.0, verifique se você [instalou o modelo de projeto do React atualizado](xref:spa/index#installation).
+Se usar o ASP.NET Core 2.0, verifique se você [instalou o modelo de projeto do Angular atualizado](xref:spa/index#installation).
 
 ::: moniker-end
 

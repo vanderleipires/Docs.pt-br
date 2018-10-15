@@ -5,12 +5,12 @@ description: Use identidade com um aplicativo ASP.NET Core. Saiba como definir o
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: d427932bb175c09105534379be4d71760f4e04e5
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: e0494afd807080f4cd71127abce7bdb93f952dca
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860947"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325504"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade do ASP.NET Core
 
@@ -160,7 +160,7 @@ O PowerShell usa o ponto e vírgula como separador de comando. Ao usar o PowerSh
 O formulário de logon é exibido quando:
 
 * O **faça logon no** link é selecionado.
-* Quando um usuário acessa uma página em que eles não são autenticados **ou** autorizado, eles são redirecionados para a página de logon.
+* Um usuário tenta acessar uma página restrita que eles não estão autorizados a acessar **ou** quando eles ainda não foram autenticados pelo sistema.
 
 Quando o formulário na página de logon é enviado, o `OnPostAsync` ação é chamada. `PasswordSignInAsync` é chamado de `_signInManager` (fornecido pela injeção de dependência) do objeto.
 
