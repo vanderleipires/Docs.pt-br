@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: d16dcc618bf6c60714179601db14f4dd2a9e41ce
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 22eb2fd748d52ec95e813ada8b1bf3b4826ad573
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912146"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348475"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Roteamento de atributo na API Web ASP.NET 2
 ====================
@@ -245,11 +245,11 @@ Para especificar o nome da rota, defina as **nome** propriedade do atributo. O e
 <a id="order"></a>
 ## <a name="route-order"></a>Ordem de rota
 
-Quando o framework tenta corresponder a um URI com uma rota, ele avalia as rotas em uma ordem específica. Para especificar a ordem, defina as **RouteOrder** propriedade no atributo de rota. Valores mais baixos são avaliados primeiro. O valor de ordem padrão é zero.
+Quando o framework tenta corresponder a um URI com uma rota, ele avalia as rotas em uma ordem específica. Para especificar a ordem, defina as **ordem** propriedade no atributo de rota. Valores mais baixos são avaliados primeiro. O valor de ordem padrão é zero.
 
 Aqui está como a ordenação total é determinada:
 
-1. Comparar as **RouteOrder** propriedade do atributo de rota.
+1. Comparar as **ordem** propriedade do atributo de rota.
 2. Examinar cada segmento do URI no modelo de rota. Para cada segmento, ordem da seguinte maneira:
 
     1. Segmentos de literais.
@@ -271,4 +271,4 @@ Essas rotas são ordenadas da seguinte maneira.
 4. pedidos / {\*data}
 5. pedidos / pendente
 
-Observe que "Detalhes" é um segmento literal e aparece antes de "{id}", mas "pendente" será exibida pela última vez porque o **RouteOrder** propriedade é 1. (Este exemplo assume que há é nenhum cliente chamada "Detalhes" ou "pendente". Em geral, tente evitar rotas ambíguas. Neste exemplo, um modelo de rota melhor para `GetByCustomer` é "clientes / {customerName}")
+Observe que "Detalhes" é um segmento literal e aparece antes de "{id}", mas "pendente" será exibida pela última vez porque o **ordem** propriedade é 1. (Este exemplo assume que há é nenhum cliente chamada "Detalhes" ou "pendente". Em geral, tente evitar rotas ambíguas. Neste exemplo, um modelo de rota melhor para `GetByCustomer` é "clientes / {customerName}")

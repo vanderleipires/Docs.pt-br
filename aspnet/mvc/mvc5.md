@@ -4,16 +4,16 @@ title: ASP.NET MVC 5 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET MVC 5 ASP.NET MVC 5 é uma estrutura para a criação de aplicativos web escalonáveis baseados em padrões, usando padrões de design bem estabelecidos e o poder do AS....
 ms.author: riande
-ms.date: 01/20/2014
+ms.date: 10/11/2018
 ms.assetid: f79fbf7f-59e5-4279-a832-c1a0294630f4
 msc.legacyurl: /mvc/mvc5
 msc.type: content
-ms.openlocfilehash: c837560e0ad9618decaba9761da9cf35e0f03f08
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c958d39c7eff0d581de6b05890b8e6df8bdb5207
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824196"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348254"
 ---
 <a name="aspnet-mvc-5"></a>ASP.NET MVC 5
 ====================
@@ -21,7 +21,7 @@ ms.locfileid: "41824196"
 
 ### <a name="one-aspnet"></a>Um ASP.NET
 
-Os modelos de projeto Web MVC integração perfeita com a nova experiência do One ASP.NET. Você pode personalizar seu projeto do MVC e configurar a autenticação usando o Assistente de criação de projeto do One ASP.NET. Um tutorial de Introdução ao ASP.NET MVC 5 pode ser encontrado em [Introdução ao ASP.NET MVC 5](overview/getting-started/introduction/getting-started.md).
+Os modelos de projeto Web MVC integração perfeita com a experiência do One ASP.NET. Você pode personalizar seu projeto do MVC e configurar a autenticação usando o Assistente de criação de projeto do One ASP.NET. Um tutorial de Introdução ao ASP.NET MVC 5 pode ser encontrado em [Introdução ao ASP.NET MVC 5](overview/getting-started/introduction/getting-started.md).
 
 Para obter informações sobre como atualizar projetos MVC 4 para o MVC 5, consulte [como atualizar um ASP.NET MVC 4 e o projeto de API da Web para ASP.NET MVC 5 e API Web 2](overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md).
 
@@ -31,7 +31,7 @@ Os modelos de projeto do MVC foram atualizados para usar a identidade do ASP.NET
 
 ### <a name="bootstrap"></a>Bootstrap
 
-O modelo de projeto do MVC foi atualizado para usar [Bootstrap](http://getbootstrap.com/) para fornecer uma responsiva e elegante aparência que você pode personalizar facilmente. Para obter mais informações, consulte [Bootstrap em modelos de projeto da web do Visual Studio 2013](../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap).
+O modelo de projeto do MVC foi atualizado para usar [Bootstrap](http://getbootstrap.com/) para fornecer uma responsiva e elegante aparência que você pode personalizar facilmente. Para obter mais informações, consulte [Bootstrap em modelos de projeto do Visual Studio web](../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap).
 
 ### <a name="authentication-filters"></a>Filtros de autenticação
 
@@ -47,43 +47,45 @@ ASP.NET MVC agora dá suporte à [roteamento de atributo](https://blogs.msdn.com
 
 ## <a name="new-web-project-experience"></a>Nova experiência de projeto da Web
 
-Aprimoramos a experiência de criação de novos projetos da web no Visual Studio 2013. No **novo projeto de Web do ASP.NET** caixa de diálogo que você pode selecionar o tipo de projeto que você deseja, configurar qualquer combinação de tecnologias de (Web Forms, MVC, Web API), configurar opções de autenticação e adicionar um projeto de teste de unidade.
+Visual Studio aprimorado a experiência de criação de novos projetos da web, a partir do Visual Studio 2013. No **novo projeto de Web do ASP.NET** caixa de diálogo que você pode selecionar o tipo de projeto que você deseja, configurar qualquer combinação de tecnologias de (Web Forms, MVC, Web API), configurar opções de autenticação, adiciona suporte ao Docker e adicionar um projeto de teste de unidade.
 
-![Novo projeto ASP.NET](mvc5/_static/image1.png)
+![Novo projeto ASP.NET](mvc5/_static/new-aspnet-web-app-dialog.png)
 
-Nova caixa de diálogo permite que você altere as opções de autenticação padrão para muitos dos modelos. Por exemplo, quando você cria um projeto de Web Forms do ASP.NET você pode selecionar qualquer uma das seguintes opções:
+A caixa de diálogo permite que você altere as opções de autenticação padrão para muitos dos modelos. Por exemplo, quando você cria um projeto de Web Forms do ASP.NET você pode selecionar qualquer uma das seguintes opções:
 
 - Sem autenticação
 - Contas de usuário individuais (associação ASP.NET ou login do provedor social)
-- Contas organizacionais (Active Directory em um aplicativo da internet)
+- Contas corporativas ou escolares (Active Directory em um aplicativo da internet)
 - Autenticação do Windows (Active Directory em um aplicativo de intranet)
 
-![Opções de autenticação](mvc5/_static/image2.png)
+![Opções de autenticação](mvc5/_static/change-authentication-dialog.png)
 
-Para obter mais informações sobre o novo processo para a criação de projetos da web, consulte [Criando projetos Web do ASP.NET no Visual Studio 2013](../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md). Para obter mais informações sobre as novas opções de autenticação, consulte [ASP.NET Identity](../identity/overview/index.md).
+Para obter mais informações sobre o processo de criação de projetos da web, consulte [Criando projetos Web do ASP.NET no Visual Studio](../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md). Para obter mais informações sobre as opções de autenticação, consulte [ASP.NET Identity](../identity/overview/index.md).
 
 <a id="scaffold"></a>
 ### <a name="aspnet-scaffolding"></a>Scaffolding do ASP.NET
 
 Scaffolding do ASP.NET é uma estrutura de geração de código para aplicativos Web ASP.NET. Ele torna mais fácil adicionar o código clichê ao seu projeto que interage com um modelo de dados.
 
-Nas versões anteriores do Visual Studio, o scaffolding foi limitado a projetos do ASP.NET MVC. Com o Visual Studio 2013, agora você pode usar o scaffolding para qualquer projeto ASP.NET, incluindo o Web Forms. Visual Studio 2013 oferece suporte para geração de páginas para um projeto de Web Forms, mas você ainda pode usar o scaffolding com Web Forms Adicionando dependências MVC ao projeto. Suporte para a geração de páginas para formulários da Web será adicionado em uma atualização futura.
+Nas versões do Visual Studio antes de 2013, o scaffolding foi limitado a projetos do ASP.NET MVC. A partir do Visual Studio 2013, você pode usar o scaffolding para qualquer projeto ASP.NET, incluindo o Web Forms. Visual Studio oferece suporte para geração de páginas para um projeto de Web Forms, mas você ainda pode usar o scaffolding com Web Forms Adicionando dependências MVC ao projeto. Suporte para a geração de páginas para formulários da Web será adicionado em uma versão futura.
 
-Ao usar o scaffolding, podemos garantir que todos os dependências estão instaladas no projeto. Por exemplo, se você começa com um projeto de Web Forms do ASP.NET e, em seguida, utilizar o scaffolding para adicionar um controlador da API da Web, os pacotes NuGet necessários e as referências são adicionadas ao seu projeto automaticamente.
+Ao usar o scaffolding, todos os necessários dependências estão instaladas no projeto. Por exemplo, se você começa com um projeto de Web Forms do ASP.NET e, em seguida, utilizar o scaffolding para adicionar um controlador da API da Web, os pacotes NuGet necessários e as referências são adicionadas ao seu projeto automaticamente.
 
-Para adicionar o scaffolding do MVC para um projeto de Web Forms, adicione uma **Novo Item de Scaffold** e selecione **dependências do MVC 5** na janela de diálogo. Há duas opções para scaffolding MVC; Mínimo e completo. Se você selecionar no mínimo, apenas os pacotes do NuGet e referências para o ASP.NET MVC são adicionadas ao seu projeto. Se você selecionar a opção completa, as dependências mínimas são adicionadas, bem como os arquivos de conteúdo necessários para um projeto do MVC.
+Para adicionar o scaffolding do MVC para um projeto de Web Forms, adicione uma **Novo Item de Scaffold** e selecione **dependências do MVC 5** na janela de diálogo. Há duas opções para scaffolding MVC; **Dependências mínimas** e **completo dependências**. Se você selecionar **dependências mínimas**, apenas os pacotes do NuGet e referências para o ASP.NET MVC são adicionadas ao seu projeto. Se você selecionar **completo dependências**, as dependências mínimas são adicionadas, bem como os arquivos de conteúdo necessários para um projeto do MVC.
 
-Suporte para scaffolding dos controladores assíncronos usa os novos recursos assíncronos do Entity Framework 6.
+![Adicionar caixa de diálogo Scaffold no Visual Studio](overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/add-scaffold.png)
+
+Suporte para controladores assíncronos de scaffolding usa todos os recursos assíncronos do Entity Framework 6.
 
 Para obter mais informações e tutoriais, consulte [visão geral de Scaffolding do ASP.NET](../visual-studio/overview/2013/aspnet-scaffolding-overview.md).
 
-### <a name="getting-help-and-reporting-issues"></a>Obtendo ajuda e relatar problemas
+### <a name="get-help-and-report-issues"></a>Obtenha ajuda e problemas de relatório
 
 - [Problemas conhecidos e lista de alterações significativas](../visual-studio/overview/2013/release-notes.md#knownissues)
 - Obtenha ajuda e discutir o ASP.NET MVC 5 nos [fóruns](https://forums.asp.net/1146.aspx)
 - [Relatar um bug no ASP.NET MVC 5](https://github.com/aspnet/AspNetWebStack/issues)
 - [Fazer uma solicitação de recurso](http://aspnet.uservoice.com/forums/41201-asp-net-mvc)
 
-### <a name="upgrading-from-aspnet-mvc-4"></a>Atualizando do ASP.NET MVC 4
+### <a name="upgrade-from-aspnet-mvc-4"></a>Atualização do ASP.NET MVC 4
 
 Consulte [como atualizar um ASP.NET MVC 4 e Web API do projeto ASP.NET MVC 5 e API Web 2](overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)
