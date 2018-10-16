@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/13/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 218b6429462991659ba02804fdc8fbb99b69f1a6
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: d6157ac2bdf046c66f4b740ad2263f6b7485c05d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211085"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912300"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>Implementação do servidor Web Kestrel no ASP.NET Core
 
@@ -183,11 +183,17 @@ O número máximo de conexões TCP abertas simultâneas pode ser definido para o
 
 ::: moniker range=">= aspnetcore-2.2"
 
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=3)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
             options.Limits.MaxConcurrentConnections = 100;
         });
@@ -195,31 +201,25 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=3)]
-
-::: moniker-end
-
 Há um limite separado para conexões que foram atualizadas do HTTP ou HTTPS para outro protocolo (por exemplo, em uma solicitação do WebSockets). Depois que uma conexão é atualizada, ela não é contada em relação ao limite de `MaxConcurrentConnections`.
 
 ::: moniker range=">= aspnetcore-2.2"
+
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=4)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
 
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
             options.Limits.MaxConcurrentUpgradedConnections = 100;
         });
 ```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=4)]
 
 ::: moniker-end
 
@@ -246,21 +246,21 @@ Aqui está um exemplo que mostra como configurar a restrição para o aplicativo
 
 ::: moniker range=">= aspnetcore-2.2"
 
-```csharp
-public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-    WebHost.CreateDefaultBuilder(args)
-        .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
-        {
-            options.Limits.MaxRequestBodySize = 10 * 1024;
-        });
-```
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=5)]
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
 
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=5)]
+```csharp
+public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseKestrel(options =>
+        {
+            options.Limits.MaxRequestBodySize = 10 * 1024;
+        });
+```
 
 Substitua a configuração em uma solicitação específica no middleware:
 
@@ -289,11 +289,17 @@ Este é um exemplo que mostra como configurar as taxas mínima de dados em *Prog
 
 ::: moniker range=">= aspnetcore-2.2"
 
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=6-9)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
             options.Limits.MinRequestBodyDataRate =
                 new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
@@ -301,12 +307,6 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
                 new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
         });
 ```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_Limits&highlight=6-9)]
 
 Configure as taxas por solicitação no middleware:
 
@@ -443,10 +443,6 @@ Especifica uma `Action` de configuração a ser executada para cada ponto de ext
 
 Cria um carregador de configuração para configurar o Kestrel que usa uma [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) como entrada. A configuração precisa estar no escopo da seção de configuração do Kestrel.
 
-::: moniker-end
-
-::: moniker range=">= aspnetcore-2.1"
-
 ### <a name="listenoptionsusehttps"></a>ListenOptions.UseHttps
 
 Configure o Kestrel para usar HTTPS.
@@ -497,7 +493,7 @@ Especificar URLs usando:
 
 Para obter mais informações, confira [URLs de servidor](xref:fundamentals/host/web-host#server-urls) e [Substituir configuração](xref:fundamentals/host/web-host#override-configuration).
 
-O valor fornecido usando essas abordagens pode ser um ou mais pontos de extremidade HTTP e HTTPS (HTTPS se houver um certificado padrão). Configure o valor como uma lista separada por ponto e vírgula (por exemplo, `"Urls": "http://localhost:8000; http://localhost:8001"` ).
+O valor fornecido usando essas abordagens pode ser um ou mais pontos de extremidade HTTP e HTTPS (HTTPS se houver um certificado padrão). Configure o valor como uma lista separada por ponto e vírgula (por exemplo, `"Urls": "http://localhost:8000; http://localhost:8001"`).
 
 *Substituir o certificado padrão da configuração*
 
@@ -713,6 +709,12 @@ O método [Listen](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrels
 
 ::: moniker range=">= aspnetcore-2.2"
 
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_TCPSocket&highlight=9-16)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 ```csharp
 public static void Main(string[] args)
 {
@@ -722,21 +724,15 @@ public static void Main(string[] args)
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
-            options.Listen(IPAddress.Loopback, 8000);
-            options.Listen(IPAddress.Loopback, 8001, listenOptions =>
+            options.Listen(IPAddress.Loopback, 5000);
+            options.Listen(IPAddress.Loopback, 5001, listenOptions =>
             {
                 listenOptions.UseHttps("testCert.pfx", "testPassword");
             });
         });
 ```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_TCPSocket&highlight=9-16)]
 
 ::: moniker-end
 
@@ -754,11 +750,17 @@ Escute em um soquete Unix com [ListenUnixSocket](/dotnet/api/microsoft.aspnetcor
 
 ::: moniker range=">= aspnetcore-2.2"
 
+[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_UnixSocket)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 ```csharp
 public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .ConfigureKestrel((context, options) =>
+        .UseKestrel(options =>
         {
             options.ListenUnixSocket("/tmp/kestrel-test.sock");
             options.ListenUnixSocket("/tmp/kestrel-test.sock", listenOptions =>
@@ -767,12 +769,6 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             });
         });
 ```
-
-::: moniker-end
-
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
-
-[!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_UnixSocket)]
 
 ::: moniker-end
 

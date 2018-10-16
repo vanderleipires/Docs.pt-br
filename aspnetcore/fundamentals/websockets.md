@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: fc3f70fb888797216b2ccc911a9f69eaae6ac01c
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: e46c2decf92d21322f2079bf880df534e0224db5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577724"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911646"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>Suporte ao WebSockets no ASP.NET Core
 
@@ -20,7 +20,7 @@ Por [Tom Dykstra](https://github.com/tdykstra) e [Andrew Stanton-Nurse](https://
 
 Este artigo explica como começar a usar o WebSockets no ASP.NET Core. [WebSocket](https://wikipedia.org/wiki/WebSocket) ([RFC 6455](https://tools.ietf.org/html/rfc6455)) é um protocolo que permite canais de comunicação persistentes bidirecionais em conexões TCP. Ele é usado em aplicativos que se beneficiam de comunicação rápida e em tempo real, como chat, painel e aplicativos de jogos.
 
-[Exibir ou baixar um código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample)). Confira a seção [Próximas etapas](#next-steps) para obter mais informações.
+[Exibir ou baixar um código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample)). Confira a seção [Próximas etapas](#next-steps) para obter mais informações.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -60,14 +60,34 @@ Use WebSockets para trabalhar diretamente com uma conexão de soquete. Por exemp
 
 Adicione o middleware do WebSockets no método `Configure` da classe `Startup`:
 
-[!code-csharp[](websockets/sample/Startup.cs?name=UseWebSockets)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSockets)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=UseWebSockets)]
+
+::: moniker-end
 
 As seguintes configurações podem ser definidas:
 
 * `KeepAliveInterval` – a frequência para enviar quadros "ping" ao cliente para garantir que os proxies mantenham a conexão aberta.
 * `ReceiveBufferSize` – o tamanho do buffer usado para receber dados. Os usuários avançados podem precisar alterar isso para ajuste de desempenho com base no tamanho dos dados.
 
-[!code-csharp[](websockets/sample/Startup.cs?name=UseWebSocketsOptions)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptions)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptions)]
+
+::: moniker-end
 
 ### <a name="accept-websocket-requests"></a>Aceitar solicitações do WebSocket
 
@@ -75,7 +95,17 @@ Em algum lugar e em um momento futuro no ciclo de vida da solicitação (posteri
 
 O exemplo a seguir é de uma fase posterior do método `Configure`:
 
-[!code-csharp[](websockets/sample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+
+::: moniker-end
 
 Uma solicitação do WebSocket pode entrar em qualquer URL, mas esse código de exemplo aceita apenas solicitações de `/ws`.
 
@@ -85,7 +115,17 @@ O método `AcceptWebSocketAsync` atualiza a conexão TCP para uma conexão WebSo
 
 O código mostrado anteriormente que aceita a solicitação do WebSocket passa o objeto `WebSocket` para um método `Echo`. O código recebe uma mensagem e envia de volta imediatamente a mesma mensagem. As mensagens são enviadas e recebidas em um loop até que o cliente feche a conexão:
 
-[!code-csharp[](websockets/sample/Startup.cs?name=Echo)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=Echo)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=Echo)]
+
+::: moniker-end
 
 Ao aceitar a conexão WebSocket antes de iniciar o loop, o pipeline de middleware é encerrado. Ao fechar o soquete, o pipeline é desenrolado. Ou seja, a solicitação deixa de avançar no pipeline quando o WebSocket é aceito. Quando o loop é concluído e o soquete é fechado, a solicitação continua a avançar no pipeline.
 
@@ -122,7 +162,7 @@ Se você estiver usando o suporte do WebSocket no [socket.io](https://socket.io/
 
 ## <a name="next-steps"></a>Próximas etapas
 
-O [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) que acompanha este artigo é um aplicativo de eco. Ele tem uma página da Web que faz conexões WebSocket e o servidor reenvia para o cliente todas as mensagens recebidas. Execute o aplicativo em um prompt de comando (ele não está configurado para execução no Visual Studio com o IIS Express) e navegue para http://localhost:5000. A página da Web exibe o status de conexão no canto superior esquerdo:
+O [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/samples) que acompanha este artigo é um aplicativo de eco. Ele tem uma página da Web que faz conexões WebSocket e o servidor reenvia para o cliente todas as mensagens recebidas. Execute o aplicativo em um prompt de comando (ele não está configurado para execução no Visual Studio com o IIS Express) e navegue para http://localhost:5000. A página da Web exibe o status de conexão no canto superior esquerdo:
 
 ![Estado inicial da página da Web](websockets/_static/start.png)
 
