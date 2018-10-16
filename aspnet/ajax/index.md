@@ -1,6 +1,6 @@
 ---
 uid: ajax/index
-title: 'ASP.NET Ajax: Aprimorada interatividade e capacidade de resposta | Microsoft Docs'
+title: 'ASP.NET Ajax: Aprimorando a interatividade e capacidade de resposta | Microsoft Docs'
 author: rick-anderson
 description: Adicione funcionalidades Ajax a aplicativos ASP.NET com o jQuery ou o Ajax Control Toolkit. Melhore o desempenho de seus aplicativos Ajax com o Microsoft...
 ms.author: riande
