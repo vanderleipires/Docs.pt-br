@@ -1,22 +1,22 @@
 ---
-title: Associação de modelos personalizada no ASP.NET Core
+title: Model binding personalizado no ASP.NET Core
 author: ardalis
-description: Saiba como a associação de modelos permite que as ações do controlador trabalhem diretamente com os tipos de modelo no ASP.NET Core.
+description: Saiba como o model binding permite que as ações do controlador trabalhem diretamente com os tipos de modelo no ASP.NET Core.
 ms.author: riande
 ms.date: 04/10/2017
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: f5bd9a3eefb1fd9c1534e8767ad8e8af37514adb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b8745241b0699d270bb8f3a56ab614b0ca49e64b
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275387"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045530"
 ---
-# <a name="custom-model-binding-in-aspnet-core"></a>Associação de modelos personalizada no ASP.NET Core
+# <a name="custom-model-binding-in-aspnet-core"></a>Model binding personalizado no ASP.NET Core
 
 Por [Steve Smith](https://ardalis.com/)
 
-A associação de modelos permite que as ações do controlador funcionem diretamente com tipos de modelo (passados como argumentos de método), em vez de solicitações HTTP. O mapeamento entre os dados de solicitação de entrada e os modelos de aplicativo é manipulado por associadores de modelos. Os desenvolvedores podem estender a funcionalidade de associação de modelos interna implementando associadores de modelos personalizados (embora, normalmente, você não precise escrever seu próprio provedor).
+O model binding permite que as ações do controlador funcionem diretamente com tipos de modelo (passados como argumentos de método), em vez de solicitações HTTP. O mapeamento entre os dados de solicitação de entrada e os modelos de aplicativo é manipulado por associadores de modelos. Os desenvolvedores podem estender a funcionalidade de model binding interna implementando associadores de modelos personalizados (embora, normalmente, você não precise escrever seu próprio provedor).
 
 [Exibir ou baixar a amostra do GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-model-binding/)
 
@@ -24,9 +24,9 @@ A associação de modelos permite que as ações do controlador funcionem direta
 
 Os associadores de modelos padrão dão suporte à maioria dos tipos de dados comuns do .NET Core e devem atender à maior parte das necessidades dos desenvolvedores. Eles esperam associar a entrada baseada em texto da solicitação diretamente a tipos de modelo. Talvez seja necessário transformar a entrada antes de associá-la. Por exemplo, quando você tem uma chave que pode ser usada para pesquisar dados de modelo. Use um associador de modelos personalizado para buscar dados com base na chave.
 
-## <a name="model-binding-review"></a>Análise da associação de modelos
+## <a name="model-binding-review"></a>Análise do model binding
 
-A associação de modelos usa definições específicas para os tipos nos quais opera. Um *tipo simples* é convertido de uma única cadeia de caracteres na entrada. Um *tipo complexo* é convertido de vários valores de entrada. A estrutura determina a diferença de acordo com a existência de um `TypeConverter`. Recomendamos que você crie um conversor de tipo se tiver um mapeamento `string` -> `SomeType` simples que não exige recursos externos.
+O model binding usa definições específicas para os tipos nos quais opera. Um *tipo simples* é convertido de uma única cadeia de caracteres na entrada. Um *tipo complexo* é convertido de vários valores de entrada. A estrutura determina a diferença de acordo com a existência de um `TypeConverter`. Recomendamos que você crie um conversor de tipo se tiver um mapeamento `string` -> `SomeType` simples que não exige recursos externos.
 
 Antes de criar seu próprio associador de modelos personalizado, vale a pena analisar como os associadores de modelos existentes são implementados. Considere o [ByteArrayModelBinder](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder), que pode ser usado para converter cadeias de caracteres codificadas em Base64 em matrizes de bytes. As matrizes de bytes costumam ser armazenadas como arquivos ou campos BLOB do banco de dados.
 
@@ -71,7 +71,7 @@ Execute POST em uma cadeia de caracteres codificada em Base64 para esse método 
 
 ![postman](custom-model-binding/images/postman.png "postman")
 
-Desde que o associador possa associar dados de solicitação a propriedades ou argumentos nomeados de forma adequada, a associação de modelos terá êxito. O seguinte exemplo mostra como usar `ByteArrayModelBinder` com um modelo de exibição:
+Desde que o associador possa associar dados de solicitação a propriedades ou argumentos nomeados de forma adequada, o model binding terá êxito. O seguinte exemplo mostra como usar `ByteArrayModelBinder` com um modelo de exibição:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post2&highlight=2)]
 
@@ -101,7 +101,7 @@ O atributo `ModelBinder` pode ser usado para aplicar o `AuthorEntityBinder` aos 
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
-Neste exemplo, como o nome do argumento não é o `authorId` padrão, ele é especificado no parâmetro com o atributo `ModelBinder`. Observe que o controlador e o método de ação são simplificados, comparado à pesquisa da entidade no método de ação. A lógica para buscar o autor usando o Entity Framework Core é movida para o associador de modelos. Isso pode ser uma simplificação considerável quando há vários métodos associados ao modelo do autor e pode ajudá-lo a seguir o [princípio DRY](http://deviq.com/don-t-repeat-yourself/).
+Neste exemplo, como o nome do argumento não é o `authorId` padrão, ele é especificado no parâmetro com o atributo `ModelBinder`. Observe que o controlador e o método de ação são simplificados, comparado à pesquisa da entidade no método de ação. A lógica para buscar o autor usando o Entity Framework Core é movida para o associador de modelos. Isso pode ser uma simplificação considerável quando há vários métodos associados ao modelo `Author` e pode ajudá-lo a seguir o [princípio DRY](http://deviq.com/don-t-repeat-yourself/).
 
 Aplique o atributo `ModelBinder` a propriedades de modelo individuais (como em um viewmodel) ou a parâmetros de método de ação para especificar um associador de modelos ou nome de modelo específico para apenas esse tipo ou essa ação.
 
@@ -130,6 +130,6 @@ A adição do provedor ao final da coleção pode resultar na chamada a um assoc
 ## <a name="recommendations-and-best-practices"></a>Recomendações e melhores práticas
 
 Associadores de modelos personalizados:
-- Não devem tentar definir códigos de status ou retornar resultados (por exemplo, 404 Não Encontrado). Se a associação de modelos falhar, um [filtro de ação](xref:mvc/controllers/filters) ou uma lógica no próprio método de ação deverá resolver a falha.
+- Não devem tentar definir códigos de status ou retornar resultados (por exemplo, 404 Não Encontrado). Se o model binding falhar, um [filtro de ação](xref:mvc/controllers/filters) ou uma lógica no próprio método de ação deverá resolver a falha.
 - São muito úteis para eliminar código repetitivo e interesses paralelos de métodos de ação.
 - Normalmente, não devem ser usados para converter uma cadeia de caracteres em um tipo personalizado; um [`TypeConverter`](/dotnet/api/system.componentmodel.typeconverter) geralmente é uma opção melhor.

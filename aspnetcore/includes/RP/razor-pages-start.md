@@ -11,19 +11,19 @@ A tabela a seguir lista os arquivos e pastas no projeto. Para este tutorial, o a
 | Arquivo ou pasta              | Finalidade |
 | ----------------- | ------------ |
 | wwwroot | Contém arquivos estáticos. Confira [Arquivos estáticos](xref:fundamentals/static-files). |
-| Pages (Páginas) | Pasta para [Páginas do Razor](xref:razor-pages/index). |
+| Páginas | Pasta para [Páginas do Razor](xref:razor-pages/index). |
 | *appsettings.json* | [Configuração](xref:fundamentals/configuration/index) |
 | *Program.cs* | [Hospeda](xref:fundamentals/host/index) o aplicativo ASP.NET Core.|
-| *Startup.cs* | Configura os serviços e o pipeline de solicitação. Consulte [Startup (Inicialização)](xref:fundamentals/startup).|
+| *Startup.cs* | Configura os serviços e o pipeline de solicitação. Consulte [Inicialização](xref:fundamentals/startup).|
 
 ### <a name="the-pages-folder"></a>A pasta Páginas
 
 O arquivo *_Layout.cshtml* contém elementos HTML comuns (scripts e folhas de estilo) e define o layout para o aplicativo. Por exemplo, quando você clica em **RazorPagesMovie**, **Início**, **Sobre** ou **Contato**, você vê os mesmos elementos. Os elementos comuns incluem o menu de navegação na parte superior e o cabeçalho na parte inferior da janela. Veja [Layout](xref:mvc/views/layout) para obter mais informações.
 
-O *_ViewStart.cshtml* define a propriedade `Layout` das Páginas do Razor para usar o arquivo *_Layout.cshtml*. Veja [Layout](xref:mvc/views/layout) para obter mais informações.
-
 O arquivo *_ViewImports.cshtml* contém diretivas do Razor que são importadas para cada Página do Razor. Veja [Importando diretivas compartilhadas](xref:mvc/views/layout#importing-shared-directives) para obter mais informações.
+
+O *_ViewStart.cshtml* define a propriedade `Layout` das Páginas do Razor para usar o arquivo *_Layout.cshtml*. Veja [Layout](xref:mvc/views/layout) para obter mais informações.
 
 O arquivo *_ValidationScriptsPartial.cshtml* fornece uma referência a scripts de validação [jQuery](https://jquery.com/). Quando adicionarmos as páginas `Create` e `Edit` posteriormente no tutorial, o arquivo *_ValidationScriptsPartial.cshtml* será usado.
 
-As páginas `About`, `Contact` e `Index` são páginas básicas que você pode usar para iniciar um aplicativo. A página `Error` é usada para exibir informações de erro.
+As páginas `About`, `Contact` e `Index` são páginas básicas que você pode usar para iniciar um aplicativo. A página `Error` é usada para exibir informações de erro. A página `Privacy` permite especificar detalhes sobre a política de privacidade do site.

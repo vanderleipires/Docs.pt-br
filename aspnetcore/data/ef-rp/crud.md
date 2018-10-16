@@ -5,12 +5,12 @@ description: Mostra como criar, ler, atualizar e excluir com o EF Core
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: e3a0ec2e21ae9e9eeaae1eb7c17f1604897fb6f9
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 31fefc148040d7b65e9b65d6bf19f502ef9de542
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342452"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795558"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – CRUD – 2 de 8
 
@@ -127,7 +127,7 @@ No código anterior, `TryUpdateModelAsync<Student>` tenta atualizar o objeto `em
 Na amostra anterior:
 
 * O segundo argumento (`"student", // Prefix`) é o prefixo usado para pesquisar valores. Não diferencia maiúsculas de minúsculas.
-* Os valores de formulário postados são convertidos nos tipos no modelo `Student` usando a [associação de modelos](xref:mvc/models/model-binding#how-model-binding-works).
+* Os valores de formulário postados são convertidos nos tipos no modelo `Student` usando o [model binding](xref:mvc/models/model-binding#how-model-binding-works).
 
 <a id="overpost"></a>
 

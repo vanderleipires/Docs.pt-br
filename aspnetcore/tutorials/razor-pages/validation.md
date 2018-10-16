@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 6144bfb9e731ace51b4f23870fdb06519fd4a9ea
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: cd958b9c084de4b3e12784774544610873a519f9
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211020"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045517"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>Adicionar validação a uma Página Razor do ASP.NET Core
 
@@ -27,7 +27,7 @@ O suporte de validação fornecido pelas Páginas Razor e pelo Entity Framework 
 
 ### <a name="adding-validation-rules-to-the-movie-model"></a>Adicionando regras de validação ao modelo de filme
 
-Abra o arquivo *Movie.cs*. [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) fornece um conjunto interno de atributos de validação que são aplicados de forma declarativa a uma classe ou propriedade. DataAnnotations também contém atributos de formatação como `DataType`, que ajudam com a formatação e não fornecem validação.
+Abra o arquivo *Models/Movie.cs*. [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) fornece um conjunto interno de atributos de validação que são aplicados de forma declarativa a uma classe ou propriedade. DataAnnotations também contém atributos de formatação como `DataType`, que ajudam com a formatação e não fornecem validação.
 
 Atualize a classe `Movie` para aproveitar os atributos de validação `Required`, `StringLength`, `RegularExpression` e `Range`.
 
@@ -79,7 +79,7 @@ Quando o JavaScript está desabilitado no navegador, o envio do formulário com 
 
 (Opcional) Teste a validação do servidor:
 
-* Desabilite o JavaScript no navegador. Se você não conseguir desabilitar o JavaScript no navegador, tente outro navegador.
+* Desabilite o JavaScript no navegador. É possível fazer isso usando as ferramentas para desenvolvedores do navegador. Se você não conseguir desabilitar o JavaScript no navegador, tente outro navegador.
 * Defina um ponto de interrupção no método `OnPostAsync` da página Criar ou Editar.
 * Envie um formulário com erros de validação.
 * Verifique se o estado do modelo é inválido:

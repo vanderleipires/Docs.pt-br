@@ -4,14 +4,14 @@ author: ardalis
 description: Descubra como a funcionalidade de roteamento do ASP.NET Core é responsável por mapear uma solicitação de entrada para um manipulador de rotas.
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 94fa6a278466c8cc9926d7893d1ef71d83b865df
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: d9ba96c7b2abd35b1b13c84814bf3f776e8d8731
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870845"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47861051"
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
@@ -37,7 +37,7 @@ O roteamento está conectado ao pipeline do [middleware](xref:fundamentals/middl
 
 ### <a name="url-matching"></a>Correspondência de URL
 
-Correspondência de URL é o processo pelo qual o roteamento expede uma solicitação de entrada para um *manipulador*. Esse processo geralmente se baseia nos dados do caminho da URL, mas pode ser estendido para considerar qualquer dado na solicitação. A capacidade de expedir solicitações para manipuladores separados é fundamental para dimensionar o tamanho e a complexidade de um aplicativo.
+Correspondência de URL é o processo pelo qual o roteamento expede uma solicitação de entrada para um *manipulador*. Esse processo se baseia nos dados do caminho da URL, mas pode ser estendido para considerar qualquer dado na solicitação. A capacidade de expedir solicitações para manipuladores separados é fundamental para dimensionar o tamanho e a complexidade de um aplicativo.
 
 As solicitações de entrada entram no `RouterMiddleware`, que chama o método <xref:Microsoft.AspNetCore.Routing.IRouter.RouteAsync*> em cada rota na sequência. A instância <xref:Microsoft.AspNetCore.Routing.IRouter> escolhe se deseja *manipular* a solicitação definindo o [RouteContext.Handler](xref:Microsoft.AspNetCore.Routing.RouteContext.Handler*) como um <xref:Microsoft.AspNetCore.Http.RequestDelegate> não nulo. Se uma rota definir um manipulador para a solicitação, o processamento de rotas será interrompido e o manipulador será invocado para processar a solicitação. Se todas as rotas forem testadas e nenhum manipulador for encontrado para a solicitação, o middleware chamará o *próximo* e o próximo middleware no pipeline da solicitação será invocado.
 
@@ -108,7 +108,7 @@ routes.MapRoute(
 
 Esse modelo corresponde a um caminho de URL, como `/Products/Details/17`, mas não como `/Products/Details/Apples`. A definição do parâmetro de rota `{id:int}` define uma [restrição de rota](#route-constraint-reference) para o parâmetro de rota `id`. As restrições de rota implementam <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> e inspecionam valores de rota para verificá-los. Neste exemplo, o valor de rota `id` precisa ser conversível em um inteiro. Consulte [route-constraint-reference](#route-constraint-reference) para obter uma explicação mais detalhada das restrições de rota que são fornecidas pela estrutura.
 
-Sobrecargas adicionais de `MapRoute` aceitam valores para `constraints`, `dataTokens` e `defaults`. Esses parâmetros adicionais de `MapRoute` são definidos como o tipo `object`. O uso típico desses parâmetros é passar um objeto tipado anonimamente, em que os nomes de propriedades do tipo anônimo correspondem aos nomes de parâmetros da rota.
+Sobrecargas adicionais de `MapRoute` aceitam valores para `constraints`, `dataTokens` e `defaults`. Esses parâmetros adicionais de `MapRoute` são definidos como o tipo `object`. O uso típico desses parâmetros é passar um objeto de tipo anônimo, no qual os nomes da propriedade do tipo anônimo correspondem aos nomes do parâmetro de rota.
 
 Os dois seguintes exemplos criam rotas equivalentes:
 
@@ -169,12 +169,12 @@ routes.MapRoute(
 
 Com os valores de rota `{ controller = Products, action = List }`, essa rota gera a URL `/Products/List`. Os valores de rota são substituídos pelos parâmetros de rota correspondentes para formar o caminho de URL. Como `id` é um parâmetro de rota opcional, não há problema algum se ele não tem um valor.
 
-Com os valores de rota `{ controller = Home, action = Index }`, essa rota gera a URL `/`. Os valores de rota fornecidos correspondem aos valores padrão para que os segmentos correspondentes a esses valores possam ser omitidos com segurança. Observe que as duas URLs geradas fazem uma viagem de ida e volta com essa definição de rota e produzem os mesmos valores de rota que foram usados para gerar a URL.
+Com os valores de rota `{ controller = Home, action = Index }`, essa rota gera a URL `/`. Os valores de rota fornecidos correspondem aos valores padrão para que os segmentos correspondentes a esses valores possam ser omitidos com segurança. As duas URLs geradas fazem uma viagem de ida e volta com essa definição de rota e produzem os mesmos valores de rota que foram usados para gerar a URL.
 
 > [!TIP]
 > Um aplicativo que usa o ASP.NET Core MVC deve usar <xref:Microsoft.AspNetCore.Mvc.Routing.UrlHelper> para gerar URLs, em vez de chamar o roteamento diretamente.
 
-Para obter mais detalhes sobre o processo de geração de URL, consulte [url-generation-reference](#url-generation-reference).
+Para saber mais sobre a geração de URL, confira [url-generation-reference](#url-generation-reference).
 
 ## <a name="use-routing-middleware"></a>Usar o middleware de roteamento
 
@@ -269,9 +269,31 @@ Padrões de URL que tentam capturar um nome de arquivo com uma extensão de arqu
 
 Você pode usar o caractere `*` como um prefixo para um parâmetro de rota a ser associado ao restante do URI. Isso é chamado de parâmetro *catch-all*. Por exemplo, `blog/{*slug}` corresponde a qualquer URI que começa com `/blog` e tem qualquer valor depois dele (que é atribuído ao valor de rota `slug`). Os parâmetros catch-all também podem corresponder à cadeia de caracteres vazia.
 
+::: moniker range=">= aspnetcore-2.2"
+
+O parâmetro catch-all faz o escape dos caracteres corretos quando a rota é usada para gerar uma URL, incluindo os caracteres separadores de caminho (`/`). Por exemplo, a rota `foo/{*path}` com valores de rota `{ path = "my/path" }` gera `foo/my%2Fpath`. Observe o escape da barra invertida. Para fazer a viagem de ida e volta dos caracteres separadores de caminho, use o prefixo do parâmetro da rota `**`. A rota `foo/{**path}` com `{ path = "my/path" }` gera `foo/my/path`.
+
+::: moniker-end
+
 Os parâmetros de rota podem ter *valores padrão*, designados pela especificação do padrão após o nome do parâmetro, separados por um sinal de igual (`=`). Por exemplo, `{controller=Home}` define `Home` como o valor padrão de `controller`. O valor padrão é usado se nenhum valor está presente na URL para o parâmetro. Além dos valores padrão, os parâmetros de rota podem ser opcionais, especificados ao acrescentar um ponto de interrogação (`?`) ao final do nome do parâmetro, como em `id?`. A diferença entre os parâmetro de rota de valores opcionais e os padrão é que um parâmetro de rota com um valor padrão sempre produz um valor e um parâmetro opcional somente tem um valor quando ele é fornecido pela URL de solicitação.
 
-Os parâmetros de rota também podem ter restrições, que precisam corresponder ao valor de rota associado da URL. A adição de dois-pontos `:` e do nome da restrição após o nome do parâmetro de rota especifica uma *restrição embutida* em um parâmetro de rota. Se a restrição exigir argumentos, eles serão fornecidos entre parênteses `( )` após o nome da restrição. Várias restrições embutidas podem ser especificadas por meio do acréscimo de outros dois-pontos `:` e do nome da restrição. O nome da restrição é passado para o serviço <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> para criar uma instância de <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> a ser usada no processamento de URL. Por exemplo, o modelo de rota `blog/{article:minlength(10)}` especifica uma restrição `minlength` com o argumento `10`. Para obter mais informações sobre as restrições de rota e uma listagem das restrições fornecidas pela estrutura, confira a seção [Referência de restrição de rota](#route-constraint-reference).
+::: moniker range=">= aspnetcore-2.2"
+
+Os parâmetros de rota podem ter restrições, que precisam corresponder ao valor de rota associado da URL. A adição de dois-pontos (`:`) e do nome da restrição após o nome do parâmetro de rota especifica uma *restrição embutida* em um parâmetro de rota. Se a restrição exigir argumentos, eles ficarão entre parênteses `( )` após o nome da restrição. Várias restrições embutidas podem ser especificadas por meio do acréscimo de outros dois-pontos (`:`) e do nome da restrição. O nome da restrição e os argumentos são passados para o serviço <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> para criar uma instância de <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> a ser usada no processamento de URL. Se o construtor de restrições exigir serviços, eles serão resolvidos nos serviços de aplicativos da injeção da dependência. Por exemplo, o modelo de rota `blog/{article:minlength(10)}` especifica uma restrição `minlength` com o argumento `10`. Para obter mais informações sobre as restrições de rota e uma listagem das restrições fornecidas pela estrutura, confira a seção [Referência de restrição de rota](#route-constraint-reference).
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+Os parâmetros de rota podem ter restrições, que precisam corresponder ao valor de rota associado da URL. A adição de dois-pontos (`:`) e do nome da restrição após o nome do parâmetro de rota especifica uma *restrição embutida* em um parâmetro de rota. Se a restrição exigir argumentos, eles ficarão entre parênteses `( )` após o nome da restrição. Várias restrições embutidas podem ser especificadas por meio do acréscimo de outros dois-pontos (`:`) e do nome da restrição. O nome da restrição e os argumentos são passados para o serviço <xref:Microsoft.AspNetCore.Routing.IInlineConstraintResolver> para criar uma instância de <xref:Microsoft.AspNetCore.Routing.IRouteConstraint> a ser usada no processamento de URL. Por exemplo, o modelo de rota `blog/{article:minlength(10)}` especifica uma restrição `minlength` com o argumento `10`. Para obter mais informações sobre as restrições de rota e uma listagem das restrições fornecidas pela estrutura, confira a seção [Referência de restrição de rota](#route-constraint-reference).
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+Os parâmetros de rota também podem ter transformadores de parâmetro, que transformam o valor de um parâmetro ao gerar links e combinar ações e páginas com URIs. Assim como as restrições, os transformadores de parâmetro podem ser adicionados embutidos a um parâmetro de rota colocando dois-pontos (`:`) e o nome do transformador após o nome do parâmetro de rota. Por exemplo, o modelo de rota `blog/{article:slugify}` especifica um transformador `slugify`.
+
+::: moniker-end
 
 A tabela a seguir demonstra alguns modelos de rota e seu comportamento.
 
@@ -301,7 +323,7 @@ As seguintes palavras-chave são nomes reservados e não podem ser usadas como n
 
 ## <a name="route-constraint-reference"></a>Referência de restrição de rota
 
-As restrições da rota são executadas quando uma `Route` correspondeu à sintaxe da URL de entrada e criou um token do caminho de URL para valores de rota. Em geral, as restrições da rota inspecionam o valor de rota associado por meio do modelo de rota e tomam uma decisão simples do tipo "sim/não" sobre se o valor é aceitável ou não. Algumas restrições da rota usam dados fora do valor de rota para considerar se a solicitação pode ser encaminhada. Por exemplo, a <xref:Microsoft.AspNetCore.Routing.Constraints.HttpMethodRouteConstraint> pode aceitar ou rejeitar uma solicitação de acordo com o verbo HTTP.
+As restrições da rota são executadas quando uma `Route` correspondeu à sintaxe da URL de entrada e criou um token do caminho de URL para valores de rota. Em geral, as restrições da rota inspecionam o valor de rota associado por meio do modelo de rota e tomam uma decisão do tipo "sim/não" sobre se o valor é aceitável ou não. Algumas restrições da rota usam dados fora do valor de rota para considerar se a solicitação pode ser encaminhada. Por exemplo, a <xref:Microsoft.AspNetCore.Routing.Constraints.HttpMethodRouteConstraint> pode aceitar ou rejeitar uma solicitação de acordo com o verbo HTTP.
 
 > [!WARNING]
 > Evite usar restrições para **validação de entrada** porque isso significa que uma entrada inválida resultará em um *404 – Não Encontrado* e não em um *400 – Solicitação Inválida* com uma mensagem de erro apropriada. As restrições de rota são usadas para **desfazer a ambiguidade** entre rotas semelhantes, não para validar as entradas de uma rota específica.
@@ -361,9 +383,29 @@ As expressões regulares usadas no roteamento geralmente começam com o caracter
 | `^[a-z]{2}$` |  hello    | Não    | Confira `^` e `$` acima |
 | `^[a-z]{2}$` | 123abc456 | Não    | Confira `^` e `$` acima |
 
-Consulte [Expressões regulares do .NET Framework](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) para obter mais informações sobre a sintaxe de expressão regular.
+Para saber mais sobre a sintaxe de expressões regulares, confira [Expressões regulares do .NET Framework](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 Para restringir um parâmetro a um conjunto conhecido de valores possíveis, use uma expressão regular. Por exemplo, `{action:regex(^(list|get|create)$)}` apenas corresponde o valor da rota `action` a `list`, `get` ou `create`. Se passada para o dicionário de restrições, a cadeia de caracteres `^(list|get|create)$` é equivalente. As restrições passadas para o dicionário de restrições (não embutidas em um modelo) que não correspondem a uma das restrições conhecidas também são tratadas como expressões regulares.
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="parameter-transformer-reference"></a>Referência de parâmetro de transformador
+
+Os transformadores de parâmetro são executados ao gerar um link para um `Route`. Eles usam o valor de rota do parâmetro e o transformam em um novo valor de cadeia de caracteres. O valor transformado é usado no link gerado. Por exemplo, um transformador de parâmetro `slugify` personalizado em padrão de rota `blog\{article:slugify}` com `Url.Action(new { article = "MyTestArticle" })` gera `blog\my-test-article`. Os transformadores de parâmetro implementam `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer` e são configurados usando <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>.
+
+Os transformadores de parâmetro também são usados pelas estruturas para transformar o URI em que o ponto de extremidade é resolvido. Por exemplo, o ASP.NET Core MVC usa os transformadores de parâmetro para transformar o valor de rota usado para corresponder a um `area`, `controller`, `action` e `page`.
+
+```csharp
+routes.MapRoute(
+    name: "default",
+    template: "{controller=Home:slugify}/{action=Index:slugify}/{id?}");
+```
+
+Com a rota anterior, a ação `SubscriptionManagementController.GetAll()` é combinada com o URI `/subscription-management/get-all`. Um transformador de parâmetro não altera os valores de rota usados para gerar um link. `Url.Action("GetAll", "SubscriptionManagement")` gera `/subscription-management/get-all`.
+
+O ASP.NET Core MVC também vem com a convenção de API `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention`. A convenção aplica um transformador de parâmetro especificado a todos os tokens da rota de atributo no aplicativo.
+
+::: moniker-end
 
 ## <a name="url-generation-reference"></a>Referência de geração de URL
 

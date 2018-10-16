@@ -5,12 +5,12 @@ description: Saiba como adicionar classes de gerenciamento de filmes em um banco
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: de82738509bb009f030a02e28904e3155088fa6a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 5cd1e08ac52d352be23a280419d7456f685a03ad
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011347"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045595"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 
@@ -22,9 +22,7 @@ ms.locfileid: "46011347"
 
 No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **RazorPagesMovie** > **Adicionar** > **Nova Pasta**. Nomeie a pasta *Models*.
 
-Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **Movie** e adicione as seguintes propriedades:
-
-Substitua o conteúdo da classe `Movie` pelo seguinte código:
+Clique com o botão direito do mouse na pasta *Modelos*. Selecione **Adicionar** > **Classe**. Nomeie a classe **Movie** e substitua o conteúdo da classe `Movie` pelo seguinte código:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie21/Models/Movie1.cs?name=snippet)]
 
@@ -35,9 +33,9 @@ Nesta seção, é feito o scaffold do modelo de filme. Ou seja, a ferramenta de 
 Crie uma pasta *Pages/Movies*:
 
 * No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Pages* > **Adicionar** > **Nova Pasta**.
-* Dê à pasta o nome *Movies* 
+* Dê à pasta o nome *Movies*
 
-No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Pages/Movies* > **Adicionar** > **Novo item com scaffold**.
+No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Pages/Movies* pasta > **Adicionar** > **Novo item com scaffold**.
 
 ![Imagem das instruções anteriores.](model/_static/sca.png)
 
@@ -58,10 +56,10 @@ O processo de scaffold criou e alterou os seguintes arquivos:
 
 ### <a name="files-created"></a>Arquivos criados
 
-* *Pages/Movies* Criar, Excluir, Detalhes, Editar, Índice. Essas páginas serão detalhadas no próximo tutorial.
+* *Pages/Movies*: Criar, Excluir, Detalhes, Editar, Índice. Essas páginas serão detalhadas no próximo tutorial.
 * *Data/RazorPagesMovieContext.cs*
 
-### <a name="files-updates"></a>Atualizações de arquivos
+### <a name="file-updates"></a>Atualizações de arquivo
 
 * *Startup.cs*: alterações nesse arquivo serão detalhadas na próxima seção.
 * *appsettings.json*: a cadeia de conexão usada para se conectar a um banco de dados local é adicionada.
@@ -122,8 +120,8 @@ O comando `Update-Database` executa o método `Up` no arquivo *Migrations/{time-
 
 Se você obtiver o erro:
 
-SqlException: não é possível abrir o banco de dados "RazorPagesMovieContext-GUID" solicitado pelo logon. O logon falhou.
-O logon falhou para o usuário 'User-name'.
+`SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
+Login failed for user 'User-name'.`
 
 Você perdeu a [etapa de migrações](#pmc).
 
