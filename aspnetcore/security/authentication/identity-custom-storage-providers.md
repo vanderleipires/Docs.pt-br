@@ -5,12 +5,12 @@ description: Saiba como configurar provedores de armazenamento personalizados pa
 ms.author: riande
 ms.date: 09/17/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: db51c39cc700f93917f54c80adbfe7922ffcd67e
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: e206cf584d92a17d61676d71abc6fb577ae63453
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011255"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477612"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizados para ASP.NET Core Identity
 
@@ -41,7 +41,7 @@ dotnet new webapi -au Individual
 
 ## <a name="the-aspnet-core-identity-architecture"></a>A arquitetura do ASP.NET Core Identity
 
-Identidade do ASP.NET Core consiste em classes chamado gerentes e repositórios. *Gerenciadores de* são classes de alto nível que um desenvolvedor de aplicativo usa para executar operações, como a criação de um usuário de identidade. *Repositórios* são classes de nível inferior que especificam como entidades, como usuários e funções, são persistentes. Siga armazena o [padrão de repositório](xref:fundamentals/repository-pattern) e estão intimamente acoplado com o mecanismo de persistência. Os gerentes são separados dos armazenamentos, que significa que você pode substituir o mecanismo de persistência sem alterar o código do aplicativo (com exceção de configuração).
+Identidade do ASP.NET Core consiste em classes chamado gerentes e repositórios. *Gerenciadores de* são classes de alto nível que um desenvolvedor de aplicativo usa para executar operações, como a criação de um usuário de identidade. *Repositórios* são classes de nível inferior que especificam como entidades, como usuários e funções, são persistentes. Repositórios seguem o padrão de repositório e estão intimamente acoplados com o mecanismo de persistência. Os gerentes são separados dos armazenamentos, que significa que você pode substituir o mecanismo de persistência sem alterar o código do aplicativo (com exceção de configuração).
 
 O diagrama a seguir mostra como um aplicativo web interage com os gerentes, enquanto os armazenamentos de interagem com a camada de acesso a dados.
 

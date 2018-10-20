@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 960aa18f9d14f633118ccd716201e61464085c05
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: be2e81d1aa6a89d65414d53a70ca2d2fb5d2d3a3
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325920"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477183"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>Memória de cache no ASP.NET Core
 
@@ -173,7 +173,7 @@ Usando um `CancellationTokenSource` permite que várias entradas de cache a ser 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Trabalhar com um cache distribuído](xref:performance/caching/distributed)
-* [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
+* [Detectar alterações com tokens de alteração](xref:fundamentals/change-tokens)
 * [Cache de resposta](xref:performance/caching/response)
 * [Middleware de Cache de Resposta](xref:performance/caching/middleware)
 * [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

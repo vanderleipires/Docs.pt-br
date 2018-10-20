@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 uid: performance/caching/middleware
-ms.openlocfilehash: f4e5a414b92e3ca65e19188ebd2bfaef6f32fee7
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: d991bc48ed07ee71b0decaa0bee4df811fdc74c4
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893084"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477521"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Middleware no ASP.NET Core de cache de resposta
 
@@ -159,7 +159,7 @@ Ao testar e solucionar problemas de comportamento de cache, um navegador pode de
 * [Middleware](xref:fundamentals/middleware/index)
 * [Cache na memória](xref:performance/caching/memory)
 * [Trabalhar com um cache distribuído](xref:performance/caching/distributed)
-* [Detectar alterações com tokens de alteração](xref:fundamentals/primitives/change-tokens)
+* [Detectar alterações com tokens de alteração](xref:fundamentals/change-tokens)
 * [Cache de resposta](xref:performance/caching/response)
 * [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
