@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 626b828e2391d3982ff2cf393f0c9e0748c12810
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: de9b0bd1e0346d4c12f256e6226353f1ab47ed11
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751472"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477573"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC com EF Core – CRUD – 2 de 10
 
@@ -25,7 +25,7 @@ O aplicativo web de exemplo Contoso University demonstra como criar aplicativos 
 No tutorial anterior, você criou um aplicativo MVC que armazena e exibe dados usando o Entity Framework e o LocalDB do SQL Server. Neste tutorial, você examinará e personalizará o código CRUD (criar, ler, atualizar e excluir) que o scaffolding do MVC cria automaticamente para você em controladores e exibições.
 
 > [!NOTE]
-> É uma prática comum implementar o [padrão de repositório](xref:fundamentals/repository-pattern) para criar uma camada de abstração entre o controlador e a camada de acesso a dados. Para manter esses tutoriais simples e com foco no ensino de como usar o Entity Framework em si, eles não usam repositórios. Para obter informações sobre repositórios com o EF, consulte [o último tutorial desta série](advanced.md).
+> É uma prática comum implementar o padrão de repositório para criar uma camada de abstração entre o controlador e a camada de acesso a dados. Para manter esses tutoriais simples e com foco no ensino de como usar o Entity Framework em si, eles não usam repositórios. Para obter informações sobre repositórios com o EF, consulte [o último tutorial desta série](advanced.md).
 
 Neste tutorial, você trabalhará com as seguintes páginas da Web:
 
@@ -149,7 +149,7 @@ Em seguida, o valor "OverPost" é adicionado com êxito à propriedade `Secret` 
 
 Impeça o excesso de postagem em cenários de edição lendo a entidade do banco de dados primeiro e, em seguida, chamando `TryUpdateModel`, passando uma lista explícita de propriedades permitidas. Esse é o método usado nestes tutoriais.
 
-Uma maneira alternativa de impedir o excesso de postagem preferida por muitos desenvolvedores é usar modelos de exibição em vez de classes de entidade com a associação de modelos. Inclua apenas as propriedades que você deseja atualizar no modelo de exibição. Quando o associador de modelos MVC tiver concluído, copie as propriedades do modelo de exibição para a instância da entidade, opcionalmente usando uma ferramenta como o AutoMapper. Use `_context.Entry` na instância de entidade para definir seu estado como `Unchanged` e, em seguida, defina `Property("PropertyName").IsModified` como verdadeiro em cada propriedade da entidade incluída no modelo de exibição. Esse método funciona nos cenários de edição e criação.
+Uma maneira alternativa de impedir o excesso de postagem preferida por muitos desenvolvedores é usar modelos de exibição em vez de classes de entidade com o model binding. Inclua apenas as propriedades que você deseja atualizar no modelo de exibição. Quando o associador de modelos MVC tiver concluído, copie as propriedades do modelo de exibição para a instância da entidade, opcionalmente usando uma ferramenta como o AutoMapper. Use `_context.Entry` na instância de entidade para definir seu estado como `Unchanged` e, em seguida, defina `Property("PropertyName").IsModified` como verdadeiro em cada propriedade da entidade incluída no modelo de exibição. Esse método funciona nos cenários de edição e criação.
 
 ### <a name="test-the-create-page"></a>Testar a página Criar
 
@@ -187,7 +187,7 @@ Como resultado dessas alterações, a assinatura do método HttpPost `Edit` é a
 
 ### <a name="alternative-httppost-edit-code-create-and-attach"></a>Código HttpPost Edit alternativo: criar e anexar
 
-O código de edição HttpPost recomendado garante que apenas as colunas alteradas sejam atualizadas e preserva os dados nas propriedades que você não deseja incluir para a associação de modelos. No entanto, a abordagem de primeira leitura exige uma leitura de banco de dados extra e pode resultar em um código mais complexo para lidar com conflitos de simultaneidade. Uma alternativa é anexar uma entidade criada pelo associador de modelos ao contexto do EF e marcá-la como modificada. (Não atualize o projeto com esse código; ele é mostrado somente para ilustrar uma abordagem opcional.)
+O código de edição HttpPost recomendado garante que apenas as colunas alteradas sejam atualizadas e preserva os dados nas propriedades que você não deseja incluir para o model binding. No entanto, a abordagem de primeira leitura exige uma leitura de banco de dados extra e pode resultar em um código mais complexo para lidar com conflitos de simultaneidade. Uma alternativa é anexar uma entidade criada pelo associador de modelos ao contexto do EF e marcá-la como modificada. (Não atualize o projeto com esse código; ele é mostrado somente para ilustrar uma abordagem opcional.)
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_CreateAndAttach)]
 

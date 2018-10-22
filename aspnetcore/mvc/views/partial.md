@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/11/2018
 uid: mvc/views/partial
-ms.openlocfilehash: a836ed073dfe769fc3cc0cd0622b17937747928b
-ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
+ms.openlocfilehash: d3d2f55645881dd05f7663e0a9d3e45d6bb6d77f
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601750"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477677"
 ---
 # <a name="partial-views-in-aspnet-core"></a>Exibições parciais no ASP.NET Core
 
@@ -44,7 +44,7 @@ Não use uma exibição parcial em que a lógica de renderização complexa ou a
 
 ## <a name="declare-partial-views"></a>Declarar exibições parciais
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range=">= aspnetcore-2.0"
 
 Uma exibição parcial é um arquivo de marcação *.cshtml* mantido dentro da pasta *Exibições* (MVC) ou *Páginas* (Razor Pages).
 
@@ -52,11 +52,11 @@ No ASP.NET Core MVC, um <xref:Microsoft.AspNetCore.Mvc.ViewResult> do controlado
 
 Ao contrário da exibição do MVC ou renderização de página, uma exibição parcial não executa *_ViewStart.cshtml*. Para obter mais informações sobre *_ViewStart.cshtml*, consulte <xref:mvc/views/layout>.
 
-Nomes de arquivos de exibição parcial geralmente começam com um sublinhado (`_`). Essa convenção de nomenclatura não é obrigatória, mas ajuda a diferenciar visualmente as exibições parciais das exibições e das páginas. Quando o nome do arquivo começar com um sublinhado, o Razor Pages não processará o arquivo de marcação como uma página do Razor Pages, mesmo quando a marcação do arquivo incluir a diretiva `@page`.
+Nomes de arquivos de exibição parcial geralmente começam com um sublinhado (`_`). Essa convenção de nomenclatura não é obrigatória, mas ajuda a diferenciar visualmente as exibições parciais das exibições e das páginas.
 
 ::: moniker-end
 
-::: moniker range="< aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.0"
 
 Uma exibição parcial é um arquivo de marcação *.cshtml* mantido dentro da pasta *Exibições*.
 

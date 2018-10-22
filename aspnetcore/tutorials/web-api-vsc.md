@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/30/2018
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 4ce808ec4241ab2fc3c2fb81c3fdb15dd853cd90
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: b8e5c8b7d3dc04513997997d903295853dd1ff46
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342270"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348423"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-code"></a>Criar uma API Web com o ASP.NET Core e o Visual Studio Code
 
@@ -32,6 +32,8 @@ Há três versões deste tutorial:
 ## <a name="prerequisites"></a>Pré-requisitos
 
 [!INCLUDE[prerequisites](~/includes/net-core-prereqs-vscode.md)]
+
+Consulte [Ajuda do Visual Studio Code](#visual-studio-code-help) para obter dicas sobre como usar o VS Code.
 
 ## <a name="create-the-project"></a>Criar o projeto
 
@@ -57,13 +59,13 @@ Pressione **Depurar** (F5) para compilar e executar o programa. Em um navegador,
 ["value1","value2"]
 ```
 
-Consulte [Ajuda do Visual Studio Code](#visual-studio-code-help) para obter dicas sobre como usar o VS Code.
+
 
 ## <a name="add-support-for-entity-framework-core"></a>Adicionar suporte ao Entity Framework Core
 
 :::moniker range=">= aspnetcore-2.1"
 
-A criação de um novo projeto no ASP.NET Core 2.1 ou posteriores adiciona a referência de pacote [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) ao arquivo *TodoApi.csproj*. Adicione o atributo `Version`, se ainda não tiver sido especificado.
+A criação de um novo projeto no ASP.NET Core 2.1 ou posteriores adiciona a referência de pacote [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.App) ao arquivo *TodoApi.csproj*:
 
 [!code-xml[](first-web-api/samples/2.1/TodoApi/TodoApi.csproj?name=snippet_Metapackage&highlight=2)]
 
