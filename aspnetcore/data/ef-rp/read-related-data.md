@@ -5,12 +5,12 @@ description: Neste tutorial, você lê e exibe dados relacionados – ou seja, o
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: e23b8bb870b329bd705fbc9548df62524303893e
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: e8b59c19eac2c2adc1f13cf1e44f750576686c87
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912313"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348488"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Ler dados relacionados – 6 de 8
 
@@ -55,7 +55,7 @@ Há várias maneiras pelas quais o EF Core pode carregar dados relacionados nas 
 
 * O operador `Select` carrega somente os dados relacionados necessários.
 
-## <a name="create-a-courses-page-that-displays-department-name"></a>Criar uma página Courses que exibe o nome do departamento
+## <a name="create-a-course-page-that-displays-department-name"></a>Criar uma página Course que exibe o nome do departamento
 
 A entidade Course inclui uma propriedade de navegação que contém a entidade `Department`. A entidade `Department` contém o departamento ao qual o curso é atribuído.
 
