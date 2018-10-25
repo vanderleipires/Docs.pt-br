@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: f9a6f1ee1d080732f6a379f5be791c9e225ae0a5
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 161ab3fdf48e58d8c9af991dc5531e46d9c5adff
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911923"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325855"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implementações de servidor Web em ASP.NET Core
 
@@ -62,7 +62,7 @@ Se o aplicativo for exposto à Internet, o Kestrel deverá usar o IIS, o Nginx o
 
 ![O Kestrel se comunica indiretamente com a Internet através de um servidor proxy reverso, tal como o IIS, o Nginx ou o Apache](kestrel/_static/kestrel-to-internet.png)
 
-O motivo mais importante para usar um proxy reverso para implantações de borda (expostas ao tráfego da Internet) é a segurança. As versões 1.x do Kestrel não têm recursos de segurança importantes para proteção contra ataques da Internet. Isso inclui, mas não se limita aos tempos limite, limites de tamanho da solicitação e limites de conexões simultâneas apropriados.
+O motivo mais importante para usar um proxy reverso para implantações de servidores de borda voltados para o público que são expostas diretamente na Internet é a segurança. As versões 1.x do Kestrel não têm recursos de segurança importantes para proteção contra ataques da Internet. Isso inclui, mas não se limita aos tempos limite, limites de tamanho da solicitação e limites de conexões simultâneas apropriados.
 
 Para obter mais informações, consulte [Quando usar Kestrel com um proxy reverso](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
 
@@ -156,7 +156,7 @@ O [HTTP/2](https://httpwg.org/specs/rfc7540.html) é compatível com ASP.NET Cor
   * Estrutura de destino: .NET Core 2.2 ou posterior
 * [IIS (fora do processo)](xref:host-and-deploy/iis/index#http2-support)
   * Windows Server 2016/Windows 10 ou posterior; IIS 10 ou posterior
-  * Conexões do Edge usam HTTP/2, mas a conexão de proxy reverso para Kestrel usa HTTP/1.1.
+  * Conexões de servidor de borda voltadas para o público usam HTTP/2, mas a conexão de proxy reverso para o Kestrel usa HTTP/1.1.
   * Estrutura de destino: não aplicável a implantações IIS fora de processo.
 
 ::: moniker-end
@@ -168,7 +168,7 @@ O [HTTP/2](https://httpwg.org/specs/rfc7540.html) é compatível com ASP.NET Cor
   * Estrutura de destino: não aplicável a implantações de HTTP.sys.
 * [IIS (fora do processo)](xref:host-and-deploy/iis/index#http2-support)
   * Windows Server 2016/Windows 10 ou posterior; IIS 10 ou posterior
-  * Conexões do Edge usam HTTP/2, mas a conexão de proxy reverso para Kestrel usa HTTP/1.1.
+  * Conexões de servidor de borda voltadas para o público usam HTTP/2, mas a conexão de proxy reverso para o Kestrel usa HTTP/1.1.
   * Estrutura de destino: não aplicável a implantações IIS fora de processo.
 
 ::: moniker-end

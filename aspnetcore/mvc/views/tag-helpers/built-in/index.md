@@ -3,23 +3,24 @@ title: Auxiliares de marcação internos do ASP.NET Core
 author: pkellner
 description: Descubra como os auxiliares de marcação internos do ASP.NET Core aumentam sua produtividade.
 ms.author: riande
-ms.date: 09/18/2018
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 5d9425e0b68578c86a6f9a691322e0bb63a860fb
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 58840d6ecd09bd2ae7f96c046a0cb93c018f9645
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292304"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325478"
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 
 Por [Peter Kellner](http://peterkellner.net)
 
-O ASP.NET Core inclui diversos auxiliares de marcação internos para aumentar sua produtividade. Esta seção fornece uma visão geral dos auxiliares de marcação internos.
+Para obter uma visão geral de Auxiliares de marcação, consulte <xref:mvc/views/tag-helpers/intro>.
 
 > [!NOTE]
-> Há auxiliares de marcação internos que não são abordados, pois eles são usados internamente pelo mecanismo de exibição do [Razor](xref:mvc/views/razor). Isso inclui um auxiliar de marcação para o caractere ~, que se expande para o caminho raiz do site.
+> Há Auxiliares de marcação internos, que não são descritos na documentação. Esses Auxiliares de marcação são usados internamente pelo mecanismo de exibição do [Razor](xref:mvc/views/razor). Isso inclui um Auxiliar de marcação para o caractere `~` (til), que se expande para o caminho raiz do site.
 
 ## <a name="built-in-aspnet-core-tag-helpers"></a>Auxiliares de marcação internos do ASP.NET Core
 

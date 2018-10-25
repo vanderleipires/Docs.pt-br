@@ -5,12 +5,12 @@ description: Mostra como criar, ler, atualizar e excluir com o EF Core
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: 31fefc148040d7b65e9b65d6bf19f502ef9de542
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 25493f93daf3fe5e874ad1d06b918196cd1f074d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795558"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912807"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – CRUD – 2 de 8
 
@@ -236,9 +236,9 @@ Exclusão de teste.
 
 ## <a name="common-errors"></a>Erros comuns
 
-Aluno/Índice ou outros links não funcionam:
+Alunos/Índice ou outros links não funcionam:
 
-Verifique se a Página do Razor contém a diretiva `@page` correta. Por exemplo, a página Aluno/Índice do Razor **não** deve conter um modelo de rota:
+Verifique se a Página do Razor contém a diretiva `@page` correta. Por exemplo, a Razor Page Alunos/Índice **não** deve conter um modelo de rota:
 
 ```cshtml
 @page "{id:int}"
