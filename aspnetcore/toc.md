@@ -174,7 +174,7 @@
 #### [Criar auxiliares de marcação](xref:mvc/views/tag-helpers/authoring)
 #### [Usar auxiliares de marcação em formulários](xref:mvc/views/working-with-forms)
 #### [Componentes do Auxiliar de Marca](xref:mvc/views/tag-helpers/th-components)
-#### [Auxiliares de marcação internos](xref:mvc/views/tag-helpers/builtin-th/Index)
+#### Auxiliares de marcação internos
 ##### [Auxiliar de marcação de âncora](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)
 ##### [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 ##### [Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
