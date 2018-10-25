@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 33fae5d87029c8b3afdc321e0247555c1e479d07
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 193bfc7651b6da6db69e8c15bd6beb82906bde0a
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912612"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477664"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injeção de dependência no ASP.NET Core
 
@@ -249,7 +249,7 @@ Os construtores podem aceitar argumentos que não são fornecidos pela injeção
 
 Quando os serviços são resolvidos por `IServiceProvider` ou `ActivatorUtilities`, a injeção do construtor exige um construtor *público*.
 
-Quando os serviços são resolvidos por `ActivatorUtilities`, a injeção de construtor exige a existência apenas de um construtor aplicável. Há suporte para sobrecargas de construtor, mas somente uma sobrecarga pode existir, cujos argumentos podem ser todos atendidos pela injeção de dependência.
+Quando os serviços são resolvidos por `ActivatorUtilities`, a injeção de construtor exige a existência de apenas de um construtor aplicável. Há suporte para sobrecargas de construtor, mas somente uma sobrecarga pode existir, cujos argumentos podem ser todos atendidos pela injeção de dependência.
 
 ## <a name="entity-framework-contexts"></a>Contextos de Entity Framework
 
@@ -287,9 +287,9 @@ As interfaces são implementadas na classe `Operation`. O construtor `Operation`
 
 Há um `OperationService` registrado que depende de cada um dos outros `Operation` tipos. Quando `OperationService` é solicitado por meio da injeção de dependência, ele recebe a uma nova instância de cada serviço, ou uma instância existente com base no tempo de vida do serviço dependente.
 
-* Se os serviços temporários forem criados mediante solicitação, o `OperationsId` do serviço `IOperationTransient` será diferente do `OperationsId` do `OperationService`. `OperationService` recebe uma nova instância da classe `IOperationTransient`. A nova instância produz outro `OperationsId`.
-* Se os serviços com escopo forem criados por solicitação, o `OperationsId` do serviço `IOperationScoped` será o mesmo de `OperationService` dentro de uma solicitação. Em todas as solicitações, os dois serviços compartilham um valor de `OperationsId` diferente.
-* Se os serviços singleton e de instância singleton forem criados uma vez e usados em todas as solicitações e em todos os serviços, o `OperationsId` será constante entre todas as solicitações de serviço.
+* Se os serviços temporários forem criados mediante solicitação, o `OperationId` do serviço `IOperationTransient` será diferente do `OperationId` do `OperationService`. `OperationService` recebe uma nova instância da classe `IOperationTransient`. A nova instância produz outro `OperationId`.
+* Se os serviços com escopo forem criados por solicitação, o `OperationId` do serviço `IOperationScoped` será o mesmo de `OperationService` dentro de uma solicitação. Em todas as solicitações, os dois serviços compartilham um valor de `OperationId` diferente.
+* Se os serviços singleton e de instância singleton forem criados uma vez e usados em todas as solicitações e em todos os serviços, o `OperationId` será constante entre todas as solicitações de serviço.
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -538,7 +538,7 @@ O método de fábrica de um único serviço, como o segundo argumento para [AddS
 
 ## <a name="recommendations"></a>Recomendações
 
-Ao trabalhar com a injeção de dependência, lembre-se das seguintes recomendações:
+* A resolução de serviço baseada em `async/await` e `Task` não é compatível. O C# não é compatível com os construtores assíncronos. Portanto, o padrão recomendado é usar os métodos assíncronos após a resolução síncrona do serviço.
 
 * Evite armazenar dados e a configuração diretamente no contêiner do serviço. Por exemplo, o carrinho de compras de um usuário normalmente não deve ser adicionado ao contêiner do serviço. A configuração deve usar o [padrão de opções](xref:fundamentals/configuration/options). Da mesma forma, evite objetos de "suporte de dados" que existem somente para permitir o acesso a outro objeto. É melhor solicitar o item real por meio da DI.
 
@@ -557,7 +557,6 @@ A DI é uma *alternativa* aos padrões de acesso a objeto estático/global. Talv
 * <xref:mvc/views/dependency-injection>
 * <xref:mvc/controllers/dependency-injection>
 * <xref:security/authorization/dependencyinjection>
-* <xref:fundamentals/repository-pattern>
 * <xref:fundamentals/startup>
 * <xref:test/index>
 * <xref:fundamentals/middleware/extensibility>
