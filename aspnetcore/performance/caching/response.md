@@ -5,12 +5,12 @@ description: Saiba como usar o cache de resposta para reduzir os requisitos de l
 ms.author: riande
 ms.date: 09/20/2017
 uid: performance/caching/response
-ms.openlocfilehash: 4bf61502738d70760679ec98c8f2f303eca9d504
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: bbf5b649bac9d31aa6d0ecdc3828648677b05716
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477483"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090687"
 ---
 # <a name="response-caching-in-aspnet-core"></a>Cache de resposta no ASP.NET Core
 
@@ -68,7 +68,7 @@ Para obter mais informações, consulte [armazenar em Cache na memória](xref:pe
 
 Use um cache distribuído para armazenar dados na memória quando o aplicativo é hospedado em um farm de servidor ou de nuvem. O cache é compartilhado entre os servidores que processam solicitações. Um cliente pode enviar uma solicitação que é tratada por qualquer servidor no grupo se os dados armazenados em cache para o cliente estão disponíveis. ASP.NET Core oferece o SQL Server e os caches distribuído do Redis.
 
-Para obter mais informações, veja [Trabalhar com um cache distribuído](xref:performance/caching/distributed).
+Para obter mais informações, consulte <xref:performance/caching/distributed>.
 
 ### <a name="cache-tag-helper"></a>Auxiliar de marca de cache
 
@@ -230,9 +230,9 @@ Cache-Control: public,max-age=60
 
 * [Armazena as respostas em Caches](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [Cache na memória](xref:performance/caching/memory)
-* [Trabalhar com um cache distribuído](xref:performance/caching/distributed)
-* [Detectar alterações com tokens de alteração](xref:fundamentals/change-tokens)
-* [Middleware de Cache de Resposta](xref:performance/caching/middleware)
-* [Auxiliar de marca de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Auxiliar de marca de cache distribuído](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:fundamentals/change-tokens>
+* <xref:performance/caching/middleware>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>

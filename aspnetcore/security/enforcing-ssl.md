@@ -4,14 +4,14 @@ author: rick-anderson
 description: Aprenda a exigir HTTPS/TLS em um aplicativo web ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/11/2018
+ms.date: 10/18/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: b4c058d3b4f00276043d9520d756e62ed8cac5d9
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: a5359fe49e71ab59b47a8a5a39e7b806ad308235
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325595"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090961"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>Impor HTTPS no ASP.NET Core
 
@@ -30,16 +30,17 @@ Nenhuma API pode impedir que um cliente envie dados confidenciais na primeira so
 > * Não realizar a escuta em HTTP.
 > * Feche a conexão com o código de status 400 (solicitação incorreta) e não atender à solicitação.
 
-<a name="require"></a>
-
 ## <a name="require-https"></a>Exigir HTTPS
 
 ::: moniker range=">= aspnetcore-2.1"
 
-É recomendável toda a produção de ASP.NET Core, chamada de aplicativos web:
+É recomendável que produção do ASP.NET Core chamada de aplicativos web:
 
-* O Middleware de redirecionamento de HTTPS ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection)) para redirecionar todas as solicitações HTTP para HTTPS.
-* [UseHsts](#hsts), protocolo de segurança de transporte estrito HTTP (HSTS).
+* Middleware de redirecionamento de HTTPS (<xref:Microsoft.AspNetCore.Builder.HttpsPolicyBuilderExtensions.UseHttpsRedirection*>) para redirecionar solicitações HTTP para HTTPS.
+* Middleware HSTS ([UseHsts](#http-strict-transport-security-protocol-hsts)) para enviar cabeçalhos de protocolo de segurança de transporte estrito (HSTS) HTTP aos clientes.
+
+> [!NOTE]
+> Aplicativos implantados em uma configuração de proxy reverso permitem que o proxy lidar com a segurança de conexão (HTTPS). Se o proxy também manipula o redirecionamento de HTTPS, não é necessário usar o Middleware de redirecionamento de HTTPS. Se o servidor proxy também manipula a HSTS cabeçalhos de gravação (por exemplo, [dar suporte a HSTS nativos no IIS 10.0 (1709) ou posterior](/iis/get-started/whats-new-in-iis-10-version-1709/iis-10-version-1709-hsts#iis-100-version-1709-native-hsts-support)), Middleware HSTS não é necessário para o aplicativo. Para obter mais informações, consulte [Opt-out de HTTPS/HSTS na criação do projeto](#opt-out-of-httpshsts-on-project-creation).
 
 ### <a name="usehttpsredirection"></a>UseHttpsRedirection
 
@@ -52,26 +53,54 @@ O código realçado anterior:
 * Usa o padrão [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) ([Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect)).
 * Usa o padrão [HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport) (null), a menos que substituído pela `ASPNETCORE_HTTPS_PORT` variável de ambiente ou [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature).
 
-É recomendável usar redirecionamentos temporários em vez de redirecionamentos permanentes, como cache de link pode causar um comportamento instável em ambientes de desenvolvimento. É recomendável usar [HSTS](#hsts) para sinalizar para os clientes que proteger somente o recurso deve ser redirecionada para o aplicativo (somente em produção).
+É recomendável usar redirecionamentos temporários em vez de redirecionamentos permanentes. Cache de link pode causar um comportamento instável em ambientes de desenvolvimento. Se você preferir enviar um código de status de redirecionamento permanente quando o aplicativo estiver em um ambiente de não desenvolvimento, consulte o [configurar redirecionamentos permanentes em produção](#configure-permanent-redirects-in-production) seção. É recomendável usar [HSTS](#http-strict-transport-security-protocol-hsts) para sinalizar para os clientes que proteger somente o recurso deve ser redirecionada para o aplicativo (somente em produção).
 
-> [!WARNING]
-> Uma porta deve estar disponível para o middleware redirecionar para HTTPS. Se nenhuma porta estiver disponível, o redirecionamento de HTTPS não ocorre. A porta HTTPS pode ser especificada usando qualquer uma das seguintes abordagens:
->
-> * Definir `HttpsRedirectionOptions.HttpsPort`.
-> * Definir a variável de ambiente `ASPNETCORE_HTTPS_PORT`.
-> * No desenvolvimento, defina uma URL HTTPS *launchsettings. JSON*.
-> * Configurar um ponto de extremidade de URL HTTPS para [Kestrel](xref:fundamentals/servers/kestrel) ou [HTTP. sys](xref:fundamentals/servers/httpsys).
->
-> Quando o Kestrel ou HTTP. sys é usado como um servidor de borda para o público, o Kestrel ou HTTP. sys deve ser configurado para escutar em ambos:
->
-> * A porta segura em que o cliente é redirecionado (normalmente, 443 em 5001 no desenvolvimento e produção).
-> * A porta não segura (normalmente, 80 na produção) e 5000 no desenvolvimento.
->
-> A porta não segura deve estar acessível pelo cliente para que o aplicativo para receber uma solicitação não segura e redirecioná-la para a porta segura.
->
-> Qualquer firewall entre o cliente e o servidor também deve ter as portas abertas para o tráfego.
->
-> Para obter mais informações, consulte [configuração de ponto de extremidade do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration) ou <xref:fundamentals/servers/httpsys>.
+### <a name="port-configuration"></a>Configuração de porta
+
+Uma porta deve estar disponível para o middleware redirecionar uma solicitação não segura para HTTPS. Se nenhuma porta estiver disponível:
+
+* Redirecionamento de HTTPS não ocorre.
+* O middleware registra o aviso "Falha ao determinar a porta https para redirecionamento."
+
+Especifique a porta HTTPS usando qualquer uma das seguintes abordagens:
+
+* Definir [HttpsRedirectionOptions.HttpsPort](#options).
+* Defina as `ASPNETCORE_HTTPS_PORT` variável de ambiente ou [definição de configuração do Host da Web https_port](xref:fundamentals/host/web-host#https-port):
+
+  **Chave**: `https_port`  
+  **Tipo**: *string*  
+  **Padrão**: um valor padrão não está definido.  
+  **Definido usando**: `UseSetting`  
+  **Variável de ambiente**: `<PREFIX_>HTTPS_PORT` (é o prefixo `ASPNETCORE_` ao usar os [Host Web](xref:fundamentals/host/web-host).)
+
+  Ao configurar uma <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder> em `Program`:
+
+  [!code-csharp[](enforcing-ssl/sample-snapshot/Program.cs?name=snippet_Program&highlight=10)]
+* Indicar uma porta com o esquema segura usando o `ASPNETCORE_URLS` variável de ambiente. A variável de ambiente configura o servidor. O middleware indiretamente descobre a porta HTTPS por meio de <xref:Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature>. (Faz **não** funcionam em implantações de proxy reverso.)
+* No desenvolvimento, defina uma URL HTTPS *launchsettings. JSON*. Habilite HTTPS quando o IIS Express é usado.
+* Configurar um ponto de extremidade de URL HTTPS para uma implantação de borda para o público do [Kestrel](xref:fundamentals/servers/kestrel) ou [HTTP. sys](xref:fundamentals/servers/httpsys). Somente **uma porta HTTPS** é usado pelo aplicativo. O middleware descobre a porta por meio de <xref:Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature>.
+
+> [!NOTE]
+> Quando um aplicativo é executado atrás de um proxy reverso (por exemplo, IIS, IIS Express), `IServerAddressesFeature` não está disponível. A porta deve ser configurada manualmente. Quando a porta não for definida, as solicitações não são redirecionadas.
+
+Quando o Kestrel ou HTTP. sys é usado como um servidor de borda para o público, o Kestrel ou HTTP. sys deve ser configurado para escutar em ambos:
+
+* A porta segura em que o cliente é redirecionado (normalmente, 443 em 5001 no desenvolvimento e produção).
+* A porta não segura (normalmente, 80 na produção) e 5000 no desenvolvimento.
+
+A porta não segura deve estar acessível pelo cliente para que o aplicativo para receber uma solicitação não segura e redirecionar o cliente para a porta segura.
+
+Para obter mais informações, consulte [configuração de ponto de extremidade do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration) ou <xref:fundamentals/servers/httpsys>.
+
+### <a name="deployment-scenarios"></a>Cenários de implantação
+
+Qualquer firewall entre o cliente e o servidor também deve ter as portas de comunicação aberto para o tráfego.
+
+Se as solicitações são encaminhadas em uma configuração de proxy reverso, use [Middleware de cabeçalhos encaminhados](xref:host-and-deploy/proxy-load-balancer) antes de chamar Middleware de redirecionamento de HTTPS. Encaminhado atualizações de Middleware de cabeçalhos a `Request.Scheme`, usando o `X-Forwarded-Proto` cabeçalho. O middleware permite redirecionar URIs e outras políticas de segurança para funcionar corretamente. Quando o Middleware de cabeçalhos encaminhados não for usado, o aplicativo de back-end não pode receber o esquema correto e acabar em um loop de redirecionamento. Uma mensagem de erro comuns do usuário final é que muitos redirecionamentos ocorreram.
+
+Ao implantar o serviço de aplicativo do Azure, siga as orientações [Tutorial: associar um certificado SSL personalizado existente a aplicativos Web do Azure](/azure/app-service/app-service-web-tutorial-custom-ssl).
+
+### <a name="options"></a>Opções
 
 O seguinte realçado código chama [AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection) para configurar as opções de middleware:
 
@@ -81,49 +110,35 @@ Chamando `AddHttpsRedirection` só é necessário alterar os valores de `HttpsPo
 
 O código realçado anterior:
 
-* Conjuntos [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) à [Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect), que é o valor padrão. Use os campos do [StatusCodes](/dotnet/api/microsoft.aspnetcore.http.statuscodes) classe atribuições para `RedirectStatusCode`.
+* Conjuntos [HttpsRedirectionOptions.RedirectStatusCode](xref:Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionOptions.RedirectStatusCode*) para <xref:Microsoft.AspNetCore.Http.StatusCodes.Status307TemporaryRedirect>, que é o valor padrão. Use os campos do <xref:Microsoft.AspNetCore.Http.StatusCodes> classe atribuições para `RedirectStatusCode`.
 * Define a porta HTTPS para 5001. O valor padrão é 443.
 
-Os seguintes mecanismos de definir a porta automaticamente:
+#### <a name="configure-permanent-redirects-in-production"></a>Configurar redirecionamentos permanentes em produção
 
-* O middleware pode descobrir as portas por meio [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature) quando as condições a seguir se aplicam:
+O middleware usará como padrão para envio de uma [Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect) com todos os redirecionamentos. Se você preferir enviar um código de status de redirecionamento permanente quando o aplicativo estiver em um ambiente de não desenvolvimento, encapsule a configuração de opções de middleware em uma verificação condicional para um ambiente de desenvolvimento não.
 
-  * O kestrel ou HTTP. sys é usada diretamente com pontos de extremidade HTTPS (também se aplica a execução do aplicativo com o depurador do Visual Studio Code).
-  * Somente **uma porta HTTPS** é usado pelo aplicativo.
-
-* O Visual Studio é usado:
-
-  * O IIS Express tem habilitadas para HTTPS.
-  * *launchsettings. JSON* define o `sslPort` para o IIS Express.
-
-> [!NOTE]
-> Quando um aplicativo é executado atrás de um proxy reverso (por exemplo, IIS, IIS Express), `IServerAddressesFeature` não está disponível. A porta deve ser configurada manualmente. Quando a porta não for definida, as solicitações não são redirecionadas.
-
-A porta pode ser configurada definindo a [definição de configuração do Host da Web https_port](xref:fundamentals/host/web-host#https-port):
-
-**Chave**: https_port  
-**Tipo**: *string*  
-**Padrão**: um valor padrão não está definido.  
-**Definido usando**: `UseSetting`  
-**Variável de ambiente**: `<PREFIX_>HTTPS_PORT` (o prefixo é `ASPNETCORE_` ao usar o Host da Web.)
+Ao configurar uma `IWebHostBuilder` na *Startup.cs*:
 
 ```csharp
-WebHost.CreateDefaultBuilder(args)
-    .UseSetting("https_port", "8080")
+public void ConfigureServices(IServiceCollection services)
+{
+    // IHostingEnvironment (stored in _env) is injected into the Startup class.
+    if (!_env.IsDevelopment())
+    {
+        services.AddHttpsRedirection(options =>
+        {
+            options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+            options.HttpsPort = 443;
+        });
+    }
+}
 ```
 
-> [!NOTE]
-> A porta pode ser configurada indiretamente, definindo a URL com o `ASPNETCORE_URLS` variável de ambiente. A variável de ambiente configura o servidor e, em seguida, o middleware indiretamente descobre a porta HTTPS por meio de `IServerAddressesFeature`.
+## <a name="https-redirection-middleware-alternative-approach"></a>Abordagem alternativa de Middleware de redirecionamento de HTTPS
 
-Se nenhuma porta for definida:
+Uma alternativa ao uso de Middleware de redirecionamento de HTTPS (`UseHttpsRedirection`) é usar o Middleware de reconfiguração de URL (`AddRedirectToHttps`). `AddRedirectToHttps` também pode definir o código de status e a porta quando o redirecionamento é executado. Para obter mais informações, consulte [Middleware de reconfiguração de URL](xref:fundamentals/url-rewriting).
 
-* As solicitações não são redirecionadas.
-* O middleware registra o aviso "Falha ao determinar a porta https para redirecionamento."
-
-> [!NOTE]
-> Uma alternativa ao uso de Middleware de redirecionamento de HTTPS (`UseHttpsRedirection`) é usar o Middleware de reconfiguração de URL (`AddRedirectToHttps`). `AddRedirectToHttps` também pode definir o código de status e a porta quando o redirecionamento é executado. Para obter mais informações, consulte [Middleware de reconfiguração de URL](xref:fundamentals/url-rewriting).
->
-> Ao redirecionar para HTTPS sem a necessidade de regras de redirecionamento adicional, é recomendável usar o Middleware de redirecionamento de HTTPS (`UseHttpsRedirection`) descrito neste tópico.
+Ao redirecionar para HTTPS sem a necessidade de regras de redirecionamento adicional, é recomendável usar o Middleware de redirecionamento de HTTPS (`UseHttpsRedirection`) descrito neste tópico.
 
 ::: moniker-end
 
@@ -145,8 +160,6 @@ Exigir HTTPS globalmente (`options.Filters.Add(new RequireHttpsAttribute());`) �
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<a name="hsts"></a>
-
 ## <a name="http-strict-transport-security-protocol-hsts"></a>Protocolo de segurança de transporte estrito HTTP (HSTS)
 
 Por [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [segurança de transporte estrito HTTP (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) é um aprimoramento de segurança opcional é especificado por um aplicativo web com o uso de um cabeçalho de resposta. Quando um [navegador que ofereça suporte a HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support) recebe esse cabeçalho:
@@ -166,7 +179,7 @@ ASP.NET Core 2.1 ou posterior implementa HSTS com o `UseHsts` método de extens�
 
 `UseHsts` não é recomendado em desenvolvimento porque as configurações de HSTS são altamente armazenáveis em cache por navegadores. Por padrão, `UseHsts` exclui o endereço de loopback local.
 
-Para ambientes de produção implementando HTTPS pela primeira vez, defina o valor inicial de HSTS para um valor pequeno. Defina o valor de horas como não mais do que um único dia caso você precise reverter a infraestrutura HTTPS para HTTP. Depois que você estiver confiante em sustentabilidade da configuração do HTTPS, aumente o valor de idade máxima HSTS; um valor comumente usado é um ano. 
+Para ambientes de produção implementando HTTPS pela primeira vez, definir inicial [HstsOptions.MaxAge](xref:Microsoft.AspNetCore.HttpsPolicy.HstsOptions.MaxAge*) com um valor pequeno usando um do <xref:System.TimeSpan> métodos. Defina o valor de horas como não mais do que um único dia caso você precise reverter a infraestrutura HTTPS para HTTP. Depois que você estiver confiante em sustentabilidade da configuração do HTTPS, aumente o valor de idade máxima HSTS; um valor comumente usado é um ano.
 
 O código a seguir:
 
@@ -183,17 +196,13 @@ O código a seguir:
 * `127.0.0.1` : O endereço de loopback do IPv4.
 * `[::1]` : O endereço de loopback do IPv6.
 
-O exemplo anterior mostra como adicionar outros hosts.
-
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<a name="https"></a>
-
 ## <a name="opt-out-of-httpshsts-on-project-creation"></a>Recusa de HTTPS/HSTS na criação do projeto
 
-Em alguns cenários de serviço de back-end em que a segurança de conexão é manipulada na borda da rede para o público, configurando a segurança de conexão em cada nó não é necessária. Aplicativos gerados a partir de modelos no Visual Studio ou na Web a [dotnet new](/dotnet/core/tools/dotnet-new) comando enable [redirecionamento a HTTPS](#require) e [HSTS](#hsts). Para implantações que não exigem esses cenários, você pode recusar HTTPS/HSTS quando o aplicativo é criado a partir do modelo.
+Em alguns cenários de serviço de back-end em que a segurança de conexão é manipulada na borda da rede para o público, configurando a segurança de conexão em cada nó não é necessária. Aplicativos gerados a partir de modelos no Visual Studio ou na Web a [dotnet new](/dotnet/core/tools/dotnet-new) comando enable [redirecionamento a HTTPS](#require-https) e [HSTS](#http-strict-transport-security-protocol-hsts). Para implantações que não exigem esses cenários, você pode recusar HTTPS/HSTS quando o aplicativo é criado a partir do modelo.
 
 A recusa de HTTPS/HSTS:
 
@@ -201,7 +210,7 @@ A recusa de HTTPS/HSTS:
 
 Desmarque a **configurar para HTTPS** caixa de seleção.
 
-![Diagrama de entidade](enforcing-ssl/_static/out.png)
+![Novo aplicativo Web ASP.NET Core caixa de diálogo mostrando a configurar para HTTPS caixa de seleção desmarcada.](enforcing-ssl/_static/out.png)
 
 #   <a name="net-core-clitabnetcore-cli"></a>[CLI do .NET Core](#tab/netcore-cli) 
 
@@ -225,4 +234,8 @@ Ver [esse problema de GitHub](https://github.com/aspnet/Docs/issues/6199).
 
 ## <a name="additional-information"></a>Informações adicionais
 
+* <xref:host-and-deploy/proxy-load-balancer>
+* [Hospedar o ASP.NET Core no Linux com o Apache: configuração de SSL](xref:host-and-deploy/linux-apache#ssl-configuration)
+* [Hospedar o ASP.NET Core no Linux com Nginx: configuração de SSL](xref:host-and-deploy/linux-nginx#configure-ssl)
+* [Como configurar o SSL no IIS](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis)
 * [Suporte a navegador HSTS OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support)

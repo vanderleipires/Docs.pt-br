@@ -3,18 +3,19 @@ title: DevOps com o ASP.NET Core e o Azure | Ferramentas e downloads
 author: CamSoper
 description: Um guia que fornece orientação de ponta a ponta sobre a criação de um pipeline de DevOps para um aplicativo ASP.NET Core hospedado no Azure.
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: 5529068b83db475315784571fbf4151d7ecd0d5d
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 573e257e6fc7614010a8749ff439f16011c2c10a
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340154"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089368"
 ---
 # <a name="tools-and-downloads"></a>Ferramentas e downloads
 
-O Azure tem várias interfaces para provisionamento e gerenciamento de recursos, como o [portal do Azure](https://portal.azure.com), [CLI do Azure](https://docs.microsoft.com/cli/azure/), [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview), [nuvem do Azure Shell](https://shell.azure.com/bash)e o Visual Studio. Este guia usa uma abordagem minimalista e usa o Azure Cloud Shell sempre que possível para reduzir as etapas necessárias. No entanto, o portal do Azure deve ser usado para algumas partes.
+O Azure tem várias interfaces para provisionamento e gerenciamento de recursos, como o [portal do Azure](https://portal.azure.com), [CLI do Azure](/cli/azure/), [Azure PowerShell](/powershell/azure/overview), [nuvem do Azure Shell](https://shell.azure.com/bash)e o Visual Studio. Este guia usa uma abordagem minimalista e usa o Azure Cloud Shell sempre que possível para reduzir as etapas necessárias. No entanto, o portal do Azure deve ser usado para algumas partes.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -39,7 +40,7 @@ As ferramentas a seguir são necessárias:
 
 * [Visual Studio](https://www.visualstudio.com/)do robustas ferramentas do Azure fornecem uma interface gráfica para a maioria das funcionalidades descritas neste guia. Qualquer edição do Visual Studio funcionará, incluindo o Visual Studio Community Edition gratuito. Os tutoriais são gravados para demonstrar o desenvolvimento, implantação e operações de desenvolvimento com e sem o Visual Studio.
 
-  Confirme se o Visual Studio tem o seguinte [cargas de trabalho](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) instalado:
+  Confirme se o Visual Studio tem o seguinte [cargas de trabalho](/visualstudio/install/modify-visual-studio) instalado:
 
   * Desenvolvimento do ASP.NET e para a Web
   * Desenvolvimento do Azure

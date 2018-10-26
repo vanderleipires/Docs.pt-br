@@ -3,14 +3,15 @@ title: DevOps com o ASP.NET Core e o Azure | Próximas etapas
 author: CamSoper
 description: Um guia que fornece orientação de ponta a ponta sobre a criação de um pipeline de DevOps para um aplicativo ASP.NET Core hospedado no Azure.
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/next-steps
-ms.openlocfilehash: 7a0f1b1b56a33b1870e0657d8ba465adb84f5a02
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: b82e7251b507f8d141930673d50722cfaa576db5
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42909055"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089871"
 ---
 # <a name="next-steps"></a>Próximas etapas
 
@@ -20,26 +21,26 @@ Além de hospedagem na web e DevOps, o Azure tem uma ampla gama de serviços de 
 
 ## <a name="storage-and-databases"></a>Armazenamento e bancos de dados
 
-[Cache redis](https://docs.microsoft.com/azure/redis-cache/) está disponível como um serviço de cache de dados de alta taxa de transferência e baixa latência. Ele pode ser usado para armazenamento em cache de saída de página, reduzindo as solicitações de banco de dados e fornecendo o estado de sessão do ASP.NET Core em várias instâncias de um aplicativo.
+[Cache redis](/azure/redis-cache/) está disponível como um serviço de cache de dados de alta taxa de transferência e baixa latência. Ele pode ser usado para armazenamento em cache de saída de página, reduzindo as solicitações de banco de dados e fornecendo o estado de sessão do ASP.NET Core em várias instâncias de um aplicativo.
 
-[O armazenamento do Azure](https://docs.microsoft.com/azure/storage/) é armazenamento em nuvem altamente escalonável do Azure. Os desenvolvedores podem aproveitar [armazenamento de filas](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction) para enfileiramento de mensagens confiável, e [armazenamento de tabelas](https://docs.microsoft.com/azure/storage/tables/table-storage-overview) é um repositório de chave-valor NoSQL projetado para rápido desenvolvimento usando conjuntos de dados grandes e semi-estruturados.
+[O armazenamento do Azure](/azure/storage/) é armazenamento em nuvem altamente escalonável do Azure. Os desenvolvedores podem aproveitar [armazenamento de filas](/azure/storage/queues/storage-queues-introduction) para enfileiramento de mensagens confiável, e [armazenamento de tabelas](/azure/storage/tables/table-storage-overview) é um repositório de chave-valor NoSQL projetado para rápido desenvolvimento usando conjuntos de dados grandes e semi-estruturados.
 
-[Banco de dados SQL do Azure](https://docs.microsoft.com/azure/sql-database/) fornece a funcionalidade de banco de dados relacional conhecida como um serviço usando o mecanismo do Microsoft SQL Server.
+[Banco de dados SQL do Azure](/azure/sql-database/) fornece a funcionalidade de banco de dados relacional conhecida como um serviço usando o mecanismo do Microsoft SQL Server.
 
-[O cosmos DB](https://docs.microsoft.com/azure/cosmos-db/) serviço de banco de dados NoSQL multimodelo, distribuído globalmente. Várias APIs estão disponíveis, incluindo MongoDB, Cassandra e API do SQL (anteriormente chamado de DocumentDB).
+[O cosmos DB](/azure/cosmos-db/) serviço de banco de dados NoSQL multimodelo, distribuído globalmente. Várias APIs estão disponíveis, incluindo MongoDB, Cassandra e API do SQL (anteriormente chamado de DocumentDB).
 
 ## <a name="identity"></a>Identidade
 
-[O Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) e [Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c/) são ambos os serviços de identidade. O Azure Active Directory foi projetado para cenários empresariais e permite a colaboração do Azure AD B2B (business-to-business), enquanto o Azure Active Directory B2C é pretendidos cenários de negócios para o cliente, incluindo rede social entrar.
+[O Azure Active Directory](/azure/active-directory/) e [Azure Active Directory B2C](/azure/active-directory-b2c/) são ambos os serviços de identidade. O Azure Active Directory foi projetado para cenários empresariais e permite a colaboração do Azure AD B2B (business-to-business), enquanto o Azure Active Directory B2C é pretendidos cenários de negócios para o cliente, incluindo rede social entrar.
 
 ## <a name="mobile"></a>Celular
 
-[Os Hubs de notificação](https://docs.microsoft.com/azure/notification-hubs/) é um mecanismo de notificação por push multiplataforma e dimensionável para enviar rapidamente milhões de mensagens para aplicativos em execução em vários tipos de dispositivos.
+[Os Hubs de notificação](/azure/notification-hubs/) é um mecanismo de notificação por push multiplataforma e dimensionável para enviar rapidamente milhões de mensagens para aplicativos em execução em vários tipos de dispositivos.
 
 ## <a name="web-infrastructure"></a>Infraestrutura da Web
 
-[O serviço de contêiner do Azure](https://docs.microsoft.com/azure/aks/) gerencia seu ambiente Kubernetes hospedado, tornando rápido e fácil de implantar e gerenciar aplicativos em contêineres sem conhecimento de orquestração de contêiner.
+[O serviço de contêiner do Azure](/azure/aks/) gerencia seu ambiente Kubernetes hospedado, tornando rápido e fácil de implantar e gerenciar aplicativos em contêineres sem conhecimento de orquestração de contêiner.
 
-[O Azure Search](https://docs.microsoft.com/azure/search/) é usado para criar uma solução de pesquisa empresarial sobre conteúdo privada e heterogênea.
+[O Azure Search](/azure/search/) é usado para criar uma solução de pesquisa empresarial sobre conteúdo privada e heterogênea.
 
-[O Service Fabric](https://docs.microsoft.com/azure/service-fabric/) é uma plataforma de sistemas distribuídos que torna mais fácil empacotar, implantar e gerenciar escalonável e confiáveis microsserviços e contêineres.
+[O Service Fabric](/azure/service-fabric/) é uma plataforma de sistemas distribuídos que torna mais fácil empacotar, implantar e gerenciar escalonável e confiáveis microsserviços e contêineres.

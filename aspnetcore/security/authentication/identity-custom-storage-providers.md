@@ -3,14 +3,15 @@ title: Provedores de armazenamento personalizados para ASP.NET Core Identity
 author: ardalis
 description: Saiba como configurar provedores de armazenamento personalizados para ASP.NET Core Identity.
 ms.author: riande
-ms.date: 09/17/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: e206cf584d92a17d61676d71abc6fb577ae63453
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: b10731261ca0c748548fcba94a229ba055d46eb5
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477612"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090830"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Provedores de armazenamento personalizados para ASP.NET Core Identity
 
@@ -24,7 +25,7 @@ O ASP.NET Core Identity é um sistema extensível que permite que você crie um 
 
 Por padrão, o sistema de identidade do ASP.NET Core armazena informações de usuário em um banco de dados do SQL Server usando o Entity Framework Core. Para muitos aplicativos, essa abordagem funciona bem. No entanto, você pode preferir usar um mecanismo de persistência diferente ou esquema de dados. Por exemplo:
 
-* Você usa [Azure Table Storage](https://docs.microsoft.com/azure/storage/) ou outro armazenamento de dados.
+* Você usa [Azure Table Storage](/azure/storage/) ou outro armazenamento de dados.
 * As tabelas de banco de dados têm uma estrutura diferente. 
 * Talvez você queira usar uma abordagem de acesso de dados diferentes, como [Dapper](https://github.com/StackExchange/Dapper). 
 
@@ -146,27 +147,27 @@ Dentro de `UserStore` classe, que você usar as classes de acesso de dados que v
 
 ### <a name="interfaces-to-implement-when-customizing-user-store"></a>Interfaces a serem implementadas durante a personalização armazenamento de usuário
 
-- **IUserStore**  
+* **IUserStore**  
  O [IUserStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserstore-1) interface é a única interface, você deve implementar no repositório do usuário. Define métodos para criar, atualizar, excluir e recuperar os usuários.
-- **IUserClaimStore**  
+* **IUserClaimStore**  
  O [IUserClaimStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserclaimstore-1) interface define os métodos a implementar para habilitar declarações do usuário. Ela contém métodos para adicionar, remover e recuperando as declarações de usuário.
-- **IUserLoginStore**  
+* **IUserLoginStore**  
  O [IUserLoginStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserloginstore-1) define os métodos a implementar para habilitar provedores de autenticação externa. Ela contém métodos para adicionar, remover e recuperar os logons de usuário e um método para recuperar um usuário com base nas informações de logon.
-- **IUserRoleStore**  
+* **IUserRoleStore**  
  O [IUserRoleStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserrolestore-1) interface define os métodos a implementar para mapear um usuário a uma função. Ela contém métodos para adicionar, remover e recuperar funções de usuário e um método para verificar se um usuário está atribuído a uma função.
-- **IUserPasswordStore**  
+* **IUserPasswordStore**  
  O [IUserPasswordStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserpasswordstore-1) interface define os métodos a implementar para persistir as senhas hash. Ela contém métodos para obter e definir a senha de hash e um método que indica se o usuário tiver definido uma senha.
-- **IUserSecurityStampStore**  
+* **IUserSecurityStampStore**  
  O [IUserSecurityStampStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iusersecuritystampstore-1) interface define os métodos a implementar para usar um carimbo de segurança para que indica se as informações da conta do usuário foi alterado. Esse carimbo é atualizado quando um usuário altera a senha ou adiciona ou remove logons. Ela contém métodos para obter e definir o carimbo de segurança.
-- **IUserTwoFactorStore**  
+* **IUserTwoFactorStore**  
  O [IUserTwoFactorStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iusertwofactorstore-1) interface define os métodos a implementar para dar suporte à autenticação de dois fatores. Ela contém métodos para obter e definir se a autenticação de dois fatores é ativada para um usuário.
-- **IUserPhoneNumberStore**  
+* **IUserPhoneNumberStore**  
  O [IUserPhoneNumberStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserphonenumberstore-1) interface define os métodos a implementar para armazenar números de telefone do usuário. Ela contém métodos para obter e definir o número de telefone e se o número de telefone foi confirmado.
-- **IUserEmailStore**  
+* **IUserEmailStore**  
  O [IUserEmailStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuseremailstore-1) interface define os métodos a implementar para armazenar endereços de email do usuário. Ela contém métodos para obter e definir o endereço de email e se o email for confirmado.
-- **IUserLockoutStore**  
+* **IUserLockoutStore**  
  O [IUserLockoutStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserlockoutstore-1) interface define os métodos a implementar para armazenar informações sobre como bloquear uma conta. Ela contém métodos para controlar as tentativas de acesso com falha e bloqueios.
-- **IQueryableUserStore**  
+* **IQueryableUserStore**  
  O [IQueryableUserStore&lt;TUser&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1) interface define os membros que você pode implementar para fornecer um repositório de usuários que podem ser consultados.
 
 Você pode implementar apenas as interfaces que são necessários em seu aplicativo. Por exemplo:
@@ -199,9 +200,9 @@ A seguir está um exemplo de classe de função:
 
 Você pode criar um `RoleStore` classe que fornece os métodos para todas as operações de dados em funções. Essa classe é equivalente a [alteração do RoleStore&lt;TRole&gt; ](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1) classe. No `RoleStore` classe, você implementa o `IRoleStore<TRole>` e, opcionalmente, o `IQueryableRoleStore<TRole>` interface.
 
-- **IRoleStore&lt;TRole&gt;**  
+* **IRoleStore&lt;TRole&gt;**  
  O [IRoleStore&lt;TRole&gt; ](/dotnet/api/microsoft.aspnetcore.identity.irolestore-1) interface define os métodos a implementar na classe de repositório de função. Ela contém métodos para criar, atualizar, excluir e recuperar funções.
-- **RoleStore&lt;TRole&gt;**  
+* **RoleStore&lt;TRole&gt;**  
  Para personalizar `RoleStore`, crie uma classe que implementa o `IRoleStore<TRole>` interface. 
 
 ## <a name="reconfigure-app-to-use-a-new-storage-provider"></a>Reconfigurar o aplicativo para usar um novo provedor de armazenamento
@@ -237,5 +238,5 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="references"></a>Referências
 
-- [Provedores de armazenamento personalizados para a identidade do ASP.NET 4.x](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
-- [ASP.NET Core Identity](https://github.com/aspnet/identity) -esse repositório inclui links para a comunidade mantida provedores de armazenamento.
+* [Provedores de armazenamento personalizados para a identidade do ASP.NET 4.x](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
+* [ASP.NET Core Identity](https://github.com/aspnet/identity) &ndash; neste repositório inclui links para a comunidade mantida provedores de armazenamento.

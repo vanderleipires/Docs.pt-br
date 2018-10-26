@@ -3,14 +3,14 @@ title: DevOps com o ASP.NET Core e o Azure | Integração contínua e implantaç
 author: CamSoper
 description: Um guia que fornece orientação de ponta a ponta sobre a criação de um pipeline de DevOps para um aplicativo ASP.NET Core hospedado no Azure.
 ms.author: scaddie
-ms.date: 08/17/2018
+ms.date: 10/24/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: 0bfe1545da4c0778055d7c81c1588d3267d2e711
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 18a59a1ff6fd6bbf51ff664764725b8972dfa1bf
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340102"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090507"
 ---
 # <a name="continuous-integration-and-deployment"></a>Integração contínua e implantação
 
@@ -230,7 +230,7 @@ A definição de compilação **tarefas** guia lista as etapas individuais que e
     > [!NOTE]
     > Para verificar se o trabalho de testes de unidade, modifique *SimpleFeedReader.Tests\Services\NewsServiceTests.cs* propositadamente quebrar um dos testes. Por exemplo, altere `Assert.True(result.Count > 0);` à `Assert.False(result.Count > 0);` no `Returns_News_Stories_Given_Valid_Uri` método. Confirme e envie a alteração ao GitHub. A compilação é disparada e falha. O status do pipeline de compilação muda para **falha**. Reverta a alteração, a confirmação e o envio por push novamente. A compilação for bem-sucedida.
 
-1. **Publique** &mdash; executa o `dotnet publish --configuration release --output <local_path_on_build_agent>` comando para produzir uma *. zip* arquivo com os artefatos a serem implantados. O `--output` opção especifica o local de publicação do *. zip* arquivo. Se o local é especificado passando um [variável predefinida](https://docs.microsoft.com/vsts/pipelines/build/variables) denominado `$(build.artifactstagingdirectory)`. Essa variável se expande para um caminho local, como *c:\agent\_work\1\a*, no agente de compilação.
+1. **Publique** &mdash; executa o `dotnet publish --configuration release --output <local_path_on_build_agent>` comando para produzir uma *. zip* arquivo com os artefatos a serem implantados. O `--output` opção especifica o local de publicação do *. zip* arquivo. Se o local é especificado passando um [variável predefinida](/azure/devops/pipelines/build/variables) denominado `$(build.artifactstagingdirectory)`. Essa variável se expande para um caminho local, como *c:\agent\_work\1\a*, no agente de compilação.
 1. **Publicar artefato** &mdash; Publishes as *. zip* produzido pelo arquivo o **publicar** tarefa. A tarefa aceita o *. zip* local como um parâmetro, que é a variável predefinida do arquivo `$(build.artifactstagingdirectory)`. O *. zip* arquivo é publicado como uma pasta chamada *drop*.
 
 Clique na definição de compilação **resumo** link para exibir um histórico das compilações com a definição:

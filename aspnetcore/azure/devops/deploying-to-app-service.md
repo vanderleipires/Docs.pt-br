@@ -3,18 +3,19 @@ title: DevOps com o ASP.NET Core e o Azure | Implantar um aplicativo de serviço
 author: CamSoper
 description: Um guia que fornece orientação de ponta a ponta sobre a criação de um pipeline de DevOps para um aplicativo ASP.NET Core hospedado no Azure.
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: 710e65a048fdc062219e90b0db323e8e96fd8e9d
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 33026ed510aae63a9e580aa5d708f94aad778fca
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340128"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090931"
 ---
 # <a name="deploy-an-app-to-app-service"></a>Implantar um aplicativo de serviço de aplicativo
 
-[O serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/) é plataforma de hospedagem de web do Azure. Implantar um aplicativo web no serviço de aplicativo do Azure pode ser feito manualmente ou por um processo automatizado. Esta seção do guia discute métodos de implantação que podem ser disparados manualmente ou por script usando a linha de comando ou disparada manualmente usando o Visual Studio.
+[O serviço de aplicativo do Azure](/azure/app-service/) é plataforma de hospedagem de web do Azure. Implantar um aplicativo web no serviço de aplicativo do Azure pode ser feito manualmente ou por um processo automatizado. Esta seção do guia discute métodos de implantação que podem ser disparados manualmente ou por script usando a linha de comando ou disparada manualmente usando o Visual Studio.
 
 Nesta seção, você vai realizar as seguintes tarefas:
 
@@ -70,7 +71,7 @@ Em um shell de comando, baixe o código, compile o projeto e executá-lo da segu
 
 ## <a name="create-the-azure-app-service-web-app"></a>Criar o aplicativo Web do serviço de aplicativo do Azure
 
-Para implantar o aplicativo, você precisará criar um serviço de aplicativo [aplicativo Web](https://docs.microsoft.com/azure/app-service/app-service-web-overview). Após a criação do aplicativo Web, você implantará a ele em seu computador local usando o Git.
+Para implantar o aplicativo, você precisará criar um serviço de aplicativo [aplicativo Web](/azure/app-service/app-service-web-overview). Após a criação do aplicativo Web, você implantará a ele em seu computador local usando o Git.
 
 1. Entrar para o [Azure Cloud Shell](https://shell.azure.com/bash). Observação: Quando você entra pela primeira vez, o Cloud Shell solicita a criação de uma conta de armazenamento para arquivos de configuração. Aceite os padrões ou forneça um nome exclusivo.
 
@@ -88,7 +89,7 @@ Para implantar o aplicativo, você precisará criar um serviço de aplicativo [a
     az group create --location centralus --name AzureTutorial
     ```
 
-    O `az` comando invoca o [CLI do Azure](https://docs.microsoft.com/cli/azure/). A CLI pode ser executada localmente, mas usá-lo no Cloud Shell economiza tempo e configuração.
+    O `az` comando invoca o [CLI do Azure](/cli/azure/). A CLI pode ser executada localmente, mas usá-lo no Cloud Shell economiza tempo e configuração.
 
     c. Crie um plano de serviço de aplicativo na camada S1. Um plano do serviço de aplicativo é um agrupamento de aplicativos web que compartilham o mesmo tipo de preço. A camada S1 não é gratuita, mas ela é necessária para o recurso de slots de preparo.
 
@@ -238,7 +239,7 @@ Na próxima seção, você aprenderá a criar um pipeline de DevOps com Pipeline
 
 ## <a name="additional-reading"></a>Leitura adicional
 
-* [Visão geral de aplicativos Web](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
-* [Criar um aplicativo web .NET Core e o banco de dados SQL no serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
-* [Configurar as credenciais de implantação do serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-deployment-credentials)
-* [Configurar ambientes de preparo no serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/web-sites-staged-publishing)
+* [Visão geral de aplicativos Web](/azure/app-service/app-service-web-overview)
+* [Criar um aplicativo web .NET Core e o banco de dados SQL no serviço de aplicativo do Azure](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
+* [Configurar as credenciais de implantação do serviço de aplicativo do Azure](/azure/app-service/app-service-deployment-credentials)
+* [Configurar ambientes de preparo no serviço de aplicativo do Azure](/azure/app-service/web-sites-staged-publishing)

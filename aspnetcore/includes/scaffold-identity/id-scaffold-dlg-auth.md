@@ -5,7 +5,7 @@ Execute o scaffolder de identidade:
 * Partir **Gerenciador de soluções**, clique com botão direito no projeto > **Add** > **New Scaffolded Item**.
 * No painel à esquerda do **adicionar Scaffold** caixa de diálogo, selecione **identidade** > **adicionar**.
 * No **identidade de adição** caixa de diálogo, selecione as opções desejadas.
-  * Selecione a página de layout existente ou seu arquivo de layout será substituído pela marcação incorreta. Quando um arquivo layout. cshtml existente é selecionado, vale **não** substituídos.
+  * Selecione a página de layout existente ou seu arquivo de layout será substituído pela marcação incorreta. Quando um existente  *\_layout. cshtml* arquivo for selecionado, ele é **não** substituídos.
 
  Por exemplo `~/Pages/Shared/_Layout.cshtml` para as páginas Razor `~/Views/Shared/_Layout.cshtml` para projetos MVC
 * Para usar o contexto de dados existente, selecione pelo menos um arquivo para substituir. Você deve selecionar pelo menos um arquivo para adicionar seu contexto de dados.
@@ -49,4 +49,7 @@ O PowerShell usa o ponto e vírgula como separador de comando. Ao usar o powersh
 ```cli
 dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
 ```
+
+Se você executar o scaffolder de identidade sem especificar o `--files` sinalizador ou a `--useDefaultUI` sinalizar, todas as páginas de identidade da interface do usuário disponíveis em seu projeto serão criadas.
+
 -------------

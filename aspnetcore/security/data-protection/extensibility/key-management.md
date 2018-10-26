@@ -3,14 +3,15 @@ title: Extensibilidade de gerenciamento de chaves no ASP.NET Core
 author: rick-anderson
 description: Saiba mais sobre a extensibilidade do gerenciamento de chaves de proteção de dados do ASP.NET Core.
 ms.author: riande
-ms.date: 11/22/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: b52212ff3462748a5c64f21e1b7854673e5fcadc
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 1cf3fc30f72fb872ff9d7f33fc5ffb12a11a982f
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477456"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090609"
 ---
 # <a name="key-management-extensibility-in-aspnet-core"></a>Extensibilidade de gerenciamento de chaves no ASP.NET Core
 
@@ -60,7 +61,7 @@ O `IKeyManager` interface representa um objeto responsável pelo armazenamento d
 
 ## <a name="xmlkeymanager"></a>XmlKeyManager
 
-O `XmlKeyManager` tipo é a implementação concreta da caixa de entrada da `IKeyManager`. Ele fornece vários recursos úteis, incluindo caução de chaves e criptografia de chaves em repouso. Chaves nesse sistema são representadas como elementos XML (especificamente, [XElement](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview)).
+O `XmlKeyManager` tipo é a implementação concreta da caixa de entrada da `IKeyManager`. Ele fornece vários recursos úteis, incluindo caução de chaves e criptografia de chaves em repouso. Chaves nesse sistema são representadas como elementos XML (especificamente, [XElement](/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview)).
 
 `XmlKeyManager` depende de vários outros componentes no decorrer de cumprir suas tarefas:
 
