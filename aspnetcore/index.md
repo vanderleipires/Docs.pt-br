@@ -3,14 +3,15 @@ title: Introdução ao ASP.NET Core
 author: rick-anderson
 description: Obtenha uma introdução ao ASP.NET Core, uma estrutura de software livre, plataforma cruzada e alto desempenho para a criação de aplicativos modernos conectados à Internet e baseados em nuvem.
 ms.author: riande
-ms.date: 9/28/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: index
-ms.openlocfilehash: 3bb86fa255548ff66592ac14c1020e0c6b47959c
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: fcd95b88b970073f4d7eddf89729683d18be449d
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391151"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090648"
 ---
 # <a name="introduction-to-aspnet-core"></a>Introdução ao ASP.NET Core
 
@@ -21,11 +22,11 @@ O ASP.NET Core é uma estrutura de [software livre](https://github.com/aspnet/ho
 * Compilar aplicativos e serviços Web, aplicativos [IoT](https://www.microsoft.com/internet-of-things/) e back-ends móveis.
 * Usar suas ferramentas de desenvolvimento favoritas no Windows, macOS e Linux.
 * Implantar na nuvem ou local.
-* Executar no [.NET Core ou no .NET Framework](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server).
+* Executar no [.NET Core ou no .NET Framework](/dotnet/articles/standard/choosing-core-framework-server).
 
 ## <a name="why-use-aspnet-core"></a>Por que usar o ASP.NET Core?
 
-Milhões de desenvolvedores usaram (e continuam usando) o [ASP.NET 4.x](https://docs.microsoft.com/aspnet/overview) para criar aplicativos Web. O ASP.NET Core é uma reformulação do ASP.NET 4.x, com alterações de arquitetura que resultam em uma estrutura mais enxuta e modular.
+Milhões de desenvolvedores usaram (e continuam usando) o [ASP.NET 4.x](/aspnet/overview) para criar aplicativos Web. O ASP.NET Core é uma reformulação do ASP.NET 4.x, com alterações de arquitetura que resultam em uma estrutura mais enxuta e modular.
 
 [!INCLUDE[](~/includes/benefits.md)]
 
