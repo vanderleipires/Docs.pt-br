@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 10/29/2018
 ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: d5a3916c3df9778d14be80342bafbc3456a69a03
-ms.sourcegitcommit: f2d14a7518d6ee51aca9333818ac1276e7b5ecef
+ms.openlocfilehash: 4dcc62573fad13ec8b37b2c59e884eec7ca80b92
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "50134529"
+ms.locfileid: "50148831"
 ---
 # <a name="configuration-builders-for-aspnet"></a>Construtores de configuração para o ASP.NET
 
@@ -29,7 +29,7 @@ Construtores de configuração:
 
 ## <a name="keyvalue-configuration-builders"></a>Construtores de configuração de chave/valor
 
-Um cenário comum que pode ser tratado por construtores de configuração é fornecer um mecanismo de substituição de chave/valor básico para seções de configuração que seguem um padrão de chave/valor. O conceito do .NET Framework de ConfigurationBuilders não está limitado a seções de configuração específico ou padrões. No entanto, muitos dos construtores de configuração no `Microsoft.Configuration.ConfigurationBuilders` ([github](https://github.com/aspnet/MicrosoftConfigurationBuilders)), [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders) funcionam dentro do padrão de chave/valor.
+Um cenário comum que pode ser tratado por construtores de configuração é fornecer um mecanismo de substituição de chave/valor básico para seções de configuração que seguem um padrão de chave/valor. O conceito do .NET Framework de ConfigurationBuilders não está limitado a seções de configuração específico ou padrões. No entanto, muitos dos construtores de configuração no `Microsoft.Configuration.ConfigurationBuilders` ([github](https://github.com/aspnet/MicrosoftConfigurationBuilders), [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders)) funcionam dentro do padrão de chave/valor.
 
 ## <a name="keyvalue-configuration-builders-settings"></a>Definições de construtores de configuração de chave/valor
 
