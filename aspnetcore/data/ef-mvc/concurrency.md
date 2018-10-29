@@ -3,14 +3,15 @@ title: ASP.NET Core MVC com EF Core – simultaneidade – 8 de 10
 author: rick-anderson
 description: Este tutorial mostra como lidar com conflitos quando os mesmos usuários atualizam a mesma entidade simultaneamente.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 9bf65621213c9657232dfff1701c9937d5105a9c
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 0ae566a76a2ef656843452ed537b8fdfbddaed22
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38186631"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090895"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC com EF Core – simultaneidade – 8 de 10
 
@@ -219,7 +220,6 @@ Substitua o código no método HttpPost `Delete` (chamado `DeleteConfirmed`) pel
 
 No código gerado por scaffolding que acabou de ser substituído, esse método aceitou apenas uma ID de registro:
 
-
 ```csharp
 public async Task<IActionResult> DeleteConfirmed(int id)
 ```
@@ -278,7 +278,7 @@ Substitua o código em *Views/Departments/Create.cshtml* para adicionar uma opç
 
 ## <a name="summary"></a>Resumo
 
-Isso conclui a introdução à manipulação de conflitos de simultaneidade. Para obter mais informações sobre como lidar com a simultaneidade no EF Core, consulte [Conflitos de simultaneidade](https://docs.microsoft.com/ef/core/saving/concurrency). O próximo tutorial mostra como implementar a herança de tabela por hierarquia para as entidades Instructor e Student.
+Isso conclui a introdução à manipulação de conflitos de simultaneidade. Para obter mais informações sobre como lidar com a simultaneidade no EF Core, consulte [Conflitos de simultaneidade](/ef/core/saving/concurrency). O próximo tutorial mostra como implementar a herança de tabela por hierarquia para as entidades Instructor e Student.
 
 ::: moniker-end
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
 uid: web-api/advanced/formatting
-ms.openlocfilehash: 3891e8d000c091f34e39a5e40d9bcd12e854a478
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 819bf1b49b56e953a9a4398e82866ba0b01ab4db
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276523"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207102"
 ---
 # <a name="format-response-data-in-aspnet-core-web-api"></a>Formatar dados de resposta na API Web ASP.NET Core
 
@@ -19,7 +19,7 @@ Por [Steve Smith](https://ardalis.com/)
 
 O ASP.NET Core MVC tem suporte interno para formatação de dados de resposta, usando formatos fixos ou em resposta às especificações do cliente.
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/formatting/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/formatting/sample) ([como baixar](xref:index#how-to-download-a-sample))
 
 ## <a name="format-specific-action-results"></a>Resultados da ação específicos a um formato
 
@@ -99,7 +99,7 @@ services.AddMvc(options =>
 
 ## <a name="configuring-formatters"></a>Configurando formatadores
 
-Se o aplicativo precisar dar suporte a outros formatos além do padrão de JSON, adicione pacotes NuGet e configure o MVC para dar suporte a eles. Há formatadores separados para entrada e saída. Os formatadores de entrada são usados pela [Associação de Modelos](xref:mvc/models/model-binding); os formatadores de saída são usados para formatar as respostas. Também configure [Formatadores Personalizados](xref:web-api/advanced/custom-formatters).
+Se o aplicativo precisar dar suporte a outros formatos além do padrão de JSON, adicione pacotes NuGet e configure o MVC para dar suporte a eles. Há formatadores separados para entrada e saída. Os formatadores de entrada são usados pelo [Model Binding](xref:mvc/models/model-binding); os formatadores de saída são usados para formatar as respostas. Também configure [Formatadores Personalizados](xref:web-api/advanced/custom-formatters).
 
 ### <a name="adding-xml-format-support"></a>Adicionando suporte para o formato XML
 

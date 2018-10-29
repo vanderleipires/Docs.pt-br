@@ -3,14 +3,15 @@ title: Páginas Razor com o EF Core no ASP.NET Core – Classificação, filtro,
 author: rick-anderson
 description: Neste tutorial, você adicionará funcionalidades de classificação, filtragem e paginação à página usando o ASP.NET Core e o Entity Framework Core.
 ms.author: riande
-ms.date: 6/31/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 06669d69fa9fec87d262c2b5bfd8b11649259849
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 19fe24e0f901c50e8425db7665b5b2257b608146
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348436"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090870"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Classificação, filtro, paginação – 3 de 8
 
@@ -51,7 +52,7 @@ Quando a página Índice é solicitada do link **Alunos**, não há nenhuma cade
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
 
-O seguinte código contém o [operador ?:](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator) condicional do C#:
+O seguinte código contém o [operador ?:](/dotnet/csharp/language-reference/operators/conditional-operator) condicional do C#:
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
 

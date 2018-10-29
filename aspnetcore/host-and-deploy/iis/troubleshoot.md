@@ -4,14 +4,14 @@ author: guardrex
 description: Saiba como diagnosticar problemas com as implantações do IIS (Serviços de Informações da Internet) de aplicativos do ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/07/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: f22914c9b0d6d1902dd37c9b21b80a18894c97e7
-ms.sourcegitcommit: d1c4580f56656b503cf528ec9f5ba570d790b57d
+ms.openlocfilehash: 6a53c1ba5badd741afc3321ce21b047965c611db
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "41751703"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090596"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>Solucionar problemas do ASP.NET Core no IIS
 
@@ -23,10 +23,10 @@ No Visual Studio, um projeto do ASP.NET Core usa por padrão a hospedagem do [II
 
 Tópicos adicionais de solução de problemas:
 
-[Solucionar problemas no ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot)  
+<xref:host-and-deploy/azure-apps/troubleshoot>  
 Embora o Serviço de Aplicativo use o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) e o IIS para hospedar aplicativos, veja o tópico dedicado para obter instruções específicas para o Serviço de Aplicativo.
 
-[Tratar erros](xref:fundamentals/error-handling)  
+<xref:fundamentals/error-handling>  
 Descubra como tratar erros em aplicativos do ASP.NET Core durante o desenvolvimento em um sistema local.
 
 [Aprenda a depurar usando o Visual Studio](/visualstudio/debugger/getting-started-with-the-debugger)  
@@ -133,7 +133,7 @@ Configurar a variável de ambiente para `ASPNETCORE_ENVIRONMENT` só é recomend
 
 ## <a name="common-startup-errors"></a>Erros de inicialização comuns 
 
-Veja a [Referência de erros comuns do ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference). A maioria dos problemas comuns que impedem a inicialização do aplicativo é abordada no tópico de referência.
+Consulte <xref:host-and-deploy/azure-iis-errors-reference>. A maioria dos problemas comuns que impedem a inicialização do aplicativo é abordada no tópico de referência.
 
 ## <a name="slow-or-hanging-app"></a>Aplicativo lento ou travando
 
@@ -167,7 +167,7 @@ Algumas vezes um aplicativo em funcionamento falha imediatamente após atualizar
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Introdução ao tratamento de erro no ASP.NET Core](xref:fundamentals/error-handling)
-* [Referência de erros comuns para o Serviço de Aplicativo do Azure e o IIS com o ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
-* [Referência de configuração do Módulo do ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
-* [Solucionar problemas no ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot)
+* <xref:fundamentals/error-handling>
+* <xref:host-and-deploy/azure-iis-errors-reference>
+* <xref:host-and-deploy/aspnet-core-module>
+* <xref:host-and-deploy/azure-apps/troubleshoot>

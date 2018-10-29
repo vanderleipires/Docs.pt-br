@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/02/2018
 uid: fundamentals/middleware/extensibility-third-party-container
-ms.openlocfilehash: 81d52aafd4e4d964aaec1c5fe61e585b023ff915
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6af775c66a1de7f1a4f06a4a639ade20c6493b2a
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279500"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206803"
 ---
 # <a name="middleware-activation-with-a-third-party-container-in-aspnet-core"></a>Ativação de middleware com um contêiner de terceiros no ASP.NET Core
 
@@ -19,7 +19,7 @@ Por [Luke Latham](https://github.com/guardrex)
 
 Este artigo demonstra como usar o [IMiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.imiddlewarefactory) e o [IMiddleware](/dotnet/api/microsoft.aspnetcore.http.imiddleware) como um ponto de extensibilidade para a ativação do [middleware](xref:fundamentals/middleware/index) com um contêiner de terceiros. Para obter informações introdutórias sobre o `IMiddlewareFactory` e o `IMiddleware`, confira o tópico [Ativação de middleware baseada em alocador no ASP.NET Core](xref:fundamentals/middleware/extensibility).
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/extensibility-third-party-container/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/extensibility-third-party-container/sample) ([como baixar](xref:index#how-to-download-a-sample))
 
 O aplicativo de exemplo demonstra a ativação do middleware por uma implementação de `IMiddlewareFactory`, `SimpleInjectorMiddlewareFactory`. O exemplo usa o contêiner de DI (injeção de dependência) [Simple Injector](https://simpleinjector.org).
 

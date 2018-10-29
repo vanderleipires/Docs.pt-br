@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 10/12/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: 13fd6c156afd5ab62739b09296a929120ce3450f
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: f04e0930966c9aaf38543729565b1ef4a80a09e2
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348527"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207687"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>Convenções de rota e aplicativo das Páginas do Razor no ASP.NET Core
 
@@ -25,7 +25,7 @@ Para especificar uma rota de página, adicione segmentos de rota ou adicionar pa
 
 Há palavras reservadas não podem ser usadas como segmentos de rota ou nomes de parâmetro. Para obter mais informações, consulte [roteamento: roteamentos nomes reservados](xref:fundamentals/routing#reserved-routing-names).
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/sample/) ([como baixar](xref:index#how-to-download-a-sample))
 
 ::: moniker range="= aspnetcore-2.0"
 
@@ -204,7 +204,7 @@ Solicite a página About da amostra em `localhost:5000/About/GlobalRouteValue/Ab
 
 ## <a name="use-a-parameter-transformer-to-customize-page-routes"></a>Usar um transformador de parâmetro para personalizar rotas de página
 
-Rotas de página geradas pelo ASP.NET Core podem ser personalizadas usando um transformador de parâmetro. Implementa um transformador de parâmetro `IOutboundParameterTransformer` e transforma o valor dos parâmetros. Por exemplo, um personalizado `SlugifyParameterTransformer` alterações de transformador de parâmetro de `SubscriptionManagement` rotear o valor a ser `subscription-management`.
+Rotas de página geradas pelo ASP.NET Core podem ser personalizadas usando um transformador de parâmetro. Um transformador de parâmetro implementa `IOutboundParameterTransformer` e transforma o valor dos parâmetros. Por exemplo, um transformador de parâmetro `SlugifyParameterTransformer` personalizado muda o valor de rota `SubscriptionManagement` para `subscription-management`.
 
 O `PageRouteTransformerConvention` convenção de modelo de rota de página aplica-se um transformador de parâmetro para os segmentos de nome de arquivo e pasta de rotas de página gerada automaticamente em um aplicativo. Por exemplo, as páginas do Razor arquivo cada */Pages/SubscriptionManagement/ViewAll.cshtml* teria sua rota do reescrita `/SubscriptionManagement/ViewAll` para `/subscription-management/view-all`.
 

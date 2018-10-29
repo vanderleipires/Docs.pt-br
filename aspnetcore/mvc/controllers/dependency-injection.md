@@ -5,12 +5,12 @@ description: Saiba como os controladores do ASP.NET Core MVC solicitam suas depe
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 9dec9807e8fc2883144b2da518f36a7eb8ddc871
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 12247dbbbb6de3f8feb7bc37caec4ecf4bd21719
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342127"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206335"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a>Injeção de dependência em controladores no ASP.NET Core
 
@@ -20,7 +20,7 @@ Por [Steve Smith](https://ardalis.com/)
 
 Controladores do ASP.NET Core MVC devem solicitar suas dependências explicitamente por meio de seus construtores. Em algumas instâncias, ações individuais do controlador podem exigir um serviço e pode não fazer sentido solicitá-lo no nível do controlador. Nesse caso, você também pode optar por injetar um serviço como um parâmetro no método de ação.
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample) ([como baixar](xref:index#how-to-download-a-sample))
 
 ## <a name="dependency-injection"></a>Injeção de dependência
 

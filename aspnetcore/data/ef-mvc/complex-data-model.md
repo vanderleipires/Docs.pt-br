@@ -3,14 +3,15 @@ title: ASP.NET Core MVC com EF Core – modelo de dados – 5 de 10
 author: rick-anderson
 description: Neste tutorial, você adiciona mais entidades e relações e personaliza o modelo de dados especificando formatação, validação e regras de mapeamento.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 3714cf7ce705a52653394319fef1728a6ddcc3ee
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 87212edbfe34af6de938cf95314501e56e64a8be
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011762"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091035"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC com EF Core – modelo de dados – 5 de 10
 
@@ -232,7 +233,7 @@ Em *Models/Course.cs*, substitua o código que você adicionou anteriormente pel
 
 A entidade de curso tem uma propriedade de chave estrangeira `DepartmentID` que aponta para a entidade Department relacionada e ela tem uma propriedade de navegação `Department`.
 
-O Entity Framework não exige que você adicione uma propriedade de chave estrangeira ao modelo de dados quando você tem uma propriedade de navegação para uma entidade relacionada.  O EF cria chaves estrangeiras no banco de dados sempre que elas são necessárias e cria automaticamente [propriedades de sombra](https://docs.microsoft.com/ef/core/modeling/shadow-properties) para elas. No entanto, ter a chave estrangeira no modelo de dados pode tornar as atualizações mais simples e mais eficientes. Por exemplo, quando você busca uma entidade de curso a ser editada, a entidade Department é nula se você não carregá-la; portanto, quando você atualiza a entidade de curso, você precisa primeiro buscar a entidade Department. Quando a propriedade de chave estrangeira `DepartmentID` está incluída no modelo de dados, você não precisa buscar a entidade Department antes da atualização.
+O Entity Framework não exige que você adicione uma propriedade de chave estrangeira ao modelo de dados quando você tem uma propriedade de navegação para uma entidade relacionada.  O EF cria chaves estrangeiras no banco de dados sempre que elas são necessárias e cria automaticamente [propriedades de sombra](/ef/core/modeling/shadow-properties) para elas. No entanto, ter a chave estrangeira no modelo de dados pode tornar as atualizações mais simples e mais eficientes. Por exemplo, quando você busca uma entidade de curso a ser editada, a entidade Department é nula se você não carregá-la; portanto, quando você atualiza a entidade de curso, você precisa primeiro buscar a entidade Department. Quando a propriedade de chave estrangeira `DepartmentID` está incluída no modelo de dados, você não precisa buscar a entidade Department antes da atualização.
 
 ### <a name="the-databasegenerated-attribute"></a>O atributo DatabaseGenerated
 
@@ -246,7 +247,7 @@ public int CourseID { get; set; }
 
 Por padrão, o Entity Framework pressupõe que os valores de chave primária sejam gerados pelo banco de dados. É isso que você quer na maioria dos cenários. No entanto, para entidades Course, você usará um número de curso especificado pelo usuário como uma série 1000 de um departamento, uma série 2000 para outro departamento e assim por diante.
 
-O atributo `DatabaseGenerated` também pode ser usado para gerar valores padrão, como no caso de colunas de banco de dados usadas para registrar a data em que uma linha foi criada ou atualizada.  Para obter mais informações, consulte [Propriedades geradas](https://docs.microsoft.com/ef/core/modeling/generated-properties).
+O atributo `DatabaseGenerated` também pode ser usado para gerar valores padrão, como no caso de colunas de banco de dados usadas para registrar a data em que uma linha foi criada ou atualizada.  Para obter mais informações, consulte [Propriedades geradas](/ef/core/modeling/generated-properties).
 
 ### <a name="foreign-key-and-navigation-properties"></a>Propriedades de navegação e de chave estrangeira
 
@@ -373,7 +374,7 @@ Uma tabela de junção é necessária no banco de dados para a relação muitos 
 
 Como as chaves estrangeiras não permitem valor nulo e, juntas, identificam exclusivamente cada linha da tabela, não é necessário ter uma chave primária. As propriedades *InstructorID* e *CourseID* devem funcionar como uma chave primária composta. A única maneira de identificar chaves primárias compostas no EF é usando a *API fluente* (isso não pode ser feito por meio de atributos). Você verá como configurar a chave primária composta na próxima seção.
 
-A chave composta garante que, embora você possa ter várias linhas para um curso e várias linhas para um instrutor, não poderá ter várias linhas para o mesmo instrutor e curso. A entidade de junção `Enrollment` define sua própria chave primária e, portanto, duplicatas desse tipo são possíveis. Para evitar essas duplicatas, você pode adicionar um índice exclusivo nos campos de chave estrangeira ou configurar `Enrollment` com uma chave primária composta semelhante a `CourseAssignment`. Para obter mais informações, consulte [Índices](https://docs.microsoft.com/ef/core/modeling/indexes).
+A chave composta garante que, embora você possa ter várias linhas para um curso e várias linhas para um instrutor, não poderá ter várias linhas para o mesmo instrutor e curso. A entidade de junção `Enrollment` define sua própria chave primária e, portanto, duplicatas desse tipo são possíveis. Para evitar essas duplicatas, você pode adicionar um índice exclusivo nos campos de chave estrangeira ou configurar `Enrollment` com uma chave primária composta semelhante a `CourseAssignment`. Para obter mais informações, consulte [Índices](/ef/core/modeling/indexes).
 
 ## <a name="update-the-database-context"></a>Atualizar o contexto de banco de dados
 
@@ -385,7 +386,7 @@ Esse código adiciona novas entidades e configura a chave primária composta da 
 
 ## <a name="fluent-api-alternative-to-attributes"></a>Alternativa de API fluente para atributos
 
-O código no método `OnModelCreating` da classe `DbContext` usa a *API fluente* para configurar o comportamento do EF. A API é chamada "fluente" porque costuma ser usada pelo encadeamento de uma série de chamadas de método em uma única instrução, como neste exemplo da [documentação do EF Core](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration):
+O código no método `OnModelCreating` da classe `DbContext` usa a *API fluente* para configurar o comportamento do EF. A API é chamada "fluente" porque costuma ser usada pelo encadeamento de uma série de chamadas de método em uma única instrução, como neste exemplo da [documentação do EF Core](/ef/core/modeling/#methods-of-configuration):
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -400,7 +401,7 @@ Neste tutorial, você usa a API fluente somente para o mapeamento de banco de da
 
 Alguns desenvolvedores preferem usar a API fluente exclusivamente para que possam manter suas classes de entidade "limpas". Combine atributos e a API fluente se desejar. Além disso, há algumas personalizações que podem ser feitas apenas com a API fluente, mas em geral, a prática recomendada é escolher uma dessas duas abordagens e usar isso com o máximo de consistência possível. Se usar as duas, observe que sempre que houver um conflito, a API fluente substituirá atributos.
 
-Para obter mais informações sobre atributos vs. API fluente, consulte [Métodos de configuração](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration).
+Para obter mais informações sobre atributos vs. API fluente, consulte [Métodos de configuração](/ef/core/modeling/#methods-of-configuration).
 
 ## <a name="entity-diagram-showing-relationships"></a>Diagrama de entidade mostrando relações
 

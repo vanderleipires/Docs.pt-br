@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: ce2d705a93577b0c6d28f86069873c6ecd891db6
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9041f8d15a449a517594f8051c3d9f0ceb18a8a3
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833704"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207011"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>Correção de erro 'Aplicativo de servidor não disponível' após a aplicação de atualização de segurança para o IE
 ====================
@@ -38,7 +38,7 @@ Estamos trabalhando em uma solução permanente para esse problema. Enquanto iss
 4. Registra novamente o ASP.NET. Isso cria uma nova senha aleatória para a conta e aplica as configurações de controle de acesso padrão ASP.NET para ele
 5. Reinicia o serviço IIS
 
-O arquivo de lote contém uma senha temporária de embutidos em código de "<strong>1pass@word</strong>" que você será solicitado a inserir para o comando executar quando o arquivo em lotes é executado. Depois de concluir o comando runas, a senha da conta ASPNET é recriada com um valor aleatório. Observe que o arquivo em lotes poderá falhar se a senha codificada não atende aos requisitos de complexidade de senha em seu ambiente. Se esse for o caso, você pode alterá-lo para outro valor que seja apropriado para seu ambiente.
+O arquivo de lote contém uma senha temporária de embutidos em código de "<strong>1pass\@word</strong>" que você será solicitado a inserir para o comando executar quando o arquivo em lotes é executado. Depois de concluir o comando runas, a senha da conta ASPNET é recriada com um valor aleatório. Observe que o arquivo em lotes poderá falhar se a senha codificada não atende aos requisitos de complexidade de senha em seu ambiente. Se esse for o caso, você pode alterá-lo para outro valor que seja apropriado para seu ambiente.
 
 *> [!IMPORTANT]* Se você tiver adicionado as configurações de controle de acesso personalizadas ou permissões de conta de banco de dados para a conta ASPNET, precisará ser recriado depois que esse arquivo em lotes for concluído. Isso ocorre porque quando a conta for recriada, ele obterá um novo identificador de segurança (SID).
 
@@ -51,7 +51,7 @@ O arquivo em lotes está incluído no arquivo de extração automática abaixo. 
 3. Extraia o conteúdo para o c:\
 4. Selecione Executar... no menu Iniciar e digite `cmd.exe`
 5. Nas janelas de comando aberta, digite `c:\fixup.cmd`.
-6. Quando solicitado, insira <strong>1pass@word</strong> como a senha.
+6. Quando solicitado, insira <strong>1pass\@word</strong> como a senha.
 7. Se você tiver permissões de conta de banco de dados para a conta ASPNET ou configurações de controle de acesso personalizado anteriormente, você precisará aplicar novamente essas configurações agora.
 
 Muitas desculpas pelo inconveniente que isso causou. Publicaremos informações adicionais conforme é disponibilizada.
