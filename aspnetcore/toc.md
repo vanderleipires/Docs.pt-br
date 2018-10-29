@@ -221,7 +221,7 @@
 ### [Cliente .NET](xref:signalr/dotnet-client)
 ### [Referência da API REST](/dotnet/api/microsoft.aspnetcore.signalr.client)
 ### [Cliente Java](xref:signalr/java-client)
-### [Referência de API Java](/java/api/com.microsoft.aspnet.signalr?view=aspnet-signalr-java)
+### [Referência de API Java](/java/api/com.microsoft.signalr?view=aspnet-signalr-java)
 ### [Cliente JavaScript](xref:signalr/javascript-client)
 ### [Referência de API JavaScript](/javascript/api/?view=signalr-js-latest)
 ### [WebPack e TypeScript](xref:tutorials/signalr-typescript-webpack)
