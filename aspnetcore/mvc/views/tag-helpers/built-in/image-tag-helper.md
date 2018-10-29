@@ -1,59 +1,63 @@
 ---
 title: Auxiliar de Marca de Imagem no ASP.NET Core
 author: pkellner
-description: Mostra como trabalhar com o Auxiliar de Marca de Imagem
+description: Mostra como trabalhar com o Auxiliar de Marca de Imagem.
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
-ms.openlocfilehash: 7ed160354b25aa0183ac49db93307b1f1b4d0666
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5eb74a6698911a1c594d11573192cb1b9ed53b49
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276633"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325829"
 ---
-# <a name="image-tag-helper-in-aspnet-core"></a><span data-ttu-id="3290e-103">Auxiliar de Marca de Imagem no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="3290e-103">Image Tag Helper in ASP.NET Core</span></span>
+# <a name="image-tag-helper-in-aspnet-core"></a><span data-ttu-id="aa3dd-103">Auxiliar de Marca de Imagem no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="aa3dd-103">Image Tag Helper in ASP.NET Core</span></span>
 
-<span data-ttu-id="3290e-104">Por [Peter Kellner](http://peterkellner.net)</span><span class="sxs-lookup"><span data-stu-id="3290e-104">By [Peter Kellner](http://peterkellner.net)</span></span> 
+<span data-ttu-id="aa3dd-104">Por [Peter Kellner](http://peterkellner.net)</span><span class="sxs-lookup"><span data-stu-id="aa3dd-104">By [Peter Kellner](http://peterkellner.net)</span></span>
 
-<span data-ttu-id="3290e-105">O Auxiliar de Marca de Imagem aprimora a marca `img` (`<img>`).</span><span class="sxs-lookup"><span data-stu-id="3290e-105">The Image Tag Helper enhances the `img` (`<img>`) tag.</span></span> <span data-ttu-id="3290e-106">Ele exige uma marca `src`, bem como o atributo de `boolean` `asp-append-version`.</span><span class="sxs-lookup"><span data-stu-id="3290e-106">It requires a `src` tag as well as the `boolean` attribute `asp-append-version`.</span></span>
+<span data-ttu-id="aa3dd-105">O Auxiliar de Marca de Imagem aprimora a marca `<img>` para fornecer comportamento de extrapolação de cache para arquivos de imagem estática.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-105">The Image Tag Helper enhances the `<img>` tag to provide cache-busting behavior for static image files.</span></span>
 
-<span data-ttu-id="3290e-107">Se a origem da imagem (`src`) é um arquivo estático no servidor Web host, uma cadeia de caracteres de extrapolação de cache exclusivo é acrescentada como um parâmetro de consulta à origem da imagem.</span><span class="sxs-lookup"><span data-stu-id="3290e-107">If the image source (`src`) is a static file on the host web server, a unique cache busting string is appended as a query parameter to the image source.</span></span> <span data-ttu-id="3290e-108">Isso garante que, se o arquivo no servidor Web host é alterado, uma URL de solicitação exclusiva que inclui o parâmetro de solicitação atualizado seja gerada.</span><span class="sxs-lookup"><span data-stu-id="3290e-108">This ensures that if the file on the host web server changes, a unique request URL is generated that includes the updated request parameter.</span></span> <span data-ttu-id="3290e-109">A cadeia de caracteres de extrapolação de cache é um valor exclusivo que representa o hash do arquivo de imagem estática.</span><span class="sxs-lookup"><span data-stu-id="3290e-109">The cache busting string is a unique value representing the hash of the static image file.</span></span>
+<span data-ttu-id="aa3dd-106">Uma cadeia de caracteres de extrapolação de cache é um valor exclusivo que representa o hash do arquivo de imagem estática acrescentado à URL do ativo.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-106">A cache-busting string is a unique value representing the hash of the static image file appended to the asset's URL.</span></span> <span data-ttu-id="aa3dd-107">A cadeia de caracteres exclusiva solicita que os clientes (e alguns proxies) recarreguem a imagem do servidor Web do host, e não do cache do cliente.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-107">The unique string prompts clients (and some proxies) to reload the image from the host web server and not from the client's cache.</span></span>
 
-<span data-ttu-id="3290e-110">Se a origem da imagem (`src`) não é um arquivo estático (por exemplo, uma URL remota ou o arquivo não existe no servidor), o atributo `src` da marca `<img>` é gerado sem um parâmetro da cadeia de caracteres de consulta de extrapolação de cache.</span><span class="sxs-lookup"><span data-stu-id="3290e-110">If the image source (`src`) isn't a static file (for example a remote URL or the file doesn't exist on the server), the `<img>` tag's `src` attribute is generated with no cache busting query string parameter.</span></span>
+<span data-ttu-id="aa3dd-108">Se a origem da imagem (`src`) for um arquivo estático no servidor Web de host:</span><span class="sxs-lookup"><span data-stu-id="aa3dd-108">If the image source (`src`) is a static file on the host web server:</span></span>
 
-## <a name="image-tag-helper-attributes"></a><span data-ttu-id="3290e-111">Atributos de Auxiliar de Marca de Imagem</span><span class="sxs-lookup"><span data-stu-id="3290e-111">Image Tag Helper Attributes</span></span>
+* <span data-ttu-id="aa3dd-109">Uma cadeia de caracteres exclusiva de extrapolação de cache será anexada como um parâmetro de consulta à origem da imagem.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-109">A unique cache-busting string is appended as a query parameter to the image source.</span></span>
+* <span data-ttu-id="aa3dd-110">Se o arquivo no servidor Web host for alterado, será gerada uma URL de solicitação exclusiva que inclua o parâmetro de solicitação atualizado.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-110">If the file on the host web server changes, a unique request URL is generated that includes the updated request parameter.</span></span>
 
+<span data-ttu-id="aa3dd-111">Para obter uma visão geral dos Auxiliares de Marca, confira <xref:mvc/views/tag-helpers/intro>.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-111">For an overview of Tag Helpers, see <xref:mvc/views/tag-helpers/intro>.</span></span>
 
-### <a name="asp-append-version"></a><span data-ttu-id="3290e-112">asp-append-version</span><span class="sxs-lookup"><span data-stu-id="3290e-112">asp-append-version</span></span>
+## <a name="image-tag-helper-attributes"></a><span data-ttu-id="aa3dd-112">Atributos de Auxiliar de Marca de Imagem</span><span class="sxs-lookup"><span data-stu-id="aa3dd-112">Image Tag Helper Attributes</span></span>
 
-<span data-ttu-id="3290e-113">Quando especificado junto com um atributo `src`, o Auxiliar de Marca de Imagem é invocado.</span><span class="sxs-lookup"><span data-stu-id="3290e-113">When specified along with a `src` attribute, the Image Tag Helper is invoked.</span></span>
+### <a name="src"></a><span data-ttu-id="aa3dd-113">src</span><span class="sxs-lookup"><span data-stu-id="aa3dd-113">src</span></span>
 
-<span data-ttu-id="3290e-114">Um exemplo de um auxiliar de marca `img` válido é:</span><span class="sxs-lookup"><span data-stu-id="3290e-114">An example of a valid `img` tag helper is:</span></span>
+<span data-ttu-id="aa3dd-114">Para ativar o Auxiliar de Marca de Imagem, o atributo `src` é obrigatório no elemento `<img>`.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-114">To activate the Image Tag Helper, the `src` attribute is required on the `<img>` element.</span></span>
+
+<span data-ttu-id="aa3dd-115">A origem da imagem (`src`) deve apontar para um arquivo estático físico no servidor.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-115">The image source (`src`) must point to a physical static file on the server.</span></span> <span data-ttu-id="aa3dd-116">Se `src` for um URI remoto, o parâmetro de cadeia de caracteres de consulta de extrapolação de cache não será gerado.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-116">If the `src` is a remote URI, the cache-busting query string parameter isn't generated.</span></span>
+
+### <a name="asp-append-version"></a><span data-ttu-id="aa3dd-117">asp-append-version</span><span class="sxs-lookup"><span data-stu-id="aa3dd-117">asp-append-version</span></span>
+
+<span data-ttu-id="aa3dd-118">Quando `asp-append-version` for especificado com um valor `true` junto com um atributo `src`, o Auxiliar de Marca de Imagem será invocado.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-118">When `asp-append-version` is specified with a `true` value along with a `src` attribute, the Image Tag Helper is invoked.</span></span>
+
+<span data-ttu-id="aa3dd-119">O exemplo a seguir usa um Auxiliar de Marca de Imagem:</span><span class="sxs-lookup"><span data-stu-id="aa3dd-119">The following example uses an Image Tag Helper:</span></span>
 
 ```cshtml
-<img src="~/images/asplogo.png" 
-    asp-append-version="true"  />
+<img src="~/images/asplogo.png" asp-append-version="true" />
 ```
 
-<span data-ttu-id="3290e-115">Se o arquivo estático existe no diretório *.wwwroot/images/asplogo.png*, o HTML gerado é semelhante ao seguinte (o hash será diferente):</span><span class="sxs-lookup"><span data-stu-id="3290e-115">If the static file exists in the directory *..wwwroot/images/asplogo.png* the generated html is similar to the following (the hash will be different):</span></span>
+<span data-ttu-id="aa3dd-120">Se o arquivo estático existe no diretório */wwwroot/images/*, o HTML gerado é semelhante ao seguinte (o hash será diferente):</span><span class="sxs-lookup"><span data-stu-id="aa3dd-120">If the static file exists in the directory */wwwroot/images/*, the generated HTML is similar to the following (the hash will be different):</span></span>
 
 ```html
-<img 
-    src="/images/asplogo.png?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM"/>
+<img src="/images/asplogo.png?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM" />
 ```
 
-<span data-ttu-id="3290e-116">O valor atribuído ao parâmetro `v` é o valor de hash do arquivo em disco.</span><span class="sxs-lookup"><span data-stu-id="3290e-116">The value assigned to the parameter `v` is the hash value of the file on disk.</span></span> <span data-ttu-id="3290e-117">Se o servidor Web não pode obter o acesso de leitura ao arquivo estático referenciado, nenhum parâmetro `v` é adicionado ao atributo `src`.</span><span class="sxs-lookup"><span data-stu-id="3290e-117">If the web server is unable to obtain read access to the static file referenced,  no `v` parameters is added to the `src` attribute.</span></span>
+<span data-ttu-id="aa3dd-121">O valor atribuído ao parâmetro `v` é o valor de hash do arquivo *asplogo.png* em disco.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-121">The value assigned to the parameter `v` is the hash value of the *asplogo.png* file on disk.</span></span> <span data-ttu-id="aa3dd-122">Se o servidor Web não conseguir obter acesso de leitura ao arquivo estático, nenhum parâmetro `v` será adicionado ao atributo `src` na marcação renderizada.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-122">If the web server is unable to obtain read access to the static file, no `v` parameter is added to the `src` attribute in the rendered markup.</span></span>
 
-- - -
+## <a name="hash-caching-behavior"></a><span data-ttu-id="aa3dd-123">Comportamento de armazenamento em cache de hash</span><span class="sxs-lookup"><span data-stu-id="aa3dd-123">Hash caching behavior</span></span>
 
-### <a name="src"></a><span data-ttu-id="3290e-118">src</span><span class="sxs-lookup"><span data-stu-id="3290e-118">src</span></span>
+<span data-ttu-id="aa3dd-124">O Auxiliar de Marca de Imagem usa o provedor de cache no servidor Web local para armazenar o hash `Sha512` calculado de um determinado arquivo.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-124">The Image Tag Helper uses the cache provider on the local web server to store the calculated `Sha512` hash of a given file.</span></span> <span data-ttu-id="aa3dd-125">Se o arquivo for solicitado várias vezes, o hash não será recalculado.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-125">If the file is requested multiple times, the hash isn't recalculated.</span></span> <span data-ttu-id="aa3dd-126">O cache é invalidado por um observador de arquivo anexado ao arquivo quando o hash `Sha512` do arquivo é calculado.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-126">The cache is invalidated by a file watcher that's attached to the file when the file's `Sha512` hash is calculated.</span></span> <span data-ttu-id="aa3dd-127">Quando o arquivo muda no disco, um novo hash é calculado e armazenado em cache.</span><span class="sxs-lookup"><span data-stu-id="aa3dd-127">When the file changes on disk, a new hash is calculated and cached.</span></span>
 
-<span data-ttu-id="3290e-119">Para ativar o Auxiliar de Marca de Imagem, o atributo src é obrigatório no elemento `<img>`.</span><span class="sxs-lookup"><span data-stu-id="3290e-119">To activate the Image Tag Helper, the src attribute is required on the `<img>` element.</span></span> 
-
-> [!NOTE]
-> <span data-ttu-id="3290e-120">O Auxiliar de Marca de Imagem usa o provedor `Cache` no servidor Web local para armazenar o `Sha512` calculado de determinado arquivo.</span><span class="sxs-lookup"><span data-stu-id="3290e-120">The Image Tag Helper uses the `Cache` provider on the local web server to store the calculated `Sha512` of a given file.</span></span> <span data-ttu-id="3290e-121">Se o arquivo é solicitado novamente, o `Sha512` não precisa ser recalculado.</span><span class="sxs-lookup"><span data-stu-id="3290e-121">If the file is requested again the `Sha512` doesn't need to be recalculated.</span></span> <span data-ttu-id="3290e-122">O Cache é invalidado por um inspetor de arquivo que é anexado ao arquivo quando o `Sha512` do arquivo é calculado.</span><span class="sxs-lookup"><span data-stu-id="3290e-122">The Cache is invalidated by a file watcher that's attached to the file when the file's `Sha512` is calculated.</span></span>
-
-## <a name="additional-resources"></a><span data-ttu-id="3290e-123">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="3290e-123">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="aa3dd-128">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="aa3dd-128">Additional resources</span></span>
 
 * <xref:performance/caching/memory>
