@@ -5,12 +5,12 @@ description: Saiba como os componentes de exibição são usados no ASP.NET Core
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: cf2cfcdb07271503b844e31940e90b7376db0a6f
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: 49c8be655f151e219c8fa0854dbcf510d7bbd158
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211059"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325571"
 ---
 # <a name="view-components-in-aspnet-core"></a>Componentes de exibição no ASP.NET Core
 
@@ -75,20 +75,20 @@ Um componente de exibição define sua lógica em um método `InvokeAsync` que r
 
 O tempo de execução pesquisa a exibição nos seguintes caminhos:
 
-* /Pages/Components/\<nome_do_componente_da_exibição>/\<nome_da_exibição>
-* /Views/\<nome_do_controlador>/Components/\<nome_do_componente_da_exibição>/\<nome_da_exibição>
-* /Views/Shared/Components/\<nome_do_componente_da_exibição>/\<nome_da_exibição>
+* /Pages/Components/{Nome do Componente da Exibição}/{Nome da Exibição}
+* /Views/{Nome do Controlador}/Components/{Nome do Componente da Exibição}/{Nome da Exibição}
+* /Views/Shared/Components/{Nome do Componente da Exibição}/{Nome da Exibição}
 
 O nome de exibição padrão de um componente de exibição é *Default*, o que significa que o arquivo de exibição geralmente será nomeado *Default.cshtml*. Especifique outro nome de exibição ao criar o resultado do componente de exibição ou ao chamar o método `View`.
 
-Recomendamos que você nomeie o arquivo de exibição *Default.cshtml* e use o caminho *Views/Shared/Components/\<nome_do_componente_da_exibição>/\<nome_do_modo_de_exibição>*. O componente de exibição `PriorityList` usado nesta amostra usa *Views/Shared/Components/PriorityList/Default.cshtml* como a exibição do componente de exibição.
+Recomendamos que você nomeie o arquivo de exibição *Default.cshtml* e use o caminho *Views/Shared/Components/{Nome do Componente da Exibição}/{Nome da Exibição}*. O componente de exibição `PriorityList` usado nesta amostra usa *Views/Shared/Components/PriorityList/Default.cshtml* como a exibição do componente de exibição.
 
 ## <a name="invoking-a-view-component"></a>Invocando um componente de exibição
 
 Para usar o componente de exibição, chame o seguinte em uma exibição:
 
 ```cshtml
-@Component.InvokeAsync("Name of view component", <anonymous type containing parameters>)
+@Component.InvokeAsync("Name of view component", {Anonymous Type Containing Parameters})
 ```
 
 Os parâmetros serão passados para o método `InvokeAsync`. O componente de exibição `PriorityList` desenvolvido no artigo é invocado por meio do arquivo de exibição *Views/Todo/Index.cshtml*. A seguir, o método `InvokeAsync` é chamado com dois parâmetros:

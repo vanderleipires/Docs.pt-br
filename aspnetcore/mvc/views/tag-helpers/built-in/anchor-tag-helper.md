@@ -4,22 +4,24 @@ author: pkellner
 description: Descubra os atributos do Auxiliar de Marca de Âncora do ASP.NET e a função que cada atributo desempenha no comportamento de extensão da marca de âncora de HTML.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 01/31/2018
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 6bdf71eaf38f134cb15b5950d2cae6ab67f861a4
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 13508729c1e3b64a8b0e6965da57880738ab85c3
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273878"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325543"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a>Auxiliar de Marca de Âncora no ASP.NET Core
 
 De [Peter Kellner](http://peterkellner.net) e [Scott Addie](https://github.com/scottaddie)
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
-
 O [Auxiliar de Marca de Âncora](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper) aprimora a marca de âncora HTML padrão (`<a ... ></a>`) adicionando novos atributos. Por convenção, os nomes de atributos são prefixados com `asp-`. O valor do atributo `href` do elemento de âncora renderizado é determinado pelos valores dos atributos `asp-`.
+
+Para obter uma visão geral dos Auxiliares de Marca, confira <xref:mvc/views/tag-helpers/intro>.
+
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
 
 *SpeakerController* é usado em exemplos ao longo de todo este documento:
 
@@ -171,7 +173,7 @@ As marcas de hash são úteis ao criar aplicativos do lado do cliente. Elas pode
 
 O atributo [asp-area](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.area) define o nome de área usado para definir a rota apropriada. O exemplo a seguir ilustra como o atributo de área causa um remapeamento das rotas. Definir `asp-area` como "Blogs" faz com que o diretório *Áreas/Blogs* seja prefixado nas rotas dos controladores e exibições associados a essa marca de âncora.
 
-* **<Nome do projeto\>**
+* **{Nome do projeto}**
   * **wwwroot**
   * **Áreas**
     * **Blogs**
@@ -181,7 +183,7 @@ O atributo [asp-area](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortagh
         * **Início**
           * *AboutBlog.cshtml*
           * *Index.cshtml*
-        * *_ViewStart.cshtml*
+        * *\_ViewStart.cshtml*
   * **Controladores**
 
 Dada a hierarquia do diretório anterior, a marcação para referenciar o arquivo *AboutBlog.cshtml* é:
@@ -195,7 +197,9 @@ O HTML gerado:
 ```
 
 > [!TIP]
-> Para que as áreas funcionem em um aplicativo MVC, o modelo de rota deve incluir uma referência à área, se ela existir. Esse modelo é representado pelo segundo parâmetro da chamada do método `routes.MapRoute` em *Startup.Configure*:[!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=5)]
+> Para que as áreas funcionem em um aplicativo MVC, o modelo de rota deve incluir uma referência à área, se ela existir. Esse modelo é representado pelo segundo parâmetro da chamada do método `routes.MapRoute` em *Startup.Configure*:
+>
+> [!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=5)]
 
 ## <a name="asp-protocol"></a>asp-protocol
 
@@ -267,5 +271,5 @@ O HTML gerado:
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Áreas](xref:mvc/controllers/areas)
-* [Introdução às Páginas Razor](xref:razor-pages/index)
+* <xref:mvc/controllers/areas>
+* <xref:razor-pages/index>

@@ -4,14 +4,14 @@ author: guardrex
 description: Este artigo contém links para o host do Azure e para implantar recursos.
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/29/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 315261c4d20970fc399cc2a879dd452bdf3be93f
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: b238630d6f762e2b9fad1060f8150185bcf413fe
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326050"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090217"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Implantar aplicativos ASP.NET Core no Serviço de Aplicativo do Azure
 
@@ -29,10 +29,10 @@ Use a linha de comando do Visual Studio para criar e implantar um aplicativo Web
 
 Os artigos a seguir estão disponíveis na documentação do ASP.NET Core:
 
-[Publicar no Azure com o Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)  
+<xref:tutorials/publish-to-azure-webapp-using-vs>  
 Aprenda como publicar um aplicativo ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio.
 
-[Implantação contínua no Azure com o Visual Studio e o Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment)  
+<xref:host-and-deploy/azure-apps/azure-continuous-deployment>  
 Saiba como criar um aplicativo Web ASP.NET Core usando o Visual Studio e implantá-lo no Serviço de Aplicativo do Azure, usando o Git para implantação contínua.
 
 [Criar seu primeiro pipeline com o Azure Pipelines](/azure/devops/pipelines/get-started-yaml)  
@@ -45,13 +45,13 @@ Descubra as limitações de tempo de execução do Serviço de Aplicativo do Azu
 
 ## <a name="application-configuration"></a>Configuração do aplicativo
 
-No ASP.NET Core 2.0 ou posterior, os seguintes pacotes NuGet fornecem recursos de registro em log automático para aplicativos implantados para o Serviço de Aplicativo do Azure:
+Os seguintes pacotes NuGet fornecem recursos de registro em log automático para aplicativos implantados no Serviço de Aplicativo do Azure:
 
 * O [Microsoft.AspNetCore.AzureAppServices.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServices.HostingStartup/) usa [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration) para fornecer integração leve do ASP.NET Core com o Serviço de Aplicativo do Azure. Os recursos de registro em log adicionais são fornecidos pelo pacote `Microsoft.AspNetCore.AzureAppServicesIntegration`.
 * [Microsoft.AspNetCore.AzureAppServicesIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServicesIntegration/) executa [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) para adicionar provedores de log de diagnósticos do Serviço de Aplicativo do Azure no pacote `Microsoft.Extensions.Logging.AzureAppServices`.
 * [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices/) fornece implementações de agente para dar suporte a recursos de streaming de log e logs de diagnóstico do Serviço de Aplicativo do Azure.
 
-Se você estiver direcionando para o .NET Core e estiver referenciando o [metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage), os pacotes já estarão incluídos. Ambos os pacotes estão ausentes no [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) mais novo. Se você estiver direcionando ao .NET Framework ou referenciando ao metapacote `Microsoft.AspNetCore.App`, referencie os pacotes individuais de registro em log.
+Se você estiver direcionando o .NET Core e estiver referenciando o [metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage), os pacotes anteriores estarão incluídos. Os pacotes estão ausentes no [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app). Se você estiver direcionando ao .NET Framework ou referenciando ao metapacote `Microsoft.AspNetCore.App`, referencie os pacotes individuais de registro em log.
 
 ::: moniker-end
 
@@ -79,13 +79,13 @@ Saiba como examinar as cotas e métricas para aplicativos e planos do Serviço d
 [Habilitar log de diagnósticos para aplicativos Web no Serviço de Aplicativo do Azure](/azure/app-service/web-sites-enable-diagnostic-log)  
 Descubra como habilitar e acessar o log de diagnósticos para os códigos de status HTTP, solicitações com falha e atividade do servidor Web.
 
-[Introdução ao tratamento de erro no ASP.NET Core](xref:fundamentals/error-handling)  
+<xref:fundamentals/error-handling>  
 Entenda as abordagens comuns para o tratamento de erros em aplicativos ASP.NET Core.
 
-[Solucionar problemas no ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot)  
+<xref:host-and-deploy/azure-apps/troubleshoot>  
 Saiba como diagnosticar problemas com implantações do Serviço de Aplicativo do Azure com aplicativos ASP.NET Core.
 
-[Referência de erros comuns para o Serviço de Aplicativo do Azure e o IIS com o ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)  
+<xref:host-and-deploy/azure-iis-errors-reference>  
 Consulte os erros comuns de configuração de implantação para aplicativos hospedados pelo Serviço de Aplicativo do Azure/IIS com orientação para solução de problemas.
 
 ## <a name="data-protection-key-ring-and-deployment-slots"></a>Anel de chave de proteção de dados e slots de implantação
@@ -99,7 +99,7 @@ Quando ocorre a troca entre os slots de implantação, nenhum sistema que usa a 
 * Repositório SQL
 * Cache redis
 
-Para obter mais informações, veja [Principais provedores de armazenamento](xref:security/data-protection/implementation/key-storage-providers).
+Para obter mais informações, consulte <xref:security/data-protection/implementation/key-storage-providers>.
 
 ## <a name="deploy-aspnet-core-preview-release-to-azure-app-service"></a>Implantar a versão de visualização do ASP.NET Core para o Serviço de Aplicativo do Azure
 

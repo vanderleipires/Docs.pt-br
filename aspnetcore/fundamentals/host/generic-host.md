@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: e19a8a78b4c02fbae3d3acd23ee357c6003c35cf
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 0924e2764958911dc1711d5427f6dd58e8873739
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44039959"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477599"
 ---
 # <a name="net-generic-host"></a>Host Genérico .NET
 
@@ -44,6 +44,19 @@ A biblioteca do Host Genérico está disponível no [namespace Microsoft.Extensi
 [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder) é o principal componente usado por aplicativos e bibliotecas para inicializar, compilar e executar o host:
 
 [!code-csharp[](generic-host/samples-snapshot/2.x/GenericHostSample/Program.cs?name=snippet_HostBuilder)]
+
+## <a name="default-services"></a>Serviços padrão
+
+Os seguintes serviços são registrados durante a inicialização do host:
+
+* [Ambiente](xref:fundamentals/environments) (<xref:Microsoft.Extensions.Hosting.IHostingEnvironment>)
+* <xref:Microsoft.Extensions.Hosting.HostBuilderContext>
+* [Configuração](xref:fundamentals/configuration/index) (<xref:Microsoft.Extensions.Configuration.IConfiguration>)
+* <xref:Microsoft.Extensions.Hosting.IApplicationLifetime> (<xref:Microsoft.Extensions.Hosting.Internal.ApplicationLifetime>)
+* <xref:Microsoft.Extensions.Hosting.IHostLifetime> (<xref:Microsoft.Extensions.Hosting.Internal.ConsoleLifetime>)
+* <xref:Microsoft.Extensions.Hosting.IHost>
+* [Opções](xref:fundamentals/configuration/options) (<xref:Microsoft.Extensions.DependencyInjection.OptionsServiceCollectionExtensions.AddOptions*>)
+* [Registro em log](xref:fundamentals/logging/index) (<xref:Microsoft.Extensions.DependencyInjection.LoggingServiceCollectionExtensions.AddLogging*>)
 
 ## <a name="host-configuration"></a>Configuração do host
 
@@ -85,7 +98,7 @@ A propriedade [IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extens
 **Tipo**: *string*  
 **Padrão**: o nome do assembly que contém o ponto de entrada do aplicativo.  
 **Definido usando**: `HostBuilderContext.HostingEnvironment.ApplicationName`  
-**Variável de ambiente**: `<PREFIX_>APPLICATIONKEY` (`<PREFIX_>` é [opcional e definida pelo usuário](#configuration-builder))
+**Variável de ambiente**: `<PREFIX_>APPLICATIONNAME` (`<PREFIX_>` é [opcional e definida pelo usuário](#configuration-builder))
 
 ```csharp
 var host = new HostBuilder()

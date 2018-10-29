@@ -5,12 +5,12 @@ description: Saiba como o ASP.NET Core MVC usa o middleware de roteamento para c
 ms.author: riande
 ms.date: 09/17/2018
 uid: mvc/controllers/routing
-ms.openlocfilehash: d66c2f14adf55dd0c4a7c3adfad7e5737e4deda1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 2f6328a5efaa96fd8e4f0cafdbde77dd63a1548f
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011647"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477638"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>Roteamento para ações do controlador no ASP.NET Core
 
@@ -383,7 +383,7 @@ Roteamento do Razor Pages e do controlador do MVC compartilham uma implementaç�
 
 ## <a name="token-replacement-in-route-templates-controller-action-area"></a>Substituição de token em modelos de rota ([controlador] [ação] [área])
 
-Para conveniência, as rotas de atributo dão suporte à *substituição de token* colocando um token entre chaves quadradas (`[`, `]`). Os tokens `[action]`, `[area]` e `[controller]` serão substituídos pelos valores do nome da ação, do nome da área e do nome do controlador da ação em que a rota é definida. Neste exemplo, as ações podem corresponder a caminhos de URL conforme descrito nos comentários:
+Para conveniência, as rotas de atributo dão suporte à *substituição de token* colocando um token entre chaves quadradas (`[`, `]`). Os tokens `[action]`, `[area]` e `[controller]` são substituídos pelos valores do nome da ação, do nome da área e do nome do controlador da ação em que a rota é definida. No exemplo a seguir, as ações correspondem a caminhos de URL conforme descrito nos comentários:
 
 [!code-csharp[](routing/sample/main/Controllers/ProductsController.cs?range=7-11,13-17,20-22)]
 
@@ -410,6 +410,53 @@ public class ProductsController : MyBaseController
 A substituição de token também se aplica a nomes de rota definidos por rotas de atributo. `[Route("[controller]/[action]", Name="[controller]_[action]")]` gera um nome de rota exclusivo para cada ação.
 
 Para corresponder ao delimitador de substituição de token literal `[` ou `]`, faça seu escape repetindo o caractere (`[[` ou `]]`).
+
+::: moniker range=">= aspnetcore-2.2"
+
+<a name="routing-token-replacement-transformers-ref-label"></a>
+
+### <a name="use-a-parameter-transformer-to-customize-token-replacement"></a>Usar um transformador de parâmetro para personalizar a substituição de token
+
+A substituição do token pode ser personalizada usando um transformador de parâmetro. Um transformador de parâmetro implementa `IOutboundParameterTransformer` e transforma o valor dos parâmetros. Por exemplo, um transformador de parâmetro `SlugifyParameterTransformer` personalizado muda o valor de rota `SubscriptionManagement` para `subscription-management`.
+
+O `RouteTokenTransformerConvention` é uma convenção de modelo de aplicativo que:
+
+* Aplica um transformador de parâmetro a todas as rotas de atributo em um aplicativo.
+* Personaliza os valores de token de rota de atributo conforme eles são substituídos.
+
+```csharp
+public class SubscriptionManagementController : Controller
+{
+    [HttpGet("[controller]/[action]")] // Matches '/subscription-management/list-all'
+    public IActionResult ListAll() { ... }
+}
+```
+
+O `RouteTokenTransformerConvention` está registrado como uma opção em `ConfigureServices`.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc(options =>
+    {
+        options.Conventions.Add(new RouteTokenTransformerConvention(
+                                     new SlugifyParameterTransformer()));
+    });
+}
+
+public class SlugifyParameterTransformer : IOutboundParameterTransformer
+{
+    public string TransformOutbound(object value)
+    {
+        if (value == null) { return null; }
+
+        // Slugify value
+        return Regex.Replace(value.ToString(), "([a-z])([A-Z])", "$1-$2").ToLower();
+    }
+}
+```
+
+::: moniker-end
 
 <a name="routing-multiple-routes-ref-label"></a>
 
@@ -510,6 +557,10 @@ As ações são roteadas convencionalmente ou segundo os atributos. Colocar uma 
 
 > [!NOTE]
 > O que diferencia os dois tipos de sistemas de roteamento é o processo aplicado após uma URL corresponder a um modelo de rota. No roteamento convencional, os valores de rota da correspondência são usados para escolher a ação e o controlador em uma tabela de pesquisa com todas as ações roteadas convencionais. No roteamento de atributo, cada modelo já está associado a uma ação e nenhuma pesquisa adicional é necessária.
+
+## <a name="complex-segments"></a>Segmentos complexos
+
+Segmentos complexos (por exemplo, `[Route("/dog{token}cat")]`), são processados combinando literais da direita para a esquerda de uma maneira não Greedy. Veja [o código-fonte](https://github.com/aspnet/Routing/blob/9cea167cfac36cf034dbb780e3f783114ef94780/src/Microsoft.AspNetCore.Routing/Patterns/RoutePatternMatcher.cs#L296) para obter uma descrição. Para obter mais informações, confira [esta edição](https://github.com/aspnet/Docs/issues/8197).
 
 <a name="routing-url-gen-ref-label"></a>
 

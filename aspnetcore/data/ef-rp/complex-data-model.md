@@ -5,12 +5,12 @@ description: Neste tutorial, você adiciona mais entidades e relações e person
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 88d727b0545f1dacb56ea889e45b02f947867b19
-ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
+ms.openlocfilehash: b81918cbd74200f0672f3002f916523fb4a9a914
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220593"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477651"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Modelo de dados – 5 de 8
 
@@ -432,7 +432,7 @@ public Student Student { get; set; }
 
 Há uma relação muitos para muitos entre as entidades `Student` e `Course`. A entidade `Enrollment` funciona como uma tabela de junção muitos para muitos *com conteúdo* no banco de dados. "Com conteúdo" significa que a tabela `Enrollment` contém dados adicionais além das FKs das tabelas unidas (nesse caso, a FK e `Grade`).
 
-A ilustração a seguir mostra a aparência dessas relações em um diagrama de entidades. (Esse diagrama foi gerado com o EF Power Tools para EF 6.x. A criação do diagrama não faz parte do tutorial.)
+A ilustração a seguir mostra a aparência dessas relações em um diagrama de entidades. (Esse diagrama foi gerado com o [EF Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EntityFramework6PowerToolsCommunityEdition) para EF 6.x. A criação do diagrama não faz parte do tutorial.)
 
 ![Relação muitos para muitos de Student-Course](complex-data-model/_static/student-course.png)
 
@@ -574,9 +574,15 @@ The ALTER TABLE statement conflicted with the FOREIGN KEY constraint "FK_dbo.Cou
 database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 ```
 
-Quando as migrações são executadas com os dados existentes, pode haver restrições de FK que não são atendidas com os dados existentes. Para este tutorial, um novo BD é criado e, portanto, não há nenhuma violação de restrição de FK. Consulte [Corrigindo restrições de chave estrangeira com os dados herdados](#fk) para obter instruções sobre como corrigir as violações de FK no BD atual.
+## <a name="apply-the-migration"></a>Aplicar a migração
 
-### <a name="drop-and-update-the-database"></a>Remover e atualizar o banco de dados
+Agora que você tem um banco de dados existente, precisa pensar sobre como aplicar as alterações futuras a ele. Este tutorial mostra duas abordagens:
+* [Remover e recriar o banco de dados](#drop)
+* [Aplicar a migração ao banco de dados existente](#applyexisting). Embora esse método seja mais complexo e demorado, é a abordagem preferencial para ambientes de produção do mundo real. **Observação**: essa é uma seção opcional do tutorial. Você pode remover e recriar etapas e ignorar esta seção. Se você quiser seguir as etapas nesta seção, não realize as etapas de remover e recriar. 
+
+<a name="drop"></a>
+
+### <a name="drop-and-re-create-the-database"></a>Remover e recriar o banco de dados
 
 O código no `DbInitializer` atualizado adiciona dados de semente às novas entidades. Para forçar o EF Core a criar um novo BD, remova e atualize o BD:
 
@@ -620,11 +626,11 @@ Examine a tabela **CourseAssignment**:
 
 ![Dados de CourseAssignment no SSOX](complex-data-model/_static/ssox-ci-data.png)
 
-<a name="fk"></a>
+<a name="applyexisting"></a>
 
-## <a name="fixing-foreign-key-constraints-with-legacy-data"></a>Corrigindo restrições de chave estrangeira com os dados herdados
+### <a name="apply-the-migration-to-the-existing-database"></a>Aplicar a migração ao banco de dados existente
 
-Esta seção é opcional.
+Esta seção é opcional. Estas etapas só funcionarão se você tiver ignorado a seção [Remover e recriar o banco de dados](#drop) anterior.
 
 Quando as migrações são executadas com os dados existentes, pode haver restrições de FK que não são atendidas com os dados existentes. Com os dados de produção, é necessário executar etapas para migrar os dados existentes. Esta seção fornece um exemplo de correção de violações de restrição de FK. Não faça essas alterações de código sem um backup. Não faça essas alterações de código se você concluir a seção anterior e atualizou o banco de dados.
 
@@ -639,7 +645,7 @@ Para fazer a migração `ComplexDataModel` funcionar com os dados existentes:
 * Altere o código para dar à nova coluna (`DepartmentID`) um valor padrão.
 * Crie um departamento fictício chamado "Temp" para atuar como o departamento padrão.
 
-### <a name="fix-the-foreign-key-constraints"></a>Corrigir as restrições de chave estrangeira
+#### <a name="fix-the-foreign-key-constraints"></a>Corrigir as restrições de chave estrangeira
 
 Atualize o método `Up` das classes `ComplexDataModel`:
 

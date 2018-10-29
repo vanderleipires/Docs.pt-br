@@ -5,12 +5,12 @@ description: Saiba como começar a usar o ASP.NET Core MVC e o Visual Studio.
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 41f986a06ec46dc025c4e8218745b4a513e8ee2a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: fe555e4cfcaec5d4bb8ccee00b06d1bbcaae9dcd
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011689"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391200"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>Introdução ao ASP.NET Core MVC e ao Visual Studio
 
@@ -48,12 +48,12 @@ Complete a caixa de diálogo **Novo Projeto**:
 Faça as configurações necessárias na caixa de diálogo **Novo aplicativo Web ASP.NET Core (.NET Core) – MvcMovie**:
 
 * Na caixa suspensa do seletor de versão, selecione **ASP.NET Core 2.1**
-* Selecione **Aplicativo Web (Modelo-Exibir-Controlador)**
+* Selecione **Aplicativo Web (Model-View-Controller)**
 * Toque em **OK**.
 
 ![Caixa de diálogo Novo projeto, .NET Core no painel esquerdo, Web do ASP.NET Core ](start-mvc/_static/new_project22-21.png)
 
-O Visual Studio usou um modelo padrão para o projeto MVC que você acabou de criar. Para que o aplicativo comece a funcionar agora mesmo, digite um nome de projeto e selecione algumas opções. Este é um projeto inicial básico e é um bom ponto de partida,
+O Visual Studio usou um modelo padrão para o projeto MVC que você acabou de criar. Para que o aplicativo comece a funcionar agora mesmo, digite um nome de projeto e selecione algumas opções. Este é um projeto inicial básico e é um bom ponto de partida.
 
 Toque em **F5** para executar o aplicativo no modo de depuração ou **Ctrl-F5** para executá-lo no modo de não depuração.
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->

@@ -5,12 +5,12 @@ description: Saiba como adicionar classes de gerenciamento de filmes em um banco
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 5cd1e08ac52d352be23a280419d7456f685a03ad
-ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
+ms.openlocfilehash: 41a88e06afbe6e7accd03ff7b39aa69e15e0c0b4
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045595"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325807"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Adicionar um modelo a um aplicativo Páginas Razor no ASP.NET Core
 
@@ -32,10 +32,10 @@ Nesta seção, é feito o scaffold do modelo de filme. Ou seja, a ferramenta de 
 
 Crie uma pasta *Pages/Movies*:
 
-* No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Pages* > **Adicionar** > **Nova Pasta**.
+* No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Páginas* > **Adicionar** > **Nova Pasta**.
 * Dê à pasta o nome *Movies*
 
-No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Pages/Movies* pasta > **Adicionar** > **Novo item com scaffold**.
+No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta *Páginas/Filmes* pasta > **Adicionar** > **Novo item com scaffold**.
 
 ![Imagem das instruções anteriores.](model/_static/sca.png)
 
@@ -47,19 +47,18 @@ Conclua a caixa de diálogo **Adicionar Razor Pages usando o Entity Framework (C
 
 * Na lista suspensa **Classe de modelo**, selecione **Filme (RazorPagesMovie.Models)**.
 * Na linha **Classe de contexto de dados**, selecione o sinal **+** (+) e aceite o nome gerado **RazorPagesMovie.Models.RazorPagesMovieContext**.
-* Na lista suspensa **Classe de contexto de dados**, selecione **RazorPagesMovie.Models.RazorPagesMovieContext**
 * Selecione **Adicionar**.
 
 ![Imagem das instruções anteriores.](model/_static/arp.png)
 
-O processo de scaffold criou e alterou os seguintes arquivos:
+O processo de scaffold cria e atualiza os arquivos a seguir:
 
 ### <a name="files-created"></a>Arquivos criados
 
 * *Pages/Movies*: Criar, Excluir, Detalhes, Editar, Índice. Essas páginas serão detalhadas no próximo tutorial.
 * *Data/RazorPagesMovieContext.cs*
 
-### <a name="file-updates"></a>Atualizações de arquivo
+### <a name="file-updated"></a>Arquivo atualizado
 
 * *Startup.cs*: alterações nesse arquivo serão detalhadas na próxima seção.
 * *appsettings.json*: a cadeia de conexão usada para se conectar a um banco de dados local é adicionada.
@@ -110,9 +109,10 @@ dotnet ef database update
 
 Ignore a mensagem de aviso a seguir, pois você corrigirá isso em um tutorial posterior:
 
-`Microsoft.EntityFrameworkCore.Model.Validation[30000]`
-
-      *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.*
+```console
+Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+```
 
 O comando `Add-Migration` gera código para criar o esquema de banco de dados inicial. O esquema é baseado no modelo especificado no `RazorPagesMovieContext` (no arquivo *Data/RazorPagesMovieContext.cs*). O argumento `Initial` é usado para nomear as migrações. Você pode usar qualquer nome, mas, por convenção, escolha um nome que descreve a migração. Consulte [Introdução às migrações](xref:data/ef-mvc/migrations#introduction-to-migrations) para obter mais informações.
 
@@ -120,8 +120,10 @@ O comando `Update-Database` executa o método `Up` no arquivo *Migrations/{time-
 
 Se você obtiver o erro:
 
-`SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
-Login failed for user 'User-name'.`
+```console
+SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
+Login failed for user 'User-name'.
+```
 
 Você perdeu a [etapa de migrações](#pmc).
 
@@ -186,9 +188,10 @@ dotnet ef database update
 
 Ignore a mensagem a seguir:
 
-    `Microsoft.EntityFrameworkCore.Model.Validation[30000]`
-
-      *No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'*
+```console
+Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Price' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'
+```
 
 você corrigirá isso no próximo tutorial.
 

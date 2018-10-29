@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: d9ba96c7b2abd35b1b13c84814bf3f776e8d8731
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 500cefbc7caee2054b4afda7c1277685862f5ad4
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47861051"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348553"
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
@@ -391,7 +391,15 @@ Para restringir um parâmetro a um conjunto conhecido de valores possíveis, use
 
 ## <a name="parameter-transformer-reference"></a>Referência de parâmetro de transformador
 
-Os transformadores de parâmetro são executados ao gerar um link para um `Route`. Eles usam o valor de rota do parâmetro e o transformam em um novo valor de cadeia de caracteres. O valor transformado é usado no link gerado. Por exemplo, um transformador de parâmetro `slugify` personalizado em padrão de rota `blog\{article:slugify}` com `Url.Action(new { article = "MyTestArticle" })` gera `blog\my-test-article`. Os transformadores de parâmetro implementam `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer` e são configurados usando <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>.
+Transformadores de parâmetro:
+
+* Executar ao gerar um link para um `Route`.
+* Implementar `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer`.
+* São configurados usando <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>.
+* Usam o valor de rota do parâmetro e o transformam em um novo valor de cadeia de caracteres.
+* O valor transformado é usado no link gerado.
+
+Por exemplo, um transformador de parâmetro `slugify` personalizado em padrão de rota `blog\{article:slugify}` com `Url.Action(new { article = "MyTestArticle" })` gera `blog\my-test-article`.
 
 Os transformadores de parâmetro também são usados pelas estruturas para transformar o URI em que o ponto de extremidade é resolvido. Por exemplo, o ASP.NET Core MVC usa os transformadores de parâmetro para transformar o valor de rota usado para corresponder a um `area`, `controller`, `action` e `page`.
 
@@ -403,7 +411,10 @@ routes.MapRoute(
 
 Com a rota anterior, a ação `SubscriptionManagementController.GetAll()` é combinada com o URI `/subscription-management/get-all`. Um transformador de parâmetro não altera os valores de rota usados para gerar um link. `Url.Action("GetAll", "SubscriptionManagement")` gera `/subscription-management/get-all`.
 
-O ASP.NET Core MVC também vem com a convenção de API `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention`. A convenção aplica um transformador de parâmetro especificado a todos os tokens da rota de atributo no aplicativo.
+ASP.NET Core fornece convenções de API para usar transformadores de parâmetro com as rotas geradas:
+
+* ASP.NET Core MVC tem a convenção de API `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention`. Essa convenção aplica um transformador de parâmetro especificado a todas as rotas de atributo no aplicativo. O transformador de parâmetro transforma os tokens de rota do atributo conforme elas são substituídas. Para obter mais informações, confira [Usar um transformador de parâmetro para personalizar a substituição de token](/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement).
+* Razor Pages têm a convenção de API `Microsoft.AspNetCore.Mvc.ApplicationModels.PageRouteTransformerConvention`. Essa convenção aplica-se um transformador de parâmetro especificado para todas as Razor Pages descobertas automaticamente. O transformador de parâmetro transforma a pasta e segmentos de nome de arquivo de rotas de página do Razor. Para obter mais informações, confira [Usar um transformador de parâmetros para personalizar rotas de página](/aspnet/core/razor-pages/razor-pages-conventions#use-a-parameter-transformer-to-customize-page-routes).
 
 ::: moniker-end
 

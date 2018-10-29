@@ -5,12 +5,12 @@ description: Neste tutorial, você adicionará funcionalidades de classificaçã
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 668d6e54a64022dda948170f72538f6d4cd9a49f
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 06669d69fa9fec87d262c2b5bfd8b11649259849
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011632"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348436"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Páginas Razor com o EF Core no ASP.NET Core – Classificação, filtro, paginação – 3 de 8
 
@@ -97,9 +97,9 @@ Para verificar se a classificação funciona:
 
 Para obter um melhor entendimento do código:
 
-* Em *Student/Index.cshtml.cs*, defina um ponto de interrupção em `switch (sortOrder)`.
+* Em *Students/Index.cshtml.cs*, defina um ponto de interrupção em `switch (sortOrder)`.
 * Adicione uma inspeção para `NameSort` e `DateSort`.
-* Em *Student/Index.cshtml*, defina um ponto de interrupção em `@Html.DisplayNameFor(model => model.Student[0].LastName)`.
+* Em *Students/Index.cshtml*, defina um ponto de interrupção em `@Html.DisplayNameFor(model => model.Student[0].LastName)`.
 
 Execute o depurador em etapas.
 
@@ -123,7 +123,7 @@ O código anterior:
 
 Observação: o código anterior chama o método `Where` em um objeto `IQueryable`, e o filtro é processado no servidor. Em alguns cenários, o aplicativo pode chamar o método `Where` como um método de extensão em uma coleção em memória. Por exemplo, suponha que `_context.Students` seja alterado do `DbSet` do EF Core para um método de repositório que retorna uma coleção `IEnumerable`. O resultado normalmente é o mesmo, mas em alguns casos pode ser diferente.
 
-Por exemplo, a implementação do .NET Framework do `Contains` executa uma comparação diferencia maiúsculas de minúsculas por padrão. No SQL Server, a diferenciação de maiúsculas e minúsculas de `Contains` é determinada pela configuração de agrupamento da instância do SQL Server. O SQL Server usa como padrão a não diferenciação de maiúsculas e minúsculas. `ToUpper` pode ser chamado para fazer com que o teste diferencie maiúsculas de minúsculas de forma explícita:
+Por exemplo, a implementação do .NET Framework do `Contains` executa uma comparação diferencia maiúsculas de minúsculas por padrão. No SQL Server, a diferenciação de maiúsculas e minúsculas de `Contains` é determinada pela configuração de ordenação da instância do SQL Server. O SQL Server usa como padrão a não diferenciação de maiúsculas e minúsculas. `ToUpper` pode ser chamado para fazer com que o teste diferencie maiúsculas de minúsculas de forma explícita:
 
 `Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())`
 
@@ -235,9 +235,9 @@ Execute o aplicativo e navegue para a página de alunos.
 
 Para obter um melhor entendimento do código:
 
-* Em *Student/Index.cshtml.cs*, defina um ponto de interrupção em `switch (sortOrder)`.
+* Em *Students/Index.cshtml.cs*, defina um ponto de interrupção em `switch (sortOrder)`.
 * Adicione uma inspeção para `NameSort`, `DateSort`, `CurrentSort` e `Model.Student.PageIndex`.
-* Em *Student/Index.cshtml*, defina um ponto de interrupção em `@Html.DisplayNameFor(model => model.Student[0].LastName)`.
+* Em *Students/Index.cshtml*, defina um ponto de interrupção em `@Html.DisplayNameFor(model => model.Student[0].LastName)`.
 
 Execute o depurador em etapas.
 

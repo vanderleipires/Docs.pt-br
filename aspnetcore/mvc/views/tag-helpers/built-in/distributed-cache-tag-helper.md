@@ -3,44 +3,54 @@ title: Auxiliar de Marca de Cache Distribuído no ASP.NET Core
 author: pkellner
 description: Saiba como usar o Auxiliar de marca de cache distribuído.
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: 1b51164a6d3dab2eeaf64262d6f0d9961bd00d12
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: a5b33451a763c297c6d7885855a321c43435abb4
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028070"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325205"
 ---
 # <a name="distributed-cache-tag-helper-in-aspnet-core"></a>Auxiliar de Marca de Cache Distribuído no ASP.NET Core
 
-Por [Peter Kellner](http://peterkellner.net) 
+Por [Peter Kellner](http://peterkellner.net) e [Luke Latham](https://github.com/guardrex)
 
 O Auxiliar de Marca de Cache Distribuído fornece a capacidade de melhorar consideravelmente o desempenho do aplicativo ASP.NET Core armazenando seu conteúdo em cache em uma fonte de cache distribuído.
 
-O Auxiliar de Marca de Cache Distribuído herda da mesma classe base do Auxiliar de Marca de Cache. Todos os atributos associados ao Auxiliar de Marca de Cache também funcionarão no Auxiliar de Marca Distribuído.
+Para obter uma visão geral dos Auxiliares de Marca, confira <xref:mvc/views/tag-helpers/intro>.
 
-O Auxiliar de Marca de Cache Distribuído segue o **Princípio de Dependências Explícitas**, conhecido como **Injeção de Construtor**. Especificamente, o contêiner de interface `IDistributedCache` é passado para o construtor do Auxiliar de Marca de Cache Distribuído. Se nenhuma implementação concreta específica de `IDistributedCache` tiver sido criada em `ConfigureServices`, geralmente encontrada em startup.cs, o Auxiliar de Marca de Cache Distribuído usará o mesmo provedor em memória para armazenar os dados em cache que o Auxiliar de Marca de Cache básico.
+O Auxiliar de Marca de Cache Distribuído herda da mesma classe base do Auxiliar de Marca de Cache. Todos os atributos de [Auxiliar de Marca de Cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper) estão disponíveis ao Auxiliar de Marca Distribuído.
+
+O Auxiliar de Marca de Cache distribuído usa [injeção de construtor](xref:fundamentals/dependency-injection#constructor-injection-behavior). A interface <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> é passada para o construtor do Auxiliar de Marca de Cache Distribuído. Se nenhuma implementação concreta de `IDistributedCache` for criada em `Startup.ConfigureServices` (*Startup.cs*), o Auxiliar de Marca de Cache Distribuído usará o mesmo provedor na memória para armazenar dados em cache como o [Auxiliar de Marca de Cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper).
 
 ## <a name="distributed-cache-tag-helper-attributes"></a>Atributos do auxiliar de marca de cache distribuído
 
-- - -
+### <a name="attributes-shared-with-the-cache-tag-helper"></a>Atributos compartilhados com o Auxiliar de Marca de Cache
 
-### <a name="enabled-expires-on-expires-after-expires-sliding-vary-by-header-vary-by-query-vary-by-route-vary-by-cookie-vary-by-user-vary-by-priority"></a>prioridade expires-on expires-after expires-sliding vary-by-header vary-by-query vary-by-route vary-by-cookie vary-by-user vary-by habilitada
+* `enabled`
+* `expires-on`
+* `expires-after`
+* `expires-sliding`
+* `vary-by-header`
+* `vary-by-query`
+* `vary-by-route`
+* `vary-by-cookie`
+* `vary-by-user`
+* `vary-by priority`
 
-Consulte Auxiliar de Marca de Cache para obter as definições. O Auxiliar de Marca de Cache Distribuído herda da mesma classe do Auxiliar de Marca de Cache. Portanto, todos esses atributos são comuns ao Auxiliar de Marca de Cache.
+O Auxiliar de Marca de Cache Distribuído herda da mesma classe que o Auxiliar de Marca de Cache. Para obter descrições desses atributos, confira [Auxiliar de Marca de Cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper).
 
-- - -
+### <a name="name"></a>name
 
-### <a name="name-required"></a>nome (obrigatório)
+| Tipo de atributo | Exemplo                               |
+| -------------- | ------------------------------------- |
+| Cadeia de Caracteres         | `my-distributed-cache-unique-key-101` |
 
-| Tipo de atributo    | Valor de exemplo     |
-|----------------   |----------------   |
-| cadeia de caracteres    | "my-distributed-cache-unique-key-101"     |
+`name` é obrigatório. O atributo `name` é usado como uma chave para cada instância de cache armazenada. Ao contrário do Auxiliar de Marca de Cache que atribui uma chave de cache a cada instância com base no nome da página do Razor e na localização na página do Razor, o Auxiliar de Marca de Cache Distribuído somente localiza suas chaves no atributo `name`.
 
-O atributo `name` obrigatório é usado como uma chave para esse cache armazenado de cada instância de um Auxiliar de Marca de Cache Distribuído. Ao contrário do Auxiliar de Marca de Cache básico que atribui uma chave a cada instância do Auxiliar de Marca de Cache com base no nome da página do Razor e na localização do Auxiliar de Marca na página do Razor, o Auxiliar de Marca de Cache Distribuído somente localiza suas chaves no atributo `name`
-
-Exemplo de uso:
+Exemplo:
 
 ```cshtml
 <distributed-cache name="my-distributed-cache-unique-key-101">
@@ -50,7 +60,7 @@ Exemplo de uso:
 
 ## <a name="distributed-cache-tag-helper-idistributedcache-implementations"></a>Implementações de IDistributedCache do Auxiliar de Marca de Cache Distribuído
 
-Há duas implementações de `IDistributedCache` internas do ASP.NET Core. Uma é baseada no SQL Server e a outra, no Redis. Os detalhes dessas implementações podem ser encontrados em <xref:performance/caching/distributed>. Ambas as implementações envolvem a definição de uma instância de `IDistributedCache` no *Startup.cs* do ASP.NET Core.
+Há duas implementações de <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> internas do ASP.NET Core. Uma é baseada no SQL Server e a outra, no Redis. Os detalhes dessas implementações podem ser encontrados em <xref:performance/caching/distributed>. Ambas as implementações envolvem configurar de uma instância do `IDistributedCache` em `Startup`.
 
 Não há nenhum atributo de marca especificamente associado ao uso de uma implementação específica de `IDistributedCache`.
 

@@ -3,60 +3,67 @@ title: Auxiliar de Marca de Ambiente no ASP.NET Core
 author: pkellner
 description: Definição de Auxiliar de Marca de Ambiente do ASP.NET Core, incluindo todas as propriedades
 ms.author: riande
-ms.date: 07/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/environment-tag-helper
-ms.openlocfilehash: 4a283a3a03aa6cac228ec6effd02e3f1095be260
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 379f58ed37329f047d53adf1dcfdfd2ad6a6ca4e
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342218"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325231"
 ---
 # <a name="environment-tag-helper-in-aspnet-core"></a>Auxiliar de Marca de Ambiente no ASP.NET Core
 
-Por [Peter Kellner](http://peterkellner.net) e [Hisham Bin Ateya](https://twitter.com/hishambinateya)
+Por [Peter Kellner](http://peterkellner.net), [Hisham Bin Ateya](https://twitter.com/hishambinateya) e [Luke Latham](https://github.com/guardrex)
 
-O Auxiliar de Marca de Ambiente renderiza condicionalmente seu conteúdo contido com base no ambiente de hospedagem atual. Seu único atributo `names` é uma lista separada por vírgula de nomes de ambiente. Se houver uma correspondência de um nome ao ambiente atual, ele disparará o conteúdo contido a ser renderizado.
+O Auxiliar de Marca de Ambiente renderiza condicionalmente seu conteúdo contido com base no [ambiente de hospedagem](xref:fundamentals/environments) atual. Atributo único do Auxiliar de Marca de Ambiente, `names`, é uma lista separada por vírgulas de nomes de ambiente. Se nenhum dos nomes de ambiente fornecido corresponder ao ambiente atual, o conteúdo contido será renderizado.
+
+Para obter uma visão geral dos Auxiliares de Marca, confira <xref:mvc/views/tag-helpers/intro>.
 
 ## <a name="environment-tag-helper-attributes"></a>Atributos do Auxiliar de Marca de Ambiente
 
 ### <a name="names"></a>nomes
 
-Aceita um único nome de ambiente de hospedagem ou uma lista separada por vírgula de nomes de ambiente de hospedagem que disparam a renderização do conteúdo contido.
+`names` aceita um único nome de ambiente de hospedagem ou uma lista separada por vírgula de nomes de ambiente de hospedagem que disparam a renderização do conteúdo contido.
 
-Esses valores são comparados com o valor atual retornado da propriedade estática `HostingEnvironment.EnvironmentName` do ASP.NET Core.  Esse valor é um dos seguintes: **Preparo**, **Desenvolvimento** ou **Produção**. A comparação ignora o uso de maiúsculas.
+Valores de ambiente são comparados com o valor retornado por [IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*). A comparação ignora o uso de maiúsculas.
 
-Um exemplo de um auxiliar de marca `environment` válido é:
+O exemplo a seguir usa um Auxiliar de Marca de Ambiente. O conteúdo será renderizado se o ambiente de hospedagem for De Preparo ou de Produção:
 
 ```cshtml
 <environment names="Staging,Production">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
 </environment>
 ```
+
+::: moniker range=">= aspnetcore-2.0"
 
 ## <a name="include-and-exclude-attributes"></a>incluir e excluir atributos
 
-O ASP.NET Core 2.x adiciona os atributos `include` & `exclude`. Esses atributos controlam a renderização do conteúdo contido com base nos nomes de ambiente de hospedagem incluídos ou excluídos.
+Os atributos `include` & `exclude` controlam a renderização do conteúdo contido com base nos nomes de ambiente de hospedagem incluídos ou excluídos.
 
-### <a name="include-aspnet-core-20-and-later"></a>incluir o Core ASP.NET Core 2.0 e posterior
+### <a name="include"></a>include
 
-A propriedade `include` tem um comportamento semelhante do atributo `names` no ASP.NET Core 1.0.
+A propriedade `include` exibe um comportamento semelhante para o atributo `names`. Um ambiente listado no valor do atributo `include` deve corresponder ao ambiente de hospedagem do aplicativo ([IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*)) para renderizar o conteúdo da marcação `<environment>`.
 
 ```cshtml
 <environment include="Staging,Production">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
 </environment>
 ```
 
-### <a name="exclude-aspnet-core-20-and-later"></a>excluir o ASP.NET Core 2.0 e posterior
+### <a name="exclude"></a>exclude
 
-Por outro lado, a propriedade `exclude` permite que `EnvironmentTagHelper` renderize o conteúdo contido para todos os nomes de ambiente de hospedagem, exceto aqueles especificados.
+Em contraste com o atributo `include`, o conteúdo da marcação `<environment>` é processado quando o ambiente de hospedagem não corresponde a um ambiente listado no valor do atributo `exclude`.
 
 ```cshtml
 <environment exclude="Development">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is not Development</strong>
 </environment>
 ```
+
+::: moniker-end
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -1,17 +1,17 @@
 ---
 title: Inicialização do aplicativo no ASP.NET Core
 author: ardalis
-description: Saiba como a classe Startup no ASP.NET Core configura serviços e o pipeline de solicitação do aplicativo.
+description: Explica como a classe Startup no ASP.NET Core configura serviços e o pipeline de solicitação do aplicativo.
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 923d17be9c2bb1a9d338599d1cdc4c34302cddab
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 392dc83666bc6b9012adc6c32169ae7bdc7ed8d7
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040089"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391109"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Inicialização do aplicativo no ASP.NET Core
 
@@ -62,7 +62,7 @@ Adicionar serviços ao contêiner de serviços os torna disponíveis dentro do a
 
 O host da Web pode configurar alguns serviços antes que métodos `Startup` sejam chamados. Detalhes estão disponíveis no tópico [Host no ASP.NET Core](xref:fundamentals/host/index).
 
-Para recursos que exigem uma configuração significativa, há métodos de extensão `Add[Service]` em [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Um aplicativo Web típico registra serviços para o Entity Framework, Identity e MVC:
+Para recursos que exigem uma configuração significativa, há métodos de extensão `Add[Service]` em [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Um aplicativo ASP.NET Core típico registra serviços para o Entity Framework, Identity e MVC:
 
 [!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
 

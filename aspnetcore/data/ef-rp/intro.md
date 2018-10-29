@@ -5,12 +5,12 @@ description: Mostra como criar um aplicativo das Páginas do Razor usando o Enti
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: 89002f7b4a5af17a9404b14822086c7a9a6ec265
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: f714934a2ef804813290ae0c04432470a2ba5816
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011450"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477560"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Páginas Razor com o Entity Framework Core no ASP.NET Core – Tutorial 1 de 8
 
@@ -187,9 +187,9 @@ O processo de scaffold criou e alterou os seguintes arquivos:
 * *Pages/Students* Criar, Excluir, Detalhes, Editar, Índice.
 * *Data/SchoolContext.cs*
 
-### <a name="files-updates"></a>Atualizações de arquivos
+### <a name="file-updates"></a>Atualizações de arquivo
 
-* *Startup.cs*: alterações nesse arquivo serão detalhadas na próxima seção.
+* *Startup.cs*: alterações a esse arquivo serão detalhadas na próxima seção.
 * *appsettings.json*: a cadeia de conexão usada para se conectar a um banco de dados local é adicionada.
 
 ## <a name="examine-the-context-registered-with-dependency-injection"></a>Examinar o contexto registrado com a injeção de dependência

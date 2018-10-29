@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 12075f68dd828680f6bfbd46ea22ebd7bbe52dc7
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 8986eec479dc69a144c30820d5775efe51386579
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326011"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091113"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hospedar o ASP.NET Core no Windows com o IIS
 
@@ -85,13 +85,19 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. `CreateDefaultBuilder` chama o método <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*>, que seleciona a porta dinâmica e configura o Kestrel para escutar em `http://localhost:{dynamicPort}/`. Isso substitui outras configurações de URL, como chamadas a `UseUrls` ou à [API de Escuta do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Portanto, as chamadas a `UseUrls` ou à API `Listen` do Kestrel não são necessárias ao usar o módulo. Se `UseUrls` ou `Listen` for chamado, o Kestrel só escutará na porta especificada durante a execução do aplicativo sem o IIS.
+O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. `CreateDefaultBuilder` chama o método <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*>. `UseIISIntegration` configura o Kestrel para escutar na porta dinâmica no endereço IP do localhost (`127.0.0.1`). Se a porta dinâmica for 1234, o Kestrel escutará em `127.0.0.1:1234`. Essa configuração substitui outras configurações de URL fornecidas por:
+
+* `UseUrls`
+* [API de escuta do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [Configuração](xref:fundamentals/configuration/index) (ou [opção --urls de linha de comando](xref:fundamentals/host/web-host#override-configuration))
+
+As chamadas a `UseUrls` ou à API `Listen` do Kestrel não são necessárias ao usar o módulo. Se `UseUrls` ou `Listen` for chamado, o Kestrel escutará nas portas especificadas somente durante a execução do aplicativo sem o IIS.
 
 Para saber mais sobre os modelos de hospedagem em processo e fora de processo, confira o tópico <xref:fundamentals/servers/aspnet-core-module> e o <xref:host-and-deploy/aspnet-core-module>.
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="= aspnetcore-2.1"
 
 Um *Program.cs* típico chama <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> para começar a configurar um host. `CreateDefaultBuilder` configura [Kestrel](xref:fundamentals/servers/kestrel) como o servidor Web e habilita a integração IIS configurando o caminho base e a porta para o [módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module):
 
@@ -101,7 +107,33 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. `CreateDefaultBuilder` chama o método [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration), que seleciona a porta dinâmica e configura Kestrel para escutar em `http://localhost:{dynamicPort}/`. Isso substitui outras configurações de URL, como chamadas a `UseUrls` ou à [API de Escuta do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration). Portanto, as chamadas a `UseUrls` ou à API `Listen` do Kestrel não são necessárias ao usar o módulo. Se `UseUrls` ou `Listen` for chamado, o Kestrel escutará na porta especificada durante a execução do aplicativo sem o IIS.
+O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. `CreateDefaultBuilder` chama o método [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration). `UseIISIntegration` configura o Kestrel para escutar na porta dinâmica no endereço IP do localhost (`127.0.0.1`). Se a porta dinâmica for 1234, o Kestrel escutará em `127.0.0.1:1234`. Essa configuração substitui outras configurações de URL fornecidas por:
+
+* `UseUrls`
+* [API de escuta do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [Configuração](xref:fundamentals/configuration/index) (ou [opção --urls de linha de comando](xref:fundamentals/host/web-host#override-configuration))
+
+As chamadas a `UseUrls` ou à API `Listen` do Kestrel não são necessárias ao usar o módulo. Se `UseUrls` ou `Listen` for chamado, o Kestrel escutará na porta especificada somente durante a execução do aplicativo sem o IIS.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+Um *Program.cs* típico chama <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> para começar a configurar um host. `CreateDefaultBuilder` configura [Kestrel](xref:fundamentals/servers/kestrel) como o servidor Web e habilita a integração IIS configurando o caminho base e a porta para o [módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module):
+
+```csharp
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        ...
+```
+
+O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. `CreateDefaultBuilder` chama o método [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration). `UseIISIntegration` configura o Kestrel para escutar na porta dinâmica no endereço IP do localhost (`localhost`). Se a porta dinâmica for 1234, o Kestrel escutará em `localhost:1234`. Essa configuração substitui outras configurações de URL fornecidas por:
+
+* `UseUrls`
+* [API de escuta do Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [Configuração](xref:fundamentals/configuration/index) (ou [opção --urls de linha de comando](xref:fundamentals/host/web-host#override-configuration))
+
+As chamadas a `UseUrls` ou à API `Listen` do Kestrel não são necessárias ao usar o módulo. Se `UseUrls` ou `Listen` for chamado, o Kestrel escutará na porta especificada somente durante a execução do aplicativo sem o IIS.
 
 ::: moniker-end
 
@@ -118,7 +150,12 @@ var host = new WebHostBuilder()
 
 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) e [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) são necessários. A chamada do código a `UseIISIntegration` não afeta a portabilidade do código. Se o aplicativo não é executado por trás do IIS (por exemplo, o aplicativo é executado diretamente em Kestrel), `UseIISIntegration` não opera.
 
-O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. O método `UseIISIntegration` seleciona a porta dinâmica e configura o Kestrel para escutar em `http://locahost:{dynamicPort}/`. Isso substitui outras configurações de URL, como chamadas a `UseUrls`. Portanto, uma chamada a `UseUrls` não é necessária ao usar o módulo. Se `UseUrls` for chamado, o Kestrel escutará na porta especificada durante a execução do aplicativo sem o IIS.
+O Módulo do ASP.NET Core gera uma porta dinâmica a ser atribuída ao processo de back-end. `UseIISIntegration` configura o Kestrel para escutar na porta dinâmica no endereço IP do localhost (`localhost`). Se a porta dinâmica for 1234, o Kestrel escutará em `localhost:1234`. Essa configuração substitui outras configurações de URL fornecidas por:
+
+* `UseUrls`
+* [Configuração](xref:fundamentals/configuration/index) (ou [opção --urls de linha de comando](xref:fundamentals/host/web-host#override-configuration))
+
+Uma chamada a `UseUrls` não é necessária ao usar o módulo. Se `UseUrls` for chamado, o Kestrel escutará na porta especificada somente durante a execução do aplicativo sem o IIS.
 
 Se `UseUrls` for chamado em um aplicativo do ASP.NET Core 1.0, chame-o **antes** de chamar `UseIISIntegration` para que a porta configurada pelo módulo não seja substituída. Essa ordem de chamada não é necessária com o ASP.NET Core 1.1, porque a configuração do módulo substitui `UseUrls`.
 
@@ -362,7 +399,7 @@ Para configurar a proteção de dados no IIS para persistir o token de autentica
 
   As chaves de proteção de dados usadas pelos aplicativos ASP.NET Core são armazenadas no registro externo aos aplicativos. Para persistir as chaves de determinado aplicativo, crie uma chave de registro para o pool de aplicativos.
 
-  Para instalações autônomas do IIS não Web Farm, você pode usar o [script Provision-AutoGenKeys.ps1 de Proteção de Dados do PowerShell (ASP.NET Core 2.2)](https://github.com/aspnet/DataProtection/blob/release/2.2/Provision-AutoGenKeys.ps1) para cada pool de aplicativos usado com um aplicativo ASP.NET Core. Esse script cria uma chave de registro no registro HKLM que é acessível apenas para a conta do processo de trabalho do pool de aplicativos do aplicativo. As chaves são criptografadas em repouso usando a DPAPI com uma chave para todo o computador.
+  Para instalações autônomas do IIS não Web Farm, você pode usar o [script Provision-AutoGenKeys.ps1 de Proteção de Dados do PowerShell](https://github.com/aspnet/AspNetCore/blob/master/src/DataProtection/Provision-AutoGenKeys.ps1) para cada pool de aplicativos usado com um aplicativo ASP.NET Core. Esse script cria uma chave de registro no registro HKLM que é acessível apenas para a conta do processo de trabalho do pool de aplicativos do aplicativo. As chaves são criptografadas em repouso usando a DPAPI com uma chave para todo o computador.
 
   Em cenários de web farm, um aplicativo pode ser configurado para usar um caminho UNC para armazenar seu token de autenticação de proteção de dados. Por padrão, as chaves de proteção de dados não são criptografadas. Garanta que as permissões de arquivo de o compartilhamento de rede sejam limitadas à conta do Windows na qual o aplicativo é executado. Um certificado X509 pode ser usado para proteger chaves em repouso. Considere um mecanismo para permitir aos usuários carregar certificados: coloque os certificados no repositório de certificados confiáveis do usuário e certifique-se de que eles estejam disponíveis em todos os computadores nos quais o aplicativo do usuário é executado. Veja [Configurar a proteção de dados do ASP.NET Core](xref:security/data-protection/configuration/overview) para obter detalhes.
 

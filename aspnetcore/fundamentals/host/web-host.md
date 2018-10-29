@@ -4,14 +4,14 @@ author: guardrex
 description: Saiba mais sobre o host da Web no ASP.NET Core, que é responsável pelo gerenciamento de tempo de vida e pela inicialização do aplicativo.
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/01/2018
+ms.date: 10/18/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: 7440ab26534840b190a346614f645860fc2b7d78
-ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
+ms.openlocfilehash: e19f12f69dfdd5653aea9c6be2b05f24009b875e
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44089893"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477443"
 ---
 # <a name="aspnet-core-web-host"></a>Host da Web do ASP.NET Core
 
@@ -46,10 +46,10 @@ public class Program
 * Carrega a [configuração do host](#host-configuration-values) de:
   * Variáveis de ambiente prefixadas com `ASPNETCORE_` (por exemplo, `ASPNETCORE_ENVIRONMENT`).
   * Argumentos de linha de comando.
-* Carrega a configuração do aplicativo de:
+* Carrega a configuração do aplicativo na seguinte ordem de:
   * *appsettings.json*.
   * *appsettings.{Environment}.json*.
-  * [Segredos do usuário](xref:security/app-secrets) quando o aplicativo é executado no ambiente `Development` usando o assembly de entrada.
+  * [Gerenciador de Segredo](xref:security/app-secrets) quando o aplicativo é executado no ambiente `Development` usando o assembly de entrada.
   * Variáveis de ambiente.
   * Argumentos de linha de comando.
 * Configura o [registro em log](xref:fundamentals/logging/index) para a saída do console e de depuração. O registro em log inclui regras de [filtragem de log](xref:fundamentals/logging/index#log-filtering) especificadas em uma seção de configuração de registro em log de um arquivo *appsettings.json* ou *appsettings.{Environment}.json*.
@@ -184,7 +184,7 @@ A propriedade [IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extens
 **Tipo**: *string*  
 **Padrão**: o nome do assembly que contém o ponto de entrada do aplicativo.  
 **Definido usando**: `UseSetting`  
-**Variável de ambiente**: `ASPNETCORE_APPLICATIONKEY`
+**Variável de ambiente**: `ASPNETCORE_APPLICATIONNAME`
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -365,15 +365,13 @@ WebHost.CreateDefaultBuilder(args)
 
 ### <a name="hosting-startup-exclude-assemblies"></a>Hospedando assemblies de exclusão de inicialização
 
-DESCRIÇÃO
+Uma cadeia de caracteres delimitada por ponto e vírgula de assemblies de inicialização de hospedagem para exclusão na inicialização.
 
 **Chave**: hostingStartupExcludeAssemblies  
 **Tipo**: *string*  
 **Padrão**: cadeia de caracteres vazia  
 **Definido usando**: `UseSetting`  
 **Variável de ambiente**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`
-
-Uma cadeia de caracteres delimitada por ponto e vírgula de assemblies de inicialização de hospedagem para exclusão na inicialização.
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)

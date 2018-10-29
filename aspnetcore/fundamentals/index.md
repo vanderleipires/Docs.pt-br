@@ -4,22 +4,27 @@ author: rick-anderson
 description: Descubra os conceitos fundamentais para a criação de aplicativos do ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 10/25/2018
 uid: fundamentals/index
-ms.openlocfilehash: 83dfb5707700da01c45bae3c0c00e67ca397d402
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 56344315acc59003248ffaf1e61455b94a93a545
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325465"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090713"
 ---
 # <a name="aspnet-core-fundamentals"></a>Conceitos básicos do ASP.NET Core
 
-Um aplicativo ASP.NET Core é um aplicativo de console que cria um servidor Web em seu método `Main`:
+Um aplicativo ASP.NET Core é um aplicativo de console que cria um servidor Web em seu método `Program.Main`. O método `Main` é o *ponto de entrada gerenciado* do aplicativo:
 
 ::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](index/snapshots/2.x/Program.cs)]
+
+O host do .NET Core:
+
+* Carrega o [tempo de execução do .NET Core](https://github.com/dotnet/coreclr).
+* Usa o primeiro argumento de linha de comando como o caminho para o binário gerenciado que contém o ponto de entrada (`Main`) e inicia a execução do código.
 
 O método `Main` invoca [WebHost.CreateDefaultBuilder](xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*), que segue o [padrão de construtor](https://wikipedia.org/wiki/Builder_pattern) para criar um host da Web. O construtor tem métodos que definem o servidor Web (por exemplo, <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>) e a classe de inicialização (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>). No exemplo anterior, o servidor Web [Kestrel](xref:fundamentals/servers/kestrel) é alocado automaticamente. O host Web do ASP.NET Core tenta executar no IIS, se disponível. Outros servidores Web como [HTTP.sys](xref:fundamentals/servers/httpsys) podem ser usados ao chamar o método de extensão apropriado. `UseStartup` é explicado em mais detalhes na próxima seção.
 
@@ -30,6 +35,11 @@ O método `Main` invoca [WebHost.CreateDefaultBuilder](xref:Microsoft.AspNetCore
 ::: moniker range="< aspnetcore-2.0"
 
 [!code-csharp[](index/snapshots/1.x/Program.cs)]
+
+O host do .NET Core:
+
+* Carrega o [tempo de execução do .NET Core](https://github.com/dotnet/coreclr).
+* Usa o primeiro argumento de linha de comando como o caminho para o binário gerenciado que contém o ponto de entrada (`Main`) e inicia a execução do código.
 
 O método `Main` usa <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>, que segue o [padrão de construtor](https://wikipedia.org/wiki/Builder_pattern) para criar um host de aplicativo Web. O construtor tem métodos que definem o servidor Web (por exemplo, <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>) e a classe de inicialização (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>). No exemplo anterior, o servidor Web [Kestrel](xref:fundamentals/servers/kestrel) é usado. Outros servidores Web como [WebListener](xref:fundamentals/servers/weblistener) podem ser usados ao chamar o método de extensão apropriado. `UseStartup` é explicado em mais detalhes na próxima seção.
 
@@ -75,9 +85,11 @@ Para obter mais informações, consulte <xref:fundamentals/startup>.
 
 A raiz do conteúdo é o caminho base para qualquer conteúdo usado pelo aplicativo, tal como [Razor Pages](xref:razor-pages/index), exibições do MVC e ativos estáticos. Por padrão, a raiz do conteúdo é a mesma localização que o caminho base do aplicativo para o executável que hospeda o aplicativo.
 
-## <a name="web-root"></a>Raiz da Web
+## <a name="web-root-webroot"></a>Diretório base (webroot)
 
-A raiz Web de um aplicativo é o diretório do projeto que contém recursos públicos e estáticos como CSS, JavaScript e arquivos de imagem.
+O webroot de um aplicativo é o diretório do projeto que contém recursos públicos e estáticos como CSS, JavaScript e arquivos de imagem. Por padrão, *wwwroot* é o webroot.
+
+Para arquivos (*.cshtml*) do Razor, o til-barra `~/` aponta para o webroot. Caminhos que começam com `~/` são denominados caminhos virtuais.
 
 ## <a name="dependency-injection-services"></a>Injeção de dependência (serviços)
 
