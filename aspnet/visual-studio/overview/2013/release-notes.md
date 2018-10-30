@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 44ab88b61a96235da27ff41d6b649bfd7fce3e38
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 43878bc101ef97e8bbb6c150f4125707da7660c9
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830832"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244951"
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET e Web Tools para notas de versão do Visual Studio 2013
 ====================
@@ -201,7 +201,7 @@ Agora você pode substituir os filtros se aplicam a um controlador ou método de
 ASP.NET MVC agora dá suporte ao roteamento de atributo, graças a uma contribuição por Tim McCall, o autor da [ http://attributerouting.net ](http://attributerouting.net). Com o roteamento de atributo, você pode especificar suas rotas, anotando suas ações e controladores.
 
 <a id="TOC11"></a>
-## <a name="aspnet-web-api-2"></a>API Web ASP.NET 2
+## <a name="aspnet-web-api-2"></a>ASP.NET Web API 2
 
 ### <a name="attribute-routing"></a>Roteamento de atributo
 
@@ -574,7 +574,7 @@ Para obter uma lista dos novos recursos e outras alterações no Entity Framewor
 
 ASP.NET Razor 3 inclui os seguintes recursos novos:
 
-- Suporte para edição de guia. Preivously, o **Formatar documento** comando recuo automático e automática de formatação no Visual Studio não funcionou corretamente ao usar o **manter tabulações** opção. Essa alteração corrige a formatação de código do Razor para a guia formatação do Visual Studio.
+- Suporte para edição de guia. Anteriormente, o **Formatar documento** comando recuo automático e automática de formatação no Visual Studio não funcionou corretamente ao usar o **manter tabulações** opção. Essa alteração corrige a formatação de código do Razor para a guia formatação do Visual Studio.
 - Suporte para regras de reescrita de URL ao gerar links.
 - Remoção de atributo transparente de segurança.
   > [!NOTE]
@@ -598,7 +598,7 @@ Esta seção descreve problemas conhecidos e alterações significativas no ASP.
 - [Nova restauração do pacote não funciona com projetos Wix](https://nuget.codeplex.com/workitem/3598) – será corrigido em um download nuget.exe futuros e [CommandLine pacote](http://www.nuget.org/packages/NuGet.CommandLine/) atualizar.
 - [A restauração de pacote automática não funciona para projetos em uma pasta de solução](https://nuget.codeplex.com/workitem/3625) – será corrigido em NuGet 2.8.
 
-### <a name="aspnet-web-api"></a>API da Web do ASP.NET
+### <a name="aspnet-web-api"></a>ASP.NET Web API
 
 1. `ODataQueryOptions<T>.ApplyTo(IQueryable)` não retorna `IQueryable<T>` sempre, como adicionamos suporte para `$select` e `$expand`.
 

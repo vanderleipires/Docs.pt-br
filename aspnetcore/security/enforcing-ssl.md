@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/18/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: a5359fe49e71ab59b47a8a5a39e7b806ad308235
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: afa40db4c84820db91878bb98dae082b3dd9a2e2
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090961"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244873"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>Impor HTTPS no ASP.NET Core
 
@@ -225,6 +225,31 @@ dotnet new webapp --no-https
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
+## <a name="trust-the-aspnet-core-https-development-certificate-on-windows-and-macos"></a>Confiar no certificado de desenvolvimento do ASP.NET Core HTTPS no Windows e macOS
+
+SDK do .NET core inclui um certificado de desenvolvimento de HTTPS. O certificado é instalado como parte da experiência de primeira execução. Por exemplo, `dotnet --info` produz uma saída semelhante à seguinte:
+
+```text
+ASP.NET Core
+------------
+Successfully installed the ASP.NET Core HTTPS Development Certificate.
+To trust the certificate run 'dotnet dev-certs https --trust' (Windows and macOS only).
+For establishing trust on other platforms refer to the platform specific documentation.
+For more information on configuring HTTPS see https://go.microsoft.com/fwlink/?linkid=848054.
+```
+
+Instalar o SDK do .NET Core instala o certificado de desenvolvimento do ASP.NET Core HTTPS para o repositório de certificados de usuário local. O certificado foi instalado, mas não for confiável. Confiar em certificado execute a etapa única para executar o dotnet `dev-certs` ferramenta:
+
+```console
+dotnet dev-certs https --trust
+```
+
+O comando a seguir fornece ajuda sobre o `dev-certs` ferramenta:
+
+```console
+dotnet dev-certs https --help
+```
 
 ## <a name="how-to-set-up-a-developer-certificate-for-docker"></a>Como configurar um certificado de desenvolvedor para o Docker
 
