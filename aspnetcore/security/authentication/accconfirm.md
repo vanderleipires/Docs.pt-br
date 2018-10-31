@@ -5,12 +5,12 @@ description: Saiba como criar um aplicativo ASP.NET Core com a redefinição de 
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 1fae5af24359afc991a30cd2b8e2f6927845962b
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: 4c2e62335bc7dd004829dbc2a8c1f62ea91f334f
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244795"
+ms.locfileid: "50253033"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmação de conta e de recuperação de senha no ASP.NET Core
 
@@ -27,7 +27,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT) e [Joe Audette](https://twi
 Este tutorial mostra como criar um aplicativo ASP.NET Core com a redefinição de senha e de confirmação de email. Este tutorial é **não** um tópico de início. Você deve estar familiarizado com:
 
 * [ASP.NET Core](xref:tutorials/razor-pages/razor-pages-start)
-* [Autenticação](xref:security/authentication/index)
+* [Autenticação](xref:security/authentication/identity)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
 <!-- see C:/Dropbox/wrk/Code/SendGridConsole/Program.cs -->

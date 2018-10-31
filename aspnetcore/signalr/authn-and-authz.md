@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 7cfe90115b0710fba196693efd309f7c914f0ad4
-ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.openlocfilehash: aa1721ba1802e1bfba04d57378085a136c100deb
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234534"
+ms.locfileid: "50252900"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>Autenticação e autorização no SignalR do ASP.NET Core
 
@@ -22,7 +22,7 @@ Por [Andrew Stanton-Nurse](https://twitter.com/anurse)
 
 ## <a name="authenticate-users-connecting-to-a-signalr-hub"></a>Autenticar usuários que se conectam a um hub SignalR
 
-O SignalR pode ser usado com [autenticação do ASP.NET Core](xref:security/authentication/index) para associar um usuário a cada conexão. Em um hub, os dados de autenticação podem ser acessados do [ `HubConnectionContext.User` ](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) propriedade. A autenticação permite que o hub para chamar métodos em todas as conexões associadas a um usuário (consulte [gerenciar usuários e grupos no SignalR](xref:signalr/groups) para obter mais informações). Várias conexões podem estar associadas um único usuário.
+O SignalR pode ser usado com [autenticação do ASP.NET Core](xref:security/authentication/identity) para associar um usuário a cada conexão. Em um hub, os dados de autenticação podem ser acessados do [ `HubConnectionContext.User` ](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) propriedade. A autenticação permite que o hub para chamar métodos em todas as conexões associadas a um usuário (consulte [gerenciar usuários e grupos no SignalR](xref:signalr/groups) para obter mais informações). Várias conexões podem estar associadas um único usuário.
 
 ### <a name="cookie-authentication"></a>Autenticação de cookie
 

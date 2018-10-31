@@ -5,12 +5,12 @@ description: Use identidade com um aplicativo ASP.NET Core. Saiba como definir o
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 0cea81b46a8f659671c0ae1768884194ad8c1162
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 4e162edc8fb63457c8690692685f344dccdfc659
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207791"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50252923"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introdução à identidade do ASP.NET Core
 
@@ -166,7 +166,7 @@ Quando o formulário na página de logon é enviado, o `OnPostAsync` ação é c
 
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Login.cshtml.cs?name=snippet&highlight=10-11)]
 
-   A base `Controller` classe expõe um `User` propriedade que você pode acessar métodos do controlador. Por exemplo, você pode enumerar `User.Claims` e tomar decisões de autorização. Para obter mais informações, consulte [autorização](xref:security/authorization/index).
+   A base `Controller` classe expõe um `User` propriedade que você pode acessar métodos do controlador. Por exemplo, você pode enumerar `User.Claims` e tomar decisões de autorização. Para obter mais informações, consulte <xref:security/authorization/introduction>.
 
 ::: moniker-end
 
