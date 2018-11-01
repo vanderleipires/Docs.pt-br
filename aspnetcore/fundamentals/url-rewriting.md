@@ -5,18 +5,18 @@ description: Saiba mais sobre a reconfiguração de URL e o redirecionamento com
 ms.author: riande
 ms.date: 08/17/2017
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: d9f33f34f75fe7bf534146c5a426335e74635018
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5a1891c838436467fb49ff6288587fab08201179
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326063"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207180"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware de Reconfiguração de URL no ASP.NET Core
 
 Por [Luke Latham](https://github.com/guardrex) e [Mikael Mengistu](https://github.com/mikaelm12)
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/) ([como baixar](xref:index#how-to-download-a-sample))
 
 A reconfiguração de URL é o ato de modificar URLs de solicitação com base em uma ou mais regras predefinidas. A reconfiguração de URL cria uma abstração entre locais de recursos e seus endereços, de forma que os locais e endereços não estejam totalmente vinculados. Há vários cenários em que a reconfiguração de URL é útil:
 
@@ -399,9 +399,9 @@ O middleware dá suporte às seguintes variáveis de servidor do Módulo de Reco
 
 ### <a name="method-based-rule"></a>Regra baseada em método
 
-Use `Add(Action<RewriteContext> applyRule)` para implementar sua própria lógica de regra em um método. O `RewriteContext` expõe o `HttpContext` para uso no método. O `context.Result` determina como o processamento de pipeline adicional é manipulado.
+Use `Add(Action<RewriteContext> applyRule)` para implementar sua própria lógica de regra em um método. O `RewriteContext` expõe o `HttpContext` para uso no método. O `RewriteContext.Result` determina como o processamento de pipeline adicional é manipulado.
 
-| context.Result                       | Ação                                                          |
+| `RewriteContext.Result`              | Ação                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules` (padrão) | Continuar aplicando regras                                         |
 | `RuleResult.EndResponse`             | Parar de aplicar regras e enviar a resposta                       |
@@ -437,7 +437,7 @@ Solicitação original: `/file.xml`
 
 ### <a name="irule-based-rule"></a>Regra baseada em IRule
 
-Use `Add(IRule)` para implementar sua própria lógica de regra em uma classe que é derivada de `IRule`. O uso de uma `IRule` fornece maior flexibilidade em relação ao uso da abordagem de regra baseada em método. A classe derivada pode incluir um construtor, no qual você pode passar parâmetros para o método `ApplyRule`.
+Use `Add(IRule)` para encapsular sua própria lógica de regra em uma classe que implementa a interface `IRule`. O uso de uma `IRule` fornece maior flexibilidade em relação ao uso da abordagem de regra baseada em método. A classe de implementação pode incluir um construtor, no qual você pode passar parâmetros para o método `ApplyRule`.
 
 ::: moniker range=">= aspnetcore-2.0"
 

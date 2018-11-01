@@ -5,12 +5,12 @@ description: Saiba mais sobre o método e a exibição Details do controlador em
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: ce5b2af148ddba9bc718345c0b8074da8724308d
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: c5d21bc70aae4c1a1d10bb333871eeef25a1879c
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454798"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207999"
 ---
 # <a name="examine-the-details-and-delete-methods-of-an-aspnet-core-app"></a>Examine os métodos Details e Delete de um aplicativo ASP.NET Core
 
@@ -73,7 +73,7 @@ public async Task<IActionResult> Delete(int id, bool notUsed)
 
 ### <a name="publish-to-azure"></a>Publicar no Azure
 
-Para obter informações sobre como implantar no Azure, consulte [Tutorial: compilar um aplicativo ASP.NET no Azure com o Banco de Dados SQL](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase). As instruções são para um aplicativo ASP.NET, não um aplicativo ASP.NET Core, mas as etapas são as mesmas.
+Para obter informações de como implantar no Azure, confira [Tutorial: Criar um aplicativo Web .NET Core e do Banco de Dados SQL no Serviço de Aplicativo do Azure](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb).
 
 > [!div class="step-by-step"]
 > [Anterior](validation.md)

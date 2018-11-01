@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: 582a5ba461ee2df73b99e4f499e8152f7c6cb7cf
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 18674f85a0cf8c6dfffa94a2160f7182752674f7
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477157"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207986"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Lógica do controlador de teste no ASP.NET Core
 
@@ -19,7 +19,7 @@ Por [Steve Smith](https://ardalis.com/)
 
 [Controladores](xref:mvc/controllers/actions) desempenham um papel central em qualquer aplicativo ASP.NET Core MVC. Assim, você precisa estar confiante de que os controladores se comportarão conforme o esperado. Testes automatizados podem detectar erros antes do aplicativo ser implantado em um ambiente de produção.
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/testing/sample) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/testing/sample) ([como baixar](xref:index#how-to-download-a-sample))
 
 ## <a name="unit-tests-of-controller-logic"></a>Testes de unidade da lógica do controlador
 
@@ -75,7 +75,7 @@ Chamadas fictícias que não são chamadas são normalmente ignoradas, mas a cha
 > [!NOTE]
 > A biblioteca do Moq usada neste exemplo possibilita a combinação de simulações verificáveis ou "estritas" com simulações não verificáveis (também chamadas de simulações "flexíveis" ou stubs). Saiba mais sobre como [personalizar o comportamento de Simulação com o Moq](https://github.com/Moq/moq4/wiki/Quickstart#customizing-mock-behavior).
 
-Outro controlador no aplicativo de exemplo exibe informações relacionadas a uma sessão de debate específica. O controlador inclui lógica para lidar com valores `id` inválidos (há dois cenários `return` no exemplo a seguir para abordar esses cenários). A instrução `return` final retorna um novo `StormSessionViewModel` para a exibição:
+[SessionController](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/controllers/testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs) no exemplo de aplicativo exibe informações relacionadas a uma sessão de debate específica. O controlador inclui lógica para lidar com valores `id` inválidos (há dois cenários `return` no exemplo a seguir para abordar esses cenários). A última instrução `return` retorna um novo `StormSessionViewModel` para a exibição (*Controllers/SessionController.cs*):
 
 [!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?name=snippet_SessionController&highlight=12-16,18-22,31)]
 

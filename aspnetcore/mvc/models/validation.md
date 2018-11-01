@@ -3,14 +3,15 @@ title: Validação de modelo no ASP.NET Core MVC
 author: tdykstra
 description: Saiba mais sobre a validação do modelo no ASP.NET Core MVC.
 ms.author: riande
-ms.date: 07/31/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/models/validation
-ms.openlocfilehash: fe036f261b80f6134078835080409720d149374d
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 73d41b4718071d00a6f80b33de182da2ad90f331
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312148"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090944"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Validação de modelo no ASP.NET Core MVC
 
@@ -27,6 +28,13 @@ Felizmente, o .NET abstraiu a validação para atributos de validação. Esses a
 ## <a name="validation-attributes"></a>Atributos de validação
 
 Os atributos de validação são uma maneira de configurar a validação do modelo; portanto, é conceitualmente semelhante à validação em campos de tabelas de banco de dados. Isso inclui restrições, como atribuição de tipos de dados ou campos obrigatórios. Outros tipos de validação incluem a aplicação de padrões a dados para impor regras de negócio, como um cartão de crédito, número de telefone ou endereço de email. Os atributos de validação simplificam e facilitam o uso da imposição desses requisitos.
+
+Os atributos de validação são especificados no nível da propriedade: 
+
+```csharp 
+[Required] 
+public string MyProperty { get; set; } 
+``` 
 
 Veja abaixo um modelo `Movie` anotado de um aplicativo que armazena informações sobre filmes e programas de TV. A maioria das propriedades é obrigatória e várias propriedades de cadeia de caracteres têm requisitos de tamanho. Além disso, há uma restrição de intervalo numérico em vigor para a propriedade `Price` de 0 a US$ 999,99, juntamente com um atributo de validação personalizado.
 
@@ -60,9 +68,9 @@ Pode haver ocasiões em que você precisa de mais recursos do que os atributos i
 
 Os [tipos de valor](/dotnet/csharp/language-reference/keywords/value-types) que não permitem valores nulos (como `decimal`, `int`, `float` e `DateTime`) são inerentemente necessários e não precisam do atributo `Required`. O aplicativo não executa nenhuma verificação de validação do lado do servidor para tipos que não permitem valor nulo marcados como `Required`.
 
-A associação de modelos do MVC, que não está preocupada com a validação nem com atributos de validação, rejeita o envio de um campo de formulário que contém um valor ausente ou espaço em branco para um tipo que não permite valor nulo. Na ausência de um atributo `BindRequired` na propriedade de destino, a associação de modelos ignora dados ausentes para tipos que não permitem valor nulo, nos quais o campo de formulário está ausente nos dados de formulário de entrada.
+O model binding do MVC, que não está preocupado com a validação nem com atributos de validação, rejeita o envio de um campo de formulário que contém um valor ausente ou espaço em branco para um tipo que não permite valor nulo. Na ausência de um atributo `BindRequired` na propriedade de destino, o model binding ignora dados ausentes para tipos que não permitem valor nulo, nos quais o campo de formulário está ausente nos dados de formulário de entrada.
 
-O [atributo BindRequired](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute) (consulte também [Personalizar o comportamento da associação de modelos com atributos](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes)) é útil para garantir que os dados de formulário estejam completos. Quando aplicado a uma propriedade, o sistema de associação de modelos exige um valor para essa propriedade. Quando aplicado a um tipo, o sistema de associação de modelos exige valores para todas as propriedades desse tipo.
+O [atributo BindRequired](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute) (veja também <xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes>) é útil para garantir que os dados do formulário sejam preenchidos. Quando aplicado a uma propriedade, o sistema de model binding exige um valor para essa propriedade. Quando aplicado a um tipo, o sistema de model binding exige valores para todas as propriedades desse tipo.
 
 Quando você usa um tipo [Nullable\<T>](/dotnet/csharp/programming-guide/nullable-types/) (por exemplo, `decimal?` ou `System.Nullable<decimal>`) e marca-o como `Required`, é realizada uma verificação de validação do lado do servidor, como se a propriedade fosse um tipo que permite valor nulo padrão (para exemplo, uma `string`).
 
@@ -84,7 +92,7 @@ Alguns aplicativos optarão por seguir uma convenção padrão para lidar com er
 
 ## <a name="manual-validation"></a>Validação manual
 
-Após a conclusão da associação e validação de modelos, recomendamos repetir partes dela. Por exemplo, um usuário pode ter inserido um texto em um campo que espera um inteiro ou talvez você precise calcular um valor da propriedade de um modelo.
+Após a conclusão da validação e de model binding, recomendamos repetir partes disso. Por exemplo, um usuário pode ter inserido um texto em um campo que espera um inteiro ou talvez você precise calcular um valor da propriedade de um modelo.
 
 Talvez seja necessário executar a validação manualmente. Para fazer isso, chame o método `TryValidateModel`, conforme mostrado aqui:
 
@@ -256,4 +264,4 @@ Se você precisa validar dois ou mais campos adicionais com o atributo `[Remote]
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`, como todos os argumentos de atributo, deve ser uma expressão de constante. Portanto, você não deve usar uma [cadeia de caracteres interpolada](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) ou chamar [`string.Join()`](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) para inicializar `AdditionalFields`. Para cada campo adicional adicionado ao atributo `[Remote]`, é necessário adicionar outro argumento ao método de ação do controlador correspondente.
+`AdditionalFields`, como todos os argumentos de atributo, deve ser uma expressão de constante. Portanto, você não deve usar uma [cadeia de caracteres interpolada](/dotnet/csharp/language-reference/keywords/interpolated-strings) ou chamar [`string.Join()`](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) para inicializar `AdditionalFields`. Para cada campo adicional adicionado ao atributo `[Remote]`, é necessário adicionar outro argumento ao método de ação do controlador correspondente.

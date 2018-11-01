@@ -3,15 +3,15 @@ title: Auxiliares de marca em formulários no ASP.NET Core
 author: rick-anderson
 description: Descreve os Auxiliares de marca internos usados com Formulários.
 ms.author: riande
-ms.custom: H1Hack27Feb2017
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: e613dc1e85b84cc5e2b8ad2bf3958040257d1966
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
-ms.translationtype: HT
+ms.openlocfilehash: efc71cc8d072769cde07e129b6d9bb933fc2f7af
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911273"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090188"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>Auxiliares de marca em formulários no ASP.NET Core
 
@@ -29,7 +29,7 @@ O Auxiliar de marca de [formulário](https://www.w3.org/TR/html401/interact/form
 
 * Gera o valor do atributo HTML [\<FORM>](https://www.w3.org/TR/html401/interact/forms.html) `action` para uma ação do controlador MVC ou uma rota nomeada
 
-* Gera um [Token de verificação de solicitação](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) oculto para evitar a falsificação de solicitações entre sites (quando usado com o atributo `[ValidateAntiForgeryToken]` no método de ação HTTP Post)
+* Gera um [Token de verificação de solicitação](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) oculto para evitar a falsificação de solicitações entre sites (quando usado com o atributo `[ValidateAntiForgeryToken]` no método de ação HTTP Post)
 
 * Fornece o atributo `asp-route-<Parameter Name>`, em que `<Parameter Name>` é adicionado aos valores de rota. Os parâmetros `routeValues` para `Html.BeginForm` e `Html.BeginRouteForm` fornecem funcionalidade semelhante.
 
@@ -48,7 +48,7 @@ O Auxiliar de marca de formulário acima gera o HTML a seguir:
 </form>
 ```
 
-O tempo de execução do MVC gera o valor do atributo `action` dos atributos `asp-controller` e `asp-action` do Auxiliar de marca de formulário. O Auxiliar de marca de formulário também gera um [Token de verificação de solicitação](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) oculto para evitar a falsificação de solicitações entre sites (quando usado com o atributo `[ValidateAntiForgeryToken]` no método de ação HTTP Post). É difícil proteger um Formulário HTML puro contra falsificação de solicitações entre sites e o Auxiliar de marca de formulário fornece este serviço para você.
+O tempo de execução do MVC gera o valor do atributo `action` dos atributos `asp-controller` e `asp-action` do Auxiliar de marca de formulário. O Auxiliar de marca de formulário também gera um [Token de verificação de solicitação](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) oculto para evitar a falsificação de solicitações entre sites (quando usado com o atributo `[ValidateAntiForgeryToken]` no método de ação HTTP Post). É difícil proteger um Formulário HTML puro contra falsificação de solicitações entre sites e o Auxiliar de marca de formulário fornece este serviço para você.
 
 ### <a name="using-a-named-route"></a>Usando uma rota nomeada
 
@@ -106,12 +106,12 @@ O Auxiliar de marca `Input` define o atributo HTML `type` com base no tipo .NET.
 
 |Tipo .NET|Tipo de entrada|
 |---|---|
-|Bool|type=”checkbox”|
-|Cadeia de Caracteres|type=”text”|
-|DateTime|type=”datetime”|
-|Byte|type=”number”|
-|int|type=”number”|
-|Single e Double|type=”number”|
+|Bool|type="checkbox"|
+|Cadeia de Caracteres|type="text"|
+|DateTime|type="datetime"|
+|Byte|type="number"|
+|int|type="number"|
+|Single e Double|type="number"|
 
 
 A tabela a seguir mostra alguns atributos de [anotações de dados](/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) comuns que o auxiliar de marca de entrada mapeará para tipos de entrada específicos (não são listados todos os atributos de validação):
@@ -119,13 +119,13 @@ A tabela a seguir mostra alguns atributos de [anotações de dados](/dotnet/api/
 
 |Atributo|Tipo de entrada|
 |---|---|
-|[EmailAddress]|type=”email”|
-|[Url]|type=”url”|
-|[HiddenInput]|type=”hidden”|
-|[Phone]|type=”tel”|
-|[DataType(DataType.Password)]| type=”password”|
-|[DataType(DataType.Date)]| type=”date”|
-|[DataType(DataType.Time)]| type=”time”|
+|[EmailAddress]|type="email"|
+|[Url]|type="url"|
+|[HiddenInput]|type="hidden"|
+|[Phone]|type="tel"|
+|[DataType(DataType.Password)]| type="password"|
+|[DataType(DataType.Date)]| type="date"|
+|[DataType(DataType.Time)]| type="time"|
 
 
 Amostra:
@@ -244,7 +244,6 @@ O Razor a seguir mostra como iterar em uma coleção:
 O modelo *Views/Shared/EditorTemplates/ToDoItem.cshtml*:
 
 [!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
-
 
 >[!NOTE]
 >Sempre use `for` (e *não* `foreach`) para iterar em uma lista. Avaliar um indexador em uma expressão LINQ pode ser caro e deve feito o mínimo possível.
@@ -574,10 +573,10 @@ O elemento `<option>` correto será selecionado (contém o atributo `selected="s
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Auxiliares de marcação](xref:mvc/views/tag-helpers/intro)
+* <xref:mvc/views/tag-helpers/intro>
 * [Elemento de formulário HTML](https://www.w3.org/TR/html401/interact/forms.html)
 * [Token de verificação de solicitação](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
-* [Model binding](xref:mvc/models/model-binding)
-* [Validação de modelo](xref:mvc/models/validation)
+* <xref:mvc/models/model-binding>
+* <xref:mvc/models/validation>
 * [Interface IAttributeAdapter](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
 * [Snippets de código para este documento](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)

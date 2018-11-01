@@ -6,23 +6,23 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 500cefbc7caee2054b4afda7c1277685862f5ad4
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 06059d720bd4444b1ec12e42d466ee54d1658203
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348553"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207750"
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
 Por [Ryan Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.com/) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-A funcionalidade de roteamento é responsável por mapear uma solicitação de entrada para um manipulador de rotas. As rotas são definidas no aplicativo e configuradas quando o aplicativo é iniciado. Uma rota pode opcionalmente extrair os valores da URL contida na solicitação e esses valores podem então ser usados para o processamento da solicitação. Usando as informações de rota do aplicativo, a funcionalidade de roteamento também é capaz de gerar URLs que são mapeadas para manipuladores de rotas. Portanto, o roteamento pode encontrar um manipulador de rotas com base em uma URL ou a URL correspondente a um manipulador de rotas especificado com base nas informações de manipulador de rotas.
+A funcionalidade de roteamento é responsável por mapear uma solicitação de entrada para um manipulador de rotas. As rotas são definidas no aplicativo e configuradas quando o aplicativo é iniciado. Uma rota pode opcionalmente extrair os valores da URL contida na solicitação e esses valores podem então ser usados para o processamento da solicitação. Usando as informações de rota do aplicativo, a funcionalidade de roteamento também é capaz de gerar URLs que são mapeadas para manipuladores de rotas. Portanto, o roteamento pode encontrar um manipulador de rotas com base em uma URL ou encontrar a URL correspondente a um determinado manipulador de rotas com base nas informações do manipulador de rotas.
 
 > [!IMPORTANT]
 > Este documento aborda o roteamento de nível inferior do ASP.NET Core. Para obter informações sobre o roteamento do ASP.NET Core MVC, confira <xref:mvc/controllers/routing>.
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/samples) ([como baixar](xref:index#how-to-download-a-sample))
 
 ## <a name="routing-basics"></a>Conceitos básicos sobre roteamento
 
@@ -47,7 +47,7 @@ Uma correspondência durante `RouteAsync` também define as propriedades de `Rou
 
 [RouteData.Values](xref:Microsoft.AspNetCore.Routing.RouteData.Values*) é um dicionário de *valores de rota* produzido por meio da rota. Esses valores geralmente são determinados pela criação de token da URL e podem ser usados para aceitar a entrada do usuário ou tomar outras decisões de expedição dentro do aplicativo.
 
-[RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*) é um recipiente de propriedades de dados adicionais relacionados à rota correspondente. `DataTokens` são fornecidos para dar suporte à associação de dados de estado com cada rota para que o aplicativo possa tomar decisões posteriormente com base em qual rota foi correspondida. Esses valores são definidos pelo desenvolvedor e **não** afetam de forma alguma o comportamento do roteamento. Além disso, os valores armazenados em stash nos tokens de dados podem ser de qualquer tipo, ao contrário dos valores de rota, quem devem ser conversíveis com facilidade bidirecionalmente em cadeias de caracteres.
+[RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*) é um recipiente de propriedades de dados adicionais relacionados à rota correspondente. `DataTokens` são fornecidos para dar suporte à associação de dados de estado com cada rota para que o aplicativo possa tomar decisões posteriormente com base em qual rota foi correspondida. Esses valores são definidos pelo desenvolvedor e **não** afetam de forma alguma o comportamento do roteamento. Além disso, os valores armazenados em stash em `RouteData.DataTokens` podem ser de qualquer tipo, ao contrário de `RouteData.Values`, que precisa ser facilmente conversível de/em cadeias de caracteres.
 
 [RouteData.Routers](xref:Microsoft.AspNetCore.Routing.RouteData.Routers*) é uma lista das rotas que participaram da correspondência bem-sucedida da solicitação. As rotas podem ser aninhadas uma dentro da outra. A propriedade `Routers` reflete o caminho pela árvore lógica de rotas que resultou em uma correspondência. Em geral, o primeiro item em `Routers` é a coleção de rotas e deve ser usado para a geração de URL. O último item em `Routers` é o manipulador de rotas que teve uma correspondência.
 
@@ -63,7 +63,7 @@ As entradas primárias para `GetVirtualPath` são:
 * [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values*)
 * [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues*)
 
-As rotas usam principalmente os valores de rota fornecidos pelo `Values` e `AmbientValues` para decidir em que local é possível gerar uma URL e quais valores serão incluídos. Os `AmbientValues` são o conjunto de valores de rota produzidos pela correspondência da solicitação atual com o sistema de roteamento. Por outro lado, `Values` são os valores de rota que especificam como gerar a URL desejada para a operação atual. O `HttpContext` é fornecido para o caso de uma rota precisar obter serviços ou dados adicionais associados ao contexto atual.
+As rotas usam principalmente os valores de rota fornecidos por `Values` e `AmbientValues` para decidir se é possível gerar uma URL e quais valores serão incluídos. Os `AmbientValues` são o conjunto de valores de rota produzidos pela correspondência da solicitação atual com o sistema de roteamento. Por outro lado, `Values` são os valores de rota que especificam como gerar a URL desejada para a operação atual. O `HttpContext` é fornecido para o caso de uma rota precisar obter serviços ou dados adicionais associados ao contexto atual.
 
 > [!TIP]
 > Considere [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values*) como um conjunto de substituições de [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues*). A geração de URL tenta reutilizar os valores de rota da solicitação atual para facilitar a geração de URLs para links usando a mesma rota ou os mesmos valores de rota.

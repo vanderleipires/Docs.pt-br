@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 0ae19b26bc86c9da7a61f3117aaae1844115593a
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 0d167f779f9dcae6b0d946dce5e341793daf43bf
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913275"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091009"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Referência de configuração do Módulo do ASP.NET Core
 
@@ -48,6 +48,8 @@ As seguintes características se aplicam ao hospedar em processo:
 * A arquitetura (número de bit) do aplicativo e o tempo de execução instalado (x64 ou x86) devem corresponder à arquitetura do pool de aplicativos.
 
 * Se a configuração manual do host do aplicativo com `WebHostBuilder` (não usando [CreateDefaultBuilder](xref:fundamentals/host/web-host#set-up-a-host)) e o aplicativo não forem executados diretamente no servidor Kestrel (auto-hospedado), chame `UseKestrel` antes de chamar `UseIISIntegration`. Se a ordem for invertida, a inicialização do host falhará.
+
+* As desconexões do cliente são detectadas. O token de cancelamento [HttpContext.RequestAborted](xref:Microsoft.AspNetCore.Http.HttpContext.RequestAborted*) é cancelado quando o cliente se desconecta.
 
 ### <a name="hosting-model-changes"></a>Alterações no modelo de hospedagem
 
@@ -155,7 +157,7 @@ Confira [Configuração de subaplicativos](xref:host-and-deploy/iis/index#sub-ap
 
 | Atributo | Descrição | Padrão |
 | --------- | ----------- | :-----: |
-| `arguments` | <p>Atributo de cadeia de caracteres opcional.</p><p>Argumentos para o executável especificado em **processPath**.</p>| |
+| `arguments` | <p>Atributo de cadeia de caracteres opcional.</p><p>Argumentos para o executável especificado em **processPath**.</p> | |
 | `disableStartUpErrorPage` | <p>Atributo booliano opcional.</p><p>Se for true, a página **502.5 – Falha do Processo** será suprimida e a página de código de status 502, configurada no *web.config*, terá precedência.</p> | `false` |
 | `forwardWindowsAuthToken` | <p>Atributo booliano opcional.</p><p>Se for true, o token será encaminhado para o processo filho escutando em %ASPNETCORE_PORT% como um cabeçalho 'MS-ASPNETCORE-WINAUTHTOKEN' por solicitação. É responsabilidade desse processo chamar CloseHandle nesse token por solicitação.</p> | `true` |
 | `hostingModel` | <p>Atributo de cadeia de caracteres opcional.</p><p>Especifica o modelo de hospedagem como em processo (`inprocess`) ou de fora do processo (`outofprocess`).</p> | `outofprocess` |
@@ -306,6 +308,50 @@ O elemento `aspNetCore` de exemplo a seguir configura o registro em log de stdou
     stdoutLogFile="\\?\%home%\LogFiles\stdout">
 </aspNetCore>
 ```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="enhanced-diagnostic-logs"></a>Logs de diagnóstico avançados
+
+O Módulo do ASP.NET Core pode ser configurado para fornecer logs de diagnóstico avançados. Adicione o elemento `<handlerSettings>` ao elemento `<aspNetCore>` no *web.config*. A definição de `debugLevel` como `TRACE` expõe uma fidelidade maior de informações de diagnóstico:
+
+```xml
+<aspNetCore processPath="dotnet"
+    arguments=".\MyApp.dll"
+    stdoutLogEnabled="false"
+    stdoutLogFile="\\?\%home%\LogFiles\stdout"
+    hostingModel="inprocess">
+  <handlerSettings>
+    <handlerSetting name="debugFile" value="aspnetcore-debug.log" />
+    <handlerSetting name="debugLevel" value="FILE,TRACE" />
+  </handlerSettings>
+</aspNetCore>
+```
+
+Os valores do nível de depuração (`debugLevel`) podem incluir o nível e a localização.
+
+Níveis (na ordem do menos para o mais detalhado):
+
+* ERROR
+* WARNING
+* INFO
+* TRACE
+
+Locais (vários locais são permitidos):
+
+* CONSOLE
+* EVENTLOG
+* FILE
+
+As configurações do manipulador também podem ser fornecidas por meio de variáveis de ambiente:
+
+* `ASPNETCORE_MODULE_DEBUG_FILE` &ndash; caminho para o arquivo de log de depuração. (Padrão: *aspnetcore-debug.log*)
+* `ASPNETCORE_MODULE_DEBUG` &ndash; configuração do nível de depuração.
+
+> [!WARNING]
+> **Não** deixe o log de depuração habilitado na implantação por mais tempo que o necessário para solucionar um problema. O tamanho do log não é limitado. Deixar o log de depuração habilitado pode esgotar o espaço em disco disponível e causar falha no servidor ou no serviço de aplicativo.
 
 ::: moniker-end
 

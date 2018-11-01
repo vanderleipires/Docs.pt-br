@@ -3,14 +3,14 @@ title: Referência da sintaxe Razor para ASP.NET Core
 author: rick-anderson
 description: Saiba mais sobre a sintaxe de marcação Razor para inserir código baseado em servidor em páginas da Web.
 ms.author: riande
-ms.date: 10/18/2017
+ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: d0f4d59cb605cc3cc7cdfa84bfc65399699e475a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 10f0db168b36fed82def8227b3c3edcf5b57f6d7
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272682"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148883"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>Referência da sintaxe Razor para ASP.NET Core
 
@@ -404,7 +404,7 @@ Diretivas de Razor são representadas por expressões implícitas com palavras-c
 
 Compreender como o Razor gera código para uma exibição torna mais fácil entender como as diretivas funcionam.
 
-[!code-html[](razor/sample/Views/Home/Contact8.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact8.cshtml)]
 
 O código gera uma classe semelhante à seguinte:
 
@@ -422,7 +422,7 @@ public class _Views_Something_cshtml : RazorPage<dynamic>
 }
 ```
 
-Posteriormente neste artigo, a seção [Exibindo a classe C# de Razor gerada para uma exibição](#viewing-the-razor-c-class-generated-for-a-view) explica como exibir essa classe gerada.
+Mais adiante neste artigo, a seção [Inspecionar a classe do Razor C# gerada para uma exibição](#inspect-the-razor-c-class-generated-for-a-view) explica como exibir essa classe gerada.
 
 <a name="using"></a>
 ### <a name="using"></a>@using
@@ -497,7 +497,6 @@ Se "rick@contoso.com" for passado no modelo, a exibição gerará a seguinte mar
 ```
 
 ### <a name="inject"></a>@inject
-
 
 A diretiva `@inject` permite que a página do Razor injete um serviço do [contêiner de serviço](xref:fundamentals/dependency-injection) em uma exibição. Para obter mais informações, consulte [Injeção de dependência em exibições](xref:mvc/views/dependency-injection).
 
@@ -574,32 +573,76 @@ Palavras-chave do Razor em C# precisam ter o escape duplo com `@(@C# Razor Keywo
 
 * classe
 
-## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>Exibindo a classe C# do Razor gerada para uma exibição
+## <a name="inspect-the-razor-c-class-generated-for-a-view"></a>Inspecionar a classe do Razor C# gerada para uma exibição
+
+::: moniker range=">= aspnetcore-2.1"
+
+Com o SDK do .NET Core 2.1 ou posterior, o [SDK do Razor](xref:razor-pages/sdk) lida com a compilação de arquivos do Razor. Ao compilar um projeto, o SDK do Razor gera um diretório *obj/<configuração_de_build>/<moniker_da_estrutura_de_destino>/Razor* na raiz do projeto. A estrutura de diretórios dentro do diretório do *Razor* espelha a estrutura de diretórios do projeto.
+
+Considere a seguinte estrutura de diretórios em um projeto do Razor Pages ASP.NET Core 2.1 direcionado ao .NET Core 2.1:
+
+* **Areas/**
+  * **Admin/**
+    * **Pages/**
+      * *Index.cshtml*
+      * *Index.cshtml.cs*
+* **Pages/**
+  * **Shared/**
+    * *_Layout.cshtml*
+  * *_ViewImports.cshtml*
+  * *_ViewStart.cshtml*
+  * *Index.cshtml*
+  * *Index.cshtml.cs*
+
+A criação do projeto na configuração de *Depuração* produz o seguinte diretório *obj*:
+
+* **obj/**
+  * **Debug/**
+    * **netcoreapp2.1/**
+      * **Razor/**
+        * **Areas/**
+          * **Admin/**
+            * **Pages/**
+              * *Index.g.cshtml.cs*
+        * **Pages/**
+          * **Shared/**
+            * *_Layout.g.cshtml.cs*
+          * *_ViewImports.g.cshtml.cs*
+          * *_ViewStart.g.cshtml.cs*
+          * *Index.g.cshtml.cs*
+
+Para exibir a classe gerada para *Pages/Index.cshtml*, abra *obj/Debug/netcoreapp2.1/Razor/Pages/Index.g.cshtml.cs*.
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
 
 Adicione a seguinte classe ao projeto do ASP.NET Core MVC:
 
 [!code-csharp[](razor/sample/Utilities/CustomTemplateEngine.cs)]
 
-Substitua o `RazorTemplateEngine` adicionado pelo MVC pela classe `CustomTemplateEngine`:
+Em `Startup.ConfigureServices`, substitua o `RazorTemplateEngine` adicionado pelo MVC pela classe `CustomTemplateEngine`:
 
 [!code-csharp[](razor/sample/Startup.cs?highlight=4&range=10-14)]
 
-Defina um ponto de interrupção na instrução `return csharpDocument` de `CustomTemplateEngine`. Quando a execução do programa parar no ponto de interrupção, exiba o valor de `generatedCode`.
+Defina o ponto de interrupção `CustomTemplateEngine` na instrução `return csharpDocument;`. Quando a execução do programa for interrompida no ponto de interrupção, veja o valor de `generatedCode`.
 
 ![Exibição do Visualizador de Texto de generatedCode](razor/_static/tvr.png)
+
+::: moniker-end
 
 ## <a name="view-lookups-and-case-sensitivity"></a>Pesquisas de exibição e diferenciação de maiúsculas e minúsculas
 
 O mecanismo de exibição do Razor executa pesquisas que diferenciam maiúsculas de minúsculas para as exibições. No entanto, a pesquisa real é determinada pelo sistema de arquivos subjacente:
 
-* Origem baseada em arquivo: 
+* Origem baseada em arquivo:
   * Em sistemas operacionais com sistemas de arquivos que não diferenciam maiúsculas e minúsculas (por exemplo, Windows), pesquisas no provedor de arquivos físico não diferenciam maiúsculas de minúsculas. Por exemplo, `return View("Test")` resulta em correspondências para */Views/Home/Test.cshtml*, */Views/home/test.cshtml* e qualquer outra variação de maiúsculas e minúsculas.
   * Em sistemas de arquivos que diferenciam maiúsculas de minúsculas (por exemplo, Linux, OSX e com `EmbeddedFileProvider`), as pesquisas diferenciam maiúsculas de minúsculas. Por exemplo, `return View("Test")` corresponde especificamente a */Views/Home/Test.cshtml*.
 * Exibições pré-compiladas: com o ASP.NET Core 2.0 e posteriores, pesquisar em exibições pré-compiladas não diferencia maiúsculas de minúsculas em nenhum sistema operacional. O comportamento é idêntico ao comportamento do provedor de arquivos físico no Windows. Se duas exibições pré-compiladas diferirem apenas quanto ao padrão de maiúsculas e minúsculas, o resultado da pesquisa não será determinístico.
 
 Os desenvolvedores são incentivados a fazer a correspondência entre as maiúsculas e minúsculas dos nomes dos arquivos e de diretórios com o uso de maiúsculas e minúsculas em:
 
-    * Nomes de área, controlador e ação. 
+    * Nomes de área, controlador e ação.
     * Páginas do Razor.
-    
+
 Fazer essa correspondência garante que as implantações encontrem suas exibições, independentemente do sistema de arquivos subjacente.

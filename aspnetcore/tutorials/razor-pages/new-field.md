@@ -4,20 +4,21 @@ author: rick-anderson
 description: Mostra como adicionar um novo campo a uma página Razor com o Entity Framework Core
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 05/30/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: d6d59ff336095e2f1b8b2e9a0338b7791605ad7a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: f8be269887903797803257d8a21e002519102047
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010891"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089507"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>Adicionar um novo campo em uma página Razor no ASP.NET Core
 
 Por [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Nesta seção, você usará as Migrações do Code First do [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) para adicionar um novo campo ao modelo e migrar essa alteração ao banco de dados.
+Nesta seção, você usará as Migrações do Code First do [Entity Framework](/ef/core/get-started/aspnetcore/new-db) para adicionar um novo campo ao modelo e migrar essa alteração ao banco de dados.
 
 Ao usar o Code First do EF para criar automaticamente um banco de dados, o Code First:
 
@@ -96,7 +97,9 @@ Consulte o [arquivo SeedData.cs concluído](https://github.com/aspnet/Docs/blob/
 
 Compile a solução.
 
-<a name="pmc"></a> No menu **Ferramentas**, selecione **Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes**.
+<a name="pmc"></a>
+
+No menu **Ferramentas**, selecione **Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes**.
 No PMC, insira os seguintes comandos:
 
 ```powershell
@@ -111,7 +114,9 @@ O comando `Add-Migration` informa à estrutura:
 
 O nome “Classificação” é arbitrário e é usado para nomear o arquivo de migração. É útil usar um nome significativo para o arquivo de migração.
 
-<a name="ssox"></a> Se você excluir todos os registros do BD, o inicializador propagará o BD e incluirá o campo `Rating`. Faça isso com os links Excluir no navegador ou no [SSOX](xref:tutorials/razor-pages/sql#ssox) (Pesquisador de Objetos do SQL Server). Para excluir o banco de dados do SSOX:
+<a name="ssox"></a>
+
+Se você excluir todos os registros no BD, o inicializador propagará o BD e incluirá o campo `Rating`. Faça isso com os links Excluir no navegador ou no [SSOX](xref:tutorials/razor-pages/sql#ssox) (Pesquisador de Objetos do SQL Server). Para excluir o banco de dados do SSOX:
 
 * Selecione o banco de dados no SSOX.
 * Clique com o botão direito do mouse no banco de dados e selecione *Excluir*.

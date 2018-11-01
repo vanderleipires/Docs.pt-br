@@ -3,14 +3,15 @@ title: ASP.NET Core MVC com EF Core – CRUD – 2 de 10
 author: rick-anderson
 description: ''
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/crud
-ms.openlocfilehash: de9b0bd1e0346d4c12f256e6226353f1ab47ed11
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 34927415beadaa3f5c9035a9101e3c99f7cbc395
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477573"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090817"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC com EF Core – CRUD – 2 de 10
 
@@ -91,7 +92,7 @@ Isso gera o seguinte HTML quando `item.ID` é 6:
 <a href="/Students/Edit?studentID=6">Edit</a>
 ```
 
-Para obter mais informações sobre auxiliares de marcação, consulte [Auxiliares de marcação no ASP.NET Core](xref:mvc/views/tag-helpers/intro).
+Para obter mais informações sobre os auxiliares de marca, confira <xref:mvc/views/tag-helpers/intro>.
 
 ### <a name="add-enrollments-to-the-details-view"></a>Adicionar registros à exibição Detalhes
 
@@ -121,7 +122,7 @@ Esse código adiciona a entidade Student criada pelo associador de modelos do AS
 
 Você removeu `ID` do atributo `Bind` porque a ID é o valor de chave primária que o SQL Server definirá automaticamente quando a linha for inserida. A entrada do usuário não define o valor da ID.
 
-Além do atributo `Bind`, o bloco try-catch é a única alteração que você fez no código gerado por scaffolding. Se uma exceção que é derivada de `DbUpdateException` é capturada enquanto as alterações estão sendo salvas, uma mensagem de erro genérica é exibida. Às vezes, as exceções `DbUpdateException` são causadas por algo externo ao aplicativo, em vez de por um erro de programação e, portanto, o usuário é aconselhado a tentar novamente. Embora não implementado nesta amostra, um aplicativo de qualidade de produção registrará a exceção em log. Para obter mais informações, consulte a seção **Log para informações** em [Monitoramento e telemetria (criando aplicativos de nuvem do mundo real com o Azure)](https://docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).
+Além do atributo `Bind`, o bloco try-catch é a única alteração que você fez no código gerado por scaffolding. Se uma exceção que é derivada de `DbUpdateException` é capturada enquanto as alterações estão sendo salvas, uma mensagem de erro genérica é exibida. Às vezes, as exceções `DbUpdateException` são causadas por algo externo ao aplicativo, em vez de por um erro de programação e, portanto, o usuário é aconselhado a tentar novamente. Embora não implementado nesta amostra, um aplicativo de qualidade de produção registrará a exceção em log. Para obter mais informações, consulte a seção **Log para informações** em [Monitoramento e telemetria (criando aplicativos de nuvem do mundo real com o Azure)](/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).
 
 O atributo `ValidateAntiForgeryToken` ajuda a impedir ataques CSRF (solicitação intersite forjada). O token é injetado automaticamente na exibição pelo [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper) e é incluído quando o formulário é enviado pelo usuário. O token é validado pelo atributo `ValidateAntiForgeryToken`. Para obter mais informações sobre o CSRF, consulte [Falsificação antissolicitação](../../security/anti-request-forgery.md).
 
@@ -277,7 +278,7 @@ Em *Startup.cs*, chame o [método de extensão AddDbContext](https://github.com/
 
 ## <a name="handling-transactions"></a>Manipulando transações
 
-Por padrão, o Entity Framework implementa transações de forma implícita. Em cenários em que são feitas alterações em várias linhas ou tabelas e, em seguida, `SaveChanges` é chamado, o Entity Framework verifica automaticamente se todas as alterações tiveram êxito ou se falharam. Se algumas alterações forem feitas pela primeira vez e, em seguida, ocorrer um erro, essas alterações serão revertidas automaticamente. Para cenários em que você precisa de mais controle – por exemplo, se desejar incluir operações feitas fora do Entity Framework em uma transação –, consulte [Transações](https://docs.microsoft.com/ef/core/saving/transactions).
+Por padrão, o Entity Framework implementa transações de forma implícita. Em cenários em que são feitas alterações em várias linhas ou tabelas e, em seguida, `SaveChanges` é chamado, o Entity Framework verifica automaticamente se todas as alterações tiveram êxito ou se falharam. Se algumas alterações forem feitas pela primeira vez e, em seguida, ocorrer um erro, essas alterações serão revertidas automaticamente. Para cenários em que você precisa de mais controle – por exemplo, se desejar incluir operações feitas fora do Entity Framework em uma transação –, consulte [Transações](/ef/core/saving/transactions).
 
 ## <a name="no-tracking-queries"></a>Consultas sem controle
 
@@ -291,7 +292,7 @@ Desabilite o controle de objetos de entidade em memória chamando o método `AsN
 
 * Você deseja anexar uma entidade para atualizá-la, mas anteriormente, recuperou a mesma entidade para uma finalidade diferente. Como a entidade já está sendo controlada pelo contexto de banco de dados, não é possível anexar a entidade que você deseja alterar. Uma maneira de lidar com essa situação é chamar `AsNoTracking` na consulta anterior.
 
-Para obter mais informações, consulte [Controle vs. Sem controle](https://docs.microsoft.com/ef/core/querying/tracking).
+Para obter mais informações, consulte [Controle vs. Sem controle](/ef/core/querying/tracking).
 
 ## <a name="summary"></a>Resumo
 

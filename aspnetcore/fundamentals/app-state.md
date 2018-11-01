@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 7794b3c10e26720d3e7ef8965f99b204a3c58d5c
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: da20538a0dc6e13caedaf6a1130e66981dcb7af2
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870928"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207284"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>Estado de sessão e aplicativo no ASP.NET Core
 
@@ -19,7 +19,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://arda
 
 O HTTP é um protocolo sem estado. Sem realizar etapas adicionais, as solicitações HTTP são mensagens independentes que não mantêm os valores de usuário nem o estado do aplicativo. Este artigo descreve várias abordagens para preservar dados do usuário e estado de aplicativo entre solicitações.
 
-[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/samples) ([como baixar](xref:tutorials/index#how-to-download-a-sample))
+[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/samples) ([como baixar](xref:index#how-to-download-a-sample))
 
 ## <a name="state-management"></a>Gerenciamento de estado
 
@@ -70,7 +70,7 @@ Estado de sessão exibe os seguintes comportamentos:
 
 O provedor de cache na memória armazena dados de sessão na memória do servidor em que o aplicativo reside. Em um cenário de farm de servidores:
 
-* Use *sessões persistentes* para vincular cada sessão a uma instância de aplicativo específico em um servidor individual. O [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/) usa o [ARR (Application Request Routing)](/iis/extensions/planning-for-arr/using-the-application-request-routing-module) para impor as sessões persistentes por padrão. Entretanto, sessões autoadesivas podem afetar a escalabilidade e complicar atualizações de aplicativos Web. Uma abordagem melhor é usar um Redis ou cache distribuído do SQL Server, que não requer sessões persistentes. Para obter mais informações, veja [Trabalhar com um cache distribuído](xref:performance/caching/distributed).
+* Use *sessões persistentes* para vincular cada sessão a uma instância de aplicativo específico em um servidor individual. O [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/) usa o [ARR (Application Request Routing)](/iis/extensions/planning-for-arr/using-the-application-request-routing-module) para impor as sessões persistentes por padrão. Entretanto, sessões autoadesivas podem afetar a escalabilidade e complicar atualizações de aplicativos Web. Uma abordagem melhor é usar um Redis ou cache distribuído do SQL Server, que não requer sessões persistentes. Para obter mais informações, consulte <xref:performance/caching/distributed>.
 * O cookie de sessão é criptografado por meio de [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector). A Proteção de Dados deve ser configurada corretamente para ler os cookies de sessão em cada computador. Para obter mais informações, veja [Proteção de dados no ASP.NET Core](xref:security/data-protection/index) e [Provedores de armazenamento de chaves](xref:security/data-protection/implementation/key-storage-providers).
 
 ### <a name="configure-session-state"></a>Configurar o estado de sessão
@@ -87,7 +87,7 @@ O pacote [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft
 
 ::: moniker-end
 
-* Qualquer um dos caches de memória [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache). A implementação `IDistributedCache` é usada como um repositório de backup para a sessão. Para obter mais informações, veja [Trabalhar com um cache distribuído](xref:performance/caching/distributed).
+* Qualquer um dos caches de memória [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache). A implementação `IDistributedCache` é usada como um repositório de backup para a sessão. Para obter mais informações, consulte <xref:performance/caching/distributed>.
 * Uma chamada para [AddSession](/dotnet/api/microsoft.extensions.dependencyinjection.sessionservicecollectionextensions.addsession) em `ConfigureServices`.
 * Uma chamada para [UseSession](/dotnet/api/microsoft.aspnetcore.builder.sessionmiddlewareextensions#methods_) em `Configure`.
 
@@ -128,8 +128,8 @@ Para substituir os padrões da sessão, use [SessionOptions](/dotnet/api/microso
 | Opção | Descrição |
 | ------ | ----------- |
 | [Cookie](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookie) | Determina as configurações usadas para criar o cookie. [Name](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name) assume como padrão [SessionDefaults.CookieName](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiename) (`.AspNetCore.Session`). [Path](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path) assume como padrão [SessionDefaults.CookiePath](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiepath) (`/`). [SameSite](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.samesite) assume como padrão [SameSiteMode.Lax](/dotnet/api/microsoft.aspnetcore.http.samesitemode) (`1`). [HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) assume `true` como padrão . [IsEssential](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.isessential) assume `false` como padrão. |
-| [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) | O `IdleTimeout` indica por quanto tempo a sessão pode ficar ociosa antes de seu conteúdo ser abandonado. Cada acesso à sessão redefine o tempo limite. Observe que isso só se aplica ao conteúdo da sessão, não o cookie. O padrão é de 20 minutos. |
-| [IOTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.iotimeout) | O tempo máximo permitido para carregar uma sessão do repositório ou para confirmá-la de volta para o repositório. Observe que isso só pode ser aplicado para operações assíncronas. Esse tempo limite pode ser desabilitado usando [InfiniteTimeSpan](/dotnet/api/system.threading.timeout.infinitetimespan). O padrão é 1 minuto. |
+| [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) | O `IdleTimeout` indica por quanto tempo a sessão pode ficar ociosa antes de seu conteúdo ser abandonado. Cada acesso à sessão redefine o tempo limite. Essa configuração aplica-se somente ao conteúdo da sessão, não ao cookie. O padrão é de 20 minutos. |
+| [IOTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.iotimeout) | O tempo máximo permitido para carregar uma sessão do repositório ou para confirmá-la de volta para o repositório. Essa configuração pode se aplicar somente a operações assíncronas. Esse tempo limite pode ser desabilitado usando [InfiniteTimeSpan](/dotnet/api/system.threading.timeout.infinitetimespan). O padrão é 1 minuto. |
 
 A sessão usa um cookie para rastrear e identificar solicitações de um único navegador. Por padrão, esse cookie se chama `.AspNetCore.Session`, e usa um caminho de `/`. Uma vez que o padrão do cookie não especifica um domínio, ele não fica disponível para o script do lado do cliente na página (porque [HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) usa `true` como padrão).
 
@@ -434,7 +434,7 @@ Use a [Injeção de dependência](xref:fundamentals/dependency-injection) para d
 
 * "Não é possível resolver o serviço para o tipo 'Microsoft.Extensions.Caching.Distributed.IDistributedCache' ao tentar ativar 'Microsoft.AspNetCore.Session.DistributedSessionStore'."
 
-  Geralmente, isso é causado quando não é configurada pelo menos uma implementação de `IDistributedCache`. Para obter mais informações, veja [Trabalhar com um cache distribuído](xref:performance/caching/distributed) e [Cache na memória](xref:performance/caching/memory).
+  Geralmente, isso é causado quando não é configurada pelo menos uma implementação de `IDistributedCache`. Para obter mais informações, consulte <xref:performance/caching/distributed> e <xref:performance/caching/memory>.
 
 * Caso a sessão de middleware não consiga manter uma sessão (por exemplo, se o repositório de backup não estiver disponível), o middleware registrará a exceção e a solicitação continuará normalmente. Isso leva a um comportamento imprevisível.
 

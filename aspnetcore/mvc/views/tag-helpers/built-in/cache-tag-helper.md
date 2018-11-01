@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 7d64c500168166b0a7a29d5b92473726d5a9f49a
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 2590682755721a4bb14902b9fe7138a3bff56d31
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325335"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148805"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Auxiliar de Marca de Cache no ASP.NET Core MVC
 
@@ -119,7 +119,7 @@ O exemplo a seguir monitora o valor do cabeçalho `User-Agent`. O exemplo armaze
 | -------------- | -------------------- |
 | Cadeia de Caracteres         | `Make`, `Make,Model` |
 
-`vary-by-query` aceita uma lista delimitada por vírgulas de valores de cabeçalho que disparam uma atualização do cache quando o valor do cabeçalho muda.
+`vary-by-query` aceita uma lista delimitada por vírgula de <xref:Microsoft.AspNetCore.Http.IQueryCollection.Keys*> em uma cadeia de consulta (<xref:Microsoft.AspNetCore.Http.HttpRequest.Query*>) que dispara uma atualização do cache quando o valor de qualquer chave listada é alterado.
 
 O exemplo a seguir monitora os valores de `Make` e `Model`. O exemplo armazena em cache o conteúdo para todos os diferentes `Make` e `Model` apresentados ao servidor Web:
 

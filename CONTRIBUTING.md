@@ -56,6 +56,13 @@ Para obter mais informações, confira a [Referência Cruzada do DocFX](https://
 
 ## <a name="images-and-screenshots"></a>Imagens e capturas de tela
 
+Não inclua imagens nos artigos, exceto:
+
+* Nos tutoriais básicos de integração (iniciante).
+* Quando uma imagem é necessária para esclarecimento.
+
+Essas restrições reduzem o tamanho do repositório.
+
 Como uma etapa opcional, compacte as imagens e as capturas de tela usadas na documentação, o que ajuda com o desempenho de carregamento de página e o tamanho do arquivo. Algumas ferramentas populares incluem TinyPNG (usando o [site TinyPNG](https://tinypng.com/) ou a [API TinyPNG](https://tinypng.com/developers)) ou a extensão [Otimizador de Imagem](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ImageOptimizer) do Visual Studio. 
 
 ## <a name="code-snippets"></a>Snippets de código

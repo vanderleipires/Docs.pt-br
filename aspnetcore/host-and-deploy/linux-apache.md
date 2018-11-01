@@ -4,14 +4,14 @@ description: Saiba como configurar o Apache como um servidor proxy reverso no Ce
 author: spboyer
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 10/09/2018
+ms.date: 10/23/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 237646f839a4973074bb64176a024ebb3d32ee4e
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 25545be5e4d9cb922b3aac4f6666503c1143d555
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913002"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090314"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Hospedar o ASP.NET Core no Linux com o Apache
 
@@ -57,13 +57,6 @@ Qualquer componente que dependa do esquema, como autenticação, geração de li
 
 ::: moniker range=">= aspnetcore-2.0"
 
-> [!NOTE]
-> Qualquer configuração &mdash;com ou sem um servidor proxy reverso&mdash; é uma configuração de hospedagem válida e compatível com o ASP.NET Core 2.0 ou aplicativos posteriores. Para obter mais informações, consulte [Quando usar Kestrel com um proxy reverso](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
-
-::: moniker-end
-
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
 Invoque o método [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) em `Startup.Configure` antes de chamar [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) ou um middleware de esquema de autenticação semelhante. Configure o middleware para encaminhar os cabeçalhos `X-Forwarded-For` e `X-Forwarded-Proto`:
 
 ```csharp
@@ -75,7 +68,9 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 app.UseAuthentication();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 Invoque o método [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) em `Startup.Configure` antes de chamar [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) e [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) ou um middleware de esquema de autenticação semelhante. Configure o middleware para encaminhar os cabeçalhos `X-Forwarded-For` e `X-Forwarded-Proto`:
 
@@ -93,7 +88,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 });
 ```
 
----
+::: moniker-end
 
 Se nenhum [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) for especificado para o middleware, os cabeçalhos padrão para encaminhar serão `None`.
 
@@ -399,13 +394,17 @@ sudo yum install mod_headers
 
 [Clickjacking](https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger), também conhecido como um *ataque por inferência na interface do usuário*, é um ataque mal-intencionado em que o visitante do site é levado a clicar em um link ou botão em uma página diferente daquela que está visitando atualmente. Use `X-FRAME-OPTIONS` para proteger o site.
 
-Edite o arquivo *httpd.conf*:
+Para atenuar ataques de clickjacking:
 
-```bash
-sudo nano /etc/httpd/conf/httpd.conf
-```
+1. Edite o arquivo *httpd.conf*:
 
-Adicione a linha `Header append X-FRAME-OPTIONS "SAMEORIGIN"`. Salve o arquivo. Reinicie o Apache.
+   ```bash
+   sudo nano /etc/httpd/conf/httpd.conf
+   ```
+
+   Adicione a linha `Header append X-FRAME-OPTIONS "SAMEORIGIN"`.
+1. Salve o arquivo.
+1. Reinicie o Apache.
 
 #### <a name="mime-type-sniffing"></a>Detecção de tipo MIME
 
@@ -485,4 +484,5 @@ O arquivo de exemplo limita a largura de banda a 600 KB/s no local raiz:
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
+* [Pré-requisitos para o .NET Core no Linux](/dotnet/core/linux-prerequisites)
 * [Configurar o ASP.NET Core para trabalhar com servidores proxy e balanceadores de carga](xref:host-and-deploy/proxy-load-balancer)

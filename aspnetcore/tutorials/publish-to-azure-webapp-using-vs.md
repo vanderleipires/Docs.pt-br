@@ -3,14 +3,15 @@ title: Publicar um aplicativo ASP.NET Core no Azure com o Visual Studio
 author: rick-anderson
 description: Aprenda como publicar um aplicativo ASP.NET Core no Serviço de Aplicativo do Azure usando o Visual Studio.
 ms.author: riande
-ms.date: 12/16/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 7211da268c1c52e7b859e6f98ce433fd19b218ff
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: a5a02112d87563a47d5e2dab355359fa39da9a89
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320720"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090349"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>Publicar um aplicativo ASP.NET Core no Azure com o Visual Studio
 
@@ -20,7 +21,7 @@ Por [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](http
 
 Confira [Publicar no Azure do Visual Studio para Mac](https://blog.xamarin.com/publish-azure-visual-studio-mac/) se você estiver trabalhando no macOS.
 
-Para solucionar um problema de implantação do Serviço de Aplicativo, confira [Solucionar problemas do ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot).
+Para solucionar um problema de implantação do Serviço de Aplicativo, confira <xref:host-and-deploy/azure-apps/troubleshoot>.
 
 ## <a name="set-up"></a>Configurar
 
@@ -126,7 +127,7 @@ O Visual Studio retorna para a caixa de diálogo **Criar Serviço de Aplicativo*
 
 ![Caixa de diálogo Configurar o Banco de Dados SQL](publish-to-azure-webapp-using-vs/_static/conf_final.png)
 
-O Visual Studio cria o aplicativo Web e o SQL Server no Azure. Esta etapa pode levar alguns minutos. Para obter informações sobre os recursos criados, consulte [Recursos adicionais](#additonal-resources).
+O Visual Studio cria o aplicativo Web e o SQL Server no Azure. Esta etapa pode levar alguns minutos. Para obter informações sobre os recursos criados, confira [Recursos adicionais](#additonal-resources).
 
 Quando a implantação for concluída, selecione **Configurações**:
 
@@ -141,7 +142,7 @@ Na página **Configurações** da caixa de diálogo **Publicar**:
 
 ![Caixa de diálogo Publicar: painel Configurações](publish-to-azure-webapp-using-vs/_static/pubs.png)
 
-Clique em **Publicar**. O Visual Studio publica o aplicativo no Azure. Quando a implantação for concluída, o aplicativo será aberto em um navegador.
+Clique em **Publicar**. O Visual Studio publica seu aplicativo no Azure. Quando a implantação for concluída, o aplicativo será aberto em um navegador.
 
 ### <a name="test-your-app-in-azure"></a>Testar o aplicativo no Azure
 
@@ -179,11 +180,11 @@ Quando você concluir o teste do aplicativo, acesse o [portal do Azure](https://
 
 ### <a name="next-steps"></a>Próximas etapas
 
-* [Implantação contínua no Azure com o Visual Studio e o Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
+* <xref:host-and-deploy/azure-apps/azure-continuous-deployment>
 
 ## <a name="additonal-resources"></a>Recursos adicionais
 
-* [Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
-* [Grupo de recursos do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
-* [Banco de Dados SQL do Azure](https://docs.microsoft.com/azure/sql-database/)
-* [Solucionar problemas no ASP.NET Core no Serviço de Aplicativo do Azure](xref:host-and-deploy/azure-apps/troubleshoot)
+* [Serviço de Aplicativo do Azure](/azure/app-service/app-service-web-overview)
+* [Grupo de recursos do Azure](/azure/azure-resource-manager/resource-group-overview#resource-groups)
+* [Banco de Dados SQL do Azure](/azure/sql-database/)
+* <xref:host-and-deploy/azure-apps/troubleshoot>
