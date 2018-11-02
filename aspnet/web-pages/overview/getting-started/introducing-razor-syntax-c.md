@@ -8,12 +8,12 @@ ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 347e5ddbc02866887d3f422ecc291e5e3dfacaaf
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: b242bf52bbd63d726e6ce6ab7be01a1b81c5bf1b
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207908"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758252"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Introdução à programação Web do ASP.NET usando a sintaxe do Razor (c#)
 ====================
@@ -342,13 +342,13 @@ A tabela a seguir lista alguns métodos comuns de conversão e teste para variá
 
 :::row:::
     :::column:::
-        <strong>Method</strong>
+    <strong>Método</strong>
     :::column-end:::
     :::column:::
-        <strong>Description</strong>
+    <strong>Descrição</strong>
     :::column-end:::
     :::column:::
-        <strong>Example</strong>
+    <strong>Exemplo</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -357,7 +357,7 @@ A tabela a seguir lista alguns métodos comuns de conversão e teste para variá
         `AsInt(), IsInt()`
     :::column-end:::
     :::column:::
-        Converts a string that represents a whole number (like "593") to an integer.
+    Converte uma cadeia de caracteres que representa um número inteiro (como "593") em um inteiro.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
@@ -369,7 +369,7 @@ A tabela a seguir lista alguns métodos comuns de conversão e teste para variá
         `AsBool(), IsBool()`
     :::column-end:::
     :::column:::
-        Converts a string like &quot;true&quot; or &quot;false&quot; to a Boolean type.
+    Converte uma cadeia de caracteres like &quot;verdadeira&quot; ou &quot;falso&quot; para um tipo booleano.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
@@ -381,7 +381,7 @@ A tabela a seguir lista alguns métodos comuns de conversão e teste para variá
         `AsFloat(), IsFloat()`
     :::column-end:::
     :::column:::
-        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a floating-point number.
+    Converte uma cadeia de caracteres que tem um valor decimal como &quot;1.3&quot; ou &quot;7.439&quot; um número de ponto flutuante.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
@@ -393,7 +393,7 @@ A tabela a seguir lista alguns métodos comuns de conversão e teste para variá
         `AsDecimal(), IsDecimal()`
     :::column-end:::
     :::column:::
-        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a decimal number. (In ASP.NET, a decimal number is more precise than a floating-point number.)
+    Converte uma cadeia de caracteres que tem um valor decimal como &quot;1.3&quot; ou &quot;7.439&quot; em um número decimal. (No ASP.NET, um número decimal é mais preciso do que um número de ponto flutuante.)
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
@@ -405,7 +405,7 @@ A tabela a seguir lista alguns métodos comuns de conversão e teste para variá
         `AsDateTime(), IsDateTime()`
     :::column-end:::
     :::column:::
-        Converts a string that represents a date and time value to the ASP.NET `DateTime` type.
+    Converte uma cadeia de caracteres que representa um valor de data e hora para o ASP.NET `DateTime` tipo.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
@@ -417,7 +417,7 @@ A tabela a seguir lista alguns métodos comuns de conversão e teste para variá
         `ToString()`
     :::column-end:::
     :::column:::
-        Converts any other data type to a string.
+    Converte qualquer tipo de dados em uma cadeia de caracteres.
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
@@ -431,13 +431,13 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
 
 :::row:::
     :::column:::
-        <strong>Operator</strong>
+    <strong>Operador</strong>
     :::column-end:::
     :::column:::
-        <strong>Description</strong>
+    <strong>Descrição</strong>
     :::column-end:::
     :::column:::
-        <strong>Examples</strong>
+    <strong>Exemplos</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -446,7 +446,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `+` `-` `*` `/`
     :::column-end:::
     :::column:::
-        Math operators used in numerical expressions.
+    Operadores de cálculo usados em expressões numéricas.
     :::column-end:::
     :::column:::
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
@@ -458,7 +458,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `=`
     :::column-end:::
     :::column:::
-        Assignment. Assigns the value on the right side of a statement to the object on the left side.
+    Atribuição. Atribui o valor no lado direito de uma instrução para o objeto no lado esquerdo.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
@@ -470,7 +470,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `==`
     :::column-end:::
     :::column:::
-        Equality. Returns `true` if the values are equal. (Notice the distinction between the `=` operator and the `==` operator.)
+    Igualdade. Retorna `true` se os valores forem iguais. (Observe a diferença entre o `=` operador e o `==` operador.)
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
@@ -482,7 +482,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `!=`
     :::column-end:::
     :::column:::
-        Inequality. Returns `true` if the values are not equal.
+    Desigualdade. Retorna `true` se os valores não forem iguais.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
@@ -494,7 +494,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `< > <= >=`
     :::column-end:::
     :::column:::
-        Less-than, greater-than, less-than-or-equal, and greater-than-or-equal.
+    Menor-que, maior-que less-than-or-equal e maior-than-or-equal.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
@@ -506,7 +506,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `+`
     :::column-end:::
     :::column:::
-        Concatenation, which is used to join strings. ASP.NET knows the difference between this operator and the addition operator based on the data type of the expression.
+    Concatenação, que é usada para unir cadeias de caracteres. ASP.NET sabe a diferença entre esse operador e o operador de adição com base no tipo de dados da expressão.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
@@ -518,7 +518,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `+=` `-=`
     :::column-end:::
     :::column:::
-        The increment and decrement operators, which add and subtract 1 (respectively) from a variable.
+    Os operadores de incremento e decremento, que adicionar e subtrair 1 (respectivamente) a partir de uma variável.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
@@ -530,7 +530,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `.`
     :::column-end:::
     :::column:::
-        Dot. Used to distinguish objects and their properties and methods.
+    Ponto. Usado para distinguir os objetos e suas propriedades e métodos.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
@@ -542,7 +542,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `()`
     :::column-end:::
     :::column:::
-        Parentheses. Used to group expressions and to pass parameters to methods.
+    Parênteses. Usado para agrupar expressões e passar parâmetros para métodos.
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
@@ -554,7 +554,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `[]`
     :::column-end:::
     :::column:::
-        Brackets. Used for accessing values in arrays or collections.
+    Colchetes. Usado para acessar valores em matrizes ou coleções.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
@@ -566,7 +566,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `!`
     :::column-end:::
     :::column:::
-        Not. Reverses a `true` value to `false` and vice versa. Typically used as a shorthand way to test for `false` (that is, for not `true`).
+    Não. Inverte uma `true` valor `false` e vice-versa. Normalmente usado como uma forma abreviada para testar `false` (ou seja, para não `true`).
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
@@ -578,7 +578,7 @@ Um operador é uma palavra-chave ou um caractere que informa ao ASP.NET que tipo
         `&&` <code>&#124;&#124;</code>
     :::column-end:::
     :::column:::
-        Logical AND and OR, which are used to link conditions together.
+    AND lógico e, que são usados para vincular condições ou juntos.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]

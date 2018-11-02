@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: b19913e5-cd8a-4e4b-a872-5ac7a858a934
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 03dd8a73141330348f2877760a5978a8a0b95122
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 6545491cfa36bb9fee555eb0348ec0a319bff470
+ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833078"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50758239"
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-c"></a>Guia de API de Hubs do SignalR do ASP.NET – servidor (c#)
 ====================
@@ -304,6 +304,11 @@ Para chamar métodos de cliente do servidor, use o `Clients` propriedade em um m
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample23.cs?highlight=5)]
 
+Invocando um método de cliente é uma operação assíncrona e retorna um `Task`. Use `await`:
+
+* Para garantir que a mensagem é enviada sem erro. 
+* Para habilitar a captura e manipulação de erros em um bloco try-catch.
+
 **Cliente JavaScript usando o proxy gerado**
 
 [!code-html[Main](hubs-api-guide-server/samples/sample24.html?highlight=1)]
@@ -572,7 +577,7 @@ No VB.NET ou em um hub fortemente tipada, o objeto de estado do chamador não po
 
 ## <a name="how-to-handle-errors-in-the-hub-class"></a>Como tratar erros na classe Hub
 
-Para tratar erros que ocorrem em seus métodos de classe Hub, use um ou mais dos seguintes métodos:
+Para tratar erros que ocorrem em seus métodos de classe Hub, primeiro verifique se você "observa" todas as exceções de operações assíncronas (como invocar métodos de cliente) usando `await`. Em seguida, use um ou mais dos seguintes métodos:
 
 - Encapsular o código do método em blocos try-catch e o objeto de exceção de log. Para fins de depuração, você pode enviar a exceção para o cliente, mas para segurança motivos enviando informações detalhadas para clientes em produção não são recomendados.
 - Criar um módulo de pipeline de Hubs que lida com o [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) método. O exemplo a seguir mostra um módulo de pipeline que registra erros, seguidos do código em Startup.cs que injeta o módulo no pipeline de Hubs.
