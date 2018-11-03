@@ -1,16 +1,17 @@
 ---
 title: Configurar a autenticação do Windows no ASP.NET Core
-author: ardalis
-description: Este artigo descreve como configurar a autenticação do Windows no ASP.NET Core, usando o IIS Express, o IIS, o HTTP. sys e o WebListener.
+author: scottaddie
+description: Saiba como configurar a autenticação do Windows no ASP.NET Core, usando o IIS Express, o IIS, o HTTP. sys e o WebListener.
 ms.author: riande
-ms.date: 08/18/2018
+ms.custom: mvc
+ms.date: 11/01/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: a8066d248c0d4db1d1f61b2a14bdb4656a2f4265
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 87fcab75555c1dae0b2815c30d79fd4615df9660
+ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312406"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50968287"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>Configurar a autenticação do Windows no ASP.NET Core
 
@@ -98,6 +99,9 @@ Embora o Kestrel não dá suporte a autenticação do Windows, você pode usar [
 
 > [!NOTE]
 > O HTTP.sys delega à autenticação de modo kernel com o protocolo de autenticação Kerberos. Não há suporte para autenticação de modo de usuário com o Kerberos e o HTTP.sys. A conta do computador precisa ser usada para descriptografar o token/tíquete do Kerberos que é obtido do Active Directory e encaminhado pelo cliente ao servidor para autenticar o usuário. Registre o SPN (nome da entidade de serviço) do host, não do usuário do aplicativo.
+
+> [!NOTE]
+> Não há suporte para http. sys no Nano Server versão 1709 ou posterior. Para usar a autenticação do Windows e o HTTP. sys com o Nano Server, use uma [contêiner de Server Core (microsoft/windowsservercore)](https://hub.docker.com/r/microsoft/windowsservercore/). Para obter mais informações sobre o Server Core, consulte [qual é a opção de instalação Server Core no Windows Server?](/windows-server/administration/server-core/what-is-server-core).
 
 ::: moniker-end
 
