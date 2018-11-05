@@ -1,19 +1,19 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 title: Usando valores de cadeia de caracteres de consulta para filtrar dados com associação de modelos e formulários da web | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: Esta série de tutoriais demonstra aspectos básicos de como usar a associação de modelo com um projeto de Web Forms do ASP.NET. Associação de modelo torna a interação de dados mais simples-...
 ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: fc4ec64cf583f25eca6795f7ff9215f025170054
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 490279ec8457535031387e955e67550052764fff
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831110"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021112"
 ---
 <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>Usando valores de cadeia de caracteres de consulta para filtrar os dados com a associação de modelos e formulários da web
 ====================

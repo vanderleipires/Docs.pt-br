@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 title: Perguntas frequentes sobre o (Razor) de páginas da Web ASP.NET | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: Este artigo lista algumas perguntas frequentes sobre o ASP.NET Web Pages (Razor) e o WebMatrix. Versões de software usadas no tutorial páginas da Web ASP.NET (R...
 ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: b137bd04-25e1-47cb-9d96-ef2e179ecf1f
 msc.legacyurl: /web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 msc.type: authoredcontent
-ms.openlocfilehash: 03e89adc2415808ea49107616f529fa895d6e52a
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 27bfbe782455a5f8cf5096953c91712988b8dcab
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830501"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021047"
 ---
 <a name="aspnet-web-pages-razor-faq"></a>Perguntas frequentes sobre o (Razor) de páginas da Web ASP.NET
 ====================

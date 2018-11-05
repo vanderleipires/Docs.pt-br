@@ -1,19 +1,19 @@
 ---
 uid: web-pages/overview/security/16-adding-security-and-membership
 title: Adição de segurança e associação a uma Web do ASP.NET (Razor) sites de páginas | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: Este capítulo mostra como proteger seu site para que algumas páginas estão disponíveis somente para as pessoas que fazem logon no. (Você também verá como criar páginas tha...
 ms.author: riande
 ms.date: 02/24/2014
 ms.assetid: 7a77c2c0-deea-4290-a9c3-97958891758e
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: ae574706ecd14f1cafdb2d8b6340477e50246a32
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1c36adf23f3b53e4fbf3dbdce7ca85664b32c975
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41824677"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021589"
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>Adição de segurança e associação a um Site do ASP.NET Web Pages (Razor)
 ====================

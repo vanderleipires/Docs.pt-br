@@ -8,12 +8,12 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 3b66f02c9be6441ff7d6c38d6180cc8556c6b8b9
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 18a44c280e6df1603837938d24d7d639d8c87cc2
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912885"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021411"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Criar uma API REST com roteamento de atributo na API Web ASP.NET 2
 ====================
@@ -52,11 +52,11 @@ Para a maioria das solicitações, no entanto, a API retornará um subconjunto d
 
 Comece executando o Visual Studio. Dos **arquivo** menu, selecione **New** e, em seguida, selecione **projeto**.
 
-Expanda o **Installed** > **Visual c#** categoria. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web do ASP.NET MVC 4**. Nomeie o projeto &quot;BooksAPI&quot;.
+Expanda o **Installed** > **Visual c#** categoria. Em **Visual C#**, selecione **Web**. Na lista de modelos de projeto, selecione **aplicativo Web ASP.NET (.NET Framework)**. Nomeie o projeto &quot;BooksAPI&quot;.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 
-Na caixa de diálogo **Novo Aplicativo Web ASP.NET**, selecione o modelo **Vazio**. Em "Adicionar pastas e core references for", selecione a **API Web** caixa de seleção. Clique em **criar projeto**.
+No **novo aplicativo Web ASP.NET** caixa de diálogo, selecione o **vazia** modelo. Em "Adicionar pastas e core references for", selecione a **API Web** caixa de seleção. Clique em **OK**.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image2.png)
 
@@ -86,7 +86,7 @@ No Gerenciador de soluções, clique com botão direito na pasta controladores. 
 
 ![](create-a-rest-api-with-attribute-routing/_static/image4.png)
 
-No **adicionar Scaffold** caixa de diálogo, selecione "Web API 2 Controller com ações de leitura/gravação, usando o Entity Framework."
+No **adicionar Scaffold** caixa de diálogo, selecione **controlador Web API 2 com ações, usando o Entity Framework**.
 
 [![](create-a-rest-api-with-attribute-routing/_static/image6.png)](create-a-rest-api-with-attribute-routing/_static/image5.png)
 
