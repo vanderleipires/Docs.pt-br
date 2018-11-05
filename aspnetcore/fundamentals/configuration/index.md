@@ -6,95 +6,95 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/09/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: cbc48222aeb4a1d23144bfb70aece5a83a700d09
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 2af66c0f35109dc1de954bf501f33ad61ddef4db
+ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207895"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50968365"
 ---
-# <a name="configuration-in-aspnet-core"></a><span data-ttu-id="8c24f-103">Configuração no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="8c24f-103">Configuration in ASP.NET Core</span></span>
+# <a name="configuration-in-aspnet-core"></a><span data-ttu-id="88dce-103">Configuração no ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="88dce-103">Configuration in ASP.NET Core</span></span>
 
-<span data-ttu-id="8c24f-104">Por [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="8c24f-104">By [Luke Latham](https://github.com/guardrex)</span></span>
+<span data-ttu-id="88dce-104">Por [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="88dce-104">By [Luke Latham](https://github.com/guardrex)</span></span>
 
-<span data-ttu-id="8c24f-105">A configuração de aplicativos no ASP.NET Core se baseia em pares chave-valor estabelecidos por *provedores de configuração*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-105">App configuration in ASP.NET Core is based on key-value pairs established by *configuration providers*.</span></span> <span data-ttu-id="8c24f-106">Os provedores de configuração leem os dados de configuração em pares chave-valor de várias fontes de configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-106">Configuration providers read configuration data into key-value pairs from a variety of configuration sources:</span></span>
+<span data-ttu-id="88dce-105">A configuração de aplicativos no ASP.NET Core se baseia em pares chave-valor estabelecidos por *provedores de configuração*.</span><span class="sxs-lookup"><span data-stu-id="88dce-105">App configuration in ASP.NET Core is based on key-value pairs established by *configuration providers*.</span></span> <span data-ttu-id="88dce-106">Os provedores de configuração leem os dados de configuração em pares chave-valor de várias fontes de configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-106">Configuration providers read configuration data into key-value pairs from a variety of configuration sources:</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-* <span data-ttu-id="8c24f-107">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="8c24f-107">Azure Key Vault</span></span>
-* <span data-ttu-id="8c24f-108">Argumentos de linha de comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-108">Command-line arguments</span></span>
-* <span data-ttu-id="8c24f-109">Provedores personalizados (instalados ou criados)</span><span class="sxs-lookup"><span data-stu-id="8c24f-109">Custom providers (installed or created)</span></span>
-* <span data-ttu-id="8c24f-110">Arquivos de diretório</span><span class="sxs-lookup"><span data-stu-id="8c24f-110">Directory files</span></span>
-* <span data-ttu-id="8c24f-111">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-111">Environment variables</span></span>
-* <span data-ttu-id="8c24f-112">Objetos do .NET na memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-112">In-memory .NET objects</span></span>
-* <span data-ttu-id="8c24f-113">Arquivos de configurações</span><span class="sxs-lookup"><span data-stu-id="8c24f-113">Settings files</span></span>
+* <span data-ttu-id="88dce-107">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="88dce-107">Azure Key Vault</span></span>
+* <span data-ttu-id="88dce-108">Argumentos de linha de comando</span><span class="sxs-lookup"><span data-stu-id="88dce-108">Command-line arguments</span></span>
+* <span data-ttu-id="88dce-109">Provedores personalizados (instalados ou criados)</span><span class="sxs-lookup"><span data-stu-id="88dce-109">Custom providers (installed or created)</span></span>
+* <span data-ttu-id="88dce-110">Arquivos de diretório</span><span class="sxs-lookup"><span data-stu-id="88dce-110">Directory files</span></span>
+* <span data-ttu-id="88dce-111">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-111">Environment variables</span></span>
+* <span data-ttu-id="88dce-112">Objetos do .NET na memória</span><span class="sxs-lookup"><span data-stu-id="88dce-112">In-memory .NET objects</span></span>
+* <span data-ttu-id="88dce-113">Arquivos de configurações</span><span class="sxs-lookup"><span data-stu-id="88dce-113">Settings files</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0 || aspnetcore-1.1"
 
-* <span data-ttu-id="8c24f-114">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="8c24f-114">Azure Key Vault</span></span>
-* <span data-ttu-id="8c24f-115">Argumentos de linha de comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-115">Command-line arguments</span></span>
-* <span data-ttu-id="8c24f-116">Provedores personalizados (instalados ou criados)</span><span class="sxs-lookup"><span data-stu-id="8c24f-116">Custom providers (installed or created)</span></span>
-* <span data-ttu-id="8c24f-117">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-117">Environment variables</span></span>
-* <span data-ttu-id="8c24f-118">Objetos do .NET na memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-118">In-memory .NET objects</span></span>
-* <span data-ttu-id="8c24f-119">Arquivos de configurações</span><span class="sxs-lookup"><span data-stu-id="8c24f-119">Settings files</span></span>
+* <span data-ttu-id="88dce-114">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="88dce-114">Azure Key Vault</span></span>
+* <span data-ttu-id="88dce-115">Argumentos de linha de comando</span><span class="sxs-lookup"><span data-stu-id="88dce-115">Command-line arguments</span></span>
+* <span data-ttu-id="88dce-116">Provedores personalizados (instalados ou criados)</span><span class="sxs-lookup"><span data-stu-id="88dce-116">Custom providers (installed or created)</span></span>
+* <span data-ttu-id="88dce-117">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-117">Environment variables</span></span>
+* <span data-ttu-id="88dce-118">Objetos do .NET na memória</span><span class="sxs-lookup"><span data-stu-id="88dce-118">In-memory .NET objects</span></span>
+* <span data-ttu-id="88dce-119">Arquivos de configurações</span><span class="sxs-lookup"><span data-stu-id="88dce-119">Settings files</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-1.0"
 
-* <span data-ttu-id="8c24f-120">Argumentos de linha de comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-120">Command-line arguments</span></span>
-* <span data-ttu-id="8c24f-121">Provedores personalizados (instalados ou criados)</span><span class="sxs-lookup"><span data-stu-id="8c24f-121">Custom providers (installed or created)</span></span>
-* <span data-ttu-id="8c24f-122">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-122">Environment variables</span></span>
-* <span data-ttu-id="8c24f-123">Objetos do .NET na memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-123">In-memory .NET objects</span></span>
-* <span data-ttu-id="8c24f-124">Arquivos de configurações</span><span class="sxs-lookup"><span data-stu-id="8c24f-124">Settings files</span></span>
+* <span data-ttu-id="88dce-120">Argumentos de linha de comando</span><span class="sxs-lookup"><span data-stu-id="88dce-120">Command-line arguments</span></span>
+* <span data-ttu-id="88dce-121">Provedores personalizados (instalados ou criados)</span><span class="sxs-lookup"><span data-stu-id="88dce-121">Custom providers (installed or created)</span></span>
+* <span data-ttu-id="88dce-122">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-122">Environment variables</span></span>
+* <span data-ttu-id="88dce-123">Objetos do .NET na memória</span><span class="sxs-lookup"><span data-stu-id="88dce-123">In-memory .NET objects</span></span>
+* <span data-ttu-id="88dce-124">Arquivos de configurações</span><span class="sxs-lookup"><span data-stu-id="88dce-124">Settings files</span></span>
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-125">O *padrão de opções* é uma extensão dos conceitos de configuração descritos neste tópico.</span><span class="sxs-lookup"><span data-stu-id="8c24f-125">The *options pattern* is an extension of the configuration concepts described in this topic.</span></span> <span data-ttu-id="8c24f-126">As opções usam classes para representar grupos de configurações relacionadas.</span><span class="sxs-lookup"><span data-stu-id="8c24f-126">Options uses classes to represent groups of related settings.</span></span> <span data-ttu-id="8c24f-127">Para saber mais sobre como usar o padrão de opções, confira <xref:fundamentals/configuration/options>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-127">For more information on using the options pattern, see <xref:fundamentals/configuration/options>.</span></span>
+<span data-ttu-id="88dce-125">O *padrão de opções* é uma extensão dos conceitos de configuração descritos neste tópico.</span><span class="sxs-lookup"><span data-stu-id="88dce-125">The *options pattern* is an extension of the configuration concepts described in this topic.</span></span> <span data-ttu-id="88dce-126">As opções usam classes para representar grupos de configurações relacionadas.</span><span class="sxs-lookup"><span data-stu-id="88dce-126">Options uses classes to represent groups of related settings.</span></span> <span data-ttu-id="88dce-127">Para saber mais sobre como usar o padrão de opções, confira <xref:fundamentals/configuration/options>.</span><span class="sxs-lookup"><span data-stu-id="88dce-127">For more information on using the options pattern, see <xref:fundamentals/configuration/options>.</span></span>
 
-<span data-ttu-id="8c24f-128">[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples) ([como baixar](xref:index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="8c24f-128">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples) ([how to download](xref:index#how-to-download-a-sample))</span></span>
+<span data-ttu-id="88dce-128">[Exibir ou baixar código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples) ([como baixar](xref:index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="88dce-128">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples) ([how to download](xref:index#how-to-download-a-sample))</span></span>
 
-<span data-ttu-id="8c24f-129">Os exemplos apresentados neste tópico dependem do seguinte:</span><span class="sxs-lookup"><span data-stu-id="8c24f-129">The examples provided in this topic rely upon:</span></span>
+<span data-ttu-id="88dce-129">Os exemplos apresentados neste tópico dependem do seguinte:</span><span class="sxs-lookup"><span data-stu-id="88dce-129">The examples provided in this topic rely upon:</span></span>
 
-* <span data-ttu-id="8c24f-130">Definição do caminho de base do aplicativo com <xref:Microsoft.Extensions.Configuration.FileConfigurationExtensions.SetBasePath*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-130">Setting the base path of the app with <xref:Microsoft.Extensions.Configuration.FileConfigurationExtensions.SetBasePath*>.</span></span> <span data-ttu-id="8c24f-131">`SetBasePath` é disponibilizado para um aplicativo fazendo referência ao pacote [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/).</span><span class="sxs-lookup"><span data-stu-id="8c24f-131">`SetBasePath` is made available to an app by referencing the [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/) package.</span></span>
-* <span data-ttu-id="8c24f-132">Resolução de seções dos arquivos de configuração com <xref:Microsoft.Extensions.Configuration.ConfigurationSection.GetSection*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-132">Resolving sections of configuration files with <xref:Microsoft.Extensions.Configuration.ConfigurationSection.GetSection*>.</span></span> <span data-ttu-id="8c24f-133">`GetSection` é disponibilizado a um aplicativo fazendo referência ao pacote [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/).</span><span class="sxs-lookup"><span data-stu-id="8c24f-133">`GetSection` is made available to an app by referencing the [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) package.</span></span>
-* <span data-ttu-id="8c24f-134">Configuração de associação a classes .NET com <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> e [Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*).</span><span class="sxs-lookup"><span data-stu-id="8c24f-134">Binding configuration to .NET classes with <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> and [Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*).</span></span> <span data-ttu-id="8c24f-135">`Bind` e `Get<T>` são disponibilizados a um aplicativo fazendo referência ao pacote [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/).</span><span class="sxs-lookup"><span data-stu-id="8c24f-135">`Bind` and `Get<T>` are made available to an app by referencing the [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) package.</span></span> <span data-ttu-id="8c24f-136">`Get<T>` está disponível no ASP.NET Core 1.1 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="8c24f-136">`Get<T>` is available in ASP.NET Core 1.1 or later.</span></span>
+* <span data-ttu-id="88dce-130">Definição do caminho de base do aplicativo com <xref:Microsoft.Extensions.Configuration.FileConfigurationExtensions.SetBasePath*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-130">Setting the base path of the app with <xref:Microsoft.Extensions.Configuration.FileConfigurationExtensions.SetBasePath*>.</span></span> <span data-ttu-id="88dce-131">`SetBasePath` é disponibilizado para um aplicativo fazendo referência ao pacote [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/).</span><span class="sxs-lookup"><span data-stu-id="88dce-131">`SetBasePath` is made available to an app by referencing the [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/) package.</span></span>
+* <span data-ttu-id="88dce-132">Resolução de seções dos arquivos de configuração com <xref:Microsoft.Extensions.Configuration.ConfigurationSection.GetSection*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-132">Resolving sections of configuration files with <xref:Microsoft.Extensions.Configuration.ConfigurationSection.GetSection*>.</span></span> <span data-ttu-id="88dce-133">`GetSection` é disponibilizado a um aplicativo fazendo referência ao pacote [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/).</span><span class="sxs-lookup"><span data-stu-id="88dce-133">`GetSection` is made available to an app by referencing the [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) package.</span></span>
+* <span data-ttu-id="88dce-134">Configuração de associação a classes .NET com <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> e [Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*).</span><span class="sxs-lookup"><span data-stu-id="88dce-134">Binding configuration to .NET classes with <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> and [Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*).</span></span> <span data-ttu-id="88dce-135">`Bind` e `Get<T>` são disponibilizados a um aplicativo fazendo referência ao pacote [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/).</span><span class="sxs-lookup"><span data-stu-id="88dce-135">`Bind` and `Get<T>` are made available to an app by referencing the [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) package.</span></span> <span data-ttu-id="88dce-136">`Get<T>` está disponível no ASP.NET Core 1.1 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="88dce-136">`Get<T>` is available in ASP.NET Core 1.1 or later.</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="8c24f-137">Esses três pacotes estão incluídos no [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app).</span><span class="sxs-lookup"><span data-stu-id="8c24f-137">These three packages are included in the [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app).</span></span>
+<span data-ttu-id="88dce-137">Esses três pacotes estão incluídos no [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app).</span><span class="sxs-lookup"><span data-stu-id="88dce-137">These three packages are included in the [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app).</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-138">Esses três pacotes estão incluídos no [metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage).</span><span class="sxs-lookup"><span data-stu-id="8c24f-138">These three packages are included in the [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage).</span></span>
+<span data-ttu-id="88dce-138">Esses três pacotes estão incluídos no [metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage).</span><span class="sxs-lookup"><span data-stu-id="88dce-138">These three packages are included in the [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage).</span></span>
 
 ::: moniker-end
 
-## <a name="host-vs-app-configuration"></a><span data-ttu-id="8c24f-139">Configuração do host versus aplicativo</span><span class="sxs-lookup"><span data-stu-id="8c24f-139">Host vs. app configuration</span></span>
+## <a name="host-vs-app-configuration"></a><span data-ttu-id="88dce-139">Configuração do host versus aplicativo</span><span class="sxs-lookup"><span data-stu-id="88dce-139">Host vs. app configuration</span></span>
 
-<span data-ttu-id="8c24f-140">Antes do aplicativo ser configurado e iniciado, um *host* é configurado e iniciado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-140">Before the app is configured and started, a *host* is configured and launched.</span></span> <span data-ttu-id="8c24f-141">O host é responsável pelo gerenciamento de tempo de vida e pela inicialização do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-141">The host is responsible for app startup and lifetime management.</span></span> <span data-ttu-id="8c24f-142">O aplicativo e o host são configurados usando os provedores de configuração descritos neste tópico.</span><span class="sxs-lookup"><span data-stu-id="8c24f-142">Both the app and the host are configured using the configuration providers described in this topic.</span></span> <span data-ttu-id="8c24f-143">Os pares chave-valor de configuração do host se tornam parte da configuração global do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-143">Host configuration key-value pairs become part of the app's global configuration.</span></span> <span data-ttu-id="8c24f-144">Para saber mais sobre como os provedores de configuração são usados quando o host for compilado, e como as fontes de configuração afetam o host e a configuração, confira <xref:fundamentals/host/index>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-144">For more information on how the configuration providers are used when the host is built and how configuration sources affect host configuration, see <xref:fundamentals/host/index>.</span></span>
+<span data-ttu-id="88dce-140">Antes do aplicativo ser configurado e iniciado, um *host* é configurado e iniciado.</span><span class="sxs-lookup"><span data-stu-id="88dce-140">Before the app is configured and started, a *host* is configured and launched.</span></span> <span data-ttu-id="88dce-141">O host é responsável pelo gerenciamento de tempo de vida e pela inicialização do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-141">The host is responsible for app startup and lifetime management.</span></span> <span data-ttu-id="88dce-142">O aplicativo e o host são configurados usando os provedores de configuração descritos neste tópico.</span><span class="sxs-lookup"><span data-stu-id="88dce-142">Both the app and the host are configured using the configuration providers described in this topic.</span></span> <span data-ttu-id="88dce-143">Os pares chave-valor de configuração do host se tornam parte da configuração global do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-143">Host configuration key-value pairs become part of the app's global configuration.</span></span> <span data-ttu-id="88dce-144">Para saber mais sobre como os provedores de configuração são usados quando o host for compilado, e como as fontes de configuração afetam o host e a configuração, confira <xref:fundamentals/host/index>.</span><span class="sxs-lookup"><span data-stu-id="88dce-144">For more information on how the configuration providers are used when the host is built and how configuration sources affect host configuration, see <xref:fundamentals/host/index>.</span></span>
 
-## <a name="security"></a><span data-ttu-id="8c24f-145">Segurança</span><span class="sxs-lookup"><span data-stu-id="8c24f-145">Security</span></span>
+## <a name="security"></a><span data-ttu-id="88dce-145">Segurança</span><span class="sxs-lookup"><span data-stu-id="88dce-145">Security</span></span>
 
-<span data-ttu-id="8c24f-146">Adote as melhores práticas a seguir:</span><span class="sxs-lookup"><span data-stu-id="8c24f-146">Adopt the following best practices:</span></span>
+<span data-ttu-id="88dce-146">Adote as melhores práticas a seguir:</span><span class="sxs-lookup"><span data-stu-id="88dce-146">Adopt the following best practices:</span></span>
 
-* <span data-ttu-id="8c24f-147">Nunca armazene senhas ou outros dados confidenciais no código do provedor de configuração ou nos arquivos de configuração de texto sem formatação.</span><span class="sxs-lookup"><span data-stu-id="8c24f-147">Never store passwords or other sensitive data in configuration provider code or in plain text configuration files.</span></span>
-* <span data-ttu-id="8c24f-148">Não use segredos de produção em ambientes de teste ou de desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="8c24f-148">Don't use production secrets in development or test environments.</span></span>
-* <span data-ttu-id="8c24f-149">Especifique segredos fora do projeto para que eles não sejam acidentalmente comprometidos com um repositório de código-fonte.</span><span class="sxs-lookup"><span data-stu-id="8c24f-149">Specify secrets outside of the project so that they can't be accidentally committed to a source code repository.</span></span>
+* <span data-ttu-id="88dce-147">Nunca armazene senhas ou outros dados confidenciais no código do provedor de configuração ou nos arquivos de configuração de texto sem formatação.</span><span class="sxs-lookup"><span data-stu-id="88dce-147">Never store passwords or other sensitive data in configuration provider code or in plain text configuration files.</span></span>
+* <span data-ttu-id="88dce-148">Não use segredos de produção em ambientes de teste ou de desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="88dce-148">Don't use production secrets in development or test environments.</span></span>
+* <span data-ttu-id="88dce-149">Especifique segredos fora do projeto para que eles não sejam acidentalmente comprometidos com um repositório de código-fonte.</span><span class="sxs-lookup"><span data-stu-id="88dce-149">Specify secrets outside of the project so that they can't be accidentally committed to a source code repository.</span></span>
 
-<span data-ttu-id="8c24f-150">Saiba mais sobre [como usar vários ambientes](xref:fundamentals/environments) e gerenciar o [armazenamento seguro de segredos de aplicativo em desenvolvimento com o Gerenciador de Segredo](xref:security/app-secrets) (inclui recomendações sobre como usar variáveis de ambiente para armazenar dados confidenciais).</span><span class="sxs-lookup"><span data-stu-id="8c24f-150">Learn more about [how to use multiple environments](xref:fundamentals/environments) and managing the [safe storage of app secrets in development with the Secret Manager](xref:security/app-secrets) (includes advice on using environment variables to store sensitive data).</span></span> <span data-ttu-id="8c24f-151">O Gerenciador de Segredo usa o Provedor de Configuração de Arquivo para armazenar segredos do usuário em um arquivo JSON no sistema local.</span><span class="sxs-lookup"><span data-stu-id="8c24f-151">The Secret Manager uses the File Configuration Provider to store user secrets in a JSON file on the local system.</span></span> <span data-ttu-id="8c24f-152">O Provedor de Configuração de Arquivo será descrito mais adiante neste tópico.</span><span class="sxs-lookup"><span data-stu-id="8c24f-152">The File Configuration Provider is described later in this topic.</span></span>
+<span data-ttu-id="88dce-150">Saiba mais sobre [como usar vários ambientes](xref:fundamentals/environments) e gerenciar o [armazenamento seguro de segredos de aplicativo em desenvolvimento com o Gerenciador de Segredo](xref:security/app-secrets) (inclui recomendações sobre como usar variáveis de ambiente para armazenar dados confidenciais).</span><span class="sxs-lookup"><span data-stu-id="88dce-150">Learn more about [how to use multiple environments](xref:fundamentals/environments) and managing the [safe storage of app secrets in development with the Secret Manager](xref:security/app-secrets) (includes advice on using environment variables to store sensitive data).</span></span> <span data-ttu-id="88dce-151">O Gerenciador de Segredo usa o Provedor de Configuração de Arquivo para armazenar segredos do usuário em um arquivo JSON no sistema local.</span><span class="sxs-lookup"><span data-stu-id="88dce-151">The Secret Manager uses the File Configuration Provider to store user secrets in a JSON file on the local system.</span></span> <span data-ttu-id="88dce-152">O Provedor de Configuração de Arquivo será descrito mais adiante neste tópico.</span><span class="sxs-lookup"><span data-stu-id="88dce-152">The File Configuration Provider is described later in this topic.</span></span>
 
-<span data-ttu-id="8c24f-153">O [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) é uma opção para o armazenamento seguro de segredos do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-153">[Azure Key Vault](https://azure.microsoft.com/services/key-vault/) is one option for the safe storage of app secrets.</span></span> <span data-ttu-id="8c24f-154">Para obter mais informações, consulte <xref:security/key-vault-configuration>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-154">For more information, see <xref:security/key-vault-configuration>.</span></span>
+<span data-ttu-id="88dce-153">O [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) é uma opção para o armazenamento seguro de segredos do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-153">[Azure Key Vault](https://azure.microsoft.com/services/key-vault/) is one option for the safe storage of app secrets.</span></span> <span data-ttu-id="88dce-154">Para obter mais informações, consulte <xref:security/key-vault-configuration>.</span><span class="sxs-lookup"><span data-stu-id="88dce-154">For more information, see <xref:security/key-vault-configuration>.</span></span>
 
-## <a name="hierarchical-configuration-data"></a><span data-ttu-id="8c24f-155">Dados de configuração hierárquica</span><span class="sxs-lookup"><span data-stu-id="8c24f-155">Hierarchical configuration data</span></span>
+## <a name="hierarchical-configuration-data"></a><span data-ttu-id="88dce-155">Dados de configuração hierárquica</span><span class="sxs-lookup"><span data-stu-id="88dce-155">Hierarchical configuration data</span></span>
 
-<span data-ttu-id="8c24f-156">A API de Configuração é capaz de manter dados de configuração hierárquica nivelando os dados hierárquicos com o uso de um delimitador nas chaves de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-156">The Configuration API is capable of maintaining hierarchical configuration data by flattening the hierarchical data with the use of a delimiter in the configuration keys.</span></span>
+<span data-ttu-id="88dce-156">A API de Configuração é capaz de manter dados de configuração hierárquica nivelando os dados hierárquicos com o uso de um delimitador nas chaves de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-156">The Configuration API is capable of maintaining hierarchical configuration data by flattening the hierarchical data with the use of a delimiter in the configuration keys.</span></span>
 
-<span data-ttu-id="8c24f-157">No seguinte arquivo JSON, há quatro chaves em uma hierarquia estruturada com duas seções:</span><span class="sxs-lookup"><span data-stu-id="8c24f-157">In the following JSON file, four keys exist in a structured hierarchy of two sections:</span></span>
+<span data-ttu-id="88dce-157">No seguinte arquivo JSON, há quatro chaves em uma hierarquia estruturada com duas seções:</span><span class="sxs-lookup"><span data-stu-id="88dce-157">In the following JSON file, four keys exist in a structured hierarchy of two sections:</span></span>
 
 ```json
 {
@@ -109,105 +109,105 @@ ms.locfileid: "50207895"
 }
 ```
 
-<span data-ttu-id="8c24f-158">Quando o arquivo é lido na configuração, ocorre a criação de chaves exclusivas para manter a estrutura hierárquica de dados original da fonte de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-158">When the file is read into configuration, unique keys are created to maintain the original hierarchical data structure of the configuration source.</span></span> <span data-ttu-id="8c24f-159">As seções e as chaves são niveladas usando dois-pontos (`:`) para manter a estrutura original:</span><span class="sxs-lookup"><span data-stu-id="8c24f-159">The sections and keys are flattened with the use of a colon (`:`) to maintain the original structure:</span></span>
+<span data-ttu-id="88dce-158">Quando o arquivo é lido na configuração, ocorre a criação de chaves exclusivas para manter a estrutura hierárquica de dados original da fonte de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-158">When the file is read into configuration, unique keys are created to maintain the original hierarchical data structure of the configuration source.</span></span> <span data-ttu-id="88dce-159">As seções e as chaves são niveladas usando dois-pontos (`:`) para manter a estrutura original:</span><span class="sxs-lookup"><span data-stu-id="88dce-159">The sections and keys are flattened with the use of a colon (`:`) to maintain the original structure:</span></span>
 
-* <span data-ttu-id="8c24f-160">section0:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-160">section0:key0</span></span>
-* <span data-ttu-id="8c24f-161">section0:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-161">section0:key1</span></span>
-* <span data-ttu-id="8c24f-162">section1:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-162">section1:key0</span></span>
-* <span data-ttu-id="8c24f-163">section1:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-163">section1:key1</span></span>
+* <span data-ttu-id="88dce-160">section0:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-160">section0:key0</span></span>
+* <span data-ttu-id="88dce-161">section0:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-161">section0:key1</span></span>
+* <span data-ttu-id="88dce-162">section1:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-162">section1:key0</span></span>
+* <span data-ttu-id="88dce-163">section1:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-163">section1:key1</span></span>
 
-<span data-ttu-id="8c24f-164">Os métodos <xref:Microsoft.Extensions.Configuration.ConfigurationSection.GetSection*> e <xref:Microsoft.Extensions.Configuration.IConfiguration.GetChildren*> estão disponíveis para isolar as seções e os filhos de uma seção nos dados de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-164"><xref:Microsoft.Extensions.Configuration.ConfigurationSection.GetSection*> and <xref:Microsoft.Extensions.Configuration.IConfiguration.GetChildren*> methods are available to isolate sections and children of a section in the configuration data.</span></span> <span data-ttu-id="8c24f-165">Esses métodos serão descritos posteriormente em [GetSection, GetChildren e Exists](#getsection-getchildren-and-exists).</span><span class="sxs-lookup"><span data-stu-id="8c24f-165">These methods are described later in [GetSection, GetChildren, and Exists](#getsection-getchildren-and-exists).</span></span>
+<span data-ttu-id="88dce-164">Os métodos <xref:Microsoft.Extensions.Configuration.ConfigurationSection.GetSection*> e <xref:Microsoft.Extensions.Configuration.IConfiguration.GetChildren*> estão disponíveis para isolar as seções e os filhos de uma seção nos dados de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-164"><xref:Microsoft.Extensions.Configuration.ConfigurationSection.GetSection*> and <xref:Microsoft.Extensions.Configuration.IConfiguration.GetChildren*> methods are available to isolate sections and children of a section in the configuration data.</span></span> <span data-ttu-id="88dce-165">Esses métodos serão descritos posteriormente em [GetSection, GetChildren e Exists](#getsection-getchildren-and-exists).</span><span class="sxs-lookup"><span data-stu-id="88dce-165">These methods are described later in [GetSection, GetChildren, and Exists](#getsection-getchildren-and-exists).</span></span>
 
-## <a name="conventions"></a><span data-ttu-id="8c24f-166">Convenções</span><span class="sxs-lookup"><span data-stu-id="8c24f-166">Conventions</span></span>
+## <a name="conventions"></a><span data-ttu-id="88dce-166">Convenções</span><span class="sxs-lookup"><span data-stu-id="88dce-166">Conventions</span></span>
 
-<span data-ttu-id="8c24f-167">Na inicialização do aplicativo, as fontes de configuração são lidas na ordem especificada pelos provedores de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-167">At app startup, configuration sources are read in the order that their configuration providers are specified.</span></span>
+<span data-ttu-id="88dce-167">Na inicialização do aplicativo, as fontes de configuração são lidas na ordem especificada pelos provedores de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-167">At app startup, configuration sources are read in the order that their configuration providers are specified.</span></span>
 
-<span data-ttu-id="8c24f-168">Os Provedores de Configuração de Arquivo têm a capacidade de recarregar a configuração quando um arquivo de configurações subjacente é alterado após a inicialização do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-168">File Configuration Providers have the ability to reload configuration when an underlying settings file is changed after app startup.</span></span> <span data-ttu-id="8c24f-169">O Provedor de Configuração de Arquivo será descrito mais adiante neste tópico.</span><span class="sxs-lookup"><span data-stu-id="8c24f-169">The File Configuration Provider is described later in this topic.</span></span>
+<span data-ttu-id="88dce-168">Os Provedores de Configuração de Arquivo têm a capacidade de recarregar a configuração quando um arquivo de configurações subjacente é alterado após a inicialização do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-168">File Configuration Providers have the ability to reload configuration when an underlying settings file is changed after app startup.</span></span> <span data-ttu-id="88dce-169">O Provedor de Configuração de Arquivo será descrito mais adiante neste tópico.</span><span class="sxs-lookup"><span data-stu-id="88dce-169">The File Configuration Provider is described later in this topic.</span></span>
 
-<span data-ttu-id="8c24f-170"><xref:Microsoft.Extensions.Configuration.IConfiguration> está disponível no contêiner [DI (injeção de dependência)](xref:fundamentals/dependency-injection) do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-170"><xref:Microsoft.Extensions.Configuration.IConfiguration> is available in the app's [Dependency Injection (DI)](xref:fundamentals/dependency-injection) container.</span></span> <span data-ttu-id="8c24f-171">Os provedores de configuração não podem utilizar a DI, pois ela não é disponibilizada quando eles são configurados pelo host.</span><span class="sxs-lookup"><span data-stu-id="8c24f-171">Configuration providers can't utilize DI, as it's not available when they're set up by the host.</span></span>
+<span data-ttu-id="88dce-170"><xref:Microsoft.Extensions.Configuration.IConfiguration> está disponível no contêiner [DI (injeção de dependência)](xref:fundamentals/dependency-injection) do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-170"><xref:Microsoft.Extensions.Configuration.IConfiguration> is available in the app's [Dependency Injection (DI)](xref:fundamentals/dependency-injection) container.</span></span> <span data-ttu-id="88dce-171">Os provedores de configuração não podem utilizar a DI, pois ela não é disponibilizada quando eles são configurados pelo host.</span><span class="sxs-lookup"><span data-stu-id="88dce-171">Configuration providers can't utilize DI, as it's not available when they're set up by the host.</span></span>
 
-<span data-ttu-id="8c24f-172">As chaves de configuração adotam as convenções a seguir:</span><span class="sxs-lookup"><span data-stu-id="8c24f-172">Configuration keys adopt the following conventions:</span></span>
+<span data-ttu-id="88dce-172">As chaves de configuração adotam as convenções a seguir:</span><span class="sxs-lookup"><span data-stu-id="88dce-172">Configuration keys adopt the following conventions:</span></span>
 
-* <span data-ttu-id="8c24f-173">As chaves não diferenciam maiúsculas de minúsculas.</span><span class="sxs-lookup"><span data-stu-id="8c24f-173">Keys are case-insensitive.</span></span> <span data-ttu-id="8c24f-174">Por exemplo, `ConnectionString` e `connectionstring` são tratados como chaves equivalentes.</span><span class="sxs-lookup"><span data-stu-id="8c24f-174">For example, `ConnectionString` and `connectionstring` are treated as equivalent keys.</span></span>
-* <span data-ttu-id="8c24f-175">Se um valor para a mesma chave for definido pelos mesmos provedores de configuração, ou por outros, o último valor definido na chave será o valor usado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-175">If a value for the same key is set by the same or different configuration providers, the last value set on the key is the value used.</span></span>
-* <span data-ttu-id="8c24f-176">Chaves hierárquicas</span><span class="sxs-lookup"><span data-stu-id="8c24f-176">Hierarchical keys</span></span>
-  * <span data-ttu-id="8c24f-177">Ao interagir com a API de configuração, um separador de dois-pontos (`:`) funciona em todas as plataformas.</span><span class="sxs-lookup"><span data-stu-id="8c24f-177">Within the Configuration API, a colon separator (`:`) works on all platforms.</span></span>
-  * <span data-ttu-id="8c24f-178">Nas variáveis de ambiente, talvez um separador de dois-pontos não funcione em todas as plataformas.</span><span class="sxs-lookup"><span data-stu-id="8c24f-178">In environment variables, a colon separator may not work on all platforms.</span></span> <span data-ttu-id="8c24f-179">Um sublinhado duplo (`__`) é compatível com todas as plataformas e é convertido em dois-pontos.</span><span class="sxs-lookup"><span data-stu-id="8c24f-179">A double underscore (`__`) is supported by all platforms and is converted to a colon.</span></span>
-  * <span data-ttu-id="8c24f-180">No Azure Key Vault, as chaves hierárquicas usam `--` (dois traços) como separador.</span><span class="sxs-lookup"><span data-stu-id="8c24f-180">In Azure Key Vault, hierarchical keys use `--` (two dashes) as a separator.</span></span> <span data-ttu-id="8c24f-181">Você deve fornecer o código para substituir os traços por dois-pontos quando os segredos forem carregados na configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-181">You must provide code to replace the dashes with a colon when the secrets are loaded into the app's configuration.</span></span>
-* <span data-ttu-id="8c24f-182">O <xref:Microsoft.Extensions.Configuration.ConfigurationBinder> dá suporte a matrizes de associação para objetos usando os índices em chaves de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-182">The <xref:Microsoft.Extensions.Configuration.ConfigurationBinder> supports binding arrays to objects using array indices in configuration keys.</span></span> <span data-ttu-id="8c24f-183">A associação de matriz está descrita na seção [Associar uma matriz a uma classe](#bind-an-array-to-a-class).</span><span class="sxs-lookup"><span data-stu-id="8c24f-183">Array binding is described in the [Bind an array to a class](#bind-an-array-to-a-class) section.</span></span>
+* <span data-ttu-id="88dce-173">As chaves não diferenciam maiúsculas de minúsculas.</span><span class="sxs-lookup"><span data-stu-id="88dce-173">Keys are case-insensitive.</span></span> <span data-ttu-id="88dce-174">Por exemplo, `ConnectionString` e `connectionstring` são tratados como chaves equivalentes.</span><span class="sxs-lookup"><span data-stu-id="88dce-174">For example, `ConnectionString` and `connectionstring` are treated as equivalent keys.</span></span>
+* <span data-ttu-id="88dce-175">Se um valor para a mesma chave for definido pelos mesmos provedores de configuração, ou por outros, o último valor definido na chave será o valor usado.</span><span class="sxs-lookup"><span data-stu-id="88dce-175">If a value for the same key is set by the same or different configuration providers, the last value set on the key is the value used.</span></span>
+* <span data-ttu-id="88dce-176">Chaves hierárquicas</span><span class="sxs-lookup"><span data-stu-id="88dce-176">Hierarchical keys</span></span>
+  * <span data-ttu-id="88dce-177">Ao interagir com a API de configuração, um separador de dois-pontos (`:`) funciona em todas as plataformas.</span><span class="sxs-lookup"><span data-stu-id="88dce-177">Within the Configuration API, a colon separator (`:`) works on all platforms.</span></span>
+  * <span data-ttu-id="88dce-178">Nas variáveis de ambiente, talvez um separador de dois-pontos não funcione em todas as plataformas.</span><span class="sxs-lookup"><span data-stu-id="88dce-178">In environment variables, a colon separator may not work on all platforms.</span></span> <span data-ttu-id="88dce-179">Um sublinhado duplo (`__`) é compatível com todas as plataformas e é convertido em dois-pontos.</span><span class="sxs-lookup"><span data-stu-id="88dce-179">A double underscore (`__`) is supported by all platforms and is converted to a colon.</span></span>
+  * <span data-ttu-id="88dce-180">No Azure Key Vault, as chaves hierárquicas usam `--` (dois traços) como separador.</span><span class="sxs-lookup"><span data-stu-id="88dce-180">In Azure Key Vault, hierarchical keys use `--` (two dashes) as a separator.</span></span> <span data-ttu-id="88dce-181">Você deve fornecer o código para substituir os traços por dois-pontos quando os segredos forem carregados na configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-181">You must provide code to replace the dashes with a colon when the secrets are loaded into the app's configuration.</span></span>
+* <span data-ttu-id="88dce-182">O <xref:Microsoft.Extensions.Configuration.ConfigurationBinder> dá suporte a matrizes de associação para objetos usando os índices em chaves de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-182">The <xref:Microsoft.Extensions.Configuration.ConfigurationBinder> supports binding arrays to objects using array indices in configuration keys.</span></span> <span data-ttu-id="88dce-183">A associação de matriz está descrita na seção [Associar uma matriz a uma classe](#bind-an-array-to-a-class).</span><span class="sxs-lookup"><span data-stu-id="88dce-183">Array binding is described in the [Bind an array to a class](#bind-an-array-to-a-class) section.</span></span>
 
-<span data-ttu-id="8c24f-184">Os valores de configuração adotam as convenções a seguir:</span><span class="sxs-lookup"><span data-stu-id="8c24f-184">Configuration values adopt the following conventions:</span></span>
+<span data-ttu-id="88dce-184">Os valores de configuração adotam as convenções a seguir:</span><span class="sxs-lookup"><span data-stu-id="88dce-184">Configuration values adopt the following conventions:</span></span>
 
-* <span data-ttu-id="8c24f-185">Os valores são cadeias de caracteres.</span><span class="sxs-lookup"><span data-stu-id="8c24f-185">Values are strings.</span></span>
-* <span data-ttu-id="8c24f-186">Não é possível armazenar valores nulos na configuração ou associá-los a objetos.</span><span class="sxs-lookup"><span data-stu-id="8c24f-186">Null values can't be stored in configuration or bound to objects.</span></span>
+* <span data-ttu-id="88dce-185">Os valores são cadeias de caracteres.</span><span class="sxs-lookup"><span data-stu-id="88dce-185">Values are strings.</span></span>
+* <span data-ttu-id="88dce-186">Não é possível armazenar valores nulos na configuração ou associá-los a objetos.</span><span class="sxs-lookup"><span data-stu-id="88dce-186">Null values can't be stored in configuration or bound to objects.</span></span>
 
-## <a name="providers"></a><span data-ttu-id="8c24f-187">Provedores</span><span class="sxs-lookup"><span data-stu-id="8c24f-187">Providers</span></span>
+## <a name="providers"></a><span data-ttu-id="88dce-187">Provedores</span><span class="sxs-lookup"><span data-stu-id="88dce-187">Providers</span></span>
 
-<span data-ttu-id="8c24f-188">A tabela a seguir mostra os provedores de configuração disponíveis para aplicativos ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="8c24f-188">The following table shows the configuration providers available to ASP.NET Core apps.</span></span>
+<span data-ttu-id="88dce-188">A tabela a seguir mostra os provedores de configuração disponíveis para aplicativos ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="88dce-188">The following table shows the configuration providers available to ASP.NET Core apps.</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-| <span data-ttu-id="8c24f-189">Provider</span><span class="sxs-lookup"><span data-stu-id="8c24f-189">Provider</span></span> | <span data-ttu-id="8c24f-190">Fornece a configuração de &hellip;</span><span class="sxs-lookup"><span data-stu-id="8c24f-190">Provides configuration from&hellip;</span></span> |
+| <span data-ttu-id="88dce-189">Provider</span><span class="sxs-lookup"><span data-stu-id="88dce-189">Provider</span></span> | <span data-ttu-id="88dce-190">Fornece a configuração de &hellip;</span><span class="sxs-lookup"><span data-stu-id="88dce-190">Provides configuration from&hellip;</span></span> |
 | -------- | ----------------------------------- |
-| <span data-ttu-id="8c24f-191">[Provedor de Configuração do Azure Key Vault](xref:security/key-vault-configuration) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="8c24f-191">[Azure Key Vault Configuration Provider](xref:security/key-vault-configuration) (*Security* topics)</span></span> | <span data-ttu-id="8c24f-192">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="8c24f-192">Azure Key Vault</span></span> |
-| [<span data-ttu-id="8c24f-193">Provedor de Configuração de Linha de Comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-193">Command-line Configuration Provider</span></span>](#command-line-configuration-provider) | <span data-ttu-id="8c24f-194">Parâmetros de linha de comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-194">Command-line parameters</span></span> |
-| [<span data-ttu-id="8c24f-195">Provedor de Configuração personalizado</span><span class="sxs-lookup"><span data-stu-id="8c24f-195">Custom configuration provider</span></span>](#custom-configuration-provider) | <span data-ttu-id="8c24f-196">Fonte personalizada</span><span class="sxs-lookup"><span data-stu-id="8c24f-196">Custom source</span></span> |
-| [<span data-ttu-id="8c24f-197">Provedor de Configuração de Variáveis de Ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-197">Environment variables Configuration Provider</span></span>](#environment-variables-configuration-provider) | <span data-ttu-id="8c24f-198">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-198">Environment variables</span></span> |
-| [<span data-ttu-id="8c24f-199">Provedor de Configuração de Arquivo</span><span class="sxs-lookup"><span data-stu-id="8c24f-199">File Configuration Provider</span></span>](#file-configuration-provider) | <span data-ttu-id="8c24f-200">Arquivos (INI, JSON, XML)</span><span class="sxs-lookup"><span data-stu-id="8c24f-200">Files (INI, JSON, XML)</span></span> |
-| [<span data-ttu-id="8c24f-201">Provedor de Configuração de Chave por Arquivo</span><span class="sxs-lookup"><span data-stu-id="8c24f-201">Key-per-file Configuration Provider</span></span>](#key-per-file-configuration-provider) | <span data-ttu-id="8c24f-202">Arquivos de diretório</span><span class="sxs-lookup"><span data-stu-id="8c24f-202">Directory files</span></span> |
-| [<span data-ttu-id="8c24f-203">Provedor de Configuração de Memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-203">Memory Configuration Provider</span></span>](#memory-configuration-provider) | <span data-ttu-id="8c24f-204">Coleções na memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-204">In-memory collections</span></span> |
-| <span data-ttu-id="8c24f-205">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="8c24f-205">[User secrets (Secret Manager)](xref:security/app-secrets) (*Security* topics)</span></span> | <span data-ttu-id="8c24f-206">Arquivo no diretório de perfil do usuário</span><span class="sxs-lookup"><span data-stu-id="8c24f-206">File in the user profile directory</span></span> |
+| <span data-ttu-id="88dce-191">[Provedor de Configuração do Azure Key Vault](xref:security/key-vault-configuration) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="88dce-191">[Azure Key Vault Configuration Provider](xref:security/key-vault-configuration) (*Security* topics)</span></span> | <span data-ttu-id="88dce-192">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="88dce-192">Azure Key Vault</span></span> |
+| [<span data-ttu-id="88dce-193">Provedor de Configuração de Linha de Comando</span><span class="sxs-lookup"><span data-stu-id="88dce-193">Command-line Configuration Provider</span></span>](#command-line-configuration-provider) | <span data-ttu-id="88dce-194">Parâmetros de linha de comando</span><span class="sxs-lookup"><span data-stu-id="88dce-194">Command-line parameters</span></span> |
+| [<span data-ttu-id="88dce-195">Provedor de Configuração personalizado</span><span class="sxs-lookup"><span data-stu-id="88dce-195">Custom configuration provider</span></span>](#custom-configuration-provider) | <span data-ttu-id="88dce-196">Fonte personalizada</span><span class="sxs-lookup"><span data-stu-id="88dce-196">Custom source</span></span> |
+| [<span data-ttu-id="88dce-197">Provedor de Configuração de Variáveis de Ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-197">Environment Variables Configuration Provider</span></span>](#environment-variables-configuration-provider) | <span data-ttu-id="88dce-198">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-198">Environment variables</span></span> |
+| [<span data-ttu-id="88dce-199">Provedor de Configuração de Arquivo</span><span class="sxs-lookup"><span data-stu-id="88dce-199">File Configuration Provider</span></span>](#file-configuration-provider) | <span data-ttu-id="88dce-200">Arquivos (INI, JSON, XML)</span><span class="sxs-lookup"><span data-stu-id="88dce-200">Files (INI, JSON, XML)</span></span> |
+| [<span data-ttu-id="88dce-201">Provedor de Configuração de Chave por Arquivo</span><span class="sxs-lookup"><span data-stu-id="88dce-201">Key-per-file Configuration Provider</span></span>](#key-per-file-configuration-provider) | <span data-ttu-id="88dce-202">Arquivos de diretório</span><span class="sxs-lookup"><span data-stu-id="88dce-202">Directory files</span></span> |
+| [<span data-ttu-id="88dce-203">Provedor de Configuração de Memória</span><span class="sxs-lookup"><span data-stu-id="88dce-203">Memory Configuration Provider</span></span>](#memory-configuration-provider) | <span data-ttu-id="88dce-204">Coleções na memória</span><span class="sxs-lookup"><span data-stu-id="88dce-204">In-memory collections</span></span> |
+| <span data-ttu-id="88dce-205">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="88dce-205">[User secrets (Secret Manager)](xref:security/app-secrets) (*Security* topics)</span></span> | <span data-ttu-id="88dce-206">Arquivo no diretório de perfil do usuário</span><span class="sxs-lookup"><span data-stu-id="88dce-206">File in the user profile directory</span></span> |
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0 || aspnetcore-1.1"
 
-| <span data-ttu-id="8c24f-207">Provider</span><span class="sxs-lookup"><span data-stu-id="8c24f-207">Provider</span></span> | <span data-ttu-id="8c24f-208">Fornece a configuração de &hellip;</span><span class="sxs-lookup"><span data-stu-id="8c24f-208">Provides configuration from&hellip;</span></span> |
+| <span data-ttu-id="88dce-207">Provider</span><span class="sxs-lookup"><span data-stu-id="88dce-207">Provider</span></span> | <span data-ttu-id="88dce-208">Fornece a configuração de &hellip;</span><span class="sxs-lookup"><span data-stu-id="88dce-208">Provides configuration from&hellip;</span></span> |
 | -------- | ----------------------------------- |
-| <span data-ttu-id="8c24f-209">[Provedor de Configuração do Azure Key Vault](xref:security/key-vault-configuration) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="8c24f-209">[Azure Key Vault Configuration Provider](xref:security/key-vault-configuration) (*Security* topics)</span></span> | <span data-ttu-id="8c24f-210">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="8c24f-210">Azure Key Vault</span></span> |
-| [<span data-ttu-id="8c24f-211">Provedor de Configuração de Linha de Comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-211">Command-line Configuration Provider</span></span>](#command-line-configuration-provider) | <span data-ttu-id="8c24f-212">Parâmetros de linha de comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-212">Command-line parameters</span></span> |
-| [<span data-ttu-id="8c24f-213">Provedor de Configuração personalizado</span><span class="sxs-lookup"><span data-stu-id="8c24f-213">Custom configuration provider</span></span>](#custom-configuration-provider) | <span data-ttu-id="8c24f-214">Fonte personalizada</span><span class="sxs-lookup"><span data-stu-id="8c24f-214">Custom source</span></span> |
-| [<span data-ttu-id="8c24f-215">Provedor de Configuração de Variáveis de Ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-215">Environment variables Configuration Provider</span></span>](#environment-variables-configuration-provider) | <span data-ttu-id="8c24f-216">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-216">Environment variables</span></span> |
-| [<span data-ttu-id="8c24f-217">Provedor de Configuração de Arquivo</span><span class="sxs-lookup"><span data-stu-id="8c24f-217">File Configuration Provider</span></span>](#file-configuration-provider) | <span data-ttu-id="8c24f-218">Arquivos (INI, JSON, XML)</span><span class="sxs-lookup"><span data-stu-id="8c24f-218">Files (INI, JSON, XML)</span></span> |
-| [<span data-ttu-id="8c24f-219">Provedor de Configuração de Memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-219">Memory Configuration Provider</span></span>](#memory-configuration-provider) | <span data-ttu-id="8c24f-220">Coleções na memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-220">In-memory collections</span></span> |
-| <span data-ttu-id="8c24f-221">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="8c24f-221">[User secrets (Secret Manager)](xref:security/app-secrets) (*Security* topics)</span></span> | <span data-ttu-id="8c24f-222">Arquivo no diretório de perfil do usuário</span><span class="sxs-lookup"><span data-stu-id="8c24f-222">File in the user profile directory</span></span> |
+| <span data-ttu-id="88dce-209">[Provedor de Configuração do Azure Key Vault](xref:security/key-vault-configuration) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="88dce-209">[Azure Key Vault Configuration Provider](xref:security/key-vault-configuration) (*Security* topics)</span></span> | <span data-ttu-id="88dce-210">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="88dce-210">Azure Key Vault</span></span> |
+| [<span data-ttu-id="88dce-211">Provedor de Configuração de Linha de Comando</span><span class="sxs-lookup"><span data-stu-id="88dce-211">Command-line Configuration Provider</span></span>](#command-line-configuration-provider) | <span data-ttu-id="88dce-212">Parâmetros de linha de comando</span><span class="sxs-lookup"><span data-stu-id="88dce-212">Command-line parameters</span></span> |
+| [<span data-ttu-id="88dce-213">Provedor de Configuração personalizado</span><span class="sxs-lookup"><span data-stu-id="88dce-213">Custom configuration provider</span></span>](#custom-configuration-provider) | <span data-ttu-id="88dce-214">Fonte personalizada</span><span class="sxs-lookup"><span data-stu-id="88dce-214">Custom source</span></span> |
+| [<span data-ttu-id="88dce-215">Provedor de Configuração de Variáveis de Ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-215">Environment Variables Configuration Provider</span></span>](#environment-variables-configuration-provider) | <span data-ttu-id="88dce-216">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-216">Environment variables</span></span> |
+| [<span data-ttu-id="88dce-217">Provedor de Configuração de Arquivo</span><span class="sxs-lookup"><span data-stu-id="88dce-217">File Configuration Provider</span></span>](#file-configuration-provider) | <span data-ttu-id="88dce-218">Arquivos (INI, JSON, XML)</span><span class="sxs-lookup"><span data-stu-id="88dce-218">Files (INI, JSON, XML)</span></span> |
+| [<span data-ttu-id="88dce-219">Provedor de Configuração de Memória</span><span class="sxs-lookup"><span data-stu-id="88dce-219">Memory Configuration Provider</span></span>](#memory-configuration-provider) | <span data-ttu-id="88dce-220">Coleções na memória</span><span class="sxs-lookup"><span data-stu-id="88dce-220">In-memory collections</span></span> |
+| <span data-ttu-id="88dce-221">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="88dce-221">[User secrets (Secret Manager)](xref:security/app-secrets) (*Security* topics)</span></span> | <span data-ttu-id="88dce-222">Arquivo no diretório de perfil do usuário</span><span class="sxs-lookup"><span data-stu-id="88dce-222">File in the user profile directory</span></span> |
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-1.0"
 
-| <span data-ttu-id="8c24f-223">Provider</span><span class="sxs-lookup"><span data-stu-id="8c24f-223">Provider</span></span> | <span data-ttu-id="8c24f-224">Fornece a configuração de &hellip;</span><span class="sxs-lookup"><span data-stu-id="8c24f-224">Provides configuration from&hellip;</span></span> |
+| <span data-ttu-id="88dce-223">Provider</span><span class="sxs-lookup"><span data-stu-id="88dce-223">Provider</span></span> | <span data-ttu-id="88dce-224">Fornece a configuração de &hellip;</span><span class="sxs-lookup"><span data-stu-id="88dce-224">Provides configuration from&hellip;</span></span> |
 | -------- | ----------------------------------- |
-| [<span data-ttu-id="8c24f-225">Provedor de Configuração de Linha de Comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-225">Command-line Configuration Provider</span></span>](#command-line-configuration-provider) | <span data-ttu-id="8c24f-226">Parâmetros de linha de comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-226">Command-line parameters</span></span> |
-| [<span data-ttu-id="8c24f-227">Provedor de Configuração personalizado</span><span class="sxs-lookup"><span data-stu-id="8c24f-227">Custom configuration provider</span></span>](#custom-configuration-provider) | <span data-ttu-id="8c24f-228">Fonte personalizada</span><span class="sxs-lookup"><span data-stu-id="8c24f-228">Custom source</span></span> |
-| [<span data-ttu-id="8c24f-229">Provedor de Configuração de Variáveis de Ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-229">Environment variables Configuration Provider</span></span>](#environment-variables-configuration-provider) | <span data-ttu-id="8c24f-230">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-230">Environment variables</span></span> |
-| [<span data-ttu-id="8c24f-231">Provedor de Configuração de Arquivo</span><span class="sxs-lookup"><span data-stu-id="8c24f-231">File Configuration Provider</span></span>](#file-configuration-provider) | <span data-ttu-id="8c24f-232">Arquivos (INI, JSON, XML)</span><span class="sxs-lookup"><span data-stu-id="8c24f-232">Files (INI, JSON, XML)</span></span> |
-| [<span data-ttu-id="8c24f-233">Provedor de Configuração de Memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-233">Memory Configuration Provider</span></span>](#memory-configuration-provider) | <span data-ttu-id="8c24f-234">Coleções na memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-234">In-memory collections</span></span> |
-| <span data-ttu-id="8c24f-235">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="8c24f-235">[User secrets (Secret Manager)](xref:security/app-secrets) (*Security* topics)</span></span> | <span data-ttu-id="8c24f-236">Arquivo no diretório de perfil do usuário</span><span class="sxs-lookup"><span data-stu-id="8c24f-236">File in the user profile directory</span></span> |
+| [<span data-ttu-id="88dce-225">Provedor de Configuração de Linha de Comando</span><span class="sxs-lookup"><span data-stu-id="88dce-225">Command-line Configuration Provider</span></span>](#command-line-configuration-provider) | <span data-ttu-id="88dce-226">Parâmetros de linha de comando</span><span class="sxs-lookup"><span data-stu-id="88dce-226">Command-line parameters</span></span> |
+| [<span data-ttu-id="88dce-227">Provedor de Configuração personalizado</span><span class="sxs-lookup"><span data-stu-id="88dce-227">Custom configuration provider</span></span>](#custom-configuration-provider) | <span data-ttu-id="88dce-228">Fonte personalizada</span><span class="sxs-lookup"><span data-stu-id="88dce-228">Custom source</span></span> |
+| [<span data-ttu-id="88dce-229">Provedor de Configuração de Variáveis de Ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-229">Environment Variables Configuration Provider</span></span>](#environment-variables-configuration-provider) | <span data-ttu-id="88dce-230">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-230">Environment variables</span></span> |
+| [<span data-ttu-id="88dce-231">Provedor de Configuração de Arquivo</span><span class="sxs-lookup"><span data-stu-id="88dce-231">File Configuration Provider</span></span>](#file-configuration-provider) | <span data-ttu-id="88dce-232">Arquivos (INI, JSON, XML)</span><span class="sxs-lookup"><span data-stu-id="88dce-232">Files (INI, JSON, XML)</span></span> |
+| [<span data-ttu-id="88dce-233">Provedor de Configuração de Memória</span><span class="sxs-lookup"><span data-stu-id="88dce-233">Memory Configuration Provider</span></span>](#memory-configuration-provider) | <span data-ttu-id="88dce-234">Coleções na memória</span><span class="sxs-lookup"><span data-stu-id="88dce-234">In-memory collections</span></span> |
+| <span data-ttu-id="88dce-235">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (tópicos de *Segurança*)</span><span class="sxs-lookup"><span data-stu-id="88dce-235">[User secrets (Secret Manager)](xref:security/app-secrets) (*Security* topics)</span></span> | <span data-ttu-id="88dce-236">Arquivo no diretório de perfil do usuário</span><span class="sxs-lookup"><span data-stu-id="88dce-236">File in the user profile directory</span></span> |
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-237">Na inicialização, as fontes de configuração são lidas na ordem especificada pelos provedores de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-237">Configuration sources are read in the order that their configuration providers are specified at startup.</span></span> <span data-ttu-id="8c24f-238">Os provedores de configuração descritos neste tópico estão descritos em ordem alfabética, não na ordem na qual seu código pode organizá-los.</span><span class="sxs-lookup"><span data-stu-id="8c24f-238">The configuration providers described in this topic are described in alphabetical order, not in the order that your code may arrange them.</span></span> <span data-ttu-id="8c24f-239">Organize os provedores de configuração em seu código para atender às suas prioridades para as fontes de configuração subjacentes.</span><span class="sxs-lookup"><span data-stu-id="8c24f-239">Order configuration providers in your code to suit your priorities for the underlying configuration sources.</span></span>
+<span data-ttu-id="88dce-237">Na inicialização, as fontes de configuração são lidas na ordem especificada pelos provedores de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-237">Configuration sources are read in the order that their configuration providers are specified at startup.</span></span> <span data-ttu-id="88dce-238">Os provedores de configuração descritos neste tópico estão descritos em ordem alfabética, não na ordem na qual seu código pode organizá-los.</span><span class="sxs-lookup"><span data-stu-id="88dce-238">The configuration providers described in this topic are described in alphabetical order, not in the order that your code may arrange them.</span></span> <span data-ttu-id="88dce-239">Organize os provedores de configuração em seu código para atender às suas prioridades para as fontes de configuração subjacentes.</span><span class="sxs-lookup"><span data-stu-id="88dce-239">Order configuration providers in your code to suit your priorities for the underlying configuration sources.</span></span>
 
-<span data-ttu-id="8c24f-240">Uma sequência comum de provedores de configuração é:</span><span class="sxs-lookup"><span data-stu-id="8c24f-240">A typical sequence of configuration providers is:</span></span>
+<span data-ttu-id="88dce-240">Uma sequência comum de provedores de configuração é:</span><span class="sxs-lookup"><span data-stu-id="88dce-240">A typical sequence of configuration providers is:</span></span>
 
-1. <span data-ttu-id="8c24f-241">Arquivos (*appsettings.json*, *appsettings.{Environment}.json*, em que `{Environment}` é o ambiente de hospedagem atual do aplicativo)</span><span class="sxs-lookup"><span data-stu-id="8c24f-241">Files (*appsettings.json*, *appsettings.{Environment}.json*, where `{Environment}` is the app's current hosting environment)</span></span>
-1. [<span data-ttu-id="8c24f-242">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="8c24f-242">Azure Key Vault</span></span>](xref:security/key-vault-configuration)
-1. <span data-ttu-id="8c24f-243">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (apenas no ambiente de desenvolvimento)</span><span class="sxs-lookup"><span data-stu-id="8c24f-243">[User secrets (Secret Manager)](xref:security/app-secrets) (in the Development environment only)</span></span>
-1. <span data-ttu-id="8c24f-244">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-244">Environment variables</span></span>
-1. <span data-ttu-id="8c24f-245">Argumentos de linha de comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-245">Command-line arguments</span></span>
+1. <span data-ttu-id="88dce-241">Arquivos (*appsettings.json*, *appsettings.{Environment}.json*, em que `{Environment}` é o ambiente de hospedagem atual do aplicativo)</span><span class="sxs-lookup"><span data-stu-id="88dce-241">Files (*appsettings.json*, *appsettings.{Environment}.json*, where `{Environment}` is the app's current hosting environment)</span></span>
+1. [<span data-ttu-id="88dce-242">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="88dce-242">Azure Key Vault</span></span>](xref:security/key-vault-configuration)
+1. <span data-ttu-id="88dce-243">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (apenas no ambiente de desenvolvimento)</span><span class="sxs-lookup"><span data-stu-id="88dce-243">[User secrets (Secret Manager)](xref:security/app-secrets) (in the Development environment only)</span></span>
+1. <span data-ttu-id="88dce-244">Variáveis de ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-244">Environment variables</span></span>
+1. <span data-ttu-id="88dce-245">Argumentos de linha de comando</span><span class="sxs-lookup"><span data-stu-id="88dce-245">Command-line arguments</span></span>
 
-<span data-ttu-id="8c24f-246">É comum posicionar o Provedor de Configuração de Linha de Comando por último em uma série de provedores, a fim de permitir que os argumentos de linha de comando substituam a configuração definida por outros provedores.</span><span class="sxs-lookup"><span data-stu-id="8c24f-246">It's a common practice to position the Command-line Configuration Provider last in a series of providers to allow command-line arguments to override configuration set by the other providers.</span></span>
+<span data-ttu-id="88dce-246">É comum posicionar o Provedor de Configuração de Linha de Comando por último em uma série de provedores, a fim de permitir que os argumentos de linha de comando substituam a configuração definida por outros provedores.</span><span class="sxs-lookup"><span data-stu-id="88dce-246">It's a common practice to position the Command-line Configuration Provider last in a series of providers to allow command-line arguments to override configuration set by the other providers.</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-247">Essa sequência de provedores é aplicada quando você inicializa um novo <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-247">This sequence of providers is put into place when you initialize a new <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span></span> <span data-ttu-id="8c24f-248">Para saber mais, veja o tópico [Host da Web: configurar um host](xref:fundamentals/host/web-host#set-up-a-host).</span><span class="sxs-lookup"><span data-stu-id="8c24f-248">For more information, see [Web Host: Set up a host](xref:fundamentals/host/web-host#set-up-a-host).</span></span>
+<span data-ttu-id="88dce-247">Essa sequência de provedores é aplicada quando você inicializa um novo <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-247">This sequence of providers is put into place when you initialize a new <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span></span> <span data-ttu-id="88dce-248">Para saber mais, veja o tópico [Host da Web: configurar um host](xref:fundamentals/host/web-host#set-up-a-host).</span><span class="sxs-lookup"><span data-stu-id="88dce-248">For more information, see [Web Host: Set up a host](xref:fundamentals/host/web-host#set-up-a-host).</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-249">Essa sequência de provedores pode ser criada para o aplicativo (não o host) com um <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> e uma chamada para seu método <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder.Build*> em `Startup`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-249">This sequence of providers can be created for the app (not the host) with a <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> and a call to its <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder.Build*> method in `Startup`:</span></span>
+<span data-ttu-id="88dce-249">Essa sequência de provedores pode ser criada para o aplicativo (não o host) com um <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> e uma chamada para seu método <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder.Build*> em `Startup`:</span><span class="sxs-lookup"><span data-stu-id="88dce-249">This sequence of providers can be created for the app (not the host) with a <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder> and a call to its <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder.Build*> method in `Startup`:</span></span>
 
 ```csharp
 public Startup(IHostingEnvironment env)
@@ -238,47 +238,47 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<span data-ttu-id="8c24f-250">No exemplo anterior, o nome do ambiente (`env.EnvironmentName`) e o nome do assembly de aplicativo (`env.ApplicationName`) são fornecidos pelo <xref:Microsoft.Extensions.Hosting.IHostingEnvironment>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-250">In the preceding example, the environment name (`env.EnvironmentName`) and app assembly name (`env.ApplicationName`) are provided by the <xref:Microsoft.Extensions.Hosting.IHostingEnvironment>.</span></span> <span data-ttu-id="8c24f-251">Para obter mais informações, consulte <xref:fundamentals/environments>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-251">For more information, see <xref:fundamentals/environments>.</span></span>
+<span data-ttu-id="88dce-250">No exemplo anterior, o nome do ambiente (`env.EnvironmentName`) e o nome do assembly de aplicativo (`env.ApplicationName`) são fornecidos pelo <xref:Microsoft.Extensions.Hosting.IHostingEnvironment>.</span><span class="sxs-lookup"><span data-stu-id="88dce-250">In the preceding example, the environment name (`env.EnvironmentName`) and app assembly name (`env.ApplicationName`) are provided by the <xref:Microsoft.Extensions.Hosting.IHostingEnvironment>.</span></span> <span data-ttu-id="88dce-251">Para obter mais informações, consulte <xref:fundamentals/environments>.</span><span class="sxs-lookup"><span data-stu-id="88dce-251">For more information, see <xref:fundamentals/environments>.</span></span>
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="configureappconfiguration"></a><span data-ttu-id="8c24f-252">ConfigureAppConfiguration</span><span class="sxs-lookup"><span data-stu-id="8c24f-252">ConfigureAppConfiguration</span></span>
+## <a name="configureappconfiguration"></a><span data-ttu-id="88dce-252">ConfigureAppConfiguration</span><span class="sxs-lookup"><span data-stu-id="88dce-252">ConfigureAppConfiguration</span></span>
 
-<span data-ttu-id="8c24f-253">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o Host da Web para especificar os provedores de configuração do aplicativo, além daqueles adicionados automaticamente por <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>:</span><span class="sxs-lookup"><span data-stu-id="8c24f-253">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the Web Host to specify the app's configuration providers in addition to those added automatically by <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>:</span></span>
+<span data-ttu-id="88dce-253">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o Host da Web para especificar os provedores de configuração do aplicativo, além daqueles adicionados automaticamente por <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>:</span><span class="sxs-lookup"><span data-stu-id="88dce-253">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the Web Host to specify the app's configuration providers in addition to those added automatically by <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>:</span></span>
 
 [!code-csharp[](index/samples/2.x/ConfigurationSample/Program.cs?name=snippet_Program&highlight=19)]
 
 ::: moniker-end
 
-## <a name="command-line-configuration-provider"></a><span data-ttu-id="8c24f-254">Provedor de Configuração de Linha de Comando</span><span class="sxs-lookup"><span data-stu-id="8c24f-254">Command-line Configuration Provider</span></span>
+## <a name="command-line-configuration-provider"></a><span data-ttu-id="88dce-254">Provedor de Configuração de Linha de Comando</span><span class="sxs-lookup"><span data-stu-id="88dce-254">Command-line Configuration Provider</span></span>
 
-<span data-ttu-id="8c24f-255">O <xref:Microsoft.Extensions.Configuration.CommandLine.CommandLineConfigurationProvider> carrega a configuração dos pares chave-valor do argumento de linha de comando em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="8c24f-255">The <xref:Microsoft.Extensions.Configuration.CommandLine.CommandLineConfigurationProvider> loads configuration from command-line argument key-value pairs at runtime.</span></span>
+<span data-ttu-id="88dce-255">O <xref:Microsoft.Extensions.Configuration.CommandLine.CommandLineConfigurationProvider> carrega a configuração dos pares chave-valor do argumento de linha de comando em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="88dce-255">The <xref:Microsoft.Extensions.Configuration.CommandLine.CommandLineConfigurationProvider> loads configuration from command-line argument key-value pairs at runtime.</span></span>
 
-<span data-ttu-id="8c24f-256">Para ativar a configuração de linha de comando, o método de extensão <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> é chamado em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-256">To activate command-line configuration, the <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> extension method is called on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-256">Para ativar a configuração de linha de comando, o método de extensão <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> é chamado em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-256">To activate command-line configuration, the <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> extension method is called on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-257">`AddCommandLine` é chamado automaticamente quando você inicializa um novo <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-257">`AddCommandLine` is automatically called when you initialize a new <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span></span> <span data-ttu-id="8c24f-258">Para saber mais, veja o tópico [Host da Web: configurar um host](xref:fundamentals/host/web-host#set-up-a-host).</span><span class="sxs-lookup"><span data-stu-id="8c24f-258">For more information, see [Web Host: Set up a host](xref:fundamentals/host/web-host#set-up-a-host).</span></span>
+<span data-ttu-id="88dce-257">`AddCommandLine` é chamado automaticamente quando você inicializa um novo <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-257">`AddCommandLine` is automatically called when you initialize a new <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span></span> <span data-ttu-id="88dce-258">Para saber mais, veja o tópico [Host da Web: configurar um host](xref:fundamentals/host/web-host#set-up-a-host).</span><span class="sxs-lookup"><span data-stu-id="88dce-258">For more information, see [Web Host: Set up a host](xref:fundamentals/host/web-host#set-up-a-host).</span></span>
 
-<span data-ttu-id="8c24f-259">`CreateDefaultBuilder` também carrega:</span><span class="sxs-lookup"><span data-stu-id="8c24f-259">`CreateDefaultBuilder` also loads:</span></span>
+<span data-ttu-id="88dce-259">`CreateDefaultBuilder` também carrega:</span><span class="sxs-lookup"><span data-stu-id="88dce-259">`CreateDefaultBuilder` also loads:</span></span>
 
-* <span data-ttu-id="8c24f-260">Configuração opcional de *appsettings.json* e *appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-260">Optional configuration from *appsettings.json* and *appsettings.{Environment}.json*.</span></span>
-* <span data-ttu-id="8c24f-261">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (no ambiente de desenvolvimento).</span><span class="sxs-lookup"><span data-stu-id="8c24f-261">[User secrets (Secret Manager)](xref:security/app-secrets) (in the Development environment).</span></span>
-* <span data-ttu-id="8c24f-262">Variáveis de ambiente.</span><span class="sxs-lookup"><span data-stu-id="8c24f-262">Environment variables.</span></span>
+* <span data-ttu-id="88dce-260">Configuração opcional de *appsettings.json* e *appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="88dce-260">Optional configuration from *appsettings.json* and *appsettings.{Environment}.json*.</span></span>
+* <span data-ttu-id="88dce-261">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (no ambiente de desenvolvimento).</span><span class="sxs-lookup"><span data-stu-id="88dce-261">[User secrets (Secret Manager)](xref:security/app-secrets) (in the Development environment).</span></span>
+* <span data-ttu-id="88dce-262">Variáveis de ambiente.</span><span class="sxs-lookup"><span data-stu-id="88dce-262">Environment variables.</span></span>
 
-<span data-ttu-id="8c24f-263">`CreateDefaultBuilder` adiciona o Provedor de Configuração de Linha de Comando por último.</span><span class="sxs-lookup"><span data-stu-id="8c24f-263">`CreateDefaultBuilder` adds the Command-line Configuration Provider last.</span></span> <span data-ttu-id="8c24f-264">Os argumentos de linha de comando passados em tempo de execução substituem a configuração definida por outros provedores.</span><span class="sxs-lookup"><span data-stu-id="8c24f-264">Command-line arguments passed at runtime override configuration set by the other providers.</span></span>
+<span data-ttu-id="88dce-263">`CreateDefaultBuilder` adiciona o Provedor de Configuração de Linha de Comando por último.</span><span class="sxs-lookup"><span data-stu-id="88dce-263">`CreateDefaultBuilder` adds the Command-line Configuration Provider last.</span></span> <span data-ttu-id="88dce-264">Os argumentos de linha de comando passados em tempo de execução substituem a configuração definida por outros provedores.</span><span class="sxs-lookup"><span data-stu-id="88dce-264">Command-line arguments passed at runtime override configuration set by the other providers.</span></span>
 
-<span data-ttu-id="8c24f-265">`CreateDefaultBuilder` age quando o host é construído.</span><span class="sxs-lookup"><span data-stu-id="8c24f-265">`CreateDefaultBuilder` acts when the host is constructed.</span></span> <span data-ttu-id="8c24f-266">Portanto, a configuração de linha de comando ativada por `CreateDefaultBuilder` pode afetar como o host é configurado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-266">Therefore, command-line configuration activated by `CreateDefaultBuilder` can affect how the host is configured.</span></span>
+<span data-ttu-id="88dce-265">`CreateDefaultBuilder` age quando o host é construído.</span><span class="sxs-lookup"><span data-stu-id="88dce-265">`CreateDefaultBuilder` acts when the host is constructed.</span></span> <span data-ttu-id="88dce-266">Portanto, a configuração de linha de comando ativada por `CreateDefaultBuilder` pode afetar como o host é configurado.</span><span class="sxs-lookup"><span data-stu-id="88dce-266">Therefore, command-line configuration activated by `CreateDefaultBuilder` can affect how the host is configured.</span></span>
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="8c24f-267">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-267">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration.</span></span>
+<span data-ttu-id="88dce-267">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-267">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration.</span></span>
 
-<span data-ttu-id="8c24f-268">`AddCommandLine` já foi chamado por `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-268">`AddCommandLine` has already been called by `CreateDefaultBuilder`.</span></span> <span data-ttu-id="8c24f-269">Se precisar oferecer configuração de aplicativo e ainda poder substituir essa configuração por argumentos de linha de comando, chame os provedores adicionais do aplicativo em <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> e chame `AddCommandLine` por fim.</span><span class="sxs-lookup"><span data-stu-id="8c24f-269">If you need to provide app configuration and still be able to override that configuration with command-line arguments, call the app's additional providers in <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> and call `AddCommandLine` last.</span></span>
+<span data-ttu-id="88dce-268">`AddCommandLine` já foi chamado por `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88dce-268">`AddCommandLine` has already been called by `CreateDefaultBuilder`.</span></span> <span data-ttu-id="88dce-269">Se precisar oferecer configuração de aplicativo e ainda poder substituir essa configuração por argumentos de linha de comando, chame os provedores adicionais do aplicativo em <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> e chame `AddCommandLine` por fim.</span><span class="sxs-lookup"><span data-stu-id="88dce-269">If you need to provide app configuration and still be able to override that configuration with command-line arguments, call the app's additional providers in <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> and call `AddCommandLine` last.</span></span>
 
 ```csharp
 public class Program
@@ -299,15 +299,15 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-270">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-270">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-270">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-270">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-271">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-271">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method.</span></span>
+<span data-ttu-id="88dce-271">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-271">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method.</span></span>
 
-<span data-ttu-id="8c24f-272">`AddCommandLine` já foi chamado por `CreateDefaultBuilder` quando `UseConfiguration` é chamado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-272">`AddCommandLine` has already been called by `CreateDefaultBuilder` when `UseConfiguration` is called.</span></span> <span data-ttu-id="8c24f-273">Se precisar oferecer configuração de aplicativo e ainda poder substituir essa configuração por argumentos de linha de comando, chame os provedores adicionais do aplicativo em um `ConfigurationBuilder` e chame `AddCommandLine` por fim.</span><span class="sxs-lookup"><span data-stu-id="8c24f-273">If you need to provide app configuration and still be able to override that configuration with command-line arguments, call the app's additional providers on a `ConfigurationBuilder` and call `AddCommandLine` last.</span></span>
+<span data-ttu-id="88dce-272">`AddCommandLine` já foi chamado por `CreateDefaultBuilder` quando `UseConfiguration` é chamado.</span><span class="sxs-lookup"><span data-stu-id="88dce-272">`AddCommandLine` has already been called by `CreateDefaultBuilder` when `UseConfiguration` is called.</span></span> <span data-ttu-id="88dce-273">Se precisar oferecer configuração de aplicativo e ainda poder substituir essa configuração por argumentos de linha de comando, chame os provedores adicionais do aplicativo em um `ConfigurationBuilder` e chame `AddCommandLine` por fim.</span><span class="sxs-lookup"><span data-stu-id="88dce-273">If you need to provide app configuration and still be able to override that configuration with command-line arguments, call the app's additional providers on a `ConfigurationBuilder` and call `AddCommandLine` last.</span></span>
 
 ```csharp
 public class Program
@@ -331,17 +331,17 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-274">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-274">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-274">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-274">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-275">Para ativar a configuração de linha de comando, chame o método de extensão <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-275">To activate command-line configuration, call the <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-275">Para ativar a configuração de linha de comando, chame o método de extensão <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-275">To activate command-line configuration, call the <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
-<span data-ttu-id="8c24f-276">Chamar o provedor por último permite que os argumentos de linha de comando passados em tempo de execução substituam a configuração definida por outros provedores de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-276">Call the provider last to allow the command-line arguments passed at runtime to override configuration set by other configuration providers.</span></span>
+<span data-ttu-id="88dce-276">Chamar o provedor por último permite que os argumentos de linha de comando passados em tempo de execução substituam a configuração definida por outros provedores de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-276">Call the provider last to allow the command-line arguments passed at runtime to override configuration set by other configuration providers.</span></span>
 
-<span data-ttu-id="8c24f-277">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="8c24f-277">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
+<span data-ttu-id="88dce-277">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="88dce-277">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
 
 ::: moniker-end
 
@@ -358,59 +358,59 @@ var host = new WebHostBuilder()
     .UseStartup<Startup>();
 ```
 
-<span data-ttu-id="8c24f-278">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="8c24f-278">**Example**</span></span>
+<span data-ttu-id="88dce-278">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="88dce-278">**Example**</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-279">O aplicativo de exemplo 2.x aproveita a vantagem do método de conveniência estático `CreateDefaultBuilder` para criar o host, que inclui uma chamada para <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-279">The 2.x sample app takes advantage of the static convenience method `CreateDefaultBuilder` to build the host, which includes a call to <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*>.</span></span>
+<span data-ttu-id="88dce-279">O aplicativo de exemplo 2.x aproveita a vantagem do método de conveniência estático `CreateDefaultBuilder` para criar o host, que inclui uma chamada para <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-279">The 2.x sample app takes advantage of the static convenience method `CreateDefaultBuilder` to build the host, which includes a call to <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*>.</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-280">O aplicativo de exemplo 1.x chama <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> em um <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-280">The 1.x sample app calls <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> on a <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-280">O aplicativo de exemplo 1.x chama <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> em um <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-280">The 1.x sample app calls <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> on a <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
 ::: moniker-end
 
-1. <span data-ttu-id="8c24f-281">Abra um prompt de comando no diretório do projeto.</span><span class="sxs-lookup"><span data-stu-id="8c24f-281">Open a command prompt in the project's directory.</span></span>
-1. <span data-ttu-id="8c24f-282">Forneça um argumento de linha de comando para o comando `dotnet run`, `dotnet run CommandLineKey=CommandLineValue`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-282">Supply a command-line argument to the `dotnet run` command, `dotnet run CommandLineKey=CommandLineValue`.</span></span>
-1. <span data-ttu-id="8c24f-283">Quando o aplicativo estiver em execução, abra um navegador para o aplicativo em `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-283">After the app is running, open a browser to the app at `http://localhost:5000`.</span></span>
-1. <span data-ttu-id="8c24f-284">Observe que a saída contém o par chave-valor do argumento de linha de comando de configuração fornecido para `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-284">Observe that the output contains the key-value pair for the configuration command-line argument provided to `dotnet run`.</span></span>
+1. <span data-ttu-id="88dce-281">Abra um prompt de comando no diretório do projeto.</span><span class="sxs-lookup"><span data-stu-id="88dce-281">Open a command prompt in the project's directory.</span></span>
+1. <span data-ttu-id="88dce-282">Forneça um argumento de linha de comando para o comando `dotnet run`, `dotnet run CommandLineKey=CommandLineValue`.</span><span class="sxs-lookup"><span data-stu-id="88dce-282">Supply a command-line argument to the `dotnet run` command, `dotnet run CommandLineKey=CommandLineValue`.</span></span>
+1. <span data-ttu-id="88dce-283">Quando o aplicativo estiver em execução, abra um navegador para o aplicativo em `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="88dce-283">After the app is running, open a browser to the app at `http://localhost:5000`.</span></span>
+1. <span data-ttu-id="88dce-284">Observe que a saída contém o par chave-valor do argumento de linha de comando de configuração fornecido para `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="88dce-284">Observe that the output contains the key-value pair for the configuration command-line argument provided to `dotnet run`.</span></span>
 
-### <a name="arguments"></a><span data-ttu-id="8c24f-285">Arguments</span><span class="sxs-lookup"><span data-stu-id="8c24f-285">Arguments</span></span>
+### <a name="arguments"></a><span data-ttu-id="88dce-285">Arguments</span><span class="sxs-lookup"><span data-stu-id="88dce-285">Arguments</span></span>
 
-<span data-ttu-id="8c24f-286">O valor deve vir após um sinal de igual (`=`), ou a chave deve ter um prefixo (`--` ou `/`) quando o valor vier após um espaço.</span><span class="sxs-lookup"><span data-stu-id="8c24f-286">The value must follow an equals sign (`=`), or the key must have a prefix (`--` or `/`) when the value follows a space.</span></span> <span data-ttu-id="8c24f-287">O valor pode ser nulo se um sinal de igual for usado (por exemplo, `CommandLineKey=`).</span><span class="sxs-lookup"><span data-stu-id="8c24f-287">The value can be null if an equals sign is used (for example, `CommandLineKey=`).</span></span>
+<span data-ttu-id="88dce-286">O valor deve vir após um sinal de igual (`=`), ou a chave deve ter um prefixo (`--` ou `/`) quando o valor vier após um espaço.</span><span class="sxs-lookup"><span data-stu-id="88dce-286">The value must follow an equals sign (`=`), or the key must have a prefix (`--` or `/`) when the value follows a space.</span></span> <span data-ttu-id="88dce-287">O valor pode ser nulo se um sinal de igual for usado (por exemplo, `CommandLineKey=`).</span><span class="sxs-lookup"><span data-stu-id="88dce-287">The value can be null if an equals sign is used (for example, `CommandLineKey=`).</span></span>
 
-| <span data-ttu-id="8c24f-288">Prefixo da chave</span><span class="sxs-lookup"><span data-stu-id="8c24f-288">Key prefix</span></span>               | <span data-ttu-id="8c24f-289">Exemplo</span><span class="sxs-lookup"><span data-stu-id="8c24f-289">Example</span></span>                                                |
+| <span data-ttu-id="88dce-288">Prefixo da chave</span><span class="sxs-lookup"><span data-stu-id="88dce-288">Key prefix</span></span>               | <span data-ttu-id="88dce-289">Exemplo</span><span class="sxs-lookup"><span data-stu-id="88dce-289">Example</span></span>                                                |
 | ------------------------ | ------------------------------------------------------ |
-| <span data-ttu-id="8c24f-290">Nenhum prefixo</span><span class="sxs-lookup"><span data-stu-id="8c24f-290">No prefix</span></span>                | `CommandLineKey1=value1`                               |
-| <span data-ttu-id="8c24f-291">Dois traços (`--`)</span><span class="sxs-lookup"><span data-stu-id="8c24f-291">Two dashes (`--`)</span></span>        | <span data-ttu-id="8c24f-292">`--CommandLineKey2=value2`, `--CommandLineKey2 value2`</span><span class="sxs-lookup"><span data-stu-id="8c24f-292">`--CommandLineKey2=value2`, `--CommandLineKey2 value2`</span></span> |
-| <span data-ttu-id="8c24f-293">Barra (`/`)</span><span class="sxs-lookup"><span data-stu-id="8c24f-293">Forward slash (`/`)</span></span>      | <span data-ttu-id="8c24f-294">`/CommandLineKey3=value3`, `/CommandLineKey3 value3`</span><span class="sxs-lookup"><span data-stu-id="8c24f-294">`/CommandLineKey3=value3`, `/CommandLineKey3 value3`</span></span>   |
+| <span data-ttu-id="88dce-290">Nenhum prefixo</span><span class="sxs-lookup"><span data-stu-id="88dce-290">No prefix</span></span>                | `CommandLineKey1=value1`                               |
+| <span data-ttu-id="88dce-291">Dois traços (`--`)</span><span class="sxs-lookup"><span data-stu-id="88dce-291">Two dashes (`--`)</span></span>        | <span data-ttu-id="88dce-292">`--CommandLineKey2=value2`, `--CommandLineKey2 value2`</span><span class="sxs-lookup"><span data-stu-id="88dce-292">`--CommandLineKey2=value2`, `--CommandLineKey2 value2`</span></span> |
+| <span data-ttu-id="88dce-293">Barra (`/`)</span><span class="sxs-lookup"><span data-stu-id="88dce-293">Forward slash (`/`)</span></span>      | <span data-ttu-id="88dce-294">`/CommandLineKey3=value3`, `/CommandLineKey3 value3`</span><span class="sxs-lookup"><span data-stu-id="88dce-294">`/CommandLineKey3=value3`, `/CommandLineKey3 value3`</span></span>   |
 
-<span data-ttu-id="8c24f-295">No mesmo comando, não combine pares chave-valor do argumento de linha de comando que usam um sinal de igual com pares chave-valor que usam um espaço.</span><span class="sxs-lookup"><span data-stu-id="8c24f-295">Within the same command, don't mix command-line argument key-value pairs that use an equals sign with key-value pairs that use a space.</span></span>
+<span data-ttu-id="88dce-295">No mesmo comando, não combine pares chave-valor do argumento de linha de comando que usam um sinal de igual com pares chave-valor que usam um espaço.</span><span class="sxs-lookup"><span data-stu-id="88dce-295">Within the same command, don't mix command-line argument key-value pairs that use an equals sign with key-value pairs that use a space.</span></span>
 
-<span data-ttu-id="8c24f-296">Exemplo de comandos:</span><span class="sxs-lookup"><span data-stu-id="8c24f-296">Example commands:</span></span>
+<span data-ttu-id="88dce-296">Exemplo de comandos:</span><span class="sxs-lookup"><span data-stu-id="88dce-296">Example commands:</span></span>
 
 ```console
-dotnet run CommandLineKey1=value --CommandLineKey2=value /CommandLineKey2=value
-dotnet run --CommandLineKey1 value /CommandLineKey2 value
-dotnet run CommandLineKey1= CommandLineKey2=value
+dotnet run CommandLineKey1=value1 --CommandLineKey2=value2 /CommandLineKey3=value3
+dotnet run --CommandLineKey1 value1 /CommandLineKey2 value2
+dotnet run CommandLineKey1= CommandLineKey2=value2
 ```
 
-### <a name="switch-mappings"></a><span data-ttu-id="8c24f-297">Mapeamentos de comutador</span><span class="sxs-lookup"><span data-stu-id="8c24f-297">Switch mappings</span></span>
+### <a name="switch-mappings"></a><span data-ttu-id="88dce-297">Mapeamentos de comutador</span><span class="sxs-lookup"><span data-stu-id="88dce-297">Switch mappings</span></span>
 
-<span data-ttu-id="8c24f-298">Os mapeamentos de comutador permitem fornecer a lógica de substituição do nome da chave.</span><span class="sxs-lookup"><span data-stu-id="8c24f-298">Switch mappings allow key name replacement logic.</span></span> <span data-ttu-id="8c24f-299">Quando você cria manualmente a configuração com um <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>, pode fornecer um dicionário de substituições de opções para o método <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-299">When you manually build configuration with a <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>, you can provide a dictionary of switch replacements to the <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> method.</span></span>
+<span data-ttu-id="88dce-298">Os mapeamentos de comutador permitem fornecer a lógica de substituição do nome da chave.</span><span class="sxs-lookup"><span data-stu-id="88dce-298">Switch mappings allow key name replacement logic.</span></span> <span data-ttu-id="88dce-299">Quando você cria manualmente a configuração com um <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>, pode fornecer um dicionário de substituições de opções para o método <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-299">When you manually build configuration with a <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>, you can provide a dictionary of switch replacements to the <xref:Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions.AddCommandLine*> method.</span></span>
 
-<span data-ttu-id="8c24f-300">Ao ser usado, o dicionário de mapeamentos de comutador é verificado para oferecer uma chave que corresponda à chave fornecida por um argumento de linha de comando.</span><span class="sxs-lookup"><span data-stu-id="8c24f-300">When the switch mappings dictionary is used, the dictionary is checked for a key that matches the key provided by a command-line argument.</span></span> <span data-ttu-id="8c24f-301">Se a chave de linha de comando for encontrada no dicionário, o valor do dicionário (a substituição da chave) será passado de volta para definir o par chave-valor na configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-301">If the command-line key is found in the dictionary, the dictionary value (the key replacement) is passed back to set the key-value pair into the app's configuration.</span></span> <span data-ttu-id="8c24f-302">Um mapeamento de comutador é necessário para qualquer chave de linha de comando prefixada com um traço único (`-`).</span><span class="sxs-lookup"><span data-stu-id="8c24f-302">A switch mapping is required for any command-line key prefixed with a single dash (`-`).</span></span>
+<span data-ttu-id="88dce-300">Ao ser usado, o dicionário de mapeamentos de comutador é verificado para oferecer uma chave que corresponda à chave fornecida por um argumento de linha de comando.</span><span class="sxs-lookup"><span data-stu-id="88dce-300">When the switch mappings dictionary is used, the dictionary is checked for a key that matches the key provided by a command-line argument.</span></span> <span data-ttu-id="88dce-301">Se a chave de linha de comando for encontrada no dicionário, o valor do dicionário (a substituição da chave) será passado de volta para definir o par chave-valor na configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-301">If the command-line key is found in the dictionary, the dictionary value (the key replacement) is passed back to set the key-value pair into the app's configuration.</span></span> <span data-ttu-id="88dce-302">Um mapeamento de comutador é necessário para qualquer chave de linha de comando prefixada com um traço único (`-`).</span><span class="sxs-lookup"><span data-stu-id="88dce-302">A switch mapping is required for any command-line key prefixed with a single dash (`-`).</span></span>
 
-<span data-ttu-id="8c24f-303">Regras de chave do dicionário de mapeamentos de comutador:</span><span class="sxs-lookup"><span data-stu-id="8c24f-303">Switch mappings dictionary key rules:</span></span>
+<span data-ttu-id="88dce-303">Regras de chave do dicionário de mapeamentos de comutador:</span><span class="sxs-lookup"><span data-stu-id="88dce-303">Switch mappings dictionary key rules:</span></span>
 
-* <span data-ttu-id="8c24f-304">Os comutadores devem começar com um traço (`-`) ou traço duplo (`--`).</span><span class="sxs-lookup"><span data-stu-id="8c24f-304">Switches must start with a dash (`-`) or double-dash (`--`).</span></span>
-* <span data-ttu-id="8c24f-305">O dicionário de mapeamentos de comutador chave não deve conter chaves duplicadas.</span><span class="sxs-lookup"><span data-stu-id="8c24f-305">The switch mappings dictionary must not contain duplicate keys.</span></span>
+* <span data-ttu-id="88dce-304">Os comutadores devem começar com um traço (`-`) ou traço duplo (`--`).</span><span class="sxs-lookup"><span data-stu-id="88dce-304">Switches must start with a dash (`-`) or double-dash (`--`).</span></span>
+* <span data-ttu-id="88dce-305">O dicionário de mapeamentos de comutador chave não deve conter chaves duplicadas.</span><span class="sxs-lookup"><span data-stu-id="88dce-305">The switch mappings dictionary must not contain duplicate keys.</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="8c24f-306">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="8c24f-306">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
+<span data-ttu-id="88dce-306">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="88dce-306">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
 
 ```csharp
 public class Program
@@ -438,7 +438,7 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-307">Conforme mostrado no exemplo anterior, a chamada para `CreateDefaultBuilder` não deve passar argumentos ao usar mapeamentos de opção.</span><span class="sxs-lookup"><span data-stu-id="8c24f-307">As shown in the preceding example, the call to `CreateDefaultBuilder` shouldn't pass arguments when switch mappings are used.</span></span> <span data-ttu-id="8c24f-308">A chamada `AddCommandLine` do método `CreateDefaultBuilder` não inclui opções mapeadas, e não é possível passar o dicionário de mapeamento de opções para `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-308">`CreateDefaultBuilder` method's `AddCommandLine` call doesn't include mapped switches, and there's no way to pass the switch mapping dictionary to `CreateDefaultBuilder`.</span></span> <span data-ttu-id="8c24f-309">Se os argumentos incluírem uma opção mapeada e forem passados para `CreateDefaultBuilder`, o provedor `AddCommandLine` não inicializará com um <xref:System.FormatException>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-309">If the arguments include a mapped switch and are passed to `CreateDefaultBuilder`, its `AddCommandLine` provider fails to initialize with a <xref:System.FormatException>.</span></span> <span data-ttu-id="8c24f-310">A solução não é passar os argumentos para `CreateDefaultBuilder`, mas, em vez disso, permitir que o método `AddCommandLine` do método `ConfigurationBuilder` processe os dois argumentos e o dicionário de mapeamento de opções.</span><span class="sxs-lookup"><span data-stu-id="8c24f-310">The solution isn't to pass the arguments to `CreateDefaultBuilder` but instead to allow the `ConfigurationBuilder` method's `AddCommandLine` method to process both the arguments and the switch mapping dictionary.</span></span>
+<span data-ttu-id="88dce-307">Conforme mostrado no exemplo anterior, a chamada para `CreateDefaultBuilder` não deve passar argumentos ao usar mapeamentos de opção.</span><span class="sxs-lookup"><span data-stu-id="88dce-307">As shown in the preceding example, the call to `CreateDefaultBuilder` shouldn't pass arguments when switch mappings are used.</span></span> <span data-ttu-id="88dce-308">A chamada `AddCommandLine` do método `CreateDefaultBuilder` não inclui opções mapeadas, e não é possível passar o dicionário de mapeamento de opções para `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88dce-308">`CreateDefaultBuilder` method's `AddCommandLine` call doesn't include mapped switches, and there's no way to pass the switch mapping dictionary to `CreateDefaultBuilder`.</span></span> <span data-ttu-id="88dce-309">Se os argumentos incluírem uma opção mapeada e forem passados para `CreateDefaultBuilder`, o provedor `AddCommandLine` não inicializará com um <xref:System.FormatException>.</span><span class="sxs-lookup"><span data-stu-id="88dce-309">If the arguments include a mapped switch and are passed to `CreateDefaultBuilder`, its `AddCommandLine` provider fails to initialize with a <xref:System.FormatException>.</span></span> <span data-ttu-id="88dce-310">A solução não é passar os argumentos para `CreateDefaultBuilder`, mas, em vez disso, permitir que o método `AddCommandLine` do método `ConfigurationBuilder` processe os dois argumentos e o dicionário de mapeamento de opções.</span><span class="sxs-lookup"><span data-stu-id="88dce-310">The solution isn't to pass the arguments to `CreateDefaultBuilder` but instead to allow the `ConfigurationBuilder` method's `AddCommandLine` method to process both the arguments and the switch mapping dictionary.</span></span>
 
 ::: moniker-end
 
@@ -472,7 +472,7 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-311">Conforme mostrado no exemplo anterior, a chamada para `CreateDefaultBuilder` não deve passar argumentos ao usar mapeamentos de opção.</span><span class="sxs-lookup"><span data-stu-id="8c24f-311">As shown in the preceding example, the call to `CreateDefaultBuilder` shouldn't pass arguments when switch mappings are used.</span></span> <span data-ttu-id="8c24f-312">A chamada `AddCommandLine` do método `CreateDefaultBuilder` não inclui opções mapeadas, e não é possível passar o dicionário de mapeamento de opções para `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-312">`CreateDefaultBuilder` method's `AddCommandLine` call doesn't include mapped switches, and there's no way to pass the switch mapping dictionary to `CreateDefaultBuilder`.</span></span> <span data-ttu-id="8c24f-313">Se os argumentos incluírem uma opção mapeada e forem passados para `CreateDefaultBuilder`, o provedor `AddCommandLine` não inicializará com um <xref:System.FormatException>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-313">If the arguments include a mapped switch and are passed to `CreateDefaultBuilder`, its `AddCommandLine` provider fails to initialize with a <xref:System.FormatException>.</span></span> <span data-ttu-id="8c24f-314">A solução não é passar os argumentos para `CreateDefaultBuilder`, mas, em vez disso, permitir que o método `AddCommandLine` do método `ConfigurationBuilder` processe os dois argumentos e o dicionário de mapeamento de opções.</span><span class="sxs-lookup"><span data-stu-id="8c24f-314">The solution isn't to pass the arguments to `CreateDefaultBuilder` but instead to allow the `ConfigurationBuilder` method's `AddCommandLine` method to process both the arguments and the switch mapping dictionary.</span></span>
+<span data-ttu-id="88dce-311">Conforme mostrado no exemplo anterior, a chamada para `CreateDefaultBuilder` não deve passar argumentos ao usar mapeamentos de opção.</span><span class="sxs-lookup"><span data-stu-id="88dce-311">As shown in the preceding example, the call to `CreateDefaultBuilder` shouldn't pass arguments when switch mappings are used.</span></span> <span data-ttu-id="88dce-312">A chamada `AddCommandLine` do método `CreateDefaultBuilder` não inclui opções mapeadas, e não é possível passar o dicionário de mapeamento de opções para `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88dce-312">`CreateDefaultBuilder` method's `AddCommandLine` call doesn't include mapped switches, and there's no way to pass the switch mapping dictionary to `CreateDefaultBuilder`.</span></span> <span data-ttu-id="88dce-313">Se os argumentos incluírem uma opção mapeada e forem passados para `CreateDefaultBuilder`, o provedor `AddCommandLine` não inicializará com um <xref:System.FormatException>.</span><span class="sxs-lookup"><span data-stu-id="88dce-313">If the arguments include a mapped switch and are passed to `CreateDefaultBuilder`, its `AddCommandLine` provider fails to initialize with a <xref:System.FormatException>.</span></span> <span data-ttu-id="88dce-314">A solução não é passar os argumentos para `CreateDefaultBuilder`, mas, em vez disso, permitir que o método `AddCommandLine` do método `ConfigurationBuilder` processe os dois argumentos e o dicionário de mapeamento de opções.</span><span class="sxs-lookup"><span data-stu-id="88dce-314">The solution isn't to pass the arguments to `CreateDefaultBuilder` but instead to allow the `ConfigurationBuilder` method's `AddCommandLine` method to process both the arguments and the switch mapping dictionary.</span></span>
 
 ::: moniker-end
 
@@ -506,55 +506,55 @@ public static void Main(string[] args)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-315">Depois que o dicionário de mapeamentos de comutador for criado, ele conterá os dados mostrados na tabela a seguir.</span><span class="sxs-lookup"><span data-stu-id="8c24f-315">After the switch mappings dictionary is created, it contains the data shown in the following table.</span></span>
+<span data-ttu-id="88dce-315">Depois que o dicionário de mapeamentos de comutador for criado, ele conterá os dados mostrados na tabela a seguir.</span><span class="sxs-lookup"><span data-stu-id="88dce-315">After the switch mappings dictionary is created, it contains the data shown in the following table.</span></span>
 
-| <span data-ttu-id="8c24f-316">Chave</span><span class="sxs-lookup"><span data-stu-id="8c24f-316">Key</span></span>       | <span data-ttu-id="8c24f-317">Valor</span><span class="sxs-lookup"><span data-stu-id="8c24f-317">Value</span></span>             |
+| <span data-ttu-id="88dce-316">Chave</span><span class="sxs-lookup"><span data-stu-id="88dce-316">Key</span></span>       | <span data-ttu-id="88dce-317">Valor</span><span class="sxs-lookup"><span data-stu-id="88dce-317">Value</span></span>             |
 | --------- | ----------------- |
 | `-CLKey1` | `CommandLineKey1` |
 | `-CLKey2` | `CommandLineKey2` |
 
-<span data-ttu-id="8c24f-318">Se as chaves mapeadas para opção forem usadas ao iniciar o aplicativo, a configuração receberá o valor de configuração na chave fornecida pelo dicionário:</span><span class="sxs-lookup"><span data-stu-id="8c24f-318">If the switch-mapped keys are used when starting the app, configuration receives the configuration value on the key supplied by the dictionary:</span></span>
+<span data-ttu-id="88dce-318">Se as chaves mapeadas para opção forem usadas ao iniciar o aplicativo, a configuração receberá o valor de configuração na chave fornecida pelo dicionário:</span><span class="sxs-lookup"><span data-stu-id="88dce-318">If the switch-mapped keys are used when starting the app, configuration receives the configuration value on the key supplied by the dictionary:</span></span>
 
 ```console
 dotnet run -CLKey1=value1 -CLKey2=value2
 ```
 
-<span data-ttu-id="8c24f-319">Após a execução do comando anterior, a configuração conterá os valores mostrados na tabela a seguir.</span><span class="sxs-lookup"><span data-stu-id="8c24f-319">After running the preceding command, configuration contains the values shown in the following table.</span></span>
+<span data-ttu-id="88dce-319">Após a execução do comando anterior, a configuração conterá os valores mostrados na tabela a seguir.</span><span class="sxs-lookup"><span data-stu-id="88dce-319">After running the preceding command, configuration contains the values shown in the following table.</span></span>
 
-| <span data-ttu-id="8c24f-320">Chave</span><span class="sxs-lookup"><span data-stu-id="8c24f-320">Key</span></span>               | <span data-ttu-id="8c24f-321">Valor</span><span class="sxs-lookup"><span data-stu-id="8c24f-321">Value</span></span>    |
+| <span data-ttu-id="88dce-320">Chave</span><span class="sxs-lookup"><span data-stu-id="88dce-320">Key</span></span>               | <span data-ttu-id="88dce-321">Valor</span><span class="sxs-lookup"><span data-stu-id="88dce-321">Value</span></span>    |
 | ----------------- | -------- |
 | `CommandLineKey1` | `value1` |
 | `CommandLineKey2` | `value2` |
 
-## <a name="environment-variables-configuration-provider"></a><span data-ttu-id="8c24f-322">Provedor de Configuração de Variáveis de Ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-322">Environment Variables Configuration Provider</span></span>
+## <a name="environment-variables-configuration-provider"></a><span data-ttu-id="88dce-322">Provedor de Configuração de Variáveis de Ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-322">Environment Variables Configuration Provider</span></span>
 
-<span data-ttu-id="8c24f-323">O <xref:Microsoft.Extensions.Configuration.EnvironmentVariables.EnvironmentVariablesConfigurationProvider> carrega a configuração dos pares chave-valor da variável de ambiente em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="8c24f-323">The <xref:Microsoft.Extensions.Configuration.EnvironmentVariables.EnvironmentVariablesConfigurationProvider> loads configuration from environment variable key-value pairs at runtime.</span></span>
+<span data-ttu-id="88dce-323">O <xref:Microsoft.Extensions.Configuration.EnvironmentVariables.EnvironmentVariablesConfigurationProvider> carrega a configuração dos pares chave-valor da variável de ambiente em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="88dce-323">The <xref:Microsoft.Extensions.Configuration.EnvironmentVariables.EnvironmentVariablesConfigurationProvider> loads configuration from environment variable key-value pairs at runtime.</span></span>
 
-<span data-ttu-id="8c24f-324">Para ativar a configuração das variáveis de ambiente, chame o método de extensão <xref:Microsoft.Extensions.Configuration.EnvironmentVariablesExtensions.AddEnvironmentVariables*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-324">To activate environment variables configuration, call the <xref:Microsoft.Extensions.Configuration.EnvironmentVariablesExtensions.AddEnvironmentVariables*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-324">Para ativar a configuração das variáveis de ambiente, chame o método de extensão <xref:Microsoft.Extensions.Configuration.EnvironmentVariablesExtensions.AddEnvironmentVariables*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-324">To activate environment variables configuration, call the <xref:Microsoft.Extensions.Configuration.EnvironmentVariablesExtensions.AddEnvironmentVariables*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
-<span data-ttu-id="8c24f-325">Ao trabalhar com chaves hierárquicas nas variáveis de ambiente, talvez um separador de dois-pontos (`:`) não funcione em todas as plataformas.</span><span class="sxs-lookup"><span data-stu-id="8c24f-325">When working with hierarchical keys in environment variables, a colon separator (`:`) may not work on all platforms.</span></span> <span data-ttu-id="8c24f-326">Um sublinhado duplo (`__`) é compatível com todas as plataformas e é substituído por dois-pontos.</span><span class="sxs-lookup"><span data-stu-id="8c24f-326">A double underscore (`__`) is supported by all platforms and is replaced by a colon.</span></span>
+<span data-ttu-id="88dce-325">Ao trabalhar com chaves hierárquicas nas variáveis de ambiente, talvez um separador de dois-pontos (`:`) não funcione em todas as plataformas.</span><span class="sxs-lookup"><span data-stu-id="88dce-325">When working with hierarchical keys in environment variables, a colon separator (`:`) may not work on all platforms.</span></span> <span data-ttu-id="88dce-326">Um sublinhado duplo (`__`) é compatível com todas as plataformas e é substituído por dois-pontos.</span><span class="sxs-lookup"><span data-stu-id="88dce-326">A double underscore (`__`) is supported by all platforms and is replaced by a colon.</span></span>
 
-<span data-ttu-id="8c24f-327">O [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/) permite que você defina variáveis de ambiente no portal do Azure que podem substituir a configuração do aplicativo usando o Provedor de Configuração de Variáveis de Ambiente.</span><span class="sxs-lookup"><span data-stu-id="8c24f-327">[Azure App Service](https://azure.microsoft.com/services/app-service/) permits you to set environment variables in the Azure Portal that can override app configuration using the Environment Variables Configuration Provider.</span></span> <span data-ttu-id="8c24f-328">Para saber mais, confira [Aplicativos do Azure: substituir a configuração do aplicativo usando o portal do Azure](xref:host-and-deploy/azure-apps/index#override-app-configuration-using-the-azure-portal).</span><span class="sxs-lookup"><span data-stu-id="8c24f-328">For more information, see [Azure Apps: Override app configuration using the Azure Portal](xref:host-and-deploy/azure-apps/index#override-app-configuration-using-the-azure-portal).</span></span>
+<span data-ttu-id="88dce-327">O [Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/) permite que você defina variáveis de ambiente no portal do Azure que podem substituir a configuração do aplicativo usando o Provedor de Configuração de Variáveis de Ambiente.</span><span class="sxs-lookup"><span data-stu-id="88dce-327">[Azure App Service](https://azure.microsoft.com/services/app-service/) permits you to set environment variables in the Azure Portal that can override app configuration using the Environment Variables Configuration Provider.</span></span> <span data-ttu-id="88dce-328">Para saber mais, confira [Aplicativos do Azure: substituir a configuração do aplicativo usando o portal do Azure](xref:host-and-deploy/azure-apps/index#override-app-configuration-using-the-azure-portal).</span><span class="sxs-lookup"><span data-stu-id="88dce-328">For more information, see [Azure Apps: Override app configuration using the Azure Portal](xref:host-and-deploy/azure-apps/index#override-app-configuration-using-the-azure-portal).</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-329">`AddEnvironmentVariables` é chamado automaticamente quando você inicializa um novo <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-329">`AddEnvironmentVariables` is automatically called when you initialize a new <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span></span> <span data-ttu-id="8c24f-330">Para saber mais, veja o tópico [Host da Web: configurar um host](xref:fundamentals/host/web-host#set-up-a-host).</span><span class="sxs-lookup"><span data-stu-id="8c24f-330">For more information, see [Web Host: Set up a host](xref:fundamentals/host/web-host#set-up-a-host).</span></span>
+<span data-ttu-id="88dce-329">`AddEnvironmentVariables` é chamado automaticamente quando você inicializa um novo <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-329">`AddEnvironmentVariables` is automatically called when you initialize a new <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span></span> <span data-ttu-id="88dce-330">Para saber mais, veja o tópico [Host da Web: configurar um host](xref:fundamentals/host/web-host#set-up-a-host).</span><span class="sxs-lookup"><span data-stu-id="88dce-330">For more information, see [Web Host: Set up a host](xref:fundamentals/host/web-host#set-up-a-host).</span></span>
 
-<span data-ttu-id="8c24f-331">`CreateDefaultBuilder` também carrega:</span><span class="sxs-lookup"><span data-stu-id="8c24f-331">`CreateDefaultBuilder` also loads:</span></span>
+<span data-ttu-id="88dce-331">`CreateDefaultBuilder` também carrega:</span><span class="sxs-lookup"><span data-stu-id="88dce-331">`CreateDefaultBuilder` also loads:</span></span>
 
-* <span data-ttu-id="8c24f-332">Configuração opcional de *appsettings.json* e *appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-332">Optional configuration from *appsettings.json* and *appsettings.{Environment}.json*.</span></span>
-* <span data-ttu-id="8c24f-333">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (no ambiente de desenvolvimento).</span><span class="sxs-lookup"><span data-stu-id="8c24f-333">[User secrets (Secret Manager)](xref:security/app-secrets) (in the Development environment).</span></span>
-* <span data-ttu-id="8c24f-334">Argumentos de linha de comando.</span><span class="sxs-lookup"><span data-stu-id="8c24f-334">Command-line arguments.</span></span>
+* <span data-ttu-id="88dce-332">Configuração opcional de *appsettings.json* e *appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="88dce-332">Optional configuration from *appsettings.json* and *appsettings.{Environment}.json*.</span></span>
+* <span data-ttu-id="88dce-333">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (no ambiente de desenvolvimento).</span><span class="sxs-lookup"><span data-stu-id="88dce-333">[User secrets (Secret Manager)](xref:security/app-secrets) (in the Development environment).</span></span>
+* <span data-ttu-id="88dce-334">Argumentos de linha de comando.</span><span class="sxs-lookup"><span data-stu-id="88dce-334">Command-line arguments.</span></span>
 
-<span data-ttu-id="8c24f-335">O Provedor de Configuração de Variável de Ambiente é chamado após o estabelecimento da configuração a partir dos segredos do usuário e dos arquivos *appsettings*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-335">The Environment Variable Configuration Provider is called after configuration is established from user secrets and *appsettings* files.</span></span> <span data-ttu-id="8c24f-336">Chamar o provedor nessa posição permite que as variáveis de ambiente sejam lidas em tempo de execução para substituir a configuração definida por segredos do usuário e arquivos *appsettings*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-336">Calling the provider in this position allows the environment variables read at runtime to override configuration set by user secrets and *appsettings* files.</span></span>
+<span data-ttu-id="88dce-335">O Provedor de Configuração de Variáveis de Ambiente é chamado depois que a configuração é estabelecida por meio dos segredos do usuário e dos arquivos *appsettings*.</span><span class="sxs-lookup"><span data-stu-id="88dce-335">The Environment Variables Configuration Provider is called after configuration is established from user secrets and *appsettings* files.</span></span> <span data-ttu-id="88dce-336">Chamar o provedor nessa posição permite que as variáveis de ambiente sejam lidas em tempo de execução para substituir a configuração definida por segredos do usuário e arquivos *appsettings*.</span><span class="sxs-lookup"><span data-stu-id="88dce-336">Calling the provider in this position allows the environment variables read at runtime to override configuration set by user secrets and *appsettings* files.</span></span>
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="8c24f-337">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-337">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration.</span></span>
+<span data-ttu-id="88dce-337">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-337">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration.</span></span>
 
-<span data-ttu-id="8c24f-338">`AddEnvironmentVariables` para variáveis de ambiente com o prefixo `ASPNETCORE_` já foi chamado por `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-338">`AddEnvironmentVariables` for environment variables prefixed with `ASPNETCORE_` has already been called by `CreateDefaultBuilder`.</span></span> <span data-ttu-id="8c24f-339">Se precisar fornecer configuração do aplicativo com base em variáveis de ambiente adicionais, chame os provedores adicionais do aplicativo no <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>e chame `AddEnvironmentVariables` com o prefixo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-339">If you need to provide app configuration from additional environment variables, call the app's additional providers in <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> and call `AddEnvironmentVariables` with the prefix.</span></span>
+<span data-ttu-id="88dce-338">`AddEnvironmentVariables` para variáveis de ambiente com o prefixo `ASPNETCORE_` já foi chamado por `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88dce-338">`AddEnvironmentVariables` for environment variables prefixed with `ASPNETCORE_` has already been called by `CreateDefaultBuilder`.</span></span> <span data-ttu-id="88dce-339">Se precisar fornecer configuração do aplicativo com base em variáveis de ambiente adicionais, chame os provedores adicionais do aplicativo no <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>e chame `AddEnvironmentVariables` com o prefixo.</span><span class="sxs-lookup"><span data-stu-id="88dce-339">If you need to provide app configuration from additional environment variables, call the app's additional providers in <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> and call `AddEnvironmentVariables` with the prefix.</span></span>
 
 ```csharp
 public class Program
@@ -577,15 +577,15 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-340">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-340">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-340">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-340">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-341">Chame o método de extensão `AddEnvironmentVariables` em uma instância de <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-341">Call the `AddEnvironmentVariables` extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span> <span data-ttu-id="8c24f-342">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-342">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method.</span></span>
+<span data-ttu-id="88dce-341">Chame o método de extensão `AddEnvironmentVariables` em uma instância de <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-341">Call the `AddEnvironmentVariables` extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span> <span data-ttu-id="88dce-342">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-342">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method.</span></span>
 
-<span data-ttu-id="8c24f-343">`AddEnvironmentVariables` para variáveis de ambiente com o prefixo `ASPNETCORE_` já foi chamado por `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-343">`AddEnvironmentVariables` for environment variables prefixed with `ASPNETCORE_` has already been called by `CreateDefaultBuilder`.</span></span> <span data-ttu-id="8c24f-344">Se precisar fornecer configuração do aplicativo com base em variáveis de ambiente adicionais, chame os provedores adicionais do aplicativo no <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>e chame `AddEnvironmentVariables` com o prefixo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-344">If you need to provide app configuration from additional environment variables, call the app's additional providers in <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> and call `AddEnvironmentVariables` with the prefix.</span></span>
+<span data-ttu-id="88dce-343">`AddEnvironmentVariables` para variáveis de ambiente com o prefixo `ASPNETCORE_` já foi chamado por `CreateDefaultBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88dce-343">`AddEnvironmentVariables` for environment variables prefixed with `ASPNETCORE_` has already been called by `CreateDefaultBuilder`.</span></span> <span data-ttu-id="88dce-344">Se precisar fornecer configuração do aplicativo com base em variáveis de ambiente adicionais, chame os provedores adicionais do aplicativo no <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>e chame `AddEnvironmentVariables` com o prefixo.</span><span class="sxs-lookup"><span data-stu-id="88dce-344">If you need to provide app configuration from additional environment variables, call the app's additional providers in <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> and call `AddEnvironmentVariables` with the prefix.</span></span>
 
 ```csharp
 public class Program
@@ -611,13 +611,13 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-345">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-345">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-345">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-345">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-346">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="8c24f-346">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
+<span data-ttu-id="88dce-346">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="88dce-346">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
 
 ::: moniker-end
 
@@ -632,43 +632,43 @@ var host = new WebHostBuilder()
     .UseStartup<Startup>();
 ```
 
-<span data-ttu-id="8c24f-347">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="8c24f-347">**Example**</span></span>
+<span data-ttu-id="88dce-347">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="88dce-347">**Example**</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-348">O aplicativo de exemplo 2.x aproveita a vantagem do método de conveniência estático `CreateDefaultBuilder` para criar o host, que inclui uma chamada para `AddEnvironmentVariables`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-348">The 2.x sample app takes advantage of the static convenience method `CreateDefaultBuilder` to build the host, which includes a call to `AddEnvironmentVariables`.</span></span>
+<span data-ttu-id="88dce-348">O aplicativo de exemplo 2.x aproveita a vantagem do método de conveniência estático `CreateDefaultBuilder` para criar o host, que inclui uma chamada para `AddEnvironmentVariables`.</span><span class="sxs-lookup"><span data-stu-id="88dce-348">The 2.x sample app takes advantage of the static convenience method `CreateDefaultBuilder` to build the host, which includes a call to `AddEnvironmentVariables`.</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-349">O aplicativo de exemplo 1.x chama `AddEnvironmentVariables` em um `ConfigurationBuilder`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-349">The 1.x sample app calls `AddEnvironmentVariables` on a `ConfigurationBuilder`.</span></span>
+<span data-ttu-id="88dce-349">O aplicativo de exemplo 1.x chama `AddEnvironmentVariables` em um `ConfigurationBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88dce-349">The 1.x sample app calls `AddEnvironmentVariables` on a `ConfigurationBuilder`.</span></span>
 
 ::: moniker-end
 
-1. <span data-ttu-id="8c24f-350">Execute o aplicativo de exemplo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-350">Run the sample app.</span></span> <span data-ttu-id="8c24f-351">Abra um navegador para o aplicativo em `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-351">Open a browser to the app at `http://localhost:5000`.</span></span>
-1. <span data-ttu-id="8c24f-352">Observe que a saída contém o par chave-valor da variável de ambiente `ENVIRONMENT`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-352">Observe that the output contains the key-value pair for the environment variable `ENVIRONMENT`.</span></span> <span data-ttu-id="8c24f-353">O valor reflete o ambiente no qual o aplicativo está em execução, normalmente `Development` ao executar localmente.</span><span class="sxs-lookup"><span data-stu-id="8c24f-353">The value reflects the environment in which the app is running, typically `Development` when running locally.</span></span>
+1. <span data-ttu-id="88dce-350">Execute o aplicativo de exemplo.</span><span class="sxs-lookup"><span data-stu-id="88dce-350">Run the sample app.</span></span> <span data-ttu-id="88dce-351">Abra um navegador para o aplicativo em `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="88dce-351">Open a browser to the app at `http://localhost:5000`.</span></span>
+1. <span data-ttu-id="88dce-352">Observe que a saída contém o par chave-valor da variável de ambiente `ENVIRONMENT`.</span><span class="sxs-lookup"><span data-stu-id="88dce-352">Observe that the output contains the key-value pair for the environment variable `ENVIRONMENT`.</span></span> <span data-ttu-id="88dce-353">O valor reflete o ambiente no qual o aplicativo está em execução, normalmente `Development` ao executar localmente.</span><span class="sxs-lookup"><span data-stu-id="88dce-353">The value reflects the environment in which the app is running, typically `Development` when running locally.</span></span>
 
-<span data-ttu-id="8c24f-354">Para encurtar a lista de variáveis de ambiente renderizadas pelo aplicativo, o aplicativo filtra as variáveis de ambiente para mostrar as que começam com o seguinte:</span><span class="sxs-lookup"><span data-stu-id="8c24f-354">To keep the list of environment variables rendered by the app short, the app filters environment variables to those that start with the following:</span></span>
+<span data-ttu-id="88dce-354">Para encurtar a lista de variáveis de ambiente renderizadas pelo aplicativo, o aplicativo filtra as variáveis de ambiente para mostrar as que começam com o seguinte:</span><span class="sxs-lookup"><span data-stu-id="88dce-354">To keep the list of environment variables rendered by the app short, the app filters environment variables to those that start with the following:</span></span>
 
-* <span data-ttu-id="8c24f-355">ASPNETCORE_</span><span class="sxs-lookup"><span data-stu-id="8c24f-355">ASPNETCORE_</span></span>
-* <span data-ttu-id="8c24f-356">urls</span><span class="sxs-lookup"><span data-stu-id="8c24f-356">urls</span></span>
-* <span data-ttu-id="8c24f-357">Registrando em log</span><span class="sxs-lookup"><span data-stu-id="8c24f-357">Logging</span></span>
-* <span data-ttu-id="8c24f-358">AMBIENTE</span><span class="sxs-lookup"><span data-stu-id="8c24f-358">ENVIRONMENT</span></span>
-* <span data-ttu-id="8c24f-359">contentRoot</span><span class="sxs-lookup"><span data-stu-id="8c24f-359">contentRoot</span></span>
-* <span data-ttu-id="8c24f-360">AllowedHosts</span><span class="sxs-lookup"><span data-stu-id="8c24f-360">AllowedHosts</span></span>
-* <span data-ttu-id="8c24f-361">applicationName</span><span class="sxs-lookup"><span data-stu-id="8c24f-361">applicationName</span></span>
-* <span data-ttu-id="8c24f-362">CommandLine</span><span class="sxs-lookup"><span data-stu-id="8c24f-362">CommandLine</span></span>
+* <span data-ttu-id="88dce-355">ASPNETCORE_</span><span class="sxs-lookup"><span data-stu-id="88dce-355">ASPNETCORE_</span></span>
+* <span data-ttu-id="88dce-356">urls</span><span class="sxs-lookup"><span data-stu-id="88dce-356">urls</span></span>
+* <span data-ttu-id="88dce-357">Registrando em log</span><span class="sxs-lookup"><span data-stu-id="88dce-357">Logging</span></span>
+* <span data-ttu-id="88dce-358">AMBIENTE</span><span class="sxs-lookup"><span data-stu-id="88dce-358">ENVIRONMENT</span></span>
+* <span data-ttu-id="88dce-359">contentRoot</span><span class="sxs-lookup"><span data-stu-id="88dce-359">contentRoot</span></span>
+* <span data-ttu-id="88dce-360">AllowedHosts</span><span class="sxs-lookup"><span data-stu-id="88dce-360">AllowedHosts</span></span>
+* <span data-ttu-id="88dce-361">applicationName</span><span class="sxs-lookup"><span data-stu-id="88dce-361">applicationName</span></span>
+* <span data-ttu-id="88dce-362">CommandLine</span><span class="sxs-lookup"><span data-stu-id="88dce-362">CommandLine</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-363">Se você quiser expor todas as variáveis de ambiente disponíveis para o aplicativo, altere o `FilteredConfiguration` em *Pages/Index.cshtml.cs* para o seguinte:</span><span class="sxs-lookup"><span data-stu-id="8c24f-363">If you wish to expose all of the environment variables available to the app, change the `FilteredConfiguration` in *Pages/Index.cshtml.cs* to the following:</span></span>
+<span data-ttu-id="88dce-363">Se você quiser expor todas as variáveis de ambiente disponíveis para o aplicativo, altere o `FilteredConfiguration` em *Pages/Index.cshtml.cs* para o seguinte:</span><span class="sxs-lookup"><span data-stu-id="88dce-363">If you wish to expose all of the environment variables available to the app, change the `FilteredConfiguration` in *Pages/Index.cshtml.cs* to the following:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-364">Se você quiser expor todas as variáveis de ambiente disponíveis para o aplicativo, altere o `FilteredConfiguration` em *Controllers/HomeController.cs* para o seguinte:</span><span class="sxs-lookup"><span data-stu-id="8c24f-364">If you wish to expose all of the environment variables available to the app, change the `FilteredConfiguration` in *Controllers/HomeController.cs* to the following:</span></span>
+<span data-ttu-id="88dce-364">Se você quiser expor todas as variáveis de ambiente disponíveis para o aplicativo, altere o `FilteredConfiguration` em *Controllers/HomeController.cs* para o seguinte:</span><span class="sxs-lookup"><span data-stu-id="88dce-364">If you wish to expose all of the environment variables available to the app, change the `FilteredConfiguration` in *Controllers/HomeController.cs* to the following:</span></span>
 
 ::: moniker-end
 
@@ -676,9 +676,9 @@ var host = new WebHostBuilder()
 FilteredConfiguration = _config.AsEnumerable();
 ```
 
-### <a name="prefixes"></a><span data-ttu-id="8c24f-365">Prefixos</span><span class="sxs-lookup"><span data-stu-id="8c24f-365">Prefixes</span></span>
+### <a name="prefixes"></a><span data-ttu-id="88dce-365">Prefixos</span><span class="sxs-lookup"><span data-stu-id="88dce-365">Prefixes</span></span>
 
-<span data-ttu-id="8c24f-366">Variáveis de ambiente carregadas na configuração do aplicativo são filtradas quando você fornece um prefixo para o método `AddEnvironmentVariables`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-366">Environment variables loaded into the app's configuration are filtered when you supply a prefix to the `AddEnvironmentVariables` method.</span></span> <span data-ttu-id="8c24f-367">Por exemplo, para filtrar as variáveis de ambiente no prefixo `CUSTOM_`, forneça o prefixo para o provedor de configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-367">For example, to filter environment variables on the prefix `CUSTOM_`, supply the prefix to the configuration provider:</span></span>
+<span data-ttu-id="88dce-366">Variáveis de ambiente carregadas na configuração do aplicativo são filtradas quando você fornece um prefixo para o método `AddEnvironmentVariables`.</span><span class="sxs-lookup"><span data-stu-id="88dce-366">Environment variables loaded into the app's configuration are filtered when you supply a prefix to the `AddEnvironmentVariables` method.</span></span> <span data-ttu-id="88dce-367">Por exemplo, para filtrar as variáveis de ambiente no prefixo `CUSTOM_`, forneça o prefixo para o provedor de configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-367">For example, to filter environment variables on the prefix `CUSTOM_`, supply the prefix to the configuration provider:</span></span>
 
 ```csharp
 var config = new ConfigurationBuilder()
@@ -686,62 +686,62 @@ var config = new ConfigurationBuilder()
     .Build();
 ```
 
-<span data-ttu-id="8c24f-368">O prefixo é removido na criação dos pares chave-valor de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-368">The prefix is stripped off when the configuration key-value pairs are created.</span></span>
+<span data-ttu-id="88dce-368">O prefixo é removido na criação dos pares chave-valor de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-368">The prefix is stripped off when the configuration key-value pairs are created.</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-369">O método de conveniência estático `CreateDefaultBuilder` cria um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> para estabelecer o host do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-369">The static convenience method `CreateDefaultBuilder` creates a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> to establish the app's host.</span></span> <span data-ttu-id="8c24f-370">Quando `WebHostBuilder` é criado, ele encontra a configuração de seu host nas variáveis de ambiente prefixadas com `ASPNETCORE_`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-370">When `WebHostBuilder` is created, it finds its host configuration in environment variables prefixed with `ASPNETCORE_`.</span></span>
+<span data-ttu-id="88dce-369">O método de conveniência estático `CreateDefaultBuilder` cria um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> para estabelecer o host do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-369">The static convenience method `CreateDefaultBuilder` creates a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> to establish the app's host.</span></span> <span data-ttu-id="88dce-370">Quando `WebHostBuilder` é criado, ele encontra a configuração de seu host nas variáveis de ambiente prefixadas com `ASPNETCORE_`.</span><span class="sxs-lookup"><span data-stu-id="88dce-370">When `WebHostBuilder` is created, it finds its host configuration in environment variables prefixed with `ASPNETCORE_`.</span></span>
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-371">**Prefixos de cadeia de conexão**</span><span class="sxs-lookup"><span data-stu-id="8c24f-371">**Connection string prefixes**</span></span>
+<span data-ttu-id="88dce-371">**Prefixos de cadeia de conexão**</span><span class="sxs-lookup"><span data-stu-id="88dce-371">**Connection string prefixes**</span></span>
 
-<span data-ttu-id="8c24f-372">A API de configuração tem regras de processamento especiais para quatro variáveis de ambiente de cadeia de conexão envolvidas na configuração de cadeias de conexão do Azure para o ambiente de aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-372">The Configuration API has special processing rules for four connection string environment variables involved in configuring Azure connection strings for the app environment.</span></span> <span data-ttu-id="8c24f-373">As variáveis de ambiente com os prefixos mostrados na tabela são carregadas no aplicativo se nenhum prefixo for fornecido para `AddEnvironmentVariables`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-373">Environment variables with the prefixes shown in the table are loaded into the app if no prefix is supplied to `AddEnvironmentVariables`.</span></span>
+<span data-ttu-id="88dce-372">A API de configuração tem regras de processamento especiais para quatro variáveis de ambiente de cadeia de conexão envolvidas na configuração de cadeias de conexão do Azure para o ambiente de aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-372">The Configuration API has special processing rules for four connection string environment variables involved in configuring Azure connection strings for the app environment.</span></span> <span data-ttu-id="88dce-373">As variáveis de ambiente com os prefixos mostrados na tabela são carregadas no aplicativo se nenhum prefixo for fornecido para `AddEnvironmentVariables`.</span><span class="sxs-lookup"><span data-stu-id="88dce-373">Environment variables with the prefixes shown in the table are loaded into the app if no prefix is supplied to `AddEnvironmentVariables`.</span></span>
 
-| <span data-ttu-id="8c24f-374">Prefixo da cadeia de conexão</span><span class="sxs-lookup"><span data-stu-id="8c24f-374">Connection string prefix</span></span> | <span data-ttu-id="8c24f-375">Provider</span><span class="sxs-lookup"><span data-stu-id="8c24f-375">Provider</span></span> |
+| <span data-ttu-id="88dce-374">Prefixo da cadeia de conexão</span><span class="sxs-lookup"><span data-stu-id="88dce-374">Connection string prefix</span></span> | <span data-ttu-id="88dce-375">Provider</span><span class="sxs-lookup"><span data-stu-id="88dce-375">Provider</span></span> |
 | ------------------------ | -------- |
-| `CUSTOMCONNSTR_` | <span data-ttu-id="8c24f-376">Provedor personalizado</span><span class="sxs-lookup"><span data-stu-id="8c24f-376">Custom provider</span></span> |
-| `MYSQLCONNSTR_` | [<span data-ttu-id="8c24f-377">MySQL</span><span class="sxs-lookup"><span data-stu-id="8c24f-377">MySQL</span></span>](https://www.mysql.com/) |
-| `SQLAZURECONNSTR_` | [<span data-ttu-id="8c24f-378">Banco de Dados SQL do Azure</span><span class="sxs-lookup"><span data-stu-id="8c24f-378">Azure SQL Database</span></span>](https://azure.microsoft.com/services/sql-database/) |
-| `SQLCONNSTR_` | [<span data-ttu-id="8c24f-379">SQL Server</span><span class="sxs-lookup"><span data-stu-id="8c24f-379">SQL Server</span></span>](https://www.microsoft.com/sql-server/) |
+| `CUSTOMCONNSTR_` | <span data-ttu-id="88dce-376">Provedor personalizado</span><span class="sxs-lookup"><span data-stu-id="88dce-376">Custom provider</span></span> |
+| `MYSQLCONNSTR_` | [<span data-ttu-id="88dce-377">MySQL</span><span class="sxs-lookup"><span data-stu-id="88dce-377">MySQL</span></span>](https://www.mysql.com/) |
+| `SQLAZURECONNSTR_` | [<span data-ttu-id="88dce-378">Banco de Dados SQL do Azure</span><span class="sxs-lookup"><span data-stu-id="88dce-378">Azure SQL Database</span></span>](https://azure.microsoft.com/services/sql-database/) |
+| `SQLCONNSTR_` | [<span data-ttu-id="88dce-379">SQL Server</span><span class="sxs-lookup"><span data-stu-id="88dce-379">SQL Server</span></span>](https://www.microsoft.com/sql-server/) |
 
-<span data-ttu-id="8c24f-380">Quando uma variável de ambiente for descoberta e carregada na configuração com qualquer um dos quatro prefixos mostrados na tabela:</span><span class="sxs-lookup"><span data-stu-id="8c24f-380">When an environment variable is discovered and loaded into configuration with any of the four prefixes shown in the table:</span></span>
+<span data-ttu-id="88dce-380">Quando uma variável de ambiente for descoberta e carregada na configuração com qualquer um dos quatro prefixos mostrados na tabela:</span><span class="sxs-lookup"><span data-stu-id="88dce-380">When an environment variable is discovered and loaded into configuration with any of the four prefixes shown in the table:</span></span>
 
-* <span data-ttu-id="8c24f-381">A chave de configuração é criada removendo o prefixo da variável de ambiente e adicionando uma seção de chave de configuração (`ConnectionStrings`).</span><span class="sxs-lookup"><span data-stu-id="8c24f-381">The configuration key is created by removing the environment variable prefix and adding a configuration key section (`ConnectionStrings`).</span></span>
-* <span data-ttu-id="8c24f-382">Um novo par chave-valor de configuração é criado para representar o provedor de conexão de banco de dados (exceto para `CUSTOMCONNSTR_`, que não tem um provedor indicado).</span><span class="sxs-lookup"><span data-stu-id="8c24f-382">A new configuration key-value pair is created that represents the database connection provider (except for `CUSTOMCONNSTR_`, which has no stated provider).</span></span>
+* <span data-ttu-id="88dce-381">A chave de configuração é criada removendo o prefixo da variável de ambiente e adicionando uma seção de chave de configuração (`ConnectionStrings`).</span><span class="sxs-lookup"><span data-stu-id="88dce-381">The configuration key is created by removing the environment variable prefix and adding a configuration key section (`ConnectionStrings`).</span></span>
+* <span data-ttu-id="88dce-382">Um novo par chave-valor de configuração é criado para representar o provedor de conexão de banco de dados (exceto para `CUSTOMCONNSTR_`, que não tem um provedor indicado).</span><span class="sxs-lookup"><span data-stu-id="88dce-382">A new configuration key-value pair is created that represents the database connection provider (except for `CUSTOMCONNSTR_`, which has no stated provider).</span></span>
 
-| <span data-ttu-id="8c24f-383">Chave de variável de ambiente</span><span class="sxs-lookup"><span data-stu-id="8c24f-383">Environment variable key</span></span> | <span data-ttu-id="8c24f-384">Chave de configuração convertida</span><span class="sxs-lookup"><span data-stu-id="8c24f-384">Converted configuration key</span></span> | <span data-ttu-id="8c24f-385">Entrada de configuração do provedor</span><span class="sxs-lookup"><span data-stu-id="8c24f-385">Provider configuration entry</span></span>                                                    |
+| <span data-ttu-id="88dce-383">Chave de variável de ambiente</span><span class="sxs-lookup"><span data-stu-id="88dce-383">Environment variable key</span></span> | <span data-ttu-id="88dce-384">Chave de configuração convertida</span><span class="sxs-lookup"><span data-stu-id="88dce-384">Converted configuration key</span></span> | <span data-ttu-id="88dce-385">Entrada de configuração do provedor</span><span class="sxs-lookup"><span data-stu-id="88dce-385">Provider configuration entry</span></span>                                                    |
 | ------------------------ | --------------------------- | ------------------------------------------------------------------------------- |
-| `CUSTOMCONNSTR_<KEY>`    | `ConnectionStrings:<KEY>`   | <span data-ttu-id="8c24f-386">Entrada de configuração não criada.</span><span class="sxs-lookup"><span data-stu-id="8c24f-386">Configuration entry not created.</span></span>                                                |
-| `MYSQLCONNSTR_<KEY>`     | `ConnectionStrings:<KEY>`   | <span data-ttu-id="8c24f-387">Chave: `ConnectionStrings:<KEY>_ProviderName`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-387">Key: `ConnectionStrings:<KEY>_ProviderName`:</span></span><br><span data-ttu-id="8c24f-388">Valor: `MySql.Data.MySqlClient`</span><span class="sxs-lookup"><span data-stu-id="8c24f-388">Value: `MySql.Data.MySqlClient`</span></span> |
-| `SQLAZURECONNSTR_<KEY>`  | `ConnectionStrings:<KEY>`   | <span data-ttu-id="8c24f-389">Chave: `ConnectionStrings:<KEY>_ProviderName`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-389">Key: `ConnectionStrings:<KEY>_ProviderName`:</span></span><br><span data-ttu-id="8c24f-390">Valor: `System.Data.SqlClient`</span><span class="sxs-lookup"><span data-stu-id="8c24f-390">Value: `System.Data.SqlClient`</span></span>  |
-| `SQLCONNSTR_<KEY>`       | `ConnectionStrings:<KEY>`   | <span data-ttu-id="8c24f-391">Chave: `ConnectionStrings:<KEY>_ProviderName`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-391">Key: `ConnectionStrings:<KEY>_ProviderName`:</span></span><br><span data-ttu-id="8c24f-392">Valor: `System.Data.SqlClient`</span><span class="sxs-lookup"><span data-stu-id="8c24f-392">Value: `System.Data.SqlClient`</span></span>  |
+| `CUSTOMCONNSTR_<KEY>`    | `ConnectionStrings:<KEY>`   | <span data-ttu-id="88dce-386">Entrada de configuração não criada.</span><span class="sxs-lookup"><span data-stu-id="88dce-386">Configuration entry not created.</span></span>                                                |
+| `MYSQLCONNSTR_<KEY>`     | `ConnectionStrings:<KEY>`   | <span data-ttu-id="88dce-387">Chave: `ConnectionStrings:<KEY>_ProviderName`:</span><span class="sxs-lookup"><span data-stu-id="88dce-387">Key: `ConnectionStrings:<KEY>_ProviderName`:</span></span><br><span data-ttu-id="88dce-388">Valor: `MySql.Data.MySqlClient`</span><span class="sxs-lookup"><span data-stu-id="88dce-388">Value: `MySql.Data.MySqlClient`</span></span> |
+| `SQLAZURECONNSTR_<KEY>`  | `ConnectionStrings:<KEY>`   | <span data-ttu-id="88dce-389">Chave: `ConnectionStrings:<KEY>_ProviderName`:</span><span class="sxs-lookup"><span data-stu-id="88dce-389">Key: `ConnectionStrings:<KEY>_ProviderName`:</span></span><br><span data-ttu-id="88dce-390">Valor: `System.Data.SqlClient`</span><span class="sxs-lookup"><span data-stu-id="88dce-390">Value: `System.Data.SqlClient`</span></span>  |
+| `SQLCONNSTR_<KEY>`       | `ConnectionStrings:<KEY>`   | <span data-ttu-id="88dce-391">Chave: `ConnectionStrings:<KEY>_ProviderName`:</span><span class="sxs-lookup"><span data-stu-id="88dce-391">Key: `ConnectionStrings:<KEY>_ProviderName`:</span></span><br><span data-ttu-id="88dce-392">Valor: `System.Data.SqlClient`</span><span class="sxs-lookup"><span data-stu-id="88dce-392">Value: `System.Data.SqlClient`</span></span>  |
 
-## <a name="file-configuration-provider"></a><span data-ttu-id="8c24f-393">Provedor de Configuração de Arquivo</span><span class="sxs-lookup"><span data-stu-id="8c24f-393">File Configuration Provider</span></span>
+## <a name="file-configuration-provider"></a><span data-ttu-id="88dce-393">Provedor de Configuração de Arquivo</span><span class="sxs-lookup"><span data-stu-id="88dce-393">File Configuration Provider</span></span>
 
-<span data-ttu-id="8c24f-394"><xref:Microsoft.Extensions.Configuration.FileConfigurationProvider> é a classe base para carregamento da configuração do sistema de arquivos.</span><span class="sxs-lookup"><span data-stu-id="8c24f-394"><xref:Microsoft.Extensions.Configuration.FileConfigurationProvider> is the base class for loading configuration from the file system.</span></span> <span data-ttu-id="8c24f-395">Os provedores de configuração a seguir são dedicados a tipos específicos de arquivos:</span><span class="sxs-lookup"><span data-stu-id="8c24f-395">The following configuration providers are dedicated to specific file types:</span></span>
+<span data-ttu-id="88dce-394"><xref:Microsoft.Extensions.Configuration.FileConfigurationProvider> é a classe base para carregamento da configuração do sistema de arquivos.</span><span class="sxs-lookup"><span data-stu-id="88dce-394"><xref:Microsoft.Extensions.Configuration.FileConfigurationProvider> is the base class for loading configuration from the file system.</span></span> <span data-ttu-id="88dce-395">Os provedores de configuração a seguir são dedicados a tipos específicos de arquivos:</span><span class="sxs-lookup"><span data-stu-id="88dce-395">The following configuration providers are dedicated to specific file types:</span></span>
 
-* [<span data-ttu-id="8c24f-396">Provedor de Configuração INI</span><span class="sxs-lookup"><span data-stu-id="8c24f-396">INI Configuration Provider</span></span>](#ini-configuration-provider)
-* [<span data-ttu-id="8c24f-397">Provedor de Configuração JSON</span><span class="sxs-lookup"><span data-stu-id="8c24f-397">JSON Configuration Provider</span></span>](#json-configuration-provider)
-* [<span data-ttu-id="8c24f-398">Provedor de Configuração XML</span><span class="sxs-lookup"><span data-stu-id="8c24f-398">XML Configuration Provider</span></span>](#xml-configuration-provider)
+* [<span data-ttu-id="88dce-396">Provedor de Configuração INI</span><span class="sxs-lookup"><span data-stu-id="88dce-396">INI Configuration Provider</span></span>](#ini-configuration-provider)
+* [<span data-ttu-id="88dce-397">Provedor de Configuração JSON</span><span class="sxs-lookup"><span data-stu-id="88dce-397">JSON Configuration Provider</span></span>](#json-configuration-provider)
+* [<span data-ttu-id="88dce-398">Provedor de Configuração XML</span><span class="sxs-lookup"><span data-stu-id="88dce-398">XML Configuration Provider</span></span>](#xml-configuration-provider)
 
-### <a name="ini-configuration-provider"></a><span data-ttu-id="8c24f-399">Provedor de Configuração INI</span><span class="sxs-lookup"><span data-stu-id="8c24f-399">INI Configuration Provider</span></span>
+### <a name="ini-configuration-provider"></a><span data-ttu-id="88dce-399">Provedor de Configuração INI</span><span class="sxs-lookup"><span data-stu-id="88dce-399">INI Configuration Provider</span></span>
 
-<span data-ttu-id="8c24f-400">O <xref:Microsoft.Extensions.Configuration.Ini.IniConfigurationProvider> carrega a configuração de pares chave-valor do arquivo INI em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="8c24f-400">The <xref:Microsoft.Extensions.Configuration.Ini.IniConfigurationProvider> loads configuration from INI file key-value pairs at runtime.</span></span>
+<span data-ttu-id="88dce-400">O <xref:Microsoft.Extensions.Configuration.Ini.IniConfigurationProvider> carrega a configuração de pares chave-valor do arquivo INI em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="88dce-400">The <xref:Microsoft.Extensions.Configuration.Ini.IniConfigurationProvider> loads configuration from INI file key-value pairs at runtime.</span></span>
 
-<span data-ttu-id="8c24f-401">Para ativar a configuração de arquivo INI, chame o método de extensão <xref:Microsoft.Extensions.Configuration.IniConfigurationExtensions.AddIniFile*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-401">To activate INI file configuration, call the <xref:Microsoft.Extensions.Configuration.IniConfigurationExtensions.AddIniFile*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-401">Para ativar a configuração de arquivo INI, chame o método de extensão <xref:Microsoft.Extensions.Configuration.IniConfigurationExtensions.AddIniFile*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-401">To activate INI file configuration, call the <xref:Microsoft.Extensions.Configuration.IniConfigurationExtensions.AddIniFile*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
-<span data-ttu-id="8c24f-402">Os dois-pontos podem ser usados como um delimitador de seção na configuração do arquivo INI.</span><span class="sxs-lookup"><span data-stu-id="8c24f-402">The colon can be used to as a section delimiter in INI file configuration.</span></span>
+<span data-ttu-id="88dce-402">Os dois-pontos podem ser usados como um delimitador de seção na configuração do arquivo INI.</span><span class="sxs-lookup"><span data-stu-id="88dce-402">The colon can be used to as a section delimiter in INI file configuration.</span></span>
 
-<span data-ttu-id="8c24f-403">As sobrecargas permitem especificar:</span><span class="sxs-lookup"><span data-stu-id="8c24f-403">Overloads permit specifying:</span></span>
+<span data-ttu-id="88dce-403">As sobrecargas permitem especificar:</span><span class="sxs-lookup"><span data-stu-id="88dce-403">Overloads permit specifying:</span></span>
 
-* <span data-ttu-id="8c24f-404">Se o arquivo é opcional.</span><span class="sxs-lookup"><span data-stu-id="8c24f-404">Whether the file is optional.</span></span>
-* <span data-ttu-id="8c24f-405">Se a configuração será recarregada caso o arquivo seja alterado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-405">Whether the configuration is reloaded if the file changes.</span></span>
-* <span data-ttu-id="8c24f-406">O <xref:Microsoft.Extensions.FileProviders.IFileProvider> usado para acessar o arquivo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-406">The <xref:Microsoft.Extensions.FileProviders.IFileProvider> used to access the file.</span></span>
+* <span data-ttu-id="88dce-404">Se o arquivo é opcional.</span><span class="sxs-lookup"><span data-stu-id="88dce-404">Whether the file is optional.</span></span>
+* <span data-ttu-id="88dce-405">Se a configuração será recarregada caso o arquivo seja alterado.</span><span class="sxs-lookup"><span data-stu-id="88dce-405">Whether the configuration is reloaded if the file changes.</span></span>
+* <span data-ttu-id="88dce-406">O <xref:Microsoft.Extensions.FileProviders.IFileProvider> usado para acessar o arquivo.</span><span class="sxs-lookup"><span data-stu-id="88dce-406">The <xref:Microsoft.Extensions.FileProviders.IFileProvider> used to access the file.</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="8c24f-407">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="8c24f-407">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
+<span data-ttu-id="88dce-407">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="88dce-407">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
 
 ```csharp
 public class Program
@@ -762,13 +762,13 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-408">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-408">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-408">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-408">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-409">Ao chamar `CreateDefaultBuilder`, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-409">When calling `CreateDefaultBuilder`, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-409">Ao chamar `CreateDefaultBuilder`, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-409">When calling `CreateDefaultBuilder`, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ```csharp
 public class Program
@@ -792,13 +792,13 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-410">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-410">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-410">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-410">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-411">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="8c24f-411">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
+<span data-ttu-id="88dce-411">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="88dce-411">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
 
 ::: moniker-end
 
@@ -814,7 +814,7 @@ var host = new WebHostBuilder()
     .UseStartup<Startup>();
 ```
 
-<span data-ttu-id="8c24f-412">Um exemplo genérico de um arquivo de configuração INI:</span><span class="sxs-lookup"><span data-stu-id="8c24f-412">A generic example of an INI configuration file:</span></span>
+<span data-ttu-id="88dce-412">Um exemplo genérico de um arquivo de configuração INI:</span><span class="sxs-lookup"><span data-stu-id="88dce-412">A generic example of an INI configuration file:</span></span>
 
 ```ini
 [section0]
@@ -831,48 +831,48 @@ key=value
 key=value
 ```
 
-<span data-ttu-id="8c24f-413">O arquivo de configuração anterior carrega as seguintes chaves com `value`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-413">The previous configuration file loads the following keys with `value`:</span></span>
+<span data-ttu-id="88dce-413">O arquivo de configuração anterior carrega as seguintes chaves com `value`:</span><span class="sxs-lookup"><span data-stu-id="88dce-413">The previous configuration file loads the following keys with `value`:</span></span>
 
-* <span data-ttu-id="8c24f-414">section0:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-414">section0:key0</span></span>
-* <span data-ttu-id="8c24f-415">section0:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-415">section0:key1</span></span>
-* <span data-ttu-id="8c24f-416">section1:subsection:key</span><span class="sxs-lookup"><span data-stu-id="8c24f-416">section1:subsection:key</span></span>
-* <span data-ttu-id="8c24f-417">section2:subsection0:key</span><span class="sxs-lookup"><span data-stu-id="8c24f-417">section2:subsection0:key</span></span>
-* <span data-ttu-id="8c24f-418">section2:subsection1:key</span><span class="sxs-lookup"><span data-stu-id="8c24f-418">section2:subsection1:key</span></span>
+* <span data-ttu-id="88dce-414">section0:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-414">section0:key0</span></span>
+* <span data-ttu-id="88dce-415">section0:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-415">section0:key1</span></span>
+* <span data-ttu-id="88dce-416">section1:subsection:key</span><span class="sxs-lookup"><span data-stu-id="88dce-416">section1:subsection:key</span></span>
+* <span data-ttu-id="88dce-417">section2:subsection0:key</span><span class="sxs-lookup"><span data-stu-id="88dce-417">section2:subsection0:key</span></span>
+* <span data-ttu-id="88dce-418">section2:subsection1:key</span><span class="sxs-lookup"><span data-stu-id="88dce-418">section2:subsection1:key</span></span>
 
-### <a name="json-configuration-provider"></a><span data-ttu-id="8c24f-419">Provedor de Configuração JSON</span><span class="sxs-lookup"><span data-stu-id="8c24f-419">JSON Configuration Provider</span></span>
+### <a name="json-configuration-provider"></a><span data-ttu-id="88dce-419">Provedor de Configuração JSON</span><span class="sxs-lookup"><span data-stu-id="88dce-419">JSON Configuration Provider</span></span>
 
-<span data-ttu-id="8c24f-420">O <xref:Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider> carrega a configuração de pares chave-valor do arquivo JSON em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="8c24f-420">The <xref:Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider> loads configuration from JSON file key-value pairs during runtime.</span></span>
+<span data-ttu-id="88dce-420">O <xref:Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider> carrega a configuração de pares chave-valor do arquivo JSON em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="88dce-420">The <xref:Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider> loads configuration from JSON file key-value pairs during runtime.</span></span>
 
-<span data-ttu-id="8c24f-421">Para ativar a configuração de arquivo JSON, chame o método de extensão <xref:Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-421">To activate JSON file configuration, call the <xref:Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-421">Para ativar a configuração de arquivo JSON, chame o método de extensão <xref:Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-421">To activate JSON file configuration, call the <xref:Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
-<span data-ttu-id="8c24f-422">As sobrecargas permitem especificar:</span><span class="sxs-lookup"><span data-stu-id="8c24f-422">Overloads permit specifying:</span></span>
+<span data-ttu-id="88dce-422">As sobrecargas permitem especificar:</span><span class="sxs-lookup"><span data-stu-id="88dce-422">Overloads permit specifying:</span></span>
 
-* <span data-ttu-id="8c24f-423">Se o arquivo é opcional.</span><span class="sxs-lookup"><span data-stu-id="8c24f-423">Whether the file is optional.</span></span>
-* <span data-ttu-id="8c24f-424">Se a configuração será recarregada caso o arquivo seja alterado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-424">Whether the configuration is reloaded if the file changes.</span></span>
-* <span data-ttu-id="8c24f-425">O <xref:Microsoft.Extensions.FileProviders.IFileProvider> usado para acessar o arquivo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-425">The <xref:Microsoft.Extensions.FileProviders.IFileProvider> used to access the file.</span></span>
+* <span data-ttu-id="88dce-423">Se o arquivo é opcional.</span><span class="sxs-lookup"><span data-stu-id="88dce-423">Whether the file is optional.</span></span>
+* <span data-ttu-id="88dce-424">Se a configuração será recarregada caso o arquivo seja alterado.</span><span class="sxs-lookup"><span data-stu-id="88dce-424">Whether the configuration is reloaded if the file changes.</span></span>
+* <span data-ttu-id="88dce-425">O <xref:Microsoft.Extensions.FileProviders.IFileProvider> usado para acessar o arquivo.</span><span class="sxs-lookup"><span data-stu-id="88dce-425">The <xref:Microsoft.Extensions.FileProviders.IFileProvider> used to access the file.</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-426">`AddJsonFile` é chamado automaticamente duas vezes quando você inicializa um novo <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-426">`AddJsonFile` is automatically called twice when you initialize a new <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span></span> <span data-ttu-id="8c24f-427">O método é chamado para carregar a configuração de:</span><span class="sxs-lookup"><span data-stu-id="8c24f-427">The method is called to load configuration from:</span></span>
+<span data-ttu-id="88dce-426">`AddJsonFile` é chamado automaticamente duas vezes quando você inicializa um novo <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span><span class="sxs-lookup"><span data-stu-id="88dce-426">`AddJsonFile` is automatically called twice when you initialize a new <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*>.</span></span> <span data-ttu-id="88dce-427">O método é chamado para carregar a configuração de:</span><span class="sxs-lookup"><span data-stu-id="88dce-427">The method is called to load configuration from:</span></span>
 
-* <span data-ttu-id="8c24f-428">*appsettings.json* &ndash; Esse arquivo é lido primeiro.</span><span class="sxs-lookup"><span data-stu-id="8c24f-428">*appsettings.json* &ndash; This file is read first.</span></span> <span data-ttu-id="8c24f-429">A versão do ambiente do arquivo pode substituir os valores fornecidos pelo arquivo *appsettings.json*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-429">The environment version of the file can override the values provided by the *appsettings.json* file.</span></span>
-* <span data-ttu-id="8c24f-430">*appsettings.{Environment}.json* &ndash; A versão de ambiente do arquivo é carregada com base em [IHostingEnvironment.EnvironmentName](xref:Microsoft.Extensions.Hosting.IHostingEnvironment.EnvironmentName*).</span><span class="sxs-lookup"><span data-stu-id="8c24f-430">*appsettings.{Environment}.json* &ndash; The environment version of the file is loaded based on the [IHostingEnvironment.EnvironmentName](xref:Microsoft.Extensions.Hosting.IHostingEnvironment.EnvironmentName*).</span></span>
+* <span data-ttu-id="88dce-428">*appsettings.json* &ndash; Esse arquivo é lido primeiro.</span><span class="sxs-lookup"><span data-stu-id="88dce-428">*appsettings.json* &ndash; This file is read first.</span></span> <span data-ttu-id="88dce-429">A versão do ambiente do arquivo pode substituir os valores fornecidos pelo arquivo *appsettings.json*.</span><span class="sxs-lookup"><span data-stu-id="88dce-429">The environment version of the file can override the values provided by the *appsettings.json* file.</span></span>
+* <span data-ttu-id="88dce-430">*appsettings.{Environment}.json* &ndash; A versão de ambiente do arquivo é carregada com base em [IHostingEnvironment.EnvironmentName](xref:Microsoft.Extensions.Hosting.IHostingEnvironment.EnvironmentName*).</span><span class="sxs-lookup"><span data-stu-id="88dce-430">*appsettings.{Environment}.json* &ndash; The environment version of the file is loaded based on the [IHostingEnvironment.EnvironmentName](xref:Microsoft.Extensions.Hosting.IHostingEnvironment.EnvironmentName*).</span></span>
 
-<span data-ttu-id="8c24f-431">Para saber mais, veja o tópico [Host da Web: configurar um host](xref:fundamentals/host/web-host#set-up-a-host).</span><span class="sxs-lookup"><span data-stu-id="8c24f-431">For more information, see [Web Host: Set up a host](xref:fundamentals/host/web-host#set-up-a-host).</span></span>
+<span data-ttu-id="88dce-431">Para saber mais, veja o tópico [Host da Web: configurar um host](xref:fundamentals/host/web-host#set-up-a-host).</span><span class="sxs-lookup"><span data-stu-id="88dce-431">For more information, see [Web Host: Set up a host](xref:fundamentals/host/web-host#set-up-a-host).</span></span>
 
-<span data-ttu-id="8c24f-432">`CreateDefaultBuilder` também carrega:</span><span class="sxs-lookup"><span data-stu-id="8c24f-432">`CreateDefaultBuilder` also loads:</span></span>
+<span data-ttu-id="88dce-432">`CreateDefaultBuilder` também carrega:</span><span class="sxs-lookup"><span data-stu-id="88dce-432">`CreateDefaultBuilder` also loads:</span></span>
 
-* <span data-ttu-id="8c24f-433">Variáveis de ambiente.</span><span class="sxs-lookup"><span data-stu-id="8c24f-433">Environment variables.</span></span>
-* <span data-ttu-id="8c24f-434">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (no ambiente de desenvolvimento).</span><span class="sxs-lookup"><span data-stu-id="8c24f-434">[User secrets (Secret Manager)](xref:security/app-secrets) (in the Development environment).</span></span>
-* <span data-ttu-id="8c24f-435">Argumentos de linha de comando.</span><span class="sxs-lookup"><span data-stu-id="8c24f-435">Command-line arguments.</span></span>
+* <span data-ttu-id="88dce-433">Variáveis de ambiente.</span><span class="sxs-lookup"><span data-stu-id="88dce-433">Environment variables.</span></span>
+* <span data-ttu-id="88dce-434">[Segredos do usuário (Gerenciador de Segredo)](xref:security/app-secrets) (no ambiente de desenvolvimento).</span><span class="sxs-lookup"><span data-stu-id="88dce-434">[User secrets (Secret Manager)](xref:security/app-secrets) (in the Development environment).</span></span>
+* <span data-ttu-id="88dce-435">Argumentos de linha de comando.</span><span class="sxs-lookup"><span data-stu-id="88dce-435">Command-line arguments.</span></span>
 
-<span data-ttu-id="8c24f-436">O Provedor de Configuração JSON é estabelecido primeiro.</span><span class="sxs-lookup"><span data-stu-id="8c24f-436">The JSON Configuration Provider is established first.</span></span> <span data-ttu-id="8c24f-437">Portanto, os segredos do usuário, as variáveis de ambiente e os argumentos de linha de comando substituem a configuração definida pelos arquivos *appsettings*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-437">Therefore, user secrets, environment variables, and command-line arguments override configuration set by the *appsettings* files.</span></span>
+<span data-ttu-id="88dce-436">O Provedor de Configuração JSON é estabelecido primeiro.</span><span class="sxs-lookup"><span data-stu-id="88dce-436">The JSON Configuration Provider is established first.</span></span> <span data-ttu-id="88dce-437">Portanto, os segredos do usuário, as variáveis de ambiente e os argumentos de linha de comando substituem a configuração definida pelos arquivos *appsettings*.</span><span class="sxs-lookup"><span data-stu-id="88dce-437">Therefore, user secrets, environment variables, and command-line arguments override configuration set by the *appsettings* files.</span></span>
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="8c24f-438">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo para arquivos que não sejam *appsettings.json* e *appsettings.{Environment}.json*:</span><span class="sxs-lookup"><span data-stu-id="8c24f-438">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration for files other than *appsettings.json* and *appsettings.{Environment}.json*:</span></span>
+<span data-ttu-id="88dce-438">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo para arquivos que não sejam *appsettings.json* e *appsettings.{Environment}.json*:</span><span class="sxs-lookup"><span data-stu-id="88dce-438">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration for files other than *appsettings.json* and *appsettings.{Environment}.json*:</span></span>
 
 ```csharp
 public class Program
@@ -893,15 +893,15 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-439">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-439">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-439">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-439">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-440">Você pode chamar diretamente o método de extensão `AddJsonFile` em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-440">You can also directly call the `AddJsonFile` extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-440">Você pode chamar diretamente o método de extensão `AddJsonFile` em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-440">You can also directly call the `AddJsonFile` extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
-<span data-ttu-id="8c24f-441">Ao chamar `CreateDefaultBuilder`, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-441">When calling `CreateDefaultBuilder`, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-441">Ao chamar `CreateDefaultBuilder`, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-441">When calling `CreateDefaultBuilder`, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ```csharp
 public class Program
@@ -925,13 +925,13 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-442">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-442">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-442">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-442">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-443">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="8c24f-443">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
+<span data-ttu-id="88dce-443">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="88dce-443">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
 
 ::: moniker-end
 
@@ -947,47 +947,47 @@ var host = new WebHostBuilder()
     .UseStartup<Startup>();
 ```
 
-<span data-ttu-id="8c24f-444">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="8c24f-444">**Example**</span></span>
+<span data-ttu-id="88dce-444">**Exemplo**</span><span class="sxs-lookup"><span data-stu-id="88dce-444">**Example**</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-445">O aplicativo de exemplo 2.x aproveita a vantagem do método de conveniência estático `CreateDefaultBuilder` para criar o host, que inclui duas chamadas para `AddJsonFile`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-445">The 2.x sample app takes advantage of the static convenience method `CreateDefaultBuilder` to build the host, which includes two calls to `AddJsonFile`.</span></span> <span data-ttu-id="8c24f-446">A configuração é carregada de *appsettings.json* e de *appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-446">Configuration is loaded from *appsettings.json* and *appsettings.{Environment}.json*.</span></span>
+<span data-ttu-id="88dce-445">O aplicativo de exemplo 2.x aproveita a vantagem do método de conveniência estático `CreateDefaultBuilder` para criar o host, que inclui duas chamadas para `AddJsonFile`.</span><span class="sxs-lookup"><span data-stu-id="88dce-445">The 2.x sample app takes advantage of the static convenience method `CreateDefaultBuilder` to build the host, which includes two calls to `AddJsonFile`.</span></span> <span data-ttu-id="88dce-446">A configuração é carregada de *appsettings.json* e de *appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="88dce-446">Configuration is loaded from *appsettings.json* and *appsettings.{Environment}.json*.</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-447">O aplicativo de exemplo 1.x chama `AddJsonFile` duas vezes em um `ConfigurationBuilder`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-447">The 1.x sample app calls `AddJsonFile` twice on a `ConfigurationBuilder`.</span></span> <span data-ttu-id="8c24f-448">A configuração é carregada de *appsettings.json* e de *appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-448">Configuration is loaded from *appsettings.json* and *appsettings.{Environment}.json*.</span></span>
+<span data-ttu-id="88dce-447">O aplicativo de exemplo 1.x chama `AddJsonFile` duas vezes em um `ConfigurationBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88dce-447">The 1.x sample app calls `AddJsonFile` twice on a `ConfigurationBuilder`.</span></span> <span data-ttu-id="88dce-448">A configuração é carregada de *appsettings.json* e de *appsettings.{Environment}.json*.</span><span class="sxs-lookup"><span data-stu-id="88dce-448">Configuration is loaded from *appsettings.json* and *appsettings.{Environment}.json*.</span></span>
 
 ::: moniker-end
 
-1. <span data-ttu-id="8c24f-449">Execute o aplicativo de exemplo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-449">Run the sample app.</span></span> <span data-ttu-id="8c24f-450">Abra um navegador para o aplicativo em `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-450">Open a browser to the app at `http://localhost:5000`.</span></span>
-1. <span data-ttu-id="8c24f-451">Observe que a saída contém pares chave-valor para a configuração mostrada na tabela de acordo com o ambiente.</span><span class="sxs-lookup"><span data-stu-id="8c24f-451">Observe that the output contains key-value pairs for the configuration shown in the table depending on the environment.</span></span> <span data-ttu-id="8c24f-452">Chaves de configuração de registro usam os dois-pontos (`:`) como um separador hierárquico.</span><span class="sxs-lookup"><span data-stu-id="8c24f-452">Logging configuration keys use the colon (`:`) as a hierarchical separator.</span></span>
+1. <span data-ttu-id="88dce-449">Execute o aplicativo de exemplo.</span><span class="sxs-lookup"><span data-stu-id="88dce-449">Run the sample app.</span></span> <span data-ttu-id="88dce-450">Abra um navegador para o aplicativo em `http://localhost:5000`.</span><span class="sxs-lookup"><span data-stu-id="88dce-450">Open a browser to the app at `http://localhost:5000`.</span></span>
+1. <span data-ttu-id="88dce-451">Observe que a saída contém pares chave-valor para a configuração mostrada na tabela de acordo com o ambiente.</span><span class="sxs-lookup"><span data-stu-id="88dce-451">Observe that the output contains key-value pairs for the configuration shown in the table depending on the environment.</span></span> <span data-ttu-id="88dce-452">Chaves de configuração de registro usam os dois-pontos (`:`) como um separador hierárquico.</span><span class="sxs-lookup"><span data-stu-id="88dce-452">Logging configuration keys use the colon (`:`) as a hierarchical separator.</span></span>
 
-| <span data-ttu-id="8c24f-453">Chave</span><span class="sxs-lookup"><span data-stu-id="8c24f-453">Key</span></span>                        | <span data-ttu-id="8c24f-454">Valor de Desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="8c24f-454">Development Value</span></span> | <span data-ttu-id="8c24f-455">Valor de Produção</span><span class="sxs-lookup"><span data-stu-id="8c24f-455">Production Value</span></span> |
+| <span data-ttu-id="88dce-453">Chave</span><span class="sxs-lookup"><span data-stu-id="88dce-453">Key</span></span>                        | <span data-ttu-id="88dce-454">Valor de Desenvolvimento</span><span class="sxs-lookup"><span data-stu-id="88dce-454">Development Value</span></span> | <span data-ttu-id="88dce-455">Valor de Produção</span><span class="sxs-lookup"><span data-stu-id="88dce-455">Production Value</span></span> |
 | -------------------------- | :---------------: | :--------------: |
-| <span data-ttu-id="8c24f-456">Logging:LogLevel:System</span><span class="sxs-lookup"><span data-stu-id="8c24f-456">Logging:LogLevel:System</span></span>    | <span data-ttu-id="8c24f-457">Informações</span><span class="sxs-lookup"><span data-stu-id="8c24f-457">Information</span></span>       | <span data-ttu-id="8c24f-458">Informações</span><span class="sxs-lookup"><span data-stu-id="8c24f-458">Information</span></span>      |
-| <span data-ttu-id="8c24f-459">Logging:LogLevel:Microsoft</span><span class="sxs-lookup"><span data-stu-id="8c24f-459">Logging:LogLevel:Microsoft</span></span> | <span data-ttu-id="8c24f-460">Informações</span><span class="sxs-lookup"><span data-stu-id="8c24f-460">Information</span></span>       | <span data-ttu-id="8c24f-461">Informações</span><span class="sxs-lookup"><span data-stu-id="8c24f-461">Information</span></span>      |
-| <span data-ttu-id="8c24f-462">Logging:LogLevel:Default</span><span class="sxs-lookup"><span data-stu-id="8c24f-462">Logging:LogLevel:Default</span></span>   | <span data-ttu-id="8c24f-463">Depurar</span><span class="sxs-lookup"><span data-stu-id="8c24f-463">Debug</span></span>             | <span data-ttu-id="8c24f-464">Erro</span><span class="sxs-lookup"><span data-stu-id="8c24f-464">Error</span></span>            |
-| <span data-ttu-id="8c24f-465">AllowedHosts</span><span class="sxs-lookup"><span data-stu-id="8c24f-465">AllowedHosts</span></span>               | *                 | *                |
+| <span data-ttu-id="88dce-456">Logging:LogLevel:System</span><span class="sxs-lookup"><span data-stu-id="88dce-456">Logging:LogLevel:System</span></span>    | <span data-ttu-id="88dce-457">Informações</span><span class="sxs-lookup"><span data-stu-id="88dce-457">Information</span></span>       | <span data-ttu-id="88dce-458">Informações</span><span class="sxs-lookup"><span data-stu-id="88dce-458">Information</span></span>      |
+| <span data-ttu-id="88dce-459">Logging:LogLevel:Microsoft</span><span class="sxs-lookup"><span data-stu-id="88dce-459">Logging:LogLevel:Microsoft</span></span> | <span data-ttu-id="88dce-460">Informações</span><span class="sxs-lookup"><span data-stu-id="88dce-460">Information</span></span>       | <span data-ttu-id="88dce-461">Informações</span><span class="sxs-lookup"><span data-stu-id="88dce-461">Information</span></span>      |
+| <span data-ttu-id="88dce-462">Logging:LogLevel:Default</span><span class="sxs-lookup"><span data-stu-id="88dce-462">Logging:LogLevel:Default</span></span>   | <span data-ttu-id="88dce-463">Depurar</span><span class="sxs-lookup"><span data-stu-id="88dce-463">Debug</span></span>             | <span data-ttu-id="88dce-464">Erro</span><span class="sxs-lookup"><span data-stu-id="88dce-464">Error</span></span>            |
+| <span data-ttu-id="88dce-465">AllowedHosts</span><span class="sxs-lookup"><span data-stu-id="88dce-465">AllowedHosts</span></span>               | *                 | *                |
 
-### <a name="xml-configuration-provider"></a><span data-ttu-id="8c24f-466">Provedor de Configuração XML</span><span class="sxs-lookup"><span data-stu-id="8c24f-466">XML Configuration Provider</span></span>
+### <a name="xml-configuration-provider"></a><span data-ttu-id="88dce-466">Provedor de Configuração XML</span><span class="sxs-lookup"><span data-stu-id="88dce-466">XML Configuration Provider</span></span>
 
-<span data-ttu-id="8c24f-467">O <xref:Microsoft.Extensions.Configuration.Xml.XmlConfigurationProvider> carrega a configuração de pares chave-valor do arquivo XML em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="8c24f-467">The <xref:Microsoft.Extensions.Configuration.Xml.XmlConfigurationProvider> loads configuration from XML file key-value pairs at runtime.</span></span>
+<span data-ttu-id="88dce-467">O <xref:Microsoft.Extensions.Configuration.Xml.XmlConfigurationProvider> carrega a configuração de pares chave-valor do arquivo XML em tempo de execução.</span><span class="sxs-lookup"><span data-stu-id="88dce-467">The <xref:Microsoft.Extensions.Configuration.Xml.XmlConfigurationProvider> loads configuration from XML file key-value pairs at runtime.</span></span>
 
-<span data-ttu-id="8c24f-468">Para ativar a configuração de arquivo XML, chame o método de extensão <xref:Microsoft.Extensions.Configuration.XmlConfigurationExtensions.AddXmlFile*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-468">To activate XML file configuration, call the <xref:Microsoft.Extensions.Configuration.XmlConfigurationExtensions.AddXmlFile*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-468">Para ativar a configuração de arquivo XML, chame o método de extensão <xref:Microsoft.Extensions.Configuration.XmlConfigurationExtensions.AddXmlFile*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-468">To activate XML file configuration, call the <xref:Microsoft.Extensions.Configuration.XmlConfigurationExtensions.AddXmlFile*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
-<span data-ttu-id="8c24f-469">As sobrecargas permitem especificar:</span><span class="sxs-lookup"><span data-stu-id="8c24f-469">Overloads permit specifying:</span></span>
+<span data-ttu-id="88dce-469">As sobrecargas permitem especificar:</span><span class="sxs-lookup"><span data-stu-id="88dce-469">Overloads permit specifying:</span></span>
 
-* <span data-ttu-id="8c24f-470">Se o arquivo é opcional.</span><span class="sxs-lookup"><span data-stu-id="8c24f-470">Whether the file is optional.</span></span>
-* <span data-ttu-id="8c24f-471">Se a configuração será recarregada caso o arquivo seja alterado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-471">Whether the configuration is reloaded if the file changes.</span></span>
-* <span data-ttu-id="8c24f-472">O <xref:Microsoft.Extensions.FileProviders.IFileProvider> usado para acessar o arquivo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-472">The <xref:Microsoft.Extensions.FileProviders.IFileProvider> used to access the file.</span></span>
+* <span data-ttu-id="88dce-470">Se o arquivo é opcional.</span><span class="sxs-lookup"><span data-stu-id="88dce-470">Whether the file is optional.</span></span>
+* <span data-ttu-id="88dce-471">Se a configuração será recarregada caso o arquivo seja alterado.</span><span class="sxs-lookup"><span data-stu-id="88dce-471">Whether the configuration is reloaded if the file changes.</span></span>
+* <span data-ttu-id="88dce-472">O <xref:Microsoft.Extensions.FileProviders.IFileProvider> usado para acessar o arquivo.</span><span class="sxs-lookup"><span data-stu-id="88dce-472">The <xref:Microsoft.Extensions.FileProviders.IFileProvider> used to access the file.</span></span>
 
-<span data-ttu-id="8c24f-473">O nó raiz do arquivo de configuração é ignorado quando os pares chave-valor da configuração são criados.</span><span class="sxs-lookup"><span data-stu-id="8c24f-473">The root node of the configuration file is ignored when the configuration key-value pairs are created.</span></span> <span data-ttu-id="8c24f-474">Não especifique um DTD (definição de tipo de documento) ou um namespace no arquivo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-474">Don't specify a Document Type Definition (DTD) or namespace in the file.</span></span>
+<span data-ttu-id="88dce-473">O nó raiz do arquivo de configuração é ignorado quando os pares chave-valor da configuração são criados.</span><span class="sxs-lookup"><span data-stu-id="88dce-473">The root node of the configuration file is ignored when the configuration key-value pairs are created.</span></span> <span data-ttu-id="88dce-474">Não especifique um DTD (definição de tipo de documento) ou um namespace no arquivo.</span><span class="sxs-lookup"><span data-stu-id="88dce-474">Don't specify a Document Type Definition (DTD) or namespace in the file.</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="8c24f-475">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="8c24f-475">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
+<span data-ttu-id="88dce-475">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="88dce-475">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
 
 ```csharp
 public class Program
@@ -1008,13 +1008,13 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-476">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-476">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-476">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-476">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-477">Ao chamar `CreateDefaultBuilder`, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-477">When calling `CreateDefaultBuilder`, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-477">Ao chamar `CreateDefaultBuilder`, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-477">When calling `CreateDefaultBuilder`, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ```csharp
 public class Program
@@ -1038,13 +1038,13 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-478">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-478">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-478">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-478">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-479">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="8c24f-479">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
+<span data-ttu-id="88dce-479">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="88dce-479">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
 
 ::: moniker-end
 
@@ -1060,7 +1060,7 @@ var host = new WebHostBuilder()
     .UseStartup<Startup>();
 ```
 
-<span data-ttu-id="8c24f-480">Os arquivos de configuração XML podem usar nomes de elemento distintos para seções repetidas:</span><span class="sxs-lookup"><span data-stu-id="8c24f-480">XML configuration files can use distinct element names for repeating sections:</span></span>
+<span data-ttu-id="88dce-480">Os arquivos de configuração XML podem usar nomes de elemento distintos para seções repetidas:</span><span class="sxs-lookup"><span data-stu-id="88dce-480">XML configuration files can use distinct element names for repeating sections:</span></span>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1076,14 +1076,14 @@ var host = new WebHostBuilder()
 </configuration>
 ```
 
-<span data-ttu-id="8c24f-481">O arquivo de configuração anterior carrega as seguintes chaves com `value`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-481">The previous configuration file loads the following keys with `value`:</span></span>
+<span data-ttu-id="88dce-481">O arquivo de configuração anterior carrega as seguintes chaves com `value`:</span><span class="sxs-lookup"><span data-stu-id="88dce-481">The previous configuration file loads the following keys with `value`:</span></span>
 
-* <span data-ttu-id="8c24f-482">section0:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-482">section0:key0</span></span>
-* <span data-ttu-id="8c24f-483">section0:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-483">section0:key1</span></span>
-* <span data-ttu-id="8c24f-484">section1:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-484">section1:key0</span></span>
-* <span data-ttu-id="8c24f-485">section1:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-485">section1:key1</span></span>
+* <span data-ttu-id="88dce-482">section0:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-482">section0:key0</span></span>
+* <span data-ttu-id="88dce-483">section0:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-483">section0:key1</span></span>
+* <span data-ttu-id="88dce-484">section1:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-484">section1:key0</span></span>
+* <span data-ttu-id="88dce-485">section1:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-485">section1:key1</span></span>
 
-<span data-ttu-id="8c24f-486">Elementos repetidos que usam o mesmo nome de elemento funcionarão se o atributo `name` for usado para diferenciar os elementos:</span><span class="sxs-lookup"><span data-stu-id="8c24f-486">Repeating elements that use the same element name work if the `name` attribute is used to distinguish the elements:</span></span>
+<span data-ttu-id="88dce-486">Elementos repetidos que usam o mesmo nome de elemento funcionarão se o atributo `name` for usado para diferenciar os elementos:</span><span class="sxs-lookup"><span data-stu-id="88dce-486">Repeating elements that use the same element name work if the `name` attribute is used to distinguish the elements:</span></span>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1099,14 +1099,14 @@ var host = new WebHostBuilder()
 </configuration>
 ```
 
-<span data-ttu-id="8c24f-487">O arquivo de configuração anterior carrega as seguintes chaves com `value`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-487">The previous configuration file loads the following keys with `value`:</span></span>
+<span data-ttu-id="88dce-487">O arquivo de configuração anterior carrega as seguintes chaves com `value`:</span><span class="sxs-lookup"><span data-stu-id="88dce-487">The previous configuration file loads the following keys with `value`:</span></span>
 
-* <span data-ttu-id="8c24f-488">section:section0:key:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-488">section:section0:key:key0</span></span>
-* <span data-ttu-id="8c24f-489">section:section0:key:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-489">section:section0:key:key1</span></span>
-* <span data-ttu-id="8c24f-490">section:section1:key:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-490">section:section1:key:key0</span></span>
-* <span data-ttu-id="8c24f-491">section:section1:key:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-491">section:section1:key:key1</span></span>
+* <span data-ttu-id="88dce-488">section:section0:key:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-488">section:section0:key:key0</span></span>
+* <span data-ttu-id="88dce-489">section:section0:key:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-489">section:section0:key:key1</span></span>
+* <span data-ttu-id="88dce-490">section:section1:key:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-490">section:section1:key:key0</span></span>
+* <span data-ttu-id="88dce-491">section:section1:key:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-491">section:section1:key:key1</span></span>
 
-<span data-ttu-id="8c24f-492">É possível usar atributos para fornecer valores:</span><span class="sxs-lookup"><span data-stu-id="8c24f-492">Attributes can be used to supply values:</span></span>
+<span data-ttu-id="88dce-492">É possível usar atributos para fornecer valores:</span><span class="sxs-lookup"><span data-stu-id="88dce-492">Attributes can be used to supply values:</span></span>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1118,25 +1118,25 @@ var host = new WebHostBuilder()
 </configuration>
 ```
 
-<span data-ttu-id="8c24f-493">O arquivo de configuração anterior carrega as seguintes chaves com `value`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-493">The previous configuration file loads the following keys with `value`:</span></span>
+<span data-ttu-id="88dce-493">O arquivo de configuração anterior carrega as seguintes chaves com `value`:</span><span class="sxs-lookup"><span data-stu-id="88dce-493">The previous configuration file loads the following keys with `value`:</span></span>
 
-* <span data-ttu-id="8c24f-494">key:attribute</span><span class="sxs-lookup"><span data-stu-id="8c24f-494">key:attribute</span></span>
-* <span data-ttu-id="8c24f-495">section:key:attribute</span><span class="sxs-lookup"><span data-stu-id="8c24f-495">section:key:attribute</span></span>
+* <span data-ttu-id="88dce-494">key:attribute</span><span class="sxs-lookup"><span data-stu-id="88dce-494">key:attribute</span></span>
+* <span data-ttu-id="88dce-495">section:key:attribute</span><span class="sxs-lookup"><span data-stu-id="88dce-495">section:key:attribute</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="key-per-file-configuration-provider"></a><span data-ttu-id="8c24f-496">Provedor de Configuração de Chave por Arquivo</span><span class="sxs-lookup"><span data-stu-id="8c24f-496">Key-per-file Configuration Provider</span></span>
+## <a name="key-per-file-configuration-provider"></a><span data-ttu-id="88dce-496">Provedor de Configuração de Chave por Arquivo</span><span class="sxs-lookup"><span data-stu-id="88dce-496">Key-per-file Configuration Provider</span></span>
 
-<span data-ttu-id="8c24f-497">O <xref:Microsoft.Extensions.Configuration.KeyPerFile.KeyPerFileConfigurationProvider> usa arquivos do diretório como pares chave-valor de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-497">The <xref:Microsoft.Extensions.Configuration.KeyPerFile.KeyPerFileConfigurationProvider> uses a directory's files as configuration key-value pairs.</span></span> <span data-ttu-id="8c24f-498">A chave é o nome do arquivo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-498">The key is the file name.</span></span> <span data-ttu-id="8c24f-499">O valor contém o conteúdo do arquivo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-499">The value contains the file's contents.</span></span> <span data-ttu-id="8c24f-500">O Provedor de Configuração de Chave por arquivo é usado em cenários de hospedagem do Docker.</span><span class="sxs-lookup"><span data-stu-id="8c24f-500">The Key-per-file Configuration Provider is used in Docker hosting scenarios.</span></span>
+<span data-ttu-id="88dce-497">O <xref:Microsoft.Extensions.Configuration.KeyPerFile.KeyPerFileConfigurationProvider> usa arquivos do diretório como pares chave-valor de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-497">The <xref:Microsoft.Extensions.Configuration.KeyPerFile.KeyPerFileConfigurationProvider> uses a directory's files as configuration key-value pairs.</span></span> <span data-ttu-id="88dce-498">A chave é o nome do arquivo.</span><span class="sxs-lookup"><span data-stu-id="88dce-498">The key is the file name.</span></span> <span data-ttu-id="88dce-499">O valor contém o conteúdo do arquivo.</span><span class="sxs-lookup"><span data-stu-id="88dce-499">The value contains the file's contents.</span></span> <span data-ttu-id="88dce-500">O Provedor de Configuração de Chave por arquivo é usado em cenários de hospedagem do Docker.</span><span class="sxs-lookup"><span data-stu-id="88dce-500">The Key-per-file Configuration Provider is used in Docker hosting scenarios.</span></span>
 
-<span data-ttu-id="8c24f-501">Para ativar a configuração de chave por arquivo, chame o método de extensão <xref:Microsoft.Extensions.Configuration.KeyPerFileConfigurationBuilderExtensions.AddKeyPerFile*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-501">To activate key-per-file configuration, call the <xref:Microsoft.Extensions.Configuration.KeyPerFileConfigurationBuilderExtensions.AddKeyPerFile*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span> <span data-ttu-id="8c24f-502">O `directoryPath` para os arquivos deve ser um caminho absoluto.</span><span class="sxs-lookup"><span data-stu-id="8c24f-502">The `directoryPath` to the files must be an absolute path.</span></span>
+<span data-ttu-id="88dce-501">Para ativar a configuração de chave por arquivo, chame o método de extensão <xref:Microsoft.Extensions.Configuration.KeyPerFileConfigurationBuilderExtensions.AddKeyPerFile*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-501">To activate key-per-file configuration, call the <xref:Microsoft.Extensions.Configuration.KeyPerFileConfigurationBuilderExtensions.AddKeyPerFile*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span> <span data-ttu-id="88dce-502">O `directoryPath` para os arquivos deve ser um caminho absoluto.</span><span class="sxs-lookup"><span data-stu-id="88dce-502">The `directoryPath` to the files must be an absolute path.</span></span>
 
-<span data-ttu-id="8c24f-503">As sobrecargas permitem especificar:</span><span class="sxs-lookup"><span data-stu-id="8c24f-503">Overloads permit specifying:</span></span>
+<span data-ttu-id="88dce-503">As sobrecargas permitem especificar:</span><span class="sxs-lookup"><span data-stu-id="88dce-503">Overloads permit specifying:</span></span>
 
-* <span data-ttu-id="8c24f-504">Um delegado `Action<KeyPerFileConfigurationSource>` que configura a origem.</span><span class="sxs-lookup"><span data-stu-id="8c24f-504">An `Action<KeyPerFileConfigurationSource>` delegate that configures the source.</span></span>
-* <span data-ttu-id="8c24f-505">Se o diretório é opcional, e o caminho para o diretório.</span><span class="sxs-lookup"><span data-stu-id="8c24f-505">Whether the directory is optional and the path to the directory.</span></span>
+* <span data-ttu-id="88dce-504">Um delegado `Action<KeyPerFileConfigurationSource>` que configura a origem.</span><span class="sxs-lookup"><span data-stu-id="88dce-504">An `Action<KeyPerFileConfigurationSource>` delegate that configures the source.</span></span>
+* <span data-ttu-id="88dce-505">Se o diretório é opcional, e o caminho para o diretório.</span><span class="sxs-lookup"><span data-stu-id="88dce-505">Whether the directory is optional and the path to the directory.</span></span>
 
-<span data-ttu-id="8c24f-506">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="8c24f-506">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
+<span data-ttu-id="88dce-506">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="88dce-506">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
 
 ```csharp
 public class Program
@@ -1157,7 +1157,7 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-507">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-507">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-507">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-507">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ```csharp
 var path = Path.Combine(Directory.GetCurrentDirectory(), "path/to/files");
@@ -1173,17 +1173,17 @@ var host = new WebHostBuilder()
 
 ::: moniker-end
 
-## <a name="memory-configuration-provider"></a><span data-ttu-id="8c24f-508">Provedor de Configuração de Memória</span><span class="sxs-lookup"><span data-stu-id="8c24f-508">Memory Configuration Provider</span></span>
+## <a name="memory-configuration-provider"></a><span data-ttu-id="88dce-508">Provedor de Configuração de Memória</span><span class="sxs-lookup"><span data-stu-id="88dce-508">Memory Configuration Provider</span></span>
 
-<span data-ttu-id="8c24f-509">O <xref:Microsoft.Extensions.Configuration.Memory.MemoryConfigurationProvider> usa uma coleção na memória como pares chave-valor de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-509">The <xref:Microsoft.Extensions.Configuration.Memory.MemoryConfigurationProvider> uses an in-memory collection as configuration key-value pairs.</span></span>
+<span data-ttu-id="88dce-509">O <xref:Microsoft.Extensions.Configuration.Memory.MemoryConfigurationProvider> usa uma coleção na memória como pares chave-valor de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-509">The <xref:Microsoft.Extensions.Configuration.Memory.MemoryConfigurationProvider> uses an in-memory collection as configuration key-value pairs.</span></span>
 
-<span data-ttu-id="8c24f-510">Para ativar a configuração de coleção na memória, chame o método de extensão <xref:Microsoft.Extensions.Configuration.MemoryConfigurationBuilderExtensions.AddInMemoryCollection*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-510">To activate in-memory collection configuration, call the <xref:Microsoft.Extensions.Configuration.MemoryConfigurationBuilderExtensions.AddInMemoryCollection*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
+<span data-ttu-id="88dce-510">Para ativar a configuração de coleção na memória, chame o método de extensão <xref:Microsoft.Extensions.Configuration.MemoryConfigurationBuilderExtensions.AddInMemoryCollection*> em uma instância do <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span><span class="sxs-lookup"><span data-stu-id="88dce-510">To activate in-memory collection configuration, call the <xref:Microsoft.Extensions.Configuration.MemoryConfigurationBuilderExtensions.AddInMemoryCollection*> extension method on an instance of <xref:Microsoft.Extensions.Configuration.ConfigurationBuilder>.</span></span>
 
-<span data-ttu-id="8c24f-511">O provedor de configuração pode ser inicializado com um `IEnumerable<KeyValuePair<String,String>>`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-511">The configuration provider can be initialized with an `IEnumerable<KeyValuePair<String,String>>`.</span></span>
+<span data-ttu-id="88dce-511">O provedor de configuração pode ser inicializado com um `IEnumerable<KeyValuePair<String,String>>`.</span><span class="sxs-lookup"><span data-stu-id="88dce-511">The configuration provider can be initialized with an `IEnumerable<KeyValuePair<String,String>>`.</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="8c24f-512">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="8c24f-512">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
+<span data-ttu-id="88dce-512">Chame <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> ao criar o host para especificar a configuração do aplicativo:</span><span class="sxs-lookup"><span data-stu-id="88dce-512">Call <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*> when building the host to specify the app's configuration:</span></span>
 
 ```csharp
 public class Program
@@ -1210,13 +1210,13 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-513">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-513">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-513">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-513">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-514">Ao chamar `CreateDefaultBuilder`, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-514">When calling `CreateDefaultBuilder`, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-514">Ao chamar `CreateDefaultBuilder`, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-514">When calling `CreateDefaultBuilder`, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ```csharp
 public class Program
@@ -1245,13 +1245,13 @@ public class Program
 }
 ```
 
-<span data-ttu-id="8c24f-515">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-515">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
+<span data-ttu-id="88dce-515">Ao criar um <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> diretamente, chame <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> com a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-515">When creating a <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> directly, call <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> with the configuration:</span></span>
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-516">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="8c24f-516">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
+<span data-ttu-id="88dce-516">Aplique a configuração ao <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> com o método <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="88dce-516">Apply the configuration to <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder> with the <xref:Microsoft.AspNetCore.Hosting.HostingAbstractionsWebHostBuilderExtensions.UseConfiguration*> method:</span></span>
 
 ::: moniker-end
 
@@ -1272,19 +1272,19 @@ var host = new WebHostBuilder()
     .UseStartup<Startup>();
 ```
 
-## <a name="getvalue"></a><span data-ttu-id="8c24f-517">GetValue</span><span class="sxs-lookup"><span data-stu-id="8c24f-517">GetValue</span></span>
+## <a name="getvalue"></a><span data-ttu-id="88dce-517">GetValue</span><span class="sxs-lookup"><span data-stu-id="88dce-517">GetValue</span></span>
 
-<span data-ttu-id="8c24f-518">[ConfigurationBinder.GetValue&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue*) extrai um valor de configuração com uma chave especificada e o converte para o tipo especificado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-518">[ConfigurationBinder.GetValue&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue*) extracts a value from configuration with a specified key and converts it to the specified type.</span></span> <span data-ttu-id="8c24f-519">Uma sobrecarga permite que você forneça um valor padrão se a chave não for encontrada.</span><span class="sxs-lookup"><span data-stu-id="8c24f-519">An overload permits you to provide a default value if the key isn't found.</span></span>
+<span data-ttu-id="88dce-518">[ConfigurationBinder.GetValue&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue*) extrai um valor de configuração com uma chave especificada e o converte para o tipo especificado.</span><span class="sxs-lookup"><span data-stu-id="88dce-518">[ConfigurationBinder.GetValue&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue*) extracts a value from configuration with a specified key and converts it to the specified type.</span></span> <span data-ttu-id="88dce-519">Uma sobrecarga permite que você forneça um valor padrão se a chave não for encontrada.</span><span class="sxs-lookup"><span data-stu-id="88dce-519">An overload permits you to provide a default value if the key isn't found.</span></span>
 
-<span data-ttu-id="8c24f-520">O exemplo a seguir extrai o valor de cadeia de caracteres da configuração com a chave `NumberKey`, digita o valor como um `int` e armazena o valor na variável `intValue`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-520">The following example extracts the string value from configuration with the key `NumberKey`, types the value as an `int`, and stores the value in the variable `intValue`.</span></span> <span data-ttu-id="8c24f-521">Se `NumberKey` não for encontrado em chaves de configuração, `intValue` recebe o valor padrão de `99`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-521">If `NumberKey` isn't found in the configuration keys, `intValue` receives the default value of `99`:</span></span>
+<span data-ttu-id="88dce-520">O exemplo a seguir extrai o valor de cadeia de caracteres da configuração com a chave `NumberKey`, digita o valor como um `int` e armazena o valor na variável `intValue`.</span><span class="sxs-lookup"><span data-stu-id="88dce-520">The following example extracts the string value from configuration with the key `NumberKey`, types the value as an `int`, and stores the value in the variable `intValue`.</span></span> <span data-ttu-id="88dce-521">Se `NumberKey` não for encontrado em chaves de configuração, `intValue` recebe o valor padrão de `99`:</span><span class="sxs-lookup"><span data-stu-id="88dce-521">If `NumberKey` isn't found in the configuration keys, `intValue` receives the default value of `99`:</span></span>
 
 ```csharp
 var intValue = config.GetValue<int>("NumberKey", 99);
 ```
 
-## <a name="getsection-getchildren-and-exists"></a><span data-ttu-id="8c24f-522">GetSection, GetChildren e Exists</span><span class="sxs-lookup"><span data-stu-id="8c24f-522">GetSection, GetChildren, and Exists</span></span>
+## <a name="getsection-getchildren-and-exists"></a><span data-ttu-id="88dce-522">GetSection, GetChildren e Exists</span><span class="sxs-lookup"><span data-stu-id="88dce-522">GetSection, GetChildren, and Exists</span></span>
 
-<span data-ttu-id="8c24f-523">Para os exemplos a seguir, considere o seguinte arquivo JSON.</span><span class="sxs-lookup"><span data-stu-id="8c24f-523">For the examples that follow, consider the following JSON file.</span></span> <span data-ttu-id="8c24f-524">Há quatro chaves em duas seções, cada uma delas inclui um par de subseções:</span><span class="sxs-lookup"><span data-stu-id="8c24f-524">Four keys are found across two sections, one of which includes a pair of subsections:</span></span>
+<span data-ttu-id="88dce-523">Para os exemplos a seguir, considere o seguinte arquivo JSON.</span><span class="sxs-lookup"><span data-stu-id="88dce-523">For the examples that follow, consider the following JSON file.</span></span> <span data-ttu-id="88dce-524">Há quatro chaves em duas seções, cada uma delas inclui um par de subseções:</span><span class="sxs-lookup"><span data-stu-id="88dce-524">Four keys are found across two sections, one of which includes a pair of subsections:</span></span>
 
 ```json
 {
@@ -1309,38 +1309,38 @@ var intValue = config.GetValue<int>("NumberKey", 99);
 }
 ```
 
-<span data-ttu-id="8c24f-525">Quando o arquivo é lido na configuração, as seguintes chaves hierárquicas exclusivas são criadas para conter os valores de configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-525">When the file is read into configuration, the following unique hierarchical keys are created to hold the configuration values:</span></span>
+<span data-ttu-id="88dce-525">Quando o arquivo é lido na configuração, as seguintes chaves hierárquicas exclusivas são criadas para conter os valores de configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-525">When the file is read into configuration, the following unique hierarchical keys are created to hold the configuration values:</span></span>
 
-* <span data-ttu-id="8c24f-526">section0:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-526">section0:key0</span></span>
-* <span data-ttu-id="8c24f-527">section0:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-527">section0:key1</span></span>
-* <span data-ttu-id="8c24f-528">section1:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-528">section1:key0</span></span>
-* <span data-ttu-id="8c24f-529">section1:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-529">section1:key1</span></span>
-* <span data-ttu-id="8c24f-530">section2:subsection0:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-530">section2:subsection0:key0</span></span>
-* <span data-ttu-id="8c24f-531">section2:subsection0:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-531">section2:subsection0:key1</span></span>
-* <span data-ttu-id="8c24f-532">section2:subsection1:key0</span><span class="sxs-lookup"><span data-stu-id="8c24f-532">section2:subsection1:key0</span></span>
-* <span data-ttu-id="8c24f-533">section2:subsection1:key1</span><span class="sxs-lookup"><span data-stu-id="8c24f-533">section2:subsection1:key1</span></span>
+* <span data-ttu-id="88dce-526">section0:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-526">section0:key0</span></span>
+* <span data-ttu-id="88dce-527">section0:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-527">section0:key1</span></span>
+* <span data-ttu-id="88dce-528">section1:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-528">section1:key0</span></span>
+* <span data-ttu-id="88dce-529">section1:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-529">section1:key1</span></span>
+* <span data-ttu-id="88dce-530">section2:subsection0:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-530">section2:subsection0:key0</span></span>
+* <span data-ttu-id="88dce-531">section2:subsection0:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-531">section2:subsection0:key1</span></span>
+* <span data-ttu-id="88dce-532">section2:subsection1:key0</span><span class="sxs-lookup"><span data-stu-id="88dce-532">section2:subsection1:key0</span></span>
+* <span data-ttu-id="88dce-533">section2:subsection1:key1</span><span class="sxs-lookup"><span data-stu-id="88dce-533">section2:subsection1:key1</span></span>
 
-### <a name="getsection"></a><span data-ttu-id="8c24f-534">GetSection</span><span class="sxs-lookup"><span data-stu-id="8c24f-534">GetSection</span></span>
+### <a name="getsection"></a><span data-ttu-id="88dce-534">GetSection</span><span class="sxs-lookup"><span data-stu-id="88dce-534">GetSection</span></span>
 
-<span data-ttu-id="8c24f-535">[IConfiguration.GetSection](xref:Microsoft.Extensions.Configuration.IConfiguration.GetSection*) extrai uma subseção de configuração com a chave de subseção especificada.</span><span class="sxs-lookup"><span data-stu-id="8c24f-535">[IConfiguration.GetSection](xref:Microsoft.Extensions.Configuration.IConfiguration.GetSection*) extracts a configuration subsection with the specified subsection key.</span></span>
+<span data-ttu-id="88dce-535">[IConfiguration.GetSection](xref:Microsoft.Extensions.Configuration.IConfiguration.GetSection*) extrai uma subseção de configuração com a chave de subseção especificada.</span><span class="sxs-lookup"><span data-stu-id="88dce-535">[IConfiguration.GetSection](xref:Microsoft.Extensions.Configuration.IConfiguration.GetSection*) extracts a configuration subsection with the specified subsection key.</span></span>
 
-<span data-ttu-id="8c24f-536">Para retornar um <xref:Microsoft.Extensions.Configuration.IConfigurationSection> que contenha apenas os pares chave-valor em `section1`, chame `GetSection` e forneça o nome da seção:</span><span class="sxs-lookup"><span data-stu-id="8c24f-536">To return an <xref:Microsoft.Extensions.Configuration.IConfigurationSection> containing only the key-value pairs in `section1`, call `GetSection` and supply the section name:</span></span>
+<span data-ttu-id="88dce-536">Para retornar um <xref:Microsoft.Extensions.Configuration.IConfigurationSection> que contenha apenas os pares chave-valor em `section1`, chame `GetSection` e forneça o nome da seção:</span><span class="sxs-lookup"><span data-stu-id="88dce-536">To return an <xref:Microsoft.Extensions.Configuration.IConfigurationSection> containing only the key-value pairs in `section1`, call `GetSection` and supply the section name:</span></span>
 
 ```csharp
 var configSection = _config.GetSection("section1");
 ```
 
-<span data-ttu-id="8c24f-537">Da mesma forma, para obter os valores de chaves em `section2:subsection0`, chame `GetSection` e forneça o caminho de seção:</span><span class="sxs-lookup"><span data-stu-id="8c24f-537">Similarly, to obtain the values for keys in `section2:subsection0`, call `GetSection` and supply the section path:</span></span>
+<span data-ttu-id="88dce-537">Da mesma forma, para obter os valores de chaves em `section2:subsection0`, chame `GetSection` e forneça o caminho de seção:</span><span class="sxs-lookup"><span data-stu-id="88dce-537">Similarly, to obtain the values for keys in `section2:subsection0`, call `GetSection` and supply the section path:</span></span>
 
 ```csharp
 var configSection = _config.GetSection("section2:subsection0");
 ```
 
-<span data-ttu-id="8c24f-538">`GetSection` nunca retorna `null`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-538">`GetSection` never returns `null`.</span></span> <span data-ttu-id="8c24f-539">Se uma seção correspondente não for encontrada, um `IConfigurationSection` vazio será retornado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-539">If a matching section isn't found, an empty `IConfigurationSection` is returned.</span></span>
+<span data-ttu-id="88dce-538">`GetSection` nunca retorna `null`.</span><span class="sxs-lookup"><span data-stu-id="88dce-538">`GetSection` never returns `null`.</span></span> <span data-ttu-id="88dce-539">Se uma seção correspondente não for encontrada, um `IConfigurationSection` vazio será retornado.</span><span class="sxs-lookup"><span data-stu-id="88dce-539">If a matching section isn't found, an empty `IConfigurationSection` is returned.</span></span>
 
-### <a name="getchildren"></a><span data-ttu-id="8c24f-540">GetChildren</span><span class="sxs-lookup"><span data-stu-id="8c24f-540">GetChildren</span></span>
+### <a name="getchildren"></a><span data-ttu-id="88dce-540">GetChildren</span><span class="sxs-lookup"><span data-stu-id="88dce-540">GetChildren</span></span>
 
-<span data-ttu-id="8c24f-541">Uma chamada para [IConfiguration.GetChildren](xref:Microsoft.Extensions.Configuration.IConfiguration.GetChildren*) em `section2` obtém um `IEnumerable<IConfigurationSection>` que inclui:</span><span class="sxs-lookup"><span data-stu-id="8c24f-541">A call to [IConfiguration.GetChildren](xref:Microsoft.Extensions.Configuration.IConfiguration.GetChildren*) on `section2` obtains an `IEnumerable<IConfigurationSection>` that includes:</span></span>
+<span data-ttu-id="88dce-541">Uma chamada para [IConfiguration.GetChildren](xref:Microsoft.Extensions.Configuration.IConfiguration.GetChildren*) em `section2` obtém um `IEnumerable<IConfigurationSection>` que inclui:</span><span class="sxs-lookup"><span data-stu-id="88dce-541">A call to [IConfiguration.GetChildren](xref:Microsoft.Extensions.Configuration.IConfiguration.GetChildren*) on `section2` obtains an `IEnumerable<IConfigurationSection>` that includes:</span></span>
 
 * `subsection0`
 * `subsection1`
@@ -1353,25 +1353,25 @@ var children = configSection.GetChildren();
 
 ::: moniker range=">= aspnetcore-2.0"
 
-### <a name="exists"></a><span data-ttu-id="8c24f-542">Exists</span><span class="sxs-lookup"><span data-stu-id="8c24f-542">Exists</span></span>
+### <a name="exists"></a><span data-ttu-id="88dce-542">Exists</span><span class="sxs-lookup"><span data-stu-id="88dce-542">Exists</span></span>
 
-<span data-ttu-id="8c24f-543">Use [ConfigurationExtensions.Exists](xref:Microsoft.Extensions.Configuration.ConfigurationExtensions.Exists*) para determinar se há uma seção de configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-543">Use [ConfigurationExtensions.Exists](xref:Microsoft.Extensions.Configuration.ConfigurationExtensions.Exists*) to determine if a configuration section exists:</span></span>
+<span data-ttu-id="88dce-543">Use [ConfigurationExtensions.Exists](xref:Microsoft.Extensions.Configuration.ConfigurationExtensions.Exists*) para determinar se há uma seção de configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-543">Use [ConfigurationExtensions.Exists](xref:Microsoft.Extensions.Configuration.ConfigurationExtensions.Exists*) to determine if a configuration section exists:</span></span>
 
 ```csharp
 var sectionExists = _config.GetSection("section2:subsection2").Exists();
 ```
 
-<span data-ttu-id="8c24f-544">Considerando os dados de exemplo, `sectionExists` é `false`, pois não existe uma seção `section2:subsection2` nos dados de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-544">Given the example data, `sectionExists` is `false` because there isn't a `section2:subsection2` section in the configuration data.</span></span>
+<span data-ttu-id="88dce-544">Considerando os dados de exemplo, `sectionExists` é `false`, pois não existe uma seção `section2:subsection2` nos dados de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-544">Given the example data, `sectionExists` is `false` because there isn't a `section2:subsection2` section in the configuration data.</span></span>
 
 ::: moniker-end
 
-## <a name="bind-to-a-class"></a><span data-ttu-id="8c24f-545">Associar a uma classe</span><span class="sxs-lookup"><span data-stu-id="8c24f-545">Bind to a class</span></span>
+## <a name="bind-to-a-class"></a><span data-ttu-id="88dce-545">Associar a uma classe</span><span class="sxs-lookup"><span data-stu-id="88dce-545">Bind to a class</span></span>
 
-<span data-ttu-id="8c24f-546">A configuração pode ser associada a classes que representam grupos de configurações relacionadas usando o *padrão de opções*.</span><span class="sxs-lookup"><span data-stu-id="8c24f-546">Configuration can be bound to classes that represent groups of related settings using the *options pattern*.</span></span> <span data-ttu-id="8c24f-547">Para obter mais informações, consulte <xref:fundamentals/configuration/options>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-547">For more information, see <xref:fundamentals/configuration/options>.</span></span>
+<span data-ttu-id="88dce-546">A configuração pode ser associada a classes que representam grupos de configurações relacionadas usando o *padrão de opções*.</span><span class="sxs-lookup"><span data-stu-id="88dce-546">Configuration can be bound to classes that represent groups of related settings using the *options pattern*.</span></span> <span data-ttu-id="88dce-547">Para obter mais informações, consulte <xref:fundamentals/configuration/options>.</span><span class="sxs-lookup"><span data-stu-id="88dce-547">For more information, see <xref:fundamentals/configuration/options>.</span></span>
 
-<span data-ttu-id="8c24f-548">Os valores de configuração retornam como cadeias de caracteres, mas chamar <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> permite a construção de objetos [POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object).</span><span class="sxs-lookup"><span data-stu-id="8c24f-548">Configuration values are returned as strings, but calling <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> enables the construction of [POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object) objects.</span></span>
+<span data-ttu-id="88dce-548">Os valores de configuração retornam como cadeias de caracteres, mas chamar <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> permite a construção de objetos [POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object).</span><span class="sxs-lookup"><span data-stu-id="88dce-548">Configuration values are returned as strings, but calling <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> enables the construction of [POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object) objects.</span></span>
 
-<span data-ttu-id="8c24f-549">O aplicativo de exemplo contém um modelo `Starship` (*Models/Starship.cs*):</span><span class="sxs-lookup"><span data-stu-id="8c24f-549">The sample app contains a `Starship` model (*Models/Starship.cs*):</span></span>
+<span data-ttu-id="88dce-549">O aplicativo de exemplo contém um modelo `Starship` (*Models/Starship.cs*):</span><span class="sxs-lookup"><span data-stu-id="88dce-549">The sample app contains a `Starship` model (*Models/Starship.cs*):</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1385,7 +1385,7 @@ var sectionExists = _config.GetSection("section2:subsection2").Exists();
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-550">A seção `starship` do arquivo *starship.json* cria a configuração quando o aplicativo de exemplo usa o Provedor de Configuração JSON para carregar a configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-550">The `starship` section of the *starship.json* file creates the configuration when the sample app uses the JSON Configuration Provider to load the configuration:</span></span>
+<span data-ttu-id="88dce-550">A seção `starship` do arquivo *starship.json* cria a configuração quando o aplicativo de exemplo usa o Provedor de Configuração JSON para carregar a configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-550">The `starship` section of the *starship.json* file creates the configuration when the sample app uses the JSON Configuration Provider to load the configuration:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1399,18 +1399,18 @@ var sectionExists = _config.GetSection("section2:subsection2").Exists();
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-551">Os seguintes pares chave-valor de configuração são criados:</span><span class="sxs-lookup"><span data-stu-id="8c24f-551">The following configuration key-value pairs are created:</span></span>
+<span data-ttu-id="88dce-551">Os seguintes pares chave-valor de configuração são criados:</span><span class="sxs-lookup"><span data-stu-id="88dce-551">The following configuration key-value pairs are created:</span></span>
 
-| <span data-ttu-id="8c24f-552">Chave</span><span class="sxs-lookup"><span data-stu-id="8c24f-552">Key</span></span>                   | <span data-ttu-id="8c24f-553">Valor</span><span class="sxs-lookup"><span data-stu-id="8c24f-553">Value</span></span>                                             |
+| <span data-ttu-id="88dce-552">Chave</span><span class="sxs-lookup"><span data-stu-id="88dce-552">Key</span></span>                   | <span data-ttu-id="88dce-553">Valor</span><span class="sxs-lookup"><span data-stu-id="88dce-553">Value</span></span>                                             |
 | --------------------- | ------------------------------------------------- |
-| <span data-ttu-id="8c24f-554">starship:name</span><span class="sxs-lookup"><span data-stu-id="8c24f-554">starship:name</span></span>         | <span data-ttu-id="8c24f-555">USS Enterprise</span><span class="sxs-lookup"><span data-stu-id="8c24f-555">USS Enterprise</span></span>                                    |
-| <span data-ttu-id="8c24f-556">starship:registry</span><span class="sxs-lookup"><span data-stu-id="8c24f-556">starship:registry</span></span>     | <span data-ttu-id="8c24f-557">NCC-1701</span><span class="sxs-lookup"><span data-stu-id="8c24f-557">NCC-1701</span></span>                                          |
-| <span data-ttu-id="8c24f-558">starship:class</span><span class="sxs-lookup"><span data-stu-id="8c24f-558">starship:class</span></span>        | <span data-ttu-id="8c24f-559">Constituição</span><span class="sxs-lookup"><span data-stu-id="8c24f-559">Constitution</span></span>                                      |
-| <span data-ttu-id="8c24f-560">starship:length</span><span class="sxs-lookup"><span data-stu-id="8c24f-560">starship:length</span></span>       | <span data-ttu-id="8c24f-561">304,8</span><span class="sxs-lookup"><span data-stu-id="8c24f-561">304.8</span></span>                                             |
-| <span data-ttu-id="8c24f-562">starship:commissioned</span><span class="sxs-lookup"><span data-stu-id="8c24f-562">starship:commissioned</span></span> | <span data-ttu-id="8c24f-563">False</span><span class="sxs-lookup"><span data-stu-id="8c24f-563">False</span></span>                                             |
-| <span data-ttu-id="8c24f-564">marca</span><span class="sxs-lookup"><span data-stu-id="8c24f-564">trademark</span></span>             | <span data-ttu-id="8c24f-565">Paramount Pictures Corp. http://www.paramount.com</span><span class="sxs-lookup"><span data-stu-id="8c24f-565">Paramount Pictures Corp. http://www.paramount.com</span></span> |
+| <span data-ttu-id="88dce-554">starship:name</span><span class="sxs-lookup"><span data-stu-id="88dce-554">starship:name</span></span>         | <span data-ttu-id="88dce-555">USS Enterprise</span><span class="sxs-lookup"><span data-stu-id="88dce-555">USS Enterprise</span></span>                                    |
+| <span data-ttu-id="88dce-556">starship:registry</span><span class="sxs-lookup"><span data-stu-id="88dce-556">starship:registry</span></span>     | <span data-ttu-id="88dce-557">NCC-1701</span><span class="sxs-lookup"><span data-stu-id="88dce-557">NCC-1701</span></span>                                          |
+| <span data-ttu-id="88dce-558">starship:class</span><span class="sxs-lookup"><span data-stu-id="88dce-558">starship:class</span></span>        | <span data-ttu-id="88dce-559">Constituição</span><span class="sxs-lookup"><span data-stu-id="88dce-559">Constitution</span></span>                                      |
+| <span data-ttu-id="88dce-560">starship:length</span><span class="sxs-lookup"><span data-stu-id="88dce-560">starship:length</span></span>       | <span data-ttu-id="88dce-561">304,8</span><span class="sxs-lookup"><span data-stu-id="88dce-561">304.8</span></span>                                             |
+| <span data-ttu-id="88dce-562">starship:commissioned</span><span class="sxs-lookup"><span data-stu-id="88dce-562">starship:commissioned</span></span> | <span data-ttu-id="88dce-563">False</span><span class="sxs-lookup"><span data-stu-id="88dce-563">False</span></span>                                             |
+| <span data-ttu-id="88dce-564">marca</span><span class="sxs-lookup"><span data-stu-id="88dce-564">trademark</span></span>             | <span data-ttu-id="88dce-565">Paramount Pictures Corp. http://www.paramount.com</span><span class="sxs-lookup"><span data-stu-id="88dce-565">Paramount Pictures Corp. http://www.paramount.com</span></span> |
 
-<span data-ttu-id="8c24f-566">O aplicativo de exemplo chama `GetSection` com a chave `starship`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-566">The sample app calls `GetSection` with the `starship` key.</span></span> <span data-ttu-id="8c24f-567">Os pares chave-valor `starship` são isolados.</span><span class="sxs-lookup"><span data-stu-id="8c24f-567">The `starship` key-value pairs are isolated.</span></span> <span data-ttu-id="8c24f-568">O método `Bind` é chamado na subseção passando uma instância da classe `Starship`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-568">The `Bind` method is called on the subsection passing in an instance of the `Starship` class.</span></span> <span data-ttu-id="8c24f-569">Depois de associar os valores de instância, a instância é atribuída a uma propriedade para renderização:</span><span class="sxs-lookup"><span data-stu-id="8c24f-569">After binding the instance values, the instance is assigned to a property for rendering:</span></span>
+<span data-ttu-id="88dce-566">O aplicativo de exemplo chama `GetSection` com a chave `starship`.</span><span class="sxs-lookup"><span data-stu-id="88dce-566">The sample app calls `GetSection` with the `starship` key.</span></span> <span data-ttu-id="88dce-567">Os pares chave-valor `starship` são isolados.</span><span class="sxs-lookup"><span data-stu-id="88dce-567">The `starship` key-value pairs are isolated.</span></span> <span data-ttu-id="88dce-568">O método `Bind` é chamado na subseção passando uma instância da classe `Starship`.</span><span class="sxs-lookup"><span data-stu-id="88dce-568">The `Bind` method is called on the subsection passing in an instance of the `Starship` class.</span></span> <span data-ttu-id="88dce-569">Depois de associar os valores de instância, a instância é atribuída a uma propriedade para renderização:</span><span class="sxs-lookup"><span data-stu-id="88dce-569">After binding the instance values, the instance is assigned to a property for rendering:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1424,11 +1424,11 @@ var sectionExists = _config.GetSection("section2:subsection2").Exists();
 
 ::: moniker-end
 
-## <a name="bind-to-an-object-graph"></a><span data-ttu-id="8c24f-570">Associar a um gráfico de objeto</span><span class="sxs-lookup"><span data-stu-id="8c24f-570">Bind to an object graph</span></span>
+## <a name="bind-to-an-object-graph"></a><span data-ttu-id="88dce-570">Associar a um gráfico de objeto</span><span class="sxs-lookup"><span data-stu-id="88dce-570">Bind to an object graph</span></span>
 
-<span data-ttu-id="8c24f-571"><xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> é capaz de associar um grafo de objeto POCO inteiro.</span><span class="sxs-lookup"><span data-stu-id="8c24f-571"><xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> is capable of binding an entire POCO object graph.</span></span>
+<span data-ttu-id="88dce-571"><xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> é capaz de associar um grafo de objeto POCO inteiro.</span><span class="sxs-lookup"><span data-stu-id="88dce-571"><xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> is capable of binding an entire POCO object graph.</span></span>
 
-<span data-ttu-id="8c24f-572">O exemplo contém um modelo `TvShow` cujo grafo do objeto inclui as classes `Metadata` e `Actors` (*Models/TvShow.cs*):</span><span class="sxs-lookup"><span data-stu-id="8c24f-572">The sample contains a `TvShow` model whose object graph includes `Metadata` and `Actors` classes (*Models/TvShow.cs*):</span></span>
+<span data-ttu-id="88dce-572">O exemplo contém um modelo `TvShow` cujo grafo do objeto inclui as classes `Metadata` e `Actors` (*Models/TvShow.cs*):</span><span class="sxs-lookup"><span data-stu-id="88dce-572">The sample contains a `TvShow` model whose object graph includes `Metadata` and `Actors` classes (*Models/TvShow.cs*):</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1442,7 +1442,7 @@ var sectionExists = _config.GetSection("section2:subsection2").Exists();
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-573">O aplicativo de exemplo tem um arquivo *tvshow.xml* que contém os dados de configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-573">The sample app has a *tvshow.xml* file containing the configuration data:</span></span>
+<span data-ttu-id="88dce-573">O aplicativo de exemplo tem um arquivo *tvshow.xml* que contém os dados de configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-573">The sample app has a *tvshow.xml* file containing the configuration data:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1456,7 +1456,7 @@ var sectionExists = _config.GetSection("section2:subsection2").Exists();
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-574">A configuração está associada ao método do grafo de objeto `TvShow` inteiro com o método `Bind`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-574">Configuration is bound to the entire `TvShow` object graph with the `Bind` method.</span></span> <span data-ttu-id="8c24f-575">A instância associada é atribuída a uma propriedade para renderização:</span><span class="sxs-lookup"><span data-stu-id="8c24f-575">The bound instance is assigned to a property for rendering:</span></span>
+<span data-ttu-id="88dce-574">A configuração está associada ao método do grafo de objeto `TvShow` inteiro com o método `Bind`.</span><span class="sxs-lookup"><span data-stu-id="88dce-574">Configuration is bound to the entire `TvShow` object graph with the `Bind` method.</span></span> <span data-ttu-id="88dce-575">A instância associada é atribuída a uma propriedade para renderização:</span><span class="sxs-lookup"><span data-stu-id="88dce-575">The bound instance is assigned to a property for rendering:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1480,7 +1480,7 @@ viewModel.TvShow = tvShow;
 
 ::: moniker range=">= aspnetcore-1.1"
 
-<span data-ttu-id="8c24f-576">[ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*) associa e retorna o tipo especificado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-576">[ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*) binds and returns the specified type.</span></span> <span data-ttu-id="8c24f-577">O `Get<T>` é mais conveniente do que usar `Bind`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-577">`Get<T>` is more convenient than using `Bind`.</span></span> <span data-ttu-id="8c24f-578">O código a seguir mostra como usar `Get<T>` com o exemplo anterior, que permite que a instância associada seja diretamente atribuída à propriedade usada para renderização:</span><span class="sxs-lookup"><span data-stu-id="8c24f-578">The following code shows how to use `Get<T>` with the preceding example, which allows the bound instance to be directly assigned to the property used for rendering:</span></span>
+<span data-ttu-id="88dce-576">[ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*) associa e retorna o tipo especificado.</span><span class="sxs-lookup"><span data-stu-id="88dce-576">[ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*) binds and returns the specified type.</span></span> <span data-ttu-id="88dce-577">O `Get<T>` é mais conveniente do que usar `Bind`.</span><span class="sxs-lookup"><span data-stu-id="88dce-577">`Get<T>` is more convenient than using `Bind`.</span></span> <span data-ttu-id="88dce-578">O código a seguir mostra como usar `Get<T>` com o exemplo anterior, que permite que a instância associada seja diretamente atribuída à propriedade usada para renderização:</span><span class="sxs-lookup"><span data-stu-id="88dce-578">The following code shows how to use `Get<T>` with the preceding example, which allows the bound instance to be directly assigned to the property used for rendering:</span></span>
 
 ::: moniker-end
 
@@ -1496,28 +1496,28 @@ viewModel.TvShow = tvShow;
 
 ::: moniker-end
 
-## <a name="bind-an-array-to-a-class"></a><span data-ttu-id="8c24f-579">Associar uma matriz a uma classe</span><span class="sxs-lookup"><span data-stu-id="8c24f-579">Bind an array to a class</span></span>
+## <a name="bind-an-array-to-a-class"></a><span data-ttu-id="88dce-579">Associar uma matriz a uma classe</span><span class="sxs-lookup"><span data-stu-id="88dce-579">Bind an array to a class</span></span>
 
-<span data-ttu-id="8c24f-580">*O aplicativo de exemplo demonstra os conceitos explicados nesta seção.*</span><span class="sxs-lookup"><span data-stu-id="8c24f-580">*The sample app demonstrates the concepts explained in this section.*</span></span>
+<span data-ttu-id="88dce-580">*O aplicativo de exemplo demonstra os conceitos explicados nesta seção.*</span><span class="sxs-lookup"><span data-stu-id="88dce-580">*The sample app demonstrates the concepts explained in this section.*</span></span>
 
-<span data-ttu-id="8c24f-581">O <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> dá suporte a matrizes de associação para objetos usando os índices em chaves de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-581">The <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> supports binding arrays to objects using array indices in configuration keys.</span></span> <span data-ttu-id="8c24f-582">Qualquer formato de matriz que exponha um segmento de chave numérica (`:0:`, `:1:`, &hellip; `:{n}:`) é capaz de associar matrizes a uma matriz de classe POCO.</span><span class="sxs-lookup"><span data-stu-id="8c24f-582">Any array format that exposes a numeric key segment (`:0:`, `:1:`, &hellip; `:{n}:`) is capable of array binding to a POCO class array.</span></span>
+<span data-ttu-id="88dce-581">O <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> dá suporte a matrizes de associação para objetos usando os índices em chaves de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-581">The <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> supports binding arrays to objects using array indices in configuration keys.</span></span> <span data-ttu-id="88dce-582">Qualquer formato de matriz que exponha um segmento de chave numérica (`:0:`, `:1:`, &hellip; `:{n}:`) é capaz de associar matrizes a uma matriz de classe POCO.</span><span class="sxs-lookup"><span data-stu-id="88dce-582">Any array format that exposes a numeric key segment (`:0:`, `:1:`, &hellip; `:{n}:`) is capable of array binding to a POCO class array.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8c24f-583">A associação é fornecida por convenção.</span><span class="sxs-lookup"><span data-stu-id="8c24f-583">Binding is provided by convention.</span></span> <span data-ttu-id="8c24f-584">Provedores de configuração personalizados não são necessários para implementar a associação de matriz.</span><span class="sxs-lookup"><span data-stu-id="8c24f-584">Custom configuration providers aren't required to implement array binding.</span></span>
+> <span data-ttu-id="88dce-583">A associação é fornecida por convenção.</span><span class="sxs-lookup"><span data-stu-id="88dce-583">Binding is provided by convention.</span></span> <span data-ttu-id="88dce-584">Provedores de configuração personalizados não são necessários para implementar a associação de matriz.</span><span class="sxs-lookup"><span data-stu-id="88dce-584">Custom configuration providers aren't required to implement array binding.</span></span>
 
-<span data-ttu-id="8c24f-585">**Processamento de matriz na memória**</span><span class="sxs-lookup"><span data-stu-id="8c24f-585">**In-memory array processing**</span></span>
+<span data-ttu-id="88dce-585">**Processamento de matriz na memória**</span><span class="sxs-lookup"><span data-stu-id="88dce-585">**In-memory array processing**</span></span>
 
-<span data-ttu-id="8c24f-586">Considere as chaves de configuração e os valores mostrados na tabela a seguir.</span><span class="sxs-lookup"><span data-stu-id="8c24f-586">Consider the configuration keys and values shown in the following table.</span></span>
+<span data-ttu-id="88dce-586">Considere as chaves de configuração e os valores mostrados na tabela a seguir.</span><span class="sxs-lookup"><span data-stu-id="88dce-586">Consider the configuration keys and values shown in the following table.</span></span>
 
-| <span data-ttu-id="8c24f-587">Chave</span><span class="sxs-lookup"><span data-stu-id="8c24f-587">Key</span></span>     | <span data-ttu-id="8c24f-588">Valor</span><span class="sxs-lookup"><span data-stu-id="8c24f-588">Value</span></span>  |
+| <span data-ttu-id="88dce-587">Chave</span><span class="sxs-lookup"><span data-stu-id="88dce-587">Key</span></span>     | <span data-ttu-id="88dce-588">Valor</span><span class="sxs-lookup"><span data-stu-id="88dce-588">Value</span></span>  |
 | :-----: | :----: |
-| <span data-ttu-id="8c24f-589">array:0</span><span class="sxs-lookup"><span data-stu-id="8c24f-589">array:0</span></span> | <span data-ttu-id="8c24f-590">value0</span><span class="sxs-lookup"><span data-stu-id="8c24f-590">value0</span></span> |
-| <span data-ttu-id="8c24f-591">array:1</span><span class="sxs-lookup"><span data-stu-id="8c24f-591">array:1</span></span> | <span data-ttu-id="8c24f-592">value1</span><span class="sxs-lookup"><span data-stu-id="8c24f-592">value1</span></span> |
-| <span data-ttu-id="8c24f-593">array:2</span><span class="sxs-lookup"><span data-stu-id="8c24f-593">array:2</span></span> | <span data-ttu-id="8c24f-594">value2</span><span class="sxs-lookup"><span data-stu-id="8c24f-594">value2</span></span> |
-| <span data-ttu-id="8c24f-595">array:4</span><span class="sxs-lookup"><span data-stu-id="8c24f-595">array:4</span></span> | <span data-ttu-id="8c24f-596">value4</span><span class="sxs-lookup"><span data-stu-id="8c24f-596">value4</span></span> |
-| <span data-ttu-id="8c24f-597">array:5</span><span class="sxs-lookup"><span data-stu-id="8c24f-597">array:5</span></span> | <span data-ttu-id="8c24f-598">value5</span><span class="sxs-lookup"><span data-stu-id="8c24f-598">value5</span></span> |
+| <span data-ttu-id="88dce-589">array:0</span><span class="sxs-lookup"><span data-stu-id="88dce-589">array:0</span></span> | <span data-ttu-id="88dce-590">value0</span><span class="sxs-lookup"><span data-stu-id="88dce-590">value0</span></span> |
+| <span data-ttu-id="88dce-591">array:1</span><span class="sxs-lookup"><span data-stu-id="88dce-591">array:1</span></span> | <span data-ttu-id="88dce-592">value1</span><span class="sxs-lookup"><span data-stu-id="88dce-592">value1</span></span> |
+| <span data-ttu-id="88dce-593">array:2</span><span class="sxs-lookup"><span data-stu-id="88dce-593">array:2</span></span> | <span data-ttu-id="88dce-594">value2</span><span class="sxs-lookup"><span data-stu-id="88dce-594">value2</span></span> |
+| <span data-ttu-id="88dce-595">array:4</span><span class="sxs-lookup"><span data-stu-id="88dce-595">array:4</span></span> | <span data-ttu-id="88dce-596">value4</span><span class="sxs-lookup"><span data-stu-id="88dce-596">value4</span></span> |
+| <span data-ttu-id="88dce-597">array:5</span><span class="sxs-lookup"><span data-stu-id="88dce-597">array:5</span></span> | <span data-ttu-id="88dce-598">value5</span><span class="sxs-lookup"><span data-stu-id="88dce-598">value5</span></span> |
 
-<span data-ttu-id="8c24f-599">Essas chaves e valores são carregados no aplicativo de exemplo usando o Provedor de Configuração de Memória:</span><span class="sxs-lookup"><span data-stu-id="8c24f-599">These keys and values are loaded in the sample app using the Memory Configuration Provider:</span></span>
+<span data-ttu-id="88dce-599">Essas chaves e valores são carregados no aplicativo de exemplo usando o Provedor de Configuração de Memória:</span><span class="sxs-lookup"><span data-stu-id="88dce-599">These keys and values are loaded in the sample app using the Memory Configuration Provider:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1531,9 +1531,9 @@ viewModel.TvShow = tvShow;
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-600">A matriz ignora um valor para o índice &num;3.</span><span class="sxs-lookup"><span data-stu-id="8c24f-600">The array skips a value for index &num;3.</span></span> <span data-ttu-id="8c24f-601">O associador de configuração não é capaz de associar valores nulos ou criar entradas nulas em objetos associados, o que fica claro em um momento quando o resultado da associação dessa matriz a um objeto é demonstrado.</span><span class="sxs-lookup"><span data-stu-id="8c24f-601">The configuration binder isn't capable of binding null values or creating null entries in bound objects, which becomes clear in a moment when the result of binding this array to an object is demonstrated.</span></span>
+<span data-ttu-id="88dce-600">A matriz ignora um valor para o índice &num;3.</span><span class="sxs-lookup"><span data-stu-id="88dce-600">The array skips a value for index &num;3.</span></span> <span data-ttu-id="88dce-601">O associador de configuração não é capaz de associar valores nulos ou criar entradas nulas em objetos associados, o que fica claro em um momento quando o resultado da associação dessa matriz a um objeto é demonstrado.</span><span class="sxs-lookup"><span data-stu-id="88dce-601">The configuration binder isn't capable of binding null values or creating null entries in bound objects, which becomes clear in a moment when the result of binding this array to an object is demonstrated.</span></span>
 
-<span data-ttu-id="8c24f-602">No aplicativo de exemplo, uma classe POCO está disponível para armazenar os dados de configuração associados:</span><span class="sxs-lookup"><span data-stu-id="8c24f-602">In the sample app, a POCO class is available to hold the bound configuration data:</span></span>
+<span data-ttu-id="88dce-602">No aplicativo de exemplo, uma classe POCO está disponível para armazenar os dados de configuração associados:</span><span class="sxs-lookup"><span data-stu-id="88dce-602">In the sample app, a POCO class is available to hold the bound configuration data:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1547,7 +1547,7 @@ viewModel.TvShow = tvShow;
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-603">Os dados de configuração estão associados ao objeto:</span><span class="sxs-lookup"><span data-stu-id="8c24f-603">The configuration data is bound to the object:</span></span>
+<span data-ttu-id="88dce-603">Os dados de configuração estão associados ao objeto:</span><span class="sxs-lookup"><span data-stu-id="88dce-603">The configuration data is bound to the object:</span></span>
 
 ```csharp
 var arrayExample = new ArrayExample();
@@ -1556,7 +1556,7 @@ _config.GetSection("array").Bind(arrayExample);
 
 ::: moniker range=">= aspnetcore-1.1"
 
-<span data-ttu-id="8c24f-604">A sintaxe [ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*) também pode ser usada, o que resulta em um código mais compacto:</span><span class="sxs-lookup"><span data-stu-id="8c24f-604">[ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*) syntax can also be used, which results in more compact code:</span></span>
+<span data-ttu-id="88dce-604">A sintaxe [ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*) também pode ser usada, o que resulta em um código mais compacto:</span><span class="sxs-lookup"><span data-stu-id="88dce-604">[ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Get*) syntax can also be used, which results in more compact code:</span></span>
 
 ::: moniker-end
 
@@ -1572,21 +1572,21 @@ _config.GetSection("array").Bind(arrayExample);
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-605">O objeto associado, uma instância de `ArrayExample`, recebe os dados da matriz de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-605">The bound object, an instance of `ArrayExample`, receives the array data from configuration.</span></span>
+<span data-ttu-id="88dce-605">O objeto associado, uma instância de `ArrayExample`, recebe os dados da matriz de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-605">The bound object, an instance of `ArrayExample`, receives the array data from configuration.</span></span>
 
-| <span data-ttu-id="8c24f-606">Índice `ArrayExamples.Entries`</span><span class="sxs-lookup"><span data-stu-id="8c24f-606">`ArrayExamples.Entries` Index</span></span> | <span data-ttu-id="8c24f-607">Valor `ArrayExamples.Entries`</span><span class="sxs-lookup"><span data-stu-id="8c24f-607">`ArrayExamples.Entries` Value</span></span> |
+| <span data-ttu-id="88dce-606">Índice `ArrayExamples.Entries`</span><span class="sxs-lookup"><span data-stu-id="88dce-606">`ArrayExamples.Entries` Index</span></span> | <span data-ttu-id="88dce-607">Valor `ArrayExamples.Entries`</span><span class="sxs-lookup"><span data-stu-id="88dce-607">`ArrayExamples.Entries` Value</span></span> |
 | :---------------------------: | :---------------------------: |
-| <span data-ttu-id="8c24f-608">0</span><span class="sxs-lookup"><span data-stu-id="8c24f-608">0</span></span>                             | <span data-ttu-id="8c24f-609">value0</span><span class="sxs-lookup"><span data-stu-id="8c24f-609">value0</span></span>                        |
-| <span data-ttu-id="8c24f-610">1</span><span class="sxs-lookup"><span data-stu-id="8c24f-610">1</span></span>                             | <span data-ttu-id="8c24f-611">value1</span><span class="sxs-lookup"><span data-stu-id="8c24f-611">value1</span></span>                        |
-| <span data-ttu-id="8c24f-612">2</span><span class="sxs-lookup"><span data-stu-id="8c24f-612">2</span></span>                             | <span data-ttu-id="8c24f-613">value2</span><span class="sxs-lookup"><span data-stu-id="8c24f-613">value2</span></span>                        |
-| <span data-ttu-id="8c24f-614">3</span><span class="sxs-lookup"><span data-stu-id="8c24f-614">3</span></span>                             | <span data-ttu-id="8c24f-615">value4</span><span class="sxs-lookup"><span data-stu-id="8c24f-615">value4</span></span>                        |
-| <span data-ttu-id="8c24f-616">4</span><span class="sxs-lookup"><span data-stu-id="8c24f-616">4</span></span>                             | <span data-ttu-id="8c24f-617">value5</span><span class="sxs-lookup"><span data-stu-id="8c24f-617">value5</span></span>                        |
+| <span data-ttu-id="88dce-608">0</span><span class="sxs-lookup"><span data-stu-id="88dce-608">0</span></span>                             | <span data-ttu-id="88dce-609">value0</span><span class="sxs-lookup"><span data-stu-id="88dce-609">value0</span></span>                        |
+| <span data-ttu-id="88dce-610">1</span><span class="sxs-lookup"><span data-stu-id="88dce-610">1</span></span>                             | <span data-ttu-id="88dce-611">value1</span><span class="sxs-lookup"><span data-stu-id="88dce-611">value1</span></span>                        |
+| <span data-ttu-id="88dce-612">2</span><span class="sxs-lookup"><span data-stu-id="88dce-612">2</span></span>                             | <span data-ttu-id="88dce-613">value2</span><span class="sxs-lookup"><span data-stu-id="88dce-613">value2</span></span>                        |
+| <span data-ttu-id="88dce-614">3</span><span class="sxs-lookup"><span data-stu-id="88dce-614">3</span></span>                             | <span data-ttu-id="88dce-615">value4</span><span class="sxs-lookup"><span data-stu-id="88dce-615">value4</span></span>                        |
+| <span data-ttu-id="88dce-616">4</span><span class="sxs-lookup"><span data-stu-id="88dce-616">4</span></span>                             | <span data-ttu-id="88dce-617">value5</span><span class="sxs-lookup"><span data-stu-id="88dce-617">value5</span></span>                        |
 
-<span data-ttu-id="8c24f-618">O índice &num;3 no objeto associado contém os dados de configuração para a chave de configuração `array:4` e seu valor de `value4`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-618">Index &num;3 in the bound object holds the configuration data for the `array:4` configuration key and its value of `value4`.</span></span> <span data-ttu-id="8c24f-619">Quando os dados de configuração que contêm uma matriz são associados, os índices da matriz nas chaves de configuração são simplesmente usados para iterar os dados de configuração ao criar o objeto.</span><span class="sxs-lookup"><span data-stu-id="8c24f-619">When configuration data containing an array is bound, the array indices in the configuration keys are merely used to iterate the configuration data when creating the object.</span></span> <span data-ttu-id="8c24f-620">Um valor nulo não pode ser mantido nos dados de configuração, e uma entrada de valor nulo não será criada em um objeto de associação quando uma matriz nas chaves de configuração ignorar um ou mais índices.</span><span class="sxs-lookup"><span data-stu-id="8c24f-620">A null value can't be retained in configuration data, and a null-valued entry isn't created in a bound object when an array in configuration keys skip one or more indices.</span></span>
+<span data-ttu-id="88dce-618">O índice &num;3 no objeto associado contém os dados de configuração para a chave de configuração `array:4` e seu valor de `value4`.</span><span class="sxs-lookup"><span data-stu-id="88dce-618">Index &num;3 in the bound object holds the configuration data for the `array:4` configuration key and its value of `value4`.</span></span> <span data-ttu-id="88dce-619">Quando os dados de configuração que contêm uma matriz são associados, os índices da matriz nas chaves de configuração são simplesmente usados para iterar os dados de configuração ao criar o objeto.</span><span class="sxs-lookup"><span data-stu-id="88dce-619">When configuration data containing an array is bound, the array indices in the configuration keys are merely used to iterate the configuration data when creating the object.</span></span> <span data-ttu-id="88dce-620">Um valor nulo não pode ser mantido nos dados de configuração, e uma entrada de valor nulo não será criada em um objeto de associação quando uma matriz nas chaves de configuração ignorar um ou mais índices.</span><span class="sxs-lookup"><span data-stu-id="88dce-620">A null value can't be retained in configuration data, and a null-valued entry isn't created in a bound object when an array in configuration keys skip one or more indices.</span></span>
 
-<span data-ttu-id="8c24f-621">O item de configuração ausente para o índice &num;3 pode ser fornecido antes da associação à instância `ArrayExamples` por qualquer provedor de configuração que produza o par chave-valor correto na configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-621">The missing configuration item for index &num;3 can be supplied before binding to the `ArrayExamples` instance by any configuration provider that produces the correct key-value pair in configuration.</span></span> <span data-ttu-id="8c24f-622">Se o exemplo incluir um Provedor de Configuração JSON adicional com o par chave-valor ausente, o `ArrayExamples.Entries` coincidirá com a matriz de configuração completa:</span><span class="sxs-lookup"><span data-stu-id="8c24f-622">If the sample included an additional JSON Configuration Provider with the missing key-value pair, the `ArrayExamples.Entries` matches the complete configuration array:</span></span>
+<span data-ttu-id="88dce-621">O item de configuração ausente para o índice &num;3 pode ser fornecido antes da associação à instância `ArrayExamples` por qualquer provedor de configuração que produza o par chave-valor correto na configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-621">The missing configuration item for index &num;3 can be supplied before binding to the `ArrayExamples` instance by any configuration provider that produces the correct key-value pair in configuration.</span></span> <span data-ttu-id="88dce-622">Se o exemplo incluir um Provedor de Configuração JSON adicional com o par chave-valor ausente, o `ArrayExamples.Entries` coincidirá com a matriz de configuração completa:</span><span class="sxs-lookup"><span data-stu-id="88dce-622">If the sample included an additional JSON Configuration Provider with the missing key-value pair, the `ArrayExamples.Entries` matches the complete configuration array:</span></span>
 
-<span data-ttu-id="8c24f-623">*missing_value.json*:</span><span class="sxs-lookup"><span data-stu-id="8c24f-623">*missing_value.json*:</span></span>
+<span data-ttu-id="88dce-623">*missing_value.json*:</span><span class="sxs-lookup"><span data-stu-id="88dce-623">*missing_value.json*:</span></span>
 
 ```json
 {
@@ -1596,7 +1596,7 @@ _config.GetSection("array").Bind(arrayExample);
 
 ::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-624">No <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="8c24f-624">In <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>:</span></span>
+<span data-ttu-id="88dce-624">No <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>:</span><span class="sxs-lookup"><span data-stu-id="88dce-624">In <xref:Microsoft.Extensions.Hosting.HostBuilder.ConfigureAppConfiguration*>:</span></span>
 
 ```csharp
 config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false);
@@ -1606,7 +1606,7 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker range="< aspnetcore-2.0"
 
-<span data-ttu-id="8c24f-625">No construtor `Startup`:</span><span class="sxs-lookup"><span data-stu-id="8c24f-625">In the `Startup` constructor:</span></span>
+<span data-ttu-id="88dce-625">No construtor `Startup`:</span><span class="sxs-lookup"><span data-stu-id="88dce-625">In the `Startup` constructor:</span></span>
 
 ```csharp
 .AddJsonFile("missing_value.json", optional: false, reloadOnChange: false);
@@ -1614,26 +1614,26 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-626">O par chave-valor mostrado na tabela é carregado na configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-626">The key-value pair shown in the table is loaded into configuration.</span></span>
+<span data-ttu-id="88dce-626">O par chave-valor mostrado na tabela é carregado na configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-626">The key-value pair shown in the table is loaded into configuration.</span></span>
 
-| <span data-ttu-id="8c24f-627">Chave</span><span class="sxs-lookup"><span data-stu-id="8c24f-627">Key</span></span>             | <span data-ttu-id="8c24f-628">Valor</span><span class="sxs-lookup"><span data-stu-id="8c24f-628">Value</span></span>  |
+| <span data-ttu-id="88dce-627">Chave</span><span class="sxs-lookup"><span data-stu-id="88dce-627">Key</span></span>             | <span data-ttu-id="88dce-628">Valor</span><span class="sxs-lookup"><span data-stu-id="88dce-628">Value</span></span>  |
 | :-------------: | :----: |
-| <span data-ttu-id="8c24f-629">array:entries:3</span><span class="sxs-lookup"><span data-stu-id="8c24f-629">array:entries:3</span></span> | <span data-ttu-id="8c24f-630">value3</span><span class="sxs-lookup"><span data-stu-id="8c24f-630">value3</span></span> |
+| <span data-ttu-id="88dce-629">array:entries:3</span><span class="sxs-lookup"><span data-stu-id="88dce-629">array:entries:3</span></span> | <span data-ttu-id="88dce-630">value3</span><span class="sxs-lookup"><span data-stu-id="88dce-630">value3</span></span> |
 
-<span data-ttu-id="8c24f-631">Se a instância da classe `ArrayExamples` for associada após o Provedor de Configuração JSON incluir a entrada para o índice &num;3, a matriz `ArrayExamples.Entries` incluirá o valor.</span><span class="sxs-lookup"><span data-stu-id="8c24f-631">If the `ArrayExamples` class instance is bound after the JSON Configuration Provider includes the entry for index &num;3, the `ArrayExamples.Entries` array includes the value.</span></span>
+<span data-ttu-id="88dce-631">Se a instância da classe `ArrayExamples` for associada após o Provedor de Configuração JSON incluir a entrada para o índice &num;3, a matriz `ArrayExamples.Entries` incluirá o valor.</span><span class="sxs-lookup"><span data-stu-id="88dce-631">If the `ArrayExamples` class instance is bound after the JSON Configuration Provider includes the entry for index &num;3, the `ArrayExamples.Entries` array includes the value.</span></span>
 
-| <span data-ttu-id="8c24f-632">Índice `ArrayExamples.Entries`</span><span class="sxs-lookup"><span data-stu-id="8c24f-632">`ArrayExamples.Entries` Index</span></span> | <span data-ttu-id="8c24f-633">Valor `ArrayExamples.Entries`</span><span class="sxs-lookup"><span data-stu-id="8c24f-633">`ArrayExamples.Entries` Value</span></span> |
+| <span data-ttu-id="88dce-632">Índice `ArrayExamples.Entries`</span><span class="sxs-lookup"><span data-stu-id="88dce-632">`ArrayExamples.Entries` Index</span></span> | <span data-ttu-id="88dce-633">Valor `ArrayExamples.Entries`</span><span class="sxs-lookup"><span data-stu-id="88dce-633">`ArrayExamples.Entries` Value</span></span> |
 | :---------------------------: | :---------------------------: |
-| <span data-ttu-id="8c24f-634">0</span><span class="sxs-lookup"><span data-stu-id="8c24f-634">0</span></span>                             | <span data-ttu-id="8c24f-635">value0</span><span class="sxs-lookup"><span data-stu-id="8c24f-635">value0</span></span>                        |
-| <span data-ttu-id="8c24f-636">1</span><span class="sxs-lookup"><span data-stu-id="8c24f-636">1</span></span>                             | <span data-ttu-id="8c24f-637">value1</span><span class="sxs-lookup"><span data-stu-id="8c24f-637">value1</span></span>                        |
-| <span data-ttu-id="8c24f-638">2</span><span class="sxs-lookup"><span data-stu-id="8c24f-638">2</span></span>                             | <span data-ttu-id="8c24f-639">value2</span><span class="sxs-lookup"><span data-stu-id="8c24f-639">value2</span></span>                        |
-| <span data-ttu-id="8c24f-640">3</span><span class="sxs-lookup"><span data-stu-id="8c24f-640">3</span></span>                             | <span data-ttu-id="8c24f-641">value3</span><span class="sxs-lookup"><span data-stu-id="8c24f-641">value3</span></span>                        |
-| <span data-ttu-id="8c24f-642">4</span><span class="sxs-lookup"><span data-stu-id="8c24f-642">4</span></span>                             | <span data-ttu-id="8c24f-643">value4</span><span class="sxs-lookup"><span data-stu-id="8c24f-643">value4</span></span>                        |
-| <span data-ttu-id="8c24f-644">5</span><span class="sxs-lookup"><span data-stu-id="8c24f-644">5</span></span>                             | <span data-ttu-id="8c24f-645">value5</span><span class="sxs-lookup"><span data-stu-id="8c24f-645">value5</span></span>                        |
+| <span data-ttu-id="88dce-634">0</span><span class="sxs-lookup"><span data-stu-id="88dce-634">0</span></span>                             | <span data-ttu-id="88dce-635">value0</span><span class="sxs-lookup"><span data-stu-id="88dce-635">value0</span></span>                        |
+| <span data-ttu-id="88dce-636">1</span><span class="sxs-lookup"><span data-stu-id="88dce-636">1</span></span>                             | <span data-ttu-id="88dce-637">value1</span><span class="sxs-lookup"><span data-stu-id="88dce-637">value1</span></span>                        |
+| <span data-ttu-id="88dce-638">2</span><span class="sxs-lookup"><span data-stu-id="88dce-638">2</span></span>                             | <span data-ttu-id="88dce-639">value2</span><span class="sxs-lookup"><span data-stu-id="88dce-639">value2</span></span>                        |
+| <span data-ttu-id="88dce-640">3</span><span class="sxs-lookup"><span data-stu-id="88dce-640">3</span></span>                             | <span data-ttu-id="88dce-641">value3</span><span class="sxs-lookup"><span data-stu-id="88dce-641">value3</span></span>                        |
+| <span data-ttu-id="88dce-642">4</span><span class="sxs-lookup"><span data-stu-id="88dce-642">4</span></span>                             | <span data-ttu-id="88dce-643">value4</span><span class="sxs-lookup"><span data-stu-id="88dce-643">value4</span></span>                        |
+| <span data-ttu-id="88dce-644">5</span><span class="sxs-lookup"><span data-stu-id="88dce-644">5</span></span>                             | <span data-ttu-id="88dce-645">value5</span><span class="sxs-lookup"><span data-stu-id="88dce-645">value5</span></span>                        |
 
-<span data-ttu-id="8c24f-646">**Processamento de matriz JSON**</span><span class="sxs-lookup"><span data-stu-id="8c24f-646">**JSON array processing**</span></span>
+<span data-ttu-id="88dce-646">**Processamento de matriz JSON**</span><span class="sxs-lookup"><span data-stu-id="88dce-646">**JSON array processing**</span></span>
 
-<span data-ttu-id="8c24f-647">Se um arquivo JSON contiver uma matriz, as chaves de configuração serão criadas para os elementos da matriz com um índice de seção de base zero.</span><span class="sxs-lookup"><span data-stu-id="8c24f-647">If a JSON file contains an array, configuration keys are created for the array elements with a zero-based section index.</span></span> <span data-ttu-id="8c24f-648">No arquivo de configuração a seguir, `subsection` é uma matriz:</span><span class="sxs-lookup"><span data-stu-id="8c24f-648">In the following configuration file, `subsection` is an array:</span></span>
+<span data-ttu-id="88dce-647">Se um arquivo JSON contiver uma matriz, as chaves de configuração serão criadas para os elementos da matriz com um índice de seção de base zero.</span><span class="sxs-lookup"><span data-stu-id="88dce-647">If a JSON file contains an array, configuration keys are created for the array elements with a zero-based section index.</span></span> <span data-ttu-id="88dce-648">No arquivo de configuração a seguir, `subsection` é uma matriz:</span><span class="sxs-lookup"><span data-stu-id="88dce-648">In the following configuration file, `subsection` is an array:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1647,16 +1647,16 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-649">O Provedor de Configuração JSON lê os dados de configuração para os seguintes pares chave-valor:</span><span class="sxs-lookup"><span data-stu-id="8c24f-649">The JSON Configuration Provider reads the configuration data into the following key-value pairs:</span></span>
+<span data-ttu-id="88dce-649">O Provedor de Configuração JSON lê os dados de configuração para os seguintes pares chave-valor:</span><span class="sxs-lookup"><span data-stu-id="88dce-649">The JSON Configuration Provider reads the configuration data into the following key-value pairs:</span></span>
 
-| <span data-ttu-id="8c24f-650">Chave</span><span class="sxs-lookup"><span data-stu-id="8c24f-650">Key</span></span>                     | <span data-ttu-id="8c24f-651">Valor</span><span class="sxs-lookup"><span data-stu-id="8c24f-651">Value</span></span>  |
+| <span data-ttu-id="88dce-650">Chave</span><span class="sxs-lookup"><span data-stu-id="88dce-650">Key</span></span>                     | <span data-ttu-id="88dce-651">Valor</span><span class="sxs-lookup"><span data-stu-id="88dce-651">Value</span></span>  |
 | ----------------------- | :----: |
-| <span data-ttu-id="8c24f-652">json_array:key</span><span class="sxs-lookup"><span data-stu-id="8c24f-652">json_array:key</span></span>          | <span data-ttu-id="8c24f-653">valueA</span><span class="sxs-lookup"><span data-stu-id="8c24f-653">valueA</span></span> |
-| <span data-ttu-id="8c24f-654">json_array:subsection:0</span><span class="sxs-lookup"><span data-stu-id="8c24f-654">json_array:subsection:0</span></span> | <span data-ttu-id="8c24f-655">valueB</span><span class="sxs-lookup"><span data-stu-id="8c24f-655">valueB</span></span> |
-| <span data-ttu-id="8c24f-656">json_array:subsection:1</span><span class="sxs-lookup"><span data-stu-id="8c24f-656">json_array:subsection:1</span></span> | <span data-ttu-id="8c24f-657">valueC</span><span class="sxs-lookup"><span data-stu-id="8c24f-657">valueC</span></span> |
-| <span data-ttu-id="8c24f-658">json_array:subsection:2</span><span class="sxs-lookup"><span data-stu-id="8c24f-658">json_array:subsection:2</span></span> | <span data-ttu-id="8c24f-659">valueD</span><span class="sxs-lookup"><span data-stu-id="8c24f-659">valueD</span></span> |
+| <span data-ttu-id="88dce-652">json_array:key</span><span class="sxs-lookup"><span data-stu-id="88dce-652">json_array:key</span></span>          | <span data-ttu-id="88dce-653">valueA</span><span class="sxs-lookup"><span data-stu-id="88dce-653">valueA</span></span> |
+| <span data-ttu-id="88dce-654">json_array:subsection:0</span><span class="sxs-lookup"><span data-stu-id="88dce-654">json_array:subsection:0</span></span> | <span data-ttu-id="88dce-655">valueB</span><span class="sxs-lookup"><span data-stu-id="88dce-655">valueB</span></span> |
+| <span data-ttu-id="88dce-656">json_array:subsection:1</span><span class="sxs-lookup"><span data-stu-id="88dce-656">json_array:subsection:1</span></span> | <span data-ttu-id="88dce-657">valueC</span><span class="sxs-lookup"><span data-stu-id="88dce-657">valueC</span></span> |
+| <span data-ttu-id="88dce-658">json_array:subsection:2</span><span class="sxs-lookup"><span data-stu-id="88dce-658">json_array:subsection:2</span></span> | <span data-ttu-id="88dce-659">valueD</span><span class="sxs-lookup"><span data-stu-id="88dce-659">valueD</span></span> |
 
-<span data-ttu-id="8c24f-660">No aplicativo de exemplo, a seguinte classe POCO está disponível para associar os pares chave-valor de configuração:</span><span class="sxs-lookup"><span data-stu-id="8c24f-660">In the sample app, the following POCO class is available to bind the configuration key-value pairs:</span></span>
+<span data-ttu-id="88dce-660">No aplicativo de exemplo, a seguinte classe POCO está disponível para associar os pares chave-valor de configuração:</span><span class="sxs-lookup"><span data-stu-id="88dce-660">In the sample app, the following POCO class is available to bind the configuration key-value pairs:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1670,27 +1670,27 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-661">Após a associação, `JsonArrayExample.Key` contém o valor `valueA`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-661">After binding, `JsonArrayExample.Key` holds the value `valueA`.</span></span> <span data-ttu-id="8c24f-662">Os valores de subseção são armazenados na propriedade matriz POCO, `Subsection`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-662">The subsection values are stored in the POCO array property, `Subsection`.</span></span>
+<span data-ttu-id="88dce-661">Após a associação, `JsonArrayExample.Key` contém o valor `valueA`.</span><span class="sxs-lookup"><span data-stu-id="88dce-661">After binding, `JsonArrayExample.Key` holds the value `valueA`.</span></span> <span data-ttu-id="88dce-662">Os valores de subseção são armazenados na propriedade matriz POCO, `Subsection`.</span><span class="sxs-lookup"><span data-stu-id="88dce-662">The subsection values are stored in the POCO array property, `Subsection`.</span></span>
 
-| <span data-ttu-id="8c24f-663">Índice `JsonArrayExample.Subsection`</span><span class="sxs-lookup"><span data-stu-id="8c24f-663">`JsonArrayExample.Subsection` Index</span></span> | <span data-ttu-id="8c24f-664">Valor `JsonArrayExample.Subsection`</span><span class="sxs-lookup"><span data-stu-id="8c24f-664">`JsonArrayExample.Subsection` Value</span></span> |
+| <span data-ttu-id="88dce-663">Índice `JsonArrayExample.Subsection`</span><span class="sxs-lookup"><span data-stu-id="88dce-663">`JsonArrayExample.Subsection` Index</span></span> | <span data-ttu-id="88dce-664">Valor `JsonArrayExample.Subsection`</span><span class="sxs-lookup"><span data-stu-id="88dce-664">`JsonArrayExample.Subsection` Value</span></span> |
 | :---------------------------------: | :---------------------------------: |
-| <span data-ttu-id="8c24f-665">0</span><span class="sxs-lookup"><span data-stu-id="8c24f-665">0</span></span>                                   | <span data-ttu-id="8c24f-666">valueB</span><span class="sxs-lookup"><span data-stu-id="8c24f-666">valueB</span></span>                              |
-| <span data-ttu-id="8c24f-667">1</span><span class="sxs-lookup"><span data-stu-id="8c24f-667">1</span></span>                                   | <span data-ttu-id="8c24f-668">valueC</span><span class="sxs-lookup"><span data-stu-id="8c24f-668">valueC</span></span>                              |
-| <span data-ttu-id="8c24f-669">2</span><span class="sxs-lookup"><span data-stu-id="8c24f-669">2</span></span>                                   | <span data-ttu-id="8c24f-670">valueD</span><span class="sxs-lookup"><span data-stu-id="8c24f-670">valueD</span></span>                              |
+| <span data-ttu-id="88dce-665">0</span><span class="sxs-lookup"><span data-stu-id="88dce-665">0</span></span>                                   | <span data-ttu-id="88dce-666">valueB</span><span class="sxs-lookup"><span data-stu-id="88dce-666">valueB</span></span>                              |
+| <span data-ttu-id="88dce-667">1</span><span class="sxs-lookup"><span data-stu-id="88dce-667">1</span></span>                                   | <span data-ttu-id="88dce-668">valueC</span><span class="sxs-lookup"><span data-stu-id="88dce-668">valueC</span></span>                              |
+| <span data-ttu-id="88dce-669">2</span><span class="sxs-lookup"><span data-stu-id="88dce-669">2</span></span>                                   | <span data-ttu-id="88dce-670">valueD</span><span class="sxs-lookup"><span data-stu-id="88dce-670">valueD</span></span>                              |
 
-## <a name="custom-configuration-provider"></a><span data-ttu-id="8c24f-671">Provedor de Configuração personalizado</span><span class="sxs-lookup"><span data-stu-id="8c24f-671">Custom configuration provider</span></span>
+## <a name="custom-configuration-provider"></a><span data-ttu-id="88dce-671">Provedor de Configuração personalizado</span><span class="sxs-lookup"><span data-stu-id="88dce-671">Custom configuration provider</span></span>
 
-<span data-ttu-id="8c24f-672">O aplicativo de exemplo demonstra como criar um provedor de configuração básico que lê os pares chave-valor da configuração de um banco de dados usando [Entity Framework (EF)](/ef/core/).</span><span class="sxs-lookup"><span data-stu-id="8c24f-672">The sample app demonstrates how to create a basic configuration provider that reads configuration key-value pairs from a database using [Entity Framework (EF)](/ef/core/).</span></span>
+<span data-ttu-id="88dce-672">O aplicativo de exemplo demonstra como criar um provedor de configuração básico que lê os pares chave-valor da configuração de um banco de dados usando [Entity Framework (EF)](/ef/core/).</span><span class="sxs-lookup"><span data-stu-id="88dce-672">The sample app demonstrates how to create a basic configuration provider that reads configuration key-value pairs from a database using [Entity Framework (EF)](/ef/core/).</span></span>
 
-<span data-ttu-id="8c24f-673">O provedor tem as seguintes características:</span><span class="sxs-lookup"><span data-stu-id="8c24f-673">The provider has the following characteristics:</span></span>
+<span data-ttu-id="88dce-673">O provedor tem as seguintes características:</span><span class="sxs-lookup"><span data-stu-id="88dce-673">The provider has the following characteristics:</span></span>
 
-* <span data-ttu-id="8c24f-674">O banco de dados EF na memória é usado para fins de demonstração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-674">The EF in-memory database is used for demonstration purposes.</span></span> <span data-ttu-id="8c24f-675">Para usar um banco de dados que exija uma cadeia de conexão, implemente um `ConfigurationBuilder` secundário para fornecer a cadeia de conexão de outro provedor de configuração.</span><span class="sxs-lookup"><span data-stu-id="8c24f-675">To use a database that requires a connection string, implement a secondary `ConfigurationBuilder` to supply the connection string from another configuration provider.</span></span>
-* <span data-ttu-id="8c24f-676">O provedor lê uma tabela de banco de dados na configuração na inicialização.</span><span class="sxs-lookup"><span data-stu-id="8c24f-676">The provider reads a database table into configuration at startup.</span></span> <span data-ttu-id="8c24f-677">O provedor não consulta o banco de dados em uma base por chave.</span><span class="sxs-lookup"><span data-stu-id="8c24f-677">The provider doesn't query the database on a per-key basis.</span></span>
-* <span data-ttu-id="8c24f-678">O recarregamento na alteração não está implementado, portanto, a atualização do banco de dados após a inicialização do aplicativo não tem efeito sobre a configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-678">Reload-on-change isn't implemented, so updating the database after the app starts has no effect on the app's configuration.</span></span>
+* <span data-ttu-id="88dce-674">O banco de dados EF na memória é usado para fins de demonstração.</span><span class="sxs-lookup"><span data-stu-id="88dce-674">The EF in-memory database is used for demonstration purposes.</span></span> <span data-ttu-id="88dce-675">Para usar um banco de dados que exija uma cadeia de conexão, implemente um `ConfigurationBuilder` secundário para fornecer a cadeia de conexão de outro provedor de configuração.</span><span class="sxs-lookup"><span data-stu-id="88dce-675">To use a database that requires a connection string, implement a secondary `ConfigurationBuilder` to supply the connection string from another configuration provider.</span></span>
+* <span data-ttu-id="88dce-676">O provedor lê uma tabela de banco de dados na configuração na inicialização.</span><span class="sxs-lookup"><span data-stu-id="88dce-676">The provider reads a database table into configuration at startup.</span></span> <span data-ttu-id="88dce-677">O provedor não consulta o banco de dados em uma base por chave.</span><span class="sxs-lookup"><span data-stu-id="88dce-677">The provider doesn't query the database on a per-key basis.</span></span>
+* <span data-ttu-id="88dce-678">O recarregamento na alteração não está implementado, portanto, a atualização do banco de dados após a inicialização do aplicativo não tem efeito sobre a configuração do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-678">Reload-on-change isn't implemented, so updating the database after the app starts has no effect on the app's configuration.</span></span>
 
-<span data-ttu-id="8c24f-679">Defina uma entidade `EFConfigurationValue` para armazenar valores de configuração no banco de dados.</span><span class="sxs-lookup"><span data-stu-id="8c24f-679">Define an `EFConfigurationValue` entity for storing configuration values in the database.</span></span>
+<span data-ttu-id="88dce-679">Defina uma entidade `EFConfigurationValue` para armazenar valores de configuração no banco de dados.</span><span class="sxs-lookup"><span data-stu-id="88dce-679">Define an `EFConfigurationValue` entity for storing configuration values in the database.</span></span>
 
-<span data-ttu-id="8c24f-680">*Models/EFConfigurationValue.cs*:</span><span class="sxs-lookup"><span data-stu-id="8c24f-680">*Models/EFConfigurationValue.cs*:</span></span>
+<span data-ttu-id="88dce-680">*Models/EFConfigurationValue.cs*:</span><span class="sxs-lookup"><span data-stu-id="88dce-680">*Models/EFConfigurationValue.cs*:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1704,9 +1704,9 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-681">Adicione um `EFConfigurationContext` para armazenar e acessar os valores configurados.</span><span class="sxs-lookup"><span data-stu-id="8c24f-681">Add an `EFConfigurationContext` to store and access the configured values.</span></span>
+<span data-ttu-id="88dce-681">Adicione um `EFConfigurationContext` para armazenar e acessar os valores configurados.</span><span class="sxs-lookup"><span data-stu-id="88dce-681">Add an `EFConfigurationContext` to store and access the configured values.</span></span>
 
-<span data-ttu-id="8c24f-682">*EFConfigurationProvider/EFConfigurationContext.cs*:</span><span class="sxs-lookup"><span data-stu-id="8c24f-682">*EFConfigurationProvider/EFConfigurationContext.cs*:</span></span>
+<span data-ttu-id="88dce-682">*EFConfigurationProvider/EFConfigurationContext.cs*:</span><span class="sxs-lookup"><span data-stu-id="88dce-682">*EFConfigurationProvider/EFConfigurationContext.cs*:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1720,9 +1720,9 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-683">Crie uma classe que implementa <xref:Microsoft.Extensions.Configuration.IConfigurationSource>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-683">Create a class that implements <xref:Microsoft.Extensions.Configuration.IConfigurationSource>.</span></span>
+<span data-ttu-id="88dce-683">Crie uma classe que implementa <xref:Microsoft.Extensions.Configuration.IConfigurationSource>.</span><span class="sxs-lookup"><span data-stu-id="88dce-683">Create a class that implements <xref:Microsoft.Extensions.Configuration.IConfigurationSource>.</span></span>
 
-<span data-ttu-id="8c24f-684">*EFConfigurationProvider/EFConfigurationSource.cs*:</span><span class="sxs-lookup"><span data-stu-id="8c24f-684">*EFConfigurationProvider/EFConfigurationSource.cs*:</span></span>
+<span data-ttu-id="88dce-684">*EFConfigurationProvider/EFConfigurationSource.cs*:</span><span class="sxs-lookup"><span data-stu-id="88dce-684">*EFConfigurationProvider/EFConfigurationSource.cs*:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1736,9 +1736,9 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-685">Crie o provedor de configuração personalizado através da herança de <xref:Microsoft.Extensions.Configuration.ConfigurationProvider>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-685">Create the custom configuration provider by inheriting from <xref:Microsoft.Extensions.Configuration.ConfigurationProvider>.</span></span> <span data-ttu-id="8c24f-686">O provedor de configuração inicializa o banco de dados quando ele está vazio.</span><span class="sxs-lookup"><span data-stu-id="8c24f-686">The configuration provider initializes the database when it's empty.</span></span>
+<span data-ttu-id="88dce-685">Crie o provedor de configuração personalizado através da herança de <xref:Microsoft.Extensions.Configuration.ConfigurationProvider>.</span><span class="sxs-lookup"><span data-stu-id="88dce-685">Create the custom configuration provider by inheriting from <xref:Microsoft.Extensions.Configuration.ConfigurationProvider>.</span></span> <span data-ttu-id="88dce-686">O provedor de configuração inicializa o banco de dados quando ele está vazio.</span><span class="sxs-lookup"><span data-stu-id="88dce-686">The configuration provider initializes the database when it's empty.</span></span>
 
-<span data-ttu-id="8c24f-687">*EFConfigurationProvider/EFConfigurationProvider.cs*:</span><span class="sxs-lookup"><span data-stu-id="8c24f-687">*EFConfigurationProvider/EFConfigurationProvider.cs*:</span></span>
+<span data-ttu-id="88dce-687">*EFConfigurationProvider/EFConfigurationProvider.cs*:</span><span class="sxs-lookup"><span data-stu-id="88dce-687">*EFConfigurationProvider/EFConfigurationProvider.cs*:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1752,9 +1752,9 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-688">Um método de extensão `AddEFConfiguration` permite adicionar a fonte de configuração a um `ConfigurationBuilder`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-688">An `AddEFConfiguration` extension method permits adding the configuration source to a `ConfigurationBuilder`.</span></span>
+<span data-ttu-id="88dce-688">Um método de extensão `AddEFConfiguration` permite adicionar a fonte de configuração a um `ConfigurationBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88dce-688">An `AddEFConfiguration` extension method permits adding the configuration source to a `ConfigurationBuilder`.</span></span>
 
-<span data-ttu-id="8c24f-689">*Extensions/EntityFrameworkExtensions.cs*:</span><span class="sxs-lookup"><span data-stu-id="8c24f-689">*Extensions/EntityFrameworkExtensions.cs*:</span></span>
+<span data-ttu-id="88dce-689">*Extensions/EntityFrameworkExtensions.cs*:</span><span class="sxs-lookup"><span data-stu-id="88dce-689">*Extensions/EntityFrameworkExtensions.cs*:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1768,7 +1768,7 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-<span data-ttu-id="8c24f-690">O código a seguir mostra como usar o `EFConfigurationProvider` personalizado em *Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="8c24f-690">The following code shows how to use the custom `EFConfigurationProvider` in *Program.cs*:</span></span>
+<span data-ttu-id="88dce-690">O código a seguir mostra como usar o `EFConfigurationProvider` personalizado em *Program.cs*:</span><span class="sxs-lookup"><span data-stu-id="88dce-690">The following code shows how to use the custom `EFConfigurationProvider` in *Program.cs*:</span></span>
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -1782,9 +1782,9 @@ config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false)
 
 ::: moniker-end
 
-## <a name="access-configuration-during-startup"></a><span data-ttu-id="8c24f-691">Acessar a configuração durante a inicialização</span><span class="sxs-lookup"><span data-stu-id="8c24f-691">Access configuration during startup</span></span>
+## <a name="access-configuration-during-startup"></a><span data-ttu-id="88dce-691">Acessar a configuração durante a inicialização</span><span class="sxs-lookup"><span data-stu-id="88dce-691">Access configuration during startup</span></span>
 
-<span data-ttu-id="8c24f-692">Injete `IConfiguration` no construtor `Startup` para acessar os valores de configuração em `Startup.ConfigureServices`.</span><span class="sxs-lookup"><span data-stu-id="8c24f-692">Inject `IConfiguration` into the `Startup` constructor to access configuration values in `Startup.ConfigureServices`.</span></span> <span data-ttu-id="8c24f-693">Para acessar a configuração em `Startup.Configure`, injete `IConfiguration` diretamente no método ou use a instância do construtor:</span><span class="sxs-lookup"><span data-stu-id="8c24f-693">To access configuration in `Startup.Configure`, either inject `IConfiguration` directly into the method or use the instance from the constructor:</span></span>
+<span data-ttu-id="88dce-692">Injete `IConfiguration` no construtor `Startup` para acessar os valores de configuração em `Startup.ConfigureServices`.</span><span class="sxs-lookup"><span data-stu-id="88dce-692">Inject `IConfiguration` into the `Startup` constructor to access configuration values in `Startup.ConfigureServices`.</span></span> <span data-ttu-id="88dce-693">Para acessar a configuração em `Startup.Configure`, injete `IConfiguration` diretamente no método ou use a instância do construtor:</span><span class="sxs-lookup"><span data-stu-id="88dce-693">To access configuration in `Startup.Configure`, either inject `IConfiguration` directly into the method or use the instance from the constructor:</span></span>
 
 ```csharp
 public class Startup
@@ -1808,13 +1808,13 @@ public class Startup
 }
 ```
 
-<span data-ttu-id="8c24f-694">Para obter um exemplo de como acessar a configuração usando os métodos de conveniência de inicialização, consulte [Inicialização do aplicativo: métodos de conveniência](xref:fundamentals/startup#convenience-methods).</span><span class="sxs-lookup"><span data-stu-id="8c24f-694">For an example of accessing configuration using startup convenience methods, see [App startup: Convenience methods](xref:fundamentals/startup#convenience-methods).</span></span>
+<span data-ttu-id="88dce-694">Para obter um exemplo de como acessar a configuração usando os métodos de conveniência de inicialização, consulte [Inicialização do aplicativo: métodos de conveniência](xref:fundamentals/startup#convenience-methods).</span><span class="sxs-lookup"><span data-stu-id="88dce-694">For an example of accessing configuration using startup convenience methods, see [App startup: Convenience methods](xref:fundamentals/startup#convenience-methods).</span></span>
 
-## <a name="access-configuration-in-a-razor-pages-page-or-mvc-view"></a><span data-ttu-id="8c24f-695">Acessar a configuração em uma página do Razor Pages ou exibição do MVC</span><span class="sxs-lookup"><span data-stu-id="8c24f-695">Access configuration in a Razor Pages page or MVC view</span></span>
+## <a name="access-configuration-in-a-razor-pages-page-or-mvc-view"></a><span data-ttu-id="88dce-695">Acessar a configuração em uma página do Razor Pages ou exibição do MVC</span><span class="sxs-lookup"><span data-stu-id="88dce-695">Access configuration in a Razor Pages page or MVC view</span></span>
 
-<span data-ttu-id="8c24f-696">Para acessar definições de configuração em uma página do Razor Pages ou uma exibição do MVC, adicione [usando diretiva](xref:mvc/views/razor#using) ([referência de C#: usando diretiva](/dotnet/csharp/language-reference/keywords/using-directive)) para o [namespace Microsoft.Extensions.Configuration](xref:Microsoft.Extensions.Configuration) e injete <xref:Microsoft.Extensions.Configuration.IConfiguration> na página ou na exibição.</span><span class="sxs-lookup"><span data-stu-id="8c24f-696">To access configuration settings in a Razor Pages page or an MVC view, add a [using directive](xref:mvc/views/razor#using) ([C# reference: using directive](/dotnet/csharp/language-reference/keywords/using-directive)) for the [Microsoft.Extensions.Configuration namespace](xref:Microsoft.Extensions.Configuration) and inject <xref:Microsoft.Extensions.Configuration.IConfiguration> into the page or view.</span></span>
+<span data-ttu-id="88dce-696">Para acessar definições de configuração em uma página do Razor Pages ou uma exibição do MVC, adicione [usando diretiva](xref:mvc/views/razor#using) ([referência de C#: usando diretiva](/dotnet/csharp/language-reference/keywords/using-directive)) para o [namespace Microsoft.Extensions.Configuration](xref:Microsoft.Extensions.Configuration) e injete <xref:Microsoft.Extensions.Configuration.IConfiguration> na página ou na exibição.</span><span class="sxs-lookup"><span data-stu-id="88dce-696">To access configuration settings in a Razor Pages page or an MVC view, add a [using directive](xref:mvc/views/razor#using) ([C# reference: using directive](/dotnet/csharp/language-reference/keywords/using-directive)) for the [Microsoft.Extensions.Configuration namespace](xref:Microsoft.Extensions.Configuration) and inject <xref:Microsoft.Extensions.Configuration.IConfiguration> into the page or view.</span></span>
 
-<span data-ttu-id="8c24f-697">Em uma página do Razor:</span><span class="sxs-lookup"><span data-stu-id="8c24f-697">In a Razor Pages page:</span></span>
+<span data-ttu-id="88dce-697">Em uma página do Razor:</span><span class="sxs-lookup"><span data-stu-id="88dce-697">In a Razor Pages page:</span></span>
 
 ```cshtml
 @page
@@ -1834,7 +1834,7 @@ public class Startup
 </html>
 ```
 
-<span data-ttu-id="8c24f-698">Em uma exibição do MVC:</span><span class="sxs-lookup"><span data-stu-id="8c24f-698">In an MVC view:</span></span>
+<span data-ttu-id="88dce-698">Em uma exibição do MVC:</span><span class="sxs-lookup"><span data-stu-id="88dce-698">In an MVC view:</span></span>
 
 ```cshtml
 @using Microsoft.Extensions.Configuration
@@ -1852,11 +1852,11 @@ public class Startup
 </html>
 ```
 
-## <a name="add-configuration-from-an-external-assembly"></a><span data-ttu-id="8c24f-699">Adicionar configuração de um assembly externo</span><span class="sxs-lookup"><span data-stu-id="8c24f-699">Add configuration from an external assembly</span></span>
+## <a name="add-configuration-from-an-external-assembly"></a><span data-ttu-id="88dce-699">Adicionar configuração de um assembly externo</span><span class="sxs-lookup"><span data-stu-id="88dce-699">Add configuration from an external assembly</span></span>
 
-<span data-ttu-id="8c24f-700">Uma implementação <xref:Microsoft.AspNetCore.Hosting.IHostingStartup> permite adicionar melhorias a um aplicativo durante a inicialização de um assembly externo fora da classe `Startup` do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="8c24f-700">An <xref:Microsoft.AspNetCore.Hosting.IHostingStartup> implementation allows adding enhancements to an app at startup from an external assembly outside of the app's `Startup` class.</span></span> <span data-ttu-id="8c24f-701">Para obter mais informações, consulte <xref:fundamentals/configuration/platform-specific-configuration>.</span><span class="sxs-lookup"><span data-stu-id="8c24f-701">For more information, see <xref:fundamentals/configuration/platform-specific-configuration>.</span></span>
+<span data-ttu-id="88dce-700">Uma implementação <xref:Microsoft.AspNetCore.Hosting.IHostingStartup> permite adicionar melhorias a um aplicativo durante a inicialização de um assembly externo fora da classe `Startup` do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="88dce-700">An <xref:Microsoft.AspNetCore.Hosting.IHostingStartup> implementation allows adding enhancements to an app at startup from an external assembly outside of the app's `Startup` class.</span></span> <span data-ttu-id="88dce-701">Para obter mais informações, consulte <xref:fundamentals/configuration/platform-specific-configuration>.</span><span class="sxs-lookup"><span data-stu-id="88dce-701">For more information, see <xref:fundamentals/configuration/platform-specific-configuration>.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="8c24f-702">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="8c24f-702">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="88dce-702">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="88dce-702">Additional resources</span></span>
 
 * <xref:fundamentals/configuration/options>
-* [<span data-ttu-id="8c24f-703">Detalhes da configuração da Microsoft</span><span class="sxs-lookup"><span data-stu-id="8c24f-703">Deep Dive into Microsoft Configuration</span></span>](https://www.paraesthesia.com/archive/2018/06/20/microsoft-extensions-configuration-deep-dive/)
+* [<span data-ttu-id="88dce-703">Detalhes da configuração da Microsoft</span><span class="sxs-lookup"><span data-stu-id="88dce-703">Deep Dive into Microsoft Configuration</span></span>](https://www.paraesthesia.com/archive/2018/06/20/microsoft-extensions-configuration-deep-dive/)
