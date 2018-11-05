@@ -2,8 +2,8 @@
 
 * Para obter informações de como usar um banco de dados persistente, confira:
 
-  * [Criar um aplicativo Web Páginas Razor com o ASP.NET Core](xref:tutorials/index)
-  * [Trabalhar com os dados no ASP.NET Core](xref:data/index)
+  * <xref:tutorials/razor-pages/index>
+  * <xref:data/ef-rp/index>
 
 * <xref:host-and-deploy/azure-apps/index>
 * <xref:host-and-deploy/index>
@@ -11,4 +11,4 @@
 * [Roteamento para ações do controlador](xref:mvc/controllers/routing)
 * [Criar APIs Web com o ASP.NET Core](xref:web-api/index)
 * [Tipos de retorno de ação do controlador](xref:web-api/action-return-types)
-* [Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/samples). Consulte [como baixar](xref:tutorials/index#how-to-download-a-sample).
+* [Exibir ou baixar o código de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/samples). Consulte [como baixar](xref:index#how-to-download-a-sample).

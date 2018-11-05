@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 6803e8e3a285716792427e9fb059c204f5a88ecb
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: e5305852fad058961661373f9310d6dcaf30aa16
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391304"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253189"
 ---
 # <a name="filters-in-aspnet-core"></a>Filtros no ASP.NET Core
 
@@ -261,7 +261,7 @@ Você deve escrever somente um filtro de autorização personalizado se estiver 
 
 Você não deve gerar exceções dentro de filtros de autorização, pois nada tratará a exceção (os filtros de exceção não as tratarão). Considere a possibilidade de emitir um desafio quando ocorrer uma exceção.
 
-Saiba mais sobre [Autorização](../../security/authorization/index.md).
+Saiba mais sobre [Autorização](xref:security/authorization/introduction).
 
 ## <a name="resource-filters"></a>Filtros de recurso
 
