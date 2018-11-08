@@ -373,7 +373,7 @@ Observe qual dos valores de `OperationId` varia em uma solicitação, e entre as
 
 * Os objetos *transitórios* sempre são diferentes. Observe que o valor `OperationId` transitório da primeira e da segunda solicitações é diferente para as duas operações `OperationService` e em todas as solicitações. Uma nova instância é fornecida para cada solicitação e serviço.
 * Os objetos *com escopo* são os mesmos em uma solicitação, mas diferentes entre solicitações.
-* Os pbjetos *singleton* são os mesmos para cada objeto e solicitação, independentemente de uma instância `Operation` ser fornecida em `ConfigureServices`.
+* Os objetos *singleton* são os mesmos para cada objeto e solicitação, independentemente de uma instância `Operation` ser fornecida em `ConfigureServices`.
 
 ## <a name="call-services-from-main"></a>Chamar os serviços desde o principal
 
