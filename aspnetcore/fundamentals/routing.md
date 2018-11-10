@@ -6,18 +6,29 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 06059d720bd4444b1ec12e42d466ee54d1658203
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: a014782ba503bc8bd0fdefb4cb4f382aa8fde4cd
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207750"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244964"
 ---
 # <a name="routing-in-aspnet-core"></a>Roteamento no ASP.NET Core
 
 Por [Ryan Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.com/) e [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 A funcionalidade de roteamento é responsável por mapear uma solicitação de entrada para um manipulador de rotas. As rotas são definidas no aplicativo e configuradas quando o aplicativo é iniciado. Uma rota pode opcionalmente extrair os valores da URL contida na solicitação e esses valores podem então ser usados para o processamento da solicitação. Usando as informações de rota do aplicativo, a funcionalidade de roteamento também é capaz de gerar URLs que são mapeadas para manipuladores de rotas. Portanto, o roteamento pode encontrar um manipulador de rotas com base em uma URL ou encontrar a URL correspondente a um determinado manipulador de rotas com base nas informações do manipulador de rotas.
+
+A maioria dos aplicativos deve escolher um esquema de roteamento básico e descritivo para que as URLs sejam legíveis e significativas. A rota convencional padrão `{controller=Home}/{action=Index}/{id?}`:
+
+* Oferece suporte a um esquema de roteamento básico e descritivo:
+* É um bom ponto de partida para aplicativos web que devem ser usados por navegadores.
+
+É comum adicionar outras rotas concisas as áreas de alto tráfego do aplicativo em situações especiais (por exemplo, blog, comércio eletrônico) usando [roteamento de atributo](xref:mvc/controllers/routing#attribute-routing) ou rotas convencionais dedicadas.
+
+As APIs da Web devem usar o roteamento de atributo para modelar a funcionalidade do aplicativo como um conjunto de recursos em que as operações são representadas por verbos HTTP. Isso significa que muitas operações (por exemplo, GET, POST) no mesmo recurso lógico usarão a mesma URL. O roteamento de atributos fornece um nível de controle necessário para projetar cuidadosamente um espaço de URL da API.
+
+O suporte à geração de URL do MVC permite que o aplicativo seja desenvolvido sem hard-coding das URLs para vincular o aplicativo. Isso permite começar com uma configuração de roteamento básica e modificar as rotas, depois que a forma do aplicativo é determinada.
 
 > [!IMPORTANT]
 > Este documento aborda o roteamento de nível inferior do ASP.NET Core. Para obter informações sobre o roteamento do ASP.NET Core MVC, confira <xref:mvc/controllers/routing>.

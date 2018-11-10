@@ -1,17 +1,17 @@
 ---
 title: Tratar erros no ASP.NET Core
-author: ardalis
+author: tdykstra
 description: Descubra como tratar erros em aplicativos ASP.NET Core.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 07/05/2018
+ms.date: 11/01/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: d1e94fdc89fbebc264dc001bbf35666af16f4799
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 89117d78486493747d649c3bb0d9cce9f97ef419
+ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50208025"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50968313"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Tratar erros no ASP.NET Core
 
@@ -119,17 +119,28 @@ O middleware permite vários métodos de extensão. Um método usa uma expressã
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePages)]
 
-Outro método usa uma cadeia de caracteres de formato e de tipo de conteúdo:
+Uma sobrecarga de `UseStatusCodePages` usa uma cadeia de caracteres de formato e de tipo de conteúdo:
 
 ```csharp
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
+### <a name="redirect-re-execute-extension-methods"></a>Métodos de extensão de redirecionamento e de nova execução
 
-Há também métodos de extensão de redirecionamento e de nova execução. O método de redirecionamento envia um código de status *302 encontrado* para o cliente e o redireciona para o modelo de URL do local fornecido. O modelo pode incluir um espaço reservado de `{0}` para o código de status. As URLs que começam com `~` têm o caminho base anexado. Uma URL que não começa com `~` é usada como está.
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePagesWithRedirects*>:
+
+* Envia um código de status *302 – Encontrado* ao cliente.
+* Redireciona o cliente para o local fornecido no modelo de URL. 
+
+O modelo pode incluir um espaço reservado de `{0}` para o código de status. O modelo deve começar com uma barra (`/`).
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
-O método de nova execução retorna o código de status original ao cliente e especifica que o corpo da resposta deve ser gerado executando novamente o pipeline de solicitação, utilizando um caminho alternativo. Esse caminho pode conter um espaço reservado de `{0}` para o código de status:
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePagesWithReExecute*>:
+
+* Retorna o código de status original ao cliente.
+* Especifica que o corpo da resposta deve ser gerado, executando novamente o pipeline de solicitação por meio de um caminho alternativo. 
+
+O modelo pode incluir um espaço reservado de `{0}` para o código de status. O modelo deve começar com uma barra (`/`).
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");
@@ -146,7 +157,7 @@ if (statusCodePagesFeature != null)
 }
 ```
 
-Se você está usando uma sobrecarga `UseStatusCodePages*` que aponta para um ponto de extremidade dentro do aplicativo, crie um modo de exibição do MVC ou Razor Page para o ponto de extremidade. Por exemplo, o modelo [dotnet novo](/dotnet/core/tools/dotnet-new) para um aplicativo Razor Pages produz a seguinte página e classe de modelo de página:
+Para usar uma sobrecarga `UseStatusCodePages*` que aponta para um ponto de extremidade dentro do aplicativo, crie um modo de exibição do MVC ou Razor Page para o ponto de extremidade. Por exemplo, o modelo [dotnet novo](/dotnet/core/tools/dotnet-new) para um aplicativo Razor Pages produz a seguinte página e classe de modelo de página:
 
 *Error.cshtml*:
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/09/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 2af66c0f35109dc1de954bf501f33ad61ddef4db
-ms.sourcegitcommit: 85f2939af7a167b9694e1d2093277ffc9a741b23
+ms.openlocfilehash: 6dd478770d4eae4d497da576c17fbe7d2c133b89
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50968365"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021736"
 ---
 # <a name="configuration-in-aspnet-core"></a>Configuração no ASP.NET Core
 
@@ -1151,6 +1151,7 @@ public class Program
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
                 config.SetBasePath(Directory.GetCurrentDirectory());
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "path/to/files");
                 config.AddKeyPerFile(directoryPath: path, optional: true);
             })
             .UseStartup<Startup>();
@@ -1509,13 +1510,13 @@ O <xref:Microsoft.Extensions.Configuration.ConfigurationBinder.Bind*> dá suport
 
 Considere as chaves de configuração e os valores mostrados na tabela a seguir.
 
-| Chave     | Valor  |
-| :-----: | :----: |
-| array:0 | value0 |
-| array:1 | value1 |
-| array:2 | value2 |
-| array:4 | value4 |
-| array:5 | value5 |
+| Chave             | Valor  |
+| :-------------: | :----: |
+| array:entries:0 | value0 |
+| array:entries:1 | value1 |
+| array:entries:2 | value2 |
+| array:entries:4 | value4 |
+| array:entries:5 | value5 |
 
 Essas chaves e valores são carregados no aplicativo de exemplo usando o Provedor de Configuração de Memória:
 
@@ -1574,17 +1575,17 @@ A sintaxe [ConfigurationBinder.Get&lt;T&gt;](xref:Microsoft.Extensions.Configura
 
 O objeto associado, uma instância de `ArrayExample`, recebe os dados da matriz de configuração.
 
-| Índice `ArrayExamples.Entries` | Valor `ArrayExamples.Entries` |
-| :---------------------------: | :---------------------------: |
-| 0                             | value0                        |
-| 1                             | value1                        |
-| 2                             | value2                        |
-| 3                             | value4                        |
-| 4                             | value5                        |
+| Índice `ArrayExample.Entries` | Valor `ArrayExample.Entries` |
+| :--------------------------: | :--------------------------: |
+| 0                            | value0                       |
+| 1                            | value1                       |
+| 2                            | value2                       |
+| 3                            | value4                       |
+| 4                            | value5                       |
 
 O índice &num;3 no objeto associado contém os dados de configuração para a chave de configuração `array:4` e seu valor de `value4`. Quando os dados de configuração que contêm uma matriz são associados, os índices da matriz nas chaves de configuração são simplesmente usados para iterar os dados de configuração ao criar o objeto. Um valor nulo não pode ser mantido nos dados de configuração, e uma entrada de valor nulo não será criada em um objeto de associação quando uma matriz nas chaves de configuração ignorar um ou mais índices.
 
-O item de configuração ausente para o índice &num;3 pode ser fornecido antes da associação à instância `ArrayExamples` por qualquer provedor de configuração que produza o par chave-valor correto na configuração. Se o exemplo incluir um Provedor de Configuração JSON adicional com o par chave-valor ausente, o `ArrayExamples.Entries` coincidirá com a matriz de configuração completa:
+O item de configuração ausente para o índice &num;3 pode ser fornecido antes da associação à instância `ArrayExample` por qualquer provedor de configuração que produza o par chave-valor correto na configuração. Se o exemplo incluir um Provedor de Configuração JSON adicional com o par chave-valor ausente, o `ArrayExample.Entries` coincidirá com a matriz de configuração completa:
 
 *missing_value.json*:
 
@@ -1620,16 +1621,16 @@ O par chave-valor mostrado na tabela é carregado na configuração.
 | :-------------: | :----: |
 | array:entries:3 | value3 |
 
-Se a instância da classe `ArrayExamples` for associada após o Provedor de Configuração JSON incluir a entrada para o índice &num;3, a matriz `ArrayExamples.Entries` incluirá o valor.
+Se a instância da classe `ArrayExample` for associada após o Provedor de Configuração JSON incluir a entrada para o índice &num;3, a matriz `ArrayExample.Entries` incluirá o valor.
 
-| Índice `ArrayExamples.Entries` | Valor `ArrayExamples.Entries` |
-| :---------------------------: | :---------------------------: |
-| 0                             | value0                        |
-| 1                             | value1                        |
-| 2                             | value2                        |
-| 3                             | value3                        |
-| 4                             | value4                        |
-| 5                             | value5                        |
+| Índice `ArrayExample.Entries` | Valor `ArrayExample.Entries` |
+| :--------------------------: | :--------------------------: |
+| 0                            | value0                       |
+| 1                            | value1                       |
+| 2                            | value2                       |
+| 3                            | value3                       |
+| 4                            | value4                       |
+| 5                            | value5                       |
 
 **Processamento de matriz JSON**
 

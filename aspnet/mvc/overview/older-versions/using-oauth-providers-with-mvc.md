@@ -1,19 +1,19 @@
 ---
 uid: mvc/overview/older-versions/using-oauth-providers-with-mvc
 title: Usando provedores OAuth com o MVC 4 | Microsoft Docs
-author: tfitzmac
+author: Rick-Anderson
 description: Este tutorial mostra como criar um aplicativo web ASP.NET MVC 4 que permite que os usuários façam logon com credenciais de um provedor externo, como Facebo...
 ms.author: riande
 ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 9b0db2775db5c74762bdc55328ad44ef7ebe75ce
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d0203b62c911056fc56ed103c1c42f67816cbbf0
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831646"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021749"
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>Usando provedores OAuth com o MVC 4
 ====================
@@ -83,7 +83,7 @@ Este tutorial não mostra todas as etapas que você deve executar para registrar
 - [Microsoft](http://manage.dev.live.com/)
 - [Twitter](https://dev.twitter.com/)
 
-Ao registrar o seu site com o Facebook, você pode fornecer &quot;localhost&quot; para o domínio do site e `&quot;http://localhost/&quot;` para a URL, conforme mostrado na imagem abaixo. Usando localhost funciona com a maioria dos provedores, mas atualmente não funciona com o provedor Microsoft. Para o provedor da Microsoft, você deve incluir uma URL de site válido.
+Ao registrar o seu site com o Facebook, você pode fornecer &quot;localhost&quot; para o domínio do site e `&quot; http://localhost/&quot;` para a URL, conforme mostrado na imagem abaixo. Usando localhost funciona com a maioria dos provedores, mas atualmente não funciona com o provedor Microsoft. Para o provedor da Microsoft, você deve incluir uma URL de site válido.
 
 ![Registre o site](using-oauth-providers-with-mvc/_static/image4.png)
 

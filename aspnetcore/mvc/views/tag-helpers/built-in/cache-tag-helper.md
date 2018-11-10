@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 2590682755721a4bb14902b9fe7138a3bff56d31
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: fb69584f6e9d4756e175bbd6f3deb1f413b80fc5
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148805"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244808"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Auxiliar de Marca de Cache no ASP.NET Core MVC
 
@@ -135,7 +135,7 @@ O exemplo a seguir monitora os valores de `Make` e `Model`. O exemplo armazena e
 | -------------- | -------------------- |
 | Cadeia de Caracteres         | `Make`, `Make,Model` |
 
-`vary-by-route` aceita uma lista delimitada por vírgulas de valores de cabeçalho que disparam uma atualização do cache quando o valor de parâmetro de dados de rota muda.
+`vary-by-route` aceita uma lista delimitada por vírgulas de nomes de parâmetros de rota que disparam uma atualização do cache quando o valor de parâmetro de dados de rota muda.
 
 Exemplo:
 
@@ -161,7 +161,7 @@ routes.MapRoute(
 | -------------- | -------------------------------------------------------------------------------- |
 | Cadeia de Caracteres         | `.AspNetCore.Identity.Application`, `.AspNetCore.Identity.Application,HairColor` |
 
-`vary-by-cookie` aceita uma lista delimitada por vírgulas de valores de cabeçalho que disparam uma atualização do cache quando os valores de cabeçalho mudam.
+`vary-by-cookie` aceita uma lista delimitada por vírgulas de nomes de cookie que disparam uma atualização do cache quando os valores de cookie mudam.
 
 O exemplo a seguir monitora o cookie associado à identidade do ASP.NET Core. Quando um usuário é autenticado, uma alteração ao cookie de Identidade dispara uma atualização do cache:
 

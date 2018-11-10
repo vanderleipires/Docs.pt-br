@@ -28,7 +28,7 @@ No elemento de título, altere `MvcMovie` para `Movie App`. Altere o texto de â
 
 ::: moniker range=">= aspnetcore-2.1"
 
-[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout21.cshtml?highlight=7,31)]
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout21.cshtml?highlight=6,29)]
 
 ::: moniker-end
 
@@ -115,6 +115,6 @@ Os dados são obtidos da URL e passados para o controlador usando o [associador 
 
 ![Sobre uma exibição que mostra um rótulo Boas-vindas e a frase Olá, Ricardo mostrada quatro vezes](~/tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
-Na amostra acima, usamos o dicionário `ViewData` para passar dados do controlador para uma exibição. Mais adiante no tutorial, usaremos um modelo de exibição para passar dados de um controlador para uma exibição. A abordagem de modelo de exibição para passar dados é geralmente a preferida em relação à abordagem do dicionário `ViewData`. Consulte [ViewModel vs. ViewData vs. ViewBag vs. TempData vs. Session no MVC](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc) para obter mais informações.
+Na amostra acima, usamos o dicionário `ViewData` para passar dados do controlador para uma exibição. Mais adiante no tutorial, usaremos um modelo de exibição para passar dados de um controlador para uma exibição. A abordagem de modelo de exibição para passar dados é geralmente a preferida em relação à abordagem do dicionário `ViewData`. Para obter mais informações, confira [Quando usar ViewBag, ViewData ou TempData ](http://www.rachelappel.com/when-to-use-viewbag-viewdata-or-tempdata-in-asp-net-mvc-3-applications/).
 
 Bem, isso foi um tipo de “M” de modelo, mas não o tipo de banco de dados. Vamos ver o que aprendemos e criar um banco de dados de filmes.

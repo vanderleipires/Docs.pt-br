@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 uid: tutorials/razor-pages-vsc/model
-ms.openlocfilehash: b891b921baf1fe6d167c7bfb8b4c5278ce9fe9f5
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: c4aef369bb3965b70d1b461cf63e6f5a26a00628
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055858"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244717"
 ---
 # <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-code"></a>Adicionar um modelo a um aplicativo Páginas Razor do ASP.NET Core com o Visual Studio Code
 
@@ -35,7 +35,13 @@ Na linha de comando, execute o seguinte comando de CLI do .NET Core:
 dotnet add package Microsoft.EntityFrameworkCore.SQLite
 ```
 
-[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-4)]
+<a name="reg"></a>
+
+### <a name="register-the-database-context"></a>Registrar o contexto de banco de dados
+
+Registre o contexto do banco de dados com o contêiner de [injeção de dependência](xref:fundamentals/dependency-injection) no arquivo *Startup.cs*.
+
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=10-11)]
 
 Adicione os demonstrativos do `using` a seguir à parte superior do *Startup.cs*:
 
@@ -46,45 +52,24 @@ using Microsoft.EntityFrameworkCore;
 
 Compile o projeto para verificar se não há erros.
 
-### <a name="entity-framework-core-nuget-packages-for-migrations"></a>Pacotes NuGet do Entity Framework Core para migrações
-
-As ferramentas do EF para a CLI (interface de linha de comando) são fornecidas em [Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet). Para instalar esse pacote, adicione-o à coleção `DotNetCliToolReference` no arquivo *.csproj*. **Observação:** é necessário instalar este pacote editando o arquivo *.csproj*; não é possível usar o comando `install-package` ou a GUI do Gerenciador de Pacotes.
-
-Edite o arquivo *RazorPagesMovie.csproj*:
-
-* Selecione **Arquivo** > **Abrir Arquivo**, e, em seguida, selecione o arquivo *RazorPagesMovie.csproj*.
-* Adicione a referência da ferramenta para o `Microsoft.EntityFrameworkCore.Tools.DotNet` ao segundo **\<ItemGroup>**:
-
-[!code-xml[](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj)]
-
 [!INCLUDE [model 3](../../includes/RP/model3.md)]
 
 <a name="scaffold"></a>
+
 ### <a name="scaffold-the-movie-model"></a>Fazer scaffolding do modelo de filme
 
 * Abra uma janela de comando no diretório do projeto (o diretório que contém os arquivos *Program.cs*, *Startup.cs* e *.csproj*).
-* Execute o seguinte comando:
-
-**Observação: execute o comando a seguir no Windows. Para MacOS e Linux, consulte o próximo comando**
+* **No Windows**, execute o comando a seguir:
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages\Movies --referenceScriptLibraries
   ```
 
-* No MacOS e Linux, execute o seguinte comando:
+* **No macOS e Linux**, execute o comando a seguir:
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages/Movies --referenceScriptLibraries
   ```
-
-Se você obtiver o erro:
-  ```
-  The process cannot access the file 
- 'RazorPagesMovie/bin/Debug/netcoreapp2.0/RazorPagesMovie.dll' 
-  because it is being used by another process.
-  ```
-
-Saia do Visual Studio e execute o comando novamente.
 
 [!INCLUDE [model 4](../../includes/RP/model4.md)]
 

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 3cec37719b743b3c805ada77249f526278e44599
-ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.openlocfilehash: 8f07647959b6ef815eed599703bdb1bfb446572f
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234599"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505746"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>Diferenças entre o SignalR do ASP.NET e o SignalR do ASP.NET Core
 
@@ -36,6 +36,10 @@ Reconexão automática não têm suporte no SignalR do ASP.NET Core. Se o client
 ### <a name="protocol-support"></a>Suporte de protocolo
 
 SignalR do ASP.NET Core dá suporte a JSON, bem como um novo protocolo binário, com base em [MessagePack](xref:signalr/messagepackhubprotocol). Além disso, os protocolos personalizados podem ser criados.
+
+### <a name="transports"></a>Transportes
+
+Não há suporte para o transporte de quadro para sempre SignalR do ASP.NET Core.
 
 ## <a name="differences-on-the-server"></a>Diferenças no servidor
 
@@ -72,6 +76,14 @@ ASP.NET SignalR Core agora dá suporte à [dados de streaming](xref:signalr/stre
 
 A capacidade de passar o estado arbitrário entre clientes e o hub (geralmente chamado de HubState) foi removida, bem como suporte para mensagens de progresso. Não há nenhum equivalente de proxies de hub no momento.
 
+### <a name="globalhost"></a>GlobalHost
+
+O ASP.NET Core tem dentro da estrutura de injeção de dependência (DI). Serviços podem usar a DI para acessar o [HubContext](xref:signalr/hubcontext). O `GlobalHost` objeto que é usado no ASP.NET SignalR para obter um `HubContext` não existe no SignalR do ASP.NET Core.
+
+### <a name="hubpipeline"></a>HubPipeline
+
+SignalR do ASP.NET Core não tem suporte para `HubPipeline` módulos.
+
 ## <a name="differences-on-the-client"></a>Diferenças no cliente
 
 ### <a name="typescript"></a>TypeScript
@@ -90,6 +102,10 @@ npm install @aspnet/signalr
 ### <a name="jquery"></a>jQuery
 
 A dependência no jQuery foi removida, no entanto, projetos ainda podem usar jQuery.
+
+### <a name="internet-explorer-support"></a>Suporte do Internet Explorer
+
+SignalR do ASP.NET Core requer o Microsoft Internet Explorer 11 ou posterior (o SignalR do ASP.NET com suporte Microsoft Internet Explorer 8 e posterior).
 
 ### <a name="javascript-client-method-syntax"></a>Sintaxe de método de cliente JavaScript
 
