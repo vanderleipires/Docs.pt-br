@@ -5,14 +5,14 @@ description: Saiba como usar o cliente de Java de SignalR do ASP.NET Core.
 monikerRange: '>= aspnetcore-2.2'
 ms.author: mimengis
 ms.custom: mvc
-ms.date: 10/18/2018
+ms.date: 11/06/2018
 uid: signalr/java-client
-ms.openlocfilehash: 646118c78d5d38b44b89d399cd06a5332a11d064
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 4ee4e61fc301ebeec4d95b1167f94f16c38f3ac5
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207765"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225415"
 ---
 # <a name="aspnet-core-signalr-java-client"></a>Cliente de Java do SignalR Core ASP.NET
 
@@ -74,6 +74,19 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 ```
 
 Isso pode ser ignorado.
+
+
+## <a name="configure-bearer-token-authentication"></a>Configurar a autenticação de token de portador
+
+No cliente de Java do SignalR, você pode configurar um token de portador para usar para autenticação, fornecendo uma "access token fábrica" para o [HttpHubConnectionBuilder](/java/api/com.microsoft.signalr._http_hub_connection_builder?view=aspnet-signalr-java). Use [withAccessTokenFactory](/java/api/com.microsoft.signalr._http_hub_connection_builder.withaccesstokenprovider?view=aspnet-signalr-java#com_microsoft_signalr__http_hub_connection_builder_withAccessTokenProvider_Single_String__) para fornecer uma [RxJava](https://github.com/ReactiveX/RxJava) [único<String>](http://reactivex.io/documentation/single.html). Com uma chamada para [Single.defer](http://reactivex.io/RxJava/javadoc/io/reactivex/Single.html#defer-java.util.concurrent.Callable-), você pode escrever a lógica para gerar tokens de acesso do cliente.
+
+```java
+HubConnection hubConnection = HubConnectionBuilder.create("YOUR HUB URL HERE")
+    .withAccessTokenProvider(Single.defer(() -> {
+        // Your logic here.
+        return Single.just("An Access Token");
+    })).build();
+```
 
 ## <a name="known-limitations"></a>Limitações conhecidas
 

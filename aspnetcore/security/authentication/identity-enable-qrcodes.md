@@ -5,12 +5,12 @@ description: Descubra como habilitar a geração de código QR para aplicativos 
 ms.author: riande
 ms.date: 08/14/2018
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: 4535efdde7340436c6a508848bff86e103df570e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 437f354f71128a98bae9abdced291e04efc9f48e
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830816"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225376"
 ---
 # <a name="enable-qr-code-generation-for-totp-authenticator-apps-in-aspnet-core"></a>Habilitar a geração de código QR TOTP para aplicativos de autenticador no ASP.NET Core
 
@@ -97,7 +97,7 @@ O nome do site em que o código QR é obtido do nome do projeto que você escolh
 
 O código padrão do modelo será semelhante ao seguinte:
 
-```c#
+```csharp
 private string GenerateQrCodeUri(string email, string unformattedKey)
 {
     return string.Format(

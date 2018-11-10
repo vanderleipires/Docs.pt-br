@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: fcfe2fa6cc88b9eee1389e171fa5eb7711b4f14f
-ms.sourcegitcommit: fc2486ddbeb15ab4969168d99b3fe0fbe91e8661
+ms.openlocfilehash: 7d9f3a3f8aa7a5e47169da66e6fa2d6a28de3853
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50758122"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51021242"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>Tutorial: introdução ao SignalR para ASP.NET Core
 
@@ -69,12 +69,13 @@ No final, você terá um aplicativo de chat funcionando:
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-* Abra uma pasta que você possa usar para um novo projeto.
+* Abra o [terminal integrado](https://code.visualstudio.com/docs/editor/integrated-terminal) para a pasta na qual a nova pasta de projeto será criada.
 
-* No [Terminal Integrado](https://code.visualstudio.com/docs/editor/integrated-terminal), execute o seguinte comando:
+* Execute os seguintes comandos:
 
    ```console
    dotnet new webapp -o SignalRChat
+   code -r SignalRChat
    ```
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio para Mac](#tab/visual-studio-mac)
@@ -113,13 +114,11 @@ A biblioteca do servidor SignalR está incluída no metapacote `Microsoft.AspNet
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-* No **Terminal Integrado**, execute o seguinte comando para instalar o LibMan.
+* No terminal integrado, execute o seguinte comando para instalar o LibMan.
 
   ```console
   dotnet tool install -g Microsoft.Web.LibraryManager.Cli
   ```
-
-* Navegue até a pasta do projeto, que inclui o arquivo *SignalRChat.csproj*.
 
 * Execute o comando a seguir para obter a biblioteca de clientes SignalR usando LibMan. Talvez seja necessário aguardar alguns segundos antes de ver a saída.
 
@@ -225,8 +224,12 @@ O servidor do SignalR precisa ser configurado para passar solicitações do Sign
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-* Pressione **CTRL + F5** para executar o aplicativo sem depuração.
+* No terminal integrado, execute o seguinte comando:
 
+  ```console
+  dotnet run -p SignalRChat
+  ```
+  
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio para Mac](#tab/visual-studio-mac)
 
 * No menu, selecione **Executar > Iniciar sem Depuração**.

@@ -4,14 +4,14 @@ author: scottaddie
 description: Saiba mais sobre os recursos disponíveis para a criação de uma API Web no ASP.NET Core e quando é apropriado usar cada recurso.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 10/30/2018
+ms.date: 11/06/2018
 uid: web-api/index
-ms.openlocfilehash: b3e26bee5e4dc8937e810bc5db300a486437f568
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: 010c437afc494fa4426f6922421afac46bbf6b39
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244756"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225428"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>Criar APIs Web com o ASP.NET Core
 
@@ -77,13 +77,13 @@ As seções a seguir descrevem os recursos de conveniência adicionados pelo atr
 
 ### <a name="automatic-http-400-responses"></a>Respostas automáticas do HTTP 400
 
-Os erros de validação disparam uma resposta HTTP 400 automaticamente. O código a seguir se torna desnecessário em suas ações:
+Os erros de validação do modelo disparam uma resposta HTTP 400 automaticamente. Consequentemente, o código a seguir se torna desnecessário em suas ações:
 
 [!code-csharp[](define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
 
 Use <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.InvalidModelStateResponseFactory> para personalizar a saída da resposta resultante.
 
-O comportamento padrão é desabilitado quando a propriedade <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> está definida como `true`. Adicione o seguinte código em `Startup.ConfigureServices` após `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_<version_number>);`:
+A desabilitação do comportamento padrão é útil quando a ação pode se recuperar de um erro de validação do modelo. O comportamento padrão é desabilitado quando a propriedade <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> está definida como `true`. Adicione o seguinte código em `Startup.ConfigureServices` após `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_<version_number>);`:
 
 ::: moniker-end
 

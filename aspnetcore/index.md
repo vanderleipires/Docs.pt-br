@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: index
-ms.openlocfilehash: e9bca9fe22dbb64086eba3445c50941c5440974c
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: 60f7d64baa0441b90befb2d785999a707e1025c5
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253060"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225389"
 ---
 # <a name="introduction-to-aspnet-core"></a>Introdução ao ASP.NET Core
 
@@ -50,12 +50,14 @@ ASP.NET Core integra-se perfeitamente com estruturas conhecidas do lado do clien
 
 ## <a name="aspnet-core-targeting-net-framework"></a>ASP.NET Core direcionado para o .NET Framework
 
-O ASP.NET Core pode ser direcionado para o .NET Core ou ao .NET Framework. Os aplicativos do ASP.NET Core direcionados ao .NET Framework não são multiplataforma,&mdash; são executados somente no Windows. Não existem planos para interromper o suporte ao direcionamento para .NET Framework no ASP.NET Core. Em geral, o ASP.NET Core é composto de bibliotecas do [.NET Standard](/dotnet/standard/net-standard). Aplicativos criados com o .NET Standard 2.0 são executados em qualquer lugar com suporte para ele.
+O ASP.NET Core 2.x pode ser direcionado para o .NET Core ou ao .NET Framework. Os aplicativos do ASP.NET Core direcionados ao .NET Framework não são multiplataforma,&mdash; são executados somente no Windows. Em geral, o ASP.NET Core 2.x é composto de bibliotecas do [.NET Standard](/dotnet/standard/net-standard). Aplicativos criados com o .NET Standard 2.0 são executados em qualquer lugar com suporte para ele.
 
 O ASP.NET Core 2.x dá suporte para as versões do .NET Framework compatíveis com o .NET Standard 2.0:
 
 * O .NET Framework 4.7.1 e versões posteriores são fortemente recomendados.
 * .NET Framework 4.6.1 e versões posteriores.
+
+O ASP.NET Core 3.0 e posterior somente executará no .NET Core. Para obter mais detalhes sobre essa alteração, confira [A first look at changes coming in ASP.NET Core 3.0](https://blogs.msdn.microsoft.com/webdev/2018/10/29/a-first-look-at-changes-coming-in-asp-net-core-3-0/) (Uma primeira análise das alterações no ASP.NET Core 3.0).
 
 Há várias vantagens em direcionar para o .NET Core, e essas vantagens aumentam com cada versão. Algumas vantagens do .NET Core em relação ao .NET Framework incluem:
 

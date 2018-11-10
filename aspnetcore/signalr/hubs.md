@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/12/2018
 uid: signalr/hubs
-ms.openlocfilehash: be42314afad4ff43d2fcf1abbc96c5b78c773977
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 27aedc5b2f2060d961070fbd1ff5304eaa3956d1
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206010"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225350"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Usar os hubs no SignalR do ASP.NET Core
 
@@ -41,6 +41,11 @@ Criar um hub, declarando uma classe que herda de `Hub`e adicione os métodos pú
 [!code-csharp[Create and use hubs](hubs/sample/hubs/chathub.cs?range=8-37)]
 
 Você pode especificar um tipo de retorno e parâmetros, incluindo tipos complexos e matrizes, como você faria em qualquer método em c#. O SignalR lida com a serialização e desserialização de objetos complexos e matrizes em seus valores de retorno e parâmetros.
+
+> [!NOTE]
+> Os hubs são transitórios:
+> * Não armazene o estado em uma propriedade na classe hub. Cada chamada de método de hub é executada em uma nova instância de hub.  
+> * Use `await` ao chamar métodos assíncronos que dependem do hub de permanecer ativo. Por exemplo, um método, como `Clients.All.SendAsync(...)` pode falhar se ele for chamado sem `await` e o método de hub seja concluída antes de `SendAsync` for concluída.
 
 ## <a name="the-context-object"></a>O objeto de contexto
 

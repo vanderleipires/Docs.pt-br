@@ -5,14 +5,14 @@ description: Saiba como usar a autenticação e autorização no SignalR do ASP.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: anurse
 ms.custom: mvc
-ms.date: 10/17/2018
+ms.date: 11/06/2018
 uid: signalr/security
-ms.openlocfilehash: 1adf762cd6de4f0cf62e31c0ec6e595a32ed56f8
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: f646d319cf3030fd4d769e882514da14b230bbdd
+ms.sourcegitcommit: c3fa5aded0bf76a7414047d50b8a2311d27ee1ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477534"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51276139"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>Considerações de segurança no SignalR do ASP.NET Core
 
@@ -35,7 +35,7 @@ Para obter mais informações sobre como configurar o CORS, consulte [habilitar 
 * Métodos HTTP `GET` e `POST` devem ser permitidos.
 * Credenciais devem ser habilitadas, mesmo quando a autenticação não é usada.
 
-Por exemplo, a seguinte política CORS permite que um cliente de navegador do SignalR hospedado no `http://example.com` para acessar o aplicativo de SignalR hospedado em `http://signalr.example.com`:
+Por exemplo, a seguinte política CORS permite que um cliente de navegador do SignalR hospedado no `https://example.com` para acessar o aplicativo de SignalR hospedado em `https://signalr.example.com`:
 
 [!code-csharp[Main](security/sample/Startup.cs?name=snippet1)]
 
@@ -43,6 +43,14 @@ Por exemplo, a seguinte política CORS permite que um cliente de navegador do Si
 > O SignalR não é compatível com o recurso interno de CORS no serviço de aplicativo do Azure.
 
 ## <a name="websocket-origin-restriction"></a>Restrição de origem do WebSocket
+
+::: moniker range=">= aspnetcore-2.2"
+
+As proteções fornecidas pelo CORS não se aplicam ao WebSockets. Para a restrição de origem sobre WebSockets, leia [restrição de origem de WebSockets](xref:fundamentals/websockets#websocket-origin-restriction).
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
 
 As proteções fornecidas pelo CORS não se aplicam ao WebSockets. Navegadores fazem **não**:
 
@@ -58,9 +66,18 @@ No ASP.NET Core 2.1 e posterior, validação de cabeçalho pode ser obtida usand
 > [!NOTE]
 > O `Origin` cabeçalho é controlado pelo cliente e, como o `Referer` cabeçalho, podem ser falsificadas. Esses cabeçalhos devem **não** ser usado como um mecanismo de autenticação.
 
+::: moniker-end
+
 ## <a name="access-token-logging"></a>Log de token de acesso
 
-Ao usar WebSockets ou Server-Sent eventos, o cliente de navegador envia o token de acesso na cadeia de caracteres de consulta. Receber o token de acesso por meio da cadeia de caracteres de consulta é geralmente tão seguro quanto usar o padrão `Authorization` cabeçalho. No entanto, muitos servidores web registrar a URL para cada solicitação, incluindo a cadeia de caracteres de consulta. Registro em log as URLs pode registrar o token de acesso. Uma prática recomendada é definir configurações de registro em log do servidor para impedir que tokens de acesso de registro em log de web.
+Ao usar WebSockets ou Server-Sent eventos, o cliente de navegador envia o token de acesso na cadeia de caracteres de consulta. Receber o token de acesso por meio da cadeia de caracteres de consulta é geralmente tão seguro quanto usar o padrão `Authorization` cabeçalho. Você sempre deve usar HTTPS para garantir uma conexão segura de ponta a ponta entre o cliente e o servidor. A URL para cada solicitação, incluindo a cadeia de caracteres de consulta de log de muitos servidores web. Registro em log as URLs pode registrar o token de acesso. ASP.NET Core registra a URL para cada solicitação, por padrão, o que incluirá a cadeia de caracteres de consulta. Por exemplo:
+
+```
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://localhost:5000/myhub?access_token=1234
+```
+
+Se você tiver dúvidas sobre o log de dados com os logs do servidor, você pode desabilitar esse log inteiramente, configurando o `Microsoft.AspNetCore.Hosting` agente para o `Warning` nível ou superior (essas mensagens são gravadas em `Info` nível). Consulte a documentação sobre [filtragem de Log](xref:fundamentals/logging/index#log-filtering) para obter mais informações. Se você ainda quiser registrar determinadas informações de solicitação, você poderá [escrever um middleware](xref:fundamentals/middleware/index#write-middleware) para registrar os dados necessários e filtrar o `access_token` valor de cadeia de caracteres de consulta (se presente).
 
 ## <a name="exceptions"></a>Exceções
 

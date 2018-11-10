@@ -5,12 +5,12 @@ description: Saiba como criar e usar formatadores personalizados para APIs Web n
 ms.author: tdykstra
 ms.date: 02/08/2017
 uid: web-api/advanced/custom-formatters
-ms.openlocfilehash: a038cd9c05950333fce9e72f67d6721198fae4d3
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: ee6f166ced41c41506f2a17a7d362399c165b718
+ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206309"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51020644"
 ---
 # <a name="custom-formatters-in-aspnet-core-web-api"></a>Formatadores personalizados na API Web ASP.NET Core
 
@@ -51,6 +51,8 @@ Para tipos de mídia de texto (por exemplo, vCard), derive da classe base [TextI
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=classdef)]
 
+Para obter um exemplo de formatador de entrada, consulte o [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample).
+
 Para tipos binários, derive da classe base [InputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.inputformatter) ou [OutputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.outputformatter).
 
 ### <a name="specify-valid-media-types-and-encodings"></a>Especifique codificações e tipos de mídia válidos
@@ -58,6 +60,8 @@ Para tipos binários, derive da classe base [InputFormatter](/dotnet/api/microso
 No construtor, especifique codificações e tipos de mídia válidos adicionando-os às coleções `SupportedMediaTypes` e `SupportedEncodings`.
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=ctor&highlight=3,5-6)]
+
+Para obter um exemplo de formatador de entrada, consulte o [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample).
 
 > [!NOTE]
 > Não é possível fazer a injeção de dependência de construtor em uma classe de formatador. Por exemplo, não é possível obter um agente adicionando um parâmetro de agente ao construtor. Para acessar serviços, você precisa usar o objeto de contexto que é passado para seus métodos. O exemplo de código [abaixo](#read-write) mostra como isso é feito.
@@ -67,6 +71,8 @@ No construtor, especifique codificações e tipos de mídia válidos adicionando
 Especifique o tipo no qual desserializar ou do qual serializar substituindo os métodos `CanReadType` ou `CanWriteType`. Por exemplo, talvez você só possa criar texto de vCard de um tipo `Contact` e vice-versa.
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=canwritetype)]
+
+Para obter um exemplo de formatador de entrada, consulte o [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample).
 
 #### <a name="the-canwriteresult-method"></a>O método CanWriteResult
 
@@ -84,6 +90,8 @@ Por exemplo, suponha que sua assinatura do método de ação retorne um tipo `Pe
 Você faz o trabalho real de desserialização ou serialização em `ReadRequestBodyAsync` ou `WriteResponseBodyAsync`. As linhas destacadas no exemplo a seguir mostram como obter serviços do contêiner de injeção de dependência (não é possível obtê-los dos parâmetros do construtor).
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=writeresponse&highlight=3-4)]
+
+Para obter um exemplo de formatador de entrada, consulte o [aplicativo de exemplo](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample).
 
 ## <a name="how-to-configure-mvc-to-use-a-custom-formatter"></a>Como configurar o MVC para usar um formatador personalizado
 
