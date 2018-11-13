@@ -40,8 +40,7 @@ Toque no link **Criar Novo** para adicionar um novo filme. Preencha o formulári
 
 ![Formulário da exibição de filmes com vários erros de validação do lado do cliente do jQuery](~/tutorials/first-mvc-app/validation/_static/val.png)
 
-> [!NOTE]
-> Talvez você não consiga inserir casas decimais ou vírgulas no campo `Price`. Para dar suporte à [validação do jQuery](https://jqueryvalidation.org/) para localidades de idiomas diferentes do inglês que usam uma vírgula (“,”) para um ponto decimal e formatos de data diferentes do inglês dos EUA, você deve tomar medidas para globalizar o aplicativo. Veja [Problema 4076 do GitHub](https://github.com/aspnet/Docs/issues/4076#issuecomment-326590420) para obter instruções sobre como adicionar casas decimais. 
+[!INCLUDE[](~/includes/currency.md)]
 
 Observe como o formulário renderizou automaticamente uma mensagem de erro de validação apropriada em cada campo que contém um valor inválido. Os erros são impostos no lado do cliente (usando o JavaScript e o jQuery) e no lado do servidor (caso um usuário tenha o JavaScript desabilitado).
 

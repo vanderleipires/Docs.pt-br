@@ -5,12 +5,12 @@ description: Saiba como o ASP.NET Core fornece serviços e middleware para local
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 5014d697603d802929b417e6439d4cc6983184d2
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: af11906f86fe4ea91ed520584daedc094ab2dc0b
+ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207583"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51505824"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalização e localização no ASP.NET Core
 
@@ -338,6 +338,8 @@ Termos:
 * Cultura específica: uma cultura que tem um idioma e uma região especificados. (por exemplo, "en-US", "en-GB", "es-CL")
 * Cultura pai: a cultura neutra que contém uma cultura específica. (por exemplo, "en" é a cultura pai de "en-US" e "en-GB")
 * Localidade: uma localidade é o mesmo que uma cultura.
+
+[!INCLUDE[](~/includes/currency.md)]
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

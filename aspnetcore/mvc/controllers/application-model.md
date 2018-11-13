@@ -5,12 +5,12 @@ description: Saiba como ler e manipular o modelo de aplicativo para modificar co
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 7a03f5eaa561557f3abe9c8dd8f4e46a57413a55
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f3e0aafa3e6a352c632e4abbf3943be61f11ea81
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277586"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225493"
 ---
 # <a name="work-with-the-application-model-in-aspnet-core"></a>Trabalhar com o modelo de aplicativo no ASP.NET Core
 
@@ -162,14 +162,14 @@ Esta amostra aplica essa convenção às rotas que não estão usando o roteamen
 
 ## <a name="application-model-usage-in-webapicompatshim"></a>Uso do modelo de aplicativo em WebApiCompatShim
 
-O ASP.NET Core MVC usa um conjunto diferente de convenções da API Web ASP.NET 2. Usando convenções personalizadas, você pode modificar o comportamento de um aplicativo ASP.NET Core MVC para que ele seja consistente com o comportamento de um aplicativo de API Web. A Microsoft fornece o [WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim/) especificamente para essa finalidade.
+O ASP.NET Core MVC usa um conjunto diferente de convenções do ASP.NET Web API 2. Usando convenções personalizadas, você pode modificar o comportamento de um aplicativo ASP.NET Core MVC para que ele seja consistente com o comportamento de um aplicativo de API Web. A Microsoft fornece o [WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim/) especificamente para essa finalidade.
 
 > [!NOTE]
-> Saiba mais sobre [migração da API Web ASP.NET](xref:migration/webapi).
+> Saiba mais sobre [migração do ASP.NET Web API](xref:migration/webapi).
 
 Para usar o Shim de Compatibilidade de API Web, você precisa adicionar o pacote ao projeto e, em seguida, adicionar as convenções ao MVC chamando `AddWebApiConventions` em `Startup`:
 
-```c#
+```csharp
 services.AddMvc().AddWebApiConventions();
 ```
 
