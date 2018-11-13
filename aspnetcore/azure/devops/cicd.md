@@ -5,12 +5,12 @@ description: Um guia que fornece orientação de ponta a ponta sobre a criação
 ms.author: scaddie
 ms.date: 10/24/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: 18a59a1ff6fd6bbf51ff664764725b8972dfa1bf
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: edaf2c2e1428e5e82104786d94584a4ef08f9ee3
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090507"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570081"
 ---
 # <a name="continuous-integration-and-deployment"></a>Integração contínua e implantação
 
@@ -271,7 +271,7 @@ Clicar a tarefa de troca de slot revela a configuração de tarefa a seguir:
 
 ![tarefa de troca de slot do pipeline de versão](media/cicd/release-definition-task2.png)
 
-A assinatura, grupo de recursos, tipo de serviço, nome do aplicativo web e detalhes do slot de implantação são fornecidas. O **troca com produção** caixa de seleção é marcada. Consequentemente, os bits implantados para o *preparo* slot são trocadas no ambiente de produção.
+A assinatura, grupo de recursos, tipo de serviço, nome do aplicativo web e detalhes do slot de implantação são fornecidas. O **troca com produção** caixa de seleção está marcada. Consequentemente, os bits implantados para o *preparo* slot são trocadas no ambiente de produção.
 
 ## <a name="additional-reading"></a>Leitura adicional
 
