@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: 6a53c1ba5badd741afc3321ce21b047965c611db
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 2b23bf8230f7a1c207ef7870da098ffb0c597fd5
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090596"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225441"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>Solucionar problemas do ASP.NET Core no IIS
 
@@ -19,7 +19,17 @@ Por [Luke Latham](https://github.com/guardrex)
 
 Este artigo fornece instruções sobre como diagnosticar um problema de inicialização do aplicativo ASP.NET Core ao hospedar com [IIS (Serviços de Informações da Internet)](/iis). As informações neste artigo se aplicam à hospedagem em IIS no Windows Server e Windows Desktop.
 
+::: moniker range=">= aspnetcore-2.2"
+
+No Visual Studio, um projeto do ASP.NET Core usa por padrão a hospedagem do [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) durante a depuração. Uma *502.5 – falha de processo* ou uma *500.30 – falha de inicialização* que ocorre ao depurar localmente pode ser solucionada usando as recomendações presentes neste tópico.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
 No Visual Studio, um projeto do ASP.NET Core usa por padrão a hospedagem do [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) durante a depuração. Uma *502.5 – Falha de Processo* que ocorre ao depurar localmente pode ser solucionada usando as recomendações presentes neste tópico.
+
+::: moniker-end
 
 Tópicos adicionais de solução de problemas:
 
@@ -40,11 +50,40 @@ Saiba mais sobre o suporte de depuração interno do Visual Studio Code.
 **502.5 – Falha de Processo**  
 O processo de trabalho falha. O aplicativo não foi iniciado.
 
-O Módulo do ASP.NET Core tenta iniciar o processo de trabalho, mas falhar ao iniciar. A causa de uma falha de inicialização do processo geralmente pode ser determinada com base em entradas no [Log de Eventos do Aplicativo](#application-event-log) e no [log de stdout do Módulo do ASP.NET Core](#aspnet-core-module-stdout-log).
+O Módulo do ASP.NET Core tenta iniciar o processo dotnet de back-end, mas falha ao iniciar. A causa de uma falha de inicialização do processo geralmente pode ser determinada com base em entradas no [Log de Eventos do Aplicativo](#application-event-log) e no [log de stdout do Módulo do ASP.NET Core](#aspnet-core-module-stdout-log). 
+
+Uma condição de falha comum é o aplicativo configurado incorretamente, direcionado a uma versão da estrutura compartilhada do ASP.NET Core que não está presente. Verifique quais versões da estrutura compartilhada do ASP.NET Core estão instaladas no computador de destino.
 
 A página do erro *502.5 – Falha no Processo* é retornada quando um erro de configuração de hospedagem ou do aplicativo faz com que o processo de trabalho falhe:
 
 ![Janela do navegador mostrando a página 502.5 – Falha no Processo](troubleshoot/_static/process-failure-page.png)
+
+::: moniker range=">= aspnetcore-2.2"
+
+**500.30 falha de inicialização em processo**
+
+O processo de trabalho falha. O aplicativo não foi iniciado.
+
+O Módulo do ASP.NET Core tenta iniciar o CLR do .NET Core em processo, mas falha ao iniciar. A causa de uma falha de inicialização do processo geralmente pode ser determinada com base em entradas no [Log de Eventos do Aplicativo](#application-event-log) e no [log de stdout do Módulo do ASP.NET Core](#aspnet-core-module-stdout-log). 
+
+Uma condição de falha comum é o aplicativo configurado incorretamente, direcionado a uma versão da estrutura compartilhada do ASP.NET Core que não está presente. Verifique quais versões da estrutura compartilhada do ASP.NET Core estão instaladas no computador de destino.
+
+**500.0 Falha de carregamento de manipulador em processo**
+
+O processo de trabalho falha. O aplicativo não foi iniciado.
+
+O Módulo do ASP.NET Core falha ao encontrar o CLR do .NET Core e o manipulador de solicitação em processo (*aspnetcorev2_inprocess.dll*). Verifique se:
+
+* O aplicativo destina-se ao pacote NuGet [Microsoft.AspNetCore.Server.IIS](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IIS) ou ao [metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app).
+* A versão da estrutura compartilhada do ASP.NET Core a que o aplicativo se destina está instalada no computador de destino.
+
+**500.0 Falha de carregamento de manipulador fora de processo**
+
+O processo de trabalho falha. O aplicativo não foi iniciado.
+
+O Módulo do ASP.NET Core falha ao encontrar o manipulador de solicitações de hospedagem de fora do processo. Verifique se a *aspnetcorev2_outofprocess.dll* está presente em uma subpasta próxima a *aspnetcorev2.dll*. 
+
+::: moniker-end
 
 **500 – Erro Interno do Servidor**  
 O aplicativo é iniciado, mas um erro impede o servidor de atender à solicitação.

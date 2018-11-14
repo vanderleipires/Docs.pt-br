@@ -5,14 +5,14 @@ description: Saiba como começar a usar o WebSockets no ASP.NET Core.
 monikerRange: '>= aspnetcore-1.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/28/2018
+ms.date: 11/06/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: b0f1aeff6c7a5777993459274293ba23f2d9dc12
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 3a649f88699d61636d9aa7fbfe4468ca67b3b018
+ms.sourcegitcommit: fc7eb4243188950ae1f1b52669edc007e9d0798d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206734"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51225402"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>Suporte ao WebSockets no ASP.NET Core
 
@@ -72,10 +72,24 @@ Adicione o middleware do WebSockets no método `Configure` da classe `Startup`:
 
 ::: moniker-end
 
+::: moniker range="< aspnetcore-2.2"
+
 As seguintes configurações podem ser definidas:
 
-* `KeepAliveInterval` – a frequência para enviar quadros "ping" ao cliente para garantir que os proxies mantenham a conexão aberta.
-* `ReceiveBufferSize` – o tamanho do buffer usado para receber dados. Os usuários avançados podem precisar alterar isso para ajuste de desempenho com base no tamanho dos dados.
+* `KeepAliveInterval` – a frequência para enviar quadros "ping" ao cliente para garantir que os proxies mantenham a conexão aberta. O padrão é dois minutos.
+* `ReceiveBufferSize` – o tamanho do buffer usado para receber dados. Os usuários avançados podem precisar alterar isso para ajuste de desempenho com base no tamanho dos dados. O padrão é 4 KB.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+As seguintes configurações podem ser definidas:
+
+* `KeepAliveInterval` – a frequência para enviar quadros "ping" ao cliente para garantir que os proxies mantenham a conexão aberta. O padrão é dois minutos.
+* `ReceiveBufferSize` – o tamanho do buffer usado para receber dados. Os usuários avançados podem precisar alterar isso para ajuste de desempenho com base no tamanho dos dados. O padrão é 4 KB.
+* `AllowedOrigins` – Uma lista de valores de cabeçalho de origem permitidos para solicitações do WebSocket. Por padrão, todas as origens são permitidas. Consulte "Restrição de origem do WebSocket" abaixo para obter detalhes.
+
+::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -128,6 +142,32 @@ O código mostrado anteriormente que aceita a solicitação do WebSocket passa o
 ::: moniker-end
 
 Ao aceitar a conexão WebSocket antes de iniciar o loop, o pipeline de middleware é encerrado. Ao fechar o soquete, o pipeline é desenrolado. Ou seja, a solicitação deixa de avançar no pipeline quando o WebSocket é aceito. Quando o loop é concluído e o soquete é fechado, a solicitação continua a avançar no pipeline.
+
+::: moniker range=">= aspnetcore-2.2"
+
+### <a name="websocket-origin-restriction"></a>Restrição de origem do WebSocket
+
+As proteções fornecidas pelo CORS não se aplicam ao WebSockets. Navegadores **não**:
+
+* Executam solicitações de simulação de CORS.
+* Respeitam as restrições especificadas em cabeçalhos `Access-Control` ao fazer solicitações de WebSocket.
+
+No entanto, os navegadores enviam o cabeçalho `Origin` ao emitir solicitações de WebSocket. Os aplicativos devem ser configurados para validar esses cabeçalhos e garantir que apenas WebSockets provenientes de origens esperadas sejam permitidos.
+
+Se você estiver hospedando o servidor em "https://server.com" e hospedando seu cliente em "https://client.com", adicione "https://client.com" à lista `AllowedOrigins` para o WebSockets verificar.
+
+```csharp
+app.UseWebSockets(new WebSocketOptions()
+{
+    AllowedOrigins.Add("https://client.com");
+    AllowedOrigins.Add("https://www.client.com");
+});
+```
+
+> [!NOTE]
+> O cabeçalho `Origin` é controlado pelo cliente e, como o cabeçalho `Referer`, pode ser falsificado. **Não** use esses cabeçalhos como um mecanismo de autenticação.
+
+::: moniker-end
 
 ## <a name="iisiis-express-support"></a>Suporte ao IIS/IIS Express
 

@@ -15,7 +15,7 @@ O código anterior:
 * Define uma classe de controlador de API sem métodos.
 * Cria um novo item de Tarefas pendentes quando `TodoItems` está vazio. Você não poderá excluir todos os itens de Tarefas pendentes porque o construtor cria um novo se `TodoItems` estiver vazio.
 
-Nas próximas seções, os métodos serão adicionados para implementar a API. A classe é anotada com um atributo `[ApiController]` para habilitar alguns recursos convenientes. Para obter informações sobre os recursos habilitados pelo atributo, confira [Anotar classe com o ApiControllerAttribute](xref:web-api/index#annotate-class-with-apicontrollerattribute).
+Nas próximas seções, os métodos serão adicionados para implementar a API. A classe é anotada com um atributo `[ApiController]` para habilitar alguns recursos convenientes. Para obter informações sobre os recursos habilitados pelo atributo, confira [Anotações com o ApiControllerAttribute](xref:web-api/index#annotation-with-apicontrollerattribute).
 
 ::: moniker-end
 
@@ -74,7 +74,7 @@ O atributo `[HttpGet]` indica um método que responde a uma solicitação HTTP G
 
 ::: moniker-end
 
-* Substitua `[controller]` com o nome do controlador, que é o nome de classe do controlador menos o sufixo "Controlador". Para esta amostra, o nome de classe do controlador é **Todo**Controller e o nome da raiz é “todo”. O [roteamento](xref:mvc/controllers/routing) do ASP.NET Core não diferencia maiúsculas de minúsculas.
+* Substitua `[controller]` pelo nome do controlador, que é o nome de classe do controlador menos o sufixo "Controlador" por convenção. Para esta amostra, o nome de classe do controlador é **Todo**Controller e o nome da raiz é “todo”. O [roteamento](xref:mvc/controllers/routing) do ASP.NET Core não diferencia maiúsculas de minúsculas.
 * Se o atributo `[HttpGet]` tiver um modelo de rota (como `[HttpGet("/products")]`), acrescente isso ao caminho. Esta amostra não usa um modelo. Para obter mais informações, confira [Roteamento de atributo com atributos Http[Verb]](xref:mvc/controllers/routing#attribute-routing-with-httpverb-attributes).
 
 No método `GetById` a seguir, `"{id}"` é uma variável de espaço reservado para o identificador exclusivo do item pendente. Quando `GetById` é invocado, ele atribui o valor de `"{id}"` na URL ao parâmetro `id` do método.

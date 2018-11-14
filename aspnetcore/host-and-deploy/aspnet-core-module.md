@@ -6,16 +6,16 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 0d167f779f9dcae6b0d946dce5e341793daf43bf
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: ca86b1548c7c28a64fd391617b2e8290c1c264cf
+ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091009"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51191354"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Referência de configuração do Módulo do ASP.NET Core
 
-Por [Luke Latham](https://github.com/guardrex), [Rick Anderson](https://twitter.com/RickAndMSFT) e [Sourabh Shirhatti](https://twitter.com/sshirhatti)
+Por [Luke Latham](https://github.com/guardrex), [Rick Anderson](https://twitter.com/RickAndMSFT), [Sourabh Shirhatti](https://twitter.com/sshirhatti) e [Justin Kotalik](https://github.com/jkotalik)
 
 Este documento fornece instruções sobre como configurar o Módulo do ASP.NET Core para hospedar aplicativos do ASP.NET Core. Para obter uma introdução ao Módulo do ASP.NET Core e instruções de instalação, veja a [visão geral do Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module).
 
@@ -27,11 +27,11 @@ Para aplicativos em execução no .NET Core 2.2 ou posterior, o módulo dá supo
 
 A hospedagem em processo é uma aceitação para os aplicativos existentes, mas o padrão dos modelos [dotnet new](/dotnet/core/tools/dotnet-new) é o modelo de hospedagem em processo para todos os cenários do IIS e IIS Express.
 
-Para configurar um aplicativo para hospedagem em processo, adicione a propriedade `<AspNetCoreModuleHostingModel>` ao arquivo de projeto do aplicativo com um valor de `inprocess` (a hospedagem de fora do processo é definida com `outofprocess`):
+Para configurar um aplicativo para hospedagem em processo, adicione a propriedade `<AspNetCoreHostingModel>` ao arquivo de projeto do aplicativo (por exemplo, *MyApp.csproj*) com um valor de `inprocess` (a hospedagem de fora do processo é definida com `outofprocess`):
 
 ```xml
 <PropertyGroup>
-  <AspNetCoreModuleHostingModel>inprocess</AspNetCoreModuleHostingModel>
+  <AspNetCoreHostingModel>inprocess</AspNetCoreHostingModel>
 </PropertyGroup>
 ```
 
@@ -51,6 +51,8 @@ As seguintes características se aplicam ao hospedar em processo:
 
 * As desconexões do cliente são detectadas. O token de cancelamento [HttpContext.RequestAborted](xref:Microsoft.AspNetCore.Http.HttpContext.RequestAborted*) é cancelado quando o cliente se desconecta.
 
+* `Directory.GetCurrentDirectory()` retorna o diretório de trabalho do processo iniciado pelo IIS em vez do diretório do aplicativo (por exemplo, *C:\Windows\System32\inetsrv* para *w3wp.exe*).
+
 ### <a name="hosting-model-changes"></a>Alterações no modelo de hospedagem
 
 Se a configuração `hostingModel` for alterada no arquivo *web.config* (explicado na seção [Configuração a Web.config](#configuration-with-webconfig)), o módulo reciclará o processo de trabalho do IIS.
@@ -59,7 +61,7 @@ Para o IIS Express, o módulo não recicla o processo de trabalho, mas em vez di
 
 ### <a name="process-name"></a>Nome do processo
 
-`Process.GetCurrentProcess().ProcessName` relata `w3wp` (em processo) ou `dotnet` (fora do processo).
+`Process.GetCurrentProcess().ProcessName` relata `w3wp`/`iisexpress` (em processo) ou `dotnet` (fora do processo).
 
 ::: moniker-end
 
@@ -74,16 +76,18 @@ O seguinte arquivo *web.config* é publicado para uma [implantação dependente 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
-  <system.webServer>
-    <handlers>
-      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
-    </handlers>
-    <aspNetCore processPath="dotnet" 
-                arguments=".\MyApp.dll" 
-                stdoutLogEnabled="false" 
-                stdoutLogFile=".\logs\stdout" 
-                hostingModel="inprocess" />
-  </system.webServer>
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <handlers>
+        <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+      </handlers>
+      <aspNetCore processPath="dotnet" 
+                  arguments=".\MyApp.dll" 
+                  stdoutLogEnabled="false" 
+                  stdoutLogFile=".\logs\stdout" 
+                  hostingModel="inprocess" />
+    </system.webServer>
+  </location>
 </configuration>
 ```
 
@@ -115,15 +119,17 @@ O seguinte *web.config* é publicado para uma [implantação autossuficiente](/d
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
-  <system.webServer>
-    <handlers>
-      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
-    </handlers>
-    <aspNetCore processPath=".\MyApp.exe" 
-                stdoutLogEnabled="false" 
-                stdoutLogFile=".\logs\stdout" 
-                hostingModel="inprocess" />
-  </system.webServer>
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <handlers>
+        <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+      </handlers>
+      <aspNetCore processPath=".\MyApp.exe" 
+                  stdoutLogEnabled="false" 
+                  stdoutLogFile=".\logs\stdout" 
+                  hostingModel="inprocess" />
+    </system.webServer>
+  </location>
 </configuration>
 ```
 
@@ -266,13 +272,25 @@ Ao usar o modelo de hospedagem de fora do processo, talvez o aplicativo não des
 
 ::: moniker range=">= aspnetcore-2.2"
 
-*Só se aplica à hospedagem de fora do processo.*
+A hospedagem em processo e fora do processo produzem páginas de erro personalizadas quando falham ao iniciar o aplicativo.
+
+Se o Módulo do ASP.NET Core falhar ao encontrar o manipulador de solicitação em processo ou fora do processo, uma página de código de status *500.0 – falha ao carregar manipulador no processo/fora do processo* será exibida.
+
+No caso da hospedagem em processo, se o módulo do ASP.NET Core falhar ao iniciar o aplicativo, uma página de código de status *500.30 – falha ao iniciar* será exibida.
+
+Para hospedagem fora do processo, se o Módulo do ASP.NET Core falhar ao iniciar o processo de back-end ou se o processo de back-end iniciar, mas falhar ao escutar na porta configurada, uma página de código de status *502.5 – falha no processo* será exibida.
+
+Para suprimir essa página e reverter para a página de código de status 5xx padrão do IIS, use o atributo `disableStartUpErrorPage`. Para obter mais informações sobre como configurar mensagens de erro personalizadas, veja [Erros HTTP &lt;httpErrors&gt;](/iis/configuration/system.webServer/httpErrors/).
 
 ::: moniker-end
 
-Se o Módulo do ASP.NET Core falhar ao iniciar o processo de back-end ou se o processo de back-end iniciar mas falhar em escutar na porta configurada, uma página de código de status *502.5 – Falha no Processo* será exibida. Para omitir esta página e reverter para a página de código de status 502 padrão do IIS, use o atributo `disableStartUpErrorPage`. Para obter mais informações sobre como configurar mensagens de erro personalizadas, veja [Erros HTTP `<httpErrors>`](/iis/configuration/system.webServer/httpErrors/).
+::: moniker range="< aspnetcore-2.2"
+
+Se o Módulo do ASP.NET Core falhar ao iniciar o processo de back-end ou se o processo de back-end iniciar, mas falhar ao escutar na porta configurada, uma página de código de status *502.5 – falha no processo* será exibida. Para omitir esta página e reverter para a página de código de status 502 padrão do IIS, use o atributo `disableStartUpErrorPage`. Para obter mais informações sobre como configurar mensagens de erro personalizadas, veja [Erros HTTP &lt;httpErrors&gt;](/iis/configuration/system.webServer/httpErrors/).
 
 ![Página de código de status 502.5 – Falha do Processo](aspnet-core-module/_static/ANCM-502_5.png)
+
+::: moniker-end
 
 ## <a name="log-creation-and-redirection"></a>Criação de log e redirecionamento
 
@@ -283,6 +301,12 @@ Logs não sofrem rotação, a menos que ocorra a reciclagem/reinicialização do
 Usar o log de stdout é recomendado apenas para solucionar problemas de inicialização do aplicativo. Não use o log de stdout para fins gerais de registro em log do aplicativo. Para registro em log de rotina em um aplicativo ASP.NET Core, use uma biblioteca de registro em log que limita o tamanho do arquivo de log e realiza a rotação de logs. Para obter mais informações, veja [provedores de log de terceiros](xref:fundamentals/logging/index#third-party-logging-providers).
 
 Uma extensão de arquivo e um carimbo de data/hora são adicionados automaticamente quando o arquivo de log é criado. O nome do arquivo de log é composto por meio do acréscimo do carimbo de data/hora, da ID do processo e da extensão de arquivo (*.log*) para o último segmento do caminho `stdoutLogFile` (normalmente *stdout*), delimitados por sublinhados. Se o caminho `stdoutLogFile` termina com *stdout*, um log para um aplicativo com um PID de 1934, criado em 5/2/2018 às 19:42:32, tem o nome de arquivo *stdout_20180205194132_1934.log*.
+
+::: moniker range=">= aspnetcore-2.2"
+
+Se `stdoutLogEnabled` for falso, os erros que ocorrerem na inicialização do aplicativo serão capturados e emitidos no log de eventos até 30 KB. Após a inicialização, todos os logs adicionais são descartados.
+
+::: moniker-end
 
 O elemento `aspNetCore` de exemplo a seguir configura o registro em log de stdout para um aplicativo hospedado no Serviço de Aplicativo do Azure. Um caminho local ou um caminho de compartilhamento de rede é aceitável para o registro em log local. Confirme se a identidade do usuário AppPool tem permissão para gravar no caminho fornecido.
 
@@ -399,11 +423,27 @@ Os logs de instalador do pacote de hospedagem para o módulo são encontrados em
 
    * %windir%\SysWOW64\inetsrv\aspnetcore.dll
 
+::: moniker range=">= aspnetcore-2.2"
+
+   * %ProgramFiles%\IIS\Asp.Net Core Module\V2\aspnetcorev2.dll
+
+   * %ProgramFiles(x86)%\IIS\Asp.Net Core Module\V2\aspnetcorev2.dll
+
+::: moniker-end
+
 **IIS Express (x86/amd64):**
 
    * %ProgramFiles%\IIS Express\aspnetcore.dll
 
    * %ProgramFiles(x86)%\IIS Express\aspnetcore.dll
+
+::: moniker range=">= aspnetcore-2.2"
+
+   * %ProgramFiles%\IIS Express\Asp.Net Core Module\V2\aspnetcorev2.dll
+
+   * %ProgramFiles(x86)%\IIS Express\Asp.Net Core Module\V2\aspnetcorev2.dll
+
+::: moniker-end
 
 ### <a name="schema"></a>Esquema
 
@@ -411,9 +451,20 @@ Os logs de instalador do pacote de hospedagem para o módulo são encontrados em
 
    * %windir%\System32\inetsrv\config\schema\aspnetcore_schema.xml
 
+::: moniker range=">= aspnetcore-2.2"
+
+   * %windir%\System32\inetsrv\config\schema\aspnetcore_schema_v2.xml
+
+::: moniker-end
 **IIS Express**
 
    * %ProgramFiles%\IIS Express\config\schema\aspnetcore_schema.xml
+
+::: moniker range=">= aspnetcore-2.2"
+
+   * %ProgramFiles%\IIS Express\config\schema\aspnetcore_schema_v2.xml
+
+::: moniker-end
 
 ### <a name="configuration"></a>Configuração
 
@@ -423,6 +474,6 @@ Os logs de instalador do pacote de hospedagem para o módulo são encontrados em
 
 **IIS Express**
 
-   * .vs\config\applicationHost.config
+   * %ProgramFiles%\IIS Express\config\templates\PersonalWebServer\applicationHost.config
 
-Os arquivos podem ser encontrados pesquisando por *aspnetcore.dll* no arquivo *applicationHost.config*. Para o IIS Express, o arquivo *applicationHost.config* não existirá por padrão. O arquivo é criado em *\<application_root>\\.vs\\config* ao iniciar qualquer projeto de aplicativo Web na solução do Visual Studio.
+Os arquivos podem ser encontrados pesquisando por *aspnetcore* no arquivo *applicationHost.config*.
