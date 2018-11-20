@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/30/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 9943c9dd2d6dd67a79186ee880b181a5915d06be
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: cac5ccdea7838d26b7468f9bf1ab8d317b444b46
+ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505707"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51708511"
 ---
 # <a name="net-generic-host"></a>Host Genérico .NET
 
@@ -75,7 +75,7 @@ A propriedade [IHostingEnvironment.ApplicationName](xref:Microsoft.Extensions.Ho
 **Tipo**: *string*  
 **Padrão**: o nome do assembly que contém o ponto de entrada do aplicativo.  
 **Definido usando**: `HostBuilderContext.HostingEnvironment.ApplicationName`  
-**Variável de ambiente**: `<PREFIX_>APPLICATIONNAME` (`<PREFIX_>` é [opcional e definida pelo usuário](#configuration-builder))
+**Variável de ambiente**: `<PREFIX_>APPLICATIONNAME` (`<PREFIX_>` é [opcional e definida pelo usuário](#configurehostconfiguration))
 
 ### <a name="content-root"></a>Raiz do conteúdo
 
@@ -85,7 +85,7 @@ Essa configuração determina onde o host começa a procurar por arquivos de con
 **Tipo**: *string*  
 **Padrão**: o padrão é a pasta em que o assembly do aplicativo reside.  
 **Definido usando**: `UseContentRoot`  
-**Variável de ambiente**: `<PREFIX_>CONTENTROOT` (`<PREFIX_>` é [opcional e definida pelo usuário](#configuration-builder))
+**Variável de ambiente**: `<PREFIX_>CONTENTROOT` (`<PREFIX_>` é [opcional e definida pelo usuário](#configurehostconfiguration))
 
 Se o caminho não existir, o host não será iniciado.
 
@@ -99,7 +99,7 @@ Define o [ambiente](xref:fundamentals/environments) do aplicativo.
 **Tipo**: *string*  
 **Padrão**: Production  
 **Definido usando**: `UseEnvironment`  
-**Variável de ambiente**: `<PREFIX_>ENVIRONMENT` (`<PREFIX_>` é [opcional e definida pelo usuário](#configuration-builder))
+**Variável de ambiente**: `<PREFIX_>ENVIRONMENT` (`<PREFIX_>` é [opcional e definida pelo usuário](#configurehostconfiguration))
 
 O ambiente pode ser definido como qualquer valor. Os valores definidos pela estrutura incluem `Development`, `Staging` e `Production`. Os valores não diferenciam maiúsculas de minúsculas.
 
