@@ -4,14 +4,14 @@ author: scottaddie
 description: Aprenda a otimizar os recursos estáticos em um aplicativo web ASP.NET Core por meio da aplicação de técnicas de agrupamento e minificação.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 10/04/2018
+ms.date: 11/20/2018
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 152f3c810b587d734c1b1076a09ea38d13872e2d
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 5d5f0aadb7740c9b2b959d12a585cd8c91758ce8
+ms.sourcegitcommit: 4225e2c49a0081e6ac15acff673587201f54b4aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795399"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52282128"
 ---
 # <a name="bundle-and-minify-static-assets-in-aspnet-core"></a>Agrupar e minificar ativos estáticos no ASP.NET Core
 
@@ -67,9 +67,21 @@ Os modelos de projeto do MVC e páginas Razor oferecem uma solução de out-of-t
 
 ## <a name="configure-bundling-and-minification"></a>Configurar o agrupamento e minificação
 
-Os modelos de projeto MVC e páginas do Razor fornecem uma *bundleconfig.json* arquivo de configuração que define as opções para cada pacote. Por padrão, uma configuração de pacote único é definida para o JavaScript personalizado (*wwwroot/js/site.js*) e a folha de estilos (*wwwroot/css/site.css*) arquivos:
+::: moniker range="<= aspnetcore-2.0"
+
+No ASP.NET Core 2.0 ou anterior, os modelos de projeto do MVC e páginas do Razor fornecem uma *bundleconfig.json* arquivo de configuração que define as opções para cada pacote:
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+No ASP.NET Core 2.1 ou posterior, adicione um novo arquivo JSON, denominado *bundleconfig.json*, para a raiz do projeto MVC ou páginas do Razor. Inclua o JSON a seguir no arquivo como um ponto de partida:
+
+::: moniker-end
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig.json)]
+
+O *bundleconfig.json* arquivo define as opções para cada pacote. No exemplo anterior, uma configuração de pacote único é definida para o JavaScript personalizado (*wwwroot/js/site.js*) e a folha de estilos (*wwwroot/css/site.css*) arquivos.
 
 Opções de configuração incluem:
 
@@ -156,7 +168,7 @@ Limpe o projeto:
 dotnet clean
 ```
 
-A saída a seguir será exibida:
+A saída a seguir é exibida:
 
 ```console
 Microsoft (R) Build Engine version 15.4.8.50001 for .NET Core
@@ -216,27 +228,31 @@ Especificar quais arquivos serão incluídos em suas páginas usando o [auxiliar
 
 O seguinte `environment` marca renderiza os arquivos CSS não processados durante a execução no `Development` ambiente:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=21-24)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
 
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=9-12)]
 
----
+::: moniker-end
 
 O seguinte `environment` marca renderiza os arquivos CSS agrupados e minificados quando em execução em um ambiente diferente de `Development`. Por exemplo, em execução no `Production` ou `Staging` dispara o processamento dessas folhas de estilo:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=5&range=25-30)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
 
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=13-18)]
 
----
+::: moniker-end
 
 ## <a name="consume-bundleconfigjson-from-gulp"></a>Consumir bundleconfig.json do Gulp
 

@@ -5,14 +5,14 @@ description: Saiba como usar os hubs do SignalR do ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 11/07/2018
+ms.date: 11/20/2018
 uid: signalr/hubs
-ms.openlocfilehash: 0413d354307208726f4252f431ac59526effed08
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 91f92e9d6b776457cd319965d548ee401ddc5e0e
+ms.sourcegitcommit: 4225e2c49a0081e6ac15acff673587201f54b4aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51569913"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52282129"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Usar os hubs no SignalR do ASP.NET Core
 
@@ -85,7 +85,6 @@ O `Hub` classe tem um `Clients` propriedade que contém as seguintes propriedade
 | `Caller` | Chama um método no cliente que invocou o método de hub |
 | `Others` | Chama um método em todos os clientes conectados, exceto o cliente que invocou o método |
 
-
 `Hub.Clients` também contém os seguintes métodos:
 
 | Método | Descrição |
@@ -126,7 +125,17 @@ Essa interface pode ser usada para refatorar anterior `ChatHub` exemplo.
 
 Usando `Hub<IChatClient>` habilita a verificação de tempo de compilação dos métodos do cliente. Isso evita problemas causados pelo uso de cadeias de caracteres mágicas desde `Hub<T>` só pode fornecer acesso aos métodos definidos na interface.
 
-Usando fortemente tipado `Hub<T>` desabilita a capacidade de usar `SendAsync`.
+Usando fortemente tipado `Hub<T>` desabilita a capacidade de usar `SendAsync`. Todos os métodos definidos na interface ainda podem ser definidos como assíncronos. Na verdade, cada um desses métodos deve retornar um `Task`. Uma vez que ele é uma interface, não use o `async` palavra-chave. Por exemplo:
+
+```csharp
+public interface IClient
+{
+    Task ClientMethod();
+}
+```
+
+> [!NOTE]
+> O `Async` sufixo não é removido do nome do método. A menos que o método de cliente é definido com `.on('MyMethodAsync')`, você não deve usar `MyMethodAsync` como um nome.
 
 ## <a name="change-the-name-of-a-hub-method"></a>Alterar o nome de um método de hub
 
@@ -150,7 +159,7 @@ As exceções geradas em seus métodos de hub são enviadas ao cliente que invoc
 
 [!code-javascript[Error](hubs/sample/wwwroot/js/chat.js?range=23)]
 
-Por padrão, se o seu Hub lança uma exceção, o SignalR retorna uma mensagem de erro genérica para o cliente. Por exemplo:
+Se o seu Hub de lançar uma exceção, as conexões não estão fechadas. Por padrão, o SignalR retorna uma mensagem de erro genérica para o cliente. Por exemplo:
 
 ```
 Microsoft.AspNetCore.SignalR.HubException: An unexpected error occurred invoking 'MethodName' on the server.
