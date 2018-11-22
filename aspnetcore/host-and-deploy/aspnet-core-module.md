@@ -4,14 +4,14 @@ author: guardrex
 description: Saiba como configurar o módulo do ASP.NET Core para hospedar aplicativos do ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 11/12/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: ca86b1548c7c28a64fd391617b2e8290c1c264cf
-ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
+ms.openlocfilehash: 32fbf2b19da2d088847279f447f9a72cedcf8085
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51191354"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570172"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Referência de configuração do Módulo do ASP.NET Core
 
@@ -132,6 +132,8 @@ O seguinte *web.config* é publicado para uma [implantação autossuficiente](/d
   </location>
 </configuration>
 ```
+
+A propriedade <xref:System.Configuration.SectionInformation.InheritInChildApplications*> é definida como `false` para indicar que as configurações especificadas no elemento [\<location>](/iis/manage/managing-your-configuration-settings/understanding-iis-configuration-delegation#the-concept-of-location) não são herdadas por aplicativos que residem em um subdiretório do aplicativo.
 
 ::: moniker-end
 
@@ -280,13 +282,13 @@ No caso da hospedagem em processo, se o módulo do ASP.NET Core falhar ao inicia
 
 Para hospedagem fora do processo, se o Módulo do ASP.NET Core falhar ao iniciar o processo de back-end ou se o processo de back-end iniciar, mas falhar ao escutar na porta configurada, uma página de código de status *502.5 – falha no processo* será exibida.
 
-Para suprimir essa página e reverter para a página de código de status 5xx padrão do IIS, use o atributo `disableStartUpErrorPage`. Para obter mais informações sobre como configurar mensagens de erro personalizadas, veja [Erros HTTP &lt;httpErrors&gt;](/iis/configuration/system.webServer/httpErrors/).
+Para suprimir essa página e reverter para a página de código de status 5xx padrão do IIS, use o atributo `disableStartUpErrorPage`. Para obter mais informações sobre como configurar mensagens de erro personalizadas, veja [Erros HTTP \<httpErrors>](/iis/configuration/system.webServer/httpErrors/).
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.2"
 
-Se o Módulo do ASP.NET Core falhar ao iniciar o processo de back-end ou se o processo de back-end iniciar, mas falhar ao escutar na porta configurada, uma página de código de status *502.5 – falha no processo* será exibida. Para omitir esta página e reverter para a página de código de status 502 padrão do IIS, use o atributo `disableStartUpErrorPage`. Para obter mais informações sobre como configurar mensagens de erro personalizadas, veja [Erros HTTP &lt;httpErrors&gt;](/iis/configuration/system.webServer/httpErrors/).
+Se o Módulo do ASP.NET Core falhar ao iniciar o processo de back-end ou se o processo de back-end iniciar, mas falhar ao escutar na porta configurada, uma página de código de status *502.5 – falha no processo* será exibida. Para omitir esta página e reverter para a página de código de status 502 padrão do IIS, use o atributo `disableStartUpErrorPage`. Para obter mais informações sobre como configurar mensagens de erro personalizadas, veja [Erros HTTP \<httpErrors>](/iis/configuration/system.webServer/httpErrors/).
 
 ![Página de código de status 502.5 – Falha do Processo](aspnet-core-module/_static/ANCM-502_5.png)
 

@@ -1,27 +1,27 @@
 ---
-title: Associação de modelos no ASP.NET Core
+title: Model binding no ASP.NET Core
 author: tdykstra
-description: Saiba como a associação de modelos no ASP.NET Core MVC mapeia dados de solicitações HTTP para os parâmetros de método de ação.
+description: Saiba como o model binding no ASP.NET Core MVC mapeia dados de solicitações HTTP para os parâmetros de método de ação.
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 ms.author: tdykstra
-ms.date: 08/14/2018
+ms.date: 11/13/2018
 uid: mvc/models/model-binding
-ms.openlocfilehash: 0ce20a8040c6b19da1f57e1c053a7ef81d8bcb23
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 1dc9b41328ed78440622acc1865b6f088d394403
+ms.sourcegitcommit: 1d6ab43eed9cb3df6211c22b97bb3a9351ec4419
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751747"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51597778"
 ---
-# <a name="model-binding-in-aspnet-core"></a>Associação de modelos no ASP.NET Core
+# <a name="model-binding-in-aspnet-core"></a>Model binding no ASP.NET Core
 
 Por [Rachel Appel](https://github.com/rachelappel)
 
-## <a name="introduction-to-model-binding"></a>Introdução à associação de modelos
+## <a name="introduction-to-model-binding"></a>Introdução ao model binding
 
-A associação de modelos do ASP.NET Core MVC mapeia dados de solicitações HTTP para parâmetros de método de ação. Os parâmetros podem ser tipos simples, como cadeias de caracteres, inteiros ou floats, ou podem ser tipos complexos. Esse é um ótimo recurso do MVC, pois o mapeamento dos dados de entrada para um equivalente é um cenário repetido com frequência, independentemente do tamanho ou da complexidade dos dados. O MVC resolve esse problema com a abstração da associação, de modo que os desenvolvedores não precisem continuar reconfigurando uma versão ligeiramente diferente desse mesmo código em cada aplicativo. A escrita de seu próprio texto para tipar o código de conversor é entediante e propensa a erros.
+O model binding do ASP.NET Core MVC mapeia dados de solicitações HTTP para parâmetros de método de ação. Os parâmetros podem ser tipos simples, como cadeias de caracteres, inteiros ou floats, ou podem ser tipos complexos. Esse é um ótimo recurso do MVC, pois o mapeamento dos dados de entrada para um equivalente é um cenário repetido com frequência, independentemente do tamanho ou da complexidade dos dados. O MVC resolve esse problema com a abstração da associação, de modo que os desenvolvedores não precisem continuar reconfigurando uma versão ligeiramente diferente desse mesmo código em cada aplicativo. A escrita de seu próprio texto para tipar o código de conversor é entediante e propensa a erros.
 
-## <a name="how-model-binding-works"></a>Como funciona a associação de modelos
+## <a name="how-model-binding-works"></a>Como funciona o model binding
 
 Quando o MVC recebe uma solicitação HTTP, ele encaminha-a a um método de ação específico de um controlador. Ele determina qual método de ação será executado com base no que está nos dados de rota e, em seguida, ele associa valores da solicitação HTTP aos parâmetros desse método de ação. Por exemplo, considere a seguinte URL:
 
@@ -35,7 +35,7 @@ public IActionResult Edit(int? id)
 
 Observação: as cadeias de caracteres na rota de URL não diferenciam maiúsculas de minúsculas.
 
-O MVC tentará associar os dados de solicitação aos parâmetros de ação por nome. O MVC procurará valores para cada parâmetro usando o nome do parâmetro e os nomes de suas propriedades configuráveis públicas. No exemplo acima, o único parâmetro de ação é chamado `id`, que o MVC associa ao valor com o mesmo nome nos valores de rota. Além dos valores de rota, o MVC associará dados de várias partes da solicitação e faz isso em uma ordem específica. Veja abaixo uma lista das fontes de dados na ordem em que a associação de modelos examina-as:
+O MVC tentará associar os dados de solicitação aos parâmetros de ação por nome. O MVC procurará valores para cada parâmetro usando o nome do parâmetro e os nomes de suas propriedades configuráveis públicas. No exemplo acima, o único parâmetro de ação é chamado `id`, que o MVC associa ao valor com o mesmo nome nos valores de rota. Além dos valores de rota, o MVC associará dados de várias partes da solicitação e faz isso em uma ordem específica. Veja abaixo uma lista das fontes de dados na ordem em que o model binding examina-as:
 
 1. `Form values`: esses são valores de formulário que entram na solicitação HTTP usando o método POST. (incluindo as solicitações POST jQuery).
 
@@ -51,27 +51,27 @@ The link works but generates an error when building with DocFX
 
 Observação: valores de formulário, dados de rota e cadeias de consulta são todos armazenados como pares nome-valor.
 
-Como a associação de modelos solicitou uma chave chamada `id` e não há nada chamado `id` nos valores de formulário, ela passou para os valores de rota procurando essa chave. Em nosso exemplo, isso é uma correspondência. A associação ocorre e o valor é convertido no inteiro 2. A mesma solicitação que usa Edit(string id) converterá na cadeia de caracteres "2".
+Como o model binding solicitou uma chave chamada `id` e não há nada chamado `id` nos valores de formulário, ela passou para os valores de rota procurando essa chave. Em nosso exemplo, isso é uma correspondência. A associação ocorre e o valor é convertido no inteiro 2. A mesma solicitação que usa Edit(string id) converterá na cadeia de caracteres "2".
 
-Até agora, o exemplo usa tipos simples. No MVC, os tipos simples são qualquer tipo primitivo do .NET ou um tipo com um conversor de tipo de cadeia de caracteres. Se o parâmetro do método de ação for uma classe, como o tipo `Movie`, que contém tipos simples e complexos como propriedades, a associação de modelos do MVC ainda o manipulará perfeitamente. Ele usa a reflexão e recursão para percorrer as propriedades de tipos complexos procurando correspondências. A associação de modelos procura o padrão *nome_do_parâmetro.nome_da_propriedade* para associar valores a propriedades. Se ela não encontrar os valores correspondentes desse formulário, ela tentará associar usando apenas o nome da propriedade. Para esses tipos como tipos `Collection`, a associação de modelos procura correspondências para *parameter_name [index]* ou apenas *[index]*. A associação de modelos trata tipos `Dictionary` da mesma forma, solicitando *parameter_name[key]* ou apenas *[key]*, desde que as chaves sejam tipos simples. As chaves compatíveis correspondem o HTML dos nomes de campo e os auxiliares de marca gerados para o mesmo tipo de modelo. Isso permite a ida e vinda dos valores, de modo que os campos de formulário permaneçam preenchidos com a entrada do usuário para sua conveniência, por exemplo, quando os dados associados de uma criação ou edição não são aprovados na validação.
+Até agora, o exemplo usa tipos simples. No MVC, os tipos simples são qualquer tipo primitivo do .NET ou um tipo com um conversor de tipo de cadeia de caracteres. Se o parâmetro do método de ação for uma classe, como o tipo `Movie`, que contém tipos simples e complexos como propriedades, o model binding do MVC ainda o manipulará perfeitamente. Ele usa a reflexão e recursão para percorrer as propriedades de tipos complexos procurando correspondências. O model binding procura o padrão *nome_do_parâmetro.nome_da_propriedade* para associar valores a propriedades. Se ela não encontrar os valores correspondentes desse formulário, ela tentará associar usando apenas o nome da propriedade. Para esses tipos como tipos `Collection`, o model binding procura correspondências para *parameter_name [index]* ou apenas *[index]*. O model binding trata tipos `Dictionary` da mesma forma, solicitando *parameter_name[key]* ou apenas *[key]*, desde que as chaves sejam tipos simples. As chaves compatíveis correspondem o HTML dos nomes de campo e os auxiliares de marca gerados para o mesmo tipo de modelo. Isso permite a ida e vinda dos valores, de modo que os campos de formulário permaneçam preenchidos com a entrada do usuário para sua conveniência, por exemplo, quando os dados associados de uma criação ou edição não são aprovados na validação.
 
-Para que a associação ocorra, a classe precisa ter um construtor padrão público e o membro a ser associado precisa ser propriedades graváveis públicas. Quando a associação de modelos ocorrer, só será criada uma instância da classe com o construtor padrão público e, em seguida, as propriedades poderão ser definidas.
+Para possibilitar o model binding, a classe deve ter um construtor padrão público e propriedades públicas graváveis para associar. Quando o model binding ocorrer, será criada uma instância da classe usando o construtor padrão público e, em seguida, as propriedades poderão ser definidas.
 
-Quando um parâmetro é associado, a associação de modelos para de procurar valores com esse nome e ela passa para associar o próximo parâmetro. Caso contrário, o comportamento padrão da associação de modelos define parâmetros com seus valores padrão, dependendo de seu tipo:
+Quando um parâmetro é associado, o model binding para de procurar valores com esse nome e ele passa para associar o próximo parâmetro. Caso contrário, o comportamento padrão do model binding define parâmetros com seus valores padrão, dependendo de seu tipo:
 
 * `T[]`: com a exceção de matrizes do tipo `byte[]`, a associação define parâmetros do tipo `T[]` como `Array.Empty<T>()`. Matrizes do tipo `byte[]` são definidas como `null`.
 
-* Tipos de referência: a associação cria uma instância de uma classe com o construtor padrão sem configurar propriedades. No entanto, a associação de modelos define parâmetros `string` como `null`.
+* Tipos de referência: a associação cria uma instância de uma classe com o construtor padrão sem configurar propriedades. No entanto, o model binding define parâmetros `string` como `null`.
 
-* Tipos que permitem valor nulo: os tipos que permitem valor nulo são definidos como `null`. No exemplo acima, a associação de modelos define `id` como `null`, pois ele é do tipo `int?`.
+* Tipos que permitem valor nulo: os tipos que permitem valor nulo são definidos como `null`. No exemplo acima, o model binding define `id` como `null`, pois ele é do tipo `int?`.
 
-* Tipos de valor: os tipos de valor que não permitem valor nulo do tipo `T` são definidos como `default(T)`. Por exemplo, a associação de modelos definirá um parâmetro `int id` como 0. Considere o uso da validação de modelo ou de tipos que permitem valor nulo, em vez de depender de valores padrão.
+* Tipos de valor: os tipos de valor que não permitem valor nulo do tipo `T` são definidos como `default(T)`. Por exemplo, o model binding definirá um parâmetro `int id` como 0. Considere o uso da validação de modelo ou de tipos que permitem valor nulo, em vez de depender de valores padrão.
 
 Se a associação falhar, o MVC não gerará um erro. Todas as ações que aceitam a entrada do usuário devem verificar a propriedade `ModelState.IsValid`.
 
 Observação: cada entrada na propriedade `ModelState` do controlador é uma `ModelStateEntry` que contém uma propriedade `Errors`. Raramente é necessário consultar essa coleção por conta própria. Use `ModelState.IsValid` em seu lugar.
 
-Além disso, há alguns tipos de dados especiais que o MVC precisa considerar ao realizar a associação de modelos:
+Além disso, há alguns tipos de dados especiais que o MVC precisa considerar ao realizar o model binding:
 
 * `IFormFile`, `IEnumerable<IFormFile>`: um ou mais arquivos carregados que fazem parte da solicitação HTTP.
 
@@ -79,11 +79,11 @@ Além disso, há alguns tipos de dados especiais que o MVC precisa considerar ao
 
 Esses tipos podem ser associados a parâmetros de ação ou a propriedades em um tipo de classe.
 
-Após a conclusão da associação de modelos, a [Validação](validation.md) ocorrerá. A associação de modelos padrão funciona bem para a maioria dos cenários de desenvolvimento. Também é extensível e, portanto, se você tiver necessidades exclusivas, poderá personalizar o comportamento interno.
+Após a conclusão do model binding, a [Validação](validation.md) ocorrerá. O model binding padrão funciona bem para a maioria dos cenários de desenvolvimento. Também é extensível e, portanto, se você tiver necessidades exclusivas, poderá personalizar o comportamento interno.
 
-## <a name="customize-model-binding-behavior-with-attributes"></a>Personalizar o comportamento da associação de modelos com atributos
+## <a name="customize-model-binding-behavior-with-attributes"></a>Personalizar o comportamento do model binding com atributos
 
-O MVC contém vários atributos que podem ser usados para direcionar seu comportamento de associação de modelos padrão para outra fonte. Por exemplo, você pode especificar se a associação é obrigatória para uma propriedade ou se ela nunca deve ocorrer usando os atributos `[BindRequired]` ou `[BindNever]`. Como alternativa, você pode substituir a fonte de dados padrão e especificar a fonte de dados do associador de modelos. Veja abaixo uma lista dos atributos de associação de modelos:
+O MVC contém vários atributos que podem ser usados para direcionar seu comportamento de model binding padrão para outra fonte. Por exemplo, você pode especificar se a associação é obrigatória para uma propriedade ou se ela nunca deve ocorrer usando os atributos `[BindRequired]` ou `[BindNever]`. Como alternativa, você pode substituir a fonte de dados padrão e especificar a fonte de dados do associador de modelos. Veja abaixo uma lista dos atributos de model binding:
 
 * `[BindRequired]`: esse atributo adiciona um erro de estado do modelo se a associação não pode ocorrer.
 
@@ -97,18 +97,18 @@ O MVC contém vários atributos que podem ser usados para direcionar seu comport
 
 * `[ModelBinder]`: usado para substituir o associador de modelos padrão, a origem da associação e o nome.
 
-Os atributos são ferramentas muito úteis quando você precisa substituir o comportamento padrão da associação de modelos.
+Os atributos são ferramentas muito úteis quando você precisa substituir o comportamento padrão do model binding.
 
-## <a name="customize-model-binding-and-validation-globally"></a>Personalizar a validação e a associação de modelos globalmente
+## <a name="customize-model-binding-and-validation-globally"></a>Personalizar a validação e o model binding globalmente
 
-O comportamento do sistema de validação e associação de modelos é orientado pelo [ModelMetadata](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.modelmetadata) que descreve:
+O comportamento do sistema de validação e model binding é orientado pelo [ModelMetadata](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.modelmetadata) que descreve:
 
 * Como um modelo deve ser associado.
 * Como ocorre a validação no tipo e em suas propriedades.
 
-Os aspectos do comportamento do sistema podem ser configurados globalmente adicionando um provedor de detalhes a [MvcOptions.ModelMetadataDetailsProviders](/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.modelmetadatadetailsproviders#Microsoft_AspNetCore_Mvc_MvcOptions_ModelMetadataDetailsProviders). O MVC tem alguns provedores de detalhes internos que permitem configurar o comportamento, como desabilitar a validação ou a associação de modelos de determinados tipos.
+Os aspectos do comportamento do sistema podem ser configurados globalmente adicionando um provedor de detalhes a [MvcOptions.ModelMetadataDetailsProviders](/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.modelmetadatadetailsproviders#Microsoft_AspNetCore_Mvc_MvcOptions_ModelMetadataDetailsProviders). O MVC tem alguns provedores de detalhes internos que permitem configurar o comportamento, como desabilitar a validação ou o model binding de determinados tipos.
 
-Para desabilitar a associação de modelos em todos os modelos de um determinado tipo, adicione um [ExcludeBindingMetadataProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.metadata.excludebindingmetadataprovider) em `Startup.ConfigureServices`. Por exemplo, para desabilitar a associação de modelos em todos os modelos do tipo `System.Version`:
+Para desabilitar o model binding em todos os modelos de um determinado tipo, adicione um [ExcludeBindingMetadataProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.metadata.excludebindingmetadataprovider) em `Startup.ConfigureServices`. Por exemplo, para desabilitar o model binding em todos os modelos do tipo `System.Version`:
 
 ```csharp
 services.AddMvc().AddMvcOptions(options =>
@@ -146,6 +146,6 @@ public void ConfigureServices(IServiceCollection services)
 
 O código no arquivo *Startup.cs* contém um método `ConfigureServices` com um argumento `services` que você pode usar para criar serviços para o aplicativo ASP.NET Core. No exemplo, estamos adicionando um formatador XML como um serviço que o MVC fornecerá para este aplicativo. O argumento `options` passado para o método `AddMvc` permite que você adicione e gerencie filtros, formatadores e outras opções do sistema no MVC após a inicialização do aplicativo. Em seguida, aplique o atributo `Consumes` a classes do controlador ou métodos de ação para trabalhar com o formato desejado.
 
-### <a name="custom-model-binding"></a>Associação de modelos personalizada
+### <a name="custom-model-binding"></a>Model binding personalizado
 
-Estenda a associação de modelos escrevendo seus próprios associadores de modelos personalizados. Saiba mais sobre a [associação de modelos personalizada](../advanced/custom-model-binding.md).
+Estenda o model binding escrevendo seus próprios associadores de modelos personalizados. Saiba mais sobre o [model binding personalizado](../advanced/custom-model-binding.md).

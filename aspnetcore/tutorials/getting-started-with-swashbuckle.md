@@ -4,14 +4,14 @@ author: zuckerthoben
 description: Saiba como adicionar o Swashbuckle ao seu projeto de API Web ASP.NET Core para integrar a interface do usuário do Swagger.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 11/05/2018
+ms.date: 11/14/2018
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 945a2ebe138ba6a1f6029f9e867887b1ce8d628f
-ms.sourcegitcommit: 09affee3d234cb27ea6fe33bc113b79e68900d22
+ms.openlocfilehash: 9832e1ea2b59085b6680820469b16d549f4b0582
+ms.sourcegitcommit: f202864efca81a72ea7120c0692940c40d9d0630
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51191276"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51635336"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Introdução ao Swashbuckle e ao ASP.NET Core
 
@@ -97,7 +97,7 @@ No método `Startup.Configure`, habilite o middleware para atender ao documento 
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_Configure&highlight=4,8-11)]
 
-A chamada de método `UseSwaggerUI` anterior habilita o [Middleware de arquivos estáticos](xref:fundamentals/static-files). Se você estiver direcionando ao .NET Framework ou ao .NET Core 1.x, adicione o pacote NuGet [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) ao projeto.
+A chamada do método `UseSwaggerUI` precedente habilita o [middleware de arquivos estáticos](xref:fundamentals/static-files). Se você estiver direcionando ao .NET Framework ou ao .NET Core 1.x, adicione o pacote NuGet [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) ao projeto.
 
 Inicie o aplicativo e navegue até `http://localhost:<port>/swagger/v1/swagger.json`. O documento gerado que descreve os pontos de extremidade é exibido conforme é mostrado na [Especificação do Swagger (swagger.json)](xref:tutorials/web-api-help-pages-using-swagger#swagger-specification-swaggerjson).
 
@@ -107,6 +107,8 @@ A interface do usuário do Swagger pode ser encontrada em `http://localhost:<por
 > Para atender à interface do usuário do Swagger na raiz do aplicativo (`http://localhost:<port>/`), defina a propriedade `RoutePrefix` como uma cadeia de caracteres vazia:
 >
 > [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup3.cs?name=snippet_UseSwaggerUI&highlight=4)]
+
+Se estiver usando diretórios virtuais (com o IIS ou um proxy reverso, por exemplo), defina o ponto de extremidade do Swagger como um caminho relativo usando o prefixo `./`. Por exemplo, `./swagger/v1/swagger.json`. Usar o `/swagger/v1/swagger.json` instrui o aplicativo a procurar o arquivo JSON na raiz verdadeira da URL (mais o prefixo da rota, se usado). Por exemplo, `http://localhost:<port>/<route_prefix>/swagger/v1/swagger.json` , em vez de `http://localhost:<port>/<virtual_directory>/<route_prefix>/swagger/v1/swagger.json`.
 
 ## <a name="customize-and-extend"></a>Personalizar e estender
 
@@ -401,7 +403,7 @@ Se você estiver direcionando ao .NET Framework ou ao .NET Core 1.x, adicione o 
 
 O pacote do NuGet anterior já estará instalado se você estiver direcionando ao .NET Core 2.x e usando o [metapackage](xref:fundamentals/metapackage).
 
-Habilite o middleware de arquivos estáticos:
+Habilitar o middleware de arquivos estáticos:
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup.cs?name=snippet_Configure&highlight=3)]
 

@@ -15,7 +15,7 @@ O código anterior:
 * Define uma classe de controlador de API sem métodos.
 * Cria um novo item de Tarefas pendentes quando `TodoItems` está vazio. Você não poderá excluir todos os itens de Tarefas pendentes porque o construtor cria um novo se `TodoItems` estiver vazio.
 
-Nas próximas seções, os métodos serão adicionados para implementar a API. A classe é anotada com um atributo `[ApiController]` para habilitar alguns recursos convenientes. Para obter informações sobre os recursos habilitados pelo atributo, confira [Anotações com o ApiControllerAttribute](xref:web-api/index#annotation-with-apicontrollerattribute).
+Nas próximas seções, os métodos serão adicionados para implementar a API. A classe é anotada com um atributo `[ApiController]` para habilitar alguns recursos convenientes. Para obter informações sobre os recursos habilitados pelo atributo, confira [Anotação com o atributo ApiController](xref:web-api/index#annotation-with-apicontroller-attribute).
 
 ::: moniker-end
 

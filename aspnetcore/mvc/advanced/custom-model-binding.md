@@ -3,14 +3,14 @@ title: Model binding personalizado no ASP.NET Core
 author: ardalis
 description: Saiba como o model binding permite que as ações do controlador trabalhem diretamente com os tipos de modelo no ASP.NET Core.
 ms.author: riande
-ms.date: 04/10/2017
+ms.date: 11/13/2018
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: dc901aea3c20e7f2e955f39d923216de70ef015b
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 1da42829270e8ff4a626a45aec4d4e825062bd4f
+ms.sourcegitcommit: f202864efca81a72ea7120c0692940c40d9d0630
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090401"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51635284"
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a>Model binding personalizado no ASP.NET Core
 
@@ -87,11 +87,14 @@ A seguinte amostra usa o atributo `ModelBinder` no modelo `Author`:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Data/Author.cs?highlight=10)]
 
-No código anterior, o atributo `ModelBinder` especifica o tipo de `IModelBinder` que deve ser usado para associar parâmetros de ação `Author`. 
+No código anterior, o atributo `ModelBinder` especifica o tipo de `IModelBinder` que deve ser usado para associar parâmetros de ação `Author`.
 
-O `AuthorEntityBinder` é usado para associar um parâmetro `Author` buscando a entidade de uma fonte de dados usando o Entity Framework Core e uma `authorId`:
+A classe `AuthorEntityBinder` a seguir associa um parâmetro `Author` efetuando fetch da entidade de uma fonte de dados usando o Entity Framework Core e um `authorId`:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinder.cs?name=demo)]
+
+> [!NOTE]
+> A classe `AuthorEntityBinder` precedente é destinada a ilustrar um associador de modelos personalizado. A classe não é destinada a ilustrar as melhores práticas para um cenário de pesquisa. Para pesquisa, associe o `authorId` e consulte o banco de dados em um método de ação. Essa abordagem separa falhas de model binding de casos de `NotFound`.
 
 O seguinte código mostra como usar o `AuthorEntityBinder` em um método de ação:
 
@@ -107,7 +110,7 @@ Aplique o atributo `ModelBinder` a propriedades de modelo individuais (como em u
 
 ### <a name="implementing-a-modelbinderprovider"></a>Implementando um ModelBinderProvider
 
-Em vez de aplicar um atributo, você pode implementar `IModelBinderProvider`. É assim que os associadores de estrutura interna são implementados. Quando você especifica o tipo no qual o associador opera, você especifica o tipo de argumento que ele produz, **não** a entrada aceita pelo associador. O provedor de associador a seguir funciona com o `AuthorEntityBinder`. Quando ele é adicionado à coleção do MVC de provedores, você não precisa usar o atributo `ModelBinder` em `Author` ou parâmetros tipados `Author`.
+Em vez de aplicar um atributo, você pode implementar `IModelBinderProvider`. É assim que os associadores de estrutura interna são implementados. Quando você especifica o tipo no qual o associador opera, você especifica o tipo de argumento que ele produz, **não** a entrada aceita pelo associador. O provedor de associador a seguir funciona com o `AuthorEntityBinder`. Quando ele for adicionado à coleção do MVC de provedores, não será necessário usar o atributo `ModelBinder` nos parâmetros `Author` ou de tipo `Author`.
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinderProvider.cs?highlight=17-20)]
 
@@ -130,6 +133,7 @@ A adição do provedor ao final da coleção pode resultar na chamada a um assoc
 ## <a name="recommendations-and-best-practices"></a>Recomendações e melhores práticas
 
 Associadores de modelos personalizados:
+
 - Não devem tentar definir códigos de status ou retornar resultados (por exemplo, 404 Não Encontrado). Se o model binding falhar, um [filtro de ação](xref:mvc/controllers/filters) ou uma lógica no próprio método de ação deverá resolver a falha.
 - São muito úteis para eliminar código repetitivo e interesses paralelos de métodos de ação.
 - Normalmente, não devem ser usados para converter uma cadeia de caracteres em um tipo personalizado; um [`TypeConverter`](/dotnet/api/system.componentmodel.typeconverter) geralmente é uma opção melhor.

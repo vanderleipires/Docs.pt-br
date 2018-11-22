@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 5d00e6ba57053d17b45a24a1c57a446cb3db22ca
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: fb92141b1864574242b29ecc386024ce72a6be87
+ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207128"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51570120"
 ---
 # <a name="static-files-in-aspnet-core"></a>Arquivos estáticos no ASP.NET Core
 
@@ -96,7 +96,7 @@ Considere uma hierarquia de diretórios na qual os arquivos estáticos a serem a
   * **images**
       * *banner1.svg*
 
-Uma solicitação pode acessar o arquivo *banner1.svg* configurando o middleware de arquivo estático da seguinte maneira:
+Uma solicitação pode acessar o arquivo *banner1.svg* configurando o middleware de arquivos estáticos da seguinte maneira:
 
 [!code-csharp[](static-files/samples/1x/StartupTwoStaticFiles.cs?name=snippet_ConfigureMethod&highlight=5-10)]
 
@@ -120,12 +120,12 @@ Os arquivos se tornaram armazenáveis em cache publicamente por 10 minutos (600 
 
 ## <a name="static-file-authorization"></a>Autorização de arquivo estático
 
-O middleware de arquivo estático não fornece verificações de autorização. Todos os arquivos atendidos, incluindo aqueles em *wwwroot*, estão acessíveis publicamente. Para fornecer arquivos com base na autorização:
+O middleware de arquivos estáticos não fornece verificações de autorização. Todos os arquivos atendidos, incluindo aqueles em *wwwroot*, estão acessíveis publicamente. Para fornecer arquivos com base na autorização:
 
-* Armazene-os fora do *wwwroot* e de qualquer diretório acessível ao middleware de arquivos estáticos **e**
+* Armazene-os fora do *wwwroot* e de qualquer diretório acessível ao middleware de arquivos estáticos.
 * Forneça-os por meio de um método de ação ao qual a autorização é aplicada. Retorne um objeto [FileResult](/dotnet/api/microsoft.aspnetcore.mvc.fileresult):
 
-[!code-csharp[](static-files/samples/1x/Controllers/HomeController.cs?name=snippet_BannerImageAction)]
+  [!code-csharp[](static-files/samples/1x/Controllers/HomeController.cs?name=snippet_BannerImageAction)]
 
 ## <a name="enable-directory-browsing"></a>Habilitar navegação no diretório
 
@@ -154,7 +154,7 @@ Definir uma home page padrão fornece ao visitantes um ponto de partida lógico 
 [!code-csharp[](static-files/samples/1x/StartupEmpty.cs?name=snippet_ConfigureMethod&highlight=3)]
 
 > [!IMPORTANT]
-> `UseDefaultFiles` deve ser chamado antes de `UseStaticFiles` para fornecer o arquivo padrão. `UseDefaultFiles` é um rewriter de URL que, na verdade, não fornece o arquivo. Habilite o middleware de arquivo estático por meio de `UseStaticFiles` para fornecer o arquivo.
+> `UseDefaultFiles` deve ser chamado antes de `UseStaticFiles` para fornecer o arquivo padrão. `UseDefaultFiles` é um rewriter de URL que, na verdade, não fornece o arquivo. Habilite o middleware de arquivos estáticos por meio de `UseStaticFiles` para fornecer o arquivo.
 
 Com `UseDefaultFiles`, as solicitações para uma pasta pesquisam:
 

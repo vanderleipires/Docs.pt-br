@@ -60,7 +60,7 @@ Defina um ponto de interrupção no método `[HttpPost] Create` e verifique se o
 
 A imagem a seguir mostra como desabilitar o JavaScript no navegador FireFox.
 
-![Firefox: Na guia Conteúdo de Opções, desmarque a caixa de seleção Habilitar JavaScript.](~/tutorials/first-mvc-app/validation/_static/ff.png)
+![Firefox: na guia Conteúdo de Opções, desmarque a caixa de seleção Habilitar JavaScript.](~/tutorials/first-mvc-app/validation/_static/ff.png)
 
 A imagem a seguir mostra como desabilitar o JavaScript no navegador Chrome.
 
