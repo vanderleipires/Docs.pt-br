@@ -3,14 +3,14 @@ title: Páginas Razor com o Entity Framework Core no ASP.NET Core – Tutorial 1
 author: rick-anderson
 description: Mostra como criar um aplicativo das Páginas do Razor usando o Entity Framework Core
 ms.author: riande
-ms.date: 6/31/2017
+ms.date: 11/22/2018
 uid: data/ef-rp/intro
-ms.openlocfilehash: a234d5fefd671d4503f6c63b79074d47c893f69c
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: afba4395fe9dbe22516b6c4ebdc4c582381981fd
+ms.sourcegitcommit: 710fc5fcac258cc8415976dc66bdb355b3e061d5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207700"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52299463"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Páginas Razor com o Entity Framework Core no ASP.NET Core – Tutorial 1 de 8
 
@@ -113,7 +113,7 @@ Crie uma pasta *Models*. Na pasta *Models*, crie um arquivo de classe chamado *S
 
 A propriedade `ID` se torna a coluna de chave primária da tabela de BD (banco de dados) que corresponde a essa classe. Por padrão, o EF Core interpreta uma propriedade nomeada `ID` ou `classnameID` como a chave primária. Em `classnameID`, `classname` é o nome da classe. A chave primária alternativa reconhecida automaticamente é `StudentID` no exemplo anterior.
 
-A propriedade `Enrollments` é uma [propriedade de navegação](/ef/core/modeling/relationship). As propriedades de navegação vinculam-se a outras entidades que estão relacionadas a essa entidade. Nesse caso, a propriedade `Enrollments` de uma `Student entity` armazena todas as entidades `Enrollment` relacionadas a essa `Student`. Por exemplo, se uma linha Aluno no BD tiver duas linhas Registro relacionadas, a propriedade de navegação `Enrollments` conterá duas entidades `Enrollment`. Uma linha `Enrollment` relacionada é uma linha que contém o valor de chave primária do aluno na coluna `StudentID`. Por exemplo, suponha que o aluno com ID=1 tenha duas linhas na tabela `Enrollment`. A tabela `Enrollment` tem duas linhas com `StudentID` = 1. `StudentID` é uma chave estrangeira na tabela `Enrollment` que especifica o aluno na tabela `Student`.
+A propriedade `Enrollments` é uma [propriedade de navegação](/ef/core/modeling/relationships). As propriedades de navegação vinculam-se a outras entidades que estão relacionadas a essa entidade. Nesse caso, a propriedade `Enrollments` de uma `Student entity` armazena todas as entidades `Enrollment` relacionadas a essa `Student`. Por exemplo, se uma linha Aluno no BD tiver duas linhas Registro relacionadas, a propriedade de navegação `Enrollments` conterá duas entidades `Enrollment`. Uma linha `Enrollment` relacionada é uma linha que contém o valor de chave primária do aluno na coluna `StudentID`. Por exemplo, suponha que o aluno com ID=1 tenha duas linhas na tabela `Enrollment`. A tabela `Enrollment` tem duas linhas com `StudentID` = 1. `StudentID` é uma chave estrangeira na tabela `Enrollment` que especifica o aluno na tabela `Student`.
 
 Se uma propriedade de navegação puder armazenar várias entidades, a propriedade de navegação deverá ser um tipo de lista, como `ICollection<T>`. `ICollection<T>` pode ser especificado ou um tipo como `List<T>` ou `HashSet<T>`. Quando `ICollection<T>` é usado, o EF Core cria uma coleção `HashSet<T>` por padrão. As propriedades de navegação que armazenam várias entidades são provenientes de relações muitos para muitos e um-para-muitos.
 
