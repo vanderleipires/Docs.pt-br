@@ -19,7 +19,7 @@ ms.locfileid: "41834062"
 ====================
 por [Mike Wasson](https://github.com/MikeWasson)
 
-Você criou uma API da web, mas agora que você deseja controlar o acesso a ele. Nesta série de artigos, vamos examinar algumas opções para proteger uma API da web contra usuários não autorizados. Esta série abordarão a autenticação e autorização.
+Você criou uma API da web, mas agora que você deseja controlar o acesso a ele. Nesta série de artigos, vamos examinar algumas opções para proteger uma API da web contra usuários não autorizados. Esta série abordará a autenticação e autorização.
 
 - *Autenticação* é saber a identidade do usuário. Por exemplo, Alice faz logon com seu nome de usuário e senha, e o servidor usa a senha para autenticar Alice.
 - *Autorização* é decidir se um usuário tem permissão para executar uma ação. Por exemplo, Alice tem permissão para obter um recurso, mas não criar um recurso.
