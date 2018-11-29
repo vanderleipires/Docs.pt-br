@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.date: 11/29/2018
 uid: performance/performance-best-practices
-ms.openlocfilehash: ced86dbc2d6f40b503493eda122d8977d6df7035
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 9f3ed97bf4d4eb371ff5ae3874234b44745cc4ca
+ms.sourcegitcommit: 0fc89b80bb1952852ecbcf3c5c156459b02a6ceb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52452913"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52618110"
 ---
 # <a name="aspnet-core-performance-best-practices"></a>Práticas recomendadas de desempenho do ASP.NET Core
 
@@ -24,7 +24,7 @@ Este tópico fornece diretrizes para desempenho, as práticas recomendadas com o
 
 ## <a name="cache-aggressively"></a>Armazenar em cache agressivamente
 
-Armazenamento em cache é discutido em várias partes deste documento. Para obter mais informações, consulte [armazenam em Cache respostas no ASP.NET Core](xref:performance/caching/index).
+Armazenamento em cache é discutido em várias partes deste documento. Para obter mais informações, consulte <xref:performance/caching/response>.
 
 ## <a name="avoid-blocking-calls"></a>Evitar chamadas de bloqueio
 
@@ -71,7 +71,7 @@ Recomendações:
 
 * **Fazer** chamar APIs de acesso a todos os dados de forma assíncrona.
 * **Não** recuperar mais dados do que é necessário. Escreva consultas para retornar apenas os dados que é necessários para a solicitação HTTP atual.
-* **Fazer** considere cache frequentemente acessado dados recuperados de um banco de dados ou serviço remoto, se for aceitável para os dados sejam um pouco desatualizadas. Dependendo do cenário, você pode usar um [MemoryCache](xref:performance/caching/memory) ou um [DistributedCache](xref:performance/caching/distributed). Para obter mais informações, consulte [armazenam em Cache respostas no ASP.NET Core](xref:performance/caching/index).
+* **Fazer** considere cache frequentemente acessado dados recuperados de um banco de dados ou serviço remoto, se for aceitável para os dados sejam um pouco desatualizadas. Dependendo do cenário, você pode usar um [MemoryCache](xref:performance/caching/memory) ou um [DistributedCache](xref:performance/caching/distributed). Para obter mais informações, consulte <xref:performance/caching/response>.
 * Minimizar viagens de ida e volta de rede. O objetivo é recuperar todos os dados que serão necessários em uma única chamada, em vez de várias chamadas.
 * **Fazer** usar [consultas sem controle](/ef/core/querying/tracking#no-tracking-queries) no Entity Framework Core ao acessar dados para propósitos de somente leitura. O EF Core pode retornar os resultados de consultas sem controle com mais eficiência.
 * **Fazer** filtro e consultas de agregação LINQ (com `.Where`, `.Select`, ou `.Sum` instruções, por exemplo) para que a filtragem é feita pelo banco de dados.
