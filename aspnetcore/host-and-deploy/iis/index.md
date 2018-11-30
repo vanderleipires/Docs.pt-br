@@ -4,20 +4,23 @@ author: guardrex
 description: Saiba como hospedar aplicativos ASP.NET Core no Windows Server IIS (Serviços de Informações da Internet).
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/10/2018
+ms.date: 11/26/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 1b34195dc51ca8dab5e8eda10f05ff6678fbc78c
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: 77fa6e1ef6a7fc707c2665826d3c1f4c2691979c
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570159"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450795"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hospedar o ASP.NET Core no Windows com o IIS
 
 Por [Luke Latham](https://github.com/guardrex)
 
 [Instalar o pacote de hospedagem do .NET Core](#install-the-net-core-hosting-bundle)
+
+> [!NOTE]
+> Estamos testando a usabilidade de uma nova estrutura proposta para o sumário do ASP.NET Core.  Se você tiver alguns minutos para experimentar um exercício de localização de sete tópicos diferentes no sumário atual ou proposto, [clique aqui para participar do estudo](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5).
 
 ## <a name="supported-operating-systems"></a>Sistemas operacionais com suporte
 
@@ -416,31 +419,19 @@ Para configurar a proteção de dados no IIS para persistir o token de autentica
 
   O sistema de proteção de dados tem suporte limitado para a configuração da [política de todo o computador](xref:security/data-protection/configuration/machine-wide-policy) padrão para todos os aplicativos que consomem as APIs de proteção de dados. Para obter mais informações, consulte <xref:security/data-protection/introduction>.
 
-## <a name="sub-application-configuration"></a>Configuração de subaplicativos
+## <a name="virtual-directories"></a>Diretórios virtuais
 
-Os subaplicativos adicionados no aplicativo raiz não devem incluir o Módulo do ASP.NET Core como um manipulador. Se o módulo for adicionado como um manipulador em um arquivo *web.config* de um subaplicativo, quando tentar procurar o subaplicativo, você receberá um *500.19 Erro Interno do Servidor* que referenciará o arquivo de configuração com falha.
+[Diretórios virtuais IIS](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#virtual-directories) não são compatíveis com aplicativos ASP.NET Core. Um aplicativo pode ser hospedado como um [subaplicativo](#sub-applications).
 
-O seguinte exemplo mostra um arquivo *web.config* publicado de um subaplicativo ASP.NET Core:
+## <a name="sub-applications"></a>Subaplicativos
 
-::: moniker range=">= aspnetcore-2.2"
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <location path="." inheritInChildApplications="false">
-    <system.webServer>
-      <aspNetCore processPath="dotnet" 
-        arguments=".\MyApp.dll" 
-        stdoutLogEnabled="false" 
-        stdoutLogFile=".\logs\stdout" />
-    </system.webServer>
-  </location>
-</configuration>
-```
-
-::: moniker-end
+Um aplicativo ASP.NET Core pode ser hospedado como um [subaplicativo IIS (sub-app)](/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#applications). A parte do caminho do subaplicativo se torna parte da URL raiz do aplicativo.
 
 ::: moniker range="< aspnetcore-2.2"
+
+Um subaplicativo não deve incluir o módulo do ASP.NET Core como um manipulador. Se o módulo for adicionado como um manipulador em um arquivo *web.config* de um subaplicativo, quando tentar procurar o subaplicativo, você receberá um *500.19 Erro Interno do Servidor* que referenciará o arquivo de configuração com falha.
+
+O seguinte exemplo mostra um arquivo *web.config* publicado de um subaplicativo ASP.NET Core:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -473,7 +464,23 @@ Ao hospedar um subaplicativo não ASP.NET Core abaixo de um aplicativo ASP.NET C
 
 ::: moniker-end
 
-Para obter mais informações sobre como configurar o Módulo do ASP.NET Core, consulte o tópico [Introdução ao Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) e a [Referência de configuração do Módulo do ASP.NET Core](xref:host-and-deploy/aspnet-core-module).
+Links de ativos estáticos dentro do subaplicativo devem usar a notação de sinal de til e barra (`~/`). A notação de sinal de til e barra aciona um [Auxiliar de Marca](xref:mvc/views/tag-helpers/intro) para preceder a base de caminho do subaplicativo ao link relativo renderizado. Para um subaplicativo no `/subapp_path`, uma imagem vinculada com `src="~/image.png"` é renderizada como `src="/subapp_path/image.png"`. O Middleware de Arquivo Estático do aplicativo raiz não processa a solicitação de arquivo estático. A solicitação é processada pelo Middleware de Arquivo Estático do subaplicativo.
+
+Se um atributo de ativo estático `src` for definido como um caminho absoluto (por exemplo, `src="/image.png"`), o link será renderizado sem a base de caminho do subaplicativo. O Middleware de Arquivos Estáticos do aplicativo raiz tenta fornecer o ativo do [webroot](xref:fundamentals/index#web-root-webroot) da raiz do aplicativo, que resulta em uma resposta *404 – Não encontrado*, a menos que o ativo estático esteja disponível no aplicativo raiz.
+
+Para hospedar um aplicativo ASP.NET Core como um subaplicativo em outro aplicativo do ASP.NET Core:
+
+1. Estabeleça um pool de aplicativos para o subaplicativo. Defina a **versão do CLR do .NET** como **Sem Código Gerenciado**.
+
+1. Adicione o site raiz no Gerenciador do IIS com o subaplicativo em uma pasta no site raiz.
+
+1. Clique com o botão direito do mouse na pasta do subaplicativo no Gerenciador do IIS e selecione **Converter em aplicativo**.
+
+1. Na caixa de diálogo **Adicionar Aplicativo**, use o botão **Selecionar** no **Pool de Aplicativos** para atribuir o pool de aplicativos que você criou ao subaplicativo. Selecione **OK**.
+
+A atribuição de um pool de aplicativos separado para o subaplicativo é um requisito ao usar o modelo de hospedagem em processo.
+
+Para obter mais informações sobre o modelo de hospedagem em processo e como configurar o módulo do ASP.NET Core, confira <xref:fundamentals/servers/aspnet-core-module> e <xref:host-and-deploy/aspnet-core-module>.
 
 ## <a name="configuration-of-iis-with-webconfig"></a>Configuração do IIS com web.config
 
@@ -610,6 +617,7 @@ Distinga erros comuns ao hospedar aplicativos do ASP.NET Core no IIS.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
+* <xref:test/troubleshoot>
 * [Introdução ao ASP.NET Core](xref:index)
 * [O site oficial da IIS da Microsoft](https://www.iis.net/)
 * [Biblioteca de conteúdo técnico do Windows Server](/windows-server/windows-server)
