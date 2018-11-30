@@ -123,7 +123,7 @@ Há três etapas distintas para ser concluída. As etapas nos resultados em um p
 
     ![Salvar a definição de compilação - caixa de diálogo modal](media/cicd/vsts-save-modal.png)
 
-    Usar a pasta padrão de *\\*e clique no **salvar** botão.
+    Usar a pasta padrão de *\\* e clique no **salvar** botão.
 
 ### <a name="create-the-release-pipeline"></a>Criar o pipeline de lançamento
 
