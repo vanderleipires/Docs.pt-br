@@ -5,12 +5,12 @@ description: Saiba mais sobre como usar o LocalDB do SQL Server em um aplicativo
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: fadd7be793b1ff6e863b549271acd5b6b2cc9305
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 49615c25d51cfa671157c2e56b8e0753719c678a
+ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011843"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710095"
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>Trabalhar com o LocalDB do SQL Server no ASP.NET Core
 
@@ -86,19 +86,9 @@ Substitua o conteúdo de *Program.cs* pelo código a seguir:
 
 ::: moniker range="<= aspnetcore-2.0"
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
-
 Adicione o inicializador de semeadura ao método `Main` no arquivo *Program.cs*:
 
 [!code-csharp[](start-mvc/sample/MvcMovie/Program.cs?highlight=6,14-32)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-
-Adicione o inicializador de semeadura ao final do método `Configure` no arquivo *Startup.cs*.
-
-[!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
-
----
 
 ::: moniker-end
 

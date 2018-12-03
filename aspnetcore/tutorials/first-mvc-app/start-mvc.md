@@ -5,12 +5,12 @@ description: Saiba como começar a usar o ASP.NET Core MVC e o Visual Studio.
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: fe555e4cfcaec5d4bb8ccee00b06d1bbcaae9dcd
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 9d50607899058c887597a3d73198552d3ef5b020
+ms.sourcegitcommit: c4572be5ebb301013a5698caf9b5572b76cb2e34
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391200"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52710082"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>Introdução ao ASP.NET Core MVC e ao Visual Studio
 
@@ -23,6 +23,9 @@ Há três versões deste tutorial:
 * macOS: [Criar um aplicativo ASP.NET Core MVC com o Visual Studio para Mac](xref:tutorials/first-mvc-app-mac/start-mvc)
 * Windows: [Como criar um aplicativo ASP.NET Core MVC com o Visual Studio](xref:tutorials/first-mvc-app/start-mvc)
 * macOS, Linux e Windows: [Como criar um aplicativo ASP.NET Core MVC com o Visual Studio Code](xref:tutorials/first-mvc-app-xplat/start-mvc)
+
+> [!NOTE]
+> Estamos testando a usabilidade de uma nova estrutura proposta para o sumário do ASP.NET Core.  Se você tiver alguns minutos para experimentar um exercício de localização de sete tópicos diferentes no sumário atual ou proposto, [clique aqui para participar do estudo](https://dpk4xbh5.optimalworkshop.com/treejack/rps16hd5).
 
 ## <a name="install-visual-studio-and-net-core"></a>Como instalar o Visual Studio e o .NET Core
 
@@ -81,26 +84,7 @@ Na próxima parte deste tutorial, saberemos mais sobre o MVC e começaremos a es
 
 ::: moniker range="<= aspnetcore-2.0"
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
-
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
-
-Instale o Visual Studio Community 2017. Selecione o download de comunidade. Ignore esta etapa se você tiver o Visual Studio 2017 instalado.
-
-* [Instalador de home page do Visual Studio 2017](https://www.visualstudio.com/)
-
-Execute o instalador e selecione as cargas de trabalho a seguir:
-
-* **Desenvolvimento na Web e no ASP.NET** (em **Web e Nuvem**)
-* **Desenvolvimento de plataforma cruzada do .NET Core** (em **Outros conjuntos de ferramentas**)
-
-![**Desenvolvimento na Web e no ASP.NET** (em **Web e Nuvem**)](start-mvc/_static/web_workload.png)
-
-![**Desenvolvimento de plataforma cruzada do .NET Core** (em **Outros conjuntos de ferramentas**)](start-mvc/_static/x_plat_wl.png)
-
----
 
 ## <a name="create-a-web-app"></a>Como criar um aplicativo Web
 
@@ -117,8 +101,6 @@ Complete a caixa de diálogo **Novo Projeto**:
 
 ![Caixa de diálogo Novo projeto, .NET Core no painel esquerdo, Web do ASP.NET Core ](start-mvc/_static/new_project2.png)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
 Faça as configurações necessárias na caixa de diálogo **Novo aplicativo Web ASP.NET Core (.NET Core) – MvcMovie**:
 
 * Na caixa de lista suspensa do seletor de versão, selecione **ASP.NET Core 2.-**
@@ -126,19 +108,6 @@ Faça as configurações necessárias na caixa de diálogo **Novo aplicativo Web
 * Toque em **OK**.
 
 ![Caixa de diálogo Novo projeto, .NET Core no painel esquerdo, Web do ASP.NET Core ](start-mvc/_static/new_project22.png)
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-Complete a caixa de diálogo **Novo aplicativo Web ASP.NET Core (.NET Core) – MvcMovie**:
-
-* Na caixa de lista suspensa do seletor de versão, toque em **ASP.NET Core 1.1**
-* Toque em **Aplicativo Web**
-* Mantenha o padrão **Sem Autenticação**
-* Toque em **OK**.
-
-![Novo aplicativo Web ASP.NET Core](start-mvc/_static/p3.png)
-
----
 
 O Visual Studio usou um modelo padrão para o projeto MVC que você acabou de criar. Para que o aplicativo comece a funcionar agora mesmo, digite um nome de projeto e selecione algumas opções. Este é um projeto inicial básico e é um bom ponto de partida,
 

@@ -5,14 +5,14 @@ description: Conheça o HTTP.sys, um servidor Web para o ASP.NET Core executado 
 monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/13/2018
+ms.date: 11/26/2018
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 125008e2168ec55ffdfa62f5c3ff44c66066424c
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: f5ab1a3cbd1020a5ab2bd64a81b5782fd116f069
+ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207052"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450639"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implementação do servidor Web HTTP.sys no ASP.NET Core
 
@@ -202,4 +202,5 @@ Para aplicativos hospedados pelo HTTP.sys que interagem com solicitações da In
 
 * [API do servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)
 * [Repositório aspnet/HttpSysServer do GitHub (código-fonte)](https://github.com/aspnet/HttpSysServer/)
-* [Host no ASP.NET Core](xref:fundamentals/host/index)
+* <xref:fundamentals/host/index>
+* <xref:test/troubleshoot>
