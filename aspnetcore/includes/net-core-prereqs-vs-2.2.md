@@ -1,0 +1,2 @@
+* [Visual Studio 2017 versão 15.9 ou posterior](https://visualstudio.microsoft.com/downloads/) com o **ASP.NET e desenvolvimento web** carga de trabalho
+* [.NET core SDK 2.2 ou posterior](https://www.microsoft.com/net/download/all)

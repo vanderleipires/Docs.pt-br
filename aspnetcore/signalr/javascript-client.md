@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: 7de7abd7176e160154a458a3b90f662ba8f47f8c
-ms.sourcegitcommit: 09bcda59a58019fdf47b2db5259fe87acf19dd38
+ms.openlocfilehash: 247ccd40412cdb41f38edccbe96d4832751f12cf
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51708381"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861974"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript cliente
 
@@ -113,7 +113,9 @@ Uma implementação real seria usar uma retirada exponencial ou repetir um núme
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [Referência de API JavaScript](/javascript/api/?view=signalr-js-latest)
+* [Tutorial do JavaScript](xref:tutorials/signalr)
+* [Tutorial de WebPack e TypeScript](xref:tutorials/signalr-typescript-webpack)
 * [Hubs](xref:signalr/hubs)
 * [Cliente .NET](xref:signalr/dotnet-client)
 * [Publicar no Azure](xref:signalr/publish-to-azure-web-app)
-* [Habilitar solicitações entre origens (CORS) no ASP.NET Core](xref:security/cors)
+* [Solicitações entre origens (CORS)](xref:security/cors)

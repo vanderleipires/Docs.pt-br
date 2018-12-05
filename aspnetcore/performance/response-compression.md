@@ -5,14 +5,14 @@ description: Saiba mais sobre a compactação de resposta e como usar o Middlewa
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 12/01/2018
 uid: performance/response-compression
-ms.openlocfilehash: 8c3d74b6a346d51507d3c278b03ddc842feea13e
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 2516fbb30e55990dc4ad0d92069853bc26874bc9
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207973"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861882"
 ---
 # <a name="response-compression-in-aspnet-core"></a>Compactação de resposta no ASP.NET Core
 
@@ -24,7 +24,7 @@ Largura de banda de rede é um recurso limitado. Reduzindo o tamanho da resposta
 
 ## <a name="when-to-use-response-compression-middleware"></a>Quando usar o Middleware de compactação de resposta
 
-Use as tecnologias de compactação de resposta com base em servidor no IIS, Apache ou Nginx. O desempenho do middleware provavelmente não corresponderá dos módulos de servidor. [Servidor HTTP. sys](xref:fundamentals/servers/httpsys) e [Kestrel](xref:fundamentals/servers/kestrel) atualmente não oferecem suporte à compactação interna.
+Use as tecnologias de compactação de resposta com base em servidor no IIS, Apache ou Nginx. O desempenho do middleware provavelmente não corresponderá dos módulos de servidor. [Servidor HTTP. sys](xref:fundamentals/servers/httpsys) servidor e [Kestrel](xref:fundamentals/servers/kestrel) server atualmente não oferecem suporte à compactação interna.
 
 Use o Middleware de compactação de resposta quando você estiver:
 
@@ -33,8 +33,8 @@ Use o Middleware de compactação de resposta quando você estiver:
   * [Módulo do Apache mod_deflate](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
   * [Nginx compactação e descompactação](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
 * Hospedagem diretamente em:
-  * [Servidor HTTP. sys](xref:fundamentals/servers/httpsys) (anteriormente chamado [WebListener](xref:fundamentals/servers/weblistener))
-  * [Kestrel](xref:fundamentals/servers/kestrel)
+  * [O HTTP. sys](xref:fundamentals/servers/httpsys) server (anteriormente chamado [WebListener](xref:fundamentals/servers/weblistener))
+  * [Kestrel](xref:fundamentals/servers/kestrel) server
 
 ## <a name="response-compression"></a>Compactação de resposta
 
@@ -432,7 +432,7 @@ Quando a compactação de respostas com base no `Accept-Encoding` cabeçalho, h�
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Problema de middleware quando atrás de um proxy reverso do Nginx
 
-Quando uma solicitação é transmitida por proxy pelo Nginx, o `Accept-Encoding` cabeçalho é removido. Isso impede que o middleware de compactação de resposta. Para obter mais informações, consulte [NGINX: compactação e descompactação](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Esse problema é acompanhado pelo [descobrir a compactação de passagem do Nginx (BasicMiddleware n º 123)](https://github.com/aspnet/BasicMiddleware/issues/123).
+Quando uma solicitação é transmitida por proxy pelo Nginx, o `Accept-Encoding` cabeçalho é removido. Remoção do `Accept-Encoding` cabeçalho impede que o middleware de compactação de resposta. Para obter mais informações, consulte [NGINX: compactação e descompactação](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Esse problema é acompanhado pelo [descobrir a compactação de passagem do Nginx (aspnet/BasicMiddleware \#123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Trabalhando com a compactação dinâmica do IIS
 

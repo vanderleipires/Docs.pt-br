@@ -3,16 +3,16 @@ uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-
 title: Introdução ao Entity Framework 6 Code First usando MVC 5 | Microsoft Docs
 author: tdykstra
 ms.author: riande
-ms.date: 10/04/2018
+ms.date: 12/04/2018
 ms.assetid: 00bc8b51-32ed-4fd3-9745-be4c2a9c1eaf
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5dd9a5a24d8c67c5190c98e3240d132eaa27661c
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: c7ab9458f83e05af84f72d9a2519a8c1c39b84b5
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912404"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861427"
 ---
 # <a name="get-started-with-entity-framework-6-code-first-using-mvc-5"></a>Introdução ao Entity Framework 6 Code First usando MVC 5
 
@@ -21,7 +21,7 @@ por [Tom Dykstra](https://github.com/tdykstra)
 [Baixe o projeto concluído](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
 > [!NOTE]
-> Um [a versão mais recente desta série de tutoriais](/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.1) está disponível que usa [páginas do Razor](/aspnet/core/razor-pages). O Razor Pages é um modelo de programação baseado em página que torna a criação da interface do usuário da Web mais fácil e produtiva. Recomendamos o tutorial páginas do Razor em relação à versão do MVC. O tutorial Páginas do Razor:
+> Para novos desenvolvimentos, recomendamos [páginas do Razor do ASP.NET Core](/aspnet/core/razor-pages) sobre controladores e exibições MVC do ASP.NET. Uma série de tutoriais semelhante a este está disponível para páginas do Razor, o [tutorial das páginas do Razor](/aspnet/core/tutorials/razor-pages/razor-pages-start):
 >
 > * É mais fácil de acompanhar.
 > * Fornece mais práticas recomendadas do EF Core.

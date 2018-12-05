@@ -4,14 +4,14 @@ author: guardrex
 description: Descubra os servidores Web Kestrel e HTTP.sys para ASP.NET Core. Saiba como escolher um servidor e quando usar um servidor proxy reverso.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 09/21/2018
+ms.date: 12/01/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: 06d4bf09b07fc70a10b3e260e78c29fe189486c5
-ms.sourcegitcommit: edb9d2d78c9a4d68b397e74ae2aff088b325a143
+ms.openlocfilehash: 965d69dd071ec71d283284d58e6e1a6e78604f90
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505720"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52861350"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implementações de servidor Web em ASP.NET Core
 
@@ -19,20 +19,46 @@ Por [Tom Dykstra](https://github.com/tdykstra), [Steve Smith](https://ardalis.co
 
 Um aplicativo ASP.NET Core é executado com uma implementação do servidor HTTP em processo. A implementação do servidor escuta solicitações HTTP e as coloca na superfície para o aplicativo como conjuntos de [recursos de solicitação](xref:fundamentals/request-features) compostos em um <xref:Microsoft.AspNetCore.Http.HttpContext>.
 
-O ASP.NET Core é fornecido com as seguintes implementações de servidor:
-
 ::: moniker range=">= aspnetcore-2.2"
 
-* O [Kestrel](xref:fundamentals/servers/kestrel) é o servidor HTTP de plataforma cruzada padrão para o ASP.NET Core.
-* `IISHttpServer` é usado com o [modelo de hospedagem em processo](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model) e o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) no Windows.
-* O [HTTP.sys](xref:fundamentals/servers/httpsys) é um servidor HTTP somente do Windows com base no [driver do kernel HTTP.sys e na API do servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). (O HTTP.sys é chamado [WebListener](xref:fundamentals/servers/weblistener) no ASP.NET Core 1.x.)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+O ASP.NET Core vem com os seguintes itens:
+
+* O [servidor Kestrel](xref:fundamentals/servers/kestrel) é o servidor HTTP padrão multiplataforma.
+* O IIS HTTP Server (`IISHttpServer`) é uma implementação do [servidor em processo do IIS](xref:fundamentals/servers/aspnet-core-module#in-process-hosting-model) usada com o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module).
+* O [servidor HTTP.sys](xref:fundamentals/servers/httpsys) é um servidor HTTP somente do Windows com base no [driver do kernel HTTP.sys e na API do servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). O HTTP.sys é chamado [WebListener](xref:fundamentals/servers/weblistener) no ASP.NET Core 1.x.
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+O ASP.NET Core vem com o [servidor Kestrel](xref:fundamentals/servers/kestrel), que é o servidor HTTP padrão multiplataforma.
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+O ASP.NET Core vem com o [servidor Kestrel](xref:fundamentals/servers/kestrel), que é o servidor HTTP padrão multiplataforma.
+
+---
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.2"
 
-* O [Kestrel](xref:fundamentals/servers/kestrel) é o servidor HTTP de plataforma cruzada padrão para o ASP.NET Core.
-* O [HTTP.sys](xref:fundamentals/servers/httpsys) é um servidor HTTP somente do Windows com base no [driver do kernel HTTP.sys e na API do servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). (O HTTP.sys é chamado [WebListener](xref:fundamentals/servers/weblistener) no ASP.NET Core 1.x.)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+O ASP.NET Core vem com os seguintes itens:
+
+* O [servidor Kestrel](xref:fundamentals/servers/kestrel) é o servidor HTTP padrão multiplataforma.
+* O [servidor HTTP.sys](xref:fundamentals/servers/httpsys) é um servidor HTTP somente do Windows com base no [driver do kernel HTTP.sys e na API do servidor HTTP](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). O HTTP.sys é chamado [WebListener](xref:fundamentals/servers/weblistener) no ASP.NET Core 1.x.
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+O ASP.NET Core vem com o [servidor Kestrel](xref:fundamentals/servers/kestrel), que é o servidor HTTP padrão multiplataforma.
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+O ASP.NET Core vem com o [servidor Kestrel](xref:fundamentals/servers/kestrel), que é o servidor HTTP padrão multiplataforma.
+
+---
 
 ::: moniker-end
 
@@ -42,7 +68,10 @@ O Kestrel é o servidor Web padrão incluído nos modelos de projeto do ASP.NET 
 
 ::: moniker range=">= aspnetcore-2.0"
 
-O Kestrel pode ser usado sozinho ou com um *servidor proxy reverso* como IIS, Nginx ou Apache. Um servidor proxy reverso recebe solicitações HTTP da Internet e as encaminha para o Kestrel após algum tratamento preliminar.
+O Kestrel pode ser usado:
+
+* Sozinho, como um servidor de borda que processa solicitações diretamente de uma rede, incluindo a Internet.
+* Com um *servidor proxy reverso* como [IIS (Serviços de Informações da Internet)](https://www.iis.net/), [Nginx](http://nginx.org) ou [Apache](https://httpd.apache.org/). Um servidor proxy reverso recebe solicitações HTTP da Internet e encaminha-as para o Kestrel.
 
 ![O Kestrel se comunica diretamente com a Internet, sem um servidor proxy reverso](kestrel/_static/kestrel-to-internet2.png)
 
@@ -58,17 +87,15 @@ Se o aplicativo aceita somente solicitações de uma rede interna, o Kestrel pod
 
 ![O Kestrel se comunica diretamente com a rede interna](kestrel/_static/kestrel-to-internal.png)
 
-Se o aplicativo for exposto à Internet, o Kestrel deverá usar o IIS, o Nginx ou o Apache como um *servidor proxy reverso*. Um servidor proxy reverso recebe solicitações HTTP da Internet e as encaminha para o Kestrel após algum tratamento preliminar, conforme mostrado no diagrama a seguir:
+Se o aplicativo for exposto à Internet, o Kestrel deverá usar um *servidor proxy reverso*, como o [IIS (Serviços de Informações da Internet)](https://www.iis.net/), [Nginx](http://nginx.org) ou [Apache](https://httpd.apache.org/). Um servidor proxy reverso recebe solicitações HTTP da Internet e encaminha-as para o Kestrel.
 
 ![O Kestrel se comunica indiretamente com a Internet através de um servidor proxy reverso, tal como o IIS, o Nginx ou o Apache](kestrel/_static/kestrel-to-internet.png)
 
-O motivo mais importante para usar um proxy reverso para implantações de servidores de borda voltados para o público que são expostas diretamente na Internet é a segurança. As versões 1.x do Kestrel não têm recursos de segurança importantes para proteção contra ataques da Internet. Isso inclui, mas não se limita aos tempos limite, limites de tamanho da solicitação e limites de conexões simultâneas apropriados.
+O motivo mais importante para usar um proxy reverso para implantações de servidores de borda voltados para o público que são expostas diretamente na Internet é a segurança. As versões 1.x do Kestrel não incluem recursos de segurança importantes para proteção contra ataques da Internet. Isso inclui, mas não se limita aos tempos limite, limites de tamanho da solicitação e limites de conexões simultâneas apropriados.
 
 Para obter mais informações, consulte [Quando usar Kestrel com um proxy reverso](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
 
 ::: moniker-end
-
-O IIS, o Nginx ou o Apache não podem ser usados sem o Kestrel ou uma [implementação de servidor personalizado](#custom-servers). O ASP.NET Core foi projetado para ser executado em seu próprio processo, de modo que ele pode se comportar de forma consistente entre plataformas. O IIS, o Nginx e o Apache determinam seu próprio procedimento de inicialização e o ambiente. Para usar essas tecnologias de servidor diretamente, o ASP.NET Core precisaria adaptar-se aos requisitos de cada servidor. Usando uma implementação do servidor Web, tal como Kestrel, o ASP.NET Core tem controle sobre o processo de inicialização e o ambiente quando hospedado em tecnologias de servidor diferentes.
 
 ### <a name="iis-with-kestrel"></a>IIS com Kestrel
 
@@ -82,23 +109,23 @@ O [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) é um 
 
 ::: moniker range="< aspnetcore-2.2"
 
-Ao usas o [IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) ou [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) como um proxy reverso para o ASP.NET Core, o aplicativo ASP.NET Core é executado em um processo separado do processo de trabalho do IIS. No processo do IIS, o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) coordena a relação do proxy reverso. As funções primárias do módulo do ASP.NET Core são iniciar o aplicativo do ASP.NET Core, reiniciá-lo quando ele falhar e encaminhar o tráfego HTTP para o aplicativo. Para obter mais informações, consulte <xref:fundamentals/servers/aspnet-core-module>.
+Ao usas o [IIS](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture) ou [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) como um proxy reverso para o ASP.NET Core, o aplicativo ASP.NET Core é executado em um processo separado do processo de trabalho do IIS. No processo do IIS, o [Módulo do ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) coordena a relação do proxy reverso. As funções primárias do módulo do ASP.NET Core são iniciar o aplicativo, reiniciá-lo quando ele falhar e encaminhar o tráfego HTTP para o aplicativo. Para obter mais informações, consulte <xref:fundamentals/servers/aspnet-core-module>.
 
 ::: moniker-end
 
 ### <a name="nginx-with-kestrel"></a>Nginx com Kestrel
 
-Para obter informações sobre como usar Nginx no Linux como um servidor proxy reverso para Kestrel, veja [Hospedar em Linux com o Nginx](xref:host-and-deploy/linux-nginx).
+Para obter informações sobre como usar Nginx no Linux como um servidor proxy reverso para Kestrel, confira <xref:host-and-deploy/linux-nginx>.
 
 ### <a name="apache-with-kestrel"></a>Apache com Kestrel
 
-Para obter informações sobre como usar Apache no Linux como um servidor proxy reverso para Kestrel, veja [Hospedar em Linux com o Apache](xref:host-and-deploy/linux-apache).
+Para obter informações sobre como usar Apache no Linux como um servidor proxy reverso para Kestrel, confira <xref:host-and-deploy/linux-apache>.
 
 ## <a name="httpsys"></a>HTTP.sys
 
 ::: moniker range=">= aspnetcore-2.0"
 
-Se os aplicativos ASP.NET Core forem executados no Windows, o HTTP.sys será uma alternativa ao Kestrel. O Kestrel geralmente é recomendado para melhor desempenho. O HTTP.sys pode ser usado em cenários em que o aplicativo é exposto à Internet e as funcionalidades necessárias são compatíveis com HTTP.sys, mas não com Kestrel. Para obter informações sobre HTTP.sys, veja [HTTP.sys](xref:fundamentals/servers/httpsys).
+Se os aplicativos ASP.NET Core forem executados no Windows, o HTTP.sys será uma alternativa ao Kestrel. O Kestrel geralmente é recomendado para melhor desempenho. O HTTP.sys pode ser usado em cenários em que o aplicativo é exposto à Internet e as funcionalidades necessárias são compatíveis com HTTP.sys, mas não com Kestrel. Para obter mais informações, consulte <xref:fundamentals/servers/httpsys>.
 
 ![O HTTP.sys se comunica diretamente com a Internet](httpsys/_static/httpsys-to-internet.png)
 

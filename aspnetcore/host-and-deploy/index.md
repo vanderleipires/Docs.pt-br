@@ -1,35 +1,35 @@
 ---
 title: Hospedar e implantar o ASP.NET Core
-author: rick-anderson
+author: guardrex
 description: Aprenda como configurar ambientes de hospedagem e implantar aplicativos ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/26/2018
+ms.date: 12/01/2018
 uid: host-and-deploy/index
-ms.openlocfilehash: f70b05df6bf710e2ab54a1eaafb71b4f9b306cbe
-ms.sourcegitcommit: e9b99854b0a8021dafabee0db5e1338067f250a9
+ms.openlocfilehash: 86022c33a3c5a8b82b14ae51b98c44497f39bd16
+ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450613"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52862441"
 ---
 # <a name="host-and-deploy-aspnet-core"></a>Hospedar e implantar o ASP.NET Core
 
 Em geral, implantar um aplicativo ASP.NET Core em um ambiente de hospedagem:
 
-* Publique o aplicativo em uma pasta no servidor de hospedagem.
+* Implante o aplicativo publicado em uma pasta no servidor de hospedagem.
 * Configure um gerenciador de processo que inicia o aplicativo quando a solicitação chega e reinicia-o depois que ele falha ou que o servidor é reinicializado.
-* Se a configuração de um proxy reverso for desejada, configure um proxy reverso que encaminha solicitações para o aplicativo.
+* No caso da configuração de um proxy reverso, defina um proxy reverso para encaminhar solicitações para o aplicativo.
 
 ## <a name="publish-to-a-folder"></a>Publicar em uma pasta
 
-O comando [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) da CLI compila o código do aplicativo e copia os arquivos necessários para executar o aplicativo em uma pasta *publish*. Ao implantar usando o Visual Studio, a etapa [dotnet publish](/dotnet/core/tools/dotnet-publish) é executada automaticamente antes de os arquivos serem copiados para o destino da implantação.
+O comando [dotnet publish](/dotnet/core/tools/dotnet-publish) compila o código do aplicativo e copia os arquivos necessários para executar o aplicativo em uma pasta *publish*. Ao implantar do Visual Studio, a etapa `dotnet publish` ocorre automaticamente antes de os arquivos serem copiados para o destino da implantação.
 
 ### <a name="folder-contents"></a>Conteúdo da pasta
 
-A pasta *publish* contém arquivos *.exe* e *.dll* para o aplicativo, as respectivas dependências e, opcionalmente, o tempo de execução do .NET.
+A pasta *publish* contém um ou mais arquivos do assembly, dependências e, opcionalmente, o tempo de execução do .NET.
 
-Um aplicativo .NET Core pode ser publicado como *autocontido* ou *dependente de estrutura*. Se o aplicativo é autocontido, os arquivos *.dll* que contêm o tempo de execução do .NET são incluídos na pasta *publish*. Se o aplicativo depender da estrutura, os arquivos de tempo de execução do .NET não serão incluídos porque o aplicativo tem uma referência para uma versão do .NET que está instalada no servidor. O modelo de implantação padrão é dependente da estrutura. Para obter mais informações, consulte [Implantação de aplicativos .NET Core](/dotnet/articles/core/deploying/index).
+Um aplicativo .NET Core pode ser publicado como uma *implantação autocontida* ou uma *implantação dependente de estrutura*. Se o aplicativo for autocontido, os arquivos do assembly que contêm o tempo de execução do .NET serão incluídos na pasta *publish*. Se o aplicativo depender da estrutura, os arquivos de tempo de execução do .NET não serão incluídos porque o aplicativo tem uma referência para uma versão do .NET que está instalada no servidor. O modelo de implantação padrão é dependente da estrutura. Para obter mais informações, consulte [Implantação de aplicativos .NET Core](/dotnet/core/deploying/).
 
 Além de arquivos *.exe* e *.dll*, a pasta *publish* para um aplicativo ASP.NET Core normalmente contém arquivos de configuração, ativos estáticos e exibições do MVC. Para obter mais informações, consulte <xref:host-and-deploy/directory-structure>.
 
@@ -48,15 +48,15 @@ Um aplicativo ASP.NET Core é um aplicativo de console que deve ser iniciado qua
 
 ::: moniker range=">= aspnetcore-2.0"
 
-Se o aplicativo usar o servidor Web [Kestrel](xref:fundamentals/servers/kestrel), você poderá usar [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache) ou [IIS](xref:host-and-deploy/iis/index) como um servidor proxy reverso. Um servidor proxy reverso recebe solicitações HTTP da Internet e as encaminha para o Kestrel após algum tratamento preliminar.
+Se o aplicativo usar o servidor Web do servidor [Kestrel](xref:fundamentals/servers/kestrel), você poderá usar [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache) ou [IIS](xref:host-and-deploy/iis/index) como um servidor proxy reverso. Um servidor proxy reverso recebe solicitações HTTP da Internet e encaminha-as para o Kestrel.
 
-Qualquer configuração &mdash;com ou sem um servidor proxy reverso&mdash; é uma configuração de hospedagem válida e compatível com o ASP.NET Core 2.0 ou aplicativos posteriores. Para obter mais informações, consulte [Quando usar Kestrel com um proxy reverso](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
+Qualquer configuração &mdash;com ou sem um servidor proxy reverso&mdash; é uma configuração de hospedagem compatível com o ASP.NET Core 2.0 ou aplicativos posteriores. Para obter mais informações, consulte [Quando usar Kestrel com um proxy reverso](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-Se o aplicativo usar o servidor Web [Kestrel](xref:fundamentals/servers/kestrel) e for exposto à Internet, você deverá usar [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache) ou [IIS](xref:host-and-deploy/iis/index) como um servidor proxy reverso. Um servidor proxy reverso recebe solicitações HTTP da Internet e as encaminha para o Kestrel após algum tratamento preliminar. O principal motivo para usar um proxy reverso é a segurança. Para obter mais informações, consulte [Quando usar Kestrel com um proxy reverso](xref:fundamentals/servers/kestrel?tabs=aspnetcore1x#when-to-use-kestrel-with-a-reverse-proxy).
+Se o aplicativo usar o servidor [Kestrel](xref:fundamentals/servers/kestrel) e for exposto à Internet, você deverá usar [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache) ou [IIS](xref:host-and-deploy/iis/index) como um servidor proxy reverso. Um servidor proxy reverso recebe solicitações HTTP da Internet e encaminha-as para o Kestrel. O principal motivo para usar um proxy reverso é a segurança. Para obter mais informações, consulte [Quando usar Kestrel com um proxy reverso](xref:fundamentals/servers/kestrel?tabs=aspnetcore1x#when-to-use-kestrel-with-a-reverse-proxy).
 
 ::: moniker-end
 
@@ -68,7 +68,7 @@ Configuração adicional pode ser necessária para aplicativos hospedados atrás
 
 A implantação muitas vezes requer tarefas adicionais além de copiar a saída da [dotnet publish](/dotnet/core/tools/dotnet-publish) para um servidor. Por exemplo, arquivos extras podem ser necessários ou excluídos da pasta *publish*. O MSBuild, que é usado pelo Visual Studio para implantação da Web, pode ser personalizado para fazer muitas outras tarefas durante a implantação. Para saber mais, confira <xref:host-and-deploy/visual-studio-publish-profiles> e o livro [Using MSBuild and Team Foundation Build](http://msbuildbook.com/).
 
-Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo do Azure usando [o recurso Publicar na Web](xref:tutorials/publish-to-azure-webapp-using-vs) ou usando o [suporte ao Git interno](xref:host-and-deploy/azure-apps/azure-continuous-deployment). O Azure DevOps Services dá suporte à [implantação contínua para o Serviço de Aplicativo do Azure](/azure/devops/pipelines/targets/webapp).
+Você pode implantar diretamente do Visual Studio para o Serviço de Aplicativo do Azure usando [o recurso Publicar na Web](xref:tutorials/publish-to-azure-webapp-using-vs) ou usando o [suporte ao Git interno](xref:host-and-deploy/azure-apps/azure-continuous-deployment). O Azure DevOps Services dá suporte à [implantação contínua para o Serviço de Aplicativo do Azure](/azure/devops/pipelines/targets/webapp). Para obter mais informações, confira [DevOps com ASP.NET Core e Azure](xref:azure/devops/index).
 
 ## <a name="publish-to-azure"></a>Publicar no Azure
 
@@ -77,6 +77,14 @@ Confira <xref:tutorials/publish-to-azure-webapp-using-vs> para obter instruçõe
 ## <a name="host-in-a-web-farm"></a>Hospedar em uma web farm
 
 Para obter informações sobre a configuração para hospedar aplicativos do ASP.NET Core em um ambiente de web farm (por exemplo, a implantação de várias instâncias do aplicativo para escalabilidade), veja <xref:host-and-deploy/web-farm>.
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="perform-health-checks"></a>Executar verificações de integridade
+
+Use o Middleware de verificação de integridade para executar verificações de integridade em um aplicativo e suas dependências. Para obter mais informações, consulte <xref:host-and-deploy/health-checks>.
+
+::: moniker-end
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
