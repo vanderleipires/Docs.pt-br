@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: fe196e5db8fd1cecbe84b2eb970939303f9313d1
-ms.sourcegitcommit: 2d3e5422d530203efdaf2014d1d7df31f88d08d0
+ms.openlocfilehash: bd6611a03ee4940f5d4176ce23464f313b9ec884
+ms.sourcegitcommit: eef99d14d96dc8c3c1bb0e2c4cb14da152f8a952
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51021450"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53022499"
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Introdução ao ASP.NET Web Pages - publicar um Site usando o WebMatrix
 ====================
@@ -50,7 +50,7 @@ Este tutorial contém quatro seções:
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>Como configurar a página padrão
 
-Quando um usuário navega para o endereço base para seu site da web, a página padrão para o seu site é exibida ao usuário. Por exemplo, quando default. htm é definida como a página padrão para o site em www.contoso.com, navegando até <strong>www.contoso.com</strong> é o mesmo que navegando para <strong>www.contoso.com/Default.htm</strong>.
+Quando um usuário navega para o endereço base para seu site da web, a página padrão para o seu site é exibida ao usuário. Por exemplo, quando *htm* é definido como a página padrão para o site em `www.contoso.com`, navegando até `www.contoso.com` é o mesmo que navegando até `www.contoso.com/Default.htm`.
 
 No momento, seu site utiliza **cshtml** como a página padrão. Esta página é bom para sua página padrão, mas neste tutorial você não adicionou nenhum conteúdo para a página para que ele exibiria uma página em branco. Abra default. cshtml e substitua o conteúdo com o código a seguir.
 

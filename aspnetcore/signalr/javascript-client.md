@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 11/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: 247ccd40412cdb41f38edccbe96d4832751f12cf
-ms.sourcegitcommit: 9bb58d7c8dad4bbd03419bcc183d027667fefa20
+ms.openlocfilehash: cd64a65889227d84615768bc3d8fddcd362fbba4
+ms.sourcegitcommit: eef99d14d96dc8c3c1bb0e2c4cb14da152f8a952
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52861974"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53022473"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript cliente
 
@@ -45,7 +45,7 @@ Referência de cliente SignalR JavaScript no `<script>` elemento.
 
 O código a seguir cria e inicia uma conexão. Nome do hub é diferencia maiusculas de minúsculas.
 
-[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=9-12,28)]
+[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
 
 ### <a name="cross-origin-connections"></a>Conexões entre origens
 
@@ -86,7 +86,7 @@ O SignalR determina qual método de cliente para chamar, correspondendo o nome d
 
 Cadeia de um `catch` método até o final do `start` método para lidar com erros do lado do cliente. Use `console.error` para erros de saída para o console do navegador.
 
-[!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=28)]
+[!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=43-45)]
 
 Configure o rastreamento de log do lado do cliente, passando um agente de log e o tipo de evento para registrar em log quando a conexão é feita. As mensagens são registradas com o nível de log especificado e superior. Níveis de log disponíveis são da seguinte maneira:
 
@@ -106,7 +106,7 @@ O cliente JavaScript para o SignalR não reconectar-se automaticamente. Você de
 1. Uma função (nesse caso, o `start` função) é criado para iniciar a conexão.
 1. Chame o `start` função em que a conexão `onclose` manipulador de eventos.
 
-[!code-javascript[Reconnect the JavaScript client](javascript-client/sample/wwwroot/js/chat.js?range=30-42)]
+[!code-javascript[Reconnect the JavaScript client](javascript-client/sample/wwwroot/js/chat.js?range=28-40)]
 
 Uma implementação real seria usar uma retirada exponencial ou repetir um número especificado de vezes antes de desistir. 
 
