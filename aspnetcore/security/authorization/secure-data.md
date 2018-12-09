@@ -3,14 +3,15 @@ title: Criar um aplicativo ASP.NET Core com os dados de usuário protegidos por 
 author: rick-anderson
 description: Saiba como criar um aplicativo páginas Razor com dados protegidos por autorização do usuário. Inclui HTTPS, autenticação, segurança, identidade do ASP.NET Core.
 ms.author: riande
-ms.date: 7/24/2018
+ms.date: 12/07/2018
+ms.custom: seodec18
 uid: security/authorization/secure-data
-ms.openlocfilehash: 185628d4e06c9b5ae7f2685c10ea9e46dd5abe92
-ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
+ms.openlocfilehash: d49ee7779b425d625b81c8a65694121c616bfba6
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50253215"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121629"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Criar um aplicativo ASP.NET Core com os dados de usuário protegidos por autorização
 
@@ -38,21 +39,21 @@ Este tutorial mostra como criar um aplicativo web do ASP.NET Core com dados de u
 
 Na imagem a seguir, o usuário Rick (`rick@example.com`) está conectado. Rick só pode ver os contatos aprovados e os links **editar**/**excluir**/**criar novo** de seus contatos. Somente o último registro criado por Rick exibe os links **editar** e **excluir**. Outros usuários não verão o último registro até que um gerente ou administrador altere o status para "Aprovado".
 
-![imagem descrita anterior](secure-data/_static/rick.png)
+![Captura de tela mostrando Rick conectado](secure-data/_static/rick.png)
 
 Na imagem a seguir, `manager@contoso.com` está conectado e na função de gerenciadores:
 
-![imagem descrita anterior](secure-data/_static/manager1.png)
+![Captura de tela mostrando manager@contoso.com conectado](secure-data/_static/manager1.png)
 
 A imagem a seguir mostra a tela de exibição de detalhes de um contato dos gerentes:
 
-![imagem descrita anterior](secure-data/_static/manager.png)
+![Modo de exibição do Gerenciador de um contato](secure-data/_static/manager.png)
 
 O botões **aprovar** e **rejeitar** são exibidos somente para administradores e gerentes.
 
 Na imagem a seguir, `admin@contoso.com` está conectado e na função de gerenciadores:
 
-![imagem descrita anterior](secure-data/_static/admin.png)
+![Captura de tela mostrando admin@contoso.com conectado](secure-data/_static/admin.png)
 
 O administrador tem todos os privilégios. Ele pode ler/editar/excluir todos os contatos e alterar os status deles.
 
@@ -281,25 +282,32 @@ Ver [esse problema](https://github.com/aspnet/Docs/issues/8502) para obter infor
 
 ## <a name="test-the-completed-app"></a>Testar o aplicativo concluído
 
+Se você ainda não tiver configurado uma senha para contas de usuário propagados, use o [ferramenta Secret Manager](xref:security/app-secrets#secret-manager) para definir uma senha:
+
+* Escolha uma senha forte: Use oito ou mais caracteres e pelo menos um caractere maiusculo, número e símbolo. Por exemplo, `Passw0rd!` atende aos requisitos de senha forte.
+* Execute o seguinte comando na pasta do projeto, onde `<PW>` é a senha:
+
+  ```console
+  dotnet user-secrets set SeedUserPW <PW>
+  ```
+
 Se o aplicativo tem contatos:
 
-* Excluir todos os registros da tabela `Contact` .
+* Excluir todos os registros no `Contact` tabela.
 * Reinicie o aplicativo para propagar o banco de dados.
 
-Registre um usuário para os contatos de navegação.
-
-Uma maneira fácil de testar o aplicativo concluído é iniciar três diferentes navegadores (ou versões de janela anônima/InPrivate). Em um navegador, registre um novo usuário (por exemplo, `test@example.com`). Entrar para cada navegador com um usuário diferente. Verifique se as seguintes operações:
+Uma maneira fácil de testar o aplicativo concluído é iniciar três diferentes navegadores (ou incógnita/InPrivate sessões). Em um navegador, registre um novo usuário (por exemplo, `test@example.com`). Entrar para cada navegador com um usuário diferente. Verifique se as seguintes operações:
 
 * Usuários registrados podem exibir todos os dados de contato aprovados.
 * Os usuários registrados podem editar/excluir seus próprios dados.
-* Os gerentes podem aprovar ou rejeitar contatos. A tela `Details` mostra os botões **aprovar** e **rejeitar**.
+* Os gerentes podem Aprovar/rejeitar dados de contato. A tela `Details` mostra os botões **aprovar** e **rejeitar**.
 * Os administradores podem Aprovar/rejeitar e editar/excluir todos os dados.
 
-| User| Opções |
-| ------------ | ---------|
-| test@example.com | Pode editar/excluir possuem dados |
-| manager@contoso.com | Podem Aprovar/rejeitar e Editar/Excluir proprietário dados |
-| admin@contoso.com | Pode editar/excluir e Aprovar/rejeitar todos os dados|
+| User                | Propagada pelo aplicativo | Opções                                  |
+| ------------------- | :---------------: | ---------------------------------------- |
+| test@example.com    | Não                | Editar/Excluir os próprios dados.                |
+| manager@contoso.com | Sim               | Aprovar/rejeitar e editar/excluir os próprios dados. |
+| admin@contoso.com   | Sim               | Aprovar/rejeitar e editar/excluir todos os dados. |
 
 Crie um contato no navegador do administrador. Copie a URL para excluir e editar a partir do contato do administrador. Cole esses links no navegador do usuário de teste para verificar se que o usuário de teste não é possível executar essas operações.
 

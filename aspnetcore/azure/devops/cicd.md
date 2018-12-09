@@ -1,16 +1,17 @@
 ---
-title: DevOps com o ASP.NET Core e o Azure | Integração contínua e implantação
+title: Integração contínua e implantação - DevOps com o ASP.NET Core e o Azure
 author: CamSoper
-description: Um guia que fornece orientação de ponta a ponta sobre a criação de um pipeline de DevOps para um aplicativo ASP.NET Core hospedado no Azure.
+description: Integração contínua e implantação em DevOps com o ASP.NET Core e o Azure
 ms.author: scaddie
 ms.date: 10/24/2018
+ms.custom: seodec18
 uid: azure/devops/cicd
-ms.openlocfilehash: edaf2c2e1428e5e82104786d94584a4ef08f9ee3
-ms.sourcegitcommit: 408921a932448f66cb46fd53c307a864f5323fe5
+ms.openlocfilehash: e5bddde41291c9573f58d749bbf830de9ea9319d
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51570081"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121578"
 ---
 # <a name="continuous-integration-and-deployment"></a>Integração contínua e implantação
 
@@ -235,15 +236,15 @@ A definição de compilação **tarefas** guia lista as etapas individuais que e
 
 Clique na definição de compilação **resumo** link para exibir um histórico das compilações com a definição:
 
-![histórico de definição de compilação](media/cicd/build-definition-summary.png)
+![Histórico de definição de compilação do captura de tela mostrando](media/cicd/build-definition-summary.png)
 
 Na página resultante, clique no link correspondente ao número de build exclusivo:
 
-![página de resumo de definição de compilação](media/cicd/build-definition-completed.png)
+![Página resumida de definição de compilação captura de tela mostrando](media/cicd/build-definition-completed.png)
 
 Um resumo dessa compilação específica é exibido. Clique o **artefatos** guia e observe o *drop* produzida pela compilação de pasta é listada:
 
-![criar artefatos de definição - pasta-depósito](media/cicd/build-definition-artifacts.png)
+![Captura de tela mostrando os artefatos de definição de compilação - pasta-depósito](media/cicd/build-definition-artifacts.png)
 
 Use o **Baixe** e **explorar** links para inspecionar os artefatos publicados.
 
@@ -251,25 +252,25 @@ Use o **Baixe** e **explorar** links para inspecionar os artefatos publicados.
 
 Um pipeline de lançamento foi criado com o nome *MyFirstProject do ASP.NET Core-CD*:
 
-![Visão geral do pipeline de versão](media/cicd/release-definition-overview.png)
+![Visão geral da captura de tela mostrando release pipeline](media/cicd/release-definition-overview.png)
 
 Os dois principais componentes do pipeline de lançamento são as **artefatos** e o **ambientes**. Clicando na caixa na **artefatos** seção revela o seguinte painel:
 
-![artefatos de pipeline de versão](media/cicd/release-definition-artifacts.png)
+![Captura de tela mostrando artefatos de pipeline da versão](media/cicd/release-definition-artifacts.png)
 
 O **fonte (definição de compilação)** valor representa a definição de compilação ao qual esse pipeline de versão está vinculada. O *. zip* arquivo produzido por uma execução bem-sucedida da definição de compilação é fornecido para o *produção* ambiente para implantação no Azure. Clique o *1 fase, 2 tarefas* link na *produção* caixa do ambiente para exibir as tarefas de pipeline de lançamento:
 
-![tarefas de pipeline de liberação](media/cicd/release-definition-tasks.png)
+![Captura de tela mostrando tarefas de pipeline de lançamento](media/cicd/release-definition-tasks.png)
 
 O pipeline de lançamento consiste em duas tarefas: *implantar o serviço de aplicativo do Azure ao Slot* e *gerenciar o serviço de aplicativo Azure - Slot de troca*. Clicar a primeira tarefa revela a configuração de tarefa a seguir:
 
-![tarefa de implantação do pipeline de lançamento](media/cicd/release-definition-task1.png)
+![Tarefa de implantação do pipeline de lançamento captura de tela mostrando](media/cicd/release-definition-task1.png)
 
 A assinatura do Azure, o tipo de serviço, o nome do aplicativo web, o grupo de recursos e o slot de implantação são definidos na tarefa de implantação. O **pacote ou pasta** caixa de texto contém o *. zip* caminho do arquivo a ser extraído e implantado para o *preparo* slot do *mywebapp\<exclusivo número\>*  aplicativo web.
 
 Clicar a tarefa de troca de slot revela a configuração de tarefa a seguir:
 
-![tarefa de troca de slot do pipeline de versão](media/cicd/release-definition-task2.png)
+![Tarefa de troca de slot captura de tela mostrando release pipeline](media/cicd/release-definition-task2.png)
 
 A assinatura, grupo de recursos, tipo de serviço, nome do aplicativo web e detalhes do slot de implantação são fornecidas. O **troca com produção** caixa de seleção está marcada. Consequentemente, os bits implantados para o *preparo* slot são trocadas no ambiente de produção.
 

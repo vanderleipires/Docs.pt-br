@@ -1,17 +1,17 @@
 ---
-title: DevOps com o ASP.NET Core e o Azure | Implantar um aplicativo de serviço de aplicativo
+title: Implantar um aplicativo no serviço de aplicativo - DevOps com o ASP.NET Core e o Azure
 author: CamSoper
-description: Um guia que fornece orientação de ponta a ponta sobre a criação de um pipeline de DevOps para um aplicativo ASP.NET Core hospedado no Azure.
+description: Implante um aplicativo ASP.NET Core no serviço de aplicativo do Azure, a primeira etapa para operações de desenvolvimento com ASP.NET Core e o Azure.
 ms.author: casoper
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: 33026ed510aae63a9e580aa5d708f94aad778fca
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 4424d3d15cbd234357c8265fa276834cb9abf352
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090931"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121214"
 ---
 # <a name="deploy-an-app-to-app-service"></a>Implantar um aplicativo de serviço de aplicativo
 
@@ -150,12 +150,12 @@ O aplicativo já foi implantado no shell de comando. Vamos usar ferramentas inte
 3. Pressione **Ctrl**+**Shift**+**B** para compilar o aplicativo.
 4. No Gerenciador de soluções, clique com botão direito no projeto e clique em **publicar**.
 
-    ![Clique com botão direito, publicar](./media/deploying-to-app-service/publish.png)
+    ![Captura de tela mostrando o botão direito do mouse, publicar](./media/deploying-to-app-service/publish.png)
 5. Visual Studio pode criar um novo recurso do serviço de aplicativo, mas essa atualização será publicada a implantação existente. No **escolher um destino de publicação** caixa de diálogo, selecione **serviço de aplicativo** na lista à esquerda e, em seguida, selecione **selecionar existente**. Clique em **Publicar**.
 6. No **serviço de aplicativo** caixa de diálogo, confirme que a Microsoft ou conta organizacional usada para criar sua assinatura do Azure é exibida no canto superior direito. Se não estiver, clique na lista suspensa e adicioná-lo.
 7. Confirme se o Azure correto **assinatura** está selecionado. Para **modo de exibição**, selecione **grupo de recursos**. Expanda o **AzureTutorial** grupo de recursos e, em seguida, selecione o aplicativo web existente. Clique em **OK**.
 
-    ![Caixa de diálogo do serviço de aplicativo publicar](./media/deploying-to-app-service/publish-dialog.png)
+    ![Caixa de diálogo de publicar o serviço de aplicativo de captura de tela mostrando](./media/deploying-to-app-service/publish-dialog.png)
 
 Visual Studio compila e implanta o aplicativo do Azure. Navegue até a URL do aplicativo web. Validar que o `<h2>` modificação do elemento está ativo.
 
@@ -211,7 +211,7 @@ Slots de implantação oferecer suporte a preparação de alterações sem afeta
 
 6. Para verificar se V3 foi implantado para o slot de preparo, abra duas janelas de navegador. Em uma janela, navegue até a URL do aplicativo web original. Em outra janela, navegue até a URL do aplicativo web preparo. A URL de produção serve V2 do aplicativo. A URL de preparo serve V3 do aplicativo.
 
-    ![Comparando as janelas do navegador](./media/deploying-to-app-service/ready-to-swap.png)
+    ![Captura de tela de comparar as janelas do navegador](./media/deploying-to-app-service/ready-to-swap.png)
 
 7. No Cloud Shell, troca o slot de preparo verificado/começando-up para produção.
 

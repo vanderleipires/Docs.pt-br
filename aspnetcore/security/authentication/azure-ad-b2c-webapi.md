@@ -1,19 +1,19 @@
 ---
-title: Autenticação de nuvem em APIs web com o Azure Active Directory B2C no ASP.NET Core
+title: Autenticação em APIs web com o Azure Active Directory B2C no ASP.NET Core
 author: camsoper
 description: Descubra como configurar a autenticação do Azure Active Directory B2C com a API Web ASP.NET Core. Teste a autenticado API web com o Postman.
 ms.author: casoper
 ms.date: 09/21/2018
-ms.custom: mvc
+ms.custom: mvc, seodec18
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: a7a109909d66b1016e78eedc8b802068143c65e3
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: e8ac1e33819dd369460139df25597e1aa0979c91
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348540"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121707"
 ---
-# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Autenticação de nuvem em APIs web com o Azure Active Directory B2C no ASP.NET Core
+# <a name="authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Autenticação em APIs web com o Azure Active Directory B2C no ASP.NET Core
 
 Por [Cam Soper](https://twitter.com/camsoper)
 

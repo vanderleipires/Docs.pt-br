@@ -1,17 +1,17 @@
 ---
-title: DevOps com o ASP.NET Core e o Azure | Monitorar e depurar
+title: Monitorar e depurar - DevOps com o ASP.NET Core e o Azure
 author: CamSoper
-description: Um guia que fornece orientação de ponta a ponta sobre a criação de um pipeline de DevOps para um aplicativo ASP.NET Core hospedado no Azure.
+description: Monitorar e depurar seu código como parte de uma solução de DevOps com o ASP.NET Core e o Azure
 ms.author: casoper
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.date: 10/24/2018
 uid: azure/devops/monitor
-ms.openlocfilehash: c4013de574fdf34114f2ae6c6a2150d72f807578
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: e005b951aec578b396fc19dec5d2f55cbce4f664
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090170"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121603"
 ---
 # <a name="monitor-and-debug"></a>Monitorar e depurar
 
@@ -35,7 +35,7 @@ Com facilidade, aplicativos web do serviço de aplicativo são monitorados em te
 
 1. O **visão geral** guia exibe informações úteis de "instantâneo", incluindo gráficos que exibem as métricas recentes.
 
-    ![Painel de visão geral](./media/monitoring/overview.png)
+    ![Painel de visão geral do captura de tela mostrando](./media/monitoring/overview.png)
 
     * **Http 5xx**: contagem de erros do lado do servidor, geralmente exceções no código do ASP.NET Core.
     * **Dados em**: entrada de dados que chegam ao seu aplicativo web.
@@ -45,7 +45,7 @@ Com facilidade, aplicativos web do serviço de aplicativo são monitorados em te
 
     Várias ferramentas de autoatendimento para otimização e solução de problemas também são encontradas nesta página.
 
-    ![Ferramentas de autoatendimento](./media/monitoring/wizards.png)
+    ![Captura de tela mostrando ferramentas de autoatendimento](./media/monitoring/wizards.png)
 
     * **Diagnosticar e resolver problemas** é uma solução de problemas de autoatendimento.
     * **Application Insights** é para criação de perfil de desempenho e o comportamento do aplicativo e será discutido posteriormente nesta seção.
@@ -103,7 +103,7 @@ Logs do servidor web e de aplicativo podem ser transmitidos em tempo real por me
 1. Abra o [portal do Azure](https://portal.azure.com)e navegue até a *mywebapp\<unique_number\>*  o serviço de aplicativo.
 1. No menu à esquerda, role para baixo até a **Monitoring** seção e selecione **fluxo de Log**.
 
-    ![Link de fluxo de log](./media/monitoring/log-stream.png)
+    ![Captura de tela mostrando o link de fluxo de log](./media/monitoring/log-stream.png)
 
 Os logs também podem ser [transmitido por meio da CLI do Azure ou o Azure PowerShell](/azure/app-service/web-sites-enable-diagnostic-log#streamlogs), incluindo por meio do Cloud Shell.
 

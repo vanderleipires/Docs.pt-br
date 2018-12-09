@@ -5,13 +5,14 @@ description: Saiba como configurar a autenticação de dois fatores (2FA) com um
 monikerRange: < aspnetcore-2.0
 ms.author: riande
 ms.date: 09/22/2018
+ms.custom: seodec18
 uid: security/authentication/2fa
-ms.openlocfilehash: 5b0866ecf15381b040e3646eecc22374b6b0c9e2
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 6f20928b0dec9b235fa17c1b44c81a48d031e9e0
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205880"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121655"
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>Autenticação de dois fatores com SMS no ASP.NET Core
 
@@ -97,7 +98,7 @@ Abra o *Views/Manage/Index.cshtml* arquivo de exibição do Razor e remova o com
 
 * Toque em seu nome de usuário que ativa o `Index` método de ação no controlador de gerenciar. Em seguida, toque no número de telefone **adicionar** link.
 
-![Gerenciar o modo de exibição](2fa/_static/login2fa2.png)
+![Gerenciar o modo de exibição – tocar no link "Adicionar"](2fa/_static/login2fa2.png)
 
 * Adicionar um número de telefone que receberá o código de verificação e toque **enviar código de verificação**.
 
@@ -111,11 +112,11 @@ Se você não receber uma mensagem de texto, consulte a página de registro do t
 
 * O modo de gerenciar mostra que o número de telefone foi adicionado com êxito.
 
-![Gerenciar o modo de exibição](2fa/_static/login2fa5.png)
+![Gerenciar o modo de exibição - número de telefone foi adicionado com êxito](2fa/_static/login2fa5.png)
 
 * Toque **habilitar** para habilitar a autenticação de dois fatores.
 
-![Gerenciar o modo de exibição](2fa/_static/login2fa6.png)
+![Gerenciar o modo de exibição – habilitar a autenticação de dois fatores](2fa/_static/login2fa6.png)
 
 ### <a name="test-two-factor-authentication"></a>Autenticação de dois fatores do teste
 

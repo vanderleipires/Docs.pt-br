@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: H1Hack27Feb2017
 ms.date: 08/02/2017
 uid: client-side/spa-services
-ms.openlocfilehash: b0fc6be29e3ecedd9706238f439f229377bb5a63
-ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
+ms.openlocfilehash: ee772e67ef14608bcc6e3498ade00424ff6090e5
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52256544"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121370"
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>Usar JavaScriptServices para criar aplicativos de única página no ASP.NET Core
 
@@ -157,7 +157,7 @@ Instale o seguinte:
 
 Webpack Dev Middleware é registrado no pipeline de solicitação HTTP por meio de código a seguir na *Startup.cs* do arquivo `Configure` método:
 
-[!code-csharp[](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=webpack-middleware-registration&highlight=4)]
+[!code-csharp[](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=snippet_WebpackMiddlewareRegistration&highlight=4)]
 
 O `UseWebpackDevMiddleware` método de extensão deve ser chamado antes [Registrando a hospedagem de arquivos estáticos](xref:fundamentals/static-files) por meio de `UseStaticFiles` método de extensão. Por motivos de segurança, registre o middleware somente quando o aplicativo é executado no modo de desenvolvimento.
 
@@ -223,7 +223,7 @@ Instale o seguinte:
 
 Um método de extensão denominado `MapSpaFallbackRoute` é usado no `Configure` método:
 
-[!code-csharp[](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=mvc-routing-table&highlight=7-9)]
+[!code-csharp[](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=snippet_MvcRoutingTable&highlight=7-9)]
 
 Dica: As rotas são avaliadas na ordem em que eles foram configurados. Consequentemente, o `default` rota no exemplo de código anterior é usada primeiro para correspondência de padrões.
 
