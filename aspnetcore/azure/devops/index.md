@@ -4,13 +4,14 @@ author: CamSoper
 description: Um guia que fornece orientação de ponta a ponta sobre a criação de um pipeline de DevOps para um aplicativo ASP.NET Core hospedado no Azure.
 ms.author: casoper
 ms.date: 08/07/2018
+ms.custom: seodec18
 uid: azure/devops/index
-ms.openlocfilehash: f2eb2499a61ce639457f30f4d182dac6ff677a0f
-ms.sourcegitcommit: 6d02e26748a09eabeb0e11740a398cc2bc90b098
+ms.openlocfilehash: 6b6f17fd917f32b9e0682414febee10643cf3d13
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41750309"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121187"
 ---
 # <a name="devops-with-aspnet-core-and-azure"></a>DevOps com ASP.NET Core e Azure
 
@@ -46,7 +47,7 @@ Aprenda os vários métodos para implantar um aplicativo ASP.NET Core no Serviç
 
 ### <a name="continuous-integration-and-deploymentxrefazuredevopscicd"></a>[Integração contínua e implantação](xref:azure/devops/cicd)
 
-Crie uma solução de implantação e integração contínua de ponta a ponta para seu aplicativo ASP.NET Core com o GitHub, o VSTS e o Azure.
+Crie uma solução de implantação e integração contínua de ponta a ponta para seu aplicativo ASP.NET Core com o GitHub, o Azure DevOps Services e o Azure.
 
 ### <a name="monitor-and-debugxrefazuredevopsmonitor"></a>[Monitorar e depurar](xref:azure/devops/monitor)
 
