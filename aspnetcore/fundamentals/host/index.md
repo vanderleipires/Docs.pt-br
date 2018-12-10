@@ -1,19 +1,19 @@
 ---
-title: Host no ASP.NET Core
+title: Host da Web e Host Genérico no ASP.NET Core
 author: guardrex
 description: Saiba mais sobre o Host da Web do ASP.NET Core e o Host Genérico do .NET, que são responsáveis pelo gerenciamento de tempo de vida e pela inicialização do aplicativo.
 ms.author: riande
-ms.custom: mvc
+ms.custom: mvc,seodec18
 ms.date: 08/28/2018
 uid: fundamentals/host/index
-ms.openlocfilehash: 9927722b5080beb94e5628d9e7b54e6d50a5bff8
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 3e67d8338aa7ac1b1530d0498ee0126d36a8d72b
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336044"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121512"
 ---
-# <a name="host-in-aspnet-core"></a>Host no ASP.NET Core
+# <a name="web-host-and-generic-host-in-aspnet-core"></a>Host da Web e Host Genérico no ASP.NET Core
 
 Aplicativos ASP.NET Core configuram e inicializam um *host*. O host é responsável pelo gerenciamento de tempo de vida e pela inicialização do aplicativo. Duas APIs de host estão disponíveis para uso:
 

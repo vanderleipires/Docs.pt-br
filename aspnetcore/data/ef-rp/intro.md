@@ -3,14 +3,15 @@ title: Páginas Razor com o Entity Framework Core no ASP.NET Core – Tutorial 1
 author: rick-anderson
 description: Mostra como criar um aplicativo das Páginas do Razor usando o Entity Framework Core
 ms.author: riande
+ms.custom: seodec18
 ms.date: 11/22/2018
 uid: data/ef-rp/intro
-ms.openlocfilehash: afba4395fe9dbe22516b6c4ebdc4c582381981fd
-ms.sourcegitcommit: 710fc5fcac258cc8415976dc66bdb355b3e061d5
+ms.openlocfilehash: 34c7238b689993245e033625dcd0e728b7c45163
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52299463"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121694"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Páginas Razor com o Entity Framework Core no ASP.NET Core – Tutorial 1 de 8
 
@@ -306,7 +307,7 @@ Algumas coisas a serem consideradas ao escrever um código assíncrono que usa o
 * Um contexto do EF Core não é thread-safe: não tente realizar várias operações em paralelo.
 * Para aproveitar os benefícios de desempenho do código assíncrono, verifique se os pacotes de biblioteca (como para paginação) usam o código assíncrono se eles chamam métodos do EF Core que enviam consultas ao BD.
 
-Para obter mais informações sobre a programação assíncrona, consulte [Visão geral de Async](/dotnet/articles/standard/async) e [Programação assíncrona com async e await](/dotnet/csharp/programming-guide/concepts/async/).
+Para obter mais informações sobre a programação assíncrona, consulte [Visão geral de Async](/dotnet/standard/async) e [Programação assíncrona com async e await](/dotnet/csharp/programming-guide/concepts/async/).
 
 No próximo tutorial, as operações CRUD (criar, ler, atualizar e excluir) básicas são examinadas.
 

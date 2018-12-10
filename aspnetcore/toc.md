@@ -6,20 +6,11 @@
 # [Introdução](xref:getting-started)
 
 # Tutoriais
-## [Criar uma API Web](xref:tutorials/first-web-api)
+## APIs da Web
+### [Criar uma API Web](xref:tutorials/first-web-api)
+### [API Web com o MongoDB](xref:tutorials/first-mongo-app)
 ## Aplicativos Web
-### Páginas do Razor
-#### [Introdução a Páginas do Razor](xref:razor-pages/index)
-
-#### [Tutorial do Razor Pages](xref:tutorials/razor-pages/index)
-##### [Introdução](xref:tutorials/razor-pages/razor-pages-start)
-##### [Adicionar um modelo](xref:tutorials/razor-pages/model)
-##### [Scaffolding](xref:tutorials/razor-pages/page)
-##### [Trabalhar com um BD](xref:tutorials/razor-pages/sql)
-##### [Atualizar as páginas](xref:tutorials/razor-pages/da1)
-##### [Adicionar pesquisa](xref:tutorials/razor-pages/search)
-##### [Adicionar um novo campo](xref:tutorials/razor-pages/new-field)
-##### [Adicionar validação](xref:tutorials/razor-pages/validation)
+### [Páginas do Razor](xref:tutorials/razor-pages/index)
 
 ### MVC
 #### [Com o Visual Studio](xref:tutorials/first-mvc-app/index)
@@ -165,7 +156,9 @@
 # APIs da Web
 ## [Visão geral](xref:web-api/index)
 
-## [Criar uma API Web](xref:tutorials/first-web-api)
+## Tutoriais
+### [Criar uma API Web](xref:tutorials/first-web-api)
+### [API Web com o MongoDB](xref:tutorials/first-mongo-app)
 
 ## Swagger/OpenAPI
 ### [Visão geral](xref:tutorials/web-api-help-pages-using-swagger)
@@ -420,7 +413,7 @@
 ## [Alterar tokens](xref:fundamentals/change-tokens)
 ## [OWIN (Open Web Interface para .NET)](xref:fundamentals/owin)
 ## [Tarefas em segundo plano com serviços hospedados](xref:fundamentals/host/hosted-services)
-## [Aprimorar um aplicativo de um assembly externo](xref:fundamentals/configuration/platform-specific-configuration)
+## [Hospedando assemblies de inicialização](xref:fundamentals/configuration/platform-specific-configuration)
 ## [Metapacote Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app)
 ## [Metapacote Microsoft.AspNetCore.All](xref:fundamentals/metapackage)
 ## [Fazendo log com o LoggerMessage](xref:fundamentals/logging/loggermessage)
