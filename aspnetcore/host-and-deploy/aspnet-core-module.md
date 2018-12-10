@@ -35,6 +35,9 @@ Para configurar um aplicativo para hospedagem em processo, adicione a propriedad
 </PropertyGroup>
 ```
 
+> [!NOTE]
+> O modelo de hospedagem em processo apenas é suportado em aplicações que usam como framework de destino o .NET Core.
+
 As seguintes características se aplicam ao hospedar em processo:
 
 * O [servidor Kestrel](xref:fundamentals/servers/kestrel) não é usado. Uma implementação personalizada do <xref:Microsoft.AspNetCore.Hosting.Server.IServer>, `IISHttpServer` funciona como o servidor do aplicativo.
