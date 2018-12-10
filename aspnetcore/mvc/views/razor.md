@@ -5,12 +5,12 @@ description: Saiba mais sobre a sintaxe de marcação Razor para inserir código
 ms.author: riande
 ms.date: 10/26/2018
 uid: mvc/views/razor
-ms.openlocfilehash: ab9fb3f55399764c5fe985811d92c504ed210767
-ms.sourcegitcommit: ad28d1bc6657a743d5c2fa8902f82740689733bb
+ms.openlocfilehash: 2ec86c774e0fd26c4455829680a2b1db687b8090
+ms.sourcegitcommit: 49faca2644590fc081d86db46ea5e29edfc28b7b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52256574"
+ms.lasthandoff: 12/09/2018
+ms.locfileid: "53121577"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>Referência da sintaxe Razor para ASP.NET Core
 
@@ -741,7 +741,7 @@ O mecanismo de exibição do Razor executa pesquisas que diferenciam maiúsculas
 
 Os desenvolvedores são incentivados a fazer a correspondência entre as maiúsculas e minúsculas dos nomes dos arquivos e de diretórios com o uso de maiúsculas e minúsculas em:
 
-    * Nomes de área, controlador e ação.
-    * Páginas do Razor.
+* Nomes de área, controlador e ação.
+* Páginas do Razor.
 
 Fazer essa correspondência garante que as implantações encontrem suas exibições, independentemente do sistema de arquivos subjacente.
